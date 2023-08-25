@@ -19,7 +19,7 @@ export const loader: LoaderFunction = async () => {
 
   const rows = response.data.values;
 
-  return json({name: "hei", rows})
+  return json({name: "hei", rows, customEnv : process.env.CUSTOM_ENV})
 }
 
 export default function Index() {
@@ -28,6 +28,7 @@ export default function Index() {
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
       <h1>Welcome to TekkenDex</h1>
       <div>Verdi til celle A1 er {data.rows[0][0]}</div>
+    <div>Custom env : {data.customEnv}</div>
     </div>
   );
 }
