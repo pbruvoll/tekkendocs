@@ -17,6 +17,7 @@ export default function App() {
   return (
     <html lang="en">
       <head>
+        <meta name="robots" content="noindex, nofollow" />
         <Meta />
         <Links />
       </head>
