@@ -43,18 +43,18 @@ export default function Index() {
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
       <h1 style={{ textTransform: "capitalize" }}>{characterName}</h1>
-      <table style={{ width: "100%" }}>
+      <table style={{ width: "100%" }} className="styled-table">
         <thead>
-          {headers.map(h => <th key={h}>{h}</th>)}
+          <tr>
+            {headers.map(h => <th key={h}>{h}</th>)}
+          </tr>
         </thead>
         <tbody>
-          {rows.slice(2).map(row => {
+          {rows.slice(2).map((row, i) => {
             return <tr key={row[0]}>
-              {row.map((cell, index) => (<td key={headers[index]}>{cell}</td>))}
+              {headers.map((_, j) => (<td key={headers[j]}>{rows[2 + i][j]}</td>))}
             </tr>
           })}
-          <tr></tr>
-
         </tbody>
       </table>
     </div>
