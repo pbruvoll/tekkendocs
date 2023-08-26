@@ -1,8 +1,8 @@
-import { LoaderFunction, json } from "@remix-run/node";
-import { useLoaderData } from "@remix-run/react";
+import { DataFunctionArgs, json } from "@remix-run/node";
+import { useLoaderData, useParams } from "@remix-run/react";
 import { google } from "~/google.server";
 
-export const loader: LoaderFunction = async ({ params }) => {
+export const loader = async ({ params }: DataFunctionArgs) => {
   const character = params.character;
   if (!character) {
     throw new Response(null, {
@@ -26,19 +26,37 @@ export const loader: LoaderFunction = async ({ params }) => {
     });
 
     const rows = response.data.values;
+    response
 
-    return json({ rows });
+    return json({ characterName: character, rows });
   } catch {
-    throw new Response(null, { status: 500, statusText: "server error" })
   }
+  throw new Response(null, { status: 500, statusText: "server error" })
 }
 
 export default function Index() {
-  const data = useLoaderData<typeof loader>();
+  const { rows, characterName } = useLoaderData<typeof loader>() as unknown as { rows: any[][], characterName: string };
+  if (rows[0][0] !== "#framesnormal" || rows.length < 3) {
+    return <div>Invalid or no data</div>
+  }
+  const headers = rows[1];
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
-      <h1>Welcome to TekkenDex</h1>
-      <div>Verdi til celle A1 er {data.rows[0][0]}</div>
+      <h1 style={{ textTransform: "capitalize" }}>{characterName}</h1>
+      <table style={{ width: "100%" }}>
+        <thead>
+          {headers.map(h => <th key={h}>{h}</th>)}
+        </thead>
+        <tbody>
+          {rows.slice(2).map(row => {
+            return <tr key={row[0]}>
+              {row.map((cell, index) => (<td key={headers[index]}>{cell}</td>))}
+            </tr>
+          })}
+          <tr></tr>
+
+        </tbody>
+      </table>
     </div>
   );
 }
