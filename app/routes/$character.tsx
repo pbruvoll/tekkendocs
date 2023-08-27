@@ -1,4 +1,4 @@
-import { DataFunctionArgs, json } from "@remix-run/node";
+import { DataFunctionArgs, MetaFunction, json } from "@remix-run/node";
 import { useLoaderData, useParams } from "@remix-run/react";
 import { google } from "~/google.server";
 
@@ -33,6 +33,27 @@ export const loader = async ({ params }: DataFunctionArgs) => {
   }
   throw new Response(null, { status: 500, statusText: "server error" })
 }
+
+export const meta: MetaFunction = ({
+  data,
+  params,
+}) => {
+  const character = params.character;
+  if (!data || !character) {
+    return {
+      title: "TekkenDocs - Uknown character",
+      description: `There is no character with the ID of ${params.character}.`,
+    };
+  }
+
+  const characterTitle = character[0].toUpperCase() + character.substring(1)
+
+  return {
+    title: `${characterTitle} T7 Frame Data | TekkenDocs`,
+    description: `Frame data for ${characterTitle} in Tekken 7`,
+  };
+};
+
 
 export default function Index() {
   const { rows, characterName } = useLoaderData<typeof loader>() as unknown as { rows: any[][], characterName: string };

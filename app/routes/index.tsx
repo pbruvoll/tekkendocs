@@ -27,7 +27,9 @@ export default function Index() {
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
       <h1>Welcome to TekkenDocs</h1>
       <div>This site is under construction</div>
-      <h2>Characters</h2>
+      <h2>Tekken 8</h2>
+      <p>Coming later...</p>
+      <h2>Tekken 7</h2>
       <ul>
         <li><Link to="/nina">Nina</Link></li>
       </ul>
