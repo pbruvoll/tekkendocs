@@ -31,6 +31,8 @@ export default function Index() {
       <p>Coming later...</p>
       <h2>Tekken 7</h2>
       <ul>
+        <li><Link to="/bryan">Bryan</Link></li>
+        <li><Link to="/feng">Feng</Link></li>
         <li><Link to="/nina">Nina</Link></li>
       </ul>
     </div>
