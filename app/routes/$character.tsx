@@ -51,6 +51,7 @@ export const meta: MetaFunction = ({
   return {
     title: `${characterTitle} T7 Frame Data | TekkenDocs`,
     description: `Frame data for ${characterTitle} in Tekken 7`,
+    "og:image": `/t7/avatars/${characterTitle}.jpg`,
   };
 };
 
