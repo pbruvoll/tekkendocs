@@ -12,6 +12,10 @@ export const links = () => [
   { rel: "stylesheet", href: stylesUrl },
 ];
 
+export const headers = () => ({
+  "Cache-Control": "s-maxage=60",
+});
+
 export const meta = () => ({
   title: "TekkenDocs | Frame data for Tekken",
   description: "Frame data and usefull resources for Tekken"

@@ -28,11 +28,20 @@ export const loader = async ({ params }: DataFunctionArgs) => {
     const rows = response.data.values;
     response
 
-    return json({ characterName: character, rows });
+    return json({ characterName: character, rows }, {
+      headers: {
+        "Cache-Control": "s-maxage=60",
+      }
+    });
+
   } catch {
   }
   throw new Response(null, { status: 500, statusText: "server error" })
 }
+
+export const headers = () => ({
+  "Cache-Control": "s-maxage=60",
+});
 
 export const meta: MetaFunction = ({
   data,
