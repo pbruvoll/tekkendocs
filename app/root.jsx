@@ -13,7 +13,7 @@ export const links = () => [
 ];
 
 export const headers = () => ({
-  "Cache-Control": "s-maxage=60",
+  "Cache-Control": "public, max-age=10 s-maxage=60",
 });
 
 export const meta = () => ({
