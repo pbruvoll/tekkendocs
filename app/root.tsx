@@ -5,6 +5,7 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  V2_MetaFunction,
 } from "@remix-run/react";
 import stylesUrl from "~/global.css";
 
@@ -16,10 +17,12 @@ export const headers = () => ({
   "Cache-Control": "public, max-age=10, s-maxage=60",
 });
 
-export const meta = () => ({
+export const meta: V2_MetaFunction = () => [{
   title: "TekkenDocs | Frame data for Tekken",
+},
+{
   description: "Frame data and usefull resources for Tekken"
-});
+}];
 
 export default function App() {
   return (

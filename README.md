@@ -1,21 +1,16 @@
-# Remix on Render
-
-This is an example of a simple Remix app that you can deploy to Render. The code was generated using `npx create-remix@latest`. Follow the [Quickstart instructions](https://render.com/docs/deploy-remix#just-the-basics) to deploy it to Render.
-
-------------
-*Below here are the contents of the original Remix starter template.*
+# Welcome to Remix!
 
 - [Remix Docs](https://remix.run/docs)
 
 ## Development
 
-From your terminal:
+Start the Remix development asset server and the Express server by running:
 
 ```sh
 npm run dev
 ```
 
-This starts your app in development mode, rebuilding assets on file changes.
+This starts your app in development mode, which will purge the server require cache when Remix rebuilds assets so you don't need a process manager restarting the express server.
 
 ## Deployment
 
@@ -35,16 +30,19 @@ Now you'll need to pick a host to deploy it to.
 
 ### DIY
 
-If you're familiar with deploying node applications, the built-in Remix app server is production-ready.
-
-Make sure to deploy the output of `remix build`
+If you're familiar with deploying express applications you should be right at home just make sure to deploy the output of `remix build`
 
 - `build/`
 - `public/build/`
 
 ### Using a Template
 
-When you ran `npx create-remix@latest` there were a few choices for hosting. You can run that again to create a new project, then copy over your `app/` folder to the new project that's pre-configured for your target server.
+When you ran `npx create-remix@latest` there were a few choices for hosting. You can run that again to create a new project, then copy over relevant code/assets from your current app to the new project that's pre-configured for your target server.
+
+Most importantly, this means everything in the `app/` directory, but if you've further customized your current application outside of there it may also include:
+
+- Any assets you've added/updated in `public/`
+- Any updated versions of root files such as `.eslintrc.js`, etc.
 
 ```sh
 cd ..

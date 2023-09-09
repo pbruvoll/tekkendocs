@@ -1,5 +1,5 @@
 import { DataFunctionArgs, MetaFunction, json } from "@remix-run/node";
-import { useLoaderData, useParams } from "@remix-run/react";
+import { V2_MetaFunction, useLoaderData, useParams } from "@remix-run/react";
 import { google } from "~/google.server";
 
 export const loader = async ({ params }: DataFunctionArgs) => {
@@ -43,25 +43,26 @@ export const headers = () => ({
   "Cache-Control": "public, max-age=10, s-maxage=60",
 });
 
-export const meta: MetaFunction = ({
+export const meta: V2_MetaFunction = ({
   data,
   params,
 }) => {
   const character = params.character;
   if (!data || !character) {
-    return {
-      title: "TekkenDocs - Uknown character",
-      description: `There is no character with the ID of ${params.character}.`,
-    };
+    return [{
+      title: "TekkenDocs - Uknown character"
+    },
+    { description: `There is no character with the ID of ${params.character}.` },
+    ];
   }
 
   const characterTitle = character[0].toUpperCase() + character.substring(1)
 
-  return {
-    title: `${characterTitle} T7 Frame Data | TekkenDocs`,
-    description: `Frame data for ${characterTitle} in Tekken 7`,
-    "og:image": `/t7/avatars/${characterTitle}.jpg`,
-  };
+  return [
+    { title: `${characterTitle} T7 Frame Data | TekkenDocs` },
+    { description: `Frame data for ${characterTitle} in Tekken 7` },
+    { "og:image": `/t7/avatars/${characterTitle}.jpg` },
+  ];
 };
 
 
