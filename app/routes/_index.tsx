@@ -3,7 +3,6 @@ import { Link, useLoaderData } from "@remix-run/react";
 import { google } from "~/google.server";
 
 export const loader: LoaderFunction = async () => {
-
   // const target = ['https://www.googleapis.com/auth/spreadsheets.readonly'];
   // const jwt = new google.auth.JWT({
   //   email: process.env.GOOGLE_SHEETS_CLIENT_EMAIL,
@@ -19,8 +18,44 @@ export const loader: LoaderFunction = async () => {
 
   //const rows = response.data.values;
 
-  return json({})
-}
+  return json({});
+};
+
+const chars = [
+  "Akuma",
+  "Alisa",
+  "Anna",
+  "Armor-King",
+  "Asuka",
+  "Bob",
+  "Bryan",
+  "Claudio",
+  "Devil-Jin",
+  "Dragunov",
+  "Eddy",
+  "Eliza",
+  "Fahkumram",
+  "Feng",
+  "Ganryu",
+  "Geese",
+  "Gigas",
+  "Heihachi",
+  "Hwoarang",
+  "Jack-7",
+  "Jin",
+  "Josie",
+  "Julia",
+  "Katarina",
+  "Kazumi",
+  "Kazuya",
+  "King",
+  "Kuma",
+  "Kunimitsu",
+  "Lars",
+  "Law",
+  "Lee",
+  "Lei",
+];
 
 export const headers = () => ({
   "Cache-Control": "public, max-age=10, s-maxage=60",
@@ -35,9 +70,11 @@ export default function Index() {
       <p>Coming later...</p>
       <h2>Tekken 7</h2>
       <ul>
-        <li><Link to="/bryan">Bryan</Link></li>
-        <li><Link to="/feng">Feng</Link></li>
-        <li><Link to="/nina">Nina</Link></li>
+        {chars.map((char) => (
+          <li key={char}>
+            <Link to={"/" + char}>{char}</Link>
+          </li>
+        ))}
       </ul>
     </div>
   );
