@@ -55,6 +55,23 @@ const chars = [
   "Law",
   "Lee",
   "Lei",
+  "Leo",
+  "Leroy",
+  "Lidia",
+  "Lili",
+  "Lucky-Chloe",
+  "Marduk",
+  "Master-Raven",
+  "Miguel",
+  "Negan",
+  "Nina",
+  "Noctis,",
+  "Paul",
+  "Shaheen",
+  "Steve",
+  "Xiaoyu",
+  "Yoshimitsu",
+  "Zafina",
 ];
 
 export const headers = () => ({
