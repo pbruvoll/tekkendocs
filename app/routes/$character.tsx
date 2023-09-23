@@ -1,5 +1,7 @@
-import { DataFunctionArgs, MetaFunction, json } from "@remix-run/node";
-import { V2_MetaFunction, useLoaderData, useParams } from "@remix-run/react";
+import type { DataFunctionArgs } from "@remix-run/node";
+import { json } from "@remix-run/node";
+import type { V2_MetaFunction } from "@remix-run/react";
+import { Form, useLoaderData, useSearchParams } from "@remix-run/react";
 import { google } from "~/google.server";
 
 export const loader = async ({ params }: DataFunctionArgs) => {
@@ -11,14 +13,14 @@ export const loader = async ({ params }: DataFunctionArgs) => {
     });
   }
 
-  const target = ['https://www.googleapis.com/auth/spreadsheets.readonly'];
+  const target = ["https://www.googleapis.com/auth/spreadsheets.readonly"];
   const jwt = new google.auth.JWT({
     email: process.env.GOOGLE_SHEETS_CLIENT_EMAIL,
     scopes: target,
-    key: (process.env.GOOGLE_SHEETS_PRIVATE_KEY || '').replace(/\\n/g, '\n'),
+    key: (process.env.GOOGLE_SHEETS_PRIVATE_KEY || "").replace(/\\n/g, "\n"),
   });
 
-  const sheets = google.sheets({ version: 'v4', auth: jwt });
+  const sheets = google.sheets({ version: "v4", auth: jwt });
   try {
     const response = await sheets.spreadsheets.values.get({
       spreadsheetId: "1p-QCqB_Tb1GNX0KaicHr0tZwKa1taK5XeNvMr1N3D64",
@@ -26,37 +28,37 @@ export const loader = async ({ params }: DataFunctionArgs) => {
     });
 
     const rows = response.data.values;
-    response
 
-    return json({ characterName: character, rows }, {
-      headers: {
-        "Cache-Control": "public, max-age=10, s-maxage=60",
+    return json(
+      { characterName: character, rows },
+      {
+        headers: {
+          "Cache-Control": "public, max-age=10, s-maxage=60",
+        },
       }
-    });
-
-  } catch {
-  }
-  throw new Response(null, { status: 500, statusText: "server error" })
-}
+    );
+  } catch {}
+  throw new Response(null, { status: 500, statusText: "server error" });
+};
 
 export const headers = () => ({
   "Cache-Control": "public, max-age=10, s-maxage=60",
 });
 
-export const meta: V2_MetaFunction = ({
-  data,
-  params,
-}) => {
+export const meta: V2_MetaFunction = ({ data, params }) => {
   const character = params.character;
   if (!data || !character) {
-    return [{
-      title: "TekkenDocs - Uknown character"
-    },
-    { description: `There is no character with the ID of ${params.character}.` },
+    return [
+      {
+        title: "TekkenDocs - Uknown character",
+      },
+      {
+        description: `There is no character with the ID of ${params.character}.`,
+      },
     ];
   }
 
-  const characterTitle = character[0].toUpperCase() + character.substring(1)
+  const characterTitle = character[0].toUpperCase() + character.substring(1);
 
   return [
     { title: `${characterTitle} T7 Frame Data | TekkenDocs` },
@@ -65,27 +67,42 @@ export const meta: V2_MetaFunction = ({
   ];
 };
 
-
 export default function Index() {
-  const { rows, characterName } = useLoaderData<typeof loader>() as unknown as { rows: any[][], characterName: string };
+  const { rows, characterName } = useLoaderData<typeof loader>() as unknown as {
+    rows: any[][];
+    characterName: string;
+  };
+  const [params] = useSearchParams();
+  const startPage = Number(params.get("startPage"));
   if (rows[0][0] !== "#framesnormal" || rows.length < 3) {
-    return <div>Invalid or no data</div>
+    return <div>Invalid or no data</div>;
   }
   const headers = rows[1];
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
+      <Form method="get">
+        <input hidden name="startPage" value={startPage + 1} />
+        <input hidden name="itemsPerPage" value={itemsPerPage} />
+        <button type="submit">Next page</button>
+      </Form>
       <h1 style={{ textTransform: "capitalize" }}>{characterName}</h1>
       <table style={{ width: "100%" }} className="styled-table">
         <thead>
           <tr>
-            {headers.map(h => <th key={h}>{h}</th>)}
+            {headers.map((h) => (
+              <th key={h}>{h}</th>
+            ))}
           </tr>
         </thead>
         <tbody>
           {rows.slice(2).map((row, i) => {
-            return <tr key={row[0]}>
-              {headers.map((_, j) => (<td key={headers[j]}>{rows[2 + i][j]}</td>))}
-            </tr>
+            return (
+              <tr key={row[0]}>
+                {headers.map((_, j) => (
+                  <td key={headers[j]}>{rows[2 + i][j]}</td>
+                ))}
+              </tr>
+            );
           })}
         </tbody>
       </table>
