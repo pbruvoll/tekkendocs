@@ -1,7 +1,7 @@
 import type { DataFunctionArgs } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import type { V2_MetaFunction } from "@remix-run/react";
-import { Form, useLoaderData, useSearchParams } from "@remix-run/react";
+import { useLoaderData } from "@remix-run/react";
 import { google } from "~/google.server";
 
 export const loader = async ({ params }: DataFunctionArgs) => {
@@ -72,19 +72,12 @@ export default function Index() {
     rows: any[][];
     characterName: string;
   };
-  const [params] = useSearchParams();
-  const startPage = Number(params.get("startPage"));
   if (rows[0][0] !== "#framesnormal" || rows.length < 3) {
     return <div>Invalid or no data</div>;
   }
   const headers = rows[1];
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
-      <Form method="get">
-        <input hidden name="startPage" value={startPage + 1} />
-        <input hidden name="itemsPerPage" value={itemsPerPage} />
-        <button type="submit">Next page</button>
-      </Form>
       <h1 style={{ textTransform: "capitalize" }}>{characterName}</h1>
       <table style={{ width: "100%" }} className="styled-table">
         <thead>
