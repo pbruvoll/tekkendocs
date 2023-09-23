@@ -2,9 +2,6 @@ import gspread
 import argparse
 import os
 
-gc = gspread.oauth()
-sh = gc.open_by_url('https://docs.google.com/spreadsheets/d/1p-QCqB_Tb1GNX0KaicHr0tZwKa1taK5XeNvMr1N3D64')
-
 csvSep = ";"
 
 frameTypes = [
@@ -23,7 +20,7 @@ def csvToArray(csvContent):
 
     
 #input is a folder for a character which may contain multiple csv files (special moves, throws etc).
-def convert(path, gameId):
+def convert(path, gSheet):
     print("Converting " + path)
     worksheetData = [];
     filePaths = []
@@ -50,13 +47,14 @@ def convert(path, gameId):
     
     worksheetName = os.path.basename(path).lower();
 
+    # remove old worksheet if it does exists
     try : 
-      ws = sh.worksheet(worksheetName);
-      sh.del_worksheet(ws);
+      ws = gSheet.worksheet(worksheetName);
+      gSheet.del_worksheet(ws);
     except :
       pass; 
 
-    ws = sh.add_worksheet(title=worksheetName, rows=1, cols=1)
+    ws = gSheet.add_worksheet(title=worksheetName, rows=1, cols=1)
     ws.append_rows(worksheetData);
     
     
@@ -67,18 +65,22 @@ parser.add_argument("-I", "--inputDir", required=True, help="Directory to look f
 parser.add_argument("-G", "--gameId", help="Identifier for the game, e.g TFR3 for tekken 7 fated retribution season 3")
 args = parser.parse_args()
 
-inputDir = args.inputDir
-inputDir = "C:/projects/rbnTekkenFrameData/frameData/T7/csv"
+inputDir = args.inpuutDir # e.g. "C:/projects/rbnTekkenFrameData/frameData/T7/csv"
+
+
+# not currently in use. Can be used when we support both T7 and T8
 gameId = "T7"
-    
 if args.gameId :
     gameId = args.gameId
+
+gc = gspread.oauth()
+gSheet = gc.open_by_url('https://docs.google.com/spreadsheets/d/1p-QCqB_Tb1GNX0KaicHr0tZwKa1taK5XeNvMr1N3D64')
 
 
 folders = []
 for folder in os.listdir(inputDir) :
     folderPath = os.path.join(inputDir, folder) # folderPath will be folder of one char, e.g. "c:\Anna"
     if(os.path.isdir(folderPath)):
-      convert(folderPath, gameId);
+      convert(folderPath, gSheet);
 
 
