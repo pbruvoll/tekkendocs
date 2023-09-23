@@ -22,6 +22,10 @@ def csvToArray(csvContent):
 #input is a folder for a character which may contain multiple csv files (special moves, throws etc).
 def convert(path, gSheet):
     print("Converting " + path)
+    worksheetName = os.path.basename(path).lower();
+    worksheet = gSheet.worksheet(worksheetName)
+    print(worksheet.get_values())
+    return
     worksheetData = [];
     filePaths = []
     for frameFile in os.listdir(path) :
@@ -58,14 +62,14 @@ def convert(path, gSheet):
     ws.append_rows(worksheetData);
     
     
-#inputDir is expected to contain one folder per character with multiple files (one for special moves, one for throws etc)
+#outputDir is expected to contain one folder per character with multiple files (one for special moves, one for throws etc)
 # initiate the parser
 parser = argparse.ArgumentParser(description = 'This is a program to convert frames in custom csv format to html.')
-parser.add_argument("-I", "--inputDir", required=True, help="Directory to look for files to convert")
+parser.add_argument("-O", "--outputDir", required=True, help="Directory to store converted files")
 parser.add_argument("-G", "--gameId", help="Identifier for the game, e.g TFR3 for tekken 7 fated retribution season 3")
 args = parser.parse_args()
 
-inputDir = args.inputDir # e.g. "C:/projects/rbnTekkenFrameData/frameData/T7/csv"
+outputDir = args.outputDir # e.g. "C:/projects/rbnTekkenFrameData/frameData/T7/csv"
 
 
 # not currently in use. Can be used when we support both T7 and T8
@@ -73,14 +77,19 @@ gameId = "T7"
 if args.gameId :
     gameId = args.gameId
 
+print("trying auth")
 gc = gspread.oauth()
+print("got auth")
 gSheet = gc.open_by_url('https://docs.google.com/spreadsheets/d/1p-QCqB_Tb1GNX0KaicHr0tZwKa1taK5XeNvMr1N3D64')
 
 
+# currently we loop throug all folders and expect to find a worksheet with similar name. It would probalby
+# be better to loop through the worksheets and create folders instead
 folders = []
-for folder in os.listdir(inputDir) :
-    folderPath = os.path.join(inputDir, folder) # folderPath will be folder of one char, e.g. "c:\Anna"
+for folder in os.listdir(outputDir) :
+    folderPath = os.path.join(outputDir, folder) # folderPath will be folder of one char, e.g. "c:\frameData\T7\csv\Anna"
     if(os.path.isdir(folderPath)):
-      convert(folderPath, gSheet);
+      convert(folderPath, gSheet)
+      break
 
 
