@@ -1,13 +1,14 @@
 import gspread
 import argparse
 import os
+import time
 
 csvSep = ";"
 
 frameTypes = [
-    ("special", "Special moves", "#framesnormal"),
-    ("throws", "Throws", "#framethrows"),
-    ("tenhit", "10-hit", "#frametenhit"),
+    ("special", "Special moves", "#frames_normal"),
+    ("throws", "Throws", "#frames_throws"),
+    ("tenhit", "10-hit", "#frames_tenhit"),
 ]
 
 def csvToArray(csvContent):
@@ -78,9 +79,14 @@ gSheet = gc.open_by_url('https://docs.google.com/spreadsheets/d/1p-QCqB_Tb1GNX0K
 
 
 folders = []
+charNum = 0
+charNumOffset = 0 # used to start from a offset if last upload did not complete
 for folder in os.listdir(inputDir) :
+    charNum = charNum +1
+    if charNum < charNumOffset :
+        continue
+
     folderPath = os.path.join(inputDir, folder) # folderPath will be folder of one char, e.g. "c:\Anna"
     if(os.path.isdir(folderPath)):
       convert(folderPath, gSheet);
-
 

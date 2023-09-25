@@ -72,7 +72,7 @@ export default function Index() {
     rows: any[][];
     characterName: string;
   };
-  if (rows[0][0] !== "#framesnormal" || rows.length < 3) {
+  if (rows[0][0] !== "#frames_normal" || rows.length < 3) {
     return <div>Invalid or no data</div>;
   }
   const headers = rows[1];

@@ -5,10 +5,16 @@ import os
 csvSep = ";"
 
 frameTypes = [
-    ("special", "Special moves", "#framesnormal"),
-    ("throws", "Throws", "#framethrows"),
-    ("tenhit", "10-hit", "#frametenhit"),
+    ("special", "Special moves", "#frames_normal"),
+    ("throws", "Throws", "#frames_throws"),
+    ("tenhit", "10-hit", "#frames_tenhit"),
 ]
+
+frameTypeToFilename = {
+    "#frames_normal": "special",
+    "#frames_throws": "throws",
+    "#frames_tenhit": "#frametenhit"
+}
 
 def csvToArray(csvContent):
     result = [];
@@ -17,14 +23,32 @@ def csvToArray(csvContent):
         result.append(line.split(csvSep));
     return result
     
-
+def writeFile(dirname, filename, data) :
+  with open(os.path.join(dirname, filename), "w") as file:
+    for row in data:
+        file.write(csvSep.join(row) + "\n")  # Add a     
     
 #input is a folder for a character which may contain multiple csv files (special moves, throws etc).
 def convert(path, gSheet):
     print("Converting " + path)
     worksheetName = os.path.basename(path).lower();
     worksheet = gSheet.worksheet(worksheetName)
-    print(worksheet.get_values())
+    wsData = worksheet.get_values();
+    currentFilename = ""
+    currentData = []
+    for wsRow in wsData :
+        if(len(wsRow) == 0 or wsRow[0].startswith("#")) :
+            if(currentFilename) : 
+                writeFile(path, currentFilename, currentData)
+        if(len(wsRow) == 0) :
+            continue
+        if(wsRow[0].startswith("#")) :
+            currentFilename = worksheetName + "-special.csv"
+        else :
+            currentData.append(wsRow)
+    
+    writeFile(path, currentFilename, currentData)
+
     return
     worksheetData = [];
     filePaths = []
