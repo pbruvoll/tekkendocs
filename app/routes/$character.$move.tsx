@@ -52,7 +52,7 @@ export const loader = async ({ params }: DataFunctionArgs) => {
       statusText: "Not found 2",
     });
   }
-  const headers = rows[1];
+  const dataHeaders = rows[1];
   const moveRow = rows.find((row) => commandToUrlSegment(row[0]) === move);
   if (!moveRow) {
     throw json("move not found in frame data", {
@@ -62,7 +62,7 @@ export const loader = async ({ params }: DataFunctionArgs) => {
   }
 
   return json(
-    { characterName: character, headers, moveRow },
+    { characterName: character, dataHeaders, moveRow },
     {
       headers: {
         "Cache-Control": "public, max-age=10, s-maxage=60",
@@ -89,40 +89,48 @@ export const meta: V2_MetaFunction = ({ data, params }) => {
     ];
   }
 
-  const { headers, moveRow }: { headers: string[]; moveRow: string[] } = data;
+  const { dataHeaders, moveRow }: { dataHeaders: string[]; moveRow: string[] } =
+    data;
 
   const characterTitle = character[0].toUpperCase() + character.substring(1);
 
+  const title = `${move} - ${characterTitle} T7 Frame Data | TekkenDocs`;
+  const description = dataHeaders
+    .map((header, index) => `${header}:   ${moveRow[index]}`)
+    .join("\n");
+
   return [
-    { title: `${move} - ${characterTitle} T7 Frame Data | TekkenDocs` },
-    {
-      description: headers
-        .map((header, index) => `${header}:   ${moveRow[index]}`)
-        .join("\n"),
-    },
+    { title },
+    { description },
+    { "og:title": title },
+    { "og:description": description },
     { "og:image": `/t7/avatars/${characterTitle}.jpg` },
   ];
 };
 
 export default function Move() {
-  const { headers, moveRow, characterName } = useLoaderData<
-    typeof loader
-  >() as unknown as {
-    headers: string[];
+  const {
+    dataHeaders: headers,
+    moveRow,
+    characterName,
+  } = useLoaderData<typeof loader>() as unknown as {
+    dataHeaders: string[];
     moveRow: string[];
     characterName: string;
   };
 
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
-      <h1 style={{ textTransform: "capitalize" }}>{characterName}</h1>
+      <h1 style={{ textTransform: "capitalize" }}>
+        {characterName} : {moveRow[0]}
+      </h1>
       <table style={{ width: "100%" }} className="styled-table">
         <tbody>
-          {headers.map((header, i) => {
+          {headers.slice(1).map((header, i) => {
             return (
               <tr key={header}>
                 <td>{header}</td>
-                <td>{moveRow[i] || ""}</td>
+                <td>{moveRow[i + 1] || ""}</td>
               </tr>
             );
           })}

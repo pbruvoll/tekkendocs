@@ -59,10 +59,14 @@ export const meta: V2_MetaFunction = ({ data, params }) => {
   }
 
   const characterTitle = character[0].toUpperCase() + character.substring(1);
+  const title = `${characterTitle} T7 Frame Data | TekkenDocs`;
+  const description = `Frame data for ${characterTitle} in Tekken 7`;
 
   return [
-    { title: `${characterTitle} T7 Frame Data | TekkenDocs` },
-    { description: `Frame data for ${characterTitle} in Tekken 7` },
+    { title },
+    { description },
+    { "og:title": title },
+    { "og:description": description },
     { "og:image": `/t7/avatars/${characterTitle}.jpg` },
   ];
 };
