@@ -96,7 +96,7 @@ export const meta: V2_MetaFunction = ({ data, params }) => {
 
   const title = `${move} - ${characterTitle} T7 Frame Data | TekkenDocs`;
   const description = dataHeaders
-    .map((header, index) => `${header}:   ${moveRow[index]}`)
+    .map((header, index) => `${header}:   ${moveRow[index] || ""}`)
     .join("\n");
 
   return [
