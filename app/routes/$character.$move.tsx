@@ -102,9 +102,10 @@ export const meta: V2_MetaFunction = ({ data, params }) => {
   return [
     { title },
     { description },
-    { "og:title": title },
-    { "og:description": description },
-    { "og:image": `/t7/avatars/${characterTitle}.jpg` },
+    { property: "og:title", content: title },
+    { property: "description", content: description },
+    { property: "og:description", content: description },
+    { property: "og:image", content: `/t7/avatars/${characterTitle}.jpg` },
   ];
 };
 
