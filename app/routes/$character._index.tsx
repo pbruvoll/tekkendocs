@@ -20,7 +20,7 @@ export const loader = async ({ params }: DataFunctionArgs) => {
   const key = `${character}|_|${game}`;
   const rows = await cachified({
     key,
-    ttl: 1000 * 10,
+    ttl: 1000 * 30,
     staleWhileRevalidate: 1000 * 60 * 60 * 24,
     async getFreshValue() {
       console.info(`  - MISS ${key}`);
