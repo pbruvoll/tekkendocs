@@ -1,0 +1,1 @@
+export type Game = 'T7' | 'TT2';

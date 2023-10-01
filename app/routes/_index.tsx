@@ -1,6 +1,6 @@
-import { LoaderFunction, json } from "@remix-run/node";
-import { Link, useLoaderData } from "@remix-run/react";
-import { google } from "~/google.server";
+import type { LoaderFunction } from "@remix-run/node";
+import { json } from "@remix-run/node";
+import { Link } from "@remix-run/react";
 
 export const loader: LoaderFunction = async () => {
   // const target = ['https://www.googleapis.com/auth/spreadsheets.readonly'];
@@ -18,7 +18,14 @@ export const loader: LoaderFunction = async () => {
 
   //const rows = response.data.values;
 
-  return json({});
+  return json(
+    {},
+    {
+      headers: {
+        "Cache-Control": "public, max-age=1000, s-maxage=60",
+      },
+    }
+  );
 };
 
 const chars = [

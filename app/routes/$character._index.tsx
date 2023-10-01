@@ -2,7 +2,9 @@ import type { DataFunctionArgs } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import type { V2_MetaFunction } from "@remix-run/react";
 import { useLoaderData } from "@remix-run/react";
-import { google } from "~/google.server";
+import type { Game } from "~/types/Game";
+import { cachified } from "~/utils/cache.server";
+import { getSheet } from "~/utils/dataService.server";
 
 export const loader = async ({ params }: DataFunctionArgs) => {
   const character = params.character;
@@ -13,32 +15,33 @@ export const loader = async ({ params }: DataFunctionArgs) => {
     });
   }
 
-  const target = ["https://www.googleapis.com/auth/spreadsheets.readonly"];
-  const jwt = new google.auth.JWT({
-    email: process.env.GOOGLE_SHEETS_CLIENT_EMAIL,
-    scopes: target,
-    key: (process.env.GOOGLE_SHEETS_PRIVATE_KEY || "").replace(/\\n/g, "\n"),
+  const game: Game = "T7";
+
+  const key = `${character}|_|${game}`;
+  const rows = await cachified({
+    key,
+    ttl: 1000 * 10,
+    staleWhileRevalidate: 1000 * 60 * 60 * 24,
+    async getFreshValue() {
+      console.info(`  - MISS ${key}`);
+      return getSheet(character, game);
+    },
   });
-
-  const sheets = google.sheets({ version: "v4", auth: jwt });
-  try {
-    const response = await sheets.spreadsheets.values.get({
-      spreadsheetId: "1p-QCqB_Tb1GNX0KaicHr0tZwKa1taK5XeNvMr1N3D64",
-      range: character, // sheet name
-    });
-
-    const rows = response.data.values;
-
-    return json(
-      { characterName: character, rows },
-      {
-        headers: {
-          "Cache-Control": "public, max-age=10, s-maxage=60",
-        },
-      }
+  if (!rows) {
+    throw new Response(
+      `Not able to find data for character ${character} in game ${game}`,
+      { status: 500, statusText: "server error" }
     );
-  } catch {}
-  throw new Response(null, { status: 500, statusText: "server error" });
+  }
+
+  return json(
+    { characterName: character, rows },
+    {
+      headers: {
+        "Cache-Control": "public, max-age=10, s-maxage=60",
+      },
+    }
+  );
 };
 
 export const headers = () => ({
