@@ -72,7 +72,7 @@ const chars = [
   "Miguel",
   "Negan",
   "Nina",
-  "Noctis,",
+  "Noctis",
   "Paul",
   "Shaheen",
   "Steve",

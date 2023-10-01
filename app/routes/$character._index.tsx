@@ -1,4 +1,4 @@
-import type { DataFunctionArgs } from "@remix-run/node";
+import type { DataFunctionArgs, HeadersFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import type { V2_MetaFunction } from "@remix-run/react";
 import { useLoaderData } from "@remix-run/react";
@@ -18,13 +18,14 @@ export const loader = async ({ params }: DataFunctionArgs) => {
   const game: Game = "T7";
 
   const key = `${character}|_|${game}`;
-  const rows = await cachified({
+  const { rows, freshValueContext } = await cachified({
     key,
     ttl: 1000 * 30,
     staleWhileRevalidate: 1000 * 60 * 60 * 24,
-    async getFreshValue() {
+    async getFreshValue(context) {
       console.info(`  - MISS ${key}`);
-      return getSheet(character, game);
+      const rows = await getSheet(character, game);
+      return { rows, freshValueContext: context };
     },
   });
   if (!rows) {
@@ -39,13 +40,15 @@ export const loader = async ({ params }: DataFunctionArgs) => {
     {
       headers: {
         "Cache-Control": "public, max-age=10, s-maxage=60",
+        "X-Td-Cachecontext": JSON.stringify(freshValueContext),
       },
     }
   );
 };
 
-export const headers = () => ({
+export const headers: HeadersFunction = (args) => ({
   "Cache-Control": "public, max-age=10, s-maxage=60",
+  "X-Td-Cachecontext": args.loaderHeaders.get("X-Td-Cachecontext") || "none",
 });
 
 export const meta: V2_MetaFunction = ({ data, params }) => {
