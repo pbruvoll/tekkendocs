@@ -96,7 +96,7 @@ export const chars = [
 ];
 
 export const headers = () => ({
-  "Cache-Control": "public, max-age=10, s-maxage=60",
+  "Cache-Control": "public, max-age=300, s-maxage=300",
 });
 
 export default function Index() {

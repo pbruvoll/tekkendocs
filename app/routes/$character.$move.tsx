@@ -65,14 +65,14 @@ export const loader = async ({ params }: DataFunctionArgs) => {
     { characterName: character, dataHeaders, moveRow },
     {
       headers: {
-        "Cache-Control": "public, max-age=10, s-maxage=60",
+        "Cache-Control": "public, max-age=300, s-maxage=300",
       },
     }
   );
 };
 
 export const headers = () => ({
-  "Cache-Control": "public, max-age=10, s-maxage=60",
+  "Cache-Control": "public, max-age=300, s-maxage=300",
 });
 
 export const meta: V2_MetaFunction = ({ data, params }) => {

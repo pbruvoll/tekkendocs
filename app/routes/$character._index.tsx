@@ -38,7 +38,7 @@ export const loader = async ({ params }: DataFunctionArgs) => {
     { characterName: character, rows },
     {
       headers: {
-        "Cache-Control": "public, max-age=10, s-maxage=60",
+        "Cache-Control": "public, max-age=300, s-maxage=300",
         "X-Td-Cachecontext": JSON.stringify(freshValueContext),
       },
     }
@@ -46,7 +46,7 @@ export const loader = async ({ params }: DataFunctionArgs) => {
 };
 
 export const headers: HeadersFunction = (args) => ({
-  "Cache-Control": "public, max-age=10, s-maxage=60",
+  "Cache-Control": "public, max-age=300, s-maxage=300",
   "X-Td-Cachecontext": args.loaderHeaders.get("X-Td-Cachecontext") || "none",
 });
 
