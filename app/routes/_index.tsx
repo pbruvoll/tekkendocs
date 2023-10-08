@@ -1,4 +1,4 @@
-import type { LoaderFunction } from "@remix-run/node";
+import type { LoaderFunction, V2_MetaFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import { Link } from "@remix-run/react";
 
@@ -22,13 +22,27 @@ export const loader: LoaderFunction = async () => {
     {},
     {
       headers: {
-        "Cache-Control": "public, max-age=1000, s-maxage=60",
+        "Cache-Control": "public, max-age=300, s-maxage=300",
       },
     }
   );
 };
 
-const chars = [
+export const meta: V2_MetaFunction = () => {
+  return [
+    { title: "TekkenDocs - Frame data and resources for Tekken" },
+    {
+      property: "og:title",
+      content: "TekkenDocs - Frame data and resources for Tekken",
+    },
+    {
+      name: "description",
+      content: "Frame data and resources for leveling up your skills in Tekken",
+    },
+  ];
+};
+
+export const chars = [
   "Akuma",
   "Alisa",
   "Anna",

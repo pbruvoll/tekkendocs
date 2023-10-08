@@ -1,7 +1,7 @@
 export const loader = () => {
   const robotText = `  
       User-agent: *
-      Disallow: /
+      Allow: /
       `
   return new Response(robotText, {
     status: 200,

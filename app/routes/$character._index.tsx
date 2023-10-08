@@ -21,9 +21,8 @@ export const loader = async ({ params }: DataFunctionArgs) => {
   const { rows, freshValueContext } = await cachified({
     key,
     ttl: 1000 * 30,
-    staleWhileRevalidate: 1000 * 60 * 60 * 24,
+    staleWhileRevalidate: 1000 * 60 * 60 * 24 * 3,
     async getFreshValue(context) {
-      console.info(`  - MISS ${key}`);
       const rows = await getSheet(character, game);
       return { rows, freshValueContext: context };
     },
@@ -65,7 +64,7 @@ export const meta: V2_MetaFunction = ({ data, params }) => {
   }
 
   const characterTitle = character[0].toUpperCase() + character.substring(1);
-  const title = `${characterTitle} T7 Frame Data | TekkenDocs`;
+  const title = `${characterTitle} Tekken 7 Frame Data | TekkenDocs`;
   const description = `Frame data for ${characterTitle} in Tekken 7`;
 
   return [

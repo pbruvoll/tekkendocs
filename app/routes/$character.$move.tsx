@@ -94,7 +94,7 @@ export const meta: V2_MetaFunction = ({ data, params }) => {
 
   const characterTitle = character[0].toUpperCase() + character.substring(1);
 
-  const title = `${move} - ${characterTitle} T7 Frame Data | TekkenDocs`;
+  const title = `${move} - ${characterTitle} Tekken7 Frame Data | TekkenDocs`;
   const description = dataHeaders
     .map((header, index) => `${header}:   ${moveRow[index] || ""}`)
     .join("\n");
@@ -105,6 +105,7 @@ export const meta: V2_MetaFunction = ({ data, params }) => {
     { property: "og:title", content: title },
     { property: "description", content: description },
     { property: "og:description", content: description },
+    { property: "og:image", content: `/t7/avatars/${characterTitle}.jpg` },
   ];
 };
 
