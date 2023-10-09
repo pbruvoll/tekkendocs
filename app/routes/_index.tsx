@@ -1,4 +1,4 @@
-import type { LoaderFunction, V2_MetaFunction } from "@remix-run/node";
+import type { LoaderFunction, MetaFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import { Link } from "@remix-run/react";
 
@@ -28,7 +28,7 @@ export const loader: LoaderFunction = async () => {
   );
 };
 
-export const meta: V2_MetaFunction = () => {
+export const meta: MetaFunction = () => {
   return [
     { title: "TekkenDocs - Frame data and resources for Tekken" },
     {

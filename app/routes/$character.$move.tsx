@@ -1,6 +1,6 @@
 import type { DataFunctionArgs } from "@remix-run/node";
 import { json } from "@remix-run/node";
-import type { V2_MetaFunction } from "@remix-run/react";
+import type { MetaFunction } from "@remix-run/react";
 import { useLoaderData } from "@remix-run/react";
 import { google } from "~/google.server";
 import { commandToUrlSegment } from "~/utils/moveUtils";
@@ -75,7 +75,7 @@ export const headers = () => ({
   "Cache-Control": "public, max-age=300, s-maxage=300",
 });
 
-export const meta: V2_MetaFunction = ({ data, params }) => {
+export const meta: MetaFunction<typeof loader> = ({ data, params }) => {
   const character = params.character;
   const move = params.move;
   if (!data || !character) {

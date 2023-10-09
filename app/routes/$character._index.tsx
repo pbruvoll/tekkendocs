@@ -1,6 +1,6 @@
 import type { DataFunctionArgs, HeadersFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
-import type { V2_MetaFunction } from "@remix-run/react";
+import type { MetaFunction } from "@remix-run/react";
 import { Link, useLoaderData } from "@remix-run/react";
 import type { Game } from "~/types/Game";
 import { cachified } from "~/utils/cache.server";
@@ -51,7 +51,7 @@ export const headers: HeadersFunction = (args) => ({
   "X-Td-Cachecontext": args.loaderHeaders.get("X-Td-Cachecontext") || "none",
 });
 
-export const meta: V2_MetaFunction = ({ data, params }) => {
+export const meta: MetaFunction = ({ data, params }) => {
   const character = params.character;
   if (!data || !character) {
     return [

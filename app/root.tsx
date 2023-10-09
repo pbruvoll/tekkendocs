@@ -1,4 +1,4 @@
-import type { V2_MetaFunction } from "@remix-run/react";
+import type { MetaFunction } from "@remix-run/react";
 import {
   Links,
   LiveReload,
@@ -15,7 +15,7 @@ export const headers = () => ({
   "Cache-Control": "public, max-age=10, s-maxage=60",
 });
 
-export const meta: V2_MetaFunction = () => [
+export const meta: MetaFunction = () => [
   {
     title: "TekkenDocs | Frame data for Tekken",
   },
