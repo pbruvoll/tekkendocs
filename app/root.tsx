@@ -1,3 +1,4 @@
+import type { V2_MetaFunction } from "@remix-run/react";
 import {
   Links,
   LiveReload,
@@ -5,7 +6,6 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
-  V2_MetaFunction,
 } from "@remix-run/react";
 import stylesUrl from "~/global.css";
 
