@@ -29,16 +29,20 @@ export const loader: LoaderFunction = async () => {
 };
 
 export const meta: MetaFunction = () => {
+  const title = "TekkenDocs - Frame data and resources for Tekken";
+  const description =
+    "Frame data and resources for leveling up your skills in Tekken";
   return [
-    { title: "TekkenDocs - Frame data and resources for Tekken" },
+    { title },
     {
       property: "og:title",
-      content: "TekkenDocs - Frame data and resources for Tekken",
+      content: title,
     },
     {
       name: "description",
-      content: "Frame data and resources for leveling up your skills in Tekken",
+      content: description,
     },
+    { property: "og:description", content: description },
   ];
 };
 
