@@ -1,10 +1,11 @@
 import type { DataFunctionArgs, HeadersFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import type { V2_MetaFunction } from "@remix-run/react";
-import { useLoaderData } from "@remix-run/react";
+import { Link, useLoaderData } from "@remix-run/react";
 import type { Game } from "~/types/Game";
 import { cachified } from "~/utils/cache.server";
 import { getSheet } from "~/utils/dataService.server";
+import { commandToUrlSegment } from "~/utils/moveUtils";
 
 export const loader = async ({ params }: DataFunctionArgs) => {
   const character = params.character;
@@ -101,9 +102,22 @@ export default function Index() {
           {rows.slice(2).map((row, i) => {
             return (
               <tr key={row[0]}>
-                {headers.map((_, j) => (
-                  <td key={headers[j]}>{rows[2 + i][j]}</td>
-                ))}
+                {headers.map((_, j) => {
+                  if (j === 0) {
+                    //this is a command, so make it link
+                    return (
+                      <td key={headers[j]}>
+                        <Link
+                          style={{ textDecoration: "none" }}
+                          to={commandToUrlSegment(rows[2 + i][j])}
+                        >
+                          {rows[2 + i][j]}
+                        </Link>
+                      </td>
+                    );
+                  }
+                  return <td key={headers[j]}>{rows[2 + i][j]}</td>;
+                })}
               </tr>
             );
           })}
