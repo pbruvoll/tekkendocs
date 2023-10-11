@@ -105,16 +105,21 @@ export const headers = () => ({
 
 export default function Index() {
   return (
-    <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
-      <h1>Welcome to TekkenDocs</h1>
-      <div>This site is under construction</div>
-      <h2>Tekken 8</h2>
-      <p>Coming later...</p>
-      <h2>Tekken 7</h2>
+    <div
+      className="p-4"
+      style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}
+    >
+      <h1 className="text-2xl pb-2">Welcome to TekkenDocs</h1>
+      <p className="my-2">This site is under construction</p>
+      <h2 className="text-xl mb-2">Tekken 8</h2>
+      <p>Coming january 2024</p>
+      <h2 className="text-xl mt-4 mb-2">Tekken 7</h2>
       <ul>
         {chars.map((char) => (
           <li key={char}>
-            <Link to={"/" + char}>{char}</Link>
+            <Link className="py-2 text-[#ab6400]" to={"/" + char}>
+              {char}
+            </Link>
           </li>
         ))}
       </ul>

@@ -7,9 +7,14 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
+import type { LinksFunction } from "@remix-run/node"; // or cloudflare/deno
 import stylesUrl from "~/global.css";
+import styles from "./tailwind.css";
 
-export const links = () => [{ rel: "stylesheet", href: stylesUrl }];
+export const links: LinksFunction = () => [
+  { rel: "stylesheet", href: stylesUrl },
+  { rel: "stylesheet", href: styles },
+];
 
 export const headers = () => ({
   "Cache-Control": "public, max-age=10, s-maxage=60",

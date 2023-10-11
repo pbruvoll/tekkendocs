@@ -108,6 +108,7 @@ export default function Index() {
                     return (
                       <td key={headers[j]}>
                         <Link
+                          className="text-[#ab6400]"
                           style={{ textDecoration: "none" }}
                           to={commandToUrlSegment(rows[2 + i][j])}
                         >
