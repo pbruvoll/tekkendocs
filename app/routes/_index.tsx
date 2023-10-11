@@ -1,6 +1,8 @@
+import { Heading } from "@radix-ui/themes";
 import type { LoaderFunction, MetaFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import { Link } from "@remix-run/react";
+import { Link as RadixLink } from "@radix-ui/themes";
 
 export const loader: LoaderFunction = async () => {
   // const target = ['https://www.googleapis.com/auth/spreadsheets.readonly'];
@@ -109,17 +111,23 @@ export default function Index() {
       className="p-4"
       style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}
     >
-      <h1 className="text-2xl pb-2">Welcome to TekkenDocs</h1>
+      <Heading as="h1">Welcome to TekkenDocs</Heading>
       <p className="my-2">This site is under construction</p>
-      <h2 className="text-xl mb-2">Tekken 8</h2>
+      <Heading as="h2" mt="5" mb="2" size="5">
+        Tekken 8
+      </Heading>
       <p>Coming january 2024</p>
-      <h2 className="text-xl mt-4 mb-2">Tekken 7</h2>
+      <Heading as="h2" mt="5" mb="2" size="5">
+        Tekken 7
+      </Heading>
       <ul>
         {chars.map((char) => (
           <li key={char}>
-            <Link className="py-2 text-[#ab6400]" to={"/" + char}>
-              {char}
-            </Link>
+            <RadixLink asChild>
+              <Link className="py-2" to={"/" + char}>
+                {char}
+              </Link>
+            </RadixLink>
           </li>
         ))}
       </ul>

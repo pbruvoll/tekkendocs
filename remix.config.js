@@ -2,6 +2,7 @@
 export default {
   ignoredRouteFiles: ["**/.*"],
   serverModuleFormat: "esm",
+  serverDependenciesToBundle: ["@radix-ui/themes"],
   tailwind: true,
   // appDirectory: "app",
   // assetsBuildDirectory: "public/build",

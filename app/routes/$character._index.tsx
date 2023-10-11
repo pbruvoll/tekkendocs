@@ -1,3 +1,4 @@
+import { Table, Link as RadixLink, Heading } from "@radix-ui/themes";
 import type { DataFunctionArgs, HeadersFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import type { MetaFunction } from "@remix-run/react";
@@ -6,7 +7,6 @@ import type { Game } from "~/types/Game";
 import { cachified } from "~/utils/cache.server";
 import { getSheet } from "~/utils/dataService.server";
 import { commandToUrlSegment } from "~/utils/moveUtils";
-
 export const loader = async ({ params }: DataFunctionArgs) => {
   const character = params.character;
   if (!character) {
@@ -89,41 +89,47 @@ export default function Index() {
   const headers = rows[1];
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
-      <h1 style={{ textTransform: "capitalize" }}>{characterName}</h1>
-      <table style={{ width: "100%" }} className="styled-table">
-        <thead>
-          <tr>
+      <Heading as="h1" my="2" className="capitalize">
+        {characterName}
+      </Heading>
+      <Table.Root style={{ width: "100%" }}>
+        <Table.Header>
+          <Table.Row>
             {headers.map((h) => (
-              <th key={h}>{h}</th>
+              <Table.ColumnHeaderCell key={h}>{h}</Table.ColumnHeaderCell>
             ))}
-          </tr>
-        </thead>
-        <tbody>
+          </Table.Row>
+        </Table.Header>
+        <Table.Body>
           {rows.slice(2).map((row, i) => {
             return (
-              <tr key={row[0]}>
+              <Table.Row key={row[0]}>
                 {headers.map((_, j) => {
                   if (j === 0) {
                     //this is a command, so make it link
                     return (
-                      <td key={headers[j]}>
-                        <Link
-                          className="text-[#ab6400]"
-                          style={{ textDecoration: "none" }}
-                          to={commandToUrlSegment(rows[2 + i][j])}
-                        >
-                          {rows[2 + i][j]}
-                        </Link>
-                      </td>
+                      <Table.Cell key={headers[j]}>
+                        <RadixLink asChild>
+                          <Link
+                            className="text-[#ab6400]"
+                            style={{ textDecoration: "none" }}
+                            to={commandToUrlSegment(rows[2 + i][j])}
+                          >
+                            {rows[2 + i][j]}
+                          </Link>
+                        </RadixLink>
+                      </Table.Cell>
                     );
                   }
-                  return <td key={headers[j]}>{rows[2 + i][j]}</td>;
+                  return (
+                    <Table.Cell key={headers[j]}>{rows[2 + i][j]}</Table.Cell>
+                  );
                 })}
-              </tr>
+              </Table.Row>
             );
           })}
-        </tbody>
-      </table>
+        </Table.Body>
+      </Table.Root>
     </div>
   );
 }

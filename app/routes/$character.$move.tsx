@@ -1,3 +1,4 @@
+import { Heading, Table } from "@radix-ui/themes";
 import type { DataFunctionArgs } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import type { MetaFunction } from "@remix-run/react";
@@ -122,21 +123,21 @@ export default function Move() {
 
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
-      <h1 style={{ textTransform: "capitalize" }}>
+      <Heading my="2" as="h1" className="capitalize">
         {characterName} : {moveRow[0]}
-      </h1>
-      <table style={{ width: "100%" }} className="styled-table">
-        <tbody>
+      </Heading>
+      <Table.Root style={{ width: "100%" }}>
+        <Table.Body>
           {headers.slice(1).map((header, i) => {
             return (
-              <tr key={header}>
-                <td>{header}</td>
-                <td>{moveRow[i + 1] || ""}</td>
-              </tr>
+              <Table.Row key={header}>
+                <Table.Cell>{header}</Table.Cell>
+                <Table.Cell>{moveRow[i + 1] || ""}</Table.Cell>
+              </Table.Row>
             );
           })}
-        </tbody>
-      </table>
+        </Table.Body>
+      </Table.Root>
     </div>
   );
 }

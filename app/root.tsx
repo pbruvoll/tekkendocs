@@ -7,13 +7,16 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
-import type { LinksFunction } from "@remix-run/node"; // or cloudflare/deno
+import type { LinksFunction } from "@remix-run/node";
 import stylesUrl from "~/global.css";
 import styles from "./tailwind.css";
+import radixStyles from "@radix-ui/themes/styles.css";
+import { Theme } from "@radix-ui/themes";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: stylesUrl },
   { rel: "stylesheet", href: styles },
+  { rel: "stylesheet", href: radixStyles },
 ];
 
 export const headers = () => ({
@@ -39,7 +42,16 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <Outlet />
+        <Theme
+          appearance="dark"
+          accentColor="amber"
+          grayColor="gray"
+          panelBackground="solid"
+          scaling="100%"
+          radius="full"
+        >
+          <Outlet />
+        </Theme>
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
