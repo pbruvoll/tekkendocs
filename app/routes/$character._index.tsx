@@ -47,8 +47,21 @@ export const loader = async ({ params }: DataFunctionArgs) => {
     );
   }
 
+  const dict: Record<string, string[][]> = {};
+  let rows2 = rows;
+  let idIndex = rows2.findIndex((row) => row[0]?.startsWith("#"));
+  while (idIndex >= 0) {
+    const tableId = rows2[idIndex][0];
+    rows2 = rows2.slice(idIndex + 1);
+    const nextIdIndex = rows2.findIndex((row) => row[0]?.startsWith("#"));
+    const endIndex = nextIdIndex >= 0 ? nextIdIndex : rows2.length;
+    const content = rows2.slice(0, endIndex).filter((row) => Boolean(row[0]));
+    idIndex = nextIdIndex;
+    dict[tableId] = content;
+  }
+
   return json(
-    { characterName: character, rows },
+    { characterName: character, dict },
     {
       headers: {
         "Cache-Control": "public, max-age=300, s-maxage=300",
@@ -91,14 +104,12 @@ export const meta: MetaFunction = ({ data, params }) => {
 };
 
 export default function Index() {
-  const { rows, characterName } = useLoaderData<typeof loader>() as unknown as {
-    rows: any[][];
-    characterName: string;
-  };
-  if (rows[0][0] !== "#frames_normal" || rows.length < 3) {
+  const { dict, characterName } = useLoaderData<typeof loader>();
+  if (Object.keys(dict).length === 0) {
     return <div>Invalid or no data</div>;
   }
-  const headers = rows[1];
+  const headers = dict["#frames_normal"][0];
+  const rows = dict["#frames_normal"].slice(1);
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
       <Heading as="h1" my="2" className="capitalize">
@@ -113,7 +124,7 @@ export default function Index() {
           </Table.Row>
         </Table.Header>
         <Table.Body>
-          {rows.slice(2).map((row, i) => {
+          {rows.map((row, i) => {
             return (
               <Table.Row key={row[0]}>
                 {headers.map((_, j) => {
@@ -125,17 +136,15 @@ export default function Index() {
                           <Link
                             className="text-[#ab6400]"
                             style={{ textDecoration: "none" }}
-                            to={commandToUrlSegment(rows[2 + i][j])}
+                            to={commandToUrlSegment(rows[i][j])}
                           >
-                            {rows[2 + i][j]}
+                            {rows[i][j]}
                           </Link>
                         </RadixLink>
                       </Table.Cell>
                     );
                   }
-                  return (
-                    <Table.Cell key={headers[j]}>{rows[2 + i][j]}</Table.Cell>
-                  );
+                  return <Table.Cell key={headers[j]}>{rows[i][j]}</Table.Cell>;
                 })}
               </Table.Row>
             );
