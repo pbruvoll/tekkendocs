@@ -45,6 +45,7 @@ export const meta: MetaFunction = () => {
       content: description,
     },
     { property: "og:description", content: description },
+    { property: "og:image", content: "/logo-512.png" },
   ];
 };
 

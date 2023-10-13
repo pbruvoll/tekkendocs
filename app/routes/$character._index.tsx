@@ -7,6 +7,18 @@ import type { Game } from "~/types/Game";
 import { cachified } from "~/utils/cache.server";
 import { getSheet } from "~/utils/dataService.server";
 import { commandToUrlSegment } from "~/utils/moveUtils";
+
+type TableData = {
+  name: string;
+  headers: string[];
+  rows: string[][];
+};
+
+type CharFrameData = {
+  normalMoves: TableData;
+  throws: TableData;
+};
+
 export const loader = async ({ params }: DataFunctionArgs) => {
   const character = params.character;
   if (!character) {
@@ -92,7 +104,7 @@ export default function Index() {
       <Heading as="h1" my="2" className="capitalize">
         {characterName}
       </Heading>
-      <Table.Root style={{ width: "100%" }}>
+      <Table.Root variant="surface" style={{ width: "100%" }}>
         <Table.Header>
           <Table.Row>
             {headers.map((h) => (
