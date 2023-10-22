@@ -6,6 +6,6 @@ This is done from google cloud at https://console.cloud.google.com/apis/credenti
 Select the project and select "+ Create Credential".
 Select OAuth Client ID
 Select Application type = Desktop App
-After it is created, download the json file, ename it to credential.sjon and place in the folder C:\Users\<userName>\AppData\Roaming\gspread
+After it is created, download the json file, rename it to credential.json and place in the folder C:\Users\<userName>\AppData\Roaming\gspread
 
 If you at some point get error that it was not able to authenticate, remove the file authorized_user.json in the same folder as it might have expired
