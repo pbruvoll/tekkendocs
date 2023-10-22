@@ -1,0 +1,1 @@
+export type TableId = "frames_normal" | "frames_tenhit" | "frames_throws";

@@ -4,19 +4,25 @@ import { json } from "@remix-run/node";
 import type { MetaFunction } from "@remix-run/react";
 import { Link, useLoaderData } from "@remix-run/react";
 import type { Game } from "~/types/Game";
+import type { TableId } from "~/types/TableId";
 import { cachified } from "~/utils/cache.server";
 import { getSheet } from "~/utils/dataService.server";
 import { commandToUrlSegment } from "~/utils/moveUtils";
+import {
+  sheetSectionToTable,
+  sheetToSections,
+} from "~/utils/sheetUtils.server";
 
-type TableData = {
-  name: string;
-  headers: string[];
-  rows: string[][];
+const hasHeaderMap: Record<TableId, boolean> = {
+  frames_normal: true,
+  frames_throws: true,
+  frames_tenhit: false,
 };
 
-type CharFrameData = {
-  normalMoves: TableData;
-  throws: TableData;
+const tableIdToDisplayName: Record<TableId, string> = {
+  frames_normal: "Standard",
+  frames_tenhit: "10 hit",
+  frames_throws: "Throws",
 };
 
 export const loader = async ({ params }: DataFunctionArgs) => {
@@ -47,21 +53,17 @@ export const loader = async ({ params }: DataFunctionArgs) => {
     );
   }
 
-  const dict: Record<string, string[][]> = {};
-  let rows2 = rows;
-  let idIndex = rows2.findIndex((row) => row[0]?.startsWith("#"));
-  while (idIndex >= 0) {
-    const tableId = rows2[idIndex][0];
-    rows2 = rows2.slice(idIndex + 1);
-    const nextIdIndex = rows2.findIndex((row) => row[0]?.startsWith("#"));
-    const endIndex = nextIdIndex >= 0 ? nextIdIndex : rows2.length;
-    const content = rows2.slice(0, endIndex).filter((row) => Boolean(row[0]));
-    idIndex = nextIdIndex;
-    dict[tableId] = content;
-  }
+  const sheetSections = sheetToSections(rows);
+  const tables = sheetSections.map((ss) =>
+    sheetSectionToTable({
+      name: ss.sectionId,
+      sheetSection: ss,
+      hasHeader: hasHeaderMap[ss.sectionId],
+    })
+  );
 
   return json(
-    { characterName: character, dict },
+    { characterName: character, tables },
     {
       headers: {
         "Cache-Control": "public, max-age=300, s-maxage=300",
@@ -104,53 +106,60 @@ export const meta: MetaFunction = ({ data, params }) => {
 };
 
 export default function Index() {
-  const { dict, characterName } = useLoaderData<typeof loader>();
-  if (Object.keys(dict).length === 0) {
+  const { tables, characterName } = useLoaderData<typeof loader>();
+  if (tables.length === 0) {
     return <div>Invalid or no data</div>;
   }
-  const headers = dict["#frames_normal"][0];
-  const rows = dict["#frames_normal"].slice(1);
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
       <Heading as="h1" my="2" className="capitalize">
         {characterName}
       </Heading>
-      <Table.Root variant="surface" style={{ width: "100%" }}>
-        <Table.Header>
-          <Table.Row>
-            {headers.map((h) => (
-              <Table.ColumnHeaderCell key={h}>{h}</Table.ColumnHeaderCell>
-            ))}
-          </Table.Row>
-        </Table.Header>
-        <Table.Body>
-          {rows.map((row, i) => {
-            return (
-              <Table.Row key={row[0]}>
-                {headers.map((_, j) => {
-                  if (j === 0) {
-                    //this is a command, so make it link
-                    return (
-                      <Table.Cell key={headers[j]}>
-                        <RadixLink asChild>
-                          <Link
-                            className="text-[#ab6400]"
-                            style={{ textDecoration: "none" }}
-                            to={commandToUrlSegment(rows[i][j])}
-                          >
-                            {rows[i][j]}
-                          </Link>
-                        </RadixLink>
-                      </Table.Cell>
-                    );
-                  }
-                  return <Table.Cell key={headers[j]}>{rows[i][j]}</Table.Cell>;
-                })}
-              </Table.Row>
-            );
-          })}
-        </Table.Body>
-      </Table.Root>
+      {tables.map((table) => (
+        <section key={table.name} className="mt-8">
+          <Heading as="h2" mb="4" size="4">
+            {tableIdToDisplayName[table.name]}
+          </Heading>
+          <Table.Root variant="surface" style={{ width: "100%" }}>
+            {table.headers && (
+              <Table.Header>
+                <Table.Row>
+                  {table.headers.map((h) => (
+                    <Table.ColumnHeaderCell key={h}>{h}</Table.ColumnHeaderCell>
+                  ))}
+                </Table.Row>
+              </Table.Header>
+            )}
+            <Table.Body>
+              {table.rows.map((row, i) => {
+                return (
+                  <Table.Row key={row[0]}>
+                    {row.map((cell, j) => {
+                      if (j === 0 && table.name === "frames_normal") {
+                        //this is a command, so make it link
+                        return (
+                          <Table.Cell key={j}>
+                            <RadixLink asChild>
+                              <Link
+                                className="text-[#ab6400]"
+                                style={{ textDecoration: "none" }}
+                                to={commandToUrlSegment(cell)}
+                              >
+                                {cell}
+                              </Link>
+                            </RadixLink>
+                          </Table.Cell>
+                        );
+                      }
+                      return <Table.Cell key={j}>{cell}</Table.Cell>;
+                    })}
+                  </Table.Row>
+                );
+              })}
+            </Table.Body>
+          </Table.Root>
+        </section>
+      ))}
     </div>
   );
 }
