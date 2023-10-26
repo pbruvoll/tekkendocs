@@ -1,8 +1,10 @@
-import { Heading } from "@radix-ui/themes";
+import { Badge, Heading } from "@radix-ui/themes";
 import type { LoaderFunction, MetaFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import { Link } from "@remix-run/react";
 import { Link as RadixLink } from "@radix-ui/themes";
+import { CharacterCard } from "~/components/CharacterCard";
+import { ContentContainer } from "~/components/ContentContainer";
 
 export const loader: LoaderFunction = async () => {
   // const target = ['https://www.googleapis.com/auth/spreadsheets.readonly'];
@@ -108,30 +110,25 @@ export const headers = () => ({
 
 export default function Index() {
   return (
-    <div
-      className="p-4"
-      style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}
-    >
-      <Heading as="h1">Welcome to TekkenDocs</Heading>
+    <ContentContainer>
+      <Heading as="h1">
+        TekkenDocs - Frame Data and learning resource for Tekken
+      </Heading>
       <p className="my-2">This site is under construction</p>
       <Heading as="h2" mt="5" mb="2" size="5">
         Tekken 8
       </Heading>
       <p>Coming january 2024</p>
-      <Heading as="h2" mt="5" mb="2" size="5">
+      <Heading as="h2" mt="5" mb="4" size="5">
         Tekken 7
       </Heading>
-      <ul>
+      <ul className="flex flex-wrap gap-5">
         {chars.map((char) => (
-          <li key={char}>
-            <RadixLink asChild>
-              <Link className="py-2" to={"/" + char}>
-                {char}
-              </Link>
-            </RadixLink>
+          <li className="cursor-pointer" key={char}>
+            <CharacterCard name={char} url={"/" + char} />
           </li>
         ))}
       </ul>
-    </div>
+    </ContentContainer>
   );
 }
