@@ -3,6 +3,7 @@ import type { DataFunctionArgs, HeadersFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import type { MetaFunction } from "@remix-run/react";
 import { Link, useLoaderData } from "@remix-run/react";
+import { ContentContainer } from "~/components/ContentContainer";
 import type { Game } from "~/types/Game";
 import type { TableId } from "~/types/TableId";
 import { cachified } from "~/utils/cache.server";
@@ -53,6 +54,7 @@ export const loader = async ({ params }: DataFunctionArgs) => {
     );
   }
 
+  console.log("rows", rows);
   const sheetSections = sheetToSections(rows);
   const tables = sheetSections.map((ss) =>
     sheetSectionToTable({
@@ -111,55 +113,69 @@ export default function Index() {
     return <div>Invalid or no data</div>;
   }
   return (
-    <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
-      <Heading as="h1" my="2" className="capitalize">
-        {characterName}
-      </Heading>
-      {tables.map((table) => (
-        <section key={table.name} className="mt-8">
-          <Heading as="h2" mb="4" size="4">
-            {tableIdToDisplayName[table.name]}
-          </Heading>
-          <Table.Root variant="surface" style={{ width: "100%" }}>
-            {table.headers && (
-              <Table.Header>
-                <Table.Row>
-                  {table.headers.map((h) => (
-                    <Table.ColumnHeaderCell key={h}>{h}</Table.ColumnHeaderCell>
-                  ))}
-                </Table.Row>
-              </Table.Header>
-            )}
-            <Table.Body>
-              {table.rows.map((row, i) => {
-                return (
-                  <Table.Row key={row[0]}>
-                    {row.map((cell, j) => {
-                      if (j === 0 && table.name === "frames_normal") {
-                        //this is a command, so make it link
-                        return (
-                          <Table.Cell key={j}>
-                            <RadixLink asChild>
-                              <Link
-                                className="text-[#ab6400]"
-                                style={{ textDecoration: "none" }}
-                                to={commandToUrlSegment(cell)}
-                              >
-                                {cell}
-                              </Link>
-                            </RadixLink>
-                          </Table.Cell>
-                        );
-                      }
-                      return <Table.Cell key={j}>{cell}</Table.Cell>;
-                    })}
-                  </Table.Row>
-                );
-              })}
-            </Table.Body>
-          </Table.Root>
-        </section>
-      ))}
-    </div>
+    <>
+      <ContentContainer enableTopPadding>
+        <Heading as="h1" my="2" className="capitalize">
+          {characterName}
+        </Heading>
+      </ContentContainer>
+      <ContentContainer disableXPadding>
+        {tables.map((table) => {
+          const columnNums = (table.headers || table.rows[0]).map(
+            (_, index) => index
+          );
+          return (
+            <section key={table.name} className="mt-8">
+              <ContentContainer>
+                <Heading as="h2" mb="4" size="4">
+                  {tableIdToDisplayName[table.name]}
+                </Heading>
+              </ContentContainer>
+              <Table.Root variant="surface" style={{ width: "100%" }}>
+                {table.headers && (
+                  <Table.Header>
+                    <Table.Row>
+                      {table.headers.map((h) => (
+                        <Table.ColumnHeaderCell key={h}>
+                          {h}
+                        </Table.ColumnHeaderCell>
+                      ))}
+                    </Table.Row>
+                  </Table.Header>
+                )}
+                <Table.Body>
+                  {table.rows.map((row, i) => {
+                    return (
+                      <Table.Row key={row[0]}>
+                        {columnNums.map((j) => {
+                          const cell = row[j] || "";
+                          if (j === 0 && table.name === "frames_normal") {
+                            //this is a command, so make it link
+                            return (
+                              <Table.Cell key={j}>
+                                <RadixLink asChild>
+                                  <Link
+                                    className="text-[#ab6400]"
+                                    style={{ textDecoration: "none" }}
+                                    to={commandToUrlSegment(cell)}
+                                  >
+                                    {cell}
+                                  </Link>
+                                </RadixLink>
+                              </Table.Cell>
+                            );
+                          }
+                          return <Table.Cell key={j}>{cell}</Table.Cell>;
+                        })}
+                      </Table.Row>
+                    );
+                  })}
+                </Table.Body>
+              </Table.Root>
+            </section>
+          );
+        })}
+      </ContentContainer>
+    </>
   );
 }

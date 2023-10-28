@@ -3,6 +3,7 @@ import type { DataFunctionArgs } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import type { MetaFunction } from "@remix-run/react";
 import { useLoaderData } from "@remix-run/react";
+import { ContentContainer } from "~/components/ContentContainer";
 import { google } from "~/google.server";
 import { commandToUrlSegment } from "~/utils/moveUtils";
 
@@ -122,11 +123,11 @@ export default function Move() {
   };
 
   return (
-    <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
-      <Heading my="2" as="h1" className="capitalize">
+    <ContentContainer enableTopPadding enableBottomPadding>
+      <Heading mt="2" mb="4" as="h1" className="capitalize">
         {characterName} : {moveRow[0]}
       </Heading>
-      <Table.Root style={{ width: "100%" }}>
+      <Table.Root variant="surface" style={{ width: "100%" }}>
         <Table.Body>
           {headers.slice(1).map((header, i) => {
             return (
@@ -138,6 +139,6 @@ export default function Move() {
           })}
         </Table.Body>
       </Table.Root>
-    </div>
+    </ContentContainer>
   );
 }

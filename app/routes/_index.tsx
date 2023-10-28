@@ -1,8 +1,6 @@
-import { Badge, Heading } from "@radix-ui/themes";
+import { Text, Heading } from "@radix-ui/themes";
 import type { LoaderFunction, MetaFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
-import { Link } from "@remix-run/react";
-import { Link as RadixLink } from "@radix-ui/themes";
 import { CharacterCard } from "~/components/CharacterCard";
 import { ContentContainer } from "~/components/ContentContainer";
 
@@ -110,11 +108,9 @@ export const headers = () => ({
 
 export default function Index() {
   return (
-    <ContentContainer>
-      <Heading as="h1">
-        TekkenDocs - Frame Data and learning resource for Tekken
-      </Heading>
-      <p className="my-2">This site is under construction</p>
+    <ContentContainer enableBottomPadding enableTopPadding>
+      <h1 className="mb-4 font-bold text-2xl">TekkenDocs</h1>
+      <p className="mb-4">Frame data and learning resources for Tekken</p>
       <Heading as="h2" mt="5" mb="2" size="5">
         Tekken 8
       </Heading>

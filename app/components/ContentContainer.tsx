@@ -15,7 +15,7 @@ export const ContentContainer = ({
   return (
     <div
       className={cx(
-        !disableXMargin && "py-2 sm:py-4",
+        !disableXMargin && "px-2 sm:px-4",
         enableTopPadding && "pt-2 sm:pt-4",
         enableBottomPadding && "pb-2 sm:pb-4",
         "mx-auto max-w-5xl"
