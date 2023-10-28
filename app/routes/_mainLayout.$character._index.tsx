@@ -6,6 +6,7 @@ import { Link, useLoaderData } from "@remix-run/react";
 import { ContentContainer } from "~/components/ContentContainer";
 import type { Game } from "~/types/Game";
 import type { TableId } from "~/types/TableId";
+import { Pencil1Icon } from "@radix-ui/react-icons";
 import { cachified } from "~/utils/cache.server";
 import { getSheet } from "~/utils/dataService.server";
 import { commandToUrlSegment } from "~/utils/moveUtils";
@@ -38,23 +39,23 @@ export const loader = async ({ params }: DataFunctionArgs) => {
   const game: Game = "T7";
 
   const key = `${character}|_|${game}`;
-  const { rows, freshValueContext } = await cachified({
+  const { sheet, freshValueContext } = await cachified({
     key,
     ttl: 1000 * 30,
     staleWhileRevalidate: 1000 * 60 * 60 * 24 * 3,
     async getFreshValue(context) {
-      const rows = await getSheet(character, game);
-      return { rows, freshValueContext: context };
+      const sheet = await getSheet(character, game);
+      return { sheet, freshValueContext: context };
     },
   });
-  if (!rows) {
+  if (!sheet) {
     throw new Response(
       `Not able to find data for character ${character} in game ${game}`,
       { status: 500, statusText: "server error" }
     );
   }
 
-  console.log("rows", rows);
+  const { editUrl, rows } = sheet;
   const sheetSections = sheetToSections(rows);
   const tables = sheetSections.map((ss) =>
     sheetSectionToTable({
@@ -65,7 +66,7 @@ export const loader = async ({ params }: DataFunctionArgs) => {
   );
 
   return json(
-    { characterName: character, tables },
+    { characterName: character, editUrl, tables },
     {
       headers: {
         "Cache-Control": "public, max-age=300, s-maxage=300",
@@ -108,16 +109,27 @@ export const meta: MetaFunction = ({ data, params }) => {
 };
 
 export default function Index() {
-  const { tables, characterName } = useLoaderData<typeof loader>();
+  const { tables, editUrl, characterName } = useLoaderData<typeof loader>();
   if (tables.length === 0) {
     return <div>Invalid or no data</div>;
   }
   return (
     <>
       <ContentContainer enableTopPadding>
-        <Heading as="h1" my="2" className="capitalize">
-          {characterName}
-        </Heading>
+        <div className="flex justify-between items-center">
+          <Heading as="h1" my="2" className="capitalize">
+            {characterName}
+          </Heading>
+          <a
+            className="flex items-center gap-2"
+            style={{ color: "var(--accent-a11" }}
+            target="blank"
+            href={editUrl}
+          >
+            <Pencil1Icon />
+            Edit
+          </a>
+        </div>
       </ContentContainer>
       <ContentContainer disableXPadding>
         {tables.map((table) => {

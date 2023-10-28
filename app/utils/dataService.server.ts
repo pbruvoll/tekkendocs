@@ -6,7 +6,12 @@ const gameToSheetId: Record<Game, string> = {
   'TT2' : "TODO",
 }
 
-export const getSheet = async (sheetName: string, game: Game): Promise<string[][] | null> => {
+export type SheetResponse = {
+  editUrl: string;
+  rows: string[][];
+}
+
+export const getSheet = async (sheetName: string, game: Game): Promise<SheetResponse | null> => {
   const target = ["https://www.googleapis.com/auth/spreadsheets.readonly"];
   const jwt = new google.auth.JWT({
     email: process.env.GOOGLE_SHEETS_CLIENT_EMAIL,
@@ -23,7 +28,7 @@ export const getSheet = async (sheetName: string, game: Game): Promise<string[][
 
     const rows = response.data.values;
     if(rows) {
-      return rows;
+      return { editUrl: "https://docs.google.com/spreadsheets/d/" + gameToSheetId[game], rows};
     }
     return null;
   } catch {
