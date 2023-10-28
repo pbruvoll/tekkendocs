@@ -1,8 +1,8 @@
-import { Heading, Table } from "@radix-ui/themes";
+import { Heading, Table, Link as RadixLink } from "@radix-ui/themes";
 import type { DataFunctionArgs } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import type { MetaFunction } from "@remix-run/react";
-import { useLoaderData } from "@remix-run/react";
+import { Link, useLoaderData } from "@remix-run/react";
 import { ContentContainer } from "~/components/ContentContainer";
 import { google } from "~/google.server";
 import { commandToUrlSegment } from "~/utils/moveUtils";
@@ -125,7 +125,10 @@ export default function Move() {
   return (
     <ContentContainer enableTopPadding enableBottomPadding>
       <Heading mt="2" mb="4" as="h1" className="capitalize">
-        {characterName} : {moveRow[0]}
+        <RadixLink asChild>
+          <Link to={"/" + characterName}>{characterName} </Link>
+        </RadixLink>
+        : {moveRow[0]}
       </Heading>
       <Table.Root variant="surface" style={{ width: "100%" }}>
         <Table.Body>
