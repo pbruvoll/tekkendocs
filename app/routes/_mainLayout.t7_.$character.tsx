@@ -1,20 +1,14 @@
 import type { DataFunctionArgs } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import { Outlet } from "@remix-run/react";
+import { hasHeaderMap } from "~/constants/hasHeaderMap";
 import type { Game } from "~/types/Game";
-import type { TableId } from "~/types/TableId";
 import { cachified } from "~/utils/cache.server";
 import { getSheet } from "~/utils/dataService.server";
 import {
   sheetSectionToTable,
   sheetToSections,
 } from "~/utils/sheetUtils.server";
-
-const hasHeaderMap: Record<TableId, boolean> = {
-  frames_normal: true,
-  frames_throws: true,
-  frames_tenhit: false,
-};
 
 export const loader = async ({ params }: DataFunctionArgs) => {
   const character = params.character;

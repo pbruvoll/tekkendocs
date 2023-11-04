@@ -1,20 +1,71 @@
-import { Table, Link as RadixLink, Heading } from "@radix-ui/themes";
-import type { HeadersFunction } from "@remix-run/node";
-import type { MetaFunction } from "@remix-run/react";
-import { Link, NavLink, useMatches } from "@remix-run/react";
-import { ContentContainer } from "~/components/ContentContainer";
-import type { TableId } from "~/types/TableId";
 import { Pencil1Icon } from "@radix-ui/react-icons";
-import { commandToUrlSegment } from "~/utils/moveUtils";
-
-import type { RouteHandle } from "~/types/RouteHandle";
-import type { CharacterFrameData } from "~/types/CharacterFrameData";
+import { Heading, Table, Link as RadixLink } from "@radix-ui/themes";
+import type { DataFunctionArgs, MetaFunction } from "@remix-run/node";
+import { json } from "@remix-run/node";
+import { Link, NavLink, useLoaderData } from "@remix-run/react";
+import { ContentContainer } from "~/components/ContentContainer";
+import { hasHeaderMap } from "~/constants/hasHeaderMap";
 import { tableIdToDisplayName } from "~/constants/tableIdToDisplayName";
+import type { CharacterFrameData } from "~/types/CharacterFrameData";
+import type { Game } from "~/types/Game";
+import { RouteHandle } from "~/types/RouteHandle";
+import { cachified } from "~/utils/cache.server";
+import { getSheet } from "~/utils/dataService.server";
+import { commandToUrlSegment } from "~/utils/moveUtils";
+import {
+  sheetSectionToTable,
+  sheetToSections,
+} from "~/utils/sheetUtils.server";
 
-export const headers: HeadersFunction = (args) => ({
-  "Cache-Control": "public, max-age=300, s-maxage=300",
-  "X-Td-Cachecontext": args.loaderHeaders.get("X-Td-Cachecontext") || "none",
-});
+export const loader = async ({ params }: DataFunctionArgs) => {
+  const character = params.character;
+  if (!character) {
+    throw new Response(null, {
+      status: 400,
+      statusText: "Character cant be empty",
+    });
+  }
+
+  const game: Game = "T7";
+
+  const sheetName = `${character}-meta`;
+  const key = `${sheetName}|_|${game}`;
+  const { sheet, freshValueContext } = await cachified({
+    key,
+    ttl: 1000 * 30,
+    staleWhileRevalidate: 1000 * 60 * 60 * 24 * 3,
+    async getFreshValue(context) {
+      const sheet = await getSheet(sheetName, game);
+      return { sheet, freshValueContext: context };
+    },
+  });
+  if (!sheet) {
+    throw new Response(
+      `Not able to find data for character ${character} in game ${game}`,
+      { status: 500, statusText: "server error" }
+    );
+  }
+
+  const { editUrl, rows } = sheet;
+  const sheetSections = sheetToSections(rows);
+  const tables = sheetSections.map((ss) =>
+    sheetSectionToTable({
+      name: ss.sectionId,
+      sheetSection: ss,
+      hasHeader: hasHeaderMap[ss.sectionId],
+    })
+  );
+
+  return json(
+    { characterName: character, editUrl, tables },
+    {
+      headers: {
+        "Cache-Control": "public, max-age=300, s-maxage=300",
+        "X-Td-Cachecontext": JSON.stringify(freshValueContext),
+      },
+    }
+  );
+};
 
 export const meta: MetaFunction = ({ data, params, matches }) => {
   const frameData = matches.find(
@@ -34,8 +85,8 @@ export const meta: MetaFunction = ({ data, params, matches }) => {
   const characterId = characterName.toLocaleLowerCase();
   const characterTitle =
     characterName[0].toUpperCase() + characterName.substring(1);
-  const title = `${characterTitle} Tekken 7 Frame Data | TekkenDocs`;
-  const description = `Frame data for ${characterTitle} in Tekken 7`;
+  const title = `${characterTitle} Tekken 7 Guide | TekkenDocs`;
+  const description = `Guide with cheat sheet for ${characterTitle} in Tekken 7`;
 
   return [
     { title },
@@ -47,20 +98,14 @@ export const meta: MetaFunction = ({ data, params, matches }) => {
     {
       tagName: "link",
       rel: "canonical",
-      href: "https://tekkendocs.com/t7/" + characterId,
+      href: `https://tekkendocs.com/t7/${characterId}/meta`,
     },
   ];
 };
 
 export default function Index() {
-  const matches = useMatches();
-  const frameData = matches.find(
-    (m) => (m.handle as RouteHandle)?.type === "frameData"
-  )?.data;
-  if (!frameData) {
-    return <div>Could not load data</div>;
-  }
-  const { tables, editUrl, characterName } = frameData as CharacterFrameData;
+  const { characterName, editUrl, tables } = useLoaderData<typeof loader>();
+
   if (tables.length === 0) {
     return <div>Invalid or no data</div>;
   }
@@ -82,8 +127,8 @@ export default function Index() {
           </a>
         </div>
         <div className="flex gap-3">
-          <NavLink to="">Frame data</NavLink>
-          <NavLink to="meta">Guide</NavLink>
+          <NavLink to="../">Frame data</NavLink>
+          <NavLink to="">Guide</NavLink>
         </div>
       </ContentContainer>
       <ContentContainer disableXPadding>
@@ -116,7 +161,7 @@ export default function Index() {
                       <Table.Row key={row[0]}>
                         {columnNums.map((j) => {
                           const cell = row[j] || "";
-                          if (j === 0 && table.name === "frames_normal") {
+                          if (table.headers && table.headers[j] === "Command") {
                             //this is a command, so make it link
                             return (
                               <Table.Cell key={j}>
@@ -124,7 +169,9 @@ export default function Index() {
                                   <Link
                                     className="text-[#ab6400]"
                                     style={{ textDecoration: "none" }}
-                                    to={commandToUrlSegment(cell)}
+                                    to={`/t7/${characterName}/${commandToUrlSegment(
+                                      cell
+                                    )}`}
                                   >
                                     {cell}
                                   </Link>

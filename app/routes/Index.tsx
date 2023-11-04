@@ -1,66 +1,13 @@
-import { Table, Link as RadixLink, Heading } from "@radix-ui/themes";
-import type { HeadersFunction } from "@remix-run/node";
-import type { MetaFunction } from "@remix-run/react";
-import { Link, NavLink, useMatches } from "@remix-run/react";
-import { ContentContainer } from "~/components/ContentContainer";
-import type { TableId } from "~/types/TableId";
 import { Pencil1Icon } from "@radix-ui/react-icons";
-import { commandToUrlSegment } from "~/utils/moveUtils";
-
-import type { RouteHandle } from "~/types/RouteHandle";
-import type { CharacterFrameData } from "~/types/CharacterFrameData";
+import { Heading, Table } from "@radix-ui/themes";
+import { useLoaderData } from "@remix-run/react";
+import { ContentContainer } from "~/components/ContentContainer";
 import { tableIdToDisplayName } from "~/constants/tableIdToDisplayName";
-
-export const headers: HeadersFunction = (args) => ({
-  "Cache-Control": "public, max-age=300, s-maxage=300",
-  "X-Td-Cachecontext": args.loaderHeaders.get("X-Td-Cachecontext") || "none",
-});
-
-export const meta: MetaFunction = ({ data, params, matches }) => {
-  const frameData = matches.find(
-    (m) => (m.handle as RouteHandle)?.type === "frameData"
-  )?.data;
-  if (!frameData) {
-    return [
-      {
-        title: "TekkenDocs - Uknown character",
-      },
-      {
-        description: `There is no character with the ID of ${params.character}.`,
-      },
-    ];
-  }
-  const { characterName } = frameData as CharacterFrameData;
-  const characterId = characterName.toLocaleLowerCase();
-  const characterTitle =
-    characterName[0].toUpperCase() + characterName.substring(1);
-  const title = `${characterTitle} Tekken 7 Frame Data | TekkenDocs`;
-  const description = `Frame data for ${characterTitle} in Tekken 7`;
-
-  return [
-    { title },
-    { description },
-    { property: "og:title", content: title },
-    { property: "description", content: description },
-    { property: "og:description", content: description },
-    { property: "og:image", content: `/t7/avatars/${characterTitle}.jpg` },
-    {
-      tagName: "link",
-      rel: "canonical",
-      href: "https://tekkendocs.com/t7/" + characterId,
-    },
-  ];
-};
+import { loader } from "./_mainLayout.t7_.$character.meta";
 
 export default function Index() {
-  const matches = useMatches();
-  const frameData = matches.find(
-    (m) => (m.handle as RouteHandle)?.type === "frameData"
-  )?.data;
-  if (!frameData) {
-    return <div>Could not load data</div>;
-  }
-  const { tables, editUrl, characterName } = frameData as CharacterFrameData;
+  const { characterName, editUrl, tables } = useLoaderData<typeof loader>();
+
   if (tables.length === 0) {
     return <div>Invalid or no data</div>;
   }
@@ -80,10 +27,6 @@ export default function Index() {
             <Pencil1Icon />
             Edit
           </a>
-        </div>
-        <div className="flex gap-3">
-          <NavLink to="">Frame data</NavLink>
-          <NavLink to="meta">Guide</NavLink>
         </div>
       </ContentContainer>
       <ContentContainer disableXPadding>

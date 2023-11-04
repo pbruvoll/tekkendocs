@@ -55,7 +55,9 @@ export const loader = async ({ params }: DataFunctionArgs) => {
     });
   }
   const dataHeaders = rows[1];
-  const moveRow = rows.find((row) => commandToUrlSegment(row[0]) === move);
+  const moveRow = rows.find(
+    (row) => row[0] && commandToUrlSegment(row[0]) === move
+  );
   if (!moveRow) {
     throw json("move not found in frame data", {
       status: 401,
