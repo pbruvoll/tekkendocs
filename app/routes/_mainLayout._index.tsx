@@ -65,14 +65,17 @@ export default function Index() {
       <Heading as="h2" mt="5" mb="2" size="5">
         <Link to="t8">Tekken 8</Link>
       </Heading>
+
       <p>Coming january 2024</p>
+
       <Heading as="h2" mt="5" mb="4" size="5">
         <Link to="t7">Tekken 7</Link>
       </Heading>
+
       <ul className="flex flex-wrap gap-5">
         {characterInfoList.map(({ id, displayName }) => (
           <li className="cursor-pointer" key={id}>
-            <CharacterCard name={displayName} url={"/" + id} />
+            <CharacterCard name={displayName} url={"/t7/" + id} />
           </li>
         ))}
       </ul>

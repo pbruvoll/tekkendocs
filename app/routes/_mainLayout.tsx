@@ -1,4 +1,3 @@
-import { Box } from "@radix-ui/themes";
 import { Link, Outlet } from "@remix-run/react";
 import { ContentContainer } from "~/components/ContentContainer";
 

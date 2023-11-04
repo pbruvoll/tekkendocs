@@ -3,4 +3,4 @@ export {
   headers,
   loader,
   meta,
-} from "~/routes/_mainLayout.t7.$character.$move";
+} from "~/routes/_mainLayout.t7_.$character.$move";
