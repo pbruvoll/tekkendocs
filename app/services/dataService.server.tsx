@@ -1,0 +1,63 @@
+import { CharacterInfo } from "~/types/CharacterInfo";
+
+const chars: string[] = [
+  "Akuma",
+  "Alisa",
+  "Anna",
+  "Armor-King",
+  "Asuka",
+  "Bob",
+  "Bryan",
+  "Claudio",
+  "Devil-Jin",
+  "Dragunov",
+  "Eddy",
+  "Eliza",
+  "Fahkumram",
+  "Feng",
+  "Ganryu",
+  "Geese",
+  "Gigas",
+  "Heihachi",
+  "Hwoarang",
+  "Jack-7",
+  "Jin",
+  "Josie",
+  "Julia",
+  "Katarina",
+  "Kazumi",
+  "Kazuya",
+  "King",
+  "Kuma",
+  "Kunimitsu",
+  "Lars",
+  "Law",
+  "Lee",
+  "Lei",
+  "Leo",
+  "Leroy",
+  "Lidia",
+  "Lili",
+  "Lucky-Chloe",
+  "Marduk",
+  "Master-Raven",
+  "Miguel",
+  "Negan",
+  "Nina",
+  "Noctis",
+  "Paul",
+  "Shaheen",
+  "Steve",
+  "Xiaoyu",
+  "Yoshimitsu",
+  "Zafina",
+];
+
+const characterInfoList: CharacterInfo[] = chars.map((char) => ({
+  id: char.toLocaleLowerCase(),
+  displayName: char.replaceAll("-", " "),
+}));
+
+export const getTekken7Characters = (): CharacterInfo[] => {
+  return characterInfoList;
+};

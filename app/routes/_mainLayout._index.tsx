@@ -1,10 +1,13 @@
-import { Text, Heading } from "@radix-ui/themes";
-import type { LoaderFunction, MetaFunction } from "@remix-run/node";
+import { Heading } from "@radix-ui/themes";
+import type { MetaFunction, TypedResponse } from "@remix-run/node";
 import { json } from "@remix-run/node";
+import { Link, useLoaderData } from "@remix-run/react";
 import { CharacterCard } from "~/components/CharacterCard";
 import { ContentContainer } from "~/components/ContentContainer";
+import { getTekken7Characters } from "~/services/dataService.server";
+import type { GamePageData } from "~/types/GamePageData";
 
-export const loader: LoaderFunction = async () => {
+export const loader = async (): Promise<TypedResponse<GamePageData>> => {
   // const target = ['https://www.googleapis.com/auth/spreadsheets.readonly'];
   // const jwt = new google.auth.JWT({
   //   email: process.env.GOOGLE_SHEETS_CLIENT_EMAIL,
@@ -20,8 +23,8 @@ export const loader: LoaderFunction = async () => {
 
   //const rows = response.data.values;
 
-  return json(
-    {},
+  return json<GamePageData>(
+    { characterInfoList: getTekken7Characters() },
     {
       headers: {
         "Cache-Control": "public, max-age=300, s-maxage=300",
@@ -49,79 +52,27 @@ export const meta: MetaFunction = () => {
   ];
 };
 
-export const chars = [
-  "Akuma",
-  "Alisa",
-  "Anna",
-  "Armor-King",
-  "Asuka",
-  "Bob",
-  "Bryan",
-  "Claudio",
-  "Devil-Jin",
-  "Dragunov",
-  "Eddy",
-  "Eliza",
-  "Fahkumram",
-  "Feng",
-  "Ganryu",
-  "Geese",
-  "Gigas",
-  "Heihachi",
-  "Hwoarang",
-  "Jack-7",
-  "Jin",
-  "Josie",
-  "Julia",
-  "Katarina",
-  "Kazumi",
-  "Kazuya",
-  "King",
-  "Kuma",
-  "Kunimitsu",
-  "Lars",
-  "Law",
-  "Lee",
-  "Lei",
-  "Leo",
-  "Leroy",
-  "Lidia",
-  "Lili",
-  "Lucky-Chloe",
-  "Marduk",
-  "Master-Raven",
-  "Miguel",
-  "Negan",
-  "Nina",
-  "Noctis",
-  "Paul",
-  "Shaheen",
-  "Steve",
-  "Xiaoyu",
-  "Yoshimitsu",
-  "Zafina",
-];
-
 export const headers = () => ({
   "Cache-Control": "public, max-age=300, s-maxage=300",
 });
 
 export default function Index() {
+  const { characterInfoList }: GamePageData = useLoaderData<typeof loader>();
   return (
     <ContentContainer enableBottomPadding enableTopPadding>
       <h1 className="mb-4 font-bold text-2xl">TekkenDocs</h1>
       <p className="mb-4">Frame data and learning resources for Tekken</p>
       <Heading as="h2" mt="5" mb="2" size="5">
-        Tekken 8
+        <Link to="t8">Tekken 8</Link>
       </Heading>
       <p>Coming january 2024</p>
       <Heading as="h2" mt="5" mb="4" size="5">
-        Tekken 7
+        <Link to="t7">Tekken 7</Link>
       </Heading>
       <ul className="flex flex-wrap gap-5">
-        {chars.map((char) => (
-          <li className="cursor-pointer" key={char}>
-            <CharacterCard name={char} url={"/" + char} />
+        {characterInfoList.map(({ id, displayName }) => (
+          <li className="cursor-pointer" key={id}>
+            <CharacterCard name={displayName} url={"/" + id} />
           </li>
         ))}
       </ul>

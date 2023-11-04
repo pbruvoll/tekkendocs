@@ -116,11 +116,7 @@ export default function Move() {
     dataHeaders: headers,
     moveRow,
     characterName,
-  } = useLoaderData<typeof loader>() as unknown as {
-    dataHeaders: string[];
-    moveRow: string[];
-    characterName: string;
-  };
+  } = useLoaderData<typeof loader>();
 
   return (
     <ContentContainer enableTopPadding enableBottomPadding>
