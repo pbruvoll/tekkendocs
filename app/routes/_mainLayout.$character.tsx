@@ -1,5 +1,1 @@
-import { Outlet } from "@remix-run/react";
-
-export default function Index() {
-  return <Outlet />;
-}
+export { default } from "~/routes/_mainLayout.t7.$character";
