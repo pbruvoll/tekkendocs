@@ -27,7 +27,7 @@ export default function T7() {
       <ul className="flex flex-wrap gap-5">
         {characterInfoList.map(({ id, displayName }) => (
           <li className="cursor-pointer" key={id}>
-            <CharacterCard name={displayName} url={"/t7/" + id} />
+            <CharacterCard name={displayName} url={id} />
           </li>
         ))}
       </ul>

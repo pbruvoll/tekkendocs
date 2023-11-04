@@ -11,16 +11,16 @@ test('sheetToSections', () => {
 })
 
 test("sheetSectionToTable", () => {
-  const table = sheetSectionToTable({hasHeader: false, name: "MyTable", sheetSection: {
-    sectionId: "dummy",
+  const table = sheetSectionToTable({hasHeader: false, name: "frames_normal", sheetSection: {
+    sectionId: "frames_normal",
     rows: [["a1", "a2"]],
   }});
   expect(table.name).toEqual("MyTable");
   expect(table.headers).toBeUndefined();
   expect(table.rows).toHaveLength(1);
 
-  const table2 = sheetSectionToTable({hasHeader: true, name: "MyTable2", sheetSection: {
-    sectionId: "dummy",
+  const table2 = sheetSectionToTable({hasHeader: true, name: "frames_tenhit", sheetSection: {
+    sectionId: "frames_tenhit",
     rows: [["h1", "h2"], ["a1", "a2"]],
   }});
   expect(table2.name).toEqual("MyTable2");

@@ -1,3 +1,4 @@
+import type { TableData } from "~/types/TableData";
 import type { TableId } from "~/types/TableId";
 
 export type SheetSection = {
@@ -22,13 +23,6 @@ export const sheetToSections = (sheetData: string[][]): SheetSection[] => {
   }
 return sections;
 }
-
-type TableData = {
-  name: TableId;
-  headers?: string[];
-  rows: string[][];
-};
-
 
 type ToTableOptions = {
   name: TableId,
