@@ -34,14 +34,14 @@ def convert(path, worksheetName, gSheet):
     keyMoves = [["#key_moves"], ["Command", "Description"]];
     worksheetData += keyMoves + list(map(lambda command : [command, ""], content["keyMoves"]))
     #standingPunishers
-    standingPunishers = [["#punishers_standing"], ["Startup", "Command", "Description"]];
+    standingPunishers = [["#punishers_standing"], ["Startup", "Command", "Secondary", "Description"]];
     worksheetData += [[]] + standingPunishers + list(map(lambda punisher : punisher + [""], content["standingPunishers"]))
     #crouchingPunishers
-    crouchingPunishers = [["#punishers_crouching"], ["Command", "Description"]];
+    crouchingPunishers = [["#punishers_crouching"], ["Startup", "Command", "Secondary", "Description"]];
     worksheetData += [[]] + crouchingPunishers + list(map(lambda punisher : punisher + [""], content["crouchingPunishers"]))
 
     #whiffPunishers
-    whiffPunishers = [["#punishers_whiff"], ["Command", "Description"]];
+    whiffPunishers = [["#punishers_whiff"], ["Command", "Secondary", "Description"]];
     worksheetData += [[]] + whiffPunishers + list(map(lambda command : [command, ""], content["whiffPunishers"]))
 
     #standardCombos
