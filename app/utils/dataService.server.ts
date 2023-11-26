@@ -1,9 +1,11 @@
 import { google } from "googleapis";
-import type { Game } from "~/types/Game";
+import type { SpreadSheetDocName } from "~/types/SpreadSheetDocName";
 
-const gameToSheetId: Record<Game, string> = {
+const spreadSheetToSheetId: Record<SpreadSheetDocName, string> = {
   'T7' : "1p-QCqB_Tb1GNX0KaicHr0tZwKa1taK5XeNvMr1N3D64",
+  'T7_MatchVideo' : "12YOwciWgaJnTFHymarmiDcMlAEy_TxHHQKT4uyfP-pg",
   'TT2' : "TODO",
+ 
 }
 
 export type SheetResponse = {
@@ -11,7 +13,7 @@ export type SheetResponse = {
   rows: string[][];
 }
 
-export const getSheet = async (sheetName: string, game: Game): Promise<SheetResponse | null> => {
+export const getSheet = async (sheetName: string, spreadSheet: SpreadSheetDocName): Promise<SheetResponse | null> => {
   const target = ["https://www.googleapis.com/auth/spreadsheets.readonly"];
   const jwt = new google.auth.JWT({
     email: process.env.GOOGLE_SHEETS_CLIENT_EMAIL,
@@ -22,16 +24,18 @@ export const getSheet = async (sheetName: string, game: Game): Promise<SheetResp
   const sheets = google.sheets({ version: "v4", auth: jwt });
   try {
     const response = await sheets.spreadsheets.values.get({
-      spreadsheetId: gameToSheetId[game],
+      spreadsheetId: spreadSheetToSheetId[spreadSheet],
       range: sheetName, 
     });
 
     const rows = response.data.values;
     if(rows) {
-      return { editUrl: "https://docs.google.com/spreadsheets/d/" + gameToSheetId[game], rows};
+      return { editUrl: "https://docs.google.com/spreadsheets/d/" + spreadSheetToSheetId[spreadSheet], rows};
     }
+    console.warn("Error getting data: " + response.status + " " + response.statusText)
     return null;
-  } catch {
+  } catch (e) {
+    console.warn("Exception getting data " + e)
     return null;
   }
 }

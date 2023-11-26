@@ -8,7 +8,7 @@ import { hasHeaderMap } from "~/constants/hasHeaderMap";
 import { tableIdToDisplayName } from "~/constants/tableIdToDisplayName";
 import type { CharacterFrameData } from "~/types/CharacterFrameData";
 import type { Game } from "~/types/Game";
-import { RouteHandle } from "~/types/RouteHandle";
+import type { RouteHandle } from "~/types/RouteHandle";
 import { cachified } from "~/utils/cache.server";
 import { getSheet } from "~/utils/dataService.server";
 import { commandToUrlSegment } from "~/utils/moveUtils";
