@@ -1,6 +1,7 @@
 import { json, type MetaFunction } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import { ContentContainer } from "~/components/ContentContainer";
+import { MatchVideo, MatchVideoSet } from "~/types/MatchVideo";
 import { SpreadSheetDocName } from "~/types/SpreadSheetDocName";
 import { cachified } from "~/utils/cache.server";
 import { getSheet } from "~/utils/dataService.server";
@@ -46,16 +47,39 @@ export const loader = async () => {
 
   const { editUrl, rows } = sheet;
   const sheetSections = sheetToSections(rows);
-  const tables = sheetSections.map((ss) =>
-    sheetSectionToTable({
-      name: ss.sectionId,
-      sheetSection: ss,
-      hasHeader: true,
-    })
+  const videoSection = sheetSections.find(
+    (s) => s.sectionId === "videos_match"
   );
+  if (!videoSection) {
+    throw json("Not able to find match video section", { status: 404 });
+  }
+
+  const matchVideoSets = videoSection.rows
+    .slice(1)
+    .reduce<MatchVideoSet[]>((matchSetList, row) => {
+      const setName = row[1];
+      const matchVideo: MatchVideo = {
+        url: row[0],
+        name: row[2],
+        type: row[3],
+        description: row[4],
+        result: row[5],
+        characters: row[6],
+        thumbnail: row[7],
+        date: new Date(row[8]),
+      };
+      const prevSet: MatchVideoSet | undefined =
+        matchSetList[matchSetList.length - 1];
+      if (prevSet && (prevSet.setName === setName || !setName)) {
+        prevSet.videos.push(matchVideo);
+      } else {
+        matchSetList.push({ setName, videos: [matchVideo] });
+      }
+      return matchSetList;
+    }, []);
 
   return json(
-    { editUrl, tables },
+    { matchVideoSets },
     {
       headers: {
         "Cache-Control": "public, max-age=300, s-maxage=300",

@@ -8,4 +8,5 @@ export type TableId = "frames_normal" |
 "combos_normal" |
 "combos_small" |
 "combos_ender" | 
-"combos_wall";
+"combos_wall" |
+"videos_match";
