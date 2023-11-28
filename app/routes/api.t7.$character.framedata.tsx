@@ -1,6 +1,8 @@
 import { json, type DataFunctionArgs } from "@remix-run/node";
 import { hasHeaderMap } from "~/constants/hasHeaderMap";
 import type { Game } from "~/types/Game";
+import type { Move } from "~/types/Move";
+import type { Throw } from "~/types/Throw";
 import { cachified } from "~/utils/cache.server";
 import { getSheet } from "~/utils/dataService.server";
 import {
@@ -9,7 +11,7 @@ import {
 } from "~/utils/sheetUtils.server";
 
 export const loader = async ({ params }: DataFunctionArgs) => {
-  const character = "anna"; // params.character;
+  const character = params.character;
   if (!character) {
     throw new Response(null, {
       status: 400,
@@ -24,7 +26,7 @@ export const loader = async ({ params }: DataFunctionArgs) => {
     key,
     ttl: 1000 * 30,
     staleWhileRevalidate: 1000 * 60 * 60 * 24 * 3,
-    async getFreshValue(context) {
+    async getFreshValue() {
       const sheet = await getSheet(character, game);
       return { sheet };
     },
@@ -45,16 +47,38 @@ export const loader = async ({ params }: DataFunctionArgs) => {
       hasHeader: hasHeaderMap[ss.sectionId],
     })
   );
-  const tableJson = tables.reduce((prev, current) => {
-    prev[current.name] = {
-      headers: current.headers,
-      rows: current.rows,
-    };
-    return prev;
-  }, {} as any);
+  const framesNormalTable = tables.find((t) => t.name === "frames_normal");
+  if (!framesNormalTable) {
+    throw json("Not able to find frame for character", { status: 500 });
+  }
+
+  const framesNormal = framesNormalTable.rows.map<Move>((row) => ({
+    command: row[0],
+    hitLevel: row[1],
+    damage: row[2],
+    startup: row[3],
+    block: row[4],
+    hit: row[5],
+    counterHit: row[6],
+    notes: row[7],
+  }));
+
+  const framesThrowsTable = tables.find((t) => t.name === "frames_throws");
+  const framesThrows = framesThrowsTable
+    ? framesThrowsTable.rows.map<Throw>((row) => ({
+        command: row[0],
+        hitLevel: row[1],
+        damage: row[2],
+        startup: row[3],
+        hit: "?",
+        break: row[5],
+        breakCommand: row[4],
+        notes: row[6],
+      }))
+    : undefined;
 
   return json(
-    { characterName: character, editUrl, ...tableJson },
+    { characterName: character, editUrl, framesNormal, framesThrows },
     {
       headers: {
         "Cache-Control": "public, max-age=300, s-maxage=300",
