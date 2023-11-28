@@ -3,7 +3,6 @@ import type { HeadersFunction } from "@remix-run/node";
 import type { MetaFunction } from "@remix-run/react";
 import { Link, NavLink, useMatches } from "@remix-run/react";
 import { ContentContainer } from "~/components/ContentContainer";
-import type { TableId } from "~/types/TableId";
 import { Pencil1Icon } from "@radix-ui/react-icons";
 import { commandToUrlSegment } from "~/utils/moveUtils";
 
