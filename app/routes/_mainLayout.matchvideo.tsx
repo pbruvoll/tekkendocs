@@ -1,18 +1,20 @@
+import { Pencil1Icon } from "@radix-ui/react-icons";
 import { Button } from "@radix-ui/themes";
-import { json, type MetaFunction } from "@remix-run/node";
+import { json, TypedResponse, type MetaFunction } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
-import { Fragment, useState } from "react";
+import { useState } from "react";
 import { ContentContainer } from "~/components/ContentContainer";
-import { MatchVideo, MatchVideoSet } from "~/types/MatchVideo";
-import { SpreadSheetDocName } from "~/types/SpreadSheetDocName";
+import type { MatchVideo, MatchVideoSet } from "~/types/MatchVideo";
+import type { SpreadSheetDocName } from "~/types/SpreadSheetDocName";
 import { cachified } from "~/utils/cache.server";
 import { getSheet } from "~/utils/dataService.server";
-import {
-  sheetSectionToTable,
-  sheetToSections,
-} from "~/utils/sheetUtils.server";
+import { sheetToSections } from "~/utils/sheetUtils.server";
 
-export const meta: MetaFunction = () => {
+export const meta: MetaFunction = ({ data }) => {
+  let image = "https://i.ytimg.com/vi/dQ5hje6Fnfw/maxresdefault.jpg";
+  if (data) {
+    image = (data as LoaderData).matchVideoSets[0].videos[0].thumbnail || image;
+  }
   const title = "Tournament videos from Tekken";
   const description =
     "A curated list of vidoes from the biggest Tekken tournaments";
@@ -24,12 +26,17 @@ export const meta: MetaFunction = () => {
     { property: "og:description", content: description },
     {
       property: "og:image",
-      content: "https://i.ytimg.com/vi/dQ5hje6Fnfw/maxresdefault.jpg",
+      content: image,
     },
   ];
 };
 
-export const loader = async () => {
+type LoaderData = {
+  editUrl: string;
+  matchVideoSets: MatchVideoSet[];
+};
+
+export const loader = async (): Promise<TypedResponse<LoaderData>> => {
   const sheetDoc: SpreadSheetDocName = "T7_MatchVideo";
   const { sheet } = await cachified({
     key: sheetDoc,
@@ -81,7 +88,7 @@ export const loader = async () => {
     }, []);
 
   return json(
-    { matchVideoSets },
+    { matchVideoSets, editUrl },
     {
       headers: {
         "Cache-Control": "public, max-age=300, s-maxage=300",
@@ -91,13 +98,25 @@ export const loader = async () => {
 };
 
 export default function TournamentVideos() {
-  const data = useLoaderData<typeof loader>();
-  const [setsToShow, setSetsToShow] = useState(1);
+  const { matchVideoSets, editUrl } = useLoaderData<typeof loader>();
+  const [setsToShow, setSetsToShow] = useState(3);
   return (
     <ContentContainer enableTopPadding>
-      <h1 className="text-4xl mt-4 mb-6">Tournament videos</h1>
+      <div className="flex justify-between">
+        <h1 className="text-4xl mt-4 mb-6">Tournament videos</h1>
+        <a
+          className="flex items-center gap-2"
+          style={{ color: "var(--accent-a11" }}
+          target="blank"
+          href={editUrl}
+        >
+          <Pencil1Icon />
+          Edit
+        </a>
+      </div>
+
       <div className="space-y-12">
-        {data.matchVideoSets.slice(0, setsToShow).map((vSet) => {
+        {matchVideoSets.slice(0, setsToShow).map((vSet) => {
           return (
             <div className="space-y-8" key={vSet.setName}>
               <div>
@@ -126,7 +145,7 @@ export default function TournamentVideos() {
           );
         })}
       </div>
-      {setsToShow < data.matchVideoSets.length && (
+      {setsToShow < matchVideoSets.length && (
         <div className="mt-6">
           <Button onClick={() => setSetsToShow((prev) => prev + 5)}>
             Show more

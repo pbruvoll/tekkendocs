@@ -63,7 +63,7 @@ export default function Index() {
       <h1 className="mb-4 font-bold text-2xl">TekkenDocs</h1>
       <p className="mb-4">Frame data and learning resources for Tekken</p>
 
-      <Heading as="h2" mt="5" mb="2" size="5">
+      <Heading as="h2" mt="5" mb="4" size="5">
         Resources
       </Heading>
       <Link to="/matchvideo" className="cursor-pointer">
