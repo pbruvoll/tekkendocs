@@ -1,6 +1,6 @@
-import { CharacterInfo } from "~/types/CharacterInfo";
+import type { CharacterInfo } from "~/types/CharacterInfo";
 
-const chars: string[] = [
+const charsT7: string[] = [
   "Akuma",
   "Alisa",
   "Anna",
@@ -53,11 +53,43 @@ const chars: string[] = [
   "Zafina",
 ];
 
-const characterInfoList: CharacterInfo[] = chars.map((char) => ({
+const charsT8: string[] = [
+  "Alisa",
+  "Asuka",
+  "Bryan",
+  "Devil-Jin",
+  "Feng",
+  "Hwoarang",
+  "Jin",
+  "Kazuya",
+  "Kuma",
+  "Law",
+  "Lee",
+  "Leo",
+  "Leroy",
+  "Lili",
+  "Nina",
+  "Paul",
+  "Steve",
+  "Xiaoyu",
+  "Yoshimitsu",
+  "Zafina",
+];
+
+const characterInfoListT7: CharacterInfo[] = charsT7.map((char) => ({
   id: char.toLocaleLowerCase(),
   displayName: char.replaceAll("-", " "),
 }));
 
 export const getTekken7Characters = (): CharacterInfo[] => {
-  return characterInfoList;
+  return characterInfoListT7;
+};
+
+const characterInfoListT8: CharacterInfo[] = charsT8.map((char) => ({
+  id: char.toLocaleLowerCase(),
+  displayName: char.replaceAll("-", " "),
+}));
+
+export const getTekken8Characters = (): CharacterInfo[] => {
+  return characterInfoListT8;
 };
