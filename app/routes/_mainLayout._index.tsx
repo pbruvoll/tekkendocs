@@ -1,4 +1,4 @@
-import { Heading } from "@radix-ui/themes";
+import { Badge, Heading } from "@radix-ui/themes";
 import type { MetaFunction, TypedResponse } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import { Link, useLoaderData } from "@remix-run/react";
@@ -62,6 +62,16 @@ export default function Index() {
     <ContentContainer enableBottomPadding enableTopPadding>
       <h1 className="mb-4 font-bold text-2xl">TekkenDocs</h1>
       <p className="mb-4">Frame data and learning resources for Tekken</p>
+
+      <Heading as="h2" mt="5" mb="2" size="5">
+        Resources
+      </Heading>
+      <Link to="/matchvideo" className="cursor-pointer">
+        <Badge size="2" style={{ cursor: "pointer" }} variant="outline">
+          Match videos
+        </Badge>
+      </Link>
+
       <Heading as="h2" mt="5" mb="2" size="5">
         <Link to="t8">Tekken 8</Link>
       </Heading>

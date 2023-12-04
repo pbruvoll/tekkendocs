@@ -1,5 +1,7 @@
+import { Button } from "@radix-ui/themes";
 import { json, type MetaFunction } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
+import { Fragment, useState } from "react";
 import { ContentContainer } from "~/components/ContentContainer";
 import { MatchVideo, MatchVideoSet } from "~/types/MatchVideo";
 import { SpreadSheetDocName } from "~/types/SpreadSheetDocName";
@@ -89,50 +91,48 @@ export const loader = async () => {
 };
 
 export default function TournamentVideos() {
-  const data = useLoaderData();
-  console.log("tourn", data);
+  const data = useLoaderData<typeof loader>();
+  const [setsToShow, setSetsToShow] = useState(1);
   return (
     <ContentContainer enableTopPadding>
       <h1 className="text-4xl mt-4 mb-6">Tournament videos</h1>
-      <h2 id="tu-23" className="text-2xl mb-2 mt-6">
-        Thaiger Uppercut 2023
-      </h2>
-      <iframe
-        width="560"
-        src="https://www.youtube-nocookie.com/embed/3Cz9J-YhchU"
-        className="aspect-video max-w-full"
-        title="YouTube video player"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowFullScreen
-      ></iframe>
-      <iframe
-        width="560"
-        src="https://www.youtube-nocookie.com/embed/XdvwVrUfhjk"
-        className="aspect-video max-w-full"
-        title="YouTube video player"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowFullScreen
-      ></iframe>
-
-      <h2 id="rev-major-23" className="text-2xl mb-2 mt-6">
-        Rev major 2023
-      </h2>
-      <iframe
-        width="560"
-        src="https://www.youtube-nocookie.com/embed/dQ5hje6Fnfw"
-        className="aspect-video max-w-full"
-        title="YouTube video player"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowFullScreen
-      ></iframe>
-      <iframe
-        width="560"
-        src="https://www.youtube-nocookie.com/embed/YaHbTVwuYl0"
-        className="aspect-video max-w-full"
-        title="YouTube video player"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowFullScreen
-      ></iframe>
+      <div className="space-y-12">
+        {data.matchVideoSets.slice(0, setsToShow).map((vSet) => {
+          return (
+            <div className="space-y-8" key={vSet.setName}>
+              <div>
+                <h2 key={vSet.setName} className="text-2xl mb-2 mt-6">
+                  {vSet.setName}
+                </h2>
+                <div className="space-y-4">
+                  {vSet.videos.map((vid) => {
+                    return (
+                      <div key={vid.name}>
+                        {vSet.videos.length > 1 && <h3>{vid.name}</h3>}
+                        <iframe
+                          width="560"
+                          src={`https://www.youtube-nocookie.com/embed/${vid.url}`}
+                          className="aspect-video max-w-full"
+                          title="YouTube video player"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          allowFullScreen
+                        />
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+      {setsToShow < data.matchVideoSets.length && (
+        <div className="mt-6">
+          <Button onClick={() => setSetsToShow((prev) => prev + 5)}>
+            Show more
+          </Button>
+        </div>
+      )}
     </ContentContainer>
   );
 }
