@@ -4,27 +4,22 @@ import { json } from "@remix-run/node";
 import { Link, useLoaderData } from "@remix-run/react";
 import { CharacterCard } from "~/components/CharacterCard";
 import { ContentContainer } from "~/components/ContentContainer";
-import { getTekken7Characters } from "~/services/dataService.server";
+import {
+  getTekken7Characters,
+  getTekken8Characters,
+} from "~/services/dataService.server";
 import type { GamePageData } from "~/types/GamePageData";
 
-export const loader = async (): Promise<TypedResponse<GamePageData>> => {
-  // const target = ['https://www.googleapis.com/auth/spreadsheets.readonly'];
-  // const jwt = new google.auth.JWT({
-  //   email: process.env.GOOGLE_SHEETS_CLIENT_EMAIL,
-  //   scopes: target,
-  //   key: (process.env.GOOGLE_SHEETS_PRIVATE_KEY || '').replace(/\\n/g, '\n'),
-  // });
-
-  // const sheets = google.sheets({ version: 'v4', auth: jwt });
-  // const response = await sheets.spreadsheets.values.get({
-  //   spreadsheetId: "1p-QCqB_Tb1GNX0KaicHr0tZwKa1taK5XeNvMr1N3D64",
-  //   range: 'landingpage', // sheet name
-  // });
-
-  //const rows = response.data.values;
-
-  return json<GamePageData>(
-    { characterInfoList: getTekken7Characters() },
+type LoaderData = {
+  gamePageDataT7: GamePageData;
+  gamePageDataT8: GamePageData;
+};
+export const loader = async (): Promise<TypedResponse<LoaderData>> => {
+  return json<LoaderData>(
+    {
+      gamePageDataT7: { characterInfoList: getTekken7Characters() },
+      gamePageDataT8: { characterInfoList: getTekken8Characters() },
+    },
     {
       headers: {
         "Cache-Control": "public, max-age=300, s-maxage=300",
@@ -57,7 +52,7 @@ export const headers = () => ({
 });
 
 export default function Index() {
-  const { characterInfoList }: GamePageData = useLoaderData<typeof loader>();
+  const { gamePageDataT7, gamePageDataT8 } = useLoaderData<typeof loader>();
   return (
     <ContentContainer enableBottomPadding enableTopPadding>
       <h1 className="mb-4 font-bold text-2xl">TekkenDocs</h1>
@@ -76,14 +71,24 @@ export default function Index() {
         <Link to="t8">Tekken 8</Link>
       </Heading>
 
-      <p>Coming january 2024</p>
+      <p className="mb-4">
+        Tekken is coming january 2024, so this section is work in progress
+      </p>
 
-      <Heading as="h2" mt="5" mb="4" size="5">
+      <ul className="flex flex-wrap gap-5">
+        {gamePageDataT8.characterInfoList.map(({ id, displayName }) => (
+          <li className="cursor-pointer" key={id}>
+            <CharacterCard name={displayName} url={"/t8/" + id} />
+          </li>
+        ))}
+      </ul>
+
+      <Heading as="h2" mt="7" mb="4" size="5">
         <Link to="t7">Tekken 7</Link>
       </Heading>
 
       <ul className="flex flex-wrap gap-5">
-        {characterInfoList.map(({ id, displayName }) => (
+        {gamePageDataT7.characterInfoList.map(({ id, displayName }) => (
           <li className="cursor-pointer" key={id}>
             <CharacterCard name={displayName} url={"/t7/" + id} />
           </li>
