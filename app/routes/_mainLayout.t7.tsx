@@ -8,7 +8,7 @@ import type { GamePageData } from "~/types/GamePageData";
 
 export const loader = async (): Promise<TypedResponse<GamePageData>> => {
   return json<GamePageData>(
-    { characterInfoListT7: getTekken7Characters() },
+    { characterInfoList: getTekken7Characters() },
     {
       headers: {
         "Cache-Control": "public, max-age=300, s-maxage=300",
@@ -18,8 +18,7 @@ export const loader = async (): Promise<TypedResponse<GamePageData>> => {
 };
 
 export default function T7() {
-  const { characterInfoListT7: characterInfoList }: GamePageData =
-    useLoaderData<typeof loader>();
+  const { characterInfoList }: GamePageData = useLoaderData<typeof loader>();
   return (
     <ContentContainer>
       <Heading as="h2" mt="5" mb="4" size="5">
