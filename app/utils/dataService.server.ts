@@ -2,6 +2,7 @@ import { google } from "googleapis";
 import type { SpreadSheetDocName } from "~/types/SpreadSheetDocName";
 
 const spreadSheetToSheetId: Record<SpreadSheetDocName, string> = {
+  'T8' : "1IDC11ShZjpo6p5k8kV24T-jumjY27oQZlwvKr_lb4iM",
   'T7' : "1p-QCqB_Tb1GNX0KaicHr0tZwKa1taK5XeNvMr1N3D64",
   'T7_MatchVideo' : "12YOwciWgaJnTFHymarmiDcMlAEy_TxHHQKT4uyfP-pg",
   'TT2' : "TODO",
