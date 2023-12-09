@@ -8,6 +8,7 @@
     "dev": "remix dev --manual -c \"node server.js\"",
     "start": "cross-env NODE_ENV=production node ./server.js",
     "test": "vitest",
+    "format": "prettier --write .",
     "typecheck": "tsc"
   },
   "dependencies": {
@@ -42,7 +43,10 @@
     "@types/source-map-support": "^0.5.6",
     "@vitejs/plugin-react": "^4.1.0",
     "eslint": "^8.38.0",
+    "eslint-config-prettier": "^9.1.0",
     "jsdom": "^22.1.0",
+    "prettier": "^3.1.0",
+    "prettier-plugin-tailwindcss": "^0.5.9",
     "tailwindcss": "^3.3.3",
     "typescript": "^5.1.6",
     "vite-tsconfig-paths": "^4.2.1",
