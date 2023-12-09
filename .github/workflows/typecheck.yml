@@ -1,4 +1,4 @@
-﻿name: Build
+﻿name: Typecheck
 
 on:
   workflow_dispatch:
@@ -9,7 +9,7 @@ on:
 
 jobs:
   typecheck:
-    name: "Build tekkendocs"
+    name: "Typecheck tekkendocs"
     runs-on: ubuntu-latest
     steps:
       - name: "Checkout code"
@@ -18,5 +18,5 @@ jobs:
       - name: "Install dependencies"
         run: npm install
 
-      - name: "Build"
-        run: npm run build
+      - name: "Typecheck"
+        run: npm run typecheck
