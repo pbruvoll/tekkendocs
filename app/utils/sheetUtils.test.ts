@@ -15,7 +15,7 @@ test("sheetSectionToTable", () => {
     sectionId: "frames_normal",
     rows: [["a1", "a2"]],
   }});
-  expect(table.name).toEqual("MyTable");
+  expect(table.name).toEqual("frames_normal");
   expect(table.headers).toBeUndefined();
   expect(table.rows).toHaveLength(1);
 
@@ -23,7 +23,7 @@ test("sheetSectionToTable", () => {
     sectionId: "frames_tenhit",
     rows: [["h1", "h2"], ["a1", "a2"]],
   }});
-  expect(table2.name).toEqual("MyTable2");
+  expect(table2.name).toEqual("frames_tenhit");
   expect(table2.headers).toContain("h1");
   expect(table2.rows).toHaveLength(1);
   expect(table2.rows[0]).toContain("a1");
