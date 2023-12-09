@@ -1,0 +1,21 @@
+﻿name: Build
+
+on:
+  push:
+    paths:
+      - "src/**"
+      - "package.json"
+
+jobs:
+  typecheck:
+    name: "Build tekkendocs"
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Checkout code"
+        uses: actions/checkout@v4
+
+      - name: "Install dependencies"
+        run: npm install
+
+      - name: "Build"
+        run: npm run build
