@@ -2,9 +2,9 @@
 
 on:
   push:
-    paths:
-      - "src/**"
-      - "package.json"
+    branches:
+      - main
+  pull_request:
 
 jobs:
   typecheck:
