@@ -6,20 +6,22 @@ import { Link, useLoaderData } from "@remix-run/react";
 import { ContentContainer } from "~/components/ContentContainer";
 import { google } from "~/google.server";
 import { commandToUrlSegment } from "~/utils/moveUtils";
+import { ServerStatusCode } from "~/types/ServerStatusCode";
+import { ErrorResponseImpl } from "@remix-run/router/utils";
 
 export const loader = async ({ params }: DataFunctionArgs) => {
   const character = params.character;
   const move = params.move;
   if (!character) {
     throw new Response(null, {
-      status: 400,
+      status: ServerStatusCode.BadRequest,
       statusText: "Character cant be empty",
     });
   }
 
   if (!move) {
     throw new Response(null, {
-      status: 400,
+      status: ServerStatusCode.BadRequest,
       statusText: "Move cant be empty",
     });
   }
@@ -40,38 +42,48 @@ export const loader = async ({ params }: DataFunctionArgs) => {
     });
 
     if (!response.data.values) {
-      throw json("not found", { status: 401, statusText: "Not found 1" });
+      throw new Response("not found", {
+        status: ServerStatusCode.NotFound,
+        statusText: "Not found 2",
+      });
     }
 
     rows = response.data.values;
-  } catch {
-    throw new Response(null, { status: 500, statusText: "server error" });
+  } catch (error: unknown) {
+    if (error instanceof ErrorResponseImpl) {
+      throw error;
+    }
+
+    throw new Response(null, {
+      status: ServerStatusCode.ServerError,
+      statusText: "server error",
+    });
   }
 
   if (rows[0][0] !== "#frames_normal" || rows.length < 3) {
     throw json("no frame data found", {
-      status: 401,
+      status: ServerStatusCode.NotFound,
       statusText: "Not found 2",
     });
   }
   const dataHeaders = rows[1];
   const moveRow = rows.find(
-    (row) => row[0] && commandToUrlSegment(row[0]) === move
+      (row) => row[0] && commandToUrlSegment(row[0]) === move
   );
   if (!moveRow) {
     throw json("move not found in frame data", {
-      status: 401,
+      status: ServerStatusCode.NotFound,
       statusText: "Not found 4",
     });
   }
 
   return json(
-    { characterName: character, dataHeaders, moveRow },
-    {
-      headers: {
-        "Cache-Control": "public, max-age=300, s-maxage=300",
-      },
-    }
+      { characterName: character, dataHeaders, moveRow },
+      {
+        headers: {
+          "Cache-Control": "public, max-age=300, s-maxage=300",
+        },
+      }
   );
 };
 
@@ -94,15 +106,15 @@ export const meta: MetaFunction<typeof loader> = ({ data, params }) => {
   }
 
   const { dataHeaders, moveRow }: { dataHeaders: string[]; moveRow: string[] } =
-    data;
+      data;
 
   const characterId = character?.toLocaleLowerCase();
   const characterTitle = character[0].toUpperCase() + character.substring(1);
 
   const title = `${move} - ${characterTitle} Tekken7 Frame Data | TekkenDocs`;
   const description = dataHeaders
-    .map((header, index) => `${header}:   ${moveRow[index] || ""}`)
-    .join("\n");
+      .map((header, index) => `${header}:   ${moveRow[index] || ""}`)
+      .join("\n");
 
   return [
     { title },
@@ -127,25 +139,25 @@ export default function Move() {
   } = useLoaderData<typeof loader>();
 
   return (
-    <ContentContainer enableTopPadding enableBottomPadding>
-      <Heading mt="2" mb="4" as="h1" className="capitalize">
-        <RadixLink asChild>
-          <Link to={"/" + characterName}>{characterName} </Link>
-        </RadixLink>
-        : {moveRow[0]}
-      </Heading>
-      <Table.Root variant="surface" style={{ width: "100%" }}>
-        <Table.Body>
-          {headers.slice(1).map((header, i) => {
-            return (
-              <Table.Row key={header}>
-                <Table.Cell>{header}</Table.Cell>
-                <Table.Cell>{moveRow[i + 1] || ""}</Table.Cell>
-              </Table.Row>
-            );
-          })}
-        </Table.Body>
-      </Table.Root>
-    </ContentContainer>
+      <ContentContainer enableTopPadding enableBottomPadding>
+        <Heading mt="2" mb="4" as="h1" className="capitalize">
+          <RadixLink asChild>
+            <Link to={"/" + characterName}>{characterName} </Link>
+          </RadixLink>
+          : {moveRow[0]}
+        </Heading>
+        <Table.Root variant="surface" style={{ width: "100%" }}>
+          <Table.Body>
+            {headers.slice(1).map((header, i) => {
+              return (
+                  <Table.Row key={header}>
+                    <Table.Cell>{header}</Table.Cell>
+                    <Table.Cell>{moveRow[i + 1] || ""}</Table.Cell>
+                  </Table.Row>
+              );
+            })}
+          </Table.Body>
+        </Table.Root>
+      </ContentContainer>
   );
 }
