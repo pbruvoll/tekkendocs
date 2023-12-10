@@ -1,12 +1,9 @@
-import { LRUCache } from "lru-cache"
-import type {
-  CacheEntry,
-  CachifiedOptions,
-} from "cachified"
 import {
-  lruCacheAdapter,
+  type CacheEntry,
   cachified as baseCachified,
-} from "cachified"
+  type CachifiedOptions,
+  lruCacheAdapter} from "cachified"
+import { LRUCache } from "lru-cache"
 const lru = new LRUCache<string, CacheEntry>({ max: 200 })
 export function cachified<Value>(
   options: Omit<CachifiedOptions<Value>, "cache">,

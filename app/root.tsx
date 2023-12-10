@@ -1,17 +1,9 @@
-import type { MetaFunction } from "@remix-run/react";
-import {
-  Links,
-  LiveReload,
-  Meta,
-  Outlet,
-  Scripts,
-  ScrollRestoration,
-} from "@remix-run/react";
+import { Theme } from "@radix-ui/themes";
+import radixStyles from "@radix-ui/themes/styles.css";
 import type { LinksFunction } from "@remix-run/node";
+import { Links, LiveReload, Meta, type MetaFunction, Outlet, Scripts, ScrollRestoration} from "@remix-run/react";
 import stylesUrl from "~/global.css";
 import styles from "./tailwind.css";
-import radixStyles from "@radix-ui/themes/styles.css";
-import { Theme } from "@radix-ui/themes";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: stylesUrl },

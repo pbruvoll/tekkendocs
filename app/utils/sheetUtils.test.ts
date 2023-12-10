@@ -1,5 +1,5 @@
+import {expect,test } from "vitest"
 import { sheetSectionToTable, sheetToSections } from "./sheetUtils.server";
-import {test, expect } from "vitest"
 
 test('sheetToSections', () => {
   const sections = sheetToSections([["#id1"], ["a", "b"], [], ["#id2"], ["c", "d"]]);

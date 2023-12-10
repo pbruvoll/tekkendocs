@@ -1,7 +1,6 @@
 import { Pencil1Icon } from "@radix-ui/react-icons";
-import { Heading, Table, Link as RadixLink } from "@radix-ui/themes";
-import type { DataFunctionArgs, MetaFunction } from "@remix-run/node";
-import { json } from "@remix-run/node";
+import { Heading, Link as RadixLink,Table } from "@radix-ui/themes";
+import { type DataFunctionArgs,json,type MetaFunction  } from "@remix-run/node";
 import { Link, NavLink, useLoaderData } from "@remix-run/react";
 import { ContentContainer } from "~/components/ContentContainer";
 import { hasHeaderMap } from "~/constants/hasHeaderMap";

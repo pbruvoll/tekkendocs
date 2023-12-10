@@ -1,14 +1,12 @@
-import { Table, Link as RadixLink, Heading } from "@radix-ui/themes";
-import type { HeadersFunction } from "@remix-run/node";
-import type { MetaFunction } from "@remix-run/react";
-import { Link, NavLink, useMatches } from "@remix-run/react";
-import { ContentContainer } from "~/components/ContentContainer";
 import { Pencil1Icon } from "@radix-ui/react-icons";
-import { commandToUrlSegment } from "~/utils/moveUtils";
-
-import type { RouteHandle } from "~/types/RouteHandle";
-import type { CharacterFrameData } from "~/types/CharacterFrameData";
+import { Heading,Link as RadixLink, Table } from "@radix-ui/themes";
+import type { HeadersFunction } from "@remix-run/node";
+import { Link, type MetaFunction, NavLink, useMatches } from "@remix-run/react";
+import { ContentContainer } from "~/components/ContentContainer";
 import { tableIdToDisplayName } from "~/constants/tableIdToDisplayName";
+import type { CharacterFrameData } from "~/types/CharacterFrameData";
+import type { RouteHandle } from "~/types/RouteHandle";
+import { commandToUrlSegment } from "~/utils/moveUtils";
 
 export const headers: HeadersFunction = (args) => ({
   "Cache-Control": "public, max-age=300, s-maxage=300",

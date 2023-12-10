@@ -1,8 +1,6 @@
-import { Heading, Table, Link as RadixLink } from "@radix-ui/themes";
-import type { DataFunctionArgs } from "@remix-run/node";
-import { json } from "@remix-run/node";
-import type { MetaFunction } from "@remix-run/react";
-import { Link, useLoaderData } from "@remix-run/react";
+import { Heading, Link as RadixLink,Table } from "@radix-ui/themes";
+import { type DataFunctionArgs, json} from "@remix-run/node";
+import { Link, type MetaFunction, useLoaderData} from "@remix-run/react";
 import { ContentContainer } from "~/components/ContentContainer";
 import { google } from "~/google.server";
 import { commandToUrlSegment } from "~/utils/moveUtils";

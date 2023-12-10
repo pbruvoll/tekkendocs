@@ -3,8 +3,8 @@ import { Heading, Table } from "@radix-ui/themes";
 import { Link, useLoaderData } from "@remix-run/react";
 import { ContentContainer } from "~/components/ContentContainer";
 import { tableIdToDisplayName } from "~/constants/tableIdToDisplayName";
-import type { loader } from "./_mainLayout.t7_.$character.meta";
 import { commandToUrlSegment } from "~/utils/moveUtils";
+import type { loader } from "./_mainLayout.t7_.$character.meta";
 
 export default function Index() {
   const { characterName, editUrl, tables } = useLoaderData<typeof loader>();

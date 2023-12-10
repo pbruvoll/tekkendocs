@@ -1,4 +1,4 @@
-import { json, type DataFunctionArgs } from "@remix-run/node";
+import { type DataFunctionArgs,json } from "@remix-run/node";
 import { hasHeaderMap } from "~/constants/hasHeaderMap";
 import type { Game } from "~/types/Game";
 import type { Move } from "~/types/Move";
