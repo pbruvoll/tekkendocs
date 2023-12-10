@@ -35,30 +35,19 @@ export const loader = async ({ params }: DataFunctionArgs) => {
 
   const sheets = google.sheets({ version: "v4", auth: jwt });
   let rows: any[][];
-  try {
+ 
     const response = await sheets.spreadsheets.values.get({
       spreadsheetId: "1p-QCqB_Tb1GNX0KaicHr0tZwKa1taK5XeNvMr1N3D64",
       range: character, // sheet name
+    }).catch(() => {
+      throw new Response(null, { status: ServerStatusCode.ServerError, statusText: "server error" });
     });
 
     if (!response.data.values) {
-      throw new Response("not found", {
-        status: ServerStatusCode.NotFound,
-        statusText: "Not found 2",
-      });
+      throw json("not found", { status: ServerStatusCode.NotFound, statusText: "Not found 2" });
     }
 
     rows = response.data.values;
-  } catch (error: unknown) {
-    if (error instanceof ErrorResponseImpl) {
-      throw error;
-    }
-
-    throw new Response(null, {
-      status: ServerStatusCode.ServerError,
-      statusText: "server error",
-    });
-  }
 
   if (rows[0][0] !== "#frames_normal" || rows.length < 3) {
     throw json("no frame data found", {
