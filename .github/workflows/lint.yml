@@ -1,0 +1,22 @@
+﻿name: Lint
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  typecheck:
+    name: 'Lint check tekkendocs'
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Checkout code'
+        uses: actions/checkout@v4
+
+      - name: 'Install dependencies'
+        run: npm install
+
+      - name: 'Lint check'
+        run: npm run lint
