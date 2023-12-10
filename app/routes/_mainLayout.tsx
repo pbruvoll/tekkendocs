@@ -1,10 +1,10 @@
-import { Link, Outlet } from "@remix-run/react";
-import { ContentContainer } from "~/components/ContentContainer";
+import { Link, Outlet } from '@remix-run/react'
+import { ContentContainer } from '~/components/ContentContainer'
 
 export default function MainLayout() {
   return (
     <>
-      <header style={{ background: "var(--accent-4" }}>
+      <header style={{ background: 'var(--accent-4' }}>
         <ContentContainer>
           <div className="flex items-center py-1">
             <Link to="/">
@@ -16,7 +16,7 @@ export default function MainLayout() {
                 alt="home"
               />
             </Link>
-            <Link to="/" className="text-2xl flex-grow text-center">
+            <Link to="/" className="flex-grow text-center text-2xl">
               TekkenDocs
             </Link>
           </div>
@@ -24,5 +24,5 @@ export default function MainLayout() {
       </header>
       <Outlet />
     </>
-  );
+  )
 }

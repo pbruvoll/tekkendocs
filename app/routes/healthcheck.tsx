@@ -1,2 +1,2 @@
-const HealthCheck = () => <div>Health Check Ok</div>;
+const HealthCheck = () => <div>Health Check Ok</div>
 export default HealthCheck

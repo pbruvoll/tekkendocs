@@ -1,4 +1,4 @@
 export type CharacterInfo = {
-  displayName: string,
-  id: string,
+  displayName: string
+  id: string
 }
