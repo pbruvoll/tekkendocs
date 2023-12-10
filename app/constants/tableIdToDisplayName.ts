@@ -12,4 +12,5 @@ export const tableIdToDisplayName: Record<TableId, string> = {
   punishers_crouching: "While standing punishers",
   punishers_standing: "Standing punishers",
   punishers_whiff: "Whiff punishers",
+  videos_match: "Match videos"
 };

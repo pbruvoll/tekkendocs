@@ -1,9 +1,10 @@
 import { Pencil1Icon } from "@radix-ui/react-icons";
 import { Heading, Table } from "@radix-ui/themes";
-import { useLoaderData } from "@remix-run/react";
+import { Link, useLoaderData } from "@remix-run/react";
 import { ContentContainer } from "~/components/ContentContainer";
 import { tableIdToDisplayName } from "~/constants/tableIdToDisplayName";
-import { loader } from "./_mainLayout.t7_.$character.meta";
+import type { loader } from "./_mainLayout.t7_.$character.meta";
+import { commandToUrlSegment } from "~/utils/moveUtils";
 
 export default function Index() {
   const { characterName, editUrl, tables } = useLoaderData<typeof loader>();
@@ -63,7 +64,6 @@ export default function Index() {
                             //this is a command, so make it link
                             return (
                               <Table.Cell key={j}>
-                                <RadixLink asChild>
                                   <Link
                                     className="text-[#ab6400]"
                                     style={{ textDecoration: "none" }}
@@ -71,7 +71,6 @@ export default function Index() {
                                   >
                                     {cell}
                                   </Link>
-                                </RadixLink>
                               </Table.Cell>
                             );
                           }

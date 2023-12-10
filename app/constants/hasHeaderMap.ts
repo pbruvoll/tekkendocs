@@ -12,4 +12,5 @@ export const hasHeaderMap: Record<TableId, boolean> = {
   punishers_crouching: true,
   punishers_standing: true,
   punishers_whiff: true,
+  videos_match: true,
 };
