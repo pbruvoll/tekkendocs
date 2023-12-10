@@ -1,4 +1,4 @@
-import type { TableId } from "~/types/TableId";
+import type { TableId } from '~/types/TableId'
 
 export const hasHeaderMap: Record<TableId, boolean> = {
   frames_normal: true,
@@ -13,4 +13,4 @@ export const hasHeaderMap: Record<TableId, boolean> = {
   punishers_standing: true,
   punishers_whiff: true,
   videos_match: true,
-};
+}

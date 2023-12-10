@@ -1,4 +1,4 @@
-﻿name: Unit Testing 
+﻿name: Unit Testing
 
 on:
   workflow_dispatch:
@@ -9,14 +9,14 @@ on:
 
 jobs:
   typecheck:
-    name: "Running Unit Tests"
+    name: 'Running Unit Tests'
     runs-on: ubuntu-latest
     steps:
-      - name: "Checkout code"
+      - name: 'Checkout code'
         uses: actions/checkout@v4
 
-      - name: "Install dependencies"
+      - name: 'Install dependencies'
         run: npm install
-        
-      - name: "Running unit tests"
+
+      - name: 'Running unit tests'
         run: npm run test
