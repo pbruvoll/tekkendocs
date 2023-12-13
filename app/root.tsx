@@ -12,6 +12,7 @@ import {
 } from '@remix-run/react'
 import stylesUrl from '~/global.css'
 import styles from './tailwind.css'
+import { getCacheControlHeaders } from './utils/headerUtils'
 
 export const links: LinksFunction = () => [
   { rel: 'stylesheet', href: stylesUrl },
@@ -19,9 +20,7 @@ export const links: LinksFunction = () => [
   { rel: 'stylesheet', href: radixStyles },
 ]
 
-export const headers = () => ({
-  'Cache-Control': 'public, max-age=10, s-maxage=60',
-})
+export const headers = () => getCacheControlHeaders({ seconds: 60 * 5 })
 
 export const meta: MetaFunction = () => [
   {

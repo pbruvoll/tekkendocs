@@ -4,6 +4,7 @@ import { Link, type MetaFunction, useLoaderData } from '@remix-run/react'
 import { ContentContainer } from '~/components/ContentContainer'
 import { google } from '~/google.server'
 import { ServerStatusCode } from '~/types/ServerStatusCode'
+import { getCacheControlHeaders } from '~/utils/headerUtils'
 import { commandToUrlSegment } from '~/utils/moveUtils'
 
 export const loader = async ({ params }: DataFunctionArgs) => {
@@ -74,16 +75,12 @@ export const loader = async ({ params }: DataFunctionArgs) => {
   return json(
     { characterName: character, dataHeaders, moveRow },
     {
-      headers: {
-        'Cache-Control': 'public, max-age=300, s-maxage=300',
-      },
+      headers: getCacheControlHeaders({ seconds: 60 * 5 }),
     },
   )
 }
 
-export const headers = () => ({
-  'Cache-Control': 'public, max-age=300, s-maxage=300',
-})
+export const headers = () => getCacheControlHeaders({ seconds: 60 * 5 })
 
 export const meta: MetaFunction<typeof loader> = ({ data, params }) => {
   const character = params.character

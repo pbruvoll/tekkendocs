@@ -5,6 +5,7 @@ import type { Move } from '~/types/Move'
 import type { Throw } from '~/types/Throw'
 import { cachified } from '~/utils/cache.server'
 import { getSheet } from '~/utils/dataService.server'
+import { getCacheControlHeaders } from '~/utils/headerUtils'
 import { sheetSectionToTable, sheetToSections } from '~/utils/sheetUtils.server'
 
 export const loader = async ({ params }: DataFunctionArgs) => {
@@ -77,9 +78,7 @@ export const loader = async ({ params }: DataFunctionArgs) => {
   return json(
     { characterName: character, editUrl, framesNormal, framesThrows },
     {
-      headers: {
-        'Cache-Control': 'public, max-age=300, s-maxage=300',
-      },
+      headers: getCacheControlHeaders({ seconds: 60 * 5 });
     },
   )
 }

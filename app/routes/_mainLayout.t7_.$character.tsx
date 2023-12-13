@@ -4,6 +4,7 @@ import { hasHeaderMap } from '~/constants/hasHeaderMap'
 import type { Game } from '~/types/Game'
 import { cachified } from '~/utils/cache.server'
 import { getSheet } from '~/utils/dataService.server'
+import { getCacheControlHeaders } from '~/utils/headerUtils'
 import { sheetSectionToTable, sheetToSections } from '~/utils/sheetUtils.server'
 
 export const loader = async ({ params }: DataFunctionArgs) => {
@@ -48,7 +49,7 @@ export const loader = async ({ params }: DataFunctionArgs) => {
     { characterName: character, editUrl, tables },
     {
       headers: {
-        'Cache-Control': 'public, max-age=300, s-maxage=300',
+        ...getCacheControlHeaders({ seconds: 60 * 5 }),
         'X-Td-Cachecontext': JSON.stringify(freshValueContext),
       },
     },
