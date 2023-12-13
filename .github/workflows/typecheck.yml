@@ -9,14 +9,14 @@ on:
 
 jobs:
   typecheck:
-    name: "Typecheck tekkendocs"
+    name: 'Typecheck tekkendocs'
     runs-on: ubuntu-latest
     steps:
-      - name: "Checkout code"
+      - name: 'Checkout code'
         uses: actions/checkout@v4
 
-      - name: "Install dependencies"
+      - name: 'Install dependencies'
         run: npm install
 
-      - name: "Typecheck"
+      - name: 'Typecheck'
         run: npm run typecheck

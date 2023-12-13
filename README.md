@@ -17,7 +17,6 @@ npm run dev
 ```
 
 ## License
+
 Your are not allowd to copy, distribute the code in this repository without explicit permission.
 The data the website exposes can be used, we just appreacite that you give credits to tekkendocs.com and rbnorway.org where you are using the data.
-
-

@@ -1,36 +1,36 @@
-import type { MetaFunction } from "@remix-run/react";
+import { Theme } from '@radix-ui/themes'
+import radixStyles from '@radix-ui/themes/styles.css'
+import type { LinksFunction } from '@remix-run/node'
 import {
   Links,
   LiveReload,
   Meta,
+  type MetaFunction,
   Outlet,
   Scripts,
   ScrollRestoration,
-} from "@remix-run/react";
-import type { LinksFunction } from "@remix-run/node";
-import stylesUrl from "~/global.css";
-import styles from "./tailwind.css";
-import radixStyles from "@radix-ui/themes/styles.css";
-import { Theme } from "@radix-ui/themes";
+} from '@remix-run/react'
+import stylesUrl from '~/global.css'
+import styles from './tailwind.css'
 
 export const links: LinksFunction = () => [
-  { rel: "stylesheet", href: stylesUrl },
-  { rel: "stylesheet", href: styles },
-  { rel: "stylesheet", href: radixStyles },
-];
+  { rel: 'stylesheet', href: stylesUrl },
+  { rel: 'stylesheet', href: styles },
+  { rel: 'stylesheet', href: radixStyles },
+]
 
 export const headers = () => ({
-  "Cache-Control": "public, max-age=10, s-maxage=60",
-});
+  'Cache-Control': 'public, max-age=10, s-maxage=60',
+})
 
 export const meta: MetaFunction = () => [
   {
-    title: "TekkenDocs | Frame data for Tekken",
+    title: 'TekkenDocs | Frame data for Tekken',
   },
   {
-    description: "Frame data and usefull resources for Tekken",
+    description: 'Frame data and usefull resources for Tekken',
   },
-];
+]
 
 export default function App() {
   return (
@@ -64,5 +64,5 @@ export default function App() {
         <LiveReload />
       </body>
     </html>
-  );
+  )
 }
