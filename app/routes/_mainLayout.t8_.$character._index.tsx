@@ -78,10 +78,10 @@ export default function Index() {
             Edit
           </a>
         </div>
-        <div className="flex gap-3">
+        <nav className="flex gap-3">
           <NavLink to="">Frame data</NavLink>
           <NavLink to="meta">Guide</NavLink>
-        </div>
+        </nav>
       </ContentContainer>
       <ContentContainer disableXPadding>
         {tables.map(table => {
