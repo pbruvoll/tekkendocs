@@ -1,4 +1,6 @@
+import { json } from '@remix-run/node'
 import { google } from 'googleapis'
+import { ServerStatusCode } from '~/types/ServerStatusCode'
 import type { SpreadSheetDocName } from '~/types/SpreadSheetDocName'
 
 const spreadSheetToSheetId: Record<SpreadSheetDocName, string> = {
@@ -43,9 +45,9 @@ export const getSheet = async (
     console.warn(
       'Error getting data: ' + response.status + ' ' + response.statusText,
     )
-    return null
   } catch (e) {
     console.warn('Exception getting data ' + e)
-    return null
+    throw e;
   }
+  throw json(`There were no rows for sheet ${sheetName}`, {status: ServerStatusCode.NotFound, statusText: 'Not found'});
 }
