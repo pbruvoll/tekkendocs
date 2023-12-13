@@ -78,7 +78,7 @@ export const loader = async ({ params }: DataFunctionArgs) => {
   return json(
     { characterName: character, editUrl, framesNormal, framesThrows },
     {
-      headers: getCacheControlHeaders({ seconds: 60 * 5 });
+      headers: getCacheControlHeaders({ seconds: 60 * 5 }),
     },
   )
 }
