@@ -5,14 +5,13 @@ import { CharacterCard } from '~/components/CharacterCard'
 import { ContentContainer } from '~/components/ContentContainer'
 import { getTekken8Characters } from '~/services/dataService.server'
 import type { GamePageData } from '~/types/GamePageData'
+import { getCacheControlHeaders } from '~/utils/headerUtils'
 
 export const loader = async (): Promise<TypedResponse<GamePageData>> => {
   return json<GamePageData>(
     { characterInfoList: getTekken8Characters() },
     {
-      headers: {
-        'Cache-Control': 'public, max-age=300, s-maxage=300',
-      },
+      headers: getCacheControlHeaders({ seconds: 60 * 5 }),
     },
   )
 }
