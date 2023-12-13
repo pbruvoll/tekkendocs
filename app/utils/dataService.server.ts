@@ -47,7 +47,10 @@ export const getSheet = async (
     )
   } catch (e) {
     console.warn('Exception getting data ' + e)
-    throw e;
+    throw e
   }
-  throw json(`There were no rows for sheet ${sheetName}`, {status: ServerStatusCode.NotFound, statusText: 'Not found'});
+  throw json(`There were no rows for sheet ${sheetName}`, {
+    status: ServerStatusCode.NotFound,
+    statusText: 'Not found',
+  })
 }
