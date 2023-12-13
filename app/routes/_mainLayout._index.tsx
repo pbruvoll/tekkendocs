@@ -66,7 +66,30 @@ export default function Index() {
         </Badge>
       </Link>
 
-      <Heading as="h2" mt="5" mb="2" size="5">
+      <Heading as="h2" mt="7" mb="2" size="5">
+        Tekken 8 Demo
+      </Heading>
+
+      <p className="mb-4">
+        Tekken demo is coming December 14th to PS5, so this section is work in
+        progress
+      </p>
+
+      <ul className="flex flex-wrap gap-5">
+        {gamePageDataT8.characterInfoList
+          .filter(c =>
+            ['jin', 'nina', 'kazuya', 'law'].some(demoChar =>
+              c.id.startsWith(demoChar),
+            ),
+          )
+          .map(({ id, displayName }) => (
+            <li className="cursor-pointer" key={id}>
+              <CharacterCard name={displayName} url={'/t8/' + id} />
+            </li>
+          ))}
+      </ul>
+
+      <Heading as="h2" mt="7" mb="2" size="5">
         <Link to="t8">Tekken 8</Link>
       </Heading>
 
