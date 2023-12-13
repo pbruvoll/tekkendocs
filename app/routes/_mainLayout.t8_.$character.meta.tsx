@@ -23,7 +23,7 @@ export const loader = async ({ params }: DataFunctionArgs) => {
     })
   }
 
-  const game: Game = 'T7'
+  const game: Game = 'T8'
 
   const sheetName = `${character}-meta`
   const key = `${sheetName}|_|${game}`
@@ -123,10 +123,10 @@ export default function Index() {
             Edit
           </a>
         </div>
-        <div className="flex gap-3">
+        <nav className="flex gap-3">
           <NavLink to="../">Frame data</NavLink>
           <NavLink to="">Guide</NavLink>
-        </div>
+        </nav>
       </ContentContainer>
       <ContentContainer disableXPadding>
         {tables.map(table => {
