@@ -75,7 +75,7 @@ export default function Index() {
       <ul className="flex flex-wrap gap-5">
         {gamePageDataT8.characterInfoList
           .filter(c =>
-            ['jin', 'nina', 'kazuya', 'law'].some(demoChar =>
+            ['jin', 'nina', 'kazuya', 'paul'].some(demoChar =>
               c.id.startsWith(demoChar),
             ),
           )
