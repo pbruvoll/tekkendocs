@@ -1,19 +1,19 @@
-import { Badge, Heading } from "@radix-ui/themes";
-import type { MetaFunction, TypedResponse } from "@remix-run/node";
-import { json } from "@remix-run/node";
-import { Link, useLoaderData } from "@remix-run/react";
-import { CharacterCard } from "~/components/CharacterCard";
-import { ContentContainer } from "~/components/ContentContainer";
+import { Badge, Heading } from '@radix-ui/themes'
+import type { MetaFunction, TypedResponse } from '@remix-run/node'
+import { json } from '@remix-run/node'
+import { Link, useLoaderData } from '@remix-run/react'
+import { CharacterCard } from '~/components/CharacterCard'
+import { ContentContainer } from '~/components/ContentContainer'
 import {
   getTekken7Characters,
   getTekken8Characters,
-} from "~/services/dataService.server";
-import type { GamePageData } from "~/types/GamePageData";
+} from '~/services/dataService.server'
+import type { GamePageData } from '~/types/GamePageData'
 
 type LoaderData = {
-  gamePageDataT7: GamePageData;
-  gamePageDataT8: GamePageData;
-};
+  gamePageDataT7: GamePageData
+  gamePageDataT8: GamePageData
+}
 export const loader = async (): Promise<TypedResponse<LoaderData>> => {
   return json<LoaderData>(
     {
@@ -22,52 +22,75 @@ export const loader = async (): Promise<TypedResponse<LoaderData>> => {
     },
     {
       headers: {
-        "Cache-Control": "public, max-age=300, s-maxage=300",
+        'Cache-Control': 'public, max-age=300, s-maxage=300',
       },
-    }
-  );
-};
+    },
+  )
+}
 
 export const meta: MetaFunction = () => {
-  const title = "TekkenDocs - Frame data and resources for Tekken";
+  const title = 'TekkenDocs - Frame data and resources for Tekken'
   const description =
-    "Frame data and resources for leveling up your skills in Tekken";
+    'Frame data and resources for leveling up your skills in Tekken'
   return [
     { title },
     {
-      property: "og:title",
+      property: 'og:title',
       content: title,
     },
     {
-      name: "description",
+      name: 'description',
       content: description,
     },
-    { property: "og:description", content: description },
-    { property: "og:image", content: "/logo-512.png" },
-  ];
-};
+    { property: 'og:description', content: description },
+    { property: 'og:image', content: '/logo-512.png' },
+  ]
+}
 
 export const headers = () => ({
-  "Cache-Control": "public, max-age=300, s-maxage=300",
-});
+  'Cache-Control': 'public, max-age=300, s-maxage=300',
+})
 
 export default function Index() {
-  const { gamePageDataT7, gamePageDataT8 } = useLoaderData<typeof loader>();
+  const { gamePageDataT7, gamePageDataT8 } = useLoaderData<typeof loader>()
   return (
     <ContentContainer enableBottomPadding enableTopPadding>
-      <h1 className="mb-4 font-bold text-2xl">TekkenDocs</h1>
+      <h1 className="mb-4 text-2xl font-bold">TekkenDocs</h1>
       <p className="mb-4">Frame data and learning resources for Tekken</p>
 
       <Heading as="h2" mt="5" mb="4" size="5">
         Resources
       </Heading>
       <Link to="/matchvideo" className="cursor-pointer">
-        <Badge size="2" style={{ cursor: "pointer" }} variant="outline">
+        <Badge size="2" style={{ cursor: 'pointer' }} variant="outline">
           Match videos
         </Badge>
       </Link>
 
-      <Heading as="h2" mt="5" mb="2" size="5">
+      <Heading as="h2" mt="7" mb="2" size="5">
+        Tekken 8 Demo
+      </Heading>
+
+      <p className="mb-4">
+        Tekken demo is coming December 14th to PS5, so this section is work in
+        progress
+      </p>
+
+      <ul className="flex flex-wrap gap-5">
+        {gamePageDataT8.characterInfoList
+          .filter(c =>
+            ['jin', 'nina', 'kazuya', 'law'].some(demoChar =>
+              c.id.startsWith(demoChar),
+            ),
+          )
+          .map(({ id, displayName }) => (
+            <li className="cursor-pointer" key={id}>
+              <CharacterCard name={displayName} url={'/t8/' + id} />
+            </li>
+          ))}
+      </ul>
+
+      <Heading as="h2" mt="7" mb="2" size="5">
         <Link to="t8">Tekken 8</Link>
       </Heading>
 
@@ -78,7 +101,7 @@ export default function Index() {
       <ul className="flex flex-wrap gap-5">
         {gamePageDataT8.characterInfoList.map(({ id, displayName }) => (
           <li className="cursor-pointer" key={id}>
-            <CharacterCard name={displayName} url={"/t8/" + id} />
+            <CharacterCard name={displayName} url={'/t8/' + id} />
           </li>
         ))}
       </ul>
@@ -90,10 +113,10 @@ export default function Index() {
       <ul className="flex flex-wrap gap-5">
         {gamePageDataT7.characterInfoList.map(({ id, displayName }) => (
           <li className="cursor-pointer" key={id}>
-            <CharacterCard name={displayName} url={"/t7/" + id} />
+            <CharacterCard name={displayName} url={'/t7/' + id} />
           </li>
         ))}
       </ul>
     </ContentContainer>
-  );
+  )
 }
