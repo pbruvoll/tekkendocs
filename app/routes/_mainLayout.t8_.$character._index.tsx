@@ -6,10 +6,11 @@ import { ContentContainer } from '~/components/ContentContainer'
 import { tableIdToDisplayName } from '~/constants/tableIdToDisplayName'
 import type { CharacterFrameData } from '~/types/CharacterFrameData'
 import type { RouteHandle } from '~/types/RouteHandle'
+import { getCacheControlHeaders } from '~/utils/headerUtils'
 import { commandToUrlSegment } from '~/utils/moveUtils'
 
 export const headers: HeadersFunction = args => ({
-  'Cache-Control': 'public, max-age=300, s-maxage=300',
+  ...getCacheControlHeaders({ seconds: 60 * 5 }),
   'X-Td-Cachecontext': args.loaderHeaders.get('X-Td-Cachecontext') || 'none',
 })
 
@@ -78,10 +79,10 @@ export default function Index() {
             Edit
           </a>
         </div>
-        <div className="flex gap-3">
+        <nav className="flex gap-3">
           <NavLink to="">Frame data</NavLink>
           <NavLink to="meta">Guide</NavLink>
-        </div>
+        </nav>
       </ContentContainer>
       <ContentContainer disableXPadding>
         {tables.map(table => {

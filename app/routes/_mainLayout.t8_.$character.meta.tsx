@@ -10,6 +10,7 @@ import type { Game } from '~/types/Game'
 import type { RouteHandle } from '~/types/RouteHandle'
 import { cachified } from '~/utils/cache.server'
 import { getSheet } from '~/utils/dataService.server'
+import { getCacheControlHeaders } from '~/utils/headerUtils'
 import { commandToUrlSegment } from '~/utils/moveUtils'
 import { sheetSectionToTable, sheetToSections } from '~/utils/sheetUtils.server'
 
@@ -22,7 +23,7 @@ export const loader = async ({ params }: DataFunctionArgs) => {
     })
   }
 
-  const game: Game = 'T7'
+  const game: Game = 'T8'
 
   const sheetName = `${character}-meta`
   const key = `${sheetName}|_|${game}`
@@ -56,7 +57,7 @@ export const loader = async ({ params }: DataFunctionArgs) => {
     { characterName: character, editUrl, tables },
     {
       headers: {
-        'Cache-Control': 'public, max-age=300, s-maxage=300',
+        ...getCacheControlHeaders({ seconds: 60 * 5 }),
         'X-Td-Cachecontext': JSON.stringify(freshValueContext),
       },
     },
@@ -122,10 +123,10 @@ export default function Index() {
             Edit
           </a>
         </div>
-        <div className="flex gap-3">
+        <nav className="flex gap-3">
           <NavLink to="../">Frame data</NavLink>
           <NavLink to="">Guide</NavLink>
-        </div>
+        </nav>
       </ContentContainer>
       <ContentContainer disableXPadding>
         {tables.map(table => {

@@ -69,14 +69,17 @@ outputDir = args.outputDir # e.g. "C:/projects/rbnTekkenFrameData/frameData/T7/c
 
 
 # not currently in use. Can be used when we support both T7 and T8
-gameId = "T7"
+gameId = "T8"
 if args.gameId :
     gameId = args.gameId
 
 print("trying auth")
 gc = gspread.oauth()
 print("got auth")
-gSheet = gc.open_by_url('https://docs.google.com/spreadsheets/d/1p-QCqB_Tb1GNX0KaicHr0tZwKa1taK5XeNvMr1N3D64')
+#T7 : 
+#gSheet = gc.open_by_url('https://docs.google.com/spreadsheets/d/1p-QCqB_Tb1GNX0KaicHr0tZwKa1taK5XeNvMr1N3D64')
+gSheet = gc.open_by_url('https://docs.google.com/spreadsheets/d/1IDC11ShZjpo6p5k8kV24T-jumjY27oQZlwvKr_lb4iM')
+
 
 
 # currently we loop throug all folders and expect to find a worksheet with similar name. It would probalby

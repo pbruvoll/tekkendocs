@@ -8,6 +8,7 @@ import type { MatchVideo, MatchVideoSet } from '~/types/MatchVideo'
 import type { SpreadSheetDocName } from '~/types/SpreadSheetDocName'
 import { cachified } from '~/utils/cache.server'
 import { getSheet } from '~/utils/dataService.server'
+import { getCacheControlHeaders } from '~/utils/headerUtils'
 import { sheetToSections } from '~/utils/sheetUtils.server'
 
 export const meta: MetaFunction = ({ data }) => {
@@ -88,9 +89,7 @@ export const loader = async (): Promise<TypedResponse<LoaderData>> => {
   return json(
     { matchVideoSets, editUrl },
     {
-      headers: {
-        'Cache-Control': 'public, max-age=300, s-maxage=300',
-      },
+      headers: getCacheControlHeaders({ seconds: 60 * 5 }),
     },
   )
 }

@@ -8,6 +8,7 @@ import {
   getTekken8Characters,
 } from '~/services/dataService.server'
 import type { GamePageData } from '~/types/GamePageData'
+import { getCacheControlHeaders } from '~/utils/headerUtils'
 
 type LoaderData = {
   gamePageDataT7: GamePageData
@@ -20,9 +21,7 @@ export const loader = async (): Promise<TypedResponse<LoaderData>> => {
       gamePageDataT8: { characterInfoList: getTekken8Characters() },
     },
     {
-      headers: {
-        'Cache-Control': 'public, max-age=300, s-maxage=300',
-      },
+      headers: getCacheControlHeaders({ seconds: 60 * 5 }),
     },
   )
 }
@@ -46,9 +45,7 @@ export const meta: MetaFunction = () => {
   ]
 }
 
-export const headers = () => ({
-  'Cache-Control': 'public, max-age=300, s-maxage=300',
-})
+export const headers = () => getCacheControlHeaders({ seconds: 60 * 5 })
 
 export default function Index() {
   const { gamePageDataT7, gamePageDataT8 } = useLoaderData<typeof loader>()
@@ -78,7 +75,7 @@ export default function Index() {
       <ul className="flex flex-wrap gap-5">
         {gamePageDataT8.characterInfoList
           .filter(c =>
-            ['jin', 'nina', 'kazuya', 'law'].some(demoChar =>
+            ['jin', 'nina', 'kazuya', 'paul'].some(demoChar =>
               c.id.startsWith(demoChar),
             ),
           )
