@@ -1,4 +1,4 @@
-import { Heading, Link as RadixLink, Table } from '@radix-ui/themes'
+import { Heading, Link as RadixLink, Table, Text } from '@radix-ui/themes'
 import { type DataFunctionArgs, json } from '@remix-run/node'
 import { Link, type MetaFunction, useLoaderData } from '@remix-run/react'
 import { ContentContainer } from '~/components/ContentContainer'
@@ -133,13 +133,18 @@ export default function Move() {
 
   return (
     <ContentContainer enableTopPadding enableBottomPadding>
-      <Heading mt="2" mb="4" as="h1" className="capitalize">
+      <Text size="7" mr="6" as="span">
+        Tekken 8
+      </Text>
+      <Heading mt="2" mb="4" as="h1" className="inline capitalize">
         <RadixLink asChild>
-          <Link to={'/' + characterName}>{characterName} </Link>
+          <Link to={'/' + characterName} className="capatalize">
+            {characterName}
+          </Link>
         </RadixLink>
         : {moveRow[0]}
       </Heading>
-      <Table.Root variant="surface" style={{ width: '100%' }}>
+      <Table.Root variant="surface" className="mt-4" style={{ width: '100%' }}>
         <Table.Body>
           {headers.slice(1).map((header, i) => {
             return (
