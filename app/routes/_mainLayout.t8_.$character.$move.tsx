@@ -3,6 +3,7 @@ import { type DataFunctionArgs, json } from '@remix-run/node'
 import { Link, type MetaFunction, useLoaderData } from '@remix-run/react'
 import { ContentContainer } from '~/components/ContentContainer'
 import { google } from '~/google.server'
+import { ServerStatusCode } from '~/types/ServerStatusCode'
 import { commandToUrlSegment } from '~/utils/moveUtils'
 
 export const loader = async ({ params }: DataFunctionArgs) => {
@@ -30,20 +31,26 @@ export const loader = async ({ params }: DataFunctionArgs) => {
   })
 
   const sheets = google.sheets({ version: 'v4', auth: jwt })
-  let rows: any[][]
+  let rows: any[][] | null | undefined
   try {
     const response = await sheets.spreadsheets.values.get({
-      spreadsheetId: '1p-QCqB_Tb1GNX0KaicHr0tZwKa1taK5XeNvMr1N3D64',
+      spreadsheetId: '1IDC11ShZjpo6p5k8kV24T-jumjY27oQZlwvKr_lb4iM',
       range: character, // sheet name
     })
 
-    if (!response.data.values) {
-      throw json('not found', { status: 401, statusText: 'Not found 1' })
-    }
-
     rows = response.data.values
   } catch {
-    throw new Response(null, { status: 500, statusText: 'server error' })
+    throw new Response(null, {
+      status: ServerStatusCode.ServerError,
+      statusText: 'Not able to contact server',
+    })
+  }
+
+  if (!rows) {
+    throw json('not found', {
+      status: ServerStatusCode.NotFound,
+      statusText: 'Rows not found',
+    })
   }
 
   if (rows[0][0] !== '#frames_normal' || rows.length < 3) {
@@ -58,8 +65,8 @@ export const loader = async ({ params }: DataFunctionArgs) => {
   )
   if (!moveRow) {
     throw json('move not found in frame data', {
-      status: 401,
-      statusText: 'Not found 4',
+      status: ServerStatusCode.NotFound,
+      statusText: 'Not able to find the move in the command list',
     })
   }
 
