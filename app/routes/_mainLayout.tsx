@@ -68,6 +68,12 @@ export default function MainLayout() {
               </a>
             </li>
           </ul>
+          <p className="mt-4 text-sm">
+            Tekkendocs is an independent website dedicated to frame data and
+            learning resources for the fighting game TEKKEN®. This website is
+            not connected with, sponsored, or endorsed by Namco Bandai or any of
+            its affiliated companies.
+          </p>
         </ContentContainer>
       </footer>
     </>
