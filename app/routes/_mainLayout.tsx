@@ -1,3 +1,4 @@
+import { DiscordLogoIcon, GitHubLogoIcon } from '@radix-ui/react-icons'
 import {
   isRouteErrorResponse,
   Link,
@@ -5,13 +6,14 @@ import {
   useRouteError,
 } from '@remix-run/react'
 import { ContentContainer } from '~/components/ContentContainer'
+import { discordInviteLink, githubLink } from '~/services/dataService.server'
 
 export default function MainLayout() {
   return (
     <>
       <header style={{ background: 'var(--accent-4' }}>
         <ContentContainer>
-          <div className="flex items-center py-1">
+          <div className="grid grid-cols-[1fr_auto_1fr] items-center justify-between py-1">
             <Link to="/">
               <img
                 src="/logo-128.png"
@@ -24,10 +26,50 @@ export default function MainLayout() {
             <Link to="/" className="flex-grow text-center text-2xl">
               TekkenDocs
             </Link>
+            <div className="flex place-self-end">
+              <a
+                title="Invite to Tekkendocs Discord server"
+                href={discordInviteLink}
+                className="px-2"
+              >
+                <DiscordLogoIcon width="2rem" height="2rem" />
+              </a>
+              <a
+                title="TekkenDocs source code on Github"
+                href={githubLink}
+                className="px-2"
+              >
+                <GitHubLogoIcon width="2rem" height="2rem" />
+              </a>
+            </div>
           </div>
         </ContentContainer>
       </header>
       <Outlet />
+      <footer style={{ background: 'var(--accent-5' }}>
+        <ContentContainer enableBottomPadding enableTopPadding>
+          <ul className="flex flex-col gap-3">
+            <li>
+              <a
+                title="Invite to Tekkendocs Discord server"
+                href={discordInviteLink}
+                className="flex items-center gap-2 px-2"
+              >
+                Discord <DiscordLogoIcon width="2rem" height="2rem" />
+              </a>
+            </li>
+            <li>
+              <a
+                title="TekkenDocs source code on Github"
+                href={githubLink}
+                className="flex items-center gap-2 px-2"
+              >
+                Github <GitHubLogoIcon width="2rem" height="2rem" />
+              </a>
+            </li>
+          </ul>
+        </ContentContainer>
+      </footer>
     </>
   )
 }

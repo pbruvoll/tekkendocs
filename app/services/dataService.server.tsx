@@ -105,3 +105,6 @@ const characterInfoListT8: CharacterInfo[] = charsT8.map(char => ({
 export const getTekken8Characters = (): CharacterInfo[] => {
   return characterInfoListT8
 }
+
+export const discordInviteLink = 'https://discord.gg/4ZjfuegY'
+export const githubLink = 'https://github.com/pbruvoll/tekkendocs'
