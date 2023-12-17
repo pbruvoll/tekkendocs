@@ -67,6 +67,9 @@ export default function MainLayout() {
                 Github <GitHubLogoIcon width="2rem" height="2rem" />
               </a>
             </li>
+            <li>
+              <Link to="/features">Features</Link>
+            </li>
           </ul>
           <p className="mt-4 text-sm">
             Tekkendocs is an independent website dedicated to frame data and
