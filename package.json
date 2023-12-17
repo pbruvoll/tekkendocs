@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "remix build",
+    "build:sitemap": "remix-sitemap",
     "dev": "remix dev --manual -c \"node server.js\"",
     "start": "cross-env NODE_ENV=production node ./server.js",
     "test": "vitest",
@@ -33,6 +34,7 @@
     "morgan": "^1.10.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "remix-sitemap": "^3.2.0",
     "source-map-support": "^0.5.21"
   },
   "devDependencies": {
