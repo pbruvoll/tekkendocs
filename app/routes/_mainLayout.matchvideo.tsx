@@ -7,7 +7,7 @@ import { ContentContainer } from '~/components/ContentContainer'
 import type { MatchVideo, MatchVideoSet } from '~/types/MatchVideo'
 import type { SpreadSheetDocName } from '~/types/SpreadSheetDocName'
 import { cachified } from '~/utils/cache.server'
-import { getSheet } from '~/utils/dataService.server'
+import { getSheet } from '~/services/googleSheetService.server'
 import { getCacheControlHeaders } from '~/utils/headerUtils'
 import { sheetToSections } from '~/utils/sheetUtils.server'
 

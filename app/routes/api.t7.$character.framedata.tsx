@@ -4,7 +4,7 @@ import type { Game } from '~/types/Game'
 import type { Move } from '~/types/Move'
 import type { Throw } from '~/types/Throw'
 import { cachified } from '~/utils/cache.server'
-import { getSheet } from '~/utils/dataService.server'
+import { getSheet } from '~/services/googleSheetService.server'
 import { getCacheControlHeaders } from '~/utils/headerUtils'
 import { sheetSectionToTable, sheetToSections } from '~/utils/sheetUtils.server'
 

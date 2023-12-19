@@ -3,7 +3,7 @@ import { Outlet } from '@remix-run/react'
 import { hasHeaderMap } from '~/constants/hasHeaderMap'
 import type { Game } from '~/types/Game'
 import { cachified } from '~/utils/cache.server'
-import { getSheet } from '~/utils/dataService.server'
+import { getSheet } from '~/services/googleSheetService.server'
 import { getCacheControlHeaders } from '~/utils/headerUtils'
 import { sheetSectionToTable, sheetToSections } from '~/utils/sheetUtils.server'
 
