@@ -6,7 +6,7 @@ import {
   useRouteError,
 } from '@remix-run/react'
 import { ContentContainer } from '~/components/ContentContainer'
-import { discordInviteLink, githubLink } from '~/services/dataService.server'
+import { discordInviteLink, githubLink } from '~/services/staticDataService'
 
 export default function MainLayout() {
   return (
