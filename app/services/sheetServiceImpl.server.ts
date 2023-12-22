@@ -55,6 +55,7 @@ export class SheetServiceImpl implements SheetService {
       }),
     )
 
+    console.log(JSON.stringify(tables, null, 4));
     return {
       characterName: characterId,
       dataType,
