@@ -3,7 +3,7 @@ import { type Game } from './Game'
 import type { TableData } from './TableData'
 
 export type CharacterPageData = {
-  game: Game,
+  game: Game
   dataType: CharacterDataType
   characterName: string
   editUrl: string

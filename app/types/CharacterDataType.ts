@@ -1,1 +1,1 @@
-export type CharacterDataType = 'frameData' | 'cheatSheet';
+export type CharacterDataType = 'frameData' | 'cheatSheet'

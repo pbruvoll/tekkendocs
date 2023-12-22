@@ -1,17 +1,11 @@
 import { DiscordLogoIcon, GitHubLogoIcon } from '@radix-ui/react-icons'
-import {
-  isRouteErrorResponse,
-  Link,
-  Outlet,
-  useRouteError,
-} from '@remix-run/react'
+import { Link, Outlet } from '@remix-run/react'
 import { ContentContainer } from '~/components/ContentContainer'
 import { AppErrorBoundary } from '~/components/ErrorBoundary'
 import { discordInviteLink, githubLink } from '~/services/staticDataService'
-import { type ServerError } from '~/types/ServerError'
 
 type MainLayoutTemplateProps = React.PropsWithChildren<{}>
-const MainLayoutTemplate = ({ children }: MainLayoutTemplate) => {
+const MainLayoutTemplate = ({ children }: MainLayoutTemplateProps) => {
   return (
     <>
       <header style={{ background: 'var(--accent-4' }}>

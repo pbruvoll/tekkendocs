@@ -17,6 +17,7 @@ npm run dev
 ```
 
 ### Running with mock data
+
 To run the application with live connection, you need to set appropiate keys in the environment.
 To make the app run without these keys, and without live data, you can run against mock data.
 
