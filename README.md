@@ -16,6 +16,14 @@ Start the Remix development asset server and the Express server by running:
 npm run dev
 ```
 
+### Running with mock data
+To run the application with live connection, you need to set appropiate keys in the environment.
+To make the app run without these keys, and without live data, you can run against mock data.
+
+```sh
+npm run dev-mock-data
+```
+
 ## License
 
 Your are not allowd to copy, distribute the code in this repository without explicit permission.
