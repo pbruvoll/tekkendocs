@@ -7,8 +7,10 @@ import {
 } from '@remix-run/react'
 import { ContentContainer } from '~/components/ContentContainer'
 import { discordInviteLink, githubLink } from '~/services/staticDataService'
+import { type ServerError } from '~/types/ServerError'
 
-export default function MainLayout() {
+type MainLayoutTemplateProps = React.PropsWithChildren<{}>
+const MainLayoutTemplate = ({ children }: MainLayoutTemplate) => {
   return (
     <>
       <header style={{ background: 'var(--accent-4' }}>
@@ -45,7 +47,7 @@ export default function MainLayout() {
           </div>
         </ContentContainer>
       </header>
-      <Outlet />
+      {children}
       <footer style={{ background: 'var(--accent-5' }}>
         <ContentContainer enableBottomPadding enableTopPadding>
           <ul className="flex flex-col gap-3">
@@ -83,28 +85,62 @@ export default function MainLayout() {
   )
 }
 
+export default function MainLayout() {
+  return (
+    <MainLayoutTemplate>
+      <Outlet />
+    </MainLayoutTemplate>
+  )
+}
+
+type ErrorDataProps = { data: any }
+const ErrorData = ({ data }: ErrorDataProps) => {
+  if (typeof data === 'object' && 'title' in data) {
+    const serverError = data as ServerError
+    return (
+      <div>
+        <h2>{serverError.title}</h2>
+        {serverError.detail && <p>{serverError.detail}</p>}
+      </div>
+    )
+  } else if (typeof data === 'string') {
+    return data
+  }
+  return <p>JSON.stringify(data)</p>
+}
+
 export function ErrorBoundary() {
   const error = useRouteError()
 
   if (isRouteErrorResponse(error)) {
     return (
-      <div>
-        <h1>
-          {error.status} {error.statusText}
-        </h1>
-        <p>{error.data}</p>
-      </div>
+      <MainLayoutTemplate>
+        <div className="prose prose-invert p-4">
+          <h1>
+            {error.status} {error.statusText}
+          </h1>
+          <ErrorData data={error.data} />
+        </div>
+      </MainLayoutTemplate>
     )
   } else if (error instanceof Error) {
     return (
-      <div>
-        <h1>Error</h1>
-        <p>{error.message}</p>
-        <p>The stack trace is:</p>
-        <pre>{error.stack}</pre>
-      </div>
+      <MainLayoutTemplate>
+        <div className="prose prose-invert p-4">
+          <h1>Error</h1>
+          <p>{error.message}</p>
+          <p>The stack trace is:</p>
+          <pre>{error.stack}</pre>
+        </div>
+      </MainLayoutTemplate>
     )
   } else {
-    return <h1>Unknown Error</h1>
+    return (
+      <MainLayoutTemplate>
+        <div className="prose prose-invert p-4">
+          <h1>Unknown Error</h1>
+        </div>
+      </MainLayoutTemplate>
+    )
   }
 }
