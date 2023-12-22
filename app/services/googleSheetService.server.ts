@@ -1,5 +1,6 @@
 import { json } from '@remix-run/node'
 import { google, type sheets_v4 } from 'googleapis'
+import { environment } from '~/constants/environment.server'
 import { type GaxiosResponse } from '~/types/GaxiosResponse'
 import { type ResultError } from '~/types/ResultError'
 import { ServerStatusCode } from '~/types/ServerStatusCode'
@@ -87,7 +88,7 @@ export const getSheetObject = async (
     throw createErrorResponse({
       title: `Not able to fetch data for sheetname ${sheetName} from spreadsheet ${spreadSheetDocumentId}`,
       status: ServerStatusCode.UpstreamError,
-      exception: e,
+      exception: environment.nodeEnv === 'development' ? e : "N/A",
     })
   }
 
