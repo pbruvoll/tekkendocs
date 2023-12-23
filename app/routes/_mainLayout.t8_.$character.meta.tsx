@@ -82,8 +82,8 @@ export const meta: MetaFunction = ({ data, params, matches }) => {
   const characterId = characterName.toLocaleLowerCase()
   const characterTitle =
     characterName[0].toUpperCase() + characterName.substring(1)
-  const title = `${characterTitle} Tekken 7 Guide | TekkenDocs`
-  const description = `Guide with cheat sheet for ${characterTitle} in Tekken 7`
+  const title = `${characterTitle} Tekken 8 Cheat Sheet | TekkenDocs`
+  const description = `An overview of the most important information for ${characterTitle} in Tekken 8. The page has concise set of notes used for quick reference, including key moves, punisher and combos`
 
   return [
     { title },
@@ -95,7 +95,7 @@ export const meta: MetaFunction = ({ data, params, matches }) => {
     {
       tagName: 'link',
       rel: 'canonical',
-      href: `https://tekkendocs.com/t7/${characterId}/meta`,
+      href: `https://tekkendocs.com/t8/${characterId}/meta`,
     },
   ]
 }
@@ -125,7 +125,7 @@ export default function Index() {
         </div>
         <nav className="flex gap-3">
           <NavLink to="../">Frame data</NavLink>
-          <NavLink to="">Guide</NavLink>
+          <NavLink to="">Cheat sheet</NavLink>
         </nav>
       </ContentContainer>
       <ContentContainer disableXPadding>
