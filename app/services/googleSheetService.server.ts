@@ -1,6 +1,5 @@
 import { json } from '@remix-run/node'
 import { google, type sheets_v4 } from 'googleapis'
-import { environment } from '~/constants/environment.server'
 import { type GaxiosResponse } from '~/types/GaxiosResponse'
 import { ServerStatusCode } from '~/types/ServerStatusCode'
 import type { SpreadSheetDocName } from '~/types/SpreadSheetDocName'

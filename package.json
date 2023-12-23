@@ -11,6 +11,7 @@
     "start": "cross-env NODE_ENV=production node ./server.js",
     "test": "vitest",
     "lint": "eslint .",
+    "lint-fix": "eslint --fix .",
     "format": "prettier --write .",
     "formatcheck": "prettier --check .",
     "validate": "run-p \"test -- --run\" lint typecheck",
