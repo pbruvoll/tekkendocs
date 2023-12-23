@@ -87,7 +87,7 @@ export const getSheetObject = async (
     throw createErrorResponse({
       title: `Not able to fetch data for sheetname ${sheetName} from spreadsheet ${spreadSheetDocumentId}`,
       status: ServerStatusCode.UpstreamError,
-      exception: environment.nodeEnv === 'development' ? e : 'N/A',
+      exception: e,
     })
   }
 
