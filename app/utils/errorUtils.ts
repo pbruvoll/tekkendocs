@@ -16,12 +16,15 @@ export const createErrorResponse = (serverError: ServerError): Response => {
       title: serverError.title,
       detail: serverError.detail,
       // we dont want to leak info as exception of boyd of upstream error if we are in production mode
-      exception: environment.nodeEnv === 'development' ? serverError.exception : 'N/A',
+      exception:
+        environment.nodeEnv === 'development' ? serverError.exception : 'N/A',
       upstreamError: {
         ...serverError.upstreamErrorResponse,
-        body: environment.nodeEnv === 'development' ? serverError.upstreamErrorResponse?.body : "N/A"
-      }
-
+        body:
+          environment.nodeEnv === 'development'
+            ? serverError.upstreamErrorResponse?.body
+            : 'N/A',
+      },
     },
     {
       status: serverError.status,
