@@ -1,14 +1,11 @@
 import { DiscordLogoIcon, GitHubLogoIcon } from '@radix-ui/react-icons'
-import {
-  isRouteErrorResponse,
-  Link,
-  Outlet,
-  useRouteError,
-} from '@remix-run/react'
+import { Link, Outlet } from '@remix-run/react'
 import { ContentContainer } from '~/components/ContentContainer'
-import { discordInviteLink, githubLink } from '~/services/dataService.server'
+import { AppErrorBoundary } from '~/components/ErrorBoundary'
+import { discordInviteLink, githubLink } from '~/services/staticDataService'
 
-export default function MainLayout() {
+type MainLayoutTemplateProps = React.PropsWithChildren<{}>
+const MainLayoutTemplate = ({ children }: MainLayoutTemplateProps) => {
   return (
     <>
       <header style={{ background: 'var(--accent-4' }}>
@@ -45,7 +42,7 @@ export default function MainLayout() {
           </div>
         </ContentContainer>
       </header>
-      <Outlet />
+      {children}
       <footer style={{ background: 'var(--accent-5' }}>
         <ContentContainer enableBottomPadding enableTopPadding>
           <ul className="flex flex-col gap-3">
@@ -83,28 +80,18 @@ export default function MainLayout() {
   )
 }
 
-export function ErrorBoundary() {
-  const error = useRouteError()
+export default function MainLayout() {
+  return (
+    <MainLayoutTemplate>
+      <Outlet />
+    </MainLayoutTemplate>
+  )
+}
 
-  if (isRouteErrorResponse(error)) {
-    return (
-      <div>
-        <h1>
-          {error.status} {error.statusText}
-        </h1>
-        <p>{error.data}</p>
-      </div>
-    )
-  } else if (error instanceof Error) {
-    return (
-      <div>
-        <h1>Error</h1>
-        <p>{error.message}</p>
-        <p>The stack trace is:</p>
-        <pre>{error.stack}</pre>
-      </div>
-    )
-  } else {
-    return <h1>Unknown Error</h1>
-  }
+export function ErrorBoundary() {
+  return (
+    <MainLayoutTemplate>
+      <AppErrorBoundary />
+    </MainLayoutTemplate>
+  )
 }

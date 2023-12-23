@@ -3,7 +3,7 @@ import { json, type TypedResponse } from '@remix-run/node'
 import { Link, useLoaderData } from '@remix-run/react'
 import { CharacterCard } from '~/components/CharacterCard'
 import { ContentContainer } from '~/components/ContentContainer'
-import { getTekken8Characters } from '~/services/dataService.server'
+import { getTekken8Characters } from '~/services/staticDataService'
 import type { GamePageData } from '~/types/GamePageData'
 import { getCacheControlHeaders } from '~/utils/headerUtils'
 

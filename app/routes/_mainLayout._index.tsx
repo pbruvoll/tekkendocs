@@ -6,7 +6,7 @@ import { ContentContainer } from '~/components/ContentContainer'
 import {
   getTekken7Characters,
   getTekken8Characters,
-} from '~/services/dataService.server'
+} from '~/services/staticDataService'
 import type { GamePageData } from '~/types/GamePageData'
 import { getCacheControlHeaders } from '~/utils/headerUtils'
 
