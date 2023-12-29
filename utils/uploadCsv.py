@@ -10,15 +10,6 @@ frameTypes = [
     ("throws", "Throws", "#frames_throws"),
     ("tenhit", "10-hit", "#frames_tenhit"),
 ]
-
-def csvToArray(csvContent):
-    result = [];
-    lines = csvContent.splitlines();
-    for line in lines:
-        result.append(line.split(csvSep));
-    return result
-    
-
     
 #input is a folder for a character which may contain multiple csv files (special moves, throws etc).
 def convert(path, gSheet):
@@ -38,10 +29,8 @@ def convert(path, gSheet):
         csvRows = []
         for row in csvContent:
             csvRows.append(row);
-            print(', '.join(row))
-            print("line end")
         moveType = filePath.split(".")[-2].split("-")[-1]
-        moveTypeToContent[moveType] = csvRows #csvToArray(fileContent)
+        moveTypeToContent[moveType] = csvRows 
         
     
     for frameType in frameTypes: #e.g frameType = ("special", "Special Moves")
