@@ -1,6 +1,5 @@
 # include standard modules
 import argparse
-from difflib import get_close_matches
 import os
 import json
 import csv
@@ -23,6 +22,11 @@ def convert(filePath, outDir):
     fileName = os.path.basename(filePath)
     charName = fileName.split(".")[0]
     print("Converting data for " + charName)
+
+    #make a folder per char to output in same format as for tekken 7
+    charOutDir = os.path.join(outDir, charName);
+
+    os.makedirs(charOutDir, exist_ok = True)
     
 
         
@@ -33,8 +37,8 @@ def convert(filePath, outDir):
     for move in jsonData : 
         csvContent.append(list(map(lambda x: move[x["wavuId"]], columns)));
     
-    outputFilePath = os.path.join(outDir, charName + ".csv")
-    outputFile = open(outputFilePath, "w", newline="")
+    outputFilePath = os.path.join(charOutDir, charName + "-special.csv")
+    outputFile = open(outputFilePath, "w", newline="", encoding='utf-8')
     csvWriter = csv.writer(outputFile, delimiter=csvSep)
     csvWriter.writerows(csvContent);
     
