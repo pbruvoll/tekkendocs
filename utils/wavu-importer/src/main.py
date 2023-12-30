@@ -1,17 +1,12 @@
-import json, datetime, logging, os, sched, time, sys
+import json, datetime, logging, os, sys
 from typing import List
 
 sys.path.append('./')
 
 from src.wavu import wavu_importer
-from src.module import configurator
 from src.module import json_movelist_reader
-# from src.module import embed
-from src.module import util
 from src.module import character
 from src.resources import const
-
-from threading import Thread
 
 sys.path.insert(0, (os.path.dirname(os.path.dirname(__file__))))
 
