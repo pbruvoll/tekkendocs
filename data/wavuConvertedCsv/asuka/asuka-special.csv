@@ -1,0 +1,403 @@
+Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes
+1;h;6;i10;-2;+9;;
+1,1;h,m;6,15;,;-7;+4;;"
+* Combo from 1st CH
+* Links to f+1"
+1+2;m;21;i16~17;-9;KND;KND;
+1,2;h,m;6,9;,;-8;+3a;;"
+*Combo from 1st CH"
+1,2,3;h,m,m;6,9,24;,;-2;KND;;"
+* Chip on block
+* Link to f+4
+* Can interrupt with up to i15 if previous hit is blocked"
+1+2+3+4;;;;;;;"
+* Cannot block for 5 seconds
+* CH state for 5 seconds"
+1+2+3+4,1+2;sp,t(m);-,5,5;i61;-6;LNC;;"
+* Break: 1+2
+* Opp. Position on break: Reverse Pos.
+* Opp. Position on hit: Foot sd. FU
+* Left slap is auto-attack
+* Throw breaks 16f later (1f)"
+1+2+3+4,1+2,1,2,1,2;sp,t(m);-,5,5,5,5,5,10;;;;;"
+* Break: none
+* Opp. Position on break:
+* Opp. Position on hit: Foot sd. FU"
+1,2,3,B;h,m,m,sp;6,9,24,0;;-18;-7;;
+1,2,4;h,m,m;6,9,20;,;-12;KND;;Combo from 2nd hit
+1+3;t;35;i12~14;-2;+0d;;"
+* Throw break 1 or 2
+* Opp. Position on break: CCW
+* Opp. Position on hit: Reverse Pos., F Sd. FU"
+1,3;h,l;6,10;,;-11;+0;;"
+* Combo from 1st hit"
+1+4;sl,h;5,8;i14;-19;-8;;"
+* Combo from 1st CH
+* 2nd hit when blocked is -3, on hit is +9
+"
+1,4;h,l;614;;-11;+0;+3;"
+* Combo from 1st CH
+* Link to attack from Leg Cutter (db+4)"
+1+4,2;sl,h,h;5,8,10;;-2;+9;;"
+* Combo from 2nd CH
+"
+1+4,2,4;sl,h,h,m;5,8,10,26;;-9;+4;KND;"
+* Combo from 3rd CH
+"
+1+4,2,d+4;sl,h,h,l;5,8,10,15;;-23;KND;;"
+* Combo from 3rd CH
+"
+1+4,3;sl,h,m;5,8,25;;-2;KND;;"
+* Chip on block
+* Link to attack from Spinning Heel Drop (f+3)
+"
+1+4,3,B;sl,h,m,sp;5,8,25,0;;-37;-26;;"
+* If 2nd attack is blocked, -20f
+"
+1,4,D;h,l,sp;6140;;-11;+0;+3;"
+* Combo from 1st CH"
+2;h;9;i12;-11;+0;;
+2,1;h,h;9,10;;-3;+8;;"
+* Combo from 1st hit"
+2,1,2;h,h,m;9,10,16;;;KND;;Tornado
+2,1,d+1+2;h,h,m;9,10,23;;-10c;+3c;JG;"
+* Combo from 2nd CH"
+2,1,d+1+2,B;h,h,m,sp;9,10,23,0;;;;;
+2,1,d+1+2,D;h,h,m,sp;9,10,23,0;;;;;
+2+3;m;;;;;;"
+* 
+Heat Burst"
+2,3;h,m;9,16;,;-19;KND;;Combo from 1st hit
+2+4;t;35;i12~14;-3;+0d;;"
+* Throw break 1 or 2
+* Opp. Position on break: CCW
+* Opp. Position on hit: Head Sd. FD"
+3;m;17;i14;-7;+9;;
+3,1;m,m;17,17;;-11;+8;KND;"
+* Combo from 1st hit
+* Can be delayed 14f
+* Combo can be delayed 14f from hit
+"
+3+4;mm;10,21;i23;-6;KND;;"
+* Special effect when hitting grounded opponents
+"
+3+4,D;mm,sp;10,21,0;;-6;KND;KND;
+4;h;18;i11;-7;+7;JG;
+b+1;l(,th);17(,22);i29;-10;+6;Th;"
+* Connect to Sumiregari upon CH
+* Damage () is Throw bonus
+"
+b+1+3;;25;;-6;;;"
+* Does 25 + 50% of reversed attack as damage
+* Opp. Position on hit: Reverse Pos Foot-sd. Face-up
+* Reverses limb-based h/m attacks"
+b+1+3*;;25;;-6;;;"
+* Does 25 + 50% of reversed attack as damage
+* Opp. Position on hit: Reverse Pos Foot-sd. Face-up
+* Reverses limb-based h/m attacks"
+b+1+4;h,l;15,8;i12;-8;+5;+7;
+b+1+4,3;h,l,l;15,8,18;;-13;-2;KND;Combo from 2nd CH
+b+1+4,4;h,l,m;15,8,23;;-14;+5b;+5b;"
+* Combo from 2nd CH
+"
+b+1,D;l(,th),sp;17(,22),;;;;;
+b+2;m;12;i15;-4c;+1c;;
+b+2,1;m,m;12,14;;-7;+4;;"
+* Combo from 1st CH
+* Link to attack from Lunging Mist Thrust ()
+"
+b+2,1+2;m,h;12,7;i36;-9;+2;;"
+* Combo from 1st hit
+* Can be delayed 12F
+* Combo can be delayed 9F from CH
+"
+b+2,1+2,4;m,h,m;12,7,20;;-13;KND;KND;"
+* Combo from 2nd CH
+"
+b+2,1+2,D;m,h,sp;12,7;;-6c;-1c;-1c;"
+"
+b+2+3;m;23;i24;-9;+6;;Sabaki absorbs kicks
+b+2,4;m,l;12,14;;-11;+0;+3;Link to attack from Leg Cutter ()
+b+2,4,D;m,l,sp;12,14,;;-11;+0;+3;
+b+3;m;15;i16;-19;LNC;LNC;
+b+3,2;m,m;15,20;;-20;LNC;LNC;Interruption 23F after 1st block
+b+3,2,D;m,mm;15,2015;;-33;LNC;LNC;
+b+3,2,(must hit) 1;m,m,sp;15,20;;;LNC;;"
+* Gain Naniwa Gusto
+"
+b+3,4;m,l;15,14;;-11;+0;+3;Link to attack from Leg Cutter ()
+b+3,4,D;m,l,sp;15,14;;-11;+0;+3;
+b+4;m;17;i15;-7;+8;KND;
+b+4,2;m,m;17,12;;-12;+4c;;"
+* Can be delayed 15F
+"
+b+4,2,3;m,m,m;17,12,21;;-16;KND;KND;"
+* Combo from 2nd hit
+* Can be delayed 10F
+* Combo can be delayed 10F from hit
+"
+b+4,2,3,(must hit) 1;m,m,m,sp;17,12,21;;;KND;;"
+"
+Back throw;t;50;;;+0d;;"
+* Throw break: none
+* Opp. Position on break: -
+* Opp. Position on hit: Head Sd. Face D"
+(Back to wall).b,b,UB;m;21;i39;+4c;KND;;
+d+1;sm;5;i10;-5;+6;;"
+* Returns to standing when input F
+"
+d+1+2;l;20;i20;-18;KND;KND;Same move as FC.1+2
+d+2;m;18;i18;-4c;+9c;KND;"
+* [[:Template:HE]]
+* Gain Naniwa Gusto on Heat activation
+"
+d+3;l;12;i16;-17;-3;;
+d+3+4;l,h;5,20;i14;-25;LNC;LNC;"
+* Block frame is blocked 1st attack
+* -6F upon 2nd block
+"
+d+4;l;7;i12;-13;-2;;
+db+1;m;13;i14;-9;+7;;
+db+1+2;m,m;10,20;i42;;KND;;"
+* Parries lows
+"
+db+1,2;m,h,sp;13,20;;-9;KND;KND*;"
+* [[:Template:HE]]
+* Gain Naniwa Gusto on Heat activation
+* Combo from 1st hit
+* Can be delayed 9F
+* Combo can be delayed 9F from hit
+"
+db+1,4;m,m;13,25;;;KND;;Tornado
+db+2;m;22;i20;-11;LNC;LNC;Tornado
+db+3;l;17;i20;-12;+4c;+14g;
+db,4;l;14;i21;-11;+0;+3;
+db,4,4;l,l;14,15;;-7;+4;KND;
+db,4,4,4;l,l,l;14,15,16;;-7;+4;KND;
+db,4,4,4,D;l,l,l,sp;14,15,16,0;;-11;+0;KND;
+db,4,4,D;l,l,sp;14,15,;;-11;+0;KND;
+db,4,D;l,sp;14;;-11;+0;+3;
+f+1+3,1;t(h)m;020;;;;;"
+* [[:Template:HE]]
+* Gain Naniwa Gusto on Heat Activation"
+f+1+3Destabilizer.4;t(h)l;019;;;;;
+df+1;m;10;i13;-3;+8;;
+df+1,2;m,h(,th);10,13(,25);;-1;Th;Th;"
+* Combo from 1st CH
+* Can be delayed 7F
+* Damage () is Throw bonus
+"
+df+1df+1,4;m,m;10,22;;-12;KND;KND*;"
+* Combo from 1st CH
+* Can be delayed 7F
+"
+df+2;m;14;i15;-6;LNC;LNC;+5 upon crouch hit
+df+2+3;t(h);40;i12;-6;;;"
+* Break: 2
+* Opp. Position on break:
+* Opp. Position on hit: CCW. Head sd. FU"
+df+3;m;23;i20;-8;KND;KND;
+df+3+4;l;22;i28;-26;KND;KND*;"
+* 
+Homing
+* Alternate input: df+3~4
+* Start-up 27F in actuality
+"
+df+3+4,DB;l,sp;22;;;;;
+df+4;m;16;i12;-9;+2;;
+(During Leg Cutter),1+4;sl,h;5,8;;-19;+9;;"
+* Link to attack to White Heron ()
+* Block frame is blocked 1st attack
+* -3F upon 2nd block
+"
+(During Leg Cutter),3;h;21;;-3;LNC;LNC;CH combo from Leg Cutter
+f+1;m;17;i20;-7;+4;;
+f+1+2;h,sp;26;i15;;;;"
+* [[:Template:HE]]
+* Absorb an attack to power up
+* Gain Naniwa Gusto on Heat activation
+"
+f+1+3;t(h);0;i19;;+8;;"
+* Break: none
+* Opp. Position on break: 
+* Opp. Position on hit: "
+f+1,4;m,lh;17,5,20;;-25;LNC;LNC;"
+* Combo from 1st CH
+* Can be delayed 15F
+* Combo can be delayed 12F from CH
+* Block frame is blocked 2nd attack
+* -6F upon 3rd block
+"
+f+1,d+4;m,l;17,26;;-26;KND;KND;"
+* 
+Homing
+* Combo from 1st CH
+* Can be delayed 15F
+* Combo can be delayed 5F from CH
+* Interruption 11F after 1st block
+"
+f+1,d+4,DB;m,l,sp;17,26;;-26;-15;;"
+* Combo can be delayed 28F from CH
+"
+f+2;m;20;i17;-18;JG;;
+f+2,(must hit) 1;m,sp;20,0;;;;;"
+* Gain Naniwa Gusto on hit"
+f+2+3;h;21;i23;+0;KND;KND;"
+* Absorbs Punch (H/M) during 4 to 15F
+* Stun on success punch parry
+"
+f+2,D;m,sp;20,0;,;;;;
+f+3;m;24;31f;-2;KND;KND;"
+* Chip damage when guarded
+* 
+"
+f+3*;m;26;52f;+6;KND;KND;"
+* Chip damage when guarded
+* Input to cancel
+"
+f+3+4;m,sp;27;29f;;KND;;"
+* Chip damage when guarded
+* On hit gain Naniwa Gusto
+"
+f+3,B;m,sp;24;;;;;
+f+3* (max);ub(m);28;70f;KND;KND;KND;"
+* Chip damage when guarded
+* Input  to cancel
+"
+f+4;h;21;i19;+3;KND;KND;"
+* 
+Homing"
+FC.1;sm;5;i10;-5;+6;;"
+* Returns to standing when input F
+"
+FC.3+4;mm;10,10;i21;-6;+5c;+5c;
+FC.3+4,3;mm,mm;10,10,10,10;;+0c;KND;KND;"
+* Interruption 11F after 2nd block
+"
+FC.3+4,3,D;mm,mm,sp;10,10,10,10;;+0c;KND;KND;
+FC.3+4,D;mm,sp;10,10,;;-6;+5c;+5c;"
+* Forces an opponent to crouching on hit
+"
+FC.4;l;10;i12;-15;-4;;
+FC.d+2;sm;8;i11;-4;+7;;Alternate input: FC.db+2
+FC.d+3;l;12;i16;-17;-3;;Alternate input: FC.db+3
+FC.db+1+2;t(h);15,15,15;i11;-6;LNC;;"
+* Break: 1+2
+* Opp. Position on break: Reverse Pos.
+* Opp. Position on hit: Reverse Pos. Foot sd. FD
+* 2nd dmg is on landing
+* 3rd dmg is non-ukemi bonus"
+FC.df+2;l;10;i16;-11;+0;+25g;"
+* Crumple State 17F upon CH
+"
+FC.df+3;m;20;i17;-9;KND;KND*;
+f,F+1;m;30;i23;+4;+?c;LNC;"
+"
+f,F+1+2;m;20;i19;;KND;;"
+* Chip damage when guarded
+* 
+Tornado
+"
+f,F+2;m;16;i15;-13;-3;;"
+"
+f,F+2,1;m,h;16,21;;-5;KND;KND;"
+* Combo from 1st hit
+* Can be delayed 13F
+* Combo can be delayed 8F from hit
+* Combo can be delayed 11F from CH
+"
+f,F+2,1+2;m,m,sp;16,25;;-13;KND;;Gain Naniwa Gusto on hit
+f,F+2,3;m,m;16,22;;-8;KND;KND;"
+* Combo from 1st CH
+* Can be delayed 13F
+* Combo can be delayed 5F from CH
+"
+f,F+3;m;23;i20;-9;+11g;KND;"
+* 
+Homing
+"
+f,F+4;h;28;i20;-3;KND;KND*;
+f,f,F+1+2;h;30;i17;;KND;;"
+* Chip damage when guarded
+* 
+Homing
+"
+f,f,F+3;m;32;i24~28;+0;KND;KND*;"
+* Chip damage when guarded
+"
+H.2+3;m,th;12,3;i16;;;;"
+* 
+Heat Smash
+* Throw on hit"
+Left throw;t;40;;-3;-3d;;"
+* Throw break 1
+* Opp. Position on break: CCW
+* Opp. Position on hit: F Sd. FD"
+NWG.f,F+1+2;m;24;i19;;KND;;"
+* Chip damage when guarded
+* Consumes Naniwa Gusto
+* During Heat, remaining Heat is consumed
+* 
+Tornado
+"
+NWG.f,f,F+1+2;h;42;i17;;KND;;"
+* Chip damage when guarded
+* Consumes Naniwa Gusto
+* During Heat, remaining Heat is consumed
+* 
+Homing
+"
+NWG.u+1+2;m;24;i31;;KDN;;"
+* Chip damage when guarded
+* Consumes Naniwa Gusto
+* During Heat, remaining Heat is consumed
+"
+R.df+1+2;m,th;10,49;;;;;"
+* Rage Art
+* Damage increases with lower health
+* Removes recoverable health on hit"
+R.df+1+2*;m,th;;;;;;"
+* Rage Art
+* Damage increases with lower health
+* Removes recoverable health on hit"
+Right throw;t;40;;-3;+0d;;"
+* Throw break 2
+* Opp. Position on break: 
+* Opp. Position on hit: FD F Sd."
+SS.2;m;23;i13;-9;KND;KND*;"
+* [[:Template:HE]]
+* Gain Naniwa Gusto on Heat activation
+"
+SS.4;h;18;i17;-6;+7;KND;Meaty 2F
+u+1;m;12;i18;-12;-1;-1;Same move as ub+1 and uf+1
+u+1+2;m;20;i31;;KND;;"
+* Chip damage when guarded
+* Alternate input: ub+1+2
+"
+u+2;h;17;i15;-12;+9;;Same move as ub+2
+u+3;m;17;i20~21;-3;+8;KND;Same move as ub+3 and uf+3
+u+4;m;25;i20;-13;LNC;LNC;Same move as uf+4
+ub+4;m;25;i20;-15;LNC;LNC;
+ub,b;sp;-;;;;;
+ub,b+3;m;32;i68;0;KND;KND*;
+uf+1+2;t(h);40;i12;-3;;;"
+* Break: 1+2
+* Opp. Position on break: Reverse Pos.
+* Opp. Position on hit: Head sd. FU"
+uf+2;h(,th);20(,25);i14;-7;Th;Th;Damage () is Throw bonus
+ws1;m;12;i14;-7;+4;;
+ws1+2;m;20;i21;-2;+13g;KND;"
+* Wall hit +25g
+* Crumple state 17F upon CH"
+ws1+2,D;m,sp;20;;;;;
+ws1,4;m,h;12,20;;-8;KND;KND;"
+* Combo from 1st hit
+* Can be delayed 7F
+"
+ws2;m;18;i13;-8;+8;;
+ws2,1;mm,h;1818,10;;-2;+9;;Combo from 1st hit
+ws2,1+2;mh,th;18,4;;;Th;;"
+* Link to attack from Destablilizer (f+1+3 or f+2+4)
+"
+ws3;m;20;i18;-16;LNC;LNC;Tornado
+ws4;m;15;i11;-3;+8;;

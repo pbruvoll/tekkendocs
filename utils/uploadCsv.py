@@ -1,7 +1,7 @@
 import gspread
 import argparse
 import os
-import time
+import csv
 
 csvSep = ";"
 
@@ -10,15 +10,6 @@ frameTypes = [
     ("throws", "Throws", "#frames_throws"),
     ("tenhit", "10-hit", "#frames_tenhit"),
 ]
-
-def csvToArray(csvContent):
-    result = [];
-    lines = csvContent.splitlines();
-    for line in lines:
-        result.append(line.split(csvSep));
-    return result
-    
-
     
 #input is a folder for a character which may contain multiple csv files (special moves, throws etc).
 def convert(path, gSheet):
@@ -33,11 +24,13 @@ def convert(path, gSheet):
     moveTypeToContent = {};
         
     for filePath in filePaths:
-        f = open(filePath, "r")    
-        fileContent = f.read()
-        f.close()
+        f = open(filePath, "r", newline="")
+        csvContent = csv.reader(f, delimiter=csvSep)
+        csvRows = []
+        for row in csvContent:
+            csvRows.append(row);
         moveType = filePath.split(".")[-2].split("-")[-1]
-        moveTypeToContent[moveType] = csvToArray(fileContent)
+        moveTypeToContent[moveType] = csvRows 
         
     
     for frameType in frameTypes: #e.g frameType = ("special", "Special Moves")
@@ -63,19 +56,22 @@ def convert(path, gSheet):
 # initiate the parser
 parser = argparse.ArgumentParser(description = 'This is a program to convert frames in custom csv format to html.')
 parser.add_argument("-I", "--inputDir", required=True, help="Directory to look for files to convert")
-parser.add_argument("-G", "--gameId", help="Identifier for the game, e.g TFR3 for tekken 7 fated retribution season 3")
+parser.add_argument("-G", "--gameId", required=True, help="Identifier for the game, e.g TFR3 for tekken 7 fated retribution season 3")
 args = parser.parse_args()
 
 inputDir = args.inputDir # e.g. "C:/projects/rbnTekkenFrameData/frameData/T7/csv"
 
+gameIdToUrl = {
+    "T7": 'https://docs.google.com/spreadsheets/d/1p-QCqB_Tb1GNX0KaicHr0tZwKa1taK5XeNvMr1N3D64',
+    "T8": "https://docs.google.com/spreadsheets/d/1IDC11ShZjpo6p5k8kV24T-jumjY27oQZlwvKr_lb4iM"
+}
 
 # not currently in use. Can be used when we support both T7 and T8
-gameId = "T7"
-if args.gameId :
-    gameId = args.gameId
+gameId = args.gameId
+sheetUrl = gameIdToUrl[gameId]
 
 gc = gspread.oauth()
-gSheet = gc.open_by_url('https://docs.google.com/spreadsheets/d/1p-QCqB_Tb1GNX0KaicHr0tZwKa1taK5XeNvMr1N3D64')
+gSheet = gc.open_by_url(sheetUrl)
 
 
 folders = []
