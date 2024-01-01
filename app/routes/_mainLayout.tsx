@@ -67,6 +67,9 @@ const MainLayoutTemplate = ({ children }: MainLayoutTemplateProps) => {
             <li>
               <Link to="/features">Features</Link>
             </li>
+            <li>
+              <Link to="/credits">Credits</Link>
+            </li>
           </ul>
           <p className="mt-4 text-sm">
             Tekkendocs is an independent website dedicated to frame data and
