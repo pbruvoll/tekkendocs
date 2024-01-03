@@ -3,18 +3,13 @@ import { Heading, Link as RadixLink, Table } from '@radix-ui/themes'
 import { type DataFunctionArgs, json, type MetaFunction } from '@remix-run/node'
 import { Link, NavLink, useLoaderData } from '@remix-run/react'
 import { ContentContainer } from '~/components/ContentContainer'
-import { hasHeaderMap } from '~/constants/hasHeaderMap'
 import { tableIdToDisplayName } from '~/constants/tableIdToDisplayName'
-import { getSheet } from '~/services/googleSheetService.server'
 import type { CharacterFrameData } from '~/types/CharacterFrameData'
-import type { Game } from '~/types/Game'
 import type { RouteHandle } from '~/types/RouteHandle'
-import { cachified } from '~/utils/cache.server'
 import { getCharacterFromParams } from '~/utils/characterRoute.utils.server'
 import { getCacheControlHeaders } from '~/utils/headerUtils'
 import { commandToUrlSegment } from '~/utils/moveUtils'
 import { getSheetService } from '~/utils/sheetServiceUtils.server'
-import { sheetSectionToTable, sheetToSections } from '~/utils/sheetUtils.server'
 
 export const loader = async ({ params }: DataFunctionArgs) => {
   const character = getCharacterFromParams(params)
@@ -26,14 +21,6 @@ export const loader = async ({ params }: DataFunctionArgs) => {
   )
 
   const { editUrl, tables } = sheet
-  // const sheetSections = sheetToSections(tables)
-  // const sectionTables = sheetSections.map(ss =>
-  //   sheetSectionToTable({
-  //     name: ss.sectionId,
-  //     sheetSection: ss,
-  //     hasHeader: hasHeaderMap[ss.sectionId],
-  //   }),
-  // )
 
   return json(
     { characterName: character, editUrl, tables },

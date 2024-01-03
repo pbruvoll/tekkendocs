@@ -1,4 +1,4 @@
-import { type Params } from "@remix-run/react"
+import { type Params } from '@remix-run/react'
 
 export const getCharacterFromParams = (params: Params<string>): string => {
   const character = params.character
@@ -8,5 +8,5 @@ export const getCharacterFromParams = (params: Params<string>): string => {
       statusText: 'Character cant be empty',
     })
   }
-  return character;
+  return character
 }
