@@ -126,6 +126,7 @@ export default function Index() {
         <nav className="flex gap-3">
           <NavLink to="../">Frame data</NavLink>
           <NavLink to="">Cheat sheet</NavLink>
+          <NavLink to="../antistrat">Anti strats</NavLink>
         </nav>
       </ContentContainer>
       <ContentContainer disableXPadding>

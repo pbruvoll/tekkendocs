@@ -1,18 +1,36 @@
 import { Pencil1Icon } from '@radix-ui/react-icons'
 import { Heading, Link as RadixLink, Table } from '@radix-ui/themes'
-import type { HeadersFunction } from '@remix-run/node'
-import { Link, type MetaFunction, NavLink, useMatches } from '@remix-run/react'
+import { type DataFunctionArgs, json, type MetaFunction } from '@remix-run/node'
+import { Link, NavLink, useLoaderData } from '@remix-run/react'
 import { ContentContainer } from '~/components/ContentContainer'
 import { tableIdToDisplayName } from '~/constants/tableIdToDisplayName'
 import type { CharacterFrameData } from '~/types/CharacterFrameData'
 import type { RouteHandle } from '~/types/RouteHandle'
+import { getCharacterFromParams } from '~/utils/characterRoute.utils.server'
 import { getCacheControlHeaders } from '~/utils/headerUtils'
 import { commandToUrlSegment } from '~/utils/moveUtils'
+import { getSheetService } from '~/utils/sheetServiceUtils.server'
 
-export const headers: HeadersFunction = args => ({
-  ...getCacheControlHeaders({ seconds: 60 * 5 }),
-  'X-Td-Cachecontext': args.loaderHeaders.get('X-Td-Cachecontext') || 'none',
-})
+export const loader = async ({ params }: DataFunctionArgs) => {
+  const character = getCharacterFromParams(params)
+  const sheetService = getSheetService()
+  const sheet = await sheetService.getCharacterData(
+    'T8',
+    character,
+    'antiStrat',
+  )
+
+  const { editUrl, tables } = sheet
+
+  return json(
+    { characterName: character, editUrl, tables },
+    {
+      headers: {
+        ...getCacheControlHeaders({ seconds: 60 * 5 }),
+      },
+    },
+  )
+}
 
 export const meta: MetaFunction = ({ data, params, matches }) => {
   const frameData = matches.find(
@@ -32,8 +50,8 @@ export const meta: MetaFunction = ({ data, params, matches }) => {
   const characterId = characterName.toLocaleLowerCase()
   const characterTitle =
     characterName[0].toUpperCase() + characterName.substring(1)
-  const title = `${characterTitle} Tekken 8 Frame Data | TekkenDocs`
-  const description = `Frame data for ${characterTitle} in Tekken 8`
+  const title = `${characterTitle} Tekken 8 Anti strart | TekkenDocs`
+  const description = `An overview of the most important information for for how to beat ${characterTitle} in Tekken 8. See the most important moves to punish, which side to to side step, strings to duck and much more`
 
   return [
     { title },
@@ -41,24 +59,18 @@ export const meta: MetaFunction = ({ data, params, matches }) => {
     { property: 'og:title', content: title },
     { property: 'description', content: description },
     { property: 'og:description', content: description },
-    { property: 'og:image', content: `/t8/avatars/${characterTitle}.jpg` },
+    { property: 'og:image', content: `/t7/avatars/${characterTitle}.jpg` },
     {
       tagName: 'link',
       rel: 'canonical',
-      href: 'https://tekkendocs.com/t8/' + characterId,
+      href: `https://tekkendocs.com/t8/${characterId}/antistrat`,
     },
   ]
 }
 
 export default function Index() {
-  const matches = useMatches()
-  const frameData = matches.find(
-    m => (m.handle as RouteHandle)?.type === 'frameData',
-  )?.data
-  if (!frameData) {
-    return <div>Could not load data</div>
-  }
-  const { tables, editUrl, characterName } = frameData as CharacterFrameData
+  const { characterName, editUrl, tables } = useLoaderData<typeof loader>()
+
   if (tables.length === 0) {
     return <div>Invalid or no data</div>
   }
@@ -80,12 +92,16 @@ export default function Index() {
           </a>
         </div>
         <nav className="flex gap-3">
-          <NavLink to="">Frame data</NavLink>
-          <NavLink to="meta">Guide</NavLink>
-          <NavLink to="antistrat">Anti strats</NavLink>
+          <NavLink to="../">Frame data</NavLink>
+          <NavLink to="../meta">Cheat sheet</NavLink>
+          <NavLink to="">Anti strats</NavLink>
         </nav>
       </ContentContainer>
-      <ContentContainer disableXPadding>
+      <ContentContainer
+        className="flex flex-wrap gap-2"
+        enableBottomPadding
+        disableXPadding
+      >
         {tables.map(table => {
           const columnNums = (table.headers || table.rows[0]).map(
             (_, index) => index,
@@ -94,7 +110,7 @@ export default function Index() {
             <section key={table.name} className="mt-8">
               <ContentContainer>
                 <Heading as="h2" mb="4" size="4">
-                  {tableIdToDisplayName[table.name]}
+                  {tableIdToDisplayName[table.name] || table.name}
                 </Heading>
               </ContentContainer>
               <Table.Root variant="surface" style={{ width: '100%' }}>
@@ -115,7 +131,7 @@ export default function Index() {
                       <Table.Row key={row[0]}>
                         {columnNums.map(j => {
                           const cell = row[j] || ''
-                          if (j === 0 && table.name === 'frames_normal') {
+                          if (table.headers && table.headers[j] === 'Command') {
                             //this is a command, so make it link
                             return (
                               <Table.Cell key={j}>
@@ -123,7 +139,9 @@ export default function Index() {
                                   <Link
                                     className="text-[#ab6400]"
                                     style={{ textDecoration: 'none' }}
-                                    to={commandToUrlSegment(cell)}
+                                    to={`/t7/${characterName}/${commandToUrlSegment(
+                                      cell,
+                                    )}`}
                                   >
                                     {cell}
                                   </Link>

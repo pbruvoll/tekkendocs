@@ -7,7 +7,11 @@ import { ServerStatusCode } from '~/types/ServerStatusCode'
 import { type SheetService } from '~/types/SheetService'
 import { cachified } from '~/utils/cache.server'
 import { createErrorResponse } from '~/utils/errorUtils'
-import { sheetSectionToTable, sheetToSections } from '~/utils/sheetUtils.server'
+import {
+  sheetSectionToTable,
+  sheetToSections,
+  sheetWeakFormatToSections,
+} from '~/utils/sheetUtils.server'
 import { getSheetObject, type SheetObject } from './googleSheetService.server'
 
 const gameToCharacterDocname: Record<Game, string> = {
@@ -18,8 +22,24 @@ const gameToCharacterDocname: Record<Game, string> = {
 
 const characterDataTypeToSuffix: Record<CharacterDataType, string> = {
   cheatSheet: '-meta',
+  antiStrat: '',
   frameData: '',
 }
+
+const antiStratHeaders = [
+  'Quick overview',
+  'HEAT',
+  'Stances',
+  'Standing block punishment',
+  'While standing block punishment',
+  'String handling',
+  'Other notes',
+  'Duckable highs',
+  'Plus on block',
+  'Low minus',
+  'Low hit advantage',
+  'Common setup / oki',
+]
 
 export class SheetServiceImpl implements SheetService {
   async getCharacterData(
@@ -28,7 +48,10 @@ export class SheetServiceImpl implements SheetService {
     dataType: CharacterDataType,
   ): Promise<CharacterPageData> {
     const key = [game, characterId, dataType].join('|_|')
-    const spreadSheetDocumentId = gameToCharacterDocname[game]
+    const spreadSheetDocumentId =
+      dataType === 'antiStrat'
+        ? '1-NDvWCmBV_PyRIq1p1o8KZrp_Y8ekbbbkDW5vskvsIc'
+        : gameToCharacterDocname[game]
     const sheetName = characterId + characterDataTypeToSuffix[dataType]
 
     const timeToLiveSec = 30
@@ -50,7 +73,10 @@ export class SheetServiceImpl implements SheetService {
     }
 
     const { editUrl, rows } = sheet
-    const sheetSections = sheetToSections(rows)
+    const sheetSections =
+      dataType === 'antiStrat'
+        ? sheetWeakFormatToSections(rows, antiStratHeaders)
+        : sheetToSections(rows)
     const tables = sheetSections.map(ss =>
       sheetSectionToTable({
         name: ss.sectionId,
@@ -59,7 +85,6 @@ export class SheetServiceImpl implements SheetService {
       }),
     )
 
-    console.log(JSON.stringify(tables, null, 4))
     return {
       characterName: characterId,
       dataType,
