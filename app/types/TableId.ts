@@ -11,3 +11,4 @@ export type TableId =
   | 'combos_ender'
   | 'combos_wall'
   | 'videos_match'
+  | 'antistrat_overview'
