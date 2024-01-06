@@ -2,6 +2,7 @@ import { Badge, Heading } from '@radix-ui/themes'
 import { json, type MetaFunction, type TypedResponse } from '@remix-run/node'
 import { Link, useLoaderData } from '@remix-run/react'
 import { CharacterCard } from '~/components/CharacterCard'
+import { CharacterGrid } from '~/components/CharacterGrid'
 import { ContentContainer } from '~/components/ContentContainer'
 import {
   getTekken7Characters,
@@ -9,6 +10,7 @@ import {
 } from '~/services/staticDataService'
 import type { GamePageData } from '~/types/GamePageData'
 import { getCacheControlHeaders } from '~/utils/headerUtils'
+import { t7AvatarMap } from '~/utils/t7AvatarMap'
 
 type LoaderData = {
   gamePageDataT7: GamePageData
@@ -106,13 +108,14 @@ export default function Index() {
         <Link to="t7">Tekken 7</Link>
       </Heading>
 
-      <ul className="flex flex-wrap gap-5">
-        {gamePageDataT7.characterInfoList.map(({ id, displayName }) => (
-          <li className="cursor-pointer" key={id}>
-            <CharacterCard name={displayName} url={'/t7/' + id} />
-          </li>
-        ))}
-      </ul>
+      <CharacterGrid
+        characterCards={gamePageDataT7.characterInfoList.map(
+          ({ id, displayName }) => {
+            const imgSrc = t7AvatarMap[id]
+            return { name: displayName, imgSrc, url: '/t7/' + id }
+          },
+        )}
+      />
     </ContentContainer>
   )
 }
