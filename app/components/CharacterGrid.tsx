@@ -9,7 +9,7 @@ export type CharacterGridProps = {
 }
 export const CharacterGrid = ({ characterCards }: CharacterGridProps) => {
   return (
-    <ul className="grid grid-cols-3 gap-5 xs:grid-cols-4 sm:grid-cols-4 md:grid-cols-6">
+    <ul className="xs:grid-cols-4 grid grid-cols-3 gap-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8">
       {characterCards.map(({ name, url, imgSrc }) => {
         return (
           <li className="cursor-pointer" key={name}>
