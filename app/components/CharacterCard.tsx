@@ -36,7 +36,7 @@ export const CharacterCard2 = ({ url, name, imgUrl }: CharacterCard2Props) => {
           />
         </Inset>
         <Inset clip="padding-box" side="x">
-          <div className="text-text-primary overflow-hidden text-ellipsis whitespace-nowrap text-center first-letter:uppercase">
+          <div className="overflow-hidden text-ellipsis whitespace-nowrap text-center text-text-primary first-letter:uppercase">
             {name}
           </div>
         </Inset>
