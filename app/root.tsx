@@ -39,11 +39,35 @@ export default function App() {
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <meta name="theme-color" content="#000000" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon-16x16.png"
+        />
         <link rel="icon" sizes="512x512" href="/logo-512.png" />
         <link rel="icon" sizes="256x256" href="/logo-256.png" />
         <link rel="icon" sizes="128x128" href="/logo-128.png" />
         <link rel="shortcut" href="/logo-128.png" />
         <link rel="apple-touch-icon" href="logo-256.png" />
+
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/apple-touch-icon.png"
+        />
+
+        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+        <meta name="msapplication-TileColor" content="#ffca16" />
+        <meta name="theme-color" content="#ffca16" />
+
         <Meta />
         <Links />
       </head>

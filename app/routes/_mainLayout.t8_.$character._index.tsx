@@ -41,7 +41,7 @@ export const meta: MetaFunction = ({ data, params, matches }) => {
     { property: 'og:title', content: title },
     { property: 'description', content: description },
     { property: 'og:description', content: description },
-    { property: 'og:image', content: `/t8/avatars/${characterTitle}-512.webp` },
+    { property: 'og:image', content: `/t8/avatars/${characterTitle}-512.png` },
     {
       tagName: 'link',
       rel: 'canonical',
