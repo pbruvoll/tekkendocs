@@ -1,7 +1,6 @@
 import { Badge, Heading } from '@radix-ui/themes'
 import { json, type MetaFunction, type TypedResponse } from '@remix-run/node'
 import { Link, useLoaderData } from '@remix-run/react'
-import { CharacterCard } from '~/components/CharacterCard'
 import { CharacterGrid } from '~/components/CharacterGrid'
 import { ContentContainer } from '~/components/ContentContainer'
 import {
@@ -11,6 +10,7 @@ import {
 import type { GamePageData } from '~/types/GamePageData'
 import { getCacheControlHeaders } from '~/utils/headerUtils'
 import { t7AvatarMap } from '~/utils/t7AvatarMap'
+import { t8AvatarMap } from '~/utils/t8AvatarMap'
 
 type LoaderData = {
   gamePageDataT7: GamePageData
@@ -70,23 +70,22 @@ export default function Index() {
       </Heading>
 
       <p className="mb-4">
-        Tekken demo is coming December 14th to PS5, so this section is work in
-        progress
+        Tekken demo was release December 14th to PS5, so this section is still
+        work in progress
       </p>
 
-      <ul className="flex flex-wrap gap-5">
-        {gamePageDataT8.characterInfoList
+      <CharacterGrid
+        characterCards={gamePageDataT8.characterInfoList
           .filter(c =>
             ['jin', 'nina', 'kazuya', 'paul'].some(demoChar =>
               c.id.startsWith(demoChar),
             ),
           )
-          .map(({ id, displayName }) => (
-            <li className="cursor-pointer" key={id}>
-              <CharacterCard name={displayName} url={'/t8/' + id} />
-            </li>
-          ))}
-      </ul>
+          .map(({ id, displayName }) => {
+            const imgSrc = t8AvatarMap[id]
+            return { name: displayName, imgSrc, url: '/t8/' + id }
+          })}
+      />
 
       <Heading as="h2" mt="7" mb="2" size="5">
         <Link to="t8">Tekken 8</Link>
@@ -96,13 +95,14 @@ export default function Index() {
         Tekken is coming january 2024, so this section is work in progress
       </p>
 
-      <ul className="flex flex-wrap gap-5">
-        {gamePageDataT8.characterInfoList.map(({ id, displayName }) => (
-          <li className="cursor-pointer" key={id}>
-            <CharacterCard name={displayName} url={'/t8/' + id} />
-          </li>
-        ))}
-      </ul>
+      <CharacterGrid
+        characterCards={gamePageDataT8.characterInfoList.map(
+          ({ id, displayName }) => {
+            const imgSrc = t8AvatarMap[id]
+            return { name: displayName, imgSrc, url: '/t8/' + id }
+          },
+        )}
+      />
 
       <Heading as="h2" mt="7" mb="4" size="5">
         <Link to="t7">Tekken 7</Link>

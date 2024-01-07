@@ -1,4 +1,4 @@
-import { Badge, Card } from '@radix-ui/themes'
+import { Badge, Card, Inset } from '@radix-ui/themes'
 import { Link } from '@remix-run/react'
 
 export type CharacterCardProps = {
@@ -27,20 +27,19 @@ export const CharacterCard2 = ({ url, name, imgUrl }: CharacterCard2Props) => {
   return (
     <Link to={url} className="cursor-pointer">
       <Card className="group transform transition duration-500 hover:scale-110 hover:shadow">
-        <div className="flex flex-col items-center gap-3">
-          <div className="aspect-square w-full">
-            <img
-              src={imgUrl}
-              alt=""
-              className="h-full w-full  
+        <Inset clip="padding-box" side="top" pb="current">
+          <img
+            src={imgUrl}
+            alt=""
+            className="h-full w-full  
               rounded object-contain"
-            />
-          </div>
-
-          <span className="text-text-primary first-letter:uppercase">
+          />
+        </Inset>
+        <Inset clip="padding-box" side="x">
+          <div className="mx-1 text-center text-text-primary first-letter:uppercase">
             {name}
-          </span>
-        </div>
+          </div>
+        </Inset>
       </Card>
     </Link>
   )
