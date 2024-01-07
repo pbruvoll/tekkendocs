@@ -26,7 +26,7 @@ export type CharacterCard2Props = {
 export const CharacterCard2 = ({ url, name, imgUrl }: CharacterCard2Props) => {
   return (
     <Link to={url} className="cursor-pointer">
-      <Card className="group transform transition duration-500 hover:scale-110 hover:shadow">
+      <Card className="group transform transition duration-500 hover:scale-110 hover:border-b-2 hover:border-b-gray-700 hover:shadow">
         <Inset clip="padding-box" side="top" pb="current">
           <img
             src={imgUrl}
@@ -36,7 +36,7 @@ export const CharacterCard2 = ({ url, name, imgUrl }: CharacterCard2Props) => {
           />
         </Inset>
         <Inset clip="padding-box" side="x">
-          <div className="mx-1 text-center text-text-primary first-letter:uppercase">
+          <div className="overflow-hidden text-ellipsis whitespace-nowrap text-center text-text-primary first-letter:uppercase">
             {name}
           </div>
         </Inset>
