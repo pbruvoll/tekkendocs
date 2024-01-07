@@ -3,6 +3,7 @@ import { json, type MetaFunction, type TypedResponse } from '@remix-run/node'
 import { Link, useLoaderData } from '@remix-run/react'
 import { CharacterGrid } from '~/components/CharacterGrid'
 import { ContentContainer } from '~/components/ContentContainer'
+import tekkenDocsLogo from '~/images/logo/tekkendocs.png'
 import {
   getTekken7Characters,
   getTekken8Characters,
@@ -53,7 +54,13 @@ export default function Index() {
   const { gamePageDataT7, gamePageDataT8 } = useLoaderData<typeof loader>()
   return (
     <ContentContainer enableBottomPadding enableTopPadding>
-      <h1 className="mb-4 text-2xl font-bold">TekkenDocs</h1>
+      <h1 className="sr-only mb-4 text-2xl  font-bold">TekkenDocs</h1>
+      <img
+        src={tekkenDocsLogo}
+        alt="TekkenDocs"
+        width="567px"
+        style={{ maxWidth: '100%', aspectRatio: '6', marginLeft: '-4px' }}
+      />
       <p className="mb-4">Frame data and learning resources for Tekken</p>
 
       <Heading as="h2" mt="5" mb="4" size="5">
