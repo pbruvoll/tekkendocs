@@ -33,6 +33,7 @@ export const meta: MetaFunction = () => {
   const title = 'TekkenDocs - Frame data and resources for Tekken'
   const description =
     'Frame data and resources for leveling up your skills in Tekken'
+  const image = '/images/tekkendocs-og-image.png'
   return [
     { title },
     {
@@ -44,7 +45,14 @@ export const meta: MetaFunction = () => {
       content: description,
     },
     { property: 'og:description', content: description },
-    { property: 'og:image', content: '/logo-512.png' },
+    { property: 'og:image', content: image },
+    { property: 'og:type', content: 'website' },
+    { property: 'twitter:card', content: 'summary_large_image' },
+    { property: 'twitter:domain', content: 'tekkendocs.com' },
+    { property: 'twitter:url', content: 'https://tekkendocs.com' },
+    { property: 'twitter:title', content: title },
+    { property: 'twitter:description', content: description },
+    { property: 'twitter:image', content: image },
   ]
 }
 
@@ -54,12 +62,17 @@ export default function Index() {
   const { gamePageDataT7, gamePageDataT8 } = useLoaderData<typeof loader>()
   return (
     <ContentContainer enableBottomPadding enableTopPadding>
-      <h1 className="sr-only mb-4 text-2xl  font-bold">TekkenDocs</h1>
+      <h1 className="sr-only mb-4 text-2xl font-bold">TekkenDocs</h1>
       <img
         src={tekkenDocsLogo}
         alt="TekkenDocs"
         width="567px"
-        style={{ maxWidth: '100%', aspectRatio: '6', marginLeft: '-4px' }}
+        style={{
+          maxWidth: '100%',
+          aspectRatio: '6',
+          marginLeft: '-4px',
+          marginTop: '1rem',
+        }}
       />
       <p className="mb-4">Frame data and learning resources for Tekken</p>
 
