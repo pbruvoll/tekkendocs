@@ -1,90 +1,23 @@
 import { Heading, Link as RadixLink, Table, Text } from '@radix-ui/themes'
-import { type DataFunctionArgs, json } from '@remix-run/node'
-import { Link, type MetaFunction, useLoaderData } from '@remix-run/react'
+import {
+  Link,
+  type MetaFunction,
+  useMatches,
+  useParams,
+} from '@remix-run/react'
 import { ContentContainer } from '~/components/ContentContainer'
-import { google } from '~/google.server'
-import { ServerStatusCode } from '~/types/ServerStatusCode'
+import { getCharacterFrameData } from '~/utils/characterPageUtils'
 import { getCacheControlHeaders } from '~/utils/headerUtils'
 import { commandToUrlSegment } from '~/utils/moveUtils'
 
-export const loader = async ({ params }: DataFunctionArgs) => {
-  const character = params.character
-  const move = params.move
-  if (!character) {
-    throw new Response(null, {
-      status: 400,
-      statusText: 'Character cant be empty',
-    })
-  }
-
-  if (!move) {
-    throw new Response(null, {
-      status: 400,
-      statusText: 'Move cant be empty',
-    })
-  }
-
-  const target = ['https://www.googleapis.com/auth/spreadsheets.readonly']
-  const jwt = new google.auth.JWT({
-    email: process.env.GOOGLE_SHEETS_CLIENT_EMAIL,
-    scopes: target,
-    key: (process.env.GOOGLE_SHEETS_PRIVATE_KEY || '').replace(/\\n/g, '\n'),
-  })
-
-  const sheets = google.sheets({ version: 'v4', auth: jwt })
-  let rows: any[][] | null | undefined
-  try {
-    const response = await sheets.spreadsheets.values.get({
-      spreadsheetId: '1IDC11ShZjpo6p5k8kV24T-jumjY27oQZlwvKr_lb4iM',
-      range: character, // sheet name
-    })
-
-    rows = response.data.values
-  } catch {
-    throw new Response(null, {
-      status: ServerStatusCode.ServerError,
-      statusText: 'Not able to contact server',
-    })
-  }
-
-  if (!rows) {
-    throw json('not found', {
-      status: ServerStatusCode.NotFound,
-      statusText: 'Rows not found',
-    })
-  }
-
-  if (rows[0][0] !== '#frames_normal' || rows.length < 3) {
-    throw json('no frame data found', {
-      status: 401,
-      statusText: 'Not found 2',
-    })
-  }
-  const dataHeaders = rows[1]
-  const moveRow = rows.find(
-    row => row[0] && commandToUrlSegment(row[0]) === move,
-  )
-  if (!moveRow) {
-    throw json('move not found in frame data', {
-      status: ServerStatusCode.NotFound,
-      statusText: 'Not able to find the move in the command list',
-    })
-  }
-
-  return json(
-    { characterName: character, dataHeaders, moveRow },
-    {
-      headers: getCacheControlHeaders({ seconds: 60 * 5 }),
-    },
-  )
-}
-
 export const headers = () => getCacheControlHeaders({ seconds: 60 * 5 })
 
-export const meta: MetaFunction<typeof loader> = ({ data, params }) => {
+export const meta: MetaFunction = ({ params, matches }) => {
   const character = params.character
   const move = params.move
-  if (!data || !character) {
+  const frameData = getCharacterFrameData(matches)
+
+  if (!frameData || !move || !character || !frameData.headers) {
     return [
       {
         title: 'TekkenDocs - Uknown character',
@@ -94,14 +27,25 @@ export const meta: MetaFunction<typeof loader> = ({ data, params }) => {
       },
     ]
   }
-
-  const { dataHeaders, moveRow }: { dataHeaders: string[]; moveRow: string[] } =
-    data
-
   const characterId = character?.toLocaleLowerCase()
   const characterTitle = character[0].toUpperCase() + character.substring(1)
+  const title = `${move} - ${characterTitle} Tekken8 Frame Data | TekkenDocs`
 
-  const title = `${move} - ${characterTitle} Tekken7 Frame Data | TekkenDocs`
+  const data = findMoveRow(move, frameData.rows)
+  if (!data) {
+    return [
+      {
+        title,
+      },
+      {
+        description: `Frame data for ${params.move}.`,
+      },
+    ]
+  }
+
+  const { headers: dataHeaders, rows } = frameData
+  const moveRow = findMoveRow(move, rows) || []
+
   const description = dataHeaders
     .map((header, index) => `${header}:   ${moveRow[index] || ''}`)
     .join('\n')
@@ -112,21 +56,43 @@ export const meta: MetaFunction<typeof loader> = ({ data, params }) => {
     { property: 'og:title', content: title },
     { property: 'description', content: description },
     { property: 'og:description', content: description },
-    { property: 'og:image', content: `/t7/avatars/${characterTitle}.jpg` },
+    { property: 'og:image', content: `/t8/avatars/${characterId}-512.png` },
     {
       tagName: 'link',
       rel: 'canonical',
-      href: 'https://tekkendocs.com/t7/' + characterId + '/' + move,
+      href: 'https://tekkendocs.com/t8/' + characterId + '/' + move,
     },
   ]
 }
 
+const findMoveRow = (
+  command: string,
+  rows: string[][],
+): string[] | undefined => {
+  return rows.find(row => row[0] && commandToUrlSegment(row[0]) === command)
+}
+
 export default function Move() {
-  const {
-    dataHeaders: headers,
-    moveRow,
-    characterName,
-  } = useLoaderData<typeof loader>()
+  const params = useParams()
+  const move = params['move']
+  const characterName = params['character']
+
+  const matches = useMatches()
+  const characterFrameData = getCharacterFrameData(matches)
+  if (
+    !characterName ||
+    !move ||
+    !characterFrameData ||
+    !characterFrameData.headers
+  ) {
+    return <div>Missing character, move, frame data or headers</div>
+  }
+
+  const headers: string[] = characterFrameData.headers
+  const moveRow = findMoveRow(move, characterFrameData.rows)
+  if (!moveRow) {
+    return <div>Not able to find frame data for the move {move}</div>
+  }
 
   return (
     <ContentContainer enableTopPadding enableBottomPadding>
