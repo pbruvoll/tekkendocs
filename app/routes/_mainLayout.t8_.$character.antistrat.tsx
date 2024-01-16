@@ -83,7 +83,7 @@ export default function Index() {
           </Heading>
           <a
             className="flex items-center gap-2"
-            style={{ color: 'var(--accent-a11' }}
+            style={{ color: 'var(--accent-a11)' }}
             target="blank"
             href={editUrl}
           >

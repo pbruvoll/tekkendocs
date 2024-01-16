@@ -5,3 +5,9 @@ export type TableData = {
   headers?: string[]
   rows: string[][]
 }
+
+export type TableDataWithHeader = {
+  name: TableId
+  headers: string[]
+  rows: string[][]
+}

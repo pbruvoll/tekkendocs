@@ -3,9 +3,11 @@ import { Heading, Link as RadixLink, Table } from '@radix-ui/themes'
 import type { HeadersFunction } from '@remix-run/node'
 import { Link, type MetaFunction, NavLink, useMatches } from '@remix-run/react'
 import { ContentContainer } from '~/components/ContentContainer'
+import { FrameDataTable } from '~/components/FrameDataTable'
 import { tableIdToDisplayName } from '~/constants/tableIdToDisplayName'
 import type { CharacterFrameData } from '~/types/CharacterFrameData'
 import type { RouteHandle } from '~/types/RouteHandle'
+import { type TableDataWithHeader } from '~/types/TableData'
 import { getCacheControlHeaders } from '~/utils/headerUtils'
 import { commandToUrlSegment } from '~/utils/moveUtils'
 
@@ -71,7 +73,7 @@ export default function Index() {
           </Heading>
           <a
             className="flex items-center gap-2"
-            style={{ color: 'var(--accent-a11' }}
+            style={{ color: 'var(--accent-a11)' }}
             target="blank"
             href={editUrl}
           >
@@ -79,16 +81,25 @@ export default function Index() {
             Edit
           </a>
         </div>
-        <div className="flex gap-3">
+        <nav className="flex gap-3">
           <NavLink to="">Frame data</NavLink>
           <NavLink to="meta">Guide</NavLink>
-        </div>
+          <NavLink to="antistrat">Anti strats</NavLink>
+        </nav>
       </ContentContainer>
       <ContentContainer disableXPadding>
         {tables.map(table => {
           const columnNums = (table.headers || table.rows[0]).map(
             (_, index) => index,
           )
+          if (table.headers && table.name === 'frames_normal') {
+            return (
+              <FrameDataTable
+                key={table.name}
+                table={table as TableDataWithHeader}
+              />
+            )
+          }
           return (
             <section key={table.name} className="mt-8">
               <ContentContainer>
