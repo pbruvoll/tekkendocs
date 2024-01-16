@@ -3,7 +3,8 @@ import { type CharacterDataType } from '~/types/CharacterDataType'
 import { type CharacterPageData } from '~/types/CharacterPageData'
 import { type Game } from '~/types/Game'
 import { type SheetService } from '~/types/SheetService'
-import { tables } from './mock-t8-nina-framedata'
+import { tables as kazuyaTables } from './mock-t8-kazuya-framedata'
+import { tables as ninaTables } from './mock-t8-nina-framedata'
 
 export class SheetServiceMock implements SheetService {
   getCharacterData(
@@ -16,7 +17,7 @@ export class SheetServiceMock implements SheetService {
       dataType,
       editUrl: 'https://tekkendocs.com/fakeUrl',
       game,
-      tables,
+      tables: characterId === 'nina' ? ninaTables : kazuyaTables,
     })
   }
 

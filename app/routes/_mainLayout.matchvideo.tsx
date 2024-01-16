@@ -103,7 +103,7 @@ export default function TournamentVideos() {
         <h1 className="mb-6 mt-4 text-4xl">Tournament videos</h1>
         <a
           className="flex items-center gap-2"
-          style={{ color: 'var(--accent-a11' }}
+          style={{ color: 'var(--accent-a11)' }}
           target="blank"
           href={editUrl}
         >
