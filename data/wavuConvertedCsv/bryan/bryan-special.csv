@@ -13,11 +13,9 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * Cannot block while still in effect
 * Automatic counter hit"
 1,2,4;h,h,h;5,8,24;,i20;-5;+20a (+11);;"
-* 
-Heat Engager"
+* Heat Engager"
 1+3;t;35;i12~14;;-2d;;"
-* 
-Floor break
+* Floor break
 * Throw break 1 or 2"
 1+3+4;m!;0;i28~31;;+16;;
 1,4;h,h;5,14;,i15;-7;+4;;Combo from 1st hit
@@ -27,39 +25,34 @@ Floor break
 * Alternate input b+2"
 1,4,2,1;h,h,h,h;5,14,18,16;,i19;+0;+55a;;"
 * Cancel last hit and transition to SS with u_d
-* Transition to CD with F
+* Transition to SLS with F
 * Alternate input:
 ** b+2,1
 ** qcf+4,1"
 1,4,2,1,2;h,h,h,h,h;5,14,18,16,22;,i24;-8;+41d (-17);;"
-* 
-Balcony break
+* Balcony break
 * Alternate input:
 ** b+2,1,2
 ** qcf+4,1,2"
 1,4,2,1,4;h,h,h,h,m;5,14,18,16,21;,i30-31;-5;+40a (+14);;"
-* 
-Tornado
+* Tornado
 * Alternate input:
 ** b+2,1,4
 ** qcf+4,1,4
 * Special? effect on airborne hit +38a (+31)"
 1,4,2,4;h,h,h,m;5,14,18,21;;;;;"
-* 
-Balcony break
+* Balcony break
 * Alternate input b+2,4"
 1,4,3;h,h,m;5,14,15;,i21;-10;+1;;
 1,4,3,3;h,h,m,h;5,14,15,18;,i23;-7;+7;+14d;Combo from 3rd hit
 2;h;10;i10;+1;+7;;
 2+3;m;12 (12);i16;+1;+2c;;"
-* 
-Heat Burst"
+* Heat Burst"
 2,3;h,m;10,14;,i16;-10;+6;+16a (+7);"
 * Combo from 1st hit
 * CH frames also apply to combo from 1st CH"
 2+4;t;35;i12~14;;+0d;;"
-* 
-Floor break
+* Floor break
 * Throw break 1 or 2
 * Side switch"
 3;m;14;i16;-4;+7;;
@@ -76,10 +69,8 @@ Floor break
 * Consumes SE
 * Chip damage 8 (40%) on block"
 3+4,SE.2*;m,m;20,30;i55~56;+9;+66a (+50);;"
-* 
-Tornado
-* 
-Balcony break
+* Tornado
+* Balcony break
 * Consumes SE
 * Chip damage on block
 * Guard break at the wall
@@ -87,8 +78,7 @@ Balcony break
 4;h;15;i12;-7;+6;;
 4,3;h,m;15,12;,i24~25;-10;+2;;Combo from 1st hit
 4,3,4;h,m,m;15,12,16;,i24~25;-10;+2;;"
-* 
-Balcony break
+* Balcony break
 * Hold to power up and deal more chip damage on block"
 4,3,f+4;h,m,h;15,12,18;,24~25;-5;+6;+31a (+21);Combo from 2nd CH
 b+1;m;21;i20~21;+4;+7c;+78a (+58);Elbow
@@ -102,27 +92,24 @@ b+2;h;18;;;;;"
 * Alternate input 1,4,2"
 b+2,1;h,h;18,16;;;;;"
 * Cancel last hit and transition to SS with u_d
-* Transition to CD with F
+* Transition to SLS with F
 * Alternate input:
 ** 1,4,2,1
 ** qcf+4,1"
 b+2,1,2;h,h,h;18,16,22;;;;;"
-* 
-Balcony break
+* Balcony break
 * Alternate input:
 ** 1,4,2,1,2
 ** qcf+4,1,2"
 b+2,1,4;h,h,m;18,16,20;;;;;"
-* 
-Tornado
+* Tornado
 * Alternate input:
 ** 1,4,2,4
 ** qcf+4,1,4"
 b+2,4;h,m;18,21;;;;;"
-* 
-Balcony break
+* Balcony break
 * Alternate input 1,4,2,4"
-b+3;m;12;i19;-7;+4;;Transition to CD with F +17 on hit
+b+3;m;12;i19;-7;+4;;Transition to SLS with F +17 on hit
 b+3,1+2;m,m;12,25;,i22;-8;+4c;+20d;Combo from 1st CH with delay
 b+3,2;m,h;12,12;,i16;-4;+7;;
 b+3,2,1;m,h,m;12,12,10;;;;;"
@@ -139,29 +126,24 @@ b,df+4;l;25;i29;-13;+14g;;"
 * Cancel with B"
 d+1+2;m,m;10,15;i17;-10;+3;;"
 * Combo from 1st hit
-* Transition to CD with F +10g on hit
+* Transition to SLS with F +10g on hit
 * Transition to Sway with B +8"
 d+1+2~2;m;24;i30;+7;+53a;;Chip damage on block
 d+1+2,3;m,m,l;10,15,20;i27~28;-13;+5;+25a;
 d+2;m;17;i14~15;-2;+8c;;Elbow
 d+2,3;m,m;17,21;i22;-10;+16a (-1);+32a (+18);"
-* 
-Balcony break"
+* Balcony break"
 d+3;l;10;i16;-11;+0;;
 d+3,2;l,h;10,22;i21;-7;+35a (+9);;"
-* 
-Balcony break
+* Balcony break
 * Gain SE on hit with 1+2"
 d+3+4;l;16;i19;-12;-1;;
 d+3+4,2;l,m;16,25;,i19;-12;+14a (-3);;"
-* 
-Balcony break
-* 
-Tornado"
+* Balcony break
+* Tornado"
 d+4;L;13;i15;-11;+0;;
 db+1+2;m,h;8,16;i15;-9;+4;;"
-* 
-Heat Engager
+* Heat Engager
 * Heat Dash +43a (+35)"
 db+2;m;13;i15~17;-6;+8;;
 db+3;L;11;i16~17;-12;-1;+4;
@@ -185,17 +167,13 @@ df+2,1;m,h;12,11;i6;-4;+5;;"
 * Transition to Sway with B +8 on hit"
 df+2,3;m,m;12,20;,i23;-13;+8;+59a;
 df+3;L;20;i29~30;-26;+70a (+54);;"
-* 
-Homing
+* Homing
 * Insta Tornado launch"
 df+4;m;23;i22~24;-6;+19d;;"
-* 
-Homing"
+* Homing"
 f+1+2;h;22;i20~21;-6;+44d (-14);;"
-* 
-Balcony break
-* 
-Elbow
+* Balcony break
+* Elbow
 * Absorb an attack to power up and deal more chip damage on block"
 f+2;m;10;i15;-10;+;;
 f+2,1;m,m;10,12;,i10;-10;+1;;Combo from 1st hit
@@ -203,14 +181,12 @@ f+2,1,4;m,m,m;10,12,20;i18~19;-13;+3a;;"
 * Combo from 1st hit
 * Gain SE on hit with 1+2"
 f+2,1,SE.2;m,m,m;10,12,5;i14~15;-12;+3c;;"
-* 
-Elbow
+* Elbow
 * Combo from 1st hit
 * Consumes SE
 * Chip damage 1 (20%) on block"
 f+2,1,SE.2,3;m,m,m,m;10,12,5,7;,i22;-15;+14a (+7);;"
-* 
-Knee
+* Knee
 * Combo from 1st hit
 * Chip damage 2 (28%) on block"
 f+2,1,SE.2,3,2;m,m,m,m,m;10,12,5,7,20;,i35~36;-10;+0a (-1);;"
@@ -222,104 +198,48 @@ FC.db+1+2;t;45;i11;;+1d;;"
 * Throw break 1+2"
 FC.df+2;m;12;i13;-9;+4;;
 FC.df+2,1;m,h;12,25;i22~23;-8;+34a (+8);;"
-* 
-Balcony break
+* Balcony break
 * Combo from 1st hit with delay
 * Move can be delayed"
 FC.df+4;m;21;i15~16;-10;+13g;;Ballerina spin on hit
 f,F+2;h;29;i13;-9;+41d (-17);;"
-* 
-Heat Engager
-* 
-Balcony break
+* Heat Engager
+* Balcony break
 * Chip damage on block"
 f,F+3;m;25;i24~25;-13;+28a (-8);+39a (-8);"
-* 
-Balcony break
+* Balcony break
 * Gain SE on hit with 1+2
 * Chip damage 7 (28%) on block"
 f,F+3*;m;33;i34~35;+8;+71a;;"
-* 
-Balcony break
+* Balcony break
 * Gain SE on hit with 1+2
 * Chip damage 9 (27%) on block
 * Wall Crush on block"
 f,F+4;h;32;i16~19;-9;+15a;;"
-* 
-Homing
+* Homing
 * Chip damage 9 (28%) on block"
 f,f,F+3;m;30;i22~25;+6;+13a (+3);;Chip damage 9 (30%) on block
 f,n,b+2;h;20;i14~15;-7;+43a (+33);;"
-* 
-Tornado"
+* Tornado"
 H.2+3;m,m,t;20,20,20;i16;+9;-1d;;"
-* 
-Heat Smash
-* 
-Floor break
+* Heat Smash
+* Floor break
 ** 2nd and 3rd hit
 * Throw on hit
 * Wall crush on block"
 Left throw;t;40;;;+1d;;"
-* 
-Floor break
+* Floor break
 * Throw break 1
 * Side switch"
 P.2;h;30;;;;;"
-* 
-Balcony break
+* Balcony break
 * Gain SE on hit
 * Chip damage on block"
-qcb;;;;;;;
-qcb+1;h;22;i13~14;+5;+36d (+28);+72a (+56);"
-* 
-Tornado
-* 
-Balcony break
-* Insta Tornado launcher on CH
-* Chip damage 6 (27%) on block"
-qcb+2;m;16;i15~16;+6;-9;;
-qcb+2,4;m,h;16,25;,i22~25;-9;+15a;;"
-* Combo from 1st hit with delay
-* Chip damage on block"
-qcb+3;l;23;i19~20;-13;+5;+25d;
-qcb+4;M;23;i17~18;-12;+31a (+21);;
+qcb;;;;;;;Lapses to standing
 qcf;;;;;;;"
-* Transition to FC with DF"
-qcf+1+2;m;28;i15~16;-9;+23a (+13);;"
-* 
-Heat Engager
-* 
-Balcony break
-* Chip damage 8 (28%) on block"
-qcf+2;h;16;i15~16;-6;+2;;
-qcf+2,1;h,m;16,23;i15~16;-11;+33a (+18);;Combo from 1st hit
-qcf+2,2;h,m;16,25;i25;-7;+14a;;"
-* 
-Balcony break
-* Combo from 1st hit"
-qcf+2,4;h,m;16,22;i16~17;;+5a;;"
-* 
-Tornado
-* Combo from 1st hit
-* Gain SE on hit -12a"
-qcf+4;m;13;i18;-5;+1;;
-qcf+4,1;m,h;13,13;;;;;"
-* Combo from 1st CH
-* Transition to SS with u_d
-* Alternate input:
-** 1,4,2,1
-** b+2,1"
-qcf+4,1,2;m,h,h;13,13,22;;;;;"
-* Alternate input:
-** 1,4,2,1,2
-** b+2,1,2"
-qcf+4,1,4;m,h,m;13,13,20;;;;;"
-* 
-Tornado
-* Alternate input:
-** 1,4,2,1,4
-** b+2,1,4"
+* Alternate input d,df
+* Transition to FC with DF
+* Lapses to standing"
 R.1+2;m;55+;i20;-15;+0d;;"
 * Rage Art"
 Right throw;t;40;;;+6d;;"
@@ -329,18 +249,55 @@ SE.f,F+1+2;h;36;i13;+5;+33a (+7);;"
 * Chip damage 14 (38%) on block
 * Transition into Immortal Payback on opponent attack absorb"
 SE.f,F+1+2 (on absorb);m;20;;;;;"
-* 
-Balcony break
+* Balcony break
 * Consumes SE (again?)[[[Template:Untested|untested]]]"
+SLS.1+2;m;28;i15~16;-9;+23a (+13);;"
+* Heat Engager
+* Balcony break
+* Chip damage 8 (28%) on block"
+SLS.2;h;16;i15~16;-6;+2;;
+SLS.2,1;h,m;16,23;i15~16;-11;+33a (+18);;Combo from 1st hit
+SLS.2,2;h,m;16,25;i25;-7;+14a;;"
+* Balcony break
+* Combo from 1st hit"
+SLS.2,4;h,m;16,22;i16~17;;+5a;;"
+* Tornado
+* Combo from 1st hit
+* Gain SE on hit -12a"
+SLS.4;m;13;i18;-5;+1;;
+SLS.4,1;m,h;13,13;;;;;"
+* Combo from 1st CH
+* Transition to SS with u_d
+* Alternate input:
+** 1,4,2,1
+** b+2,1"
+SLS.4,1,2;m,h,h;13,13,22;;;;;"
+* Alternate input:
+** 1,4,2,1,2
+** b+2,1,2"
+SLS.4,1,4;m,h,m;13,13,20;;;;;"
+* Tornado
+* Alternate input:
+** 1,4,2,1,4
+** b+2,1,4"
 ss1;h;23;i17~18;-5;+8;+15;
 ss2;m;15;i17~18;-9;+1;;
 ss2,1;m,h;15,20;i21~22;-5;+43d (-15);;"
-* 
-Heat Engager
-* 
-Balcony break
+* Heat Engager
+* Balcony break
 * Combo from 1st hit with delay
 * Move can be delayed"
+Sway.1;h;22;i13~14;+5;+36d (+28);+72a (+56);"
+* Tornado
+* Balcony break
+* Insta Tornado launcher on CH
+* Chip damage 6 (27%) on block"
+Sway.2;m;16;i15~16;+6;-9;;
+Sway.2,4;m,h;16,25;,i22~25;-9;+15a;;"
+* Combo from 1st hit with delay
+* Chip damage on block"
+Sway.3;l;23;i19~20;-13;+5;+25d;
+Sway.4;M;23;i17~18;-12;+31a (+21);;
 ub+1+2;m,m;5,2;i15;-16;-6;;"
 * Combo from 1st hit
 * Chip damage on block"
@@ -372,22 +329,18 @@ ub+1+2,1,2,1,2,1,2,1,2,1;m,m,m,m,m,m,m,m,m,m,m;5,2,2,2,2,2,2,2,2,2,2;;;;;"
 * Combo from 1st hit
 * Chip damage on block"
 ub+1+2,1,2,1,2,1,2,1,2,1,4;m,m,m,m,m,m,m,m,m,m,m,m;5,2,2,2,2,2,2,2,2,2,2,14;;-35;-15a (-24);;"
-* 
-Knee
-* 
-Balcony break
+* Knee
+* Balcony break
 * Combo from 1st hit
 * Chip damage on block"
 uf+1+2;t;40;i12;;-5d;;"
-* 
-Floor break
+* Floor break
 * Throw break 1+2"
 uf+2;m;6;i13;-10;+1;;
 uf+2,2;m,m;6,4;,i10;-10;+1;;Combo from 1st hit
 uf+2,2,2;m,m,m;6,4,4;i10;-10;+1;;Combo from 1st hit
 uf+2,2,2,3;m,m,m,m;6,4,4,20;,i22~23;-15;+30a (+12);;"
-* 
-Knee
+* Knee
 * Combo from 1st hit"
 uf+2,2,2,SE.2;m,m,m,m;6,4,4,?;i10;-12;+21a (+14);;"
 * 6 (4) damage on airborne opponent at 70% scaling - 9 damage?
@@ -401,10 +354,8 @@ uf+2,2,2,SE.2,2,3;m,m,m,m,m,m;6,4,4,?,?,?;i22~23;-15;;;"
 * Chip damage 9 (39%) on block"
 uf+3;m;15;i27~28;-2;+15;;Alternate input u+3
 uf+3+4;m;22;i16~17;-7;+8a;;"
-* 
-Tornado
-* 
-Knee
+* Tornado
+* Knee
 * Gain SE on hit"
 uf+4;m;20;;;;;Alternate input u+4
 uf,n,4;m;20;i23~25;-13;+32a (+22);;

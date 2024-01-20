@@ -13,13 +13,13 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 1+2+3+4;;;;;;;"
 * Cannot block for 5 seconds
 * CH state for 5 seconds"
-1+2+3+4,1+2;sp,t(m);-,5,5;i61;-6;LNC;;"
+1+2+3+4,1+2;,t(m);,5,5;i61;-6;LNC;;"
 * Break: 1+2
 * Opp. Position on break: Reverse Pos.
 * Opp. Position on hit: Foot sd. FU
 * Left slap is auto-attack
 * Throw breaks 16f later (1f)"
-1+2+3+4,1+2,1,2,1,2;sp,t(m);-,5,5,5,5,5,10;;;;;"
+1+2+3+4,1+2,1,2,1,2;,t(m);,5,5,5,5,5,10;;;;;"
 * Break: none
 * Opp. Position on break:
 * Opp. Position on hit: Foot sd. FU"
@@ -51,10 +51,10 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * Chip on block
 * Link to attack from Spinning Heel Drop (f+3)
 "
-1+4,3,B;sl,h,m,sp;5,8,25,0;;-37;-26;;"
+1+4,3,B;slh,m,sp;5,8,24,0;;-37;-26;;"
 * If 2nd attack is blocked, -20f
 "
-1,4,D;h,l,sp;6140;;-11;+0;+3;"
+1,4,D;h,l,sp;6,140;;-11;+0;+3;"
 * Combo from 1st CH"
 2;h;9;i12;-11;+0;;
 2,1;h,h;9,10;;-3;+8;;"
@@ -65,8 +65,7 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 2,1,d+1+2,B;h,h,m,sp;9,10,23,0;;;;;
 2,1,d+1+2,D;h,h,m,sp;9,10,23,0;;;;;
 2+3;m;;;;;;"
-* 
-Heat Burst"
+* Heat Burst"
 2,3;h,m;9,16;,;-19;KND;;Combo from 1st hit
 2+4;t;35;i12~14;-3;+0d;;"
 * Throw break 1 or 2
@@ -198,8 +197,7 @@ df+2+3;t(h);40;i12;-6;;;"
 * Opp. Position on hit: CCW. Head sd. FU"
 df+3;m;23;i20;-8;KND;KND;
 df+3+4;l;22;i28;-26;KND;KND*;"
-* 
-Homing
+* Homing
 * Alternate input: df+3~4
 * Start-up 27F in actuality
 "
@@ -229,8 +227,7 @@ f+1,4;m,lh;17,5,20;;-25;LNC;LNC;"
 * -6F upon 3rd block
 "
 f+1,d+4;m,l;17,26;;-26;KND;KND;"
-* 
-Homing
+* Homing
 * Combo from 1st CH
 * Can be delayed 15F
 * Combo can be delayed 5F from CH
@@ -249,8 +246,7 @@ f+2+3;h;21;i23;+0;KND;KND;"
 f+2,D;m,sp;20,0;,;;;;
 f+3;m;24;31f;-2;KND;KND;"
 * Chip damage when guarded
-* 
-"
+* "
 f+3*;m;26;52f;+6;KND;KND;"
 * Chip damage when guarded
 * Input to cancel
@@ -265,8 +261,7 @@ f+3* (max);ub(m);28;70f;KND;KND;KND;"
 * Input  to cancel
 "
 f+4;h;21;i19;+3;KND;KND;"
-* 
-Homing"
+* Homing"
 FC.1;sm;5;i10;-5;+6;;"
 * Returns to standing when input F
 "
@@ -295,8 +290,7 @@ f,F+1;m;30;i23;+4;+?c;LNC;"
 "
 f,F+1+2;m;20;i19;;KND;;"
 * Chip damage when guarded
-* 
-Tornado
+* Tornado
 "
 f,F+2;m;16;i15;-13;-3;;"
 "
@@ -313,21 +307,18 @@ f,F+2,3;m,m;16,22;;-8;KND;KND;"
 * Combo can be delayed 5F from CH
 "
 f,F+3;m;23;i20;-9;+11g;KND;"
-* 
-Homing
+* Homing
 "
 f,F+4;h;28;i20;-3;KND;KND*;
 f,f,F+1+2;h;30;i17;;KND;;"
 * Chip damage when guarded
-* 
-Homing
+* Homing
 "
 f,f,F+3;m;32;i24~28;+0;KND;KND*;"
 * Chip damage when guarded
 "
 H.2+3;m,th;12,3;i16;;;;"
-* 
-Heat Smash
+* Heat Smash
 * Throw on hit"
 Left throw;t;40;;-3;-3d;;"
 * Throw break 1
@@ -337,15 +328,13 @@ NWG.f,F+1+2;m;24;i19;;KND;;"
 * Chip damage when guarded
 * Consumes Naniwa Gusto
 * During Heat, remaining Heat is consumed
-* 
-Tornado
+* Tornado
 "
 NWG.f,f,F+1+2;h;42;i17;;KND;;"
 * Chip damage when guarded
 * Consumes Naniwa Gusto
 * During Heat, remaining Heat is consumed
-* 
-Homing
+* Homing
 "
 NWG.u+1+2;m;24;i31;;KDN;;"
 * Chip damage when guarded

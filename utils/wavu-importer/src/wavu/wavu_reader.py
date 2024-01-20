@@ -55,13 +55,17 @@ def _get_all_parent_values_of(field: str, move_id: str, move_list_json: list) ->
                     if "_" in original_move:
                         original_move = original_move.split("_")[0]
                     complete_input += _get_all_parent_values_of(field, original_move, move_list_json)
-                return complete_input + move["title"][field]
+                return complete_input + _normalize_data(move["title"][field])
     else:
         return ""
 
 
-def _remove_non_ascii(data):
-    return re.sub(r'[^\x00-\x7F]+', '', data)
+def _normalize_data(data):
+    if data:
+        # remove non-ascii stuff
+        return re.sub(r'[^\x00-\x7F]+', '', data)
+    else:
+        return ""
 
 
 # last entry is always the input
@@ -84,35 +88,43 @@ def _create_alias(input: str) -> List[str]:
     result.append(input)
     return result
 
+def _empty_value_if_none(value):
+    if not value:
+        return ""
+    else:
+        return value
 
 def _convert_json_movelist(move_list_json: list) -> List[Move]:
     move_list = []
     for move in move_list_json:
-        if move["title"]["ns"]=="0":
+        if move["title"]["ns"] == "0":
             alias = []
-            id = _remove_non_ascii(move["title"]["id"])
-            name = _remove_non_ascii(move["title"]["name"])
-
-            input = _remove_non_ascii(
-                _get_all_parent_values_of("input", move["title"]["parent"], move_list_json) + move["title"]["input"])
+            id = _normalize_data(move["title"]["id"])
+            name = _normalize_data(move["title"]["name"])
+            input = _normalize_data(
+                _get_all_parent_values_of("input", _normalize_data(move["title"]["parent"]), move_list_json)
+                + _normalize_data(move["title"]["input"]))
             if "_" in input:
                 result = _create_alias(input)
                 input = result[-1]
                 alias = result[0:(len(result) - 1)]
 
-            target = _remove_non_ascii(
-                _get_all_parent_values_of("target", move["title"]["parent"], move_list_json) + move["title"]["target"])
-            damage = _remove_non_ascii(
-                _get_all_parent_values_of("damage", move["title"]["parent"], move_list_json) + move["title"]["damage"])
+            target = _normalize_data(
+                _get_all_parent_values_of("target", _normalize_data(move["title"]["parent"]),
+                                          move_list_json) + _normalize_data(move["title"]["target"]))
+            damage = _normalize_data(
+                _get_all_parent_values_of("damage", _normalize_data(move["title"]["parent"]),
+                                          move_list_json) + _normalize_data(move["title"]["damage"]))
 
-            on_block = _remove_non_ascii(move["title"]["block"])
-            on_hit = _remove_non_ascii(_normalize_hit_ch_input(move["title"]["hit"]))
-            on_ch = _remove_non_ascii(_normalize_hit_ch_input(move["title"]["ch"]))
-            startup = _remove_non_ascii(move["title"]["startup"])
-            recovery = _remove_non_ascii(move["title"]["recv"])
+            on_block = _normalize_data(move["title"]["block"])
+            on_hit = _normalize_data(_normalize_hit_ch_input(move["title"]["hit"]))
+            on_ch = _normalize_data(_normalize_hit_ch_input(move["title"]["ch"]))
+            startup = _normalize_data(move["title"]["startup"])
+            recovery = _normalize_data(move["title"]["recv"])
 
-            notes = html.unescape(move["title"]["notes"])
+            notes = html.unescape(_normalize_data(move["title"]["notes"]))
             notes = BeautifulSoup(notes, features="lxml").get_text()
+            notes = notes.replace("* \n", "* ")
 
             move = Move(id, name, input, target, damage, on_block, on_hit, on_ch, startup, recovery, notes, "", alias)
             move_list.append(move)
@@ -120,6 +132,7 @@ def _convert_json_movelist(move_list_json: list) -> List[Move]:
 
 
 def _normalize_hit_ch_input(entry: str) -> str:
+    entry = _empty_value_if_none(entry)
     if "|" in entry:
         pattern = r'\|([^|]+)\]\]'
         match = re.search(pattern, entry)
