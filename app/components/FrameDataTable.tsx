@@ -75,8 +75,12 @@ export const FrameDataTable = ({ table }: FrameDataTableProps) => {
     return table.rows
   }, [orderByColumnName, table.headers, table.rows, sortDirection])
 
+  /**  Frame data imported from wavu wiki might not have unique commands. This might brake sorting
+   * since react does not update dom properly. Therefor we set key based on sorting to force React
+   * to create a new table */
+
   return (
-    <Table.Root variant="surface">
+    <Table.Root variant="surface" key={orderByColumnName + sortDirection}>
       {table.headers && (
         <Table.Header>
           <Table.Row>
