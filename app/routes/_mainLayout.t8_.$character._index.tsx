@@ -16,6 +16,10 @@ export const headers: HeadersFunction = args => ({
   'X-Td-Cachecontext': args.loaderHeaders.get('X-Td-Cachecontext') || 'none',
 })
 
+export function shouldRevalidate() {
+  return false
+}
+
 export const meta: MetaFunction = ({ data, params, matches }) => {
   const frameData = matches.find(
     m => (m.handle as RouteHandle)?.type === 'frameData',

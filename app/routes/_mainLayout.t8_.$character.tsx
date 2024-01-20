@@ -7,6 +7,10 @@ import type { Game } from '~/types/Game'
 import { type SheetService } from '~/types/SheetService'
 import { getCacheControlHeaders } from '~/utils/headerUtils'
 
+export function shouldRevalidate() {
+  return false
+}
+
 export const loader = async ({ params }: DataFunctionArgs) => {
   const characterId = params.character
   if (!characterId) {
