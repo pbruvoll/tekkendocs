@@ -101,15 +101,25 @@ export default function TournamentVideos() {
     <ContentContainer enableTopPadding>
       <div className="flex justify-between">
         <h1 className="mb-6 mt-4 text-4xl">Tournament videos</h1>
-        <a
-          className="flex items-center gap-2"
-          style={{ color: 'var(--accent-a11)' }}
-          target="blank"
-          href={editUrl}
-        >
-          <Pencil1Icon />
-          Edit
-        </a>
+        <div className="flex gap-8">
+          <a
+            className="flex items-center gap-2"
+            style={{ color: 'var(--accent-a11)' }}
+            target="blank"
+            href={editUrl}
+          >
+            <Pencil1Icon />
+            Edit
+          </a>
+          <a
+            className="flex items-center gap-2"
+            style={{ color: 'var(--accent-a11)' }}
+            target="blank"
+            href="/rss/matchvideo.rss"
+          >
+            RSS Feed
+          </a>
+        </div>
       </div>
 
       <div className="space-y-12">
