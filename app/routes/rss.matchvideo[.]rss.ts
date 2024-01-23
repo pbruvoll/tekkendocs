@@ -109,7 +109,7 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
                 matchVideo.name,
               )}]]></description>
               <pubDate>${matchVideo.date}</pubDate>
-              <link>https://www.youtube.com/watch?v${matchVideo.url}</link>
+              <link>https://www.youtube.com/watch?v=${matchVideo.url}</link>
               <guid>${rssUrl}/${matchVideo.url}</guid>
             </item>
           `.trim(),
