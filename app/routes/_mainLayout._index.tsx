@@ -3,7 +3,6 @@ import { json, type MetaFunction, type TypedResponse } from '@remix-run/node'
 import { Link, useLoaderData } from '@remix-run/react'
 import { CharacterGrid } from '~/components/CharacterGrid'
 import { ContentContainer } from '~/components/ContentContainer'
-import tekkenDocsLogo from '~/images/logo/tekkendocs.png'
 import tekkenDocsLogoLarge from '~/images/logo/tekkendocs-logo-large.svg'
 import {
   getTekken7Characters,
