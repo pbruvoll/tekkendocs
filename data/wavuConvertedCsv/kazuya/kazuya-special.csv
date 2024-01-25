@@ -10,8 +10,7 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 1,2,2;h,h,h;5,8,12;;-12;+4;;"
 * Combo from 1st hit
 * Combo can be delayed 12F from 1st hit
-* 
-"
+* "
 1,2,2~3;h,h,m;5,8,23;;;;;
 1+2+3+4;sp;-;;;;;"
 * Shift to charging
@@ -30,8 +29,7 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 
 "
 2+3;m;15;;;;;"
-* 
-Heat Burst
+* Heat Burst
 * Alternate input: R1
 "
 3;h;12;i14;-8;+4;;Alternate input: 3+4
@@ -46,8 +44,7 @@ Heat Burst
 4~3;mm;18,25;i31;-10;KND;KND;Alternate input: uf+4~3
 b+1;h;10;i11;-10;+1;;
 b+1+2;m;21;i22;-12;+5;KND;"
-* 
-Heat Engager
+* Heat Engager
 * Chip damage when guarded"
 b+1,2;h,m;10,20;;-14;KND;KND;"
 * Combo from 1st hit
@@ -72,10 +69,8 @@ b+3,1,4;h,h,l;15,10,10;;-10;+7;;
 b+3,1,4,1;h,h,l,m;15,10,10,15;;-14;KND;KND;
 b+3,1,4,3;h,h,l,l;15,10,10,12;;-13;+1;;
 b+4;h;20;i17;-5;+16Sp;KND;"
-* 
-Homing
-* 
-Heat Engager"
+* Homing
+* Heat Engager"
 (back to wall).b,b,ub;m;25;i29;-1;KND;KND;"
 * Air Status 5F
 "
@@ -88,16 +83,14 @@ d+1;sm;5;i10;-5;+6;;"
 * Returns to standing when input F
 "
 d+1+2;l;20;i23;-14;+3c;KND;"
-* 
-"
+* "
 d+1+2,B;l,sp;20,0;;;;;
 d+2;sm;8;i11;-4;+7;;
 d+3;l;12;i16;-17;-3;;
 d+4;l;7;i12;-13;-2;;
 db+1;m;7;i13;;;;
 db+1,2;m,mm;7,8,15;;;;;"
-* 
-Heat Engager
+* Heat Engager
 * Chip damage when guarded
 "
 db+2;m;23;i20;-9c;+?c;KND;"
@@ -107,20 +100,17 @@ db+3;l;14;i19~20;-12;-1;+7c;"
 db+4;l;18;i20;-12;+4;+17g;
 df+1;m;11;i15~16;-7;+9;;
 df+1,2;m,h;11,20;i15;;;;"
-* 
-Heat Engager
+* Heat Engager
 * Chip damage when guarded
 "
 df+1,4;m,h;11,20;;-3;+18Sp;;"
 * Combo from 1st hit
 "
 df+1,df+2;m,m;11,22;;;+?c;;"
-* 
-Tornado
+* Tornado
 "
 df+2;m;22;i14;-12;+5;KND;"
-* 
-Homing
+* Homing
 * Crumple stun +13F after CH"
 df+3;m;13;i18;-7;+9;;
 df+3,2;m,m;13,15;;-11;+5;;"
@@ -129,14 +119,12 @@ df+3,2;m,m;13,15;;-11;+5;;"
 * Combo can be delayed 10F from hit
 "
 df+3,2,1;m,m,m;13,15,21;;-18;KND;+24;"
-* 
-Tornado
+* Tornado
 * Combo from 2nd CH
 * Can be delayed 16F
 "
 df+3,2,1*;m,m,m;13,15,25;;;;;"
-* 
-Tornado
+* Tornado
 * Chip damage when guarded
 "
 df+3+4;mh;7,9;i18;;;;
@@ -154,8 +142,7 @@ DVK.1,1,2,F;h,h,m,th;5,6,12,8;i10;;Th;;"
 * Partially uses remaining Heat time
 "
 DVK.1+4;m;27;i22;;KND;;"
-* 
-Tornado
+* Tornado
 * Partially uses remaining Heat time
 * absorb an attack to power up
 "
@@ -185,8 +172,7 @@ DVK.OTG.db+1+2;l;20;i24;;;;"
 "
 DVK.SS.2;m;25;i17;-22;LNC;LNC;"
 * Partially uses remaining Heat time
-* 
-Tornado
+* Tornado
 "
 DVK.ub+1+2;ub(h);40;i41;KND;KND;KND;"
 * Partially uses remaining Heat time
@@ -199,8 +185,7 @@ f+1+2;m;20;i25;-9;KND;KND;"
 f+2;m;23;i20;-12;KND;KND;"
 * absorb an attack to power up
 *  - Add chip damage when guarded
-* 
-Tornado
+* Tornado
 "
 f+3;m;22;i17;-13;+5;KND;
 f+4;m;20;i19~20;+4c;+7c;KND;
@@ -214,8 +199,7 @@ FC.df+3+4;m;24;i23;-11c;KND;KND;"
 "
 f,(even numbers frames).n;sp;;;;;;
 f,F+2;m;20(,15);i16;-12;Th;Th;"
-* 
-Heat Engager
+* Heat Engager
 * Damage () is damage bonus when throw
 "
 f,F+3;m;25;i20;-3c;KND;KND;"
@@ -227,13 +211,11 @@ f,n,d,DF;sp;;;;;;"
 * Cost 3F
 "
 f,n,d,df+1;m;23;i20;-16;LNC;LNC;"
-* 
-Tornado
+* Tornado
 * Meaty 1F in actuality
 "
 f,n,d,df+1+2;m;25;i24;;KND;;"
-* 
-Tornado
+* Tornado
 * Chip damage when guarded
 "
 f,n,d,df+2;h;20;i11;-10;LNC;LNC;Becomes Electric Wind God Fist during Heat (partially uses remaining Heat Time)
@@ -255,8 +237,7 @@ f,n,DF;sp;;;;;;"
 "
 f,(odd numbers frames).n;sp;;;;;;
 H.2+3;l,m,th;12,20,34;i18;;Th;Th;"
-* 
-Heat Smash
+* Heat Smash
 * Alternate input: R1
 "
 H.b+1+2,F;m;21;i22;;;;"
@@ -264,8 +245,7 @@ H.b+1+2,F;m;21;i22;;;;"
 * Shift to Devil Form on Heat Activation
 "
 H.b+4,F;h;20;i17;;;;"
-* 
-Homing
+* Homing
 * Shift to Devil Form on Heat Activation
 "
 H.db+1,2,F;m,mm;7,8,15;i13;;;;"
@@ -312,13 +292,11 @@ ws1;m;10;i13;-5;+5;;
 ws1+2;m;25;i13;-9;+11g (+23w);;[[:Template:WallCrush]]
 ws1,2;m,m;10,12;;-12;LNC;LNC;"
 * Combo from 1st hit
-* 
-Tornado
+* Tornado
 "
 ws2;m;25;i16;-18;KND;KND;Homing
 ws3;m;24;i21;-5;KND;KND;"
-* 
-Homing
+* Homing
 * Meaty 1F in actuality"
 ws4;m;13;i11~12;-3;+8;;
 ws4,4;m,m;13,16;;-15;-4c;-4c;"

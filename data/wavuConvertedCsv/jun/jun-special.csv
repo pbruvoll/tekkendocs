@@ -3,26 +3,22 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 1,1;h,m;5,15;,i25;-9;+0;+5;"
 * "
 1+2;m;26;i13;-12;+28a;;"
-* 
-Balcony break
-* 
-Heat Engager"
+* Balcony break
+* Heat Engager"
 1,2;h,h;5,8;,i16;-3;+6;;"
 * Jail from 1st attack"
-1,2,2;h,h,h;5,8,17;,i16~17;+6~+7;+11~+12;+20c~+21c;"
-* 
-Homing
+1,2,2;h,h,h;-,17;,i16~17;+6~+7;+11~+12;+20c~+21c;"
+* Homing
 * Combo from 2nd CH with 5f delay
 * Jail from 2nd block with 1f delay"
 1+2+3+4;;;;;;;"
 * CH state for 5 seconds
 * Can't block for 5 seconds"
-1,2,4;h,h,m;5,8,16;,i27~28;-12~-11;+5~+6;+15a (+6);"
-* 
-Balcony break
+1,2,4;h,h,m;-,16;,i27~28;-12~-11;+5~+6;+15a (+6);"
+* Balcony break
 * Combo from 2nd CH with 3f delay
 * Input can be delayed 9f"
-1,2,u;h,h;5,8;;+1;+10g;;
+1,2,u;h,h;-;;+1;+10g;;
 1+3;t;35;i12~14;+0;+0d;;"
 * Throw break 1 or 2"
 1,3;h,L;5,12;,i23;-12;+2;+6c;"
@@ -31,46 +27,40 @@ Balcony break
 * Jail from 1st attack
 * CH advantage listed is for the 2nd hit"
 1+4,2;sl,h,h;-,10;,i19;-2;+9;;Combo from 2nd CH
-1+4,2,4;sl,h,h,m;-,10,23;,i24;-15;+11a (+2);;Combo from 3rd CH
-1+4,2,d+4;sl,h,h,L;-,10,15;,i24~25;-23~-22;+27a;;Combo from 3rd CH
+1+4,2,4;sl,h,h,m;5,8,10,23;,i24;-15;+11a (+2);;Combo from 3rd CH
+1+4,2,d+4;sl,h,h,L;5,8,10,15;,i24~25;-23~-22;+27a;;Combo from 3rd CH
 1+4,3;sl,h,m;-,15;,i24~25;-11~-10;+1~+2;;Combo from 2nd CH
-1+4,3,1;lh,m,m;-,20;,i33~34;-13~-12;+17a (+10);;
-1+4,3,4;lh,m,L;-,17;,i25~26;-13~-12;+4c~+5c;+26a;Combo from 3rd CH
+1+4,3,1;sl,h,m,m;-,15,20;,i33~34;-13~-12;+17a (+10);;
+1+4,3,4;sl,h,m,L;-,15,17;,i25~26;-13~-12;+4c~+5c;+26a;Combo from 3rd CH
 2;h;7;i12;-4;+7;;
 2,1;h,m;7,9;,i21;-6;+7;;"
 * Combo from 1st hit with 9f delay
 * Input can be delayed 10f"
 2,1,1+2;h,m,h;7,9,21;,i22;+2;+48a (+10);;"
-* 
-Balcony break
+* Balcony break
 * Combo from 2nd CH with 9f delay"
 2,1,4;h,m,m;7,9,12;,i10;-12;-1;;"
-* 
-Knee
+* Knee
 * Combo from 1st hit"
 2,1,4,1;h,m,m,m;7,9,12,30;,i30;-9;+10a (+1);+42a (-5);"
-* 
-Balcony break
+* Balcony break
 * Combo from 3rd CH
 * Input can be delayed 10f
 * Chip damage on block
 * Deals recoverable self-damage when not in Heat"
 2,1,4,3;h,m,m,m;7,9,12,21;,i25;-9;+13a (+4);;"
-* 
-Balcony break
+* Balcony break
 * Combo from 3rd CH with 5f delay
 * Input can be delayed 10f"
 2+3;m;12 (12);i16;+1;+2c;;"
-* 
-Heat Burst
+* Heat Burst
 * Cancel to r45 with b,b"
 2+4;t;35;i12~14;;+0d;;"
 * Throw break 1 or 2
 * Side switch"
 3;m;20;,i14~15;-13~-12;+18a (+1);;Balcony break
 3+4;m,M,M;6,18,20;i23~24 i30~31 i16;-6~-5;+26a (+8);;"
-* 
-Spike
+* Spike
 * 3rd hit available only as combo from 2nd hit
 * Can recover in r22 FC with D on whiff
 * Deals recoverable self-damage when not in Heat"
@@ -90,25 +80,21 @@ b+1+3,P;t;7,8,10;;;+0d;;"
 * Opponent recovers FDFT"
 b+2;m;10;i14~15;-9~-8;+2~+3;;
 b+2,1;m,h;10,7;,i15~16;-9~-8;+2~+3;;"
-* 
-Elbow
+* Elbow
 * Combo from 1st hit with 5f? delay"
 b+2,1,1;m,h,m;10,7,20;,i25;-13;+13a (+4);;"
-* 
-Balcony break
+* Balcony break
 * Combo from 2nd CH with 4f delay
 * Input can be delayed 14f"
 b+2,1,2;m,h,M;10,7,20;,i23;-9;+30a (+15);+69a (+53);"
-* 
-Tornado
+* Tornado
 * Combo from 2nd CH with 6f delay
 * Input can be delayed 14f
 * Chip damage on block
 * Deals recoverable self-damage when not in Heat
 * Unparryable"
 b+2,1,4;m,h,h;10,7,24;,i23~25;-8~-7;+42a (-16);;"
-* 
-Balcony break
+* Balcony break
 * Combo from 2nd CH with 6f delay
 * Input can be delayed 14f"
 b+2,1~B;m,h;10,7;;+0~+1;+11g~+12g;;"
@@ -123,14 +109,12 @@ b+2,4;m,m;10,10;,i16~17;-9~-8;+3;;Combo from 1st hit with 5f? delay
 b+2+3;m!;50;i57~58;;+6~+7;;Balcony break
 b+3;m;20;i16~17;-19~-18;+22a (+12);;
 b+3,2;m,M;20,22;,i20;-9;+30a (+15);+69a (+53);"
-* 
-Tornado
+* Tornado
 * Chip damage on block
 * Deals recoverable self-damage when not in Heat
 * Unparryable"
 b+3+4;m;25;i28~29;-12~-11;+9a (+0);;"
-* 
-Balcony break
+* Balcony break
 * Frame advantage is -8 if an attack is absorbed"
 b+3,4;m,L;20,14;,i20~22;-11;+0~+2;+3;"
 * Links to db+4 extensions
@@ -142,8 +126,7 @@ Back throw;t;50;;;+7d;;"
 * Side switch"
 (Back to wall).b,b,UB;m;21;i39~41;+4c~+6c;+22;;
 d+1+2;M;28;i26;-9;+72a (+56);;"
-* 
-Tornado
+* Tornado
 * Chip damage on block
 * Deals recoverable self-damage when not in Heat
 * Unparryable"
@@ -151,14 +134,12 @@ d+2;m;18;i20~21;-4c~-3c;+9c~+10c;+18a;Spike
 d+3+4;l,h;5,20;i14 i24~27;-6~-3;+30a (+20);;Combo from 1st CH
 d+4;L;10;i15;-12;-1;;
 d+4,4;L,h;10,20;,i25~26;-9~-8;+13a (+4);;"
-* 
-Balcony break
+* Balcony break
 * Combo from 1st CH"
 db+1;m;7;i15~16;-8~-7;+1;;
 db+1,1;m,m;7,8;,i21;-11;+0;;Combo from 1st hit
 db+1,1,1+2;m,m,m,m,m;7,8,5,5,20;,i17 i26 i49;-15;+21a (+11);;"
-* 
-Balcony break
+* Balcony break
 * Combo from any hit
 * Chip damage on block
 * Deals recoverable self-damage when not in Heat
@@ -192,19 +173,15 @@ df+2,1+2;m,M;1414;,i25~26;-9~-8;+38a (+28);;"
 * Available only on hit or block"
 df+2+3;t;40;i12;-6;-6d;;"
 * Throw break 2
-* 
-Floor break"
+* Floor break"
 df+3;m;22;i17;-8;+19a (+10);;"
-* 
-Homing
-* 
-Balcony break"
+* Homing
+* Balcony break"
 df+3+4;m;17;i24~25;-11~-10;+1~+2;;
 df+3+4,1;m,m;17,20;,i33~34;-13~-12;+17a (+10);;
 df+3+4,4;m,L;17,17;,i25~26;-13~-12;+4c~+5c;+26a;Combo from 1st CH
 df+4;m;22;i15;-14;+48a (+17);+6 +52a;"
-* 
-Tornado"
+* Tornado"
 f+1;m;15;i20;-9;+0;+5;
 f+1+2;h;0;i12;+2;+26g;+23;"
 * Transition to r20 MIA on hit only
@@ -215,16 +192,14 @@ f+2+3;h;21;i28~29;+0~+1;+25a;;"
 * Punch sabaki, +51a on a successful parry"
 f+3;m;13;i16;-9;+7;;
 f+3,2;m,h;13,17;,i20~21;+6~+7;+11~+12;+20c~+21C;"
-* 
-Homing
+* Homing
 * Combo from 1st hit with 5f delay"
 f+3+4;;;;;;;"
 * Cancel to r18 FC with D
 * Parries low punches or kicks
 * Parries throws"
 f+3,4;m,M;13,22;,i20~22;-13~-11;+28a (+13);;"
-* 
-Tornado
+* Tornado
 * Combo from 1st hit with 5f delay"
 f+3+4,P (Low);t;4,2,2,2,2,2,2,2,2;;;+0d;;"
 * Restores recoverable health
@@ -248,14 +223,12 @@ FC.df+3;L;12;i21;-19;+0c;;"
 * Clean hit +10a, 15 damage
 * Opponent recovers FDFA on CL"
 f,F+1+2;m;30;i22;+6;+23a (+13);;"
-* 
-Balcony break
+* Balcony break
 * Chip damage on block
 * Deals recoverable self-damage when not in Heat"
 f,F+2;m;16;i16~17;-12~-11;+3~+4;;
 f,F+2,2;m,m;16,22;,i21;-13;+8a;+7 +53a;"
-* 
-Balcony break
+* Balcony break
 * Combo from 1st hit with 8f delay"
 f,F+2,3;m,h;16,22;,i20~21;-8~-7;+29a (+14);;Combo from 1st hit with 8f delay
 f,F+2~B;m;16;;+1~+2;+16g~+17g;;"
@@ -268,13 +241,11 @@ f,F+2~F;m;16;;+1~+2;+16g~+17g;;"
 * Parries throws"
 f,F+3;m;23;i18~19;-9~-8;+2~+3;;Homing
 f,F+3,3+4;m,m,m;23,12,15;,i35~36 i41~42;+3~+4;+19a;;"
-* 
-Spike
+* Spike
 * Chip damage on block
 * Interrupt with i11 from 1st block"
 f,f,F+3;m;32;i24~28;+3~+7;+14a (+5);+46a (-1);"
-* 
-Balcony break
+* Balcony break
 * Chip damage on block
 * Alternate input: ub,b+3"
 GEN.1;L;22;i20~21;-13~-12;+3c~+4c;+26a;
@@ -290,16 +261,12 @@ GEN.3,2;M,M;14,20;,i24;-9;+33a (+18);;"
 * Deals recoverable self-damage when not in Heat
 * Unparryable"
 GEN.4;h;24;i26~28;+4~+6;+26a (+17);;"
-* 
-Homing
-* 
-Balcony break"
+* Homing
+* Balcony break"
 H.1+2,F;m;26;i13;+5;+43a (+35);;
 H.2+3;m,m;20,30;i13 i32~75;-6~+37g;+21a~+64a (-5~+38);;"
-* 
-Heat Smash
-* 
-Balcony break
+* Heat Smash
+* Balcony break
 * Restores recoverable health
 * Chip damage on block"
 H.f+1+2,P;h;0;i12;;+40g;;"
@@ -312,63 +279,51 @@ H.MIA.2,F;sm;30;i16;+5;+36a (+26);;"
 H.SS.4,F;m;20;i18~20;+5~+7;+67a (+50);;
 IZU.1;h;7;i13~14;-7~-6;+4~+5;;
 IZU.1,1;h,h;7,26;,i23~24;-4~-3;+30a (+20);;"
-* 
-Balcony break
-* 
-Tornado
+* Balcony break
+* Tornado
 * Combo from 1st hit with 6f delay
 * Chip damage on block
 * Deals recoverable self-damage when not in Heat"
 IZU.1+2;M;24;i21~22;-12~-11;+19a;;"
-* 
-Spike
+* Spike
 * Frame advantage is -6 if an attack is absorbed"
 IZU.1,2;h,m;7,20;,i24;-13;+6a;+15a;"
-* 
-Spike
+* Spike
 * Combo from 1st hit with 5f delay
 * Input can be delayed 6f"
 IZU.1+4;t;35;i14;-6;+0d;;"
 * Throw break 1+2
 * Alternate input: IZU.2+3"
 IZU.2;M;24;i23~25;-13~-11;+34a (+24);;"
-* 
-Tornado
+* Tornado
 * Chip damage on block
 * Deals recoverable self-damage damage when not in Heat
 * Unparryable"
 IZU.3;m,h;10,16;i16~15 i14~15;-6~-5;+12a (+3);;"
-* 
-Heat Engager
-* 
-Balcony break
+* Heat Engager
+* Balcony break
 * Jail from 1st attack"
 IZU.4;L;15;i21~22;-37~-36;-1c~+0c;+23a;
 IZU.4,1;L,M;15,15;,i19~20;-14~-13;+14a (+3);;"
-* 
-Balcony break
+* Balcony break
 * Combo from 1st hit
 * Chip damage on block
 * Deals recoverable self-damage when not in Heat"
 IZU.f+1+2;m;21;i16~17;-9~-8;+2~+3;+23;"
-* 
-Homing
+* Homing
 * Only i13 or faster attacks guaranteed on CH"
 Left throw;t;40;;-3;+0d;;"
 * Throw break 1
 * Can side switch on hit"
 MIA.1;M;30;i24~25;-9~-8;+72a (+56);;"
-* 
-Tornado
+* Tornado
 * Chip damage on block
 * Deals recoverable self-damage when not in Heat
 * Unparryable"
 MIA.1+2;h;17;i23~24;+6~+7;+11~+12;+20c~+21c;Homing
 MIA.2;sm;30;i16;-20;+26a (+0);;"
-* 
-Heat Engager
-* 
-Balcony break
+* Heat Engager
+* Balcony break
 * Chip damage on block
 * Deals recoverable self-damage when not in Heat
 * Unparryable"
@@ -380,77 +335,61 @@ Right throw;t;40;;-3;+0d;;"
 * Throw break 2
 * Side switch on hit"
 SS.1+2;h,h,m;7,9,18;i16 i17 i15~16;;+7c~+8c;;"
-* 
-Homing
-* 
-Spike
+* Homing
+* Spike
 * Jail from 1st attack
 * Recovery listed is for the last hit"
 SS.2;m;27;i16;-9;+14a (+5);+34d (+26);"
-* 
-Balcony break
-* 
-Tornado"
+* Balcony break
+* Tornado"
 SS.4;m;20;i18~20;+6~+8;+8c~+10c;;"
-* 
-Heat Engager
-* 
-Spike"
+* Heat Engager
+* Spike"
 u+2;h;17;i23~24;+6~+7;+11~+12;+20c~+21c;"
-* 
-Homing
+* Homing
 * Alternate input: ub+2"
 u+4;m;21;i22~23;-3~-2;+22a;;"
-* 
-Homing
+* Homing
 * Alternate input: ub+4"
 UB,b;;;;;;;
 uf+1;h,h;6,30;i10 i26;-14;+22a;;"
-* 
-Balcony break
+* Balcony break
 * Jail from 1st attack
 * Deals recoverable self-damage when not in Heat
 * 2nd hit available only on hit or block
 * Recovery listed is for the 1st hit"
 uf+1+2;t;40;i12;-6;+0d;;Throw break 1+2
 uf+2;M;24;i19;-9;+30a (+15);+69a (+53);"
-* 
-Tornado
+* Tornado
 * Chip damage on block
 * Deals recoverable self-damage when not in Heat
 * Unparryable"
 uf+3;m;17;i20~21;-6~-5;+5~+6;+30a;Alternate inputs: ub+3, u+3
 uf+3+4;m,M;5,21;i20~23 i26~30;-8~-4;+18a;;"
-* 
-Spike
+* Spike
 * Alternate inputs: ub+3+4, u+3+4"
 uf+4;m;10;i16~18;-20~-18;-9~-7;;
 uf+4,3;m,m,M;10,8,20;,i29 i18;-12;+84a (+68);;"
-* 
-Tornado
+* Tornado
 * Combo from 1st hit
 * Transition to r17 MIA on hit only
 * 3rd hit available only as combo from 2nd hit"
 ws1;h;14;i12~13;-6~-5;+5~+6;;
 ws1,1;h,h;14,7;,i15~16;-9~-8;+2~+3;;"
-* 
-Elbow
+* Elbow
 * Combo from 1st hit"
 ws1,1,1;h,h,m;14,7,20;,i25;-13;+13a (+4);;"
-* 
-Balcony break
+* Balcony break
 * Combo from 2nd CH with 4f delay
 * Input can be delayed 14f"
 ws1,1,2;h,h,M;14,7,22;,i23;-9;+30a (+15);+69a (+53);"
-* 
-Tornado
+* Tornado
 * Combo from 2nd CH with 6f delay
 * Input can be delayed 14f
 * Chip damage on block
 * Deals recoverable self-damage when not in Heat"
 ws1,1,4;h,h,h;14,7,24;,i23~25;-8~-7;+42a (-16);;"
-* 
-Balcony break
+* Balcony break
 * Combo from 2nd CH with 6f delay
 * Input can be delayed 14f"
 ws1,1~B;h,h;14,7;;+0~+1;+11g~+12g;;"
@@ -462,27 +401,22 @@ ws1,1~F;h,h;14,7;;+0~+1;+11g~+12g;;"
 * Parries low punches or kicks
 * Parries throws"
 ws1+2;m;20;i21;-2;+5;+17 +63a;"
-* 
-Elbow
+* Elbow
 * Can recover in r18 FC with D"
 ws1,4;h,m;14,16;,i22~23;-11~-10;+0c~+1c;;"
-* 
-Spike
+* Spike
 * Combo from 1st hit with 5f delay
 * Input can be delayed 10f
 * Move can be delayed 8f"
 ws1,4,1+2;h,m,m;14,16,28;,i25~26;-20~-19;+16a (+11);;"
-* 
-Balcony break
+* Balcony break
 * Combo from 2nd CH"
 ws1,4,2;h,m,L;14,16,17;,i23~24;-16~-14;+0c~+1c;+13a;"
-* 
-Spike
+* Spike
 * Combo from 2nd CH"
 ws2;m;12;i13~14;-8~-7;+5~+6;+32a;Hits grounded up-close only
 ws2,1;m,m;12,20;,i22~23;-12~-11;+19a (10);;"
-* 
-Balcony break
+* Balcony break
 * Combo from 1st hit"
 ws3;M;16;i14~15;-13~-12;+25a (+5);;
 ws3+4;m;23;i18~19;-21~-20;+38a (+28);;Tornado
