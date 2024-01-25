@@ -1,6 +1,7 @@
 import gspread
 import argparse
 import os
+import csv
 
 csvSep = ";"
 
@@ -18,9 +19,13 @@ def csvToArray(csvContent):
     return result
     
 def writeFile(dirname, filename, data) :
-  with open(os.path.join(dirname, filename), "w") as file:
-    for row in data:
-        file.write(csvSep.join(row) + "\n")  # Add a     
+  outputFile = open(os.path.join(dirname, filename), "w", newline="", encoding='utf-8')
+  csvWriter = csv.writer(outputFile, delimiter=csvSep)
+  csvWriter.writerows(data);
+
+#   with open(os.path.join(dirname, filename), "w") as file:
+#     for row in data:
+#         file.write(csvSep.join(row) + "\n")  # Add a     
     
 #input is a folder for a character which may contain multiple csv files (special moves, throws etc).
 def convert(path, gSheet):

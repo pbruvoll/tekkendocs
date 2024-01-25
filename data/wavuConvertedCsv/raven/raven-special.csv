@@ -1,13 +1,14 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes
 1;h;5;i10;+1;+8;;
-1+2;m;20;i14;-9;+15a;;Heat Engager
+1+2;m;20;i14;-9;+15a;;"Heat Engager
+"
 1,2;h,h;5,12;,i12;-3;+7;;"
 * Jail from 1st attack with 2f delay"
 1+2+3+4;;;;;;;"
 * CH state for 5 seconds
 * Can't block for 5 seconds"
 1,2,3+4;h,h;5,12;;-4;+6;;Alternate input: 1,2~D
-1+2+3+4,b,f,1+2;sp,m!;-,60;,i59~61;;+21a (+11);;Balcony break
+1+2+3+4,b,f,1+2;,m!;,60;,i59~61;;+21a (+11);;Balcony break
 1,2,4;h,h,m;5,12,20;,i23~25;-14~-12;+15a (-2);;"
 * Tornado
 * Balcony break
@@ -134,6 +135,7 @@ BT.3,4,4;h,m,M;10,17,21;,i32~34;-9~-8;+5a;;"
 BT.3,4,4,F;h,m,M;10,17,21;;-36;;;Will phase through opponent up-close
 BT.4;m;21;i19~20;-5~-4;+44a (-14);;"
 * Heat Engager
+
 * Balcony break"
 BT.b+2;m;17;i16~17;-2~-1;+6~+7;;
 BT.b+2,3;m,m,m;17,5,20;,i20 i39~40;-20~-19;+42a (+38);;"
@@ -146,8 +148,8 @@ BT.b+3;h;22;i18~19;+4~+5;+41a;;"
 * Chip damage on block"
 BT.b+3+4;;;;;;;Can block mid or high attacks after 6f
 BT.d+1;sl;5;i10;-3;+6;;Alternate input: BT.d+2
-BT.d+3;L;16;i25~27;-26~-24;+0~+2;;Clean hit +74a (+58), 20 damage
 BT.d+3;l;21;25f(2);-26;KDN;KDN;TC from 4F to 5F
+BT.d+3;L;16;i25~27;-26~-24;+0~+2;;Clean hit +74a (+58), 20 damage
 BT.d+4;l;6;i12;-15;-4;;
 BT.f+1;m;18;I16;-8;+6;;"
 * Balcony break
@@ -220,6 +222,7 @@ df+4,4;m,M;15,16;,i22~25;-14~-13;+6a;;"
 df+4,4,3;m,M,M;15,16,22;,i27~30;-6~-3;+18a;;
 f+1+2;m;10,20;i18~19 i26;-14;+30a (+4);;"
 * Heat Engager
+
 * Balcony break
 * Frame advantage is -9 if an attack is absorbed"
 f+2;m;10;i15~16;-12~-11;-1~+0;;
@@ -368,6 +371,7 @@ SZN.1,4;h,sm;12,25;,i18~27;-14~-5;+32a (-26);;"
 SZN.1~F;h;12;;+1~+2;+12~+13;;
 SZN.2;m,sm;20,10;i18 23~24;-9;+7a (-2);;"
 * Heat Engager
+
 * Balcony break
 * Power up during Heat"
 SZN.3;m;16;i16~17;-4~-3;+5~+6;;
@@ -395,7 +399,7 @@ ub+1,2;m,m;11,13;,i18~19;-13~-12;-2c~-1c;;"
 * Spike
 * Combo from 1st hit with 7f delay"
 UB,b;;;;;;;
-UB,b,3+4;sp,M!,M!,M!;-,20,20,20;,i38~40 i46~49 i51~54;;-19a;;Spike
+UB,b,3+4;,M!,M!,M!;,20,20,20;,i38~40 i46~49 i51~54;;-19a;;Spike
 uf+1+4;t;40;i12;-2;+0d;;"
 * Throw break 1+2
 * Can side switch on hit"
@@ -419,6 +423,7 @@ ws3,2;m,sm;18,20;,i19~20;-14~-13;+65a (+49);;"
 * Available only on hit or block"
 ws3+4;m;20;i16~18;-12~-10;+7~+9;;"
 * Heat Engager
+
 * Homing
 * Balcony break
 * Alternate input: qcf+3+4"
