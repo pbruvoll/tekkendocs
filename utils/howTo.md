@@ -12,6 +12,12 @@ After it is created, download the json file, rename it to credential.json and pl
 
 If you at some point get error that it was not able to authenticate, remove the file authorized_user.json in the same folder as it might have expired
 
+## How to download data from tekkendocs.com to local csv
+C:\projects\tekkendocs>python utils\downloadCsv.py -O ..\rbnTekkenFrameData\frameData\T8\csv
+
+## Generate html pages for rbnorway.org
+Run C:\projects\rbnorway-frame-data\converters\runCsvToHtml.bat
+
 ## How to get data from wavu.wiki to tekkendocs.com
 
 ### How to download frame data from wavu.wiki

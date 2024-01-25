@@ -24,27 +24,24 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * Can be delayed
 "
 2;h;12;i12;-3;+8;;
-2,2;h,m;12,24;;-10;+6;KND;"
-* Combo from 1st hit
+2,2;h,m;12,24;24-25;-8;+7;+50a;"
+* Combo from 1st CH
 
-"
-2+3;m;15;;;;;"
-* Heat Burst
-* Alternate input: R1
 "
 3;h;12;i14;-8;+4;;Alternate input: 3+4
 3,1;h,h;12,10;;-1;+7;;Combo from 1st hit
-3,1,4;h,h,m;12,10,17;;-6;+8;KND;"
+3,1,4;h,h,m;12,10,17;;-6;+8;+40(+32)a;"
 * Combo from 2nd CH
 * Can be delayed 14F
 * Combo can be delayed 6F from CH
 "
 3,1,DF;h,h,sp;12,10,0;;;;;
-4;h;18;i12;-9;+2;KND;
+4;h;18;i12;-9;+2;+27a;
 4~3;mm;18,25;i31;-10;KND;KND;Alternate input: uf+4~3
 b+1;h;10;i11;-10;+1;;
 b+1+2;m;21;i22;-12;+5;KND;"
 * Heat Engager
+
 * Chip damage when guarded"
 b+1,2;h,m;10,20;;-14;KND;KND;"
 * Combo from 1st hit
@@ -70,7 +67,8 @@ b+3,1,4,1;h,h,l,m;15,10,10,15;;-14;KND;KND;
 b+3,1,4,3;h,h,l,l;15,10,10,12;;-13;+1;;
 b+4;h;20;i17;-5;+16Sp;KND;"
 * Homing
-* Heat Engager"
+* Heat Engager
+"
 (back to wall).b,b,ub;m;25;i29;-1;KND;KND;"
 * Air Status 5F
 "
@@ -91,6 +89,7 @@ d+4;l;7;i12;-13;-2;;
 db+1;m;7;i13;;;;
 db+1,2;m,mm;7,8,15;;;;;"
 * Heat Engager
+
 * Chip damage when guarded
 "
 db+2;m;23;i20;-9c;+?c;KND;"
@@ -101,6 +100,7 @@ db+4;l;18;i20;-12;+4;+17g;
 df+1;m;11;i15~16;-7;+9;;
 df+1,2;m,h;11,20;i15;;;;"
 * Heat Engager
+
 * Chip damage when guarded
 "
 df+1,4;m,h;11,20;;-3;+18Sp;;"
@@ -188,7 +188,7 @@ f+2;m;23;i20;-12;KND;KND;"
 * Tornado
 "
 f+3;m;22;i17;-13;+5;KND;
-f+4;m;20;i19~20;+4c;+7c;KND;
+f+4;m;20;i19~20;+4c;+7c;+31;
 FC.1;sm;5;i10;-5;+6;;"
 * Returns to standing when input F
 "
@@ -200,6 +200,7 @@ FC.df+3+4;m;24;i23;-11c;KND;KND;"
 f,(even numbers frames).n;sp;;;;;;
 f,F+2;m;20(,15);i16;-12;Th;Th;"
 * Heat Engager
+
 * Damage () is damage bonus when throw
 "
 f,F+3;m;25;i20;-3c;KND;KND;"
@@ -229,7 +230,11 @@ f,n,d,df+4;l;15;i16;-23;-3c;KND;"
 * 2nd input force to down
 "
 f,n,d,df+4,1;l,m;15,23;;-16;KND;KND;
-f,n,d,df+4,4;l,h;1515,25;;;;;
+2+3;m;15;;;;;"
+* Heat Burst
+* Alternate input: R1
+"
+f,n,d,df+4,4;l,h;15,25;;;;;
 f,n,DF;sp;;;;;;"
 * Cannot be buffered
 * Connect to Wind God Step
@@ -294,7 +299,7 @@ ws1,2;m,m;10,12;;-12;LNC;LNC;"
 * Combo from 1st hit
 * Tornado
 "
-ws2;m;25;i16;-18;KND;KND;Homing
+ws2;m;25;i16;-18;LNC;LNC;Homing
 ws3;m;24;i21;-5;KND;KND;"
 * Homing
 * Meaty 1F in actuality"

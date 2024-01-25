@@ -6,7 +6,7 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 1,2,1;h,h,h;5,10,17;,i26~27;-3~-2;+2~+3;;"
 * Combo from 2nd CH with 4f delay
 * Input can be delayed 6f"
-1,2,1,1+2;h,h,h,h,h,h;5,10,17,6,6,6;,i25 i32 i39;-19;+34a (-24);;"
+1,2,1,1+2;h,h,h,h,h,h;7,10,6,6,6,6;,i25 i32 i39;-19;+34a (-24);;"
 * Balcony break
 * Weapon
 * Jail from 3rd attack
@@ -437,12 +437,12 @@ uf+2,1;m,m;10,10;,i21;-13;+49a (+40);;"
 * Input can be delayed 9f
 * Move can be delayed 7f"
 uf+3;m;20;i14;-10;+21 (+11);;Balcony break
-uf+3+4;m,t;20,13;i23~30;-23a~-16a;+9a (-1);;"
-* Balcony break
-* Transition to throw on close range front hit"
 uf+3+4;,t;,18;i23;-23a~-16a;+9a (-1);;"
 * Transitions to throw on front hit
 * Throw break 2"
+uf+3+4;m,t;20,13;i23~30;-23a~-16a;+9a (-1);;"
+* Balcony break
+* Transition to throw on close range front hit"
 uf+4;h;23;i18;-9;-1;;
 uf+4,3;h,L;23,10;,i18;-19;-8;;Combo from 1st CH
 uf+4,3,4;h,L,h;23,10,14;,i20;-6;+5;;Combo from 2nd hit
@@ -454,11 +454,11 @@ uf,n,D+3,4,3;L,h,m;15,14,20;,i29~30;-7~-6;+22a;;"
 * Balcony break
 * Spike
 * Combo from 2nd hit"
+WR.1+2;m;30;i20~21;+5;+36a (+26);;
 WR.1+2;m;30;i20~21;+4~+5;+12a (+3);;"
 * Heat Engager
 * Balcony break
 * Chip damage on block"
-WR.1+2;m;30;i20~21;+5;+36a (+26);;
 WR.3;m;12;i20~21;-13~-12;-2~-1;;
 WR.3,3;m,M;12,20;,i32~35;-4~-1;+17a;;"
 * Spike
