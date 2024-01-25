@@ -4,6 +4,7 @@ import { Link, useLoaderData } from '@remix-run/react'
 import { CharacterGrid } from '~/components/CharacterGrid'
 import { ContentContainer } from '~/components/ContentContainer'
 import tekkenDocsLogo from '~/images/logo/tekkendocs.png'
+import tekkenDocsLogoLarge from '~/images/logo/tekkendocs-logo-large.svg'
 import {
   getTekken7Characters,
   getTekken8Characters,
@@ -64,7 +65,7 @@ export default function Index() {
     <ContentContainer enableBottomPadding enableTopPadding>
       <h1 className="sr-only mb-4 text-2xl font-bold">TekkenDocs</h1>
       <img
-        src={tekkenDocsLogo}
+        src={tekkenDocsLogoLarge}
         alt="TekkenDocs"
         width="567px"
         style={{
@@ -74,7 +75,7 @@ export default function Index() {
           marginTop: '1rem',
         }}
       />
-      <p className="mb-4">Frame data and learning resources for Tekken</p>
+      <p className="mb-4 mt-2">Frame data and learning resources for Tekken</p>
 
       <Heading as="h2" mt="5" mb="4" size="5">
         Resources
@@ -86,33 +87,12 @@ export default function Index() {
       </Link>
 
       <Heading as="h2" mt="7" mb="2" size="5">
-        Tekken 8 Demo
-      </Heading>
-
-      <p className="mb-4">
-        Tekken demo was release December 14th to PS5, so this section is still
-        work in progress
-      </p>
-
-      <CharacterGrid
-        characterCards={gamePageDataT8.characterInfoList
-          .filter(c =>
-            ['jin', 'nina', 'kazuya', 'paul'].some(demoChar =>
-              c.id.startsWith(demoChar),
-            ),
-          )
-          .map(({ id, displayName }) => {
-            const imgSrc = t8AvatarMap[id]
-            return { name: displayName, imgSrc, url: '/t8/' + id }
-          })}
-      />
-
-      <Heading as="h2" mt="7" mb="2" size="5">
         <Link to="t8">Tekken 8</Link>
       </Heading>
 
       <p className="mb-4">
-        Tekken is coming january 2024, so this section is work in progress
+        Tekken was release january 26th 2024. We already have frame data for
+        several characters, and working on the rest
       </p>
 
       <CharacterGrid
