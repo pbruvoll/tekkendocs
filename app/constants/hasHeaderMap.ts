@@ -7,6 +7,7 @@ export const hasHeaderMap: Record<TableId, boolean> = {
   key_moves: true,
   combos_ender: true,
   combos_normal: true,
+  combos_beginner: true,
   combos_small: true,
   combos_wall: true,
   punishers_crouching: true,
