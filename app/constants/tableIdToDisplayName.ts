@@ -7,6 +7,7 @@ export const tableIdToDisplayName: Record<TableId, string> = {
   key_moves: 'Key moves',
   combos_ender: 'Combo enders',
   combos_normal: 'Combos',
+  combos_beginner: 'Beginner combos',
   combos_small: 'Small combos',
   combos_wall: 'Wall combos',
   punishers_crouching: 'While standing punishers',

@@ -7,6 +7,7 @@ export type TableId =
   | 'punishers_crouching'
   | 'punishers_whiff'
   | 'combos_normal'
+  | 'combos_beginner'
   | 'combos_small'
   | 'combos_ender'
   | 'combos_wall'
