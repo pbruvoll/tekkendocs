@@ -1,10 +1,5 @@
 import { Badge, Heading } from '@radix-ui/themes'
-import {
-  json,
-  type LoaderFunctionArgs,
-  type MetaFunction,
-  type TypedResponse,
-} from '@remix-run/node'
+import { json, type MetaFunction, type TypedResponse } from '@remix-run/node'
 import { Link, useLoaderData } from '@remix-run/react'
 import { CharacterGrid } from '~/components/CharacterGrid'
 import { ContentContainer } from '~/components/ContentContainer'
