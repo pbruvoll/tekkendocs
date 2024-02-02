@@ -10,6 +10,9 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * Instant Tornado
 * Homing "
 1,2;h,h;10,24;i19;-2;+30a;;Combos from 1st hit CH
+1+3;t;35;i12;+0;+1d;;"
+* Throw Break 1 or 2
+* "
 1+4;;;i22~;;;;"
 * Alternate input hcf+1
 * 1+4 can be held for up to 5 spins (or multiple 360 motions)"
@@ -38,6 +41,9 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 2,3;h,m;10,18;i19;-13;+5;+30d (+22);"
 * Knee
 * 2nd hit Balcony Break on CH "
+2+4;t;35;i12;-6;-3d;;"
+* Throw Break 1 or 2
+* Side Switch"
 3+4;;;;;;;"
 * When timed with opponent attack, or absorbing an attack, shift to Gamma Charge
 * Gamma Charge is always in effect during Heat
@@ -93,24 +99,33 @@ b+4,4;m,m;1621;i30;-4;-8d;;"
 * When comboing from 1st hit: 
 Floor Break
 "
+Back Throw 1+3;t;70;i12;!;+3d;;"
+* Unbreakable
+* Floor Break "
+Back Throw 2+4;t;70;i12;!;+17d;;"
+* Unbreakable
+* Balcony Break "
 d+1;s;5;i10;-5;+6;;"
-* Alternate input FC.d+1 "
+* "
 d+1+2;m;28;i27;-18;+42a (+32);;"
 * "
+d+1+3;t;30;i12;!;+0d;;"
+* Crouch Throw (Unbreakable)
+* Floor Break
+* Alternate input GMH.1+3"
 d+2;s;8;i11;-4;+7;;"
 * Alternate input FC.d+2 "
 d+2+4;t;25;i12;;+6d;;"
 * Heat Engager
 
 * Cannot cancel into Heat Dash
-* Crouch Throw
-* Unbreakable 
+* Crouch Throw (Unbreakable)
 * Alternate input GMH.2+4
 "
 d+3;l;12;i20;-17;-6;;"
 * Alternate input FC.d+3 "
 d+3+4;;;;;;;"
-* Transitions to Sit Down"
+* Transitions to SIT (Sit Down)"
 d+4;l;10;i16;-15;-4;;"
 * Alternate input FC.d+4 "
 db+1;l;5;i13;-12;+1;;"
@@ -127,6 +142,9 @@ db+2;l;24;i22;-18;+3;+33d;"
 * Can be charged to power up "
 db+2*;l;30;i36;-33;+17d;;"
 * Chip damage on block "
+db+2+3;t;25;i11;-2;+14c;;"
+* Throw Break 2
+* Floor Break "
 db+3;l;15;i21;-20;-9;;"
 * "
 db+3,4;l,l;15,12;i27;-16;-9;;"
@@ -143,6 +161,9 @@ db+3,4,3,4,3,4;l,l,l,l,l,l;15,12,12,12,12,12;i27;-16;-5;;"
 * "
 db+4;l;14;i16;-13;-2;;"
 * "
+db,n,f+1+2;t;50;i11;-6;-1d;;"
+* Throw Break 1+2
+* Floor Break "
 df+1;m;12;i14;-4;+3;+5;
 df+1,1;m,m;12;i29;-11;+21cg;+72a (+56);"
 * Tornado
@@ -178,10 +199,19 @@ df+2+3;m;26;i22;-9;+31d (-5);;"
 * Balcony Break
 * Alternate input b,db,d,df+2 to power up
 ** (31 damage, i22)"
+df+2+4;t;10;i11;-2;+26a;;"
+* Throw Break 2
+* "
 df+3;m;16;i16;-9;+2;;
 df+3,2;m,h;1620;i20;-9;+25d;;Balcony Break
 df+3+4;28;17;i13;-23;+10a (+1);;Balcony Break
 df+4;m;17;i15;-9;+5;+14c;
+df,DF+2+4;t;10;i11;-2;+54a;;"
+* Throw Break 2
+* "
+(During Enemy wall stun) 1+3;t;33;i12;!;+0d;;"
+* Wall throw (Unbreakable)
+* Alternate input 2+4 or uf+1+2 "
 f+1;m;13;i14;-6;+5;;
 f+1,1;m,h;13,25;i25;-7;+8d (-1);+40d (-7);Combos from 1st hit
 f+1+2;m,m;12,20;i27;i12;+32d (+6);;"
@@ -217,6 +247,58 @@ f+3+4;m;24;i22;-11;+9c;;"
 ** (-3 oB, +15g oB)"
 f+4~1;h;80;i65;!;+5;;Unblockable
 f+4~1,2;m;30;i15 (66~);+8;+0d;;Elbow
+FC.1;l;10;i19;-8;+3;;"
+* "
+FC.1,1;l,l;10,14;i31;-12;+5;;"
+* "
+FC.1+2;l;21;i24;-15;+13d;;"
+* Alternate input FC.db+1+2 "
+FC.1,2;l,m;10,24;i32;-11;+11a (+2);+43a (-4);"
+* Balcony Break "
+FC.1+2,1+2;l,m;2123;i40;-18;+42a (+32);;"
+* Combos from 1st hit "
+FC.2;s;8;i11;-4;+7;;"
+* Alternate input d+2 "
+FC.3;l;12;i20;-17;-6;;"
+* Alternate input d+3 "
+FC.4;l;10;i16;-15;-4;;"
+* Alternate input d+4 "
+FC.db+1;l;14;i14;-11;+3;;"
+* "
+FC.db+1,1;l,m;14,10;i24;-6;+5;;"
+* "
+FC.db+1,1,1;l,m,m;14,10,20;i20;-14;+9a;;"
+* Balcony Break
+* Can be charged to power up"
+FC.db+1,1,1*;l,m,m;14,10,30;i34;-6;+15a (+7);;"
+* Balcony Break
+* Chip damage on block"
+FC.df+1;m;5;i23;-21;-11c;;"
+* "
+FC.df+1,2;m,m;5,8;i16;-21;-11c;;"
+* Combos from 1st hit "
+FC.df+1,2,1;m,m,m;5,8,11;i16;-11;+16cs;;"
+* Combos from 1st hit "
+FC.df+1,2,1,1;m,m,m,h;5,8,11,30;i21;+15;+13BT;;"
+* Guard Break +15 "
+FC.df+2;m;12;i17;-13;-2;;"
+* "
+FC.df+2,1;m,m;12,10;i26;-13;+7;;"
+* "
+FC.df+2,1,2;m,m,m;12,10,10;i27;-12;+29a (+19);;"
+* "
+FC.df+2,d+1;m,l;12,8;i22;-11;+0;;"
+* Balcony Break
+* Combos from 1st hit "
+FC.df+2,f+1;m,h;12,23;i19;-13;+32a;;"
+* Balcony Break
+* Combos from 1st hit "
+FC.df+3+4;m;28;i21;-9;+1a (-8);+33a (-14);"
+* Balcony Break "
+FC.df+4;m;10;i12;-12;+4;;"
+* "
+FC.df+4,2;m,m;10,17;i20;-14;+4c;+19d;"
+* "
 f,F+1;m;22;i15;-6;+8c;+16d;"
 * Transition to GMH with D
 * (+4c oB, +8c oH) "
@@ -255,10 +337,23 @@ GMC.1;m;22;i22;-6;+73a (+57);;"
 * Chip damage on block "
 GMC.2;h;22;i20;+11;+31a (+5);;"
 * Tornado
-* Guard Break {{{1}}}
+* Guard Break +11
 * Balcony Break
 * Partially uses remaining Heat time
 * Chip damage on block "
+GMH.1;m;20;i22;-10;+25d;;"
+* Homing
+* Balcony Break "
+GMH.1+2;t;45 (57);i16;-6;+0d;;"
+* 57 Damage if opponent hits the wall
+* Throw Break 1+2
+* Swaps positions on break"
+GMH.2;h;40;i20;+11;+21d (+11);;"
+* Balcony Break
+* Tornado "
+GMH.3;m;28;i24;+4;+9c;+22a;"
+* Transition to FC with D
+** (+7 oH) "
 GMH.3+4;s;20;i20;-13;+40d (-18);;"
 * Heat Engager
 
@@ -276,13 +371,57 @@ GMH.4;h;30;i14;+3;+21d (+11);;"
 * Balcony Break
 * Chip damage on block
 "
+GMH.f+1;m;26;i20;-17;+66a (+50);;"
+* Tornado
+* Instant Tornado"
+GMH.f+2;m;34;i29;-13;+30a (+4);;"
+* Balcony Break "
+GMH.ub;;;;;;;"
+* "
+GMH.uf;;;;;;;"
+* "
+1+2;m;18;i28;+18g;+39d;;"
+* Recovers in SIT, then stands up "
 H.2+3;h,m,t;50;i10;-9;-2d (-12);;"
 * Heat Smash
 * Balcony Break "
+Left Throw;t;40;i12;-3;+1d;;"
+* Throw Break 1
+* Balcony Break "
+qcb+2;t;45;i11;-2;+12d;;"
+* Throw Break 2 "
+qcf+1;t;40;i11;-2;-2d;;"
+* Throw Break 1
+* Floor Break "
 R.df+1+2;m,t;55+;i20;-15;+0d;;"
 * Rage Art
 * Damage increases with lower health
 * Erases opponent's recoverable health on hit"
+Right Throw;t;40;i12;-3;+0d;;"
+* Throw Break 2
+* Side Swap "
+SIT.1;l;10;i19;-48;-37;;"
+* "
+SIT.1+2;m;21;i24;-44;-12d;;"
+* "
+SIT.1,2;l,l;1010;i15;-47;-36;;"
+* Combos from 1st hit"
+SIT.1,2,1;l,l,l;101010;i15;-47;-36;;"
+* Combos from 1st hit"
+SIT.1,2,1,2;l,l,l,l;10101010;i15;-47;-36;;"
+* Combos from 1st hit
+* Alternate input SIT.2,1,2,1"
+SIT.3+4;m;35;i54;+13cg;+20d;;"
+* "
+SIT.b;;;;;;;"
+* "
+SIT.f;;;;;;;"
+* "
+ss1;m;23;i32;+6c;+59a;;
+ss2;h;20;i17;+9;+35d (+27);;"
+* Balcony Break
+* Transition to GMH with D
+** (+9 oB, +35d (+27) oH)"
 u+1+2;m;23;i19;-13;+49a (+39);;"
 * "
 u+3+4;m;40;i94~100;!;+17d;;"
@@ -309,6 +448,13 @@ uf+1*;h;35;i35;;+69a (+53);;"
 * Transition to GMH with D
 ** (+70a (+54))
 * Alternate input ub+1*, u+1* "
+uf+1+2;t;35;i11;-6;-10d;;"
+* Throw Break 1+2
+* Floor Break "
+uf+1+2,d,df+2;t;40;i11;-6;+19a (-7);;"
+* Throw Break 1+2
+* Balcony Break
+* Wallsplats opponent"
 uf+2;m;25;i24;+4c;+7c;+11d;"
 * Elbow "
 uf+3;l;6;i23;-17;+8c;;"
@@ -316,3 +462,34 @@ uf+3;l;6;i23;-17;+8c;;"
 * Alternate input ub+3, u+3"
 uf+3+4;m;23;i34;+13cg;+20d;;"
 * Automatically transitions to SIT on hit or block "
+ws1;m;14;i15;-13;+34a (+24);;"
+* "
+ws1+2;m;14;i20;-15;+26a (+16);;"
+* "
+ws1+2,1+2;m,m;14,12;i17;-15;+15d;;"
+* Floor Break
+* Combos from 1st hit "
+ws1+2,1+2,1+2;m,m,l;14,12,14;i27;-23;+6d;;"
+* Balcony Break
+* Combos from 1st hit "
+ws2;m;10;i14;-7;+4;;"
+* "
+ws2,1;m,m;10,17;i15;-14c;+3d;+49a;"
+* Combos from 1st hit "
+ws2,4;m,h;10,26;i16;+3;+21a (+11);;"
+* Balcony Break
+* Combos from 1st hit "
+ws3;m;18;i15;-9;+5;;"
+* Knee
+* Transition to GMH with D
+** (+2 oB, +16g oH)
+* Alternate input f+3 "
+ws3,1+2;m,m;18,20;i25;-11c;+2d;+48a;"
+* Combos from 1st hit CH
+* Alternate input f+3,1+2 "
+ws3,2;m,h;18,20;i23;-9;+44d (-14);;"
+* Balcony Break
+* Combos from 1st hit
+* Alternate input f+3,2 "
+ws4;m;20;i11;-6;+5;;"
+* "

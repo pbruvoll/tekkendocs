@@ -56,7 +56,7 @@
     "target": "h,h,h"
   },
   {
-    "damage": "5,10,17,6,6,6",
+    "damage": "7,10,6,6,6,6",
     "gif": "",
     "id": "Nina-1,2,1,1+2",
     "input": "1,2,1,1+2",
@@ -169,7 +169,7 @@
     "target": "h,h"
   },
   {
-    "damage": "5,17,21",
+    "damage": "7,17,21",
     "gif": "",
     "id": "Nina-1,4,1",
     "input": "1,4,1",
@@ -511,7 +511,7 @@
     "id": "Nina-b+1+3_b+2+4",
     "input": "b+1+3",
     "name": "Attack Reversal",
-    "notes": "\n* Damage is 25 + 50% of the opponent's attack\n* Parries mid or high punches or kicks\n* Can parry Yoshimitsu's sword exclusively\n* Chickenable, 15 damage to Nina on break",
+    "notes": "\n* Damage is 25 + 50% of the opponent's attack\n* Parries mid or high punches or kicks",
     "on_block": "-6",
     "on_ch": "",
     "on_hit": "",
@@ -1094,20 +1094,6 @@
     "recovery": "r19",
     "startup": "i13~14",
     "target": "m"
-  },
-  {
-    "damage": "55+",
-    "gif": "",
-    "id": "Nina-df+1+2",
-    "input": "df+1+2",
-    "name": "Death by Degrees",
-    "notes": "\n* Rage Art\n* Erases opponent's recoverable health on hit\n* Damage increases with lower health",
-    "on_block": "-15~-14",
-    "on_ch": "",
-    "on_hit": "+0d",
-    "recovery": "r38",
-    "startup": "i20~21",
-    "target": "m,t"
   },
   {
     "damage": "13,10",
@@ -2066,6 +2052,20 @@
     "target": "m,h,h,h,h"
   },
   {
+    "damage": "55+",
+    "gif": "",
+    "id": "Nina-R.df+1+2",
+    "input": "R.df+1+2",
+    "name": "Death by Degrees",
+    "notes": "\n* Rage Art\n* Erases opponent's recoverable health on hit\n* Damage increases with lower health",
+    "on_block": "-15~-14",
+    "on_ch": "",
+    "on_hit": "+0d",
+    "recovery": "r38",
+    "startup": "i20~21",
+    "target": "m,t"
+  },
+  {
     "damage": "38",
     "gif": "",
     "id": "Nina-Right throw",
@@ -2360,20 +2360,6 @@
     "target": "m"
   },
   {
-    "damage": "20,13",
-    "gif": "",
-    "id": "Nina-uf+3+4",
-    "input": "uf+3+4",
-    "name": "Running Jump Kick",
-    "notes": "\n* Balcony Break\n* Transition to throw on close range front hit",
-    "on_block": "-23a~-16a",
-    "on_ch": "",
-    "on_hit": "+9a (-1)",
-    "recovery": "r35 FUFT",
-    "startup": "i23~30",
-    "target": "m,t"
-  },
-  {
     "damage": ",18",
     "gif": "",
     "id": "Nina-uf+3+4",
@@ -2386,6 +2372,20 @@
     "recovery": "r35 FUFT",
     "startup": "i23",
     "target": ",t"
+  },
+  {
+    "damage": "20,13",
+    "gif": "",
+    "id": "Nina-uf+3+4",
+    "input": "uf+3+4",
+    "name": "Running Jump Kick",
+    "notes": "\n* Balcony Break\n* Transition to throw on close range front hit",
+    "on_block": "-23a~-16a",
+    "on_ch": "",
+    "on_hit": "+9a (-1)",
+    "recovery": "r35 FUFT",
+    "startup": "i23~30",
+    "target": "m,t"
   },
   {
     "damage": "23",
@@ -2683,20 +2683,6 @@
     "target": "m,m"
   },
   {
-    "damage": "15,24",
-    "gif": "",
-    "id": "Nina-WS.4,3",
-    "input": "WS.4,3",
-    "name": "Flashing Escape",
-    "notes": "\n* Balcony Break\n* Combo from 1st CH",
-    "on_block": "-10",
-    "on_ch": "",
-    "on_hit": "+14a (+5)",
-    "recovery": "r36",
-    "startup": ",i25",
-    "target": "m,h"
-  },
-  {
     "damage": "15,6,6,6",
     "gif": "",
     "id": "Nina-WS.4,3",
@@ -2709,5 +2695,19 @@
     "recovery": "r40",
     "startup": ",i28 i35 i42",
     "target": "m,h,h,h"
+  },
+  {
+    "damage": "15,24",
+    "gif": "",
+    "id": "Nina-WS.4,3",
+    "input": "WS.4,3",
+    "name": "Flashing Escape",
+    "notes": "\n* Balcony Break\n* Combo from 1st CH",
+    "on_block": "-10",
+    "on_ch": "",
+    "on_hit": "+14a (+5)",
+    "recovery": "r36",
+    "startup": ",i25",
+    "target": "m,h"
   }
 ]
