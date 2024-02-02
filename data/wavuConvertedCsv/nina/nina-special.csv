@@ -6,7 +6,7 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 1,2,1;h,h,h;5,10,17;,i26~27;-3~-2;+2~+3;;"
 * Combo from 2nd CH with 4f delay
 * Input can be delayed 6f"
-1,2,1,1+2;h,h,h,h,h,h;5,10,17,6,6,6;,i25 i32 i39;-19;+34a (-24);;"
+1,2,1,1+2;h,h,h,h,h,h;7,10,6,6,6,6;,i25 i32 i39;-19;+34a (-24);;"
 * Balcony Break
 * Weapon
 * Jail from 3rd attack
@@ -33,7 +33,7 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 1,4;h,h;5,17;,i17~18;-4~-3;+1~+2;+50a;"
 * Combo from 1st hit
 * Move can be delayed 2f"
-1,4,1;h,h,m;5,17,21;,i25~26;-11~-10;+15g~+16g;+67a (+47a);Balcony Break
+1,4,1;h,h,m;7,17,21;,i25~26;-11~-10;+15g~+16g;+67a (+47a);Balcony Break
 2;h;10;i10;+1;+7;;
 2+3;m;12;i16;+1;+2c;;"
 * Heat Burst
@@ -99,9 +99,7 @@ b+1+2;m,m;5,20;i16 i8~10;-7;+5a;;"
 * Erases opponent recoverable health on hit"
 b+1+3;;;;-6;;;"
 * Damage is 25 + 50% of the opponent's attack
-* Parries mid or high punches or kicks
-* Can parry Yoshimitsu's sword exclusively
-* Chickenable, 15 damage to Nina on break"
+* Parries mid or high punches or kicks"
 b+1+4;m,m;4,14;i15 i30~31;-15~-14;+34a (+24);;Tornado
 b+1,4;h,M;10,22;,i28~29;-12~-11;+7~+8;+71a (+55);"
 * Tornado
@@ -203,10 +201,6 @@ db+4,3;L,m;5,21;,i27~28;-13~-12;+71a (+55);;"
 db,qcf,n,DB+2+3;h!;10;i24~38;;+36g~+50g;;Alternate input: qcf+2+3
 d,DF+4;L;20;i20~24;-37;+14a;+27a;
 df+1;m;13;i13~14;-1~+0;+5~+6;;
-df+1+2;m,t;55+;i20~21;-15~-14;+0d;;"
-* Rage Art
-* Erases opponent's recoverable health on hit
-* Damage increases with lower health"
 df+1,2;m,h;13,10;,i16;-3;+2;+9;"
 * Jail from 1st attack"
 df+1,2~D;m,h;13,10;;-1;+4;+11;
@@ -402,6 +396,10 @@ qcf+4,3,1+2;m,h,h,h,h;15,23,6,6,6;,i28 i35 i42;-9;+24a (-9);;"
 * Weapon
 * Combo from 2nd hit
 * Chip damage on block"
+R.df+1+2;m,t;55+;i20~21;-15~-14;+0d;;"
+* Rage Art
+* Erases opponent's recoverable health on hit
+* Damage increases with lower health"
 Right throw;t;38;;-3;+1d;;Throw break 2
 SS.1;m;15;i14~15;-10~-9;+3~+4;;
 SS.1+2;m;22;i19;-9;+36a;;Balcony Break
@@ -441,12 +439,12 @@ uf+2,1;m,m;10,10;,i21;-13;+49a (+40);;"
 * Input can be delayed 9f
 * Move can be delayed 7f"
 uf+3;m;20;i14;-10;+21 (+11);;Balcony Break
-uf+3+4;m,t;20,13;i23~30;-23a~-16a;+9a (-1);;"
-* Balcony Break
-* Transition to throw on close range front hit"
 uf+3+4;,t;,18;i23;-23a~-16a;+9a (-1);;"
 * Transitions to throw on front hit
 * Throw break 2"
+uf+3+4;m,t;20,13;i23~30;-23a~-16a;+9a (-1);;"
+* Balcony Break
+* Transition to throw on close range front hit"
 uf+4;h;23;i18;-9;-1;;
 uf+4,3;h,L;23,10;,i18;-19;-8;;Combo from 1st CH
 uf+4,3,4;h,L,h;23,10,14;,i20;-6;+5;;Combo from 2nd hit
@@ -494,12 +492,12 @@ WS.4,2;m,m;15,22;,i19;-9;+36a;;"
 * Side roll takes 42? frames
 * Chip damage on block
 * Can recover in r38 FC with D"
-WS.4,3;m,h;15,24;,i25;-10;+14a (+5);;"
-* Balcony Break
-* Combo from 1st CH"
 WS.4,1+2;m,h,h,h;15,6,6,6;,i28 i35 i42;-9;+34a (-24);;"
 * Balcony Break
 * Combo from 2nd hit
 * Combo from 1st CH
 * Chip damage on block
 * Power up during Heat"
+WS.4,3;m,h;15,24;,i25;-10;+14a (+5);;"
+* Balcony Break
+* Combo from 1st CH"

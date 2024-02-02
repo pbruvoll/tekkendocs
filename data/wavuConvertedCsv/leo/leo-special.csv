@@ -1,23 +1,244 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes
-1;h;5;i10;;+8;;
-1,2;h,h;510;,i12;;+8;;B to shift to KNK ''(Jin Ji Du Li)''
-1,2,1;h,h,h;510,21;i20;;+6;;
-1,2,1,1;h,h,h,m;510,2121;i18;;+12;;
-1,2,1,4;h,h,h,h;510,2130;i21;;+32;;
-1,2,4;h,h,l;51015;i24;;3;;
-1,4;h,h;517;i16;;+11;;Shift to KNK ''(Jin Ji Du Li)''
-2;;9;i11;;+5;;
-b1;m;17;i18;-12;+1;;
-b1,4;m,m;1714;i23;+9;+15;;
-KNK.1;h;12;i18;-9;+2;;KNK.1,D to shift to BOK ''(Fo Bu)''
+1;h;5;i10;+1;+8;;
+1+2;m;25;25;-12;+11a (+2);;"
+*
+Balcony Break
+Chip damage on block"
+1,2;h,h;5,10;i12;-3;+8;;"
+* Jail from 1st attack
+* Combo from 1st Hit
+*Transition to KNK with ~B
+**(-9 oB, +2 oH)"
+1,2,1;h,h,h;5,10,16;i20~i21;-5;+6;+9;Combo from 2nd CH
+1,2,1,1;h,h,h,m;5,10,16,21;i18;-13;+12a (+3);;"
+*
+Balcony Break
+* Combo from 3rd Hit"
+1,2,1,4;h,h,h,h;5,10,16,30;i21~i23;-6;+32a (+6);;"
+*
+Balcony Break
+* Combo from 3rd Hit"
+1,2,4;h,h,l;5,10,15;i24;-13;+3;+8d;Combo from 2nd CH
+1,4;h,h;5,17;i16;-5;+11;;"Jail from 1st attack
+Transition to KNK"
+2;h;9;i11;-1;+5;;
+2,1;h,h;9,12;i16~i17;-7;+4;;"Jail from 1st attack
+Combo from 1st hit"
+2,2;h,m;9,20;i22;-12;+6;;Combo from 1st Hit
+2+3;m;12 (12);i16~i17;+1;+2c;;"
+* Heat Burst
+"
+3;h;15;14;-8;+4;;
+3,2;h,h;15,10;i19;-2;+9;;"
+* Combo from 1st hit
+* Transition to BOK with ~D
+** (-6 oB, +5 oH)"
+3,2,3;h,h,m;15,10,26;i23~24;-7;+13a (+4);;"
+*
+Tornado
+*
+Balcony Break
+* Combo on 2nd attack CH
+* Cancel with ~B
+** (-15 oB, -4 oH)"
+3,2,4;h,h,m;15,10,14;i22~i23;+9;+15;+19;Combo on 2nd attack CH
+4;h;17;i12;-7;+6;+31a;
+b+1;m;17;i18~i19;-12;+1;;
+b+1,1+2;m,m;1718;i22~i23;-9;+9;;"
+* Combo from 1st hit
+*Transition to BOK with ~D
+** (-7 oB, +11 oH)"
+b+1+2;m;15;i17~i18;-24;-11;;
+b+1+2,1+2;mm;1513;i21~i22;-14;-3;+7;Combo from 1st hit
+b+1+2,1+2,2;mmm;151325;i20~i12;-13;+17d (+12);;"
+* Combo from 2nd CH
+* Chip damage on block
+* Input qcf+2 instead for 30 damage"
+b+1,4;m,m;17,14;i23;+9;+15;+19;Combo from 1st hit
+b+1+4;h,l;6,12;i19 i21;-12;+3;+14;
+b+2;m;11;i14;-11;0;;
+b+2,1;m,h;11,11;i22~i23;-4;+7;;Combo from 1st hit
+b+21+2;m,m;11,21;i27~i28;-11;+8;;"
+Heat Engager
+
+* Combo from 1st hit"
+b+2+3;m;21;i30~i31;-8;+23d;+28d;"
+* Parries high and mid punches
+* Hit after parry is the same as on CH"
+b+3;m;12;i14~i15;-7;+4;;
+b+3,1;m,m;12,13;i20;-7;+4;;"
+* Combo from 1st hit
+* Transition to BOK with ~D
+** (-6 oB, +5 oH)
+* Transition to KNK with ~B
+** (-10 oB, +1 oH)"
+b+3+4;;;;;;;
+b+4;m;13;i18;-8;+5;;
+b+4,1;m,m;13,20;i30~i31;-12;+15a (+6);;"
+Balcony Break
+* Combo from 1st hit
+* Cancel to FC with ~D
+** (-16 oB, -3 oH)"
+b+4,1~4;m,m;13,14;i17~i18;+9;+15;+19;"
+* Combo from 1st hit
+*Transition to cd with ~DF
+** (-5 oB, +1 oH, +5 CH)"
+BOK.1;m;14;i13;-4;+9;;
+BOK.1+2;m;22;i0;-12;+15;;"
+Heat Engager
+
+Balcony Break
+**Chip damage on block
+"
+BOK.1,2;mm;1420;i17-18;-14;+72 (+56);;"
+Tornado
+"
+BOK.2;m;23;i19-20;-9;+41 (+31);;
+BOK.3;h;30;i21;+5;+15d;;"
+Homing
+Balcony Break
+**Chip damage on block
+"
+BOK.4;m;14;i20;+9;+15;+19;"
+*Transition to cd with ~DF"
+BOK.n;;;;;;;
+d+1;m;18;i18~i19;-2;+5;+24d;"
+*Transition to FC with D*"
+d+1+2;;;;;;;
+d+2;m;23;i21;+4c;+9c;+56a;
+d+3;l;10;i16;-17;-6;;
+d+3+4;l;7;i12;-15;-4;;
+d+4;l;13;i16~i17;-11;0;;
+d+4,2;l,h;13,23;i26~i27;-5;-7d;+3d;"
+* Charge LTG on hit with ~1+2*
+** (-11d oH, -1d CH)"
+db+1;s;6;i10;+6;-5;;
+db+1+2;m;17;i21~i23;-9;+7;;"
+* Transition to BOK with ~D
+** (-12 oB, +4 oH)"
+db+1+2,1;m,m;1720;i17~i18;-12;+22a (+17);;Combo from 1st hit
+db+2;m;16;i16~i17;-9;+5;;
+db+2,4;m,h;16,24;i24~i26;-9;+12a (+3);;"
+* Heat Engager
+
+* '''Heat Dash +5g, +64a (+42)'''
+
+
+* Balcony Break
+* Combo from 1st hit"
+db+3;h;23;i31-i32;-8;+38a (+28);;No crouching state
+db+4;l;11;i20~i22;-31;+2;+33a;"
+Can clean hit
+Staggers on block
+* Causes float on hit if db+4,1 is input"
+db+4,1;l,m;1127;i25~i26;-16;+8a;;"
+* Balcony Break
+* Combo from 1st hit
+** (+14a (+7))"
+df+1;m;13;i13~i14;-1;+7;;
+df+1,2;m,h;1320;i18;-6;+9d;+34d (+26);"
+*
+Tornado
+*
+Balcony Break"
+df+2;m;15;i15~i16;-13;+28a (+18);;
+df+2+3;l;20;i21~i22;-12;+5;+21d;
+df+3;m;22;i17~i19;-9;+6a (-3);+27a (-9);"
+*
+Homing
+*
+Balcony Break"
+f+1+2;m;24;i17~i18;-14;+10a (+1);+56d;"
+*
+Balcony Break"
+f+2;h;14;i14~i16;0;+6;;
+f+2,2;h,m;14,21;i23~i24;-12;+8;+25d;Combo from 1st hit
+f+2+3;h;21;i20~i21;-9;+11a (+2);;"
+*
+Balcony Break"
+f+2,4;h,h;14,16;i22~i23;-1;+7;;"
+* Jail from 1st attack
+* Combo from 1st hit
+*Transition to cd with ~DF
+** (Same oB and oH)"
+f+3;h;23;i20~i21;0;+4;+27g;"
+*Transition to BOK with ~D
+** (+2 oB, +6 oH, +29d CH)"
+f+3+4;h;24;i17~i18;0;+8;+71a (+55);"
+*
+Tornado
+*
+Balcony Break
+Chip damage on block"
+f+4;m;14;i17~i18;+9;+15;+19;"
+*Transition to cd with ~DF
+** (-5 oB, +1 oH, +5 CH)"
+f,F+2;m;25;i14-15;-9;+8;;"
+* 1+2 to charge LTG
+"
+f,F+3;m;20;i26-29;-7c;+3d;;"
+* Transition to BOK with ~D
+** (+0 oB, +10d oH)"
+f,F+4;m;12;i19;-13;+28 (+18);;
+f,F+4,3;m,h;12,23;i12;-14;+20 (+11);;"
+* Jail from 1st attack
+* Combo from 1st hit +28a (+21)"
+f,F+4,3,4;m,h,l;12,23,17;i29-31;-14;-12;+30a;"
+* Can combo from 1st hit on wall"
+H.2+3;m,m,h;14,13,23 (50);i16~i17;+8;+5a;;"
+* Heat Smash
+* Balcony Break
+* Transition to cd on block with DF
+** (+16 oB)"
+H.KNK.2+3;l,m,m;8,13,14 (35);i20~i21;-13;+31a (+13);;"
+* Heat Smash
+* Balcony Break
+"
+KNK.1;h;12;i18;-9;+2;;KNK.1,D to shift to BOK
 KNK.1+2;m;20;i25;-6;+21;;Chip Damage on Block
 KNK.1,2;h,m;1217;i18;-9;+17;;
 KNK.2;h;20;i13;-9;+22;;
 KNK.3;m;13;i20;-13;a;;
 KNK.3+4;;24;i24;-26;+19;;
-KNK.3,4;m,m;1318;i15;-12;+80a;;
+KNK.3,4;m,m;1318;i15;-12;+80a;;Tornado
 KNK.4;l;18;i20;-12;+4;;
 KNK.4,DF;l;18;;-10;;;
-KNK.DF;;;;-5;+1;;Frames calculated from f4 KNK.DF
+KNK.DF;;;;-5;+1;;"
+* Frames calculated from f4 KNK.DF
+"
 R.df+1+2;m;55+;i20;-15;+0d;;"
 * Rage Art"
+u+1;m;17;i19~i20;-6;+2;+22a (+5);"
+Tornado
+Balcony Break
+* on CH
+** Doesn't Balcony Break on airborne"
+ub+1+2;m!;60;i70~i71;;+26a (-21);;
+ub+3;m;26;i24~i27;0c;+6c;+53a;
+ub+4;m;15;i15~i16;-13;+19a (+9);+33a (+23);"
+Balcony Break"
+uf+1;h;8;i13;-1;+6;;
+uf+1,1;h,m;8,17;i19~i20;-6;+2;+22a (+5);"
+Tornado
+Balcony Break
+* on CH
+** Doesn't Balcony Break on airborne"
+uf+1,2;h,m;8,25;i20~i21;-14;+37g (-21);;"
+Balcony Break
+* Combo from 1st hit
+* Charge LTG on hit with ~1+2*
+** (+22g (-36))"
+uf+2;m;15;i18~i21;-14;+18a (+11);;"
+* Transition to BOK with ~D
+** (-11 oB, +21a (+14) oH)"
+uf+2,1;m,m;15,17;i25~i26;-8;+4;+32g;"
+* Combo from 1st hit
+** (+23a (+16))"
+uf+3;m;21;i17~i21;-9;+13a (+4);;"
+Balcony Break
+* Can input with u+3
+** Less forward movement and deals 20 damage"
+uf+4;m;15;i15~i16;-13;+33a (+23);;"
+* Can input with u+4
+** Less forward movement"
+uf,n,4;m;20;i23~i25;-13;+32a (+22);;

@@ -10,10 +10,10 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * Floor Break
 * Absorb an attack to power up and deal more chip damage on block[[[Template:Untested|untested]]]"
 1,2;h,m;5,8;,i18;-9;+2;;Combo from 1st hit
-1,2,1;h,m,m;5,8,20;,i19~20;-14;+15c;;"
+1,2,1;h,m,m;5,8,20;,i19~20;-14;+15gc;;"
 * Heat Engager
 
-* '''Heat Dash +5, [[Dragunov combos#Staples|+43a (+35)]]'''
+* '''Heat Dash +5, [[Dragunov combos#Mini-combos|+43a (+35)]]'''
 
 
 * Balcony Break
@@ -23,10 +23,13 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 1,3;h,h;5,14;,i16~17;-7;+1;+9;"
 * Combo from 1st hit"
 1,3,2;h,h,m;5,14,20;,i22~23;-13;+41a;;"
+* Floor Break
 * Combo from 2nd CH"
 1,3,2~1+2;h,h,t;5,14,40;,i29~32;+5;-2d;;"
 * Throw break 1+2
 ** Unbreakable during Heat
+** Partially uses remaining Heat time
+* Cancel with B
 * Alternate input f,F+2~1+2"
 2;h;10;i10;-13;+0;;
 2,1;h,h;10,10;,i12;-3;+8;;"
@@ -48,10 +51,10 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * Transition to -3 +6 SNK with DF"
 3,1,2;m,h,m;10,8,24;,i19~21;-12;+12a (+3);;"
 * Balcony Break
-* Combo from 2nd CH"
+* Combo from 2nd CH with delay"
 3,1,4;m,h,h;10,8,24;,i22~23;-9;+42d (-16);;"
 * Balcony Break
-* Combo from 2nd CH"
+* Combo from 2nd CH with delay"
 3+4;h;25;i25~26;-13;+41a;;"
 * Balcony Break
 * Tech-rollable"
@@ -81,7 +84,7 @@ b+2,1,3;m,h,l;14,11,17;,i29~31;-26;-2c;+1d;"
 b+3;h;17;i14~15;-9;+11g;;"
 * Homing
 * Balcony Break"
-b+3+4;h;22;i28~29;-2;+26a;+26a;Punch parry
+b+3+4;h;22;i28~29;-2;+26a;;Punch parry
 b+4;m;15;i14;-4;+7;;
 b+4,2;m,m;15,15;,i21;-7;+4c;;"
 * Transition to FC with D
@@ -108,7 +111,7 @@ b+4,3;m,h;15,20;,i17~18;-9;+21a (+12);;"
 * Balcony Break"
 Back throw;t;50;;;+1d;;
 BT.d+3;l;20;i16;-11;+10d;;
-d+1;m;18;i18~19;+1c;+8c;;
+d+1;m;18;i18~19;+1c;+8c;+13d;
 d+1+2;;40;;;+5d;;"
 * Parries lows
 * 100% recoverable damage"
@@ -141,7 +144,7 @@ db+3~1+2;t;30;i19~20;;+1d;;"
 * Side switch
 * Crouch throw
 * Cancel into FC with D_DB
-* Alternate input b+2,1,3,1+2"
+* Alternate input b+2,1,3~1+2"
 db+3+4;L;23;i20~21;-15;+7;+24a;
 df+1;m;13;i13;-2;+7;;
 df+1+2;m;55;i20;-15;+0d;;"
@@ -151,10 +154,13 @@ df+1,4;m,h;13,23;,i22~23;-6;+22a (+13);+58a;"
 * Balcony Break
 * Combo from 1st CH"
 df+2;m;14;i15~16;-12;+28a (+18);;
-df+3;m;16;i17~20;-6;+5c;;+20 damage throw when hit from the front in close range
+df+3;m;16;i17~20;-6;+5c;;"
+* Floor Break
+* +20 damage throw when hit from the front in close range"
 df+3+4;m;23;i22~24;-7;+12g;+24a;"
 * Homing
 * Balcony Break"
+df+4;m;14;i12;-9;+2;;
 (During enemy wall stun).f,f,F+4;m,t;20,20,25,35;i20~21;;;;"
 * Tornado
 * Deals maximum 32 (20) damage due to scaling"
@@ -180,6 +186,7 @@ f+3,1+2;m,m;11,27;,i30~31;-6;+22a;;"
 * Combo from 1st hit
 * Chip damage on block"
 f+3,3;m,m;11,14;,i17~20;-10;+1;;"
+* Floor Break
 * Combo from 1st CH
 * +20 damage throw when hit from the front in close range"
 f+4;h;16;i14~15;-7;+8;;
@@ -224,10 +231,12 @@ H.2+3;m,m,m;25,14,23;i15~16,i30~32,i31~35;+6;+2c;;"
 ** Only 1st and 3rd hit
 * Chip damage on block
 * Throw on 1st hit - 50 damage"
-H.2+3,df+1+2;m,m,m,t;25,14,23,0;,i26;;-2d;;Heat Smash
+H.2+3,db+1+2;m,m,m,t;25,14,23,0;,i26;;-2d;;Heat Smash
 Left throw;t;40;;-3;+1d;;"
 * Throw break 1"
-OTG.d+3+4;L;24;i24;-11;+0;;+0a (-8) on grounded
+OTG.d+3+4;L;24;i24;-11;+0;;"
+* Floor Break
+* +0a (-8) on grounded"
 qcb+2;m;23;i26~27;-15;+68a (+52);;Tornado
 qcf;;;;;;;"
 * Lapses to standing
@@ -250,16 +259,16 @@ SNK.4;M;27;i19~21;+7;+18a;;"
 * Balcony Break
 * Floor Break
 * Chip damage on block"
-ss2;m;16;i20~21;-10;+1;;
-ss2,1+2;m,m,m;16,8,12;,i27~29,i8~9;-4;+2;;"
+SS.2;m;16;i20~21;-10;+1;;
+SS.2,1+2;m,m,m;16,8,12;,i27~29,i8~9;-4;+2;;"
 * Combo from 1st hit"
-ss2,1+2,4;m,m,m,h;16,8,12,28;,i26~27;-10;+45a;;"
+SS.2,1+2,4;m,m,m,h;16,8,12,28;,i26~27;-10;+45a;;"
 * Combo from 1st hit"
-ss2,3;m,h,t;16,20,20;i18;-9;+1d;;"
+SS.2,3;m,h,t;16,20,20;i18;-9;+1d;;"
 * Throw when hit from the front
 * Side switch
 * Combo from 1st hit"
-ss3+4;;;;;;;
+SS.3+4;;;;;;;
 Tackle.1;t;35;;;+0d;;"
 * Throw break 1
 * Diminishes opponent's recoverable gauge"
