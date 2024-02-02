@@ -53,6 +53,7 @@ export const meta: MetaFunction = ({ location, matches }) => {
     { name: 'twitter:creator', content: '@tekkendocs' },
     { property: 'og:description', content: description },
     { property: 'og:image', content: image },
+    { property: 'og:url', content: 'https://tekkendocs.com' },
     { property: 'og:type', content: 'website' },
     { name: 'twitter:card', content: 'summary_large_image' },
     { property: 'twitter:domain', content: 'tekkendocs.com' },
