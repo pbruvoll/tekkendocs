@@ -1,6 +1,11 @@
 import { Theme } from '@radix-ui/themes'
 import radixStyles from '@radix-ui/themes/styles.css'
-import type { LinksFunction } from '@remix-run/node'
+import {
+  json,
+  type LinksFunction,
+  type LoaderFunctionArgs,
+  type TypedResponse,
+} from '@remix-run/node'
 import {
   Links,
   LiveReload,
@@ -30,6 +35,17 @@ export const meta: MetaFunction = () => [
     description: 'Frame data and usefull resources for Tekken',
   },
 ]
+
+export type LoaderData = {
+  url: string
+}
+export const loader = async ({
+  request,
+}: LoaderFunctionArgs): Promise<TypedResponse<LoaderData>> => {
+  return json({
+    url: request.url,
+  })
+}
 
 export default function App() {
   return (

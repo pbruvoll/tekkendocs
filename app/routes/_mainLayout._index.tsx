@@ -4,6 +4,7 @@ import { Link, useLoaderData } from '@remix-run/react'
 import { CharacterGrid } from '~/components/CharacterGrid'
 import { ContentContainer } from '~/components/ContentContainer'
 import tekkenDocsLogoLarge from '~/images/logo/tekkendocs-logo-large.svg'
+import { type LoaderData as RootLoaderData } from '~/root'
 import {
   getTekken7Characters,
   getTekken8Characters,
@@ -29,11 +30,15 @@ export const loader = async (): Promise<TypedResponse<LoaderData>> => {
   )
 }
 
-export const meta: MetaFunction = () => {
+export const meta: MetaFunction = ({ location, matches }) => {
+  const match = matches.find(m => m.id === 'root')
+  const rootData = match?.data as RootLoaderData
+  const url = new URL(rootData.url)
+  const origin = url.origin
   const title = 'TekkenDocs - Frame data and resources for Tekken'
   const description =
     'Frame data and resources for leveling up your skills in Tekken'
-  const image = '/images/tekkendocs-og-image.png'
+  const image = origin + '/images/tekkendocs-og-image-v2.png'
   return [
     { title },
     {
@@ -44,10 +49,12 @@ export const meta: MetaFunction = () => {
       name: 'description',
       content: description,
     },
+    { name: 'twitter:site', content: '@tekkendocs' },
+    { name: 'twitter:creator', content: '@tekkendocs' },
     { property: 'og:description', content: description },
     { property: 'og:image', content: image },
     { property: 'og:type', content: 'website' },
-    { property: 'twitter:card', content: 'summary_large_image' },
+    { name: 'twitter:card', content: 'summary_large_image' },
     { property: 'twitter:domain', content: 'tekkendocs.com' },
     { property: 'twitter:url', content: 'https://tekkendocs.com' },
     { property: 'twitter:title', content: title },
