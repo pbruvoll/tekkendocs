@@ -4,7 +4,6 @@ import { Link, useLoaderData } from '@remix-run/react'
 import { CharacterGrid } from '~/components/CharacterGrid'
 import { ContentContainer } from '~/components/ContentContainer'
 import tekkenDocsLogoLarge from '~/images/logo/tekkendocs-logo-large.svg'
-import { type LoaderData as RootLoaderData } from '~/root'
 import {
   getTekken7Characters,
   getTekken8Characters,
