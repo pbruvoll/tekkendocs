@@ -10,6 +10,7 @@ import type { RouteHandle } from '~/types/RouteHandle'
 import { type TableDataWithHeader } from '~/types/TableData'
 import { getCacheControlHeaders } from '~/utils/headerUtils'
 import { commandToUrlSegment } from '~/utils/moveUtils'
+import { generateMetaTags } from '~/utils/seoUtils'
 
 export const headers: HeadersFunction = args => ({
   ...getCacheControlHeaders({ seconds: 60 * 5 }),
@@ -41,19 +42,13 @@ export const meta: MetaFunction = ({ data, params, matches }) => {
   const title = `${characterTitle} Tekken 8 Frame Data | TekkenDocs`
   const description = `Frame data for ${characterTitle} in Tekken 8`
 
-  return [
-    { title },
-    { description },
-    { property: 'og:title', content: title },
-    { property: 'description', content: description },
-    { property: 'og:description', content: description },
-    { property: 'og:image', content: `/t8/avatars/${characterId}-512.png` },
-    {
-      tagName: 'link',
-      rel: 'canonical',
-      href: 'https://tekkendocs.com/t8/' + characterId,
-    },
-  ]
+  return generateMetaTags({
+    matches,
+    description,
+    title,
+    url: '/t8/' + characterId,
+    image: { url: `/t8/avatars/${characterId}-512.png` },
+  })
 }
 
 export default function Index() {

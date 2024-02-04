@@ -13,6 +13,7 @@ import type { RouteHandle } from '~/types/RouteHandle'
 import { cachified } from '~/utils/cache.server'
 import { getCacheControlHeaders } from '~/utils/headerUtils'
 import { commandToUrlSegment } from '~/utils/moveUtils'
+import { generateMetaTags } from '~/utils/seoUtils'
 import { sheetSectionToTable, sheetToSections } from '~/utils/sheetUtils.server'
 
 export const loader = async ({ params }: DataFunctionArgs) => {
@@ -86,19 +87,13 @@ export const meta: MetaFunction = ({ data, params, matches }) => {
   const title = `${characterTitle} Tekken 8 Cheat Sheet | TekkenDocs`
   const description = `An overview of the most important information for ${characterTitle} in Tekken 8. The page has concise set of notes used for quick reference, including key moves, punisher and combos`
 
-  return [
-    { title },
-    { description },
-    { property: 'og:title', content: title },
-    { property: 'description', content: description },
-    { property: 'og:description', content: description },
-    { property: 'og:image', content: `/t8/avatars/${characterId}-512.png` },
-    {
-      tagName: 'link',
-      rel: 'canonical',
-      href: `https://tekkendocs.com/t8/${characterId}/meta`,
-    },
-  ]
+  return generateMetaTags({
+    matches,
+    title,
+    description,
+    image: { url: `/t8/avatars/${characterId}-512.png` },
+    url: `/t8/${characterId}/meta`,
+  })
 }
 
 export default function Index() {
