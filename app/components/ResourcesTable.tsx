@@ -1,5 +1,4 @@
 import { Heading, Link as RadixLink, Table } from '@radix-ui/themes'
-import { Link } from '@remix-run/react'
 import { ContentContainer } from './ContentContainer'
 
 export const ResourcesTable = ({
