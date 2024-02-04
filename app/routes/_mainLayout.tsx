@@ -1,8 +1,18 @@
-import { DiscordLogoIcon, GitHubLogoIcon } from '@radix-ui/react-icons'
+import { FaFacebook } from 'react-icons/fa'
+import {
+  DiscordLogoIcon,
+  GitHubLogoIcon,
+  TwitterLogoIcon,
+} from '@radix-ui/react-icons'
 import { Link, Outlet } from '@remix-run/react'
 import { ContentContainer } from '~/components/ContentContainer'
 import { AppErrorBoundary } from '~/components/ErrorBoundary'
-import { discordInviteLink, githubLink } from '~/services/staticDataService'
+import {
+  discordInviteLink,
+  facebooklink,
+  githubLink,
+  twitterLink,
+} from '~/services/staticDataService'
 
 type MainLayoutTemplateProps = React.PropsWithChildren<{}>
 const MainLayoutTemplate = ({ children }: MainLayoutTemplateProps) => {
@@ -57,6 +67,24 @@ const MainLayoutTemplate = ({ children }: MainLayoutTemplateProps) => {
             </li>
             <li>
               <a
+                title="TekkenDocs on Twitter (X)"
+                href={twitterLink}
+                className="flex items-center gap-2 px-2"
+              >
+                Twitter <TwitterLogoIcon width="2rem" height="2rem" />
+              </a>
+            </li>
+            <li>
+              <a
+                title="TekkenDocs on Facebook"
+                href={facebooklink}
+                className="flex items-center gap-2 px-2"
+              >
+                Facebook <FaFacebook fontSize="2rem" />
+              </a>
+            </li>
+            <li>
+              <a
                 title="TekkenDocs source code on Github"
                 href={githubLink}
                 className="flex items-center gap-2 px-2"
@@ -64,6 +92,7 @@ const MainLayoutTemplate = ({ children }: MainLayoutTemplateProps) => {
                 Github <GitHubLogoIcon width="2rem" height="2rem" />
               </a>
             </li>
+
             <li>
               <Link to="/features">Features</Link>
             </li>

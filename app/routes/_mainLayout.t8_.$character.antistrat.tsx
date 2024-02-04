@@ -9,6 +9,7 @@ import type { RouteHandle } from '~/types/RouteHandle'
 import { getCharacterFromParams } from '~/utils/characterRoute.utils.server'
 import { getCacheControlHeaders } from '~/utils/headerUtils'
 import { commandToUrlSegment } from '~/utils/moveUtils'
+import { generateMetaTags } from '~/utils/seoUtils'
 import { getSheetService } from '~/utils/sheetServiceUtils.server'
 
 export const loader = async ({ params }: DataFunctionArgs) => {
@@ -53,19 +54,13 @@ export const meta: MetaFunction = ({ data, params, matches }) => {
   const title = `${characterTitle} Tekken 8 Anti strart | TekkenDocs`
   const description = `An overview of the most important information for for how to beat ${characterTitle} in Tekken 8. See the most important moves to punish, which side to to side step, strings to duck and much more`
 
-  return [
-    { title },
-    { description },
-    { property: 'og:title', content: title },
-    { property: 'description', content: description },
-    { property: 'og:description', content: description },
-    { property: 'og:image', content: `/t8/avatars/${characterId}-512.png` },
-    {
-      tagName: 'link',
-      rel: 'canonical',
-      href: `https://tekkendocs.com/t8/${characterId}/antistrat`,
-    },
-  ]
+  return generateMetaTags({
+    title,
+    description,
+    matches,
+    image: { url: `/t8/avatars/${characterId}-512.png` },
+    url: `/t8/${characterId}/antistrat`,
+  })
 }
 
 export default function Index() {
