@@ -3,6 +3,7 @@ import { Heading, Link as RadixLink, Table } from '@radix-ui/themes'
 import { type DataFunctionArgs, json, type MetaFunction } from '@remix-run/node'
 import { Link, NavLink, useLoaderData } from '@remix-run/react'
 import { ContentContainer } from '~/components/ContentContainer'
+import { ResourcesTable } from '~/components/ResourcesTable'
 import { hasHeaderMap } from '~/constants/hasHeaderMap'
 import { tableIdToDisplayName } from '~/constants/tableIdToDisplayName'
 import { getSheet } from '~/services/googleSheetService.server'
@@ -134,6 +135,15 @@ export default function Index() {
           const columnNums = (table.headers || table.rows[0]).map(
             (_, index) => index,
           )
+          if (table.name === 'resources_external') {
+            return (
+              <ResourcesTable
+                key={table.name}
+                rows={table.rows}
+                headers={table.headers as string[]}
+              />
+            )
+          }
           return (
             <section key={table.name} className="mt-8">
               <ContentContainer>

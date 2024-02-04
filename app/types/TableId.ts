@@ -12,3 +12,4 @@ export type TableId =
   | 'combos_ender'
   | 'combos_wall'
   | 'videos_match'
+  | 'resources_external'
