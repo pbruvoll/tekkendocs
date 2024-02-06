@@ -6,7 +6,7 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 1,2,1;h,h,h;5,10,17;,i26~27;-3~-2;+2~+3;;"
 * Combo from 2nd CH with 4f delay
 * Input can be delayed 6f"
-1,2,1,1+2;h,h,h,h,h,h;7,10,6,6,6,6;,i25 i32 i39;-19;+34a (-24);;"
+1,2,1,1+2;h,h,h,h,h,h;5,10,17,6,6,6;,i25 i32 i39;-19;+34a (-24);;"
 * Balcony Break
 * Weapon
 * Jail from 3rd attack
@@ -33,7 +33,7 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 1,4;h,h;5,17;,i17~18;-4~-3;+1~+2;+50a;"
 * Combo from 1st hit
 * Move can be delayed 2f"
-1,4,1;h,h,m;7,17,21;,i25~26;-11~-10;+15g~+16g;+67a (+47a);Balcony Break
+1,4,1;h,h,m;5,17,21;,i25~26;-11~-10;+15g~+16g;+67a (+47a);Balcony Break
 2;h;10;i10;+1;+7;;
 2+3;m;12;i16;+1;+2c;;"
 * Heat Burst
@@ -58,8 +58,8 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * Chip damage on block
 * Can recover in r38 FC with D"
 3,3;h,h;14,4;,i17;-14;-3;;Jail from 1st attack
-3,3,3;h,l,h;14,10,6;,i17;-14;-3;;Jail from 1st attack
-3,3,3,4;h,l,h,h;14,10,6,20;,i24;-6;+20a (+11);;"
+3,3,3;h,h,h;14,4,6;,i17;-14;-3;;Jail from 1st attack
+3,3,3,4;h,h,h,h;14,4,6,20;,i24;-6;+20a (+11);;"
 * Balcony Break
 * Combo from 3rd CH with 6f delay
 * Input can be delayed 10f"
@@ -492,12 +492,12 @@ WS.4,2;m,m;15,22;,i19;-9;+36a;;"
 * Side roll takes 42? frames
 * Chip damage on block
 * Can recover in r38 FC with D"
+WS.4,3;m,h;15,24;,i25;-10;+14a (+5);;"
+* Balcony Break
+* Combo from 1st CH"
 WS.4,1+2;m,h,h,h;15,6,6,6;,i28 i35 i42;-9;+34a (-24);;"
 * Balcony Break
 * Combo from 2nd hit
 * Combo from 1st CH
 * Chip damage on block
 * Power up during Heat"
-WS.4,3;m,h;15,24;,i25;-10;+14a (+5);;"
-* Balcony Break
-* Combo from 1st CH"

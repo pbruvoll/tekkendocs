@@ -1,1 +1,352 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes
+1;h;5;i10;+1;+8;;
+1+2;m;17;i16~17;-12;+4;+24a;
+1,2;h,h;5,9;i12;-3;+8;;
+1,2,3;h,h,h;5,9,12;i20;0;+9;;"
+* Cancel SCR transition by holding B (becomes -9/0)
+* Can be delayed
+"
+1+2+3+4;;;;;;;"
+* Can't block for 5 seconds
+* CH state for 5 seconds"
+1+2,4;m,m;17,10;i24~25;-10;+1;+6;
+1+2,4,4;m,m,m;17,10,12;i30~31;-11;+19d;;"
+* Can pick up from the ground with db+3 for a juggle
+"
+1+3;t;35;i12~14;;;;Throw break 1 or 2
+1,3;h,h;5,14;i17~18;-2;+7;;"
+* Cancel SCR transition by holding B (becomes -8/+1)
+"
+1,4;h,m;5,17;i19;-5;+2;;
+2;h;8;i10;-7;-1;;
+2,1;h,m;8,9;i23~25;-6;+2;;
+2,1,3;h,m,l;8,9,11;i32;-17;+4d;;"
+* Can be cancelled into MNT before hit by holding D (becomes -9/-17)
+* Can be delayed
+"
+2,1;h,m;8,12;i19-20;-9;+2;+7;
+2,1,1+2;h,m,m,m,m;8,12,7,11,14;i25~26 i10~11 i4~5;-9;+19d(-16);;
+2+3;m;;;+1;+2c;;"
+* Heat Burst
+* Cancel with b,b
+* 3 chip damage on block
+* Partially uses Heat
+* Unparryable
+* Ignores regular power crush armor"
+2+4;t;35;i12~14;;;;"
+* Throw break 1 or 2
+* Transitions to MNT"
+3;h;17;i13;0;+9;;"
+* Cancel SCR transition by holding B (becomes -8/+1)
+"
+3+4;;;;;;;"
+"
+4;h;19;i14~15;-6;-1;+19a(+10);
+b+1;m;;;;;;"
+"
+b+1:1+2;m;;;;;;"
+* Hit Throw
+*Azazel's Power
+* Zafina receives recoverable damage
+* Switches sides
+"
+b+2;h;;;;;;"
+* Homing
+"
+b+2+3;m!;;;;;;"
+"
+b+3;m;;;;;;"
+"
+b+4;m;;;;;;"
+"
+b+4,4;m,m;;;;;;"
+* Balcony Break ?
+"
+Back Throw;t;;;;+1;;"
+* Unbreakable"
+d+1;m;;;;;;"
+"
+d+1,1;m,m;;;;;;"
+* Delayable"
+d+1+2;;;;;;;"
+"
+d+2;m;;;;;;"
+"
+d+2,4;m,m;;;;;;"
+* Can hold D to transition to TRT instead of MNT
+"
+d+2,4,3;m,m,m;;;;;;"
+"
+d+3;l;;;-15;;;"
+* Evasive (can go under some mids)
+* Hold D to transition to MNT (becomes -13/+3)
+"
+d+3+4;;;;;;;"
+"
+d+4;l;;;;;;"
+"
+d+4,3;l,h;;;;;;"
+* Delayable
+"
+db+1;sl;;;;;;"
+"
+db+1+2;l;;;;;;"
+"
+db+1+2,1+2;lm;;;;;;"
+* Tornado
+"
+db+2;m;;;;;;"
+"
+db+3;l;;;;;;"
+* Cancel SCR transition by holding B (becomes -X/Y)
+"
+db+4;l;;;;;;"
+* Hold D to transition to MNT (becomes -X/Y)
+"
+db+4,3;l,m;;;;;;"
+"
+df+1;m;10;i13~14;-5;+7;;
+df+1,2;m,m;10,16;i15~16;-13;+3;;
+df+1,2,1;m,m,m;10,16,20;i25;-13;+23d(13);;"
+* Can be delayed
+"
+df+1,4;mh;1018;i19~20;-6;+12;;"
+"
+df+2;m;13;i16~17;-12;+32a(22);;
+df+3;m;15;i15~16;-5;+4;;"
+* Cancel SCR transition by holding B (becomes -10/-1)
+"
+df+3,4;m,h;15,17;i23~24;-6;+22d;+55a;
+df+3,d+4;m,l;15,15;i25~26;-14;+1;;
+df+4;m;14;i14;-13;+3;;
+df+4,1;m,m;14,22;i31;-12;+3d;;"
+* Heat Engager
+
+* '''Heat Dash +5 +17d'''
+
+
+* Balcony Break
+* Spike
+* Azazel's Power
+* Zafina receives recoverable health damage
+* Deals 8 chip damage on block
+* Can be cancelled before hit by holding D (recovers crouching -18/-2)
+"
+df+4,2;m,m;14,20;i27~29;-13;+24a(+9);;* Tornado
+f+1+2;m,m;16,22;i19~20 i13~14;-9;+5d(-5);;"
+* Heat Engager
+
+* '''Heat Dash +5 +36a(+26)'''
+
+
+* Balcony Break
+* Azazel's Power
+* Zafina receives recoverable health damage
+* Second hit only comes out on hit or block
+"
+f+2;,m;17;i19;-18;-9;+52a;
+f+2,3;,m,h;17,12;i19;0;+9;;"
+* Cancel SCR transition by holding B (becomes -9/0)
+* Can be delayed
+"
+f+2,3,4;,m,h,m;17,12,25;i28~29;-18;+18d(8);;
+f+3;h;28;i21;+3;+68a(48);;"
+* Balcony Break
+* Cancel SCR transition by holding B (becomes -1/+64a)
+"
+f+4;h;13;i14~15;-6;+22d;;
+FC.d+1;sl;5;i10;-5;+6;;"
+* Alternate inputs:
+** FC.db+1
+** FC.df+1
+* Transition to r24 with f
+* Transition input can be delayed 16f"
+FC.d+2;sl;8;i11;-4;+5;;"
+* Alternate inputs:
+** FC.db+2
+** FC.df+2"
+FC.d+3;l;10;i16;-17;-6;;"
+* Alternate input:
+** FC.db+3"
+FC.d+4;l;6;i12;-15;-4;;"
+* Alternate inputs:
+** FC.db+4
+** FC.df+4"
+FC.df+3;l;15;i23~24;-26;+14d;;"
+* On hit or whiff, hold D to transition to MNT (becomes +13d)"
+f,f+2;h;;;;;;"
+* Homing
+* Balcony Break
+"
+f,f+3;m;;;;;;"
+* Cancel SCR transition by holding B (becomes -X/Y)
+"
+f,f+3,1;m,m;;;;;;"
+"
+f,f+3+4;m,m;;;;;;"
+* Hold D to transition to MNT
+"
+f,f+4;m;;;;;;"
+* Homing
+"
+f,f,F+1+2;h;;;;;;"
+"
+f,f,F+3;m;;;;;;"
+* Balcony Break
+* Cancel SCR transition by holding B (becomes -X/Y)
+"
+H.2+3;h,sm;15,10,15,15,15,18;i12~13 i47~53 i1~7 i1~7 i1~6 i1~2;+3;knd;;"
+* Heat Smash
+* Balcony Break
+* Hit throw on the first hit
+** Damage 15,4,5,5,4,18 (total 51)
+* Unparryable
+* Ignores regular power crush armor
+* Jails
+* Ends Heat"
+Left Throw;t;;;;;;Throw break 1
+MNT.1;m;;;;;;"
+"
+MNT.1+2;m;;;;;;"
+"
+MNT.1,3;m,h;;;;;;"
+* Cancel SCR transition by holding B (becomes -X/Y)
+"
+MNT.2;m;;;;;;"
+"
+MNT.2,1;m,m;;;;;;"
+"
+MNT.2,1,4;m,m,m;;;;;;"
+"
+MNT.2+3;;;;;;;"
+"
+MNT.3;l;;;;;;"
+"
+MNT.3,1;l,m;;;;;;"
+"
+MNT.4;l;;;;;;"
+"
+MNT.4,3;l,m;;;;;;"
+"
+MNT.d+1;l;;;;;;"
+"
+MNT.d+1,4;l,m;;;;;;"
+"
+MNT.d+4;l;;;;;;"
+"
+MNT.df+1;m;;;;;;"
+"
+MNT.df+2;m;;;;;;"
+"
+MNT.df+3;m;;;-17;;;"
+"
+MNT.df+4;m;;;;;;"
+* Homing
+"
+MNT.uf+3;m;;;;;;"
+"
+R.df+1+2;m;;;;;;"
+* Rage Art
+* Damage increases with lower health
+* Erases opponent's recoverable health on hit"
+Right Throw;t;;;;;;Throw break 2
+SCR.1;h;;;;;;"
+"
+SCR.1+2;;;;+6;;;"
+* Hold D to transition to TRT
+"
+SCR.1,4;h,m;;;;;;"
+"
+SCR.2;m;;;;;;"
+"
+SCR.2,1;m,m;;;;;;"
+* Azazel's Power
+"
+SCR.2,2;m,m;;;;;;"
+"
+SCR.3;m;;;;;;"
+"
+SCR.3,3;m,h;;;;;;"
+"
+SCR.3+4;m,m;;;-12;;;"
+"
+SCR.4;m;;;-18;;;"
+"
+SCR.b+1+2;l;;;;+3;;"
+* Very evasive (can dodge below some mids)
+"
+SCR.d+3;l;;;;;;"
+"
+SCR.d+3,3;lh;;;;;;"
+* Can hold B to exit SCR
+"
+SCR.d+3+4;;;;;;;"
+"
+SCR.d+4;l;;;;;;"
+* Can hold D to transition to MNT
+"
+SCR.db;;;19;;;;"
+"
+SCR.df+3;;;;;;;"
+* Homing
+"
+SCR.df+3,3;;;;;;;"
+* Homing
+"
+SCR.df+4;l;;;-14;;;"
+* Can transition to MNT by holding D
+"
+SS.1+2;m;;;;;;
+TRT.1;l;;;;;;"
+"
+TRT.1+2;m,m;;;;;;"
+"
+TRT.2;l;;;;;;"
+"
+TRT.3;m;;;;;;"
+* Can hold D to remain in TRT
+"
+TRT.4;m;;;;;;"
+* Can hold D to remain in TRT
+"
+TRT.4,3;m,m;;;;;;"
+"
+TRT.d+1+2;l;;;;;;"
+"
+TRT.db;;;;;;;"
+"
+TRT.df+1;m;;;;;;"
+"
+uf+1;h;;;;+4;;"
+* Alternate inputs:
+** ub+1
+** u+1
+"
+uf+1+2;t;40;;;;;"
+* Throw break 1+2"
+uf+3;m;;;;;;"
+* Alternate inputs:
+** ub+3
+** u+3
+"
+uf+4;m;;;;;;"
+* Alternate inputs:
+** ub+4
+** u+4
+"
+wr4;l;;;;;;"
+* Hold D to transition to TRT (becomes -X/Y)
+** On block, transitions to BT TRT (usually a disadvantageous position)
+"
+ws1;m;9;i15;-10;+1;;
+ws1,2;mm;9,18;i20~21;-13;+36a(26);;
+ws2;m;20;i18~19;-14;+28a(18);;"
+* Tornado
+* Can transition to MNT by holding D (becomes -40/+2)
+"
+ws3;m;20;i12;0;+9;;"
+* Cancel SCR transition by holding B (becomes -8/+1)
+"
+ws4;m;14;i11;-7;+4;;
+SCR.df+1;m,m;;;;;;"
+"

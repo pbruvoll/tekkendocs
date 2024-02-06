@@ -1,18 +1,18 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes
 1;h;5;i10;+1;+8;;
-1,1;h,m;7,21;i25~26;-11;+2;+61a;"
+1,1;h,m;5,21;i25~26;-11;+2;+61a;"
 * Move can be delayed"
 1+2;m;20;i21~22;-13;+8;;
-1,2;h,h;7,9;i10;-3;+8;;"
+1,2;h,h;5,9;i10;-3;+8;;"
 * Jail from 1st attack
 * Move can be delayed"
-1,2,2;h,h,h;7,9,12;i17;-13;+3;;"
+1,2,2;h,h,h;5,9,12;i17;-13;+3;;"
 * Combo from 1st hit"
 1+2+3+4;;;;;;;
 1+3;h;35;;;-3;;"
 * Throw break 1 or 2
 "
-1,3;h,h;7,19;i16~17;-5;+8;;"
+1,3;h,h;5,19;i16~17;-5;+8;;"
 * Combo from 1st hit"
 1+3+4;;;;;;;
 2;h;8;i10;-3;+5;;
@@ -26,7 +26,7 @@ Heat Burst
 2,4;h,m;8,15;i17;-12;-1;;"
 * Jail from 1st attack
 "
-2,4,1;h,m,m;8,10,25;i24;-12;+24d (+14);;"
+2,4,1;h,m,m;8,15,25;i24;-12;+24d (+14);;"
 Balcony Break
 * Combo from 2nd CH
 * Move can be delayed
@@ -145,8 +145,8 @@ Tornado
 Homing
 "
 df+1;m;11;i14;0;+6;+36g;
-df2;m;15;i20~21;-8;;;
-df2,2;m,m;15,21;i13~14;-6;+14a (+4);;"
+df+2;m;15;i20~21;-8;;;
+df+2,2;m,m;15,21;i13~14;-6;+14a (+4);;"
 Balcony Break
 "
 df+3;m;21;i18~19;-7;+78a (+62);;"
@@ -198,12 +198,12 @@ Spike
 f+4,4;h,l;19,11;i33~33;-31;+20d (+13);;"
 * Combo from 1st hit
 "
-FC DF+1;L;19;i21~22;-13c;-2;+13;
-FC DF+2;m;21;i18;-14;+55a;;
-FC DF4;L;10;i19~20;-8c;+3b;;"
+FC.df+1;L;19;i21~22;-13c;-2;+13;
+FC.df+2;m;21;i18;-14;+55a;;
+FC.df+4;L;10;i19~20;-8c;+3b;;"
 * Can be input with D,df+4
 "
-FC DF4,1;L,h;10,15;i20~21;-2;+6;;"
+FC.df+4,1;L,h;10,15;i20~21;-2;+6;;"
 * Combo from 1st attack
 "
 f,F+1+2;m;25;i24~25;-9;+16d;;"
@@ -238,6 +238,10 @@ Heat Smash
 "
 H.3+4;m;30;i30~31;+12c;+19d;;"
 * Consumes Heat
+"
+H.3+4;ub(m);30;i30~31;+12c g;+19d;;"
+* Partially consumes remaining Heat
+* Creates an unblockable shockwave along the ground that is +10g on hit and forces the opponent to crouch. The shockwave comes out even if the kick itself whiffs, or is parried by certain parries like Jin's or Reina's. It can be absorbed by a Power Crush.
 "
 H.b+1;h;20;i10~11;-8;+36d (+28);;"
 * Consumes Heat
