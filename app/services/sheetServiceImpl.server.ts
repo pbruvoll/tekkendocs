@@ -50,7 +50,8 @@ export class SheetServiceImpl implements SheetService {
     const key = [game, characterId, dataType].join('|_|')
     const spreadSheetDocumentId =
       dataType === 'antiStrat'
-        ? '1-NDvWCmBV_PyRIq1p1o8KZrp_Y8ekbbbkDW5vskvsIc'
+        ? //? '1-NDvWCmBV_PyRIq1p1o8KZrp_Y8ekbbbkDW5vskvsIc' // copy
+          '1N6sNF3bAPoAYDxeTO-p0bn5hJatMeaDMJsCZSVK_dfE' // mode
         : gameToCharacterDocname[game]
     const sheetName = characterId + characterDataTypeToSuffix[dataType]
 
