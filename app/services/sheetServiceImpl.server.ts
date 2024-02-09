@@ -38,7 +38,7 @@ const antiStratHeaders = [
   'Plus on block',
   'Low minus',
   'Low hit advantage',
-  'Common setup / oki',
+  'Common setups / oki',
 ]
 
 export class SheetServiceImpl implements SheetService {

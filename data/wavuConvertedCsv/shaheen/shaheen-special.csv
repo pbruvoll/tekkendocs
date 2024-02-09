@@ -1,1 +1,249 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes
+1;h;5;i10;;;;
+1,2;h,h;5,9;,i12;;+8;;
+1,2,2;h,h,m;5,9,17;,i20~21;;+3;;
+1,2,3;h,h,h;5,9,18;,i20;;+3;;"
+* Transition to SNK with input DF
+"
+1+2+3+4;sp;;;;;;
+1,2,4;h,h,m;5,9,20;,i24~26;;+33 (+18);;"
+* Tornado
+"
+1+3;th(h);35;i12~14;;;;"
+* Throw escape: 1 or 2
+* Opponent status on hit: FUFA
+"
+2;h;10;i10;;;;
+2,1;h,m;10,7;,i17~18;;+2;;
+2+3;m;12 (12);i16;;+2c;;"
+* Heat Burst
+* Cancel to r45 with b,b
+"
+2,3;h,h;10,18;,i20;;+3;;"
+* Transition to SNK with input DF
+"
+2+4;th(h);35;i12~14;;;;"
+* Spike
+* Throw escape: 1 or 2
+* Opponent status on hit: FUFA
+* Side switch on hit
+"
+3;h;18;i14;;+3;;"
+* Transition to SNK with input DF
+"
+4;h;16;i13;;;;
+4,1;h,h;16,14;,i18;;+5;;
+4,3;h,h;16,21;,i31;;+26 (+17);;"
+* Balcony Break
+"
+4,4;h,m;16,25;,i24~25;;+20;;
+b+1;m;20;i19~20;;;;"
+* Heat Engager
+
+* Cancel into FC with input b+1,D
+"
+b+1;m;20;i19~20;;;;"
+* Heat Engager
+
+"
+b+1+3;sp;15 (15);;;;;"
+* Alternate input: b+2+4
+* Punch parry
+* Hit throw on successful parry
+* Side switch on parry
+"
+b+2;m(th);12,16;i15~16;;;;"
+* Transition to hit throw which leaves opponent FUFA
+"
+b+3;m;17;i19;;+3c;;
+b+3+4;h;25;i16;;;;"
+* Balcony Break
+* Heat Engager
+
+"
+b+4;m;23;i17;;+4;;
+Back throw;th(h);50;i12~14;;;;"
+* Throw escape: none
+* Opponent status on hit: FUFA
+* Side switch on hit
+"
+BT.2;m;20;i14~15;;+42;;
+d+2;m;15;i18~19;;+8;;
+d+3;l;12;i16~17;;+0;;"
+* Transition to SNK with input d+3,DF
+"
+d+4;l;13;i19;;+1;;
+db+1+2;ub(m);40;i64~65;+42 (+11);+42 (+11);;
+db+2;m;11;i14;;;;"
+* Transition to SNK with input db+2,DF
+"
+db+2,1;m,h;11,24;,i20;;;;"
+* Balcony Break
+* Heat Engager
+
+"
+db+3;l;12;i20~21;;;;
+db+3,4;l,h;12,20;,i18;;+68 (+52);;"
+* Tornado
+"
+db+4;h;23;i20;;+28 (+18);;"
+* Tornado
+"
+df+1;m;;i13;;;;
+df+2;m;13;i15~16;;+34 (+24);;
+df+3;m;20;i17;;+9;;"
+* Homing
+"
+df+3+4;sp;;;;;;"
+* Transition to FC with SNK.db
+"
+df+4;m;13;i14;;;;
+df+4,1;m,m;13,10;,i22~23;;;;"
+* Transition to SNK with DF
+"
+df+4,1,3;m,m,m;13,10,28;,i27~28;;;;"
+* Balcony Break
+"
+df+4,3;m,h;13,23;,i23~24;;+23 (+14);;"
+* Balcony Break
+"
+D*,u+2;h;30;i18~19;;+28 (+2);;"
+* Balcony Break
+* Tornado
+* Alternate input: SNK.D*,u+2
+* chip damage on block
+* power up during Heat
+"
+f+2;h;10;i12;;;;
+f+2,3;h,h;10,23;,i18;;+5;;"
+* Tornado
+"
+f+2,4;h,l;10,13;,i22~23;;;;"
+* Transition to SNK with input DF
+"
+f+2,4,4;h,l,h;10,13,21;,i26~27;;+10;;"
+* Balcony Break
+"
+f+3;m;17;i20~21;;;;
+f+3+4;m;20;i22~23;;+11c;;"
+* chip damage on block
+* Transition to SNK
+"
+f+4;h;21;i15~16;;+25;;"
+* Balcony Break
+* Homing
+* chip damage on block
+"
+f,b+2;h;42;i14;;;;"
+* Hit throw which leaves opponent FUFA
+* Quick input properties during Heat
+* Tornado
+"
+f:b+2;h;42;i13;;;;"
+* Hit throw which leaves opponent FUFA
+* chip damage on block
+* partially restores remaining Heat time
+* Tornado
+"
+FC.df+2;m;21;i18~19;;+17 (+8);;"
+* Balcony Break
+* During Heat, partially restore remaining Heat time
+"
+FC.df+4;l;16;i16~17;;;;"
+* Transition to SNK with input FC.df+4,DF
+"
+FC.df+4,1;l,h;16,20;,i26;;+24 (+15);;"
+* Balcony Break
+"
+FC.df,d,DF;sp;;;;;;
+FC.df,d,DF+3;l;20;i16~20;;+7;;"
+* Transition to SNK on hit
+"
+f,F+3;m;23;i17;;+63 (+48);;"
+* Alternate input: f,f,F+3
+* Hit throw which side switches
+* Tornado
+"
+f,f,F+2;m;30;i17~18;;+21 (+11);;"
+* Balcony Break
+* chip damage on block
+* during Heat, partially restores remaining Heat time
+"
+H.2+3;m;50;i16~17;;+27 (-8);;"
+* Spike
+* Heat Smash
+* Transition to SNK
+"
+H.D*,u+2;h;35;i18~19;;+63 (+47);;"
+* Balcony Break
+* Tornado
+"
+H.SNK.2+3;l;40;i20~21;;+24 (-14);;"
+* Balcony Break
+* Heat Smash
+"
+Left throw;th(h);40;i12~14;;;;"
+* Throw escape: 1
+* Opponent status on hit: FUFT
+* Side switch on hit
+"
+R.df+1+2;m;55;i20;;;;"
+* [[:Template:RageArt]]
+* erases opponent's recoverable health on hit
+"
+Right throw;th(h);40;i12~14;;;;"
+* Throw escape: 2
+* Opponent status on hit: FUFA
+"
+SNK.1;h;10;i12;;+5;;
+SNK.1+2;m;21;i19;;;;"
+* Heat Engager
+
+* chip damage on block
+"
+SNK.2;m;17;i15~16;;+8;;
+SNK.3;m;23;i20;;+63 (+48);;"
+* Tornado
+* Hit throw which side switches
+"
+SNK.4;l;17;i20~22;;+3c;;
+SNK.df+1;m;12;i15~16;;;;
+SNK.df+1,2;m,h;12,40;,i20;;;;"
+* Tornado
+* Hit throw which leaves opponent in FUFA
+"
+SNK.df+1,4;m,m;12,28;,i27~28;;+19 (+9);;"
+* Balcony Break
+"
+SS.2;l;17;i20;;+0c;;
+uf+1;m;25;i24~25;;;;"
+* Balcony Break
+* Heat Engager
+
+* chip damage on block
+* during Heat, partially restore remaining Heat time
+* Cancel to FC with input uf+1,D
+"
+uf+1+2;th(h);40;i12~14;;;;"
+* Spike
+* Throw escape: 1+2
+* Opponent status on hit: FUFA
+* Side switch on hit
+"
+uf+3;m;22;i25~26;;+24;;"
+* Alternate input: ub+3 or u+3
+"
+uf+4;m;13;i15~17;;+33 (+23);;"
+* Alternate input: ub+4 or u+4
+"
+uf,n,4;m;20;i23~25;;+32 (+22);;
+ws1;m;17;i14;;+4;;
+ws2;m;21;i16;;+57;;
+ws3;m;9;i13;;;;"
+* Transition to SNK with input ws3,DF
+"
+ws3,3;m,m;9,25;,i17;;+11 (+2);;"
+* Balcony Break
+* Tornado
+"
+ws4;m;16;i11~12;;+5;;

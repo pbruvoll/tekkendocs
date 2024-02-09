@@ -70,20 +70,20 @@ d+1;sm;5;i10;-5;+6;;"
 * Returns to standing when input F
 "
 d+1+2;sp;;;;;;"
-* Alternate input: db+1+2
-"
-d+1+2;sp;;;;;;"
 * Transition to SEN with f+3
 * Transition to WGS with DF
 "
-d+2;m;17;i15;;+3c;;
-d+3;sp;;;;;;"
-* Alternate input: db+3
+d+1+2;sp;;;;;;"
+* Alternate input: db+1+2
 "
+d+2;m;17;i15;;+3c;;
 d+3;sp;;;;;;"
 * Partially drains heat meter when in heat
 * Can transition to SEN with f+3
 * Can transition to WGS with DF
+"
+d+3;sp;;;;;;"
+* Alternate input: db+3
 "
 d+4;l;7;i12;-13;-2;;
 db+2;l,l;10,12;i20~21,i9~10;-16;-3;;
@@ -189,21 +189,9 @@ H.2+3;m;50;i21;;Th;Th;"
 * Heat Smash
 * Alternate input: H.R1
 "
-H.df+1,2,F;m,m;8,20;i13;+5;+17;;"
-"
-H.f,F+3,F;m;20;i20~22;+5;+17;+67 (+50);"
-"
-H.SEN.3,F;h;22;i12~13;+5;+17;Launch;"
-* Homing
-* Deals chip damage on block
-"
-H.UNS.4,F;m;30;i18~19;+5;+17;+62 (+42);"
-"
 H.WRA.2+3;l;40;i18~19;;Th;Th;"
 * Heat Smash
 * Alternate input: H.WRA.R1
-"
-H.WRA.2,F;m;30;i15~16;+5;+17;Launch;"
 "
 OTG.d+4;l;11;i19;;;;
 OTG.d+4,1;l,l;11,16;,i20~21;;-15 (-23);;Just Input

@@ -47,11 +47,12 @@ b+1,2;h,m;10,20;;-14;KND;KND;"
 * Combo from 1st hit
 * Can be delayed 14F
 * Combo can be delayed 10F from hit
+* Wallsplat
 "
 b+1+4;ub(m);60;i63;LNC;LNC;LNC;
 b+2;m;12;i14;-8;+4;;
-b+2,2;m,m;12,14;;;;;
-b+2,2,1+2;m,m,h;12,14,20;;;KND;;"
+b+2,2;m,m;12,14;i25;-10;+1;+1;
+b+2,2,1+2;m,m,h;12,14,20;i28-32;-8;KND;;"
 * Chip damage when guarded
 "
 b+2,4;m,h;12,12;;-3;+8;;"
@@ -112,19 +113,21 @@ df+1,df+2;m,m;11,22;;;+?c;;"
 df+2;m;22;i14;-12;+5;KND;"
 * Homing
 * Crumple stun +13F after CH"
-df+3;m;13;i18;-7;+9;;
-df+3,2;m,m;13,15;;-11;+5;;"
+df+3;m;13;i18;-7;+9;+9;Knee
+df+3,2;m,m;13,15;;-11;+5;+5;"
 * Combo from 1st hit
 * Can be delayed 10F
 * Combo can be delayed 10F from hit
 "
 df+3,2,1;m,m,m;13,15,21;;-18;KND;+24;"
 * Tornado
+* Wall Splat
 * Combo from 2nd CH
 * Can be delayed 16F
 "
-df+3,2,1*;m,m,m;13,15,25;;;;;"
+df+3,2,1*;m,m,m;13,15,25;i46;+11(+18w);+10(+1);;"
 * Tornado
+* Wallsplat
 * Chip damage when guarded
 "
 df+3+4;mh;7,9;i18;;;;
@@ -211,6 +214,10 @@ f,n,d,DF;sp;;;;;;"
 * Cannot be buffered
 * Cost 3F
 "
+f,n,d,df#2;h;23;i11;+5;LNC;LNC;"
+* Chip damage when guarded
+* Total 36F on block or hit
+"
 f,n,d,df+1;m;23;i20;-16;LNC;LNC;"
 * Tornado
 * Meaty 1F in actuality
@@ -220,10 +227,6 @@ f,n,d,df+1+2;m;25;i24;;KND;;"
 * Chip damage when guarded
 "
 f,n,d,df+2;h;20;i11;-10;LNC;LNC;Becomes Electric Wind God Fist during Heat (partially uses remaining Heat Time)
-f,n,d,df:2;h;23;i11;+5;LNC;LNC;"
-* Chip damage when guarded
-* Total 36F on block or hit
-"
 f,n,d,df+3;h;30;i20~29;-9;KND;KND;
 f,n,d,df+4;l;15;i16;-23;-3c;KND;"
 * Disable 2nd from 1st block
@@ -294,8 +297,7 @@ uf+4,4,4;m,l,l;16,12,10;;-23;KND;KND;
 uf+4,4,4,4;m,l,l,m;16,12,10,20;;-17;KND;KND;
 uf,n,4;m;20;i23;-11;LNC;LNC;
 ws1;m;10;i13;-5;+5;;
-ws1+2;m;25;i13;-9;+11g (+23w);;"Wall Crush {{{1}}}
-"
+ws1+2;m;25;i13;-9;+8;+24a;
 ws1,2;m,m;10,12;;-12;LNC;LNC;"
 * Combo from 1st hit
 * Tornado

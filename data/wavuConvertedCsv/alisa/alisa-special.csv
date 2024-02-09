@@ -1,1 +1,593 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes
+1;h;5;i10;;;;"
+"
+1,1;h,h;5,18 (0);,i21;;+5;;"
+* Transition to DES with 1,1,1+2
+"
+1+2;m;22;i19~20;;;;"
+* Balcony Break
+* Heat Engager
+
+* chip damage on block
+"
+1,2;h,h;5,10 (0);,i12;;+8;;"
+"
+1,2,2;h,h,h;5,10 (0),20;,i20~35;;+21 (+6);;"
+* Tornado
+* chip damage on block
+"
+1+2+3;sp;;;;;;"
+"
+1+2+3+4;sp;;;;;;"
+* Transition to DES with input 1+2+3+4,1+2
+* Transition to charged state
+"
+1+2+4;sp;;;;;;"
+"
+1,2,d+2;h,h,h;5,10 (0),17;,i27~28;;+2;;"
+* Can be delayed
+"
+1+3;th(h);35;i12~14;;;;"
+* Throw break: 1 or 2
+* Opponent recovery on hit: FDFT
+"
+2;h;10;i12;;;;"
+"
+2,2;h,h;10,22;,i20~35;;+15 (+5);;"
+* Balcony Break
+"
+2+3;m;12 (12);i16;+1;+2c;;"
+* Heat Burst
+* Cancel to r45 with b,b
+"
+2,3;h,m;10,8;,i22~23;;;;"
+"
+2,3,3;h,m,m;10,8,25;,i20~22;;+16 (-7);;"
+* Balcony Break
+"
+2,3,4;h,m,l;10,8,20;,i42~45;;+13;;"
+"
+2+4;th(h);35;i12~14;;;;"
+* Throw break: 1 or 2
+* Spike
+* Opponent recovery on hit: FDFT
+* Switches sides
+* Transition to DES with input 2+4,1+2
+"
+3;m;10;i13~14;;;;"
+"
+3,2;m,h;10,20;i13,i26~27;-2;+17;+17;"
+* Balcony Break 
+* Heat Engager
+
+* Homing
+"
+3,2;m,h;10,20;,i26~27;;;;"
+* Balcony Break
+* Heat Engager
+
+* Homing
+* chip damage on block
+* Transition to DES (does not transition when using Heat Dash)
+"
+3,f+2;m,m;10,20;;;+5;;"
+* chip damage on block
+* Transition to DES
+"
+4;h;24;i13~14;;+14g;;"
+* Balcony Break
+* Homing
+"
+b+1;m;15;i15~16;;+8;;"
+"
+b+1,1+2;m,sl,m;15,1,30;,i25~40,i26~28;;+71;;"
+* Tornado
+"
+b+1+2;m;25;i19~20;;+8;;"
+* Balcony Break
+* Alternate input: DES.b+1+2
+* chip damage on block
+"
+b+1+3;sp;;;;;;"
+* Alternate input: b+2+4
+"
+b+2;m;12;i18;;;;"
+"
+b+2,1;m,m;12,17;,i25~26;;+3c;;"
+"
+b+2+3;ub (m);50;i75~76;+44;+44;;"
+* Balcony Break
+"
+b+2,3;m,m;12,22;,i23~24;;+9 (-8);;"
+* Balcony Break
+* Tornado
+"
+b+2,4;m,h;12,20;,i16~17;;+12g;;"
+* Balcony Break
+"
+b+3;m;22;i20~22;;+5 (-4);;"
+* Balcony Break
+* Homing
+"
+b+3+4;m;22;i18~19;;;;"
+* Tornado
+"
+b+3+4,3+4;m,m;22,25;,i56~61;;+27 (-8);;"
+* Spike
+"
+b+4;m;17;i15~16;;;;"
+"
+b+4,3;m,m;17,20;,i29~30;;+6c;;"
+* Transition to DES with input b+4,3,1+2
+"
+b+4,4;m,m;17,17;,i25~27;;+9 (-1);;"
+* Transition to BOT with input b+4,4,3_4
+* Transition to DBT with input b+4,4,f+3_f+4
+* Tornado
+"
+Back throw;th(h);55;i12~14;;;;"
+* Throw break: none
+* Opponent recovery on hit: FDFA
+* Side switch
+* Spike
+"
+b,B+1+4;ub(h);50;i68;;+42 (-15);;"
+* Balcony Break
+"
+BKP.1;h;31;i11~13;;+27 (+1);;"
+* Balcony Break
+* chip damage on block
+"
+BKP.1+2;ub(h);20;i34~71;+58;+58;;"
+"
+BKP.2;h;34;i11~33;;+21 (+6);;"
+* Tornado
+* chip damage on block
+"
+BKP.3;m;30;i24~27;;+72;;"
+* Balcony Break
+"
+BKP.4;m;30;i19;;+32 (+22);;"
+* Tornado
+"
+BOT.1;m;12;i13~14;;;;"
+"
+BOT.1+2;ub(h);20;i27~28;+8;+8;;"
+* Balcony Break
+* Transition to DES
+"
+BOT.1,2;m,m;12,13;,i18~19;;;;"
+"
+BOT.1,2,1;m,m,m;12,13,7;,i20~21;;;;"
+"
+BOT.1,2,1,3+4;m,m,m,m;12,13,7,33;,i18;;+4 (-13);;"
+* Balcony Break
+* Transition to DES with input BOT.1,2,1,3+4,1+2
+"
+BOT.2;m;25;i16~17;;+6 (-4);;"
+* Balcony Break
+* Transition to DES with input BOT.2,1+2
+"
+BOT.3;l;17;i16~20;;+4c;;"
+"
+BOT.4;m;22;i17~19;;+68;;"
+"
+BOT.D;sp;;;;;;"
+* Alternate input: BOT.B
+* Transition to BKP
+"
+BT.4;m;20;i16~17;;+19 (+2);;"
+* Balcony Break
+"
+CH f,F+1+2;m;28;i17~18;;+13;;"
+"
+d+1+2;sp;;;;;;"
+* Cancel DES with DES.d+1+2 or DES.DB
+* Transition to DBT with input DES.f+3_f+4
+"
+d+1+2;sp;;;;;;"
+* Cancel DES with DES.d+1+2 or DES.DB
+"
+d+2;m;14;i24~26;;+2c;;"
+"
+d+2,4;m,m;14,24;,i18~21;;+28 (+13);;"
+* Transition to DES with input d+2,4,1+2
+"
+d+3;l;17;i23~32;;-1;;"
+* Transition to BKP
+"
+d+3+4;l;20;i27~i28;;+67 (+51);;"
+* Homing
+* Transition to DES with input d+3+4,1+2
+"
+d+4;l;15;i17~18;;-1;;"
+"
+d+4,1+2;l,h;15,20;,i20~21;;+11 (+2);;"
+* Balcony Break
+"
+db+1;sp;;;;;;"
+"
+db+2;m;10;i18~19;;-5;;"
+"
+db+2,2;m,m;10,10;,i19~20;;+5;;"
+* Transition to DES with input db+2,2,1+2
+"
+db+3;l;11;i16;;-2;;"
+"
+db+4;l;23;i24~25;;+9;;"
+"
+DBT.1;h;30;i24;;+11g;;"
+* Transition to DES
+* chip damage on block
+"
+DBT.1+2;m;35;i12;;+21 (+0);;"
+* Balcony Break
+* Transition to DES
+* chip damage on block
+"
+DBT.2;m;25;i16;;;;"
+* chip damage on block
+"
+DBT.2,1;mh;2513 (5);i26~28;;+18 (-12);;"
+* Spike
+* Transition to DES
+* chip damage on block
+"
+DBT.3;l;17;i6~20;;+4c;;"
+"
+DBT.4;m;22;i17~19;;+68;;"
+"
+DBT.f+1;m;49;i19~21;;+0;;"
+* chip damage on block
+* throw on front hit
+"
+DBT.f+2;l;16;i19~20;;;;"
+"
+DBT.f+2,2;l,m;16,14 (9);i35~37;;-6 (-13);;"
+* Balcony Break
+* chip damage on block
+"
+DES.1;m;35;i14;;+23;;"
+* Transition to DES
+* chip damage on block
+"
+DES.1+2;h;34;i16~18;;+15g;;"
+* Balcony Break
+* Homing
+* Transition to DES
+* chip damage on block
+"
+DES.2;m;15;i20;;;;"
+* Transition to DES
+* chip damage on block
+"
+DES.2,(on hit)1;m,ub;1514 (9);i33;;+85 (+69);;"
+* Tornado
+"
+DES.3;sp;;;;;;"
+* Alternate input: DES.4
+* Transition to DES
+"
+DES.b+2;m;17;i18~20;;;;"
+* chip damage on block
+"
+DES.b+2,1;m,m;17,33;,i20~21;;+5;;"
+* Transition to DES
+* chip damage on block
+"
+DES.b+3;sp;;;;;;"
+* Alternate input: DES.b+4 or DES.ub,b
+* Transition to DES
+"
+DES.b,b;sp;;;;;;"
+* Transition to DES
+"
+DES.BT.1;m;24;i19~22;;+25;;"
+* Alternate input: DES.BT.2
+* chip damage on block
+"
+DES.d+1;l;20;i21;;+4;;"
+* Transition to DES
+* chip damage on block
+"
+DES.d+2;l;26;i22~23;;+4c;;"
+* Homing
+* chip damage on block
+"
+DES.d+3;sp;0;;;;;"
+* Alternate input: DES.d+4 or DES.u+3 or DES.u+4
+* DES.d+3_4 goes to foreground, DES.u+3_4 goes to background
+* Transition to DES
+"
+DES.d+3,1;sp,m;0,25;,i20~21;;+14;;"
+* Balcony Break
+* Transition to DES
+* chip damage on block
+"
+DES.f+1;h;21;i11~13;;+9;;"
+* Transition to DES
+* chip damage on block
+"
+DES.f+1+2;m;12;i23~27;;;;"
+* chip damage on block
+"
+DES.f+1+2,1+2;m,m;12,20;,i20~26;;+41;;"
+* Transition to DES
+* chip damage on block
+"
+DES.f+2;m;9;i15;;;;"
+* chip damage on block
+"
+DES.f+2,1;mm;9;;;;;"
+* chip damage on block
+"
+DES.f+2,1,2;mm,mm,mm;4,5,4,4,3,20;i15,i1,i23,i1,i23~24,i4~5;;;;"
+* Balcony Break
+* Heat Engager
+
+* chip damage on block
+"
+DES.f+2,1,2;mmm;9;;;;;"
+* Heat Engager
+
+* chip damage on block
+"
+DES.f+3;sp;;;;;;"
+* Alternate input: DES.f+4
+* Cancel with input DBT.B
+* Transition to Evasive Action with input DBT.U_D
+"
+DES.f,f;sp;;;;;;"
+* Transition to DES
+"
+DES.uf+1+2;m;27;i29~31;;+23;;"
+* Transition to DES
+* chip damage on block
+* Cancel DES with input DES.uf+1+2,1+2
+"
+DES.uf+2;h;7;i10~14;;+25 (+18);;"
+* Transition to DES
+* only hits airborne opponents
+"
+df+1;m;10;i13;;;;"
+"
+df+1,1;m,h;10,20;,i30~31;;;;"
+"
+df+1,1,2;m,h,h;10,20,48;,i22~25;;+8;;"
+* chip damage on block
+* Transition to DES
+"
+df+1,4;m,m;10,17;,i26~27;;+3c;;"
+"
+df+2;m;16;i16~17;;+32 (+22);;"
+"
+df+3;m;14;i16;;+1;;"
+"
+df+3,3;m,l;14,17;,i23~24;;+1;;"
+"
+f+1+2;m;25 (0);i14~15;;+14;;"
+* Transition to BOT with f+1+2,3_4
+* Transition to DBT with f+1+2,f+3_f+4
+"
+f+2;m;12;i17~18;;;;"
+"
+f+2,1;m,m;12,20;i24~25;;;;"
+* Balcony Break
+* Heat Engager
+
+* chip damage on block
+* Transition to DES with f+2,1+2 (does not transition when using Heat Dash)
+"
+f+2,1;m,m;12,20;i17~i18,i24~26;;;;"
+* Balcony Break
+* Heat Engager
+
+* chip damage on block
+* Transition to DES (does not transition when using Heat Dash)
+* Input f+2,1+2 to shift to DES
+"
+f+2,3;m,h;12,8;,i22;;;;"
+"
+f+2,3,3;m,h,m;12,8,22;,i35~36;;+12 (-3);;"
+* Balcony Break
+* Transition to DES with f+2,3,1+2
+"
+f+3;h;10;i14~15;;;;"
+"
+f+3,1+2;h,m;10,25;,i24~25;;+8;;"
+* Balcony Break
+* Transition to DES
+* chip damage on block
+"
+f+3,2;h,h;10,20;,i25;;+39 (+31);;"
+* Balcony Break
+* Transition to DES
+* chip damage on block
+"
+f+3+4;sp;;;;;;"
+"
+f+3+4;sp;;;;;;"
+* Transition to BOT
+* Transition to BKP with input BOT.D or BOT.B
+"
+f+4;m;14;i16;;;;"
+* Homing
+* Transition to DES with f+4,1+2
+"
+f+4,1;m,h;14,14;,i25~26;;;;"
+* Balcony Break
+"
+f+4,1,4;m,h,m;14,14,19 (13);,i35;;-1 (-9);;"
+"
+FC.1+2;ll;10,16;i21~23,i6~8;;+5c;;"
+* Transition to DES with input FC.1+2,n,1+2
+"
+FC.db+1+2;th(h);45;i11;;-4;;"
+* Throw break: 1+2
+* Opponent recovery on hit: FUFA
+* Side switch
+"
+f,F+1+2;mm;5,10;i17~18,i12~13;;+4;;"
+"
+f,F+2;m;18;i16~17;;;;"
+* Balcony Break
+"
+f,F+2,3;m,;18,17 (11);,i22~24;;+5 (+4);;"
+* Balcony Break
+"
+f,F+3;m;12;i18~19;;;;"
+"
+f,F+3,4;m,h;12,15;,i19~20;;+20 (+11);;"
+* Balcony Break
+* Transition to DES with input f,F+3,4,1+2
+"
+f,F+3,4,4;m,h,m;12,15,17 (11);,i27~29;;+21 (+14);;"
+* Balcony Break
+* Transition to DES with input f,F+3,4,4,1+2
+"
+f,F+4;mm;14,22;i22~29,i34~39;;+9 (+0);;"
+* Balcony Break
+* Transition to hit throw on front hit
+* Alternative input: f,F+4:1 to power up
+"
+f,f,F+2;h;30;i13~15;;+28 (+20);;"
+* Balcony Break
+* chip damage on block
+* Transition to DES with input f,f,F+2,1+2
+"
+f,f,F+3;m;15;i18~19;;;;"
+"
+f,f,F+3,4;m,m;15,20;,i20~22;;+31 (+5);;"
+* Balcony Break
+"
+FUFT.1+2;sp;0;;;;;"
+"
+FUFT.1+2,3;sp,m;0,35;i22~23;;+60;;"
+* Balcony Break
+"
+H.2+3;m;50 (28);i20~21;+8;KND;;"
+* Alternate input: H.DES.2+3
+* Heat Smash
+* Transition to BOT with H.2+3,3_4 or H.DES.2+3,f+3_f+4
+"
+H.d+1+2;sp;;;;;;"
+* Transition to DES
+* partially consumes Heat
+"
+H.1+4;sp;;;;;;"
+* Transition to DBT
+* partially consumes Heat
+"
+Left throw;th(h);40;i12~14;;-5;;"
+* Throw break: 1
+* Opponent recovery on hit: FDFA
+"
+OTG.db+1+2;l;20 (14);i26;;-5 (-13);;"
+"
+P.b+1+3;ub(m);25;i20~21;-5 (-14);-5 (-14);;"
+* Balcony Break
+"
+H.R.df+1+2;m;;;;;;"
+* Alternate input: R.DES.df+1+2
+* [[:Template:RageArt]]
+* Erases opponent's recoverable health on hit
+"
+Right throw;th(h);40;i12~14;;;;"
+* Throw break: 2
+* Opponent recovery on hit: FUFA perpendicular to Alisa
+* Spike
+"
+SS.4;l;15;i24~25;;;;"
+"
+SS.4,1+2;l,hm;15,20;,;;;;"
+"
+u+1+2;m;21;i33~34;;+56;;"
+* Alternate input: ub+1+2
+"
+ub+2;h;26;i16~24;;+38 (-20);;"
+* Balcony Break
+"
+ub+3+4;sp;0;;;;;"
+"
+ub+3+4,1+2;sp,m;0,20;,i26~27;;+32 (+22);;"
+* Alternate input: BT.3+4,1+2
+"
+ub+4;m;10;i18;;;;"
+"
+uf+1;mmm;20,14 (9),10 (7);i19~20,i25,i17;;;;"
+* Tornado
+* Alternate input: ub+1 or u+1
+* Transition to BOT on hit with uf+1,3_4
+* Transition to DBT on hit with uf+1,f+3_f+4
+"
+uf+1+2;th(h);40;i12~13;;+3;;"
+* Throw break: 1+2
+* Opponent recovery on hit: FUFT
+"
+uf+2;h;22;i16~17;;;;"
+* Balcony Break
+* Heat Engager
+
+* Homing
+* chip damage on block
+* Alternate input: u+2
+* Transition to DES (does not transition when using Heat Dash)
+"
+uf+2;h;22;i16~17;;;;"
+* Alternate input: u+2
+* Balcony Break
+* Heat Engager
+
+* Homing
+* chip damage on block
+* Transition to DES on hit (does not transition when using Heat Dash)
+"
+uf+3;m;15;i17~18;;;;"
+* Alternate input: ub+3 or u+3
+* Transition to BOT with input uf+3,3_4
+* Transition to DBT with input uf+3,f+3_f+4
+"
+uf+3,2;m,m;15,30;,i17~22;;+32 (-26);;"
+* Balcony Break
+"
+uf+3+4;m;28;i38~41;;+4;;"
+* Alternate input: u+3+4
+"
+uf+4;m;8;i15~16;;;;"
+* Alternate input: u+4
+"
+uf+4,4;m,m;8,8;,i24~26;;+45 (+37);;"
+"
+WR.1+2;m;24;i18~36;;-17 (-26);;"
+* Balcony Break
+"
+ws1;m;12;i13~14;;;;"
+"
+ws1+2;m;20;i20~21;;+21;;"
+* Homing
+* Hold to power up
+"
+ws1,2;m,h;12,12;,i24~25;;;;"
+* Transition to DES with input ws1,2,1+2
+"
+ws1,2,3;m,h,m;12,12,23;,i25~26;;+33 (+23);;"
+* Transition to DES with input ws1,2,3,1+2
+"
+ws2;m;24;i17~18;;+33 (+23);;"
+* Tornado
+* Transition to BOT with input ws2,3_4
+* Transition to DBT with input ws2,f+3_f+4
+"
+ws3;m;18;i19~20;;+15;;"
+* Cancel with input ws3,B
+"
+ws3,3;m,m;1820;i13~14;;+12g;;"
+* Balcony Break
+* Power up after 2 or more rotations
+"
+ws3,d+3;m,l;1820;i30~31;;+73 (+57);;"
+"
+ws4;m;15;i11~12;;+6;;"
+* Balcony Break
+* Power up after 2 or more rotations
+"
