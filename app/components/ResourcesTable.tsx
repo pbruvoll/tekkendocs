@@ -1,5 +1,4 @@
 import { Heading, Link as RadixLink, Table } from '@radix-ui/themes'
-import { Link } from '@remix-run/react'
 import { ContentContainer } from './ContentContainer'
 
 export const ResourcesTable = ({
@@ -31,7 +30,9 @@ export const ResourcesTable = ({
               <Table.Row key={row[0]}>
                 <Table.Cell>
                   <RadixLink asChild>
-                    <Link to={row[0]}>{row[1]}</Link>
+                    <a href={row[0]} target="_blank" rel="noreferrer">
+                      {row[1]}
+                    </a>
                   </RadixLink>
                 </Table.Cell>
                 <Table.Cell>{row[2]}</Table.Cell>
