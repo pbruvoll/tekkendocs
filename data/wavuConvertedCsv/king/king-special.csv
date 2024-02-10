@@ -12,7 +12,7 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 "
 1,2,1,2+4;h,h,m,t;5,15,10,40;i10~26;;+0;;"
 "
-1,2,1,d+2+3;h,h,m,t;5,15,10,35;i10~i28;;+1;;"
+1,2,1,d+2+4;h,h,m,t;5,15,10,35;i10~i28;;+1;;"
 * Cannot throw break
 * Crouch throw.
 "
@@ -35,7 +35,7 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 2,1;h,m;10,15;i10~i23;-3;+8;;"
 * Combo from 1st hit.
 "
-2+3;m;12;i16;+1;+2;;"
+2+3;m;12;i16;+1;+2c;;"
 "
 3+4;;;;;;;"
 * Hold to continue spinning. Strikes are powered up after 2nd spin. King gets dizzy and shifts to FUFT after 6th spin.
@@ -44,9 +44,10 @@ Armbar.1+2;t;10;;;+1d;;"
 * Cannot throw break.
 * Opponent recovers in FUFA
 "
-b+2;h;16;i14;-9;+19d;;"
-* Balcony Break
-"
+b+1;h;13;i12;-8;+3;;Momentarily makes opponents airborne on counter hit.
+b+1,2;h,h;1320;i19~20;-13;+5;;Tornado
+b+1,4;h,m;1323;i26~28;-11;0;;Recovers in FUFT.
+b+2;h;16;i14;-5;+1;;
 b+2,1;h,h;16,21;i20~21;-9;+19d;;"
 * Balcony Break
 "
@@ -55,6 +56,8 @@ b+2,1+2;h,h;16,22;i24~25;+2;+22d;;"
 b+2,4;h,t;16,20;i21;-8;+0;;"
 * Only shifts to throw on hit.
 "
+b+3;h;23;i16~18;-10;+39d;;Tornado
+b+3,1+2;h,t;2320;;;0d;;Only shifts to throw in the front on grounded hit.
 b+3+4;;;;;;;"
 * Cannot be held to continue spinning.
 "
@@ -68,7 +71,7 @@ d+1,2;s.l,m;5,13;i10~i15;-11;+5;;"
 * Combos on CH.
 * Can also be done from FC.
 "
-d+1+4;m;35;i12;;;;"
+d+1+4;m;35;i12;;+0d;;"
 * Heat Engager
 
 * Cannot throw break.
@@ -84,7 +87,7 @@ d+3+4,4,4;l,l,l;14,7,7;i16~i29;-29;+7;;"
 * Can also be done from FC.df+4,4,4
 * CH adds 2 more hits
 "
-db+1+2,2;m,m;15,25;i15;-9;+35;;"
+db+1+2,2;m,m;15,25;i15;-9;+35g;;"
 * Heat Engager
 
 * Only first input has armour.
@@ -103,12 +106,12 @@ db,n,f+2+4;h;53;i11;;=1d;;"
 Floor Break
 2 throw break.
 "
+df+1,2;m,m;15,15;i14~i20;-10;+5;;"
+* Combos from 1st hit if not fully delayed.
+"
 df+1+3;h;19;i32;;;;"
 "
 df+2,1;m,h;12,15;i13~i20;-4;+24d;;"
-"
-df+2+3;m,m;15,15;i14~i20;-10;+5;;"
-* Combos from 1st hit.
 "
 df+3+4;s;15,30;i28;-12~-18;+18d;;"
 * Throw only when close
@@ -118,11 +121,11 @@ df+3,4;m,h;17,23;i14~i30;+0;+28d;;"
 * Recovers in FDFT on hit or block.
 * Combos on CH.
 "
-df+4,2,d+4;l,h,l;10,11,20;i12~i33;-10;-8d;;"
-* Recovers in FDFT.
-"
 df+4,3,4;l,h,m;10,11,27;i14~i28;-15;+6d(-3);;"
 Balcony Break
+"
+df+4,3,d+4;l,h,l;10,11,20;i12~i33;-10;-8d;;"
+* Recovers in FDFT.
 "
 f+1+2;h;23;i16;+0;+10;;"
 "
@@ -132,37 +135,41 @@ f+1+3;h;35;i15;;+0d;;"
 "
 f+1+4;m;21;i17;+3;+7;;"
 "
-f+2;m;12;i15;-11;;;"
+f+2;m;12;i15~16;-11;+2;;"
+"
+f+2,1;m,h;12,25;i15~16;+1;+17g;;"
+* Heat Engager
+
+Balcony Break
+* Combos from 1st hit.
 "
 f+2,1;m,h;12,25;i15~i18;-9;+17;;"
 Heat Engager
 
 Balcony Break
 "
-f+2,1;m,h;12,25;i15~18;+1;+2;;"
+f+2+3;m;27;i20;-9;+17g;;"
 * Heat Engager
 
-Balcony Break
-* Combos from 1st hit.
 "
 f+2+3;m;27;i20;-9;+17;;"
 * Heat Engager
 
 "
-f+2,d+1;m,m;12,16;i15~i22;-15;+27;;"
+f+2,d+1;m,m;12,16;i15~i22;-13c;-2c;;"
 "
-f+2,d+1,2;m,m,m;12,16,16;i15~i22;-15;+27;;"
+f+2,d+1,2;m,m,m;12,16,16;i15~i22;-15;+27a;;"
 "
 f+3;m;18;i15;-8;+1;;"
-"
-f+3;m;25;i18;-8;+12;;"
-Balcony Break
-Homing
 "
 f+3,1+2;m,t;18,20;;;;;"
 "
 f+3+4;;;;;;;"
 * Hold b to cancel. Gains armour during Heat. Partially uses remaining Heat time.
+"
+f+4;m;25;i18;-9;+12;;"
+Balcony Break
+Homing
 "
 FC.1+2;m;0;i26;;+3;;"
 "
@@ -197,13 +204,13 @@ f,n,d,df;;;;;;;"
 "
 CD.4;m;21;i15;-6;+49d(+18);;"
 "
-H.2+3;m,t;20,44;i17;+12;;;"
+H.2+3;m,t;20,44;i17;+12;+0d;;"
 * Shifts to JGR on block.
 "
 JGR.1;m;21;i16;-8;+39;;"
 * Partially uses remaining Heat time.
 "
-JGR.1+2;t;45;i23;;;;"
+JGR.1+2;t;45;i23;;+1d;;"
 * Heat Engager
 
 * Cannot throw break.
@@ -252,7 +259,7 @@ Leg Cross Hold.1+2;t;15,15;;;+1d;;"
 R.df+1+2;m;10,3,25,7;i20;-15;+0d;;"
 * Erases opponent's recoverable health on hit
 "
-Stagger Kicks.2;m;10;i28;-15;+16d(+6);;"
+d+3+4,4,4,2;l,l,lm;14,7,710;i28;-15;+16d(+6);;"
 "
 uf+3+4;m;23;i22;;+25;;"
 * Tornado

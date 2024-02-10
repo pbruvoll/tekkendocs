@@ -86,8 +86,8 @@
   {
     "damage": "5,15,10,35",
     "gif": "",
-    "id": "King-1,2,1,d+2+3",
-    "input": "1,2,1,d+2+3",
+    "id": "King-1,2,1,d+2+4",
+    "input": "1,2,1,d+2+4",
     "name": "Palm Strike Uppercut &gt; V Driver",
     "notes": "\n* Cannot throw break\n* Crouch throw.\n",
     "on_block": "",
@@ -158,7 +158,7 @@
     "gif": "",
     "id": "King-2",
     "input": "2",
-    "name": "",
+    "name": "Right Jab",
     "notes": "\n",
     "on_block": "+1",
     "on_ch": "",
@@ -190,7 +190,7 @@
     "notes": "\n",
     "on_block": "+1",
     "on_ch": "",
-    "on_hit": "+2",
+    "on_hit": "+2c",
     "recovery": "",
     "startup": "i16",
     "target": "m"
@@ -224,15 +224,57 @@
     "target": "t"
   },
   {
+    "damage": "13",
+    "gif": "",
+    "id": "King-b+1",
+    "input": "b+1",
+    "name": "Quick Hook",
+    "notes": "Momentarily makes opponents airborne on counter hit.",
+    "on_block": "-8",
+    "on_ch": "",
+    "on_hit": "+3",
+    "recovery": "",
+    "startup": "i12",
+    "target": "h"
+  },
+  {
+    "damage": "1320",
+    "gif": "",
+    "id": "King-b+1,2",
+    "input": "b+1,2",
+    "name": "Quick Hook &gt; Uppercut",
+    "notes": "Tornado",
+    "on_block": "-13",
+    "on_ch": "",
+    "on_hit": "+5",
+    "recovery": "",
+    "startup": "i19~20",
+    "target": "h,h"
+  },
+  {
+    "damage": "1323",
+    "gif": "",
+    "id": "King-b+1,4",
+    "input": "b+1,4",
+    "name": "Quick Hook &gt; Heel Kick",
+    "notes": "Recovers in FUFT.",
+    "on_block": "-11",
+    "on_ch": "",
+    "on_hit": "0",
+    "recovery": "",
+    "startup": "i26~28",
+    "target": "h,m"
+  },
+  {
     "damage": "16",
     "gif": "",
     "id": "King-b+2",
     "input": "b+2",
-    "name": "Chupacabra &gt; Spinning Back Elbow",
-    "notes": "\n* Balcony Break\n",
-    "on_block": "-9",
+    "name": "Chupacabra",
+    "notes": "",
+    "on_block": "-5",
     "on_ch": "",
-    "on_hit": "+19d",
+    "on_hit": "+1",
     "recovery": "",
     "startup": "i14",
     "target": "h"
@@ -277,6 +319,34 @@
     "on_hit": "+0",
     "recovery": "",
     "startup": "i21",
+    "target": "h,t"
+  },
+  {
+    "damage": "23",
+    "gif": "",
+    "id": "King-b+3",
+    "input": "b+3",
+    "name": "Toll Kick",
+    "notes": "Tornado",
+    "on_block": "-10",
+    "on_ch": "",
+    "on_hit": "+39d",
+    "recovery": "",
+    "startup": "i16~18",
+    "target": "h"
+  },
+  {
+    "damage": "2320",
+    "gif": "",
+    "id": "King-b+3,1+2",
+    "input": "b+3,1+2",
+    "name": "Guillotine Drop",
+    "notes": "Only shifts to throw in the front on grounded hit.",
+    "on_block": "",
+    "on_ch": "",
+    "on_hit": "0d",
+    "recovery": "",
+    "startup": "",
     "target": "h,t"
   },
   {
@@ -344,7 +414,7 @@
     "notes": "\n* Heat Engager\n\n* Cannot throw break.\n* Crouch throw.\n* Restores some Heat Gauge in Heat.\n",
     "on_block": "",
     "on_ch": "",
-    "on_hit": "",
+    "on_hit": "+0d",
     "recovery": "",
     "startup": "i12",
     "target": "m"
@@ -400,7 +470,7 @@
     "notes": "\n* Heat Engager\n\n* Only first input has armour.\n",
     "on_block": "-9",
     "on_ch": "",
-    "on_hit": "+35",
+    "on_hit": "+35g",
     "recovery": "",
     "startup": "i15",
     "target": "m,m"
@@ -476,6 +546,20 @@
     "target": "h"
   },
   {
+    "damage": "15,15",
+    "gif": "",
+    "id": "King-df+1,2",
+    "input": "df+1,2",
+    "name": "Elbow Sting",
+    "notes": "\n* Combos from 1st hit if not fully delayed.\n",
+    "on_block": "-10",
+    "on_ch": "",
+    "on_hit": "+5",
+    "recovery": "",
+    "startup": "i14~i20",
+    "target": "m,m"
+  },
+  {
     "damage": "19",
     "gif": "",
     "id": "King-df+1+3",
@@ -502,20 +586,6 @@
     "recovery": "",
     "startup": "i13~i20",
     "target": "m,h"
-  },
-  {
-    "damage": "15,15",
-    "gif": "",
-    "id": "King-df+2+3",
-    "input": "df+2+3",
-    "name": "Elbow Sting",
-    "notes": "\n* Combos from 1st hit.\n",
-    "on_block": "-10",
-    "on_ch": "",
-    "on_hit": "+5",
-    "recovery": "",
-    "startup": "i14~i20",
-    "target": "m,m"
   },
   {
     "damage": "15,30",
@@ -546,20 +616,6 @@
     "target": "m,h"
   },
   {
-    "damage": "10,11,20",
-    "gif": "",
-    "id": "King-df+4,2,d+4",
-    "input": "df+4,2,d+4",
-    "name": "Mincer Low",
-    "notes": "\n* Recovers in FDFT.\n",
-    "on_block": "-10",
-    "on_ch": "",
-    "on_hit": "-8d",
-    "recovery": "",
-    "startup": "i12~i33",
-    "target": "l,h,l"
-  },
-  {
     "damage": "10,11,27",
     "gif": "",
     "id": "King-df+4,3,4",
@@ -572,6 +628,20 @@
     "recovery": "",
     "startup": "i14~i28",
     "target": "l,h,m"
+  },
+  {
+    "damage": "10,11,20",
+    "gif": "",
+    "id": "King-df+4,3,d+4",
+    "input": "df+4,3,d+4",
+    "name": "Mincer Low",
+    "notes": "\n* Recovers in FDFT.\n",
+    "on_block": "-10",
+    "on_ch": "",
+    "on_hit": "-8d",
+    "recovery": "",
+    "startup": "i12~i33",
+    "target": "l,h,l"
   },
   {
     "damage": "23",
@@ -624,10 +694,24 @@
     "notes": "\n",
     "on_block": "-11",
     "on_ch": "",
-    "on_hit": "",
+    "on_hit": "+2",
     "recovery": "",
-    "startup": "i15",
+    "startup": "i15~16",
     "target": "m"
+  },
+  {
+    "damage": "12,25",
+    "gif": "",
+    "id": "King-f+2,1",
+    "input": "f+2,1",
+    "name": "Elbow Impact",
+    "notes": "\n* Heat Engager\n\nBalcony Break\n* Combos from 1st hit.\n",
+    "on_block": "+1",
+    "on_ch": "",
+    "on_hit": "+17g",
+    "recovery": "",
+    "startup": "i15~16",
+    "target": "m,h"
   },
   {
     "damage": "12,25",
@@ -644,18 +728,18 @@
     "target": "m,h"
   },
   {
-    "damage": "12,25",
+    "damage": "27",
     "gif": "",
-    "id": "King-f+2,1",
-    "input": "f+2,1",
-    "name": "Elbow Impact",
-    "notes": "\n* Heat Engager\n\nBalcony Break\n* Combos from 1st hit.\n",
-    "on_block": "+1",
+    "id": "King-f+2+3",
+    "input": "f+2+3",
+    "name": "Shoulder Tackle",
+    "notes": "\n* Heat Engager\n\n",
+    "on_block": "-9",
     "on_ch": "",
-    "on_hit": "+2",
+    "on_hit": "+17g",
     "recovery": "",
-    "startup": "i15~18",
-    "target": "m,h"
+    "startup": "i20",
+    "target": "m"
   },
   {
     "damage": "27",
@@ -678,9 +762,9 @@
     "input": "f+2,d+1",
     "name": "Jaguar Smash Combo",
     "notes": "\n",
-    "on_block": "-15",
+    "on_block": "-13c",
     "on_ch": "",
-    "on_hit": "+27",
+    "on_hit": "-2c",
     "recovery": "",
     "startup": "i15~i22",
     "target": "m,m"
@@ -694,7 +778,7 @@
     "notes": "\n",
     "on_block": "-15",
     "on_ch": "",
-    "on_hit": "+27",
+    "on_hit": "+27a",
     "recovery": "",
     "startup": "i15~i22",
     "target": "m,m,m"
@@ -711,20 +795,6 @@
     "on_hit": "+1",
     "recovery": "",
     "startup": "i15",
-    "target": "m"
-  },
-  {
-    "damage": "25",
-    "gif": "",
-    "id": "King-f+3",
-    "input": "f+3",
-    "name": "Rolling Sobat",
-    "notes": "\nBalcony Break\nHoming\n",
-    "on_block": "-8",
-    "on_ch": "",
-    "on_hit": "+12",
-    "recovery": "",
-    "startup": "i18",
     "target": "m"
   },
   {
@@ -754,6 +824,20 @@
     "recovery": "",
     "startup": "",
     "target": ""
+  },
+  {
+    "damage": "25",
+    "gif": "",
+    "id": "King-f+4",
+    "input": "f+4",
+    "name": "Rolling Sobat",
+    "notes": "\nBalcony Break\nHoming\n",
+    "on_block": "-9",
+    "on_ch": "",
+    "on_hit": "+12",
+    "recovery": "",
+    "startup": "i18",
+    "target": "m"
   },
   {
     "damage": "0",
@@ -904,7 +988,7 @@
     "notes": "\n* Shifts to JGR on block.\n",
     "on_block": "+12",
     "on_ch": "",
-    "on_hit": "",
+    "on_hit": "+0d",
     "recovery": "",
     "startup": "i17",
     "target": "m,t"
@@ -932,7 +1016,7 @@
     "notes": "\n* Heat Engager\n\n* Cannot throw break.\n* Restores some Heat Gauge in Heat.\n",
     "on_block": "",
     "on_ch": "",
-    "on_hit": "",
+    "on_hit": "+1d",
     "recovery": "",
     "startup": "i23",
     "target": "t"
@@ -1120,10 +1204,10 @@
     "target": "m"
   },
   {
-    "damage": "10",
+    "damage": "14,7,710",
     "gif": "",
     "id": "King-Stagger Kicks.2",
-    "input": "Stagger Kicks.2",
+    "input": "d+3+4,4,4,2",
     "name": "Stagger Kick Spinning Uppercut",
     "notes": "\n",
     "on_block": "-15",
@@ -1131,14 +1215,14 @@
     "on_hit": "+16d(+6)",
     "recovery": "",
     "startup": "i28",
-    "target": "m"
+    "target": "l,l,lm"
   },
   {
     "damage": "23",
     "gif": "",
     "id": "King-uf+3+4",
     "input": "uf+3+4",
-    "name": "Soul Crusher",
+    "name": "Sole Crusher",
     "notes": "\n* Tornado\n* Shifts to JGR on hit.\n* Hold b to cancel JGR.\n",
     "on_block": "",
     "on_ch": "",
