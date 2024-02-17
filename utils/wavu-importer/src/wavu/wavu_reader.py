@@ -12,8 +12,10 @@ session = requests.Session()
 
 def _upper_first_letter(input: str) -> str:
     if input:
-        result_string = input[0].capitalize() + input[1:]
-        return result_string
+        parts = input.split('_')
+        res = '_'.join(word.capitalize() for word in parts)
+        return res
+
     else:
         return input
 

@@ -18,7 +18,7 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 1,1,d+1;h,h,m;5,7,15;;-6;0;+5;"
 * Transition to FLK with b (0/+6/+11)
 "
-1+2;m,m;7,21;i14;-12;+17/KND;;"
+1+2;m,m;7,21;i14;-12;KND/HE;;"
 Heat Engager
 
 * In Heat input f to Heat dash (+5/KND/KND)
@@ -225,10 +225,10 @@ f+3;sp;;;;;;"
 * Input 4 to RWV 
 * Input f+3_4 to DCK
 "
-FC.d/f+1;l;11;i15;-12;+2;;"
+FC.df+1;l;11;i15;-12;+2;;"
 * Transition to PAB
 "
-FC.d/f+2;m;20;i8;-15;Launch;;"
+FC.df+2;m;20;i18;-15;Launch;;"
 "
 f,f+2;m;24;i14~17;-13c;KND;;"
 "
@@ -364,7 +364,7 @@ PAB.f+2;m;18;i18;-13;KND;;"
 PAB.f+2,1;m,m;1824;;+1;KND;;"
 * Interruptible by i13 move
 "
-PAB.u/f+2;m;23;i17;-15;Launch;;"
+PAB.uf+2;m;23;i17;-15;Launch;;"
 "
 qcb+2+4;throw;40;i12;;;;"
 * 2 Throw break

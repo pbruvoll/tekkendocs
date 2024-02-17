@@ -74,8 +74,7 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 3,1;m,h;12,22;,i22~24;+7~+9;+18g~+20g;;"
 * Heat Engager
 
-* '''Heat Dash +5g~7g +62a (+42)'''
-
+* Heat Dash +5g~7g +62a (+42)
 
 * Balcony Break
 * Weapon
@@ -104,8 +103,7 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 3,NSS.1;m,h;12,25;,i22~24;+7~+9;+18g~+20g;;"
 * Heat Engager
 
-* '''Heat Dash +5g~7g +62a (+42)'''
-
+* Heat Dash +5g~7g +62a (+42)
 
 * Balcony Break
 * Weapon
@@ -133,6 +131,10 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * Cancel early to r26 with B (earliest cancel -12a)
 * Possible to double-hit
 * Alternate notation: 1SS.4,4,2,2,1~1"
+4,4,2,2,NSS.1~1;h,h,m,h,m,h!;12,12,5,6,30,40;,i20~105;;-49a (-75);;"
+* Balcony Break
+* Cancel early to r30 with B"
+4,4,2,2,NSS.1;h,h,m,h,m;12,12,5,6,30;,i67;-54;-17a;;
 4,4,4;h,h,h;12,12,20;,i24~25;-4~-3;+18a (+9);;"
 * Balcony Break
 * Combo from 2nd CH with 4f delay
@@ -168,7 +170,7 @@ b+1+2;;;;;;;"
 * Alternate input: BT.b+1+2
 * Alternate name: Mutou no Kiwami"
 b+2;m;12;i14~15;-9~-8;+2~+3;;Transition to r27 KIN with 1+2
-b+2,1;m,M;12,20;,i27~28;-17~-16;+28a (+18a);;"
+b+2,1;m,M;12,20;,i27~28;-17~-16;+28a (+18);;"
 * Weapon
 * Combos from CH 1st with 2f delay
 * Transition to r30 KIN with 1+2
@@ -177,14 +179,25 @@ b+2,1;m,M;12,20;,i27~28;-17~-16;+28a (+18a);;"
 b+2,2;m,h;12,21;,i22~23;-13;+2a;;"
 * Heat Engager
 
-* '''Heat Dash +5g~+6g +36a (26)'''
-
+* Heat Dash +5g~+6g +36a (+26)
 
 * Weapon
 * Combo from 1st with 1f delay
 * Combo from 1st CH with 7f delay
 * Input can be delayed 14f
 * Alternate notation: 1SS.b+2,2"
+b+2,NSS.1;m,m;12,17;,i27~28;-17~-16;+28a (+18);;"
+* Combos from CH 1st with 2f delay
+* Transition to r30 KIN with 1+2
+* Input can be delayed 14f"
+b+2,NSS.2;m,h;12,18;,i22~23;-10~-9;+0~+1;;"
+* Heat Engager
+
+* Heat Dash +5g~+6g +36a (+26)
+
+* Combo from 1st with 1f delay
+* Combo from 1st CH with 7f delay
+* Input can be delayed 14f"
 b+3;;;;;;;"
 * 4 self-damage
 * Alternate input: b+4"
@@ -322,6 +335,19 @@ d+2,2,d+1;M,m,m;12,17,17;,i29~30;-12~-11;+2c~+3c;+42a;"
 * Weapon
 * Input can be delayed 10f
 * Move can be delayed 9f"
+d+2,2,NSS.1;M,m,h;12,17,20;,i19~20;-9~-8;+8a (-1);;"
+* Balcony Break
+* Input can be delayed 10f
+* Move can be delayed 9f"
+d+2,2,NSS.d+1;M,m,m;12,17,17;,i29~30;-12~-11;+2c~+3c;+42a;"
+* Spike
+* Input can be delayed 10f
+* Move can be delayed 9f"
+d+2,NSS.1;M,h;12,18;,i27~28;-9~-8;+10g~+11g;;"
+* Balcony Break
+* Combo from 1st hit with 8f delay
+* Input can be delayed 16f
+* Move can be delayed 10f"
 d+3;L;12;i15~17;-18~-16;-4~-2;;Most commonly impacts on frame 16, except when tracking right
 d+3+4;;;;;;;Alternate input: BT.d+3+4
 d+4;l;6;i12;-15;-4;;
@@ -379,6 +405,9 @@ df+1,2,1;m,h,M;14,16,19;,i26~27;-12~-11;+17a (+10);;"
 * Alternate notation: 1SS.df+1,2,1"
 df+1,2,db+2;m,h,m;14,16,7;,i15;-5;+6;;"
 * Links to db+2 extensions"
+df+1,2,NSS.1;m,h,m;14,16,19;,i26~27;-12~-11;+17a (+10);;"
+* Tornado
+* Combo from 2nd CH"
 df+1+4;M;20;i20~21;-17~-16;+35a (+25);;"
 * Weapon
 * Can be buffered
@@ -430,8 +459,7 @@ DGF.3+4;h!,t;17,18;i20~21;;+0~+1;;"
 DGF.4;m;24;i18~20;-4~-2;+14g~+15g;;"
 * Heat Engager
 
-* '''Heat Dash +5g~+7g +62a (+42)'''
-
+* Heat Dash +5g~+7g +62a (+42)
 
 * Balcony Break"
 DGF.b;;;;;;;realigns with opponent, creates distance
@@ -452,8 +480,7 @@ DGF.f+2;h;23;i20~21;+7~+8;+19a (+10);+64a (+44);"
 f+1+2;M;23;i20;-12;+8a (-1);;"
 * Heat Engager
 
-* '''Heat Dash +5g +62a (+42)'''
-
+* Heat Dash +5g +62a (+42)
 
 * Balcony Break
 * Weapon
@@ -467,6 +494,10 @@ f+2,1;h,M;18,21;,i26~27;-12~-11;+17a (+10);;"
 * Alternate input: BT.2,1
 * Alternate notation: 1SS.f+2,1"
 f+2,db+2;h,m;18,8;,i10~14;-5;+6;;Link to db+2 extensions
+f+2,NSS.1;h,m;18,21;,i26~27;-12~-11;+17a (+10);;"
+* Tornado
+* Combo from 1st CH
+* Alternate input: BT.2,NSS.1"
 f+3;h;24;i16~17;-9~-8;+17a (+8);;"
 * Homing
 * Balcony Break"
@@ -600,10 +631,10 @@ FLE.n;m;7;i2~60;-18~;+48a (+38a);;"
 * Hitlines exist on the sword and directly behind Yoshimitsu
 * Can be canceled at any time into another FLE move
 * After hitting with this attack, FLE.n has no hitbox until another FLE action (other than FLE.d) is taken"
-FLE.u+1+2;;;;;;;
 FLE.u+1+2;m;30;i38~40;+4~+6;+21a (+12);;"
 * Balcony Break
 * Tech roll to r33 FC on frames 41-42"
+FLE.u+1+2;;;;;;;
 FLE.uf;m!;21;i30~45;;+30a (+20);;"
 * Balcony Break
 * Alternate inputs: FLE.u and FLE.ub"
@@ -645,7 +676,7 @@ IND.1;M!;15;i53~55;;+0c~+2c;;"
 * Spike
 * Weapon
 * Same animation as the ending of qcf+1
-* Alternate notation: 1SS.IND.1 or IND.1SS.1"
+* Alternate notation: 1SS.IND.1"
 IND.1+2;;;;;;;Unavailable in NSS
 IND.2;m;7;i39~43;-8~-5;+2~+6;;"
 * Leads to DB+2,2 extensions
@@ -766,8 +797,7 @@ KIN.f+1*;M,M,M,M,M,M;6,6,6,6,6,10;i19~20 i6~7 i7~8 i6~7 i7~8 i7~8;-12~-11;+29a (
 KIN.f+2;h;25;i12~13;-1~+0;+9a (+0);;"
 * Heat Engager
 
-* '''Heat Dash  +5g~+6g +34a'''
-
+* Heat Dash  +5g~+6g +34a
 
 * Homing
 * Balcony Break
@@ -819,6 +849,12 @@ NSS.1+4;m;24;i8~11;-15~-12;+14 +64a;;"
 * Recovers health on hit
 * Alternate inputs: b+1+4, f+1+4, db+1+4, ws1+4, FC.D+1+4"
 NSS.b+1+2;;;;;;;
+NSS.b,B+1+4;m!;40;i65~70;;-3a (-12);+29a (-18);Balcony Break
+NSS.b,B+1+4,B;,m;,24;,i22~25;-15~-12;+14 +64a;;"
+* Weapon
+* Knockdown against BT opponent, +19a (+9)
+* 4 chip damage on block
+* Recovers health on hit"
 NSS.BT.b~db+1+2;L;20;i17~18;-13~-12;+3;+38a;Weapon
 NSS.BT.d+1;l;15;i17~18;-13~-12;+3;+38a;
 NSS.d+1;M;24;i24~25;-9~-8;+16a;+6a;"
@@ -832,11 +868,15 @@ NSS.d+1+4;;;;;;;Yoshimitsu is invisible on frames 50~64, but can still be attack
 NSS.db+1;sl;5;i10;-5;+6;;"
 * In-game frame data incorrectly dispalys this move as i11
 * Transition to r24 with f"
+NSS.df+1+4;m;19;i20~21;-17~-16;+35a (+25);;"
+* Can be buffered
+* Transition to r37 KIN with 1+2
+* Can be performed in FC
+* Power up input: NSS.f,n,d,df+1"
 NSS.f+1+2;M;29;i20;-12;+8a (-1);;"
 * Heat Engager
 
-* '''Heat Dash +5g +62a (+42)'''
-
+* Heat Dash +5g +62a (+42)
 
 * Balcony Break
 * Weapon
@@ -853,6 +893,10 @@ NSS.FC.DF+1,2;l,L;12,20;,i25~26;-14~-13;+14~+15;;"
 * Combo from 1st hit
 * Alternate input: NSS.db,b+1,2"
 NSS.FC.df+3;L;12;i20~21;-26~-25;+67a (+51);;
+NSS.f,n,d,df+1;m;19;i17~18;-17~-16;+35a (+25a);;"
+* Can be buffered
+* Can transition to r37 KIN with 1+2
+* Can be performed in FC"
 NSS.KIN.1+4;m;24;i12~15;-15~-12;+14 +64a;;"
 * Weapon
 * Knockdown against BT opponent, +19a (+9)
@@ -868,9 +912,15 @@ NSS.KIN.f+1*;M,M,M,M,M,M;6,6,6,6,6,12;i19~20 i6~7 i7~8 i6~7 i7~8 i7~8;--9~-8;+29
 * Combos from any hit
 * 21 chip damage on block
 * Recovers health on hit"
+NSS.qcf+1;M;30;i53~56;-8c~-5c;+5a;;"
+* Spike
+* Can be buffered
+* Can be performed in FC"
+NSS.u+1;m;21;i25~26;-5~-4;+4c~+5c;;Spike
 NSS.u+1+2;L;18;i27~29;+4~+6;+20c~+22c;;"
 * Spike
 * Can't be low parried"
+NSS.ub+1;m;19;i25~26;-6~-5;+3c~+4c;;Spike
 NSS.u,b+1+2;M;25;i24~25;-8c~-7c;+27a (+17);;"
 * Balcony Break
 * Weapon
@@ -883,6 +933,13 @@ NSS.ub+1+2;M;30;i24~25;-8c~-7c;+16a (+6);;"
 * Clean hit 39 damage
 * Recovers health on hit
 * -12c~-13c if blocked at tip range"
+NSS.ub+1+3;m!;50;i51~65;;-23;;"
+* Punishable on close hit with FUFT.3"
+NSS.ub+1+3,1+2;m!h;50,15;,i18~19;-15~-4;-4~-3;+45a;
+NSS.ub+1+3,n+1;m!,h!;50,40;,i20~105;;-49a (-75);;"
+* Balcony Break
+* Cancel early to r21 with B"
+NSS.uf+1;m;24;i25~26;-4~-3;+5c~+6c;+15a;Spike
 NSS.uf+1+3;;;;;;;
 OTG.u+1;M;24;i27~29;-13~-11;-8c~-6c;;" 
 * Spike
@@ -916,6 +973,10 @@ R.df+1+2;m;10,45+;i20;-15;+0d;;"
 Right Throw;t;40;;-3;-3d;;Throw break 2
 SS.1;m;23;i17~18;-9~-8;+2~+3;;
 SS.2;m;22;i18~19;-13~-12;+30a (+20);;Tornado
+u+1;m;17;i24~25;-5~-4;+4c~+5c;;"
+* Spike
+* Weapon
+* Alternate notation: 1SS.u+1"
 u+1+2;;;;;;;"
 * Unavailable in 1SS
 * Alternate input: BT.u+1+2"
@@ -923,6 +984,10 @@ u+3+4;M,M;10,12;i39~42 i3~6;+1c~+4c;+24a;;"
 * Spike
 * Evades some mid attacks from frames ?-?
 * Can be floated out of invisibility frames"
+ub+1;m;15;i24~25;-6~-5;+3c~+4c;;"
+* Spike
+* Weapon
+* Alternate notation: 1SS.ub+1"
 ub+1+2;M;25;i24~25;-8c~-7c;+27a (+17);;"
 * Balcony Break
 * Weapon
@@ -931,22 +996,21 @@ ub+1+2;M;25;i24~25;-8c~-7c;+27a (+17);;"
 ub+1+3;m!;40;i50~52;;-24;;"
 * Weapon
 * Punishable on close hit with FUFT.3
-* Alternate notation: 1SS.ub+1+2"
+* Alternate notation: 1SS.ub+1+3"
 ub+1+3,1+2;m!h!;40,18;,i18~19;;+1~+2;+45a;"
 * Weapon
-* Alternate notation: 1SS.ub+1+2,1+2"
+* Alternate notation: 1SS.ub+1+3,1+2"
 ub+1+3,n+1;m!,m!;40,22;,i28~113;;-57a;;"
 * Weapon
 * Cancel early to r21 with B (earliest cancel -12a)
 * Possible to double-hit
-* Alternate notation: 1SS.ub+1+2,n+1"
+* Alternate notation: 1SS.ub+1+3,n+1"
 ub+4;m;17;i20~22;-19~-17;+12a (+2);;"
 * Balcony Break
 * Spike"
-uf+1;m;20;i24~25;-4~-5;+5c~+6c;+50a;"
+uf+1;m;20;i24~25;-4~-3;+5c~+6c;+50a;"
 * Spike
 * Weapon
-* Alternate inputs: ub+1, u+1
 * Alternate notation: 1SS.uf+1"
 uf+1+2;t;45;i11;+0;+1;;"
 * Floor Break

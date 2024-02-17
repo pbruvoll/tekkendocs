@@ -16,6 +16,9 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * Combos from 2nd hit CH
 "
 1,2,4;h,h,m;5,12,20;i29;-9;+2a (-7);;
+1+3;t;35;i12;-3;;;"
+* Throw break 1 or 2
+* Floor Break "
 2;h;8;i10;+0;+8;;"
 * "
 2+3;m;12 (12);i16;+1;+2c;;"
@@ -23,6 +26,9 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 2,3;h,l;8,13;i26;-12;-2;+6c;"
 * Combos from 1st hit
 "
+2+4;t;35;i12;-3;;;"
+* Throw break 1 or 2
+* Side swap "
 2,4;h,h;8,20;i22;-5;+24a (+15);;"
 * Balcony Break 
 * Combos from 1st hit"
@@ -54,6 +60,10 @@ b+1;m;16;i17;-6;+2;+8;"
 * Transition to +0, +8, +14 DEW with F"
 b+1+2;m;28;i23;-12;+29a (-7);;"
 * Balcony Break "
+b+1+3;t;25;;;+1d;;"
+* Punch parry (high and mid)
+* Side swap
+* Alternate input b+2+4"
 b+1+4;m!;50;i63;!;+9a (-17);;"
 * Balcony Break "
 b+1,4;m,m;16,22;i25;-11;+32a (+17);;"
@@ -75,8 +85,15 @@ b+3;;;;;;;"
 * Alternate input b+4 "
 b+3+4;;;;;;;"
 * Transitions to BT "
+Back Throw;t;60;i12;!;+1d;;Unbreakable
 BT.1;h;8;i8;-8;+3;;"
 * "
+BT.1+2;m;25;i13;-11c;+16a;;"
+* "
+BT.1,2;h,m;8,20;i24;-13;+16a (-1);;"
+* Tornado
+* Balcony Break
+* Combos from 1st hit"
 BT.1,4;h,h;8,21;i22;-5;+10g;;"
 * Heat Engager
 
@@ -84,6 +101,34 @@ BT.1,4;h,h;8,21;i22;-5;+10g;;"
  
 * Balcony Break
 * Combos from 1st hit"
+BT.2;m;22;i14;-13;+8;;"
+* Balcony Break "
+BT.3;m;12;i14;-10;+0;;"
+* Homing "
+BT.3+4;m;24;i29;+2;+7c;;"
+* Chip on block [9] "
+BT.3,4;m,m;12,20;i30;-12;+39d (+31);;"
+* Balcony Break
+* Combos from 1st hit "
+BT.4;m,m;10,20;i26,i21;-11;+11d;;"
+* 2-hit move, 2nd hit only combos on CH "
+BT.4,3+4;m,m,m;10,20,12;i28;-10;+4d;;"
+* Floor Break
+* Combos from 2nd hit "
+BT.b+3;;;;;;;"
+* Transitions to RAB
+* Transition to DEW with F
+* Alternate input b+4"
+BT.d+2;l;17;i16;-12;+5c;+14d;"
+* "
+BT.d+3;l;8;i17;-17;-1;+2;"
+* "
+BT.d+3+4;l;25;i20;-26;+19d;;"
+* Transition to +18d facing Forward on hit with F"
+BT.d+3,4;l,m;8,20;i22;-13;+27a (+12);;"
+* Combos from 1st hit CH "
+BT.d+4;l;9;i14;-11;+1;;"
+* "
 d+1;l;10;i18;-11;+0;;"
 * Transition to -11, +0 FC with D "
 d+1+2;m;25;i20;-13;+13d;;"
@@ -122,6 +167,20 @@ db+3+4;l;20;i24;-18;+3d;+33a;"
 db+4;l;20;i30;-24;+76a (+60);;"
 * Homing
 * Instant Tornado "
+DEW.1;m;12;i15;-9;-4;+2;"
+* "
+DEW.1+2;m;28;i16;-11;+17cg;;"
+* Tornado
+* Balcony Break "
+DEW.1,2;m,m;12,20;i23;-14;+20a (+10);+54a;"
+* Balcony Break
+* Combos from 1st hit
+* Cancel and transition to -14, -12, -3 BT with B "
+DEW.1,4;m,m;12,30;i25;-9;+2a (-7);;"
+* Balcony Break
+* Combos from 1st hit CH
+* Chip damage on block [9]
+* Partially consumes remaining Heat time"
 DEW.2;m;13;i14;-9;+0;;"
 * Homing "
 DEW.2,1;m,m;13,20;i22;-13;+17d;;"
@@ -131,6 +190,14 @@ DEW.2,1;m,m;13,20;i22;-13;+17d;;"
 
 * Balcony Break
 * Combos from 1st hit"
+DEW.3;m;28;i17;-9;+20a (+3);;"
+* Tornado
+* Balcony Break "
+DEW.3+4;h;26;i12;+6;+17g;;"
+* Balcony Break
+* Transition to +0, +11 RAB with b+3 or b+4"
+df+1;m;10;i13;-1;+8;;"
+* "
 df+2;m;15;i16;-11;+31a (+21);;"
 * Transition to -11, +31a (+21) BT with B "
 df+3;m;23;i20;+3c;+8c;+19a;"
@@ -144,6 +211,9 @@ df+4;m;12;i13;-8;-2;+5;"
 * Knee "
 df+4,4;m,l;12,23;i20;-13;-2;+8;"
 * Combos from 1st hit"
+(During Enemy wall stun) 1+3;t;39;i12;!;+0d;;"
+* Wall throw (Unbreakable)
+* Alternate input 2+4, uf+1+2"
 f+1+2;m;17;i14;-7;+4c;+12c;"
 * "
 f+2;h;10;i12;-9;-1;;"
@@ -165,6 +235,44 @@ f+3+4,3,4;m,m,m;20,20,20;i19;-20;+10 (+3);;"
 * Combos from 1st hit "
 f+4;m;23;i17;-9;+7;+57a;"
 * Tornado "
+FC.1;s;5;i10;-5;+6;;"
+* Alternate input db+1 "
+FC.2;s;8;i11;-4;+7;;"
+* Alternate input db+2"
+FC.3;l;10;i16;-17;-6;;"
+* "
+FC.4;l;6;i12;-15;-4;;"
+* Alternate input d+4"
+FC.df+1;m;25;i14;-6;+19a (+2);+34d (+26);"
+* Balcony Break "
+FC.df+3;l;19;i23;-18;-2;+26a;"
+* "
+f,F+1+2;m;28;i18;-9;+17a (+8);;"
+* Homing
+* Balcony Break
+* Hold to power up:
+** 2 spins: +12 on block, 11 chip damage
+** 3 spins: Unblockable, 50 damage "
+f,F+2;m;20;i16;-13;+20a;;"
+* "
+f,F+3;m;15;i22;-12;+5c;;"
+* Transition to -3, +14c DEW with F"
+f,F+3,3+4;m,m;15,25;i27;-8;+13d;;"
+* Only comes out on hit or block
+* On airborne opponent: 
+Floor Break
+* Combos from 1st hit"
+f,F+3+4;m;30;i19;-2;+4a (-5);;"
+* Balcony Break
+* Chip damage on block [9]
+* Powered up in Heat
+* Partially consumes remaining Heat time"
+f,F+4;l;23;i22;-12;+4;+4;"
+* Transition to -6, +10g, +10 BT with B "
+f,f,F+3;m;30;i23;+3;+20a (+10);;"
+* Balcony Break
+* Chip damage on block
+* Alternate input wr3 "
 H.2+3;h,t;55;i23;+9;-3d;;"
 * Heat Smash
 * Homing
@@ -173,6 +281,19 @@ H.BT.2+3;l;39;i16;-8;+23a (+5);;"
 * Heat Smash
 * Homing
 * Wall Bounce "
+H.f,F+3+4 (etc.);m;36;i19;+4 (+9w);+20a (-6);;"
+* All moves named Piercing Thorn share these properties when in Heat
+* Balcony Break
+* Chip damage on block [16]
+* Partially consumes remaining Heat time"
+H.RAB.3;l;20;i20;-13;+24a;+70a (+54);"
+* Homing
+* Partially consumes remaining Heat time "
+Left Throw;t;42;i12;-3;+0d;;Throw break 1
+qcf;;;;;;;"
+* Transitions to Dew Glide
+* Transition to Crouch with d,DF
+* Transition to RAB with b+3 or b+4"
 RAB.2;m;20;i20;-9;+39d (-19);;"
 * Heat Engager
 
@@ -180,8 +301,83 @@ RAB.2;m;20;i20;-9;+39d (-19);;"
 
 * Balcony Break
 * Powered up during Heat: 24 damage
-* Partially uses remaining Heat Time"
+* Partially consumes remaining Heat Time"
+RAB.3;l;20;i20;-13;+3c;+70a (+54);"
+* Homing
+* Powered up during Heat "
+RAB.4;m;24;i23;-2;+4a (-5);;"
+* Balcony Break
+* Powered up during Heat"
+RAB.B+3;;;;;;;"
+* Transitions to Feisty Rabbit Deuxime
+* All RAB moves are available
+* Partially restores remaining Heat Time
+* Transition to DEW with F "
 R.df+1+2;m,t;55+;i20;-15;+0;;"
 * Rage Art
 * Damage increases with lower health
 * Erases opponent's recoverable health on hit"
+Right Throw;t;43;i12;-3;+1d;;Throw break 2
+ss1+2;m;21;i19;+0;+25a (+16);+64a;"
+* Balcony Break "
+ss3;m;20;i16;-9;+35d (+27);;"
+* Balcony Break "
+ss4;m;18;i20;-2;+4;+11g;"
+* Transition to -13, -7, +0 RAB with b+3 or b+4 "
+u+3;m;20;i22;-16;+25a (+15);;"
+* Transition to -13, +28a (+18) DEW with F
+* Alternate input ub+3"
+u+3,3;m,m;20,15;i28;-12;+5c;;"
+* Transition to -, +14c DEW with F
+* Combos from 1st hit
+* Alternate input ub+3,3"
+u+3,3,3+4;m,m,m;20,15,25;i27;-8;+13d;;"
+* Can only be done on hit or block
+* On airborne opponent: 
+Floor Break
+* Combos from 1st hit
+* Alternate input ub+3,3,3+4"
+u+3+4;m (t);18 (28 );i36;-8;+13d (+39a);;"
+* Becomes a 28 damage +39a throw when hit at close range "
+ub+1;m;21;i16;-9;+9d;;"
+* "
+uf+1+2;t;40;i12;-3;+1;;"
+* Throw break 1+2 "
+uf+2;m;21;i20;-10;+15a (+6);;"
+* Balcony Break
+* Alternate input ub+2, u+2"
+uf+3;m;13;i15;-13;+30a (+20);;"
+* Alternate input ub+3, u+3"
+uf+3+4;m;15;i15;-9;+2;;"
+* Knee "
+uf+3+4,3+4;m,m;15,23;i19;-21;+45a (+35);;"
+* Tornado "
+uf+3+4,4;m,h;15,18;i13;-4;+14g (+18g w);+20a (+10);"
+* On CH: 
+Balcony Break
+* Combos from 1st hit  "
+uf+4;m;18;i25;-12;+1c;;"
+* Transition to -7, +6c BT with B"
+uf+4,3;m,m;18,30;i24;-9;+41d (-17);+32d (+24);"
+* Tornado
+* Balcony Break
+* Combos from 1st hit "
+uf,n,4;m;20;i23;-13;+32a (+22);;"
+*  "
+ws1;m;10;i13;-11;+0;;"
+* "
+ws1,2;m,h;10,16;i22;-3;+8;;"
+* Combos from 1st hit
+* Transition to -1, +10g DEW with F"
+ws1,2,4;m,h,l;10,16,20;i22;-14;+12a;+43a;"
+* Combos from 2nd hit CH"
+ws2;m;17;i16;-12;+39a (+29);;"
+* Transition to -12, +39a (+29) BT with B"
+ws3;m;25;i15;-21;+62a (+46);;"
+* Instant 
+Tornado "
+ws3,4;m,m;25,25;i44;+4c;+26d;;"
+* Floor Break
+* Combos from 1st hit"
+ws4;m;18;i11;-9;+20a (+13);;"
+* "

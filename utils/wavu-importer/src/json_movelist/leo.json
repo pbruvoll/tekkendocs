@@ -98,6 +98,20 @@
     "target": "h,h,l"
   },
   {
+    "damage": "35",
+    "gif": "",
+    "id": "Leo-1+3",
+    "input": "1+3",
+    "name": "Bao Hu Gui Shan",
+    "notes": "Throw break 1 or 2",
+    "on_block": "-3",
+    "on_ch": "",
+    "on_hit": "+0d",
+    "recovery": "",
+    "startup": "i12~i14",
+    "target": "t"
+  },
+  {
     "damage": "5,17",
     "gif": "",
     "id": "Leo-1,4",
@@ -168,6 +182,20 @@
     "target": "m"
   },
   {
+    "damage": "9,10,16 (35)",
+    "gif": "",
+    "id": "Leo-2+4",
+    "input": "2+4",
+    "name": "Dan Yang Da",
+    "notes": "\n* Throw break 1 or 2\n* Side switch on hit\n* Deals 4 more damage at the wall",
+    "on_block": "-6",
+    "on_ch": "",
+    "on_hit": "+0d",
+    "recovery": "",
+    "startup": "i12~i14",
+    "target": "t"
+  },
+  {
     "damage": "15",
     "gif": "",
     "id": "Leo-3",
@@ -218,7 +246,7 @@
     "notes": "Combo on 2nd attack CH",
     "on_block": "+9",
     "on_ch": "+19",
-    "on_hit": "+15",
+    "on_hit": "+15g",
     "recovery": "",
     "startup": "i22~i23",
     "target": "h,h,m"
@@ -252,7 +280,7 @@
     "target": "m"
   },
   {
-    "damage": "1718",
+    "damage": "17,18",
     "gif": "",
     "id": "Leo-b+1,1+2",
     "input": "b+1,1+2",
@@ -280,7 +308,7 @@
     "target": "m"
   },
   {
-    "damage": "1513",
+    "damage": "15,13",
     "gif": "",
     "id": "Leo-b+1+2,1+2",
     "input": "b+1+2,1+2",
@@ -291,10 +319,10 @@
     "on_hit": "-3",
     "recovery": "",
     "startup": "i21~i22",
-    "target": "mm"
+    "target": "m,m"
   },
   {
-    "damage": "151325",
+    "damage": "15,13,25",
     "gif": "",
     "id": "Leo-b+1+2,1+2,2",
     "input": "b+1+2,1+2,2",
@@ -305,7 +333,35 @@
     "on_hit": "+17d (+12)",
     "recovery": "",
     "startup": "i20~i12",
-    "target": "mmm"
+    "target": "m,m,m"
+  },
+  {
+    "damage": "",
+    "gif": "",
+    "id": "Leo-b+1+3",
+    "input": "b+1+3",
+    "name": "Shi Zi Xiao Zhang Kou",
+    "notes": "\n* Parries high and mid punches and kicks",
+    "on_block": "",
+    "on_ch": "",
+    "on_hit": "",
+    "recovery": "",
+    "startup": "",
+    "target": ""
+  },
+  {
+    "damage": "30",
+    "gif": "",
+    "id": "Leo-b+1+3,P.2",
+    "input": "b+1+3,P.2",
+    "name": "Shang Bu Zhuang Quan",
+    "notes": "\nBalcony Break\n* Combo from parry\n* Charge LTG on hit",
+    "on_block": "-9",
+    "on_ch": "",
+    "on_hit": "-9a",
+    "recovery": "",
+    "startup": "i14~i15",
+    "target": "m"
   },
   {
     "damage": "17,14",
@@ -316,7 +372,7 @@
     "notes": "Combo from 1st hit",
     "on_block": "+9",
     "on_ch": "+19",
-    "on_hit": "+15",
+    "on_hit": "+15g",
     "recovery": "",
     "startup": "i23",
     "target": "m,m"
@@ -367,7 +423,7 @@
     "damage": "11,21",
     "gif": "",
     "id": "Leo-b+2,1+2",
-    "input": "b+21+2",
+    "input": "b+2,1+2",
     "name": "Er Lang Dan Shan",
     "notes": "\nHeat Engager\n\n* Combo from 1st hit",
     "on_block": "-11",
@@ -390,6 +446,20 @@
     "recovery": "",
     "startup": "i30~i31",
     "target": "m"
+  },
+  {
+    "damage": "",
+    "gif": "",
+    "id": "Leo-b+2+4",
+    "input": "b+2+4",
+    "name": "Shi Zi Zhou",
+    "notes": "\nBalcony Break\n* Parries high and mid punches and kicks\n* Side switch on punch parry (+5)\n* 25 damage on kick parry (+1d), does not Balcony Break",
+    "on_block": "",
+    "on_ch": "",
+    "on_hit": "",
+    "recovery": "",
+    "startup": "",
+    "target": ""
   },
   {
     "damage": "12",
@@ -470,10 +540,24 @@
     "notes": "\n* Combo from 1st hit\n*Transition to cd with ~DF\n** (-5 oB, +1 oH, +5 CH)",
     "on_block": "+9",
     "on_ch": "+19",
-    "on_hit": "+15",
+    "on_hit": "+15g",
     "recovery": "",
     "startup": "i17~i18",
     "target": "m,m"
+  },
+  {
+    "damage": "25,25 (50)",
+    "gif": "",
+    "id": "Leo-Back throw",
+    "input": "Back throw",
+    "name": "Yang Di Tou",
+    "notes": "\n* Deals 10 more damage at the wall",
+    "on_block": "",
+    "on_ch": "",
+    "on_hit": "-3d",
+    "recovery": "",
+    "startup": "i12~i14",
+    "target": "t"
   },
   {
     "damage": "14",
@@ -498,7 +582,7 @@
     "notes": "\nHeat Engager\n\nBalcony Break\nSpike\n**Chip damage on block\n",
     "on_block": "-12",
     "on_ch": "",
-    "on_hit": "+15",
+    "on_hit": "+15d",
     "recovery": "",
     "startup": "i0",
     "target": "m"
@@ -554,7 +638,7 @@
     "notes": "\n*Transition to cd with ~DF",
     "on_block": "+9",
     "on_ch": "+19",
-    "on_hit": "+15",
+    "on_hit": "+15g",
     "recovery": "",
     "startup": "i20",
     "target": "m"
@@ -630,7 +714,7 @@
     "target": "m,m"
   },
   {
-    "damage": "1426",
+    "damage": "14,26",
     "gif": "",
     "id": "Leo-CD.2,4",
     "input": "CD.2,4",
@@ -784,7 +868,7 @@
     "target": "m"
   },
   {
-    "damage": "1720",
+    "damage": "17,20",
     "gif": "",
     "id": "Leo-db+1+2,1",
     "input": "db+1+2,1",
@@ -817,7 +901,7 @@
     "id": "Leo-db+2,4",
     "input": "db+2,4",
     "name": "Bei Zhan Juan Long Jiao",
-    "notes": "\n* Heat Engager\n\n* '''Heat Dash +5g, +64a (+42)'''\n\n\n* Balcony Break\n* Combo from 1st hit",
+    "notes": "\n* Heat Engager\n\n* Heat Dash +5g, +64a (+42)\n\n* Balcony Break\n* Combo from 1st hit",
     "on_block": "-9",
     "on_ch": "",
     "on_hit": "+12a (+3)",
@@ -854,7 +938,7 @@
     "target": "l"
   },
   {
-    "damage": "1127",
+    "damage": "11,27",
     "gif": "",
     "id": "Leo-db+4,1",
     "input": "db+4,1",
@@ -896,7 +980,7 @@
     "target": "m"
   },
   {
-    "damage": "1320",
+    "damage": "13,20",
     "gif": "",
     "id": "Leo-df+1,2",
     "input": "df+1,2",
@@ -1058,10 +1142,80 @@
     "notes": "\n*Transition to cd with ~DF\n** (-5 oB, +1 oH, +5 CH)",
     "on_block": "+9",
     "on_ch": "+19",
-    "on_hit": "+15",
+    "on_hit": "+15g",
     "recovery": "",
     "startup": "i17~i18",
     "target": "m"
+  },
+  {
+    "damage": "5",
+    "gif": "",
+    "id": "Leo-FC.1",
+    "input": "FC.1",
+    "name": "Crouch Jab",
+    "notes": "",
+    "on_block": "-5",
+    "on_ch": "",
+    "on_hit": "+6",
+    "recovery": "",
+    "startup": "i10",
+    "target": "s"
+  },
+  {
+    "damage": "8",
+    "gif": "",
+    "id": "Leo-FC.2",
+    "input": "FC.2",
+    "name": "Crouch Straight",
+    "notes": "",
+    "on_block": "-4",
+    "on_ch": "",
+    "on_hit": "+7",
+    "recovery": "",
+    "startup": "i11",
+    "target": "s"
+  },
+  {
+    "damage": "10",
+    "gif": "",
+    "id": "Leo-FC.3",
+    "input": "FC.3",
+    "name": "Crouch Spin Kick",
+    "notes": "",
+    "on_block": "-17",
+    "on_ch": "",
+    "on_hit": "-6",
+    "recovery": "",
+    "startup": "i16",
+    "target": "l"
+  },
+  {
+    "damage": "6",
+    "gif": "",
+    "id": "Leo-FC.4",
+    "input": "FC.4",
+    "name": "Crouch Shin Kick",
+    "notes": "",
+    "on_block": "-15",
+    "on_ch": "",
+    "on_hit": "-4",
+    "recovery": "",
+    "startup": "i12",
+    "target": "l"
+  },
+  {
+    "damage": "20",
+    "gif": "",
+    "id": "Leo-FC.df+3",
+    "input": "FC.df+3",
+    "name": "Hou Sao Xuan",
+    "notes": "",
+    "on_block": "-26",
+    "on_ch": "",
+    "on_hit": "+37a",
+    "recovery": "",
+    "startup": "i21~i23",
+    "target": "l"
   },
   {
     "damage": "25",
@@ -1204,7 +1358,7 @@
     "target": "m"
   },
   {
-    "damage": "1217",
+    "damage": "12,17",
     "gif": "",
     "id": "Leo-KNK.1,2",
     "input": "KNK.1,2",
@@ -1260,7 +1414,7 @@
     "target": ""
   },
   {
-    "damage": "1318",
+    "damage": "13,18",
     "gif": "",
     "id": "Leo-KNK.3,4",
     "input": "KNK.3,4",
@@ -1279,7 +1433,7 @@
     "id": "Leo-KNK.4",
     "input": "KNK.4",
     "name": "Cuo Ti Fu Ren",
-    "notes": "\nSpike\n* Transition to cd with ~DF\n** (-10 oB, +6c oH, +19g CH)",
+    "notes": "\nSpike\n* Transition to cd with ~DF\n** (-10 oB, +6c oH, +19d CH)",
     "on_block": "-12",
     "on_ch": "",
     "on_hit": "+4c",
@@ -1300,6 +1454,20 @@
     "recovery": "r12 CD",
     "startup": "",
     "target": ""
+  },
+  {
+    "damage": "14,26 (40)",
+    "gif": "",
+    "id": "Leo-Left throw",
+    "input": "Left throw",
+    "name": "Chou Bie Zi",
+    "notes": "\n* Throw break 1\n* Side switch on hit\n* Deals 4 more damage at the wall",
+    "on_block": "-3",
+    "on_ch": "",
+    "on_hit": "+0d",
+    "recovery": "",
+    "startup": "i12~i14",
+    "target": "t"
   },
   {
     "damage": "20",
@@ -1330,6 +1498,20 @@
     "target": "m"
   },
   {
+    "damage": "20,20 (40)",
+    "gif": "",
+    "id": "Leo-Right throw",
+    "input": "Right throw",
+    "name": "Da Zhe Jiang",
+    "notes": "\n* Throw break 2\n* Side switch on hit",
+    "on_block": "-3",
+    "on_ch": "",
+    "on_hit": "+1d",
+    "recovery": "",
+    "startup": "i12~i14",
+    "target": "t"
+  },
+  {
     "damage": "",
     "gif": "",
     "id": "Leo-ss.1+2",
@@ -1358,6 +1540,20 @@
     "target": "m"
   },
   {
+    "damage": "",
+    "gif": "",
+    "id": "Leo-ub+1",
+    "input": "ub+1",
+    "name": "Bao Zhou",
+    "notes": "\n* Parries high and mid kicks",
+    "on_block": "",
+    "on_ch": "",
+    "on_hit": "",
+    "recovery": "",
+    "startup": "",
+    "target": ""
+  },
+  {
     "damage": "60",
     "gif": "",
     "id": "Leo-ub+1+2",
@@ -1370,6 +1566,20 @@
     "recovery": "",
     "startup": "i70~i71",
     "target": "m!"
+  },
+  {
+    "damage": "22",
+    "gif": "",
+    "id": "Leo-ub+1,P.4",
+    "input": "ub+1,P.4",
+    "name": "Bao Zhou Ji Tui",
+    "notes": "\n* Combo from parry",
+    "on_block": "-16",
+    "on_ch": "",
+    "on_hit": "+14c",
+    "recovery": "",
+    "startup": "i17~i18",
+    "target": "h"
   },
   {
     "damage": "26",
@@ -1426,6 +1636,20 @@
     "recovery": "",
     "startup": "i19~i20",
     "target": "h,m"
+  },
+  {
+    "damage": "14,26 (40)",
+    "gif": "",
+    "id": "Leo-uf+1+2",
+    "input": "uf+1+2",
+    "name": "Shuang Pai Shou",
+    "notes": "\nBalcony Break\n* Throw break 1+2",
+    "on_block": "-6",
+    "on_ch": "",
+    "on_hit": "+8d",
+    "recovery": "",
+    "startup": "i12~i14",
+    "target": "t"
   },
   {
     "damage": "8,25",
@@ -1510,5 +1734,145 @@
     "recovery": "",
     "startup": "i23~i25",
     "target": "m"
+  },
+  {
+    "damage": "13",
+    "gif": "",
+    "id": "Leo-ws1",
+    "input": "ws1",
+    "name": "",
+    "notes": "",
+    "on_block": "-8",
+    "on_ch": "",
+    "on_hit": "+4",
+    "recovery": "",
+    "startup": "i14~i15",
+    "target": "m"
+  },
+  {
+    "damage": "25",
+    "gif": "",
+    "id": "Leo-ws1+2",
+    "input": "ws1+2",
+    "name": "Le Kua Kao",
+    "notes": "\n* Charge LTG on hit with ~1+2*\n** (+3oH)",
+    "on_block": "-15",
+    "on_ch": "",
+    "on_hit": "+22",
+    "recovery": "",
+    "startup": "i13~i15",
+    "target": "m"
+  },
+  {
+    "damage": "13,12",
+    "gif": "",
+    "id": "Leo-ws1,4",
+    "input": "ws1,4",
+    "name": "",
+    "notes": "Combo from 1st CH",
+    "on_block": "-12",
+    "on_ch": "",
+    "on_hit": "-1",
+    "recovery": "",
+    "startup": "i19~i20",
+    "target": "m,l"
+  },
+  {
+    "damage": "13,12,24",
+    "gif": "",
+    "id": "Leo-ws1,4,1",
+    "input": "ws1,4,1",
+    "name": "Huo Da Ding Zhou",
+    "notes": "\nBalcony Break\nCombo from 2nd CH",
+    "on_block": "-14",
+    "on_ch": "+44a (-3)",
+    "on_hit": "+12a (+3)",
+    "recovery": "",
+    "startup": "i22",
+    "target": "m,l,m"
+  },
+  {
+    "damage": "17",
+    "gif": "",
+    "id": "Leo-ws2",
+    "input": "ws2",
+    "name": "Shang Bu Gua Shan",
+    "notes": "",
+    "on_block": "-13",
+    "on_ch": "",
+    "on_hit": "+28a (+18)",
+    "recovery": "",
+    "startup": "i15~i16",
+    "target": "m"
+  },
+  {
+    "damage": "9",
+    "gif": "",
+    "id": "Leo-ws3",
+    "input": "ws3",
+    "name": "",
+    "notes": "",
+    "on_block": "-6",
+    "on_ch": "",
+    "on_hit": "+5",
+    "recovery": "",
+    "startup": "i13~i14",
+    "target": "m"
+  },
+  {
+    "damage": "9,9",
+    "gif": "",
+    "id": "Leo-ws3,1",
+    "input": "ws3,1",
+    "name": "",
+    "notes": "\n* Combo from 1st hit\n* Transition into BOK with ~D\n** (-10oB, +9 oH)",
+    "on_block": "-10",
+    "on_ch": "",
+    "on_hit": "+3",
+    "recovery": "",
+    "startup": "i21",
+    "target": "m,m"
+  },
+  {
+    "damage": "9,9,20",
+    "gif": "",
+    "id": "Leo-ws3,1,2",
+    "input": "ws3,1,2",
+    "name": "Liang Yi Er Yui Ya Zhou",
+    "notes": "Combo from 1st CH",
+    "on_block": "-9",
+    "on_ch": "+31d (+23)",
+    "on_hit": "+6d",
+    "recovery": "",
+    "startup": "i24~i25",
+    "target": "m,m,h"
+  },
+  {
+    "damage": "8",
+    "gif": "",
+    "id": "Leo-ws4",
+    "input": "ws4",
+    "name": "",
+    "notes": "",
+    "on_block": "-9",
+    "on_ch": "",
+    "on_hit": "+2",
+    "recovery": "",
+    "startup": "i11~i12",
+    "target": "m"
+  },
+  {
+    "damage": "8,18",
+    "gif": "",
+    "id": "Leo-ws4,1+2",
+    "input": "ws4,1+2",
+    "name": "Rising Bei Zhe Kao",
+    "notes": "\nHeat Engager\n\n* Combo from 1st hit",
+    "on_block": "-12",
+    "on_ch": "",
+    "on_hit": "+4d",
+    "recovery": "",
+    "startup": "i25~i27",
+    "target": "m,m"
   }
 ]

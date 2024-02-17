@@ -1,27 +1,47 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes
 1;h;5;i10;+1;+8;;
-1,2;h,h;5,9;i12;-3;+7;;Jail from 1st attack
-1,2,2;h,h,m;5,9,16;i20~21;-13;-2;;
-1,2,4;h,h,m;5,9,11;i18;-12;-1;+58;Goes into HMS by pressing 3. Crumples on ch.
-"1,2&amp;#58;4";h,h,m;5,9,13;i18;-12;+5;+58;Goes into HMS by pressing 3. Crumples on ch.
-1,3;h,h;5,6;i16;-11;+0;;
-"1,3&amp;#58;3";h,h,m;5,6,4;i9;-11;+0;;
-"1,3&amp;#58;3&amp;#58;3";h,h,m,h;5,6,4,15;i21;-17;+14;;
+1,2;h,h;5,9;,i12;-3;+7;;"
+* Jail from 1st attack with max delay
+* Move can be delayed 4f"
+1,2,2;h,h,m;5,9,14;,i20~21;-13;-2;;"
+* Move can be delayed
+* Combo from 2nd CH without delay"
+1,2,4;h,h,m;5,9,10;,i18;-12;-1;+58a;"
+* Jail from 1st attack
+* Transition to -14 -2 HMS with 3"
+"1,2&amp;#58;4";h,h,m;5,9,12;,i18;-12;+5;+58a;"
+* 4 frame window for timed input
+* Jail from 1st attack
+* Transition to -14 +3 HMS with 3"
+1,3;h,h;5,5;i16;-11;+0;;
+"1,3&amp;#58;3";h,h,m;5,5,4;,i9;-11;+0;;Jail from 1st attack
+"1,3&amp;#58;3&amp;#58;3";h,h,m,h;5,5,4,14;,i21;-17;+14;;"
+* Combo from 1st hit
+* Timestop on hit
+* 5 chip damage"
 2+3;m;12;i16;+1;+2;;"Heat Engager
  Powercrush. Cancelable with b,b."
-4;h;14;i11;-9;+2;;
-4,4;h,h;14,5;i10;-13;-2;;Launches on ch
-4,4,4;h,h,h;14,5,5;i10;-13;-2;;
-"4,4&amp;#58;4";h,h,h;14,5,12;i20;-9;+17;+29;"Heat Engager
+4;h;14;i11;-9;+2;+2s;
+4,4;h,h;14,5;,i10;-13;-2;;"
+* Jail from 1st attack
+* Combo from 1st CH [[Lee combos#Mini-combos|+20a (+13)]]"
+4,4,4;h,h,h;14,5,5;,i10;-13;-2;;"
+* Jail from 1st attack
+* Combo from 1st CH +25a (+18)"
+"4,4&amp;#58;4";h,h,h;14,5,12;,i20~21;-9;+15a (+6);;"
+* Heat Engager
 
-Heat Dash +5g +34d
- Does not engage heat on ch."
+* Heat Dash +5g +34d
+
+* Combo from 1st hit
+* Combo from 1st ch [[Lee combos#Staples|+29a (+22)]]
+* 4 chip damage"
 b3+4;h;23;i20;-7;+17;;"Heat Engager
 
 Heat Dash +5g +34d
  Powercrush."
 df+4;m;14;i13-14;-9;+5;;
-df+4,4;m,m;14,22;i22-23;-9;+10;;"Heat Engager
+df+4,4;m,h;14,22;i22-23;-9;+10;;"Heat Engager
 
 Heat Dash +5g +34d
  df43 instead shifts into hms."
