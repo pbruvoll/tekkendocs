@@ -51,7 +51,7 @@ export const meta: MetaFunction = ({ data, params, matches }) => {
   const characterId = characterName.toLocaleLowerCase()
   const characterTitle =
     characterName[0].toUpperCase() + characterName.substring(1)
-  const title = `${characterTitle} Tekken 8 Anti strart | TekkenDocs`
+  const title = `${characterTitle} Tekken 8 Anti Strat | TekkenDocs`
   const description = `An overview of the most important information for for how to beat ${characterTitle} in Tekken 8. See the most important moves to punish, which side to to side step, strings to duck and much more`
 
   return generateMetaTags({
