@@ -4,7 +4,7 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * Combo from 1st CH
 * Links to f+1"
 1+2;m;21;i16~17;-9;KND;KND;
-1,2;h,m;6,9;,;-8;+3a;;"
+1,2;h,m;6,9;,;-8;+6;;"
 *Combo from 1st CH"
 1,2,3;h,m,m;6,9,24;,;-2;KND;;"
 * Chip on block
@@ -59,12 +59,12 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 2;h;9;i12;-11;+0;;
 2,1;h,h;9,10;;-3;+8;;"
 * Combo from 1st hit"
-2,1,2;h,h,m;9,10,16;;;KND;;Tornado
-2,1,d+1+2;h,h,m;9,10,23;;-10c;+3c;JG;"
+2,1,2;h,h,m;9,10,16;;-10;KND;;Tornado
+2,1,d+1+2;h,h,m;9,10,23;;-9;+3c;JG;"
 * Combo from 2nd CH"
 2,1,d+1+2,B;h,h,m,sp;9,10,23,0;;;;;
 2,1,d+1+2,D;h,h,m,sp;9,10,23,0;;;;;
-2+3;m;;;;;;"
+2+3;m;37;i16;+1;+2;;"
 * Heat Burst"
 2,3;h,m;9,16;,;-19;KND;;Combo from 1st hit
 2+4;t;35;i12~14;-3;+0d;;"
@@ -157,7 +157,7 @@ d+3+4;l,h;5,20;i14;-25;LNC;LNC;"
 * -6F upon 2nd block
 "
 d+4;l;7;i12;-13;-2;;
-db+1;m;13;i14;-9;+7;;
+db+1;m;13;i14;-10;+7;;
 db+1+2;m,m;10,20;i42;;KND;;"
 * Parries lows
 "
@@ -172,7 +172,7 @@ db+1,2;m,h,sp;13,20;;-9;KND;KND*;"
 * Can be delayed 9F
 * Combo can be delayed 9F from hit
 "
-db+1,4;m,m;13,25;;;KND;;Tornado
+db+1,4;m,m;13,25;;-15;KND;;Tornado
 db+2;m;22;i20;-11;LNC;LNC;Tornado
 db+3;l;17;i20;-12;+4c;+14g;
 db,4;l;14;i21;-11;+0;+3;
@@ -293,7 +293,7 @@ FC.df+2;l;10;i16;-11;+0;+25g;"
 * Crumple State 17F upon CH
 "
 FC.df+3;m;20;i17;-9;KND;KND*;
-f,F+1;m;30;i23;+4;+?c;LNC;"
+f,F+1;m;30;i23;+5;+14;;"
 "
 f,F+1+2;m;20;i19;;KND;;"
 * Chip damage when guarded
@@ -324,7 +324,7 @@ f,f,F+1+2;h;30;i17;;KND;;"
 f,f,F+3;m;32;i24~28;+0;KND;KND*;"
 * Chip damage when guarded
 "
-H.2+3;m,th;12,3;i16;;;;"
+H.2+3;m,th;12,3;i16;+10;;;"
 * Heat Smash
 * Throw on hit"
 Left throw;t;40;;-3;-3d;;"
@@ -348,11 +348,11 @@ NWG.u+1+2;m;24;i31;;KDN;;"
 * Consumes Naniwa Gusto
 * During Heat, remaining Heat is consumed
 "
-R.df+1+2;m,th;10,49;;;;;"
+R.df+1+2;m,th;10,49;i20;-15;KND;;"
 * Rage Art
 * Damage increases with lower health
 * Removes recoverable health on hit"
-R.df+1+2*;m,th;;;;;;"
+R.df+1+2*;m,th;;i56;+3;KND;;"
 * Rage Art
 * Damage increases with lower health
 * Removes recoverable health on hit"

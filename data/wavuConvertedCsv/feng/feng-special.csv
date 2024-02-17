@@ -1,18 +1,19 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes
 1;h;5;i10;+1;+8;;
-1,1;h,m;7,21;i25~26;-11;+2;+61a;"
+1,1;h,m;5,21;i25~26;-11;+2;+61a;"
 * Move can be delayed"
-1+2;m;20;i21~22;-13;+8;;
-1,2;h,h;7,9;i10;-3;+8;;"
+1+2;m;20;i21~22;-13;+8;;Punch sabaki
+1,2;h,h;5,9;i10;-3;+8;;"
 * Jail from 1st attack
 * Move can be delayed"
-1,2,2;h,h,h;7,9,12;i17;-13;+3;;"
-* Combo from 1st hit"
+1,2,2;h,h,h;5,9,12;i17;-13;+3;;"
+* Combo from 1st hit
+* Transition to -11 +5 BT with B"
 1+2+3+4;;;;;;;
 1+3;h;35;;;-3;;"
 * Throw break 1 or 2
 "
-1,3;h,h;7,19;i16~17;-5;+8;;"
+1,3;h,h;5,19;i16~17;-5;+8;;"
 * Combo from 1st hit"
 1+3+4;;;;;;;
 2;h;8;i10;-3;+5;;
@@ -26,7 +27,7 @@ Heat Burst
 2,4;h,m;8,15;i17;-12;-1;;"
 * Jail from 1st attack
 "
-2,4,1;h,m,m;8,10,25;i24;-12;+24d (+14);;"
+2,4,1;h,m,m;8,15,25;i24;-12;+24d (+14);;"
 Balcony Break
 * Combo from 2nd CH
 * Move can be delayed
@@ -35,7 +36,8 @@ Balcony Break
 3,1+2;h,m;15,30;i28~29;-12;+22d (+17);;"
 Balcony Break
 * Combo from 1st CH
-* Move can be delayed"
+* Can be charged to power up:
+* At full charge +7 on block 14 chip damage "
 3,3;h,h;15,18;i17;-9;+2;;"
 * Combo from 1st hit
 * Jail from 1st attack
@@ -50,15 +52,17 @@ Balcony Break
 * Combo from 1st hit"
 4~3;M;25;i28~i34;-7;+1c;+16a;
 b+1;h;17;i10~11;-12;+1;+36d (+28);
-b+1+2;m;31;i13~14;-19;+17;;"
-* Balcony Break
+b+1+2;m;31;i13~14;-19;+18a (+13);;"
 * Heat Engager
 
+* Heat Dash +5, +43d (+35)
+
+* Balcony Break
 "
 b1+3;;25;;;;;"
 * Timed with opponent punch
 "
-b+2;m;15;i17;-11;0;;
+b+2;m;15;i17;-11;+0c;;Floor Break
 b+2,3;m,l;15,10;i22~24;-11;0;;"
 * Combo from 1st CH
 * Move can be delayed
@@ -78,7 +82,7 @@ b+4;m;10;i12~13;-9;+4;;
 Back Throw;h;50;;;-4;;"
 * Cannot break throw
 "
-b,f+1;m;25;i25~26;-15;+10d (+1);;
+b,f+1;m;25;i25~26;-15;+10d (+1);+44a;
 BT 1;h;12;i12;-3;+14g;;
 BT 1+2;m;20;i16~17;-3;+8;+41d (+33);"
 * Balcony Break (CH only)
@@ -111,20 +115,24 @@ Balcony Break
 * Combo from 1st CH
 "
 db+1;m;15;i16;-12;+4;;"
-* Enter -9 +7 Deceptive Step with B
-* Enter STC with F
+* Transition to -9 +7 KNP with B
+* Transition to -16 +0 STC with F
 "
 db+1+2;m;13;i21~22;-4;+4;;
 db+1,2;m,m;15,18;i23~24;-11;+7;;"
 * Combo from 1st hit
-* Move can be delayed
-"
+* Move can be delayed "
 db+1+2,2;m,l;13,10;i29~30;-12;-1;;"
 * Combo from 1st CH
 * Move can be delayed
 "
+db+1,2,4;m,m,m;15,18,30;i31;-7;-3d;;"
+* Floor Break "
+db+1,2,4,3+4;m,m,m;15,18,30;i39;;-;;"
+* Feng does a kip-up to get off the floor
+"
 db+1,4;m,h;15,23;i24~25;-2;+24a (+15);;"
-Balcony Break
+* Balcony Break
 * Combo from 1st hit
 * Move can be delayed
 "
@@ -145,8 +153,8 @@ Tornado
 Homing
 "
 df+1;m;11;i14;0;+6;+36g;
-df2;m;15;i20~21;-8;;;
-df2,2;m,m;15,21;i13~14;-6;+14a (+4);;"
+df+2;m;15;i20~21;-8;;;
+df+2,2;m,m;15,21;i13~14;-6;+14a (+4);;"
 Balcony Break
 "
 df+3;m;21;i18~19;-7;+78a (+62);;"
@@ -169,16 +177,23 @@ Balcony Break
 * Combo from 1st hit
 * Move can be delayed
 "
-f+1+2;h;25;i19~20;-9;+17;;"
+f+1+2;h;25;i19~20;-9;+19d;;"
 * Heat Engager
 
+* Heat Dash +5, +35d
+
+* Balcony Break
 "
 f+2;m;10;i15;-8;+3;;
 f+2,1;m,m;10,10;i19;-8;+3;;"
 * Combo from 1st CH
 * Move can be delayed"
+f+2,1,2;m,m,m;10,10,28;i13~14;-19;+19d (+14);;"
+* Balcony Break
+* Combo from 1st CH
+* Move can be delayed"
 f+3;m;,10;i21;-3;+7;;
-f+3,2;m,h;,10,17;i21~22;-3;+8;;"
+f+3,2;m,h;,10,17;i21~22;-3;+8;+43d (+35);"
 * Combo from 1st hit
 * Move can be delayed"
 f+3+4;;;;;;;
@@ -186,7 +201,7 @@ f+3,4;m,m;,10,15;i23~24;-16;+33a (+23);;"
 * Combo from 1st hit
 * Tornado "
 f+4;h;19;i18~19;-9;+52a;;"
-* Cancel to -5 +56 BT with B"
+* Transition to -5 +56a BT with B"
 f+4,2;h,m;19,16;i24~25;-14;+70a (+54);;"
 * Combo from 1st hit
 * Tornado
@@ -195,33 +210,42 @@ f+4,3;h,m;19,21;i22~24;-10;+26d (-9);;"
 Spike
 * Combo from 1st hit
 "
-f+4,4;h,l;19,11;i33~33;-31;+20d (+13);;"
+f+4,4;h,l;19,11;i33~33;-31;+27d;;"
 * Combo from 1st hit
 "
-FC DF+1;L;19;i21~22;-13c;-2;+13;
-FC DF+2;m;21;i18;-14;+55a;;
-FC DF4;L;10;i19~20;-8c;+3b;;"
+FC.df+1;L;19;i21~22;-13c;-2;+13;
+FC.df+2;m;21;i18;-14;+55a;;
+FC.df+4;L;10;i19~20;-8c;+3b;;"
 * Can be input with D,df+4
 "
-FC DF4,1;L,h;10,15;i20~21;-2;+6;;"
+FC.df+4,1;L,h;10,15;i20~21;-2;+6;;"
 * Combo from 1st attack
 "
-f,F+1+2;m;25;i24~25;-9;+16d;;"
+f,F+1+2;m;25;i24~25;-9;+16a;;"
 * Balcony Break
 * Hold 1+2 to power up and deal more chip damage on block
 "
-f,F+2;m;25;i18~19;-9;+17;;"
+f,F+1+2*;m;30;i39;+6;+22a (+12);;"
+* Balcony Break
+* Wall Crush +18g
+
+
+* Becomes  Essence of Nian Zhang Mie Ba in Heat 
+"
+f,F+2;m;25;i18~19;-9;+16a (+7);;"
 * Heat Engager
+
+* Heat Dash +5, +36a (+26)
 
 * Balcony Break
 "
 f,F+3;m;35;i32~33;+8c;+8c;;"
 * Chip damage on block
-* Transition to STC with f
+* Transition to +4c +4c STC with f
 "
 f,F+4;m;15;i19~20;-15;+30a (+20);;
-f,F+4,3;m,m;15,14;i20~21;-14;+32a (+25);;"
-* Move can be powered up by delaying input
+f,F+4,3;m,m;15,21;i20~21;-14;+32a (+25);;"
+* Move can be powered up by delaying input (25 damage)
 "
 f,f,F+3;m;30;i20~25;+6;+13d (+3);;"
 * Balcony Break
@@ -236,11 +260,18 @@ Heat Smash
 * Chip damage on block
 * Transitions to STC on block
 "
-H.3+4;m;30;i30~31;+12c;+19d;;"
-* Consumes Heat
+H.3+4;ub(m);30;i30~31;+12c g;+19d;;"
+* Partially consumes remaining Heat
+* Creates an unblockable shockwave along the ground that is +10g on hit and forces the opponent to crouch. The shockwave comes out even if the kick itself whiffs, or is parried by certain parries like Jin's or Reina's. It can be absorbed by a Power Crush.
 "
 H.b+1;h;20;i10~11;-8;+36d (+28);;"
-* Consumes Heat
+* Balcony Break
+* Partially uses remaining Heat Time
+"
+H.f,F+1+2*;m;30;i39;+11;+22a (+12);;"
+* Balcony Break
+* Guard Break +11
+* Partially uses remaining Heat Time
 "
 b+3+4;;;;;;;"
 * Enter STC with f 
@@ -268,11 +299,12 @@ OTG d+3+4;L;19;i24~25;;-2 (-10);;
 qcf;;;;;;;"
 * D,df to enter crouching state
 "
-qcf1;L;23;i22~23;-14c;+2;+31a;
-qcf1+2;m;21;i16~17;0c;+7c;+23d;
+qcf1;L;23;i22~23;-14;+2;+31a;Head
+qcf1+2;m;21;i16~17;0c;+7c;+23d;Head
 qcf2;m;25;i22~23;-14;+35a (+25);;"
 * Tornado
 "
+qcf3+4;;;;;;;Transitions to STC
 R.df+1+2;t;55;i20;-15;+0d;;"
 * Rage Art
 * Erases opponent's recoverable health on hit
@@ -310,7 +342,8 @@ u+2;m;25;i38~40;+2;+10;;
 ub+1+2;!;70;i79~82;;+50g (+19);;
 ub+2;m,h;8,20;i16,15;-10;+10g;;
 uf+1;m;12;i18~19;-5;+4;;"
-* Move can also be input with uf or u
+* +12 on crouching opponent
+* Alternate input with uf or u
 "
 uf+1+2;h;40;;;0;;"
 * Spike
@@ -318,7 +351,7 @@ uf+1+2;h;40;;;0;;"
 "
 uf+2;m;18;i18;-10;+3;;
 uf+3;m;20;i22~23;-1;+22d;;"
-* Move can also be input with uf or u
+* Alternate input with uf or u
 "
 uf+3+4;m,h,h;10,10,7;i24,4,3;-14;+25a (+18);;
 uf+3+4,3;m,h,h,h;10,10,7,11;,i17~18;-6;+70a (+54);;"
@@ -327,7 +360,7 @@ uf+3+4,3;m,h,h,h;10,10,7,11;,i17~18;-6;+70a (+54);;"
 * Combo from 1st hit
 "
 uf+4;m;13;i15~17;-13;+33a (+23);;"
-* Move can also be input with uf or u
+* Alternate input with uf or u
 "
 uf,n,4;m;20;i23~25;-13;+32a (+22);;
 ws1;m;13;i13;-1;+5;;

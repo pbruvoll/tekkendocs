@@ -19,7 +19,7 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * Throw break: 1 or 2
 * Opponent recovery on hit: FDFT
 "
-1,4;h,l;5,11;,i21~22;-12;-1;;"
+1,4;h,l;5,11;,i21~22;-12;-1;-1;"
 "
 2;h;10;i12~13;-12;;;"
 "
@@ -49,10 +49,10 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 *Hit confirmable
 "
 3+4;sp;;;;;;"
-* Can cancel into FC with db
+* Cancel stance with db
 "
 3+4;sp;;;;;;"
-* Cancel stance with db
+* Can cancel into FC with db
 "
 4;h;15;i13~14;-9;;;"
 "
@@ -173,11 +173,11 @@ f+2,2,1,1;h,h,m,m;10,10,12,25;,i20~21;-15;+20 (+15);;"
 f+2,2,2;h,h,hmm;10,10,7,5,20;,i14,i12~13,i7~8;-13;+20;;"
 * Balcony Break
 "
-f+3;sp;;;;;;"
-* Can transition to FC with df
-"
 f+3;sp;;;-8;;;"
 * Can cancel into FC with df
+"
+f+3;sp;;;;;;"
+* Can transition to FC with df
 "
 f+4;m;15;i14;-10;;;"
 "
@@ -200,7 +200,7 @@ f,f,F+2;m;30;i16~17;+5;+16 (+6);;"
 * Balcony Break
 * Deals chip damage on block
 "
-2+3;l;39;i20;-15;th;th;"
+H.2+3;l;39;i20;-15;th;th;"
 * Heat Smash
 * Alternate input: H.R1
 "
@@ -239,7 +239,7 @@ IAI.2;m;23;i16~17;-7;+15 (+5);;"
 IAI.3;m,th(m);13 (25);i17;-14;+25 (+10);;"
 * Knee
 "
-IAI.4;l;17;i18~19;-13;;;"
+IAI.4;l;17;i18~19;-13;+3;;"
 "
 IAI.4,1;l,h;17,25;,i26~27;-5;+26 (+0);;"
 * Balcony Break
