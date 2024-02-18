@@ -4,6 +4,7 @@ export type TableId =
   | 'frames_throws'
   | 'moves_homing'
   | 'moves_tornado'
+  | 'moves_balconybreak'
   | 'key_moves'
   | 'punishers_standing'
   | 'punishers_crouching'

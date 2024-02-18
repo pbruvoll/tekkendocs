@@ -16,6 +16,7 @@ import { type TableData } from '~/types/TableData'
 import { cachified } from '~/utils/cache.server'
 import {
   frameDataTableToJson,
+  isBalconyBreak,
   isHomingMove,
   isTornadoMove,
 } from '~/utils/frameDataUtils'
@@ -128,7 +129,18 @@ export default function Index() {
     headers: ['Command'],
   }
 
-  const tables = metaTables.concat([homingTable, tornadoTable])
+  const balconyBreakMoves = frameData.filter(m => isBalconyBreak(m))
+  const balconyBreakTable: TableData = {
+    name: 'moves_balconybreak',
+    rows: balconyBreakMoves.map(m => [m.command]),
+    headers: ['Command'],
+  }
+
+  const tables = metaTables.concat([
+    homingTable,
+    tornadoTable,
+    balconyBreakTable,
+  ])
 
   if (tables.length === 0) {
     return <div>Invalid or no data</div>

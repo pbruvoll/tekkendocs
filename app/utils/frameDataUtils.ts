@@ -33,3 +33,7 @@ export const isHomingMove = (move: Move) => {
 export const isTornadoMove = (move: Move) => {
   return move.notes?.match(/tornado/i);
 }
+
+export const isBalconyBreak = (move: Move) => {
+  return move.notes?.match(/balcony break/i);
+}

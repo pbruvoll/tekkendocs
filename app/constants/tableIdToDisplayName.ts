@@ -5,6 +5,7 @@ export const tableIdToDisplayName: Record<TableId, string> = {
   frames_tenhit: '10 hit',
   frames_throws: 'Throws',
   moves_homing: 'Homing moves',
+  moves_balconybreak: 'Balcony Break moves',
   moves_tornado: 'Tornado moves',
   key_moves: 'Key moves',
   combos_ender: 'Combo enders',
