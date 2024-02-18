@@ -1,10 +1,11 @@
 import { Pencil1Icon } from '@radix-ui/react-icons'
 import { Heading, Link as RadixLink, Table } from '@radix-ui/themes'
 import type { HeadersFunction } from '@remix-run/node'
-import { Link, type MetaFunction, NavLink, useMatches } from '@remix-run/react'
+import { Link, type MetaFunction, NavLink } from '@remix-run/react'
 import { ContentContainer } from '~/components/ContentContainer'
 import { FrameDataTable } from '~/components/FrameDataTable'
 import { tableIdToDisplayName } from '~/constants/tableIdToDisplayName'
+import { useFrameData } from '~/hooks/useFrameData'
 import type { CharacterFrameData } from '~/types/CharacterFrameData'
 import type { RouteHandle } from '~/types/RouteHandle'
 import { type TableDataWithHeader } from '~/types/TableData'
@@ -52,14 +53,7 @@ export const meta: MetaFunction = ({ data, params, matches }) => {
 }
 
 export default function Index() {
-  const matches = useMatches()
-  const frameData = matches.find(
-    m => (m.handle as RouteHandle)?.type === 'frameData',
-  )?.data
-  if (!frameData) {
-    return <div>Could not load data</div>
-  }
-  const { tables, editUrl, characterName } = frameData as CharacterFrameData
+  const { tables, editUrl, characterName } = useFrameData()
   if (tables.length === 0) {
     return <div>Invalid or no data</div>
   }
