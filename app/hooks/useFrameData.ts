@@ -1,7 +1,7 @@
-import { json } from "@remix-run/node"
-import { useMatches } from "@remix-run/react"
-import { type CharacterFrameData } from "~/types/CharacterFrameData"
-import { type RouteHandle } from "~/types/RouteHandle"
+import { json } from '@remix-run/node'
+import { useMatches } from '@remix-run/react'
+import { type CharacterFrameData } from '~/types/CharacterFrameData'
+import { type RouteHandle } from '~/types/RouteHandle'
 
 /** load frame data for active route */
 export const useFrameData = (): CharacterFrameData => {
@@ -10,7 +10,7 @@ export const useFrameData = (): CharacterFrameData => {
     m => (m.handle as RouteHandle)?.type === 'frameData',
   )?.data
   if (!frameData) {
-    throw json("Could not read frame data for current route")
+    throw json('Could not read frame data for current route')
   }
   return frameData as CharacterFrameData
 }
