@@ -2,6 +2,8 @@ export type TableId =
   | 'frames_normal'
   | 'frames_tenhit'
   | 'frames_throws'
+  | 'moves_homing'
+  | 'moves_tornado'
   | 'key_moves'
   | 'punishers_standing'
   | 'punishers_crouching'

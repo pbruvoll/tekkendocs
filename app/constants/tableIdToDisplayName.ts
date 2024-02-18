@@ -4,6 +4,8 @@ export const tableIdToDisplayName: Record<TableId, string> = {
   frames_normal: 'Standard',
   frames_tenhit: '10 hit',
   frames_throws: 'Throws',
+  moves_homing: 'Homing moves',
+  moves_tornado: 'Tornado moves',
   key_moves: 'Key moves',
   combos_ender: 'Combo enders',
   combos_normal: 'Combos',

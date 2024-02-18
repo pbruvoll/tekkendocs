@@ -2,15 +2,23 @@ import { Pencil1Icon } from '@radix-ui/react-icons'
 import { Heading, Link as RadixLink, Table } from '@radix-ui/themes'
 import { type DataFunctionArgs, json, type MetaFunction } from '@remix-run/node'
 import { Link, NavLink, useLoaderData } from '@remix-run/react'
+import invariant from 'tiny-invariant'
 import { ContentContainer } from '~/components/ContentContainer'
 import { ResourcesTable } from '~/components/ResourcesTable'
 import { hasHeaderMap } from '~/constants/hasHeaderMap'
 import { tableIdToDisplayName } from '~/constants/tableIdToDisplayName'
+import { useFrameData } from '~/hooks/useFrameData'
 import { getSheet } from '~/services/googleSheetService.server'
 import type { CharacterFrameData } from '~/types/CharacterFrameData'
 import type { Game } from '~/types/Game'
 import type { RouteHandle } from '~/types/RouteHandle'
+import { type TableData } from '~/types/TableData'
 import { cachified } from '~/utils/cache.server'
+import {
+  frameDataTableToJson,
+  isHomingMove,
+  isTornadoMove,
+} from '~/utils/frameDataUtils'
 import { getCacheControlHeaders } from '~/utils/headerUtils'
 import { commandToUrlSegment } from '~/utils/moveUtils'
 import { generateMetaTags } from '~/utils/seoUtils'
@@ -97,7 +105,30 @@ export const meta: MetaFunction = ({ data, params, matches }) => {
 }
 
 export default function Index() {
-  const { characterName, editUrl, tables } = useLoaderData<typeof loader>()
+  const {
+    characterName,
+    editUrl,
+    tables: metaTables,
+  } = useLoaderData<typeof loader>()
+  const { tables: frameDataTables } = useFrameData()
+  const normalFrameData = frameDataTables.find(t => t.name === 'frames_normal')
+  invariant(normalFrameData)
+  const frameData = frameDataTableToJson(normalFrameData)
+  const homingMoves = frameData.filter(m => isHomingMove(m))
+  const homingTable: TableData = {
+    name: 'moves_homing',
+    rows: homingMoves.map(m => [m.command]),
+    headers: ['Command'],
+  }
+
+  const tornadoMoves = frameData.filter(m => isTornadoMove(m))
+  const tornadoTable: TableData = {
+    name: 'moves_tornado',
+    rows: tornadoMoves.map(m => [m.command]),
+    headers: ['Command'],
+  }
+
+  const tables = metaTables.concat([homingTable, tornadoTable])
 
   if (tables.length === 0) {
     return <div>Invalid or no data</div>
@@ -164,7 +195,12 @@ export default function Index() {
                       <Table.Row key={row[0]}>
                         {columnNums.map(j => {
                           const cell = row[j] || ''
-                          if (table.headers && table.headers[j] === 'Command') {
+                          if (
+                            table.headers &&
+                            (table.headers[j] === 'Command' ||
+                              table.headers[j] === 'Secondary' ||
+                              table.headers[j] === 'Starter')
+                          ) {
                             //this is a command, so make it link
                             return (
                               <Table.Cell key={j}>
@@ -172,7 +208,7 @@ export default function Index() {
                                   <Link
                                     className="text-[#ab6400]"
                                     style={{ textDecoration: 'none' }}
-                                    to={`/t7/${characterName}/${commandToUrlSegment(
+                                    to={`/t8/${characterName}/${commandToUrlSegment(
                                       cell,
                                     )}`}
                                   >
