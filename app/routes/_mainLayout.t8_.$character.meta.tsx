@@ -17,7 +17,10 @@ import { cachified } from '~/utils/cache.server'
 import {
   frameDataTableToJson,
   isBalconyBreak,
+  isHeatEngager,
+  isHeatMove,
   isHomingMove,
+  isPowerCrush,
   isTornadoMove,
 } from '~/utils/frameDataUtils'
 import { getCacheControlHeaders } from '~/utils/headerUtils'
@@ -136,11 +139,33 @@ export default function Index() {
     headers: ['Command'],
   }
 
-  const tables = metaTables.concat([
+  const heatEngagerTable: TableData = {
+    name: 'moves_heatengager',
+    rows: frameData.filter(m => isHeatEngager(m)).map(m => [m.command]),
+    headers: ['Command'],
+  }
+
+  const heatMoveTable: TableData = {
+    name: 'moves_heat',
+    rows: frameData.filter(m => isHeatMove(m)).map(m => [m.command]),
+    headers: ['Command'],
+  }
+
+  const powerCrushTable: TableData = {
+    name: 'moves_powercrush',
+    rows: frameData.filter(m => isPowerCrush(m)).map(m => [m.command]),
+    headers: ['Command'],
+  }
+
+  const tables = [
+    heatEngagerTable,
+    heatMoveTable,
     homingTable,
+    ...metaTables,
     tornadoTable,
     balconyBreakTable,
-  ])
+    powerCrushTable,
+  ]
 
   if (tables.length === 0) {
     return <div>Invalid or no data</div>

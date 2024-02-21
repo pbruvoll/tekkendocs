@@ -37,3 +37,15 @@ export const isTornadoMove = (move: Move) => {
 export const isBalconyBreak = (move: Move) => {
   return move.notes?.match(/balcony break/i)
 }
+
+export const isHeatEngager = (move: Move) => {
+  return move.notes?.match(/heat engager/i)
+}
+
+export const isHeatMove = (move: Move) => {
+  return move.command?.startsWith('H.')
+}
+
+export const isPowerCrush = (mvoe: Move) => {
+  return mvoe.notes?.match(/power crush/i)
+}
