@@ -43,9 +43,9 @@ export const isHeatEngager = (move: Move) => {
 }
 
 export const isHeatMove = (move: Move) => {
-  return move.command?.startsWith('H.');
+  return move.command?.startsWith('H.')
 }
 
 export const isPowerCrush = (mvoe: Move) => {
-  return mvoe.notes?.match(/power crush/i);
+  return mvoe.notes?.match(/power crush/i)
 }
