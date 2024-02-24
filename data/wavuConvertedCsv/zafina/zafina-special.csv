@@ -24,8 +24,8 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * Can be cancelled into MNT before hit by holding D (becomes -9/-17)
 * Can be delayed
 "
-2,1;h,m;8,12;i19-20;-9;+2;+7;
-2,1,1+2;h,m,m,m,m;8,12,7,11,14;i25~26 i10~11 i4~5;-9;+19d(-16);;
+2,2;h,m;8,12;i19-20;-9;+2;+7;
+2,2,1+2;h,m,m,m,m;8,12,7,11,14;i25~26 i10~11 i4~5;-9;+19d(-16);;
 2+3;m;;;+1;+2c;;"
 * Heat Burst
 * Cancel with b,b
@@ -112,14 +112,14 @@ df+1,2;m,m;10,16;i15~16;-13;+3;;
 df+1,2,1;m,m,m;10,16,20;i25;-13;+23d(13);;"
 * Can be delayed
 "
-df+1,4;mh;1018;i19~20;-6;+12;;"
+df+1,4;mh;1018;i19~20;-6;+12g;;"
 "
 df+2;m;13;i16~17;-12;+32a(22);;
 df+3;m;15;i15~16;-5;+4;;"
 * Cancel SCR transition by holding B (becomes -10/-1)
 "
 df+3,4;m,h;15,17;i23~24;-6;+22d;+55a;
-df+3,d+4;m,l;15,15;i25~26;-14;+1;;
+df+3,d+4;m,l;15,15;i25~26;-14;+1c;;
 df+4;m;14;i14;-13;+3;;
 df+4,1;m,m;14,22;i31;-12;+3d;;"
 * Heat Engager
@@ -232,6 +232,7 @@ MNT.3;l;12;i15~16;-12;-1;;"
 MNT.3,1;l,m;1216;i24;-9;+22a(+15);;"
 "
 MNT.4;l;13;i17~18;-19;-3;+7;"
+*Hold D to transition to TRT
 "
 MNT.4,3;l,m;1323;i27;-30;+32a(+22);;"
 * Tornado
@@ -257,9 +258,9 @@ MNT.df+1;m;30;i24~25;+6;+7d;;"
 "
 MNT.df+2;m;10;i19~20;-9;+32a(22);;"
 "
-MNT.df+3;m;20;i15~16;-17;+19b;;"
+MNT.df+3;m;20;i15~16;-17;+19cg;;"
 "
-MNT.df+4;m;18;i17~18;-5;+13b;;"
+MNT.df+4;m;18;i17~18;-5;+13g;;"
 * Homing
 "
 MNT.uf+3;m;25;i26~28;-9;+11d;;"
@@ -388,7 +389,7 @@ ws3;m;20;i12;0;+9;;"
 * Cancel SCR transition by holding B (becomes -8/+1)
 "
 ws4;m;14;i11;-7;+4;;
-SCR.df+1;m,m;10,20;i18 i17~19;-9;+33a(+18);;"
+SCR.df+1;m,m;10,20;i18 i17~19;-6;+33a(+18);;"
 * Azazel's Power
 * Zafina receives recoverable health damage
 * Gains Power Crush frames during Heat

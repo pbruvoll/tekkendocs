@@ -56,12 +56,6 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 "
 3;m;10;i13~14;;;;"
 "
-3,2;m,h;10,20;i13,i26~27;-2;+17;+17;"
-* Balcony Break 
-* Heat Engager
-
-* Homing
-"
 3,2;m,h;10,20;,i26~27;;;;"
 * Balcony Break
 * Heat Engager
@@ -183,10 +177,10 @@ CH f,F+1+2;m;28;i17~18;;+13;;"
 "
 d+1+2;sp;;;;;;"
 * Cancel DES with DES.d+1+2 or DES.DB
-* Transition to DBT with input DES.f+3_f+4
 "
 d+1+2;sp;;;;;;"
 * Cancel DES with DES.d+1+2 or DES.DB
+* Transition to DBT with input DES.f+3_f+4
 "
 d+2;m;14;i24~26;;+2c;;"
 "
@@ -321,12 +315,6 @@ DES.f+2;m;9;i15;-9;0;;"
 DES.f+2,1;mm;9;;-12;-3;;"
 * chip damage on block
 "
-DES.f+2,1,2;mm,mm,mm;4,5,4,4,3,20;i15,i1,i23,i1,i23~24,i4~5;;;;"
-* Balcony Break
-* Heat Engager
-
-* chip damage on block
-"
 DES.f+2,1,2;mmm;9;;-13;KND;;"
 * Heat Engager
 
@@ -378,14 +366,6 @@ f+2,1;m,m;12,20;i24~25;;;;"
 * chip damage on block
 * Transition to DES with f+2,1+2 (does not transition when using Heat Dash)
 "
-f+2,1;m,m;12,20;i17~i18,i24~26;;;;"
-* Balcony Break
-* Heat Engager
-
-* chip damage on block
-* Transition to DES (does not transition when using Heat Dash)
-* Input f+2,1+2 to shift to DES
-"
 f+2,3;m,h;12,8;,i22;;;;"
 "
 f+2,3,3;m,h,m;12,8,22;,i35~36;;+12 (-3);;"
@@ -405,10 +385,10 @@ f+3,2;h,h;10,20;,i25;;+39 (+31);;"
 * chip damage on block
 "
 f+3+4;sp;;;;;;"
-"
-f+3+4;sp;;;;;;"
 * Transition to BOT
 * Transition to BKP with input BOT.D or BOT.B
+"
+f+3+4;sp;;;;;;"
 "
 f+4;m;14;i16;;;;"
 * Homing
@@ -523,15 +503,6 @@ uf+1;mmm;20,14 (9),10 (7);i19~20,i25,i17;;;;"
 uf+1+2;th(h);40;i12~13;;+3;;"
 * Throw break: 1+2
 * Opponent recovery on hit: FUFT
-"
-uf+2;h;22;i16~17;;;;"
-* Balcony Break
-* Heat Engager
-
-* Homing
-* chip damage on block
-* Alternate input: u+2
-* Transition to DES (does not transition when using Heat Dash)
 "
 uf+2;h;22;i16~17;;;;"
 * Alternate input: u+2
