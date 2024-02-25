@@ -8,100 +8,197 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 1,2,3;h,h,m;5,8,6;;+4;+24a;;
 1,2,3,4;h,h,m,m;5,8,6,30;;+0;+12c;;
 1,2,4;h,h,m;5,8,10;;-10;+4;;Combo from 1st hit
+1+3;th(h);35;i12~14;+2d;;;"
+* Throw break 1 or 2
+"
 2;h;9;i10;+0;+9;;
-2,2;hh;920;;-13;-2;;Combo from 1st hit
+2,2;h,h;9,20;;-13;-2;;Combo from 1st hit
 2+3;m;15;;;;;"
 * Heat Burst
 * Alternate input: R1
 "
+2+4;th(h);35;i12~14;+0d;;;"
+* Throw break 1 or 2
+"
 3;m;16;i17~19;-12;-6;;
-3,1;mh;1611;;+2;+8;;Combo from 1st hit
-3,1,2;mhm;161120;;-11;+72(+56);;
-3,1,4;mhm;161120;;-9;+15(+6);;
-3,1,f,F;mh;1611;;-2;+4;;
+3,1;m,h;16,11;;+2;+8;;Combo from 1st hit
+3,1,2;m,h,m;16,11,20;;-11;+72(+56);;
+3,1,4;m,h,m;16,11,20;;-9;+15(+6);;
+3,1,f,F;m,h;16,11;;-2;+4;;
 4;h;24;i17~18;-5;+10;;
 4+1;sl,h;5,5;16;-3;+4;;
-4+1,2;sl,hm;5,520;24;-12;+72(+56);;Tornado
-4~3;h;21;29;-7;+14;;
+4+1,2;sl,h,m;5,5,20;24;-12;+72(+56);;Tornado
+4~3;m;21;29;-7;+14;;
+4~3,1+2;m,sm;21,15;i24-35;+2;+58a(+42);;"
+* Chip damage on block (4)
+* Tornado
+"
 b+1;h;10;i12;-6;+5;;
-b+1+2;m;21;i20~21;-1c;+7c;+24;Chip Damage
-b+1,2;hm;1010;i23;-14;+23(+13);;"
-* Wallsplat
+b+1+2;m;21;i20~21;-1c;+7c;+24d;Chip Damage on block (6)
+b+1,2;h,m;10,10;i23;-14;+23(+13);;"
+* Balcony Break
 * Hold B to cancel
 "
 b+1+4;ub(m);60;i63;LNC;LNC;LNC;
 b+2;h;11;i14~16;-13;-2;;
-b+2,1;hm;1121;i30;-16;+29(+19);;Tornado
-b+2,3;hm;1123;i14~16;-14;+8(-1)/HE;;"
+b+2,1;h,m;11,21;i30;-16;+29(+19);;Tornado
+b+2,3;h,m;11,23;i14~16;-14;+8(-1)/HE;;"
 * Heat Engager
 
-* Wallsplat
+* Balcony Break
 * Combo from 1st hit
 "
 b+3;m;24;i29~32;-18;+10/HE;;"
 * Heat Engager
 
-* Wallsplat
+* Balcony Break
 "
 b+4;m;20;i17~18;-8;+6;+30(+24);
-b, f+1+2;m;17;i25;-17;KND;;Chip Damage
-b, f+2;m;12;i15~17;-9;-1;;Chip Damage
-CRO+1;m;25;i22~23;-6;KND;KND;Leaves opponent Face Down/Head Towards
-CRO+2;m;12;i15;-13;-5;;Homing
-CRO+2,2;mm;1220;i15;-14;+2/HE;;
-CRO+3;m;26;i22~23;-7;KND;;Chip Damage, Tornado Screw
-CRO+4;m;10;i20;-29;-20;;
-CRO+4,2;mm;1014;i22;;+52(+7);;
-CRO+4,2,1+2;mmth;101415;i28;;-6;;
+Back Throw;th(h);50;i12~14;+1d;;;"
+* Throw break: None
+"
+b,f+1+2;m;17;i25;-17;+31a(-2);;Chip damage on block
+b,f+1+2,2;m,m;17,30;i28-31;-31;-5(-12);;
+b,f+2;m;12;i15~17;-9;-1;;
+b,f+2,1;m,m;12,12;i14-15;-10;+1;;
+b,f+2,1,2;m,m,m;12,12,24;i22-23;-8;+15a(+6);+45a(+0);"
+* Balcony Break
+* Chip damage on block (7)
+"
+b,f+2,1,4;m,m,m;12,12,21;i26-29;-8c;+14a;;
+b,f+2,1,4,1+2;m,m,m,sm;12,12,21,15;i24-35;+2;+59a(+43);;"
+* Chip damage on block (4)
+* Balcony Break
+* Tornado
+"
+b,f+2,1,df+2;m,m,m;12,12,20;i18-19;-13;+25a(+8);;"
+* Balcony Break
+* Tornado
+"
+b,f+2,3;m,h;12,24;i19-20;-9;+9;;
 d+1;m;25;i18~19;-14;+20(+10);;"
 * absorb an attack to power up
 *  - Add chip damage when guarded
 * Wallsplat
 "
-d+3;l;12;i18~19;-12c;-1;+7;
+d+3;l;12;i18~19;-12c;-1;+7c;
 d+3+4;m,m;5, 20;i15~16;-15;+30(+20);;
-db+1+2;m;15;i23~25;-9;+4;;Hold F during startup to feint into CRO
-db+1+2 (Hold);m;42;i61~63 (Full Charge);+10;+37;;Chip Damage, Guard Break on block, hold F during startup to feint into CRO
-db+2;l;15;i21~22;-13c;+3c;+26;Chip damage on block
-df+1;m;11;i13;-6;+5;;
-df+1,2;mh;1120;i17;-9;+44(-16);;Wallsplat
-df+2;m;17;i15;-9;+6;;Hold F to enter CRO at +14
+db+1+2*;m;25;;+17g(+24w);+7;;Hold F during startup to feint into MCR
+db+1+2;m;15;i23~25;-9;+4;;Hold F during startup to feint into MCR
+db+1+2**;m;42;i61~63 (Full Charge);+10;+37;;"
+* Chip Damage on block (16)
+* Guard Break +10
+* hold F during startup to feint into MCR
+"
+db+2;l;15;i21~22;-13c;+3c;+26d;Chip damage on block
+df+1;m;11;i13;-6;+5;+9;
+df+2;m;17;i15;-9;+6;+9;Hold F to enter MCR at +14 or at +17 on CH
+df+2+3;th(h);40;i12~14;-6;;;"
+* Throw break 2
+* Floor Break
+"
 df+3;m;12;i16~17;-9;+2;;
-df+3,2;mm;1210;i19;-13;-7;;
-df+3,2,5;mmm;121020;i29;-22;+18(+8);;On hit hold ub, u or uf to shift to FLY at +36(+26)
+df+3,2;m,m;12,10;i19;-13;-7;;
+df+3,2,5;m,m,m;12,10,20;i29;-22;+18(+8);;On hit hold ub, u or uf to shift to FLY at +36(+26)
 df+4;m;10;i13~14;-9;+2;;
-df+4,4;mm;1026;i13~14;-15;-4;;
+df+4,4;m,m;10,16;i13~14;-15;-4;;
 f+2;m;14;i17~18;-8;+3;;
-f+2,4;mm;1417;i15;-11;+0;;
+f+2,4;m,m;14,17;i15;-11;+0;;
 f+4;m;10;i15~16;-12;-1;;
-f+4,3;mm;1014;i26-27;-22;+18(+8);;"
+f+4,3;m,m;10,14;i26-27;-22;+18(+8);;"
 * On hit, hold ub, u or uf to transition to Fly
 * Tornado
 "
-f, F+2;m;24;i15~16;-8;+17;;Heat Engager
-f, F+4;m;22;i20~21;-6;KND;;Chip Damage
-f, f, F+3;m;30;i22~25;+6;KND;KND;
-f,n,d,df#2;h;23;i14;+5;LNC;LNC;Chip Damage, Just Frame input
-f,n,d,df+1;m;30;i22~24;-16;LNC;LNC;Hold U/F on hit for Heaven's Door 40 damage followup
-f,n,d,df+1+2;m;25;i26~27;-8;KND;KND;Chip Damage, Wall Break, Leaves opponent Face Up/Head Towards on CH
-f,n,d,df+2;h;20;i15;-10;LNC;LNC;Consumes meter & acts as EWGF during Heat
-f,n,d,df+3;m;25;i26~28;-8;KND;;Chip Damage
-f,n,d,DF+3;l;24;i33~34;-23;KND;;Leaves opponent Face Down/Head Towards, Forces Crouch on block
-f,n,d,DF+4;l;10;i20;-23;-5;;Forces Crouch on hit & block
-f,n,d,DF+4,1+2;lsm;109;i29-40;;+58(+42);;Only on hit
-f,n,d,DF+4,4;lm;1028;i25;-16;+4c;;
-H.2+3;m,h,th;20,22,10;i18;+11 CRO;Th;Th;"
+f,F+2;m;24;i15~16;-8;+15a(+6)/HE;;"
+* Heat Engager
+
+* Heat Dash  +5 +36a(+26)
+
+* Balcony Break
+* Chip damage on block
+"
+f,F+4;m;22;i20~21;-6;+16c;;Balcony Break
+f,f,F+3;m;30;i22~25;+6;+13a(+3);KND;"
+* Balcony Break
+* Chip damage on block (9)
+* Alternate Input:
+** f,n,d,df,UF+3
+"
+f,hcf+1+2;th(h);45;i12~14;+0d;;;"
+* Throw break 1+2
+"
+FLY.1;h;20;i18-19;-3;+67a(+47);;Balcony Break
+FLY.1+2;UB;30;i50-100;;;;Balcony Break
+FLY.2;ub,th;20,20;i36;;+0;;"
+* Throw when hit from the front
+* Floor Break
+"
+FLY.3;m;30;i16-22;-14;+35d(-24);;Balcony Break
+FLY.4;m;10;i20;-29;-20;;
+FLY.4,2;m,m;10,14;i22;;+52(+7);;Only on hit
+FLY.4,2,1+2;m,m,th;10,14,15;i28;;-6;;Only on hit
+FLY.f+1+2;UB;30;i32-75;;;;Balcony Break
+f,n,d,df#2;h;23;i14;+5;+39a(+29);;Chip Damage on block (4)
+f,n,d,df+1;m;30;i22~24;-16;+29a(+19);;
+f,n,d,df+1+2;m;25;i26~27;-9;+12a(+3);+33a;"
+* Chip Damage on block (7)
+* Homing
+* Balcony Break
+* Leaves opponent Face Up/Head Towards on CH
+"
+f,n,d,df+1+2,1+2;m,sm;25,20;i25-36;+2;+60a(+44);;"
+* Chip damage on block (6)
+* Tornado
+"
+f,n,d,df+1,UF;m,th;30,10;;;-4;;"
+* Only on hit
+* Floor Break
+"
+f,n,d,df+2;h;20;i15;-10;+39a(+29);;Consumes meter & acts as EWGF during Heat
+f,n,d,df+3;m;25;i26~28;-8c;+16a;;Chip Damage on block (7)
+f,n,d,DF+3;l;24;i33~34;-23c;-2d;;Leaves opponent Face Down/Head Towards
+f,n,d,DF+4;l;7;i16;-2c;-5c;;
+f,n,d,DF+4,1+2;l,sm;7,9;i29-40;;+58(+42);;Only on hit
+f,n,d,DF+4,4;l,m;7,28;i25;-16;+4c;;
+FUFT.U+3+4;;;;;;;Shifts to fly can also be done from FUFA
+H.2+3;m,h,th;20,22,10;i18;+11 MCR;Th;Th;"
 * Heat Smash
 * Alternate input: R1
 "
-H.CRO.2+3;ub(m);23,16;i20;Th;Th;Th;"
+H.MCR.2+3;ub(m);23,16;i20;Th;Th;Th;"
 * Heat Smash
 * Alternate input: R1
 "
-ss2;m;25;i17~18;-22;LNC;LNC;High Launcher, hold U on hit for 69 damage followup
+Left Throw;th(h);43;i12~14;+1d;;;"
+* Throw break 1
+"
+MCR.1;m;20;i22~23;+8;+20d;;Leaves opponent Face Down/Head Towards
+MCR.2;m;12;i15;-13;-5;;Homing
+MCR.2,2;m,m;12,20;i15;-14c;+2/HE;;"
+* Heat Engager
+
+* Heat Dash +5 +67a(+50)
+
+"
+MCR.3;sm;26;i23;-7;+16a(-1);+70a(+54);"
+* Chip damage on block (7)
+* Tornado
+* Balcony Break
+"
+MCR.4;m;10;i20;-29;-20;;
+MCR.4,2;m,m;10,14;i22;;+52(+7);;
+MCR.4,2,1+2;m,m,th;10,14,15;i28;;-6;;
+OTG.d+1+2;l;25;i23-31;-14c;+13d(+1);;
+qcb+1+3;th(h);40;i12~14;+0d;;;"
+* Throw break 1
+"
+Left Throw;th(h);40;i12~14;+0d;;;"
+* Throw break 2
+"
+SS.2;m;25;i17~18;-22;+72a;;Hold U on hit for 69 damage combo
 u+1+2;;;;;;;Air laser
 u+4;m;22;i20;-25;+15(+5);;"
-* Alternate input: ub+3
+* Alternate input: ub+4
 * On hit hold ub, u or uf to transition to fly at +35(+25)
 "
 ub+1+2;h;40;i47;KND;KND;KND;"
@@ -109,9 +206,55 @@ ub+1+2;h;40;i47;KND;KND;KND;"
 * Wallsplat
 * Jack-8 or Alisa can recovery 20 by input 1+2
 "
+uf+1;h;10;i21-23;+11;+16;;"
+* Alternate inputs:
+** u+1
+** ub+1
+* Shifts to MCR on hit or block
+* Chip damage on block
+"
+uf+1+2;th(h);35;i12~14;+25d(+7);;;"
+* Throw break 1+2
+* Balcony Break
+* Alternate input:
+** f,F+1+2
+"
+uf+2;h;25;i20-23;-4;+25a;;"
+* Alternate inputs:
+** u+2
+** ub+2
+* Homing
+"
+uf+3;m;21;i28-29;+3c;+7c;+19a;"
+* Alternate inputs:
+** u+3
+** ub+3
+"
+uf+3+4;m,m;8,20;i16;-16;+33a(-25);;"
+* Balcony Break
+"
+uf+3+4,1+2;m,m,sm;8,20,20;i25-50;-15;+0;;"
+* Chip damage on block (6)
+* Transitions into throw on hit
+"
+uf+4;m;21;i18;-8;+11/HE;;"
+* Heat Engager
+
+* Heat Dash +5 +62a(+42)
+
+* Balcony Break
+"
 ws1;m;12;i13~14;-6;+5;+9;
-ws1,2;mm;1215;i13~14;-11;+6;+9;Hold F to enter CRO
-ws2;m;20;i15~16;-12;LNC;LNC;Chip Damage, Tornado Screw
-ws3;m;15;i14;-11;+9;+14;Hold F on hit to enter CRO
-ws4;m;10;i11~12;-3;+8;+8;
-ws4,4;mm;1020;i11~12;-16;+4;;
+ws1,1;m,h;12,10;i30-32;+11 MCR;+16 MCR;;"
+* Combo on 1st CH
+* Shifts to MCR on hit or block
+* Chip damage on block (2)
+"
+ws1,2;m,m;12,15;i22;-11;+6;+9;Hold F to enter MCR on hit at +14 or +17 on CH
+ws2;m;20;i15~16;-12;+72a(+56);;"
+* Chip Damage on block (6)
+* Tornado
+"
+ws3;m;15;i14;-11;+9;+14;Hold F on hit to enter MCR at +16 or +23 on CH
+ws4;m;10;i11~12;-3;+8;;
+ws4,4;m,m;10,20;i27~28;-16;+4c;;

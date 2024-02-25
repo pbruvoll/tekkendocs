@@ -1,95 +1,147 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes
 1;h;5;i10;+1;+8;;
-1,1;h,h;58;,i12;,-3;,+8;;
-1,1,3;h,h,l;58,10;,i21;,-12;,-1;;
-1,1,3,3;h,h,l,h;58,10,14;,i20;, -14;, +4;;
-1,2;h,h;5,10;,10;,-3;,+6;;"
-*1,2,3 to switch to left flamingo
-*1,2,4 to switch to right flamingo
+1,1;h,h;5,8;i12;-3;+8;;
+1,1,3;h,h,l;5,8,10;i21;-12;-1;;
+1,1,3,3;h,h,l,h;5,8,10,14;i20;-14;+4;;
+1,2;h,h;5,10;i10;-3;+6;;"
+*1,2,3 to shift to Left Flamingo
+*1,2,4 to shift to Right Flamingo
 "
 1+2;;;;;;;"
 *Shifts to Backturn Stance
 "
-1,2,f+3;h,h,m;5,10,14;,i21;,-8;,+9;;
-1,2,f+3;h,h,h;5,10,20;,i21;,-8;,+9;;" 
+1+2+3+4;;;;;;;
+1,2,f+3;h,h,m;5,10,14;i21;-8;+9;;
+1,2,f+4;h,h,h;5,10,20;i21;-8;+9;;" 
 *
 Balcony Break
 "
 2;h;9;i10;+8;+0;;"
-*2,3 to switch to left flamingo 
-*2,4 to switch to right flamingo
+*2,3 to shift to Left Flamingo 
+*2,4 to shift to Right Flamingo
 "
 2+3;m;12;i16;+1;+2;;"
 *
 Heat Burst
 *Cancel to r45 with b,b
 "
-2,f+3;h,m;9,14;,i21;,-8;,+9;;"
-"
-2,f+4;h,h;9,20;,i24~25;,-2;,+35;;"
-"
-3;h;15;i14;-7;+8;;"
-"
-3,3;h,m;15,12;,i18;,-13;,-7;;"
-"
-3,3,2;h,m,m;15,12,12;,i21~22;,-11;,+1;;"
-*Forces Crouch on Block
-"
-3,3,3;h,m,m;15,12,15;,i21;,-14;,+32;;"
+2,f+3;h,m;9,14;i21;-8;+9;;
+2,f+4;h,h;9,20;i24~25;-2;+35;;" 
 *
 Balcony Break
-*3,3,F to Shift to Left Flamingo
 "
-3,3,4;h,m,h;15,12,15;,i21~23;,+8;,+19;;"
+3;h;15;i14;-7;+8;;
+3,3;h,m;15,12;i18;-13;-7;;
+3,3,2;h,m,m;15,12,12;i21~22;-11;+1;;"
+*Forces crouch on block
+"
+3,3,3;h,m,m;15,12,15;i21;-14;+32;;"
+*
+Balcony Break
+*3,3,F to shift to Left Flamingo
+"
+3,3,4;h,m,h;15,12,15;i21~23;+8;+19;;"
 *Shifts to Right Flamingo
 "
-3,3,f+4;h,m,h;15,12,20;,i21~27;,-1;,+40;;"
+3,3,f+4;h,m,h;15,12,20;i21~27;-1;+40 (+14);;"
 *
 Balcony Break
 "
 3+4;;;;;;;"
 *Shifts to Right Stance
 "
-3~4;m,m;11,21;i22,i7;-3;+26;;"
-*Power up with Quick Input
+3~4;m,m;11,21;i22,i7;-3;+26 (+16);;"
+*Power up with quick input
 "
-4;h;14;i11~12;-6;+5;;"
+4;h;14;i11~12;-6;+5;;
+4,3;h,m;14,16;i22;-6;+5;;"
+*3,4,F to cancel and shift to Left Flamingo
 "
-4,3;hm;14,16;,i22;,-6;,+5;;"
-*3,4,F to Cancel and Shift to Left Flamingo
-"
-4,4;hh;14,13;,i16;,-1;,+10;;"
+4,4;h,h;14,13;i16;-1;+10;;"
 *Shifts to Right Flamingo
 "
-4,4,3;hhm;14,13,20;,i25~31;,-14;,+14;;"
-*Forces Crouch on block
+4,4,3;h,h,m;14,13,20;i25~31;-14;+14;;"
+*Forces crouch on block
 *Shifts to Right Stance
 "
-4,4,4;hhh;14,13,17;,i25~26;,-2;,+8;;"
+4,4,4;h,h,h;14,13,17;i25~26;-2;+8;;"
 *Shifts to Right Stance
-*4,4,4,F to cancel and Shift to Right Flamingo
+*4,4,4,F to cancel and shift to Right Flamingo
 "
-4,4,4,4;hhhh;14,13,17,20;,i31~32;,+0;,+36;;"
-*Chip Damage on final hit
+4,4,4,4;h,h,h,h;14,13,17,20;i31~32;+0;+36 (-22);;"
+*
+Balcony Break
+*
+Tornado
+*Chip damage on final hit
+"
+b+1;m;15;i15;-14;-1;;"
+*Sidesteps to the right
+"
+b+3;m;17;i16~17;-19;+35 (+25);;"
+*
+Tornado
+"
+b+4;h;17;i13~14;-10;+1;;"
+*Shifts to Right Stance
+"
+CD.3;m;27;i18~19;+4;+25 (+16);;"
+*
+Balcony Break
+*Chip damage on block
+*Also possible during Right Stance
+*Shifts to Left Flamingo
+"
+CD.4;m;18;i16;-18;+53 (+43);;"
+* Tornado
+*Also possible during Right Stance
+"
+d+3;l;7;17;-13;-2;;
+d+3,4;l,h;7,10;i21~23;+8;+14;;"
+* Shift to Right Flamingo
+"
+d+4;l;7;i19;-17;-6;;"
+* Also possible during Right Stance
+"
+d+4,4;l,h;722;i20;-13;+69 (+53);;"
+* Tornado
+* Also possible during Right Stance
+"
+db+3;l;12;i19;-13;-1;;"
+* Also possible during Right Stance
+"
+db+3+4;ub(m);40;i61~63;+17;+17;;"
+*Also possible during Right Stance
+*db+3+4,b,b to cancel and shift to Left Flamingo
+"
+db+4;l;14;i16;-12;-8;;"
+* db+4,F to shift to Right Flamingo
+"
+db+4,4;l,h;14,21;i17~19;-28;+24;;"
+*Natural on CH
 "
 df+1;m;10;i13~14;-1;+6;;"
 *Also possible during Right Stance
 "
-df+1,3;mm;10,15;i22~23;-2;+6;;"
+df+1,3;m,m;10,15;i22~23;-2;+6;;"
 *Shifts to Left Flamingo
 "
-df+2;m;13;i15;-7;+34;;"
-*Launcher
+df+2;m;13;i15;-7;+34 (+24);;"
 *Also possible during Right Stance
 "
-df+3;m;112;i22~23;-14;-4;;"
+df+3;m;12;i22~23;-14;-4;;"
+*df+3,F/U/D to cancel and shift to Left Flamingo
 "
 df+3+4;m,h,m;7,4,17;i13,i14,i24~25;-14;+4;;"
-*
-Heat Engager
+* Heat Engager
 
-*Chip Damage on block
-*Also possible during Right Stance
+* Deals chip damage on block
+* Also possible during Right Stance
+"
+df+3,4;m,m;12,20;i24~25;-12;+7;;
+df+4;m;20;i16~17;-8;+8;;"
+* Homing
+* Shift to Right Stance
 "
 f+1+2;m;17;i15;-9;+2;;"
 *Also possible during Right Stance
@@ -99,61 +151,152 @@ f+2;;15;i16;-2;+9;;"
 "
 f+3;;;;;;;"
 *Shifts to Left Flamingo
-*Sidesteps to the Right
+*Sidesteps to the right
 "
-f+3~3;m;25;i20;-16;+7;;"
-*Sidesteps to the Right
+f+3~3;m;25;i20;-16;+7 (-2);;"
+*Sidesteps to the right
 "
 f+4;h;21;i17~23;+7~8;+18;;"
 *Shifts to Right Flamingo
 "
-f,F+4;m;22;i17~18;-7;+19;;"
+f,F+3;m;24;i20~24;+6;+6;;"
+*Forces crouch on block
+*Shifts to Right Stance
+"
+f,F+4;m;22;i17~18;-7;+19 (+10);;"
+*
+Balcony Break
 *
 Heat Engager
 
-*Shift to Right Stance (does not shift when using heat dash)
 *Also possible during Right Stance
+*Shifts to Right Stance (does not shift when using heat dash)
+"
+f,f,F+3;m;30;i22~24;+6;+23;;"
+*
+Balcony Break
+*Chip damage on block
+*Also possible during Right Stance
+"
+f,f,F+4;h;28;i18~19;+5;+8;;"
+*Chip damage on block
+*Also possible during Right Stance
+*Sideswaps and leaves opponent backturned on hit
 "
 f,n,4;;;;;;;"
 *Shifts to Right Flamingo
-*Sidesteps to the Left
+*Sidesteps to the left
+"
+f,n,d,df;;;;;;;
+f,n,df#4;m;18;i16;-8;+59 (+49);;"
+* Tornado
+* Chip damage on block
+* Also possible during Right Stance
 "
 H.2+3;m,m,h;13,14,24(51);i17~18, i18~19, i29;+11;+13;;"
 *
 Heat Smash
-*Shift to Right Flamingo
 *Also possible during Right Stance and Left Flamingo
+*Shifts to Right Flamingo
 "
 LFS.3+4;;;;;;;"
 *Shifts to Right Flamingo
 "
-LFS.f+3;m;23;i19~20;+4;+26;;"
-*
-Heat Engager
-
-*
-Balcony Break
-*Shift to Left Flamingo (does not shift when using heat dash)
+R.df+1+2;m;55;i20;-15;;;"
+*Rage Art
+*Erases opponent's recoverable health on hit
+*Possible during all stances except Backturn Stance
 "
 RFF.3+4;;;;;;;"
 *Shifts to Left Stance
 "
-RFF.df+3;m;21;i22~24;+1;+6;;"
-*
-Heat Engager
-
-*
-Homing
-*
-Balcony Break
-*Chip Damage on block
-*Shift to Right Stance (does not shift when using heat dash)
-"
 RFS.3+4;;;;;;;"
 *Shifts to Left Flamingo
 "
-RFS.b+3;m;21;i16~17;-9;+7;;"
+SS.3;m;13;i18~19;-12;-1;;
+SS.3,3;m,h;13,16;i9~10;+3;+14;;"
+*Shifts to Left Flamingo
+"
+SS.4;l;18;i19~20;-13;+5;;"
+*Forces crouch on hit
+*Shifts to Right Stance
+"
+u+3;h;25;i20;+5;+44 (+38);;"
+*Also possible during Right Stance
+*Shifts to Left Flamingo
+"
+u+3+4;m;20;i25~26;-7;+24;;"
+*Also possible during Right Stance
+"
+u+4;m;18;i16~18;+3;+11;;"
+*Also possible during Right Stance
+*Shifts to Right Flamingo
+"
+ub+2;h;18;i13~15;-9;+15;;"
 *
-Heat Engager
-
+Homing
+*Alternate input: b+2
+*Also possible during Right Stance
+*Sidesteps to the left
+"
+ub+4;m;18;i17~20;-8;+10;;"
+*Also possible during Right Stance
+"
+uf+2;m;22;i26;+5;+6;;"
+*Forces crouch on block
+*Also possible during Right Stance
+"
+uf+3;m;11;i28~29;-6;-7;;"
+*Also possible during Right Stance
+"
+uf+3+4;m,h;10,8;i14,i9;-10;+1;;"
+*Also possible during Right Stance
+*Shifts to Right Stance
+*uf+3+4,F to shift to Left Flamingo
+"
+uf+3,4;m,m;11,12;i20~21;+2;+13;;"
+*Also possible during Right Stance
+*Shifts to Right Flamingo
+"
+uf+3,4,3;m,m,m;11,12,20;i27~28;-14;0;;"
+*Forces crouch on block
+* Also possible during Right Stance
+"
+uf+3+4,4;m,h,m;10,8,13;i14~15;-10;+7;;"
+*Also possible during Right Stance
+*Shifts to Right Stance
+"
+uf+4;h;12;i22~23;-2;+4;;"
+*Also possible during Right Stance
+*Shifts to Right Flamingo
+"
+uf+4,4;h,m;12,12;i11~12;0;+6;;"
+*Also possible during Right Stance
+*Shifts to Right Flamingo
+"
+uf+4,4,4;h,m,l;12,12,12;i9~10;+1;+7;;"
+*Also possible during Right Stance
+*Shifts to Right Flamingo
+"
+uf,n,4;m;20;i23~25;-13;+32 (+22);;"
+*Also possible during Right Stance
+"
+ws.2;m;8;i15~16;-7;+4;;
+ws.2,3;m,h;8,10;i23~25;+3;+72 (+56);;"
+* Balcony Break
+* Tornado
+*Shifts to Left Flamingo
+"
+ws.3;m;20;i14~18;-12;+22;;
+ws.3+4;m;16;i20~21;-9;+2;;"
+*Alternate input: f,n,d,df+3+4 (CD.3+4)
+*Shifts to Backturn Stance
+"
+ws.3+4,3;m,m;16,20;i21~26;-6;+5;;"
+*Forces crouch on hit
+"
+ws.4;m;12;i11~12;-3;+8;;
+ws.4,4;m,m;12,16;i15~19;-5;+4;;"
+*Forces crouch on hit
+*Shifts to Right Stance
 "

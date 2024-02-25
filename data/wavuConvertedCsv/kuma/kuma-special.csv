@@ -3,6 +3,8 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 1,1;h,m;5,8;,i22~23;;-4c;;
 1,1,1;h,m,m;5,8,14;,i22~23;;+69 (+23);;"
 * Tornado
+* Combo from 2nd hit
+* Combo from 1st CH
 "
 1+2;m;25;i13~14;;;;"
 * Balcony Break
@@ -12,6 +14,7 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 1,2;h,h;5,25;,i22~24;;+11 (+2);;"
 * Balcony Break
 * chip damage on block
+* Combo from 1st CH
 "
 1+2+3+4;;;;;;;
 1+3;th(h);35;i12~14;;;;"
@@ -20,9 +23,13 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 "
 1+3+4;sp;;;;;;
 2;h;10;i10;;;;
-2,1;h,m;10,11;,i16;;;;
+2,1;h,m;10,11;,i16;;;;"
+* Combo from 1st hit
+"
 2,1,2;h,m,m;10,11,22;,i33~34;;+31 (+21);;
-2,1,3;h,m,l;10,11,13;,i18;;-2;;
+2,1,3;h,m,l;10,11,13;,i18;;-2;;"
+* Combo from 1st CH
+"
 2+3;m;12 (12);i16;;+2c;;"
 * Heat Burst
 "
@@ -33,13 +40,13 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 "
 3+4;sp;;;;;;"
 * Alternate input: FDFA.3+4
-* Can low parry in HBS with HBS.F
 * Transition to HBS
-* Transition to standing with input ub or u or uf
 "
 3+4;sp;;;;;;"
 * Alternate input: FDFA.3+4
+* Can low parry in HBS with HBS.F
 * Transition to HBS
+* Transition to standing with input ub or u or uf
 "
 b+1;m;24;i22~23;;;;"
 * Balcony Break
@@ -89,17 +96,18 @@ d+1+2;m;28;i14~15;;+20 (+10);;"
 * Balcony Break
 "
 d+3+4;sp;;;;;;"
+* Transition to SIT
+* Transition to ROL with input F
+"
+d+3+4;sp;;;;;;"
 * Alternative input: db+3+4
 * Transition to ROL with input SIT.F
 * Transition to California Roll with input SIT.B
 "
-d+3+4;sp;;;;;;"
-* Transition to SIT
-* Transition to ROL with input F
-"
 db+1;h;11;i14~15;;;;
 db+1+2;mm;4,4;i14~15;;;;
 db+1,2;h,m;1120;i17~18;;+4;;"
+* Combo from 1st hit
 * Can hold
 * Transition to HBS with input D or 3+4
 "
@@ -130,21 +138,33 @@ db+2+3**;l;60;i60~62;;+43;;"
 db+3;l;12;i18;;+1;;
 db+4;l;20;i21~22;;+6;;
 df+1;m;6;i15~16;;;;
-df+1,2;m,m;6,9;,i22~23;;;;
-df+1,2,1+2;m,m,m;6,9,20;,i25~26;;+17;;
+df+1,2;m,m;6,9;,i22~23;-11;;;"
+* Combo from 1st CH
+"
+df+1,2,1+2;m,m,m;6,9,20;,i25~26;-14c;+17;;"
+* Combo from 2nd hit
+* Combo from 1st CH
+* Can be delayed 10F
+* Combo can be delayed 10F from hit
+"
 df+2;m;10;i15~16;;;;
-df+2,1;m,m;10,12;,i20~21;;+35 (+25);;
+df+2,1;m,m;10,12;,i20~21;;+35 (+25);;"
+* Combo from 1st hit
+"
 df+3;m;13;i16;;;;
 df+3,2;m,h;13,24;,i27~28;;+22;;"
+* Combo from 1st hit
 * chip damage on block
 "
 f+1+2;m;16;i18;;;;
 f+1+2,1+2;m,m;1614 (9);i30~31;;+65 (+49);;"
 * Tornado
+* Combo from 1st hit
 "
 f+2;h;11;i12;;;;
 f+2,1;h,h;1120;i20;;+36 (+10);;"
 * Balcony Break
+* Natural on 1st hit
 "
 f+3+4;l;20;i28~30;;+6;;
 f+3+4,3+4;l;20;;;;;

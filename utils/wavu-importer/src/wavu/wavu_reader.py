@@ -65,7 +65,7 @@ def _get_all_parent_values_of(field: str, move_id: str, move_list_json: list) ->
 def _normalize_data(data):
     if data:
         # remove non-ascii stuff
-        return re.sub(r'[^\x00-\x7F]+', '', data)
+        return re.sub(r'[^\x00-\x7F]+', '', data).replace('&amp;#58;', ':')
     else:
         return ""
 
