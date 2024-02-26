@@ -6,6 +6,7 @@ import {
 } from '@radix-ui/react-icons'
 import { Table } from '@radix-ui/themes'
 import { Link, useLocation, useSearchParams } from '@remix-run/react'
+import { type HitLevel } from '~/types/FilterTypes'
 import { type SortOrder } from '~/types/SortOrder'
 import { type TableDataWithHeader } from '~/types/TableData'
 import { commandToUrlSegment } from '~/utils/moveUtils'
@@ -13,6 +14,8 @@ import { sortRowsByNumber, sortRowsByString } from '~/utils/sortingUtils'
 
 export type FrameDataTableProps = {
   table: TableDataWithHeader
+  hitLevelFilter?: HitLevel
+  className?: string
 }
 
 const isColumnNumericMap: Set<string> = new Set<string>([
@@ -29,7 +32,11 @@ const sortOrderIconMap: Record<SortOrder, React.ReactNode> = {
   desc: <CaretUpIcon width="1.5rem" height="1.5rem" />,
 }
 
-export const FrameDataTable = ({ table }: FrameDataTableProps) => {
+export const FrameDataTable = ({
+  table,
+  className,
+  hitLevelFilter,
+}: FrameDataTableProps) => {
   const columnNums = (table.headers || table.rows[0]).map((_, index) => index)
   const [searchParams] = useSearchParams()
   const location = useLocation()
@@ -54,6 +61,13 @@ export const FrameDataTable = ({ table }: FrameDataTableProps) => {
     return location.pathname + '?' + searchParamsCopy.toString()
   }
 
+  const filteredRows = useMemo(() => {
+    return table.rows.filter(row => {
+      const lastHitLevel = row[1]?.split(',').pop()
+      return !hitLevelFilter || lastHitLevel?.toLowerCase() === hitLevelFilter
+    })
+  }, [hitLevelFilter, table.rows])
+
   const sortedRows = useMemo(() => {
     const orderByColumnIndex = orderByColumnName
       ? table.headers.findIndex(h => h.toLowerCase() === orderByColumnName)
@@ -61,26 +75,30 @@ export const FrameDataTable = ({ table }: FrameDataTableProps) => {
     if (orderByColumnIndex >= 0) {
       if (isColumnNumericMap.has(orderByColumnName)) {
         return sortRowsByNumber(
-          table.rows,
+          filteredRows,
           orderByColumnIndex,
           sortDirection === 'asc',
         )
       }
       return sortRowsByString(
-        table.rows,
+        filteredRows,
         orderByColumnIndex,
         sortDirection === 'asc',
       )
     }
-    return table.rows
-  }, [orderByColumnName, table.headers, table.rows, sortDirection])
+    return filteredRows
+  }, [orderByColumnName, table.headers, filteredRows, sortDirection])
 
   /**  Frame data imported from wavu wiki might not have unique commands. This might brake sorting
    * since react does not update dom properly. Therefor we set key based on sorting to force React
    * to create a new table */
 
   return (
-    <Table.Root variant="surface" key={orderByColumnName + sortDirection}>
+    <Table.Root
+      variant="surface"
+      className={className}
+      key={orderByColumnName + sortDirection + hitLevelFilter}
+    >
       {table.headers && (
         <Table.Header>
           <Table.Row>
