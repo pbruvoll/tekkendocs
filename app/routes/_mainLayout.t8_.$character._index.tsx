@@ -3,7 +3,7 @@ import { Heading, Link as RadixLink, Table } from '@radix-ui/themes'
 import type { HeadersFunction } from '@remix-run/node'
 import { Link, type MetaFunction, NavLink } from '@remix-run/react'
 import { ContentContainer } from '~/components/ContentContainer'
-import { FrameDataTable } from '~/components/FrameDataTable'
+import { FrameDataSection } from '~/components/FrameDataSection'
 import { tableIdToDisplayName } from '~/constants/tableIdToDisplayName'
 import { useFrameData } from '~/hooks/useFrameData'
 import type { CharacterFrameData } from '~/types/CharacterFrameData'
@@ -87,7 +87,7 @@ export default function Index() {
           )
           if (table.headers && table.name === 'frames_normal') {
             return (
-              <FrameDataTable
+              <FrameDataSection
                 key={table.name}
                 table={table as TableDataWithHeader}
               />
