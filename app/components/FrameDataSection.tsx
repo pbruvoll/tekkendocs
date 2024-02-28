@@ -8,25 +8,48 @@ import { type MoveFilter } from '~/types/MoveFilter'
 import { type TableDataWithHeader } from '~/types/TableData'
 import { ContentContainer } from './ContentContainer'
 import { FrameDataFilterDialog } from './FrameDataFilterDialog'
-import { FrameDataFilterSelection } from './FrameDataFilterSelection'
 import { FrameDataTable } from './FrameDataTable'
 
+const getSearchParamString = <T extends string>(
+  searchParams: URLSearchParams,
+  key: string,
+): T | undefined => {
+  return (searchParams.get(filterKey.HitLevel) || undefined) as T | undefined
+}
+
+const getSearchParamNumber = (
+  searchParams: URLSearchParams,
+  key: string,
+): number | undefined => {
+  const valueStr = searchParams.get(key)
+  if (!valueStr) return undefined
+  const value = Number(valueStr)
+  return isNaN(value) ? undefined : value
+}
 export type FrameDataSectionProps = {
   table: TableDataWithHeader
 }
 export const FrameDataSection = ({ table }: FrameDataSectionProps) => {
   const [searchParams, setSearchParams] = useSearchParams()
-  const hitLevelFilter = (searchParams.get(filterKey.HitLevel) || undefined) as
-    | HitLevel
-    | undefined
 
   const filter: MoveFilter = useMemo(() => {
     return {
-      hitLevel: (searchParams.get(filterKey.HitLevel) || undefined) as
-        | HitLevel
-        | undefined,
+      hitLevel: getSearchParamString<HitLevel>(
+        searchParams,
+        filterKey.HitLevel,
+      ),
+      blockFrameMin: getSearchParamNumber(
+        searchParams,
+        filterKey.BlockFrameMin,
+      ),
+      blockFrameMax: getSearchParamNumber(
+        searchParams,
+        filterKey.BlockFrameMax,
+      ),
     }
   }, [searchParams])
+
+  console.log('filter', filter)
 
   const setFilterValue = (key: string, value: string) => {
     setSearchParams(prev => {
@@ -52,11 +75,7 @@ export const FrameDataSection = ({ table }: FrameDataSectionProps) => {
         />
       </ContentContainer>
 
-      <FrameDataTable
-        className="mt-3"
-        table={table}
-        hitLevelFilter={hitLevelFilter}
-      />
+      <FrameDataTable className="mt-3" table={table} filter={filter} />
     </>
   )
 }

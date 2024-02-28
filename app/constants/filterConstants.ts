@@ -1,5 +1,7 @@
 export const filterKey = {
   HitLevel: 'hitLevel',
+  BlockFrameMin: 'blockFrameMin',
+  BlockFrameMax: 'blockFrameMax',
 } as const
 
 export const hitLevelValue = {

@@ -7,6 +7,7 @@ import {
 import { Table } from '@radix-ui/themes'
 import { Link, useLocation, useSearchParams } from '@remix-run/react'
 import { type HitLevel } from '~/types/FilterTypes'
+import { type MoveFilter } from '~/types/MoveFilter'
 import { type SortOrder } from '~/types/SortOrder'
 import { type TableDataWithHeader } from '~/types/TableData'
 import { commandToUrlSegment } from '~/utils/moveUtils'
@@ -14,7 +15,7 @@ import { sortRowsByNumber, sortRowsByString } from '~/utils/sortingUtils'
 
 export type FrameDataTableProps = {
   table: TableDataWithHeader
-  hitLevelFilter?: HitLevel
+  hitLevelFilter?: MoveFilter
   className?: string
 }
 
@@ -35,7 +36,7 @@ const sortOrderIconMap: Record<SortOrder, React.ReactNode> = {
 export const FrameDataTable = ({
   table,
   className,
-  hitLevelFilter,
+  filter,
 }: FrameDataTableProps) => {
   const columnNums = (table.headers || table.rows[0]).map((_, index) => index)
   const [searchParams] = useSearchParams()
@@ -62,11 +63,42 @@ export const FrameDataTable = ({
   }
 
   const filteredRows = useMemo(() => {
+    if (!filter) {
+      return table.rows
+    }
+
+    const filterFuncs: ((row: string[]) => boolean)[] = []
+    if (filter.hitLevel) {
+      filterFuncs.push((row: string[]) => {
+        const lastHitLevel = row[1]?.split(',').pop()
+        return lastHitLevel?.toLowerCase() === filter.hitLevel
+      })
+    }
+
+    if (filter.blockFrameMax !== undefined) {
+      filterFuncs.push((row: string[]) => {
+        const blockFrameStr = row[4]
+        if (!blockFrameStr) {
+          return false
+        }
+        return Number(blockFrameStr) <= filter.blockFrameMax
+      })
+    }
+
+    if (filter.blockFrameMin !== undefined) {
+      filterFuncs.push((row: string[]) => {
+        const blockFrameStr = row[4]
+        if (!blockFrameStr) {
+          return false
+        }
+        return Number(blockFrameStr) >= filter.blockFrameMin
+      })
+    }
+
     return table.rows.filter(row => {
-      const lastHitLevel = row[1]?.split(',').pop()
-      return !hitLevelFilter || lastHitLevel?.toLowerCase() === hitLevelFilter
+      return filterFuncs.every(ff => ff(row))
     })
-  }, [hitLevelFilter, table.rows])
+  }, [filter, table.rows])
 
   const sortedRows = useMemo(() => {
     const orderByColumnIndex = orderByColumnName
@@ -97,7 +129,13 @@ export const FrameDataTable = ({
     <Table.Root
       variant="surface"
       className={className}
-      key={orderByColumnName + sortDirection + hitLevelFilter}
+      key={
+        orderByColumnName +
+        sortDirection +
+        filter.hitLevel +
+        filter.blockFrameMax +
+        filter.blockFrameMin
+      }
     >
       {table.headers && (
         <Table.Header>
