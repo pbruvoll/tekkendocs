@@ -72,7 +72,7 @@ export const filterRows = (rows: string[][], filter: MoveFilter | undefined) => 
       if (!blockFrameStr) {
         return false
       }
-      return Number(blockFrameStr) <= blockFrameMax
+      return parseInt(blockFrameStr) <= blockFrameMax
     })
   }
 
@@ -83,7 +83,29 @@ export const filterRows = (rows: string[][], filter: MoveFilter | undefined) => 
       if (!blockFrameStr) {
         return false
       }
-      return Number(blockFrameStr) >= blockFrameMin
+      return parseInt(blockFrameStr) >= blockFrameMin
+    })
+  }
+
+  if (filter.hitFrameMax !== undefined) {
+    const hitFrameMax = filter.hitFrameMax
+    filterFuncs.push((row: string[]) => {
+      const hitFrameStr = row[5]
+      if (!hitFrameStr) {
+        return false
+      }
+      return parseInt(hitFrameStr) <= hitFrameMax
+    })
+  }
+
+  if (filter.hitFrameMin !== undefined) {
+    const hitFrameMin = filter.hitFrameMin
+    filterFuncs.push((row: string[]) => {
+      const hitFrameStr = row[5]
+      if (!hitFrameStr) {
+        return false
+      }
+      return parseInt(hitFrameStr) >= hitFrameMin
     })
   }
 

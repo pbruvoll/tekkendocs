@@ -17,6 +17,17 @@ export const getFilterFromParams = (searchParams: URLSearchParams): MoveFilter =
         searchParams,
         filterKey.BlockFrameMax,
       ),
+      hitFrameMin: getSearchParamNumber(
+        searchParams,
+        filterKey.HitFrameMin
+      ),
+      hitFrameMax: getSearchParamNumber(
+        searchParams,
+        filterKey.HitFrameMax
+      )
     }
 }
 
+export const filterToDescription = (filter: MoveFilter): string => {
+  return Object.entries(filter).filter(([, value]) => value !== undefined).map(([key, value]) => `${key}=${value}` ).join(" & ")
+}

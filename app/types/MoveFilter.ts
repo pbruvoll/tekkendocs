@@ -4,4 +4,6 @@ export type MoveFilter = {
   hitLevel?: HitLevel
   blockFrameMin?: number,
   blockFrameMax?: number,
+  hitFrameMin?: number,
+  hitFrameMax?: number,
 }

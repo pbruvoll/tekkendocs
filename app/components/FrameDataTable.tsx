@@ -6,6 +6,7 @@ import {
 } from '@radix-ui/react-icons'
 import { Table } from '@radix-ui/themes'
 import { Link, useLocation, useSearchParams } from '@remix-run/react'
+import { orderByKey } from '~/constants/sortConstants'
 import { type MoveFilter } from '~/types/MoveFilter'
 import { type SortOrder } from '~/types/SortOrder'
 import { type TableDataWithHeader } from '~/types/TableData'
@@ -32,10 +33,8 @@ export const FrameDataTable = ({
   const columnNums = (table.headers || table.rows[0]).map((_, index) => index)
   const [searchParams] = useSearchParams()
   const location = useLocation()
-  const orderByParamValue = searchParams.get('orderby') || ''
+  const orderByParamValue = searchParams.get(orderByKey) || ''
   const [orderByColumnName, orderDirectionName] = orderByParamValue.split('_')
-
-  const orderByKey = 'orderby'
 
   const sortDirection: SortOrder = orderDirectionName === 'asc' ? 'asc' : 'desc'
 
@@ -79,7 +78,9 @@ export const FrameDataTable = ({
         sortDirection +
         filter?.hitLevel +
         filter?.blockFrameMax +
-        filter?.blockFrameMin
+        filter?.blockFrameMin +
+        filter?.hitFrameMin +
+        filter?.hitFrameMax
       }
     >
       {table.headers && (

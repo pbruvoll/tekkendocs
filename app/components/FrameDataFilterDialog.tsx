@@ -12,7 +12,9 @@ export const FrameDataFilterDialog = ({
   setFilterValue,
   removeFilterValue,
 }: FrameDataFilterDialogProps) => {
-  const filterCount = Object.keys(filter).length
+  const filterCount = Object.entries(filter).filter(
+    ([, value]) => value !== undefined,
+  ).length
   return (
     <Dialog.Root>
       <Dialog.Trigger>

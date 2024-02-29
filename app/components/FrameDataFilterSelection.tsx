@@ -13,7 +13,8 @@ export const FrameDataFilterSelection = ({
   setFilterValue,
   removeFilterValue,
 }: FrameDataFilterSectionProps) => {
-  const { hitLevel, blockFrameMin, blockFrameMax } = filter
+  const { hitLevel, blockFrameMin, blockFrameMax, hitFrameMin, hitFrameMax } =
+    filter
   return (
     <Flex direction="column" gap="5">
       <section className="flex flex-col gap-3">
@@ -102,6 +103,39 @@ export const FrameDataFilterSelection = ({
             }}
           >
             Safe
+          </Button>
+        </div>
+      </section>
+      <section className="flex flex-col gap-3">
+        <Text as="div" size="2" mb="1" weight="bold">
+          Hit frames
+        </Text>
+        <div className="flex gap-3">
+          <Button
+            variant={hitFrameMin === 0 ? 'solid' : 'outline'}
+            onClick={() => {
+              removeFilterValue(filterKey.HitFrameMax)
+              if (hitFrameMin === 0) {
+                removeFilterValue(filterKey.HitFrameMin)
+              } else {
+                setFilterValue(filterKey.HitFrameMin, '0')
+              }
+            }}
+          >
+            Non negative
+          </Button>
+          <Button
+            variant={hitFrameMax === -1 ? 'solid' : 'outline'}
+            onClick={() => {
+              removeFilterValue(filterKey.HitFrameMin)
+              if (hitFrameMax === -1) {
+                removeFilterValue(filterKey.HitFrameMax)
+              } else {
+                setFilterValue(filterKey.HitFrameMax, '-1')
+              }
+            }}
+          >
+            Negative
           </Button>
         </div>
       </section>
