@@ -6,25 +6,18 @@ import {
 } from '@radix-ui/react-icons'
 import { Table } from '@radix-ui/themes'
 import { Link, useLocation, useSearchParams } from '@remix-run/react'
-import { type HitLevel } from '~/types/FilterTypes'
+import { orderByKey } from '~/constants/sortConstants'
+import { type MoveFilter } from '~/types/MoveFilter'
 import { type SortOrder } from '~/types/SortOrder'
 import { type TableDataWithHeader } from '~/types/TableData'
+import { filterRows, sortRows } from '~/utils/frameDataUtils'
 import { commandToUrlSegment } from '~/utils/moveUtils'
-import { sortRowsByNumber, sortRowsByString } from '~/utils/sortingUtils'
 
 export type FrameDataTableProps = {
   table: TableDataWithHeader
-  hitLevelFilter?: HitLevel
+  filter?: MoveFilter
   className?: string
 }
-
-const isColumnNumericMap: Set<string> = new Set<string>([
-  'damage',
-  'start up frame',
-  'block frame',
-  'hit frame',
-  'counter hit frame',
-])
 
 const sortOrderIconMap: Record<SortOrder, React.ReactNode> = {
   '': <CaretSortIcon width="1.5rem" height="1.5rem" />,
@@ -35,15 +28,13 @@ const sortOrderIconMap: Record<SortOrder, React.ReactNode> = {
 export const FrameDataTable = ({
   table,
   className,
-  hitLevelFilter,
+  filter,
 }: FrameDataTableProps) => {
   const columnNums = (table.headers || table.rows[0]).map((_, index) => index)
   const [searchParams] = useSearchParams()
   const location = useLocation()
-  const orderByParamValue = searchParams.get('orderby') || ''
+  const orderByParamValue = searchParams.get(orderByKey) || ''
   const [orderByColumnName, orderDirectionName] = orderByParamValue.split('_')
-
-  const orderByKey = 'orderby'
 
   const sortDirection: SortOrder = orderDirectionName === 'asc' ? 'asc' : 'desc'
 
@@ -62,31 +53,16 @@ export const FrameDataTable = ({
   }
 
   const filteredRows = useMemo(() => {
-    return table.rows.filter(row => {
-      const lastHitLevel = row[1]?.split(',').pop()
-      return !hitLevelFilter || lastHitLevel?.toLowerCase() === hitLevelFilter
-    })
-  }, [hitLevelFilter, table.rows])
+    return filterRows(table.rows, filter)
+  }, [filter, table.rows])
 
   const sortedRows = useMemo(() => {
-    const orderByColumnIndex = orderByColumnName
-      ? table.headers.findIndex(h => h.toLowerCase() === orderByColumnName)
-      : -1
-    if (orderByColumnIndex >= 0) {
-      if (isColumnNumericMap.has(orderByColumnName)) {
-        return sortRowsByNumber(
-          filteredRows,
-          orderByColumnIndex,
-          sortDirection === 'asc',
-        )
-      }
-      return sortRowsByString(
-        filteredRows,
-        orderByColumnIndex,
-        sortDirection === 'asc',
-      )
-    }
-    return filteredRows
+    return sortRows(
+      filteredRows,
+      table.headers,
+      orderByColumnName,
+      sortDirection,
+    )
   }, [orderByColumnName, table.headers, filteredRows, sortDirection])
 
   /**  Frame data imported from wavu wiki might not have unique commands. This might brake sorting
@@ -97,7 +73,15 @@ export const FrameDataTable = ({
     <Table.Root
       variant="surface"
       className={className}
-      key={orderByColumnName + sortDirection + hitLevelFilter}
+      key={
+        orderByColumnName +
+        sortDirection +
+        filter?.hitLevel +
+        filter?.blockFrameMax +
+        filter?.blockFrameMin +
+        filter?.hitFrameMin +
+        filter?.hitFrameMax
+      }
     >
       {table.headers && (
         <Table.Header>

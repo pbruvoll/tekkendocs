@@ -1,6 +1,9 @@
 import invariant from 'tiny-invariant'
 import { type Move } from '~/types/Move'
+import { type MoveFilter } from '~/types/MoveFilter'
+import { type SortOrder } from '~/types/SortOrder'
 import { type TableData } from '~/types/TableData'
+import { sortRowsByNumber, sortRowsByString } from './sortingUtils'
 
 export const frameDataTableToJson = (normalFrameData: TableData): Move[] => {
   invariant(normalFrameData.headers)
@@ -46,6 +49,97 @@ export const isHeatMove = (move: Move) => {
   return move.command?.startsWith('H.')
 }
 
-export const isPowerCrush = (mvoe: Move) => {
-  return mvoe.notes?.match(/power crush/i)
+export const isPowerCrush = (move: Move) => {
+  return move.notes?.match(/power crush/i)
+}
+
+export const filterRows = (
+  rows: string[][],
+  filter: MoveFilter | undefined,
+) => {
+  if (!filter) {
+    return rows
+  }
+
+  const filterFuncs: ((row: string[]) => boolean)[] = []
+  if (filter.hitLevel) {
+    filterFuncs.push((row: string[]) => {
+      const lastHitLevel = row[1]?.split(',').pop()
+      return lastHitLevel?.toLowerCase() === filter.hitLevel
+    })
+  }
+
+  if (filter.blockFrameMax !== undefined) {
+    const blockFrameMax = filter.blockFrameMax
+    filterFuncs.push((row: string[]) => {
+      const blockFrameStr = row[4]
+      if (!blockFrameStr) {
+        return false
+      }
+      return parseInt(blockFrameStr) <= blockFrameMax
+    })
+  }
+
+  if (filter.blockFrameMin !== undefined) {
+    const blockFrameMin = filter.blockFrameMin
+    filterFuncs.push((row: string[]) => {
+      const blockFrameStr = row[4]
+      if (!blockFrameStr) {
+        return false
+      }
+      return parseInt(blockFrameStr) >= blockFrameMin
+    })
+  }
+
+  if (filter.hitFrameMax !== undefined) {
+    const hitFrameMax = filter.hitFrameMax
+    filterFuncs.push((row: string[]) => {
+      const hitFrameStr = row[5]
+      if (!hitFrameStr) {
+        return false
+      }
+      return parseInt(hitFrameStr) <= hitFrameMax
+    })
+  }
+
+  if (filter.hitFrameMin !== undefined) {
+    const hitFrameMin = filter.hitFrameMin
+    filterFuncs.push((row: string[]) => {
+      const hitFrameStr = row[5]
+      if (!hitFrameStr) {
+        return false
+      }
+      return parseInt(hitFrameStr) >= hitFrameMin
+    })
+  }
+
+  return rows.filter(row => {
+    return filterFuncs.every(ff => ff(row))
+  })
+}
+
+const isColumnNumericMap: Set<string> = new Set<string>([
+  'damage',
+  'start up frame',
+  'block frame',
+  'hit frame',
+  'counter hit frame',
+])
+
+export const sortRows = (
+  rows: string[][],
+  headers: string[],
+  orderByColumnName: string,
+  sortDirection: SortOrder,
+) => {
+  const orderByColumnIndex = orderByColumnName
+    ? headers.findIndex(h => h.toLowerCase() === orderByColumnName)
+    : -1
+  if (orderByColumnIndex >= 0) {
+    if (isColumnNumericMap.has(orderByColumnName)) {
+      return sortRowsByNumber(rows, orderByColumnIndex, sortDirection === 'asc')
+    }
+    return sortRowsByString(rows, orderByColumnIndex, sortDirection === 'asc')
+  }
+  return rows
 }

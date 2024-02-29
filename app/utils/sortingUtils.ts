@@ -35,7 +35,7 @@ const compareStrings = (a: string, b: string, asc: boolean) => {
     ? a.localeCompare(b, 'en', {
         sensitivity: 'accent',
       })
-    : b.localeCompare(b, 'en', { sensitivity: 'accent' })
+    : b.localeCompare(a, 'en', { sensitivity: 'accent' })
 }
 
 export const sortRowsByNumber = (

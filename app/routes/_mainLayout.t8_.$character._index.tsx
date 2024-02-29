@@ -4,11 +4,15 @@ import type { HeadersFunction } from '@remix-run/node'
 import { Link, type MetaFunction, NavLink } from '@remix-run/react'
 import { ContentContainer } from '~/components/ContentContainer'
 import { FrameDataSection } from '~/components/FrameDataSection'
+import { orderByKey } from '~/constants/sortConstants'
 import { tableIdToDisplayName } from '~/constants/tableIdToDisplayName'
 import { useFrameData } from '~/hooks/useFrameData'
 import type { CharacterFrameData } from '~/types/CharacterFrameData'
 import type { RouteHandle } from '~/types/RouteHandle'
+import { type SortOrder } from '~/types/SortOrder'
 import { type TableDataWithHeader } from '~/types/TableData'
+import { filterToDescription, getFilterFromParams } from '~/utils/filterUtils'
+import { filterRows, sortRows } from '~/utils/frameDataUtils'
 import { getCacheControlHeaders } from '~/utils/headerUtils'
 import { commandToUrlSegment } from '~/utils/moveUtils'
 import { generateMetaTags } from '~/utils/seoUtils'
@@ -22,7 +26,7 @@ export function shouldRevalidate() {
   return false
 }
 
-export const meta: MetaFunction = ({ data, params, matches }) => {
+export const meta: MetaFunction = ({ data, params, matches, location }) => {
   const frameData = matches.find(
     m => (m.handle as RouteHandle)?.type === 'frameData',
   )?.data
@@ -36,12 +40,57 @@ export const meta: MetaFunction = ({ data, params, matches }) => {
       },
     ]
   }
-  const { characterName } = frameData as CharacterFrameData
+  const { characterName, tables } = frameData as CharacterFrameData
   const characterId = characterName.toLocaleLowerCase()
   const characterTitle =
     characterName[0].toUpperCase() + characterName.substring(1)
   const title = `${characterTitle} Tekken 8 Frame Data | TekkenDocs`
-  const description = `Frame data for ${characterTitle} in Tekken 8`
+
+  let rowsDescription: string = ''
+  // the the actual filtered and sorted frame data
+  const table = tables.find(t => t.name === 'frames_normal')
+  if (table) {
+    const searchParams = new URLSearchParams(location.search)
+
+    const orderByParamValue = searchParams.get(orderByKey) || ''
+    const [orderByColumnName, orderDirectionName] = orderByParamValue.split('_')
+
+    const sortDirection: SortOrder =
+      orderDirectionName === 'asc' ? 'asc' : 'desc'
+
+    const filter = getFilterFromParams(searchParams)
+
+    const filteredRows = filterRows(table.rows, filter)
+    const headers = (table as TableDataWithHeader).headers
+
+    const sortedRows = sortRows(
+      filteredRows,
+      headers,
+      orderByColumnName,
+      sortDirection,
+    )
+
+    const orderDesription = sortDirection
+      ? `order by ${orderByColumnName} ${orderDirectionName}`
+      : ''
+
+    const filterStr = filterToDescription(filter)
+    const filterDescription = filterStr ? `filter : ${filterStr}` : ''
+
+    rowsDescription = [
+      [orderDesription, filterDescription].filter(Boolean).join(', '),
+      [headers[0], headers[1], headers[2], headers[4], headers[5]].join(' | '),
+    ]
+      .concat(
+        sortedRows
+          .slice(0, 9)
+          .map(r => [r[0], r[1], r[2], r[3], r[4], r[5]].join(' | ')),
+      )
+      .filter(Boolean)
+      .join('\n')
+  }
+
+  const description = `Frame data for ${characterTitle} in Tekken 8\n${rowsDescription}`
 
   return generateMetaTags({
     matches,
