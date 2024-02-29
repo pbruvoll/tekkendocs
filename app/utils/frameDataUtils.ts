@@ -1,7 +1,7 @@
 import invariant from 'tiny-invariant'
 import { type Move } from '~/types/Move'
 import { type SortOrder } from '~/types/SortOrder'
-import { type TableData,TableDataWithHeader } from '~/types/TableData'
+import { type TableData, TableDataWithHeader } from '~/types/TableData'
 import { sortRowsByNumber, sortRowsByString } from './sortingUtils'
 
 export const frameDataTableToJson = (normalFrameData: TableData): Move[] => {
@@ -52,7 +52,10 @@ export const isPowerCrush = (move: Move) => {
   return move.notes?.match(/power crush/i)
 }
 
-export const filterRows = (rows: string[][], filter: MoveFilter | undefined) => {
+export const filterRows = (
+  rows: string[][],
+  filter: MoveFilter | undefined,
+) => {
   if (!filter) {
     return rows
   }
@@ -122,23 +125,20 @@ const isColumnNumericMap: Set<string> = new Set<string>([
   'counter hit frame',
 ])
 
-export const sortRows = (rows: string[][], headers: string[], orderByColumnName: string, sortDirection: SortOrder) => {
+export const sortRows = (
+  rows: string[][],
+  headers: string[],
+  orderByColumnName: string,
+  sortDirection: SortOrder,
+) => {
   const orderByColumnIndex = orderByColumnName
     ? headers.findIndex(h => h.toLowerCase() === orderByColumnName)
     : -1
   if (orderByColumnIndex >= 0) {
     if (isColumnNumericMap.has(orderByColumnName)) {
-      return sortRowsByNumber(
-        rows,
-        orderByColumnIndex,
-        sortDirection === 'asc',
-      )
+      return sortRowsByNumber(rows, orderByColumnIndex, sortDirection === 'asc')
     }
-    return sortRowsByString(
-      rows,
-      orderByColumnIndex,
-      sortDirection === 'asc',
-    )
+    return sortRowsByString(rows, orderByColumnIndex, sortDirection === 'asc')
   }
   return rows
 }

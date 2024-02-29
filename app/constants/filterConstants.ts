@@ -3,7 +3,7 @@ export const filterKey = {
   BlockFrameMin: 'blockFrameMin',
   BlockFrameMax: 'blockFrameMax',
   HitFrameMin: 'hitFrameMin',
-  HitFrameMax: 'hitFrameMax'
+  HitFrameMax: 'hitFrameMax',
 } as const
 
 export const hitLevelValue = {
