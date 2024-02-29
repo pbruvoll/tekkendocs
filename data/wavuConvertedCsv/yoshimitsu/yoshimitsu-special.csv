@@ -126,14 +126,14 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 4,4,2,2,1;h,h,m,h,m!;12,12,5,6,30;,i67;;-18;;"
 * Weapon
 * Alternate notation: 1SS.4,4,2,2,1"
+4,4,2,2,NSS.1~1;h,h,m,h,m,h!;12,12,5,6,30,40;,i20~105;;-49a (-75);;"
+* Balcony Break
+* Cancel early to r30 with B"
 4,4,2,2,1~1;h,h,m,h,m!,m!;12,12,5,6,30,22;,i28~113;;-58;;"
 * Weapon
 * Cancel early to r26 with B (earliest cancel -12a)
 * Possible to double-hit
 * Alternate notation: 1SS.4,4,2,2,1~1"
-4,4,2,2,NSS.1~1;h,h,m,h,m,h!;12,12,5,6,30,40;,i20~105;;-49a (-75);;"
-* Balcony Break
-* Cancel early to r30 with B"
 4,4,2,2,NSS.1;h,h,m,h,m;12,12,5,6,30;,i67;-54;-17a;;
 4,4,4;h,h,h;12,12,20;,i24~25;-4~-3;+18a (+9);;"
 * Balcony Break
@@ -172,7 +172,7 @@ b+1+2;;;;;;;"
 b+2;m;12;i14~15;-9~-8;+2~+3;;Transition to r27 KIN with 1+2
 b+2,1;m,M;12,20;,i27~28;-17~-16;+28a (+18);;"
 * Weapon
-* Combos from CH 1st with 2f delay
+* Combo from 1st CH with 2f delay
 * Transition to r30 KIN with 1+2
 * Input can be delayed 14f
 * Alternate notation: 1SS.b+2,1"
@@ -187,7 +187,7 @@ b+2,2;m,h;12,21;,i22~23;-13;+2a;;"
 * Input can be delayed 14f
 * Alternate notation: 1SS.b+2,2"
 b+2,NSS.1;m,m;12,17;,i27~28;-17~-16;+28a (+18);;"
-* Combos from CH 1st with 2f delay
+* Combo from 1st CH with 2f delay
 * Transition to r30 KIN with 1+2
 * Input can be delayed 14f"
 b+2,NSS.2;m,h;12,18;,i22~23;-10~-9;+0~+1;;"
@@ -383,7 +383,7 @@ DB+3,3,3,3,3;l,l,l,l,l;8,7,7,5,5;,i15~17;-19~-17;-7~-5;;"
 * Transition to r20 IND with d+3+4"
 DB+3,3,3,3,3,3;l,l,l,l,l,l;8,7,7,5,5,5;,i9~11;-26~-24;-15~-13;;"
 * Combo from 5th CH"
-DB+3,3,3,3,3,3,4;l,l,l,l,l,l,m;8,7,7,5,5,5,15;,i12~13;-8~-7;+23a (+13);;"
+DB+3,3,3,3,3,4;l,l,l,l,l,m;8,7,7,5,5,15;,i12~13;-8~-7;+23a (+13);;"
 * Balcony Break
 * Transition to r21 KIN with 1+2 (-6~-5 on block)
 * Transition to r24 NSS with B
@@ -391,8 +391,7 @@ DB+3,3,3,3,3,3,4;l,l,l,l,l,l,m;8,7,7,5,5,5,15;,i12~13;-8~-7;+23a (+13);;"
 * Alternate inputs:
 * DB+3,3,4
 * DB+3,3,3,4
-* DB+3,3,3,3,4
-* DB+3,3,3,3,3,4"
+* DB+3,3,3,3,4"
 db+4;L;14;i17;-12;-1;;
 df+1;m;14;i13;-4;+5;;
 df+1,2;m,h;14,16;,i25~26;-4~-3;+14g~+15g;+39a;"
@@ -631,10 +630,10 @@ FLE.n;m;7;i2~60;-18~;+48a (+38a);;"
 * Hitlines exist on the sword and directly behind Yoshimitsu
 * Can be canceled at any time into another FLE move
 * After hitting with this attack, FLE.n has no hitbox until another FLE action (other than FLE.d) is taken"
-FLE.u+1+2;;;;;;;
 FLE.u+1+2;m;30;i38~40;+4~+6;+21a (+12);;"
 * Balcony Break
 * Tech roll to r33 FC on frames 41-42"
+FLE.u+1+2;;;;;;;
 FLE.uf;m!;21;i30~45;;+30a (+20);;"
 * Balcony Break
 * Alternate inputs: FLE.u and FLE.ub"
@@ -886,6 +885,7 @@ NSS.f+3+4;m;20;i21~25;-13~-9;+20a (+11);;"
 * Balcony Break
 * Head
 * Cancel to r55 BT with b
+* Transition to r33? IND with d+3+4
 * +20a on left/right side hit"
 NSS.FC.DF+1;l;12;i25~26;-16~-15;+27a;;"
 * Alternate input: NSS.db,b+1"

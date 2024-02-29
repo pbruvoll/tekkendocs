@@ -83,8 +83,22 @@ b+3;;;;;;;"
 * Transitions to RAB
 * Transition to DEW with F
 * Alternate input b+4 "
+RAB.2;m;20;i20;-9;+39d (-19);;"
+* Heat Engager
+
+* Heat Dash +5, +36a (+26) 
+
+* Balcony Break
+* Powered up during Heat: 24 damage
+* Partially consumes remaining Heat Time"
+RAB.3;l;20;i20;-13;+3c;+70a (+54);"
+* Homing
+* Powered up during Heat "
 b+3+4;;;;;;;"
 * Transitions to BT "
+RAB.4;m;24;i23;-2;+4a (-5);;"
+* Balcony Break
+* Powered up during Heat"
 Back Throw;t;60;i12;!;+1d;;Unbreakable
 BT.1;h;8;i8;-8;+3;;"
 * "
@@ -167,35 +181,6 @@ db+3+4;l;20;i24;-18;+3d;+33a;"
 db+4;l;20;i30;-24;+76a (+60);;"
 * Homing
 * Instant Tornado "
-DEW.1;m;12;i15;-9;-4;+2;"
-* "
-DEW.1+2;m;28;i16;-11;+17cg;;"
-* Tornado
-* Balcony Break "
-DEW.1,2;m,m;12,20;i23;-14;+20a (+10);+54a;"
-* Balcony Break
-* Combos from 1st hit
-* Cancel and transition to -14, -12, -3 BT with B "
-DEW.1,4;m,m;12,30;i25;-9;+2a (-7);;"
-* Balcony Break
-* Combos from 1st hit CH
-* Chip damage on block [9]
-* Partially consumes remaining Heat time"
-DEW.2;m;13;i14;-9;+0;;"
-* Homing "
-DEW.2,1;m,m;13,20;i22;-13;+17d;;"
-* Heat Engager
-
-* Heat Dash +67a (+50)
-
-* Balcony Break
-* Combos from 1st hit"
-DEW.3;m;28;i17;-9;+20a (+3);;"
-* Tornado
-* Balcony Break "
-DEW.3+4;h;26;i12;+6;+17g;;"
-* Balcony Break
-* Transition to +0, +11 RAB with b+3 or b+4"
 df+1;m;10;i13;-1;+8;;"
 * "
 df+2;m;15;i16;-11;+31a (+21);;"
@@ -277,6 +262,14 @@ H.2+3;h,t;55;i23;+9;-3d;;"
 * Heat Smash
 * Homing
 * Floor Break "
+H.b+3*;;;;;;;"
+* Transitions to Feisty Rabbit Deuxime
+* All RAB moves are available
+* Partially restores remaining Heat Time
+* Transition to DEW with F "
+H.b+3,3;l;20;i20;-13;+24a;+70a (+54);"
+* Homing
+* Partially consumes remaining Heat time "
 H.BT.2+3;l;39;i16;-8;+23a (+5);;"
 * Heat Smash
 * Homing
@@ -286,33 +279,40 @@ H.f,F+3+4 (etc.);m;36;i19;+4 (+9w);+20a (-6);;"
 * Balcony Break
 * Chip damage on block [16]
 * Partially consumes remaining Heat time"
-H.RAB.3;l;20;i20;-13;+24a;+70a (+54);"
-* Homing
-* Partially consumes remaining Heat time "
 Left Throw;t;42;i12;-3;+0d;;Throw break 1
 qcf;;;;;;;"
 * Transitions to Dew Glide
 * Transition to Crouch with d,DF
 * Transition to RAB with b+3 or b+4"
-RAB.2;m;20;i20;-9;+39d (-19);;"
+DEW.1;m;12;i15;-9;-4;+2;"
+* "
+DEW.1+2;m;28;i16;-11;+17cg;;"
+* Tornado
+* Balcony Break "
+DEW.1,2;m,m;12,20;i23;-14;+20a (+10);+54a;"
+* Balcony Break
+* Combos from 1st hit
+* Cancel and transition to -14, -12, -3 BT with B "
+DEW.1,4;m,m;12,30;i25;-9;+2a (-7);;"
+* Balcony Break
+* Combos from 1st hit CH
+* Chip damage on block [9]
+* Partially consumes remaining Heat time"
+DEW.2;m;13;i14;-9;+0;;"
+* Homing "
+DEW.2,1;m,m;13,20;i22;-13;+17d;;"
 * Heat Engager
 
-* Heat Dash +5, +36a (+26) 
+* Heat Dash +67a (+50)
 
 * Balcony Break
-* Powered up during Heat: 24 damage
-* Partially consumes remaining Heat Time"
-RAB.3;l;20;i20;-13;+3c;+70a (+54);"
-* Homing
-* Powered up during Heat "
-RAB.4;m;24;i23;-2;+4a (-5);;"
+* Combos from 1st hit"
+DEW.3;m;28;i17;-9;+20a (+3);;"
+* Tornado
+* Balcony Break "
+DEW.3+4;h;26;i12;+6;+17g;;"
 * Balcony Break
-* Powered up during Heat"
-RAB.B+3;;;;;;;"
-* Transitions to Feisty Rabbit Deuxime
-* All RAB moves are available
-* Partially restores remaining Heat Time
-* Transition to DEW with F "
+* Transition to +0, +11 RAB with b+3 or b+4"
 R.df+1+2;m,t;55+;i20;-15;+0;;"
 * Rage Art
 * Damage increases with lower health

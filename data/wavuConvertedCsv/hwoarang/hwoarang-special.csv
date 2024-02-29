@@ -3,12 +3,12 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 1,1;h,h;5,8;i12;-3;+8;;
 1,1,3;h,h,l;5,8,10;i21;-12;-1;;
 1,1,3,3;h,h,l,h;5,8,10,14;i20;-14;+4;;
+1+2;;;;;;;"
+*Shifts to Backturn Stance
+"
 1,2;h,h;5,10;i10;-3;+6;;"
 *1,2,3 to shift to Left Flamingo
 *1,2,4 to shift to Right Flamingo
-"
-1+2;;;;;;;"
-*Shifts to Backturn Stance
 "
 1+2+3+4;;;;;;;
 1,2,f+3;h,h,m;5,10,14;i21;-8;+9;;
@@ -85,6 +85,11 @@ Tornado
 b+4;h;17;i13~14;-10;+1;;"
 *Shifts to Right Stance
 "
+BT.3;m;20;i14~16;-13;+38 (+28);;
+BT.4;;;i14~16;-13;+40 (+30);;"
+* Shifts to Right Stance
+"
+BT.d+3;l;20;i18~19;-13;-2;;
 CD.3;m;27;i18~19;+4;+25 (+16);;"
 *
 Balcony Break
@@ -199,6 +204,8 @@ Heat Smash
 *Also possible during Right Stance and Left Flamingo
 *Shifts to Right Flamingo
 "
+LFS.1;;6;i13;+5;+7;;"
+"
 LFS.3+4;;;;;;;"
 *Shifts to Right Flamingo
 "
@@ -207,8 +214,55 @@ R.df+1+2;m;55;i20;-15;;;"
 *Erases opponent's recoverable health on hit
 *Possible during all stances except Backturn Stance
 "
+RFF.1;h;10;i10;+0;+6;;
+RFF.1,1;h,m;10,12;i19;-8;+3;;"
+*Shifts to Left Stance
+"
+RFF.2;h;6;i10;+1;+8;;
+RFF.2,1;h,h;6,10;i10;+0;+6;;
+RFF.2,1,1;h,h,m;6,10,12;i19;-8;+3;;"
+*Shifts to Left Stance
+"
+RFF.2,3;h,h;6,24;i19~20;-9;+20;;"
+* Tornado
+*Shifts to Left Stance
+"
+RFF.2,4;h,h;6,9;i12;-8;+3;;"
+*Hold any direction to shift to Right Flamingo
+"
+RFF.2,4,3;h,h,m;6,9,20;i25~31;-14;+14;;
+RFF.2,4,4;h,h,h;6,9,23;i18~19;-5;+41;;"
+* Balcony Break
+*Shifts to Left Stance
+"
+RFF.3;m;13;i16;-4;+7;;"
+*Shifts to Left Stance
+"
 RFF.3+4;;;;;;;"
 *Shifts to Left Stance
+"
+RFF.3,4;m,h;13,16;i27~28;+10;+21;;"
+*Shifts to Right Flamingo
+*RFF.3,4,F to cancel and shift to Right Flamingo
+"
+RFF.3~4;h;27;i27~30;+5;+47;;"
+* Balcony Break
+* Homing
+*Clean hit
+*Chip damage on block
+"
+RFF.4;h;9;i12;-8;+3;;"
+*Hold any direction to shift to Right Flamingo
+"
+RFF.4,3;h,m;9,20;i25~31;-14c;+14;;
+RFF.4,4;h,h;9,23;i18~19;-5;+41;;"
+* Balcony Break
+*Shifts to Left Stance
+"
+RFF.f+1;h;5;i10;+1;+8;;"
+*Shifts to Left Stance
+"
+RFS.2;;6;i13;+5;+7;;"
 "
 RFS.3+4;;;;;;;"
 *Shifts to Left Flamingo

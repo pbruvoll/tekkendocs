@@ -293,17 +293,20 @@ f,F+3;m;23;i20;-9;+11g;KND;"
 * Homing
 "
 f,F+4;h;28;i20;-3;KND;KND*;Balcony Break
-f,f,F+1+2;h;30;i17;;KND;;"
+f,f,F+1+2;h;30;i17;+4;KND;;"
 * Chip damage when guarded
 * Homing
 "
-f,f,F+3;m;32;i24~28;+0;KND;KND*;"
+f,f,F+3;m;32;i24~28;+3;KND;KND*;"
 * Chip damage when guarded
 * Alternate input: ub,b+3
 "
 H.2+3;m,th;12,3;i16;+10;;;"
 * Heat Smash
 * Throw on hit"
+hFC.2;sl;8;i11;-4;+7;;
+hFC.3;l;10;i16;-17;-6;;
+hFC.4;l;6;i12;-15;-4;;
 Left throw;t;40;;-3;-3d;;"
 * Throw break 1
 * Opp. Position on break: CCW
@@ -314,7 +317,7 @@ NWG.f,F+1+2;m;24;i19;;KND;;"
 * During Heat, remaining Heat is consumed
 * Tornado
 "
-NWG.f,f,F+1+2;h;42;i17;;KND;;"
+NWG.f,f,F+1+2;h;42;i17;+6;KND;;"
 * Balcony Break
 * Chip damage when guarded
 * Consumes Naniwa Gusto
@@ -364,7 +367,12 @@ ws1,4;m,h;12,20;;-8;KND;KND;"
 * Can be delayed 7F
 "
 ws2;m;18;i13;-8;+8;;
+ws2,1;mh;18,10;;-2;+9;;"
+* Combo from 1st hit
+* Continuation into ten string
+"
 ws2,1+2;mh,th;18,4;;;Th;;"
+* Combo from 1st hit
 * Link to attack from Destablilizer (f+1+3 or f+2+4)
 "
 ws3;m;20;i18;-16;LNC;LNC;Tornado
