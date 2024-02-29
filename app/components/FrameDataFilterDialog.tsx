@@ -1,5 +1,5 @@
 import { MixerHorizontalIcon } from '@radix-ui/react-icons'
-import { Button, Dialog, Flex, Separator } from '@radix-ui/themes'
+import { Button, Dialog } from '@radix-ui/themes'
 import {
   type FrameDataFilterSectionProps,
   FrameDataFilterSelection,

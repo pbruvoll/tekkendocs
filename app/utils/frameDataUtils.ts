@@ -1,7 +1,8 @@
 import invariant from 'tiny-invariant'
 import { type Move } from '~/types/Move'
+import { type MoveFilter } from '~/types/MoveFilter'
 import { type SortOrder } from '~/types/SortOrder'
-import { type TableData, TableDataWithHeader } from '~/types/TableData'
+import { type TableData } from '~/types/TableData'
 import { sortRowsByNumber, sortRowsByString } from './sortingUtils'
 
 export const frameDataTableToJson = (normalFrameData: TableData): Move[] => {
