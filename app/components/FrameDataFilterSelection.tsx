@@ -13,15 +13,24 @@ export const FrameDataFilterSelection = ({
   setFilterValue,
   removeFilterValue,
 }: FrameDataFilterSectionProps) => {
-  const { hitLevel, blockFrameMin, blockFrameMax, hitFrameMin, hitFrameMax } =
-    filter
+  const {
+    hitLevel,
+    blockFrameMin,
+    blockFrameMax,
+    hitFrameMin,
+    hitFrameMax,
+    balconyBreak,
+    heatEngager,
+    homing,
+    tornado,
+  } = filter
   return (
     <Flex direction="column" gap="5">
       <section className="flex flex-col gap-3">
         <Text as="div" size="2" mb="1" weight="bold">
           Hit level
         </Text>
-        <div className="flex gap-3">
+        <div className="flex flex-wrap gap-3">
           <Button
             variant={hitLevel === hitLevelValue.Low ? 'solid' : 'outline'}
             onClick={() => {
@@ -64,7 +73,7 @@ export const FrameDataFilterSelection = ({
         <Text as="div" size="2" mb="1" weight="bold">
           Block frames
         </Text>
-        <div className="flex gap-3">
+        <div className="flex flex-wrap gap-3">
           <Button
             variant={blockFrameMin === 1 ? 'solid' : 'outline'}
             onClick={() => {
@@ -110,7 +119,7 @@ export const FrameDataFilterSelection = ({
         <Text as="div" size="2" mb="1" weight="bold">
           Hit frames
         </Text>
-        <div className="flex gap-3">
+        <div className="flex flex-wrap gap-3">
           <Button
             variant={hitFrameMin === 0 ? 'solid' : 'outline'}
             onClick={() => {
@@ -137,6 +146,37 @@ export const FrameDataFilterSelection = ({
           >
             Negative
           </Button>
+        </div>
+      </section>
+      <section className="flex flex-col gap-3">
+        <Text as="div" size="2" mb="1" weight="bold">
+          Properties
+        </Text>
+        <div className="flex flex-wrap gap-3">
+          {(
+            [
+              [filterKey.HeatEngager, heatEngager, 'Heat Engager'],
+              [filterKey.BalconyBreak, balconyBreak, 'Balcony Break'],
+              [filterKey.Homing, homing, 'Homing'],
+              [filterKey.Tornado, tornado, 'Tornado Spin'],
+            ] as const
+          ).map(([key, value, displayName]) => {
+            return (
+              <Button
+                key={key}
+                variant={value ? 'solid' : 'outline'}
+                onClick={() => {
+                  if (value) {
+                    removeFilterValue(key)
+                  } else {
+                    setFilterValue(key, '')
+                  }
+                }}
+              >
+                {displayName}
+              </Button>
+            )
+          })}
         </div>
       </section>
     </Flex>

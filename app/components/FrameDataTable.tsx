@@ -80,7 +80,11 @@ export const FrameDataTable = ({
         filter?.blockFrameMax +
         filter?.blockFrameMin +
         filter?.hitFrameMin +
-        filter?.hitFrameMax
+        filter?.hitFrameMax +
+        filter?.balconyBreak +
+        filter?.heatEngager +
+        filter?.homing +
+        filter?.tornado
       }
     >
       {table.headers && (

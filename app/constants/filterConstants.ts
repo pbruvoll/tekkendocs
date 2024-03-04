@@ -4,6 +4,10 @@ export const filterKey = {
   BlockFrameMax: 'blockFrameMax',
   HitFrameMin: 'hitFrameMin',
   HitFrameMax: 'hitFrameMax',
+  HeatEngager: 'heatEngager',
+  Homing: 'homing',
+  BalconyBreak: 'balconyBreak',
+  Tornado: 'tonrnado',
 } as const
 
 export const hitLevelValue = {
