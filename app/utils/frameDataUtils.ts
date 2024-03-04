@@ -30,19 +30,19 @@ export const frameDataTableToJson = (normalFrameData: TableData): Move[] => {
 }
 
 export const isHomingMove = (move: Move) => {
-  return move.notes?.match(/homing/i)
+  return /homing/i.test(move.notes || '')
 }
 
 export const isTornadoMove = (move: Move) => {
-  return move.notes?.match(/tornado/i)
+  return /tornado/i.test(move.notes || '')
 }
 
 export const isBalconyBreak = (move: Move) => {
-  return move.notes?.match(/balcony break/i)
+  return /balcony break/i.test(move.notes || '')
 }
 
 export const isHeatEngager = (move: Move) => {
-  return move.notes?.match(/heat engager/i)
+  return /heat engager/i.test(move.notes || '')
 }
 
 export const isHeatMove = (move: Move) => {
@@ -50,7 +50,7 @@ export const isHeatMove = (move: Move) => {
 }
 
 export const isPowerCrush = (move: Move) => {
-  return move.notes?.match(/power crush/i)
+  return /power crush/i.test(move.notes || '')
 }
 
 export const filterRows = (
@@ -112,6 +112,20 @@ export const filterRows = (
       return parseInt(hitFrameStr) >= hitFrameMin
     })
   }
+
+  const propFilters = [
+    [filter.balconyBreak, isBalconyBreak],
+    [filter.heatEngager, isHeatEngager],
+    [filter.homing, isHomingMove],
+    [filter.tornado, isTornadoMove],
+  ] as const
+  propFilters.forEach(([filterValue, filterFunc]) => {
+    if (filterValue) {
+      filterFuncs.push((row: string[]) => {
+        return filterFunc({ notes: row[7] } as Move)
+      })
+    }
+  })
 
   return rows.filter(row => {
     return filterFuncs.every(ff => ff(row))

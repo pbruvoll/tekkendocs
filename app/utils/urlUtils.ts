@@ -14,3 +14,12 @@ export const getSearchParamNumber = (
   const value = parseInt(valueStr)
   return isNaN(value) ? undefined : value
 }
+
+export const getSearchParamBoolean = (
+  searchParams: URLSearchParams,
+  key: string,
+): boolean | undefined => {
+  const valueStr = searchParams.get(key)
+  if (valueStr == undefined) return undefined
+  return true
+}
