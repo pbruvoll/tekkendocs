@@ -36,11 +36,11 @@ AOP.1;m;11;i18;-5;+6;;"
 AOP.1+2;m;25;i19;-1;+19a (+10);;"
 * Tornado
 * Balcony Break "
-AOP.1,2;m,h;11,15;i21;-6;+30g;;"
-* Combos from 1st hit"
 AOP.1,4;m,m;11,20;i25;-9;+15d (-2);;"
 * Tornado
 * Balcony Break
+* Combos from 1st hit"
+AOP.1,2;m,h;11,15;i21;-6;+30g;;"
 * Combos from 1st hit"
 AOP.1+3;t;35;i12;-6;+1d;;"
 * Throw Break 1
@@ -105,9 +105,12 @@ b+1+3;;;;;+6;;"
 * Alternate input b+2+4
 * Also possible during HYP and BT"
 b+2;m;13;i15;-6;+5;;"
-* Homing "
+* Homing 
+Automatically transitions to BT
+"
 b+2,2;m,l;13,15;i21;-7;+4;;"
-* "
+* Automatically transitions to BT
+"
 b+3;h;22;i18;+3;+8c;+32d;"
 * Chip on block [6] "
 b+3+4;;;;;;;"
@@ -235,7 +238,7 @@ db+1+2;;;;;;;"
 * Alternate input ub+1+2"
 db+2;l;13;i18;-8;+5c;+18g;"
 *"
-db+3;l;0;i15;-8;+2c;+14;"
+db+3;l;0;i15;+2c;+2c;+14;"
 * "
 db+4;l;14;i18;-12;+4c;+14;"
 * "
@@ -281,9 +284,9 @@ f+3,1,4;m,m,m;14,8,20;i26;-22;+62a (+46);;"
 * Tornado
 * Instant Tornado
 * Combos from 2nd hit CH "
-f+3+4;special;;i12;;;;"
+f+3+4;;;i12;;;;"
 * Transition to AOP with D"
-f+3+4,3+4;specialm;30;i20;+8;+2d;;"
+f+3+4,3+4;m;30;i20;+8;+2d;;"
 * "
 f+4;h;;i19;+1;+13;;"
 * Homing
@@ -424,7 +427,7 @@ uf+2;m;23;i26;+6c;+7c;+49a;"
 * Chip on block [6]"
 uf+3;m;13;i16;-13;+29a (+19);;"
 * Alternate input u+3 "
-uf+3+4;m;30;i20;-1;+4d;;"
+uf+3+4;m;30;i16;-1;+4d;;"
 * Balcony Break
 * Floor Break on airborne opponent
 * Transitions to BT on hit or block "

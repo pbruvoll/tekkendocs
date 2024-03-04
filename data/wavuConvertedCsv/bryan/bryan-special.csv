@@ -4,7 +4,7 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 1,2;h,h;5,8;,i12;-3;+8;+9;Combo from 1st hit
 1+2,1;m,h;15,15;,i23~24;-1;+6;;"
 * Combo from 1st hit
-* Transition to Sway with B +7 on hit"
+* Enter SWA +0 +7 with b"
 1,2,1;h,h,m;5,8,18;,i19;-6;+6;+64a;
 1+2,2;m,m;15,20;,i26~27;-14;+51d (+20);;"
 * Combo from 1st hit with delay"
@@ -25,8 +25,8 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * Cancel last hit into 1,4,2,4 with f+4
 * Alternate input b+2"
 1,4,2,1;h,h,h,h;5,14,18,16;,i19;+0;+55a;;"
-* Cancel last hit and transition to SS with u_d
-* Transition to SLS with F
+* Cancel last hit to SS with u_d
+* Enter SLS with f
 * Alternate input:
 ** b+2,1
 ** qcf+4,1"
@@ -96,8 +96,8 @@ b+2;h;18;i17;-7;+4;;"
 * Cancel into b+2,4 with f+4
 * Alternate input 1,4,2"
 b+2,1;h,h;18,16;;;;;"
-* Cancel last hit and transition to SS with u_d
-* Transition to SLS with F
+* Cancel last hit to SS with u_d
+* Enter SLS with f
 * Alternate input:
 ** 1,4,2,1
 ** qcf+4,1"
@@ -114,7 +114,7 @@ b+2,1,4;h,h,m;18,16,20;;;;;"
 b+2,4;h,m;18,21;;;;;"
 * Balcony Break
 * Alternate input 1,4,2,4"
-b+3;m;12;i19;-7;+4;;Transition to SLS with F +17 on hit
+b+3;m;12;i19;-7;+4;;Enter SLS +6 +17g f
 b+3,1+2;m,m;12,25;,i22;-8;+4c;+20d;Combo from 1st CH with delay
 b+3,2;m,h;12,12;,i16;-4;+7;;
 b+3,2,1;m,h,m;12,12,10;;;;;"
@@ -131,8 +131,8 @@ b,df+4;l;25;i29;-13;+14g;;"
 * Cancel with B"
 d+1+2;m,m;10,15;i17;-10;+3;;"
 * Combo from 1st hit
-* Transition to SLS with F +10g on hit
-* Transition to Sway with B +8"
+* Enter SLS -3 +10g with f
+* Enter SWA -5 +8 with b"
 d+1+2~2;m;24;i30;+7;+53a;;Chip damage on block
 d+1+2,3;m,m,l;10,15,20;i27~28;-13;+5;+25a;
 d+2;m;17;i14~15;-2;+8c;;Elbow
@@ -170,7 +170,7 @@ DF+1,2;m,m;8,20;,i23;-15;+1;+14a (+5);"
 df+2;m;12;i13;-6;+5;;Elbow
 df+2,1;m,h;12,11;i6;-4;+5;;"
 * Combo from 1st hit
-* Transition to Sway with B +8 on hit"
+* Enter SWA -1 +8 with b"
 df+2,3;m,m;12,20;,i23;-13;+8;+59a;
 df+3;L;20;i29~30;-26;+70a (+54);;"
 * Homing
@@ -245,7 +245,7 @@ Left throw;t;40;;;+1d;;"
 qcb;;;;;;;Lapses to standing
 qcf;;;;;;;"
 * Alternate input d,df
-* Transition to FC with DF
+* Enter FC with DF
 * Lapses to standing"
 R.df+1+2;m;55+;i20;-15;+0d;;"
 * Rage Art"
@@ -268,7 +268,7 @@ SLS.2,4;h,m;16,22;i16~17;;+5a;;"
 SLS.4;m;13;i18;-5;+1;;
 SLS.4,1;m,h;13,13;;;;;"
 * Combo from 1st CH
-* Transition to SS with u_d
+* Enter SS with u_d
 * Alternate input:
 ** 1,4,2,1
 ** b+2,1"
@@ -368,13 +368,13 @@ uf+3+4;m;22;i16~17;-7;+8a;;"
 * Gain SNE on hit"
 uf+4;m;20;;;;;Alternate input u+4
 uf,n,4;m;20;i23~25;-13;+32a (+22);;
-ws1;m;20;i15~16;-14;+35a (+25);;Alternate input qcf+1
+ws1;m;20;i15~16;-14;+35a (+25);;Alternate input SLS.1
 ws2;m,t;10,20;i19;-10;+50a;;"
 * Throw only on hit
 * Powerup with f+2 or b+2 (perfect) - additional 5 damage"
 ws3;m;17;i12;-10;+4;+33a (+27);"
-* Alternate input qcf+3"
+* Alternate input SLS.3"
 ws3,4;m,m;17,21;,i28;-10;+4;+29g;"
-* Alternate input qcf+3,4
+* Alternate input SLS.3,4
 * Move can be delayed"
 ws4;m;16;i11~12;-6;+5;;
