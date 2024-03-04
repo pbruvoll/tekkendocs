@@ -27,7 +27,7 @@ export const FrameDataFilterDialog = ({
       <Dialog.Content style={{ maxWidth: 450 }}>
         <Dialog.Title>Filter</Dialog.Title>
         <Dialog.Description size="2" mb="4">
-          Filter which moves are
+          Filter the displayed moves
         </Dialog.Description>
 
         <FrameDataFilterSelection
