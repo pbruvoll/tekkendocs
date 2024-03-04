@@ -30,19 +30,19 @@ export const frameDataTableToJson = (normalFrameData: TableData): Move[] => {
 }
 
 export const isHomingMove = (move: Move) => {
-  return (/homing/i).test(move.notes || '')
+  return /homing/i.test(move.notes || '')
 }
 
 export const isTornadoMove = (move: Move) => {
-  return (/tornado/i).test(move.notes || '')
+  return /tornado/i.test(move.notes || '')
 }
 
 export const isBalconyBreak = (move: Move) => {
-  return (/balcony break/i).test(move.notes || '')
+  return /balcony break/i.test(move.notes || '')
 }
 
 export const isHeatEngager = (move: Move) => {
-  return (/heat engager/i).test(move.notes || '')
+  return /heat engager/i.test(move.notes || '')
 }
 
 export const isHeatMove = (move: Move) => {
@@ -50,7 +50,7 @@ export const isHeatMove = (move: Move) => {
 }
 
 export const isPowerCrush = (move: Move) => {
-  return (/power crush/i).test(move.notes || '')
+  return /power crush/i.test(move.notes || '')
 }
 
 export const filterRows = (
@@ -113,14 +113,19 @@ export const filterRows = (
     })
   }
 
-  const propFilters = [[filter.balconyBreak, isBalconyBreak], [filter.heatEngager, isHeatEngager], [filter.homing, isHomingMove], [filter.tornado, isTornadoMove]] as const;
+  const propFilters = [
+    [filter.balconyBreak, isBalconyBreak],
+    [filter.heatEngager, isHeatEngager],
+    [filter.homing, isHomingMove],
+    [filter.tornado, isTornadoMove],
+  ] as const
   propFilters.forEach(([filterValue, filterFunc]) => {
-    if(filterValue) {
+    if (filterValue) {
       filterFuncs.push((row: string[]) => {
-        return filterFunc({notes: row[7]} as Move)
+        return filterFunc({ notes: row[7] } as Move)
       })
     }
-  });
+  })
 
   return rows.filter(row => {
     return filterFuncs.every(ff => ff(row))

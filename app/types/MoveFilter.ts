@@ -6,8 +6,8 @@ export type MoveFilter = {
   blockFrameMax?: number
   hitFrameMin?: number
   hitFrameMax?: number
-  homing?: boolean,
-  tornado?: boolean,
-  balconyBreak?: boolean,
-  heatEngager?: boolean,
+  homing?: boolean
+  tornado?: boolean
+  balconyBreak?: boolean
+  heatEngager?: boolean
 }

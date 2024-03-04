@@ -1,7 +1,11 @@
 import { filterKey } from '~/constants/filterConstants'
 import { type HitLevel } from '~/types/FilterTypes'
 import { type MoveFilter } from '~/types/MoveFilter'
-import { getSearchParamBoolean, getSearchParamNumber, getSearchParamString } from './urlUtils'
+import {
+  getSearchParamBoolean,
+  getSearchParamNumber,
+  getSearchParamString,
+} from './urlUtils'
 
 export const getFilterFromParams = (
   searchParams: URLSearchParams,

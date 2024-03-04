@@ -21,6 +21,5 @@ export const getSearchParamBoolean = (
 ): boolean | undefined => {
   const valueStr = searchParams.get(key)
   if (valueStr == undefined) return undefined
-  return true;
+  return true
 }
-
