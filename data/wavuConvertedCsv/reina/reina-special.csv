@@ -1,5 +1,5 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes
-1;h;5;i10;+1;+8;;Alternate input: f+1
+1;h;5;i10;+1;+8;;
 1,1;h,h;5,6;;-1;+8;;Combo from 1st hit
 1,1,2;h,h,m;5,6,12;i13;-17;"&lt;div class=&quot;plainlist&quot;&gt;
 * +11 SEN
@@ -16,6 +16,11 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 1,2,3;h,h,m;5,8,10;,i21;-10;+1;;
 1+2+3+4;sp;;;;;;
 1,2,3,4;h,h,m,h;5,8,10,21;i22~23;-4;+21 (+12);;Natural on 3rd hit
+1+3;th(h);35;i12~14;;;;"
+* Throw break 1 or 2
+* Spike
+* Opponent recovery on hit: FUFA off-axis to the left
+"
 1+4;sp;;;;;;Transition to WGS with DF
 2;h;12;i12;-4;+7;;
 2~1;mm;4,18;i11;-14;+31 (+23);;"
@@ -41,12 +46,20 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * Alternate input: R1
 "
 2+3+4;sp;;;;;;Input D to get Heihachi's secret taunt
+2+4;th(h);35;i12~14;;;;"
+* Throw break: 1 or 2
+* Opponent recovery on hit: FUFA
+"
 3;h;12;i18~19;-11;+5;;Homing
 3,2;h,h;12,16;i20;-9;+8;;"Tornado
 Natural on 1st hit"
 3+4;mm;15;i18;-8;+3c;;
 3,4;h,m;12,20;,i20;-14;+50 (+19);Launch;Natural on 1st hit
 3+4,4;mm,m;15,20;,i16;-14;+50 (+19);Launch;
+3+4,4,H.4;mm,m,m;15,20;;;;;"
+"
+3,4,H.4;h,m,m;12,20;;;;;"
+"
 4;h;20;i13~14;-8;+11g;KND;Balcony Break
 b+1;h;14;i18;-4;+6;;
 b+1,1;h,m;14,15;,i22;-10;-4;;
@@ -54,7 +67,6 @@ b+1,1,3;h,m,m;14,15,13;,i15~17;-10;+3;;Transition to SEN with F
 b+1,1,3,3;h,m,m,m;14,15,13,20;,i32;-16;+48 (+17);Launch;
 b+1+2;m;20;i18;-13;+14;;Powercrush mid that knocks down opponent for a very short period. It can Wall splat.
 b+1+3;;;;;;;"
-* Alternate input: b+2+4
 * Converts incoming damage to recoverable health
 * Partially restores Heat on successful parry
 * Transition to WRA on successful parry
@@ -65,26 +77,29 @@ b+3;sp;;;;;;
 b+4;h;20;i18;-8;35;Tornado;"
 * Tornado
 "
+Back throw;th(h);50;i12~14;;;;"
+* Break: none
+* Opponent recovery on hit: FDFA
+"
+b,b,UB;m;21;i39-41;+4c;+22 KND;+23 KND;
 BT.4;m;20;i17;-14;+54;Launch;
-CH.df+3+4;m,th;6,35;i16;;0;;Alternate input: CH.d+3+4
+CH.df+3+4;m,th;6,35;i16;;0;;
 d+1;sm;5;i10;-5;+6;;"
 * Returns to standing when input F
-"
-d+1+2;sp;;;;;;"
-* Alternate input: db+1+2
 "
 d+1+2;sp;;;;;;"
 * Transition to SEN with f+3
 * Transition to WGS with DF
 "
+d+1+2;sp;;;;;;"
+"
 d+2;m;17;i15;;+3c;;
+d+3;sp;;;;;;"
+"
 d+3;sp;;;;;;"
 * Partially drains heat meter when in heat
 * Can transition to SEN with f+3
 * Can transition to WGS with DF
-"
-d+3;sp;;;;;;"
-* Alternate input: db+3
 "
 d+4;l;7;i12;-13;-2;;
 db+2;l,l;10,12;i20~21,i9~10;-16;-3;;
@@ -104,9 +119,9 @@ df+1,2;m,m;8,20;,i22~23;-14;KND;;"
 "
 df+2;m;13;i15~16;-12;+30 (+20);;
 df+3;sp;;;;;;"
-* Alternate input: f,n,d,df
+* Transition to SEN with input WGS.f+3
 "
-df+3+4;mh;5,10;i16,i5~9;-15;+2;;Alternate input: d+3+4
+df+3+4;mh;5,10;i16,i5~9;-15;+2;;
 df+3+4,1;mh,m;5,10,14;;;;;"
 * Chip damage when guarded
 "
@@ -139,13 +154,14 @@ f+3;sp;;;;;;"
 "
 f+3;sp;;;;;;
 f+3+4;m;25;i43;-14;+50 (+19);Launch;"
-* Alternate input: UNS.3+4
 * can be cancelled into crouch with D
 "
 f+3+4*;m;30;i67;+10;+52;;"
 * can be cancelled into crouch with D
 "
-f+4;m;20;i19~20;+2c;+5c;KND;
+f+3+4,H.4;m,m;25;;;;;"
+"
+f+4;m;20;i19~20;+2c;+5c;KND;+13c on crouching hit
 FC.df+3;m;25;i20;-17;+54;;"
 * Balcony Break
 "
@@ -194,11 +210,24 @@ H.WRA.2+3;l;40;i18~19;-17;Th;Th;"
 * Heat Smash
 * Alternate input: H.WRA.R1
 "
+Left throw;th(h);40;i12~14;;;;"
+* Throw break: 1
+* Opponent recovery on hit: FUFA off-axis to the left
+"
 OTG.d+4;l;11;i19;;;;
 OTG.d+4,1;l,l;11,16;,i20~21;;-15 (-23);;Just Input
+d,db,b,f+2;th(h);40;i12;;;;"
+* Balcony Break
+* Throw break: 2
+* Opponent recovery on hit: FUFT
+"
 R.df+1+2;m;55;i20;-15;;;"
 * Erases opponent's recoverable health on hit
 * Alternate input: R2
+"
+Right throw;th(h);40;i12~14;;;;"
+* Throw break 2
+* Opponent recovery on hit: FUFA
 "
 SEN.1;m;12;i16;-14;+1;;"
 "
@@ -243,30 +272,29 @@ SSH.uf+4;h;28;i32~33;;+31 (+5);;"
 * Transition to WRA with D
 "
 u+1+2;sp;;;;;;"
-* Alternate input: UNS.u+1+2
 * Transition to Wind God Step with DF
 "
-u+3;sp;;;;;;Alternate input: ub+3
+u+3;sp;;;;;;
 ub+1+2;sp;;;;;;"
-* Alternate input: ub,b or UNS.ub+1+2
 * Transition to Wind God Step with DF
 "
 uf+1;h;15;i13;-9;+8;+17;"
-* Alternate input: ub+1 or u+1
 * Transition to WRA on hit
+"
+uf+1+2;th(h);35;i12;;+25 (+8);;"
+* Balcony Break
+* Throw break: 1+2
 "
 uf+3;h;10;i21~22;-10;+1;;"
 "
 uf+3,1;h,m;10,15;,i16;-5;+5;;"
 "
 uf+3+4;mm;10,10;i20,i4;-10;-1;;"
-* Alternate input: ub+3+4 or u+3+4
 "
 uf+3+4,1+2;mm,m;10,10,20;,i17;-14;-4;;"
 "
 uf+4;m;15;i17~18;-13;+70 (+54);;"
 * Tornado
-* Alternate input: ub+4 or u+4
 "
 UNS.4;m;30;i18~19;-8;+43 (-15);;"
 * Balcony Break
@@ -294,8 +322,6 @@ WGS.DF+4,2;l,h;6,20;,i24;-22;-1;;"
 "
 WGS.DF+4,4;l,l;6,16;,i17~18;-23;+2;Launch;"
 * Recovers Crouching
-"
-WGS.f+3;,sp;;;;;;"
 "
 WRA.1;h;12;i12;-4;+8;+13;"
 * Homing
