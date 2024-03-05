@@ -70,7 +70,7 @@ export const meta: MetaFunction = ({ data, params, matches, location }) => {
       sortDirection,
     )
 
-    const orderDesription = sortDirection
+    const orderDesription = orderDirectionName
       ? `order by ${orderByColumnName} ${orderDirectionName}`
       : ''
 
