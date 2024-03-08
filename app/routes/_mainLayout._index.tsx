@@ -91,7 +91,7 @@ export default function Index() {
       <Heading as="h2" mt="7" mb="4" size="5">
         External Resources
       </Heading>
-      <div className="flex gap-3">
+      <div className="flex flex-wrap gap-3">
         <a
           href="https://wavu.wiki"
           target="_blank"
