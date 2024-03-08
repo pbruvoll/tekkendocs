@@ -46,6 +46,7 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 4;h;27;i17~18;;+18 (+9);;"
 * Balcony Break
 "
+(airborne).DEN.2+3;;;;;;;
 (airborne).f,f,F+2+4;th(h);31 (21);i11;;;;"
 * Throw break: none
 * Opponent status on hit: FUFT
@@ -97,7 +98,7 @@ db+2,3;m,m;12,15;,i19;-13;+8;;"
 * Tornado
 * Input can be held to power up and deal more chip damage on block
 "
-db+4;l;19;i21~22;-26;+5c;;
+db+4;l;19;i21~22;-26;+5c;Launch;
 DEN.1;h;14;i11~12;+1;;;"
 * Transition to SEN (-3/+4/+4) with input F
 "
@@ -113,6 +114,7 @@ DEN.1,2;h,h;14,20;,i14~15;-6;;;"
 DEN.2;m;19;i17~19;-7;+7;;"
 * Transition to Avalanche Flip on hit (-/+9/+9) with input UF
 "
+DEN.2+3;;;;;;;
 DEN.3;m;23;i22~23;+3;;;"
 * Heat Engager
 
@@ -208,7 +210,7 @@ H.f+3+4;sm;5 (5);i18~24;;+10;;"
 * Transition to SEN
 * Partially uses remaining heat time
 "
-H.LEN.1;l,th;20,15;i16~17;;+5;;"
+H.LEN.1;l,th;20,15;i16~17;-12c;+5;;"
 * Side switch on hit throw
 * Opponent is left FUFA
 "
