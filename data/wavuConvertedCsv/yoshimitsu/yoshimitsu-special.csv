@@ -126,14 +126,14 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 4,4,2,2,1;h,h,m,h,m!;12,12,5,6,30;,i67;;-18;;"
 * Weapon
 * Alternate notation: 1SS.4,4,2,2,1"
+4,4,2,2,NSS.1~1;h,h,m,h,m,h!;12,12,5,6,30,40;,i20~105;;-49a (-75);;"
+* Balcony Break
+* Cancel early to r30 with B"
 4,4,2,2,1~1;h,h,m,h,m!,m!;12,12,5,6,30,22;,i28~113;;-58;;"
 * Weapon
 * Cancel early to r26 with B (earliest cancel -12a)
 * Possible to double-hit
 * Alternate notation: 1SS.4,4,2,2,1~1"
-4,4,2,2,NSS.1~1;h,h,m,h,m,h!;12,12,5,6,30,40;,i20~105;;-49a (-75);;"
-* Balcony Break
-* Cancel early to r30 with B"
 4,4,2,2,NSS.1;h,h,m,h,m;12,12,5,6,30;,i67;-54;-17a;;
 4,4,4;h,h,h;12,12,20;,i24~25;-4~-3;+18a (+9);;"
 * Balcony Break
@@ -847,6 +847,13 @@ NSS.1+4;m;20;i8~11;-15~-12;+14 +64a;;"
 * 4 chip damage on block
 * Recovers health on hit
 * Alternate inputs: b+1+4, f+1+4, db+1+4, ws1+4, FC.D+1+4"
+NSS.1+4;m;20;i8~11;-15~-12;+14 +64a;;"
+* Weapon
+* Knockdown against BT opponent, +19a (+9)
+* 4 chip damage on block
+* Recovers health on hit
+* Causes Strong Aerial Tailspin
+* Alternate inputs: b+1+4, f+1+4, db+1+4, ws1+4, FC.D+1+4"
 NSS.b+1+2;;;;;;;
 NSS.b,B+1+4;m!;40;i65~70;;-3a (-12);+29a (-18);Balcony Break
 NSS.b,B+1+4,B;,m;,20;,i22~25;-15~-12;+14 +64a;;"
@@ -974,8 +981,8 @@ R.df+1+2;m;10,45+;i20;-15;+0d;;"
 * Damage increases with lower health
 * Erases opponent's recoverable health on hit"
 Right Throw;t;40;;-3;-3d;;Throw break 2
-SS.1;m;23;i17~18;-9~-8;+2~+3;;
-SS.2;m;22;i18~19;-13~-12;+30a (+20);;Tornado
+SS.1;m;21;i17~18;-9~-8;+2~+3;+27a (+17);
+SS.2;m;20;i18~19;-13~-12;+30a (+20);;Tornado
 u+1;m;17;i24~25;-5~-4;+4c~+5c;;"
 * Spike
 * Weapon

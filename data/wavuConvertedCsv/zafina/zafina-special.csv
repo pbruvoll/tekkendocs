@@ -45,7 +45,7 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 4;h;19;i14~15;-6;-1;+19a(+10);
 b+1;m;14;i18;-14;+2;;"
 "
-b+1:1+2;m;1436;;;d;;"
+b+1:1+2;m,t;14,36;;;+0d;;"
 * Hit Throw
 * Azazel's Power
 * Zafina receives recoverable health damage
@@ -54,72 +54,86 @@ b+1:1+2;m;1436;;;d;;"
 b+2;h;22;i22~23;-5;+12;;"
 * Homing
 "
-b+2+3;m!;40;i64;;+41a(+10);;"
+b+2+3;m!;40;i64;!;+41a(+10);;"Unblockable
 "
-b+3;m;23;i24~26;-14;+12d;;"
+b+3;m;23;i24~26;-14;+12d;;"Powercrush
 "
 b+4;m;14;i22~23;-9;+4;;"
 "
-b+4,4;m,m;1420;i20~22;-14;+9a(0);;"
+b+4,4;m,m;14,20;i20~22;-14;+9a(0);;"
 * Balcony Break
 * Delayable
 * Hit-confirmable
+* Combos from 1st hit
 "
 Back Throw;t;50;;;0;;"
 * Unbreakable"
 d+1;m;;i12;-16;-8;-3c;"
 "
 d+1,1;m,m;;i17~18;-12;+19a(+12);+28a(+22);"
+* Combos from 1st hit CH
 * Delayable"
-d+1+2;;;;;;;"
+d+1+2;;;;;;;" Transitions to TRT
 "
 d+2;m;17;i19~20;-16c;-3c;+17d;"
 "
-d+2,4;m,m;1710;i26;-22;-4b;-4c;"
-* Can hold D to transition to TRT instead of MNT
+d+2,4;m,m;17,10;i26;-22;-4;-4c;"
+* Floor Break
+* Transition to -22, -4 TRT with D
 "
-d+2,4,3;m,m,m;171010;i28~31;-12;+18a;;"
+d+2,4,3;m,m,m;17,10,10;i28~31;-12;+18a;;"
+* Combos from 2nd hit CH
 "
-d+3;l;14;i22;-15;+2;+20a;"
+d+3;l;14;i22;-15;+2c;+20a;"
+* Transition to -13, +4c MNT with D
 * Evasive (can go under some mids)
-* Hold D to transition to MNT (becomes -13/+4)
 "
-d+3+4;;;;;;;"
+d+3+4;;;;;;;"Transitions to MNT
 "
 d+4;l;8;i17~18;-19;-3;+7;"
 "
-d+4,3;l,h;810;i19;-6;+36a(+26);;"
+d+4,3;l,h;8,10;i19;-6;+36a(+26);;"
+* Combos from 1st hit CH
 * Delayable
 "
 db+1+2;l;10;i28~29;-16;+15a;;"
 "
-db+1+2,1+2;lm;1020;i33;-16;+5a(-4);+37a(-10);"
+db+1+2,1+2;l,m;10,20;i33;-16;+5a(-4);+37a(-10);"
 * Tornado
+* Balcony Break
+* Combos from 1st hit
 "
-db+2;m;17;i13~14;-9;+3;+16d;"
+db+2;m;17;i13~14;-9;+3;+16a;"
 "
 db+3;l;13;i18;-8;+3;;"
-* Cancel SCR transition by holding B (becomes -11/0)
+* Cancel SCR transition -11, +0 with B
 "
 db+4;l;14;i21~22;-12;-3;+3;"
-* Hold D to transition to MNT (becomes -13/4)
+* Transition to -13, -4 MNT with D
+* Alternate input FC.db+4
 "
-db+4,2;l,m;1417;i29~32;-13;+68a(+52);;"
-* Launches into Tornado
+db+4,2;l,m;14,17;i29~32;-13;+68a(+52);;"
+* Instant Tornado
 ** Does not apply Tornado mid-combo
+* Combos from 1st hit CH
+* Alternate input FC.db+4,2
 "
 df+1;m;10;i13~14;-5;+7;;
 df+1,2;m,m;10,16;i15~16;-13;+3;;
 df+1,2,1;m,m,m;10,16,20;i25;-13;+23d(13);;"
+* Balcony Break
 * Can be delayed
 "
-df+1,4;mh;1018;i19~20;-6;+12g;;"
+df+1,4;m,h;10,18;i19~20;-6;+12g;;"
+* Balcony Break
 "
 df+2;m;13;i16~17;-12;+32a (+22);;
+df+2+3;m;20;i36~37;-9;+60a;;"
+Homing "
 df+3;m;15;i15~16;-5;+4;;"
-* Cancel SCR transition by holding B (becomes -10/-1)
+* Cancel SCR transition -10, -1 with B
 "
-df+3,4;m,h;15,17;i23~24;-6;+22d;+55a;
+df+3,4;m,h;15,17;i23~24;-6;+22a;+55a;
 df+3,d+4;m,l;15,15;i25~26;-14;+1c;;
 df+4;m;14;i14;-13;+3;;
 df+4,1;m,m;14,22;i31;-12;+3d;;"
@@ -132,13 +146,13 @@ df+4,1;m,m;14,22;i31;-12;+3d;;"
 * Azazel's Power
 * Zafina receives recoverable health damage
 * Deals 8 chip damage on block
-* Can be cancelled before hit by holding D (recovers crouching -18/-2)
+* Cancel and transition to -18, -2 FC with D 
 "
-df+4,2;m,m;14,20;i27~29;-13;+24a(+9);;* Tornado
+df+4,2;m,m;14,20;i27~29;-13;+24a(+9);;Tornado
 f+1+2;m,m;16,22;i19~20 i13~14;-9;+5d(-5);;"
 * Heat Engager
 
-* Heat Dash +5 +36a(+26)
+* Heat Dash +5 +36a (+26)
 
 * Balcony Break
 * Azazel's Power
@@ -148,15 +162,15 @@ f+1+2;m,m;16,22;i19~20 i13~14;-9;+5d(-5);;"
 "
 f+2;,m;17;i19;-18;-9;+52a;
 f+2,3;,m,h;17,12;i19;0;+9;;"
-* Cancel SCR transition -9, +0 with B\
+* Cancel SCR transition -9, +0 with B
 * Can be delayed
 "
-f+2,3,4;,m,h,m;17,12,25;i28~29;-18;+18d(8);;
+f+2,3,4;,m,h,m;17,12,25;i28~29;-18;+18d(8);;Balcony Break
 f+3;h;28;i21;+3;+68a(48);;"
 * Balcony Break
-* Cancel SCR transition -1, +64a with B\
+* Cancel SCR transition -1, +64a with B
 "
-f+4;h;13;i14~15;-6;+22d;;
+f+4;h;13;i14~15;-6;+22a;;
 FC.d+1;sl;5;i10;-5;+6;;"
 * Alternate inputs:
 ** FC.db+1
@@ -176,31 +190,34 @@ FC.d+4;l;6;i12;-15;-4;;"
 ** FC.df+4"
 FC.df+3;l;15;i23~24;-26;+14d;;"
 * On hit or whiff, hold D to transition to MNT (becomes +13d)"
-f,f+2;h;20;i15~16;+1;+21a(12);;"
+f,F+2;h;20;i15~16;+1;+21a(12);+38a;"
 * Homing
 * Balcony Break
 * 6 chip damage on block
 "
-f,f+3;m;20;i20~22;+4;+9;+14;"
-* Cancel SCR transition by holding B (remains +4/+9)
+f,F+3;m;20;i20~22;+4;+9c;+14c;"
+* Cancel SCR transition +4, +9c with B
 "
-f,f+3,1;m,m;20;i18;-16;+5d;;"
+f,F+3,1;m,m;20;i18;-16;+5d;;"
 * Balcony Break
+* Combos from 1st hit CH
+* Can be delayed
 "
-f,f+3+4;m,m;10,21;i21 i8~12;-11;+15a(+6);;"
-* Hold D to transition to MNT (becomes -12/+14a)
+f,F+3+4;m,m;10,21;i21 i8~12;-11;+15a(+6);;"
+* Transition to -12, +14a MNT with D
 "
-f,f+4;m;20;i17~19;-8;+18a(+9);;"
+f,F+4;m;20;i17~19;-8;+18a(+9);;"
 * Homing
 *
 Balcony Break
 "
 f,f,F+1+2;h;20;i23~24;+7;+32a;;"
+* Balcony Break
 * 8 chip damage on block
 "
 f,f,F+3;m;30;i23~26;+7;+19a(9);;"
 * Balcony Break
-* Cancel SCR transition by holding B (becomes +3/+15a)
+* Cancel SCR transition +3, +15a with B
 * 9 chip damage on block
 "
 H.2+3;h,sm;15,4,5,5,4,18;i12~13 i47~53 i1~7 i1~7 i1~6 i1~2;+3;knd;;"
@@ -218,30 +235,30 @@ MNT.1;m;12;i13;-6;+5;;"
 "
 MNT.1+2;m;21;i20;-12;+18d;;"
 "
-MNT.1,3;m,h;1212;i19;0;+9;;"
+MNT.1,3;m,h;12,12;i19;0;+9;;"
 * Cancel SCR transition by holding B (becomes -8/+1)
 "
 MNT.2;m;19;i13~14;-14;-3;+57a;"
 "
-MNT.2,1;m,m;1910;i18~19;-14;-3;;"
+MNT.2,1;m,m;19,10;i18~19;-14;-3;;"
 "
-MNT.2,1,4;m,m,m;191025;i27~28;-13;+13a(+4);;"
+MNT.2,1,4;m,m,m;19,10,25;i27~28;-13;+13a(+4);;"
 "
 MNT.2+3;;;;;;;"
 "
 MNT.3;l;12;i15~16;-12;-1;;"
 "
-MNT.3,1;l,m;1216;i24;-9;+22a(+15);;"
+MNT.3,1;l,m;12,16;i24;-9;+22a(+15);;"
 "
 MNT.4;l;13;i17~18;-19;-3;+7;"
 *Hold D to transition to TRT
 "
-MNT.4,3;l,m;1323;i27;-30;+32a(+22);;"
+MNT.4,3;l,m;13,23;i27;-30;+32a(+22);;"
 * Tornado
 "
 MNT.d+1;l;14;i15~16;-11;0;;"
 "
-MNT.d+1,4;l,m;1423;i27~30;-16;+15(+6);+60a(+40);"
+MNT.d+1,4;l,m;14,23;i27~30;-16;+15(+6);+60a(+40);"
 * Balcony Break
 "
 MNT.d+4;l;19;i20~27;-22~-15;+4c~+11c;+19a~+26a;"
@@ -277,11 +294,11 @@ SCR.1;h;12;i10~11;-2;+9;;"
 SCR.1+2;m;20;i17~19;+6;+17d;;"
 * Hold D to transition to TRT (remains +6/+17d)
 "
-SCR.1,4;h,m;1218;i22;+7;-6;+32d;"
+SCR.1,4;h,m;12,18;i22;+7;-6;+32d;"
 "
 SCR.2;m;17;i14;-7;+7;;"
 "
-SCR.2,1;m,m;1725;i21;-6;+30d(+20);;"
+SCR.2,1;m,m;17,25;i21;-6;+30d(+20);;"
 * Heat Engager
 
 * Heat Dash +5 +36a(+26)
@@ -290,11 +307,11 @@ SCR.2,1;m,m;1725;i21;-6;+30d(+20);;"
 * Zafina receives recoverable damage
 * 10 chip damage on block
 "
-SCR.2,2;m,m;1717;i22;-10;+8c;+8d;"
+SCR.2,2;m,m;17,17;i22;-10;+8c;+8d;"
 "
 SCR.3;m;15;i13;-6;+5;;"
 "
-SCR.3,3;m,h;1520;i16;0;+25a(+15);;"
+SCR.3,3;m,h;15,20;i16;0;+25a(+15);;"
 * Balcony Break
 "
 SCR.3+4;m,m;10,20;i18~19 i6~8;-12;+8;;"
@@ -308,7 +325,7 @@ SCR.b+1+2;l;16;i16;-17;+3;+12d;"
 "
 SCR.d+3;l;10;i18;-6;-3;+9c;"
 "
-SCR.d+3,3;lh;1028;i24;+3;+77a(+61);;"
+SCR.d+3,3;l,h;10,28;i24;+3;+77a(+61);;"
 * Can hold B to exit SCR (becomes -1/
 * Launches into Tornado
 ** Does not apply Tornado mid-combo
@@ -323,7 +340,7 @@ SCR.db;;;19;;;;"
 SCR.df+3;l;10;i28~30;-23;-10c;;"
 * Homing
 "
-SCR.df+3,3;l,l;1010;i29~31;-23;+54a(+38);;"
+SCR.df+3,3;l,l;10,10;i29~31;-23;+54a(+38);;"
 * Homing
 * Launches into Tornado
 ** Does not apply Tornado mid-combo
@@ -331,6 +348,8 @@ SCR.df+3,3;l,l;1010;i29~31;-23;+54a(+38);;"
 SCR.df+4;l;17;i19~20;-14;+7c;+37a;"
 "
 SS.1+2;m;22;i17~18;-2c;+8c;+28d;
+SS.1+2;m;22;i17~18;-2;+8c;+28a;"
+"
 TRT.1;l;13;i18;-11;+5;+15d;"
 "
 TRT.1+2;m,m;7,20;i19~20 i9~10;-12;+14a;;"
@@ -339,12 +358,12 @@ TRT.1+2;m,m;7,20;i19~20 i9~10;-12;+14a;;"
 TRT.2;m;24;i34-36;-9;=+40a(+30);;"
 * Tornado
 "
-TRT.3;m;16;i14~i15;-17;+15d;;"
+TRT.3;m;16;i14~i15;-7;+15d;;"
 "
 TRT.4;m;10;i26;-22;-4b;-4c;"
 * Can hold D to transition to TRT instead of MNT
 "
-TRT.4,3;m,m;1010;i28~31;-12;+18a;;"
+TRT.4,3;m,m;10,10;i28~31;-12;+18a;;"
 "
 TRT.d+1+2;l;20;i25;-21;+10d;;"
 "
@@ -377,12 +396,12 @@ uf+4;m;18;i17~18;-13;+29a(19);;"
 ** ub+4
 ** u+4
 "
-wr4;l;21;i14~30;-52;+?;;"
-* Hold D to transition to TRT (becomes -7 on hit)
-** On block, transitions to BT TRT (usually a disadvantageous position)
+wr4;l;21;i14~30;-52;-7d;;"
+* Transition to -52, -7BT with U
+* Transition to -52, -7 TRT with D
 "
 ws1;m;9;i15;-10;+1;;
-ws1,2;mm;9,18;i20~21;-13;+36a (+26);;
+ws1,2;m,m;9,18;i20~21;-13;+36a (+26);;
 ws2;m;20;i18~19;-14;+28a (+18);;"
 * Tornado
 * Can transition to MNT by holding D (becomes -40/+2)
