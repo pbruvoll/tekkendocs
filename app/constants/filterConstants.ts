@@ -8,7 +8,7 @@ export const filterKey = {
   Homing: 'homing',
   BalconyBreak: 'balconyBreak',
   Tornado: 'tonrnado',
-  Jails: 'jails'
+  Jails: 'jails',
 } as const
 
 export const hitLevelValue = {

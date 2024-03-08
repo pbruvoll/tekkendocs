@@ -20,7 +20,7 @@ export const getFilterFromParams = (
     heatEngager: getSearchParamBoolean(searchParams, filterKey.HeatEngager),
     homing: getSearchParamBoolean(searchParams, filterKey.Homing),
     tornado: getSearchParamBoolean(searchParams, filterKey.Tornado),
-    jails: getSearchParamBoolean(searchParams, filterKey.Jails)
+    jails: getSearchParamBoolean(searchParams, filterKey.Jails),
   }
 }
 

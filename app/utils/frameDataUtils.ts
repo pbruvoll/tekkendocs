@@ -122,7 +122,7 @@ export const filterRows = (
     [filter.heatEngager, isHeatEngager],
     [filter.homing, isHomingMove],
     [filter.tornado, isTornadoMove],
-    [filter.jails, jails]
+    [filter.jails, jails],
   ] as const
   propFilters.forEach(([filterValue, filterFunc]) => {
     if (filterValue) {
