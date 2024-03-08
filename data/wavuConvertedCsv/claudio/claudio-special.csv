@@ -21,6 +21,7 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 2,1,2;h,m,m;10,13,25;i12;-13;;;"
 * Heat Engager
 
+* Balcony Break
 * Combo from 2nd CH
 * Grants STB on hit
 "
@@ -35,31 +36,40 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 3,2;m,h;14,22;;-6;+15;;"
 * Heat Engager
 
+* Balcony Break
 * Grants STB on hit
 "
 3+4;m;20;i24~26;-10;KND;KND;
 4;h;13;i12;-8;+3;LNC;
 4,3;h,h;13,14;;+0;+15Sp;KND;"
 * Homing
+* Balcony Break
 * Combo from 1st hit
 * Can be delayed 11F
 * Combo can be delayed 5F from hit
 "
-b+1;m;25;i18~19;-5;KND;KND;Homing
+b+1;m;25;i18~19;-5;KND;KND;"
+* Homing
+* Balcony Break
+"
 b+1+2;m;25;i22;-13;KND;KND;"
+* Balcony Break
 * absorb an attack to power up
 *  - Add chip damage when guarded
 "
 b+2;h;25;i14;-9;KND;KND;"
 * Tornado
 "
-b+2+3;ub(m);60;i72;KND;KND;KND;
+b+2+3;ub(m);60;i72;KND;KND;KND;Balcony Break
 b+3;m;14;i13;-4;+7;;
 b+3,3;m,m;14,21;;-12;+7c;KND;"
 * Combo from 1st CH
 * Can be delayed
 "
-b+3+4;m;24;i29;-14;KND;KND;Homing
+b+3+4;m;24;i29;-14;KND;KND;"
+* Homing
+* Balcony Break
+"
 b+4;m;10;i17;-14;-3;;
 b+4,1;m,h;10,18;;+1;+13Sp;KND;"
 * Tornado
@@ -71,6 +81,7 @@ b+4,1;m,h;10,18;;+1;+13Sp;KND;"
 b+4,2;m,m;10,20;;-11;KND;KND;"
 * Heat Engager
 
+* Balcony Break
 * Grants STB on hit
 * Combo from 1st hit
 "
@@ -89,7 +100,10 @@ Back throw;th(h);50;;;+0d;;"
 * Air Status 5F
 "
 d+1;m;14;i17;-8;+2;;
-d+1+2;m;28;i13~14;-18;KND;KND;Same move as BT.1+2
+d+1+2;m;28;i13~14;-18;KND;KND;"
+* Balcony Break
+* Same move as BT.1+2
+"
 d+2;l;6;i20;-12;-1;;"
 "
 d+2,2;l,l;6,8;;-13;-1;;
@@ -98,7 +112,10 @@ d+4;l;7;i12;-13;-2;;
 db+1;sm;5;i10;-5;+6;;"
 * Returns to standing when input F
 "
-db+1+2;m;20;i17;;KND;;Tornado
+db+1+2;m;20;i17;;KND;;"
+* Tornado
+* Balcony Break
+"
 db+2;sm;8;i11;-4;+7;;
 db+2,1;sm,m;8,12;;-13;+3;;"
 * Combo from 1st CH
@@ -134,6 +151,7 @@ f+2,1;h,m;9,12;;-10;+6c;;"
 * Combo from 1st hit
 "
 f+2,1,1+2;h,m,m;9,12,25;;-18;KND;KND;"
+* Balcony Break
 * Can be delayed 14F
 * Combo from 1st or 2nd CH
 "
@@ -143,6 +161,7 @@ f+2,2;hm;9,20;;-27;KND;KND;"
 "
 f+3;h;18;i18;+0;+15Sp;KND;"
 * Homing
+* Balcony Break on air hit
 "
 f+3+4;h;18;i17;+2;KND;KND;Homing
 f+4;m;23;i22~23;+4c;;KND;
@@ -158,6 +177,7 @@ f,F+2;m;14;i14~16;-18;-7;;"
 * Cannot be buffered
 "
 f,F+2,1+2;m,m;14,20;;-13;KND;KND;"
+* Balcony Break
 * Grants STB on hit
 * Can be delayed
 * Combo from 1st NH
@@ -175,10 +195,12 @@ f,f,F+2;h;40;i13~16;+7;KND;KND;"
 * Wall Crush +21g at the wall
 
 
+* Balcony Break
 * Chip damage when guarded
 "
 H.2+3;l,th;12,40;i18;-14;th;;"
 * Heat Smash
+* Balcony Break
 "
 Left throw;th(h);40;;-3;-3d;;"
 * Break: 1
@@ -211,6 +233,7 @@ STB.db+1+2;m;25;i17;-1;Launch;;"
 * Chip damage when guarded
 "
 STB.f+1+2,1+2;m,m;8,16;i16;-9;+64;+64;"
+* Balcony Break
 * Combo from 1st hit
 * Can be delayed
 * Chip damage when guarded
@@ -225,6 +248,7 @@ STB.ws1,2;m,m;12,23;i12;+6;KND;;"
 u+2;m;21;i21;;;;"
 * Heat Engager
 
+* Balcony Break
 * Grants STB on hit
 * Alternate input: ub+2/uf+2
 "
@@ -233,11 +257,14 @@ uf+1+2;th(h);40;;-6;;;"
 * Break: 1+2
 * Opp. Position on break:
 * Opp. Position on hit: Reverse Pos. Head-sd. Face-up"
-uf+3+4;mm;10,14;i20;-11;KND;KND;JS after Start-up frame
+uf+3+4;mm;10,14;i20;-11;KND;KND;"
+* Balcony Break
+* JS after Start-up frame
+"
 uf+4;m;13;i15;-13;LNC;LNC;Alternate input: ub+4, u+4
 ws1;m;12;i12;-4;+7;;
 ws1,1;m,h;12,15;;-12;+9;;Combo from 1st hit
 ws1,2;m,m;12,12;;;;;Tornado
 ws2;m;20;i15;-14;LNC;LNC;Grants STB on hit
-ws3;m;20;i16;-8;KND;KND;
+ws3;m;20;i16;-8;KND;KND;Balcony Break
 ws4;m;18;i11;-6;+5;;
