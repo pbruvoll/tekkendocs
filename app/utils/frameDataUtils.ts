@@ -53,6 +53,10 @@ export const isPowerCrush = (move: Move) => {
   return /power crush/i.test(move.notes || '')
 }
 
+export const jails = (move: Move) => {
+  return /jail/i.test(move.notes || '')
+}
+
 export const filterRows = (
   rows: string[][],
   filter: MoveFilter | undefined,
@@ -118,6 +122,7 @@ export const filterRows = (
     [filter.heatEngager, isHeatEngager],
     [filter.homing, isHomingMove],
     [filter.tornado, isTornadoMove],
+    [filter.jails, jails]
   ] as const
   propFilters.forEach(([filterValue, filterFunc]) => {
     if (filterValue) {

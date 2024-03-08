@@ -23,6 +23,7 @@ export const FrameDataFilterSelection = ({
     heatEngager,
     homing,
     tornado,
+    jails,
   } = filter
   return (
     <Flex direction="column" gap="5">
@@ -159,6 +160,7 @@ export const FrameDataFilterSelection = ({
               [filterKey.BalconyBreak, balconyBreak, 'Balcony Break'],
               [filterKey.Homing, homing, 'Homing'],
               [filterKey.Tornado, tornado, 'Tornado Spin'],
+              [filterKey.Jails, jails, 'Jails'],
             ] as const
           ).map(([key, value, displayName]) => {
             return (
