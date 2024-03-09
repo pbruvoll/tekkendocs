@@ -1,8 +1,19 @@
 import { useMemo } from 'react'
-import { Link } from '@remix-run/react'
+import { Link, type MetaFunction } from '@remix-run/react'
 import { ContentContainer } from '~/components/ContentContainer'
 import charMoveCount from '~/data/character-move-count.json'
+import { generateMetaTags } from '~/utils/seoUtils'
 import { t8AvatarMap } from '~/utils/t8AvatarMap'
+
+export const meta: MetaFunction = ({ matches }) =>
+  generateMetaTags({
+    matches,
+    title: 'Moves per character Tekken 8 | TekkenDocs',
+    description:
+      'The page shows a sorted list of how many moves each character in Tekken 8 has',
+    image: { url: `/t8/pages/stats.png` },
+    url: `/t8/stats`,
+  })
 
 export default function () {
   const totalMove = charMoveCount.reduce<number>(
