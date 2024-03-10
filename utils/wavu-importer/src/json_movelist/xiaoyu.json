@@ -224,20 +224,6 @@
     "target": "m"
   },
   {
-    "damage": "11,15",
-    "gif": "",
-    "id": "Xiaoyu-AOP.1,2",
-    "input": "AOP.1,2",
-    "name": "Double Serving",
-    "notes": "\n* Combos from 1st hit",
-    "on_block": "-6",
-    "on_ch": "",
-    "on_hit": "+30g",
-    "recovery": "BT",
-    "startup": "i21",
-    "target": "m,h"
-  },
-  {
     "damage": "11,20",
     "gif": "",
     "id": "Xiaoyu-AOP.1,2",
@@ -250,6 +236,20 @@
     "recovery": "BT",
     "startup": "i25",
     "target": "m,m"
+  },
+  {
+    "damage": "11,15",
+    "gif": "",
+    "id": "Xiaoyu-AOP.1,2",
+    "input": "AOP.1,2",
+    "name": "Double Serving",
+    "notes": "\n* Combos from 1st hit",
+    "on_block": "-6",
+    "on_ch": "",
+    "on_hit": "+30g",
+    "recovery": "BT",
+    "startup": "i21",
+    "target": "m,h"
   },
   {
     "damage": "35",
@@ -1153,11 +1153,11 @@
     "id": "Xiaoyu-db+1+2",
     "input": "db+1+2",
     "name": "Hypnotist",
-    "notes": "\n* Transitions to HYP\n* During Heat, taking 3 or more steps partially restores remaining Heat time\n* Alternate input ub+1+2",
+    "notes": "\n* Transitions to HYP\n* Punch parry (+9 HYP, opponent BT)\n* Successful parry partially restores remaining Heat time\n* Alternate input ub+1+2",
     "on_block": "",
     "on_ch": "",
     "on_hit": "",
-    "recovery": "",
+    "recovery": "HYP",
     "startup": "",
     "target": ""
   },
@@ -1167,11 +1167,11 @@
     "id": "Xiaoyu-db+1+2",
     "input": "db+1+2",
     "name": "Hypnotist",
-    "notes": "\n* Transitions to HYP\n* Punch parry (+9 HYP, opponent BT)\n* Successful parry partially restores remaining Heat time\n* Alternate input ub+1+2",
+    "notes": "\n* Transitions to HYP\n* During Heat, taking 3 or more steps partially restores remaining Heat time\n* Alternate input ub+1+2",
     "on_block": "",
     "on_ch": "",
     "on_hit": "",
-    "recovery": "HYP",
+    "recovery": "",
     "startup": "",
     "target": ""
   },
@@ -1392,7 +1392,7 @@
     "input": "f+3,1",
     "name": "",
     "notes": "\n* Combos from 1st hit ",
-    "on_block": "-9",
+    "on_block": "-3",
     "on_ch": "",
     "on_hit": "+8",
     "recovery": "BT",

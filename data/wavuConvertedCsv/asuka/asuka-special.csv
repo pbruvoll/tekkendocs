@@ -150,8 +150,12 @@ d+3+4;l,h;5,20;i14;-25;LNC;LNC;"
 * -6F upon 2nd block
 "
 db+1;m;13;i14;-10;+7;;
-db+1+2;m,m;10,20;i42;;KND;;"
+db+1+2;m,m;10,20;i42;+10;KND;;"
 * Balcony Break
+*
+Wall Crush  +25g on block 
+
+
 * Parries lows
 "
 db+1,2;m,h;13,20;;-9;KND;KND*;"
@@ -169,11 +173,11 @@ db+3;l;17;i20;-12;+4c;+14g;
 db+4;l;14;i21;-11;+0;+3;Cancel to FC with input D
 db+4,4;l,l;14,15;;-7;+4;KND;Cancel to FC with input D
 db+4,4,4;l,l,l;14,15,16;;-7;+4;KND;Cancel to FC with input D
-f+1+3,1;t(h),m;0,20;;;;;"
+f+1+3,2;t(h),m;0,20;i19;-9;+8a/HE;;"
 * Heat Engager
 
 * Gain Naniwa Gusto on Heat Activation"
-f+1+3,4;t(h),l;0,19;;;;;
+f+1+3,4;t(h),l;0,19;i19;-18;+11d;;
 df+1;m;10;i13;-3;+8;;
 df+1,2;m,h(,th);10,13(,25);;-1;Th;Th;"
 * Spike
@@ -205,7 +209,7 @@ df+4;m;16;i12;-9;+2;;
 "
 (During Leg Cutter),3;h;21;;-3;LNC;LNC;CH combo from Leg Cutter
 f+1;m;17;i20;-7;+4;;
-f+1+2;h;26;i15;;;;"
+f+1+2;h;26;i15;-9;+19a (+9)/HE;;"
 * Heat Engager
 
 * Balcony Break
@@ -217,7 +221,7 @@ f+1+3;t(h);0;i19;;+8;;"
 * Break: none
 * Opp. Position on break: 
 * Opp. Position on hit: "
-f+1,3;m,m;17,17;,i21~22;;+6;;"
+f+1,3;m,m;17,17;,i21~22;-5;+6;;"
 "
 f+1,4;m,l;17,26;i25~27;-26;+24;;"
 * Homing
@@ -235,18 +239,22 @@ f+2+3;h;21;i23;+0;KND;KND;"
 * Absorbs Punch (H/M) during 4 to 15F
 * Stun on success punch parry
 "
-f+3;m;24;31f;-2;KND;KND;"
+f+3;m;24;i31~i33;-2~+0;KND;KND;"
 * Chip damage when guarded
 * Can be cancelled with input B
 "
-f+3*;ub(m);28;70f;KND;KND;KND;"
+f+3*;ub(m);28;i70;KND;KND;KND;"
 * Balcony Break
 * Can be cancelled with input B
 "
-f+3+4;m;27;i29~30;;-2 (-11);;"
+f+3+4;m;27;i29~30;-1;-2 (-11);;"
 * Balcony Break
 * Chip damage when guarded
 * On hit, gain Naniwa Gusto
+"
+f+3*n;m;26;i52~i53;+6~+7;KND;KND;"
+* Chip damage when guarded
+* Can be cancelled with input B
 "
 f+4;h;21;i19;+3;+28;KND;"
 * Homing"
@@ -267,7 +275,7 @@ FC.df+2;l;10;i16;-11;+0;+25g;"
 FC.df+3;m;20;i17;-9;KND;KND*;Balcony Break
 f,F+1;m;30;i23;+5;+14;;"
 "
-f,F+1+2;m;20;i19;;KND;;"
+f,F+1+2;m;20;i19;-6;KND;;"
 * Chip damage when guarded
 * Tornado
 "
@@ -300,11 +308,11 @@ f,f,F+1+2;h;30;i17;+4;KND;;"
 * Chip damage when guarded
 * Homing
 "
-f,f,F+3;m;32;i24~28;+3;KND;KND*;"
+f,f,F+3;m;32;i24~28;+3~+7;KND;KND*;"
 * Chip damage when guarded
 * Alternate input: ub,b+3
 "
-H.2+3;m,th;12,3;i16;+10;;;"
+H.2+3;m,th;12,3;i16;+10;-6;;"
 * Heat Smash
 * Throw on hit"
 hFC.1;sl;5;i10;-5;+6;;"
@@ -316,7 +324,7 @@ Left throw;t;40;;-3;-3d;;"
 * Throw break 1
 * Opp. Position on break: CCW
 * Opp. Position on hit: F Sd. FD"
-NWG.f,F+1+2;m;24;i19;;KND;;"
+NWG.f,F+1+2;m;24;i19;+2;KND;;"
 * Chip damage when guarded
 * Consumes Naniwa Gusto
 * During Heat, remaining Heat is consumed
@@ -329,7 +337,7 @@ NWG.f,f,F+1+2;h;42;i17;+6;KND;;"
 * During Heat, remaining Heat is consumed
 * Homing
 "
-NWG.u+1+2;m;24;i31;;KDN;;"
+NWG.u+1+2;m;24;i31~i32;+8~+9;KDN;;"
 * Chip damage when guarded
 * Consumes Naniwa Gusto
 * During Heat, remaining Heat is consumed
@@ -349,7 +357,7 @@ SS.2;m;23;i13;-13;KND;KND*;"
 * Gain Naniwa Gusto on Heat activation
 "
 SS.4;h;18;i17;-6;+7;KND;Meaty 2F
-u+1+2;m;20;i31;;KND;;"
+u+1+2;m;20;i31~i32;-13~-12;KND;;"
 * Chip damage when guarded
 * Alternate input: ub+1+2
 "
