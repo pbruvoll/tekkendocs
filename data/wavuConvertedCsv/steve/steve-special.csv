@@ -21,7 +21,8 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 1+2;m,m;7,21;i14;-12;KND/HE;;"
 Heat Engager
 
-* In Heat input f to Heat dash (+5/KND/KND)
+Heat Dash  (+5/KND/KND)
+
 "
 1,2;h,h;5,10;i10;-3;+8;;"
 * Input 3 to LWV (-4/+7/+7)
@@ -72,34 +73,36 @@ afters+1;l;23;i16;-12;KND;;"
 ALB.2;m;22;i23;-3;+17/KND;;"
 Heat Engager
 
-* In heat input f into Heat dash (+5/Launch/Launch)
+Heat Dash (+5/Launch/Launch)
+
 "
 ALB.d+2;l;17;i34;-12;+1c;KND;"
 "
 ALB.d;sp;;;;;;"
-* Input f into PAB
-"
-ALB.d;sp,l;,30;,i22;-12;KND;;"
+* Input F to transition PAB
 "
 ALB.d;sp,m;,34;,i12;-3;KND;;"
 "
-b+1;h;10;i13;-14;+2;Launch;"
-* Input b to FLK (-1/+10/Launch)
+ALB.d;sp,l;,30;,i22;-12;KND;;"
+"
+b+1;h;10;i13;-14;+2;+61a;"
+* Input B to FLK (-1/+10/+69)
 "
 b+1,2;h,h;10,17;;+3;+7;;"
-* Transistion to LNH
+* Homing
+* Transitions to LNH
 "
-b+1,2~1;h,m;10,17;;-8;+4;Launch;"
-* Transistion to LNH
+b+1,2~1;h,m;10,17;;-8;+4;+63a;"
 "
 b+1+3;sp;;;;;;"
 * Parry h and m punches
 * Successful parry i14,30dmg (-12/KND/Launch)
 "
 b+1,d+2;h,l;10,10;;-11;0;;"
-* Input f to PAB (-9/+2/+2)
+* Input F to PAB (-9/+2/+2)
 "
-b+1,d+2,1;h,l,m;10,10,10;;-9;KND;;"
+b+1,d+2,1;h,l,m;10,10,10;;-9;+35;;"
+Tornado
 "
 b+2;m;15;i17;-13;+14;;"
 "
@@ -230,12 +233,14 @@ FC.df+1;l;11;i15;-12;+2;;"
 "
 FC.df+2;m;20;i18;-15;Launch;;"
 "
-f,f+2;m;24;i14~17;-13c;KND;;"
+f,F+2;m;24;i14~17;-13c;KND;;"
 "
-f,f,f+2;m;30;i20~24;+6;+17;;"
+f,f,F+2;m;30;i20~24;+6;+17;;"
 Heat Engager
 
-* In heat input f to Heat dash (+5/Launch/Launch)
+Heat Dash (+5/Launch/Launch)
+
+* Chip Damage On block
 "
 FLK.1;h;14;i12;-4;+7;;"
 * Input b to stay in FLK (-1/+10/+10)
@@ -278,10 +283,10 @@ FLK.b+2;h;21;i4;-9;KND;;"
 H.EXD.1+3;h;;i18;;;;"
 * Unbreakable
 "
-H.EXDThrow.1;throw;15;/;;+14;;"
+TFA.1;throw;15;;;+14;;"
 * Press 1 for throw break
 "
-H.EXDThrow.2;throw;40;/;;KND;;"
+TFA.2;throw;40;/;;KND;;"
 * Press 2 for throw break
 "
 Left throw;throw;40;i12;;;;"
@@ -373,11 +378,12 @@ qcb+2+4;throw;40;i12;;;;"
 qcf+1;m;21;i16;-10;+17;;"
 Heat Engager
 
-* Input b to FLK (-3/KND/KND)
-* Input f to Heat dash (+5/KND/KND)
+Heat Dash (+5/KND/KND)
+
+* Input B to FLK (-3/KND/KND)
 "
 qcf+2;l;18;i19;-18;+2;;"
-* Input f to PAB
+* Input F transitions to PAB
 "
 Right throw;throw;40;i12;;;;"
 * Throw break 2
@@ -417,7 +423,7 @@ u/b+3;sp;;;;;;"
 * Transition to LNH
 * Input 3 to LWV 
 * Input 4 to RWV 
-* Input b+3_4 to DCK 
+* Input b+3_4 to SWY 
 * Input f+3_4 to DCK 
 "
 u/f+1;m;18;i19~21;-6;+5;;
