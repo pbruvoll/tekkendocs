@@ -1,6 +1,6 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes
 1;h;5;i10;+1;+8;;
-1,1;h,m;5,21;i25~26;-11;+2;+61a;"
+1,1;h,m;5,21;i25~26;-11l;+2;+61a;"
 * Move can be delayed"
 1+2;m;20;i21~22;-13;+8;;Punch sabaki
 1,2;h,h;5,9;i10;-3;+8;;"
@@ -17,10 +17,6 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * Combo from 1st hit"
 1+3+4;;;;;;;
 2;h;8;i10;-3;+5;;
-2+3;m;12;i16;+1;+2c;;"
-Heat Burst
-* Cancel move with b,b
-"
 2+4;h;35;;;0;;"
 * Throw break 1 or 2
 "
@@ -48,9 +44,9 @@ Balcony Break
 * Cancel to -13 -2 BT with B"
 3~4;m;27;i34~36;-5;+19d;;"
 * Cancel to -7~-2 -+19~+24 BT with B"
-3~4,3;m,L;27,11;i18~20;-26;+19d (+12);;"
+3~4,3;m,l;27,11;i18~20;-26;+19d (+12);;"
 * Combo from 1st hit"
-4~3;M;25;i28~i34;-7;+1c;+16a;
+4~3;m;25;i28~i34;-7;+1c;+16a;
 b+1;h;17;i10~11;-12;+1;+36d (+28);
 b+1+2;m;31;i13~14;-19;+18a (+13);;"
 * Heat Engager
@@ -99,7 +95,7 @@ BT 3;m;35;i32~33;+8c;+8c;;"
 * Chip damage on block
 * Transition to STC with f
 "
-BT d+3;L;20;i18~20;=26c;-3;+70a (+54);"
+BT d+3;l;20;i18~20;=26c;-3;+70a (+54);"
 * Has clean hit effect
 "
 d+1+2;m;15;i20~21;-9;+8c;;
@@ -213,12 +209,12 @@ Spike
 f+4,4;h,l;19,11;i33~33;-31;+27d;;"
 * Combo from 1st hit
 "
-FC.df+1;L;19;i21~22;-13c;-2;+13;
+FC.df+1;l;19;i21~22;-13c;-2;+13;
 FC.df+2;m;21;i18;-14;+55a;;
-FC.df+4;L;10;i19~20;-8c;+3b;;"
+FC.df+4;l;10;i19~20;-8c;+3b;;"
 * Can be input with D,df+4
 "
-FC.df+4,1;L,h;10,15;i20~21;-2;+6;;"
+FC.df+4,1;l,h;10,15;i20~21;-2;+6;;"
 * Combo from 1st attack
 "
 f,F+1+2;m;25;i24~25;-9;+16a;;"
@@ -276,7 +272,7 @@ H.f,F+1+2*;m;30;i39;+11;+22a (+12);;"
 b+3+4;;;;;;;"
 * Enter STC with f 
 "
-KNP 1;L;20;i20~21;-13c;+8;+38d;
+KNP 1;l;20;i20~21;-13c;+8;+38d;
 KNP 2;h;20;i14;-9;+17;;"
 * Heat Engager
 
@@ -285,26 +281,26 @@ KNP 2;h;20;i14;-9;+17;;"
 KNP 3;m;20;i22~23;-14;+77a (+55);;"
 * Tornado
 "
-KNP 3+4;M;30;i31~34;-7;-3d;;
-KNP 3+4,3+4;M,m;30;i39~42;;;;
-KNP 4;L;10;i18;-31c;-4;;
-KNP 4,1+2;L,h;10,24;i28;-6;+30a (+20);;"
+KNP 3+4;m;30;i31~34;-7;-3d;;
+KNP 3+4,3+4;m,m;30;i39~42;;;;
+KNP 4;l;10;i18;-31c;-4;;
+KNP 4,1+2;l,h;10,24;i28;-6;+30a (+20);;"
 * Balcony Break
 * Combo from 1st attack
 "
 Left Throw;h;40;;;-6;;"
 * Throw break 1
 "
-OTG d+3+4;L;19;i24~25;;-2 (-10);;
+OTG d+3+4;l;19;i24~25;;-2 (-10);;
 qcf;;;;;;;"
 * D,df to enter crouching state
 "
-qcf1;L;23;i22~23;-14;+2;+31a;Head
-qcf1+2;m;21;i16~17;0c;+7c;+23d;Head
-qcf2;m;25;i22~23;-14;+35a (+25);;"
+qcf+1;l;23;i22~23;-14;+2;+31a;Head
+qcf+1+2;m;21;i16~17;0c;+7c;+23d;Head
+qcf+2;m;25;i22~23;-14;+35a (+25);;"
 * Tornado
 "
-qcf3+4;;;;;;;Transitions to STC
+qcf+3+4;;;;;;;Transitions to STC
 R.df+1+2;t;55;i20;-15;+0d;;"
 * Rage Art
 * Erases opponent's recoverable health on hit
@@ -319,7 +315,7 @@ SS 1+2;m;24;i22~23;+1;+21d (+12);;"
 SS 2;h;18;i15;+3;+9b;+31d;"
 * Homing
 "
-SS 4;L;19;i21~22;-31c;+8 (-8);+72a (+56);"
+SS 4;l;19;i21~22;-31c;+8 (-8);+72a (+56);"
 * Has a clean hit effect
 "
 STC 1;m;20;i20~21;-15;+30a;;"
@@ -334,7 +330,7 @@ STC 3;h;25;i22~23;+3b;+23d;;"
 * Balcony Break
 * Chip damage on block
 "
-STC 4;L;20;i20;-13;+3;;
+STC 4;l;20;i20;-13;+3;;
 STC F+3+4;m;21;i18;;+53a;;"
 * Absorbs two attacks for a follow up attack
 "

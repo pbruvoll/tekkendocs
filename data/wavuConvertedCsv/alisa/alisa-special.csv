@@ -129,43 +129,43 @@ b,B+1+4;ub(h);50;i68;;+42 (-15);;"
 * Balcony Break
 "
 b,b,UB;sp;;;;;;Invulnerable during wall climb until Alisa begins to turn and pushes off into Airborne.
-BKP.1;h;31;i11~13;;+27 (+1);;"
+BKP.1;h;31;i11~13;+4;+27 (+1);;"
 * Balcony Break
 * chip damage on block
 "
 BKP.1+2;ub(h);20;i34~71;+58;+58;;"
 "
-BKP.2;h;34;i11~33;;+21 (+6);;"
+BKP.2;h;34;i11~33;-9;+21 (+6);;" -4/less negative on block when farther away. +25 (+10) on hit when far.
 * Tornado
 * chip damage on block
 "
-BKP.3;m;30;i24~27;;+72;;"
+BKP.3;m;30;i24~27;-9;+72;;"
 * Balcony Break
 "
-BKP.4;m;30;i19;;+32 (+22);;"
+BKP.4;m;30;i19;-9;+32 (+22);;" Spacing affects advantage on hit and block.
 * Tornado
 "
-BOT.1;m;12;i13~14;;;;"
+BOT.1;m;12;i13~14;-15;0;;"
 "
 BOT.1+2;ub(h);20;i27~28;+8;+8;;"
 * Balcony Break
 * Transition to DES
 "
-BOT.1,2;m,m;12,13;,i18~19;;;;"
+BOT.1,2;m,m;12,13;,i18~19;-9;+2;+7;"Rest of the string is natural on counter hit.
 "
-BOT.1,2,1;m,m,m;12,13,7;,i20~21;;;;"
+BOT.1,2,1;m,m,m;12,13,7;,i20~21;-12;-20;-12;" Less safe on hit than on block without CH. 
 "
-BOT.1,2,1,3+4;m,m,m,m;12,13,7,33;,i18;;+4 (-13);;"
+BOT.1,2,1,3+4;m,m,m,m;12,13,7,33;,i18;-18;+4 (-13);;"
 * Balcony Break
 * Transition to DES with input BOT.1,2,1,3+4,1+2
 "
-BOT.2;m;25;i16~17;;+6 (-4);;"
+BOT.2;m;25;i16~17;-7;+6 (-4);;"
 * Balcony Break
 * Transition to DES with input BOT.2,1+2
 "
-BOT.3;l;17;i16~20;;+4c;;"
+BOT.3;l;17;i16~20;-14c;+4c;;"
 "
-BOT.4;m;22;i17~19;;+68;;"
+BOT.4;m;22;i17~19;-27;+68;;"
 "
 BOT.D;sp;;;;;;"
 * Alternate input: BOT.B
@@ -211,7 +211,7 @@ db+3;l;11;i16;-13;-2;;"
 "
 db+4;l;23;i24~25;-17;+9;;"
 "
-DBT.1;h;30;i24;;+11g;;"
+DBT.1;h;30;i24;+9;+11g;;"
 * Transition to DES
 * chip damage on block
 "
@@ -220,25 +220,25 @@ DBT.1+2;m;35;i12;0;+21 (+0);;"
 * Transition to DES
 * chip damage on block
 "
-DBT.2;m;25;i16;;;;"
+DBT.2;m;25;i16;-14;+32 (+14);;"
 * chip damage on block
 "
-DBT.2,1;mh;2513 (5);i26~28;;+18 (-12);;"
+DBT.2,1;mh;2513 (5);i26~28;-11c;+18 (-17);;" -28 on whiff.
 * Spike
 * Transition to DES
 * chip damage on block
 "
-DBT.3;l;17;i6~20;;+4c;;"
+DBT.3;l;17;i6~20;-14c;+4c;+28 KND;"
 "
-DBT.4;m;22;i17~19;;+68;;"
+DBT.4;m;22;i17~19;-27;+68;;"
 "
-DBT.f+1;m;49;i19~21;;+0;;"
+DBT.f+1;m;49;i19~21;-11;+0 KND;;"
 * chip damage on block
 * throw on front hit
 "
-DBT.f+2;l;16;i19~20;;;;"
+DBT.f+2;l;16;i19~20;-16c;-6;;"
 "
-DBT.f+2,2;l,m;16,14 (9);i35~37;;-6 (-13);;"
+DBT.f+2,2;l,m;16,14 (9);i35~37;-33;-6 (-13);;"
 * Balcony Break
 * chip damage on block
 "
@@ -306,7 +306,7 @@ DES.f+1;h;21;i11~13;+3;+9;;"
 DES.f+1+2;m;12;i23~27;+5;+33;;"
 * chip damage on block
 "
-DES.f+1+2,1+2;m,m;12,20;,i20~26;;+41;;"
+DES.f+1+2,1+2;m,m;12,20;,i20~26;-53;+41;;"
 * Transition to DES
 * chip damage on block
 "
@@ -353,6 +353,8 @@ df+2;m;16;i16~17;-9;+32 (+22);;"
 df+3;m;14;i16;-9;+1;;"
 "
 df+3,3;m,l;14,17;,i23~24;-12c;+1;;"
+"
+df+4;m;13;i12;-7;+4;;"
 "
 f+1+2;m;25 (0);i14~15;-12;+14;;"
 * Transition to BOT with f+1+2,3_4
@@ -480,7 +482,7 @@ Right throw;th(h);40;i12~14;;;;"
 * Opponent recovery on hit: FUFA perpendicular to Alisa
 * Spike
 "
-SS.4;l;15;i24~25;;;;"
+SS.4;l;15;i24~25;-12;+2;;"
 "
 SS.4,1+2;l,hm;15,20;,;;;;"
 "
