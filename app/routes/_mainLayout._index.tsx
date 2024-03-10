@@ -64,11 +64,18 @@ export default function Index() {
       <Heading as="h2" mt="5" mb="4" size="5">
         Resources
       </Heading>
-      <Link to="/matchvideo" className="cursor-pointer">
-        <Badge size="2" style={{ cursor: 'pointer' }} variant="outline">
-          Match videos
-        </Badge>
-      </Link>
+      <div className="flex flex-wrap gap-3">
+        <Link to="/matchvideo" className="cursor-pointer">
+          <Badge size="2" style={{ cursor: 'pointer' }} variant="outline">
+            Match videos
+          </Badge>
+        </Link>
+        <Link to="/t8/stats" className="cursor-pointer">
+          <Badge size="2" style={{ cursor: 'pointer' }} variant="outline">
+            Stats
+          </Badge>
+        </Link>
+      </div>
 
       <Heading as="h2" mt="7" mb="2" size="5">
         <Link to="t8">Tekken 8</Link>
