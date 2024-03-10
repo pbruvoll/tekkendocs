@@ -51,3 +51,9 @@ Now the data can be uploaded to the spread sheet in the normal way. Run the comm
 ```
 tekkendocs>python utils\uploadCsv.py -I data\wavuConvertedCsv -G T8
 ```
+
+### How to count number of moves per character
+
+```
+tekkendocs>python utils\countMoves.py -I data\wavuConvertedCsv -G T8 -O app\data\character-move-count.json
+```
