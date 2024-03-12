@@ -21,4 +21,5 @@ export const hasHeaderMap: Record<TableId, boolean> = {
   punishers_whiff: true,
   videos_match: true,
   resources_external: true,
+  credits: true,
 }
