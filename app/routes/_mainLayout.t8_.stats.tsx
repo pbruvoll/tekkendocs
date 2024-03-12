@@ -38,7 +38,8 @@ export default function () {
         but 10-hit strings are not. Some moves are basically the same for all
         characters like 2+3, 1+3 and 1+2+3+4. Also some commands are counted
         muliple times, since they have different properties in different
-        situations, like genric throws connecting from the front, side or back{' '}
+        situations, like genric throws connecting from the front, side or back.
+        Panda and Kuma are counted as separate characters{' '}
       </p>
     </ContentContainer>
   )
