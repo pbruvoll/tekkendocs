@@ -19,3 +19,4 @@ export type TableId =
   | 'combos_wall'
   | 'videos_match'
   | 'resources_external'
+  | 'credits'

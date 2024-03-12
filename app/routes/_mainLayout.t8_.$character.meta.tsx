@@ -3,7 +3,9 @@ import { Heading, Link as RadixLink, Table } from '@radix-ui/themes'
 import { type DataFunctionArgs, json, type MetaFunction } from '@remix-run/node'
 import { Link, NavLink, useLoaderData } from '@remix-run/react'
 import invariant from 'tiny-invariant'
+import { Authors } from '~/components/Authors'
 import { ContentContainer } from '~/components/ContentContainer'
+import { PersonLinkList } from '~/components/PersonLinkList'
 import { ResourcesTable } from '~/components/ResourcesTable'
 import { hasHeaderMap } from '~/constants/hasHeaderMap'
 import { tableIdToDisplayName } from '~/constants/tableIdToDisplayName'
@@ -26,7 +28,9 @@ import {
 import { getCacheControlHeaders } from '~/utils/headerUtils'
 import { commandToUrlSegment } from '~/utils/moveUtils'
 import { generateMetaTags } from '~/utils/seoUtils'
+import { creditsTableToJson } from '~/utils/sheetUtils'
 import { sheetSectionToTable, sheetToSections } from '~/utils/sheetUtils.server'
+import { t8AvatarMap } from '~/utils/t8AvatarMap'
 
 export const loader = async ({ params }: DataFunctionArgs) => {
   const character = params.character
@@ -157,11 +161,20 @@ export default function Index() {
     headers: ['Command'],
   }
 
+  const creditsTable: TableData | undefined = metaTables.find(
+    t => t.name === 'credits',
+  )
+  const credits = creditsTable ? creditsTableToJson(creditsTable) : undefined
+  const authors = credits ? credits.filter(c => c.role === 'author') : undefined
+  const contributors = credits
+    ? credits.filter(c => c.role !== 'author')
+    : undefined
+
   const tables = [
     heatEngagerTable,
     heatMoveTable,
     homingTable,
-    ...metaTables,
+    ...metaTables.filter(t => t.name !== 'credits'),
     tornadoTable,
     balconyBreakTable,
     powerCrushTable,
@@ -173,10 +186,17 @@ export default function Index() {
   return (
     <>
       <ContentContainer enableTopPadding>
-        <div className="flex items-center justify-between">
-          <Heading as="h1" my="2" className="capitalize">
-            {characterName}
-          </Heading>
+        <div className="mb-3 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <img
+              className="aspect-square w-12"
+              src={t8AvatarMap[characterName]}
+              alt={characterName}
+            />
+            <Heading as="h1" my="2" className="capitalize">
+              {characterName}
+            </Heading>
+          </div>
           <a
             className="flex items-center gap-2 text-text-primary"
             style={{ color: 'var(--accent-a11)' }}
@@ -193,7 +213,12 @@ export default function Index() {
           <NavLink to="../antistrat">Anti strats</NavLink>
         </nav>
       </ContentContainer>
-      <ContentContainer disableXPadding>
+      <ContentContainer enableBottomPadding>
+        {!!authors?.length && (
+          <div className="flex justify-end">
+            <Authors authors={authors} />
+          </div>
+        )}
         {tables.map(table => {
           const columnNums = (table.headers || table.rows[0]).map(
             (_, index) => index,
@@ -209,11 +234,9 @@ export default function Index() {
           }
           return (
             <section key={table.name} className="mt-8">
-              <ContentContainer>
-                <Heading as="h2" mb="4" size="4">
-                  {tableIdToDisplayName[table.name]}
-                </Heading>
-              </ContentContainer>
+              <Heading as="h2" mb="4" size="4">
+                {tableIdToDisplayName[table.name]}
+              </Heading>
               <Table.Root variant="surface" style={{ width: '100%' }}>
                 {table.headers && (
                   <Table.Header>
@@ -265,6 +288,14 @@ export default function Index() {
             </section>
           )
         })}
+        {!!contributors?.length && (
+          <div className="mb-3 mt-3 flex justify-end">
+            <div>
+              <span>Contributors : </span>
+              <PersonLinkList persons={contributors} />
+            </div>
+          </div>
+        )}
       </ContentContainer>
     </>
   )

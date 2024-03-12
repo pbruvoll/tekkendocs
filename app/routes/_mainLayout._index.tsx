@@ -81,11 +81,6 @@ export default function Index() {
         <Link to="t8">Tekken 8</Link>
       </Heading>
 
-      <p className="mb-4">
-        Tekken was release january 26th 2024. We already have frame data for
-        several characters, and working on the rest
-      </p>
-
       <CharacterGrid
         characterCards={gamePageDataT8.characterInfoList.map(
           ({ id, displayName }) => {

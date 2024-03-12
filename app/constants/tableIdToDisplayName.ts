@@ -21,4 +21,5 @@ export const tableIdToDisplayName: Record<TableId, string> = {
   punishers_whiff: 'Whiff punishers',
   videos_match: 'Match videos',
   resources_external: 'External resources',
+  credits: '', // custom rendering
 }
