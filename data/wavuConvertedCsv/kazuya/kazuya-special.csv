@@ -1,16 +1,20 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes
 1;h;5;i10;+1;+8;;Alternate input: f+1
-1,1;h,h;5,6;;-1;+8;;Combo from 1st hit
+1,1;h,h;5,6;;-1;+8;;"Jails
+Combo from 1st hit"
 1,1,2;h,h,m;5,6,12;;-17;+20a(+15);;"
 * Combo from 1st hit
 * Can be delayed 11F
 * Balcony Break on Air hit
 "
 1+2;m,m;5,20;i12;-13;+13a;;Balcony Break
-1,2;h,h;5,8;;-1;+8;;Combo from 1st hit
-1,2,2;h,h,h;5,8,12;;-12;+4;;"
+1,2;h,h;5,8;;-1;+8;;"
+* Jails
 * Combo from 1st hit
 * Combo can be delayed 12F from 1st hit
+"
+1,2,2;h,h,h;5,8,12;;-12;+4;;"
+
 * "
 1,2,2~3;h,h,m;5,8,23;i23;-9;+6;;
 1+2+3+4;sp;-;;;;;"
@@ -49,8 +53,7 @@ b+1;h;10;i11;-10;+1;;
 b+1+2;m;21;i22;-8;+5;;"
 * Heat Engager
 
-* Heat Dash +5g +36a(+26)
-
+* Heat Dash +36a(+26) on hit
 * Chip damage when guarded"
 b+1,2;h,m;10,20;i20;-14;+9(+0);;"
 * Balcony Break
@@ -75,7 +78,8 @@ b+2,4,1;m,h,m;12,12,22;i19;-14;+11a(+2);;"
 * Balcony Break
 "
 b+3;h;15;i18;-8;+3;;
-b+3,1;h,h;15,10;i12;+0;+6;;Combo from 1st hit
+b+3,1;h,h;15,10;i12;+0;+6;;"Jails
+Combo from 1st hit"
 b+3,1,4;h,h,l;15,10,10;i16;-10c;+7;;
 b+3,1,4,1;h,h,l,m;15,10,10,15;i15;-14;+15a(+6);;Balcony Break
 b+3,1,4,3;h,h,l,l;15,10,10,12;i20;-13c;+1;;
@@ -83,8 +87,7 @@ b+4;h;20;i17;-5;+16g/HE;;"
 * Homing
 * Heat Engager
 
-* Heat Dash +5g +62a(+42)
-
+* Heat Dash +62a(+42) on hit
 "
 (back to wall).b,b,ub;m;25;i29;-1;KND;KND;"
 * Air Status 5F
@@ -107,8 +110,7 @@ db+1;m;7;i13;-10;+0;;
 db+1,2;m,m,m;7,8,15;i20;-19;+9a(-8);;"
 * Heat Engager
 
-* Heat Dash +5g +35a
-
+* Heat Dash +35a on hit
 * Balcony Break
 * Chip damage when guarded
 * Combos from first hit
@@ -121,9 +123,8 @@ df+1;m;11;i15~16;-7;+9;;
 df+1,2;m,h;11,20;i15;+0c;+9g;;"
 * Heat Engager
 
-* Heat Dash +5g +67a(+50)
-
-* Chip damage when guarded
+* Heat Dash +67a(+50) on hit
+* Chip damage on block (6)
 * Combos from first hit
 "
 df+1,4;m,h;11,20;i16;-3;+18Sp;;"
@@ -171,6 +172,7 @@ df+4,4;m,m;10,16;;-15;-4c;;"
 * Combo can be delayed 11F from hit
 "
 DVK.1,1,2,F;h,h,m,th;5,6,12,8;i10;;+5;;"
+* Jails
 * Partially uses remaining Heat time
 * Only on hit
 "
@@ -219,8 +221,8 @@ f+1+2;m;20;i25;-9;+11a(+2);;"
 Balcony Break
 "
 f+2;m;23;i20;-12;+13a(+4);;"
-* absorb an attack to power up
-*  - Add chip damage when guarded
+* Absorb an attack to power up
+* Add chip damage when guarded
 * Tornado
 * Balcony Break
 "
@@ -238,8 +240,7 @@ f,(even numbers frames).n;sp;;;;;;
 f,F+2;m;20;i16;-9;+39d(-19)/HE;;"
 * Heat Engager
 
-* Heat Dash +5g +36a(+26)
-
+* Heat Dash +36a(+26) on hit
 * Balcony Break
 "
 f,F+3;m;21;i20;-3c;+46a;;"
@@ -275,13 +276,13 @@ f,n,d,df+4,1;l,m;15,23;i26;-16;+17a(+10;;"
 * Combo from first hit
 * Balcony Break
 "
-2+3;m;15;;;;;"
-* Heat Burst
-* Alternate input: R1
-"
 f,n,d,df+4,4;l,h;15,25;i30;-14;+5a(+4);;"
 * Combo from first hit
 * Balcony Break
+"
+2+3;m;15;;;;;"
+* Heat Burst
+* Alternate input: R1
 "
 f,n,DF;sp;;;;;;"
 * Cannot be buffered
@@ -296,7 +297,6 @@ H.2+3;l,m,th;12,20,34;i18;-14;Th;Th;"
 OTG.d+3+4;l;25;i23;-12;-1;;
 R.df+1+2;m,th;10,45;;;;;"
 * Erases opponent's recoverable health on hit
-* Alternate input: R2
 "
 SS.1+2;h;25;i19;-9;+11a;;"
 "

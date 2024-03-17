@@ -1,55 +1,56 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes
 1;h;5;i10;+1;+8;;
-1,1;h,m;5,15;,i25;-1;+8;;"
-* "
+1,1;h,m;5,15;i25;-1;+8;+13;"
+* Shifts to IZU
+"
 1+2;m;26;i13;-12;+28a;;"
 * Balcony Break
 * Heat Engager
 "
-1,2;h,h;5,8;,i16;-3;+6;;"
+1,2;h,h;5,8;i16;-3;+6;;"
 * Jail from 1st attack"
-1,2,2;h,h,h;5,8,17;,i16~17;+6~+7;+11~+12;+20c~+21c;"
+1,2,2;h,h,h;5,8,17;i16~17;+6~+7;+11~+12;+20c~+21c;"
 * Homing
 * Combo from 2nd CH with 5f delay
 * Jail from 2nd block with 1f delay"
 1+2+3+4;;;;;;;"
 * CH state for 5 seconds
 * Can't block for 5 seconds"
-1,2,4;h,h,m;5,8,16;,i27~28;-12~-11;+5~+6;+15a (+6);"
+1,2,4;h,h,m;5,8,16;i27~28;-12~-11;+5~+6;+15a (+6);"
 * Balcony Break
 * Combo from 2nd CH with 3f delay
 * Input can be delayed 9f"
 1,2,u;h,h;5,8;;+1;+10g;;
 1+3;t;35;i12~14;+0;+0d;;"
 * Throw break 1 or 2"
-1,3;h,L;5,12;,i23;-12;+2;+6c;"
+1,3;h,L;5,12;i23;-12;+2;+6c;"
 * Combo from 1st CH"
 1+4;SL,h;5,8;i14 i17;-3;-3;+4;"
 * Jail from 1st attack
 * CH advantage listed is for the 2nd hit"
-1+4,2;SL,h,h;5,8,10;,i19;-2;+9;;Combo from 2nd CH
-1+4,2,4;SL,h,h,m;5,8,10,23;,i24;-15;+11a (+2);;Combo from 3rd CH
-1+4,2,d+4;SL,h,h,L;5,8,10,15;,i24~25;-23~-22;+27a;;Combo from 3rd CH
-1+4,3;SL,h,m;5,8,15;,i24~25;-11~-10;+1~+2;;Combo from 2nd CH
-1+4,3,1;SL,h,m,m;5,8,15,20;,i33~34;-13~-12;+17a (+10);;
-1+4,3,4;SL,h,m,L;5,8,15,17;,i25~26;-13~-12;+4c~+5c;+26a;Combo from 3rd CH
+1+4,2;SL,h,h;5,8,10;i19;-2;+9;;Combo from 2nd CH
+1+4,2,4;SL,h,h,m;5,8,10,23;i24;-15;+11a (+2);;Combo from 3rd CH
+1+4,2,d+4;SL,h,h,L;5,8,10,15;i24~25;-23~-22;+27a;;Combo from 3rd CH
+1+4,3;SL,h,m;5,8,15;i24~25;-11~-10;+1~+2;;Combo from 2nd CH
+1+4,3,1;SL,h,m,m;5,8,15,20;i33~34;-13~-12;+17a (+10);;
+1+4,3,4;SL,h,m,L;5,8,15,17;i25~26;-13~-12;+4c~+5c;+26a;Combo from 3rd CH
 2;h;7;i12;-4;+7;;
-2,1;h,m;7,9;,i21;-6;+7;;"
+2,1;h,m;7,9;i21;-6;+7;;"
 * Combo from 1st hit with 9f delay
 * Input can be delayed 10f"
-2,1,1+2;h,m,h;7,9,21;,i22;+2;+48a (+10);;"
+2,1,1+2;h,m,h;7,9,21;i22;+2;+48a (+10);;"
 * Balcony Break
 * Combo from 2nd CH with 9f delay"
-2,1,4;h,m,m;7,9,12;,i10;-12;-1;;"
+2,1,4;h,m,m;7,9,12;i10;-12;-1;;"
 * Knee
 * Combo from 1st hit"
-2,1,4,1;h,m,m,m;7,9,12,30;,i30;-9;+10a (+1);+42a (-5);"
+2,1,4,1;h,m,m,m;7,9,12,30;i30;-9;+10a (+1);+42a (-5);"
 * Balcony Break
 * Combo from 3rd CH
 * Input can be delayed 10f
 * Chip damage on block
 * Deals recoverable self-damage when not in Heat"
-2,1,4,3;h,m,m,m;7,9,12,21;,i25;-9;+13a (+4);;"
+2,1,4,3;h,m,m,m;7,9,12,21;i25;-9;+13a (+4);;"
 * Balcony Break
 * Combo from 3rd CH with 5f delay
 * Input can be delayed 10f"
@@ -59,7 +60,7 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 2+4;t;35;i12~14;;+0d;;"
 * Throw break 1 or 2
 * Side switch"
-3;m;20;,i14~15;-13~-12;+18a (+1);;Balcony Break
+3;m;20;i14~15;-13~-12;+18a (+1);;Balcony Break
 3+4;m,M,M;6,18,20;i23~24 i30~31 i16;-6~-5;+26a (+8);;"
 * Spike
 * 3rd hit available only as combo from 2nd hit
@@ -280,6 +281,7 @@ H.2+3;m,m;20,30;i13 i32~75;-6~+37g;+21a~+64a (-5~+38);;"
 H.f+1+2,P;h;0;i12;;+40g;;"
 * Sabaki, parries mid or high punches or kicks"
 H.GEN.2+3;l,m;14,28;i20 i26;-14;+33 (+5);;"
+Heat Smash
 * Ends heat"
 H.IZU.3,F;m,h;10,16;i16~15 i14~15;+5~+6;+36a (+26);;"
 * Jail from 1st attack"

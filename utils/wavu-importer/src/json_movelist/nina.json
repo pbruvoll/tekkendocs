@@ -1412,7 +1412,7 @@
     "id": "Nina-f+1+3",
     "input": "f+1+3",
     "name": "Crab Hold (CHD)",
-    "notes": "\n* Throw break 1\n* Alternate input: qcf+3+4",
+    "notes": "\n* Throw break 1\n* Alternate input: qcf+1+3",
     "on_block": "-2",
     "on_ch": "",
     "on_hit": "+1d",
@@ -1479,8 +1479,8 @@
   {
     "damage": "15",
     "gif": "",
-    "id": "Nina-f+2+3",
-    "input": "f+2+3",
+    "id": "Nina-f+2+4",
+    "input": "f+2+4",
     "name": "Backhand Slap (BHS)",
     "notes": "\n* Throw break 2\n* Alternate input: qcf+2+4",
     "on_block": "-2",
@@ -1660,20 +1660,6 @@
     "target": "M"
   },
   {
-    "damage": "20,9,12,9,12",
-    "gif": "",
-    "id": "Nina-H.2+3",
-    "input": "H.2+3",
-    "name": "Bullet Assassination (Far)",
-    "notes": "\n* Heat Smash\n* Jails",
-    "on_block": "+14",
-    "on_ch": "",
-    "on_hit": "+43a (+10)",
-    "recovery": "r32 FC",
-    "startup": "i16 i28 i35 i42 i49",
-    "target": "m,h,h,h,h"
-  },
-  {
     "damage": "20,30",
     "gif": "",
     "id": "Nina-H.2+3",
@@ -1686,6 +1672,20 @@
     "recovery": "r32",
     "startup": "i16 i28 i35 i42 i49 i90~91",
     "target": "m,h,h,h,h,m"
+  },
+  {
+    "damage": "20,9,12,9,12",
+    "gif": "",
+    "id": "Nina-H.2+3",
+    "input": "H.2+3",
+    "name": "Bullet Assassination (Far)",
+    "notes": "\n* Heat Smash\n* Jails",
+    "on_block": "+14",
+    "on_ch": "",
+    "on_hit": "+43a (+10)",
+    "recovery": "r32 FC",
+    "startup": "i16 i28 i35 i42 i49",
+    "target": "m,h,h,h,h"
   },
   {
     "damage": "5,20,5,5,5,5",
@@ -1914,8 +1914,8 @@
   {
     "damage": "15",
     "gif": "",
-    "id": "Nina-qcb,B+1+4",
-    "input": "qcb,B+1+4",
+    "id": "Nina-qcb,B+1+3",
+    "input": "qcb,B+1+3",
     "name": "Betrayer (BTR)",
     "notes": "\n* Unbreakable\n* qcb,B+2+4",
     "on_block": "",
@@ -2360,20 +2360,6 @@
     "target": "m"
   },
   {
-    "damage": "20,13",
-    "gif": "",
-    "id": "Nina-uf+3+4",
-    "input": "uf+3+4",
-    "name": "Running Jump Kick",
-    "notes": "\n* Balcony Break\n* Transition to throw on close range front hit",
-    "on_block": "-23a~-16a",
-    "on_ch": "",
-    "on_hit": "+9a (-1)",
-    "recovery": "r35 FUFT",
-    "startup": "i23~30",
-    "target": "m,t"
-  },
-  {
     "damage": ",18",
     "gif": "",
     "id": "Nina-uf+3+4",
@@ -2386,6 +2372,20 @@
     "recovery": "r35 FUFT",
     "startup": "i23",
     "target": ",t"
+  },
+  {
+    "damage": "20,13",
+    "gif": "",
+    "id": "Nina-uf+3+4",
+    "input": "uf+3+4",
+    "name": "Running Jump Kick",
+    "notes": "\n* Balcony Break\n* Transition to throw on close range front hit",
+    "on_block": "-23a~-16a",
+    "on_ch": "",
+    "on_hit": "+9a (-1)",
+    "recovery": "r35 FUFT",
+    "startup": "i23~30",
+    "target": "m,t"
   },
   {
     "damage": "23",
@@ -2506,11 +2506,11 @@
     "id": "Nina-WR.1+2",
     "input": "WR.1+2",
     "name": "Spiral Bombshell Blast",
-    "notes": "\n* Heat Engager\n\n* Balcony Break\n* Chip damage on block",
-    "on_block": "+4~+5",
+    "notes": "",
+    "on_block": "+5",
     "on_ch": "",
-    "on_hit": "+12a (+3)",
-    "recovery": "r32",
+    "on_hit": "+36a (+26)",
+    "recovery": "r27",
     "startup": "i20~21",
     "target": "m"
   },
@@ -2520,11 +2520,11 @@
     "id": "Nina-WR.1+2",
     "input": "WR.1+2",
     "name": "Spiral Bombshell Blast",
-    "notes": "",
-    "on_block": "+5",
+    "notes": "\n* Heat Engager\n\n* Balcony Break\n* Chip damage on block",
+    "on_block": "+4~+5",
     "on_ch": "",
-    "on_hit": "+36a (+26)",
-    "recovery": "r27",
+    "on_hit": "+12a (+3)",
+    "recovery": "r32",
     "startup": "i20~21",
     "target": "m"
   },
@@ -2683,20 +2683,6 @@
     "target": "m,m"
   },
   {
-    "damage": "15,6,6,6",
-    "gif": "",
-    "id": "Nina-WS.4,3",
-    "input": "WS.4,1+2",
-    "name": "Haematopus Kiss Shot",
-    "notes": "\n* Balcony Break\n* Combo from 2nd hit\n* Combo from 1st CH\n* Chip damage on block\n* Power up during Heat",
-    "on_block": "-9",
-    "on_ch": "",
-    "on_hit": "+34a (-24)",
-    "recovery": "r40",
-    "startup": ",i28 i35 i42",
-    "target": "m,h,h,h"
-  },
-  {
     "damage": "15,24",
     "gif": "",
     "id": "Nina-WS.4,3",
@@ -2709,5 +2695,19 @@
     "recovery": "r36",
     "startup": ",i25",
     "target": "m,h"
+  },
+  {
+    "damage": "15,6,6,6",
+    "gif": "",
+    "id": "Nina-WS.4,3",
+    "input": "WS.4,1+2",
+    "name": "Haematopus Kiss Shot",
+    "notes": "\n* Balcony Break\n* Combo from 2nd hit\n* Combo from 1st CH\n* Chip damage on block\n* Power up during Heat",
+    "on_block": "-9",
+    "on_ch": "",
+    "on_hit": "+34a (-24)",
+    "recovery": "r40",
+    "startup": ",i28 i35 i42",
+    "target": "m,h,h,h"
   }
 ]

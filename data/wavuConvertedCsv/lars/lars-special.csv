@@ -3,17 +3,18 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 "
 1,1;h,m;5,8;,i18~19;-8;+0;;"
 "
-1,1,1;h,m,m;5,8,20;,i25~26;-12;;;"
+1,1,1;h,m,m;5,8,20;,i25~26;-12;+5c;;"
 * Heat Engager
 
 "
 1+2;m;25;i25;-12;+7;;"
 "
 1,2;h,h;5,9;,i10;-3;+8;;"
+* Jails
 "
 1+2+3+4;sp;;;;;;"
 "
-1+3;th(h);35;i12~14;;;;"
+1+3;th(h);35;i12~14;-3;+1;;"
 * Spike
 * Throw break: 1 or 2
 * Opponent status on hit: FUFA
@@ -27,10 +28,10 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * Combo from 1st hit
 * Transition to LEN
 "
-2+3;m;12 (12);i16;;+2c;;"
+2+3;m;12 (12);i16;+1;+2c;;"
 * Heat Burst
 "
-2+4;th(h);35;i12~14;;;;"
+2+4;th(h);35;i12~14;-3;0;;"
 * Throw break: 1 or 2
 * Opponent status on hit: FDFT perpendicular
 * Side switch on hit
@@ -38,16 +39,16 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 3;h;16;i15;-17;+0;;"
 * Transition to LEN with input D (-11/+6/+6)
 "
-3+4;m;22;i17~18;-8;;;"
+3+4;m;22;i17~18;-8;+43d (-15);;"
 * Heat Engager
 
 * Balcony Break
 "
-4;h;27;i17~18;;+18 (+9);;"
+4;h;27;i17~18;-7;+18 (+9);;"
 * Balcony Break
 "
 (airborne).DEN.2+3;;;;;;;
-(airborne).f,f,F+2+4;th(h);31 (21);i11;;;;"
+(airborne).f,f,F+2+4;th(h);31 (21);i11;;0;;"
 * Throw break: none
 * Opponent status on hit: FUFT
 "
@@ -59,71 +60,71 @@ b+1+2;mm;4,20;i21~22,i8~9;-9;+9;;"
 * Balcony Break
 "
 b+2;m;12;i15;-7;+4;;
-b+2,1;m,m;12,17;,i15;-10;+4;;
-b+2+3;ub(m);45;i84~85;;+61;;
-b+2,3;m,h;12,21;,i18;-8;+38 (-20);;"
+b+2,1;m,m;12,17;,i15;-10;+4;+32a;
+b+2+3;ub(m);45;i84~85;;+61a;;
+b+2,3;m,h;12,21;,i18;-8;+38d (-20);;"
 * Balcony Break
 * Tornado
 "
-b+3;m;14;i17;-12;+4;;"
-* Transition to (-5/+11/+11) SEN with input F
+b+3;m;14;i17;-12 / -5 SEN;+4 / +11 SEN;;"
+* Transition to SEN with input F
 "
 b+3,4;m,h;14,20;,i23~24;-8;+19 (+10);;"
 * Balcony Break
 "
 b+4;m;23;i15;-8;+8;;
-Back throw;th(h);50;i12~14;;;;"
+Back throw;th(h);50;i12~14;;0;;"
 * Throw break: none
 * Opponent status on hit: FDFT
 "
-CH b+4;m,th;27,28;i15;;;;
-d+1+2;l;25;i24~25;;+9;;
-d+2;m;17;i18~19;+0c;+8c;;"
+CH b+4;m,th;27,28;i15;;0;;
+d+1+2;l;25;i24~25;-20;+9d;;
+d+2;m;17;i18~19;+0c;+8c;+10d;"
 * Transition to FC with input D
 "
-d+3;l;8;i15;;;;
+d+3;l;8;i15;-14;-3;;
 d+3,1;l,hh;8,4,10;,i19,i18;-7;+4;;
-db+1;l;9;i17;-12;;;
-db+1+2;m;18;i26;-13;+6;+10;"
+db+1;l;9;i17;-12;-1;;
+db+1+2;m;18;i26;-13 / -8 DEN;+6 / +7 DEN;+10 / +11 DEN;"
 * Transition to DEN with input D
 "
-db+1,3;l,h;9,10;,i19;;-1;;"
+db+1,3;l,h;9,10;,i19;-12;-1;;"
 * Transition to LEN with input D
 "
-db+2;m;12;i15;-18;;;"
+db+2;m;12;i15;-8 / -5 SEN;+3 / +6 SEN;;"
 * Transition to SEN with input F
 "
 db+2,1;m,m;12,8;,i15~16;-8;+6;;
-db+2,3;m,m;12,15;,i19;-13;+8;;"
+db+2,3;m,m;12,15;,i19;-13 / +13;+8 / +24 (+14);;"
 * Tornado
 * Input can be held to power up and deal more chip damage on block
 "
-db+4;l;19;i21~22;-26;+5c;Launch;
-DEN.1;h;14;i11~12;+1;;;"
-* Transition to SEN (-3/+4/+4) with input F
+db+4;l;19;i21~22;-26;+5c;+29a;
+DEN.1;h;14;i11~12;+1 / -3 SEN;+8 / +4 SEN;;"
+* Transition to SEN with input F
 "
 DEN.1+2;h;20;i12~13;-10;+63a (+47);;"
 * Tornado
 * Balcony Break
 "
-DEN.1,2;h,h;14,20;,i14~15;-6;;;"
+DEN.1,2;h,h;14,20;,i14~15;-6;+47a (-11);;"
 * Heat Engager
 
 * Balcony Break
 "
-DEN.2;m;19;i17~19;-7;+7;;"
-* Transition to Avalanche Flip on hit (-/+9/+9) with input UF
+DEN.2;m;19;i17~19;-7;+7 / +9 Flip;;"
+* Transition to Avalanche Flip on hit with input UF
 "
 DEN.2+3;;;;;;;
-DEN.3;m;23;i22~23;+3;;;"
+DEN.3;m;23;i22~23;+3;+5;;"
 * Heat Engager
 
 * Homing
-* Transition to SEN (does not transition when using Heat Dash)
+* Transition to SEN (cannot cancel, does not transition when using Heat Dash)
 * chip damage on block
 "
-DEN.3+4;l;21;i22~23;-14;-3;;"
-* Transition to SEN (-7/+4/+12) with input F
+DEN.3+4;l;21;i22~23;-14 / -7 SEN;-3 / +4 SEN;+5 / +12 SEN;"
+* Transition to SEN with input F
 "
 DEN.4;l;14;i23~25;-12;+1;;"
 * Transition to LEN with input D
@@ -134,22 +135,22 @@ DEN.B;sp;;;;;;"
 DEN.n,F;sp;;;;;;"
 * Transition to SEN
 "
-df+1;m;;;-1;+5;;
-df+2;m;15;i14;-3;+9 SEN;;"
+df+1;m;;i13;-1;+5;;
+df+2;m;15;i14;-11 / -3 SEN;+1 / +9 SEN;+31 (+23) / +39 (+31);"
 * Transition to SEN
-* Cancel SEN transition to (-11/+3/KND) standing with input B
+* Cancel SEN transition to standing with input B
 "
-df+3;m;15;i16;;;;"
+df+3;m;15;i16;-7 / -4 DEN;+5 / +8 DEN;;"
 * Transition to DEN with input D
 "
-df+3,3;m,m;15,24;,i25~26;;+29 (+14);;
-f+1;h;10;i13;;;;
+df+3,3;m,m;15,24;,i25~26;-15;+29 (+14);;
+f+1;h;10;i13;-5;+6;;
 f+1+2;m;20;i15~16;-13;+28;;
-f+1,2;h,m;10,11;,i12;;+6 SEN;;"
+f+1,2;h,m;10,11;,i12;-5 SEN;+6 SEN;;"
 * Transition to SEN
 * Cancel SEN transition to standing with input B (-8/+3/+3)
 "
-f+1,2,3;h,m,m;10,11,20;,i24;;+48 (-10);;"
+f+1,2,3;h,m,m;10,11,20;,i24;-12 / -5 DEN;+41d (-17) / +48d (-10) DEN;;"
 * Transition to DEN
 * Cancel DEN transition to standing with input B
 * Balcony Break
@@ -157,8 +158,9 @@ f+1,2,3;h,m,m;10,11,20;,i24;;+48 (-10);;"
 f+1+4;m;28;i13~14;-18;+18 (+8);;"
 * Balcony Break
 "
-f+2;h;10;i12;;;;
-f+2,1;h,h;10,15;,i13;-5;+6;;"
+f+2;h;10;i12;-6;+3;;
+f+2,1;h,h;10,15;,i13;-6 / -5 DEN;+5 / +6 DEN;;"
+* Jails
 * Transition to SEN
 * Cancel SEN transition to standing with input B (-6/+5/+5)
 "
@@ -168,17 +170,17 @@ f+2,4;h,h;10,22;,i18~19;-12;+15 (+6);;"
 f+3;sp;;;;;;"
 * Transition to DEN
 "
-f+4;m;12;i17;;;;
-f+4,1;m,m;12,8;,i21~22;;;;
-f+4,1,2;m,m,m;12,8,8;,i12;;;;
-f+4,1,2,1;m,m,m,m;12,8,8,20;,i24~25;;+19 (+9);;"
+f+4;m;12;i17;-9;+7;;
+f+4,1;m,m;12,8;,i21~22;-9;+2;;
+f+4,1,2;m,m,m;12,8,8;,i12;-10;+2;;
+f+4,1,2,1;m,m,m,m;12,8,8,20;,i24~25;-14;+19 (+9);;"
 * Balcony Break
 "
 FC.1+2;ll;24;i18;-12;+1;;"
 "
-FC.df+2;m;19;i15~16;;+5;;"
+FC.df+2;m;19;i15~16;-8;+5;+63a;"
 "
-f,F+1+2;m;20;i16~17;;+14 (+5);;"
+f,F+1+2;m;20;i16~17;-9;+14 (+5);;"
 * Balcony Break
 * chip damage on block
 "
@@ -186,27 +188,27 @@ f,F+2;m;20;i21~22;-13;+35a;;"
 * Transition to SEN on hit with input F
 * Tornado
 "
-f,F+3+4;ll;26;i19~20;;+0c;;
-f,F+4;l;12;i21;-31;;;
-f,F+4,2;l,h;12,15;,i24;;+9 DEN;;
-f,F+4,3;l,m;12,20;,i28;;-3;;
-f,f,F+2+4;th(h);40;i11;;;;"
+f,F+3+4;l,l;26;i19~20;-16;+0c;;
+f,F+4;l;12;i21;-31;+5;;
+f,F+4,2;l,h;12,15;,i24;-7 DEN;+9 DEN;;Cannot cancel DEN transition
+f,F+4,3;l,m;12,20;,i28;-16;-3;;
+f,f,F+2+4;th(h);40;i11;-3;0;;"
 * Throw break: 1+2
 * Opponent status on hit: FDFA
 "
-f,f,F+3;m;30;i20~26;;+33 (-25);;"
+f,f,F+3;m;30;i20~26;+6;+33 (-25);;"
 * Balcony Break
 * chip damage on block
 "
-f,n,b+2;m;10;i14;-12;;;
+f,n,b+2;m;10;i14;-12;0;;
 f,n,b+2,1;m,m;10,10;,i16;-18;+47a (+39);;
-H.2+3;m;50;i18~19;;+0;;"
+H.2+3;m;50;i18~19;+8 (+10 DEN);+0;;"
 * Heat Smash
 * Spike
 * Transition to DEN on block
 * Cancel auto-DEN transition with input B
 "
-H.f+3+4;sm;5 (5);i18~24;;+10;;"
+H.f+3+4;sm;5 (5);i18~24;+5;+10;;"
 * Transition to SEN
 * Partially uses remaining heat time
 "
@@ -214,7 +216,7 @@ H.LEN.1;l,th;20,15;i16~17;-12c;+5;;"
 * Side switch on hit throw
 * Opponent is left FUFA
 "
-Left throw;th(h);40;i12~14;;;;"
+Left throw;th(h);40;i12~14;-3;0;;"
 * Throw break: 1
 * Opponent status on hit: FUFT
 "
@@ -222,26 +224,28 @@ LEN.1;l;20;i16~17;-12;+4;;
 LEN.2;m;20;i16~17;-9;+25 (+15);;"
 * Tornado
 "
-R.df+1+2;m;55;i20;;;;"
+R.df+1+2;m;55;i20;-15;0;;"
 * [[:Template:RageArt]]
 * Erase opponent's recoverable health on hit
 "
-Right throw;th(h);40;i12~14;;;;"
+Right throw;th(h);40;i12~14;-3;+1;;"
 * Throw break: 2
 * Opponent status on hit: FUFA
 "
-SEN.1;m;26;i12~13;-6;;;"
+SEN.1;m;26;i12~13;-6;+23a (+13);;"
 * Heat Engager
 
 * Balcony Break
 "
-SEN.1+2;m;21;i14~16;-9;+20 (+3);;"
+SEN.1+2;m;21;i14~16;-9;+20a (+3);;"
 * Tornado
 * Balcony Break
 "
-SEN.2;l;23;i17~19;-12;+6c;;
+SEN.2;l;23;i17~19;-12;+6c;+73a (+57);"
+* Tornado
+"
 SEN.3;m;20;i14~16;-14;+29a (+19);;
-SEN.3+4;mm;22 (11);i13~14,i18~19;+0;+22 (-13);;"
+SEN.3+4;mm;22 (11);i13~14,i18~19;+0;+22d (-13);;"
 * Spike
 * chip damage on block
 "
@@ -255,13 +259,13 @@ SEN.B;sp;;;;;;"
 SEN.D;sp;;;;;;"
 * Transition to LEN
 "
-SS.2;m;20;i16~17;;+22;;"
+SS.2;m;20;i16~17;-7;+22d;;"
 "
-uf+1+2;th(h);35;i12~14;;;;"
+uf+1+2;th(h);35;i12~14;-3;0;;"
 * Throw break: 1+2
 * Opponent status on hit: FUFT
 "
-uf+3;mm;26 (9);i16~17;;+33a (+15);;"
+uf+3;mm;26 (9);i16~17;-26;+33a (+15);;"
 * Alternate input: ub+3, u+3
 "
 uf+3+4;sp;;;;;;"
@@ -270,27 +274,27 @@ uf+3+4;sp;;;;;;"
 uf+3+4,1+2;sp,th(h);40;,i9~11;;+1;;"
 * Throw break: 1+2
 "
-uf+3+4,4;sp,m;40;,i17~18;;;;
-uf+4;m;20;i25~27;;+42;;"
+uf+3+4,4;sp,th(m);40;,i17~18;-4;0;;
+uf+4;m;20;i25~27;-8;+42a;;"
 * Alternate input: ub+4, u+4
 "
 uf,n,4;m;20;i23~25;-13;+32a (+22);;
-ws1;m;16;i15~16;-12;+38a;;"
+ws1;m;16;i15~16;-12;+38a / +36a SEN;;"
 * Tornado
-* Transition to [[Lars combos#Staples|+36a]] SEN with F on hit
+* Transition to SEN with F on hit
 "
-ws2;m;13;i13~14;-8;+3;;"
-* Transition to -12 -1 DEN with D
-* Transition to -5 +6 SEN with F
+ws2;m;13;i13~14;-8 / -12 DEN / -5 SEN;+3/ -1 DEN / +6 SEN;;"
+* Transition to DEN with D
+* Transition to SEN with F
 "
-ws2,1;m,m;13,17;,i23~24;-12;+2;;"
+ws2,1;m,m;13,17;,i23~24;-12;+2c;+4d;"
 * Combo from 1st hit
 "
-ws2,3;m,h;13,20;,i20;-15;-3;;"
+ws2,3;m,h;13,20;,i20;-15 / -11 LEN;-3 / +6 LEN;;"
 * Combo from 1st hit
-* Transition to -11 +6 LEN with D
+* Transition to LEN with D
 "
-ws3;h;30;i20;;+21 (+15);;"
+ws3;h;30;i20;0 / +4 LEN;+21 (+15) / +26 (+20) LEN;;"
 * Transition to LEN with input D
 "
 ws4;m;16;i11~12;-6;+5;;"
