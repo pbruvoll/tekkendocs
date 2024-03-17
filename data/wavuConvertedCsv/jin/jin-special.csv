@@ -4,7 +4,8 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * Balcony Break
 * Heat Engager
 "
-1,2;h,h;5,12;i10;-3;+6;;Combo from 1st hit
+1,2;h,h;5,12;i10;-3;+6;;"Jails
+Combo from 1st hit"
 1,2,1;h,h,m;5,12,20;i20-22;-16;+31a (+21);;"
 * Tornado
 "
@@ -66,7 +67,7 @@ b+3,2;m,m;17,20;i15~i16;-9~-8;+9~+10;;"
 b+3+4;;;;;;;"
 *High Crush evasion, can perform all attacks from ZEN Stance; f to shift to WR, df to shift to CD
 "
-b+3,F;mm;17,17;i15~i16;-2;+9;;
+b+3,F;m;17,17;i15~i16;-2;+9;;
 b+4;m;21;i17;-7;+15a;;
 Back Throw;h;50;;;+1;;Throw break: None
 b,f+2;m;15;i15~i16;-7;+4~+5;;
@@ -84,8 +85,7 @@ CD.df#2;h;25;i11~i12;+5~+6;+76a~+77a (+60~+61);;
 CD.df+1;m;20;i16~i17;-13~-12;+32a~+33a (+22~+23);;"
 * Tornado
 "
-CD.df+2;h;20;i11~12;-10~-9;"+74a~75a (+58~+59
-)";;
+CD.df+2;h;20;i11~12;-10~-9;+74a~75a (+58~+59);;
 CD.DF+4;l;12;i20~i21;-31~-30;+8~+9;;"
 "
 CD.DF+4,2;l,m;1228;i31~i32;-16~-15;+21a~+22a;;"
@@ -118,7 +118,7 @@ db+1+2;m;0;19;-11;+17;;"
 * Wallsplat
 "
 db+2;m;12;i16;-10;+4;+4;
-db+2,2;m,h;12,11;i8;-12;+7;+43a;
+db+2,2;m,h;12,11;i8;-12;+7;+43a;Jails
 db+2,2,3;m,h,m;12,11,21;i35~i36;-9~-8;+20a~+21a;;
 db+2,3;m,m;12,23;i27~i29;-8~-6;+7a~+9a;;"
 * Floor Break
@@ -126,11 +126,11 @@ db+2,3;m,m;12,23;i27~i29;-8~-6;+7a~+9a;;"
 db+3;h;28;i19~i21;-10~-8;+17a~+19a;;
 db+4;l;18;i20;-13;+3;+13;
 df+1;m;10;i13;-3;+4;+6;
-df+1,4;mh;10,18;i18;-9;+10;+17a (+8);"Combo from 1st hit
+df+1,4;m,h;10,18;i18;-9;+10;+17a (+8);"Combo from 1st hit
 
 * Balcony Break
 "
-df+1,4~4;mm;10,24;i20;-12;+10a (+1);;"
+df+1,4~4;m,m;10,24;i20;-12;+10a (+1);;"
 * Balcony Break
 "
 df+2;m;12;i16;-9;+6;;"
@@ -151,8 +151,9 @@ df+4;m;22;i20~i21;+0~+1;+8c~+9c/HE;;"
 * Heat Engager
 
 "
-f+1+2;h,h;14,24;i14;-6;+21a (+11);;"
+f+1+2;h,h;14,24;i14;-6;+21a (+11);;" 
 * Balcony Break
+* Jails
 "
 f+3;m;12;i14;-16;-5;;
 f+3,1;m,m;12,17;i22;-12;+4;;"Heat Engager
@@ -223,7 +224,9 @@ R.df+1+2;m,th,th;10,10,35;;;;;"
 * Erases opponent's recoverable health on hit
 "
 Right Throw;h;40;;-3;+0;;Throw break: 2
-ub+1+2;m!;50;i75~i76;;+9a (0);;
+ub+1+2;m!;50;i75~i76;;+9a (0);;"
+Unblockable
+"
 ub+1+2,b,b;m!;50;;;;;
 uf+1+2;h;2,2,4,4,28 (40);i12;+0;+0;;"
 * Floor Break
@@ -241,7 +244,7 @@ ws1,2;m,m;10,16;i19~20;-8~-7;+3~+4;;"
 * Transition to -9 (ob) +2 (oh) ZEN with F
 * Floor Break
 "
-ws1,3;m,h;10,8;i14;-6;+4;;
+ws1,3;m,h;10,8;i14;-6;+4;;Jails
 ws1,3,2;m,h,m;10,8,4;i18;-11;-6;;
 ws1,3,2,1;m,h,m,m;10,8,4,3;i10;-11;+3;;
 ws1,3,2,1,4;m,h,m,m,l;10,8,4,3,5;i20;-31;+8;;

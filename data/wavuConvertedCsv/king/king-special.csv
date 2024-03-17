@@ -5,7 +5,8 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * Shifts into backturn stance.
 "
 1,2;h,h;5,15;i10~12;-3;+8;;"
-* Combo from 1st hit.
+* Jails
+* Combo from 1st hit
 "
 1+2,1;m,m;17,21;i22;-13/-18;+12a(+3)/-9;;"
 * Balcony Break
@@ -285,6 +286,8 @@ d+2;s.l;8;i11;-4;+7;;"
 * Can also be done by FC.d+2/FC.db+2.
 "
 d+2+3;m;25;i30~35;-8;+0c;;"
+*
+Floor Break
 * Hits OTG.
 * Forces Crouching on hit.
 "
@@ -438,7 +441,7 @@ f+1+4;m;21;i17~19;+3;+7s;;"
 f+2;m;12;i15~16;-11;+2s;;"
 * Forces standing on hit.
 "
-f+2,1;m,h;12,25;i15~16;+1;+17g/+16d;;"
+f+2,1;m,h;12,25;i15~16;-9;+17g/+16d;;"
 * Heat Engager
 
 Balcony Break
@@ -456,6 +459,7 @@ f+2+3;m;27;i20~24;-9;+17g/+9d;;"
 * +9 on hit during heat or after heat.
 "
 f+2,d+1;m,m;12,16;i22;-13c;+2c;;"
+* Floor Break
 * Forces crouching on block and hit.
 * Not combo even on CH, only combo from hitting behind.
 "
@@ -493,7 +497,7 @@ Floor Break
 * 1+2 throw break.
 * Opponent recovers in FUFR.
 "
-FC.df+1/CD.1;l;20;i32~34;-12;+73a(+57);;"
+FC.df+1;l;20;i32~34;-12;+73a(+57);;"
 * Can also be done by f,n,d,DF+1/CD.1.
 * Tornado on grounded hit.
 "
@@ -542,17 +546,17 @@ f,F,4;m;25(30,14);i15;-15;+14a(+4);+1d;"
 * Balcony Break
 * Shifts to throw on front grounded CH.
 "
-f,f,F+2;t;40(45);i10;;+1d;;"
+f,f,F+2+4;t;40(45);i10;;+1d;;"
 * 1+2 throw break.
 * Input quickly to ""blue spark"" (+5 damage).
 * Partially restores remaining Heat time.
 * Opponent recovers in FUFL.
 "
-f,f,F,3 / wr3;m;25;i20~25;+3;+30(+22);;"
+f,f,F,3;m;25;i20~25;+3;+30(+22);;"
 Balcony Break
 * Chip damage on block.
 "
-f,f,F,3+4 / wr3+4;m;40;i28~34;+17;+32d(-26);;"
+f,f,F,3+4;m;40;i28~34;+17;+32d(-26);;"
 Balcony Break
 "
 f,f,n,1+2;m;0;i9;+0;+7s;+18s;"
@@ -668,8 +672,8 @@ JGS.3,2+3;m,m,t;23/27/34,20,15;i21~43;-16c~+2c;-19c~+3c/-5d;;"
 "
 JGS.4;h;40/42/52;i17~18;+8/+15;+5a(-4)/+10a(+1);;"
 * Balcony Break
+* Guard Break
 * Chip damage on block.
-* Guard Break (From 2nd spin on)
 * On block / hit increases up to 2nd spin.
 * Damage increase up to 3rd spin.
 "

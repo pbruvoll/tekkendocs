@@ -1,7 +1,7 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes
-1;h;5;i10;+1;;;"
+1;h;5;i10;+1;+8;;"
 "
-1,1;h,h;5,1;,i16;-3;;;"
+1,1;h,h;5,1;,i16;-3;+8;;"
 "
 1,1,2;h,h,hh;5,1,5,10;,i17~18,i9~10;-12;+3;;"
 "
@@ -9,41 +9,42 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 "
 1,2;h,h;5,12;,i10;-3;+8;;"
 "
-1,2,1;h,h,m;5,12,20;,i26~27;-12;+18 (+1);;"
+1,2,1;h,h,m;5,12,20;,i26~27;-12;+18a (+1);+72a (+56);"
 * Tornado
 * Balcony Break
 "
 1+2+3+4;sp;;;;;;"
 "
-1+3;h;35;i12~14;;-2;;"
+1+3;h;35;i12~14;-3;-2;;"
 * Throw break: 1 or 2
 * Opponent recovery on hit: FDFT
 "
 1,4;h,l;5,11;,i21~22;-12;-1;-1;"
 "
-2;h;10;i12~13;-12;;;"
+2;h;10;i12~13;-12;-2;;"
 "
-2,1;h,h;10,12;,i16;-6;+5;;"
+2,1;h,h;10,12;,i16;-6 / -4 PRF;+5 / +7 PRF;;"
 * Transition to PRF with F
 "
-2,2;h,mm;10,10,5;,i17~18,i7;-12;;;"
+2,2;h,mm;10,10,5;,i17~18,i7;-12;-2;;"
+*-10 if last hit whiffs
 "
 2,2,1;h,mm,h;10,10,5,12;,i22;-3;+4;;"
 * Chip damage on block
 * Transitions to IAI on hit or block
 "
-2+3;m;12;i16;+1;;;"
+2+3;m;12;i16;+1;+2;;"
 * Heat Burst
 * Alternate input: R1
 * Can be cancelled with input b,b
 "
 2+3+4;sp;;;;;;"
 "
-2+4;h;35;i12~14;;-4;;"
+2+4;h;35;i12~14;-3;-4;;"
 * Throw break: 1 or 2
 * Opponent recovery on hit: opp. side FDFT off-axis to the right
 "
-3;h;11;,i12~13;-9;;;"
+3;h;11;,i12~13;-9;+2;;"
 "
 3,1+2;h,hh;11,9,10;,i19~20,i8~9;-9;+5;;"
 *Hit confirmable
@@ -54,24 +55,24 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 3+4;sp;;;;;;"
 * Can cancel into FC with db
 "
-4;h;15;i13~14;-9;;;"
+4;h;15;i13~14;-9;+1;;"
 "
-4,3;h,m;15,17;,i23~24;-10;;;"
+4,3;h,m;15,17;,i23~24;-10;+5;;"
 "
-4,3,2;h,m,m;15,17,25;,i25~26;-13;+34 (+13);;"
+4,3,2;h,m,m;15,17,25;,i25~26;-13;+34d (+13);;"
 * Balcony Break
 * Deals chip damage on block
 "
-b+1;m;11;i14;-13;;;"
+b+1;m;11;i14;-13 / -5 PRF;-3 / +5 PRF;;"
 * Transition to PRF with F
 "
-b+1+2;h;25;i15~16;-9;;;"
+b+1+2;h;25;i15~16;-9;+42 (-16) / HE;;"
 * Heat Engager
 
 * Balcony Break
 * Deals chip damage on block
 "
-b+1,2;m,h,th;11,16(15);,i20;-8;;;"
+b+1,2;m,h,th;11,16(15);,i20;-8;+0;;"
 * Side switch after attack throw connects
 * Hit Confirmable on counter hit
 "
@@ -79,13 +80,13 @@ b+1+4;m;24;i26~27;-21;+37 (+6);;"
 "
 b+2;h;0;i12;-9;+2;+14;"
 "
-b+3;m;15;i17;-9;;;"
+b+3;m;15;i17;-9;+4;;"
 "
-b+3,1;m,m;15,25;,i25~26;-13;+21 (+16);;"
+b+3,1;m,m;15,25;,i25~26;-13;+21a (+16);;"
 * Hit Confirmable
 * Balcony Break
 "
-b+4;h;17;i18~19;-6;+13g;;"
+b+4;h;17;i18~19;-6;+13g;+14c;"
 * Homing
 * Balcony Break
 "
@@ -96,99 +97,101 @@ Back throw;h;50;i12~14;;-3;;"
 b,B+2+3;ub(m);50;i65~66;+2 (-8);+2 (-8);;"
 * Balcony Break
 "
-CH.d+4;l,th;12,18;i16;;-3;th;"
+CH.d+4;l,th;12,18;i16;;-3;0;"
 "
-CH.db+4;l,th;20,4;i20~21;;+49;;"
+CH.db+4;l,th;20,4;i20~21;;+49a;;"
 "
-d+1;l;7;i16;-17;;;"
+d+1;l;7;i16;-17;-6;;"
 "
 d+1,1;l,h;7,15;,i18;-7;+6;;"
 "
-d+1+2;sm;21;i19~21;-9;+17 (+10);;"
+d+1+2;sm;21;i19~21;-9;+17 (+10);+35a;"
 * Tornado
 * Deals chip damage on block
 "
-d+2;m;21;i18;0;;;"
+d+2;m;21;i18;0;+4 / HE;;"
 * Heat Engager
 
 * Deals chip damage on block
 "
 d+3;l;11;i18~19;-13;-2;;"
 "
-d+4;l;10;i16;-14;-3;th;"
+d+4;l;10;i16;-14;-3;+0 (th);"
 "
-db+1;m;9;i14~15;-9;;;"
+db+1;m;9;i14~15;-9;-2;;"
 "
-db+1,1;m,m;9,9;,i21~22;-7;+2;;"
+db+1,1;m,m;9,9;,i21~22;-7 / -5 PRF;+2 / +4 PRF;;"
 * Transition to PRF with F
 "
-db+3;h;20;i19~20;-8;+40 (-18);;"
+db+3;h;20;i19~20;-8;+40a (-18);;"
 * Tornado
 * Balcony Break
 "
-db+4;l;17;i20~21;-26;+4c;Launch;"
+db+4;l;17;i20~21;-26;+4c;+49a;"
 "
-df+1;m;10;i13~14;-12;;;"
+df+1;m;10;i13~14;-12;+4;;"
 "
 df+1,1;m,hh;10,7,7;,i20;-4;+7;;"
 "
-df+2;m;14;i15~16;-14;+31 (+21);;"
+df+2;m;14;i15~16;-14;+31a (+21);;"
 "
-df+3;m;10;i16;-9;;;"
+df+3;m;10;i16;-9;+2;;"
 "
 df+3+4;m;32;i14~15;-17;+16 (+11);;"
 * Balcony Break
 "
-df+3,4;m,m;10,14;,i21;-9;;;"
+df+3,4;m,m;10,14;,i21;-9;+2;;"
 * Knee
 "
-df+3,4,2;m,m,sm;10,14,23;,i32~34;-9;+17 (+10);;"
+df+3,4,2;m,m,sm;10,14,23;,i32~34;-9;+17a (+10);;"
 * Tornado
 * Deals chip damage on block
 "
-df+4;m;15;i13~14;-9;;;"
+df+4;m;15;i13~14;-9;+5;;"
 * Knee
 "
 df+4,2;m,h;15,16;,i22;-3;+4;;"
+* Only occurs on hit or block
 * Deals chip damage on block
-* Transitions to IAI
+* Transitions to IAI (cannot cancel)
 "
-f+1+2;m;35;i24~25;-9;;;"
+f+1+2;m;35;i24~25;-9;-1 / HE;;"
 * Balcony Break
 * Heat Engager
 
 * Deals chip damage on block
 * Partially restores Heat on hit
 "
-f+2;h;10;i13~14;-11;;;"
+f+2;h;10;i13~14;-11;+5;;"
 "
-f+2,2;h,h;10,10;,i11;-15;;;"
+f+2,2;h,h;10,10;,i11;-15;-4;;"
 "
-f+2,2,1;h,h,m;10,10,12;,i13~14;-11;;;"
+f+2,2,1;h,h,m;10,10,12;,i13~14;-11;0;;"
 "
 f+2,2,1,1;h,h,m,m;10,10,12,25;,i20~21;-15;+20 (+15);;"
 * Balcony Break
 * Hit confirmable if (f22)1 is ch
 "
-f+2,2,2;h,h,hmm;10,10,7,5,20;,i14,i12~13,i7~8;-13;+20;;"
+f+2,2,2;h,h,hmm;10,10,7,5,20;,i14,i12~13,i7~8;-13;+20a;;"
 * Balcony Break
 "
-f+3;sp;;;-8;;;"
+f+3;sp;;;;;;"
 * Can cancel into FC with df
 "
 f+3;sp;;;;;;"
 * Can transition to FC with df
 "
-f+4;m;15;i14;-10;;;"
+f+4;m;15;i14;-10;0;;"
 "
-f+4,1;m,h;15,21;,i23~24;-4;;;"
+f+4,1;m,h;15,21;,i23~24;-4;+18a (+9) / HE;;"
 * Balcony Break
 * Heat Engager
 
 * Hit Confirmable
 "
-f+4,2;m,m;15,20;,i26~27;-12;+5c;;"
+f+4,2;m,m;15,20;,i26~27;-12;+5;+7a / +5;"
 * Hit Confirmable
+* CH on last hit causes knockdown
 "
 FC.1+2;lh;10,10;i16,i10~11;-23, -13;+0;;"
 "
@@ -207,28 +210,28 @@ H.2+3;l;39;i20;-15;th;th;"
 H.IAI.d+2;m;45;i23~24;+8;+20 (+2);;"
 * Transition to IAI on hit
 "
-H.u+1+2;m;54;i31~32;-4;;;"
+H.u+1+2;m;54;i31~32;-4;0a (-1);;"
 * Alternate input: H.ub+1+2
 * Balcony Break
 "
-IAI.1;m;9;i13~14;-12;;;"
+IAI.1;m;9;i13~14;-12;+1;;"
 "
-IAI.1,1;m,m;9,21;,i25~26;-14;+15c;;"
+IAI.1,1;m,m;9,21;,i25~26;-14 / -11 IAI;+15 / +2 IAI;;"
 * Tornado
 * Balcony Break
 * Can cancel the second hit by holding down or pressing 3+4. Will transition to IAI
 * Hit confirmable
 "
-IAI.1,1+2;m,h;9,23;,i20~21;+3;+20 (-6);;"
+IAI.1,1+2;m,h;9,23;,i20~21;+3;+20a (-6);;"
 * Deals chip damage on block
 "
 IAI.1+2;h;30;i20~21;+3;+20 (-6);;"
 * Deals chip damage on block
 "
-IAI.1,2;m,m;9,15;,i22~24;-19;;;"
+IAI.1,2;m,m;9,15;,i22~24;-19;+25a (+10);;"
 * Hit Confirmable
 "
-IAI.1,2,2;m,m,m;9,15,16;,i23~24;-18;+8 (-27);;"
+IAI.1,2,2;m,m,m;9,15,16;,i23~24;-18;+8a (-27);;"
 * Spike
 * Deals chip damage on block
 "
@@ -239,10 +242,11 @@ IAI.2;m;23;i16~17;-7;+15 (+5);;"
 IAI.3;m,th(m);13 (25);i17;-14;+25 (+10);;"
 * Knee
 "
-IAI.4;l;17;i18~19;-13;+3;;"
+IAI.4;l;17;i18~19;-13;+3;+8;"
 "
-IAI.4,1;l,h;17,25;,i26~27;-5;+26 (+0);;"
+IAI.4,2;l,h;17,25;,i26~27;-5;+26 (+0);+55a (+35);"
 * Balcony Break
+* Tailspin
 "
 IAI.b;sp;;;;;;"
 "
@@ -250,7 +254,7 @@ IAI.d;sp;;;;;;"
 "
 IAI.d+1+2;ll;10,20;i20~21,i14~15;-29;-3;;"
 "
-IAI.d+2;m;31;i23~24;+1;+0 (-7);;"
+IAI.d+2;m;31;i23~24;+1;-1 (-8);;"
 * Transition to IAI
 * Deals chip damage on block
 "
@@ -261,27 +265,27 @@ IAI.P.f;m;21;i16~17;;+60 (+44);;"
 * Balcony Break
 * Tornado
 "
-Left throw;h;40;i12~14;;-2;;"
+Left throw;h;40;i12~14;-3;-2;;"
 * Throw break: 1
 * Opponent recovery on hit: FDFT
 "
-PRF.1;l;17;i19~20;-13;+4c;;"
+PRF.1;l;17;i19~20;-13;+4;;"
 "
-PRF.1+2;m;25;i25~27;+4;+14;;"
+PRF.1+2;m;25;i25~27;+4;+14a;;"
 * Balcony Break
 * Deals chip damage on block
 "
 PRF.2;m;9;i12~13;-8;+1;;"
 "
-PRF.2,2;m,m;9,13;,i13~14;-4;+1;;"
-* Transition to IAI
+PRF.2,2;m,m;9,13;,i13~14;-4 IAI;+5 IAI;;"
+* Transition to IAI (Cannot cancel)
 "
-PRF.2,2,1;m,m,h;9,13,20;,i12~13;-1;+12;;"
+PRF.2,2,1;m,m,h;9,13,20;,i12~13;-1;+12;+55a;"
 * Balcony Break
 "
-PRF.2,2,1+2;m,m,m;9,13,31;,i12;-13;+7;;"
+PRF.2,2,1+2;m,m,m;9,13,31;,i12;-13;+7d;;"
 "
-PRF.3;m;21;i15~17;-8;;;"
+PRF.3;m;21;i15~17;-8;+41 (-17);;"
 * Heat Engager
 
 * Balcony Break
@@ -302,28 +306,28 @@ R.df+1+2;m;55;i20;-15;th;th;"
 * Removes recoverable health on hit
 * Alternate input: R.R2
 "
-Right throw;h;40;i12~14;;-4;;"
+Right throw;h;40;i12~14;-3;-4;;"
 * Throw break: 2
 * Opponent recovery on hit: opp. side FDFT off-axis to the right
 "
 SS.1+2;m;25;i18~19;-9;+15 (+5);;"
 * Balcony Break
 "
-u+1+2;m;40;i31~32;-20;;;"
+u+1+2;m;40;i31~32;-20;+1a;;"
 * Deals chip damage on block
 "
 ub,b;sp;;;;;;"
 "
-uf+1;m;9;i13;-9;;;"
+uf+1;m;9;i13;-9;+4;;"
 * Alternate input: ub+1 or u+1
-* Hit confirmable
 "
-uf+1,1;m,m;9,21;,i25~26;-14;+15c;;"
+uf+1,1;m,m;9,21;,i25~26;-14 / -10 IAI;+15 / +3 IAI;;"
 * Tornado
 * Balcony Break
+* Hit confirmable
 * Cancel the second hit with down or 3+4 to go into IAI
 "
-uf+1+2;h;40;i12~14;;-4;;"
+uf+1+2;h;40;i12~14;-3;-4;;"
 * Spike
 * Throw break: 1+2
 * Opponent recovery on hit: FUFA
@@ -331,7 +335,7 @@ uf+1+2;h;40;i12~14;;-4;;"
 uf+2;;15;i19~20;-9;+7;;"
 * Homing
 "
-uf+3;m;17;i18~19;-9;+3;;"
+uf+3;m;17;i18~19;-9;+3;+36d;"
 * Alternate input: ub+3 or u+3
 "
 uf+4;m,sm;12,16;i15~17;-19;+73 (+57);;"

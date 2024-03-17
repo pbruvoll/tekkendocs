@@ -1,6 +1,6 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes
 1;h;5;i10;+1;+8;;
-1,1;h,h;5,6;,i15;-1;+8;;Combo from 1st hit
+1,1;h,h;5,6;i15;-1;+8;;Combo from 1st hit
 1,1,2;h,h,m;5,6,12;i13;-17;"&lt;div class=&quot;plainlist&quot;&gt;
 * +11 SEN
 * +2 (cancel)
@@ -10,13 +10,14 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * Can be delayed 11F
 "
 1+2;m;25;i12~13;-10;+24 (+14);;
-1,2;h,h;5,8;,i10;-3;+8;;
-1,2,2;h,h,h;5,8,14;,i17;-14;+0;;"
+1,2;h,h;5,8;i10;-3;+8;;Jails from 1st hit
+1,2,2;h,h,h;5,8,14;i17;-14;+0;;"
+Jails from 2nd hit
 "
-1,2,3;h,h,m;5,8,10;,i21;-10;+1;;
+1,2,3;h,h,m;5,8,10;i21;-10;+1;;
 1+2+3+4;sp;;;;;;
 1,2,3,4;h,h,m,h;5,8,10,21;i22~23;-4;+21 (+12);;Natural on 3rd hit
-1+3;th(h);35;i12~14;;;;"
+1+3;th(h);35;i12~14;0;0;;"
 * Throw break 1 or 2
 * Spike
 * Opponent recovery on hit: FUFA off-axis to the left
@@ -26,26 +27,27 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 2~1;mm;4,18;i11(~14);-14;+31 (+23);;"
 * Just Frame version creates a blue spark
 "
-2,2;h,h;12,6;,i14~15;-11;0;0;"
+2,2;h,h;12,6;i14~15;-11;0;0;"
+Jails from 1st hit
 "
-2,2,1;h,h,m;12,6,20;,i22~23;-14;KND;;"
+2,2,1;h,h,m;12,6,20;i22~23;-14;KND;;"
 * Balcony Break
 "
-2,2,2;h,h,m;12,6,21;,i29;-4;+6;;"
+2,2,2;h,h,m;12,6,21;i29;-4;+6;;"
 "
-2,2,2,1;h,h,m,m;12,6,21,20;,i35~37;-15;+30 (+20);;"
+2,2,2,1;h,h,m,m;12,6,21,20;i35~37;-15;+30 (+20);;"
 * Tornado
 "
-2,2,2,2;h,h,m,m;12,6,21,25;,i31;-14;+21 (+0);;"
+2,2,2,2;h,h,m,m;12,6,21,25;i31;-14;+21 (+0);;"
 * Balcony Break
 * Extra damage with input qcf+2
 "
-2+3;m;12;i16;+1;;;"
+2+3;m;12;i16;+1;+2;;"
 * Heat Burst
 * Alternate input: R1
 "
 2+3+4;sp;;;;;;Input D to get Heihachi's secret taunt
-2+4;th(h);35;i12~14;;;;"
+2+4;th(h);35;i12~14;0;0;;"
 * Throw break: 1 or 2
 * Opponent recovery on hit: FUFA
 "
@@ -53,17 +55,17 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 3,2;h,h;12,16;i20;-9;+8;;"Tornado
 Natural on 1st hit"
 3+4;mm;15;i18;-8;+3c;;
-3,4;h,m;12,20;,i20;-14;+50 (+19);Launch;Natural on 1st hit
-3+4,4;mm,m;15,20;,i16;-14;+50 (+19);Launch;
-3+4,4,H.4;mm,m,m;15,20;;;;;"
+3,4;h,m;12,20;i20;-14;+50 (+19);Launch;Natural on 1st hit
+3+4,4;mm,m;15,20;i16;-14;+50 (+19);Launch;
+3+4,4,H.4;mm,m,m;15,20;;-8;+23a (+3) / -2a (-3);;"
 "
-3,4,H.4;h,m,m;12,20;;;;;"
+3,4,H.4;h,m,m;12,20;,i27;-8;+23a (+3) / -2a (-3);;"
 "
 4;h;20;i13~14;-8;+11g;KND;Balcony Break
 b+1;h;14;i18;-4;+6;;
-b+1,1;h,m;14,15;,i22;-10;-4;;
-b+1,1,3;h,m,m;14,15,13;,i15~17;-10;+3;;Transition to SEN with F
-b+1,1,3,3;h,m,m,m;14,15,13,20;,i32;-16;+48 (+17);Launch;
+b+1,1;h,m;14,15;i22;-10;-4;;
+b+1,1,3;h,m,m;14,15,13;i15~17;-10;+3;;Transition to SEN with F
+b+1,1,3,3;h,m,m,m;14,15,13,20;i32;-16;+48 (+17);Launch;
 b+1+2;m;20;i18;-13;+14;;Powercrush mid that knocks down opponent for a very short period. It can Wall splat.
 b+1+3;;;;;;;"
 * Converts incoming damage to recoverable health
@@ -72,11 +74,18 @@ b+1+3;;;;;;;"
 "
 b+1+4;ub(m);50;i64;+20 (-1);+20 (-1);;Balcony Break
 b+2;m;14;i16~17;-9;+3;;Homing
-b+3;sp;;;;;;See also [[Reina_tech#Unsoku Cancel|Unsoku Cancel]]
+b+3;sp;;;;;;
+b+3;sp;;;;;;"
+* Partially drains heat meter when in heat
+* Alternate input: u+3 or d+3
+* Can transition to SEN with f+3
+* Can transition to WGS with DF
+* See also [[Reina_tech#Unsoku Cancel|Unsoku Cancel]]
+"
 b+4;h;20;i18;-8;35;Tornado;"
 * Tornado
 "
-Back throw;th(h);50;i12~14;;;;"
+Back throw;th(h);50;i12~14;;0;;"
 * Break: none
 * Opponent recovery on hit: FDFA
 "
@@ -87,32 +96,27 @@ d+1;sm;5;i10;-5;+6;;"
 * Returns to standing when input F
 "
 d+1+2;sp;;;;;;"
-* Transition to SEN with f+3
-* Transition to WGS with DF
 "
 d+1+2;sp;;;;;;"
+* Transition to SEN with f+3
+* Transition to WGS with DF
 "
 d+2;m;17;i15;+0;+3c;+27d;
 d+3;sp;;;;;;"
 "
-d+3;sp;;;;;;"
-* Partially drains heat meter when in heat
-* Can transition to SEN with f+3
-* Can transition to WGS with DF
-"
 d+4;l;7;i12;-13;-2;;
 db+2;l,l;10,12;i20~21,i9~10;-16;-3;;
 db+4;l;7;i16;-13;-2;+2;
-db+4,1+2;l,m;7,20;,i15;-12;+39 (+19);;"
+db+4,1+2;l,m;7,20;i15;-12;+39 (+19);;"
 * Balcony Break
 * Natural on CH
 "
 df+1;m;8;i13~14;-3;+4;;"
 * Transition to SEN with F
 "
-df+1,1;m,h;8,10;,i20;-4;+7;;"
+df+1,1;m,h;8,10;i20;-4;+7;;"
 "
-df+1,2;m,m;8,20;,i22~23;-14;KND;;"
+df+1,2;m,m;8,20;i22~23;-14;KND;;"
 * Heat Engager
 
 "
@@ -121,21 +125,22 @@ df+3;sp;;;;;;"
 * Transition to SEN with input WGS.f+3
 "
 df+3+4;mh;5,10;i16,i5~9;-15;+2;;
-df+3+4,4;mh,m;5,10,20;,i20;-4;+50 (+19);Launch;
+df+3+4,4;mh,m;5,10,20;i20;-4;+50 (+19);Launch;
 df+4;m;14;i15;-4;+7;;"
 "
-df+4,2;m,m;14,10;,i18;-8;+6;;"
+df+4,2;m,m;14,10;i18;-8;+6;;"
 * Transition to WRA with D
 * Natural on 1st hit
 "
-df+4,2,3;m,m,h;14,10,20;,i27;-8;+35;Tornado;"
+df+4,2,3;m,m,h;14,10,20;i27;-8;+35;Tornado;"
 * Tornado
 * Natural on 2nd CH
 "
 f+1+2;m;22;i32;-11;+7;;"
-* Transition to UNS with 1+2
 "
-f+2;h;8;i13;-9;-3;;
+f+1+2,3;m,l;22,26;i32;-26;-4;;"
+"
+f+2;h;8;i13;-9;-3;;Transition to UNS with input u or d
 f+2,3;h,m;8,16;i18~19;-9;+2;;"
 * Natural on 1st hit
 * Transition to SEN with F
@@ -147,10 +152,10 @@ f+3;sp;;;;;;
 f+3+4;m;25;i43;-14;+50 (+19);Launch;"
 * can be cancelled into crouch with D
 "
-f+3+4*;m;30;i67;+10;+52;;"
+f+3+4*;m;30;i67;[[Reina_combos#Mini-combos|+10]];+52;;"
 * can be cancelled into crouch with D
 "
-f+3+4,H.4;m,m;25;;;;;"
+f+3+4,H.4;m,m;25;;-8;+23a (+3) / -2a (-3);;"
 "
 f+4;m;20;i19~20;+2c;+5c;KND;+13c on crouching hit
 FC.df+3;m;25;i20;-17;+54;;"
@@ -201,13 +206,13 @@ H.WRA.2+3;l;40;i18~19;-17;Th;Th;"
 * Heat Smash
 * Alternate input: H.WRA.R1
 "
-Left throw;th(h);40;i12~14;;;;"
+Left throw;th(h);40;i12~14;-3;0;;"
 * Throw break: 1
 * Opponent recovery on hit: FUFA off-axis to the left
 "
-OTG.d+4;l;11;i19;;;;
-OTG.d+4,1;l,l;11,16;,i20~21;;-15 (-23);;Just Input
-d,db,b,f+2;th(h);40;i12;;;;"
+OTG.d+4;l;11;i19;-19;-8 / -8a (16);;
+OTG.d+4,1;l,l;11,16;i20~21;-26;-10 / -15a (-23);;Just Input
+d,db,b,f+2;th(h);40;i12;0;0;;"
 * Balcony Break
 * Throw break: 2
 * Opponent recovery on hit: FUFT
@@ -216,7 +221,7 @@ R.df+1+2;m;55;i20;-15;;;"
 * Erases opponent's recoverable health on hit
 * Alternate input: R2
 "
-Right throw;th(h);40;i12~14;;;;"
+Right throw;th(h);40;i12~14;-3;0;;"
 * Throw break 2
 * Opponent recovery on hit: FUFA
 "
@@ -227,7 +232,7 @@ SEN.1+2;m,m;13,17;i14~15,i12~13;-6 SEN;+32 (+18);+32 (+18);"
 * Balcony Break
 * Transitions to WRA after recovery 
 "
-SEN.1,2;m,m;12,25;,i26;-16;+21 (+0);;"
+SEN.1,2;m,m;12,25;i26;-16;+21 (+0);;"
 * Balcony Break
 * Alternate input: qcf+2 (extra damage)
 "
@@ -253,15 +258,14 @@ SEN.4;m;24;i26~27;+4;+12g;+12g;"
 SS.4;l;17;i18~19;-13;+0;+13g;
 SSH.3;l;26;i22;-26;-4c;;"
 "
-SSH.CH.3;l;33,18;i22;;;;"
+SSH.CH.3;l;33,18;i22;;0;;"
 "
 SSH.uf;sp;;;;;;"
-* Transition to WR
 "
-SSH.uf+3;m;22;i30~33;;+32 (+24);;"
+SSH.uf+3;m;22;i30~33;+6;+32a (+24);;"
 * Balcony Break
 "
-SSH.uf+4;h;28;i32~33;;+31 (+5);;"
+SSH.uf+4;h;28;i32~33;+4 / +8 WRA;+31a (+5) / +35a (+9) WRA;;"
 * Homing
 * Balcony Break
 * Transition to WRA with D
@@ -276,17 +280,17 @@ ub+1+2;sp;;;;;;"
 uf+1;h;15;i13;-9;+8;+17;"
 * Transition to WRA on hit
 "
-uf+1+2;th(h);35;i12;;+25 (+8);;"
+uf+1+2;th(h);35;i12;0;+25 (+8);;"
 * Balcony Break
 * Throw break: 1+2
 "
 uf+3;h;10;i21~22;-10;+1;;"
 "
-uf+3,1;h,m;10,15;,i16;-5;+5;;"
+uf+3,1;h,m;10,15;i16;-5;+5;;"
 "
 uf+3+4;mm;10,10;i20,i4;-10;-1;;"
 "
-uf+3+4,1+2;mm,m;10,10,20;,i17;-14;-4;;"
+uf+3+4,1+2;mm,m;10,10,20;i17;-14;-4;;"
 "
 uf+4;m;15;i17~18;-13;+70 (+54);;"
 * Tornado
@@ -312,10 +316,10 @@ WGS.DF+4;l;6;i16;-23;+2c;;"
 * Alternate input: f,n,d,DF+4
 * Recovers Crouching
 "
-WGS.DF+4,2;l,h;6,20;,i24;-22;-1;;"
+WGS.DF+4,2;l,h;6,20;i24;-22;-1;;"
 * Transition to WRA (ob) -15, +6 (oh) WRA with D
 "
-WGS.DF+4,4;l,l;6,16;,i17~18;-23;+2;Launch;"
+WGS.DF+4,4;l,l;6,16;i17~18;-23;+2;Launch;"
 * Recovers Crouching
 "
 WRA.1;h;12;i12;-4;+8;+13;"
@@ -330,7 +334,7 @@ WRA.1+3;th(h);20;i16;;+10;;"
 * Throw break: none
 * Opponent recovery on hit: FUFT
 "
-WRA.1,4;h,m;12,22;,i25~26;-9;+9g;;"
+WRA.1,4;h,m;12,22;i25~26;-9;+9g;;"
 * Balcony Break
 "
 WRA.2;m;30;i15~16;-9;+11 (+2);;"
@@ -346,7 +350,7 @@ WRA.3;m;17;i28;-6;+22 (+12);;"
 WRA.3+4;m;26;i18~19;-5;+5;;"
 * Deals chip damage on block
 "
-WRA.3,4;m,m;17,14;,i18~19;+6;+17 (+16);;"
+WRA.3,4;m,m;17,14;i18~19;+6;+17 (+16);;"
 * Balcony Break
 * Deals chip damage on block
 * Can transition to WRA with D
@@ -354,17 +358,17 @@ WRA.3,4;m,m;17,14;,i18~19;+6;+17 (+16);;"
 WRA.4;m,m;6,8;i17~18,i13;-10;-10;+7;"
 * Entire string guaranteed on CH
 "
-WRA.4,2;m,m,m;6,8,8;,i15;-18;-7;;"
+WRA.4,2;m,m,m;6,8,8;i15;-18;-7;;"
 "
-WRA.4,2,2;m,m,m,h;6,8,8,4;,i15;-12;-1;;"
+WRA.4,2,2;m,m,m,h;6,8,8,4;i15;-12;-1;;"
 "
-WRA.4,2,2,1+2;m,m,m,h,m;6,8,8,4,22;,i24~25;-20;+24 (+3);;"
+WRA.4,2,2,1+2;m,m,m,h,m;6,8,8,4,22;i24~25;-20;+24 (+3);;"
 * Balcony Break
 * Alternate input: qcf+1+2 (extra damage)
 "
 WRA.d+4;l;9;i16~17;-15;-4;+2;"
 "
-WRA.d+4,3;l,m;9,20;,i21~22;-16;+48 (+17);Launch;"
+WRA.d+4,3;l,m;9,20;i21~22;-16;+48 (+17);Launch;"
 * Guaranteed on 1st hit CH
 "
 ws1;m;12;i13;-10;+13;;Transition to SEN on hit
@@ -372,10 +376,10 @@ ws2;m;20;i18;-8;+9;+14c;Balcony Break
 ws3;m;14;i15~16;-10;+1;;"
 "
 ws3+4;m;14;i14~15;-8;+14;+14;
-ws3,4;m,h;14,21;,i22~23;-4;+21 (+12);;"
+ws3,4;m,h;14,21;i22~23;-4;+21 (+12);;"
 * Balcony Break
 "
 ws4;m;10;i11~12;-6;+5;;
-ws4,4;m,m;10,15;,i17~18;-17;-1c;;"
+ws4,4;m,m;10,15;i17~18;-17;-1c;;"
 * Transition to -10 (ob) +6 (oh) WRA with D
 "
