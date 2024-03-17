@@ -21,6 +21,13 @@ export const getFilterFromParams = (
     homing: getSearchParamBoolean(searchParams, filterKey.Homing),
     tornado: getSearchParamBoolean(searchParams, filterKey.Tornado),
     jails: getSearchParamBoolean(searchParams, filterKey.Jails),
+    numHitsMin: getSearchParamNumber(searchParams, filterKey.NumHitsMin),
+    numHitsMax: getSearchParamNumber(searchParams, filterKey.NumHitsMax),
+    removeRecoveryHealth: getSearchParamBoolean(
+      searchParams,
+      filterKey.RemoveRecoveryHealth,
+    ),
+    chip: getSearchParamBoolean(searchParams, filterKey.Chip),
   }
 }
 

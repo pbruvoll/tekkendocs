@@ -57,6 +57,14 @@ export const jails = (move: Move) => {
   return /jail/i.test(move.notes || '')
 }
 
+export const isChip = (move: Move) => {
+  return /chip/i.test(move.notes || '')
+}
+
+export const removesRecoverableHealth = (move: Move) => {
+  return /Erases opponent/i.test(move.notes || '')
+}
+
 export const filterRows = (
   rows: string[][],
   filter: MoveFilter | undefined,
@@ -117,12 +125,30 @@ export const filterRows = (
     })
   }
 
+  if (filter.numHitsMin !== undefined) {
+    const numHits = filter.numHitsMin
+    filterFuncs.push((row: string[]) => {
+      const moveHits = (row[1] || '').split(',').length
+      return moveHits >= numHits
+    })
+  }
+
+  if (filter.numHitsMax !== undefined) {
+    const numHits = filter.numHitsMax
+    filterFuncs.push((row: string[]) => {
+      const moveHits = (row[1] || '').split(',').length
+      return moveHits <= numHits
+    })
+  }
+
   const propFilters = [
     [filter.balconyBreak, isBalconyBreak],
     [filter.heatEngager, isHeatEngager],
     [filter.homing, isHomingMove],
     [filter.tornado, isTornadoMove],
     [filter.jails, jails],
+    [filter.chip, isChip],
+    [filter.removeRecoveryHealth, removesRecoverableHealth],
   ] as const
   propFilters.forEach(([filterValue, filterFunc]) => {
     if (filterValue) {

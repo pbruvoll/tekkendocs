@@ -19,11 +19,15 @@ export const FrameDataFilterSelection = ({
     blockFrameMax,
     hitFrameMin,
     hitFrameMax,
+    numHitsMin,
+    numHitsMax,
     balconyBreak,
     heatEngager,
     homing,
     tornado,
     jails,
+    chip,
+    removeRecoveryHealth,
   } = filter
   return (
     <Flex direction="column" gap="5">
@@ -161,6 +165,12 @@ export const FrameDataFilterSelection = ({
               [filterKey.Homing, homing, 'Homing'],
               [filterKey.Tornado, tornado, 'Tornado Spin'],
               [filterKey.Jails, jails, 'Jails'],
+              [filterKey.Chip, chip, 'Chip'],
+              [
+                filterKey.RemoveRecoveryHealth,
+                removeRecoveryHealth,
+                'Removes recoverable health',
+              ],
             ] as const
           ).map(([key, value, displayName]) => {
             return (
@@ -179,6 +189,56 @@ export const FrameDataFilterSelection = ({
               </Button>
             )
           })}
+        </div>
+      </section>
+      <section className="flex flex-col gap-3">
+        <Text as="div" size="2" mb="1" weight="bold">
+          Number of hits
+        </Text>
+        <div className="flex flex-wrap gap-3">
+          <Button
+            variant={numHitsMin === 1 && numHitsMax === 1 ? 'solid' : 'outline'}
+            onClick={() => {
+              if (numHitsMin === 1 && numHitsMax === 1) {
+                removeFilterValue(filterKey.NumHitsMin)
+                removeFilterValue(filterKey.NumHitsMax)
+              } else {
+                setFilterValue(filterKey.NumHitsMin, '1')
+                setFilterValue(filterKey.NumHitsMax, '1')
+              }
+            }}
+          >
+            1
+          </Button>
+          <Button
+            variant={numHitsMin === 2 && numHitsMax === 2 ? 'solid' : 'outline'}
+            onClick={() => {
+              if (numHitsMin === 2 && numHitsMax === 2) {
+                removeFilterValue(filterKey.NumHitsMin)
+                removeFilterValue(filterKey.NumHitsMax)
+              } else {
+                setFilterValue(filterKey.NumHitsMin, '2')
+                setFilterValue(filterKey.NumHitsMax, '2')
+              }
+            }}
+          >
+            2
+          </Button>
+          <Button
+            variant={
+              numHitsMin === 3 && numHitsMax === undefined ? 'solid' : 'outline'
+            }
+            onClick={() => {
+              removeFilterValue(filterKey.NumHitsMax)
+              if (numHitsMin === 3 && numHitsMax === undefined) {
+                removeFilterValue(filterKey.NumHitsMax)
+              } else {
+                setFilterValue(filterKey.NumHitsMin, '3')
+              }
+            }}
+          >
+            3+
+          </Button>
         </div>
       </section>
     </Flex>
