@@ -23,7 +23,10 @@ export const getFilterFromParams = (
     jails: getSearchParamBoolean(searchParams, filterKey.Jails),
     numHitsMin: getSearchParamNumber(searchParams, filterKey.NumHitsMin),
     numHitsMax: getSearchParamNumber(searchParams, filterKey.NumHitsMax),
-    removeRecoveryHealth: getSearchParamBoolean(searchParams, filterKey.RemoveRecoveryHealth),
+    removeRecoveryHealth: getSearchParamBoolean(
+      searchParams,
+      filterKey.RemoveRecoveryHealth,
+    ),
     chip: getSearchParamBoolean(searchParams, filterKey.Chip),
   }
 }

@@ -12,7 +12,7 @@ export const filterKey = {
   Tornado: 'tonrnado',
   Jails: 'jails',
   Chip: 'chip',
-  RemoveRecoveryHealth: 'removeRecoveryHealth'
+  RemoveRecoveryHealth: 'removeRecoveryHealth',
 } as const
 
 export const hitLevelValue = {
