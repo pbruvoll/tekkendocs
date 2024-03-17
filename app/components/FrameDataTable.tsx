@@ -73,19 +73,7 @@ export const FrameDataTable = ({
     <Table.Root
       variant="surface"
       className={className}
-      key={
-        orderByColumnName +
-        sortDirection +
-        filter?.hitLevel +
-        filter?.blockFrameMax +
-        filter?.blockFrameMin +
-        filter?.hitFrameMin +
-        filter?.hitFrameMax +
-        filter?.balconyBreak +
-        filter?.heatEngager +
-        filter?.homing +
-        filter?.tornado
-      }
+      key={orderByColumnName + sortDirection + JSON.stringify(filter)}
     >
       {table.headers && (
         <Table.Header>
