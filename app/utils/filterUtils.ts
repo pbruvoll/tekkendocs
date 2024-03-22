@@ -5,6 +5,7 @@ import {
   getSearchParamBoolean,
   getSearchParamNumber,
   getSearchParamString,
+  getSearchParamStringList,
 } from './urlUtils'
 
 export const getFilterFromParams = (
@@ -23,6 +24,7 @@ export const getFilterFromParams = (
     jails: getSearchParamBoolean(searchParams, filterKey.Jails),
     numHitsMin: getSearchParamNumber(searchParams, filterKey.NumHitsMin),
     numHitsMax: getSearchParamNumber(searchParams, filterKey.NumHitsMax),
+    stance: getSearchParamStringList(searchParams, filterKey.Stance),
     removeRecoveryHealth: getSearchParamBoolean(
       searchParams,
       filterKey.RemoveRecoveryHealth,

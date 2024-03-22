@@ -23,3 +23,11 @@ export const getSearchParamBoolean = (
   if (valueStr == undefined) return undefined
   return true
 }
+
+export const getSearchParamStringList = <T extends string>(
+  searchParams: URLSearchParams,
+  key: string,
+): T[] | undefined => {
+  return (searchParams.getAll(key) || undefined) as T[] | undefined
+}
+

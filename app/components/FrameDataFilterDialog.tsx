@@ -11,6 +11,9 @@ export const FrameDataFilterDialog = ({
   filter,
   setFilterValue,
   removeFilterValue,
+  addFilterElement,
+  removeFilterElement,
+  stances,
 }: FrameDataFilterDialogProps) => {
   const filterCount = Object.entries(filter).filter(
     ([, value]) => value !== undefined,
@@ -32,8 +35,11 @@ export const FrameDataFilterDialog = ({
 
         <FrameDataFilterSelection
           filter={filter}
+          stances={stances}
           setFilterValue={setFilterValue}
           removeFilterValue={removeFilterValue}
+          addFilterElement={addFilterElement}
+          removeFilterElement={removeFilterElement}
         />
 
         <div className="mt-8 flex justify-end gap-3">
