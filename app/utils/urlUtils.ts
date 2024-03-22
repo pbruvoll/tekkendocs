@@ -30,4 +30,3 @@ export const getSearchParamStringList = <T extends string>(
 ): T[] | undefined => {
   return (searchParams.getAll(key) || undefined) as T[] | undefined
 }
-

@@ -158,11 +158,11 @@ export const filterRows = (
     }
   })
 
-  if(filter.stance && filter.stance.length > 0) {
-    const stance = filter.stance;
+  if (filter.stance && filter.stance.length > 0) {
+    const stance = filter.stance
     filterFuncs.push((row: string[]) => {
-      const commandStance = getStance(row[0]);
-      return !!(commandStance && stance.includes(commandStance));
+      const commandStance = getStance(row[0])
+      return !!(commandStance && stance.includes(commandStance))
     })
   }
 
@@ -199,15 +199,15 @@ export const sortRows = (
 
 export const getStances = (rows: string[][]): Set<string> => {
   return rows.reduce((stanceSet, row) => {
-    const stance = getStance(row[0]);
-    if(stance) {
+    const stance = getStance(row[0])
+    if (stance) {
       stanceSet.add(stance)
     }
-    return stanceSet;
-  }, new Set<string>);
+    return stanceSet
+  }, new Set<string>())
 }
 
 export const getStance = (command: string): string | undefined => {
-  const splitted = command.split(".");
-  return splitted.length > 1 ? splitted[0] : undefined;
+  const splitted = command.split('.')
+  return splitted.length > 1 ? splitted[0] : undefined
 }
