@@ -15,4 +15,5 @@ export type MoveFilter = {
   numHitsMax?: number
   removeRecoveryHealth?: boolean
   chip?: boolean
+  stance?: string[]
 }

@@ -1,17 +1,24 @@
 import { Button, Flex, Text } from '@radix-ui/themes'
 import { filterKey, hitLevelValue } from '~/constants/filterConstants'
+import { stanceNameMap } from '~/constants/stanceNameMap'
 import { type MoveFilter } from '~/types/MoveFilter'
 
 export type FrameDataFilterSectionProps = {
   filter: MoveFilter
+  stances: Set<string>
   setFilterValue: (key: string, value: string) => void
   removeFilterValue: (key: string) => void
+  addFilterElement: (key: string, element: string) => void
+  removeFilterElement: (key: string, element: string) => void
 }
 
 export const FrameDataFilterSelection = ({
   filter,
   setFilterValue,
   removeFilterValue,
+  addFilterElement,
+  removeFilterElement,
+  stances,
 }: FrameDataFilterSectionProps) => {
   const {
     hitLevel,
@@ -27,6 +34,7 @@ export const FrameDataFilterSelection = ({
     tornado,
     jails,
     chip,
+    stance: stanceFilter,
     removeRecoveryHealth,
   } = filter
   return (
@@ -186,6 +194,31 @@ export const FrameDataFilterSelection = ({
                 }}
               >
                 {displayName}
+              </Button>
+            )
+          })}
+        </div>
+      </section>
+      <section className="flex flex-col gap-3">
+        <Text as="div" size="2" mb="1" weight="bold">
+          Stances
+        </Text>
+        <div className="flex flex-wrap gap-3">
+          {Array.from(stances).map(stance => {
+            const active = stanceFilter?.includes(stance)
+            return (
+              <Button
+                key={stance}
+                variant={active ? 'solid' : 'outline'}
+                onClick={() => {
+                  if (active) {
+                    removeFilterElement(filterKey.Stance, stance)
+                  } else {
+                    addFilterElement(filterKey.Stance, stance)
+                  }
+                }}
+              >
+                {stanceNameMap[stance] || stance}
               </Button>
             )
           })}
