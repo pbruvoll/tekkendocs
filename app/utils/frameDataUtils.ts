@@ -208,6 +208,6 @@ export const getStances = (rows: string[][]): Set<string> => {
 }
 
 export const getStance = (command: string): string | undefined => {
-  const splitted = command.split('.')
+  const splitted = command.split(/[ .]/)
   return splitted.length > 1 ? splitted[0] : undefined
 }

@@ -15,15 +15,23 @@ export const FrameDataFilterDialog = ({
   removeFilterElement,
   stances,
 }: FrameDataFilterDialogProps) => {
-  const filterCount = Object.entries(filter).filter(
-    ([, value]) => value !== undefined,
-  ).length
+  console.log('filter', filter)
+  const filterCount = Object.entries(filter).filter(([, value]) => {
+    if (value === undefined) {
+      return false
+    }
+    if (value instanceof Array) {
+      return value.length > 0
+    }
+    return true
+  }).length
+
   return (
     <Dialog.Root>
       <Dialog.Trigger>
         <Button radius="large">
           <MixerHorizontalIcon width="16" height="16" /> Filter
-          {filterCount ? ' (1)' : ''}
+          {filterCount ? ` (${filterCount})` : ''}
         </Button>
       </Dialog.Trigger>
 
