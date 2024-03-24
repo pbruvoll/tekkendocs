@@ -1,4 +1,11 @@
-import { Heading, Link as RadixLink, Table, Text } from '@radix-ui/themes'
+import { useState } from 'react'
+import {
+  Button,
+  Heading,
+  Link as RadixLink,
+  Table,
+  Text,
+} from '@radix-ui/themes'
 import {
   Link,
   type MetaFunction,
@@ -76,6 +83,7 @@ export default function Move() {
   const params = useParams()
   const move = params['move']
   const characterName = params['character']
+  const [showVideo, setShowVideo] = useState(true)
 
   const matches = useMatches()
   const characterFrameData = getCharacterFrameData(matches)
@@ -92,6 +100,16 @@ export default function Move() {
   const moveRow = findMoveRow(move, characterFrameData.rows)
   if (!moveRow) {
     return <div>Not able to find frame data for the move {move}</div>
+  }
+
+  const videoLink =
+    characterName === 'nina' && moveRow[0] === 'df+1,2'
+      ? 'https://www.youtube.com/embed/E1KQf-UJ95M?si=QXJB5-VhaS5-bZMz&start=160&autoplay=1&mute=1&end=162&rel=0'
+      : undefined
+
+  const handleReloadVideo = () => {
+    setShowVideo(false)
+    setTimeout(() => setShowVideo(true), 1)
   }
 
   return (
@@ -119,6 +137,21 @@ export default function Move() {
           })}
         </Table.Body>
       </Table.Root>
+      {videoLink && showVideo && (
+        <>
+          <iframe
+            className="aspect-video max-w-full"
+            width="560"
+            //height="315"
+            src={videoLink}
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          ></iframe>
+          <Button onClick={handleReloadVideo}>Reload</Button>
+        </>
+      )}
     </ContentContainer>
   )
 }
