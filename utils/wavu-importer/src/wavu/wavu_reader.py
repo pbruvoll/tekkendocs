@@ -24,7 +24,7 @@ def get_wavu_character_movelist(character_name: str) -> List[Move]:
     params = {
         "action": "cargoquery",
         "tables": "Move",
-        "fields": "id,name,input,parent,target,damage,startup, recv, tot, crush, block,hit,ch,notes,_pageNamespace=ns",
+        "fields": "id, name, input, alias, alt, parent, image, video, target, damage, reach, tracksLeft, tracksRight, startup, recv, tot, crush, block, hit, ch, notes, _pageNamespace=ns",
         "join_on": "",
         "group_by": "",
         "where": "id LIKE '" + _upper_first_letter(character_name) + "%'",

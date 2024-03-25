@@ -1,7 +1,7 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes
 1;h;5;i10;+1;+8;;
-1,1;h,h;5,6;i15;-1;+8;;Combo from 1st hit
-1,1,2;h,h,m;5,6,12;i13;-17;"&lt;div class=&quot;plainlist&quot;&gt;
+1,1;h,h;5,6;,i15;-1;+8;;Combo from 1st hit
+1,1,2;h,h,m;5,6,12;,i13;-17;"&lt;div class=&quot;plainlist&quot;&gt;
 * +11 SEN
 * +2 (cancel)
 &lt;/div&gt;";;"
@@ -10,114 +10,138 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * Can be delayed 11F
 "
 1+2;m;25;i12~13;-10;+24 (+14);;
-1,2;h,h;5,8;i10;-3;+8;;Jails from 1st hit
-1,2,2;h,h,h;5,8,14;i17;-14;+0;;"
+1,2;h,h;5,8;,i10;-3;+8;;Jails from 1st hit
+1,2,2;h,h,h;5,8,14;,i17;-14;+0;;"
 Jails from 2nd hit
 "
-1,2,3;h,h,m;5,8,10;i21;-10;+1;;
+1,2,3;h,h,m;5,8,10;,i21;-10;+1;;Combo from 2nd CH
 1+2+3+4;sp;;;;;;
-1,2,3,4;h,h,m,h;5,8,10,21;i22~23;-4;+21 (+12);;Natural on 3rd hit
-1+3;th(h);35;i12~14;0;0;;"
+1,2,3,4;h,h,m,h;5,8,10,21;,i22~23;-4;+21 (+12);;Combo from 3rd hit
+1+3;th(h);35;i12~14;+0;+0;;"
 * Throw break 1 or 2
 * Spike
 * Opponent recovery on hit: FUFA off-axis to the left
 "
-1+4;sp;;;;;;Transition to WGS with DF
+1+4;sp;;;;;;"
+* Transition to WGS with DF
+* Can execute EWGF or EWGK by inputting 2/3 exactly one frame after DF
+* Actionable ~r31
+"
 2;h;12;i12;-4;+7;;
 2~1;mm;4,18;i11(~14);-14;+31 (+23);;"
-* Just Frame version creates a blue spark
+* Just frame if 2 is held for exactly one frame and then 1 on the next frame. Hits for 26 damage.
 "
-2,2;h,h;12,6;i14~15;-11;0;0;"
-Jails from 1st hit
+2,2;h,h;12,6;,i14~15;-11;+0;;"
+* Jails from 1st hit
 "
-2,2,1;h,h,m;12,6,20;i22~23;-14;KND;;"
+2,2,1;h,h,m;12,6,20;,i22~23;-14;+12d;;"
 * Balcony Break
 "
-2,2,2;h,h,m;12,6,21;i29;-4;+6;;"
+2,2,2;h,h,m;12,6,21;,i29;-4;+6;;"
 "
-2,2,2,1;h,h,m,m;12,6,21,20;i35~37;-15;+30 (+20);;"
+2,2,2,1;h,h,m,m;12,6,21,20;,i35~37;-15;+30 (+20);;"
 * Tornado
 "
-2,2,2,2;h,h,m,m;12,6,21,25;i31;-14;+21 (+0);;"
+2,2,2,2;h,h,m,m;12,6,21,25;,i31;-14;+21 (+0);;"
 * Balcony Break
-* Extra damage with input qcf+2
+* 5 damage more with input qcf+2
 "
 2+3;m;12;i16;+1;+2;;"
 * Heat Burst
 * Alternate input: R1
 "
-2+3+4;sp;;;;;;Input D to get Heihachi's secret taunt
-2+4;th(h);35;i12~14;0;0;;"
+2+3+4;sp;;;;;;Input d+2+3+4 to get Heihachi's secret taunt
+2+4;th(h);35;i12~14;+0;+0;;"
 * Throw break: 1 or 2
 * Opponent recovery on hit: FUFA
 "
 3;h;12;i18~19;-11;+5;;Homing
-3,2;h,h;12,16;i20;-9;+8;;"Tornado
-Natural on 1st hit"
+3,2;h,h;12,16;,i20;-9;+8;+66a (+50);"
+* Tornado
+* Combo from 1st hit
+"
 3+4;mm;15;i18;-8;+3c;;
-3,4;h,m;12,20;i20;-14;+50 (+19);Launch;Natural on 1st hit
-3+4,4;mm,m;15,20;i16;-14;+50 (+19);Launch;
-3+4,4,H.4;mm,m,m;15,20;;-8;+23a (+3) / -2a (-3);;"
+3,4;h,m;12,20;,i20;-14;+50 (+19);+54;Combo from 1st hit
+3+4,4;mm,m;15,20;,i16;-14;+50 (+19);+54;
+3+4,4,H.4;mm,m,m;15,20,28;,i27;-8;+23a (+3) / -2a (-3);;"
+* Balcony Break
+* Combo from 2nd hit
 "
-3,4,H.4;h,m,m;12,20;,i27;-8;+23a (+3) / -2a (-3);;"
+3,4,H.4;h,m,m;12,20,28;,i27;-8;+23a (+3) / -2a (-3);;"
+* Balcony Break
+* Combo from 2nd hit
 "
-4;h;20;i13~14;-8;+11g;KND;Balcony Break
+4;h;20;i13~14;-8;+11g;+35d;"
+* Balcony Break
+* Opponent is FUFA on CH
+"
 b+1;h;14;i18;-4;+6;;
-b+1,1;h,m;14,15;i22;-10;-4;;
-b+1,1,3;h,m,m;14,15,13;i15~17;-10;+3;;Transition to SEN with F
-b+1,1,3,3;h,m,m,m;14,15,13,20;i32;-16;+48 (+17);Launch;
-b+1+2;m;20;i18;-13;+14;;Powercrush mid that knocks down opponent for a very short period. It can Wall splat.
+b+1,1;h,m;14,15;,i22;-10;-4;;
+b+1,1,3;h,m,m;14,15,13;,i15~17;-10;+3;;"
+* Transition to SEN (+0/[[Reina_combos#Mini-combos|+13]]/[[Reina_combos#Mini-combos|+13]]) with F
+* Cannot block up to i14 on empty transition on block
+* Combo from 2nd CH"
+b+1,1,3,3;h,m,m,m;14,15,13,20;,i32;-16;+48 (+17);+53;
+b+1+2;m;20;i18;-13;+14d;;Balcony Break
 b+1+3;;;;;;;"
+* Parry mids and highs
 * Converts incoming damage to recoverable health
 * Partially restores Heat on successful parry
-* Transition to WRA on successful parry
+* Transition to WRA on successful parry with +(recv - 17) where recv is the recovery of the parried move
 "
-b+1+4;ub(m);50;i64;+20 (-1);+20 (-1);;Balcony Break
+b+1+4;ub(m);50;i64;+20 (-1);+20 (-1);;"
+* Balcony Break
+* Can cancel with input b,b"
 b+2;m;14;i16~17;-9;+3;;Homing
-b+3;sp;;;;;;
 b+3;sp;;;;;;"
 * Partially drains heat meter when in heat
-* Alternate input: u+3 or d+3
+* Transition to UNS
 * Can transition to SEN with f+3
 * Can transition to WGS with DF
+* Can execute EWGF or EWGK by inputting 2/3 exactly one frame after DF
 * See also [[Reina_tech#Unsoku Cancel|Unsoku Cancel]]
 "
-b+4;h;20;i18;-8;35;Tornado;"
+b+4;h;20;i18;-8;+35;+71 (+55);"
 * Tornado
 "
-Back throw;th(h);50;i12~14;;0;;"
+Back throw;th(h);50;i12~14;;+0;;"
 * Break: none
 * Opponent recovery on hit: FDFA
 "
-b,b,UB;m;21;i39-41;+4c;+22 KND;+23 KND;Requires back close to wall to execute
-BT.4;m;20;i17;-14;+54;Launch;
+b,b,UB;m;21;i39-41;+4c;+22d;;Requires back close to wall to execute
+BT.4;m;20;i17;-14;+54;;crumple stun on normal hit
 CH.df+3+4;m,th;6,35;i16;;0;;
 d+1;sm;5;i10;-5;+6;;"
 * Returns to standing when input F
 "
 d+1+2;sp;;;;;;"
-"
-d+1+2;sp;;;;;;"
 * Transition to SEN with f+3
 * Transition to WGS with DF
 "
+d+1+2;sp;;;;;;"
+"
 d+2;m;17;i15;+0;+3c;+27d;
 d+3;sp;;;;;;"
-"
+* Transition to UNS
+* Can transition to WGS with input DF
+* Can execute EWGF or EWGK by inputting 2/3 exactly one frame after DF"
 d+4;l;7;i12;-13;-2;;
 db+2;l,l;10,12;i20~21,i9~10;-16;-3;;
-db+4;l;7;i16;-13;-2;+2;
-db+4,1+2;l,m;7,20;i15;-12;+39 (+19);;"
+db+4;L;7;i16;-13;-2;+2;
+db+4,1+2;L,m;7,20;,i15;-12;+39 (+19);;"
 * Balcony Break
-* Natural on CH
+* Combo from 1st CH
 "
 df+1;m;8;i13~14;-3;+4;;"
-* Transition to SEN with F
+* Transition to SEN (-3/+4/+4) with F
+* Cannot block up to i15 on empty transition on block
 "
-df+1,1;m,h;8,10;i20;-4;+7;;"
+df+1,1;m,h;8,10;,i20;-4;+7;;"
 "
-df+1,2;m,m;8,20;i22~23;-14;KND;;"
+df+1,2;m,m;8,20;,i22~23;-14;+12d;;"
 * Heat Engager
+
+* Heat Dash +18g, [[Reina_combos#Mini-combos|+17]]
 
 "
 df+2;m;13;i15~16;-12;+30 (+20);;
@@ -125,56 +149,69 @@ df+3;sp;;;;;;"
 * Transition to SEN with input WGS.f+3
 "
 df+3+4;mh;5,10;i16,i5~9;-15;+2;;
-df+3+4,4;mh,m;5,10,20;i20;-4;+50 (+19);Launch;
+df+3+4,4;mh,m;5,10,20;,i20;-4;+50 (+19);+54;
 df+4;m;14;i15;-4;+7;;"
 "
-df+4,2;m,m;14,10;i18;-8;+6;;"
-* Transition to WRA with D
-* Natural on 1st hit
+df+4,2;m,m;14,10;,i18;-8;+6;;"
+* Transition to WRA (-6/+8/+8) with D
+* Combo from 1st hit
 "
-df+4,2,3;m,m,h;14,10,20;i27;-8;+35;Tornado;"
+df+4,2,3;m,m,h;14,10,20;,i27;-8;+35;+71a (+55);"
 * Tornado
-* Natural on 2nd CH
+* Combo from 2nd CH
 "
 f+1+2;m;22;i32;-11;+7;;"
 "
-f+1+2,3;m,l;22,26;i32;-26;-4;;"
+f+1+2;m;22;i32;-11;+7;;"
 "
-f+2;h;8;i13;-9;-3;;Transition to UNS with input u or d
-f+2,3;h,m;8,16;i18~19;-9;+2;;"
-* Natural on 1st hit
-* Transition to SEN with F
-* Transition to UNS with u or d
-* On block SEN transition is -2
-* On hit SEN transition is +9
+f+1+2,3;m,L;22,26;,i32;-26;-4;;"
 "
-f+3;sp;;;;;;
-f+3+4;m;25;i43;-14;+50 (+19);Launch;"
-* can be cancelled into crouch with D
+f+2;h;8;i13;-9;-3;;Transition to UNS (+0/+6/+6) with input u or d
+f+2,3;h,m;8,16;,i18~19;-9;+2;;"
+* Jails from 1st hit
+* Combo from 1st hit
+* Transition to SEN (+2/+9/+9) with F
+* Cannot block up to i12 on empty transition on block
+"
+f+3;sp;;;;;;Actionable from r28
+f+3+4;m;25;i43;-14;+50 (+19);+55;"
+* can be cancelled into crouch with DB_D_DF
 "
 f+3+4*;m;30;i67;[[Reina_combos#Mini-combos|+10]];+52;;"
-* can be cancelled into crouch with D
+* can be cancelled into crouch with DB_D_DF
+* crumple stun on normal hit
 "
-f+3+4,H.4;m,m;25;;-8;+23a (+3) / -2a (-3);;"
+f+3+4,H.4;m,m;25,28;,i27;-8;+23a (+3) / -2a (-3);;"
+* Balcony Break
+* Combo from 1st hit
 "
-f+4;m;20;i19~20;+2c;+5c;KND;+13c on crouching hit
+f+3+4*,H.4;m,m;30,28;,i27;-8;+23a (+3) / -2a (-3);;"
+* Balcony Break
+* Combo from 1st block
+"
+f+4;m;20;i19~20;+2c;+5c;+29d;"
+* [[Reina_combos#Mini-combos|+13c]] on crouching hit
+* Opponent is FDFA on CH
+"
 FC.df+3;m;25;i20;-17;+54;;"
 * Balcony Break
 "
 FC.df+4;m;20;i15;-14;+54;;"
 * Balcony Break
+* crumple stun on normal hit
 "
 f,F+2;m;14;i12;-9;+1;;"
-* Transition to SEN with F
-* SEN transition +2 on block
-* SEN transition +12 on hit
+* Transition to SEN (+2/[[Reina_combos#Mini-combos|+12]]/[[Reina_combos#Mini-combos|+12]]) with F
+* Cannot block up to i12 on empty transition on block
 "
-f,F+3;m;20;i20~22;-3;KND;;"
+f,F+3;m;20;i20~22;-3;+20d;;"
 * Balcony Break
 * Heat Engager
 
+* Heat Dash +5, [[Reina_combos#Staples|+67a (+50)]]
+
 "
-f,F+3+4;h;22;i16~19;-2;+49 (-9);Launch;"
+f,F+3+4;h;22;i16~19;-2;+49 (-9);+49;"
 * Balcony Break
 "
 f,f,F+3;m;22;i24~27;+6;+32 (+24);;"
@@ -184,35 +221,42 @@ f,f,F+3;m;22;i24~27;+6;+32 (+24);;"
 f,f,F+4;h;28;i26~27;+4;+31 (+5);;"
 * Balcony Break
 * Homing
-* Transition to WRA with D
+* Transition to WRA (+8/+35a (+9)/-) with D
 "
 f,n;sp;;;;;;"
 * Transition to WGS with DF
-* Transition to WGS on successful parry with +10
+* Transition to WGS on successful parry with [[Reina_combos#Mini-combos|+10]]
 "
 f,n,d,df#2;h;23;i11(~13);+5;+25 (+25);;"
 * Chip damage when guarded
 "
-f,n,d,df#3;m;27;i15~17;-9;+13 (-4);+23 (+17);"
+f,n,d,df#3;M;27;i15~17;-9;+13 (-4);+23 (+17);"
 * Balcony Break
 * Chip damage when guarded
 "
-H.2+3;m;50;i21;+8;Th;Th;"
+H.2+3;m;50;i21;+8 WRA;Th;Th;"
 * Heat Smash
 * Alternate input: H.R1
 * Transitions to WRA on block or whiff.
+"
+hFC.d+3;l;10;i16;-17;-6;;"
+"
+H.d+1+2;;;;;;;"
+* Parries all mids and highs
+* Deals 40 damage on successful parry
+* Parry window begins i20 and ends ~i60.
 "
 H.WRA.2+3;l;40;i18~19;-17;Th;Th;"
 * Heat Smash
 * Alternate input: H.WRA.R1
 "
-Left throw;th(h);40;i12~14;-3;0;;"
+Left throw;th(h);40;i12~14;-3;+0;;"
 * Throw break: 1
 * Opponent recovery on hit: FUFA off-axis to the left
 "
-OTG.d+4;l;11;i19;-19;-8 / -8a (16);;
-OTG.d+4,1;l,l;11,16;i20~21;-26;-10 / -15a (-23);;Just Input
-d,db,b,f+2;th(h);40;i12;0;0;;"
+OTG.d+4;L;11;i19;-19;-8 / -8a (16);;
+OTG.d+4,1;L,L;11,16;,i20~21;-26;-10 / -15a (-23);;Blue spark with input OTG.d+4:1 for 3 extra damage
+d,db,b,f+2;th(h);40;i12;+0;+0;;"
 * Balcony Break
 * Throw break: 2
 * Opponent recovery on hit: FUFT
@@ -221,20 +265,20 @@ R.df+1+2;m;55;i20;-15;;;"
 * Erases opponent's recoverable health on hit
 * Alternate input: R2
 "
-Right throw;th(h);40;i12~14;-3;0;;"
+Right throw;th(h);40;i12~14;-3;+0;;"
 * Throw break 2
 * Opponent recovery on hit: FUFA
 "
 SEN.1;m;12;i16;-14;+1;;"
 "
-SEN.1+2;m,m;13,17;i14~15,i12~13;-6 SEN;+32 (+18);+32 (+18);"
+SEN.1+2;m,m;13,17;i14~15,i12~13;-6 WRA;+32 (+18);;"
 * Tornado
 * Balcony Break
 * Transitions to WRA after recovery 
 "
-SEN.1,2;m,m;12,25;i26;-16;+21 (+0);;"
+SEN.1,2;m,m;12,25;,i26;-16;+21 (+0);;"
 * Balcony Break
-* Alternate input: qcf+2 (extra damage)
+* Blue spark with input qcf+2 for 5 extra damage
 "
 SEN.1+3;th(h);12;i16;;-3;;"
 * Throw break: none
@@ -247,50 +291,62 @@ SEN.3;h;22;i12~13;+1;+7;;"
 * Homing
 * Heat Engager
 
+* Heat Dash +5, [[Reina_combos#Mini-combos|+34d]]
+
 * Deals chip damage on block
 "
 SEN.3+4;l,h;10,12;i20~21,i35~36;-29, -11;+4;;"
 * Homing
 "
-SEN.4;m;24;i26~27;+4;+12g;+12g;"
+SEN.4;m;24;i26~27;+4;+12g;;"
 * Deals chip damage on block
 "
 SS.4;l;17;i18~19;-13;+0;+13g;
 SSH.3;l;26;i22;-26;-4c;;"
 "
-SSH.CH.3;l;33,18;i22;;0;;"
+SSH.CH.3;l;33,18;i22;;+0;;"
 "
 SSH.uf;sp;;;;;;"
 "
 SSH.uf+3;m;22;i30~33;+6;+32a (+24);;"
 * Balcony Break
 "
-SSH.uf+4;h;28;i32~33;+4 / +8 WRA;+31a (+5) / +35a (+9) WRA;;"
+SSH.uf+4;h;28;i32~33;+4;+31a (+5);;"
 * Homing
 * Balcony Break
-* Transition to WRA with D
+* Transition to WRA (+8/+35a (+9)/-) with input D
 "
 u+1+2;sp;;;;;;"
 * Transition to Wind God Step with DF
+* Can execute EWGF or EWGK by inputting 2/3 exactly one frame after DF
 "
-u+3;sp;;;;;;
+u+3;sp;;;;;;"
+* Transition to UNS
+* Can transition to WGS with input DF
+* Can execute EWGF or EWGK by inputting 2/3 exactly one frame after DF"
 ub+1+2;sp;;;;;;"
 * Transition to Wind God Step with DF
+* Can execute EWGF or EWGK by inputting 2/3 exactly one frame after DF
 "
 uf+1;h;15;i13;-9;+8;+17;"
-* Transition to WRA on hit
+* Transition to WRA (-/[[Reina_combos#Mini-combos|+13]]/[[Reina_combos#Mini-combos|+17]]) on hit
 "
-uf+1+2;th(h);35;i12;0;+25 (+8);;"
+uf+1+2;th(h);35;i12;+0;+25 (+8);;"
 * Balcony Break
 * Throw break: 1+2
 "
+uf+2;h;17;i15-i16;-12;+9;;" 
+* Normal hit offsets opponent slightly to the left of the axis and rotates them. 
+* Counter hit pushes the opponent on axis like most moves and does not rotate the opponent.
+"
 uf+3;h;10;i21~22;-10;+1;;"
 "
-uf+3,1;h,m;10,15;i16;-5;+5;;"
+uf+3,1;h,m;10,15;,i16;-5;+5;;"
+* [[Reina_combos#Mini-combos|+13c]] on crouching hit
 "
 uf+3+4;mm;10,10;i20,i4;-10;-1;;"
 "
-uf+3+4,1+2;mm,m;10,10,20;i17;-14;-4;;"
+uf+3+4,1+2;mm,m;10,10,20;,i17;-14;-4;;"
 "
 uf+4;m;15;i17~18;-13;+70 (+54);;"
 * Tornado
@@ -299,47 +355,51 @@ UNS.4;m;30;i18~19;-8;+43 (-15);;"
 * Balcony Break
 * Heat Engager
 
+* Heat Dash +5, [[Reina_combos#Staples|+62a (+42)]]
+
 * Deals chip damage on block
 * Can be cancelled into crouch with D
 "
-WDS.3;m;17;i16~17;-6;+4;Launch;"
+WDS.3;m;17;i16~17;-6;+4;+58;"
+* crumple stun on CH
 "
 WGS.1;m;20;i19~21;-22;+24 (+14);;
-WGS.1,3;m,m;20,10;i26~30;-12;+18 (-17);;Spike
-WGS.1,4;m,h;20,12;i23~27;-7;+1 (+0);;Balcony Break
+WGS.1,3;m,m;20,10;,i26~30;-12;+18 (-17);;Spike
+WGS.1,4;m,h;20,12;,i23~27;-7;+1 (+0);;Balcony Break
 WGS.2;h;15;i11~12;-10;+35 (+25);;Becomes Electric Wind God Fist during Heat (partially uses remaining Heat Time)
-WGS.df+3;m;17;i15~17;-13;+3;+23 (+17);"
-* Alternate input: f,n,d,DF+3
+WGS.df+3;M;17;i15~17;-13;+3;+23 (+17);"
 * Becomes Electric War God Kick during Heat (partially uses remaining Heat Time)
 "
 WGS.DF+4;l;6;i16;-23;+2c;;"
-* Alternate input: f,n,d,DF+4
 * Recovers Crouching
 "
-WGS.DF+4,2;l,h;6,20;i24;-22;-1;;"
-* Transition to WRA (ob) -15, +6 (oh) WRA with D
+WGS.DF+4,2;l,h;6,20;,i24;-22;-1;;"
+* Transition to WRA (-15/+6/+6) with input D
 "
-WGS.DF+4,4;l,l;6,16;i17~18;-23;+2;Launch;"
+WGS.DF+4,4;l,l;6,16;,i17~18;-23;+2;+23a;"
 * Recovers Crouching
 "
 WRA.1;h;12;i12;-4;+8;+13;"
 * Homing
 * Deals chip damage on block
-* Transition to SEN with F
+* Transition to SEN (+0/[[Reina_combos#Mini-combos|+13]]/[[Reina_combos#Mini-combos|+17]]) with F
+* Cannot block up to i14 on empty transition on block
 "
-WRA.1+2;m;30;i15~16;-13;+16;;"
+WRA.1+2;m;30;i15~16;-13;+16d;;"
 * Balcony Break
 "
 WRA.1+3;th(h);20;i16;;+10;;"
 * Throw break: none
 * Opponent recovery on hit: FUFT
 "
-WRA.1,4;h,m;12,22;i25~26;-9;+9g;;"
+WRA.1,4;h,m;12,22;,i25~26;-9;+9g;;"
 * Balcony Break
 "
 WRA.2;m;30;i15~16;-9;+11 (+2);;"
 * Balcony Break
 * Heat Engager
+
+* Heat Dash +5, [[Reina_combos#Staples|+36a (+26)]]
 
 * Deals chip damage on block
 "
@@ -347,39 +407,40 @@ WRA.3;m;17;i28;-6;+22 (+12);;"
 * Balcony Break
 * Deals chip damage on block
 "
-WRA.3+4;m;26;i18~19;-5;+5;;"
+WRA.3+4;M;26;i18~19;-5;+5d;;"
 * Deals chip damage on block
+* Opponent is FDFA on normal hit
 "
-WRA.3,4;m,m;17,14;i18~19;+6;+17 (+16);;"
+WRA.3,4;m,m;17,14;,i18~19;+6;+17 (+16);;"
 * Balcony Break
 * Deals chip damage on block
-* Can transition to WRA with D
+* Can transition to WRA (+8/+19 (+18)/-) with D
 "
 WRA.4;m,m;6,8;i17~18,i13;-10;-10;+7;"
 * Entire string guaranteed on CH
 "
-WRA.4,2;m,m,m;6,8,8;i15;-18;-7;;"
+WRA.4,2;m,m,m;6,8,8;,i15;-18;-7;;"
 "
-WRA.4,2,2;m,m,m,h;6,8,8,4;i15;-12;-1;;"
+WRA.4,2,2;m,m,m,h;6,8,8,4;,i15;-12;-1;;"
 "
-WRA.4,2,2,1+2;m,m,m,h,m;6,8,8,4,22;i24~25;-20;+24 (+3);;"
+WRA.4,2,2,1+2;m,m,m,h,m;6,8,8,4,22;,i24~25;-20;+24 (+3);;"
 * Balcony Break
-* Alternate input: qcf+1+2 (extra damage)
+* Alternate input: qcf+1+2 (6 extra damage)
 "
 WRA.d+4;l;9;i16~17;-15;-4;+2;"
 "
-WRA.d+4,3;l,m;9,20;i21~22;-16;+48 (+17);Launch;"
+WRA.d+4,3;l,m;9,20;,i21~22;-16;+48 (+17);+53;"
 * Guaranteed on 1st hit CH
 "
-ws1;m;12;i13;-10;+13;;Transition to SEN on hit
+ws1;m;12;i13;-10;+13 SEN;;Transition to SEN on hit
 ws2;m;20;i18;-8;+9;+14c;Balcony Break
 ws3;m;14;i15~16;-10;+1;;"
 "
 ws3+4;m;14;i14~15;-8;+14;+14;
-ws3,4;m,h;14,21;i22~23;-4;+21 (+12);;"
+ws3,4;m,h;14,21;,i22~23;-4;+21 (+12);;"
 * Balcony Break
 "
 ws4;m;10;i11~12;-6;+5;;
-ws4,4;m,m;10,15;i17~18;-17;-1c;;"
-* Transition to -10 (ob) +6 (oh) WRA with D
+ws4,4;m,m;10,15;,i17~18;-17;-1c;;"
+* Transition to WRA (-10/+6/+6) with D
 "

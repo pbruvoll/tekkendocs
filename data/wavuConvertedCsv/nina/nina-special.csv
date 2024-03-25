@@ -2,7 +2,8 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 1;h;5;i10;+1;+8;;
 1+2;m;19;i16~17;-3~-2;+9~+10;;Homing
 1,2;h,h;5,10;,i10;-1;+5;;"
-* Jail from 1st attack with 8f delay"
+* Jail from 1st attack with 8f delay
+* Enter SS +0 +11 with D or U"
 1,2,1;h,h,h;5,10,17;,i26~27;-3~-2;+2~+3;;"
 * Combo from 2nd CH with 4f delay
 * Input can be delayed 6f"
@@ -23,7 +24,6 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * Balcony Break
 * Combo from 2nd CH with 8f delay
 * Input can be delayed 10f"
-1,2~D;h,h;5,10;;+0;+11;;
 1+3;t;35;i12~14;-6;-2;;"
 * Throw break 1 or 2
 * Opponent recovers FUFA"
@@ -65,12 +65,12 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * Input can be delayed 10f"
 3+4;m;20;i18~19;-10~-9;+11g~+12g;;"
 * Balcony Break
-* Homing"
+* Homing
+* Enter CD -6~-5 +15g~+16g t45 r15 with F"
 3,4;h,h;14,20;,i22;-6;+20a (+11);;"
 * Balcony Break
 * Combo from 1st hit with 8f delay
 * Input can be delayed 10f"
-3+4~F;m;20;;-6~-5;+15g~+16g;;
 4;h;15;i11;-9;+7;+7s;
 4,2;h,m;15,22;,i19;-9;+36a;;"
 * Balcony Break
@@ -96,7 +96,8 @@ b+1+2;m,m;5,20;i16 i8~10;-7;+5a;;"
 * Combo from 1st hit only if the second hit connects on i8
 * 2nd hit available only as combo from 1st
 * If the second hit connects on i9~10, frame advantage on hit will be -16~-15
-* Erases opponent recoverable health on hit"
+* Erases opponent recoverable health on hit
+* [[Nina_movelist#Nina-H.b+1+2|Powered up in heat]]"
 b+1+3;;;;-6;;;"
 * Damage is 25 + 50% of the opponent's attack
 * Parries mid or high punches or kicks"
@@ -113,8 +114,8 @@ b+2,2,2;h,h,h;12,16,20;,i25~26;-9~-8;+9g~+10g;+45a;"
 * Balcony Break
 * Combo from 1st CH
 * Combo from 2nd CH with 5f delay
+* Enter SS -15~? +1~+2 with D or U
 * Input can be delayed 13f"
-b+2,2,2~D;h,h;12,16;;-15~?;+1~+2;;
 b+2+3;m!;50;i65;;+25a;;Cancel to r25 with b,b
 b+3;m;10;i18;-6;+6c;;Spike
 b+3+4;h;16;i14~15;-9~-8;+6~+7;;
@@ -126,7 +127,7 @@ b+3+4,1+2;h,h,h,h;16,6,6,6;,i28 i35 i42;-9;+34a (-24);;"
 * Weapon
 * Combo from 1st hit
 * Chip damage on block
-* Power up during Heat"
+* [[Nina_movelist#Nina-H.b+3+4,1+2|Powered up in heat]]"
 b+3+4,3;h,M;16,20;,i28~29;-15~-14;+27a;;Tornado
 b+4;h;15;i14;-9;+9;+12;
 Back throw;t;60;;;+3d;;"
@@ -150,6 +151,23 @@ BT+1;h;15;i8;-8;+3;;Links to 1 jab extensions
 BTR.2;t;10;;-3;+3d;;"
 * Throw break 2
 * Powered up input: BTR.2,1,1+2"
+CD.1;h;21;i14~16;+1~+3;+3~+5;+47a (+37);Chip damage on block
+CD.2;M;25;i17~18;-8~-7;+32a (+17);;"
+* Heat Engager
+
+* Heat Dash +5 +42a r27
+
+* Balcony Break"
+CD.2+3;h!;10;i24~38;;+36g~+50g;;Alternate input: db,qcf,n,DB+2+3
+CD.3;L;17;i19~28;-20~-11;+0~+9;+21a;
+CD.4;m;15;i14;-8;+6s;;Knee
+CD.4,3;m,h;15,23;,i25;-10;+14a (+5);;Combo from 1st hit with 4f delay
+CD.4,3,1+2;m,h,h,h,h;15,23,6,6,6;,i28 i35 i42;-9;+24a (-9);;"
+* Balcony Break
+* Weapon
+* Combo from 2nd hit
+* Chip damage on block
+* [[Nina_movelist#Nina-H.qcf+4,3,1+2|Powered up in heat]]"
 CHD.1;t;25;;+0d;+3d;;"
 * Throw break 1
 * Erases opponent's recoverable health on hit
@@ -183,28 +201,30 @@ d+4;l;6;i12;-15;-4;;
 d+4,1;l,h;6,10;,i24;+0;+6;+11;"
 * Combo from 1st CH with 6f delay
 * Input can be delayed 9f
+* Enter SS -21? -2 with D or U
 * Alternate inputs: FC.4,1"
-d+4,1~D;l;6;;-21?;-2;;
 db+1+2;h,m;5,22;i11 i30;-14;+10a (+1);;"
 * Heat Engager
+
+* Heat Dash +5 +43a r27
 
 * Balcony Break"
 db+2;m;20;i24~25;-5~-4;+8~+9;+11~+12;Homing
 db+3;L;17;i20;-13;+4c;+13a;
 db+3+4;m;21;i18~19;-17~-16;+36 (+26);;"
 * Tornado
-* Alternate input: WS.3+4"
+* Alternate input: ws3+4"
 db+4;L;5;i16~17;-9a;+2;;
 db+4,3;L,m;5,21;,i27~28;-13~-12;+71a (+55);;"
 * Tornado
 * Combo from 1st CH"
-db,qcf,n,DB+2+3;h!;10;i24~38;;+36g~+50g;;Alternate input: qcf+2+3
-d,DF+4;L;20;i20~24;-37;+14a;+27a;
+db,qcf,n,DB+2+3;;;;;;;Alternate input: CD.2+3
+d,DF+4;L;20;i20~24;-37;+14a;+27a;Powered-up version of df+3+4
 df+1;m;13;i13~14;-1~+0;+5~+6;;
 df+1,2;m,h;13,10;,i16;-3;+2;+9;"
-* Jail from 1st attack"
-df+1,2~D;m,h;13,10;;-1;+4;+11;
-df+1,2~F;m,h;13,10;;+0;+5;+12g;
+* Jail from 1st attack
+* Enter SS -1 +4 +11 with D or U
+* Enter CD 0 +5 +12g with F"
 df+1+3;t;37;i11;-2;+1d;;Throw break 1
 df+2;m;12;i15~16;-7~-6;+34a (+24);;"
 * +4s~+5s on hit against crouching opponent
@@ -216,15 +236,19 @@ df+2+4;t;37;i11;-2;+1d;;"
 df+3;m;13;i14;-11;+0;+1;
 df+3,1;m,h;13,10;,i30;-8;+3;;"
 * Combo from 1st CH
-* Input can be delayed 10f"
+* Input can be delayed 10f
+* Enter SS -19 -8 -7 with D or U"
 df+3,1,2;m,h,m;13,10,20;,i26~27;-12~-11;+16a;+16a;"
 * Balcony Break
 * Spike
 * Combo from 2nd hit
 * Combo from 1st CH
 * Opponent is closer on CH"
-df+3,1~D;m;13;;-19;-8;-7;
-df+3,2;m,h;13,12;,i19;+1;+5;+12;Combo from 1st hit with 10f delay
+df+3,2;m,h;13,12;,i19;+1;+5;+12;"
+* Combo from 1st hit with 10f delay
+* Enter SS 0 +4 +11 with D or U
+* Enter CD -1 +3 +10 t29 r10 with F
+* Enter SWA +8 +12 +19 with B"
 df+3,2,1;m,h,h;13,12,6;,i16;-3;+4;;"
 * Combo from 2nd CH with 9f delay
 * Jail from 2nd block with 3f delay"
@@ -235,9 +259,6 @@ df+3,2,3;m,h,m;13,12,21;,i19~20;-17~-16;+36a(+26);;"
 df+3,2,4;m,h,h;13,12,22;,i22;-6;+20a;+49a;"
 * Balcony Break
 * Combo from 2nd CH with 8f delay"
-df+3,2~B;m;13;;+8;+12;+19;
-df+3,2~F;m;13;;-1;+3;+10;
-df+3,2~u;m;13;;+0;+4;+11;
 df+3,3;m,m;13,14;i28;-10;+2c;;"
 * Spike
 * Combo from 1st hit with 1f delay
@@ -251,8 +272,10 @@ df,df+1;t;43;i12;-6;-2d;;"
 f+1+2;m;24;i17;-14;+11a (+2);;"
 * Heat Engager
 
+* Heat Dash +5 +43a r27
+
 * Balcony Break
-* Alternate input: WS.1+2
+* Alternate input: ws1+2
 * Frame advantage is -8 if an attack is absorbed
 * Deals chip damage if an attack is absorbed"
 f+1+3;t;15;i13;-2;+1d;;"
@@ -280,16 +303,21 @@ f+3;h,h;10,20;i14~15 i25~26;+3~+4;+24a (+15);+54a;"
 * Balcony Break
 * 2nd hit is duckable if the 1st is blocked
 * 2nd hit is homing"
-f+4;m;15;i21~22;-5~-4;+5~+6;;
+f+4;m;15;i21~22;-5~-4;+5~+6;;"
+* Enter SS +2~+3 +12~+13 with D or U "
 f+4,2;m,h;15,22;,i18;-9;+39a (-19);;"
 * Heat Engager
 
+* Heat Dash +5 +36a r27
+
 * Balcony Break
 * Combo from 1st hit"
-f+4~D;m;15;;+2~+3;+12~+13;;
 FC.1;sl;5;i10;-5;+6;;Transition to r24 with f
 FC.1,4;sl,m;5,10;,i16~17;-11~-10;+0~+1;;Combo from 1st CH
 FC.2;sl;8;i11;-4;+7;;
+FC.df+4;L;20;i31~35;-37;+14a;+27a;"
+* Alternate input: df+3+4
+* Powered up input: d,DF+4"
 f,F+1+2;M;26;i23~24;-5~-4;+12a (+3);;Chip damage on block
 f,F+1+2*;M;32;i33~34;+11g~+12g;+19a (+9);;Balcony Break
 f,F+2;h;20;i14;-4;+32a (+24);;Balcony Break
@@ -298,15 +326,32 @@ f,F+4;M;20;i28~32;-10~-6;+9c~+13c;+21a;"
 * Tech roll to r32 FC on frames 29~34
 * 5 recoverable self-damage on whiff without tech roll
 * Clean hit on block +16g~+20g, 30 damage"
+f,f,F+1+2;m;30;i20~21;+4~+5;+12a (+3);;"
+* Heat Engager
+
+* Heat Dash +5 +36a r27
+
+* Balcony Break
+* Chip damage on block
+* Alternate input: wr1+2"
+f,f,F+3;m;12;i20~21;-13~-12;-2~-1;;Alternate input: wr3
+f,f,F+3,3;m,M;12,20;,i32~35;-4~-1;+17a;;"
+* Spike
+* Combo from 1st hit
+* Alternate input: wr3,3"
+f,f,F+3,4;m,m;12,21;,i24~25;-13~-12;+34a (+19);;"
+* Tornado
+* Combo from 1st hit
+* Alternate input: wr3,4"
+H.2+3;m,h,h,h,h;20,9,12,9,12;i16 i28 i35 i42 i49;+14;+43a (+10);;"
+* Heat Smash
+* Jails"
 H.2+3;m,h,h,h,h,m;20,30;i16 i28 i35 i42 i49 i90~91;+5~+6;-2d;;"
 * Heat Smash
 * Spike
 * Transition to attack throw on hit
-* Transition to r30 CD on block only with F
+* Enter CD r30 with F on block
 * Deals chip damage on block
-* Jails"
-H.2+3;m,h,h,h,h;20,9,12,9,12;i16 i28 i35 i42 i49;+14;+43a (+10);;"
-* Heat Smash
 * Jails"
 H.b+1+2;m,m,h,h,h,h;5,20,5,5,5,5;i16 i8~10, i28 i35 i42 i49;+2;+33a (+7);;"
 * Balcony Break
@@ -322,12 +367,12 @@ H.b+3+4,1+2;h,h,h,h,h;16,6,6,6,10;i14~15, i28 i35 i42;-2;+29a (+3);;"
 * Combo from 1st hit
 * Chip damage on block
 * Partially uses remaining Heat time"
-H.db+1+2,F;h,m;5,22;i11 i30;+5;+43a (+35);;
-H.f+1+2,f;m;24;i17;+5;+43a (+35);;"
-* Alternate input: WS.1+2
-* Frame advantage is -8 if an attack is absorbed
-* Deals chip damage if an attack is absorbed"
-H.f+4,2;m,h;15,22;i21~22, i18;+5;+36a (+26);;
+H.CD.4,3,1+2;m,h,h,h,h,h;15,23,6,6,6,10;i14, i25, i28 i35 i42;-2;+13a (+12);;"
+* Balcony Break
+* Weapon
+* Combo from 1st hit
+* Chip damage on block
+* Partially uses remaining Heat time"
 HHD.1;t;20;;-9;+3;;"
 * Throw break 1
 * Erases opponent's recoverable health on hit
@@ -337,20 +382,13 @@ HHD.2;t;25;;-9;+0d;;"
 * Throw break 2
 * Erases opponent's recoverable health on hit
 * Powered up input: HHD.1,3,2+4,1+2"
-H.qcf+2,F;M;25;i17~18;+5;+42a (+27);;
-H.qcf+4,3,1+2;m,h,h,h,h,h;15,23,6,6,6,10;i14, i25, i28 i35 i42;-2;+13a (+12);;"
+H.ws1,1+2;m,h,h,h,h;17,6,6,6,10;i13~14,i25 i35 i39 i42;-2;+29a (+3);;"
 * Balcony Break
 * Weapon
 * Combo from 1st hit
 * Chip damage on block
 * Partially uses remaining Heat time"
-H.WS.1,1+2;m,h,h,h,h;17,6,6,6,10;i13~14,i25 i35 i39 i42;-2;+29a (+3);;"
-* Balcony Break
-* Weapon
-* Combo from 1st hit
-* Chip damage on block
-* Partially uses remaining Heat time"
-H.WS.4,3,1+2;m,h,h,h,h,h;15,23,6,6,6,10;i11~12, i25, i28 i35 i42 i13;-2;+29a (+3);;"
+H.ws4,3,1+2;m,h,h,h,h,h;15,23,6,6,6,10;i11~12, i25, i28 i35 i42 i13;-2;+29a (+3);;"
 * Balcony Break
 * Combo from 2nd hit
 * Combo from 1st CH
@@ -376,36 +414,19 @@ qcb;;;;;;;"
 qcb,B+1+3;t;15;i12;;+6c;;"
 * Unbreakable
 * qcb,B+2+4"
-qcb,B+4;M;20;i19~20;-12~-11;+68a (+52);;"
-* Tornado
-* Sway adds minimum 10 frames, total startup is i29~30"
 qcf;;;;;;;"
 * Recovers in FC with qcf,n
 * Input sometimes written as d,df,F"
-qcf+1;h;21;i14~16;+1~+3;+3~+5;+47a (+37);Chip damage on block
-qcf+2;M;25;i17~18;-8~-7;+32a (+17);;"
-* Heat Engager
-
-* Balcony Break"
-qcf+2+3;h!;10;i24~38;;+36g~+50g;;Alternate input: db,qcf,n,DB+2+3
-qcf+3;L;17;i19~28;-20~-11;+0~+9;+21a;
-qcf+4;m;15;i14;-8;+6s;;Knee
-qcf+4,3;m,h;15,23;,i25;-10;+14a (+5);;Combo from 1st hit with 4f delay
-qcf+4,3,1+2;m,h,h,h,h;15,23,6,6,6;,i28 i35 i42;-9;+24a (-9);;"
-* Balcony Break
-* Weapon
-* Combo from 2nd hit
-* Chip damage on block"
 R.df+1+2;m,t;55+;i20~21;-15~-14;+0d;;"
 * Rage Art
 * Erases opponent's recoverable health on hit
 * Damage increases with lower health"
 Right throw;t;38;;-3;+1d;;Throw break 2
-SS.1;m;15;i14~15;-10~-9;+3~+4;;
+SS.1;m;15;i14~15;-10~-9;+3~+4;;"
+* Enter CD +10g~+11g +23g~+24g t29 r7 with F
+* Enter SWA +10g~+11g +23g~+24g t20 with B"
 SS.1+2;m;22;i19;-9;+36a;;Balcony Break
 SS.1,2;m,m;15,15;,i16~18;-3~-1;+3~+5;;
-SS.1,B;m;15;;+10g~+11;+23g~+24g;;
-SS.1,F;m;15;;+10g~+11;+23g~+24g;;
 SS.2;m;15;i13~14;-14~-13;+33a (+23);;
 SS.4;L;14;i20;-14;+6c;;Sidestep adds minimum 9 frames, total startup is i29
 SS.4,2;L,h;14,22;i22;-7;+37a (-21);;"
@@ -416,6 +437,9 @@ STB.2;t;30;;+0;-6d;;"
 * Side switch
 * Erases opponent's recoverable health on hit
 * Powered up input: STB.1,2,3"
+SWA.b+4;M;20;i19~20;-12~-11;+68a (+52);;"
+* Tornado
+* Sway adds minimum 10 frames, total startup is i29~30"
 TSS.1;t;15;;-3;+0d;;"
 * Throw break 1
 * Erases opponent's recoverable health on hit
@@ -447,8 +471,9 @@ uf+3+4;m,t;20,13;i23~30;-23a~-16a;+9a (-1);;"
 * Transition to throw on close range front hit"
 uf+4;h;23;i18;-9;-1;;
 uf+4,3;h,L;23,10;,i18;-19;-8;;Combo from 1st CH
-uf+4,3,4;h,L,h;23,10,14;,i20;-6;+5;;Combo from 2nd hit
-uf+4,3,4~D;h,L;23,10;;-5;+6;;
+uf+4,3,4;h,L,h;23,10,14;,i20;-6;+5;;"
+* Combo from 2nd hit
+* Enter SS -5 +6 with D or U"
 uf,n,D+3;L;15;i43;-17;-6;;
 uf,n,D+3,2;L,m;15,10;i25~27;-11~-9;+12~+14;;Combo from 1st CH
 uf,n,D+3,4;L,h;15,14;,i20;-8;+1;;Combo from 1st CH
@@ -456,48 +481,44 @@ uf,n,D+3,4,3;L,h,m;15,14,20;,i29~30;-7~-6;+22a;;"
 * Balcony Break
 * Spike
 * Combo from 2nd hit"
-WR.1+2;m;30;i20~21;+5;+36a (+26);;
-WR.1+2;m;30;i20~21;+4~+5;+12a (+3);;"
-* Heat Engager
-
-* Balcony Break
-* Chip damage on block"
-WR.3;m;12;i20~21;-13~-12;-2~-1;;
-WR.3,3;m,M;12,20;,i32~35;-4~-1;+17a;;"
-* Spike
-* Combo from 1st hit"
-WR.3,4;m,m;12,21;,i24~25;-13~-12;+34a (+19);;"
-* Tornado
-* Combo from 1st hit"
-WS.1;m;17;i13~14;-6~-5;+5~+6;;
-WS.1,1+2;m,h,h,h;17,6,6,6;,i25 i35 i39;-9;+34a (-24);;"
+ws1;m;17;i13~14;-6~-5;+5~+6;;
+ws1,1+2;m,h,h,h;17,6,6,6;,i25 i35 i39;-9;+34a (-24);;"
 * Balcony Break
 * Weapon
 * Combo from 1st hit
 * Chip damage on block
-* Power up during Heat"
-WS.1,4;m,m;17,20;,i34~35;-3c~-2c;+17a;;"
+* [[Nina_movelist#Nina-H.ws1,1+2|Powered up in heat]]"
+ws1+2;m;24;i17;-14;+11a (+2);;"
+* Heat Engager
+
+* Heat Dash +5 +43a r27
+
+* Balcony Break
+* Alternate input: f+1+2
+* Frame advantage is -8 if an attack is absorbed
+* Deals chip damage if an attack is absorbed"
+ws1,4;m,m;17,20;,i34~35;-3c~-2c;+17a;;"
 * Spike
 * Move can be delayed 3f"
-WS.2;m;15;i15~16;-13~-12;+28a (+18);;
-WS.3;m;15;i13;-13;+2;;"
+ws2;m;15;i15~16;-13~-12;+28a (+18);;
+ws3;m;15;i13;-13;+2;;"
 * Knee
 * Transition to Triple Slaps throw automatically on standing front hit"
-WS.3+4;m;21;i18~19;-17~-16;+36 (+26);;"
+ws3+4;m;21;i18~19;-17~-16;+36 (+26);;"
 * Tornado
 * Alternate input: db+3+4"
-WS.4;m;15;i11~12;-4~-3;+7~+8;;
-WS.4,2;m,m;15,22;,i19;-9;+36a;;"
-* Balcony Break
-* Side roll takes 42? frames
-* Chip damage on block
-* Can recover in r38 FC with D"
-WS.4,3;m,h;15,24;,i25;-10;+14a (+5);;"
-* Balcony Break
-* Combo from 1st CH"
-WS.4,1+2;m,h,h,h;15,6,6,6;,i28 i35 i42;-9;+34a (-24);;"
+ws4;m;15;i11~12;-4~-3;+7~+8;;
+ws4,1+2;m,h,h,h;15,6,6,6;,i28 i35 i42;-9;+34a (-24);;"
 * Balcony Break
 * Combo from 2nd hit
 * Combo from 1st CH
 * Chip damage on block
-* Power up during Heat"
+* [[Nina_movelist#Nina-H.ws4,3,1+2|Powered up in heat]]"
+ws4,2;m,m;15,22;,i19;-9;+36a;;"
+* Balcony Break
+* Side roll takes 42? frames
+* Chip damage on block
+* Can recover in r38 FC with D"
+ws4,3;m,h;15,24;,i25;-10;+14a (+5);;"
+* Balcony Break
+* Combo from 1st CH"

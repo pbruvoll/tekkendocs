@@ -7,7 +7,7 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * Jail from 1st attack
 * Move can be delayed"
 1,2,2;h,h,h;5,9,12;i17;-13;+3;;"
-* Combo from 1st hit
+* Combo from 2nd hit
 * Transition to -11 +5 BT with B"
 1+2+3+4;;;;;;;
 1+3;h;35;;;-3;;"
@@ -32,17 +32,17 @@ Balcony Break
 * Combo from 2nd CH
 * Move can be delayed
 * Cancel to -13 -2 BT with B"
-3;h;15;i16;-11;0;;
-3,1+2;h,m;15,30;i28~29;-12;+22d (+17);;"
+3;m;15;i16;-11;0;;
+3,1+2;m,m;15,30;i28~29;-12;+22d (+17);;"
 Balcony Break
-* Combo from 1st CH
+* Combo from 1st hit
 * Can be charged to power up:
 * At full charge +7 on block 14 chip damage "
-3,3;h,h;15,18;i17;-9;+2;;"
+3,3;m,h;15,18;i17;-9;+2;;"
 * Combo from 1st hit
 * Jail from 1st attack
 * Move can be delayed"
-3,3,4;h,h,l;15,18,23;i25~26;-12;+17d;;"
+3,3,4;m,h,l;15,18,23;i25~26;-12;+7c;+17d;"
 * Combo from 2nd CH
 * Move can be delayed
 * Cancel to -13 -2 BT with B"
@@ -64,11 +64,11 @@ b1+3;;25;;;;;"
 "
 b+2;m;15;i17;-11;+0c;;Floor Break
 b+2,3;m,l;15,10;i22~24;-11;0;;"
-* Combo from 1st CH
+* Combo from 1st hit 
 * Move can be delayed
 "
 b+2,3,4;m,l,m;15,10,13;i24~25;-12;+19a (+12);;"
-* Combo from 2nd hit
+* Combo from 2nd CH
 "
 b+2,3,4,2;m,l,m,m;15,10,13,22;i24~25;-6;+4;;"
 * Combo from 3rd hit
@@ -105,7 +105,7 @@ BT d+3;l;20;i18~20;=26c;-3;+70a (+54);"
 d+1+2;m;15;i20~21;-9;+8c;;
 d+1+2,1;m,m;15,20;i22~23;-12;+18a (+11);;"
 * Tornado
-* Combo from 1st CH
+* Combo from 1st hit
 * Move can be delayed
 "
 d+2;l;16;i20~21;-12;-1;;
@@ -119,7 +119,7 @@ db+1;m;15;i16;-12;+4;;"
 * Transition to -16 +0 STC with F
 "
 db+1+2;m;13;i21~22;-4;+4;;
-db+1,2;m,m;15,18;i23~24;-11;+7;;"
+db+1,2;m,m;15,18;i23~24;-11;+3;;"
 * Combo from 1st hit
 * Move can be delayed "
 db+1+2,2;m,l;13,10;i29~30;-12;-1;;"
@@ -127,7 +127,8 @@ db+1+2,2;m,l;13,10;i29~30;-12;-1;;"
 * Move can be delayed
 "
 db+1,2,4;m,m,m;15,18,30;i31;-7;-3d;;"
-* Floor Break "
+* Floor Break
+* Combo from 2nd CH "
 db+1,2,4,3+4;m,m,m;15,18,30;i39;;-;;"
 * Feng does a kip-up to get off the floor
 "
@@ -143,7 +144,7 @@ db+2,2;l,l;10,10;i28~30;-17;+20a;;"
 "
 db+2,2,2;l,l,m;10,10,25;i28~29;-8;+13d;;"
 Spike
-* Combo from 1st CH
+* Combo from 2nd hit
 "
 db+3;l;14;i17;-15;+4;;"
 * Transition to throw when CH from front
@@ -190,7 +191,7 @@ f+2,1;m,m;10,10;i19;-8;+3;;"
 * Move can be delayed"
 f+2,1,2;m,m,m;10,10,28;i13~14;-19;+19d (+14);;"
 * Balcony Break
-* Combo from 1st CH
+* Combo from 2nd hit
 * Move can be delayed"
 f+3;m;,10;i21;-3;+7;;
 f+3,2;m,h;,10,17;i21~22;-3;+8;+43d (+35);"
@@ -373,10 +374,11 @@ ws1,2;m,m;13,16;,i9;-10;+1;;"
 "
 ws1,2,1;m,m,m;13,16,20;i17~18;-12;+12d (+3);+32d (+24);"
 * Balcony Break
+* Combo from 2nd CH
 * Move can be delayed
 "
 ws1,3;m,h;13,20;i22~23;-6;+4c;+20d;"
-* Combo from 1st CH
+* Combo from 1st hit
 * Move can be delayed
 "
 ws2;m;17;i15~16;-7;+24d;+78a (+62);"
