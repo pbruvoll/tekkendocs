@@ -4,108 +4,101 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 1,1,3;h,h,l;5,8,10;i21;-12;-1;;
 1,1,3,3;h,h,l,h;5,8,10,14;i20;-14;+4;;
 1+2;;;;;;;"
-*Shifts to Backturn Stance
+* Shifts to Backturn Stance
 "
 1,2;h,h;5,10;i10;-3;+6;;"
-*Jails
-*1,2,3 to shift to Left Flamingo
-*1,2,4 to shift to Right Flamingo
+* Jails
+* 1,2,3 to shift to Left Flamingo
+* 1,2,4 to shift to Right Flamingo
 "
 1+2+3+4;;;;;;;
 1,2,f+3;h,h,m;5,10,14;i21;-8;+9;;
 1,2,f+4;h,h,h;5,10,20;i21;-8;+9;;" 
-*
-Balcony Break
+* Balcony Break
 "
 1+3;th(h);35;i12~14;;;;"
-*Break: 1 or 2
-*Opponent recovery on hit: FDFT
-Sideswap on break
+* Break: 1 or 2
+* Opponent recovery on hit: FDFT
+* Sideswap on break
 "
 2;h;9;i10;+8;+0;;"
-*2,3 to shift to Left Flamingo 
-*2,4 to shift to Right Flamingo
+* 2,3 to shift to Left Flamingo 
+* 2,4 to shift to Right Flamingo
 "
 2+3;m;12;i16;+1;+2;;"
-*
-Heat Burst
-*Cancel to r45 with b,b
+* Heat Burst
+* Cancel to r45 with b,b
 "
 2+4;th(h);25;i12~14;;;;"
 * Spike
-*Break: 1 or 2
-*Opponent recovery on hit: FDFT off-axis to the left, sideswap
+* Break: 1 or 2
+* Opponent recovery on hit: FDFT off-axis to the left, sideswap
 "
 2,f+3;h,m;9,14;i21;-8;+9;;
 2,f+4;h,h;9,20;i24~25;-2;+35;;" 
-*
-Balcony Break
+* Balcony Break
 "
 3;h;15;i14;-7;+8;;
 3,3;h,m;15,12;i18;-13;-7;;
 3,3,2;h,m,m;15,12,12;i21~22;-11;+1c;;
 3,3,3;h,m,m;15,12,15;i21;-14;+32;;"
-*
-Balcony Break
-*3,3,F to shift to Left Flamingo
+* Balcony Break
+* 3,3,F to shift to Left Flamingo
 "
 3,3,4;h,m,h;15,12,15;i21~23;+8;+19;;"
-*Shifts to Right Flamingo
+* Shifts to Right Flamingo
 "
 3,3,f+4;h,m,h;15,12,20;i21~27;-1;+40 (+14);;"
-*
-Balcony Break
+* Balcony Break
 "
 3+4;;;;;;;"
-*Shifts to Right Stance
+* Shifts to Right Stance
 "
 3~4;m,m;11,21;i22,i7;-3;+26 (+16);;"
-*Power up with quick input
+* Power up with quick input
 "
 4;h;14;i11~12;-6;+5;;
 4,3;h,m;14,16;i22;-6;+5;;"
-*3,4,F to cancel and shift to Left Flamingo
+* 3,4,F to cancel and shift to Left Flamingo
 "
 4,4;h,h;14,13;i16;-1;+10;;"
 * Jails
-*Shifts to Right Flamingo
+* Shifts to Right Flamingo
 "
 4,4,3;h,h,m;14,13,20;i25~31;-14c;+14;;"
-*Shifts to Right Stance
+* Shifts to Right Stance
 "
 4,4,4;h,h,h;14,13,17;i25~26;-2;+8;;"
-*Shifts to Right Stance
-*4,4,4,F to cancel and shift to Right Flamingo
+* Shifts to Right Stance
+* 4,4,4,F to cancel and shift to Right Flamingo
 "
 4,4,4,4;h,h,h,h;14,13,17,20;i31~32;+0;+36 (-22);;"
-*
-Tornado
-*Deals chip damage on hit
+* Tornado
+* Deals chip damage on hit
 "
 AIR.ub+3;th(m);26;i15~16;;;;"
-*Break: none
-*Opponent recovery on hit: FUFA, sideswap
-*Also possible during Right Stance
+* Break: none
+* Opponent recovery on hit: FUFA, sideswap
+* Also possible during Right Stance
 "
 b+1;m;15;i15;-14;-1;;"
-*Sidesteps to the right
+* Sidesteps to the right
 "
 2+4,B;th(h);40;i12~14;;;;"
-*Break: 2
-*Opponent recovery on hit: FUFA, sideswap
-*Shifts to Backturn Stance
+* Break: 2
+* Opponent recovery on hit: FUFA, sideswap
+* Shifts to Backturn Stance
 "
 b+3;m;17;i16~17;-19;+35 (+25);;"
-*
-Tornado
+* Tornado
 "
 b+4;h;17;i13~14;-10;+1;;"
-*Shifts to Right Stance
+* Shifts to Right Stance
 "
 Back throw;th(h);60;i12~14;;;;"
-*Break: none
-*Opponent recovery on hit: FUFA
-*Also possible during Right Stance
+* Break: none
+* Opponent recovery on hit: FUFA
+* Also possible during Right Stance
 "
 BT.3;m;20;i14~16;-13;+38 (+28);;
 BT.4;;;i14~16;-13;+40 (+30);;"
@@ -113,15 +106,14 @@ BT.4;;;i14~16;-13;+40 (+30);;"
 "
 BT.d+3;l;20;i18~19;-13;-2;;
 CD.3;m;27;i18~19;+4;+25 (+16);;"
-*
-Balcony Break
-*Chip damage on block
-*Also possible during Right Stance
-*Shifts to Left Flamingo
+* Balcony Break
+* Chip damage on block
+* Also possible during Right Stance
+* Shifts to Left Flamingo
 "
 CD.4;m;18;i16;-18;+53 (+43);;"
 * Tornado
-*Also possible during Right Stance
+* Also possible during Right Stance
 "
 d+3;l;7;17;-13;-2;;
 d+3,4;l,h;7,10;i21~23;+8;+14;;"
@@ -138,36 +130,36 @@ db+3;l;12;i19;-13;-1;;"
 * Also possible during Right Stance
 "
 db+3+4;ub(m);40;i61~63;+17;+17;;"
-*Also possible during Right Stance
-*db+3+4,b,b to cancel and shift to Left Flamingo
+* Also possible during Right Stance
+* db+3+4,b,b to cancel and shift to Left Flamingo
 "
 db+4;l;14;i16;-12;-8;;"
 * db+4,F to shift to Right Flamingo
 "
 db+4,4;l,h;14,21;i17~19;-28;+24;;"
-*Natural on CH
+* Natural on CH
 "
 d,db,b+3;th(h);45;i12~14;;;;"
 * Spike
-*Break: 1
-*Opponent recovery on hit: FUFA, sideswap
+* Break: 1
+* Opponent recovery on hit: FUFA, sideswap
 "
 df+1;m;10;i13~14;-1;+6;;"
-*Also possible during Right Stance
+* Also possible during Right Stance
 "
 df+1,3;m,m;10,15;i22~23;-2;+6;;"
-*Shifts to Left Flamingo
+* Shifts to Left Flamingo
 "
 df+2;m;13;i15;-7;+34 (+24);;"
-*Also possible during Right Stance
+* Also possible during Right Stance
 "
 df+3;m;12;i22~23;-14;-4;;"
-*df+3,F/U/D to cancel and shift to Left Flamingo
+* df+3,F/U/D to cancel and shift to Left Flamingo
 "
 df+3+4;m,h,m;7,4,17;i13,i14,i24~25;-14;+4;;"
 * Heat Engager
 
-*Jails
+* Jails
 * Deals chip damage on block
 * Also possible during Right Stance
 "
@@ -177,53 +169,50 @@ df+4;m;20;i16~17;-8;+8;;"
 * Shift to Right Stance
 "
 f+1+2;m;17;i15;-9;+2;;"
-*Also possible during Right Stance
+* Also possible during Right Stance
 "
 f+2;;15;i16;-2;+9;;"
-*Shifts to Right Stance
+* Shifts to Right Stance
 "
 f+2+3;th(h);35;i12~14;;;;"
-*Break: 1+2
-*Opponent recovery on hit: FUFA, sideswap
-*Possible in all stances except Backturn Stance
+* Break: 1+2
+* Opponent recovery on hit: FUFA, sideswap
+* Possible in all stances except Backturn Stance
 "
 f+3;;;;;;;"
-*Shifts to Left Flamingo
-*Sidesteps to the right
+* Shifts to Left Flamingo
+* Sidesteps to the right
 "
 f+3~3;m;25;i20;-16;+7 (-2);;"
-*Sidesteps to the right
+* Sidesteps to the right
 "
 f+4;h;21;i17~23;+7~8;+18;;"
-*Shifts to Right Flamingo
+* Shifts to Right Flamingo
 "
 f,F+3;m;24;i20~24;+6c;+6c;;"
-*Shifts to Right Stance
+* Shifts to Right Stance
 "
 f,F+4;m;22;i17~18;-7;+19 (+10);;"
-*
-Balcony Break
-*
-Heat Engager
+* Balcony Break
+* Heat Engager
 
-*Also possible during Right Stance
-*Shifts to Right Stance (does not shift when using heat dash)
+* Also possible during Right Stance
+* Shifts to Right Stance (does not shift when using heat dash)
 "
 f,f,F+3;m;30;i22~24;+6;+23;;"
-*
-Balcony Break
-*Chip damage on block
-*Also possible during Right Stance
+* Balcony Break
+* Chip damage on block
+* Also possible during Right Stance
 "
 f,f,F+4;h;28;i18~19;+5;+8;;"
-*Chip damage on block
-*Also possible during Right Stance
-*Sideswaps and leaves opponent backturned on hit
-*Shifts to Backturn Stance on block
+* Chip damage on block
+* Also possible during Right Stance
+* Sideswaps and leaves opponent backturned on hit
+* Shifts to Backturn Stance on block
 "
 f,n,4;;;;;;;"
-*Shifts to Right Flamingo
-*Sidesteps to the left
+* Shifts to Right Flamingo
+* Sidesteps to the left
 "
 f,n,d,df;;;;;;;
 f,n,df#4;m;18;i16;-8;+59 (+49);;"
@@ -232,134 +221,132 @@ f,n,df#4;m;18;i16;-8;+59 (+49);;"
 * Also possible during Right Stance
 "
 H.2+3;m,m,h;13,14,24(51);i17~18, i18~19, i29;+11;+13;;"
-*
-Heat Smash
-*Jails
-*Also possible during Right Stance and Left Flamingo
-*Shifts to Right Flamingo
+* Heat Smash
+* Jails
+* Also possible during Right Stance and Left Flamingo
+* Shifts to Right Flamingo
 "
 Left throw;th(h);45;i12~14;;;;"
-*Break: 1
-*Opponent recovery on hit: FUFT off-axis to the left
-*Also possible during Right Stance
+* Break: 1
+* Opponent recovery on hit: FUFT off-axis to the left
+* Also possible during Right Stance
 "
 LFS.1;;6;i13;+5;+7;;
 LFS.1+4;ub(m);80;i66~69;-1;-1;;"
 * LFS.1+4,b,b to cancel
 "
 LFS.2;m;15;i16;-2;+9;;"
-*Shifts to Right Stance
+* Shifts to Right Stance
 "
 LFS.3;m;10;i14;-13;-7;;"
-*LFS.3,F to remain in Left Flamingo
+* LFS.3,F to remain in Left Flamingo
 "
 LFS.3,2;m,m;10,20;i21~22;-11;+1c;;
 LFS.3,3;m,m;10,15;i21;-14;+32 (+24);;"
 * Balcony Break
 "
 LFS.3+4;;;;;;;"
-*Shifts to Right Flamingo
+* Shifts to Right Flamingo
 "
 LFS.3,4;m,h;10,15;i21~23;+8;+19;;"
-*Shifts to Right Flamingo
+* Shifts to Right Flamingo
 "
 LFS.3,f+4;m,h;10,20;i21~27;-1;+40 (+14);;"
 * Balcony Break
 "
 LFS.4;h;24;i14~16;+4;+27 (+18);;"
 * Balcony Break
-*Shifts to Right Flamingo
+* Shifts to Right Flamingo
 "
 LFS.4~3;h,h;17,26;i15~16;-2;+24 (+14);;"
 * Balcony Break
 "
 LFS.b+1;m;15;i15;-14;-1;;"
-*Sidesteps to the right
+* Sidesteps to the right
 "
 LFS.b+3;m;23;i20~22;-12;+14;;"
 * Balcony Break
-*Deals chip damage on block if an attack is absorbed
-*Shifts to Right Stance
+* Deals chip damage on block if an attack is absorbed
+* Shifts to Right Stance
 "
 LFS.b+4;m;15;i16~17;-8;0;;"
-*Shifts to Right Stance
+* Shifts to Right Stance
 "
 LFS.b+4,3;m,h;15,20;i16~19;0;+20 (+11);;"
 * Balcony Break
-*Deals chip damage on block
-*Shifts to Right Stance
+* Deals chip damage on block
+* Shifts to Right Stance
 "
 LFS.d+3;l;7;i16;-17;-6;;"
 "
 LFS.d+3,4;l,h;7,10;i21~23;+8;+14;;"
-*Shifts to Right Flamingo
+* Shifts to Right Flamingo
 "
 LFS.d+4;l;17;i20~21;-12;+4;;"
-*Alternate input: LFS.db+4
-*Shifts to Right Stance
+* Shifts to Right Stance
 "
 LFS.df+3;m;12;i22~23;-14;-4;;"
-*Deals chip damage on block if an attack is absorbed
-*LFS.df+3,F/U/D to cancel and remain in Left Flamingo
+* Deals chip damage on block if an attack is absorbed
+* LFS.df+3,F/U/D to cancel and remain in Left Flamingo
 "
 LFS.df+3,4;m,m;12,20;i24~25;-12;+7;;"
-*Deals chip damage on block if an attack is absorbed
+* Deals chip damage on block if an attack is absorbed
 "
 LFS.f+3;m;23;i19~20;+4;+26;;"
 * Balcony Break
 * Heat Engager
 
-*Remains in Left Flamingo
+* Remains in Left Flamingo
 "
 LFS.f+4;m;18;i17~18;-10;+6;;"
 * Homing
 "
 LFS.uf+3;m;11;i28~29;-6;-7;;
 LFS.uf+3+4;m,h;10,8;i14;-10;+1;;"
-*LFS.uf+3+4,F to remain in Left Flamingo
+* LFS.uf+3+4,F to remain in Left Flamingo
 "
 LFS.uf+3,4;m,m;11,12;i20~21;+2;+13;;"
-*Shifts to Right Flamingo
+* Shifts to Right Flamingo
 "
 LFS.uf+3,4,3;m,m,m;11,12,20;i27~28;-14;+0c;;
 LFS.uf+3+4,4;m,h,m;10,8,13;i14~15;-10;+7;;"
-*Shifts to Right Stance
+* Shifts to Right Stance
 "
 LFS.uf+4;m;20;i19~20;-14;+32 (+22);;"
 * Tornado
 "
 R.df+1+2;m;55;i20;-15;;;"
-*Rage Art
-*Erases opponent's recoverable health on hit
-*Possible during all stances except Backturn Stance
+* Rage Art
+* Erases opponent's recoverable health on hit
+* Possible during all stances except Backturn Stance
 "
 RFF.1;h;10;i10;+0;+6;;"
-*Remains in Right Stance
+* Remains in Right Stance
 "
 RFF.1,1;h,m;10,12;i19;-8;+3;;
 RFF.1+3;th(h);45;i12;;;;"
-*Break: 1+2
-*Opponent recovery on hit: FUFA, sideswap
-*Also possible during Right Stance
+* Break: 1+2
+* Opponent recovery on hit: FUFA, sideswap
+* Also possible during Right Stance
 "
 RFF.2;h;6;i10;+1;+8;;"
-*Remains in Right Stance
+* Remains in Right Stance
 "
 RFF.2,1;h,h;6,10;i10;+0;+6;;"
-*Jails
-*Remains in Right Stance
+* Jails
+* Remains in Right Stance
 "
 RFF.2,1,1;h,h,m;6,10,12;i19;-8;+3;;
 RFF.2,3;h,h;6,24;i19~20;-9;+20;;"
 * Tornado
 "
 RFF.2,4;h,h;6,9;i12;-8;+3;;"
-*Jails
-*Remains in Right Stance
-*Hold any direction to shift to Right Flamingo
+* Jails
+* Remains in Right Stance
+* Hold any direction to shift to Right Flamingo
 "
 RFF.2,4,3;h,h,m;6,9,20;i25~31;-14c;+14;;"
-*Remains in Right Stance
+* Remains in Right Stance
 "
 RFF.2,4,4;h,h,h;6,9,23;i18~19;-5;+41;;"
 * Balcony Break
@@ -367,98 +354,98 @@ RFF.2,4,4;h,h,h;6,9,23;i18~19;-5;+41;;"
 "
 RFF.3;m;13;i16;-4;+7;;
 RFF.3+4;;;;;;;"
-*Shifts to Left Stance
+* Shifts to Left Stance
 "
 RFF.3,4;m,h;13,16;i27~28;+10;+21;;"
-*Shifts to Right Flamingo
-*RFF.3,4,F to cancel and shift to Right Flamingo
+* Shifts to Right Flamingo
+* RFF.3,4,F to cancel and shift to Right Flamingo
 "
 RFF.3~4;h;27;i27~30;+5;+47;;"
 * Balcony Break
 * Homing
-*Clean hit
-*Chip damage on block
+* Clean hit
+* Chip damage on block
 "
 RFF.4;h;9;i12;-8;+3;;"
-*Remains in Right Stance
-*Hold any direction to shift to Right Flamingo
+* Remains in Right Stance
+* Hold any direction to shift to Right Flamingo
 "
 RFF.4,3;h,m;9,20;i25~31;-14c;+14;;"
-*Remains in Right Stance
+* Remains in Right Stance
 "
 RFF.4,4;h,h;9,23;i18~19;-5;+41;;"
 * Jails
 * Balcony Break
 "
 RFF.b+2;m;17;i16~17;+4;+6c;;"
-*Remains in Right Stance
+* Remains in Right Stance
 "
 RFF.b+3;h;17;i13~14;-10;+1;;"
-*Sidesteps to the right
+* Sidesteps to the right
 "
 RFF.b+4;h;21;i18~19;-9;+12;;"
 * Balcony Break
 "
 RFF.d+3;l;10;i18;-11;0;;"
-*Shifts to Backturn Stance
+* Shifts to Backturn Stance
 "
 RFF.d+3+4;l;19;i19;-11;+5;;"
-*Remains in Right Stance
+* Remains in Right Stance
 "
 RFF.d+3,4;l,h;10,10;i21~23;+8;+14;;"
-*Shifts to Right Flamingo
+* Shifts to Right Flamingo
 "
 RFF.df+2+3;m;12;i22~23;-14;-4;;"
-*Deals chip damage on block if an attack is absorbed
-*RFF.df+2+3,F/U/D to cancel and shift to Left Flamingo
+* Deals chip damage on block if an attack is absorbed
+* RFF.df+2+3,F/U/D to cancel and shift to Left Flamingo
 "
 RFF.df+2+3,4;m,m;12,20;i24~25;-12;+7;;"
-*Deals chip damage on block if an attack is absorbed
+* Deals chip damage on block if an attack is absorbed
 "
 RFF.df+3;m;21;i22~24;+1;+6;;"
 * Homing
 * Heat Engager
 
-*Deals chip damage on block
-*Remains in Right Stance
+* Deals chip damage on block
+* Remains in Right Stance
 "
 RFF.df+4;m;12;i13;-7;+1;;"
-*Remains in Right Stance
-*Hold any direction to shift to Right Flamingo
+* Remains in Right Stance
+* Hold any direction to shift to Right Flamingo
 "
 RFF.f+1;h;5;i10;+1;+8;;
 RFF.f+1,2;h,h;5,10;i10;-3;+6;;Jails
 RFF.f+3;h;21;i14~17;+6;+17;;"
-*Shifts to Left Flamingo
-*RFF.f+3,B to shift to Backturn Stance
+* Shifts to Left Flamingo
+* RFF.f+3,B to shift to Backturn Stance
 "
 RFF.f+4;;;;;;;"
-*Shifts to Right Flamingo
+* Shifts to Right Flamingo
 "
 RFF.f+4~4;m;20;i18~20;-13;+41 (+31);;"
 * Tornado
-*Remains in Right Stance
+* Remains in Right Stance
 "
 RFF.f,F+3;m;22;i22~25;-7;+19;;
 RFS.1;m;15;i16;-2;+9;;"
 "
 RFS.2;h;6;i13;+5;+7;;"
-*Shifts to Right Stance
+* Shifts to Right Stance
 "
 RFS.3;h;24;i14~16;+4;+27 (+18);;"
 * Balcony Break
-*Shifts to Left Flamingo
-*Sidesteps to the left
+* Shifts to Left Flamingo
+* Sidesteps to the left
 "
 RFS.3+4;;;;;;;"
-*Shifts to Left Flamingo
+* Shifts to Left Flamingo
 "
 RFS.3~4;m,m;11,21;i16;-3;+26 (+16);;"
 * Balcony Break
 "
 RFS.4;m;20;i14;-13;+21 (+11);;"
 * Balcony Break
-*Shifts to Right Stance
+* Shifts to Right Stance
 "
 RFS.b+3;m;21;i16~17;-9;+7;;"
 * Heat Engager
@@ -466,15 +453,15 @@ RFS.b+3;m;21;i16~17;-9;+7;;"
 "
 RFS.b+4;m;23;i20~22;-12;+14;;"
 * Balcony Break
-*Deals chip damage on block if an attack is absorbed
+* Deals chip damage on block if an attack is absorbed
 "
 RFS.d+3;l;13;i15;-13;-5;;
 RFS.d+3,3;l,h;13,28;i25~27;-2;+34 (+8);;"
 * Balcony Break
-*Deals chip damage on block
+* Deals chip damage on block
 "
 RFS.d+4;l;15;i20~21;-23;+7;;"
-*Shifts to Right Stance
+* Shifts to Right Stance
 "
 RFS.d+4,3;l,h;15,12;i25;-9;-1;;
 RFS.d+4,3,4;l,h,h;15,12,20;i27~28;-9;+28 (+2);;"
@@ -485,15 +472,15 @@ RFS.f+3;m;18;i20~21;-10;+5;;"
 * Homing
 "
 RFS.f+4;h,h;8,8;i8;+0;+2;;"
-*Remains in Right Flamingo
+* Remains in Right Flamingo
 "
 RFS.f+4,4;h,h,h;8,8,9;i23;-6;+75 (+59);;"
 * Tornado
-*Shifts to Right Stance
+* Shifts to Right Stance
 "
 RFS.u+4;h;17;i25~26;-2;+8;;"
 * Homing
-*Shifts to Right Stance
+* Shifts to Right Stance
 "
 RFS.uf+3;m;22;i24~27;-7;+19;;"
 "
@@ -502,93 +489,91 @@ RFS.uf+4;m;20;i17~18;;+30 (+20);;"
 * Shifts to Right Stance
 "
 Right throw;th(h);44;i12~14;;;;"
-*Break: 2
-*Opponent recovery on hit: FDFT off-axis to the right
-*Also possible during Right Stance
+* Break: 2
+* Opponent recovery on hit: FDFT off-axis to the right
+* Also possible during Right Stance
 "
 SS.3;m;13;i18~19;-12;-1;;
 SS.3,3;m,h;13,16;i9~10;+3;+14;;"
-*Shifts to Left Flamingo
+* Shifts to Left Flamingo
 "
 SS.4;l;18;i19~20;-13;+5c;;"
-*Shifts to Right Stance
+* Shifts to Right Stance
 "
 u+3;h;25;i20;+5;+44 (+38);;"
-*Also possible during Right Stance
-*Shifts to Left Flamingo
+* Also possible during Right Stance
+* Shifts to Left Flamingo
 "
 u+3+4;m;20;i25~26;-7;+24;;"
-*Also possible during Right Stance
+* Also possible during Right Stance
 "
 u+4;m;18;i16~18;+3;+11;;"
-*Also possible during Right Stance
-*Shifts to Right Flamingo
+* Also possible during Right Stance
+* Shifts to Right Flamingo
 "
 ub+2;h;18;i13~15;-9;+15;;"
-*
-Homing
-*Alternate input: b+2
-*Also possible during Right Stance
-*Sidesteps to the left
+* Homing
+* Also possible during Right Stance
+* Sidesteps to the left
 "
 ub+4;m;18;i17~20;-8;+10;;"
-*Also possible during Right Stance
+* Also possible during Right Stance
 "
 uf+1+2;th(h);40;i12~14;;;;"
-*Break: 1+2
-*Opponent recovery on hit: FUFA
-*Also possible during Right Stance
+* Break: 1+2
+* Opponent recovery on hit: FUFA
+* Also possible during Right Stance
 "
 uf+2;m;22;i26;+5c;+6c;;"
-*Also possible during Right Stance
+* Also possible during Right Stance
 "
 uf+3;m;11;i28~29;-6;-7;;"
-*Also possible during Right Stance
+* Also possible during Right Stance
 "
 uf+3+4;m,h;10,8;i14,i9;-10;+1;;"
-*Jails
-*Also possible during Right Stance
-*Shifts to Right Stance
-*uf+3+4,F to shift to Left Flamingo
+* Jails
+* Also possible during Right Stance
+* Shifts to Right Stance
+* uf+3+4,F to shift to Left Flamingo
 "
 uf+3,4;m,m;11,12;i20~21;+2;+13;;"
-*Also possible during Right Stance
-*Shifts to Right Flamingo
+* Also possible during Right Stance
+* Shifts to Right Flamingo
 "
 uf+3,4,3;m,m,m;11,12,20;i27~28;-14c;0c;;"
 * Also possible during Right Stance
 "
 uf+3+4,4;m,h,m;10,8,13;i14~15;-10;+7;;"
-*Also possible during Right Stance
-*Shifts to Right Stance
+* Also possible during Right Stance
+* Shifts to Right Stance
 "
 uf+4;h;12;i22~23;-2;+4;;"
-*Also possible during Right Stance
-*Shifts to Right Flamingo
+* Also possible during Right Stance
+* Shifts to Right Flamingo
 "
 uf+4,4;h,m;12,12;i11~12;0;+6;;"
-*Also possible during Right Stance
-*Shifts to Right Flamingo
+* Also possible during Right Stance
+* Shifts to Right Flamingo
 "
 uf+4,4,4;h,m,l;12,12,12;i9~10;+1;+7;;"
-*Also possible during Right Stance
-*Shifts to Right Flamingo
+* Also possible during Right Stance
+* Shifts to Right Flamingo
 "
 uf,n,4;m;20;i23~25;-13;+32 (+22);;"
-*Also possible during Right Stance
+* Also possible during Right Stance
 "
 ws2;m;8;i15~16;-7;+4;;
 ws2,3;m,h;8,10;i23~25;+3;+72 (+56);;"
 * Tornado
-*Shifts to Left Flamingo
+* Shifts to Left Flamingo
 "
 ws3;m;20;i14~18;-12;+22;;
 ws3+4;m;16;i20~21;-9;+2;;"
-*Alternate input: f,n,d,df+3+4 (CD.3+4)
-*Shifts to Backturn Stance
+* Alternate input: f,n,d,df+3+4 (CD.3+4)
+* Shifts to Backturn Stance
 "
 ws3+4,3;m,m;16,20;i21~26;-6;+5c;;
 ws4;m;12;i11~12;-3;+8;;
 ws4,4;m,m;12,16;i15~19;-5;+4c;;"
-*Shifts to Right Stance
+* Shifts to Right Stance
 "
