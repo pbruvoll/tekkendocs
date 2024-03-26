@@ -174,13 +174,13 @@ f+1+2;m,m;16,22;i19~20 i13~14;-9;+5d(-5);;"
 * Second hit only comes out on hit or block
 * 8 chip damage on block
 "
-f+2;,m;17;i19;-18;-9;+52a;
-f+2,3;,m,h;17,12;i19;0;+9;;"
+f+2;m;17;i19;-18;-9;+52a;
+f+2,3;m,h;17,12;i19;0;+9;;"
 * Cancel SCR transition -9, +0 with B
 * Combos from 1st hit
 * Can be delayed
 "
-f+2,3,4;,m,h,m;17,12,25;i28~29;-18;+18d(8);;Balcony Break
+f+2,3,4;m,h,m;17,12,25;i28~29;-18;+18d(8);;Balcony Break
 f+3;h;28;i21;+3;+68a(48);;"
 * Balcony Break
 * Cancel SCR transition -1, +64a with B
@@ -235,7 +235,7 @@ f,f,F+3;m;30;i23~26;+7;+19a(9);;"
 * Cancel SCR transition +3, +15a with B
 * 9 chip damage on block
 "
-H.2+3;h,sm;15,4,5,5,4,18;i12~13 i47~53 i1~7 i1~7 i1~6 i1~2;+3;knd;;"
+H.2+3;h,sm;15,4,5,5,4,18;i12~13 i47~53 i1~7 i1~7 i1~6 i1~2;+3;+0d;;"
 * Heat Smash
 * Balcony Break
 * Hit throw on the first hit
@@ -309,7 +309,7 @@ SCR.1;h;12;i10~11;-2;+9;;"
 SCR.1+2;m;20;i17~19;+6;+17d;;"
 * Hold D to transition to TRT (remains +6/+17d)
 "
-SCR.1,4;h,m;12,18;i22;+7;-6;+32d;"
+SCR.1,4;h,m;12,18;i22;-6;+7;+32d;"
 "
 SCR.2;m;17;i14;-7;+7;;"
 "
@@ -351,6 +351,12 @@ SCR.d+4;l;20;i24~30;-25;-4d;;"
 * Can hold D to transition to MNT (remains -25/-4d)
 "
 SCR.db;;;19;;;;"
+"
+SCR.df+1;m,m;10,20;i18 i17~19;-6;+33a(+18);;"
+* Azazel's Power
+* Zafina receives recoverable health damage
+* Gains Power Crush frames during Heat
+* 8 chip damage on block
 "
 SCR.df+3;l;10;i28~30;-23;-10c;;"
 * Homing
@@ -424,9 +430,3 @@ ws3;m;20;i12;0;+9;;"
 * Cancel SCR transition by holding B (becomes -8/+1)
 "
 ws4;m;14;i11;-7;+4;;
-SCR.df+1;m,m;10,20;i18 i17~19;-6;+33a(+18);;"
-* Azazel's Power
-* Zafina receives recoverable health damage
-* Gains Power Crush frames during Heat
-* 8 chip damage on block
-"

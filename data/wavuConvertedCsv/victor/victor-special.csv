@@ -19,7 +19,7 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * Throw break: 1 or 2
 * Opponent recovery on hit: FDFT
 "
-1,4;h,l;5,11;,i21~22;-12;-1;-1;"
+1,3;h,l;5,11;,i21~22;-12;-1;-1;"
 "
 2;h;10;i12~13;-12;-2;;"
 "
@@ -29,7 +29,7 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 2,2;h,mm;10,10,5;,i17~18,i7;-12;-2;;"
 *-10 if last hit whiffs
 "
-2,2,1;h,mm,h;10,10,5,12;,i22;-3;+4;;"
+2,2,2;h,mm,h;10,10,5,12;,i22;-3;+4;;"
 * Chip damage on block
 * Transitions to IAI on hit or block
 "
@@ -129,7 +129,7 @@ db+3;h;20;i19~20;-8;+40a (-18);;"
 "
 db+4;l;17;i20~21;-26;+4c;+49a;"
 "
-df+1;m;10;i13~14;-12;+4;;"
+df+1;m;10;i13~14;-2;+4;;"
 "
 df+1,1;m,hh;10,7,7;,i20;-4;+7;;"
 "
@@ -348,7 +348,7 @@ ws1;m;20;i15~16;-16;+53;;"
 ws1+2;mm;10,17;i13~14,i9~10;-8;+8;;"
 * Transition to PRF with F
 "
-ws2;m;15;i14~15;-8;+6;;"
+ws2;m;15;i14~15;-8;+6;+35a (+25);"
 "
 ws3;h;16;i15~16;-14;+6;;"
 "
