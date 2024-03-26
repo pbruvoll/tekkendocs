@@ -1,17 +1,37 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes
+2+3;m;12 (12);i16;+1;+2c;;"
+* Heat Burst
+"
+H.2+3;m;41 (18);i15;+6;+0;;"
+* Heat Smash
+* Balcony Break
+* Alternate input: H.HRM.2+3
+* Also possible after Twin Dragon Gate is successful
+* Transition to HRM on block
+"
+R.df+1+2;m;55;i20;;;;"
+* [[:Template:RageArt]]
+* Erase opponent's recoverable health on hit
+"
 1;h;5;i10;+1;+8;;
 1,1;h,m;5,7;i18~19;-9;+2;;
 1,1,1+2;h,m,h;5,7,12;i19~20;-13;-2;;"
 * Power up during Heat (partially uses remaining Heat time
 "
 1,1,1+2,1;h,m,h,m;5,7,12,15;,i23~24;-16;+20 (+15);;
-1+2;h;9;i14;-4;;;"
-* Power up during Heat (partially uses remaining Heat time
-"
 1,2;h,h;5,9;,i12;-3;+7;;
 1,2,1;h,h,h;5,9,17;,i27~28;-6;+8;;"
 * Follow-up after successful sabaki with input 1 or 2
 * Partially restores remaining Heat time when successful during Heat
+"
+1,2,3;h,h,h;5,9,21;,i23~24;-6;+20 (+11);;"
+* Balcony Break
+"
+1,2,4;h,h,m;5,9,11;,i16;-9;+3;;"
+* Transition to HRM
+"
+1+2;h;9;i14;-4;;;"
+* Power up during Heat (partially uses remaining Heat time
 "
 1+2,1+2;h,h;9,9;i9;-9;;;"
 * Power up during Heat (partially uses remaining Heat time
@@ -20,18 +40,6 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * Heat Engager
 
 * Balcony Break
-"
-1,2,3;h,h,h;5,9,21;,i23~24;-6;+20 (+11);;"
-* Balcony Break
-"
-1+2+3+4;sp;;;;;;
-1,2,4;h,h,m;5,9,11;,i16;-9;+3;;"
-* Transition to HRM
-"
-1+3;th(h);35;i12~14;;;;"
-* Spike
-* Throw break: 1 or 2
-* Opponent status on hit: FUFT perpendicular
 "
 1+3+4;sp;;;;;;"
 * Reversal (partially restores remaining Heat time when successful during Heat)
@@ -51,14 +59,6 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 2,2;h,h;10,20;,i25~26;-7;+7;;"
 * chip damage on block
 "
-2+3;m;12 (12);i16;+1;+2c;;"
-* Heat Burst
-"
-2+4;th(h);35;i12~14;;;;"
-* Throw break: 1 or 2
-* Opponent status on hit: FUFA
-* Side switch on hit
-"
 3;m;14;i15;-8;+3;;
 3,3;m,l;14,13;,i18;-14;+2;;
 3+4;sp;;;;;;"
@@ -68,6 +68,76 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 "
 4;h;15;i12;-11;0;;
 4,4;h,m;1513;,i15~16;-13;+3;;
+f+1+2;m;20;i17~18;-13;+20 (+15);;
+f+2;h;15;i14~16;-9;+2;;
+f+2,3;h,m;1515;,i18;-10;;;
+f+2,3,4;h,m,m;151520;,i21~22;-9;+8;;"
+* Transition to HRM
+"
+f+2+3;m;35;i22~23;;+73;;"
+* Only once per match
+* chip damage on block
+"
+f+3;m;14;i14~15;-7;+7;;Alternative input: ws3
+f+3,1+2;m,h;1415;;-12;;;power up during Heat (partially uses remaining Heat time)
+f+3,1+2,4;m,h,m;1415,20;,i20~21;-16;+13 (+6);;Tornado
+f+4;m;14;i16~17;-9;+4;;
+f+4,4;m,h;14,24;,i28~30;-6;;;"
+* Heat Engager
+
+* Balcony Break
+"
+df+1;m;10;i13~14;-6;+5;;
+df+1,1+2;m,h;10,9;;-6;0;;power up during Heat (partially uses remaining Heat time)
+df+1,1+2,2;m,h;10,9,17;,i24;-10;+3;;"
+* Partially restores remaining Heat time when successful during Heat
+"
+df+1,4;m,m;10,16;,i18;-9;+3;;Transition to HRM
+df+2;m;7;i15~16;-6;+6;;
+df+2,1+2;m,hm;7,5,10;;-18;+33 (+23);;
+df+3;m;14;i16;-11;0;;
+df+3,1;m,h;14,12;,i16~17;0;+6;;
+df+3,1,1+2;m,h,m;14,12,25;,i20~21;-13;+34 (+13);;Balcony Break
+df+3+4;h;23;i18~19;-9;+70 (+54);;"
+* Tornado
+* chip damage on block
+"
+df+4;m;14;i13;-6;+6;;Transition to HRM
+df+4,3;m,m;14,14;,i20~21;-9;+7;;
+d+1;sl;5;i10;-5;+6;;
+d+1,2;sl,m;5,8;,i15~16;-10;-1;;
+d+1,2,4;sl,m,m;5,8,11;,i15;-9;+3;;Transition to HRM
+d+1+2;m;21;i17~18;-4;;;"
+* Heat Engager
+
+"
+d+2;l;11;i15~16;-13;-2;;
+d+2,4;l,l;11,11;,i24~25;-13;-2c;;
+d+3;l;8;i16;-13;-2;;
+d+3,2;l,h;8,8;,i24~25;-3;+8;;Transition to HRM
+d+4;l;9;i14~15;-12;-1;;
+d+4,4;l,m;9,16;,i18~19;-11;+1;;Transition to HRM
+db+1;m;12;i16~17;-9;+1;;
+db+1,1+2;m,m;12,25;,i21~22;-10;+23 (+18);;Balcony Break
+db+1,2;m,m;12,20;,i21~22;-12;+17 (+0);;"
+* Balcony Break
+* Tornado
+"
+db+1,3;m,h;12,17;,i18~19;0;+8;;
+db+1+2;m;25;i32~33;-11;;;"
+* Heat Engager
+
+* Balcony Break
+* Sabaki (partially restores remaining Heat time when successful during Heat)
+* chip damage on block
+"
+db+2+3;lm;10,14 (9);i20~21;;+67 (+51);;"
+* Only once per match
+* Tornado
+* chip damage on block
+"
+db+3;l;12;i20~21;-8;+5;;Transition to HRM
+db+4;l;13;i17;-15;-4c;;
 b+1;h;17;i13;-6;+5;;
 b+1+2;m;17;i12;-10;+2;;
 b+2;sp;;;;;;"
@@ -87,84 +157,38 @@ b+3+4;m,th;21,25;i18~19;-14;+0;;"
 * Attack throw on hit
 "
 b+4;m;16;i17~18;-9;+4;;Homing
-Back throw;th(h);50;i12~14;;;;"
-* Spike
-* Throw break: none
-* Opponent status on hit: FDFA
+ub+2;m;17;i20;-10;+3;;Has punch parry effect (partially restores remaining Heat time when successful during Heat)
+uf+1;h;17;i16~17;-9;+5;;"
+* Reversal (partially restores remaining Heat time when successful during Heat)
+* Follow-up upon successful reversal with input 1 or 2
 "
+uf+2;m;25;i24~25;+1;+10 (+1);;"
+* Balcony Break
+* Alternate input: u+2
+* chip damage on block
+"
+uf+3;m;25;i20~24;-8;+14 (+5);;"
+* Balcony Break
+* Alternate input: ub+3 or u+3
+"
+uf+3+4;mm;8,10;i14~15,i10~11;-14;+16;;Balcony Break
+uf+3+4,1+2;mm,m;8,10,17 (11);,i30~31;-13;+23 (+13);;Balcony Break
+uf+4;m;22;i23~25;-8;+21;;Alternate input: ub+4 or u+4
+1+2+3+4;sp;;;;;;
 CH b+1;h,th;20,25;i13;;+0;;
-d+1;sl;5;i10;-5;+6;;
-d+1+2;m;21;i17~18;-4;;;"
-* Heat Engager
-
+P:b+2;sp;;;;;;"
+* Alternate input: P:HRM.b+2
+* Parry (partially restores remaining Heat time when successful during Heat)
 "
-d+1,2;sl,m;5,8;,i15~16;-10;-1;;
-d+1,2,4;sl,m,m;5,8,11;,i15;-9;+3;;Transition to HRM
-d+2;l;11;i15~16;-13;-2;;
-d+2,4;l,l;11,11;,i24~25;-13;-2c;;
-d+3;l;8;i16;-13;-2;;
-d+3,2;l,h;8,8;,i24~25;-3;+8;;Transition to HRM
-d+4;l;9;i14~15;-12;-1;;
-d+4,4;l,m;9,16;,i18~19;-11;+1;;Transition to HRM
-db+1;m;12;i16~17;-9;+1;;
-db+1,1+2;m,m;12,25;,i21~22;-10;+23 (+18);;Balcony Break
-db+1+2;m;25;i32~33;-11;;;"
-* Heat Engager
-
-* Balcony Break
-* Sabaki (partially restores remaining Heat time when successful during Heat)
-* chip damage on block
+P:b+2,1;m;35;i13;;;;"
+* Alternate input: P:b+2,2
+* power up during Heat (partially uses remaining Heat time)
 "
-db+1,2;m,m;12,20;,i21~22;-12;+17 (+0);;"
-* Balcony Break
-* Tornado
+d,df,f+2;h;20;i16~17;-6;+29 (+22);;chip damage on block
+d,df,f+3+4,F;ub(m);80;i56~57;;-1;;"
+* Reversal (partially restores remaining Heat time when successful during Heat)
+* Follow-up upon successful reversal with input 1 or 2 to Chain Punch: Branch
 "
-db+1,3;m,h;12,17;,i18~19;0;+8;;
-db+2+3;lm;10,14 (9);i20~21;;+67 (+51);;"
-* Only once per match
-* Tornado
-* chip damage on block
-"
-db+3;l;12;i20~21;-8;+5;;Transition to HRM
-db+4;l;13;i17;-15;-4c;;
-df+1;m;10;i13~14;-6;+5;;
-df+1,1+2;m,h;10,9;;-6;0;;power up during Heat (partially uses remaining Heat time)
-df+1,1+2,2;m,h;10,9,17;,i24;-10;+3;;"
-* Partially restores remaining Heat time when successful during Heat
-"
-df+1,4;m,m;10,16;,i18;-9;+3;;Transition to HRM
-df+2;m;7;i15~16;-6;+6;;
-df+2,1+2;m,hm;7,5,10;;-18;+33 (+23);;
-df+3;m;14;i16;-11;0;;
-df+3,1;m,h;14,12;,i16~17;0;+6;;
-df+3,1,1+2;m,h,m;14,12,25;,i20~21;-13;+34 (+13);;Balcony Break
-df+3+4;h;23;i18~19;-9;+70 (+54);;"
-* Tornado
-* chip damage on block
-"
-df+4;m;14;i13;-6;+6;;Transition to HRM
-df+4,3;m,m;14,14;,i20~21;-9;+7;;
-f+1+2;m;20;i17~18;-13;+20 (+15);;
-f+2;h;15;i14~16;-9;+2;;
-f+2+3;m;35;i22~23;;+73;;"
-* Only once per match
-* chip damage on block
-"
-f+2,3;h,m;1515;,i18;-10;;;
-f+2,3,4;h,m,m;151520;,i21~22;-9;+8;;"
-* Transition to HRM
-"
-f+3;m;14;i14~15;-7;+7;;Alternative input: ws3
-f+3,1+2;m,h;1415;;-12;;;power up during Heat (partially uses remaining Heat time)
-f+3,1+2,4;m,h,m;1415,20;,i20~21;-16;+13 (+6);;Tornado
-f+4;m;14;i16~17;-9;+4;;
-f+4,4;m,h;14,24;,i28~30;-6;;;"
-* Heat Engager
-
-* Balcony Break
-"
-FC.4;l;14;i15~16;-15;-4;;
-FC.4,1;l,m;14,15;,i20~21;;+31 (+21);;
 f,F+2;m;8;i14~15;-11;0;;
 f,F+2,2;m,m;8,13;,i17~18;-15;+55;;
 f,F+3;h;23;i18~23;-2;+33 (+25);;"
@@ -173,17 +197,18 @@ f,F+3;h;23;i18~23;-2;+33 (+25);;"
 "
 f,F+4;m;16;i16~17;-4;+9;;Transition to HRM
 f,F+4,2;m,m;16,21;,i27~28;-14;+34 (+19);;Tornado
+uf,n,4;m;20;i23~25;-13;+32 (+22);;
 f,f,F+3;m;30;i24~27;+6;+41 (-17);;"
 * Balcony Break
 * chip damage on block
 "
-H.2+3;m;41 (18);i15;+6;+0;;"
-* Heat Smash
-* Balcony Break
-* Alternate input: H.HRM.2+3
-* Also possible after Twin Dragon Gate is successful
-* Transition to HRM on block
-"
+ws1;m;14;i13~14;;;;
+ws1,4;m,m;14,16;,i21;;+3;;Transition to HRM
+ws2;m;21;i15~16;;+51;;
+ws4;m;16;i11~12;;+5;;
+SS.4;l;17;i18~19;;+4;;
+FC.4;l;14;i15~16;-15;-4;;
+FC.4,1;l,m;14,15;,i20~21;;+31 (+21);;
 HRM.1;m;17;i24~25;;;;"
 * Parry
 * Partially restores remaining Heat time upon successful parry during Heat
@@ -206,74 +231,49 @@ HRM.3;l;8;i16;;;;
 HRM.3,4;l,m;8,16;i22~23;;+1;;
 HRM.4;m;13;i11~12;;;;Transition to HRM
 HRM.4,1+2;m,m;13,25;,i24~25;;+27 (+12);;Tornado
+HRM.SS;sp;;;;;;
+HRM.SS.1+2;h;26;i14;;+30;;"
+* chip damage on block
+* power up during Heat (partially uses remaining Heat time)
+"
 HRM.b+1;m;21;i20~22;;+7c;;chip damage on block
 HRM.b+3;l;12;i20~21;;;;
 HRM.b+3,1+2;l,m;12,18 (12);i31~32;;+0 (-1);;Balcony Break
 HRM.b+4;l;17;i20~21;;+4c;;Homing
-HRM.SS;sp;;;;;;
 HRM.f+1;h;17;i14~15;;+15g;;Balcony Break
 HRM.f+4;m;21;i26~29;;+40;;chip damage on block
-HRM.SS.1+2;h;26;i14;;+30;;"
-* chip damage on block
+OTG.db+2;l;;i17~18;;;;Power up during Heat (partially uses remaining Heat time)
+OTG.db+2,1+2;l,l;;;;;;
+P.b+2,1;m;30;i13;;;;"
+* Alternate input: P.b+2,2
 * power up during Heat (partially uses remaining Heat time)
+"
+1+3;th(h);35;i12~14;;;;"
+* Spike
+* Throw break: 1 or 2
+* Opponent status on hit: FUFT perpendicular
+"
+2+4;th(h);35;i12~14;;;;"
+* Throw break: 1 or 2
+* Opponent status on hit: FUFA
+* Side switch on hit
+"
+Back throw;th(h);50;i12~14;;;;"
+* Spike
+* Throw break: none
+* Opponent status on hit: FDFA
 "
 Left throw;th(h);40;i12~14;;;;"
 * Spike
 * Throw break: 1
 * Opponent status on hit: FUFT perpendicular
 "
-OTG.db+2;l;;i17~18;;;;Power up during Heat (partially uses remaining Heat time)
-OTG.db+2,1+2;l,l;;;;;;
-P:b+2;sp;;;;;;"
-* Alternate input: P:HRM.b+2
-* Parry (partially restores remaining Heat time when successful during Heat)
-"
-P.b+2,1;m;30;i13;;;;"
-* Alternate input: P.b+2,2
-* power up during Heat (partially uses remaining Heat time)
-"
-P:b+2,1;m;35;i13;;;;"
-* Alternate input: P:b+2,2
-* power up during Heat (partially uses remaining Heat time)
-"
-d,df,f+2;h;20;i16~17;-6;+29 (+22);;chip damage on block
-d,df,f+3+4,F;ub(m);80;i56~57;;-1;;"
-* Reversal (partially restores remaining Heat time when successful during Heat)
-* Follow-up upon successful reversal with input 1 or 2 to Chain Punch: Branch
-"
-R.df+1+2;m;55;i20;;;;"
-* [[:Template:RageArt]]
-* Erase opponent's recoverable health on hit
-"
 Right throw;th(h);40;i12~14;;;;"
 * Throw break: 2
 * Opponent status on hit: FUFA
 * Side switch on hit
 "
-SS.4;l;17;i18~19;;+4;;
-ub+2;m;17;i20;-10;+3;;Has punch parry effect (partially restores remaining Heat time when successful during Heat)
 uf+1+2;th(h);35;i12~14;;;;"
 * Throw break: 1+2
 * Opponent status on hit: FUFA off-axis to the left
 "
-uf+1;h;17;i16~17;-9;+5;;"
-* Reversal (partially restores remaining Heat time when successful during Heat)
-* Follow-up upon successful reversal with input 1 or 2
-"
-uf+2;m;25;i24~25;+1;+10 (+1);;"
-* Balcony Break
-* Alternate input: u+2
-* chip damage on block
-"
-uf+3;m;25;i20~24;-8;+14 (+5);;"
-* Balcony Break
-* Alternate input: ub+3 or u+3
-"
-uf+3+4;mm;8,10;i14~15,i10~11;-14;+16;;Balcony Break
-uf+3+4,1+2;mm,m;8,10,17 (11);,i30~31;-13;+23 (+13);;Balcony Break
-uf+4;m;22;i23~25;-8;+21;;Alternate input: ub+4 or u+4
-uf,n,4;m;20;i23~25;-13;+32 (+22);;
-ws1;m;14;i13~14;;;;
-ws1,4;m,m;14,16;,i21;;+3;;Transition to HRM
-ws2;m;21;i15~16;;+51;;
-ws4;m;16;i11~12;;+5;;

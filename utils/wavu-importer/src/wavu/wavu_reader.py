@@ -135,8 +135,9 @@ def _convert_json_movelist(move_list_json: list) -> List[Move]:
     return move_list
 
 def _sort_json_movelist(move_list: List[Move]) :
-    print(f'{SORT_ORDER[_get_move_category(move_list[15])]:05d}' + "_" + move_list[15].input.replace("+", "_"))
-    return sorted(move_list, key=lambda x: f'{SORT_ORDER[_get_move_category(x)]:05d}' + x.input.replace("+", "_"))
+    # a trick to generate a string for sorting frames. + is replaced by _ just to make "+" sort after ","
+    # print(f'{SORT_ORDER[_get_move_category(move_list[15])]:05d}' + "_" + move_list[15].input.replace("+", "_"))
+    return sorted(move_list, key=lambda x: f'{SORT_ORDER[_get_move_category(x)]:05d}' + x.input.replace("+", "|"))
 
 def _get_move_category(move: Move) -> MoveCategory:
     if(move.target.startswith("t")) :
@@ -144,13 +145,16 @@ def _get_move_category(move: Move) -> MoveCategory:
     
     command = move.input.lower();
     splitted = command.split(",");
+    notes = move.notes.lower();
     first = splitted[0]
-    if(first.startswith("H.2+3")) :
+    if(first.startswith("h.2+3")) :
         return MoveCategory.HEAT_SMASH
-    if(first == "2+3")) :
+    if(first == "2+3") :
         return MoveCategory.HEAT_BURST
-    if(first.startswith("H.")) : 
+    if(first.startswith("h.")) : 
         return MoveCategory.HEAT_MOVE
+    if(first.startswith("r.")) :
+        return MoveCategory.RAGE_ART
     if(first.startswith("1+2+3+4")) :
         return MoveCategory.KI_CHARGE
     if(first[:1].isdigit()) : 
@@ -179,8 +183,12 @@ def _get_move_category(move: Move) -> MoveCategory:
         return MoveCategory.WHILE_RISING
     if(first.startswith("ss")) :
         return MoveCategory.SIDESTEP
+    if(first.startswith("fc")) :
+        return MoveCategory.FULL_CROUCH
     if(command.startswith("f,f,f")) :
         return MoveCategory.RUNNING
+    if(command.find(".") > -1) :
+        return MoveCategory.STANCE
 
 
     return MoveCategory.OTHER

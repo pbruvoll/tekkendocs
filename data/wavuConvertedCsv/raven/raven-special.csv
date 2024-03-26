@@ -1,27 +1,93 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes
-1;h;5;i10;+1;+8;;
-1+2;m;20;i14;-9;+15a;;"Heat Engager
+2+3;m;12;i16;+1;+2c;;"
+* Heat Burst
+* Cancel to r45 with b,b"
+H.1+2,F;m;20;i14;+5;+45a (+35);;
+H.BT.2,2,1;h,m,sm,sm;9,12,21,30;i10, i21~22, i18~19, i39~47;-3;+2a (-7);;"
+* Balcony Break
+* Combo from 1st hit
+* Available only on hit or block
+* Recover Heat on hit"
+H.BT.4,F;m;21;i19~20;-5~-4;+36a (+26);;
+H.BT.f+2,4,2;m,h,sm,sm;13,17,21,30;i17~18, i20~21, i19~20 i39~41;-3~-1;+24a (+9);;"
+* Tornado
+* Combo from 2nd CH
+* Available only on hit or block
+* Recover Heat on hit"
+H.FC.df+3+4;L,sm;17,25;i18~20 i34~36;-23~-21;-5;;"
+* Spike
+* Transition to r20 SZN on hit only
+* Second hit available on hit only
+* Recover Heat on hit"
+H.SZN.1,4;H,sm,sm;12,25,30;i14~15, i18~27, i44~45;-3~-2;+32a (-26);;"
+* Balcony Break
+* Spike
+* Combo from 1st hit
+* Available only on hit or block
+* Recover Heat on hit"
+H.SZN.2,F;m,sm;20,10;i18 23~24;+5;+36a (+26);;
+H.SZN.3,2;m,sm,sm;16,21,30;i16~17, i19~20 i39~-41;-3~-1;+24a (+9);;"
+* Tornado
+* Combo from 1st hit
+* Available only on hit or block
+* Recover Heat on hit"
+H.b+2,4,2;h,h,sm,sm;12,17,21,30;i15~17, i24~25, i19~20 i39~-41;-3~-1;+24a (+9);;"
+* Tornado
+* Combo from 2nd CH
+* Available only on hit or block
+* Recover Heat on hit"
+H.db+2,1,1;m,h,sm,sm;13,15,21,30;i13~14, i22~23, i18~19 i39~47;-3~+5;+2a (-7);;"
+* Balcony Break
+* Combo from 2nd CH
+* Available only on hit or block
+* Recover Heat on hit"
+H.df+1,4;m,sm,sm;13,25,30;i14~15, i18~27, i44~45;-3~-2;+32a (-26);;"
+* Balcony Break
+* Spike
+* Combo from 1st hit
+* Available only on hit or block
+* Recover Heat on hit"
+H.f,f,F+3,4;m,sm;20,20;i26~28, i43~44;+7~+8;+72a (+56);;"
+* Tornado
+* Partially uses remaining Heat time
+* Available only on hit or block"
+H.f+1+2,F;m;10,20;i18~19 i26;+5;+34a;;
+H.qcf+1,2;m,sm,sm;15,21,30;i16, 19~20, 39~41;-3~-1;+24a (+9);;"
+* Tornado
+* Combo from 1st hit
+* Available only on hit or block
+* Recover Heat on hit"
+H.qcf+3;h,t;16,14;i16~17;-7~-6;-4d;;"
+* Spike
+* Transitions to attack throw on front hit only, otherwise launch +33a (+23)
 "
+H.ws3,2;m,sm,sm;18,18,20;i16~17, i19~20 i39~41;-3~-1;+65a (+49);;"
+* Tornado
+* Combo from 1st hit
+* Available only on hit or block
+* Recover Heat on hit"
+H.ws3+4,F;m;20;i16~18;+5;+62a (+42);;"
+* Homing
+* Alternate input: H.qcf+3+4,F"
+H.2+3;m,t;20,35;i18~20;+14g;+3a;;"
+* Heat Smash
+* Transition to r20 SZN on block"
+R.df+1+2;m,t;55+;i20;-15;+0;;"
+* Rage Art
+* Damage increases with lower health
+* Erases opponent's recoverable health on hit"
+1;h;5;i10;+1;+8;;
 1,2;h,h;5,12;,i12;-3;+7;;"
 * Jail from 1st attack with 2f delay"
-1+2+3+4;;;;;;;"
-* CH state for 5 seconds
-* Can't block for 5 seconds"
 1,2,3+4;h,h;5,12;;-4;+6;;Alternate input: 1,2~D
-1+2+3+4,b,f,1+2;,m!;,60;,i59~61;;+21a (+11);;Balcony Break
 1,2,4;h,h,m;5,12,20;,i23~25;-14~-12;+15a (-2);;"
 * Tornado
 * Balcony Break
 * Combo from 1st CH"
-1+3;t;35;i12~14;-6;+0d;;Throw break 1 or 2
+1+2;m;20;i14;-9;+15a;;"Heat Engager
+"
 2;h;9;i10;-1;+8;;
-2+3;m;12;i16;+1;+2c;;"
-* Heat Burst
-* Cancel to r45 with b,b"
 2,3;h,l;9,10;,i22;-13;-2;;Combo from 1st hit
-2+4;t;35;i12~14;-3;+0d;;"
-* Throw break 1 or 2
-* Side switch"
 2,4;h,h;9,16;,i18~19;-8~-7;+8~+9;;"
 * Combo from 1st hit
 * Cancel to r31 with B"
@@ -46,6 +112,57 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 4~3,4;m,m,m;8,10,20;,i33~34;-14~-13;+15a;;"
 * Balcony Break
 * Can be delayed"
+f+1+2;m;10,20;i18~19 i26;-14;+30a (+4);;"
+* Heat Engager
+
+* Balcony Break
+* Frame advantage is -9 if an attack is absorbed"
+f+2;m;10;i15~16;-12~-11;-1~+0;;
+f+2,3;m,M;10,13;,i21~22;-9~-8;+6c~+7c;;"
+* Spike
+* Combo from 1st hit
+* Can be delayed"
+f+2,3,3+4;m,M;10,13;;;;;"
+* Alternate input: f+2,3~D"
+f+3;m;18;i17;-9;+3;;Homing
+f+3,2;m,m;18,21;,i30;-14;+10a (+1);+30a (+22);"
+* Balcony Break
+* Combo from 1st hit"
+f+3~B;m;18;;-6;+6;;
+f+4;h;23;i15~16;-9~-8;+31a (+23);;Balcony Break
+df+1;m;13;i14~15;-2~-1;+8~+9;;
+df+1,4;m,sm;13,25;,i18~27;-14~-5;+32a (-26);;"
+* Balcony Break
+* Spike
+* Combo from 1st hit
+* Available only on hit or block"
+df+2;m;15;i16~18;-13~-11;+30a (+20);;"
+* Launches crouching opponent"
+df+2,3;m,h;15,17;,i12~13;-8~-7;+28a (+19);;Balcony Break
+df+2,4;m,m;15,24;,i12~13;-15~-14;+11a (+2);;Balcony Break
+df+3;h;17;i16~17;-9~-8;+12a;+46a (+36);
+df+4;m;15;i15~16;-9~-8;+2~+3;;
+df+4,4;m,M;15,16;,i22~25;-14~-13;+6a;;"
+* Balcony Break
+* Combo from 1st hit with 7f delay
+* Input can be delayed 9f
+* Move can be delayed 8f"
+df+4,4,3;m,M,M;15,16,22;,i27~30;-6~-3;+18a;;
+d+1;sl;5;i10;-5;+6;;"
+* Can recover standing with f"
+d+2;sl;8;i11;-4;+7;;
+d+3;L;10;i15;-11;+0;;
+d+4;L;18;i21;-13;-2;+13g;
+db+2;m;13;i13~14;-4~-3;+5~+6;;
+db+2,1;m,h;13,15;,i22~23;-1~+0;+8~+9;;"
+* Combo from 1st hit"
+db+2,1,1;m,h,sm;13,15,21;,i18~19;-14~-13;+2a (-7);;"
+* Balcony Break
+* Combo from 2nd CH
+* Available only on hit or block"
+db+2,1,3+4;m,h;13,15;;-4;+5;;Alternate input: db+2,1~D
+db+3;L;19;i28~29;-12~-11;+5~+6;+39d;
+db+4;L;21;i24~25;-14~-13;+4c~+5c;+37a;
 b+1;h;21;i16~17;+7c~+8c;+10c~+11c;;"
 * Spike
 * Elbow
@@ -92,23 +209,105 @@ b+4,B+4~3;m,M,L;13,24,11;,i20;-11;+0;;
 b+4,B+4~3,3+4;m,M,L,m;13,24,11,15;,i26~30;-25~-21;+6a;;"
 * Combo from 2nd hit with 4f delay
 * Input can be delayed 7f"
-Back throw;t;50;;;-4d;;"
-* Floor Break
-* Unbreakable"
-(Back to wall).b,b,UB;m;21;i40~43;+6~+9;+28a (+19);;Balcony Break
+ub+1;m;11;i16;-6;+5;;
+ub+1,2;m,m;11,13;,i18~19;-13~-12;-2c~-1c;;"
+* Spike
+* Combo from 1st hit with 7f delay"
+u+3;h;23;i27~28;+2;+6~+7;;"
+* Chip damage on block
+* Alternate input: ub+3"
+u+3,3;h,L;23,18;i31~32;-16~-15;+16a;;"
+* Transitions to r76 Ki Charge on hit only
+* Alternate input: ub+3,3"
+u+3,3,3;h,L,M;23,18,22;,i27~30;-6~-4;+18a;;Alternate input: ub+3,3,3
+u+4;m;11;i20~21;-9~-8;+22a (+12);;"
+* Balcony Break
+* Alternate input: ub+4"
+uf+3;M;20;i29~30;-9;+20a;;Spike
+uf+3+4;m;17;i23~25;-16~-14;+14a;;Spike
+uf+3+4,3+4;m,m;17,15;,i20~24;-25~-21;+6a;;
+uf+3+4,4;m,L;17,9;,i21~22;-11~-10;+0~+1;;
+uf+3+4,4,2;m,L,m;17,9,21;,i21;-13;+10a;;
+uf+4;m;14;i20~21;-9~-8;+22a (+12);;Balcony Break
+uf+4,4;m,m;14,20;,i16~19;-15;+9g~12g;+21a;"
+* Balcony Break
+* Alternate input: ub+4,4 or u+4,4"
+uf+4,4~B;m,m;14,20;;-16~-15;+15a (+5);;
+1+2+3+4;;;;;;;"
+* CH state for 5 seconds
+* Can't block for 5 seconds"
+1+2+3+4,b,f,1+2;,m!;,60;,i59~61;;+21a (+11);;Balcony Break
+UB,b;;;;;;;
+UB,b,3+4;,M!,M!,M!;,20,20,20;,i38~40 i46~49 i51~54;;-19a;;Spike
 b,B+2;m,h;15,21;i17~18 i30~31;-10~-9;+5~+6;;"
 * Balcony Break
 * Jail from 1st attack
 * Parries high or low punches or kicks"
 b,B+2,P;m,h,t;15,21,35;,i15~25;-8~+2;+0d;;
+f,F+2;m;26;i16~17;-12~-11;+15a (+5);;Balcony Break
+f,F+3;m;20;i15~18;-14~-11;+43a (+29);;Balcony Break
+f,F+4;m;21;i15~17;-10~-8;+21a (+4);;Balcony Break
+qcf;;;;;;;
+qcf,d,DF;;;;;;;
+qcf+1;m;15;i16;-9;+4;+15a;Elbow
+qcf+1,2;m,sm;15,21;,i19~20;-14~-13;+24a (+9);;"
+* Tornado
+* Combo from 1st hit
+* Available only on hit or block"
+qcf+1,3+4;m;15;;+0;+13;+24a;Alternate input: qcf+1~D
+qcf+1+2;m,m;12,21;i24 i35;-9;+11a (+2);;"
+* Balcony Break
+* Attack reversal
+* Parries high or mid punches or kicks"
+qcf+1+2,P;m,m,t;12,21,35;,i15~25;-8~+2;+0d;;
+qcf+2;L;18;i25~26;-12~-11;+5~+6;+14~+15;Cancel to r45 BT with B
+qcf+2~1;L,m;18,25;,i20~21;-9~-8;+24a (+14);;"
+* Balcony Break
+* Chip damage on block
+* Actual startup is i40~41"
+qcf+3;h,t;16,14;i16~17;-7~-6;-4d;;"
+* Spike
+* Transitions to attack throw on front hit only, otherwise launch +33a (+23)
+* Power up during Heat"
+qcf+4;M;15;i18~20;-14~-12;+32a (+22);;Tornado
+uf,n,4;m;20;i23~25;-13~-11;+32a (+22);;
+f,f,F+3;m;20;i26~28;+4~+6;+6a;;Chip damage on block
+ws1;m;14;i14~15;-14~-13;+35a (+25);;
+ws2;m;17;i13~14;-8~-7;+8~+9;+37a (+27);Elbow
+ws3;m;18;i16~17;-8~-7;+0s;;
+ws3,2;m,sm;18,20;,i19~20;-14~-13;+65a (+49);;"
+* Tornado
+* Combo from 1st hit
+* Available only on hit or block"
+ws3+4;m;20;i16~18;-12~-10;+7~+9;;"
+* Heat Engager
+
+* Homing
+* Balcony Break
+* Alternate input: qcf+3+4"
+ws3+4~B;m;20;;;;;Alternate input: qcf+3+4~B
+ws4;m;18;i11~12;-6~-5;+7~+8;+4;
+FC.1;sl;5;i10;-5;+6;;Can recover standing with f
+FC.2;sl;8;i11;-4;+7;;
+FC.3;L;10;i16;-17;-6;;
+FC.4;l;6;i12;-15;-4;;
+FC.df,d,DF;;;;;;;
+FC.df,d,DF,f;;;;;;;
+FC.df+3;L;17;i20~22;-9~-7;+2~+4;+30d;
+FC.df+3+4;L,sm;17,25;i18~20 i34~36;-23~-21;-5a;;"
+* Spike
+* Transition to r20 SZN on hit only
+* Second hit available on hit only
+* Power up during Heat"
+(Back to wall).b,b,UB;m;21;i40~43;+6~+9;+28a (+19);;Balcony Break
 BT.1;h;7;i8;-1~+0;+5~+6;;
+BT.1,4;h,h;7,23;,i16~17;-8~-7;+40a (-18);+67a (+51);"
+* Balcony Break
+* Combo from 1st hit"
 BT.1+2;m;23;i15~16;-13;+30a (+22);;"
 * Balcony Break
 * Frame advantage is -7 if an attack is absorbed
 * Chip damage on block if an attack is absorbed"
-BT.1,4;h,h;7,23;,i16~17;-8~-7;+40a (-18);+67a (+51);"
-* Balcony Break
-* Combo from 1st hit"
 BT.2;h;13;i10;+0;+7;;
 BT.2,1;h,h;13,10;,i14;-3;+3;;"
 * Combo from 1st hit
@@ -122,7 +321,6 @@ BT.2,2,1;h,m,sm;13,15,21;,i18~19;-14~-13;+2a (-7);;"
 * Power up during Heat"
 BT.2,2,3+4;h,m;13,15;;-7~-6;+8~+9;;Alternate input: BT.2,2~D
 BT.3;h;10;i10;-11;+0;;
-BT.3+4;m,m;5,20;i15 i34~35;-20~-19;+43a (+39);;Second kick's frame advantage on hit: +34a (+24)
 BT.3,4;h,m;10,17;,i28~30;+0~+2;+1~+3;+11g~+13g;"
 * Combo from 1st hit with 2f delay
 * Input can be delayed 6f
@@ -133,6 +331,7 @@ BT.3,4,4;h,m,M;10,17,21;,i32~34;-9~-8;+5a;;"
 * Spike
 * Combo from 2nd CH"
 BT.3,4,4,F;h,m,M;10,17,21;;-36;;;Will phase through opponent up-close
+BT.3+4;m,m;5,20;i15 i34~35;-20~-19;+43a (+39);;Second kick's frame advantage on hit: +34a (+24)
 BT.4;m;21;i19~20;-5~-4;+44a (-14);;"
 * Heat Engager
 
@@ -151,12 +350,14 @@ BT.d+1;sl;5;i10;-3;+6;;Alternate input: BT.d+2
 BT.d+3;L;16;i25~27;-26~-24;+0~+2;;Clean hit +74a (+58), 20 damage
 BT.d+3;l;21;25f(2);-26;KDN;KDN;TC from 4F to 5F
 BT.d+4;l;6;i12;-15;-4;;
+BT.f,F+3;m;25;i21~22;-9~-8;+8a;;
+BT.f,F+3+4;L;17;i23~30;-18~-11;+24a;;
+BT.f,f,f;;;;;;;Will phase through opponent up-close
 BT.f+1;m;18;I16;-8;+6;;"
 * Balcony Break
 * Transitions to throw on hit only
 * Opponent recovers BT on hit"
 BT.f+1+2;;;;;;;Parries mid or high punches or kicks
-BT.f+1+2,P;t;25;;;+5d;;Opponent recovers FUFA
 BT.f+2;m;13;i17~18;-5~-4;+6~+7;;
 BT.f+2,3;m,M;13,15;,i24~25;-7~-6;+14~+15;;"
 * Spike
@@ -180,194 +381,16 @@ BT.f+4,1;L,h;9,15;,i22~23;-9~-8;+5~+6;;"
 * Tornado
 * Combo from 1st hit"
 BT.f+4,1,3+4;L,h;9,15;;-6~-5;+8~+9;;Alternate input: BT.f+4,1~D
-BT.f,F+3;m;25;i21~22;-9~-8;+8a;;
-BT.f,F+3+4;L;17;i23~30;-18~-11;+24a;;
-BT.f,f,f;;;;;;;Will phase through opponent up-close
-d+1;sl;5;i10;-5;+6;;"
-* Can recover standing with f"
-d+2;sl;8;i11;-4;+7;;
-d+3;L;10;i15;-11;+0;;
-d+4;L;18;i21;-13;-2;+13g;
-db+2;m;13;i13~14;-4~-3;+5~+6;;
-db+2,1;m,h;13,15;,i22~23;-1~+0;+8~+9;;"
-* Combo from 1st hit"
-db+2,1,1;m,h,sm;13,15,21;,i18~19;-14~-13;+2a (-7);;"
-* Balcony Break
-* Combo from 2nd CH
-* Available only on hit or block"
-db+2,1,3+4;m,h;13,15;;-4;+5;;Alternate input: db+2,1~D
-db+3;L;19;i28~29;-12~-11;+5~+6;+39d;
-db+4;L;21;i24~25;-14~-13;+4c~+5c;+37a;
-df+1;m;13;i14~15;-2~-1;+8~+9;;
-df+1+4;t;35;i11;-2;+0d;;"
-* Floor Break
-* Throw break 1
-* Alternate input: qcf,df+1+4"
-df+1,4;m,sm;13,25;,i18~27;-14~-5;+32a (-26);;"
-* Balcony Break
-* Spike
-* Combo from 1st hit
-* Available only on hit or block"
-df+2;m;15;i16~18;-13~-11;+30a (+20);;"
-* Launches crouching opponent"
-df+2,3;m,h;15,17;,i12~13;-8~-7;+28a (+19);;Balcony Break
-df+2,4;m,m;15,24;,i12~13;-15~-14;+11a (+2);;Balcony Break
-df+3;h;17;i16~17;-9~-8;+12a;+46a (+36);
-df+4;m;15;i15~16;-9~-8;+2~+3;;
-df+4,4;m,M;15,16;,i22~25;-14~-13;+6a;;"
-* Balcony Break
-* Combo from 1st hit with 7f delay
-* Input can be delayed 9f
-* Move can be delayed 8f"
-df+4,4,3;m,M,M;15,16,22;,i27~30;-6~-3;+18a;;
-f+1+2;m;10,20;i18~19 i26;-14;+30a (+4);;"
-* Heat Engager
-
-* Balcony Break
-* Frame advantage is -9 if an attack is absorbed"
-f+2;m;10;i15~16;-12~-11;-1~+0;;
-f+2,3;m,M;10,13;,i21~22;-9~-8;+6c~+7c;;"
-* Spike
-* Combo from 1st hit
-* Can be delayed"
-f+2,3,3+4;m,M;10,13;;;;;"
-* Alternate input: f+2,3~D"
-f+3;m;18;i17;-9;+3;;Homing
-f+3,2;m,m;18,21;,i30;-14;+10a (+1);+30a (+22);"
-* Balcony Break
-* Combo from 1st hit"
-f+3~B;m;18;;-6;+6;;
-f+4;h;23;i15~16;-9~-8;+31a (+23);;Balcony Break
-FC.1;sl;5;i10;-5;+6;;Can recover standing with f
-FC.2;sl;8;i11;-4;+7;;
-FC.3;L;10;i16;-17;-6;;
-FC.4;l;6;i12;-15;-4;;
-FC.df+3;L;17;i20~22;-9~-7;+2~+4;+30d;
-FC.df+3+4;L,sm;17,25;i18~20 i34~36;-23~-21;-5a;;"
-* Spike
-* Transition to r20 SZN on hit only
-* Second hit available on hit only
-* Power up during Heat"
-FC.df,d,DF;;;;;;;
-FC.df,d,DF,f;;;;;;;
-f,F+2;m;26;i16~17;-12~-11;+15a (+5);;Balcony Break
-f,F+3;m;20;i15~18;-14~-11;+43a (+29);;Balcony Break
-f,F+4;m;21;i15~17;-10~-8;+21a (+4);;Balcony Break
-f,f,F+3;m;20;i26~28;+4~+6;+6a;;Chip damage on block
-H.1+2,F;m;20;i14;+5;+45a (+35);;
-H.2+3;m,t;20,35;i18~20;+14g;+3a;;"
-* Heat Smash
-* Transition to r20 SZN on block"
-H.b+2,4,2;h,h,sm,sm;12,17,21,30;i15~17, i24~25, i19~20 i39~-41;-3~-1;+24a (+9);;"
-* Tornado
-* Combo from 2nd CH
-* Available only on hit or block
-* Recover Heat on hit"
-H.BT.2,2,1;h,m,sm,sm;9,12,21,30;i10, i21~22, i18~19, i39~47;-3;+2a (-7);;"
-* Balcony Break
-* Combo from 1st hit
-* Available only on hit or block
-* Recover Heat on hit"
-H.BT.4,F;m;21;i19~20;-5~-4;+36a (+26);;
-H.BT.f+2,4,2;m,h,sm,sm;13,17,21,30;i17~18, i20~21, i19~20 i39~41;-3~-1;+24a (+9);;"
-* Tornado
-* Combo from 2nd CH
-* Available only on hit or block
-* Recover Heat on hit"
-H.db+2,1,1;m,h,sm,sm;13,15,21,30;i13~14, i22~23, i18~19 i39~47;-3~+5;+2a (-7);;"
-* Balcony Break
-* Combo from 2nd CH
-* Available only on hit or block
-* Recover Heat on hit"
-H.df+1,4;m,sm,sm;13,25,30;i14~15, i18~27, i44~45;-3~-2;+32a (-26);;"
-* Balcony Break
-* Spike
-* Combo from 1st hit
-* Available only on hit or block
-* Recover Heat on hit"
-H.f+1+2,F;m;10,20;i18~19 i26;+5;+34a;;
-H.FC.df+3+4;L,sm;17,25;i18~20 i34~36;-23~-21;-5;;"
-* Spike
-* Transition to r20 SZN on hit only
-* Second hit available on hit only
-* Recover Heat on hit"
-H.f,f,F+3,4;m,sm;20,20;i26~28, i43~44;+7~+8;+72a (+56);;"
-* Tornado
-* Partially uses remaining Heat time
-* Available only on hit or block"
-H.qcf+1,2;m,sm,sm;15,21,30;i16, 19~20, 39~41;-3~-1;+24a (+9);;"
-* Tornado
-* Combo from 1st hit
-* Available only on hit or block
-* Recover Heat on hit"
-H.qcf+3;h,t;16,14;i16~17;-7~-6;-4d;;"
-* Spike
-* Transitions to attack throw on front hit only, otherwise launch +33a (+23)
-"
-H.SZN.1,4;H,sm,sm;12,25,30;i14~15, i18~27, i44~45;-3~-2;+32a (-26);;"
-* Balcony Break
-* Spike
-* Combo from 1st hit
-* Available only on hit or block
-* Recover Heat on hit"
-H.SZN.2,F;m,sm;20,10;i18 23~24;+5;+36a (+26);;
-H.SZN.3,2;m,sm,sm;16,21,30;i16~17, i19~20 i39~-41;-3~-1;+24a (+9);;"
-* Tornado
-* Combo from 1st hit
-* Available only on hit or block
-* Recover Heat on hit"
-H.ws3,2;m,sm,sm;18,18,20;i16~17, i19~20 i39~41;-3~-1;+65a (+49);;"
-* Tornado
-* Combo from 1st hit
-* Available only on hit or block
-* Recover Heat on hit"
-H.ws3+4,F;m;20;i16~18;+5;+62a (+42);;"
-* Homing
-* Alternate input: H.qcf+3+4,F"
-Left throw;t;40;;-3;-3d;;"
-* Floor Break
-* Throw break 1
-* Side switch on hit"
-qcf;;;;;;;
-qcf+1;m;15;i16;-9;+4;+15a;Elbow
-qcf+1+2;m,m;12,21;i24 i35;-9;+11a (+2);;"
-* Balcony Break
-* Attack reversal
-* Parries high or mid punches or kicks"
-qcf+1,2;m,sm;15,21;,i19~20;-14~-13;+24a (+9);;"
-* Tornado
-* Combo from 1st hit
-* Available only on hit or block"
-qcf+1+2,P;m,m,t;12,21,35;,i15~25;-8~+2;+0d;;
-qcf+1,3+4;m;15;;+0;+13;+24a;Alternate input: qcf+1~D
-qcf+2;L;18;i25~26;-12~-11;+5~+6;+14~+15;Cancel to r45 BT with B
-qcf+2~1;L,m;18,25;,i20~21;-9~-8;+24a (+14);;"
-* Balcony Break
-* Chip damage on block
-* Actual startup is i40~41"
-qcf+3;h,t;16,14;i16~17;-7~-6;-4d;;"
-* Spike
-* Transitions to attack throw on front hit only, otherwise launch +33a (+23)
-* Power up during Heat"
-qcf+4;M;15;i18~20;-14~-12;+32a (+22);;Tornado
-qcf,d,DF;;;;;;;
-R.df+1+2;m,t;55+;i20;-15;+0;;"
-* Rage Art
-* Damage increases with lower health
-* Erases opponent's recoverable health on hit"
-Right throw;t;40;;-3;-4d;;"
-* Floor Break
-* Throw break 2"
 SZN.1;h;12;i14~15;-3~-2;+8~+9;;
-SZN.1+2;h;25;i15~16;+0~+1;+23a;;"
-* Homing
-* Balcony Break
-* Chip damage on block"
 SZN.1,4;h,sm;12,25;,i18~27;-14~-5;+32a (-26);;"
 * Spike
 * Balcony Break
 * Combo from 1st hit
 * Available only on hit or block"
+SZN.1+2;h;25;i15~16;+0~+1;+23a;;"
+* Homing
+* Balcony Break
+* Chip damage on block"
 SZN.1~F;h;12;;+1~+2;+12~+13;;
 SZN.2;m,sm;20,10;i18 23~24;-9;+7a (-2);;"
 * Heat Engager
@@ -384,48 +407,25 @@ SZN.4;L;21;i17~24;-16~-9;+2~+9;+26a;
 SZN.B;;;;;;;
 SZN.D;;;;;;;
 SZN.U;;;;;;;
-u+3;h;23;i27~28;+2;+6~+7;;"
-* Chip damage on block
-* Alternate input: ub+3"
-u+3,3;h,L;23,18;i31~32;-16~-15;+16a;;"
-* Transitions to r76 Ki Charge on hit only
-* Alternate input: ub+3,3"
-u+3,3,3;h,L,M;23,18,22;,i27~30;-6~-4;+18a;;Alternate input: ub+3,3,3
-u+4;m;11;i20~21;-9~-8;+22a (+12);;"
-* Balcony Break
-* Alternate input: ub+4"
-ub+1;m;11;i16;-6;+5;;
-ub+1,2;m,m;11,13;,i18~19;-13~-12;-2c~-1c;;"
-* Spike
-* Combo from 1st hit with 7f delay"
-UB,b;;;;;;;
-UB,b,3+4;,M!,M!,M!;,20,20,20;,i38~40 i46~49 i51~54;;-19a;;Spike
+1+3;t;35;i12~14;-6;+0d;;Throw break 1 or 2
+2+4;t;35;i12~14;-3;+0d;;"
+* Throw break 1 or 2
+* Side switch"
+BT.f+1+2,P;t;25;;;+5d;;Opponent recovers FUFA
+Back throw;t;50;;;-4d;;"
+* Floor Break
+* Unbreakable"
+Left throw;t;40;;-3;-3d;;"
+* Floor Break
+* Throw break 1
+* Side switch on hit"
+Right throw;t;40;;-3;-4d;;"
+* Floor Break
+* Throw break 2"
+df+1+4;t;35;i11;-2;+0d;;"
+* Floor Break
+* Throw break 1
+* Alternate input: qcf,df+1+4"
 uf+1+2;t;40;i12;-2;+0d;;"
 * Throw break 1+2
 * Can side switch on hit"
-uf+3;M;20;i29~30;-9;+20a;;Spike
-uf+3+4;m;17;i23~25;-16~-14;+14a;;Spike
-uf+3+4,3+4;m,m;17,15;,i20~24;-25~-21;+6a;;
-uf+3+4,4;m,L;17,9;,i21~22;-11~-10;+0~+1;;
-uf+3+4,4,2;m,L,m;17,9,21;,i21;-13;+10a;;
-uf+4;m;14;i20~21;-9~-8;+22a (+12);;Balcony Break
-uf+4,4;m,m;14,20;,i16~19;-15;+9g~12g;+21a;"
-* Balcony Break
-* Alternate input: ub+4,4 or u+4,4"
-uf+4,4~B;m,m;14,20;;-16~-15;+15a (+5);;
-uf,n,4;m;20;i23~25;-13~-11;+32a (+22);;
-ws1;m;14;i14~15;-14~-13;+35a (+25);;
-ws2;m;17;i13~14;-8~-7;+8~+9;+37a (+27);Elbow
-ws3;m;18;i16~17;-8~-7;+0s;;
-ws3,2;m,sm;18,20;,i19~20;-14~-13;+65a (+49);;"
-* Tornado
-* Combo from 1st hit
-* Available only on hit or block"
-ws3+4;m;20;i16~18;-12~-10;+7~+9;;"
-* Heat Engager
-
-* Homing
-* Balcony Break
-* Alternate input: qcf+3+4"
-ws3+4~B;m;20;;;;;Alternate input: qcf+3+4~B
-ws4;m;18;i11~12;-6~-5;+7~+8;+4;

@@ -1,26 +1,43 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes
+2+3;m;;;+1;+2c;;"
+* Heat Burst
+* Cancel with b,b
+* 3 chip damage on block
+* Partially uses Heat
+* Unparryable
+* Ignores regular power crush armor"
+H.SCR.2+3;l,m;10,20;i19;-14;+44d (+25);;"
+* Heat Smash
+* Balcony Break "
+H.2+3;h,sm;15,4,5,5,4,18;i12~13 i47~53 i1~7 i1~7 i1~6 i1~2;+3;+0d;;"
+* Heat Smash
+* Balcony Break
+* Hit throw on the first hit
+* Unparryable
+* Ignores regular power crush armor
+* Jails"
+R.df+1+2;m,t;55;i20;-15;+0d;;"
+* Rage Art
+* Damage increases with lower health
+* Erases opponent's recoverable health on hit"
 1;h;5;i10;+1;+8;;
-1+2;m;17;i16~17;-12;+4;+24a;
 1,2;h,h;5,9;i12;-3;+8;;Combos from 1st hit
 1,2,3;h,h,h;5,9,12;i20;0;+9;;"
 * Cancel SCR transition -9, +0 with B
 * Combos from 2nd hit CH
 * Can be delayed
 "
-1+2+3+4;;;;;;;"
-* Can't block for 5 seconds
-* CH state for 5 seconds"
-1+2,4;m,m;17,10;i24~25;-10;+1;+6;Combos from 1st hit
-1+2,4,4;m,m,m;17,10,12;i30~31;-11;+19d;;"
-* Combos from 2nd hit CH
-* Can pick up from the ground with db+3 for a juggle
-"
-1+3;t;35;i12~14;;0;;Throw break 1 or 2
 1,3;h,h;5,14;i17~18;-2;+7;;"
 * Cancel SCR transition -8, +1 with B
 * Combos from 1st hit
 "
 1,4;h,m;5,17;i19;-5;+2;+53a;
+1+2;m;17;i16~17;-12;+4;+24a;
+1+2,4;m,m;17,10;i24~25;-10;+1;+6;Combos from 1st hit
+1+2,4,4;m,m,m;17,10,12;i30~31;-11;+19d;;"
+* Combos from 2nd hit CH
+* Can pick up from the ground with db+3 for a juggle
+"
 2;h;8;i10;-7;-1;;
 2,1;h,m;8,9;i23~25;-6c;+2;;Combos from 1st hit CH
 2,1,3;h,m,l;8,9,11;i32;-17;+4d;;"
@@ -35,16 +52,6 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * Floor Break
 * Combos from 2nd hit CH
 * Can be delayed "
-2+3;m;;;+1;+2c;;"
-* Heat Burst
-* Cancel with b,b
-* 3 chip damage on block
-* Partially uses Heat
-* Unparryable
-* Ignores regular power crush armor"
-2+4;t;35;i12~14;;0;;"
-* Throw break 1 or 2
-* Transitions to MNT"
 3;h;17;i13;0;+9;;"
 * Cancel SCR transition -8, +1 with B
 "
@@ -52,31 +59,65 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * Transitions to SCR
 "
 4;h;19;i14~15;-6;-1;+19a(+10);
-b+1;m;14;i18;-14;+2;;"
-"
-b+1:1+2;m,t;14,36;;;+0d;;"
-* Hit Throw
+f+1+2;m,m;16,22;i19~20 i13~14;-9;+5d(-5);;"
+* Heat Engager
+
+* Heat Dash +5 +36a (+26)
+
+* Balcony Break
 * Azazel's Power
 * Zafina receives recoverable health damage
-* Switches sides
+* Second hit only comes out on hit or block
+* 8 chip damage on block
 "
-b+2;h;22;i22~23;-5;+12;;"
-* Homing
+f+2;m;17;i19;-18;-9;+52a;
+f+2,3;m,h;17,12;i19;0;+9;;"
+* Cancel SCR transition -9, +0 with B
+* Combos from 1st hit
+* Can be delayed
 "
-b+2+3;m!;40;i64;!;+41a(+10);;"Unblockable
-"
-b+3;m;23;i24~26;-14;+12d;;"Powercrush
-"
-b+4;m;14;i22~23;-9;+4;;"
-"
-b+4,4;m,m;14,20;i20~22;-14;+9a(0);;"
+f+2,3,4;m,h,m;17,12,25;i28~29;-18;+18d(8);;Balcony Break
+f+3;h;28;i21;+3;+68a(48);;"
 * Balcony Break
-* Delayable
-* Hit-confirmable
+* Cancel SCR transition -1, +64a with B
+"
+f+4;h;13;i14~15;-6;+22a;;
+df+1;m;10;i13~14;-5;+7;;
+df+1,2;m,m;10,16;i15~16;-13;+3;;Combos from 1st hit
+df+1,2,1;m,m,m;10,16,20;i25;-13;+23d(13);;"
+* Balcony Break
+* Combos from 2nd hit CH
+* Can be delayed
+"
+df+1,4;m,h;10,18;i19~20;-6;+12g;;"
+* Balcony Break
 * Combos from 1st hit
 "
-Back Throw;t;50;;;0;;"
-* Unbreakable"
+df+2;m;13;i16~17;-12;+32a (+22);;
+df+2+3;m;20;i36~37;-9;+60a;;"
+Homing "
+df+3;m;15;i15~16;-5;+4;;"
+* Cancel SCR transition -10, -1 with B
+"
+df+3,4;m,h;15,17;i23~24;-6;+22a;+55a;Combos from 1st hit
+df+3,d+4;m,l;15,15;i25~26;-14;+1c;;Combos from 1st hit
+df+4;m;14;i14;-13;+3;;
+df+4,1;m,m;14,22;i31;-12;+3d;;"
+* Heat Engager
+
+* Heat Dash +5 +17d
+
+* Balcony Break
+* Spike
+* Azazel's Power
+* Zafina receives recoverable health damage
+* Deals 8 chip damage on block
+* Cancel and transition to -18, -2 FC with D
+* Combos from 1st hit
+"
+df+4,2;m,m;14,20;i27~29;-13;+24a(+9);;"
+* Tornado
+* Combos from 1st hit "
 d+1;m;;i12;-16;-8;-3c;"
 "
 d+1,1;m,m;;i17~18;-12;+19a(+12);+28a(+22);"
@@ -127,84 +168,47 @@ db+4,2;l,m;14,17;i29~32;-13;+68a(+52);;"
 * Combos from 1st hit CH
 * Alternate input FC.db+4,2
 "
-df+1;m;10;i13~14;-5;+7;;
-df+1,2;m,m;10,16;i15~16;-13;+3;;Combos from 1st hit
-df+1,2,1;m,m,m;10,16,20;i25;-13;+23d(13);;"
-* Balcony Break
-* Combos from 2nd hit CH
-* Can be delayed
+b+1;m;14;i18;-14;+2;;"
 "
-df+1,4;m,h;10,18;i19~20;-6;+12g;;"
-* Balcony Break
-* Combos from 1st hit
-"
-df+2;m;13;i16~17;-12;+32a (+22);;
-df+2+3;m;20;i36~37;-9;+60a;;"
-Homing "
-df+3;m;15;i15~16;-5;+4;;"
-* Cancel SCR transition -10, -1 with B
-"
-df+3,4;m,h;15,17;i23~24;-6;+22a;+55a;Combos from 1st hit
-df+3,d+4;m,l;15,15;i25~26;-14;+1c;;Combos from 1st hit
-df+4;m;14;i14;-13;+3;;
-df+4,1;m,m;14,22;i31;-12;+3d;;"
-* Heat Engager
-
-* Heat Dash +5 +17d
-
-* Balcony Break
-* Spike
+b+1:1+2;m,t;14,36;;;+0d;;"
+* Hit Throw
 * Azazel's Power
 * Zafina receives recoverable health damage
-* Deals 8 chip damage on block
-* Cancel and transition to -18, -2 FC with D
+* Switches sides
+"
+b+2;h;22;i22~23;-5;+12;;"
+* Homing
+"
+b+2+3;m!;40;i64;!;+41a(+10);;"Unblockable
+"
+b+3;m;23;i24~26;-14;+12d;;"Powercrush
+"
+b+4;m;14;i22~23;-9;+4;;"
+"
+b+4,4;m,m;14,20;i20~22;-14;+9a(0);;"
+* Balcony Break
+* Delayable
+* Hit-confirmable
 * Combos from 1st hit
 "
-df+4,2;m,m;14,20;i27~29;-13;+24a(+9);;"
-* Tornado
-* Combos from 1st hit "
-f+1+2;m,m;16,22;i19~20 i13~14;-9;+5d(-5);;"
-* Heat Engager
-
-* Heat Dash +5 +36a (+26)
-
-* Balcony Break
-* Azazel's Power
-* Zafina receives recoverable health damage
-* Second hit only comes out on hit or block
-* 8 chip damage on block
-"
-f+2;m;17;i19;-18;-9;+52a;
-f+2,3;m,h;17,12;i19;0;+9;;"
-* Cancel SCR transition -9, +0 with B
-* Combos from 1st hit
-* Can be delayed
-"
-f+2,3,4;m,h,m;17,12,25;i28~29;-18;+18d(8);;Balcony Break
-f+3;h;28;i21;+3;+68a(48);;"
-* Balcony Break
-* Cancel SCR transition -1, +64a with B
-"
-f+4;h;13;i14~15;-6;+22a;;
-FC.d+1;sl;5;i10;-5;+6;;"
+uf+1;h;19;i19;+4;+9;;"
 * Alternate inputs:
-** FC.db+1
-** FC.df+1
-* Transition to r24 with f
-* Transition input can be delayed 16f"
-FC.d+2;sl;8;i11;-4;+5;;"
+** ub+1
+** u+1
+"
+uf+3;m;25;i22~23;-8;+17d;;"
 * Alternate inputs:
-** FC.db+2
-** FC.df+2"
-FC.d+3;l;10;i16;-17;-6;;"
-* Alternate input:
-** FC.db+3"
-FC.d+4;l;6;i12;-15;-4;;"
+** ub+3
+** u+3
+"
+uf+4;m;18;i17~18;-13;+29a(19);;"
 * Alternate inputs:
-** FC.db+4
-** FC.df+4"
-FC.df+3;l;15;i23~24;-26;+14d;;"
-* On hit or whiff, hold D to transition to MNT (becomes +13d)"
+** ub+4
+** u+4
+"
+1+2+3+4;;;;;;;"
+* Can't block for 5 seconds
+* CH state for 5 seconds"
 f,F+2;h;20;i15~16;+1;+21a(12);+38a;"
 * Homing
 * Balcony Break
@@ -226,6 +230,10 @@ f,F+4;m;20;i17~19;-8;+18a(+9);;"
 *
 Balcony Break
 "
+wr4;l;21;i14~30;-52;-7d;;"
+* Transition to -52, -7BT with U
+* Transition to -52, -7 TRT with D
+"
 f,f,F+1+2;h;20;i23~24;+7;+32a;;"
 * Balcony Break
 * 8 chip damage on block
@@ -235,23 +243,43 @@ f,f,F+3;m;30;i23~26;+7;+19a(9);;"
 * Cancel SCR transition +3, +15a with B
 * 9 chip damage on block
 "
-H.2+3;h,sm;15,4,5,5,4,18;i12~13 i47~53 i1~7 i1~7 i1~6 i1~2;+3;+0d;;"
-* Heat Smash
-* Balcony Break
-* Hit throw on the first hit
-* Unparryable
-* Ignores regular power crush armor
-* Jails"
-H.SCR.2+3;l,m;10,20;i19;-14;+44d (+25);;"
-* Heat Smash
-* Balcony Break "
-Left Throw;t;40;;;0;;Throw break 1
-MNT.1;m;12;i13;-6;+5;;"
+ws1;m;9;i15;-10;+1;;
+ws1,2;m,m;9,18;i20~21;-13;+36a (+26);;
+ws2;m;20;i18~19;-14;+28a (+18);;"
+* Tornado
+* Can transition to MNT by holding D (becomes -40/+2)
 "
-MNT.1+2;m;21;i20;-12;+18d;;"
+ws3;m;20;i12;0;+9;;"
+* Cancel SCR transition by holding B (becomes -8/+1)
+"
+ws4;m;14;i11;-7;+4;;
+SS.1+2;m;22;i17~18;-2;+8c;+28a;"
+"
+FC.df+3;l;15;i23~24;-26;+14d;;"
+* On hit or whiff, hold D to transition to MNT (becomes +13d)"
+FC.d+1;sl;5;i10;-5;+6;;"
+* Alternate inputs:
+** FC.db+1
+** FC.df+1
+* Transition to r24 with f
+* Transition input can be delayed 16f"
+FC.d+2;sl;8;i11;-4;+5;;"
+* Alternate inputs:
+** FC.db+2
+** FC.df+2"
+FC.d+3;l;10;i16;-17;-6;;"
+* Alternate input:
+** FC.db+3"
+FC.d+4;l;6;i12;-15;-4;;"
+* Alternate inputs:
+** FC.db+4
+** FC.df+4"
+MNT.1;m;12;i13;-6;+5;;"
 "
 MNT.1,3;m,h;12,12;i19;0;+9;;"
 * Cancel SCR transition by holding B (becomes -8/+1)
+"
+MNT.1+2;m;21;i20;-12;+18d;;"
 "
 MNT.2;m;19;i13~14;-14;-3;+57a;"
 "
@@ -271,14 +299,6 @@ MNT.4;l;13;i17~18;-19;-3;+7;"
 MNT.4,3;l,m;13,23;i27;-30;+32a(+22);;"
 * Tornado
 "
-MNT.d+1;l;14;i15~16;-11;0;;"
-"
-MNT.d+1,4;l,m;14,23;i27~30;-16;+15(+6);+60a(+40);"
-* Balcony Break
-"
-MNT.d+4;l;19;i20~27;-22~-15;+4c~+11c;+19a~+26a;"
-* Evasive (can go under mids)
-"
 MNT.df+1;m;30;i24~25;+6;+7d;;"
 * Heat Engager
 
@@ -297,19 +317,22 @@ MNT.df+3;m;20;i15~16;-17;+19cg;;"
 MNT.df+4;m;18;i17~18;-5;+13g;;"
 * Homing
 "
+MNT.d+1;l;14;i15~16;-11;0;;"
+"
+MNT.d+1,4;l,m;14,23;i27~30;-16;+15(+6);+60a(+40);"
+* Balcony Break
+"
+MNT.d+4;l;19;i20~27;-22~-15;+4c~+11c;+19a~+26a;"
+* Evasive (can go under mids)
+"
 MNT.uf+3;m;25;i26~28;-9;+11d;;"
 "
-R.df+1+2;m,t;55;i20;-15;+0d;;"
-* Rage Art
-* Damage increases with lower health
-* Erases opponent's recoverable health on hit"
-Right Throw;t;40;;;+7;;Throw break 2
 SCR.1;h;12;i10~11;-2;+9;;"
+"
+SCR.1,4;h,m;12,18;i22;-6;+7;+32d;"
 "
 SCR.1+2;m;20;i17~19;+6;+17d;;"
 * Hold D to transition to TRT (remains +6/+17d)
-"
-SCR.1,4;h,m;12,18;i22;-6;+7;+32d;"
 "
 SCR.2;m;17;i14;-7;+7;;"
 "
@@ -338,18 +361,6 @@ SCR.4;m;20;i15~16;-18;+58a(+42);;"
 SCR.b+1+2;l;16;i16;-17;+3;+12d;"
 * Evasive (can go below some mids)
 "
-SCR.d+3;l;10;i18;-6;-3;+9c;"
-"
-SCR.d+3,3;l,h;10,28;i24;+3;+77a(+61);;"
-* Can hold B to exit SCR (becomes -1/
-* Launches into Tornado
-** Does not apply Tornado mid-combo
-"
-SCR.d+3+4;;;;;;;"
-"
-SCR.d+4;l;20;i24~30;-25;-4d;;"
-* Can hold D to transition to MNT (remains -25/-4d)
-"
 SCR.db;;;19;;;;"
 "
 SCR.df+1;m,m;10,20;i18 i17~19;-6;+33a(+18);;"
@@ -368,7 +379,17 @@ SCR.df+3,3;l,l;10,10;i29~31;-23;+54a(+38);;"
 "
 SCR.df+4;l;17;i19~20;-14;+7c;+37a;"
 "
-SS.1+2;m;22;i17~18;-2;+8c;+28a;"
+SCR.d+3;l;10;i18;-6;-3;+9c;"
+"
+SCR.d+3,3;l,h;10,28;i24;+3;+77a(+61);;"
+* Can hold B to exit SCR (becomes -1/
+* Launches into Tornado
+** Does not apply Tornado mid-combo
+"
+SCR.d+3+4;;;;;;;"
+"
+SCR.d+4;l;20;i24~30;-25;-4d;;"
+* Can hold D to transition to MNT (remains -25/-4d)
 "
 TRT.1;l;13;i18;-11;+5;+15d;"
 "
@@ -385,8 +406,6 @@ TRT.4;m;10;i26;-22;-4b;-4c;"
 "
 TRT.4,3;m,m;10,10;i28~31;-12;+18a;;"
 "
-TRT.d+1+2;l;20;i25;-21;+10d;;"
-"
 TRT.db;;;;;;;"
 "
 TRT.df+1;m;30;i19~20;-7;+30a(+15);;"
@@ -399,34 +418,15 @@ TRT.df+1;m;30;i19~20;-7;+30a(+15);;"
 * 12 chip damage on block
 * Gains Power Crush frames during heat
 "
-uf+1;h;19;i19;+4;+9;;"
-* Alternate inputs:
-** ub+1
-** u+1
+TRT.d+1+2;l;20;i25;-21;+10d;;"
 "
+1+3;t;35;i12~14;;0;;Throw break 1 or 2
+2+4;t;35;i12~14;;0;;"
+* Throw break 1 or 2
+* Transitions to MNT"
+Back Throw;t;50;;;0;;"
+* Unbreakable"
+Left Throw;t;40;;;0;;Throw break 1
+Right Throw;t;40;;;+7;;Throw break 2
 uf+1+2;t;40;i12;;0;;"
 * Throw break 1+2"
-uf+3;m;25;i22~23;-8;+17d;;"
-* Alternate inputs:
-** ub+3
-** u+3
-"
-uf+4;m;18;i17~18;-13;+29a(19);;"
-* Alternate inputs:
-** ub+4
-** u+4
-"
-wr4;l;21;i14~30;-52;-7d;;"
-* Transition to -52, -7BT with U
-* Transition to -52, -7 TRT with D
-"
-ws1;m;9;i15;-10;+1;;
-ws1,2;m,m;9,18;i20~21;-13;+36a (+26);;
-ws2;m;20;i18~19;-14;+28a (+18);;"
-* Tornado
-* Can transition to MNT by holding D (becomes -40/+2)
-"
-ws3;m;20;i12;0;+9;;"
-* Cancel SCR transition by holding B (becomes -8/+1)
-"
-ws4;m;14;i11;-7;+4;;

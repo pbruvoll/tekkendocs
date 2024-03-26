@@ -20,12 +20,14 @@ class MoveCategory(enum.Enum):
     THROW = "Throw"
     WHILE_RISING = "While_rising"
     SIDESTEP = "SIDESTEP"
+    STANCE = "Stance"
+    FULL_CROUCH = "Full_crouch"
     OTHER = "Other"
 
 SORT_ORDER: Dict[MoveCategory, int] = {
-    MoveCategory.HEAT_BURST: -10,
-    MoveCategory.HEAT_SMASH: 0,
-    MoveCategory.HEAT_MOVE: 10,
+    MoveCategory.HEAT_BURST: 3,
+    MoveCategory.HEAT_MOVE: 5,
+    MoveCategory.HEAT_SMASH: 10,
     MoveCategory.RAGE_ART: 20,
     MoveCategory.NEUTRAL: 30,
     MoveCategory.FORWARD: 40,
@@ -37,9 +39,11 @@ SORT_ORDER: Dict[MoveCategory, int] = {
     MoveCategory.UP : 100,
     MoveCategory.UP_FORWARD : 110,
     MoveCategory.KI_CHARGE: 115,
+    MoveCategory.OTHER: 116,
     MoveCategory.RUNNING: 117,
     MoveCategory.WHILE_RISING: 118,
     MoveCategory.SIDESTEP: 119,
-    MoveCategory.OTHER: 120,
+    MoveCategory.FULL_CROUCH: 120,
+    MoveCategory.STANCE: 121,
     MoveCategory.THROW: 130,
 }
