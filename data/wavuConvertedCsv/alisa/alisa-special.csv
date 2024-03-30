@@ -116,7 +116,7 @@ b+4,3;m,m;17,20;,i29~30;-11;+6c;;"Airborne
 * Transition to DES with input b+4,3,1+2
 "
 b+4,4;m,m;17,17;,i25~27;-37;+9 (-1);;"Airborne
-* Transition to BOT with input b+4,4,3_4
+* Transition to SBT with input b+4,4,3_4
 * Transition to DBT with input b+4,4,f+3_f+4
 * Tornado
 "
@@ -145,32 +145,6 @@ BKP.3;m;30;i24~27;-9;+72;;"
 "
 BKP.4;m;30;i19;-9;+32 (+22);;" Spacing affects advantage on hit and block.
 * Tornado
-"
-BOT.1;m;12;i13~14;-15;0;;"
-"
-BOT.1+2;ub(h);20;i27~28;+8;+8;;"
-* Balcony Break
-* Transition to DES
-"
-BOT.1,2;m,m;12,13;,i18~19;-9;+2;+7;"Rest of the string is natural on counter hit.
-"
-BOT.1,2,1;m,m,m;12,13,7;,i20~21;-12;-20;-12;" Less safe on hit than on block without CH. 
-"
-BOT.1,2,1,3+4;m,m,m,m;12,13,7,33;,i18;-18;+4 (-13);;"
-* Balcony Break
-* Transition to DES with input BOT.1,2,1,3+4,1+2
-"
-BOT.2;m;25;i16~17;-7;+6 (-4);;"
-* Balcony Break
-* Transition to DES with input BOT.2,1+2
-"
-BOT.3;l;17;i16~20;-14c;+4c;;"
-"
-BOT.4;m;22;i17~19;-27;+68;;"
-"
-BOT.D;sp;;;;;;"
-* Alternate input: BOT.B
-* Transition to BKP
 "
 BT.4;m;20;i16~17;-3;+19 (+2);;"
 * Balcony Break
@@ -359,7 +333,7 @@ df+3,3;m,l;14,17;,i23~24;-12c;+1;;"
 df+4;m;13;i12;-7;+4;;"
 "
 f+1+2;m;25 (0);i14~15;-12;+14;;"
-* Transition to BOT with f+1+2,3_4
+* Transition to SBT with f+1+2,3_4
 * Transition to DBT with f+1+2,f+3_f+4
 "
 f+2;m;12;i17~18;-4;+7;;"
@@ -390,8 +364,8 @@ f+3,2;h,h;10,20;,i25;-4;+39 (+31);;"
 * chip damage on block
 "
 f+3+4;sp;;;;;;"
-* Transition to BOT
-* Transition to BKP with input BOT.D or BOT.B
+* Transition to SBT
+* Transition to BKP with input SBT.D or SBT.B
 "
 f+3+4;sp;;;;;;" Airborne dash. Can use Thruster Left, Thruster Right-Burst, Eject Slider, Upstream, Thruster Drill, Heartbeat Disabler, or Shut Down during Boot.
 "
@@ -459,7 +433,7 @@ FUFT.1+2,3;sp,m;0,35;i22~23;-10;+60;;"
 H.2+3;m;50 (28);i20~21;+8;KND;;"
 * Alternate input: H.DES.2+3
 * Heat Smash
-* Transition to BOT with H.2+3,3_4 or H.DES.2+3,f+3_f+4
+* Transition to SBT with H.2+3,3_4 or H.DES.2+3,f+3_f+4
 "
 H.d+1+2;sp;;;;;;"
 * Transition to DES
@@ -478,7 +452,7 @@ OTG.db+1+2;l;20 (14);i26;-14;-5 (-13);;"
 P.b+1+3;ub(m);25;i20~21;-5 (-14);-5 (-14);;"
 * Balcony Break
 "
-H.R.df+1+2;m;;;;;;"
+R.df+1+2;m;;;;;;"
 * Alternate input: R.DES.df+1+2
 * [[:Template:RageArt]]
 * Erases opponent's recoverable health on hit
@@ -488,12 +462,37 @@ Right throw;th(h);40;i12~14;;;;"
 * Opponent recovery on hit: FUFA perpendicular to Alisa
 * Spike
 "
+SBT.1;m;12;i13~14;-15;0;;"
+"
+SBT.1+2;ub(h);20;i27~28;+8;+8;;"
+* Balcony Break
+* Transition to DES
+"
+SBT.1,2;m,m;12,13;,i18~19;-9;+2;+7;"Rest of the string is natural on counter hit.
+"
+SBT.1,2,1;m,m,m;12,13,7;,i20~21;-12;-20;-12;" Less safe on hit than on block without CH. 
+"
+SBT.1,2,1,3+4;m,m,m,m;12,13,7,33;,i18;-18;+4 (-13);;"
+* Balcony Break
+* Transition to DES with input SBT.1,2,1,3+4,1+2
+"
+SBT.2;m;25;i16~17;-7;+6 (-4);;"
+* Balcony Break
+* Transition to DES with input SBT.2,1+2
+"
+SBT.3;l;17;i16~20;-14c;+4c;;"
+"
+SBT.4;m;22;i17~19;-27;+68;;"
+"
+SBT.D;sp;;;;;;"
+* Alternate input: SBT.B
+* Transition to BKP
+"
 SS.4;l;15;i24~25;-12;+2;;"
 "
 SS.4,1+2;l,hm;15,20;,;;;;"
 "
 u+1+2;m;21;i33~34;-5;+56;;"
-* Alternate input: ub+1+2
 "
 ub+2;h;26;i16~24;-8;+38 (-20);;"
 * Balcony Break
@@ -501,14 +500,12 @@ ub+2;h;26;i16~24;-8;+38 (-20);;"
 ub+3+4;m;25;i37~39;+2c;+25 KND;;"
 "
 ub+3+4,1+2;m,m;25,20;,i26~27;-14;+32 (+22);;"
-* Alternate input: BT.3+4,1+2
 "
 ub+4;m;10;i18;-9;+7;;"
 "
 uf+1;mmm;20,14 (9),10 (7);i19~20,i25,i17;-13;+68 (+52);;" 
 * Tornado
-* Alternate input: ub+1 or u+1
-* Transition to BOT on hit with uf+1,3_4
+* Transition to SBT on hit with uf+1,3_4
 * Transition to DBT on hit with uf+1,f+3_f+4
 "
 uf+1+2;th(h);40;i12~13;;+3;;"
@@ -516,7 +513,6 @@ uf+1+2;th(h);40;i12~13;;+3;;"
 * Opponent recovery on hit: FUFT
 "
 uf+2;h;22;i16~17;-2;+20 (+11);;"
-* Alternate input: u+2
 * Balcony Break
 * Heat Engager
 
@@ -525,18 +521,15 @@ uf+2;h;22;i16~17;-2;+20 (+11);;"
 * Transition to DES on hit (does not transition when using Heat Dash)
 "
 uf+3;m;15;i17~18;-52;-25;;"
-* Alternate input: ub+3 or u+3
-* Transition to BOT with input uf+3,3_4
+* Transition to SBT with input uf+3,3_4
 * Transition to DBT with input uf+3,f+3_f+4
 "
 uf+3,2;m,m;15,30;,i17~22;-14;+32 (-26);;"
 * Balcony Break
 "
 uf+3+4;m;28;i38~41;0;+4;;"
-* Alternate input: u+3+4
 "
 uf+4;m;8;i15~16;-15;-4;;"
-* Alternate input: u+4
 "
 uf+4,4;m,m;8,8;,i24~26;-13;+45 (+37);;"
 "
@@ -554,7 +547,7 @@ ws1,2,3;m,h,m;12,12,23;,i25~26;-10;+33 (+23);;"
 "
 ws2;m;24;i17~18;-13;+33 (+23);;"
 * Tornado
-* Transition to BOT with input ws2,3_4
+* Transition to SBT with input ws2,3_4
 * Transition to DBT with input ws2,f+3_f+4
 "
 ws3;m;18;i19~20;+4;+15;;"
