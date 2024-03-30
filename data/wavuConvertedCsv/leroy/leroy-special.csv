@@ -141,7 +141,6 @@ db+4;l;13;i17;-15;-4c;;
 b+1;h;17;i13;-6;+5;;
 b+1+2;m;17;i12;-10;+2;;
 b+2;sp;;;;;;"
-* Alternate input: HRM.b+2
 * Parry (partially restores remaining Heat time when successful during Heat)
 * Becomes Superior Twin Dragon Gate upon perfect parry
 "
@@ -202,19 +201,19 @@ f,f,F+3;m;30;i24~27;+6;+41 (-17);;"
 * Balcony Break
 * chip damage on block
 "
-ws1;m;14;i13~14;;;;
-ws1,4;m,m;14,16;,i21;;+3;;Transition to HRM
-ws2;m;21;i15~16;;+51;;
-ws4;m;16;i11~12;;+5;;
+ws1;m;14;i13~14;-7;+3;;
+ws1,4;m,m;14,16;,i21;-9;+3;;Transition to HRM
+ws2;m;21;i15~16;-14;Launch;;
+ws4;m;16;i11~12;-16;+5;;
 SS.4;l;17;i18~19;;+4;;
 FC.4;l;14;i15~16;-15;-4;;
-FC.4,1;l,m;14,15;,i20~21;;+31 (+21);;
-HRM.1;m;17;i24~25;;;;"
+FC.4,1;l,m;14,15;,i20~21;-13;Launch;;
+HRM.1;m;17;i24~25;-10;0;;"
 * Parry
 * Partially restores remaining Heat time upon successful parry during Heat
 "
-HRM.1+2;m;12;i14;-9;-3;;Power up during Heat (partially uses remaining Heat time)
-HRM.1+2,1;m,m;12,20;i17~18;-17;+7a(-2)/HE;;"
+HRM.1+2;m,h,h,h,h;12,x,x,x;i14;-9;-3;;Power up during Heat (partially uses remaining Heat time)
+HRM.1+2,1;m,h,h,h,h,m;12,x,x,x,20;i17~18;-17;+7a(-2)/HE;;"
 * Heat Engager
 
 * Heat Dash +5g +36a(+26)
@@ -222,26 +221,26 @@ HRM.1+2,1;m,m;12,20;i17~18;-17;+7a(-2)/HE;;"
 * Balcony Break
 * True Blockstring
 "
-HRM.2;h;14;i12~13;;;;
-HRM.2,3;h,h;14,23;,i24~25;;+16 (+9);;"
+HRM.2;h;14;i12~13;-6;+5;;
+HRM.2,3;h,h;14,23;,i24~25;-9;+16 (+9);;"
 * Tornado
 * chip damage on block
 "
-HRM.3;l;8;i16;;;;
-HRM.3,4;l,m;8,16;i22~23;;+1;;
-HRM.4;m;13;i11~12;;;;Transition to HRM
-HRM.4,1+2;m,m;13,25;,i24~25;;+27 (+12);;Tornado
+HRM.3;l;8;i16;;-2;;
+HRM.3,4;l,m;8,16;i22~23;-15;+1;;
+HRM.4;m;13;i11~12;-7;+7;;Transition to HRM
+HRM.4,1+2;m,m;13,25;,i24~25;-14;+27 (+12);;Tornado
 HRM.SS;sp;;;;;;
-HRM.SS.1+2;h;26;i14;;+30;;"
+HRM.SS.1+2;h;26;i14;+7;+30;;"
 * chip damage on block
 * power up during Heat (partially uses remaining Heat time)
 "
-HRM.b+1;m;21;i20~22;;+7c;;chip damage on block
-HRM.b+3;l;12;i20~21;;;;
-HRM.b+3,1+2;l,m;12,18 (12);i31~32;;+0 (-1);;Balcony Break
-HRM.b+4;l;17;i20~21;;+4c;;Homing
-HRM.f+1;h;17;i14~15;;+15g;;Balcony Break
-HRM.f+4;m;21;i26~29;;+40;;chip damage on block
+HRM.b+1;m;21;i20~22;+4;+7c;;chip damage on block
+HRM.b+3;l;12;i20~21;-31;;;
+HRM.b+3,1+2;l,m;12,18 (12);i31~32;-16;KND;;Balcony Break
+HRM.b+4;l;17;i20~21;-13;+4c;;Homing
+HRM.f+1;h;17;i14~15;0;+15g;;Balcony Break
+HRM.f+4;m;21;i26~29;0;Launch;;chip damage on block
 OTG.db+2;l;;i17~18;;;;Power up during Heat (partially uses remaining Heat time)
 OTG.db+2,1+2;l,l;;;;;;
 P.b+2,1;m;30;i13;;;;"

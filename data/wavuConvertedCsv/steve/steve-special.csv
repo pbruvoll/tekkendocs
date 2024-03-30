@@ -100,6 +100,33 @@ f+3+4;sp;;;;;;"
 * Transition to PAB
 * Auto blocks high and mid
 "
+df+1;m;12;i13;-2;+4;;"
+* Input 3 to LWV 
+* Input 4 to RWV 
+* Input b+3_4 to SWY 
+* Input f+3_4 to DCK (-5/+2/+2)
+"
+df+1,2;m,h;1213;;-6;+3;+5;"
+* Input 3 to LWV (-16/-9/-9)
+* Input 4 to RWV (-16/-9/-9)
+* Input b+3_4 to SWY (-16/-9/-9)
+* Input f+3_4 to DCK (-14/-7/-7)
+"
+df+1,2~1;m,h;1220;;-2;+2;Launch;"
+* Input b to FLK (0/+4/Launch)
+"
+df+1,2~1+2;m,h,h;12,8,12;;-3;0;;"
+* Input b to FLK (0/+4/Launch)
+"
+df+1,2~2;m,m;1212;;-10;KND;;"
+* Input b to FLK (0/+4/Launch)
+"
+df+2;m;10;i16;-11;+6;+8c;"
+* Input 3 to LWV (-7/+10/+12)
+* Input 4 to RWV (-7/+10/+12)
+* Input b+3_4 to SWY (-7/+10/+12)
+* Input f+3_4 to DCK (-2/+15g/+17)
+"
 d+1;l;12;i16;-13;-2;;"
 * Recover in crouch
 "
@@ -112,6 +139,18 @@ d+2,1;l,m;11,8;;-11;-5;0;"
 * Input f+3_4 to DCK (-4/+2/+7)
 "
 d+2,1,2;l,m,h;11,8,17;;-2;KND;Launch;"
+"
+db+1;sm;;i10;-5;+6;;"
+"
+db+1+2;m;21;i28;-13;+14;;"
+"
+db+2;l;21;i26;-12;+1c;KND;"
+* d or db to recover in crouch
+"
+db+3;l;10;i16;-13;0;;"
+"
+db+3,2;l,h;10,10;;-6;+7;;"
+* Transition to LNH
 "
 b+1;h;10;i13;-14;+2;+61a;"
 * Input B to FLK (-1/+10/+69)
@@ -144,49 +183,32 @@ b+3;sp;;;;;;"
 * Input 4 to RWV 
 * Input f+3_4 to DCK
 "
+ub+1+2;m;70;i66;KND;KND;;
+ub+2;h;17;i17;+3;+14;;"
+* Homing
+* Transition into LNH
+* Input b to cancel LNH
+"
+ub+2~1;m;17;i30;-8;+4;Launch;
+ub+3;sp;;;;;;"
+* Transition to LNH
+* Input 3 to LWV 
+* Input 4 to RWV 
+* Input b+3_4 to SWY 
+* Input f+3_4 to DCK 
+"
+uf+1;m;18;i19~21;-6;+5;;
+uf+2;m;20;i22~25;-14;Launch;;
+uf+3;l;20;i36;-12;+9;;
+uf+3,2;l,h;20,10;;-6;+7;;"
+* Transition to LNH
+"
+uf+4;m;20;i23;-14;KND;Launch;"
+"
 Opponent down d+1+2;l;14;i17;;;;"
 * Recovers in crouch
 "
 afters+1;l;23;i16;-12;KND;;"
-"
-d/b+1;sm;;i10;-5;+6;;"
-"
-d/b+1+2;m;21;i28;-13;+14;;"
-"
-d/b+2;l;21;i26;-12;+1c;KND;"
-* d or d/b to recover in crouch
-"
-d/b+3;l;10;i16;-13;0;;"
-"
-d/b+3,2;l,h;10,10;;-6;+7;;"
-* Transition to LNH
-"
-d/f+1;m;12;i13;-2;+4;;"
-* Input 3 to LWV 
-* Input 4 to RWV 
-* Input b+3_4 to SWY 
-* Input f+3_4 to DCK (-5/+2/+2)
-"
-d/f+1,2;m,h;1213;;-6;+3;+5;"
-* Input 3 to LWV (-16/-9/-9)
-* Input 4 to RWV (-16/-9/-9)
-* Input b+3_4 to SWY (-16/-9/-9)
-* Input f+3_4 to DCK (-14/-7/-7)
-"
-d/f+1,2~1;m,h;1220;;-2;+2;Launch;"
-* Input b to FLK (0/+4/Launch)
-"
-d/f+1,2~1+2;m,h,h;12,8,12;;-3;0;;"
-* Input b to FLK (0/+4/Launch)
-"
-d/f+1,2~2;m,m;1212;;-10;KND;;"
-* Input b to FLK (0/+4/Launch)
-"
-d/f+2;m;10;i16;-11;+6;+8c;"
-* Input 3 to LWV (-7/+10/+12)
-* Input 4 to RWV (-7/+10/+12)
-* Input b+3_4 to SWY (-7/+10/+12)
-* Input f+3_4 to DCK (-2/+15g/+17)
 "
 f,F+2;m;24;i14~17;-13c;KND;;"
 "
@@ -199,28 +221,6 @@ Heat Dash (+5/KND/KND)
 "
 qcf+2;l;18;i19;-18;+2;;"
 * Input F transitions to PAB
-"
-u/b+1+2;m;70;i66;KND;KND;;
-u/b+2;h;17;i17;+3;+14;;"
-* Homing
-* Transition into LNH
-* Input b to cancel LNH
-"
-u/b+2~1;m;17;i30;-8;+4;Launch;
-u/b+3;sp;;;;;;"
-* Transition to LNH
-* Input 3 to LWV 
-* Input 4 to RWV 
-* Input b+3_4 to SWY 
-* Input f+3_4 to DCK 
-"
-u/f+1;m;18;i19~21;-6;+5;;
-u/f+2;m;20;i22~25;-14;Launch;;
-u/f+3;l;20;i36;-12;+9;;
-u/f+3,2;l,h;20,10;;-6;+7;;"
-* Transition to LNH
-"
-u/f+4;m;20;i23;-14;KND;Launch;"
 "
 f,f,F+2;m;30;i20~24;+6;+17;;"
 Heat Engager
@@ -353,7 +353,7 @@ LWV.1;m;14;i15;-10;+1;;"
 LWV.1,1;m,m;1422;;-13;KND;;"
 "
 LWV.1,2;m,h;1414;;+3;+7;;"
-Homing
+* Homing
 * Transition to LNH
 * Causes Strong Aerial Tailspin
 "
@@ -392,17 +392,17 @@ PAB.b+1,1,2,1;m,h,m,m;15,10,12,21;;-10;KND;;"
 "
 PAB.b+2;m;25;i28;-13;KND;;"
 "
-PAB.d/f+1;m;12;i15;-9;+2;;"
+PAB.df+1;m;12;i15;-9;+2;;"
 "
-PAB.d/f+1,1;m,m;1214;;-10;+1;;"
+PAB.df+1,1;m,m;1214;;-10;+1;;"
 "
-PAB.d/f+1,1,2;m,m,m;121412;;-11;-3;;"
+PAB.df+1,1,2;m,m,m;121412;;-11;-3;;"
 "
-PAB.d/f+1,1,2,1;m,m,m,m;121412,20;;-13;KND;;"
+PAB.df+1,1,2,1;m,m,m,m;121412,20;;-13;KND;;"
 "
-PAB.d/f+1,2;m,m,h;1220;;-6;+10;;"
+PAB.df+1,2;m,m,h;1220;;-6;+10;;"
 "
-PAB.d/f+2;m;16;i16;-10;Launch;;"
+PAB.df+2;m;16;i16;-10;Launch;;"
 "
 PAB.d+1;l;11;i15;-12;+2;;"
 "
@@ -421,7 +421,7 @@ RWV.1;m;13;i14~16;-5;+4;;"
 * Input f into PAB (-1/+8/+8)
 "
 RWV.1,2;m,h(?);13,17;;+3;+7;;"
-Homing
+* Homing
 * Transition into LNH
 "
 RWV.1,2~1;m,m;13,?;;-8;+4;Launch;"
@@ -466,6 +466,6 @@ TFA.2;throw;40;/;;KND;;"
 qcb+2+4;throw;40;i12;;;;"
 * 2 Throw break
 "
-u/f+1+2;throw;40;i12;;;;"
+uf+1+2;throw;40;i12;;;;"
 * 1+2 Throw break
 "
