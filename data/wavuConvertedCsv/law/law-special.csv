@@ -1,6 +1,19 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes
+2+3;m;12 (12);i16;+1;+2c;;"
+* Heat Burst"
+H.d+1+2;;;;;;;"
+* Enters DSS
+* Transition to Slide Step with DF
+* Absorbs punch attacks and shifts to Dragon Parry "
+H.2+3;m,t;24,4,5,5,5,7 (50);i14;+11g;+5;;"
+* Heat Smash
+* Balcony Break
+* Automatically transitions to DSS on block"
+R.df+1+2;m,t;55+;i20;-15;+0;;"
+* Rage Art
+* Damage increases with lower health
+* Erases opponent's recoverable health on hit"
 1;h;5;i10;+1;+8;;
-df+1,3,2,2,3,3,3,4,4,4;;;;;;;First 3 hits are a natural combo
 1,1;h,h;5,5;i18;-8;-6;+6;
 1,1,1;h,h,m;5,5,20;i20;-12;+41d (-17);;"
 * Heat Engager
@@ -12,12 +25,6 @@ df+1,3,2,2,3,3,3,4,4,4;;;;;;;First 3 hits are a natural combo
 1,1,2;h,h,h;5,5,12;i17;-6;+6;;"
 * Transition to DSS with F
 ** (-5 oB, +7 oH) "
-1+2;m;20;i16;-13;+12a (+5);+66a (+50);"
-* Tornado
-* Weapon
-* Partially uses remaining Heat Time
-* Instant Tornado on CH
-* Alternate input DSS.1+2 "
 1,2;h,h;5,8;i12;-3;+6;+6;"
 * Jails from 1st attack
 * Combos from 1st hit"
@@ -35,22 +42,13 @@ df+1,3,2,2,3,3,3,4,4,4;;;;;;;First 3 hits are a natural combo
 * Knee
 * Combos from 1st hit CH
 * Jails from 1st attack"
-1+2+3+4;;;;;;;
-1+2+3+4~1;h;10;i12;-5;+6;;"
-* Alternate input:
-** uf+1
-** b,B+2+3~1,3 "
-1+2+3+4;;;;;;;
-1+2+3+4,2;h;24;i14;+1;+50a;;"
-* Chip damage on block
-* Alternate input DSS.2 "
-1+2+3+4~1,3;h,l;10,10;i19;-13;-1;;"
-* Combos from 1st hit
-* Alternate input:
-** uf+1,3
-** b,B+2+3~1,3 "
 1,2,uf+3,4;h,h,Special,m;20;i15;-12;+31a (+21);;
-1+3;t;35;i12~14;-3;+0d;;Throw break 1 or 2
+1+2;m;20;i16;-13;+12a (+5);+66a (+50);"
+* Tornado
+* Weapon
+* Partially uses remaining Heat Time
+* Instant Tornado on CH
+* Alternate input DSS.1+2 "
 2;h;8;i10;+0;+6;;
 2,2;h,m;8,10;i20;-8;+4;;Delay-able
 2,2,1+2;h,m,m;8,10,20;i19;-13;+5a (-4);;"
@@ -61,18 +59,6 @@ df+1,3,2,2,3,3,3,4,4,4;;;;;;;First 3 hits are a natural combo
 * Combos from 2nd hit
 * Transition to DSS with F
 ** (-3 oB, +10g oH, +15d)"
-2+3;m;12 (12);i16;+1;+2c;;"
-* Heat Burst"
-2+3+4;;;;;;;
-2+4;t;35;i12~14;;+0d;;"
-* Throw break 1 or 2
-* Side swap
-* Transition to BT with D
-** (+5 BT) "
-2+4;t;35;i12~14;-6;-2d;;"
-* Throw break 1 or 2
-* Side swap
-"
 2,b+2;h,h;8,8;i17;-4;+7;;"
 * Combos from 1st hit
 * Delay-able"
@@ -83,14 +69,15 @@ df+1,3,2,2,3,3,3,4,4,4;;;;;;;First 3 hits are a natural combo
 * Combos from 3rd hit CH
 * Delay-able
 * Transition to FC with D"
+2+3+4;;;;;;;
 3;h;12;i12;-9;+2;;
 3,3;h,m;12,17;i27;-14;-3;+53a (+22);"
 * Combos from 1st hit CH
 * Delay-able"
-3+4;m,m;5,10;i14;-13;+3;;Alternate input DSS.3+4
 3,4;h,h;12,20;i22;-10;+19a (+10);;"
 * Combos from 1st hit
 * Balcony Break "
+3+4;m,m;5,10;i14;-13;+3;;Alternate input DSS.3+4
 3+4,4;m,m,h;5,10,25;i30;+7 (+10g w);+31d (-27);;"
 * Balcony Break
 * Combos from 1st hit
@@ -108,91 +95,41 @@ df+1,3,2,2,3,3,3,4,4,4;;;;;;;First 3 hits are a natural combo
 ** (+8 oB, +13g, +45a (+38))
 ** DSS allows full combo off of Magic 4"
 4,u+3;h,m;15,23;i33;-1;+30a (+13);;Combos off of 1st hit CH
-b+1;m;12;i14;-9;+2;;"
-* Transition to DSS with F
-** (-3 oB, +8 oH) "
-b+1+2;m;21;i20;-14;+31a (+23);;Balcony Break
-b+1,2;m,m;12,12;i19;-12;+2;;"
-* Combos from 1st hit
-* Delay-able
-* Transition to DSS with F
-** (-9 oB, +5 oH) "
-b+1,2,2;m,m,m;12,12,22;i18;-14;+12a (+5);;"
-* Heat Engager
-
-* Heat Dash  +5, +42a (+27)
-
+f+1+2;m;20;i20;+3c;+8c;+55a;Transition to FC with D
+f+2;h;10;i12;+0;+6;;"
+* Can route into:
+** Rave War Combo (f+2,2,2), or
+** Blazing Fist Combo (f+2,2,1+2)
+* Alternate input DSS.f+2"
+f+2~1;m;24;i19;+2;+30a (+4);;"
 * Balcony Break
-* Combos from 1st or 2nd hit CH
-* Delay-able "
-b+1+3;;;ps2~11;;+7;;"
-* Transition to DSS on successful parry with F to be +14
-* Guarantees DSS.1, DSS.2, DSS.f+1"
-b+2;m;12;i16;-8;+4;;
-b+2,1;m,m;12,16;i26;-15;+11a;;"
+* Chip damage on block
+* Transition to DSS with F
+** (+5 oB, +33a (+7))
+* Alternate input DSS.f+2~1"
+f+3;m;10;i18;-10;+1;;
+f+3,1;m,m;10,12;i20;-2;+8;;"
+* Transition to DSS with F
+** (+4 oB, +14g) "
+f+3+4;m;20;i25;-2;+7c;+49a;Alternate input DSS.f+3+4
+df+1;m;10;i13;-1;+5;;First hit of Law's 10 String
+df+1,3;m,l;10,6;i20;-16;-5;;Combos from 1st hit
+df+1,3,2;m,l,m;10,6,6;i28;-12;-1;;Combos from 1st hit
+df+1,3,2,2,3,3,3,4,4,4;;;;;;;First 3 hits are a natural combo
+df+2;m;12;i15;-7;+34a (+24);;
+df+3;m;23;i21;-13;+52a (+21);;
+df+3+4;l;12;i18;-15;+4c;+6a;
+df+4;m;15;i13;-8;+3;;
+df+4,3;m,m;15,23;i29;-14;+68a (+52);;"
 * Tornado
-* Balcony Break
-* Combos from 1st hit CH"
-b+2,2;m,h;12,15;i13;-9;+4;+9d;"
-* Combos from 1st hit
-* Delay-able
-* Transition to DSS with F
-** (-3 oB, +10 oH, +15d CH)"
-b+2,3;m,l;12,10;i23;-12;-1;;Delay-able
-b+2,3,4;m,l,m;12,10,23;i23;-7,;+36a (+26);;"
-* Tornado
-* Combos from 2nd hit CH
-* Delay-able
-* Transition to DSS with F
-** (+6 oB, +49a (+39) oH)"
-b+2,3,d+4;m,l,l;12,10,23;i34;-37;+11a;;Delay-able
-b+2+4;t;34 (38 Heat);;;+0d;;"
-* Punches only
-* Partially restores remaining Heat Time
-* Does 38 damage in Heat"
-b+3;m;27;i23;-12;+17a (+8);;"
-* Homing
-* Balcony Break
-* Transition to BT with B
-** (-11 oB, +18a (+9) oH)"
-b+3+4;m;25;i23;-18;+16a (+6);;"
-* Balcony Break
-* Can be done from DSS "
-b+4;m;13;i14;-7;+3;;"
-* Homing
-* Transition to BT with B
-** (-4 oB, +6 oH) "
-b+4,3;m,h;13,21;i32;-5;+24a (+15);;"
-* Balcony Break
-* Combos from 1st hit "
-Back Throw;t;50;i12~14;;+0d;;Unbreakable
-(Back to wall).b,b,ub;m;25;i29-33;-1;+45d (-13);;
-b,B+2+3;m!;60;i78;;+0d;;Can cancel and transition to DSS with b,b
-BT.1;h;7;i10;+1;+8;;Can route into the same strings as his normal 1
-BT.1+2;h;20;i15;+1;+16g;;"
-* Balcony Break
-Homing "
-BT.2;m;17;i15;-14;-1;+52a;
-BT.2,2;m,m;17,20;i14;-14;+31d (-27);;"
-* Combos from 1st hit
-* Delay-able "
-BT.3;h;18;i10;-8;+8;;
-BT.4;h;14;i11;-9;+2;;
-BT.4,3;h,m;14,24;i24;-12;+12a (+3);;"
-* Balcony Break
 * Combos from 1st hit CH "
-BT.d+3;l;6;i12;-15;-4;;
-BT.d+3+4;m;25;i26;-15;+0;;"
-* Transition to FUFA with D
-** (-2 oB, +13d oH) "
-BT.d+4;l;17;i23;-13;+6c;+26d;
 d+1;l;15;i21;-12;-1;;Transition to Slide Step with DF
-d+1+2;;;;;;;"
-* Enters DSS
-* Transition to Slide Step with DF "
 d+1,3;l,h;15,21;i24;-9;+20a (+11);+65a (+45);"
 * Balcony Break
 * Tornado on CH"
+d+1+2;;;;;;;"
+* Enters DSS
+* Transition to Slide Step with DF "
 d+2;s;8;i11;-4;+7;;Alternate input FC.d+2
 d+2,3;s,m;821;i23;-15;+30a (+20);;"
 * Combos from 1st hit CH
@@ -216,16 +153,196 @@ db+2,4;m,m;1525;i33;-4;+1d;;Transition to FUFA with D
 db+3;l;15;i17;-13;+3c;+13g;
 db+4;l;20;i26;-37;+15a;;Homing
 db+4,4;l,m;20,27;i37;-8;+30a (+12);;
-df+1;m;10;i13;-1;+5;;First hit of Law's 10 String
-df+1,3;m,l;10,6;i20;-16;-5;;Combos from 1st hit
-df+1,3,2;m,l,m;10,6,6;i28;-12;-1;;Combos from 1st hit
-df+2;m;12;i15;-7;+34a (+24);;
-df+3;m;23;i21;-13;+52a (+21);;
-df+3+4;l;12;i18;-15;+4c;+6a;
-df+4;m;15;i13;-8;+3;;
-df+4,3;m,m;15,23;i29;-14;+68a (+52);;"
+b+1;m;12;i14;-9;+2;;"
+* Transition to DSS with F
+** (-3 oB, +8 oH) "
+b+1,2;m,m;12,12;i19;-12;+2;;"
+* Combos from 1st hit
+* Delay-able
+* Transition to DSS with F
+** (-9 oB, +5 oH) "
+b+1,2,2;m,m,m;12,12,22;i18;-14;+12a (+5);;"
+* Heat Engager
+
+* Heat Dash  +5, +42a (+27)
+
+* Balcony Break
+* Combos from 1st or 2nd hit CH
+* Delay-able "
+b+1+2;m;21;i20;-14;+31a (+23);;Balcony Break
+b+1+3;;;ps2~11;;+7;;"
+* Transition to DSS on successful parry with F to be +14
+* Guarantees DSS.1, DSS.2, DSS.f+1"
+b+2;m;12;i16;-8;+4;;
+b+2,1;m,m;12,16;i26;-15;+11a;;"
 * Tornado
+* Balcony Break
+* Combos from 1st hit CH"
+b+2,2;m,h;12,15;i13;-9;+4;+9d;"
+* Combos from 1st hit
+* Delay-able
+* Transition to DSS with F
+** (-3 oB, +10 oH, +15d CH)"
+b+2,3;m,l;12,10;i23;-12;-1;;Delay-able
+b+2,3,4;m,l,m;12,10,23;i23;-7,;+36a (+26);;"
+* Tornado
+* Combos from 2nd hit CH
+* Delay-able
+* Transition to DSS with F
+** (+6 oB, +49a (+39) oH)"
+b+2,3,d+4;m,l,l;12,10,23;i34;-37;+11a;;Delay-able
+b+3;m;27;i23;-12;+17a (+8);;"
+* Homing
+* Balcony Break
+* Transition to BT with B
+** (-11 oB, +18a (+9) oH)"
+b+3+4;m;25;i23;-18;+16a (+6);;"
+* Balcony Break
+* Can be done from DSS "
+b+4;m;13;i14;-7;+3;;"
+* Homing
+* Transition to BT with B
+** (-4 oB, +6 oH) "
+b+4,3;m,h;13,21;i32;-5;+24a (+15);;"
+* Balcony Break
+* Combos from 1st hit "
+ub+1,2,1,2;h,h,h,h;8,8,8,28;i12,i6,i6,i13;-7;+13a (-4);;"
+* Jails from 1st to 3rd attack
+* Last hit delay-able
+* Frame data for 1st, 2nd and 3rd hits:
+** (-9 oB, -3 oH) "
+ub+2;h;17;i15;-12;+9;;
+ub+3;;;;;;;"
+* Transition to Slide Step with DF
+* Alternate input u+3 "
+ub+3,4;m;20;i15;-12;+31a (+21);;
+u+4;m;12;i15;-13;+19a (+9);+33a (+23);
+UF+4;m;23;i18;-17;+28a (+18);;"
+* Alternate input
+** UB+4, U+4, FC.ub+4, FC.u+4, FC.uf+4 "
+UF+4,3;m,m;2316;i19;-14;+78a (+62);;"
+* Combos from 1st hit
+* Tornado
+* 2nd hit Instant Tornado
+** (+68a (+52) oH)
+* Alternate input
+** UB+4,3 U+4,3
+** FC.ub+4,3 FC.u+4,3 FC.uf+4,3 "
+uf+1;h;10;i12;-5;+6;;"
+* Alternate input:
+** Ki Charge~1
+** b,B+2+3~1,3 "
+uf+1,3;h,l;1010;i19;-13;-1;;"
+* Combos from 1st hit
+* Alternate input:
+** Ki Charge~1,3
+** b,B+2+3~1,3 "
+uf+3;m;20;i18;-8;+42d (-16);;"
+* Heat Engager
+
+* Heat Dash +5, +36d (+26)
+
+* Balcony Break "
+uf+3+4;l;27;i29;-24;+5;;Alternate input DSS.uf+3+4
+uf+4;m;14;i15;-13;+33a (+23);;
+1+2+3+4;;;;;;;
+1+2+3+4;;;;;;;
+1+2+3+4,2;h;24;i14;+1;+50a;;"
+* Chip damage on block
+* Alternate input DSS.2 "
+1+2+3+4~1;h;10;i12;-5;+6;;"
+* Alternate input:
+** uf+1
+** b,B+2+3~1,3 "
+1+2+3+4~1,3;h,l;10,10;i19;-13;-1;;"
+* Combos from 1st hit
+* Alternate input:
+** uf+1,3
+** b,B+2+3~1,3 "
+(While down, facing up) 1+2+3+4;;;;;;;
+b,B+2+3;m!;60;i78;;+0d;;Can cancel and transition to DSS with b,b
+f,F+2;m;12;i14;-6;+2;+7;
+f,F+2,1;m,h;12,12;i22;-4;+2;;Delayable
+f,F+2,1,3;m,h,m;12,12,23;i28;-13;+11a;;"
+* Balcony Break
+* Combos off 2nd hit CH
+* Delayable"
+f,F+2,4;m,h;12,20;i16;-14;+37a (-21);;"
+* Tornado
+* Balcony Break
+* Combos from 1st hit
+* Delayable"
+f,F+2,f+1+2;m,m;12,24;i31;+2;+30a (+4);;"
+* Chip damage on block
+* Transition to DSS with F
+** (+5 oB,+33a (+7))"
+f,F+3;m;30;i20;-13;+18d (+8);;"
+* Heat Engager
+
+* Heat Dash +5, +43d (+35)
+
+* Balcony Break
+* Alternate input DSS.f+3 "
+f,F+4;m;17;i20;-11;+18a (+1);;Balcony Break
+uf,n,4;m;20;i19;-15;+30a (+20);;
+f,f,F+3;m;30;i20~28;+6;+35d (-23);;"
+* Balcony Break
+* Chip damage on block
+* Alternate input wr3"
+ws1;m;10;i13;-7;-1;;"
+* Transition to DSS with F
+** (-4 oB, +2 oH) "
+ws1,2;m,h;10,25;i16;-9;+40d (-18);;"
+* Balcony Break
+* Delayable "
+ws2;m;20;i15;-18;+31a (+21);;
+ws3;m;16;i16;+17g;+19;;"
+* Automatically transitions to DSS on hit and block
+** On hit, guaranteed DSS.1, DSS.f+1, DSS.2, DSS.f+2, DSS.3+4,4 "
+ws3+4;m;30;i14;-21;+0a (-17);;Balcony Break
+ws4;m;14;i11;-4;+7;;"
+* Transition to DSS with F
+** (+5 oB, +16 oH) "
+ws4,3;m,m;14,23;i27;-14;+68a (+52);;"
+* Tornado
+** Combos from 1st hit CH "
+ss1+2;m,h,m;8,8,8;i17;+4;+7;;Automatically transitions to DSS on hit and block
+ss1+2,2;m,h,m,m;8,8,8,25;i22;-16;+16d (+6);;
+ss2;m;23;i18;+0;+16d (+6);;"
+* Balcony Break
+* Chip damage on block "
+ss3;l;17;i18;-13;+7;+16c;"
+* Automatically transitions to DSS on hit
+** CH guarantees DSS.f+1, DSS.3+4,4 "
+ss3+4;m,h;9,10;i15;-12;+63a (+43);;Balcony Break
+FC.1;s;5;i10;-5;+6;;
+FC.2;s;8;i11;-4;+7;;Alternate input d+2
+FC.3;l;10;i16;-17;-6;;
+FC.3,4;l,m;10,27;i29;-14;+14a (-3);;Combo from 1st hit CH
+FC.4;l;7;i12;-14;-2;;Alternate input d+3+4
+FC.4,3;l,m;7,23;i29;-14;+14a;;"
+* Combos from 1st hit CH
+* Alternate input d+3+4,3"
+FC.UF+3+4;m;30;i46~49;-4;+17a (+7);;
+(Back to wall).b,b,ub;m;25;i29-33;-1;+45d (-13);;
+BT.1;h;7;i10;+1;+8;;Can route into the same strings as his normal 1
+BT.1+2;h;20;i15;+1;+16g;;"
+* Balcony Break
+Homing "
+BT.2;m;17;i15;-14;-1;+52a;
+BT.2,2;m,m;17,20;i14;-14;+31d (-27);;"
+* Combos from 1st hit
+* Delay-able "
+BT.3;h;18;i10;-8;+8;;
+BT.4;h;14;i11;-9;+2;;
+BT.4,3;h,m;14,24;i24;-12;+12a (+3);;"
+* Balcony Break
 * Combos from 1st hit CH "
+BT.d+3;l;6;i12;-15;-4;;
+BT.d+3+4;m;25;i26;-15;+0;;"
+* Transition to FUFA with D
+** (-2 oB, +13d oH) "
+BT.d+4;l;17;i23;-13;+6c;+26d;
 DSS.1;h;14;i12;+0;+8;+18c;"
 * Chip damage on block
 * Automatically transitions to DSS on hit and block
@@ -270,144 +387,27 @@ DSS.f+4;h;40;i19;+7 (+10g w);+31d (-27);;"
 * Balcony Break
 * Chip damage on block
 * While transitioning to DSS from other moves, it is possible to input DSS.f+4 as a Just Frame (ex; 4,3~F:DSS.f+4) for 4 more damage."
+1+3;t;35;i12~14;-3;+0d;;Throw break 1 or 2
+2+4;t;35;i12~14;;+0d;;"
+* Throw break 1 or 2
+* Side swap
+* Transition to BT with D
+** (+5 BT) "
+2+4;t;35;i12~14;-6;-2d;;"
+* Throw break 1 or 2
+* Side swap
+"
+Back Throw;t;50;i12~14;;+0d;;Unbreakable
 DSS.uf+1+2;t;35;i12;-2;+0d;;Throw break 1+2
-f+1+2;m;20;i20;+3c;+8c;+55a;Transition to FC with D
-f+2;h;10;i12;+0;+6;;"
-* Can route into:
-** Rave War Combo (f+2,2,2), or
-** Blazing Fist Combo (f+2,2,1+2)
-* Alternate input DSS.f+2"
-f+2~1;m;24;i19;+2;+30a (+4);;"
-* Balcony Break
-* Chip damage on block
-* Transition to DSS with F
-** (+5 oB, +33a (+7))
-* Alternate input DSS.f+2~1"
-f+2+3;t;35;i12;-2;+6d;;Throw break 1
-f+3;m;10;i18;-10;+1;;
-f+3,1;m,m;10,12;i20;-2;+8;;"
-* Transition to DSS with F
-** (+4 oB, +14g) "
-f+3+4;m;20;i25;-2;+7c;+49a;Alternate input DSS.f+3+4
-FC.1;s;5;i10;-5;+6;;
-FC.2;s;8;i11;-4;+7;;Alternate input d+2
-FC.3;l;10;i16;-17;-6;;
-FC.3,4;l,m;10,27;i29;-14;+14a (-3);;Combo from 1st hit CH
-FC.4;l;7;i12;-14;-2;;Alternate input d+3+4
-FC.4,3;l,m;7,23;i29;-14;+14a;;"
-* Combos from 1st hit CH
-* Alternate input d+3+4,3"
-FC.UF+3+4;m;30;i46~49;-4;+17a (+7);;
-f,F+2;m;12;i14;-6;+2;+7;
-f,F+2,1;m,h;12,12;i22;-4;+2;;Delayable
-f,F+2,1,3;m,h,m;12,12,23;i28;-13;+11a;;"
-* Balcony Break
-* Combos off 2nd hit CH
-* Delayable"
-f,F+2,4;m,h;12,20;i16;-14;+37a (-21);;"
-* Tornado
-* Balcony Break
-* Combos from 1st hit
-* Delayable"
-f,F+2,f+1+2;m,m;12,24;i31;+2;+30a (+4);;"
-* Chip damage on block
-* Transition to DSS with F
-** (+5 oB,+33a (+7))"
-f,F+3;m;30;i20;-13;+18d (+8);;"
-* Heat Engager
-
-* Heat Dash +5, +43d (+35)
-
-* Balcony Break
-* Alternate input DSS.f+3 "
-f,F+3+4;t;10;i12;-3;+55a (+28);;Throw break 1+2
-f,F+4;m;17;i20;-11;+18a (+1);;Balcony Break
-f,f,F+3;m;30;i20~28;+6;+35d (-23);;"
-* Balcony Break
-* Chip damage on block
-* Alternate input wr3"
-H.2+3;m,t;24,4,5,5,5,7 (50);i14;+11g;+5;;"
-* Heat Smash
-* Balcony Break
-* Automatically transitions to DSS on block"
-H.d+1+2;;;;;;;"
-* Enters DSS
-* Transition to Slide Step with DF
-* Absorbs punch attacks and shifts to Dragon Parry "
 Left Throw;t;40;i12~14;-3;+0d;;Throw break 1
-R.df+1+2;m,t;55+;i20;-15;+0;;"
-* Rage Art
-* Damage increases with lower health
-* Erases opponent's recoverable health on hit"
 Right Throw;t;42;i12~14;-3;+0d;;Throw break 2
-ss1+2;m,h,m;8,8,8;i17;+4;+7;;Automatically transitions to DSS on hit and block
-ss1+2,2;m,h,m,m;8,8,8,25;i22;-16;+16d (+6);;
-ss2;m;23;i18;+0;+16d (+6);;"
-* Balcony Break
-* Chip damage on block "
-ss3;l;17;i18;-13;+7;+16c;"
-* Automatically transitions to DSS on hit
-** CH guarantees DSS.f+1, DSS.3+4,4 "
-ss3+4;m,h;9,10;i15;-12;+63a (+43);;Balcony Break
-u+4;m;12;i15;-13;+19a (+9);+33a (+23);
-ub+1,2,1,2;h,h,h,h;8,8,8,28;i12,i6,i6,i13;-7;+13a (-4);;"
-* Jails from 1st to 3rd attack
-* Last hit delay-able
-* Frame data for 1st, 2nd and 3rd hits:
-** (-9 oB, -3 oH) "
-ub+2;h;17;i15;-12;+9;;
-ub+3;;;;;;;"
-* Transition to Slide Step with DF
-* Alternate input u+3 "
-ub+3,4;m;20;i15;-12;+31a (+21);;
-uf+1;h;10;i12;-5;+6;;"
-* Alternate input:
-** Ki Charge~1
-** b,B+2+3~1,3 "
+b+2+4;t;34 (38 Heat);;;+0d;;"
+* Punches only
+* Partially restores remaining Heat Time
+* Does 38 damage in Heat"
+f,F+3+4;t;10;i12;-3;+55a (+28);;Throw break 1+2
+f+2+3;t;35;i12;-2;+6d;;Throw break 1
 uf+1+2;t;35;i12;-6;+3d;;Throw break 1+2
 uf+1+2,2,1,1+2;t;40;i12;-6;-6d;;"
 * Throw break 1+2
 * Floor Break "
-uf+1,3;h,l;1010;i19;-13;-1;;"
-* Combos from 1st hit
-* Alternate input:
-** Ki Charge~1,3
-** b,B+2+3~1,3 "
-uf+3;m;20;i18;-8;+42d (-16);;"
-* Heat Engager
-
-* Heat Dash +5, +36d (+26)
-
-* Balcony Break "
-uf+3+4;l;27;i29;-24;+5;;Alternate input DSS.uf+3+4
-uf+4;m;14;i15;-13;+33a (+23);;
-UF+4;m;23;i18;-17;+28a (+18);;"
-* Alternate input
-** UB+4, U+4, FC.ub+4, FC.u+4, FC.uf+4 "
-UF+4,3;m,m;2316;i19;-14;+78a (+62);;"
-* Combos from 1st hit
-* Tornado
-* 2nd hit Instant Tornado
-** (+68a (+52) oH)
-* Alternate input
-** UB+4,3 U+4,3
-** FC.ub+4,3 FC.u+4,3 FC.uf+4,3 "
-uf,n,4;m;20;i19;-15;+30a (+20);;
-(While down, facing up) 1+2+3+4;;;;;;;
-ws1;m;10;i13;-7;-1;;"
-* Transition to DSS with F
-** (-4 oB, +2 oH) "
-ws1,2;m,h;10,25;i16;-9;+40d (-18);;"
-* Balcony Break
-* Delayable "
-ws2;m;20;i15;-18;+31a (+21);;
-ws3;m;16;i16;+17g;+19;;"
-* Automatically transitions to DSS on hit and block
-** On hit, guaranteed DSS.1, DSS.f+1, DSS.2, DSS.f+2, DSS.3+4,4 "
-ws3+4;m;30;i14;-21;+0a (-17);;Balcony Break
-ws4;m;14;i11;-4;+7;;"
-* Transition to DSS with F
-** (+5 oB, +16 oH) "
-ws4,3;m,m;14,23;i27;-14;+68a (+52);;"
-* Tornado
-** Combos from 1st hit CH "

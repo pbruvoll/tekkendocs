@@ -5,6 +5,7 @@ from mediawiki import MediaWiki
 from src.module.character import Move
 from src.resources import const
 from bs4 import BeautifulSoup
+from src.module.td_const import MoveCategory, SORT_ORDER
 
 wavuwiki = MediaWiki(url=const.WAVU_API_URL)
 session = requests.Session()
@@ -24,7 +25,7 @@ def get_wavu_character_movelist(character_name: str) -> List[Move]:
     params = {
         "action": "cargoquery",
         "tables": "Move",
-        "fields": "id,name,input,parent,target,damage,startup, recv, tot, crush, block,hit,ch,notes,_pageNamespace=ns",
+        "fields": "id, name, input, alias, alt, parent, image, video, target, damage, reach, tracksLeft, tracksRight, startup, recv, tot, crush, block, hit, ch, notes, _pageNamespace=ns",
         "join_on": "",
         "group_by": "",
         "where": "id LIKE '" + _upper_first_letter(character_name) + "%'",
@@ -39,7 +40,8 @@ def get_wavu_character_movelist(character_name: str) -> List[Move]:
     content = json.loads(response.content)
     move_list_json = content["cargoquery"]
     move_list = _convert_json_movelist(move_list_json)
-    return move_list
+    sorted_move_list = _sort_json_movelist(move_list)
+    return sorted_move_list
 
 
 def get_move(move_id: str, move_list: List[Move]) -> Move:
@@ -135,6 +137,64 @@ def _convert_json_movelist(move_list_json: list) -> List[Move]:
             move_list.append(move)
     return move_list
 
+def _sort_json_movelist(move_list: List[Move]) :
+    # a trick to generate a string for sorting frames. + is replaced by _ just to make "+" sort after ","
+    # print(f'{SORT_ORDER[_get_move_category(move_list[15])]:05d}' + "_" + move_list[15].input.replace("+", "_"))
+    return sorted(move_list, key=lambda x: f'{SORT_ORDER[_get_move_category(x)]:05d}' + x.input.replace("+", "|"))
+
+def _get_move_category(move: Move) -> MoveCategory:
+    if(move.target.startswith("t")) :
+        return MoveCategory.THROW
+    
+    command = move.input.lower();
+    splitted = command.split(",");
+    notes = move.notes.lower();
+    first = splitted[0]
+    if(first.startswith("h.2+3")) :
+        return MoveCategory.HEAT_SMASH
+    if(first == "2+3") :
+        return MoveCategory.HEAT_BURST
+    if(first.startswith("h.")) : 
+        return MoveCategory.HEAT_MOVE
+    if(first.startswith("r.")) :
+        return MoveCategory.RAGE_ART
+    if(first.startswith("1+2+3+4")) :
+        return MoveCategory.KI_CHARGE
+    if(first[:1].isdigit()) : 
+        return MoveCategory.NEUTRAL
+    if(first.startswith("f+")) :
+        return MoveCategory.FORWARD
+    if(first.startswith("df+")) :
+        return MoveCategory.DOWN_FORWARD
+    if(first.startswith("d+")) :
+        return MoveCategory.DOWN
+    if(first.startswith("db+")) :
+        return MoveCategory.DOWN_BACK
+    if(first.startswith("b+")) :
+        return MoveCategory.BACK
+    if(first.startswith("db+")) :
+        return MoveCategory.DOWN_BACK
+    if(first.startswith("b+")) :
+        return MoveCategory.BACK
+    if(first.startswith("ub+")) :
+        return MoveCategory.UP_BACK
+    if(first.startswith("u+")) :
+        return MoveCategory.UP
+    if(first.startswith("uf+")) :
+        return MoveCategory.UP_FORWARD
+    if(first.startswith("ws")) :
+        return MoveCategory.WHILE_RISING
+    if(first.startswith("ss")) :
+        return MoveCategory.SIDESTEP
+    if(first.startswith("fc")) :
+        return MoveCategory.FULL_CROUCH
+    if(command.startswith("f,f,f")) :
+        return MoveCategory.RUNNING
+    if(command.find(".") > -1) :
+        return MoveCategory.STANCE
+
+
+    return MoveCategory.OTHER
 
 def _normalize_hit_ch_input(entry: str) -> str:
     entry = _empty_value_if_none(entry)
