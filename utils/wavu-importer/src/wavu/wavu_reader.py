@@ -123,12 +123,15 @@ def _convert_json_movelist(move_list_json: list) -> List[Move]:
             on_ch = _normalize_data(_normalize_hit_ch_input(move["title"]["ch"]))
             startup = _normalize_data(move["title"]["startup"])
             recovery = _normalize_data(move["title"]["recv"])
+            crush = _normalize_data(move]"title"]["crush"])
+            image = _normalize_data(move]"title"]["image"])
+            video = _normalize_data(move]"title"]["video"])
 
             notes = html.unescape(_normalize_data(move["title"]["notes"]))
             notes = BeautifulSoup(notes, features="lxml").get_text()
             notes = notes.replace("* \n", "* ")
 
-            move = Move(id, name, input, target, damage, on_block, on_hit, on_ch, startup, recovery, notes, "", alias)
+            move = Move(id, name, input, target, damage, on_block, on_hit, on_ch, startup, recovery, notes, "", alias, crush)
             move_list.append(move)
     return move_list
 
