@@ -1,18 +1,21 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes
+2+3;m;12 (12);i16;+1;+2c;;"
+* Heat Burst"
+H.2+3;m,m,t;20,20,20;i16;+9;-1d;;"
+* Heat Smash
+* Floor Break
+** 2nd and 3rd hit
+* Throw on hit
+* Wall Crush on block
+
+"
+R.df+1+2;m;55+;i20;-15;+0d;;"
+* Rage Art"
 1;h;5;i10;+1;+8;;
-1+2;m;15;i17~18;-7;+6;;Homing
 1,2;h,h;5,8;,i12;-3;+8;+9;"Combo from 1st hit
 Jails"
-1+2,1;m,h;15,15;,i23~24;-1;+6;;"
-* Combo from 1st hit
-* Enter SWA +0 +7 with b"
 1,2,1;h,h,m;5,8,18;,i19;-6;+6;+64a;
-1+2,2;m,m;15,20;,i26~27;-14;+51d (+20);;"
-* Combo from 1st hit with delay"
 1,2,3;h,h,L;5,8,15;,i24;-12;+2;+14d;Combo from 1st and 2nd CH
-1+2+3+4;;;;;;;"
-* Cannot block while still in effect
-* Automatic counter hit"
 1,2,4;h,h,h;5,8,24;,i20;-5;+20a (+11);;"
 * Heat Engager
 
@@ -20,10 +23,6 @@ Jails"
 
 * Balcony Break
 "
-1+3;t;35;i12~14;;-2d;;"
-* Floor Break
-* Throw break 1 or 2"
-1+3+4;m!;0;i28~31;;+16;;
 1,4;h,h;5,14;,i15;-7;+4;;"Jails
 Combo from 1st hit"
 1,4,2;h,h,h;5,14,18;,i24;-7;+4;+53a;"
@@ -52,16 +51,17 @@ Combo from 1st hit"
 * Alternate input b+2,4"
 1,4,3;h,h,m;5,14,15;,i21;-10;+1;;
 1,4,3,3;h,h,m,h;5,14,15,18;,i23;-7;+7;+14d;Combo from 3rd hit
+1+2;m;15;i17~18;-7;+6;;Homing
+1+2,1;m,h;15,15;,i23~24;-1;+6;;"
+* Combo from 1st hit
+* Enter SWA +0 +7 with b"
+1+2,2;m,m;15,20;,i26~27;-14;+51d (+20);;"
+* Combo from 1st hit with delay"
+1+3+4;m!;0;i28~31;;+16;;
 2;h;10;i10;+1;+7;;
-2+3;m;12 (12);i16;+1;+2c;;"
-* Heat Burst"
 2,3;h,m;10,14;,i16;-10;+6;+16a (+7);"
 * Combo from 1st hit
 * CH frames also apply to combo from 1st CH"
-2+4;t;35;i12~14;;+0d;;"
-* Floor Break
-* Throw break 1 or 2
-* Side switch"
 3;m;14;i16;-4;+7;;
 3,2;m,m;14,11;,i22;-10;+1;;Combo from 1st CH
 3,2,1;m,m,m;14,11,10;,i20;-9;+2;;Combo from 2nd hit
@@ -89,6 +89,83 @@ Combo from 1st hit"
 * Balcony Break
 * Hold to power up and deal more chip damage on block"
 4,3,f+4;h,m,h;15,12,18;,i24~25;-5;+6;+31a (+21);Combo from 2nd CH
+f+1+2;h;22;i20~21;-6;+44d (-14);;"
+* Balcony Break
+* Elbow
+* Absorb an attack to power up and deal more chip damage on block"
+f+2;m;10;i15;-10;+1;;
+f+2,1;m,m;10,12;i10;-10;+1;;Combo from 1st hit
+f+2,1,4;m,m,m;10,12,20;i18~19;-13;+3a;;"
+* Combo from 1st hit
+* Gain SNE on hit with 1+2"
+f+2,1,SNE.2;m,m,m;10,12,5;i14~15;-12;+3c;;"
+* Elbow
+* Combo from 1st hit
+* Consumes SNE
+* Chip damage on block (1)
+"
+f+2,1,SNE.2,3;m,m,m,m;10,12,5,7;,i22;-15;+14a (+7);;"
+* Knee
+* Combo from 1st hit
+* Chip damage on block (2)
+"
+f+2,1,SNE.2,3,2;m,m,m,m,m;10,12,5,7,20;i35~36;-10;+0a (-1);;"
+* Chip damage on block (8)
+"
+f+3;m;18;i16~18;+0;+4;+50a;Knee
+f+4;m;10;i18;-9;+0;;
+f+4,1;m,m;10,10;i25~26;-13c;+40a (+32);;Combo from 1st hit
+DF+1;m;8;i15;-5;+1;;"
+* Alternate input df+1
+* DF+1,1... extension available only with DF+1 input, not df+1"
+DF+1,1;m,m;8,2;i10;-10;-4;;Combo from 1st hit
+DF+1,1,1;m,m,m;8,2,2;i10;-10;-4;;Combo from 1st hit
+DF+1,1,1,1;m,m,m,m;8,2,2,2;i10;-10;-4;;Combo from 1st hit
+DF+1,2;m,m;8,20;i23;-15;+1;+14a (+5);"
+* Combo from 1st hit
+* Alternate input:
+** DF+1,2
+** DF+1,1,2
+** DF+1,1,1,2
+** DF+1,1,1,1,2
+* Balcony Break on air hit & if it hits without the first hits"
+df+2;m;12;i13;-6;+5;;Elbow
+df+2,1;m,h;12,11;i6;-4;+5;;"
+* Combo from 1st hit
+* Enter SWA -1 +8 with b"
+df+2,3;m,m;12,20;i23;-13;+8;+59a;
+df+3;L;20;i29~30;-26;+70a (+54);;"
+* Homing
+* Insta Tornado launch"
+df+4;m;23;i22~24;-6;+19d;;"
+* Homing"
+d+1+2;m,m;10,15;i17;-10;+3;;"
+* Combo from 1st hit
+* Enter SLS -3 +10g with f
+* Enter SWA -5 +8 with b"
+d+1+2,3;m,m,l;10,15,20;i27~28;-13;+5;+25a;
+d+1+2~2;m;24;i30;+7;+53a;;Chip damage on block
+d+2;m;17;i14~15;-2;+8c;;Elbow
+d+2,3;m,m;17,21;i22;-10;+16a (-1);+32a (+18);"
+* Balcony Break"
+d+3;l;10;i16;-11;+0;;
+d+3,2;l,h;10,22;i21;-7;+35a(+9);;"
+* Balcony Break
+* Gain SNE on hit with 1+2"
+d+3+4;l;16;i19;-12;-1;+4;
+d+3+4,2;l,m;16,25;i19;-12;+14a(-3);;"
+* Balcony Break
+* Tornado"
+d+4;L;13;i15;-11;+0;;
+db+1+2;m,h;8,16;i15;-9;+4;;"
+* Jails
+* Heat Engager
+
+* Heat Dash +5g +43a(+35)
+
+"
+db+2;m;13;i15~17;-6;+8;;
+db+3;l;11;i16~17;-12;-1;;
 b+1;m;21;i20~21;+4;+7c;+78a(+58);Elbow
 b+1+3;;;;;;;"
 * Alternate input b+2+4"
@@ -137,97 +214,71 @@ b+3,2,1,2;m,h,m,m;12,12,10,14;i19;-10;+19a(+10);;"
 b+3,2,1,4;m,h,m,l;12,12,10,12;i22;-11c;+0;;"
 * Alternate input 3,2,1,4"
 b+4;m;18;i16;-10;+15;;Knee
-Back throw;t;60;;;-1d;;
+ub+1+2;m,m;5,2;i15;-16;-6;;"
+* Combo from 1st hit
+* Chip damage on block"
+ub+1+2,1;m,m,m;5,2,2;;;;;"
+* Combo from 1st hit
+* Chip damage on block"
+ub+1+2,1,2;m,m,m,m;5,2,2,2;;;;;"
+* Combo from 1st hit
+* Chip damage on block"
+ub+1+2,1,2,1;m,m,m,m,m;5,2,2,2,2;;;;;"
+* Combo from 1st hit
+* Chip damage on block"
+ub+1+2,1,2,1,2;m,m,m,m,m,m;5,2,2,2,2,2;;;;;"
+* Combo from 1st hit
+* Chip damage on block"
+ub+1+2,1,2,1,2,1;m,m,m,m,m,m,m;5,2,2,2,2,2,2;;;;;"
+* Combo from 1st hit
+* Chip damage on block"
+ub+1+2,1,2,1,2,1,2;m,m,m,m,m,m,m,m;5,2,2,2,2,2,2,2;;;;;"
+* Combo from 1st hit
+* Chip damage on block"
+ub+1+2,1,2,1,2,1,2,1;m,m,m,m,m,m,m,m,m;5,2,2,2,2,2,2,2,2;;;;;"
+* Combo from 1st hit
+* Chip damage on block"
+ub+1+2,1,2,1,2,1,2,1,2;m,m,m,m,m,m,m,m,m,m;5,2,2,2,2,2,2,2,2,2;;;;;"
+* Combo from 1st hit
+* Chip damage on block"
+ub+1+2,1,2,1,2,1,2,1,2,1;m,m,m,m,m,m,m,m,m,m,m;5,2,2,2,2,2,2,2,2,2,2;;;;;"
+* Combo from 1st hit
+* Chip damage on block"
+ub+1+2,1,2,1,2,1,2,1,2,1,4;m,m,m,m,m,m,m,m,m,m,m,m;5,2,2,2,2,2,2,2,2,2,2,14;;-35;-15a (-24);;"
+* Knee
+* Balcony Break
+* Combo from 1st hit
+* Chip damage on block"
+uf+2;m;6;i13;-10;+1;;
+uf+2,2;m,m;6,4;i10;-10;+1;;Combo from 1st hit
+uf+2,2,2;m,m,m;6,4,4;i10;-10;+1;;Combo from 1st hit
+uf+2,2,2,3;m,m,m,m;6,4,4,20;i22~23;-15;+30a (+12);;"
+* Knee
+* Combo from 1st hit"
+uf+2,2,2,SNE.2;m,m,m,m;6,4,4,?;i10;-12;+21a (+14);;"
+* 6 (4) damage on airborne opponent at 70% scaling - 9 damage?
+* Consumes SNE
+* Chip damage on block (2)
+"
+uf+2,2,2,SNE.2,2;m,m,m,m,m;6,4,4,?,?;i10;-12;;;"
+* 4 (2) damage on airborne opponent at 50% (70%) scaling
+* Chip damage 2 (22%) on block"
+uf+2,2,2,SNE.2,2,3;m,m,m,m,m,m;6,4,4,?,?,?;i22~23;-15;;;"
+* 9 (6) damage on airborne opponent at 40% (70%) scaling
+* Chip damage 9 (39%) on block"
+uf+3;m;15;i27~28;-2;+15;;Alternate input u+3
+uf+3+4;m;22;i16~17;-7;+8a;;"
+* Tornado
+* Knee
+* Gain SNE on hit"
+uf+4;m;20;;;;;Alternate input u+4
+1+2+3+4;;;;;;;"
+* Cannot block while still in effect
+* Automatic counter hit"
 b,B+4;m;24;i21~33;-19;-7;;
 b,df+4;l;25;i29;-13;+14g;;"
 * Cancel with B
 "
-d+1+2;m,m;10,15;i17;-10;+3;;"
-* Combo from 1st hit
-* Enter SLS -3 +10g with f
-* Enter SWA -5 +8 with b"
-d+1+2~2;m;24;i30;+7;+53a;;Chip damage on block
-d+1+2,3;m,m,l;10,15,20;i27~28;-13;+5;+25a;
-d+2;m;17;i14~15;-2;+8c;;Elbow
-d+2,3;m,m;17,21;i22;-10;+16a (-1);+32a (+18);"
-* Balcony Break"
-d+3;l;10;i16;-11;+0;;
-d+3,2;l,h;10,22;i21;-7;+35a(+9);;"
-* Balcony Break
-* Gain SNE on hit with 1+2"
-d+3+4;l;16;i19;-12;-1;+4;
-d+3+4,2;l,m;16,25;i19;-12;+14a(-3);;"
-* Balcony Break
-* Tornado"
-d+4;L;13;i15;-11;+0;;
-db+1+2;m,h;8,16;i15;-9;+4;;"
-* Jails
-* Heat Engager
-
-* Heat Dash +5g +43a(+35)
-
-"
-db+2;m;13;i15~17;-6;+8;;
-db+3;l;11;i16~17;-12;-1;;
-DF+1;m;8;i15;-5;+1;;"
-* Alternate input df+1
-* DF+1,1... extension available only with DF+1 input, not df+1"
-DF+1,1;m,m;8,2;i10;-10;-4;;Combo from 1st hit
-DF+1,1,1;m,m,m;8,2,2;i10;-10;-4;;Combo from 1st hit
-DF+1,1,1,1;m,m,m,m;8,2,2,2;i10;-10;-4;;Combo from 1st hit
-DF+1,2;m,m;8,20;i23;-15;+1;+14a (+5);"
-* Combo from 1st hit
-* Alternate input:
-** DF+1,2
-** DF+1,1,2
-** DF+1,1,1,2
-** DF+1,1,1,1,2
-* Balcony Break on air hit & if it hits without the first hits"
-df+2;m;12;i13;-6;+5;;Elbow
-df+2,1;m,h;12,11;i6;-4;+5;;"
-* Combo from 1st hit
-* Enter SWA -1 +8 with b"
-df+2,3;m,m;12,20;i23;-13;+8;+59a;
-df+3;L;20;i29~30;-26;+70a (+54);;"
-* Homing
-* Insta Tornado launch"
-df+4;m;23;i22~24;-6;+19d;;"
-* Homing"
-f+1+2;h;22;i20~21;-6;+44d (-14);;"
-* Balcony Break
-* Elbow
-* Absorb an attack to power up and deal more chip damage on block"
-f+2;m;10;i15;-10;+1;;
-f+2,1;m,m;10,12;i10;-10;+1;;Combo from 1st hit
-f+2,1,4;m,m,m;10,12,20;i18~19;-13;+3a;;"
-* Combo from 1st hit
-* Gain SNE on hit with 1+2"
-f+2,1,SNE.2;m,m,m;10,12,5;i14~15;-12;+3c;;"
-* Elbow
-* Combo from 1st hit
-* Consumes SNE
-* Chip damage on block (1)
-"
-f+2,1,SNE.2,3;m,m,m,m;10,12,5,7;,i22;-15;+14a (+7);;"
-* Knee
-* Combo from 1st hit
-* Chip damage on block (2)
-"
-f+2,1,SNE.2,3,2;m,m,m,m,m;10,12,5,7,20;i35~36;-10;+0a (-1);;"
-* Chip damage on block (8)
-"
-f+3;m;18;i16~18;+0;+4;+50a;Knee
-f+4;m;10;i18;-9;+0;;
-f+4,1;m,m;10,10;i25~26;-13c;+40a (+32);;Combo from 1st hit
-FC.db+1+2;t;45;i11;;+1d;;"
-* Throw break 1+2"
-FC.df+2;m;12;i13;-9;+4;;
-FC.df+2,1;m,h;12,25;i22~23;-8;+34a(+8);;"
-* Balcony Break
-* Combo from 1st hit with delay
-* Move can be delayed
-"
-FC.df+4;m;21;i15~16;-10;+13g;;Ballerina spin on hit
 f,F+2;h;29;i13;-9;+41d(-17)/HE;;"
 * Heat Engager
 
@@ -250,31 +301,41 @@ f,F+4;h;32;i16~19;-9;+15a;;"
 * Homing
 * Chip damage on block (9)
 "
-f,f,F+3;m;30;i22~25;+6;+13a (+3);;Chip damage on block (9)
 f,n,b+2;h;20;i14~15;-7;+43a (+33);;"
 * Tornado
 "
-H.2+3;m,m,t;20,20,20;i16;+9;-1d;;"
-* Heat Smash
-* Floor Break
-** 2nd and 3rd hit
-* Throw on hit
-* Wall Crush on block
-
-"
-Left throw;t;40;;;+1d;;"
-* Floor Break
-* Throw break 1
-* Side switch"
 qcb;;;;;;;Lapses to standing
 qcf;SLS;;;;;;"
 * Alternate input d,df
 * Enter FC with DF
 * Lapses to standing"
-R.df+1+2;m;55+;i20;-15;+0d;;"
-* Rage Art"
-Right throw;t;40;;;+6d;;"
-* Throw break 2"
+uf,n,4;m;20;i23~25;-13;+32a (+22);;
+f,f,F+3;m;30;i22~25;+6;+13a (+3);;Chip damage on block (9)
+ws1;m;20;i15~16;-14;+35a (+25);;Alternate input SLS.1
+ws2;m,t;10,20;i19;-10;+50a;;"
+* Throw only on hit
+* Powerup with f+2 or b+2 (perfect) - additional 5 damage"
+ws3;m;17;i12;-10;+4;+33a (+27);"
+* Alternate input SLS.3"
+ws3,4;m,m;17,21;i28;-10;+4;+29g;"
+* Alternate input SLS.3,4
+* Move can be delayed"
+ws4;m;16;i11~12;-6;+5;;
+ss1;h;23;i17~18;-5;+8;+15;
+ss2;m;15;i17~18;-9;+1;;
+ss2,1;m,h;15,20;i21~22;-5;+43d (-15);;"
+* Heat Engager
+
+* Balcony Break
+* Combo from 1st hit with delay
+* Move can be delayed"
+FC.df+2;m;12;i13;-9;+4;;
+FC.df+2,1;m,h;12,25;i22~23;-8;+34a(+8);;"
+* Balcony Break
+* Combo from 1st hit with delay
+* Move can be delayed
+"
+FC.df+4;m;21;i15~16;-10;+13g;;Ballerina spin on hit
 SLS.1+2;m;28;i15~16;-9;+23a (+13);;"
 * Heat Engager
 
@@ -312,14 +373,6 @@ SNE.f,F+1+2;h;36;i13;+5;+33a (+7);;"
 SNE.f,F+1+2 (on absorb);m;20;;;;;"
 * Balcony Break
 * Consumes SNE (again?)[[[Template:Untested|untested]]]"
-ss1;h;23;i17~18;-5;+8;+15;
-ss2;m;15;i17~18;-9;+1;;
-ss2,1;m,h;15,20;i21~22;-5;+43d (-15);;"
-* Heat Engager
-
-* Balcony Break
-* Combo from 1st hit with delay
-* Move can be delayed"
 SWA.1;h;22;i13~14;+5;+36d (+28);+72a (+56);"
 * Tornado
 * Balcony Break
@@ -331,75 +384,22 @@ SWA.2,4;m,h;16,25;,i22~25;-9;+15a;;"
 * Chip damage on block"
 SWA.3;l;23;i19~20;-13;+5;+25d;
 SWA.4;m;23;i17~18;-12;+31a (+21);;
-ub+1+2;m,m;5,2;i15;-16;-6;;"
-* Combo from 1st hit
-* Chip damage on block"
-ub+1+2,1;m,m,m;5,2,2;;;;;"
-* Combo from 1st hit
-* Chip damage on block"
-ub+1+2,1,2;m,m,m,m;5,2,2,2;;;;;"
-* Combo from 1st hit
-* Chip damage on block"
-ub+1+2,1,2,1;m,m,m,m,m;5,2,2,2,2;;;;;"
-* Combo from 1st hit
-* Chip damage on block"
-ub+1+2,1,2,1,2;m,m,m,m,m,m;5,2,2,2,2,2;;;;;"
-* Combo from 1st hit
-* Chip damage on block"
-ub+1+2,1,2,1,2,1;m,m,m,m,m,m,m;5,2,2,2,2,2,2;;;;;"
-* Combo from 1st hit
-* Chip damage on block"
-ub+1+2,1,2,1,2,1,2;m,m,m,m,m,m,m,m;5,2,2,2,2,2,2,2;;;;;"
-* Combo from 1st hit
-* Chip damage on block"
-ub+1+2,1,2,1,2,1,2,1;m,m,m,m,m,m,m,m,m;5,2,2,2,2,2,2,2,2;;;;;"
-* Combo from 1st hit
-* Chip damage on block"
-ub+1+2,1,2,1,2,1,2,1,2;m,m,m,m,m,m,m,m,m,m;5,2,2,2,2,2,2,2,2,2;;;;;"
-* Combo from 1st hit
-* Chip damage on block"
-ub+1+2,1,2,1,2,1,2,1,2,1;m,m,m,m,m,m,m,m,m,m,m;5,2,2,2,2,2,2,2,2,2,2;;;;;"
-* Combo from 1st hit
-* Chip damage on block"
-ub+1+2,1,2,1,2,1,2,1,2,1,4;m,m,m,m,m,m,m,m,m,m,m,m;5,2,2,2,2,2,2,2,2,2,2,14;;-35;-15a (-24);;"
-* Knee
-* Balcony Break
-* Combo from 1st hit
-* Chip damage on block"
+1+3;t;35;i12~14;;-2d;;"
+* Floor Break
+* Throw break 1 or 2"
+2+4;t;35;i12~14;;+0d;;"
+* Floor Break
+* Throw break 1 or 2
+* Side switch"
+Back throw;t;60;;;-1d;;
+FC.db+1+2;t;45;i11;;+1d;;"
+* Throw break 1+2"
+Left throw;t;40;;;+1d;;"
+* Floor Break
+* Throw break 1
+* Side switch"
+Right throw;t;40;;;+6d;;"
+* Throw break 2"
 uf+1+2;t;40;i12;;-5d;;"
 * Floor Break
 * Throw break 1+2"
-uf+2;m;6;i13;-10;+1;;
-uf+2,2;m,m;6,4;i10;-10;+1;;Combo from 1st hit
-uf+2,2,2;m,m,m;6,4,4;i10;-10;+1;;Combo from 1st hit
-uf+2,2,2,3;m,m,m,m;6,4,4,20;i22~23;-15;+30a (+12);;"
-* Knee
-* Combo from 1st hit"
-uf+2,2,2,SNE.2;m,m,m,m;6,4,4,?;i10;-12;+21a (+14);;"
-* 6 (4) damage on airborne opponent at 70% scaling - 9 damage?
-* Consumes SNE
-* Chip damage on block (2)
-"
-uf+2,2,2,SNE.2,2;m,m,m,m,m;6,4,4,?,?;i10;-12;;;"
-* 4 (2) damage on airborne opponent at 50% (70%) scaling
-* Chip damage 2 (22%) on block"
-uf+2,2,2,SNE.2,2,3;m,m,m,m,m,m;6,4,4,?,?,?;i22~23;-15;;;"
-* 9 (6) damage on airborne opponent at 40% (70%) scaling
-* Chip damage 9 (39%) on block"
-uf+3;m;15;i27~28;-2;+15;;Alternate input u+3
-uf+3+4;m;22;i16~17;-7;+8a;;"
-* Tornado
-* Knee
-* Gain SNE on hit"
-uf+4;m;20;;;;;Alternate input u+4
-uf,n,4;m;20;i23~25;-13;+32a (+22);;
-ws1;m;20;i15~16;-14;+35a (+25);;Alternate input SLS.1
-ws2;m,t;10,20;i19;-10;+50a;;"
-* Throw only on hit
-* Powerup with f+2 or b+2 (perfect) - additional 5 damage"
-ws3;m;17;i12;-10;+4;+33a (+27);"
-* Alternate input SLS.3"
-ws3,4;m,m;17,21;i28;-10;+4;+29g;"
-* Alternate input SLS.3,4
-* Move can be delayed"
-ws4;m;16;i11~12;-6;+5;;

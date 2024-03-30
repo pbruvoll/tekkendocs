@@ -1,4 +1,13 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes
+2+3;m;12 (12);i16;+1;+2c;;"
+* Heat Burst
+* Cancel to r45 with b,b"
+H.EXD.1+3;h;;i18;;;;"
+* Unbreakable
+"
+H.2+3;m,th;10,3,3,3,3,3,20;i16;+8;;;"
+* Heat Smash
+* Chip damage on block"
 1;h;5;i10;+1;+8;;"
 "
 1,1;h,h;5,7;;-3;+3;;"
@@ -18,12 +27,6 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 1,1,d+1;h,h,m;5,7,15;;-6;0;+5;"
 * Transition to FLK with b (0/+6/+11)
 "
-1+2;m,m;7,21;i14;-12;KND/HE;;"
-Heat Engager
-
-Heat Dash  (+5/KND/KND)
-
-"
 1,2;h,h;5,10;i10;-3;+8;;"
 * Input 3 to LWV (-4/+7/+7)
 * Input 4 to RWV (-4/+7/+7)
@@ -39,10 +42,14 @@ Heat Dash  (+5/KND/KND)
 1,2,1,d+2;h,h,h,l;5,10,15,19;;-12;+1c;KND;"
 * Recover in crouch
 "
-1+3;throw;35;i12~14;;;;"
-* Throw break 1 or 2"
 1,d+1;h,m;5,15;;-6;0;+5;"
 * Transition to FLK with b (0/+6/+11)
+"
+1+2;m,m;7,21;i14;-12;KND/HE;;"
+Heat Engager
+
+Heat Dash  (+5/KND/KND)
+
 "
 2;h;12;i12;-1;+5;;"
 "
@@ -58,11 +65,6 @@ Heat Dash  (+5/KND/KND)
 * Input f to PAB (+2/+13g/+13)
 * Input b to FLK (+3/+14g/+14)
 "
-2+3;m;12 (12);i16;+1;+2c;;"
-* Heat Burst
-* Cancel to r45 with b,b"
-2+4;throw;35;i12~14;;;;"
-* Throw break 1 or 2"
 3;sp;;;;;;"
 "
 3+4;sp;;;;;;"
@@ -71,56 +73,59 @@ Heat Dash  (+5/KND/KND)
 "
 4;sp;;;;;;"
 "
-afters+1;l;23;i16;-12;KND;;"
+f+1+2;m,m;10,12;i15;-14;-3;;"
 "
-ALB.2;m;22;i23;-3;+17/KND;;"
-Heat Engager
-
-Heat Dash (+5/Launch/Launch)
-
+f+1+2,2;m,m,m;10,1220;;-13;KND;;"
 "
-ALB.d+2;l;17;i34;-12;+1c;KND;"
+f+2;m;11;i21~22;-6;+5;;"
 "
-ALB.d;sp;;;;;;"
-* Input F to transition PAB
+f+2,1;m,h;11,12;;-5;+1;;"
+* Input f to PAB (+0/+4/+4)
+* Input b to FLK (+1/+5/+5)
 "
-ALB.d;sp,m;,34;,i12;-3;KND;;"
+f+2,1~2;m,m;11,20;;-10;KND;;"
 "
-ALB.d;sp,l;,30;,i22;-12;KND;;"
+f+2,2;m,m;1115;;-6;+11;;"
+* Transistion to LNH
 "
-b+1;h;10;i13;-14;+2;+61a;"
-* Input B to FLK (-1/+10/+69)
+f+2,2,1+2;m,m,m,m,m;1115,5,8,20;;-12;+5;;"
 "
-b+1,2;h,h;10,17;;+3;+7;;"
-* Homing
-* Transitions to LNH
-"
-b+1,2~1;h,m;10,17;;-8;+4;+63a;"
-"
-b+1+3;sp;;;;;;"
-* Parry h and m punches
-* Successful parry i14,30dmg (-12/KND/Launch)
-"
-b+1,d+2;h,l;10,10;;-11;0;;"
-* Input F to PAB (-9/+2/+2)
-"
-b+1,d+2,1;h,l,m;10,10,10;;-9;+35;;"
-Tornado
-"
-b+2;m;15;i17;-13;+14;;"
-"
-b+3;sp;;;;;;"
-* Transition to FLK
-* Auto blocks high and mid
-"
-b+3;sp;;;;;;"
-* Transition to SWY
+f+3;sp;;;;;;"
+* Transition to DCK
 * Input 3 to LWV 
 * Input 4 to RWV 
 * Input f+3_4 to DCK
 "
-Back throw;throw;55;i12;;;;"
-* Unbreakable
+f+3+4;sp;;;;;;"
+* Transition to PAB
+* Auto blocks high and mid
+"
+df+1;m;12;i13;-2;+4;;"
+* Input 3 to LWV 
+* Input 4 to RWV 
+* Input b+3_4 to SWY 
+* Input f+3_4 to DCK (-5/+2/+2)
+"
+df+1,2;m,h;1213;;-6;+3;+5;"
+* Input 3 to LWV (-16/-9/-9)
+* Input 4 to RWV (-16/-9/-9)
+* Input b+3_4 to SWY (-16/-9/-9)
+* Input f+3_4 to DCK (-14/-7/-7)
+"
+df+1,2~1;m,h;1220;;-2;+2;Launch;"
+* Input b to FLK (0/+4/Launch)
+"
+df+1,2~1+2;m,h,h;12,8,12;;-3;0;;"
+* Input b to FLK (0/+4/Launch)
+"
+df+1,2~2;m,m;1212;;-10;KND;;"
+* Input b to FLK (0/+4/Launch)
+"
+df+2;m;10;i16;-11;+6;+8c;"
+* Input 3 to LWV (-7/+10/+12)
+* Input 4 to RWV (-7/+10/+12)
+* Input b+3_4 to SWY (-7/+10/+12)
+* Input f+3_4 to DCK (-2/+15g/+17)
 "
 d+1;l;12;i16;-13;-2;;"
 * Recover in crouch
@@ -135,17 +140,133 @@ d+2,1;l,m;11,8;;-11;-5;0;"
 "
 d+2,1,2;l,m,h;11,8,17;;-2;KND;Launch;"
 "
-d/b+1;sm;;i10;-5;+6;;"
+db+1;sm;;i10;-5;+6;;"
 "
-d/b+1+2;m;21;i28;-13;+14;;"
+db+1+2;m;21;i28;-13;+14;;"
 "
-d/b+2;l;21;i26;-12;+1c;KND;"
-* d or d/b to recover in crouch
+db+2;l;21;i26;-12;+1c;KND;"
+* d or db to recover in crouch
 "
-d/b+3;l;10;i16;-13;0;;"
+db+3;l;10;i16;-13;0;;"
 "
-d/b+3,2;l,h;10,10;;-6;+7;;"
+db+3,2;l,h;10,10;;-6;+7;;"
 * Transition to LNH
+"
+b+1;h;10;i13;-14;+2;+61a;"
+* Input B to FLK (-1/+10/+69)
+"
+b+1,2;h,h;10,17;;+3;+7;;"
+* Homing
+* Transitions to LNH
+"
+b+1,2~1;h,m;10,17;;-8;+4;+63a;"
+"
+b+1,d+2;h,l;10,10;;-11;0;;"
+* Input F to PAB (-9/+2/+2)
+"
+b+1,d+2,1;h,l,m;10,10,10;;-9;+35;;"
+Tornado
+"
+b+1+3;sp;;;;;;"
+* Parry h and m punches
+* Successful parry i14,30dmg (-12/KND/Launch)
+"
+b+2;m;15;i17;-13;+14;;"
+"
+b+3;sp;;;;;;"
+* Transition to FLK
+* Auto blocks high and mid
+"
+b+3;sp;;;;;;"
+* Transition to SWY
+* Input 3 to LWV 
+* Input 4 to RWV 
+* Input f+3_4 to DCK
+"
+ub+1+2;m;70;i66;KND;KND;;
+ub+2;h;17;i17;+3;+14;;"
+* Homing
+* Transition into LNH
+* Input b to cancel LNH
+"
+ub+2~1;m;17;i30;-8;+4;Launch;
+ub+3;sp;;;;;;"
+* Transition to LNH
+* Input 3 to LWV 
+* Input 4 to RWV 
+* Input b+3_4 to SWY 
+* Input f+3_4 to DCK 
+"
+uf+1;m;18;i19~21;-6;+5;;
+uf+2;m;20;i22~25;-14;Launch;;
+uf+3;l;20;i36;-12;+9;;
+uf+3,2;l,h;20,10;;-6;+7;;"
+* Transition to LNH
+"
+uf+4;m;20;i23;-14;KND;Launch;"
+"
+Opponent down d+1+2;l;14;i17;;;;"
+* Recovers in crouch
+"
+afters+1;l;23;i16;-12;KND;;"
+"
+f,F+2;m;24;i14~17;-13c;KND;;"
+"
+qcf+1;m;21;i16;-10;+17;;"
+Heat Engager
+
+Heat Dash (+5/KND/KND)
+
+* Input B to FLK (-3/KND/KND)
+"
+qcf+2;l;18;i19;-18;+2;;"
+* Input F transitions to PAB
+"
+f,f,F+2;m;30;i20~24;+6;+17;;"
+Heat Engager
+
+Heat Dash (+5/Launch/Launch)
+
+* Chip Damage On block
+"
+WS.1;m;12;i11;-3;+3;+8;"
+"
+WS.1,1;m,h;12,7;;-3;+3;;"
+* Input 3 to LWV (-6/0/0)
+* Input 4 to RWV (-6/0/0)
+* Input b+3_4 to SWY (-6/0/0)
+* Input f+3_4 to DCK (-2/+4/+4)
+"
+WS.1,2;m,m;12,20;;-13;+3c;KND;"
+"
+WS.2;m;17;i13;-7;+4;;"
+* Input 3 to LWV 
+* Input 4 to RWV 
+* Input b+3_4 to SWY 
+* Input f+3_4 to DCK (-5/+6/+6)
+"
+WS.2,2;mm;17,15;;-6;+11;;"
+* Transition to LNH
+"
+FC.df+1;l;11;i15;-12;+2;;"
+* Transition to PAB
+"
+FC.df+2;m;20;i18;-15;Launch;;"
+"
+ALB.2;m;22;i23;-3;+17/KND;;"
+Heat Engager
+
+Heat Dash (+5/Launch/Launch)
+
+"
+ALB.d;sp;;;;;;"
+* Input F to transition PAB
+"
+ALB.d;sp,m;,34;,i12;-3;KND;;"
+"
+ALB.d;sp,l;,30;,i22;-12;KND;;"
+"
+ALB.d+2;l;17;i34;-12;+1c;KND;"
 "
 DCK.1;m;17;i19;-7;KND;CH;"
 "
@@ -167,33 +288,6 @@ DCK.f+2;h;21;i15;-3;KND;CH;"
 DCK.f+3;sp;;;;;;"
 * Transition to EXTDCK
 "
-d/f+1;m;12;i13;-2;+4;;"
-* Input 3 to LWV 
-* Input 4 to RWV 
-* Input b+3_4 to SWY 
-* Input f+3_4 to DCK (-5/+2/+2)
-"
-d/f+1,2;m,h;1213;;-6;+3;+5;"
-* Input 3 to LWV (-16/-9/-9)
-* Input 4 to RWV (-16/-9/-9)
-* Input b+3_4 to SWY (-16/-9/-9)
-* Input f+3_4 to DCK (-14/-7/-7)
-"
-d/f+1,2~1;m,h;1220;;-2;+2;Launch;"
-* Input b to FLK (0/+4/Launch)
-"
-d/f+1,2~1+2;m,h,h;12,8,12;;-3;0;;"
-* Input b to FLK (0/+4/Launch)
-"
-d/f+1,2~2;m,m;1212;;-10;KND;;"
-* Input b to FLK (0/+4/Launch)
-"
-d/f+2;m;10;i16;-11;+6;+8c;"
-* Input 3 to LWV (-7/+10/+12)
-* Input 4 to RWV (-7/+10/+12)
-* Input b+3_4 to SWY (-7/+10/+12)
-* Input f+3_4 to DCK (-2/+15g/+17)
-"
 EXD.1;m;21;i19;-7;+KND;Launch;"
 "
 EXD.2;m;21;i19;-14;Launch;;"
@@ -203,47 +297,6 @@ EXD.f+2;h;28;i15;-+2;Launch;;"
 * Input 4 to RWV (+10/Launch/Launch)
 * Input b to SWY (+10/Launch/Launch)
 * Input f+3_4 to DCK (+12/Launch/Launch)
-"
-f+1+2;m,m;10,12;i15;-14;-3;;"
-"
-f+1+2,2;m,m,m;10,1220;;-13;KND;;"
-"
-f+2;m;11;i21~22;-6;+5;;"
-"
-f+2,1;m,h;11,12;;-5;+1;;"
-* Input f to PAB (+0/+4/+4)
-* Input b to FLK (+1/+5/+5)
-"
-f+2,1~2;m,m;11,20;;-10;KND;;"
-"
-f+2,2;m,m;1115;;-6;+11;;"
-* Transistion to LNH
-"
-f+2,2,1+2;m,m,m,m,m;1115,5,8,20;;-12;+5;;"
-"
-f+3+4;sp;;;;;;"
-* Transition to PAB
-* Auto blocks high and mid
-"
-f+3;sp;;;;;;"
-* Transition to DCK
-* Input 3 to LWV 
-* Input 4 to RWV 
-* Input f+3_4 to DCK
-"
-FC.df+1;l;11;i15;-12;+2;;"
-* Transition to PAB
-"
-FC.df+2;m;20;i18;-15;Launch;;"
-"
-f,F+2;m;24;i14~17;-13c;KND;;"
-"
-f,f,F+2;m;30;i20~24;+6;+17;;"
-Heat Engager
-
-Heat Dash (+5/Launch/Launch)
-
-* Chip Damage On block
 "
 FLK.1;h;14;i12;-4;+7;;"
 * Input b to stay in FLK (-1/+10/+10)
@@ -266,9 +319,6 @@ FLK.1,1,3+4;h,h,sp;14,8;;+14g;+23g;;"
 "
 FLK.1,1,f+1;h,h,m;14,8,17;;-5;0;;"
 "
-FLK.1+2;throw;40;i12;;KND;;"
-* 1+2 for throw break
-"
 FLK.1,2;h,m;14,22;;-13;KND;;"
 "
 FLK.1,3+4;h,sp;14,14;;+17g;+28g;+28;"
@@ -282,21 +332,6 @@ FLK.1,f+1;h,m;14,17;;-5;0;;"
 FLK.2;m;21;i18;-5c;KND;Launch;"
 "
 FLK.b+2;h;21;i4;-9;KND;;"
-"
-H.2+3;m,th;10,3,3,3,3,3,20;i16;+8;;;"
-* Heat Smash
-* Chip damage on block"
-H.EXD.1+3;h;;i18;;;;"
-* Unbreakable
-"
-TFA.1;throw;15;;;+14;;"
-* Press 1 for throw break
-"
-TFA.2;throw;40;/;;KND;;"
-* Press 2 for throw break
-"
-Left throw;throw;40;i12;;;;"
-* Throw break 1
 "
 LNH.1;m;21;i14-15;-9;+9/HE;;"
 * Heat Engager
@@ -318,7 +353,7 @@ LWV.1;m;14;i15;-10;+1;;"
 LWV.1,1;m,m;1422;;-13;KND;;"
 "
 LWV.1,2;m,h;1414;;+3;+7;;"
-Homing
+* Homing
 * Transition to LNH
 * Causes Strong Aerial Tailspin
 "
@@ -334,17 +369,14 @@ LWV.2;m;13;i14~16;-5;+4;;"
 LWV.2,1;mm;1321;;-8;+4c;KND;"
 * Input f into PAB (-1/+8/+8)
 "
-Opponent down d+1+2;l;14;i17;;;;"
-* Recovers in crouch
-"
 PAB.1;h;10;i12;-2;+9;;"
-"
-PAB.1+2;;45;i11;;KND;;"
-* 1+2 for throw break
 "
 PAB.1,2;h,h;1014;;0;+8;;"
 "
 PAB.1,2,1;h,h,m;101421;;-13;+8;Launch;"
+"
+PAB.1+2;;45;i11;;KND;;"
+* 1+2 for throw break
 "
 PAB.2;,h;19;i14;-3;+2;Launch;"
 Homing
@@ -360,21 +392,21 @@ PAB.b+1,1,2,1;m,h,m,m;15,10,12,21;;-10;KND;;"
 "
 PAB.b+2;m;25;i28;-13;KND;;"
 "
+PAB.df+1;m;12;i15;-9;+2;;"
+"
+PAB.df+1,1;m,m;1214;;-10;+1;;"
+"
+PAB.df+1,1,2;m,m,m;121412;;-11;-3;;"
+"
+PAB.df+1,1,2,1;m,m,m,m;121412,20;;-13;KND;;"
+"
+PAB.df+1,2;m,m,h;1220;;-6;+10;;"
+"
+PAB.df+2;m;16;i16;-10;Launch;;"
+"
 PAB.d+1;l;11;i15;-12;+2;;"
 "
 PAB.d+2;l;25;i28;-12;+7;Launch;"
-"
-PAB.d/f+1;m;12;i15;-9;+2;;"
-"
-PAB.d/f+1,1;m,m;1214;;-10;+1;;"
-"
-PAB.d/f+1,1,2;m,m,m;121412;;-11;-3;;"
-"
-PAB.d/f+1,1,2,1;m,m,m,m;121412,20;;-13;KND;;"
-"
-PAB.d/f+1,2;m,m,h;1220;;-6;+10;;"
-"
-PAB.d/f+2;m;16;i16;-10;Launch;;"
 "
 PAB.f+1+2;h,h;12,23;i12;-5;KND;;"
 "
@@ -385,27 +417,11 @@ PAB.f+2,1;m,m;1824;;+1;KND;;"
 "
 PAB.uf+2;m;23;i17;-15;Launch;;"
 "
-qcb+2+4;throw;40;i12;;;;"
-* 2 Throw break
-"
-qcf+1;m;21;i16;-10;+17;;"
-Heat Engager
-
-Heat Dash (+5/KND/KND)
-
-* Input B to FLK (-3/KND/KND)
-"
-qcf+2;l;18;i19;-18;+2;;"
-* Input F transitions to PAB
-"
-Right throw;throw;40;i12;;;;"
-* Throw break 2
-"
 RWV.1;m;13;i14~16;-5;+4;;"
 * Input f into PAB (-1/+8/+8)
 "
 RWV.1,2;m,h(?);13,17;;+3;+7;;"
-Homing
+* Homing
 * Transition into LNH
 "
 RWV.1,2~1;m,m;13,?;;-8;+4;Launch;"
@@ -413,6 +429,24 @@ RWV.1,2~1;m,m;13,?;;-8;+4;Launch;"
 RWV.2;m;22;i15;-13;KND;;"
 "
 SWY.1;m;26;i16;-1c;+14;;"
+"
+SWY.2;m;30;i17;-18;Launch;;"
+"
+1+3;throw;35;i12~14;;;;"
+* Throw break 1 or 2"
+2+4;throw;35;i12~14;;;;"
+* Throw break 1 or 2"
+Back throw;throw;55;i12;;;;"
+* Unbreakable
+"
+FLK.1+2;throw;40;i12;;KND;;"
+* 1+2 for throw break
+"
+Left throw;throw;40;i12;;;;"
+* Throw break 1
+"
+Right throw;throw;40;i12;;;;"
+* Throw break 2
 "
 SWY.1+2;throw;;i10;;+10;;"
 * +10 when opponent hits the wall if the throw is successful
@@ -423,49 +457,15 @@ SWY.1+2~b;throw;;i10;;+10;;"
 * +17 when opponent hits the wall after being rotated by > 90 degrees
 * Throw break 1+2
 "
-SWY.2;m;30;i17;-18;Launch;;"
+TFA.1;throw;15;;;+14;;"
+* Press 1 for throw break
 "
-u/b+1+2;m;70;i66;KND;KND;;
-u/b+2;h;17;i17;+3;+14;;"
-* Homing
-* Transition into LNH
-* Input b to cancel LNH
+TFA.2;throw;40;/;;KND;;"
+* Press 2 for throw break
 "
-u/b+2~1;m;17;i30;-8;+4;Launch;
-u/b+3;sp;;;;;;"
-* Transition to LNH
-* Input 3 to LWV 
-* Input 4 to RWV 
-* Input b+3_4 to SWY 
-* Input f+3_4 to DCK 
+qcb+2+4;throw;40;i12;;;;"
+* 2 Throw break
 "
-u/f+1;m;18;i19~21;-6;+5;;
-u/f+1+2;throw;40;i12;;;;"
+uf+1+2;throw;40;i12;;;;"
 * 1+2 Throw break
-"
-u/f+2;m;20;i22~25;-14;Launch;;
-u/f+3;l;20;i36;-12;+9;;
-u/f+3,2;l,h;20,10;;-6;+7;;"
-* Transition to LNH
-"
-u/f+4;m;20;i23;-14;KND;Launch;"
-"
-WS.1;m;12;i11;-3;+3;+8;"
-"
-WS.1,1;m,h;12,7;;-3;+3;;"
-* Input 3 to LWV (-6/0/0)
-* Input 4 to RWV (-6/0/0)
-* Input b+3_4 to SWY (-6/0/0)
-* Input f+3_4 to DCK (-2/+4/+4)
-"
-WS.1,2;m,m;12,20;;-13;+3c;KND;"
-"
-WS.2;m;17;i13;-7;+4;;"
-* Input 3 to LWV 
-* Input 4 to RWV 
-* Input b+3_4 to SWY 
-* Input f+3_4 to DCK (-5/+6/+6)
-"
-WS.2,2;mm;17,15;;-6;+11;;"
-* Transition to LNH
 "

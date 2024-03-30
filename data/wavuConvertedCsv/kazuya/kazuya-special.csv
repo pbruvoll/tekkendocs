@@ -1,4 +1,15 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes
+2+3;m;15;;;;;"
+* Heat Burst
+* Alternate input: R1
+"
+H.2+3;l,m,th;12,20,34;i18;-14;Th;Th;"
+* Heat Smash
+* Alternate input: R1
+"
+R.df+1+2;m,th;10,45;;;;;"
+* Erases opponent's recoverable health on hit
+"
 1;h;5;i10;+1;+8;;
 1,1;h,h;5,6;;-1;+8;;"
 * Jails
@@ -8,7 +19,6 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * Can be delayed 11F
 * Balcony Break on Air hit
 "
-1+2;m,m;5,20;i12;-13;+13a;;Balcony Break
 1,2;h,h;5,8;;-1;+8;;"
 * Jails
 * Combo from 1st hit
@@ -17,9 +27,6 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 1,2,2;h,h,h;5,8,12;;-12;+4;;"
 "
 1,2,2~3;h,h,m;5,8,23;i23;-9;+6;;
-1+2+3+4;sp;-;;;;;"
-* Shift to charging
-"
 1,2,4;h,h,l;5,8,18;i23;-14c;-3;+0c;"
 * Combo from 2nd CH
 * Can be delayed 7F
@@ -29,6 +36,7 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * Can be delayed
 * Balcony Break
 "
+1+2;m,m;5,20;i12;-13;+13a;;Balcony Break
 2;h;12;i12;-3;+8;;
 2,2;h,m;12,24;24-25;-8;+7;+50a;"
 * Combo from 1st CH
@@ -48,76 +56,18 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 4~3;m,m;18,17;i31;-10;-1g;;"
 * Floor Break
 "
-b+1;h;10;i11;-10;+1;;
-b+1+2;m;21;i22;-8;+5;;"
-* Heat Engager
-
-* Heat Dash +36a (+26) on hit
-* Chip damage when guarded"
-b+1,2;h,m;10,20;i20;-14;+9 (+0);;"
-* Balcony Break
-* Combo from 1st hit
-* Can be delayed 14F
-* Combo can be delayed 10F from hit
-"
-b+1+4;ub(m);60;i63;+20a(+10);+20a(+10);;
-b+2;m;12;i14;-8;+4;;
-b+2,2;m,m;12,14;i25;-10;+1;;
-b+2,2,1+2;m,m,h;12,14,20;i28-32;-8;+38d (-20);;"
-* Balcony Break
-* Chip damage when guarded
-"
-b+2,4;m,h;12,12;i22;-3;+8;;"
-* Combo from 1st hit
-* Can be delayed 10F
-* Combo can be delayed 5F from hit
-"
-b+2,4,1;m,h,m;12,12,22;i19;-14;+11a (+2);;"
-* Combo from 2nd CH
+f+1+2;m;20;i25;-9;+11a(+2);;"
+* Parries high and mid punches
 * Balcony Break
 "
-b+3;h;15;i18;-8;+3;;
-b+3,1;h,h;15,10;i12;+0;+6;;"Jails
-Combo from 1st hit"
-b+3,1,4;h,h,l;15,10,10;i16;-10c;+7;;
-b+3,1,4,1;h,h,l,m;15,10,10,15;i15;-14;+15a (+6);;Balcony Break
-b+3,1,4,3;h,h,l,l;15,10,10,12;i20;-13c;+1;;
-b+4;h;20;i17;-5;+16g;;"
-* Homing
-* Heat Engager
-
-* Heat Dash +62a (+42) on hit
-"
-(back to wall).b,b,ub;m;25;i29;-1;KND;KND;"
-* Air Status 5F
-"
-BT.1;h;15;i8;-8;+3;;
-BT.3;h;18;i10;-8;KND;KND;
-BT.d+1;sm;10;i10;-2;+9;;
-BT.d+3;l;12;i10;-11;+3;;
-BT.uf+3;m;-;;;LNC;LNC;
-d+1;sl;5;i10;-5;+6;;"
-* Returns to standing when input F
-"
-d+1+2;l;20;i23;-14c;+3c;+27a;"
-"
-d+1+2,B;l,sp;20,0;;;;;
-d+2;sl;8;i11;-4;+7;;
-d+3;l;10;i16;-17;-6;;
-d+4;l;6;i12;-17;-4;;
-db+1;m;7;i13;-10;+0;;
-db+1,2;m,m,m;7,8,15;i20;-19;+9a (-8);;"
-* Heat Engager
-
-* Heat Dash +35a on hit
+f+2;m;23;i20;-12;+13a(+4);;"
+* Absorb an attack to power up
+* Add chip damage when guarded
+* Tornado
 * Balcony Break
-* Chip damage when guarded
-* Combos from first hit
 "
-db+2;m;23;i20;-9c;+7c;+21d;Spike
-db+3;l;14;i19~20;-12c;-1;+7c;"
-"
-db+4;l;18;i20;-12;+4;+17g;Flips over on grounded hit
+f+3;m;22;i17;-13;+5;+54a(+23);Balcony Break on air hit
+f+4;m;20;i19~20;+4c;+7c;+31d;Spike
 df+1;m;11;i15~16;-7;+9;;
 df+1,2;m,h;11,20;i15;+0c;+9g;;"
 * Heat Engager
@@ -170,71 +120,91 @@ df+4,4;m,m;10,16;;-15;-4c;;"
 * Can be delayed 11F
 * Combo can be delayed 11F from hit
 "
-DVK.1,1,2,F;h,h,m,th;5,6,12,8;i10;;+5;;"
-* Jails
-* Partially uses remaining Heat time
-* Only on hit
-"
-DVK.1+4;m;27;i21-31;-9;+3a;;"
-* Tornado
-* Partially uses remaining Heat time
-* absorb an attack to power up
-"
-DVK.3+4;ub(m);30;i64;;-16(-77);;"
-* Partially uses remaining Heat time
-"
-DVK.db+3+4;l;0;i24;-19;+2;;"
-* Partially uses remaining Heat time
-"
-DVK.db+3+4,DF;l,sp;0,0;;-19;+11;;"
-* Partially uses remaining Heat time
-"
-DVK.f,F+2;m,th;20,20;i16;;+0;;"
-* Partially uses remaining Heat time
-* Only on hit
-"
-DVK.f,n,d,df+1;m,th;23,15;i20;;Th;;"
-* Partially uses remaining Heat time
-* On hit, does not shift to throw with n
-"
-DVK.f,n,d,df+3;h,th;30,15;i20;;Th;;
-DVK.f,n,d,df+4,1,1;l,m,m,th;15,23,16,15;i16;;Th;;"
-* Partially uses remaining Heat time
-"
-DVK.f,n,d,df+4,1,1,B;l,m,m,th,sp;15,23,16,15,0;i16;-17;LNC;LNC;
-DVK.OTG.db+1+2;l;20;i24-29;;+13(+1);;"
-* Partially uses remaining Heat time
-"
-DVK.SS.2;m;25;i17;-15;+76;;"
-* Partially uses remaining Heat time
-* Tornado
-"
-DVK.ub+1+2;ub(h);40;i41;;+14(+44) KND;;"
-* Partially uses remaining Heat time
-* Jack-8 or Alisa can recovery 20 by input 1+2
-"
-DVK.uf+1+2;ub(h);26;i22;;;;Alternate input: DVK.u+1+2
-f+1+2;m;20;i25;-9;+11a(+2);;"
-* Parries high and mid punches
-* Balcony Break
-"
-f+2;m;23;i20;-12;+13a(+4);;"
-* Absorb an attack to power up
-* Add chip damage when guarded
-* Tornado
-* Balcony Break
-"
-f+3;m;22;i17;-13;+5;+54a(+23);Balcony Break on air hit
-f+4;m;20;i19~20;+4c;+7c;+31d;Spike
-FC.1;sl;5;i10;-5;+6;;"
+d+1;sl;5;i10;-5;+6;;"
 * Returns to standing when input F
 "
-FC.2;sm;8;i11;-4;+7;;
-FC.3;l;10;i16;-17;-6;;
-FC.4;l;6;i12;-17;-4;;
-FC.df+3+4;m;24;i23;-11c;+11a;;"
+d+1+2;l;20;i23;-14c;+3c;+27a;"
 "
-f,(even numbers frames).n;sp;;;;;;
+d+1+2,B;l,sp;20,0;;;;;
+d+2;sl;8;i11;-4;+7;;
+d+3;l;10;i16;-17;-6;;
+d+4;l;6;i12;-17;-4;;
+db+1;m;7;i13;-10;+0;;
+db+1,2;m,m,m;7,8,15;i20;-19;+9a (-8);;"
+* Heat Engager
+
+* Heat Dash +35a on hit
+* Balcony Break
+* Chip damage when guarded
+* Combos from first hit
+"
+db+2;m;23;i20;-9c;+7c;+21d;Spike
+db+3;l;14;i19~20;-12c;-1;+7c;"
+"
+db+4;l;18;i20;-12;+4;+17g;Flips over on grounded hit
+b+1;h;10;i11;-10;+1;;
+b+1,2;h,m;10,20;i20;-14;+9 (+0);;"
+* Balcony Break
+* Combo from 1st hit
+* Can be delayed 14F
+* Combo can be delayed 10F from hit
+"
+b+1+2;m;21;i22;-8;+5;;"
+* Heat Engager
+
+* Heat Dash +36a (+26) on hit
+* Chip damage when guarded"
+b+1+4;ub(m);60;i63;+20a(+10);+20a(+10);;
+b+2;m;12;i14;-8;+4;;
+b+2,2;m,m;12,14;i25;-10;+1;;
+b+2,2,1+2;m,m,h;12,14,20;i28-32;-8;+38d (-20);;"
+* Balcony Break
+* Chip damage when guarded
+"
+b+2,4;m,h;12,12;i22;-3;+8;;"
+* Combo from 1st hit
+* Can be delayed 10F
+* Combo can be delayed 5F from hit
+"
+b+2,4,1;m,h,m;12,12,22;i19;-14;+11a (+2);;"
+* Combo from 2nd CH
+* Balcony Break
+"
+b+3;h;15;i18;-8;+3;;
+b+3,1;h,h;15,10;i12;+0;+6;;"Jails
+Combo from 1st hit"
+b+3,1,4;h,h,l;15,10,10;i16;-10c;+7;;
+b+3,1,4,1;h,h,l,m;15,10,10,15;i15;-14;+15a (+6);;Balcony Break
+b+3,1,4,3;h,h,l,l;15,10,10,12;i20;-13c;+1;;
+b+4;h;20;i17;-5;+16g;;"
+* Homing
+* Heat Engager
+
+* Heat Dash +62a (+42) on hit
+"
+ub+1+2;h;32;i41;KND;KND;KND;"
+* Chip damage when guarded
+* Jack-8 or Alisa can recovery 20 by input 1+2
+* Balcony Break
+"
+uf+1;m;12;i18;-12;-1;;"
+* Spike
+"
+uf+2;h;17;i15;-12;+9;;"
+* Balcony Break on air hit
+"
+uf+3;m;25;i19;-9;+17(+9);;"
+* Balcony Break
+"
+uf+4;m;16;i25;-12;-1;;"
+* Balcony Break on air hit
+"
+uf+4,4;m,l;16,12;;-23;KND;KND;Combo from 1st CH
+uf+4,4,4;m,l,l;16,12,10;;-23;KND;KND;
+uf+4,4,4,4;m,l,l,m;16,12,10,20;;-17;KND;KND;Balcony Break
+1+2+3+4;sp;-;;;;;"
+* Shift to charging
+"
 f,F+2;m;20;i16;-9;+39d(-19)/HE;;"
 * Heat Engager
 
@@ -245,9 +215,10 @@ f,F+3;m;21;i20;-3c;+46a;;"
 * Spike
 "
 f,F+4;m;22;i17~18;-9;+5;+29a(+23);
-f,f,F+3;m;30;i22~25;+9;+13a(+3);;"
-* Chip damage when guarded
-* Balcony Break
+f,n,DF;sp;;;;;;"
+* Cannot be buffered
+* Connect to Wind God Step
+* Cost: 2F
 "
 f,n,d,DF;sp;;;;;;"
 * Cannot be buffered
@@ -278,54 +249,17 @@ f,n,d,df+4,4;l,h;15,25;i30;-14;+5a(+4);;"
 * Combo from first hit
 * Balcony Break
 "
-2+3;m;15;;;;;"
-* Heat Burst
-* Alternate input: R1
-"
-f,n,DF;sp;;;;;;"
-* Cannot be buffered
-* Connect to Wind God Step
-* Cost: 2F
-"
-f,(odd numbers frames).n;sp;;;;;;
-H.2+3;l,m,th;12,20,34;i18;-14;Th;Th;"
-* Heat Smash
-* Alternate input: R1
-"
-OTG.d+3+4;l;25;i23;-12;-1;;
-R.df+1+2;m,th;10,45;;;;;"
-* Erases opponent's recoverable health on hit
-"
-SS.1+2;h;25;i19;-9;+11a;;"
-"
-SS.3;m;23;i23;-7;+16a(+7);+50d;Balcony Break
-ub+1+2;h;32;i41;KND;KND;KND;"
-* Chip damage when guarded
-* Jack-8 or Alisa can recovery 20 by input 1+2
-* Balcony Break
-"
-uf+1;m;12;i18;-12;-1;;"
-* Spike
-"
-uf+2;h;17;i15;-12;+9;;"
-* Balcony Break on air hit
-"
-uf+3;m;25;i19;-9;+17(+9);;"
-* Balcony Break
-"
-uf+4;m;16;i25;-12;-1;;"
-* Balcony Break on air hit
-"
-uf+4,4;m,l;16,12;;-23;KND;KND;Combo from 1st CH
-uf+4,4,4;m,l,l;16,12,10;;-23;KND;KND;
-uf+4,4,4,4;m,l,l,m;16,12,10,20;;-17;KND;KND;Balcony Break
 uf,n,4;m;20;i23;-13;+32a(+22);;
+f,f,F+3;m;30;i22~25;+9;+13a(+3);;"
+* Chip damage when guarded
+* Balcony Break
+"
 ws1;m;10;i13;-5;+5;;
-ws1+2;m;25;i13;-9;+8;+24a;
 ws1,2;m,m;10,12;i22;-12;+73a(+57);;"
 * Combo from 1st hit
 * Tornado
 "
+ws1+2;m;25;i13;-9;+8;+24a;
 ws2;m;25;i16;-18;+57a;;Homing
 ws3;m;24;i21;-5;+20a(+11);;"
 * Homing
@@ -335,3 +269,69 @@ ws4;m;13;i11~12;-3;+8;;
 ws4,4;m,m;13,16;;-15;-4c;;"
 * Combo from 1st hit
 "
+SS.1+2;h;25;i19;-9;+11a;;"
+"
+SS.3;m;23;i23;-7;+16a(+7);+50d;Balcony Break
+FC.1;sl;5;i10;-5;+6;;"
+* Returns to standing when input F
+"
+FC.2;sm;8;i11;-4;+7;;
+FC.3;l;10;i16;-17;-6;;
+FC.4;l;6;i12;-17;-4;;
+FC.df+3+4;m;24;i23;-11c;+11a;;"
+"
+(back to wall).b,b,ub;m;25;i29;-1;KND;KND;"
+* Air Status 5F
+"
+BT.1;h;15;i8;-8;+3;;
+BT.3;h;18;i10;-8;KND;KND;
+BT.d+1;sm;10;i10;-2;+9;;
+BT.d+3;l;12;i10;-11;+3;;
+BT.uf+3;m;-;;;LNC;LNC;
+DVK.1,1,2,F;h,h,m,th;5,6,12,8;i10;;+5;;"
+* Jails
+* Partially uses remaining Heat time
+* Only on hit
+"
+DVK.1+4;m;27;i21-31;-9;+3a;;"
+* Tornado
+* Partially uses remaining Heat time
+* absorb an attack to power up
+"
+DVK.3+4;ub(m);30;i64;;-16(-77);;"
+* Partially uses remaining Heat time
+"
+DVK.OTG.db+1+2;l;20;i24-29;;+13(+1);;"
+* Partially uses remaining Heat time
+"
+DVK.SS.2;m;25;i17;-15;+76;;"
+* Partially uses remaining Heat time
+* Tornado
+"
+DVK.db+3+4;l;0;i24;-19;+2;;"
+* Partially uses remaining Heat time
+"
+DVK.db+3+4,DF;l,sp;0,0;;-19;+11;;"
+* Partially uses remaining Heat time
+"
+DVK.f,F+2;m,th;20,20;i16;;+0;;"
+* Partially uses remaining Heat time
+* Only on hit
+"
+DVK.f,n,d,df+1;m,th;23,15;i20;;Th;;"
+* Partially uses remaining Heat time
+* On hit, does not shift to throw with n
+"
+DVK.f,n,d,df+3;h,th;30,15;i20;;Th;;
+DVK.f,n,d,df+4,1,1;l,m,m,th;15,23,16,15;i16;;Th;;"
+* Partially uses remaining Heat time
+"
+DVK.f,n,d,df+4,1,1,B;l,m,m,th,sp;15,23,16,15,0;i16;-17;LNC;LNC;
+DVK.ub+1+2;ub(h);40;i41;;+14(+44) KND;;"
+* Partially uses remaining Heat time
+* Jack-8 or Alisa can recovery 20 by input 1+2
+"
+DVK.uf+1+2;ub(h);26;i22;;;;Alternate input: DVK.u+1+2
+OTG.d+3+4;l;25;i23;-12;-1;;
+f,(even numbers frames).n;sp;;;;;;
+f,(odd numbers frames).n;sp;;;;;;
