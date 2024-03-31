@@ -30,7 +30,11 @@ export const FrameDataTable = ({
   className,
   filter,
 }: FrameDataTableProps) => {
-  const columnNums = (table.headers || table.rows[0]).map((_, index) => index)
+  const maxRows = 8
+  const columnNums = (table.headers || table.rows[0])
+    .map((_, index) => index)
+    .slice(0, maxRows)
+  const tableHeaders = table.headers.slice(0, maxRows)
   const [searchParams] = useSearchParams()
   const location = useLocation()
   const orderByParamValue = searchParams.get(orderByKey) || ''
@@ -75,32 +79,30 @@ export const FrameDataTable = ({
       className={className}
       key={orderByColumnName + sortDirection + JSON.stringify(filter)}
     >
-      {table.headers && (
-        <Table.Header>
-          <Table.Row>
-            {table.headers.map(h => (
-              <Table.ColumnHeaderCell key={h}>
-                <Link
-                  to={createOrderLinkWithSearchParams(h.toLowerCase())}
-                  className="flex flex-wrap items-end"
-                >
-                  {h}
-                  {h.toLowerCase() === orderByColumnName
-                    ? sortOrderIconMap[sortDirection]
-                    : sortOrderIconMap['']}
-                </Link>
-              </Table.ColumnHeaderCell>
-            ))}
-          </Table.Row>
-        </Table.Header>
-      )}
+      <Table.Header>
+        <Table.Row>
+          {tableHeaders.map(h => (
+            <Table.ColumnHeaderCell key={h}>
+              <Link
+                to={createOrderLinkWithSearchParams(h.toLowerCase())}
+                className="flex flex-wrap items-end"
+              >
+                {h}
+                {h.toLowerCase() === orderByColumnName
+                  ? sortOrderIconMap[sortDirection]
+                  : sortOrderIconMap['']}
+              </Link>
+            </Table.ColumnHeaderCell>
+          ))}
+        </Table.Row>
+      </Table.Header>
       <Table.Body>
         {sortedRows.map((row, i) => {
           return (
             <Table.Row key={row[0]}>
               {columnNums.map(j => {
                 const cell = row[j] || ''
-                if (j === 0 && table.name === 'frames_normal') {
+                if (j === 0) {
                   //this is a command, so make it link
                   return (
                     <Table.Cell key={j}>
