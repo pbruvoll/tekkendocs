@@ -14,6 +14,7 @@ columns = [
     {"wavuId": "on_hit", "displayName": "Hit frame"},
     {"wavuId": "on_ch", "displayName": "Counter hit frame"},
     {"wavuId": "notes", "displayName": "Notes"},
+    # {"wavuId": "image", "displayName": "Wavu image"}
 ]
     
 #input is a folder for a character which may contain multiple csv files (special moves, throws etc).
