@@ -33,7 +33,7 @@ export const frameDataTableToJson = (normalFrameData: TableData): Move[] => {
     const myTags = row[8] ? tagStringToRecord(row[8]) : undefined
     console.log('myTags', myTags)
     return {
-      moveNumber: index,
+      moveNumber: index + 1,
       command: row[0],
       hitLevel: row[1],
       damage: row[2],

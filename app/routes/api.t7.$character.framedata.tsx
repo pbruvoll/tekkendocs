@@ -50,7 +50,8 @@ export const loader = async ({ params }: DataFunctionArgs) => {
     throw json('Not able to find frame for character', { status: 500 })
   }
 
-  const framesNormal = framesNormalTable.rows.map<Move>(row => ({
+  const framesNormal = framesNormalTable.rows.map<Move>((row, index) => ({
+    moveNumber: index + 1,
     command: row[0],
     hitLevel: row[1],
     damage: row[2],
