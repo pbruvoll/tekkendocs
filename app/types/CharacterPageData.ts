@@ -14,4 +14,3 @@ export type CharacterPageData = {
 export type CharacterPageFrameData = CharacterPageData & {
   moves: Move[]
 }
-

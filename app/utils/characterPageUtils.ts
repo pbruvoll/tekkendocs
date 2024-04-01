@@ -1,5 +1,8 @@
-import { type CharacterPageData,type CharacterPageFrameData } from '~/types/CharacterPageData'
-import { type Move } from '~/types/Move';
+import {
+  type CharacterPageData,
+  type CharacterPageFrameData,
+} from '~/types/CharacterPageData'
+import { type Move } from '~/types/Move'
 import { type RouteHandle } from '~/types/RouteHandle'
 import { type TableData } from '~/types/TableData'
 
@@ -30,4 +33,3 @@ export const getCharacterFrameDataMoves = (
   )?.data
   return frameData ? (frameData as CharacterPageFrameData).moves : undefined
 }
-
