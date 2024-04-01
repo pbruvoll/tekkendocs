@@ -15,7 +15,6 @@ export const FrameDataFilterDialog = ({
   removeFilterElement,
   stances,
 }: FrameDataFilterDialogProps) => {
-  console.log('filter', filter)
   const filterCount = Object.entries(filter).filter(([, value]) => {
     if (value === undefined) {
       return false

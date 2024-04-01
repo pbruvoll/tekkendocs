@@ -125,18 +125,21 @@ def _convert_json_movelist(move_list_json: list) -> List[Move]:
             on_ch = _normalize_data(_normalize_hit_ch_input(move["title"]["ch"]))
             startup = _normalize_data(move["title"]["startup"])
             recovery = _normalize_data(move["title"]["recv"])
+            crush = _normalize_data(move["title"]["crush"])
+            image = _normalize_data(move["title"]["image"])
+            video = _normalize_data(move["title"]["video"])
 
             notes = html.unescape(_normalize_data(move["title"]["notes"]))
             notes = BeautifulSoup(notes, features="lxml").get_text()
             notes = notes.replace("* \n", "* ")
+            tags = crush
 
-            move = Move(id, name, input, target, damage, on_block, on_hit, on_ch, startup, recovery, notes, "", alias)
+            move = Move(id, name, input, target, damage, on_block, on_hit, on_ch, startup, recovery, crush, notes, "", tags, image, video, alias)
             move_list.append(move)
     return move_list
 
 def _sort_json_movelist(move_list: List[Move]) :
     # a trick to generate a string for sorting frames. + is replaced by _ just to make "+" sort after ","
-    # print(f'{SORT_ORDER[_get_move_category(move_list[15])]:05d}' + "_" + move_list[15].input.replace("+", "_"))
     return sorted(move_list, key=lambda x: f'{SORT_ORDER[_get_move_category(x)]:05d}' + x.input.replace("+", "|"))
 
 def _get_move_category(move: Move) -> MoveCategory:
