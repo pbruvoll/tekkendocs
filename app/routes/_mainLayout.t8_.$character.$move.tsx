@@ -58,7 +58,6 @@ export const meta: MetaFunction = ({ params, matches }) => {
   const moveRow = findMoveRow(command, rows) || []
 
   const moves = getCharacterFrameDataMoves(matches)
-  console.log('moves', moves?.length)
   const move: Move | undefined = moves ? findMove(command, moves) : undefined
 
   if (move) {
@@ -134,6 +133,9 @@ export default function Move() {
     setTimeout(() => setShowVideo(true), 1)
   }
 
+  const moves = getCharacterFrameDataMoves(matches)
+  const move: Move | undefined = moves ? findMove(command, moves) : undefined
+
   return (
     <ContentContainer enableTopPadding enableBottomPadding>
       <Text size="7" mr="6" as="span">
@@ -173,6 +175,22 @@ export default function Move() {
           ></iframe>
           <Button onClick={handleReloadVideo}>Reload</Button>
         </>
+      )}
+      {move?.video && (
+        <video
+          src={`https://wavu.wiki/t/Special:Redirect/file/${move?.video}`}
+          width="640"
+          height="360"
+          style={{
+            maxWidth: '100%',
+            maxHeight: '100%',
+            width: '640px',
+            height: '360px',
+          }}
+          loop
+          autoPlay
+          muted
+        />
       )}
     </ContentContainer>
   )
