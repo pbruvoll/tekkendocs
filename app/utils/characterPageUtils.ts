@@ -1,4 +1,5 @@
-import { type CharacterPageData } from '~/types/CharacterPageData'
+import { type CharacterPageData,type CharacterPageFrameData } from '~/types/CharacterPageData'
+import { type Move } from '~/types/Move';
 import { type RouteHandle } from '~/types/RouteHandle'
 import { type TableData } from '~/types/TableData'
 
@@ -20,3 +21,13 @@ export const getCharacterFrameData = (
   )
   return frameDataTable
 }
+
+export const getCharacterFrameDataMoves = (
+  matches: { data?: unknown; handle?: unknown }[],
+): Move[] | undefined => {
+  const frameData = matches.find(
+    m => (m.handle as RouteHandle)?.type === 'frameData',
+  )?.data
+  return frameData ? (frameData as CharacterPageFrameData).moves : undefined
+}
+
