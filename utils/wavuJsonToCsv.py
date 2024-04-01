@@ -14,7 +14,9 @@ columns = [
     {"wavuId": "on_hit", "displayName": "Hit frame"},
     {"wavuId": "on_ch", "displayName": "Counter hit frame"},
     {"wavuId": "notes", "displayName": "Notes"},
-    # {"wavuId": "image", "displayName": "Wavu image"}
+    {"wavuId": "tags", "displayName": "Tags"},
+    {"wavuId": "image", "displayName": "Image"},
+    {"wavuId": "video", "displayName": "Video"},
 ]
     
 #input is a folder for a character which may contain multiple csv files (special moves, throws etc).
@@ -36,7 +38,7 @@ def convert(filePath, outDir):
     f.close()
     csvContent = [list(map(lambda x: x["displayName"], columns))];
     for move in jsonData : 
-        csvContent.append(list(map(lambda x: move[x["wavuId"]], columns)));
+        csvContent.append(list(map(lambda x: move.get(x["wavuId"], ""), columns)));
     
     outputFilePath = os.path.join(charOutDir, charName + "-special.csv")
     outputFile = open(outputFilePath, "w", newline="", encoding='utf-8')

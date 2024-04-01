@@ -1,4 +1,5 @@
 export type Move = {
+  moveNumber: number
   command: string
   hitLevel: string
   damage: string
@@ -7,4 +8,7 @@ export type Move = {
   hit: string
   counterHit: string
   notes: string
+  tags?: Record<string, string>
+  image?: string
+  video?: string
 }

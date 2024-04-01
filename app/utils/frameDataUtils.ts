@@ -4,6 +4,7 @@ import { type MoveFilter } from '~/types/MoveFilter'
 import { type SortOrder } from '~/types/SortOrder'
 import { type TableData } from '~/types/TableData'
 import { sortRowsByNumber, sortRowsByString } from './sortingUtils'
+import { tagStringToRecord } from './tagUtils'
 
 export const frameDataTableToJson = (normalFrameData: TableData): Move[] => {
   invariant(normalFrameData.headers)
@@ -15,8 +16,24 @@ export const frameDataTableToJson = (normalFrameData: TableData): Move[] => {
   invariant(normalFrameData.headers[5].localeCompare('hit frame'))
   invariant(normalFrameData.headers[5].localeCompare('counter hit frame'))
   invariant(normalFrameData.headers[7].localeCompare('notes'))
-  return normalFrameData.rows.map(row => {
+  // check optional columns
+  invariant(
+    normalFrameData.headers.length < 9 ||
+      normalFrameData.headers[8].localeCompare('tags'),
+  )
+  invariant(
+    normalFrameData.headers.length < 10 ||
+      normalFrameData.headers[9].localeCompare('image'),
+  )
+  invariant(
+    normalFrameData.headers.length < 11 ||
+      normalFrameData.headers[10].localeCompare('video'),
+  )
+  return normalFrameData.rows.map((row, index) => {
+    const myTags = row[8] ? tagStringToRecord(row[8]) : undefined
+    console.log('myTags', myTags)
     return {
+      moveNumber: index,
       command: row[0],
       hitLevel: row[1],
       damage: row[2],
@@ -25,6 +42,9 @@ export const frameDataTableToJson = (normalFrameData: TableData): Move[] => {
       hit: row[5],
       counterHit: row[6],
       notes: row[7],
+      tags: row[8] ? tagStringToRecord(row[8]) : undefined,
+      image: row[9],
+      video: row[10],
     }
   })
 }

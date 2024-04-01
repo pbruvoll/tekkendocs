@@ -1,6 +1,10 @@
 import { Pencil1Icon } from '@radix-ui/react-icons'
 import { Heading, Link as RadixLink, Table } from '@radix-ui/themes'
-import { type DataFunctionArgs, json, type MetaFunction } from '@remix-run/node'
+import {
+  json,
+  type LoaderFunctionArgs,
+  type MetaFunction,
+} from '@remix-run/node'
 import { Link, NavLink, useLoaderData } from '@remix-run/react'
 import invariant from 'tiny-invariant'
 import { Authors } from '~/components/Authors'
@@ -32,7 +36,7 @@ import { creditsTableToJson } from '~/utils/sheetUtils'
 import { sheetSectionToTable, sheetToSections } from '~/utils/sheetUtils.server'
 import { t8AvatarMap } from '~/utils/t8AvatarMap'
 
-export const loader = async ({ params }: DataFunctionArgs) => {
+export const loader = async ({ params }: LoaderFunctionArgs) => {
   const character = params.character
   if (!character) {
     throw new Response(null, {

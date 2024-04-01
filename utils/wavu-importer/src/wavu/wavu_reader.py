@@ -132,8 +132,9 @@ def _convert_json_movelist(move_list_json: list) -> List[Move]:
             notes = html.unescape(_normalize_data(move["title"]["notes"]))
             notes = BeautifulSoup(notes, features="lxml").get_text()
             notes = notes.replace("* \n", "* ")
+            tags = crush
 
-            move = Move(id, name, input, target, damage, on_block, on_hit, on_ch, startup, recovery, crush, notes, "", image, video, alias)
+            move = Move(id, name, input, target, damage, on_block, on_hit, on_ch, startup, recovery, crush, notes, "", tags, image, video, alias)
             move_list.append(move)
     return move_list
 
