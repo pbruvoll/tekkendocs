@@ -1,4 +1,4 @@
-import { type DataFunctionArgs, json } from '@remix-run/node'
+import { json, type LoaderFunctionArgs } from '@remix-run/node'
 import { Outlet } from '@remix-run/react'
 import { environment } from '~/constants/environment.server'
 import { SheetServiceMock } from '~/mock/SheetServiceMock'
@@ -13,7 +13,7 @@ export function shouldRevalidate() {
   return false
 }
 
-export const loader = async ({ params }: DataFunctionArgs) => {
+export const loader = async ({ params }: LoaderFunctionArgs) => {
   const characterId = params.character
   if (!characterId) {
     throw new Response(null, {
