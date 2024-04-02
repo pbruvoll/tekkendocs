@@ -116,6 +116,16 @@ export const FrameDataTable = ({
                     </Table.Cell>
                   )
                 }
+                if (j === 7) {
+                  //notes column, perserve new lines
+                  return (
+                    <Table.Cell key={j}>
+                      {cell.split('\n').map((line, index) => (
+                        <div key={index}>{line}</div>
+                      ))}
+                    </Table.Cell>
+                  )
+                }
                 return <Table.Cell key={j}>{cell}</Table.Cell>
               })}
             </Table.Row>
