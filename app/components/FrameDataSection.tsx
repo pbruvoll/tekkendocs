@@ -1,5 +1,6 @@
 import { useMemo } from 'react'
 import { useSearchParams } from '@remix-run/react'
+import { type Move } from '~/types/Move'
 import { type MoveFilter } from '~/types/MoveFilter'
 import { type TableDataWithHeader } from '~/types/TableData'
 import { getFilterFromParams } from '~/utils/filterUtils'
@@ -10,15 +11,16 @@ import { FrameDataTable } from './FrameDataTable'
 
 export type FrameDataSectionProps = {
   table: TableDataWithHeader
+  moves: Move[]
 }
-export const FrameDataSection = ({ table }: FrameDataSectionProps) => {
+export const FrameDataSection = ({ table, moves }: FrameDataSectionProps) => {
   const [searchParams, setSearchParams] = useSearchParams()
 
   const filter: MoveFilter = useMemo(() => {
     return getFilterFromParams(searchParams)
   }, [searchParams])
 
-  const stances = useMemo(() => getStances(table.rows), [table.rows])
+  const stances = useMemo(() => getStances(moves), [moves])
 
   const setFilterValue = (key: string, value: string) => {
     setSearchParams(prev => {

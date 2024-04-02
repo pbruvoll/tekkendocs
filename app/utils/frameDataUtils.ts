@@ -217,9 +217,9 @@ export const sortRows = (
   return rows
 }
 
-export const getStances = (rows: string[][]): Set<string> => {
-  return rows.reduce((stanceSet, row) => {
-    const stance = getStance(row[0])
+export const getStances = (moves: Move[]): Set<string> => {
+  return moves.reduce((stanceSet, move) => {
+    const stance = getStance(move.command)
     if (stance) {
       stanceSet.add(stance)
     }
