@@ -191,6 +191,112 @@ export const filterRows = (
   })
 }
 
+export const filterRowsV2 = (
+  moves: Move[],
+  filter: MoveFilter | undefined,
+) => {
+  if (!filter) {
+    return moves
+  }
+
+  const filterFuncs: ((move: Move) => boolean)[] = []
+  if (filter.hitLevel) {
+    filterFuncs.push((move: Move) => {
+      const lastHitLevel = move.hitLevel?.split(',').pop()
+      return lastHitLevel?.toLowerCase() === filter.hitLevel
+    })
+  }
+
+  if (filter.blockFrameMax !== undefined) {
+    const blockFrameMax = filter.blockFrameMax
+    filterFuncs.push((move: Move) => {
+      const blockFrameStr = move.block
+      if (!blockFrameStr) {
+        return false
+      }
+      return parseInt(blockFrameStr) <= blockFrameMax
+    })
+  }
+
+  if (filter.blockFrameMin !== undefined) {
+    const blockFrameMin = filter.blockFrameMin
+    filterFuncs.push((move: Move) => {
+      const blockFrameStr = move.block
+      if (!blockFrameStr) {
+        return false
+      }
+      return parseInt(blockFrameStr) >= blockFrameMin
+    })
+  }
+
+  if (filter.hitFrameMax !== undefined) {
+    const hitFrameMax = filter.hitFrameMax
+    filterFuncs.push((move: Move) => {
+      const hitFrameStr = move.hit
+      if (!hitFrameStr) {
+        return false
+      }
+      return parseInt(hitFrameStr) <= hitFrameMax
+    })
+  }
+
+  if (filter.hitFrameMin !== undefined) {
+    const hitFrameMin = filter.hitFrameMin
+    filterFuncs.push((move: Move) => {
+      const hitFrameStr = move.hit
+      if (!hitFrameStr) {
+        return false
+      }
+      return parseInt(hitFrameStr) >= hitFrameMin
+    })
+  }
+
+  if (filter.numHitsMin !== undefined) {
+    const numHits = filter.numHitsMin
+    filterFuncs.push((move: Move) => {
+      const moveHits = (move.hitLevel || '').split(',').length
+      return moveHits >= numHits
+    })
+  }
+
+  if (filter.numHitsMax !== undefined) {
+    const numHits = filter.numHitsMax
+    filterFuncs.push((move: Move) => {
+      const moveHits = (move.hitLevel || '').split(',').length
+      return moveHits <= numHits
+    })
+  }
+
+  const propFilters = [
+    [filter.balconyBreak, isBalconyBreak],
+    [filter.heatEngager, isHeatEngager],
+    [filter.homing, isHomingMove],
+    [filter.tornado, isTornadoMove],
+    [filter.jails, jails],
+    [filter.chip, isChip],
+    [filter.removeRecoveryHealth, removesRecoverableHealth],
+  ] as const
+  propFilters.forEach(([filterValue, filterFunc]) => {
+    if (filterValue) {
+      filterFuncs.push((move: Move) => {
+        return filterFunc(move)
+      })
+    }
+  })
+
+  if (filter.stance && filter.stance.length > 0) {
+    const stance = filter.stance
+    filterFuncs.push((move: Move) => {
+      const commandStance = getStance(move.command)
+      return !!(commandStance && stance.includes(commandStance))
+    })
+  }
+
+  return moves.filter(move => {
+    return filterFuncs.every(ff => ff(move))
+  })
+}
+
 const isColumnNumericMap: Set<string> = new Set<string>([
   'damage',
   'start up frame',

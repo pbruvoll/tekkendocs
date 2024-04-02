@@ -7,7 +7,7 @@ import { getFilterFromParams } from '~/utils/filterUtils'
 import { getStances } from '~/utils/frameDataUtils'
 import { ContentContainer } from './ContentContainer'
 import { FrameDataFilterDialog } from './FrameDataFilterDialog'
-import { FrameDataTable } from './FrameDataTable'
+import { FrameDataTable } from './FrameDataTableV2'
 
 export type FrameDataSectionProps = {
   table: TableDataWithHeader
@@ -64,7 +64,12 @@ export const FrameDataSection = ({ table, moves }: FrameDataSectionProps) => {
         />
       </ContentContainer>
 
-      <FrameDataTable className="mt-3" table={table} filter={filter} />
+      <FrameDataTable
+        className="mt-3"
+        table={table}
+        moves={moves}
+        filter={filter}
+      />
     </>
   )
 }
