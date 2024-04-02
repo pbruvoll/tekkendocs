@@ -149,6 +149,27 @@ export default function Move() {
         </RadixLink>
         : {moveRow[0]}
       </Heading>
+      {move?.video && (
+        <>
+          <video
+            className="mb-2 mt-4"
+            src={`https://wavu.wiki/t/Special:Redirect/file/${move?.video}`}
+            width="640"
+            height="360"
+            style={{
+              maxWidth: '100%',
+              maxHeight: '100%',
+              width: '640px',
+              height: '360px',
+            }}
+            loop
+            controls
+            autoPlay
+            muted
+          />
+          <div className="text-sm">Video from Wavu wiki</div>
+        </>
+      )}
       <Table.Root variant="surface" className="mt-4" style={{ width: '100%' }}>
         <Table.Body>
           {headers.slice(1, 8).map((header, i) => {
@@ -175,22 +196,6 @@ export default function Move() {
           ></iframe>
           <Button onClick={handleReloadVideo}>Reload</Button>
         </>
-      )}
-      {move?.video && (
-        <video
-          src={`https://wavu.wiki/t/Special:Redirect/file/${move?.video}`}
-          width="640"
-          height="360"
-          style={{
-            maxWidth: '100%',
-            maxHeight: '100%',
-            width: '640px',
-            height: '360px',
-          }}
-          loop
-          autoPlay
-          muted
-        />
       )}
     </ContentContainer>
   )

@@ -120,9 +120,9 @@ def _convert_json_movelist(move_list_json: list) -> List[Move]:
                 _get_all_parent_values_of("damage", _normalize_data(move["title"]["parent"]),
                                           move_list_json) + _normalize_data(move["title"]["damage"]))
 
-            on_block = _normalize_data(move["title"]["block"])
-            on_hit = _normalize_data(_normalize_hit_ch_input(move["title"]["hit"]))
-            on_ch = _normalize_data(_normalize_hit_ch_input(move["title"]["ch"]))
+            on_block = _remove_html_tags(_normalize_data(move["title"]["block"]))
+            on_hit = _remove_html_tags(_normalize_data(_normalize_hit_ch_input(move["title"]["hit"])))
+            on_ch = _remove_html_tags(_normalize_data(_normalize_hit_ch_input(move["title"]["ch"])))
             startup = _normalize_data(move["title"]["startup"])
             recovery = _normalize_data(move["title"]["recv"])
             crush = _normalize_data(move["title"]["crush"])
@@ -131,16 +131,34 @@ def _convert_json_movelist(move_list_json: list) -> List[Move]:
 
             notes = html.unescape(_normalize_data(move["title"]["notes"]))
             notes = BeautifulSoup(notes, features="lxml").get_text()
-            notes = notes.replace("* \n", "* ")
+            notes = notes.replace("* \n", "* ").strip()
             tags = crush
+            if(crush) :
+                notes = "\n".join([notes, _crush_to_note(crush)])
 
+            notes = notes.strip()
             move = Move(id, name, input, target, damage, on_block, on_hit, on_ch, startup, recovery, crush, notes, "", tags, image, video, alias)
             move_list.append(move)
     return move_list
 
+def _crush_to_note(crush: str) : 
+    return crush.replace("ps", "Parry state ").replace("pc", "Power crush ").replace("js", "Low crush ").replace("cs", "High crush ")
+
 def _sort_json_movelist(move_list: List[Move]) :
     # a trick to generate a string for sorting frames. + is replaced by _ just to make "+" sort after ","
     return sorted(move_list, key=lambda x: f'{SORT_ORDER[_get_move_category(x)]:05d}' + x.input.replace("+", "|"))
+
+def _remove_html_tags(data: str) -> str:
+    "Process HTML content in JSON response to remove tags and unescape characters"
+
+    result = html.unescape(_normalize_data(data))
+    result = BeautifulSoup(result, features="lxml").get_text()
+    result = result.replace("* \n", "* ")
+    result = re.sub(r"(\n)+", "\n", result)
+    result = result.replace("'''", "")
+    result = result.replace("**", " *")  # hack/fix for nested Plainlists
+    result = result.strip()
+    return result
 
 def _get_move_category(move: Move) -> MoveCategory:
     if(move.target.startswith("t")) :
