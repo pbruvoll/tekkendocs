@@ -10,12 +10,10 @@ import { orderByKey } from '~/constants/sortConstants'
 import { type Move } from '~/types/Move'
 import { type MoveFilter } from '~/types/MoveFilter'
 import { type SortOrder } from '~/types/SortOrder'
-import { type TableDataWithHeader } from '~/types/TableData'
-import { filterRows, filterRowsV2, sortRows } from '~/utils/frameDataUtils'
+import { filterMoves, sortMoves } from '~/utils/frameDataUtils'
 import { commandToUrlSegment } from '~/utils/moveUtils'
 
 export type FrameDataTableProps = {
-  table: TableDataWithHeader
   moves: Move[]
   filter?: MoveFilter
   className?: string
@@ -28,16 +26,10 @@ const sortOrderIconMap: Record<SortOrder, React.ReactNode> = {
 }
 
 export const FrameDataTable = ({
-  table,
   moves,
   className,
   filter,
 }: FrameDataTableProps) => {
-  const maxRows = 8
-  const columnNums = (table.headers || table.rows[0])
-    .map((_, index) => index)
-    .slice(0, maxRows)
-  const tableHeaders = table.headers.slice(0, maxRows)
   const [searchParams] = useSearchParams()
   const location = useLocation()
   const orderByParamValue = searchParams.get(orderByKey) || ''
@@ -60,38 +52,42 @@ export const FrameDataTable = ({
   }
 
   const filteredMoves = useMemo(() => {
-    return filterRowsV2(moves, filter)
+    return filterMoves(moves, filter)
   }, [filter, moves])
 
-  const filteredRows = useMemo(() => {
-    return filterRows(table.rows, filter)
-  }, [filter, table.rows])
-
-  const sortedRows = useMemo(() => {
-    return sortRows(
-      filteredRows,
-      table.headers,
-      orderByColumnName,
+  const sortedMoves = useMemo(() => {
+    return sortMoves(
+      filteredMoves,
+      orderByColumnName as keyof Move,
       sortDirection,
     )
-  }, [orderByColumnName, table.headers, filteredRows, sortDirection])
+  }, [filteredMoves, orderByColumnName, sortDirection])
 
   /**  Frame data imported from wavu wiki might not have unique commands. This might brake sorting
    * since react does not update dom properly. Therefor we set key based on sorting to force React
    * to create a new table */
 
+  const tableHeaders: (keyof Move)[] = [
+    'command',
+    'hitLevel',
+    'damage',
+    'startup',
+    'block',
+    'hit',
+    'counterHit',
+    'notes',
+  ]
+
   return (
-    <Table.Root
-      variant="surface"
-      className={className}
-      key={orderByColumnName + sortDirection + JSON.stringify(filter)}
-    >
+    <Table.Root variant="surface" className={className}>
       <Table.Header>
         <Table.Row>
           {tableHeaders.map(h => (
             <Table.ColumnHeaderCell key={h}>
               <Link
                 to={createOrderLinkWithSearchParams(h.toLowerCase())}
+                preventScrollReset
+                replace
                 className="flex flex-wrap items-end"
               >
                 {h}
@@ -104,37 +100,30 @@ export const FrameDataTable = ({
         </Table.Row>
       </Table.Header>
       <Table.Body>
-        {sortedRows.map((row, i) => {
+        {sortedMoves.map(move => {
           return (
-            <Table.Row key={row[0]}>
-              {columnNums.map(j => {
-                const cell = row[j] || ''
-                if (j === 0) {
-                  //this is a command, so make it link
-                  return (
-                    <Table.Cell key={j}>
-                      <Link
-                        className="text-text-primary"
-                        style={{ textDecoration: 'none' }}
-                        to={commandToUrlSegment(cell)}
-                      >
-                        {cell}
-                      </Link>
-                    </Table.Cell>
-                  )
-                }
-                if (j === 7) {
-                  //notes column, perserve new lines
-                  return (
-                    <Table.Cell key={j}>
-                      {cell.split('\n').map((line, index) => (
-                        <div key={index}>{line}</div>
-                      ))}
-                    </Table.Cell>
-                  )
-                }
-                return <Table.Cell key={j}>{cell}</Table.Cell>
-              })}
+            <Table.Row key={move.moveNumber}>
+              <Table.Cell>
+                <Link
+                  className="text-text-primary"
+                  style={{ textDecoration: 'none' }}
+                  to={commandToUrlSegment(move.command)}
+                >
+                  {move.command}
+                </Link>
+              </Table.Cell>
+              <Table.Cell>{move.hitLevel}</Table.Cell>
+              <Table.Cell>{move.damage}</Table.Cell>
+              <Table.Cell>{move.startup}</Table.Cell>
+              <Table.Cell>{move.block}</Table.Cell>
+              <Table.Cell>{move.hit}</Table.Cell>
+              <Table.Cell>{move.counterHit}</Table.Cell>
+              <Table.Cell>
+                {move.notes &&
+                  move.notes
+                    .split('\n')
+                    .map((line, index) => <div key={index}>{line}</div>)}
+              </Table.Cell>
             </Table.Row>
           )
         })}

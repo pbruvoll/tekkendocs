@@ -64,12 +64,7 @@ export const FrameDataSection = ({ table, moves }: FrameDataSectionProps) => {
         />
       </ContentContainer>
 
-      <FrameDataTable
-        className="mt-3"
-        table={table}
-        moves={moves}
-        filter={filter}
-      />
+      <FrameDataTable className="mt-3" moves={moves} filter={filter} />
     </>
   )
 }

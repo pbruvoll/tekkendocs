@@ -1,9 +1,21 @@
+import { type Move } from '~/types/Move'
+
 export const sortRowsByString = (
   rows: string[][],
   index: number,
   asc: boolean,
 ): string[][] => {
   return [...rows].sort((a, b) => compareStrings(a[index], b[index], asc))
+}
+
+export const sortMovesByString = (
+  moves: Move[],
+  toString: (move: Move) => string,
+  asc: boolean,
+): Move[] => {
+  return [...moves].sort((a, b) =>
+    compareStrings(toString(a), toString(b), asc),
+  )
 }
 
 const compareNumberStrings = (a: string, b: string, asc: boolean) => {
@@ -44,4 +56,14 @@ export const sortRowsByNumber = (
   asc: boolean,
 ): string[][] => {
   return [...rows].sort((a, b) => compareNumberStrings(a[index], b[index], asc))
+}
+
+export const sortMovesByNumber = (
+  moves: Move[],
+  toString: (move: Move) => string,
+  asc: boolean,
+): Move[] => {
+  return [...moves].sort((a, b) =>
+    compareNumberStrings(toString(a), toString(b), asc),
+  )
 }

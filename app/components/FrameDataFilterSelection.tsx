@@ -34,6 +34,9 @@ export const FrameDataFilterSelection = ({
     tornado,
     jails,
     chip,
+    highCrush,
+    lowCrush,
+    powerCrush,
     stance: stanceFilter,
     removeRecoveryHealth,
   } = filter
@@ -159,6 +162,36 @@ export const FrameDataFilterSelection = ({
           >
             Negative
           </Button>
+        </div>
+      </section>
+      <section className="flex flex-col gap-3">
+        <Text as="div" size="2" mb="1" weight="bold">
+          Crush
+        </Text>
+        <div className="flex flex-wrap gap-3">
+          {(
+            [
+              [filterKey.LowCrush, lowCrush, 'Low crush'],
+              [filterKey.HighCrush, highCrush, 'High crush'],
+              [filterKey.PowerCrush, powerCrush, 'Power crush'],
+            ] as const
+          ).map(([key, value, displayName]) => {
+            return (
+              <Button
+                key={key}
+                variant={value ? 'solid' : 'outline'}
+                onClick={() => {
+                  if (value) {
+                    removeFilterValue(key)
+                  } else {
+                    setFilterValue(key, '')
+                  }
+                }}
+              >
+                {displayName}
+              </Button>
+            )
+          })}
         </div>
       </section>
       <section className="flex flex-col gap-3">

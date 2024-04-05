@@ -1,4 +1,3 @@
-import { json } from '@remix-run/node'
 import { useMatches } from '@remix-run/react'
 import { type CharacterFrameDataPage } from '~/types/CharacterFrameDataPage'
 import { type RouteHandle } from '~/types/RouteHandle'

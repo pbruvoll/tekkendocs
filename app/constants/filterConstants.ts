@@ -12,6 +12,9 @@ export const filterKey = {
   Tornado: 'tonrnado',
   Jails: 'jails',
   Chip: 'chip',
+  HighCrush: 'cs',
+  LowCrush: 'js',
+  PowerCrush: 'pc',
   Stance: 'stance',
   RemoveRecoveryHealth: 'removeRecoveryHealth',
 } as const
