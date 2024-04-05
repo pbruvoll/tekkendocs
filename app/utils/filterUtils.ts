@@ -25,6 +25,9 @@ export const getFilterFromParams = (
     numHitsMin: getSearchParamNumber(searchParams, filterKey.NumHitsMin),
     numHitsMax: getSearchParamNumber(searchParams, filterKey.NumHitsMax),
     stance: getSearchParamStringList(searchParams, filterKey.Stance),
+    highCrush: getSearchParamBoolean(searchParams, filterKey.HighCrush),
+    lowCrush: getSearchParamBoolean(searchParams, filterKey.LowCrush),
+    powerCrush: getSearchParamBoolean(searchParams, filterKey.PowerCrush),
     removeRecoveryHealth: getSearchParamBoolean(
       searchParams,
       filterKey.RemoveRecoveryHealth,

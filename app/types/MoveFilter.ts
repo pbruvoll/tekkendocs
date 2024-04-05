@@ -13,6 +13,9 @@ export type MoveFilter = {
   jails?: boolean
   numHitsMin?: number
   numHitsMax?: number
+  highCrush?: boolean
+  lowCrush?: boolean
+  powerCrush?: boolean
   removeRecoveryHealth?: boolean
   chip?: boolean
   stance?: string[]

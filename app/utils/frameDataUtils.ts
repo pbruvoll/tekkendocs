@@ -3,7 +3,12 @@ import { type Move } from '~/types/Move'
 import { type MoveFilter } from '~/types/MoveFilter'
 import { type SortOrder } from '~/types/SortOrder'
 import { type TableData } from '~/types/TableData'
-import { sortRowsByNumber, sortRowsByString } from './sortingUtils'
+import {
+  sortMovesByNumber,
+  sortMovesByString,
+  sortRowsByNumber,
+  sortRowsByString,
+} from './sortingUtils'
 import { tagStringToRecord } from './tagUtils'
 
 export const frameDataTableToJson = (normalFrameData: TableData): Move[] => {
@@ -83,6 +88,10 @@ export const isChip = (move: Move) => {
 
 export const removesRecoverableHealth = (move: Move) => {
   return /Erases opponent/i.test(move.notes || '')
+}
+
+export const hasTag = (tag: string, move: Move) => {
+  return move.tags?.[tag] !== undefined
 }
 
 export const filterRows = (
@@ -191,6 +200,112 @@ export const filterRows = (
   })
 }
 
+export const filterMoves = (moves: Move[], filter: MoveFilter | undefined) => {
+  if (!filter) {
+    return moves
+  }
+
+  const filterFuncs: ((move: Move) => boolean)[] = []
+  if (filter.hitLevel) {
+    filterFuncs.push((move: Move) => {
+      const lastHitLevel = move.hitLevel?.split(',').pop()
+      return lastHitLevel?.toLowerCase() === filter.hitLevel
+    })
+  }
+
+  if (filter.blockFrameMax !== undefined) {
+    const blockFrameMax = filter.blockFrameMax
+    filterFuncs.push((move: Move) => {
+      const blockFrameStr = move.block
+      if (!blockFrameStr) {
+        return false
+      }
+      return parseInt(blockFrameStr) <= blockFrameMax
+    })
+  }
+
+  if (filter.blockFrameMin !== undefined) {
+    const blockFrameMin = filter.blockFrameMin
+    filterFuncs.push((move: Move) => {
+      const blockFrameStr = move.block
+      if (!blockFrameStr) {
+        return false
+      }
+      return parseInt(blockFrameStr) >= blockFrameMin
+    })
+  }
+
+  if (filter.hitFrameMax !== undefined) {
+    const hitFrameMax = filter.hitFrameMax
+    filterFuncs.push((move: Move) => {
+      const hitFrameStr = move.hit
+      if (!hitFrameStr) {
+        return false
+      }
+      return parseInt(hitFrameStr) <= hitFrameMax
+    })
+  }
+
+  if (filter.hitFrameMin !== undefined) {
+    const hitFrameMin = filter.hitFrameMin
+    filterFuncs.push((move: Move) => {
+      const hitFrameStr = move.hit
+      if (!hitFrameStr) {
+        return false
+      }
+      return parseInt(hitFrameStr) >= hitFrameMin
+    })
+  }
+
+  if (filter.numHitsMin !== undefined) {
+    const numHits = filter.numHitsMin
+    filterFuncs.push((move: Move) => {
+      const moveHits = (move.hitLevel || '').split(',').length
+      return moveHits >= numHits
+    })
+  }
+
+  if (filter.numHitsMax !== undefined) {
+    const numHits = filter.numHitsMax
+    filterFuncs.push((move: Move) => {
+      const moveHits = (move.hitLevel || '').split(',').length
+      return moveHits <= numHits
+    })
+  }
+
+  const propFilters = [
+    [filter.balconyBreak, isBalconyBreak],
+    [filter.heatEngager, isHeatEngager],
+    [filter.homing, isHomingMove],
+    [filter.tornado, isTornadoMove],
+    [filter.jails, jails],
+    [filter.chip, isChip],
+    [filter.removeRecoveryHealth, removesRecoverableHealth],
+    [filter.powerCrush, (move: Move) => hasTag('pc', move)],
+    [filter.highCrush, (move: Move) => hasTag('cs', move)],
+    [filter.lowCrush, (move: Move) => hasTag('js', move)],
+  ] as const
+  propFilters.forEach(([filterValue, filterFunc]) => {
+    if (filterValue) {
+      filterFuncs.push((move: Move) => {
+        return filterFunc(move)
+      })
+    }
+  })
+
+  if (filter.stance && filter.stance.length > 0) {
+    const stance = filter.stance
+    filterFuncs.push((move: Move) => {
+      const commandStance = getStance(move.command)
+      return !!(commandStance && stance.includes(commandStance))
+    })
+  }
+
+  return moves.filter(move => {
+    return filterFuncs.every(ff => ff(move))
+  })
+}
+
 const isColumnNumericMap: Set<string> = new Set<string>([
   'damage',
   'start up frame',
@@ -217,9 +332,60 @@ export const sortRows = (
   return rows
 }
 
-export const getStances = (rows: string[][]): Set<string> => {
-  return rows.reduce((stanceSet, row) => {
-    const stance = getStance(row[0])
+export const sortMoves = (
+  moves: Move[],
+  orderByProp: keyof Move | undefined,
+  sortDirection: SortOrder,
+) => {
+  if (!orderByProp) {
+    return moves
+  }
+  const asc = sortDirection === 'asc'
+  switch (orderByProp) {
+    case 'command': {
+      return sortMovesByString(moves, (move: Move) => move.command, asc)
+    }
+    case 'hitLevel': {
+      return sortMovesByString(
+        moves,
+        (move: Move) => move.hitLevel.split(',').pop() || '',
+        asc,
+      )
+    }
+    case 'damage': {
+      return sortMovesByNumber(
+        moves,
+        (move: Move) => move.damage.split(',').pop() || '',
+        asc,
+      )
+    }
+    case 'startup': {
+      return sortMovesByNumber(moves, (move: Move) => move.startup, asc)
+    }
+    case 'block': {
+      return sortMovesByNumber(moves, (move: Move) => move.block, asc)
+    }
+    case 'hit': {
+      return sortMovesByNumber(moves, (move: Move) => move.hit, asc)
+    }
+    case 'counterHit': {
+      return sortMovesByNumber(moves, (move: Move) => move.counterHit, asc)
+    }
+    case `notes`: {
+      return sortMovesByNumber(
+        moves,
+        (move: Move) =>
+          move.tags?.['js'] || move.tags?.['cs'] || move.tags?.['pc'] || '',
+        asc,
+      )
+    }
+  }
+  return moves
+}
+
+export const getStances = (moves: Move[]): Set<string> => {
+  return moves.reduce((stanceSet, move) => {
+    const stance = getStance(move.command)
     if (stance) {
       stanceSet.add(stance)
     }

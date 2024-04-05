@@ -3,6 +3,7 @@ import { Outlet } from '@remix-run/react'
 import { environment } from '~/constants/environment.server'
 import { SheetServiceMock } from '~/mock/SheetServiceMock'
 import { SheetServiceImpl } from '~/services/sheetServiceImpl.server'
+import { type CharacterFrameDataPage } from '~/types/CharacterFrameDataPage'
 import type { Game } from '~/types/Game'
 import { type Move } from '~/types/Move'
 import { type SheetService } from '~/types/SheetService'
@@ -28,17 +29,19 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
     ? new SheetServiceMock()
     : new SheetServiceImpl()
 
-  const data = await service.getCharacterData(game, characterId, 'frameData')
+  const sheetData = await service.getCharacterData(
+    game,
+    characterId,
+    'frameData',
+  )
 
-  const { tables } = data
+  const { tables } = sheetData
 
   const normalMoves = tables.find(t => t.name === 'frames_normal')
   const moves: Move[] = normalMoves ? frameDataTableToJson(normalMoves) : []
+  const data: CharacterFrameDataPage = { ...sheetData, moves }
 
-  return json(
-    { ...data, moves },
-    { headers: getCacheControlHeaders({ seconds: 60 * 5 }) },
-  )
+  return json(data, { headers: getCacheControlHeaders({ seconds: 60 * 5 }) })
 }
 
 export const handle = {

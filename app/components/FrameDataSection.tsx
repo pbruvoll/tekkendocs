@@ -1,24 +1,26 @@
 import { useMemo } from 'react'
 import { useSearchParams } from '@remix-run/react'
+import { type Move } from '~/types/Move'
 import { type MoveFilter } from '~/types/MoveFilter'
 import { type TableDataWithHeader } from '~/types/TableData'
 import { getFilterFromParams } from '~/utils/filterUtils'
 import { getStances } from '~/utils/frameDataUtils'
 import { ContentContainer } from './ContentContainer'
 import { FrameDataFilterDialog } from './FrameDataFilterDialog'
-import { FrameDataTable } from './FrameDataTable'
+import { FrameDataTable } from './FrameDataTableV2'
 
 export type FrameDataSectionProps = {
   table: TableDataWithHeader
+  moves: Move[]
 }
-export const FrameDataSection = ({ table }: FrameDataSectionProps) => {
+export const FrameDataSection = ({ table, moves }: FrameDataSectionProps) => {
   const [searchParams, setSearchParams] = useSearchParams()
 
   const filter: MoveFilter = useMemo(() => {
     return getFilterFromParams(searchParams)
   }, [searchParams])
 
-  const stances = useMemo(() => getStances(table.rows), [table.rows])
+  const stances = useMemo(() => getStances(moves), [moves])
 
   const setFilterValue = (key: string, value: string) => {
     setSearchParams(prev => {
@@ -62,7 +64,7 @@ export const FrameDataSection = ({ table }: FrameDataSectionProps) => {
         />
       </ContentContainer>
 
-      <FrameDataTable className="mt-3" table={table} filter={filter} />
+      <FrameDataTable className="mt-3" moves={moves} filter={filter} />
     </>
   )
 }

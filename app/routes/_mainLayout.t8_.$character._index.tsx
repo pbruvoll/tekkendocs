@@ -1,20 +1,18 @@
 import { Pencil1Icon } from '@radix-ui/react-icons'
-import { Heading, Link as RadixLink, Table } from '@radix-ui/themes'
+import { Heading } from '@radix-ui/themes'
 import type { HeadersFunction } from '@remix-run/node'
-import { Link, type MetaFunction, NavLink } from '@remix-run/react'
+import { type MetaFunction, NavLink } from '@remix-run/react'
 import { ContentContainer } from '~/components/ContentContainer'
 import { FrameDataSection } from '~/components/FrameDataSection'
 import { orderByKey } from '~/constants/sortConstants'
-import { tableIdToDisplayName } from '~/constants/tableIdToDisplayName'
 import { useFrameData } from '~/hooks/useFrameData'
-import type { CharacterFrameData } from '~/types/CharacterFrameData'
+import { type CharacterFrameDataPage } from '~/types/CharacterFrameDataPage'
 import type { RouteHandle } from '~/types/RouteHandle'
 import { type SortOrder } from '~/types/SortOrder'
 import { type TableDataWithHeader } from '~/types/TableData'
 import { filterToDescription, getFilterFromParams } from '~/utils/filterUtils'
 import { filterRows, sortRows } from '~/utils/frameDataUtils'
 import { getCacheControlHeaders } from '~/utils/headerUtils'
-import { commandToUrlSegment } from '~/utils/moveUtils'
 import { generateMetaTags } from '~/utils/seoUtils'
 
 export const headers: HeadersFunction = args => ({
@@ -40,7 +38,7 @@ export const meta: MetaFunction = ({ data, params, matches, location }) => {
       },
     ]
   }
-  const { characterName, tables } = frameData as CharacterFrameData
+  const { characterName, tables } = frameData as CharacterFrameDataPage
   const characterId = characterName.toLocaleLowerCase()
   const characterTitle =
     characterName[0].toUpperCase() + characterName.substring(1)
@@ -102,8 +100,8 @@ export const meta: MetaFunction = ({ data, params, matches, location }) => {
 }
 
 export default function Index() {
-  const { tables, editUrl, characterName } = useFrameData()
-  if (tables.length === 0) {
+  const { tables, editUrl, characterName, moves } = useFrameData()
+  if (moves.length === 0) {
     return <div>Invalid or no data</div>
   }
   return (
@@ -131,67 +129,16 @@ export default function Index() {
       </ContentContainer>
       <ContentContainer disableXPadding>
         {tables.map(table => {
-          const columnNums = (table.headers || table.rows[0]).map(
-            (_, index) => index,
-          )
           if (table.headers && table.name === 'frames_normal') {
             return (
               <FrameDataSection
                 key={table.name}
                 table={table as TableDataWithHeader}
+                moves={moves}
               />
             )
           }
-          return (
-            <section key={table.name} className="mt-8">
-              <ContentContainer>
-                <Heading as="h2" mb="4" size="4">
-                  {tableIdToDisplayName[table.name]}
-                </Heading>
-              </ContentContainer>
-              <Table.Root variant="surface" style={{ width: '100%' }}>
-                {table.headers && (
-                  <Table.Header>
-                    <Table.Row>
-                      {table.headers.map(h => (
-                        <Table.ColumnHeaderCell key={h}>
-                          {h}
-                        </Table.ColumnHeaderCell>
-                      ))}
-                    </Table.Row>
-                  </Table.Header>
-                )}
-                <Table.Body>
-                  {table.rows.map((row, i) => {
-                    return (
-                      <Table.Row key={row[0]}>
-                        {columnNums.map(j => {
-                          const cell = row[j] || ''
-                          if (j === 0 && table.name === 'frames_normal') {
-                            //this is a command, so make it link
-                            return (
-                              <Table.Cell key={j}>
-                                <RadixLink asChild>
-                                  <Link
-                                    className="text-[#ab6400]"
-                                    style={{ textDecoration: 'none' }}
-                                    to={commandToUrlSegment(cell)}
-                                  >
-                                    {cell}
-                                  </Link>
-                                </RadixLink>
-                              </Table.Cell>
-                            )
-                          }
-                          return <Table.Cell key={j}>{cell}</Table.Cell>
-                        })}
-                      </Table.Row>
-                    )
-                  })}
-                </Table.Body>
-              </Table.Root>
-            </section>
-          )
+          return <div key={table.name}>Unknown table name {table.name}</div>
         })}
       </ContentContainer>
     </>

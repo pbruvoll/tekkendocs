@@ -1,0 +1,133 @@
+import { useMemo } from 'react'
+import {
+  CaretDownIcon,
+  CaretSortIcon,
+  CaretUpIcon,
+} from '@radix-ui/react-icons'
+import { Table } from '@radix-ui/themes'
+import { Link, useLocation, useSearchParams } from '@remix-run/react'
+import { orderByKey } from '~/constants/sortConstants'
+import { type Move } from '~/types/Move'
+import { type MoveFilter } from '~/types/MoveFilter'
+import { type SortOrder } from '~/types/SortOrder'
+import { filterMoves, sortMoves } from '~/utils/frameDataUtils'
+import { commandToUrlSegment } from '~/utils/moveUtils'
+
+export type FrameDataTableProps = {
+  moves: Move[]
+  filter?: MoveFilter
+  className?: string
+}
+
+const sortOrderIconMap: Record<SortOrder, React.ReactNode> = {
+  '': <CaretSortIcon width="1.5rem" height="1.5rem" />,
+  asc: <CaretDownIcon width="1.5rem" height="1.5rem" />,
+  desc: <CaretUpIcon width="1.5rem" height="1.5rem" />,
+}
+
+export const FrameDataTable = ({
+  moves,
+  className,
+  filter,
+}: FrameDataTableProps) => {
+  const [searchParams] = useSearchParams()
+  const location = useLocation()
+  const orderByParamValue = searchParams.get(orderByKey) || ''
+  const [orderByColumnName, orderDirectionName] = orderByParamValue.split('_')
+
+  const sortDirection: SortOrder = orderDirectionName === 'asc' ? 'asc' : 'desc'
+
+  const createOrderLinkWithSearchParams = (columnName: string) => {
+    const searchParamsCopy = new URLSearchParams(searchParams.toString())
+    if (columnName === orderByColumnName) {
+      if (sortDirection === 'desc') {
+        searchParamsCopy.delete(orderByKey)
+      } else {
+        searchParamsCopy.set(orderByKey, columnName + '_desc')
+      }
+    } else {
+      searchParamsCopy.set(orderByKey, columnName + '_asc')
+    }
+    return location.pathname + '?' + searchParamsCopy.toString()
+  }
+
+  const filteredMoves = useMemo(() => {
+    return filterMoves(moves, filter)
+  }, [filter, moves])
+
+  const sortedMoves = useMemo(() => {
+    return sortMoves(
+      filteredMoves,
+      orderByColumnName as keyof Move,
+      sortDirection,
+    )
+  }, [filteredMoves, orderByColumnName, sortDirection])
+
+  /**  Frame data imported from wavu wiki might not have unique commands. This might brake sorting
+   * since react does not update dom properly. Therefor we set key based on sorting to force React
+   * to create a new table */
+
+  const tableHeaders: (keyof Move)[] = [
+    'command',
+    'hitLevel',
+    'damage',
+    'startup',
+    'block',
+    'hit',
+    'counterHit',
+    'notes',
+  ]
+
+  return (
+    <Table.Root variant="surface" className={className}>
+      <Table.Header>
+        <Table.Row>
+          {tableHeaders.map(h => (
+            <Table.ColumnHeaderCell key={h}>
+              <Link
+                to={createOrderLinkWithSearchParams(h.toLowerCase())}
+                preventScrollReset
+                replace
+                className="flex flex-wrap items-end"
+              >
+                {h}
+                {h.toLowerCase() === orderByColumnName
+                  ? sortOrderIconMap[sortDirection]
+                  : sortOrderIconMap['']}
+              </Link>
+            </Table.ColumnHeaderCell>
+          ))}
+        </Table.Row>
+      </Table.Header>
+      <Table.Body>
+        {sortedMoves.map(move => {
+          return (
+            <Table.Row key={move.moveNumber}>
+              <Table.Cell>
+                <Link
+                  className="text-text-primary"
+                  style={{ textDecoration: 'none' }}
+                  to={commandToUrlSegment(move.command)}
+                >
+                  {move.command}
+                </Link>
+              </Table.Cell>
+              <Table.Cell>{move.hitLevel}</Table.Cell>
+              <Table.Cell>{move.damage}</Table.Cell>
+              <Table.Cell>{move.startup}</Table.Cell>
+              <Table.Cell>{move.block}</Table.Cell>
+              <Table.Cell>{move.hit}</Table.Cell>
+              <Table.Cell>{move.counterHit}</Table.Cell>
+              <Table.Cell>
+                {move.notes &&
+                  move.notes
+                    .split('\n')
+                    .map((line, index) => <div key={index}>{line}</div>)}
+              </Table.Cell>
+            </Table.Row>
+          )
+        })}
+      </Table.Body>
+    </Table.Root>
+  )
+}
