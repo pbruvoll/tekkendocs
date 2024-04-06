@@ -28,6 +28,6 @@ export const getSearchParamStringList = <T extends string>(
   searchParams: URLSearchParams,
   key: string,
 ): T[] | undefined => {
-  const list = searchParams.getAll(key);
-  return list.length ? list as T[] : undefined
+  const list = searchParams.getAll(key)
+  return list.length ? (list as T[]) : undefined
 }
