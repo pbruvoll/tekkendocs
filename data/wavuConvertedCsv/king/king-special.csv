@@ -38,9 +38,9 @@ R.df+1+2;m;55;i20;-15;+0d;;"* Armor all attacks and ignore throws.
 * Combo from 1st hit.";;;
 3;h;25;i17;-14;+17a;;"* Balcony Break
 * Tracks left side but unsafe.";;;
-3+4;;;;;;;"* Hop over low attacks.
-* Hold to continue spinning and power up strikes, but King doesn't change direction.
-* King gets dizzy and falls after 6th spin.";;;
+3+4;;;;;;;"* Hold to continue spinning and power up strikes, but King doesn't change direction.
+* King gets dizzy and falls after 6th spin.
+Low crush 6~21 fs22~24";js6~21 fs22~24;;
 4;h;20;i13;-5;+6;+31d;* Knocks down on CH for dash OTG throw.;;;
 f+1+2;h;23;i16~17;+0;+10d;;;;;
 f+1+4;m;21;i17~19;+3;+7s;;* Forces standing on hit.;;;
@@ -66,8 +66,8 @@ f+2+3;m;27;i20~24;-9;+17g/+9d;;"* Heat Engager
 f+3;m;18;i15~16;-8;+1;+9s;* Only forces standing on CH.;;;
 f+3:1+2;m,t;18,20;;;+1d;;"* Input during f+3 hit stun.
 * Shifts to throw on front grounded hit.";;;
-f+3+4;;;;;;;"* Hold b to stop running, able to block high.
-* Gains armor during Heat. 
+f+3+4;;;;;;;"* Cancel to r25 with b on frame 34~ at the earliest, able to block high.
+* Gains armor during Heat.
 * Partially uses remaining Heat time (same for uf+3+4 / db+1+2,3+4 / b+1+2 ).";;;
 f+4;m;25;i18~20;-9;+12a(+3);;"Balcony Break
 Homing
@@ -166,8 +166,8 @@ b+3;h;23;i16~18;-10/-5;+39d;;"* Tornado
 Power Crush";Power Crush;;
 b+3:1+2;h,t;2320;;;+0d;;"* Shifts to throw on front grounded hit.
 * Input 1+2 before b+3 hits.";;;
-b+3+4;;;;;;;"* Hop over low attacks.
-* Cannot be held to continue spinning.";;;
+b+3+4;;;;;;;"* Cannot be held to continue spinning.
+Low crush 6~21 fs22~24";js6~21 fs22~24;;
 b+4;h;25;i17~21;+2;+14g;;"* Balcony Break
 * Shifts into BT stance.";;;
 ub+4;m;15;i15;-13;+19a(+9);+33a(+23);* Jump straight up knee, very short range.;;;
@@ -264,12 +264,12 @@ JGR.1;m;21;i16~17;-8;+39d/+75a(+59);;"* In heat it becomes Tornado on grounded h
 JGR.2;h;26;i18~19;+3/+6/+18c;+4d;;"* Chip damage on block.
 * In heat it becomes +6 on block, and forces crouching +18 near wall.
 * Partially uses remaining Heat time.";;;
-JGR.2+3;m,t;20,15;i21~43;-16c~+2c;-19c~+3c/-5d;;* Throw when hit standing in front close range.;;;
-JGR.3;m;30;i22~23;-9;+11d(+1);;"* Balcony Break
+JGR.2+3;M,t;20,15;i21~43;-16c~+2c;-19c~+3c/-5d;;"* Throw when hit standing in front close range.
+* King recovers off axis";;;
+JGR.3;m;30;i22~23;-9;+11d (+1);;"* Balcony Break
 * Homing
-Low Crush";Low Crush;;
-JGR.4;l;20;i20~24;-21;+0c;;"*Forces Crouching on hit.
-Low Crush";Low Crush;;
+Low crush 11~30 fs31~33";js11~30 fs31~33;;
+JGR.4;L;20;i20~24;-21;+0c;;Low crush 7~23 fs24~;js7~23 fs24~;;
 JGS.1;h;21/25/31;i17~18/i19~20;-7/-1;+47d/+53d;;"* Crumple on hit.
 * On block / hit / startup increases up to 2nd spin.
 * Damage increase up to 3rd spin.";;;

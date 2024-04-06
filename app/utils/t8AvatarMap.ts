@@ -5,6 +5,7 @@ import bryan from '~/images/t8/avatars/bryan-128.webp'
 import claudio from '~/images/t8/avatars/claudio-128.webp'
 import devilJin from '~/images/t8/avatars/devil-jin-128.webp'
 import dragunov from '~/images/t8/avatars/dragunov-128.webp'
+import eddy from '~/images/t8/avatars/eddy-128.webp'
 import feng from '~/images/t8/avatars/feng-128.webp'
 import hwoarang from '~/images/t8/avatars/hwoarang-128.webp'
 import jack8 from '~/images/t8/avatars/jack-8-128.webp'
@@ -39,6 +40,7 @@ export const t8AvatarMap: Record<string, string> = {
   bryan,
   'devil-jin': devilJin,
   dragunov,
+  eddy,
   feng,
   hwoarang,
   'jack-8': jack8,
