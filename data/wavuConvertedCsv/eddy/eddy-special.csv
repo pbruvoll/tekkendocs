@@ -63,9 +63,10 @@ f+4,3+4;m,L;13,14;,i22~24;-24c;+12a;;;;;
 df+1;m;10;i13~14;-3;+6;;;;;
 df+1,3;m,h;10,21;,i26~27;-7;+22a(+5);;"* Tornado
 * Balcony Break";;;
-df+2;m;19;i14~15;-5;+6;KND;;;;
+df+2;m;19;i14~15;-5;+6;+21a(+4);;;;
 df+3;m;17;i15~18;-18;+31a(+21);;Tornado;;;
-df+3+4;m,m;10,11;i18~19;-3;+1;;Spike;;;
+df+3+4;m,m;10,11;i18~19;-3 -2;+23a;;"* Spike
+* If only the second attack hits it launches";;;
 df+4;L;14;i18;-13c;+0;;;;;
 d+2;m;10;i17~18;-9;+0;;;;;
 d+2,3;m,m;10,20;,i24~25;-4c;+5c;;Shift to RLX;;;
@@ -75,7 +76,8 @@ d+4;L;10;i15~16;-16c;-5;;Shift to FC;;;
 d+4,3;L,m;10,20;i21~22;-13c;+12c;Launch;;;;
 db+1+2;m;20;i30;-8;+12c;;;;;
 db+2;L;10;i18~19;-18c;-7;;;;;
-db+2,3;L,m;10,23;,i27~28;-18;+64(+49);;Tornado;;;
+db+2,3;L,m;10,23;,i27~28;-18;+64(+49);;"* Tornado
+* Combos from 1st CH";;;
 db+3;L;21;i28~29;-14c;+5c;+21a;;;;
 db+3+4;m,m;12,12;i20~22;-6;+1;;Shift to FC -6 on block & +1 on hit;;;
 db+3+4,4;m,m,m;12,12,10;,i21~22;-8;+5;;;;;
@@ -96,7 +98,8 @@ b+2,3;m,m;12,13;,i22~23;-11;+4;;Combos from 1st hit;;;
 b+2,3,3;m,m,m;12,13,25;,i33~35;-14;+13a(-4);;Balcony Break;;;
 b+2,4;m,h;12,23;,i25~26;-7;+14a(+5);;;;;
 b+3;m;10;i13~14;-9;+8;;;;;
-b+3,3;m,m;10,21;,i26~28;-14;+33a(+23);;Shift to RLX;;;
+b+3,3;m,m;10,21;,i26~28;-14;+33a(+23);;"* Shift to RLX
+* Combos on 1st CH";;;
 b+3+4;h;28;i20~21;-7;+21a(+11);;"* Heat Engager
 
 * Balcony Break
@@ -121,7 +124,7 @@ u+4~4;h;27;i18~20;+8;+42d(-16);;Balcony Break;;;
 uf+2;m;21;i22~23;-13;+32a(+24);;Balcony Break;;;
 uf+3;m;15;i26~28;-10c;-8c;+12a;Can shift to HSP with input F -14 -12 +8a;;;
 uf+3,3;m,m;15,20;,i21~24;-18;+31a(+21);;Tornado;;;
-uf+3,4;m,L;15,10;i24~25;-14c;+7;;;;;
+uf+3,4;m,L;15,10;i24~25;-14c;+7;+73a(+57);;;;
 uf+3+4;m,h;10,20;i17~18;-13;+17a;;Balcony Break on air hit;;;
 uf+4;m;20;i22~24;-9;+12;;"* Homing
 * Balcony Break
@@ -161,7 +164,7 @@ FC.df+3;m;20;i22~23;+6;+9c;+41a;"* Shift to RLX
 * 6 Chip damage on block";;;
 FC.df+4;L;25;i24~25;-21c;+9;+30a;Shift to HSP;;;
 FUFT.b+3+4;m;25;i16-28;-15~-27;+2a(-10~)+18a(+6);;;;;
-HSP.1;m;21;i23~25;+5;+8c;;"* Shift to RLX
+HSP.1;m;21;i23~25;+5;+8c;+19d;"* Shift to RLX
 * 6 Chip damage on block";;;
 HSP.1+2;m;23;i22~23;-12;+15a;;"* Balcony Break
 * Absorb an attack to power up
@@ -181,7 +184,7 @@ HSP.4,2;m,m;10,21;,i23~24;-13;+12a(+3);;"* Tornado
 * Balcony Break
 * Combos from 1st hit";;;
 HSP.4,2~3;m,m;10,20;,i28~30;+4c;+14d;;6 Chip damage on block;;;
-HSP.b+3;m;20;i36~37;-12;+13a;;Balcony Break;;;
+HSP.b+3;m;20;i36~37;-12;+13a;+58a;Balcony Break;;;
 HSP.n,d;;;;;;;Shift to RLX;;;
 HSP.n,f;;;;;;;Shift to HSP;;;
 MD1.HSP.3+4;L,m,m;6,6,18;i21~22;-13;+4c;;;;;
@@ -203,7 +206,7 @@ RLX.2,4,4;m,h,m;16,17,25;,i32~33;-14;+15a(+6);;Balcony Break;;;
 RLX.3;L;12;i16~17;-26c;-4;+27a;Shift to FC;;;
 RLX.3,3;L,m;12,27;,i25~26;-13;-2(-3);;"* Only combos on clean hit
 * Mandinga level increases by 1 on hit";;;
-RLX.3+4;;;;;;;Tornado;;;
+RLX.3+4;m;24;i17~18;-18;+29a(+19);;Tornado;;;
 RLX.4;m;14;i15~16;-8;+8;;;;;
 RLX.4,3;m,m;14,25;,i28~30;-13;+16a/HE;;"* Heat Engager
 
