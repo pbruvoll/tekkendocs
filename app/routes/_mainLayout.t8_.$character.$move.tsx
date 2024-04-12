@@ -152,15 +152,10 @@ export default function Move() {
       {move?.video && (
         <>
           <video
-            className="mb-2 mt-4"
+            className="mb-2 mt-4 aspect-video max-w-full"
             src={`https://wavu.wiki/t/Special:Redirect/file/${move?.video}`}
-            width="640"
-            height="360"
             style={{
-              maxWidth: '100%',
-              maxHeight: '100%',
               width: '640px',
-              height: '360px',
             }}
             loop
             controls
