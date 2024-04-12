@@ -3,6 +3,7 @@ import {
   CaretDownIcon,
   CaretSortIcon,
   CaretUpIcon,
+  VideoIcon,
 } from '@radix-ui/react-icons'
 import { Table } from '@radix-ui/themes'
 import { Link, useLocation, useSearchParams } from '@remix-run/react'
@@ -105,11 +106,12 @@ export const FrameDataTable = ({
             <Table.Row key={move.moveNumber}>
               <Table.Cell>
                 <Link
-                  className="text-text-primary"
+                  className="inline-flex items-center gap-2 text-text-primary"
                   style={{ textDecoration: 'none' }}
                   to={commandToUrlSegment(move.command)}
                 >
                   {move.command}
+                  {move.video && <VideoIcon />}
                 </Link>
               </Table.Cell>
               <Table.Cell>{move.hitLevel}</Table.Cell>
