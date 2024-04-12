@@ -39,14 +39,14 @@ const MainLayoutTemplate = ({ children }: MainLayoutTemplateProps) => {
                 href={discordInviteLink}
                 className="px-2"
               >
-                <DiscordLogoIcon width="2rem" height="2rem" />
+                <DiscordLogoIcon width="2em" height="2em" />
               </a>
               <a
                 title="TekkenDocs source code on Github"
                 href={githubLink}
                 className="px-2"
               >
-                <GitHubLogoIcon width="2rem" height="2rem" />
+                <GitHubLogoIcon width="2em" height="2em" />
               </a>
             </div>
           </div>
@@ -62,7 +62,7 @@ const MainLayoutTemplate = ({ children }: MainLayoutTemplateProps) => {
                 href={discordInviteLink}
                 className="flex items-center gap-2 px-2"
               >
-                Discord <DiscordLogoIcon width="2rem" height="2rem" />
+                Discord <DiscordLogoIcon width="2em" height="2em" />
               </a>
             </li>
             <li>
@@ -71,7 +71,7 @@ const MainLayoutTemplate = ({ children }: MainLayoutTemplateProps) => {
                 href={twitterLink}
                 className="flex items-center gap-2 px-2"
               >
-                Twitter <TwitterLogoIcon width="2rem" height="2rem" />
+                Twitter <TwitterLogoIcon width="2em" height="2em" />
               </a>
             </li>
             <li>
@@ -80,7 +80,7 @@ const MainLayoutTemplate = ({ children }: MainLayoutTemplateProps) => {
                 href={facebooklink}
                 className="flex items-center gap-2 px-2"
               >
-                Facebook <FaFacebook fontSize="2rem" />
+                Facebook <FaFacebook fontSize="2em" />
               </a>
             </li>
             <li>
@@ -89,7 +89,7 @@ const MainLayoutTemplate = ({ children }: MainLayoutTemplateProps) => {
                 href={githubLink}
                 className="flex items-center gap-2 px-2"
               >
-                Github <GitHubLogoIcon width="2rem" height="2rem" />
+                Github <GitHubLogoIcon width="2em" height="2em" />
               </a>
             </li>
 
