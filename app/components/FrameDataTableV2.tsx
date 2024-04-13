@@ -68,15 +68,15 @@ export const FrameDataTable = ({
    * since react does not update dom properly. Therefor we set key based on sorting to force React
    * to create a new table */
 
-  const tableHeaders: (keyof Move)[] = [
-    'command',
-    'hitLevel',
-    'damage',
-    'startup',
-    'block',
-    'hit',
-    'counterHit',
-    'notes',
+  const tableHeaders: { id: keyof Move; displayName: string }[] = [
+    { id: 'command', displayName: 'Command' },
+    { id: 'hitLevel', displayName: 'Hit level' },
+    { id: 'damage', displayName: 'Damage' },
+    { id: 'startup', displayName: 'Startup' },
+    { id: 'block', displayName: 'Block' },
+    { id: 'hit', displayName: 'Hit' },
+    { id: 'counterHit', displayName: 'Counter hit' },
+    { id: 'notes', displayName: 'Notes' },
   ]
 
   return (
@@ -84,15 +84,15 @@ export const FrameDataTable = ({
       <Table.Header>
         <Table.Row>
           {tableHeaders.map(h => (
-            <Table.ColumnHeaderCell key={h}>
+            <Table.ColumnHeaderCell key={h.id}>
               <Link
-                to={createOrderLinkWithSearchParams(h.toLowerCase())}
+                to={createOrderLinkWithSearchParams(h.id.toLowerCase())}
                 preventScrollReset
                 replace
                 className="flex flex-wrap items-end"
               >
-                {h}
-                {h.toLowerCase() === orderByColumnName
+                {h.displayName}
+                {h.id.toLowerCase() === orderByColumnName
                   ? sortOrderIconMap[sortDirection]
                   : sortOrderIconMap['']}
               </Link>
