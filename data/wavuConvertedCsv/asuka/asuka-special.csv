@@ -1,8 +1,8 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Image;Video
 2+3;m;37;i16;+1;+2;;"* Heat Burst
-Power crush 8~";pc8~;;
+Power crush 8~";hb pc8~;;
 H.2+3;m,th;12,3;i16;+10;-6;;"* Heat Smash
-* Throw on hit";;;
+* Throw on hit";hs;;
 R.df+1+2;m,th;10,49;i20;-15;KND;;"* Rage Art
 * Damage increases with lower health
 * Removes recoverable health on hit
@@ -17,7 +17,7 @@ Power crush 8~";pc8~;;
 * Link to f+4
 * Can interrupt with up to i15 if previous hit is blocked
 * Cancel with input 1,2,3,B
-* Last input can be held to power up";;;
+* Last input can be held to power up";chp;;
 1,2,4;h,m,m;6,9,20;,;-12;KND;;Combo from 2nd hit;;;
 1,3;h,l;6,10;,;-11;+0;;* Combo from 1st hit;;;
 1+2;m;21;i16~17;-9;KND;KND;;;;
@@ -30,11 +30,11 @@ Power crush 8~";pc8~;;
 1+4,3;sl,h,m;5,8,25;;-2;KND;;"* Chip on block
 * Link to attack from Spinning Heel Drop (f+3)
 * Can be cancelled with input B
-* Last input can be held to power up";;;
+* Last input can be held to power up";chp;;
 2;h;9;i12;-11;+0;;;;;
 2,1;h,h;9,10;;-3;+8;;"* Combo from 1st hit
 * Jails";;;
-2,1,2;h,h,m;9,10,16;;-10;KND;;Tornado;;;
+2,1,2;h,h,m;9,10,16;;-10;KND;;Tornado;trn;;
 2,1,d+1+2;h,h,m;9,10,23;;-9;+3c;JG;"* Combo from 2nd CH
 * Cancel to standing with input 2,1,d+1+2,B
 * Cancel to FC with input 2,1,d+1+2,D";;;
@@ -54,52 +54,52 @@ f+1,4;m,l;17,26;i25~27;-26;+24;;"* Homing
 * Can be delayed 15F
 * Combo can be delayed 5F from CH
 * Interruption 11F after 1st block
-High crush";cs;;
+High crush";hom cs;;
 f+1+2;h;26;i15;-9;+19a (+9)/HE;;"* Heat Engager
 
 * Balcony Break
 * Absorb an attack to power up
 * chip damage on block
 * Gain Naniwa Gusto on Heat activation
-Power crush 8~";pc8~;;
+Power crush 8~";he bbr chp pc8~;;
 f+2;m;20;i17;-18;JG;;"* Can be cancelled with input f+2,D
 * Gain NWG on hit with input f+2,1";;;
 f+2+3;h;21;i23;+0;KND;KND;"* Balcony Break
 * Sabaki
 * Absorbs Punch (H/M) during 4 to 15F
 * Stun on success punch parry
-Parry state 4~15";ps4~15;;
+Parry state 4~15";bbr ps4~15;;
 f+3;m;24;i31~i33;-2~+0;KND;KND;"* Chip damage when guarded
-* Can be cancelled with input B";;;
+* Can be cancelled with input B";chp;;
 f+3*;ub(m);28;i70;KND;KND;KND;"* Balcony Break
-* Can be cancelled with input B";;;
+* Can be cancelled with input B";bbr;;
 f+3*n;m;26;i52~i53;+6~+7;KND;KND;"* Chip damage when guarded
-* Can be cancelled with input B";;;
+* Can be cancelled with input B";chp;;
 f+3+4;m;27;i29~30;-1;-2(-11);;"* Balcony Break
 * Chip damage when guarded (8)
 * On hit, gain Naniwa Gusto
-* If you already have Naniwa Gusto it's 18a(+9) on hit";;;
-f+4;h;21;i19;+3;+28;KND;* Homing;;;
+* If you already have Naniwa Gusto it's 18a(+9) on hit";bbr chp;;
+f+4;h;21;i19;+3;+28;KND;* Homing;hom;;
 df+1;m;10;i13;-3;+8;;;;;
 df+1,2;m,h(,th);10,13(,25);;-1;Th;Th;"* Spike
 * Combo from 1st CH
 * Can be delayed 7F
-* Damage () is Throw bonus";;;
+* Damage () is Throw bonus";spk;;
 df+1,4;m,m;10,22;;-12;KND;KND*;"* Balcony Break
 * Combo from 1st CH
-* Can be delayed 7F";;;
+* Can be delayed 7F";bbr;;
 df+2;m;14;i15;-6;LNC;LNC;+5 upon crouch hit;;;
-df+3;m;23;i20;-8;KND;KND;Balcony Break;;;
+df+3;m;23;i20;-8;KND;KND;Balcony Break;bbr;;
 df+3+4;l;22;i28;-26;KND;KND*;"* Homing
 * Alternate input: 3~4
 * Cancel to FC with input df+3+4,DB
-High crush 6~";cs6~;;
+High crush 6~";hom cs6~;;
 df+4;m;16;i12;-9;+2;;;;;
 d+1+2;l;20;i20;-18;KND;KND;"Same move as FC.1+2
 High crush 10~";cs10~;;
 d+2;m;18;i18;-4c;+9c;KND;"* Heat Engager
 
-* Gain Naniwa Gusto on Heat activation";;;
+* Gain Naniwa Gusto on Heat activation";he;;
 d+3+4;l,h;5,20;i14;-25;LNC;LNC;"* Block frame is blocked 1st attack
 * -6F upon 2nd block
 Low crush 5~";js5~;;
@@ -110,18 +110,18 @@ db+1,2;m,h;13,20;;-9;KND;KND*;"* Heat Engager
 * Gain Naniwa Gusto on Heat activation
 * Combo from 1st hit
 * Can be delayed 9F
-* Combo can be delayed 9F from hit";;;
+* Combo can be delayed 9F from hit";he bbr;;
 db+1,4;m,m;13,25;;-15;KND;;"Tornado
-Low crush";js;;
+Low crush";trn js;;
 db+1+2;m,m;10,20;i42;+10;KND;;"* Balcony Break
 *
 Wall Crush  +25g on block 
 
 
 * Parries lows
-Parry state";ps;;
+Parry state";bbr wc ps;;
 db+2;m;22;i20;-11;LNC;LNC;"Tornado
-High crush 3~";cs3~;;
+High crush 3~";trn cs3~;;
 db+3;l;17;i20;-12;+4c;+14g;;;;
 db+4;l;14;i21;-11;+0;+3;"Cancel to FC with input D
 High crush 6~";cs6~;;
@@ -172,7 +172,7 @@ b+4,2,3;m,m,m;17,12,21;;-16;KND;KND;"* Combo from 2nd hit
 * Combo can be delayed 10F from hit
 * on hit, can gain NWG with input 1";;;
 u+1+2;m;20;i31~i32;-13~-12;KND;;"* Chip damage when guarded
-Low crush";js;;
+Low crush";chp js;;
 uf+2;h(,th);20(,25);i14;-7;Th;Th;Damage () is Throw bonus;;;
 uf+3;m;17;i20~21;-3;+8;KND;Low crush 11~;js11~;;
 uf+4;m;25;i20;-13;LNC;LNC;Low crush 9~;js9~;;
@@ -193,27 +193,27 @@ uf+4;m;25;i20;-13;LNC;LNC;Low crush 9~;js9~;;
 (During Leg Cutter),3;h;21;;-3;LNC;LNC;CH combo from Leg Cutter;;;
 f,F+1;m;30;i23;+5;+14;;;;;
 f,F+1+2;m;20;i19;-6;KND;;"* Chip damage when guarded
-* Tornado";;;
+* Tornado";chp trn;;
 f,F+2;m;16;i15;-13;-3;;;;;
 f,F+2,1;m,h;16,21;;-5;KND;KND;"* Combo from 1st hit
 * Can be delayed 13F
 * Combo can be delayed 8F from hit
 * Combo can be delayed 11F from CH";;;
 f,F+2,1+2;m,m,sp;16,25;;-13;KND;;"* Balcony Break
-* Gain Naniwa Gusto on hit";;;
+* Gain Naniwa Gusto on hit";bbr;;
 f,F+2,3;m,m;16,22;;-8;KND;KND;"* Combo from 1st CH
 * Can be delayed 13F
 * Combo can be delayed 5F from CH";;;
 f,F+3;m;23;i20;-9;+11g;KND;"* Balcony Break
-* Homing";;;
+* Homing";bbr hom;;
 f,F+4;h;28;i20;-3;KND;KND*;"* Balcony Break
 * Causes Strong Aerial Tailspin
-Low crush 6~";js6~;;
+Low crush 6~";bbr js6~;;
 f,f,F+1+2;h;30;i17;+4;KND;;"* Chip damage when guarded
-* Homing";;;
+* Homing";chp hom;;
 f,f,F+3;m;32;i24~28;+3~+7;KND;KND*;"* Chip damage when guarded
 * Alternate input: ub,b+3
-Low crush 3~";js3~;;
+Low crush 3~";chp js3~;;
 ws1;m;12;i14;-7;+4;;;;;
 ws1,4;m,h;12,20;;-8;KND;KND;"* Combo from 1st hit
 * Can be delayed 7F";;;
@@ -221,18 +221,18 @@ ws1+2;m;20;i21;-2;+13g;KND;"* Wall Crush  +25g on hit
 
 
 * Crumple state 17F upon CH
-* Cancel into FC with input D";;;
+* Cancel into FC with input D";wc;;
 ws2;m;18;i13;-8;+8;;;;;
 ws2,1;mh;18,10;;-2;+9;;"* Combo from 1st hit
 * Continuation into ten string";;;
 ws2,1+2;mh,th;18,4;;;Th;;"* Combo from 1st hit
 * Link to attack from Destablilizer (f+1+3 or f+2+4)";;;
 ws3;m;20;i18;-16;LNC;LNC;"Tornado
-Low crush 18~";js18~;;
+Low crush 18~";trn js18~;;
 ws4;m;15;i11;-3;+8;;;;;
 SS.2;m;23;i13;-13;KND;KND*;"* Heat Engager
 
-* Gain Naniwa Gusto on Heat activation";;;
+* Gain Naniwa Gusto on Heat activation";he;;
 SS.4;h;18;i17;-6;+7;KND;Meaty 2F;;;
 FC.3+4;mm;10,10;i21;-6;+5c;+5c;Low crush 13~;js13~;;
 FC.3+4,3;mm,mm;10,10,10,10;;+0c;KND;KND;"* Interruption 11F after 2nd block
@@ -240,21 +240,21 @@ FC.3+4,3;mm,mm;10,10,10,10;;+0c;KND;KND;"* Interruption 11F after 2nd block
 Low crush";js;;
 FC.df+2;l;10;i16;-11;+0;+25g;"* Crumple State 17F upon CH
 High crush";cs;;
-FC.df+3;m;20;i17;-9;KND;KND*;Balcony Break;;;
+FC.df+3;m;20;i17;-9;KND;KND*;Balcony Break;bbr;;
 (Back to wall).b,b,UB;m;21;i39;+4c;KND;;fs5~13;fs5~13;;
 NWG.f,F+1+2;m;24;i19;+2;KND;;"* Chip damage when guarded
 * Consumes Naniwa Gusto
 * During Heat, remaining Heat is consumed
-* Tornado";;;
+* Tornado";chp trn;;
 NWG.f,f,F+1+2;h;42;i17;+6;KND;;"* Balcony Break
 * Chip damage when guarded
 * Consumes Naniwa Gusto
 * During Heat, remaining Heat is consumed
-* Homing";;;
+* Homing";bbr chp hom;;
 NWG.u+1+2;m;24;i31~i32;+8~+9;KDN;;"* Chip damage when guarded
 * Consumes Naniwa Gusto
 * During Heat, remaining Heat is consumed
-Low crush";js;;
+Low crush";chp js;;
 hFC.1;sl;5;i10;-5;+6;;"* Transition to Standing with f
 High crush 1~";cs1~;;
 hFC.2;sl;8;i11;-4;+7;;;;;
@@ -288,7 +288,7 @@ f+1+3;t(h);0;i19;;+8;;"* Break: none
 * Opp. Position on hit:";;;
 f+1+3,2;t(h),m;0,20;i19;-9;+8a/HE;;"* Heat Engager
 
-* Gain Naniwa Gusto on Heat Activation";;;
+* Gain Naniwa Gusto on Heat Activation";he;;
 f+1+3,4;t(h),l;0,19;i19;-18;+11d;;;;;
 uf+1+2;t(h);40;i12;-3;;;"* Break: 1+2
 * Opp. Position on break: Reverse Pos.

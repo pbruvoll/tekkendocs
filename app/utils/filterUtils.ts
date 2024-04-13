@@ -28,6 +28,13 @@ export const getFilterFromParams = (
     highCrush: getSearchParamBoolean(searchParams, filterKey.HighCrush),
     lowCrush: getSearchParamBoolean(searchParams, filterKey.LowCrush),
     powerCrush: getSearchParamBoolean(searchParams, filterKey.PowerCrush),
+    elbow: getSearchParamBoolean(searchParams, filterKey.Elbow),
+    knee: getSearchParamBoolean(searchParams, filterKey.Knee),
+    weapon: getSearchParamBoolean(searchParams, filterKey.Weapon),
+    floorBreak: getSearchParamBoolean(searchParams, filterKey.FloorBreak),
+    wallCrush: getSearchParamBoolean(searchParams, filterKey.WallCrush),
+    spike: getSearchParamBoolean(searchParams, filterKey.Spike),
+
     removeRecoveryHealth: getSearchParamBoolean(
       searchParams,
       filterKey.RemoveRecoveryHealth,

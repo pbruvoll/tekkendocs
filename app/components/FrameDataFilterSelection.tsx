@@ -34,9 +34,15 @@ export const FrameDataFilterSelection = ({
     tornado,
     jails,
     chip,
+    spike,
     highCrush,
     lowCrush,
+    elbow,
+    knee,
+    weapon,
+    floorBreak,
     powerCrush,
+    wallCrush,
     stance: stanceFilter,
     removeRecoveryHealth,
   } = filter
@@ -203,6 +209,7 @@ export const FrameDataFilterSelection = ({
             [
               [filterKey.HeatEngager, heatEngager, 'Heat Engager'],
               [filterKey.BalconyBreak, balconyBreak, 'Balcony Break'],
+              [filterKey.WallCrush, wallCrush, 'Wall Crush'],
               [filterKey.Homing, homing, 'Homing'],
               [filterKey.Tornado, tornado, 'Tornado Spin'],
               [filterKey.Jails, jails, 'Jails'],
@@ -212,6 +219,11 @@ export const FrameDataFilterSelection = ({
                 removeRecoveryHealth,
                 'Removes recoverable health',
               ],
+              [filterKey.Spike, spike, 'Spike'],
+              [filterKey.FloorBreak, floorBreak, 'Floor break'],
+              [filterKey.Elbow, elbow, 'Elbow'],
+              [filterKey.Knee, knee, 'Knee'],
+              [filterKey.Weapon, weapon, 'Weapon'],
             ] as const
           ).map(([key, value, displayName]) => {
             return (

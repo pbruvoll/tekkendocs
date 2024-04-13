@@ -35,11 +35,8 @@ def create_json_movelists(character_list_path: str) -> List[character.Character]
     return cha_list
 
 
-try:
-    character_list = create_json_movelists(CHARACTER_LIST_PATH)
-    print("Character jsons are successfully created")
+
+character_list = create_json_movelists(CHARACTER_LIST_PATH)
+print("Character jsons are successfully created")
 
 
-except Exception as e:
-    time_now = datetime.datetime.now().strftime("%Y-%m-%d  %H:%M:%S")
-    logger.error(f'{time_now} \n Error: {e}')

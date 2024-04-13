@@ -284,6 +284,12 @@ export const filterMoves = (moves: Move[], filter: MoveFilter | undefined) => {
     [filter.powerCrush, (move: Move) => hasTag('pc', move)],
     [filter.highCrush, (move: Move) => hasTag('cs', move)],
     [filter.lowCrush, (move: Move) => hasTag('js', move)],
+    [filter.spike, (move: Move) => hasTag('spk', move)],
+    [filter.wallCrush, (move: Move) => hasTag('wc', move)],
+    [filter.elbow, (move: Move) => hasTag('elb', move)],
+    [filter.knee, (move: Move) => hasTag('kne', move)],
+    [filter.weapon, (move: Move) => hasTag('wpn', move)],
+    [filter.floorBreak, (move: Move) => hasTag('fbr', move)],
   ] as const
   propFilters.forEach(([filterValue, filterFunc]) => {
     if (filterValue) {

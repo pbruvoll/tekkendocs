@@ -1,25 +1,25 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Image;Video
 2+3;m;12 (12);i16;+1;+2c;;"* Heat Burst
-Power crush";pc;;
+Power crush";hb pc;;
 H.uf+3+4;m;21 (8);i16~17;+12;+10a (-25);;"* Partially uses remaining heat time
 * Transition to SIT (cannot cancel)";;;
 H.2+3;m;44 (16);i15~16;+7 / +6 ROL / +11 HBS;-3 / N/A ROL / N/A HBS;;"* Heat Smash
 * Spike
 * Alternate input: H.HBS.2+3
 * Transition to ROL with input F
-* Transition to HBS with input D or 3+4";;;
+* Transition to HBS with input D or 3+4";hs spk;;
 R.df+1+2;m,th;55;i20;-15;0;;"* Rage Art
 * Erase opponent's Recoverable Health on hit";;;
 1;h;5;i10;+1;+8;;;;;
 1,1;h,m;5,8;,i22~23;-15;-4c;;* Combo from 1st hit CH;;;
 1,1,1;h,m,m;5,8,14;,i22~23;-16;+69a (+53);;"* Tornado
 * Combo from 2nd hit
-* Combo from 1st CH";;;
+* Combo from 1st CH";trn;;
 1,2;h,h;5,25;,i22~24;-5;+11 (+2);;"* Balcony Break
 * chip damage on block
-* Combo from 1st CH";;;
+* Combo from 1st CH";bbr chp;;
 1+2;m;25;i13~14;-13;+18g / HE;;"* Balcony Break
-* Heat Engager";;;
+* Heat Engager";bbr he;;
 1+3+4;sp;;;;;;;;;
 2;h;10;i10;-1;+6;;;;;
 2,1;h,m;10,11;,i16;-3;+2;;Combo from 1st hit;;;
@@ -33,10 +33,10 @@ R.df+1+2;m,th;55;i20;-15;0;;"* Rage Art
 * Transition to HBS";;;
 f+1+2;m;16;i18;-15;+18a;;;;;
 f+1+2,1+2;m,m;16,20;i30~31;-14;+65a (+49);;"* Tornado
-* Combo from 1st hit";;;
+* Combo from 1st hit";trn;;
 f+2;h;11;i12;-13;+3;;;;;
 f+2,1;h,h;11,20;i20;-5;+36a (+10);;"* Balcony Break
-* Combo from 1st hit";;;
+* Combo from 1st hit";bbr;;
 f+3+4;l;20;i28~30;-23;+6a;;High crush;cs;;
 f+3+4,1+2;l,m;20,30;,i50~i60;-16;-13a;;High crush;cs;;
 df+1;m;6;i15~16;-6;+2;;;;;
@@ -49,8 +49,8 @@ df+2;m;10;i15~16;-9;+2;;;;;
 df+2,1;m,m;10,12;,i20~21;-16;+35a (+25);;* Combo from 1st hit;;;
 df+3;m;13;i16;-9;+2;;;;;
 df+3,2;m,h;13,24;,i27~28;-5;+22a;;"* Combo from 1st hit
-* chip damage on block";;;
-d+1+2;m;28;i14~15;-15;+20a (+10);;* Balcony Break;;;
+* chip damage on block";chp;;
+d+1+2;m;28;i14~15;-15;+20a (+10);;* Balcony Break;bbr;;
 d+3+4;sp;;;;;;"* Alternative input: db+3+4
 * Transition to ROL with input SIT.F
 * Transition to California Roll with input SIT.B";;;
@@ -62,31 +62,31 @@ db+1,2;h,m;1120;i17~18;-13;+4;+13c;"* Combo from 1st hit
 * Transition to HBS with input D or 3+4";;;
 db+1,2*;h,m;1120;i34~35;-12;+13c;+42a;"* chip damage on block
 * Heat skips to Level 2 charge
-* Transition to HBS with input D or 3+4";;;
+* Transition to HBS with input D or 3+4";chp;;
 db+1,2**;h,m;1130;i47~48;+3;+42a;;"* chip damage on block
 * Cannot absorb with power crush
 * Heat reduces charge length (consumes remaining time)
-* Transition to HBS with input D or 3+4";;;
+* Transition to HBS with input D or 3+4";chp;;
 db+1+2;mm;4,4;i14~15;-9;+2~3;;;;;
 db+1+2,1+2;mm,mm;4,4,4,4;,i15~16;-11;0;;+10 CH but only on the last hit;;;
 db+1+2,1+2,2;mm,mm,m;4,4,4,4,18;,i20~21;-15;+22a (+12);;;;;
 db+2;l;10;i18;-15 / -17 HBS;-1 / -3 HBS;;* Transition to HBS with input D or 3+4;;;
 db+2+3;l;30;i32~34;-12;+39a;;* Hold 2+3 to power up, up to 2 charge levels and deal more chip damage on block;;;
-db+2+3*;l;40;i45~47;-12;+39a;;* chip damage on block;;;
-db+2+3**;l;60;i60~62;-4;+43a;;* chip damage on block;;;
+db+2+3*;l;40;i45~47;-12;+39a;;* chip damage on block;chp;;
+db+2+3**;l;60;i60~62;-4;+43a;;* chip damage on block;chp;;
 db+3;l;12;i18;-12;+1;;;;;
-db+4;l;20;i21~22;-23;+6;+74a (+58);* Tornado;;;
+db+4;l;20;i21~22;-23;+6;+74a (+58);* Tornado;trn;;
 b+1;m;24;i22~23;-13;+13a;;"* Balcony Break
 * Heat Engager
 
 * Transition to HBS with input D or 3+4 (does not shift when using Heat Dash)
-Power crush";pc;;
+Power crush";bbr he pc;;
 b+1+2;hh;10,20;i18~19;-8;+13d / HE;;"* Balcony Break
 * Heat Engager
 
 * Homing
 * chip damage
-* Transition to HBS with input D or 3+4 (does not shift when using Heat Dash)";;;
+* Transition to HBS with input D or 3+4 (does not shift when using Heat Dash)";bbr he hom chp;;
 b+1+4;ub(m);25;i60~62;;+16a/+21a HBS;;* Transition to HBS with input D or 3+4;;;
 b+1+4,f,f;sm;40;i55~i130;-20~+55;+42a~+117a;;"* Hold F to extend attack
 * Recovers in FUFT on hit or block
@@ -94,52 +94,52 @@ b+1+4,f,f;sm;40;i55~i130;-20~+55;+42a~+117a;;"* Hold F to extend attack
 b+2;m;12;i15;-9;+2;;;;;
 b+2,1;m,h;12,14;,i23;-3 / - 4 HBS / -14 ROL;+8 / +7 HBS / -3 ROL;;"* Transition to HBS with input D or 3+4
 * Transition to ROL with input F";;;
-b+2,1,1+2;m,h,m;12,14,20;,i26;-11;+15a (+6);;* Balcony Break;;;
+b+2,1,1+2;m,h,m;12,14,20;,i26;-11;+15a (+6);;* Balcony Break;bbr;;
 b+2,2;m,m;12,15;,i25;-10;+6;;;;;
 b+2,2,1;m,m,m;12,15,25;,i35~39;-15;+25a (+15);;"* Tornado
-* Does not tornado on wall hit";;;
+* Does not tornado on wall hit";trn;;
 b+3+4;m;20;i22~23;-28;+61a;;"* Alternate input: ws3+4
-* Tornado";;;
+* Tornado";trn;;
 ub+1+2;l;25;i31~32;-17;+12a;;* Cancel into HBS with input D or 3+4;;;
 u+1+2;m;24;i18~23;-4 / -3 HBS;+3 / +4 HBS;;* Transition to HBS with input D or 3+4;;;
 u+3+4;m;21;i34~39;+10;+20;;* Transition to SIT (cannot cancel);;;
 uf+1;m;20;i26~28;-6;+22a;;"* Alternate input: ub+1 or u+1
-* chip damage on block";;;
+* chip damage on block";chp;;
 uf+2;m;27;i28~30;-6;+30a;+65a (+45);"* Balcony Break
 * Homing
 * Tailspin
-* Alternate input: ub+2 or u+2";;;
+* Alternate input: ub+2 or u+2";bbr hom;;
 uf+3;m;13;i16~17;-13;+30a (+20);;Low crush;js;;
 uf+3,4;m,m;13,13;,i10~12;-11;+30a (+20) / +21a (+14);;"Less frame advantage occurs after Combo from last hit
 Low crush";js;;
 uf+3,4,1+2;m,m,m;13,13,22;,i18~19;-15;+16a / -2a;;"* Spike
 * Transition to HBS with input D or 3+4
-* Less frame advantage occurs after Combo from last hit";;;
+* Less frame advantage occurs after Combo from last hit";spk;;
 uf+4;m;20;i29~30;-6;-10a (-20);;"* Balcony Break
-Low crush";js;;
+Low crush";bbr js;;
 uf+4,3;m,m;20,25;,i20~21;+7;+21a (+14);;"* Balcony Break
 * Only connects on hit or block
 * Recovers in FUFT
-Low crush";js;;
+Low crush";bbr js;;
 1+2+3+4;;;;;;;;;;
 b,f+2;h;26;i15~17;-5;+17a (+8);+62a (+42);"* Balcony Break
 Tailspin
-* Chip damage on block";;;
+* Chip damage on block";bbr chp;;
 d,df,f+2;m;15;i18~19;-8;+3;;;;;
-d,df,f+2,1;m,m;15,25;,i27;-14;+29a (+3);;* Balcony Break;;;
-d,df,f+2,2;m,l;15,22;,i33~34;-18;+40a;;* Chip damage on block;;;
+d,df,f+2,1;m,m;15,25;,i27;-14;+29a (+3);;* Balcony Break;bbr;;
+d,df,f+2,2;m,l;15,22;,i33~34;-18;+40a;;* Chip damage on block;chp;;
 f,F+1+2;m;30;i37~38;+8 HBS / +5 ROL;52a HBS / +49a ROL;;"* Chip damage
 * Transition to HBS (cannot cancel into standing)
-* Transition to ROL with input F";;;
+* Transition to ROL with input F";chp;;
 f,F+2;m;23;i19~21;-19;+45a (+35);;;;;
 f,f,F+1+2;m;30;i20~24;+3;+35d (-23);;"* Balcony Break
 * Heat Engager
 
 * Chip damage
 * Transition to HBS with input D or 3+4 (does not shift when using Heat Dash)
-Low crush  21F";js 21F;;
+Low crush  21F";bbr he chp js 21F;;
 f,f,F+3;m;30;i22~23;+6;+13a (+3);;"* Balcony Break
-* Chip damage on block";;;
+* Chip damage on block";bbr chp;;
 ws1;m;13;i13~15;-11;+2;+7;;;;
 ws1,2;m,m;13,20;,i18~19;-13;+6 (+20g);+18;"* Hold 2 to power up, up to 2 charge levels
 * Transition to HBS with input D or 3+4
@@ -147,20 +147,20 @@ ws1,2;m,m;13,20;,i18~19;-13;+6 (+20g);+18;"* Hold 2 to power up, up to 2 charge 
 * Wall Crush  +20g on hit
 
 
-* Wallsplat on CH";;;
+* Wallsplat on CH";trn wc;;
 ws1,2*;m,m;13,28;,i35;-12;+18c;+33a (-2);"* Heat skips to Level 2 charge
 * Transition to HBS with input D or 3+4
 * Balcony Break
-* Tornado";;;
+* Tornado";bbr trn;;
 ws1,2**;m,m;13,38;,i44;+3;+27a (-9);;"* Transition to HBS with input D or 3+4
 * Balcony Break
 * Tornado
 * chip damage on block
 * Cannot absorb with power crush
-* Heat reduces charge length (consumes partial Heat time)";;;
+* Heat reduces charge length (consumes partial Heat time)";bbr trn chp;;
 ws2;m;20;i15~16;-12;+29a (+19);;;;;
 ws3;m;21;i18~20;-9;+17 (+8);;"* Balcony Break
-* Homing";;;
+* Homing";bbr hom;;
 ws4;m;20;i11~12;-6;+5;;;;;
 SS.1+2;m;23;i22~23;-9c;+11d;;;;;
 FC.1;l;12;i19~21;-8;+2;;;;;
@@ -172,25 +172,25 @@ FUFT.d+1+2;m;21;i30;+17;+37a;+37a;* Transition to SIT (Cannot cancel);;;
 HBS.1;m;10;i12~13;-13;+2;+12;;;;
 HBS.1,2;m,m;10,20;,i24~25;-13;+4;+13c;*Hold 2 to power up, up to 2 charge levels;;;
 HBS.1,2*;m,m;10,20;,i33~34;-12;+13c;+49a;"* chip damage on block
-* Heat skips to Level 2 charge";;;
+* Heat skips to Level 2 charge";chp;;
 HBS.1,2**;m,m;10,30;,i44~45;+3;+49a;;"* chip damage on block
 * Cannot absorb with power crush
-* Heat reduces charge length (consumes partial Heat time)";;;
-HBS.1+2;m;24;i19~22;-15;+79a;;* Tornado;;;
+* Heat reduces charge length (consumes partial Heat time)";chp;;
+HBS.1+2;m;24;i19~22;-15;+79a;;* Tornado;trn;;
 HBS.2;l;16;i21~24;-15;+21g;;* Transition to HBS;;;
 HBS.3;sp;;;;;;"* Transition to FUFA
 * Alternative input: HBS.4 (HBS.3 is into background, HBS.4 is into foreground)";;;
 HBS.3+4;m;21;i25~30;-12;-2a (-11);;"* Balcony Break
-Power crush";pc;;
+Power crush";bbr pc;;
 HBS.b,b;sp;;;;;;"* Alternate input: SIT.B
 * Transition to HBS with input D or 3+4";;;
 HBS.b+1+2;l;16;i26~29;-25c;+14a;;* Transition to HBS with input D or 3+4;;;
 HBS.b+1+2,1+2;l,l;16,33;i22~24;-29c;+8a / -3a (-10);;"* Balcony Break
-* Less frame advantage occurs after Combo from last hit";;;
-HBS.df+2;m;20;i15~16;-17;+35a (+25);;* Tornado;;;
+* Less frame advantage occurs after Combo from last hit";bbr;;
+HBS.df+2;m;20;i15~16;-17;+35a (+25);;* Tornado;trn;;
 HBS.d+1+2;m;22;i16~20;-9;0 / HE;;"* Heat Engager
 
-* Transition to HBS (does not shift when using Heat Dash)";;;
+* Transition to HBS (does not shift when using Heat Dash)";he;;
 HBS.d+3+4;sp;;;;;;* Transition to FDFA;;;
 HBS.f,f;sp;;N/A / i26~i31 Heat;+1~+6 / -6~-1 HBS;+7~+12 / 0~+5 HBS;;"* Transition to ROL
 * Becomes Special Mid attack during Heat (partially uses remaining Heat time)";;;
@@ -200,7 +200,7 @@ OTG.d+1+4;l,ub(l);16 (11),48 (33);i55~110,i25~38;N/A;8 (0) / +14;;"* Cancel into
 * More frame advantage when hitting standing opponent";;;
 ROL.1;h;31;i15~16;+4;+35d (+27);;"* Balcony Break
 * Tornado
-* Power up during Heat (partially uses remaining Heat time)";;;
+* Power up during Heat (partially uses remaining Heat time)";bbr trn;;
 ROL.1+2;sm;22;i10~40;-30;+45a;;"* Recovers in FUFT on hit
 * Recovers in off axis FUFT on block";;;
 ROL.2;m;21;i17~19;-17;+28a (+18);;;;;
@@ -208,7 +208,7 @@ ROL.3;l;20;i18~26;-18;+33a;;Recovers in FUFT;;;
 ROL.4;m;20;i26~30;+7;+26a;;Recovers in FUFT;;;
 SIT.1;l;10;i21~22;-12;+4;+9;;;;
 SIT.1,1;l,l;10,13;,i25~26;-12;+6;;;;;
-SIT.2;m;18;i19~21;-12;+73a (+57);;* Tornado;;;
+SIT.2;m;18;i19~21;-12;+73a (+57);;* Tornado;trn;;
 SIT.3+4;m;20;i25;-12 / -10 ROL;-4a / -2a ROL;;* Transition to ROL with input F;;;
 SIT.f;sp;;N/A / i26~i31 Heat;+1~+6 / -6~-1 HBS;+7~+12 / 0~+5 HBS;;"* Alternative input: FC.3+4 or FDFA.f
 * Transition to ROL
@@ -223,7 +223,7 @@ Back throw;th(h);70;i12~14;;+1;;"* Throw break: none
 * Opponent status on hit: FUFA";;;
 Left throw;th(h);50;i12~14;-3;+1;;"* Throw break: 1
 * Spike
-* Opponent status on hit: FUFT";;;
+* Opponent status on hit: FUFT";spk;;
 Right throw;th(h);40;i12~14;-3;+1;;"* Throw break: 2
 * Opponent status on hit: FUFT off axis";;;
 f,df,d,db,b,f+1+2;th(h);50;i11;0;+5;;"* Throw break: 1+2
@@ -231,4 +231,4 @@ f,df,d,db,b,f+1+2;th(h);50;i11;0;+5;;"* Throw break: 1+2
 * Side switch on hit";;;
 uf+1+2;th(h);35;i12~14;0;+26d (+7);;"* Throw break: 1+2
 * Balcony Break
-* Opponent status on hit: FUFT";;;
+* Opponent status on hit: FUFT";bbr;;
