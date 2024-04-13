@@ -16,7 +16,12 @@ export const filterKey = {
   LowCrush: 'js',
   PowerCrush: 'pc',
   Spike: 'spk',
+  FloorBreak: 'fbr',
+  Knee: 'kne',
+  Elbow: 'elb',
+  Weapon: 'wpn',
   Stance: 'stance',
+  WallCrush: 'wc',
   RemoveRecoveryHealth: 'removeRecoveryHealth',
 } as const
 

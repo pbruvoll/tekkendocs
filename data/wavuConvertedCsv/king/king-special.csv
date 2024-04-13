@@ -1,12 +1,12 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Image;Video
 2+3;m;12;i16;+1;+2c;;"* Heat Burst
 * Beats all Power Crush armor.
-Power Crush";Power Crush;;
+Power Crush";hb Power Crush;;
 H.2+3;m,t;20,44;i17;+12;+0d;;"* Heat Smash
 * Floor Break
 * Shifts to JGR on block (without heat).
 * Hold b to cancel shift, becomes +7 on block.
-* Beats all Power Crush armor, hits OTG.";;;
+* Beats all Power Crush armor, hits OTG.";hs fbr;;
 R.df+1+2;m;55;i20;-15;+0d;;"* Armor all attacks and ignore throws.
 * Beat all armor including Rage Art.
 * Erases opponent's recoverable health on hit.
@@ -20,24 +20,24 @@ R.df+1+2;m;55;i20;-15;+0d;;"* Armor all attacks and ignore throws.
 1,2,1,2+4;h,h,m,t;5,15,10,40;i26~28;;+0d;;* Throw break 2.;;;
 1,2,1,d+2+4;h,h,m,t(c);5,15,10,35;i28~30;;+1d;;"* Floor Break
 * Crouch throw, cannot throw break.
-* Opponent recovers in FDFA.";;;
+* Opponent recovers in FDFA.";fbr;;
 1,2,2+4;h,h,t;5,15,30;i30;;+1d;;* Throw break 2.;;;
 1,2,d+2+4;h,h,t(c);5,15,35;i27;;+1d;;"* Floor Break
 * Crouch throw, cannot throw break.
-* Opponent recovers in FDFA.";;;
+* Opponent recovers in FDFA.";fbr;;
 1+2;m;17;i18;-11;-2s;+0s;"* Forces standing on hit.
 * Shifts into backturn stance.";;;
 1+2,1;m,m;17,21;i22;-13/-18;+12a(+3)/-9;;"* Balcony Break
 * Combo from 1st hit.
-* Hold back during 2nd hit to feint.";;;
+* Hold back during 2nd hit to feint.";bbr;;
 1+2,3;m,h;17,25;i24~25;-3;+12a(+3);;"* Balcony Break
 * Tornado
-* Combo from 1st hit.";;;
+* Combo from 1st hit.";bbr trn;;
 2;h;10;i10;+1;+7;;;;;
 2,1;h,m;10,15;i23~24;-3;+8;;"* Forces standing on hit.
 * Combo from 1st hit.";;;
 3;h;25;i17;-14;+17a;;"* Balcony Break
-* Tracks left side but unsafe.";;;
+* Tracks left side but unsafe.";bbr;;
 3+4;;;;;;;"* Hold to continue spinning and power up strikes, but King doesn't change direction.
 * King gets dizzy and falls after 6th spin.
 Low crush 6~21 fs22~24";js6~21 fs22~24;;
@@ -51,10 +51,10 @@ Balcony Break
 * Heat Dash +5 on block, +18 on wall block.
 
 * Combo from 1st hit.
-* +16 on hit during heat or after heat.";;;
+* +16 on hit during heat or after heat.";he bbr;;
 f+2,d+1;m,m;12,16;i22;-13c;+2c;;"* Floor Break
 * Forces crouching on block and hit.
-* Not combo even on CH, only combo from hitting behind.";;;
+* Not combo even on CH, only combo from hitting behind.";fbr;;
 f+2,d+1,2;m,m,m;12,16,16;i22~23;-15;+27a(+17);;"* Combo from 2nd to 3rd hit.
 * 3rd hit is delayable and also combos.";;;
 f+2+3;m;27;i20~24;-9;+17g/+9d;;"* Heat Engager
@@ -62,7 +62,7 @@ f+2+3;m;27;i20~24;-9;+17g/+9d;;"* Heat Engager
 * Balcony Break
 * Heat Dash +5 on block, +18 on wall block.
 
-* +9 on hit during heat or after heat.";;;
+* +9 on hit during heat or after heat.";he bbr;;
 f+3;m;18;i15~16;-8;+1;+9s;* Only forces standing on CH.;;;
 f+3:1+2;m,t;18,20;;;+1d;;"* Input during f+3 hit stun.
 * Shifts to throw on front grounded hit.";;;
@@ -71,7 +71,7 @@ f+3+4;;;;;;;"* Cancel to r25 with b on frame 34~ at the earliest, able to block 
 * Partially uses remaining Heat time (same for uf+3+4 / db+1+2,3+4 / b+1+2 ).";;;
 f+4;m;25;i18~20;-9;+12a(+3);;"Balcony Break
 Homing
-Low Crush";Low Crush;;
+Low Crush";bbr hom Low Crush;;
 df+1;m;15;i14~15;-1;+3s;;* Forces standing on hit.;;;
 df+1,2;m,m;15,15;i20~21;-10;+5s;;* Combo from 1st hit if not fully delayed.;;;
 df+2;m;12;i13;-6;+4s;;* Forces standing on hit.;;;
@@ -89,26 +89,26 @@ df+4,3,4;l,h,m;10,11,27;i28~29;-15/-8;+6a/+13a;+47a(+16);"Balcony Break
 * Wall combo tool.
 * Combos on 2nd CH. Crumple on 3rd CH.
 * Hold back to shift to backturn stance.
-* Shift to backturn is 14F punishable.";;;
+* Shift to backturn is 14F punishable.";bbr;;
 df+4,3,d+4;l,h,l;10,11,20;i33~35;-10;-8d;+22d;"* Recovers in crouch on hit.
 * Otherwise recovers in FDFT.";;;
 d+1;s.l;5;i10;-5;+6;;* Can also be done by db+1/FC.d+1/FC.db+1.;;;
 d+1,2;s.l,m;5,13;i10,i15~17;-11;+5s;;"* Combos on CH.
 * Forces standing on hit.";;;
 d+1+2;m;21;i23;-24;+45a(+35);;"* Tornado
-* Duck high and launch, very punishable.";;;
+* Duck high and launch, very punishable.";trn;;
 d+2;s.l;8;i11;-4;+7;;* Can also be done by FC.d+2/FC.db+2.;;;
 d+2+3;m;25;i30~35;-8;+0c;;"*
 Floor Break
 * Hits OTG.
-* Forces Crouching on hit.";;;
+* Forces Crouching on hit.";fbr;;
 d+3;l;12;i17;-12;+1;;* Hits OTG.;;;
 d+3+4;l;14;i16;-25;+7;;* CH enable 2 more Ali Kicks.;;;
 d+3+4,4;l,l;14,7;i29;-25;-9;;* Combo from 1st hit on CH.;;;
 d+3+4,4,4;l,l,l;14,7,7;i29;-29;+7;;* Combo from 2nd hit on CH.;;;
 d+3+4,4,4,2;l,l,l,m;14,7,7,10;i28;-15;+16d(+6);;"* Balcony Break
 * Same property for d+3+4,2 / d+3+4,4,2
-* Only combo if 2nd/previous kick on CH.";;;
+* Only combo if 2nd/previous kick on CH.";bbr;;
 d+3+4,4,4,4;l,l,l,l,l;14,7,7,4,3;i29,i29;-26;+15;;"* Only available if 1st hit on CH.
 * Last 3 kicks are combo.
 * 5 kicks combo is impossible.";;;
@@ -126,7 +126,7 @@ db+1+2,2;m,t;15,25;i15;-9/-5;+35g/+8g;;"* Heat Engager
 * Shifts to throw on front grounded hit.
 * +8 on hit during heat or after heat.
 * If attack absorbed,chip damage & -5 on block.
-Power Crush";Power Crush;;
+Power Crush";he Power Crush;;
 db+1+2,3+4;;;;;;;"* Run immediately without pointing finger.
 * Run much longer to action than regular run.
 * Running has no armor if not during heat.
@@ -139,15 +139,15 @@ db+4;l;20;i29~31;-17;-3d;+27d;"* Hits OTG.
 * Otherwise recovers in FDFT.";;;
 b+1;h;13;i12;-8;+3;+3a;Momentarily makes opponent airborne on CH, thus b+1,2 launches.;;;
 b+1,2;h,h;1320;i19~20;-13;+5;+70a(+54)*;"* Tornado
-* Launches opponent if b+1 on CH.";;;
+* Launches opponent if b+1 on CH.";trn;;
 b+1,4;h,m;1323;i26~28;-11;+1d;+18(-17)*;"* Combo from 1st hit on CH.
 * Recovers in FUFT.";;;
 b+1+3;r(m);25;i10;;+2d;;"Floor Break
 * Parry opponent's right punch.
-* Side Switch. Opponent recovers in FUFR.";;;
+* Side Switch. Opponent recovers in FUFR.";fbr;;
 b+2;h;16;i14;-5;+1;;;;;
 b+2,1;h,h;16,21;i20~21;-9;+19a(+10);;"* Balcony Break
-* Combo from 1st hit.";;;
+* Combo from 1st hit.";bbr;;
 b+2,1+2;h,h;16,22;i24~25;+2c;+22d;;* Forces crouching on block.;;;
 b+2,4;h,m,t;16,18,20;i21;-8;+10s/+0;;* Shifts to throw on front grounded hit.;;;
 b+2+4;r(m);25;i10;;+24d;;"* Parry opponent's left kick.
@@ -158,13 +158,13 @@ b+2+4:3+4;r(m);25(,28);i10;;+27d(+1d);;"* Parry opponent's right kick.
 b+3;h;23;i16~18;-10/-5;+39d;;"* Tornado
 * Balcony Break
 * Becomes -5 on block with chip damage if attack absorbed.
-Power Crush";Power Crush;;
+Power Crush";trn bbr Power Crush;;
 b+3:1+2;h,t;2320;;;+0d;;"* Shifts to throw on front grounded hit.
 * Input 1+2 before b+3 hits.";;;
 b+3+4;;;;;;;"* Cannot be held to continue spinning.
 Low crush 6~21 fs22~24";js6~21 fs22~24;;
 b+4;h;25;i17~21;+2;+14g;;"* Balcony Break
-* Shifts into BT stance.";;;
+* Shifts into BT stance.";bbr;;
 ub+4;m;15;i15;-13;+19a(+9);+33a(+23);* Jump straight up knee, very short range.;;;
 u+1+2;m;25;i35~36;+2c;+22d;;"* Tap 1+2 otherwise it becomes u+1+2(hold).
 * Forces Crouching on block.
@@ -174,7 +174,7 @@ u+1+2*;m!;40;i67;;+11d;;"* Unblockable mid.
 * Can also be done by ub+1+2*.";;;
 uf+1;h;21;i20~23;-3;+36a(+27);;"Homing
 Balcony Break
-* Can also be done by ub+1/u+1.";;;
+* Can also be done by ub+1/u+1.";hom bbr;;
 uf+2;m;35;i47~53;-17c;-7d/-4c;;"* Hits OTG.
 * u+2 to jump vertical, ub+2 to jump back.
 * Force Crouching on block. (ub+2 also on hit)";;;
@@ -182,26 +182,26 @@ uf+3;m;23;i22~29;-10;-1d;;* Can also be done by ub+3/u+3.;;;
 uf+3+4;m;23;i22~23;-12/-7;+25g;;"* Tornado
 * If absorbs attack, -7 on block & chip damage.
 * Shifts to JGR on hit (Hold b to cancel shift).
-Power Crush";Power Crush;;
+Power Crush";trn Power Crush;;
 uf+4;m;13;i15;-13;+33a(+23);;* Can also be done by u+4.;;;
 1+2+3+4;;;;;;;"* Takes some time to charge and can cancel into anything.
 * After charged next hit by either side becomes counter hit.";;;
 DF;r(l);0;;;+51a(+35);;"* Generic low parry.
 * Tornado affect on success.";;;
 f,F,1;m;21;i20~21;-5;+14g;+38d;"* Homing
-* Balcony Break";;;
+* Balcony Break";hom bbr;;
 f,F,2;m;21;i31~32;0c;+12c;;"* Forces crouching on block and hit.
 * Allow crouching throw on hit.
-* Chip damage on block.";;;
+* Chip damage on block.";chp;;
 f,F,2+3;m,t;20,15;i21~43;-16c~+2c;-19c~+3c/-5d;;"* Forces crouching on block and hit.
 * Throw when hit standing in front close range.";;;
 f,F,3+4;h;25;i28~30;0/+2c;+24d(-34);;"Balcony Break
 * Chip damage on block. (extra near wall)
 * Forces Crouching on block when near wall.
-* Recovers FUFT on whiff.";;;
+* Recovers FUFT on whiff.";bbr chp;;
 f,F,4;m;25(30,14);i15;-15;+14a(+4);+1d;"* Tornado
 * Balcony Break
-* Shifts to throw on front grounded CH.";;;
+* Shifts to throw on front grounded CH.";trn bbr;;
 f,f,n,1+2;m;0;i9;+0;+7s;+18s;"* Forces Standing on hit.
 * Allows follow up on CH.";;;
 f,f,n,2;l/(l,t);17/(20,35);i18;-13;+7s/(0d);;"* Shifts to throw on front grounded CH.
@@ -212,19 +212,19 @@ f,n,d,df;;;;;;;"* Duck high while moving forward.
 * 1st f cannot be held more than 10 frames.";;;
 uf,n,4;m;20;i23~25;-13;+32a(+22);;;;;
 f,f,F,3;m;25;i20~25;+3;+30(+22);;"Balcony Break
-* Chip damage on block.";;;
-f,f,F,3+4;m;40;i28~34;+17;+32d(-26);;Balcony Break;;;
+* Chip damage on block.";bbr chp;;
+f,f,F,3+4;m;40;i28~34;+17;+32d(-26);;Balcony Break;bbr;;
 ws1;m;12;i10~11;-3;+4s;;"* Acts like 11 frame attack.
 * Forces Standing on hit.";;;
 ws1+2;m;20;i18~19;-10;+35a(+25);;;;;
 ws2;m;11;i14;-9;+1s;;"* Homing
-* Forces Standing on hit.";;;
+* Forces Standing on hit.";hom;;
 ws2,2;m,m;11,25;i15~16;-12;+12g;;"* Homing
 * Balcony Break
-* Combo from 1st hit.";;;
+* Combo from 1st hit.";hom bbr;;
 ws3;h;20;i16;0;+22a(+12);;;;;
 ws4;m;20;i11~12;-6;+5;;;;;
-ss2;h;25;i19~20;-5;+18a(+9);;Balcony Break;;;
+ss2;h;25;i19~20;-5;+18a(+9);;Balcony Break;bbr;;
 ss2+4,b/db;;;;;;;"* Side Step that ducks high and covers long distance quickly, recovers in crouch.
 * Input by u/d,n,n+2+4,b/db.";;;
 ss3+4;h;50;i21~25/i27~31;0;+0d;;"* Deals a lot of chip damage on block.
@@ -241,10 +241,10 @@ BT.1+2;h!;45;i26~30;;+2d;;* Unblockable high attack.;;;
 BT.1+4;m!;30;i41~47;;+6d;;* Unblockable mid attack.;;;
 BT.3;m;18;i13~14;-13;+9s;+50d;"* Tornado
 * Hits OTG. Forces standing on normal hit.
-* Crumple on CH for full combo.";;;
+* Crumple on CH for full combo.";trn;;
 BT.3:1+2;m,t;18,20;;;+0d;;"* Floor Break
 * Throw when hit standing in front close range.
-* Just frame input.";;;
+* Just frame input.";fbr;;
 BT.3+4;;;;;;;"* Jaguar Step away from the oppponent while keeping backturn stance on recovery.
 * Can cancel into BT.1+2 / BT.1+4 unblockable.
 * Can hold 3+4 to keep spinning.
@@ -253,17 +253,17 @@ BT.d+4;l;20;i22~24;-14;-2d;+28d;"* Recovers in FDFT on block and whiff.
 * Also can be done in backturn crouching.
 Low Crush";Low Crush;;
 FUFT.b+3+4;m;25;i16~28;-25;+4a(-6);;"Balcony Break
-* Faster than normal spring kick and knocks down.";;;
+* Faster than normal spring kick and knocks down.";bbr;;
 JGR.1;m;21;i16~17;-8;+39d/+75a(+59);;"* In heat it becomes Tornado on grounded hit.
 * Partially uses remaining Heat time.";;;
 JGR.2;h;26;i18~19;+3/+6/+18c;+4d;;"* Chip damage on block.
 * In heat it becomes +6 on block, and forces crouching +18 near wall.
-* Partially uses remaining Heat time.";;;
+* Partially uses remaining Heat time.";chp;;
 JGR.2+3;M,t;20,15;i21~43;-16c~+2c;-19c~+3c/-5d;;"* Throw when hit standing in front close range.
 * King recovers off axis";;;
 JGR.3;m;30;i22~23;-9;+11d (+1);;"* Balcony Break
 * Homing
-Low crush 11~30 fs31~33";js11~30 fs31~33;;
+Low crush 11~30 fs31~33";bbr hom js11~30 fs31~33;;
 JGR.4;L;20;i20~24;-21;+0c;;Low crush 7~23 fs24~;js7~23 fs24~;;
 JGS.1;h;21/25/31;i17~18/i19~20;-7/-1;+47d/+53d;;"* Crumple on hit.
 * On block / hit / startup increases up to 2nd spin.
@@ -273,7 +273,7 @@ JGS.2;m;15/18/22;i11~12;-9/-2/0c;+12c;;"* Forces Crouching on hit.
 * Damage increase up to 3rd spin.";;;
 JGS.3;m;23/27/34;i22~23;-5/-1;+21a(+12)/+25a(+16);;"Balcony Break
 * On block / hit increases up to 2nd spin.
-* Damage increase up to 3rd spin.";;;
+* Damage increase up to 3rd spin.";bbr;;
 JGS.3,2+3;m,m,t;23/27/34,20,15;i21~43;-16c~+2c;-19c~+3c/-5d;;"* Throw when hit standing in front close range.
 * Doesn't combo from JGS.3, but trades with 10 frame jab.
 * Properties not changed with extra spins.";;;
@@ -281,13 +281,13 @@ JGS.4;h;40/42/52;i17~18;+8/+15;+5a(-4)/+10a(+1);;"* Balcony Break
 * Guard Break
 * Chip damage on block.
 * On block / hit increases up to 2nd spin.
-* Damage increase up to 3rd spin.";;;
+* Damage increase up to 3rd spin.";bbr chp;;
 JGS.df+4;m;30/36/45;i17~19;-16/+8;+5a(-4);;"Balcony Break
 * On block increases up to 2nd spin.
-* Damage increase up to 3rd spin.";;;
+* Damage increase up to 3rd spin.";bbr;;
 f,n,d,DF+1+2 / CD.1+2;m;24;i20~23;-5;+16d;+52d;"Balcony Break
 * Hits OTG.
-* Bounce off ground on CH for full combo.";;;
+* Bounce off ground on CH for full combo.";bbr;;
 f,n,d,DF+4/CD.4;m;21;i15~16;-9;+49a(+18);+53d;"* Special down state that allows low juggle (on normal hit).
 * Crumple on CH for full combo.";;;
 (Behind 1 throw);t;60;(depends);;+0d;;"* Cannot throw break.
@@ -326,23 +326,23 @@ AIR.1+3 / AIR.f+1+3;t(a);30;i12~14 / i15~17;;+0d;;"* Cannot throw break.
 AIR.2+4 / AIR.f+2+4;t(a);20;i12~14 / i15~17;;+40d(+35);;"Tornado
 * Cannot throw break.
 * Input f+2+4 to increase throw range, but its startup is 3 frames slower.
-* Opponent recovers in FUFT.";;;
+* Opponent recovers in FUFT.";trn;;
 AIR.d+1+3;t(a);15;i12~13;;-5d;;"* Cannot throw break.
 * Opponent recovers in FDFL.";;;
 AIR.f,f,F+2+4;t(a);65(70);i10;;+4d;;"Floor Break
 * Cannot throw break.
 * Input quickly to ""blue spark"" (+5 damage).
 * Partially restores remaining Heat time.
-* Opponent recovers in FUFT.";;;
+* Opponent recovers in FUFT.";fbr;;
 AIR.f,hcf+1;t(a);55(60);i10 / i12~14;;+3d;;"Floor Break
 * Cannot throw break.
 * Also by JGR.1+3 against airborne opponent.
 * Input quickly to ""blue spark"" (+5 damage).
 * Partially restores remaining Heat time.
-* Opponent recovers in FUFT.";;;
+* Opponent recovers in FUFT.";fbr;;
 Behind.b,f+1+2;t;75;i10;;+1d;;"Floor Break
 * Cannot throw break.
-* Opponent recovers FUFR.";;;
+* Opponent recovers FUFR.";fbr;;
 CD.1+4;t;20;i12;;+1d;;"* 1 Throw break.
 * Opponent recovers in FUFT.";;;
 CD.2+3;t;25;i12;;+0d;;"* 2 throw break.
@@ -356,7 +356,7 @@ FC.1+2;t(s);0;i26;;+3d;;"* 1+2 throw break (except from behind).
 * Catches standing and crouching opponent from all directions.";;;
 FC.db,d,db+1+2;t;45;i12;;+0d;;"Floor Break
 * 1+2 throw break.
-* Opponent recovers in FUFR.";;;
+* Opponent recovers in FUFR.";fbr;;
 FDFA.db+1+3;t(g);32;i18~20;;+0d;;"* 1 or 2 throw break, depending on King's input.
 * Opponent recovers in FDFA.";;;
 FDFL.db+1+3;t(g);37;i18~20;;+0d;;"* 1 or 2 throw break, depending on King's input.
@@ -373,7 +373,7 @@ FUFL.db+1+3b+1+3;t(g);0;i18~20;;+25d;;"* 1 or 2 throw break, depending on King's
 * Opponent recovers in FDFL/FDFR.";;;
 FUFT.DB+1+3;t(g);25;i18~20;;+0d;;"Floor Break
 * 1 throw break.
-* Opponent recovers in FUFT.";;;
+* Opponent recovers in FUFT.";fbr;;
 FUFT.DB+2+4;t(g);28;i18~20;;+1d;;"* 2 throw break.
 * Opponent recovers in FUFT.";;;
 FUFT.db+1+3;t(g);20,10 / 35;i18~20;;+1d(-40);;"* 1 or 2 throw break, depending on King's input.
@@ -383,7 +383,7 @@ JGR.1+3;t;45;i23;;+1d;;"* Heat Engager
 
 * Cannot throw break. Cannot heat dash.
 * Restores some Heat Gauge in Heat.
-* Opponent recovers in FUFA.";;;
+* Opponent recovers in FUFA.";he;;
 JGS.1+4;t;20;i12;;+0d;;"* 1 or 2 throw break, depending on King's input.
 * Opponent recovers in FDFT.
 * Becomes f,hcf+1 / 2+4 on air grab / wall splat.";;;
@@ -405,7 +405,7 @@ MMD6.2,4,1,1+3/ MMD6.2,4,1,2+4;t;31;;;-10d;;"* 1 or 2 throw break, depending on 
 * Opponent recovers in FUFA. Max Damage 116.";;;
 PD.1+2,1+2;t;35;i11;;-14d;;"Floor Break
 * 2 throw break. (when legs lifted to the top)
-* Opponent recovers in FDFA.";;;
+* Opponent recovers in FDFA.";fbr;;
 PD.1+2,3,4,1+2;t;45;i11;;+0d;;"* 1+2 throw break. (when legs lifted to the top)
 * Could use ki charge button for 1+2 input.
 * Opponent recovers in FDFL.";;;
@@ -478,7 +478,7 @@ b+1+2,1+2(,f,F);t;0;i12~17;;+11g / -6;;"* 1+2 throw break.
 * Shifts to JGR, input f,F / b,B to cancel shift.";;;
 db,n,f+2+4;t;53;i11;;-1d;;"Floor Break
 * 2 throw break. Can also be done by qcb,n,f+2+4 / b,db,d,n,f+2+4.
-* Opponent recovers in FUFA.";;;
+* Opponent recovers in FUFA.";fbr;;
 db+2+3;t;40 (8+20+12);i12;;+1d / 0d;;"* 1+2 throw break.
 * Just frame input 3+4 when the last hit connects, reverse 26 damage back to King.
 * Opponent recovers in FUFT / FDFT.";;;
@@ -497,17 +497,17 @@ Low Crush";Low Crush;;
 d+1+3;t(c);35;i12~13;;+0d;;"Floor Break
 * Crouch throw, cannot throw break.
 * Can also be done by db+1+3 and in FC too.
-* Opponent recovers in FDFA.";;;
+* Opponent recovers in FDFA.";fbr;;
 d+1+4;t(c);35;i12~13;;+0d;;"* Heat Engager
 
 * Crouch throw, cannot throw break.
 * Can also be done by db+1+4 and in FC too.
 * Restores some Heat Gauge in Heat.
-* Cannot heat dash.Opponent recovers in FDFA.";;;
+* Cannot heat dash.Opponent recovers in FDFA.";he;;
 d+2+4;t(c);35;i12~13;;+0d;;"Floor Break
 * Crouch throw, cannot throw break.
 * Can also be done by db+2+4 and in FC too.
-* Opponent recovers in FUFA.";;;
+* Opponent recovers in FUFA.";fbr;;
 f,f,F+2+4;t;40(45);i10;;+1d;;"* 1+2 throw break.
 * Input quickly to ""blue spark"" (+5 damage).
 * Partially restores remaining Heat time.
@@ -526,7 +526,7 @@ qcb+1+2;t;50;i11;;+0d;;"Floor Break
 * 1+2 throw break. Side switch.
 * King recovers in backturn stance.
 * Partially restores remaining Heat time.
-* Opponent recovers in FUFA.";;;
+* Opponent recovers in FUFA.";fbr;;
 qcf+1;t;30;i11;;+8d;;"* 1 throw break.
 * Opponent recovers in FUFT.";;;
 ss2+4;t;15 / 20;i13;;+0d / +1d;;"* 2 throw break (except from behind).
