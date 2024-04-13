@@ -284,6 +284,7 @@ export const filterMoves = (moves: Move[], filter: MoveFilter | undefined) => {
     [filter.powerCrush, (move: Move) => hasTag('pc', move)],
     [filter.highCrush, (move: Move) => hasTag('cs', move)],
     [filter.lowCrush, (move: Move) => hasTag('js', move)],
+    [filter.spike, (move: Move) => hasTag('spk', move)],
   ] as const
   propFilters.forEach(([filterValue, filterFunc]) => {
     if (filterValue) {

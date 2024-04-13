@@ -28,6 +28,7 @@ export const getFilterFromParams = (
     highCrush: getSearchParamBoolean(searchParams, filterKey.HighCrush),
     lowCrush: getSearchParamBoolean(searchParams, filterKey.LowCrush),
     powerCrush: getSearchParamBoolean(searchParams, filterKey.PowerCrush),
+    spike: getSearchParamBoolean(searchParams, filterKey.Spike),
     removeRecoveryHealth: getSearchParamBoolean(
       searchParams,
       filterKey.RemoveRecoveryHealth,

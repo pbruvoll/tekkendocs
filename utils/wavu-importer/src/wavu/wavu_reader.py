@@ -132,14 +132,64 @@ def _convert_json_movelist(move_list_json: list) -> List[Move]:
             notes = html.unescape(_normalize_data(move["title"]["notes"]))
             notes = BeautifulSoup(notes, features="lxml").get_text()
             notes = notes.replace("* \n", "* ").strip()
-            tags = crush
+            (short_notes, tags) = _parse_notes(notes)
+            tags = " ".join(item for item in [tags, crush.replace(",","")] if item)
             if(crush) :
                 notes = "\n".join([notes, _crush_to_note(crush)])
 
             notes = notes.strip()
-            move = Move(id, name, input, target, damage, on_block, on_hit, on_ch, startup, recovery, crush, notes, "", tags, image, video, alias)
+            move = Move(id, name, input, target, damage, on_block, on_hit, on_ch, startup, recovery, crush, notes, short_notes, "", tags, image, video, alias)
             move_list.append(move)
     return move_list
+
+def _parse_notes(notes: str):
+    lines = notes.split("\n")
+    tags = []
+    short_notes = []
+    for line in lines :
+        tag = _get_tag(line)
+        if tag : 
+            tags.append(tag)
+        else:
+            short_notes.append(line)
+
+    return ("\n".join(short_notes), " ".join(tags))
+
+def _get_tag(noteLine: str) : 
+    cleanLine = noteLine.replace("*", "").strip().lower()
+    match cleanLine :
+        case "floor break":
+            return "fbr"
+        case "spike" :
+            return "spk"
+        case "knee" :
+            return "kne"
+        case "elbow" :
+            return "elb"
+        case "weapon" :
+            return "wpn"
+        case "tornado" :
+            return "trn"
+        case "homing" :
+            return "hom"
+        case "heat smash" :
+            return "hs"
+        case "heat burst" :
+            return "hb"
+        case "heat engager" :
+            return "he"
+        case "balcony break" :
+            return "bbr"
+        
+    
+    if cleanLine.startswith("wall crush") :
+        return "wc"
+    if cleanLine.startswith("chip") :
+        return "chp"
+
+
+    return None
+
 
 def _crush_to_note(crush: str) : 
     return crush.replace("ps", "Parry state ").replace("pc", "Power crush ").replace("js", "Low crush ").replace("cs", "High crush ")

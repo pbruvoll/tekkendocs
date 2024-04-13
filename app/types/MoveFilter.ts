@@ -16,6 +16,7 @@ export type MoveFilter = {
   highCrush?: boolean
   lowCrush?: boolean
   powerCrush?: boolean
+  spike?: boolean
   removeRecoveryHealth?: boolean
   chip?: boolean
   stance?: string[]

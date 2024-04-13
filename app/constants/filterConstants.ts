@@ -15,6 +15,7 @@ export const filterKey = {
   HighCrush: 'cs',
   LowCrush: 'js',
   PowerCrush: 'pc',
+  Spike: 'spk',
   Stance: 'stance',
   RemoveRecoveryHealth: 'removeRecoveryHealth',
 } as const

@@ -5,7 +5,7 @@ import re
 
 class Move:
     def __init__(self, id: str, name: str, input: str, target: str, damage: str, on_block: str, on_hit: str, on_ch: str,
-                 startup: str, recovery: str, crush: str, notes: str, gif: str, tags: str, image: str, video: str, alias: List[str]):
+                 startup: str, recovery: str, crush: str, notes: str, short_notes: str, gif: str, tags: str, image: str, video: str, alias: List[str]):
         self.id = id
         self.name = name
         self.input = input
@@ -18,6 +18,7 @@ class Move:
         self.recovery = recovery
         self.crush = crush
         self.notes = notes
+        self.short_notes = short_notes
         self.gif = gif
         self.tags = tags
         self.image = image

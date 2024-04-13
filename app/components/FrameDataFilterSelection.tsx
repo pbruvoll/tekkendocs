@@ -34,6 +34,7 @@ export const FrameDataFilterSelection = ({
     tornado,
     jails,
     chip,
+    spike,
     highCrush,
     lowCrush,
     powerCrush,
@@ -212,6 +213,7 @@ export const FrameDataFilterSelection = ({
                 removeRecoveryHealth,
                 'Removes recoverable health',
               ],
+              [filterKey.Spike, spike, 'Spike'],
             ] as const
           ).map(([key, value, displayName]) => {
             return (
