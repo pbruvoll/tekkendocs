@@ -1,4 +1,3 @@
-import React from 'react'
 import { NavLink } from '@remix-run/react'
 export interface ObjectParams {
   link: String
