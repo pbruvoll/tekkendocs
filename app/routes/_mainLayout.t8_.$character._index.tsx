@@ -14,6 +14,19 @@ import { filterToDescription, getFilterFromParams } from '~/utils/filterUtils'
 import { filterRows, sortRows } from '~/utils/frameDataUtils'
 import { getCacheControlHeaders } from '~/utils/headerUtils'
 import { generateMetaTags } from '~/utils/seoUtils'
+import Nav, { type ObjectParams } from './_mainLayout.t8_.$character.nav'
+
+const navData: ObjectParams[] = [
+  { link: '', value: 'Frame data' },
+  { link: 'meta', value: 'Guide' },
+  { link: 'antistrat', value: 'Anti strats' },
+]
+
+//  {/* <nav className="flex gap-3">
+//           <NavLink to="">Frame data</NavLink>
+//           <NavLink to="meta">Guide</NavLink>
+//           <NavLink to="antistrat">Anti strats</NavLink>
+//         </nav> */}
 
 export const headers: HeadersFunction = args => ({
   ...getCacheControlHeaders({ seconds: 60 * 5 }),
@@ -38,6 +51,7 @@ export const meta: MetaFunction = ({ data, params, matches, location }) => {
       },
     ]
   }
+
   const { characterName, tables } = frameData as CharacterFrameDataPage
   const characterId = characterName.toLocaleLowerCase()
   const characterTitle =
@@ -121,11 +135,8 @@ export default function Index() {
             Edit
           </a>
         </div>
-        <nav className="flex gap-3">
-          <NavLink to="">Frame data</NavLink>
-          <NavLink to="meta">Guide</NavLink>
-          <NavLink to="antistrat">Anti strats</NavLink>
-        </nav>
+
+        <Nav navData={navData}></Nav>
       </ContentContainer>
       <ContentContainer disableXPadding>
         {tables.map(table => {
