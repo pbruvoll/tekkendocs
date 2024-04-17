@@ -1,8 +1,9 @@
 import { Pencil1Icon } from '@radix-ui/react-icons'
 import { Heading, Link as RadixLink, Table } from '@radix-ui/themes'
 import { type DataFunctionArgs, json, type MetaFunction } from '@remix-run/node'
-import { Link, NavLink, useLoaderData } from '@remix-run/react'
+import { Link, useLoaderData } from '@remix-run/react'
 import { ContentContainer } from '~/components/ContentContainer'
+import Nav, { type ObjectParams } from '~/components/Nav'
 import { tableIdToDisplayName } from '~/constants/tableIdToDisplayName'
 import type { CharacterFrameData } from '~/types/CharacterFrameData'
 import type { RouteHandle } from '~/types/RouteHandle'
@@ -12,6 +13,11 @@ import { commandToUrlSegment } from '~/utils/moveUtils'
 import { generateMetaTags } from '~/utils/seoUtils'
 import { getSheetService } from '~/utils/sheetServiceUtils.server'
 
+const navData: ObjectParams[] = [
+  { link: '../', value: 'Frame data' },
+  { link: '../meta', value: 'Cheat sheet' },
+  { link: '', value: 'Anti strats' },
+]
 export const loader = async ({ params }: DataFunctionArgs) => {
   const character = getCharacterFromParams(params)
   const sheetService = getSheetService()
@@ -86,11 +92,8 @@ export default function Index() {
             Edit
           </a>
         </div>
-        <nav className="flex gap-3">
-          <NavLink to="../">Frame data</NavLink>
-          <NavLink to="../meta">Cheat sheet</NavLink>
-          <NavLink to="">Anti strats</NavLink>
-        </nav>
+
+        <Nav navData={navData} />
       </ContentContainer>
       <ContentContainer
         className="flex flex-wrap gap-2"

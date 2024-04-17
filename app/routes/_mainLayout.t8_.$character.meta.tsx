@@ -5,10 +5,11 @@ import {
   type LoaderFunctionArgs,
   type MetaFunction,
 } from '@remix-run/node'
-import { Link, NavLink, useLoaderData } from '@remix-run/react'
+import { Link, useLoaderData } from '@remix-run/react'
 import invariant from 'tiny-invariant'
 import { Authors } from '~/components/Authors'
 import { ContentContainer } from '~/components/ContentContainer'
+import Nav, { type ObjectParams } from '~/components/Nav'
 import { PersonLinkList } from '~/components/PersonLinkList'
 import { ResourcesTable } from '~/components/ResourcesTable'
 import { hasHeaderMap } from '~/constants/hasHeaderMap'
@@ -35,6 +36,12 @@ import { generateMetaTags } from '~/utils/seoUtils'
 import { creditsTableToJson } from '~/utils/sheetUtils'
 import { sheetSectionToTable, sheetToSections } from '~/utils/sheetUtils.server'
 import { t8AvatarMap } from '~/utils/t8AvatarMap'
+
+const navData: ObjectParams[] = [
+  { link: '../', value: 'Frame data' },
+  { link: '', value: 'Cheat sheet' },
+  { link: '../antistrat', value: 'Anti strats' },
+]
 
 export const loader = async ({ params }: LoaderFunctionArgs) => {
   const character = params.character
@@ -211,11 +218,8 @@ export default function Index() {
             Edit
           </a>
         </div>
-        <nav className="flex gap-3">
-          <NavLink to="../">Frame data</NavLink>
-          <NavLink to="">Cheat sheet</NavLink>
-          <NavLink to="../antistrat">Anti strats</NavLink>
-        </nav>
+
+        <Nav navData={navData}></Nav>
       </ContentContainer>
       <ContentContainer enableBottomPadding>
         {!!authors?.length && (
