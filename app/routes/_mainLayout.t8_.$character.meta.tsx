@@ -9,6 +9,7 @@ import { Link, useLoaderData } from '@remix-run/react'
 import invariant from 'tiny-invariant'
 import { Authors } from '~/components/Authors'
 import { ContentContainer } from '~/components/ContentContainer'
+import Nav, { type ObjectParams } from '~/components/Nav'
 import { PersonLinkList } from '~/components/PersonLinkList'
 import { ResourcesTable } from '~/components/ResourcesTable'
 import { hasHeaderMap } from '~/constants/hasHeaderMap'
@@ -35,7 +36,6 @@ import { generateMetaTags } from '~/utils/seoUtils'
 import { creditsTableToJson } from '~/utils/sheetUtils'
 import { sheetSectionToTable, sheetToSections } from '~/utils/sheetUtils.server'
 import { t8AvatarMap } from '~/utils/t8AvatarMap'
-import Nav, { type ObjectParams } from './_mainLayout.t8_.$character.nav'
 
 const navData: ObjectParams[] = [
   { link: '../', value: 'Frame data' },

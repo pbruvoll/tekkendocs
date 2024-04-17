@@ -1,6 +1,6 @@
 import { NavLink } from '@remix-run/react'
 export interface ObjectParams {
-  link: String
+  link: string
   value: String
 }
 interface Props {
@@ -11,7 +11,7 @@ function Nav({ navData }: Props) {
   return (
     <nav className="flex gap-3">
       {navData.map((obj, index) => (
-        <NavLink key={index} to={obj.link.toString()}>
+        <NavLink key={index} to={obj.link}>
           {obj.value}
         </NavLink>
       ))}

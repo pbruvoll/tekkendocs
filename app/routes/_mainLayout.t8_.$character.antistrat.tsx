@@ -3,6 +3,7 @@ import { Heading, Link as RadixLink, Table } from '@radix-ui/themes'
 import { type DataFunctionArgs, json, type MetaFunction } from '@remix-run/node'
 import { Link, useLoaderData } from '@remix-run/react'
 import { ContentContainer } from '~/components/ContentContainer'
+import Nav, { type ObjectParams } from '~/components/Nav'
 import { tableIdToDisplayName } from '~/constants/tableIdToDisplayName'
 import type { CharacterFrameData } from '~/types/CharacterFrameData'
 import type { RouteHandle } from '~/types/RouteHandle'
@@ -11,7 +12,6 @@ import { getCacheControlHeaders } from '~/utils/headerUtils'
 import { commandToUrlSegment } from '~/utils/moveUtils'
 import { generateMetaTags } from '~/utils/seoUtils'
 import { getSheetService } from '~/utils/sheetServiceUtils.server'
-import Nav, { type ObjectParams } from './_mainLayout.t8_.$character.nav'
 
 const navData: ObjectParams[] = [
   { link: '../', value: 'Frame data' },
