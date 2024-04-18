@@ -34,6 +34,9 @@ export const frameDataTableToJson = (normalFrameData: TableData): Move[] => {
     normalFrameData.headers.length < 11 ||
       normalFrameData.headers[10].localeCompare('video'),
   )
+  invariant(normalFrameData.headers.length < 12 ||
+    normalFrameData.headers[11].localeCompare('short')
+  )
   return normalFrameData.rows.map((row, index) => {
     const myTags = row[8] ? tagStringToRecord(row[8]) : undefined
     console.log('myTags', myTags)
