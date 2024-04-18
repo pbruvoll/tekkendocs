@@ -1,17 +1,12 @@
 import { json, type LoaderFunctionArgs } from '@remix-run/node'
 import { environment } from '~/constants/environment.server'
-import { hasHeaderMap } from '~/constants/hasHeaderMap'
 import { SheetServiceMock } from '~/mock/SheetServiceMock'
-import { getSheet } from '~/services/googleSheetService.server'
 import { SheetServiceImpl } from '~/services/sheetServiceImpl.server'
 import type { Game } from '~/types/Game'
 import type { Move } from '~/types/Move'
 import { type SheetService } from '~/types/SheetService'
-import type { Throw } from '~/types/Throw'
-import { cachified } from '~/utils/cache.server'
 import { frameDataTableToJson } from '~/utils/frameDataUtils'
 import { getCacheControlHeaders } from '~/utils/headerUtils'
-import { sheetSectionToTable, sheetToSections } from '~/utils/sheetUtils.server'
 
 export const loader = async ({ params }: LoaderFunctionArgs) => {
   const characterId = params.character
