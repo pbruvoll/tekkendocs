@@ -1,18 +1,25 @@
 import { NavLink } from '@remix-run/react'
-export interface ObjectParams {
+export type NavLinkInfo = {
   link: string
-  value: String
+  displayName: string
 }
-interface Props {
-  navData: ObjectParams[]
+type NavProps = {
+  navData: NavLinkInfo[]
 }
 
-function Nav({ navData }: Props) {
+function Nav({ navData }: NavProps) {
   return (
     <nav className="flex gap-3">
       {navData.map((obj, index) => (
-        <NavLink key={index} to={obj.link}>
-          {obj.value}
+        <NavLink
+          key={index}
+          to={obj.link}
+          end
+          className={({ isActive }) =>
+            isActive ? 'font-bold underline underline-offset-2' : undefined
+          }
+        >
+          {obj.displayName}
         </NavLink>
       ))}
     </nav>

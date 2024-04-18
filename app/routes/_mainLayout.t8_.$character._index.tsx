@@ -4,7 +4,7 @@ import type { HeadersFunction } from '@remix-run/node'
 import { type MetaFunction } from '@remix-run/react'
 import { ContentContainer } from '~/components/ContentContainer'
 import { FrameDataSection } from '~/components/FrameDataSection'
-import Nav, { type ObjectParams } from '~/components/Nav'
+import Nav, { type NavLinkInfo } from '~/components/Nav'
 import { orderByKey } from '~/constants/sortConstants'
 import { useFrameData } from '~/hooks/useFrameData'
 import { type CharacterFrameDataPage } from '~/types/CharacterFrameDataPage'
@@ -15,11 +15,12 @@ import { filterToDescription, getFilterFromParams } from '~/utils/filterUtils'
 import { filterRows, sortRows } from '~/utils/frameDataUtils'
 import { getCacheControlHeaders } from '~/utils/headerUtils'
 import { generateMetaTags } from '~/utils/seoUtils'
+import { t8AvatarMap } from '~/utils/t8AvatarMap'
 
-const navData: ObjectParams[] = [
-  { link: '', value: 'Frame data' },
-  { link: 'meta', value: 'Guide' },
-  { link: 'antistrat', value: 'Anti strats' },
+const navData: NavLinkInfo[] = [
+  { link: '', displayName: 'Frame data' },
+  { link: 'meta', displayName: 'Cheat Sheet' },
+  { link: 'antistrat', displayName: 'Anti strats' },
 ]
 
 export const headers: HeadersFunction = args => ({
@@ -115,10 +116,17 @@ export default function Index() {
   return (
     <>
       <ContentContainer enableTopPadding>
-        <div className="flex items-center justify-between">
-          <Heading as="h1" my="2" className="capitalize">
-            {characterName}
-          </Heading>
+        <div className="mb-3 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <img
+              className="aspect-square w-12"
+              src={t8AvatarMap[characterName]}
+              alt={characterName}
+            />
+            <Heading as="h1" my="2" className="capitalize">
+              {characterName}
+            </Heading>
+          </div>
           <a
             className="flex items-center gap-2"
             style={{ color: 'var(--accent-a11)' }}

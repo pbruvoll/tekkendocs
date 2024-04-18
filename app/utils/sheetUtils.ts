@@ -10,7 +10,7 @@ export const creditsTableToJson = (
     table.headers[1] !== 'url' ||
     table.headers[2] !== 'role'
   ) {
-    console.log('invalid credits table header', table.headers)
+    console.warn('invalid credits table header', table.headers)
     return undefined
   }
   if (table.rows.length === 0) {

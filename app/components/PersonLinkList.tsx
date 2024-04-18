@@ -1,3 +1,4 @@
+import { Fragment } from 'react'
 import { Link } from '@remix-run/react'
 
 type PersonLink = {
@@ -11,15 +12,15 @@ export const PersonLinkList = ({ persons }: PersonLinkListProps) => {
   return (
     <>
       {persons.map((p, index) => (
-        <>
-          <PersonLinkComponent key={p.name} name={p.name} url={p.url} />
+        <Fragment key={p.name}>
+          <PersonLinkComponent name={p.name} url={p.url} />
           {persons.length && index === persons.length - 2 ? (
             <span> and </span>
           ) : undefined}
           {persons.length && index < persons.length - 2 ? (
             <span>, </span>
           ) : undefined}
-        </>
+        </Fragment>
       ))}
     </>
   )
