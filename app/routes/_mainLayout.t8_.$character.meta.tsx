@@ -9,7 +9,7 @@ import { Link, useLoaderData } from '@remix-run/react'
 import invariant from 'tiny-invariant'
 import { Authors } from '~/components/Authors'
 import { ContentContainer } from '~/components/ContentContainer'
-import Nav, { type ObjectParams } from '~/components/Nav'
+import Nav, { type NavLinkInfo } from '~/components/Nav'
 import { PersonLinkList } from '~/components/PersonLinkList'
 import { ResourcesTable } from '~/components/ResourcesTable'
 import { hasHeaderMap } from '~/constants/hasHeaderMap'
@@ -37,10 +37,10 @@ import { creditsTableToJson } from '~/utils/sheetUtils'
 import { sheetSectionToTable, sheetToSections } from '~/utils/sheetUtils.server'
 import { t8AvatarMap } from '~/utils/t8AvatarMap'
 
-const navData: ObjectParams[] = [
-  { link: '../', value: 'Frame data' },
-  { link: '', value: 'Cheat sheet' },
-  { link: '../antistrat', value: 'Anti strats' },
+const navData: NavLinkInfo[] = [
+  { link: '../', displayName: 'Frame data' },
+  { link: '', displayName: 'Cheat sheet' },
+  { link: '../antistrat', displayName: 'Anti strats' },
 ]
 
 export const loader = async ({ params }: LoaderFunctionArgs) => {

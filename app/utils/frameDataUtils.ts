@@ -36,7 +36,6 @@ export const frameDataTableToJson = (normalFrameData: TableData): Move[] => {
   )
   return normalFrameData.rows.map((row, index) => {
     const myTags = row[8] ? tagStringToRecord(row[8]) : undefined
-    console.log('myTags', myTags)
     return {
       moveNumber: index + 1,
       command: row[0],

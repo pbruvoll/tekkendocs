@@ -3,7 +3,7 @@ import { Heading, Link as RadixLink, Table } from '@radix-ui/themes'
 import { type DataFunctionArgs, json, type MetaFunction } from '@remix-run/node'
 import { Link, useLoaderData } from '@remix-run/react'
 import { ContentContainer } from '~/components/ContentContainer'
-import Nav, { type ObjectParams } from '~/components/Nav'
+import Nav, { type NavLinkInfo } from '~/components/Nav'
 import { tableIdToDisplayName } from '~/constants/tableIdToDisplayName'
 import type { CharacterFrameData } from '~/types/CharacterFrameData'
 import type { RouteHandle } from '~/types/RouteHandle'
@@ -12,11 +12,12 @@ import { getCacheControlHeaders } from '~/utils/headerUtils'
 import { commandToUrlSegment } from '~/utils/moveUtils'
 import { generateMetaTags } from '~/utils/seoUtils'
 import { getSheetService } from '~/utils/sheetServiceUtils.server'
+import { t8AvatarMap } from '~/utils/t8AvatarMap'
 
-const navData: ObjectParams[] = [
-  { link: '../', value: 'Frame data' },
-  { link: '../meta', value: 'Cheat sheet' },
-  { link: '', value: 'Anti strats' },
+const navData: NavLinkInfo[] = [
+  { link: '../', displayName: 'Frame data' },
+  { link: '../meta', displayName: 'Cheat sheet' },
+  { link: '', displayName: 'Anti strats' },
 ]
 export const loader = async ({ params }: DataFunctionArgs) => {
   const character = getCharacterFromParams(params)
@@ -78,10 +79,17 @@ export default function Index() {
   return (
     <>
       <ContentContainer enableTopPadding>
-        <div className="flex items-center justify-between">
-          <Heading as="h1" my="2" className="capitalize">
-            {characterName}
-          </Heading>
+        <div className="mb-3 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <img
+              className="aspect-square w-12"
+              src={t8AvatarMap[characterName]}
+              alt={characterName}
+            />
+            <Heading as="h1" my="2" className="capitalize">
+              {characterName}
+            </Heading>
+          </div>
           <a
             className="flex items-center gap-2"
             style={{ color: 'var(--accent-a11)' }}
