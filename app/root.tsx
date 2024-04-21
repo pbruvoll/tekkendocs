@@ -1,5 +1,5 @@
 import { Theme } from '@radix-ui/themes'
-import radixStyles from '@radix-ui/themes/styles.css'
+import radixStyles from '@radix-ui/themes/styles.css?url'
 import {
   json,
   type LinksFunction,
@@ -8,22 +8,23 @@ import {
 } from '@remix-run/node'
 import {
   Links,
-  LiveReload,
   Meta,
   type MetaFunction,
   Outlet,
   Scripts,
   ScrollRestoration,
 } from '@remix-run/react'
-import stylesUrl from '~/global.css'
-import styles from './tailwind.css'
+import stylesUrl from '~/global.css?url'
+import tailwindStyleSheetUrl from './tailwind.css?url'
 import { getCacheControlHeaders } from './utils/headerUtils'
 
-export const links: LinksFunction = () => [
-  { rel: 'stylesheet', href: stylesUrl },
-  { rel: 'stylesheet', href: styles },
-  { rel: 'stylesheet', href: radixStyles },
-]
+export const links: LinksFunction = () => {
+  return [
+    { rel: 'stylesheet', href: tailwindStyleSheetUrl },
+    { rel: 'stylesheet', href: stylesUrl },
+    { rel: 'stylesheet', href: radixStyles },
+  ].filter(Boolean)
+}
 
 export const headers = () => getCacheControlHeaders({ seconds: 60 * 5 })
 
@@ -100,7 +101,6 @@ export default function App() {
         </Theme>
         <ScrollRestoration />
         <Scripts />
-        <LiveReload />
       </body>
     </html>
   )
