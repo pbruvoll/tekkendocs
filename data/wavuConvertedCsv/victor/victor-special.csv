@@ -4,10 +4,12 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * Can be cancelled with input b,b
 Power crush";hb pc;;
 H.IAI.d+2;m;45;i23~24;+8;+20 (+2);;* Transition to IAI on hit;;;
+H.db+1+2;m;30;i28~29;+6;+6a (-4);;"* Transitions to IAI
+* Partially uses remaining Heat time";;;
 H.u+1+2;m;54;i31~32;-4;0a (-1);;"* Alternate input: H.ub+1+2
 * Balcony Break
 Low crush";bbr js;;
-H.2+3;l;39;i20;-15;th;th;"* Heat Smash
+H.2+3;l,m;39;i20;-15;th;th;"* Heat Smash
 * Alternate input: H.R1";hs;;
 R.df+1+2;m;55;i20;-15;th;th;"* Rage Art
 * Removes recoverable health on hit
@@ -49,8 +51,8 @@ f+2,2,1;h,h,m;10,10,12;,i13~14;-11;0;;;;;
 f+2,2,1,1;h,h,m,m;10,10,12,25;,i20~21;-15;+20 (+15);;"* Balcony Break
 * Hit confirmable if (f22)1 is ch";bbr;;
 f+2,2,2;h,h,hmm;10,10,7,5,20;,i14,i12~13,i7~8;-13;+20a;;* Balcony Break;bbr;;
-f+3;sp;;;;;;* Can cancel into FC with df;;;
 f+3;sp;;;;;;* Can transition to FC with df;;;
+f+3;sp;;;;;;* Can cancel into FC with df;;;
 f+4;m;15;i14;-10;0;;;;;
 f+4,1;m,h;15,21;,i23~24;-4;+18a (+9) / HE;;"* Balcony Break
 * Heat Engager

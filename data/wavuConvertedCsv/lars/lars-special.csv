@@ -35,7 +35,7 @@ f+1,2,3;h,m,m;10,11,20;,i24;-12 / -5 DEN;+41d (-17) / +48d (-10) DEN;;"* Transit
 f+1+2;m;20;i15~16;-13;+28;;;;;
 f+1+4;m;28;i13~14;-18;+18 (+8);;* Balcony Break;bbr;;
 f+2;h;10;i12;-6;+3;;;;;
-f+2,1;h,h;10,15;,i13;-6 / -5 DEN;+5 / +6 DEN;;"* Jails
+f+2,1;h,h;10,15;,i13;-6 / -5 SEN;+5 / +6 SEN;;"* Jails
 * Transition to SEN
 * Cancel SEN transition to standing with input B (-6/+5/+5)";;;
 f+2,4;h,h;10,22;,i18~19;-12;+15 (+6);;* Balcony Break;bbr;;
@@ -140,7 +140,7 @@ SEN.3+4;mm;22 (11);i13~14,i18~19;+0;+22d (-13);;"* Spike
 Low crush";spk chp js;;
 SEN.4;h;28;i17~18;-9;+18 (+9);;"* Homing
 * Balcony Break
-Power crush";hom bbr pc;;
+Power crush 6~";hom bbr pc6~;;
 SEN.B;sp;;;;;;* Transition to DEN;;;
 SEN.D;sp;;;;;;* Transition to LEN;;;
 (airborne).f,f,F+2+4;th(h);31 (21);i11;;0;;"* Throw break: none

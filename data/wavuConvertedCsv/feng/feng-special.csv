@@ -13,14 +13,15 @@ H.2+3;m,m;22,26;i21,24;+12;+30d (-6);;"Heat Smash
 * Chip damage on block
 * Transitions to STC on block";hs chp;;
 1;h;5;i10;+1;+8;;;;;
-1,1;h,m;5,21;i25~26;-11l;+2;+61a;* Move can be delayed;;;
+1,1;h,m;5,21;i25~26;-11;+2;+61a;* Move can be delayed;;;
 1,2;h,h;5,9;i10;-3;+8;;"* Jail from 1st attack
 * Move can be delayed";;;
 1,2,2;h,h,h;5,9,12;i17;-13;+3;;"* Combo from 2nd hit
 * Transition to -11 +5 BT with B";;;
 1,3;h,h;5,19;i16~17;-5;+8;;* Combo from 1st hit;;;
-1+2;m;20;i21~22;-13;+8;;"Punch sabaki
-Parry state";ps;;
+1+2;m;20;i21~22;-13 / +20wc;+8;;"* Punch sabaki
+* Wall Crush  +20g on hit
+Parry state";wc ps;;
 1+3;h;35;;;-3;;* Throw break 1 or 2;;;
 1+3+4;;;;;;;;;;
 2;h;8;i10;-3;+5;;;;;
@@ -75,7 +76,7 @@ df+1;m;11;i14;0;+6;+36g;;;;
 df+2;m;15;i20~21;-8;;;;;;
 df+2,2;m,m;15,21;i13~14;-6;+14a (+4);;Balcony Break;bbr;;
 df+3;m;21;i18~19;-7;+78a (+62);;* Tornado;trn;;
-df+3+4;m;23;i24 (23~27);-7;+22d;;Homing;hom;;
+df+3+4;m;23;i23~27;-7;+22d;;Homing;hom;;
 df+4;m;13;i15;-6;+5;;;;;
 df+4,2;m,m;13,13;i20~21;-11;+1;;"* Combo from 1st hit
 * Move can be delayed";;;
@@ -99,8 +100,9 @@ db+1,2;m,m;15,18;i23~24;-11;+3;;"* Combo from 1st hit
 db+1,2,4;m,m,m;15,18,30;i31;-7;-3d;;"* Floor Break
 * Combo from 2nd CH
 Low crush";fbr js;;
-db+1,2,4,3+4;m,m,m;15,18,30;i39;;-;;"* Feng does a kip-up to get off the floor
-Low crush";js;;
+db+1,2,4,3+4;m,m,mm;15,18,3020;i39~42;-3~0;+31a (+21);;"* Balcony Break
+* Same attack as Spring Up (FUFT.b+3+4)
+Low crush";bbr js;;
 db+1,4;m,h;15,23;i24~25;-2;+24a (+15);;"* Balcony Break
 * Combo from 1st hit
 * Move can be delayed";bbr;;
@@ -129,7 +131,8 @@ b+2,3,4,2;m,l,m,m;15,10,13,22;i24~25;-6;+4;;"* Combo from 3rd hit
 * Spike";spk;;
 b+3;m;21;i22~23;+6;+10d;+38a;;;;
 b+3+4;;;;;;;* Enter STC with f;;;
-b+3~4;;;;;;;* Enter STC with F;;;
+b+3~4;;;;;;;"* Transitions to BT
+* Enter STC with F";;;
 b+4;m;10;i12~13;-9;+4;;;;;
 ub+1+2;!;70;i79~82;;+50g (+19);;;;;
 ub+2;m,h;8,20;i16,15;-10;+10g;;;;;
@@ -149,43 +152,9 @@ uf+3+4,3;m,h,h,h;10,10,7,11;,i17~18;-6;+70a (+54);;"* Balcony Break
 uf+4;m;13;i15~17;-13;+33a (+23);;"* Alternate input with uf or u
 Low crush";js;;
 1+2+3+4;;;;;;;;;;
-BT 1;h;12;i12;-3;+14g;;;;;
-BT 1+2;m;20;i16~17;-3;+8;+41d (+33);* Balcony Break (CH only);;;
-BT 1+4;h;45;;;-5;;* Throw break 1+2;;;
-BT 2;m;23;i19~21;-13;+17;;"* Heat Engager
-
-* Absorb an attack to power up and deal more damage on block
-Power crush 8~";he pc8~;;
-BT 3;m;35;i32~33;+8c;+8c;;"* Chip damage on block
-* Transition to STC with f";chp;;
-BT d+1;l;20;i20~21;-13c;+4;+16d;;;;
-BT d+3;l;20;i18~20;-26c;-3;+70a (+54);* Has clean hit effect;;;
 Back Throw;h;50;;;-4;;* Cannot break throw;;;
-Grounded Face Up B+3+4;m;20;i30~33;;+28d (+18);;"*
-Balcony Break";bbr;;
-KNP 1;l;20;i20~21;-13c;+8;+38d;;;;
-KNP 2;h;20;i14;-9;+17;;"* Heat Engager
-
-* Balcony Break";he bbr;;
-KNP 3;m;20;i22~23;-14;+77a (+55);;* Tornado;trn;;
-KNP 3+4;m;30;i31~34;-7;-3d;;;;;
-KNP 3+4,3+4;m,m;30;i39~42;;;;;;;
-KNP 4;l;10;i18;-31c;-4;;;;;
-KNP 4,1+2;l,h;10,24;i28;-6;+30a (+20);;"* Balcony Break
-* Combo from 1st attack";bbr;;
 Left Throw;h;40;;;-6;;* Throw break 1;;;
-OTG d+3+4;l;19;i24~25;;-2 (-10);;;;;
 Right Throw;h;40;;;-4;;* Throw break 2;;;
-STC 1;m;20;i20~21;-15;+30a;;"* Absorb an attack to power up and deal more chip damage on block
-Power crush";pc;;
-STC 1+2;m;20;i18;-9c;+17d;;;;;
-STC 2;h;15;i14~15;-3;+6;;* Enter BT with b;;;
-STC 3;h;25;i22~23;+3b;+23d;;"* Homing
-* Balcony Break
-* Chip damage on block";hom bbr chp;;
-STC 4;l;20;i20;-13;+3;;;;;
-STC F+3+4;m;21;i18;;+53a;;"* Absorbs two attacks for a follow up attack
-Parry state";ps;;
 b,f+1;m;25;i25~26;-15;+10d (+1);+44a;;;;
 b1+3;;25;;;;;"* Timed with opponent punch
 Parry state";ps;;
@@ -229,14 +198,53 @@ ws2;m;17;i15~16;-7;+24d;+78a (+62);"* Balcony Break
 * Tornado (CH Only)";bbr;;
 ws3;m;15;i15~16;-12;+33a (+23);;;;;
 ws4;m;18;i11~12;-7;+7;+29d;;;;
-SS 1+2;m;24;i22~23;+1;+21d (+12);;"* Balcony Break
+SS.1+2;m;24;i22~23;+1;+21d (+12);;"* Balcony Break
 * Chip damage on block";bbr chp;;
-SS 2;h;18;i15;+3;+9b;+31d;* Homing;hom;;
-SS 4;l;19;i21~22;-31c;+8 (-8);+72a (+56);* Has a clean hit effect;;;
+SS.2;h;18;i15;+3;+9b;+31d;"* Homing
+* Recovers in BT";hom;;
+SS.4;l;19;i21~22;-31c;+8 (-8);+72a (+56);* Has a clean hit effect;;;
 FC.df+1;l;19;i21~22;-13c;-2;+13;;;;
 FC.df+2;m;21;i18;-14;+55a;;;;;
-FC.df+4;l;10;i19~20;-8c;+3b;;* Can be input with D,df+4;;;
+FC.df+4;l;10;i19~20;-8c;+3b;;"* Can be input with D,df+4
+* Recovers in BT";;;
 FC.df+4,1;l,h;10,15;i20~21;-2;+6;;* Combo from 1st attack;;;
+BT.1;h;12;i12;-3;+14g;;;;;
+BT.1+2;m;20;i16~17;-3;+8;+41d (+33);* Balcony Break (CH only);;;
+BT.1+4;h;45;;;-5;;* Throw break 1+2;;;
+BT.2;m;23;i19~21;-13;+17;;"* Heat Engager
+
+* Absorb an attack to power up and deal more damage on block
+Power crush 8~";he pc8~;;
+BT.3;m;35;i32~33;+8c;+8c;;"* Chip damage on block
+* Transition to STC with f";chp;;
+BT.d+1;l;20;i20~21;-13c;+4;+16d;;;;
+BT.d+3;l;20;i18~20;-26c;-3;+70a (+54);* Has clean hit effect;;;
+FUFT.b+3+4;m;20;i30~33;-3~0;+28d (+18);;"*
+Balcony Break";bbr;;
+KNP.1;l;20;i20~21;-13c;+4;+16d;High crush;cs;;
+KNP.2;h;20;i14;-9;+17;;"* Heat Engager
+
+* Balcony Break";he bbr;;
+KNP.3;m;20;i22~23;-14;+77a (+55);;"* Tornado
+Low crush";trn js;;
+KNP.3+4;m;30;i31~34;-7;-3d;;Low crush;js;;
+KNP.3+4,3+4;m,m;30,20;i39~42;-3~0;+31a (+21);;"* Balcony Break
+* Same attack as Spring Up (FUFT.b+3+4)
+Low crush";bbr js;;
+KNP.4;l;10;i18;-31c;-4;;;;;
+KNP.4,1+2;l,h;10,24;i28;-6;+30a (+20);;"* Balcony Break
+* Combo from 1st attack";bbr;;
+OTG.d+3+4;l;19;i24~25;-13;-2 (-10);;;;;
+STC.1;m;20;i20~21;-15;+30a;;"* Absorb an attack to power up and deal more chip damage on block
+Power crush";pc;;
+STC.1+2;m;20;i18;-9c;+17d;;;;;
+STC.2;h;15;i14~15;-3;+6;;* Enter BT with b;;;
+STC.3;h;25;i22~23;+3b;+23d;;"* Homing
+* Balcony Break
+* Chip damage on block";hom bbr chp;;
+STC.4;l;20;i20;-13;+3;;;;;
+STC.F+3+4;m;21;i18;;+53a;;"* Only occurs during STC after absorbing 2 attacks
+Parry state";ps;;
 R.df+1+2;t;55;i20;-15;+0d;;"* Rage Art
 * Erases opponent's recoverable health on hit
 * Damage increases with lower health";;;
