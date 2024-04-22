@@ -1,21 +1,20 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Image;Video
-2+3;m;12;i16;+1;+2;;"* Heat Burst
-* Alternate input: R1
-Power crush";hb pc;File:Reina-2+3_Heat_Burst.jpg;File:Reina-Heat Burst.mp4
-H.WRA.2+3;l(th),mm,m;12(28),6,6,20;i18~19;-17;+0;;"* Heat Smash
+H.WRA.2+3;l,m,m,m;12,6,6,20;i18~19;-17;+0;;"* Heat Smash
+* Spike
 * Alternate input: H.WRA.R1
 * Jails if any hit is blocked
 * Transitions to attack throw on 1st hit for a total of 40 dmg
-* +4a (-5) if any hit after the 1st connects";hs;File:Reina-H.WRA.2+3.jpg;File:Reina-H.WRA.2+3.mp4
+* +4a (-5) if any hit after the 1st connects";hs spk;File:Reina-H.WRA.2+3.jpg;File:Reina-H.WRA.2+3.mp4
 H.d+1+2;;;;;;;"* Parries all mids and highs
 * Deals 40 damage on successful parry
 Parry state 20~60";ps20~60;;File:Reina-H.d+1+2.mp4
-H.2+3;m(th),m;20(30), 25;i21;+8 WRA;+0d;;"* Heat Smash
+H.2+3;m,m;20,25;i21;+8;+0d;;"* Heat Smash
+* Balcony Break
 * Alternate input: H.R1
 * Jails from 1st block
 * Transitions to attack throw on 1st hit for a total of 50 dmg
-* Transitions to WRA on 2nd block, whiff or hit
-* +19d WRA if only second hit connects (25 dmg)";hs;File:Reina-H.2+3.jpg;File:Reina-H.2+3.mp4
+* Transitions to r53 WRA on 2nd block, whiff or hit
+* +19d WRA if only second hit connects (25 dmg)";hs bbr;File:Reina-H.2+3.jpg;File:Reina-H.2+3.mp4
 R.df+1+2;m;55;i20;-15;;;"* Erases opponent's recoverable health on hit
 * Alternate input: R2
 * 150% Scaling at 1HP- 82dmg";;;File:Reina-R.df+1+2.mp4
@@ -74,13 +73,13 @@ High crush 8~17";hom cs8~17;;File:Reina-3.mp4
 * Combo from 1st hit";trn;;File:Reina-3,2.mp4
 3,4;h,m;12,20;,i20;-14;+50 (+19);+54;"Combo from 1st hit
 High crush 8~19";cs8~19;;File:Reina-3,4.mp4
-3,4,H.4;h,m,m;12,20,28;,i27;-8;+23a (+3) / -2a (-3);;"* Balcony Break
+3,4,H.4;h,m,m;12,20,28;,i27;-8;+23a (+3);;"* Balcony Break
 * Combo from 2nd hit";bbr;File:Reina-3,4,H.4.jpg;File:Reina-3,4,H.4.mp4
 3+4;m,m;5,10;i18 i26;-8;+3c;;"Spike
 Low crush 9~26";spk js9~26;;File:Reina-3+4.mp4
 3+4,4;m,m,m;5,10,20;,i16;-14;+50 (+19);+54;"Combo from 1st hit with 4f delay
 High crush 30~45";cs30~45;;File:Reina-3+4,4.mp4
-3+4,4,H.4;m,m,m,m;5,10,20,28;,i27;-8;+23a (+3) / -2a (-3);;"* Balcony Break
+3+4,4,H.4;m,m,m,m;5,10,20,28;,i27;-8;+23a (+3);;"* Balcony Break
 * Combo from 2nd hit";bbr;File:Reina-3+4,4,H.4.jpg;File:Reina-3+4,4,H.4.mp4
 4;h;20;i13~14;-8;+11g;+35d;"* Balcony Break
 * Opponent is FUFA on CH";bbr;;File:Reina-4.mp4
@@ -97,9 +96,9 @@ High crush 6~";cs6~;;File:Reina-f+3+4.mp4
 f+3+4*;m;30;i67;[[Reina_combos#Mini-combos|+10]];+52;;"* can be cancelled into crouch with input DB/D/DF
 * crumple stun on normal hit
 High crush 6~";cs6~;;File:Reina-f+3+4_hold.mp4
-f+3+4*,H.4;m,m;30,28;,i27;-8;+23a (+3) / -2a (-3);;"* Balcony Break
+f+3+4*,H.4;m,m;30,28;,i27;-8;+23a (+3);;"* Balcony Break
 * Combo from 1st block";bbr;;File:Reina-f+3+4_hold,H.4_block.mp4
-f+3+4,H.4;m,m;25,28;,i27;-8;+23a (+3) / -2a (-3);;"* Balcony Break
+f+3+4,H.4;m,m;25,28;,i27;-8;+23a (+3);;"* Balcony Break
 * Combo from 1st hit";bbr;File:Reina-f+3+4,H.4.jpg;File:Reina-f+3+4,H.4.mp4
 f+4;m;20;i19~20;+2c;+5c;+29d;"* [[Reina_combos#Mini-combos|+13c]] on crouching hit
 * Opponent is FDFA on CH";;;File:Reina-f+4.mp4
@@ -127,8 +126,8 @@ df+4,2,3;m,m,h;14,10,20;,i27;-8;+35;+71a (+55);"* Tornado
 High crush";trn cs;;File:Reina-df+4,2,3.mp4
 d+1;sm;5;i10;-5;+6;;"* Returns to standing when input F
 High crush 4~";cs4~;;File:Reina-d+1.mp4
-d+1+2;sp;;;;;;"* Can transition to SEN with input f+3
-* Can transition to WGS with input DF";;;File:Reina-d+1+2.mp4
+d+1+2;;;;;;;"* Can transition to r14 SEN with input f+3
+* Can transition to r2 WGS with input DF";;;File:Reina-d+1+2.mp4
 d+1+2;sp;;;;;;;;;File:Reina-d+1+2.mp4
 d+2;m;17;i15;+0c;+3c;+27d;;;;File:Reina-d+2.mp4
 d+3;sp;;;;;;"* Transitions to UNS (Kou, d)
@@ -161,7 +160,7 @@ Parry state 3~8";ps3~8;;File:Reina-b+1+3.mp4
 b+1+4;ub(m);50;i64;+20 (-1);+20 (-1);;"* Balcony Break
 * Can cancel with input b,b";bbr;;File:Reina-b+1+4.mp4
 b+2;m;14;i16~17;-9;+3;;Homing;hom;;File:Reina-b+2.mp4
-b+3;sp;;;;;;"* Partially drains heat meter when in heat
+b+3;;;;;;;"* Partially drains heat meter when in heat
 * Transitions to UNS (Gen)
 * Can transition to UNS (Kou, u/d) with input u+3 or d+3
 * Can transition to SEN with input f+3
@@ -203,9 +202,9 @@ f,F+3;m;20;i20~22;-3;+20d;;"* Balcony Break
 * Heat Dash +5, [[Reina_combos#Staples|+67a (+50)]]";bbr he;File:Reina-f,F+3.jpg;File:Reina-f,F+3.mp4
 f,F+3+4;h;22;i16~19;-2;+49 (-9);+49;"* Balcony Break
 Low crush";bbr js;;File:Reina-f,F+3+4.mp4
-f,n;sp;;;;;;"* Can transition to WGS with input DF
-* Transitions to WGS on successful parry with [[Reina_combos#Mini-combos|+10]]
-Parry state 2~(?)";ps2~(?);;File:Reina-f,n Wind Step.mp4
+f,n;;;;;;;"* Can transition to WGS with input DF
+* Punch parry, transitions to WGS on successful parry with [[Reina_combos#Mini-combos|+10]]
+Parry state 2~8";ps2~8;;File:Reina-f,n Wind Step.mp4
 f,n,d,df#2;h;23;i11~12 (~i13);+5;+25 (+25);;* Chip damage when guarded;chp;;File:Reina-f,n,d,df2.mp4
 f,n,d,df#3;M;27;i15~17;-9;+13 (-4);+23 (+17);"* Balcony Break
 * Chip damage when guarded";bbr chp;;File:Reina-f,n,d,df3.mp4
@@ -240,6 +239,7 @@ High crush 1~";bbr cs1~;;File:Reina-FC.df+3.mp4
 FC.df+4;m;20;i15;-14;+54;;"* Balcony Break
 * crumple stun on normal hit
 High crush 1~";bbr cs1~;;File:Reina-FC.df+4.mp4
+FC.d+3;l;10;i16;-17;-6;;High crush 1~;cs1~;;File:Reina-hFC.d+3.mp4
 BT.4;m;20;i17;-14;+54;;"crumple stun on normal hit
 High crush";cs;;File:Reina-BT.4.mp4
 CH.df+3+4;m,th;6,35;i16;;+0;;;;;File:Reina-CH.df+3+4.mp4
@@ -302,10 +302,11 @@ WRA.1;h;12;i12;-4;+8;+13;"* Homing
 * Deals chip damage on block
 * Can transition to SEN (+0/[[Reina_combos#Mini-combos|+13]]/[[Reina_combos#Mini-combos|+17]]) with input F
 * Cannot block up to i14 on empty transition on block";hom;;File:Reina-WRA.1.mp4
-WRA.1,4;h,m;12,22;,i25~26;-9;+9g;;"* Balcony Break
-* Combo from 1st hit";bbr;;File:Reina-WRA.1,4.mp4
+WRA.1,4;h,M;12,22;,i25~26;-9;+9g;;"* Balcony Break
+* Spike
+* Combo from 1st hit";bbr spk;;File:Reina-WRA.1,4.mp4
 WRA.1+2;m;30;i15~16;-13;+16d;;"* Balcony Break
-Power crush";bbr pc;;File:Reina-WRA.1+2.mp4
+Power crush 6~14";bbr pc6~14;;File:Reina-WRA.1+2.mp4
 WRA.2;m;30;i15~16;-9;+11 (+2);;"* Balcony Break
 * Heat Engager
 
@@ -314,34 +315,37 @@ WRA.2;m;30;i15~16;-9;+11 (+2);;"* Balcony Break
 * Deals chip damage on block";bbr he;File:Reina-WRA.2.jpg;File:Reina-WRA.2.mp4
 WRA.3;m;17;i28;-6;+22 (+12);;"* Balcony Break
 * Deals chip damage on block
-Low crush";bbr js;;File:Reina-WRA.3.mp4
+Low crush 9~36 fs37~39";bbr js9~36 fs37~39;;File:Reina-WRA.3.mp4
 WRA.3,4;m,m;17,14;,i18~19;+6;+17 (+16);;"* Balcony Break
 * Deals chip damage on block
 * Can transition to WRA (+8/+19 (+18)/-) with input D
 * Jails from 1st block
 * Combo from 1st hit
-Low crush";bbr js;;File:Reina-WRA.3,4.mp4
-WRA.3+4;M;26;i18~19;-5;+5d;;"* Deals chip damage on block
-* Opponent is FDFA on normal hit";;;File:Reina-WRA.3+4.mp4
-WRA.4;m,m;6,8;i17~18,i13;-10;-10;+7;"* 2nd hit of move is ncc only
-* Both hits jail on block";;;File:Reina-WRA.4.mp4
-WRA.4,2;m,m,m;6,8,8;,i15;-18;-7;;"* Jails from 2nd block
+Low crush 9~36 fs37~39";bbr js9~36 fs37~39;;File:Reina-WRA.3,4.mp4
+WRA.3+4;M;26;i18~19;-5;+5d;;"* Spike
+* Deals chip damage on block
+* Opponent is FDFA on normal hit";spk;;File:Reina-WRA.3+4.mp4
+WRA.4;M,M;6,8;i17~18,i13;-10;-10;+7;"* Spike
+** on 2nd hit
+* Combo from 1st CH
+* Both hits jail on block";spk;;File:Reina-WRA.4.mp4
+WRA.4,2;M,M,m;6,8,8;,i15;-18;-7;;"* Jails from 2nd block
 * Combo from 1st CH 
 * Combo from 2nd hit
 * Can be delayed";;;File:Reina-WRA.4,2.mp4
-WRA.4,2,2;m,m,m,h;6,8,8,4;,i15;-12;-1;;"* Jails from 3rd block
+WRA.4,2,2;M,M,m,h;6,8,8,4;,i15;-12;-1;;"* Jails from 3rd block
 * Combo from 3rd hit
 * Can be delayed";;;File:Reina-WRA.4,2,2.mp4
-WRA.4,2,2,1+2;m,m,m,h,m;6,8,8,4,22;,i24~25;-20;+24 (+3);;"* Balcony Break
+WRA.4,2,2,1+2;M,M,m,h,m;6,8,8,4,22;,i24~25;-20;+24 (+3);;"* Balcony Break
 * Blue spark with input qcf+1+2 for 6 extra damage
 * Combo from 4th hit without delay
 * Can be delayed";bbr;;File:Reina-WRA.4,2,2,1+2.mp4
-WRA.d+4;l;9;i16~17;-15;-4;+2;High crush;cs;;File:Reina-WRA.d+4.mp4
-WRA.d+4,3;l,m;9,20;,i21~22;-16;+48 (+17);+53;"* Combo from 1st CH without max delay
-* Can be delayed
+WRA.d+4;L;9;i16~17;-15;-4;+2;High crush 6~;cs6~;;File:Reina-WRA.d+4.mp4
+WRA.d+4,3;L,m;9,20;,i21~22;-16;+48 (+17);+53;"* Combo from 1st CH with 14f delay
+* Input can be delayed 15f
+* Move can be delayed 13f
 * CH-confirmable
-High crush";cs;;File:Reina-WRA.d+4,3.mp4
-hFC.d+3;l;10;i16;-17;-6;;High crush 1~;cs1~;;File:Reina-hFC.d+3.mp4
+High crush 1~9";cs1~9;;File:Reina-WRA.d+4,3.mp4
 1+3;th(h);35;i12~14;-3;+0;;"* Throw break 1 or 2
 * Spike
 * Opponent recovery on hit: FUFA off-axis to the left";spk;;File:Reina-1+3.mp4
@@ -356,7 +360,7 @@ Right throw;th(h);40;i12~14;-3;+0;;"* Throw break 2
 * Opponent recovery on hit: FUFA";;;File:Reina-Right_Throw.mp4
 SEN.1+3;th(h);12;i16;;-3;;"* Throw break: none
 * Opponent recovery on hit: FUFA";;;File:Reina-SEN.1+3.mp4
-WRA.1+3;th(h);20;i16;;+10d;;"* Throw break: none
+WRA.1+3;t (h);20;i16;;+10d;;"* Unbreakable
 * Opponent recovery on hit: FUFT";;;File:Reina-WRA.1+3.mp4
 d,db,b,f+2;th(h);40;i12;-3;+0;;"* Balcony Break
 * Throw break: 2

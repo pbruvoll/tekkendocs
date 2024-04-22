@@ -1,6 +1,6 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Image;Video
 2+3;m;15;i16;+1;+2;;* Heat Burst;hb;;
-H.2+3;l,th;12,40;i18;-14;th;;"* Heat Smash
+H.2+3;l (th), m;12,40;i18;-14;th;;"* Heat Smash
 * Balcony Break";hs bbr;;
 R.df+1+2;m,th;10,45;;;;;* Rage Art;;;
 1;h;5;i10;+1;+8;;;;;
@@ -16,7 +16,7 @@ Combo from 1st hit";;;
 * Head-side & Face-up & +0F during Starburst";;;
 2;h;10;i12;-3;+3;;;;;
 2,1;h,m;10,13;,i20;-6;+5;;Combo from 1st hit;;;
-2,1,2;h,m,m;10,13,25;,i16~18;-13;;;"* Heat Engager
+2,1,2;h,m,m;10,13,25;,i16~18;-13;+10a (+1) / HE;;"* Heat Engager
 
 * Balcony Break
 * Combo from 2nd CH
@@ -42,12 +42,12 @@ f+2,1;h,m;9,12;,i15~16;-10;+6c;;* Combo from 1st hit;;;
 f+2,1,1+2;h,m,m;9,12,25;,i21~22;-18;KND;KND;"* Balcony Break
 * Can be delayed 14F
 * Combo from 1st or 2nd CH";bbr;;
-f+2,2;h,m;9,20;,i14;-27;KND;KND;"* Grants STB on hit
+f+2,2;h,m;9,20;,i14;-26;KND;KND;"* Grants STB on hit
 * Combo from 1st hit";;;
 f+3;h;18;i18;+0;+15Sp;KND;"* Homing
 * Balcony Break on air hit
 Low crush 9~";hom js9~;;
-f+3+4;h;18;i17;+2;KND;KND;Homing;hom;;
+f+3+4;h;18;i17;-8;KND;KND;Homing;hom;;
 f+4;m;23;i22~23;+4c;;KND;;;;
 df+1;m;10;i15;-2;+9;;;;;
 df+1,2;m,m;10,15;,i23~24;-15;LNC;LNC;* Combo from 1st hit;;;
@@ -62,13 +62,13 @@ df+4;m;14;i13;-8;+3;;;;;
 d+1;m;14;i17;-8;+2;;;;;
 d+1+2;m;28;i13~14;-18;KND;KND;"* Balcony Break
 * Same move as BT.1+2";bbr;;
-d+2;l;6;i20;-12;-1;;High crush 6~;cs6~;;
-d+2,2;l,l;6,8;,i16~17;-13;-1;;;;;
-d+3;l;12;i16;-17;-3;;High crush 4~;cs4~;;
-d+4;l;7;i12;-13;-2;;High crush 4~;cs4~;;
+d+2;l;6;i20;-12;0;;High crush 6~;cs6~;;
+d+2,2;l,l;6,8;,i16~17;-13;-1;;Combo from first hit;;;
+d+3;l;12;i16;-17;-6;;High crush 4~;cs4~;;
+d+4;l;7;i12;-15;-4;;High crush 4~;cs4~;;
 db+1;sm;5;i10;-5;+6;;"* Returns to standing when input F
 High crush 4~";cs4~;;
-db+1+2;m;20;i17;;KND;;"* Tornado
+db+1+2;m;20;i17;-12;KND;;"* Tornado
 * Balcony Break";trn bbr;;
 db+2;sm;8;i11;-4;+7;;High crush 4~;cs4~;;
 db+2,1;sm,m;8,12;,i18;-9;+3;;"* Combo from 1st CH
@@ -86,9 +86,9 @@ Power crush 8~";bbr pc8~;;
 b+2;h;25;i14;-9;KND;KND;* Tornado;trn;;
 b+2+3;ub(m);60;i72;KND;KND;KND;Balcony Break;bbr;;
 b+3;m;14;i13;-4;+7;;;;;
-b+3,3;m,m;14,21;,i24~25;-12;+7c;KND;"* Combo from 1st CH
+b+3,n,3;m,m;14,21;,i24~25;-12;+7c;KND;"* Combo from 1st CH
 * Can be delayed";;;
-b+3+4;m;24;i29;-14;KND;KND;"* Homing
+b+3+4;m;24;i29;-15;KND;KND;"* Homing
 * Balcony Break";hom bbr;;
 b+4;m;10;i17;-14;-3;;;;;
 b+4,1;m,h;10,18;,i20~21;+1;+13Sp;KND;"* Tornado
@@ -106,8 +106,8 @@ b+4,3;m,h;10,14;,i22~23;-12;-4;+1;"* Homing
 * Can be delayed 12F";hom;;
 b+4,3,2;m,h,m;10,14,20;,i31~32;-13;KND;KND;"Combo from 2nd CH
 Low crush";js;;
-b+4,4;m,m;10,16;,i28~29;;LNC;;Tornado;trn;;
-u+2;m;21;i21;;;;"* Heat Engager
+b+4,4;m,m;10,16;,i28~29;-13;LNC;;Tornado;trn;;
+u+2;m;21;i21;-8;0d / HE;;"* Heat Engager
 
 * Balcony Break
 * Grants STB on hit
@@ -126,20 +126,18 @@ f,F+2;m;14;i14~16;-18;-7;;"* Same move as FC.df+2
 f,F+2,1+2;m,m;14,20;,i18~19;-13;KND;KND;"* Balcony Break
 * Grants STB on hit
 * Can be delayed
-* Combo from 1st NH";bbr;;
-f,F+2,2;m,h;14,20;,i14~15;-2c;;KND;"* Combo from 1st hit
+* Combo from 1st NH
+* Alternate input: FC.df+2,1+2";bbr;;
+f,F+2,2;m,h;14,20;,i14~15;-2c;+6c;KND;"* Combo from 1st hit
 * Can be delayed
 * Same move as FC.df+2,2";;;
 f,F+4;m;20;i15~17;-1;+5;+13;Low crush 11~;js11~;;
-f,f,F+2;h;40;i13~16;+7;KND;KND;"* Heat Engager
+f,f,F+2;h;40;i13~16;+6;KND;KND;"* Heat Engager
 
 * Grants STB on hit
-* Wall Crush +21g at the wall
-
-
 * Balcony Break
 * Chip damage when guarded
-Low crush 3~";he wc bbr chp js3~;;
+Low crush 3~";he bbr chp js3~;;
 ws1;m;12;i12~13;-4;+7;;;;;
 ws1,1;m,h;12,15;,i20;-12;+9;;Combo from 1st hit;;;
 ws1,2;m,m;12,12;,i28~29;-9;+4;;Tornado;trn;;
@@ -148,24 +146,23 @@ ws3;m;20;i16;-8;KND;KND;Balcony Break;bbr;;
 ws4;m;18;i11~12;-6;+5;;;;;
 SS.4;l;20;i20;-12;+6c;KND;;;;
 FC.df+2;m;14;i14~16;-18;-7;;* Same move as f,F+2;;;
-FC.df+2,2;m,h;14,20;,i14~15;-2c;;KND;"* Combo from 1st hit
+FC.df+2,2;m,h;14,20;,i14~15;-2c;+6c;KND;"* Combo from 1st hit
 * Can be delayed
 * Same move as f,F+2,2";;;
 (back to wall).b,b,ub;m;21;i36;+0c;KND;KND;"* Air Status 5F
 is8~13";is8~13;;
-STB.4,2;h,sm;13,32;i28-36;-17;+27(+1);;"* Tornado
+STB.4,2;h,sm;13,32;i12,i28-36;-17;+27(+1);;"* Tornado
 * Chip damage when guarded";trn chp;;
 STB.b+4,3,2;m,h,m;10,14,38;i17;-1;LNC;LNC;"* Combo from 2nd CH
 * Chip damage when guarded
 Low crush";chp js;;
 STB.db+1+2;m;25;i17;-1;Launch;;"* Tornado
 * Chip damage when guarded";trn chp;;
-STB.d+1,2;m,m;16,23;i28;+6;+28(+13);;"* Tornado
+STB.d+1,2;m,m;16,23;i17, i28;+6;+28(+13);;"* Tornado
 * Chip damage when guarded";trn chp;;
-STB.d+2,2;l,l;7,8;i20;-13;-1;;"Combo from 1st CH
-High crush";cs;;
 STB.f,f,F+1+2;h;45;i13;+8;KND;;"* Chip damage when guarded
-Low crush";chp js;;
+* Wall Crush  +8g on block
+Low crush";chp wc js;;
 STB.f+1+2,1+2;m,m;8,16;i16;-9;+64;+64;"* Balcony Break
 * Combo from 1st hit
 * Can be delayed

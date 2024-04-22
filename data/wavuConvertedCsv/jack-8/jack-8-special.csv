@@ -39,8 +39,9 @@ Power crush 8~";pc8~;;
 2,3;h,m;10,18;i19;-13;+5;+30d (+22);"* Knee
 * 2nd hit Balcony Break on CH";kne;;
 3+4;;;;;;;"* When timed with opponent attack, or absorbing an attack, shift to Gamma Charge
-* Gamma Charge is always in effect during Heat
-* Alternate input ws3+4
+* Gamma Charge is always
+in effect during Heat
+* Alternate input: ws3+4
 Power crush";pc;;
 f+1;m;13;i14;-6;+5;;;;;
 f+1,1;m,h;13,25;i25;-7;+8d (-1);+40d (-7);Combos from 1st hit;;;
@@ -101,7 +102,7 @@ df+2+3;m;26;i22;-9;+31d (-5);;"* Balcony Break
 ** (31 damage, i22)";bbr;;
 df+3;m;16;i16;-9;+2;;;;;
 df+3,2;m,h;1620;i20;-9;+25d;;Balcony Break;bbr;;
-df+3+4;28;17;i13;-23;+10a (+1);;Balcony Break;bbr;;
+df+3+4;m;28;i13;-23;+10a (+1);;Balcony Break;bbr;;
 df+4;m;17;i15;-9;+5;+14c;;;;
 d+1;s;5;i10;-5;+6;;*;;;
 d+1+2;m;28;i27;-18;+42a (+32);;*;;;
@@ -120,8 +121,10 @@ db+1+2;l,l;8,21;i18;-70;-5d;;*;;;
 db+2;l;24;i22;-18;+3;+33d;* Can be charged to power up;;;
 db+2*;l;30;i36;-33;+17d;;* Chip damage on block;chp;;
 db+3;l;15;i21;-20;-9;;*;;;
+db+3, ... 1+2;l,h;15,21;i34;+14g;+43a (-15);;* Balcony Break;bbr;;
+db+3, ... d+1+2;l,m (th);15,4,5,5,5,5,21;i34;;0;;"* Crouch throw (Unbreakable)
+* Can be executed after any hit of Cossack Kicks (DB+3,4,3...)";;;
 db+3,4;l,l;15,12;i27;-16;-9;;*;;;
-db+3,4, ... 1+2;l,l,m;15,12,21;i34;+14g;+43a (-15);;* Balcony Break;bbr;;
 db+3,4,3;l,l,l;15,12,12;i27;-19;-8;;*;;;
 db+3,4,3,4;l,l,l,l;15,12,12,12;i27;-16;-5;;*;;;
 db+3,4,3,4,3;l,l,l,l,l;15,12,12,12,12;i27;-19;-8;;*;;;
@@ -204,7 +207,7 @@ Balcony Break
 f,F+1+4;m (l);25;i21;-82;-88;;"* Low attack on landing
 Low crush";js;;
 f,F+2;m;23;i18;-16;+53a (+43);;* Can be charged to power up;;;
-f,F+2*;m;35;34;-16;+61a;;"* Tornado
+f,F+2*;m;35;34;-15;+61a;;"* Tornado
 * Chip damage on block";trn chp;;
 f,F+3;m;22;i26;+4c;+9c;+22a;* Transition to FC with D;;;
 f,F+4;m;32;i16;-10;+15d (+5);;"* Tornado 
@@ -295,7 +298,7 @@ GMH.2;h;40;i20;+11;+21d (+11);;"* Balcony Break
 * Tornado";bbr trn;;
 GMH.3;m;28;i24;+4;+9c;+22a;"* Transition to FC with D
 ** (+7 oH)";;;
-GMH.3+4;s;20;i20;-13;+40d (-18);;"* Heat Engager
+GMH.3+4;sm;20;i20;-13;+40d (-18);;"* Heat Engager
 
 * Heat Dash +5, +36a(+26)
 
@@ -335,7 +338,7 @@ Back Throw 1+3;t;70;i12;!;+3d;;"* Unbreakable
 * Floor Break";fbr;;
 Back Throw 2+4;t;70;i12;!;+17d;;"* Unbreakable
 * Balcony Break";bbr;;
-GMH.1+2;t;45 (57);i16;-6;+0d;;"* 57 Damage if opponent hits the wall
+GMH.1+2;th;45 (57);i16;-6;+0d;;"* 57 Damage if opponent hits the wall
 * Throw Break 1+2
 * Swaps positions on break";;;
 Left Throw;t;40;i12;-3;+1d;;"* Throw Break 1
