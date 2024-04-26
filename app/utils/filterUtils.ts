@@ -33,6 +33,8 @@ export const getFilterFromParams = (
     weapon: getSearchParamBoolean(searchParams, filterKey.Weapon),
     floorBreak: getSearchParamBoolean(searchParams, filterKey.FloorBreak),
     wallCrush: getSearchParamBoolean(searchParams, filterKey.WallCrush),
+    hitsGrounded: getSearchParamBoolean(searchParams, filterKey.HitsGrounded),
+    video: getSearchParamBoolean(searchParams, filterKey.Video),
     spike: getSearchParamBoolean(searchParams, filterKey.Spike),
 
     removeRecoveryHealth: getSearchParamBoolean(

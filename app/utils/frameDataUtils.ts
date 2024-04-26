@@ -80,6 +80,11 @@ export const jails = (move: Move) => {
   return /jail/i.test(move.notes || '')
 }
 
+export const hitsGrounded = (move: Move) => {
+  const lastHitLevel = move.hitLevel?.split(',').pop()
+  return lastHitLevel && lastHitLevel === lastHitLevel.toUpperCase()
+}
+
 export const isChip = (move: Move) => {
   return /chip/i.test(move.notes || '')
 }
@@ -277,6 +282,8 @@ export const filterMoves = (moves: Move[], filter: MoveFilter | undefined) => {
     [filter.homing, isHomingMove],
     [filter.tornado, isTornadoMove],
     [filter.jails, jails],
+    [filter.hitsGrounded, hitsGrounded],
+    [filter.video, (move: Move) => !!move.video],
     [filter.chip, isChip],
     [filter.removeRecoveryHealth, removesRecoverableHealth],
     [filter.powerCrush, (move: Move) => hasTag('pc', move)],

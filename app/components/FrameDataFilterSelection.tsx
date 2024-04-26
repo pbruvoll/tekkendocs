@@ -43,6 +43,8 @@ export const FrameDataFilterSelection = ({
     floorBreak,
     powerCrush,
     wallCrush,
+    hitsGrounded,
+    video,
     stance: stanceFilter,
     removeRecoveryHealth,
   } = filter
@@ -213,6 +215,7 @@ export const FrameDataFilterSelection = ({
               [filterKey.Homing, homing, 'Homing'],
               [filterKey.Tornado, tornado, 'Tornado Spin'],
               [filterKey.Jails, jails, 'Jails'],
+              [filterKey.HitsGrounded, hitsGrounded, 'Hits grounded'],
               [filterKey.Chip, chip, 'Chip'],
               [
                 filterKey.RemoveRecoveryHealth,
@@ -283,6 +286,25 @@ export const FrameDataFilterSelection = ({
                 </Button>
               )
             })}
+        </div>
+      </section>
+      <section className="flex flex-col gap-3">
+        <Text as="div" size="2" mb="1" weight="bold">
+          Media
+        </Text>
+        <div className="flex flex-wrap gap-3">
+          <Button
+            variant={video ? 'solid' : 'outline'}
+            onClick={() => {
+              if (video) {
+                removeFilterValue(filterKey.Video)
+              } else {
+                setFilterValue(filterKey.Video, '')
+              }
+            }}
+          >
+            Video
+          </Button>
         </div>
       </section>
       <section className="flex flex-col gap-3">

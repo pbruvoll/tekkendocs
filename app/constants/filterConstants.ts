@@ -22,6 +22,8 @@ export const filterKey = {
   Weapon: 'wpn',
   Stance: 'stance',
   WallCrush: 'wc',
+  Video: 'video',
+  HitsGrounded: 'hitsGrounded',
   RemoveRecoveryHealth: 'removeRecoveryHealth',
 } as const
 
