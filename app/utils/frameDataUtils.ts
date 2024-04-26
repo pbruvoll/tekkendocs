@@ -82,7 +82,7 @@ export const jails = (move: Move) => {
 
 export const hitsGrounded = (move: Move) => {
   const lastHitLevel = move.hitLevel?.split(',').pop()
-  return lastHitLevel && lastHitLevel === lastHitLevel.toUpperCase()
+  return !!lastHitLevel && lastHitLevel === lastHitLevel.toUpperCase()
 }
 
 export const isChip = (move: Move) => {
