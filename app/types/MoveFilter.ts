@@ -23,6 +23,8 @@ export type MoveFilter = {
   elbow?: boolean
   knee?: boolean
   wallCrush?: boolean
+  hitsGrounded?: boolean
+  video?: boolean
   chip?: boolean
   stance?: string[]
 }
