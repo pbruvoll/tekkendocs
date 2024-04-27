@@ -2,7 +2,7 @@ import invariant from 'tiny-invariant'
 import { type Move } from '~/types/Move'
 import { type MoveFilter } from '~/types/MoveFilter'
 import { type SortOrder } from '~/types/SortOrder'
-import { type TableDataWithHeader } from '~/types/TableData'
+import { type TableData } from '~/types/TableData'
 import {
   sortMovesByNumber,
   sortMovesByString,
@@ -12,7 +12,7 @@ import {
 import { tagStringToRecord } from './tagUtils'
 
 export const frameDataTableToJson = (
-  normalFrameData: TableDataWithHeader,
+  normalFrameData: TableData,
 ): Move[] => {
   invariant(normalFrameData.headers)
   const lowerCaseHeaders = normalFrameData.headers.map(h => h.toLowerCase())
