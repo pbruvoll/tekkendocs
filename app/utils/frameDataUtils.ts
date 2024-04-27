@@ -2,7 +2,7 @@ import invariant from 'tiny-invariant'
 import { type Move } from '~/types/Move'
 import { type MoveFilter } from '~/types/MoveFilter'
 import { type SortOrder } from '~/types/SortOrder'
-import { type TableData, type TableDataWithHeader } from '~/types/TableData'
+import { type TableDataWithHeader } from '~/types/TableData'
 import {
   sortMovesByNumber,
   sortMovesByString,
