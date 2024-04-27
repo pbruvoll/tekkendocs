@@ -11,9 +11,7 @@ import {
 } from './sortingUtils'
 import { tagStringToRecord } from './tagUtils'
 
-export const frameDataTableToJson = (
-  normalFrameData: TableData,
-): Move[] => {
+export const frameDataTableToJson = (normalFrameData: TableData): Move[] => {
   invariant(normalFrameData.headers)
   const lowerCaseHeaders = normalFrameData.headers.map(h => h.toLowerCase())
   const commandIndex = lowerCaseHeaders.findIndex(h => h === 'command')
