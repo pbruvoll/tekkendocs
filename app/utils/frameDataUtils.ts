@@ -2,7 +2,7 @@ import invariant from 'tiny-invariant'
 import { type Move } from '~/types/Move'
 import { type MoveFilter } from '~/types/MoveFilter'
 import { type SortOrder } from '~/types/SortOrder'
-import { type TableData,type TableDataWithHeader } from '~/types/TableData'
+import { type TableData, type TableDataWithHeader } from '~/types/TableData'
 import {
   sortMovesByNumber,
   sortMovesByString,
@@ -11,36 +11,39 @@ import {
 } from './sortingUtils'
 import { tagStringToRecord } from './tagUtils'
 
-export const frameDataTableToJson = (normalFrameData: TableDataWithHeader): Move[] => {
+export const frameDataTableToJson = (
+  normalFrameData: TableDataWithHeader,
+): Move[] => {
   invariant(normalFrameData.headers)
-  const lowerCaseHeaders = normalFrameData.headers.map(h => h.toLowerCase());
-  const commandIndex = lowerCaseHeaders.findIndex(h => h === 'command');
-  const hitLevelIndex = lowerCaseHeaders.findIndex(h => h === 'hit level');
-  const damageIndex = lowerCaseHeaders.findIndex(h => h === 'damage');
-  const startupIndex = lowerCaseHeaders.findIndex(h => h ==='start up frame');
-  const blockIndex = lowerCaseHeaders.findIndex(h => h === 'block frame');
-  const hitIndex = lowerCaseHeaders.findIndex(h => h === 'hit frame');
-  const counterHitIndex = lowerCaseHeaders.findIndex(h => h === 'counter hit frame');
-  const notesIndex = lowerCaseHeaders.findIndex(h => h === 'notes');
+  const lowerCaseHeaders = normalFrameData.headers.map(h => h.toLowerCase())
+  const commandIndex = lowerCaseHeaders.findIndex(h => h === 'command')
+  const hitLevelIndex = lowerCaseHeaders.findIndex(h => h === 'hit level')
+  const damageIndex = lowerCaseHeaders.findIndex(h => h === 'damage')
+  const startupIndex = lowerCaseHeaders.findIndex(h => h === 'start up frame')
+  const blockIndex = lowerCaseHeaders.findIndex(h => h === 'block frame')
+  const hitIndex = lowerCaseHeaders.findIndex(h => h === 'hit frame')
+  const counterHitIndex = lowerCaseHeaders.findIndex(
+    h => h === 'counter hit frame',
+  )
+  const notesIndex = lowerCaseHeaders.findIndex(h => h === 'notes')
 
-  invariant(commandIndex >= 0);
-  invariant(hitLevelIndex >= 0);
-  invariant(damageIndex >= 0);
-  invariant(startupIndex >= 0);
-  invariant(blockIndex >= 0);
-  invariant(hitIndex >= 0);
-  invariant(counterHitIndex >= 0);
-  invariant(notesIndex >= 0);
+  invariant(commandIndex >= 0)
+  invariant(hitLevelIndex >= 0)
+  invariant(damageIndex >= 0)
+  invariant(startupIndex >= 0)
+  invariant(blockIndex >= 0)
+  invariant(hitIndex >= 0)
+  invariant(counterHitIndex >= 0)
+  invariant(notesIndex >= 0)
 
-  const tagsIndex = lowerCaseHeaders.findIndex(h => h === 'tags');
-  const imageIndex = lowerCaseHeaders.findIndex(h => h === 'image');
-  const videoIndex = lowerCaseHeaders.findIndex(h => h === 'video');
-  
+  const tagsIndex = lowerCaseHeaders.findIndex(h => h === 'tags')
+  const imageIndex = lowerCaseHeaders.findIndex(h => h === 'image')
+  const videoIndex = lowerCaseHeaders.findIndex(h => h === 'video')
 
   // check optional columns
-  if(tagsIndex >= 0) {
-    invariant(imageIndex >= 0);
-    invariant(videoIndex >= 0);
+  if (tagsIndex >= 0) {
+    invariant(imageIndex >= 0)
+    invariant(videoIndex >= 0)
   }
 
   return normalFrameData.rows.map((row, index) => {
