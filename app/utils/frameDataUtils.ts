@@ -2,7 +2,7 @@ import invariant from 'tiny-invariant'
 import { type Move } from '~/types/Move'
 import { type MoveFilter } from '~/types/MoveFilter'
 import { type SortOrder } from '~/types/SortOrder'
-import { type TableData } from '~/types/TableData'
+import { type TableData,type TableDataWithHeader } from '~/types/TableData'
 import {
   sortMovesByNumber,
   sortMovesByString,
@@ -11,43 +11,52 @@ import {
 } from './sortingUtils'
 import { tagStringToRecord } from './tagUtils'
 
-export const frameDataTableToJson = (normalFrameData: TableData): Move[] => {
+export const frameDataTableToJson = (normalFrameData: TableDataWithHeader): Move[] => {
   invariant(normalFrameData.headers)
-  invariant(normalFrameData.headers[0].localeCompare('command'))
-  invariant(normalFrameData.headers[1].localeCompare('hit level'))
-  invariant(normalFrameData.headers[2].localeCompare('damage'))
-  invariant(normalFrameData.headers[3].localeCompare('start up frame'))
-  invariant(normalFrameData.headers[4].localeCompare('block frame'))
-  invariant(normalFrameData.headers[5].localeCompare('hit frame'))
-  invariant(normalFrameData.headers[5].localeCompare('counter hit frame'))
-  invariant(normalFrameData.headers[7].localeCompare('notes'))
+  const lowerCaseHeaders = normalFrameData.headers.map(h => h.toLowerCase());
+  const commandIndex = lowerCaseHeaders.findIndex(h => h === 'command');
+  const hitLevelIndex = lowerCaseHeaders.findIndex(h => h === 'hit level');
+  const damageIndex = lowerCaseHeaders.findIndex(h => h === 'damage');
+  const startupIndex = lowerCaseHeaders.findIndex(h => h ==='start up frame');
+  const blockIndex = lowerCaseHeaders.findIndex(h => h === 'block frame');
+  const hitIndex = lowerCaseHeaders.findIndex(h => h === 'hit frame');
+  const counterHitIndex = lowerCaseHeaders.findIndex(h => h === 'counter hit frame');
+  const notesIndex = lowerCaseHeaders.findIndex(h => h === 'notes');
+
+  invariant(commandIndex >= 0);
+  invariant(hitLevelIndex >= 0);
+  invariant(damageIndex >= 0);
+  invariant(startupIndex >= 0);
+  invariant(blockIndex >= 0);
+  invariant(hitIndex >= 0);
+  invariant(counterHitIndex >= 0);
+  invariant(notesIndex >= 0);
+
+  const tagsIndex = lowerCaseHeaders.findIndex(h => h === 'tags');
+  const imageIndex = lowerCaseHeaders.findIndex(h => h === 'image');
+  const videoIndex = lowerCaseHeaders.findIndex(h => h === 'video');
+  
+
   // check optional columns
-  invariant(
-    normalFrameData.headers.length < 9 ||
-      normalFrameData.headers[8].localeCompare('tags'),
-  )
-  invariant(
-    normalFrameData.headers.length < 10 ||
-      normalFrameData.headers[9].localeCompare('image'),
-  )
-  invariant(
-    normalFrameData.headers.length < 11 ||
-      normalFrameData.headers[10].localeCompare('video'),
-  )
+  if(tagsIndex >= 0) {
+    invariant(imageIndex >= 0);
+    invariant(videoIndex >= 0);
+  }
+
   return normalFrameData.rows.map((row, index) => {
     return {
       moveNumber: index + 1,
-      command: row[0],
-      hitLevel: row[1],
-      damage: row[2],
-      startup: row[3],
-      block: row[4],
-      hit: row[5],
-      counterHit: row[6],
-      notes: row[7],
-      tags: row[8] ? tagStringToRecord(row[8]) : undefined,
-      image: row[9],
-      video: row[10],
+      command: row[commandIndex],
+      hitLevel: row[hitLevelIndex],
+      damage: row[damageIndex],
+      startup: row[startupIndex],
+      block: row[blockIndex],
+      hit: row[hitIndex],
+      counterHit: row[counterHitIndex],
+      notes: row[notesIndex],
+      tags: row[tagsIndex] ? tagStringToRecord(row[tagsIndex]) : undefined,
+      image: row[imageIndex],
+      video: row[videoIndex],
     }
   })
 }
