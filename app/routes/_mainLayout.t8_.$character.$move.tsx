@@ -123,10 +123,15 @@ export default function Move() {
     return <div>Not able to find frame data for the move {command}</div>
   }
 
-  const videoLink =
+  let videoLink =
     characterName === 'nina' && moveRow[0] === 'df+1,2'
       ? 'https://www.youtube.com/embed/E1KQf-UJ95M?si=QXJB5-VhaS5-bZMz&start=160&autoplay=1&mute=1&end=162&rel=0'
       : undefined
+
+  if (characterName === 'nina' && moveRow[0] === 'f+2,1,3') {
+    videoLink =
+      'https://www.youtube.com/embed/jKrpLuRJUjI?&start=104&autoplay=1&mute=1&end=112&rel=0'
+  }
 
   const handleReloadVideo = () => {
     setShowVideo(false)
