@@ -15,6 +15,8 @@ columns = [
     {"wavuId": "on_ch", "displayName": "Counter hit frame"},
     {"wavuId": "notes", "displayName": "Notes"},
     {"wavuId": "tags", "displayName": "Tags"},
+    {"wavuId": "name", "displayName": "Name"},
+    {"wavuId": "recovery", "displayName": "Recovery"},
     {"wavuId": "image", "displayName": "Image"},
     {"wavuId": "video", "displayName": "Video"},
 ]

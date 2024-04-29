@@ -1,6 +1,7 @@
 export type Move = {
   moveNumber: number
   command: string
+  name?: string
   hitLevel: string
   damage: string
   startup: string
@@ -11,4 +12,5 @@ export type Move = {
   tags?: Record<string, string>
   image?: string
   video?: string
+  recovery?: string
 }
