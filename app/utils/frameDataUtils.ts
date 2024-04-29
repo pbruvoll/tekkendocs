@@ -37,6 +37,8 @@ export const frameDataTableToJson = (normalFrameData: TableData): Move[] => {
   const tagsIndex = lowerCaseHeaders.findIndex(h => h === 'tags')
   const imageIndex = lowerCaseHeaders.findIndex(h => h === 'image')
   const videoIndex = lowerCaseHeaders.findIndex(h => h === 'video')
+  const nameIndex = lowerCaseHeaders.findIndex(h => h === 'name');
+  const recoveryIndex = lowerCaseHeaders.findIndex(h => h ==='recovery')
 
   // check optional columns
   if (tagsIndex >= 0) {
@@ -48,6 +50,7 @@ export const frameDataTableToJson = (normalFrameData: TableData): Move[] => {
     return {
       moveNumber: index + 1,
       command: row[commandIndex],
+      name: row[nameIndex],
       hitLevel: row[hitLevelIndex],
       damage: row[damageIndex],
       startup: row[startupIndex],
@@ -58,6 +61,7 @@ export const frameDataTableToJson = (normalFrameData: TableData): Move[] => {
       tags: row[tagsIndex] ? tagStringToRecord(row[tagsIndex]) : undefined,
       image: row[imageIndex],
       video: row[videoIndex],
+      recovery: row[recoveryIndex]
     }
   })
 }

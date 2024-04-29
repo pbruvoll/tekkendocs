@@ -107,28 +107,22 @@ export default function Move() {
   const [showVideo, setShowVideo] = useState(true)
 
   const matches = useMatches()
-  const characterFrameData = getCharacterFrameData(matches)
-  if (
-    !characterName ||
-    !command ||
-    !characterFrameData ||
-    !characterFrameData.headers
-  ) {
+  const moves = getCharacterFrameDataMoves(matches)
+  if (!characterName || !command || !moves || moves.length === 0) {
     return <div>Missing character, move, frame data or headers</div>
   }
 
-  const headers: string[] = characterFrameData.headers
-  const moveRow = findMoveRow(command, characterFrameData.rows)
-  if (!moveRow) {
+  const move: Move | undefined = moves ? findMove(command, moves) : undefined
+  if (!move) {
     return <div>Not able to find frame data for the move {command}</div>
   }
 
   let videoLink =
-    characterName === 'nina' && moveRow[0] === 'df+1,2'
+    characterName === 'nina' && move.command === 'df+1,2'
       ? 'https://www.youtube.com/embed/E1KQf-UJ95M?si=QXJB5-VhaS5-bZMz&start=160&autoplay=1&mute=1&end=162&rel=0'
       : undefined
 
-  if (characterName === 'nina' && moveRow[0] === 'f+2,1,3') {
+  if (characterName === 'nina' && move.command === 'f+2,1,3') {
     videoLink =
       'https://www.youtube.com/embed/jKrpLuRJUjI?&start=104&autoplay=1&mute=1&end=112&rel=0'
   }
@@ -137,9 +131,6 @@ export default function Move() {
     setShowVideo(false)
     setTimeout(() => setShowVideo(true), 1)
   }
-
-  const moves = getCharacterFrameDataMoves(matches)
-  const move: Move | undefined = moves ? findMove(command, moves) : undefined
 
   return (
     <ContentContainer enableTopPadding enableBottomPadding>
@@ -151,8 +142,9 @@ export default function Move() {
           <Link to={'/' + characterName} className="capatalize">
             {characterName}
           </Link>
-        </RadixLink>
-        : {moveRow[0]}
+        </RadixLink>{' '}
+        {move.command}
+        {move.name ? ` - ${move.name}` : ''}
       </Heading>
       {move?.video && (
         <>
@@ -170,18 +162,6 @@ export default function Move() {
           <div className="text-sm">Video from Wavu wiki</div>
         </>
       )}
-      <Table.Root variant="surface" className="mt-4" style={{ width: '100%' }}>
-        <Table.Body>
-          {headers.slice(1, 8).map((header, i) => {
-            return (
-              <Table.Row key={header}>
-                <Table.Cell>{header}</Table.Cell>
-                <Table.Cell>{moveRow[i + 1] || ''}</Table.Cell>
-              </Table.Row>
-            )
-          })}
-        </Table.Body>
-      </Table.Root>
       {videoLink && showVideo && (
         <>
           <iframe
@@ -194,9 +174,44 @@ export default function Move() {
             referrerPolicy="strict-origin-when-cross-origin"
             allowFullScreen
           ></iframe>
-          <Button onClick={handleReloadVideo}>Reload</Button>
+          <div className="my-2">
+            <Button onClick={handleReloadVideo}>Reload</Button>
+          </div>
         </>
       )}
+      <Table.Root variant="surface" className="mt-4" style={{ width: '100%' }}>
+        <Table.Body>
+          <Table.Row>
+            <Table.RowHeaderCell>Hit level</Table.RowHeaderCell>
+            <Table.Cell>{move.hitLevel}</Table.Cell>
+          </Table.Row>
+
+          <Table.Row>
+            <Table.RowHeaderCell>Damage</Table.RowHeaderCell>
+            <Table.Cell>{move.damage}</Table.Cell>
+          </Table.Row>
+          <Table.Row>
+            <Table.RowHeaderCell>Startup</Table.RowHeaderCell>
+            <Table.Cell>{move.startup}</Table.Cell>
+          </Table.Row>
+          <Table.Row>
+            <Table.RowHeaderCell>Block</Table.RowHeaderCell>
+            <Table.Cell>{move.block}</Table.Cell>
+          </Table.Row>
+          <Table.Row>
+            <Table.RowHeaderCell>Hit</Table.RowHeaderCell>
+            <Table.Cell>{move.hit}</Table.Cell>
+          </Table.Row>
+          <Table.Row>
+            <Table.RowHeaderCell>Counter hit</Table.RowHeaderCell>
+            <Table.Cell>{move.counterHit}</Table.Cell>
+          </Table.Row>
+          <Table.Row>
+            <Table.RowHeaderCell>Notes</Table.RowHeaderCell>
+            <Table.Cell>{move.notes}</Table.Cell>
+          </Table.Row>
+        </Table.Body>
+      </Table.Root>
     </ContentContainer>
   )
 }
