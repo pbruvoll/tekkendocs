@@ -1,7 +1,7 @@
 export type Move = {
   moveNumber: number
   command: string
-  name?: string,
+  name?: string
   hitLevel: string
   damage: string
   startup: string
