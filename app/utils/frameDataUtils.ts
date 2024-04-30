@@ -66,6 +66,42 @@ export const frameDataTableToJson = (normalFrameData: TableData): Move[] => {
   })
 }
 
+export const applyOverride = (
+  moves: Move[],
+  overrideNormalFrameData: TableData,
+) => {
+  invariant(overrideNormalFrameData.headers)
+  const lowerCaseHeaders = overrideNormalFrameData.headers.map(h =>
+    h.toLowerCase(),
+  )
+  const commandIndex = lowerCaseHeaders.findIndex(h => h === 'command')
+  const ytVideoIndex = lowerCaseHeaders.findIndex(h => h === 'yt video')
+  const ytStartIndex = lowerCaseHeaders.findIndex(h => h === 'yt start')
+  const ytEndIndex = lowerCaseHeaders.findIndex(h => h === 'yt end')
+  const overrideRecord = overrideNormalFrameData.rows.reduce<
+    Record<string, Partial<Move>>
+  >((moves, row) => {
+    const ytVideo = row[ytVideoIndex]
+    if (ytVideo) {
+      moves[row[commandIndex]] = {
+        ytVideo: {
+          id: ytVideo,
+          start: row[ytStartIndex],
+          end: row[ytEndIndex],
+        },
+      }
+    }
+    return moves
+  }, {})
+
+  moves.forEach(move => {
+    const override = overrideRecord[move.command]
+    if (override) {
+      move.ytVideo = override.ytVideo
+    }
+  })
+}
+
 export const isHomingMove = (move: Move) => {
   return /homing/i.test(move.notes || '')
 }
@@ -297,7 +333,7 @@ export const filterMoves = (moves: Move[], filter: MoveFilter | undefined) => {
     [filter.tornado, isTornadoMove],
     [filter.jails, jails],
     [filter.hitsGrounded, hitsGrounded],
-    [filter.video, (move: Move) => !!move.video],
+    [filter.video, (move: Move) => !!(move.video || move.ytVideo)],
     [filter.chip, isChip],
     [filter.removeRecoveryHealth, removesRecoverableHealth],
     [filter.powerCrush, (move: Move) => hasTag('pc', move)],

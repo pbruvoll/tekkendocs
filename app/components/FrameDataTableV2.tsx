@@ -111,7 +111,7 @@ export const FrameDataTable = ({
                   to={commandToUrlSegment(move.command)}
                 >
                   {move.command}
-                  {move.video && <VideoIcon />}
+                  {(move.video || move.ytVideo) && <VideoIcon />}
                 </Link>
               </Table.Cell>
               <Table.Cell>{move.hitLevel}</Table.Cell>

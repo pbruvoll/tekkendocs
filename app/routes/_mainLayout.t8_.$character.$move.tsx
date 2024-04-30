@@ -127,6 +127,12 @@ export default function Move() {
       'https://www.youtube.com/embed/jKrpLuRJUjI?&start=104&autoplay=1&mute=1&end=112&rel=0'
   }
 
+  if (move.ytVideo) {
+    const startParam = move.ytVideo.start ? '&start=' + move.ytVideo.start : ''
+    const endParam = move.ytVideo.end ? '&end=' + move.ytVideo.end : ''
+    videoLink = `https://www.youtube.com/embed/${move.ytVideo.id}?autoplay=1&mute=1&rel=0${startParam}${endParam}`
+  }
+
   const handleReloadVideo = () => {
     setShowVideo(false)
     setTimeout(() => setShowVideo(true), 1)
@@ -146,7 +152,7 @@ export default function Move() {
         {move.command}
         {move.name ? ` - ${move.name}` : ''}
       </Heading>
-      {move?.video && (
+      {move?.video && !videoLink && (
         <>
           <video
             className="mb-2 mt-4 aspect-video max-w-full"

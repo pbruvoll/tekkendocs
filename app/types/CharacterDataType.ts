@@ -1,1 +1,5 @@
-export type CharacterDataType = 'frameData' | 'cheatSheet' | 'antiStrat'
+export type CharacterDataType =
+  | 'frameData'
+  | 'overrideFrameData'
+  | 'cheatSheet'
+  | 'antiStrat'
