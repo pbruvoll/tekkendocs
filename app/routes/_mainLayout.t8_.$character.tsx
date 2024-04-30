@@ -4,10 +4,11 @@ import { environment } from '~/constants/environment.server'
 import { SheetServiceMock } from '~/mock/SheetServiceMock'
 import { SheetServiceImpl } from '~/services/sheetServiceImpl.server'
 import { type CharacterFrameDataPage } from '~/types/CharacterFrameDataPage'
+import { type CharacterPageData } from '~/types/CharacterPageData'
 import type { Game } from '~/types/Game'
 import { type Move } from '~/types/Move'
 import { type SheetService } from '~/types/SheetService'
-import { frameDataTableToJson } from '~/utils/frameDataUtils'
+import { applyOverride, frameDataTableToJson } from '~/utils/frameDataUtils'
 import { getCacheControlHeaders } from '~/utils/headerUtils'
 
 export function shouldRevalidate() {
@@ -29,16 +30,36 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
     ? new SheetServiceMock()
     : new SheetServiceImpl()
 
-  const sheetData = await service.getCharacterData(
+  const sheetDataPromise = service.getCharacterData(
     game,
     characterId,
     'frameData',
   )
 
+  let overrideSheetData: CharacterPageData | undefined = undefined
+  try {
+    overrideSheetData = await service.getCharacterData(
+      game,
+      characterId,
+      'overrideFrameData',
+    )
+  } catch (e) {
+    console.warn('overrideSheetData error', e)
+  }
+
+  const overrideNormalMoves = overrideSheetData?.tables.find(
+    t => t.name === 'frames_normal',
+  )
+
+  const sheetData = await sheetDataPromise
+
   const { tables } = sheetData
 
   const normalMoves = tables.find(t => t.name === 'frames_normal')
   const moves: Move[] = normalMoves ? frameDataTableToJson(normalMoves) : []
+  if (overrideNormalMoves) {
+    applyOverride(moves, overrideNormalMoves)
+  }
   const data: CharacterFrameDataPage = { ...sheetData, moves }
 
   return json(data, { headers: getCacheControlHeaders({ seconds: 60 * 5 }) })

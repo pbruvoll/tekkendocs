@@ -24,6 +24,7 @@ const characterDataTypeToSuffix: Record<CharacterDataType, string> = {
   cheatSheet: '-meta',
   antiStrat: '',
   frameData: '',
+  overrideFrameData: '-override',
 }
 
 const antiStratHeaders = [
