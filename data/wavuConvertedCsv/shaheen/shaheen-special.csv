@@ -36,25 +36,24 @@ f+2,4;h,l;10,13;,i22~23;-13;-2;+29a;"* Transition to SNK with input DF
 f+2,4,4;h,l,h;10,13,21;,i26~27;-7;+10;+62a (+42);"* Balcony Break
 * Causes Strong Aerial Tailspin";bbr;Silent Flow;;;
 f+3;m;17;i20~21;-5;+6;+31;Low crush;js;Crescent Moon;;;
-f+3+4;m;20;i22~23;+3;+11c;;"* chip damage on block
-* Transition to SNK";chp;Skyline;;;
 f+4;h;21;i15~16;-2;+25;;"* Balcony Break
 * Homing
 * chip damage on block";bbr hom chp;Piercing Talon;;;
+f+3+4;m;20;i22~23;+3;+11c;;"* chip damage on block
+* Transition to SNK";chp;Skyline;;;
 df+1;m;;i13;-1;+5;;;;;;;
 df+2;m;13;i15~16;-7;+34 (+24);;;;Rising Falcon;;;
 df+3;m;20;i17;-9;+9 (+21);;"* Homing
 * Wall crush";hom wc;Whirlwind Kick;;;
-df+3+4;sp;;;;;;* Transition to FC with SNK.db;;Stealth Step;;;
 df+4;m;13;i14;-7;0;;;;;;;
 df+4,1;m,m;13,10;,i22~23;-9;+2;;* Transition to SNK with DF;;;;;
 df+4,1,3;m,m,m;13,10,28;,i27~28;-13;+19 (+9);;"* Balcony Break
 Low crush";bbr js;Al-Faras;;;
 df+4,3;m,h;13,23;,i23~24;-4;+23 (+14);;* Balcony Break;bbr;Al-Fard al-Shuja;;;
+df+3+4;sp;;;;;;* Transition to FC with SNK.db;;Stealth Step;;;
 d+2;m;15;i18~19;-6;+8;;;;Gut Impact;;;
 d+3;l;12;i16~17;-14;+0;;* Transition to SNK with input d+3,DF at +4;;Silent Rigel;;;
 d+4;l;13;i19;-12;+1;;;;Vicious Stomp;;;
-db+1+2;ub(m);40;i64~65;+42 (+11);+42 (+11);;;;Shaula;;;
 db+2;m;11;i14;-10;+1;;* Transition to SNK with input db+2,DF (-3/+8/+8);;;;;
 db+2,1;m,h;11,24;,i20;-11;;;"* Balcony Break
 * Heat Engager";bbr he;Rapid Strikes;;;
@@ -64,6 +63,7 @@ db+3,4;l,h;12,20;,i18;-13;+68 (+52);;"* Tornado
 High crush";trn cs;"Snake&#039;s Bite &gt; Rising Scimitar";;;
 db+4;h;23;i20;-13;+28 (+18);;"* Tornado
 High crush 6";trn cs6;Rising Scimitar;;;
+db+1+2;ub(m);40;i64~65;+42 (+11);+42 (+11);;;;Shaula;;;
 b+1;m;20;i19~20;0;+6c;;"* Heat Engager
 
 * Cancel into FC with input b+1,D
@@ -75,10 +75,10 @@ b+1+3;sp;15 (15);;;;;"* Alternate input: b+2+4
 Parry state";ps;Silent Death Trap;;;
 b+2;m(th);12,16;i15~16;-9;-2;;* Transition to hit throw which leaves opponent FUFA;;Dust Storm;;;
 b+3;m;17;i19;+3c;+3c;+14c;;;Heel Strike;;;
+b+4;m;23;i17;-15;+4;+29 (+23);;;Broken Mirage;;;
 b+3+4;h;25;i16;-9;+19 (+9);;"* Balcony Break
 * Heat Engager
 Power crush";bbr he pc;Elnath;;;
-b+4;m;23;i17;-15;+4;+29 (+23);;;Broken Mirage;;;
 uf+1;m;25;i24~25;+1;+20;;"* Balcony Break
 * Heat Engager
 
@@ -129,14 +129,14 @@ FC.df+4;l;16;i16~17;-14;+1;;* Transition to SNK with input FC.df+4,DF;;;;;
 FC.df+4,1;l,h;16,20;,i26;-2;+24 (+15);+69a (+49);* Balcony Break;bbr;Serpens;;;
 BT.2;m;20;i14~15;-3;+42;;;;Reverse Edge;;;
 SNK.1;h;10;i12;-1;+5;+14;;;Blinding Snake;;;
-SNK.1+2;m;21;i19;+2c;+8c;;"* Heat Engager
-
-* chip damage on block";he chp;Al-Sayf;;;
 SNK.2;m;17;i15~16;-9;+8;+23 (+6);Balcony BreakOn counterhit;;Crimson Tempest;;;
 SNK.3;m;23;i20;-12;+63 (+48);;"* Tornado
 * Hit throw which side switches
 Low crush 13";trn js13;Hunting Falcon Dive;;;
 SNK.4;l;17;i20~22;-14;+3c;+15;;;Sliding Shave;;;
+SNK.1+2;m;21;i19;+2c;+8c;;"* Heat Engager
+
+* chip damage on block";he chp;Al-Sayf;;;
 SNK.df+1;m;12;i15~16;-5;+6;;;;;;;
 SNK.df+1,2;m,h;12,40;,i20;-4;0;;"* Tornado
 * Hit throw which leaves opponent in FUFA";trn;Flash Hornet;;;

@@ -20,7 +20,6 @@ R.df+1+2;m,th;10,45;;-15;;;* Erases opponent's recoverable health on hit;;Demoni
 1,2,4,3;h,h,l,m;5,8,18,25;,i32;-2;+24a(+15);+69a);"* Balcony Break
 * Combo from 3rd CH
 * Can be delayed";bbr;Twin Fang Double Kick;;;
-1+2;m,m;5,20;i12;-13;+13a;;Balcony Break;bbr;Acute Pain;;;
 2;h;12;i12;-3;+8;;;;Right Jab;;;
 2,2;h,m;12,24;i24~25;-8;+7;+50a;* Combo from 1st CH;;Double Back Fist;;;
 3;h;12;i14;-8;+4;;;;Face Kick;;;
@@ -32,9 +31,7 @@ R.df+1+2;m,th;10,45;;-15;;;* Erases opponent's recoverable health on hit;;Demoni
 4;h;18;i12;-9;+2;+27a;;;Roundhouse;28;;
 4~3;m,m;18,17;i31;-10;-1g;;"* Floor Break
 Low crush 10~";fbr js10~;Demon Scissors;;;
-f+1+2;m;20;i25;-9;+11a(+2);;"* Balcony Break
-* Parries high and mid punches
-Parry state";bbr ps;Glorious Demon God Fist;;;
+1+2;m,m;5,20;i12;-13;+13a;;Balcony Break;bbr;Acute Pain;;;
 f+2;m;23;i20;-12;+13a(+4);;"* Tornado
 * Balcony Break
 * Absorb an attack to power up
@@ -42,6 +39,9 @@ f+2;m;23;i20;-12;+13a(+4);;"* Tornado
 Parry state 8~";trn bbr ps8~;Soul Thrust;;;
 f+3;m;22;i17;-13;+5;+54a(+23);Balcony Break on air hit;;Oni Front Kick;;;
 f+4;m;20;i19~20;+4c;+7c;+31d;Spike;spk;Right Splits Kick;;;
+f+1+2;m;20;i25;-9;+11a(+2);;"* Balcony Break
+* Parries high and mid punches
+Parry state";bbr ps;Glorious Demon God Fist;;;
 df+1;m;11;i15~16;-7;+9;;;;Entrails Smash;26;;
 df+1,2;m,h;11,20;i15;+0c;+9g;;"* Heat Engager
 
@@ -67,22 +67,22 @@ df+3,2,1;m,m,m;13,15,21;;-18;+8(-1);+25;"* Tornado
 df+3,2,1*;m,m,m;13,15,25;i46;+11(+18w);+10(+1);;"* Tornado
 * Balcony Break
 * Chip damage when guarded";trn bbr chp;Impaling Knee Twin Skewer;;;
-df+3+4;m,h;7,9;i18;-8;+0;;;;;;;
-df+3+4,1;m,h,m;7,9,15;i11;-11;+1;;;;;;;
-df+3+4,1,2;m,h,m,sm,sm;7,9,15,14,25;i20;-19;+7 (-10);;"* Balcony Break
-* Chip damage when guarded";bbr chp;Kyogeki Goutsuiken;;;
 df+4;m;10;i13~14;-9;+2;;;;;28;;
 df+4,4;m,m;10,16;;-15;-4c;;"* Spike
 * Combo from 1st hit
 * Can be delayed 11F
 * Combo can be delayed 11F from hit";spk;Tsunami Kick;;;
+df+3+4;m,h;7,9;i18;-8;+0;;;;;;;
+df+3+4,1;m,h,m;7,9,15;i11;-11;+1;;;;;;;
+df+3+4,1,2;m,h,m,sm,sm;7,9,15,14,25;i20;-19;+7 (-10);;"* Balcony Break
+* Chip damage when guarded";bbr chp;Kyogeki Goutsuiken;;;
 d+1;sl;5;i10;-5;+6;;"* Returns to standing when input F
 High crush 4~";cs4~;Crouch Jab;FC;;
-d+1+2;l;20;i23;-14c;+3c;+27a;High crush 6~;cs6~;Nejiri Uraken;FC;;
-d+1+2,B;l,sp;20,0;;;;;High crush 6~;cs6~;Nejiri Uraken to Cancel;FC;;
 d+2;sl;8;i11;-4;+7;;High crush 4~;cs4~;Crouch Straight;FC;;
 d+3;l;10;i16;-17;-6;;High crush 4~;cs4~;Crouch Spin Kick;FC;;
 d+4;l;6;i12;-17;-4;;High crush 4~;cs4~;Crouch Chin Kick;FC;;
+d+1+2;l;20;i23;-14c;+3c;+27a;High crush 6~;cs6~;Nejiri Uraken;FC;;
+d+1+2,B;l,sp;20,0;;;;;High crush 6~;cs6~;Nejiri Uraken to Cancel;FC;;
 db+1;m;7;i13;-10;+0;;High crush;cs;;;;
 db+1,2;m,m,m;7,8,15;i20;-19;+9a (-8);;"* Heat Engager
 
@@ -98,11 +98,6 @@ b+1,2;h,m;10,20;i20;-14;+9 (+0);;"* Balcony Break
 * Combo from 1st hit
 * Can be delayed 14F
 * Combo can be delayed 10F from hit";bbr;Sokushitsu Goda;;;
-b+1+2;m;21;i22;-8;+5;;"* Heat Engager
-
-* Heat Dash +36a (+26) on hit
-* Chip damage when guarded";he chp;Kumo Kiri;;;
-b+1+4;ub(m);60;i63;+20a(+10);+20a(+10);;;;Lightning Screw Uppercut;;;
 b+2;m;12;i14;-8;+4;;;;;;;
 b+2,2;m,m;12,14;i25;-10;+1;;;;;;;
 b+2,2,1+2;m,m,h;12,14,20;i28~32;-8;+38d (-20);;"* Balcony Break
@@ -122,6 +117,11 @@ b+4;h;20;i17;-5;+16g;;"* Heat Engager
 
 * Heat Dash +62a (+42) on hit
 * Homing";he hom;Flash Tornado;29;;
+b+1+2;m;21;i22;-8;+5;;"* Heat Engager
+
+* Heat Dash +36a (+26) on hit
+* Chip damage when guarded";he chp;Kumo Kiri;;;
+b+1+4;ub(m);60;i63;+20a(+10);+20a(+10);;;;Lightning Screw Uppercut;;;
 ub+1+2;h;32;i41;KND;KND;KND;"* Chip damage when guarded
 * Jack-8 or Alisa can recovery 20 by input 1+2
 * Balcony Break";chp bbr;Inferno;;;
@@ -150,9 +150,6 @@ f,n,d,DF;sp;;;;;;"* Cannot be buffered
 f,n,d,df#2;h;23;i11;+5;+39a(+29);;* Chip damage when guarded;chp;Electric Wind God Fist;25;;
 f,n,d,df+1;m;23;i20;-16;+29a(+19);;"* Tornado
 * Meaty 1F in actuality";trn;Thunder God Fist;;;
-f,n,d,df+1+2;m;25;i24;-6;+25a(+15);+59a;"* Tornado
-* Balcony Break
-* Chip damage when guarded";trn bbr chp;Patricide Fist;;;
 f,n,d,df+2;h;20;i11;-10;+39a(+29);;Becomes Electric Wind God Fist during Heat (partially uses remaining Heat Time);;Wind God Fist;29;;
 f,n,d,df+3;h;30;i20~29;-9;+12a(+2);;"Balcony Break
 Low crush 9~";bbr js9~;Hell Lancer;;;
@@ -162,6 +159,9 @@ f,n,d,df+4,1;l,m;15,23;i26;-16;+17a(+10;;"* Balcony Break
 f,n,d,df+4,4;l,h;15,25;i30;-14;+5a(+4);;"* Balcony Break
 * Combo from first hit
 Low crush";bbr js;Illusive Demon;;;
+f,n,d,df+1+2;m;25;i24;-6;+25a(+15);+59a;"* Tornado
+* Balcony Break
+* Chip damage when guarded";trn bbr chp;Patricide Fist;;;
 uf,n,4;m;20;i23;-13;+32a(+22);;Low crush 9~;js9~;Delayed Rising Toe Kick;;;
 f,f,F+3;m;30;i22~25;+9;+13a(+3);;"* Balcony Break
 * Chip damage when guarded
@@ -169,14 +169,14 @@ Low crush 3~";bbr chp js3~;Leaping Side Kick;;;
 ws1;m;10;i13;-5;+5;;;;Uppercut;;;
 ws1,2;m,m;10,12;,i22;-12;+73a(+57);;"* Tornado
 * Combo from 1st hit";trn;Twin Pistons;;;
-ws1+2;m;25;i13;-9;+8;+24a;;;Fujin Uraken;;;
 ws2;m;25;i16;-18;+57a;;Homing;hom;Demon God Fist;;;
 ws3;m;24;i21;-5;+20a(+11);;"* Homing
 * Balcony Break";hom bbr;Engetsusen;;;
 ws4;m;13;i11~12;-3;+8;;;;Toe Smash;;;
 ws4,4;m,m;13,16;;-15;-4c;;* Combo from 1st hit;;Tsunami Kick;;;
-SS.1+2;h;25;i19;-9;+11a;;;;Elkeid;;;
+ws1+2;m;25;i13;-9;+8;+24a;;;Fujin Uraken;;;
 SS.3;m;23;i23;-7;+16a(+7);+50d;Balcony Break;bbr;Shattered Spine;;;
+SS.1+2;h;25;i19;-9;+11a;;;;Elkeid;;;
 FC.1;sl;5;i10;-5;+6;;"* Returns to standing when input F
 High crush";cs;Crouch Jab;FC;;
 FC.2;sm;8;i11;-4;+7;;High crush;cs;Crouch Straight;FC;;

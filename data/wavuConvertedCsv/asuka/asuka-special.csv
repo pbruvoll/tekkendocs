@@ -20,17 +20,6 @@ Power crush 8~";pc8~;Naniwa Peacemaker Knuckle;;;
 * Last input can be held to power up";chp;"Jab Uppercut &gt; Spinning Heel Drop";;;
 1,2,4;h,m,m;6,9,20;,;-12;KND;;Combo from 2nd hit;;"Jab Uppercut &gt; Front Kick";;;
 1,3;h,l;6,10;,;-11;+0;;* Combo from 1st hit;;Jab Low Kick;;;
-1+2;m;21;i16~17;-9;KND;KND;;;Inner Strength;r29;;
-1+4;sl,h;5,8;i14;-19;-8;;"* Jails
-* Combo from 1st CH
-* 2nd hit when blocked is -3, on hit is +9";;;;;
-1+4,2;sl,h,h;5,8,10;;-2;+9;;* Combo from 2nd CH;;;;;
-1+4,2,4;sl,h,h,m;5,8,10,26;;-9;+4;KND;* Combo from 3rd CH;;White Heron Dance;;;
-1+4,2,d+4;sl,h,h,l;5,8,10,15;;-23;KND;;* Combo from 3rd CH;;White Heron Lower Dance;;;
-1+4,3;sl,h,m;5,8,25;;-2;KND;;"* Chip on block
-* Link to attack from Spinning Heel Drop (f+3)
-* Can be cancelled with input B
-* Last input can be held to power up";chp;White Heron Spinning Heel Drop;;;
 2;h;9;i12;-11;+0;;;;;;;
 2,1;h,h;9,10;;-3;+8;;"* Combo from 1st hit
 * Jails";;;;;
@@ -43,10 +32,21 @@ Power crush 8~";pc8~;Naniwa Peacemaker Knuckle;;;
 3,1;m,m;17,17;;-11;+8;KND;"* Combo from 1st hit
 * Can be delayed 14f
 * Combo can be delayed 14f from hit";;Hyakujitsuko;;;
+4;h;18;i11;-7;+7;JG;;;High Kick;r26;;
+1+2;m;21;i16~17;-9;KND;KND;;;Inner Strength;r29;;
+1+4;sl,h;5,8;i14;-19;-8;;"* Jails
+* Combo from 1st CH
+* 2nd hit when blocked is -3, on hit is +9";;;;;
+1+4,2;sl,h,h;5,8,10;;-2;+9;;* Combo from 2nd CH;;;;;
+1+4,2,4;sl,h,h,m;5,8,10,26;;-9;+4;KND;* Combo from 3rd CH;;White Heron Dance;;;
+1+4,2,d+4;sl,h,h,l;5,8,10,15;;-23;KND;;* Combo from 3rd CH;;White Heron Lower Dance;;;
+1+4,3;sl,h,m;5,8,25;;-2;KND;;"* Chip on block
+* Link to attack from Spinning Heel Drop (f+3)
+* Can be cancelled with input B
+* Last input can be held to power up";chp;White Heron Spinning Heel Drop;;;
 3+4;mm;10,21;i23;-6;KND;;"* Special effect when hitting grounded opponents
 * Cancel to FC with input 3+4,D
 Low crush 5~";js5~;Ryuuntsui;;;
-4;h;18;i11;-7;+7;JG;;;High Kick;r26;;
 f+1;m;17;i20;-7;+4;;;;Whiplash;;;
 f+1,3;m,m;17,17;,i21~22;-5;+6;;;;"Whiplash &gt; Toe Kick";;;
 f+1,4;m,l;17,26;i25~27;-26;+24;;"* Homing
@@ -55,6 +55,15 @@ f+1,4;m,l;17,26;i25~27;-26;+24;;"* Homing
 * Combo can be delayed 5F from CH
 * Interruption 11F after 1st block
 High crush";hom cs;Whiplash Sacred Blade;;;
+f+2;m;20;i17;-18;JG;;"* Can be cancelled with input f+2,D
+* Gain NWG on hit with input f+2,1";;Demon Slayer;;;
+f+3;m;24;i31~i33;-2~+0;KND;KND;"* Chip damage when guarded
+* Can be cancelled with input B";chp;Spinning Heel Drop (One Spin);;;
+f+3*;ub(m);28;i70;KND;KND;KND;"* Balcony Break
+* Can be cancelled with input B";bbr;Spinning Heel Drop (Three Spins);;;
+f+3*n;m;26;i52~i53;+6~+7;KND;KND;"* Chip damage when guarded
+* Can be cancelled with input B";chp;Spinning Heel Drop (Two Spins);;;
+f+4;h;21;i19;+3;+28;KND;* Homing;hom;Back Spin Kick;25;;
 f+1+2;h;26;i15;-9;+19a (+9)/HE;;"* Heat Engager
 
 * Balcony Break
@@ -62,24 +71,15 @@ f+1+2;h;26;i15;-9;+19a (+9)/HE;;"* Heat Engager
 * chip damage on block
 * Gain Naniwa Gusto on Heat activation
 Power crush 8~";he bbr chp pc8~;Exorcisor;;;
-f+2;m;20;i17;-18;JG;;"* Can be cancelled with input f+2,D
-* Gain NWG on hit with input f+2,1";;Demon Slayer;;;
 f+2+3;h;21;i23;+0;KND;KND;"* Balcony Break
 * Sabaki
 * Absorbs Punch (H/M) during 4 to 15F
 * Stun on success punch parry
 Parry state 4~15";bbr ps4~15;Wheel Kick;;;
-f+3;m;24;i31~i33;-2~+0;KND;KND;"* Chip damage when guarded
-* Can be cancelled with input B";chp;Spinning Heel Drop (One Spin);;;
-f+3*;ub(m);28;i70;KND;KND;KND;"* Balcony Break
-* Can be cancelled with input B";bbr;Spinning Heel Drop (Three Spins);;;
-f+3*n;m;26;i52~i53;+6~+7;KND;KND;"* Chip damage when guarded
-* Can be cancelled with input B";chp;Spinning Heel Drop (Two Spins);;;
 f+3+4;m;27;i29~30;-1;-2(-11);;"* Balcony Break
 * Chip damage when guarded (8)
 * On hit, gain Naniwa Gusto
 * If you already have Naniwa Gusto it's 18a(+9) on hit";bbr chp;"Spinning Heel Chop &gt; Naniwa Gusto";;;
-f+4;h;21;i19;+3;+28;KND;* Homing;hom;Back Spin Kick;25;;
 df+1;m;10;i13;-3;+8;;;;;;;
 df+1,2;m,h(,th);10,13(,25);;-1;Th;Th;"* Spike
 * Combo from 1st CH
@@ -90,16 +90,16 @@ df+1,4;m,m;10,22;;-12;KND;KND*;"* Balcony Break
 * Can be delayed 7F";bbr;Kyara Boku;;;
 df+2;m;14;i15;-6;LNC;LNC;+5 upon crouch hit;;Rising Palm;25;;
 df+3;m;23;i20;-8;KND;KND;Balcony Break;bbr;Kagamino;;;
+df+4;m;16;i12;-9;+2;;;;Front Kick;;;
 df+3+4;l;22;i28;-26;KND;KND*;"* Homing
 * Alternate input: 3~4
 * Cancel to FC with input df+3+4,DB
 High crush 6~";hom cs6~;Sacred Blade;32 FC;;
-df+4;m;16;i12;-9;+2;;;;Front Kick;;;
-d+1+2;l;20;i20;-18;KND;KND;"Same move as FC.1+2
-High crush 10~";cs10~;Sashiro;;;
 d+2;m;18;i18;-4c;+9c;KND;"* Heat Engager
 
 * Gain Naniwa Gusto on Heat activation";he;"Heaven&#039;s Hammer";;;
+d+1+2;l;20;i20;-18;KND;KND;"Same move as FC.1+2
+High crush 10~";cs10~;Sashiro;;;
 d+3+4;l,h;5,20;i14;-25;LNC;LNC;"* Block frame is blocked 1st attack
 * -6F upon 2nd block
 Low crush 5~";js5~;Double Lift Kicks;;;
@@ -113,13 +113,6 @@ db+1,2;m,h;13,20;;-9;KND;KND*;"* Heat Engager
 * Combo can be delayed 9F from hit";he bbr;Swallow Vortex;;;
 db+1,4;m,m;13,25;;-15;KND;;"Tornado
 Low crush";trn js;Swallow Torrent;;;
-db+1+2;m,m;10,20;i42;+10;KND;;"* Balcony Break
-*
-Wall Crush  +25g on block 
-
-
-* Parries lows
-Parry state";bbr wc ps;Raging Storm;;;
 db+2;m;22;i20;-11;LNC;LNC;"Tornado
 High crush 3~";trn cs3~;Funeral Palm;;;
 db+3;l;17;i20;-12;+4c;+14g;;;Enchanted Circle;;;
@@ -129,6 +122,13 @@ db+4,4;l,l;14,15;;-7;+4;KND;"Cancel to FC with input D
 High crush";cs;;;;
 db+4,4,4;l,l,l;14,15,16;;-7;+4;KND;"Cancel to FC with input D
 High crush";cs;Leg Cutter;;;
+db+1+2;m,m;10,20;i42;+10;KND;;"* Balcony Break
+*
+Wall Crush  +25g on block 
+
+
+* Parries lows
+Parry state";bbr wc ps;Raging Storm;;;
 b+1;l(,th);17(,22);i29;-10;+6;Th;"* Connect to Sumiregari upon CH
 * Damage () is Throw bonus
 * Can be cancelled into FC with input D
@@ -141,23 +141,18 @@ b+1+3*;;25;;-6;;;"* Does 25 + 50% of reversed attack as damage
 * Opp. Position on hit: Reverse Pos Foot-sd. Face-up
 * Reverses limb-based h/m attacks
 Parry state 3~54";ps3~54;Attack Reversal (Hold);;;
-b+1+4;h,l;15,8;i12;-8;+5;+7;Combo from 1st hit;;;;;
-b+1+4,3;h,l,l;15,8,18;;-13;-2;KND;Combo from 2nd CH;;Reverse Narcissus;;;
-b+1+4,4;h,l,m;15,8,23;;-14;+5b;+5b;* Combo from 2nd CH;;Narcissus;;;
 b+2;m;12;i15;-4c;+1c;;;;Swallow Mallet;;;
 b+2,1;m,m;12,14;;-7;+4;;"* Combo from 1st CH
 * Link to attack from Lunging Mist Thrust ()";;Swallow Mallet Lunging Mist Thrust;;;
+b+2,4;m,l;12,14;;-11;+0;+3;"* Link to attack from Leg Cutter ()
+* Can be cancelled with input D
+High crush";cs;Swallow Mallet Leg Cutter;;;
 b+2,1+2;m,h;12,7;i36;-9;+2;;"* Jails
 * Combo from 1st hit
 * Can be delayed 12F
 * Combo can be delayed 9F from CH
 * Can be cancelled with input D";;;;;
 b+2,1+2,4;m,h,m;12,7,20;;-13;KND;KND;* Combo from 2nd CH;;Swallow Mallet Combo;;;
-b+2,4;m,l;12,14;;-11;+0;+3;"* Link to attack from Leg Cutter ()
-* Can be cancelled with input D
-High crush";cs;Swallow Mallet Leg Cutter;;;
-b+2+3;m;23;i24;-9;+6;;"Sabaki absorbs kicks
-Parry state 4~15";ps4~15;Azalea;;;
 b+3;m;15;i16;-19;LNC;LNC;Low crush 10~;js10~;Dragon Wheel Kick;38;;File:Asuka_b+3.mp4
 b+3,2;m,m;15,20;;-20;LNC;LNC;"* Interruption 23F after 1st block
 * Can be cancelled with input D
@@ -171,6 +166,11 @@ b+4,2,3;m,m,m;17,12,21;;-16;KND;KND;"* Combo from 2nd hit
 * Can be delayed 10F
 * Combo can be delayed 10F from hit
 * on hit, can gain NWG with input 1";;Tsuyababuki;;;
+b+1+4;h,l;15,8;i12;-8;+5;+7;Combo from 1st hit;;;;;
+b+1+4,3;h,l,l;15,8,18;;-13;-2;KND;Combo from 2nd CH;;Reverse Narcissus;;;
+b+1+4,4;h,l,m;15,8,23;;-14;+5b;+5b;* Combo from 2nd CH;;Narcissus;;;
+b+2+3;m;23;i24;-9;+6;;"Sabaki absorbs kicks
+Parry state 4~15";ps4~15;Azalea;;;
 u+1+2;m;20;i31~i32;-13~-12;KND;;"* Chip damage when guarded
 Low crush";chp js;Sumiyoshi Plunge;;;
 uf+2;h(,th);20(,25);i14;-7;Th;Th;Damage () is Throw bonus;;Rangetsu;28;;
@@ -186,42 +186,37 @@ uf+4;m;25;i20;-13;LNC;LNC;Low crush 9~;js9~;Night Sky;;;
 1+2+3+4,1+2,1,2,1,2;,t(m);,5,5,5,5,5,10;;;;;"* Break: none
 * Opp. Position on break:
 * Opp. Position on hit: Foot sd. FU";;Eternal Punishment;;;
+(During Leg Cutter),3;h;21;;-3;LNC;LNC;CH combo from Leg Cutter;;Kariashi Shiranui;;;
 (During Leg Cutter),1+4;sl,h;5,8;;-19;+9;;"*Jails
 * Link to attack to White Heron ()
 * Block frame is blocked 1st attack
 * -3F upon 2nd block";;Kariashi Hakuro;;;
-(During Leg Cutter),3;h;21;;-3;LNC;LNC;CH combo from Leg Cutter;;Kariashi Shiranui;;;
 f,F+1;m;30;i23;+5;+14;;;;Burning Lantern;32;;
-f,F+1+2;m;20;i19;-6;KND;;"* Chip damage when guarded
-* Tornado";chp trn;Tenjin Upward Strike;;;
 f,F+2;m;16;i15;-13;-3;;;;;;;
 f,F+2,1;m,h;16,21;;-5;KND;KND;"* Combo from 1st hit
 * Can be delayed 13F
 * Combo can be delayed 8F from hit
 * Combo can be delayed 11F from CH";;Hiboko no Kagami;;;
-f,F+2,1+2;m,m,sp;16,25;;-13;KND;;"* Balcony Break
-* Gain Naniwa Gusto on hit";bbr;Higata no Kagami;;;
 f,F+2,3;m,m;16,22;;-8;KND;KND;"* Combo from 1st CH
 * Can be delayed 13F
 * Combo can be delayed 5F from CH";;Yata Kagami;;;
+f,F+2,1+2;m,m,sp;16,25;;-13;KND;;"* Balcony Break
+* Gain Naniwa Gusto on hit";bbr;Higata no Kagami;;;
 f,F+3;m;23;i20;-9;+11g;KND;"* Balcony Break
 * Homing";bbr hom;Matoi Hiragi;? FC;;
 f,F+4;h;28;i20;-3;KND;KND*;"* Balcony Break
 * Causes Strong Aerial Tailspin
 Low crush 6~";bbr js6~;Leaping Spin Kick;;;
-f,f,F+1+2;h;30;i17;+4;KND;;"* Chip damage when guarded
-* Homing";chp hom;Aizen Swing;;;
+f,F+1+2;m;20;i19;-6;KND;;"* Chip damage when guarded
+* Tornado";chp trn;Tenjin Upward Strike;;;
 f,f,F+3;m;32;i24~28;+3~+7;KND;KND*;"* Chip damage when guarded
 * Alternate input: ub,b+3
 Low crush 3~";chp js3~;Ame-no-Uzume;;;
+f,f,F+1+2;h;30;i17;+4;KND;;"* Chip damage when guarded
+* Homing";chp hom;Aizen Swing;;;
 ws1;m;12;i14;-7;+4;;;;;;;
 ws1,4;m,h;12,20;;-8;KND;KND;"* Combo from 1st hit
 * Can be delayed 7F";;Shikeitai;;;
-ws1+2;m;20;i21;-2;+13g;KND;"* Wall Crush  +25g on hit
-
-
-* Crumple state 17F upon CH
-* Cancel into FC with input D";wc;Sudare Nagashi;27;;
 ws2;m;18;i13;-8;+8;;;;;;;
 ws2,1;mh;18,10;;-2;+9;;"* Combo from 1st hit
 * Continuation into ten string";;;;;
@@ -230,6 +225,11 @@ ws2,1+2;mh,th;18,4;;;Th;;"* Combo from 1st hit
 ws3;m;20;i18;-16;LNC;LNC;"Tornado
 Low crush 18~";trn js18~;Moon Scent;;;
 ws4;m;15;i11;-3;+8;;;;Toe Smash;;;
+ws1+2;m;20;i21;-2;+13g;KND;"* Wall Crush  +25g on hit
+
+
+* Crumple state 17F upon CH
+* Cancel into FC with input D";wc;Sudare Nagashi;27;;
 SS.2;m;23;i13;-13;KND;KND*;"* Heat Engager
 
 * Gain Naniwa Gusto on Heat activation";he;Mist Palm Thrust;;;

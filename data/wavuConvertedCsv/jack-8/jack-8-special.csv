@@ -14,6 +14,13 @@ Power crush 8~";pc8~;Terraforming Cannon;;;
 * Transition to GMH with D
 * (+4c oB, +8c oH, +16d)";elb;"Jab &gt; Jackhammer";;;
 1,2;h,h;10,24;i19;-2;+30a;;Combos from 1st hit CH;;"Jab &gt; Stunning Hook";;;
+2;h;10;i11;+1;+9;;;;;;;
+2,1;h,m;10,12;i16;-3;+2;;"* Elbow
+* Combos from 1st hit";elb;;;;
+2,1,2;h,m,m;10,12,20;i33;-12;+29a (+19);;;;Jab Elbow Smash;r FC;;
+2,1,1+2;h,m,h,h,h,h,h;10,12,10,6,6,6,20;i33;-4;+13d;;Jails;;Piston Gun Fusillade;;;
+2,3;h,m;10,18;i19;-13;+5;+30d (+22);"* Knee
+* 2nd hit Balcony Break on CH";kne;Mimesis Savage Knee;;;
 1+2;m,m;8,14;i15;-13;+67a (+51);;"* Tornado
 * Instant Tornado
 * Homing";trn hom;Tornado Punch;;;
@@ -31,13 +38,6 @@ Power crush 8~";pc8~;Terraforming Cannon;;;
 * Tornado
 * Instant Tornado
 * Alternate input hcf:df+1";trn;Prime Windup Uppercut;;;
-2;h;10;i11;+1;+9;;;;;;;
-2,1;h,m;10,12;i16;-3;+2;;"* Elbow
-* Combos from 1st hit";elb;;;;
-2,1,1+2;h,m,h,h,h,h,h;10,12,10,6,6,6,20;i33;-4;+13d;;Jails;;Piston Gun Fusillade;;;
-2,1,2;h,m,m;10,12,20;i33;-12;+29a (+19);;;;Jab Elbow Smash;r FC;;
-2,3;h,m;10,18;i19;-13;+5;+30d (+22);"* Knee
-* 2nd hit Balcony Break on CH";kne;Mimesis Savage Knee;;;
 3+4;;;;;;;"* When timed with opponent attack, or absorbing an attack, shift to Gamma Charge
 * Gamma Charge is always
 in effect during Heat
@@ -53,24 +53,24 @@ f+1,2,2;m,h,m;13,12,12;i33;+6;+3d;;"* Can be charged to power up
 f+1,2,2*;m,h,m;13,12,12;i61;-12 (0 wall crush);+11d (-15);;"* Balcony Break
 * Wall crush
 * Chip damage on block";bbr wc chp;Piston Gun Blaster (charged);;;
-f+1+2;m,m;12,20;i27;-12;+32d (+6);;"* Balcony Break
-* Chip damage on block
-Power crush";bbr chp pc;Rolling Death Crusher;;;
 f+2;h;22;i10;-12;+5;+32a (+24);;;Pinpoint Assault;;;
 f+3;m;18;i15;-9;+5;;"* Knee
 * Transition to GMH with D
 ** (+2 oB, +16g oH)
 * Alternate input ws3";kne;;;;
-f+3,1+2;m,m;18,20;i25;-11c;+2d;+48a;"* Combos from 1st hit CH
-* Alternate input ws3,1+2";;Machine Press;;;
 f+3,2;m,h;18,20;i23;-9;+44d (-14);;"* Balcony Break
 * Combos from 1st hit
 * Alternate input ws3,2";bbr;Two-Step Die;;;
+f+3,1+2;m,m;18,20;i25;-11c;+2d;+48a;"* Combos from 1st hit CH
+* Alternate input ws3,1+2";;Machine Press;;;
+f+4~1;h;80;i65;!;+5;;Unblockable;;Dark Greeting;;;
+f+4~1,2;m;30;i15 (66~);+8;+0d;;Elbow;elb;Sudden Elbow;;;
+f+1+2;m,m;12,20;i27;-12;+32d (+6);;"* Balcony Break
+* Chip damage on block
+Power crush";bbr chp pc;Rolling Death Crusher;;;
 f+3+4;m;24;i22;-11;+9c;;"* Headbutt
 * Transition to GMH with D
 ** (-3 oB, +15g oH)";;Merkabah Headbutt;;;
-f+4~1;h;80;i65;!;+5;;Unblockable;;Dark Greeting;;;
-f+4~1,2;m;30;i15 (66~);+8;+0d;;Elbow;elb;Sudden Elbow;;;
 df+1;m;12;i14;-4;+3;+5;;;;;;
 df+1,1;m,m;12;i29;-11;+21cg;+72a (+56);"* Tornado
 * Balcony Break
@@ -87,9 +87,6 @@ df+1,2,1,2;m,h,h,h;1210,2,20;i9;-18;+35d (-23);;"* Balcony Break
 * On air hit +12 (+5) 
 * Combos from 2nd hit
 * Combos from 1st hit CH";bbr;Overdrive;;;
-df+1+4;l;23;i34;-37;+18d;;"* Homing
-* Alternate input b,db,d,df+1 to power up
-** (28 damage, i29)";hom;Debugger;;;
 df+2;m;13;i15;-14;+31a (+21);;;;Programmed Uppercut;;;
 df+2,1;m,h;13,16;i21;-32;+40a (+22);;"* Transition to GMH with D
 ** (+45a (+27) oH)
@@ -97,19 +94,22 @@ df+2,1;m,h;13,16;i21;-32;+40a (+22);;"* Transition to GMH with D
 df+2,1*;m,h;13,16;i35;-46;+69a (+53);;"* Tornado
 * Transition to GMH with D
 ** (+70a (+54) oH))";trn;Cosmic Sweeper (charged);;;
+df+3;m;16;i16;-9;+2;;;;;;;
+df+3,2;m,h;1620;i20;-9;+25d;;Balcony Break;bbr;Combine Harvester;;;
+df+4;m;17;i15;-9;+5;+14c;;;Mimesis Wrench Kick;;;
+df+1+4;l;23;i34;-37;+18d;;"* Homing
+* Alternate input b,db,d,df+1 to power up
+** (28 damage, i29)";hom;Debugger;;;
 df+2+3;m;26;i22;-9;+31d (-5);;"* Balcony Break
 * Alternate input b,db,d,df+2 to power up
 ** (31 damage, i22)";bbr;Megaton Blast;;;
-df+3;m;16;i16;-9;+2;;;;;;;
-df+3,2;m,h;1620;i20;-9;+25d;;Balcony Break;bbr;Combine Harvester;;;
 df+3+4;m;28;i13;-23;+10a (+1);;Balcony Break;bbr;Dump Truck;;;
-df+4;m;17;i15;-9;+5;+14c;;;Mimesis Wrench Kick;;;
 d+1;s;5;i10;-5;+6;;*;;;rFC;;
-d+1+2;m;28;i27;-18;+42a (+32);;*;;Double Axe;;;
 d+2;s;8;i11;-4;+7;;* Alternate input FC.d+2;;;rFC;;
 d+3;l;12;i20;-17;-6;;* Alternate input FC.d+3;;;rFC;;
-d+3+4;;;;;;;* Transitions to SIT (Sit Down);;Sit Down;SIT;;
 d+4;l;10;i16;-15;-4;;* Alternate input FC.d+4;;;rFC;;
+d+1+2;m;28;i27;-18;+42a (+32);;*;;Double Axe;;;
+d+3+4;;;;;;;* Transitions to SIT (Sit Down);;Sit Down;SIT;;
 db+1;l;5;i13;-12;+1;;"*
 High crush";cs;;rFC;;
 db+1,1;l,l;5,5;i16;-12;-1;;"* Combos from 1st hit
@@ -117,7 +117,6 @@ High crush";cs;;rFC;;
 db+1,1,1;l,l,l;5,5,5;i16;-12;-1;;"*
 High crush";cs;;rFC;;
 db+1,1,1,2;l,l,l,m;5,5,5,21;i19;-11;+43a (-4);;* Balcony Break;bbr;Machinegun Blast;;;
-db+1+2;l,l;8,21;i18;-70;-5d;;*;;Megaton Earthquake;;;
 db+2;l;24;i22;-18;+3;+33d;* Can be charged to power up;;Power Shovel;;;
 db+2*;l;30;i36;-33;+17d;;* Chip damage on block;chp;Power Shovel (charged);;;
 db+3;l;15;i21;-20;-9;;*;;Cossack Kick;;;
@@ -131,14 +130,10 @@ db+3,4,3,4,3;l,l,l,l,l;15,12,12,12,12;i27;-19;-8;;*;;;;;
 db+3,4,3,4,3,4;l,l,l,l,l,l;15,12,12,12,12,12;i27;-16;-5;;*;;Cossack Kicks;;;
 db+4;l;14;i16;-13;-2;;"*
 High crush";cs;Big Boot;rFC;;
+db+1+2;l,l;8,21;i18;-70;-5d;;*;;Megaton Earthquake;;;
 b+1;m;17;i20;-11;+8;;*;;;;;
 b+1,2;m,m;17,17;i26;-14;+15d;+47a;"* Spike
 * Combos from 1st hit";spk;Double Biceps;;;
-b+1+2;m;28;i14;-19;-1d (-10);;"* Heat Engager
-
-* Heat Dash +5, +43d(+35)
-
-* Balcony Break";he bbr;Tyulpan Blast;;;
 b+2;m;27;i19;+5;+2d;;"* Heat Engager
 
 * Heat Dash +5, +36a(+26)
@@ -165,18 +160,23 @@ b+4;m;16;i13;-13;-2;-2a;*;;;;;
 b+4,4;m,m;1621;i30;-4;-8d;;"* Combos from 1st hit CH
 * When comboing from 1st hit: 
 Floor Break";fbr;Sherman Stomp;;;
+b+1+2;m;28;i14;-19;-1d (-10);;"* Heat Engager
+
+* Heat Dash +5, +43d(+35)
+
+* Balcony Break";he bbr;Tyulpan Blast;;;
 ub+1+2;h;30;i20;-9;+23;;"* Balcony Break
 * Homing
 * Chip damage on block
 Power crush";bbr hom chp pc;Barrel Jacket Hammer;;;
+u+4;m;25;i25;-16;+15a (+5);;"* Balcony Break
+* Alternate input ub+4, uf+4
+Low crush";bbr js;;;;
 u+1+2;m;23;i19;-13;+49a (+39);;*;;Patriot Fist;;;
 u+3+4;m;40;i94~100;!;+17d;;"* Unblockable
 * Can input additional 3+4 (up to 4 times) to fly farther and deal more damage
 * Alternate input ub+3+4
 Low crush";js;Giant Foot Stomp;;;
-u+4;m;25;i25;-16;+15a (+5);;"* Balcony Break
-* Alternate input ub+4, uf+4
-Low crush";bbr js;;;;
 uf+1;h;10;i17;;+71a (+55);;"* Tornado
 * Only hits airborne opponents
 * Transition to GMH with D
@@ -197,15 +197,6 @@ uf+3+4;m;23;i34;+13cg;+20d;;"* Automatically transitions to SIT on hit or block
 Low crush";js;Pancake Press;;;
 f,F+1;m;22;i15;-6;+8c;+16d;"* Transition to GMH with D
 * (+4c oB, +8c oH)";;Jackhammer;;;
-f,F+1+2;m;20;i15;-15;+22cs;;"*
-Homing";hom;;;;
-f,F+1+2,1+2;m,l;20,21;i28;-19;+13d;;"* Alternate input FC.d+1+2
-High crush";cs;High and Low Cross Cut;;;
-f,F+1+2,2;m,m;20,24;i32;-11;+11a (+2);;"*
-Balcony Break
-* Combos from 1st hit";bbr;Cross Cut Blast;;;
-f,F+1+4;m (l);25;i21;-82;-88;;"* Low attack on landing
-Low crush";js;Sliding Attack;;;
 f,F+2;m;23;i18;-16;+53a (+43);;* Can be charged to power up;;Rocket Uppercut;;;
 f,F+2*;m;35;34;-15;+61a;;"* Tornado
 * Chip damage on block";trn chp;Rocket Uppercut (charged);;;
@@ -213,17 +204,21 @@ f,F+3;m;22;i26;+4c;+9c;+22a;* Transition to FC with D;;Granite Stomping;;;
 f,F+4;m;32;i16;-10;+15d (+5);;"* Tornado 
 * Balcony Break
 * Chip damage on block";trn bbr chp;Rocket Kick;;;
+f,F+1+2;m;20;i15;-15;+22cs;;"*
+Homing";hom;;;;
+f,F+1+2,2;m,m;20,24;i32;-11;+11a (+2);;"*
+Balcony Break
+* Combos from 1st hit";bbr;Cross Cut Blast;;;
+f,F+1+2,1+2;m,l;20,21;i28;-19;+13d;;"* Alternate input FC.d+1+2
+High crush";cs;High and Low Cross Cut;;;
+f,F+1+4;m (l);25;i21;-82;-88;;"* Low attack on landing
+Low crush";js;Sliding Attack;;;
+f,f,F+2;h;25;i22;+10;+6;;"* Chip damage on block
+* Alternate input wr2";chp;Cemaho Chop;;;
 f,f,F+1+2;m;34;i20;+3;+7a (-2);;"* Balcony Break
 * Chip damage on block
 * Alternate input wr1+2";bbr chp;Mimesis Charging Tackle;;;
-f,f,F+2;h;25;i22;+10;+6;;"* Chip damage on block
-* Alternate input wr2";chp;Cemaho Chop;;;
 ws1;m;14;i15;-13;+34a (+24);;*;;Killing Uppercut;;;
-ws1+2;m;14;i20;-15;+26a (+16);;*;;;;;
-ws1+2,1+2;m,m;14,12;i17;-15;+15d;;"* Floor Break
-* Combos from 1st hit";fbr;;;;
-ws1+2,1+2,1+2;m,m,l;14,12,14;i27;-23;+6d;;"* Balcony Break
-* Combos from 1st hit";bbr;Double Hammer Thrash;;;
 ws2;m;10;i14;-7;+4;;*;;;;;
 ws2,1;m,m;10,17;i15;-14c;+3d;+49a;* Combos from 1st hit;;V-Twin;;;
 ws2,4;m,h;10,26;i16;+3;+21a (+11);;"* Balcony Break
@@ -232,12 +227,17 @@ ws3;m;18;i15;-9;+5;;"* Knee
 * Transition to GMH with D
 ** (+2 oB, +16g oH)
 * Alternate input f+3";kne;;;;
-ws3,1+2;m,m;18,20;i25;-11c;+2d;+48a;"* Combos from 1st hit CH
-* Alternate input f+3,1+2";;Machine Press;;;
 ws3,2;m,h;18,20;i23;-9;+44d (-14);;"* Balcony Break
 * Combos from 1st hit
 * Alternate input f+3,2";bbr;Two-Step Die;;;
+ws3,1+2;m,m;18,20;i25;-11c;+2d;+48a;"* Combos from 1st hit CH
+* Alternate input f+3,1+2";;Machine Press;;;
 ws4;m;20;i11;-6;+5;;*;;Toe Smash;;;
+ws1+2;m;14;i20;-15;+26a (+16);;*;;;;;
+ws1+2,1+2;m,m;14,12;i17;-15;+15d;;"* Floor Break
+* Combos from 1st hit";fbr;;;;
+ws1+2,1+2,1+2;m,m,l;14,12,14;i27;-23;+6d;;"* Balcony Break
+* Combos from 1st hit";bbr;Double Hammer Thrash;;;
 ss1;m;23;i32;+6c;+59a;;;;Discharger;;;
 ss2;h;20;i17;+9;+35d (+27);;"* Balcony Break
 * Transition to GMH with D
@@ -247,15 +247,15 @@ High crush";cs;;rFC;;
 FC.1,1;l,l;10,14;i31;-12;+5;;"*
 High crush";cs;Double Low Hammer;rFC;;
 FC.1,2;l,m;10,24;i32;-11;+11a (+2);+43a (-4);* Balcony Break;bbr;Megaton Strike;rFC;;
-FC.1+2;l;21;i24;-15;+13d;;"* Alternate input FC.db+1+2
-High crush";cs;;rFC;;
-FC.1+2,1+2;l,m;2123;i40;-18;+42a (+32);;* Combos from 1st hit;;Low Cross Combo;;;
 FC.2;s;8;i11;-4;+7;;"* Alternate input d+2
 High crush";cs;;rFC;;
 FC.3;l;12;i20;-17;-6;;"* Alternate input d+3
 High crush";cs;;rFC;;
 FC.4;l;10;i16;-15;-4;;"* Alternate input d+4
 High crush";cs;;rFC;;
+FC.1+2;l;21;i24;-15;+13d;;"* Alternate input FC.db+1+2
+High crush";cs;;rFC;;
+FC.1+2,1+2;l,m;2123;i40;-18;+42a (+32);;* Combos from 1st hit;;Low Cross Combo;;;
 FC.db+1;l;14;i14;-11;+3;;"*
 High crush";cs;;rFC;;
 FC.db+1,1;l,m;14,10;i24;-6;+5;;"*
@@ -280,9 +280,9 @@ High crush";bbr cs;Swing R Knuckle Low;rFC;;
 FC.df+2,f+1;m,h;12,23;i19;-13;+32a;;"* Balcony Break
 * Combos from 1st hit
 High crush";bbr cs;Swing R Knuckle High;rFC;;
-FC.df+3+4;m;28;i21;-9;+1a (-8);+33a (-14);* Balcony Break;bbr;Atomic Shoulder Tackle;;;
 FC.df+4;m;10;i12;-12;+4;;*;;;;;
 FC.df+4,2;m,m;10,17;i20;-14;+4c;+19d;*;;Mimesis Spike Press;;;
+FC.df+3+4;m;28;i21;-9;+1a (-8);+33a (-14);* Balcony Break;bbr;Atomic Shoulder Tackle;;;
 GMC.1;m;22;i22;-6;+73a (+57);;"* Homing
 * * Partially uses remaining Heat time
 * Chip damage on block";hom chp;Jaguar Hook - Gamma;;;
@@ -298,18 +298,18 @@ GMH.2;h;40;i20;+11;+21d (+11);;"* Balcony Break
 * Tornado";bbr trn;Exaton Blast;;;
 GMH.3;m;28;i24;+4;+9c;+22a;"* Transition to FC with D
 ** (+7 oH)";;Granite Stomp;;;
-GMH.3+4;sm;20;i20;-13;+40d (-18);;"* Heat Engager
-
-* Heat Dash +5, +36a(+26)
-
-* Chip damage on block when absorbing an attack
-Power crush";he chp pc;Particle Barrier;;;
 GMH.4;h;30;i14;+3;+21d (+11);;"* Heat Engager
 
 * Heat Dash +5, +36a(+26)
 
 * Balcony Break
 * Chip damage on block";he bbr chp;Full Metal Deathblow;;;
+GMH.3+4;sm;20;i20;-13;+40d (-18);;"* Heat Engager
+
+* Heat Dash +5, +36a(+26)
+
+* Chip damage on block when absorbing an attack
+Power crush";he chp pc;Particle Barrier;;;
 GMH.f+1;m;26;i20;-17;+66a (+50);;"* Tornado
 * Instant Tornado";trn;Prime Windup Uppercut;;;
 GMH.f+2;m;34;i29;-13;+30a (+4);;"* Balcony Break

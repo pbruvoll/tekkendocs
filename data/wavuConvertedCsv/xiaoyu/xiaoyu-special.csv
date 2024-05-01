@@ -34,15 +34,14 @@ Power crush 8~";pc8~;"Wang&#039;s Celestial Epic";;;
 * Recover facing forward with 1,D+2 (-4, +7)
 * Recover in HYP with 1,d+2~B (-2, +9)";;Fan Dance;BT;;
 1,d+2,1+2;h,m,m;6,10,24;i29;-12;+17a;;* Combos from 2nd hit CH;;"Fan Dance &gt; Birds Flock";;;
-1+2;m;24;i20;-7;+20a;;*;;Birds Flock;;;
 2;h;8;i10;-2;+6;;*;;;;;
 2,1;h,m;8,10;i19;-4;+7;;"* Combos from 1st hit CH
 * Recover facing forward with 2,DF+2 (-4, +7)";;April Showers;BT;;
 3;h;17;i14;-11;+22a;;*;;Cloud Kick;;;
+4;h;15;i11;-9;+8;+33a;*;;;;;
+1+2;m;24;i20;-7;+20a;;*;;Birds Flock;;;
 3+4;m;23;i23;-1c;+3c;+19a;"* Transition to AOP with D (0, +4, +20a)
 Low crush";js;Crescent Moon Kick;;;
-4;h;15;i11;-9;+8;+33a;*;;;;;
-f+1+2;m;25;i12;-16;+15d (+10);;* Balcony Break;bbr;Clouded Peak;;;
 f+2;m;12;i16;-5;+4;;;;;;;
 f+2,1;m,h;12,14;i20;-6;+5;+7;"* Combos from 1st hit
 * Transition to HYP with B (+0, +11)";;;;;
@@ -50,16 +49,17 @@ f+2,1,4;m,h,m;12,14,20;i26;-13;+17a (+8);;"* Balcony Break
 * Combos from 2nd hit CH";bbr;Bai Yang Zhuan Wu;;;
 f+3;m;14;i16;-9;+2;;* Knee;kne;;;;
 f+3,1;m,m;14,8;i22;-3;+8;;* Combos from 1st hit;;;BT;;
-f+3,1,1+2;m,m,m;14,8,27;i16;-12;+7c;;* Combos from 2nd hit CH;;Wings of Fury;;;
 f+3,1,4;m,m,m;14,8,20;i26;-22;+62a (+46);;"* Tornado
 * Instant Tornado
 * Combos from 2nd hit CH";trn;Talons of Fury;BT;;
+f+3,1,1+2;m,m,m;14,8,27;i16;-12;+7c;;* Combos from 2nd hit CH;;Wings of Fury;;;
+f+4;h;23;i19;+1;+13;;"* Homing
+* Chip on block [4]";hom chp;Swivel Kick;;;
+f+1+2;m;25;i12;-16;+15d (+10);;* Balcony Break;bbr;Clouded Peak;;;
 f+3+4;;;;;;;"* Transition to AOP with D
 Low crush";js;Forward Roll;;;
 f+3+4,3+4;m;30;i20;+8;+2d;;"*
 Low crush";js;"Forward Roll &gt; Phoenix Talon";;;
-f+4;h;23;i19;+1;+13;;"* Homing
-* Chip on block [4]";hom chp;Swivel Kick;;;
 df+1;m;13;i14;-2;+9;;* Recover facing forward with F (-4, +7);;Belly Chop;BT;;
 df+2;m;15;i14;-6;+7;;*;;;;;
 df+2,3;m,h;15,23;i23;-1;+35a (+9);;* Balcony Break;bbr;Moon Swallow;;;
@@ -70,21 +70,24 @@ df+3;l;23;i29;-23;+71a (+55);;"* Homing
 * [[Snake_Edge|Snake Edge]]";hom trn;Phoenix Tail;;;
 df+4;m;12;i12;-4;+7;;*;;;;;
 d+1;m;21;i17;-6;+8c;+9c;* Recover in AOP with D+1 (-10, +4c, +5c);;Sunset Fan;FC;;
-d+1+2;;;;;;;"* Transitions to AOP
-* Alternate input BT.d+1+2
-High crush";cs;Phoenix;;;
 d+2;s;8;i11;-4;+7;;* Alternate input FC.2;;;FC;;
 d+3;l;12;i14;-12;-3;;*;;;FC;;
 d+3,4;l,h;12,21;i25;+0;+26a (+17);;"* Balcony Break
 * Combos from 1st hit CH";bbr;Giant Slayer;;;
-d+3+4;special;;;;;;* Alternate input u+3+4;;Spinner;;;
 d+4;l;6;i12;-15;-4;;* Alternate input FC.4;;;FC;;
+d+1+2;;;;;;;"* Transitions to AOP
+* Alternate input BT.d+1+2
+High crush";cs;Phoenix;;;
+d+3+4;special;;;;;;* Alternate input u+3+4;;Spinner;;;
 db+1;m;30;i18;-9;+14a (+5);;"* Heat Engager
 
 * Heat Dash +5, +36a (+26)
 
 * Balcony Break
 * Has Clean hit effect";he bbr;Storming Flower;;;
+db+2;l;13;i18;-8;+5c;+18g;*;;Feathered Fan;BT;;
+db+3;l;0;i15;+2c;+2c;+14;*;;Knee Cracker;;;
+db+4;l;14;i18;-12;+4c;+14;*;;Nut Cracker;;;
 db+1+2;;;;;;;"* Transitions to HYP
 * Punch parry (+9 HYP, opponent BT)
 * Successful parry partially restores remaining Heat time
@@ -93,14 +96,10 @@ Parry state";ps;Hypnotist;HYP;;
 db+1+2;;;;;;;"* Transitions to HYP
 * During Heat, taking 3 or more steps partially restores remaining Heat time
 * Alternate input ub+1+2";;Hypnotist;;;
-db+2;l;13;i18;-8;+5c;+18g;*;;Feathered Fan;BT;;
-db+3;l;0;i15;+2c;+2c;+14;*;;Knee Cracker;;;
 db+3+4;;;;;;;"* Transitions to BT
 High crush";cs;Low Back Turn;BT;;
-db+4;l;14;i18;-12;+4c;+14;*;;Nut Cracker;;;
 b+1;m;10;i8;-12;+1;;"* Automatically transitions to BT on hit
 * Recover facing forward with B+1 (between -1 and +4)";;Great Wall Left;;;
-b+1+2;m;20;i15;-13;+29a (+19);;*;;Cross Lifting Palms;;;
 b+1+3;;;;;+6;;"* Automatically transitions to BT
 * Alternate input b+2+4
 * Also possible during HYP and BT
@@ -110,8 +109,6 @@ Automatically transitions to BT";hom;;BT;;
 b+2,2;m,l;13,15;i21;-7;+4;;* Automatically transitions to BT;;Seven Star Fist;BT;;
 b+3;h;22;i18;+3;+8c;+32d;"* Chip on block [6] 
 Automatically transitions to BT";chp;Peacock Kick;BT;;
-b+3+4;;;;;;;"* Transitions to BT
-* Alternate input BT.b+3+4, AOP.b+3+4";;Rain Dance;;;
 b+4;m;10;i13;-11;+0;;*;;;;;
 b+4,1;m,m;1020;i27;-14;+40d (-18);;"* Heat Engager
 
@@ -119,6 +116,9 @@ b+4,1;m,m;1020;i27;-14;+40d (-18);;"* Heat Engager
 
 * Combos from 1st hit
 * Balcony Break";he bbr;Moonhare Palm;;;
+b+1+2;m;20;i15;-13;+29a (+19);;*;;Cross Lifting Palms;;;
+b+3+4;;;;;;;"* Transitions to BT
+* Alternate input BT.b+3+4, AOP.b+3+4";;Rain Dance;;;
 ub+3;m;23;i20;-13;+36a (+26);;"* Tornado
 * Transitions to AOP on hit or block
 Low crush";trn js;From the Ashes;;;
@@ -140,13 +140,13 @@ uf+2;m;23;i26;+6c;+7c;+49a;"* Recover facing forward with F (+4c, +5c, +47a)
 Low crush";chp js;Phoenix Flight;BT;;
 uf+3;m;13;i16;-13;+29a (+19);;"* Alternate input u+3
 Low crush";js;Bolting Rabbit;;;
+uf+4;m;20;i23;-7;+4;+24a;"* Transition to FC with D (-7, +4c, +24a)
+* Transition with AOP with d+1+2 (-9, +2, +22)
+Low crush";js;Flare Kick;;;
 uf+3+4;m;30;i16;-1;+4d;;"* Balcony Break
 * Floor Break on airborne opponent
 * Transitions to BT on hit or block
 Low crush";bbr js;Shooting Star;BT;;
-uf+4;m;20;i23;-7;+4;+24a;"* Transition to FC with D (-7, +4c, +24a)
-* Transition with AOP with d+1+2 (-9, +2, +22)
-Low crush";js;Flare Kick;;;
 While in the air 3;m;30;i14;-2;+29d;;"* Balcony Break
 * Causes Strong Aerial Tailspin
 * Transition to AOP with D (-3, +28)
@@ -158,18 +158,18 @@ f,F+1;m;13;i15;-11;+7c;;* Transition to AOP with D (-5, +13);;;;;
 f,F+1,3;m,h;13,20;i18;-1;+20a (+11);;"* Balcony Break
 * Combos from 1st hit";bbr;Poison Flower;;;
 f,F+1,4;m,m;13,20;i21;-12;+22d;;* Combos from 1st hit CH;;Eclipsing Moon;;;
-f,F+1+2;m;12;i14;-9;+5;+58a (+38);* Alternate input ws1+2;;;;;
-f,F+1+2,1+2;m,m;1220;i19;-8;+7c;+43a;* Alternate input ws1+2,1+2;;X Marks the Spot;;;
 f,F+2;m;12;i15;-5;+6;;*;;;;;
 f,F+2,1;m,m;1220;i27;-12;+16a (+7);;"* Balcony Break
 * Combos from 1st hit
 * Cancel into BT with B (-8)";bbr;Fortune;;;
 f,F+3;m;12;i14;-5;+6;+12;*;;Raccoon Swing;BT;;
-f,F+3+4;m;23;i37;-3;+39d;;"* Chip on block [9]
-Low crush";chp js;Front Layout;;;
 f,F+4;h;20;i20;+9;+13g c;+58a (+38);"* Balcony Break
 * Automatically transitions to HYP on hit or block
 * Chip on block [6]";bbr chp;Soaring Blaze;HYP;;
+f,F+1+2;m;12;i14;-9;+5;+58a (+38);* Alternate input ws1+2;;;;;
+f,F+1+2,1+2;m,m;1220;i19;-8;+7c;+43a;* Alternate input ws1+2,1+2;;X Marks the Spot;;;
+f,F+3+4;m;23;i37;-3;+39d;;"* Chip on block [9]
+Low crush";chp js;Front Layout;;;
 uf,n,4;m;20;i23;-18;+27a (+17);;"*
 Low crush";js;Delayed Rising Toe Kick;;;
 f,f,F+3;m;20;i23;+7;+29a (+19);;"* Automatically transitions to AOP on hit or block
@@ -178,13 +178,13 @@ f,f,F+3;m;20;i23;+7;+29a (+19);;"* Automatically transitions to AOP on hit or bl
 Low crush";chp js;Diving Falcon;;;
 ws1;m;8;i12;-7;+4;;* Combos from 1st hit;;;;;
 ws1,4;m,m;8,16;i22;-10;+12g;;*;;Whirlwind Cross Kick;BT;;
-ws1+2;m;12;i14~16;-9;+5;;* Alternate input f,F+1+2;;;;;
-ws1+2,1+2;m,m;12,20;i19~20;-8;+7c;+43a;"* Combos from 1st hit
-* Alternate input f,F+1+2,1+2";;X Marks the Spot;;;
 ws2;m;17;i14;-3;+7;+38a (+28);* Recover facing forward with F (-5, +5, +36a (+26));;Sunflower;BT;;
 ws2*;m;20;i22;-3;+38a (+28);;* Recover facing forward with F (-5, +36a (+26));;Jasmine Blossom;BT;;
 ws3;m;22;i22;+3c;+6c;+51a;*;;Rising Axe Kick;;;
 ws4;m;20;i11;-10;+20a (+13);;*;;Skyscraper Kick;;;
+ws1+2;m;12;i14~16;-9;+5;;* Alternate input f,F+1+2;;;;;
+ws1+2,1+2;m,m;12,20;i19~20;-8;+7c;+43a;"* Combos from 1st hit
+* Alternate input f,F+1+2,1+2";;X Marks the Spot;;;
 ss4;l;19;i18;-13;-2;+29a;*;;Street Sweeper;;;
 FC.1;s;5;i10;-5;+6;;High crush;cs;;FC;;
 FC.2;s;8;i11;-4;+7;;High crush;cs;;FC;;
@@ -211,8 +211,6 @@ AOP.1,2;m,h;11,15;i21;-6;+30g;;* Combos from 1st hit;;Double Serving;BT;;
 AOP.1,4;m,m;11,20;i25;-9;+15d (-2);;"* Tornado
 * Balcony Break
 * Combos from 1st hit";trn bbr;Twin Mandarin Blows;BT;;
-AOP.1+2;m;25;i19;-1;+19a (+10);;"* Tornado
-* Balcony Break";trn bbr;Phoenix Cannon;;;
 AOP.2;m;10;i13;-10;+0;;*;;;;;
 AOP.2,1;m,m;10,20;i21;-12;+13a (+4);;"* Heat Engager
 
@@ -223,21 +221,23 @@ AOP.2,1;m,m;10,20;i21;-12;+13a (+4);;"* Heat Engager
 ** (-14, -3)";he;Phoenix Double Palm;;;
 AOP.3;l;19;i25;-16;+0;+27a;"*
 High crush";cs;Piercing Spear Kick;;;
-AOP.3+4;l;22;i23;-33;+1d;;* Recovers in FUFT when blocked;;Sliding Firecracker;FC;;
 AOP.4;m;14;i12;-10;+8;;*;;Rising Front Kick;;;
+AOP.1+2;m;25;i19;-1;+19a (+10);;"* Tornado
+* Balcony Break";trn bbr;Phoenix Cannon;;;
+AOP.3+4;l;22;i23;-33;+1d;;* Recovers in FUFT when blocked;;Sliding Firecracker;FC;;
 AOP.d;;;;;;;"* Xiaoyu ducks lower
 High crush";cs;Butterfly;AOP;;
 AOP.d+1;l;13;i19;-12;-1;+0;"*
 High crush";cs;Phoenix Swipe;AOP;;
 AOP.d+1+2;m;21;i26;-8;+42a (+32);;*;;Wave Crest;;;
-AOP.f+3+4;;;;;;;"* Transition to AOP with D
-High crush";cs;Roll Ball;FC;;
 AOP.f+4;l;13;i18;-7;+4;;"* Automatically transitions to AOP on hit or block
 * Alternate input FC.df+4
 High crush";cs;;AOP;;
 AOP.f+4,4;l,l;13,13;i28;-6;+5;;"* Combos from 1st hit CH
 * Alternate input FC.df+4,4
 High crush";cs;Flower Garden;FC;;
+AOP.f+3+4;;;;;;;"* Transition to AOP with D
+High crush";cs;Roll Ball;FC;;
 AOP.uf;;;;;;;"* Alternate input AOP.ub AOP.u
 Low crush";js;Jumping;FC;;
 AOP.uf+3;m;14;i15;-17;+27a (+17);;"* Alternate input AOP.ub+3, AOP.u+3
@@ -255,15 +255,6 @@ BT.1;m;17;i16;-5;+4;+64cs;* Elbow;elb;;BT;;
 BT.1,2;m,m;17,20;i24;-13;+17a;;"* Tornado
 * Balcony Break
 Low crush";trn bbr js;Waking Prominence;;;
-BT.1+2;m;12;i16;-6;+8;;*;;;;;
-BT.1+2,1+2;m,m;1212;i17;-13;+8d;;* Combos from 1st hit;;Battering Winds;;;
-BT.1+2,4;m,h;1220;i23;+3;+19a (+10);;"* Heat Engager
-
-* Heat Dash +5, +62a (+42)
-
-* Balcony Break
-* Combos from 1st hit
-* Chip on block";he bbr chp;Battering Storm;;;
 BT.2;h;9;i12;+0;+6;;*;;;BT;;
 BT.2,1;h,h;9,8;i14;-1;+6;+10;"* Transition to HYP with B (-2, +5)
 * Combos from 1st hit";;;;;
@@ -274,9 +265,18 @@ BT.2,2,1;h,m,m;9,12,21;i21;-11;+5c;;"* Transition to AOP with D (-10, +5)
 BT.3;m;18;i16;-5;+7;+41d (+33);"* On CH: 
 Balcony Break
 Low crush";bbr js;Peg Leg;BT;;
+BT.4;m;13;i13;-18;+33a (+23);;*;;Mistrust;;;
+BT.1+2;m;12;i16;-6;+8;;*;;;;;
+BT.1+2,4;m,h;1220;i23;+3;+19a (+10);;"* Heat Engager
+
+* Heat Dash +5, +62a (+42)
+
+* Balcony Break
+* Combos from 1st hit
+* Chip on block";he bbr chp;Battering Storm;;;
+BT.1+2,1+2;m,m;1212;i17;-13;+8d;;* Combos from 1st hit;;Battering Winds;;;
 BT.3+4;m;25;i18;-16;+10a (+1);;"* Balcony Break
 Low crush";bbr js;Monkey Kick;BT;;
-BT.4;m;13;i13;-18;+33a (+23);;*;;Mistrust;;;
 BT.db+4;l;0;i15;+2;+2;+14;* Alternate input BT.df+4;;Reverse Knee Cracker;;;
 BT.d+1+3;;;;;+51a (+35);;"* Low Parry from BT
 * Alternate input BT.d+2+4
@@ -284,11 +284,11 @@ Parry state";ps;Reverse Low Parry;;;
 BT.d+3;l;12;i16;-12;+7c;;*;;;;;
 BT.d+3,4;l,h;1220;i19;-5;+20a (+11);+37a;"* Balcony Break
 * Combos from 1st hit CH";bbr;Spinning Crane;;;
-BT.d+3+4;;;;;;;"* Xiaoyu spins and steps to the right
-* Alternate input BT.u+3+4 (steps to the left)";;Spin Tornado;;;
 BT.d+4;l;20;i24;-26;+73a (+57);+73a (+57);"* Instant Tornado
 * Has clean hit effect
 High crush";cs;Hou Sao Tui;;;
+BT.d+3+4;;;;;;;"* Xiaoyu spins and steps to the right
+* Alternate input BT.u+3+4 (steps to the left)";;Spin Tornado;;;
 BT.f,F+3+4;m (t);15 (43);i39;+4;+39d;;"* Unbreakable throw when connecting at close range
 * Chip on block [9]
 Low crush";chp js;Back Layout;BT;;
@@ -306,8 +306,6 @@ Low crush";js;Silver Needle;;;
 CH AOP.d+1;l,t;40;i19;-12;+0;;"* Floor Break
 * Attack throw on CH
 High crush";fbr cs;Return to the Nest;;;
-HYP.1+2;;;;;;;"* Starts taking steps in the opposite direction
-Parry state";ps;Hypnotist;;;
 HYP.2;m;25;i18;-4;+22 (-13);;"* Heat Engager
 
 * Heat Dash +5, +36a (+26)
@@ -316,16 +314,18 @@ HYP.2;m;25;i18;-4;+22 (-13);;"* Heat Engager
 * Powered UpBased on the number of steps taken in HYP:HYP.2 damage increases and becomes plus on block. See the charts in th [[Xiaoyu_movelist#HYP_(Hypnotist)|HYP]] section for more details. up when in Heat or based on the number of steps taken.
 * Partially uses remaining Heat time
 * Chip on block";he bbr chp;Spin Sticker;;;
-HYP.2+3;!;40;i61;;+10d;;"* Unblockable
-* Cancel into BT with BB";;Deadly Orchid;;;
 HYP.3;l;20;i20;-12;+7c;;"* Homing
 * Powered UpBased on the number of steps taken in HYP:HYP.3 damage increases and becomes more plus on hit. See the charts in th [[Xiaoyu_movelist#HYP_(Hypnotist)|HYP]] section for more details. up when in Heat or based on the number of steps taken.
 * Partially uses remaining Heat time";hom;Blue Luan Sweep;;;
+HYP.4;h;20;i14;-2;+26d;+50cs;* Balcony Break;bbr;Falling Tiger Kick;;;
+HYP.1+2;;;;;;;"* Starts taking steps in the opposite direction
+Parry state";ps;Hypnotist;;;
+HYP.2+3;!;40;i61;;+10d;;"* Unblockable
+* Cancel into BT with BB";;Deadly Orchid;;;
 HYP.3+4;h;20;i25;-2;+30a;;"* Causes Strong Aerial Tailspin
 * Cancel into BT with B
 * Chip on block [8]
 Low crush";chp js;Deadly Orchid;;;
-HYP.4;h;20;i14;-2;+26d;+50cs;* Balcony Break;bbr;Falling Tiger Kick;;;
 1+3;t;35;i12;-6;+1d;;* Throw break 1 or 2;;Jade;;;
 2+4;t;35;i12;-3;+0d;;"* Throw break 1 or 2
 * Side swap";;Ruby;;;

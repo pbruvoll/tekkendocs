@@ -20,12 +20,6 @@ Power crush";pc;Radiant Pegasus Bomb;;;
 1,2,2;h,h,h;5,10 (0),20;,i20~35;-9;+21 (+6);;"* Tornado
 * chip damage on block";trn chp;Liftoff Combo;;;
 1,2,d+2;h,h,h;5,10 (0),17;,i27~28;-11;+2;;* Can be delayed;;Coil Punch Combo;;;
-1+2;m;22;i19~20;-4;+15;;"* Balcony Break
-* Heat Engager
-
-* chip damage on block";bbr he chp;Uninstall;;;
-1+2+3;sp;;;;;;;;Taunt 1;;;
-1+2+4;sp;;;;;;;;Taunt 2;;;
 2;h;10;i12;-6;+2;;;;;;;
 2,2;h,h;10,22;,i20~35;-13;+15 (+5);;* Balcony Break;bbr;Troubleshooting;;;
 2,3;h,m;10,8;,i22~23;-10;+1;;;;;;;
@@ -43,8 +37,12 @@ Airborne";bbr Airborne;Down Time;;;
 * Transition to DES";chp;Quick Access;;;
 4;h;24;i13~14;-5;+14g;;"* Balcony Break
 * Homing";bbr hom;Accelerator;;;
-f+1+2;m;25 (0);i14~15;-12;+14;;"* Transition to SBT with f+1+2,3_4
-* Transition to DBT with f+1+2,f+3_f+4";;Overflow;;;
+1+2;m;22;i19~20;-4;+15;;"* Balcony Break
+* Heat Engager
+
+* chip damage on block";bbr he chp;Uninstall;;;
+1+2+3;sp;;;;;;;;Taunt 1;;;
+1+2+4;sp;;;;;;;;Taunt 2;;;
 f+2;m;12;i17~18;-4;+7;;;;;;;
 f+2,1;m,m;12,20;,i24~25;-10;+14;;"* Balcony Break
 * Heat Engager
@@ -55,21 +53,23 @@ f+2,3;m,h;12,8;,i22;-8;+4;;;;;;;
 f+2,3,3;m,h,m;12,8,22;,i35~36;-10;+12 (-3);;"* Balcony Break
 * Transition to DES with f+2,3,1+2";bbr;Triple Session;;;
 f+3;h;10;i14~15;-14;-3;;;;;;;
-f+3,1+2;h,m;10,25;,i24~25;-13;+8;;"* Balcony Break
-* Transition to DES
-* chip damage on block";bbr chp;Automatic Transmission;;;
 f+3,2;h,h;10,20;,i25;-4;+39 (+31);;"* Balcony Break
 * Transition to DES
 * chip damage on block";bbr chp;Lost Access;;;
-f+3+4;sp;;;;;;"* Transition to SBT
-* Transition to BKP with input SBT.D or SBT.B";;Boot;;;
-f+3+4;sp;;;;;;Airborne dash. Can use Thruster Left, Thruster Right-Burst, Eject Slider, Upstream, Thruster Drill, Heartbeat Disabler, or Shut Down during Boot.;;Boot;;;
+f+3,1+2;h,m;10,25;,i24~25;-13;+8;;"* Balcony Break
+* Transition to DES
+* chip damage on block";bbr chp;Automatic Transmission;;;
 f+4;m;14;i16;-9;+1;;"* Homing
 * Transition to DES with f+4,1+2";hom;;;;
 f+4,1;m,h;14,14;,i25~26;-9;+15 (+7);;* Balcony Break;bbr;;;;
 f+4,1,4;m,h,m;14,14,19 (13);,i35;-12;-1 (-9);;"i25-26 bounce, i25-26 travel, 
 (---)/i35(27-65) travel then explosion , 
 -3(-11) and -1(-9) for explosion then hit, respectively";;Logic Bomb;;;
+f+1+2;m;25 (0);i14~15;-12;+14;;"* Transition to SBT with f+1+2,3_4
+* Transition to DBT with f+1+2,f+3_f+4";;Overflow;;;
+f+3+4;sp;;;;;;"* Transition to SBT
+* Transition to BKP with input SBT.D or SBT.B";;Boot;;;
+f+3+4;sp;;;;;;Airborne dash. Can use Thruster Left, Thruster Right-Burst, Eject Slider, Upstream, Thruster Drill, Heartbeat Disabler, or Shut Down during Boot.;;Boot;;;
 df+1;m;10;i13;-6;+5;;;;;;;
 df+1,1;m,h;10,20;,i30~31;+1;+8;;;;;;;
 df+1,1,2;m,h,h;10,20,48;,i22~25;+6;+8;;"* chip damage on block
@@ -79,18 +79,18 @@ df+2;m;16;i16~17;-9;+32a (+22);;;;Pickup;;;
 df+3;m;14;i16;-9;+1;;;;;;;
 df+3,3;m,l;14,17;,i23~24;-12c;+1;;;;Double Socket;;;
 df+4;m;13;i12;-7;+4;;;;;;;
-d+1+2;sp;;;;;;* Cancel DES with DES.d+1+2 or DES.DB;;Destructive Form;;;
-d+1+2;sp;;;;;;"* Cancel DES with DES.d+1+2 or DES.DB
-* Transition to DBT with input DES.f+3_f+4";;Destructive Form;;;
 d+2;m;14;i24~26;-12;+2c;;;;;;;
 d+2,4;m,m;14,24;,i18~21;-9;+28 (+13);;"Airborne
 * Transition to DES with input d+2,4,1+2";;Deadlock;;;
 d+3;l;17;i23~32;-10;-1;;"Goes into Airborne then standing
 * Transition to BKP";;Quick Slider;;;
-d+3+4;l;20;i27~i28;-37;+67 (+51);;"* Homing
-* Transition to DES with input d+3+4,1+2";hom;Harpoon Sweep;;;
 d+4;l;15;i17~18;-12;-1;;;;;;;
 d+4,1+2;l,h;15,20;,i20~21;0;+11 (+2);;* Balcony Break;bbr;Optimizer;;;
+d+1+2;sp;;;;;;* Cancel DES with DES.d+1+2 or DES.DB;;Destructive Form;;;
+d+1+2;sp;;;;;;"* Cancel DES with DES.d+1+2 or DES.DB
+* Transition to DBT with input DES.f+3_f+4";;Destructive Form;;;
+d+3+4;l;20;i27~i28;-37;+67 (+51);;"* Homing
+* Transition to DES with input d+3+4,1+2";hom;Harpoon Sweep;;;
 db+1;sp;;;;;;;;Backup;;;
 db+2;m;10;i18~19;-18;-5;;;;;;;
 db+2,2;m,m;10,10;,i19~20;-9;+5;;* Transition to DES with input db+2,2,1+2;;Daisy Chain;;;
@@ -98,10 +98,6 @@ db+3;l;11;i16;-13;-2;;;;Deep Link;;;
 db+4;l;23;i24~25;-17;+9;;;;Deep Web;;;
 b+1;m;15;i15~16;-5;+8;;;;;;;
 b+1,1+2;m,sl,m;15,1,30;,i25~40,i26~28;-16;+71;;* Tornado;trn;Gadget Found;;;
-b+1+2;m;25;i19~20;-13;+8;;"* Balcony Break
-* Alternate input: DES.b+1+2
-* chip damage on block
-Power crush";bbr chp pc;Transmission;;;
 b+1+3;sp;;;;;;"* Alternate input: b+2+4
 Parry state";ps;Model Change;;;
 b+2;m;12;i18;-9;+1;;;;;;;
@@ -110,11 +106,8 @@ b+2,3;m,m;12,22;,i23~24;-15;+9 (-8);;"Airborne
 * Balcony Break
 * Tornado";bbr trn;Trance Generator;;;
 b+2,4;m,h;12,20;,i16~17;-7;+12g;;* Balcony Break;bbr;Trance Accelerator Kick;;;
-b+2+3;ub (m);50;i75~76;+44;+44;;* Balcony Break;bbr;Hang-Up;;;
 b+3;m;22;i20~22;-8;+5 (-4);;"* Balcony Break
 * Homing";bbr hom;Spinning Top;;;
-b+3+4;m;22;i18~19;-17;+32 (+22);;* Tornado;trn;;;;
-b+3+4,3+4;m,m;22,25;,i56~61;+6c;+27 (-8);;* Spike;spk;Dynamic Range;;;
 b+4;m;17;i15~16;-13;-4;;;;;;;
 b+4,3;m,m;17,20;,i29~30;-11;+6c;;"Airborne
 * Transition to DES with input b+4,3,1+2";;Double Threading;;;
@@ -122,11 +115,18 @@ b+4,4;m,m;17,17;,i25~27;-37;+9 (-1);;"Airborne
 * Transition to SBT with input b+4,4,3_4
 * Transition to DBT with input b+4,4,f+3_f+4
 * Tornado";trn;Double Override;;;
+b+1+2;m;25;i19~20;-13;+8;;"* Balcony Break
+* Alternate input: DES.b+1+2
+* chip damage on block
+Power crush";bbr chp pc;Transmission;;;
+b+2+3;ub (m);50;i75~76;+44;+44;;* Balcony Break;bbr;Hang-Up;;;
+b+3+4;m;22;i18~19;-17;+32 (+22);;* Tornado;trn;;;;
+b+3+4,3+4;m,m;22,25;,i56~61;+6c;+27 (-8);;* Spike;spk;Dynamic Range;;;
 ub+2;h;26;i16~24;-8;+38 (-20);;"* Balcony Break
 Power crush";bbr pc;Overload;;;
+ub+4;m;10;i18;-9;+7;;Low crush;js;;;;
 ub+3+4;m;25;i37~39;+2c;+25 KND;;;;;;;
 ub+3+4,1+2;m,m;25,20;,i26~27;-14;+32 (+22);;;;Docking Bay;;;
-ub+4;m;10;i18;-9;+7;;Low crush;js;;;;
 u+1+2;m;21;i33~34;-5;+56;;;;Gigabyte Hammer;;;
 uf+1;mmm;20,14 (9),10 (7);i19~20,i25,i17;-13;+68 (+52);;"* Tornado
 * Transition to SBT on hit with uf+1,3_4
@@ -141,15 +141,14 @@ uf+2;h;22;i16~17;-2;+20 (+11);;"* Balcony Break
 uf+3;m;15;i17~18;-52;-25;;"* Transition to SBT with input uf+3,3_4
 * Transition to DBT with input uf+3,f+3_f+4";;;;;
 uf+3,2;m,m;15,30;,i17~22;-14;+32 (-26);;* Balcony Break;bbr;Cradle Star;;;
-uf+3+4;m;28;i38~41;0;+4;;;;Downstream;;;
 uf+4;m;8;i15~16;-15;-4;;;;;;;
 uf+4,4;m,m;8,8;,i24~26;-13;+45 (+37);;;;Inbound Kick;;;
+uf+3+4;m;28;i38~41;0;+4;;;;Downstream;;;
 1+2+3+4;sp;;;;;;"* Transition to DES with input 1+2+3+4,1+2
 * Transition to charged state";;Ki Charge;;;
 CH f,F+1+2;m;28;i17~18;;+13;;;;Killer Worm Virus;;;
 b,B+1+4;ub(h);50;i68;;+42 (-15);;* Balcony Break;bbr;Double Rocket Punch;;;
 b,b,UB;sp;;;;;;Invulnerable during wall climb until Alisa begins to turn and pushes off into Airborne.;;Wall Jump;;;
-f,F+1+2;mm;5,10;i17~18,i12~13;-9;+4;;;;Worm Virus;;;
 f,F+2;m;18;i16~17;-18;+5;;* Balcony Break;bbr;;;;
 f,F+2,3;m,m;18,17 (11);,i22~24;-13;+5 (+4);;* Balcony Break;bbr;Jumper Switch;;;
 f,F+3;m;12;i18~19;-14;-6;;Airborne;;;;;
@@ -161,17 +160,16 @@ f,F+3,4,4;m,h,m;12,15,17 (11);,i27~29;-10;+21 (+14);;"* Balcony Break
 f,F+4;mm;14,22;i22~29,i34~39;-9;+9 (+0);;"* Balcony Break
 * Transition to hit throw on front hit
 * Alternative input: f,F+4:1 to power up";bbr;Sandbox;;;
-f,f,F+1+2;m;24;i18~36;-3;-17 (-26);;* Balcony Break;bbr;Thruster Double Punch;;;
+f,F+1+2;mm;5,10;i17~18,i12~13;-9;+4;;;;Worm Virus;;;
 f,f,F+2;h;30;i13~15;+5;+28 (+20);;"* Balcony Break
 * chip damage on block
 * Transition to DES with input f,f,F+2,1+2";bbr chp;Linear Punch;;;
 f,f,F+3;m;15;i18~19;-4;+6;;;;;;;
 f,f,F+3,4;m,m;15,20;,i20~22;-7;+31 (+5);;* Balcony Break;bbr;Linear Dropkick;;;
+f,f,F+1+2;m;24;i18~36;-3;-17 (-26);;* Balcony Break;bbr;Thruster Double Punch;;;
 ws1;m;12;i13~14;-12;+1;;;;;;;
 ws1,2;m,h;12,12;,i24~25;-5;+6;;* Transition to DES with input ws1,2,1+2;;;;;
 ws1,2,3;m,h,m;12,12,23;,i25~26;-10;+33 (+23);;* Transition to DES with input ws1,2,3,1+2;;Spear Fishing;;;
-ws1+2;m;20;i20~21;-8;+21;;"* Homing
-* Hold to power up";hom;Cute But Deadly;;;
 ws2;m;24;i17~18;-13;+33 (+23);;"* Tornado
 * Transition to SBT with input ws2,3_4
 * Transition to DBT with input ws2,f+3_f+4";trn;Digital Lift;;;
@@ -181,24 +179,23 @@ ws3,3;m,m;1820;i13~14;-9;+12g;;"* Balcony Break
 ws3,d+3;m,l;1820;i30~31;-12;+73 (+57);;;;Clockwork Spring Low;;;
 ws4;m;15;i11~12;-5;+6;;"* Balcony Break
 * Power up after 2 or more rotations";bbr;Key Smash;;;
+ws1+2;m;20;i20~21;-8;+21;;"* Homing
+* Hold to power up";hom;Cute But Deadly;;;
 SS.4;l;15;i24~25;-12;+2;;;;;;;
 SS.4,1+2;l,hm;15,20;,;;;;;;Happy Propeller;;;
 FC.1+2;l,l;10,16;i21~23,i6~8;-11c;+5c;;* Transition to DES with input FC.1+2,n,1+2;;Sad Hound;;;
 BKP.1;h;31;i11~13;+4;+27 (+1);;"* Balcony Break
 * chip damage on block";bbr chp;Recovery Hook;;;
-BKP.1+2;ub(h);20;i34~71;+58;+58;;;;Rocket Punch;;;
 BKP.2;h;34;i11~33;-9;+21 (+6);;"-4/less negative on block when farther away. +25 (+10) on hit when far.
 * Tornado
 * chip damage on block";trn chp;Rapid Rocket Punch;;;
 BKP.3;m;30;i24~27;-9;+72;;* Balcony Break;bbr;Meteor Kick;;;
 BKP.4;m;30;i19;-9;+32 (+22);;"Spacing affects advantage on hit and block.
 * Tornado";trn;Uplink Knee;;;
+BKP.1+2;ub(h);20;i34~71;+58;+58;;;;Rocket Punch;;;
 BT.4;m;20;i16~17;-3;+19 (+2);;* Balcony Break;bbr;Goody Two Shoes;;;
 DBT.1;h;30;i24;+9;+11g;;"* Transition to DES
 * chip damage on block";chp;Thruster Left;;;
-DBT.1+2;m;35;i12;0;+21 (+0);;"* Balcony Break
-* Transition to DES
-* chip damage on block";bbr chp;Thruster Drill;;;
 DBT.2;m;25;i16;-14;+32 (+14);;* chip damage on block;chp;;;;
 DBT.2,1;mh;2513 (5);i26~28;-11c;+18 (-17);;"-28 on whiff.
 * Spike
@@ -206,6 +203,9 @@ DBT.2,1;mh;2513 (5);i26~28;-11c;+18 (-17);;"-28 on whiff.
 * chip damage on block";spk chp;Thruster Right - Burst;;;
 DBT.3;l;17;i6~20;-14c;+4c;+28 KND;;;Eject Slider;;;
 DBT.4;m;22;i17~19;-27;+68;;;;Upstream;;;
+DBT.1+2;m;35;i12;0;+21 (+0);;"* Balcony Break
+* Transition to DES
+* chip damage on block";bbr chp;Thruster Drill;;;
 DBT.f+1;m;49;i19~21;-11;+0 KND;;"* chip damage on block
 * throw on front hit";chp;Heartbeat Disabler;;;
 DBT.f+2;l;16;i19~20;-16c;-6;;;;;;;
@@ -213,16 +213,16 @@ DBT.f+2,2;l,m;16,14 (9);i35~37;-33;-6 (-13);;"* Balcony Break
 * chip damage on block";bbr chp;Shut Down;;;
 DES.1;m;35;i13;-9;+23;;"* Transition to DES
 * chip damage on block";chp;Shredder;;;
-DES.1+2;h,h,h;7,7,20;i16~18,i5~7,i9~11;+4;+15g;;"* Balcony Break
-* Homing
-* Transition to DES
-* chip damage on block
-* Jails";bbr hom chp;Death Marionette;;;
 DES.2;m;15;i20;-8;Launch;;"* Transition to DES
 * chip damage on block";chp;Shredding Uppercut;;;
 DES.2,(on hit)1;m,ub;1514 (9);i33;;+85 (+69);;* Tornado;trn;Shredding Sky Punch;;;
 DES.3;sp;;;;;;"* Alternate input: DES.4
 * Transition to DES";;Idling;;;
+DES.1+2;h,h,h;7,7,20;i16~18,i5~7,i9~11;+4;+15g;;"* Balcony Break
+* Homing
+* Transition to DES
+* chip damage on block
+* Jails";bbr hom chp;Death Marionette;;;
 DES.BT.1;m;24;i19~22;-9;+25;;"* Alternate input: DES.BT.2
 * chip damage on block";chp;Hertz Blade - Flare;;;
 DES.b,b;sp;;;;;;* Transition to DES;;Move Back;;;
@@ -244,9 +244,6 @@ DES.d+3,1;sp,m;0,25;,i20~21;-13;+14;;"* Balcony Break
 DES.f,f;sp;;;;;;* Transition to DES;;Move Forward;;;
 DES.f+1;h;21;i11~13;+3;+9;;"* Transition to DES
 * chip damage on block";chp;Hertz Blade;;;
-DES.f+1+2;m;12;i23~27;+5;+33;;* chip damage on block;chp;;;;
-DES.f+1+2,1+2;m,m;12,20;,i20~26;-53;+41;;"* Transition to DES
-* chip damage on block";chp;Hertz Blade - Diablo;;;
 DES.f+2;m;9;i15;-9;0;;* chip damage on block;chp;;;;
 DES.f+2,1;mm;9;;-12;-3;;* chip damage on block;chp;;;;
 DES.f+2,1,2;mmm;9;;-13;KND;;"* Heat Engager
@@ -255,11 +252,14 @@ DES.f+2,1,2;mmm;9;;-13;KND;;"* Heat Engager
 DES.f+3;sp;;;;;;"* Alternate input: DES.f+4
 * Cancel with input DBT.B
 * Transition to Evasive Action with input DBT.U_D";;Dual Boot;;;
+DES.f+1+2;m;12;i23~27;+5;+33;;* chip damage on block;chp;;;;
+DES.f+1+2,1+2;m,m;12,20;,i20~26;-53;+41;;"* Transition to DES
+* chip damage on block";chp;Hertz Blade - Diablo;;;
+DES.uf+2;h;7;i10~14;;+25 (+18);;"* Transition to DES
+* only hits airborne opponents";;Hertz Blade - Aegis;;;
 DES.uf+1+2;m;27;i29~31;-9c;+23;;"* Transition to DES
 * chip damage on block
 * Cancel DES with input DES.uf+1+2,1+2";chp;Spindle Slash;;;
-DES.uf+2;h;7;i10~14;;+25 (+18);;"* Transition to DES
-* only hits airborne opponents";;Hertz Blade - Aegis;;;
 FUFT.1+2;sp;0;;;;;;;Reboot;;;
 FUFT.1+2,3;sp,m;0,35;i22~23;-10;+60;;* Balcony Break;bbr;Reboot Meteor Kick;;;
 OTG.db+1+2;l;20 (14);i26;-14;-5 (-13);;;;Ground Rocket Punch;;;
@@ -269,12 +269,12 @@ SBT.1,2;m,m;12,13;,i18~19;-9;+2;+7;Rest of the string is natural on counter hit.
 SBT.1,2,1;m,m,m;12,13,7;,i20~21;-12;-20;-12;Less safe on hit than on block without CH.;;;;;
 SBT.1,2,1,3+4;m,m,m,m;12,13,7,33;,i18;-18;+4 (-13);;"* Balcony Break
 * Transition to DES with input SBT.1,2,1,3+4,1+2";bbr;Hard Reset;;;
-SBT.1+2;ub(h);20;i27~28;+8;+8;;"* Balcony Break
-* Transition to DES";bbr;Wire Clipper;;;
 SBT.2;m;25;i16~17;-7;+6 (-4);;"* Balcony Break
 * Transition to DES with input SBT.2,1+2";bbr;Linear Elbow;;;
 SBT.3;l;17;i16~20;-14c;+4c;;;;Eject Slider;;;
 SBT.4;m;22;i17~19;-27;+68;;;;Upstream;;;
+SBT.1+2;ub(h);20;i27~28;+8;+8;;"* Balcony Break
+* Transition to DES";bbr;Wire Clipper;;;
 SBT.D;sp;;;;;;"* Alternate input: SBT.B
 * Transition to BKP";;Abort;;;
 1+3;th(h);35;i12~14;;;;"* Throw break: 1 or 2
