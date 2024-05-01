@@ -196,7 +196,7 @@ def _crush_to_note(crush: str) :
 
 def _sort_json_movelist(move_list: List[Move]) :
     # a trick to generate a string for sorting frames. + is replaced by _ just to make "+" sort after ","
-    return sorted(move_list, key=lambda x: f'{SORT_ORDER[_get_move_category(x)]:05d}' + x.input.replace("+", "|"))
+    return sorted(move_list, key=lambda x: f'{SORT_ORDER[_get_move_category(x)]:05d}' + x.input.replace("1+2", "5").replace("1+4", "6").replace("2+3", "7").replace("3+4", "8").replace("+", "|"))
 
 def _remove_html_tags(data: str) -> str:
     "Process HTML content in JSON response to remove tags and unescape characters"

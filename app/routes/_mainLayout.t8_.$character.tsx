@@ -39,22 +39,20 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
 
   let overrideNormalMoves: TableData | undefined = undefined
 
-  if (characterId === 'claudio') {
-    let overrideSheetData: CharacterPageData | undefined = undefined
-    try {
-      overrideSheetData = await service.getCharacterData(
-        game,
-        characterId,
-        'overrideFrameData',
-      )
-    } catch (e) {
-      console.warn('overrideSheetData error', e)
-    }
-
-    overrideNormalMoves = overrideSheetData?.tables.find(
-      t => t.name === 'frames_normal',
+  let overrideSheetData: CharacterPageData | undefined = undefined
+  try {
+    overrideSheetData = await service.getCharacterData(
+      game,
+      characterId,
+      'overrideFrameData',
     )
+  } catch (e) {
+    console.warn('overrideSheetData error', e)
   }
+
+  overrideNormalMoves = overrideSheetData?.tables.find(
+    t => t.name === 'frames_normal',
+  )
 
   // const sheetData = await sheetDataPromise
 
