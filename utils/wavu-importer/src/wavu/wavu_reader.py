@@ -113,6 +113,8 @@ def _convert_json_movelist(move_list_json: list) -> List[Move]:
                 input = result[-1]
                 alias = result[0:(len(result) - 1)]
 
+            input = input.replace("#", ":")
+
             target = _normalize_data(
                 _get_all_parent_values_of("target", _normalize_data(move["title"]["parent"]),
                                           move_list_json) + _normalize_data(move["title"]["target"]))
