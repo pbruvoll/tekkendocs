@@ -37,6 +37,7 @@ export const frameDataTableToJson = (normalFrameData: TableData): Move[] => {
   const tagsIndex = lowerCaseHeaders.findIndex(h => h === 'tags')
   const imageIndex = lowerCaseHeaders.findIndex(h => h === 'image')
   const videoIndex = lowerCaseHeaders.findIndex(h => h === 'video')
+  const wavuIdIndex = lowerCaseHeaders.findIndex(h => h === 'wavu id')
   const nameIndex = lowerCaseHeaders.findIndex(h => h === 'name')
   const recoveryIndex = lowerCaseHeaders.findIndex(h => h === 'recovery')
 
@@ -58,6 +59,7 @@ export const frameDataTableToJson = (normalFrameData: TableData): Move[] => {
       hit: row[hitIndex],
       counterHit: row[counterHitIndex],
       notes: row[notesIndex],
+      wavuId: row[wavuIdIndex],
       tags: row[tagsIndex] ? tagStringToRecord(row[tagsIndex]) : undefined,
       image: row[imageIndex],
       video: row[videoIndex],
