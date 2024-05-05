@@ -44,7 +44,7 @@ type RankGroup = {
   ranks: Rank[]
 }
 
-const rankGroups: RankGroup[] = [
+export const rankGroups: RankGroup[] = [
   {
     name: 'Silver',
     ranks: [
