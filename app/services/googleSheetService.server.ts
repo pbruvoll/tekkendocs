@@ -85,7 +85,7 @@ export const getSheetObject = async (
   } catch (e) {
     throw createErrorResponse({
       title: `Not able to fetch data for sheetname ${sheetName} from spreadsheet ${spreadSheetDocumentId}`,
-      status: ServerStatusCode.UpstreamError,
+      status: ServerStatusCode.NotFound,
       exception: e,
     })
   }
@@ -93,7 +93,7 @@ export const getSheetObject = async (
   if (googleResponse.status >= 400) {
     throw createErrorResponse({
       title: `The request for data for sheetname ${sheetName} from spreadsheet ${spreadSheetDocumentId} returned with error code ${googleResponse.status}`,
-      status: ServerStatusCode.UpstreamError,
+      status: ServerStatusCode.ServerError,
       upstreamErrorResponse: googleResponse,
     })
   }
