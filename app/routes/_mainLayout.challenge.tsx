@@ -1,5 +1,6 @@
 import { Fragment } from 'react/jsx-runtime'
 import { Link } from '@remix-run/react'
+import { ContentContainer } from '~/components/ContentContainer'
 import { useAppState } from '~/hooks/useAppState'
 import { commandToUrlSegment } from '~/utils/moveUtils'
 import { t8AvatarMap } from '~/utils/t8AvatarMap'
@@ -72,13 +73,6 @@ export default function () {
       characterId: 'claudio',
       moveCommand: 'db+3',
       mixupCommand: '3+4',
-      startup: 24,
-    },
-
-    {
-      characterId: 'nina',
-      moveCommand: 'd,DF+4',
-      mixupCommand: 'db+2',
       startup: 24,
     },
     {
@@ -156,7 +150,7 @@ export default function () {
   const ranks = rankGroups.flatMap(rg => rg.ranks)
 
   return (
-    <>
+    <ContentContainer enableBottomPadding enableTopPadding>
       <h1 className="my-4 text-2xl">Tekken 8 Reaction challenges</h1>
       <section>
         <h2 className="my-3 text-xl">Low Reaction challenge</h2>
@@ -164,11 +158,10 @@ export default function () {
           Set the computer to do the two moves randomly and action intervals to
           random. Try to block 10 moves in a row
         </p>
-        <div className="grid grid-cols-[auto_auto_auto_auto_auto] items-center justify-items-center">
+        <div className="grid grid-cols-[auto_auto_auto_auto] items-center justify-items-center">
           <div>Level</div>
           <div>Startup</div>
-          <div>Low</div>
-          <div>Mid</div>
+          <div>Low / Mid</div>
           <div>Completed</div>
           {lowReactionMoves.map(
             ({ characterId, mixupCommand, moveCommand, startup }, index) => {
@@ -204,9 +197,8 @@ export default function () {
                       }
                     >
                       {moveCommand}
-                    </Link>
-                  </div>
-                  <div>
+                    </Link>{' '}
+                    /{' '}
                     <Link
                       className="text-text-primary"
                       style={{ textDecoration: 'none' }}
@@ -220,7 +212,7 @@ export default function () {
                       {mixupCommand}
                     </Link>
                   </div>
-                  <div>
+                  <div className="p-2">
                     <div className="flex flex-wrap gap-2">
                       <label htmlFor={`completed-${moveId}`}>Completed</label>{' '}
                       <input
@@ -251,6 +243,6 @@ export default function () {
           )}
         </div>
       </section>
-    </>
+    </ContentContainer>
   )
 }
