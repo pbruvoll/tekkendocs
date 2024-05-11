@@ -34,9 +34,9 @@ export default function () {
       startup: 29,
     },
     {
-      characterId: 'raven',
-      moveCommand: 'db+3',
-      mixupCommand: 'b+3',
+      characterId: 'asuka',
+      moveCommand: 'df+3+4',
+      mixupCommand: 'f+3+4',
       startup: 28,
     },
     {
@@ -46,9 +46,27 @@ export default function () {
       startup: 27,
     },
     {
+      characterId: 'raven',
+      moveCommand: 'db+3',
+      mixupCommand: 'b+3',
+      startup: 28,
+    },
+    {
+      characterId: 'eddy',
+      moveCommand: 'db+3',
+      mixupCommand: 'uf+3,3',
+      startup: 28,
+    },
+    {
       characterId: 'law',
       moveCommand: 'db+4',
       mixupCommand: 'f+3+4',
+      startup: 26,
+    },
+    {
+      characterId: 'steve',
+      moveCommand: 'db+2',
+      mixupCommand: 'db+1+2',
       startup: 26,
     },
     {
@@ -76,18 +94,6 @@ export default function () {
       startup: 24,
     },
     {
-      characterId: 'eddy',
-      moveCommand: 'FC.df+4',
-      mixupCommand: 'ws3+4',
-      startup: 24,
-    },
-    {
-      characterId: 'jun',
-      moveCommand: 'db+2',
-      mixupCommand: 'df+3+4',
-      startup: 24,
-    },
-    {
       characterId: 'xiaoyu',
       moveCommand: 'BT.d+4',
       mixupCommand: 'BT.f+1+2',
@@ -106,22 +112,34 @@ export default function () {
       startup: 24,
     },
     {
-      characterId: 'kazuya',
-      moveCommand: 'd+1+2',
-      mixupCommand: 'b+1+2',
-      startup: 23,
-    },
-    {
-      characterId: 'king',
-      moveCommand: 'db+3',
-      mixupCommand: 'd+1+2',
-      startup: 23,
+      characterId: 'jack-8',
+      moveCommand: 'db+2',
+      mixupCommand: 'f+3+4',
+      startup: 22,
     },
     {
       characterId: 'zafina',
       moveCommand: 'd+3',
       mixupCommand: 'b+4',
       startup: 22,
+    },
+    {
+      characterId: 'jun',
+      moveCommand: 'db+4,4,4',
+      mixupCommand: 'u+4',
+      startup: 22,
+    },
+    {
+      characterId: 'kazuya',
+      moveCommand: 'd+1+2',
+      mixupCommand: 'uf,n,4',
+      startup: 23,
+    },
+    {
+      characterId: 'king',
+      moveCommand: 'db+3',
+      mixupCommand: 'uf+3',
+      startup: 23,
     },
     {
       characterId: 'lee',
@@ -131,15 +149,9 @@ export default function () {
     },
 
     {
-      characterId: 'jack-8',
-      moveCommand: 'db+2',
-      mixupCommand: 'f+3+4',
-      startup: 22,
-    },
-    {
       characterId: 'jin',
       moveCommand: 'd+2',
-      mixupCommand: 'uf+3',
+      mixupCommand: 'f+3,1',
       startup: 22,
     },
   ]
