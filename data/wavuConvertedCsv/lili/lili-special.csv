@@ -3,7 +3,7 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 Power crush";hb pc;Lili-2+3;Heat Burst;;;
 H.BT.2+3;l,M,M,M;15,5,5,20;i16 i27~28 i6~8 i20~22;-8;+23a (+5);;"* Heat Smash
 * Homing
-* Wall Bounce";hs hom;Lili-H.BT.2+3;Rosa Giganteia Mezzo Forte;BT;;
+* Balcony Break";hs hom bbr;Lili-H.BT.2+3;Rosa Giganteia Mezzo Forte;BT;;
 H.RAB.3;L;20;i20~21;-13;+24a;+70a (+54);"* Homing
 * Partially consumes remaining Heat time
 High crush";hom cs;Lili-H.RAB.3;Rabbit Dance (Heat);;;
@@ -30,17 +30,21 @@ R.df+1+2;m,t;55+;i20;-15;+0;;"* Rage Art
 * Erases opponent's recoverable health on hit
 Power crush 8~";pc8~;Lili-R.df+1+2;La Vie en Rose Fortissimo;r39;;
 1;h;5;i10;+1;+8;;;;Lili-1;;r17;;
-1,1;h,h;5,16;i20~21;-4;+4;;"* Elbow
+1,1;h,h;5,16;i20~21;-4~-3;+4~+5;;"* Elbow
 * Combos from 1st hit";elb;Lili-1,1;;BT;;
-1,1,3;h,h,m;5,16,17;i20;-15;+6d;+25a;* Combos from 2nd hit CH;;Lili-1,1,3;Tricolore;;;
+1,1,3;h,h,m;5,16,17;i20~21;-15~-14;+6~+7d;+25a;* Combos from 2nd hit CH;;Lili-1,1,3;Tricolore;;;
 1,2;h,h;5,12;i12;-3;+8;;* Combos from 1st hit;;Lili-1,2;Left Right Thrust;;;
 1,2,3;h,h,L;5,12,13;i26;-13;-2;+6c;"* Combos from 2nd hit CH
 High crush";cs;Lili-1,2,3;Left Right Back Strike;;;
-1,2,4;h,h,m;5,12,20;i29;-9;+2a (-7);;Low crush;js;Lili-1,2,4;Left Right Piercing Thorn;;;
+1,2,4;h,h,m;5,12,20;i29;-9 / +2 H +7wc;+2a (-7);;"* Balcony Break
+* Chip on block [6]
+* Powers up in Heat: 30 damage, +2 ob, Wall Crush +7g, 13 Chip, +18a (-8) oh
+* Partially consumes remaining Heat time
+Low crush";bbr chp js;Lili-1,2,4;Left Right Piercing Thorn;;;
 2;h;8;i10;+0;+8;;;;Lili-2;;;;
 2,3;h,L;8,13;i26;-12;-2;+6c;"* Combos from 1st hit
 High crush";cs;Lili-2,3;Sunrise Sunset;;;
-2,4;h,h;8,20;i22;-5;+24a (+15);;"* Balcony Break 
+2,4;h,h;8,20;i22~26;-2;+24a (+15);;"* Balcony Break 
 * Combos from 1st hit";bbr;Lili-2,4;Bed Time;;;
 3;m;12;i15;-11;-3;;;;Lili-3;;BT;;
 3,1;m,m;12,24;i27;-13;+40d (-18);;"* Heat Engager
@@ -83,13 +87,13 @@ df+2;m;15;i16;-11;+31a (+21);;* Transition to -11, +31a (+21) BT with B;;Lili-df
 df+3;m;23;i20;+3c;+8c;+19a;;;Lili-df+3;Submissive Heel;;;
 df+4;m;12;i13;-8;-2;+5;* Knee;kne;Lili-df+4;;;;
 df+4,4;m,L;12,23;i20;-13;-2;+8;* Combos from 1st hit;;Lili-df+4,4;Dominating Heel;;;
-df+3+4;m;14;i24;-4;+27a;;Low crush;js;Lili-df+3+4;Backflip;BT;;
+df+3+4;m;14;i24~29;-4;+27a;;Low crush;js;Lili-df+3+4;Backflip;BT;;
 df+3+4,3+4;m,m;14,19;i26;-7;+2d;;"* Floor Break
 * Combos from 1st hit
 Low crush";fbr js;Lili-df+3+4,3+4;Backflip Spinning Edge;BT;;
 d+1;L;10;i18;-11;+0;;"* Transition to -11, +0 FC with D
 High crush";cs;Lili-d+1;;;;
-d+1,2;L,h;10,8;i18;-5;+3;+5;"* Combos from 1st hit
+d+1,2;L,h;10,8;i18;-8;+3;+5;"* Combos from 1st hit
 * Transition to -5, +3, +5 BT with B";;Lili-d+1,2;;;;
 d+1,2,4;L,h,m;10,8,24;i30;-12;+17a (+8);;"* Balcony Break
 * Combos from 2nd hit CH";bbr;Lili-d+1,2,4;Heavy Languish;;;
@@ -110,10 +114,11 @@ db+1;sl;5;i10;-5;+6;;"* Alternate input FC.1
 High crush";cs;Lili-db+1;;;;
 db+2;sl;8;i11;-4;+7;;"* Alternate input FC.2
 High crush";cs;Lili-db+2;;;;
-db+3;h;22;i20;-8;+34a;+46a;* Balcony Break;bbr;Lili-db+3;Twist of Fate;;;
+db+3;h;22;i19~22;-9~-6;+34a;+46a;"* Balcony Break
+High crush 6~19";bbr cs6~19;Lili-db+3;Twist of Fate;;;
 db+4;L;20;i30;-24;+76a (+60);;"* Homing
 * Instant Tornado
-High crush";hom cs;Lili-db+4;Edelweiss;;;
+High crush 7~";hom cs7~;Lili-db+4;Edelweiss;;;
 db+3+4;L;20;i24;-18;+3d;+33a;High crush;cs;Lili-db+3+4;Freesia Thrust;;;
 b+1;m;16;i17;-6;+2;+8;* Transition to +0, +8, +14 DEW with F;;Lili-b+1;lyse Le Bras Allong;;;
 b+1,4;m,m;16,22;i25;-11;+32a (+17);;"* Tornado
@@ -137,7 +142,7 @@ ub+1;m;21;i16;-9;+9d;;;;Lili-ub+1;Shattered Crown;;;
 u+3;m;20;i22;-16;+25a (+15);;"* Transition to -13, +28a (+18) DEW with F
 * Alternate input ub+3
 Low crush";js;Lili-u+3;;;;
-u+3,3;m,m;20,15;i28;-12;+5c;;"* Transition to -, +14c DEW with F
+u+3,3;m,m;20,15;i28;-12;+5c;;"* Transition to -3, +14c DEW with F
 * Combos from 1st hit
 * Alternate input ub+3,3
 Low crush";js;Lili-u+3,3;;;;
@@ -151,14 +156,14 @@ u+3+4;m (t);18 (28 );i36;-8;+13d (+39a);;"* Becomes a 28 damage +39a throw when 
 Low crush";js;Lili-u+3+4;Divine Step;;;
 uf+2;m;21;i20;-10;+15a (+6);;"* Balcony Break
 * Alternate input ub+2, u+2";bbr;Lili-uf+2;Stinging Nettle;;;
-uf+3;m;13;i15;-13;+30a (+20);;"* Alternate input ub+3, u+3
-Low crush";js;Lili-uf+3;Capricorn Kick;;;
+uf+3;m;13;i15~17;-13~-11;+30a (+20);;"* Alternate input ub+3, u+3
+Low crush 9~ fs9~";js9~ fs9~;Lili-uf+3;Capricorn Kick;;;
 uf+4;m;18;i25;-12;+1c;;"* Transition to -7, +6c BT with B
 Low crush";js;Lili-uf+4;;;;
 uf+4,3;m,m;18,30;i24;-9;+41d (-17);+32d (+24);"* Tornado
 * Balcony Break
 * Combos from 1st hit";trn bbr;Lili-uf+4,3;Sunflower Lance;;;
-uf+3+4;m;15;i15;-9;+2;;"* Knee
+uf+3+4;m;15;i15~18;-9~-6;+2;;"* Knee
 Low crush";kne js;Lili-uf+3+4;Angel Knee;;;
 uf+3+4,3;m,h;15,18;i13;-4;+14g (+18g w);+20a (+10);"* On CH: 
 Balcony Break
@@ -179,16 +184,16 @@ f,F+1+2;m;28;i18;-9;+17a (+8);;"* Homing
 * Hold to power up:
 ** 2 spins: +12 on block, 11 chip damage
 ** 3 spins: Unblockable, 50 damage";hom bbr;Lili-f,F+1+2;Lashing Iris;;;
-f,F+3+4;m;30;i19;-2;+4a (-5);;"* Balcony Break
+f,F+3+4;m;30;i19;-2 / +4 H +7wc;+4a (-5);;"* Balcony Break
 * Chip damage on block [9]
-* Powered up in Heat
+* Powers up in Heat: 36 damage, +4 ob, Wall Crush +7g, 16 Chip, +18a (-8) oh
 * Partially consumes remaining Heat time
 Low crush";bbr chp js;Lili-f,F+3+4;Piercing Thorn;;;
 qcf;;;;;;;"* Transitions to Dew Glide
 * Transition to Crouch with d,DF
 * Transition to RAB with b+3 or b+4
 High crush";cs;Lili-qcf;Dew Glide;;;
-uf,n,4;m;20;i23;-13;+32a (+22);;"*
+uf,n,4;m;20;i23~25;-13~-11;+32a (+22);;"*
 Low crush";js;Lili-uf,n,4;Delayed Rising Toe Kick;;;
 f,f,F+3;m;30;i23;+3;+20a (+10);;"* Balcony Break
 * Chip damage on block
@@ -232,17 +237,17 @@ BT.1,4;h,h;8,21;i22;-5;+10g;;"* Heat Engager
 * Balcony Break
 * Combos from 1st hit";he bbr;Lili-BT.1,4;"Scorpio&#039;s Sting";;;
 BT.2;m;22;i14;-13;+8;;"* Balcony Break
-oc";bbr oc;Lili-BT.2;Rompez Fleuret;;;
+Power crush";bbr pc;Lili-BT.2;Rompez Fleuret;;;
 BT.3;m;12;i14;-10;+0;;"* Homing
 High crush";hom cs;Lili-BT.3;;;;
 BT.3,4;m,m;12,20;i30;-12;+39d (+31);;"* Balcony Break
 * Combos from 1st hit
 Low crush";bbr js;Lili-BT.3,4;Arc-en-Ciel;;;
-BT.4;m,m;10,20;i26,i21;-11;+11d;;* 2-hit move, 2nd hit only combos on CH;;Lili-BT.4;Shears;BT;;
+BT.4;m,m;10,20;i26~28 i21~22;-11;+11d;;* 2-hit move, 2nd hit only combos on CH;;Lili-BT.4;Shears;BT;;
 BT.4,3+4;m,m,m;10,20,12;i28;-10;+4d;;"* Floor Break
 * Combos from 2nd hit
 Low crush";fbr js;Lili-BT.4,3+4;"Shears &gt; Spinning Edge";BT;;
-BT.1+2;m;25;i13;-11c;+16a;;;;Lili-BT.1+2;Tempest;;;
+BT.1+2;m,m;5,20;i13~14 i3~4;-11c;+16a;;;;Lili-BT.1+2;Tempest;;;
 BT.3+4;m;24;i29;+2;+7c;;"* Chip on block [9]
 Low crush";chp js;Lili-BT.3+4;Twist Backflip;;;
 BT.b+3;;;;;;;"* Transitions to RAB
@@ -258,9 +263,9 @@ High crush";cs;Lili-BT.d+3+4;Orchid Ring;;;
 BT.d+3+4,F;L;25;;-26;+18d;;High crush;cs;Lili-BT.d+3+4,F;;;;
 DEW.1;m;12;i15;-9;-4;+2;;;Lili-DEW.1;Rose;;;
 DEW.1,2;m,m;12,20;i23;-14;+20a (+10);+54a;"* Balcony Break
-* Combos from 1st hit
-* Cancel and transition to -14, -12, -3 BT with B";bbr;Lili-DEW.1,2;Rose Pique;;;
-DEW.1,4;m,m;12,30;i25;-9;+2a (-7);;"* Balcony Break
+* Combos from 1st hit";bbr;Lili-DEW.1,2;Rose Pique;;;
+DEW.1,2~B;m;12;;-14~-15;-9~-8;-3~-2;;;Lili-DEW.1,2~B;;BT;;
+DEW.1,4;m,m;12,30;i25~31;-9;+2a (-7);;"* Balcony Break
 * Combos from 1st hit CH
 * Chip damage on block [9]
 * Partially consumes remaining Heat time
@@ -271,7 +276,8 @@ DEW.2,1;m,m;13,20;i22;-13;+17d;;"* Heat Engager
 * Heat Dash +67a (+50)
 
 * Balcony Break
-* Combos from 1st hit";he bbr;Lili-DEW.2,1;Nocturne;;;
+* Combos from 1st hit
+* Floor breaks floating opponent";he bbr;Lili-DEW.2,1;Nocturne;;;
 DEW.3;M;28;i17;-9;+20a (+3);;"* Tornado
 * Balcony Break";trn bbr;Lili-DEW.3;Platinum Grace;;;
 DEW.1+2;m;28;i16;-11;+17cg;;"* Tornado
@@ -286,11 +292,14 @@ RAB.2;m;20;i20;-9;+39d (-19);;"* Heat Engager
 * Balcony Break
 * Powered up during Heat: 24 damage
 * Partially consumes remaining Heat Time";he bbr;Lili-b+3,2;Rabbit Song;;;
-RAB.3;L;20;i20;-13;+3c;+70a (+54);"* Homing
-* Powered up during Heat
+RAB.3;L;20;i20;-13;+3c / +24a H;+70a (+54);"* Homing
+* Powered up during Heat: KND on normal hit
+* Partially consumes remaining Heat Time
 High crush";hom cs;Lili-b+3,3;Rabbit Dance;;;
-RAB.4;m;24;i23;-2;+4a (-5);;"* Balcony Break
-* Powered up during Heat
+RAB.4;m;24 (36);i23;-2 / +4 H +9wc;+4a (-5);;"* Balcony Break
+* Powered up during Heat: 
+36 damage, +4 ob, Wall Crush +9g
+* Partially consumes remaining Heat Time
 Low crush";bbr js;Lili-b+3,4;Rabbit Piercing Thorn;;;
 (During Enemy wall stun) 1+3;t;39;i12;!;+0d;;"* Wall throw (Unbreakable)
 * Alternate input 2+4, uf+1+2";;Lili-(During Enemy wall stun) 1+3;Larkspur;;;
@@ -303,6 +312,5 @@ Left Throw;t;42;i12;-3;+0d;;Throw break 1;;Lili-Left throw;Soleil;;;
 Right Throw;t;43;i12;-3;+1d;;Throw break 2;;Lili-Right throw;Monaco Mixer;;;
 b+1+3;t;25;;;+1d;;"* Punch parry (high and mid)
 * Side swap
-* Alternate input b+2+4
-Parry state";ps;Lili-b+1+3;Attack Reversal;;;
+Parry state 5~15";ps5~15;Lili-b+1+3_b+2+4;Attack Reversal;;;
 uf+1+2;t;40;i12;-3;+1;;* Throw break 1+2;;Lili-uf+1+2;Rafflesia;;;
