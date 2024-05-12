@@ -225,7 +225,7 @@ export default function () {
 
         <div className="my-3 mb-4 flex items-center gap-3">
           <h3>Progress</h3>
-          <div className="bg-text-primary-subtle h-5 flex-grow rounded-3xl ">
+          <div className="h-5 flex-grow rounded-3xl bg-text-primary-subtle ">
             <div
               className="h-full rounded-3xl bg-text-primary"
               style={{ width: completedPercentage + '%' }}
