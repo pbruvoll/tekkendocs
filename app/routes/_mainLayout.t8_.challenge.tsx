@@ -225,7 +225,7 @@ export default function () {
 
         <div className="my-3 mb-4 flex items-center gap-3">
           <h3>Progress</h3>
-          <div className="h-5 flex-grow rounded-3xl bg-text-primary-subtle ">
+          <div className="bg-text-primary-subtle h-5 flex-grow rounded-3xl ">
             <div
               className="h-full rounded-3xl bg-text-primary"
               style={{ width: completedPercentage + '%' }}
@@ -275,7 +275,7 @@ export default function () {
                       <div className="hidden md:block">{startup} frames</div>
                       <div className="md:hidden">i{startup}</div>
                     </div>
-                    <div>
+                    <div className="text-center">
                       <Link
                         className="text-text-primary"
                         style={{ textDecoration: 'none' }}
@@ -328,7 +328,7 @@ export default function () {
                       />
                     </div>
                     {completed && (
-                      <div className="mt-2 text-xs">
+                      <div className="mt-2 text-center text-xs">
                         First completed by{' '}
                         {completed.sosial ? (
                           <a href={completed.sosial}>{completed.name}</a>
