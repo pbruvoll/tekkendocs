@@ -106,21 +106,9 @@ export default function () {
       startup: 24,
     },
     {
-      characterId: 'xiaoyu',
-      moveCommand: 'BT.d+4',
-      mixupCommand: 'BT.f+1+2',
-      startup: 24,
-    },
-    {
       characterId: 'lars',
       moveCommand: 'd+1+2',
       mixupCommand: '1+2',
-      startup: 24,
-    },
-    {
-      characterId: 'alisa',
-      moveCommand: 'db+4',
-      mixupCommand: 'd+2',
       startup: 24,
     },
     {
@@ -134,6 +122,18 @@ export default function () {
       moveCommand: 'd+3',
       mixupCommand: 'b+4',
       startup: 22,
+    },
+    {
+      characterId: 'alisa',
+      moveCommand: 'db+4',
+      mixupCommand: 'd+2',
+      startup: 24,
+    },
+    {
+      characterId: 'xiaoyu',
+      moveCommand: 'BT.d+4',
+      mixupCommand: 'BT.f+1+2',
+      startup: 24,
     },
     {
       characterId: 'jun',
