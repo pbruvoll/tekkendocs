@@ -12,6 +12,7 @@ export default {
       colors: {
         text: {
           primary: 'var(--accent-a11)',
+          'primary-subtle': 'var(--accent-5)',
         },
       },
     },

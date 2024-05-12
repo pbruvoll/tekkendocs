@@ -80,6 +80,11 @@ export default function Index() {
             Ranks
           </Badge>
         </Link>
+        <Link to="/t8/challenge" className="cursor-pointer">
+          <Badge size="2" style={{ cursor: 'pointer' }} variant="outline">
+            Challenges
+          </Badge>
+        </Link>
       </div>
 
       <Heading as="h2" mt="7" mb="2" size="5">
