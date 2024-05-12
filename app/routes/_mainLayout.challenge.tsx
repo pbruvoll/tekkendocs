@@ -1,6 +1,8 @@
 import { Fragment } from 'react/jsx-runtime'
+import { VideoIcon } from '@radix-ui/react-icons'
 import { Link } from '@remix-run/react'
 import { ContentContainer } from '~/components/ContentContainer'
+import { TrophyProgress } from '~/components/TrophyProgress'
 import { useAppState } from '~/hooks/useAppState'
 import { commandToUrlSegment } from '~/utils/moveUtils'
 import { t8AvatarMap } from '~/utils/t8AvatarMap'
@@ -11,6 +13,11 @@ type LowReactionMove = {
   moveCommand: string
   mixupCommand: string
   startup: number
+  completed?: {
+    name: string
+    sosial?: string
+    video: string
+  }
 }
 
 export default function () {
@@ -20,6 +27,11 @@ export default function () {
       moveCommand: 'db+4',
       mixupCommand: 'uf+4',
       startup: 30,
+      completed: {
+        name: 'TekkenDocs',
+        sosial: 'https://twitter.com/tekkendocs',
+        video: 'https://www.youtube.com/watch?v=o_Ky7_Dd0Ss',
+      },
     },
     {
       characterId: 'feng',
@@ -161,31 +173,82 @@ export default function () {
 
   const ranks = rankGroups.flatMap(rg => rg.ranks)
 
+  const numCompleted = lowReactionMoves.filter(m => {
+    const moveId = `${m.characterId}-${m.moveCommand}`
+    return completedLowBlock.includes(moveId)
+  }).length
+
+  const completedPercentage = (numCompleted / lowReactionMoves.length) * 100
+
   return (
     <ContentContainer enableBottomPadding enableTopPadding>
       <h1 className="my-4 text-2xl">Tekken 8 Reaction challenges</h1>
       <section>
         <h2 className="my-3 text-xl">Low Reaction challenge</h2>
-        <p className="my-2">
-          Set the computer to do the two moves randomly and action intervals to
-          random. Try to block 10 moves in a row
+        <p className="my-3">
+          Set the computer to do the two moves listed randomly and at a random
+          intervall. Block at least <strong>12</strong> moves in a row to
+          complete the challenge. See this{' '}
+          <a
+            className="text-text-primary underline underline-offset-2"
+            href="https://www.youtube.com/watch?v=o_Ky7_Dd0Ss"
+          >
+            video
+          </a>{' '}
+          for an example.
         </p>
-        <div className="grid grid-cols-[auto_auto_auto_auto] items-center justify-items-center">
-          <div>Level</div>
-          <div>Startup</div>
-          <div>Low / Mid</div>
+        <p className="my-3">
+          If you are the first to completa a challenge, you can tweet us a link
+          to a video where you complete it at{' '}
+          <a
+            className="underline-offset-2t text-text-primary underline"
+            href="https://twitter.com/tekkendocs"
+          >
+            @tekkendocs
+          </a>
+          , and we'll add it to this site.
+        </p>
+
+        <div className="my-3 mb-4 flex items-center gap-3">
+          <h3>Progress</h3>
+          <div className="bg-text-primary-subtle h-5 flex-grow rounded-3xl ">
+            <div
+              className="h-full rounded-3xl bg-text-primary"
+              style={{ width: completedPercentage + '%' }}
+            />
+          </div>
+          <div>
+            {numCompleted} / {lowReactionMoves.length}
+          </div>
+          <TrophyProgress
+            progressPercentage={completedPercentage}
+          ></TrophyProgress>
+        </div>
+
+        <div className="grid grid-cols-[auto_auto_auto] items-center justify-items-center">
+          <div className="py-3">Level</div>
+          <div className="flex flex-wrap justify-around gap-2 justify-self-stretch">
+            <div>Startup</div>
+            <div>Low / Mid</div>
+          </div>
+
           <div>Completed</div>
           {lowReactionMoves.map(
-            ({ characterId, mixupCommand, moveCommand, startup }, index) => {
+            (
+              { characterId, mixupCommand, moveCommand, startup, completed },
+              index,
+            ) => {
               const moveId = `${characterId}-${moveCommand}`
               return (
                 <Fragment key={characterId + moveCommand}>
                   <div className="flex flex-row-reverse flex-wrap justify-center gap-x-2 place-self-start">
-                    <img
-                      className="max-h-16"
-                      src={t8AvatarMap[characterId]}
-                      alt={characterId}
-                    />
+                    <Link to={'/t8/' + characterId}>
+                      <img
+                        className="max-h-16"
+                        src={t8AvatarMap[characterId]}
+                        alt={characterId}
+                      />
+                    </Link>
                     <img
                       className="max-h-16"
                       src={ranks[index].image}
@@ -193,39 +256,41 @@ export default function () {
                     />
                   </div>
 
-                  <div>
-                    <div className="hidden md:block">{startup} frames</div>
-                    <div className="md:hidden">i{startup}</div>
-                  </div>
-                  <div>
-                    <Link
-                      className="text-text-primary"
-                      style={{ textDecoration: 'none' }}
-                      to={
-                        '/t8/' +
-                        characterId +
-                        '/' +
-                        commandToUrlSegment(moveCommand)
-                      }
-                    >
-                      {moveCommand}
-                    </Link>{' '}
-                    /{' '}
-                    <Link
-                      className="text-text-primary"
-                      style={{ textDecoration: 'none' }}
-                      to={
-                        '/t8/' +
-                        characterId +
-                        '/' +
-                        commandToUrlSegment(mixupCommand)
-                      }
-                    >
-                      {mixupCommand}
-                    </Link>
+                  <div className="flex flex-wrap justify-around gap-2 justify-self-stretch">
+                    <div>
+                      <div className="hidden md:block">{startup} frames</div>
+                      <div className="md:hidden">i{startup}</div>
+                    </div>
+                    <div>
+                      <Link
+                        className="text-text-primary"
+                        style={{ textDecoration: 'none' }}
+                        to={
+                          '/t8/' +
+                          characterId +
+                          '/' +
+                          commandToUrlSegment(moveCommand)
+                        }
+                      >
+                        {moveCommand}
+                      </Link>{' '}
+                      /{' '}
+                      <Link
+                        className="text-text-primary"
+                        style={{ textDecoration: 'none' }}
+                        to={
+                          '/t8/' +
+                          characterId +
+                          '/' +
+                          commandToUrlSegment(mixupCommand)
+                        }
+                      >
+                        {mixupCommand}
+                      </Link>
+                    </div>
                   </div>
                   <div className="p-2">
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap justify-center gap-2">
                       <label htmlFor={`completed-${moveId}`}>Completed</label>{' '}
                       <input
                         id={`completed-${moveId}`}
@@ -248,6 +313,27 @@ export default function () {
                         checked={completedLowBlock.includes(moveId)}
                       />
                     </div>
+                    {completed && (
+                      <div className="mt-2 text-xs">
+                        First completed by{' '}
+                        {completed.sosial ? (
+                          <a href={completed.sosial}>{completed.name}</a>
+                        ) : (
+                          completed.name
+                        )}{' '}
+                        <Link
+                          className="text-xl text-text-primary"
+                          style={{ textDecoration: 'none' }}
+                          to={completed.video}
+                        >
+                          <VideoIcon
+                            className="inline"
+                            width="1em"
+                            height="1em"
+                          />
+                        </Link>
+                      </div>
+                    )}
                   </div>
                 </Fragment>
               )
