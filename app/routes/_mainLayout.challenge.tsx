@@ -1,10 +1,11 @@
 import { Fragment } from 'react/jsx-runtime'
 import { VideoIcon } from '@radix-ui/react-icons'
-import { Link } from '@remix-run/react'
+import { Link, type MetaFunction } from '@remix-run/react'
 import { ContentContainer } from '~/components/ContentContainer'
 import { TrophyProgress } from '~/components/TrophyProgress'
 import { useAppState } from '~/hooks/useAppState'
 import { commandToUrlSegment } from '~/utils/moveUtils'
+import { generateMetaTags } from '~/utils/seoUtils'
 import { t8AvatarMap } from '~/utils/t8AvatarMap'
 import { rankGroups } from './_mainLayout.t8_.ranks'
 
@@ -18,6 +19,19 @@ type LowReactionMove = {
     sosial?: string
     video: string
   }
+}
+
+export const meta: MetaFunction = ({ matches }) => {
+  const title = 'Tekken 8 Challenges | TekkenDocs'
+  const description = `A set of challenges to test your skills at Tekken 8. See how many low moves you can block on reaction`
+
+  return generateMetaTags({
+    matches,
+    title,
+    description,
+    image: { url: `/t8/pages/challenge.png` },
+    url: `/t8/challenge`,
+  })
 }
 
 export default function () {
