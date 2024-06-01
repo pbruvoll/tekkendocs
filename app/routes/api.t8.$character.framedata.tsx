@@ -5,7 +5,7 @@ import { SheetServiceImpl } from '~/services/sheetServiceImpl.server'
 import type { Game } from '~/types/Game'
 import type { Move } from '~/types/Move'
 import { type SheetService } from '~/types/SheetService'
-import { frameDataTableToJson } from '~/utils/frameDataUtils'
+import { frameDataTableToJson, getStances } from '~/utils/frameDataUtils'
 import { getCacheControlHeaders } from '~/utils/headerUtils'
 
 export const loader = async ({ params }: LoaderFunctionArgs) => {
@@ -33,7 +33,8 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
 
   const normalMoves = tables.find(t => t.name === 'frames_normal')
   const moves: Move[] = normalMoves ? frameDataTableToJson(normalMoves) : []
-  const data = { characterName, editUrl, game, framesNormal: moves }
+  const stances = Array.from(getStances(moves))
+  const data = { characterName, editUrl, game, framesNormal: moves, stances }
 
   return json(data, { headers: getCacheControlHeaders({ seconds: 60 * 5 }) })
 }

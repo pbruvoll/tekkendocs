@@ -447,13 +447,35 @@ export const sortMoves = (
 }
 
 export const getStances = (moves: Move[]): Set<string> => {
-  return moves.reduce((stanceSet, move) => {
+  const allStances = moves.reduce((stanceSet, move) => {
+    if (move.hitLevel.startsWith('t')) {
+      return stanceSet
+    }
     const stance = getStance(move.command)
     if (stance) {
       stanceSet.add(stance)
     }
     return stanceSet
   }, new Set<string>())
+  const stances = new Set(
+    Array.from(allStances).filter(
+      stance =>
+        ![
+          'r',
+          'back',
+          'left',
+          'right',
+          'otg',
+          'r',
+          'ch',
+          'p',
+          '(during',
+          '(back',
+          '(face',
+        ].includes(stance.toLowerCase()) && !stance.includes(','),
+    ),
+  )
+  return stances
 }
 
 export const getStance = (command: string): string | undefined => {
