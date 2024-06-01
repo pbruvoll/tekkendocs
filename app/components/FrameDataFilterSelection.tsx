@@ -252,40 +252,24 @@ export const FrameDataFilterSelection = ({
           Stances
         </Text>
         <div className="flex flex-wrap gap-3">
-          {Array.from(stances)
-            .filter(
-              stance =>
-                ![
-                  'r',
-                  'back',
-                  'left',
-                  'right',
-                  'r',
-                  'ch',
-                  'p',
-                  '(during',
-                  '(back',
-                  '(face',
-                ].includes(stance.toLowerCase()) && !stance.includes(','),
+          {Array.from(stances).map(stance => {
+            const active = stanceFilter?.includes(stance)
+            return (
+              <Button
+                key={stance}
+                variant={active ? 'solid' : 'outline'}
+                onClick={() => {
+                  if (active) {
+                    removeFilterElement(filterKey.Stance, stance)
+                  } else {
+                    addFilterElement(filterKey.Stance, stance)
+                  }
+                }}
+              >
+                {stanceNameMap[stance] || stance}
+              </Button>
             )
-            .map(stance => {
-              const active = stanceFilter?.includes(stance)
-              return (
-                <Button
-                  key={stance}
-                  variant={active ? 'solid' : 'outline'}
-                  onClick={() => {
-                    if (active) {
-                      removeFilterElement(filterKey.Stance, stance)
-                    } else {
-                      addFilterElement(filterKey.Stance, stance)
-                    }
-                  }}
-                >
-                  {stanceNameMap[stance] || stance}
-                </Button>
-              )
-            })}
+          })}
         </div>
       </section>
       <section className="flex flex-col gap-3">
