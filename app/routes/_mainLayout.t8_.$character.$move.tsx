@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
+import ReactPlayer from 'react-player/youtube'
 import {
   Button,
   Heading,
@@ -20,6 +21,8 @@ import {
 } from '~/utils/characterPageUtils'
 import { getCacheControlHeaders } from '~/utils/headerUtils'
 import { commandToUrlSegment } from '~/utils/moveUtils'
+
+// Only loads the YouTube player
 
 export const headers = () => getCacheControlHeaders({ seconds: 60 * 5 })
 
@@ -167,6 +170,11 @@ export default function Move() {
           />
           <div className="text-sm">Video from Wavu wiki</div>
         </>
+      )}
+      {move.ytVideo && (
+        <ReactPlayer
+          url={`https://www.youtube.com/watch?v=${move.ytVideo.id}`}
+        />
       )}
       {videoLink && showVideo && (
         <>
