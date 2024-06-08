@@ -180,6 +180,12 @@ export default function () {
       mixupCommand: 'f+3,1',
       startup: 22,
     },
+    {
+      characterId: 'leo',
+      moveCommand: 'df+2+3',
+      mixupCommand: 'd+2',
+      startup: 21,
+    },
   ]
 
   const [appState, setAppState] = useAppState()
