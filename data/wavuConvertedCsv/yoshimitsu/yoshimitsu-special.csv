@@ -1,13 +1,5 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Wavu id;Name;Recovery;Image;Video
 2+3;m;12;i16;+1;+2c;;"* Heat Burst
-* Alternate input: R1
-* Cancel to r45 with b,b
-* 3 chip damage on block
-* Partially uses Heat
-* Unparryable
-* Ignores regular power crush armor
-Power crush 7~62";hb pc7~62;Yoshimitsu-2+3;Heat Burst;r30 HEAT;File:Reina-2+3_Heat_Burst.jpg;File:Reina-Heat Burst.mp4
-2+3;m;12;i16;+1;+2c;;"* Heat Burst
 * Cancel to r45 with b,b
 * 3 chip damage on block
 * Partially uses Heat
@@ -44,7 +36,7 @@ R.df+1+2;m;10,45+;i20;-15;+0d;;"* Rage Art
 * Damage increases with lower health
 * Erases opponent's recoverable health on hit
 Power crush 8~";pc8~;Yoshimitsu-R.df+1+2;Trailokya Pilgrimage;r39 1SS;;
-1;h;7;i10;+1;+8;;;;Yoshimitsu-1;Jab;r17;;
+1;h;7;i10;+1;+8;;;;Yoshimitsu-1;Jab;r19;;
 1,1;h,m;7,19;,i23;-9;+4c;+6a;"* Spike
 * Weapon
 * Combo from 1st hit with 2f delay
@@ -162,7 +154,7 @@ f+2,NSS.1;h,m;18,21;,i26~27;-12~-11;+17a (+10);;"* Tornado
 f+2,db+2;h,m;18,8;,i10~14;-5;+6;;Link to db+2 extensions;;Yoshimitsu-f+2,db+2;"Manji Backfist &gt; Stone Fist";r24 FC;;
 f+3;h;24;i16~17;-9~-8;+17a (+8);;"* Homing
 * Balcony Break";hom bbr;Yoshimitsu-f+3;Oni Kick;r32;;
-f+3,4;h,m;2420;,i23~24;-6~-5;+37a (+23a);;"* Knee
+f+3,4;h,m;24,20;,i23~24;-6~-5;+37a (+23a);;"* Knee
 * 18f delay after 1st attack
 * Interrupt with i17 from 1st block
 ,Low crush 30~38 fs39~41";kne js30~38 fs39~41;Yoshimitsu-f+3,4;Zig Zag;r28 BT;;
@@ -346,7 +338,7 @@ DB+1+2;;;;;;;"* Continues as long as DB is held
 High crush 11~";cs11~;Yoshimitsu-DB+1+2;Bad Stomach (BDS);r10 BDS;;
 db+1;L;12;i26~28;-11~-9;+4~+6;7~+9;"Unavailable in NSS
 High crush 8~";cs8~;Yoshimitsu-db+1;;r28 FC;;
-db+1,2;Lm;1220;i25~26;-13~12;+0~+1;+6g~+7g;"* Balcony break on CH
+db+1,2;Lm;12,20;i25~26;-13~12;+0~+1;+6g~+7g;"* Balcony break on CH
 * Combo from 1st with 1f delay
 * Combo from 1st CH with 8f delay
 * Input can be delayed 8f";;Yoshimitsu-db+1,2;Nebular Burst;r36;;
@@ -553,7 +545,7 @@ f,F+1+4;m!;60;i45;;-65a;;"* Weapon
 * 60 self-damage during 1st recovery frame
 * Cannot be buffered
 * NSS.f,F+1+4 will always cancel into Confusion";wpn;Yoshimitsu-f,F+1+4;Suicide;r125 FDFT;;
-f,F+1+4,F;m!,m!;60185;,i35~37;;-60a;;"* Weapon
+f,F+1+4,F;m!,m!;60,185;,i35~37;;-60a;;"* Weapon
 * 185 self-damage during 1st recovery frame";wpn;Yoshimitsu-f,F+1+4,F;Double Suicide;r124 FDFT;;
 f,F+1+4,n;m!;60;;;;;;;Yoshimitsu-f,F+1+4,n;Confusion;r33 BT;;
 f,F+3+4;m;15;i22~24;-20~-18;-9c~-7c;;"* Spike
@@ -675,10 +667,11 @@ Low crush 6~29 fs30~32";spk js6~29 fs30~32;Yoshimitsu-BT.3;Perilous Spirit;r28 B
 BT.d+1;L;20;i17~18;-13~-12;+3~+4;+38a;"* Weapon
 * Can be performed in NSS with BT.b~db+1+2
 High crush 6~";wpn cs6~;Yoshimitsu-BT.d+1;Shisetsu Genman;r31 FC;;
-DGF.1;M;15;i30~31;-2c~-1c;+10a;+46a;"* Spike
+DGF.1;M;15;i30~31;-2c~-1c / +2;+10a / +46a;+46a;"* Spike
 * Weapon
 * 7 chip damage on block
-* Power up in Heat
+* Power up in Heat: +2 ob, 14 chip dmg, launch on normal hit, 20 dmg, recovers health on hit
+* Partially uses remaining Heat time
 Low crush 1~27";spk wpn js1~27;Yoshimitsu-DGF.1;Dragonfly Blade;r29;;
 DGF.2;h;15;i16~18;+4~+6;+13s;;Low crush 1~;js1~;Yoshimitsu-DGF.2;Dragonfly Fist;r15 DGF;;
 DGF.2,4;h,M;15,22;i26~28;-14~-12;+15a (+8);;"* Tornado
@@ -709,11 +702,12 @@ DGF.f+2;h;23;i20~21;+7~+8;+19a (+10);+64a (+44);"* Homing
 * Weapon
 * Alternate input: FLE.f+2
 Low crush 1~";hom bbr wpn js1~;Yoshimitsu-DGF.f+2;Dragonfly Slash;r30 DGF;;
-DGF.f+1+2;h,h,h;10,10,20;i16~17 i11~12 i11~12;-2~-1;+18a (+9);;"* Homing
+DGF.f+1+2;h,h,h;10,10,20;i16~17 i11~12 i11~12;-2~-1 / +4;+18a (+9);;"* Homing
 * Balcony Break
 * Weapon
 * 12 chip damage on block
-* Power up in Heat
+* Power up in Heat: +4 ob, 17 (4,4,9) chip dmg, recovers health on hit
+* Partially uses remaining Heat time
 Low crush 1~65";hom bbr wpn js1~65;Yoshimitsu-DGF.f+1+2;Red Spider Lily;r31;;
 FLE.1;;;;;;;fs1~25 High crush 26~;fs1~25 cs26~;Yoshimitsu-FLE.1;Flea Roll;r40 FC;;
 FLE.2;L;20;i24~28;-12~-8;+30a;;"* Side switches on close hit
@@ -762,10 +756,10 @@ Low crush 1~";bbr wpn js1~;Yoshimitsu-FLE.n;Flea Idle;r0 FLE;;
 FLE.uf;m!;21;i30~45;;+30a (+20);;"* Balcony Break
 * Alternate inputs: FLE.u and FLE.ub
 Low crush 1~";bbr js1~;Yoshimitsu-FLE.uf;Jumping Flea;r10 FLE;;
-FLE.u+1+2;;;;;;;Low crush 1~;js1~;Yoshimitsu-FLE.u+1+2;"Flea &gt; Manji Dragonfly";r46 DGF;;
 FLE.u+1+2;m;30;i38~40;+4~+6;+21a (+12);;"* Balcony Break
 * Tech roll to r33 FC on frames 41-42
 Low crush 1~37 fs38~4020";bbr js1~37 fs38~4020;Yoshimitsu-FLE.u+1+2;"Flea &gt; Dragonfly Feint";r20 FUFT;;
+FLE.u+1+2;;;;;;;Low crush 1~;js1~;Yoshimitsu-FLE.u+1+2;"Flea &gt; Manji Dragonfly";r46 DGF;;
 FUFT.d+3+4;;;;;;;fs1~;fs1~;Yoshimitsu-FUFT.d+3+4;Indian Stance Healing;r30 IND;;
 IND.1;M!;15;i53~55;;+0c~+2c;;"* Spike
 * Weapon
@@ -819,13 +813,13 @@ KIN.1,NSS.1;m,m,m;10,5,20;,i23~24 i14~15;-1~+0;+37a (+29);;"* Spike
 * Combo from 1st hit with 2f delay
 * Recovers health on hit";spk wpn;Yoshimitsu-KIN.1,NSS.1;;r27 1SS;;
 KIN.2;m;15;i21~22;-14~-13;+26a (+16a);;Weapon;wpn;Yoshimitsu-KIN.2;;r43;;
-KIN.2,1+2;m,M;1530;i32~34;-15~-13;+2a;;"* Balcony Break
+KIN.2,1+2;m,M;15,30;i32~34;-15~-13;+2a;;"* Balcony Break
 * Spike
 * Weapon
 * 6 chip damage on block
 * Power in NSS or Heat
 * Alternate notation: 1SS.KIN.2,1+2";bbr spk wpn;Yoshimitsu-KIN.2,1+2;Tenshu Kuzushi;r49 1SS;;
-KIN.2,1+2*;m,M;1530;,i47~49;+2~+4;+2a;;"* Balcony Break
+KIN.2,1+2*;m,M;15,30;,i47~49;+2~+4;+2a;;"* Balcony Break
 * Spike
 * Weapon
 * 9 chip damage on block
@@ -920,17 +914,12 @@ MED.n;;;;;;;"* May be canceled into another MED move
 ** +3 health (3rd onward)";;Yoshimitsu-MED.n;;r30 MED;;
 MED.u;;;;;;;Transitions into sidewalk with held input;;Yoshimitsu-MED.u;;r15;;
 NSS.1+2+3;h;25;i22~40;-18~+0;+26d (-32);;Balcony Break;bbr;Yoshimitsu-NSS.1+2+3;NSS Spirit Shield;r30 IND;;
-NSS.1+4;m;20;i8~11;-15~-12;+14 +64a;;"* Weapon
+NSS.1+4;m;20;i8~11;-15~-12;+14 +64a;;"* Strong Aerial Tailspin
+* Weapon
 * Knockdown against BT opponent, +19a (+9)
 * 4 chip damage on block
 * Recovers health on hit
 * Alternate inputs: b+1+4, f+1+4, db+1+4, ws1+4, FC.D+1+4";wpn;Yoshimitsu-NSS.1+4;Soul Stealer;r31 1SS;;
-NSS.1+4;m;20;i8~11;-15~-12;+14 +64a;;"* Weapon
-* Knockdown against BT opponent, +19a (+9)
-* 4 chip damage on block
-* Recovers health on hit
-* Causes Strong Aerial Tailspin
-* Alternate inputs: b+1+4, f+1+4, db+1+4, ws1+4, FC.D+1+4";wpn;Yoshimitsu-NSS.1+4;NSS Flash;r31 1SS;;
 NSS.BT.d+1;l;15;i17~18;-13~-12;+3;+38a;High crush 6~;cs6~;Yoshimitsu-NSS.BT.d+1;NSS Shisetsu Genman;r31 FC;;
 NSS.FC.DF+1;l;12;i25~26;-16~-15;+27a;;"* Alternate input: NSS.db,b+1
 High crush 1~34";cs1~34;Yoshimitsu-NSS.FC.DF+1;;r34 NSS;;
