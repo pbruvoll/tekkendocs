@@ -88,10 +88,13 @@ db+3+4;m,m;12,12;i20~22;-6;+1;;Shift to FC -6 on block & +1 on hit;;Eddy-db+3+4;
 db+3+4,4;m,m,m;12,12,10;,i21~22;-8;+5;;;;Eddy-db+3+4,4;;;;
 db+3+4,4,3;m,m,m,m;12,12,10,26;,i22~23;-14;+15a(+6);;Combos from 2nd CH;;Eddy-db+3+4,4,3;Meia-Lua de Compasso;;;
 b+1;m;15;i14~15;-7;+8;;Shift to FC;;Eddy-b+1;;;;
-b+1,4;m,m;15,10;,i25~27;-8;+8c;;Shift to HSP;;Eddy-b+1,4;;;;
-b+1,4,3;m,m,m;15,10,8;i23~24;-13;-1c;;;;Eddy-b+1,4,3;;;;
-b+1,4,3,3+4;m,m,m,m,m;15,10,8,7,20;,i24~26;-12;+8a;;;;Eddy-b+1,4,3,3+4;"Gato &gt; A do Sol";;;
-b+1,4,3+4;m,m,L;15,10,7,7;,i22~24;-24c;+12;;Shift to RLX;;Eddy-b+1,4,3+4;"Gato &gt; A da Lua";;;
+b+1,4;m,m;15,10;,i25~27;-8;+8c;;"* Shift to HSP
+* Combos from 1st CH";;Eddy-b+1,4;;;;
+b+1,4,3;m,m,m;15,10,8;i23~24;-13;-1c;;"* Combos from 1st CH
+* Combos from 2nd hit";;Eddy-b+1,4,3;;;;
+b+1,4,3,3+4;m,m,m,m,m;15,10,8,7,20;,i24~26;-12;+8a;;Combos from 3rd CH;;Eddy-b+1,4,3,3+4;"Gato &gt; A do Sol";;;
+b+1,4,3+4;m,m,L;15,10,7,7;,i22~24;-24c;+12;;"* Combos from 1st CH
+* Combos from 2nd hit";;Eddy-b+1,4,3+4;"Gato &gt; A da Lua";;;
 b+2;m;12;i15~16;-8;+3;;;;Eddy-b+2;;;;
 b+2,3;m,m;12,13;,i22~23;-11;+4;;Combos from 1st hit;;Eddy-b+2,3;;;;
 b+2,3,3;m,m,m;12,13,25;,i33~35;-14;+13a(-4);;Balcony Break;bbr;Eddy-b+2,3,3;"Godeme &gt; Combo Martelo";;;
@@ -110,7 +113,7 @@ b+3+4;h;28;i20~21;-7;+21a(+11);;"* Heat Engager
 * Heat Dash: +43a(+35) on hit
 * Absorb an attack to power up
 * Add chip damage when guarded
-Power crush";he bbr pc;Eddy-b+3+4;Lunging Brush Fire;;;
+Power crush 7";he bbr pc7;Eddy-b+3+4;Lunging Brush Fire;;;
 ub+3;m;25;i31~33;+4c;+13a;;7 Chip damage on block;;Eddy-ub+3;Perna da Lua;;;
 ub+4;m;12;i19~21;-17;-6;;;;Eddy-ub+4;Satellite Moon;;;
 u+3;m;30;i38~42;+0;+5a(-5);;"*
@@ -125,7 +128,8 @@ uf+2;m;21;i22~23;-13;+32a(+24);;Balcony Break;bbr;Eddy-uf+2;Asfixiante;;;
 uf+3;m;15;i26~28;-10c;-8c;+12a;Can shift to HSP with input F -14 -12 +8a;;Eddy-uf+3;;;;
 uf+3,3;m,m;15,20;,i21~24;-18;+31a(+21);;Tornado;trn;Eddy-uf+3,3;Jumping Jacks Mirage;;;
 uf+3,4;m,L;15,10;i24~25;-14c;+7;+73a(+57);;;Eddy-uf+3,4;"Armada Pulada &gt; Baixo";;;
-uf+4;m;20;i22~24;-9;+12;;"* Homing
+uf+4;m;20;i22~24;-9;+12;;"* Strong Aerial Tailspin
+* Homing
 * Balcony Break
 * Shift to RLX on hit";hom bbr;Eddy-uf+4;Chapa Giratria;;;
 uf+3+4;m,h;10,20;i17~18;-13;+17a;;Balcony Break on air hit;;Eddy-uf+3+4;Meia-Lua Pulando;;;
@@ -171,10 +175,11 @@ HSP.2,3;m,m;15,23;,i26~27;-13;-2(-11);;"* Balcony Break
 * Combos from 1st hit
 * Mandinga level increases by 1 on hit
 * Can cancel into HSP with input HSP.2,3,F";bbr;Eddy-HSP.2,3;Combo Escoro;;;
-HSP.3;m;10;i17~18;-8;+7;;;;Eddy-HSP.3;;;;
-HSP.3,3;m,h;10,10;,i27~28;-3;+8;;;;Eddy-HSP.3,3;;;;
+HSP.3;m;10;i17~18;-8;+7;;fs5;fs5;Eddy-HSP.3;;;;
+HSP.3,3;m,h;10,10;,i27~28;-3;+8;;Combos from 1st hit;;Eddy-HSP.3,3;;;;
 HSP.3,3,3;m,h,h;10,10,23;,i30~31;-5;+13;;"* Tornado
-* Shift to RLX";trn;Eddy-HSP.3,3,3;Enxurrada;;;
+* Shift to RLX
+* Combos from 1st CH";trn;Eddy-HSP.3,3,3;Enxurrada;;;
 HSP.4;m;10;i12~13;-3;+10;+31a;Shift to HSP;;Eddy-HSP.4;;;;
 HSP.4,2;m,m;10,21;,i23~24;-13;+12a(+3);;"* Tornado
 * Balcony Break
@@ -183,7 +188,7 @@ HSP.4,2~3;m,m;10,20;,i28~30;+4c;+14d;;6 Chip damage on block;;Eddy-HSP.4,2~3;Sal
 HSP.1+2;m;23;i22~23;-12;+15a;;"* Balcony Break
 * Absorb an attack to power up
 * Add chip damage when guarded
-Power crush";bbr pc;Eddy-HSP.1+2;Cabeada Direta;;;
+Power crush 7";bbr pc7;Eddy-HSP.1+2;Cabeada Direta;;;
 HSP.b+3;m;20;i36~37;-12;+13a;+58a;Balcony Break;bbr;Eddy-HSP.b+3;Chapa Esquivando;;;
 HSP.n,d;;;;;;;Shift to RLX;;Eddy-HSP.n,d;"Bananeira &gt; Negativa";;;
 HSP.n,f;;;;;;;Shift to HSP;;Eddy-HSP.n,f;"Bananeira &gt; Move Forward";;;

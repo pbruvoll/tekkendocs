@@ -46,8 +46,10 @@ f+2;h;15;i14~16;-9;+2;;;;Leroy-f+2;;;;
 f+2,3;h,m;1515;,i18;-10;+2;;;;Leroy-f+2,3;;;;
 f+2,3,4;h,m,m;151520;,i21~22;-9;+8;+38d (+30);* Transition to HRM;;Leroy-f+2,3,4;Lone Dragon Storm;;;
 f+3;m;14;i14~15;-7;+7;;Alternative input: ws3;;Leroy-f+3;;;;
-f+3,1+2;m,h;1415;;-8;-6;;power up during Heat (partially uses remaining Heat time);;Leroy-f+3,1+2;;;;
-f+3,1+2,4;m,h,m;1415,20;,i20~21;-16;+13a (+6);;Tornado;trn;Leroy-f+3,1+2,4;Strike of the Five Precepts;;;
+f+3,1+2;m,h;1415;;-8;-6;;"* jail from 1st hit
+* power up during Heat (partially uses remaining Heat time)";;Leroy-f+3,1+2;;;;
+f+3,1+2,4;m,h,m;1415,20;,i20~21;-16;+13a (+6);;"* Tornado
+* Natural combo on f+3 CH";trn;Leroy-f+3,1+2,4;Strike of the Five Precepts;;;
 f+4;m;14;i16~17;-9;+4;;;;Leroy-f+4;;;;
 f+4,4;m,h;14,24;,i28~30;-6;+20a (+11) / HE;;"* Heat Engager
 
@@ -57,7 +59,7 @@ f+2+3;m;35;i22~23;-7;+73a;;"* Only once per match
 * chip damage on block";chp;Leroy-f+2+3;"Master&#039;s Lesson";;;
 df+1;m;10;i13~14;-6;+5;;;;Leroy-df+1;;;;
 df+1,4;m,m;10,16;,i18;-9;+3;;Transition to HRM;;Leroy-df+1,4;Chopping Snap Kick;;;
-df+1,1+2;m,h;10,9;;-2;4;;power up during Heat (partially uses remaining Heat time);;Leroy-df+1,1+2;;;;
+df+1,1+2;m,h;10,9;;-2;+4;;power up during Heat (partially uses remaining Heat time);;Leroy-df+1,1+2;;;;
 df+1,1+2,2;m,h;10,9,17;,i24;-10;+3;;"* Partially restores remaining Heat time when successful during Heat
 Parry state";ps;Leroy-df+1,1+2,2;Admonishment Whirl;;;
 df+2;m;7;i15~16;-6;+6;;;;Leroy-df+2;;;;
@@ -100,7 +102,7 @@ b+2;sp;;;;;;"* Parry (partially restores remaining Heat time when successful dur
 * Becomes Superior Twin Dragon Gate upon perfect parry
 * Is ps3~ from HRM.b+2
 Parry state 5~";ps5~;Leroy-b+2;Twin Dragon Gate;;;
-b+3;h;20;i22~23;+9;+16c;;"* Balcony Break
+b+3;h;27;i22~23;+9;+16c;;"* Balcony Break
 * Homing
 * Transition to HRM
 * Cancel into HRM with input b+3,3+4
@@ -143,24 +145,24 @@ f,f,F+3;m;30;i24~27;+6;+41 (-17);;"* Balcony Break
 * chip damage on block";bbr chp;Leroy-f,f,F+3;"Dragon&#039;s Heel";;;
 ws1;m;14;i13~14;-7;+3;;;;Leroy-ws1;;;;
 ws1,4;m,m;14,16;,i21;-9;+3;;Transition to HRM;;Leroy-ws1,4;Elbow Slash Snap Kick;;;
-ws2;m;21;i15~16;-14;Launch;;;;Leroy-ws2;Arrow Shower;;;
+ws2;m;21;i15~16;-14;+51a;;;;Leroy-ws2;Arrow Shower;;;
 ws4;m;16;i11~12;-16;+5;;;;Leroy-ws4;Toe Smash;;;
 SS.4;l;17;i18~19;-12;+4;+12;;;Leroy-SS.4;Lone Dragon Slice;;;
 SS.1+2;h;26;i14;+7;+30g;;"* chip damage on block
 * power up during Heat (partially uses remaining Heat time)";chp;Leroy-SS.1+2;Chain Punch: Seed;;;
-FC.4;l;14;i15~16;-15;-4;;;;Leroy-FC.4;;;;
-FC.4,1;l,m;14,15;,i20~21;-13;Launch;;;;Leroy-FC.4,1;Reverse Cross Kick;;;
-HRM.1;m;17;i24~25;-10;0;;"* Parry
+FC.df+4;l;14;i15~16;-15;-4;;;;Leroy-FC.df+4;;;;
+FC.df+4,1;l,m;14,15;,i20~21;-13;+31a (+21);;;;Leroy-FC.df+4,1;Reverse Cross Kick;;;
+HRM.1;m;17;i24~25;-10;+0;;"* Parry
 * Partially restores remaining Heat time upon successful parry during Heat
 Parry state 3~";ps3~;Leroy-HRM.1;Tan Zhang;;;
 HRM.2;h;14;i12~13;-6;+5;;;;Leroy-HRM.2;;;;
-HRM.2,3;h,h;14,23;,i24~25;-9;+16 (+9);;"* Tornado
+HRM.2,3;h,h;14,23;,i24~25;-9;+16a (+9);;"* Tornado
 * chip damage on block";trn chp;Leroy-HRM.2,3;Double Jawbreaker;;;
 HRM.3;l;8;i16;-13;-2;;;;Leroy-HRM.3;;;;
 HRM.3,4;l,m;8,16;i22~23;-15;+1;;;;Leroy-HRM.3,4;Stampeding Dragon;;;
 HRM.4;m;13;i11~12;-7;+7;;Transition to HRM;;Leroy-HRM.4;;;;
-HRM.4,1+2;m,m;13,25;,i24~25;-14;+27 (+12);;Tornado;trn;Leroy-HRM.4,1+2;Cautious Dragon;;;
-HRM.1+2;m,h,h,h,h;12,x,x,x;i14;-2;5;;Power up during Heat (partially uses remaining Heat time);;Leroy-HRM.1+2;;;;
+HRM.4,1+2;m,m;13,25;,i24~25;-14;+27a (+12);;Tornado;trn;Leroy-HRM.4,1+2;Cautious Dragon;;;
+HRM.1+2;m,h,h,h,h;12,x,x,x;i14;-2;+5;;Power up during Heat (partially uses remaining Heat time);;Leroy-HRM.1+2;;;;
 HRM.1+2,1;m,h,h,h,h,m;12,x,x,x,20;i17~18;-17;+7a(-2)/HE;;"* Heat Engager
 
 * Heat Dash +5g +36a(+26)
@@ -170,18 +172,19 @@ HRM.1+2,1;m,h,h,h,h,m;12,x,x,x,20;i17~18;-17;+7a(-2)/HE;;"* Heat Engager
 HRM.SS;sp;;;;;;;;Leroy-HRM.d;Nimble Shift;;;
 HRM.SS.1+2;h;26;i14;+7;+30g;;"* chip damage on block
 * power up during Heat (partially uses remaining Heat time)";chp;Leroy-HRM.SS.1+2;Chain Punch: Seed;;;
-HRM.b+1;m;21;i20~22;+4;+7c;+52;chip damage on block;chp;Leroy-HRM.b+1;Prayer Fist;;;
+HRM.b+1;m;21;i20~22;+4;+7c;+52a;chip damage on block;chp;Leroy-HRM.b+1;Prayer Fist;;;
 HRM.b+3;l;12;i20~21;-31;-9;;;;Leroy-HRM.b+3;;;;
-HRM.b+3,1+2;l,m;12,27;i31~32;-16;KND;;"* Balcony Break
+HRM.b+3,1+2;l,m;12,27;i31~32;-16;+0a (-1);;"* Balcony Break
 * Combo from 1st hit
 * Combo deals [30; 12] damage";bbr;Leroy-HRM.b+3,1+2;Twin Dragon Acceptance;;;
-HRM.b+4;l;17;i20~21;-13;+4c;+28;Homing;hom;Leroy-HRM.b+4;Razor Sweep;;;
-HRM.f+1;h;17;i14~15;0;+15g;;Balcony Break;bbr;Leroy-HRM.f+1;Villain Slayer;;;
-HRM.f+4;m;21;i26~29;0;Launch;;chip damage on block;chp;Leroy-HRM.f+4;Duan Tou Xuan Feng Jiao;;;
+HRM.b+4;l;17;i20~21;-13;+4c;+28a;Homing;hom;Leroy-HRM.b+4;Razor Sweep;;;
+HRM.f+1;h;17;i14~15;+0;+15g;;Balcony Break;bbr;Leroy-HRM.f+1;Villain Slayer;;;
+HRM.f+4;m;21;i26~29;+0;+40a;;chip damage on block;chp;Leroy-HRM.f+4;Duan Tou Xuan Feng Jiao;;;
 OTG.db+2;l;;i17~18;-16;-5;;Power up during Heat (partially uses remaining Heat time);;Leroy-OTG.db+2;;;;
 OTG.db+2,1+2;l,l;;;-13;-2;;;;Leroy-OTG.db+2,1+2;Tremor Punch;;;
-P.b+2,1;m;35;i13;;+6;;"* Alternate input: P.b+2,2
-* power up during Heat (partially uses remaining Heat time)";;Leroy-P.b+2,1;Chain Punch: Branch;;;
+P.b+2,1;m;35;i13;;+21g;;"* Alternate input: P.b+2,2
+* power up during Heat (partially uses remaining Heat time)
+* Wall Crush on hit";wc;Leroy-P.b+2,1;Chain Punch: Branch;;;
 1+3;th(h);35;i12~14;;;;"* Spike
 * Throw break: 1 or 2
 * Opponent status on hit: FUFT perpendicular";spk;Leroy-1+3;Devastating Chain Punch;;;
