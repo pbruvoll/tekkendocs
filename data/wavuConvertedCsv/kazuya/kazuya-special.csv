@@ -122,7 +122,7 @@ b+1+2;m;21;i22;-8;+5;;"* Heat Engager
 * Heat Dash +36a (+26) on hit
 * Chip damage when guarded";he chp;Kazuya-b+1+2;Kumo Kiri;;;
 b+1+4;ub(m);60;i63;+20a(+10);+20a(+10);;;;Kazuya-b+1+4;Lightning Screw Uppercut;;;
-ub+1+2;h;32;i41;KND;KND;KND;"* Chip damage when guarded
+ub+1+2;h;32;i41;+19d (-39);+19d (-39);;"* Chip damage when guarded
 * Jack-8 or Alisa can recovery 20 by input 1+2
 * Balcony Break";chp bbr;Kazuya-ub+1+2;Inferno;;;
 uf+1;m;12;i18;-12;-1;;"* Spike
@@ -132,9 +132,9 @@ uf+3;m;25;i19;-9;+17(+9);;"* Balcony Break
 Low crush 9~";bbr js9~;Kazuya-uf+3;Searing Edge;;;
 uf+4;m;16;i25;-12;-1;;"* Balcony Break on air hit
 Low crush 9~";js9~;Kazuya-uf+4;;;;
-uf+4,4;m,l;16,12;;-23;KND;KND;Combo from 1st CH;;Kazuya-uf+4,4;;;;
-uf+4,4,4;m,l,l;16,12,10;;-23;KND;KND;;;Kazuya-uf+4,4,4;;;;
-uf+4,4,4,4;m,l,l,m;16,12,10,20;;-17;KND;KND;Balcony Break;bbr;Kazuya-uf+4,4,4,4;"Roundhouse &gt; Triple Spin Kick";;;
+uf+4,4;m,l;16,12;;-23;+29a;;Combo from 1st CH;;Kazuya-uf+4,4;;;;
+uf+4,4,4;m,l,l;16,12,10;;-23;+17a (+10);;;;Kazuya-uf+4,4,4;;;;
+uf+4,4,4,4;m,l,l,m;16,12,10,20;;-17;+19a (+12);;Balcony Break;bbr;Kazuya-uf+4,4,4,4;"Roundhouse &gt; Triple Spin Kick";;;
 1+2+3+4;sp;-;;;;;* Shift to charging;;Kazuya-1+2+3+4;Ki Charge;;;
 f,F+2;m;20;i16;-9;+39d(-19)/HE;;"* Heat Engager
 
@@ -183,13 +183,13 @@ FC.2;sm;8;i11;-4;+7;;High crush;cs;Kazuya-FC.2;Crouch Straight;FC;;
 FC.3;l;10;i16;-17;-6;;High crush;cs;Kazuya-FC.3;Crouch Spin Kick;FC;;
 FC.4;l;6;i12;-17;-4;;High crush;cs;Kazuya-FC.4;Crouch Shin Kick;FC;;
 FC.df+3+4;m;24;i23;-11c;+11a;;High crush ,Low crush 13~;csjs13~;Kazuya-FC.df+3+4;Tombstone Crusher;FC;;
-(back to wall).b,b,ub;m;25;i29;-1;KND;KND;"* Air Status 5F
+(back to wall).b,b,ub;m;25;i29;-1;+45d (-13);;"* Air Status 5F
 is8~13";is8~13;Kazuya-(back to wall).b,b,ub;Wall Jumping Attack;;;
 BT.1;h;15;i8;-8;+3;;;;Kazuya-BT.1_2;Spin Knuckle Jab;;;
-BT.3;h;18;i10;-8;KND;KND;;;Kazuya-BT.3;Spin Kick;;;
+BT.3;h;18;i10;-8;+8;;;;Kazuya-BT.3;Spin Kick;;;
 BT.d+1;sm;10;i10;-2;+9;;;;Kazuya-BT.d+1;Crouch Spin Knuckle;FC;;
 BT.d+3;l;12;i10;-11;+3;;;;Kazuya-BT.d+3;Crouch Spin Kick;FC;;
-BT.uf+3;m;-;;;LNC;LNC;Low crush;js;Kazuya-BT.uf+3;Reverse Jump Kick;;;
+BT.uf+3;m;-;;;+19a (+9);;Low crush;js;Kazuya-BT.uf+3;Reverse Jump Kick;;;
 DVK.1,1,2,F;h,h,m,th;5,6,12,8;i10;-17;+5;;"* Jails
 * Partially uses remaining Heat time
 * Only on hit";;Kazuya-DVK.1,1,2,F;Devil Break;;;
@@ -199,8 +199,8 @@ DVK.1+4;m;27;i21~31;-9;+3a;;"* Tornado
 Power crush";trn pc;Kazuya-DVK.1+4;Roar of the Devil;;;
 DVK.3+4;ub(m);30;i64;;-16(-77);;"* Partially uses remaining Heat time
 Low crush 25~";js25~;Kazuya-DVK.3+4;Devil Blaster;;;
-DVK.OTG.db+1+2;l;20;i24~29;-13;+13(+1);;* Partially uses remaining Heat time;;Kazuya-DVK.OTG.db+1+2;Grand Inferno;;;
-DVK.SS.2;m;25;i17;-15;+76;;"* Tornado
+DVK.OTG.db+1+2;l;20;i24~29;-13;+13a (+1);;* Partially uses remaining Heat time;;Kazuya-DVK.OTG.db+1+2;Grand Inferno;;;
+DVK.SS.2;m;25;i17;-15;+76a;;"* Tornado
 * Partially uses remaining Heat time";trn;Kazuya-DVK.SS.2;Devil Twister;;;
 DVK.db+3+4;l;0;i24;-19;+2;;* Partially uses remaining Heat time;;Kazuya-DVK.db+3+4;Devil Impact;;;
 DVK.db+3+4,DF;l,sp;0,0;;-19;+11;;* Partially uses remaining Heat time;;Kazuya-DVK.db+3+4~df;Devil Impact to Wind God Step;;;
@@ -209,9 +209,9 @@ DVK.f,F+2;m,th;20,20;i16;-9;+0;;"* Partially uses remaining Heat time
 DVK.f,n,d,df+1;m,th;23,15;i20;-16;Th;;"* Partially uses remaining Heat time
 * On hit, does not shift to throw with n";;Kazuya-DVK.f,n,d,df+1;Damnation;;;
 DVK.f,n,d,df+3;h,th;30,15;i20;+4;Th;;Low crush;js;Kazuya-DVK.f,n,d,df+3;Tempest Blaster;;;
-DVK.f,n,d,df+4,1,1;l,m,m,th;15,23,16,15;i16;-19;0;;* Partially uses remaining Heat time;;Kazuya-DVK.f,n,d,df+4,1,1;Abyss Damnation;;;
-DVK.f,n,d,df+4,1,1,B;l,m,m,th,sp;15,23,16,15,0;i16;-17;LNC;LNC;;;Kazuya-DVK.f,n,d,df+4,1,1,B;"Spinning Demon to Left Hook &gt; Thunder God Fist";;;
-DVK.ub+1+2;ub(h);40;i41;;+14(+44) KND;;"* Partially uses remaining Heat time
+DVK.f,n,d,df+4,1,1;l,m,m,th;15,23,16,15;i16;-19;+0;;* Partially uses remaining Heat time;;Kazuya-DVK.f,n,d,df+4,1,1;Abyss Damnation;;;
+DVK.f,n,d,df+4,1,1,B;l,m,m,th,sp;15,23,16,15,0;i16;-17;+17a (+10);;;;Kazuya-DVK.f,n,d,df+4,1,1,B;"Spinning Demon to Left Hook &gt; Thunder God Fist";;;
+DVK.ub+1+2;ub(h);40;i41;;+14 (-44);;"* Partially uses remaining Heat time
 * Jack-8 or Alisa can recovery 20 by input 1+2";;Kazuya-DVK.ub+1+2;Inferno;;;
 DVK.uf+1+2;ub(h);26;i22;;;;;;Kazuya-DVK.uf+1+2;Air Inferno;;;
 OTG.d+3+4;l;25;i23;-12;-1;;;;Kazuya-OTG.d+3+4;Oni Stomp;;;

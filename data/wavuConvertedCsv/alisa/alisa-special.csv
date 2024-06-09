@@ -7,7 +7,7 @@ H.d+1+2;sp;;;;;;"* Transition to DES
 Power crush";pc;Alisa-H.d+1+2;Emergency Destructive Form;;;
 H.f+1+4;sp;;;;;;"* Transition to DBT
 * partially consumes Heat";;Alisa-H.f+1+4;Emergency Dual Boot;;;
-H.2+3;m;50 (28);i20~21;+8;KND;;"* Alternate input: H.DES.2+3
+H.2+3;m;50 (28);i20~21;+8;-15d;;"* Alternate input: H.DES.2+3
 * Heat Smash
 * Transition to SBT with H.2+3,3_4 or H.DES.2+3,f+3_f+4";hs;Alisa-H.2+3;Quick-fix Protocol;;;
 R.df+1+2;m;;;;;;"* Alternate input: R.DES.df+1+2
@@ -15,54 +15,69 @@ R.df+1+2;m;;;;;;"* Alternate input: R.DES.df+1+2
 * Erases opponent's recoverable health on hit
 Power crush";pc;Alisa-R.df+1+2;Radiant Pegasus Bomb;;;
 1;h;5;i10;+1;+8;;;;Alisa-1;;;;
-1,1;h,h;5,18 (0);,i21;-3;+5;;* Transition to DES with 1,1,1+2;;Alisa-1,1;Stop Bit;;;
-1,2;h,h;5,10 (0);,i12;-3;+8;;*Jails;;Alisa-1,2;Typing Combo;;;
+1,1;h,h;5,18 (0);,i21;-3;+5;;"* Combo from 1st NH
+* Transition to DES with 1,1,1+2";;Alisa-1,1;Stop Bit;;;
+1,2;h,h;5,10 (0);,i12;-3;+8;;"* Combo from 1st NH
+* Jails";;Alisa-1,2;Typing Combo;;;
 1,2,2;h,h,h;5,10 (0),20;,i20~35;-9;+21 (+6);;"* Tornado
 * chip damage on block";trn chp;Alisa-1,2,2;Liftoff Combo;;;
-1,2,d+2;h,h,h;5,10 (0),17;,i27~28;-11;+2;;* Can be delayed;;Alisa-1,2,d+2;Coil Punch Combo;;;
+1,2,d+2;h,h,h;5,10 (0),17;,i27~28;-11;+2;;"* Combo from 2nd CH
+* Can be delayed";;Alisa-1,2,d+2;Coil Punch Combo;;;
 2;h;10;i12;-6;+2;;;;Alisa-2;;;;
-2,2;h,h;10,22;,i20~35;-13;+15 (+5);;* Balcony Break;bbr;Alisa-2,2;Troubleshooting;;;
-2,3;h,m;10,8;,i22~23;-10;+1;;;;Alisa-2,3;;;;
+2,2;h,h;10,22;,i20~35;-13;+15 (+5);;"* Balcony Break
+* Combo from 1st NH";bbr;Alisa-2,2;Troubleshooting;;;
+2,3;h,m;10,8;,i22~23;-10;+1;;* Combo from 1st CH;;Alisa-2,3;;;;
 2,3,3;h,m,m;10,8,25;,i20~22;-11;+16 (-7);;"* Balcony Break
+* Combo from 2nd NH
+* Can be delayed
+* Combo can be delayed
 Airborne";bbr Airborne;Alisa-2,3,3;Down Time;;;
 2,3,4;h,m,l;10,8,20;,i42~45;-13;+13;;Airborne;Airborne;Alisa-2,3,4;Down Link;;;
 3;m;10;i13~14;-12;-1;;;;Alisa-3;;;;
-3,2;m,h;10,20;,i26~27;-2;+20 (+11);;"* Balcony Break
-* Heat Engager
+3,2;m,h;10,20;,i26~27;-2;+20 (+11);;"* Heat Engager
 
 * Homing
+* Balcony Break
+* Combo from 1st NH
 * chip damage on block
-* Transition to DES (does not transition when using Heat Dash)";bbr he hom chp;Alisa-3,2;Quick Trim;;;
-3,f+2;m,m;10,20;;-12;+5;;"* chip damage on block
+* Transition to DES (does not transition when using Heat Dash)";he hom bbr chp;Alisa-3,2;Quick Trim;;;
+3,f+2;m,m;10,20;;-12;+5;;"* Combo from 1st NH
+* chip damage on block
 * Transition to DES";chp;Alisa-3,f+2;Quick Access;;;
-4;h;24;i13~14;-5;+14g;;"* Balcony Break
-* Homing";bbr hom;Alisa-4;Accelerator;;;
-1+2;m;22;i19~20;-4;+15;;"* Balcony Break
-* Heat Engager
+4;h;24;i13~14;-5;+14g;;"* Homing
+* Balcony Break";hom bbr;Alisa-4;Accelerator;;;
+1+2;m;22;i19~20;-4;+15;;"* Heat Engager
 
-* chip damage on block";bbr he chp;Alisa-1+2;Uninstall;;;
+* Balcony Break
+* chip damage on block";he bbr chp;Alisa-1+2;Uninstall;;;
 1+2+3;sp;;;;;;;;Alisa-1+2+3;Taunt 1;;;
 1+2+4;sp;;;;;;;;Alisa-1+2+4;Taunt 2;;;
 f+2;m;12;i17~18;-4;+7;;;;Alisa-f+2;;;;
-f+2,1;m,m;12,20;,i24~25;-10;+14;;"* Balcony Break
-* Heat Engager
+f+2,1;m,m;12,20;,i24~25;-10;+14;;"* Heat Engager
 
+* Balcony Break
+* Combo from 1st NH
 * chip damage on block
-* Transition to DES with f+2,1+2 (does not transition when using Heat Dash)";bbr he chp;Alisa-f+2,1;Dual Session;;;
-f+2,3;m,h;12,8;,i22;-8;+4;;;;Alisa-f+2,3;;;;
+* Transition to DES with f+2,1+2 (does not transition when using Heat Dash)";he bbr chp;Alisa-f+2,1;Dual Session;;;
+f+2,3;m,h;12,8;,i22;-8;+4;;* Combo from 1st CH;;Alisa-f+2,3;;;;
 f+2,3,3;m,h,m;12,8,22;,i35~36;-10;+12 (-3);;"* Balcony Break
+* Combo from 2nd NH
 * Transition to DES with f+2,3,1+2";bbr;Alisa-f+2,3,3;Triple Session;;;
 f+3;h;10;i14~15;-14;-3;;;;Alisa-f+3;;;;
 f+3,2;h,h;10,20;,i25;-4;+39 (+31);;"* Balcony Break
+* Combo from 1st NH
 * Transition to DES
 * chip damage on block";bbr chp;Alisa-f+3,2;Lost Access;;;
 f+3,1+2;h,m;10,25;,i24~25;-13;+8;;"* Balcony Break
+* Combo from 1st NH
 * Transition to DES
 * chip damage on block";bbr chp;Alisa-f+3,1+2;Automatic Transmission;;;
 f+4;m;14;i16;-9;+1;;"* Homing
 * Transition to DES with f+4,1+2";hom;Alisa-f+4;;;;
-f+4,1;m,h;14,14;,i25~26;-9;+15 (+7);;* Balcony Break;bbr;Alisa-f+4,1;;;;
-f+4,1,4;m,h,m;14,14,19 (13);,i35;-12;-1 (-9);;"i25-26 bounce, i25-26 travel, 
+f+4,1;m,h;14,14;,i25~26;-9;+15 (+7);;"* Balcony Break
+* Combo from 1st NH";bbr;Alisa-f+4,1;;;;
+f+4,1,4;m,h,m;14,14,19 (13);,i35;-12;-1 (-9);;"* Combo from 2nd NH
+* i25-26 bounce, i25-26 travel, 
 (---)/i35(27-65) travel then explosion , 
 -3(-11) and -1(-9) for explosion then hit, respectively";;Alisa-f+4,1,4;Logic Bomb;;;
 f+1+2;m;25 (0);i14~15;-12;+14;;"* Transition to SBT with f+1+2,3_4
@@ -71,29 +86,33 @@ f+3+4;sp;;;;;;"* Transition to SBT
 * Transition to BKP with input SBT.D or SBT.B";;Alisa-f+3+4;Boot;;;
 f+3+4;sp;;;;;;Airborne dash. Can use Thruster Left, Thruster Right-Burst, Eject Slider, Upstream, Thruster Drill, Heartbeat Disabler, or Shut Down during Boot.;;Alisa-f+3+4;Boot;;;
 df+1;m;10;i13;-6;+5;;;;Alisa-df+1;;;;
-df+1,1;m,h;10,20;,i30~31;+1;+8;;;;Alisa-df+1,1;;;;
-df+1,1,2;m,h,h;10,20,48;,i22~25;+6;+8;;"* chip damage on block
+df+1,1;m,h;10,20;,i30~31;+1;+8;;* Combo from 1st CH;;Alisa-df+1,1;;;;
+df+1,1,2;m,h,h;10,20,48;,i22~25;+6;+8;;"* Combo from 2nd NH
+* chip damage on block
 * Transition to DES";chp;Alisa-df+1,1,2;Cyclone Mixer;;;
-df+1,4;m,m;10,17;,i26~27;-11;+3c;+13c;;;Alisa-df+1,4;Cyclone Hacker;;;
+df+1,4;m,m;10,17;,i26~27;-11;+3c;+13c;* Combo from 1st CH;;Alisa-df+1,4;Cyclone Hacker;;;
 df+2;m;16;i16~17;-9;+32a (+22);;;;Alisa-df+2;Pickup;;;
 df+3;m;14;i16;-9;+1;;;;Alisa-df+3;;;;
-df+3,3;m,l;14,17;,i23~24;-12c;+1;;;;Alisa-df+3,3;Double Socket;;;
+df+3,3;m,l;14,17;,i23~24;-12c;+1;;* Combo from 1st CH;;Alisa-df+3,3;Double Socket;;;
 df+4;m;13;i12;-7;+4;;;;Alisa-df+4;;;;
 d+2;m;14;i24~26;-12;+2c;;;;Alisa-d+2;;;;
 d+2,4;m,m;14,24;,i18~21;-9;+28 (+13);;"Airborne
+* Combo from 1st NH
 * Transition to DES with input d+2,4,1+2";;Alisa-d+2,4;Deadlock;;;
 d+3;l;17;i23~32;-10;-1;;"Goes into Airborne then standing
 * Transition to BKP";;Alisa-d+3;Quick Slider;;;
 d+4;l;15;i17~18;-12;-1;;;;Alisa-d+4;;;;
-d+4,1+2;l,h;15,20;,i20~21;0;+11 (+2);;* Balcony Break;bbr;Alisa-d+4,1+2;Optimizer;;;
-d+1+2;sp;;;;;;* Cancel DES with DES.d+1+2 or DES.DB;;Alisa-d+1+2;Destructive Form;;;
+d+4,1+2;l,h;15,20;,i20~21;0;+11 (+2);;"* Balcony Break
+* Combo from 1st CH";bbr;Alisa-d+4,1+2;Optimizer;;;
 d+1+2;sp;;;;;;"* Cancel DES with DES.d+1+2 or DES.DB
 * Transition to DBT with input DES.f+3_f+4";;Alisa-d+1+2;Destructive Form;;;
+d+1+2;sp;;;;;;* Cancel DES with DES.d+1+2 or DES.DB;;Alisa-d+1+2;Destructive Form;;;
 d+3+4;l;20;i27~i28;-37;+67 (+51);;"* Homing
 * Transition to DES with input d+3+4,1+2";hom;Alisa-d+3+4;Harpoon Sweep;;;
 db+1;sp;;;;;;;;Alisa-db+1;Backup;;;
 db+2;m;10;i18~19;-18;-5;;;;Alisa-db+2;;;;
-db+2,2;m,m;10,10;,i19~20;-9;+5;;* Transition to DES with input db+2,2,1+2;;Alisa-db+2,2;Daisy Chain;;;
+db+2,2;m,m;10,10;,i19~20;-9;+5;;"* Combo from 1st NH
+* Transition to DES with input db+2,2,1+2";;Alisa-db+2,2;Daisy Chain;;;
 db+3;l;11;i16;-13;-2;;;;Alisa-db+3;Deep Link;;;
 db+4;l;23;i24~25;-17;+9;;;;Alisa-db+4;Deep Web;;;
 b+1;m;15;i15~16;-5;+8;;;;Alisa-b+1;;;;
@@ -101,80 +120,92 @@ b+1,1+2;m,sl,m;15,1,30;,i25~40,i26~28;-16;+71;;* Tornado;trn;Alisa-b+1,1+2;Gadge
 b+1+3;sp;;;;;;"* Alternate input: b+2+4
 Parry state";ps;Alisa-b+1+3;Model Change;;;
 b+2;m;12;i18;-9;+1;;;;Alisa-b+2;;;;
-b+2,1;m,m;12,17;,i25~26;-13;+3c;;;;Alisa-b+2,1;Trance Hammer;;;
-b+2,3;m,m;12,22;,i23~24;-15;+9 (-8);;"Airborne
+b+2,1;m,m;12,17;,i25~26;-13;+3c;;* Combo from 1st NH;;Alisa-b+2,1;Trance Hammer;;;
+b+2,3;m,m;12,22;,i23~24;-15;+9 (-8);;"* Tornado
 * Balcony Break
-* Tornado";bbr trn;Alisa-b+2,3;Trance Generator;;;
-b+2,4;m,h;12,20;,i16~17;-7;+12g;;* Balcony Break;bbr;Alisa-b+2,4;Trance Accelerator Kick;;;
+* Combo from 1st NH
+* Airborne";trn bbr;Alisa-b+2,3;Trance Generator;;;
+b+2,4;m,h;12,20;,i16~17;-7;+12g;;"* Balcony Break
+* Combo from 1st NH";bbr;Alisa-b+2,4;Trance Accelerator Kick;;;
 b+3;m;22;i20~22;-8;+5 (-4);;"* Balcony Break
 * Homing";bbr hom;Alisa-b+3;Spinning Top;;;
-b+4;m;17;i15~16;-13;-4;;;;Alisa-b+4;;;;
-b+4,3;m,m;17,20;,i29~30;-11;+6c;;"Airborne
+b+4;m;17;i15~16;-13;-4;+54;;;Alisa-b+4;;;;
+b+4,3;m,m;17,20;,i29~30;-11;+6c;;"* Airborne
+* Combo from 1st NH
 * Transition to DES with input b+4,3,1+2";;Alisa-b+4,3;Double Threading;;;
-b+4,4;m,m;17,17;,i25~27;-37;+9 (-1);;"Airborne
+b+4,4;m,m;17,17;,i25~27;-37;+9 (-1);;"* Tornado
+* Airborne
+* Combo from 1st NH
 * Transition to SBT with input b+4,4,3_4
-* Transition to DBT with input b+4,4,f+3_f+4
-* Tornado";trn;Alisa-b+4,4;Double Override;;;
+* Transition to DBT with input b+4,4,f+3_f+4";trn;Alisa-b+4,4;Double Override;;;
 b+1+2;m;25;i19~20;-13;+8;;"* Balcony Break
 * Alternate input: DES.b+1+2
 * chip damage on block
 Power crush";bbr chp pc;Alisa-b+1+2;Transmission;;;
 b+2+3;ub (m);50;i75~76;+44;+44;;* Balcony Break;bbr;Alisa-b+2+3;Hang-Up;;;
 b+3+4;m;22;i18~19;-17;+32 (+22);;* Tornado;trn;Alisa-b+3+4;;;;
-b+3+4,3+4;m,m;22,25;,i56~61;+6c;+27 (-8);;* Spike;spk;Alisa-b+3+4,3+4;Dynamic Range;;;
+b+3+4,3+4;m,m;22,25;,i56~61;+6c;+27 (-8);;"* Spike
+* Combo from 1st NH";spk;Alisa-b+3+4,3+4;Dynamic Range;;;
 ub+2;h;26;i16~24;-8;+38 (-20);;"* Balcony Break
 Power crush";bbr pc;Alisa-ub+2;Overload;;;
 ub+4;m;10;i18;-9;+7;;Low crush;js;Alisa-ub+4;;;;
-ub+3+4;m;25;i37~39;+2c;+25 KND;;;;Alisa-ub+3+4;;;;
+ub+3+4;m;25;i37~39;+2c;+25;;;;Alisa-ub+3+4;;;;
 ub+3+4,1+2;m,m;25,20;,i26~27;-14;+32 (+22);;;;Alisa-ub+3+4,1+2;Docking Bay;;;
 u+1+2;m;21;i33~34;-5;+56;;;;Alisa-u+1+2;Gigabyte Hammer;;;
 uf+1;mmm;20,14 (9),10 (7);i19~20,i25,i17;-13;+68 (+52);;"* Tornado
 * Transition to SBT on hit with uf+1,3_4
 * Transition to DBT on hit with uf+1,f+3_f+4
 Low crush";trn js;Alisa-uf+1;Brute Force Attack;;;
-uf+2;h;22;i16~17;-2;+20 (+11);;"* Balcony Break
-* Heat Engager
+uf+2;h;22;i16~17;-2;+20 (+11);;"* Heat Engager
 
 * Homing
+* Balcony Break
 * chip damage on block
-* Transition to DES on hit (does not transition when using Heat Dash)";bbr he hom chp;Alisa-uf+2;Image Cutter;;;
+* Transition to DES on hit (does not transition when using Heat Dash)";he hom bbr chp;Alisa-uf+2;Image Cutter;;;
 uf+3;m;15;i17~18;-52;-25;;"* Transition to SBT with input uf+3,3_4
 * Transition to DBT with input uf+3,f+3_f+4";;Alisa-uf+3;;;;
-uf+3,2;m,m;15,30;,i17~22;-14;+32 (-26);;* Balcony Break;bbr;Alisa-uf+3,2;Cradle Star;;;
+uf+3,2;m,m;15,30;,i17~22;-14;+32 (-26);;"* Balcony Break
+* Combo from 1st NH";bbr;Alisa-uf+3,2;Cradle Star;;;
 uf+4;m;8;i15~16;-15;-4;;;;Alisa-uf+4;;;;
-uf+4,4;m,m;8,8;,i24~26;-13;+45 (+37);;;;Alisa-uf+4,4;Inbound Kick;;;
+uf+4,4;m,m;8,8;,i24~26;-13;+45 (+37);;* Combo from 1st NH;;Alisa-uf+4,4;Inbound Kick;;;
 uf+3+4;m;28;i38~41;0;+4;;;;Alisa-uf+3+4;Downstream;;;
 1+2+3+4;sp;;;;;;"* Transition to DES with input 1+2+3+4,1+2
 * Transition to charged state";;Alisa-1+2+3+4;Ki Charge;;;
-CH f,F+1+2;m;28;i17~18;;+13;;;;Alisa-CH f,F+1+2;Killer Worm Virus;;;
 b,B+1+4;ub(h);50;i68;;+42 (-15);;* Balcony Break;bbr;Alisa-b,B+1+4;Double Rocket Punch;;;
 b,b,UB;sp;;;;;;Invulnerable during wall climb until Alisa begins to turn and pushes off into Airborne.;;Alisa-b,b,UB;Wall Jump;;;
 f,F+2;m;18;i16~17;-18;+5;;* Balcony Break;bbr;Alisa-f,F+2;;;;
-f,F+2,3;m,m;18,17 (11);,i22~24;-13;+5 (+4);;* Balcony Break;bbr;Alisa-f,F+2,3;Jumper Switch;;;
+f,F+2,3;m,m;18,17 (11);,i22~24;-13;+5 (+4);;"* Balcony Break
+* Combo from 1st NH";bbr;Alisa-f,F+2,3;Jumper Switch;;;
 f,F+3;m;12;i18~19;-14;-6;;Airborne;;Alisa-f,F+3;;;;
 f,F+3,4;m,h;12,15;,i19~20;-10;+20 (+11);;"* Balcony Break
+* Combo from 1st NH
 * Transition to DES with input f,F+3,4,1+2
-*Jails";bbr;Alisa-f,F+3,4;;;;
+* Jails";bbr;Alisa-f,F+3,4;;;;
 f,F+3,4,4;m,h,m;12,15,17 (11);,i27~29;-10;+21 (+14);;"* Balcony Break
+* Combo from 2nd NH
 * Transition to DES with input f,F+3,4,4,1+2";bbr;Alisa-f,F+3,4,4;Cutover;;;
 f,F+4;mm;14,22;i22~29,i34~39;-9;+9 (+0);;"* Balcony Break
 * Transition to hit throw on front hit
 * Alternative input: f,F+4:1 to power up";bbr;Alisa-f,F+4;Sandbox;;;
-f,F+1+2;mm;5,10;i17~18,i12~13;-9;+4;;;;Alisa-f,F+1+2;Worm Virus;;;
+f,F+1+2;mm;5,10 (28);i17~18,i12~13;-9;+4;+13;;;Alisa-f,F+1+2;Worm Virus;;;
 f,f,F+2;h;30;i13~15;+5;+28 (+20);;"* Balcony Break
 * chip damage on block
 * Transition to DES with input f,f,F+2,1+2";bbr chp;Alisa-f,f,F+2;Linear Punch;;;
 f,f,F+3;m;15;i18~19;-4;+6;;;;Alisa-f,f,F+3;;;;
-f,f,F+3,4;m,m;15,20;,i20~22;-7;+31 (+5);;* Balcony Break;bbr;Alisa-f,f,F+3,4;Linear Dropkick;;;
+f,f,F+3,4;m,m;15,20;,i20~22;-7;+31 (+5);;"* Balcony Break
+* Combo from 1st NH";bbr;Alisa-f,f,F+3,4;Linear Dropkick;;;
 f,f,F+1+2;m;24;i18~36;-3;-17 (-26);;* Balcony Break;bbr;Alisa-f,f,F+1+2;Thruster Double Punch;;;
 ws1;m;12;i13~14;-12;+1;;;;Alisa-ws1;;;;
-ws1,2;m,h;12,12;,i24~25;-5;+6;;* Transition to DES with input ws1,2,1+2;;Alisa-ws1,2;;;;
-ws1,2,3;m,h,m;12,12,23;,i25~26;-10;+33 (+23);;* Transition to DES with input ws1,2,3,1+2;;Alisa-ws1,2,3;Spear Fishing;;;
+ws1,2;m,h;12,12;,i24~25;-5;+6;;"* Combo from 1st NH
+* Transition to DES with input ws1,2,1+2";;Alisa-ws1,2;;;;
+ws1,2,3;m,h,m;12,12,23;,i25~26;-10;+33 (+23);;"* Combo from 2nd CH
+* Transition to DES with input ws1,2,3,1+2";;Alisa-ws1,2,3;Spear Fishing;;;
 ws2;m;24;i17~18;-13;+33 (+23);;"* Tornado
 * Transition to SBT with input ws2,3_4
 * Transition to DBT with input ws2,f+3_f+4";trn;Alisa-ws2;Digital Lift;;;
 ws3;m;18;i19~20;+4;+15;;* Cancel with input ws3,B;;Alisa-ws3;Clockwork;;;
 ws3,3;m,m;1820;i13~14;-9;+12g;;"* Balcony Break
+* Combo from 1st NH
 * Power up after 2 or more rotations";bbr;Alisa-ws3,3;Clockwork Spring Middle;;;
 ws3,d+3;m,l;1820;i30~31;-12;+73 (+57);;;;Alisa-ws3,d+3;Clockwork Spring Low;;;
 ws4;m;15;i11~12;-5;+6;;"* Balcony Break
@@ -201,19 +232,19 @@ DBT.2,1;mh;2513 (5);i26~28;-11c;+18 (-17);;"-28 on whiff.
 * Spike
 * Transition to DES
 * chip damage on block";spk chp;Alisa-DBT.2,1;Thruster Right - Burst;;;
-DBT.3;l;17;i6~20;-14c;+4c;+28 KND;;;Alisa-DBT.3;Eject Slider;;;
+DBT.3;l;17;i6~20;-14c;+4c;+28a;;;Alisa-DBT.3;Eject Slider;;;
 DBT.4;m;22;i17~19;-27;+68;;;;Alisa-DBT.4;Upstream;;;
 DBT.1+2;m;35;i12;0;+21 (+0);;"* Balcony Break
 * Transition to DES
 * chip damage on block";bbr chp;Alisa-DBT.1+2;Thruster Drill;;;
-DBT.f+1;m;49;i19~21;-11;+0 KND;;"* chip damage on block
+DBT.f+1;m;49;i19~21;-11;+0d;;"* chip damage on block
 * throw on front hit";chp;Alisa-DBT.f+1;Heartbeat Disabler;;;
 DBT.f+2;l;16;i19~20;-16c;-6;;;;Alisa-DBT.f+2;;;;
 DBT.f+2,2;l,m;16,14 (9);i35~37;-33;-6 (-13);;"* Balcony Break
 * chip damage on block";bbr chp;Alisa-DBT.f+2,2;Shut Down;;;
 DES.1;m;35;i13;-9;+23;;"* Transition to DES
 * chip damage on block";chp;Alisa-DES.1;Shredder;;;
-DES.2;m;15;i20;-8;Launch;;"* Transition to DES
+DES.2;m;15;i20;-8;+37 (+27);;"* Transition to DES
 * chip damage on block";chp;Alisa-DES.2;Shredding Uppercut;;;
 DES.2,(on hit)1;m,ub;1514 (9);i33;;+85 (+69);;* Tornado;trn;Alisa-DES.2,1;Shredding Sky Punch;;;
 DES.3;sp;;;;;;"* Alternate input: DES.4
@@ -226,7 +257,7 @@ DES.1+2;h,h,h;7,7,20;i16~18,i5~7,i9~11;+4;+15g;;"* Balcony Break
 DES.BT.1;m;24;i19~22;-9;+25;;"* Alternate input: DES.BT.2
 * chip damage on block";chp;Alisa-DES.BT.1;Hertz Blade - Flare;;;
 DES.b,b;sp;;;;;;* Transition to DES;;Alisa-DES.b,b;Move Back;;;
-DES.b+2;m;17;i18~20;-12;0;Launch;* chip damage on block;chp;Alisa-DES.b+2;;;;
+DES.b+2;m;17;i18~20;-12;0;+18a;* chip damage on block;chp;Alisa-DES.b+2;;;;
 DES.b+2,1;m,m;17,33;,i20~21;-3;+5;;"* Transition to DES
 * chip damage on block";chp;Alisa-DES.b+2,1;Hertz Blade - Tomahawk;;;
 DES.b+3;sp;;;;;;"* Alternate input: DES.b+4 or DES.ub,b
@@ -246,9 +277,9 @@ DES.f+1;h;21;i11~13;+3;+9;;"* Transition to DES
 * chip damage on block";chp;Alisa-DES.f+1;Hertz Blade;;;
 DES.f+2;m;9;i15;-9;0;;* chip damage on block;chp;Alisa-DES.f+2;;;;
 DES.f+2,1;mm;9;;-12;-3;;* chip damage on block;chp;Alisa-DES.f+2,1;;;;
-DES.f+2,1,2;mmm;9;;-13;KND;;"* Heat Engager
+DES.f+2,1,2;mmm;9;;-13;+30d;;"* Heat Engager
 
-* chip damage on block";he chp;Alisa-DES.f+2,1,2;Gigaherz Storm;;;
+* chip damage on block";he chp;Alisa-DES.f+2,1,2;Gigahertz Storm;;;
 DES.f+3;sp;;;;;;"* Alternate input: DES.f+4
 * Cancel with input DBT.B
 * Transition to Evasive Action with input DBT.U_D";;Alisa-DES.f+3;Dual Boot;;;
@@ -271,7 +302,7 @@ SBT.1,2,1,3+4;m,m,m,m;12,13,7,33;,i18;-18;+4 (-13);;"* Balcony Break
 * Transition to DES with input SBT.1,2,1,3+4,1+2";bbr;Alisa-SBT.1,2,1,3+4;Hard Reset;;;
 SBT.2;m;25;i16~17;-7;+6 (-4);;"* Balcony Break
 * Transition to DES with input SBT.2,1+2";bbr;Alisa-SBT.2;Linear Elbow;;;
-SBT.3;l;17;i16~20;-14c;+4c;Launch;;;Alisa-SBT.3;Eject Slider;;;
+SBT.3;l;17;i16~20;-14c;+4c;+28a;;;Alisa-SBT.3;Eject Slider;;;
 SBT.4;m;22;i17~19;-27;+68;;;;Alisa-SBT.4;Upstream;;;
 SBT.1+2;ub(h);20;i27~28;+8;+8;;"* Balcony Break
 * Transition to DES";bbr;Alisa-SBT.1+2;Wire Clipper;;;

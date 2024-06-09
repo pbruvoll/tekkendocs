@@ -1,12 +1,21 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Wavu id;Name;Recovery;Image;Video
+2+3;m;12;i16;+1;+2c;;"* Heat Burst
+* Alternate input: R1
+* Cancel to r45 with b,b
+* 3 chip damage on block
+* Partially uses Heat
+* Unparryable
+* Ignores regular power crush armor
+Power crush 7~62";hb pc7~62;Reina-2+3;Heat Burst;r30 HEAT;File:Reina-2+3_Heat_Burst.jpg;File:Reina-Heat Burst.mp4
 H.WRA.2+3;l,m,m,m;12,6,6,20;i18~19;-17;+0;;"* Heat Smash
 * Spike
 * Alternate input: H.WRA.R1
 * Jails if any hit is blocked
 * Transitions to attack throw on 1st hit for a total of 40 dmg
 * +4a (-5) if any hit after the 1st connects";hs spk;Reina-H.WRA.2+3;Divine Wrath of Annihilation;r44;File:Reina-H.WRA.2+3.jpg;File:Reina-H.WRA.2+3.mp4
-H.d+1+2;;;;;;;"* Parries all mids and highs
+H.d+1+2;;;;;;;"* Automatically parries limb-based, non-airborne mids and highs
 * Deals 40 damage on successful parry
+* +1d on successful parry
 Parry state 20~60";ps20~60;Reina-H.WRA;Charging Hard;;;File:Reina-H.d+1+2.mp4
 H.2+3;m,m;20,25;i21;+8;+0d;;"* Heat Smash
 * Balcony Break
@@ -15,13 +24,14 @@ H.2+3;m,m;20,25;i21;+8;+0d;;"* Heat Smash
 * Transitions to attack throw on 1st hit for a total of 50 dmg
 * Transitions to r53 WRA on 2nd block, whiff or hit
 * +19d WRA if only second hit connects (25 dmg)";hs bbr;Reina-H.2+3;Divine Dominance of Annihilation;r80 WRA;File:Reina-H.2+3.jpg;File:Reina-H.2+3.mp4
-R.df+1+2;m;55;i20;-15;;;"* Erases opponent's recoverable health on hit
+R.df+1+2;m;55;i20;-15;+0d;;"* Erases opponent's recoverable health on hit
 * Alternate input: R2
-* 150% Scaling at 1HP- 82dmg";;Reina-R.df+1+2;Sacred Dismantle Spark;;;File:Reina-R.df+1+2.mp4
+* 150% Scaling at 1HP - 82dmg";;Reina-R.df+1+2;Sacred Dismantle Spark;;;File:Reina-R.df+1+2.mp4
 1;h;5;i10;+1;+8;;;;Reina-1;;r17;File:Reina-1.jpg;File:Reina-1.mp4
 1,1;h,h;5,6;,i15;-1;+8;;Jail from 1st attack with 2f delay;;Reina-1,1;;r19;File:Reina-1,1.jpg;File:Reina-1,1.mp4
 1,1,2;h,h,m;5,6,12;,i13;-17;"* +11 SEN
 * +2 (cancel)";;"* Cancel transition with input B
+* Hit-confirmable from 1st hit
 * Combo from 1st hit with 11f delay
 * Wall crush on hit, +23g minimum";wc;Reina-1,1,2;Flash Punch Combo;r38;File:Reina-1,1,2.jpg;File:Reina-1,1,2.mp4
 1,2;h,h;5,8;,i10;-3;+8;;Jail from 1st attack with 4f delay;;Reina-1,2;One Two Strike;r22;;File:Reina-1,2.mp4
@@ -32,15 +42,17 @@ R.df+1+2;m;55;i20;-15;;;"* Erases opponent's recoverable health on hit
 * Combo from 2nd CH with 3f delay
 * Input can be delayed 3f
 * Move can be delayed 2f";kne;Reina-1,2,3;;r28;;File:Reina-1,2,3.mp4
-1,2,3,4;h,h,m,h;5,8,10,21;,i22~23;-4;+21a (+12);;"* Combo from 3rd hit with 5f delay
+1,2,3,4;h,h,m,h;5,8,10,21;,i22~23;-4;+21a (+12);;"* CH-confirmable from 2nd CH
+* Combo from 3rd hit with 5f delay
 * Input can be delayed 10f
 * Move can be delayed 8f
 * Interrupt with i5 from 3rd block";;Reina-1,2,3,4;Sting the Works;r28;;File:Reina-1,2,3,4.mp4
 2;h;6;i12;-4;+7;;;;Reina-2;;r23;;File:Reina-2.mp4
 2,2;h,h;6,6;,i14~15;-11;+0;;* Jail from 1st attack with 1f delay;;Reina-2,2;;r29;;File:Reina-2,2.mp4
-2,2,1;h,h,m;6,6,20;,i22~23;-14;+12d;;"* Balcony Break
+2,2,1;h,h,m;6,6,20;,i22~23;-14;+12a;;"* Balcony Break
 * Spike
 * Head
+* Hit-confirmable from 1st hit
 * Combo from 2nd hit with 5f delay
 * Input can be delayed 10f
 * Move can be delayed 9f";bbr spk;Reina-2,2,1;Ganzan Basara;r37;;File:Reina-2,2,1.mp4
@@ -48,17 +60,17 @@ R.df+1+2;m;55;i20;-15;;;"* Erases opponent's recoverable health on hit
 * Input can be delayed 10f
 * Move can be delayed 9f
 * Interrupt with i11 from 2nd block";;Reina-2,2,2;;r30;;File:Reina-2,2,2.mp4
-2,2,2,1;h,h,m,m;6,6,21,20;,i35~37;-15~13;+30 (+20);;"* Tornado
+2,2,2,1;h,h,m,m;6,6,21,20;,i35~37;-15~13;+30a (+20);;"* Tornado
 * Combo from 3rd hit with 1f delay
 * Input can be delayed 4f
 * Move can be delayed 3f
 * Evasive, can go under jabs
 Low crush 37~57 fs58~60";trn js37~57 fs58~60;Reina-2,2,2,1;Bishamon Massacre;r32;;File:Reina-2,2,2,1.mp4
-2,2,2,2;h,h,m,m;6,6,21,25;,i31;-14;+21 (+0);;"* Balcony Break
+2,2,2,2;h,h,m,m;6,6,21,25;,i31;-14;+21a (+0);;"* Balcony Break
 * Combo from 3rd hit with 4f delay
 * Move can be delayed 3f
 * Blue spark with input qcf+2 for 5 more damage";bbr;Reina-2,2,2,2;Raging Bishamon;r38;;File:Reina-2,2,2,2.mp4
-2~1;m,m;4,18;i11(~14);-14;+31 (+23);;"* Balcony Break
+2~1;m,m;4,18;i11(~14);-14;+31d (+23);;"* Balcony Break
 * Spike
 * Just frame if 2 is held for exactly one frame and then 1 on the next frame. Hits for 26 damage.
 * 5f input window";bbr spk;Reina-2~1;Ondeko;r33;;File:Reina-2~1.mp4
@@ -66,20 +78,20 @@ Low crush 37~57 fs58~60";trn js37~57 fs58~60;Reina-2,2,2,1;Bishamon Massacre;r32
 High crush 8~17";hom cs8~17;Reina-3;;r29;;File:Reina-3.mp4
 3,2;h,h;12,16;,i20;-9;+8;+66a (+50);"* Tornado
 * Combo from 1st hit";trn;Reina-3,2;Senjo Zuki;r32;;File:Reina-3,2.mp4
-3,4;h,m;12,20;,i20;-14;+50 (+19);+54;"Combo from 1st hit
+3,4;h,m;12,20;,i20;-14;+50 (+19);+54a;"Combo from 1st hit
 High crush 8~19";cs8~19;Reina-3,4;Senjo-manji;r36;;File:Reina-3,4.mp4
 3,4,H.4;h,m,m;12,20,28;,i27;-8;+23a (+3);;"* Balcony Break
 * Combo from 2nd hit";bbr;Reina-3,4,H.4;Senjomanji Lethal Fury;r42;File:Reina-3,4,H.4.jpg;File:Reina-3,4,H.4.mp4
-4;h;20;i13~14;-8;+11g;+35d;"* Balcony Break
+4;h;20;i13~14;-8;+11g;+35a;"* Balcony Break
 * Opponent is FUFA on CH";bbr;Reina-4;Nobility Hunter;r31;;File:Reina-4.mp4
 1+2;m;25;i12~13;-10~-9;+24a (+14);;;;Reina-1+2;Demon Breath;r31;;File:Reina-1+2.mp4
 1+4;;;;;;;"* Can transition to WGS with DF after 14 frames
-* Can execute EWGF or EWGK by inputting 2/3 exactly one frame after DF
+* Can execute EWGF or EWGK by inputting 2 or 3 respectively exactly one frame after DF
 High crush 1~29";cs1~29;Reina-1+4;Fukuteki;r30 FC;;File:Reina-1+4.mp4
 2+3+4;sp;;;;;;Input d+2+3+4 to get Heihachi's secret taunt;;Reina-2+3+4;Taunt;;;File:Reina-2+3+4.mp4
 3+4;m,m;5,10;i18 i26;-8;+3c;;"Spike
 Low crush 9~26";spk js9~26;Reina-3+4;;r27 FC;;File:Reina-3+4.mp4
-3+4,4;m,m,m;5,10,20;,i16;-14;+50 (+19);+54;"Combo from 1st hit with 4f delay
+3+4,4;m,m,m;5,10,20;,i16;-14;+50 (+19);+54a;"Combo from 1st hit with 4f delay
 High crush 30~45";cs30~45;Reina-3+4,4;Aerial Manji-geri;r36;;File:Reina-3+4,4.mp4
 3+4,4,H.4;m,m,m,m;5,10,20,28;,i27;-8;+23a (+3);;"* Balcony Break
 * Combo from 2nd hit";bbr;Reina-3+4,4,H.4;Aerial Manji Lethal Fury;r42;File:Reina-3+4,4,H.4.jpg;File:Reina-3+4,4,H.4.mp4
@@ -91,12 +103,13 @@ f+2,3;h,m;8,16;,i18~19;-9;+2;;"* Jails from 1st hit without delay
 * Can be delayed";;Reina-f+2,3;Sousoku Rengeki;r29;;File:Reina-f+2,3.mp4
 f+3;sp;;;;;;Actionable from r28;;Reina-f+3;Sentai;;;File:Reina-f+3 Sentai.mp4
 f+4;m;20;i19~20;+2c;+5c;+29d;"* [[Reina_combos#Mini-combos|+13c]] on crouching hit
-* Opponent is FDFA on CH";;Reina-f+4;Kamadhatu Splits Kick;r23;;File:Reina-f+4.mp4
-f+1+2;m;22;i32;-11;+7;;High crush 6~24;cs6~24;Reina-f+1+2;Senshin-zuki;r32;;File:Reina-f+1+2.mp4
-f+3+4;m;25;i43;-14;+50 (+19);+55;"* can be cancelled into crouch with input DB/D/DF
+* Opponent is FDFA on CH
+* Spike";spk;Reina-f+4;Kamadhatu Splits Kick;r23;;File:Reina-f+4.mp4
+f+1+2;m;22;i32;-11;+7;;"* Wall crush on hit, +19g
+High crush 6~24";wc cs6~24;Reina-f+1+2;Senshin-zuki;r32;;File:Reina-f+1+2.mp4
+f+3+4;m;25;i43;-14;+50 (+19);+55a;"* can be cancelled into crouch with input DB/D/DF
 High crush 6~";cs6~;Reina-f+3+4;Ouhen Manji-geri;r35;;File:Reina-f+3+4.mp4
-f+3+4*;m;30;i67;[[Reina_combos#Mini-combos|+10]];+52;;"* can be cancelled into crouch with input DB/D/DF
-* crumple stun on normal hit
+f+3+4*;m;30;i67;[[Reina_combos#Mini-combos|+10]];+52a;;"* can be cancelled into crouch with input DB/D/DF
 High crush 6~";cs6~;Reina-f+3+4*;Ouhen Fubi Manji-geri;;;File:Reina-f+3+4_hold.mp4
 f+3+4*,H.4;m,m;30,28;,i27;-8;+23a (+3);;"* Balcony Break
 * Combo from 1st block";bbr;Reina-f+3+4*,H.4;;r42;;File:Reina-f+3+4_hold,H.4_block.mp4
@@ -106,33 +119,33 @@ df+1;m;8;i13~14;-3;+4;;"* Can transition to SEN (-3/+4/+4) with input F
 * Cannot block up to i15 on empty transition on block";;Reina-df+1;;r19;;File:Reina-df+1.mp4
 df+1,1;m,h;8,10;,i20;-4;+7;;"* Combo from 1st hit without delay
 * Can be delayed";;Reina-df+1,1;Muso Tensho;r22;;File:Reina-df+1,1.mp4
-df+1,2;m,m;8,20;,i22~23;-14;+12d;;"* Heat Engager
+df+1,2;m,m;8,20;,i22~23;-14;+12a;;"* Heat Engager
 
-* Heat Dash +18g, [[Reina_combos#Mini-combos|+17]]
+* Heat Dash +18g, [[Reina_combos#Mini-combos|+17d]]
 
 * Combo from 1st hit without delay
 * Can be delayed";he;Reina-df+1,2;Muso Basara;r36;File:Reina-df+1,2.jpg;File:Reina-df+1,2 Muso Basara.mp4
-df+2;m;13;i15~16;-12;+30 (+20);;"* +2 on hit on crouching opp.
-* [[Reina_combos#Staples|+30 (+20)]] on CH on crouching opp.";;Reina-df+2;Queen Bee Stinger;r28;;File:Reina-df+2.mp4
+df+2;m;13;i15~16;-12;+30a (+20);;"* +2 on hit on crouching opp.
+* [[Reina_combos#Staples|+30a (+20)]] on CH on crouching opp.";;Reina-df+2;Queen Bee Stinger;r28;;File:Reina-df+2.mp4
 df+3;sp;;;;;;* Can transition to SEN with input WGS.f+3;;Reina-df+3;Wind God Step;r20;;File:Reina-df+3 Wind God Step.mp4
 df+4;m;14;i15;-4;+7;;;;Reina-df+4;;r22;;File:Reina-df+4.mp4
 df+4,2;m,m;14,10;,i18;-8;+6;;"* Can transition to WRA (-6/+8/+8) with input D
 * Combo from 1st hit";;Reina-df+4,2;;r29;;File:Reina-df+4,2.mp4
-df+4,2,3;m,m,h;14,10,20;,i27;-8;+35;+71a (+55);"* Tornado
+df+4,2,3;m,m,h;14,10,20;,i27;-8;+35a;+71a (+55);"* Tornado
 * Combo from 2nd CH
 * Can be delayed
 High crush";trn cs;Reina-df+4,2,3;Gekirosatsu;r32;;File:Reina-df+4,2,3.mp4
 df+3+4;mh;5,10;i16,i5~9;-15;+2;;High crush 6~14;cs6~14;Reina-df+3+4;;;;File:Reina-df+3+4.mp4
-df+3+4,4;mh,m;5,10,20;,i20;-14;+50 (+19);+54;"Combo from 1st hit
+df+3+4,4;mh,m;5,10,20;,i20;-14;+50 (+19);+54a;"Combo from 1st hit
 High crush";cs;Reina-df+3+4,4;Kasho Maki-manji;r35;;File:Reina-df+3+4,4.mp4
 d+1;sm;5;i10;-5;+6;;"* Returns to standing when input F
 High crush 4~";cs4~;Reina-d+1;Crouch Jab;FC;;File:Reina-d+1.mp4
-d+2;m;17;i15;+0c;+3c;+27d;;;Reina-d+2;Tecchuu-ate;r26;;File:Reina-d+2.mp4
+d+2;m;17;i15;+0c;+3c;+27d;Spike;spk;Reina-d+2;Tecchuu-ate;r26;;File:Reina-d+2.mp4
 d+3;sp;;;;;;"* Transitions to UNS (Kou, d)
 * Can transition to UNS (Kou, u) with input u+3
 * Can transition to UNS (Gen) with input b+3
 * Can transition to WGS with input DF
-* Can execute EWGF or EWGK by inputting 2/3 exactly one frame after DF
+* Can execute EWGF or EWGK by inputting 2 or 3 respectively exactly one frame after DF
 Parry state 5~13";ps5~13;Reina-d+3;Unsoku Kou;;;File:Reina-d+3.mp4
 d+4;l;6;i12;-15;-4;;High crush 4~;cs4~;Reina-d+4;Crouch Chin Kick;FC;;File:Reina-d+4.mp4
 d+1+2;;;;;;;"* Can transition to r14 SEN with input f+3
@@ -140,9 +153,10 @@ d+1+2;;;;;;;"* Can transition to r14 SEN with input f+3
 d+1+2;sp;;;;;;;;Reina-d+1+2;"Heaven&#039;s Wrath";;;File:Reina-d+1+2.mp4
 db+2;l,l;10,12;i20~21,i9~10;-16;-3;;;;Reina-db+2;Eisaimon;;;File:Reina-db+2.mp4
 db+4;L;7;i16;-13;-2;+2;;;Reina-db+4;;;;File:Reina-db+4.mp4
-db+4,1+2;L,m;7,20;,i15;-12;+39 (+19);;"* Balcony Break
+db+4,1+2;L,m;7,20;,i15;-12;+39d (-19);;"* Balcony Break
 * Combo from 1st CH even with delay
-* Can be delayed";bbr;Reina-db+4,1+2;Un Oshi-kuzushi;r34;;File:Reina-db+4,1+2.mp4
+* Can be delayed
+* CH-confirmable from 1st CH";bbr;Reina-db+4,1+2;Un Oshi-kuzushi;r34;;File:Reina-db+4,1+2.mp4
 b+1;h;14;i18;-4;+6;;;;Reina-b+1;;r23;;File:Reina-b+1.mp4
 b+1,1;h,m;14,15;,i22;-10;-4;;"* Combo from 1st hit without delay
 * Can be delayed";;Reina-b+1,1;;r28;;File:Reina-b+1,1.mp4
@@ -150,7 +164,7 @@ b+1,1,3;h,m,m;14,15,13;,i15~17;-10;+3;;"* Can transition to SEN (+0/[[Reina_comb
 * Cannot block up to i14 on empty transition on block
 * Combo from 2nd CH
 * Jails from 2nd block";;Reina-b+1,1,3;;r28;;File:Reina-b+1,1,3.mp4
-b+1,1,3,3;h,m,m,m;14,15,13,20;,i32;-16;+48 (+17);+53;High crush;cs;Reina-b+1,1,3,3;Hen-in 4 Hit Combo;r37;;File:Reina-b+1,1,3,3.mp4
+b+1,1,3,3;h,m,m,m;14,15,13,20;,i32;-16;+48 (+17);+53a;High crush;cs;Reina-b+1,1,3,3;Hen-in 4 Hit Combo;r37;;File:Reina-b+1,1,3,3.mp4
 b+1+3;;;;;;;"* Parry mids and highs
 * Converts incoming damage to recoverable health
 * Partially restores Heat on successful parry
@@ -162,19 +176,22 @@ b+3;;;;;;;"* Partially drains heat meter when in heat
 * Can transition to UNS (Kou, u/d) with input u+3 or d+3
 * Can transition to SEN with input f+3
 * Can transition to WGS with input DF
-* Can execute EWGF or EWGK by inputting 2/3 exactly one frame after DF
+* Can execute EWGF or EWGK by inputting 2 or 3 respectively exactly one frame after DF
 * See also [[Reina_tech#Unsoku_Cancel|Unsoku Cancel]]";;Reina-b+3;Unsoku Gen;r20;;File:Reina-b+3.mp4
-b+4;h;20;i18;-8;+35;+71 (+55);"* Tornado
+b+4;h;20;i18;-8;+35a;+71a (+55);"* Tornado
 High crush 6~17";trn cs6~17;Reina-b+4;Ebi-geri;r32;;File:Reina-b+4.mp4
-b+1+2;m;20;i18;-13;+14d;;"Balcony Break
+b+1+2;m;20;i18;-13;+14g;;"Balcony Break
 Power crush 7~";bbr pc7~;Reina-b+1+2;Kugai Dachi;r35;;File:Reina-b+1+2.mp4
-b+1+4;ub(m);50;i64;+20 (-1);+20 (-1);;"* Balcony Break
+b+1+4;ub(m);50;i64;+20d (-1);+20d (-1);;"* Balcony Break
 * Can cancel with input b,b";bbr;Reina-b+1+4;Clairvoyant Fatal Violet;;;File:Reina-b+1+4.mp4
+ub+4;m;13;i17~18;-13;+16a (-1);;"* Tornado
+* Balcony Break
+Low crush 9~";trn bbr js9~;Reina-ub+4;Silver Gleam;r32;;File:Reina-uf+4.mp4
 ub+1+2;sp;;;;;;"* Can transition to Wind God Step with input DF
-* Can execute EWGF or EWGK by inputting 2/3 exactly one frame after DF
+* Can execute EWGF or EWGK by inputting 2 or 3 respectively exactly one frame after DF
 Low crush 10~24";js10~24;Reina-ub+1+2;Fading Shadow;;;File:Reina-ub+1+2.mp4
 u+3;sp;;;;;;"* Transitions to UNS (Kou, u)
-* Can ttansition to UNS (Kou, d) with input d+3
+* Can transition to UNS (Kou, d) with input d+3
 * Can transition to WGS with input DF
 * Can execute EWGF or EWGK by inputting 2/3 exactly one frame after DF
 Parry state 5~13";ps5~13;Reina-u+3;Unsoku Kou;;;File:Reina-u+3.mp4
@@ -188,37 +205,39 @@ uf+3;h;10;i21~22;-10;+1;;Low crush 11~;js11~;Reina-uf+3;;r27;;File:Reina-uf+3.mp
 uf+3,1;h,m;10,15;,i16;-5;+5;;"* [[Reina_combos#Mini-combos|+13c]] on crouching hit
 * Jails on 1st block
 * Combo from 1st hit";;Reina-uf+3,1;Tobisenzuki;r26;;File:Reina-uf+3,1.mp4
-uf+4;m;15;i17~18;-13;+70 (+54);;"* Tornado
+uf+4;m;15;i17~18;-13;+70a (+54);;"* Tornado
 Low crush 9~";trn js9~;Reina-uf+4;Silver Gleam;r32;;File:Reina-uf+4.mp4
 uf+3+4;mm;10,10;i20,i4;-10;-1;;Low crush 9~;js9~;Reina-uf+3+4;;;;File:Reina-uf+3+4.mp4
 uf+3+4,1+2;mm,m;10,10,20;,i17;-14;-4;;* Combo from 1st hit;;Reina-uf+3+4,1+2;Un Hiensatsu;r35;;File:Reina-uf+3+4,1+2.mp4
 1+2+3+4;sp;;;;;;;;Reina-1+2+3+4;Ki Charge;;;File:Reina-1+2+3+4.mp4
-b,b,UB;m;21;i39-41;+4c;+22d;;"Requires back close to wall to execute
+b,b,UB;m;21;i39-41;+4c;+22a;;"Requires back close to wall to execute
 Low crush";js;Reina-b,b,UB;Wall Jump;r25;;File:Reina-Wall_jump.mp4
 f,F+2;m;14;i12;-9;+1;;"* Can transition to SEN (+2/[[Reina_combos#Mini-combos|+12]]/[[Reina_combos#Mini-combos|+12]]) with input F
 * Cannot block up to i12 on empty transition on block";;Reina-f,F+2;Raiden;r32;;File:Reina-f,F+2.mp4
-f,F+3;m;20;i20~22;-3;+20d;;"* Balcony Break
+f,F+3;m;20;i20~22;-3;+20a;;"* Balcony Break
 * Heat Engager
 
-* Heat Dash +5, [[Reina_combos#Staples|+67a (+50)]]";bbr he;Reina-f,F+3;Trailokya Splits Kick;r27;File:Reina-f,F+3.jpg;File:Reina-f,F+3.mp4
-f,F+3+4;h;22;i16~19;-2;+49 (-9);+49;"* Balcony Break
+* Heat Dash +5, [[Reina_combos#Staples|+67a (+50)]]
+
+* Spike";bbr he spk;Reina-f,F+3;Trailokya Splits Kick;r27;File:Reina-f,F+3.jpg;File:Reina-f,F+3.mp4
+f,F+3+4;h;22;i16~19;-2;+49d (-9);+49a;"* Balcony Break
 Low crush";bbr js;Reina-f,F+3+4;Un Hien-geri;r21;;File:Reina-f,F+3+4.mp4
 f,n;;;;;;;"* Can transition to WGS with input DF
 * Punch parry, transitions to WGS on successful parry with [[Reina_combos#Mini-combos|+10]]
 Parry state 2~8";ps2~8;Reina-f,n;Wind Step;r2;;File:Reina-f,n Wind Step.mp4
-f,n,d,df:2;h;23;i11~12 (~i13);+5;+25 (+25);;* Chip damage when guarded;chp;Reina-f,n,d,df${justFrame}2;Electric Wind God Fist;r24;;File:Reina-f,n,d,df2.mp4
-f,n,d,df:3;M;27;i15~17;-9;+13 (-4);+23 (+17);"* Balcony Break
+f,n,d,df:2;h;23;i11~12 (~i13);+5;+25a (+25);;* Chip damage when guarded;chp;Reina-f,n,d,df${justFrame}2;Electric Wind God Fist;r24;;File:Reina-f,n,d,df2.mp4
+f,n,d,df:3;M;27;i15~17;-9;+13a (-4);+23a (+17);"* Balcony Break
 * Chip damage when guarded";bbr chp;Reina-f,n,d,df${justFrame}3;Electric War God Kick;r39;;File:Reina-f,n,d,df3.mp4
-f,f,F+3;m;22;i24~27;+6;+32 (+24);;"* Balcony Break
+f,f,F+3;m;22;i24~27;+6;+32a (+24);;"* Balcony Break
 * Chip damage when guarded
 Low crush";bbr chp js;Reina-f,f,F+3;Ten Chuten-geri;r28;;File:Reina-f,f,F+3.mp4
-f,f,F+4;h;28;i26~27;+4;+31 (+5);;"* Balcony Break
+f,f,F+4;h;28;i26~27;+4;+31a (+5);;"* Balcony Break
 * Homing
 * Can transition to WRA (+8/+35a (+9)/-) with input D";bbr hom;Reina-f,f,F+4;Un Tobi Kaijo-geri;r32;;File:Reina-f,f,F+4.mp4
 ws1;m;12;i13;-10;+13 SEN;;Transitions to SEN on hit;;Reina-ws1;Jewel Snatcher;r28;;File:Reina-ws1.mp4
 ws2;m;20;i18;-8;+9;+14c;Balcony Break;bbr;Reina-ws2;Benten Thrust;r33;;File:Reina-ws2.mp4
 ws3;m;14;i15~16;-10;+1;;;;Reina-ws3;;r28;;File:Reina-ws3.mp4
-ws3,4;m,h;14,21;,i22~23;-4;+21 (+12);;"* Balcony Break
+ws3,4;m,h;14,21;,i22~23;-4;+21a (+12);;"* Balcony Break
 * Combo from 1st hit without delay
 * Can be delayed
 High crush";bbr cs;Reina-ws3,4;Twin Stingers;r27;;File:Reina-ws3,4.mp4
@@ -229,28 +248,28 @@ ws4,4;m,m;10,15;,i17~18;-17;-1c;;"* Can transition to WRA (-10/+6/+6) with input
 ws3+4;m;14;i14~15;-8;+14;+14;High crush;cs;Reina-ws3+4;Hen Gyakujo-geri;r28;;File:Reina-ws3+4.mp4
 SS.4;l;17;i18~19;-13;+0;+13g;;;Reina-SS.4;Jirin Sweep;;;File:Reina-SS.4.mp4
 SSH.3;L;26;i32;-26;-4c;;High crush;cs;Reina-SSH.3;Senshin Karami-ate;;;File:Reina-SSH.3.mp4
-SSH.CH.3;l;33,18;i22;;+0;;;;Reina-SSH.CH.3;Nen Ashigarami;;;File:Reina-SSH.CH.3.mp4
+SSH.CH.3;l;33,18;i22;;+0;;* Spike;spk;Reina-SSH.CH.3;Nen Ashigarami;;;File:Reina-SSH.CH.3.mp4
 SSH.uf;sp;;;;;;;;Reina-SSH.uf;Senshin Hiei;;;File:Reina-SSH.uf.mp4
 SSH.uf+3;m;22;i30~33;+6;+32a (+24);;* Balcony Break;bbr;Reina-SSH.uf+3;Senshin Chuten-geri;r28;;File:Reina-SSH.uf+3.mp4
 SSH.uf+4;h;28;i32~33;+4;+31a (+5);;"* Homing
 * Balcony Break
 * Can transition to WRA (+8/+35a (+9)/-) with input D";hom bbr;Reina-SSH.uf+4;Senshin Tobi Kaijo-geri;r32;;File:Reina-SSH.uf+4.mp4
-FC.df+3;m;25;i20;-17;+54 (+34);;"* Balcony Break
+FC.df+3;m;25;i20;-17;+54a (+34);;"* Balcony Break
 High crush 1~";bbr cs1~;Reina-FC.df+3;Nen Hangetsu-ate;r39;;File:Reina-FC.df+3.mp4
-FC.df+4;m;20;i15;-14;+54;;"* Balcony Break
-* crumple stun on normal hit
+FC.df+4;m;20;i15;-14;+54a;;"* Balcony Break
 High crush 1~";bbr cs1~;Reina-FC.df+4;Manji-geri;r35;;File:Reina-FC.df+4.mp4
 FC.d+3;l;10;i16;-17;-6;;High crush 1~;cs1~;Reina-FC.d+3;;;;File:Reina-hFC.d+3.mp4
-BT.4;m;20;i17;-14;+54;;"crumple stun on normal hit
+BT.4;m;20;i17;-14;+54a;;"Strong Aerial Tailspin
 High crush";cs;Reina-BT.4;Rear Manji-geri;r35;;File:Reina-BT.4.mp4
-CH.df+3+4;m,th;6,35;i16;;+0;;;;Reina-CH.df+3+4;Nen Dougarami;;;File:Reina-CH.df+3+4.mp4
-OTG.d+4;L;11;i19;-19;-8 / -8a (16);;;;Reina-OTG.d+4;;;;File:Reina-OTG.d+4.mp4
+CH.df+3+4;m,th;6,35;i16;;+0;;Spike;spk;Reina-CH.df+3+4;Nen Dougarami;;;File:Reina-CH.df+3+4.mp4
+OTG.d+4;L;11;i19;-19;-8 / -8a (-16);;;;Reina-OTG.d+4;;;;File:Reina-OTG.d+4.mp4
 OTG.d+4,1;L,L;11,16;,i20~21;-26;-10 / -15a (-23);;"* Blue spark with input OTG.d+4:1 for 3 extra damage
 * Jails from 1st block
 * Combo from 1st hit";;Reina-OTG.d+4,1;Totetsu Jyurin;;;File:Reina-OTG.d+4,1.mp4
 SEN.1;m;12;i16;-14;+1;;Power crush;pc;Reina-SEN.1;;r36;;File:Reina-SEN.1.mp4
-SEN.1,2;m,m;12,25;,i26;-16;+21 (+0);;"* Balcony Break
+SEN.1,2;m,m;12,25;,i26;-16;+21a (+0);;"* Balcony Break
 * Blue spark with input qcf+2 for 5 extra damage
+* Hit-confirmable from 1st hit or if attack was absorbed
 * Combo from 1st hit even with delay
 * Can be delayed
 * Becomes -9 on block if 1st hit absorbed an attack";bbr;Reina-SEN.1,2;Furin Kazan;r39;;File:Reina-SEN.1,2.mp4
@@ -261,14 +280,15 @@ SEN.3;h;22;i12~13;+1;+7;;"* Homing
 * Heat Dash +5, [[Reina_combos#Mini-combos|+34d]]
 
 * Deals chip damage on block";hom he;Reina-SEN.3;Sen Kaijo-geri;r26;File:Reina-SEN.3.jpg;File:Reina-SEN.3.mp4
-SEN.4;m;24;i26~27;+4;+12g;;"* Deals chip damage on block
-Low crush";js;Reina-SEN.4;Kandachi-geri;r26;;File:Reina-SEN.4.mp4
-SEN.1+2;m,m;13,17;i14~15,i12~13;-6 WRA;+32 (+18);;"* Tornado
+SEN.4;m;24;i26~27;+4;+12d;;"* Deals chip damage on block
+* Spike
+Low crush";spk js;Reina-SEN.4;Kandachi-geri;r26;;File:Reina-SEN.4.mp4
+SEN.1+2;m,m;13,17;i14~15,i12~13;-6 WRA;+32a (+18);;"* Tornado
 * Balcony Break
 * Transitions to WRA after recovery";trn bbr;Reina-SEN.1+2;Inverse Deva Laser;;;File:Reina-SEN.1+2.mp4
 SEN.3+4;l,h;10,12;i20~21,i35~36;-29, -11;+4;;"* Homing
 High crush";hom cs;Reina-SEN.3+4;Yaksha Sweep;;;File:Reina-SEN.3+4.mp4
-UNS.4;m;30;i18~19;-8;+43 (-15);;"* Balcony Break
+UNS.4;m;30;i18~19;-8;+43a (-15);;"* Balcony Break
 * Heat Engager
 
 * Heat Dash +5, [[Reina_combos#Staples|+62a (+42)]]
@@ -276,29 +296,24 @@ UNS.4;m;30;i18~19;-8;+43 (-15);;"* Balcony Break
 * Deals chip damage on block
 * Can be cancelled into crouch with DB/D/DF
 High crush";bbr he cs;Reina-UNS.4;Unpu Tobi-Manji;r29;File:Reina-UNS.4.jpg;File:Reina-UNS.4.mp4
-WDS.3;m;17;i16~17;-6;+4;+58;* crumple stun on CH;;Reina-WDS.3;Fusenkyaku;r31;;File:Reina-WDS.3.mp4
-WGS.1;m;20;i19~21;-22;+24 (+14);;"* 24dmg with df+3
-* 26dmg if manual cd
+WDS.3;m;17;i16~17;-6;+4;+58a;;;Reina-WDS.3;Fusenkyaku;r31;;File:Reina-WDS.3.mp4
+WGS.1;m;24;i19~21;-22;+24a (+14);;"* 26 dmg if manual CD
 High crush";cs;Reina-WGS.1;Thunder God Fist;r37;;File:Reina-WGS.1.mp4
-WGS.1,3;m,m;20,15(10);,i26~30;-12;+18 (-17);;"* Spike
+WGS.1,3;m,m;24,22;,i26~30;-12;+18d (-17);;"* Spike
 * Combo from 1st hit
-* 1st hit 22dmg if manual cd
 Low crush";spk js;Reina-WGS.1,3;Lightning Splits Kick;r31;;File:Reina-WGS.1,3.mp4
-WGS.1,4;m,h;20,18(12);,i23~27;-7;+1 (+0);;"* Balcony Break
+WGS.1,4;m,h;24,26;,i23~27;-7;+1 (+0);;"* Balcony Break
 * Combo from 1st hit
-* 1st hit 22dmg if manual cd
 Low crush";bbr js;Reina-WGS.1,4;Lightning Wheel;r47;;File:Reina-WGS.1,4.mp4
-WGS.2;h;15;i11~12;-10;+35 (+25);;"* Becomes Electric Wind God Fist during Heat (partially uses remaining Heat Time)
-* 20dmg if manual crouch dash";;Reina-WGS.2;Wind God Fist;r27;;File:Reina-WGS.2.mp4
-WGS.DF+4;l;6;i16;-23;+2c;;* 8dmg if manual crouch dash;;Reina-WGS.DF+4;;FC;;File:Reina-WGS.DF+4.mp4
+WGS.2;h;15;i11~12;-10;+35a (+25);;"* Becomes Electric Wind God Fist during Heat (partially uses remaining Heat Time)
+* 20dmg if manual CD";;Reina-WGS.2;Wind God Fist;r27;;File:Reina-WGS.2.mp4
+WGS.DF+4;l;6;i16;-23;+2c;;* 8 dmg if manual CD;;Reina-WGS.DF+4;;FC;;File:Reina-WGS.DF+4.mp4
 WGS.DF+4,2;l,h;6,20;,i24;-22;-1;;"* Can transition to WRA (-15/+6/+6) with input D
-* Combo from 1st hit
-* 1st hit 8dmg if manual cd";;Reina-WGS.DF+4,2;Ruthless Demon;r40;;File:Reina-WGS.DF+4,2.mp4
+* Combo from 1st hit";;Reina-WGS.DF+4,2;Ruthless Demon;r40;;File:Reina-WGS.DF+4,2.mp4
 WGS.DF+4,4;l,l;6,16;,i17~18;-23;+2;+23a;"* Combo from 1st hit
-* 1st hit 8dmg if manual cd
 High crush";cs;Reina-WGS.DF+4,4;Spinning Demon;FC;;File:Reina-WGS.DF+4,4.mp4
-WGS.df+3;M;17;i15~17;-13;+3;+23 (+17);"* Becomes Electric War God Kick during Heat (partially uses remaining Heat Time
-* 21dmg if manual cd)";;Reina-WGS.DF+3;War God Kick;r38;;File:Reina-WGS.df+3.mp4
+WGS.df+3;M;17;i15~17;-13;+3;+23a (+17);"* Becomes Electric War God Kick during Heat (partially uses remaining Heat Time
+* 21dmg if manual CD)";;Reina-WGS.DF+3;War God Kick;r38;;File:Reina-WGS.df+3.mp4
 WRA.1;h;12;i12;-4;+8;+13;"* Homing
 * Deals chip damage on block
 * Can transition to SEN (+0/[[Reina_combos#Mini-combos|+13]]/[[Reina_combos#Mini-combos|+17]]) with input F
@@ -306,18 +321,18 @@ WRA.1;h;12;i12;-4;+8;+13;"* Homing
 WRA.1,4;h,M;12,22;,i25~26;-9;+9g;;"* Balcony Break
 * Spike
 * Combo from 1st hit";bbr spk;Reina-WRA.1,4;Funkei Goma;r40;;File:Reina-WRA.1,4.mp4
-WRA.2;m;30;i15~16;-9;+11 (+2);;"* Balcony Break
+WRA.2;m;30;i15~16;-9;+11a (+2);;"* Balcony Break
 * Heat Engager
 
 * Heat Dash +5, [[Reina_combos#Staples|+36a (+26)]]
 
 * Deals chip damage on block";bbr he;Reina-WRA.2;Iron Hand;r32;File:Reina-WRA.2.jpg;File:Reina-WRA.2.mp4
-WRA.3;m;17;i28;-6;+22 (+12);;"* Balcony Break
+WRA.3;m;17;i28;-6;+22a (+12);;"* Balcony Break
 * Deals chip damage on block
 Low crush 9~36 fs37~39";bbr js9~36 fs37~39;Reina-WRA.3;;r28;;File:Reina-WRA.3.mp4
-WRA.3,4;m,m;17,14;,i18~19;+6;+17 (+16);;"* Balcony Break
+WRA.3,4;m,m;17,20;,i18~19;+6;+17a (+16);;"* Balcony Break
 * Deals chip damage on block
-* Can transition to WRA (+8/+19 (+18)/-) with input D
+* Can transition to WRA (+8/+19a (+18)/-) with input D
 * Jails from 1st block
 * Combo from 1st hit
 Low crush 9~36 fs37~39";bbr js9~36 fs37~39;Reina-WRA.3,4;Hell Axle;r31;;File:Reina-WRA.3,4.mp4
@@ -326,6 +341,7 @@ WRA.4;M,M;6,8;i17~18,i13;-10;-10;+7;"* Spike
 * Combo from 1st CH
 * Both hits jail on block";spk;Reina-WRA.4;;r29;;File:Reina-WRA.4.mp4
 WRA.4,2;M,M,m;6,8,8;,i15;-18;-7;;"* Jails from 2nd block
+* Hit-confirmable from 2nd hit
 * Combo from 1st CH 
 * Combo from 2nd hit
 * Can be delayed";;Reina-WRA.4,2;;r37;;File:Reina-WRA.4,2.mp4
@@ -342,7 +358,7 @@ WRA.3+4;M;26;i18~19;-5;+5d;;"* Spike
 * Deals chip damage on block
 * Opponent is FDFA on normal hit";spk;Reina-WRA.3+4;Goma Sai;r34;;File:Reina-WRA.3+4.mp4
 WRA.d+4;L;9;i16~17;-15;-4;+2;High crush 6~;cs6~;Reina-WRA.d+4;;r33 FC;;File:Reina-WRA.d+4.mp4
-WRA.d+4,3;L,m;9,20;,i21~22;-16;+48 (+17);+53;"* Combo from 1st CH with 14f delay
+WRA.d+4,3;L,m;9,20;,i21~22;-16;+48 (+17);+53a;"* Combo from 1st CH with 14f delay
 * Input can be delayed 15f
 * Move can be delayed 13f
 * CH-confirmable
@@ -362,7 +378,8 @@ Right throw;th(h);40;i12~14;-3;+0;;"* Throw break 2
 SEN.1+3;th(h);12;i16;;-3;;"* Throw break: none
 * Opponent recovery on hit: FUFA";;Reina-SEN.1+3;Haburi-kaze;;;File:Reina-SEN.1+3.mp4
 WRA.1+3;t (h);20;i16;;+10d;;"* Unbreakable
-* Opponent recovery on hit: FUFT";;Reina-WRA.1+3;"Heaven&#039;s Roar";;;File:Reina-WRA.1+3.mp4
+* Opponent recovery on hit: FUFT
+* Does 35 damage on wall hit";;Reina-WRA.1+3;"Heaven&#039;s Roar";;;File:Reina-WRA.1+3.mp4
 d,db,b,f+2;th(h);40;i12;-3;+0;;"* Balcony Break
 * Throw break: 2
 * Opponent recovery on hit: FUFT";bbr;Reina-qcb,f+2;Raidou Hitsumetsu;;;File:Reina-d,db,b,f+2.mp4

@@ -25,7 +25,8 @@ Power crush";pc;Zafina-R.df+1+2;;;;
 * Can be delayed";;Zafina-1,2,3;Left Right Scarecrow;SCR;;
 1,3;h,h;5,14;i17~18;-2;+7;;"* Cancel SCR transition -8, +1 with B
 * Combos from 1st hit";;Zafina-1,3;Anzu;SCR;;
-1,4;h,m;5,17;i19;-5;+2;+53a;;;Zafina-1,4;Ecdysis;TRT;;
+1,4;h,m;5,17;i19;-5;+22;+53a;"* Tornado
+* Combos from 1st hit";trn;Zafina-1,4;Ecdysis;TRT;;
 2;h;8;i10;-7;-1;;;;Zafina-2;;;;
 2,1;h,m;8,9;i23~25;-6c;+2;;Combos from 1st hit CH;;Zafina-2,1;;;;
 2,1,3;h,m,l;8,9,11;i32;-17;+4d;;"* Cancel and transition to -9, -17 MNT with D 
@@ -95,7 +96,7 @@ d+2;m;17;i19~20;-16c;-3c;+17d;;;Zafina-d+2;;;;
 d+2,4;m,m;17,10;i26;-22;-4;-4c;"* Floor Break
 * Transition to -22, -4 TRT with D";fbr;Zafina-d+2,4;;MNT;;
 d+2,4,3;m,m,m;17,10,10;i28~31;-12;+18a;;* Combos from 2nd hit CH;;Zafina-d+2,4,3;Poison Rosette;;;
-d+3;l;14;i22;-15;+2c;+20a;"* Transition to -13, +4c MNT with D
+d+3;l;14;i22;-15;+5c;+20a;"* Transition to -13, +7c MNT with D
 * Evasive (can go under some mids)
 High crush";cs;Zafina-d+3;Earwig Pincer;r FC;;
 d+4;l;8;i17~18;-19;-3;+7;;;Zafina-d+4;;;;
@@ -121,6 +122,9 @@ b+1:1+2;m,t;14,36;;;+0d;;"* Hit Throw
 * Azazel's Power
 * Zafina receives recoverable health damage
 * Switches sides";;Zafina-b+1:1+2;Cursed Claw;;;
+b+1+3;m,m;5,35;i6;;+12d;;"* Parry
+* Alternate input: b+2+4
+Parry state 6~29";ps6~29;Zafina-b+1+3;Revenge Hand;;;
 b+2;h;22;i22~23;-5;+12;;* Homing;hom;Zafina-b+2;Brisingamen Backfist;;;
 b+3;m;23;i24~26;-14;+12d;;"Powercrush
 Power crush ~";pc~;Zafina-b+3;Ereshkigal Stomp;;;
@@ -162,9 +166,10 @@ f,f,F+3;m;30;i23~26;+7;+19a(9);;"* Balcony Break
 * Cancel SCR transition +3, +15a with B
 * 9 chip damage on block
 Low crush ?~";bbr js?~;Zafina-f,f,F+3;Leaping Side Kick;SCR;;
-f,f,F+1+2;h;20;i23~24;+7;+32a;;"* Balcony Break
+f,f,F+1+2;h;20;i20~24;+8;+32a;;"* Homing
+* Balcony Break
 * 8 chip damage on block
-Low crush ?~";bbr js?~;Zafina-f,f,F+1+2;Tiamat;TRT;;
+Low crush ?~";hom bbr js?~;Zafina-f,f,F+1+2;Tiamat;TRT;;
 ws1;m;9;i15;-10;+1;;;;Zafina-ws1;;;;
 ws1,2;m,m;9,18;i20~21;-13;+36a (+26);;;;Zafina-ws1,2;;;;
 ws2;m;20;i18~19;-14;+28a (+18);;"* Tornado
@@ -239,10 +244,11 @@ SCR.3+4;m,m;10,20;i18~19 i6~8;-12;+8;;"* Balcony Break
 Low crush ?~";bbr js?~;Zafina-SCR.3+4;;;;
 SCR.b+1+2;l;16;i16;-17;+3;+12d;* Evasive (can go below some mids);;Zafina-SCR.b+1+2;;;;
 SCR.db;;;19;;;;;;Zafina-SCR.db;;;;
-SCR.df+1;m,m;10,20;i18 i17~19;-6;+33a(+18);;"* Azazel's Power
+SCR.df+1;m,m;10,20;i18 i17~19;-6;+33a(+18);;"* Tornado
+* Azazel's Power
 * Zafina receives recoverable health damage
 * Gains Power Crush frames during Heat
-* 8 chip damage on block";;Zafina-SCR.df+1;;;;
+* 8 chip damage on block";trn;Zafina-SCR.df+1;;;;
 SCR.df+3;l;10;i28~30;-23;-10c;;* Homing;hom;Zafina-SCR.df+3;;;;
 SCR.df+3,3;l,l;10,10;i29~31;-23;+54a(+38);;"* Homing
 * Launches into Tornado
@@ -258,11 +264,11 @@ TRT.1;l;13;i18;-11;+5;+15d;;;Zafina-TRT.1;;TRT;;
 TRT.2;m;24;i34-36;-9;=+40a(+30);;* Tornado;trn;Zafina-TRT.2;;;;
 TRT.3;m;16;i14~i15;-7;+15d;;;;Zafina-TRT.3;Death Stalker;TRT;;
 TRT.4;m;10;i26;-22;-4b;-4c;* Can hold D to transition to TRT instead of MNT;;Zafina-TRT.4;;MNT;;
-TRT.4,3;m,m;10,10;i28~31;-12;+18a;;;;Zafina-TRT.4,3;;;;
+TRT.4,3;m,m;10,10;i28~31;-13;+18a;;;;Zafina-TRT.4,3;;;;
 TRT.1+2;m,m;7,20;i19~20 i9~10;-12;+14a;;"* Balcony Break
 Low crush ?~";bbr js?~;Zafina-TRT.1+2;;;;
 TRT.db;;;;;;;;;Zafina-TRT.db;;;;
-TRT.df+1;m;30;i19~20;-7;+30a(+15);;"* Heat Engager
+TRT.df+1;m;30;i19~20;+6;+30a(+15);;"* Heat Engager
 
 * Heat Dash +5 +35d
 

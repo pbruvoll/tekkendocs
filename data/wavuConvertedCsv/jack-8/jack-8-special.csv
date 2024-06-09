@@ -24,7 +24,6 @@ Power crush 8~";pc8~;Jack-8-R.df+1+2;Terraforming Cannon;;;
 1+2;m,m;8,14;i15;-13;+67a (+51);;"* Tornado
 * Instant Tornado
 * Homing";trn hom;Jack-8-1+2;Tornado Punch;;;
-1+2;m;18;i28;+18g;+39d;;* Recovers in SIT, then stands up;;Jack-8-Grounded face up d+1+2;Get Up Punch;SIT;;
 1+4;;;i22~;;;;"* Alternate input hcf+1
 * 1+4 can be held for up to 5 spins (or multiple 360 motions)";;Jack-8-1+4;;;;
 1+4*,1;m;35/45/55/199;i17(68/93/118~);!;+70d;;"* Balcony Break
@@ -39,6 +38,7 @@ Power crush 8~";pc8~;Jack-8-R.df+1+2;Terraforming Cannon;;;
 * Instant Tornado
 * Alternate input hcf:df+1";trn;Jack-8-1+4:df+1;Prime Windup Uppercut;;;
 3+4;;;;;;;"* When timed with opponent attack, or absorbing an attack, shift to Gamma Charge
+* Recover Heat and recoverable health when absorbing an attack
 * Gamma Charge is always
 in effect during Heat
 * Alternate input: ws3+4
@@ -87,6 +87,7 @@ df+1,2,1,2;m,h,h,h;1210,2,20;i9;-18;+35d (-23);;"* Balcony Break
 * On air hit +12 (+5) 
 * Combos from 2nd hit
 * Combos from 1st hit CH";bbr;Jack-8-df+1,2,1,2;Overdrive;;;
+df+1+3;sm;20;i30~49;-11;+0d~+19d;;{{}};;Jack-8-df+1+3;Body Press;;;
 df+2;m;13;i15;-14;+31a (+21);;;;Jack-8-df+2;Programmed Uppercut;;;
 df+2,1;m,h;13,16;i21;-32;+40a (+22);;"* Transition to GMH with D
 ** (+45a (+27) oH)
@@ -109,6 +110,7 @@ d+2;s;8;i11;-4;+7;;* Alternate input FC.d+2;;Jack-8-d+2;;rFC;;
 d+3;l;12;i20;-17;-6;;* Alternate input FC.d+3;;Jack-8-d+3;;rFC;;
 d+4;l;10;i16;-15;-4;;* Alternate input FC.d+4;;Jack-8-d+4;;rFC;;
 d+1+2;m;28;i27;-18;+42a (+32);;*;;Jack-8-d+1+2;Double Axe;;;
+d+1+2;m;18;i28;+18g;+39d;;* Recovers in SIT, then stands up;;Jack-8-Grounded face up d+1+2;Get Up Punch;SIT;;
 d+3+4;;;;;;;* Transitions to SIT (Sit Down);;Jack-8-d+3+4;Sit Down;SIT;;
 db+1;l;5;i13;-12;+1;;"*
 High crush";cs;Jack-8-db+1;;rFC;;
@@ -213,7 +215,7 @@ f,F+1+2,1+2;m,l;20,21;i28;-19;+13d;;"* Alternate input FC.d+1+2
 High crush";cs;Jack-8-f,F+1+2,1+2;High and Low Cross Cut;;;
 f,F+1+4;m (l);25;i21;-82;-88;;"* Low attack on landing
 Low crush";js;Jack-8-f,F+1+4;Sliding Attack;;;
-f,f,F+2;h;25;i22;+10;+6;;"* Chip damage on block
+f,f,F+2;m;25;i22;+10;+6;;"* Chip damage on block
 * Alternate input wr2";chp;Jack-8-f,f,F+2;Cemaho Chop;;;
 f,f,F+1+2;m;34;i20;+3;+7a (-2);;"* Balcony Break
 * Chip damage on block
@@ -292,7 +294,7 @@ GMC.2;h;22;i20;+11;+31a (+5);;"* Tornado
 * Partially uses remaining Heat time
 * Chip damage on block
 Power crush";trn bbr chp pc;Jack-8-GMC.2;Exaton Blast - Gamma;;;
-GMH.1;m;20;i22;-10;+25d;;"* Homing
+GMH.1;m;20;i22;-9;+25d;;"* Homing
 * Balcony Break";hom bbr;Jack-8-GMH.1;Juggernaut Hook;;;
 GMH.2;h;40;i20;+11;+21d (+11);;"* Balcony Break
 * Tornado";bbr trn;Jack-8-GMH.2;Exaton Blast;;;
