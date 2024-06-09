@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import ReactPlayer from 'react-player/youtube'
 import { Heading, Link as RadixLink, Table, Text } from '@radix-ui/themes'
 import {
@@ -103,7 +102,6 @@ export default function Move() {
   const params = useParams()
   const command = params['move']
   const characterName = params['character']
-  const [showVideo, setShowVideo] = useState(true)
 
   const matches = useMatches()
   const moves = getCharacterFrameDataMoves(matches)
@@ -130,11 +128,6 @@ export default function Move() {
     const startParam = move.ytVideo.start ? '&start=' + move.ytVideo.start : ''
     const endParam = move.ytVideo.end ? '&end=' + move.ytVideo.end : ''
     videoLink = `https://www.youtube.com/embed/${move.ytVideo.id}?autoplay=1&mute=1&rel=0${startParam}${endParam}`
-  }
-
-  const handleReloadVideo = () => {
-    setShowVideo(false)
-    setTimeout(() => setShowVideo(true), 1)
   }
 
   return (
