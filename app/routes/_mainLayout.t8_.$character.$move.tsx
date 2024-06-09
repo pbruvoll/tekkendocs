@@ -1,12 +1,6 @@
 import React, { useState } from 'react'
 import ReactPlayer from 'react-player/youtube'
-import {
-  Button,
-  Heading,
-  Link as RadixLink,
-  Table,
-  Text,
-} from '@radix-ui/themes'
+import { Heading, Link as RadixLink, Table, Text } from '@radix-ui/themes'
 import {
   Link,
   type MetaFunction,
