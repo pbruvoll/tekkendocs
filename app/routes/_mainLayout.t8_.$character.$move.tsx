@@ -1,17 +1,12 @@
-import { useState } from 'react'
-import {
-  Button,
-  Heading,
-  Link as RadixLink,
-  Table,
-  Text,
-} from '@radix-ui/themes'
+import ReactPlayer from 'react-player/youtube'
+import { Heading, Link as RadixLink, Table, Text } from '@radix-ui/themes'
 import {
   Link,
   type MetaFunction,
   useMatches,
   useParams,
 } from '@remix-run/react'
+import { useHydrated } from 'remix-utils/use-hydrated'
 import { ContentContainer } from '~/components/ContentContainer'
 import { type Move } from '~/types/Move'
 import {
@@ -20,6 +15,8 @@ import {
 } from '~/utils/characterPageUtils'
 import { getCacheControlHeaders } from '~/utils/headerUtils'
 import { commandToUrlSegment } from '~/utils/moveUtils'
+
+// Only loads the YouTube player
 
 export const headers = () => getCacheControlHeaders({ seconds: 60 * 5 })
 
@@ -101,10 +98,10 @@ const findMove = (command: string, moves: Move[]): Move | undefined => {
 }
 
 export default function Move() {
+  const isHydrated = useHydrated()
   const params = useParams()
   const command = params['move']
   const characterName = params['character']
-  const [showVideo, setShowVideo] = useState(true)
 
   const matches = useMatches()
   const moves = getCharacterFrameDataMoves(matches)
@@ -131,11 +128,6 @@ export default function Move() {
     const startParam = move.ytVideo.start ? '&start=' + move.ytVideo.start : ''
     const endParam = move.ytVideo.end ? '&end=' + move.ytVideo.end : ''
     videoLink = `https://www.youtube.com/embed/${move.ytVideo.id}?autoplay=1&mute=1&rel=0${startParam}${endParam}`
-  }
-
-  const handleReloadVideo = () => {
-    setShowVideo(false)
-    setTimeout(() => setShowVideo(true), 1)
   }
 
   return (
@@ -168,22 +160,24 @@ export default function Move() {
           <div className="text-sm">Video from Wavu wiki</div>
         </>
       )}
-      {videoLink && showVideo && (
-        <>
-          <iframe
-            className="aspect-video max-w-full"
-            width="560"
-            //height="315"
-            src={videoLink}
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-            allowFullScreen
-          ></iframe>
-          <div className="my-2">
-            <Button onClick={handleReloadVideo}>Reload</Button>
-          </div>
-        </>
+      {move.ytVideo && isHydrated && (
+        <div className="aspect-video w-[600px] max-w-full">
+          <ReactPlayer
+            playing
+            width="100%"
+            height="100%"
+            muted
+            config={{
+              playerVars: {
+                start: move.ytVideo.start || undefined,
+                end: move.ytVideo.end || undefined,
+                rel: 0,
+              },
+            }}
+            loop
+            url={`https://www.youtube.com/watch?v=${move.ytVideo.id}`}
+          />
+        </div>
       )}
       <Table.Root variant="surface" className="mt-4" style={{ width: '100%' }}>
         <Table.Body>
