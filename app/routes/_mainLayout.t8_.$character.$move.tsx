@@ -1,5 +1,5 @@
 import ReactPlayer from 'react-player/youtube'
-import { Heading, Link as RadixLink, Table, Text } from '@radix-ui/themes'
+import { Heading, Table, Text } from '@radix-ui/themes'
 import {
   Link,
   type MetaFunction,
