@@ -132,15 +132,13 @@ export default function Move() {
 
   return (
     <ContentContainer enableTopPadding enableBottomPadding>
-      <Text size="7" mr="6" as="span">
+      <Text size="7" mr="6" as="span" className="sr-only">
         Tekken 8
       </Text>
-      <Heading mt="2" mb="4" as="h1" className="inline capitalize">
-        <RadixLink asChild>
-          <Link to={'/' + characterName} className="capatalize">
-            {characterName}
-          </Link>
-        </RadixLink>{' '}
+      <Heading mt="2" mb="4" as="h1" className="flex flex-wrap gap-2">
+        <Link to={'/' + characterName} className="capitalize text-text-primary">
+          {characterName}
+        </Link>
         {move.command}
         {move.name ? ` - ${move.name}` : ''}
       </Heading>
@@ -161,11 +159,12 @@ export default function Move() {
         </>
       )}
       {move.ytVideo && isHydrated && (
-        <div className="aspect-video w-[600px] max-w-full">
+        <div className="mt-4 aspect-video w-[600px] max-w-full">
           <ReactPlayer
             playing
             width="100%"
             height="100%"
+            controls
             muted
             config={{
               playerVars: {
