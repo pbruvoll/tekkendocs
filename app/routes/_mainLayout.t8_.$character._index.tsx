@@ -8,11 +8,12 @@ import Nav, { type NavLinkInfo } from '~/components/Nav'
 import { orderByKey } from '~/constants/sortConstants'
 import { useFrameData } from '~/hooks/useFrameData'
 import { type CharacterFrameDataPage } from '~/types/CharacterFrameDataPage'
+import { type Move } from '~/types/Move'
 import type { RouteHandle } from '~/types/RouteHandle'
 import { type SortOrder } from '~/types/SortOrder'
 import { type TableDataWithHeader } from '~/types/TableData'
 import { filterToDescription, getFilterFromParams } from '~/utils/filterUtils'
-import { filterRows, sortRows } from '~/utils/frameDataUtils'
+import { filterMoves, sortMoves } from '~/utils/frameDataUtils'
 import { getCacheControlHeaders } from '~/utils/headerUtils'
 import { generateMetaTags } from '~/utils/seoUtils'
 import { t8AvatarMap } from '~/utils/t8AvatarMap'
@@ -47,7 +48,7 @@ export const meta: MetaFunction = ({ data, params, matches, location }) => {
     ]
   }
 
-  const { characterName, tables } = frameData as CharacterFrameDataPage
+  const { characterName, moves } = frameData as CharacterFrameDataPage
   const characterId = characterName.toLocaleLowerCase()
   const characterTitle =
     characterName[0].toUpperCase() + characterName.substring(1)
@@ -55,47 +56,43 @@ export const meta: MetaFunction = ({ data, params, matches, location }) => {
 
   let rowsDescription: string = ''
   // the the actual filtered and sorted frame data
-  const table = tables.find(t => t.name === 'frames_normal')
-  if (table) {
-    const searchParams = new URLSearchParams(location.search)
+  const searchParams = new URLSearchParams(location.search)
 
-    const orderByParamValue = searchParams.get(orderByKey) || ''
-    const [orderByColumnName, orderDirectionName] = orderByParamValue.split('_')
+  const orderByParamValue = searchParams.get(orderByKey) || ''
+  const [orderByColumnName, orderDirectionName] = orderByParamValue.split('_')
 
-    const sortDirection: SortOrder =
-      orderDirectionName === 'asc' ? 'asc' : 'desc'
+  const sortDirection: SortOrder = orderDirectionName === 'asc' ? 'asc' : 'desc'
 
-    const filter = getFilterFromParams(searchParams)
+  const filter = getFilterFromParams(searchParams)
 
-    const filteredRows = filterRows(table.rows, filter)
-    const headers = (table as TableDataWithHeader).headers
+  const filteredMoves = filterMoves(moves, filter)
 
-    const sortedRows = sortRows(
-      filteredRows,
-      headers,
-      orderByColumnName,
-      sortDirection,
+  const sortedMoves = sortMoves(
+    filteredMoves,
+    orderByColumnName as keyof Move,
+    sortDirection,
+  )
+
+  const orderDesription = orderDirectionName
+    ? `order by ${orderByColumnName} ${orderDirectionName}`
+    : ''
+
+  const filterStr = filterToDescription(filter)
+  const filterDescription = filterStr ? `filter : ${filterStr}` : ''
+
+  rowsDescription = [
+    [orderDesription, filterDescription].filter(Boolean).join(', '),
+    ['Command', 'Hit level', 'Damage', 'Block frame', 'Hit frame'].join(' | '),
+  ]
+    .concat(
+      sortedMoves
+        .slice(0, 9)
+        .map(({ command, hitLevel, damage, block, hit }) =>
+          [command, hitLevel, damage, block, hit].join(' | '),
+        ),
     )
-
-    const orderDesription = orderDirectionName
-      ? `order by ${orderByColumnName} ${orderDirectionName}`
-      : ''
-
-    const filterStr = filterToDescription(filter)
-    const filterDescription = filterStr ? `filter : ${filterStr}` : ''
-
-    rowsDescription = [
-      [orderDesription, filterDescription].filter(Boolean).join(', '),
-      [headers[0], headers[1], headers[2], headers[4], headers[5]].join(' | '),
-    ]
-      .concat(
-        sortedRows
-          .slice(0, 9)
-          .map(r => [r[0], r[1], r[2], r[3], r[4], r[5]].join(' | ')),
-      )
-      .filter(Boolean)
-      .join('\n')
-  }
+    .filter(Boolean)
+    .join('\n')
 
   const description = `Frame data for ${characterTitle} in Tekken 8\n${rowsDescription}`
 
