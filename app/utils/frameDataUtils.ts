@@ -96,10 +96,19 @@ export const applyOverride = (
     return moves
   }, {})
 
-  moves.forEach(move => {
+
+  moves.forEach((move, index) => {
     const override = overrideRecord[move.command]
     if (override) {
       move.ytVideo = override.ytVideo
+      if(move.ytVideo) {
+        // see if this can be video can be used for moves that starts with same command (use video for 1,1,2 also for 1, 1)
+        let prevIndex = index -1;
+        while(prevIndex >= 0 && !moves[prevIndex].ytVideo && move.command.startsWith(moves[prevIndex].command)) {
+          moves[prevIndex].ytVideo = move.ytVideo
+          prevIndex--
+        }
+      }
     }
   })
 }
