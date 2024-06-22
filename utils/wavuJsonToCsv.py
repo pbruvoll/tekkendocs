@@ -22,7 +22,11 @@ columns = [
     {"wavuId": "video", "displayName": "Video"},
 ]
 
-def correctMove(move) : 
+def correctMove(move, charName) : 
+    match charName :
+        case "nina":
+            move["input"] = move["input"].replace("SWA.b", "qcb")        
+
     move["input"] = move["input"].replace("SWA.", "qcb+")
     
 #input is a folder for a character which may contain multiple csv files (special moves, throws etc).
@@ -44,7 +48,7 @@ def convert(filePath, outDir):
     f.close()
     csvContent = [list(map(lambda x: x["displayName"], columns))];
     for move in jsonData : 
-        #correctMove(move)
+        correctMove(move, charName)
         csvContent.append(list(map(lambda x: move.get(x["wavuId"], ""), columns)));
     
     outputFilePath = os.path.join(charOutDir, charName + "-special.csv")
