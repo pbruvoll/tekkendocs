@@ -25,7 +25,8 @@ columns = [
 def correctMove(move, charName) : 
     match charName :
         case "nina":
-            move["input"] = move["input"].replace("SWA.b", "qcb")        
+            move["input"] = move["input"].replace("SWA.b", "qcb").replace("CD.", "qcf+")
+
 
     move["input"] = move["input"].replace("SWA.", "qcb+")
     
