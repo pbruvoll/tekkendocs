@@ -3,6 +3,7 @@ import argparse
 import os
 import json
 import csv
+import re
 csvSep = ";"
 
 columns = [
@@ -23,12 +24,18 @@ columns = [
 ]
 
 def correctMove(move, charName) : 
+    input = move["input"]
     match charName :
         case "nina":
-            move["input"] = move["input"].replace("SWA.b", "qcb").replace("CD.", "qcf+")
+            input = input.replace("SWA.b", "qcb").replace("CD.", "qcf+")
+        case "paul":
+            input = input.replace("CS.", "qcf+")
 
 
-    move["input"] = move["input"].replace("SWA.", "qcb+")
+
+    input = input.replace("SWA.", "qcb+") #.replace("WS.", "WS+")
+    # input = re.sub(r'(?<![a-zA-Z])SS.', "SS+", input)
+    move["input"] = input
     
 #input is a folder for a character which may contain multiple csv files (special moves, throws etc).
 #one json file will be generated for each chracter conntaining move type as key
