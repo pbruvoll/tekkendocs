@@ -76,7 +76,7 @@ gSheet = gc.open_by_url(sheetUrl)
 
 folders = []
 charNum = 0
-charNumOffset = 25 # used to start from a offset if last upload did not complete
+charNumOffset = 0 # used to start from a offset if last upload did not complete
 for folder in os.listdir(inputDir) :
     charNum = charNum +1
     if charNum < charNumOffset :
