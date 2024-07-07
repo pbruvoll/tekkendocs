@@ -68,7 +68,7 @@ Power crush 8~";pc8~;Yoshimitsu-R.df+1+2;Trailokya Pilgrimage;r39 1SS;;
 2,d+3;h,L;10,11;,i22;-12;-1;;"* Combo from 1st hit with 2f delay
 * Move can be delayed 2f
 High crush 12~";cs12~;Yoshimitsu-2,d+3;PDK Combo;r31 FC;;
-3;m;12;i15~16;-9~-8;+5~+6;;;;Yoshimitsu-3;;r29;;
+3;m;12;i15~16;-9~-8;+5~+6;;;;Yoshimitsu-3;Enma;r29;;
 3,1;m,h;12,22;,i22~24;+7~+9;+18g~+20g;;"* Heat Engager
 
 * Heat Dash +5g~7g +62a (+42)
@@ -642,22 +642,14 @@ FC.df+4;L;18;i18~19;-26~-25;+4c~+5c;+31a;"* Homing
 * Transition to r24 IND with d+3+4, +8 hit, +35a CH
 * Can be done from [[Crouch#Crouch_levels|Crouch Level 2]]
 High crush 1~";hom cs1~;Yoshimitsu-FC.df+4;Knee Cap;r28 FC;;
-FC.d+1;sl;5;i10;-5;+6;;"* Alternate inputs:
-** FC.db+1
-** FC.df+1
-* Transition to r24 with f
+FC.d+1;sl;5;i10;-5;+6;;"* Transition to r25? with f
 * Transition input can be delayed 16f
 High crush 1~";cs1~;Yoshimitsu-FC.d+1;;r24 FC;;
-FC.d+2;sl;8;i11;-4;+5;;"* Alternate inputs:
-** FC.db+2
-** FC.df+2
-High crush 1~";cs1~;Yoshimitsu-FC.d+2;;r24 FC;;
-FC.d+3;L;10;i16;-16;-6;;"Alternate input: 1SS.FC.df+3
-High crush 1~";cs1~;Yoshimitsu-FC.d+3;;r36 FC;;
-FC.d+4;l;6;i12;-15;-4;;"Alternate input: FC.db+4
-High crush 1~";cs1~;Yoshimitsu-FC.d+4;;r34 FC;;
+FC.d+2;sl;8;i11;-4;+5;;High crush 1~;cs1~;Yoshimitsu-FC.d+2;;r23 FC;;
+FC.d+3;L;10;i16;-17;-6;;High crush 1~;cs1~;Yoshimitsu-FC.d+3;;r36 FC;;
+FC.d+4;l;6;i12;-15;-4;;High crush 1~;cs1~;Yoshimitsu-FC.d+4;;r34 FC;;
 BDS.1;h!;25;i21~40;;+32a;;Alternate input: BDS.2;;Yoshimitsu-BDS.1;Poison Breath;r5;;
-BDS.1;m;23;i17~30;-15~-2;-13~+0;;"Alternate input: BDS.4
+BDS.3;m;23;i17~30;-15~-2;-13~+0;;"Alternate input: BDS.4
 Low crush 14~ fs28~30";js14~ fs28~30;Yoshimitsu-BDS.3;Backflip Kick;r30;;
 BT.1;h;16;i15;-3;+8;;Elbow;elb;Yoshimitsu-BT.1;;r22 BT;;
 BT.1,2;h,m;16,18;,i25;-5;+5;+63a;"* Elbow
@@ -839,7 +831,7 @@ KIN.2,NSS.1+2;m,M;15,30;i32~34;-3~-1;+15a;;"* Balcony Break
 KIN.2,NSS.1+2*;m,M;15,30;,i47~49;+14~+16;+69a (+49);;"* Balcony Break
 * Spike
 * Weapon
-* Guard break
+* Guard Break
 * 12 chip damage on block
 * Recovers health on hit";bbr spk wpn;Yoshimitsu-KIN.2,1+2*;NSS Tenshu Kuzushi (Hold);r49 1SS;;
 KIN.3;L;17;i25~32;-16~-9;+13a;+24a;Low crush 10~20 fs21~23 High crush 24~;js10~20 fs21~23 cs24~;Yoshimitsu-KIN.3;Shibakari;r28 FC;;
@@ -889,7 +881,7 @@ KIN.f+2;h;25;i12~13;-1~+0;+9a (+0);;"* Heat Engager
 * Homing
 * Balcony Break
 * Weapon
-* Wall crush on block +11g minimum, 3 damage on wall hit";he hom bbr wpn wc;Yoshimitsu-KIN.f+2;Ganto;r40;;
+* Wall Crush on hit, +11g minimum";he hom bbr wpn wc;Yoshimitsu-KIN.f+2;Ganto;r40;;
 KIN.u+1+2;;;;;;;Low crush 14~;js14~;Yoshimitsu-KIN.u+1+2;Kincho Manji Dragonfly;r34 DGF;;
 MED.3;m,M;15,15;i17~28 i28~39;+2~+13;+43a;;"* Spike on second hit
 * BT.d+3 is guaranteed on meaty block
@@ -927,7 +919,8 @@ NSS.1+4;m;20;i8~11;-15~-12;+14 +64a;;"* Strong Aerial Tailspin
 * 4 chip damage on block
 * Recovers health on hit
 * Alternate inputs: b+1+4, f+1+4, db+1+4, ws1+4, FC.D+1+4";wpn;Yoshimitsu-NSS.1+4;Soul Stealer;r31 1SS;;
-NSS.BT.d+1;l;15;i17~18;-13~-12;+3;+38a;High crush 6~;cs6~;Yoshimitsu-NSS.BT.d+1;NSS Shisetsu Genman;r31 FC;;
+NSS.BT.d+1;l;15;i17~18;-13~-12;+3;+38a;"Can hit grounded while off-axis
+High crush 6~";cs6~;Yoshimitsu-NSS.BT.d+1;NSS Shisetsu Genman;r31 FC;;
 NSS.FC.DF+1;l;12;i25~26;-16~-15;+27a;;"* Alternate input: NSS.db,b+1
 High crush 1~34";cs1~34;Yoshimitsu-NSS.FC.DF+1;;r34 NSS;;
 NSS.FC.DF+1,2;l,L;12,20;,i25~26;-14~-13;+14~+15;;"* Combo from 1st hit
@@ -957,8 +950,7 @@ NSS.b,B+1+4,B;,m;,20;,i22~25;-15~-12;+14 +64a;;"* Weapon
 * 4 chip damage on block
 * Recovers health on hit";wpn;Yoshimitsu-NSS.b,B+1+4,B;Thunder Palm Strike Feint to Soul Stealer;r31 1SS;;
 NSS.b+1+2;;;;;;;High crush 8~50;cs8~50;Yoshimitsu-NSS.b+1+2;Battou Kakugo;r35 1SS;;
-NSS.db+1;sl;5;i10;-5;+6;;"* In-game frame data incorrectly dispalys this move as i11
-* Transition to r24 with f
+NSS.db+1;sl;5;i10;-5;+6;;"* Transition to r24 with f
 High crush 4~";cs4~;Yoshimitsu-NSS.db+1;Manji Shagapan;r24 FC;;
 NSS.df+1+4;m;19;i20~21;-17~-16;+35a (+25);;"* Can be buffered
 * Transition to r37 KIN with 1+2
