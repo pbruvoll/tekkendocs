@@ -13,6 +13,7 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  type ShouldRevalidateFunction,
 } from '@remix-run/react'
 import stylesUrl from '~/global.css?url'
 import tailwindStyleSheetUrl from './tailwind.css?url'
@@ -46,6 +47,10 @@ export const loader = async ({
   return json({
     url: request.url,
   })
+}
+
+export const shouldRevalidate: ShouldRevalidateFunction = () => {
+  return false
 }
 
 export default function App() {
