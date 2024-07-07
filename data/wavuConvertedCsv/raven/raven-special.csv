@@ -2,13 +2,12 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 2+3;m;12;i16;+1;+2c;;"* Heat Burst
 * Cancel to r45 with b,b
 Power crush 8~";hb pc8~;Raven-2+3;Heat Burst;r52;;
-H.1+2,F;m;20;i14;+5;+45a (+35);;Wall crush on block (+18);wc;Raven-H.1+2,F;"Crusader &gt; Heat Dash";r27;;
+H.1+2,F;m;20;i14;+5;+45a (+35);;;;Raven-H.1+2,F;"Crusader &gt; Heat Dash";r27;;
 H.BT.2,2,1;h,m,sm,sm;9,12,21,30;i10, i21~22, i18~19, i39~47;-3;+2a (-7);;"* Balcony Break
 * Combo from 1st hit
 * Available only on hit or block
 * Recover Heat on hit";bbr;Raven-H.BT.2,2,1;Blinding Knife  Phantom Javelin;r25;;
-H.BT.4,F;m;21;i19~20;-5~-4;+36a (+26);;"Wall crush on block (+18)
-Low crush 6~19";wc js6~19;Raven-H.BT.4,F;"Chronos Lathe &gt; Heat Dash";r27;;
+H.BT.4,F;m;21;i19~20;-5~-4;+36a (+26);;Low crush 6~19;js6~19;Raven-H.BT.4,F;"Chronos Lathe &gt; Heat Dash";r27;;
 H.BT.f+2,4,2;m,h,sm,sm;13,17,21,30;i17~18, i20~21, i19~20 i39~41;-3~-1;+24a (+9);;"* Tornado
 * Combo from 2nd CH
 * Available only on hit or block
@@ -23,7 +22,7 @@ H.SZN.1,4;H,sm,sm;12,25,30;i14~15, i18~27, i44~45;-3~-2;+32a (-26);;"* Balcony B
 * Combo from 1st hit
 * Available only on hit or block
 * Recover Heat on hit";bbr spk;Raven-H.SZN.1,4;"Swift Blade &gt; Phantom Mace";r25;;
-H.SZN.2,F;m,sm;20,10;i18 23~24;+5;+36a (+26);;Wall crush on block (+18);wc;Raven-H.SZN.2,F;"Dual Thanatos &gt; Heat Dash";r27;;
+H.SZN.2,F;m,sm;20,10;i18 23~24;+5;+36a (+26);;;;Raven-H.SZN.2,F;"Dual Thanatos &gt; Heat Dash";r27;;
 H.SZN.3,2;m,sm,sm;16,21,30;i16~17, i19~20 i39~-41;-3~-1;+24a (+9);;"* Tornado
 * Combo from 1st hit
 * Available only on hit or block
@@ -44,8 +43,7 @@ H.df+1,4;m,sm,sm;13,25,30;i14~15, i18~27, i44~45;-3~-2;+32a (-26);;"* Balcony Br
 H.f,f,F+3,4;m,sm;20,20;i26~28, i43~44;+7~+8;+72a (+56);;"* Tornado
 * Partially uses remaining Heat time
 * Available only on hit or block";trn;Raven-H.f,f,F+3,4;Typhon Fang Phantom;r74 BT;;
-H.f+1+2,F;m;10,20;i18~19 i26;+5;+34a;;"Wall crush on block (+18)
-Power crush 7~";wc pc7~;Raven-H.f+1+2,F;"Minos Typhoon &gt; Heat Dash";r27;;
+H.f+1+2,F;m;10,20;i18~19 i26;+5;+34a;;Power crush 7~;pc7~;Raven-H.f+1+2,F;"Minos Typhoon &gt; Heat Dash";r27;;
 H.qcf+1,2;m,sm,sm;15,21,30;i16, 19~20, 39~41;-3~-1;+24a (+9);;"* Tornado
 * Combo from 1st hit
 * Available only on hit or block
@@ -57,8 +55,7 @@ H.ws3,2;m,sm,sm;18,18,20;i16~17, i19~20 i39~41;-3~-1;+65a (+49);;"* Tornado
 * Available only on hit or block
 * Recover Heat on hit";trn;Raven-H.ws3,2;"Trident Kick &gt; Phantom Halberd";r25;;
 H.ws3+4,F;m;20;i16~18;+5;+62a (+42);;"* Homing
-* Alternate input: H.qcf+3+4,F
-*Wall crush on block (+18)";hom wc;Raven-H.ws3+4,F;Spinning Middle Kick;r27;;
+* Alternate input: H.qcf+3+4,F";hom;Raven-H.ws3+4,F;Spinning Middle Kick;r27;;
 H.2+3;m,t;20,35;i18~20;+14g;+3a;;"* Heat Smash
 * Transition to r20 SZN on block";hs;Raven-H.2+3;Pandemonium;r43;;
 R.df+1+2;m,t;55+;i20;-15;+0;;"* Rage Art
@@ -320,10 +317,10 @@ BT.b+3;h;22;i18~19;+4~+5;+41a;;"* Homing
 BT.b+3+4;;;;;;;Can block mid or high attacks after 6f;;Raven-BT.b+3+4;Labyrinth to Front;r14;;
 BT.d+1;sl;5;i10;-3;+6;;"Alternate input: BT.d+2
 High crush 1~";cs1~;Raven-BT.d+1;Crouch Spin Knuckle;r24 FC;;
-BT.d+3;L;16;i25~27;-26~-24;+0~+2;;"Clean hit +74a (+58), 20 damage
-High crush 4~48";cs4~48;Raven-BT.d+3;Shinobi Cyclone;r28;;
 BT.d+3;l;21;25f(2);-26;KDN;KDN;"TC from 4F to 5F
 TC,5F";TC5F;Raven-BT.d+3;Shinobi Cyclone (clean);r;;
+BT.d+3;L;16;i25~27;-26~-24;+0~+2;;"Clean hit +74a (+58), 20 damage
+High crush 4~48";cs4~48;Raven-BT.d+3;Shinobi Cyclone;r28;;
 BT.d+4;l;6;i12;-15;-4;;High crush 1~;cs1~;Raven-BT.d+4;Crouch Spin Kick;r34 FC;;
 BT.f,F+3;m;25;i21~22;-9~-8;+8a;;High crush 4~22;cs4~22;Raven-BT.f,F+3;Gremlin Smasher;36;;
 BT.f,F+3+4;L;17;i23~30;-18~-11;+24a;;fs13~21 High crush 18~49;fs13~21 cs18~49;Raven-BT.f,F+3+4;Vermillion;r30;;
