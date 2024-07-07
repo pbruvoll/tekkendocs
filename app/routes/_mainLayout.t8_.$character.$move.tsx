@@ -66,10 +66,14 @@ export const meta: MetaFunction = ({ params, matches }) => {
     .map((header, index) => `${header}:   ${moveRow[index] || ''}`)
     .join('\n')
 
-  const image =
+  let image =
     move?.image && move?.image.startsWith('File:')
       ? `https://wavu.wiki/t/Special:Redirect/file/${move?.image}`
       : `/t8/avatars/${characterId}-512.png`
+
+  if (move?.wavuId === 'Paul-CS.2') {
+    image = `/t8/moves/${characterId}/Paul_CS.2.gif`
+  }
 
   return [
     { title },
