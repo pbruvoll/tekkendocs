@@ -30,6 +30,8 @@ def correctMove(move, charName) :
             input = input.replace("SWA.b", "qcb").replace("CD.", "qcf+")
         case "paul":
             input = input.replace("CS.", "qcf+")
+        case "leo":
+            input = input.replace("CD.", "qcf+")
 
 
 
