@@ -1,4 +1,7 @@
+import { orderByKey } from '~/constants/sortConstants'
 import { type Move } from '~/types/Move'
+import { type SortByKey } from '~/types/SortByKey'
+import { type SortSettings } from '~/types/SortSettings'
 
 export const sortRowsByString = (
   rows: string[][],
@@ -65,5 +68,29 @@ export const sortMovesByNumber = (
 ): Move[] => {
   return [...moves].sort((a, b) =>
     compareNumberStrings(toString(a), toString(b), asc),
+  )
+}
+
+export const getSortSettings = (
+  searchParams: URLSearchParams,
+): SortSettings | undefined => {
+  const orderByParamValue = searchParams.get(orderByKey) || ''
+  if (!orderByParamValue) {
+    return undefined
+  }
+  const [orderByColumnName, orderDirectionName] = orderByParamValue.split('_')
+
+  return {
+    sortByKey: orderByColumnName as SortByKey,
+    sortDirection: orderDirectionName === 'asc' ? 'asc' : 'desc',
+  }
+}
+
+export const getSortByQueryParamValue = (
+  sortSettings: SortSettings,
+): string => {
+  return (
+    sortSettings.sortByKey +
+    (sortSettings.sortDirection === 'asc' ? '_asc' : '')
   )
 }

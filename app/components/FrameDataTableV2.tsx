@@ -11,8 +11,9 @@ import { orderByKey } from '~/constants/sortConstants'
 import { type Move } from '~/types/Move'
 import { type MoveFilter } from '~/types/MoveFilter'
 import { type SortOrder } from '~/types/SortOrder'
-import { filterMoves, sortMoves } from '~/utils/frameDataUtils'
+import { filterMoves, sortMovesV2 } from '~/utils/frameDataUtils'
 import { commandToUrlSegment } from '~/utils/moveUtils'
+import { getSortSettings } from '~/utils/sortingUtils'
 
 export type FrameDataTableProps = {
   moves: Move[]
@@ -33,15 +34,15 @@ export const FrameDataTable = ({
 }: FrameDataTableProps) => {
   const [searchParams] = useSearchParams()
   const location = useLocation()
-  const orderByParamValue = searchParams.get(orderByKey) || ''
-  const [orderByColumnName, orderDirectionName] = orderByParamValue.split('_')
-
-  const sortDirection: SortOrder = orderDirectionName === 'asc' ? 'asc' : 'desc'
+  const sortSettings = useMemo(
+    () => getSortSettings(searchParams),
+    [searchParams],
+  )
 
   const createOrderLinkWithSearchParams = (columnName: string) => {
     const searchParamsCopy = new URLSearchParams(searchParams.toString())
-    if (columnName === orderByColumnName) {
-      if (sortDirection === 'desc') {
+    if (columnName === sortSettings?.sortByKey) {
+      if (sortSettings.sortDirection === 'desc') {
         searchParamsCopy.delete(orderByKey)
       } else {
         searchParamsCopy.set(orderByKey, columnName + '_desc')
@@ -57,12 +58,8 @@ export const FrameDataTable = ({
   }, [filter, moves])
 
   const sortedMoves = useMemo(() => {
-    return sortMoves(
-      filteredMoves,
-      orderByColumnName as keyof Move,
-      sortDirection,
-    )
-  }, [filteredMoves, orderByColumnName, sortDirection])
+    return sortMovesV2(filteredMoves, sortSettings)
+  }, [filteredMoves, sortSettings])
 
   /**  Frame data imported from wavu wiki might not have unique commands. This might brake sorting
    * since react does not update dom properly. Therefor we set key based on sorting to force React
@@ -86,14 +83,14 @@ export const FrameDataTable = ({
           {tableHeaders.map(h => (
             <Table.ColumnHeaderCell key={h.id}>
               <Link
-                to={createOrderLinkWithSearchParams(h.id.toLowerCase())}
+                to={createOrderLinkWithSearchParams(h.id)}
                 preventScrollReset
                 replace
                 className="flex flex-wrap items-end"
               >
                 {h.displayName}
-                {h.id.toLowerCase() === orderByColumnName
-                  ? sortOrderIconMap[sortDirection]
+                {h.id.toLowerCase() === sortSettings?.sortByKey
+                  ? sortOrderIconMap[sortSettings.sortDirection]
                   : sortOrderIconMap['']}
               </Link>
             </Table.ColumnHeaderCell>
