@@ -4,9 +4,12 @@ export const sortOptions: {
   displayName: string
   value: string
 }[] = [
-  { 
+  {
     displayName: 'Start up',
-    value: getSortByQueryParamValue({ sortByKey: 'startup', sortDirection: 'desc' }),
+    value: getSortByQueryParamValue({
+      sortByKey: 'startup',
+      sortDirection: 'desc',
+    }),
   },
   {
     displayName: 'Block (low - high)',
@@ -64,5 +67,5 @@ export const sortOptions: {
       sortByKey: 'highCrush',
       sortDirection: 'desc',
     }),
-  }
+  },
 ]

@@ -505,19 +505,17 @@ export const sortMovesV2 = (
         asc,
       )
     }
-    case 'highCrush' : {
+    case 'highCrush': {
       return sortMovesByNumber(
         moves,
-        (move: Move) => 
-          (move.tags?.['cs'] ?? '100') || '90', // if no cs, use 100 to make it sort last, if no value for cs, make it 90 to sort after moves with a cs value
+        (move: Move) => (move.tags?.['cs'] ?? '100') || '90', // if no cs, use 100 to make it sort last, if no value for cs, make it 90 to sort after moves with a cs value
         asc,
       )
     }
-    case 'lowCrush' : {
+    case 'lowCrush': {
       return sortMovesByNumber(
         moves,
-        (move: Move) =>
-          (move.tags?.['js']?? '100') || '90',
+        (move: Move) => (move.tags?.['js'] ?? '100') || '90',
         asc,
       )
     }
