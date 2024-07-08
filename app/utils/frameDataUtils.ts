@@ -2,6 +2,7 @@ import invariant from 'tiny-invariant'
 import { type Move } from '~/types/Move'
 import { type MoveFilter } from '~/types/MoveFilter'
 import { type SortOrder } from '~/types/SortOrder'
+import { type SortSettings } from '~/types/SortSettings'
 import { type TableData } from '~/types/TableData'
 import {
   sortMovesByNumber,
@@ -451,6 +452,70 @@ export const sortMoves = (
         moves,
         (move: Move) =>
           move.tags?.['js'] || move.tags?.['cs'] || move.tags?.['pc'] || '',
+        asc,
+      )
+    }
+  }
+  return moves
+}
+
+export const sortMovesV2 = (
+  moves: Move[],
+  sortSettings: SortSettings | undefined,
+) => {
+  if (!sortSettings) {
+    return moves
+  }
+  const asc = sortSettings.sortDirection === 'asc'
+  switch (sortSettings.sortByKey) {
+    case 'command': {
+      return sortMovesByString(moves, (move: Move) => move.command, asc)
+    }
+    case 'hitLevel': {
+      return sortMovesByString(
+        moves,
+        (move: Move) => move.hitLevel.split(',').pop() || '',
+        asc,
+      )
+    }
+    case 'damage': {
+      return sortMovesByNumber(
+        moves,
+        (move: Move) => move.damage.split(',').pop() || '',
+        asc,
+      )
+    }
+    case 'startup': {
+      return sortMovesByNumber(moves, (move: Move) => move.startup, asc)
+    }
+    case 'block': {
+      return sortMovesByNumber(moves, (move: Move) => move.block, asc)
+    }
+    case 'hit': {
+      return sortMovesByNumber(moves, (move: Move) => move.hit, asc)
+    }
+    case 'counterHit': {
+      return sortMovesByNumber(moves, (move: Move) => move.counterHit, asc)
+    }
+    case `notes`: {
+      return sortMovesByNumber(
+        moves,
+        (move: Move) =>
+          move.tags?.['js'] || move.tags?.['cs'] || move.tags?.['pc'] || '',
+        asc,
+      )
+    }
+    case 'highCrush': {
+      return sortMovesByNumber(
+        moves,
+        (move: Move) => (move.tags?.['cs'] ?? '100') || '90', // if no cs, use 100 to make it sort last, if no value for cs, make it 90 to sort after moves with a cs value
+        asc,
+      )
+    }
+    case 'lowCrush': {
+      return sortMovesByNumber(
+        moves,
+        (move: Move) => (move.tags?.['js'] ?? '100') || '90',
         asc,
       )
     }
