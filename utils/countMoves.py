@@ -10,7 +10,6 @@ csvSep = ";"
 def countMoves(path):
     print("Counting " + path)
     moveCount = 0
-    worksheetData = [];
     filePaths = []
     for frameFile in os.listdir(path) :
         filePaths.append(os.path.join(path, frameFile));
@@ -53,7 +52,7 @@ chars = []
 for folder in os.listdir(inputDir) :
 
     folderPath = os.path.join(inputDir, folder) # folderPath will be folder of one char, e.g. "c:\Anna"
-    if(os.path.isdir(folderPath)):
+    if(os.path.isdir(folderPath) and not "test" in folder):
       chars.append(countMoves(folderPath))
 
 print(chars)
