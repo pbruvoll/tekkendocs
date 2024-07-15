@@ -79,7 +79,7 @@ const FlashCardGame = () => {
   return (
     <>
       <div className="my-2 flex">
-        <div className="border-card-foreground bg-card rounded-xl border p-2">
+        <div className="rounded-xl border border-card-foreground bg-card p-2">
           {showFront ? (
             <h2>{moveToShow.command}</h2>
           ) : (
