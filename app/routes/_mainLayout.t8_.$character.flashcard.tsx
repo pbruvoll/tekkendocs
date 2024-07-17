@@ -1,11 +1,11 @@
 import { useMemo, useState } from 'react'
-import { FaSortNumericUp } from 'react-icons/fa'
-import { PlayIcon } from '@radix-ui/react-icons'
+import { Heading } from '@radix-ui/themes'
 import { type MetaFunction } from '@remix-run/node'
 import cx from 'classix'
 import invariant from 'tiny-invariant'
-import { Button, buttonVariants } from '@/components/ui/button'
+import { Button } from '@/components/ui/button'
 import { ContentContainer } from '~/components/ContentContainer'
+import Nav, { type NavLinkInfo } from '~/components/Nav'
 import {
   FlashCardAnswer,
   type FlashCardAnswerType,
@@ -18,12 +18,13 @@ import type { CharacterFrameData } from '~/types/CharacterFrameData'
 import { type Move } from '~/types/Move'
 import type { RouteHandle } from '~/types/RouteHandle'
 import { generateMetaTags } from '~/utils/seoUtils'
+import { t8AvatarMap } from '~/utils/t8AvatarMap'
 
-// const navData: NavLinkInfo[] = [
-//   { link: '../', displayName: 'Frame data' },
-//   { link: '', displayName: 'Cheat sheet' },
-//   { link: '../antistrat', displayName: 'Anti strats' },
-// ]
+const navData: NavLinkInfo[] = [
+  { link: '../', displayName: 'Frame data' },
+  { link: '../meta', displayName: 'Cheat sheet' },
+  { link: '../antistrat', displayName: 'Anti strats' },
+]
 
 export const meta: MetaFunction = ({ data, params, matches }) => {
   const frameData = matches.find(
@@ -143,40 +144,57 @@ export default function FlashCard() {
   }
 
   return (
-    <ContentContainer
-      enableBottomPadding
-      enableTopPadding
-      className="flex justify-center"
-    >
-      <div>
-        <h1 className="p-2 text-center text-lg">
-          Flash cards for {characterName}
-        </h1>
-        {numViableMoves === 0 ? (
-          <div>No moves available for {characterName}</div>
-        ) : !moveToShow ? (
-          <StartPage
-            onStart={() => findAndSetMoveToShow()}
-            numUnseen={unseenMoves.length}
-            numCorrect={charFlashCardState.correct.length}
-            numWrong={charFlashCardState.wrong.length}
-            numIngnored={charFlashCardState.ignored.length}
-            onResetState={() =>
-              setFlashCardAppState({
-                ...flashCardAppState,
-                [characterName]: {
-                  [FlashCardAnswer.Correct]: [],
-                  [FlashCardAnswer.Wrong]: [],
-                  [FlashCardAnswer.Ignored]: [],
-                },
-              })
-            }
-          />
-        ) : (
-          <FlashCardGame moveToShow={moveToShow} onAnswer={handleAnswer} />
-        )}
-      </div>
-    </ContentContainer>
+    <>
+      {' '}
+      <ContentContainer enableTopPadding>
+        <div className="mb-3 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <img
+              className="aspect-square w-12"
+              src={t8AvatarMap[characterName]}
+              alt={characterName}
+            />
+            <Heading as="h1" my="2" className="capitalize">
+              {characterName}
+            </Heading>
+          </div>
+        </div>
+
+        <Nav navData={navData}></Nav>
+      </ContentContainer>
+      <ContentContainer
+        enableBottomPadding
+        enableTopPadding
+        className="flex justify-center"
+      >
+        <div>
+          <h1 className="mb-4 p-2 text-center text-xl">Flash cards</h1>
+          {numViableMoves === 0 ? (
+            <div>No moves available for {characterName}</div>
+          ) : !moveToShow ? (
+            <StartPage
+              onStart={() => findAndSetMoveToShow()}
+              numUnseen={unseenMoves.length}
+              numCorrect={charFlashCardState.correct.length}
+              numWrong={charFlashCardState.wrong.length}
+              numIngnored={charFlashCardState.ignored.length}
+              onResetState={() =>
+                setFlashCardAppState({
+                  ...flashCardAppState,
+                  [characterName]: {
+                    [FlashCardAnswer.Correct]: [],
+                    [FlashCardAnswer.Wrong]: [],
+                    [FlashCardAnswer.Ignored]: [],
+                  },
+                })
+              }
+            />
+          ) : (
+            <FlashCardGame moveToShow={moveToShow} onAnswer={handleAnswer} />
+          )}
+        </div>
+      </ContentContainer>
+    </>
   )
 }
 
@@ -198,19 +216,20 @@ const StartPage = ({
 }: StartPageProps) => {
   return (
     <div className="flex flex-col items-center">
-      <div className="prose prose-invert">
-        <p>
-          A flash card shows a move on the front side. Your job is to guess a
-          property of the move, for example how many frames it is on block. Then
-          you flip the card and check if yor guess was correct{' '}
-        </p>
-      </div>
-
       <Button onClick={onStart} className="m-4 text-xl">
         Start
       </Button>
-      <div>
-        <p className="py-2 text-lg">Current State</p>
+      <div className="prose prose-invert mt-8">
+        <h3>How it works</h3>
+        <p>
+          A flash card shows a move on the front side. Your job is to guess a
+          property of the move, for example how many frames it is on block. Then
+          you flip the card and check if yor guess was correct. Cards marked as
+          "Wrong" will be shown again sooner than cards marked as "Correct".
+          Card marked as "Ignore" will never be shown again.
+        </p>
+
+        <h3 className="py-2">Current State</h3>
         <div className="grid grid-cols-2 gap-2">
           <div>Unseen: </div>
           <div>{numUnseen}</div>
@@ -222,6 +241,7 @@ const StartPage = ({
           <div>{numIngnored}</div>
         </div>
       </div>
+
       <Button className="mt-4" onClick={onResetState} variant="secondary">
         Reset state
       </Button>

@@ -126,7 +126,10 @@ export default function Move() {
         {move.command}
         {move.name ? ` - ${move.name}` : ''}
       </Heading>
-      <MoveVideo move={move} />
+      <div className="mt-4 max-w-[600px]">
+        <MoveVideo move={move} />
+      </div>
+
       <Table.Root variant="surface" className="mt-4" style={{ width: '100%' }}>
         <Table.Body>
           <Table.Row>

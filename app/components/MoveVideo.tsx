@@ -1,41 +1,40 @@
 import ReactPlayer from 'react-player/youtube'
+import cx from 'classix'
 import { useHydrated } from 'remix-utils/use-hydrated'
 import { type Move } from '~/types/Move'
 
 export type MoveVideoProps = {
   move: Move
+  className?: string
 }
 
-export const MoveVideo = ({ move }: MoveVideoProps) => {
+export const MoveVideo = ({ move, className }: MoveVideoProps) => {
   const isHydrated = useHydrated()
 
   if (move.video) {
     return (
-      <>
+      <div className={cx(className)}>
         <video
-          className="mb-2 mt-4 aspect-video max-w-full"
+          className="mb-2 aspect-video"
           src={`https://wavu.wiki/t/Special:Redirect/file/${move?.video}`}
-          style={{
-            width: '640px',
-          }}
           loop
           controls
           autoPlay
           muted
         />
         <div className="text-sm">Video from Wavu wiki</div>
-      </>
+      </div>
     )
   }
 
   if (move.ytVideo && isHydrated) {
     return (
-      <div className="mt-4 aspect-video w-[600px] max-w-full">
+      <div className="aspect-video">
         <ReactPlayer
           playing
+          controls
           width="100%"
           height="100%"
-          controls
           muted
           config={{
             playerVars: {
