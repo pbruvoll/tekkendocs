@@ -6,6 +6,7 @@ from src.module.character import Move
 from src.resources import const
 from bs4 import BeautifulSoup
 from src.module.td_const import MoveCategory, SORT_ORDER
+import html
 
 wavuwiki = MediaWiki(url=const.WAVU_API_URL)
 session = requests.Session()
@@ -38,6 +39,7 @@ def get_wavu_character_movelist(character_name: str) -> List[Move]:
 
     response = session.get(const.WAVU_API_URL, params=params)
     content = json.loads(response.content)
+    # print(content["cargoquery"][149])
     move_list_json = content["cargoquery"]
     move_list = _convert_json_movelist(move_list_json)
     sorted_move_list = _sort_json_movelist(move_list)
@@ -104,7 +106,7 @@ def _convert_json_movelist(move_list_json: list) -> List[Move]:
         if move["title"]["ns"] == "0":
             alias = []
             id = _normalize_data(move["title"]["id"])
-            name = _normalize_data(move["title"]["name"])
+            name = html.unescape(_normalize_data(move["title"]["name"]))
             input = _normalize_data(
                 _get_all_parent_values_of("input", _normalize_data(move["title"]["parent"]), move_list_json)
                 + _normalize_data(move["title"]["input"]))
