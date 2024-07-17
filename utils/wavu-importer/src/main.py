@@ -26,7 +26,7 @@ def create_json_movelists(character_list_path: str) -> List[character.Character]
 
         for character_meta in all_characters:
             print("importing " + character_meta["name"])
-            # if(character_meta["name"] != "reina") :
+            # if(character_meta["name"] != "azucena") :
             #     continue
             cha = wavu_importer.import_character(character_meta)
             cha.export_movelist_as_json()
