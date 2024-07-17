@@ -1,26 +1,30 @@
 import { useMemo, useState } from 'react'
-import { PlayIcon } from '@radix-ui/react-icons'
+import { Heading } from '@radix-ui/themes'
 import { type MetaFunction } from '@remix-run/node'
 import cx from 'classix'
 import invariant from 'tiny-invariant'
-import { Button, buttonVariants } from '@/components/ui/button'
+import { Button } from '@/components/ui/button'
 import { ContentContainer } from '~/components/ContentContainer'
+import Nav, { type NavLinkInfo } from '~/components/Nav'
 import {
   FlashCardAnswer,
   type FlashCardAnswerType,
 } from '~/features/flashCards/FlashCardAnswer'
+import { FlashCardBack } from '~/features/flashCards/flashCardBack'
+import { FlashCardFront } from '~/features/flashCards/flashCardFront'
 import { useFlashCardAppState } from '~/features/flashCards/useFlashCardAppState'
 import { useFrameData } from '~/hooks/useFrameData'
 import type { CharacterFrameData } from '~/types/CharacterFrameData'
 import { type Move } from '~/types/Move'
 import type { RouteHandle } from '~/types/RouteHandle'
 import { generateMetaTags } from '~/utils/seoUtils'
+import { t8AvatarMap } from '~/utils/t8AvatarMap'
 
-// const navData: NavLinkInfo[] = [
-//   { link: '../', displayName: 'Frame data' },
-//   { link: '', displayName: 'Cheat sheet' },
-//   { link: '../antistrat', displayName: 'Anti strats' },
-// ]
+const navData: NavLinkInfo[] = [
+  { link: '../', displayName: 'Frame data' },
+  { link: '../meta', displayName: 'Cheat sheet' },
+  { link: '../antistrat', displayName: 'Anti strats' },
+]
 
 export const meta: MetaFunction = ({ data, params, matches }) => {
   const frameData = matches.find(
@@ -71,10 +75,7 @@ export default function FlashCard() {
     [characterName, flashCardAppState],
   )
 
-  console.log({ flashCardAppState, charFlashCardState })
-
   const unseenMoves = useMemo(() => {
-    console.log('filter')
     return viableMoves
       .filter(
         m =>
@@ -92,23 +93,19 @@ export default function FlashCard() {
 
   const findAndSetMoveToShow = () => {
     let command = ''
-    if (unseenMoves.length > 0) {
-      command = unseenMoves[Math.floor(Math.random() * unseenMoves.length)]
-    } else if (charFlashCardState.wrong.length > 0) {
+    const numWrong = charFlashCardState.wrong.length
+    const numCorrect = charFlashCardState.correct.length
+    const numUnseen = unseenMoves.length
+    if (numWrong >= 7 || (numWrong > 0 && numUnseen === 0)) {
+      command = charFlashCardState.wrong[Math.floor(Math.random() * numWrong)]
+    } else if (numUnseen > 0) {
+      command = unseenMoves[Math.floor(Math.random() * numUnseen)]
+    } else if (numCorrect > 0) {
       command =
-        charFlashCardState.wrong[
-          Math.floor(Math.random() * charFlashCardState.wrong.length)
-        ]
-    } else if (charFlashCardState.correct.length > 0) {
-      command =
-        charFlashCardState.correct[
-          Math.floor(Math.random() * charFlashCardState.correct.length)
-        ]
+        charFlashCardState.correct[Math.floor(Math.random() * numCorrect)]
     }
     setMoveToShow(viableMoves.find(m => m.command === command))
   }
-
-  console.log({ flashCardAppState, unseenMoves })
 
   const handleAnswer = (answer: FlashCardAnswerType) => {
     invariant(moveToShow)
@@ -147,40 +144,57 @@ export default function FlashCard() {
   }
 
   return (
-    <ContentContainer
-      enableBottomPadding
-      enableTopPadding
-      className="flex justify-center"
-    >
-      <div>
-        <h1 className="p-2 text-center text-lg">
-          Flash cards for {characterName}
-        </h1>
-        {numViableMoves === 0 ? (
-          <div>No moves available for {characterName}</div>
-        ) : !moveToShow ? (
-          <StartPage
-            onStart={() => findAndSetMoveToShow()}
-            numUnseen={unseenMoves.length}
-            numCorrect={charFlashCardState.correct.length}
-            numWrong={charFlashCardState.wrong.length}
-            numIngnored={charFlashCardState.ignored.length}
-            onResetState={() =>
-              setFlashCardAppState({
-                ...flashCardAppState,
-                [characterName]: {
-                  [FlashCardAnswer.Correct]: [],
-                  [FlashCardAnswer.Wrong]: [],
-                  [FlashCardAnswer.Ignored]: [],
-                },
-              })
-            }
-          />
-        ) : (
-          <FlashCardGame moveToShow={moveToShow} onAnswer={handleAnswer} />
-        )}
-      </div>
-    </ContentContainer>
+    <>
+      {' '}
+      <ContentContainer enableTopPadding>
+        <div className="mb-3 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <img
+              className="aspect-square w-12"
+              src={t8AvatarMap[characterName]}
+              alt={characterName}
+            />
+            <Heading as="h1" my="2" className="capitalize">
+              {characterName}
+            </Heading>
+          </div>
+        </div>
+
+        <Nav navData={navData}></Nav>
+      </ContentContainer>
+      <ContentContainer
+        enableBottomPadding
+        enableTopPadding
+        className="flex justify-center"
+      >
+        <div>
+          <h1 className="mb-4 p-2 text-center text-xl">Flash cards</h1>
+          {numViableMoves === 0 ? (
+            <div>No moves available for {characterName}</div>
+          ) : !moveToShow ? (
+            <StartPage
+              onStart={() => findAndSetMoveToShow()}
+              numUnseen={unseenMoves.length}
+              numCorrect={charFlashCardState.correct.length}
+              numWrong={charFlashCardState.wrong.length}
+              numIngnored={charFlashCardState.ignored.length}
+              onResetState={() =>
+                setFlashCardAppState({
+                  ...flashCardAppState,
+                  [characterName]: {
+                    [FlashCardAnswer.Correct]: [],
+                    [FlashCardAnswer.Wrong]: [],
+                    [FlashCardAnswer.Ignored]: [],
+                  },
+                })
+              }
+            />
+          ) : (
+            <FlashCardGame moveToShow={moveToShow} onAnswer={handleAnswer} />
+          )}
+        </div>
+      </ContentContainer>
+    </>
   )
 }
 
@@ -202,21 +216,22 @@ const StartPage = ({
 }: StartPageProps) => {
   return (
     <div className="flex flex-col items-center">
-      <div className="prose prose-invert">
-        <p>
-          A flash card shows a move on the front side. Your job is to guess a
-          property of the move, for example how many frames it is on block. Then
-          you flip the card and check if yor guess was correct{' '}
-        </p>
-      </div>
-
       <Button onClick={onStart} className="m-4 text-xl">
         Start
       </Button>
-      <div>
-        <p className="py-2 text-lg">Current State</p>
+      <div className="prose prose-invert mt-8">
+        <h3>How it works</h3>
+        <p>
+          A flash card shows a move on the front side. Your job is to guess a
+          property of the move, for example how many frames it is on block. Then
+          you flip the card and check if yor guess was correct. Cards marked as
+          "Wrong" will be shown again sooner than cards marked as "Correct".
+          Card marked as "Ignore" will never be shown again.
+        </p>
+
+        <h3 className="py-2">Current State</h3>
         <div className="grid grid-cols-2 gap-2">
-          <div>Unssen: </div>
+          <div>Unseen: </div>
           <div>{numUnseen}</div>
           <div>Correct: </div>
           <div>{numCorrect}</div>
@@ -226,6 +241,7 @@ const StartPage = ({
           <div>{numIngnored}</div>
         </div>
       </div>
+
       <Button className="mt-4" onClick={onResetState} variant="secondary">
         Reset state
       </Button>
@@ -262,98 +278,6 @@ const FlashCardGame = ({ onAnswer, moveToShow }: FlashCardGameProps) => {
         <div className="col-start-1 row-start-1 [backface-visibility:hidden] [transform:rotateY(180deg)]">
           <FlashCardBack move={moveToShow} onAnswer={handleAnswer} />
         </div>
-      </div>
-    </div>
-  )
-}
-
-type FlashCardFrontProps = {
-  move: Move
-  onFlip: () => void
-}
-const FlashCardFront = ({ move, onFlip }: FlashCardFrontProps) => {
-  const [showVideo, setShowVideo] = useState(false)
-  return (
-    <div className="h-full w-full bg-foreground/10">
-      <button
-        type="button"
-        className="flex w-full items-center justify-center p-2 text-xl"
-        onClick={onFlip}
-      >
-        {move.command}
-      </button>
-      {move.video && showVideo ? (
-        <>
-          <video
-            className="aspect-video max-w-full p-2 pb-1"
-            src={`https://wavu.wiki/t/Special:Redirect/file/${move?.video}`}
-            style={{
-              width: '640px',
-            }}
-            loop
-            controls
-            autoPlay
-            muted
-          />
-          <div className="pb-1 pl-2 text-sm">Video from Wavu wiki</div>
-        </>
-      ) : (
-        <div className="flex items-center justify-center">
-          <Button
-            size="lg"
-            onClick={() => setShowVideo(true)}
-            className="flex w-16 items-center justify-center p-2"
-          >
-            <PlayIcon />
-          </Button>
-        </div>
-      )}
-      <button
-        className="flex w-full items-center justify-center p-2"
-        onClick={onFlip}
-      >
-        <div className={cx(buttonVariants({ variant: 'default' }), 'w-32')}>
-          Flip
-        </div>
-      </button>
-    </div>
-  )
-}
-
-type FlashCardBackProps = {
-  move: Move
-  onAnswer: (flashCardAnswer: FlashCardAnswerType) => void
-}
-
-const FlashCardBack = ({ move, onAnswer }: FlashCardBackProps) => {
-  return (
-    <div className="flex h-full flex-col bg-foreground/10">
-      <div className="flex flex-grow items-center justify-center">
-        <div className="grid grid-cols-2 gap-2 p-2">
-          <div>Block</div>
-          <div>{move.block}</div>
-          <div>Hit</div>
-          <div>{move.hit}</div>
-          <div>Level</div>
-          <div>{move.hitLevel}</div>
-        </div>
-      </div>
-      <div className="flex w-full justify-between p-2">
-        <Button
-          onClick={() => onAnswer(FlashCardAnswer.Wrong)}
-          className="bg-red-700 text-white"
-        >
-          Wrong
-        </Button>
-        <Button
-          onClick={() => onAnswer(FlashCardAnswer.Correct)}
-          className="bg-green-700 text-white"
-        >
-          Correct
-        </Button>
-        <Button onClick={() => onAnswer(FlashCardAnswer.Ignored)}>
-          Ignore
-        </Button>
       </div>
     </div>
   )
