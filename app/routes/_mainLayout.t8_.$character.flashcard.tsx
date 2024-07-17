@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react'
+import { FaSortNumericUp } from 'react-icons/fa'
 import { PlayIcon } from '@radix-ui/react-icons'
 import { type MetaFunction } from '@remix-run/node'
 import cx from 'classix'
@@ -9,6 +10,8 @@ import {
   FlashCardAnswer,
   type FlashCardAnswerType,
 } from '~/features/flashCards/FlashCardAnswer'
+import { FlashCardBack } from '~/features/flashCards/flashCardBack'
+import { FlashCardFront } from '~/features/flashCards/flashCardFront'
 import { useFlashCardAppState } from '~/features/flashCards/useFlashCardAppState'
 import { useFrameData } from '~/hooks/useFrameData'
 import type { CharacterFrameData } from '~/types/CharacterFrameData'
@@ -71,10 +74,7 @@ export default function FlashCard() {
     [characterName, flashCardAppState],
   )
 
-  console.log({ flashCardAppState, charFlashCardState })
-
   const unseenMoves = useMemo(() => {
-    console.log('filter')
     return viableMoves
       .filter(
         m =>
@@ -92,23 +92,19 @@ export default function FlashCard() {
 
   const findAndSetMoveToShow = () => {
     let command = ''
-    if (unseenMoves.length > 0) {
-      command = unseenMoves[Math.floor(Math.random() * unseenMoves.length)]
-    } else if (charFlashCardState.wrong.length > 0) {
+    const numWrong = charFlashCardState.wrong.length
+    const numCorrect = charFlashCardState.correct.length
+    const numUnseen = unseenMoves.length
+    if (numWrong >= 7 || (numWrong > 0 && numUnseen === 0)) {
+      command = charFlashCardState.wrong[Math.floor(Math.random() * numWrong)]
+    } else if (numUnseen > 0) {
+      command = unseenMoves[Math.floor(Math.random() * numUnseen)]
+    } else if (numCorrect > 0) {
       command =
-        charFlashCardState.wrong[
-          Math.floor(Math.random() * charFlashCardState.wrong.length)
-        ]
-    } else if (charFlashCardState.correct.length > 0) {
-      command =
-        charFlashCardState.correct[
-          Math.floor(Math.random() * charFlashCardState.correct.length)
-        ]
+        charFlashCardState.correct[Math.floor(Math.random() * numCorrect)]
     }
     setMoveToShow(viableMoves.find(m => m.command === command))
   }
-
-  console.log({ flashCardAppState, unseenMoves })
 
   const handleAnswer = (answer: FlashCardAnswerType) => {
     invariant(moveToShow)
@@ -216,7 +212,7 @@ const StartPage = ({
       <div>
         <p className="py-2 text-lg">Current State</p>
         <div className="grid grid-cols-2 gap-2">
-          <div>Unssen: </div>
+          <div>Unseen: </div>
           <div>{numUnseen}</div>
           <div>Correct: </div>
           <div>{numCorrect}</div>
@@ -248,11 +244,11 @@ const FlashCardGame = ({ onAnswer, moveToShow }: FlashCardGameProps) => {
   return (
     <div
       key={moveToShow.command}
-      className="group h-96 w-80 animate-in fade-in [perspective:1000px]"
+      className="animate-in fade-in group h-96 w-80 [perspective:1000px]"
     >
       <div
         className={cx(
-          'grid rounded-md border-[1.5px] border-foreground/50 transition-all duration-500 [transform-style:preserve-3d]',
+          'border-foreground/50 grid rounded-md border-[1.5px] transition-all duration-500 [transform-style:preserve-3d]',
           flipped && '[transform:rotateY(180deg)]',
         )}
       >
@@ -262,98 +258,6 @@ const FlashCardGame = ({ onAnswer, moveToShow }: FlashCardGameProps) => {
         <div className="col-start-1 row-start-1 [backface-visibility:hidden] [transform:rotateY(180deg)]">
           <FlashCardBack move={moveToShow} onAnswer={handleAnswer} />
         </div>
-      </div>
-    </div>
-  )
-}
-
-type FlashCardFrontProps = {
-  move: Move
-  onFlip: () => void
-}
-const FlashCardFront = ({ move, onFlip }: FlashCardFrontProps) => {
-  const [showVideo, setShowVideo] = useState(false)
-  return (
-    <div className="h-full w-full bg-foreground/10">
-      <button
-        type="button"
-        className="flex w-full items-center justify-center p-2 text-xl"
-        onClick={onFlip}
-      >
-        {move.command}
-      </button>
-      {move.video && showVideo ? (
-        <>
-          <video
-            className="aspect-video max-w-full p-2 pb-1"
-            src={`https://wavu.wiki/t/Special:Redirect/file/${move?.video}`}
-            style={{
-              width: '640px',
-            }}
-            loop
-            controls
-            autoPlay
-            muted
-          />
-          <div className="pb-1 pl-2 text-sm">Video from Wavu wiki</div>
-        </>
-      ) : (
-        <div className="flex items-center justify-center">
-          <Button
-            size="lg"
-            onClick={() => setShowVideo(true)}
-            className="flex w-16 items-center justify-center p-2"
-          >
-            <PlayIcon />
-          </Button>
-        </div>
-      )}
-      <button
-        className="flex w-full items-center justify-center p-2"
-        onClick={onFlip}
-      >
-        <div className={cx(buttonVariants({ variant: 'default' }), 'w-32')}>
-          Flip
-        </div>
-      </button>
-    </div>
-  )
-}
-
-type FlashCardBackProps = {
-  move: Move
-  onAnswer: (flashCardAnswer: FlashCardAnswerType) => void
-}
-
-const FlashCardBack = ({ move, onAnswer }: FlashCardBackProps) => {
-  return (
-    <div className="flex h-full flex-col bg-foreground/10">
-      <div className="flex flex-grow items-center justify-center">
-        <div className="grid grid-cols-2 gap-2 p-2">
-          <div>Block</div>
-          <div>{move.block}</div>
-          <div>Hit</div>
-          <div>{move.hit}</div>
-          <div>Level</div>
-          <div>{move.hitLevel}</div>
-        </div>
-      </div>
-      <div className="flex w-full justify-between p-2">
-        <Button
-          onClick={() => onAnswer(FlashCardAnswer.Wrong)}
-          className="bg-red-700 text-white"
-        >
-          Wrong
-        </Button>
-        <Button
-          onClick={() => onAnswer(FlashCardAnswer.Correct)}
-          className="bg-green-700 text-white"
-        >
-          Correct
-        </Button>
-        <Button onClick={() => onAnswer(FlashCardAnswer.Ignored)}>
-          Ignore
-        </Button>
       </div>
     </div>
   )
