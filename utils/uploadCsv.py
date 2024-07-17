@@ -24,7 +24,7 @@ def convert(path, gSheet):
     moveTypeToContent = {};
         
     for filePath in filePaths:
-        f = open(filePath, "r", newline="")
+        f = open(filePath, "r", newline="", encoding='utf-8')
         csvContent = csv.reader(f, delimiter=csvSep)
         csvRows = []
         for row in csvContent:

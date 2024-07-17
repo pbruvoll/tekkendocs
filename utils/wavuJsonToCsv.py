@@ -53,7 +53,7 @@ def convert(filePath, outDir):
     
 
         
-    f = open(filePath, "r")
+    f = open(filePath, "r", encoding='utf-8')
     jsonData = json.load(f)
     f.close()
     csvContent = [list(map(lambda x: x["displayName"], columns))];

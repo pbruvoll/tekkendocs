@@ -72,6 +72,9 @@ def _normalize_data(data):
         return re.sub(r'[^\x00-\x7F]+', '', data).replace('&amp;#58;', ':')
     else:
         return ""
+    
+def _none_to_empty(data):
+    return '' if data is None else data
 
 
 # last entry is always the input
@@ -106,7 +109,7 @@ def _convert_json_movelist(move_list_json: list) -> List[Move]:
         if move["title"]["ns"] == "0":
             alias = []
             id = _normalize_data(move["title"]["id"])
-            name = html.unescape(_normalize_data(move["title"]["name"]))
+            name = html.unescape(_none_to_empty(move["title"]["name"]))
             input = _normalize_data(
                 _get_all_parent_values_of("input", _normalize_data(move["title"]["parent"]), move_list_json)
                 + _normalize_data(move["title"]["input"]))
