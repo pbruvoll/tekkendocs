@@ -264,11 +264,11 @@ const FlashCardGame = ({ onAnswer, moveToShow }: FlashCardGameProps) => {
   return (
     <div
       key={moveToShow.command}
-      className="animate-in fade-in group h-96 w-80 [perspective:1000px]"
+      className="group h-96 w-80 animate-in fade-in [perspective:1000px]"
     >
       <div
         className={cx(
-          'border-foreground/50 grid rounded-md border-[1.5px] transition-all duration-500 [transform-style:preserve-3d]',
+          'grid rounded-md border-[1.5px] border-foreground/50 transition-all duration-500 [transform-style:preserve-3d]',
           flipped && '[transform:rotateY(180deg)]',
         )}
       >
