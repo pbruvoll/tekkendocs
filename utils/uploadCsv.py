@@ -24,7 +24,7 @@ def convert(path, gSheet):
     moveTypeToContent = {};
         
     for filePath in filePaths:
-        f = open(filePath, "r", newline="")
+        f = open(filePath, "r", newline="", encoding='utf-8')
         csvContent = csv.reader(f, delimiter=csvSep)
         csvRows = []
         for row in csvContent:
@@ -76,7 +76,7 @@ gSheet = gc.open_by_url(sheetUrl)
 
 folders = []
 charNum = 0
-charNumOffset = 0 # used to start from a offset if last upload did not complete
+charNumOffset = 25 # used to start from a offset if last upload did not complete
 for folder in os.listdir(inputDir) :
     charNum = charNum +1
     if charNum < charNumOffset :
