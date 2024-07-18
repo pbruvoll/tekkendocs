@@ -10,7 +10,7 @@ export type FlashCardBackProps = {
 
 export const FlashCardBack = ({ move, onAnswer }: FlashCardBackProps) => {
   return (
-    <div className="bg-foreground/10 flex h-full flex-col justify-between">
+    <div className="flex h-full flex-col justify-between bg-foreground/10">
       <div className="flex flex-grow items-center justify-center">
         <div className="grid grid-cols-2 gap-2 p-2">
           <div>Block</div>
