@@ -290,7 +290,7 @@ const FlashCardGame = ({
     <>
       <div
         key={moveToShow.command}
-        className="group h-96 w-80 animate-in fade-in [perspective:1000px]"
+        className="group w-80 animate-in fade-in [perspective:1000px]"
       >
         <div
           className={cx(
@@ -307,7 +307,7 @@ const FlashCardGame = ({
         </div>
       </div>
       <TaskProgress
-        className="self-stretch"
+        className="mt-4 self-stretch"
         numCompleted={numCorrect}
         total={numCorrect + numUnseen + numWrong}
       />
