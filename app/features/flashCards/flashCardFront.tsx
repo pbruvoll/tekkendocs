@@ -12,15 +12,15 @@ export type FlashCardFrontProps = {
 }
 export const FlashCardFront = ({ move, onFlip }: FlashCardFrontProps) => {
   return (
-    <div className="bg-foreground/10 flex h-full w-full flex-col justify-between">
+    <div className="bg-foreground/10 flex h-full w-full flex-col">
       <button
         type="button"
-        className="flex w-full items-center justify-center p-2 text-xl"
+        className="flex w-full flex-grow items-center justify-center p-2 text-xl"
         onClick={onFlip}
       >
         {move.command}
       </button>
-      <ShowVideoButton move={move} />
+      <ShowVideoButton move={move} className="m-1 my-3" />
       <button
         className="flex w-full items-center justify-center p-2 text-lg"
         onClick={onFlip}
