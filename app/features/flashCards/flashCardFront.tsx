@@ -9,7 +9,7 @@ export type FlashCardFrontProps = {
 }
 export const FlashCardFront = ({ move, onFlip }: FlashCardFrontProps) => {
   return (
-    <div className="bg-foreground/10 flex h-full w-full flex-col">
+    <div className="flex h-full w-full flex-col bg-foreground/10">
       <button
         type="button"
         className="flex w-full flex-grow items-center justify-center p-2 text-xl"
