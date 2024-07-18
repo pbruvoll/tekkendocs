@@ -7,7 +7,6 @@ import { Button } from '@/components/ui/button'
 import { ContentContainer } from '~/components/ContentContainer'
 import Nav, { type NavLinkInfo } from '~/components/Nav'
 import { TaskProgress } from '~/components/TaskProgress'
-import { TrophyProgress } from '~/components/TrophyProgress'
 import {
   FlashCardAnswer,
   type FlashCardAnswerType,
@@ -26,6 +25,7 @@ const navData: NavLinkInfo[] = [
   { link: '../', displayName: 'Frame data' },
   { link: '../meta', displayName: 'Cheat sheet' },
   { link: '../antistrat', displayName: 'Anti strats' },
+  { link: '', displayName: 'Flash card' },
 ]
 
 export const meta: MetaFunction = ({ data, params, matches }) => {
@@ -257,6 +257,9 @@ const StartPage = ({
 
       <Button className="mt-4" onClick={onResetState} variant="secondary">
         Reset state
+      </Button>
+      <Button onClick={onStart} className="m-4 text-xl">
+        Start
       </Button>
     </div>
   )
