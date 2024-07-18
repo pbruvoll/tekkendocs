@@ -41,6 +41,7 @@ const navData: NavLinkInfo[] = [
   { link: '../', displayName: 'Frame data' },
   { link: '', displayName: 'Cheat sheet' },
   { link: '../antistrat', displayName: 'Anti strats' },
+  { link: '../flashcard', displayName: 'Flash card' },
 ]
 
 export const loader = async ({ params }: LoaderFunctionArgs) => {

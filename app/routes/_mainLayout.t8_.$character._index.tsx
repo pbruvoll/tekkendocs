@@ -22,6 +22,7 @@ const navData: NavLinkInfo[] = [
   { link: '', displayName: 'Frame data' },
   { link: 'meta', displayName: 'Cheat Sheet' },
   { link: 'antistrat', displayName: 'Anti strats' },
+  { link: 'flashcard', displayName: 'Flash card' },
 ]
 
 export const headers: HeadersFunction = args => ({

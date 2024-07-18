@@ -18,6 +18,7 @@ const navData: NavLinkInfo[] = [
   { link: '../', displayName: 'Frame data' },
   { link: '../meta', displayName: 'Cheat sheet' },
   { link: '', displayName: 'Anti strats' },
+  { link: '../flashcard', displayName: 'Flash card' },
 ]
 export const loader = async ({ params }: DataFunctionArgs) => {
   const character = getCharacterFromParams(params)
