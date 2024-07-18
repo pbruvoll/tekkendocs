@@ -5,10 +5,15 @@ import { type Move } from '~/types/Move'
 
 export type MoveVideoProps = {
   move: Move
+  hideFrameData?: boolean
   className?: string
 }
 
-export const MoveVideo = ({ move, className }: MoveVideoProps) => {
+export const MoveVideo = ({
+  move,
+  hideFrameData,
+  className,
+}: MoveVideoProps) => {
   const isHydrated = useHydrated()
 
   if (move.video) {
@@ -29,7 +34,7 @@ export const MoveVideo = ({ move, className }: MoveVideoProps) => {
 
   if (move.ytVideo && isHydrated) {
     return (
-      <div className="aspect-video">
+      <div className="relative aspect-video">
         <ReactPlayer
           playing
           controls
@@ -46,6 +51,9 @@ export const MoveVideo = ({ move, className }: MoveVideoProps) => {
           loop
           url={`https://www.youtube.com/watch?v=${move.ytVideo.id}`}
         />
+        {hideFrameData && (
+          <div className="absolute bottom-0 right-[2%] aspect-square w-1/12 bg-black" />
+        )}
       </div>
     )
   }

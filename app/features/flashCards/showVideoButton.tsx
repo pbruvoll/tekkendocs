@@ -8,15 +8,26 @@ import { type Move } from '~/types/Move'
 export type ShowVideoButtonProps = {
   move: Move
   className?: string
+  hideFrameData?: boolean
 }
-export const ShowVideoButton = ({ move, className }: ShowVideoButtonProps) => {
+export const ShowVideoButton = ({
+  move,
+  className,
+  hideFrameData,
+}: ShowVideoButtonProps) => {
   const [showVideo, setShowVideo] = useState(false)
   const moveHasVideo = !!(move.video || move.ytVideo)
   if (!moveHasVideo) {
     return null
   }
   if (showVideo) {
-    return <MoveVideo move={move} className={className} />
+    return (
+      <MoveVideo
+        move={move}
+        className={className}
+        hideFrameData={hideFrameData}
+      />
+    )
   }
   return (
     <div className={cx('flex items-center justify-center', className)}>
