@@ -4,6 +4,9 @@
 
 @layer base {
   :root {
+
+    --td-amber-9: 42 100% 62%;
+
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
 
@@ -33,6 +36,10 @@
     --ring: 222.2 84% 4.9%;
 
     --radius: 0.5rem;
+
+    /* extension of shadcn theme : */
+    --success: 120 62.8% 30.6%;
+    --success-foreground: 210 40% 98%;
   }
 
   .dark {
@@ -45,11 +52,11 @@
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 40% 98%;
+    --primary: var(--td-amber-9);
     --primary-foreground: 222.2 47.4% 11.2%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 210 40% 98%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
 
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
@@ -63,6 +70,10 @@
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
+
+    /* extension of shadcn theme : */
+    --success: 120 62.8% 30.6%;
+    --success-foreground: 210 40% 98%;
   }
 }
 

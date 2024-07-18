@@ -9,7 +9,7 @@ export type FlashCardBackProps = {
 
 export const FlashCardBack = ({ move, onAnswer }: FlashCardBackProps) => {
   return (
-    <div className="flex h-full flex-col bg-foreground/10">
+    <div className="bg-foreground/10 flex h-full flex-col">
       <div className="flex flex-grow items-center justify-center">
         <div className="grid grid-cols-2 gap-2 p-2">
           <div>Block</div>
@@ -23,17 +23,20 @@ export const FlashCardBack = ({ move, onAnswer }: FlashCardBackProps) => {
       <div className="flex w-full justify-between p-2">
         <Button
           onClick={() => onAnswer(FlashCardAnswer.Wrong)}
-          className="bg-red-700 text-white"
+          variant="destructive"
         >
           Wrong
         </Button>
         <Button
           onClick={() => onAnswer(FlashCardAnswer.Correct)}
-          className="bg-green-700 text-white"
+          variant="success"
         >
           Correct
         </Button>
-        <Button onClick={() => onAnswer(FlashCardAnswer.Ignored)}>
+        <Button
+          variant="secondary"
+          onClick={() => onAnswer(FlashCardAnswer.Ignored)}
+        >
           Ignore
         </Button>
       </div>

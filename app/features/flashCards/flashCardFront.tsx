@@ -13,7 +13,7 @@ export const FlashCardFront = ({ move, onFlip }: FlashCardFrontProps) => {
   const [showVideo, setShowVideo] = useState(false)
   const moveHasVideo = !!(move.video || move.ytVideo)
   return (
-    <div className="flex h-full w-full flex-col justify-between bg-foreground/10">
+    <div className="bg-foreground/10 flex h-full w-full flex-col justify-between">
       <button
         type="button"
         className="flex w-full items-center justify-center p-2 text-xl"
@@ -28,6 +28,7 @@ export const FlashCardFront = ({ move, onFlip }: FlashCardFrontProps) => {
           <div className="flex items-center justify-center">
             <Button
               size="lg"
+              variant="secondary"
               onClick={() => setShowVideo(true)}
               className="flex w-16 items-center justify-center p-2"
             >
@@ -36,10 +37,15 @@ export const FlashCardFront = ({ move, onFlip }: FlashCardFrontProps) => {
           </div>
         ))}
       <button
-        className="flex w-full items-center justify-center p-2"
+        className="flex w-full items-center justify-center p-2 text-lg"
         onClick={onFlip}
       >
-        <div className={cx(buttonVariants({ variant: 'default' }), 'mt-auto')}>
+        <div
+          className={cx(
+            buttonVariants({ variant: 'default' }),
+            'mt-auto h-12 w-24',
+          )}
+        >
           Flip
         </div>
       </button>
