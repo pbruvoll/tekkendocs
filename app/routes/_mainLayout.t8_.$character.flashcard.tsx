@@ -6,6 +6,8 @@ import invariant from 'tiny-invariant'
 import { Button } from '@/components/ui/button'
 import { ContentContainer } from '~/components/ContentContainer'
 import Nav, { type NavLinkInfo } from '~/components/Nav'
+import { TaskProgress } from '~/components/TaskProgress'
+import { TrophyProgress } from '~/components/TrophyProgress'
 import {
   FlashCardAnswer,
   type FlashCardAnswerType,
@@ -190,7 +192,13 @@ export default function FlashCard() {
               }
             />
           ) : (
-            <FlashCardGame moveToShow={moveToShow} onAnswer={handleAnswer} />
+            <FlashCardGame
+              moveToShow={moveToShow}
+              onAnswer={handleAnswer}
+              numUnseen={unseenMoves.length}
+              numCorrect={charFlashCardState.correct.length}
+              numWrong={charFlashCardState.wrong.length}
+            />
           )}
         </div>
       </ContentContainer>
@@ -219,6 +227,11 @@ const StartPage = ({
       <Button onClick={onStart} className="m-4 text-xl">
         Start
       </Button>
+      <TaskProgress
+        className="self-stretch"
+        numCompleted={numCorrect}
+        total={numCorrect + numUnseen + numWrong}
+      />
       <div className="prose prose-invert mt-8">
         <h3>How it works</h3>
         <p>
@@ -252,8 +265,17 @@ const StartPage = ({
 export type FlashCardGameProps = {
   onAnswer: (flashCardAnswer: FlashCardAnswerType) => void
   moveToShow: Move
+  numUnseen: number
+  numCorrect: number
+  numWrong: number
 }
-const FlashCardGame = ({ onAnswer, moveToShow }: FlashCardGameProps) => {
+const FlashCardGame = ({
+  onAnswer,
+  moveToShow,
+  numCorrect,
+  numUnseen,
+  numWrong,
+}: FlashCardGameProps) => {
   const [flipped, setFlipped] = useState(false)
 
   const handleAnswer = (answer: FlashCardAnswerType) => {
@@ -262,23 +284,30 @@ const FlashCardGame = ({ onAnswer, moveToShow }: FlashCardGameProps) => {
   }
 
   return (
-    <div
-      key={moveToShow.command}
-      className="group h-96 w-80 animate-in fade-in [perspective:1000px]"
-    >
+    <>
       <div
-        className={cx(
-          'grid rounded-md border-[1.5px] border-foreground/50 transition-all duration-500 [transform-style:preserve-3d]',
-          flipped && '[transform:rotateY(180deg)]',
-        )}
+        key={moveToShow.command}
+        className="animate-in fade-in group h-96 w-80 [perspective:1000px]"
       >
-        <div className="col-start-1 row-start-1 [backface-visibility:hidden]">
-          <FlashCardFront move={moveToShow} onFlip={() => setFlipped(true)} />
-        </div>
-        <div className="col-start-1 row-start-1 [backface-visibility:hidden] [transform:rotateY(180deg)]">
-          <FlashCardBack move={moveToShow} onAnswer={handleAnswer} />
+        <div
+          className={cx(
+            'border-foreground/50 grid rounded-md border-[1.5px] transition-all duration-500 [transform-style:preserve-3d]',
+            flipped && '[transform:rotateY(180deg)]',
+          )}
+        >
+          <div className="col-start-1 row-start-1 [backface-visibility:hidden]">
+            <FlashCardFront move={moveToShow} onFlip={() => setFlipped(true)} />
+          </div>
+          <div className="col-start-1 row-start-1 [backface-visibility:hidden] [transform:rotateY(180deg)]">
+            <FlashCardBack move={moveToShow} onAnswer={handleAnswer} />
+          </div>
         </div>
       </div>
-    </div>
+      <TaskProgress
+        className="self-stretch"
+        numCompleted={numCorrect}
+        total={numCorrect + numUnseen + numWrong}
+      />
+    </>
   )
 }
