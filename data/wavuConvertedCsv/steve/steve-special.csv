@@ -2,7 +2,7 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 2+3;m;12 (12);i16;+1;+2c;;"* Heat Burst
 * Cancel to r45 with b,b
 Power crush 8~";hb pc8~;Steve-2+3;Heat Burst;r30;;
-H.EXD.1+3;h (th);0;i18;;;;"* Unbreakable
+H.EXD.1+3;h (th);;i18;;;;"* Unbreakable
 * Transitions to TFA";;Steve-H.EXD.1+3;Two-Faced (TFA);;;
 H.LNH;sp, m, h (th);15;;;;;"* Parries mid attacks
 * Transitions to TFA after successful parry
@@ -10,7 +10,7 @@ Parry state";ps;Steve-H.LNH;Two-Faced;;;
 H.df+3+4;sp;;;;;;"* Transitions to EXD
 * Partially uses remaining heat time
 High crush";cs;Steve-H.df+3+4;;;;
-H.2+3;m,th;10,4,2,3,3,3,25;i16;+8 LNH;0;;"* Heat Smash
+H.2+3;m,th;10,4,2,3,3,3,25;i16;+8 LNH;+0;;"* Heat Smash
 * Floor Break
 * Spike
 * Chip damage on block
@@ -286,9 +286,9 @@ SWY.1+2;th;;i10;-2;+1 / +10wc;;"* +10 when opponent hits the wall, if the throw 
 SWY.1+2~b;th;;i10;-2;+1 / +13~17wc;;"* +13 when opponent hits the wall after being rotated by < 90 degrees
 * +17 when opponent hits the wall after being rotated by > 90 degrees
 * Throw break 1+2";;Steve-SWY.1+2~b_u_d;;;;
-TFA.1;th;15;;0;+14;;"* Press 1 for throw break
+TFA.1;th;15;;+0;+14;;"* Press 1 for throw break
 * Partially uses remaining heat time";;Steve-H.EXDThrow.1;Dominion Rush;;;
-TFA.2;th;50;;0;+0d;;"* Press 2 for throw break
+TFA.2;th;50;;+0;+0d;;"* Press 2 for throw break
 * Partially uses remaining heat time";;Steve-H.EXDThrow.2;Debutante Ball;;;
 qcb+2+4;throw;40;i12;;;;* 2 Throw break;;Steve-qcb+2+4;Spinning Elbow Drop;;;
 uf+1+2;throw;40;i12;;;;* 1+2 Throw break;;Steve-uf+1+2;Armlock Throw;;;
