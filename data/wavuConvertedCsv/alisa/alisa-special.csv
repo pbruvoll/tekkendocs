@@ -5,15 +5,15 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * Partially uses Heat
 Power crush 7~62";hb pc7~62;Alisa-2+3;Heat Burst;r30;;
 H.d+1+2;;;;;;;"* Cancel to r30 with db
-* partially consumes Heat
+* Partially consumes Heat
 Power crush 6~36";pc6~36;Alisa-H.d+1+2;Emergency Destructive Form;r47 DES;;
-H.f+1+4;;;;;;;"* Transition to DBT
-* partially consumes Heat";;Alisa-H.f+1+4;Emergency Dual Boot;r17 DBT;;
+H.f+1+4;;;;;;;"* Partially consumes Heat
+Low crush 18~40 fs41~43";js18~40 fs41~43;Alisa-H.f+1+4;Emergency Dual Boot;r17 DBT;;
 H.2+3;m;50 (28);i20~21;+8;-15d;;"* Heat Smash
 * Transition to SBT with 3_4
 * Transition to DBT with f+3_f+4
 * 14 chip damage on block";hs;Alisa-H.2+3;Quick-fix Protocol;r45;;
-R.df+1+2;m;;i20;-15;+0d;;"* Alternate input: R.DES.df+1+2
+R.df+1+2;m;;i20;-15;+0d;;"* Rage Art
 * Erases opponent's recoverable health on hit
 Power crush 8~";pc8~;Alisa-R.df+1+2;Radiant Pegasus Bomb;r39;;
 1;h;5;i10;+1;+8;;;;Alisa-1;;r19;;
@@ -35,7 +35,8 @@ Power crush 8~";pc8~;Alisa-R.df+1+2;Radiant Pegasus Bomb;r39;;
 * 2nd hit available on hit or block only";bbr;Alisa-2,2;Troubleshooting;r25;;
 2,3;h,m;10,8;,i22~23;-10;+1;;"* Knee
 * Combo from 1st CH with 2f delay";kne;Alisa-2,3;;r28;;
-2,3,3;h,m,m;10,8,25;,i20~22;-11;+16a (-7);+61a (+41);"* Balcony Break
+2,3,3;h,m,m;10,8,25;,i20~22;-11;+16a (-7);+61a (+41);"* Strong Aerial Tailspin
+* Balcony Break
 * Combo from 2nd hit with 9f delay
 * Input can be delayed 12f
 * Move can be delayed 11f
@@ -44,7 +45,7 @@ Power crush 8~";pc8~;Alisa-R.df+1+2;Radiant Pegasus Bomb;r39;;
 3;m;10;i13~14;-12;-1;;;;Alisa-3;;r30;;
 3,2;m,h;10,20;,i26~27;-2;+20a (+11);;"* Heat Engager
 
-* Heat Dash +5g +34a (+27)
+* Heat Dash  +34a (+27) on hit, +5 on block
 
 * Homing
 * Balcony Break
@@ -60,7 +61,7 @@ Power crush 8~";pc8~;Alisa-R.df+1+2;Radiant Pegasus Bomb;r39;;
 * Balcony Break";hom bbr;Alisa-4;Magic 4;r28;;
 1+2;m;22;i19~20;-4;+15a;;"* Heat Engager
 
-* Heat Dash +5g +67a (+50)
+* Heat Dash +67a (+50) on hit, +5 on block
 
 * Balcony Break
 * Spike
@@ -106,9 +107,7 @@ f+4,1,4;m,h,m;14,14,19 (13);,i27~65;-12~+26g;+1a;;"* Combo from 2nd hit
 f+1+2;m;25;i14~15;-12;+14c;;"* Balcony Break
 * Transition to r25 SBT with 3_4
 * Transition to r25 DBT with f+3_f+4";bbr;Alisa-f+1+2;Overflow;r35;;
-f+3+4;;;;;;;"* Transition to r21 BKP with d
-* Transition to r32 BKP with b (Backswing)
-Low crush 26~54 fs55~57";js26~54 fs55~57;Alisa-f+3+4;Boot;r25 SBT;;
+f+3+4;;;;;;;Low crush 26~54 fs55~57;js26~54 fs55~57;Alisa-f+3+4;Boot;r25 SBT;;
 df+1;m;10;i13;-6;+5;+8;;;Alisa-df+1;;r25;;
 df+1,1;m,h;10,20;,i30~31;+1;+8;;"* Combo from 1st CH with 2f delay
 * Balcony Break on aerial hit";;Alisa-df+1,1;;r19;;
@@ -155,8 +154,11 @@ b+1,1+2;m,SL,m;15,1,30;,i25~40 ,i26~28;-16;+71a;;"* Tornado
 * Head
 * Input can be delayed 13f
 * 2nd hit combos into 3rd on CH only";trn;Alisa-b+1,1+2;Gadget Found;r42;;
-b+1+3;;;;;;;"* Alternate input: b+2+4
-Parry state";ps;Alisa-b+1+3;Model Change;;;
+b+1+3;;;;;;;"* Parries all highs
+Parry state 3~15";ps3~15;Alisa-b+1+3;Model Change;r45;;
+b+1+3,P;m!;25;i20~21;;-5a (-14);;"* Balcony Break
+* Interrupt with i11 after parry
+High crush 1~39";bbr cs1~39;Alisa-b+1+3,P;;r49;;
 b+2;m;12;i18;-9;+1;;;;Alisa-b+2;;r31;;
 b+2,1;m,m;12,17;,i25~26;-13;+3c;+17a;"* Spike
 * Combo from 1st hit with 7f delay
@@ -210,7 +212,7 @@ uf+1;m,m,m;20,20,20;i19~20,i25,i17;-13;+68a (+52);;"* Tornado
 Low crush 20~40 fs41~43";trn js20~40 fs41~43;Alisa-uf+1;Brute Force Attack;r37;;
 uf+2;h;22;i16~17;-2;+20a (+11);;"* Heat Engager
 
-* Heat Dash +5 +62a (+42)
+* Heat Dash +62a (+42) on hit, +5 on block
 
 * Homing
 * Balcony Break
@@ -244,7 +246,6 @@ Low crush 11~49 fs50~52";js11~49 fs50~52;Alisa-1+2+3+4;Ki Charge;r60;;
 b,B+1+4;h!;50;i63~84;;+37a (-18);;"* Balcony Break
 * Weapon
 Low crush 12~79 fs80~82";bbr wpn js12~79 fs80~82;Alisa-b,B+1+4;Double Rocket Punch;r16;;
-b,b,UB;;;;;;;is8~13 Low crush 14~57 fs58~60;is8~13 js14~57 fs58~60;Alisa-b,b,UB;Wall Jump;r62;;
 f,F+2;m;18;i16~17;-18;+5a;;* Balcony Break;bbr;Alisa-f,F+2;;r39;;
 f,F+2,3;m,m;18,25;,i22~24;-13;+28a (+2);;"* Balcony Break
 * Combo from 1st hit
@@ -304,8 +305,12 @@ High crush 1~";cs1~;Alisa-FC.d+1;;r24 FC;;
 FC.d+2;sl;8;i11;-4;+7;;High crush 1~;cs1~;Alisa-FC.d+2;;r23 FC;;
 FC.d+3;L;10;i16;-17;-6;;High crush 1~;cs1~;Alisa-FC.d+3;;r36 FC;;
 FC.d+4;l;6;i12;-15;-4;;High crush 1~;cs1~;Alisa-FC.d+4;;r34 FC;;
-BKP.1;h;31 (9);i11~13;+4~+6;+27a (+1);;Balcony Break;bbr;Alisa-BKP.1;Recovery Hook;r37;;
-BKP.2;h;34 (6);i11~33;-9~+13;+21 (+6);;* Tornado;trn;Alisa-BKP.2;Rapid Rocket Punch;r22;;
+(Back to wall).b,b,UB;;;;;;;is8~13 Low crush 14~57 fs58~60;is8~13 js14~57 fs58~60;Alisa-(Back to wall).b,b,UB;[[Wall Jump Attack]];r62;;
+BKP.1;h;31;i11~13;+4~+6;+27a (+1);;"* Strong Aerial Tailspin
+* Balcony Break
+* 9 chip damage on block";bbr;Alisa-BKP.1;Recovery Hook;r37;;
+BKP.2;h;34;i11~33;-9~+13;+21 (+6);;"* Tornado
+* 6 chip damage on block";trn;Alisa-BKP.2;Rapid Rocket Punch;r22;;
 BKP.3;m;30;i24~27;-9;+72a;;"Balcony Break
 Low crush 15~40 fs41~43";bbr js15~40 fs41~43;Alisa-BKP.3;Meteor Kick;r34;;
 BKP.4;m;30;i18~23;-9~-4;+31a (+21);;"* Tornado
@@ -316,29 +321,50 @@ BT.4;m;20;i16~17;-3;+19a (+2);;"* Balcony Break
 High crush 5~12";bbr cs5~12;Alisa-BT.4;Goody Two Shoes;;;
 CLK(Two spins).3;m;22;i13~14;+0;+63a (+43);;"* Balcony Break
 * 8 chip damage on block";bbr;Alisa-CLK(Two spins).3;;r31;;
-CLK.3;m;20;i13~14;-9;+12g;;"* Balcony Break
+CLK.3;m;20;i13~14;-9;+12g;;"* Strong Aerial Tailspin
+* Balcony Break
 * Combo from 1st hit
-* Power up after 2 or more spins";bbr;Alisa-CLK.3;Clockwork Spring Middle;r30;;
+* Power up after 2 or more spins
+* Interrupt with i8 from 1st block";bbr;Alisa-CLK.3;Clockwork Spring Middle;r30;;
 CLK.B;m;18;i19~20;-12;-1;;* Cancel with B;;Alisa-ws3,B;Clockwork Cancel;r35;;
 CLK.d+3;L;20;i30~31;-12;+73a (+57);;"* 8 chip damage on block
 High crush 9~";cs9~;Alisa-CLK.d+3;Clockwork Spring Low;r30 FC;;
-DBT.1;h;30;i24;+9;+11g;;"* Transition to DES
-* chip damage on block";chp;Alisa-DBT.1;Thruster Left;;;
-DBT.2;m;25;i16;-14;+32 (+14);;* chip damage on block;chp;Alisa-DBT.2;;;;
-DBT.2,1;mh;2513 (5);i26~28;-11c;+18 (-17);;"-28 on whiff.
+DBT.1;h,h,h,h,h,h;30;i24~28, i1~6, i1~6, i1~6, i1~6, i1~2;+9;+11g;;"* Weapon
+* Jail from 1st attack
+* 3 chip damage on block
+Low crush 17~34 fs35~37";wpn js17~34 fs35~37;Alisa-DBT.1;Thruster Left;r18 DES;;
+DBT.2;M,M,h,h,h;25;i16~18, i1~5, i1~5, i1~5, i1~1;-14;+32a (+14);;"* Weapon
+* Jail from 1st attack
+* 2 chip damage on block
+Low crush 17~66 fs67~69";wpn js17~66 fs67~69;Alisa-DBT.2;Thruster Right;r44 DES;;
+DBT.2,1;M,M,h,h,hh;2545;i26~28;-11c;+14a;;"-28 on whiff.
+* Balcony Break
 * Spike
-* Transition to DES
-* chip damage on block";spk chp;Alisa-DBT.2,1;Thruster Right - Burst;;;
-DBT.3;l;17;i6~20;-14c;+4c;+28a;;;Alisa-DBT.3;Eject Slider;;;
-DBT.4;m;22;i17~19;-27;+68;;;;Alisa-DBT.4;Upstream;;;
-DBT.1+2;m;35;i12;0;+21 (+0);;"* Balcony Break
-* Transition to DES
-* chip damage on block";bbr chp;Alisa-DBT.1+2;Thruster Drill;;;
-DBT.f+1;m;49;i19~21;-11;+0d;;"* chip damage on block
-* throw on front hit";chp;Alisa-DBT.f+1;Heartbeat Disabler;;;
-DBT.f+2;l;16;i19~20;-16c;-6;;;;Alisa-DBT.f+2;;;;
-DBT.f+2,2;l,m;16,14 (9);i35~37;-33;-6 (-13);;"* Balcony Break
-* chip damage on block";bbr chp;Alisa-DBT.f+2,2;Shut Down;;;
+* 13 chip damage on block
+,Low crush 17~100 fs101~103";bbr spk js17~100 fs101~103;Alisa-DBT.2,1;Thruster Right - Burst;r35 DES;;
+DBT.3;L;17;i16~20, i1~5;-14;+4c~+8c;+28a;"* Frame advantage +8c~+12c on shallow hit, +32 on CH
+* Listed states are on hit only
+Low crush 26~34 High crush 35~ fs34~38";js26~34 cs35~ fs34~38;Alisa-DBT.3;Eject Slider;r25 FC;;
+DBT.4;M;22,5;i17~19;-27;+68a;;"Steel pedal
+Low crush 17~62 fs63~65";js17~62 fs63~65;Alisa-DBT.4;Upstream;r50;;
+DBT.1+2;m,m,M,M;5,5,5,20;i12~15, i1~4, i1~5, i1~6;+0;+21a (+0);;"* Balcony Break
+* Spike
+* Weapon
+* Jail from 1st attack
+* 6 chip damage on block
+Low crush 17~66 fs67~69";bbr spk wpn js17~66 fs67~69;Alisa-DBT.1+2;Thruster Drill;r45 DES;;
+DBT.f+1;m,t;49;i19~21;-11;+0d;;"* Weapon
+* Transition to attack throw on front standing or airborne hit
+* 14 damage +3c vs BT opponent
+* 4 chip damage on block
+Low crush 17~32 fs33~35";wpn js17~32 fs33~35;Alisa-DBT.f+1;Heartbeat Disabler;r31;;
+DBT.f+2;L;16;i19~20;-16;-6;;"* Weapon
+* 4 chip damage on block";wpn;Alisa-DBT.f+2;Boot Up;r34;;
+DBT.f+2,2;L,m;16,14 (9);i35~37;-33;-6a (-13);;"* Balcony Break
+* Weapon
+* Combo from 1st hit
+* 6 chip damage on block
+,Low crush 35~67 fs68~70";bbr wpn js35~67 fs68~70;Alisa-DBT.f+2,2;Shut Down;r53;;
 DES.1;m,m,h,h,h,m;35;i13~18 i1~5 i1~7 i1~5 i1~4 i16~17;-9;+23a;;"* Weapon
 * 3 chip damage on block
 * Final hit available only on hit";wpn;Alisa-DES.1;Shredder;r32 DES;;
@@ -348,85 +374,125 @@ DES.2,1;M,M,m,h!;5,5,520;i28~56;;+85a (+69);;"* Tornado
 * Weapon
 * Available only as a combo from 1st hit";trn wpn;Alisa-DES.2,1;Shredding Sky Punch;r6;;
 DES.3;;;;;;;;;Alisa-DES.3;Idling;r1 DES;;
-DES.1+2;h,h,h;7,7,20;i16~18,i5~7,i9~11;+4;+15g;;"* Balcony Break
-* Homing
+DES.1+2;h,h,h;7,7,20;i16~18, i5~7, i9~11;+4;+15g;;"* Homing
+* Balcony Break
+* Weapon
 * Transition to DES
-* chip damage on block
-* Jails";bbr hom chp;Alisa-DES.1+2;Death Marionette;;;
-DES.BT.1;m;24;i19~22;-9;+25;;"* Alternate input: DES.BT.2
-* chip damage on block";chp;Alisa-DES.BT.1;Hertz Blade - Flare;;;
-DES.b,b;sp;;;;;;* Transition to DES;;Alisa-DES.b,b;Move Back;;;
-DES.b+2;m;17;i18~20;-12;0;+18a;* chip damage on block;chp;Alisa-DES.b+2;;;;
-DES.b+2,1;m,m;17,33;,i20~21;-3;+5;;"* Transition to DES
-* chip damage on block";chp;Alisa-DES.b+2,1;Hertz Blade - Tomahawk;;;
-DES.b+3;sp;;;;;;"* Alternate input: DES.b+4 or DES.ub,b
-* Transition to DES";;Alisa-DES.b+3;Retro Rockets;;;
-DES.d+1;l;20;i21;-12;+4;;"* Transition to DES
-* chip damage on block";chp;Alisa-DES.d+1;Hertz Blade - Scud;;;
-DES.d+2;l;26;i22~23;-14;+4;;"* Homing
-* chip damage on block";hom chp;Alisa-DES.d+2;Clock Boosting;;;
-DES.d+3;sp;0;;;;;"* Alternate input: DES.d+4 or DES.u+3 or DES.u+4
-* DES.d+3_4 goes to foreground, DES.u+3_4 goes to background
-* Transition to DES";;Alisa-DES.d+3;Evasive Action;;;
-DES.d+3,1;sp,m;0,25;,i20~21;-13;+14;;"* Balcony Break
-* Transition to DES
-* chip damage on block";bbr chp;Alisa-DES.d+3,1;Evasive Slash;;;
-DES.f,f;sp;;;;;;* Transition to DES;;Alisa-DES.f,f;Move Forward;;;
-DES.f+1;h;21;i11~13;+3;+9;;"* Transition to DES
-* chip damage on block";chp;Alisa-DES.f+1;Hertz Blade;;;
-DES.f+2;m;9;i15;-9;0;;* chip damage on block;chp;Alisa-DES.f+2;;;;
-DES.f+2,1;mm;9;;-12;-3;;* chip damage on block;chp;Alisa-DES.f+2,1;;;;
-DES.f+2,1,2;mmm;9;;-13;+30d;;"* Heat Engager
+* 6 chip damage on block
+* Jails";hom bbr wpn;Alisa-DES.1+2;Death Marionette;r26 DES;;
+DES.BT.1;m,m,m,m,m,m;4,4,4,4,4,4;i19~22, i1~3, i1~3, i1~3, i1~3, i1~3;-9;+25a;;"* Weapon
+* Combo from any hit
+* 1 chip damage on block";wpn;Alisa-DES.BT.1;Hertz Blade - Flare;r29 DES;;
+DES.b,b;;;;;;;;;Alisa-DES.b,b;Move Back;r1 DES;;
+DES.b+2;m;17;i18~20;-12;0;+18a;"* Weapon
+* 5 chip damage on block";wpn;Alisa-DES.b+2;;r35;;
+DES.b+2,1;m,m,SL,SL,SL,SL;17,8,5,5,5,5;,i20~21, i1~6, i1~5, i1~5, i1~3;-3;+5;;"* Spike
+* Weapon
+* Combo from any hit
+* 2 chip damage on block";spk wpn;Alisa-DES.b+2,1;Hertz Blade - Tomahawk;r20 DES;;
+DES.b+3;;;;;;;Low crush 7~33 fs34~36;js7~33 fs34~36;Alisa-DES.b+3;Retro Rockets;r41 DES;;
+DES.d+1;L,L,L,L,L;20;i20~24, i1~5, i1~5, i1~5, i1~3;-12;+4;;"* Weapon
+* Combo from any hit
+* 2 chip damage on block
+High crush 4~48";wpn cs4~48;Alisa-DES.d+1;Hertz Blade - Scud;r32 DES;;
+DES.d+2;L,L,L;3,3,20;i22~23;-14;+4c;;"* Homing
+* Weapon
+* Combo from any hit
+* 6 chip damage on block
+High crush 22~91";hom wpn cs22~91;Alisa-DES.d+2;Clock Boosting;r32;;
+DES.d+3;;;;;;;"* DES.d+3_4 goes to foreground, DES.u+3_4 goes to background
+Low crush 5~22 fs23~25";js5~22 fs23~25;Alisa-DES.d+3;Evasive Action;r25 DES;;
+DES.d+3,1;,m;,25;,i20~21;-13;+14;;"* Balcony Break
+* Weapon
+* 7 chip damage on block";bbr wpn;Alisa-DES.d+3,1;Evasive Slash;r35 DES;;
+DES.f,f;;;;;;;;;Alisa-DES.f,f;Move Forward;r1 DES;;
+DES.f+1;h;21;i11~13, i1~3, i1~3, i1~3, i1~3, i1~3, i1~1;+3;+9;;"* Weapon
+* 1 chip damage on block";wpn;Alisa-DES.f+1;Hertz Blade;r21 DES;;
+DES.f+2;m,m;9;i15, i1~1;-9;+0c;;"* Weapon
+* 2 chip damage on block";wpn;Alisa-DES.f+2;;r30 DES;;
+DES.f+2,1;m,m,m,m;9,9;,i23, i1~1;-12;-3c;;"* Weapon
+* Combo from 1st hit
+* 2 chip damage on block";wpn;Alisa-DES.f+2,1;;r33 DES;;
+DES.f+2,1,2;m,m,m,m,m,m;9,9,23;,i23~24, i4~5;-13;+30d;;"* Heat Engager
 
-* chip damage on block";he chp;Alisa-DES.f+2,1,2;Gigahertz Storm;;;
-DES.f+3;sp;;;;;;"* Alternate input: DES.f+4
-* Cancel with input DBT.B
-* Transition to Evasive Action with input DBT.U_D";;Alisa-DES.f+3;Dual Boot;;;
-DES.f+1+2;m;12;i23~27;+5;+33;;* chip damage on block;chp;Alisa-DES.f+1+2;;;;
-DES.f+1+2,1+2;m,m;12,20;,i20~26;-53;+41;;"* Transition to DES
-* chip damage on block";chp;Alisa-DES.f+1+2,1+2;Hertz Blade - Diablo;;;
-DES.uf+2;h;7;i10~14;;+25 (+18);;"* Transition to DES
-* only hits airborne opponents";;Alisa-DES.uf+2;Hertz Blade - Aegis;;;
-DES.uf+1+2;m;27;i29~31;-9c;+23;;"* Transition to DES
-* chip damage on block
-* Cancel DES with input DES.uf+1+2,1+2";chp;Alisa-DES.uf+1+2;Spindle Slash;;;
+* Heat Dash +62a (+42) on hit, +5 on block
+
+* Weapon
+* Combo from 1st or 2nd CH
+* 6 chip damage on block";he wpn;Alisa-DES.f+2,1,2;Gigahertz Storm;r42;;
+DES.f+3;;;;;;;"* Cancel to r33 with DBT.b
+* Transition to r50 sidestep with DBT.u_d
+Low crush 18~40 fs41~43";js18~40 fs41~43;Alisa-DES.f+3;Dual Boot;r17 DBT;;
+DES.f+3;;;;;;;"* Cancel to r33 with DBT.B
+* Transition to Evasive Action with input DBT.U_D
+Low crush 18~40 fs41~43";js18~40 fs41~43;Alisa-DES.f+3;Dual Boot;r17 DBT;;
+DES.f+1+2;m,m,m,m,m,m,m,m;34;i23~27, i1~5, i1~4, i1~4, i1~5, i1~5, i1~4, i1~1;+5;+33;;"* Weapon
+* Combo from any hit
+* 6 chip damage on block";wpn;Alisa-DES.f+1+2;;r20 DES;;
+DES.f+1+2,1+2;m,m,m,m,m,m,m,m,m;34,20;,i20~26;-53;+41;;"* Weapon
+* 6 chip damage on block";wpn;Alisa-DES.f+1+2,1+2;Hertz Blade - Diablo;r68 DES;;
+DES.uf+2;h,h,h,h,h;5,5,5,5,5;i10~14, i1~5, i1~5, i1~5, i1~1;;+35a (+28);;"* Weapon
+* Only hits airborne opponents";wpn;Alisa-DES.uf+2;Hertz Blade - Aegis;r16 DES;;
+DES.uf+1+2;m,M,M;27;i29~31, i1~3, i1~2;-9c;+23a;;"* Spike
+* Weapon
+* 2 chip damage on block
+* Cancel to standing with DES.1+2
+Low crush 5~25 fs26~28";spk wpn js5~25 fs26~28;Alisa-DES.uf+1+2;Spindle Slash;r39 DES;;
 FUFT.1+2;;;;;;;fs1~5 Low crush 6~40 fs41~43;fs1~5 js6~40 fs41~43;Alisa-FUFT.1+2;Reboot;r55;;
 FUFT.1+2,3;,m;,35;i22~23;-10;+60a;;"* Balcony Break
 ,fs1~5 Low crush 6~54 fs55~57";bbr fs1~5 js6~54 fs55~57;Alisa-FUFT.1+2,3;Reboot Meteor Kick;r47;;
 OTG.db+1+2;L;25;i25~27;-14;+4a;;"* Spike
 * Weapon";spk wpn;Alisa-OTG.db+1+2;Ground Rocket Punch;r34;;
-P.b+1+3;ub(m);25;i20~21;-5 (-14);-5 (-14);;* Balcony Break;bbr;Alisa-P.b+1+3;;;;
-SBT.1;m;12;i13~14;-15;0;;;;Alisa-SBT.1;;;;
-SBT.1,2;m,m;12,13;,i18~19;-9;+2;+7;Rest of the string is natural on counter hit.;;Alisa-SBT.1,2;;;;
-SBT.1,2,1;m,m,m;12,13,7;,i20~21;-12;-20;-12;Less safe on hit than on block without CH.;;Alisa-SBT.1,2,1;;;;
-SBT.1,2,1,3+4;m,m,m,m;12,13,7,33;,i18;-18;+4 (-13);;"* Balcony Break
-* Transition to DES with input SBT.1,2,1,3+4,1+2";bbr;Alisa-SBT.1,2,1,3+4;Hard Reset;;;
-SBT.2;m;25;i16~17;-7;+6 (-4);;"* Balcony Break
-* Transition to DES with input SBT.2,1+2";bbr;Alisa-SBT.2;Linear Elbow;;;
-SBT.3;l;17;i16~20;-14c;+4c;+28a;;;Alisa-SBT.3;Eject Slider;;;
-SBT.4;m;22;i17~19;-27;+68;;;;Alisa-SBT.4;Upstream;;;
-SBT.1+2;ub(h);20;i27~28;+8;+8;;"* Balcony Break
-* Transition to DES";bbr;Alisa-SBT.1+2;Wire Clipper;;;
-SBT.D;sp;;;;;;"* Alternate input: SBT.B
-* Transition to BKP";;Alisa-SBT.D;Abort;;;
-1+3;t;35;i12~14;;;;"* Throw break: 1 or 2
-* Opponent recovery on hit: FDFT";;Alisa-1+3;Trigger Shuffle;;;
-2+4;t;35;i12~14;;;;"* Throw break: 1 or 2
-* Floor Break
+SBT.1;m;12;i13~14;-15;+0;;Low crush 26~46 fs47~49;js26~46 fs47~49;Alisa-SBT.1;;r36;;
+SBT.1,2;m,m;12,13;,i18~19;-9;+2;+7c;"* Spike
+* Combo from 1st hit with 1f delay
+* Rest of the string is natural on CH
+,Low crush 26~64 fs65~67";spk js26~64 fs65~67;Alisa-SBT.1,2;;27;;
+SBT.1,2,1;m,m,m;12,13,7;,i20~21;-12;-20;-12;"* Combo from 2nd CH
+* Less safe on hit than on block without CH
+,Low crush 26~102 fs103~105";js26~102 fs103~105;Alisa-SBT.1,2,1;;r41;;
+SBT.1,2,1,3+4;m,m,m,m,m;12,13,7,33;,i18;-18;+4 (-13);;"* Balcony Break
+* Combo from 3rd hit
+* Combo from 2nd CH
+* Transition to DES with input SBT.1,2,1,3+4,1+2
+,Low crush 26~150 fs151~153";bbr js26~150 fs151~153;Alisa-SBT.1,2,1,3+4;Hard Reset;r43;;
+SBT.2;m;25;i16~17;-7;+6a (-4);;"* Balcony Break
+* Elbow
+* Transition to DES with SBT.1+2
+* Hitstop 20f on hit
+Low crush 26~63 fs64~66";bbr elb js26~63 fs64~66;Alisa-SBT.2;Linear Elbow;r38;;
+SBT.3;L;17;i16~20, i1~5;-14;+4c~+8c;+28a;"* Frame advantage +8c~+12c on shallow hit, +32 on CH
+* Listed states are on hit only
+Low crush 26~34 High crush 35~ fs34~38";js26~34 cs35~ fs34~38;Alisa-SBT.3;Eject Slider;r25 FC;;
+SBT.4;M;22,5;i17~19;-27;+68a;;"Steel pedal
+Low crush 26~71 fs72~74";js26~71 fs72~74;Alisa-SBT.4;Upstream;r50;;
+SBT.1+2;h!;20;i27~28;;+8;;"* Balcony Break
+* Weapon
+Low crush 26~53";bbr wpn js26~53;Alisa-SBT.1+2;Wire Clipper;r34 DES;;
+SBT.D;;;;;;;"* Transition to r32 BKP with B (Backswing)
+High crush 34~";cs34~;Alisa-SBT.D;Abort;r21 BKP;;
+1+3;t;35;i12~14;-7;+0d;;"* Homing
+* Throw break: 1 or 2
 * Opponent recovery on hit: FDFT
-* Switches sides
-* Transition to DES with input 2+4,1+2";fbr;Alisa-2+4;Back Door;;;
-Back throw;t;55;i12~14;;;;"* Throw break: none
-* Opponent recovery on hit: FDFA
+* Side switch on break";hom;Alisa-1+3;Trigger Shuffle;r25;;
+2+4;t;35;i12~14;-5;+0d;;"* Homing
+* Floor Break
+* Throw break: 1 or 2
+* Opponent recovery on hit: FDFT
 * Side switch
-* Floor Break";fbr;Alisa-Back throw;Random Typing;;;
-FC.db+1+2;t;45;i11;;-4;;"* Throw break: 1+2
+* Transition to DES with 1+2";hom fbr;Alisa-2+4;Back Door;r25;;
+Back throw;t;55;;;+0d;;"* Floor Break
+* Throw break: none
+* Opponent recovery on hit: FDFA
+* Side switch";fbr;Alisa-Back throw;Random Typing;;;
+FC.db+1+2;t;45;i11;-4;-4;;"* Throw break: 1+2
 * Opponent recovery on hit: FUFA
-* Side switch";;Alisa-FC.db+1+2;Double Bull Shoot;;;
-Left throw;t;40;i12~14;;-5;;"* Throw break: 1
-* Opponent recovery on hit: FDFA";;Alisa-Left throw;Compression;;;
-Right throw;t;40;i12~14;;;;"* Throw break: 2
-* Opponent recovery on hit: FUFA perpendicular to Alisa
-* Floor Break";fbr;Alisa-Right throw;Hat Trick;;;
-uf+1+2;t;40;i12~13;;+3;;"* Throw break: 1+2
-* Opponent recovery on hit: FUFT";;Alisa-uf+1+2;Spam Bomb;;;
+* Side switch";;Alisa-FC.db+1+2;Double Bull Shoot;r28;;
+Left throw;t;40;;-3;-5d;;"* Throw break: 1
+* Opponent recovery on hit: FDFA
+* Can side switch on hit";;Alisa-Left throw;Compression;;;
+Right throw;t;40;;-3;+0d;;"* Floor Break
+* Throw break: 2
+* Opponent recovery on hit: FUFA perpendicular to Alisa";fbr;Alisa-Right throw;Hat Trick;;;
+uf+1+2;t;40;i12~13;-4;+3;;"* Throw break: 1+2
+* Opponent recovery on hit: FUFT";;Alisa-uf+1+2;Spam Bomb;r37;;
