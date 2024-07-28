@@ -1,16 +1,26 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Wavu id;Name;Recovery;Image;Video
-2+3;;;;;;;;;Lidia-2+3;Heat Burst;;;
+2+3;m;12;i16;+1;+2c;;"* Heat Burst
+* Cancel to r45 with b,b
+* 3 chip damage on block
+* Partially uses Heat
+Power crush 7~62";hb pc7~62;Lidia-2+3;Heat Burst;r30;;
 H.1+2;m;25;i31;;+37a (+29) HAE;;"* Partially uses remaining Heat time
 * Reversal Break
 * Cancel with input b,b or f,f
 * Cancel HAE transition with input B";;Lidia-H.1+2;Heian Shodan Seikenzuki > Heaven and Earth;;;
-H.CAT.U;sp;;;;;;;;Lidia-H.CAT.U;Cat Stance > Heaven and Earth;;;
-H.HRS.U;sp;;;;;;;;Lidia-H.HRS.U;Horse Stance > Heaven and Earth;;;
+H.CAT.U;;;;;;;"* Increases Heaven and Earth level
+* Parries all highs or mids
+Parry state 5~39";ps5~39;Lidia-H.CAT.U;Cat Stance > Heaven and Earth;r25 HAE;;
+H.HRS.U;;;;;;;"* Increases Heaven and Earth level
+* Parries all highs or mids
+Parry state 5~39";ps5~39;Lidia-H.HRS.U;Horse Stance > Heaven and Earth;r25 HAE;;
 H.WLF.1;m;24;i22;;+38a (+30) HAE;;"* Balcony Break
 * Tornado
 * Can hold, cancel hold with input b,b or f,f
 * Cancel HAE transition with input B";bbr trn;Lidia-H.WLF.1;Bassai-zuki > Heaven and Earth;;;
-H.WLF.U;sp;;;;;;;;Lidia-H.WLF.U;Stalking Wolf Stance > Heaven and Earth;;;
+H.WLF.U;;;;;;;"* Increases Heaven and Earth level
+* Parries all highs or mids
+Parry state 5~39";ps5~39;Lidia-H.WLF.U;Stalking Wolf Stance > Heaven and Earth;r25 HAE;;
 H.f,F+2;m;22;i13;;+17 HRS;;"* Partially uses remaining Heat time
 * Reversal Break
 * Input H.f,f,F+2 to power up";;Lidia-H.f,F+2;Lightning Seikenzuki;;;
@@ -18,21 +28,30 @@ H.f,f,F+1;h;37;i13~15;+5 HAE;+31a (+23);;"* Balcony Break
 * Tornado
 * Partially uses remaining Heat time
 * Cancel HAE transition with input B";bbr trn;Lidia-H.f,f,F+1;Swift High Seikenzuki > Heaven and Earth;;;
-H.2+3;m;55;i18;+10 HAE;;;"* Heat Smash
+H.2+3;m,m,m,h;55;i18, i24, i15, i34;+10;+0d;;"* Heat Smash
 * Balcony Break
-* Transition to HAE on block
-* Cancel HAE transition on block with input B";hs bbr;Lidia-H.2+3;Efflorescent Blizzard;;;
-R.df+1+2;m;55;i20;;;;Rage Art;;Lidia-R.df+1+2;Scarlet Valor: Martial Devotion;;;
-1;h;5;i10;+1;+8;;;;Lidia-1;;r19;;
+* Transition to r31 HAE on block
+* Cancel HAE transition with B
+* Transition to attack throw on hit
+Low crush 77~105";hs bbr js77~105;Lidia-H.2+3;Efflorescent Blizzard;r36;;
+R.df+1+2;m;55;i20;-15;+0d;;"Rage Art
+Power crush 8~";pc8~;Lidia-R.df+1+2;Scarlet Valor: Martial Devotion;r39;;
+1;h;5;i10;+1;+8;;;;Lidia-1;Jab;r19;;
 1,2;h,h;5,8;,i10;-3;+4;;Jail from 1st attack with 4f delay;;Lidia-1,2;Flurry;r21;;
-1,2,2;h,h,m;5,8,10;,i22;-8 (-16);+8;;"* Combo from 1st or 2nd hit
-* Transition to CAT on hit or block only";;Lidia-1,2,2;Flurry > Mid Chaser;r29;;
-1,2,3;h,h,h;5,8,27;,i26~27;-6;+20a (+11);+20a (+11);"Balcony Break
+1,2,2;h,h,m;5,8,10;,i22;-8;+8;;"* Combo from 1st hit
+* Combo from 2nd hit with 3f delay
+* Transition to CAT on hit or block only
+* CAT transition is -16";;Lidia-1,2,2;Flurry > Mid Chaser;r29;;
+1,2,3;h,h,h;5,8,27;,i26~27;-6;+20a (+11);;"* Balcony Break
+* Input can be delayed 3f
 ,Low crush 16~31";bbr js16~31;Lidia-1,2,3;Flurry > Gale Kick;r29;;
-1,2,4;h,h,l;5,8,15;,i26;-13;+3;+26a;Can hit grounded while off-axis;;Lidia-1,2,4;Flurry > Low Right Kick;r32;;
+1,2,4;h,h,l;5,8,15;,i26;-13;+3;+26a;"* Input can be delayed 8f
+* Interrupt with i7 from 2nd block
+* Can be low parried on hit
+* Can hit grounded while off-axis";;Lidia-1,2,4;Flurry > Low Right Kick;r32;;
 1,4;h,h;5,17;,i19;-8;+1;;"* Combo from 1st hit with 4f delay
 * Balcony break on airborne hit";;Lidia-1,4;High Jab > High Right Kick;r29;;
-1+3+4;sp;;;;;;;;Lidia-1+3+4;Bow;;;
+1+3+4;;;;;;;;;Lidia-1+3+4;Bow;r50;;
 2;h;8;i11;+0;+8;;;;Lidia-2;;r19;;
 2,1;h,h;8,10;,i20~21;;+1;;;;Lidia-2,1;;;;
 2,1,4;h,h,h;8,10,15;,i22;;+2;;;;Lidia-2,1,4;;;;
@@ -43,27 +62,34 @@ R.df+1+2;m;55;i20;;;;Rage Art;;Lidia-R.df+1+2;Scarlet Valor: Martial Devotion;;;
 2,1,4,4,1,2,1,3;h,h,h,l,m,h,h,m;8,10,15,5,5,8,8,5;,i22;;;;;;Lidia-2,1,4,4,1,2,1,3;;;;
 2,1,4,4,1,2,1,3,2;h,h,h,l,m,h,h,m,m;8,10,15,5,5,8,8,5,4;,i14;;;;;;Lidia-2,1,4,4,1,2,1,3,2;;;;
 2,1,4,4,1,2,1,3,2,1;h,h,h,l,m,h,h,m,m,m;8,10,15,5,5,8,8,5,4,27;,22;;+11a (+6);;;;Lidia-2,1,4,4,1,2,1,3,2,1;10 Hit Combo;;;
-2,2;h,h;8,20;,i20;-4 (-12);+11g;;"* Balcony Break
+2,2;h,h;8,20;,i20;-4;+11g;;"* Strong Aerial Tailspin
+* Balcony Break
 * Combo from 1st hit with 4f delay
-* Transition to CAT on hit or block only";bbr;Lidia-2,2;Double Twisting Chop;r29;;
-2,4;h,m;8,13;,i21;-8;+4;+4;Combo from 1st hit with 4f delay;;Lidia-2,4;High Right Reverse Jab > Mid Right Front Kick;r27;;
+* Transition to CAT on hit or block only
+* CAT transition is -12";bbr;Lidia-2,2;Double Twisting Chop;r29;;
+2,4;h,m;8,13;,i21;-8;+4;;Combo from 1st hit with 4f delay;;Lidia-2,4;High Right Reverse Jab > Mid Right Front Kick;r27;;
 3;h;9;i15;-9;+7;;;;Lidia-3;;r28;;
 3,2;h,h;9,10;,i22;-4;+58a;;"* Tornado
-* Balcony break on airborne hit
 * Combo from 1st hit with 3f delay
-* Just frame input within a 3f window (14~16) adds 2 damage";trn;Lidia-3,2;Gankaku;r28;;
+* Just frame input within a 3f window (14~16) adds 2 damage
+* Balcony break on airborne hit
+* Hitstop 20f on hit";trn;Lidia-3,2;Gankaku;r28;;
 4;h;14;i13;-8;+1;;;;Lidia-4;;r29;;
 4,3;h,m;14,20;,i29~30;-14;+27a;;"* Balcony Break
 * Combo from 1st CH
 ,Low crush 20~36 fs37~45";bbr js20~36 fs37~45;Lidia-4,3;High Right Roundhouse Kick > Jumping Back Spin Kick;r39;;
 1+2;m;20;i31;-9;+17g;;"* Balcony Break
 * Cancel with b,b or f,f
-* Opponent recovers crouching on hit";bbr;Lidia-1+2;Heian Shodan Seikenzuki;r33;;
+* Opponent recovers crouching on hit
+* Hold for 20~30 frames";bbr;Lidia-1+2;Heian Shodan Seikenzuki;r33;;
 1+2*;m;25;i42~64;-5;+32a (+24);;"* Balcony Break
 * Cancel with input b,b or f,f
+* Hold for 31~54 frames
 * 5 chip damage on block";bbr;Lidia-1+2*;Heian Shodan Seikenzuki (Slight Hold);r33;;
-1+2**;m;30;i65;+7;+55a;;9 chip damage on block;;Lidia-1+2**;Heian Shodan Seikenzuki: Digress;r35;;
-3+4;m,m;6,20;i20~21,i18;+0;+23g;;"* Balcony break on airborne hit
+1+2**;m;30;i65;+7;+55a;;"* 9 chip damage on block
+* Hold for 55 frames";;Lidia-1+2**;Heian Shodan Seikenzuki: Digress;r35;;
+3+4;m,m;6,20;i20~21, i18;+0;+23g;;"* Jail from 1st attack
+* Balcony break on airborne hit
 * Transition to CAT on hit or block only
 Low crush 16~40";js16~40;Lidia-3+4;Floret Maelstrom;r28;;
 f+2;h;10;i12;-7;+4;;Elbow;elb;Lidia-f+2;;r26;;
@@ -72,29 +98,30 @@ f+2,4;h,h;10,23;,i18;-13;+16a (+7);;"* Balcony Break
 f+3;m;12;i17~18;-11;-4;+6;Low crush 6~15;js6~15;Lidia-f+3;;r29;;
 f+3,4;m,h;12,21;,i21~23;+1;+10;;"* Combo from 1st CH with 10f delay
 * Move can be delayed 7f
+* Can be ducked on hit
 * Interrupt with i5 from 1st block
-* 6 chip damage on block
 * Power up with input qcf+4, adds 2 damage
 * Balcony break on airborne hit
+* 6 chip damage on block
 ,Low crush 15~27 fs28~30";js15~27 fs28~30;Lidia-f+3,4;Jumping Front Kick > Helm Splitter;r35;;
 f+4;m;8;i17;-4;+1;;;;Lidia-f+4;;r29;;
-f+4,3;m,m;8,10;,i13~14;-10;+0;;"Combo from 1st hit with 1f delay
+f+4,3;m,m;8,10;,i13~14;-10;+0;;"Jail from 1st attack with 1f delay
 ,Low crush 5~17 fs18~20";js5~17 fs18~20;Lidia-f+4,3;;r29;;
 f+4,3,1;m,m,m;8,10,24;,i21~22;-12;+17a;;"* Balcony Break
 * Spike
 * Combo from 2nd CH";bbr spk;Lidia-f+4,3,1;Kusanku Double Kick > Uraken-uchi;r32;;
 f+4,3,4;m,m,m;8,10,23;,i27~28;-10;+19a (+12);+28a (+22);"* Tornado
 * Combo from 2nd CH";trn;Lidia-f+4,3,4;Kusanku Triple Kick;r30;;
-f+1+2;h,m;5,4;i14, i9~10;-10;+1;;;;Lidia-f+1+2;;r28;;
+f+1+2;h,m;5,4;i14, i9~10;-10;+1;;Jail from 1st attack;;Lidia-f+1+2;;r28;;
 f+1+2,3;h,m,m;5,4,5;,i16;-13;-2;;"* Knee
-* Combo from 1st hit";kne;Lidia-f+1+2,3;;r32;;
+* Jail from 1st attack";kne;Lidia-f+1+2,3;;r32;;
 f+1+2,3,1+2;h,m,m,m,m;5,4,5,4,20;,i14,i22;-15;+20d (+15);;"* Heat Engager
 
 * Heat Dash [[Lidia_combos#Mini-combos|+43d (+35)]] on hit, +5 on block
 
 * Power up with input qcf+1+2 (adds 5 dmg to last hit)
-* Combo from any hit";he;Lidia-f+1+2,3,1+2;Political Storm;r36;;
-f+3+4;;;;;;;;;Lidia-f+3+4;Horse Stance;r20 HRS;;
+* Jail from any attack";he;Lidia-f+1+2,3,1+2;Political Storm;r36;;
+f+3+4;;;;;;;Actionable after 20f;;Lidia-f+3+4;Horse Stance;r20 HRS;;
 df+1;m;13;i13;-5;+2;;;;Lidia-df+1;;r24;;
 df+1,2;m,h;13,10;,i16~17;-4;+4;;Combo from 1st hit with 1f delay;;Lidia-df+1,2;Mid Left Hook Thrust > Reverse Chop;r24;;
 df+1,3;m,m;13,17;,i23;-13;+10a (+1);+55a;"* Balcony Break
@@ -112,7 +139,8 @@ df+4,2;m,h;12,20;,i26;-8;+11d;;"* Tornado
 * Elbow
 * Combo from 1st hit with 1f delay
 * Balcony break on airborne hit";trn elb;Lidia-df+4,2;Crescent Kick > High Elbow Strike;r29;;
-df+4~3;h;24;i20~21;+8;+57a;;* 7 chip damage on block;;Lidia-df+4~3;Rapture;r28;;
+df+4~3;h;24;i20~21;+8;+57a;;"* Strong Aerial Tailspin
+* 7 chip damage on block";;Lidia-df+4~3;Rapture;r28;;
 df+4~4;h;27;i12~13;+6c~+7c;+15a;;Spike;spk;Lidia-df+4~4;Triangle Kick;r24;;
 df+3+4;m;25;i22~23;-9;+12g;;"* Homing
 * Balcony Break";hom bbr;Lidia-df+3+4;Tourbillion;r30;;
@@ -125,22 +153,29 @@ d+3,1,2;l,h,h;9,8,20;,i17;-6;+43d (-15);;"* Tornado
 * Balcony Break
 * Combo from 2nd hit
 * Combo from 1st CH";trn bbr;Lidia-d+3,1,2;Majority Rules;r30;;
+d+4;l;6;i12;-15;-4;;High crush 4~;cs4~;Lidia-d+4;;r34 FC;;
+db+1;sl;5;i10;-5;+6;;Transition to r24? with f;;Lidia-db+1;Down Jab;r24 FC;;
 db+2;m;14;i16~17;-7;+7;;;;Lidia-db+2;Valley Breeze;r27;;
-db+3;L;17;i16~17;-11 (-19);+7;;"* Homing
+db+3;L;17;i16~17;-11;+7;;"* Homing
 * Clean hit adds 3 damage
 * Transition to HRS on hit or block only
-* Transition to attack throw on CH";hom;Lidia-db+3;Adjourning Sweep;r27 HRS;;
+* Transition to attack throw on CH
+* HRS transition is -19";hom;Lidia-db+3;Adjourning Sweep;r27 HRS;;
 db+4;l;15;i22;-13;+0;;Can hit grounded off-axis;;Lidia-db+4;Shin Splinter;r33;;
 db+3+4;m;21;i22;-3;+5;;"* Has low parry effect
 * Does not parry weapon lows
 Parry state 5~13";ps5~13;Lidia-db+3+4;For the People;r25;;
+db+3+4,P.1;m,h;21,21;,i16;;+33a (+25);;"* Balcony Break
+* Combo from 1st hit
+* Just frame input within a 2f window (21~22) adds 2 damage";bbr;Lidia-db+3+4,P.1;For the Nation;r32;;
 b+1;m;24;i18;+2;+48d (-10);;"* Heat Engager
 
-* Heat Dash +36a (+26) on hit, +5 on block
+* Heat Dash [[Lidia_combos#Staples|+36a (+26)]] on hit, +5 on block
 
 * Balcony Break
-* 4 Chip damage on block";he bbr;Lidia-b+1;Stalwart Governance;r26;;
-b+1+3;;;;;;;;;Lidia-b+1+3;;;;
+* 4 chip damage on block";he bbr;Lidia-b+1;Stalwart Governance;r26;;
+b+1+3;;;;;;;"Parries high punches
+Parry state 5~12";ps5~12;Lidia-b+1+3;;r35;;
 b+2;h;14;i13;-9;+1;;;;Lidia-b+2;Ruling Party;r29;;
 b+2,3;h,m;14,14;,i22;-10;+6;+63a;"* Knee
 * Combo from 1st hit with 7f delay
@@ -157,7 +192,7 @@ b+1+2;m;25;i20;-13;+11a (+2);;"* Balcony Break
 * Frame advantage -8 on successful attack absorption
 Power crush 7~19";bbr pc7~19;Lidia-b+1+2;Iron Lady;r34;;
 b+1+4;m!;35;i60~61;;+9a;;Balcony Break;bbr;Lidia-b+1+4;Gekisai Ura-uchi;r39;;
-b+3+4;;;;;;;;;Lidia-b+3+4;Cat Stance;;;
+b+3+4;;;;;;;Actionable after 20f;;Lidia-b+3+4;Cat Stance;r20 CAT;;
 uf+1;m;18;i23;-6;+3;;"* Elbow
 * Parries high punches or kicks
 * Hitstop on successful parry
@@ -168,12 +203,14 @@ uf+1,P;m,h;18,20;,i16;;+11g;;"* Balcony Break
 uf+3;M;28;i25~27;-9;+41a (-17);;"* Balcony Break
 * Spike
 Low crush 11~24 fs25~27";bbr spk js11~24 fs25~27;Lidia-uf+3;Willow Branch;r31;;
-uf+4;m,h;10,16;i15~16,i13;-5 (-13);+69a (+53);;"* Balcony Break
+uf+4;m,h;10,16;i15~16,i13;-5;+69a (+53);;"* Balcony Break
 * Tornado
 * Transition to CAT on hit or block only
 * 2nd hit available only as combo from 1st hit
+* CAT transition is -13
 Low crush 9~30 fs31~33";bbr trn js9~30 fs31~33;Lidia-uf+4;Cleaving Spirit;r30;;
-1+2+3+4;sp;;;;;;;;Lidia-1+2+3+4;Ki Charge;;;
+1+2+3+4;;;;;;;"* Can't block for 5 seconds
+* CH state for 5 seconds";;Lidia-1+2+3+4;Ki Charge;r55;;
 f,F+2;m;20;i13;+5;+15g;+17;"* Transition to HRS on hit or block only
 * Input f,f,F+2 to power up";;Lidia-f,F+2;Lightning Seikenzuki;r33 HRS;;
 f,F+3;M;21;i19~20;-14;+30a (+20);;"Tornado
@@ -194,11 +231,12 @@ qcf+4;h;27;i17~19;+1;+10;;"* Homing
 * 8 Chip damage on block
 Low crush 10~22 fs23~25";hom js10~22 fs23~25;Lidia-qcf+4;Helm Splitter;r35;;
 qcf+1+2;m;18;i16~17;-12;-1;+6;;;Lidia-qcf+1+2;;r30;;
-qcf+1+2,2;m,m;18,22;,i24~25;-6 (-14);+24g;+59a;"* Tornado
+qcf+1+2,2;m,m;18,22;,i24~25;-6;+24g;+59a;"* Tornado
 * Combo from 1st hit
 * Combo from 1st CH with 12f delay
 * Transition to WLF on hit or block only
-* Balcony break on airborne hit";trn;Lidia-qcf+1+2,2;Red Poppy;r35 WLF;;
+* Balcony break on airborne hit
+* WLF transition is -14";trn;Lidia-qcf+1+2,2;Red Poppy;r35 WLF;;
 uf,n,4;m;20;i23~25;-13;+32a (+22);;Low crush 9~30 fs31~33;js9~30 fs31~33;Lidia-uf,n,4;Delayed Rising Toe Kick;r30;;
 f,f,F+1;h;24;i13~15;+6;+24a (+19);;"* Tornado
 * Balcony Break
@@ -206,16 +244,22 @@ f,f,F+1;h;24;i13~15;+6;+24a (+19);;"* Tornado
 f,f,F+3;m;30;i23~25;+6;+37d (-21);;"* Balcony Break
 * 9 Chip damage on block
 Low crush 12~33 34~36";bbr js12~33 34~36;Lidia-f,f,F+3;Flying Blade;r35;;
-ws1;m;12;i13~14;-3;+4;+4;;;Lidia-ws1;;;;
-ws1,2;m,h;12,18;,i21~22;0 CAT;+11 CAT;+11 CAT;;;Lidia-ws1,2;White-tailed Eagle;;;
-ws1,4;m,m;12,20;,i21~22;-13;+21a (+16);+21a (+16);Balcony Break;bbr;Lidia-ws1,4;Wild Eagle;;;
-ws2;m;15;i15~16;-12;+29a (+19);;Tornado;trn;Lidia-ws2;Upward Thrust;;;
-ws3;m;20;i14~15;-12;+32a (+24);+71a (+55) T!;"* Balcony Break
-* Tornado";bbr trn;Lidia-ws3;Bridging the Gap;;;
-ws4;m;13;i11~12;-4;+7;+7;;;Lidia-ws4;;;;
-ws4,2;m,h;13,12;,i18;+0 CAT;+8 CAT;+8 CAT;;;Lidia-ws4,2;Caustic Retort;;;
-SS.2;m;18;i18;0;+5c;+21d;;;Lidia-SS.2;Elbow Slam;;;
-SS.4;h;21;i16~17;-6;+16g;+14;Balcony Break;bbr;Lidia-SS.4;Evasive High Right Back Kick;;;
+ws1;m;12;i13~14;-3;+4;;;;Lidia-ws1;;r21;;
+ws1,2;m,h;12,18;,i21~22;+0;+11;;"* Combo from 1st hit with 1f delay
+* Transition to CAT on hit or block only";;Lidia-ws1,2;White-tailed Eagle;r29 CAT;;
+ws1,4;m,m;12,20;,i21~22;-13;+21a (+16);;"* Balcony Break
+* Knee
+* Combo from 1st hit with 1f delay";bbr kne;Lidia-ws1,4;Wild Eagle;r34;;
+ws2;m;15;i15~16;-12;+29a (+19);;Tornado;trn;Lidia-ws2;Upward Thrust;r30;;
+ws3;m;20;i14~15;-12;+32a (+24);+71a (+55);"* Balcony Break
+* Tornado
+Low crush 14~22 fs23~25";bbr trn js14~22 fs23~25;Lidia-ws3;Bridging the Gap;r32;;
+ws4;m;13;i11~12;-4;+7;;;;Lidia-ws4;;r22;;
+ws4,2;m,h;13,12;,i18;+0;+8;;"* Combo from 1st hit with 2f delay
+* Transition to CAT on hit or block only";;Lidia-ws4,2;Caustic Retort;r28 CAT;;
+SS.2;m;18;i18;+0c;+5c;+21d;"* Spike
+* Elbow";spk elb;Lidia-SS.2;Elbow Slam;r33;;
+SS.4;h;21;i16~17;-6;+16g;+14;Balcony Break;bbr;Lidia-SS.4;Evasive High Right Back Kick;r26;;
 FC.df+2;m;22;i12;-14;+9a;;"* Heat Engager
 
 * Heat Dash +43a (+35) on hit, +5 on block
@@ -233,81 +277,114 @@ FC.d+4;l;6;i12;-15;-4;;High crush 1~;cs1~;Lidia-FC.d+4;;r34 FC;;
 (airborne).f,F+4,3;m,m,th;8,8,8;i18,i24~25;;-1;;"* Balcony Break
 * Power up based on Heaven and Earth level
 * Regain recoverable health";bbr;Lidia-(airborne).f,F+4,3;Celestial Comet Punch;;;
-CAT.1;m;26;i17;-8;+18a (+9);+38a (+30);Balcony Break;bbr;Lidia-CAT.1;Mid Left Thrust;;;
-CAT.2;h;12;i14~15;-10;+1;+1;;;Lidia-CAT.2;;;;
+CAT.1;m;26;i17;-8;+18a (+9);+38a (+30);Balcony Break;bbr;Lidia-CAT.1;Mid Left Thrust;r27;;
+CAT.2;h;12;i14~15;-10;+1;;;;Lidia-CAT.2;;r28;;
 CAT.2,2;h,m;12,18;,i26~27;-10;+19a (+12);+73a (+57);"* Tornado
-* Just Input to power up";trn;Lidia-CAT.2,2;Rising Carp;;;
-CAT.2,3;h,m;12,13;,i18~19;-10;+1;+1;;;Lidia-CAT.2,3;;;;
-CAT.2,3,1;h,m,m;12,13,22;,i18;-10;+12a (+3);+12a (+3);Balcony Break;bbr;Lidia-CAT.2,3,1;Enlightenment;;;
-CAT.3;h;20;i13~14;-4;+11;+11;"* Heat Engager
+* Combo from 1st CH
+* Just frame input within a 3f window (13~15) adds 2 damage";trn;Lidia-CAT.2,2;Rising Carp;r30;;
+CAT.2,3;h,m;12,13;,i18~19;-10;+1;;Combo from 1st CH;;Lidia-CAT.2,3;;r29;;
+CAT.2,3,1;h,m,m;12,13,22;,i18;-10;+12a (+3);;"* Balcony Break
+* Elbow
+* Combo from 2nd hit with 10f delay
+* Combo from 1st CH
+* Move can be delayed 9f";bbr elb;Lidia-CAT.2,3,1;Enlightenment;r32;;
+CAT.3;h;20;i13~14;-4;+11g;;"* Heat Engager
 
-* Balcony Break";he bbr;Lidia-CAT.3;High Left Reverse Hook Kick;;;
-CAT.4;l;10;i19~20;-14;+8c WLF;+33a WLF;High crush;cs;Lidia-CAT.4;;;;
-CAT.4,3+4;l,m;10,25;,i38~39;-14;+5d;+5d;;;Lidia-CAT.4,3+4;Crouching Tiger, Rising Dragon;;;
-CAT.1+2;m;25;i16;-3 WLF;+27g WLF;+37 (+29) WLF;Tornado;trn;Lidia-CAT.1+2;Gojushiho;;;
-CAT.F;sp;;;;;;;;Lidia-CAT.F;Cat Stance > Stalking Wolf Stance;;;
-CAT.b;sp;;i8;;;;;;Lidia-CAT.b;Cat Stance > Cancel;;;
-CAT.b,B;sp;;i15;;;;Low crush;js;Lidia-CAT.b,B;Cat Stance > Vacuity;;;
-HAE.1;m;21;i18~19;-11;+80a (+60);;"* Power up based on Heaven and Earth level
-* Chip damage on block
-Power crush";chp pc;Lidia-HAE.1;Heaven's Gavel: Injustice Banish;;;
-HAE.2;mm;10,26;i13,i20~21;+6;+14d;;"* Balcony Break
+* Heat Dash [[Lidia_combos#Staples|+62a (+42)]] on hit, +5 on block
+
+* Balcony Break";he bbr;Lidia-CAT.3;High Left Reverse Hook Kick;r31;;
+CAT.4;L;10;i19~20;-6;+8c;+33a;"* Transition to WLF on hit or block only
+* Crouching state ends early on frame 20 when transitioning to WLF
+* WLF transition is -14
+High crush 11~31";cs11~31;Lidia-CAT.4;;r29;;
+CAT.4,3+4;L,M;10,25;,i38~39;-14;+5a;;"* Spike
+* Combo from 1st CH
+,Low crush 21~25 fs26~39";spk js21~25 fs26~39;Lidia-CAT.4,3+4;Crouching Tiger, Rising Dragon;r34 FC;;
+CAT.1+2;m;25;i16;-3;+27g;+37 (+29);"* Tornado
+* Transition to WLF on hit or block only";trn;Lidia-CAT.1+2;Gojushiho;r29;;
+CAT.F;;;;;;;Actionable after 20f;;Lidia-CAT.F;Cat Stance > Stalking Wolf Stance;r20 WLF;;
+CAT.b;;;;;;;"* After recovery, limited to blocking for 13 frames
+* Takes 8f to cancel into block";;Lidia-CAT.b;Cat Stance > Cancel;r15;;
+CAT.b,B;;;;;;;Low crush 11~25 fs26~28;js11~25 fs26~28;Lidia-CAT.b,B;Cat Stance > Vacuity;r32;;
+HAE.1;m;21;i18~19;-11;+80a (+60);;"* Spike
 * Power up based on Heaven and Earth level
-* Chip damage on block";bbr chp;Lidia-HAE.2;Heaven's Sword: Wreath Puncture;;;
-HAE.1+2;ub(h);35;i16;+0d;+0d;;"* Tornado
-* Power up based on Heaven and Earth level";trn;Lidia-HAE.1+2;Heaven's Cannon: Crushing Defamation;;;
-HRS.1;h;22;i17;+1 WLF;+16 WLF;+16 WLF;"* Balcony Break
+* Chip damage on block
+* Guarantees grounded hit vs airborne opponent
+Power crush 7~17";spk chp pc7~17;Lidia-HAE.1;Heaven's Gavel: Injustice Banish;r36;;
+HAE.2;m,m;10,26;i13, i20~21;+6;+14a;;"* Balcony Break
+* Chip damage on block
+* Power up based on Heaven and Earth level
+* +35a (-1) on hit with HAE level 3
+* 2nd hit available on hit or block only";bbr chp;Lidia-HAE.2;Heaven's Sword: Wreath Puncture;r34;;
+HAE.1+2;h!;35;i16;;+0a;;"* Tornado
+* Power up based on Heaven and Earth level";trn;Lidia-HAE.1+2;Heaven's Cannon: Crushing Defamation;r39;;
+HRS.1;h;22;i17;+1;+16g;;"* Balcony Break
 * Homing
-Power crush";bbr hom pc;Lidia-HRS.1;Hachi-wari;;;
-HRS.2;m,th;18,10;i16;-10;+8;+8;"* Throw when hit from the front on the ground (does not shift when using Heat Dash)
-* Heat Engager
- when throw is completed
-* Cancel HAE transition with input B";he;Lidia-HRS.2;Unanimous Consent;;;
-HRS.3;m;21;i22~24;-4;+34a (+26);+34a (+26);"* Balcony Break
-* Homing";bbr hom;Lidia-HRS.3;Kumo-geri;;;
-HRS.4;m;20;i28;+8 WLF;+22d WLF;+44a WLF;;;Lidia-HRS.4;Muramasa;;;
-HRS.1+2;l;17;i20~21;-18c;-1c;+67a (+51);High crush;cs;Lidia-HRS.1+2;Low Chop;FC;;
-HRS.F;sp;;;;;;;;Lidia-HRS.F;Horse Stance > Stalking Wolf Stance;;;
-HRS.b;sp;;i8;;;;;;Lidia-HRS.b;Horse Stance > Cancel;;;
-HRS.b,B;sp;;i15;;;;Low crush;js;Lidia-HRS.b,B;Horse Stance > Vacuity;;;
-OTG.d+1+2;L;19;i18~19;-13;-2a (-10);;"* Power up based on Heaven and Earth level
-* Regain recoverable health";;Lidia-OTG.d+1+2;Veto;;;
-P.HAE;sp;;;;;;"* Transition to HAE
-* partially restore remaining Heat time";;Lidia-P.HAE;Heaven and Earth;;;
-P.b+1+3;hhh;5,5,20;i16,i16,i16;;+23a (+18);;Input 2 at the right time to power up;;Lidia-P.b+1+3;Law of the Land;;;
-P.db+3+4;m,h;21,21;i22,i16;;+33a (+25);;2f input window for power up on frames 21~22, adds 2 damage;;Lidia-P.db+3+4;For the Nation;;;
-WLF.1;m;24;i22;+2;+30a (+22);+31a (+23);"* Balcony Break
-* Tornado
-* Can hold, cancel hold with input b,b or f,f
-* Chip damage on block";bbr trn chp;Lidia-WLF.1;Bassai-zuki;;;
+Power crush 7~16";bbr hom pc7~16;Lidia-HRS.1;Hachi-wari;r26 WLF;;
+HRS.2;m,t;18,10;i16;-10;+8;;"* Heat Engager
+
+* Heat Dash [[Lidia_combos#Staples|+67a (+50)]] on hit, +5 on block
+
+* Transitions to attack throw on front hit
+* Does not transition to throw when using Heat Dash
+* Activates Heat when throw is completed
+* Transition to r33 HAE on hit only
+* Cancel HAE transition with B";he;Lidia-HRS.2;Unanimous Consent;r25;;
+HRS.3;m;21;i22~24;-4;+34a (+26);;"* Strong Aerial Tailspin
+* Balcony Break
+* Homing
+Low crush 9~27 fs28~30";bbr hom js9~27 fs28~30;Lidia-HRS.3;Kumo-geri;r29;;
+HRS.4;m;20;i28;+8;+22d;+44a;"* Spike
+* 6 chip damage on block
+* Transition to WLF on hit or block only";spk;Lidia-HRS.4;Muramasa;r25;;
+HRS.1+2;L;17;i20~21;-18;-1c;+67a (+51);High crush 8~;cs8~;Lidia-HRS.1+2;Low Chop;r36 FC;;
+HRS.F;;;;;;;Actionable after 20f;;Lidia-HRS.F;Horse Stance > Stalking Wolf Stance;r20 WLF;;
+HRS.b;;;;;;;"* After recovery, limited to blocking for 13 frames
+* Takes 8f to cancel into block";;Lidia-HRS.b;Horse Stance > Cancel;r21;;
+HRS.b,B;;;;;;;Low crush 11~25 fs26~28;js11~25 fs26~28;Lidia-HRS.b,B;Horse Stance > Vacuity;r32;;
+OTG.d+1+2;L;24;i18~19;-13;+6c;;"* Spike
+* Power up based on Heaven and Earth level
+* Regain recoverable health";spk;Lidia-OTG.d+1+2;Veto;r31;;
+P.HAE;;;;;;;"* Transition to HAE
+* Partially restore remaining Heat time";;Lidia-P.HAE;Heaven and Earth;r28 HAE;;
+P.b+1+3;h,h,h;5,5,20;i16, i16, i16;;+23a (+18);;"Input 2 within a 2f window (15~16) on the second punch, adds 2 damage
+15 16";15 16;Lidia-P.b+1+3;Law of the Land;r32;;
+WLF.1;m;24;i22~36;+2;+30a (+22);;"* Tornado
+* Balcony Break
+* Cancel with b,b or f,f on frames 10~18
+* 4 Chip damage on block";trn bbr;Lidia-WLF.1;Bassai-zuki;r34;;
 WLF.1*;m;36;i36;+7;+57a;;"* Tornado
-* Chip damage on block";trn chp;Lidia-WLF.1*;;;;
-WLF.2;m;21;i15~16;-7;+22a (+5);+22a (+5);Balcony Break;bbr;Lidia-WLF.2;Jion Upward Thrust;;;
-WLF.3;m;10;i17;-6;+4;+4;;;Lidia-WLF.3;;;;
-WLF.3,1;m,m;10,21;,i26;-6;+37a (+29);+37a (+29);Balcony Break;bbr;Lidia-WLF.3,1;Mid Left Kick > Nimble Thrust;;;
-WLF.4;lm;10,20;i20,i23~25;-16;-7d;-7d;;;Lidia-WLF.4;Serpent Incision;;;
-WLF.b;sp;;i8;;;;;;Lidia-WLF.b;Stalking Wolf Stance > Cancel;;;
-WLF.b,B;sp;;i15;;;;Low crush;js;Lidia-WLF.b,B;Stalking Wolf Stance > Vacuity;;;
-1+3;t;35;i12~14;;+4;;"* Homing
+* 13 Chip damage on block";trn;Lidia-WLF.1*;;r24;;
+WLF.2;M;21;i15~16;-7;+22a (+5);+22a (+5);"* Balcony Break
+* Steel pedal";bbr;Lidia-WLF.2;Jion Upward Thrust;r27;;
+WLF.3;m;10;i17;-6;+4;;;;Lidia-WLF.3;;r31;;
+WLF.3,1;m,m;10,21;,i26;-6;+37a (+29);;"* Balcony Break
+* Combo from 1st CH";bbr;Lidia-WLF.3,1;Mid Left Kick > Nimble Thrust;r28;;
+WLF.4;L,M;10,20;i20,i23~25;-16;-7a;;"* Spike
+* Second hit available on hit or block only";spk;Lidia-WLF.4;Serpent Incision;r35;;
+WLF.b;;;;;;;"* After recovery, limited to blocking for 13 frames
+* Takes 8f to cancel into block";;Lidia-WLF.b;Stalking Wolf Stance > Cancel;r15;;
+WLF.b,B;;;;;;;Low crush 11~25 fs26~28;js11~25 fs26~28;Lidia-WLF.b,B;Stalking Wolf Stance > Vacuity;r32;;
+1+3;t;35;i12~14;-3;+4;;"* Homing
 * Throw break: 1 or 2
-* Opponent on break: standing";hom;Lidia-1+3;Moonlit Frost;;;
-2+4;t;35;i12~14;;+0d;;"* Homing
-* Spike
+* Opponent on break: standing";hom;Lidia-1+3;Moonlit Frost;r25;;
+2+4;t;35;i12~14;-6;+0d;;"* Homing
+* Floor Break
 * Throw break: 1 or 2
-* Opponent on hit: FUFA, sideswitch";hom spk;Lidia-2+4;Parched Valley;;;
-Back throw;t;50;i12~14;;+0d;;"* Homing
+* Opponent on hit: FUFA
+* Side switch on hit";hom fbr;Lidia-2+4;Parched Valley;r25;;
+Back throw;t;50;;;+0d;;"* Homing
 * Throw break: none
 * Opponent on hit: FDFT";hom;Lidia-Back throw;Smear Campaign;;;
 CH.db+3;t;41;i16~17;;-10d;;"* Power up based on Heaven and Earth level
 * Restores recoverable health";;Lidia-CH.db+3;Red Tape;;;
-Left throw;t;40;i12~14;;+4;;"* Homing
-* Throw break: 1
-* Opponent on break: standing";hom;Lidia-Left throw;Moonlit Frost;;;
-Right throw;t;40;i12~14;;+0d;;"* Homing
-* Spike
+Left throw;t;40;;-3;+4;;"* Throw break: 1
+* Opponent on break: standing";;Lidia-Left throw;Moonlit Frost;;;
+Right throw;t;40;;-3;+0d;;"* Floor Break
 * Throw break: 2
-* Opponent on hit: FUFA, sideswitch";hom spk;Lidia-Right throw;Parched Valley;;;
-uf+1+2;t;40;i12;;+0d;;"* Throw break: 1+2
+* Opponent on hit: FUFA
+* Side switch on hit";fbr;Lidia-Right throw;Parched Valley;;;
+uf+1+2;t;40;i12;-6;+0d;;"* Throw break: 1+2
 * Opponent on hit: FUFA
 * Power up based on Heaven and Earth level
-* Regain recoverable health";;Lidia-uf+1+2;Trifecta;;;
+* Regain recoverable health";;Lidia-uf+1+2;Trifecta;r27;;
