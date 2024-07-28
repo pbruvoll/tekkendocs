@@ -1,18 +1,20 @@
 import { useState } from 'react'
+import { type MetaFunction } from '@remix-run/node'
 import { getTekken8Characters } from '~/services/staticDataService'
+import { generateMetaTags } from '~/utils/seoUtils'
 
-// export const meta: MetaFunction = ({ matches }) => {
-//   const title = 'Tekken 8 Challenges | TekkenDocs'
-//   const description = `A set of challenges to test your skills at Tekken 8. See how many low moves you can block on reaction`
+export const meta: MetaFunction = ({ matches }) => {
+  const title = 'Tekken 8 Frame data search page | TekkenDocs'
+  const description = `Search for any move in the game to see its's frame data. Exampel: "Drag fff2"`
 
-//   return generateMetaTags({
-//     matches,
-//     title,
-//     description,
-//     image: { url: `/t8/pages/challenge.png` },
-//     url: `/t8/challenge`,
-//   })
-// }
+  return generateMetaTags({
+    matches,
+    title,
+    description,
+    image: { url: '/images/tekkendocs-og-image-v2.png' },
+    url: `/t8/challenge`,
+  })
+}
 
 export default function () {
   const [searchQuery, setSearchQuery] = useState('')
