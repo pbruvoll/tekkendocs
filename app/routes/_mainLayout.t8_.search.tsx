@@ -1,9 +1,11 @@
 import { useEffect, useMemo, useState } from 'react'
+import { VideoIcon } from '@radix-ui/react-icons'
 import { type MetaFunction } from '@remix-run/node'
-import { Link, useFetcher } from '@remix-run/react'
+import { Link, useFetcher, useNavigate } from '@remix-run/react'
 import { getTekken8Characters } from '~/services/staticDataService'
 import { type CharacterFrameDataPage } from '~/types/CharacterFrameDataPage'
 import { type Move } from '~/types/Move'
+import { commandToUrlSegment } from '~/utils/moveUtils'
 import { generateMetaTags } from '~/utils/seoUtils'
 
 export const meta: MetaFunction = ({ matches }) => {
@@ -44,6 +46,8 @@ export default function () {
     return [splitted[0].toLowerCase(), splitted.slice(1).join('').toLowerCase()]
   }, [searchQuery])
 
+  const navigate = useNavigate()
+
   const includeCharNameInFrames = useMemo(() => !moveQuery, [moveQuery])
 
   const charList = getTekken8Characters()
@@ -67,7 +71,6 @@ export default function () {
   })
 
   const filteredMoves = useMemo(() => {
-    console.log(data?.characterName, filteredCharList[0].id)
     if (
       filteredCharList.length === 1 &&
       data &&
@@ -81,26 +84,65 @@ export default function () {
     return []
   }, [data, filteredCharList, moveQuery, selectedCharId])
 
-  console.log('data', data)
-
   useEffect(() => {
-    if (selectedCharId && state === 'idle') {
+    if (
+      selectedCharId &&
+      state === 'idle' &&
+      data?.characterName !== selectedCharId
+    ) {
       load('/t8/' + selectedCharId)
     }
-  }, [selectedCharId, state, load])
+  }, [selectedCharId, state, load, data?.characterName])
 
   const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const searchValue = event.target.value
-    console.log(searchValue)
     setSearchQuery(searchValue)
   }
+
+  const handleOnKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === 'Enter') {
+      if (characterQuery && !moveQuery) {
+        navigate(`/t8/${filteredCharList[0].id}`)
+        return
+      }
+      if (moveQuery && filteredMoves.length > 0) {
+        navigate(
+          `/t8/${selectedCharId}/${commandToUrlSegment(filteredMoves[0].command)}`,
+        )
+      }
+    }
+  }
+
   return (
     <>
       <h1 className="text-2xl">Search</h1>
       <div>Move query {moveQuery}</div>
-      <input onChange={e => handleOnChange(e)}></input>
+      <input
+        onChange={e => handleOnChange(e)}
+        onKeyDown={handleOnKeyDown}
+      ></input>
+      {filteredCharList.length === 0 && (
+        <div>No characters matches the search query</div>
+      )}
       {filteredCharList.length > 1 &&
-        filteredCharList.map(char => <li key={char.id}>{char.id}</li>)}
+        filteredCharList.map(char => (
+          <li key={char.id}>
+            <Link
+              className="text-text-primary no-underline"
+              to={`/t8/${char.id}`}
+            >
+              {char.id}
+            </Link>
+          </li>
+        ))}
+
+      {selectedCharId && state === 'idle' && filteredMoves.length === 0 && (
+        <div>
+          No moves for {selectedCharacter?.displayName} matches the query
+        </div>
+      )}
+
+      {selectedCharId && state !== 'idle' && <div>Loading...</div>}
 
       {filteredMoves.length > 0 &&
         selectedCharId &&
@@ -130,10 +172,24 @@ const MoveItem = ({
   showCharId: boolean
 }) => {
   const prefix = showCharId ? charId + ' ' : ''
+
   return (
-    <Link to={`/t8/${charId}/${move.command}`}>
-      {prefix}
-      {move.command}
+    <Link
+      className="inline-flex gap-2"
+      to={`/t8/${charId}/${commandToUrlSegment(move.command)}`}
+    >
+      <div className="inline-flex items-center gap-2 text-text-primary no-underline">
+        {prefix}
+        {move.command} {(move.video || move.ytVideo) && <VideoIcon />}
+      </div>
+      <div> | </div>
+      {[
+        move.hitLevel,
+        move.startup,
+        move.block,
+        move.hit,
+        move.counterHit || move.hit,
+      ].join(' | ')}
     </Link>
   )
 }
