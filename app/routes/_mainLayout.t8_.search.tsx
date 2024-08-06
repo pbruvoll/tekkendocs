@@ -2,6 +2,8 @@ import { useEffect, useMemo, useState } from 'react'
 import { VideoIcon } from '@radix-ui/react-icons'
 import { type MetaFunction } from '@remix-run/node'
 import { Link, useFetcher, useNavigate } from '@remix-run/react'
+import { Input } from '@/components/ui/input'
+import { ContentContainer } from '~/components/ContentContainer'
 import { getTekken8Characters } from '~/services/staticDataService'
 import { type CharacterFrameDataPage } from '~/types/CharacterFrameDataPage'
 import { type Move } from '~/types/Move'
@@ -114,13 +116,16 @@ export default function () {
   }
 
   return (
-    <>
-      <h1 className="text-2xl">Search</h1>
-      <div>Move query {moveQuery}</div>
-      <input
+    <ContentContainer enableBottomPadding enableTopPadding className="min-h-96">
+      <h1 className="pb-2 text-2xl">Search</h1>
+      <p className="py-2">Enter a character, followe by a command</p>
+      <Input
         onChange={e => handleOnChange(e)}
         onKeyDown={handleOnKeyDown}
-      ></input>
+        placeholder="drag fff2"
+        className="mb-4"
+        autoFocus
+      ></Input>
       {filteredCharList.length === 0 && (
         <div>No characters matches the search query</div>
       )}
@@ -157,8 +162,7 @@ export default function () {
             </li>
           )
         })}
-      <h2>Characters</h2>
-    </>
+    </ContentContainer>
   )
 }
 
