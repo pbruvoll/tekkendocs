@@ -2,6 +2,7 @@ import { FaFacebook } from 'react-icons/fa'
 import {
   DiscordLogoIcon,
   GitHubLogoIcon,
+  MagnifyingGlassIcon,
   TwitterLogoIcon,
 } from '@radix-ui/react-icons'
 import { Link, Outlet } from '@remix-run/react'
@@ -34,6 +35,9 @@ const MainLayoutTemplate = ({ children }: MainLayoutTemplateProps) => {
               TekkenDocs
             </Link>
             <div className="flex place-self-end">
+              <a title="Serach" href="/t8/search" className="px-2">
+                <MagnifyingGlassIcon width="2em" height="2em" />
+              </a>
               <a
                 title="Invite to Tekkendocs Discord server"
                 href={discordInviteLink}
