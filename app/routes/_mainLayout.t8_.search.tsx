@@ -50,7 +50,10 @@ export default function () {
 
   const navigate = useNavigate()
 
-  const includeCharNameInFrames = useMemo(() => !moveQuery, [moveQuery])
+  const includeCharNameInFrames = useMemo(
+    () => !moveQuery && !searchQuery.endsWith(' '),
+    [moveQuery, searchQuery],
+  )
 
   const charList = getTekken8Characters()
 
@@ -153,7 +156,7 @@ export default function () {
         selectedCharId &&
         filteredMoves.map(move => {
           return (
-            <li key={move.moveNumber}>
+            <li key={move.moveNumber} className="list-none">
               <MoveItem
                 charId={selectedCharId}
                 move={move}
@@ -179,7 +182,7 @@ const MoveItem = ({
 
   return (
     <Link
-      className="inline-flex gap-2"
+      className="inline-flex items-start gap-2"
       to={`/t8/${charId}/${commandToUrlSegment(move.command)}`}
     >
       <div className="inline-flex items-center gap-2 text-text-primary no-underline">
