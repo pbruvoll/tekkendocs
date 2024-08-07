@@ -9,7 +9,6 @@ import { Link, Outlet } from '@remix-run/react'
 import { ContentContainer } from '~/components/ContentContainer'
 import { AppErrorBoundary } from '~/components/ErrorBoundary'
 import {
-  discordInviteLink,
   facebooklink,
   githubLink,
   twitterLink,
