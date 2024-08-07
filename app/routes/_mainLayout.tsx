@@ -44,7 +44,7 @@ const MainLayoutTemplate = ({ children }: MainLayoutTemplateProps) => {
               </a>
               <a
                 title="Invite to Tekkendocs Discord server"
-                href={discordInviteLink}
+                href={contactByDiscord.url('invite')}
                 className="px-2"
               >
                 <DiscordLogoIcon width="2em" height="2em" />
