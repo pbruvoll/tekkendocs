@@ -108,7 +108,7 @@ export const getTekken8Characters = (): CharacterInfo[] => {
   return characterInfoListT8
 }
 
-export const discordInviteLink = 'https://discord.gg/aQHckBcS'
+export const discordInviteLink = 'https://discord.gg/eEuJHePy'
 export const githubLink = 'https://github.com/pbruvoll/tekkendocs'
 export const twitterLink = 'https://x.com/tekkendocs'
 export const facebooklink =
