@@ -14,9 +14,14 @@ import {
   githubLink,
   twitterLink,
 } from '~/services/staticDataService'
+import {GetInTouchWith} from "~/utils/getInTouch";
+import {GitHubIssueContactProvider} from "~/utils/getInTouch/providers/githubIssueContactProvider";
+import {DiscordContactProvider} from "~/utils/getInTouch/providers/discordContactProvider";
 
 type MainLayoutTemplateProps = React.PropsWithChildren<{}>
 const MainLayoutTemplate = ({ children }: MainLayoutTemplateProps) => {
+  const contactByGithub = new GetInTouchWith(new GitHubIssueContactProvider());
+  const contactByDiscord = new GetInTouchWith(new DiscordContactProvider());
   return (
     <>
       <header style={{ background: 'var(--accent-4' }}>
@@ -62,41 +67,46 @@ const MainLayoutTemplate = ({ children }: MainLayoutTemplateProps) => {
           <ul className="flex flex-col gap-3">
             <li>
               <a
-                title="Invite to Tekkendocs Discord server"
-                href={discordInviteLink}
-                className="flex items-center gap-2 px-2"
+                  title="Invite to Tekkendocs Discord server"
+                  href={discordInviteLink}
+                  className="flex items-center gap-2 px-2"
               >
-                Discord <DiscordLogoIcon width="2em" height="2em" />
+                Discord <DiscordLogoIcon width="2em" height="2em"/>
               </a>
             </li>
             <li>
               <a
-                title="TekkenDocs on Twitter (X)"
-                href={twitterLink}
-                className="flex items-center gap-2 px-2"
+                  title="TekkenDocs on Twitter (X)"
+                  href={twitterLink}
+                  className="flex items-center gap-2 px-2"
               >
-                Twitter <TwitterLogoIcon width="2em" height="2em" />
+                Twitter <TwitterLogoIcon width="2em" height="2em"/>
               </a>
             </li>
             <li>
               <a
-                title="TekkenDocs on Facebook"
-                href={facebooklink}
-                className="flex items-center gap-2 px-2"
+                  title="TekkenDocs on Facebook"
+                  href={facebooklink}
+                  className="flex items-center gap-2 px-2"
               >
-                Facebook <FaFacebook fontSize="2em" />
+                Facebook <FaFacebook fontSize="2em"/>
               </a>
             </li>
             <li>
               <a
-                title="TekkenDocs source code on Github"
-                href={githubLink}
-                className="flex items-center gap-2 px-2"
+                  title="TekkenDocs source code on Github"
+                  href={githubLink}
+                  className="flex items-center gap-2 px-2"
               >
-                Github <GitHubLogoIcon width="2em" height="2em" />
+                Github <GitHubLogoIcon width="2em" height="2em"/>
               </a>
             </li>
-
+            <li>
+              <a href={contactByGithub.url('featureRequest')} target="_blank">Feature Request</a>
+            </li>
+            <li>
+              <a href={contactByGithub.url('bugReport')} target="_blank">Bug Report</a>
+            </li>
             <li>
               <Link to="/features">Features</Link>
             </li>
