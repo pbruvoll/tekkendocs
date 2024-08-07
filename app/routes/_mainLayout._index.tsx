@@ -1,6 +1,10 @@
 import { Badge, Heading } from '@radix-ui/themes'
 import { json, type MetaFunction, type TypedResponse } from '@remix-run/node'
-import { Link, useLoaderData } from '@remix-run/react'
+import {
+  Link,
+  type ShouldRevalidateFunction,
+  useLoaderData,
+} from '@remix-run/react'
 import { CharacterGrid } from '~/components/CharacterGrid'
 import { ContentContainer } from '~/components/ContentContainer'
 import tekkenDocsLogoLarge from '~/images/logo/tekkendocs-logo-large.svg'
@@ -28,6 +32,10 @@ export const loader = async (): Promise<TypedResponse<LoaderData>> => {
       headers: getCacheControlHeaders({ seconds: 60 * 5 }),
     },
   )
+}
+
+export const shouldRevalidate: ShouldRevalidateFunction = () => {
+  return false
 }
 
 export const meta: MetaFunction = ({ matches }) => {

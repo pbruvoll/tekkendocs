@@ -5,7 +5,7 @@ import {
   MagnifyingGlassIcon,
   TwitterLogoIcon,
 } from '@radix-ui/react-icons'
-import { Link, Outlet } from '@remix-run/react'
+import { Link, Outlet, type ShouldRevalidateFunction } from '@remix-run/react'
 import { ContentContainer } from '~/components/ContentContainer'
 import { AppErrorBoundary } from '~/components/ErrorBoundary'
 import {
@@ -35,9 +35,9 @@ const MainLayoutTemplate = ({ children }: MainLayoutTemplateProps) => {
               TekkenDocs
             </Link>
             <div className="flex place-self-end">
-              <a title="Serach" href="/t8/search" className="px-2">
+              <Link title="Serach" to="/t8/search" className="px-2">
                 <MagnifyingGlassIcon width="2em" height="2em" />
-              </a>
+              </Link>
               <a
                 title="Invite to Tekkendocs Discord server"
                 href={discordInviteLink}
@@ -114,6 +114,10 @@ const MainLayoutTemplate = ({ children }: MainLayoutTemplateProps) => {
       </footer>
     </>
   )
+}
+
+export const shouldRevalidate: ShouldRevalidateFunction = () => {
+  return false
 }
 
 export default function MainLayout() {
