@@ -18,7 +18,7 @@ import { DiscordContactProvider } from '~/utils/getInTouch/discordContactProvide
 
 type MainLayoutTemplateProps = React.PropsWithChildren<{}>
 const MainLayoutTemplate = ({ children }: MainLayoutTemplateProps) => {
-  const contactByGithub = new GitHubIssueContactProvider())\;
+  const contactByGithub = new GitHubIssueContactProvider();
   const contactByDiscord = new DiscordContactProvider();
   return (
     <>
