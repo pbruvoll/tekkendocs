@@ -13,13 +13,15 @@ import {
   githubLink,
   twitterLink,
 } from '~/services/staticDataService'
-import { GitHubIssueContactProvider } from '~/utils/getInTouch/githubIssueContactProvider'
-import { DiscordContactProvider } from '~/utils/getInTouch/discordContactProvider'
+import {
+  GitHubIssueContactProvider,
+  DiscordContactProvider,
+} from '~/utils/getInTouch'
 
 type MainLayoutTemplateProps = React.PropsWithChildren<{}>
 const MainLayoutTemplate = ({ children }: MainLayoutTemplateProps) => {
-  const contactByGithub = new GitHubIssueContactProvider();
-  const contactByDiscord = new DiscordContactProvider();
+  const contactByGithub = new GitHubIssueContactProvider()
+  const contactByDiscord = new DiscordContactProvider()
   return (
     <>
       <header style={{ background: 'var(--accent-4' }}>
@@ -100,12 +102,18 @@ const MainLayoutTemplate = ({ children }: MainLayoutTemplateProps) => {
               </a>
             </li>
             <li>
-              <a href={contactByGithub.buildContactUrl('featureRequest')} target="_blank">
+              <a
+                href={contactByGithub.buildContactUrl('featureRequest')}
+                target="_blank"
+              >
                 Feature Request
               </a>
             </li>
             <li>
-              <a href={contactByGithub.buildContactUrl('bugReport')} target="_blank">
+              <a
+                href={contactByGithub.buildContactUrl('bugReport')}
+                target="_blank"
+              >
                 Bug Report
               </a>
             </li>
