@@ -13,14 +13,13 @@ import {
   githubLink,
   twitterLink,
 } from '~/services/staticDataService'
-import { GetInTouchWith } from '~/utils/getInTouch'
-import { GitHubIssueContactProvider } from '~/utils/getInTouch/providers/githubIssueContactProvider'
-import { DiscordContactProvider } from '~/utils/getInTouch/providers/discordContactProvider'
+import { GitHubIssueContactProvider } from '~/utils/getInTouch/githubIssueContactProvider'
+import { DiscordContactProvider } from '~/utils/getInTouch/discordContactProvider'
 
 type MainLayoutTemplateProps = React.PropsWithChildren<{}>
 const MainLayoutTemplate = ({ children }: MainLayoutTemplateProps) => {
-  const contactByGithub = new GetInTouchWith(new GitHubIssueContactProvider())
-  const contactByDiscord = new GetInTouchWith(new DiscordContactProvider())
+  const contactByGithub = new GitHubIssueContactProvider())\;
+  const contactByDiscord = new DiscordContactProvider();
   return (
     <>
       <header style={{ background: 'var(--accent-4' }}>
@@ -44,7 +43,7 @@ const MainLayoutTemplate = ({ children }: MainLayoutTemplateProps) => {
               </a>
               <a
                 title="Invite to Tekkendocs Discord server"
-                href={contactByDiscord.url('invite')}
+                href={contactByDiscord.buildContactUrl('invite')}
                 className="px-2"
               >
                 <DiscordLogoIcon width="2em" height="2em" />
@@ -67,7 +66,7 @@ const MainLayoutTemplate = ({ children }: MainLayoutTemplateProps) => {
             <li>
               <a
                 title="Invite to Tekkendocs Discord server"
-                href={contactByDiscord.url('invite')}
+                href={contactByDiscord.buildContactUrl('invite')}
                 className="flex items-center gap-2 px-2"
               >
                 Discord <DiscordLogoIcon width="2em" height="2em" />
@@ -101,12 +100,12 @@ const MainLayoutTemplate = ({ children }: MainLayoutTemplateProps) => {
               </a>
             </li>
             <li>
-              <a href={contactByGithub.url('featureRequest')} target="_blank">
+              <a href={contactByGithub.buildContactUrl('featureRequest')} target="_blank">
                 Feature Request
               </a>
             </li>
             <li>
-              <a href={contactByGithub.url('bugReport')} target="_blank">
+              <a href={contactByGithub.buildContactUrl('bugReport')} target="_blank">
                 Bug Report
               </a>
             </li>

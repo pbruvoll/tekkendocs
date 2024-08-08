@@ -1,4 +1,4 @@
-import { type GetInTouchProvider } from '../interfaces/GetInTouchProvider'
+import { type GetInTouchProvider } from './interfaces/GetInTouchProvider'
 
 type DiscordChannel = 'invite'
 

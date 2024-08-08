@@ -1,4 +1,4 @@
-import { type GetInTouchProvider } from '../interfaces/GetInTouchProvider'
+import { type GetInTouchProvider } from './interfaces/GetInTouchProvider'
 
 type GitHubIssueTypes = 'featureRequest' | 'bugReport' | 'choose' | 'new'
 type MappableGithubTypes = Exclude<GitHubIssueTypes, 'choose' | 'new'>
