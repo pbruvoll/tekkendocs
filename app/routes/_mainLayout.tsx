@@ -9,14 +9,19 @@ import { Link, Outlet, type ShouldRevalidateFunction } from '@remix-run/react'
 import { ContentContainer } from '~/components/ContentContainer'
 import { AppErrorBoundary } from '~/components/ErrorBoundary'
 import {
-  discordInviteLink,
   facebooklink,
   githubLink,
   twitterLink,
 } from '~/services/staticDataService'
+import {
+  GitHubIssueContactProvider,
+  DiscordContactProvider,
+} from '~/utils/getInTouch'
 
 type MainLayoutTemplateProps = React.PropsWithChildren<{}>
 const MainLayoutTemplate = ({ children }: MainLayoutTemplateProps) => {
+  const contactByGithub = new GitHubIssueContactProvider()
+  const contactByDiscord = new DiscordContactProvider()
   return (
     <>
       <header style={{ background: 'var(--accent-4' }}>
@@ -40,7 +45,7 @@ const MainLayoutTemplate = ({ children }: MainLayoutTemplateProps) => {
               </Link>
               <a
                 title="Invite to Tekkendocs Discord server"
-                href={discordInviteLink}
+                href={contactByDiscord.buildContactUrl('invite')}
                 className="px-2"
               >
                 <DiscordLogoIcon width="2em" height="2em" />
@@ -63,7 +68,7 @@ const MainLayoutTemplate = ({ children }: MainLayoutTemplateProps) => {
             <li>
               <a
                 title="Invite to Tekkendocs Discord server"
-                href={discordInviteLink}
+                href={contactByDiscord.buildContactUrl('invite')}
                 className="flex items-center gap-2 px-2"
               >
                 Discord <DiscordLogoIcon width="2em" height="2em" />
@@ -96,7 +101,22 @@ const MainLayoutTemplate = ({ children }: MainLayoutTemplateProps) => {
                 Github <GitHubLogoIcon width="2em" height="2em" />
               </a>
             </li>
-
+            <li>
+              <a
+                href={contactByGithub.buildContactUrl('featureRequest')}
+                target="_blank"
+              >
+                Feature Request
+              </a>
+            </li>
+            <li>
+              <a
+                href={contactByGithub.buildContactUrl('bugReport')}
+                target="_blank"
+              >
+                Bug Report
+              </a>
+            </li>
             <li>
               <Link to="/features">Features</Link>
             </li>
