@@ -1,9 +1,11 @@
-import { useMemo, useState } from 'react'
+import { type ChangeEvent, useMemo, useState } from 'react'
 import { Heading } from '@radix-ui/themes'
 import { type MetaFunction } from '@remix-run/node'
 import cx from 'classix'
 import invariant from 'tiny-invariant'
 import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
 import { ContentContainer } from '~/components/ContentContainer'
 import Nav, { type NavLinkInfo } from '~/components/Nav'
 import { TaskProgress } from '~/components/TaskProgress'
@@ -66,6 +68,24 @@ export default function FlashCard() {
     [moves],
   )
   const numViableMoves = viableMoves.length
+
+  const [numMovesToPractice, setNumMovesToPractice] = useState<
+    number | undefined
+  >(undefined)
+  const [startFromMoveNumber, setStartFromMoveNumber] = useState<
+    number | undefined
+  >(undefined)
+
+  const handleStartFromMoveNumChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const num = Number(e.target.value)
+    setStartFromMoveNumber(num ? num : undefined)
+  }
+
+  const handleNumMovesToPracticeChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const num = Number(e.target.value)
+    setNumMovesToPractice(num ? num : undefined)
+  }
+
   const [flashCardAppState, setFlashCardAppState] = useFlashCardAppState()
   const charFlashCardState = useMemo(
     () =>
@@ -180,6 +200,10 @@ export default function FlashCard() {
               numCorrect={charFlashCardState.correct.length}
               numWrong={charFlashCardState.wrong.length}
               numIngnored={charFlashCardState.ignored.length}
+              numMovesToPractice={numMovesToPractice}
+              startFromMoveNum={startFromMoveNumber}
+              handleStartFromMoveNumChange={handleStartFromMoveNumChange}
+              handleNumMovesToPracticeChange={handleNumMovesToPracticeChange}
               onResetState={() =>
                 setFlashCardAppState({
                   ...flashCardAppState,
@@ -209,6 +233,10 @@ export default function FlashCard() {
 type StartPageProps = {
   onStart: () => void
   onResetState: () => void
+  numMovesToPractice: number | undefined
+  startFromMoveNum: number | undefined
+  handleStartFromMoveNumChange: (e: ChangeEvent<HTMLInputElement>) => void
+  handleNumMovesToPracticeChange: (e: ChangeEvent<HTMLInputElement>) => void
   numUnseen: number
   numCorrect: number
   numWrong: number
@@ -216,12 +244,18 @@ type StartPageProps = {
 }
 const StartPage = ({
   onStart,
+  numMovesToPractice,
+  startFromMoveNum,
+  handleStartFromMoveNumChange,
+  handleNumMovesToPracticeChange,
   numCorrect,
   numIngnored,
   numUnseen,
   numWrong,
   onResetState,
 }: StartPageProps) => {
+  const totalMoves = numCorrect + numUnseen + numWrong
+
   return (
     <div className="flex flex-col items-center">
       <Button onClick={onStart} className="m-4 text-xl">
@@ -230,7 +264,7 @@ const StartPage = ({
       <TaskProgress
         className="self-stretch"
         numCompleted={numCorrect}
-        total={numCorrect + numUnseen + numWrong}
+        total={totalMoves}
       />
       <div className="prose prose-invert mt-8">
         <h3>How it works</h3>
@@ -241,6 +275,33 @@ const StartPage = ({
           "Wrong" will be shown again sooner than cards marked as "Correct".
           Card marked as "Ignore" will never be shown again.
         </p>
+
+        <div className="mb-4 grid w-full max-w-sm items-center gap-1.5">
+          <Label htmlFor="num-moves">
+            Number of moves to practice (1 - {totalMoves})
+          </Label>
+          <Input
+            type="string"
+            id="num-moves"
+            value={numMovesToPractice}
+            placeholder={totalMoves.toString()}
+            onChange={handleNumMovesToPracticeChange}
+          />
+        </div>
+
+        <div className="mb-2 grid w-full max-w-sm items-center gap-1.5">
+          <Label htmlFor="start-move">
+            Start from move number (1 - {totalMoves - (numMovesToPractice || 0)}
+            )
+          </Label>
+          <Input
+            type="string"
+            id="start-move"
+            placeholder="1"
+            value={startFromMoveNum}
+            onChange={handleStartFromMoveNumChange}
+          />
+        </div>
 
         <h3 className="py-2">Current State</h3>
         <div className="grid grid-cols-2 gap-2">
