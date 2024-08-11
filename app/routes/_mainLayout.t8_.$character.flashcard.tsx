@@ -113,20 +113,50 @@ export default function FlashCard() {
     viableMoves,
   ])
 
+  const viableMovesSubSet = useMemo(() => {
+    if (!numMovesToPractice && !startFromMoveNumber) {
+      return viableMoves
+    }
+    const startIndex = Math.max(0, startFromMoveNumber || 0 - 1)
+    return viableMoves.slice(
+      startIndex,
+      startIndex + (numMovesToPractice || viableMoves.length),
+    )
+  }, [numMovesToPractice, startFromMoveNumber, viableMoves])
+
+  const charFlashCardStateSubSet = useMemo(() => {
+    return {
+      [FlashCardAnswer.Correct]: charFlashCardState.correct.filter(c =>
+        viableMovesSubSet.some(m => m.command === c),
+      ),
+      [FlashCardAnswer.Wrong]: charFlashCardState.wrong.filter(c =>
+        viableMovesSubSet.some(m => m.command === c),
+      ),
+      [FlashCardAnswer.Ignored]: charFlashCardState.ignored.filter(c =>
+        viableMovesSubSet.some(m => m.command === c),
+      ),
+    }
+  }, [charFlashCardState, viableMovesSubSet])
+
+  const unseenMovesSubSet = useMemo(() => {
+    return unseenMoves.filter(c => viableMovesSubSet.some(m => m.command === c))
+  }, [unseenMoves, viableMovesSubSet])
+
   const findAndSetMoveToShow = () => {
     let command = ''
-    const numWrong = charFlashCardState.wrong.length
-    const numCorrect = charFlashCardState.correct.length
-    const numUnseen = unseenMoves.length
+    const numWrong = charFlashCardStateSubSet.wrong.length
+    const numCorrect = charFlashCardStateSubSet.correct.length
+    const numUnseen = unseenMovesSubSet.length
     if (numWrong >= 7 || (numWrong > 0 && numUnseen === 0)) {
-      command = charFlashCardState.wrong[Math.floor(Math.random() * numWrong)]
+      command =
+        charFlashCardStateSubSet.wrong[Math.floor(Math.random() * numWrong)]
     } else if (numUnseen > 0) {
-      command = unseenMoves[Math.floor(Math.random() * numUnseen)]
+      command = unseenMovesSubSet[Math.floor(Math.random() * numUnseen)]
     } else if (numCorrect > 0) {
       command =
-        charFlashCardState.correct[Math.floor(Math.random() * numCorrect)]
+        charFlashCardStateSubSet.correct[Math.floor(Math.random() * numCorrect)]
     }
-    setMoveToShow(viableMoves.find(m => m.command === command))
+    setMoveToShow(viableMovesSubSet.find(m => m.command === command))
   }
 
   const handleAnswer = (answer: FlashCardAnswerType) => {
@@ -316,11 +346,11 @@ const StartPage = ({
         </div>
       </div>
 
-      <Button className="mt-4" onClick={onResetState} variant="secondary">
-        Reset state
-      </Button>
-      <Button onClick={onStart} className="m-4 text-xl">
+      <Button onClick={onStart} className="mt-4 text-xl">
         Start
+      </Button>
+      <Button className="m-4" onClick={onResetState} variant="secondary">
+        Reset state
       </Button>
     </div>
   )
