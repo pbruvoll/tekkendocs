@@ -10,7 +10,7 @@
     "dev-mock-data": "cross-env USE_MOCK_DATA=1 remix dev --manual -c \"node server.js\"",
     "start": "cross-env NODE_ENV=production node ./server.js",
     "setup": "prisma generate && prisma migrate deploy",
-    "setup:db:dev": "prisma migrate reset && primsa migrate dev",
+    "setup:db:dev": "prisma migrate reset && prisma migrate dev",
     "test": "vitest",
     "lint": "eslint .",
     "lint-fix": "eslint --fix .",
