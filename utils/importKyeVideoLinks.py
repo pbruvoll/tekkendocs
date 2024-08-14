@@ -4,7 +4,7 @@
 import argparse
 import os
 import csv
-import json
+import re
 
 csvSep = ";"
 
@@ -15,9 +15,47 @@ def convert(filePath, outDir):
     print("Converting data for " + charName)
         
     f = open(filePath, "r", encoding='utf-8')
-    textData = json.load(f)
+    textDataLines = f.readlines()
     f.close()
     csvContent = [];
+    csvContent.append(["Command", "YT Video", "YT Start", "YT End"])
+    startTimes = []
+    for i in range(len(textDataLines)):
+        line = textDataLines[i]
+        matches = re.findall(r'\[(.*?)\]', line)
+        if(len(matches) == 0 or matches[0].strip() == "Command") :
+            continue 
+        print("matches : ", matches)
+        command = matches[0].strip()
+        if(len(matches) == 1) :
+            csvContent.append([command])
+            continue
+        fullLink = matches[1].strip() #  https://youtu.be/HSi65ip2sjw?list=PLq8qrbY4w2-OrQxh3xLnv2k7nm6jroMBK&t=65
+        splitted = fullLink.split("?") # [https://youtu.be/HSi65ip2sjw, list=PLq8qrbY4w2-OrQxh3xLnv2k7nm6jroMBK&t=65]
+        videoId = splitted[0].split("/")[-1] # HSi65ip2sjw
+        startTime = splitted[-1].split("=")[-1] # 65
+        startTimes.append(int(startTime))
+        csvContent.append([command, videoId, startTime])
+        # if line.startswith("https://you") :
+        #     command = textDataLines[i + -1].strip()
+        #     fullLink = textDataLines[i].strip() #  https://youtu.be/HSi65ip2sjw?list=PLq8qrbY4w2-OrQxh3xLnv2k7nm6jroMBK&t=65
+        #     splitted = fullLink.split("?") # [https://youtu.be/HSi65ip2sjw, list=PLq8qrbY4w2-OrQxh3xLnv2k7nm6jroMBK&t=65]
+        #     videoId = splitted[0].split("/")[-1] # HSi65ip2sjw
+        #     startTime = splitted[-1].split("=")[-1] # 65
+        #     startTimes.append(int(startTime))
+        #     csvContent.append([command, videoId, startTime])
+
+    startTimes.sort()
+    print(startTimes)
+
+    for i in range(1, len(csvContent)):
+        if(len(csvContent[i]) == 1) :
+            continue
+        startTime = int(csvContent[i][2])
+        endTime = next((x for x in startTimes if x > startTime), None)
+        csvContent[i].append(endTime)
+            
+        
 
     
     outputFilePath = os.path.join(outDir, charName + ".csv")
