@@ -5,5 +5,10 @@ declare global {
 if (!global.__prisma) {
   global.__prisma = new PrismaClient()
 }
-global.__prisma.$connect()
+try {
+  global.__prisma.$connect()
+}
+catch (err) {
+  console.error('Unable to connect to the database:', err)
+}
 export const prisma = global.__prisma
