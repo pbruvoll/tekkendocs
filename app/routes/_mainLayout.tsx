@@ -14,8 +14,8 @@ import {
   twitterLink,
 } from '~/services/staticDataService'
 import {
-  GitHubIssueContactProvider,
   DiscordContactProvider,
+  GitHubIssueContactProvider,
 } from '~/utils/getInTouch'
 
 type MainLayoutTemplateProps = React.PropsWithChildren<{}>
@@ -105,6 +105,7 @@ const MainLayoutTemplate = ({ children }: MainLayoutTemplateProps) => {
               <a
                 href={contactByGithub.buildContactUrl('featureRequest')}
                 target="_blank"
+                rel="noreferrer"
               >
                 Feature Request
               </a>
@@ -113,6 +114,7 @@ const MainLayoutTemplate = ({ children }: MainLayoutTemplateProps) => {
               <a
                 href={contactByGithub.buildContactUrl('bugReport')}
                 target="_blank"
+                rel="noreferrer"
               >
                 Bug Report
               </a>

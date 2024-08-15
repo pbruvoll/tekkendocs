@@ -6,7 +6,7 @@ import os
 import csv
 import re
 
-csvSep = ";"
+csvSep = "\t"
 
     
 def convert(filePath, outDir):
