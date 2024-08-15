@@ -185,6 +185,11 @@ export default function () {
       moveCommand: 'df+2+3',
       mixupCommand: 'd+2',
       startup: 21,
+      completed: {
+        name: 'DeliLizard',
+        sosial: 'https://www.youtube.com/@DeliLizard',
+        video: 'https://www.youtube.com/watch?v=AO3LI6PSv1U',
+      },
     },
   ]
 
