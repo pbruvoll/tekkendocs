@@ -6,7 +6,7 @@ import os
 import csv
 import re
 
-csvSep = "\t"
+csvSep = ";"
 
     
 def convert(filePath, outDir):
@@ -25,28 +25,23 @@ def convert(filePath, outDir):
         matches = re.findall(r'\[(.*?)\]', line)
         if(len(matches) == 0 or matches[0].strip() == "Command") :
             continue 
-        print("matches : ", matches)
         command = matches[0].strip()
         if(len(matches) == 1) :
             csvContent.append([command])
             continue
+
+        if(not "://youtu" in matches[1]) :
+            csvContent.append([command])
+            continue
+
         fullLink = matches[1].strip() #  https://youtu.be/HSi65ip2sjw?list=PLq8qrbY4w2-OrQxh3xLnv2k7nm6jroMBK&t=65
         splitted = fullLink.split("?") # [https://youtu.be/HSi65ip2sjw, list=PLq8qrbY4w2-OrQxh3xLnv2k7nm6jroMBK&t=65]
         videoId = splitted[0].split("/")[-1] # HSi65ip2sjw
         startTime = splitted[-1].split("=")[-1] # 65
         startTimes.append(int(startTime))
-        csvContent.append([command, videoId, startTime])
-        # if line.startswith("https://you") :
-        #     command = textDataLines[i + -1].strip()
-        #     fullLink = textDataLines[i].strip() #  https://youtu.be/HSi65ip2sjw?list=PLq8qrbY4w2-OrQxh3xLnv2k7nm6jroMBK&t=65
-        #     splitted = fullLink.split("?") # [https://youtu.be/HSi65ip2sjw, list=PLq8qrbY4w2-OrQxh3xLnv2k7nm6jroMBK&t=65]
-        #     videoId = splitted[0].split("/")[-1] # HSi65ip2sjw
-        #     startTime = splitted[-1].split("=")[-1] # 65
-        #     startTimes.append(int(startTime))
-        #     csvContent.append([command, videoId, startTime])
+        csvContent.append([command, videoId.replace("\\", ""), startTime])
 
     startTimes.sort()
-    print(startTimes)
 
     for i in range(1, len(csvContent)):
         if(len(csvContent[i]) == 1) :
