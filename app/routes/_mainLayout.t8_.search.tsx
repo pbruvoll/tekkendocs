@@ -82,9 +82,24 @@ export default function () {
       data.characterName === selectedCharId
     ) {
       const cleanMoveQuery = cleanCommand(moveQuery)
-      return data.moves.filter(move =>
+      const filteredByCommand = data.moves.filter(move =>
         cleanCommand(move.command).startsWith(cleanMoveQuery),
       )
+      if (filteredByCommand.length > 0) {
+        return filteredByCommand
+      }
+      if (moveQuery.length > 2) {
+        const filteredByName = data.moves.filter(move =>
+          move.name
+            ?.toLowerCase()
+            .replace(' ', '')
+            .includes(moveQuery.toLowerCase()),
+        )
+        if (filteredByName.length > 0) {
+          return filteredByName
+        }
+      }
+      return []
     }
     return []
   }, [data, filteredCharList, moveQuery, selectedCharId])
