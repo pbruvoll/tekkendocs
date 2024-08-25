@@ -4,31 +4,53 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * 3 chip damage on block
 * Partially uses Heat
 Power crush 7~62";hb pc7~62;Lidia-2+3;Heat Burst;r30;;
-H.1+2;m;25;i31;;+37a (+29) HAE;;"* Partially uses remaining Heat time
-* Reversal Break
-* Cancel with input b,b or f,f
-* Cancel HAE transition with input B";;Lidia-H.1+2;Heian Shodan Seikenzuki > Heaven and Earth;;;
+H.1+2;m;25;i31;+1;+37a (+29);;"* Reversal Break
+* Cancel with b,b or f,f
+* Transition to HAE on hit or block only
+* Cancel HAE transition with B
+* Partially uses remaining Heat time
+* Hold for 20~30 frames";;Lidia-H.1+2;Heian Shodan Seikenzuki > Heaven and Earth;r33;;
+H.1+2*;m;30;i42~64;+10g;+37a (+29);;"* Reversal Break
+* Cancel with b,b or f,f
+* Transition to HAE on hit or block only
+* Cancel HAE transition with B
+* Partially uses remaining Heat time
+* Hold for 31~54 frames";;Lidia-H.1+2*;Heian Shodan Seikenzuki (Slight Hold) > Heaven and Earth;r33;;
+H.1+2**;m;40;i65;+15g;+63a;;"* Reversal Break
+* Cancel with b,b or f,f
+* Transition to HAE on hit or block only
+* Cancel HAE transition with B
+* Partially uses remaining Heat time
+* Hold for 55 frames";;Lidia-H.1+2**;Heian Shodan Seikenzuki: Digress > Heaven and Earth;r35;;
 H.CAT.U;;;;;;;"* Increases Heaven and Earth level
 * Parries all highs or mids
 Parry state 5~39";ps5~39;Lidia-H.CAT.U;Cat Stance > Heaven and Earth;r25 HAE;;
 H.HRS.U;;;;;;;"* Increases Heaven and Earth level
 * Parries all highs or mids
 Parry state 5~39";ps5~39;Lidia-H.HRS.U;Horse Stance > Heaven and Earth;r25 HAE;;
-H.WLF.1;m;24;i22;;+38a (+30) HAE;;"* Balcony Break
+H.WLF.1;m;24;i22;+10g;+38a (+30);;"* Balcony Break
 * Tornado
-* Can hold, cancel hold with input b,b or f,f
-* Cancel HAE transition with input B";bbr trn;Lidia-H.WLF.1;Bassai-zuki > Heaven and Earth;;;
+* Cancel with b,b or f,f on frames 10~18
+* Transition to HAE on hit or block only
+* Cancel HAE transition with B";bbr trn;Lidia-H.WLF.1;Bassai-zuki > Heaven and Earth;r34;;
+H.WLF.1*;m;34;i36;+15g;+66;;"* Tornado
+* Cancel with b,b or f,f on frames 10~18
+* Transition to HAE on hit or block only
+* Cancel HAE transition with B
+* Balcony break on airborne hit";trn;Lidia-H.WLF.1*;Bassai-zuki (Hold) > Heaven and Earth;r34;;
 H.WLF.U;;;;;;;"* Increases Heaven and Earth level
 * Parries all highs or mids
 Parry state 5~39";ps5~39;Lidia-H.WLF.U;Stalking Wolf Stance > Heaven and Earth;r25 HAE;;
-H.f,F+2;m;22;i13;;+17 HRS;;"* Partially uses remaining Heat time
-* Reversal Break
-* Input H.f,f,F+2 to power up";;Lidia-H.f,F+2;Lightning Seikenzuki;;;
-H.f,f,F+1;h;37;i13~15;+5 HAE;+31a (+23);;"* Balcony Break
-* Tornado
+H.f,F+2;m;22;i13;+5;+17;;"* Reversal Break
+* Transition to HRS on hit or block only
 * Partially uses remaining Heat time
-* Cancel HAE transition with input B";bbr trn;Lidia-H.f,f,F+1;Swift High Seikenzuki > Heaven and Earth;;;
-H.2+3;m,m,m,h;55;i18, i24, i15, i34;+10;+0d;;"* Heat Smash
+* Input H.f,f,F+2 to power up";;Lidia-H.f,F+2;Lightning Seikenzuki;r33;;
+H.f,f,F+1;h;37;i13~15;+5;+31a (+23);;"* Tornado
+* Balcony Break
+* Transition to HAE on hit or block only
+* Cancel HAE transition with B
+* Partially uses remaining Heat time";trn bbr;Lidia-H.f,f,F+1;Swift High Seikenzuki > Heaven and Earth;r33;;
+H.2+3;m,m,m,h;55;i18;+10g;+0d;;"* Heat Smash
 * Balcony Break
 * Transition to r31 HAE on block
 * Cancel HAE transition with B
@@ -174,7 +196,7 @@ b+1;m;24;i18;+2;+48d (-10);;"* Heat Engager
 
 * Balcony Break
 * 4 chip damage on block";he bbr;Lidia-b+1;Stalwart Governance;r26;;
-b+1+3;;;;;;;"Parries high punches
+b+1+3;;;;;;;"Parries high or mid punches
 Parry state 5~12";ps5~12;Lidia-b+1+3;;r35;;
 b+2;h;14;i13;-9;+1;;;;Lidia-b+2;Ruling Party;r29;;
 b+2,3;h,m;14,14;,i22;-10;+6;+63a;"* Knee

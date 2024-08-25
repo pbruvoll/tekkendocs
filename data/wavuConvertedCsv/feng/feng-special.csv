@@ -12,17 +12,20 @@ H.f,F+1+2*;m;30;i39;+11;+22a (+12);;"* Balcony Break
 H.2+3;m,m;22,26;i21,24;+12, +24 on STC at Wall, +19 at Wall;+30d (-6);;"Heat Smash
 * Chip damage on block
 * Transitions to STC on block, can cancel with b, change to BKP with b, in STC stance.";hs chp;Feng-H.2+3;Yinglong Mountain Crusher;;;
+H.2+3;m,m;22,26;i21,24;+12, +24 on STC at Wall, +19 at Wall;+30d (-6);;"Heat Smash
+* Chip damage on block
+* Transitions to STC on block, can cancel with b, change to BKP with b, in STC stance.";hs chp;Feng-H.2+3;Yinglong Mountain Crusher;;;
 1;h;5;i10;+1;+8;;;;Feng-1;Left Jab;r19;;
 1,1;h,m;5,21;i25~26;-11;+2;+61a;* Move can be delayed;;Feng-1,1;Jab Spear Fist;;;
 1,2;h,h;5,9;i10;-3;+8;;"* Jail from 1st attack
 * Move can be delayed";;Feng-1,2;Shun Lian Quan;;;
 1,2,2;h,h,h;5,9,12;i17;-13;+3;;"* Combo from 2nd hit
 * Transition to -11 +5 BT with B";;Feng-1,2,2;Firestorm;;;
-1,3;h,h;5,19;i16~17;-5;+8;;"* Combo from 1st hit
+1,3;h,h;5,19;i16~17;-5;+8~+9;;"* Combo from 1st hit
 * Allow to float Combo in Counterhit";;Feng-1,3;Jab Roundhouse Combo;;;
 1+3;h;35;;;-3;;* Throw break 1 or 2;;Feng-1+3;Neck Twister;;;
 1+3+4;;;;;;;;;Feng-1+3+4;Taunt;;;
-2;h;8;i10;-3;+5;;;;Feng-2;Right Jab;;;
+2;h;8;i10;-3;+5;;;;Feng-2;Right Jab;r22;;
 2,4;h,m;8,15;i17;-12;-1;;* Jail from 1st attack;;Feng-2,4;;;;
 2,4,1;h,m,m;8,15,25;i24;-12;+24d (+14);;"Balcony Break
 * Combo from 2nd CH
@@ -45,10 +48,12 @@ Low crush 12~19";bbr js12~19;Feng-2,4,1;San Liang Heng;;;
 Low crush 20~";js20~;Feng-3~4;;;;
 3~4,3;m,l;27,11;i18~20;-26;+19d (+12);;* Combo from 1st hit;;Feng-3~4,3;Leaping Whirlwind Combo;;;
 4;h;17;i11;-9;+2;+27g;;;Feng-4;;;;
+4~3;m;25;i28~i34;-7;+1c;+16a~+22a;"* Combo at tip range
+Low crush 15";js15;Feng-4~3;Headspring;;;
 1+2;m;20;i21~22;-13 / +20wc;+8;;"* Punch sabaki
 * Wall Crush  +20g on hit
 Parry state 5~9";wc ps5~9;Feng-1+2;Iron Shield;;;
-f+2;m;10;i15;-8;+3;;;;Feng-f+2;;;;
+f+2;m;10;i15;-8;+3;+10;;;Feng-f+2;;;;
 f+2,1;m,m;10,10;i19;-8;+3;;"* Combo from 1st CH
 * Move can be delayed";;Feng-f+2,1;;;;
 f+2,1,2;m,m,m;10,10,28;i13~14;-19;+19d (+14);;"* Balcony Break
@@ -57,6 +62,9 @@ f+2,1,2;m,m,m;10,10,28;i13~14;-19;+19d (+14);;"* Balcony Break
 f+3;m;,10;i21;-3;+7;;;;Feng-f+3;;;;
 f+3,2;m,h;,10,17;i21~22;-3;+8;+43d (+35);"* Combo from 1st hit
 * Move can be delayed";;Feng-f+3,2;Piercing Dragon;;;
+f+3,4;m,m;,10,15;i23~24;-16;+33a (+23);;"* Combo from 1st hit
+* Tornado
+Low crush 21";trn js21;Feng-f+3,4;Climbing Dragon;;;
 f+3,4;m,m;,10,15;i23~24;-16;+33a (+23);;"* Combo from 1st hit
 * Tornado
 Low crush 21";trn js21;Feng-f+3,4;Climbing Dragon;;;
@@ -73,9 +81,12 @@ f+1+2;h;25;i19~20;-9;+19d;;"* Heat Engager
 
 * Balcony Break
 Power crush 7";he bbr pc7;Feng-f+1+2;Tiger's Claw;;;
-f+3+4;;;;;;;"*Parries high and mid fist and feet moves (not elbows/knees/heads etc)
+f+3+4;;;;;;;"*Takes 20 Frames
+*Parry State from 3~18 Frame
+*Parries high and mid fist and feet moves (not elbows/knees/heads etc)
+*Can be do it by QCF+3+4
 *If 1 hit is parried, you can still do your STC move, if 2 hits are parried it launches
-Parry state";ps;Feng-f+3+4;Shifting Clouds;STC;;
+Parry state 3";ps3;Feng-f+3+4;Shifting Clouds;r20;;
 df+1;m;11;i14;0;+6;+36g;;;Feng-df+1;Stunning Palm;;;
 df+2;m;15;i20~21;-8;;;;;Feng-df+2;;;;
 df+2,2;m,m;15,21;i13~14;-6;+14a (+4);;Balcony Break;bbr;Feng-df+2,2;God Fist;;;
@@ -141,7 +152,9 @@ b+1+2;m;31;i13~14;-19;+18a (+13);;"* Heat Engager
 * Heat Dash +5 +18 at wall, +43d (+35)
 
 * Balcony Break";he bbr;Feng-b+1+2;Iron Fortress;;;
-b+3+4;;;;;;;* Enter STC with f;;Feng-KNP;Deceptive Step;KNP;;
+b+3+4;;;;;;;"* Enter STC with f 
+* Take 15 Frames 
+* Autoblock 20 Frames";;Feng-KNP;Deceptive Step;KNP;;
 ub+2;m,h;8,20;i16,15;-10;+10;;;;Feng-ub+2;Throat Gouge;;;
 ub+1+2;!;70;i79~82;;+50g (+19);;;;Feng-ub+1+2;Death Palm;;;
 u+2;m;25;i38~40;+2;+10;;Low crush 9;js9;Feng-u+2;Leaping Hammer Fist;;;
@@ -164,6 +177,7 @@ uf+3+4,3;m,h,h,h;10,10,7,11;,i17~18;-6;+70a (+54);;"* Balcony Break
 * Combo from 1st hit
 * causes 1st hit not to crush";bbr trn;Feng-uf+3+4,3;Assassin's Bow;;;
 1+2+3+4;;;;;;;;;Feng-1+2+3+4;Ki Charge;;;
+B,B,U/B;m;21;i39~41;+4c;+22;+22;* The move only can be do it near the wall with the back at the wall allowing to escape from the corner and on hit starts combo, similar to a launcher and without tornado.;;Feng-B,B,U/B;Evading Wall;js5;;
 Back Throw;h;50;;;-4;;* Cannot break throw;;Feng-Back Throw;Violent Storm;;;
 Left Throw;h;40;;;-6;;* Throw break 1;;Feng-Left Throw;Jaws of Death;;;
 Right Throw;h;40;;;-4;;* Throw break 2;;Feng-Right Throw;Wandering Soul;;;
@@ -197,7 +211,7 @@ qcf+2;m;25;i22~23;-14;+35a (+25);;* Tornado;trn;Feng-qcf2;Mountain Crusher;;;
 qcf+1+2;m;25;i16~17;0c;+7c;+13;Head;;Feng-qcf1+2;Yan Wang's Wrath;;;
 qcf+3+4;;;;;;;Transitions to STC;;Feng-qcf3+4;;;;
 uf,n,4;m;20;i23~25;-13;+32a (+22);;Low crush 9;js9;Feng-uf,n,4;Delayed Rising Toe Kick;;;
-f,f,F+3;m;30;i20~25;+6;+13d (+3);;"* Balcony Break
+f,f,F+3;m;30;i20~25;+6~+11g;+13d (+3);;"* Balcony Break
 * Chip damage on block
 Low crush 5";bbr chp js5;Feng-f,f,F+3;Severing Sword;;;
 ws1;m;13;i13;-3;+3;;;;Feng-ws1;;;;
@@ -216,9 +230,8 @@ SS.2;h;18;i15;+3;+9b;+31d;"* Homing
 * Recovers in BT";hom;Feng-SS.2;Hidden Intentions;BT;;
 SS.4;l;19;i21~22;-31c;+8 (-8);+72a (+56);"* Has a clean hit effect
 High crush 10";cs10;Feng-SS.4;Swift Sweep Kick;;;
-SS.1+2;m;24;i22~23;+1;+21d (+12);;"* Balcony Break
-* Chip damage on block
-* pc5";bbr chp;Feng-SS.1+2;Enlightened Circle;;;
+SS.1+2;m;24;i22~23;+1~+2;+21d (+12);;"* Balcony Break
+* Chip damage on block";bbr chp;Feng-SS.1+2;Enlightened Circle;;;
 FC.df+1;l;19;i21~22;-13c;-2;+13;;;Feng-FC.df+1;Silent Arrow;;;
 FC.df+2;m;21;i18;-14;+55a;;;;Feng-FC.df+2;Monkey Strike;;;
 FC.df+4;l;13;i19~20;-8c;+3b;;"* Can be input with D,df+4

@@ -1,12 +1,10 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Wavu id;Name;Recovery;Image;Video
 2+3;m;12 (12);i16;+1;+2c;;"* Heat Burst
 * Cancel to r45 with b,b
+* 3 chip damage on block
+* Partially uses Heat
+* Cannot K.O.
 Power crush 8~";hb pc8~;Azucena-2+3;Heat Burst;r30;;
-H.3,2~F;;;;-18;-7;;"&lt;div class=&quot;plainlist&quot;&gt;
-High crush 4~15
-Parry state 11~&lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
-cs4~15
-ps11~&lt;/div&gt;";Azucena-H.3,2~F;;r21 LIB;;
 H.LIB,P (High);m;25;i17~18;;+32a;;"* Regenerates heat
 * Restores recoverable health
 is1~";is1~;Azucena-H.LIB,P (High);Puño de Fuego Evitacion;r35;;
@@ -28,103 +26,138 @@ H.b+2,F;;;;+7;+54a (+34);;"* Balcony Break
 * Chip damage on block
 ,Low crush 15~30 fs31~33";bbr hom chp js15~30 fs31~33;Azucena-H.b+2,F;Mil Nudillo > Nuevo Libertador;r38 LIB;;
 H.b+3,F;;;;+5;+67a (+50);;;;Azucena-H.b+3,F;Tacón Plunger > Heat Dash;;;
-H.f+4,4,F;;;;+5~+6;+62a (+42);;;;Azucena-H.f+4,4,F;Tifón Patear > Heat Dash;;;
-H.f+1+2,F;;;;+5~+6;+43a (+35);;;;Azucena-H.f+1+2,F;Aero Press Pegar > Heat Dash;;;
 H.f+3+4;;;;;;;"* Parries all high/low attacks
 * Cancel to r20 with DB
 High crush 4~20 Parry state 17~";cs4~20 ps17~;Azucena-H.f+3+4;Libertador Revolución;r25 LIB;;
-H.2+3;m,m,t;15,9,29;i15~16;+6~-7;+0a;;"* Heat Smash
+H.2+3;m,m,t;15,9,29;i15~16;+6;+0a;;"* Heat Smash
+* Reversal Break
 * Balcony Break
-* Throw on hit";hs bbr;Azucena-H.2+3;Azucena Speciality;;;
-H.2+3;m,h,m;15,15,30;i15~16 i24~25 i53~54;+6~-7;+15a;;"* Heat Smash
-* Spike
-Low crush 18~57 fs58~60";hs spk js18~57 fs58~60;Azucena-H.2+3-Block;Azucena Speciality (Block);r43 LIB;;
+* 17 chip damage on block
+* Transition to attack throw on hit
+* Enter LIB +6 automatically on block/whiff
+* +15a if only the last hit connects
+* +30a (+20) if only the last two hits connect
+* 2nd hit damage 9 > 15 if 1st hit whiffs
+* 3rd hit damage 29 > 30 if 1st hit whiffs
+* Hit level becomes m,h,m on block/whiff
+* Spike on the last hit if the first two whiff
+&lt;div class=&quot;plainlist&quot;&gt;
+* Low crush 18~57
+* fs58~60
+&lt;/div&gt;";"hs bbr &lt;div class=&quot;plainlist&quot;&gt;
+* js18~57
+* fs58~60
+&lt;/div&gt;";Azucena-H.2+3;Azucena Speciality;;;
 H.2+3+4;h!;0;i45;;+35a;;;;Azucena-H.2+3+4;Coffee Break;r51;;
 R.df+1+2;m;55+;i20;-15;+0d;;"* Rage Art
 * Damage increases with lower health
 * Removes recoverable health on hit
 Power crush 8~";pc8~;Azucena-R.df+1+2;Alegría del Café;;;
-1;h;5;i10;+1;+8;;;;Azucena-1;Jab;r17;;
+1;h;5;i10;+1;+8;;;;Azucena-1;Jab;r19;;
 1,1;h,m;5,15;,i24~25;-10;+8;+18a;"* Combo from 1st hit
-* Transition to LIB on hit only
+* Transition to LIB on standing hit only
 (Ver.1.04.00) - Changed from -9F on block.
 (Ver.1.05.00) - On counterhit, now applies knockdown for follow up.";;Azucena-1,1;High Mountain Combo;r28;;File:Azucena-1,1.mp4
-1,2;h,h;5,23;,i20~21;-14~-13;+8~+9;;"* Balcony Break
+1,2;h,h;5,23;,i20~21;-14;+8;;"* Balcony Break
 * Combo from 1st hit with 4f delay
 * Can transition to BT with B";bbr;Azucena-1,2;High Roast Combo;r34;;File:Azucena-1,2.mp4
 1+3+4;;;;;;;;;Azucena-1+3+4;Taunt;r55;;
 1+3+4*;;;;;;;"* Regenerates heat
 * Heat meter won't disappear, even if it fully depletes";;Azucena-1+3+4*;Shuffle Recital;r60;;
 2;h;9;i10;+0;+9;;;;Azucena-2;Right Jab;r19;;
-2,1;h,m;9,11;,i17~18;-7;+3;;"Combo from 1st hit with 4f delay
-Jails from 1st hit";;Azucena-2,1;;r22;;
-2,1,2;h,m,h;9,11,21;,i24~25;-5~-4;+20a (+3);;"* Tornado
+2,1;h,m;9,11;,i17~18;-7;+3;;"* Combo from 1st hit with 4f delay
+* Jail from 1st attack with 2f delay";;Azucena-2,1;;r22;;
+2,1,2;h,m,h;9,11,21;,i24~25;-5;+20a (+3);;"* Tornado
 * Balcony Break
 * Combo from 2nd CH with 5f delay
 * Input can be delayed 10f";trn bbr;Azucena-2,1,2;Andes Mountain Uppercut Combo;r29;;
 3;m;11;i14;-7;+4;;;;Azucena-3;Left Kick;r26;;
-3,2;m,m;11,18;,i23~24;-12~-11;+6~+7;+33d (+25);"* Combo from 1st hit with 5f delay
+3,2;m,m;11,18;,i23~24;-12;+6;+33d (+25);"* Combo from 1st hit with 5f delay
 * Input can be delayed 10f delay";;Azucena-3,2;Groovy Strike;r31;;File:Azucena-3,2.mp4
-3,2~F;m;11;;-18;-7;;,Parry state 13~;ps13~;Azucena-3,2~F;;r23 LIB;;File:Azucena-3,2~F.mp4
-3,3;m,h;11,23;,i24~25;-1~+0;+43a (-15);;"* Balcony Break
+3,2~F;m;11;;-18;-7;;"Listed parry state is at earliest cancel
+&lt;div class=&quot;plainlist&quot;&gt;
+* ,Parry state 36 on whiff
+* ,Parry state 17~ on block
+* ,Parry state 6~ on hit
+&lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
+* ps36 on whiff
+* ps17~ on block
+* ps6~ on hit
+&lt;/div&gt;";Azucena-3,2~F;;r19 LIB;;File:Azucena-3,2~F.mp4
+3,3;m,h;11,23;,i24~25;-1;+43d (-15);;"* Balcony Break
 * Combo from 1st hit with 6f delay";bbr;Azucena-3,3;Groovy Punalada;r30;;
-4;h;15;i12~13;-8~-7;+3~+4;+8;;;Azucena-4;Right Kick;r26 BT;;
-4,1;h,h;15,14;,i21~22;-2~-1;+4~+5;+6~+7;"Combo from 1st hit
+4;h;15;i12~13;-8;+3;+8;;;Azucena-4;Right Kick;r26 BT;;
+4,1;h,h;15,14;,i21~22;-2;+4;+6~+7;"Combo from 1st hit
 (Ver.1.05.00) - Damage changed from 15,11.";;Azucena-4,1;Guapuño;r20 BT;;
-4,3;h,M;15,17;,i26~27;-11~-10;+19c~+20c;+37a;"* Balcony Break on CH
+4,3;h,M;15,17;,i26~27;-11;+19g;+37a;"* Balcony Break
 * Combo from 1st CH with 8f delay
-* Input can be delayed 12f";;Azucena-4,3;Delfin Patadas;r30;;File:Azucena-4,3.mp4
+* Input can be delayed 12f
+* Opponent recovers crouching on hit";bbr;Azucena-4,3;Delfin Patadas;r30;;File:Azucena-4,3.mp4
 1+2;h;17;i15;-8;+13g;+56a;"Balcony Break
 (Ver.1.05.00) - Damage changed from 20.
 High crush 8~15";bbr cs8~15;Azucena-1+2;Boomerang Scythe;r30;;
 2+3+4;h!;0;i45;;-1;;;;Azucena-2+3+4;Coffee Break;r51;;
-f+2;h;14;i17~18;-10~-9;+1~+2;;;;Azucena-f+2;;r28;;
-f+2,1;h,m;14,17;,i22~23;-10~-9;+5~+6;;"* Combo from 1st hit with 7f delay
+f+2;h;14;i17~18;-10;+1;;;;Azucena-f+2;;r28;;
+f+2,1;h,m;14,17;,i22~23;-10;+5;;"* Combo from 1st hit with 7f delay
 * Input can be delayed 8f";;Azucena-f+2,1;;r29;;
-f+2,1,4;h,m,m;14,17,23;,i24~25;-14~-13;+19a (+9);;"* Balcony Break
+f+2,1,4;h,m,m;14,17,23;,i24~25;-14;+19a (+9);;"* Balcony Break
 * Combo from 2nd CH with 10f delay
-,Low crush 18~38 fs39~41";bbr js18~38 fs39~41;Azucena-f+2,1,4;Danza Del Cóndor;r35;;
+&lt;div class=&quot;plainlist&quot;&gt;
+* ,Low crush 18~38
+* ,fs39~41&lt;/div&gt;";"bbr &lt;div class=&quot;plainlist&quot;&gt;
+* js18~38
+* fs39~41&lt;/div&gt;";Azucena-f+2,1,4;Danza Del Cóndor;r35;;
 f+3;m;15;i18;-4;+5;;;;Azucena-f+3;;r25 LIB;;
-f+3,2;m,h;15,20;,i22~23;-4~-5;+22a;;"* Balcony Break
+f+3,2;m,h;15,20;,i22~23;-4;+22a;;"* Balcony Break
 * Combo from 1st hit with 8f delay";bbr;Azucena-f+3,2;Sumatra Back Knuckle;r25;;
-f+4;m;16;i17~18;-8~-7;+1~+2;;"*
-Homing";hom;Azucena-f+4;;r28;;
-f+4,4;m,h;16,21;,i24~25;-7~-6;+19a (+10);;"* Heat Engager
+f+4;m;16;i17~18;-8;+1;;Homing;hom;Azucena-f+4;;r28;;
+f+4,4;m,h;16,21;,i24~25;-7;+19a (+10);;"* Heat Engager
+
+* Heat Dash +62a (+42) on hit, +5 on block
 
 * Balcony Break
 * Combo from 1st hit
-,Low crush 15~23 fs24~26";he bbr js15~23 fs24~26;Azucena-f+4,4;Tifón Patear;r30;;
-f+4,4~2;m,h;16,23;,i23~24;+1~+2;+52a;;Chip damage on block;chp;Azucena-f+4,4~2;Tifón Trueno;r26;;
+* Cancel 2nd hit into BT -19 -10 r20 with B
+&lt;div class=&quot;plainlist&quot;&gt;
+* ,Low crush 15~23
+* ,fs24~26&lt;/div&gt;";"he bbr &lt;div class=&quot;plainlist&quot;&gt;
+* js15~23
+* fs24~26&lt;/div&gt;";Azucena-f+4,4;Tifón Patear;r30;;
+f+4,4~2;m,h;16,23;,i23~24;+1;+52a;;Chip damage on block;chp;Azucena-f+4,4~2;Tifón Trueno;r26;;
 f+4,4~3;m,m;16,24;,i21~22;-9~-8;+15a (+6);+70a (+54);"Balcony Break
-,Low crush 1~6 fs7~9";bbr js1~6 fs7~9;Azucena-f+4,4~3;Tifón Cañón;r29;;
-f+4,4~B;m;16;;-19;-10;;,Low crush 15~23 fs24~26;js15~23 fs24~26;Azucena-f+4,4~B;;r20 BT;;
+&lt;div class=&quot;plainlist&quot;&gt;
+* ,Low crush 1~6
+* ,fs7~9&lt;/div&gt;";"bbr &lt;div class=&quot;plainlist&quot;&gt;
+* js1~6
+* fs7~9&lt;/div&gt;";Azucena-f+4,4~3;Tifón Cañón;r29;;
 f+1+2;h;25;i16~17;-8~-7;+41a (+17);;"* Heat Engager
 
+* Heat Dash +43a (+35) on hit, +5 on block
+
 * Balcony Break
-* Frame advantage is +0 if an attack is absorbed
-Power crush 7~";he bbr pc7~;Azucena-f+1+2;Aero Press Pegar;r32;;
+* +0 on block if an attack is absorbed
+Power crush 7~15";he bbr pc7~15;Azucena-f+1+2;Aero Press Pegar;r32;;
 f+3+4;;;;;;;"* Parries all high/low attacks
 * Cancel to r20 with DB
 Parry state 18~";ps18~;Azucena-f+3+4;Libertador;r24 LIB;;
 f+3+4*;;;;;;;"* Regenerates heat
 * Heat meter won't disappear, even if it fully depletes";;Azucena-f+3+4*;Shuffle Jamboree;r55? LIB;;
-df+1;m;11;i13~14;-3~-2;+8~+9;;;;Azucena-df+1;Mid Check;r21;;
-df+1,4;m,h;11,13;,i17~18;-7~-6;+4~+5;;"* Combo from 1st hit with 8f delay
-* Jail from 1st block with 1f delay
+df+1;m;11;i13~14;-3;+8;;;;Azucena-df+1;Mid Check;r21;;
+df+1,4;m,h;11,13;,i17~18;-7;+4;;"* Jail from 1st attack with 1f delay
+* Enter BT -5 +6 r23 with B
 (Ver.1.04.00) - Damage changed from 11,17";;Azucena-df+1,4;;r25;;
-df+1,4,1;m,h,h;11,13,20;,i22~23;-5~-4;+44d (-14);+56a;"* Balcony Break
+df+1,4,1;m,h,h;11,13,20;,i22~23;-5;+44d (-14);+56a;"* Balcony Break
 * Combo from 2nd CH with 7f delay
-* Input can be delayed 8f delay";bbr;Azucena-df+1,4,1;Grande Combo;r29;;
-df+1,4,1~2;m,h,M;11,13,23;,i18~19;-10~-9;+23d;;Spike;spk;Azucena-df+1,4,1~2;Full Body Grande Combo;r26;;
-df+1,4,1~F;m,h;11,13;;-17~-16;-6~-5;;;;Azucena-df+1,4,1~F;;r20 LIB;;
-df+1,4~B;m,h;11,13;;-5;+6;;(Ver.1.05.00) - New Move;;Azucena-df+1,4~B;;r? BT;;
-df+2;m;12;i15~16;-13~-12;+28a (+18);;Launches crouching opponent;;Azucena-df+2;Mount Rainier;r31;;
-df+3;m;17;i17~18;-5~-4;+5~+6;+59a;Knee;kne;Azucena-df+3;Rodilla Shot;r29;;
-df+4;m;15;i16~17;-7~-6;+2~+3;;;;Azucena-df+4;;r27;;
-df+4,1;m,h;15,23;i23~24;-5~-4;+20a (+3);;"* Tornado
+* Input can be delayed 8f delay
+* Enter LIB -17 -6 r20 with F";bbr;Azucena-df+1,4,1;Grande Combo;r29;;
+df+1,4,1~2;m,h,M;11,13,23;,i18~19;-10;+23d;;Spike;spk;Azucena-df+1,4,1~2;Full Body Grande Combo;r26;;
+df+2;m;12;i15~16;-13;+28a (+18);;Launches crouching opponent;;Azucena-df+2;Mount Rainier;r31;;
+df+3;m;17;i17~18;-5;+5;+59a;Knee;kne;Azucena-df+3;Rodilla Shot;r29;;
+df+4;m;15;i16~17;-7;+2;;;;Azucena-df+4;;r27;;
+df+4,1;m,h;15,23;i23~24;-5;+20a (+3);;"* Tornado
 * Balcony Break
 * Combo from 1st hit with 6f delay
-* Input can be delayed 10f";trn bbr;Azucena-df+4,1;Blue Mountain Combo;r27;;
+* Input can be delayed 10f";trn bbr;Azucena-df+4,1;Blue Mountain Combo;r29;;
 d+1;m;20;i20~21;-2~-1;+4c~+5c;+45a;Spike;spk;Azucena-d+1;Hand Drip Hammer;r30;;
 d+1+3;mt;30;i12~13;;+0d;;"* Heat Engager
 
