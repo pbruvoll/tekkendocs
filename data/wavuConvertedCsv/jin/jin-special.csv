@@ -1,13 +1,13 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Wavu id;Name;Recovery;Image;Video
 2+3;m;12;16;+1;+2c;+2c;"* Heat Burst
 * Press b,b to cancel attack
-Power crush ?";hb pc?;Jin-2+3;Heat Burst;;;
+Power crush 7";hb pc7;Jin-2+3;Heat Burst;;;
 H.db+1+2;m;0;i19~34;+4;+23c;+23c;"* Balcony Break
 * Partially uses remaining Heat time
 * Transitions to Awakened Breaking Step on hit or block
 * Causes Strong Aerial Tailspin
 * Causes WallSplat on hit
-Power crush";bbr pc;Jin-H.db+1+2;Awakened Power Stance;;;
+Power crush 6";bbr pc6;Jin-H.db+1+2;Awakened Power Stance;;;
 H.db+1+2,1;m,m;0,25;i20~22;-13;+72a (56);+72a (56);"* Tornado
 * Uses Tornado on launch
 * 10 Recoverable Damage on block";trn;Jin-H.db+1+2,1;Awakened Thunder God Fist;;;
@@ -105,7 +105,7 @@ db+2,2;m,h;12,11;i8;-12;+7;+43a;Jails;;Jin-db+2,2;;;;
 db+2,2,3;m,h,m;12,11,21;i35~i36;-9~-8;+20a~+21a;;;;Jin-db+2,2,3;Savage Sword;;;
 db+2,3;m,m;12,23;i27~i29;-8~-6;+7a~+9a;;* Floor Break;fbr;Jin-db+2,3;Punch > Cascade Kick;;;
 db+3;h;28;i19~i21;-10~-8;+17a~+19a;;High crush;cs;Jin-db+3;Left Spinning Back Kick;;;
-db+4;l;18;i20;-13;+3;+13;;;Jin-db+4;Right Low Roundhouse;;;
+db+4;l;18;i20;-13;+3;+13g;Opponent can block follow up attacks on CH.;;Jin-db+4;Right Low Roundhouse;;;
 db+1+2;m;0;19;-11;+17;;"* Balcony Break
 * Wallsplat";bbr;Jin-db+1+2;Power Stance;;;
 b+1;h;11;i12;-9;+2;;;;Jin-b+1;Shun Maten (1);;;
@@ -119,10 +119,10 @@ b+3,F;m;17,17;i15~i16;-2;+9;;;;Jin-b+3,F;(Left Knee to Zenshin);r ZEN;;
 b+4;m;21;i17;-7;+15a;;;;Jin-b+4;Spinning Sidekick;;;
 b+1+2;m;;i23;-12;+6;;"Sabaki Parry: absorbs punches, causing +34ad (+26) KND on hit
 Parry state";ps;Jin-b+1+2;Suigetsu Strike;;;
-b+3+4;;;;;;;"*High Crush evasion, can perform all attacks from ZEN Stance; f to shift to WR, df to shift to CD";;Jin-b+3+4;Zanshin;;;
 b+3+4;;;;;;;"* Steps backward
 * Can transition to dash with input F
 * Can transition to Breaking Step with input DF";;Jin-b+3+4;Zanshin;;;
+b+3+4;;;;;;;"*High Crush evasion, can perform all attacks from ZEN Stance; f to shift to WR, df to shift to CD";;Jin-b+3+4;Zanshin;;;
 ub+1+2;m!;50;i75~i76;;+9a (0);;Unblockable;;Jin-ub+1+2;Konshin Seikenzuki;;;
 ub+1+2,b,b;m!;50;;;;;;;Jin-ub+1+2,b,b;Konshin Seikenzuki (Cancelled);;;
 uf+2;m;18;i15~i16;-7~-6;+6~+7;+19a (+10);;;Jin-uf+2;Evading Middle Strike;;;
@@ -148,16 +148,17 @@ f,F+4;m;28;i17~i18;-7~-6;+22a (+12);;;;Jin-f,F+4;Battery Sidekick;;;
 qcb+1+3;h;40;i12;-2;0;;Throw break: 1;;Jin-qcb+1+3;Complicated Wire;;;
 uf,n+4;m;20;i23~i25;-13~-11;+32a~+34a (+22a~+24a);;;;Jin-uf,n+4;Delayed Rising Toe Kick;;;
 f,f,F+3;m;30;i22~i23;+6~+7;+13a~+14a (+3~+4);;* Alternate input: WR.3 or f,n,d,df,UF+3;;Jin-f,f,F+3;Leaping Side Kick;;;
-ws1;m;10;i13~i14;-6~-5;+5~+6;;;;Jin-ws1;Twin Lancer (1);;;
-ws1,2;m,m;10,16;i19~20;-8~-7;+3~+4;;"* Transition to -9 (ob) +2 (oh) ZEN with F
+ws1;m;7;i13~i14;-6~-5;+5~+6;;;;Jin-ws1;Twin Lancer (1);;;
+ws1,2;m,m;7,16;i19~20;-8~-7;+3~+4;;"* Transition to -9 (ob) +2 (oh) ZEN with F
 * Floor Break";fbr;Jin-ws1,2;Twin Lancer;;;
-ws1,3;m,h;10,8;i14;-6;+4;;Jails;;Jin-ws1,3;Kazama Style 6 Hit Combo Redux (2);;;
-ws1,3,2;m,h,m;10,8,4;i18;-11;-6;;;;Jin-ws1,3,2;Kazama Style 6 Hit Combo Redux (3);;;
-ws1,3,2,1;m,h,m,m;10,8,4,3;i10;-11;+3;;;;Jin-ws1,3,2,1;Kazama Style 6 Hit Combo Redux (4);;;
-ws1,3,2,1,4;m,h,m,m,l;10,8,4,3,5;i20;-31;+8;;;;Jin-ws1,3,2,1,4;Kazama Style 6 Hit Combo Redux (5);;;
-ws1,3,2,1,4,2;m,h,m,m,l,m;10,8,4,3,5,15;i31;-16;-8;;* Floor Break;fbr;Jin-ws1,3,2,1,4,2;Kazama Style 6 Hit Combo Redux;;;
-ws1,3~3;m,m;10,20;i23~i24;+6~+7;+13c~+14c;;;;Jin-ws1,3~3;Solar Plexus Strike > Brazilian Kick;;;
-ws1,3~3,~df;m,m;10,20;;+2~+3;+9c~+10;;;;Jin-ws1,3~3~df;(Brazilian Kick to Breaking Step);;;
+ws1,3;m,h;7,8;i14;-6;+4;;Jails;;Jin-ws1,3;Kazama Style 6 Hit Combo Redux (2);;;
+ws1,3,2;m,h,m;7,8,4;i18;-11;-6;;;;Jin-ws1,3,2;Kazama Style 6 Hit Combo Redux (3);;;
+ws1,3,2,1;m,h,m,m;7,8,4,3;i10;-11;+3;;;;Jin-ws1,3,2,1;Kazama Style 6 Hit Combo Redux (4);;;
+ws1,3,2,1,4;m,h,m,m,l;7,8,4,3,5;i20;-31;+8;;;;Jin-ws1,3,2,1,4;Kazama Style 6 Hit Combo Redux (5);;;
+ws1,3,2,1,4,2;m,h,m,m,l,m;7,8,4,3,5,15;i31;-16;-8;;* Floor Break;fbr;Jin-ws1,3,2,1,4,2;Kazama Style 6 Hit Combo Redux;;;
+ws1,3,~b;m,hm,h;7,810,8;i14;-6;+4;;Jails, *B to shift to special back step (no stance / unique moves);;Jin-ws1,3~B;Kazama Style 6 Hit Combo Redux (2) to Back step;;;
+ws1,3~3;m,m;7,20;i23~i24;+6~+7;+13c~+14c;;;;Jin-ws1,3~3;Solar Plexus Strike > Brazilian Kick;;;
+ws1,3~3,~df;m,m;7,20;;+2~+3;+9c~+10;;;;Jin-ws1,3~3~df;(Brazilian Kick to Breaking Step);;;
 ws2;m;14;i14~15;-12~-11;+39a~+40a (+29~+30a);;;;Jin-ws2;Crouching Uppercut;;;
 ws3;m;20;i16~18;-9~-11;+10-~+12;+22a;* Homing;hom;Jin-ws3;Bamboo Splitter;;;
 ws4;m;13;i11~12;-3~-2;+8~+9;;;;Jin-ws4;Double Cross Kicks (1);;;
@@ -169,6 +170,7 @@ CD.df:1;m;22;i16~i17;-13~-12;+36a~+37a (+26~+27);;* Tornado;trn;Jin-CD.df${justF
 CD.df:2;h;25;i11~i12;+5~+6;+76a~+77a (+60~+61);;;;Jin-CD.df${justFrame}2;Electric Wind Hook Fist;;;
 CD.df+1;m;20;i16~i17;-13~-12;+32a~+33a (+22~+23);;* Tornado;trn;Jin-CD.df+1;Thrusting Uppercut;;;
 CD.df+2;h;20;i11~12;-10~-9;+74a~75a (+58~+59);;;;Jin-CD.df+2;Wind Hook Fist;;;
+OTG.d+1+2;l;19;i19~20;-13;-2(-12);;Hits grounded, only available when opponent is on the ground;;Jin-OTG.d+1+2;Black Out;;;
 ZEN.1;m;14;i16~i17;-3~-2;+8~+9;;;;Jin-ZEN.1;Brimstone Bite (1);;;
 ZEN.1,2;m,m;14,21;i16;-14~-13;+32a~+33a (+6~+7);;* Can cancel into Breaking Step with input DF;;Jin-ZEN.1,2;Brimstone Bite;;;
 ZEN.1,3;m,h,th;14,14,14;i16;-9~-8;0;;;;Jin-ZEN.1,3;Kazama Style Leg Strike Flurry;;;

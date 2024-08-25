@@ -1,69 +1,79 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Wavu id;Name;Recovery;Image;Video
 2+3;m;12 (12);i16;+1;+2c;;"* Heat Burst
 Power crush";hb pc;Bryan-2+3;Heat Burst;;;
-H.2+3;m,m,t;20,20,35;i16;+9 / +17wc;-1d;;"* Heat Smash
+H.2+3;m,m,t;20,20,35;i16;+15g;-1d;;"* Heat Smash
 * Floor Break
-** 2nd and 3rd hit
-* Throw on hit
-* Wall Crush +17g on block
-Low crush";hs fbr wc js;Bryan-H.2+3;Notorious Monster;;;
+* Transition to attack throw on hit
+Low crush";hs fbr js;Bryan-H.2+3;Notorious Monster;;;
 R.df+1+2;m;55+;i20;-15;+0d;;"* Rage Art
 Power crush";pc;Bryan-R.df+1+2;Total Vandalization;;;
-1;h;5;i10;+1;+8;;;;Bryan-1;Jab;;;
-1,2;h,h;5,8;,i12;-3;+8;+9;"Combo from 1st hit
-Jails";;Bryan-1,2;Left Right Combo;;;
-1,2,1;h,h,m;5,8,18;,i19;-6;+6;+64a;;;Bryan-1,2,1;One Two Body Blow;;;
-1,2,3;h,h,L;5,8,15;,i24;-12;+2;+14d;Combo from 1st and 2nd CH;;Bryan-1,2,3;One Two Low Kick;;;
+1;h;5;i10;+1;+8;;r17 on hit or block;;Bryan-1;Jab;r19;;
+1,2;h,h;5,8;,i12;-3;+8;+9;Jail from 1st attack;;Bryan-1,2;Left Right Combo;r21;;
+1,2,1;h,h,m;5,8,18;,i19;-6;+6;+65a;Combo from 2nd CH with 10f delay;;Bryan-1,2,1;One Two Body Blow;r25;;
+1,2,3;h,h,L;5,8,15;,i24;-12;+2;+14a;"* Combo from 1st CH
+* Combo from 2nd CH with 3f delay";;Bryan-1,2,3;One Two Low Kick;r31;;
 1,2,4;h,h,h;5,8,24;,i20;-5;+20a (+11);;"* Heat Engager
 
-* Heat Dash +5g +34a
+* Heat Dash +34a +5g
 
-* Balcony Break";he bbr;Bryan-1,2,4;One Two Neck Breaker;;;
-1,4;h,h;5,14;,i15;-7;+4;;"Jails
-Combo from 1st hit";;Bryan-1,4;;;;
-1,4,2;h,h,h;5,14,18;,i24;-7;+4;+53a;"* Cancel last hit into 1,4,2,1 with f+1
-* Cancel last hit into 1,4,2,4 with f+4
-* Alternate input b+2";;Bryan-1,4,2;;;;
-1,4,2,1;h,h,h,h;5,14,18,16;,i19;+0;+55a;;"* Cancel last hit to SS with u_d
-* Enter SLS with f
-* Alternate input:
-** b+2,1
-** qcf+4,1";;Bryan-1,4,2,1;;;;
-1,4,2,1,2;h,h,h,h,h;5,14,18,16,22;,i24;-8;+41d (-17);;"* Balcony Break
-* Alternate input:
-** b+2,1,2
-** qcf+4,1,2";bbr;Bryan-1,4,2,1,2;Lair's Dance;;;
-1,4,2,1,4;h,h,h,h,m;5,14,18,16,21;,i30-31;-5;+40a (+14);;"* Tornado
-* Alternate input:
-** b+2,1,4
-** qcf+4,1,4
-* Special? effect on airborne hit +38a (+31)";trn;Bryan-1,4,2,1,4;Cremation;;;
-1,4,2,4;h,h,h,m;5,14,18,21;;;;;"* Balcony Break
-* Alternate input b+2,4";bbr;Bryan-1,4,2,4;Whipping Fury;;;
-1,4,3;h,h,m;5,14,15;,i21;-10;+1;;;;Bryan-1,4,3;Jab > Double Spin Kick;;;
-1,4,3,3;h,h,m,h;5,14,15,18;,i23;-7;+7;+14d;Combo from 3rd hit;;Bryan-1,4,3,3;Running Blind;;;
+* Balcony Break
+* Combo from 1st CH
+* Combo from 2nd CH with 3f delay
+* Move can be delayed 2f";he bbr;Bryan-1,2,4;One Two Neck Breaker;r30;;
+1,4;h,h;5,14;,i15;-7;+4;;Jail from 1st attack;;Bryan-1,4;;r26;;
+1,4,2;h,h,h;5,14,18;,i24;-7;+4;+53a;"* Combo from 2nd CH with 10f delay
+* Input can be delayed 18f
+* Move can be delayed 16f
+* Cancel into 1,4,2,1 with f+1
+* Cancel into 1,4,2,4 with f+4
+* Interrupt with i8 from 3rd block";;Bryan-1,4,2;;r26;;
+1,4,2,1;h,h,h,h;5,14,18,16;,i19;+0;+55a;;"* Enter SLS +7 +62a with f
+* Cancel to SS with u_d
+* Input can be delayed 8f
+* Move can be delayed 6f";;Bryan-1,4,2,1;;r25;;
+1,4,2,1,2;h,h,h,h,h;5,14,18,16,22;,i24;-9;+41d (-17);;"* Balcony Break
+* Input can be delayed 1f";bbr;Bryan-1,4,2,1,2;Lair's Dance;r33;;
+1,4,2,1,4;h,h,h,h,m;5,14,18,16,21;,i25~26;-10;+37a;;"* Tornado
+* Strong Aerial Tailspin
+* Can hit grounded while off-axis";trn;Bryan-1,4,2,1,4;Cremation;r30;;
+1,4,2,4;h,h,h,m;5,14,18,21;i30~31;-5;+40a (+14);;"* Strong Aerial Tailspin
+* Balcony Break
+&lt;div class=&quot;plainlist&quot;&gt;
+* Low crush 16~34
+* fs32~34&lt;/div&gt;";"bbr &lt;div class=&quot;plainlist&quot;&gt;
+* js16~34
+* fs32~34&lt;/div&gt;";Bryan-1,4,2,4;Whipping Fury;r25;;
+1,4,3;h,h,m;5,14,15;,i21;-10;+1;;Combo from 2nd CH with 5f delay;;Bryan-1,4,3;Jab > Double Spin Kick;r26;;
+1,4,3,3;h,h,m,h;5,14,15,18;,i23;-7;+7;+14a;Combo from 3rd CH;;Bryan-1,4,3,3;Running Blind;r26;;
 1+3+4;m!;0;i28~31;;+16;;;;Bryan-1+3+4;Taunt;r SNE;;
-2;h;10;i10;+1;+7;;;;Bryan-2;;;;
-2,3;h,m;10,14;,i16;-10;+6;+16a (+7);"* Combo from 1st hit
-* CH frames also apply to combo from 1st CH";;Bryan-2,3;PK Combination;;;
-3;m;14;i16;-4;+7;;;;Bryan-3;Mid Kick;;;
-3,2;m,m;14,11;,i22;-10;+1;;Combo from 1st CH;;Bryan-3,2;;;;
-3,2,1;m,m,m;14,11,10;,i20;-9;+2;;Combo from 2nd hit;;Bryan-3,2,1;;;;
-3,2,1,2;m,m,m,m;14,11,10,14;,i20;-10;+14a (+10);;Balcony Break;bbr;Bryan-3,2,1,2;Mid Kick > Rush;;;
-3,2,1,4;m,m,m,L;14,11,10,12;,i22;-11;+0;;;;Bryan-3,2,1,4;Gatling Combination;;;
-3,3;m,h;14,13;,i23;-6;+6;;;;Bryan-3,3;;;;
-3,3,2;m,h,h;14,13,20;,i22~23;-7;+43 (+33);;Tornado;trn;Bryan-3,3,2;Anaconda Bite;;;
-3,3,4;m,h,m;14,13,25;,i28;-12;+37d (-21);;Balcony Break;bbr;Bryan-3,3,4;Anaconda Rage;;;
-4;h;15;i12;-7;+6;;;;Bryan-4;;;;
-4,3;h,m;15,12;,i24~25;-10;+2;;Combo from 1st hit;;Bryan-4,3;;;;
-4,3,4;h,m,m;15,12,16;,i24~25;-12;+2;;"* Balcony Break
-* Hold to power up and deal more chip damage on block";bbr;Bryan-4,3,4;Double Spin Tomahawk;;;
-4,3,f+4;h,m,h;15,12,18;,i24~25;-5;+6;+31a (+21);Combo from 2nd CH;;Bryan-4,3,f+4;Triple Spin Kick;;;
-1+2;m;15;i17~18;-7;+6;;Homing;hom;Bryan-1+2;;;;
+2;h;10;i10;+1;+7;;;;Bryan-2;;r18;;
+2,3;h,m;10,14;,i16;-10;+6;+16a (+7);"* Combo from 1st hit with 1f delay
+* CH frames also apply to combo from 1st CH
+* Balcony break on CH";;Bryan-2,3;PK Combination;r29;;
+3;m;14;i16;-4;+7;;;;Bryan-3;Mid Kick;r23;;
+3,2;m,m;14,11;,i22;-10;+1;;Combo from 1st CH;;Bryan-3,2;;r29;;
+3,2,1;m,m,m;14,11,10;,i20;-9;+2;;"* Combo from 2nd hit
+* Combo from 1st CH";;Bryan-3,2,1;;r28;;
+3,2,1,2;m,m,m,m;14,11,10,14;,i19;-10;+19a (+10);;"* Balcony Break
+* Combo from 3rd CH with 2f delay";bbr;Bryan-3,2,1,2;Mid Kick > Rush;r31;;
+3,2,1,4;m,m,m,L;14,11,10,12;,i22;-11;+0;;Combo from 3rd CH with 3f delay;;Bryan-3,2,1,4;Gatling Combination;r30;;
+3,3;m,h;14,13;,i23;-6;+6;;Combo from 1st CH;;Bryan-3,3;;r24;;
+3,3,2;m,h,h;14,13,20;,i22~23;-7;+43a (+33);;"* Tornado
+* Combo from 2nd CH";trn;Bryan-3,3,2;Anaconda Bite;r30;;
+3,3,4;m,h,m;14,13,25;,i28;-12;+37d (-21);;"* Balcony Break
+* Combo from 2nd CH";bbr;Bryan-3,3,4;Anaconda Rage;r37;;
+4;h;15;i12;-7;+6;;;;Bryan-4;;r26;;
+4,3;h,m;15,12;,i24~25;-10;+2;;Combo from 1st hit;;Bryan-4,3;;r27;;
+4,3,4;h,m,m;15,12,16;,i24~25;-12;+14a (+5);;"* Balcony Break
+* Hold to power up and deal more chip damage on block";bbr;Bryan-4,3,4;Double Spin Tomahawk;r30;;
+4,3,4*;h,m,m;15,12,25;,i40~41;-6;+35a (+9);;"* Balcony Break
+* Chip damage on block";bbr chp;Bryan-4,3,4;Double Spin Tomahawk (Hold);r30;;
+4,3,f+4;h,m,h;15,12,18;,i24~25;-5;+6;+31a (+21);Combo from 2nd CH;;Bryan-4,3,f+4;Triple Spin Kick;r30;;
+1+2;m;15;i17~18;-7;+6;;Homing;hom;Bryan-1+2;;r27;;
 1+2,1;m,h;15,15;,i23~24;-1;+6;;"* Combo from 1st hit
-* Enter SWA +0 +7 with b";;Bryan-1+2,1;Snake Bite;;;
-1+2,2;m,m;15,20;,i26~27;-14;+51d (+20);;* Combo from 1st hit with delay;;Bryan-1+2,2;Snake Pit;;;
-3+4;m;20;i18;-13;+8;+59a;;;Bryan-3+4;Middle Side Kick;;;
+* Enter SWA +0 +7 with b";;Bryan-1+2,1;Snake Bite;r22;;
+1+2,2;m,m;15,20;,i26~27;-14;+51d (+20);;* Combo from 1st hit with delay;;Bryan-1+2,2;Snake Pit;r34;;
+3+4;m;20;i18;-13;+8;+59a;Balcony break on airborne hit;;Bryan-3+4;Middle Side Kick;r32;;
 3+4,SNE.2;m,m;20,20;i14~15;-1;+35a (+9);;"* Combo from 1st hit
 * Consumes SNE
 * Chip damage on block (8)";chp;Bryan-3+4,SNE.2;Neo Soul Eraser;;;
@@ -89,7 +99,7 @@ f+2,1,SNE.2,3,2;m,m,m,m,m;10,12,5,7,20;i35~36;-10;+0a (-1);;* Chip damage on blo
 f+3;m;18;i16~18;+0;+4;+50a;Knee;kne;Bryan-f+3;Knee Strike;;;
 f+4;m;10;i18;-9;+0;;;;Bryan-f+4;;;;
 f+4,1;m,m;10,10;i25~26;-13c;+40a (+32);;Combo from 1st hit;;Bryan-f+4,1;Boa Crusher;;;
-f+1+2;h;22;i20~21;-6;+44d (-14);;"* Balcony Break
+f+1+2;h;22;i20~21;-9;+44d (-14);;"* Balcony Break
 * Elbow
 * Absorb an attack to power up and deal more chip damage on block
 Power crush";bbr elb pc;Bryan-f+1+2;Sidestep Elbow;;;
@@ -141,8 +151,7 @@ b+1+3,P.2;h;30;i13;-10;+20a (-38);;"* Balcony Break
 b+2;h;18;i17;-7;+4;+53a;"* Cancel into b+2,1 with f+1
 * Cancel into b+2,4 with f+4
 * Alternate input 1,4,2";;Bryan-b+2;;;;
-b+2,1;h,h;18,16;i19;+0;+55;;"* Jails
-* Cancel last hit to SS with u_d
+b+2,1;h,h;18,16;i19;+0;+55;;"* Cancel last hit to SS with u_d
 * Enter SLS with f
 * Alternate input:
 ** 1,4,2,1
