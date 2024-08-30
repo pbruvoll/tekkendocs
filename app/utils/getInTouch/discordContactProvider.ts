@@ -3,7 +3,7 @@ import { type GetInTouchProvider } from './interfaces/GetInTouchProvider'
 type DiscordChannel = 'invite'
 
 const discordChannelMap: Record<DiscordChannel, string> = {
-  invite: 'https://discord.gg/eEuJHePy',
+  invite: 'https://discord.gg/Fxw33cbQ',
 }
 
 export class DiscordContactProvider
