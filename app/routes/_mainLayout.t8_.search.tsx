@@ -82,9 +82,19 @@ export default function () {
       data.characterName === selectedCharId
     ) {
       const cleanMoveQuery = cleanCommand(moveQuery)
-      const filteredByCommand = data.moves.filter(move =>
-        cleanCommand(move.command).startsWith(cleanMoveQuery),
-      )
+
+      let filteredByCommand: Move[] = []
+      if (cleanMoveQuery.includes('?')) {
+        // filter by wildcard, so "1?2", matches "1,2,3".
+        // we use ? as wildcard instead of *, since som move have * in them (it means hold button)
+        let w = cleanMoveQuery.replace(/[*.+^${}()|[\]\\]/g, '\\$&') // regexp escape
+        const re = new RegExp(`^${w.replace(/\?/g, '.*')}.*$`)
+        filteredByCommand = data.moves.filter(move => re.test(move.command))
+      } else {
+        filteredByCommand = data.moves.filter(move =>
+          cleanCommand(move.command).startsWith(cleanMoveQuery),
+        )
+      }
       if (filteredByCommand.length > 0) {
         return filteredByCommand
       }
