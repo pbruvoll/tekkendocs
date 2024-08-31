@@ -146,7 +146,7 @@ export default function () {
   return (
     <ContentContainer enableBottomPadding enableTopPadding className="min-h-96">
       <h1 className="pb-2 text-2xl">Search</h1>
-      <p className="py-2">Enter a character, followe by a command</p>
+      <p className="py-2">Enter a character, followed by a command</p>
       <Input
         onChange={e => handleOnChange(e)}
         onKeyDown={handleOnKeyDown}
