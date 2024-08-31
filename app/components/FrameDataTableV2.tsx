@@ -14,11 +14,13 @@ import { type SortOrder } from '~/types/SortOrder'
 import { filterMoves, sortMovesV2 } from '~/utils/frameDataUtils'
 import { commandToUrlSegment } from '~/utils/moveUtils'
 import { getSortSettings } from '~/utils/sortingUtils'
+import { ContentContainer } from './ContentContainer'
 
 export type FrameDataTableProps = {
   moves: Move[]
   filter?: MoveFilter
   className?: string
+  hasMultipleCharacters: boolean
 }
 
 const sortOrderIconMap: Record<SortOrder, React.ReactNode> = {
@@ -27,10 +29,13 @@ const sortOrderIconMap: Record<SortOrder, React.ReactNode> = {
   desc: <CaretUpIcon width="1.5rem" height="1.5rem" />,
 }
 
+const maxMovesToShow = 400
+
 export const FrameDataTable = ({
   moves,
   className,
   filter,
+  hasMultipleCharacters,
 }: FrameDataTableProps) => {
   const [searchParams] = useSearchParams()
   const location = useLocation()
@@ -61,6 +66,13 @@ export const FrameDataTable = ({
     return sortMovesV2(filteredMoves, sortSettings)
   }, [filteredMoves, sortSettings])
 
+  const paginatedMoves = useMemo(() => {
+    if (sortedMoves.length > maxMovesToShow) {
+      return sortedMoves.slice(0, maxMovesToShow)
+    }
+    return sortedMoves
+  }, [sortedMoves])
+
   /**  Frame data imported from wavu wiki might not have unique commands. This might brake sorting
    * since react does not update dom properly. Therefor we set key based on sorting to force React
    * to create a new table */
@@ -77,56 +89,73 @@ export const FrameDataTable = ({
   ]
 
   return (
-    <Table.Root variant="surface" className={className}>
-      <Table.Header>
-        <Table.Row>
-          {tableHeaders.map(h => (
-            <Table.ColumnHeaderCell key={h.id}>
-              <Link
-                to={createOrderLinkWithSearchParams(h.id)}
-                preventScrollReset
-                replace
-                className="flex flex-wrap items-end"
-              >
-                {h.displayName}
-                {h.id.toLowerCase() === sortSettings?.sortByKey
-                  ? sortOrderIconMap[sortSettings.sortDirection]
-                  : sortOrderIconMap['']}
-              </Link>
-            </Table.ColumnHeaderCell>
-          ))}
-        </Table.Row>
-      </Table.Header>
-      <Table.Body>
-        {sortedMoves.map(move => {
-          return (
-            <Table.Row key={move.moveNumber}>
-              <Table.Cell>
+    <>
+      <Table.Root variant="surface" className={className}>
+        <Table.Header>
+          <Table.Row>
+            {hasMultipleCharacters && (
+              <Table.ColumnHeaderCell>Char</Table.ColumnHeaderCell>
+            )}
+            {tableHeaders.map(h => (
+              <Table.ColumnHeaderCell key={h.id}>
                 <Link
-                  className="inline-flex items-center gap-2 text-text-primary"
-                  style={{ textDecoration: 'none' }}
-                  to={commandToUrlSegment(move.command)}
+                  to={createOrderLinkWithSearchParams(h.id)}
+                  preventScrollReset
+                  replace
+                  className="flex flex-wrap items-end"
                 >
-                  {move.command}
-                  {(move.video || move.ytVideo) && <VideoIcon />}
+                  {h.displayName}
+                  {h.id.toLowerCase() === sortSettings?.sortByKey
+                    ? sortOrderIconMap[sortSettings.sortDirection]
+                    : sortOrderIconMap['']}
                 </Link>
-              </Table.Cell>
-              <Table.Cell>{move.hitLevel}</Table.Cell>
-              <Table.Cell>{move.damage}</Table.Cell>
-              <Table.Cell>{move.startup}</Table.Cell>
-              <Table.Cell>{move.block}</Table.Cell>
-              <Table.Cell>{move.hit}</Table.Cell>
-              <Table.Cell>{move.counterHit}</Table.Cell>
-              <Table.Cell>
-                {move.notes &&
-                  move.notes
-                    .split('\n')
-                    .map((line, index) => <div key={index}>{line}</div>)}
-              </Table.Cell>
-            </Table.Row>
-          )
-        })}
-      </Table.Body>
-    </Table.Root>
+              </Table.ColumnHeaderCell>
+            ))}
+          </Table.Row>
+        </Table.Header>
+        <Table.Body>
+          {paginatedMoves.map(move => {
+            const charName = hasMultipleCharacters
+              ? move.wavuId?.split('-')[0].replace(' ', '-').toLowerCase()
+              : undefined
+            return (
+              <Table.Row key={move.moveNumber}>
+                {charName && <Table.Cell>{charName}</Table.Cell>}
+                <Table.Cell>
+                  <Link
+                    className="inline-flex items-center gap-2 text-text-primary"
+                    style={{ textDecoration: 'none' }}
+                    to={
+                      (charName ? `../${charName}/` : '') +
+                      commandToUrlSegment(move.command)
+                    }
+                  >
+                    {move.command}
+                    {(move.video || move.ytVideo) && <VideoIcon />}
+                  </Link>
+                </Table.Cell>
+                <Table.Cell>{move.hitLevel}</Table.Cell>
+                <Table.Cell>{move.damage}</Table.Cell>
+                <Table.Cell>{move.startup}</Table.Cell>
+                <Table.Cell>{move.block}</Table.Cell>
+                <Table.Cell>{move.hit}</Table.Cell>
+                <Table.Cell>{move.counterHit}</Table.Cell>
+                <Table.Cell>
+                  {move.notes &&
+                    move.notes
+                      .split('\n')
+                      .map((line, index) => <div key={index}>{line}</div>)}
+                </Table.Cell>
+              </Table.Row>
+            )
+          })}
+        </Table.Body>
+      </Table.Root>
+      {paginatedMoves.length < sortedMoves.length && (
+        <ContentContainer className="my-4">
+          Showing {paginatedMoves.length} of {sortedMoves.length} moves
+        </ContentContainer>
+      )}
+    </>
   )
 }

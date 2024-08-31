@@ -11,7 +11,6 @@ import { type CharacterFrameDataPage } from '~/types/CharacterFrameDataPage'
 import { type Move } from '~/types/Move'
 import type { RouteHandle } from '~/types/RouteHandle'
 import { type SortOrder } from '~/types/SortOrder'
-import { type TableDataWithHeader } from '~/types/TableData'
 import { filterToDescription, getFilterFromParams } from '~/utils/filterUtils'
 import { filterMoves, sortMoves } from '~/utils/frameDataUtils'
 import { getCacheControlHeaders } from '~/utils/headerUtils'
@@ -144,8 +143,8 @@ export default function Index() {
             return (
               <FrameDataSection
                 key={table.name}
-                table={table as TableDataWithHeader}
                 moves={moves}
+                hasMultipleCharacters={characterName === 'mokujin'}
               />
             )
           }

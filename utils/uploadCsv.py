@@ -10,6 +10,8 @@ frameTypes = [
     ("throws", "Throws", "#frames_throws"),
     ("tenhit", "10-hit", "#frames_tenhit"),
 ]
+
+allCharsMoveTypeToContent = {}
     
 #input is a folder for a character which may contain multiple csv files (special moves, throws etc).
 def convert(path, gSheet):
@@ -30,8 +32,10 @@ def convert(path, gSheet):
         for row in csvContent:
             csvRows.append(row);
         moveType = filePath.split(".")[-2].split("-")[-1]
-        moveTypeToContent[moveType] = csvRows 
-        
+        moveTypeToContent[moveType] = csvRows
+        if(moveType not in allCharsMoveTypeToContent) :
+            allCharsMoveTypeToContent[moveType] = []
+        allCharsMoveTypeToContent[moveType] += moveTypeToContent[moveType]        
     
     for frameType in frameTypes: #e.g frameType = ("special", "Special Moves")
         if(frameType[0] in moveTypeToContent) :
@@ -86,3 +90,26 @@ for folder in os.listdir(inputDir) :
     if(os.path.isdir(folderPath)):
       convert(folderPath, gSheet);
 
+# upload all moves as mokujin
+worksheetData = [];
+
+for frameType in frameTypes: #e.g frameType = ("special", "Special Moves")
+    if(frameType[0] in allCharsMoveTypeToContent) :
+        worksheetData.append([frameType[2]]);
+        worksheetData = worksheetData + allCharsMoveTypeToContent[frameType[0]];
+        worksheetData.append([]);
+    
+worksheetName = "mokujin"
+print("all", worksheetData);
+
+
+# remove old worksheet if it does exists
+try : 
+    ws = gSheet.worksheet(worksheetName);
+    gSheet.del_worksheet(ws);
+except :
+    pass; 
+
+ws = gSheet.add_worksheet(title=worksheetName, rows=1, cols=1)
+
+ws.append_rows(worksheetData);
