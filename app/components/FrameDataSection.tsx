@@ -4,7 +4,6 @@ import { orderByKey } from '~/constants/sortConstants'
 import { sortOptions } from '~/constants/sortOptions'
 import { type Move } from '~/types/Move'
 import { type MoveFilter } from '~/types/MoveFilter'
-import { type TableDataWithHeader } from '~/types/TableData'
 import { getFilterFromParams } from '~/utils/filterUtils'
 import { getStances } from '~/utils/frameDataUtils'
 import { getSortByQueryParamValue, getSortSettings } from '~/utils/sortingUtils'
@@ -13,10 +12,13 @@ import { FrameDataFilterDialog } from './FrameDataFilterDialog'
 import { FrameDataTable } from './FrameDataTableV2'
 
 export type FrameDataSectionProps = {
-  table: TableDataWithHeader
   moves: Move[]
+  hasMultipleCharacters: boolean
 }
-export const FrameDataSection = ({ moves }: FrameDataSectionProps) => {
+export const FrameDataSection = ({
+  moves,
+  hasMultipleCharacters,
+}: FrameDataSectionProps) => {
   const [searchParams, setSearchParams] = useSearchParams()
   const sortSettings = getSortSettings(searchParams)
   const sortByQueryParamValue = sortSettings
@@ -96,7 +98,12 @@ export const FrameDataSection = ({ moves }: FrameDataSectionProps) => {
         />
       </ContentContainer>
 
-      <FrameDataTable className="mt-3" moves={moves} filter={filter} />
+      <FrameDataTable
+        className="mt-3"
+        moves={moves}
+        filter={filter}
+        hasMultipleCharacters={hasMultipleCharacters}
+      />
     </>
   )
 }

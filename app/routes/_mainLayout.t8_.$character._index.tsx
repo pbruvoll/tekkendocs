@@ -144,8 +144,8 @@ export default function Index() {
             return (
               <FrameDataSection
                 key={table.name}
-                table={table as TableDataWithHeader}
                 moves={moves}
+                hasMultipleCharacters={characterName === 'mokujin'}
               />
             )
           }

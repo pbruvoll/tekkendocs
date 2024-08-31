@@ -20,6 +20,7 @@ export type FrameDataTableProps = {
   moves: Move[]
   filter?: MoveFilter
   className?: string
+  hasMultipleCharacters: boolean
 }
 
 const sortOrderIconMap: Record<SortOrder, React.ReactNode> = {
@@ -34,6 +35,7 @@ export const FrameDataTable = ({
   moves,
   className,
   filter,
+  hasMultipleCharacters,
 }: FrameDataTableProps) => {
   const [searchParams] = useSearchParams()
   const location = useLocation()
@@ -91,6 +93,9 @@ export const FrameDataTable = ({
       <Table.Root variant="surface" className={className}>
         <Table.Header>
           <Table.Row>
+            {hasMultipleCharacters && (
+              <Table.ColumnHeaderCell>Char</Table.ColumnHeaderCell>
+            )}
             {tableHeaders.map(h => (
               <Table.ColumnHeaderCell key={h.id}>
                 <Link
@@ -110,13 +115,20 @@ export const FrameDataTable = ({
         </Table.Header>
         <Table.Body>
           {paginatedMoves.map(move => {
+            const charName = hasMultipleCharacters
+              ? move.wavuId?.split('-')[0].replace(' ', '-').toLowerCase()
+              : undefined
             return (
               <Table.Row key={move.moveNumber}>
+                {charName && <Table.Cell>{charName}</Table.Cell>}
                 <Table.Cell>
                   <Link
                     className="inline-flex items-center gap-2 text-text-primary"
                     style={{ textDecoration: 'none' }}
-                    to={commandToUrlSegment(move.command)}
+                    to={
+                      (charName ? `../${charName}/` : '') +
+                      commandToUrlSegment(move.command)
+                    }
                   >
                     {move.command}
                     {(move.video || move.ytVideo) && <VideoIcon />}
