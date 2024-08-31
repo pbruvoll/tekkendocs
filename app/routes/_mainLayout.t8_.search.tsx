@@ -82,9 +82,19 @@ export default function () {
       data.characterName === selectedCharId
     ) {
       const cleanMoveQuery = cleanCommand(moveQuery)
-      const filteredByCommand = data.moves.filter(move =>
-        cleanCommand(move.command).startsWith(cleanMoveQuery),
-      )
+
+      let filteredByCommand: Move[] = []
+      if (cleanMoveQuery.includes('?')) {
+        // filter by wildcard, so "1?2", matches "1,2,3".
+        // we use ? as wildcard instead of *, since som move have * in them (it means hold button)
+        let w = cleanMoveQuery.replace(/[*.+^${}()|[\]\\]/g, '\\$&') // regexp escape
+        const re = new RegExp(`^${w.replace(/\?/g, '.*')}.*$`)
+        filteredByCommand = data.moves.filter(move => re.test(move.command))
+      } else {
+        filteredByCommand = data.moves.filter(move =>
+          cleanCommand(move.command).startsWith(cleanMoveQuery),
+        )
+      }
       if (filteredByCommand.length > 0) {
         return filteredByCommand
       }
@@ -136,7 +146,7 @@ export default function () {
   return (
     <ContentContainer enableBottomPadding enableTopPadding className="min-h-96">
       <h1 className="pb-2 text-2xl">Search</h1>
-      <p className="py-2">Enter a character, followe by a command</p>
+      <p className="py-2">Enter a character, followed by a command</p>
       <Input
         onChange={e => handleOnChange(e)}
         onKeyDown={handleOnKeyDown}
