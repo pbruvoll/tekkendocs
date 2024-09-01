@@ -6,7 +6,7 @@ import { Input } from '@/components/ui/input'
 import { ContentContainer } from '~/components/ContentContainer'
 import { getTekken8Characters } from '~/services/staticDataService'
 import { type CharacterFrameDataPage } from '~/types/CharacterFrameDataPage'
-import { type Move } from '~/types/Move'
+import { type Move, type MoveT8 } from '~/types/Move'
 import { charIdFromMove, commandToUrlSegment } from '~/utils/moveUtils'
 import { generateMetaTags } from '~/utils/seoUtils'
 
@@ -204,7 +204,9 @@ export default function () {
             <li key={move.moveNumber} className="list-none">
               <MoveItem
                 charId={
-                  showsMultipleChars ? charIdFromMove(move) : selectedCharId
+                  showsMultipleChars
+                    ? charIdFromMove(move as MoveT8)
+                    : selectedCharId
                 }
                 move={move}
                 showCharId={includeCharNameInFrames}

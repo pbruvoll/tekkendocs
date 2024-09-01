@@ -8,7 +8,7 @@ import {
 import { Table } from '@radix-ui/themes'
 import { Link, useLocation, useSearchParams } from '@remix-run/react'
 import { orderByKey } from '~/constants/sortConstants'
-import { type Move } from '~/types/Move'
+import { type Move, type MoveT8 } from '~/types/Move'
 import { type MoveFilter } from '~/types/MoveFilter'
 import { type SortOrder } from '~/types/SortOrder'
 import { filterMoves, sortMovesV2 } from '~/utils/frameDataUtils'
@@ -116,7 +116,7 @@ export const FrameDataTable = ({
         <Table.Body>
           {paginatedMoves.map(move => {
             const charId = hasMultipleCharacters
-              ? charIdFromMove(move)
+              ? charIdFromMove(move as MoveT8)
               : undefined
             return (
               <Table.Row key={move.moveNumber}>
