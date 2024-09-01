@@ -125,7 +125,7 @@ export default function () {
       return []
     }
     return []
-  }, [data, filteredCharList, moveQuery, selectedCharId])
+  }, [data, filteredCharList.length, moveQuery, searchQuery, selectedCharId])
 
   const paginatedMoves = useMemo(() => {
     if (filteredMoves.length > maxMovesToShow) {
