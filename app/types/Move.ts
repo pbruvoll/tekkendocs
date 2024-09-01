@@ -16,3 +16,5 @@ export type Move = {
   video?: string
   recovery?: string
 }
+
+export type MoveT8 = Move & { wavuId: string }

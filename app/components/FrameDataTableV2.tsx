@@ -8,11 +8,11 @@ import {
 import { Table } from '@radix-ui/themes'
 import { Link, useLocation, useSearchParams } from '@remix-run/react'
 import { orderByKey } from '~/constants/sortConstants'
-import { type Move } from '~/types/Move'
+import { type Move, type MoveT8 } from '~/types/Move'
 import { type MoveFilter } from '~/types/MoveFilter'
 import { type SortOrder } from '~/types/SortOrder'
 import { filterMoves, sortMovesV2 } from '~/utils/frameDataUtils'
-import { commandToUrlSegment } from '~/utils/moveUtils'
+import { charIdFromMove, commandToUrlSegment } from '~/utils/moveUtils'
 import { getSortSettings } from '~/utils/sortingUtils'
 import { ContentContainer } from './ContentContainer'
 
@@ -115,18 +115,18 @@ export const FrameDataTable = ({
         </Table.Header>
         <Table.Body>
           {paginatedMoves.map(move => {
-            const charName = hasMultipleCharacters
-              ? move.wavuId?.split('-')[0].replace(' ', '-').toLowerCase()
+            const charId = hasMultipleCharacters
+              ? charIdFromMove(move as MoveT8)
               : undefined
             return (
               <Table.Row key={move.moveNumber}>
-                {charName && <Table.Cell>{charName}</Table.Cell>}
+                {charId && <Table.Cell>{charId}</Table.Cell>}
                 <Table.Cell>
                   <Link
                     className="inline-flex items-center gap-2 text-text-primary"
                     style={{ textDecoration: 'none' }}
                     to={
-                      (charName ? `../${charName}/` : '') +
+                      (charId ? `../${charId}/` : '') +
                       commandToUrlSegment(move.command)
                     }
                   >
