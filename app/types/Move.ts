@@ -17,4 +17,4 @@ export type Move = {
   recovery?: string
 }
 
-export type MoveT8 = Move & {wavuId: string}
+export type MoveT8 = Move & { wavuId: string }
