@@ -7,7 +7,7 @@ import { ContentContainer } from '~/components/ContentContainer'
 import { getTekken8Characters } from '~/services/staticDataService'
 import { type CharacterFrameDataPage } from '~/types/CharacterFrameDataPage'
 import { type Move } from '~/types/Move'
-import { commandToUrlSegment } from '~/utils/moveUtils'
+import { charIdFromMove, commandToUrlSegment } from '~/utils/moveUtils'
 import { generateMetaTags } from '~/utils/seoUtils'
 
 export const meta: MetaFunction = ({ matches }) => {
@@ -32,6 +32,8 @@ const cleanCommand = (move: string): string => {
     .toLowerCase()
 }
 
+const maxMovesToShow = 400
+
 export default function () {
   const [searchQuery, setSearchQuery] = useState('')
   const [characterQuery, moveQuery] = useMemo(() => {
@@ -50,12 +52,10 @@ export default function () {
 
   const navigate = useNavigate()
 
-  const includeCharNameInFrames = useMemo(
-    () => !moveQuery && !searchQuery.endsWith(' '),
-    [moveQuery, searchQuery],
-  )
-
-  const charList = getTekken8Characters()
+  const charList = getTekken8Characters().concat({
+    displayName: 'Mokujin',
+    id: 'mokujin',
+  })
 
   const filteredCharList = charList.filter(char =>
     char.id
@@ -70,6 +70,13 @@ export default function () {
   const selectedCharId = useMemo(() => {
     return selectedCharacter?.id
   }, [selectedCharacter?.id])
+
+  const showsMultipleChars = selectedCharId === 'mokujin'
+
+  const includeCharNameInFrames = useMemo(
+    () => showsMultipleChars || (!moveQuery && !searchQuery.endsWith(' ')),
+    [moveQuery, searchQuery, showsMultipleChars],
+  )
 
   const { load, state, data } = useFetcher<CharacterFrameDataPage>({
     key: selectedCharId,
@@ -88,8 +95,14 @@ export default function () {
         // filter by wildcard, so "1?2", matches "1,2,3".
         // we use ? as wildcard instead of *, since som move have * in them (it means hold button)
         let w = cleanMoveQuery.replace(/[*.+^${}()|[\]\\]/g, '\\$&') // regexp escape
-        const re = new RegExp(`^${w.replace(/\?/g, '.*')}.*$`)
+        const re = new RegExp(
+          `^${w.replace(/\?/g, '.*')}${searchQuery.endsWith(' ') ? '' : '.*'}$`,
+        )
         filteredByCommand = data.moves.filter(move => re.test(move.command))
+      } else if (searchQuery.endsWith(' ')) {
+        filteredByCommand = data.moves.filter(
+          move => cleanCommand(move.command) === cleanMoveQuery,
+        )
       } else {
         filteredByCommand = data.moves.filter(move =>
           cleanCommand(move.command).startsWith(cleanMoveQuery),
@@ -114,6 +127,13 @@ export default function () {
     return []
   }, [data, filteredCharList, moveQuery, selectedCharId])
 
+  const paginatedMoves = useMemo(() => {
+    if (filteredMoves.length > maxMovesToShow) {
+      return filteredMoves.slice(0, maxMovesToShow)
+    }
+    return filteredMoves
+  }, [filteredMoves])
+
   useEffect(() => {
     if (
       selectedCharId &&
@@ -135,9 +155,9 @@ export default function () {
         navigate(`/t8/${filteredCharList[0].id}`)
         return
       }
-      if (moveQuery && filteredMoves.length > 0) {
+      if (moveQuery && paginatedMoves.length > 0) {
         navigate(
-          `/t8/${selectedCharId}/${commandToUrlSegment(filteredMoves[0].command)}`,
+          `/t8/${selectedCharId}/${commandToUrlSegment(paginatedMoves[0].command)}`,
         )
       }
     }
@@ -177,19 +197,26 @@ export default function () {
 
       {selectedCharId && state !== 'idle' && <div>Loading...</div>}
 
-      {filteredMoves.length > 0 &&
+      {paginatedMoves.length > 0 &&
         selectedCharId &&
-        filteredMoves.map(move => {
+        paginatedMoves.map(move => {
           return (
             <li key={move.moveNumber} className="list-none">
               <MoveItem
-                charId={selectedCharId}
+                charId={
+                  showsMultipleChars ? charIdFromMove(move) : selectedCharId
+                }
                 move={move}
                 showCharId={includeCharNameInFrames}
               />
             </li>
           )
         })}
+      {paginatedMoves.length < filteredMoves.length && (
+        <p className="my-2">
+          Showing {paginatedMoves.length} og {filteredMoves.length}
+        </p>
+      )}
     </ContentContainer>
   )
 }
