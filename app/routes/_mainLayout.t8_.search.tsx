@@ -52,18 +52,18 @@ export default function () {
 
   const navigate = useNavigate()
 
-  const charList = getTekken8Characters().concat({
-    displayName: 'Mokujin',
-    id: 'mokujin',
-  })
+  const charList = getTekken8Characters()
 
-  const filteredCharList = charList.filter(char =>
-    char.id
-      .replace('-', '')
-      .replace(' ', '')
-      .toLowerCase()
-      .startsWith(characterQuery.replace('-', '')),
-  )
+  const filteredCharList =
+    characterQuery === '?'
+      ? charList.filter(char => char.id === 'mokujin')
+      : charList.filter(char =>
+          char.id
+            .replace('-', '')
+            .replace(' ', '')
+            .toLowerCase()
+            .startsWith(characterQuery.replace('-', '')),
+        )
 
   const selectedCharacter =
     filteredCharList.length === 1 ? filteredCharList[0] : undefined
@@ -99,7 +99,7 @@ export default function () {
           `^${w.replace(/\?/g, '.*')}${searchQuery.endsWith(' ') ? '' : '.*'}$`,
         )
         filteredByCommand = data.moves.filter(move => re.test(move.command))
-      } else if (searchQuery.endsWith(' ')) {
+      } else if (!!cleanMoveQuery && searchQuery.endsWith(' ')) {
         filteredByCommand = data.moves.filter(
           move => cleanCommand(move.command) === cleanMoveQuery,
         )
