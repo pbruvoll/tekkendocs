@@ -63,6 +63,7 @@ export const meta: MetaFunction = ({ data, params, matches }) => {
 export default function FlashCard() {
   const [moveToShow, setMoveToShow] = useState<Move | undefined>()
   const { characterName, moves } = useFrameData()
+  const showCharName = characterName === 'mokujin'
   const viableMoves = useMemo(
     () => moves.filter(move => Boolean(move.block)),
     [moves],
@@ -252,6 +253,7 @@ export default function FlashCard() {
               numUnseen={unseenMoves.length}
               numCorrect={charFlashCardState.correct.length}
               numWrong={charFlashCardState.wrong.length}
+              showCharName={showCharName}
             />
           )}
         </div>
@@ -362,6 +364,7 @@ export type FlashCardGameProps = {
   numUnseen: number
   numCorrect: number
   numWrong: number
+  showCharName: boolean
 }
 const FlashCardGame = ({
   onAnswer,
@@ -369,6 +372,7 @@ const FlashCardGame = ({
   numCorrect,
   numUnseen,
   numWrong,
+  showCharName,
 }: FlashCardGameProps) => {
   const [flipped, setFlipped] = useState(false)
 
@@ -390,7 +394,11 @@ const FlashCardGame = ({
           )}
         >
           <div className="col-start-1 row-start-1 [backface-visibility:hidden]">
-            <FlashCardFront move={moveToShow} onFlip={() => setFlipped(true)} />
+            <FlashCardFront
+              move={moveToShow}
+              showCharName={showCharName}
+              onFlip={() => setFlipped(true)}
+            />
           </div>
           <div className="col-start-1 row-start-1 [backface-visibility:hidden] [transform:rotateY(180deg)]">
             <FlashCardBack move={moveToShow} onAnswer={handleAnswer} />

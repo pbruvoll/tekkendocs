@@ -77,6 +77,7 @@ const charsT8: string[] = [
   'leroy',
   'lidia',
   'lili',
+  'mokujin',
   'nina',
   'panda',
   'paul',
