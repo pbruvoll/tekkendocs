@@ -12,7 +12,10 @@ export const getFilterFromParams = (
   searchParams: URLSearchParams,
 ): MoveFilter => {
   return {
-    hitLevel: getSearchParamString<HitLevel>(searchParams, filterKey.HitLevel),
+    hitLevels: getSearchParamStringList<HitLevel>(
+      searchParams,
+      filterKey.HitLevel,
+    ),
     blockFrameMin: getSearchParamNumber(searchParams, filterKey.BlockFrameMin),
     blockFrameMax: getSearchParamNumber(searchParams, filterKey.BlockFrameMax),
     hitFrameMin: getSearchParamNumber(searchParams, filterKey.HitFrameMin),

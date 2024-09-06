@@ -1,4 +1,5 @@
 import invariant from 'tiny-invariant'
+import { type HitLevel } from '~/types/FilterTypes'
 import { type Move } from '~/types/Move'
 import { type MoveFilter } from '~/types/MoveFilter'
 import { type SortOrder } from '~/types/SortOrder'
@@ -171,10 +172,10 @@ export const filterRows = (
   }
 
   const filterFuncs: ((row: string[]) => boolean)[] = []
-  if (filter.hitLevel) {
+  if (filter.hitLevels && filter.hitLevels.length) {
     filterFuncs.push((row: string[]) => {
-      const lastHitLevel = row[1]?.split(',').pop()
-      return lastHitLevel?.toLowerCase() === filter.hitLevel
+      const lastHitLevel = row[1]?.split(',').pop()?.toLowerCase()
+      return !!filter.hitLevels?.includes(lastHitLevel as HitLevel)
     })
   }
 
@@ -274,10 +275,10 @@ export const filterMoves = (moves: Move[], filter: MoveFilter | undefined) => {
   }
 
   const filterFuncs: ((move: Move) => boolean)[] = []
-  if (filter.hitLevel) {
+  if (filter.hitLevels && filter.hitLevels.length) {
     filterFuncs.push((move: Move) => {
-      const lastHitLevel = move.hitLevel?.split(',').pop()
-      return lastHitLevel?.toLowerCase() === filter.hitLevel
+      const lastHitLevel = move.hitLevel?.split(',').pop()?.toLowerCase()
+      return !!filter.hitLevels?.includes(lastHitLevel as HitLevel)
     })
   }
 
