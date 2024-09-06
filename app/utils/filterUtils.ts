@@ -4,7 +4,6 @@ import { type MoveFilter } from '~/types/MoveFilter'
 import {
   getSearchParamBoolean,
   getSearchParamNumber,
-  getSearchParamString,
   getSearchParamStringList,
 } from './urlUtils'
 
