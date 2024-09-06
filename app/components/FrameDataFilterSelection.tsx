@@ -21,7 +21,7 @@ export const FrameDataFilterSelection = ({
   stances,
 }: FrameDataFilterSectionProps) => {
   const {
-    hitLevel,
+    hitLevels,
     blockFrameMin,
     blockFrameMax,
     hitFrameMin,
@@ -56,40 +56,60 @@ export const FrameDataFilterSelection = ({
         </Text>
         <div className="flex flex-wrap gap-3">
           <Button
-            variant={hitLevel === hitLevelValue.Low ? 'solid' : 'outline'}
+            variant={
+              hitLevels?.includes(hitLevelValue.Low) ? 'solid' : 'outline'
+            }
             onClick={() => {
-              if (hitLevel === hitLevelValue.Low) {
-                removeFilterValue(filterKey.HitLevel)
+              if (hitLevels?.includes(hitLevelValue.Low)) {
+                removeFilterElement(filterKey.HitLevel, hitLevelValue.Low)
               } else {
-                setFilterValue(filterKey.HitLevel, hitLevelValue.Low)
+                addFilterElement(filterKey.HitLevel, hitLevelValue.Low)
               }
             }}
           >
             Low
           </Button>
           <Button
-            variant={hitLevel === hitLevelValue.Mid ? 'solid' : 'outline'}
+            variant={
+              hitLevels?.includes(hitLevelValue.Mid) ? 'solid' : 'outline'
+            }
             onClick={() => {
-              if (hitLevel === hitLevelValue.Mid) {
-                removeFilterValue(filterKey.HitLevel)
+              if (hitLevels?.includes(hitLevelValue.Mid)) {
+                removeFilterElement(filterKey.HitLevel, hitLevelValue.Mid)
               } else {
-                setFilterValue(filterKey.HitLevel, hitLevelValue.Mid)
+                addFilterElement(filterKey.HitLevel, hitLevelValue.Mid)
               }
             }}
           >
             Mid
           </Button>
           <Button
-            variant={hitLevel === hitLevelValue.High ? 'solid' : 'outline'}
+            variant={
+              hitLevels?.includes(hitLevelValue.High) ? 'solid' : 'outline'
+            }
             onClick={() => {
-              if (hitLevel === hitLevelValue.High) {
-                removeFilterValue(filterKey.HitLevel)
+              if (hitLevels?.includes(hitLevelValue.High)) {
+                removeFilterElement(filterKey.HitLevel, hitLevelValue.High)
               } else {
-                setFilterValue(filterKey.HitLevel, hitLevelValue.High)
+                addFilterElement(filterKey.HitLevel, hitLevelValue.High)
               }
             }}
           >
             High
+          </Button>
+          <Button
+            variant={
+              hitLevels?.includes(hitLevelValue.Throw) ? 'solid' : 'outline'
+            }
+            onClick={() => {
+              if (hitLevels?.includes(hitLevelValue.Throw)) {
+                removeFilterElement(filterKey.HitLevel, hitLevelValue.Throw)
+              } else {
+                addFilterElement(filterKey.HitLevel, hitLevelValue.Throw)
+              }
+            }}
+          >
+            Throw
           </Button>
         </div>
       </section>

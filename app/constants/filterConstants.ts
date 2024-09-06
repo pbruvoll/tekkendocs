@@ -31,4 +31,5 @@ export const hitLevelValue = {
   Low: 'l',
   Mid: 'm',
   High: 'h',
+  Throw: 't',
 } as const

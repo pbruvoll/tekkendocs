@@ -1,1 +1,1 @@
-export type HitLevel = 'l' | 'm' | 'h'
+export type HitLevel = 'l' | 'm' | 'h' | 't'
