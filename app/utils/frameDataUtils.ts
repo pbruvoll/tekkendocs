@@ -174,7 +174,7 @@ export const filterRows = (
   const filterFuncs: ((row: string[]) => boolean)[] = []
   if (filter.hitLevels && filter.hitLevels.length) {
     filterFuncs.push((row: string[]) => {
-      const lastHitLevel = row[1]?.split(',').pop()?.toLowerCase()
+      const lastHitLevel = row[1]?.split(',').pop()?.[0]?.toLowerCase()
       return !!filter.hitLevels?.includes(lastHitLevel as HitLevel)
     })
   }
@@ -277,7 +277,7 @@ export const filterMoves = (moves: Move[], filter: MoveFilter | undefined) => {
   const filterFuncs: ((move: Move) => boolean)[] = []
   if (filter.hitLevels && filter.hitLevels.length) {
     filterFuncs.push((move: Move) => {
-      const lastHitLevel = move.hitLevel?.split(',').pop()?.toLowerCase()
+      const lastHitLevel = move.hitLevel?.split(',').pop()?.[0]?.toLowerCase()
       return !!filter.hitLevels?.includes(lastHitLevel as HitLevel)
     })
   }
