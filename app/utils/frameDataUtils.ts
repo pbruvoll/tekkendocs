@@ -174,7 +174,7 @@ export const filterRows = (
   const filterFuncs: ((row: string[]) => boolean)[] = []
   if (filter.hitLevels && filter.hitLevels.length) {
     filterFuncs.push((row: string[]) => {
-      const lastHitLevel = move.hitLevel?.split(',').pop()?.[0]?.toLowerCase()
+      const lastHitLevel = row[1]?.split(',').pop()?.[0]?.toLowerCase()
       return !!filter.hitLevels?.includes(lastHitLevel as HitLevel)
     })
   }
