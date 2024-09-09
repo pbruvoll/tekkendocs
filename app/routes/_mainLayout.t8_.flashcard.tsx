@@ -1,15 +1,12 @@
 import { json, type MetaFunction, type TypedResponse } from '@remix-run/node'
-import {
-  useLoaderData
-} from '@remix-run/react'
+import { useLoaderData } from '@remix-run/react'
 import { CharacterGrid } from '~/components/CharacterGrid'
 import { ContentContainer } from '~/components/ContentContainer'
-import {
-  getTekken8Characters
-} from '~/services/staticDataService'
+import { getTekken8Characters } from '~/services/staticDataService'
 import type { GamePageData } from '~/types/GamePageData'
 import { generateMetaTags } from '~/utils/seoUtils'
 import { t8AvatarMap } from '~/utils/t8AvatarMap'
+import { getCacheControlHeaders } from '~/utils/headerUtils'
 
 export const meta: MetaFunction = ({ matches }) => {
   return generateMetaTags({
@@ -28,7 +25,10 @@ export const loader = async (): Promise<TypedResponse<LoaderData>> => {
   return json<LoaderData>(
     {
       gamePageDataT8: { characterInfoList: getTekken8Characters() },
-    }
+    },
+    {
+      headers: getCacheControlHeaders({ seconds: 60 * 5 }),
+    },
   )
 }
 
@@ -47,11 +47,16 @@ export default function () {
           Cards marked as "Ignore" will never be shown again.
         </p>
       </section>
+
       <CharacterGrid
         characterCards={gamePageDataT8.characterInfoList.map(
           ({ id, displayName }) => {
             const imgSrc = t8AvatarMap[id]
-            return { name: displayName, imgSrc, url: '/t8/' + id + '/flashcard' }
+            return {
+              name: displayName,
+              imgSrc,
+              url: '/t8/' + id + '/flashcard',
+            }
           },
         )}
       />
