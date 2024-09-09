@@ -303,7 +303,7 @@ const StartPage = ({
         <p>
           A flash card shows a move on the front side. Your job is to guess a
           property of the move, for example how many frames it is on block. Then
-          you flip the card and check if yor guess was correct. Cards marked as
+          you flip the card and check if your guess was correct. Cards marked as
           "Wrong" will be shown again sooner than cards marked as "Correct".
           Card marked as "Ignore" will never be shown again.
         </p>

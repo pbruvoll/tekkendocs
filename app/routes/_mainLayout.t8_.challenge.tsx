@@ -223,7 +223,7 @@ export default function () {
           for an example.
         </p>
         <p className="my-3">
-          If you are the first to completa a challenge, you can tweet us a link
+          If you are the first to complete a challenge, you can tweet us a link
           to a video where you complete it at{' '}
           <a
             className="underline-offset-2t text-text-primary underline"
