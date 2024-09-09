@@ -93,6 +93,11 @@ export default function Index() {
             Challenges
           </Badge>
         </Link>
+        <Link to="/t8/flashcard" className="cursor-pointer">
+          <Badge size="2" style={{ cursor: 'pointer' }} variant="outline">
+            Flash cards
+          </Badge>
+        </Link>
       </div>
 
       <Heading as="h2" mt="7" mb="2" size="5">
