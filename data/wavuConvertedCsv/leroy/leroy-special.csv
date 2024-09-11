@@ -8,10 +8,11 @@ H.2+3;m;50 (25);i15;+6;+0;;"* Heat Smash
 * Transition to HRM on block";hs bbr;Leroy-H.2+3;Twin Dragon Thunderclap;;;
 R.df+1+2;m;55;i20;;;;"* Rage Art
 * Erase opponent's recoverable health on hit";;Leroy-R.df+1+2;Dark Dragon Commandment;;;
-1;h;5;i10;+1;+8;;;;Leroy-1;;;;
-1,1;h,m;5,7;i18~19;-9~-8;+2~+3;;;;Leroy-1,1;;;;
-1,1,1+2;h,m,h;5,7,12;i19~20;-9~-8;-2~-1;;* Power up during Heat (partially uses remaining Heat time;;Leroy-1,1,1+2;;;;
-1,1,1+2,1;h,m,h,m;5,7,12,15;,i23~24;-16~-15;+20(+15)~+21(+17);;;;Leroy-1,1,1+2,1;Chain Punch: Sheath;;;
+1;h;5;i10;+1;+8;;;;Leroy-1;;r19;;
+1,1;h,m;5,7;i18~19;-9~-8;+2~+3;;Combo from 1st CH;;Leroy-1,1;;;;
+1,1,1+2;h,m,h;5,7,12;i19~20;-9~-8;-2~-1;;"* Power up during Heat (partially uses remaining Heat time)
+* Combo from 2nd hit.";;Leroy-1,1,1+2;;;;
+1,1,1+2,1;h,m,h,m;5,7,12,15;,i23~24;-16~-15;+20(+15)~+21(+17);;Combo from 3rd hit.;;Leroy-1,1,1+2,1;Chain Punch: Sheath;;;
 1,2;h,h;5,9;,i12;-3;+7;;;;Leroy-1,2;Front Palm;;;
 1,2,1;h,h,h;5,9,17;,i27~28;-6~-5;+8~+9;;"* Follow-up after successful parry with input 1 or 2
 * Partially restores remaining Heat time when successful during Heat
@@ -34,11 +35,13 @@ Parry state";ps;Leroy-1+3+4;Taunt;;;
 3,3;m,l;14,13;,i18;-14;+2;+15;* Delayable;;Leroy-3,3;Hissing Snake;;;
 4;h;15;i12;-11;0;;;;Leroy-4;;;;
 4,4;h,m;1513;,i15~16;-13~-12;+3~+4;;;;Leroy-4,4;Falling Bamboo;;;
-1+2;h,h,h;9;i14;-2;4;;* Power up during Heat (partially uses remaining Heat time;;Leroy-1+2;;;;
-1+2,1+2;h,h,h,h,h,h;9,9;i9;-2;7;;* Power up during Heat (partially uses remaining Heat time;;Leroy-1+2,1+2;;;;
+1+2;h,h,h;9;i14;-2;4;;* Power up during Heat (partially uses remaining Heat time);;Leroy-1+2;;;;
+1+2,1+2;h,h,h,h,h,h;9,9;i9;-2;7;;"* Power up during Heat (partially uses remaining Heat time)
+* Combo from 3rd hit";;Leroy-1+2,1+2;;;;
 1+2,1+2,1;h,h,h,h,h,h,m;9,9,20;,i17~18;-17~-16;+7a (-2) / HE;;"* Heat Engager
 
 * Balcony Break
+* Combo from 6th hit
 * Delayable";he bbr;Leroy-1+2,1+2,1;Chain Punch: Stem;;;
 1+4;l;16;i100~279;-26;+24;;Power up during Heat (partially uses remaining Heat time);;Leroy-1+4;Go Sugar;;;
 3+4;sp;;;;;;"* Auto low parry
@@ -124,7 +127,8 @@ uf+2;m;25;i24~25;+1;+10 (+1);;"* Balcony Break
 * chip damage on block";bbr chp;Leroy-uf+2;Zhuan Shen Long Fang Quan;;;
 uf+3;m;25;i20~24;-8;+14 (+5);;"* Balcony Break
 * Alternate input: ub+3 or u+3";bbr;Leroy-uf+3;Floating Kick;;;
-uf+4;m;22;i23~25;-8~-6;+21;;Alternate input: ub+4 or u+4;;Leroy-uf+4;Floating Axe Drop;;;
+uf+4;m;22;i23~25;-8~-6;+21;;"Alternate input: ub+4 or u+4
+Low crush 9";js9;Leroy-uf+4;Floating Axe Drop;;;
 uf+3+4;mm;8,10;i14~15,i10~11;-14;+16;;Balcony Break;bbr;Leroy-uf+3+4;;;;
 uf+3+4,1+2;mm,m;8,10,17 (11);,i30~31;-13;+23 (+13);;Balcony Break;bbr;Leroy-uf+3+4,1+2;Biting Dragons;;;
 1+2+3+4;sp;;;;;;;;Leroy-1+2+3+4;Ki Charge;;;
@@ -164,7 +168,7 @@ HRM.2,3;h,h;14,23;i24~25;-9~-8;+16a (+9);;"* Tornado
 * chip damage on block
 * Delayable";trn chp;Leroy-HRM.2,3;Double Jawbreaker;;;
 HRM.3;l;8;i16;-13;-2;;;;Leroy-HRM.3;;;;
-HRM.3,4;l,m;8,16;i22~23;-15~-14;+1~+2;;;;Leroy-HRM.3,4;Stampeding Dragon;;;
+HRM.3,4;l,m;8,16;i22~23;-15~-14;+1~+2;;Combo from 1st hit;;Leroy-HRM.3,4;Stampeding Dragon;;;
 HRM.4;m;13;i11~12;-7~-6;+7~+8;;Transition to HRM;;Leroy-HRM.4;;;;
 HRM.4,1+2;m,m;13,25;i24~25;-14~-13;+27a (+12);;Tornado;trn;Leroy-HRM.4,1+2;Cautious Dragon;;;
 HRM.1+2;m,h,h,h,h;12,x,x,x;i14;-2;+5;;Power up during Heat (partially uses remaining Heat time);;Leroy-HRM.1+2;;;;

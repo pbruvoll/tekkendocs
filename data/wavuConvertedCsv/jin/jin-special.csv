@@ -12,15 +12,17 @@ H.db+1+2,1;m,m;0,25;i20~22;-13;+72a (56);+72a (56);"* Tornado
 * Uses Tornado on launch
 * 10 Recoverable Damage on block";trn;Jin-H.db+1+2,1;Awakened Thunder God Fist;;;
 H.db+1+2,2;m,s;0,23;i11~12;+4;+38a (28);+38a (28);*9 Recoverable Damage on block;;Jin-H.db+1+2,2;Awakened Wind God Fist;;;
-H.db+1+2,3;m,m;0,25;i26~28;+2;+22a;+22a;*10 Recoverable Damage on block;;Jin-H.db+1+2,3;Awakened Demon's Hoof;;;
+H.db+1+2,3;m,m;0,25;i26~28;+2c;+22a;+22a;*10 Recoverable Damage on block;;Jin-H.db+1+2,3;Awakened Demon's Hoof;;;
 H.db+1+2,4;m,l;0,10;i16;-23;+22a;+22a;*4 Recoverable Damage on block;;Jin-H.db+1+2,4;Awakened Spinning Demon (1);;;
 H.db+1+2,4,4;m,l,m;0,10,19;i25~26;-23;+20d (-15);+20d (-15);* Floor Break;fbr;Jin-H.db+1+2,4,4;Awakened Spinning Demon;;;
 H.db+1+2,DF+3;m,l;0,24;i33~34;-23;-2d;-2d;*10 Recoverable Damage on block;;Jin-H.db+1+2,DF+3;Awakened Demon's Tail;;;
 H.2+3;m,h,m,th;15,12,15,15;i15~16;+3;+0;+0;"* Heat Smash
 * Transitions to Breaking Step on block";hs;Jin-H.2+3;Hellfire Trespass Slayer;;;
 H.2+3,4;m,h,m;12,20,21;i15~16;+9;+32a (-4);+32a (-4);"* Heat Smash
-* +21 if blocked at the Wall
-* Causes WallSplat on hit";hs;Jin-H.2+3,4;Hellfire Darkside Slayer;;;
+* Wall Crush  +21g on block
+
+
+* Balcony Break";hs wc bbr;Jin-H.2+3,4;Hellfire Darkside Slayer;;;
 H.2+3,B;m,h,m,th;15,12,15,15;;+3;N/A;N/A;"* Heat Smash
 * Only possible on block";hs;Jin-H.2+3,B;Hellfire Trespass Slayer (Cancelled Breaking Step);;;
 R.df+1+2;m,th,th;10,10,35;;;;;* Erases opponent's recoverable health on hit;;Jin-R.df+1+2;Polar Demon Gouge;;;
@@ -89,7 +91,7 @@ d+1;m, th;21,10;i21;-13;+0;;"* Absorb an attack to power up, which adds 8 chip d
 Power crush 8~";bbr pc8~;Jin-d+1;Corpse Thrust > Black Wing Flash;;;
 d+2;l;22;i22;-14;+4;+71a (+55);"*
 Tornado on CH
-High crush";cs;Jin-d+2;Scourge;;;
+High crush 8";cs8;Jin-d+2;Scourge;;;
 d+3;l;7;i15;-14;-3;;;;Jin-d+3;;;;
 d+3,4;l,h;7,10;i20;-11;-3;;;;Jin-d+3,4;;;;
 d+3,4,3;l,h,m;7,10,21;i24;-12;+31(+23);;"*
@@ -98,7 +100,7 @@ Tornado
 * WallSplat";trn bbr;Jin-d+3,4,3;Kazama Style Three-Quarter Kick;;;
 d+3,4~4;l,m;7,24;i20;-12;+10a (+1);;"* Balcony Break
 * Wallsplat";bbr;Jin-d+3,4~4;Knee Popper > Mid Sidekick;;;
-d+4;l;11;i16;-12;-1;;High crush;cs;Jin-d+4;Right Sweep;;;
+d+4;l;11;i16;-12;-1;;High crush 6;cs6;Jin-d+4;Right Sweep;;;
 d+3+4;m,m;5,15;i15;-19;+32a (+22);;Low crush;js;Jin-d+3+4;Double Lift Kick;;;
 db+2;m;12;i16;-10;+4;+4;;;Jin-db+2;;;;
 db+2,2;m,h;12,11;i8;-12;+7;+43a;Jails;;Jin-db+2,2;;;;
