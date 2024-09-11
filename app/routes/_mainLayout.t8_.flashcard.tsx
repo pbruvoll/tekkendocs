@@ -4,9 +4,9 @@ import { CharacterGrid } from '~/components/CharacterGrid'
 import { ContentContainer } from '~/components/ContentContainer'
 import { getTekken8Characters } from '~/services/staticDataService'
 import type { GamePageData } from '~/types/GamePageData'
+import { getCacheControlHeaders } from '~/utils/headerUtils'
 import { generateMetaTags } from '~/utils/seoUtils'
 import { t8AvatarMap } from '~/utils/t8AvatarMap'
-import { getCacheControlHeaders } from '~/utils/headerUtils'
 
 export const meta: MetaFunction = ({ matches }) => {
   return generateMetaTags({
