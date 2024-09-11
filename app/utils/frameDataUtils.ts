@@ -79,27 +79,30 @@ export const applyOverride = (
     h.toLowerCase(),
   )
   const commandIndex = lowerCaseHeaders.findIndex(h => h === 'command')
+  const wavuIdIndex = lowerCaseHeaders.findIndex(h => h === 'wavu id')
   const ytVideoIndex = lowerCaseHeaders.findIndex(h => h === 'yt video')
   const ytStartIndex = lowerCaseHeaders.findIndex(h => h === 'yt start')
   const ytEndIndex = lowerCaseHeaders.findIndex(h => h === 'yt end')
-  const overrideRecord = overrideNormalFrameData.rows.reduce<
-    Record<string, Partial<Move>>
-  >((moves, row) => {
+  const [overrideRecordByCommand, overrideRecordByWavuId] = overrideNormalFrameData.rows.reduce<
+    [Record<string, Partial<Move>>, Record<string, Partial<Move>>]
+  >((current, row) => {
+    const [movesByCommand, movesByWavuId] = current;
     const ytVideo = row[ytVideoIndex]
     if (ytVideo) {
-      moves[row[commandIndex]] = {
+      movesByCommand[row[commandIndex]] = {
         ytVideo: {
           id: ytVideo,
           start: row[ytStartIndex],
           end: row[ytEndIndex],
         },
       }
+      movesByWavuId[row[wavuIdIndex]] = movesByCommand[row[commandIndex]]
     }
-    return moves
-  }, {})
+    return current
+  }, [{}, {}])
 
   moves.forEach((move, index) => {
-    const override = overrideRecord[move.command]
+    const override = overrideRecordByCommand[move.command] || overrideRecordByWavuId[move.wavuId || '']
     if (override) {
       move.ytVideo = override.ytVideo
       if (move.ytVideo) {
