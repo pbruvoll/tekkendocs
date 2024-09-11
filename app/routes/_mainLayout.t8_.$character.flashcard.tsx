@@ -102,15 +102,22 @@ export default function FlashCard() {
     return viableMoves
       .filter(
         m =>
-          !charFlashCardState.correct.includes(m.command) &&
-          !charFlashCardState.wrong.includes(m.command) &&
-          !charFlashCardState.ignored.includes(m.command),
+          !charFlashCardState.correct.includes(
+            showCharName ? m.wavuId! : m.command,
+          ) &&
+          !charFlashCardState.wrong.includes(
+            showCharName ? m.wavuId! : m.command,
+          ) &&
+          !charFlashCardState.ignored.includes(
+            showCharName ? m.wavuId! : m.command,
+          ),
       )
-      .map(m => m.command)
+      .map(m => (showCharName ? m.wavuId : m.command))
   }, [
     charFlashCardState.correct,
     charFlashCardState.ignored,
     charFlashCardState.wrong,
+    showCharName,
     viableMoves,
   ])
 
@@ -128,65 +135,87 @@ export default function FlashCard() {
   const charFlashCardStateSubSet = useMemo(() => {
     return {
       [FlashCardAnswer.Correct]: charFlashCardState.correct.filter(c =>
-        viableMovesSubSet.some(m => m.command === c),
+        viableMovesSubSet.some(m =>
+          showCharName ? m.wavuId === c : m.command === c,
+        ),
       ),
       [FlashCardAnswer.Wrong]: charFlashCardState.wrong.filter(c =>
-        viableMovesSubSet.some(m => m.command === c),
+        viableMovesSubSet.some(m =>
+          showCharName ? m.wavuId === c : m.command === c,
+        ),
       ),
       [FlashCardAnswer.Ignored]: charFlashCardState.ignored.filter(c =>
-        viableMovesSubSet.some(m => m.command === c),
+        viableMovesSubSet.some(m =>
+          showCharName ? m.wavuId === c : m.command === c,
+        ),
       ),
     }
-  }, [charFlashCardState, viableMovesSubSet])
+  }, [
+    charFlashCardState.correct,
+    charFlashCardState.ignored,
+    charFlashCardState.wrong,
+    showCharName,
+    viableMovesSubSet,
+  ])
 
   const unseenMovesSubSet = useMemo(() => {
-    return unseenMoves.filter(c => viableMovesSubSet.some(m => m.command === c))
-  }, [unseenMoves, viableMovesSubSet])
+    return unseenMoves.filter(c =>
+      viableMovesSubSet.some(m =>
+        showCharName ? m.wavuId === c : m.command === c,
+      ),
+    )
+  }, [showCharName, unseenMoves, viableMovesSubSet])
 
   const findAndSetMoveToShow = () => {
     let command = ''
     const numWrong = charFlashCardStateSubSet.wrong.length
     const numCorrect = charFlashCardStateSubSet.correct.length
     const numUnseen = unseenMovesSubSet.length
+    console.log(numWrong, numCorrect, numUnseen)
     if (numWrong >= 7 || (numWrong > 0 && numUnseen === 0)) {
       command =
         charFlashCardStateSubSet.wrong[Math.floor(Math.random() * numWrong)]
     } else if (numUnseen > 0) {
-      command = unseenMovesSubSet[Math.floor(Math.random() * numUnseen)]
+      const index = Math.floor(Math.random() * numUnseen)
+      command = unseenMovesSubSet[index]!
     } else if (numCorrect > 0) {
       command =
         charFlashCardStateSubSet.correct[Math.floor(Math.random() * numCorrect)]
     }
-    setMoveToShow(viableMovesSubSet.find(m => m.command === command))
+    setMoveToShow(
+      viableMovesSubSet.find(m =>
+        showCharName ? m.wavuId === command : m.command === command,
+      ),
+    )
   }
 
   const handleAnswer = (answer: FlashCardAnswerType) => {
     invariant(moveToShow)
     const newCharFlashCardState = {
-      [FlashCardAnswer.Correct]: charFlashCardState.correct.filter(
-        c => c !== moveToShow.command,
+      [FlashCardAnswer.Correct]: charFlashCardState.correct.filter(c =>
+        showCharName ? c !== moveToShow.wavuId : c !== moveToShow.command,
       ),
-      [FlashCardAnswer.Wrong]: charFlashCardState.wrong.filter(
-        c => c !== moveToShow.command,
+      [FlashCardAnswer.Wrong]: charFlashCardState.wrong.filter(c =>
+        showCharName ? c !== moveToShow.wavuId : c !== moveToShow.command,
       ),
-      [FlashCardAnswer.Ignored]: charFlashCardState.ignored.filter(
-        c => c !== moveToShow.command,
+      [FlashCardAnswer.Ignored]: charFlashCardState.ignored.filter(c =>
+        showCharName ? c !== moveToShow.wavuId : c !== moveToShow.command,
       ),
     }
     if (answer === 'correct') {
       newCharFlashCardState.correct = [
         ...newCharFlashCardState.correct,
-        moveToShow.command,
+        showCharName ? moveToShow.wavuId! : moveToShow.command,
       ]
     } else if (answer === 'ignored') {
       newCharFlashCardState.ignored = [
         ...newCharFlashCardState.ignored,
-        moveToShow.command,
+        showCharName ? moveToShow.wavuId! : moveToShow.command,
       ]
     } else if (answer === 'wrong') {
       newCharFlashCardState.wrong = [
         ...newCharFlashCardState.wrong,
-        moveToShow.command,
+        showCharName ? moveToShow.wavuId! : moveToShow.command,
       ]
     }
     setFlashCardAppState({
