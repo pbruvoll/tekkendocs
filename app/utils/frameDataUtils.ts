@@ -155,6 +155,13 @@ export const jails = (move: Move) => {
   return /jail/i.test(move.notes || '')
 }
 
+export const noJails = (move: Move) => {
+  return (
+    (move.hitLevel || '').split(',').length > 1 &&
+    !/jail/i.test(move.notes || '')
+  )
+}
+
 export const hitsGrounded = (move: Move) => {
   const lastHitLevel = move.hitLevel?.split(',').pop()
   return !!lastHitLevel && lastHitLevel === lastHitLevel.toUpperCase()
@@ -357,6 +364,7 @@ export const filterMoves = (moves: Move[], filter: MoveFilter | undefined) => {
     [filter.homing, isHomingMove],
     [filter.tornado, isTornadoMove],
     [filter.jails, jails],
+    [filter.noJails, noJails],
     [filter.hitsGrounded, hitsGrounded],
     [filter.video, (move: Move) => !!(move.video || move.ytVideo)],
     [filter.chip, isChip],

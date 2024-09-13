@@ -33,6 +33,7 @@ export const FrameDataFilterSelection = ({
     homing,
     tornado,
     jails,
+    noJails,
     chip,
     spike,
     highCrush,
@@ -235,6 +236,7 @@ export const FrameDataFilterSelection = ({
               [filterKey.Homing, homing, 'Homing'],
               [filterKey.Tornado, tornado, 'Tornado Spin'],
               [filterKey.Jails, jails, 'Jails'],
+              [filterKey.NoJails, noJails, 'Doesnt jail'],
               [filterKey.HitsGrounded, hitsGrounded, 'Hits grounded'],
               [filterKey.Chip, chip, 'Chip'],
               [

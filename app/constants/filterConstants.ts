@@ -11,6 +11,7 @@ export const filterKey = {
   BalconyBreak: 'balconyBreak',
   Tornado: 'tonrnado',
   Jails: 'jails',
+  NoJails: 'noJails',
   Chip: 'chip',
   HighCrush: 'cs',
   LowCrush: 'js',

@@ -11,6 +11,7 @@ export type MoveFilter = {
   balconyBreak?: boolean
   heatEngager?: boolean
   jails?: boolean
+  noJails?: boolean
   numHitsMin?: number
   numHitsMax?: number
   highCrush?: boolean
