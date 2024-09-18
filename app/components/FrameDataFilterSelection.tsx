@@ -1,4 +1,4 @@
-import { Button, Flex, Slider, Text } from '@radix-ui/themes'
+import { Button, Flex, Text } from '@radix-ui/themes'
 import { filterKey, hitLevelValue } from '~/constants/filterConstants'
 import { stanceNameMap } from '~/constants/stanceNameMap'
 import { type MoveFilter } from '~/types/MoveFilter'
