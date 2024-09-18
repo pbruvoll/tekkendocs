@@ -1,7 +1,8 @@
-import { Button, Flex, Text } from '@radix-ui/themes'
+import { Button, Flex, Slider, Text } from '@radix-ui/themes'
 import { filterKey, hitLevelValue } from '~/constants/filterConstants'
 import { stanceNameMap } from '~/constants/stanceNameMap'
 import { type MoveFilter } from '~/types/MoveFilter'
+import { RangeSlider } from './RangeSlider'
 
 export type FrameDataFilterSectionProps = {
   filter: MoveFilter
@@ -159,6 +160,20 @@ export const FrameDataFilterSelection = ({
             Safe
           </Button>
         </div>
+        <RangeSlider
+          values={[blockFrameMin, blockFrameMax]}
+          max={10}
+          min={-17}
+          onValuesCommit={values => {
+            console.log({ values: values.join(',') })
+            if (values[0] === undefined) {
+              removeFilterValue(filterKey.BlockFrameMin)
+            } else setFilterValue(filterKey.BlockFrameMin, values[0].toString())
+            if (values[1] === undefined) {
+              removeFilterValue(filterKey.BlockFrameMax)
+            } else setFilterValue(filterKey.BlockFrameMax, values[1].toString())
+          }}
+        />
       </section>
       <section className="flex flex-col gap-3">
         <Text as="div" size="2" mb="1" weight="bold">
@@ -192,6 +207,19 @@ export const FrameDataFilterSelection = ({
             Negative
           </Button>
         </div>
+        <RangeSlider
+          values={[hitFrameMin, hitFrameMax]}
+          max={10}
+          min={-10}
+          onValuesCommit={values => {
+            if (values[0] === undefined) {
+              removeFilterValue(filterKey.HitFrameMin)
+            } else setFilterValue(filterKey.HitFrameMin, values[0].toString())
+            if (values[1] === undefined) {
+              removeFilterValue(filterKey.HitFrameMax)
+            } else setFilterValue(filterKey.HitFrameMax, values[1].toString())
+          }}
+        />
       </section>
       <section className="flex flex-col gap-3">
         <Text as="div" size="2" mb="1" weight="bold">
