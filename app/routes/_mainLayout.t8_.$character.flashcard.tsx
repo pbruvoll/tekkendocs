@@ -171,7 +171,6 @@ export default function FlashCard() {
     const numWrong = charFlashCardStateSubSet.wrong.length
     const numCorrect = charFlashCardStateSubSet.correct.length
     const numUnseen = unseenMovesSubSet.length
-    console.log(numWrong, numCorrect, numUnseen)
     if (numWrong >= 7 || (numWrong > 0 && numUnseen === 0)) {
       command =
         charFlashCardStateSubSet.wrong[Math.floor(Math.random() * numWrong)]
