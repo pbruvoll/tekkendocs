@@ -165,7 +165,6 @@ export const FrameDataFilterSelection = ({
           max={10}
           min={-17}
           onValuesCommit={values => {
-            console.log({ values: values.join(',') })
             if (values[0] === undefined) {
               removeFilterValue(filterKey.BlockFrameMin)
             } else setFilterValue(filterKey.BlockFrameMin, values[0].toString())
