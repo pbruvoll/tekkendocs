@@ -1,9 +1,4 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Wavu id;Name;Recovery;Image;Video
-2+3;m;12 (12);i16;+1;+2c;;"* Heat Burst
-* Cancel to r45 with b,b
-* 3 chip damage on block
-* Partially uses Heat
-Power crush 7~62";hb pc7~62;Alisa-2+3;Heat Burst;r30;;
 H.d+1+2;;;;;;;"* Cancel to r30 with db
 * Partially consumes Heat
 Power crush 6~36";pc6~36;Alisa-H.d+1+2;Emergency Destructive Form;r47 DES;;
@@ -127,9 +122,10 @@ f+4,1,4;m,h,m;14,14,19 (13);,i27~65;-12~+26g;+1a;;"* Combo from 2nd hit
 * i25-26 bounce, i25-26 travel, 
 (---)/i35(27-65) travel then explosion , 
 -3(-11) and -1(-9) for explosion then hit, respectively";;Alisa-f+4,1,4;Logic Bomb;r1;;
-f+1+2;m;25;i14~15;-12;+14c;;"* Balcony Break
-* Transition to r25 SBT with 3_4
-* Transition to r25 DBT with f+3_f+4";bbr;Alisa-f+1+2;Overflow;r35;;
+f+1+2;m;25;i14~15;-12;+14g;;"* Balcony Break
+* Enter SBT -16 +10g r25 with 3_4
+* Enter DBT -16 +10g r25 with f+3_f+4
+* Opponent recovers crouching";bbr;Alisa-f+1+2;Overflow;r35;;
 f+3+4;;;;;;;"&lt;div class=&quot;plainlist&quot;&gt;
 * Low crush 26~54
 * fs55~57&lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
@@ -266,7 +262,29 @@ ub+4;m;10;i18;-9;+7;;"&lt;div class=&quot;plainlist&quot;&gt;
 * Low crush 9~31
 * fs32~34&lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
 * js9~31
-* fs32~34&lt;/div&gt;";Alisa-ub+4;;r27;;
+* fs32~34&lt;/div&gt;";Alisa-ub+4;1st Hit;r27;;
+ub+4,1;m,m;10,12;,i25~27;-21;-8;;"Combo from 1st CH
+High crush 24~";cs24~;Alisa-ub+4,1;2nd Hit;r38 FC;;
+ub+4,1,1;m,m,m;10,12,9;,i21;-20;-9;;"* Elbow
+* Combo from 2nd hit
+* Combo from 1st CH";elb;Alisa-ub+4,1,1;3rd Hit;r39;;
+ub+4,1,1,2;m,m,m,h;10,12,9,5;,i24~25;-10;+1;;"* Combo from 3rd hit
+* Combo from 1st CH";;Alisa-ub+4,1,1,2;4th Hit;r28;;
+ub+4,1,1,2,1;m,m,m,h,h;10,12,9,5,5;,i35~36;-9;+7;;* Balcony break on airborne hit;;Alisa-ub+4,1,1,2,1;5th Hit;r27;;
+ub+4,1,1,2,1,1;m,m,m,h,h,m,M,M;10,12,9,5,5,3,3,3;,i32~33 i1~2 i1~2;-14;-3;;"* Spike
+* Weapon
+* Combo from 5th hit";spk wpn;Alisa-ub+4,1,1,2,1,1;6th Hit;r32 DES;;
+ub+4,1,1,2,1,1,3+4;m,m,m,h,h,m,M,M,L;10,12,9,5,5,3,3,3,7;,i27~28;-29;+15a;;"*
+,fs5~50";fs5~50;Alisa-ub+4,1,1,2,1,1,3+4;7th Hit;r47;;
+ub+4,1,1,2,1,1,3+4,3;m,m,m,h,h,m,M,M,L,m;10,12,9,5,5,3,3,3,7,15;,i20~21;-65;-40;;"* Combo from 7th hit
+,Low crush 9~";js9~;Alisa-ub+4,1,1,2,1,1,3+4,3;8th Hit;r42;;
+ub+4,1,1,2,1,1,3+4,3,2;m,m,m,h,h,m,M,M,L,m,M;10,12,9,5,5,3,3,3,7,15,20;,i17~22;-30;-38a (-45);;"* Combo from 8th hit
+* Available only as combo from previous hit
+,Low crush 1~";js1~;Alisa-ub+4,1,1,2,1,1,3+4,3,2;9th Hit;r44;;
+ub+4,1,1,2,1,1,3+4,3,2,2;m,m,m,h,h,m,M,M,L,m,M,M,M,h,h;10,12,9,5,5,3,3,3,7,15,20,2,2,2,20;,i13~16 1~5 i1~6 i1~8;-23;+3a (-15);;"* Weapon
+* Combo from 9th hit
+* Last chainsaw hit rarely connects because of its high hitbox, -17 if blocked
+,Low crush 16~";wpn js16~;Alisa-ub+4,1,1,2,1,1,3+4,3,2,2;10 Hit Combo;r50 DES;;
 ub+3+4;M;25;i37~39;+2c~+4c;+25a;;"Spike
 Low crush 5~39";spk js5~39;Alisa-ub+3+4;;r23;;
 ub+3+4,1+2;M,m;25,20;,i26~27;-14;+32a (+22);;"Head
@@ -404,7 +422,7 @@ f,f,F+1+2;M;24;i18~36;-3;-17a (-26);;"* Balcony Break
 * fs37~67&lt;/div&gt;";"bbr &lt;div class=&quot;plainlist&quot;&gt;
 * js5~36
 * fs37~67&lt;/div&gt;";Alisa-f,f,F+1+2;Thruster Double Punch;r44;;
-"ws&gt;1+2";m;22;i28~29;-4;+21;;"* Homing
+"ws&gt;1+2";m;24;i28~29;-4;+21;;"* Homing
 * Hold input to power up";hom;"Alisa-ws&amp;gt;1+2";;r31;;
 ws1;M;12;i13~14;-12;+1;;* Elbow;elb;Alisa-ws1;;r30;;
 ws1,2;M,h;12,12;,i24~25;-5;+6;;"* Combo from 1st hit
@@ -416,8 +434,8 @@ ws2;m;24;i17~18;-13;+33a (+23);;"* Tornado
 * Transition to SBT 3_4
 * Transition to DBT f+3_f+4";trn;Alisa-ws2;Digital Lift;r40;;
 ws3;m;18;i19~20;+4;+15;;"* Cancel with B
-* Actionable after 19 frames";;Alisa-ws3;Clockwork (CLK);r35 FC;;
-ws4;m;15;i11~12;-5;+6;;* Balcony Break;bbr;Alisa-ws4;Key Smash;r23;;
+* Actionable after 15 frames";;Alisa-ws3;Clockwork (CLK);r35 FC;;
+ws4;m;15;i11~12;-5;+6;;;;Alisa-ws4;Key Smash;r23;;
 ws1+2;m;20;i20~21;-8;+21;;"* Homing
 * Hold input to power up";hom;Alisa-ws1+2;Cute But Deadly;r31;;
 ws1+2*;m;28;i39~40;+0;+33a;;"* Homing
@@ -525,7 +543,7 @@ DBT.1+2;m,m,M,M;5,5,5,20;i12~15 i1~4 i1~5 i1~6;+0;+21a (+0);;"* Balcony Break
 * fs67~69&lt;/div&gt;";"bbr spk wpn &lt;div class=&quot;plainlist&quot;&gt;
 * js17~66
 * fs67~69&lt;/div&gt;";Alisa-DBT.1+2;Thruster Drill;r45 DES;;
-DBT.f+1;m,t;49;i19~21;-11;+0d;;"* Weapon
+DBT.f+1;M,t;49;i19~21;-11;+0d;;"* Weapon
 * Transition to attack throw on front standing or airborne hit
 * 14 damage +3c vs BT opponent
 * 4 chip damage on block
@@ -607,15 +625,15 @@ DES.f+2,1,2;m,m,m,m,m,m;9,9,23;,i23~24 i4~5;-13;+30d;;"* Heat Engager
 * Weapon
 * Combo from 1st or 2nd CH
 * 6 chip damage on block";he wpn;Alisa-DES.f+2,1,2;Gigahertz Storm;r42;;
-DES.f+3;;;;;;;"* Cancel to r33 with DBT.b
-* Transition to r50 SS with DBT.u_d
+DES.f+3;;;;;;;"* Cancel to r33 with DBT.B
+* Transition to Evasive Action with input DBT.U_D
 &lt;div class=&quot;plainlist&quot;&gt;
 * Low crush 18~40
 * fs41~43&lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
 * js18~40
 * fs41~43&lt;/div&gt;";Alisa-DES.f+3;Dual Boot;r17 DBT;;
-DES.f+3;;;;;;;"* Cancel to r33 with DBT.B
-* Transition to Evasive Action with input DBT.U_D
+DES.f+3;;;;;;;"* Cancel to r33 with DBT.b
+* Transition to r50 SS with DBT.u_d
 &lt;div class=&quot;plainlist&quot;&gt;
 * Low crush 18~40
 * fs41~43&lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
