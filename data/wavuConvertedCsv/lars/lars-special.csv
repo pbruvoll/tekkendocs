@@ -3,6 +3,8 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 Power crush";hb pc;Lars-2+3;Heat Burst;;;
 H.LEN.1;l,th;20,15;i16~17;-12c;+5;;"* Side switch on hit throw
 * Opponent is left FUFA";;Lars-H.LEN.1;Blue Jet;;;
+H.LEN.2;m;20;i16~17;-9;+65a (+49);;"* Tornado
+* Powers up during Heat (Uses Heat Time, Tornado launches on hit)";trn;Lars-H.LEN.2;Rising Force (Heat);;;
 H.f+3+4;sm;5 (5);i18~24;+5;+10;;"* Transition to SEN
 * Partially uses remaining heat time
 Power crush";pc;Lars-H.f+3+4;Rebellion;;;
@@ -44,7 +46,7 @@ f+4,1,2;m,m,m;12,8,8;,i12;-10;+2;;;;Lars-f+4,1,2;;;;
 f+4,1,2,1;m,m,m,m;12,8,8,20;,i24~25;-14;+19 (+9);;* Balcony Break;bbr;Lars-f+4,1,2,1;Volcanic Lightning;;;
 f+1+2;m;20;i15~16;-13;+28;;;;Lars-f+1+2;Ark Blast;;;
 f+1+4;m;28;i13~14;-18;+18 (+8);;* Balcony Break;bbr;Lars-f+1+4;Power Slug;;;
-df+1;m;;i13;-1;+5;;;;Lars-df+1;;;;
+df+1;m;14;i13;-1;+5;;;;Lars-df+1;;;;
 df+2;m;15;i14;-11 / -3 SEN;+1 / +9 SEN;+31 (+23) / +39 (+31);"* Transition to SEN
 * Cancel SEN transition to standing with input B";;Lars-df+2;Flash Bullet;;;
 df+3;m;15;i16;-7 / -4 DEN;+5 / +8 DEN;;* Transition to DEN with input D;;Lars-df+3;;;;
