@@ -360,6 +360,7 @@ export const filterMoves = (moves: Move[], filter: MoveFilter | undefined) => {
 
   const propFilters = [
     [filter.balconyBreak, isBalconyBreak],
+    [filter.heatSmash, (move: Move) => hasTag('hs', move)],
     [filter.heatEngager, isHeatEngager],
     [filter.homing, isHomingMove],
     [filter.tornado, isTornadoMove],
