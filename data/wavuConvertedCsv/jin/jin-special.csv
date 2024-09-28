@@ -26,7 +26,7 @@ H.2+3,4;m,h,m;12,20,21;i15~16;+9;+32a (-4);+32a (-4);"* Heat Smash
 H.2+3,B;m,h,m,th;15,12,15,15;;+3;N/A;N/A;"* Heat Smash
 * Only possible on block";hs;Jin-H.2+3,B;Hellfire Trespass Slayer (Cancelled Breaking Step);;;
 R.df+1+2;m,th,th;10,10,35;;;;;* Erases opponent's recoverable health on hit;;Jin-R.df+1+2;Polar Demon Gouge;;;
-1;h;5;i10;+1;+8;;t27 r17 on hit or block;;Jin-1;Left Jab;r19;;
+1;h;5;i10;+1;+8;;Recovers 2f faster on hit or block (t27 r17);;Jin-1;Jab;r19;;
 1,2;h,h;5,12;,i10;-3;+6;;Jail from 1st attack with 4f delay;;Jin-1,2;Left Right Combo;r21;;
 1,2,1;h,h,m;5,12,20;,i20~22;-16;+31a (+21);;"* Tornado
 * Combo from 2nd CH with 7f delay
@@ -98,55 +98,77 @@ df+1,4;m,h;10,18;,i18~21;-9;+10g;+17a (+8);"* Balcony Break
 * Combo from 1st hit with 5f delay
 * Input can be delayed 10f
 * Move can be delayed 9f";bbr;Jin-df+1,4;Mid Left Punch > High Roundhouse Kick;r30;;
-df+1,4~4;m,m;10,24;i20;-12;+10a (+1);;* Balcony Break;bbr;Jin-df+1,4~4;Mid Left Punch > Mid Sidekick;;;
-df+2;m;12;i16;-9;+6;;* Balcony Break;bbr;Jin-df+2;Fiendish Rend;;;
-df+2~df;m;12;;-2;+13;;;;Jin-df+2~df;(Fiendish Rend to Breaking Step);r CD;;
-df+3;m;16;i12;-8;+3;;;;Jin-df+3;Left Roundhouse;;;
-df+3~3;m;20;i23~i24;+6c~+7c;+13c~+14c;;* Floor Break;fbr;Jin-df+3~3;Brazilian Kick;;;
-df+3~3~df;m;20;;+2c~+3c;+9c~+10c;;;;Jin-df+3~3~df;Breaking Step;r CD;;
-df+4;m;22;i20~i21;+0~+1;+8c~+9c/HE;;"* Floor Break
-* Heat Engager";fbr he;Jin-df+4;Right Spinning Axe Kick;;;
+df+1,4~4;m,m;10,24;,i20;-12;+10a (+1);;* Balcony Break;bbr;Jin-df+1,4~4;Mid Left Punch > Mid Sidekick;r35;;
+df+2;m;12;i16~17;-9;+6;;"* Balcony Break
+* Enter Breaking Step -2 +13g r23 with df
+* Chip damage on block";bbr chp;Jin-df+2;Fiendish Rend;r30;;
+df+3;m;16;i12;-8;+3;;;;Jin-df+3;Left Roundhouse;r27;;
+df+3~3;m;20;i23~i24;+6c;+13c;;"* Spike
+* Enter Breaking Step +2c +9c r27 with df";spk;Jin-df+3~3;Brazilian Kick;r23;;
+df+4;m;22;i20~i21;+0;+8c;;"* Spike
+* Heat Engager
+
+* Heat Dash +67a (+50), +5";spk he;Jin-df+4;Right Spinning Axe Kick;r21;;
 df+2+3;h;4,5,5,26 (40);i12;-2;-4;;"* Throw break: 2
 * Alternate input: ZEN 2+3";;Jin-df+2+3;Shun Ren Dan;;;
-d+1;m, th;21,10;i21;-13;+0;;"* Absorb an attack to power up, which adds 8 chip damage when guarded
+d+1;m,t;21,10;i21;-13;+0d;;"* Balcony break on airborne hit
+* Transition to attack throw on hit
+* -9 on block after absorbing an attack and 8 chip damage on block
+Power crush 7~20";pc7~20;Jin-d+1;Corpse Thrust > Black Wing Flash;r35;;
+d+2;L;22;i22~23;-14;+4c;+71a (+55);"* Balcony break on airborne hit
+High crush 8~55";cs8~55;Jin-d+2;Scourge;r32 FC;;
+d+3;l;7;i15;-14;-3;;;;Jin-d+3;;r32;;
+d+3,4;l,h;7,10;,i20;-11;-3;;Combo from 1st CH;;Jin-d+3,4;;r29;;
+d+3,4,3;l,h,m;7,10,21;,i24;-12;+31d (+23);;"* Tornado
 * Balcony Break
-Power crush 8~";bbr pc8~;Jin-d+1;Corpse Thrust > Black Wing Flash;;;
-d+2;l;22;i22;-14;+4;+71a (+55);"*
-Tornado on CH
-High crush 8";cs8;Jin-d+2;Scourge;;;
-d+3;l;7;i15;-14;-3;;;;Jin-d+3;;;;
-d+3,4;l,h;7,10;i20;-11;-3;;;;Jin-d+3,4;;;;
-d+3,4,3;l,h,m;7,10,21;i24;-12;+31(+23);;"*
-Tornado
-* Balcony Break
-* WallSplat";trn bbr;Jin-d+3,4,3;Kazama Style Three-Quarter Kick;;;
-d+3,4~4;l,m;7,24;i20;-12;+10a (+1);;"* Balcony Break
-* Wallsplat";bbr;Jin-d+3,4~4;Knee Popper > Mid Sidekick;;;
-d+4;l;11;i16;-12;-1;;High crush 6;cs6;Jin-d+4;Right Sweep;;;
-d+3+4;m,m;5,15;i15;-19;+32a (+22);;Low crush;js;Jin-d+3+4;Double Lift Kick;;;
-db+2;m;12;i16;-10;+4;+4;;;Jin-db+2;;;;
-db+2,2;m,h;12,11;i8;-12;+7;+43a;Jails;;Jin-db+2,2;;;;
-db+2,2,3;m,h,m;12,11,21;i35~i36;-9~-8;+20a~+21a;;;;Jin-db+2,2,3;Savage Sword;;;
-db+2,3;m,m;12,23;i27~i29;-8~-6;+7a~+9a;;* Floor Break;fbr;Jin-db+2,3;Punch > Cascade Kick;;;
-db+3;h;28;i19~i21;-10~-8;+17a~+19a;;High crush;cs;Jin-db+3;Left Spinning Back Kick;;;
-db+4;l;18;i20;-13;+3;+13g;Opponent can block follow up attacks on CH.;;Jin-db+4;Right Low Roundhouse;;;
-db+1+2;m;0;19;-11;+17;;"* Balcony Break
-* Wallsplat";bbr;Jin-db+1+2;Power Stance;;;
-b+1;h;11;i12;-9;+2;;;;Jin-b+1;Shun Maten (1);;;
-b+1,2;h,h;11,20;i12;-10;+32a (+17);;* Tornado;trn;Jin-b+1,2;Shun Maten;;;
+* Combo from 2nd CH with 2f delay
+* Input can be delayed 10f";trn bbr;Jin-d+3,4,3;Kazama Style Three-Quarter Kick;r33;;
+d+3,4~4;l,m;7,24;,i20;-12;+10a (+1);;* Balcony Break;bbr;Jin-d+3,4~4;Knee Popper > Mid Sidekick;r35;;
+d+4;L;11;i16;-12;-1;;High crush 6~31;cs6~31;Jin-d+4;Right Sweep;r30;;
+d+3+4;m,m;5,15;i15 i10~12;-19;+32a (+22);;"&lt;div class=&quot;plainlist&quot;&gt;
+* Low crush 16~31
+* fs32~34&lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
+* js16~31
+* fs32~34&lt;/div&gt;";Jin-d+3+4;Double Lift Kick;r36;;
+db+2;m;12;i16;-10;-4;;;;Jin-db+2;;r34;;
+db+2,2;m,h;12,11;,i8;-12;+7;+43a;Jail from 1st attack;;Jin-db+2,2;;r37;;
+db+2,2,3;m,h,m;12,11,21;,i35~i36;-9;+20a;;* Balcony break on airborne hit;;Jin-db+2,2,3;Savage Sword;r27;;
+db+2,3;m,M;12,23;,i27~i29;-8;+7a;;* Spike;spk;Jin-db+2,3;Punch > Cascade Kick;r31;;
+db+3;h;28;i19~i21;-10~-8;+17a;;"Balcony break on airborne hit
+High crush 4~21";cs4~21;Jin-db+3;Left Spinning Back Kick;r35;;
+db+4;l;18;i20~21;-13;+3;+13g;;;Jin-db+4;Right Low Roundhouse;r31;;
+db+1+2;m;0;i19~34;-11~+4;+17g~+32g;;"* Balcony Break
+* +4a (-5) on BT hit
+* Unparryable by traditional parries, Asuka, Nina, etc
+* Opponent recovers crouching";bbr;Jin-db+1+2;Power Stance;r26;;
+b+1;h;11;i12;-9;+2;;;;Jin-b+1;;r28;;
+b+1,2;h,h;11,20;,i22~24;-10;+32a (+17);;"* Tornado
+* Combo from 1st hit with 8f delay";trn;Jin-b+1,2;Shun Maten;r31;;
 b+1+3-b+2+4;;;;;;;Startup 1f-2f, parry 3f-9f, recovery 10f-31f.;;Jin-b+1+3-b+2+4;Parry;;;
-b+2;m;12;i15;-11;+0;;;;Jin-b+2;Shun Masatsu (1);;;
-b+2,1;m,m;12,10;i15;-9;+2;;;;Jin-b+2,1;Shun Masatsu;;;
-b+3;m;17;i16;-6;+5;;;;Jin-b+3;(Left Knee);;;
-b+3,2;m,m;17,20;i15~i16;-9~-8;+9~+10;;* Wall Crush  +21g on hit;wc;Jin-b+3,2;Left Knee > Right Thrust;;;
-b+3,F;m;17,17;i15~i16;-2;+9;;;;Jin-b+3,F;(Left Knee to Zenshin);r ZEN;;
-b+4;m;21;i17;-7;+15a;;;;Jin-b+4;Spinning Sidekick;;;
-b+1+2;m;;i23;-12;+6;;"Sabaki Parry: absorbs punches, causing +34ad (+26) KND on hit
-Parry state";ps;Jin-b+1+2;Suigetsu Strike;;;
+b+2;m;12;i15;-11;+0;;;;Jin-b+2;Shun Masatsu (1);r29;;
+b+2,1;m,m;12,10;,i14~15;-9;+2;;"* Combo from 1st hit with 1f delay
+* Combo from 1st CH with 13f delay";;Jin-b+2,1;Shun Masatsu;r27;;
+b+3;m;17;i16;-6;+5;;"* Knee
+* Enter ZEN -2 +9 r20 with F";kne;Jin-b+3;Left Knee;r25;;
+b+3,2;m,m;17,20;,i19~20;-9;+9g +21w;;"* Wall Crush +21g on hit
+
+
+* Balcony break on airborne hit";wc;Jin-b+3,2;Left Knee > Right Thrust;r30;;
+b+4;m;21;i17~18;-7;+15a;;Balcony Break;bbr;Jin-b+4;Spinning Sidekick;r29;;
+b+1+2;m;20;i23~24;-12;+6;;"Punch sabaki: balcony break and +34d (+26) on hit
+Parry state 3~10";ps3~10;Jin-b+1+2;Suigetsu Strike;r30;;
+b+3+4;;;;;;;"* Can perform all attacks from ZEN Stance
+* Cancel on any frame with f
+* f to shift to dash
+* Enter Breaking Step with df
+High crush 6~39";cs6~39;Jin-b+3+4;"<div class=""dotlist"">
+
+* Zenshin
+* Zanshin
+</div>";r5 ZEN;;
 b+3+4;;;;;;;"* Steps backward
 * Can transition to dash with input F
 * Can transition to Breaking Step with input DF";;Jin-b+3+4;Zanshin;;;
-b+3+4;;;;;;;"*High Crush evasion, can perform all attacks from ZEN Stance; f to shift to WR, df to shift to CD";;Jin-b+3+4;Zanshin;;;
 ub+1+2;m!;50;i75~i76;;+9a (0);;Unblockable;;Jin-ub+1+2;Konshin Seikenzuki;;;
 ub+1+2,b,b;m!;50;;;;;;;Jin-ub+1+2,b,b;Konshin Seikenzuki (Cancelled);;;
 uf+2;m;18;i15~i16;-7~-6;+6~+7;+19a (+10);;;Jin-uf+2;Evading Middle Strike;;;

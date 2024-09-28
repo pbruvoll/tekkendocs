@@ -64,6 +64,23 @@ def _get_all_parent_values_of(field: str, move_id: str, move_list_json: list) ->
                 return complete_input + _normalize_data(move["title"][field])
     else:
         return ""
+    
+def _get_all_parent_values_of_array(field: str, move_id: str, move_list_json: list) -> list[str]:
+    complete_input = []
+    if move_id:
+        for move in move_list_json:
+            if move["title"]["id"] == move_id:
+                if move["title"]["parent"]:
+                    original_move = move["title"]["parent"]
+                    if "_" in original_move:
+                        original_move = original_move.split("_")[0]
+                    complete_input += _get_all_parent_values_of_array(field, original_move, move_list_json)
+                normalized = _normalize_data(move["title"][field])
+                if normalized :
+                    complete_input.append(normalized)
+                return complete_input
+    else:
+        return []    
 
 
 def _normalize_data(data):
@@ -120,9 +137,14 @@ def _convert_json_movelist(move_list_json: list) -> List[Move]:
 
             input = input.replace("#", ":")
 
-            target = _normalize_data(
-                _get_all_parent_values_of("target", _normalize_data(move["title"]["parent"]),
-                                          move_list_json) + _normalize_data(move["title"]["target"]))
+            targetArray = _get_all_parent_values_of_array("target", _normalize_data(move["title"]["parent"]),
+                                          move_list_json)
+            moveTarget = _normalize_data(move["title"]["target"])
+            if moveTarget :
+                targetArray.append(moveTarget)
+
+            target = ", ".join([item.lstrip(',') for item in targetArray])
+
             damage = _normalize_data(
                 _get_all_parent_values_of("damage", _normalize_data(move["title"]["parent"]),
                                           move_list_json) + _normalize_data(move["title"]["damage"]))

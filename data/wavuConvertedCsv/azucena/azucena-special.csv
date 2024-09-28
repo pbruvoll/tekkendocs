@@ -1,10 +1,11 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Wavu id;Name;Recovery;Image;Video
-2+3;m;12 (12);i16;+1;+2c;;"* Heat Burst
+2+3;m;"[12;12]";i16;+1;+2c;;"* Heat Burst
 * Cancel to r45 with b,b
 * 3 chip damage on block
-* Partially uses Heat
-* Cannot K.O.
-Power crush 8~";hb pc8~;Azucena-2+3;Heat Burst;r30;;
+* 12 chip damage on hit
+* Only deals recoverable damage
+* Cannot cause a K.O.
+Power crush 7~16";hb pc7~16;Azucena-2+3;Heat Burst;r30;;
 H.LIB.1,2,F;;;;+7;+54a (+34);;"* Strong Aerial Tailspin
 * Chip damage on block
 ,fs15~33";chp fs15~33;Azucena-H.LIB.1,2,F;Blend Tempestad > Nuevo Libertador;r38 LIB;;
@@ -29,7 +30,7 @@ H.b+2,F;;;;+7;+54a (+34);;"* Strong Aerial Tailspin
 * Chip damage on block
 &lt;div class=&quot;plainlist&quot;&gt;
 * ,Low crush 15~30
-* ,fs31~33&lt;/div&gt;";"bbr hom chp &lt;div class=&quot;plainlist&quot;&gt;
+* fs31~33&lt;/div&gt;";"bbr hom chp &lt;div class=&quot;plainlist&quot;&gt;
 * js15~30
 * fs31~33&lt;/div&gt;";Azucena-H.b+2,F;Mil Nudillo > Nuevo Libertador;r38 LIB;;
 H.f+3+4;;;;;;;"* Parries all high or low attacks
@@ -63,7 +64,7 @@ R.df+1+2;m;55+;i20;-15;+0d;;"* Rage Art
 * Damage increases with lower health
 * Removes recoverable health on hit
 Power crush 8~";pc8~;Azucena-R.df+1+2;Alegría del Café;r39;;
-1;h;5;i10;+1;+8;;;;Azucena-1;Jab;r19;;
+1;h;5;i10;+1;+8;;Recovers 2f faster on hit or block (t27 r17);;Azucena-1;Jab;r19;;
 1,1;h,m;5,15;,i24~25;-10;+8;+18a;"* Combo from 1st hit
 * Transition to LIB on standing hit only
 (Ver.1.04.00) - Changed from -9F on block.
@@ -87,8 +88,8 @@ Power crush 8~";pc8~;Azucena-R.df+1+2;Alegría del Café;r39;;
 3,2~F;m;11;;-18;-7;;"Listed parry state is at earliest cancel
 &lt;div class=&quot;plainlist&quot;&gt;
 * ,Parry state 36~ on whiff
-* ,Parry state 17~ on block
-* ,Parry state 6~ on hit
+* Parry state 17~ on block
+* Parry state 6~ on hit
 &lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
 * ps36~ on whiff
 * ps17~ on block
@@ -114,7 +115,7 @@ f+2,1,4;h,m,m;14,17,23;,i24~25;-14;+19a (+9);;"* Balcony Break
 * Combo from 2nd CH with 10f delay
 &lt;div class=&quot;plainlist&quot;&gt;
 * ,Low crush 18~38
-* ,fs39~41&lt;/div&gt;";"bbr &lt;div class=&quot;plainlist&quot;&gt;
+* fs39~41&lt;/div&gt;";"bbr &lt;div class=&quot;plainlist&quot;&gt;
 * js18~38
 * fs39~41&lt;/div&gt;";Azucena-f+2,1,4;Danza Del Cóndor;r35;;
 f+3;m;15;i18;-4;+5;;;;Azucena-f+3;;r25 LIB;;
@@ -130,14 +131,14 @@ f+4,4;m,h;16,21;,i24~25;-7;+19a (+10);;"* Heat Engager
 * Cancel 2nd hit into BT -19 -10 r20 with B
 &lt;div class=&quot;plainlist&quot;&gt;
 * ,Low crush 15~23
-* ,fs24~26&lt;/div&gt;";"he bbr &lt;div class=&quot;plainlist&quot;&gt;
+* fs24~26&lt;/div&gt;";"he bbr &lt;div class=&quot;plainlist&quot;&gt;
 * js15~23
 * fs24~26&lt;/div&gt;";Azucena-f+4,4;Tifón Patear;r30;;
 f+4,4~2;m,h;16,23;,i23~24;+1;+52a;;Chip damage on block;chp;Azucena-f+4,4~2;Tifón Trueno;r26;;
 f+4,4~3;m,m;16,24;,i21~22;-9~-8;+15a (+6);+70a (+54);"Balcony Break
 &lt;div class=&quot;plainlist&quot;&gt;
 * ,Low crush 1~6
-* ,fs7~9&lt;/div&gt;";"bbr &lt;div class=&quot;plainlist&quot;&gt;
+* fs7~9&lt;/div&gt;";"bbr &lt;div class=&quot;plainlist&quot;&gt;
 * js1~6
 * fs7~9&lt;/div&gt;";Azucena-f+4,4~3;Tifón Cañón;r29;;
 f+1+2;h;25;i16~17;-8~-7;+41a (+17);;"* Heat Engager
@@ -303,7 +304,7 @@ f,f,F+3,2;m,h;10,20;,i10~12;+2;+28a (+2);;"* Balcony Break
 * Available only as combo from 1st hit
 &lt;div class=&quot;plainlist&quot;&gt;
 * ,Low crush 1~24
-* ,fs25~27&lt;/div&gt;";"bbr elb chp &lt;div class=&quot;plainlist&quot;&gt;
+* fs25~27&lt;/div&gt;";"bbr elb chp &lt;div class=&quot;plainlist&quot;&gt;
 * js1~24
 * fs25~27&lt;/div&gt;";Azucena-f,f,F+3,2;Espresso Agresión;r35;;
 ws1;m;17;i13~14;-8;+6;+32a (+26);Only hits grounded up-close and off-axis;;Azucena-ws1;Gold Mountain Fist;r26;;
