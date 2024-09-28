@@ -1,4 +1,11 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Wavu id;Name;Recovery;Image;Video
+2+3;m;"[12;12]";i16;+1;+2c;;"* Heat Burst
+* Cancel to r45 with b,b
+* 3 chip damage on block
+* 12 chip damage on hit
+* Only deals recoverable damage
+* Cannot cause a K.O.
+Power crush 7~16";hb pc7~16;Asuka-2+3;Heat Burst;r30;;
 H.2+3;m,t;12,11,27;i16;+10g;-6;;"* Heat Smash
 * Floor Break
 * 17 chip damage on block
@@ -52,7 +59,7 @@ Power crush 8~";pc8~;Asuka-R.df+1+2;Naniwa Peacemaker Knuckle;r39;;
 * Opponent recovers crouching on hit
 &lt;div class=&quot;plainlist&quot;&gt;
 * ,Low crush 18~41
-* ,fs42~44&lt;/div&gt;";"bbr &lt;div class=&quot;plainlist&quot;&gt;
+* fs42~44&lt;/div&gt;";"bbr &lt;div class=&quot;plainlist&quot;&gt;
 * js18~41
 * fs42~44&lt;/div&gt;";Asuka-2,3;Mizu Basho;r38;;
 3;m;17;i14;-7;+9;;;;Asuka-3;;r26;;
@@ -166,7 +173,7 @@ db+1,4;m,m;13,25;,i28~29;-15;+16a (+9);;"* Tornado
 * Combo from 1st hit
 &lt;div class=&quot;plainlist&quot;&gt;
 * ,Low crush 29~46
-* ,fs47~49&lt;/div&gt;";"trn &lt;div class=&quot;plainlist&quot;&gt;
+* fs47~49&lt;/div&gt;";"trn &lt;div class=&quot;plainlist&quot;&gt;
 * js29~46
 * fs47~49&lt;/div&gt;";Asuka-db+1,4;Swallow Torrent;r33;;
 db+2;m;22;i20~21;-11;+32a (+22);;"Tornado
@@ -313,6 +320,20 @@ ws1,4;m,h;12,20;,i20;-4;+37a (+29);;"* Balcony Break
 ws2;m;18;i13~14;-8;+8;;Elbow;elb;Asuka-ws2;;r26;;
 ws2,1;m,h;18,10;,i22;-2;+9;;"* Combo from 1st hit with 3f delay
 * Continues into 10 strings";;Asuka-ws2,1;;r21;;
+ws2,1,1;m,h,m;18,10,8;;-23;-12;;;;Asuka-ws2,1,1;3rd Hit;r;;
+ws2,1,1;m,h,m;18,10,8;;-23;-12;;;;Asuka-ws2,1,1;3rd Hit (2);r;;
+ws2,1,1,1;m,h,m,h;18,10,8,8;;-25;-14;;;;Asuka-ws2,1,1,1;4th Hit;r;;
+ws2,1,1,1;m,h,m,h;18,10,8,8;;-25;-14;;;;Asuka-ws2,1,1,1;4th Hit (2);r;;
+ws2,1,1,1,2;m,h,m,h,m;18,10,8,8,6;;-11;+0;;;;Asuka-ws2,1,1,1,2;5th Hit;r;;
+ws2,1,1,1,2;m,h,m,h,m;18,10,8,8,6;;-11;+0;;;;Asuka-ws2,1,1,1,2;5th Hit (2);r;;
+ws2,1,1,1,2,1;m,h,m,h,m,sm;18,10,8,8,6,5;;-10;+1;;;;Asuka-ws2,1,1,1,2,1;6th Hit;r;;
+ws2,1,1,1,2,1,4;m,h,m,h,m,sm,m;18,10,8,8,6,5,7;;-16;-6;;;;Asuka-ws2,1,1,1,2,1,4;7th Hit;r;;
+ws2,1,1,1,2,1,4,3;m,h,m,h,m,sm,m,l;18,10,8,8,6,5,7,7;;-25;-9;;;;Asuka-ws2,1,1,1,2,1,4,3;8th Hit;r;;
+ws2,1,1,1,2,1,4,3,3+4;m,h,m,h,m,sm,m,l,m,m;18,10,8,8,6,5,7,7,25,25;;-11;KND;;;;Asuka-ws2,1,1,1,2,1,4,3,3+4;10 Hit Combo 1;r;;
+ws2,1,1,1,2,1+4;m,h,m,h,m,sll,h;18,10,8,8,6,7,5;;-33;-7;;;;Asuka-ws2,1,1,1,2,1+4;6th & 7th Hit (2);r;;
+ws2,1,1,1,2,1+4,1;m,h,m,h,m,sll,h,h;18,10,8,8,6,7,5,6;;-10;-43;;;;Asuka-ws2,1,1,1,2,1+4,1;8th Hit (2);r;;
+ws2,1,1,1,2,1+4,1,3+4;m,h,m,h,m,sll,h,h,l,m;18,10,8,8,6,7,5,6,5,24;;-43;LNC;;;;Asuka-ws2,1,1,1,2,1+4,1,3+4;10 Hit Combo 2;r;;
+ws2,1,1,3;m,h,m,,m;18,10,8,10;,i21;;+11a (+1);;* Balcony Break;bbr;Asuka-ws2,1,1,3;10 Hit Combo 3;r;;
 ws2,1+2;m,t;18,8;,i24~25;-5;+17;;"* Combo from 1st hit with 3f delay
 * Move can be delayed 2f
 * Links to Destabilizer (f+1+3_f+2+4) extensions on hit 

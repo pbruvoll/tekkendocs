@@ -1,4 +1,11 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Wavu id;Name;Recovery;Image;Video
+2+3;m;"[12;12]";i16;+1;+2c;;"* Heat Burst
+* Cancel to r45 with b,b
+* 3 chip damage on block
+* 12 chip damage on hit
+* Only deals recoverable damage
+* Cannot cause a K.O.
+Power crush 7~16";hb pc7~16;Alisa-2+3;Heat Burst;r30;;
 H.d+1+2;;;;;;;"* Cancel to r30 with db
 * Partially consumes Heat
 Power crush 6~36";pc6~36;Alisa-H.d+1+2;Emergency Destructive Form;r47 DES;;
@@ -15,7 +22,7 @@ H.2+3;m;50 (28);i20~21;+8;-15d;;"* Heat Smash
 R.df+1+2;m;;i20;-15;+0d;;"* Rage Art
 * Erases opponent's recoverable health on hit
 Power crush 8~";pc8~;Alisa-R.df+1+2;Radiant Pegasus Bomb;r39;;
-1;h;5;i10;+1;+8;;;;Alisa-1;;r19;;
+1;h;5;i10;+1;+8;;Recovers 2f faster on hit or block (t27 r17);;Alisa-1;Jab;r19;;
 1,1;h,h;5,18;,i21;-3;+5;+14a;"* Combo from 1st hit with 4f delay
 * Input can be delayed 8f
 * Enter DES with 1+2";;Alisa-1,1;Stop Bit;r26;;
@@ -43,12 +50,12 @@ Power crush 8~";pc8~;Alisa-R.df+1+2;Radiant Pegasus Bomb;r39;;
 * Move can be delayed 11f
 &lt;div class=&quot;plainlist&quot;&gt;
 * ,Low crush 13~41
-* ,fs42~44&lt;/div&gt;";"bbr &lt;div class=&quot;plainlist&quot;&gt;
+* fs42~44&lt;/div&gt;";"bbr &lt;div class=&quot;plainlist&quot;&gt;
 * js13~41
 * fs42~44&lt;/div&gt;";Alisa-2,3,3;Down Time;r32;;
 2,3,4;h,m,L;10,8,20;,i42~45;-13;+13;;"&lt;div class=&quot;plainlist&quot;&gt;
 * ,Low crush 24~39
-* ,fs40~42&lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
+* fs40~42&lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
 * js24~39
 * fs40~42&lt;/div&gt;";Alisa-2,3,4;Down Link;r32;;
 3;m;10;i13~14;-12;-1;;;;Alisa-3;;r30;;
@@ -99,7 +106,7 @@ f+2,3;m,h;12,8;,i22;-8;+4;;"* Combo from 1st CH with 1f delay
 * Balcony Break on airborne hit
 &lt;div class=&quot;plainlist&quot;&gt;
 * ,Low crush 17~38
-* ,fs39~41&lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
+* fs39~41&lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
 * js17~38
 * fs39~41&lt;/div&gt;";Alisa-f+2,3;;r36;;
 f+2,3,3;m,h,m;12,8,22;,i35~36;-10;+12a (-3);;"* Balcony Break
@@ -151,16 +158,17 @@ d+2,4;M,M;14,24;,i18~21;-9;+28 (+13);;"* Combo from 1st hit
 * Enter DES with 1+2
 &lt;div class=&quot;plainlist&quot;&gt;
 * ,Low crush 21~43
-* ,fs44~46&lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
+* fs44~46&lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
 * js21~43
 * fs44~46&lt;/div&gt;";Alisa-d+2,4;Deadlock;r34;;
-d+3;L;17;i23~32;-10~-1;+8c~+17c;+32a;"&lt;div class=&quot;plainlist&quot;&gt;
+d+3;L;17;i23~32;-10~-1;+8c~+17c;+32a;"BKP transition is -18
+&lt;div class=&quot;plainlist&quot;&gt;
 * Low crush 9~23
 * fs24~26&lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
 * js9~23
 * fs24~26&lt;/div&gt;";Alisa-d+3;Quick Slider;r21 BKP;;
 d+4;L;15;i17~18;-12;-1;+8g;;;Alisa-d+4;;r30;;
-d+4,1+2;L,h;15,20;,i20~21;+0~+1;+11a (+2);;"* Balcony Break
+d+4,1+2;L,h;15,20;,i20~21;+0;+11a (+2);;"* Balcony Break
 * Head
 * Combo from 1st CH
 * Jail from 1st block";bbr;Alisa-d+4,1+2;Optimizer;r38;;
@@ -203,7 +211,7 @@ b+2,3;m,m;12,22;,i23~24;-15;+9a (-8);;"* Tornado
 * Input can be delayed 12f
 &lt;div class=&quot;plainlist&quot;&gt;
 * ,Low crush 21~60
-* ,fs61~63&lt;/div&gt;";"trn bbr &lt;div class=&quot;plainlist&quot;&gt;
+* fs61~63&lt;/div&gt;";"trn bbr &lt;div class=&quot;plainlist&quot;&gt;
 * js21~60
 * fs61~63&lt;/div&gt;";Alisa-b+2,3;Trance Generator;r40;;
 b+2,4;m,h;12,20;,i16~17;-7;+12g;+36a;"* Balcony Break
@@ -216,7 +224,7 @@ b+4,3;m,m;17,20;,i29~30;-11;+6c;+10a;"* Spike
 * Enter DES with 1+2
 &lt;div class=&quot;plainlist&quot;&gt;
 * ,Low crush 17~24
-* ,fs25~27&lt;/div&gt;";"spk &lt;div class=&quot;plainlist&quot;&gt;
+* fs25~27&lt;/div&gt;";"spk &lt;div class=&quot;plainlist&quot;&gt;
 * js17~24
 * fs25~27&lt;/div&gt;";Alisa-b+4,3;Double Threading;r29;;
 b+4,4;m,M;17,17;,i25~27;-37;+9a (-1);;"* Tornado
@@ -225,7 +233,7 @@ b+4,4;m,M;17,17;,i25~27;-37;+9a (-1);;"* Tornado
 * Transition to DBT with input f+3_f+4
 &lt;div class=&quot;plainlist&quot;&gt;
 * ,Low crush 25~62
-* ,fs63~65&lt;/div&gt;";"trn &lt;div class=&quot;plainlist&quot;&gt;
+* fs63~65&lt;/div&gt;";"trn &lt;div class=&quot;plainlist&quot;&gt;
 * js25~62
 * fs63~65&lt;/div&gt;";Alisa-b+4,4;Double Override;r63;;
 b+1+2;m;25;i19~20;-13;+8;;"* Balcony Break
@@ -245,7 +253,7 @@ b+3+4,3+4;m,M;22,25;,i56~61;+5c~+10c;+59a;;"* Spike
 * Combo from 1st hit
 &lt;div class=&quot;plainlist&quot;&gt;
 * ,Low crush 6~78
-* ,fs79~81&lt;/div&gt;";"spk &lt;div class=&quot;plainlist&quot;&gt;
+* fs79~81&lt;/div&gt;";"spk &lt;div class=&quot;plainlist&quot;&gt;
 * js6~78
 * fs79~81&lt;/div&gt;";Alisa-b+3+4,3+4;Dynamic Range;r23;;
 ub+2;h;23;i16~20;-9;+38a (-20);;"* Balcony Break
@@ -290,7 +298,7 @@ Low crush 5~39";spk js5~39;Alisa-ub+3+4;;r23;;
 ub+3+4,1+2;M,m;25,20;,i26~27;-14;+32a (+22);;"Head
 &lt;div class=&quot;plainlist&quot;&gt;
 * ,Low crush 48~67
-* ,fs68~70&lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
+* fs68~70&lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
 * js48~67
 * fs68~70&lt;/div&gt;";Alisa-ub+3+4,1+2;Docking Bay;r37;;
 u+1+2;m;21;i33~34;-5;+56a;;"* Spike
@@ -333,8 +341,8 @@ uf+3,2;m,m;15,30;,i17~22;-14;+32a (-26);;"* Balcony Break
 * Available only as a combo from 1st hit
 &lt;div class=&quot;plainlist&quot;&gt;
 * ,Low crush 9~58
-* ,fs59~75
-* ,High crush 76~85&lt;/div&gt;";"bbr spk &lt;div class=&quot;plainlist&quot;&gt;
+* fs59~75
+* High crush 76~85&lt;/div&gt;";"bbr spk &lt;div class=&quot;plainlist&quot;&gt;
 * js9~58
 * fs59~75
 * cs76~85&lt;/div&gt;";Alisa-uf+3,2;Cradle Star;r37;;
@@ -347,7 +355,7 @@ uf+4,4;m,M;8,8;,i24~26;-13;+45a (+37);;"* Spike
 * Combo from 1st hit with 2f delay
 &lt;div class=&quot;plainlist&quot;&gt;
 * ,Low crush 9~41
-* ,fs42~44&lt;/div&gt;";"spk &lt;div class=&quot;plainlist&quot;&gt;
+* fs42~44&lt;/div&gt;";"spk &lt;div class=&quot;plainlist&quot;&gt;
 * js9~41
 * fs42~44&lt;/div&gt;";Alisa-uf+4,4;Inbound Kick;r34;;
 uf+3+4;M;28;i38~41;+0~+3;+4;;"Spike
@@ -383,7 +391,7 @@ f,F+3,4;m,h;12,15;,i19~20;-10;+20a (+11);;"* Balcony Break
 * Enter DES with 1+2
 &lt;div class=&quot;plainlist&quot;&gt;
 * ,Low crush 15~48 
-* ,fs49~51&lt;/div&gt;";"bbr &lt;div class=&quot;plainlist&quot;&gt;
+* fs49~51&lt;/div&gt;";"bbr &lt;div class=&quot;plainlist&quot;&gt;
 * js15~48 
 * fs49~51&lt;/div&gt;";Alisa-f,F+3,4;;r29;;
 f,F+3,4,4;m,h,m;12,15,25;,i27~29;-10;+20a;;"* Balcony Break
@@ -445,7 +453,7 @@ SS.4,1+2;L,h,h,h,m;16,5,5,5,5;,i18~19 i3~5 i5~7 i4~5;-10;+8;;"* Spike
 * Combo from 1st CH
 &lt;div class=&quot;plainlist&quot;&gt;
 * ,Low crush 15~34
-* ,fs35~37&lt;/div&gt;";"spk &lt;div class=&quot;plainlist&quot;&gt;
+* fs35~37&lt;/div&gt;";"spk &lt;div class=&quot;plainlist&quot;&gt;
 * js15~34
 * fs35~37&lt;/div&gt;";Alisa-SS.4,1+2;Happy Propeller;r28;;
 FC.1+2;L,L;10,16;i21~23 i6~8;-11c;+5c;;"* Enter DES with n,1+2
@@ -560,7 +568,7 @@ DBT.f+2,2;L,m;16,14 (9);i35~37;-33;-6a (-13);;"* Balcony Break
 * 6 chip damage on block
 &lt;div class=&quot;plainlist&quot;&gt;
 * ,Low crush 35~67
-* ,fs68~70&lt;/div&gt;";"bbr wpn &lt;div class=&quot;plainlist&quot;&gt;
+* fs68~70&lt;/div&gt;";"bbr wpn &lt;div class=&quot;plainlist&quot;&gt;
 * js35~67
 * fs68~70&lt;/div&gt;";Alisa-DBT.f+2,2;Shut Down;r53;;
 DES.1;m,m,h,h,h,m;35;i13~18 i1~5 i1~7 i1~5 i1~4 i16~17;-9;+23a;;"* Weapon
@@ -665,8 +673,8 @@ FUFT.1+2;;;;;;;"&lt;div class=&quot;plainlist&quot;&gt;
 FUFT.1+2,3;,m;,35;i22~23;-10;+60a;;"* Balcony Break
 &lt;div class=&quot;plainlist&quot;&gt;
 * ,fs1~5
-* ,Low crush 6~54
-* ,fs55~57&lt;/div&gt;";"bbr &lt;div class=&quot;plainlist&quot;&gt;
+* Low crush 6~54
+* fs55~57&lt;/div&gt;";"bbr &lt;div class=&quot;plainlist&quot;&gt;
 * fs1~5
 * js6~54
 * fs55~57&lt;/div&gt;";Alisa-FUFT.1+2,3;Reboot Meteor Kick;r47;;
@@ -682,14 +690,14 @@ SBT.1,2;m,m;12,13;,i18~19;-9;+2;+7c;"* Spike
 * Rest of the string is natural on CH
 &lt;div class=&quot;plainlist&quot;&gt;
 * ,Low crush 26~64
-* ,fs65~67&lt;/div&gt;";"spk &lt;div class=&quot;plainlist&quot;&gt;
+* fs65~67&lt;/div&gt;";"spk &lt;div class=&quot;plainlist&quot;&gt;
 * js26~64
 * fs65~67&lt;/div&gt;";Alisa-SBT.1,2;;27;;
 SBT.1,2,1;m,m,m;12,13,7;,i20~21;-12;-20;-12;"* Combo from 2nd CH
 * Less safe on hit than on block without CH
 &lt;div class=&quot;plainlist&quot;&gt;
 * ,Low crush 26~102
-* ,fs103~105&lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
+* fs103~105&lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
 * js26~102
 * fs103~105&lt;/div&gt;";Alisa-SBT.1,2,1;;r41;;
 SBT.1,2,1,3+4;m,m,m,m,m;12,13,7,33;,i18;-18;+4 (-13);;"* Balcony Break
@@ -698,7 +706,7 @@ SBT.1,2,1,3+4;m,m,m,m,m;12,13,7,33;,i18;-18;+4 (-13);;"* Balcony Break
 * Transition to DES with input SBT.1,2,1,3+4,1+2
 &lt;div class=&quot;plainlist&quot;&gt;
 * ,Low crush 26~150
-* ,fs151~153&lt;/div&gt;";"bbr &lt;div class=&quot;plainlist&quot;&gt;
+* fs151~153&lt;/div&gt;";"bbr &lt;div class=&quot;plainlist&quot;&gt;
 * js26~150
 * fs151~153&lt;/div&gt;";Alisa-SBT.1,2,1,3+4;Hard Reset;r43;;
 SBT.2;m;25;i16~17;-7;+6a (-4);;"* Balcony Break
