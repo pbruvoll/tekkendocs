@@ -30,6 +30,7 @@ export const FrameDataFilterSelection = ({
     numHitsMin,
     numHitsMax,
     balconyBreak,
+    heatSmash,
     heatEngager,
     homing,
     tornado,
@@ -257,6 +258,7 @@ export const FrameDataFilterSelection = ({
         <div className="flex flex-wrap gap-3">
           {(
             [
+              [filterKey.HeatSmash, heatSmash, 'Heat Smash'],
               [filterKey.HeatEngager, heatEngager, 'Heat Engager'],
               [filterKey.BalconyBreak, balconyBreak, 'Balcony Break'],
               [filterKey.WallCrush, wallCrush, 'Wall Crush'],

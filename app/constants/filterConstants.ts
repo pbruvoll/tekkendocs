@@ -6,6 +6,7 @@ export const filterKey = {
   HitFrameMax: 'hitFrameMax',
   NumHitsMin: 'numHitsMin',
   NumHitsMax: 'numHitsMax',
+  HeatSmash: 'heatSmash',
   HeatEngager: 'heatEngager',
   Homing: 'homing',
   BalconyBreak: 'balconyBreak',
