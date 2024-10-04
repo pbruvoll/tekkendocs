@@ -1,31 +1,68 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Wavu id;Name;Recovery;Image;Video
-2+3;m;12;16;+1;+2c;+2c;"* Heat Burst
-* Press b,b to cancel attack
-Power crush 7";hb pc7;Jin-2+3;Heat Burst;;;
-H.db+1+2;m;0;i19~34;+4;+23c;+23c;"* Balcony Break
+2+3;m;"[12;12]";i16;+1;+2c;;"* Heat Burst
+* Cancel to r45 with b,b
+* 3 chip damage on block
+* 12 chip damage on hit
+* Only deals recoverable damage
+* Cannot cause a K.O.
+Power crush 7~16";hb pc7~16;Jin-2+3;Heat Burst;r30;;
+H.db+1+2;M;0;i19~34;+4;+23g~+38g;;"* Strong Aerial Tailspin
+* Balcony Break
+* Enter Awakened Breaking Step r10 on hit or block
+* Unparryable by traditional parries, Asuka, Nina, etc
 * Partially uses remaining Heat time
-* Transitions to Awakened Breaking Step on hit or block
-* Causes Strong Aerial Tailspin
-* Causes WallSplat on hit
-Power crush 6";bbr pc6;Jin-H.db+1+2;Awakened Power Stance;;;
-H.db+1+2,1;m, m;0,25;i20~22;-13;+72a (56);+72a (56);"* Tornado
-* Uses Tornado on launch
-* 10 Recoverable Damage on block";trn;Jin-H.db+1+2,1;Awakened Thunder God Fist;;;
-H.db+1+2,2;m, s;0,23;i11~12;+4;+38a (28);+38a (28);*9 Recoverable Damage on block;;Jin-H.db+1+2,2;Awakened Wind God Fist;;;
-H.db+1+2,3;m, m;0,25;i26~28;+2c;+22a;+22a;*10 Recoverable Damage on block;;Jin-H.db+1+2,3;Awakened Demon's Hoof;;;
-H.db+1+2,4;m, l;0,10;i16;-23;+22a;+22a;*4 Recoverable Damage on block;;Jin-H.db+1+2,4;Awakened Spinning Demon (1);;;
-H.db+1+2,4,4;m, l, m;0,10,19;i25~26;-23;+20d (-15);+20d (-15);* Floor Break;fbr;Jin-H.db+1+2,4,4;Awakened Spinning Demon;;;
-H.db+1+2,DF+3;m, l;0,24;i33~34;-23;-2d;-2d;*10 Recoverable Damage on block;;Jin-H.db+1+2,DF+3;Awakened Demon's Tail;;;
-H.2+3;m,h,m,th;15,12,15,15;i15~16;+3;+0;+0;"* Heat Smash
-* Transitions to Breaking Step on block";hs;Jin-H.2+3;Hellfire Trespass Slayer;;;
-H.2+3,4;m,h,m;12,20,21;i15~16;+9;+32a (-4);+32a (-4);"* Heat Smash
-* Wall Crush  +21g on block
+* Causes wall splat on hit
+* Opponent recovers crouching
+Power crush 6~18";bbr pc6~18;Jin-H.db+1+2;Awakened Power Stance;r26;;
+H.db+1+2,1;M, m;0,25;,i20~22;-13;+72a (+56);;"* Tornado
+* 10 chip damage on block
+&lt;div class=&quot;plainlist&quot;&gt;
+* ,Low crush 22~43
+* fs44~46&lt;/div&gt;";"trn &lt;div class=&quot;plainlist&quot;&gt;
+* js22~43
+* fs44~46&lt;/div&gt;";Jin-H.db+1+2,1;Awakened Thunder God Fist;r30;;
+H.db+1+2,2;M, sm;0,23;,i11~12;+4;+38a (+28);;* 9 chip damage on block;;Jin-H.db+1+2,2;Awakened Wind God Fist;r24;;
+H.db+1+2,3;M, M;0,25;,i26~28;+2c;+22a;;"* Spike
+* 10 chip damage on block
+&lt;div class=&quot;plainlist&quot;&gt;
+* ,Low crush 5~25
+* fs26~28&lt;/div&gt;";"spk &lt;div class=&quot;plainlist&quot;&gt;
+* js5~25
+* fs26~28&lt;/div&gt;";Jin-H.db+1+2,3;Awakened Demon's Hoof;r26;;
+H.db+1+2,4;M, L;0,10;,i16;-23;+22a;;* 4 chip damage on block;;Jin-H.db+1+2,4;;r39;;
+H.db+1+2,4,4;M, L, m;0,10,28;,i25~26;-23;+20d (-15);;* Spike;spk;Jin-H.db+1+2,4,4;Awakened Spinning Demon;r34;;
+H.db+1+2,DF+3;M, L;0,24;,i33~34;-23;-2a;;"* 10 chip damage on block
+&lt;div class=&quot;plainlist&quot;&gt;
+* ,Low crush 5~25
+* fs26~28&lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
+* js5~25
+* fs26~28&lt;/div&gt;";Jin-H.db+1+2,DF+3;Awakened Demon's Tail;r41;;
+H.2+3;m,h,m;57;i15~16;+3;+0d;;"* Heat Smash
+* Reversal Break
+* Balcony Break
+* Transition to attack throw after 1st hit
+* Transitions to Breaking Step automatically on block
+* Cancel Breaking Step transition with B
+* Chip damage on block
+* Jail from 1st attack
+* Ends Heat";hs bbr chp;Jin-H.2+3;Hellfire Trespass Slayer;r33;;
+H.2+3,4;m,h,m;48;i15~16;+9;+32a (-4);;"* Heat Smash
+* Wall Crush +21g on block
 
 
-* Balcony Break";hs wc bbr;Jin-H.2+3,4;Hellfire Darkside Slayer;;;
-H.2+3,B;m,h,m,th;15,12,15,15;;+3;N/A;N/A;"* Heat Smash
-* Only possible on block";hs;Jin-H.2+3,B;Hellfire Trespass Slayer (Cancelled Breaking Step);;;
-R.df+1+2;m,th,th;10,10,35;;;;;* Erases opponent's recoverable health on hit;;Jin-R.df+1+2;Polar Demon Gouge;;;
+* Reversal Break
+* Balcony Break
+* Chip damage on block
+* Jail from 1st attack
+* Ends Heat";hs wc bbr chp;Jin-H.2+3,4;Hellfire Darkside Slayer;r32;;
+R.df+1+2;m,t;55+;i20;-15;+0d;;"* Rage Art
+* Reversal Break
+* Ereases opponent's recoverable health on hit
+* Damage increases with lower health, maximum 80
+* Freezes match timer on activation and on hit
+* Transition to attack throw on hit
+* Consumes Rage
+Power crush 8~";pc8~;Jin-R.df+1+2;Polar Demon Gouge;r39;;
 1;h;5;i10;+1;+8;;Recovers 2f faster on hit or block (t27 r17);;Jin-1;Jab;r19;;
 1,2;h, h;5,12;,i10;-3;+6;;Jail from 1st attack with 4f delay;;Jin-1,2;Left Right Combo;r21;;
 1,2,1;h, h, m;5,12,20;,i20~22;-16;+31a (+21);;"* Tornado
@@ -50,7 +87,11 @@ R.df+1+2;m,th,th;10,10,35;;;;;* Erases opponent's recoverable health on hit;;Jin
 * Grounded hit can be inconsistent";;Jin-1,3;Left Jab > Single Low;r30;;
 1,3,4;h, L, l;5,9,17;,i23;-13;+3;+29a;"* Combo from 2nd CH with 7f delay
 * Input can be delayed 12f";;Jin-1,3,4;Left Jab > Double Low;r32;;
-1+3;;11,24 (35);i12~i14;+0;+2;;"Throw break: 1 or 2; LT when broken";;Jin-1+3;Double Face Kick;;;
+1+3+4;;;;;;;;;Jin-1+3+4;"<div class=""dotlist"">
+
+* State of Zanshin
+* Mental Alertness
+</div>";r46;;
 2;h;9;i10;+0;+9;;;;Jin-2;Right Jab;r19;;
 2,1;h, m;9,9;,i16~17;-3;+6;;"* Jail from 1st attack with 2f delay
 * Same animation as df+1";;Jin-2,1;Double Thrust;r20;;
@@ -60,7 +101,6 @@ R.df+1+2;m,th,th;10,10,35;;;;;* Erases opponent's recoverable health on hit;;Jin
 2,4;h, h;9,20;,i24~27;-9;+11;;"* Balcony Break
 * Combo from 1st hit with 2f delay
 * Enter ZEN -6 +14 r26 with F";bbr;Jin-2,4;Switchblade;r29;;
-2+4;h;5,9,21 (35);i12~i14;-3;+0;;Throw break: 1 or 2;;Jin-2+4;Over the Shoulder Reverse;;;
 3;h;19;i14;-7;+4;;;;Jin-3;;;;
 3,1;h, h;19,7;,i20;-1;+7;;"* Combo from 1st hit
 * Enter ZEN +4 +12 r15 with F";;Jin-3,1;;r20;;
@@ -91,8 +131,10 @@ f+4;m;21;i16-17;-8;+4;+42a;"* Enter ZEN -1 +11 +49a r26 with F
 f+1+2;h,h;14,24;i14 i9~10;-6;+21a (+11);;"* Balcony Break
 * Jail from 1st attack
 * Chip damage on block";bbr chp;Jin-f+1+2;Double Chamber Punch;r33;;
-f+3+4;;;;;;;"* Steps forward
-* Can transition to Breaking Step with input DF";;Jin-f+3+4;Zenshin;;;
+f+3+4;;;;;;;"* Enter Breaking Step r20 with DF
+* Steps forward
+* Actionable after 10f
+High crush 10~39";cs10~39;Jin-f+3+4;Zenshin;r10 ZEN;;
 df+1;m;10;i13~14;-3;+4;+6;;;Jin-df+1;Mid Left Punch;r20;;
 df+1,4;m, h;10,18;,i18~21;-9;+10g;+17a (+8);"* Balcony Break
 * Combo from 1st hit with 5f delay
@@ -109,22 +151,20 @@ df+4;m;22;i20~i21;+0;+8c;;"* Spike
 * Heat Engager
 
 * Heat Dash +67a (+50), +5";spk he;Jin-df+4;Right Spinning Axe Kick;r21;;
-df+2+3;h;4,5,5,26 (40);i12;-2;-4;;"* Throw break: 2
-* Alternate input: ZEN 2+3";;Jin-df+2+3;Shun Ren Dan;;;
 d+1;m,t;21,10;i21;-13;+0d;;"* Balcony break on airborne hit
-* Transition to attack throw on hit
+* Transition to attack throw on standing hit
 * -9 on block after absorbing an attack and 8 chip damage on block
 Power crush 7~20";pc7~20;Jin-d+1;Corpse Thrust > Black Wing Flash;r35;;
 d+2;L;22;i22~23;-14;+4c;+71a (+55);"* Balcony break on airborne hit
 High crush 8~55";cs8~55;Jin-d+2;Scourge;r32 FC;;
-d+3;l;7;i15;-14;-3;;;;Jin-d+3;;r32;;
-d+3,4;l, h;7,10;,i20;-11;-3;;Combo from 1st CH;;Jin-d+3,4;;r29;;
-d+3,4,3;l, h, m;7,10,21;,i24;-12;+31d (+23);;"* Tornado
+d+3;l;7;i15~16;-14;-3;;;;Jin-d+3;;r32;;
+d+3,4;l, h;7,10;,i20~21;-11;-3;;Combo from 1st CH;;Jin-d+3,4;;r29;;
+d+3,4,3;l, h, m;7,10,21;,i24~25;-12;+31d (+23);;"* Tornado
 * Balcony Break
 * Combo from 2nd CH with 2f delay
 * Input can be delayed 10f";trn bbr;Jin-d+3,4,3;Kazama Style Three-Quarter Kick;r33;;
 d+3,4~4;l, m;7,24;,i20;-12;+10a (+1);;* Balcony Break;bbr;Jin-d+3,4~4;Knee Popper > Mid Sidekick;r35;;
-d+4;L;11;i16;-12;-1;;High crush 6~31;cs6~31;Jin-d+4;Right Sweep;r30;;
+d+4;L;11;i16~17;-12;-1;;High crush 6~31;cs6~31;Jin-d+4;Right Sweep;r30;;
 d+3+4;m,m;5,15;i15 i10~12;-19;+32a (+22);;"&lt;div class=&quot;plainlist&quot;&gt;
 * Low crush 16~31
 * fs32~34&lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
@@ -137,15 +177,19 @@ db+2,3;m, M;12,23;,i27~i29;-8;+7a;;* Spike;spk;Jin-db+2,3;Punch > Cascade Kick;r
 db+3;h;28;i19~i21;-10~-8;+17a;;"Balcony break on airborne hit
 High crush 4~21";cs4~21;Jin-db+3;Left Spinning Back Kick;r35;;
 db+4;l;18;i20~21;-13;+3;+13g;;;Jin-db+4;Right Low Roundhouse;r31;;
-db+1+2;m;0;i19~34;-11~+4;+17g~+32g;;"* Balcony Break
+db+1+2;M;0;i19~34;-11~+4;+17g~+32g;;"* Balcony Break
 * +4a (-5) on BT hit
 * Unparryable by traditional parries, Asuka, Nina, etc
-* Opponent recovers crouching";bbr;Jin-db+1+2;Power Stance;r26;;
+* Opponent recovers crouching
+* Power up in Heat";bbr;Jin-db+1+2;Power Stance;r26;;
 b+1;h;11;i12;-9;+2;;;;Jin-b+1;;r28;;
 b+1,2;h, h;11,20;,i22~24;-10;+32a (+17);;"* Tornado
 * Combo from 1st hit with 8f delay";trn;Jin-b+1,2;Shun Maten;r31;;
-b+1+3-b+2+4;;;;;;;Startup 1f-2f, parry 3f-9f, recovery 10f-31f.;;Jin-b+1+3-b+2+4;Parry;;;
-b+2;m;12;i15;-11;+0;;;;Jin-b+2;Shun Masatsu (1);r29;;
+b+1+3;;;;;;;"* Strong parry: parries all highs or mids except throws, unblockables and charge moves
+* r14 after parrying
+* Plus frames after parrying depend on the recovery of the parried move
+Parry state 3~9";ps3~9;Jin-b+1+3;Parry;r30;;
+b+2;m;12;i15~16;-11;+0;;;;Jin-b+2;;r29;;
 b+2,1;m, m;12,10;,i14~15;-9;+2;;"* Combo from 1st hit with 1f delay
 * Combo from 1st CH with 13f delay";;Jin-b+2,1;Shun Masatsu;r27;;
 b+3;m;17;i16;-6;+5;;"* Knee
@@ -158,80 +202,210 @@ b+4;m;21;i17~18;-7;+15a;;Balcony Break;bbr;Jin-b+4;Spinning Sidekick;r29;;
 b+1+2;m;20;i23~24;-12;+6;;"Punch sabaki: balcony break and +34d (+26) on hit
 Parry state 3~10";ps3~10;Jin-b+1+2;Suigetsu Strike;r30;;
 b+3+4;;;;;;;"* Can perform all attacks from ZEN Stance
+* Enter Breaking Step with DF
 * Cancel on any frame with f
-* f to shift to dash
-* Enter Breaking Step with df
+* Transition to dash with f
+* Steps backward
+* Actionable after 5f
 High crush 6~39";cs6~39;Jin-b+3+4;"<div class=""dotlist"">
 
-* Zenshin
 * Zanshin
+* Crouching Demon Stance (CDS)
+* Mental Alertness (2)
 </div>";r5 ZEN;;
-b+3+4;;;;;;;"* Steps backward
-* Can transition to dash with input F
-* Can transition to Breaking Step with input DF";;Jin-b+3+4;Zanshin;;;
-ub+1+2;m!;50;i75~i76;;+9a (0);;Unblockable;;Jin-ub+1+2;Konshin Seikenzuki;;;
-ub+1+2,b,b;m!;50;;;;;;;Jin-ub+1+2,b,b;Konshin Seikenzuki (Cancelled);;;
-uf+2;m;18;i15~i16;-7~-6;+6~+7;+19a (+10);;;Jin-uf+2;Evading Middle Strike;;;
-uf+3;m;17;i22;-9;+6;+59a;;;Jin-uf+3;Left Spinning Jump Kick;;;
-uf+4;m;13;i15;-13;+33a (+23a);;;;Jin-uf+4;Front Jump Kick;;;
-uf+1+2;h;2,2,4,4,28 (40);i12;+0;+0;;"* Floor Break
-* Throw break: 1+2";fbr;Jin-uf+1+2;Tidal Wave;;;
-Back Throw;h;50;;;+1;;Throw break: None;;Jin-Back Throw;Pivoting Hip Throw;;;
-Left Throw;h;7,8,28 (43);;-3;+0;;Throw break: 1;;Jin-Left Throw;Shoulder Flip;;;
-Right Throw;h;40;;-3;+0;;Throw break: 2;;Jin-Right Throw;Over the Limit;;;
-b,f+2;m;15;i15~i16;-7;+4~+5;;;;Jin-b,f+2;;;;
-b,f+2,1;m, h;15,14;i15~i16;-5;+6;+5/+9;;;Jin-b,f+2,1;;;;
-b,f+2,1,2;m, h, m;15,14,20;i15;-5;+18a (+9);+50a roll (+3);;;Jin-b,f+2,1,2;Evil Intent;;;
-b,f+2,1,df+2;m, h, m;15,14,22;i15;-14;+37a (+27);;* Tornado;trn;Jin-b,f+2,1,df+2;Geyser;;;
-b,f+2,3;m, m;15,17;i15;-9;+6;+59a;;;Jin-b,f+2,3;Keito;;;
-b,f+2,3~F;m, m;15,17,17;;+2;+17;+71a;;;Jin-b,f+2,3~F;(Keito to Zenshin);;;
-f,F+2;m;22;i14;-8;+15a (+6)/HE;;"* Heat Engager
+ub+4;m;15;i15~17;-13;+19a (+9);+33a (+23a);"Balcony Break
+&lt;div class=&quot;plainlist&quot;&gt;
+* Low crush 9~20
+* fs21~23&lt;/div&gt;";"bbr &lt;div class=&quot;plainlist&quot;&gt;
+* js9~20
+* fs21~23&lt;/div&gt;";Jin-ub+4;;r29;;
+ub+1+2;m!;50;i75~i76;;+9a (+0);;"* Balcony Break
+* Cancel to r50 with b,b";bbr;Jin-ub+1+2;"<div class=""dotlist"">
 
-* 6 Recoverable Damage on block";he;Jin-f,F+2;Demon's Paw;;;
-f,F+3;m;20;i23~i25;-4~-2;+24a~+26a;;* Floor Break;fbr;Jin-f,F+3;Left Axe Kick;;;
-f,F+3,1;m, h;20,5;i23~i25;+1;+7;;* Can follow-up with any strings that start with 1 (e.g. f,F+3, 1, 2, 4);;Jin-f,F+3,1;Left Axe Kick > Left Jab;;;
-f,F+4;m;28;i17~i18;-7~-6;+22a (+12);;;;Jin-f,F+4;Battery Sidekick;;;
-qcb+1+3;h;40;i12;-2;0;;Throw break: 1;;Jin-qcb+1+3;Complicated Wire;;;
-uf,n+4;m;20;i23~i25;-13~-11;+32a~+34a (+22a~+24a);;;;Jin-uf,n+4;Delayed Rising Toe Kick;;;
-f,f,F+3;m;30;i22~i23;+6~+7;+13a~+14a (+3~+4);;* Alternate input: WR.3 or f,n,d,df,UF+3;;Jin-f,f,F+3;Leaping Side Kick;;;
-ws1;m;7;i13~i14;-6~-5;+5~+6;;;;Jin-ws1;Twin Lancer (1);;;
-ws1,2;m, m;7,16;i19~20;-8~-7;+3~+4;;"* Transition to -9 (ob) +2 (oh) ZEN with F
-* Floor Break";fbr;Jin-ws1,2;Twin Lancer;;;
-ws1,3;m, h;7,8;i14;-6;+4;;Jails;;Jin-ws1,3;Kazama Style 6 Hit Combo Redux (2);;;
-ws1,3,2;m, h, m;7,8,4;i18;-11;-6;;;;Jin-ws1,3,2;Kazama Style 6 Hit Combo Redux (3);;;
-ws1,3,2,1;m, h, m, m;7,8,4,3;i10;-11;+3;;;;Jin-ws1,3,2,1;Kazama Style 6 Hit Combo Redux (4);;;
-ws1,3,2,1,4;m, h, m, m, l;7,8,4,3,5;i20;-31;+8;;;;Jin-ws1,3,2,1,4;Kazama Style 6 Hit Combo Redux (5);;;
-ws1,3,2,1,4,2;m, h, m, m, l, m;7,8,4,3,5,15;i31;-16;-8;;* Floor Break;fbr;Jin-ws1,3,2,1,4,2;Kazama Style 6 Hit Combo Redux;;;
-ws1,3,~b;m, h, m,h;7,810,8;i14;-6;+4;;Jails, *B to shift to special back step (no stance / unique moves);;Jin-ws1,3~B;Kazama Style 6 Hit Combo Redux (2) to Back step;;;
-ws1,3~3;m, m;7,20;i23~i24;+6~+7;+13c~+14c;;;;Jin-ws1,3~3;Solar Plexus Strike > Brazilian Kick;;;
-ws1,3~3,~df;m, m;7,20;;+2~+3;+9c~+10;;;;Jin-ws1,3~3~df;(Brazilian Kick to Breaking Step);;;
-ws2;m;14;i14~15;-12~-11;+39a~+40a (+29~+30a);;;;Jin-ws2;Crouching Uppercut;;;
-ws3;m;20;i16~18;-9~-11;+10-~+12;+22a;* Homing;hom;Jin-ws3;Bamboo Splitter;;;
-ws4;m;13;i11~12;-3~-2;+8~+9;;;;Jin-ws4;Double Cross Kicks (1);;;
-ws4,4;m, h;13,15;i19~20;-7~-6;+4~+5;;;;Jin-ws4,4;Double Cross Kicks;;;
-FC.df+4;l;20;i25~i26;-26;+22a~+23a;;;;Jin-FC.df+4;Right Sweep (2);;;
-CD.DF+4;l;12;i20~i21;-31~-30;+8~+9;;;;Jin-CD.DF+4;;;;
-CD.DF+4,2;l, m;1228;i31~i32;-16~-15;+21a~+22a;;* Floor Break;fbr;Jin-CD.DF+4,2;Depraved Savagery;;;
-CD.df:1;m;22;i16~i17;-13~-12;+36a~+37a (+26~+27);;* Tornado;trn;Jin-CD.df${justFrame}1;Electric Thrusting Uppercut;;;
-CD.df:2;h;25;i11~i12;+5~+6;+76a~+77a (+60~+61);;;;Jin-CD.df${justFrame}2;Electric Wind Hook Fist;;;
-CD.df+1;m;20;i16~i17;-13~-12;+32a~+33a (+22~+23);;* Tornado;trn;Jin-CD.df+1;Thrusting Uppercut;;;
-CD.df+2;h;20;i11~12;-10~-9;+74a~75a (+58~+59);;;;Jin-CD.df+2;Wind Hook Fist;;;
-OTG.d+1+2;l;19;i19~20;-13;-2(-12);;Hits grounded, only available when opponent is on the ground;;Jin-OTG.d+1+2;Black Out;;;
-ZEN.1;m;14;i16~i17;-3~-2;+8~+9;;;;Jin-ZEN.1;Brimstone Bite (1);;;
-ZEN.1,2;m, m;14,21;i16;-14~-13;+32a~+33a (+6~+7);;* Can cancel into Breaking Step with input DF;;Jin-ZEN.1,2;Brimstone Bite;;;
-ZEN.1,3;m, h,th;14,14,14;i16;-9~-8;0;;;;Jin-ZEN.1,3;Kazama Style Leg Strike Flurry;;;
-ZEN.2;h;27;i21~i22;-5~-4;+17a~+18a (+8~+9)/HE;;"* Homing
-* Heat Engager
-Parry state ?~";hom he ps?~;Jin-ZEN.2;Fiendish Claw;;;
-ZEN.3;m;20;i17~i18;-9~-8;+10~+11;;"* Homing
-* Balcony Break";hom bbr;Jin-ZEN.3;Halberd Heel;;;
-ZEN.4;m;24;i27~i33;+2~+8;+17d~+23d;;;;Jin-ZEN.4;Corpse Crusher;;;
-ZEN.1+2;l th,m;10, 20;i24;-14;+4;;;;Jin-ZEN.1+2;Low Chop > Karmic Epicenter;;;
-ZEN.3+4;h;;i21~i27;+9~+15;+19~ (+9~);;"* Wall Crush  +15g~+21g on block
+* Avenger
+* Konshin Seikenzuki
+</div>";r34;;
+uf+2;m;18;i15~i16;-7~-6;+6~+7;+19a (+10);"* Balcony break on CH
+* Evasive, can avoid some attacks due to built-in sidestep";;Jin-uf+2;Evading Middle Strike;r25;;
+uf+3;m;17;i22~23;-9;+6;+59a;"&lt;div class=&quot;plainlist&quot;&gt;
+* Low crush 9~23
+* fs24~26&lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
+* js9~23
+* fs24~26&lt;/div&gt;";Jin-uf+3;Left Spinning Jump Kick;r30;;
+uf+4;m;13;i15~17;-13;+33a (+23a);;"&lt;div class=&quot;plainlist&quot;&gt;
+* Low crush 9~20
+* fs21~23&lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
+* js9~20
+* fs21~23&lt;/div&gt;";Jin-uf+4;Front Jump Kick;r29;;
+uf+1+2;h;40;i12;+0;+0d;;"* Floor Break
+* Throw break 1+2";fbr;Jin-uf+1+2;Tidal Wave;r27;;
+1+2+3+4;;;;;;;"* Can't block for 5 seconds
+* CH state for 5 seconds";;Jin-1+2+3+4;"<div class=""dotlist"">
+
+* Ki Charge
+* Supercharger
+</div>";r55;;
+b,f+2;m;15;i15~i16;-7;+4;;;;Jin-b,f+2;;r25;;
+b,f+2,1;m, h;15,14;,i21;-5;+6;+9;"* Combo from 1st hit with 8f delay
+* Input can be delayed 12f";;Jin-b,f+2,1;;r24;;
+b,f+2,1,2;m, h, m;15,14,20;,i19~20;-5;+18a (+9);+50a (+3);"* Balcony Break
+* Combo from 2nd CH with 15f
+* Input can be delayed 16f
+* Move can be delayed 10f";bbr;Jin-b,f+2,1,2;Evil Intent;r26;;
+b,f+2,1,df+2;m, h, M;15,14,22;,i28~29;-14;+37a (+27);;"* Tornado
+* Combo from 2nd CH
+* Input can be delayed 16f
+* Move can be delayed 10f";trn;Jin-b,f+2,1,df+2;Geyser;r36;;
+b,f+2,3;m, m;15,17;,i25;-9;+6;+59a;"* Combo from 1st hit with 4f delay
+* Input can be delayed 9f
+* Enter ZEN +2 +17g +71a r20 with F";;Jin-b,f+2,3;Keito;r31;;
+f,F+2;m;22;i14~15;-8;+15a (+6);;"* Heat Engager
+
+* Heat Dash +36a (+26), +5
+
+* Balcony Break
+* Cannot be buffered
+* 6 chip damage on block";he bbr;Jin-f,F+2;Demon's Paw;r29;;
+f,F+3;m;20;i23~i25;-4;+24a;;"* Spike
+* Cannot be buffered";spk;Jin-f,F+3;Left Axe Kick;r24;;
+f,F+3,1;m, h;20,5;,i15;+1;+7;;* Links to 1 jab extensions (e.g. f,F+3,1,2,4);;Jin-f,F+3,1;Left Axe Kick > Left Jab;r18;;
+f,F+4;m;28;i17~i18;-7;+22a (+12);;Balcony Break;bbr;Jin-f,F+4;Battery Sidekick;r32;;
+f,n,d,df;;;;;;;"* Cannot be buffered
+* Stance moves can be buffered out of heat dash
+* Cancel to sidestep with u
+* Cancel to block with b";;Jin-f,n,d,df;"<div class=""plainlist"">
+* Crouch Dash
+* Breaking Step
+</div>";r3?;;
+f,n,d,df,UF;;;;;;;"* Can access wr3 by inputting 3 on frames 1~2
+* Unable to act from frames 3~26
+&lt;div class=&quot;plainlist&quot;&gt;
+* Low crush 1~20
+* fs21~23&lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
+* js1~20
+* fs21~23&lt;/div&gt;";Jin-f,n,d,df,UF;;r26;;
+qcb+1+3;h;40;i12;-2;0;;"* Throw break 1
+* Opponent recovers FUFA";;Jin-qcb+1+3;Complicated Wire;r27;;
+uf,n+4;m;20;i23~i25;-13~-11;+32a (+22a);;"&lt;div class=&quot;plainlist&quot;&gt;
+* Low crush 9~30
+* fs31~33&lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
+* js9~30
+* fs31~33&lt;/div&gt;";Jin-uf,n+4;Delayed Rising Toe Kick;r30;;
+f,f,F+3;m;30;i22~i23;+6;+13a~+14a (+3~+4);;"* Balcony Break
+* Chip damage on block
+&lt;div class=&quot;plainlist&quot;&gt;
+* Low crush 3~25
+* fs26~28&lt;/div&gt;";"bbr chp &lt;div class=&quot;plainlist&quot;&gt;
+* js3~25
+* fs26~28&lt;/div&gt;";Jin-f,f,F+3;Leaping Side Kick;r36;;
+ws1;m;7;i13~i14;-6;+5;;;;Jin-ws1;;r24;;
+ws1,2;m, m;7,19;,i19~20;-8;+3c;;"* Spike
+* Combo from 1st hit with 1f delay
+* Combo from 1st CH with 10f delay
+* Input can be delayed 13f
+* Enter ZEN -9 +2 r27 with F";spk;Jin-ws1,2;Twin Lancer;r26;;
+ws1,3;m, h;7,8;,i14;-6;+4;;"* Jail from 1st attack
+* Transition to r25 backdash with B";;Jin-ws1,3;;r26;;
+ws1,3,2;m, h, m;7,8,4;,i18;-11;-6;;Combo from 1st hit;;Jin-ws1,3,2;;;;
+ws1,3,2,1;m, h, m, m;7,8,4,3;,i10;-11;+3;;Combo from 1st hit;;Jin-ws1,3,2,1;;;;
+ws1,3,2,1,4;m, h, m, m, l;7,8,4,3,5;,i20~21;-31;+8;;Combo from 1st hit;;Jin-ws1,3,2,1,4;;;;
+ws1,3,2,1,4,2;m, h, m, m, l, M;7,8,4,3,5,15;,i31~32;-16;-8;;"* Combo from 1st hit
+* Spike
+&lt;div class=&quot;plainlist&quot;&gt;
+* ,Low crush 8~28
+* fs29~31&lt;/div&gt;";"spk &lt;div class=&quot;plainlist&quot;&gt;
+* js8~28
+* fs29~31&lt;/div&gt;";Jin-ws1,3,2,1,4,2;Kazama Style 6 Hit Combo Redux;;;
+ws1,3~3;m, m;7,20;,i23~i24;+6;+13c;;"* Spike
+* Enter Breaking Step +2 +9c with DF
+* +16a on BT hit";spk;Jin-ws1,3~3;Solar Plexus Strike > Brazilian Kick;r23;;
+ws2;m;14;i14~15;-12;+39a (+29);;;;Jin-ws2;Crouching Uppercut;r20;;
+ws3;m;20;i16~18;-9;+10g;+22a;"* Homing
+* Balcony Break";hom bbr;Jin-ws3;Bamboo Splitter;r31;;
+ws4;m;13;i11~12;-3;+8;;;;Jin-ws4;;r21;;
+ws4,4;m, h;13,15;,i19~20;-7;+4;;* Combo from 1st hit with 1f delay;;Jin-ws4,4;Double Cross Kicks;r30;;
+FC.df+4;L;20;i25~i26;-26;+22a;;High crush 1~57;cs1~57;Jin-FC.df+4;Right Sweep (2);r31;;
+CD.DF+4;l;12;i20~i21;-31;+8c;;;;Jin-CD.DF+4;;r28;;
+CD.DF+4,2;l, M;12,28;,i31~i32;-16;+21a;;"* Balcony Break
+* Spike
+* Combo from 1st hit
+* Chip damage on block
+&lt;div class=&quot;plainlist&quot;&gt;
+* ,Low crush 8~28
+* fs29~31&lt;/div&gt;";"bbr spk chp &lt;div class=&quot;plainlist&quot;&gt;
+* js8~28
+* fs29~31&lt;/div&gt;";Jin-CD.DF+4,2;Depraved Savagery;r28;;
+CD.df:1;M;22;i16~i17;-13;+36a (+26);;"* Tornado
+* Chip damage on block";trn chp;Jin-CD.df${justFrame}1;Electric Thrusting Uppercut;r31;;
+CD.df:2;h;25;i11~i12;+5~+6;+76a (+60);;"* Balcony Break
+* Recovers 3f faster on hit or block (t36 r24)";bbr;Jin-CD.df${justFrame}2;Electric Wind Hook Fist;r27;;
+CD.df+1;m;20;i16~i17;-13;+32a (+22);;"* Tornado
+* Turns into CD.df#1 while in heat";trn;Jin-CD.df+1;Thrusting Uppercut;r31;;
+CD.df+2;h;20;i11~12;-10;+74a (+58);;"* Balcony Break
+* Turns into EWHF (CD.df#2) while in heat";bbr;Jin-CD.df+2;Wind Hook Fist;r28;;
+OTG.d+1+2;L;24;i19~20;-13;-2 (-10);;* Spike;spk;Jin-OTG.d+1+2;Black Out;r31;;
+ZEN.1;m;14;i16~i17;-3;+8;;;;Jin-ZEN.1;;r21;;
+ZEN.1,2;m, m;14,21;,i23~24;-14;+32a (+6);;"* Balcony Break
+* Combo from 1st hit with 6f delay
+* Input can be delayed 12f
+* Move can be delayed 11f
+* Cancel to Breaking Step -11 -12 r40 with DF on frame 20";bbr;Jin-ZEN.1,2;Brimstone Bite;r32;;
+ZEN.1,3;m, h,t;14,14,14;,i24~25;-9;+0d;;"* Combo from 1st hit
+* Transition to attack throw on standing or airborne hit
+* +33a (+18) on side hit
+* +18a (+11) and balcony break on BT hit";;Jin-ZEN.1,3;Kazama Style Leg Strike Flurry;r31;;
+ZEN.2;h;27;i21~i22;-5;+17a (+8);;"* Heat Engager
+
+* Heat Dash +34a (+27), +5
+
+* Homing
+* Balcony Break
+* Chip damage on block
+* +0 on block after absorbing an attack
+Power crush 6~20";he hom bbr chp pc6~20;Jin-ZEN.2;Fiendish Claw;r32;;
+ZEN.3;m;20;i17~i18;-9;+10g;+22a;"* Homing
+* Balcony Break
+* +17a (+8) on BT hit";hom bbr;Jin-ZEN.3;Halberd Heel;r32;;
+ZEN.4;M;24;i27~i33;+2~+8;+17d~+23d;;"* Spike
+* Chip damage on block
+&lt;div class=&quot;plainlist&quot;&gt;
+* Low crush 7~33
+* fs34~36&lt;/div&gt;";"spk chp &lt;div class=&quot;plainlist&quot;&gt;
+* js7~33
+* fs34~36&lt;/div&gt;";Jin-ZEN.4;Corpse Crusher;r31;;
+ZEN.1+2;l,t;10,20;i24 i61;-14;+4 +16w;;"* Wall Crush +16g on hit
 
 
-*
-Balcony Break";wc bbr;Jin-ZEN.3+4;Black Wing Bolt;;;
-ZEN.3+4~DF;h;;i21~i27;;;;;;Jin-ZEN.3+4~DF;Black Wing Bolt to Breaking Step;;;
-ZEN.u+1;m;20;i14~i16;-16~-14;+31a~+29a (+21~+19);;"*
-Tornado";trn;Jin-ZEN.u+1;Black Wing Rondo;;;
+* Transition to attack throw on standing hit
+* Recover standing after throw
+High crush 10~";wc cs10~;Jin-ZEN.1+2;Low Chop > Karmic Epicenter;r33 FC;;
+ZEN.3+4;h;25;i21~27;+9g~+15g;+19a (+9) +15w;;"* Wall Crush +15g~+21g on block
+
+
+* Balcony Break
+* Enter Breaking Step +8 +18a (+8) r32 with DF on frame 40
+* Chip damage on block
+&lt;div class=&quot;plainlist&quot;&gt;
+* Low crush 10~32
+* fs33~35&lt;/div&gt;";"wc bbr chp &lt;div class=&quot;plainlist&quot;&gt;
+* js10~32
+* fs33~35&lt;/div&gt;";Jin-ZEN.3+4;Black Wing Bolt;r31;;
+ZEN.u+1;m;20;i14~i16;-16;+31a (+21);;"* Tornado
+* Chip damage on block
+&lt;div class=&quot;plainlist&quot;&gt;
+* Low crush 8~43
+* fs44~46&lt;/div&gt;";"trn chp &lt;div class=&quot;plainlist&quot;&gt;
+* js8~43
+* fs44~46&lt;/div&gt;";Jin-ZEN.u+1;Black Wing Rondo;r37;;
+1+3;t;35;i12~i14;+0;+2d;;"* Homing
+* Throw break 1 or 2
+* Jin recovers BT on break";hom;Jin-1+3;Double Face Kick;r25;;
+2+4;t;35;i12~i14;-3;+0d;;"* Homing
+* Throw break 1 or 2
+* Side switch on hit";hom;Jin-2+4;Over the Shoulder Reverse;r25;;
+Back throw;t;50;;;+1d;;"* Unbreakable
+* Side switch on hit";;Jin-Back throw;Pivoting Hip Throw;;;
+Left throw;t;43;;-3;+0;;Throw break 1;;Jin-Left throw;Shoulder Flip;;;
+Right throw;t;40;;-3;+0d;;"* Throw break 2
+* Side switch on hit";;Jin-Right throw;Over the Limit;;;
+df+2+3;t;40;i12;-2;-4d;;* Throw break 2;;Jin-df+2+3;Shun Ren Dan;r27;;
