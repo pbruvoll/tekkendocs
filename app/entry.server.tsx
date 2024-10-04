@@ -12,7 +12,14 @@ import {
   type EntryContext,
 } from '@remix-run/node'
 import { RemixServer } from '@remix-run/react'
+import * as Sentry from '@sentry/remix'
 import { isbot } from 'isbot'
+
+export const handleError = Sentry.wrapHandleErrorWithSentry(
+  (error, { request }) => {
+    // Custom handleError implementation
+  },
+)
 
 const ABORT_DELAY = 5_000
 

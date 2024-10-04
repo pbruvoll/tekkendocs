@@ -14,7 +14,9 @@ import {
   Scripts,
   ScrollRestoration,
   type ShouldRevalidateFunction,
+  useRouteError,
 } from '@remix-run/react'
+import { captureRemixErrorBoundaryError } from '@sentry/remix'
 import stylesUrl from '~/global.css?url'
 import tailwindStyleSheetUrl from './tailwind.css?url'
 import { getCacheControlHeaders } from './utils/headerUtils'
@@ -51,6 +53,12 @@ export const loader = async ({
 
 export const shouldRevalidate: ShouldRevalidateFunction = () => {
   return false
+}
+
+export const ErrorBoundary = () => {
+  const error = useRouteError()
+  captureRemixErrorBoundaryError(error)
+  return <div>Something went wrong</div>
 }
 
 export default function App() {
