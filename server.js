@@ -1,4 +1,4 @@
-import './instrumentation.server.mjs';
+import './instrumentation.server.mjs'
 import { createRequestHandler } from '@remix-run/express'
 import { installGlobals } from '@remix-run/node'
 import compression from 'compression'
