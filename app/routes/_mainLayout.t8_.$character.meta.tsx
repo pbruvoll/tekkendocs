@@ -1,3 +1,4 @@
+import { useMemo } from 'react'
 import { Pencil1Icon } from '@radix-ui/react-icons'
 import { Heading, Link as RadixLink, Table } from '@radix-ui/themes'
 import {
@@ -5,24 +6,27 @@ import {
   type LoaderFunctionArgs,
   type MetaFunction,
 } from '@remix-run/node'
-import { Link, useLoaderData } from '@remix-run/react'
+import { useLoaderData } from '@remix-run/react'
 import invariant from 'tiny-invariant'
 import { Authors } from '~/components/Authors'
+import { Command } from '~/components/Command'
 import { ContentContainer } from '~/components/ContentContainer'
 import Nav, { type NavLinkInfo } from '~/components/Nav'
 import { PersonLinkList } from '~/components/PersonLinkList'
 import { ResourcesTable } from '~/components/ResourcesTable'
+import { TextWithCommand } from '~/components/TextWithCommand'
 import { hasHeaderMap } from '~/constants/hasHeaderMap'
 import { tableIdToDisplayName } from '~/constants/tableIdToDisplayName'
 import { useFrameData } from '~/hooks/useFrameData'
 import { getSheet } from '~/services/googleSheetService.server'
 import type { CharacterFrameData } from '~/types/CharacterFrameData'
 import type { Game } from '~/types/Game'
+import { type Move } from '~/types/Move'
 import type { RouteHandle } from '~/types/RouteHandle'
 import { type TableData } from '~/types/TableData'
 import { cachified } from '~/utils/cache.server'
+import { compressCommand } from '~/utils/comamndUtils'
 import {
-  frameDataTableToJson,
   isBalconyBreak,
   isHeatEngager,
   isHeatMove,
@@ -31,7 +35,6 @@ import {
   isTornadoMove,
 } from '~/utils/frameDataUtils'
 import { getCacheControlHeaders } from '~/utils/headerUtils'
-import { commandToUrlSegment } from '~/utils/moveUtils'
 import { generateMetaTags } from '~/utils/seoUtils'
 import { creditsTableToJson } from '~/utils/sheetUtils'
 import { sheetSectionToTable, sheetToSections } from '~/utils/sheetUtils.server'
@@ -130,10 +133,14 @@ export default function Index() {
     editUrl,
     tables: metaTables,
   } = useLoaderData<typeof loader>()
-  const { tables: frameDataTables } = useFrameData()
-  const normalFrameData = frameDataTables.find(t => t.name === 'frames_normal')
-  invariant(normalFrameData)
-  const frameData = frameDataTableToJson(normalFrameData)
+  const { moves: frameData } = useFrameData()
+  const compressedCommandMap = useMemo(() => {
+    return frameData.reduce<Record<string, Move>>((prev, current) => {
+      prev[compressCommand(current.command)] = current
+      return prev
+    }, {})
+  }, [frameData])
+  invariant(frameData)
   const homingMoves = frameData.filter(m => isHomingMove(m))
   const homingTable: TableData = {
     name: 'moves_homing',
@@ -274,16 +281,23 @@ export default function Index() {
                             return (
                               <Table.Cell key={j}>
                                 <RadixLink asChild>
-                                  <Link
-                                    className="text-[#ab6400]"
-                                    style={{ textDecoration: 'none' }}
-                                    to={`/t8/${characterName}/${commandToUrlSegment(
-                                      cell,
-                                    )}`}
-                                  >
-                                    {cell}
-                                  </Link>
+                                  <Command
+                                    charUrl={`/t8/${characterName}`}
+                                    compressedCommandMap={compressedCommandMap}
+                                    command={cell}
+                                  />
                                 </RadixLink>
+                              </Table.Cell>
+                            )
+                          }
+                          if (table.name === 'key_moves') {
+                            return (
+                              <Table.Cell key={j}>
+                                <TextWithCommand
+                                  charUrl={`/t8/${characterName}`}
+                                  compressedCommandMap={compressedCommandMap}
+                                  text={cell}
+                                />
                               </Table.Cell>
                             )
                           }
