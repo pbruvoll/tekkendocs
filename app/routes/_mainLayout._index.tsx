@@ -7,6 +7,7 @@ import {
 } from '@remix-run/react'
 import { CharacterGrid } from '~/components/CharacterGrid'
 import { ContentContainer } from '~/components/ContentContainer'
+import { ExternalResources } from '~/components/ExternalResources'
 import tekkenDocsLogoLarge from '~/images/logo/tekkendocs-logo-large.svg'
 import {
   getTekken7Characters,
@@ -113,41 +114,10 @@ export default function Index() {
         )}
       />
 
-      <Heading as="h2" mt="7" mb="4" size="5">
+      <Heading as="h2" mt="7" mb="4" size="5" id="externalResources">
         External Resources
       </Heading>
-      <div className="flex flex-wrap gap-3">
-        <a
-          href="https://wavu.wiki"
-          target="_blank"
-          rel="noreferrer"
-          className="cursor-pointer"
-        >
-          <Badge size="2" style={{ cursor: 'pointer' }} variant="outline">
-            Wavu wiki
-          </Badge>
-        </a>
-        <a
-          target="_blank"
-          rel="noreferrer"
-          href="https://docs.google.com/spreadsheets/d/e/2PACX-1vTsgbCJNSTKajMNlJvQleJOl0eTiEcV-PbeU0obDg1lsSqmz0lTtcD2k6NzfTPt7Db9Ua2dz1o_34Sv/pubhtml#"
-          className="cursor-pointer"
-        >
-          <Badge size="2" style={{ cursor: 'pointer' }} variant="outline">
-            Applay's Cheat Sheets
-          </Badge>
-        </a>
-        <a
-          target="_blank"
-          rel="noreferrer"
-          href="https://www.naguide.com/tekken-8-cheat-sheets-for-all-characters/"
-          className="cursor-pointer"
-        >
-          <Badge size="2" style={{ cursor: 'pointer' }} variant="outline">
-            Naguide's Cheat Sheets
-          </Badge>
-        </a>
-      </div>
+      <ExternalResources />
 
       <Heading as="h2" mt="7" mb="4" size="5">
         <Link to="t7">Tekken 7</Link>
