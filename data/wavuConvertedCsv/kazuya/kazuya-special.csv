@@ -3,13 +3,17 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * Alternate input: R1";hb;Kazuya-2+3;Heat Burst;;;
 H.2+3;l,m,th;12,20,34;i18;-14;Th;Th;"* Heat Smash
 * Alternate input: R1";hs;Kazuya-H.2+3;Omega Crash;;;
-R.df+1+2;m,th;10,45;;-15;;;* Erases opponent's recoverable health on hit;;Kazuya-R.df+1+2;Demonic Catastrophe;;;
+R.df+1+2;m,th;10,45;;-15;;;"* Rage Art
+* Removes Recoverable Health";;Kazuya-R.df+1+2;Demonic Catastrophe;;;
 1;h;5;i10;+1;+8;;Recovers 2f faster on hit or block (t27 r17);;Kazuya-1;Jab;r19;;
 1,1;h, h;5,6;,i15;-1;+8;;"* Jails
 * Combo from 1st hit";;Kazuya-1,1;;44;;
 1,1,2;h, h, m;5,6,12;,i13;-17;+20a(+15);;"* Combo from 1st hit
 * Can be delayed 11F
 * Balcony Break on Air hit";;Kazuya-1,1,2;Flash Punch Combo;;;
+1,1,2,DVK.F;h,h,m,th;5,6,12,8;i10;-17;+5;;"* Jails
+* Partially uses remaining Heat time
+* Only on hit";;Kazuya-1,1,2,DVK.F;Devil Break;;;
 1,2;h, h;5,8;,i10;-1;+8;;"* Jails
 * Combo from 1st hit
 * Combo can be delayed 12F from 1st hit";;Kazuya-1,2;One Two Punch;40;;
@@ -147,18 +151,18 @@ f,n,DF;sp;;;;;;"* Cannot be buffered
 * Cost: 2F";;Kazuya-f,n,DF;Mist Step to Wind God Step;;;
 f,n,d,DF;sp;;;;;;"* Cannot be buffered
 * Cost 3F";;Kazuya-f,n,d,DF;Wind God Step;;;
+f,n,d,DF+4;l;15;i16;-23;-3c;+20a;;;Kazuya-f,n,d,DF+4;Spinning Demon;;;
+f,n,d,DF+4,1;l, m;15,23;i26;-16;+17a(+10;;"* Balcony Break
+* Combo from first hit";bbr;Kazuya-f,n,d,DF+4,1;Spinning Demon > Left Hook;;;
+f,n,d,DF+4,4;l, h;15,25;i30;-9;+5a(+4);;"* Balcony Break
+* Combo from first hit
+Low crush";bbr js;Kazuya-f,n,d,DF+4,4;Illusive Demon;;;
 f,n,d,df:2;h;23;i11;+5;+39a(+29);;* Chip damage when guarded;chp;Kazuya-f,n,d,df${justFrame}2;Electric Wind God Fist;25;;
 f,n,d,df+1;m;23;i20;-16;+29a(+19);;"* Tornado
 * Meaty 1F in actuality";trn;Kazuya-f,n,d,df+1;Thunder God Fist;;;
 f,n,d,df+2;h;20;i11;-10;+39a(+29);;Becomes Electric Wind God Fist during Heat (partially uses remaining Heat Time);;Kazuya-f,n,d,df+2;Wind God Fist;29;;
 f,n,d,df+3;h;30;i18~27;-9;+12a(+2);;"Balcony Break
 Low crush 9~";bbr js9~;Kazuya-f,n,d,df+3;Hell Lancer;;;
-f,n,d,df+4;l;15;i16;-23;-3c;+20a;;;Kazuya-f,n,d,df+4;Spinning Demon;;;
-f,n,d,df+4,1;l, m;15,23;i26;-16;+17a(+10;;"* Balcony Break
-* Combo from first hit";bbr;Kazuya-f,n,d,df+4,1;Spinning Demon > Left Hook;;;
-f,n,d,df+4,4;l, h;15,25;i30;-9;+5a(+4);;"* Balcony Break
-* Combo from first hit
-Low crush";bbr js;Kazuya-f,n,d,df+4,4;Illusive Demon;;;
 f,n,d,df+1+2;m;25;i24;+5;+25a(+15);+59a;"* Tornado
 * Balcony Break
 * Chip damage when guarded";trn bbr chp;Kazuya-f,n,d,df+1+2;Patricide Fist;;;
@@ -190,13 +194,10 @@ BT.3;h;18;i10;-8;+8;;;;Kazuya-BT.3;Spin Kick;;;
 BT.d+1;sm;10;i10;-2;+9;;;;Kazuya-BT.d+1;Crouch Spin Knuckle;FC;;
 BT.d+3;l;12;i10;-11;+3;;;;Kazuya-BT.d+3;Crouch Spin Kick;FC;;
 BT.uf+3;m;-;;;+19a (+9);;Low crush;js;Kazuya-BT.uf+3;Reverse Jump Kick;;;
-DVK.1,1,2,F;h,h,m,th;5,6,12,8;i10;-17;+5;;"* Jails
-* Partially uses remaining Heat time
-* Only on hit";;Kazuya-DVK.1,1,2,F;Devil Break;;;
 DVK.1+4;m;27;i21~31;-9;+3a;;"* Tornado
 * Partially uses remaining Heat time
 * absorb an attack to power up
-Power crush";trn pc;Kazuya-DVK.1+4;Roar of the Devil;;;
+Power crush 6?";trn pc6?;Kazuya-DVK.1+4;Roar of the Devil;;;
 DVK.3+4;ub(m);30;i64;;-16(-77);;"* Partially uses remaining Heat time
 Low crush 25~";js25~;Kazuya-DVK.3+4;Devil Blaster;;;
 DVK.OTG.db+1+2;l;20;i24~29;-13;+13a (+1);;* Partially uses remaining Heat time;;Kazuya-DVK.OTG.db+1+2;Grand Inferno;;;
@@ -205,15 +206,17 @@ DVK.SS.2;m;25;i17;-15;+76a;;"* Tornado
 DVK.db+3+4;l;0;i24;-19;+2;;* Partially uses remaining Heat time;;Kazuya-DVK.db+3+4;Devil Impact;;;
 DVK.db+3+4,DF;l, sp;0,0;;-19;+11;;* Partially uses remaining Heat time;;Kazuya-DVK.db+3+4~df;Devil Impact to Wind God Step;;;
 DVK.f,F+2;m,th;20,20;i16;-9;+0;;"* Partially uses remaining Heat time
-* Only on hit";;Kazuya-DVK.f,F+2;Chaos Inferno;;;
+* Only on hit
+* Throw can be canceled with B";;Kazuya-DVK.f,F+2;Chaos Inferno;;;
 DVK.f,n,d,df+1;m,th;23,15;i20;-16;Th;;"* Partially uses remaining Heat time
 * On hit, does not shift to throw with n";;Kazuya-DVK.f,n,d,df+1;Damnation;;;
-DVK.f,n,d,df+3;h,th;30,15;i18;+4;Th;;Low crush;js;Kazuya-DVK.f,n,d,df+3;Tempest Blaster;;;
-DVK.f,n,d,df+4,1,1;l,m,m,th;15,23,16,15;i16;-19;+0;;* Partially uses remaining Heat time;;Kazuya-DVK.f,n,d,df+4,1,1;Abyss Damnation;;;
-DVK.f,n,d,df+4,1,1,B;l,m,m,th, sp;15,23,16,15,0;i16;-17;+17a (+10);;;;Kazuya-DVK.f,n,d,df+4,1,1,B;Spinning Demon to Left Hook > Thunder God Fist;;;
+DVK.f,n,d,df+3;h,th;30,15;i18;+4;Th;;"Throw can be canceled with B
+Low crush";js;Kazuya-DVK.f,n,d,df+3;Tempest Blaster;;;
 DVK.ub+1+2;ub(h);40;i41;;+14 (-44);;"* Partially uses remaining Heat time
 * Jack-8 or Alisa can recovery 20 by input 1+2";;Kazuya-DVK.ub+1+2;Inferno;;;
 DVK.uf+1+2;ub(h);26;i22;;;;;;Kazuya-DVK.uf+1+2;Air Inferno;;;
 OTG.d+3+4;l;25;i23;-12;-1;;;;Kazuya-OTG.d+3+4;Oni Stomp;;;
 f,(even numbers frames).n;sp;;;;;;;;Kazuya-f,(even numbers frames).n;Mist Step (Left Side);;;
 f,(odd numbers frames).n;sp;;;;;;;;Kazuya-f,(odd numbers frames).n;Mist Step (Left Side);;;
+f,n,d,DF+4,1,DVK.1;l,m,m,th;15,23,16,15;i16;-19;+0;;* Partially uses remaining Heat time;;Kazuya-f,n,d,DF+4,1,DVK.1;Abyss Damnation;;;
+f,n,d,DF+4,1,DVK.1,B;l,m,m,th, sp;15,23,16,15,0;i16;-17;+17a (+10);;;;Kazuya-f,n,d,DF+4,1,DVK.1,B;Spinning Demon to Left Hook > Thunder God Fist;;;

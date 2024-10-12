@@ -2,7 +2,6 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 2+3;m;12;i16;+1;+2c;;"* Heat Burst
 * Cancel to r45 with b,b
 Power crush 7~";hb pc7~;Raven-2+3;Heat Burst;r52;;
-H.1+2,F;m;20;i14;+5;+45a (+35);;;;Raven-H.1+2,F;Crusader > Heat Dash;r27;;
 H.BT.2,2,1;h,m,sm,sm;9,12,21,30;i10, i21~22, i18~19, i39~47;-3;+2a (-7);;"* Balcony Break
 * Combo from 1st hit
 * Available only on hit or block
@@ -43,7 +42,6 @@ H.df+1,4;m,sm,sm;13,25,30;i14~15, i18~27, i44~45;-3~-2;+32a (-26);;"* Balcony Br
 H.f,f,F+3,4;m,sm;20,20;i26~28, i43~44;+7~+8;+72a (+56);;"* Tornado
 * Partially uses remaining Heat time
 * Available only on hit or block";trn;Raven-H.f,f,F+3,4;Typhon Fang Phantom;r74 BT;;
-H.f+1+2,F;h,m;10,20;i18~19, i26;+5;+34a;;Power crush 7~;pc7~;Raven-H.f+1+2,F;Minos Typhoon > Heat Dash;r27;;
 H.qcf+1,2;m,sm,sm;15,21,30;i16, 19~20, 39~41;-3~-1;+24a (+9);;"* Tornado
 * Combo from 1st hit
 * Available only on hit or block
@@ -54,21 +52,20 @@ H.ws3,2;m,sm,sm;18,18,20;i16~17, i19~20 i39~41;-3~-1;+65a (+49);;"* Tornado
 * Combo from 1st hit
 * Available only on hit or block
 * Recover Heat on hit";trn;Raven-H.ws3,2;Trident Kick > Phantom Halberd;r25;;
-H.ws3+4,F;m;20;i16~18;+5;+62a (+42);;"* Homing
-* Alternate input: H.qcf+3+4,F";hom;Raven-H.ws3+4,F;Spinning Middle Kick;r27;;
 H.2+3;m,t;20,35;i18~20;+14g;+3a;;"* Heat Smash
 * Transition to r20 SZN on block";hs;Raven-H.2+3;Pandemonium;r43;;
 R.df+1+2;m,t;55+;i20;-15;+0;;"* Rage Art
+* Recoverable Health Removal
 * Damage increases with lower health
 * Erases opponent's recoverable health on hit
 Power crush 8~";pc8~;Raven-R.df+1+2;Wild Hunt X-ecutor;r39;;
 1;h;5;i10;+1;+8;;;;Raven-1;Jab;r17;;
-1,2;h, h;5,12;,i12;-3;+7;;* Jail from 1st attack with 2f delay;;Raven-1,2;Left Right Combo;r21;;
+1,2;h, h;5,12;,i12;-3;+7;;"* Jail from 1st attack with 2f delay
+* Can shift to t42 r22 SZN -4/+6 with 3+4 or D";;Raven-1,2;Left Right Combo;r21;;
 1,2,4;h, h, m;5,12,20;,i23~25;-14~-12;+15a (-2);;"* Tornado
 * Balcony Break
 * Combo from 1st CH
 ,Low crush 23~42 fs43~45";trn bbr js23~42 fs43~45;Raven-1,2,4;Left Right Combo ＞ Black Hole;r33 BT;;
-1,2,3+4;h, h;5,12;;-4;+6;;Alternate input: 1,2~D;;Raven-1,2,3+4;;r22 SZN;;
 2;h;9;i10;-1;+8;;;;Raven-2;Right Jab;r20;;
 2,3;h, l;9,10;,i22;-13;-2;;"Combo from 1st hit
 ,High crush 6~";cs6~;Raven-2,3;PDK Combo;r32;;
@@ -78,13 +75,13 @@ Power crush 8~";pc8~;Raven-R.df+1+2;Wild Hunt X-ecutor;r39;;
 3;m;10;,i14~15;-8~-7;+3~+4;;;;Raven-3;;r26;;
 3,3;m, h;10,16;,i17~18;-8~-7;+5~+6;;* Jail from 1st attack;;Raven-3,3;;r26;;
 3,3,4;m, h, h;10,16,20;,i26~27;-9;+39a (-19);+66a (+50);"* Balcony Break
-* Combo from 2nd CH";bbr;Raven-3,3,4;Valkyrie Lance Combo;r33;;
-3,3,4~B;m, h, h;10,16,20;;-16~-15;-3~-2;;;;Raven-3,3,4~B;;r18 BT;;
+* Combo from 2nd CH
+* Cancel to r18 BT at -16~-15/-3~-2 with B";bbr;Raven-3,3,4;Valkyrie Lance Combo;r33;;
 3~4;m,M;10,16;i25~26 i31~36;-9~-4;+19a;;Spike;spk;Raven-3~4;Chariot;r26 BT;;
 3~4,F;m,M;10,16;;-39~-36;-8;;"Will phase through opponent up-close
 ,Low crush 13~41 fs42~44";js13~41 fs42~44;Raven-3~4,F;Chariot to Blind Roll;r53;;
 4;h;16;i12~13;-7~-6;+3~+4;;;;Raven-4;High Kick;r26;;
-4,1;h, h;16,13;,i19~20;-3~-2;+7~+8;;* Jail from 1st attack;;Raven-4,1;Brocken Connect;r24;;
+4,1;h, h;16,13;,i19~20;-3~-2;+7~+8;;* Jail from 1st attack;;Raven-4,1;Brocken Connect;r24 BT;;
 4~3;m,m;8,10;i16 i29~30;-16~-15;+31a (+21);;"Recovery listed is for the second hit
 Low crush 14~27 fs28~30";js14~27 fs28~30;Raven-4~3;Hydra Bite;r28;;
 4~3,1;m,m, l;8,10,15;,i34~35;-13~-2;+4~+5;;"Can be delayed
@@ -93,19 +90,27 @@ Low crush 14~27 fs28~30";js14~27 fs28~30;Raven-4~3;Hydra Bite;r28;;
 * Can be delayed";bbr;Raven-4~3,3;Hydra Bite High;r28;;
 4~3,4;m,m, m;8,10,20;,i33~34;-14~-13;+15a;;"* Balcony Break
 * Can be delayed";bbr;Raven-4~3,4;Hydra Bite Mid;r29;;
-1+2;m;20;i14;-9;+15a;;Heat Engager;he;Raven-1+2;Crusader;r33;;
+1+2;m;20;i14;-9;+15a;;"* Heat Engager
+
+* Heat Dash +45a (+35) on hit, +5 on block
+
+* r27 on Heat Dash";he;Raven-1+2;Crusader;r33;;
 3+4;;;;;;;Alternate input: d+3+4 or FC.3+4;;Raven-3+4;Soulzone;r20 SZN;;
 f+2;m;10;i15~16;-12~-11;-1~+0;;;;Raven-f+2;;r30;;
 f+2,3;m, M;10,13;,i21~22;-9~-8;+6c~+7c;;"* Spike
 * Combo from 1st hit
-* Can be delayed";spk;Raven-f+2,3;Tartaros;r27;;
-f+2,3,3+4;m, M;10,13;;-9~-8;+6c~+7c;;* Alternate input: f+2,3~D;;Raven-f+2,3,3+4;;r27 SZN;;
-f+3;m;18;i17;-9;+3;;Homing;hom;Raven-f+3;;r33;;
+* Can be delayed
+* Can transition to r27 SZN at -9~-8/+6c~+7c with 3+4 or D";spk;Raven-f+2,3;Tartaros;r27;;
+f+3;m;18;i17;-9;+3;;"*
+Homing
+* Can transition to r30 BT at -6/+6 with B";hom;Raven-f+3;;r33;;
 f+3,2;m, m;18,21;,i30;-14;+10a (+1);+30a (+22);"* Balcony Break
 * Combo from 1st hit";bbr;Raven-f+3,2;Circling Winds;r35;;
-f+3~B;m;18;;-6;+6;;;;Raven-f+3~B;;r30 BT;;
-f+4;h;23;i15~16;-9~-8;+31a (+23);;Balcony Break;bbr;Raven-f+4;Lance Kick;r33;;
+f+4;h;17;i15~16;-12;+67a (+51);;"Tornado
+Balcony Break";trn bbr;Raven-f+4;Lance Kick;r33;;
 f+1+2;h,m;10,20;i18~19, i26;-14;+30a (+4);;"* Heat Engager
+
+* Heat Dash +34a (+27) on hit, +5 on block
 
 * Balcony Break
 * Frame advantage is -9 if an attack is absorbed
@@ -131,11 +136,11 @@ d+2;sl;8;i11;-4;+7;;High crush 4~;cs4~;Raven-d+2;Crouch Straight;r23 FC;;
 d+3;L;10;i15;-11;+0;;;;Raven-d+3;Stinging Low;r30;;
 d+4;L;18;i21;-13;-2;+13g;High crush 6~;cs6~;Raven-d+4;Basilisk Fang;r32 FC;;
 db+2;m;13;i13~14;-4~-3;+5~+6;;;;Raven-db+2;Assassin's Sting;r24 BT;;
-db+2,1;m, h;13,15;,i22~23;-1~+0;+8~+9;;* Combo from 1st hit;;Raven-db+2,1;Assassin's Sting Combo;r19;;
+db+2,1;m, h;13,15;,i22~23;-1~+0;+8~+9;;"* Combo from 1st hit
+* Can transition to r22 SZN at -4/+5 with 3+4 or D";;Raven-db+2,1;Assassin's Sting Combo;r19;;
 db+2,1,1;m, h, sm;13,15,21;,i18~19;-14~-13;+2a (-7);;"* Balcony Break
 * Combo from 2nd CH
 * Available only on hit or block";bbr;Raven-db+2,1,1;Assassin's Sting > Phantom Javelin;r25;;
-db+2,1,3+4;m, h;13,15;;-4;+5;;Alternate input: db+2,1~D;;Raven-db+2,1,3+4;;r22 SZN;;
 db+3;L;19;i28~29;-12~-11;+5~+6;+39d;Low crush 8~24 fs25~27 High crush 28~;js8~24 fs25~27 cs28~;Raven-db+3;Killer Bee;r30 FC;;
 db+4;L;21;i24~25;-14~-13;+4c~+5c;+37a;High crush 6~49;cs6~49;Raven-db+4;Shinobi Cyclone;r32;;
 b+1;h;21;i16~17;+7c~+8c;+10c~+11c;;"* Spike
@@ -195,8 +200,8 @@ Low crush 9~30";spk js9~30;Raven-uf+3;Shadow Scythe;r29;;
 uf+4;m;14;i20~21;-9~-8;+22a (+12);;"Balcony Break
 Low crush 8~27 fs28~30";bbr js8~27 fs28~30;Raven-uf+4;;r27;;
 uf+4,4;m, m;14,20;,i16~19;-15;+9g~12g;+21a;"* Balcony Break
-* Alternate input: ub+4,4 or u+4,4";bbr;Raven-uf+4,4;Stormbringer;r31;;
-uf+4,4~B;m, m;14,20;;-16~-15;+15a (+5);;;;Raven-uf+4,4~B;;r19 BT;;
+* Alternate input: ub+4,4 or u+4,4
+* Can cancel to r19 BT at -16~-15/+15a (+5) with B";bbr;Raven-uf+4,4;Stormbringer;r31;;
 uf+3+4;m;17;i23~25;-16~-14;+14a;;"Spike
 Low crush 8~26";spk js8~26;Raven-uf+3+4;;r34;;
 uf+3+4,4;m, L;17,9;,i21~22;-11~-10;+0~+1;;High crush 1~41;cs1~41;Raven-uf+3+4,4;;r29;;
@@ -227,7 +232,7 @@ qcf+1,2;m, sm;15,21;,i19~20;-14~-13;+24a (+9);;"* Tornado
 qcf+1,3+4;m;15;;+0;+13;+24a;Alternate input: qcf+1~D;;Raven-qcf+1,3+4;Fatal Elbow to SZ;r24 SZN;;
 qcf+2;L;18;i25~26;-12~-11;+5~+6;+14~+15;"Cancel to r45 BT with qcf+2~B
 High crush 10~45";cs10~45;Raven-qcf+2;Buzzsaw;r30;;
-qcf+2~1;L, m;18,25;,i20~21;-9~-8;+24a (+14);;"* Balcony Break
+qcf+2~1;m;25;i20~21;-9~-8;+24a (+14);;"* Balcony Break
 * Chip damage on block
 * Actual startup is i40~41";bbr chp;Raven-qcf+2~1;Laevateinn;r30;;
 qcf+3;h,t;16,14;i16~17;-7~-6;-4d;;"* Spike
@@ -254,8 +259,10 @@ ws3+4;m;20;i16~18;-12~-10;+7~+9;;"* Heat Engager
 
 * Homing
 * Balcony Break
-* Alternate input: qcf+3+4";he hom bbr;Raven-ws3+4;Spinning Middle Kick;r34;;
-ws3+4~B;m;20;;;;;Alternate input: qcf+3+4~B;;Raven-ws3+4~B;;r19 BT;;
+* Heat Dash +62a (+42) on hit, +5 on block
+
+* Alternate input: qcf+3+4
+* Can cancel to r19 BT with B";he hom bbr;Raven-ws3+4;Spinning Middle Kick;r34;;
 FC.1;sl;5;i10;-5;+6;;"Can recover standing with f
 High crush 1~";cs1~;Raven-FC.1;Crouch Jab;r24 FC;;
 FC.2;sl;8;i11;-4;+7;;High crush 1~;cs1~;Raven-FC.2;Crouch Straight;r23 FC;;
@@ -263,7 +270,7 @@ FC.3;L;10;i16;-17;-6;;High crush 1~;cs1~;Raven-FC.3;Crouch Spin Kick;r36 FC;;
 FC.4;l;6;i12;-15;-4;;High crush 1~;cs1~;Raven-FC.4;Crouch Chin Kick;r34 FC;;
 FC.df,d,DF;;;;;;;High crush 1~30;cs1~30;Raven-FC.df,d,DF;Crouch Step;r1? FC;;
 FC.df,d,DF,f;;;;;;;;;Raven-FC.df,d,df,f;Crouch Step to Shadow Sprint;r1? CD;;
-FC.df+3;L;17;i20~22;-9~-7;+2~+4;+30d;"Can be executed from standing with d,DF+3
+FC.df+3;L;17;i20~22;-9~-7;+2~+4;+30d;"Alternate input: d,DF+3
 High crush 1~35";cs1~35;Raven-FC.df+3;Aqua Spider;r26 BT;;
 FC.df+3+4;L,sm;17,25;i18~20 i34~36;-23~-21;-5a;;"* Spike
 * Transition to r20 SZN on hit only

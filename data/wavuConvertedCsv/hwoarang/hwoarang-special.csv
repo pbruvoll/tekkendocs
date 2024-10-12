@@ -19,7 +19,7 @@ H.2+3;m,m,h;13,14,24(51);i17~18, i18~19, i29;+11;+13;;"* Heat Smash
 * Also possible during Right Stance and Left Flamingo
 * Shifts to Right Flamingo";hs;Hwoarang-H.2+3;Trinity Claymore;;;
 R.df+1+2;m;55;i20;-15;;;"* Rage Art
-* Erases opponent's recoverable health on hit
+* Removes Recoverable Health
 * Possible during all stances except Backturn Stance
 Power crush";pc;Hwoarang-R.df+1+2;Sky Burial;;;
 1;h;5;i10;+1;+8;;;;Hwoarang-1;;r17;;
@@ -136,7 +136,7 @@ f,F+4;m;22;i17~18;-7;+19 (+10);;"* Balcony Break
 * Heat Engager
 
 * Also possible during Right Stance
-* Shifts to Right Stance (does not shift when using heat dash)";bbr he;Hwoarang-f,F+4;Peacekeeper;;;
+* Shifts to Right Stance (does not shift when using heat dash)";bbr he;Hwoarang-f,F+4;Peacekeeper;r28?;;
 f,n,4;;;;;;;"* Shifts to Right Flamingo
 * Sidesteps to the left";;Hwoarang-f,n,4;Right Flamingo Feint;;;
 f,n,d,df;;;;;;;;;Hwoarang-f,n,d,df;Shark Step;;;
@@ -161,7 +161,8 @@ ws2,3;m, h;8,10;i23~25;+3;+72 (+56);;"* Tornado
 Low crush";trn js;Hwoarang-ws2,3;Chonsan Spin;;;
 ws3;m;20;i14~18;-12;+22;;;;Hwoarang-ws3;Iron Heel;;;
 ws4;m;12;i11~12;-3;+8;;;;Hwoarang-ws4;;;;
-ws4,4;m, m;12,16;i15~19;-5;+4c;;* Shifts to Right Stance;;Hwoarang-ws4,4;Tsunami Kick;;;
+ws4,4;m, m;12,16;i15~19;-5;+4c;;"* Shifts to Right Stance
+* Combo from 1st hit";;Hwoarang-ws4,4;Tsunami Kick;;;
 ws3+4;m;16;i20~21;-9;+2;;"* Alternate input: f,n,d,df+3+4 (CD.3+4)
 * Shifts to Backturn Stance";;Hwoarang-ws3+4;;;;
 ws3+4,3;m, m;16,20;i21~26;-6;+5c;;;;Hwoarang-ws3+4,3;Spinning Scythe > Axe Heel;;;
@@ -177,13 +178,13 @@ CD.3;m;27;i18~19;+4;+25 (+16);;"* Balcony Break
 * Shifts to Left Flamingo";bbr chp;Hwoarang-CD.3;Phalanx;;;
 CD.4;m;18;i16;-18;+53 (+43);;"* Tornado
 * Also possible during Right Stance";trn;Hwoarang-CD.4;Sky Rocket;;;
-LFS.1;;6;i13;+5;+7;;;;Hwoarang-LFS.1;Left Flamingo > Back Hand;;;
-LFS.2;m;15;i16;-2;+9;;* Shifts to Right Stance;;Hwoarang-LFS.2;Right Backhand;;;
+LFS.1;h;6;i13;+5;+7;;;;Hwoarang-LFS.1;Left Flamingo > Back Hand;r14?;;
+LFS.2;m;15;i16;-2;+9;;* Shifts to Right Stance;;Hwoarang-LFS.2;Right Backhand;r21?;;
 LFS.3;m;10;i14;-13;-7;;* LFS.3,F to remain in Left Flamingo;;Hwoarang-LFS.3;;;;
 LFS.3,2;m, m;10,20;i21~22;-11;+1c;;;;Hwoarang-LFS.3,2;Flamingo Siege Combo;;;
 LFS.3,3;m, m;10,15;i21;-14;+32 (+24);;* Balcony Break;bbr;Hwoarang-LFS.3,3;Flamingo Kick Combo Middle;;;
 LFS.3,4;m, h;10,15;i21~23;+8;+19;;* Shifts to Right Flamingo;;Hwoarang-LFS.3,4;Flamingo Side Kick > Right Hook Kick;;;
-LFS.3,f+4;m, h;10,20;i21~27;-1;+40 (+14);;* Balcony Break;bbr;Hwoarang-LFS.3,f+4;Flamingo Side Kick > Backlash;;;
+LFS.3,f+4;m, h;10,20;i21~27;-1;+40 (+14);;* Balcony Break;bbr;Hwoarang-LFS.3,f+4;Flamingo Side Kick > Backlash;r23?;;
 LFS.4;h;24;i14~16;+4;+27 (+18);;"* Balcony Break
 * Shifts to Right Flamingo";bbr;Hwoarang-LFS.4;Right Step Kick;;;
 LFS.4~3;h,h;17,26;i15~16;-2;+24 (+14);;"* Balcony Break
@@ -194,7 +195,7 @@ LFS.b+1;m;15;i15;-14;-1;;* Sidesteps to the right;;Hwoarang-LFS.b+1;Stealth Need
 LFS.b+3;m;23;i20~22;-12;+14;;"* Balcony Break
 * Deals chip damage on block if an attack is absorbed
 * Shifts to Right Stance
-Power crush";bbr pc;Hwoarang-LFS.b+3;Left Thunderbolt;;;
+Power crush 8~";bbr pc8~;Hwoarang-LFS.b+3;Left Thunderbolt;;;
 LFS.b+4;m;15;i16~17;-8;0;;* Shifts to Right Stance;;Hwoarang-LFS.b+4;;;;
 LFS.b+4,3;m, h;15,20;i16~19;0;+20 (+11);;"* Balcony Break
 * Deals chip damage on block
@@ -202,7 +203,7 @@ LFS.b+4,3;m, h;15,20;i16~19;0;+20 (+11);;"* Balcony Break
 Low crush";bbr js;Hwoarang-LFS.b+4,3;Flamingo Screw Kick;;;
 LFS.df+3;m;12;i22~23;-14;-4;;"* Deals chip damage on block if an attack is absorbed
 * LFS.df+3,F/U/D to cancel and remain in Left Flamingo
-Power crush";pc;Hwoarang-LFS.df+3;;;;
+Power crush 7~";pc7~;Hwoarang-LFS.df+3;;;;
 LFS.df+3,4;m, m;12,20;i24~25;-12;+7;;* Deals chip damage on block if an attack is absorbed;;Hwoarang-LFS.df+3,4;Flamingo Double Claymore;;;
 LFS.d+3;l;7;i16;-17;-6;;;;Hwoarang-LFS.d+3;;;;
 LFS.d+3,4;l, h;7,10;i21~23;+8;+14;;* Shifts to Right Flamingo;;Hwoarang-LFS.d+3,4;Flamingo Low Right;;;
@@ -220,9 +221,9 @@ LFS.uf+4;m;20;i19~20;-14;+32 (+22);;* Tornado;trn;Hwoarang-LFS.uf+4;Switch Plasm
 LFS.uf+3+4;m,h;10,8;i14;-10;+1;;"* LFS.uf+3+4,F to remain in Left Flamingo
 Low crush";js;Hwoarang-LFS.uf+3+4;;;;
 LFS.uf+3+4,4;m,h, m;10,8,13;i14~15;-10;+7;;* Shifts to Right Stance;;Hwoarang-LFS.uf+3+4,4;Flamingo Flashing Trident;;;
-RFF.1;h;10;i10;+0;+6;;* Remains in Right Stance;;Hwoarang-RFF.1;;;;
+RFF.1;h;10;i10;+0;+6;;* Remains in Right Stance;;Hwoarang-RFF.1;;r19?;;
 RFF.1,1;h, m;10,12;i19;-8;+3;;;;Hwoarang-RFF.1,1;Migraine;;;
-RFF.2;h;6;i10;+2;+8;;* Remains in Right Stance;;Hwoarang-RFF.2;;;;
+RFF.2;h;6;i10;+2;+8;;* Remains in Right Stance;;Hwoarang-RFF.2;;r17?;;
 RFF.2,1;h, h;6,10;i10;+0;+6;;"* Jails
 * Remains in Right Stance";;Hwoarang-RFF.2,1;;;;
 RFF.2,1,1;h, h, m;6,10,12;i19;-8;+3;;;;Hwoarang-RFF.2,1,1;Big Fists;;;
@@ -242,7 +243,7 @@ RFF.3~4;h;27;i27~30;+4-+5;+47;;"* Strong Aerial Tailspin
 * Balcony Break
 * Clean hit
 * Chip damage on block
-Power crush";hom bbr chp pc;Hwoarang-RFF.3~4;Backlash;;;
+Power crush 8~";hom bbr chp pc8~;Hwoarang-RFF.3~4;Backlash;r18?;;
 RFF.4;h;9;i12;-8;+3;;"* Remains in Right Stance
 * Hold any direction to shift to Right Flamingo";;Hwoarang-RFF.4;;;;
 RFF.4,3;h, m;9,20;i25~31;-14c;+14;;* Remains in Right Stance;;Hwoarang-RFF.4,3;Chainsaw Kick;;;
@@ -257,13 +258,13 @@ RFF.df+3;m;21;i22~24;+1;+6;;"* Homing
 
 * Deals chip damage on block
 * Remains in Right Stance
-Low crush";hom he js;Hwoarang-RFF.df+3;Black Kite;;;
+Low crush 9~";hom he js9~;Hwoarang-RFF.df+3;Black Kite;r35?;;
 RFF.df+4;m;12;i13;-7;+1;;"* Remains in Right Stance
-* Hold any direction to shift to Right Flamingo";;Hwoarang-RFF.df+4;Right Sidekick;;;
+* Hold any direction to shift to Right Flamingo";;Hwoarang-RFF.df+4;Right Sidekick;r26?;;
 RFF.df+2+3;m;12;i22~23;-14;-4;;"* Deals chip damage on block if an attack is absorbed
 * RFF.df+2+3,F/U/D to cancel and shift to Left Flamingo
-Power crush";pc;Hwoarang-RFF.df+2+3;;;;
-RFF.df+2+3,4;m, m;12,20;i24~25;-12;+7;;* Deals chip damage on block if an attack is absorbed;;Hwoarang-RFF.df+2+3,4;Double Claymore;;;
+Power crush 7~";pc7~;Hwoarang-RFF.df+2+3;;r35?;;
+RFF.df+2+3,4;m, m;12,20;i24~25;-12;+7;;* Deals chip damage on block if an attack is absorbed;;Hwoarang-RFF.df+2+3,4;Double Claymore;r35?;;
 RFF.d+3;l;10;i18;-11;0;;* Shifts to Backturn Stance;;Hwoarang-RFF.d+3;;;;
 RFF.d+3,4;l, h;10,10;i21~23;+8;+14;;* Shifts to Right Flamingo;;Hwoarang-RFF.d+3,4;Triumph Low Right;;;
 RFF.d+3+4;l;19;i19;-11;+5;;* Remains in Right Stance;;Hwoarang-RFF.d+3+4;Heel Screw;;;
@@ -275,8 +276,8 @@ RFF.f+3;h;21;i14~17;+6;+17;;"* Shifts to Left Flamingo
 RFF.f+4;;;;;;;* Shifts to Right Flamingo;;Hwoarang-RFF.f+4;Right Flamingo Feint;;;
 RFF.f+4~4;m;20;i18~20;-13;+41 (+31);;"* Tornado
 * Remains in Right Stance";trn;Hwoarang-RFF.f+4~4;Plasma Blade;;;
-RFS.1;m;15;i16;-2;+9;;;;Hwoarang-RFS.1;Left Punch;;;
-RFS.2;h;6;i13;+5;+7;;* Shifts to Right Stance;;Hwoarang-RFS.2;Right Flamingo > Back Hand;;;
+RFS.1;m;15;i16;-2;+9;;;;Hwoarang-RFS.1;Left Punch;r21?;;
+RFS.2;h;6;i13;+5;+7;;* Shifts to Right Stance;;Hwoarang-RFS.2;Right Flamingo > Back Hand;r14?;;
 RFS.3;h;24;i14~16;+4;+27 (+18);;"* Balcony Break
 * Shifts to Left Flamingo
 * Sidesteps to the left
@@ -289,8 +290,8 @@ RFS.3+4;;;;;;;* Shifts to Left Flamingo;;Hwoarang-RFS.3+4;Flamingo Switch > Left
 RFS.b+3;m;21;i16~17;-9;+7;;* Heat Engager;he;Hwoarang-RFS.b+3;Left Heel Lance;;;
 RFS.b+4;m;23;i20~22;-12;+14;;"* Balcony Break
 * Deals chip damage on block if an attack is absorbed
-Power crush";bbr pc;Hwoarang-RFS.b+4;Right Thunderbolt;;;
-RFS.df+4;m;17;i17~19;+1;+8c;;;;Hwoarang-RFS.df+4;Snap Kick;;;
+Power crush 8~";bbr pc8~;Hwoarang-RFS.b+4;Right Thunderbolt;;;
+RFS.df+4;m;17;i17~19;+1;+8c;;;;Hwoarang-RFS.df+4;Snap Kick;r22?;;
 RFS.d+3;l;13;i15;-13;-5;;;;Hwoarang-RFS.d+3;;;;
 RFS.d+3,3;l, h;13,28;i25~27;-2;+34 (+8);;"* Balcony Break
 * Deals chip damage on block";bbr;Hwoarang-RFS.d+3,3;Teaser;;;
@@ -305,7 +306,7 @@ RFS.f+4,4;h,h, h;8,8,9;i23;-6;+75 (+59);;"* Tornado
 RFS.uf+3;m;22;i24~27;-7;+19;;Low crush;js;Hwoarang-RFS.uf+3;Flamingo Hunting Heel;;;
 RFS.uf+4;m;20;i17~18;-13;+30 (+20);;"* Tornado
 * Shifts to Right Stance
-Low crush";trn js;Hwoarang-RFS.uf+4;Air Blade;;;
+Low crush";trn js;Hwoarang-RFS.uf+4;Air Blade;r33?;;
 RFS.u+4;h;17;i25~26;-2;+8;;"* Homing
 * Shifts to Right Stance
 * Can link attack to last hit of Right Kicks > Raptor Combo, 4,4,4,4";hom;Hwoarang-RFS.u+4;Raptor Claw;;;
@@ -333,12 +334,12 @@ RFF.1+3;th(h);45;i12;;;;"* Break: 1+2
 Right throw;th(h);44;i12~14;;;;"* Break: 2
 * Opponent recovery on hit: FDFT off-axis to the right
 * Also possible during Right Stance";;Hwoarang-Right throw;Dead-End;;;
-d,db,b+3;th(h);45;i12~14;;;;"* Spike
+d,db,b+3;th(h);45;i11;;;;"* Spike
 * Break: 1
 * Opponent recovery on hit: FUFA, sideswap";spk;Hwoarang-d,db,b+3;Door Mat;;;
-f+2+3;th(h);35;i12~14;;;;"* Break: 1+2
+f+2+3;th(h);35;i12;;;;"* Break: 1+2
 * Opponent recovery on hit: FUFA, sideswap
 * Possible in all stances except Backturn Stance";;Hwoarang-f+2+3;Human Cannonball;;;
-uf+1+2;th(h);40;i12~14;;;;"* Break: 1+2
+uf+1+2;th(h);40;i12;;;;"* Break: 1+2
 * Opponent recovery on hit: FUFA
 * Also possible during Right Stance";;Hwoarang-uf+1+2;Leg Hook Throw;;;
