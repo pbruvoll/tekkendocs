@@ -13,11 +13,8 @@ export const CharacterGrid = ({ characterCards }: CharacterGridProps) => {
     <InView
       viewOptions={{ once: true, margin: '0px 0px -250px 0px' }}
       variants={{
-        hidden: {
-          opacity: 0,
-        },
+        hidden: {},
         visible: {
-          opacity: 1,
           transition: {
             staggerChildren: 0.02,
           },
