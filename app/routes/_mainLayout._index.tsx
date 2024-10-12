@@ -5,6 +5,7 @@ import {
   type ShouldRevalidateFunction,
   useLoaderData,
 } from '@remix-run/react'
+import { TextEffect } from '@/components/core/TextEffect'
 import { CharacterGrid } from '~/components/CharacterGrid'
 import { ContentContainer } from '~/components/ContentContainer'
 import { ExternalResources } from '~/components/ExternalResources'
@@ -68,7 +69,9 @@ export default function Index() {
           marginTop: '1rem',
         }}
       />
-      <p className="mb-4 mt-2">Frame data and learning resources for Tekken</p>
+      <TextEffect per="word" preset="fade" className="mb-4 mt-2">
+        Frame data and learning resources for Tekken
+      </TextEffect>
 
       <Heading as="h2" mt="5" mb="4" size="5">
         Resources
