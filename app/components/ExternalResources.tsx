@@ -5,6 +5,7 @@ import {
   CardTitle,
 } from '@/components/ui/card'
 import naGuide from '~/images/t8/externalResources/naguide.webp'
+import sidestepChart from '~/images/t8/externalResources/sidestep-chart.webp'
 import tekkenLibrary from '~/images/t8/externalResources/tekken-library.webp'
 import wavuWank from '~/images/t8/externalResources/wavu-wank.webp'
 import wavuWiki from '~/images/t8/externalResources/wavu-wiki.webp'
@@ -22,7 +23,7 @@ const data: ExternalResourceLink[] = [
     url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTsgbCJNSTKajMNlJvQleJOl0eTiEcV-PbeU0obDg1lsSqmz0lTtcD2k6NzfTPt7Db9Ua2dz1o_34Sv/pubhtml#',
     imageUrl: tekkenLibrary,
     description:
-      'A spread sheet with quick introductions to each character. Including key moves, punishers and starter combos',
+      'Quick introductions to each character, including key moves, punishers and starter combos',
   },
   {
     name: 'Wavu Wiki',
@@ -45,7 +46,12 @@ const data: ExternalResourceLink[] = [
     description:
       'A website with a collection of visual cheat sheets for characters',
   },
-  // Add more resources here
+  {
+    name: 'Sidestep chart',
+    url: 'https://steamuserimages-a.akamaihd.net/ugc/2517033479534447589/956149C5468761937A95F52265A73EDA7437EA0A/',
+    imageUrl: sidestepChart,
+    description: 'Advice on which side to generally step against a character',
+  },
 ]
 
 export const ExternalResources = () => {
