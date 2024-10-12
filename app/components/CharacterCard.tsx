@@ -1,21 +1,5 @@
-import { Badge, Card, Inset } from '@radix-ui/themes'
+import { Card, Inset } from '@radix-ui/themes'
 import { Link } from '@remix-run/react'
-
-export type CharacterCardProps = {
-  url: string
-  name: string
-  imgSrc?: string
-}
-
-export const CharacterCard = ({ url, name }: CharacterCardProps) => {
-  return (
-    <Link to={url} className="cursor-pointer">
-      <Badge size="2" style={{ cursor: 'pointer' }} variant="outline">
-        <span className="first-letter:uppercase">{name}</span>
-      </Badge>
-    </Link>
-  )
-}
 
 export type CharacterCard2Props = {
   url: string
