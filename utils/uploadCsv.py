@@ -1,3 +1,4 @@
+import time
 import gspread
 import argparse
 import os
@@ -54,6 +55,7 @@ def convert(path, gSheet):
 
     ws = gSheet.add_worksheet(title=worksheetName, rows=1, cols=1)
     ws.append_rows(worksheetData);
+    time.sleep(1)
     
     
 #inputDir is expected to contain one folder per character with multiple files (one for special moves, one for throws etc)

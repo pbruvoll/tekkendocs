@@ -20,7 +20,7 @@ H.2+3;m;50 (28);i20~21;+8;-15d;;"* Heat Smash
 * Transition to DBT with f+3_f+4
 * 14 chip damage on block";hs;Alisa-H.2+3;Quick-fix Protocol;r45;;
 R.df+1+2;m;;i20;-15;+0d;;"* Rage Art
-* Erases opponent's recoverable health on hit
+* Removes Recoverable Health
 Power crush 8~";pc8~;Alisa-R.df+1+2;Radiant Pegasus Bomb;r39;;
 1;h;5;i10;+1;+8;;Recovers 2f faster on hit or block (t27 r17);;Alisa-1;Jab;r19;;
 1,1;h, h;5,18;,i21;-3;+5;+14a;"* Combo from 1st hit with 4f delay
@@ -28,10 +28,11 @@ Power crush 8~";pc8~;Alisa-R.df+1+2;Radiant Pegasus Bomb;r39;;
 * Enter DES with 1+2";;Alisa-1,1;Stop Bit;r26;;
 1,2;h, h;5,10;,i12;-3;+8;;Jail from 1st attack with 4f delay;;Alisa-1,2;Typing Combo;r22;;
 1,2,2;h, h, h;5,10,20;,i20~35;-9~+6;+21a (+6);;"* Tornado
+* Balcony Break
+** on airborne hit
 * Weapon
-* Balcony break on airborne hit
 * Combo from 2nd CH with 1f delay
-* 6 chip damage on block";trn wpn;Alisa-1,2,2;Liftoff Combo;r29;;
+* 6 chip damage on block";trn bbr wpn;Alisa-1,2,2;Liftoff Combo;r29;;
 1,2,d+2;h, h, l;5,10,17;,i27~28;-11;+2;+33a;"* Combo from 2nd CH
 * Input can be delayed 8f
 * Move can be delayed 7f";;Alisa-1,2,d+2;Coil Punch Combo;r29;;
@@ -101,12 +102,13 @@ f+2,1;m, m;12,20;,i24~25;-10;+14c;;"* Heat Engager
 * Weapon
 * Combo from 1st hit
 * 6 chip damage on block";he bbr wpn;Alisa-f+2,1;Dual Session;r36;;
-f+2,3;m, h;12,8;,i22;-8;+4;;"* Combo from 1st CH with 1f delay
+f+2,3;m, h;12,8;,i22;-8;+4;;"* Balcony Break
+** on airborne hit
+* Combo from 1st CH with 1f delay
 * Transition to r40 DES with 1+2
-* Balcony Break on airborne hit
 &lt;div class=&quot;plainlist&quot;&gt;
 * ,Low crush 17~38
-* fs39~41&lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
+* fs39~41&lt;/div&gt;";"bbr &lt;div class=&quot;plainlist&quot;&gt;
 * js17~38
 * fs39~41&lt;/div&gt;";Alisa-f+2,3;;r36;;
 f+2,3,3;m, h, m;12,8,22;,i35~36;-10;+12a (-3);;"* Balcony Break
@@ -139,8 +141,9 @@ f+3+4;;;;;;;"&lt;div class=&quot;plainlist&quot;&gt;
 * js26~54
 * fs55~57&lt;/div&gt;";Alisa-f+3+4;Boot;r25 SBT;;
 df+1;m;10;i13;-6;+5;+8;;;Alisa-df+1;;r25;;
-df+1,1;m, h;10,20;,i30~31;+1;+8;;"* Combo from 1st CH with 2f delay
-* Balcony Break on aerial hit";;Alisa-df+1,1;;r19;;
+df+1,1;m, h;10,20;,i30~31;+1;+8;;"* Balcony Break
+** on airborne hit
+* Combo from 1st CH with 2f delay";bbr;Alisa-df+1,1;;r19;;
 df+1,1,2;m, h, h;10,20,28;,i22~25;+6;+8;;"* Combo from 2nd hit
 * 2 chip damage on block";;Alisa-df+1,1,2;Cyclone Mixer;r22 DES;;
 df+1,4;m, m;10,17;,i26~27;-11;+3c;+13c;"* Spike
@@ -278,7 +281,8 @@ ub+4,1,1;m, m, m;10,12,9;,i21;-20;-9;;"* Elbow
 * Combo from 1st CH";elb;Alisa-ub+4,1,1;3rd Hit;r39;;
 ub+4,1,1,2;m, m, m, h;10,12,9,5;,i24~25;-10;+1;;"* Combo from 3rd hit
 * Combo from 1st CH";;Alisa-ub+4,1,1,2;4th Hit;r28;;
-ub+4,1,1,2,1;m, m, m, h, h;10,12,9,5,5;,i35~36;-9;+7;;* Balcony break on airborne hit;;Alisa-ub+4,1,1,2,1;5th Hit;r27;;
+ub+4,1,1,2,1;m, m, m, h, h;10,12,9,5,5;,i35~36;-9;+7;;"* Balcony Break
+** on airborne hit";bbr;Alisa-ub+4,1,1,2,1;5th Hit;r27;;
 ub+4,1,1,2,1,1;m, m, m, h, h, m,M,M;10,12,9,5,5,3,3,3;,i32~33 i1~2 i1~2;-14;-3;;"* Spike
 * Weapon
 * Combo from 5th hit";spk wpn;Alisa-ub+4,1,1,2,1,1;6th Hit;r32 DES;;
@@ -411,10 +415,11 @@ f,f,F+2;h;30;i13~15;+5~+7;+28a (+20);;"* Balcony Break
 * fs28~30&lt;/div&gt;";"bbr &lt;div class=&quot;plainlist&quot;&gt;
 * js3~27
 * fs28~30&lt;/div&gt;";Alisa-f,f,F+2;Linear Punch;r34;;
-f,f,F+3;m;15;i18~19;-4;+6;;"Balcony Break on aerial hit
+f,f,F+3;m;15;i18~19;-4;+6;;"* Balcony Break
+** on airborne hit
 &lt;div class=&quot;plainlist&quot;&gt;
 * Low crush 3~30
-* fs31~33&lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
+* fs31~33&lt;/div&gt;";"bbr &lt;div class=&quot;plainlist&quot;&gt;
 * js3~30
 * fs31~33&lt;/div&gt;";Alisa-f,f,F+3;;r33;;
 f,f,F+3,4;m, m;15,20;,i20~22;-7;+31a (+5);;"* Balcony Break

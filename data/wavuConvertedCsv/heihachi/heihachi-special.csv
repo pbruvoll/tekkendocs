@@ -19,20 +19,21 @@ H.2+3;m,m;50;i15;+10;+0d;;"* Heat Smash
 * Floor Break
 * Chip damage on block
 * Transition to attack throw on hit
-* Enter RAI on block only
+* Transition to RAI on block only
 * Cancel RAI transition with B, +6 on block instead";hs fbr chp;Heihachi-H.2+3;Enraged Tettsui Otoshi;r36;;
 H.2+3,F;m;50;i15;+10;-2d;;"* Heat Smash
 * Reversal Break
 * Balcony Break
 * Chip damage on block
 * Transition to attack throw on hit
-* Enter RAI on block only
-* Cancel RAI transition with B, +6 on block instead";hs bbr chp;Heihachi-H.2+3,F;Eight Thunder Kami Slayer;FUJ;;
+* Transition to RAI on block only
+* Cancel RAI transition with B, +6 on block instead";hs bbr chp;Heihachi-H.2+3,F;Eight Thunder Kami Slayer;r36;;
 R.df+1+2;m,t;55+;i20;-15;+0d;;"* Rage Art
 * Reversal Break
 * Ereases opponent's recoverable health on hit
 * Damage increases with lower health, maximum 80
 * Freezes match timer on activation and on hit
+* Restores recoverable health on hit
 * Transition to attack throw on hit
 * Consumes Rage
 Power crush 8~";pc8~;Heihachi-R.df+1+2;Mishima Style Ultimate Technique - Tempest Dragon God Fist;r39;;
@@ -73,7 +74,7 @@ Low crush 17~39";bbr chp js17~39;Heihachi-1,b+2,4;Demon Lair;r41;;
 * Combo from 2nd hit
 * Chip damage on block
 * Erases opponent's recoverable health on hit
-* +42a on airborne hit";bbr chp;Heihachi-1,b+2,2;Ultimate Demon Basara;r36;;
+* +42d on airborne hit";bbr chp;Heihachi-1,b+2,2;Ultimate Demon Basara;r36;;
 2;h;10;i11;+0;-1;;;;Heihachi-2;;r19;;
 2,2;h, m;10,13;,i22;-8;+3c;;"* Spike
 * Combo from 1st hit with 2f delay";spk;Heihachi-2,2;Dogenkotsu;r33;;
@@ -106,7 +107,8 @@ f+2~1,1+2;m, m;20,24;,i26;-13;+11a (+2);;"* Balcony Break
 f+3;m;10;i18~20;-5;+9;;"* Knee
 * Enter FUJ -2 +12 r25 with D";kne;Heihachi-f+3;Lightning Crush;r28;;
 f+4;m;20;i19~20;+4;+7c;+26d;"* Spike
-* Enter FUJ r27 with D";spk;Heihachi-f+4;Right Splits Kick;r27;;
+* Enter FUJ r27 with D
+* +15c against a crouching opponent";spk;Heihachi-f+4;Right Splits Kick;r27;;
 f+1+2;h;15;i12;-14;+14c;;"* Spike
 * Head";spk;Heihachi-f+1+2;Chrome Dome;r33;;
 f+3+4;;;;;;;"* Cancel to r20 with b or db
@@ -208,7 +210,7 @@ uf+2,1;m, m;16,20;,i27~28;-11;+21a (+11);;"* Heat Engager
 uf+3;m;17;i28~29;-10;-10a (-20);;"* Balcony Break
 * 2nd hit available only on hit or block
 Low crush 9~";bbr js9~;Heihachi-uf+3;;r36;;
-uf+3,4;m, h;17,20;,i20~21;+4;+30a (+23);;"* Strong Aerial Tailspin
+uf+3,4;m, m;17,20;,i20~21;+4;+30a (+23);;"* Strong Aerial Tailspin
 * Balcony Break
 * Chip damage on block
 * Unavailable on whiff
@@ -223,7 +225,7 @@ uf+4;m;17;i24~26;-9;+43a;;"* Homing
 uf+4,1;m, M;17,30;,i25~30;+2;+5a;;"* Balcony Break
 * Chip damage on block
 * Consumes remaining Heat time
-* Combo from 1st hit";bbr chp;Heihachi-uf+4,H.1;Soaring Anvil Smasher;r40;;
+* Combo from 1st hit";bbr chp;Heihachi-uf+4,1;Soaring Anvil Smasher;r40;;
 1+2+3+4;;;;;;;"* Can't block for 5 seconds
 * CH state for 5 seconds";;Heihachi-1+2+3+4;"<div class=""dotlist"">
 
@@ -271,6 +273,16 @@ f,n,d,df,UF;;;;;;;"* Unable to act from frames 3~27
 * fs22~24&lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
 * js1~21
 * fs22~24&lt;/div&gt;";Heihachi-f,n,d,df,UF;;r27;;
+f,n,d,df:1;M;33;i19~21;-11;+26a (+16);;"* 9 chip damage on block
+&lt;div class=&quot;plainlist&quot;&gt;
+* Low crush 19~40
+* fs41~43&lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
+* js19~40
+* fs41~43&lt;/div&gt;";Heihachi-f,n,d,df${justFrame}1;"<div class=""dotlist"">
+
+* Omen Thunder God Fist
+* Electric Thunder God Fist
+</div>";r36;;
 f,n,d,df:2;h;23;i11~12;+5;+39a (+29);;"* Chip damage on block
 * Can be performed without the d input: f,n,df#2";chp;Heihachi-f,n,d,df${justFrame}2;Electric Wind God Fist;r24;;
 f,n,d,df+1;m;30;i19~21;-15;+30a (+20);;"* Becomes Electric/Omen Thunder God Fist (f,n,df#1) during Heat, partially uses remaining Heat Time
@@ -284,10 +296,10 @@ f,n,d,df+3;m;30;i27~28;+11g;+31a (+10);;"* Tornado
 * Balcony Break
 * Chip damage on block
 Low crush 5~28";trn bbr chp js5~28;Heihachi-f,n,d,df+3;Bone Splinter Kick;r38;;
-f,n,df:1;M;33;i19~21;-11;+26a (+16);;"* Chip damage on block
+f,n,df:1;M;38;i19~21;-11;+25a (+15);;"* 11 chip damage on block
 &lt;div class=&quot;plainlist&quot;&gt;
 * Low crush 19~40
-* fs41~43&lt;/div&gt;";"chp &lt;div class=&quot;plainlist&quot;&gt;
+* fs41~43&lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
 * js19~40
 * fs41~43&lt;/div&gt;";Heihachi-f,n,df${justFrame}1;"<div class=""dotlist"">
 
@@ -365,22 +377,21 @@ RAI.2;h;25;i17~18;+10;+51a;;"* Strong Aerial Tailspin
 * Homing
 * Guard Break
 * Chip damage on block";hom chp;Heihachi-RAI.2;Thunder Cutter;r34;;
-RAI.3;M;30;i22~23;+7;+3a;;"* Spike
+RAI.3;M;30;i22~23;-7;+3a;;"* Spike
 * Chip damage on block";spk chp;Heihachi-RAI.3;Jichinsai;r36;;
 RAI.4;L;15;i19~20;-23;+8c;+28a;* Links to f,n,d,DF+4 extensions;;Heihachi-RAI.4;Raijin Spinning Demon;r32;;
 WAR.1+2;m;34;i12;-10;+32a (+24);;"* Balcony Break
 * Chip Damage on block";bbr chp;Heihachi-WAR.1+2;Ultimate Demon Breath;r32;;
-WAR.FUJ.1;m;24;i15~16;-3;+75a (+59);;"* Tornado
+WAR.FUJ.2;m;24;i15~16;-3;+75a (+59);;"* Tornado
 * Reversal Break
-* Chip damage on block";trn chp;Heihachi-WAR.FUJ.1;Ultimate Hidden Wind God Fist;r32;;
+* Chip damage on block";trn chp;Heihachi-WAR.FUJ.2;Ultimate Hidden Wind God Fist;r32;;
 WAR.RAI.1;M;42;i17~19;-8;+12a (+2);;"* Reversal Break
 * Chip damage on block
 Low crush 17~";chp js17~;Heihachi-WAR.RAI.1;Ultimate Hidden Thunder God Fist;r49;;
 WAR.f,F+2;M;30;i19~21;-16;+37a (+27);;"* Tornado
 * Chip Damage on block";trn chp;Heihachi-WAR.f,F+2;Ultimate Demon God Fist;r33;;
-WAR.f,F+2;m;25;i20~22;+1;+56a;;"* Tornado
-* Spike
-* Chip Damage on block";trn spk chp;Heihachi-WAR.f,F+2;Ultimate Demon God Fist;r28;;
+WAR.f,F+3;m;25;i20~22;+1;+56a;;"* Spike
+* Chip Damage on block";spk chp;Heihachi-WAR.f,F+3;Ultimate Splits Kick;r28;;
 WAR.f,n,d,DF+4;L;17;i16~17;-14;+8c;+28a;"* No stagger on block
 * Links to f,n,d,DF+4 extensions";;Heihachi-WAR.f,n,d,DF+4;Ultimate Spinning Demon;r32;;
 1+3;t;35;i12~14;-3;-1d;;"* Homing
