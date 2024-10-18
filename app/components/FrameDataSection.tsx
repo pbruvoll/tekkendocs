@@ -5,7 +5,7 @@ import { sortOptions } from '~/constants/sortOptions'
 import { type Move } from '~/types/Move'
 import { type MoveFilter } from '~/types/MoveFilter'
 import { getFilterFromParams } from '~/utils/filterUtils'
-import { getStances } from '~/utils/frameDataUtils'
+import { getMoveGroups, getStances } from '~/utils/frameDataUtils'
 import { getSortByQueryParamValue, getSortSettings } from '~/utils/sortingUtils'
 import { ContentContainer } from './ContentContainer'
 import { FrameDataFilterDialog } from './FrameDataFilterDialog'
@@ -30,6 +30,10 @@ export const FrameDataSection = ({
   }, [searchParams])
 
   const stances = useMemo(() => getStances(moves), [moves])
+  console.log('stances', stances)
+
+  const moveGroups = useMemo(() => getMoveGroups(moves), [moves])
+  console.log('moveGroups', moveGroups)
 
   const setFilterValue = (key: string, value: string) => {
     setSearchParams(prev => {

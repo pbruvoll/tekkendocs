@@ -574,7 +574,40 @@ export const getStances = (moves: Move[]): Set<string> => {
   return stances
 }
 
+type MoveGroups = {
+  stances: Set<string>,
+  movements: Set<string>
+  states: Set<string>
+}
+
+export const getMoveGroups = (moves: Move[]): MoveGroups => {
+  const moveGroups = moves.reduce<MoveGroups>((groups, move) => {
+    if (move.hitLevel.startsWith('t')) {
+      return groups
+    }
+    const group = getMoveGroup(move.command)
+    if (!group) {
+      return groups
+    }
+    
+    if (group?.endsWith("+")) {
+      groups.movements.add(group.toLowerCase())
+    } else {
+      groups.stances.add(group);
+    }
+    return groups
+  }, {stances: new Set<string>(), movements: new Set<string>(), states: new Set<string>()})
+
+
+  return moveGroups
+}
+
 export const getStance = (command: string): string | undefined => {
   const splitted = command.split(/[ .]/)
+  return splitted.length > 1 ? splitted[0] : undefined
+}
+
+export const getMoveGroup = (command: string): string | undefined => {
+  const splitted = command.split(/[.\d]/, 2)
   return splitted.length > 1 ? splitted[0] : undefined
 }
