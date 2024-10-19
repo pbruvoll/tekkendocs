@@ -391,8 +391,10 @@ export const filterMoves = (moves: Move[], filter: MoveFilter | undefined) => {
   if (filter.stance && filter.stance.length > 0) {
     const stance = filter.stance
     filterFuncs.push((move: Move) => {
-      const commandStance = getStance(move.command)
-      return !!(commandStance && stance.includes(commandStance))
+      if(!move.command) return false
+      const stanceSplitted = move.command.split(".", 2)
+      if(stanceSplitted.length > 1) return stance.includes(stanceSplitted[0])
+      return !!(move.command && stance.some((s) => move.command.startsWith(s)))
     })
   }
 
@@ -633,7 +635,7 @@ const baseMovements = new Set([
   'hcf',
 ])
 // allKnwonStates = ['r', 'h', 'ws', "bt", "wr", "ch", 'ss', 'fc', 'hfc', '(back to wall)', "tackle", "(during enemy wall stun)", "(face down)"]
-const knownStates = new Set(['r', 'p', 'h', "wr", "ch", '(back to wall)', "tackle", "(during enemy wall stun)", "(face down)"])
+const knownStates = new Set(['r', 'ws', 'bt', 'ss', 'fc', 'hfc', 'p', 'h', 'otg', "wr", "ch", '(back to wall)', "tackle", "(during enemy wall stun)", "(airborne)", "(face down)"])
 
 export type MoveFilterTypes = {
   movements: string[]

@@ -91,6 +91,7 @@ export const FrameDataSection = ({
         <FrameDataFilterDialog
           filter={filter}
           stances={moveTypes.stances}
+          states={moveTypes.states}
           removeFilterValue={removeFilterValue}
           setFilterValue={setFilterValue}
           addFilterElement={addFilterElement}
