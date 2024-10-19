@@ -562,7 +562,6 @@ export const getStances = (moves: Move[]): Set<string> => {
           'left',
           'right',
           'otg',
-          'r',
           'ch',
           'p',
           '(during',
@@ -575,34 +574,41 @@ export const getStances = (moves: Move[]): Set<string> => {
 }
 
 type MoveGroups = {
-  stances: Set<string>,
+  stances: Set<string>
   movements: Set<string>
   states: Set<string>
 }
 
 export const getMoveGroups = (moves: Move[]): MoveGroups => {
-  const moveGroups = moves.reduce<MoveGroups>((groups, move) => {
-    if (move.hitLevel.startsWith('t')) {
-      return groups
-    }
-    const group = getMoveGroup(move.command)
-    if (!group) {
-      return groups
-    }
-    
-    if (group?.endsWith("+")) {
-      groups.movements.add(group.toLowerCase())
-    } else {
-      groups.stances.add(group);
-    }
-    return groups
-  }, {stances: new Set<string>(), movements: new Set<string>(), states: new Set<string>()})
+  const moveGroups = moves.reduce<MoveGroups>(
+    (groups, move) => {
+      if (move.hitLevel.startsWith('t')) {
+        return groups
+      }
+      const group = getMoveGroup(move.command)
+      if (!group) {
+        return groups
+      }
 
+      if (group?.endsWith('+')) {
+        groups.movements.add(group.toLowerCase())
+      } else {
+        groups.stances.add(group)
+      }
+      return groups
+    },
+    {
+      stances: new Set<string>(),
+      movements: new Set<string>(),
+      states: new Set<string>(),
+    },
+  )
 
   return moveGroups
 }
 
 export const getStance = (command: string): string | undefined => {
+  if(command.startsWith('ws')) {return 'ws'};
   const splitted = command.split(/[ .]/)
   return splitted.length > 1 ? splitted[0] : undefined
 }
@@ -610,4 +616,71 @@ export const getStance = (command: string): string | undefined => {
 export const getMoveGroup = (command: string): string | undefined => {
   const splitted = command.split(/[.\d]/, 2)
   return splitted.length > 1 ? splitted[0] : undefined
+}
+
+const baseMovements = new Set([
+  '',
+  'f',
+  'df',
+  'd',
+  'db',
+  'b',
+  'ub',
+  'u',
+  'uf',
+  'qcf',
+  'qcb',
+  'hcf',
+])
+// allKnwonStates = ['r', 'h', 'ws', "bt", "wr", "ch", 'ss', 'fc', 'hfc', '(back to wall)', "tackle", "(during enemy wall stun)", "(face down)"]
+const knownStates = new Set(['r', 'p', 'h', "wr", "ch", '(back to wall)', "tackle", "(during enemy wall stun)", "(face down)"])
+
+export type MoveFilterTypes = {
+  movements: string[]
+  states: string[]
+  stances: string[]
+}
+
+export const getMoveFilterTypes = (moves: Move[]): MoveFilterTypes => {
+  const allStances = new Set<string>()
+  const movements = new Set<string>()
+
+  moves.forEach(move => {
+    if (move.hitLevel.startsWith('t')) {
+      return
+    }
+    if (move.command.startsWith('ws')) {
+      allStances.add('ws')
+      return
+    }
+    const splittedMovement = move.command.split(/[\d+]/, 2)
+    if (splittedMovement.length > 1) {
+      const lowerCase = splittedMovement[0].toLowerCase()
+      if (baseMovements.has(lowerCase.split(',', 1)[0])) {
+        movements.add(lowerCase)
+        return
+      }
+    }
+    const splittedStance = move.command.split('.', 2)
+    if (splittedStance.length > 1 && !splittedStance[0].includes(',')) {
+      allStances.add(splittedStance[0])
+      return
+    }
+  })
+
+  const stances: string[] = []
+  const states: string[] = []
+  Array.from(allStances).forEach(stance => {
+    if (knownStates.has(stance.toLowerCase())) {
+      states.push(stance)
+    } else {
+      stances.push(stance)
+    }
+  })
+
+  return {
+    movements: Array.from(movements),
+    stances,
+    states,
+  }
 }

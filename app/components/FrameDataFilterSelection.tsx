@@ -6,7 +6,7 @@ import { RangeSlider } from './RangeSlider'
 
 export type FrameDataFilterSectionProps = {
   filter: MoveFilter
-  stances: Set<string>
+  stances: string[]
   setFilterValue: (key: string, value: string) => void
   removeFilterValue: (key: string) => void
   addFilterElement: (key: string, element: string) => void
@@ -303,7 +303,7 @@ export const FrameDataFilterSelection = ({
           Stances
         </Text>
         <div className="flex flex-wrap gap-3">
-          {Array.from(stances).map(stance => {
+          {stances.map(stance => {
             const active = stanceFilter?.includes(stance)
             return (
               <Button
