@@ -391,10 +391,10 @@ export const filterMoves = (moves: Move[], filter: MoveFilter | undefined) => {
   if (filter.stance && filter.stance.length > 0) {
     const stance = filter.stance
     filterFuncs.push((move: Move) => {
-      if(!move.command) return false
-      const stanceSplitted = move.command.split(".", 2)
-      if(stanceSplitted.length > 1) return stance.includes(stanceSplitted[0])
-      return !!(move.command && stance.some((s) => move.command.startsWith(s)))
+      if (!move.command) return false
+      const stanceSplitted = move.command.split('.', 2)
+      if (stanceSplitted.length > 1) return stance.includes(stanceSplitted[0])
+      return !!(move.command && stance.some(s => move.command.startsWith(s)))
     })
   }
 
@@ -575,48 +575,11 @@ export const getStances = (moves: Move[]): Set<string> => {
   return stances
 }
 
-type MoveGroups = {
-  stances: Set<string>
-  movements: Set<string>
-  states: Set<string>
-}
-
-export const getMoveGroups = (moves: Move[]): MoveGroups => {
-  const moveGroups = moves.reduce<MoveGroups>(
-    (groups, move) => {
-      if (move.hitLevel.startsWith('t')) {
-        return groups
-      }
-      const group = getMoveGroup(move.command)
-      if (!group) {
-        return groups
-      }
-
-      if (group?.endsWith('+')) {
-        groups.movements.add(group.toLowerCase())
-      } else {
-        groups.stances.add(group)
-      }
-      return groups
-    },
-    {
-      stances: new Set<string>(),
-      movements: new Set<string>(),
-      states: new Set<string>(),
-    },
-  )
-
-  return moveGroups
-}
-
 export const getStance = (command: string): string | undefined => {
-  if(command.startsWith('ws')) {return 'ws'};
+  if (command.startsWith('ws')) {
+    return 'ws'
+  }
   const splitted = command.split(/[ .]/)
-  return splitted.length > 1 ? splitted[0] : undefined
-}
-
-export const getMoveGroup = (command: string): string | undefined => {
-  const splitted = command.split(/[.\d]/, 2)
   return splitted.length > 1 ? splitted[0] : undefined
 }
 
@@ -635,7 +598,24 @@ const baseMovements = new Set([
   'hcf',
 ])
 // allKnwonStates = ['r', 'h', 'ws', "bt", "wr", "ch", 'ss', 'fc', 'hfc', '(back to wall)', "tackle", "(during enemy wall stun)", "(face down)"]
-const knownStates = new Set(['r', 'ws', 'bt', 'ss', 'fc', 'hfc', 'p', 'h', 'otg', "wr", "ch", '(back to wall)', "tackle", "(during enemy wall stun)", "(airborne)", "(face down)"])
+const knownStates = new Set([
+  'r',
+  'ws',
+  'bt',
+  'ss',
+  'fc',
+  'hfc',
+  'p',
+  'h',
+  'otg',
+  'wr',
+  'ch',
+  '(back to wall)',
+  'tackle',
+  '(during enemy wall stun)',
+  '(airborne)',
+  '(face down)',
+])
 
 export type MoveFilterTypes = {
   movements: string[]

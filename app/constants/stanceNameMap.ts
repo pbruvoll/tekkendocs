@@ -17,5 +17,4 @@ export const stateNameMap: Record<string, string> = {
   WR: 'While running',
   R: 'Rage',
   P: 'Successful parry',
-
 }
