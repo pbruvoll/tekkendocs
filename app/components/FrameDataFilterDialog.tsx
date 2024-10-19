@@ -14,6 +14,7 @@ export const FrameDataFilterDialog = ({
   addFilterElement,
   removeFilterElement,
   stances,
+  states,
 }: FrameDataFilterDialogProps) => {
   const filterCount = Object.entries(filter).filter(([, value]) => {
     if (value === undefined) {
@@ -43,6 +44,7 @@ export const FrameDataFilterDialog = ({
         <FrameDataFilterSelection
           filter={filter}
           stances={stances}
+          states={states}
           setFilterValue={setFilterValue}
           removeFilterValue={removeFilterValue}
           addFilterElement={addFilterElement}

@@ -1,12 +1,13 @@
 import { Button, Flex, Text } from '@radix-ui/themes'
 import { filterKey, hitLevelValue } from '~/constants/filterConstants'
-import { stanceNameMap } from '~/constants/stanceNameMap'
+import { stanceNameMap, stateNameMap } from '~/constants/stanceNameMap'
 import { type MoveFilter } from '~/types/MoveFilter'
 import { RangeSlider } from './RangeSlider'
 
 export type FrameDataFilterSectionProps = {
   filter: MoveFilter
-  stances: Set<string>
+  stances: string[]
+  states: string[]
   setFilterValue: (key: string, value: string) => void
   removeFilterValue: (key: string) => void
   addFilterElement: (key: string, element: string) => void
@@ -20,6 +21,7 @@ export const FrameDataFilterSelection = ({
   addFilterElement,
   removeFilterElement,
   stances,
+  states,
 }: FrameDataFilterSectionProps) => {
   const {
     hitLevels,
@@ -300,10 +302,35 @@ export const FrameDataFilterSelection = ({
       </section>
       <section className="flex flex-col gap-3">
         <Text as="div" size="2" mb="1" weight="bold">
+          States
+        </Text>
+        <div className="flex flex-wrap gap-3">
+          {states.map(state => {
+            const active = stanceFilter?.includes(state)
+            return (
+              <Button
+                key={state}
+                variant={active ? 'solid' : 'outline'}
+                onClick={() => {
+                  if (active) {
+                    removeFilterElement(filterKey.Stance, state)
+                  } else {
+                    addFilterElement(filterKey.Stance, state)
+                  }
+                }}
+              >
+                {stateNameMap[state] || state}
+              </Button>
+            )
+          })}
+        </div>
+      </section>
+      <section className="flex flex-col gap-3">
+        <Text as="div" size="2" mb="1" weight="bold">
           Stances
         </Text>
         <div className="flex flex-wrap gap-3">
-          {Array.from(stances).map(stance => {
+          {stances.map(stance => {
             const active = stanceFilter?.includes(stance)
             return (
               <Button
