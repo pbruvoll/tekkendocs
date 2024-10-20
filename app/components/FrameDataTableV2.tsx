@@ -124,13 +124,15 @@ export const FrameDataTable = ({
             return (
               <Table.Row key={move.moveNumber}>
                 {charId && <Table.Cell>{charId}</Table.Cell>}
-                <Table.Cell className="inline-flex items-center gap-2 text-text-primary">
-                  <Link style={{ textDecoration: 'none' }} to={moveUrl}>
-                    {move.command}
-                  </Link>
-                  {(move.video || move.ytVideo) && (
-                    <MovePreviewDialogButton move={move} url={moveUrl} />
-                  )}
+                <Table.Cell>
+                  <span className="inline-flex items-center gap-2 text-text-primary">
+                    <Link style={{ textDecoration: 'none' }} to={moveUrl}>
+                      {move.command}
+                    </Link>
+                    {(move.video || move.ytVideo) && (
+                      <MovePreviewDialogButton move={move} url={moveUrl} />
+                    )}
+                  </span>
                 </Table.Cell>
                 <Table.Cell>{move.hitLevel}</Table.Cell>
                 <Table.Cell>{move.damage}</Table.Cell>
