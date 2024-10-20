@@ -3,7 +3,6 @@ import {
   CaretDownIcon,
   CaretSortIcon,
   CaretUpIcon,
-  VideoIcon,
 } from '@radix-ui/react-icons'
 import { Table } from '@radix-ui/themes'
 import { Link, useLocation, useSearchParams } from '@remix-run/react'
