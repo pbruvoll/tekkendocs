@@ -15,6 +15,7 @@ import { filterMoves, sortMovesV2 } from '~/utils/frameDataUtils'
 import { charIdFromMove, commandToUrlSegment } from '~/utils/moveUtils'
 import { getSortSettings } from '~/utils/sortingUtils'
 import { ContentContainer } from './ContentContainer'
+import { MovePreviewDialogButton } from './MovePreviewDialogButton'
 
 export type FrameDataTableProps = {
   moves: Move[]
@@ -118,21 +119,19 @@ export const FrameDataTable = ({
             const charId = hasMultipleCharacters
               ? charIdFromMove(move as MoveT8)
               : undefined
+            const moveUrl =
+              (charId ? `../${charId}/` : '') +
+              commandToUrlSegment(move.command)
             return (
               <Table.Row key={move.moveNumber}>
                 {charId && <Table.Cell>{charId}</Table.Cell>}
-                <Table.Cell>
-                  <Link
-                    className="inline-flex items-center gap-2 text-text-primary"
-                    style={{ textDecoration: 'none' }}
-                    to={
-                      (charId ? `../${charId}/` : '') +
-                      commandToUrlSegment(move.command)
-                    }
-                  >
+                <Table.Cell className="inline-flex items-center gap-2 text-text-primary">
+                  <Link style={{ textDecoration: 'none' }} to={moveUrl}>
                     {move.command}
-                    {(move.video || move.ytVideo) && <VideoIcon />}
                   </Link>
+                  {(move.video || move.ytVideo) && (
+                    <MovePreviewDialogButton move={move} url={moveUrl} />
+                  )}
                 </Table.Cell>
                 <Table.Cell>{move.hitLevel}</Table.Cell>
                 <Table.Cell>{move.damage}</Table.Cell>
