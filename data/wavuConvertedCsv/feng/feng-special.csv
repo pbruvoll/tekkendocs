@@ -26,7 +26,6 @@ H.2+3;m,m;22,26;i21,24;+12, +24 on STC at Wall, +19 at Wall;+30d (-6);;"Heat Sma
 1,2,2;h, h, h;5,9,12;i17;-13;+3;;"* Combo from 2nd hit
 * Transition to -11 +5 BT with B";;Feng-1,2,2;Firestorm;;;
 1,3;h, h;5,19;i16~17;-5;+8~+9;;* Combo from 1st hit;;Feng-1,3;Jab Roundhouse Combo;;;
-1+3;h;35;;;-3;;* Throw break 1 or 2;;Feng-1+3;Neck Twister;;;
 1+3+4;;;;;;;;;Feng-1+3+4;Taunt;;;
 2;h;8;i10;-3;+5;;;;Feng-2;Right Jab;r22;;
 2,4;h, m;8,15;i17;-12;-1;;* Jail from 1st attack;;Feng-2,4;;;;
@@ -35,7 +34,6 @@ H.2+3;m,m;22,26;i21,24;+12, +24 on STC at Wall, +19 at Wall;+30d (-6);;"Heat Sma
 * Move can be delayed
 * Cancel to -13 -2 BT with B
 Low crush 12~19";bbr js12~19;Feng-2,4,1;San Liang Heng;;;
-2+4;h;35;;;0;;* Throw break 1 or 2;;Feng-2+4;Serpent Slayer;;;
 3;m;15;i16;-11;0;;;;Feng-3;;;;
 3,3;m, h;15,10;i17;-9;+2;;"* Combo from 1st hit
 * Jail from 1st attack
@@ -159,7 +157,7 @@ b+1+2;m;31;i13~14;-19;+18a (+13);;"* Heat Engager
 
 * Heat Dash +5 +18 at wall, +43d (+35)
 
-* Balcony Break";he bbr;Feng-b+1+2;Iron Fortress;;;
+* Balcony Break";he bbr;Feng-b+1+2;Iron Fortress;r38?;;
 b+3+4;;;;;;;"* Enter STC with f 
 * Take 15 Frames 
 * Autoblock 20 Frames";;Feng-KNP;Deceptive Step;KNP;;
@@ -176,8 +174,6 @@ uf+4;m;13;i15~17;-13;+33a (+23);;"* Alternate input with uf or u
 Low crush 9";js9;Feng-uf+4;Soaring Eagle;;;
 uf+4;m;13;i15~17;-13;+33a (+23);;"* Alternate input with uf or u
 Low crush 9";js9;Feng-uf+4;Soaring Eagle;;;
-uf+1+2;h;40;;;0;;"* Spike
-* Throw break 1+2";spk;Feng-uf+1+2;Kunlun Avalanche;;;
 uf+3+4;m,h,h;10,10,7;i24,4,3;-14;+25a (+18);;High crush 6~24Low crush 25;cs6~24js25;Feng-uf+3+4;;;;
 uf+3+4;m,h,h;10,10,7;i24,4,3;-14;+25a (+18);;High crush 6~24Low crush 25;cs6~24js25;Feng-uf+3+4;;;;
 uf+3+4,3;m,h,h, h;10,10,7,11;,i17~18;-6;+70a (+54);;"* Balcony Break
@@ -186,9 +182,6 @@ uf+3+4,3;m,h,h, h;10,10,7,11;,i17~18;-6;+70a (+54);;"* Balcony Break
 * causes 1st hit not to crush";bbr trn;Feng-uf+3+4,3;Assassin's Bow;;;
 1+2+3+4;;;;;;;;;Feng-1+2+3+4;Ki Charge;;;
 B,B,U/B;m;21;i39~41;+4c;+22;+22;* The move only can be do it near the wall with the back at the wall allowing to escape from the corner and on hit starts combo, similar to a launcher and without tornado.;;Feng-B,B,U/B;Evading Wall;js5;;
-Back Throw;h;50;;;-4;;* Cannot break throw;;Feng-Back Throw;Violent Storm;;;
-Left Throw;h;40;;;-6;;* Throw break 1;;Feng-Left Throw;Jaws of Death;;;
-Right Throw;h;40;;;-4;;* Throw break 2;;Feng-Right Throw;Wandering Soul;;;
 b,f+1;m;25;i25~26;-15;+10d (+1);+44a;;;Feng-b,f+1;Falcon's Beak;;;
 b1+3;;25;;;;;"* Timed with opponent punch
 Parry state";ps;Feng-b+1+3_2+4;Attack Reversal;;;
@@ -255,7 +248,6 @@ Power crush 8~";he pc8~;Feng-BT.2;Slashing Tiger;;;
 BT.3;m;33;i32~33;+8c;+8c;;"* Chip damage on block
 * Transition to STC with f";chp;Feng-BT.3;Tremor Stomp;;;
 BT.1+2;m;20;i16~17;-3;+8;+41d (+33);* Balcony Break (CH only);;Feng-BT.1+2;Hustle Elbow;;;
-BT.1+4;h;45;;;-5;;* Throw break 1+2;;Feng-BT.1+4_2+3;Pao Lau Impaler;;;
 BT.d+1;l;20;i20~21;-13c;+4;+16d;High crush 15~;cs15~;Feng-BT.d+1;Reverse Fractured Diamond;;;
 BT.d+3;l;20;i18~20;-26c;-3;+70a (+54);"* Has clean hit effect
 High crush 6~";cs6~;Feng-BT.d+3;Reverse Mighty Sweep Kick;;;
@@ -287,6 +279,14 @@ STC.4;l;20;i20;-13;+3;+14;;;Feng-STC.4;Jin Bu Zhen;;;
 STC.1+2;m;20;i18;-9c;+17d;;;;Feng-STC.1+2;Pummeling Fists;;;
 STC.F+3+4;m;21;i18;;+53a;;"* Only occurs during STC after absorbing 2 attacks
 Parry state";ps;Feng-STC.F+3+4;Falcon Beak's Snare;;;
+1+3;t;35;;;-3;;* Throw break 1 or 2;;Feng-1+3;Neck Twister;;;
+2+4;t;35;;;0;;* Throw break 1 or 2;;Feng-2+4;Serpent Slayer;;;
+BT.1+4;t;45;;;-5;;* Throw break 1+2;;Feng-BT.1+4_2+3;Pao Lau Impaler;;;
+Back Throw;t;50;;;-4;;* Cannot break throw;;Feng-Back Throw;Violent Storm;;;
+Left Throw;t;40;;;-6;;* Throw break 1;;Feng-Left Throw;Jaws of Death;;;
 R.df+1+2;t;55;i20;-15;+0d;;"* Rage Art
 * Removes Recoverable Health
 * Damage increases with lower health";;Feng-R.df+1+2;Enlighted Yellow Dragon Palm;;;
+Right Throw;t;40;;;-4;;* Throw break 2;;Feng-Right Throw;Wandering Soul;;;
+uf+1+2;t;40;;;0;;"* Spike
+* Throw break 1+2";spk;Feng-uf+1+2;Kunlun Avalanche;;;

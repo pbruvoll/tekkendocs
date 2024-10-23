@@ -84,13 +84,16 @@ d+3,4;l, h;7,10;i21~23;+8;+14;;* Shift to Right Flamingo;;Hwoarang-d+3,4;Smash L
 d+4;l;7;i19;-17;-6;;* Also possible during Right Stance;;Hwoarang-d+4;;;;
 d+4,4;l, h;722;i20;-13;+69 (+53);;"* Tornado
 * Also possible during Right Stance";trn;Hwoarang-d+4,4;Firecracker;;;
-db+3;l;12;i19;-13;-1;;* Also possible during Right Stance;;Hwoarang-db+3;Sweep Kick;;;
+db+3;l;12;i19;-13;-1;+17g;* Also possible during Right Stance;;Hwoarang-db+3;Sweep Kick;;;
 db+4;l;14;i16;-12;-8;;* db+4,F to shift to Right Flamingo;;Hwoarang-db+4;;;;
 db+4,4;l, h;14,21;i17~19;0;+24;;* Natural on CH;;Hwoarang-db+4,4;Ankle Biter > Crescent Kick;;;
 db+3+4;ub(m);40;i61~63;;+17;;"* Also possible during Right Stance
 * db+3+4,b,b to cancel and shift to Left Flamingo";;Hwoarang-db+3+4;Dynamite Heel;;;
 b+1;m;15;i15;-14;-1;;* Sidesteps to the right;;Hwoarang-b+1;Stealth Needle;;;
 b+1+3/b+2+4;;;i6;;+9;;* Parries high and mid punches. Pressing 4 on successful parry gives Shotgun Shuffle;;Hwoarang-b+1+3 or b+2+4;Parry;;;
+b+2;h;18;i13~15;-9;+15;;"* Homing
+* Also possible during Right Stance
+* Sidesteps to the left";hom;Hwoarang-b+2;Knife Hand Strike;;;
 b+3;m;17;i16~17;-19;+35 (+25);;* Tornado;trn;Hwoarang-b+3;Left Plasma Blade;;;
 b+4;h;17;i13~14;-10;+1;;* Shifts to Right Stance;;Hwoarang-b+4;Nose Bleeder;;;
 ub+2;h;18;i13~15;-9;+15;;"* Homing
@@ -142,7 +145,7 @@ f,n,4;;;;;;;"* Shifts to Right Flamingo
 f,n,d,df;;;;;;;;;Hwoarang-f,n,d,df;Shark Step;;;
 f,n,df:4;m;18;i16;-8;+59 (+49);;"* Tornado
 * Chip damage on block
-* Also possible during Right Stance";trn chp;Hwoarang-f,n,df${justFrame}4;Lethal Sky Rocket;;;
+* Also possible during Right Stance. The 4 input can be delayed up to 10 frames after the df input in RFF.";trn chp;Hwoarang-f,n,df${justFrame}4;Lethal Sky Rocket;;;
 uf,n,4;m;20;i23~25;-13;+32 (+22);;"* Also possible during Right Stance
 Low crush";js;Hwoarang-uf,n,4;Delayed Rising Toe Kick;;;
 f,f,F+3;m;30;i22~24;+6;+23;;"* Balcony Break
@@ -212,7 +215,7 @@ LFS.f+3;m;23;i19~20;+4;+26;;"* Balcony Break
 * Heat Engager
 
 * Remains in Left Flamingo";bbr he;Hwoarang-LFS.f+3;Flamingo Rocket;;;
-LFS.f+4;m;18;i17~18;-10;+6;;* Homing;hom;Hwoarang-LFS.f+4;Spinning Hook Kick;;;
+LFS.f+4;m;18;i17~18;-10;+6;+16a (+7a);* Homing;hom;Hwoarang-LFS.f+4;Spinning Hook Kick;;;
 LFS.uf+3;m;11;i28~29;-6;-7;;Low crush;js;Hwoarang-LFS.uf+3;;;;
 LFS.uf+3,4;m, m;11,12;i20~21;+2;+13;;"* Shifts to Right Flamingo
 Low crush";js;Hwoarang-LFS.uf+3,4;;;;
@@ -299,7 +302,7 @@ RFS.d+4;l;15;i20~21;-23;+7;;* Shifts to Right Stance;;Hwoarang-RFS.d+4;;;;
 RFS.d+4,3;l, h;15,12;i25;-9;-1;;;;Hwoarang-RFS.d+4,3;;;;
 RFS.d+4,3,4;l, h, h;15,12,20;i27~28;-9;+28 (+2);;"* Balcony Break
 Low crush";bbr js;Hwoarang-RFS.d+4,3,4;Predator Bardiche;;;
-RFS.f+3;m;18;i20~21;-10;+5;;* Homing;hom;Hwoarang-RFS.f+3;Screw Kick;;;
+RFS.f+3;m;18;i20~21;-10;+5;+15a(+6a);* Homing;hom;Hwoarang-RFS.f+3;Screw Kick;;;
 RFS.f+4;h,h;8,8;i8;+0;+2;;* Remains in Right Flamingo;;Hwoarang-RFS.f+4;;;;
 RFS.f+4,4;h,h, h;8,8,9;i23;-6;+75 (+59);;"* Tornado
 * Shifts to Right Stance";trn;Hwoarang-RFS.f+4,4;Right Viper Combo > Right Sword;;;
