@@ -52,6 +52,7 @@ export const FrameDataFilterSelection = ({
     video,
     stance: stanceFilter,
     removeRecoveryHealth,
+    recoverFullCrouch,
   } = filter
   return (
     <Flex direction="column" gap="5">
@@ -275,6 +276,7 @@ export const FrameDataFilterSelection = ({
                 removeRecoveryHealth,
                 'Removes recoverable health',
               ],
+              [filterKey.RecoverFullCrouch, recoverFullCrouch, 'Recover FC'],
               [filterKey.Spike, spike, 'Spike'],
               [filterKey.FloorBreak, floorBreak, 'Floor break'],
               [filterKey.Elbow, elbow, 'Elbow'],

@@ -27,6 +27,7 @@ export const filterKey = {
   Video: 'video',
   HitsGrounded: 'hitsGrounded',
   RemoveRecoveryHealth: 'removeRecoveryHealth',
+  RecoverFullCrouch: 'recoverFullCrouch',
 } as const
 
 export const hitLevelValue = {

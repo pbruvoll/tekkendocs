@@ -175,6 +175,16 @@ export const removesRecoverableHealth = (move: Move) => {
   return /Erases opponent/i.test(move.notes || '')
 }
 
+export const recoverFullCrouch = (move: Move) => {
+  return (
+    (move.recovery && move.recovery.includes('FC')) ||
+    move.notes
+      .toLowerCase()
+      .split('\n')
+      .some(s => s.includes('transition') && s.includes('fc'))
+  )
+}
+
 export const hasTag = (tag: string, move: Move) => {
   return move.tags?.[tag] !== undefined
 }
@@ -370,6 +380,7 @@ export const filterMoves = (moves: Move[], filter: MoveFilter | undefined) => {
     [filter.video, (move: Move) => !!(move.video || move.ytVideo)],
     [filter.chip, isChip],
     [filter.removeRecoveryHealth, removesRecoverableHealth],
+    [filter.recoverFullCrouch, recoverFullCrouch],
     [filter.powerCrush, (move: Move) => hasTag('pc', move)],
     [filter.highCrush, (move: Move) => hasTag('cs', move)],
     [filter.lowCrush, (move: Move) => hasTag('js', move)],
