@@ -20,6 +20,7 @@ export type MoveFilter = {
   powerCrush?: boolean
   spike?: boolean
   removeRecoveryHealth?: boolean
+  recoverFullCrouch?: boolean
   weapon?: boolean
   floorBreak?: boolean
   elbow?: boolean
