@@ -176,7 +176,13 @@ export const removesRecoverableHealth = (move: Move) => {
 }
 
 export const recoverFullCrouch = (move: Move) => {
-  return (move.recovery && move.recovery.includes("FC")) || move.notes.toLowerCase().split("\n").some(s => s.includes("transition") && s.includes("fc"));
+  return (
+    (move.recovery && move.recovery.includes('FC')) ||
+    move.notes
+      .toLowerCase()
+      .split('\n')
+      .some(s => s.includes('transition') && s.includes('fc'))
+  )
 }
 
 export const hasTag = (tag: string, move: Move) => {
