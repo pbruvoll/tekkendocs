@@ -45,18 +45,20 @@ f+3;m;22;i17;-13;+5;+54a(+23);Balcony Break on air hit;;Kazuya-f+3;Oni Front Kic
 f+4;m;20;i19~20;+4c;+7c;+31d;Spike;spk;Kazuya-f+4;Right Splits Kick;;;
 f+1+2;m;20;i25;-9;+11a(+2);;"* Balcony Break
 * Parries high and mid punches
-Parry state";bbr ps;Kazuya-f+1+2;Glorious Demon God Fist;;;
+Parry state 3?~10?";bbr ps3?~10?;Kazuya-f+1+2;Glorious Demon God Fist;;;
 df+1;m;11;i15~16;-7;+9;;;;Kazuya-df+1;Entrails Smash;26;;
 df+1,2;m, h;11,20;i15;+0c;+9g;;"* Heat Engager
 
-* Heat Dash +67a(+50) on hit
-* Chip damage on block (6)
-* Combos from first hit";he chp;Kazuya-df+1,2;Slaughter Hook;;;
+* Heat Dash +67a (+50a) on hit, +5 on block
+
+* 6 Chip Damage on block
+* 8 Chip Damage on block in heat
+* Combo from 1st hit with 6?F delay";he;Kazuya-df+1,2;Slaughter Hook;;;
 df+1,4;m, h;11,20;i16;-11;KND;;"* Balcony Break
-* Combo from 1st hit";bbr;Kazuya-df+1,4;Slaughter High Kick;;;
+* Combo from 1st hit with 6?F delay";bbr;Kazuya-df+1,4;Slaughter High Kick;;;
 df+1,df+2;m, m;11,22;i22;-8;+18c;+32a(+22);"* Tornado
 * Balcony Break
-* Combos on 1st Counterhit";trn bbr;Kazuya-df+1,df+2;Slaughter Uppercut;;;
+* Combo from 1st CH with 6?F delay";trn bbr;Kazuya-df+1,df+2;Slaughter Uppercut;;;
 df+2;m;22;i14;-12;+5;+59a;"* Homing
 * Balcony Break on air hit
 * Crumple stun +13F after CH";hom;Kazuya-df+2;Abolishing Fist;32;;
@@ -68,9 +70,12 @@ df+3,2,1;m, m, m;13,15,21;;-14;+8(-1);+25;"* Tornado
 * Balcony Break
 * Combo from 2nd CH
 * Can be delayed 16F";trn bbr;Kazuya-df+3,2,1;Impaling Knee Twin Thrust;;;
-df+3,2,1*;m, m, m;13,15,25;i46;+11(+18w);+10(+1);;"* Tornado
+df+3,2,1*;m, m, m;13,15,25;i46;+11;+10(+1);;"* Tornado
 * Balcony Break
-* Chip damage when guarded";trn bbr chp;Kazuya-df+3,2,1*;Impaling Knee Twin Skewer;;;
+* Wall Crush +18g on block
+
+
+* Chip damage when guarded";trn bbr wc chp;Kazuya-df+3,2,1*;Impaling Knee Twin Skewer;;;
 df+4;m;10;i13~14;-9;+2;;;;Kazuya-df+4;;28;;
 df+4,4;m, m;10,16;;-15;-4c;;"* Spike
 * Combo from 1st hit
@@ -90,10 +95,12 @@ d+1+2,B;l, sp;20,0;;;;;High crush 6~;cs6~;Kazuya-d+1+2,B;Nejiri Uraken to Cancel
 db+1;m;7;i13;-10;+0;;;;Kazuya-db+1;;r31;;
 db+1,2;m, m,m;7,8,15;i20;-19;+9a (-8);;"* Heat Engager
 
-* Heat Dash +35a on hit
+* Heat Dash +35a (+27a) on hit, +5 on block
+
 * Balcony Break
-* Chip damage when guarded
-* Combo from 1st hit with 2?F delay";he bbr chp;Kazuya-db+1,2;Goutsuiken;;;
+* 4 Chip Damage on block
+* 8 (2+6) Chip Damage on block in heat
+* Combo from 1st hit with 1?F delay";he bbr;Kazuya-db+1,2;Goutsuiken;;;
 db+2;m;23;i20;-9c;+7c;+21d;Spike;spk;Kazuya-db+2;Lion Slayer;FC;;
 db+3;l;14;i19~20;-12c;-1;+7c;High crush 6~;cs6~;Kazuya-db+3;Sliding Low Kick;FC;;
 db+4;l;18;i20;-12;+4;+17g;Flips over on grounded hit;;Kazuya-db+4;Stature Smash;;;
@@ -119,12 +126,17 @@ b+3,1,4,1;h, h, l, m;15,10,10,15;,i15;-14;+15a (+6);;Balcony Break;bbr;Kazuya-b+
 b+3,1,4,3;h, h, l, l;15,10,10,12;,i20;-13c;+1;;;;Kazuya-b+3,1,4,3;Reign of Terror;;;
 b+4;h;20;i17;-5;+16g;;"* Heat Engager
 
-* Heat Dash +62a (+42) on hit
-* Homing";he hom;Kazuya-b+4;Flash Tornado;29;;
+* Heat Dash +62a (+42a) on hit, +5 on block
+
+* Homing
+* 6 Chip Damage on block
+* 8 Chip Damage on block in heat";he hom;Kazuya-b+4;Flash Tornado;29;;
 b+1+2;m;21;i22;-8;+5;;"* Heat Engager
 
-* Heat Dash +36a (+26) on hit
-* Chip damage when guarded";he chp;Kazuya-b+1+2;Kumo Kiri;;;
+* Heat Dash +36a (+26a) on hit, +5 on block
+
+* 6 Chip Damage on block
+* 8 Chip Damage on block in heat";he;Kazuya-b+1+2;Kumo Kiri;;;
 b+1+4;ub(m);60;i63;+20a(+10);+20a(+10);;;;Kazuya-b+1+4;Lightning Screw Uppercut;;;
 ub+1+2;h;32;i41;+19d (-39);+19d (-39);;"* Chip damage when guarded
 * Jack-8 or Alisa can recovery 20 by input 1+2
@@ -142,8 +154,11 @@ uf+4,4,4,4;m, l, l, m;16,12,10,20;;-17;+19a (+12);;Balcony Break;bbr;Kazuya-uf+4
 1+2+3+4;sp;-;;;;;* Shift to charging;;Kazuya-1+2+3+4;Ki Charge;;;
 f,F+2;m;20;i16;-9;+39d(-19)/HE;;"* Heat Engager
 
-* Heat Dash +36a(+26) on hit
-* Balcony Break";he bbr;Kazuya-f,F+2;Devil Fist;;;
+* Heat Dash +36a (+26a) on hit, +5 on block
+
+* Balcony Break
+* 6 Chip Damage on block
+* 8 Chip Damage on block in heat";he bbr;Kazuya-f,F+2;Devil Fist;;;
 f,F+3;m;21;i20;-3c;+46a;;* Spike;spk;Kazuya-f,F+3;Left Splits Kick;;;
 f,F+4;m;22;i17~18;-9;+5;+29a(+23);;;Kazuya-f,F+4;Devil's Steel Pedal;30;;
 f,n,DF;sp;;;;;;"* Cannot be buffered
