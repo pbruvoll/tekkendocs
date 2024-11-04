@@ -144,10 +144,14 @@ def _convert_json_movelist(move_list_json: list) -> List[Move]:
                 targetArray.append(moveTarget)
 
             target = ", ".join([item.lstrip(',') for item in targetArray])
+            
+            damageArray =  _get_all_parent_values_of_array("damage", _normalize_data(move["title"]["parent"]),
+                                          move_list_json)
+            moveDamage = _normalize_data(move["title"]["damage"])
+            if moveDamage :
+                damageArray.append(moveDamage)
 
-            damage = _normalize_data(
-                _get_all_parent_values_of("damage", _normalize_data(move["title"]["parent"]),
-                                          move_list_json) + _normalize_data(move["title"]["damage"]))
+            damage = ", ".join([item.lstrip(',') for item in damageArray])
 
             on_block = _remove_html_tags(_normalize_data(move["title"]["block"]))
             on_hit = _remove_html_tags(_normalize_data(_normalize_hit_ch_input(move["title"]["hit"])))
