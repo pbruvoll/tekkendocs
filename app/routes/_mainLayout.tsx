@@ -11,6 +11,7 @@ import { AppErrorBoundary } from '~/components/ErrorBoundary'
 import {
   facebooklink,
   githubLink,
+  rbNorwayLink,
   twitterLink,
 } from '~/services/staticDataService'
 import {
@@ -103,6 +104,15 @@ const MainLayoutTemplate = ({ children }: MainLayoutTemplateProps) => {
             </li>
             <li>
               <a
+                title="RBNorway"
+                href={rbNorwayLink}
+                className="flex items-center gap-2 px-2"
+              >
+                RBNorway
+              </a>
+            </li>
+            <li>
+              <a
                 href={contactByGithub.buildContactUrl('featureRequest')}
                 target="_blank"
                 rel="noreferrer"
@@ -131,6 +141,14 @@ const MainLayoutTemplate = ({ children }: MainLayoutTemplateProps) => {
             learning resources for the fighting game TEKKEN®. This website is
             not connected with, sponsored, or endorsed by Namco Bandai or any of
             its affiliated companies.
+          </p>
+          <p className="mt-4 text-sm">
+            The site has evolved from{' '}
+            <a className="underline underline-offset-2" href={rbNorwayLink}>
+              RBNorway
+            </a>{' '}
+            and was created to have a dedicated site for frame data and learning
+            resources
           </p>
         </ContentContainer>
       </footer>

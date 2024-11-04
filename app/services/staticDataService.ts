@@ -111,6 +111,7 @@ export const getTekken8Characters = (): CharacterInfo[] => {
 }
 
 export const githubLink = 'https://github.com/pbruvoll/tekkendocs'
+export const rbNorwayLink = 'https://rbnorway.org'
 export const twitterLink = 'https://x.com/tekkendocs'
 export const facebooklink =
   'https://www.facebook.com/profile.php?id=61555959516665'

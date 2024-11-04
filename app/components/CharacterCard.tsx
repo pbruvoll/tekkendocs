@@ -14,13 +14,13 @@ export const CharacterCard2 = ({ url, name, imgUrl }: CharacterCard2Props) => {
         <Inset clip="padding-box" side="top" pb="current">
           <img
             src={imgUrl}
-            alt=""
+            alt={name}
             className="h-full w-full  
               rounded object-contain"
           />
         </Inset>
         <Inset clip="padding-box" side="x">
-          <div className="overflow-hidden text-ellipsis whitespace-nowrap text-center text-text-primary first-letter:uppercase">
+          <div className="overflow-hidden text-ellipsis whitespace-nowrap text-center text-text-primary first-letter:uppercase max-xs:text-xs">
             {name}
           </div>
         </Inset>
