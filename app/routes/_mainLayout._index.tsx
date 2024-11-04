@@ -77,11 +77,11 @@ export default function Index() {
         Resources
       </Heading>
       <div className="flex flex-wrap gap-3">
-        <Link to="/matchvideo" className="cursor-pointer">
+        {/* <Link to="/matchvideo" className="cursor-pointer">
           <Badge size="2" style={{ cursor: 'pointer' }} variant="outline">
             Match videos
           </Badge>
-        </Link>
+        </Link> */}
         <Link to="/t8/stats" className="cursor-pointer">
           <Badge size="2" style={{ cursor: 'pointer' }} variant="outline">
             Stats

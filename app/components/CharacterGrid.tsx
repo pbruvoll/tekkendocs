@@ -21,7 +21,7 @@ export const CharacterGrid = ({ characterCards }: CharacterGridProps) => {
         },
       }}
     >
-      <ul className="grid grid-cols-4 gap-x-1 gap-y-3 xs:grid-cols-5 xs:gap-x-2 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-9">
+      <ul className="grid grid-cols-6 gap-x-1 gap-y-1 xs:grid-cols-5 xs:gap-x-2 xs:gap-y-3 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-9">
         {characterCards.map(({ name, url, imgSrc }, index) => {
           return (
             <motion.div
