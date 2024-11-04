@@ -48,12 +48,13 @@ f+2,1;h, h;10,15;,i13;-5;+6;;"* Jails
 f+2,1~B;h, h;10,15;,i13;-6;+5;;* Jails;;Lars-f+2,1~B;Charge Factor to Standing;;;
 f+2,4;h, h;10,22;,i18~19;-12;+15 (+6);;* Balcony Break;bbr;Lars-f+2,4;Death Mask;;;
 f+3;sp;;;;;;* Transition to DEN;;Lars-f+3;Dynamic Entry;;;
-f+4;m;12;i17;-9;+7;;;;Lars-f+4;;;;
+f+4;m;12;i17;-9;+7;;* Knee;kne;Lars-f+4;;;;
 f+4,1;m, m;12,8;,i21~22;-9;+2;;;;Lars-f+4,1;;;;
 f+4,1,2;m, m, m;12,8,8;,i12;-10;+2;;;;Lars-f+4,1,2;;;;
 f+4,1,2,1;m, m, m, m;12,8,8,20;,i24~25;-14;+19 (+9);;* Balcony Break;bbr;Lars-f+4,1,2,1;Volcanic Lightning;;;
 f+1+2;m;20;i15~16;-13;+28;;;;Lars-f+1+2;Ark Blast;;;
-f+1+4;m;28;i13~14;-18;+18 (+8);;* Balcony Break;bbr;Lars-f+1+4;Power Slug;;;
+f+1+4;m;28;i13~14;-18;+18 (+8);;"* Shoulder
+* Balcony Break";bbr;Lars-f+1+4;Power Slug;;;
 df+1;m;14;i13;-1;+5;;;;Lars-df+1;;;;
 df+2;m;15;i14;-3;+9;+39 (+31);"* Elbow
 * Transition to SEN
@@ -63,9 +64,10 @@ df+3;m;15;i16;-7;+5;;* Transition to DEN with input D;;Lars-df+3;;;;
 df+3,3;m, m;15,24;,i25~26;-15;+29 (+14);;;;Lars-df+3,3;Outpost Blitz;;;
 df+3~D;m;15;i16;-4;+8;;;;Lars-df+3~D;;DEN;;
 df+4;m;16;i15~16;-8;+2;;;;Lars-df4;;;;
-d+2;m;17;i18~19;+0c;+8c;+10d;* Transition to FC with input D;;Lars-d+2;Tactical Sword;;;
+d+2;m;17;i18~19;+0c;+8c;+10d;"* Elbow
+* Transition to FC with input D";elb;Lars-d+2;Tactical Sword;;;
 d+3;l;8;i15;-14;-3;;;;Lars-d+3;;;;
-d+3,1;l, hh;8,4,10;,i19,i18;-7;+4;;;;Lars-d+3,1;Tesla Gravity;;;
+d+3,1;l, hh;8,4,10;,i19,i18;-7;+4;;* Combo from 1st hit CH;;Lars-d+3,1;Tesla Gravity;;;
 d+1+2;l;25;i24~25;-20;+9d;;;;Lars-d+1+2;Earth Battery;;;
 db+1;l;9;i17;-12;-1;;High crush;cs;Lars-db+1;;;;
 db+1,3;l, h;9,10;,i19;-12;-1;;* Transition to LEN with input D;;Lars-db+1,3;Arc Combination;;;
@@ -94,17 +96,18 @@ b+2+3;ub(m);45;i84~85;;+61a;;;;Lars-b+2+3;Zeus;;;
 uf+3;mm;26 (9);i16~17;-26;+33a (+15);;* Alternate input: ub+3, u+3;;Lars-uf+3;Lightning Screw;;;
 uf+4;m;20;i25~27;-8;+42a;;* Alternate input: ub+4, u+4;;Lars-uf+4;Storm Axle;;;
 uf+3+4;sp;;;;;;* Alternate input: ub+3+4, u+3+4;;Lars-uf+3+4;Avalanche Flip;;;
-uf+3+4,4;sp, th(m);40;,i17~18;-4;0;;Low crush;js;Lars-uf+3+4,4;Avalanche Flip Break Down;;;
+uf+3+4,4;sp, m,th;20,20;,i17~18;-4;0;;Low crush;js;Lars-uf+3+4,4;Avalanche Flip Break Down;;;
 uf+3+4,1+2;sp, th(h);40;,i9~11;;+1;;* Throw break: 1+2;;Lars-uf+3+4,1+2;Avalanche Drop;;;
 1+2+3+4;sp;;;;;;;;Lars-1+2+3+4;Ki Charge;;;
 CH b+4;m,th;27,28;i15;;0;;Knee;kne;Lars-CH.b+4;Magnetic Knee Blast;;;
 f,F+2;m;20;i21~22;-13;+35a;;"* Transition to SEN on hit with input F
 * Tornado";trn;Lars-f,F+2;Surge Blast;;;
 f,F+4;l;12;i21;-31;+5;;;;Lars-f,F+4;;;;
-f,F+4,2;l, h;12,15;,i24;-7 DEN;+9 DEN;;Cannot cancel DEN transition;;Lars-f,F+4,2;Cross Transistor;;;
+f,F+4,2;l, h;12,15;,i24;-7;+9;;Cannot cancel DEN transition;;Lars-f,F+4,2;Cross Transistor;DEN;;
 f,F+4,3;l, m;12,20;,i28;-16;-3;;;;Lars-f,F+4,3;Double Pulse;;;
-f,F+1+2;m;20;i16~17;-9;+14 (+5);+59a (+39);"* Balcony Break
-* chip damage on block";bbr chp;Lars-f,F+1+2;Elbow Corona;;;
+f,F+1+2;m;20;i16~17;-9;+14 (+5);+59a (+39);"* Elbow
+* Balcony Break
+* chip damage on block";elb bbr chp;Lars-f,F+1+2;Elbow Corona;;;
 f,F+3+4;l,l;26;i19~20;-16;+0c;;High crush ?;cs?;Lars-f,F+3+4;Double Action;;;
 f,n,b+2;m;10;i14;-12;0;;;;Lars-f,n,b+2;;;;
 f,n,b+2,1;m, m;10,10;,i16;-18;+47a (+39);;;;Lars-f,n,b+2,1;Blue Bolt;;;
@@ -114,18 +117,24 @@ f,f,F+3;m;30;i20~26;+6;+33 (-25);;"* Balcony Break
 Low crush";bbr chp js;Lars-f,f,F+3;Red Sprite;;;
 ws1;m;16;i15~16;-12;+38a / +36a SEN;;"* Tornado
 * Transition to SEN with F on hit";trn;Lars-ws1;Streamer;;;
-ws2;m;13;i13~14;-8 / -12 DEN / -5 SEN;+3/ -1 DEN / +6 SEN;;"* Transition to DEN with D
+ws2;m;13;i13~14;-8;+3;;"* Transition to DEN with D
 * Transition to SEN with F";;Lars-ws2;;;;
 ws2,1;m, m;13,17;,i23~24;-12;+2c;+4d;* Combo from 1st hit;;Lars-ws2,1;Multiplied Force;;;
-ws2,3;m, h;13,20;,i20;-15 / -11 LEN;-3 / +6 LEN;;"* Combo from 1st hit
+ws2,3;m, h;13,20;,i20;-15;-3;;"* Combo from 1st hit
 * Transition to LEN with D";;Lars-ws2,3;Glass Breaker;;;
-ws3;h;30;i20;0 / +4 LEN;+21 (+15) / +26 (+20) LEN;;* Transition to LEN with input D;;Lars-ws3;Tower Cannon;;;
+ws2,3~D;m, h;13,20;,i20;-11;+6;;* Combo from 1st hit;;Lars-ws2,3~D;Glass Breaker to Limited Entry;LEN;;
+ws2~D;m;13;i13~14;-12;-1;;;;Lars-ws2~D;;DEN;;
+ws2~F;m;13;i13~14;-5;+6;;;;Lars-ws2~F;;SEN;;
+ws3;h;30;i20;0;+21 (+15);;* Transition to LEN with input D;;Lars-ws3;Tower Cannon;;;
+ws3~D;h;30;i20;+4;+26 (+20);;;;Lars-ws3~D;Tower Cannon to Limited Entry;LEN;;
 ws4;m;16;i11~12;-6;+5;;;;Lars-ws4;Shell Smash;;;
 SS.2;m;20;i16~17;-7;+22d;;;;Lars-SS.2;Shockwave;;;
 FC.1+2;ll;24;i18;-12;+1;;;;Lars-FC.1+2;Double Smack;;;
 FC.df+2;m;19;i15~16;-8;+5;+63a;;;Lars-FC.df+2;Power Spike;;;
 (airborne).DEN.2+3;;;;;;;;;Lars-(airborne).DEN.2+3;;;;
-DEN.1;h;14;i11~12;+1 / -3 SEN;+8 / +4 SEN;;* Transition to SEN with input F;;Lars-DEN.1;;;;
+(back to wall).b,b,ub;m;25;i29~33;-1;+45d (-13);;is8~13;is8~13;Lars-(back to wall).b,b,ub;Wall Jumping Attack;;;
+DEN.1;h;14;i11~12;+1 / -3 SEN;+8 / +4 SEN;;"* Elbow
+* Transition to SEN with input F";elb;Lars-DEN.1;;;;
 DEN.1,2;h, h;14,20;,i14~15;-6;+47a (-11);;"* Heat Engager
 
 * Balcony Break";he bbr;Lars-DEN.1,2;Double Barrel;;;
@@ -135,7 +144,7 @@ DEN.3;m;23;i22~23;+5;+7;;"* Heat Engager
 * Homing
 * Transition to SEN (cannot cancel, does not transition when using Heat Dash)
 * chip damage on block
-Low crush";he hom chp js;Lars-DEN.3;Bow Shock;;;
+Low crush";he hom chp js;Lars-DEN.3;Bow Shock;SEN;;
 DEN.4;l;14;i23~25;-12;+1;;* Transition to LEN with input D;;Lars-DEN.4;Legionnaire's Shot;;;
 DEN.1+2;h;20;i12~13;-10;+63a (+47);;"* Tornado
 * Balcony Break";trn bbr;Lars-DEN.1+2;Into the Storm;;;

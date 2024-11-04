@@ -117,7 +117,7 @@ df+3+4;m;19;i22~24;-7;+12g;+24d;"* Strong Aerial Tailspin
 * Homing
 * Balcony Break";hom bbr;Dragunov-df+3+4;Reaper Kick;r29;;
 d+1;m;18;i18~19;+1c;+8c;+13d;Elbow;elb;Dragunov-d+1;Bunker-buster Elbow;r26;;
-d+2;L;17;i18~19;-13;-1c;+13g;High crush 6~;cs6~;Dragunov-d+2;Razer;r31 FC;;
+d+2;L;14;i18~19;-13;-1c;+13g;High crush 6~;cs6~;Dragunov-d+2;Razer;r31 FC;;
 d+3;L;13;i17~18;-14;-3;+1c;;;Dragunov-d+3;;r32;;
 d+3,2;L, h;13,18;,i24~25;-6;+6;;Combo from 1st CH;;Dragunov-d+3,2;;r28;;
 d+3,2,1+2;L, h, m;13,18,24;,i35~36;-2c;+20a;;"* Balcony Break
@@ -247,6 +247,7 @@ fs10~30";spk fs10~30;Dragunov-f,F+4;Rolling Thunder;r30 FC;;
 qcb+2;m;23;i26~27;-15;+68a (+52);;"* Tornado
 * Elbow";trn elb;Dragunov-qcb+2;Mass Elbow;r35;;
 qcf;;;;;;;"* Lapses to standing
+* Cancel to SS with u
 * Input d,DF to transition to FC instead of SNK";;Dragunov-qcf;Sneak;r1 SNK;;
 uf,n,4;m;20;i23~i25;-13;+32a (+22a);;"&lt;div class=&quot;plainlist&quot;&gt;
 * Low crush 9~30
@@ -267,16 +268,16 @@ f,f,F+4;m,t;20,25;i20~21;-7;+1d;;"* Tornado
 * Knee
 * Transition to attack throw on front standing or wall hit
 * Throw is unbreakable";trn kne;Dragunov-f,f,F+4;Snap Knee Assault;r34;;
-ws1;m;11;i12~13;-3;+4;;Enter SNK -5 +2 with df;;Dragunov-ws1;;;;
+ws1;m;11;i12~13;-3;+4;;Enter SNK -5 +2 r22 with df;;Dragunov-ws1;;r20;;
 ws1,2;m, h;11,14;,i22~23;-7;+10g;;"* Balcony Break
-* Combo from 1st hit";bbr;Dragunov-ws1,2;Qullion;;;
+* Combo from 1st hit";bbr;Dragunov-ws1,2;Qullion;r32;;
 ws1,3;m, m;11,17;,i17~18;-13;+15a (+6);+36a (+0);"* Balcony Break
-* Combo from 1st hit";bbr;Dragunov-ws1,3;Double Hilt;;;
-ws2;m;15;i15~16;-12;+28a (+18);;;;Dragunov-ws2;Ballistic Upper;;;
-ws3;m;21;i16~17;-9;+15a (+6);+36a (+0);Balcony Break;bbr;Dragunov-ws3;Glacial Hilt;;;
-ws4;m;15;i11~12;-5;+6;;;;Dragunov-ws4;Gelid Smash;;;
+* Combo from 1st hit";bbr;Dragunov-ws1,3;Double Hilt;r29;;
+ws2;m;15;i15~16;-12;+28a (+18);;;;Dragunov-ws2;Ballistic Upper;r31;;
+ws3;m;21;i16~17;-9;+15a (+6);+36a (+0);Balcony Break;bbr;Dragunov-ws3;Glacial Hilt;r29;;
+ws4;m;15;i11~12;-5;+6;;;;Dragunov-ws4;Gelid Smash;r23;;
 ws1+2;m;28;i12~13;-14;+19a (+9);;"* Balcony Break
-* Alternate input SNK.1+2";bbr;Dragunov-ws1+2;Frost Tackle;;;
+* Shoulder";bbr;Dragunov-ws1+2;Frost Tackle;r36;;
 SS.2;m;16;i20~21;-10;+1;;;;Dragunov-SS.2;;;;
 SS.2,3;m, h,t;16,20,20;i18;-9;+1d;;"* Throw when hit from the front
 * Side switch
@@ -298,20 +299,29 @@ FDFT.3;l,t;8,30;i19;-9;+0d;;"On close hit
 High crush";cs;Dragunov-FDFT.3 (Close);Clipping Heel Hook;;;
 OTG.d+3+4;L;24;i24;-11;+0;;"* Floor Break
 * +0a (-8) on grounded";fbr;Dragunov-OTG.d+3+4;Six Feet Under;;;
-SNK.1;h;20;i15~16;-3;+51a;;;;Dragunov-SNK.1;Cocked Hammer;;;
-SNK.2;m;25;i18~19;-14;+36a (+26);;Tornado;trn;Dragunov-SNK.2;Stinger Elbow;;;
+SNK.1;h;20;i15~16;-3;+51a;;"* Balcony Break
+** on airborne hit";bbr;Dragunov-SNK.1;Cocked Hammer;r28;;
+SNK.2;m;25;i18~19;-14;+36a (+26);;"* Tornado
+* Elbow";trn elb;Dragunov-SNK.2;Stinger Elbow;r35;;
 SNK.3;L,t;17,20;i17~18;-16;+0;+1d;"* Throw when CH from the front
-** Called ""Needle Hold"" in-game";;Dragunov-SNK.3;Slay Ride;;;
-SNK.4;M;27;i19~21;+7;+18a;;"* Heat Engager
+** Called ""Needle Hold"" in-game
+&lt;div class=&quot;plainlist&quot;&gt;
+* fs10~42
+* High crush 12~&lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
+* fs10~42
+* cs12~&lt;/div&gt;";Dragunov-SNK.3;Slay Ride;r34 FC;;
+SNK.4;M;22;i19~21;+7;+8c;;"* Heat Engager
 
 * Heat Dash +5, [[Dragunov combos#Staples|+67a (+50)]]
 
 * Balcony Break
-* Floor Break
-* Chip damage on block";he bbr fbr chp;Dragunov-SNK.4;Ignition Switch;FC;;
-SNK.1+2;m;28;i12~13;-14;+19;;* Balcony Break;bbr;Dragunov-SNK.1+2;;;;
-SNK.3+4;m;20;i17~18;-13;+27g;;"* Absorb a hit to transition to [[Dragunov movelist#Dragunov-f,f,F+4|Snap Knee Assault]]
-Power crush";pc;Dragunov-SNK.3+4;Snap Knee;;;
+* Spike
+* Chip damage on block";he bbr spk chp;Dragunov-SNK.4;Ignition Switch;30 FC;;
+SNK.1+2;m;28;i12~13;-14;+19 (+9);;"* Balcony Break
+* Shoulder";bbr;Dragunov-SNK.1+2;;r36;;
+SNK.3+4;m;20;i17~18;-13;+27g;;"* Knee
+* Absorb a hit to transition to [[Dragunov movelist#Dragunov-f,f,F+4|Snap Knee Assault]]
+Power crush 8~16";kne pc8~16;Dragunov-SNK.3+4;Snap Knee;r27;;
 WR.F+3;L,t;20,20;i17~18;-15;+1d;;"* Transition to attack throw on front standing hit
 * Must run for 32f to access this move
 * +27a on BT hit
