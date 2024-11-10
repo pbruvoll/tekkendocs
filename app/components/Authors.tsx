@@ -1,8 +1,7 @@
-import { type CreditPerson } from '~/types/CreditPerson'
-import { PersonLinkList } from './PersonLinkList'
+import { type PersonLink, PersonLinkList } from './PersonLinkList'
 
 type AuthorsProps = {
-  authors: CreditPerson[]
+  authors: PersonLink[]
 }
 export const Authors = ({ authors }: AuthorsProps) => {
   return (

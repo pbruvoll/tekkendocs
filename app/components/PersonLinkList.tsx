@@ -1,7 +1,7 @@
 import { Fragment } from 'react'
 import { Link } from '@remix-run/react'
 
-type PersonLink = {
+export type PersonLink = {
   name: string
   url?: string
 }
