@@ -23,7 +23,6 @@ const Core = ({
       <Heading
         as="h2"
         size="4"
-        p
         className={cx(
           type === 'strength' ? 'bg-[#005500]' : 'bg-[#440000]',
           'p-2 text-white',
@@ -61,7 +60,6 @@ export const StrengthsWeaknesses = ({
   compressedCommandMap,
   gameId,
 }: StrengthsWeaknessesProps) => {
-  console.log(strengths)
   return (
     <section className="grid-cols-2 gap-2 md:grid">
       {strengths?.length && (

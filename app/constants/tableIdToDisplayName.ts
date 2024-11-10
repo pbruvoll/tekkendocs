@@ -22,4 +22,7 @@ export const tableIdToDisplayName: Record<TableId, string> = {
   videos_match: 'Match videos',
   resources_external: 'External resources',
   credits: '', // custom rendering
+  introduction: 'Introduction',
+  strengths: 'Strengths',
+  weaknesses: 'Weaknesses',
 }

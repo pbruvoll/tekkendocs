@@ -8,7 +8,7 @@ type KeyMovesProps = {
   moves: KeyMove[]
   title: string
   characterId: string
-  gameId: GameId
+  gameId: string
   compressedCommandMap: Record<string, Move>
 }
 export const KeyMoves = ({

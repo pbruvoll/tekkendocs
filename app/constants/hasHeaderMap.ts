@@ -22,4 +22,7 @@ export const hasHeaderMap: Record<TableId, boolean> = {
   videos_match: true,
   resources_external: true,
   credits: true,
+  introduction: true,
+  strengths: true,
+  weaknesses: true,
 }

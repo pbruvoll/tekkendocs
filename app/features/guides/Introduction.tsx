@@ -5,7 +5,7 @@ import { type Move } from '~/types/Move'
 type IntroductionProps = {
   sections: string[]
   characterId: string
-  gameId: GameId
+  gameId: string
   compressedCommandMap: Record<string, Move>
 }
 export const Introduction = ({
