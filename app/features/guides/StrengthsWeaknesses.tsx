@@ -5,21 +5,21 @@ import { useGuideContext } from './GuideContext'
 
 type CoreProps = {
   section: string[]
-  type: 'strength' | 'weakness'
+  type: 'strengths' | 'weaknesses'
 }
 const Core = ({ section, type }: CoreProps) => {
   const { charUrl, compressedCommandMap } = useGuideContext()
   return (
-    <section className="mb-4">
+    <section className="mb-4" id={type}>
       <Heading
         as="h2"
         size="4"
         className={cx(
-          type === 'strength' ? 'bg-[#005500]' : 'bg-[#440000]',
+          type === 'strengths' ? 'bg-[#005500]' : 'bg-[#440000]',
           'p-2 text-white',
         )}
       >
-        {type === 'strength' ? 'Strengths' : 'Weaknesses'}
+        {type === 'strengths' ? 'Strengths' : 'Weaknesses'}
       </Heading>
       <ul className="mt-2">
         {section.map((section, index) => (
@@ -47,8 +47,8 @@ export const StrengthsWeaknesses = ({
 }: StrengthsWeaknessesProps) => {
   return (
     <section className="grid-cols-2 gap-2 md:grid">
-      {strengths?.length && <Core section={strengths} type="strength" />}
-      {weaknesses?.length && <Core section={weaknesses} type="weakness" />}
+      {strengths?.length && <Core section={strengths} type="strengths" />}
+      {weaknesses?.length && <Core section={weaknesses} type="weaknesses" />}
     </section>
   )
 }

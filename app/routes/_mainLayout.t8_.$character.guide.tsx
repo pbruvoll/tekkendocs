@@ -14,6 +14,7 @@ import Nav, { type NavLinkInfo } from '~/components/Nav'
 import { PersonLinkList } from '~/components/PersonLinkList'
 import { ExternalResources } from '~/features/guides/ExternalResources'
 import { GuideContext } from '~/features/guides/GuideContext'
+import { GuideNav } from '~/features/guides/GuideNav'
 import { tablesToGuideData } from '~/features/guides/guideUtils.server'
 import { Introduction } from '~/features/guides/Introduction'
 import { KeyMoves } from '~/features/guides/KeyMoves'
@@ -187,31 +188,13 @@ export default function Index() {
             <Authors authors={authors} />
           </div>
         )}
-        {introduction?.length && (
-          <Introduction
-            sections={introduction}
-            characterId={characterId}
-            gameId={gameId}
-            compressedCommandMap={compressedCommandMap}
-          />
-        )}
+        <GuideNav guideData={guideData}></GuideNav>
+        {introduction?.length && <Introduction sections={introduction} />}
         {(strengths?.length || weaknesses?.length) && (
-          <StrengthsWeaknesses
-            strengths={strengths}
-            weaknesses={weaknesses}
-            characterId={characterId}
-            gameId={gameId}
-            compressedCommandMap={compressedCommandMap}
-          />
+          <StrengthsWeaknesses strengths={strengths} weaknesses={weaknesses} />
         )}
         {top10Moves?.length && (
-          <KeyMoves
-            moves={top10Moves}
-            title="Top 10 moves"
-            compressedCommandMap={compressedCommandMap}
-            characterId={characterId}
-            gameId={gameId}
-          />
+          <KeyMoves moves={top10Moves} title="Top 10 moves" />
         )}
         {externalResources?.length && (
           <ExternalResources externalResources={externalResources} />

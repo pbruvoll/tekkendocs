@@ -7,7 +7,7 @@ export const ExternalResources = ({
   externalResources: ExternalResource[]
 }) => {
   return (
-    <section className="my-4 mb-8">
+    <section className="my-4 mb-8" id="external-resources">
       <GuideSectionHeading title="External Resources" />
 
       <ul>

@@ -12,7 +12,7 @@ type KeyMovesProps = {
 export const KeyMoves = ({ moves, title }: KeyMovesProps) => {
   const { charUrl, compressedCommandMap } = useGuideContext()
   return (
-    <section className="my-6 mb-10">
+    <section className="my-6 mb-10" id={title.toLowerCase().replace(/ /g, '-')}>
       <GuideSectionHeading title={title} />
       {moves.map(({ command, description }) => (
         <section key={command} className="my-2 mb-4">
