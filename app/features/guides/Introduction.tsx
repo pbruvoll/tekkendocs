@@ -1,6 +1,7 @@
 import { Heading } from '@radix-ui/themes'
 import { TextWithCommand } from '~/components/TextWithCommand'
 import { type Move } from '~/types/Move'
+import { GuideSectionHeading } from './GuideSectionHeading'
 
 type IntroductionProps = {
   sections: string[]
@@ -16,10 +17,8 @@ export const Introduction = ({
 }: IntroductionProps) => {
   const charUrl = `/${gameId}/${characterId}`
   return (
-    <section className="my-4">
-      <Heading as="h2" mb="4" size="4">
-        Introduction
-      </Heading>
+    <section className="my-6 mb-10">
+      <GuideSectionHeading title="Introduction" />
       {sections.map((section, index) => (
         <p key={index} className="my-2 mb-4">
           <TextWithCommand

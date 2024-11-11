@@ -19,7 +19,7 @@ const Core = ({
 }: CoreProps) => {
   const charUrl = `/${gameId}/${characterId}`
   return (
-    <section>
+    <section className="mb-4">
       <Heading
         as="h2"
         size="4"

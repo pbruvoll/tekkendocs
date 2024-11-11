@@ -3,6 +3,7 @@ import { Command } from '~/components/Command'
 import { TextWithCommand } from '~/components/TextWithCommand'
 import { type Move } from '~/types/Move'
 import { type KeyMove } from './GuideData'
+import { GuideSectionHeading } from './GuideSectionHeading'
 
 type KeyMovesProps = {
   moves: KeyMove[]
@@ -20,10 +21,8 @@ export const KeyMoves = ({
 }: KeyMovesProps) => {
   const charUrl = `/${gameId}/${characterId}`
   return (
-    <section className="my-4">
-      <Heading as="h2" mb="4" size="4">
-        {title}
-      </Heading>
+    <section className="my-6 mb-10">
+      <GuideSectionHeading title={title} />
       {moves.map(({ command, description }) => (
         <section key={command} className="my-2 mb-4">
           <Heading as="h3" mb="1" size="3">
