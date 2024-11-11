@@ -14,7 +14,7 @@ export const GuideNav = ({ guideData }: GuideNavPros) => {
     !!guideData.externalResources && 'External Resources',
   ]
   return (
-    <nav>
+    <nav className="mt-4">
       {navItems.map((name, index) => {
         if (!name) return undefined
         return (

@@ -23,7 +23,7 @@ const Core = ({ section, type }: CoreProps) => {
       </Heading>
       <ul className="mt-2">
         {section.map((section, index) => (
-          <li key={index} className="list-inside list-disc p-1">
+          <li key={index} className="ms-4 list-outside list-disc p-1">
             <TextWithCommand
               text={section}
               charUrl={charUrl}
