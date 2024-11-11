@@ -1,5 +1,5 @@
-import { Heading } from '@radix-ui/themes'
 import { type ExternalResource } from './GuideData'
+import { GuideSectionHeading } from './GuideSectionHeading'
 
 export const ExternalResources = ({
   externalResources,
@@ -7,10 +7,9 @@ export const ExternalResources = ({
   externalResources: ExternalResource[]
 }) => {
   return (
-    <section className="my-4 mb-8">
-      <Heading as="h2" mb="2" size="4">
-        External resources
-      </Heading>
+    <section className="my-4 mb-8" id="external-resources">
+      <GuideSectionHeading title="External Resources" />
+
       <ul>
         {externalResources.map(resource => (
           <li key={resource.name}>

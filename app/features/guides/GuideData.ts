@@ -13,6 +13,12 @@ type Contributer = {
   url?: string
 }
 
+export type Punisher = {
+  startup: string
+  command: string
+  description?: string
+}
+
 export type KeyMove = {
   command: string
   description?: string
@@ -26,4 +32,5 @@ export type GuideData = {
   introduction: string[]
   strengths: string[]
   weaknesses: string[]
+  standingPunishers: Punisher[]
 }

@@ -58,4 +58,11 @@ const tableHandlers: Partial<
   weaknesses: (rows, guideData) => {
     guideData.weaknesses = rows.map(row => row[0])
   },
+  punishers_standing: (rows, guideData) => {
+    guideData.standingPunishers = rows.map(row => ({
+      startup: row[0],
+      command: row[1],
+      description: row[2],
+    }))
+  },
 }
