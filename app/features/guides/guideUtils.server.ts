@@ -1,7 +1,6 @@
 import { type CreditPerson, type CreditRole } from '~/types/CreditPerson'
 import { type TableId } from '~/types/TableId'
 import { type SheetSection } from '~/utils/sheetUtils.server'
-import { GuideContext } from './GuideContext'
 import { type GuideData } from './GuideData'
 
 export const tablesToGuideData = (
