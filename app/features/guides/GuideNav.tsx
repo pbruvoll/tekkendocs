@@ -11,6 +11,7 @@ export const GuideNav = ({ guideData }: GuideNavPros) => {
     !!guideData.strengths && 'Strengths',
     !!guideData.weaknesses && 'Weaknesses',
     !!guideData.keyMoves && 'Top 10 Moves',
+    !!guideData.standingPunishers && 'Punishers',
     !!guideData.externalResources && 'External Resources',
   ]
   return (

@@ -1,6 +1,7 @@
 import { type CreditPerson, type CreditRole } from '~/types/CreditPerson'
 import { type TableId } from '~/types/TableId'
 import { type SheetSection } from '~/utils/sheetUtils.server'
+import { GuideContext } from './GuideContext'
 import { type GuideData } from './GuideData'
 
 export const tablesToGuideData = (
@@ -57,5 +58,12 @@ const tableHandlers: Partial<
   },
   weaknesses: (rows, guideData) => {
     guideData.weaknesses = rows.map(row => row[0])
+  },
+  punishers_standing: (rows, guideData) => {
+    guideData.standingPunishers = rows.map(row => ({
+      startup: row[0],
+      command: row[1],
+      description: row[2],
+    }))
   },
 }

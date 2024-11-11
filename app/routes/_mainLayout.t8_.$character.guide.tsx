@@ -18,6 +18,7 @@ import { GuideNav } from '~/features/guides/GuideNav'
 import { tablesToGuideData } from '~/features/guides/guideUtils.server'
 import { Introduction } from '~/features/guides/Introduction'
 import { KeyMoves } from '~/features/guides/KeyMoves'
+import { Punishers } from '~/features/guides/Punishers'
 import { StrengthsWeaknesses } from '~/features/guides/StrengthsWeaknesses'
 import { useFrameData } from '~/hooks/useFrameData'
 import { getSheet } from '~/services/googleSheetService.server'
@@ -139,6 +140,7 @@ export default function Index() {
     introduction,
     strengths,
     weaknesses,
+    standingPunishers,
   } = guideData
   const { top10Moves, notableMoves } = {
     top10Moves: keyMoves?.slice(0, 10),
@@ -195,6 +197,9 @@ export default function Index() {
         )}
         {top10Moves?.length && (
           <KeyMoves moves={top10Moves} title="Top 10 moves" />
+        )}
+        {standingPunishers?.length && (
+          <Punishers standing={standingPunishers} />
         )}
         {externalResources?.length && (
           <ExternalResources externalResources={externalResources} />
