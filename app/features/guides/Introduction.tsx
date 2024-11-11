@@ -1,21 +1,12 @@
-import { Heading } from '@radix-ui/themes'
 import { TextWithCommand } from '~/components/TextWithCommand'
-import { type Move } from '~/types/Move'
+import { useGuideContext } from './GuideContext'
 import { GuideSectionHeading } from './GuideSectionHeading'
 
 type IntroductionProps = {
   sections: string[]
-  characterId: string
-  gameId: string
-  compressedCommandMap: Record<string, Move>
 }
-export const Introduction = ({
-  sections,
-  characterId,
-  gameId,
-  compressedCommandMap,
-}: IntroductionProps) => {
-  const charUrl = `/${gameId}/${characterId}`
+export const Introduction = ({ sections }: IntroductionProps) => {
+  const { charUrl, compressedCommandMap } = useGuideContext()
   return (
     <section className="my-6 mb-10">
       <GuideSectionHeading title="Introduction" />

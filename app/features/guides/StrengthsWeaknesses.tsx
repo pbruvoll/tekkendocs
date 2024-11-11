@@ -1,23 +1,14 @@
 import { Heading } from '@radix-ui/themes'
 import cx from 'classix'
 import { TextWithCommand } from '~/components/TextWithCommand'
-import { type Move } from '~/types/Move'
+import { useGuideContext } from './GuideContext'
 
 type CoreProps = {
   section: string[]
   type: 'strength' | 'weakness'
-  characterId: string
-  gameId: string
-  compressedCommandMap: Record<string, Move>
 }
-const Core = ({
-  section,
-  type,
-  gameId,
-  characterId,
-  compressedCommandMap,
-}: CoreProps) => {
-  const charUrl = `/${gameId}/${characterId}`
+const Core = ({ section, type }: CoreProps) => {
+  const { charUrl, compressedCommandMap } = useGuideContext()
   return (
     <section className="mb-4">
       <Heading
@@ -48,38 +39,16 @@ const Core = ({
 type StrengthsWeaknessesProps = {
   strengths?: string[]
   weaknesses?: string[]
-  characterId: string
-  gameId: string
-  compressedCommandMap: Record<string, Move>
 }
 
 export const StrengthsWeaknesses = ({
   strengths,
   weaknesses,
-  characterId,
-  compressedCommandMap,
-  gameId,
 }: StrengthsWeaknessesProps) => {
   return (
     <section className="grid-cols-2 gap-2 md:grid">
-      {strengths?.length && (
-        <Core
-          section={strengths}
-          type="strength"
-          characterId={characterId}
-          gameId={gameId}
-          compressedCommandMap={compressedCommandMap}
-        />
-      )}
-      {weaknesses?.length && (
-        <Core
-          section={weaknesses}
-          type="weakness"
-          characterId={characterId}
-          gameId={gameId}
-          compressedCommandMap={compressedCommandMap}
-        />
-      )}
+      {strengths?.length && <Core section={strengths} type="strength" />}
+      {weaknesses?.length && <Core section={weaknesses} type="weakness" />}
     </section>
   )
 }

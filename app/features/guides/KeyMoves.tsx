@@ -1,25 +1,16 @@
 import { Heading } from '@radix-ui/themes'
 import { Command } from '~/components/Command'
 import { TextWithCommand } from '~/components/TextWithCommand'
-import { type Move } from '~/types/Move'
+import { useGuideContext } from './GuideContext'
 import { type KeyMove } from './GuideData'
 import { GuideSectionHeading } from './GuideSectionHeading'
 
 type KeyMovesProps = {
   moves: KeyMove[]
   title: string
-  characterId: string
-  gameId: string
-  compressedCommandMap: Record<string, Move>
 }
-export const KeyMoves = ({
-  moves,
-  title,
-  characterId,
-  gameId,
-  compressedCommandMap,
-}: KeyMovesProps) => {
-  const charUrl = `/${gameId}/${characterId}`
+export const KeyMoves = ({ moves, title }: KeyMovesProps) => {
+  const { charUrl, compressedCommandMap } = useGuideContext()
   return (
     <section className="my-6 mb-10">
       <GuideSectionHeading title={title} />

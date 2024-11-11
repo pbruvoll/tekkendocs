@@ -13,6 +13,7 @@ import { ContentContainer } from '~/components/ContentContainer'
 import Nav, { type NavLinkInfo } from '~/components/Nav'
 import { PersonLinkList } from '~/components/PersonLinkList'
 import { ExternalResources } from '~/features/guides/ExternalResources'
+import { GuideContext } from '~/features/guides/GuideContext'
 import { tablesToGuideData } from '~/features/guides/guideUtils.server'
 import { Introduction } from '~/features/guides/Introduction'
 import { KeyMoves } from '~/features/guides/KeyMoves'
@@ -146,7 +147,12 @@ export default function Index() {
   console.log('notableMoves', notableMoves)
 
   return (
-    <>
+    <GuideContext.Provider
+      value={{
+        compressedCommandMap,
+        charUrl: `/${gameId}/${characterId}`,
+      }}
+    >
       <ContentContainer enableTopPadding>
         <div className="mb-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
@@ -295,6 +301,6 @@ export default function Index() {
           </div>
         )}
       </ContentContainer>
-    </>
+    </GuideContext.Provider>
   )
 }
