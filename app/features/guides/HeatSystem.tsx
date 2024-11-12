@@ -1,5 +1,3 @@
-import { Heading } from '@radix-ui/themes'
-import { Command } from '~/components/Command'
 import { TextWithCommand } from '~/components/TextWithCommand'
 import { useGuideContext } from './GuideContext'
 import { GuideSectionHeading } from './GuideSectionHeading'
