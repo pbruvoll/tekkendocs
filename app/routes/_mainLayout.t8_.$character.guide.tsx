@@ -141,6 +141,8 @@ export default function Index() {
     strengths,
     weaknesses,
     standingPunishers,
+    crouchingPunishers,
+    whiffPunishers,
   } = guideData
   const { top10Moves, notableMoves } = {
     top10Moves: keyMoves?.slice(0, 10),
@@ -198,8 +200,14 @@ export default function Index() {
         {top10Moves?.length && (
           <KeyMoves moves={top10Moves} title="Top 10 moves" />
         )}
-        {standingPunishers?.length && (
-          <Punishers standing={standingPunishers} />
+        {(standingPunishers?.length ||
+          crouchingPunishers?.length ||
+          whiffPunishers?.length) && (
+          <Punishers
+            standing={standingPunishers}
+            crouching={crouchingPunishers}
+            whiff={whiffPunishers}
+          />
         )}
         {externalResources?.length && (
           <ExternalResources externalResources={externalResources} />
