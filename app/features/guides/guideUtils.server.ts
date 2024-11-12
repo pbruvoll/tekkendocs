@@ -78,4 +78,7 @@ const tableHandlers: Partial<
       description: row[1],
     }))
   },
+  heat_system: (rows, guideData) => {
+    guideData.heatSystem = rows.map(row => row[0])
+  },
 }

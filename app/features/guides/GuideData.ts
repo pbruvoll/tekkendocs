@@ -25,8 +25,8 @@ export type KeyMove = {
 }
 
 export type WhiffPunisher = {
-  command: string;
-  description?: string;
+  command: string
+  description?: string
 }
 
 export type GuideData = {
@@ -40,4 +40,5 @@ export type GuideData = {
   standingPunishers: Punisher[]
   crouchingPunishers: Punisher[]
   whiffPunishers: WhiffPunisher[]
+  heatSystem: string[]
 }
