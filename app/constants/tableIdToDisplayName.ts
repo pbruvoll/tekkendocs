@@ -25,4 +25,5 @@ export const tableIdToDisplayName: Record<TableId, string> = {
   introduction: 'Introduction',
   strengths: 'Strengths',
   weaknesses: 'Weaknesses',
+  heat_system: 'Heat system',
 }

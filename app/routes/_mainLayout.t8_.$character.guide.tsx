@@ -16,6 +16,7 @@ import { ExternalResources } from '~/features/guides/ExternalResources'
 import { GuideContext } from '~/features/guides/GuideContext'
 import { GuideNav } from '~/features/guides/GuideNav'
 import { tablesToGuideData } from '~/features/guides/guideUtils.server'
+import { HeatSystem } from '~/features/guides/HeatSystem'
 import { Introduction } from '~/features/guides/Introduction'
 import { KeyMoves } from '~/features/guides/KeyMoves'
 import { Punishers } from '~/features/guides/Punishers'
@@ -137,10 +138,13 @@ export default function Index() {
     contributors,
     externalResources,
     keyMoves,
+    heatSystem,
     introduction,
     strengths,
     weaknesses,
     standingPunishers,
+    crouchingPunishers,
+    whiffPunishers,
   } = guideData
   const { top10Moves, notableMoves } = {
     top10Moves: keyMoves?.slice(0, 10),
@@ -195,11 +199,18 @@ export default function Index() {
         {(strengths?.length || weaknesses?.length) && (
           <StrengthsWeaknesses strengths={strengths} weaknesses={weaknesses} />
         )}
+        {heatSystem?.length && <HeatSystem heatSystem={heatSystem} />}
         {top10Moves?.length && (
           <KeyMoves moves={top10Moves} title="Top 10 moves" />
         )}
-        {standingPunishers?.length && (
-          <Punishers standing={standingPunishers} />
+        {(standingPunishers?.length ||
+          crouchingPunishers?.length ||
+          whiffPunishers?.length) && (
+          <Punishers
+            standing={standingPunishers}
+            crouching={crouchingPunishers}
+            whiff={whiffPunishers}
+          />
         )}
         {externalResources?.length && (
           <ExternalResources externalResources={externalResources} />

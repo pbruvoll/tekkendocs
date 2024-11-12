@@ -25,4 +25,5 @@ export const hasHeaderMap: Record<TableId, boolean> = {
   introduction: true,
   strengths: true,
   weaknesses: true,
+  heat_system: true,
 }
