@@ -201,6 +201,9 @@ export default function Index() {
         {standingPunishers?.length && (
           <Punishers standing={standingPunishers} />
         )}
+        {notableMoves?.length && (
+          <KeyMoves moves={notableMoves} title="Notable moves" />
+        )}
         {externalResources?.length && (
           <ExternalResources externalResources={externalResources} />
         )}

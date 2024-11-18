@@ -1,5 +1,5 @@
 import { Heading } from '@radix-ui/themes'
-import { Command } from '~/components/Command'
+import { Commands } from '~/components/Commands'
 import { TextWithCommand } from '~/components/TextWithCommand'
 import { useGuideContext } from './GuideContext'
 import { type KeyMove } from './GuideData'
@@ -17,7 +17,7 @@ export const KeyMoves = ({ moves, title }: KeyMovesProps) => {
       {moves.map(({ command, description }) => (
         <section key={command} className="my-2 mb-4">
           <Heading as="h3" mb="1" size="3">
-            <Command
+            <Commands
               charUrl={charUrl}
               compressedCommandMap={compressedCommandMap}
               command={command}
