@@ -12,7 +12,7 @@ export const Punishers = ({ standing, crouching, whiff }: PunishersProps) => {
   return (
     <section id="punishers">
       <GuideSectionHeading title="Punishers" />
-      <div className="flex gap-2 md:gap-4 lg:gap-8">
+      <div className="flex justify-between gap-2 md:gap-4 lg:gap-8">
         {standing && <PunisherList title="Standing" punishers={standing} />}
         {crouching && <PunisherList title="Crouching" punishers={crouching} />}
         {whiff && <PunisherList title="Whiff punishers" punishers={whiff} />}
