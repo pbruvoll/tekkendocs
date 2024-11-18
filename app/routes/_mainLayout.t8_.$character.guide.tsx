@@ -212,6 +212,9 @@ export default function Index() {
             whiff={whiffPunishers}
           />
         )}
+        {notableMoves?.length && (
+          <KeyMoves moves={notableMoves} title="Notable moves" />
+        )}
         {externalResources?.length && (
           <ExternalResources externalResources={externalResources} />
         )}
