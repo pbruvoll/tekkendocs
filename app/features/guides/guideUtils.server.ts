@@ -65,4 +65,20 @@ const tableHandlers: Partial<
       description: row[2],
     }))
   },
+  punishers_crouching: (rows, guideData) => {
+    guideData.crouchingPunishers = rows.map(row => ({
+      startup: row[0],
+      command: row[1],
+      description: row[2],
+    }))
+  },
+  punishers_whiff: (rows, guideData) => {
+    guideData.whiffPunishers = rows.map(row => ({
+      command: row[0],
+      description: row[1],
+    }))
+  },
+  heat_system: (rows, guideData) => {
+    guideData.heatSystem = rows.map(row => row[0])
+  },
 }

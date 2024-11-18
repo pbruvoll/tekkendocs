@@ -24,6 +24,11 @@ export type KeyMove = {
   description?: string
 }
 
+export type WhiffPunisher = {
+  command: string
+  description?: string
+}
+
 export type GuideData = {
   externalResources: ExternalResource[]
   authors: Author[]
@@ -33,4 +38,7 @@ export type GuideData = {
   strengths: string[]
   weaknesses: string[]
   standingPunishers: Punisher[]
+  crouchingPunishers: Punisher[]
+  whiffPunishers: WhiffPunisher[]
+  heatSystem: string[]
 }

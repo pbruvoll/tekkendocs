@@ -10,6 +10,7 @@ export const GuideNav = ({ guideData }: GuideNavPros) => {
     !!guideData.introduction && 'Introduction',
     !!guideData.strengths && 'Strengths',
     !!guideData.weaknesses && 'Weaknesses',
+    !!guideData.heatSystem && 'HeatSystems',
     !!guideData.keyMoves && 'Top 10 Moves',
     !!guideData.standingPunishers && 'Punishers',
     !!guideData.keyMoves && guideData.keyMoves.length > 10 && 'Notable moves',
