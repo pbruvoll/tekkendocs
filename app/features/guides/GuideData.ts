@@ -34,6 +34,13 @@ export type Combo = {
   combo: string;
 }
 
+export type ComboEnderType = 'wallNormal' | 'wallWithTornado' | 'wallBreak' | 'floorBreak' | 'carry';
+export type ComboEnder = {
+  type: ComboEnderType;
+  combo: string;
+}
+
+
 export type GuideData = {
   externalResources: ExternalResource[]
   authors: Author[]
@@ -47,4 +54,5 @@ export type GuideData = {
   whiffPunishers: WhiffPunisher[]
   heatSystem: string[]
   combos: Combo[]
+  comboEnder: ComboEnder[]
 }

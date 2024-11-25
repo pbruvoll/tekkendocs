@@ -12,6 +12,7 @@ import { Authors } from '~/components/Authors'
 import { ContentContainer } from '~/components/ContentContainer'
 import Nav, { type NavLinkInfo } from '~/components/Nav'
 import { PersonLinkList } from '~/components/PersonLinkList'
+import { ComboEnders } from '~/features/guides/ComboEnders'
 import { Combos } from '~/features/guides/Combos'
 import { ExternalResources } from '~/features/guides/ExternalResources'
 import { GuideContext } from '~/features/guides/GuideContext'
@@ -147,6 +148,7 @@ export default function Index() {
     crouchingPunishers,
     whiffPunishers,
     combos,
+    comboEnder,
   } = guideData
   const { top10Moves, notableMoves } = {
     top10Moves: keyMoves?.slice(0, 10),
@@ -213,6 +215,7 @@ export default function Index() {
           />
         )}
         {combos?.length && <Combos combos={combos} title="Combos" />}
+        {comboEnder?.length && <ComboEnders combosEnders={comboEnder} />}
         {notableMoves?.length && (
           <KeyMoves moves={notableMoves} title="Notable moves" />
         )}

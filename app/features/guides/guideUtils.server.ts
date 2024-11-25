@@ -1,7 +1,7 @@
 import { type CreditPerson, type CreditRole } from '~/types/CreditPerson'
 import { type TableId } from '~/types/TableId'
 import { type SheetSection } from '~/utils/sheetUtils.server'
-import { type GuideData } from './GuideData'
+import { type ComboEnderType, type GuideData } from './GuideData'
 
 export const tablesToGuideData = (
   sheetSections: SheetSection[],
@@ -86,5 +86,11 @@ const tableHandlers: Partial<
       starter: row[0],
       combo: row[1]
     }))
-  }
+  },
+  combos_ender: (rows, guideData) => {
+    guideData.comboEnder = rows.map(row => ({
+      type: row[0] as ComboEnderType,
+      combo: row[1]
+    }))
+  },
 }
