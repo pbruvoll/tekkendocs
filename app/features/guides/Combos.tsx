@@ -3,6 +3,7 @@ import { Commands } from '~/components/Commands'
 import { useGuideContext } from './GuideContext'
 import { type Combo } from './GuideData'
 import { GuideSectionHeading } from './GuideSectionHeading'
+import { formatCombo } from './guideUtils'
 
 type CombosProps = {
   combos: Combo[]
@@ -20,7 +21,7 @@ export const Combos = ({ combos, title }: CombosProps) => {
             compressedCommandMap={compressedCommandMap}
             command={starter}
           />
-          <div className="ml-4 mt-1">{combo}</div>
+          <div className="ml-4 mt-1">{formatCombo(combo)}</div>
         </section>
       ))}
     </section>
