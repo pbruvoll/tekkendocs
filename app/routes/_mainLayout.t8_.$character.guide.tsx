@@ -12,6 +12,7 @@ import { Authors } from '~/components/Authors'
 import { ContentContainer } from '~/components/ContentContainer'
 import Nav, { type NavLinkInfo } from '~/components/Nav'
 import { PersonLinkList } from '~/components/PersonLinkList'
+import { Combos } from '~/features/guides/Combos'
 import { ExternalResources } from '~/features/guides/ExternalResources'
 import { GuideContext } from '~/features/guides/GuideContext'
 import { GuideNav } from '~/features/guides/GuideNav'
@@ -145,13 +146,12 @@ export default function Index() {
     standingPunishers,
     crouchingPunishers,
     whiffPunishers,
+    combos,
   } = guideData
   const { top10Moves, notableMoves } = {
     top10Moves: keyMoves?.slice(0, 10),
     notableMoves: keyMoves?.slice(10),
   }
-
-  console.log('notableMoves', notableMoves)
 
   return (
     <GuideContext.Provider
@@ -212,6 +212,7 @@ export default function Index() {
             whiff={whiffPunishers}
           />
         )}
+        {combos?.length && <Combos combos={combos} title="Combos" />}
         {notableMoves?.length && (
           <KeyMoves moves={notableMoves} title="Notable moves" />
         )}

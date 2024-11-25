@@ -29,6 +29,11 @@ export type WhiffPunisher = {
   description?: string
 }
 
+export type Combo = {
+  starter: string;
+  combo: string;
+}
+
 export type GuideData = {
   externalResources: ExternalResource[]
   authors: Author[]
@@ -41,4 +46,5 @@ export type GuideData = {
   crouchingPunishers: Punisher[]
   whiffPunishers: WhiffPunisher[]
   heatSystem: string[]
+  combos: Combo[]
 }

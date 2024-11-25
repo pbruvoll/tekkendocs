@@ -81,4 +81,10 @@ const tableHandlers: Partial<
   heat_system: (rows, guideData) => {
     guideData.heatSystem = rows.map(row => row[0])
   },
+  combos_normal: (rows, guideData) => {
+    guideData.combos = rows.map(row => ({
+      starter: row[0],
+      combo: row[1]
+    }))
+  }
 }
