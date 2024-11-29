@@ -148,7 +148,7 @@ export default function Index() {
     crouchingPunishers,
     whiffPunishers,
     combos,
-    comboEnder,
+    comboEnders: comboEnder,
   } = guideData
   const { top10Moves, notableMoves } = {
     top10Moves: keyMoves?.slice(0, 10),
@@ -215,7 +215,7 @@ export default function Index() {
           />
         )}
         {combos?.length && <Combos combos={combos} title="Combos" />}
-        {comboEnder?.length && <ComboEnders combosEnders={comboEnder} />}
+        {comboEnder?.length && <ComboEnders comboEnders={comboEnder} />}
         {notableMoves?.length && (
           <KeyMoves moves={notableMoves} title="Notable moves" />
         )}

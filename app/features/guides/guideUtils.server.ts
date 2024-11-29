@@ -88,7 +88,7 @@ const tableHandlers: Partial<
     }))
   },
   combos_ender: (rows, guideData) => {
-    guideData.comboEnder = rows.map(row => ({
+    guideData.comboEnders = rows.map(row => ({
       type: row[0] as ComboEnderType,
       combo: row[1]
     }))
