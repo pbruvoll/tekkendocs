@@ -135,7 +135,13 @@ export default function Index() {
           </a>
         </div>
 
-        <Nav navData={navData}></Nav>
+        <Nav
+          navData={
+            characterName === 'dragunov'
+              ? [...navData, { displayName: 'Guide', link: 'guide' }]
+              : navData
+          }
+        ></Nav>
       </ContentContainer>
       <ContentContainer disableXPadding>
         {tables.map(table => {
