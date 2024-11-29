@@ -29,6 +29,22 @@ export type WhiffPunisher = {
   description?: string
 }
 
+export type Combo = {
+  starter: string
+  combo: string
+}
+
+export type ComboEnderType = 'wall_break' | 'floor_break' | 'carry'
+export type ComboEnder = {
+  type: ComboEnderType
+  combo: string
+}
+export type WallComboType = 'normal' | 'tornado'
+export type WallCombo = {
+  type: WallComboType
+  combo: string
+}
+
 export type GuideData = {
   externalResources: ExternalResource[]
   authors: Author[]
@@ -41,4 +57,7 @@ export type GuideData = {
   crouchingPunishers: Punisher[]
   whiffPunishers: WhiffPunisher[]
   heatSystem: string[]
+  combos: Combo[]
+  comboEnders: ComboEnder[]
+  wallCombos: WallCombo[]
 }

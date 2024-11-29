@@ -1,7 +1,11 @@
 import { type CreditPerson, type CreditRole } from '~/types/CreditPerson'
 import { type TableId } from '~/types/TableId'
 import { type SheetSection } from '~/utils/sheetUtils.server'
-import { type GuideData } from './GuideData'
+import {
+  type ComboEnderType,
+  type GuideData,
+  type WallComboType,
+} from './GuideData'
 
 export const tablesToGuideData = (
   sheetSections: SheetSection[],
@@ -80,5 +84,23 @@ const tableHandlers: Partial<
   },
   heat_system: (rows, guideData) => {
     guideData.heatSystem = rows.map(row => row[0])
+  },
+  combos_normal: (rows, guideData) => {
+    guideData.combos = rows.map(row => ({
+      starter: row[0],
+      combo: row[1],
+    }))
+  },
+  combos_ender: (rows, guideData) => {
+    guideData.comboEnders = rows.map(row => ({
+      type: row[0] as ComboEnderType,
+      combo: row[1],
+    }))
+  },
+  combos_wall: (rows, guideData) => {
+    guideData.wallCombos = rows.map(row => ({
+      type: row[0] as WallComboType,
+      combo: row[1],
+    }))
   },
 }
