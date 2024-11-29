@@ -1,4 +1,3 @@
-import { useMemo } from 'react'
 import { Commands } from '~/components/Commands'
 import { useGuideContext } from './GuideContext'
 import { type Combo } from './GuideData'

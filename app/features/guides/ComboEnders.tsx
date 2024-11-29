@@ -1,6 +1,6 @@
 import { Command } from '~/components/Command'
 import { useGuideContext } from './GuideContext'
-import { type ComboEnder, type ComboEnderType } from './GuideData'
+import { type ComboEnder } from './GuideData'
 import { GuideSectionHeading } from './GuideSectionHeading'
 import { formatCombo } from './guideUtils'
 
