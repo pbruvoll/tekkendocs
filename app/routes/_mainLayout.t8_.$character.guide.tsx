@@ -23,6 +23,7 @@ import { Introduction } from '~/features/guides/Introduction'
 import { KeyMoves } from '~/features/guides/KeyMoves'
 import { Punishers } from '~/features/guides/Punishers'
 import { StrengthsWeaknesses } from '~/features/guides/StrengthsWeaknesses'
+import { WallCombos } from '~/features/guides/WallCombos'
 import { useFrameData } from '~/hooks/useFrameData'
 import { getSheet } from '~/services/googleSheetService.server'
 import type { CharacterFrameData } from '~/types/CharacterFrameData'
@@ -148,7 +149,8 @@ export default function Index() {
     crouchingPunishers,
     whiffPunishers,
     combos,
-    comboEnders: comboEnder,
+    comboEnders,
+    wallCombos,
   } = guideData
   const { top10Moves, notableMoves } = {
     top10Moves: keyMoves?.slice(0, 10),
@@ -215,7 +217,8 @@ export default function Index() {
           />
         )}
         {combos?.length && <Combos combos={combos} title="Combos" />}
-        {comboEnder?.length && <ComboEnders comboEnders={comboEnder} />}
+        {comboEnders?.length && <ComboEnders comboEnders={comboEnders} />}
+        {wallCombos?.length && <WallCombos wallCombos={wallCombos} />}
         {notableMoves?.length && (
           <KeyMoves moves={notableMoves} title="Notable moves" />
         )}

@@ -30,21 +30,20 @@ export type WhiffPunisher = {
 }
 
 export type Combo = {
-  starter: string;
-  combo: string;
+  starter: string
+  combo: string
 }
 
-export type ComboEnderType = 'wall_break' | 'floor_break' | 'carry';
+export type ComboEnderType = 'wall_break' | 'floor_break' | 'carry'
 export type ComboEnder = {
-  type: ComboEnderType;
-  combo: string;
+  type: ComboEnderType
+  combo: string
 }
-export type WallComboType = 'noraml' | 'tornado'
+export type WallComboType = 'normal' | 'tornado'
 export type WallCombo = {
-  type: WallComboType;
-  combo: string;
+  type: WallComboType
+  combo: string
 }
-
 
 export type GuideData = {
   externalResources: ExternalResource[]
