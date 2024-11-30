@@ -1,15 +1,19 @@
+import { useMemo } from 'react'
 import { Pencil1Icon } from '@radix-ui/react-icons'
-import { Heading, Link as RadixLink, Table } from '@radix-ui/themes'
+import { Heading, Table } from '@radix-ui/themes'
 import { type DataFunctionArgs, json, type MetaFunction } from '@remix-run/node'
-import { Link, useLoaderData } from '@remix-run/react'
+import { useLoaderData } from '@remix-run/react'
+import { Commands } from '~/components/Commands'
 import { ContentContainer } from '~/components/ContentContainer'
 import Nav, { type NavLinkInfo } from '~/components/Nav'
 import { tableIdToDisplayName } from '~/constants/tableIdToDisplayName'
+import { useFrameData } from '~/hooks/useFrameData'
 import type { CharacterFrameData } from '~/types/CharacterFrameData'
+import { type Move } from '~/types/Move'
 import type { RouteHandle } from '~/types/RouteHandle'
 import { getCharacterFromParams } from '~/utils/characterRoute.utils.server'
+import { compressCommand } from '~/utils/commandUtils'
 import { getCacheControlHeaders } from '~/utils/headerUtils'
-import { commandToUrlSegment } from '~/utils/moveUtils'
 import { generateMetaTags } from '~/utils/seoUtils'
 import { getSheetService } from '~/utils/sheetServiceUtils.server'
 import { t8AvatarMap } from '~/utils/t8AvatarMap'
@@ -32,7 +36,7 @@ export const loader = async ({ params }: DataFunctionArgs) => {
   const { editUrl, tables } = sheet
 
   return json(
-    { characterName: character, editUrl, tables },
+    { characterName: character, editUrl, tables, gameId: sheet.game },
     {
       headers: {
         ...getCacheControlHeaders({ seconds: 60 * 5 }),
@@ -72,11 +76,23 @@ export const meta: MetaFunction = ({ data, params, matches }) => {
 }
 
 export default function Index() {
-  const { characterName, editUrl, tables } = useLoaderData<typeof loader>()
+  const { characterName, editUrl, tables, gameId } =
+    useLoaderData<typeof loader>()
+
+  const { moves: frameData } = useFrameData()
+  const compressedCommandMap = useMemo(() => {
+    return frameData.reduce<Record<string, Move>>((prev, current) => {
+      prev[compressCommand(current.command)] = current
+      return prev
+    }, {})
+  }, [frameData])
+
+  const charUrl = `/${gameId.toLowerCase()}/${characterName}`
 
   if (tables.length === 0) {
     return <div>Invalid or no data</div>
   }
+
   return (
     <>
       <ContentContainer enableTopPadding>
@@ -121,42 +137,21 @@ export default function Index() {
                 </Heading>
               </ContentContainer>
               <Table.Root variant="surface" style={{ width: '100%' }}>
-                {table.headers && (
-                  <Table.Header>
-                    <Table.Row>
-                      {table.headers.map(h => (
-                        <Table.ColumnHeaderCell key={h}>
-                          {h}
-                        </Table.ColumnHeaderCell>
-                      ))}
-                    </Table.Row>
-                  </Table.Header>
-                )}
                 <Table.Body>
                   {table.rows.map((row, i) => {
                     return (
-                      <Table.Row key={row[0]}>
+                      <Table.Row key={i}>
                         {columnNums.map(j => {
                           const cell = row[j] || ''
-                          if (table.headers && table.headers[j] === 'Command') {
-                            //this is a command, so make it link
-                            return (
-                              <Table.Cell key={j}>
-                                <RadixLink asChild>
-                                  <Link
-                                    className="text-[#ab6400]"
-                                    style={{ textDecoration: 'none' }}
-                                    to={`/t7/${characterName}/${commandToUrlSegment(
-                                      cell,
-                                    )}`}
-                                  >
-                                    {cell}
-                                  </Link>
-                                </RadixLink>
-                              </Table.Cell>
-                            )
-                          }
-                          return <Table.Cell key={j}>{cell}</Table.Cell>
+                          return (
+                            <Table.Cell key={j}>
+                              <Commands
+                                command={cell}
+                                charUrl={charUrl}
+                                compressedCommandMap={compressedCommandMap}
+                              />
+                            </Table.Cell>
+                          )
                         })}
                       </Table.Row>
                     )
