@@ -60,4 +60,5 @@ export type GuideData = {
   combos: Combo[]
   comboEnders: ComboEnder[]
   wallCombos: WallCombo[]
+  smallCombos: Combo[]
 }

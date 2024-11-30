@@ -1,1 +1,1 @@
-export const formatCombo = (value: string) => value.replace(/>/g, '🠊')
+export const formatCombo = (value: string) => value.replace(/>/g, '→')

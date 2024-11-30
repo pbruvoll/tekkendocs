@@ -151,6 +151,7 @@ export default function Index() {
     combos,
     comboEnders,
     wallCombos,
+    smallCombos,
   } = guideData
   const { top10Moves, notableMoves } = {
     top10Moves: keyMoves?.slice(0, 10),
@@ -219,6 +220,9 @@ export default function Index() {
         {combos?.length && <Combos combos={combos} title="Combos" />}
         {comboEnders?.length && <ComboEnders comboEnders={comboEnders} />}
         {wallCombos?.length && <WallCombos wallCombos={wallCombos} />}
+        {smallCombos?.length && (
+          <Combos combos={smallCombos} title="Small Combos" />
+        )}
         {notableMoves?.length && (
           <KeyMoves moves={notableMoves} title="Notable moves" />
         )}
