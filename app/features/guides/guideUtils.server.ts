@@ -103,4 +103,10 @@ const tableHandlers: Partial<
       combo: row[1],
     }))
   },
+  combos_small: (rows, guideData) => {
+    guideData.smallCombos = rows.map(row => ({
+      starter: row[0],
+      combo: row[1],
+    }))
+  },
 }
