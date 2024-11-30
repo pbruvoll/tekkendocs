@@ -25,7 +25,7 @@ import { type Move } from '~/types/Move'
 import type { RouteHandle } from '~/types/RouteHandle'
 import { type TableData } from '~/types/TableData'
 import { cachified } from '~/utils/cache.server'
-import { compressCommand } from '~/utils/comamndUtils'
+import { compressCommand } from '~/utils/commandUtils'
 import {
   isBalconyBreak,
   isHeatEngager,
