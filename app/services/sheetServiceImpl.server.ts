@@ -52,8 +52,8 @@ export class SheetServiceImpl implements SheetService {
     const spreadSheetDocumentId =
       dataType === 'antiStrat'
         ? '1TEzfSORVhBaxXYlsiAkkb2qNEJLPcBIsfJ1dM9naJvU' // tekken docs copy
-          //'1N6sNF3bAPoAYDxeTO-p0bn5hJatMeaDMJsCZSVK_dfE' // original mode version
-        : gameToCharacterDocname[game]
+        : //'1N6sNF3bAPoAYDxeTO-p0bn5hJatMeaDMJsCZSVK_dfE' // original mode version
+          gameToCharacterDocname[game]
     const sheetName = characterId + characterDataTypeToSuffix[dataType]
 
     const timeToLiveSec = 30
