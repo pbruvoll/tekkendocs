@@ -6,6 +6,7 @@ import { useLoaderData } from '@remix-run/react'
 import { Commands } from '~/components/Commands'
 import { ContentContainer } from '~/components/ContentContainer'
 import Nav, { type NavLinkInfo } from '~/components/Nav'
+import { TextWithCommand } from '~/components/TextWithCommand'
 import { tableIdToDisplayName } from '~/constants/tableIdToDisplayName'
 import { useFrameData } from '~/hooks/useFrameData'
 import type { CharacterFrameData } from '~/types/CharacterFrameData'
@@ -145,11 +146,19 @@ export default function Index() {
                           const cell = row[j] || ''
                           return (
                             <Table.Cell key={j}>
-                              <Commands
-                                command={cell}
-                                charUrl={charUrl}
-                                compressedCommandMap={compressedCommandMap}
-                              />
+                              {characterName === 'asuka' ? (
+                                <TextWithCommand
+                                  text={cell}
+                                  charUrl={charUrl}
+                                  compressedCommandMap={compressedCommandMap}
+                                />
+                              ) : (
+                                <Commands
+                                  command={cell}
+                                  charUrl={charUrl}
+                                  compressedCommandMap={compressedCommandMap}
+                                />
+                              )}
                             </Table.Cell>
                           )
                         })}
