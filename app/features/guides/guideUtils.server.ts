@@ -56,7 +56,7 @@ const tableHandlers: Partial<
   panic_moves: (rows, guideData) => {
     guideData.panicMoves = rows.map(row => ({
       command: row[0],
-      description: row[1]
+      description: row[1],
     }))
   },
   introduction: (rows, guideData) => {

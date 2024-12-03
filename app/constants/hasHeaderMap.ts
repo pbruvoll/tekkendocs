@@ -11,6 +11,7 @@ export const hasHeaderMap: Record<TableId, boolean> = {
   moves_heatengager: false,
   moves_powercrush: false,
   key_moves: true,
+  panic_moves: true,
   combos_ender: true,
   combos_normal: true,
   combos_beginner: true,
