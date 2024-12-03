@@ -141,6 +141,7 @@ export default function Index() {
     contributors,
     externalResources,
     keyMoves,
+    panicMoves,
     heatSystem,
     introduction,
     strengths,
@@ -225,6 +226,9 @@ export default function Index() {
         )}
         {notableMoves?.length && (
           <KeyMoves moves={notableMoves} title="Notable moves" />
+        )}
+        {panicMoves?.length && (
+          <KeyMoves moves={panicMoves} title="Panic moves" />
         )}
         {externalResources?.length && (
           <ExternalResources externalResources={externalResources} />
