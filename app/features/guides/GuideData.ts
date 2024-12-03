@@ -50,6 +50,7 @@ export type GuideData = {
   authors: Author[]
   contributors: Contributer[]
   keyMoves: KeyMove[]
+  panicMoves: KeyMove[]
   introduction: string[]
   strengths: string[]
   weaknesses: string[]

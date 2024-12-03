@@ -53,6 +53,12 @@ const tableHandlers: Partial<
       description: row[1],
     }))
   },
+  panic_moves: (rows, guideData) => {
+    guideData.panicMoves = rows.map(row => ({
+      command: row[0],
+      description: row[1]
+    }))
+  },
   introduction: (rows, guideData) => {
     guideData.introduction = rows.map(row => row[0])
   },

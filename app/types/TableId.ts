@@ -9,6 +9,7 @@ export type TableId =
   | 'moves_heat'
   | 'moves_powercrush'
   | 'key_moves'
+  | 'panic_moves'
   | 'introduction'
   | 'strengths'
   | 'weaknesses'
