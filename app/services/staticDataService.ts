@@ -60,6 +60,7 @@ const charsT8: string[] = [
   'bryan',
   'claudio',
   'devil-jin',
+  'clive',
   'dragunov',
   'eddy',
   'feng',
