@@ -1,7 +1,11 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Wavu id;Name;Recovery;Image;Video
-2+3;m;12 (12);i16;+1;+2c;;"* Heat Burst
+2+3;m;"[12;12]";i16;+1;+2c;;"* Heat Burst
 * Cancel to r45 with b,b
-Power crush 8~";hb pc8~;Jun-2+3;Heat Burst;r30;;
+* 3 chip damage on block
+* 12 chip damage on hit
+* Only deals recoverable damage
+* Cannot cause a K.O.
+Power crush 7~16";hb pc7~16;Jun-2+3;Heat Burst;r30;;
 H.1+2,F;m;26;i13;+5;+43a (+35);;;;Jun-H.1+2,F;Shunkei > Heat Dash;r14;;
 H.GEN.2+3;l,m;14,28;i20 i26;-12;+33 (+5);;"Heat Smash
 * Ends heat
@@ -18,6 +22,15 @@ H.2+3;m,m;20,30;i13 i32~75;-6~+37g;+21a~+64a (-5~+38);;"* Heat Smash
 * Balcony Break
 * Restores 32 recoverable on hit (16 on block)
 * Chip damage (8,9) on block";hs bbr chp;Jun-H.2+3;Yomotsu Ooyumi;r1;;
+R.df+1+2;m,t;55+;i20;-15;+0d;;"* Rage Art
+* Removes Recoverable Health
+* Reversal Break
+* Damage increases with lower health, maximum 80
+* Freezes match timer on activation and on hit
+* Restores recoverable health on hit
+* Transition to attack throw on hit
+* Consumes Rage
+Power crush 8~";pc8~;Jun-R.df+1+2;Amatsu Izanami;r39;;
 1;h;5;i10;+1;+8;;Recovers 2f faster on hit or block (t27 r17);;Jun-1;Jab;r19;;
 1,1;h, m;5, 15;,i25;-1;+8;+13;* Restores 2 health and 2 recoverable on hit;;Jun-1,1;Suikei > Izumo Smash;r28 IZU;;File:Jun-15.mp4
 1,2;h, h;5, 8;,i16;-3;+6;;* Jail from 1st attack;;Jun-1,2;Spear Step;r24;;File:Jun-16.mp4
@@ -101,9 +114,6 @@ df+3;m;22;i17;-8;+19a (+10);;"* Homing
 * Balcony Break";hom bbr;Jun-df+3;Kazakiri;r31;;File:Jun-43.mp4
 df+4;m;22;i15;-14;+48a (+17);+52a;"* Tornado
 * Crumple stun launcher (+52a) on CH";trn;Jun-df+4;Katabami;r38;;File:Jun-44.mp4
-df+1+2;m;55+;i20;-15;+0d;;"* Rage Art
-* Removes opponent recoverable health on hit
-Power crush 8~";pc8~;Jun-df+1+2;Amatsu Izanami;r39;;
 df+3+4;m;17;i24~25;-11~-10;+1~+2;;;;Jun-df+3+4;;r31;;
 df+3+4,1;m, m;17, 20;,i33~34;-13~-12;+17a (+10);;;;Jun-df+3+4,1;Heavenly Sun Palm;r32;;File:Jun-45.mp4
 df+3+4,4;m, L;17, 17;,i25~26;-13~-12;+4c~+5c;+26a;Combo from 1st CH;;Jun-df+3+4,4;Heavenly Moon Kick;r31;;File:Jun-46.mp4
@@ -211,8 +221,12 @@ uf+4,3;m, m,M;10, 8,20;,i29 i18;-12;+84a (+68);;"* Tornado
 uf+3+4;m,M;5,21;i20~23 i26~30;-8~-4;+18a;;"* Spike
 * Alternate inputs: ub+3+4, u+3+4
 Low crush 9~30";spk js9~30;Jun-uf+3+4;Saiuntsui;r28;;File:Jun-75.mp4
-1+2+3+4;;;;;;;"* CH state for 5 seconds
-* Can't block for 5 seconds";;Jun-1+2+3+4;Ki Charge;r55;;File:Jun-81.mp4
+1+2+3+4;;;;;;;"* Can't block for 5 seconds
+* CH state for 5 seconds";;Jun-1+2+3+4;"<div class=""dotlist"">
+
+* Ki Charge
+* Supercharger
+</div>";r55;;File:Jun-81.mp4
 UB,b;;;;;;;Low crush 10~41 fs42~44;js10~41 fs42~44;Jun-UB,b;Back Handspring;;;
 f,F+2;m;16;i16~17;-12~-11;+3~+4;;;;Jun-f,F+2;;r31;;
 f,F+2,2;m, m;16, 22;,i21;-13;+8a;+7 +53a;"* Balcony Break

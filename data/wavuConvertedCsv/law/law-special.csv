@@ -1,9 +1,10 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Wavu id;Name;Recovery;Image;Video
 2+3;m;12 (12);i16;+1;+2c;;"* Heat Burst
 Power crush";hb pc;Law-2+3;Heat Burst;;;
-H.d+1+2;;;;;;;"* Enters DSS
-* Transition to Slide Step with DF
-* Absorbs punch attacks and shifts to Dragon Parry";;Law-H.d+1+2;Dragon Charge (Heat);DSS;;
+H.1+2;m;20;i16~17;-8~-7;+66a (+50);;"* Tornado
+* Weapon
+* Partially uses remaining Heat Time
+* Alternate input DSS.1+2";trn wpn;Law-H.1+2;Tornado Claw;;;
 H.2+3;m,t;24,4,5,5,5,7 (50);i14;+11g;+5;;"* Heat Smash
 * Balcony Break
 * Automatically transitions to DSS on block";hs bbr;Law-H.2+3;Heavenly Dragon;;;
@@ -66,19 +67,23 @@ Power crush 8~";pc8~;Law-R.df+1+2;Fate of the Dragon;r39;;
 ** (+8 oB, +13g, +45a (+38))
 ** DSS allows full combo off of Magic 4";;Law-4,3,4;Shaolin Spin Kicks;;;
 4,u+3;h, m;15, 23;i33;-1;+30a (+13);;"Combos off of 1st hit CH
-Low crush";js;Law-4,u+3;Crescent Kick Combo;;;
-1+2;m;20;i16;-13;+12a (+5);+66a (+50);"* Tornado
+Low crush 23~";js23~;Law-4,u+3;Crescent Kick Combo;;;
+1+2;m;20;i16~17;-13~12;+12a (+5);+66a (+50);"* Tornado
 * Weapon
-* Partially uses remaining Heat Time
+* Partially uses remaining Heat Time in heat
 * Instant Tornado on CH
 * Alternate input DSS.1+2";trn wpn;Law-1+2;Tornado Claw;;;
 2+3+4;;;;;;;;;Law-2+3+4;Taunt;;;
-3+4;m,m;5,10;i14;-13;+3;;Alternate input DSS.3+4;;Law-3+4;;;;
+3+4;m,m;5,10;i14~15, i11;-13;+3;;"Alternate input DSS.3+4
+Low crush 14~";js14~;Law-3+4;;;;
 3+4,4;m,m, h;5,10, 25;i30;+7 (+10g w);+31d (-27);;"* Balcony Break
+* Wall Crush +10g on block
+
+
 * Combos from 1st hit
 * Chip damage on block
 * Alternate input DSS.3+4,4
-Low crush";bbr chp js;Law-3+4,4;Wild Dragon's Flight;;;
+Low crush 22~";bbr wc chp js22~;Law-3+4,4;Wild Dragon's Flight;;;
 f+2;h;10;i12;+0;+6;;"* Can route into:
 ** Rave War Combo (f+2,2,2), or
 ** Blazing Fist Combo (f+2,2,1+2)
@@ -93,17 +98,17 @@ f+3,1;m, m;10, 12;i20;-2;+8;;"* Transition to DSS with F
 ** (+4 oB, +14g)";;Law-f+3,1;Plunging Knock;;;
 f+1+2;m;20;i20;+3c;+8c;+55a;Transition to FC with D;;Law-f+1+2;Dragon Hammer;;;
 f+3+4;m;20;i25;-2;+7c;+49a;"Alternate input DSS.f+3+4
-Low crush";js;Law-f+3+4;Dragon Killer;;;
+Low crush 11~";js11~;Law-f+3+4;Dragon Killer;;;
 df+1;m;10;i13;-1;+5;;First hit of Law's 10 String;;Law-df+1;;;;
 df+1,3;m, l;10, 6;i20;-16;-5;;Combos from 1st hit;;Law-df+1,3;;;;
 df+1,3,2;m, l, m;10, 6, 6;i28;-12;-1;;Combos from 1st hit;;Law-df+1,3,2;;;;
 df+1,3,2,2,3,3,3,4,4,4;;;;;;;First 3 hits are a natural combo;;Law-10 String;10 Hit Combo;;;
 df+2;m;12;i15;-7;+34a (+24);;;;Law-df+2;Dragon Raise;;;
-df+3;m;23;i21;-13;+52a (+21);;;;Law-df+3;Dragon Lance;FC;;
+df+3;m;23;i21;-13;+52a (+21);;High crush 6~;cs6~;Law-df+3;Dragon Lance;FC;;
 df+4;m;15;i13;-8;+3;;;;Law-df+4;Right Middle Kick;;;
-df+4,3;m, m;15, 23;i29;-14;+68a (+52);;"* Tornado
+df+4,3;m, m;15, 23;i29~31;-14;+68a (+52);;"* Tornado
 * Combos from 1st hit CH
-Low crush";trn js;Law-df+4,3;Right Middle Kick > Somersault Kick;FC;;
+Low crush 14~";trn js14~;Law-df+4,3;Right Middle Kick > Somersault Kick;FC;;
 df+3+4;l;12;i18;-15;+4c;+6a;High crush 6~;cs6~;Law-df+3+4;Banana Peel;FC;;
 d+1;l;15;i21;-12;-1;;"Transition to Slide Step with DF
 High crush 6~";cs6~;Law-d+1;Low Backhand;FC;;
@@ -115,10 +120,13 @@ d+2,3;s, m;8, 21;i23;-15;+30a (+20);;"* Combos from 1st hit CH
 * Tornado";trn;Law-d+2,3;Body Blow > Dragon Lift;;;
 d+3;l;8;i16;-14;-3;;Transition to FC with D;;Law-d+3;Dragon Low;;;
 d+3,3;l, h;8, 17;i16;-7;+20a;+46CS;"* Combos from 1st hit CH
+* -30 on block from 1st block
 * Delay-able";;Law-d+3,3;Dragon Low > Hook Kick;;;
 d+4;l;7;i15;-11;+0;;;;Law-d+4;;;;
 d+4,3;l, h;7, 12;i12;-12;+0;+5;"* Combos from 1st hit
-* Nosebleed stun";;Law-d+4,3;Construct Kick;;;
+* -26 on 1st block
+* Nosebleed stun
+Low crush 5~9? fs10?~12?";js5~9? fs10?~12?;Law-d+4,3;Construct Kick;;;
 d+1+2;;;;;;;"* Enters DSS
 * Transition to Slide Step with DF";;Law-d+1+2;Dragon Charge;DSS;;
 d+3+4;l;7;i12;-14;-2;;"Alternate input FC.d+4
@@ -126,7 +134,7 @@ High crush 4~";cs4~;Law-d+3+4;Low Kick;FC;;
 d+3+4,3;l, m;7, 23;i29;-14;+14a;;"* Balcony Break
 * Combos from 1st hit CH
 * Alternate input FC.d+4,3
-Low crush";bbr js;Law-d+3+4,3;Low Kick > Somersault;FC;;
+Low crush 19~";bbr js19~;Law-d+3+4,3;Low Kick > Somersault;FC;;
 db+1;s;5;i10;-5;+6;;High crush 4~;cs4~;Law-db+1;Crouch Jab;FC;;
 db+2;m;15;i14;-4;+7;;;;Law-db+2;;BT;;
 db+2,4;m, m;15, 25;i33;-4;+1d;;"Transition to FUFA with D
@@ -148,8 +156,9 @@ b+1,2,2;m, m, m;12, 12, 22;i18;-14;+12a (+5);;"* Heat Engager
 * Balcony Break
 * Combos from 1st or 2nd hit CH
 * Delay-able";he bbr;Law-b+1,2,2;Dragon Storm;;;
-b+1+3;;;ps2~11;;+7;;"* Transition to DSS on successful parry with F to be +14
-* Guarantees DSS.1, DSS.2, DSS.f+1";;Law-b+1+3;Parry;35;;
+b+1+3;;;;;+7;;"* Transition to DSS on successful parry with F to be +14
+* Guarantees DSS.1, DSS.2, DSS.f+1
+Parry state 5?~11?";ps5?~11?;Law-b+1+3;Parry;35;;
 b+2;m;12;i16;-8;+4;;;;Law-b+2;;;;
 b+2,1;m, m;12, 16;i26;-15;+11a;;"* Tornado
 * Balcony Break
@@ -176,9 +185,10 @@ b+4;m;13;i14;-7;+3;;"* Homing
 b+4,3;m, h;13, 21;i32;-5;+24a (+15);;"* Balcony Break
 * Combos from 1st hit";bbr;Law-b+4,3;Tiger Fang;;;
 b+1+2;m;21;i20;-14;+31a (+23);;"Balcony Break
-Power crush";bbr pc;Law-b+1+2;Dragon Stinger;;;
+Power crush 7~";bbr pc7~;Law-b+1+2;Dragon Stinger;;;
 b+3+4;m;25;i23;-18;+16a (+6);;"* Balcony Break
-* Can be done from DSS";bbr;Law-b+3+4;Dragon Arrow;;;
+* Can be done from DSS
+High crush 6~10?";bbr cs6~10?;Law-b+3+4;Dragon Arrow;;;
 ub+1,2,1,2;h,h,h,h;8,8,8,28;i12,i6,i6,i13;-7;+13a (-4);;"* Jails from 1st to 3rd attack
 * Last hit delay-able
 * Frame data for 1st, 2nd and 3rd hits:
@@ -186,12 +196,12 @@ ub+1,2,1,2;h,h,h,h;8,8,8,28;i12,i6,i6,i13;-7;+13a (-4);;"* Jails from 1st to 3rd
 ub+2;h;17;i15;-12;+9;;;;Law-ub+2;generic hook;;;
 ub+3;;;;;;;"* Transition to Slide Step with DF
 * Alternate input u+3
-Low crush";js;Law-ub+3;Somersault;;;
+Low crush 9~";js9~;Law-ub+3;Somersault;;;
 ub+3,4;m;20;i15;-12;+31a (+21);;;;Law-ub+3,4;Somersault > Feint;;;
 u+4;m;12;i15;-13;+19a (+9);+33a (+23);Low crush;js;Law-u+4;Rising Toe Kick;;;
 UF+4;m;23;i18;-17;+28a (+18);;"* Alternate input
 ** UB+4, U+4, FC.ub+4, FC.u+4, FC.uf+4
-Low crush";js;Law-UF+4;Somersault Kick;FC;;
+Low crush 9~";js9~;Law-UF+4;Somersault Kick;FC;;
 UF+4,3;m, m;23, 16;i19;-14;+78a (+62);;"* Combos from 1st hit
 * Tornado
 * 2nd hit Instant Tornado
@@ -212,10 +222,10 @@ uf+3;m;20;i18;-8;+42d (-16);;"* Heat Engager
 * Heat Dash +5, +36d (+26)
 
 * Balcony Break
-Low crush";he bbr js;Law-uf+3;Dragon's Fury;;;
-uf+4;m;14;i15;-13;+33a (+23);;Low crush;js;Law-uf+4;Dragon's Rising Kick;;;
+Low crush 9~";he bbr js9~;Law-uf+3;Dragon's Fury;;;
+uf+4;m;14;i15;-13;+33a (+23);;Low crush 9~;js9~;Law-uf+4;Dragon's Rising Kick;;;
 uf+3+4;l;27;i29;-24;+5;;"Alternate input DSS.uf+3+4
-Low crush";js;Law-uf+3+4;Dragon's Descent;;;
+Low crush 8~30?";js8~30?;Law-uf+3+4;Dragon's Descent;;;
 1+2+3+4;;;;;;;;;Law-1+2+3+4;Ki Charge;;;
 1+2+3+4;;;;;;;;;Law-1+2+3+4,1+2*;Ki Charge (Hold);;;
 1+2+3+4,2;h;24;i14;+1;+50a;;"* Chip damage on block
@@ -237,6 +247,7 @@ f,F+2,1,3;m, h, m;12, 12, 23;i28;-13;+11a;;"* Balcony Break
 f,F+2,3;m, h;12, 20;i16;-14;+37a (-21);;"* Tornado
 * Balcony Break
 * Combos from 1st hit
+* Jails from 1st block with ?F delay
 * Delayable";trn bbr;Law-f,F+2,3;Dragon Dagger;;;
 f,F+2,f+1+2;m, m;12, 24;i31;+2;+30a (+4);;"* Chip damage on block
 * Transition to DSS with F
@@ -247,7 +258,7 @@ f,F+3;m;30;i20;-13;+18d (+8);;"* Heat Engager
 
 * Balcony Break
 * Alternate input DSS.f+3
-Power crush";he bbr pc;Law-f,F+3;Dragon Cannon;;;
+Power crush 6~";he bbr pc6~;Law-f,F+3;Dragon Cannon;;;
 f,F+4;m;17;i20;-11;+18a (+1);;Balcony Break;bbr;Law-f,F+4;Dragon's Leap Shot;;;
 uf,n,4;m;20;i19;-15;+30a (+20);;Low crush;js;Law-uf,n,4;Dragon's Rising Cannon;;;
 f,f,F+3;m;30;i20~28;+6;+35d (-23);;"* Balcony Break
@@ -306,7 +317,7 @@ BT.d+3+4;m;25;i26;-15;+0;;"* Transition to FUFA with D
 ** (-2 oB, +13d oH)";;Law-BT.d+3+4;Frogman;BT;;
 DSS.1;h;14;i12;+0;+8;+18c;"* Chip damage on block
 * Automatically transitions to DSS on hit and block
-* CH guarantees DSS.f+1, DSS.3+4,4";chp;Law-DSS.1;Dragon Knuckle;DSS;;
+* CH guarantees DSS.f+1, DSS.3+4,4";chp;Law-DSS.1;Dragon Knuckle;r36? DSS;;
 DSS.2;h;20;i14;+1;+15d;+50a;"* Balcony Break
 * Chip damage on block";bbr chp;Law-DSS.2;Cloud Gates;;;
 DSS.3;h;30;i19;+3;+40a;;"* Homing
@@ -337,10 +348,13 @@ DSS.f+3;m;30;i20;-13;+18d (+8);;"* Heat Engager
 * Chip damage on block
 * Alternate input f,F+3
 * While transitioning to DSS from other moves, it is possible to input DSS.f+3 as a Just Frame (ex; 4,3~F:DSS.f+3) for 4 more damage.
-Power crush";he bbr chp pc;Law-DSS.f+3;Dragon Cannon;;;
+Power crush 8~";he bbr chp pc8~;Law-DSS.f+3;Dragon Cannon;;;
 DSS.f+4;h;40;i19;+7 (+10g w);+31d (-27);;"* Balcony Break
+* Wall Crush +10g on block
+
+
 * Chip damage on block
-* While transitioning to DSS from other moves, it is possible to input DSS.f+4 as a Just Frame (ex; 4,3~F:DSS.f+4) for 4 more damage.";bbr chp;Law-DSS.f+4;Dragon's Flight;;;
+* While transitioning to DSS from other moves, it is possible to input DSS.f+4 as a Just Frame (ex; 4,3~F:DSS.f+4) for 4 more damage.";bbr wc chp;Law-DSS.f+4;Dragon's Flight;;;
 1+3;t;35;i12~14;-3;+0d;;Throw break 1 or 2;;Law-1+3;Dragon's Fire;;;
 2+4;t;35;i12~14;;+0d;;"* Throw break 1 or 2
 * Side swap
@@ -348,11 +362,16 @@ DSS.f+4;h;40;i19;+7 (+10g w);+31d (-27);;"* Balcony Break
 ** (+5 BT)";;Law-2+4;Hopping Frog;;;
 Back Throw;t;50;i12~14;;+0d;;Unbreakable;;Law-Back throw;Dragon Bites;;;
 DSS.uf+1+2;t;35;i12;-2;+0d;;Throw break 1+2;;Law-DSS.uf+1+2;Facelift;;;
+H.DSS,P;t;38;;;+0d;;"* Punches only
+* Heat only
+* Partially restores remaining Heat Time
+Parry state 1?";ps1?;Law-H.DSS,P;Dragon Parry;;;
 Left Throw;t;40;i12~14;-3;+0d;;Throw break 1;;Law-Left throw;Headlock Kick;;;
 Right Throw;t;42;i12~14;-3;+0d;;Throw break 2;;Law-Right throw;Ball Breaker;;;
 b+2+4;t;34 (38 Heat);;;+0d;;"* Punches only
 * Partially restores remaining Heat Time
-* Does 38 damage in Heat";;Law-b+2+4;Dragon Parry;;;
+* Does 38 damage in Heat
+Parry state 5?";ps5?;Law-b+2+4;Dragon Parry;;;
 f,F+3+4;t;10;i12;-3;+55a (+28);;Throw break 1+2;;Law-f,F+3+4;Knee Lift;;;
 f+2+3;t;35;i12;-2;+6d;;Throw break 1;;Law-f+2+3;Run Up > Drop;;;
 uf+1+2;t;35;i12;-6;+3d;;Throw break 1+2;;Law-uf+1+2;Headlock Punch;;;

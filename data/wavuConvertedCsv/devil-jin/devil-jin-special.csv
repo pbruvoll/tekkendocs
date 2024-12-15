@@ -28,7 +28,7 @@ R.df+1+2;m,t;10-15,3-5,42-60;i20;-15;+0d;;"* Rage Art
 Power crush 8~20";pc8~20;Devil Jin-R.df+1+2;Devil Dimension: Tainted Chains;r39;;
 1;h;5;i10;+1;+8;;Recovers 2f faster on hit or block (t27 r17);;Devil Jin-1;Jab;r19;;
 1,1;h, h;5, 6;,i15;-1;+8;;* Jail from 1st attack with 3f delay;;Devil Jin-1,1;Double Jab;r19;;
-1,1,2;h, h, m;5, 6, 14;,i13;-17;+18a (+13);;"* Balcony Break on airborne hit
+1,1,2;h, h, m;5, 6, 14;,i13~14;-17;+18a (+13);;"* Balcony Break on airborne hit
 * Combo from 1st hit with 11f delay";;Devil Jin-1,1,2;Flash Punch Combo;r37;;
 1,2;h, h;5, 8;,i10;-3;+8;;* Jail from 1st attack with 4f delay;;Devil Jin-1,2;One Two Strike;r22;;
 1,2,2;h, h, h;5, 8, 12;,i17;-12;+4;;"* Combo from 1st hit with 11f delay
@@ -71,8 +71,9 @@ Power crush 8~20";pc8~20;Devil Jin-R.df+1+2;Devil Dimension: Tainted Chains;r39;
 1+2;m,m;12,25;i17 i25~26;-12;+7;;"* Homing
 * Balcony Break
 * Interrupt with i1 from 1st block";hom bbr;Devil Jin-1+2;Tsujikaze;r35;;
-1+4;SL,h;5,5;,i16;-3;+4;;Jails;;Devil Jin-1+4;;r21;;
+1+4;SL,h;5,5;i16~17,i14;-3;+4;;Jails;;Devil Jin-1+4;;r21;;
 1+4,2;SL,h, m;5,5, 20;,i24~25;-12;+72a (+56);;"* Tornado
+* Combo from 2nd CH
 * 6 chip damage on block";trn;Devil Jin-1+4,2;Three Ring Alaya;r31;;
 3+4;;;;;;;"&lt;div class=&quot;plainlist&quot;&gt;
 * Low crush 20~58
@@ -92,8 +93,8 @@ f+3;;;;;;;"* Stance moves can be delayed by 10f
 * fs33~35&lt;/div&gt;";Devil Jin-f+3;Mourning Crow (MCR);r20 MCR;;
 f+4;m;10;i15~16;-12;-1;;;;Devil Jin-f+4;;r30;;
 f+4,3;m, m;10, 15;,i26~27;-22;+18a (+8);;"* Tornado
-* Combo on 1st CH with 3f delay
-* Input can be delayed 15f
+* Combo on 1st CH with 4?f delay
+* Input can be delayed 16?f
 * Enter FLY +36a (+26) with ub_u_uf on hit
 &lt;div class=&quot;plainlist&quot;&gt;
 * ,Low crush 27~51
@@ -177,7 +178,7 @@ b+2,1;h, m;11, 21;,i30-31;-16;+29a (+19);;"* Tornado
 * fs52~54&lt;/div&gt;";Devil Jin-b+2,1;Rakshasa's Rampage;r34;;
 b+2,3;h, m;11, 23;,i25~127;-14;+8a (-1);;"* Heat Engager
 
-* Heat Dash +62a (+42) on hit, +5 on block
+* Heat Dash +5, +62a (+42)
 
 * Balcony Break
 * 16 Chip Damage on Heat Dash
@@ -190,7 +191,7 @@ b+2,3;h, m;11, 23;,i25~127;-14;+8a (-1);;"* Heat Engager
 * fs48~50&lt;/div&gt;";Devil Jin-b+2,3;Rakshasa's Fury;r35;;
 b+3;M;24;i29~32;-15~-18;+10~+13;;"* Heat Engager
 
-* Heat Dash +43a (+35) on hit, +5 on block
+* Heat Dash +5, +43d (+35)
 
 * Balcony Break
 * 17 Chip Damage on Heat Dash
@@ -214,10 +215,11 @@ u+4;m;22;i20~21;-25;+15a (+5);;"* Tornado
 * js9~44
 * fs45~47&lt;/div&gt;";Devil Jin-u+4;Samsara;r54;;
 u+1+2;h;27;i18-35;;;;Hits airborne opponents only;;Devil Jin-u+1+2;Hellfire Cannon;r8;;
-uf+1;h;10;i21~23;+11;+16;;"* Strong Aerial Tailspin
+uf+1;h;10;i21~23;+11~+13;+16~+18;;"* Strong Aerial Tailspin
 * Weapon
 * Balcony break on airborne hit
 * Transition to r20 MCR on hit or block only
+* r47 opponent hitsun on hit 
 * 2 Chip Damage on block
 * 3 Chip Damage on block while in heat";wpn;Devil Jin-uf+1;Infernal Shackle;r42;;
 uf+2;h;25;i20~23;-4;+25a;;"* Homing
@@ -230,7 +232,7 @@ uf+3;m;21;i28~29;+3c;+7c;+19a;"* Spike
 * fs30~32&lt;/div&gt;";Devil Jin-uf+3;Reaper's Scythe;r29;;
 uf+4;m;21;i18;-8;+11;;"* Heat Engager
 
-* Heat Dash +62a (+42) on hit, +5 on block
+* Heat Dash +5, +62a (+42)
 
 * Balcony Break
 * 16 Chip Damage on Heat Dash
@@ -254,7 +256,7 @@ Low crush";js;Devil Jin-uf+3+4,1+2;Hisou > Annihilation Beam;;;
 * fs48~50&lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
 * js6~47 
 * fs48~50&lt;/div&gt;";Devil Jin-1+2+3+4;Ki Charge;r55;;
-b,f+2;m;12;i15~17;-9;-1;;"* i16 startup when buffered
+b,f+2;m;12;i15~17;-9;-1;;"* Input bufferable
 * Homing at +3 and above
 * Can be sidestepped to the right at -2 to +2";;Devil Jin-b,f+2;;r29;;
 b,f+2,1;m, m;12, 12;,i14~15;-10;+1;;"* Elbow
@@ -298,7 +300,7 @@ b,f+1+2,2;m, M;6,6,6,6,6,6, 30;,i28~31;-31;-14a (-23);;"* Balcony break on stand
 * fs70~72&lt;/div&gt;";Devil Jin-b,f+1+2,2;Gates of Hades;r56;;
 f,F+2;m;24;i15~16;-8;+15a (+6);;"* Heat Engager
 
-* Heat Dash +36a (+26) on hit, +5 on block
+* Heat Dash +5, +36a (+26)
 
 * Balcony Break
 * i18 startup when unbuffered, and i16 startup when buffered
@@ -441,7 +443,7 @@ MCR.2;m;12;i15~16;-13;-5;;"Homing
 * fs38~40&lt;/div&gt;";Devil Jin-MCR.2;;r34;;
 MCR.2,2;m, M;12, 20;,i24-26;-14c;+2a;;"* Heat Engager
 
-* Heat Dash +67a (+50) on hit, +5 on block
+* Heat Dash +5, +67a (+50)
 
 * Spike
 * 16 Chip Damage on blocked Heat Dash
@@ -469,8 +471,9 @@ MCR.4;M;10;i20~21;-29;-20s;;"&lt;div class=&quot;plainlist&quot;&gt;
 * fs51~53&lt;/div&gt;";Devil Jin-MCR.4;;r49;;
 MCR.4,2;M, m;10, 20;,i22~23;;+52a (+7);;Available only on hit;;Devil Jin-MCR.4,2;;;;
 MCR.4,2,1+2;M, m, m!,M!;10, 20, 15;,i27~28 i22~60;;-6a;;Available only on hit;;Devil Jin-MCR.4,2,1+2;Devil Starstorm;;;
-OTG.d+1+2;L;25;i23~31;-14;+5a;;"* Weapon
-* Balcony break on CH";wpn;Devil Jin-OTG.d+1+2;Hellfire Incinerator;r27;;
+OTG.d+1+2;L;25;i23~31;-16~-8;+5a~+13a;;"* Weapon
+* Balcony break on CH
+* Typically connects grounded on frames i25~26 of startup at -14~-13/+12a~+13a(+0a~+1a)";wpn;Devil Jin-OTG.d+1+2;Hellfire Incinerator;r27;;
 b,f+2,1,4,H.1+2;m, m, M, SM;12, 12, 21, 15;i24~35;+2;+59a(+43);;"* Balcony Break
 * Tornado
 * Weapon
