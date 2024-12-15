@@ -1,5 +1,11 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Wavu id;Name;Recovery;Image;Video
-2+3;m;12;i16;;+2;;Heat Burst;hb;Eddy-2+3;Heat Burst;;;
+2+3;m;"[12;12]";i16;+1;+2c;;"* Heat Burst
+* Cancel to r45 with b,b
+* 3 chip damage on block
+* 12 chip damage on hit
+* Only deals recoverable damage
+* Cannot cause a K.O.
+Power crush 7~16";hb pc7~16;Eddy-2+3;Heat Burst;r30;;
 H.3+4;m;20;i20~22;+9;+66a(+50);;"* Tornado
 * Shifts to HSP on block
 * 6 chip damage on block";trn;Eddy-H.3+4;Guerreiro Explosivo;;;
@@ -11,16 +17,21 @@ H.2+3;m;55;i18~19;+6;+0;;"* Heat Smash
 * Shifts to RLX on block";hs bbr;Eddy-H.2+3;Caveirinha Zangada;;;
 R.df+1+2;;;;;;;"Rage Art
 * Removes Recoverable Health";;Eddy-R.df+1+2;Enchente de Axé;;;
-1;h;5;i10;+1;+8;;;;Eddy-1;;r17;;
+1;h;5;i10;+1;+8;;Recovers 2f faster on hit or block (t27 r17);;Eddy-1;Jab;r19;;
 1,2;h, h;5, 12;,i10;-3;+8;;"* Jail from 1st attack with 4f delay
-* Can transition to r26 HSP with input F at -8 on block & +3 on hit";;Eddy-1,2;One Two Galopantes;r22;;
-1,2,4;h, h;5, 12;;;;;Low crush 7~37 fs38~40;js7~37 fs38~40;Eddy-1,2,4;;r45 FC;;
-1,2,4~3;h, h, L;5, 12, 20;,i32~33;-14c;+18a;;High crush 32~65;cs32~65;Eddy-1,2,4~3;One Two Galopantes > Chute Baixo;r29;;
-1,2,4~4;h, h, h;5, 12, 27;,i18~20;+8~+10;+42d (-16);;"* Balcony Break
-* Tech roll to r45 FC on frames 30-31
-* Wall crush on block, +20g minimum
-* Unparryable by traditional parries, Nina, Asuka, etc
-Low crush 7~32";bbr wc js7~32;Eddy-1,2,4~4;One Two Galopantes > Chute Alto;r30 FUFT;;
+* Enter HSP -8 +3 with F";;Eddy-1,2;One Two Galopantes;r22;;
+1,2,4;h, h;5, 12;;+6;+17;;"&lt;div class=&quot;plainlist&quot;&gt;
+* ,Low crush 7~37
+* fs38~40&lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
+* js7~37
+* fs38~40&lt;/div&gt;";Eddy-1,2,4;;r45 FC;;
+1,2,4~3;h, h, L;5, 12, 20;,i32~33;-14c;+18a;;,High crush 32~;cs32~;Eddy-1,2,4~3;One Two Galopantes > Chute Baixo;r65 RLX;;
+1,2,4~4;h, h, h;5, 12, 27;,i18~20;+8~+10 +20w;+42d (-16);;"* Balcony Break
+* Wall Crush on block, +20g minimum
+
+
+* Tech roll to r45 FC on frames 30~31
+,Low crush 7~32";bbr wc js7~32;Eddy-1,2,4~4;One Two Galopantes > Chute Alto;r63 FUFT;;
 1,3;h, m;5, 16;,i23~24;-14;+7c;;"* Spike
 * Combo from 1st hit with 2f delay";spk;Eddy-1,3;Céu Gafanhoto;r32 RLX;;
 2;h;10;i12;-9;+2;;;;Eddy-2;;r28;;
@@ -34,41 +45,73 @@ Low crush 7~32";bbr wc js7~32;Eddy-1,2,4~4;One Two Galopantes > Chute Alto;r30 F
 4;m;10;i13~14;-9;+7;;;;Eddy-4;;r27;;
 4,4;m, m;10, 20;,i30~31;-7;+12g;;"* Heat Engager
 
-* Heat Dash +5g~+6g +62a (+42)
+* Heat Dash +5, +62a (+42)
 
 * Balcony Break
-Low crush 22~33 fs34~36";he bbr js22~33 fs34~36;Eddy-4,4;Lufada;r30 FC;;
+* Combo from 1st CH with 4f delay
+* Input can be delayed 7f
+&lt;div class=&quot;plainlist&quot;&gt;
+* ,Low crush 22~33
+* fs34~36&lt;/div&gt;";"he bbr &lt;div class=&quot;plainlist&quot;&gt;
+* js22~33
+* fs34~36&lt;/div&gt;";Eddy-4,4;Lufada;r30 FC;;
 1+2;m;17;i20;+0c;+5c;+13c;"* Spike
 * Elbow";spk elb;Eddy-1+2;Faisão;r30;;
 f+2;m;15;i18;-9;+6;;;;Eddy-f+2;;r29;;
 f+2,4;m, l;15, 17;,i23~24;-14c;+2;+71a(+55);;;Eddy-f+2,4;Ventania;r32;;
 f+3;h;16;i18~20;-5;+7;;Homing;hom;Eddy-f+3;;r31;;
-f+3,4;h, m;16, 25;,i29~31;-11;+15a(+6);+32a;"* Balcony Break
+f+3,4;h, m;16, 25;,i29~31;-11~-9;+15a (+6);+32a;"* Balcony Break
 * Combo from 1st hit
-* Can cancel to r23 HSP with F, -17 on block -5 on hit";bbr;Eddy-f+3,4;Combo do Funâmbolo;r33;;
-f+4;m;13;i23~25;-8;+8c;;Spike;spk;Eddy-f+4;;r30 HSP;;
+* Can cancel to r23 HSP with F, -17 on block -5 on hit
+* Cancel to HSP -17 -5 r23 with F
+,fs25~46";bbr fs25~46;Eddy-f+3,4;Combo do Funâmbolo;r33;;
+f+4;m;13;i23~25;-8;+8c;;"Spike
+fs16~";spk fs16~;Eddy-f+4;;r30 HSP;;
 f+4,3;m, m;13, 8;,i23~24;-13;-1c;;"* Spike
 * Combo from 1st hit with 10f delay
 * Move can be delayed 7f";spk;Eddy-f+4,3;;r31;;
 f+4,3,3+4;m, m, M,M;13, 8, 7,20;,i24~26;-12;+8a;;"* Spike
 * Combo from 2nd CH";spk;Eddy-f+4,3,3+4;Aú do Sol;r31;;
-f+4,3+4;m, L;13, 14;,i22~24;-24c;+12a;;;;Eddy-f+4,3+4;Aú da Lua;r48 RLX;;
+f+4,3+4;m, L,L;13, 7,7;,i22~24 i5~6;-24c;+12a;;"Combo from 1st CH
+&lt;div class=&quot;plainlist&quot;&gt;
+* ,fs1~70
+* High crush 10~86&lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
+* fs1~70
+* cs10~86&lt;/div&gt;";Eddy-f+4,3+4;Aú da Lua;r48 RLX;;
 f+1+2;;;;;;;;;Eddy-f+1+2;Bananeira;;;
 f+3+4;m;25;i19~21;-9;+18a (+8);;"* Heat Engager
 
-* Heat Dash +5g~+7g +36a (+26)
+* Heat Dash +5, +36a (+26)
 
 * Balcony Break
 * 5 chip damage on block
-fs9~18 Low crush 19~32 33~35";he bbr fs9~18 js19~32 33~35;Eddy-f+3+4;Xangô;r35;;
-df+1;m;10;i13;-3;+6;;;;Eddy-df+1;;;;
-df+1,3;m, h;10, 21;,i26~27;-7;+22a(+5);;"* Tornado
-* Balcony Break";trn bbr;Eddy-df+1,3;Gêiser;;;
-df+2;m;19;i14~15;-5;+6;+21a(+4);;;Eddy-df+2;Elbow Uppercut;;;
-df+3;m;17;i15~18;-18;+31a(+21);;Tornado;trn;Eddy-df+3;Mirage;;;
-df+4;L;14;i18;-13c;+0;;;;Eddy-df+4;Kneecap Crusher;;;
-df+3+4;m,m;10,11;i18~19;-3 -2;+23a;;"* Spike
-* If only the second attack hits it launches";spk;Eddy-df+3+4;Aú Reversão;;;
+&lt;div class=&quot;plainlist&quot;&gt;
+* fs9~18
+* Low crush 19~32
+* fs33~35&lt;/div&gt;";"he bbr &lt;div class=&quot;plainlist&quot;&gt;
+* fs9~18
+* js19~32
+* fs33~35&lt;/div&gt;";Eddy-f+3+4;Xangô;r35;;
+df+1;m;10;i13;-3;+6;;;;Eddy-df+1;;r22;;
+df+1,3;m, h;10, 21;,i26~27;-7;+22a (+5);;"* Tornado
+* Balcony Break
+* Combo from 1st hit with 2f delay
+* Input can be delayed 10f
+* Move can be delayed 9f
+&lt;div class=&quot;plainlist&quot;&gt;
+* ,Low crush 16~43
+* fs44~46&lt;/div&gt;";"trn bbr &lt;div class=&quot;plainlist&quot;&gt;
+* js16~43
+* fs44~46&lt;/div&gt;";Eddy-df+1,3;Gêiser;r27;;
+df+2;m;19;i14~15;-5;+6;+21a (+4);"* Balcony Break
+** on CH
+* Elbow";bbr elb;Eddy-df+2;Elbow Uppercut;r28;;
+df+3;m;17;i15~18;-18~-16;+31a (+21);;"Tornado
+fs19~33";trn fs19~33;Eddy-df+3;Mirage;r36;;
+df+4;L;14;i18;-12;+0;+14g;;;Eddy-df+4;Kneecap Crusher;r31;;
+df+3+4;m,M;10,16;i18~19 i8~11;-3~+0;+1a;;"* Spike
+* [[Eddy combos#Staples|+23a]] if only the 2nd hit connects
+fs9~26";spk fs9~26;Eddy-df+3+4;Aú Reversão;r24;;
 d+2;m;10;i17~18;-9;+0;;;;Eddy-d+2;;;;
 d+2,3;m, m;10, 20;,i24~25;-4c;+5c;;"* Combos from 1st CH
 * Shift to RLX";;Eddy-d+2,3;Palmares Giro;;;

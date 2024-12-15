@@ -68,12 +68,12 @@ Heat Dash  (+5/+35d/-)";he;Steve-1+2;Sonic Fang;;;
 * Input f into PAB";;Steve-3+4;Quick Spin;;;
 f+2;m;11;i21~22;-6;+5;;;;Steve-f+2;;;;
 f+2,1;m, h;11, 12;i15;-5;+1;;"* Combo from 1st hit
-* Input f to PAB (+0/+4/+4)
-* Input b to FLK (+1/+5/+5)";;Steve-f+2,1;Ducking Body Blow > Left Hook;;;
+* Input f to r15? PAB (+0/+4/+4)
+* Input b to r14? FLK (+1/+5/+5)";;Steve-f+2,1;Ducking Body Blow > Left Hook;r21?;;
 f+2,1~2;m, m;11, 20;i31;-10;+36d (+28);;* Balcony Break;bbr;Steve-f+2,1~2;Ducking Psyche-out Body;;;
 f+2,2;m, m;11, 15;i16~17;-6;+11g;;"* Combo from 1st hit
 * Transistion to LNH
-* Input b to cancel LNH (-10/+7/+7)";;Steve-f+2,2;;;;
+* Input b to cancel LNH r29? (-10/+7/+7)";;Steve-f+2,2;;r24?;;
 f+2,2,1+2;m, m, m,m,m;11, 15, 5,8,20;i18~19, i7~8, i16;-12;+5c;;"* Combo from 2nd CH
 * Spike
 * Floor Break";spk fbr;Steve-f+2,2,1+2;Conqueror Combination;;;
@@ -93,11 +93,11 @@ df+1;m;12;i13;-2;+5;;"* Input 3 to LWV (-7/0/0)
 * Input b+3_4 to SWY (-7/0/0)
 * Input f+3_4 to DCK (-5/+2/+2)";;Steve-df+1;Left Uppercut;;;
 df+1,2;m, h;12, 13;i19;-6;+3;+5;"* Combo from 1st hit
-* Input 3 to LWV (-16/-9/-9)
-* Input 4 to RWV (-16/-9/-9)
-* Input b+3_4 to SWY (-16/-9/-9)
-* Input f+3_4 to DCK (-14/-7/-7)";;Steve-df+1,2;Uppercut Cross Combo;;;
-df+1,2~1;m, h;12, 20;i30~31;-2;+2;+61a;* Input b to FLK (+0/+4/+63a);;Steve-df+1,2~1;Uppercut Psyche-out Hook;;;
+* Input 3 to cancel into r16? LWV (-16/-9/-9)
+* Input 4 to cancel into r16? RWV (-16/-9/-9)
+* Input b+3_4 to cancel into SWY (-16/-9/-9)
+* Input f+3_4 to cancel into DCK (-14/-7/-7)";;Steve-df+1,2;Uppercut Cross Combo;r25?;;
+df+1,2~1;m, h;12, 20;i30~31;-2;+2;+61a;* Input b to r14? FLK (+0/+4/+63a);;Steve-df+1,2~1;Uppercut Psyche-out Hook;r17?;;
 df+1,2~2;m, m;12, 12;i37;-10;+36d (+28);;* Balcony Break;bbr;Steve-df+1,2~2;Uppercut Psyche-out Body;;;
 df+1,2~f+1+2;m, h,h;12, 8,12;i34, i9;-3;+0;;"* Input 3 to LWV (-4/-1/-1)
 * Input 4 to RWV (-4/-1/-1)
@@ -110,10 +110,10 @@ df+2;m;10;i16;-11;+6;+8c;"* Input 3 to LWV (-7/+10/+12)
 d+1;l;12;i16;-13;-2;;High crush 6~;cs6~;Steve-d+1;Knee Blaster;FC;;
 d+2;l;11;i17;-18;-5;;High crush 6~;cs6~;Steve-d+2;;;;
 d+2,1;l, m;11, 8;i14~15;-11;-5;+0;"* Combo from 1st CH
-* Input 3 to LWV (-6/+0/+0)
-* Input 4 to RWV (-6/+0/+0)
-* Input b+3_4 to SWY (-6/+0/+0)
-* Input f+3_4 to DCK (-4/+2/+7)";;Steve-d+2,1;;;;
+* Input 3 to cancel into LWV (-6/+0/+0)
+* Input 4 to cancel into RWV (-6/+0/+0)
+* Input b+3_4 to cancel into SWY (-6/+0/+0)
+* Input f+3_4 to cancel into DCK (-4/+2/+7)";;Steve-d+2,1;;;;
 d+2,1,2;l, m, h;11, 8, 17;i24~25;-2;+27a (+18);+56a;"* Balcony Break
 * Combo from 2nd CH";bbr;Steve-d+2,1,2;Wildman Combo;;;
 db+1;sl;5;i10;-5;+6;;"* Transition to Standing with f
@@ -139,7 +139,8 @@ High crush 13~";cs13~;Steve-b+1,d+2;;;;
 b+1,d+2,1;h, l, m;10, 10, 10;i25~27;-9;+35a (+20a);;"* Tornado
 * Combo from 2nd CH";trn;Steve-b+1,d+2,1;Frigate Combo;;;
 b+1+3;sp;;;;;;"* Parry h and m punches
-* Successful parry i14,30dmg (-12/+24a (+18)/+26a (+16))";;Steve-b+1+3_b+2+4;Parry;;;
+* Successful parry i14,30dmg (-12/+24a (+18)/+26a (+16))
+Parry state 5?";ps5?;Steve-b+1+3_b+2+4;Parry;;;
 b+2;m;20;i17;-13;+14;;* Can evade highs;;Steve-b+2;Body Bomb;;;
 b+3;sp;;;;;;"* Transition to SWY
 * Input 3 to LWV 
@@ -147,7 +148,8 @@ b+3;sp;;;;;;"* Transition to SWY
 * Input f+3_4 to DCK
 High crush 1~";cs1~;Steve-b+3;Swaying;;;
 b+3;sp;;;;;;"* Transition to FLK
-* Auto blocks high and mid";;Steve-b+3+4;Flicker Stance;;;
+* Auto blocks high and mid
+* Can perform an i5? cancel to r35? LWV/RWV with input 3 or 4";;Steve-b+3+4;Flicker Stance;;;
 ub+2;h;17;i17;+3;+14;;"* Strong Aerial Tailspin
 * Homing
 * Causes Strong Aerial Tailspin
@@ -254,8 +256,9 @@ FLK.1,1,f+1;h, h, m;14, 8, 17;i15;-5;+0;+10d;"* Spike
 * Same hit as (FLK.1),f+1";spk;Steve-FLK.1,1,f+1;;;;
 FLK.1,2;h, m;14, 22;i20~22;-12;+17a (+0);;"* Combo from 1st CH
 * Same hit as (FLK.1,1,1),2";;Steve-FLK.1,2;;;;
-FLK.1,d+1;h, h;14, 23;i15~17;+0;+18g;+42a;;;Steve-FLK.1,d+1;Power Hook Combo;;;
-FLK.1,f+1;h, m;14, 17;i15;-5;+0;+10d;* Spike;spk;Steve-FLK.1,f+1;Tempest Combo;;;
+FLK.1,d+1;h, h;14, 23;i15~17;+0;+18g;+42a;* Combo from 1st CH;;Steve-FLK.1,d+1;Power Hook Combo;;;
+FLK.1,f+1;h, m;14, 17;i15;-5;+0;+10d;"* Spike
+* Combo from 1st CH";spk;Steve-FLK.1,f+1;Tempest Combo;;;
 FLK.2;m;21;i18~19;-5c;+7d;+42a;* Spike;spk;Steve-FLK.2;Fly Swatter;;;
 FLK.b+2;h;21;i14~15;-9;+35d (+27);;"* Tornado
 * Balcony Break
@@ -269,8 +272,8 @@ LNH.2;m;22;i16-17;-13;+61a (+51);;* Tornado;trn;Steve-LNH.2;Bloodhound;;;
 LNH.1+2;h;24;i18-19;[[Steve combos#Mini-combos|+12]];+51a (+31);;"* Guard Break
 * Reversal Break
 * Balcony Break
-* Chip damage on block";bbr chp;Steve-LNH.1+2;Swingfire Advance;;;
-LWV.1;m;14;i15;-10;+1;;* Input b to FLK (-3/+8/+8);;Steve-LWV.1;;;;
+* Chip damage on block";bbr chp;Steve-LNH.1+2;Swingfire Advance;r42?;;
+LWV.1;m;14;i15;-10;+1;;* Input b to r18? FLK (-3/+8/+8);;Steve-LWV.1;;;;
 LWV.1,1;m, m;14, 22;i24~26;-13;+28a (+19);;"* Strong Aerial Tailspin
 * Balcony Break
 * Combo from 1st hit";bbr;Steve-LWV.1,1;Double Stinger;;;
@@ -282,7 +285,7 @@ LWV.1,2;m, h;14, 14;i22~23;+3;+8;;"* Strong Aerial Tailspin
 LWV.1,2~1;m, m;14, 17;i30~31;-8;+4;+63a;;;Steve-LWV.1,2~1;Swindler;;;
 LWV.1,f+1;m, m;14, 9;i17;-3;+3;;* Combo from 1st hit;;Steve-LWV.1,f+1;;;;
 LWV.1,f+1,1;m, m, h;14, 9, 8;i16;+3;+7;+68a;"* Combo from 1st or 2nd hit
-* Input b to FLK (+4/+3/+68a)";;Steve-LWV.1,f+1,1;Centurion Rush;;;
+* Input b to r14? FLK (+4/+3/+68a)";;Steve-LWV.1,f+1,1;Centurion Rush;;;
 LWV.2;m;13;i14~16;-5;+4;;* Input f to PAB (-1/+8/+8);;Steve-LWV.2;;;;
 LWV.2,1;m, m;13, 21;i19;-8;+4c;+7d;"* Spike
 * Combo from 1st CH";spk;Steve-LWV.2,1;Right Shoulder Rush > Billy Club;;;

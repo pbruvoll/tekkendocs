@@ -8,23 +8,31 @@ R.df+1+2;m,t;55+;i20;-15;+0;;"* Rage Art
 * Damage increases with lower health
 Power crush 8~";pc8~;Lee-R.df+1+2;The Marvelous Rose;r39;;
 1;h;5;i10;+1;+8;;;;Lee-1;Jab;;;
-1,2;h, h;5, 9;,i12;-3;+7;;"* Transition to -2 +8 MS with F
-* Jail from 1st attack with max delay
-* Move can be delayed 4f";;Lee-1,2;Left Right Combo;;;
-1,2,2;h, h, m;5, 9, 14;,i20~21;-13;-2;;"* Move can be delayed
-* Combo from 2nd CH without delay";;Lee-1,2,2;;;;
+1,2;h, h;5, 9;,i12;-3;+7;;"* Transition to r30 -2 +8 MS with F
+* Jail from 1st attack with max (4F) delay
+* Combo from 1st hit with 4F delay
+* Move can be delayed 4F";;Lee-1,2;Left Right Combo;;;
+1,2,2;h, h, m;5, 9, 14;,i20~21;-13;-2;;"* Move can be delayed 5F
+* Input can be delayed 7F
+* Combo from 2nd CH with 7F delay";;Lee-1,2,2;;;;
 1,2,2,3;h, h, m, h;5, 9, 14, 23;,i21;-3;+17a (+8);;"* Balcony Break
-* Combo from 3rd hit CH 
-* Transition to -9, +11a (+2) HMS with 4
-* Move can be delayed";bbr;Lee-1,2,2,3;Left Right Combo > Revolution Zwei;;;
+* Combo from 3rd hit CH with 9F delay
+* Transition to r25 -9, +11a (+2a) HMS with 4
+* Move can be delayed 13F
+* Input can be delayed 18F";bbr;Lee-1,2,2,3;Left Right Combo > Revolution Zwei;;;
 1,2,4;h, h, m;5, 9, 10;,i18;-12;-1;+58a;"* Jail from 1st attack
-* Transition to -14 -2 HMS with 3";;Lee-1,2,4;Left Right Mid Kick;;;
-1,2:4;h, h, m;5, 9, 12;,i18;-12;+5;+58a;"* 4 frame window for timed input
-* Jail from 1st attack
-* Transition to -14 +3 HMS with 3";;Lee-1,2:4;Left Right Mid Kick;;;
+* Combo from 2nd hit
+* Transition to -14 -2 HMS with 3
+* Move can be input by pressing 4 during frames 1-9 of 1,2";;Lee-1,2,4;Left Right Mid Kick;;;
+1,2:4;h, h, m;5, 9, 12;,i18;-12;+5;+58a;"* Jail from 1st attack
+* Combo from 2nd hit with 1f delay
+* Move can be input by pressing 4 during frames 10-13 of 1,2
+* Transition to r44 -14 +3 HMS with 3";;Lee-1,2:4;Left Right Mid Kick;;;
 1,3;h, h;5, 5;i16;-11;+0;;Can be delayed (2F?);;Lee-1,3;;;;
-1,3:3;h, h, m;5, 5, 4;,i9;-11;+0;;Jail from 1st attack;;Lee-1,3:3;;;;
+1,3:3;h, h, m;5, 5, 4;,i9;-11;+0;;"* Input 3 during frames 13?-15? of previous hit
+* Jail from 1st attack";;Lee-1,3:3;;;;
 1,3:3:3;h, h, m, h;5, 5, 4, 14;,i21;-17;+14;;"* Combo from 1st hit
+* Input 3 during frame 8? of previous hit
 * Timestop on hit
 * 5 chip damage";;Lee-1,3:3:3;[[Acid Rain]];;;
 2;h;10;i10;+1;+7;;;;Lee-2;Right Cross;;;
@@ -52,14 +60,16 @@ Low crush";trn js;Lee-4,3,4;Spin Kick Somersault Combo;;;
 4,4;h, h;14, 5;,i10;-13;-2;;"* Jail from 1st attack
 * Combo from 1st CH [[Lee combos#Mini-combos|+20a (+13)]]";;Lee-4,4;;;;
 4,4,4;h, h, h;14, 5, 5;,i10;-13;-2;;"* Jail from 1st attack
-* Combo from 1st CH +25a (+18)";;Lee-4,4,4;Machinegun Kick;;;
+* Combo from 2nd hit with no delay
+* Frame advantage on 1st CH: +25a (+18)";;Lee-4,4,4;Machinegun Kick;;;
 4,4:4;h, h, h;14, 5, 12;,i20~21;-9;+15a (+6);;"* Heat Engager
 
 * Heat Dash +5g +34d
 
-* Combo from 1st hit
-* Combo from 1st ch [[Lee combos#Staples|+29a (+22)]]
-* 4 chip damage";he;Lee-4,4:4;Machinegun Kicks Cardinal;;;
+* Combo from 2nd hit with 1f-5f delay only
+* Frame advantage on 1st CH: [[Lee combos#Staples|+29a (+22)]]
+* 4 Chip Damage on block
+* 5 Chip Damage on block in heat";he;Lee-4,4:4;Machinegun Kicks Cardinal;;;
 4,u+3;h, m;14, 23;i33;-1;+48d;js;* Transition to -9, +40 MS with F;;Lee-4,u+3;Lee Somersault;;;
 1+2;m;20;i21;-1;+3;+26a;"* Homing
 * Floor Break
@@ -81,6 +91,7 @@ f+3,3,3,3,3,4;m, m, m, m, h, h;6, 3, 3, 3, 3, 25;i23;-9;+69a (+53);;"* Tornado
 Low crush";trn js;Lee-f+3,3,3,3,3,4;Acid Storm;;;
 f+3,3,3,3,3:4;m, m, m, m, h, h;6, 3, 3, 3, 3, 26;i23;-9;+69a (+53);;"* Tornado
 * Perfect Input not required during Heat
+* 4 must be input during frames 7?-9? of previous hit
 * Partially consumes remaining Heat Time, while Perfect input restores Heat Time
 * Combos from 1st hit
 Low crush";trn js;Lee-f+3,3,3,3,3:4;Acid Storm Cardinal;;;
@@ -121,7 +132,7 @@ d+1;s;5;i10;-5;+6;;"Alternate input db+1, FC.1
 High crush";cs;Lee-d+1;;;;
 d+2;m;17;i18;-6;+8;+13;High crush;cs;Lee-d+2;Gut Polisher;;;
 d+3;l;17;i16;-15;-1;+17a;"Transition to -15, -1, +17a HMS with 4
-High crush";cs;Lee-d+3;Silver Low;;;
+High crush 6~";cs6~;Lee-d+3;Silver Low;;;
 d+4;l;7;i12;-13;-14;-2;;;Lee-d+4;Shin;;;
 d+4,n,4;l, h;7, 16;i23;-9;+2;+27a (+17);"* Links to attacks from 4 (4,4:4, 4,3,4, etc.)
 * Combos from 1st hit CH";;Lee-d+4,n,4;Shin > Head Kick;;;
@@ -150,7 +161,7 @@ b+1:1+2;h, h;9, 25;i21;-6;+39d (-19);;"* Balcony Break
 b+1+3;;;;;+14BT;;"* High and Mid parry
 * Puts you behind opponent
 * Alternate input b+2+4, HMS.b+1+3, HMS.b+2+4
-Parry state";ps;Lee-b+1+3;Mist Illusion;;;
+Parry state 5?";ps5?;Lee-b+1+3;Mist Illusion;;;
 b+1+3,4;m;35;i20;;+22a (+13);;"* Balcony Break
 * Only available upon successful parry
 * Guaranteed hit";bbr;Lee-b+1+3,4;Illusion Edge;;;
@@ -206,7 +217,7 @@ f,F+3;m;26;i14~15;-9;+21d (+11);;"* Heat Engager
 * Balcony Break
 *Slight low profile";he bbr;Lee-f,F+3;Pulse Blast;;;
 f,F+4;h;22;i16;-5;+29a;;"*
-High crush";cs;Lee-f,F+4;Deadly Edge;;;
+High crush 5~";cs5~;Lee-f,F+4;Deadly Edge;;;
 f,n;;;;;;;"* Transitions to MS
 * Alternate input HMS.f,n
 High crush";cs;Lee-f,n;Mist Step;;;
@@ -265,8 +276,9 @@ FC.UF+3+4;m;30;i46~49;-4;+18a (+8);;"* Balcony Break
 Low crush";bbr js;Lee-FC.UF+3+4;Catapult Drop;FUFT;;
 FC.df,d,DF;;;;;;;"*
 High crush";cs;Lee-FC.df,d,DF;Slide Step;FC;;
-FC.df,d,DF:3;l;25;i18~24;-15*;+3;+5d;"* * Frame advantage on block depends on spacing.: Ranges from -15 up close, to -9 at tip range.
+FC.df,d,DF:3;l;25;i18~24;-15*;+3;+5d;"* Frame advantage on block depends on spacing.: Ranges from -15 up close, to -9 at tip range.
 * Perfect Input not required during Heat
+* Perfect input when DF and 3 are input during the same frame?
 * Partially consumes remaining Heat Time, while Perfect input restores Heat Time
 High crush  Low crush";cs js;Lee-FC.df,d,DF${justFrame}3;Friction Spear Cardinal;FC;;
 FC.df,d,DF+3;l;20;i18~24;-15*;+3;+5d;"* * Frame advantage on block depends on spacing.: Ranges from -15 up close, to -9 at tip range.
@@ -284,9 +296,9 @@ HMS.2;m;23;i19;-13;+39a (+29);;* Tornado;trn;Lee-HMS.2;Scatter Blow;;;
 HMS.3;h,t;21,20;i18;-3;+0d;;"* Homing
 * Shifts to throw on hit from the front
 * 6 chip damage
-Power crush";hom pc;Lee-HMS.3;Scatter Kick;;;
+Power crush 8~";hom pc8~;Lee-HMS.3;Scatter Kick;;;
 HMS.4;l;20;i22;-13;+4c;+72a (+56);"* Instant Tornado on CH
-High crush";cs;Lee-HMS.4;Shin Slicer;;;
+High crush 6~";cs6~;Lee-HMS.4;Shin Slicer;;;
 HMS.1+2;m,m;10,15;i15;-5;+6;+19a (+10);"* On CH: 
 Balcony Break";bbr;Lee-HMS.1+2;Poison Touch;HMS;;
 HMS.u+3;m;26;i20~22;-9;+23d (+13);;"* Heat Engager
@@ -296,14 +308,13 @@ HMS.u+3;m;26;i20~22;-9;+23d (+13);;"* Heat Engager
 * Balcony Break
 * Transition to -9, +23d (+13) FC with D
 * 7 chip damage
-Low crush";he bbr js;Lee-HMS.u+3;Silver Slash;;;
+Low crush 9~";he bbr js9~;Lee-HMS.u+3;Silver Slash;;;
 HMS.u+4;m;20;i26~29;-5c;+13c;;"*
-Low crush";js;Lee-HMS.u+4;Silver Circle;;;
+Low crush 16~";js16~;Lee-HMS.u+4;Silver Circle;;;
 MS.3;m;10;i15;-12;-1;;"*
 Low crush";js;Lee-MS.3;;;;
 MS.3,4;m, m;10, 10;i15;-13;+32a (+22);;*;;Lee-MS.3,4;Inverted Axle;;;
-MS.3+4;l;17;i25~31;-15*;+3;+5d;"* * Frame advantage on block depends on spacing: Ranges from -15 up close, to -9 at tip range.
-High crush  Low crush";cs js;Lee-MS.3+4;Friction Spear;FC;;
+MS.3+4;l;17;i25~31;-15~-9;+3;+5d;High crush  Low crush;cs js;Lee-MS.3+4;Friction Spear;FC;;
 1+3;t;35;i12~14;-3;-2d;;Throw break 1 or 2;;Lee-1+3;Forearm Drop;;;
 2+4;t;35;i12~14;-6;-2d;;"* Throw break 1 or 2
 * Side swap";;Lee-2+4;Axle Throw;;;

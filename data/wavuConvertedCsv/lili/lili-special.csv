@@ -1,6 +1,11 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Wavu id;Name;Recovery;Image;Video
-2+3;m;12 (12);i16;+1;+2c;;"* Heat Burst
-Power crush";hb pc;Lili-2+3;Heat Burst;;;
+2+3;m;"[12;12]";i16;+1;+2c;;"* Heat Burst
+* Cancel to r45 with b,b
+* 3 chip damage on block
+* 12 chip damage on hit
+* Only deals recoverable damage
+* Cannot cause a K.O.
+Power crush 7~16";hb pc7~16;Lili-2+3;Heat Burst;r30;;
 H.BT.2+3;l,M,M,M;15,5,5,20;i16 i27~28 i6~8 i20~22;-8;+23a (+5);;"* Heat Smash
 * Homing
 * Balcony Break
@@ -19,56 +24,77 @@ H.f,F+3+4 (etc.);m;36;i19;+4 (+9w);+20a (-6);;"* All moves named Piercing Thorn 
 * Chip damage on block [16]
 * Partially consumes remaining Heat time
 Low crush";bbr chp js;Lili-H.f,F+3+4;Piercing Thorn (Heat);;;
-H.2+3;h,t;55;i23;+9;-3d;;"* Heat Smash
-* Homing
-* Floor Break
-Low crush 22~";hs hom fbr js22~;Lili-H.2+3;White Swan Mezzo Forte;BT;;
 H.2+3;h,h,m,M;15,15,15,30;i23~24 i14~15 i36~38 i9~11;+9;+20d(-15);;"* Heat Smash
 * Homing
 * Floor Break
 Low crush 22?";hs hom fbr js22?;Lili-H.2+3;White Swan Mezzo Forte (Block);BT;;
+H.2+3;h,t;55;i23;+9;-3d;;"* Heat Smash
+* Homing
+* Floor Break
+Low crush 22~";hs hom fbr js22~;Lili-H.2+3;White Swan Mezzo Forte;BT;;
 R.df+1+2;m,t;55+;i20;-15;+0;;"* Rage Art
 * Removes Recoverable Health
 * Damage increases with lower health
 Power crush 8~";pc8~;Lili-R.df+1+2;La Vie en Rose Fortissimo;r39;;
-1;h;5;i10;+1;+8;;;;Lili-1;;r17;;
-1,1;h, h;5, 16;i20~21;-4~-3;+4~+5;;"* Elbow
-* Combos from 1st hit";elb;Lili-1,1;;BT;;
-1,1,3;h, h, m;5, 16, 17;i20~21;-15~-14;+6~+7d;+25a;* Combos from 2nd hit CH;;Lili-1,1,3;Tricolore;;;
-1,2;h, h;5, 12;i12;-3;+8;;* Combos from 1st hit;;Lili-1,2;Left Right Thrust;;;
-1,2,3;h, h, L;5, 12, 13;i26;-13;-2;+6c;"* Combos from 2nd hit CH
-High crush";cs;Lili-1,2,3;Left Right Back Strike;;;
-1,2,4;h, h, m;5, 12, 20;i29;-9 / +2 H +7wc;+2a (-7);;"* Balcony Break
+1;h;5;i10;+1;+8;;Recovers 2f faster on hit or block (t27 r17);;Lili-1;Jab;r19;;
+1,1;h, h;5, 16;,i20~21;-6;+4;;"* Elbow
+* Jail from 1st attack with no delay
+* Combo from 1st hit with 5f delay
+* Input can be delayed 6f";elb;Lili-1,1;;r24 BT;;
+1,1,3;h, h, M;5, 16, 17;,i20~21;-15;+6d;+25a;"* Combo from 2nd CH with 6f delay
+* Input can be delayed 6f
+* Move can be delayed 5f";;Lili-1,1,3;Tricolore;r32;;
+1,2;h, h;5, 12;,i12;-3;+8;;* Jail from 1st attack with 6f delay;;Lili-1,2;Left Right Thrust;r21;;
+1,2,3;h, h, L;5, 12, 13;,i26;-13;-2;+6c;"* Combo from 2nd CH
+,High crush 10~45";cs10~45;Lili-1,2,3;Left Right Back Strike;r32;;
+1,2,4;h, h, m;5, 12, 20;,i29~34;-9~-4;+2a (-7);;"* Balcony Break
 * Chip on block [6]
+* Input can be delayed 4f
+* Move can be delayed 3f
 * Powers up in Heat: 30 damage, +2 ob, Wall Crush +7g, 13 Chip, +18a (-8) oh
 * Partially consumes remaining Heat time
-Low crush";bbr chp js;Lili-1,2,4;Left Right Piercing Thorn;;;
-2;h;8;i10;+0;+8;;;;Lili-2;;;;
-2,3;h, L;8, 13;i26;-12;-2;+6c;"* Combos from 1st hit
-High crush";cs;Lili-2,3;Sunrise Sunset;;;
-2,4;h, h;8, 20;i22~26;-2;+24a (+15);;"* Balcony Break 
-* Combos from 1st hit";bbr;Lili-2,4;Bed Time;;;
-3;m;12;i15;-11;-3;;;;Lili-3;;BT;;
-3,1;m, m;12, 24;i27;-13;+40d (-18);;"* Heat Engager
+&lt;div class=&quot;plainlist&quot;&gt;
+* ,Low crush 21~41
+* fs42~44&lt;/div&gt;";"bbr chp &lt;div class=&quot;plainlist&quot;&gt;
+* js21~41
+* fs42~44&lt;/div&gt;";Lili-1,2,4;Left Right Piercing Thorn;r42;;
+2;h;8;i10;+0;+8;;;;Lili-2;;r19;;
+2,3;h, L;8, 13;,i26;-12;-2;+6c;"* Combo from 1st hit
+,High crush 10~45";cs10~45;Lili-2,3;Sunrise Sunset;r32;;
+2,4;h, h;8, 20;,i22~26;-2~+2;+24a (+15);;"* Balcony Break 
+* Combo from 1st hit with 5f delay
+* Input can be delayed 10f";bbr;Lili-2,4;Bed Time;r22;;
+3;m;12;i15~16;-11;-3;;;;Lili-3;;r32 BT;;
+3,1;m, m;12, 20;,i27~28;-13;+40d (-18);;"* Heat Engager
  
 * Heat Dash +5, +36a (+26)
 
 * Balcony Break
-* Combos from 1st hit";he bbr;Lili-3,1;Peacock Waltz;;;
-3,2;m, h;12, 8;i27;-5;+2;+10;"* Combos from 1st hit
-* Transition to -2, +5, +14 DEW with F";;Lili-3,2;;;;
-3,2,3;m, h, h;12, 8, 22;i24;-9;+13a (+4);;"* Balcony Break
-* Combos from 2nd hit CH
-Low crush";bbr js;Lili-3,2,3;Peacock Jive;;;
-4;h;16;i12;-4;+7;;;;Lili-4;;;;
-1+2;m;26;i12;-12;+20d (+10);;* Balcony Break;bbr;Lili-1+2;Broken Heart;;;
-3+4;h,h;30;i23~24 i14~15;-2;+20a (+11);;"* Heat Engager
+* Combo from 1st hit";he bbr;Lili-3,1;Peacock Waltz;r33;;
+3,2;m, h;12, 8;,i27;-5;+2;+10;"* Combo from 1st hit with 2f delay
+* Enter DEW -2 +5 +14 with F";;Lili-3,2;;r24;;
+3,2,3;m, h, h;12, 8, 22;,i24~27;-9~-6;+13a (+4);;"* Balcony Break
+* Combo from 2nd CH with 4f delay
+&lt;div class=&quot;plainlist&quot;&gt;
+* ,Low crush 13~31
+* fs32~34&lt;/div&gt;";"bbr &lt;div class=&quot;plainlist&quot;&gt;
+* js13~31
+* fs32~34&lt;/div&gt;";Lili-3,2,3;Peacock Jive;r34;;
+4;h;16;i12;-4;+7;;;;Lili-4;;r23;;
+1+2;m;26;i12~13;-12;+20d (+10);;* Balcony Break;bbr;Lili-1+2;Broken Heart;r35;;
+3+4;h,h;10,20;i23~24 i14~15;-2;+20a (+11);;"* Heat Engager
  
 * Heat Dash +5, +62a (+42)
 
 * Homing
 * Balcony Break
-Low crush";he hom bbr js;Lili-3+4;Black Swan;;;
+* Chip damage on block [8]
+* Jail from 1st attack
+&lt;div class=&quot;plainlist&quot;&gt;
+* Low crush 22~36
+* fs37~39&lt;/div&gt;";"he hom bbr chp &lt;div class=&quot;plainlist&quot;&gt;
+* js22~36
+* fs37~39&lt;/div&gt;";Lili-3+4;Black Swan;r29;;
 f+2;h;10;i12;-9;-1;;;;Lili-f+2;;;;
 f+2,3;h, m;10, 20;i22;-15;+24a (+7);;"* Balcony Break
 * Combo from 1st hit with 3?F delay";bbr;Lili-f+2,3;Mars Sword;;;
