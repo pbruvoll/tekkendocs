@@ -456,39 +456,30 @@ qcb+4;h;20;i15~16;+1;+23d (+14);+59a;"* Homing
 * Chip damage (6)";hom chp;Paul-SWA.4;Kawaragoma;r26;;File:Paul-qcb4.mp4
 qcb+1+2;m;22;i16~17;-14;+37a (+27);;"* Tornado
 * High evasion";trn;Paul-SWA.1+2;Unseen Gust;r35;;File:Paul-qcb1p2.mp4
-1+3;t;35;i12~14;;+1d FUFA;;"* Homing
+1+3;t;35;i12~14;-6;+1d FUFA;;"* Homing
 * Throw break 1 or 2
-* -6 if broken
 * Side switch";hom;Paul-1+3;Over The Shoulder;;;File:Paul-1p3.mp4
-2+4;t;35;i12~14;;+1d FUFA;;"* Homing
+2+4;t;35;i12~14;-3;+1d FUFA;;"* Homing
 * Throw break 1 or 2
-* -3 if broken
 * Side switch";hom;Paul-2+4;Shoulder Pop;FUFT;;File:Paul-2p4.mp4
-2+4~b;t;40;i12~14;;+0d;;"* Homing
-* Throw break 2
-* -2 if broken";hom;Paul-2+4~b;Chest Crusher;;;File:Paul-2p4~b.mp4
+2+4~b;t;40;i12~14;-2;+0d;;"* Homing
+* Throw break 2";hom;Paul-2+4~b;Chest Crusher;;;File:Paul-2p4~b.mp4
 Back Throw.1+3;t;50;i12~14;;-14d FUFA;;* Throw cannot be broken;;Paul-Back Throw.1+3;Reverse Neck Throw;;;File:Paul-1p3 back.mp4
 Back Throw.2+4;t;50;i12~14;;+1d FDFA;;"* Spike
 * Throw cannot be broken";spk;Paul-Back Throw.2+4;Piggyback Throw;;;File:Paul-2p4 back.mp4
-FC.1+2;t;0;i26;;+3d;;"* Throw break 1+2
-* -5 BT if broken
+FC.1+2;t;0;i26;-5 BT;+3d;;"* Throw break 1+2
 * Transition to Takedown on hit";;Paul-FC.1+2;Ultimate Tackle;;;File:Paul-fc1p2.mp4
 FC.1+2,2,1,2,1;t;30;,i26;;+0d;;"* Throw break 1 or 2
 * Alternate input 1,2,1,2";;Paul-Takedown.1+2,2,1,2,1;Ultimate Punch;;;File:Paul-fc1p2,2,1,2,1.mp4
 FC.1+2,2,d+1,1,1+2;t;50;,i26;;+0d FDFA;;"* Throw break 1
 * Transition to Arm Breaker with 1+2 after third hit";;Paul-Takedown.1+2,2,d+1,1,1+2;Ultimate Punishment;;;File:Paul-fc1p2,2,d1,1,1p2.mp4
-FC.1+2,1+2,1+2;t;25;,i26;;+1d;;"* Throw break 1+2
-* -9 if broken";;Paul-Takedown.1+2,1+2;Arm Breaker;;;File:Paul-fc1p2,1p2,1p2.mp4
-Left Throw;t;45;i12~14;;+1d FUFA;;"* Throw break 1
--6 if broken";;Paul-Left Throw;Dragon Screw;;;File:Paul-1p3 left.mp4
-Right Throw;t;40;i12~14;;-2d FUFA;;"* Throw break 2
-* -3 if broken
+FC.1+2,1+2,1+2;t;25;,i26;-9;+1d;;* Throw break 1+2;;Paul-Takedown.1+2,1+2;Arm Breaker;;;File:Paul-fc1p2,1p2,1p2.mp4
+Left Throw;t;45;i12~14;-6;+1d FUFA;;* Throw break 1;;Paul-Left Throw;Dragon Screw;;;File:Paul-1p3 left.mp4
+Right Throw;t;40;i12~14;-3;-2d FUFA;;"* Throw break 2
 * Side switch";;Paul-Right Throw;Fall Away;;;File:Paul-1p3 right.mp4
-b+1+4;t;40;i11;;+6d FUFA;;"* Throw break 1
-* -2 if broken
+b+1+4;t;40;i11;-2;+6d FUFA;;"* Throw break 1
 * Side switch";;Paul-b+1+4;Foot Launch;BT;;File:Paul-b1p4.mp4
-df+1+3;t;22;i12~13;;+9;;"* Throw break 1
-* -2 if broken";;Paul-df+1+3;Kongo Blast;;;File:Paul-df1p3.mp4
+df+1+3;t;22;i12~13;-2;+9;;* Throw break 1;;Paul-df+1+3;Kongo Blast;;;File:Paul-df1p3.mp4
 df+1+3,H.qcf+2;t, m;22, 21;,i13~14;;+16d (-20) FDFA;;"* Balcony Break
 * Consumes Heat
 * Strict qcf input required (d,f does not work)
@@ -508,11 +499,9 @@ df+1+3:qcf+2;t, m;22, 20;,i13~14;;+16d (-20) FDFA;;"* Balcony Break
 * Strict qcf input required (d,f does not work)
 * Perfect input window 55-56f
 * Perfect input increases damage, wall carry";bbr;Paul-df+1+3:qcf+2;Phoenix Smasher (Perfect Input);;;File:Paul-df1p3,qcf2 jf.mp4
-f,F+1+2;t;38;i12;;+20d;;"* Balcony Break
+f,F+1+2;t;38;i12;+0 BT/+0 FUFA;+20d;;"* Balcony Break
 * Throw break 1+2
 * Side switch if broken
-* +0 BT if broken
 * +0 FUFA if broken at wall";bbr;Paul-ff+1+2;Push Away;;;File:Paul-ff1p2.mp4
-uf+1+2;t;40;i12;;+0d;;"* Spike
-* Throw break 1+2
-* -6 if broken";spk;Paul-uf+1+2;Twist and Shout;;;File:Paul-uf1p2.mp4
+uf+1+2;t;40;i12;-6;+0d;;"* Spike
+* Throw break 1+2";spk;Paul-uf+1+2;Twist and Shout;;;File:Paul-uf1p2.mp4

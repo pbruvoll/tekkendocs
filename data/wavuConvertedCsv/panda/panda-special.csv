@@ -102,10 +102,12 @@ b+2;m;12;i15;-9;+2;;;;Panda-b+2;;;;
 b+2,1;m, h;12, 14;,i23;-3 / - 4 HBS / -14 ROL;+8 / +7 HBS / -3 ROL;;"* Combos from 1st hit
 * Transition to HBS with input D or 3+4
 * Transition to ROL with input F";;Panda-b+2,1;;;;
-b+2,1,1+2;m, h, m;12, 14, 20;,i26;-11;+15a (+6);;* Balcony Break;bbr;Panda-b+2,1,1+2;Howling Bear;;;
-b+2,2;m, m;12, 15;,i25;-10;+6;;;;Panda-b+2,2;;;;
+b+2,1,1+2;m, h, m;12, 14, 20;,i26;-11;+15a (+6);;"* Balcony Break
+* Combos from 2nd hit CH";bbr;Panda-b+2,1,1+2;Howling Bear;;;
+b+2,2;m, m;12, 15;,i25;-10;+6;;Combos from 1st hit CH;;Panda-b+2,2;;;;
 b+2,2,1;m, m, m;12, 15, 25;,i35~39;-15;+25a (+15);;"* Tornado
-* Does not tornado on wall hit
+* Does not Tornado on wall hit
+* Combos from 2nd hit CH
 Low crush";trn js;Panda-b+2,2,1;Salmon Massacre;;;
 b+1+2;hh;10,20;i18~19;-8;+13d / HE;;"* Balcony Break
 * Floor Break
@@ -120,11 +122,15 @@ b+1+4,f,f;sm;40;i55~i130;-20~+55;+42a~+117a;;"* Hold F to extend attack
 * If attack is extended to where you roll past the opponent, recovers in FUFA";;Panda-b+1+4,f,f;Rolling Bear;;;
 b+3+4;m;20;i22~23;-28;+61a;;"* Alternate input: ws3+4
 * Tornado";trn;Panda-b+3+4;High Jinks;;;
-ub+1+2;l;25;i31~32;-17;+12a;;* Cancel into HBS with input D or 3+4;;Panda-ub+1+2;Bear Skip;;;
-u+1+2;m;24;i18~23;-4 / -3 HBS;+3 / +4 HBS;;* Transition to HBS with input D or 3+4;;Panda-u+1+2;Big Bear Attack;;;
-u+3+4;m;21;i34~39;+10;+20;;* Transition to SIT (cannot cancel);;Panda-u+3+4;Pancake Press;;;
+ub+1+2;l;25;i31~32;-17;+12a;;"* Cancel into HBS with input D or 3+4
+Low crush";js;Panda-ub+1+2;Bear Skip;;;
+u+1+2;m;24;i18~23;-4 / -3 HBS;+3 / +4 HBS;;"* Transition to HBS with input D or 3+4
+Low crush";js;Panda-u+1+2;Big Bear Attack;;;
+u+3+4;m;21;i34~39;+14cg;+20d;;"* Transition to SIT (cannot cancel)
+Low crush";js;Panda-u+3+4;Pancake Press;;;
 uf+1;m;20;i26~28;-6;+22a;;"* Alternate input: ub+1 or u+1
-* chip damage on block";chp;Panda-uf+1;Hornet Sweep;;;
+* chip damage on block
+Low crush";chp js;Panda-uf+1;Hornet Sweep;;;
 uf+2;m;27;i28~30;-6;+30a;+65a (+45);"* Balcony Break
 * Homing
 * Tailspin

@@ -59,8 +59,8 @@ const charsT8: string[] = [
   'azucena',
   'bryan',
   'claudio',
-  'devil-jin',
   'clive',
+  'devil-jin',
   'dragunov',
   'eddy',
   'feng',
@@ -79,7 +79,6 @@ const charsT8: string[] = [
   'leroy',
   'lidia',
   'lili',
-  'mokujin',
   'nina',
   'panda',
   'paul',
@@ -91,6 +90,7 @@ const charsT8: string[] = [
   'xiaoyu',
   'yoshimitsu',
   'zafina',
+  'mokujin',
 ]
 
 const characterInfoListT7: CharacterInfo[] = charsT7.map(char => ({
