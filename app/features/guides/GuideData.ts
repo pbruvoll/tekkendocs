@@ -45,6 +45,11 @@ export type WallCombo = {
   combo: string
 }
 
+export type FrameTrap = {
+  starter: string
+  trap: string
+}
+
 export type GuideData = {
   externalResources: ExternalResource[]
   authors: Author[]
@@ -62,4 +67,6 @@ export type GuideData = {
   comboEnders: ComboEnder[]
   wallCombos: WallCombo[]
   smallCombos: Combo[]
+  frameTraps: FrameTrap[]
+  knowledgeChecks: KeyMove[]
 }

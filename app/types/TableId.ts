@@ -24,4 +24,6 @@ export type TableId =
   | 'videos_match'
   | 'resources_external'
   | 'heat_system'
+  | 'frame_traps'
+  | 'knowledge_checks'
   | 'credits'

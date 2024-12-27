@@ -115,4 +115,16 @@ const tableHandlers: Partial<
       combo: row[1],
     }))
   },
+  frame_traps: (rows, guideData) => {
+    guideData.frameTraps = rows.map(row => ({
+      starter: row[0],
+      trap: row[1],
+    }))
+  },
+  knowledge_checks: (rows, guideData) => {
+    guideData.knowledgeChecks = rows.map(row => ({
+      command: row[0],
+      description: row[1],
+    }))
+  },
 }

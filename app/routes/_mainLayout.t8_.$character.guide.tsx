@@ -15,6 +15,7 @@ import { PersonLinkList } from '~/components/PersonLinkList'
 import { ComboEnders } from '~/features/guides/ComboEnders'
 import { Combos } from '~/features/guides/Combos'
 import { ExternalResources } from '~/features/guides/ExternalResources'
+import { FrameTraps } from '~/features/guides/FrameTraps'
 import { GuideContext } from '~/features/guides/GuideContext'
 import { GuideNav } from '~/features/guides/GuideNav'
 import { tablesToGuideData } from '~/features/guides/guideUtils.server'
@@ -153,6 +154,8 @@ export default function Index() {
     comboEnders,
     wallCombos,
     smallCombos,
+    frameTraps,
+    knowledgeChecks,
   } = guideData
   const { top10Moves, notableMoves } = {
     top10Moves: keyMoves?.slice(0, 10),
@@ -229,6 +232,10 @@ export default function Index() {
         )}
         {panicMoves?.length && (
           <KeyMoves moves={panicMoves} title="Panic moves" />
+        )}
+        {frameTraps?.length && <FrameTraps frameTraps={frameTraps} />}
+        {knowledgeChecks?.length && (
+          <KeyMoves moves={knowledgeChecks} title="Knowledge checks" />
         )}
         {externalResources?.length && (
           <ExternalResources externalResources={externalResources} />

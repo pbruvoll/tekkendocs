@@ -27,4 +27,6 @@ export const tableIdToDisplayName: Record<TableId, string> = {
   strengths: 'Strengths',
   weaknesses: 'Weaknesses',
   heat_system: 'Heat system',
+  frame_traps: 'Frame traps',
+  knowledge_checks: 'Knowledge checks',
 }
