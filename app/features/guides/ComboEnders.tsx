@@ -17,7 +17,7 @@ export const ComboEnders = ({ comboEnders }: ComboEndersProps) => {
       className="my-6 mb-10"
       id={'Combo Enders'.toLowerCase().replace(/ /g, '-')}
     >
-      <GuideSectionHeading title="Combo enders" />
+      <GuideSectionHeading title="Combo Enders" />
       <div className="flex gap-2 md:gap-4 lg:gap-8">
         {!!carry.length && <EnderList title="Carry" enders={carry} />}
         {!!floorBreak.length && (

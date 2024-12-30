@@ -110,7 +110,7 @@ export const meta: MetaFunction = ({ data, params, matches }) => {
   const characterTitle =
     characterName[0].toUpperCase() + characterName.substring(1)
   const title = `${characterTitle} Tekken 8 Guide | TekkenDocs`
-  const description = `An overview of the most important information for ${characterTitle} in Tekken 8. Quickly learn how the play the character by learning including key moves, punisher and combos`
+  const description = `An overview of the most important information for ${characterTitle} in Tekken 8. Quickly learn how the play the character by learning key moves, punisher and combos`
 
   return generateMetaTags({
     matches,
@@ -238,7 +238,7 @@ export default function Index() {
         )}
         {frameTraps?.length && <FrameTraps frameTraps={frameTraps} />}
         {knowledgeChecks?.length && (
-          <KeyMoves moves={knowledgeChecks} title="Knowledge checks" />
+          <KeyMoves moves={knowledgeChecks} title="Knowledge Checks" />
         )}
         {defensiveTips?.length && <DefensiveTips tips={defensiveTips} />}
         {defensiveMoves?.length && (
