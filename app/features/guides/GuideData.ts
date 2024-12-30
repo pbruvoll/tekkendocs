@@ -69,6 +69,7 @@ export type GuideData = {
   whiffPunishers: WhiffPunisher[]
   heatSystem: string[]
   combos: Combo[]
+  combosBeginner: Combo[]
   comboEnders: ComboEnder[]
   wallCombos: WallCombo[]
   smallCombos: Combo[]

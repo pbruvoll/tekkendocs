@@ -97,6 +97,12 @@ const tableHandlers: Partial<
       combo: row[1],
     }))
   },
+  combos_beginner: (rows, guideData) => {
+    guideData.combosBeginner = rows.map(row => ({
+      starter: row[0],
+      combo: row[1],
+    }))
+  },
   combos_ender: (rows, guideData) => {
     guideData.comboEnders = rows.map(row => ({
       type: row[0] as ComboEnderType,
