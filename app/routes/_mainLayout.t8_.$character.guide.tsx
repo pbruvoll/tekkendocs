@@ -14,6 +14,7 @@ import Nav, { type NavLinkInfo } from '~/components/Nav'
 import { PersonLinkList } from '~/components/PersonLinkList'
 import { ComboEnders } from '~/features/guides/ComboEnders'
 import { Combos } from '~/features/guides/Combos'
+import { DefensiveTips } from '~/features/guides/DefensiveTips'
 import { ExternalResources } from '~/features/guides/ExternalResources'
 import { FrameTraps } from '~/features/guides/FrameTraps'
 import { GuideContext } from '~/features/guides/GuideContext'
@@ -156,6 +157,8 @@ export default function Index() {
     smallCombos,
     frameTraps,
     knowledgeChecks,
+    defensiveTips,
+    defensiveMoves,
   } = guideData
   const { top10Moves, notableMoves } = {
     top10Moves: keyMoves?.slice(0, 10),
@@ -199,7 +202,7 @@ export default function Index() {
       </h1>
       <ContentContainer enableBottomPadding>
         {!!authors?.length && (
-          <div className="mt-1 flex justify-end">
+          <div className="mt-2 flex justify-end">
             <Authors authors={authors} />
           </div>
         )}
@@ -210,7 +213,7 @@ export default function Index() {
         )}
         {heatSystem?.length && <HeatSystem heatSystem={heatSystem} />}
         {top10Moves?.length && (
-          <KeyMoves moves={top10Moves} title="Top 10 moves" />
+          <KeyMoves moves={top10Moves} title="Top 10 Moves" />
         )}
         {(standingPunishers?.length ||
           crouchingPunishers?.length ||
@@ -228,14 +231,18 @@ export default function Index() {
           <Combos combos={smallCombos} title="Small Combos" />
         )}
         {notableMoves?.length && (
-          <KeyMoves moves={notableMoves} title="Notable moves" />
+          <KeyMoves moves={notableMoves} title="Notable Moves" />
         )}
         {panicMoves?.length && (
-          <KeyMoves moves={panicMoves} title="Panic moves" />
+          <KeyMoves moves={panicMoves} title="Panic Moves" />
         )}
         {frameTraps?.length && <FrameTraps frameTraps={frameTraps} />}
         {knowledgeChecks?.length && (
           <KeyMoves moves={knowledgeChecks} title="Knowledge checks" />
+        )}
+        {defensiveTips?.length && <DefensiveTips tips={defensiveTips} />}
+        {defensiveMoves?.length && (
+          <KeyMoves moves={defensiveMoves} title="Defensive Move Handling" />
         )}
         {externalResources?.length && (
           <ExternalResources externalResources={externalResources} />

@@ -127,4 +127,16 @@ const tableHandlers: Partial<
       description: row[1],
     }))
   },
+  defense_tips: (rows, guideData) => {
+    guideData.defensiveTips = rows.map(row => ({
+      title: row[0],
+      description: row[1],
+    }))
+  },
+  defense_moves: (rows, guideData) => {
+    guideData.defensiveMoves = rows.map(row => ({
+      command: row[0],
+      description: row[1],
+    }))
+  },
 }

@@ -50,6 +50,11 @@ export type FrameTrap = {
   trap: string
 }
 
+export type DefensiveTip = {
+  title: string
+  description: string
+}
+
 export type GuideData = {
   externalResources: ExternalResource[]
   authors: Author[]
@@ -69,4 +74,6 @@ export type GuideData = {
   smallCombos: Combo[]
   frameTraps: FrameTrap[]
   knowledgeChecks: KeyMove[]
+  defensiveTips: DefensiveTip[]
+  defensiveMoves: KeyMove[]
 }

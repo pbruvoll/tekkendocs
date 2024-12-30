@@ -28,5 +28,7 @@ export const hasHeaderMap: Record<TableId, boolean> = {
   weaknesses: true,
   frame_traps: true,
   knowledge_checks: true,
+  defense_tips: true,
+  defense_moves: true,
   heat_system: true,
 }

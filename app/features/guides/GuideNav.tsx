@@ -14,9 +14,10 @@ export const GuideNav = ({ guideData }: GuideNavPros) => {
     !!guideData.keyMoves && 'Top 10 Moves',
     !!guideData.standingPunishers && 'Punishers',
     !!guideData.combos && 'Combos',
-    !!guideData.keyMoves && guideData.keyMoves.length > 10 && 'Notable moves',
+    !!guideData.keyMoves && guideData.keyMoves.length > 10 && 'Notable Moves',
     !!guideData.frameTraps && 'Frame Traps',
     !!guideData.knowledgeChecks && 'Knowledge Checks',
+    !!(guideData.defensiveTips || guideData.defensiveMoves) && 'Defensive Tips',
     !!guideData.externalResources && 'External Resources',
   ]
   return (
