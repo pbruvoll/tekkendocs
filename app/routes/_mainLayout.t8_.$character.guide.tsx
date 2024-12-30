@@ -152,6 +152,7 @@ export default function Index() {
     crouchingPunishers,
     whiffPunishers,
     combos,
+    combosBeginner,
     comboEnders,
     wallCombos,
     smallCombos,
@@ -225,6 +226,9 @@ export default function Index() {
           />
         )}
         {combos?.length && <Combos combos={combos} title="Combos" />}
+        {combosBeginner?.length && (
+          <Combos combos={combosBeginner} title="Beginner Combos" />
+        )}
         {comboEnders?.length && <ComboEnders comboEnders={comboEnders} />}
         {wallCombos?.length && <WallCombos wallCombos={wallCombos} />}
         {smallCombos?.length && (
