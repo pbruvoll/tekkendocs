@@ -26,4 +26,6 @@ export type TableId =
   | 'heat_system'
   | 'frame_traps'
   | 'knowledge_checks'
+  | 'defense_tips'
+  | 'defense_moves'
   | 'credits'

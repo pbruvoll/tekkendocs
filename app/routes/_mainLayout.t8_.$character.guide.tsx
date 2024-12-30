@@ -14,6 +14,7 @@ import Nav, { type NavLinkInfo } from '~/components/Nav'
 import { PersonLinkList } from '~/components/PersonLinkList'
 import { ComboEnders } from '~/features/guides/ComboEnders'
 import { Combos } from '~/features/guides/Combos'
+import { DefensiveTips } from '~/features/guides/DefensiveTips'
 import { ExternalResources } from '~/features/guides/ExternalResources'
 import { FrameTraps } from '~/features/guides/FrameTraps'
 import { GuideContext } from '~/features/guides/GuideContext'
@@ -156,6 +157,8 @@ export default function Index() {
     smallCombos,
     frameTraps,
     knowledgeChecks,
+    defensiveTips,
+    defensiveMoves,
   } = guideData
   const { top10Moves, notableMoves } = {
     top10Moves: keyMoves?.slice(0, 10),
@@ -236,6 +239,10 @@ export default function Index() {
         {frameTraps?.length && <FrameTraps frameTraps={frameTraps} />}
         {knowledgeChecks?.length && (
           <KeyMoves moves={knowledgeChecks} title="Knowledge checks" />
+        )}
+        {defensiveTips?.length && <DefensiveTips tips={defensiveTips} />}
+        {defensiveMoves?.length && (
+          <KeyMoves moves={defensiveMoves} title="Defensive Moves" />
         )}
         {externalResources?.length && (
           <ExternalResources externalResources={externalResources} />
