@@ -213,7 +213,7 @@ export default function Index() {
         )}
         {heatSystem?.length && <HeatSystem heatSystem={heatSystem} />}
         {top10Moves?.length && (
-          <KeyMoves moves={top10Moves} title="Top 10 moves" />
+          <KeyMoves moves={top10Moves} title="Top 10 Moves" />
         )}
         {(standingPunishers?.length ||
           crouchingPunishers?.length ||
@@ -231,10 +231,10 @@ export default function Index() {
           <Combos combos={smallCombos} title="Small Combos" />
         )}
         {notableMoves?.length && (
-          <KeyMoves moves={notableMoves} title="Notable moves" />
+          <KeyMoves moves={notableMoves} title="Notable Moves" />
         )}
         {panicMoves?.length && (
-          <KeyMoves moves={panicMoves} title="Panic moves" />
+          <KeyMoves moves={panicMoves} title="Panic Moves" />
         )}
         {frameTraps?.length && <FrameTraps frameTraps={frameTraps} />}
         {knowledgeChecks?.length && (
@@ -242,7 +242,7 @@ export default function Index() {
         )}
         {defensiveTips?.length && <DefensiveTips tips={defensiveTips} />}
         {defensiveMoves?.length && (
-          <KeyMoves moves={defensiveMoves} title="Defensive Moves" />
+          <KeyMoves moves={defensiveMoves} title="Defensive Move Handling" />
         )}
         {externalResources?.length && (
           <ExternalResources externalResources={externalResources} />

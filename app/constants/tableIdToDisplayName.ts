@@ -29,4 +29,6 @@ export const tableIdToDisplayName: Record<TableId, string> = {
   heat_system: 'Heat system',
   frame_traps: 'Frame traps',
   knowledge_checks: 'Knowledge checks',
+  defense_tips: 'Defense tips',
+  defense_moves: 'Defense moves',
 }
