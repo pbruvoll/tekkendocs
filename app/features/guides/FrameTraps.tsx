@@ -17,8 +17,8 @@ export const FrameTraps = ({ frameTraps }: FrameTrapsProps) => {
             charUrl={charUrl}
             compressedCommandMap={compressedCommandMap}
             command={starter}
-          />
-          →
+          />{' '}
+          →{' '}
           <Commands
             charUrl={charUrl}
             compressedCommandMap={compressedCommandMap}
