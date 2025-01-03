@@ -1,4 +1,5 @@
 import { Command } from '~/components/Command'
+import { Commands } from '~/components/Commands'
 import { useGuideContext } from './GuideContext'
 import { type Punisher, type WhiffPunisher } from './GuideData'
 import { GuideSectionHeading } from './GuideSectionHeading'
@@ -34,8 +35,8 @@ const PunisherList = ({
       <div className="mb-2 bg-muted text-center">{title}</div>
       {punishers?.map(({ startup, command, description }, index) => (
         <div key={index} className="mb-2">
-          {startup}{' '}
-          <Command
+          {startup ? `${startup}f ` : ''}
+          <Commands
             command={command}
             charUrl={charUrl}
             compressedCommandMap={compressedCommandMap}
