@@ -1,4 +1,3 @@
-import { Command } from '~/components/Command'
 import { Commands } from '~/components/Commands'
 import { useGuideContext } from './GuideContext'
 import { type Punisher, type WhiffPunisher } from './GuideData'
