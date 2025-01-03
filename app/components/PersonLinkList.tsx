@@ -1,4 +1,5 @@
 import { Fragment } from 'react'
+import { TwitterLogoIcon } from '@radix-ui/react-icons'
 import { Link } from '@remix-run/react'
 
 export type PersonLink = {
@@ -29,8 +30,14 @@ export const PersonLinkList = ({ persons }: PersonLinkListProps) => {
 const PersonLinkComponent = ({ name, url }: PersonLink) => {
   if (url) {
     return (
-      <Link to={url} className="text-text-primary underline underline-offset-2">
-        {name}
+      <Link
+        to={url}
+        className="inline-flex items-center gap-1 text-text-primary underline underline-offset-2"
+      >
+        {name}{' '}
+        {url.includes('x.com') ? (
+          <TwitterLogoIcon width="1em" height="1em" />
+        ) : null}
       </Link>
     )
   }

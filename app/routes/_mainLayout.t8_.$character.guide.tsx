@@ -202,7 +202,7 @@ export default function Index() {
       </h1>
       <ContentContainer enableBottomPadding>
         {!!authors?.length && (
-          <div className="mt-2 flex justify-end">
+          <div className="mt-4">
             <Authors authors={authors} />
           </div>
         )}
