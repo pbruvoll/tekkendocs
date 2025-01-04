@@ -19,6 +19,7 @@ import { hasHeaderMap } from '~/constants/hasHeaderMap'
 import { tableIdToDisplayName } from '~/constants/tableIdToDisplayName'
 import { useFrameData } from '~/hooks/useFrameData'
 import { getSheet } from '~/services/googleSheetService.server'
+import { characterHasGuide } from '~/services/staticDataService'
 import type { CharacterFrameData } from '~/types/CharacterFrameData'
 import type { Game } from '~/types/Game'
 import { type Move } from '~/types/Move'
@@ -227,7 +228,13 @@ export default function Index() {
           </a>
         </div>
 
-        <Nav navData={navData}></Nav>
+        <Nav
+          navData={
+            characterHasGuide['T8'][characterName]
+              ? [...navData, { displayName: 'Guide', link: '../guide' }]
+              : navData
+          }
+        ></Nav>
       </ContentContainer>
       <ContentContainer enableBottomPadding>
         {!!authors?.length && (

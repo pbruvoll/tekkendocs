@@ -42,9 +42,10 @@ import { t8AvatarMap } from '~/utils/t8AvatarMap'
 
 const navData: NavLinkInfo[] = [
   { link: '../', displayName: 'Frame data' },
-  { link: '', displayName: 'Cheat sheet' },
+  { link: '../meta', displayName: 'Cheat sheet' },
   { link: '../antistrat', displayName: 'Anti strats' },
   { link: '../flashcard', displayName: 'Flash card' },
+  { link: '', displayName: 'Guide' },
 ]
 
 export const loader = async ({ params }: LoaderFunctionArgs) => {
@@ -116,8 +117,13 @@ export const meta: MetaFunction = ({ data, params, matches }) => {
     matches,
     title,
     description,
-    image: { url: `/t8/avatars/${characterId}-512.png` },
-    url: `/t8/${characterId}/meta`,
+    image: {
+      url:
+        characterId === 'dragunov'
+          ? `/t8/avatars/${characterId}-512.png`
+          : `/t8/guides/${characterId}.jpg`,
+    },
+    url: `/t8/${characterId}/guide`,
   })
 }
 
