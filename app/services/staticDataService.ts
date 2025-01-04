@@ -100,13 +100,12 @@ const characterInfoListT7: CharacterInfo[] = charsT7.map(char => ({
 }))
 
 export const characterHasGuide: Record<Game, Record<string, boolean>> = {
-  T8 : {
-    'dragunow': true,
-    'asuka': true,
+  T8: {
+    dragunow: true,
+    asuka: true,
   },
   T7: {},
   TT2: {},
-
 }
 
 export const getTekken7Characters = (): CharacterInfo[] => {
