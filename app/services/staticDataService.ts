@@ -1,4 +1,5 @@
 import type { CharacterInfo } from '~/types/CharacterInfo'
+import { type Game } from '~/types/Game'
 
 const charsT7: string[] = [
   'Akuma',
@@ -97,6 +98,15 @@ const characterInfoListT7: CharacterInfo[] = charsT7.map(char => ({
   id: char.toLocaleLowerCase(),
   displayName: char.replaceAll('-', ' '),
 }))
+
+export const characterHasGuide: Record<Game, Record<string, boolean>> = {
+  T8: {
+    dragunow: true,
+    asuka: true,
+  },
+  T7: {},
+  TT2: {},
+}
 
 export const getTekken7Characters = (): CharacterInfo[] => {
   return characterInfoListT7

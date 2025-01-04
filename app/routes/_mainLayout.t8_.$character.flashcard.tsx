@@ -17,6 +17,7 @@ import { FlashCardBack } from '~/features/flashCards/flashCardBack'
 import { FlashCardFront } from '~/features/flashCards/flashCardFront'
 import { useFlashCardAppState } from '~/features/flashCards/useFlashCardAppState'
 import { useFrameData } from '~/hooks/useFrameData'
+import { characterHasGuide } from '~/services/staticDataService'
 import type { CharacterFrameData } from '~/types/CharacterFrameData'
 import { type Move } from '~/types/Move'
 import type { RouteHandle } from '~/types/RouteHandle'
@@ -241,7 +242,13 @@ export default function FlashCard() {
           </div>
         </div>
 
-        <Nav navData={navData}></Nav>
+        <Nav
+          navData={
+            characterHasGuide['T8'][characterName]
+              ? [...navData, { displayName: 'Guide', link: '../guide' }]
+              : navData
+          }
+        ></Nav>
       </ContentContainer>
       <ContentContainer
         enableBottomPadding
