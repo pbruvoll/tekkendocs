@@ -47,12 +47,12 @@ export const generateMetaTags = ({
     { name: 'twitter:card', content: 'summary_large_image' },
     { property: 'twitter:title', content: title },
     { property: 'twitter:description', content: description },
-    { property: 'twitter:image', content: image },
+    { property: 'twitter:image', content: imageUrl },
   ]
 
   if (url) {
-    tags.push({ property: 'og:url', content: origin + url })
-    tags.push({ property: 'twitter:url', content: origin + url })
+    tags.push({ property: 'og:url', content: url.origin + url.pathname })
+    tags.push({ property: 'twitter:url', content: url.origin + url.pathname })
   }
 
   return tags
