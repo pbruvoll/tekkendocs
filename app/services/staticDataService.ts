@@ -104,6 +104,7 @@ export const characterHasGuide: Record<Game, Record<string, boolean>> = {
     dragunow: true,
     asuka: true,
     claudio: true,
+    xiaoyu: true,
   },
   T7: {},
   TT2: {},
