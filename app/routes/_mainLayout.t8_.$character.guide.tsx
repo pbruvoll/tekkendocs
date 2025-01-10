@@ -92,7 +92,11 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
   )
 }
 
-export const meta: MetaFunction = ({ data, params, matches }) => {
+export const meta: MetaFunction<typeof loader> = ({
+  data,
+  params,
+  matches,
+}) => {
   const frameData = matches.find(
     m => (m.handle as RouteHandle)?.type === 'frameData',
   )?.data
@@ -108,9 +112,10 @@ export const meta: MetaFunction = ({ data, params, matches }) => {
   }
   const { characterName } = frameData as CharacterFrameData
   const characterId = characterName.toLocaleLowerCase()
+  const author = data?.guideData?.authors?.[0].name
   const characterTitle =
     characterName[0].toUpperCase() + characterName.substring(1)
-  const title = `${characterTitle} Tekken 8 Guide | TekkenDocs`
+  const title = `${characterTitle} Tekken 8 Guide ${author ? 'by ' + author : ''} | TekkenDocs`
   const description = `An overview of the most important information for ${characterTitle} in Tekken 8. Quickly learn how the play the character by learning key moves, punisher and combos`
 
   return generateMetaTags({
