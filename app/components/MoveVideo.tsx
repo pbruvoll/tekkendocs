@@ -16,22 +16,6 @@ export const MoveVideo = ({
 }: MoveVideoProps) => {
   const isHydrated = useHydrated()
 
-  if (move.video) {
-    return (
-      <div className={cx(className)}>
-        <video
-          className="mb-2 aspect-video"
-          src={`https://wavu.wiki/t/Special:Redirect/file/${move?.video}`}
-          loop
-          controls
-          autoPlay
-          muted
-        />
-        <div className="text-sm">Video from Wavu wiki</div>
-      </div>
-    )
-  }
-
   if (move.ytVideo && isHydrated) {
     return (
       <div className="relative aspect-video">
@@ -54,6 +38,22 @@ export const MoveVideo = ({
         {hideFrameData && (
           <div className="absolute bottom-0 right-[2%] aspect-square w-1/12 bg-black" />
         )}
+      </div>
+    )
+  }
+
+  if (move.video) {
+    return (
+      <div className={cx(className)}>
+        <video
+          className="mb-2 aspect-video"
+          src={`https://wavu.wiki/t/Special:Redirect/file/${move?.video}`}
+          loop
+          controls
+          autoPlay
+          muted
+        />
+        <div className="text-sm">Video from Wavu wiki</div>
       </div>
     )
   }
