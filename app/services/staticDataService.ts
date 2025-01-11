@@ -99,12 +99,11 @@ const characterInfoListT7: CharacterInfo[] = charsT7.map(char => ({
   displayName: char.replaceAll('-', ' '),
 }))
 
-export const characterHasGuide: Record<Game, Record<string, boolean>> = {
+export const characterGuideAuthors: Record<Game, Record<string, string>> = {
   T8: {
-    dragunow: true,
-    asuka: true,
-    claudio: true,
-    xiaoyu: true,
+    asuka: 'Fergus',
+    claudio: 'Tetsu',
+    xiaoyu: 'Kanda',
   },
   T7: {},
   TT2: {},

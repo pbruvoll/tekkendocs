@@ -1,3 +1,4 @@
+import cx from 'classix'
 import { motion } from 'framer-motion'
 import { InView } from '@/components/core/InView'
 import {
@@ -7,8 +8,9 @@ import {
 
 export type CharacterGridProps = {
   characterCards: (CharacterCard2Props & { imgSrc: string })[]
+  size?: 'medium' | 'large'
 }
-export const CharacterGrid = ({ characterCards }: CharacterGridProps) => {
+export const CharacterGrid = ({ characterCards, size }: CharacterGridProps) => {
   return (
     <InView
       viewOptions={{ once: true, margin: '0px 0px -250px 0px' }}
@@ -21,8 +23,15 @@ export const CharacterGrid = ({ characterCards }: CharacterGridProps) => {
         },
       }}
     >
-      <ul className="grid grid-cols-6 gap-x-1 gap-y-1 xs:grid-cols-5 xs:gap-x-2 xs:gap-y-3 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-9">
-        {characterCards.map(({ name, url, imgSrc }, index) => {
+      <ul
+        className={cx(
+          'grid gap-x-1 gap-y-1',
+          size === 'large'
+            ? 'grid-cols-3 xs:grid-cols-4 xs:gap-x-2 xs:gap-y-3 sm:grid-cols-5 md:grid-cols-6'
+            : 'grid-cols-4 xs:grid-cols-5 xs:gap-x-2 xs:gap-y-3 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-9',
+        )}
+      >
+        {characterCards.map(({ name, url, imgSrc, author }, index) => {
           return (
             <motion.div
               variants={{
@@ -43,7 +52,12 @@ export const CharacterGrid = ({ characterCards }: CharacterGridProps) => {
               className="mb-4"
             >
               <li className="cursor-pointer" key={name}>
-                <CharacterCard2 imgUrl={imgSrc} name={name} url={url} />
+                <CharacterCard2
+                  imgUrl={imgSrc}
+                  name={name}
+                  url={url}
+                  author={author}
+                />
               </li>
             </motion.div>
           )
