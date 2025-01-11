@@ -9,7 +9,7 @@ import Nav, { type NavLinkInfo } from '~/components/Nav'
 import { TextWithCommand } from '~/components/TextWithCommand'
 import { tableIdToDisplayName } from '~/constants/tableIdToDisplayName'
 import { useFrameData } from '~/hooks/useFrameData'
-import { characterHasGuide } from '~/services/staticDataService'
+import { characterGuideAuthors } from '~/services/staticDataService'
 import type { CharacterFrameData } from '~/types/CharacterFrameData'
 import { type Move } from '~/types/Move'
 import type { RouteHandle } from '~/types/RouteHandle'
@@ -122,7 +122,7 @@ export default function Index() {
 
         <Nav
           navData={
-            characterHasGuide['T8'][characterName]
+            characterGuideAuthors['T8'][characterName]
               ? [...navData, { displayName: 'Guide', link: '../guide' }]
               : navData
           }
