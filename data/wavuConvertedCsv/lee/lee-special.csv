@@ -3,9 +3,14 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 Power crush";hb pc;Lee-2+3;;;;
 H.2+3;l,t;37;i20;-14;+0d;;"* Heat Smash
 * Balcony Break";hs bbr;Lee-H.2+3;Paradigm Breaker;;;
-R.df+1+2;m,t;55+;i20;-15;+0;;"* Rage Art
+R.df+1+2;m,t;55+;i20;-15;+0d;;"* Rage Art
 * Removes Recoverable Health
-* Damage increases with lower health
+* Reversal Break
+* Damage increases with lower health, maximum 82
+* Freezes match timer on activation and on hit
+* Restores recoverable health on hit
+* Transition to attack throw on hit
+* Consumes Rage
 Power crush 8~";pc8~;Lee-R.df+1+2;The Marvelous Rose;r39;;
 1;h;5;i10;+1;+8;;;;Lee-1;Jab;;;
 1,2;h, h;5, 9;,i12;-3;+7;;"* Transition to r30 -2 +8 MS with F
@@ -150,12 +155,6 @@ b+1;h;9;i14;-0;+6;;;;Lee-b+1;;;;
 b+1,1;h, m;9, 6;i20;-5;+6;;"* Transition to -1, +10g HMS with 3+4
 * Cancel and transition to -5, +1 MS with F";;Lee-b+1,1;;;;
 b+1,1,2;h, m, h;9, 6, 18;i20;-11;+1;;* Combos from 1st hit;;Lee-b+1,1,2;Triple Fang;;;File:t8-p2-lee-b+1,1,2.mp4
-b+1:1;h, m;9, 6;i20;-5;+6;;"* Transition to -1, +10g HMS with 3+4
-* Cancel and transition to -5, +1 MS with F";;Lee-b+1:1;;;;
-b+1:1,2;h, m, h;9, 6, 23;i20;-6;+39d (-19);;"* Balcony Break
-* Combos from 1st hit
-* Perfect Input not required during Heat
-* Partially consumes remaining Heat Time, while Perfect input restores Heat Time";bbr;Lee-b+1:1,2;Triple Fang Cardinal;;;File:t8-p2-lee-b+1,1c2.mp4
 b+1:1+2;h, h;9, 25;i21;-6;+39d (-19);;"* Balcony Break
 * Combos from 1st hit
 * 10 chip damage
@@ -203,6 +202,14 @@ uf+3+4;h;30;i22;+5;+28d (+20);;"* Balcony Break
 * 9 chip damage
 Low crush";bbr js;Lee-uf+3+4;Silver Bullet;;;File:t8-p2-lee-uf+3+4.mp4
 1+2+3+4;;;;;;;;;Lee-1+2+3+4;Ki Charge;;;File:t8-p2-lee-1+2+3+4.mp4
+,2;h;23;i20;-6;+39d (-19);;"* Balcony Break
+* Combos from 1st hit
+* Perfect Input not required during Heat
+* Partially consumes remaining Heat Time, while Perfect input restores Heat Time";bbr;Lee-b+1:1,2;Triple Fang Cardinal;;;File:t8-p2-lee-b+1,1c2.mp4
+:1;m;6;i20;-5;+6;;"* Transition to -1, +10g HMS with 3+4
+* Cancel and transition to -5, +1 MS with F
+* Perfect Input not required during Heat
+* Partially consumes remaining Heat Time, while Perfect input restores Heat Time";;Lee-b+1:1;;;;
 b,B+4;h;23;i19;+2;+25a;;"* Strong Aerial Tailspin
 * Homing
 * Transition to +5, +28a HMS with 3

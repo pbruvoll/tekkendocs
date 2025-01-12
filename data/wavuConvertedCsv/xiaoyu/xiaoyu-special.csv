@@ -21,12 +21,15 @@ H.2+3;m,t;50;i15;+9;+0d;;"* Heat Smash
 * Recovers in BT
 * Recover facing forward with F (+5)
 Low crush";hs bbr js;Xiaoyu-H.2+3;Divine Shooting Star;BT;;
-R.df+1+2;m,t;55+;i20;-15;+0;;"* Rage Art
-*
-Removes Recoverable Health
-* Damage increases with lower health
-* Alternate input AOP.df+1+2
-Power crush 8~";pc8~;Xiaoyu-R.df+1+2;Wang's Celestial Epic;;;
+R.df+1+2;m,t;55+;i20;-15;+0d;;"* Rage Art
+* Removes Recoverable Health
+* Reversal Break
+* Damage increases with lower health, maximum 82
+* Freezes match timer on activation and on hit
+* Restores recoverable health on hit
+* Transition to attack throw on hit
+* Consumes Rage
+Power crush 8~";pc8~;Xiaoyu-R.df+1+2;Wang's Celestial Epic;r39;;
 1;h;6;i10;+1;+8;;;;Xiaoyu-1;;;;
 1,2;h, h;6, 9;i11;-3;+7;;* Combos from 1st hit;;Xiaoyu-1,2;Bayonet;;;File:t8-p2-xiaoyu-1,2.mp4
 1,2,1;h, h, m;6, 9, 24;i16;-9;+14a (+5);;"* Balcony Break
@@ -93,13 +96,13 @@ db+2;l;13;i18;-8;+5c;+18g;*;;Xiaoyu-db+2;Feathered Fan;BT;;File:t8-p2-xiaoyu-db+
 db+3;l;0;i15;+2c;+2c;+14;*;;Xiaoyu-db+3;Knee Cracker;;;File:t8-p2-xiaoyu-db+3.mp4
 db+4;l;14;i18;-12;+4c;+14;*;;Xiaoyu-db+4;Nutcracker;;;File:t8-p2-xiaoyu-db+4.mp4
 db+1+2;;;;;;;"* Transitions to HYP
-* During Heat, taking 3 or more steps partially restores remaining Heat time
-* Alternate input ub+1+2";;Xiaoyu-db+1+2;Hypnotist;;;
-db+1+2;;;;;;;"* Transitions to HYP
 * Punch parry (+9 HYP, opponent BT)
 * Successful parry partially restores remaining Heat time
 * Alternate input ub+1+2
 Parry state";ps;Xiaoyu-db+1+2;Hypnotist;HYP;;
+db+1+2;;;;;;;"* Transitions to HYP
+* During Heat, taking 3 or more steps partially restores remaining Heat time
+* Alternate input ub+1+2";;Xiaoyu-db+1+2;Hypnotist;;;
 db+3+4;;;;;;;"* Transitions to BT
 High crush";cs;Xiaoyu-FC.db+3+4;Low Back Turn;BT;;File:t8-p2-xiaoyu-fc.db+3+4.mp4
 b+1;m;10;i8;-12;+1;;"* Automatically transitions to BT on hit
