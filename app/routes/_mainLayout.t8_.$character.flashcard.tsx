@@ -14,7 +14,7 @@ import {
   type FlashCardAnswerType,
 } from '~/features/flashCards/FlashCardAnswer'
 import { FlashCardBack } from '~/features/flashCards/flashCardBack'
-import { FlashCardFront } from '~/features/flashCards/flashCardFront'
+import { FlashCardFront, toggleFrontCard } from '~/features/flashCards/flashCardFront'
 import { useFlashCardAppState } from '~/features/flashCards/useFlashCardAppState'
 import { useFrameData } from '~/hooks/useFrameData'
 import { characterGuideAuthors } from '~/services/staticDataService'
@@ -413,6 +413,7 @@ const FlashCardGame = ({
 
   const handleAnswer = (answer: FlashCardAnswerType) => {
     setFlipped(false)
+    toggleFrontCard();
     onAnswer(answer)
   }
 
@@ -432,7 +433,10 @@ const FlashCardGame = ({
             <FlashCardFront
               move={moveToShow}
               showCharName={showCharName}
-              onFlip={() => setFlipped(true)}
+              onFlip={() => {
+                toggleFrontCard();
+                setFlipped(true);
+              }}
             />
           </div>
           <div className="col-start-1 row-start-1 [backface-visibility:hidden] [transform:rotateY(180deg)]">
