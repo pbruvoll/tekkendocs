@@ -14,7 +14,7 @@ import {
   type FlashCardAnswerType,
 } from '~/features/flashCards/FlashCardAnswer'
 import { FlashCardBack } from '~/features/flashCards/flashCardBack'
-import { FlashCardFront } from '~/features/flashCards/flashCardFront'
+import { FlashCardFront, hideVideo, toggleFrontCard } from '~/features/flashCards/flashCardFront'
 import { useFlashCardAppState } from '~/features/flashCards/useFlashCardAppState'
 import { useFrameData } from '~/hooks/useFrameData'
 import { characterGuideAuthors } from '~/services/staticDataService'
@@ -23,6 +23,7 @@ import { type Move } from '~/types/Move'
 import type { RouteHandle } from '~/types/RouteHandle'
 import { generateMetaTags } from '~/utils/seoUtils'
 import { t8AvatarMap } from '~/utils/t8AvatarMap'
+import { ShowVideoButton } from '~/features/flashCards/showVideoButton'
 
 const navData: NavLinkInfo[] = [
   { link: '../', displayName: 'Frame data' },
@@ -413,6 +414,7 @@ const FlashCardGame = ({
 
   const handleAnswer = (answer: FlashCardAnswerType) => {
     setFlipped(false)
+    toggleFrontCard();
     onAnswer(answer)
   }
 
@@ -432,7 +434,10 @@ const FlashCardGame = ({
             <FlashCardFront
               move={moveToShow}
               showCharName={showCharName}
-              onFlip={() => setFlipped(true)}
+              onFlip={() => {
+                toggleFrontCard();
+                setFlipped(true);
+              }}
             />
           </div>
           <div className="col-start-1 row-start-1 [backface-visibility:hidden] [transform:rotateY(180deg)]">
