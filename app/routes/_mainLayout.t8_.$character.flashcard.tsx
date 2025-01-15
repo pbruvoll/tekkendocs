@@ -21,6 +21,7 @@ import { characterGuideAuthors } from '~/services/staticDataService'
 import type { CharacterFrameData } from '~/types/CharacterFrameData'
 import { type Move } from '~/types/Move'
 import type { RouteHandle } from '~/types/RouteHandle'
+import { getCacheControlHeaders } from '~/utils/headerUtils'
 import { generateMetaTags } from '~/utils/seoUtils'
 import { t8AvatarMap } from '~/utils/t8AvatarMap'
 
@@ -30,6 +31,8 @@ const navData: NavLinkInfo[] = [
   { link: '../antistrat', displayName: 'Anti strats' },
   { link: '', displayName: 'Flash card' },
 ]
+
+export const headers = () => getCacheControlHeaders({ seconds: 60 * 5 })
 
 export const meta: MetaFunction = ({ data, params, matches }) => {
   const frameData = matches.find(
@@ -428,7 +431,7 @@ const FlashCardGame = ({
             flipped && '[transform:rotateY(180deg)]',
           )}
         >
-          <div className="col-start-1 row-start-1 [backface-visibility:hidden]">
+          <div className="col-start-1 row-start-1 [backface-visibility:hidden] [transform:rotateY(0deg)]">
             <FlashCardFront
               move={moveToShow}
               showCharName={showCharName}

@@ -48,6 +48,8 @@ const navData: NavLinkInfo[] = [
   { link: '', displayName: 'Guide' },
 ]
 
+export const headers = () => getCacheControlHeaders({ seconds: 60 * 5 })
+
 export const loader = async ({ params }: LoaderFunctionArgs) => {
   const character = params.character
   if (!character) {

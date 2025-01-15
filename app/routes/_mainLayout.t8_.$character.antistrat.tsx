@@ -26,6 +26,9 @@ const navData: NavLinkInfo[] = [
   { link: '', displayName: 'Anti strats' },
   { link: '../flashcard', displayName: 'Flash card' },
 ]
+
+export const headers = () => getCacheControlHeaders({ seconds: 60 * 5 })
+
 export const loader = async ({ params }: DataFunctionArgs) => {
   const character = getCharacterFromParams(params)
   const sheetService = getSheetService()

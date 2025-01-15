@@ -48,6 +48,8 @@ const navData: NavLinkInfo[] = [
   { link: '../flashcard', displayName: 'Flash card' },
 ]
 
+export const headers = () => getCacheControlHeaders({ seconds: 60 * 5 })
+
 export const loader = async ({ params }: LoaderFunctionArgs) => {
   const character = params.character
   if (!character) {
