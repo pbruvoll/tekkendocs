@@ -25,6 +25,7 @@ columns = [
 
 def correctMove(move, charName) : 
     input = move["input"]
+
     match charName :
         case "nina":
             input = input.replace("SWA.b", "qcb").replace("CD.", "qcf+")
@@ -37,6 +38,13 @@ def correctMove(move, charName) :
 
     input = input.replace("SWA.", "qcb+") #.replace("WS.", "WS+")
     # input = re.sub(r'(?<![a-zA-Z])SS.', "SS+", input)
+
+    # move heat notation to the front (Heihachi "uf+4, H.1" -> "H.uf+4, 1")
+    match = re.search(r'(\s|,)H\.', input)
+    if match :
+        input = input[:match.start()+1] + input[match.end():]
+        input = "H." + input
+
     move["input"] = input
     
 #input is a folder for a character which may contain multiple csv files (special moves, throws etc).

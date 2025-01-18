@@ -249,7 +249,6 @@ def _get_move_category(move: Move) -> MoveCategory:
     
     command = move.input.lower();
     splitted = command.split(",");
-    notes = move.notes.lower();
     first = splitted[0]
     if(first.startswith("h.2+3")) :
         return MoveCategory.HEAT_SMASH
