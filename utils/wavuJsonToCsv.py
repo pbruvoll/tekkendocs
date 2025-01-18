@@ -27,6 +27,11 @@ def correctMove(move, charName) :
     input = move["input"]
 
     match charName :
+        case "claudio":
+            match = re.search(r'(\s|,)STB\.', input)
+            if match :
+                input = input[:match.start()+1] + input[match.end():]
+                input = "STB." + input
         case "nina":
             input = input.replace("SWA.b", "qcb").replace("CD.", "qcf+")
         case "paul":
