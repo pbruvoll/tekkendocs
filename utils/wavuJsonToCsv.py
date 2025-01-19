@@ -23,21 +23,32 @@ columns = [
     {"wavuId": "video", "displayName": "Video"},
 ]
 
+# 2,STB.4 -> STB.4,2
+def moveInstallmentToFront(input, installment):
+    match = re.search(r'(\s|,)' + re.escape(installment) + r'\.', input)
+    if match :
+        input = input[:match.start()+1] + input[match.end():]
+        return installment + "." + input
+
+    return input
+
 def correctMove(move, charName) : 
     input = move["input"]
 
     match charName :
+        case "bryan":
+            input = moveInstallmentToFront(input, "SNE")
         case "claudio":
-            match = re.search(r'(\s|,)STB\.', input)
-            if match :
-                input = input[:match.start()+1] + input[match.end():]
-                input = "STB." + input
+            input = moveInstallmentToFront(input, "STB")
+        case "heihachi":
+            input = moveInstallmentToFront(input, "WAR")
         case "nina":
             input = input.replace("SWA.b", "qcb").replace("CD.", "qcf+")
         case "paul":
             input = input.replace("CS.", "qcf+")
         case "leo":
             input = input.replace("CD.", "qcf+")
+            input = moveInstallmentToFront(input, "LTG")
 
 
 
@@ -45,10 +56,7 @@ def correctMove(move, charName) :
     # input = re.sub(r'(?<![a-zA-Z])SS.', "SS+", input)
 
     # move heat notation to the front (Heihachi "uf+4, H.1" -> "H.uf+4, 1")
-    match = re.search(r'(\s|,)H\.', input)
-    if match :
-        input = input[:match.start()+1] + input[match.end():]
-        input = "H." + input
+    input = moveInstallmentToFront(input, "H")
 
     move["input"] = input
     
