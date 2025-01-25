@@ -3,7 +3,8 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 Power crush";hb pc;Lars-2+3;Heat Burst;;;
 H.LEN.1;l,th;20,15;i16~17;-12c;+5;;"* Side switch on hit throw
 * Opponent is left FUFA";;Lars-H.LEN.1;Blue Jet;;;File:t8-p2-lars-h.len.1.mp4
-H.LEN.2;m;20;i16~17;-9;+65a (+49);;* Tornado;trn;Lars-H.LEN.2;Rising Force (Heat);;;
+H.LEN.2;m;20;i16~17;-9;+65a (+49);;"* Tornado
+* 9 chip damage on block";trn;Lars-H.LEN.2;Rising Force (Heat);;;
 H.f+3+4;sm;5 (5);i18~24;+5;+10;;"* Transition to SEN
 * Partially uses remaining heat time
 Power crush";pc;Lars-H.f+3+4;Rebellion;;;
@@ -28,7 +29,8 @@ Power crush 8~";pc8~;Lars.df+1+2;Zeus Unlimited;r39;;
 
 * Balcony Break
 * Combo from 2nd hit
-* Combo from 1st CH";he bbr;Lars-1,1,1;Delta Slicer;;;File:t8-p2-lars-1,1,1.mp4
+* Combo from 1st CH
+* This move is essentially homing";he bbr;Lars-1,1,1;Delta Slicer;;;File:t8-p2-lars-1,1,1.mp4
 1,2;h, h;5, 9;,i10;-3;+8;;* Jails;;Lars-1,2;Left Right Combo;;;File:t8-p2-lars-1,2.mp4
 1,4;h, l;5, 10;,i22;-12;+1;;"* Combo from 1st CH
 * Transition to LEN with input D";;Lars-1,4;Legionnaire's Spin;;;File:t8-p2-lars-1,4.mp4
@@ -90,9 +92,10 @@ db+2;m;12;i15;-8;+3;;* Transition to SEN with input F;;Lars-db+2;;;;
 db+2,1;m, m;12, 8;,i15~16;-8;+6;;;;Lars-db+2,1;Double Tap;;;File:t8-p2-lars-db+2,1.mp4
 db+2,3;m, m;12, 15;,i19;-13;+8;;"* Tornado
 * Input can be held to power up and deal more chip damage on block";trn;Lars-db+2,3;HE Combination;;;File:t8-p2-lars-db+2,3.mp4
-db+2,3*;m, m;12, 15;,i51;+13;+24d (+14);;"* Tornado
+db+2,3*;m, m;12, 25;,i51;+13;+24d (+14);;"* Tornado
 * Balcony Break
-Input can be partially held from i? to i?";trn bbr;Lars-db+2,3*;HE Combination (Hold);;;
+* Input can be partially held from i? to i?
+* 10 chip damage on block";trn bbr;Lars-db+2,3*;HE Combination (Hold);;;
 db+2~F;m;12;;-5;+6;;;;Lars-db+2~F;;SEN;;
 db+4;l;19;i21~22;-26;+5c;+29a;High crush;cs;Lars-db+4;Shadow Cutter;;;File:t8-p2-lars-db+4.mp4
 db+1+2;m;18;i26;-13;+6;+10;"* Transition to DEN with input D
@@ -129,14 +132,14 @@ f,F+4,2;l, h;12, 15;,i24;-7;+9;;Cannot cancel DEN transition;;Lars-f,F+4,2;Cross
 f,F+4,3;l, m;12, 20;,i28;-16;-3;;;;Lars-f,F+4,3;Double Pulse;;;File:t8-p2-lars-f,f+4,3.mp4
 f,F+1+2;m;20;i16~17;-9;+14 (+5);+59a (+39);"* Elbow
 * Balcony Break
-* chip damage on block";elb bbr chp;Lars-f,F+1+2;Elbow Corona;;;File:t8-p2-lars-f,f+1+2.mp4
+* 4 chip damage on block";elb bbr;Lars-f,F+1+2;Elbow Corona;;;File:t8-p2-lars-f,f+1+2.mp4
 f,F+3+4;l,l;26;i19~20;-16;+0c;;High crush ?;cs?;Lars-f,F+3+4;Double Action;;;File:t8-p2-lars-f,f+3+4.mp4
 f,n,b+2;m;10;i14;-12;0;;;;Lars-f,n,b+2;;;;
 f,n,b+2,1;m, m;10, 10;,i16;-18;+47a (+39);;;;Lars-f,n,b+2,1;Blue Bolt;;;File:t8-p2-lars-f,n,b+2,1.mp4
 uf,n,4;m;20;i23~25;-13;+32a (+22);;Low crush;js;Lars-uf,n,4;Delayed Rising Toe Kick;;;File:t8-p2-lars-uf,n,4.mp4
 f,f,F+3;m;30;i20~26;+6;+33 (-25);;"* Balcony Break
-* chip damage on block
-Low crush";bbr chp js;Lars-f,f,F+3;Red Sprite;;;File:t8-p2-lars-f,f,f+3.mp4
+* 9 chip damage on block
+Low crush";bbr js;Lars-f,f,F+3;Red Sprite;;;File:t8-p2-lars-f,f,f+3.mp4
 ws1;m;16;i15~16;-12;+38a;;"* Tornado
 * Transition to SEN with F on hit";trn;Lars-ws1;Streamer;;;File:t8-p2-lars-ws1.mp4
 ws1~F;m;16;;;+36a;;"* On hit only
@@ -185,8 +188,8 @@ DEN.3;m;23;i22~23;+5;+5;;"* Heat Engager
 
 * Homing
 * Transition to SEN (cannot cancel, does not transition when using Heat Dash)
-* chip damage on block
-Low crush 8~";he hom chp js8~;Lars-DEN.3;Bow Shock;SEN;;File:t8-p2-lars-den.3.mp4
+* 4 chip damage on block
+Low crush 8~";he hom js8~;Lars-DEN.3;Bow Shock;SEN;;File:t8-p2-lars-den.3.mp4
 DEN.4;l;14;i23~25;-12;+1;;* Transition to LEN with input D;;Lars-DEN.4;Legionnaire's Shot;;;File:t8-p2-lars-den.4.mp4
 DEN.1+2;h;20;i12~13;-10;+63a (+47);;"* Tornado
 * Balcony Break";trn bbr;Lars-DEN.1+2;Into the Storm;;;File:t8-p2-lars-den.1+2.mp4
@@ -198,6 +201,7 @@ DEN.B;sp;;;;;;"* Transition to DEN
 DEN.n,F;sp;;;;;;* Transition to SEN;;Lars-DEN.n,F;Silent Entry;;;File:t8-p2-lars-den.n,f.mp4
 LEN.1;l;20;i16~17;-12;+4;;High crush 1~;cs1~;Lars-LEN.1;Blasting Smack;;;File:t8-p2-lars-len.1.mp4
 LEN.2;m;20;i16~17;-9;+25 (+15);;"* Tornado
+* 8 chip damage on block
 * Powers up during Heat (Uses Heat Time, Tornado launches on hit)
 High crush 1~15, Low crush 16~";trn cs1~15 js16~;Lars-LEN.2;Rising Force;;;File:t8-p2-lars-len.2.mp4
 SEN.1;m;26;i12~13;-6;+23a (+13);;"* Heat Engager
@@ -214,8 +218,8 @@ Power crush 6~";hom bbr pc6~;Lars-SEN.4;Electric Volley;;;File:t8-p2-lars-sen.4.
 SEN.1+2;m;21;i14~16;-9;+20a (+3);;"* Tornado
 * Balcony Break";trn bbr;Lars-SEN.1+2;Entangling Ejector;;;File:t8-p2-lars-sen.1+2.mp4
 SEN.3+4;mm;22 (11);i13~14,i18~19;+0c;+22d (-13);;"* Spike
-* chip damage on block
-Low crush 7~";spk chp js7~;Lars-SEN.3+4;Lightning Axle;;;File:t8-p2-lars-sen.3+4.mp4
+* 6 chip damage on block
+Low crush 7~";spk js7~;Lars-SEN.3+4;Lightning Axle;;;File:t8-p2-lars-sen.3+4.mp4
 SEN.B;sp;;;;;;* Transition to DEN;;Lars-SEN.B;Dynamic Entry;;;
 SEN.D;sp;;;;;;"* Transition to LEN
 High crush 24~27?";cs24~27?;Lars-SEN.D;Limited Entry;;;File:t8-p2-lars-sen.d.mp4
