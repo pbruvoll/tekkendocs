@@ -153,6 +153,8 @@ def _convert_json_movelist(move_list_json: list) -> List[Move]:
 
             damage = ", ".join([item.lstrip(',') for item in damageArray])
 
+            startupArray = _get_all_parent_values_of_array("startup", _normalize_data(move["title"]["parent"]), move_list_json)
+
             on_block = _remove_html_tags(_normalize_data(move["title"]["block"]))
             on_hit = _remove_html_tags(_normalize_data(_normalize_hit_ch_input(move["title"]["hit"])))
             on_ch = _remove_html_tags(_normalize_data(_normalize_hit_ch_input(move["title"]["ch"])))
@@ -161,6 +163,9 @@ def _convert_json_movelist(move_list_json: list) -> List[Move]:
             crush = _normalize_data(move["title"]["crush"])
             image = _normalize_data(move["title"]["image"])
             video = _normalize_data(move["title"]["video"])
+
+            if(len(startupArray) > 0) :
+                startup = startupArray[0] +  ", " + ("," if len(startupArray) > 1 else "") + startup
 
             notes = html.unescape(_normalize_data(move["title"]["notes"]))
             notes = BeautifulSoup(notes, features="lxml").get_text()

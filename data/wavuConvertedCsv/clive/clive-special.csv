@@ -9,12 +9,12 @@ Power crush 7~16";hb pc7~16;Clive-2+3;Heat Burst;r30;;
 H.u+1+2;m,m;18,21;i19~20,i20~21;-12;+3c;;"* Consumes heat
 * Enter PHX -1 +14 with F or 4 on hit or block
 * 13 Chip damage on block";;Clive-H.u+1+2;;r36?;;
-H.u+1+2,1;m,m, m,m;18,21, 17,22;,i25~26,i20~21;-8;+14a(+4a);;"* Balcony Break
+H.u+1+2,1;m,m, m,m;18,21, 17,22;i19~20,i20~21, ,i25~26,i20~21;-8;+14a(+4a);;"* Balcony Break
 * 14 Chip Damage on block
 * Same move as (df+1,H.1),1?";bbr;Clive-H.u+1+2,1;Blazing Rush;r41?;;
-H.u+1+2,2;m,m, h,h;18,21, 10,12;,i23~24,i12~13;-9;+8;;"* 7 Chip Damage on block
+H.u+1+2,2;m,m, h,h;18,21, 10,12;i19~20,i20~21, ,i23~24,i12~13;-9;+8;;"* 7 Chip Damage on block
 * Same move as (df+1,H.1),2?";;Clive-H.u+1+2,2;;;;
-H.u+1+2,2,1;m,m, h,h, m,m;18,21, 10,12, 10,16;,i20~21,i11~12;-8;+15a(-2a);;"* Tornado
+H.u+1+2,2,1;m,m, h,h, m,m;18,21, 10,12, 10,16;i19~20,i20~21, ,,i20~21,i11~12;-8;+15a(-2a);;"* Tornado
 * Balcony Break
 * Combo from 3rd hit
 * 9 Chip Damage on block
@@ -43,17 +43,17 @@ R.df+1+2;m,t;55+;i20;-15;+0d;;"* Rage Art
 * Consumes Rage
 Power crush 8~";pc8~;Clive-R.df+1+2;Hellfire;r39;;
 1;h;5;i10;+1;+8;;Recovers 2f faster on hit or block (t27 r17);;Clive-1;Jab;r19;;
-1,1;h, h;5, 13;,i18~19;-3;+6;;"* Jail from 1st attack
+1,1;h, h;5, 13;i10, ,i18~19;-3;+6;;"* Jail from 1st attack
 * Combo from 1st hit
 * Enter PHX -3 +6 r23 with F or 4 on hit or block";;Clive-1,1;Double Blow;r23;;File:t8-p2-clive-1,1.mp4
-1,2;h, M;5, 20;,i21~22;-14;+22a (+17);;"* Spike
+1,2;h, M;5, 20;i10, ,i21~22;-14;+22a (+17);;"* Spike
 * Weapon
 * Combo from 1st hit with 2f delay
 * Increases ZAN gauge by 0.30 on hit
 * Increases ZAN gauge by 0.14 on block
 * Only deals recoverable damage
 * +11d on BT hit";spk wpn;Clive-1,2;Finishing Steel;r33;;File:t8-p2-clive-1,2.mp4
-1,f+2;h, h;5, 22;,i25~26;+1;+13g;;"* Balcony Break
+1,f+2;h, h;5, 22;i10, ,i25~26;+1;+13g;;"* Balcony Break
 * Weapon
 * Combo from 1st CH
 * Input can be delayed 2f
@@ -61,28 +61,28 @@ Power crush 8~";pc8~;Clive-R.df+1+2;Hellfire;r39;;
 * 9 Chip damage on block in heat
 * +20a (+11) on BT hit";bbr wpn;Clive-1,f+2;Rapid Assault;r29;;File:t8-p2-clive-1,f+2.mp4
 2;h;11;i12;+0;+7;;Weapon;wpn;Clive-2;;r23;;
-2,1;h, h;11, 20;,i17~18;-13;+8a (-1);;"* Balcony Break
+2,1;h, h;11, 20;i12, ,i17~18;-13;+8a (-1);;"* Balcony Break
 * Weapon
 * Jail from 1st attack
 * Combo from 1st hit
 * Input 1 during the 1st hit animation on frames 10~12 to add +3 damage";bbr wpn;Clive-2,1;Magic Burst;r36;;File:t8-p2-clive-2,1.mp4
-2,2;h, m;11, 9;,i23;-8;-1;;"* Balcony Break (airborne)
+2,2;h, m;11, 9;i12, ,i23;-8;-1;;"* Balcony Break (airborne)
 * Weapon
 * Combo from 1st hit
 * Enter PHX -1 +6 r25 with F or 4 on hit or block";wpn;Clive-2,2;;r32;;
-2,2,1;h, m, m;11, 9, 18;,i17~18;-13;+8a (-1);+28d(+20d);"* Balcony Break
+2,2,1;h, m, m;11, 9, 18;i12, ,,i17~18;-13;+8a (-1);+28d(+20d);"* Balcony Break
 * Weapon
 * Combo from 1st CH
 * Combo from 2nd CH with 10f? delay
 * Input 1 during the 2nd hit animation on frames 21~23 to add +3 damage";bbr wpn;Clive-2,2,1;Assault Burst;r36;;File:t8-p2-clive-2,2,1.mp4
-2,2,2;h, m, M,m;11, 9, 15,20 (24);,i27~28 i31~32;-9;+21a (+4);;"* Tornado
+2,2,2;h, m, M,m;11, 9, 15,20 (24);i12, ,,i27~28 i31~32;-9;+21a (+4);;"* Tornado
 * Balcony Break
 * Weapon
 * Power up in Heat (24 damage)
 * Input can be delayed 6f?
 * Transition to PHX on hit only
 * Cancel PHX transition with B";trn bbr wpn;Clive-2,2,2;Gleipnir-Cutter;r35;;
-2,2,1+2;h, m, m,M;11, 9, 10,18;,i27~28 i23~24;-13c;+1a;;"* Balcony Break
+2,2,1+2;h, m, m,M;11, 9, 10,18;i12, ,,i27~28 i23~24;-13c;+1a;;"* Balcony Break
 * Spike
 * Weapon
 * Increases ZAN gauge by 0.70 on hit (0.30 + 0.40)
@@ -97,7 +97,7 @@ Power crush 8~";pc8~;Clive-R.df+1+2;Hellfire;r39;;
 * js41~54
 * fs55~57&lt;/div&gt;";Clive-2,2,1+2;Gungnir Dance;r48;;File:t8-p2-clive-2,2,1+2.mp4
 3;m;16;i16;-13;-2;;;;Clive-3;;r32;;
-3,2;m, m,m;16, 15,15;,i23~24 i29~41;-12~+0;+22a (+12);;"* Balcony Break
+3,2;m, m,m;16, 15,15;i16, ,i23~24 i29~41;-12~+0;+22a (+12);;"* Balcony Break
 * Weapon
 * Combo from 1st CH
 * Jail from 2nd block
@@ -106,15 +106,15 @@ Power crush 8~";pc8~;Clive-R.df+1+2;Hellfire;r39;;
 * Interrupt with i4 from 1st block
 * +23a (+13) on BT hit
 * Power up in Heat";bbr wpn;Clive-3,2;Fine Hound;r53;;File:t8-p2-clive-3,2.mp4
-3,3;m, M;16, 20;,i30~32;-18~-16;+12a (-5);+36a (+26);"* Tornado
+3,3;m, M;16, 20;i16, ,i30~32;-18~-16;+12a (-5);+36a (+26);"* Tornado
 * Balcony Break
 * Input can be delayed 1f
 ,fs31~";trn bbr fs31~;Clive-3,3;Bright Wing;r36 WOL;;File:t8-p2-clive-3,3.mp4
 4;m;8;i12;-10;+1;;;;Clive-4;;r29;;
-4,2;m, M;8, 17;,i20~21;-11;+3;;"* Weapon
+4,2;m, M;8, 17;i12, ,i20~21;-11;+3;;"* Weapon
 * Combo from 1st hit
 * Input can be delayed 3f";wpn;Clive-4,2;Mercenary Cut;r32;;File:t8-p2-clive-4,2.mp4
-4,4;m, h;8, 13;,i25;-8;+0;;"* Combo from 1st hit
+4,4;m, h;8, 13;i12, ,i25;-8;+0;;"* Combo from 1st hit
 * Input can be delayed 3f
 * Enter PHX +6 +14 r21 with F or 4 on hit or block";;Clive-4,4;Roundabout;r35;;File:t8-p2-clive-4,4.mp4
 1+2;m;24;i13;-9;+2;;"* Heat Engager
@@ -156,13 +156,13 @@ Power crush 8~";pc8~;Clive-R.df+1+2;Hellfire;r39;;
 * is1~27
 * fs28~70&lt;/div&gt;";Clive-3+4,P;Radiant Counter;r42;;
 f+2;m;10;i15;-12;-4;;* Weapon;wpn;Clive-f+2;;r34;;
-f+2,1;m, h;10, 13;,i21~22;+1;+20g;;"* Balcony Break
+f+2,1;m, h;10, 13;i15, ,i21~22;+1;+20g;;"* Balcony Break
 * Combo from 1st hit";bbr;Clive-f+2,1;Firewheel;r22;;File:t8-p2-clive-f+2,1.mp4
-f+2,2;m, m;10, 7;,i17~18;-8;+3;;"* Weapon
+f+2,2;m, m;10, 7;i15, ,i17~18;-8;+3;;"* Weapon
 * Combo from 1st CH
 * Jail from 1st block
 * Enter PHX -5 +6 r30 with F or 4 on hit or block";wpn;Clive-f+2,2;;r33;;
-f+2,2,2;m, m, M;10, 7, 20;,i27~228;-13;+9a;;"* Heat Engager
+f+2,2,2;m, m, M;10, 7, 20;i15, ,,i27~228;-13;+9a;;"* Heat Engager
 
 * Heat Dash +5, +67a {+50)
 
@@ -172,7 +172,7 @@ f+2,2,2;m, m, M;10, 7, 20;,i27~228;-13;+9a;;"* Heat Engager
 * Combo from 1st CH
 * Combo from 2nd hit
 * Interrupt with i8 from 2nd block";he bbr spk wpn;Clive-f+2,2,2;Burning Chain;r40;;File:t8-p2-clive-f+2,2,2.mp4
-f+2,2,1+2;m, m, M;10, 7, 18;,i27~228;-13c;+9a;;"* Balcony Break
+f+2,2,1+2;m, m, M;10, 7, 18;i15, ,,i27~228;-13c;+9a;;"* Balcony Break
 * Spike
 * Weapon
 * Combo from 1st CH
@@ -181,11 +181,11 @@ f+2,2,1+2;m, m, M;10, 7, 18;,i27~228;-13c;+9a;;"* Balcony Break
 * Increases ZAN gauge by 0.30 on hit
 * Increases ZAN gauge by 0.10 on block
 * Only deals recoverable damage";bbr spk wpn;Clive-f+2,2,1+2;Sanngetall;r40;;File:t8-p2-clive-f+2,2,1+2.mp4
-H.f+2,2,1;m, m, m;10, 7, 25;i26~27;+2;+40d(-18d);;"* Balcony Break
+H.f+2,2,1;m, m, m;10, 7, 25;i15, ,i26~27;+2;+40d(-18d);;"* Balcony Break
 * Combo from 1st hit
 * Consumes heat
 * 7 Chip damage on block";bbr;Clive-f+2,2,H.1;Lethal Ignition;r33?;;
-H.f+2,2,1*;m, m, m;10, 7, 30;i42~43;+13;+52a;;"* Guard Break
+H.f+2,2,1*;m, m, m;10, 7, 30;i15, ,i42~43;+13;+52a;;"* Guard Break
 * Consumes heat";;Clive-f+2,2,H.1*;Lethal Ignition (Hold);r33?;;
 f+3;M;15;i20~21;-14;+37a;;"* Spike
 * 3 Chip Damage on block
@@ -205,45 +205,45 @@ f+1+2;m,m;10,18;i16~17 i19;-12;+20a (+10);;"* Heat Engager
 * 5 Chip Damage on block
 * 7 Chip Damage on block in heat";he bbr wpn;Clive-f+1+2;Prominence;r?;;File:t8-p2-clive-f+1+2.mp4
 df+1;m;10;i14~15;-3;+4;;;;Clive-df+1;Mid Check;r21;;
-df+1,2;m, h;10, 13;,i23;-16;-8;;"* Strong Aerial Tailspin
+df+1,2;m, h;10, 13;i14~15, ,i23;-16;-8;;"* Strong Aerial Tailspin
 * Weapon
 * Combo from 1st hit
 * Enter PHX +6 +14 r21 with F or 4 on hit or block";wpn;Clive-df+1,2;;r43;;
-df+1,2,1;m, h, m;10, 13, 15;,i26~27;-15;+32a (+11);;"* Balcony Break
+df+1,2,1;m, h, m;10, 13, 15;i14~15, ,,i26~27;-15;+32a (+11);;"* Balcony Break
 * Weapon
 * Combo from 1st hit
 * Input 1 during the 2nd hit animation on frames 21~23 to add +3 damage";bbr wpn;Clive-df+1,2,1;Outlaw Burst;r38;;File:t8-p2-clive-df+1,2,1.mp4
-df+1,4;m, m;10, 12;,i20~21;-10;+1;;"* Knee
+df+1,4;m, m;10, 12;i14~15, ,i20~21;-10;+1;;"* Knee
 * Combo from 1st hit";kne;Clive-df+1,4;;r31;;
-df+1,4,3;m, m, M;10, 12, 20;,i27~28;-18~-16;+12a (-5);+36a (+26);"* Tornado
+df+1,4,3;m, m, M;10, 12, 20;i14~15, ,,i27~28;-18~-16;+12a (-5);+36a (+26);"* Tornado
 * Balcony Break
 * Move can be delayed by 9f
 ,fs28~";trn bbr fs28~;Clive-df+1,4,3;Outlaw Wing;r36 WOL;;File:t8-p2-clive-df+1,4,3.mp4
-H.df+1,1;m, m,m;10, 13,15;i22~23,i20~21;-12;+3c;;"* Combo from 1st hit
+H.df+1,1;m, m,m;10, 13,15;i14~15, i22~23,i20~21;-12;+3c;;"* Combo from 1st hit
 * Consumes heat
 * Enter PHX -1 +14 with F or 4 on hit or block
 * 9 Chip damage on block";;Clive-df+1,H.1;;r36?;;
-H.df+1,1,1;m, m,m, m,m;10, 13,15, 17,22;,i25~26,i20~21;-8;+14a(+4a);;"* Balcony Break
+H.df+1,1,1;m, m,m, m,m;10, 13,15, 17,22;i14~15, ,,i25~26,i20~21;-8;+14a(+4a);;"* Balcony Break
 * Combo from 3rd CH
 * 14 Chip Damage on block";bbr;Clive-df+1,H.1,1;Crimson Rush;r41?;;
-H.df+1,1,2;m, m,m, h,h;10, 13,15, 10,12;,i23~24,i12~13;-9;+8;;* 7 Chip Damage on block;;Clive-df+1,H.1,2;;;;
-H.df+1,1,2,1;m, m,m, h,h, m,m;10, 13,15, 10,12, 10,16;,i20~21,i11~12;-8;+15a(-2a);;"* Tornado
+H.df+1,1,2;m, m,m, h,h;10, 13,15, 10,12;i14~15, ,,i23~24,i12~13;-9;+8;;* 7 Chip Damage on block;;Clive-df+1,H.1,2;;;;
+H.df+1,1,2,1;m, m,m, h,h, m,m;10, 13,15, 10,12, 10,16;i14~15, ,,i20~21,i11~12;-8;+15a(-2a);;"* Tornado
 * Balcony Break
 * Combo from 5th hit
 * 9 Chip Damage on block";trn bbr;Clive-df+1,H.1,2,1;Crimson Eruption;;;
 df+2;m,m;5,10;i15~16 i26~27;-13;+30a (+20);;"* Weapon
 * 2nd hit available only on hit or block";wpn;Clive-df+2;Wyrm Killer;r35;;File:t8-p2-clive-df+2.mp4
-df+2,2;m,m, m;5,10, 20;,i18~19;;+5a (-2);;"* Weapon
+df+2,2;m,m, m;5,10, 20;i15~16 i26~27, ,i18~19;;+5a (-2);;"* Weapon
 * Available only as combo from 2nd hit
 * Available on standing hit only
 ,Low crush 9~";wpn js9~;Clive-df+2,2;;;;
-df+2,2,2;m,m, m, m,M;5,10, 20, 6,25;,i26~27 i3~4;;+60a (+44);;"* Tornado
+df+2,2,2;m,m, m, m,M;5,10, 20, 6,25;i15~16 i26~27, ,,i26~27 i3~4;;+60a (+44);;"* Tornado
 * Weapon
 * Available only as combo from 3rd hit
 * Available on standing hit only";trn wpn;Clive-df+2,2,2;Aerial Combination;PHX;;
 df+3;L;20;i29~30;-26;+3c;;"* Homing
 High crush 6~65";hom cs6~65;Clive-df+3;;r35 FC;;
-df+3,1;L, M,M;20, 18,20;,i27~29 i3~10;;+3c;;"* Available only as combo from 1st hit
+df+3,1;L, M,M;20, 18,20;i29~30, ,i27~29 i3~10;;+3c;;"* Available only as combo from 1st hit
 * 38 damage in total for the full string with scaling
 * Input 1 during the 1st hit animation on frames 25~28 to add +4 damage";;Clive-df+3,1;Hydro Blast;r45;;File:t8-p2-clive-df+3,1.mp4
 df+4;m;13;i14;-9;+5;;;;Clive-df+4;Door Knocker;r29;;File:t8-p2-clive-df+4.mp4
@@ -257,16 +257,16 @@ d+1+2;M;23;i22~23;-6;+9a (-8);+63a (+47);"* Tornado
 * 6 Chip Damage on block
 * 9 Chip Damage on block in heat";trn bbr wpn;Clive-d+1+2;Pile Driver;r40;;File:t8-p2-clive-d+1+2.mp4
 db+1;h;10;i17~18;-8;+4;+12a;* Homing;hom;Clive-db+1;;r35;;
-db+1,1;h, m,m;10, 7,20;i21~22 i18~19;;+31d (+10d);;"* Tornado
+db+1,1;h, m,m;10, 7,20;i17~18, i21~22 i18~19;;+31d (+10d);;"* Tornado
 * Homing
 * Balcony Break
 * Available only as combo from 1st hit
 * Input 1 during the 2nd hit animation on frames 18~21 to add +5 damage";trn hom bbr;Clive-db+1,1;Tidal Surge;;;File:t8-p2-clive-db+1,1.mp4
 db+2;m;10;i17~18;-12;-1;;* Weapon;wpn;Clive-db+2;;r32;;
-db+2,1;m, M;10, 23;,i25~26;-13;+27a (+12a);;"* Tornado
+db+2,1;m, M;10, 23;i17~18, ,i25~26;-13;+27a (+12a);;"* Tornado
 * Weapon
 * Combo from 1st hit";trn wpn;Clive-db+2,1;Ice Spikes;r37;;File:t8-p2-clive-db+2,1.mp4
-db+2,1*;m, M;10, 27;,i40~41;-3;+27a (+12a);;"* Tornado
+db+2,1*;m, M;10, 27;i17~18, ,i40~41;-3;+27a (+12a);;"* Tornado
 * Weapon
 * 10 Chip damage on block
 * 12 Chip damage on block in heat";trn wpn;Clive-db+2,1*;Ice Spikes (Hold);r;;
@@ -274,7 +274,7 @@ db+4;L;20;i19~20;-18;+4c;+67a (+51a);* Homing;hom;Clive-db+4;Cold Cyclone;r36;;F
 db+1+2;M,m;12,10;i17~18 i23;-11;-2c;;"* Weapon
 * 3,3 Chip damage on block
 * 5,4 Chip damage on block in heat";wpn;Clive-db+1+2;;r38;;
-db+1+2,1;M,m, M;12,10, 20;,i22~i23;-13;+24a (+9a);;"* Balcony Break (BT)
+db+1+2,1;M,m, M;12,10, 20;i17~18 i23, ,i22~i23;-13;+24a (+9a);;"* Balcony Break (BT)
 * Weapon
 * Combo from 2nd CH
 * Transition to +41a (+23) GAR on airborne hit
@@ -339,7 +339,7 @@ f,f,F+2;m;20;i24~26;+2;+31d (+10);;"* Balcony Break
 * 7 Chip Damage on block in heat";bbr wpn;Clive-f,f,F+2;Lunge;r38;;File:t8-p2-clive-f,f,f+2.mp4
 ws1;m;11;i13~14;-4;+3;+8;"* Elbow
 * Enter PHX -1 +6 +11 r23 with F or 4 on hit or block";elb;Clive-ws1;;r26;;
-ws1,2;m, m;11, 19;,i26~27;-13;+9;+21a;"* Balcony Break
+ws1,2;m, m;11, 19;i13~14, ,i26~27;-13;+9;+21a;"* Balcony Break
 * Weapon
 * Combo from 1st hit with 3f delay
 * Combo from 1st CH with 8f delay
@@ -354,7 +354,7 @@ ws3;m,m;20,15(20);i20~21 i28~41;-8;+21a (+11a);;"* Homing
 ws4;m;14;i11~12;-5;+6;;* Enter PHX -5 +6 r23 with F or 4 on hit or block;;Clive-ws4;Sabaton Smash;r23;;File:t8-p2-clive-ws4.mp4
 SS.2;M;12;i17~18;-9;-2;;"* Weapon
 * Side step takes 9f, effective startup i26";wpn;Clive-SS.2;;r36;;
-SS.2,1;M, m;12, 23;,i22~23;-15;+35d (-23d);;"* Heat Engager
+SS.2,1;M, m;12, 23;i17~18, ,i22~23;-15;+35d (-23d);;"* Heat Engager
 
 * Heat Dash +5, +45a (+35a)
 
@@ -385,7 +385,7 @@ GAR.2;m;20;i18~19;-15;-13;;"* Weapon
 * Jump takes 17f, effective minimum startup i35~36
 * js1~48 with u+2
 Low crush 1~49";wpn js1~49;Clive-GAR.2;;r54?;;
-GAR.2,2;m, m,M;20, 6,25;i26~27 i3~4;-17;+13d (-4d);;"* Tornado
+GAR.2,2;m, m,M;20, 6,25;i18~19, i26~27 i3~4;-17;+13d (-4d);;"* Tornado
 * Weapon
 * Combo from 1st hit
 Low crush 1~26 fs27~29";trn wpn js1~26 fs27~29;Clive-GAR.2,2;Burning Rain;r36?;;File:t8-p2-clive-gar.2,2.mp4
@@ -411,13 +411,13 @@ PHX.2;m;12;i15;-7;+4;+35d (+27);"* Balcony Break
 * Weapon
 * 7 Chip Damage on block
 * 5 Chip Damage on block in heat";bbr wpn;Clive-PHX.2;Shift Strike;r30;;File:t8-p2-clive-phx.2.mp4
-PHX.2,1;m, M;12, 23;,i25~26;-12;+24a (+9);;"* Tornado
+PHX.2,1;m, M;12, 23;i15, ,i25~26;-12;+24a (+9);;"* Tornado
 * Weapon
 * On hit regain recoverable health
 * Combo from 1st hit with 4f delay
 * Input can be delayed 16f
 * Move can be delayed 10f";trn wpn;Clive-PHX.2,1;Rising Flame;r39;;File:t8-p2-clive-phx.2,1.mp4
-PHX.2,2;m, m,t;12, 8,18;,i20;-13;+5d / +5a (-4);;"* Balcony Break
+PHX.2,2;m, m,t;12, 8,18;i15, ,i20;-13;+5d / +5a (-4);;"* Balcony Break
 * Weapon
 * Combo from 1st hit
 * Transition to attack throw on hit
@@ -426,16 +426,16 @@ PHX.2,2;m, m,t;12, 8,18;,i20;-13;+5d / +5a (-4);;"* Balcony Break
 * Increases ZAN gauge by 0.40 on hit without throw
 * Increases ZAN gauge by 0.10 on block without throw
 * Side switch on hit";bbr wpn;Clive-PHX.2,2;Steel Slash;r40;;File:t8-p2-clive-phx.2,2.mp4
-H.PHX.2,1+2;m, m;12, 32;,i23~24;+4;+25a(-1a);;"*
+H.PHX.2,1+2;m, m;12, 32;i15, ,i23~24;+4;+25a(-1a);;"*
 Balcony Break
 * Combo from 1st hit
 * 9 Chip Damage on block";bbr;Clive-PHX.2,H.1+2;Twin Flames;;;
 PHX.3;L;8;i21;-26;-3c;;* Stagger on block;;Clive-PHX.3;;r42;;
-PHX.3,2;L, m,m;8, 18,20(36);,i30 i29~34;;+39a (+29);;"* Balcony Break
+PHX.3,2;L, m,m;8, 18,20(36);i21, ,i30 i29~34;;+39a (+29);;"* Balcony Break
 * Power up in Heat
 * Available only as combo from 1st hit
 * 30 (38 in heat) damage in total for the full string with scaling";bbr;Clive-PHX.3,2;Vanagandr;;;File:t8-p2-clive-phx.3,2.mp4
-PHX.3,1+2;L, m,M;8, 10,18;,i27~28 i23~24;;+6d (-29);;"* Spike
+PHX.3,1+2;L, m,M;8, 10,18;i21, ,i27~28 i23~24;;+6d (-29);;"* Spike
 * Available only as combo from 1st hit
 * Increases ZAN gauge by 0.70 on hit (0.30 + 0.40)
 * Increases ZAN gauge by 0.24?? on block (? + ?)
