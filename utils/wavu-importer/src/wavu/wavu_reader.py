@@ -165,7 +165,7 @@ def _convert_json_movelist(move_list_json: list) -> List[Move]:
             video = _normalize_data(move["title"]["video"])
 
             if(len(startupArray) > 0) :
-                startup = startupArray[0] +  ", " + ("," if len(startupArray) > 1 else "") + startup
+                startup = startupArray[0] +  ", " + ("," if len(startupArray) > 1 else "") + (startup[1:] if startup.startswith(",") else startup)
 
             notes = html.unescape(_normalize_data(move["title"]["notes"]))
             notes = BeautifulSoup(notes, features="lxml").get_text()
