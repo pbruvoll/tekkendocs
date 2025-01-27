@@ -1,4 +1,5 @@
 import { Fragment } from 'react'
+import { FaYoutube } from 'react-icons/fa'
 import { TwitterLogoIcon } from '@radix-ui/react-icons'
 import { Link } from '@remix-run/react'
 
@@ -29,16 +30,28 @@ export const PersonLinkList = ({ persons }: PersonLinkListProps) => {
 
 const PersonLinkComponent = ({ name, url }: PersonLink) => {
   if (url) {
+    const urls = url.split('|').map(link => link.trim())
     return (
-      <Link
-        to={url}
-        className="inline-flex items-center gap-1 text-text-primary underline underline-offset-2"
-      >
-        {name}{' '}
-        {url.includes('x.com') ? (
-          <TwitterLogoIcon width="1em" height="1em" />
-        ) : null}
-      </Link>
+      <div className="inline-flex items-center gap-1 text-text-primary underline underline-offset-2">
+        <Link to={urls[0]}>{name}</Link>{' '}
+        {urls.map(url => {
+          if (url.includes('twitter.com') || url.includes('x.com')) {
+            return (
+              <Link key="twitter" to={url}>
+                <TwitterLogoIcon width="1em" height="1em" />
+              </Link>
+            )
+          }
+          if (url.includes('youtube.com')) {
+            return (
+              <Link key="youtube" to={url}>
+                <FaYoutube width="1em" height="1em" />
+              </Link>
+            )
+          }
+          return null
+        })}
+      </div>
     )
   }
   return name
