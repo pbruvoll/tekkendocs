@@ -1,6 +1,8 @@
 import { Heading } from '@radix-ui/themes'
 import { Commands } from '~/components/Commands'
 import { TextWithCommand } from '~/components/TextWithCommand'
+import { type Move } from '~/types/Move'
+import { compressCommand } from '~/utils/commandUtils'
 import { useGuideContext } from './GuideContext'
 import { type KeyMove } from './GuideData'
 import { GuideSectionHeading } from './GuideSectionHeading'
@@ -23,6 +25,10 @@ export const KeyMoves = ({ moves, title }: KeyMovesProps) => {
               command={command}
             />
           </Heading>
+          <MoveSummary
+            command={command}
+            compressedCommandMap={compressedCommandMap}
+          />
           {description && (
             <TextWithCommand
               text={description}
@@ -33,5 +39,29 @@ export const KeyMoves = ({ moves, title }: KeyMovesProps) => {
         </section>
       ))}
     </section>
+  )
+}
+
+const MoveSummary = ({
+  command,
+  compressedCommandMap,
+}: {
+  command: string
+  compressedCommandMap: Record<string, Move>
+}) => {
+  const move = compressedCommandMap[compressCommand(command.split(' | ')[0])]
+  if (!move) return null
+  return (
+    <div className="text-muted-foreground">
+      {[
+        move.hitLevel && move.hitLevel,
+        move.startup && move.startup.split(',')[0],
+        move.block && `${move.block} oB`,
+        move.hit && `${move.hit} oH`,
+        move.counterHit && `${move.counterHit} Oc`,
+      ]
+        .filter(Boolean)
+        .join(', ')}
+    </div>
   )
 }
