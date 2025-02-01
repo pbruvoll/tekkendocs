@@ -555,6 +555,12 @@ export const sortMovesV2 = (
   return moves
 }
 
+export const getTransition = (notes: string): string | undefined => {
+  const match = notes.replace(/r\d+/g, "").match(/(?:enter|cancel to|transition to)\s+(\w+)/i);
+  return match ? match[1] : "";
+};
+
+
 export const getStances = (moves: Move[]): Set<string> => {
   const allStances = moves.reduce((stanceSet, move) => {
     if (move.hitLevel.startsWith('t')) {
