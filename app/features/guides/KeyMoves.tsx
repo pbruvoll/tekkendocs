@@ -25,10 +25,6 @@ export const KeyMoves = ({ moves, title }: KeyMovesProps) => {
               command={command}
             />
           </Heading>
-          <MoveSummary
-            command={command}
-            compressedCommandMap={compressedCommandMap}
-          />
           {description && (
             <TextWithCommand
               text={description}
@@ -36,6 +32,10 @@ export const KeyMoves = ({ moves, title }: KeyMovesProps) => {
               compressedCommandMap={compressedCommandMap}
             />
           )}
+          <MoveSummary
+            command={command}
+            compressedCommandMap={compressedCommandMap}
+          />
         </section>
       ))}
     </section>
@@ -52,7 +52,7 @@ const MoveSummary = ({
   const move = compressedCommandMap[compressCommand(command.split(' | ')[0])]
   if (!move) return null
   return (
-    <div className="text-muted-foreground">
+    <div className="text-sm text-muted-foreground">
       {[
         move.hitLevel && move.hitLevel,
         move.startup && move.startup.split(',')[0],
