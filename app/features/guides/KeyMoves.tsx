@@ -58,7 +58,7 @@ const MoveSummary = ({
         move.startup && move.startup.split(',')[0],
         move.block && `${move.block} oB`,
         move.hit && `${move.hit} oH`,
-        move.counterHit && `${move.counterHit} Oc`,
+        move.counterHit && `${move.counterHit} oCH`,
       ]
         .filter(Boolean)
         .join(', ')}
