@@ -27,7 +27,7 @@ export const meta: MetaFunction = ({ matches }) => {
 
 const cleanCommand = (move: string): string => {
   return move
-    .replace(/,|\//g, '')
+    .replace(/,|n,|\//g, '')
     .replace(/([A-Za-z])\+/g, '$1')
     .toLowerCase()
 }
