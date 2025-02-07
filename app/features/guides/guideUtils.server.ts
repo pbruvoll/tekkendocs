@@ -145,4 +145,11 @@ const tableHandlers: Partial<
       description: row[1],
     }))
   },
+  stances: (rows, guideData) => {
+    guideData.stances = rows.map(row => ({
+      type: row[0] as 'stance' | 'command',
+      command: row[1],
+      description: row[2],
+    }))
+  },
 }
