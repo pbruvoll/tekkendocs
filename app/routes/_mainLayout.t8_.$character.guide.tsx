@@ -24,6 +24,7 @@ import { HeatSystem } from '~/features/guides/HeatSystem'
 import { Introduction } from '~/features/guides/Introduction'
 import { KeyMoves } from '~/features/guides/KeyMoves'
 import { Punishers } from '~/features/guides/Punishers'
+import { Stances } from '~/features/guides/Stances'
 import { StrengthsWeaknesses } from '~/features/guides/StrengthsWeaknesses'
 import { WallCombos } from '~/features/guides/WallCombos'
 import { useFrameData } from '~/hooks/useFrameData'
@@ -173,6 +174,7 @@ export default function Index() {
     knowledgeChecks,
     defensiveTips,
     defensiveMoves,
+    stances,
   } = guideData
   const { top10Moves, notableMoves } = {
     top10Moves: keyMoves?.slice(0, 10),
@@ -261,85 +263,10 @@ export default function Index() {
         {defensiveMoves?.length && (
           <KeyMoves moves={defensiveMoves} title="Defensive Move Handling" />
         )}
+        {stances?.length && <Stances stances={stances} />}
         {externalResources?.length && (
           <ExternalResources externalResources={externalResources} />
         )}
-        {/* {tables.map(table => {
-          const columnNums = (table.headers || table.rows[0]).map(
-            (_, index) => index,
-          )
-          if (table.name === 'resources_external') {
-            return (
-              <ResourcesTable
-                key={table.name}
-                rows={table.rows}
-                headers={table.headers as string[]}
-              />
-            )
-          }
-          return (
-            <section key={table.name} className="mt-8">
-              <Heading as="h2" mb="4" size="4">
-                {tableIdToDisplayName[table.name]}
-              </Heading>
-              <Table.Root variant="surface" style={{ width: '100%' }}>
-                {table.headers && (
-                  <Table.Header>
-                    <Table.Row>
-                      {table.headers.map(h => (
-                        <Table.ColumnHeaderCell key={h}>
-                          {h}
-                        </Table.ColumnHeaderCell>
-                      ))}
-                    </Table.Row>
-                  </Table.Header>
-                )}
-                <Table.Body>
-                  {table.rows.map((row, i) => {
-                    return (
-                      <Table.Row key={row[0]}>
-                        {columnNums.map(j => {
-                          const cell = row[j] || ''
-                          if (
-                            table.headers &&
-                            (table.headers[j] === 'Command' ||
-                              table.headers[j] === 'Secondary' ||
-                              table.headers[j] === 'Starter')
-                          ) {
-                            //this is a command, so make it link
-                            return (
-                              <Table.Cell key={j}>
-                                <RadixLink asChild>
-                                  <Command
-                                    charUrl={`/t8/${characterName}`}
-                                    compressedCommandMap={compressedCommandMap}
-                                    command={cell}
-                                  />
-                                </RadixLink>
-                              </Table.Cell>
-                            )
-                          }
-                          if (table.name === 'key_moves') {
-                            return (
-                              <Table.Cell key={j}>
-                                <TextWithCommand
-                                  charUrl={`/t8/${characterName}`}
-                                  compressedCommandMap={compressedCommandMap}
-                                  text={cell}
-                                />
-                              </Table.Cell>
-                            )
-                          }
-                          return <Table.Cell key={j}>{cell}</Table.Cell>
-                        })}
-                      </Table.Row>
-                    )
-                  })}
-                </Table.Body>
-              </Table.Root>
-            </section>
-          )
-        })} */}
         {!!contributors?.length && (
           <div className="mb-3 mt-3 flex justify-end">
             <div>
