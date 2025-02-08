@@ -6,11 +6,12 @@ import {
   type LoaderFunctionArgs,
   type MetaFunction,
 } from '@remix-run/node'
-import { useLoaderData } from '@remix-run/react'
+import { useLoaderData, useParams } from '@remix-run/react'
 import invariant from 'tiny-invariant'
 import { Authors } from '~/components/Authors'
 import { Command } from '~/components/Command'
 import { ContentContainer } from '~/components/ContentContainer'
+import { AppErrorBoundary } from '~/components/ErrorBoundary'
 import Nav, { type NavLinkInfo } from '~/components/Nav'
 import { PersonLinkList } from '~/components/PersonLinkList'
 import { ResourcesTable } from '~/components/ResourcesTable'
@@ -52,7 +53,7 @@ export const headers = () => getCacheControlHeaders({ seconds: 60 * 5 })
 
 export const loader = async ({ params }: LoaderFunctionArgs) => {
   const character = params.character
-  if (!character) {
+  if (!character || character === 'mokujin') {
     throw new Response(null, {
       status: 400,
       statusText: 'Character cant be empty',
@@ -331,4 +332,16 @@ export default function Index() {
       </ContentContainer>
     </>
   )
+}
+
+export function ErrorBoundary() {
+  const params = useParams()
+  if (params.character === 'mokujin') {
+    return (
+      <div className="min-h-96 p-4">
+        Mokujin does not have meta data as he knows all moves!
+      </div>
+    )
+  }
+  return <AppErrorBoundary />
 }

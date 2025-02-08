@@ -34,6 +34,13 @@ export type Combo = {
   combo: string
 }
 
+export type StanceType = 'stance' | 'command'
+export type Stance = {
+  type: StanceType
+  command: string
+  description: string
+}
+
 export type ComboEnderType = 'wall_break' | 'floor_break' | 'carry'
 export type ComboEnder = {
   type: ComboEnderType
@@ -77,4 +84,5 @@ export type GuideData = {
   knowledgeChecks: KeyMove[]
   defensiveTips: DefensiveTip[]
   defensiveMoves: KeyMove[]
+  stances: Stance[]
 }

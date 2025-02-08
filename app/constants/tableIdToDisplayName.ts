@@ -11,6 +11,7 @@ export const tableIdToDisplayName: Record<TableId, string> = {
   moves_heatengager: 'Heat Engagers',
   moves_powercrush: 'Power Crush',
   key_moves: 'Key moves',
+  stances: 'Stances',
   panic_moves: 'Panice moves',
   combos_ender: 'Combo enders',
   combos_normal: 'Combos',
