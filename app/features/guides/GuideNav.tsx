@@ -15,6 +15,7 @@ export const GuideNav = ({ guideData }: GuideNavPros) => {
     !!guideData.standingPunishers && 'Punishers',
     !!guideData.combos && 'Combos',
     !!guideData.keyMoves && guideData.keyMoves.length > 10 && 'Notable Moves',
+    !!guideData.stances && 'Stances',
     !!guideData.panicMoves && 'Panic Moves',
     !!guideData.frameTraps && 'Frame Traps',
     !!guideData.knowledgeChecks && 'Knowledge Checks',
