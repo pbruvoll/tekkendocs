@@ -252,6 +252,7 @@ export default function Index() {
         {notableMoves?.length && (
           <KeyMoves moves={notableMoves} title="Notable Moves" />
         )}
+        {stances?.length && <Stances stances={stances} />}
         {panicMoves?.length && (
           <KeyMoves moves={panicMoves} title="Panic Moves" />
         )}
@@ -263,7 +264,6 @@ export default function Index() {
         {defensiveMoves?.length && (
           <KeyMoves moves={defensiveMoves} title="Defensive Move Handling" />
         )}
-        {stances?.length && <Stances stances={stances} />}
         {externalResources?.length && (
           <ExternalResources externalResources={externalResources} />
         )}

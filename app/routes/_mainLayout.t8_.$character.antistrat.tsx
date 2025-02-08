@@ -2,9 +2,15 @@ import { useMemo } from 'react'
 import { Pencil1Icon } from '@radix-ui/react-icons'
 import { Heading, Table } from '@radix-ui/themes'
 import { type DataFunctionArgs, json, type MetaFunction } from '@remix-run/node'
-import { useLoaderData } from '@remix-run/react'
+import {
+  isRouteErrorResponse,
+  useLoaderData,
+  useParams,
+  useRouteError,
+} from '@remix-run/react'
 import { Commands } from '~/components/Commands'
 import { ContentContainer } from '~/components/ContentContainer'
+import { AppErrorBoundary } from '~/components/ErrorBoundary'
 import Nav, { type NavLinkInfo } from '~/components/Nav'
 import { TextWithCommand } from '~/components/TextWithCommand'
 import { tableIdToDisplayName } from '~/constants/tableIdToDisplayName'
@@ -31,6 +37,12 @@ export const headers = () => getCacheControlHeaders({ seconds: 60 * 5 })
 
 export const loader = async ({ params }: DataFunctionArgs) => {
   const character = getCharacterFromParams(params)
+  if (['lidia', 'heihachi', 'mokujin'].includes(character)) {
+    throw new Response(null, {
+      status: 404,
+      statusText: 'Character not found',
+    })
+  }
   const sheetService = getSheetService()
   const sheet = await sheetService.getCharacterData(
     'T8',
@@ -183,4 +195,21 @@ export default function Index() {
       </ContentContainer>
     </>
   )
+}
+
+export function ErrorBoundary() {
+  const error = useRouteError()
+  if (isRouteErrorResponse(error) && error.status === 404) {
+    return (
+      <div className="prose prose-invert p-4">
+        <h1>Anti strats not found</h1>
+        <p>
+          There is no antistrat for this character. If you would like to make
+          one, please get in touch in discord, github or on X.
+        </p>
+      </div>
+    )
+  }
+
+  return <AppErrorBoundary />
 }
