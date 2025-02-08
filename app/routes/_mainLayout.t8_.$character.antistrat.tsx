@@ -5,7 +5,6 @@ import { type DataFunctionArgs, json, type MetaFunction } from '@remix-run/node'
 import {
   isRouteErrorResponse,
   useLoaderData,
-  useParams,
   useRouteError,
 } from '@remix-run/react'
 import { Commands } from '~/components/Commands'
