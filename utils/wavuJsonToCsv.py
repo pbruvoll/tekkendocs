@@ -36,13 +36,13 @@ def moveInstallmentToFront(input, installment):
     return input
 
 # "Transitions to ZEN", "Cancel to BT with" -> "ZEN", "BT"
-transToIgnore = ("with", "attack", "standing", "evasive", "throw", "ultimate")
+transToIgnore = ("with", "attack", "standing", "evasive", "throw", "ultimate", "block")
 def getTransitions(move) :
     notes = re.sub(r'r\d+\??', '', move["notes"])
     matches = re.findall(r'(?:enter|cancel to|links to|transition to)\s+(\S+(?: extensions| string extensions)?)', notes, re.IGNORECASE)
     filtered = [match for match in matches if match.lower() not in transToIgnore]
-    recovery = move["recovery"].split(" ")[0]
-    if recovery and recovery != "r" and not re.match(r'^[rt]?\d', recovery) :
+    recovery = move["recovery"].split(" ")[-1]
+    if recovery and not re.match(r'^r\??$', recovery) and not re.match(r'^[rt]?\d', recovery) :
         print("recovery", recovery, move)
         filtered.append(recovery)
     if len(filtered) > 0 :
@@ -79,7 +79,7 @@ def correctMove(move, charName) :
     move["input"] = input
 
     move["transitions"] = getTransitions(move)
-    if move["transitions"].find("r ") > -1 : 
+    if move["transitions"].find("+41a") > -1 : 
         print("error move : ", move["input"], move["notes"])
     
 #input is a folder for a character which may contain multiple csv files (special moves, throws etc).
@@ -124,7 +124,7 @@ os.makedirs(outputDir, exist_ok = True)
 for csvFile in os.listdir(inputDir) :
     filePath = os.path.join(inputDir, csvFile)
     print("converting ", filePath)
-    if not "asuka" in filePath :
+    if not "clive" in filePath :
         continue
     convert(filePath, outputDir)
     
