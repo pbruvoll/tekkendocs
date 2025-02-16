@@ -39,7 +39,8 @@ def moveInstallmentToFront(input, installment):
 transToIgnore = ("with", "attack", "standing", "evasive", "throw", "ultimate", "block")
 def getTransitions(move) :
     notes = re.sub(r'r\d+\??', '', move["notes"])
-    matches = re.findall(r'(?:enter|cancel to|links to|transition to)\s+(\S+(?: extensions| string extensions)?)', notes, re.IGNORECASE)
+    #matches = re.findall(r'(?:enter|cancel to|links to|transition to)\s+(\S+(?: extensions| string extensions)?)', notes, re.IGNORECASE)
+    matches = re.findall(r'(?:enter|cancel to|links to|transition to)\s+((?:[rt][^\s]*\s+)*)?([^rt\s][^\s]*(?:\s+extensions|\s+string extensions)?)', notes, re.IGNORECASE)
     filtered = [match for match in matches if match.lower() not in transToIgnore]
     recovery = move["recovery"].split(" ")[-1]
     if recovery and not re.match(r'^r\??$', recovery) and not re.match(r'^[rt]?\d', recovery) :
