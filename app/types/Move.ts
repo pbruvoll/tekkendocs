@@ -10,6 +10,7 @@ export type Move = {
   counterHit: string
   notes: string
   tags?: Record<string, string>
+  transitions?: string[]
   wavuId?: string
   ytVideo?: { id: string; start?: string; end?: string }
   image?: string

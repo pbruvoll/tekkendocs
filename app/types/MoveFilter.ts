@@ -30,4 +30,5 @@ export type MoveFilter = {
   video?: boolean
   chip?: boolean
   stance?: string[]
+  transition?: string[]
 }

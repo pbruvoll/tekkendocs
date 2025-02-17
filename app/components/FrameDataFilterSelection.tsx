@@ -8,6 +8,7 @@ export type FrameDataFilterSectionProps = {
   filter: MoveFilter
   stances: string[]
   states: string[]
+  transitions: string[]
   setFilterValue: (key: string, value: string) => void
   removeFilterValue: (key: string) => void
   addFilterElement: (key: string, element: string) => void
@@ -22,6 +23,7 @@ export const FrameDataFilterSelection = ({
   removeFilterElement,
   stances,
   states,
+  transitions,
 }: FrameDataFilterSectionProps) => {
   const {
     hitLevels,
@@ -51,6 +53,7 @@ export const FrameDataFilterSelection = ({
     hitsGrounded,
     video,
     stance: stanceFilter,
+    transition: transitionFilter,
     removeRecoveryHealth,
     recoverFullCrouch,
   } = filter
@@ -347,6 +350,31 @@ export const FrameDataFilterSelection = ({
                 }}
               >
                 {stanceNameMap[stance] || stance}
+              </Button>
+            )
+          })}
+        </div>
+      </section>
+      <section className="flex flex-col gap-3">
+        <Text as="div" size="2" mb="1" weight="bold">
+          Transitions
+        </Text>
+        <div className="flex flex-wrap gap-3">
+          {transitions.map(transition => {
+            const active = transitionFilter?.includes(transition)
+            return (
+              <Button
+                key={transition}
+                variant={active ? 'solid' : 'outline'}
+                onClick={() => {
+                  if (active) {
+                    removeFilterElement(filterKey.Transition, transition)
+                  } else {
+                    addFilterElement(filterKey.Transition, transition)
+                  }
+                }}
+              >
+                {transition}
               </Button>
             )
           })}
