@@ -414,9 +414,11 @@ export const filterMoves = (moves: Move[], filter: MoveFilter | undefined) => {
   }
 
   if (filter.transition && filter.transition.length > 0) {
-    const transition = filter.transition;
+    const transition = filter.transition
     filterFuncs.push((move: Move) => {
-      return !!(move.transitions && move.transitions.some(t => transition.includes(t)))
+      return !!(
+        move.transitions && move.transitions.some(t => transition.includes(t))
+      )
     })
   }
 
@@ -663,7 +665,7 @@ export const getMoveFilterTypes = (moves: Move[]): MoveFilterTypes => {
       return
     }
 
-    if(move.transitions && move.transitions.length > 0) {
+    if (move.transitions && move.transitions.length > 0) {
       move.transitions.forEach(transition => {
         allTransitions.add(transition)
       })
