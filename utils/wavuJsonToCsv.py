@@ -6,6 +6,8 @@ import csv
 import re
 csvSep = ";"
 
+allTrans = {}
+
 columns = [
     {"wavuId": "input", "displayName": "Command"},
     {"wavuId": "target", "displayName": "Hit level"},
@@ -16,6 +18,7 @@ columns = [
     {"wavuId": "on_ch", "displayName": "Counter hit frame"},
     {"wavuId": "notes", "displayName": "Notes"},
     {"wavuId": "tags", "displayName": "Tags"},
+    {"wavuId": "transitions", "displayName": "Transitions"}, # this value is created by this converter and not present in Wavu
     {"wavuId": "id", "displayName": "Wavu id"},
     {"wavuId": "name", "displayName": "Name"},
     {"wavuId": "recovery", "displayName": "Recovery"},
@@ -31,6 +34,21 @@ def moveInstallmentToFront(input, installment):
         return installment + "." + input
 
     return input
+
+# "Transitions to ZEN", "Cancel to BT with" -> "ZEN", "BT"
+transToIgnore = ("with", "attack", "standing", "throw", "block", "second", "triple", "heel", "hell's", "awakened", "backdash", "dash")
+def getTransitions(move) :
+    notes = re.sub(r'r\d+\??', '', move["notes"])
+    matches = re.findall(r'(?:enter|cancel to|links to|transition to)\s+((?:(?:r\d|t\d|\+|-|\()[^\s]*\s+)*)?(\S*(\s\S*\s?(?:extensions|roll|step))?)', notes, re.IGNORECASE)
+    print("matches", matches)
+    filtered = [match[1] for match in matches if match[1].lower() not in transToIgnore]
+    recovery = move["recovery"].split(" ")[-1]
+    if recovery and not re.match(r'^[rs]\??$', recovery) and not re.match(r'^[irt]?\d', recovery) :
+        filtered.append(recovery)
+    if len(filtered) > 0 :
+        allTrans.update({element: "1" for element in filtered})
+        return ", ".join(filtered)
+    return ""
 
 def correctMove(move, charName) : 
     input = move["input"]
@@ -59,6 +77,10 @@ def correctMove(move, charName) :
     input = moveInstallmentToFront(input, "H")
 
     move["input"] = input
+
+    move["transitions"] = getTransitions(move)
+    if move["transitions"].find("dash") > -1 : 
+        print("error move : ", move["input"], move["notes"])
     
 #input is a folder for a character which may contain multiple csv files (special moves, throws etc).
 #one json file will be generated for each chracter conntaining move type as key
@@ -102,8 +124,12 @@ os.makedirs(outputDir, exist_ok = True)
 for csvFile in os.listdir(inputDir) :
     filePath = os.path.join(inputDir, csvFile)
     print("converting ", filePath)
+    # if not "jin" in filePath :
+    #     continue
     convert(filePath, outputDir)
-    
-        
+
+print("Transitions collected:")
+for key, value in allTrans.items() :
+    print (key)
 
 

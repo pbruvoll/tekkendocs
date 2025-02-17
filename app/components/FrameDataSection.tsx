@@ -92,6 +92,7 @@ export const FrameDataSection = ({
           filter={filter}
           stances={moveTypes.stances}
           states={moveTypes.states}
+          transitions={moveTypes.transitions}
           removeFilterValue={removeFilterValue}
           setFilterValue={setFilterValue}
           addFilterElement={addFilterElement}

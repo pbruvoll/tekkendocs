@@ -40,6 +40,7 @@ export const getFilterFromParams = (
     hitsGrounded: getSearchParamBoolean(searchParams, filterKey.HitsGrounded),
     video: getSearchParamBoolean(searchParams, filterKey.Video),
     spike: getSearchParamBoolean(searchParams, filterKey.Spike),
+    transition: getSearchParamStringList(searchParams, filterKey.Transition),
     recoverFullCrouch: getSearchParamBoolean(
       searchParams,
       filterKey.RecoverFullCrouch,

@@ -37,6 +37,7 @@ export const frameDataTableToJson = (normalFrameData: TableData): Move[] => {
   invariant(notesIndex >= 0)
 
   const tagsIndex = lowerCaseHeaders.findIndex(h => h === 'tags')
+  const transitionIndex = lowerCaseHeaders.findIndex(h => h === 'transitions')
   const imageIndex = lowerCaseHeaders.findIndex(h => h === 'image')
   const videoIndex = lowerCaseHeaders.findIndex(h => h === 'video')
   const wavuIdIndex = lowerCaseHeaders.findIndex(h => h === 'wavu id')
@@ -63,6 +64,9 @@ export const frameDataTableToJson = (normalFrameData: TableData): Move[] => {
       notes: row[notesIndex],
       wavuId: row[wavuIdIndex],
       tags: row[tagsIndex] ? tagStringToRecord(row[tagsIndex]) : undefined,
+      transitions: row[transitionIndex]
+        ? row[transitionIndex].split(',')
+        : undefined,
       image: row[imageIndex],
       video: row[videoIndex],
       recovery: row[recoveryIndex],
@@ -409,6 +413,15 @@ export const filterMoves = (moves: Move[], filter: MoveFilter | undefined) => {
     })
   }
 
+  if (filter.transition && filter.transition.length > 0) {
+    const transition = filter.transition
+    filterFuncs.push((move: Move) => {
+      return !!(
+        move.transitions && move.transitions.some(t => transition.includes(t))
+      )
+    })
+  }
+
   return moves.filter(move => {
     return filterFuncs.every(ff => ff(move))
   })
@@ -632,16 +645,25 @@ export type MoveFilterTypes = {
   movements: string[]
   states: string[]
   stances: string[]
+  transitions: string[]
 }
 
 export const getMoveFilterTypes = (moves: Move[]): MoveFilterTypes => {
   const allStances = new Set<string>()
+  const allTransitions = new Set<string>()
   const movements = new Set<string>()
 
   moves.forEach(move => {
     if (move.hitLevel.startsWith('t')) {
       return
     }
+
+    if (move.transitions && move.transitions.length > 0) {
+      move.transitions.forEach(transition => {
+        allTransitions.add(transition)
+      })
+    }
+
     if (move.command.startsWith('ws')) {
       allStances.add('ws')
       return
@@ -675,5 +697,6 @@ export const getMoveFilterTypes = (moves: Move[]): MoveFilterTypes => {
     movements: Array.from(movements),
     stances,
     states,
+    transitions: Array.from(allTransitions),
   }
 }

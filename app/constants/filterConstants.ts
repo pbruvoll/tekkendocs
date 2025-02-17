@@ -23,6 +23,7 @@ export const filterKey = {
   Elbow: 'elb',
   Weapon: 'wpn',
   Stance: 'stance',
+  Transition: 'transition',
   WallCrush: 'wc',
   Video: 'video',
   HitsGrounded: 'hitsGrounded',
