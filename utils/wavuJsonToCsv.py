@@ -36,10 +36,10 @@ def moveInstallmentToFront(input, installment):
     return input
 
 # "Transitions to ZEN", "Cancel to BT with" -> "ZEN", "BT"
-transToIgnore = ("with", "attack", "standing", "evasive", "throw", "ultimate", "block", "second", "Roll")
+transToIgnore = ("with", "attack", "standing", "throw", "block", "second", "triple", "heel", "hell's", "awakened", "backdash", "dash")
 def getTransitions(move) :
     notes = re.sub(r'r\d+\??', '', move["notes"])
-    matches = re.findall(r'(?:enter|cancel to|links to|transition to)\s+((?:(?:r\d|t\d|\+|-|\()[^\s]*\s+)*)?(\S*(\s\S*\s?extensions)?)', notes, re.IGNORECASE)
+    matches = re.findall(r'(?:enter|cancel to|links to|transition to)\s+((?:(?:r\d|t\d|\+|-|\()[^\s]*\s+)*)?(\S*(\s\S*\s?(?:extensions|roll|step))?)', notes, re.IGNORECASE)
     print("matches", matches)
     filtered = [match[1] for match in matches if match[1].lower() not in transToIgnore]
     recovery = move["recovery"].split(" ")[-1]
@@ -79,7 +79,7 @@ def correctMove(move, charName) :
     move["input"] = input
 
     move["transitions"] = getTransitions(move)
-    if move["transitions"].find("California") > -1 : 
+    if move["transitions"].find("dash") > -1 : 
         print("error move : ", move["input"], move["notes"])
     
 #input is a folder for a character which may contain multiple csv files (special moves, throws etc).
@@ -124,11 +124,11 @@ os.makedirs(outputDir, exist_ok = True)
 for csvFile in os.listdir(inputDir) :
     filePath = os.path.join(inputDir, csvFile)
     print("converting ", filePath)
-    if not "kuma" in filePath :
-        continue
+    # if not "jin" in filePath :
+    #     continue
     convert(filePath, outputDir)
-    
-print("allTrans")
+
+print("Transitions collected:")
 for key, value in allTrans.items() :
     print (key)
 
