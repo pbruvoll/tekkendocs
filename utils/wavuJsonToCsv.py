@@ -8,6 +8,8 @@ csvSep = ";"
 
 allTrans = {}
 
+notesCleanPattern = re.compile(r'\[\[.*?\|(.+?)\]\]') # [[Dragunov movelist#Dragunov-f,f,F+4|Snap Knee Assault]] -> Snap Knee Assault
+
 columns = [
     {"wavuId": "input", "displayName": "Command"},
     {"wavuId": "target", "displayName": "Hit level"},
@@ -36,13 +38,13 @@ def moveInstallmentToFront(input, installment):
     return input
 
 # "Transitions to ZEN", "Cancel to BT with" -> "ZEN", "BT"
-transToIgnore = ("with", "attack", "standing", "throw", "block", "second", "triple", "heel", "hell's", "awakened", "backdash", "dash", "evasive")
+transToIgnore = ("with", "attack", "standing", "throw", "block", "second", "triple", "heel", "hell's", "awakened", "backdash", "dash", "evasive", "h", "snap")
 def getTransitions(move) :
     notes = re.sub(r'r\d+\??', '', move["notes"])
     matches = re.findall(r'(?:enter|cancel to|links to|transition to)\s+((?:(?:r\d|t\d|\+|-|\()[^\s]*\s+)*)?(\S*(\s\S*\s?(?:extensions|roll|step|tackle))?)', notes, re.IGNORECASE)
     filtered = [match[1] for match in matches if match[1].lower() not in transToIgnore]
     recovery = move["recovery"].split(" ")[-1]
-    if recovery and not re.match(r'^[rs]\??$', recovery) and not re.match(r'^[irt]?\d', recovery) :
+    if recovery and not re.match(r'^[rs]\??$', recovery) and not re.match(r'^[irt]?\d', recovery) and not re.match(r'^js?\d', recovery) :
         filtered.append(recovery)
     if len(filtered) > 0 :
         allTrans.update({element: "1" for element in filtered})
@@ -77,8 +79,10 @@ def correctMove(move, charName) :
 
     move["input"] = input
 
+    move["notes"] = re.sub(notesCleanPattern, r'\1', move["notes"])
+
     move["transitions"] = getTransitions(move)
-    if move["transitions"].find("dash") > -1 : 
+    if move["transitions"].find("crouching") > -1 : 
         print("error move : ", move["input"], move["notes"])
     
 #input is a folder for a character which may contain multiple csv files (special moves, throws etc).
@@ -123,8 +127,8 @@ os.makedirs(outputDir, exist_ok = True)
 for csvFile in os.listdir(inputDir) :
     filePath = os.path.join(inputDir, csvFile)
     print("converting ", filePath)
-    if not "dragunov" in filePath :
-        continue
+    if not "heihachi" in filePath :
+         continue
     convert(filePath, outputDir)
 
 print("Transitions collected:")
