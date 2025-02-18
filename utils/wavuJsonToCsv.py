@@ -36,18 +36,17 @@ def moveInstallmentToFront(input, installment):
     return input
 
 # "Transitions to ZEN", "Cancel to BT with" -> "ZEN", "BT"
-transToIgnore = ("with", "attack", "standing", "throw", "block", "second", "triple", "heel", "hell's", "awakened", "backdash", "dash")
+transToIgnore = ("with", "attack", "standing", "throw", "block", "second", "triple", "heel", "hell's", "awakened", "backdash", "dash", "evasive")
 def getTransitions(move) :
     notes = re.sub(r'r\d+\??', '', move["notes"])
-    matches = re.findall(r'(?:enter|cancel to|links to|transition to)\s+((?:(?:r\d|t\d|\+|-|\()[^\s]*\s+)*)?(\S*(\s\S*\s?(?:extensions|roll|step))?)', notes, re.IGNORECASE)
-    print("matches", matches)
+    matches = re.findall(r'(?:enter|cancel to|links to|transition to)\s+((?:(?:r\d|t\d|\+|-|\()[^\s]*\s+)*)?(\S*(\s\S*\s?(?:extensions|roll|step|tackle))?)', notes, re.IGNORECASE)
     filtered = [match[1] for match in matches if match[1].lower() not in transToIgnore]
     recovery = move["recovery"].split(" ")[-1]
     if recovery and not re.match(r'^[rs]\??$', recovery) and not re.match(r'^[irt]?\d', recovery) :
         filtered.append(recovery)
     if len(filtered) > 0 :
         allTrans.update({element: "1" for element in filtered})
-        return ", ".join(filtered)
+        return ",".join(filtered)
     return ""
 
 def correctMove(move, charName) : 
@@ -124,8 +123,8 @@ os.makedirs(outputDir, exist_ok = True)
 for csvFile in os.listdir(inputDir) :
     filePath = os.path.join(inputDir, csvFile)
     print("converting ", filePath)
-    # if not "jin" in filePath :
-    #     continue
+    if not "dragunov" in filePath :
+        continue
     convert(filePath, outputDir)
 
 print("Transitions collected:")
