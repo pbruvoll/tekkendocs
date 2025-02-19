@@ -38,15 +38,19 @@ def moveInstallmentToFront(input, installment):
     return input
 
 # "Transitions to ZEN", "Cancel to BT with" -> "ZEN", "BT"
-transToIgnore = ("with", "attack", "standing", "throw", "block", "second", "triple", "heel", "hell's", "awakened", "backdash", "dash", "evasive", "h", "snap")
+transToIgnore = ("with", "attack", "attacks", "standing", "throw", "block", "second", "triple", "releasing", "heel", "arm", "hell's", "awakened", "backdash", "dash", "evasive", "h", "n", "snap", "avalanche", "strings")
 def getTransitions(move) :
     notes = re.sub(r'r\d+\??', '', move["notes"])
-    matches = re.findall(r'(?:enter|cancel to|links to|transition to)\s+((?:(?:r\d|t\d|\+|-|\()[^\s]*\s+)*)?(\S*(\s\S*\s?(?:extensions|roll|step|tackle))?)', notes, re.IGNORECASE)
+    matches = re.findall(r'(?:enter|cancel to|links to|transition to)\s+((?:(?:r\d|t\d|\d|cs|\+|-|\()[^\s]*\s+)*)?(\S*(\s\S*\s?(?:extensions|roll|step|tackle))?)', notes, re.IGNORECASE)
     filtered = [match[1] for match in matches if match[1].lower() not in transToIgnore]
-    recovery = move["recovery"].split(" ")[-1]
-    if recovery and not re.match(r'^[rs]\??$', recovery) and not re.match(r'^[irt]?\d', recovery) and not re.match(r'^js?\d', recovery) :
-        filtered.append(recovery)
+    recoveryValue = move["recovery"].split(" ")[-1]
+    if recoveryValue :
+        splitted = recoveryValue.split("/")
+        for recovery in splitted :
+            if not re.match(r'^[rs]\??$', recovery) and not re.match(r'^[irt]?\d', recovery) and not re.match(r'^js?\d?', recovery) and not re.match(r'^a?s', recovery) and not recovery == "ws" and not recovery == "HEAT" :
+                filtered.append("FC" if recovery == "rFC" or recovery == "hFC" else recovery)
     if len(filtered) > 0 :
+        filtered = [re.sub(r'[(),]', '', s) for s in filtered]
         allTrans.update({element: "1" for element in filtered})
         return ",".join(filtered)
     return ""
@@ -82,7 +86,7 @@ def correctMove(move, charName) :
     move["notes"] = re.sub(notesCleanPattern, r'\1', move["notes"])
 
     move["transitions"] = getTransitions(move)
-    if move["transitions"].find("crouching") > -1 : 
+    if move["transitions"].find("ws") > -1 : 
         print("error move : ", move["input"], move["notes"])
     
 #input is a folder for a character which may contain multiple csv files (special moves, throws etc).
@@ -127,8 +131,8 @@ os.makedirs(outputDir, exist_ok = True)
 for csvFile in os.listdir(inputDir) :
     filePath = os.path.join(inputDir, csvFile)
     print("converting ", filePath)
-    if not "heihachi" in filePath :
-         continue
+    # if not "zafi" in filePath :
+    #      continue
     convert(filePath, outputDir)
 
 print("Transitions collected:")

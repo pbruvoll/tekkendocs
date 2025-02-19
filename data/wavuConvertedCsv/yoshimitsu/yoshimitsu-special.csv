@@ -1,4 +1,4 @@
-Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Wavu id;Name;Recovery;Image;Video
+Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Transitions;Wavu id;Name;Recovery;Image;Video
 2+3;m;"[12;12]";i16;+1;+2c;;"* Heat Burst
 * Cancel to r45 with b,b
 * 3 chip damage on block
@@ -9,18 +9,18 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * Power crush 7~62
 * On cancel: fs12~20 Low crush 21~29 fs30~32&lt;/div&gt;";"hb &lt;div class=&quot;plainlist&quot;&gt;
 * pc7~62
-* On cancel: fs12~20 js21~29 fs30~32&lt;/div&gt;";Yoshimitsu-2+3;Heat Burst;r30;;
+* On cancel: fs12~20 js21~29 fs30~32&lt;/div&gt;";;Yoshimitsu-2+3;Heat Burst;r30;;
 H.DGF.1;M;26;i30~31;+2;+46a;;"* Spike
 * Weapon
 * 18 chip damage on block
 * Recovers 4 base health on hit
-Low crush 1~27";spk wpn js1~27;Yoshimitsu-H.DGF.1;Dragonfly Blade (Heat);r29;;
+Low crush 1~27";spk wpn js1~27;;Yoshimitsu-H.DGF.1;Dragonfly Blade (Heat);r29;;
 H.DGF.f+1+2;h,h,h;10,10,20;i16~17 i11~12 i11~12;+4;+18a (+9);;"* Homing
 * Balcony Break
 * Weapon
 * 17 chip damage on block
 * Recovers 4 base health on hit
-Low crush 1~65";hom bbr wpn js1~65;Yoshimitsu-H.DGF.f+1+2;Red Spider Lily (Heat);r31;;
+Low crush 1~65";hom bbr wpn js1~65;;Yoshimitsu-H.DGF.f+1+2;Red Spider Lily (Heat);r31;;
 H.2+3;M,m,m,m;51;i18~19;+4;-3d;;"* Heat Smash
 * Reversal Break
 * Balcony Break
@@ -34,7 +34,7 @@ H.2+3;M,m,m,m;51;i18~19;+4;-3d;;"* Heat Smash
 * Low crush 68~89
 * fs90~92&lt;/div&gt;";"hs bbr &lt;div class=&quot;plainlist&quot;&gt;
 * js68~89
-* fs90~92&lt;/div&gt;";Yoshimitsu-H.2+3;Divine Sword Kagekiyo;r36 1SS;;
+* fs90~92&lt;/div&gt;";DGF;Yoshimitsu-H.2+3;Divine Sword Kagekiyo;r36 1SS;;
 R.df+1+2;m,t;55+;i20;-15;+0d;;"* Rage Art
 * Removes Recoverable Health
 * Reversal Break
@@ -43,15 +43,15 @@ R.df+1+2;m,t;55+;i20;-15;+0d;;"* Rage Art
 * Restores recoverable health on hit
 * Transition to attack throw on hit
 * Consumes Rage
-Power crush 8~";pc8~;Yoshimitsu-R.df+1+2;Trailokya Pilgrimage;r39 1SS;;
-1;h;5;i10;+1;+8;;Recovers 2f faster on hit or block (t27 r17);;Yoshimitsu-1;Jab;r19;;
+Power crush 8~";pc8~;;Yoshimitsu-R.df+1+2;Trailokya Pilgrimage;r39 1SS;;
+1;h;5;i10;+1;+8;;Recovers 2f faster on hit or block (t27 r17);;;Yoshimitsu-1;Jab;r19;;
 1,1;h, m;5, 19;i10, i23;-9;+4c;+6a;"* Spike
 * Weapon
 * Combo from 1st hit with 1f delay
 * Input can be delayed 3f
 * Interrupt with i4 from 1st block
 * 3 chip damage on block
-* [[Yoshimitsu movelist (Tekken 8)#Yoshimitsu-1,NSS.1|Power up]] in NSS or Heat";spk wpn;Yoshimitsu-1,1;Naguri Kabuto Wari;r34 1SS;;File:t8-p2-yoshimitsu-1,1.mp4
+* Power up in NSS or Heat";spk wpn;;Yoshimitsu-1,1;Naguri Kabuto Wari;r34 1SS;;File:t8-p2-yoshimitsu-1,1.mp4
 1,NSS.1;h, m;5, 22;i10, i23;-9;+16a;+52a;"* Balcony Break
 * Spike
 * Weapon
@@ -59,28 +59,28 @@ Power crush 8~";pc8~;Yoshimitsu-R.df+1+2;Trailokya Pilgrimage;r39 1SS;;
 * Input can be delayed 3f
 * Interrupt with i4 from 1st block
 * 11 chip damage on block
-* Recovers 4 base health on hit";bbr spk wpn;Yoshimitsu-1,NSS.1;;r34 1SS;;File:t8-p2-yoshimitsu-1,1.mp4
-2;h;10;i11;-1;+5;+8;;;Yoshimitsu-2;Right Cross;r20;;
+* Recovers 4 base health on hit";bbr spk wpn;;Yoshimitsu-1,NSS.1;;r34 1SS;;File:t8-p2-yoshimitsu-1,1.mp4
+2;h;10;i11;-1;+5;+8;;;;Yoshimitsu-2;Right Cross;r20;;
 2,1;h, m;10, 23;i11, i26~27;-9;+12a;;"* Balcony Break
 * Weapon
 * Combo from 1st CH with 2f delay
 * Cancel to r15 with b
 * Interrupt with i8 from 1st block
-* Becomes a [[Yoshimitsu movelist (Tekken 8)#Yoshimitsu-2,NSS.1|different move]] in NSS";bbr wpn;Yoshimitsu-2,1;Seiken Douharai;r32;;File:t8-p2-yoshimitsu-2,1.mp4
+* Becomes a different move in NSS";bbr wpn;;Yoshimitsu-2,1;Seiken Douharai;r32;;File:t8-p2-yoshimitsu-2,1.mp4
 2,2;h, h;10, 18;i11, i24;-1;+15g;;"* Tornado
 * Balcony break on airborne hit
 * Combo from 1st hit with 1f delay
 * Enter KIN with 1+2
-* Transition to NSS on hit or block only";trn;Yoshimitsu-2,2;Mushibami;r25;;File:t8-p2-yoshimitsu-2,2.mp4
+* Transition to NSS on hit or block only";trn;KIN,NSS;Yoshimitsu-2,2;Mushibami;r25;;File:t8-p2-yoshimitsu-2,2.mp4
 2,3;h, h;10, 24;i11, i26~27;-10;+16a (+7);;"* Balcony Break
 * Combo from 1st CH with 2f delay
-* Input can be delayed 5f";bbr;Yoshimitsu-2,3;PK Combo;r33;;File:t8-p2-yoshimitsu-2,3.mp4
+* Input can be delayed 5f";bbr;;Yoshimitsu-2,3;PK Combo;r33;;File:t8-p2-yoshimitsu-2,3.mp4
 2,NSS.1;h, h;10, 5,15;i11, i23~24 i18;-5;+19a;;"* Balcony Break
 * Combo from 1st hit
-* Jail from 2nd attack";bbr;Yoshimitsu-2,NSS.1;Karakuri Uzumaki;r30 NSS;;File:t8-p2-yoshimitsu-2,nss.1.mp4
+* Jail from 2nd attack";bbr;NSS;Yoshimitsu-2,NSS.1;Karakuri Uzumaki;r30 NSS;;File:t8-p2-yoshimitsu-2,nss.1.mp4
 2,d+3;h, L;10, 11;i11, i22;-12;-1;;"* Combo from 1st hit with 2f delay
-High crush 12~";cs12~;Yoshimitsu-2,d+3;PDK Combo;r31 FC;;File:t8-p2-yoshimitsu-2,d+3.mp4
-3;m;12;i15~16;-9;+5;;;;Yoshimitsu-3;Enma;r29;;
+High crush 12~";cs12~;FC;Yoshimitsu-2,d+3;PDK Combo;r31 FC;;File:t8-p2-yoshimitsu-2,d+3.mp4
+3;m;12;i15~16;-9;+5;;;;;Yoshimitsu-3;Enma;r29;;
 3,1;m, h;12, 22;i15~16, i22~24;+7;+18g;;"* Heat Engager
 
 * Heat Dash +5g, +62a (+42)
@@ -90,10 +90,10 @@ High crush 12~";cs12~;Yoshimitsu-2,d+3;PDK Combo;r31 FC;;File:t8-p2-yoshimitsu-2
 * Combo from 1st hit
 * 4 chip damage on block
 * Does not transition to DGF during Heat activation or Heat Dash
-* [[Yoshimitsu movelist (Tekken 8)#Yoshimitsu-3,NSS.1|Power up]] in NSS or Heat
+* Power up in NSS or Heat
 * Recovers in 1SS
-,Low crush 26~";he bbr wpn js26~;Yoshimitsu-3,1;Enma's Flame;r47 DGF;;File:t8-p2-yoshimitsu-3,1.mp4
-3,2;m, m;12, 12;i15~16, i22;-12;+1;;Interrupt with i1 from 1st block;;Yoshimitsu-3,2;;r31;;
+,Low crush 26~";he bbr wpn js26~;DGF,DGF;Yoshimitsu-3,1;Enma's Flame;r47 DGF;;File:t8-p2-yoshimitsu-3,1.mp4
+3,2;m, m;12, 12;i15~16, i22;-12;+1;;Interrupt with i1 from 1st block;;;Yoshimitsu-3,2;;r31;;
 3,2,1+2;m, m, M;12, 12, 29;i15~16, ,i26~27;-14c;+20a (+10);;"* Balcony Break
 * Weapon
 * Combo from 2nd hit with 4f delay
@@ -101,7 +101,7 @@ High crush 12~";cs12~;Yoshimitsu-2,d+3;PDK Combo;r31 FC;;File:t8-p2-yoshimitsu-2
 * Move can be delayed 9f
 * Interrupt with i7 from 2nd block
 * 5 chip damage on block
-* [[Yoshimitsu movelist (Tekken 8)#Yoshimitsu-3,2,NSS.1+2|Power up]] in NSS or Heat";bbr wpn;Yoshimitsu-3,2,1+2;Enma's Cleansing Sword;r34 1SS;;File:t8-p2-yoshimitsu-3,2,1+2.mp4
+* Power up in NSS or Heat";bbr wpn;;Yoshimitsu-3,2,1+2;Enma's Cleansing Sword;r34 1SS;;File:t8-p2-yoshimitsu-3,2,1+2.mp4
 3,2,NSS.1+2;m, m, M;12, 12, 30;i15~16, ,i26~27;-14c;+20a (+10);;"* Balcony Break
 * Weapon
 * Combo from 2nd hit with 4f delay
@@ -109,7 +109,7 @@ High crush 12~";cs12~;Yoshimitsu-2,d+3;PDK Combo;r31 FC;;File:t8-p2-yoshimitsu-2
 * Move can be delayed 9f
 * 15 chip damage on block
 * Clean hit 39 damage
-* Recovers 4 base health on hit";bbr wpn;Yoshimitsu-3,2,NSS.1+2;Enma's Soul Blade;r34 1SS;;File:t8-p2-yoshimitsu-3,2,nss.1+2.mp4
+* Recovers 4 base health on hit";bbr wpn;;Yoshimitsu-3,2,NSS.1+2;Enma's Soul Blade;r34 1SS;;File:t8-p2-yoshimitsu-3,2,nss.1+2.mp4
 3,NSS.1;m, h;12, 25;i15~16, i22~24;+7;+18g;;"* Heat Engager
 
 * Heat Dash +5g, +62a (+42)
@@ -121,59 +121,59 @@ High crush 12~";cs12~;Yoshimitsu-2,d+3;PDK Combo;r31 FC;;File:t8-p2-yoshimitsu-2
 * Recovers 4 base health on hit
 * Does not transition to DGF during Heat Dash
 * Recovers in 1SS
-,Low crush 26~";he bbr wpn js26~;Yoshimitsu-3,NSS.1;;r47 DGF;;File:t8-p2-yoshimitsu-3,1.mp4
+,Low crush 26~";he bbr wpn js26~;DGF,DGF;Yoshimitsu-3,NSS.1;;r47 DGF;;File:t8-p2-yoshimitsu-3,1.mp4
 3~4;m,m;6,22;i17~18 i28~29;-6;+3;;"* Enter DGF +5 +14 r18 with 1SS.U
 &lt;div class=&quot;plainlist&quot;&gt;
 * Low crush 12-37
 * fs38-40&lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
 * js12-37
-* fs38-40&lt;/div&gt;";Yoshimitsu-3~4;Tobi Ushiwaka;r29;;File:t8-p2-yoshimitsu-3t4.mp4
-4;h;12;i12~13;-11;+0;+20a (+10);Balcony break on airborne hit;;Yoshimitsu-4;Magic 4;r29;;
-4,4;h, h;12, 12;i12~13, i24~25;-4;-2;;* Combo from 1st hit with 4f delay;;Yoshimitsu-4,4;;r31;;
-4,4,2;h, h, m;12, 12, 5;i12~13, ,i30~31;-22;-12;;Yoshimitsu recovers sideturned on block;;Yoshimitsu-4,4,2;;r41 BT;;
+* fs38-40&lt;/div&gt;";DGF;Yoshimitsu-3~4;Tobi Ushiwaka;r29;;File:t8-p2-yoshimitsu-3t4.mp4
+4;h;12;i12~13;-11;+0;+20a (+10);Balcony break on airborne hit;;;Yoshimitsu-4;Magic 4;r29;;
+4,4;h, h;12, 12;i12~13, i24~25;-4;-2;;* Combo from 1st hit with 4f delay;;;Yoshimitsu-4,4;;r31;;
+4,4,2;h, h, m;12, 12, 5;i12~13, ,i30~31;-22;-12;;Yoshimitsu recovers sideturned on block;;BT;Yoshimitsu-4,4,2;;r41 BT;;
 4,4,2,2;h, h, m, h;12, 12, 5, 6;i12~13, ,i22~23;-24;-13;;"* Combo from 3rd hit
-* Opponent recovers BT on hit";;Yoshimitsu-4,4,2,2;Wheel of Arrows;r42;;
-4,4,2,2,1;h, h, m, h, m!;12, 12, 5, 6, 30;i12~13, ,i67;;-18;;* Weapon;wpn;Yoshimitsu-4,4,2,2,1;Wheel of Arrows > Sword Stab;r73;;File:t8-p2-yoshimitsu-4,4,2,2,1.mp4
+* Opponent recovers BT on hit";;;Yoshimitsu-4,4,2,2;Wheel of Arrows;r42;;
+4,4,2,2,1;h, h, m, h, m!;12, 12, 5, 6, 30;i12~13, ,i67;;-18;;* Weapon;wpn;;Yoshimitsu-4,4,2,2,1;Wheel of Arrows > Sword Stab;r73;;File:t8-p2-yoshimitsu-4,4,2,2,1.mp4
 4,4,2,2,1~1;h, h, m, h, m!, m!;12, 12, 5, 6, 30, 22;i12~13, ,i28~113;;-58;;"* Weapon
 * Cancel early to r26 with B (earliest cancel -12a)
-* Possible to double-hit";wpn;Yoshimitsu-4,4,2,2,1~1;Wheel of Arrows > Sword Poke Windmill;r30;;
-4,4,2,2,NSS.1;h, h, m, h, m;12, 12, 5, 6, 30;i12~13, ,i67;-54;-17a;;;;Yoshimitsu-4,4,2,2,NSS.1;;r73 NSS;;
+* Possible to double-hit";wpn;;Yoshimitsu-4,4,2,2,1~1;Wheel of Arrows > Sword Poke Windmill;r30;;
+4,4,2,2,NSS.1;h, h, m, h, m;12, 12, 5, 6, 30;i12~13, ,i67;-54;-17a;;;;NSS;Yoshimitsu-4,4,2,2,NSS.1;;r73 NSS;;
 4,4,2,2,NSS.1~1;h, h, m, h, m, h!;12, 12, 5, 6, 30, 40;i12~13, ,i20~105;;-49a (-75);;"* Balcony Break
-* Cancel early to r30 with B";bbr;Yoshimitsu-4,4,2,2,1~1;;r30 NSS;;
+* Cancel early to r30 with B";bbr;NSS;Yoshimitsu-4,4,2,2,1~1;;r30 NSS;;
 4,4,4;h, h, h;12, 12, 20;i12~13, ,i24~25;-4;+18a (+9);;"* Balcony Break
-* Combo from 2nd CH with 4f delay";bbr;Yoshimitsu-4,4,4;Triple Roundhouse Combo;r31;;File:t8-p2-yoshimitsu-4,4,4.mp4
+* Combo from 2nd CH with 4f delay";bbr;;Yoshimitsu-4,4,4;Triple Roundhouse Combo;r31;;File:t8-p2-yoshimitsu-4,4,4.mp4
 4~3;m;25;i25~26;-13;+52a (+42);;"* Tornado
 &lt;div class=&quot;plainlist&quot;&gt;
 * High crush 4~22
 * fs10~50&lt;/div&gt;";"trn &lt;div class=&quot;plainlist&quot;&gt;
 * cs4~22
-* fs10~50&lt;/div&gt;";Yoshimitsu-4~3;Kangaroo Kick;r37;;File:t8-p2-yoshimitsu-4t3.mp4
+* fs10~50&lt;/div&gt;";;Yoshimitsu-4~3;Kangaroo Kick;r37;;File:t8-p2-yoshimitsu-4t3.mp4
 1+2;;;;;;;"* Can recover to r17 FC with D
 * Strong Attack Reversal: parries all highs or mids, except throws, unblockables and charge moves
-Parry state 3~9";ps3~9;Yoshimitsu-1+2;Kincho;r15 KIN;;
+Parry state 3~9";ps3~9;KIN;Yoshimitsu-1+2;Kincho;r15 KIN;;
 1+2,P;M,M;10,12;i15~18 i3~6;+1c~+4c;+14a;;"&lt;div class=&quot;plainlist&quot;&gt;
 * is1~20
 * Low crush 11~42
 * fs43~45&lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
 * is1~20
 * js11~42
-* fs43~45&lt;/div&gt;";Yoshimitsu-1+2,P;Guillotine Crow Trap;r23;;
+* fs43~45&lt;/div&gt;";;Yoshimitsu-1+2,P;Guillotine Crow Trap;r23;;
 1+2+3;m;0;i22~40;-8~+10g;+0~+18;+16~+34;"* Weapon
-* Can hit grounded when up-close and off-axis";wpn;Yoshimitsu-1+2+3;Spirit Shield;r20;;File:t8-p2-yoshimitsu-1+2+3.mp4
+* Can hit grounded when up-close and off-axis";wpn;;Yoshimitsu-1+2+3;Spirit Shield;r20;;File:t8-p2-yoshimitsu-1+2+3.mp4
 1+4;m;20;i6~9;-15;+14c;;"* Weapon
 * 70% proration on standing hit
 * Knockdown against BT opponent +11a (FDFT)
-* [[Yoshimitsu movelist (Tekken 8)#Yoshimitsu-NSS.1+4|Power up]] in NSS or Heat";wpn;Yoshimitsu-1+4;Soul Stealer;r31;;
-3+4;;;;;;;Yoshimitsu recovers in BT;;Yoshimitsu-3+4;Meditation;r20 MED;;
-f+2;h;18;i17~18;-4;+14g;+39a;Balcony Break;bbr;Yoshimitsu-f+2;Manji Backfist;r28;;
+* Power up in NSS or Heat";wpn;;Yoshimitsu-1+4;Soul Stealer;r31;;
+3+4;;;;;;;Yoshimitsu recovers in BT;;MED;Yoshimitsu-3+4;Meditation;r20 MED;;
+f+2;h;18;i17~18;-4;+14g;+39a;Balcony Break;bbr;;Yoshimitsu-f+2;Manji Backfist;r28;;
 f+2,1;h, M;18, 21;i17~18, i26~27;-12;+17a (+10);;"* Tornado
 * Weapon
-* Combo from 1st CH with 1f delay";trn wpn;Yoshimitsu-f+2,1;Manji Backfist Shredder;r32;;File:t8-p2-yoshimitsu-f+2,1.mp4
+* Combo from 1st CH with 1f delay";trn wpn;;Yoshimitsu-f+2,1;Manji Backfist Shredder;r32;;File:t8-p2-yoshimitsu-f+2,1.mp4
 f+2,NSS.1;h, m;18, 21;i17~18, i26~27;-12;+17a (+10);;"* Tornado
-* Combo from 1st CH";trn;Yoshimitsu-f+2,NSS.1;Manji Backfist Swipe;r32 NSS;;File:t8-p2-yoshimitsu-f+2,1.mp4
-f+2,db+2;h, m;18, 8;i17~18, i15;-5;+6;;Link to db+2 extensions;;Yoshimitsu-f+2,db+2;Backfist > Stone Fist;r23 FC;;File:t8-p2-yoshimitsu-f+2,db+2.mp4
+* Combo from 1st CH";trn;NSS;Yoshimitsu-f+2,NSS.1;Manji Backfist Swipe;r32 NSS;;File:t8-p2-yoshimitsu-f+2,1.mp4
+f+2,db+2;h, m;18, 8;i17~18, i15;-5;+6;;Link to db+2 extensions;;FC;Yoshimitsu-f+2,db+2;Backfist > Stone Fist;r23 FC;;File:t8-p2-yoshimitsu-f+2,db+2.mp4
 f+3;h;24;i16~17;-9;+17a (+8);;"* Homing
-* Balcony Break";hom bbr;Yoshimitsu-f+3;Oni Kick;r32;;File:t8-p2-yoshimitsu-f+3.mp4
+* Balcony Break";hom bbr;;Yoshimitsu-f+3;Oni Kick;r32;;File:t8-p2-yoshimitsu-f+3.mp4
 f+3,4;h, m;24, 20;i16~17, i23~24;-6;+37a (+23);;"* Knee
 * 18f delay after 1st attack
 * Interrupt with i17 from 1st block
@@ -181,11 +181,11 @@ f+3,4;h, m;24, 20;i16~17, i23~24;-6;+37a (+23);;"* Knee
 * ,Low crush 22~29
 * fs30~32&lt;/div&gt;";"kne &lt;div class=&quot;plainlist&quot;&gt;
 * js22~29
-* fs30~32&lt;/div&gt;";Yoshimitsu-f+3,4;Zig Zag;r28 BT;;File:t8-p2-yoshimitsu-f+3,4.mp4
+* fs30~32&lt;/div&gt;";BT;Yoshimitsu-f+3,4;Zig Zag;r28 BT;;File:t8-p2-yoshimitsu-f+3,4.mp4
 f+4;m;20;i18;-13;+21a (+11);;"* Balcony Break
 * -9 on block after absorbing an attack
 * 8 chip damage on attack absorbtion
-Power crush 7~17";bbr pc7~17;Yoshimitsu-f+4;Toita Daoshi;r35;;File:t8-p2-yoshimitsu-f+4.mp4
+Power crush 7~17";bbr pc7~17;;Yoshimitsu-f+4;Toita Daoshi;r35;;File:t8-p2-yoshimitsu-f+4.mp4
 f+1+2;M;23;i20;-12;+8a (-1);;"* Heat Engager
 
 * Heat Dash +5g, +62a (+42)
@@ -193,7 +193,7 @@ f+1+2;M;23;i20;-12;+8a (-1);;"* Heat Engager
 * Balcony Break
 * Weapon
 * 4 chip damage on block
-* 29 damage and extended range in NSS or Heat";he bbr wpn;Yoshimitsu-f+1+2;Kuzuryu;r37 1SS;;File:t8-p2-yoshimitsu-f+1+2.mp4
+* 29 damage and extended range in NSS or Heat";he bbr wpn;;Yoshimitsu-f+1+2;Kuzuryu;r37 1SS;;File:t8-p2-yoshimitsu-f+1+2.mp4
 f+3+4;m,M,M,M;20,3,3,3;i21~25;-13~-9;-8a (-15);;"* Balcony Break
 * Head
 * Floor break 3rd hit
@@ -202,193 +202,193 @@ f+3+4;m,M,M,M;20,3,3,3;i21~25;-13~-9;-8a (-15);;"* Balcony Break
 * Combo from 1st hit does 2,1,1 damage
 * Combo does 2 extra damage from FLE.n
 * Cancel to r65 BT earliest on frame 10 with b
-* Automatically recovers to r55 IND on self-wallsplat";bbr;Yoshimitsu-f+3+4;Kamikaze;r33 FLE;;File:t8-p2-yoshimitsu-f+3+4.mp4
-df+1;m;14;i13;-4;+5;;;;Yoshimitsu-df+1;Tsuka Atemi;r25;;
+* Automatically recovers to r55 IND on self-wallsplat";bbr;FLE,BT,FLE;Yoshimitsu-f+3+4;Kamikaze;r33 FLE;;File:t8-p2-yoshimitsu-f+3+4.mp4
+df+1;m;14;i13;-4;+5;;;;;Yoshimitsu-df+1;Tsuka Atemi;r25;;
 df+1,2;m, h;14, 16;i13, i25~26;-4;+14g;+39a;"* Balcony Break
-* Combo from 1st CH with 2f delay";bbr;Yoshimitsu-df+1,2;Tsuka Atemi to Back Knuckle;r28;;
+* Combo from 1st CH with 2f delay";bbr;;Yoshimitsu-df+1,2;Tsuka Atemi to Back Knuckle;r28;;
 df+1,2,1;m, h, M;14, 16, 19;i13, ,i26~27;-12;+17a (+10);;"* Tornado
 * Weapon
-* Combo from 2nd CH with 1f delay";trn wpn;Yoshimitsu-df+1,2,1;Tsuka Atemi Shredder;r32;;File:t8-p2-yoshimitsu-df+1,2,1.mp4
+* Combo from 2nd CH with 1f delay";trn wpn;;Yoshimitsu-df+1,2,1;Tsuka Atemi Shredder;r32;;File:t8-p2-yoshimitsu-df+1,2,1.mp4
 df+1,2,NSS.1;m, h, M;14, 16, 19;i13, ,i26~27;-12;+17a (+10);;"* Tornado
-* Combo from 2nd CH";trn;Yoshimitsu-df+1,2,NSS.1;Tsuka Atemi Swipe;r32 NSS;;File:t8-p2-yoshimitsu-df+1,2,1.mp4
-df+1,2,db+2;m, h, m;14, 16, 7;i13, ,i15;-5;+6;;* Links to db+2 extensions;;Yoshimitsu-df+1,2,db+2;Tsuka Atemi > Slap U Crazy;r23 FC;;File:t8-p2-yoshimitsu-df+1,2,db+2.mp4
+* Combo from 2nd CH";trn;NSS;Yoshimitsu-df+1,2,NSS.1;Tsuka Atemi Swipe;r32 NSS;;File:t8-p2-yoshimitsu-df+1,2,1.mp4
+df+1,2,db+2;m, h, m;14, 16, 7;i13, ,i15;-5;+6;;* Links to db+2 extensions;;db+2 extensions,FC;Yoshimitsu-df+1,2,db+2;Tsuka Atemi > Slap U Crazy;r23 FC;;File:t8-p2-yoshimitsu-df+1,2,db+2.mp4
 df+1,4;m, m;14, 17;i13, i17;-12;+4;;"* Jail from 1st attack with 2f delay
-* 2nd hit can whiff at certain ranges, -20 on whiff";;Yoshimitsu-df+1,4;Autumn Leaves;r31;;File:t8-p2-yoshimitsu-df+1,4.mp4
+* 2nd hit can whiff at certain ranges, -20 on whiff";;;Yoshimitsu-df+1,4;Autumn Leaves;r31;;File:t8-p2-yoshimitsu-df+1,4.mp4
 df+2;m;13;i15~16;-7;+34a (+24);;"* +4s against crouching
-* Launches crouching on CH";;Yoshimitsu-df+2;Basic Uppercut;r25;;File:t8-p2-yoshimitsu-df+2.mp4
-df+3;m;10;i17~18;-4;+4;;;;Yoshimitsu-df+3;;r25 FC;;
+* Launches crouching on CH";;;Yoshimitsu-df+2;Basic Uppercut;r25;;File:t8-p2-yoshimitsu-df+2.mp4
+df+3;m;10;i17~18;-4;+4;;;;FC;Yoshimitsu-df+3;;r25 FC;;
 df+3,1;m, M;10, 20;i17~18, i23~24;-9;+4c;+6a;"* Spike
 * Weapon
 * Combo from 1st hit
 * 4 chip damage on block
-* [[Yoshimitsu movelist (Tekken 8)#Yoshimitsu-df+3,NSS.1|Power up]] in NSS or Heat
-* Input can be held to transition to d+1*";spk wpn;Yoshimitsu-df+3,1;Wood Cutter;r33 1SS;;File:t8-p2-yoshimitsu-df+3,1.mp4
+* Power up in NSS or Heat
+* Input can be held to transition to d+1*";spk wpn;d+1*;Yoshimitsu-df+3,1;Wood Cutter;r33 1SS;;File:t8-p2-yoshimitsu-df+3,1.mp4
 df+3,NSS.1;m, M;10, 24;i17~18, i23~24;-9;+16a;+52a;"* Spike
 * Weapon
 * Combo from 1st hit
 * Recovers 4 base health on hit
 * 12 chip damage on block
-* Input can be held to transition to d+1*";spk wpn;Yoshimitsu-df+3,NSS.1;Wood Chopper;r33 1SS;;
-df+4;m;15;i12;-7;+4;;;;Yoshimitsu-df+4;Side Kick;r26;;
+* Input can be held to transition to d+1*";spk wpn;d+1*;Yoshimitsu-df+3,NSS.1;Wood Chopper;r33 1SS;;
+df+4;m;15;i12;-7;+4;;;;;Yoshimitsu-df+4;Side Kick;r26;;
 df+1+4;M;20;i20~21;-17;+35a (+25);;"* Weapon
 * Enter KIN r30 with 1+2
 * Can be buffered
 * Can be performed in FC
-* Power up input [[Yoshimitsu movelist (Tekken 8)#Yoshimitsu-f,n,d,df+1|f,n,d,df+1]]
+* Power up input f,n,d,df+1
 &lt;div class=&quot;plainlist&quot;&gt;
 * Low crush 20~42
 * fs43~45&lt;/div&gt;";"wpn &lt;div class=&quot;plainlist&quot;&gt;
 * js20~42
-* fs43~45&lt;/div&gt;";Yoshimitsu-df+1+4;Gehosen (Simple Input);r41;;
+* fs43~45&lt;/div&gt;";KIN;Yoshimitsu-df+1+4;Gehosen (Simple Input);r41;;
 df+2+3;m;18;i17~18;-13;+6g;+58a (+38);"* Balcony Break
 * Can be buffered
 * Can be performed in FC
-* Power up input [[Yoshimitsu movelist (Tekken 8)#Yoshimitsu-f,n,d,df+2|f,n,d,df+2]]
-High crush 9~17";bbr cs9~17;Yoshimitsu-df+2+3;Flashing Steel (Simple Input);r36;;
+* Power up input f,n,d,df+2
+High crush 9~17";bbr cs9~17;;Yoshimitsu-df+2+3;Flashing Steel (Simple Input);r36;;
 d+1;M;15;i24~25;-9;+1c;+6a;"* Spike
 * Weapon
 * 4 chip damage on block
-* [[Yoshimitsu movelist (Tekken 8)#Yoshimitsu-NSS.d+1|Power up]] in NSS or Heat";spk wpn;Yoshimitsu-d+1;Quick Slash;r33 1SS;;File:t8-p2-yoshimitsu-d+1.mp4
+* Power up in NSS or Heat";spk wpn;;Yoshimitsu-d+1;Quick Slash;r33 1SS;;File:t8-p2-yoshimitsu-d+1.mp4
 d+1*(1),n;M!;20;i55~56;;+4c;+6a;"* Spike
 * Weapon
 * Slowly realigns while charging
-* Can be canceled with b*";spk wpn;Yoshimitsu-d+1*(1),n;Death Slash (1);r33 1SS;;
+* Can be canceled with b*";spk wpn;;Yoshimitsu-d+1*(1),n;Death Slash (1);r33 1SS;;
 d+1*(2),n;M!;25;i99~100;;+4c;+6a;"* Spike
 * Weapon
 * Slowly realigns while charging
-* Can be canceled with b*";spk wpn;Yoshimitsu-d+1*(2),n;Death Slash (2);r33 1SS;;
+* Can be canceled with b*";spk wpn;;Yoshimitsu-d+1*(2),n;Death Slash (2);r33 1SS;;
 d+1*(3),n;M!;30;i130~131;;+4c;+6a;"* Spike
 * Weapon
 * Slowly realigns while charging
-* Can be canceled with b*";spk wpn;Yoshimitsu-d+1*(3),n;Death Slash (3);r33 1SS;;
+* Can be canceled with b*";spk wpn;;Yoshimitsu-d+1*(3),n;Death Slash (3);r33 1SS;;
 d+1*(4),n;M!;40;i179~180;;+16a;+52a;"* Spike
 * Weapon
 * Slowly realigns while charging
-* Can be canceled with b*";spk wpn;Yoshimitsu-d+1*(4),n;Death Slash (4);r33 1SS;;
+* Can be canceled with b*";spk wpn;;Yoshimitsu-d+1*(4),n;Death Slash (4);r33 1SS;;
 d+1*(5),n;M!;60;i214~215;;+16a;+52a;"* Spike
 * Weapon
 * Slowly realigns while charging
-* Can be canceled with b*";spk wpn;Yoshimitsu-d+1*(5),n;Death Slash (5);r33 1SS;;
+* Can be canceled with b*";spk wpn;;Yoshimitsu-d+1*(5),n;Death Slash (5);r33 1SS;;
 d+1*(6),n;M!;180;i249~250;;+16a;+52a;"* Spike
 * Weapon
 * Slowly realigns while charging
-* Can be canceled with b*";spk wpn;Yoshimitsu-d+1*(6),n;Death Slash (6);r33 1SS;;File:t8-p2-yoshimitsu-d+1s(6),n.mp4
-d+2;M;12;i16~17;-9;+0;;Weapon;wpn;Yoshimitsu-d+2;;r35;;
+* Can be canceled with b*";spk wpn;;Yoshimitsu-d+1*(6),n;Death Slash (6);r33 1SS;;File:t8-p2-yoshimitsu-d+1s(6),n.mp4
+d+2;M;12;i16~17;-9;+0;;Weapon;wpn;;Yoshimitsu-d+2;;r35;;
 d+2,1;M, h;12, 23;i16~17, i27~28;-9;+17a (+8);;"* Balcony Break
 * Weapon
 * Combo from 1st hit with 8f delay
 * Input can be delayed 16f
-* Move can be delayed 10f";bbr wpn;Yoshimitsu-d+2,1;Heshikirigari;r32;;File:t8-p2-yoshimitsu-d+2,1.mp4
+* Move can be delayed 10f";bbr wpn;;Yoshimitsu-d+2,1;Heshikirigari;r32;;File:t8-p2-yoshimitsu-d+2,1.mp4
 d+2,2;M, m;12, 17;i16~17, i22~23;-12;+7g;+28a (+22);"* Weapon
 * Combo from 1st hit with 13f delay
 * Input can be delayed 16f
 * Move can be delayed 10f
-* In 1SS Enter NSS r31 with B";wpn;Yoshimitsu-d+2,2;Heshikirimutou;r30;;
+* In 1SS Enter NSS r31 with B";wpn;NSS;Yoshimitsu-d+2,2;Heshikirimutou;r30;;
 d+2,2,1;M, m, h;12, 17, 20;i16~17, ,i19~20;-9;+8a (-1);;"* Balcony Break
 * Weapon
 * Input can be delayed 10f
-* Move can be delayed 9f";bbr wpn;Yoshimitsu-d+2,2,1;Heshikiribarai;r40;;File:t8-p2-yoshimitsu-d+2,2,1.mp4
+* Move can be delayed 9f";bbr wpn;;Yoshimitsu-d+2,2,1;Heshikiribarai;r40;;File:t8-p2-yoshimitsu-d+2,2,1.mp4
 d+2,2,2;M, m, M;12, 17, 19;i16~17, ,i25~27;-13;+16a (+9);;"* Tornado
 * Weapon
 * Input can be delayed 10f
-* Move can be delayed 9f";trn wpn;Yoshimitsu-d+2,2,2;Heshikiriseibatsu;r32;;File:t8-p2-yoshimitsu-d+2,2,2.mp4
+* Move can be delayed 9f";trn wpn;;Yoshimitsu-d+2,2,2;Heshikiriseibatsu;r32;;File:t8-p2-yoshimitsu-d+2,2,2.mp4
 d+2,2,NSS.1;M, m, h;12, 17, 20;i16~17, ,i19~20;-9;+8a (-1);;"* Balcony Break
 * Input can be delayed 10f
-* Move can be delayed 9f";bbr;Yoshimitsu-d+2,2,NSS.1;;r40 NSS;;File:t8-p2-yoshimitsu-d+2,2,1.mp4
+* Move can be delayed 9f";bbr;NSS;Yoshimitsu-d+2,2,NSS.1;;r40 NSS;;File:t8-p2-yoshimitsu-d+2,2,1.mp4
 d+2,2,NSS.d+1;M, m, m;12, 17, 17;i16~17, ,i29~30;-12;+2c;+42a;"* Spike
 * Input can be delayed 10f
-* Move can be delayed 9f";spk;Yoshimitsu-d+2,2,NSS.d+1;;r32 NSS;;File:t8-p2-yoshimitsu-d+2,2,d+1.mp4
+* Move can be delayed 9f";spk;NSS;Yoshimitsu-d+2,2,NSS.d+1;;r32 NSS;;File:t8-p2-yoshimitsu-d+2,2,d+1.mp4
 d+2,2,d+1;M, m, m;12, 17, 17;i16~17, ,i29~30;-12;+2c;+42a;"* Spike
 * Weapon
 * Input can be delayed 10f
 * Move can be delayed 9f
-* Last hit has shorter range and no Weapon property in NSS";spk wpn;Yoshimitsu-d+2,2,d+1;Heshikirinagi;r32;;File:t8-p2-yoshimitsu-d+2,2,d+1.mp4
+* Last hit has shorter range and no Weapon property in NSS";spk wpn;;Yoshimitsu-d+2,2,d+1;Heshikirinagi;r32;;File:t8-p2-yoshimitsu-d+2,2,d+1.mp4
 d+2,NSS.1;M, h;12, 18;i16~17, i27~28;-9;+10g;;"* Balcony Break
 * Combo from 1st hit with 8f delay
 * Input can be delayed 16f
-* Move can be delayed 10f";bbr;Yoshimitsu-d+2,NSS.1;Heshikirigari;r32 NSS;;
+* Move can be delayed 10f";bbr;NSS;Yoshimitsu-d+2,NSS.1;Heshikirigari;r32 NSS;;
 d+3;L;12;i15~17;-18~-16;-4~-2;;"Most commonly impacts on frame 16, except when tracking right
-High crush 4~";cs4~;Yoshimitsu-d+3;Low Sweep;r32 FC;;
-d+4;l;6;i12;-15;-4;;High crush 4~;cs4~;Yoshimitsu-d+4;Toe Check;r34 FC;;
+High crush 4~";cs4~;FC;Yoshimitsu-d+3;Low Sweep;r32 FC;;
+d+4;l;6;i12;-15;-4;;High crush 4~;cs4~;FC;Yoshimitsu-d+4;Toe Check;r34 FC;;
 d+1+2;;;;;;;"* Unavailable in NSS
 &lt;div class=&quot;plainlist&quot;&gt;
 * Low crush 8~17
 * fs18~20&lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
 * js8~17
-* fs18~20&lt;/div&gt;";Yoshimitsu-d+1+2;Flea;r20 FLE;;
+* fs18~20&lt;/div&gt;";FLE;Yoshimitsu-d+1+2;Flea;r20 FLE;;
 d+1+4;m!;60;i29~30;;-32a;;"* Weapon
 * 60 self damage during 1st recovery frame
-* Can connect from the front if the opponent attacks into it";wpn;Yoshimitsu-d+1+4;Harakiri;r87 FDFA;;File:t8-p2-yoshimitsu-d+1+4.mp4
+* Can connect from the front if the opponent attacks into it";wpn;FDFA;Yoshimitsu-d+1+4;Harakiri;r87 FDFA;;File:t8-p2-yoshimitsu-d+1+4.mp4
 d+1+4,B+1;m!, m!;60, 18;i29~30, i1~39;;-29a;;"* Weapon
-* 6 self damage";wpn;Yoshimitsu-d+1+4,B+1;;r78 FDFA;;
+* 6 self damage";wpn;FDFA;Yoshimitsu-d+1+4,B+1;;r78 FDFA;;
 d+1+4,B+1,1;m!, m!, m!;60, 18, 20;i29~30, ,i1~18;;-29a;;"* Weapon
-* 6 self damage";wpn;Yoshimitsu-d+1+4,B+1,1;;r79 FDFA;;
+* 6 self damage";wpn;FDFA;Yoshimitsu-d+1+4,B+1,1;;r79 FDFA;;
 d+1+4,B+1,1,1;m!, m!, m!, m!;60, 18, 20, 21;i29~30, ,i1~18;;-29a;;"* Weapon
-* 10 self damage";wpn;Yoshimitsu-d+1+4,B+1,1,1;;r79 FDFA;;
+* 10 self damage";wpn;FDFA;Yoshimitsu-d+1+4,B+1,1,1;;r79 FDFA;;
 d+1+4,B+1,1,1,1;m!, m!, m!, m!, m!;60, 18, 20, 21, 28;i29~30, ,i1~18;;-29a;;"* Weapon
-* 12 self damage";wpn;Yoshimitsu-d+1+4,B+1,1,1,1;;r79 FDFA;;
+* 12 self damage";wpn;FDFA;Yoshimitsu-d+1+4,B+1,1,1,1;;r79 FDFA;;
 d+1+4,B+1,1,1,1,1;m!, m!, m!, m!, m!, m!;60, 18, 20, 21, 28, 30;i29~30, ,i1~35;;-30a;;"* Weapon
 * 17 self-damage
-* The entire string deals 111 self damage";wpn;Yoshimitsu-d+1+4,B+1,1,1,1,1;Harakiri > Manji Blood Dance;r62 FDFA;;File:t8-p2-yoshimitsu-d+1+4,b+1,1,1,1,1.mp4
+* The entire string deals 111 self damage";wpn;FDFA;Yoshimitsu-d+1+4,B+1,1,1,1,1;Harakiri > Manji Blood Dance;r62 FDFA;;File:t8-p2-yoshimitsu-d+1+4,b+1,1,1,1,1.mp4
 d+3+4;;;;;;;"* All stance moves are bufferable
 &lt;div class=&quot;plainlist&quot;&gt;
 * High crush 6~
 * fs6~&lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
 * cs6~
-* fs6~&lt;/div&gt;";Yoshimitsu-d+3+4;Indian Stance;r20 IND;;
+* fs6~&lt;/div&gt;";IND;Yoshimitsu-d+3+4;Indian Stance;r20 IND;;
 DB+1+2;;;;;;;"* Continues as long as DB is held
 * Transition to r25 releasing db
-High crush 11~";cs11~;Yoshimitsu-DB+1+2;Bad Stomach (BDS);r10 BDS;;File:t8-p2-yoshimitsu-db+1+2.mp4
+High crush 11~";cs11~;BDS;Yoshimitsu-DB+1+2;Bad Stomach (BDS);r10 BDS;;File:t8-p2-yoshimitsu-db+1+2.mp4
 db+1;L;12;i26~28;-11~-9;+4~+6;7~+9;"Unavailable in NSS
-High crush 8~";cs8~;Yoshimitsu-db+1;;r28 FC;;
+High crush 8~";cs8~;FC;Yoshimitsu-db+1;;r28 FC;;
 db+1,2;L, m;12, 20;i26~28, i25~26;-13~12;+0~+1;+6g~+7g;"* Balcony break on airborne or CH
 * Combo from 1st with 1f delay
 * Combo from 1st CH with 8f delay
-* Input can be delayed 8f";;Yoshimitsu-db+1,2;Nebular Burst;r36;;File:t8-p2-yoshimitsu-db+1,2.mp4
-db+2;m;8;i15;-5;+6;;;;Yoshimitsu-db+2;;r24 FC;;
-db+2,2;m, m;8, 7;i15, i10~14;-9~-5;+2~+6;;Combo from 1st hit;;Yoshimitsu-db+2,2;;r23 FC;;
-db+2,2,2;m, m, m;8, 7, 6;i15, ,i10~14;-9~-5;+2~+6;;Combo from 1st hit;;Yoshimitsu-db+2,2,2;;r23 FC;;
-db+2,2,2,2;m, m, m, m;8, 7, 6, 5;i15, ,i10~14;-9~-5;+2~+6;;Combo from 3rd CH;;Yoshimitsu-db+2,2,2,2;;r23 FC;;
+* Input can be delayed 8f";;;Yoshimitsu-db+1,2;Nebular Burst;r36;;File:t8-p2-yoshimitsu-db+1,2.mp4
+db+2;m;8;i15;-5;+6;;;;FC;Yoshimitsu-db+2;;r24 FC;;
+db+2,2;m, m;8, 7;i15, i10~14;-9~-5;+2~+6;;Combo from 1st hit;;FC;Yoshimitsu-db+2,2;;r23 FC;;
+db+2,2,2;m, m, m;8, 7, 6;i15, ,i10~14;-9~-5;+2~+6;;Combo from 1st hit;;FC;Yoshimitsu-db+2,2,2;;r23 FC;;
+db+2,2,2,2;m, m, m, m;8, 7, 6, 5;i15, ,i10~14;-9~-5;+2~+6;;Combo from 3rd CH;;FC;Yoshimitsu-db+2,2,2,2;;r23 FC;;
 db+2,2,2,2,2;m, m, m, m, m;8, 7, 6, 5, 4;i15, ,i10~14;-9~-5;+2~+6;;"* Combo from 4th hit
-* Combo from 3rd CH";;Yoshimitsu-db+2,2,2,2,2;;r24 FC;;
-db+2,2,2,2,2,2;m, m, m, m, m, m;8, 7, 6, 5, 4, 3;i15, ,i10~14;-49;-37;;Combo from 5th CH;;Yoshimitsu-db+2,2,2,2,2,2;Stone Fists;r64 FUFT;;File:t8-p2-yoshimitsu-db+2,2,2,2,2,2.mp4
-db+3;l;8;i18~19;-25;-14;;High crush 6~;cs6~;Yoshimitsu-db+3;;r43 FC;;
+* Combo from 3rd CH";;FC;Yoshimitsu-db+2,2,2,2,2;;r24 FC;;
+db+2,2,2,2,2,2;m, m, m, m, m, m;8, 7, 6, 5, 4, 3;i15, ,i10~14;-49;-37;;Combo from 5th CH;;FUFT;Yoshimitsu-db+2,2,2,2,2,2;Stone Fists;r64 FUFT;;File:t8-p2-yoshimitsu-db+2,2,2,2,2,2.mp4
+db+3;l;8;i18~19;-25;-14;;High crush 6~;cs6~;FC;Yoshimitsu-db+3;;r43 FC;;
 db+3,3;l, l;8, 7;i18~19, i15~17;-19;-7;;"* Combo from 1st hit
 * Enter IND r20 with d+3+4
-,High crush 1~";cs1~;Yoshimitsu-db+3,3;;r35;;
+,High crush 1~";cs1~;IND;Yoshimitsu-db+3,3;;r35;;
 db+3,3,3;l, l, l;8, 7, 7;i18~19, ,i15~17;-19~-17;-7~-5;;"* Combo from 2nd CH
 * Enter IND r20 with d+3+4
-,High crush 1~";cs1~;Yoshimitsu-db+3,3,3;;r35;;
+,High crush 1~";cs1~;IND;Yoshimitsu-db+3,3,3;;r35;;
 db+3,3,3,3;l, l, l, l;8, 7, 7, 5;i18~19, ,i15~17;-19;-7;;"* Combo from 3rd CH
 * Enter IND r20 with d+3+4
-,High crush 1~";cs1~;Yoshimitsu-db+3,3,3,3;;r35;;
+,High crush 1~";cs1~;IND;Yoshimitsu-db+3,3,3,3;;r35;;
 db+3,3,3,3,3;l, l, l, l, l;8, 7, 7, 5, 5;i18~19, ,i15~17;-19;-7;;"* Combo from 4th CH
 * Enter IND r20 with d+3+4
-,High crush 1~";cs1~;Yoshimitsu-db+3,3,3,3,3;;r35;;
+,High crush 1~";cs1~;IND;Yoshimitsu-db+3,3,3,3,3;;r35;;
 db+3,3,3,3,3,3;l, l, l, l, l, l;8, 7, 7, 5, 5, 5;i18~19, ,i9~11;-26;-15;;"* Combo from 5th CH
-,High crush 1~";cs1~;Yoshimitsu-db+3,3,3,3,3,3;Manji Spin Low Kicks;r43 FUFT;;File:t8-p2-yoshimitsu-db+3,3,3,3,3,3.mp4
+,High crush 1~";cs1~;FUFT;Yoshimitsu-db+3,3,3,3,3,3;Manji Spin Low Kicks;r43 FUFT;;File:t8-p2-yoshimitsu-db+3,3,3,3,3,3.mp4
 db+3,3,3,3,3,4;l, l, l, l, l, m;8, 7, 7, 5, 5, 15;i18~19, ,i12~13;-8;+23a (+13);;"* Balcony Break
 * Enter KIN -6 +25a (+15) r21 with 1+2
 * Enter NSS -6 +25a (+15) r24 with B
 * Same animation as ws4
-* Can be performed following any number of db+3 lows except the first one";bbr;Yoshimitsu-db+3,3,3,3,3,4;Manji Spin Low Kicks Front Kick;r26;;File:t8-p2-yoshimitsu-db+3,3,3,3,3,4.mp4
-db+4;L;14;i17;-12;-1;;;;Yoshimitsu-db+4;Nozuchi Fumi;r31;;File:t8-p2-yoshimitsu-db+4.mp4
-B+1;h;8;i17;+1;+7;+12;Can transition to [[Yoshimitsu movelist (Tekken 8)#Yoshimitsu-b+3,3,3,3,3,3|Spinning Evade]] with b+3 or b+4;;Yoshimitsu-B+1;;r18;;
-B+1,1;h, h;8, 9;i17, i11~12;+4;+5;+10;Can transition to [[Yoshimitsu movelist (Tekken 8)#Yoshimitsu-b+3,3,3,3,3,3|Spinning Evade]] with b+3 or b+4;;Yoshimitsu-B+1,1;;r14;;
-B+1,1,1;h, h, h;8, 9, 10;i17, ,i11~12;+4;+5;+10;Can transition to [[Yoshimitsu movelist (Tekken 8)#Yoshimitsu-b+3,3,3,3,3,3|Spinning Evade]] with b+3 or b+4;;Yoshimitsu-B+1,1,1;;r14;;
-B+1,1,1,1;h, h, h, h;8, 9, 10, 12;i17, ,i11~12;+4;+5;+10;Can transition to [[Yoshimitsu movelist (Tekken 8)#Yoshimitsu-b+3,3,3,3,3,3|Spinning Evade]] with b+3 or b+4;;Yoshimitsu-B+1,1,1,1;;r14;;
-B+1,1,1,1,1;h, h, h, h, h;8, 9, 10, 12, 14;i17, ,i11~12;+4;+5;+10;Can transition to [[Yoshimitsu movelist (Tekken 8)#Yoshimitsu-b+3,3,3,3,3,3|Spinning Evade]] with b+3 or b+4;;Yoshimitsu-B+1,1,1,1,1;;r14;;
-B+1,1,1,1,1,1;h, h, h, h, h, h;8, 9, 10, 12, 14, 16;i17, ,i11~12;-73;-71;-67;;;Yoshimitsu-B+1,1,1,1,1,1;Slap U Silly;r80 FUFT;;File:t8-p2-yoshimitsu-b+1,1,1,1,1,1.mp4
+* Can be performed following any number of db+3 lows except the first one";bbr;KIN,NSS;Yoshimitsu-db+3,3,3,3,3,4;Manji Spin Low Kicks Front Kick;r26;;File:t8-p2-yoshimitsu-db+3,3,3,3,3,4.mp4
+db+4;L;14;i17;-12;-1;;;;;Yoshimitsu-db+4;Nozuchi Fumi;r31;;File:t8-p2-yoshimitsu-db+4.mp4
+B+1;h;8;i17;+1;+7;+12;Can transition to Spinning Evade with b+3 or b+4;;Spinning;Yoshimitsu-B+1;;r18;;
+B+1,1;h, h;8, 9;i17, i11~12;+4;+5;+10;Can transition to Spinning Evade with b+3 or b+4;;Spinning;Yoshimitsu-B+1,1;;r14;;
+B+1,1,1;h, h, h;8, 9, 10;i17, ,i11~12;+4;+5;+10;Can transition to Spinning Evade with b+3 or b+4;;Spinning;Yoshimitsu-B+1,1,1;;r14;;
+B+1,1,1,1;h, h, h, h;8, 9, 10, 12;i17, ,i11~12;+4;+5;+10;Can transition to Spinning Evade with b+3 or b+4;;Spinning;Yoshimitsu-B+1,1,1,1;;r14;;
+B+1,1,1,1,1;h, h, h, h, h;8, 9, 10, 12, 14;i17, ,i11~12;+4;+5;+10;Can transition to Spinning Evade with b+3 or b+4;;Spinning;Yoshimitsu-B+1,1,1,1,1;;r14;;
+B+1,1,1,1,1,1;h, h, h, h, h, h;8, 9, 10, 12, 14, 16;i17, ,i11~12;-73;-71;-67;;;FUFT;Yoshimitsu-B+1,1,1,1,1,1;Slap U Silly;r80 FUFT;;File:t8-p2-yoshimitsu-b+1,1,1,1,1,1.mp4
 B+1,1,DB+3;h, h, l;8, 9, 7;i17, ,i13~14;-20;-9;;"* Combo from 1st hit
 * Links to db+3 extensions
 * Can be performed from a single B+1
-,High crush 10~";cs10~;Yoshimitsu-B+1,1,DB+3;;r38 FC;;
+,High crush 10~";cs10~;db+3 extensions,FC;Yoshimitsu-B+1,1,DB+3;;r38 FC;;
 B+1,1,DB+3,3;h, h, l, l;8, 9, 7, 5;i17, ,i15~17;-19;-7;;"* Combo from 3rd CH
 * Links to db+3 extensions
 * Enter IND r20 with d+3+4
 * Can be performed from a single B+1
-,High crush 1~";cs1~;Yoshimitsu-B+1,1,DB+3,3;;r38 FC;;
-b+2;m;12;i14~15;-9;+2;;Enter KIN r27 with n,1+2;;Yoshimitsu-b+2;;r27;;
+,High crush 1~";cs1~;db+3 extensions,IND,FC;Yoshimitsu-B+1,1,DB+3,3;;r38 FC;;
+b+2;m;12;i14~15;-9;+2;;Enter KIN r27 with n,1+2;;KIN;Yoshimitsu-b+2;;r27;;
 b+2,1;m, M;12, 20;i14~15, i27~28;-17;+28a (+18);;"* Weapon
 * Combo from 1st CH with 2f delay
 * Enter KIN r30 with 1+2
@@ -397,7 +397,7 @@ b+2,1;m, M;12, 20;i14~15, i27~28;-17;+28a (+18);;"* Weapon
 * Low crush 28~49
 * fs50~52&lt;/div&gt;";"wpn &lt;div class=&quot;plainlist&quot;&gt;
 * js28~49
-* fs50~52&lt;/div&gt;";Yoshimitsu-b+2,1;Oma Gehosen;r41;;File:t8-p2-yoshimitsu-b+2,1.mp4
+* fs50~52&lt;/div&gt;";KIN;Yoshimitsu-b+2,1;Oma Gehosen;r41;;File:t8-p2-yoshimitsu-b+2,1.mp4
 b+2,2;m, h;12, 21;i14~15, i22~23;-13;+2a;;"* Heat Engager
 
 * Heat Dash +5g, +36a (+26)
@@ -405,7 +405,7 @@ b+2,2;m, h;12, 21;i14~15, i22~23;-13;+2a;;"* Heat Engager
 * Weapon
 * Combo from 1st with 1f delay
 * Combo from 1st CH with 7f delay
-* Input can be delayed 14f";he wpn;Yoshimitsu-b+2,2;Oma Kugiuchi;r37;;File:t8-p2-yoshimitsu-b+2,2.mp4
+* Input can be delayed 14f";he wpn;;Yoshimitsu-b+2,2;Oma Kugiuchi;r37;;File:t8-p2-yoshimitsu-b+2,2.mp4
 b+2,NSS.1;m, m;12, 17;i14~15, i27~28;-17;+28a (+18);;"* Enter KIN r30 with 1+2
 * Combo from 1st CH with 2f delay
 * Input can be delayed 14f
@@ -413,26 +413,26 @@ b+2,NSS.1;m, m;12, 17;i14~15, i27~28;-17;+28a (+18);;"* Enter KIN r30 with 1+2
 * Low crush 28~49
 * fs50~52&lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
 * js28~49
-* fs50~52&lt;/div&gt;";Yoshimitsu-b+2,NSS.1;;r41 NSS;;File:t8-p2-yoshimitsu-b+2,1.mp4
+* fs50~52&lt;/div&gt;";KIN,NSS;Yoshimitsu-b+2,NSS.1;;r41 NSS;;File:t8-p2-yoshimitsu-b+2,1.mp4
 b+2,NSS.2;m, h;12, 18;i14~15, i22~23;-10;+0;;"* Heat Engager
 
 * Heat Dash +5g, +36a (+26)
 
 * Combo from 1st with 1f delay
 * Combo from 1st CH with 7f delay
-* Input can be delayed 14f";he;Yoshimitsu-b+2,NSS.2;;r34 NSS;;
-b+3;;;;;;;* 8 self-damage;;Yoshimitsu-b+3;;r31;;
+* Input can be delayed 14f";he;NSS;Yoshimitsu-b+2,NSS.2;;r34 NSS;;
+b+3;;;;;;;* 8 self-damage;;;Yoshimitsu-b+3;;r31;;
 b+3,3;;;;;;;"* 10 self-damage
-* 18 self-damage in total";;Yoshimitsu-b+3,3;;r25;;
+* 18 self-damage in total";;;Yoshimitsu-b+3,3;;r25;;
 b+3,3,3;;;;;;;"* 5 self-damage
-* 23 self-damage in total";;Yoshimitsu-b+3,3,3;;r25;;
+* 23 self-damage in total";;;Yoshimitsu-b+3,3,3;;r25;;
 b+3,3,3,3;;;;;;;"* 5 self-damage
-* 28 self-damage in total";;Yoshimitsu-b+3,3,3,3;;r25;;
+* 28 self-damage in total";;;Yoshimitsu-b+3,3,3,3;;r25;;
 b+3,3,3,3,3;;;;;;;"* 5 self-damage
-* 33 self-damage in total";;Yoshimitsu-b+3,3,3,3,3;;r25;;
+* 33 self-damage in total";;;Yoshimitsu-b+3,3,3,3,3;;r25;;
 b+3,3,3,3,3,3;;;;;;;"* 5 self-damage
-* 38 self-damage in total";;Yoshimitsu-b+3,3,3,3,3,3;Spinning Evade;r89 FUFT;;File:t8-p2-yoshimitsu-b+3,3,3,3,3,3.mp4
-b+1+2;;;;;;;High crush 8~50;cs8~50;Yoshimitsu-b+1+2;"<div class=""dotlist"">
+* 38 self-damage in total";;FUFT;Yoshimitsu-b+3,3,3,3,3,3;Spinning Evade;r89 FUFT;;File:t8-p2-yoshimitsu-b+3,3,3,3,3,3.mp4
+b+1+2;;;;;;;High crush 8~50;cs8~50;NSS;Yoshimitsu-b+1+2;"<div class=""dotlist"">
 
 * No Sword Stance
 * Mutou no Kiwami
@@ -443,36 +443,36 @@ ub+1;m;15;i24~25;-6~-5;+3c~+4c;;"* Spike
 * Low crush 9~27
 * fs28~30&lt;/div&gt;";"spk wpn &lt;div class=&quot;plainlist&quot;&gt;
 * js9~27
-* fs28~30&lt;/div&gt;";Yoshimitsu-ub+1;;r26;;
+* fs28~30&lt;/div&gt;";;Yoshimitsu-ub+1;;r26;;
 ub+1+3;m!;40;i50~52;;-24;;"* Weapon
-* Punishable on close hit with FUFT.3";wpn;Yoshimitsu-ub+1+3;Sword Stab;r77;;File:t8-p2-yoshimitsu-ub+1+3.mp4
+* Punishable on close hit with FUFT.3";wpn;;Yoshimitsu-ub+1+3;Sword Stab;r77;;File:t8-p2-yoshimitsu-ub+1+3.mp4
 ub+1+3,1+2;m!, h!;40, 18;i50~52, i18~19;;+1~+2;+45a;"* Spike
-* Weapon";spk wpn;Yoshimitsu-ub+1+3,1+2;Face Splitter;r33;;File:t8-p2-yoshimitsu-ub+1+3,1+2.mp4
+* Weapon";spk wpn;;Yoshimitsu-ub+1+3,1+2;Face Splitter;r33;;File:t8-p2-yoshimitsu-ub+1+3,1+2.mp4
 ub+1+3,n+1;m!, m!;40, 22;i50~52, i28~113;;-57a;;"* Weapon
 * Cancel early to r21 with B (earliest cancel -12a)
-* Possible to double-hit during cancel";wpn;Yoshimitsu-ub+1+3,n+1;Sword Poke Windmill;r30;;File:t8-p2-yoshimitsu-ub+1+3,n+1.mp4
+* Possible to double-hit during cancel";wpn;;Yoshimitsu-ub+1+3,n+1;Sword Poke Windmill;r30;;File:t8-p2-yoshimitsu-ub+1+3,n+1.mp4
 ub+4;m;17;i20~22;-19;+12a (+2);;"* Balcony Break
 * Spike
 &lt;div class=&quot;plainlist&quot;&gt;
 * Low crush 9~32
 * fs33~35&lt;/div&gt;";"bbr spk &lt;div class=&quot;plainlist&quot;&gt;
 * js9~32
-* fs33~35&lt;/div&gt;";Yoshimitsu-ub+4;Avoiding the Puddle;r36;;
+* fs33~35&lt;/div&gt;";;Yoshimitsu-ub+4;Avoiding the Puddle;r36;;
 ub+1+2;M;25;i24~25;-8c;+27a (+17);;"* Balcony Break
 * Weapon
 * 5 chip damage on block
-* [[Yoshimitsu movelist (Tekken 8)#Yoshimitsu-NSS.ub+1+2|Power up]] in NSS or Heat";bbr wpn;Yoshimitsu-ub+1+2;Cleansing Sword Yoshimitsu;r28 1SS;;File:t8-p2-yoshimitsu-ub+1+2.mp4
+* Power up in NSS or Heat";bbr wpn;;Yoshimitsu-ub+1+2;Cleansing Sword Yoshimitsu;r28 1SS;;File:t8-p2-yoshimitsu-ub+1+2.mp4
 u+1;m;17;i24~25;-5;+4c;;"* Spike
 * Weapon
 &lt;div class=&quot;plainlist&quot;&gt;
 * Low crush 9~27
 * fs28~30&lt;/div&gt;";"spk wpn &lt;div class=&quot;plainlist&quot;&gt;
 * js9~27
-* fs28~30&lt;/div&gt;";Yoshimitsu-u+1;;r25;;
+* fs28~30&lt;/div&gt;";;Yoshimitsu-u+1;;r25;;
 u+1+2;;;;;;;"* Cancel to r12 with db_d_df (js1~10)
 * Unavailable in NSS
 * Actionable after 15 frames, except when using DGF.2 which can be performed after 10 frames
-Low crush 8~";js8~;Yoshimitsu-u+1+2;Manji Dragonfly;r15 DGF;;
+Low crush 8~";js8~;DGF;Yoshimitsu-u+1+2;Manji Dragonfly;r15 DGF;;
 u+3+4;M,M;10,12;i39~42 i3~6;+1c~+4c;+24a;;"* Spike
 * Floor break occurs on 2nd hit
 * Evades some mid attacks from frames ?-?
@@ -482,24 +482,24 @@ u+3+4;M,M;10,12;i39~42 i3~6;+1c~+4c;+24a;;"* Spike
 * Low crush 11~42
 * fs43~45&lt;/div&gt;";"spk &lt;div class=&quot;plainlist&quot;&gt;
 * js11~42
-* fs43~45&lt;/div&gt;";Yoshimitsu-u+3+4;Guillotine Crow Kick;r23;;File:t8-p2-yoshimitsu-u+3+4.mp4
+* fs43~45&lt;/div&gt;";;Yoshimitsu-u+3+4;Guillotine Crow Kick;r23;;File:t8-p2-yoshimitsu-u+3+4.mp4
 uf+1;m;20;i24~25;-4;+5c;+50a;"* Spike
 * Weapon
 &lt;div class=&quot;plainlist&quot;&gt;
 * Low crush 9~27
 * fs28~30&lt;/div&gt;";"spk wpn &lt;div class=&quot;plainlist&quot;&gt;
 * js9~27
-* fs28~30&lt;/div&gt;";Yoshimitsu-uf+1;Helmet Strike;r24;;File:t8-p2-yoshimitsu-uf+1.mp4
+* fs28~30&lt;/div&gt;";;Yoshimitsu-uf+1;Helmet Strike;r24;;File:t8-p2-yoshimitsu-uf+1.mp4
 uf+1+3;M!;40;i113~114;;+30a;;"* Spike
 * Weapon
 * Cancel to r34 DGF with 1+2 on frames 1~34
 * Cancel to r30 DGF with 1+2 on frame 35. delayable up to frame 92
-* Becomes a [[Yoshimitsu movelist (Tekken 8)#Yoshimitsu-NSS.uf+1+3|different move]] in NSS
+* Becomes a different move in NSS
 &lt;div class=&quot;plainlist&quot;&gt;
 * Low crush 9~110
 * fs111~113&lt;/div&gt;";"spk wpn &lt;div class=&quot;plainlist&quot;&gt;
 * js9~110
-* fs111~113&lt;/div&gt;";Yoshimitsu-uf+1+3;Death Copter;r19;;File:t8-p2-yoshimitsu-uf+1+3.mp4
+* fs111~113&lt;/div&gt;";DGF,DGF;Yoshimitsu-uf+1+3;Death Copter;r19;;File:t8-p2-yoshimitsu-uf+1+3.mp4
 "uf+1+3&gt;d";M;30;i83~84;-1;+34a;;"* Spike
 * Weapon
 * 12 chip damage on block
@@ -508,7 +508,7 @@ uf+1+3;M!;40;i113~114;;+30a;;"* Spike
 * Low crush 9~80
 * fs81~83&lt;/div&gt;";"spk wpn &lt;div class=&quot;plainlist&quot;&gt;
 * js9~80
-* fs81~83&lt;/div&gt;";Yoshimitsu-uf+1+3,d2;Death Copter Slice (2);r25;;
+* fs81~83&lt;/div&gt;";;Yoshimitsu-uf+1+3,d2;Death Copter Slice (2);r25;;
 uf+1+3,b;M!;35;i93~94;;+24a;;"* Spike
 * Weapon
 * Cancel to r27 DGF with 1+2
@@ -518,7 +518,7 @@ uf+1+3,b;M!;35;i93~94;;+24a;;"* Spike
 * Low crush 9~90
 * fs91~93&lt;/div&gt;";"spk wpn &lt;div class=&quot;plainlist&quot;&gt;
 * js9~90
-* fs91~93&lt;/div&gt;";Yoshimitsu-uf+1+3,b;Death Copter Trick;r25;;File:t8-p2-yoshimitsu-uf+1+3,b.mp4
+* fs91~93&lt;/div&gt;";DGF;Yoshimitsu-uf+1+3,b;Death Copter Trick;r25;;File:t8-p2-yoshimitsu-uf+1+3,b.mp4
 uf+1+3,d;M;25;i55~56;-3;+34a;;"* Spike
 * Weapon
 * 10 chip damage on block
@@ -527,14 +527,14 @@ uf+1+3,d;M;25;i55~56;-3;+34a;;"* Spike
 * Low crush 9~52
 * fs53~55&lt;/div&gt;";"spk wpn &lt;div class=&quot;plainlist&quot;&gt;
 * js9~52
-* fs53~55&lt;/div&gt;";Yoshimitsu-uf+1+3,d;Death Copter Slice (1);r25;;File:t8-p2-yoshimitsu-uf+1+3,d.mp4
+* fs53~55&lt;/div&gt;";;Yoshimitsu-uf+1+3,d;Death Copter Slice (1);r25;;File:t8-p2-yoshimitsu-uf+1+3,d.mp4
 uf+2;L;25;i35~36;-16;+6g;+25a;"* Weapon
 * Cancel to r20 FC with D
 &lt;div class=&quot;plainlist&quot;&gt;
 * Low crush 10~29
 * fs30~32&lt;/div&gt;";"wpn &lt;div class=&quot;plainlist&quot;&gt;
 * js10~29
-* fs30~32&lt;/div&gt;";Yoshimitsu-uf+2;Kurama Itto;r34 FC;;File:t8-p2-yoshimitsu-uf+2.mp4
+* fs30~32&lt;/div&gt;";FC,FC;Yoshimitsu-uf+2;Kurama Itto;r34 FC;;File:t8-p2-yoshimitsu-uf+2.mp4
 uf+3;m;15;i15;-13;+32a (+22);;"* Knee
 * Can evade jabs at frames 5-7
 * Recovers 1f faster on hit or block
@@ -542,7 +542,7 @@ uf+3;m;15;i15;-13;+32a (+22);;"* Knee
 * Low crush 9~33
 * fs34~36&lt;/div&gt;";"kne &lt;div class=&quot;plainlist&quot;&gt;
 * js9~33
-* fs34~36&lt;/div&gt;";Yoshimitsu-uf+3;Rising Knee;r33;;File:t8-p2-yoshimitsu-uf+3.mp4
+* fs34~36&lt;/div&gt;";;Yoshimitsu-uf+3;Rising Knee;r33;;File:t8-p2-yoshimitsu-uf+3.mp4
 uf+4;m;21;i20~22;-9;+22a;;"* Homing
 * Balcony Break
 * Spike
@@ -550,7 +550,7 @@ uf+4;m;21;i20~22;-9;+22a;;"* Homing
 * Low crush 9~32
 * fs33~35&lt;/div&gt;";"hom bbr spk &lt;div class=&quot;plainlist&quot;&gt;
 * js9~32
-* fs33~35&lt;/div&gt;";Yoshimitsu-uf+4;Avoiding the Puddle;r26;;File:t8-p2-yoshimitsu-uf+4.mp4
+* fs33~35&lt;/div&gt;";;Yoshimitsu-uf+4;Avoiding the Puddle;r26;;File:t8-p2-yoshimitsu-uf+4.mp4
 uf+3+4;M;20;i31~35;-16~-12;-4a;;"* Spike
 * In 1SS cancel to DGF r18 with 1+2
 * In 1SS enter FLE r28 with d+1+2
@@ -561,33 +561,33 @@ uf+3+4;M;20;i31~35;-16~-12;-4a;;"* Spike
 * Low crush 10~32
 * fs33~35&lt;/div&gt;";"spk &lt;div class=&quot;plainlist&quot;&gt;
 * js10~32
-* fs33~35&lt;/div&gt;";Yoshimitsu-uf+3+4;Poison Wind;r31;;File:t8-p2-yoshimitsu-uf+3+4.mp4
+* fs33~35&lt;/div&gt;";DGF,FLE,IND;Yoshimitsu-uf+3+4;Poison Wind;r31;;File:t8-p2-yoshimitsu-uf+3+4.mp4
 uf+3+4,1;M, h;20, 8;i31~35, i16~18;-1;-43;;"* On hit, transitions to r49 backward jump automatically
 * Combo from 1st hit vs grounded
-* Combo from 1st hit";;Yoshimitsu-uf+3+4,1;Poison Wind Bronze Fist;r18;;
+* Combo from 1st hit";;;Yoshimitsu-uf+3+4,1;Poison Wind Bronze Fist;r18;;
 uf+3+4,1,4;M, h, m;20, 8, 15;i31~35, ,i17~28 i28~39;-14~+13g;+27a (+17a);;"Combos from 1st (requires wall)
 &lt;div class=&quot;plainlist&quot;&gt;
 * ,Low crush 14~41
 * fs42~44&lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
 * js14~41
-* fs42~44&lt;/div&gt;";Yoshimitsu-uf+3+4,1,4;Poison Wind Silver Fist;r11;;
+* fs42~44&lt;/div&gt;";;Yoshimitsu-uf+3+4,1,4;Poison Wind Silver Fist;r11;;
 uf+3+4,1,4,1;M, h, m, M;20, 8, 15, 15;i31~35, ,i24~25;-9;+1c;+6a;"* Spike
 * Weapon
 * 4 chip damage on block
-* [[Yoshimitsu movelist (Tekken 8)#Yoshimitsu-NSS.d+1|Power up]] in NSS or Heat";spk wpn;Yoshimitsu-uf+3+4,1,4,1;Poison Wind Gold Strike;r33 1SS;;File:t8-p2-yoshimitsu-uf+3+4,1,4,1.mp4
+* Power up in NSS or Heat";spk wpn;;Yoshimitsu-uf+3+4,1,4,1;Poison Wind Gold Strike;r33 1SS;;File:t8-p2-yoshimitsu-uf+3+4,1,4,1.mp4
 uf+3+4,1,4,NSS.1;M, h, m, M;20, 8, 15, 24;i31~35, ,i24~25;-9;+16a;+52a;"* Balcony Break
 * Spike
 * Weapon
 * Can transition to d+1*,n
 * 12 chip damage on block
-* Recovers 4 base health on hit";bbr spk wpn;Yoshimitsu-uf+3+4,1,4,NSS.1;;r33 1SS;;File:t8-p2-yoshimitsu-uf+3+4,1,4,1.mp4
+* Recovers 4 base health on hit";bbr spk wpn;d+1*n;Yoshimitsu-uf+3+4,1,4,NSS.1;;r33 1SS;;File:t8-p2-yoshimitsu-uf+3+4,1,4,1.mp4
 uf+3+4,1,3+4;M, h, M;20, 8, 21;i31~35, ,i31~35;+0c~+4c;-14a;;"* Spike
 * On hit, transitions to r49 backward jump automatically
 &lt;div class=&quot;plainlist&quot;&gt;
 * ,Low crush 10~32
 * fs33~35&lt;/div&gt;";"spk &lt;div class=&quot;plainlist&quot;&gt;
 * js10~32
-* fs33~35&lt;/div&gt;";Yoshimitsu-uf+3+4,1,3+4;Poison Wind Steel Smash;r26;;File:t8-p2-yoshimitsu-uf+3+4,1,3+4.mp4
+* fs33~35&lt;/div&gt;";;Yoshimitsu-uf+3+4,1,3+4;Poison Wind Steel Smash;r26;;File:t8-p2-yoshimitsu-uf+3+4,1,3+4.mp4
 uf+3+4,3;M, M,M;20, 10,10;i31~35, i39~42 i3~6;-4c~-1c;+27a;;"* Spike
 * Floor break occurs on 3rd hit
 * Evades mid attacks from frames ?-?
@@ -595,35 +595,35 @@ uf+3+4,3;M, M,M;20, 10,10;i31~35, i39~42 i3~6;-4c~-1c;+27a;;"* Spike
 * ,Low crush 11~42
 * fs43~45&lt;/div&gt;";"spk &lt;div class=&quot;plainlist&quot;&gt;
 * js11~42
-* fs43~45&lt;/div&gt;";Yoshimitsu-uf+3+4,3;Poison Wind Eclipse Kick;r20;;File:t8-p2-yoshimitsu-uf+3+4,3.mp4
+* fs43~45&lt;/div&gt;";;Yoshimitsu-uf+3+4,3;Poison Wind Eclipse Kick;r20;;File:t8-p2-yoshimitsu-uf+3+4,3.mp4
 uf+3+4,3+4;M, m;20, 25;i31~35, i25~26;-13;+52a (+42);;"* Tornado
 * Combo from 1st hit
 &lt;div class=&quot;plainlist&quot;&gt;
 * ,High crush 4~22
 * fs10~50&lt;/div&gt;";"trn &lt;div class=&quot;plainlist&quot;&gt;
 * cs4~22
-* fs10~50&lt;/div&gt;";Yoshimitsu-uf+3+4,3+4;Poison Wind > Kangaroo Kick;r37;;File:t8-p2-yoshimitsu-uf+3+4,3+4.mp4
+* fs10~50&lt;/div&gt;";;Yoshimitsu-uf+3+4,3+4;Poison Wind > Kangaroo Kick;r37;;File:t8-p2-yoshimitsu-uf+3+4,3+4.mp4
 1+2+3+4;;;;;;;"* Can't block for 5 seconds
-* CH state for 5 seconds";;Yoshimitsu-1+2+3+4;"<div class=""dotlist"">
+* CH state for 5 seconds";;;Yoshimitsu-1+2+3+4;"<div class=""dotlist"">
 
 * Ki Charge
 * Supercharger
 </div>";r55;;File:t8-p2-yoshimitsu-1+2+3+4.mp4
 b,B+1+4;m!;50;i59~61;;+2a;;"* Weapon
 * Cannot be buffered
-* Poor hitbox, will go over crouching opponents sometimes";wpn;Yoshimitsu-b,B+1+4;Thunder Blade;r51;;File:t8-p2-yoshimitsu-b,b+1+4.mp4
+* Poor hitbox, will go over crouching opponents sometimes";wpn;;Yoshimitsu-b,B+1+4;Thunder Blade;r51;;File:t8-p2-yoshimitsu-b,b+1+4.mp4
 b,B+1+4,B;m;20;i22~25;-15;+14c;;"* Weapon
 * 70% proration on standing hit
 * Knockdown against BT opponent +11a (FDFT)
-* [[Yoshimitsu movelist (Tekken 8)#Yoshimitsu-NSS.1+4|Power up]] in NSS or Heat";wpn;Yoshimitsu-b,B+1+4,B;Thunder Blade Feint to Soul Stealer;r31;;
+* Power up in NSS or Heat";wpn;;Yoshimitsu-b,B+1+4,B;Thunder Blade Feint to Soul Stealer;r31;;
 f,F+2;m;15;i15;-9;+4;;"* Elbow
 * Cannot be buffered
-* Increased pushback on CH";elb;Yoshimitsu-f,F+2;Sword Smash;r33;;File:t8-p2-yoshimitsu-f,f+2.mp4
+* Increased pushback on CH";elb;;Yoshimitsu-f,F+2;Sword Smash;r33;;File:t8-p2-yoshimitsu-f,f+2.mp4
 f,F+2:2;m, t;15, 20;i15, ;;+8d;;"* Transitions to attack throw only on front hit (air hit OK)
 * 3f input window for the transition (frames 13~15)
-* After hit, enter IND r20 with d+3+4";;"Yoshimitsu-f,F+2&amp;${justFrame}58;2";Yomi Kakenuke;r57 BT;;File:t8-p2-yoshimitsu-f,f+2_2.mp4
+* After hit, enter IND r20 with d+3+4";;IND,BT;"Yoshimitsu-f,F+2&amp;${justFrame}58;2";Yomi Kakenuke;r57 BT;;File:t8-p2-yoshimitsu-f,f+2_2.mp4
 f,F+3;m;20;i23~24;-4;+5;;"* Enter KIN r25 +3 +12 with 1+2
-* Cannot be buffered";;Yoshimitsu-f,F+3;Iwatsubute;r32;;File:t8-p2-yoshimitsu-f,f+3.mp4
+* Cannot be buffered";;KIN;Yoshimitsu-f,F+3;Iwatsubute;r32;;File:t8-p2-yoshimitsu-f,f+3.mp4
 f,F+4;m;20;i15~16;-6;+37a (+23);;"* Balcony Break
 * Knee
 * Cannot be buffered
@@ -632,10 +632,10 @@ f,F+4;m;20;i15~16;-6;+37a (+23);;"* Balcony Break
 * Low crush 13-21
 * fs22-24&lt;/div&gt;";"bbr kne &lt;div class=&quot;plainlist&quot;&gt;
 * js13-21
-* fs22-24&lt;/div&gt;";Yoshimitsu-f,F+4;Fubuki;r28 BT;;File:t8-p2-yoshimitsu-f,f+4.mp4
+* fs22-24&lt;/div&gt;";BT;Yoshimitsu-f,F+4;Fubuki;r28 BT;;File:t8-p2-yoshimitsu-f,f+4.mp4
 f,F+1+2;m;22;i22~24;-8;+3c;;"* Spike
 * Cannot be buffered
-* Visually similar to [[Yoshimitsu movelist (Tekken 8)#Yoshimitsu-f,F+3+4|f,F+3+4]]
+* Visually similar to f,F+3+4
 &lt;div class=&quot;plainlist&quot;&gt;
 * Low crush 10~21
 * fs22~24
@@ -644,25 +644,25 @@ f,F+1+2;m;22;i22~24;-8;+3c;;"* Spike
 * js10~21
 * fs22~24
 * js25~29
-* fs30~32&lt;/div&gt;";Yoshimitsu-f,F+1+2;Solar Kick;r25 BT;;File:t8-p2-yoshimitsu-f,f+1+2.mp4
+* fs30~32&lt;/div&gt;";BT;Yoshimitsu-f,F+1+2;Solar Kick;r25 BT;;File:t8-p2-yoshimitsu-f,f+1+2.mp4
 f,F+1+4;m!;60;i45;;-65a;;"* Weapon
 * Cannot be buffered
 * 60 self-damage during 1st recovery frame
-* NSS.f,F+1+4 will always cancel into [[Yoshimitsu movelist (Tekken 8)#Yoshimitsu-f,F+1+4,n|Confusion]] 
+* NSS.f,F+1+4 will always cancel into Confusion 
 * Dealing lethal damage will award the victory to Yoshimitsu
-* Holding any direction will trigger the attack, not just forward";wpn;Yoshimitsu-f,F+1+4;Suicide;r125 FDFT;;File:t8-p2-yoshimitsu-f,f+1+4.mp4
+* Holding any direction will trigger the attack, not just forward";wpn;FDFT;Yoshimitsu-f,F+1+4;Suicide;r125 FDFT;;File:t8-p2-yoshimitsu-f,f+1+4.mp4
 f,F+1+4,F;m!, m!;60, 185;i45, i35~37;;-60a;;"* Weapon
 * 185 self-damage during 1st recovery frame
-* Dealing lethal damage will award the victory to Yoshimitsu";wpn;Yoshimitsu-f,F+1+4,F;Double Suicide;r124 FDFT;;File:t8-p2-yoshimitsu-f,f+1+4,f.mp4
-f,F+1+4,n;m!;60;i45, ;;;;;;Yoshimitsu-f,F+1+4,n;Confusion;r33 BT;;File:t8-p2-yoshimitsu-f,f+1+4,n.mp4
+* Dealing lethal damage will award the victory to Yoshimitsu";wpn;FDFT;Yoshimitsu-f,F+1+4,F;Double Suicide;r124 FDFT;;File:t8-p2-yoshimitsu-f,f+1+4,f.mp4
+f,F+1+4,n;m!;60;i45, ;;;;;;BT;Yoshimitsu-f,F+1+4,n;Confusion;r33 BT;;File:t8-p2-yoshimitsu-f,f+1+4,n.mp4
 f,F+3+4;m;15;i22~24;-20;-9c;;"* Spike
 * Cannot be buffered
-* Visually similar to [[Yoshimitsu movelist (Tekken 8)#Yoshimitsu-f,F+1+2|f,F+1+2]]
+* Visually similar to f,F+1+2
 &lt;div class=&quot;plainlist&quot;&gt;
 * Low crush 10~27
 * fs28~30&lt;/div&gt;";"spk &lt;div class=&quot;plainlist&quot;&gt;
 * js10~27
-* fs28~30&lt;/div&gt;";Yoshimitsu-f,F+3+4;Reverse Cartwheel;r37;;File:t8-p2-yoshimitsu-f,f+3+4.mp4
+* fs28~30&lt;/div&gt;";;Yoshimitsu-f,F+3+4;Reverse Cartwheel;r37;;File:t8-p2-yoshimitsu-f,f+3+4.mp4
 f,F+3+4,1+2;m, m;15, 15;i22~24, i12~18;-31;-2a (-12);;"* Balcony Break
 * Combo from 1st CH
 * Tremendous forward travel
@@ -671,7 +671,7 @@ f,F+3+4,1+2;m, m;15, 15;i22~24, i12~18;-31;-2a (-12);;"* Balcony Break
 * ,Low crush 24~46
 * fs47~90&lt;/div&gt;";"bbr &lt;div class=&quot;plainlist&quot;&gt;
 * js24~46
-* fs47~90&lt;/div&gt;";Yoshimitsu-f,F+3+4,1+2;;r46;;
+* fs47~90&lt;/div&gt;";;Yoshimitsu-f,F+3+4,1+2;;r46;;
 f,F+3+4,1+2,3+4;m, m, m;15, 15, 20;i22~24, ,i27;-13;+52a (+42);;"* Tornado
 * Combo from 2nd hit
 * Combo from 1st CH
@@ -680,7 +680,7 @@ f,F+3+4,1+2,3+4;m, m, m;15, 15, 20;i22~24, ,i27;-13;+52a (+42);;"* Tornado
 * ,Low crush 1~13
 * fs14~54&lt;/div&gt;";"trn &lt;div class=&quot;plainlist&quot;&gt;
 * js1~13
-* fs14~54&lt;/div&gt;";Yoshimitsu-f,F+3+4,1+2,3+4;Solar Kick Shark Attack;r38;;File:t8-p2-yoshimitsu-f,f+3+4,1+2,3+4.mp4
+* fs14~54&lt;/div&gt;";;Yoshimitsu-f,F+3+4,1+2,3+4;Solar Kick Shark Attack;r38;;File:t8-p2-yoshimitsu-f,f+3+4,1+2,3+4.mp4
 f,n,d,df+1;M;22;i17~18;-17;+35a (+25a);;"* Weapon
 * Can be buffered
 * Enter KIN r30 with 1+2
@@ -689,12 +689,12 @@ f,n,d,df+1;M;22;i17~18;-17;+35a (+25a);;"* Weapon
 * Low crush 17~39
 * fs40~42&lt;/div&gt;";"wpn &lt;div class=&quot;plainlist&quot;&gt;
 * js17~39
-* fs40~42&lt;/div&gt;";Yoshimitsu-f,n,d,df+1;Gehosen;r41;;File:t8-p2-yoshimitsu-f,n,d,df+1.mp4
+* fs40~42&lt;/div&gt;";KIN;Yoshimitsu-f,n,d,df+1;Gehosen;r41;;File:t8-p2-yoshimitsu-f,n,d,df+1.mp4
 f,n,d,df+2;m;20;i14~15;-13;+6g;+58a (+38);"* Balcony Break
 * Weapon
 * Can be buffered
 * Can be performed in FC
-High crush 6~14";bbr wpn cs6~14;Yoshimitsu-f,n,d,df+2;Flashing Steel;r36;;File:t8-p2-yoshimitsu-f,n,d,df+2.mp4
+High crush 6~14";bbr wpn cs6~14;;Yoshimitsu-f,n,d,df+2;Flashing Steel;r36;;File:t8-p2-yoshimitsu-f,n,d,df+2.mp4
 qcf+1;h,h,M;24,15,35;i28~34 i37 i58~60;+0~+2;+30a;;"* Spike 2nd and 3rd
 * Weapon
 * 17 chip damage on block
@@ -705,7 +705,7 @@ qcf+1;h,h,M;24,15,35;i28~34 i37 i58~60;+0~+2;+30a;;"* Spike 2nd and 3rd
 * Low crush 10~55
 * fs56~58&lt;/div&gt;";"wpn &lt;div class=&quot;plainlist&quot;&gt;
 * js10~55
-* fs56~58&lt;/div&gt;";Yoshimitsu-qcf+1;Moonsault Slayer;r28;;File:t8-p2-yoshimitsu-qcf+1.mp4
+* fs56~58&lt;/div&gt;";;Yoshimitsu-qcf+1;Moonsault Slayer;r28;;File:t8-p2-yoshimitsu-qcf+1.mp4
 f,f,F+3;M;30;i22~23;+5g;+13a (+3);;"* Balcony Break
 * 9 chip damage on block
 * Enter DGF +7 +15a (+5) r34 with 1SS.U
@@ -713,96 +713,96 @@ f,f,F+3;M;30;i22~23;+5g;+13a (+3);;"* Balcony Break
 * Low crush 3~33
 * fs34~36&lt;/div&gt;";"bbr &lt;div class=&quot;plainlist&quot;&gt;
 * js3~33
-* fs34~36&lt;/div&gt;";Yoshimitsu-f,f,F+3;Manji Kick;r36;;File:t8-p2-yoshimitsu-f,f,f+3.mp4
-ws1;m;12;i14~15;-10;+1;+6;;;Yoshimitsu-ws1;;r28;;
+* fs34~36&lt;/div&gt;";DGF;Yoshimitsu-f,f,F+3;Manji Kick;r36;;File:t8-p2-yoshimitsu-f,f,f+3.mp4
+ws1;m;12;i14~15;-10;+1;+6;;;;Yoshimitsu-ws1;;r28;;
 ws1,1;m, h;12, 12;i14~15, i18;-11;+0;;"* Spike
 * Combo from 1st hit with 11f delay
 * Combo from 1st CH with 13f delay
 * Input can be delayed 13f
 * Move can be delayed 8f
-* Cancel to [[Yoshimitsu movelist (Tekken 8)#Yoshimitsu-b+3,3,3,3,3,3|Spinning Evade]] -5 -16 r25 with b+3_b+4";spk;Yoshimitsu-ws1,1;;r30;;
+* Cancel to Spinning Evade -5 -16 r25 with b+3_b+4";spk;Spinning;Yoshimitsu-ws1,1;;r30;;
 ws1,1,1;m, h, h;12, 12, 12;i14~15, ,i18;-11;+0;;"* Spike
 * Combo from 1st CH with 13f delay
-* Input can be delayed 12f";spk;Yoshimitsu-ws1,1,1;;r30;;
+* Input can be delayed 12f";spk;;Yoshimitsu-ws1,1,1;;r30;;
 ws1,1,1,1;m, h, h, m;12, 12, 12, 25;i14~15, ,i25~26;+0c;+6c;;"* Spike
 * Combos from 3rd CH with 5f delay
-* Input can be delayed 12f";spk;Yoshimitsu-ws1,1,1,1;Door Knocker;r27;;File:t8-p2-yoshimitsu-ws1,1,1,1.mp4
+* Input can be delayed 12f";spk;;Yoshimitsu-ws1,1,1,1;Door Knocker;r27;;File:t8-p2-yoshimitsu-ws1,1,1,1.mp4
 ws1,2;m, h;12, 18;i14~15, i25~26;-4;+14g;+39a;"* Balcony Break
 * Combos from 1st hit with 4f delay
 * Combos from 1st CH with 9f delay
 * Input can be delayed 15f
-* Move can be delayed 13f";bbr;Yoshimitsu-ws1,2;Door Knocker to Back Knuckle;r28;;
+* Move can be delayed 13f";bbr;;Yoshimitsu-ws1,2;Door Knocker to Back Knuckle;r28;;
 ws1,2,1;m, h, M;12, 18, 21;i14~15, ,i26~27;-12;+17a (+10);;"* Tornado
 * Weapon
-* Combo from 2nd CH";trn wpn;Yoshimitsu-ws1,2,1;Door Knocker Shredder;r32;;File:t8-p2-yoshimitsu-ws1,2,1.mp4
-ws1,2,db+2;m, h, m;12, 18, 8;i14~15, ,i15;-5;+6;;Links to db+2 extensions;;Yoshimitsu-ws1,2,db+2;Door Knocker > Back Knuckle Slap U Crazy;r24 FC;;File:t8-p2-yoshimitsu-ws1,2,db+2.mp4
-ws2;m;13;i15~16;-4;+7;;Balcony break or airborne hit;;Yoshimitsu-ws2;Exorcism Fist;r27 BT;;
+* Combo from 2nd CH";trn wpn;;Yoshimitsu-ws1,2,1;Door Knocker Shredder;r32;;File:t8-p2-yoshimitsu-ws1,2,1.mp4
+ws1,2,db+2;m, h, m;12, 18, 8;i14~15, ,i15;-5;+6;;Links to db+2 extensions;;db+2 extensions,FC;Yoshimitsu-ws1,2,db+2;Door Knocker > Back Knuckle Slap U Crazy;r24 FC;;File:t8-p2-yoshimitsu-ws1,2,db+2.mp4
+ws2;m;13;i15~16;-4;+7;;Balcony break or airborne hit;;BT;Yoshimitsu-ws2;Exorcism Fist;r27 BT;;
 ws2,1;m, m;13, 14;i15~16, i27~28;-3a;+36a (+26);;"* Weapon
-* Combo from 1st hit with 1f delay";wpn;Yoshimitsu-ws2,1;Scowling Moon God;r27 DGF;;File:t8-p2-yoshimitsu-ws2,1.mp4
+* Combo from 1st hit with 1f delay";wpn;DGF;Yoshimitsu-ws2,1;Scowling Moon God;r27 DGF;;File:t8-p2-yoshimitsu-ws2,1.mp4
 ws2,NSS.1;m, h;13, 16;i15~16, i23;-6;+5;;"* Elbow
-* Combo from 1st hit";elb;Yoshimitsu-ws2,NSS.1;;r25 BT;;
+* Combo from 1st hit";elb;BT;Yoshimitsu-ws2,NSS.1;;r25 BT;;
 ws2,NSS.1,2;m, h;13, 16;i15~16, ,;;;;"* Balcony break on airborne hit
 * Elbow
-* Combo from 2nd CH";elb;Yoshimitsu-ws2,NSS.1,2;Scowling Aratama;;;File:t8-p2-yoshimitsu-ws2,nss.1,2.mp4
+* Combo from 2nd CH";elb;;Yoshimitsu-ws2,NSS.1,2;Scowling Aratama;;;File:t8-p2-yoshimitsu-ws2,nss.1,2.mp4
 ws2,NSS.1,3;m, h;13, 16;i15~16, ,;;;;"* Balcony Break
-* Combo from 2nd CH";bbr;Yoshimitsu-ws2,NSS.1,3;Scowling Spirit;;;File:t8-p2-yoshimitsu-ws2,nss.1,3.mp4
-ws3;m;12;i16;-6;+3;;;;Yoshimitsu-ws3;;r29;;
+* Combo from 2nd CH";bbr;;Yoshimitsu-ws2,NSS.1,3;Scowling Spirit;;;File:t8-p2-yoshimitsu-ws2,nss.1,3.mp4
+ws3;m;12;i16;-6;+3;;;;;Yoshimitsu-ws3;;r29;;
 ws3,2;m, m;12, 20;i16, i32;-12c;+0a;;"* Spike
 * Weapon
-* Combo from 1st hit";spk wpn;Yoshimitsu-ws3,2;Kimon Matagi;r40;;File:t8-p2-yoshimitsu-ws3,2.mp4
+* Combo from 1st hit";spk wpn;;Yoshimitsu-ws3,2;Kimon Matagi;r40;;File:t8-p2-yoshimitsu-ws3,2.mp4
 ws4;m;14;i11~12;-6;+5;;"* Enter KIN r24 with 1+2
-* Enter NSS r24 with B";;Yoshimitsu-ws4;Toe Smash;r24;;File:t8-p2-yoshimitsu-ws4.mp4
-SS.1;m;21;i17~18;-9;+2;+27a (+17);Sidestep adds minimum 9f, effective startup i26~27;;Yoshimitsu-SS.1;Inner Palm;r32;;File:t8-p2-yoshimitsu-ss.1.mp4
+* Enter NSS r24 with B";;KIN,NSS;Yoshimitsu-ws4;Toe Smash;r24;;File:t8-p2-yoshimitsu-ws4.mp4
+SS.1;m;21;i17~18;-9;+2;+27a (+17);Sidestep adds minimum 9f, effective startup i26~27;;;Yoshimitsu-SS.1;Inner Palm;r32;;File:t8-p2-yoshimitsu-ss.1.mp4
 SS.2;m;20;i18~19;-13;+30a (+20);;"* Tornado
-* Sidestep adds minimum 9f, effective startup i27~28";trn;Yoshimitsu-SS.2;Shrine;r31;;File:t8-p2-yoshimitsu-ss.2.mp4
+* Sidestep adds minimum 9f, effective startup i27~28";trn;;Yoshimitsu-SS.2;Shrine;r31;;File:t8-p2-yoshimitsu-ss.2.mp4
 FC.DF+1;l!;12;i26;;+70a (+54);;"* Weapon
-High crush 1~34";wpn cs1~34;Yoshimitsu-FC.DF+1;"<div class=""dotlist"">
+High crush 1~34";wpn cs1~34;;Yoshimitsu-FC.DF+1;"<div class=""dotlist"">
 
 * Sword Sweep
 * Samurai Cutter
 </div>";r44;;File:t8-p2-yoshimitsu-fc.df+1.mp4
 FC.db+3;l;8;i18~19;-25;-14;;"Links to db+3 extensions
-High crush 1~";cs1~;Yoshimitsu-FC.db+3;;r3 FC;;
+High crush 1~";cs1~;db+3 extensions,FC;Yoshimitsu-FC.db+3;;r3 FC;;
 FC.df+4;L;18;i18~19;-26;+4c;+31a;"* Homing
 * Enter IND -26 +8c +35a r24 with d+3+4
-* Can be done from [[Crouch#Crouch_levels|Crouch Level 2]]
-High crush 1~";hom cs1~;Yoshimitsu-FC.df+4;Knee Cap;r28 FC;;File:t8-p2-yoshimitsu-fc.df+4.mp4
+* Can be done from Crouch Level 2
+High crush 1~";hom cs1~;IND,FC;Yoshimitsu-FC.df+4;Knee Cap;r28 FC;;File:t8-p2-yoshimitsu-fc.df+4.mp4
 FC.d+1;sl;5;i10;-5;+6;;"* Transition to r25? with f
 * Transition input can be delayed 16f
-High crush 1~";cs1~;Yoshimitsu-FC.d+1;;r24 FC;;
-FC.d+2;sl;8;i11;-4;+5;;High crush 1~;cs1~;Yoshimitsu-FC.d+2;;r23 FC;;
-FC.d+3;L;10;i16;-17;-6;;High crush 1~;cs1~;Yoshimitsu-FC.d+3;;r36 FC;;
-FC.d+4;l;6;i12;-15;-4;;High crush 1~;cs1~;Yoshimitsu-FC.d+4;;r34 FC;;
-BDS.1;h!;25;i21~40;;+32a;;;;Yoshimitsu-BDS.1;Poison Breath;r5;;File:t8-p2-yoshimitsu-bds.1.mp4
+High crush 1~";cs1~;FC;Yoshimitsu-FC.d+1;;r24 FC;;
+FC.d+2;sl;8;i11;-4;+5;;High crush 1~;cs1~;FC;Yoshimitsu-FC.d+2;;r23 FC;;
+FC.d+3;L;10;i16;-17;-6;;High crush 1~;cs1~;FC;Yoshimitsu-FC.d+3;;r36 FC;;
+FC.d+4;l;6;i12;-15;-4;;High crush 1~;cs1~;FC;Yoshimitsu-FC.d+4;;r34 FC;;
+BDS.1;h!;25;i21~40;;+32a;;;;;Yoshimitsu-BDS.1;Poison Breath;r5;;File:t8-p2-yoshimitsu-bds.1.mp4
 BDS.3;m;23;i17~30;-15~-2;-13~+0;;"Can hit from the front of the opponent attacks into it
 &lt;div class=&quot;plainlist&quot;&gt;
 * Low crush 14~27
 * fs28~30&lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
 * js14~27
-* fs28~30&lt;/div&gt;";Yoshimitsu-BDS.3;Backflip Kick;r30;;File:t8-p2-yoshimitsu-bds.3.mp4
-BT.1;h;16;i15;-3;+8;;Elbow;elb;Yoshimitsu-BT.1;;r22 BT;;
+* fs28~30&lt;/div&gt;";;Yoshimitsu-BDS.3;Backflip Kick;r30;;File:t8-p2-yoshimitsu-bds.3.mp4
+BT.1;h;16;i15;-3;+8;;Elbow;elb;BT;Yoshimitsu-BT.1;;r22 BT;;
 BT.1,2;h, m;16, 18;i15, i25;-5;+5;+63a;"* Balcony break on airborne hit
 * Elbow
-* Combo from 1st CH";elb;Yoshimitsu-BT.1,2;Aratama;r27 BT;;File:t8-p2-yoshimitsu-bt.1,2.mp4
+* Combo from 1st CH";elb;BT;Yoshimitsu-BT.1,2;Aratama;r27 BT;;File:t8-p2-yoshimitsu-bt.1,2.mp4
 BT.1,3;h, h;16, 25;i15, i25~26;-7;+27a (+17);;"* Balcony Break
-* Combo from 1st CH";bbr;Yoshimitsu-BT.1,3;Magatama;r27;;File:t8-p2-yoshimitsu-bt.1,3.mp4
+* Combo from 1st CH";bbr;;Yoshimitsu-BT.1,3;Magatama;r27;;File:t8-p2-yoshimitsu-bt.1,3.mp4
 BT.2;h;18;i16~17;-4;+14g;+39a;"* Balcony Break
-* Links to f+2 extensions";bbr;Yoshimitsu-BT.2;Manji Backfist 2;r28;;
+* Links to f+2 extensions";bbr;f+2 extensions;Yoshimitsu-BT.2;Manji Backfist 2;r28;;
 BT.3;m;20;i24~26;-3;+11a;;"Spike
 &lt;div class=&quot;plainlist&quot;&gt;
 * Low crush 6~29
 * fs30~32&lt;/div&gt;";"spk &lt;div class=&quot;plainlist&quot;&gt;
 * js6~29
-* fs30~32&lt;/div&gt;";Yoshimitsu-BT.3;Perilous Spirit;r27 BT;;File:t8-p2-yoshimitsu-bt.3.mp4
+* fs30~32&lt;/div&gt;";BT;Yoshimitsu-BT.3;Perilous Spirit;r27 BT;;File:t8-p2-yoshimitsu-bt.3.mp4
 BT.d+1;L;20;i17~18;-13;+3;+38a;"Weapon
-High crush 6~";wpn cs6~;Yoshimitsu-BT.d+1;Shisetsu Genman;r31 FC;;File:t8-p2-yoshimitsu-bt.d+1.mp4
+High crush 6~";wpn cs6~;FC;Yoshimitsu-BT.d+1;Shisetsu Genman;r31 FC;;File:t8-p2-yoshimitsu-bt.d+1.mp4
 DGF.1;M;22;i30~31;-2c;+10a;+46a;"* Spike
 * Weapon
 * 11 chip damage on block
-* [[Yoshimitsu movelist (Tekken 8)#Yoshimitsu-H.DGF.1|Power up]] in Heat 
+* Power up in Heat 
 * Partially uses remaining Heat time
-Low crush 1~27";spk wpn js1~27;Yoshimitsu-DGF.1;Dragonfly Blade;r29;;File:t8-p2-yoshimitsu-dgf.1.mp4
-DGF.2;h;15;i16~18;+4;+13s;;Low crush 1~;js1~;Yoshimitsu-DGF.2;Dragonfly Fist;r15 DGF;;
+Low crush 1~27";spk wpn js1~27;;Yoshimitsu-DGF.1;Dragonfly Blade;r29;;File:t8-p2-yoshimitsu-dgf.1.mp4
+DGF.2;h;15;i16~18;+4;+13s;;Low crush 1~;js1~;DGF;Yoshimitsu-DGF.2;Dragonfly Fist;r15 DGF;;
 DGF.2,4;h, M;15, 22;i16~18, i26~28;-14;+15a (+8);;"* Tornado
 * Combo from 1st hit
 * Enter NSS r33 with B
@@ -810,67 +810,67 @@ DGF.2,4;h, M;15, 22;i16~18, i26~28;-14;+15a (+8);;"* Tornado
 * ,Low crush 1~46
 * fs47~49&lt;/div&gt;";"trn &lt;div class=&quot;plainlist&quot;&gt;
 * js1~46
-* fs47~49&lt;/div&gt;";Yoshimitsu-DGF.2,4;Ubume;r33;;File:t8-p2-yoshimitsu-dgf.2,4.mp4
+* fs47~49&lt;/div&gt;";NSS;Yoshimitsu-DGF.2,4;Ubume;r33;;File:t8-p2-yoshimitsu-dgf.2,4.mp4
 DGF.3;L;18;i22~23;-13;+6c;+28a;"Airborne attack, can't be low parried
-Low crush 1~18";js1~18;Yoshimitsu-DGF.3;Dragonfly Sweep;r31;;File:t8-p2-yoshimitsu-dgf.3.mp4
+Low crush 1~18";js1~18;;Yoshimitsu-DGF.3;Dragonfly Sweep;r31;;File:t8-p2-yoshimitsu-dgf.3.mp4
 DGF.4;m;24;i18~20;-4;+14g;;"* Heat Engager
 
 * Heat Dash +5g, +62a (+42)
 
 * Balcony Break
-Low crush 1~19";he bbr js1~19;Yoshimitsu-DGF.4;Dragonfly Twister;r27;;File:t8-p2-yoshimitsu-dgf.4.mp4
+Low crush 1~19";he bbr js1~19;;Yoshimitsu-DGF.4;Dragonfly Twister;r27;;File:t8-p2-yoshimitsu-dgf.4.mp4
 DGF.1+2;;;;;;;"&lt;div class=&quot;plainlist&quot;&gt;
 * Low crush 1~27
 * fs28~30&lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
 * js1~27
-* fs28~30&lt;/div&gt;";Yoshimitsu-DGF.1+2;Manji Dragonfly > Flea;r30 FLE;;File:t8-p2-yoshimitsu-dgf.1+2.mp4
+* fs28~30&lt;/div&gt;";FLE;Yoshimitsu-DGF.1+2;Manji Dragonfly > Flea;r30 FLE;;File:t8-p2-yoshimitsu-dgf.1+2.mp4
 DGF.3+4;h!,t;17,18;i20~21;;+0;;"* Floor Break
 * Transitions to attack throw on front hit (air hit OK)
 * Attack throw recovers standing
-Low crush 1~";fbr js1~;Yoshimitsu-DGF.3+4;Spirited Away;r34 DGF;;File:t8-p2-yoshimitsu-dgf.3+4.mp4
+Low crush 1~";fbr js1~;DGF;Yoshimitsu-DGF.3+4;Spirited Away;r34 DGF;;File:t8-p2-yoshimitsu-dgf.3+4.mp4
 DGF.d+3+4;;;;;;;"&lt;div class=&quot;plainlist&quot;&gt;
 * Low crush 1~27
 * fs28~
 * High crush 31~&lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
 * js1~27
 * fs28~
-* cs31~&lt;/div&gt;";Yoshimitsu-DGF.d+3+4;Manji Dragonfly > Indian Stance;r30 IND;;File:t8-p2-yoshimitsu-dgf.d+3+4.mp4
+* cs31~&lt;/div&gt;";IND;Yoshimitsu-DGF.d+3+4;Manji Dragonfly > Indian Stance;r30 IND;;File:t8-p2-yoshimitsu-dgf.d+3+4.mp4
 DGF.f;;;;;;;"realigns with opponent, creates distance
-Low crush 1~";js1~;Yoshimitsu-DGF.f;Dragonfly Forward;r1 DGF;;
+Low crush 1~";js1~;DGF;Yoshimitsu-DGF.f;Dragonfly Forward;r1 DGF;;
 DGF.f+2;h;23;i20~21;+7;+19a (+10);+64a (+44);"* Homing
 * Balcony Break
 * Weapon
-Low crush 1~";hom bbr wpn js1~;Yoshimitsu-DGF.f+2;Dragonfly Slash;r30 DGF;;File:t8-p2-yoshimitsu-dgf.f+2.mp4
+Low crush 1~";hom bbr wpn js1~;DGF;Yoshimitsu-DGF.f+2;Dragonfly Slash;r30 DGF;;File:t8-p2-yoshimitsu-dgf.f+2.mp4
 DGF.f+1+2;h,h,h;10,10,20;i16~17 i11~12 i11~12;-2;+18a (+9);;"* Homing
 * Balcony Break
 * Weapon
 * Jail from 1st attack
 * 12 chip damage on block
-* [[Yoshimitsu movelist (Tekken 8)#Yoshimitsu-H.DGF.f+1+2|Power up]] in Heat
-Low crush 1~65";hom bbr wpn js1~65;Yoshimitsu-DGF.f+1+2;Red Spider Lily;r31;;File:t8-p2-yoshimitsu-dgf.f+1+2.mp4
+* Power up in Heat
+Low crush 1~65";hom bbr wpn js1~65;;Yoshimitsu-DGF.f+1+2;Red Spider Lily;r31;;File:t8-p2-yoshimitsu-dgf.f+1+2.mp4
 FLE.1;;;;;;;"&lt;div class=&quot;plainlist&quot;&gt;
 * fs1~25
 * High crush 26~&lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
 * fs1~25
-* cs26~&lt;/div&gt;";Yoshimitsu-FLE.1;Flea Roll;r40 FC;;File:t8-p2-yoshimitsu-fle.1.mp4
+* cs26~&lt;/div&gt;";FC;Yoshimitsu-FLE.1;Flea Roll;r40 FC;;File:t8-p2-yoshimitsu-fle.1.mp4
 FLE.2;L;20;i24~28;-12~-8;+30a;;"* Side switches on close hit
 * Can combo to ws4 on no side switch
 &lt;div class=&quot;plainlist&quot;&gt;
 * fs1~
 * High crush 6~&lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
 * fs1~
-* cs6~&lt;/div&gt;";Yoshimitsu-FLE.2;Flea > Sliding Headbutt;r27 FDFA;;File:t8-p2-yoshimitsu-fle.2.mp4
+* cs6~&lt;/div&gt;";FDFA;Yoshimitsu-FLE.2;Flea > Sliding Headbutt;r27 FDFA;;File:t8-p2-yoshimitsu-fle.2.mp4
 FLE.3;;;;;;;"* Evades like a sidestep
-Low crush 1~";js1~;Yoshimitsu-FLE.3;Flea Dance;r15 FLE;;File:t8-p2-yoshimitsu-fle.3.mp4
+Low crush 1~";js1~;FLE;Yoshimitsu-FLE.3;Flea Dance;r15 FLE;;File:t8-p2-yoshimitsu-fle.3.mp4
 FLE.1+2;h;20;i18~19;-8;+31a (+21);;"* Tornado
 * Head
-High crush 6~17";trn cs6~17;Yoshimitsu-FLE.1+2;Skull Splitter;r28;;File:t8-p2-yoshimitsu-fle.1+2.mp4
+High crush 6~17";trn cs6~17;;Yoshimitsu-FLE.1+2;Skull Splitter;r28;;File:t8-p2-yoshimitsu-fle.1+2.mp4
 FLE.3+4;m;25;i25~26;-13;+52a (+42);;"* Tornado
 &lt;div class=&quot;plainlist&quot;&gt;
 * fs1~26
 * High crush 6~22&lt;/div&gt;";"trn &lt;div class=&quot;plainlist&quot;&gt;
 * fs1~26
-* cs6~22&lt;/div&gt;";Yoshimitsu-FLE.3+4;Flea > Kangaroo Kick;r37;;File:t8-p2-yoshimitsu-fle.3+4.mp4
+* cs6~22&lt;/div&gt;";;Yoshimitsu-FLE.3+4;Flea > Kangaroo Kick;r37;;File:t8-p2-yoshimitsu-fle.3+4.mp4
 FLE.d;;;;;;;"* Evades jabs from frames 4-14
 * Evades mids from frames 7-12
 * Can be canceled into other FLE moves (except FLE.n)
@@ -880,60 +880,60 @@ FLE.d;;;;;;;"* Evades jabs from frames 4-14
 * Low crush 16~&lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
 * js1~4
 * fs5~15
-* js16~&lt;/div&gt;";Yoshimitsu-FLE.d;Flea Digger;r30 FLE;;File:t8-p2-yoshimitsu-fle.d.mp4
+* js16~&lt;/div&gt;";FLE;Yoshimitsu-FLE.d;Flea Digger;r30 FLE;;File:t8-p2-yoshimitsu-fle.d.mp4
 FLE.d;M;0;i10;;+31a (+24);;"* Evades jabs from frames 4-14
 * Evades mids from frames 7-12
 * Can be cancelled into other FLE moves (except FLE.n)
 * Only accessible after hitting with FLE.n
-Low crush 1~";js1~;Yoshimitsu-FLE.ds;Flea Digger Strike;r20 FLE;;
+Low crush 1~";js1~;FLE;Yoshimitsu-FLE.ds;Flea Digger Strike;r20 FLE;;
 FLE.db;;;;;;;"&lt;div class=&quot;plainlist&quot;&gt;
 * Low crush 1~12
 * fs13~15&lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
 * js1~12
-* fs13~15&lt;/div&gt;";Yoshimitsu-FLE.db;Flea Cancel;r38;;
+* fs13~15&lt;/div&gt;";;Yoshimitsu-FLE.db;Flea Cancel;r38;;
 FLE.d+3+4;;;;;;;"&lt;div class=&quot;plainlist&quot;&gt;
 * Low crush 1~16
 * High crush 16~30
 * fs17~&lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
 * js1~16
 * cs16~30
-* fs17~&lt;/div&gt;";Yoshimitsu-FLE.d+3+4;Flea > Indian Stance;r30 IND;;File:t8-p2-yoshimitsu-fle.d+3+4.mp4
+* fs17~&lt;/div&gt;";IND;Yoshimitsu-FLE.d+3+4;Flea > Indian Stance;r30 IND;;File:t8-p2-yoshimitsu-fle.d+3+4.mp4
 FLE.f;;;;;;;"* In WFL from frames 20-50
 * Cancel into FLE.f,f with f within 19 frames
-Low crush 1~";js1~;Yoshimitsu-FLE.f;Flea Step (WFL);r50 FLE;;File:t8-p2-yoshimitsu-fle.f.mp4
+Low crush 1~";js1~;FLE;Yoshimitsu-FLE.f;Flea Step (WFL);r50 FLE;;File:t8-p2-yoshimitsu-fle.f.mp4
 FLE.f,f;M,M,M,M,M;3,3,3,3,3;i17~19 i6~8 i5~7 i6~8 i6~8;-10;+1;;"* Combos from any hit
 * Floor break on all hits
 * Sometimes combos into FLE.n
-Low crush 1~";js1~;Yoshimitsu-FLE.f,f;Running Flea;r18? FLE;;File:t8-p2-yoshimitsu-fle.f,f.mp4
-FLE.f+2;;;;;;;;;Yoshimitsu-FLE.f+2;Flea to Dragonfly Slash;;;
+Low crush 1~";js1~;FLE;Yoshimitsu-FLE.f,f;Running Flea;r18? FLE;;File:t8-p2-yoshimitsu-fle.f,f.mp4
+FLE.f+2;;;;;;;;;;Yoshimitsu-FLE.f+2;Flea to Dragonfly Slash;;;
 FLE.n;m;7;i2~60;-18~;+48a (+38a);;"* Balcony Break
 * Weapon
 * Hitlines exist on the sword and directly behind Yoshimitsu
 * Can be canceled at any time into another FLE move
 * After hitting with this attack, FLE.n has no hitbox until another FLE action (other than FLE.d) is taken
-Low crush 1~";bbr wpn js1~;Yoshimitsu-FLE.n;Flea Idle;r1 FLE;;
+Low crush 1~";bbr wpn js1~;FLE;Yoshimitsu-FLE.n;Flea Idle;r1 FLE;;
 FLE.uf;m!;21;i30~45;;+30a (+20);;"* Balcony Break
-Low crush 1~";bbr js1~;Yoshimitsu-FLE.uf;Jumping Flea;r10 FLE;;File:t8-p2-yoshimitsu-fle.uf.mp4
-FLE.u+1+2;;;;;;;Low crush 1~;js1~;Yoshimitsu-FLE.u+1+2;Flea > Manji Dragonfly;r46 DGF;;File:t8-p2-yoshimitsu-fle.u+1+2.mp4
+Low crush 1~";bbr js1~;FLE;Yoshimitsu-FLE.uf;Jumping Flea;r10 FLE;;File:t8-p2-yoshimitsu-fle.uf.mp4
+FLE.u+1+2;;;;;;;Low crush 1~;js1~;DGF;Yoshimitsu-FLE.u+1+2;Flea > Manji Dragonfly;r46 DGF;;File:t8-p2-yoshimitsu-fle.u+1+2.mp4
 FLE.u+3+4;m;30;i38~40;+4~+6;+21a (+12);;"* Balcony Break
 * Tech roll to r33 FC on frames 41-42
 &lt;div class=&quot;plainlist&quot;&gt;
 * Low crush 1~37
 * fs38~40&lt;/div&gt;";"bbr &lt;div class=&quot;plainlist&quot;&gt;
 * js1~37
-* fs38~40&lt;/div&gt;";Yoshimitsu-FLE.u+3+4;Flea > Dragonfly Feint;r20 FUFT;;File:t8-p2-yoshimitsu-fle.u+3+4.mp4
-FUFT.d+3+4;;;;;;;fs1~;fs1~;Yoshimitsu-FUFT.d+3+4;Indian Stance Healing;r30 IND;;
+* fs38~40&lt;/div&gt;";FUFT;Yoshimitsu-FLE.u+3+4;Flea > Dragonfly Feint;r20 FUFT;;File:t8-p2-yoshimitsu-fle.u+3+4.mp4
+FUFT.d+3+4;;;;;;;fs1~;fs1~;IND;Yoshimitsu-FUFT.d+3+4;Indian Stance Healing;r30 IND;;
 IND.1;M!;15;i53~55;;+0c~+2c;;"* Spike
 * Weapon
-* Same animation as the ending of [[Yoshimitsu movelist (Tekken 8)#Yoshimitsu-qcf+1|qcf+1]]
+* Same animation as the ending of qcf+1
 &lt;div class=&quot;plainlist&quot;&gt;
 * Low crush 30~52
 * fs53~55&lt;/div&gt;";"spk wpn &lt;div class=&quot;plainlist&quot;&gt;
 * js30~52
-* fs53~55&lt;/div&gt;";Yoshimitsu-IND.1;Indian Stance Storm;r28;;File:t8-p2-yoshimitsu-ind.1.mp4
+* fs53~55&lt;/div&gt;";;Yoshimitsu-IND.1;Indian Stance Storm;r28;;File:t8-p2-yoshimitsu-ind.1.mp4
 IND.2;m;7;i39~43;-8~-5;+2~+6;;"* Links to db+2 extensions
 * Greater forward momentum than a standing db+2
-High crush 1~ fs1~";cs1~ fs1~;Yoshimitsu-IND.2;Indian Stance Stone Fists;r28 FC;;File:t8-p2-yoshimitsu-ind.2.mp4
+High crush 1~ fs1~";cs1~ fs1~;db+2 extensions,FC;Yoshimitsu-IND.2;Indian Stance Stone Fists;r28 FC;;File:t8-p2-yoshimitsu-ind.2.mp4
 IND.3;m;15;i32~38;-31;-2a (-12);;"* Balcony Break
 * Automatically recovers to r55 IND on self-wallsplat
 * Tremendous forward travel
@@ -941,7 +941,7 @@ IND.3;m;15;i32~38;-31;-2a (-12);;"* Balcony Break
 * ,Low crush 12~34
 * fs35~90&lt;/div&gt;";"bbr &lt;div class=&quot;plainlist&quot;&gt;
 * js12~34
-* fs35~90&lt;/div&gt;";Yoshimitsu-IND.3;;r46;;
+* fs35~90&lt;/div&gt;";;Yoshimitsu-IND.3;;r46;;
 IND.3,3+4;m, m;15, 20;i32~38, i27;-13;+52a (+42);;"* Tornado
 * Combo from 1st hit
 * Tremendous forward travel
@@ -949,35 +949,35 @@ IND.3,3+4;m, m;15, 20;i32~38, i27;-13;+52a (+42);;"* Tornado
 * ,Low crush 1~13
 * fs14~54&lt;/div&gt;";"trn &lt;div class=&quot;plainlist&quot;&gt;
 * js1~13
-* fs14~54&lt;/div&gt;";Yoshimitsu-IND.3,3+4;Indian Stance Cannon;r38;;File:t8-p2-yoshimitsu-ind.3,3+4.mp4
+* fs14~54&lt;/div&gt;";;Yoshimitsu-IND.3,3+4;Indian Stance Cannon;r38;;File:t8-p2-yoshimitsu-ind.3,3+4.mp4
 IND.4;L;18;i47~48;-26;+4c;+31a;"* Homing
 * Enter IND -26 +8 +35a r24 with d+3+4
-High crush 1~";hom cs1~;Yoshimitsu-IND.4;Indian Stance Knee Cap;r28 FC;;File:t8-p2-yoshimitsu-ind.4.mp4
+High crush 1~";hom cs1~;IND,FC;Yoshimitsu-IND.4;Indian Stance Knee Cap;r28 FC;;File:t8-p2-yoshimitsu-ind.4.mp4
 IND.1+2;;;;;;;"Unavailable in NSS
 &lt;div class=&quot;plainlist&quot;&gt;
 * Low crush 1~27
 * fs28~30&lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
 * js1~27
-* fs28~30&lt;/div&gt;";Yoshimitsu-IND.1+2;Indian Stance Flea;r30 FLE;;File:t8-p2-yoshimitsu-ind.1+2.mp4
+* fs28~30&lt;/div&gt;";FLE;Yoshimitsu-IND.1+2;Indian Stance Flea;r30 FLE;;File:t8-p2-yoshimitsu-ind.1+2.mp4
 IND.3+4;m,m;6,22;i17~18 i10~11;-6;+3;;"* Homing
 * Enter DGF r18 with 1SS.U
 &lt;div class=&quot;plainlist&quot;&gt;
 * Low crush 12-37
 * fs38-40&lt;/div&gt;";"hom &lt;div class=&quot;plainlist&quot;&gt;
 * js12-37
-* fs38-40&lt;/div&gt;";Yoshimitsu-IND.3+4;Indian Tobi Ushiwaka;r29;;File:t8-p2-yoshimitsu-ind.3+4.mp4
+* fs38-40&lt;/div&gt;";DGF;Yoshimitsu-IND.3+4;Indian Tobi Ushiwaka;r29;;File:t8-p2-yoshimitsu-ind.3+4.mp4
 IND.D+3+4*;;;;;;;"* Allows 8-way directional movement in IND
 * Continues as long as 3+4 is held
 * Holding a directional input and pressing 1, 2 or 1+2 will play different voicelines
 * Yoshimitsu must rest his arms before he can move, this animation takes 30 frames, this animation does not occur when using NSS.d+1+2
-High crush 1~ fs1~";cs1~ fs1~;Yoshimitsu-IND.D+3+4*;Indian Levitation;r1 IND;;File:t8-p2-yoshimitsu-ind.d+3+4s.mp4
+High crush 1~ fs1~";cs1~ fs1~;IND;Yoshimitsu-IND.D+3+4*;Indian Levitation;r1 IND;;File:t8-p2-yoshimitsu-ind.d+3+4s.mp4
 IND.f;;;;;;;"* If closer than 1.75 units, recovers r49, 1 unit behind the opponent
 * If in BT.IND closer than 1.75 units, recovers r49, 4.2 units away from the opponent
 * If farther than 1.75 units, recovers r49 BT in the same location
 * Evasive, can go under some attacks
 &lt;div class=&quot;plainlist&quot;&gt;
 * fs1~50&lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
-* fs1~50&lt;/div&gt;";Yoshimitsu-IND.f;Indian Stance Vaccum Dance;r49;;File:t8-p2-yoshimitsu-ind.f.mp4
+* fs1~50&lt;/div&gt;";;Yoshimitsu-IND.f;Indian Stance Vaccum Dance;r49;;File:t8-p2-yoshimitsu-ind.f.mp4
 IND.n;;;;;;;"* Recovers 3 recoverable health with each pulse
 * Can be cancelled into other IND moves
 * Inputting anything other than IND.3+4 or IND.u will put Yoshimitsu in a spinning animation that takes 29 frames to complete before any move comes out
@@ -985,58 +985,58 @@ IND.n;;;;;;;"* Recovers 3 recoverable health with each pulse
 * High crush 1~
 * fs1~&lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
 * cs1~
-* fs1~&lt;/div&gt;";Yoshimitsu-IND.n;Indian Stance Healing;r30 IND;;
+* fs1~&lt;/div&gt;";IND;Yoshimitsu-IND.n;Indian Stance Healing;r30 IND;;
 IND.u;;;;;;;"* Evasive, can go under some attacks if timed
-fs1~29";fs1~29;Yoshimitsu-IND.u;Indian Stance Cancel;r29;;
+fs1~29";fs1~29;;Yoshimitsu-IND.u;Indian Stance Cancel;r29;;
 IND.u+1+2;;;;;;;"Unavailable in NSS
-Low crush 1~";js1~;Yoshimitsu-IND.u+1+2;Indian Stance Manji Dragonfly;r25 DGF;;File:t8-p2-yoshimitsu-ind.u+1+2.mp4
+Low crush 1~";js1~;DGF;Yoshimitsu-IND.u+1+2;Indian Stance Manji Dragonfly;r25 DGF;;File:t8-p2-yoshimitsu-ind.u+1+2.mp4
 KIN.1;m;10;i17;-12;-1;;"* Spike
 * Weapon
-* Deals 2 chip damage in NSS";spk wpn;Yoshimitsu-KIN.1;;r31 1SS;;
+* Deals 2 chip damage in NSS";spk wpn;;Yoshimitsu-KIN.1;;r31 1SS;;
 KIN.1,1;m, m,m;10, 5,15;i17, i23~24 i14~15;-9;+7c;;"* Spike
 * Weapon
 * Combo from 1st hit with 2f delay
-* [[Yoshimitsu movelist (Tekken 8)#Yoshimitsu-KIN.1,NSS.1|Power up]] in NSS or Heat";spk wpn;Yoshimitsu-KIN.1,1;Doushi Kiri;r27 1SS;;File:t8-p2-yoshimitsu-kin.1,1.mp4
+* Power up in NSS or Heat";spk wpn;;Yoshimitsu-KIN.1,1;Doushi Kiri;r27 1SS;;File:t8-p2-yoshimitsu-kin.1,1.mp4
 KIN.1,NSS.1;m, m,m;10, 5,20;i17, i23~24 i14~15;-1;+37a (+29);;"* Balcony Break
 * Spike
 * Weapon
 * Combo from 1st hit with 2f delay
 * 4 chip damage on block
-* Recovers 4 base health on hit";bbr spk wpn;Yoshimitsu-KIN.1,NSS.1;;r27 1SS;;
-KIN.2;m;15;i21~22;-14;+26a (+16a);;Weapon;wpn;Yoshimitsu-KIN.2;;r43;;
+* Recovers 4 base health on hit";bbr spk wpn;;Yoshimitsu-KIN.1,NSS.1;;r27 1SS;;
+KIN.2;m;15;i21~22;-14;+26a (+16a);;Weapon;wpn;;Yoshimitsu-KIN.2;;r43;;
 KIN.2,1+2;m, M;15, 30;i21~22, i32~34;-15~-13;+2a;;"* Balcony Break
 * Spike
 * Weapon
 * 6 chip damage on block
-* Power in NSS or Heat";bbr spk wpn;Yoshimitsu-KIN.2,1+2;Tenshu Kuzushi;r49 1SS;;File:t8-p2-yoshimitsu-kin.2,1+2.mp4
+* Power in NSS or Heat";bbr spk wpn;;Yoshimitsu-KIN.2,1+2;Tenshu Kuzushi;r49 1SS;;File:t8-p2-yoshimitsu-kin.2,1+2.mp4
 KIN.2,1+2*;m, M;15, 30;i21~22, i47~49;+2~+4;+2a;;"* Balcony Break
 * Spike
 * Weapon
 * 9 chip damage on block
-* Power in NSS or Heat";bbr spk wpn;Yoshimitsu-KIN.2,1+2*;Tenshu Kuzushi (Hold);r49 1SS;;
+* Power in NSS or Heat";bbr spk wpn;;Yoshimitsu-KIN.2,1+2*;Tenshu Kuzushi (Hold);r49 1SS;;
 KIN.2,NSS.1+2;m, M;15, 30;i21~22, i32~34;-3;+15a;;"* Balcony Break
 * Spike
 * Weapon
 * 9 chip damage on block
-* Recovers 7 base health on hit";bbr spk wpn;Yoshimitsu-KIN.2,NSS.1+2;;r49 1SS;;
+* Recovers 7 base health on hit";bbr spk wpn;;Yoshimitsu-KIN.2,NSS.1+2;;r49 1SS;;
 KIN.2,NSS.1+2*;m, M;15, 30;i21~22, i47~49;+14;+69a (+49);;"* Balcony Break
 * Spike
 * Weapon
 * Guard Break
 * 12 chip damage on block
 * Recovers 2 base health on hit
-* +26d (+26) on airborne hit";bbr spk wpn;Yoshimitsu-KIN.2,1+2*;;r49 1SS;;
+* +26d (+26) on airborne hit";bbr spk wpn;;Yoshimitsu-KIN.2,1+2*;;r49 1SS;;
 KIN.3;L;17;i25~32;-16~-9;+13a;+25a;"&lt;div class=&quot;plainlist&quot;&gt;
 * Low crush 10~20
 * fs21~23
 * High crush 24~&lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
 * js10~20
 * fs21~23
-* cs24~&lt;/div&gt;";Yoshimitsu-KIN.3;Shibakari;r28 FC;;File:t8-p2-yoshimitsu-kin.3.mp4
+* cs24~&lt;/div&gt;";FC;Yoshimitsu-KIN.3;Shibakari;r28 FC;;File:t8-p2-yoshimitsu-kin.3.mp4
 KIN.4;h;23;i16~17;+0;+20a (+11);+49a;"* Homing
 * Balcony Break
 * Enter KIN +3 +23a (+14) r26 with 1+2
-* Enter MED -1 +19a (+10) r28 with 3+4";hom bbr;Yoshimitsu-KIN.4;Whirlwind;r29;;File:t8-p2-yoshimitsu-kin.4.mp4
+* Enter MED -1 +19a (+10) r28 with 3+4";hom bbr;KIN,MED;Yoshimitsu-KIN.4;Whirlwind;r29;;File:t8-p2-yoshimitsu-kin.4.mp4
 KIN.1+2;m,m,m,m;4,4,4,24;i12~13 i6~7 i7~8 i11~13;-6;+11a;;"* Spike
 * Weapon
 * Combos from any hit
@@ -1045,31 +1045,31 @@ KIN.1+2;m,m,m,m;4,4,4,24;i12~13 i6~7 i7~8 i11~13;-6;+11a;;"* Spike
 * Low crush 25~39
 * fs40~42&lt;/div&gt;";"spk wpn &lt;div class=&quot;plainlist&quot;&gt;
 * js25~39
-* fs40~42&lt;/div&gt;";Yoshimitsu-KIN.1+2;Ashura Blade;r37 BT;;File:t8-p2-yoshimitsu-kin.1+2.mp4
+* fs40~42&lt;/div&gt;";BT;Yoshimitsu-KIN.1+2;Ashura Blade;r37 BT;;File:t8-p2-yoshimitsu-kin.1+2.mp4
 KIN.1+4;m;20;i10~13;-15;+14c;;"* Weapon
 * 70% proration on standing hit
 * Knockdown against BT opponent +11a (FDFT)
-* [[Yoshimitsu movelist (Tekken 8)#Yoshimitsu-NSS.1+4|Power up]] in NSS or Heat";wpn;Yoshimitsu-KIN.1+4;Kincho Soul Stealer;r31;;
-KIN.b+2;m;15;i15~16;-9;+2;;Weapon;wpn;Yoshimitsu-KIN.b+2;;r27;;
+* Power up in NSS or Heat";wpn;;Yoshimitsu-KIN.1+4;Kincho Soul Stealer;r31;;
+KIN.b+2;m;15;i15~16;-9;+2;;Weapon;wpn;;Yoshimitsu-KIN.b+2;;r27;;
 KIN.b+2,1;m, M;15, 19;i15~16, i23~24;-12;+30a (+20);;"* Tornado
 * Weapon
-* Combo from 1st hit";trn wpn;Yoshimitsu-KIN.b+2,1;Ikaruga;r29;;File:t8-p2-yoshimitsu-kin.b+2,1.mp4
+* Combo from 1st hit";trn wpn;;Yoshimitsu-KIN.b+2,1;Ikaruga;r29;;File:t8-p2-yoshimitsu-kin.b+2,1.mp4
 KIN.b+1+2;m!;25;i46;;+6a;;"* Weapon
 * Backswing blow
 * Unavailable in NSS
-* Move is delayed by 5f";wpn;Yoshimitsu-KIN.b+1+2;Mumyo Juji Ken;r49;;File:t8-p2-yoshimitsu-kin.b+1+2.mp4
+* Move is delayed by 5f";wpn;;Yoshimitsu-KIN.b+1+2;Mumyo Juji Ken;r49;;File:t8-p2-yoshimitsu-kin.b+1+2.mp4
 KIN.d+1;L;20;i23~24;-13;+3;+38a;"* Weapon
 * Cancel to r34 FC with DB on frame 16
-High crush 22~";wpn cs22~;Yoshimitsu-KIN.d+1;Ishigaki Kuzushi;r31 FC;;File:t8-p2-yoshimitsu-kin.d+1.mp4
-KIN.f;;;;;;;High crush 5~25;cs5~25;Yoshimitsu-KIN.f;Kincho Forward Dash;r5 KIN;;
+High crush 22~";wpn cs22~;FC,FC;Yoshimitsu-KIN.d+1;Ishigaki Kuzushi;r31 FC;;File:t8-p2-yoshimitsu-kin.d+1.mp4
+KIN.f;;;;;;;High crush 5~25;cs5~25;KIN;Yoshimitsu-KIN.f;Kincho Forward Dash;r5 KIN;;
 KIN.f+1;M,M,M;6,6,10;i19~20 i6~7 i7~8;-5;-2;;"* Weapon
 * Combos from any hit
 * 8 chip damage on block
-* Powers in NSS or Heat";wpn;Yoshimitsu-KIN.f+1;Submission Chakram;r31 1SS;;File:t8-p2-yoshimitsu-kin.f+1.mp4
+* Powers in NSS or Heat";wpn;;Yoshimitsu-KIN.f+1;Submission Chakram;r31 1SS;;File:t8-p2-yoshimitsu-kin.f+1.mp4
 KIN.f+1*;M,M,M,M,M,M;6,6,6,6,6,10;i19~20 i6~7 i7~8 i6~7 i7~8 i7~8;-12;+29a (+14);;"* Weapon
 * Combos from any hit
 * 14 chip damage on block
-* Powers in NSS or Heat";wpn;Yoshimitsu-KIN.f+1*;Submission Chakram (Hold);r35 1SS;;
+* Powers in NSS or Heat";wpn;;Yoshimitsu-KIN.f+1*;Submission Chakram (Hold);r35 1SS;;
 KIN.f+2;h;25;i12~13;-1 +11w;+9a (+0);;"* Heat Engager
 
 * Heat Dash +5g, +34a (+27)
@@ -1077,9 +1077,9 @@ KIN.f+2;h;25;i12~13;-1 +11w;+9a (+0);;"* Heat Engager
 * Homing
 * Balcony Break
 * Weapon
-* Wall Crush on block, +11g minimum";he hom bbr wpn wc;Yoshimitsu-KIN.f+2;Ganto;r40;;
+* Wall Crush on block, +11g minimum";he hom bbr wpn wc;;Yoshimitsu-KIN.f+2;Ganto;r40;;
 KIN.u+1+2;;;;;;;"Can be counterhit
-Low crush 14~";js14~;Yoshimitsu-KIN.u+1+2;Kincho Manji Dragonfly;r34 DGF;;File:t8-p2-yoshimitsu-kin.u+1+2.mp4
+Low crush 14~";js14~;DGF;Yoshimitsu-KIN.u+1+2;Kincho Manji Dragonfly;r34 DGF;;File:t8-p2-yoshimitsu-kin.u+1+2.mp4
 MED.3;m,M;15,15;i17~28 i28~39;+2~+13;+43a;;"* Spike
 * BT.d+3 is guaranteed on meaty block
 * 1st hit only connects if the opponent is close enough
@@ -1087,88 +1087,88 @@ MED.3;m,M;15,15;i17~28 i28~39;+2~+13;+43a;;"* Spike
 * Low crush 14~41
 * fs42~44&lt;/div&gt;";"spk &lt;div class=&quot;plainlist&quot;&gt;
 * js14~41
-* fs42~44&lt;/div&gt;";Yoshimitsu-MED.3;Back Handspring;r11 BT;;File:t8-p2-yoshimitsu-med.3.mp4
-MED.1+2;m!;10;i30~34;;-1a;;Recovers 12 base health;;Yoshimitsu-MED.1+2;Meditation Healing;r38;;File:t8-p2-yoshimitsu-med.1+2.mp4
+* fs42~44&lt;/div&gt;";BT;Yoshimitsu-MED.3;Back Handspring;r11 BT;;File:t8-p2-yoshimitsu-med.3.mp4
+MED.1+2;m!;10;i30~34;;-1a;;Recovers 12 base health;;;Yoshimitsu-MED.1+2;Meditation Healing;r38;;File:t8-p2-yoshimitsu-med.1+2.mp4
 MED.1+4;m;20;i6~9;-15;+14c;;"* Weapon
 * 70% proration on standing hit
 * Knockdown against BT opponent +11a (FDFT)
-* [[Yoshimitsu movelist (Tekken 8)#Yoshimitsu-NSS.1+4|Power up]] in NSS or Heat";wpn;Yoshimitsu-MED.1+4;Meditation Backturned Flash;r31 BT;;
-MED.3+4;;;;;;;;;Yoshimitsu-MED.3+4;Meditation to Backturn;r20 BT;;
-MED.d;;;;;;;Transitions into sidewalk with held input;;Yoshimitsu-MED.d;;r15;;
+* Power up in NSS or Heat";wpn;BT;Yoshimitsu-MED.1+4;Meditation Backturned Flash;r31 BT;;
+MED.3+4;;;;;;;;;BT;Yoshimitsu-MED.3+4;Meditation to Backturn;r20 BT;;
+MED.d;;;;;;;Transitions into sidewalk with held input;;;Yoshimitsu-MED.d;;r15;;
 MED.f;;;;;;;"* Can be cancelled into a backturned attack
 * Can be cancelled into instant while standing
-* Closes distance with the opponent";;Yoshimitsu-MED.f;;r7;;
+* Closes distance with the opponent";;;Yoshimitsu-MED.f;;r7;;
 MED.n;;;;;;;"* May be canceled into another MED move
 * at 26-28 frames into the animation:
 * Restores recoverable health successively
 ** +1 health (1st pulse)
 ** +2 health (2nd pulse)
-** +3 health (3rd onward)";;Yoshimitsu-MED.n;;r30 MED;;
-NSS.1+2+3;h;25;i22~40;-18~+0;+26d (-32);;Balcony Break;bbr;Yoshimitsu-NSS.1+2+3;Spirit Spinner;r30 IND;;
+** +3 health (3rd onward)";;MED;Yoshimitsu-MED.n;;r30 MED;;
+NSS.1+2+3;h;25;i22~40;-18~+0;+26d (-32);;Balcony Break;bbr;IND;Yoshimitsu-NSS.1+2+3;Spirit Spinner;r30 IND;;
 NSS.1+4;m;20;i8~11;-15;+14 +64a;;"* Strong Aerial Tailspin
 * Weapon
 * Knockdown against BT opponent, +19a (+9)
 * 4 chip damage on block
-* Recovers 2 base health on hit";wpn;Yoshimitsu-NSS.1+4;Soul Stealer;r31 1SS;;
-NSS.BT.d+1;l;15;;;;;Yoshimitsu remains in NSS;;Yoshimitsu-NSS.BT.d+1;;;;
-NSS.FC.DF+1;l;12;i25~26;-16;+27a;;High crush 1~34;cs1~34;Yoshimitsu-NSS.FC.DF+1;;r34 NSS;;
+* Recovers 2 base health on hit";wpn;;Yoshimitsu-NSS.1+4;Soul Stealer;r31 1SS;;
+NSS.BT.d+1;l;15;;;;;Yoshimitsu remains in NSS;;;Yoshimitsu-NSS.BT.d+1;;;;
+NSS.FC.DF+1;l;12;i25~26;-16;+27a;;High crush 1~34;cs1~34;NSS;Yoshimitsu-NSS.FC.DF+1;;r34 NSS;;
 NSS.FC.DF+1,2;l, L;12, 20;i25~26, i25~26;-14;+14;;"* Spike
 * Combo from 1st hit
 * Interrupt with i7 from 1st block
-,High crush 1~45";spk cs1~45;Yoshimitsu-NSS.FC.DF+1,2;Agonbaku;r32 NSS;;File:t8-p2-yoshimitsu-nss.fc.df+1,2.mp4
-NSS.FC.df+3;L;12;i20~21;-26;+67a (+51);;High crush 1~;cs1~;Yoshimitsu-NSS.FC.df+3;Spinning Cleave;r36 FC;;File:t8-p2-yoshimitsu-nss.fc.df+3.mp4
+,High crush 1~45";spk cs1~45;NSS;Yoshimitsu-NSS.FC.DF+1,2;Agonbaku;r32 NSS;;File:t8-p2-yoshimitsu-nss.fc.df+1,2.mp4
+NSS.FC.df+3;L;12;i20~21;-26;+67a (+51);;High crush 1~;cs1~;FC;Yoshimitsu-NSS.FC.df+3;Spinning Cleave;r36 FC;;File:t8-p2-yoshimitsu-nss.fc.df+3.mp4
 NSS.IND.1;M;15;i48~51;-8c;+5a;;"* Spike
-* Same animation as the ending of [[Yoshimitsu movelist (Tekken 8)#Yoshimitsu-NSS.qcf+1|NSS.qcf+1]]
+* Same animation as the ending of NSS.qcf+1
 &lt;div class=&quot;plainlist&quot;&gt;
 * Low crush 30~52
 * fs53~55&lt;/div&gt;";"spk &lt;div class=&quot;plainlist&quot;&gt;
 * js30~52
-* fs53~55&lt;/div&gt;";Yoshimitsu-NSS.IND.1;;r32 NSS;;
+* fs53~55&lt;/div&gt;";NSS;Yoshimitsu-NSS.IND.1;;r32 NSS;;
 NSS.KIN.1+4;m;20;i12~15;-15;+14 +64a;;"* Strong Aerial Tailspin
 * Weapon
 * Knockdown against BT opponent, +19a (+9)
 * 4 chip damage on block
-* Recovers 2 base health on hit";wpn;Yoshimitsu-NSS.KIN.1+4;;r31 1SS;;
+* Recovers 2 base health on hit";wpn;;Yoshimitsu-NSS.KIN.1+4;;r31 1SS;;
 NSS.KIN.d+1;L;17;i23~24;-13;+3;+38a;"Cancel to r34 FC with DB on frame 16
-High crush 22~";cs22~;Yoshimitsu-NSS.KIN.d+1;;r31 FC;;File:t8-p2-yoshimitsu-kin.d+1.mp4
+High crush 22~";cs22~;FC,FC;Yoshimitsu-NSS.KIN.d+1;;r31 FC;;File:t8-p2-yoshimitsu-kin.d+1.mp4
 NSS.KIN.f+1;M,M,M;6,6,12;i19~20 i6~7 i7~8;-5;+18a (+11);;"* Weapon
 * Combos from any hit
 * 12 chip damage on block
-* Recovers 4 base health on hit";wpn;Yoshimitsu-NSS.KIN.f+1;;r31 1SS;;
+* Recovers 4 base health on hit";wpn;;Yoshimitsu-NSS.KIN.f+1;;r31 1SS;;
 NSS.KIN.f+1*;M,M,M,M,M,M;6,6,6,6,6,12;i19~20 i6~7 i7~8 i6~7 i7~8 i7~8;-9;+29a (+14);;"* Weapon
 * Combos from any hit
 * 21 chip damage on block
-* Recovers 8 base health on hit";wpn;Yoshimitsu-NSS.KIN.f+1*;;r35 1SS;;
-NSS.b,B+1+4;m!;40;i65~70;;-3a (-12);+29a (-18);Balcony Break;bbr;Yoshimitsu-NSS.b,B+1+4;Thunder Palm Strike;r42 NSS;;
+* Recovers 8 base health on hit";wpn;;Yoshimitsu-NSS.KIN.f+1*;;r35 1SS;;
+NSS.b,B+1+4;m!;40;i65~70;;-3a (-12);+29a (-18);Balcony Break;bbr;NSS;Yoshimitsu-NSS.b,B+1+4;Thunder Palm Strike;r42 NSS;;
 NSS.b,B+1+4,B;m;20;,i22~25;-15;+14 +64a;;"* Strong Aerial Tailspin
 * Weapon
 * Knockdown against BT opponent, +19a (+9)
 * 4 chip damage on block
-* Recovers 2 base health on hit";wpn;Yoshimitsu-NSS.b,B+1+4,B;Thunder Palm Strike Feint to Soul Stealer;r31 1SS;;
-NSS.b+1+2;;;;;;;High crush 8~50;cs8~50;Yoshimitsu-NSS.b+1+2;Battou Kakugo;r35 1SS;;File:t8-p2-yoshimitsu-nss.b+1+2.mp4
+* Recovers 2 base health on hit";wpn;;Yoshimitsu-NSS.b,B+1+4,B;Thunder Palm Strike Feint to Soul Stealer;r31 1SS;;
+NSS.b+1+2;;;;;;;High crush 8~50;cs8~50;;Yoshimitsu-NSS.b+1+2;Battou Kakugo;r35 1SS;;File:t8-p2-yoshimitsu-nss.b+1+2.mp4
 NSS.db+1;sl;5;i10;-5;+6;;"* Transition to r24 with f
-High crush 4~";cs4~;Yoshimitsu-NSS.db+1;Manji Shagapan;r24 FC;;File:t8-p2-yoshimitsu-nss.db+1.mp4
+High crush 4~";cs4~;FC;Yoshimitsu-NSS.db+1;Manji Shagapan;r24 FC;;File:t8-p2-yoshimitsu-nss.db+1.mp4
 NSS.df+1+4;m;19;i20~21;-17;+35a (+25);;"* Enter KIN r37 with 1+2
 * Can be buffered
 * Can be performed in FC
-* Power up input [[Yoshimitsu movelist (Tekken 8)#Yoshimitsu-NSS.f,n,d,df+1|NSS.f,n,d,df+1]]
-* Replaced by [[Yoshimitsu movelist (Tekken 8)#Yoshimitsu-df+1+4|1SS.df+1+4]] when performed in BT
+* Power up input NSS.f,n,d,df+1
+* Replaced by 1SS.df+1+4 when performed in BT
 &lt;div class=&quot;plainlist&quot;&gt;
 * Low crush 20~42
 * fs43~45&lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
 * js20~42
-* fs43~45&lt;/div&gt;";Yoshimitsu-NSS.df+1+4;Moonlight (Simple Input);r41 NSS;;
+* fs43~45&lt;/div&gt;";KIN,NSS;Yoshimitsu-NSS.df+1+4;Moonlight (Simple Input);r41 NSS;;
 NSS.d+1;M;24;i24~25;-9;+16a;+52a;"* Spike
 * Weapon
 * Recovers health on hit
 * 12 chip damage on block
-* Input can be held to transition to d+1*";spk wpn;Yoshimitsu-NSS.d+1;Quick Chop;r33 1SS;;
+* Input can be held to transition to d+1*";spk wpn;d+1*;Yoshimitsu-NSS.d+1;Quick Chop;r33 1SS;;
 NSS.d+1+2;;;;;;;"&lt;div class=&quot;plainlist&quot;&gt;
 * High crush 7~
 * fs7~&lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
 * cs7~
-* fs7~&lt;/div&gt;";Yoshimitsu-NSS.d+1+2;No Sword Stance > Indian Stance;r20 IND;;
-NSS.d+1+4;;;;;;;Yoshimitsu is invisible on frames 50~64, but can still be hit;;Yoshimitsu-NSS.d+1+4;Unfinished Business;r65 NSS;;File:t8-p2-yoshimitsu-nss.d+1+4.mp4
+* fs7~&lt;/div&gt;";IND;Yoshimitsu-NSS.d+1+2;No Sword Stance > Indian Stance;r20 IND;;
+NSS.d+1+4;;;;;;;Yoshimitsu is invisible on frames 50~64, but can still be hit;;NSS;Yoshimitsu-NSS.d+1+4;Unfinished Business;r65 NSS;;File:t8-p2-yoshimitsu-nss.d+1+4.mp4
 NSS.f,n,d,df+1;m;19;i17~18;-17;+35a (+25a);;"* Weapon
 * Can be buffered
 * Enter KIN r30 with 1+2
@@ -1177,7 +1177,7 @@ NSS.f,n,d,df+1;m;19;i17~18;-17;+35a (+25a);;"* Weapon
 * Low crush 17~39
 * fs40~42&lt;/div&gt;";"wpn &lt;div class=&quot;plainlist&quot;&gt;
 * js17~39
-* fs40~42&lt;/div&gt;";Yoshimitsu-NSS.f,n,d,df+1;Moonlight;r41 NSS;;File:t8-p2-yoshimitsu-f,n,d,df+1.mp4
+* fs40~42&lt;/div&gt;";KIN,NSS;Yoshimitsu-NSS.f,n,d,df+1;Moonlight;r41 NSS;;File:t8-p2-yoshimitsu-f,n,d,df+1.mp4
 NSS.f+1+2;M;29;i20;-12;+8a (-1);;"* Heat Engager
 
 * Heat Dash +5g, +62a (+42)
@@ -1186,14 +1186,14 @@ NSS.f+1+2;M;29;i20;-12;+8a (-1);;"* Heat Engager
 * Weapon
 * 8 chip damage on block
 * Recovers 4 base health on hit
-* Extended range";he bbr wpn;Yoshimitsu-NSS.f+1+2;Nine-Headed Dragon;r37 1SS;;
+* Extended range";he bbr wpn;;Yoshimitsu-NSS.f+1+2;Nine-Headed Dragon;r37 1SS;;
 NSS.f+3+4;m;20;i21~25;-13~-9;+20a (+11);;"* Balcony Break
 * Head
 * Cancel to r55 BT with b
 * Enter IND +12a (+3) r29 with d+3+4 on hit
 * Automatically recovers to r55 IND on self-wallsplat
 * Recovers 12f faster on hit
-* +20a on side hit";bbr;Yoshimitsu-NSS.f+3+4;Bull Rush;r33 NSS;;File:t8-p2-yoshimitsu-f+3+4.mp4
+* +20a on side hit";bbr;BT,IND,NSS;Yoshimitsu-NSS.f+3+4;Bull Rush;r33 NSS;;File:t8-p2-yoshimitsu-f+3+4.mp4
 NSS.qcf+1;M;30;i53~56;-8c;+5a;;"* Spike
 * Can be buffered
 * Can be performed in FC
@@ -1201,40 +1201,40 @@ NSS.qcf+1;M;30;i53~56;-8c;+5a;;"* Spike
 * Low crush 10~55
 * fs56~58&lt;/div&gt;";"spk &lt;div class=&quot;plainlist&quot;&gt;
 * js10~55
-* fs56~58&lt;/div&gt;";Yoshimitsu-NSS.qcf+1;Moonsault;r32 NSS;;
+* fs56~58&lt;/div&gt;";NSS;Yoshimitsu-NSS.qcf+1;Moonsault;r32 NSS;;
 NSS.ub+1;m;19;i25~26;-6~-5;+3c~+4c;;"Spike
 &lt;div class=&quot;plainlist&quot;&gt;
 * Low crush 9~27
 * fs28~30&lt;/div&gt;";"spk &lt;div class=&quot;plainlist&quot;&gt;
 * js9~27
-* fs28~30&lt;/div&gt;";Yoshimitsu-NSS.ub+1;;r26 NSS;;
-NSS.ub+1+3;m!;50;i51~65;;-23;;* Punishable on close hit with FUFT.3;;Yoshimitsu-NSS.ub+1+3;Spinning Finger Stab;r64 NSS;;
-NSS.ub+1+3,1+2;m!, h;50, 15;i51~65, i18~19;-15;-4;+45a;Spike;spk;Yoshimitsu-NSS.ub+1+3,1+2;Face Slapper;r33 NSS;;
+* fs28~30&lt;/div&gt;";NSS;Yoshimitsu-NSS.ub+1;;r26 NSS;;
+NSS.ub+1+3;m!;50;i51~65;;-23;;* Punishable on close hit with FUFT.3;;NSS;Yoshimitsu-NSS.ub+1+3;Spinning Finger Stab;r64 NSS;;
+NSS.ub+1+3,1+2;m!, h;50, 15;i51~65, i18~19;-15;-4;+45a;Spike;spk;NSS;Yoshimitsu-NSS.ub+1+3,1+2;Face Slapper;r33 NSS;;
 NSS.ub+1+3,n+1;m!, h!;50, 40;i51~65, i20~105;;-49a (-75);;"* Balcony Break
-* Cancel to r94 with B on frame 64";bbr;Yoshimitsu-NSS.ub+1+3,n+1;Index Poke Windmill;r30 NSS;;
+* Cancel to r94 with B on frame 64";bbr;NSS;Yoshimitsu-NSS.ub+1+3,n+1;Index Poke Windmill;r30 NSS;;
 NSS.ub+1+2;M;30;i24~25;-8c;+16a (+6);;"* Balcony Break
 * Weapon
 * 15 chip damage on block
 * Clean hit 39 damage
 * Recovers 4 base health on hit
-* -12c if blocked at tip range";bbr wpn;Yoshimitsu-NSS.ub+1+2;Soul Blade Yoshimitsu;r38 1SS;;File:t8-p2-yoshimitsu-nss.ub+1+2.mp4
+* -12c if blocked at tip range";bbr wpn;;Yoshimitsu-NSS.ub+1+2;Soul Blade Yoshimitsu;r38 1SS;;File:t8-p2-yoshimitsu-nss.ub+1+2.mp4
 NSS.uf+1;m;24;i25~26;-4;+5c;+15a;"Spike
 &lt;div class=&quot;plainlist&quot;&gt;
 * Low crush 9~27
 * fs28~30&lt;/div&gt;";"spk &lt;div class=&quot;plainlist&quot;&gt;
 * js9~27
-* fs28~30&lt;/div&gt;";Yoshimitsu-NSS.uf+1;;r24 NSS;;File:t8-p2-yoshimitsu-uf+1.mp4
+* fs28~30&lt;/div&gt;";NSS;Yoshimitsu-NSS.uf+1;;r24 NSS;;File:t8-p2-yoshimitsu-uf+1.mp4
 NSS.uf+1+3;;;;;;;"&lt;div class=&quot;plainlist&quot;&gt;
 * Low crush 9~35
 * fs36~38&lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
 * js9~35
-* fs36~38&lt;/div&gt;";Yoshimitsu-NSS.uf+1+3;Safe Heron Jump;r41 FC;;File:t8-p2-yoshimitsu-nss.uf+1+3.mp4
+* fs36~38&lt;/div&gt;";FC;Yoshimitsu-NSS.uf+1+3;Safe Heron Jump;r41 FC;;File:t8-p2-yoshimitsu-nss.uf+1+3.mp4
 NSS.u+1;m;21;i25~26;-5;+4c;;"Spike
 &lt;div class=&quot;plainlist&quot;&gt;
 * Low crush 9~27
 * fs28~30&lt;/div&gt;";"spk &lt;div class=&quot;plainlist&quot;&gt;
 * js9~27
-* fs28~30&lt;/div&gt;";Yoshimitsu-NSS.u+1;;r25 NSS;;
+* fs28~30&lt;/div&gt;";NSS;Yoshimitsu-NSS.u+1;;r25 NSS;;
 NSS.u+1+2;L;18;i27~29;+5;+21g;;"* Spike
 * Can't be low parried
 * Opponent recovers crouching
@@ -1242,7 +1242,7 @@ NSS.u+1+2;L;18;i27~29;+5;+21g;;"* Spike
 * Low crush 9~24
 * fs25~&lt;/div&gt;";"spk &lt;div class=&quot;plainlist&quot;&gt;
 * js9~24
-* fs25~&lt;/div&gt;";Yoshimitsu-NSS.u+1+2;Ishiusu Tsubushi;r12 IND;;File:t8-p2-yoshimitsu-nss.u+1+2.mp4
+* fs25~&lt;/div&gt;";IND;Yoshimitsu-NSS.u+1+2;Ishiusu Tsubushi;r12 IND;;File:t8-p2-yoshimitsu-nss.u+1+2.mp4
 OTG.u+1;M;24;i27~29;-13;-8c;;"* Spike
 * Weapon
 * 16 damage -16a against airborne opponent
@@ -1252,13 +1252,13 @@ OTG.u+1;M;24;i27~29;-13;-8c;;"* Spike
 * Low crush 8~23
 * fs24~26&lt;/div&gt;";"spk wpn &lt;div class=&quot;plainlist&quot;&gt;
 * js8~23
-* fs24~26&lt;/div&gt;";Yoshimitsu-OTG.u+1;Kaishaku;r41;;
+* fs24~26&lt;/div&gt;";;Yoshimitsu-OTG.u+1;Kaishaku;r41;;
 WFL.3;m;25;i17;-16;+2a (-7);;"* Balcony Break
 * FLE step takes 19 frames, effective startup i36
 * Clean hit, 1st hit 25 > 37 damage
 * Transition to attack throw on close standing hit, +15a r43 FLE and 20 extra damage
 * Can side switch on throw hit
-Low crush 1~";bbr js1~;Yoshimitsu-WFL.3;Sakanobori;r43 FLE;;File:t8-p2-yoshimitsu-wfl.3.mp4
+Low crush 1~";bbr js1~;FLE;Yoshimitsu-WFL.3;Sakanobori;r43 FLE;;File:t8-p2-yoshimitsu-wfl.3.mp4
 WFL.4;L;15;i23~24;-9;+12c;+20a;"FLE step takes 19 frames, effective startup i42~43
 &lt;div class=&quot;plainlist&quot;&gt;
 * Low crush 1~12
@@ -1266,27 +1266,27 @@ WFL.4;L;15;i23~24;-9;+12c;+20a;"FLE step takes 19 frames, effective startup i42~
 * fs13~&lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
 * js1~12
 * cs12~
-* fs13~&lt;/div&gt;";Yoshimitsu-WFL.4;Tsurubebi;r26 FUFT;;File:t8-p2-yoshimitsu-wfl.4.mp4
+* fs13~&lt;/div&gt;";FUFT;Yoshimitsu-WFL.4;Tsurubebi;r26 FUFT;;File:t8-p2-yoshimitsu-wfl.4.mp4
 1+3;t;35;i12~14;-3;+1d;;"* Homing
-* Throw break 1 or 2";hom;Yoshimitsu-1+3;Oni Killer;r25;;File:t8-p2-yoshimitsu-1+3.mp4
+* Throw break 1 or 2";hom;;Yoshimitsu-1+3;Oni Killer;r25;;File:t8-p2-yoshimitsu-1+3.mp4
 2+4;t;35;i12~14;+0;+1;;"* Homing
 * Floor Break
 * Throw break 1 or 2
-* Side switch on hit";hom fbr;Yoshimitsu-2+4;Sword Face Smash;r25;;File:t8-p2-yoshimitsu-2+4.mp4
+* Side switch on hit";hom fbr;;Yoshimitsu-2+4;Sword Face Smash;r25;;File:t8-p2-yoshimitsu-2+4.mp4
 Back Throw;t;50;;;+1d;;"* Floor Break
-* Unbreakable";fbr;Yoshimitsu-Back Throw;Tornado Drop;BT;;
+* Unbreakable";fbr;BT;Yoshimitsu-Back Throw;Tornado Drop;BT;;
 Left Throw;t;45;;-3;+0d;;"* Throw break 1
-* Side switch on hit";;Yoshimitsu-Left Throw;Wheels of Hell;;;
-Right Throw;t;40;;-3;-3d;;Throw break 2;;Yoshimitsu-Right Throw;Neck Breaker;;;
+* Side switch on hit";;;Yoshimitsu-Left Throw;Wheels of Hell;;;
+Right Throw;t;40;;-3;-3d;;Throw break 2;;;Yoshimitsu-Right Throw;Neck Breaker;;;
 qcb,f+2;t;0;i15~16;;+0;;"* Unbreakable
 * Opponent recovers 26 health
-* Yoshimitsu loses 35 health";;Yoshimitsu-qcb,f+2;Soul Possession;r23;;File:t8-p2-yoshimitsu-qcb,f+2.mp4
+* Yoshimitsu loses 35 health";;;Yoshimitsu-qcb,f+2;Soul Possession;r23;;File:t8-p2-yoshimitsu-qcb,f+2.mp4
 qcf+2;t;22;i15~16;+0;+0;;"* Throw break 1+2
 * 35 damage as a backthrow
 * Yoshimitsu recovers 16 health
 * On break:
 ** -Opponent recovers 22 health (35 on backthrow)
-** -Yoshimitsu loses 16 health";;Yoshimitsu-qcf+2;Soul Siphon;r23;;File:t8-p2-yoshimitsu-qcf+2.mp4
+** -Yoshimitsu loses 16 health";;;Yoshimitsu-qcf+2;Soul Siphon;r23;;File:t8-p2-yoshimitsu-qcf+2.mp4
 uf+1+2;t;45;i11;+0;+1;;"* Floor Break
 * Throw break 1+2
-* Side switch on break";fbr;Yoshimitsu-uf+1+2;Rainbow Drop;r28;;File:t8-p2-yoshimitsu-uf+1+2.mp4
+* Side switch on break";fbr;;Yoshimitsu-uf+1+2;Rainbow Drop;r28;;File:t8-p2-yoshimitsu-uf+1+2.mp4
