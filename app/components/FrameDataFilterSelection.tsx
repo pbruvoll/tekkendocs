@@ -357,7 +357,7 @@ export const FrameDataFilterSelection = ({
       </section>
       <section className="flex flex-col gap-3">
         <Text as="div" size="2" mb="1" weight="bold">
-          Transitions
+          Transitions / Recovery
         </Text>
         <div className="flex flex-wrap gap-3">
           {transitions.map(transition => {

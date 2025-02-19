@@ -1,11 +1,11 @@
-Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Wavu id;Name;Recovery;Image;Video
+Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Transitions;Wavu id;Name;Recovery;Image;Video
 2+3;m;"[12;12]";i16;+1;+2c;;"* Heat Burst
 * Cancel to r45 with b,b
 * 3 chip damage on block
 * 12 chip damage on hit
 * Only deals recoverable damage
 * Cannot cause a K.O.
-Power crush 7~16";hb pc7~16;Asuka-2+3;Heat Burst;r30;;
+Power crush 7~16";hb pc7~16;;Asuka-2+3;Heat Burst;r30;;
 H.2+3;m,t;12,11,27;i16;+10g;-6;;"* Heat Smash
 * Floor Break
 * 17 chip damage on block
@@ -15,7 +15,7 @@ H.2+3;m,t;12,11,27;i16;+10g;-6;;"* Heat Smash
 * 2nd hit damage 11 > 18 if 1st hit whiffs
 * 3rd hit damage 27 > 30 if 1st hit whiffs
 * Hit level becomes m,m,m on block/whiff
-Low crush 5~";hs fbr js5~;Asuka-H.2+3;Triple Ascension Kicks;;;
+Low crush 5~";hs fbr js5~;;Asuka-H.2+3;Triple Ascension Kicks;;;
 R.df+1+2;m,t;55+;i20;-15;+0d;;"* Rage Art
 * Removes Recoverable Health
 * Reversal Break
@@ -24,40 +24,40 @@ R.df+1+2;m,t;55+;i20;-15;+0d;;"* Rage Art
 * Restores recoverable health on hit
 * Transition to attack throw on hit
 * Consumes Rage
-Power crush 8~";pc8~;Asuka-R.df+1+2;Naniwa Peacemaker Knuckle;r39;;
-1;h;6;i10;-2;+9;;;;Asuka-1;Jab;r21;;
+Power crush 8~";pc8~;;Asuka-R.df+1+2;Naniwa Peacemaker Knuckle;r39;;
+1;h;6;i10;-2;+9;;;;;Asuka-1;Jab;r21;;
 1,1;h, m;6, 15;i10, i24;-7;+4;;"* Combo from 1st CH with 3f delay
 * Links to f+1 extensions
-* Interrupt with i4 from 1st block";;Asuka-1,1;Whiplash;r26;;File:t8-p2-asuka-1,1.mp4
+* Interrupt with i4 from 1st block";;f+1 extensions;Asuka-1,1;Whiplash;r26;;File:t8-p2-asuka-1,1.mp4
 1,1,3;h, m, m;6, 15, 17;i10, ,i21~22;-5;+6;+14c;"* Combo from 2nd CH with 9f delay
-* Input can be delayed 10f";;Asuka-1,1,3;;r23;;
+* Input can be delayed 10f";;;Asuka-1,1,3;;r23;;
 1,2;h, m;6, 9;i10, i22~23;-8;+6;;"* Combo from 1st hit
-* Combo from 1st CH with 3f delay";;Asuka-1,2;Jab Uppercut;r26;;
+* Combo from 1st CH with 3f delay";;;Asuka-1,2;Jab Uppercut;r26;;
 1,2,3;h, m, m;6, 9, 24;i10, ,i31~33;-2;+29a (+20);;"* Balcony Break
 * Chip damage on block
 * Cancel to r18 with B
 * Interrupt with i15 from 2nd block
-* Last input can be held to power up";bbr chp;Asuka-1,2,3;Jab Uppercut > Spinning Heel Drop;r19;;File:t8-p2-asuka-1,2,3.mp4
+* Last input can be held to power up";bbr chp;;Asuka-1,2,3;Jab Uppercut > Spinning Heel Drop;r19;;File:t8-p2-asuka-1,2,3.mp4
 1,2,3*;h, m, m;6, 9, 26;i10, ,i52~53;+6;+28a (+19);;"* Balcony Break
 * Chip damage on block
 * Cancel to r15 with B
-* Interrupt with i36 from 2nd block";bbr chp;Asuka-1,2,3*;Jab Uppercut > Spinning Heel Drop (Hold);r21;;
+* Interrupt with i36 from 2nd block";bbr chp;;Asuka-1,2,3*;Jab Uppercut > Spinning Heel Drop (Hold);r21;;
 1,2,4;h, m, m;6, 9, 20;i10, ,i18~19;-12;+12s;;"* Combo from 1st CH
-* Combo from 2nd CH with 1f delay";;Asuka-1,2,4;Jab Uppercut > Front Kick;r31;;File:t8-p2-asuka-1,2,4.mp4
+* Combo from 2nd CH with 1f delay";;;Asuka-1,2,4;Jab Uppercut > Front Kick;r31;;File:t8-p2-asuka-1,2,4.mp4
 1,3;h, l;6, 10;i10, i21;-11;+0;;"* Combo from 1st hit with 2f delay
-* Combo from 1st CH with 3f delay";;Asuka-1,3;Jab Low Kick;r30;;File:t8-p2-asuka-1,3.mp4
-2;h;9;i12;-7;+2;;;;Asuka-2;;r28;;
+* Combo from 1st CH with 3f delay";;;Asuka-1,3;Jab Low Kick;r30;;File:t8-p2-asuka-1,3.mp4
+2;h;9;i12;-7;+2;;;;;Asuka-2;;r28;;
 2,1;h, h;9, 10;i12, i18~19;-6;+6;;"* Elbow
-* Jail from 1st attack with 1f delay";elb;Asuka-2,1;;r24;;
+* Jail from 1st attack with 1f delay";elb;;Asuka-2,1;;r24;;
 2,1,2;h, h, m;9, 10, 16;i12, ,i26~27;-10;+16a (-1);;"* Tornado
 * Balcony Break
 * Combo from 2nd CH with 1f delay
-* Interrupt with i8 from 2nd block";trn bbr;Asuka-2,1,2;Basho Cutter;r33;;File:t8-p2-asuka-2,1,2.mp4
+* Interrupt with i8 from 2nd block";trn bbr;;Asuka-2,1,2;Basho Cutter;r33;;File:t8-p2-asuka-2,1,2.mp4
 2,1,d+1+2;h, h, m;9, 10, 23;i12, ,i28~30;-9;+3c;+38a;"* Spike
 * Combo from 2nd CH with 1f delay
 * Cancel to r20 with B
 * Cancel to FC with D
-* Interrupt with i10 from 2nd block";spk;Asuka-2,1,d+1+2;Basho Oroshi;r35;;File:t8-p2-asuka-2,1,d+1+2.mp4
+* Interrupt with i10 from 2nd block";spk;FC;Asuka-2,1,d+1+2;Basho Oroshi;r35;;File:t8-p2-asuka-2,1,d+1+2.mp4
 2,3;h, m;9, 16;i12, i22~23;-17;+14g;;"* Balcony Break
 * Combo from 1st hit with 1f delay
 * Opponent recovers crouching on hit
@@ -65,26 +65,26 @@ Power crush 8~";pc8~;Asuka-R.df+1+2;Naniwa Peacemaker Knuckle;r39;;
 * ,Low crush 18~41
 * fs42~44&lt;/div&gt;";"bbr &lt;div class=&quot;plainlist&quot;&gt;
 * js18~41
-* fs42~44&lt;/div&gt;";Asuka-2,3;Mizu Basho;r38;;File:t8-p2-asuka-2,3.mp4
-3;m;17;i14;-7;+9;;;;Asuka-3;;r26;;
+* fs42~44&lt;/div&gt;";;Asuka-2,3;Mizu Basho;r38;;File:t8-p2-asuka-2,3.mp4
+3;m;17;i14;-7;+9;;;;;Asuka-3;;r26;;
 3,1;m, m;17, 17;i14, i18~19;-11;+8;+35a (+27);"* Combo from 1st hit with 14f delay
 * Input can be delayed 14f
 * Move can be delayed 10f
-* Balcony break on CH";;Asuka-3,1;Hyakujitsuko;r29;;File:t8-p2-asuka-3,1.mp4
-4;h;18;i11;-9;+7;+32a;Balcony break on CH;;Asuka-4;High Kick;r26;;
-1+2;m;21;i16;-9;+27a;;;;Asuka-1+2;Inner Strength;r29;;File:t8-p2-asuka-1+2.mp4
-1+4;sl,h;5,8;i14 i17;-3;-3;+4;* Jail from 1st attack;;Asuka-1+4;;r21;;
-1+4,2;sl,h, h;5,8, 10;i14 i17, i19;-2;+9;;* Combo from 2nd CH;;Asuka-1+4,2;;r21;;
+* Balcony break on CH";;;Asuka-3,1;Hyakujitsuko;r29;;File:t8-p2-asuka-3,1.mp4
+4;h;18;i11;-9;+7;+32a;Balcony break on CH;;;Asuka-4;High Kick;r26;;
+1+2;m;21;i16;-9;+27a;;;;;Asuka-1+2;Inner Strength;r29;;File:t8-p2-asuka-1+2.mp4
+1+4;sl,h;5,8;i14 i17;-3;-3;+4;* Jail from 1st attack;;;Asuka-1+4;;r21;;
+1+4,2;sl,h, h;5,8, 10;i14 i17, i19;-2;+9;;* Combo from 2nd CH;;;Asuka-1+4,2;;r21;;
 1+4,2,4;sl,h, h, m;5,8, 10, 26;i14 i17, ,i24;-9;+4;+17a (+8);"* Combo from 3rd CH
-* Balcony break on CH";;Asuka-1+4,2,4;White Heron Dance;r28;;File:t8-p2-asuka-1+4,2,4.mp4
+* Balcony break on CH";;;Asuka-1+4,2,4;White Heron Dance;r28;;File:t8-p2-asuka-1+4,2,4.mp4
 1+4,2,d+4;sl,h, h, L;5,8, 10, 15;i14 i17, ,i24~25;-23;+27d;;"* Combo from 3rd CH
-,High crush 10~38";cs10~38;Asuka-1+4,2,d+4;White Heron Lower Dance;r30;;File:t8-p2-asuka-1+4,2,d+4.mp4
+,High crush 10~38";cs10~38;;Asuka-1+4,2,d+4;White Heron Lower Dance;r30;;File:t8-p2-asuka-1+4,2,d+4.mp4
 1+4,3;sl,h, m;5,8, 25;i14 i17, i31~33;-2;+29a (+20);;"* Balcony Break
 * Chip on block
 * Cancel to r18 with B
 * Interrupt with i18 from 2nd block
 * Last input can be held to power up
-* Link to attack from Spinning Heel Drop (f+3)";bbr chp;Asuka-1+4,3;White Heron Spinning Heel Drop;r19;;File:t8-p2-asuka-1+4,3.mp4
+* Link to attack from Spinning Heel Drop (f+3)";bbr chp;;Asuka-1+4,3;White Heron Spinning Heel Drop;r19;;File:t8-p2-asuka-1+4,3.mp4
 3+4;m,M;10,21;i23~24 i6~8;-6;+25a;;"* Spike
 * Cancel to FC with D
 * r44 on grounded hit
@@ -92,29 +92,29 @@ Power crush 8~";pc8~;Asuka-R.df+1+2;Naniwa Peacemaker Knuckle;r39;;
 * Low crush 5~33
 * fs34~36&lt;/div&gt;";"spk &lt;div class=&quot;plainlist&quot;&gt;
 * js5~33
-* fs34~36&lt;/div&gt;";Asuka-3+4;Ryuuntsui;r23;;File:t8-p2-asuka-3+4.mp4
-f+1;m;17;i20;-7;+4;;;;Asuka-f+1;Whiplash (WHP);r26;;
+* fs34~36&lt;/div&gt;";FC;Asuka-3+4;Ryuuntsui;r23;;File:t8-p2-asuka-3+4.mp4
+f+1;m;17;i20;-7;+4;;;;;Asuka-f+1;Whiplash (WHP);r26;;
 f+1,3;m, m;17, 17;i20, i21~22;-5;+6;+14c;"* Combo from 1st CH with 9f delay
-* Input can be delayed 10f";;Asuka-f+1,3;Whiplash > Toe Kick;23;;File:t8-p2-asuka-f+1,3.mp4
+* Input can be delayed 10f";;;Asuka-f+1,3;Whiplash > Toe Kick;23;;File:t8-p2-asuka-f+1,3.mp4
 f+1,4;m, L;17, 26;i20, i25~27;-26;+24a;;"* Homing
 * Combo from 1st CH
 * Input can be delayed 15f
 * Interrupt with i11 from 1st block
 * Cancel to FC -24 -13 r43? with DB
-,High crush 6~";hom cs6~;Asuka-f+1,4;Whiplash Sacred Blade;32 FC;;File:t8-p2-asuka-f+1,4.mp4
+,High crush 6~";hom cs6~;FC,FC;Asuka-f+1,4;Whiplash Sacred Blade;32 FC;;File:t8-p2-asuka-f+1,4.mp4
 f+2;M;20;i17~18;-18;+33a (+23);;"* Cancel to r11 FC with D
 * Gain NWG on hit with 1
-* hit advantage becomes +26a (+16) on NWG gain";;Asuka-f+2;Demon Slayer;r36;;File:t8-p2-asuka-f+2.mp4
+* hit advantage becomes +26a (+16) on NWG gain";;FC;Asuka-f+2;Demon Slayer;r36;;File:t8-p2-asuka-f+2.mp4
 f+3;m;24;i31~i33;-2~+0;+29a (+20);;"* Balcony Break
 * Chip damage on block
-* Cancel to r33 with B";bbr chp;Asuka-f+3;Spinning Heel Drop (One Spin);r19;;
+* Cancel to r33 with B";bbr chp;;Asuka-f+3;Spinning Heel Drop (One Spin);r19;;
 f+3*;m;26;i52~i53;+6~+7;+28a (+19);;"* Balcony Break
 * Chip damage on block
-* Cancel to r55? with B";bbr chp;Asuka-f+3*;Spinning Heel Drop (Two Spins);r21;;
+* Cancel to r55? with B";bbr chp;;Asuka-f+3*;Spinning Heel Drop (Two Spins);r21;;
 f+3**;m!;28;i70~71;+28a (+19);+28a (+19);;"* Balcony Break
-* Cancel to r58? with B";bbr;Asuka-f+3**;Spinning Heel Drop (Three Spins);r20;;
+* Cancel to r58? with B";bbr;;Asuka-f+3**;Spinning Heel Drop (Three Spins);r20;;
 f+4;h;21;i19~21;+3;+28a;;"* Homing
-* Balcony break on CH";hom;Asuka-f+4;Back Spin Kick;r23;;File:t8-p2-asuka-f+4.mp4
+* Balcony break on CH";hom;;Asuka-f+4;Back Spin Kick;r23;;File:t8-p2-asuka-f+4.mp4
 f+1+2;h;26;i15~16;-9;+19a (+9);;"* Heat Engager
 
 * Heat Dash +5, +43a (+35)
@@ -123,256 +123,256 @@ f+1+2;h;26;i15~16;-9;+19a (+9);;"* Heat Engager
 * +0 on block after absorbing an attack
 * Chip damage on block after attack absorption
 * Gain Naniwa Gusto on Heat activation
-Power crush 7~14";he bbr chp pc7~14;Asuka-f+1+2;Exorcisor;r36;;File:t8-p2-asuka-f+1+2.mp4
+Power crush 7~14";he bbr chp pc7~14;;Asuka-f+1+2;Exorcisor;r36;;File:t8-p2-asuka-f+1+2.mp4
 f+2+3;h;21;i23~24;+0;+25a;;"* Balcony Break
 * Sabaki, parries high or mid punches
 * +51a on a successful parry
-Parry state 4~15";bbr ps4~15;Asuka-f+2+3;Wheel Kick;r27;;File:t8-p2-asuka-f+2+3.mp4
+Parry state 4~15";bbr ps4~15;;Asuka-f+2+3;Wheel Kick;r27;;File:t8-p2-asuka-f+2+3.mp4
 f+3+4;M;27;i29~30;-1;+18a (+9);;"* Balcony Break
 * Chip damage on block
 * Gain NWG on hit
-* -2a (-11) on hit after NWG gain";bbr chp;Asuka-f+3+4;Spinning Heel Chop > Naniwa Gusto;r30;;File:t8-p2-asuka-f+3+4.mp4
-df+1;m;10;i13~14;-3;+8;;;;Asuka-df+1;;r21;;
+* -2a (-11) on hit after NWG gain";bbr chp;;Asuka-f+3+4;Spinning Heel Chop > Naniwa Gusto;r30;;File:t8-p2-asuka-f+3+4.mp4
+df+1;m;10;i13~14;-3;+8;;;;;Asuka-df+1;;r21;;
 df+1,2;m, h,t;10, 13,25;i13~14, i22;-3;+0d;;"* Floor Break
 * Combo from 1st CH with 2f delay
 * Combo from 1st hit when off-axis to the left or right
 * Input can be delayed 7f
 * +18a on off-axis hit, +16a on BT hit
 * Transition to attack throw on standing front hit
-* Won't transition to throw if opponent is too far (Jack-8 range 3.3~), gives +13 on hit instead";fbr;Asuka-df+1,2;Falling Tower;r22;;File:t8-p2-asuka-df+1,2.mp4
+* Won't transition to throw if opponent is too far (Jack-8 range 3.3~), gives +13 on hit instead";fbr;;Asuka-df+1,2;Falling Tower;r22;;File:t8-p2-asuka-df+1,2.mp4
 df+1,4;m, m;10, 22;i13~14, i23~24;-12;+22a (+17);+59a;"* Balcony Break
 * Combo from 1st CH with 1f delay
-* Input can be delayed 7f";bbr;Asuka-df+1,4;Kyara Boku;r33;;File:t8-p2-asuka-df+1,4.mp4
-df+2;m;14;i15~16;-6;+35a (+25);;+5s on crouch hit;;Asuka-df+2;Rising Palm;r24;;File:t8-p2-asuka-df+2.mp4
-df+3;M;23;i20~21;-8;+12a;;Balcony Break;bbr;Asuka-df+3;Kagamino;r32;;File:t8-p2-asuka-df+3.mp4
-df+4;m;16;i12;-9;+2;;;;Asuka-df+4;Front Kick;r28;;
+* Input can be delayed 7f";bbr;;Asuka-df+1,4;Kyara Boku;r33;;File:t8-p2-asuka-df+1,4.mp4
+df+2;m;14;i15~16;-6;+35a (+25);;+5s on crouch hit;;;Asuka-df+2;Rising Palm;r24;;File:t8-p2-asuka-df+2.mp4
+df+3;M;23;i20~21;-8;+12a;;Balcony Break;bbr;;Asuka-df+3;Kagamino;r32;;File:t8-p2-asuka-df+3.mp4
+df+4;m;16;i12;-9;+2;;;;;Asuka-df+4;Front Kick;r28;;
 df+3+4;L;22;i28~30;-26;+70a (+54);;"* Homing
 * Alternate input: 3~4
 * Cancel to r47? FC with DB
-High crush 6~";hom cs6~;Asuka-df+3+4;Sacred Blade;r32 FC;;File:t8-p2-asuka-df+3+4.mp4
+High crush 6~";hom cs6~;FC,FC;Asuka-df+3+4;Sacred Blade;r32 FC;;File:t8-p2-asuka-df+3+4.mp4
 d+2;m;18;i18;-4c;+9c;;"* Heat Engager
 
 * Heat Dash +5, +67a (+50)
 
 * Spike
-* Gain NWG on Heat activation";he spk;Asuka-d+2;Heaven's Hammer;r31;;File:t8-p2-asuka-d+2.mp4
+* Gain NWG on Heat activation";he spk;;Asuka-d+2;Heaven's Hammer;r31;;File:t8-p2-asuka-d+2.mp4
 d+1+2;L;20;i20;-18;+11a;;"Spike
-High crush 10~39";spk cs10~39;Asuka-d+1+2;Sashiro;;;File:t8-p2-asuka-d+1+2.mp4
+High crush 10~39";spk cs10~39;;Asuka-d+1+2;Sashiro;;;File:t8-p2-asuka-d+1+2.mp4
 d+3+4;l,h;5,20;i14 i9~12;-8;+30a (+20);;"* Combo from 1st CH
 * -25 if 1st hit is blocked
 &lt;div class=&quot;plainlist&quot;&gt;
 * Low crush 5~42
 * fs43~45&lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
 * js5~42
-* fs43~45&lt;/div&gt;";Asuka-d+3+4;Double Lift Kicks;r31;;File:t8-p2-asuka-d+3+4.mp4
-db+1;m;13;i14;-10;+6;;High crush 6~13;cs6~13;Asuka-db+1;Swallow Slice;r29;;File:t8-p2-asuka-db+1.mp4
+* fs43~45&lt;/div&gt;";;Asuka-d+3+4;Double Lift Kicks;r31;;File:t8-p2-asuka-d+3+4.mp4
+db+1;m;13;i14;-10;+6;;High crush 6~13;cs6~13;;Asuka-db+1;Swallow Slice;r29;;File:t8-p2-asuka-db+1.mp4
 db+1,2;m, h;13, 20;i14, i26~27;-9;+22a (+13);;"* Heat Engager
 
 * Heat Dash +5, +34a (+27)
 
 * Balcony Break
 * Combo from 1st hit with 8f delay
-* Gain NWG on Heat activation";he bbr;Asuka-db+1,2;Swallow Vortex;r27;;File:t8-p2-asuka-db+1,2.mp4
+* Gain NWG on Heat activation";he bbr;;Asuka-db+1,2;Swallow Vortex;r27;;File:t8-p2-asuka-db+1,2.mp4
 db+1,4;m, m;13, 25;i14, i28~29;-15;+16a (+9);;"* Tornado
 * Combo from 1st hit
 &lt;div class=&quot;plainlist&quot;&gt;
 * ,Low crush 29~46
 * fs47~49&lt;/div&gt;";"trn &lt;div class=&quot;plainlist&quot;&gt;
 * js29~46
-* fs47~49&lt;/div&gt;";Asuka-db+1,4;Swallow Torrent;r33;;File:t8-p2-asuka-db+1,4.mp4
+* fs47~49&lt;/div&gt;";;Asuka-db+1,4;Swallow Torrent;r33;;File:t8-p2-asuka-db+1,4.mp4
 db+2;m;22;i20~21;-11;+32a (+22);;"Tornado
-High crush 3~17";trn cs3~17;Asuka-db+2;Funeral Palm;r29;;File:t8-p2-asuka-db+2.mp4
-db+3;L;17;i20;-12;+4c;+14g;;;Asuka-db+3;Enchanted Circle;r31;;File:t8-p2-asuka-db+3.mp4
+High crush 3~17";trn cs3~17;;Asuka-db+2;Funeral Palm;r29;;File:t8-p2-asuka-db+2.mp4
+db+3;L;17;i20;-12;+4c;+14g;;;;Asuka-db+3;Enchanted Circle;r31;;File:t8-p2-asuka-db+3.mp4
 db+4;L;14;i22~24;-11;+0;+3;"Transition to r22 FC with D
-High crush 6~41";cs6~41;Asuka-db+4;;r28;;
-db+4,3;L, h;14, 21;i22~24, i17;-3;+39a (+29);;Combo from 1st CH with 1f delay;;Asuka-db+4,3;Kariashi Shiranui;r31;;File:t8-p2-asuka-db+4,3.mp4
+High crush 6~41";cs6~41;FC;Asuka-db+4;;r28;;
+db+4,3;L, h;14, 21;i22~24, i17;-3;+39a (+29);;Combo from 1st CH with 1f delay;;;Asuka-db+4,3;Kariashi Shiranui;r31;;File:t8-p2-asuka-db+4,3.mp4
 db+4,4;L, L;14, 15;i22~24, i31~33;-7;+4;+35a;"Transition to r22 FC with D
-High crush 1~49";cs1~49;Asuka-db+4,4;;r24;;
+High crush 1~49";cs1~49;FC;Asuka-db+4,4;;r24;;
 db+4,4,4;L, L, L;14, 15, 16;i22~24, ,i31~33;-7;+4;+35a;"Transition to r22 FC with D
-High crush 1~49";cs1~49;Asuka-db+4,4,4;Leg Cutter;;;File:t8-p2-asuka-db+4,4,4.mp4
+High crush 1~49";cs1~49;FC;Asuka-db+4,4,4;Leg Cutter;;;File:t8-p2-asuka-db+4,4,4.mp4
 db+4,1+4;L, sl,h;14, 5,8;i22~24, i22 i17;--3;+9;;"* Jail from 2nd attack
 * Links to 1+4 string extensions
-* -19 if entire string is ducked";;Asuka-db+4,1+4;Kariashi Hakuro;r21;;File:t8-p2-asuka-db+4,1+4.mp4
+* -19 if entire string is ducked";;1+4 string extensions;Asuka-db+4,1+4;Kariashi Hakuro;r21;;File:t8-p2-asuka-db+4,1+4.mp4
 db+1+2;m,m;10,20;i42 i3;+10g +25w;+18a (+9);;"* Balcony Break
 * Wall Crush +25g on block
 
 
 * Sabaki, parries lows except weapons
-Parry state 8~20";bbr wc ps8~20;Asuka-db+1+2;Raging Storm;r27;;File:t8-p2-asuka-db+1+2.mp4
+Parry state 8~20";bbr wc ps8~20;;Asuka-db+1+2;Raging Storm;r27;;File:t8-p2-asuka-db+1+2.mp4
 b+1;L;17;i29~30;-10;+6;+0d;"* Transition to attack throw on CH, +22 damage
 * Cancel to r14 FC with D
-High crush 6~";cs6~;Asuka-b+1;Violet;r28 FC;;File:t8-p2-asuka-b+1.mp4
+High crush 6~";cs6~;FC,FC;Asuka-b+1;Violet;r28 FC;;File:t8-p2-asuka-b+1.mp4
 b+1+3;;25;;;;;"* Opponent recovers FUFT
 * Reverses high or mid attacks
-Parry state 5~12";ps5~12;Asuka-b+1+3;Attack Reversal;r45;;
+Parry state 5~12";ps5~12;;Asuka-b+1+3;Attack Reversal;r45;;
 b+1+3*;;25;;;;;"* Opponent recovers FUFT
 * Reverses high or mid attacks
-Parry state 5~54";ps5~54;Asuka-b+1+3*;Attack Reversal (Hold);;;
-b+2;m;12;i15;-4c;+1c;;;;Asuka-b+2;Swallow Mallet;r29;;
+Parry state 5~54";ps5~54;;Asuka-b+1+3*;Attack Reversal (Hold);;;
+b+2;m;12;i15;-4c;+1c;;;;;Asuka-b+2;Swallow Mallet;r29;;
 b+2,1;m, m;12, 14;i15, i28;-7;+4;;"* Combo from 1st CH
-* Links to f+1 extensions";;Asuka-b+2,1;Swallow Mallet Lunging Mist Thrust;r26;;File:t8-p2-asuka-b+2,1.mp4
+* Links to f+1 extensions";;f+1 extensions;Asuka-b+2,1;Swallow Mallet Lunging Mist Thrust;r26;;File:t8-p2-asuka-b+2,1.mp4
 b+2,4;m, L;12, 14;i15, i33~35;-11;+0;+3;"* Links to db+4 extensions
 * Transition to r22 FC with D
-High crush 15~";cs15~;Asuka-b+2,4;Swallow Mallet Leg Cutter;r28;;File:t8-p2-asuka-b+2,4.mp4
+High crush 15~";cs15~;db+4 extensions,FC;Asuka-b+2,4;Swallow Mallet Leg Cutter;r28;;File:t8-p2-asuka-b+2,4.mp4
 b+2,1+2;m, h;12, 7;i15, i21;-9;+2;;"* Elbow
 * Jail from 1st attack with 5f delay
 * Combo from 1st CH with 9f delay
 * Input can be delayed 12F
-* Cancel to r15 FC with D";elb;Asuka-b+2,1+2;;r28;;
+* Cancel to r15 FC with D";elb;FC;Asuka-b+2,1+2;;r28;;
 b+2,1+2,4;m, h, m;12, 7, 20;i15, ,i23~24;-13;+18a (+9);;"* Balcony Break
 * Combo from 1st CH
-* Combo from 2nd CH";bbr;Asuka-b+2,1+2,4;Swallow Mallet Combo;r31;;File:t8-p2-asuka-b+2,1+2,4.mp4
+* Combo from 2nd CH";bbr;;Asuka-b+2,1+2,4;Swallow Mallet Combo;r31;;File:t8-p2-asuka-b+2,1+2,4.mp4
 b+3;m;15;i16~17;-19;+22a (+12);;"&lt;div class=&quot;plainlist&quot;&gt;
 * Low crush 10~37
 * fs38~40&lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
 * js10~37
-* fs38~40&lt;/div&gt;";Asuka-b+3;Dragon Wheel Kick;r37;;File:t8-p2-asuka-b+3.mp4
+* fs38~40&lt;/div&gt;";;Asuka-b+3;Dragon Wheel Kick;r37;;File:t8-p2-asuka-b+3.mp4
 b+3,2;m, M;15, 20;i16~17, i17~18;-20;+33a (+23);;"* Cancel to r11 with D
 * Gain NWG on hit with 1
-* Interrupt with i23 on 1st block";;Asuka-b+3,2;Dragon Wheel Kick Demon Slayer;r38;;File:Asuka_b+3,2.mp4
+* Interrupt with i23 on 1st block";;;Asuka-b+3,2;Dragon Wheel Kick Demon Slayer;r38;;File:Asuka_b+3,2.mp4
 b+3,4;m, L;15, 14;i16~17, i20~22;-11;+0;+3;"* Links to db+4 extensions
 * Transition to r22 FC with D
-,High crush 1~";cs1~;Asuka-b+3,4;Dragon Wheel Leg Cutter;r28;;File:t8-p2-asuka-b+3,4.mp4
-b+4;m;17;i15~16;-7;+8;+56a;Knee;kne;Asuka-b+4;;r29;;
+,High crush 1~";cs1~;db+4 extensions,FC;Asuka-b+3,4;Dragon Wheel Leg Cutter;r28;;File:t8-p2-asuka-b+3,4.mp4
+b+4;m;17;i15~16;-7;+8;+56a;Knee;kne;;Asuka-b+4;;r29;;
 b+4,2;m, m;17, 12;i15~16, i18~19;-12;+4c;;"* Spike
 * Knee
-* Input can be delayed 14f";spk kne;Asuka-b+4,2;;r30;;
+* Input can be delayed 14f";spk kne;;Asuka-b+4,2;;r30;;
 b+4,2,3;m, m, M;17, 12, 21;i15~16, ,i20~23;-16;+15a (-2);;"* Balcony Break
 * Combo from 2nd hit with 6f delay
 * Move can be delayed 3f
-* Gain NWG on hit with 1";bbr;Asuka-b+4,2,3;Tsuyababuki;r32;;File:t8-p2-asuka-b+4,2,3.mp4
-b+1+4;h,L;15,8;i12 i17~18;-8;+5;+7;Combo from 1st hit;;Asuka-b+1+4;;r26;;
-b+1+4,3;h,L, L;15,8, 18;i12 i17~18, i32~33;-13;-2;+16a;Combo from 2nd CH;;Asuka-b+1+4,3;Reverse Narcissus;r31;;File:t8-p2-asuka-b+1+4,3.mp4
+* Gain NWG on hit with 1";bbr;;Asuka-b+4,2,3;Tsuyababuki;r32;;File:t8-p2-asuka-b+4,2,3.mp4
+b+1+4;h,L;15,8;i12 i17~18;-8;+5;+7;Combo from 1st hit;;;Asuka-b+1+4;;r26;;
+b+1+4,3;h,L, L;15,8, 18;i12 i17~18, i32~33;-13;-2;+16a;Combo from 2nd CH;;;Asuka-b+1+4,3;Reverse Narcissus;r31;;File:t8-p2-asuka-b+1+4,3.mp4
 b+1+4,4;h,L, m;15,8, 23;i12 i17~18, i25~26;-14;+5b;;"* Combo from 2nd CH
-* Balcony break on airborne hit";;Asuka-b+1+4,4;Narcissus;r37;;File:t8-p2-asuka-b+1+4,4.mp4
+* Balcony break on airborne hit";;;Asuka-b+1+4,4;Narcissus;r37;;File:t8-p2-asuka-b+1+4,4.mp4
 b+2+3;m;23;i24~25;-9;+6;;"* Kick Sabaki, +59a on successful parry
 * Balcony break on airborne hit
-Parry state 4~15";ps4~15;Asuka-b+2+3;Azalea;r30;;File:t8-p2-asuka-b+2+3.mp4
+Parry state 4~15";ps4~15;;Asuka-b+2+3;Azalea;r30;;File:t8-p2-asuka-b+2+3.mp4
 u+1+2;m;20;i31~32;-13~-12;+19a;;"* Spike
 * Chip damage when guarded
 * Power up when using NWG or in Heat
-Low crush 9~31";spk chp js9~31;Asuka-u+1+2;Sumiyoshi Plunge;r40;;File:t8-p2-asuka-u+1+2.mp4
+Low crush 9~31";spk chp js9~31;;Asuka-u+1+2;Sumiyoshi Plunge;r40;;File:t8-p2-asuka-u+1+2.mp4
 uf+2;h,t;20,25;i14;-1;+0d;;"* Floor Break
 * Balcony break on airborne hit
 * +12a on off-axis hit, +10a on BT hit
 * Transition to attack throw on standing front hit
-* Won't transition to throw if opponent is too far (Jack-8 range 2.7~), gives +7 on hit instead";fbr;Asuka-uf+2;Rangetsu;r28;;File:t8-p2-asuka-uf+2.mp4
+* Won't transition to throw if opponent is too far (Jack-8 range 2.7~), gives +7 on hit instead";fbr;;Asuka-uf+2;Rangetsu;r28;;File:t8-p2-asuka-uf+2.mp4
 uf+3;m;17;i20~21;-3;+8;+33a;"&lt;div class=&quot;plainlist&quot;&gt;
 * Low crush 11~27
 * fs28~30&lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
 * js11~27
-* fs28~30&lt;/div&gt;";Asuka-uf+3;Iwato;r21;;File:t8-p2-asuka-uf+3.mp4
+* fs28~30&lt;/div&gt;";;Asuka-uf+3;Iwato;r21;;File:t8-p2-asuka-uf+3.mp4
 uf+4;m;25;i20~21;-13;+31a (+21);;"&lt;div class=&quot;plainlist&quot;&gt;
 * Low crush 9~30
 * fs31~33&lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
 * js9~30
-* fs31~33&lt;/div&gt;";Asuka-uf+4;Night Sky;r28;;File:t8-p2-asuka-uf+4.mp4
+* fs31~33&lt;/div&gt;";;Asuka-uf+4;Night Sky;r28;;File:t8-p2-asuka-uf+4.mp4
 1+2+3+4;;;;;;;"* Transition to Ultimate Tackle throw with 1+2
 * Cannot block for 5 seconds
-* CH state for 5 seconds";;Asuka-1+2+3+4;Ki Charge;r55;;File:t8-p2-asuka-1+2+3+4.mp4
+* CH state for 5 seconds";;Ultimate Tackle;Asuka-1+2+3+4;Ki Charge;r55;;File:t8-p2-asuka-1+2+3+4.mp4
 1+2+3+4,1+2;m,t;0,0;i16;-6;;+3;"* Throw break 1+2
 * Works on standing or crouching opponent
 * Tackle is reversed on the player on break
-* Opponent recovers FUFT on hit";;Asuka-1+2+3+4,1+2;Naniwa Ultimate Tackle (Tackle);r33;;
+* Opponent recovers FUFT on hit";;;Asuka-1+2+3+4,1+2;Naniwa Ultimate Tackle (Tackle);r33;;
 f,F+1;m;30;i23;+5;+14c;;"* Spike
 * Recovers in r55 on hit or on block
-* Chip damage on block";spk chp;Asuka-f,F+1;Burning Lantern;r67;;File:t8-p2-asuka-f,f+1.mp4
-f,F+2;m;16;i15~16;-9;+1;;* Elbow;elb;Asuka-f,F+2;;r30;;
+* Chip damage on block";spk chp;;Asuka-f,F+1;Burning Lantern;r67;;File:t8-p2-asuka-f,f+1.mp4
+f,F+2;m;16;i15~16;-9;+1;;* Elbow;elb;;Asuka-f,F+2;;r30;;
 f,F+2,1;m, h;16, 21;i15~16, i21~22;-5;+45a (-13);;"* Balcony Break
 * Elbow
 * Combo from 1st hit with 6f delay
 * Combo from 1st CH with 10f delay
 * Input can be delayed 12f
-* Move can be delayed 10f";bbr elb;Asuka-f,F+2,1;Hiboko no Kagami;r28;;File:t8-p2-asuka-f,f+2,1.mp4
+* Move can be delayed 10f";bbr elb;;Asuka-f,F+2,1;Hiboko no Kagami;r28;;File:t8-p2-asuka-f,f+2,1.mp4
 f,F+2,3;m, M;16, 22;i15~16, i27~28;-8;+15a;;"* Balcony Break
 * Combo from 1st CH with 4f delay
 * Input can be delayed 12f
-* Move can be delayed 10f";bbr;Asuka-f,F+2,3;Yata Kagami;r29;;File:t8-p2-asuka-f,f+2,3.mp4
+* Move can be delayed 10f";bbr;;Asuka-f,F+2,3;Yata Kagami;r29;;File:t8-p2-asuka-f,f+2,3.mp4
 f,F+2,1+2;m, m;16, 25;i15~16, i25~26;-13;+23a (+13);;"* Balcony Break
 * Combo from 1st hit
 * Combo from 1st CH with 6f delay
 * Input can be delayed 12f
 * Move can be delayed 10f
-* Gain Naniwa Gusto on hit, advantage becomes +0a (-10)";bbr;Asuka-f,F+2,1+2;Higata no Kagami;r31;;File:t8-p2-asuka-f,f+2,1+2.mp4
+* Gain Naniwa Gusto on hit, advantage becomes +0a (-10)";bbr;;Asuka-f,F+2,1+2;Higata no Kagami;r31;;File:t8-p2-asuka-f,f+2,1+2.mp4
 f,F+3;m;23;i20~21;-9;+11g;+35a;"* Homing
-* Balcony Break";hom bbr;Asuka-f,F+3;Matoi Hiragi;r31 FC;;File:t8-p2-asuka-f,f+3.mp4
+* Balcony Break";hom bbr;FC;Asuka-f,F+3;Matoi Hiragi;r31 FC;;File:t8-p2-asuka-f,f+3.mp4
 f,F+4;h;23;i20~21;-3;+66a (+46);;"* Strong Aerial Tailspin
 * Balcony Break
 &lt;div class=&quot;plainlist&quot;&gt;
 * Low crush 6~21
 * fs22~24&lt;/div&gt;";"bbr &lt;div class=&quot;plainlist&quot;&gt;
 * js6~21
-* fs22~24&lt;/div&gt;";Asuka-f,F+4;Leaping Spin Kick;r28;;File:t8-p2-asuka-f,f+4.mp4
+* fs22~24&lt;/div&gt;";;Asuka-f,F+4;Leaping Spin Kick;r28;;File:t8-p2-asuka-f,f+4.mp4
 f,F+1+2;M;20;i19~20;-6;+29a (+14);+68a (+52);"* Tornado
 * Chip damage when on block
-* Grounded hit can be inconsistent sometimes";trn chp;Asuka-f,F+1+2;Tenjin Upward Strike;r35;;File:t8-p2-asuka-f,f+1+2.mp4
+* Grounded hit can be inconsistent sometimes";trn chp;;Asuka-f,F+1+2;Tenjin Upward Strike;r35;;File:t8-p2-asuka-f,f+1+2.mp4
 f,f,F+3;m;32;i24~28;+3~+7;+16a (+7);+48a (+1);"* Balcony Break
 * Chip damage on block
 &lt;div class=&quot;plainlist&quot;&gt;
 * Low crush 3~30
 * fs31~33&lt;/div&gt;";"bbr chp &lt;div class=&quot;plainlist&quot;&gt;
 * js3~30
-* fs31~33&lt;/div&gt;";Asuka-f,f,F+3;Ame-no-Uzume;r24;;File:t8-p2-asuka-f,f,f+3.mp4
+* fs31~33&lt;/div&gt;";;Asuka-f,f,F+3;Ame-no-Uzume;r24;;File:t8-p2-asuka-f,f,f+3.mp4
 f,f,F+1+2;h;30;i17~18;+4;+32a (+6);+67a (+51);"* Tornado
 * Homing
 * Balcony Break
-* Chip damage on block";trn hom bbr chp;Asuka-f,f,F+1+2;Aizen Swing;r33;;File:t8-p2-asuka-f,f,f+1+2.mp4
-ws1;m;12;i14~15;-7;+4;;;;Asuka-ws1;;r25;;
+* Chip damage on block";trn hom bbr chp;;Asuka-f,f,F+1+2;Aizen Swing;r33;;File:t8-p2-asuka-f,f,f+1+2.mp4
+ws1;m;12;i14~15;-7;+4;;;;;Asuka-ws1;;r25;;
 ws1,4;m, h;12, 20;i14~15, i20;-4;+37a (+29);;"* Balcony Break
 * Combo from 1st hit with 7f delay
-* Move can be delayed 6f";bbr;Asuka-ws1,4;Shikeitai;r28;;File:t8-p2-asuka-ws1,4.mp4
-ws2;m;18;i13~14;-8;+8;;Elbow;elb;Asuka-ws2;;r26;;
+* Move can be delayed 6f";bbr;;Asuka-ws1,4;Shikeitai;r28;;File:t8-p2-asuka-ws1,4.mp4
+ws2;m;18;i13~14;-8;+8;;Elbow;elb;;Asuka-ws2;;r26;;
 ws2,1;m, h;18, 10;i13~14, i22;-2;+9;;"* Combo from 1st hit with 3f delay
-* Continues into 10 strings";;Asuka-ws2,1;;r21;;
-ws2,1,1;m, h, m;18, 10, 8;i13~14, ,;-23;-12;;;;Asuka-ws2,1,1;3rd Hit;r;;
-ws2,1,1;m, h, m;18, 10, 8;i13~14, ,;-23;-12;;;;Asuka-ws2,1,1;3rd Hit (2);r;;
-ws2,1,1,1;m, h, m, h;18, 10, 8, 8;i13~14, ,;-25;-14;;;;Asuka-ws2,1,1,1;4th Hit;r;;
-ws2,1,1,1;m, h, m, h;18, 10, 8, 8;i13~14, ,;-25;-14;;;;Asuka-ws2,1,1,1;4th Hit (2);r;;
-ws2,1,1,1,2;m, h, m, h, m;18, 10, 8, 8, 6;i13~14, ,;-11;+0;;;;Asuka-ws2,1,1,1,2;5th Hit;r;;
-ws2,1,1,1,2;m, h, m, h, m;18, 10, 8, 8, 6;i13~14, ,;-11;+0;;;;Asuka-ws2,1,1,1,2;5th Hit (2);r;;
-ws2,1,1,1,2,1;m, h, m, h, m, sm;18, 10, 8, 8, 6, 5;i13~14, ,;-10;+1;;;;Asuka-ws2,1,1,1,2,1;6th Hit;r;;
-ws2,1,1,1,2,1,4;m, h, m, h, m, sm, m;18, 10, 8, 8, 6, 5, 7;i13~14, ,;-16;-6;;;;Asuka-ws2,1,1,1,2,1,4;7th Hit;r;;
-ws2,1,1,1,2,1,4,3;m, h, m, h, m, sm, m, l;18, 10, 8, 8, 6, 5, 7, 7;i13~14, ,;-25;-9;;;;Asuka-ws2,1,1,1,2,1,4,3;8th Hit;r;;
-ws2,1,1,1,2,1,4,3,3+4;m, h, m, h, m, sm, m, l, m,m;18, 10, 8, 8, 6, 5, 7, 7, 25,25;i13~14, ,;-11;KND;;;;Asuka-ws2,1,1,1,2,1,4,3,3+4;10 Hit Combo 1;r;;File:t8-p2-asuka-ws2,1,1,1,2,1,4,3,3+4.mp4
-ws2,1,1,1,2,1+4;m, h, m, h, m, sll,h;18, 10, 8, 8, 6, 7,5;i13~14, ,;-33;-7;;;;Asuka-ws2,1,1,1,2,1+4;6th & 7th Hit (2);r;;
-ws2,1,1,1,2,1+4,1;m, h, m, h, m, sll,h, h;18, 10, 8, 8, 6, 7,5, 6;i13~14, ,;-10;-43;;;;Asuka-ws2,1,1,1,2,1+4,1;8th Hit (2);r;;
-ws2,1,1,1,2,1+4,1,3+4;m, h, m, h, m, sll,h, h, l,m;18, 10, 8, 8, 6, 7,5, 6, 5,24;i13~14, ,;-43;LNC;;;;Asuka-ws2,1,1,1,2,1+4,1,3+4;10 Hit Combo 2;r;;File:t8-p2-asuka-ws2,1,1,1,2,1+4,1,3+4.mp4
-ws2,1,1,3;m, h, m, m;18, 10, 8, 10;i13~14, ,i21;;+11a (+1);;* Balcony Break;bbr;Asuka-ws2,1,1,3;10 Hit Combo 3;r;;File:t8-p2-asuka-ws2,1,1,3.mp4
+* Continues into 10 strings";;;Asuka-ws2,1;;r21;;
+ws2,1,1;m, h, m;18, 10, 8;i13~14, ,;-23;-12;;;;;Asuka-ws2,1,1;3rd Hit;r;;
+ws2,1,1;m, h, m;18, 10, 8;i13~14, ,;-23;-12;;;;;Asuka-ws2,1,1;3rd Hit (2);r;;
+ws2,1,1,1;m, h, m, h;18, 10, 8, 8;i13~14, ,;-25;-14;;;;;Asuka-ws2,1,1,1;4th Hit;r;;
+ws2,1,1,1;m, h, m, h;18, 10, 8, 8;i13~14, ,;-25;-14;;;;;Asuka-ws2,1,1,1;4th Hit (2);r;;
+ws2,1,1,1,2;m, h, m, h, m;18, 10, 8, 8, 6;i13~14, ,;-11;+0;;;;;Asuka-ws2,1,1,1,2;5th Hit;r;;
+ws2,1,1,1,2;m, h, m, h, m;18, 10, 8, 8, 6;i13~14, ,;-11;+0;;;;;Asuka-ws2,1,1,1,2;5th Hit (2);r;;
+ws2,1,1,1,2,1;m, h, m, h, m, sm;18, 10, 8, 8, 6, 5;i13~14, ,;-10;+1;;;;;Asuka-ws2,1,1,1,2,1;6th Hit;r;;
+ws2,1,1,1,2,1,4;m, h, m, h, m, sm, m;18, 10, 8, 8, 6, 5, 7;i13~14, ,;-16;-6;;;;;Asuka-ws2,1,1,1,2,1,4;7th Hit;r;;
+ws2,1,1,1,2,1,4,3;m, h, m, h, m, sm, m, l;18, 10, 8, 8, 6, 5, 7, 7;i13~14, ,;-25;-9;;;;;Asuka-ws2,1,1,1,2,1,4,3;8th Hit;r;;
+ws2,1,1,1,2,1,4,3,3+4;m, h, m, h, m, sm, m, l, m,m;18, 10, 8, 8, 6, 5, 7, 7, 25,25;i13~14, ,;-11;KND;;;;;Asuka-ws2,1,1,1,2,1,4,3,3+4;10 Hit Combo 1;r;;File:t8-p2-asuka-ws2,1,1,1,2,1,4,3,3+4.mp4
+ws2,1,1,1,2,1+4;m, h, m, h, m, sll,h;18, 10, 8, 8, 6, 7,5;i13~14, ,;-33;-7;;;;;Asuka-ws2,1,1,1,2,1+4;6th & 7th Hit (2);r;;
+ws2,1,1,1,2,1+4,1;m, h, m, h, m, sll,h, h;18, 10, 8, 8, 6, 7,5, 6;i13~14, ,;-10;-43;;;;;Asuka-ws2,1,1,1,2,1+4,1;8th Hit (2);r;;
+ws2,1,1,1,2,1+4,1,3+4;m, h, m, h, m, sll,h, h, l,m;18, 10, 8, 8, 6, 7,5, 6, 5,24;i13~14, ,;-43;LNC;;;;;Asuka-ws2,1,1,1,2,1+4,1,3+4;10 Hit Combo 2;r;;File:t8-p2-asuka-ws2,1,1,1,2,1+4,1,3+4.mp4
+ws2,1,1,3;m, h, m, m;18, 10, 8, 10;i13~14, ,i21;;+11a (+1);;* Balcony Break;bbr;;Asuka-ws2,1,1,3;10 Hit Combo 3;r;;File:t8-p2-asuka-ws2,1,1,3.mp4
 ws2,1+2;m, t;18, 8;i13~14, i24~25;-5;+17;;"* Combo from 1st hit with 3f delay
 * Move can be delayed 2f
 * Links to Destabilizer (f+1+3_f+2+4) extensions on hit 
-* +9 on BT hit";;Asuka-ws2,1+2;Kohaku;r25;;File:t8-p2-asuka-ws2,1+2.mp4
+* +9 on BT hit";;Destabilizer f+1+3_f+2+4 extensions;Asuka-ws2,1+2;Kohaku;r25;;File:t8-p2-asuka-ws2,1+2.mp4
 ws3;m;20;i18~19;-16;+35a (+25);;"Tornado
-fs18~40";trn fs18~40;Asuka-ws3;Moon Scent;r34;;File:t8-p2-asuka-ws3.mp4
-ws4;m;15;i11~12;-3;+8;;Can hit grounded while up-close and off-axis;;Asuka-ws4;Toe Smash;r21;;File:t8-p2-asuka-ws4.mp4
+fs18~40";trn fs18~40;;Asuka-ws3;Moon Scent;r34;;File:t8-p2-asuka-ws3.mp4
+ws4;m;15;i11~12;-3;+8;;Can hit grounded while up-close and off-axis;;;Asuka-ws4;Toe Smash;r21;;File:t8-p2-asuka-ws4.mp4
 ws1+2;m;20;i21;-2;+13g +25w;+14 +63a;"* Wall Crush +25g on hit
 
 
 * Elbow
-* Cancel to r18 FC with D";wc elb;Asuka-ws1+2;Sudare Nagashi;r27;;File:t8-p2-asuka-ws1+2.mp4
+* Cancel to r18 FC with D";wc elb;FC;Asuka-ws1+2;Sudare Nagashi;r27;;File:t8-p2-asuka-ws1+2.mp4
 SS.2;m;23;i13~14;-13;+13a (+4);;"* Heat Engager
 
 * Heat Dash +5, +36a (+26)
 
 * Gain NWG on Heat activation
-* Balcony break on airborne hit";he;Asuka-SS.2;Mist Palm Thrust;r31;;File:t8-p2-asuka-ss.2.mp4
-SS.4;h;18;i17~21;-6~-2;+7~+11;+30a;;;Asuka-SS.4;Camellia;r21;;File:t8-p2-asuka-ss.4.mp4
+* Balcony break on airborne hit";he;;Asuka-SS.2;Mist Palm Thrust;r31;;File:t8-p2-asuka-ss.2.mp4
+SS.4;h;18;i17~21;-6~-2;+7~+11;+30a;;;;Asuka-SS.4;Camellia;r21;;File:t8-p2-asuka-ss.4.mp4
 FC.3+4;m,m;10,10;i21~22 i9~10;-6;+5c;;"Transition to r22 FC with D
 &lt;div class=&quot;plainlist&quot;&gt;
 * Low crush 5~19
 * fs20~22&lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
 * js5~19
-* fs20~22&lt;/div&gt;";Asuka-FC.3+4;;r24;;
+* fs20~22&lt;/div&gt;";FC;Asuka-FC.3+4;;r24;;
 FC.df+2;L;10;i16~17;-11;+0;+25g;"* Only i17 or faster guaranteed on CH
-High crush 1~";cs1~;Asuka-FC.df+2;Grace;r29 FC;;File:t8-p2-asuka-fc.df+2.mp4
-FC.df+3;m;20;i17;-9;+34a (+26);;Balcony Break;bbr;Asuka-FC.df+3;Minazuki;r31;;File:t8-p2-asuka-fc.df+3.mp4
+High crush 1~";cs1~;FC;Asuka-FC.df+2;Grace;r29 FC;;File:t8-p2-asuka-fc.df+2.mp4
+FC.df+3;m;20;i17;-9;+34a (+26);;Balcony Break;bbr;;Asuka-FC.df+3;Minazuki;r31;;File:t8-p2-asuka-fc.df+3.mp4
 (Back to wall).b,b,UB;m;21;i39~41;+4c~+6c;+22a;;"&lt;div class=&quot;plainlist&quot;&gt;
 * fs5~13
 * Low crush 14~33
 * fs34~36&lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
 * fs5~13
 * js14~33
-* fs34~36&lt;/div&gt;";Asuka-(Back to wall).b,b,UB;[[Wall Jump Attack]];r26;;
+* fs34~36&lt;/div&gt;";;Asuka-(Back to wall).b,b,UB;[[Wall Jump Attack]];r26;;
 DST.2;m;20;i19;-3;+8a;;"* Heat Engager
 
 * Heat Dash +5, +36a (+26)
@@ -380,13 +380,13 @@ DST.2;m;20;i19;-3;+8a;;"* Heat Engager
 * Balcony Break
 * Elbow
 * Gain NWG on Heat Activation
-* Chip damage on block";he bbr elb chp;Asuka-DST.2;Compulsory Reform;r36;;File:t8-p2-asuka-dst.2.mp4
-DST.4;l;19;i19;-14;+11a;;;;Asuka-DST.4;Inescapable Tirade;r37;;File:t8-p2-asuka-dst.4.mp4
+* Chip damage on block";he bbr elb chp;;Asuka-DST.2;Compulsory Reform;r36;;File:t8-p2-asuka-dst.2.mp4
+DST.4;l;19;i19;-14;+11a;;;;;Asuka-DST.4;Inescapable Tirade;r37;;File:t8-p2-asuka-dst.4.mp4
 NWG.f,F+1+2;M;24;i19~20;+2;+67a (+51);;"* Tornado
 * Chip damage on block
 * Consumes NWG
 * During Heat, remaining Heat is consumed
-* Grounded hit can be inconsistent sometimes";trn chp;Asuka-NWG.f,F+1+2;Tenjin Festival Upward Strike;r35;;File:t8-p2-asuka-nwg.f,f+1+2.mp4
+* Grounded hit can be inconsistent sometimes";trn chp;;Asuka-NWG.f,F+1+2;Tenjin Festival Upward Strike;r35;;File:t8-p2-asuka-nwg.f,f+1+2.mp4
 NWG.f,f,F+1+2;h;36;i17~18;+11g;+66a (+50);;"* Tornado
 * Homing
 * Balcony Break
@@ -395,46 +395,46 @@ NWG.f,f,F+1+2;h;36;i17~18;+11g;+66a (+50);;"* Tornado
 
 * Chip damage on block
 * Consumes NWG
-* During Heat, remaining Heat is consumed";trn hom bbr wc chp;Asuka-NWG.f,f,F+1+2;Aizen Festival Swing;r33;;File:t8-p2-asuka-nwg.f,f,f+1+2.mp4
+* During Heat, remaining Heat is consumed";trn hom bbr wc chp;;Asuka-NWG.f,f,F+1+2;Aizen Festival Swing;r33;;File:t8-p2-asuka-nwg.f,f,f+1+2.mp4
 NWG.u+1+2;M;24;i31~32;+8~+9;+18a;;"* Spike
 * Chip damage when guarded
 * Consumes Naniwa Gusto
 * During Heat, remaining Heat is consumed
-Low crush 9~31";spk chp js9~31;Asuka-NWG.u+1+2;Sumiyoshi Festival Plunge;r40;;File:t8-p2-asuka-nwg.u+1+2.mp4
+Low crush 9~31";spk chp js9~31;;Asuka-NWG.u+1+2;Sumiyoshi Festival Plunge;r40;;File:t8-p2-asuka-nwg.u+1+2.mp4
 Tackle.2,1,2,1;;5,5,5,10;;+3c;+0d;;"* Unbreakable unless reversed
 * only 1st and 4th hits can be blocked
 * 1 to defend left side (against right punch)
 * 2 to defend right side (against left punch)
 * 1, 2 or 1+2 to defend tackle from behind
-* Does not consume CH state on hit";;Asuka-Tackle.2,1,2,1;Eternal Punishment;;;File:t8-p2-asuka-tackle.2,1,2,1.mp4
+* Does not consume CH state on hit";;;Asuka-Tackle.2,1,2,1;Eternal Punishment;;;File:t8-p2-asuka-tackle.2,1,2,1.mp4
 hFC.1;sl;5;i10;-5;+6;;"* Transition to Standing with f
-High crush 1~";cs1~;Asuka-hFC.1;Crouch Jab;r24 FC;;
-hFC.2;sl;8;i11;-4;+7;;High crush 1~;cs1~;Asuka-hFC.2;Crouch Straight;r23 FC;;
-hFC.3;L;10;i16;-17;-6;;High crush 1~;cs1~;Asuka-hFC.3;Crouch Spin Kick;r36 FC;;
-hFC.4;l;6;i12;-15;-4;;High crush 1~;cs1~;Asuka-hFC.4;Crouch Shin Kick;r34 FC;;
+High crush 1~";cs1~;FC;Asuka-hFC.1;Crouch Jab;r24 FC;;
+hFC.2;sl;8;i11;-4;+7;;High crush 1~;cs1~;FC;Asuka-hFC.2;Crouch Straight;r23 FC;;
+hFC.3;L;10;i16;-17;-6;;High crush 1~;cs1~;FC;Asuka-hFC.3;Crouch Spin Kick;r36 FC;;
+hFC.4;l;6;i12;-15;-4;;High crush 1~;cs1~;FC;Asuka-hFC.4;Crouch Shin Kick;r34 FC;;
 1+3;t;35;i12~14;-2;+0d;;"* Homing
 * Floor Break
-* Throw break 1 or 2";hom fbr;Asuka-1+3;Aiki Nage;r25;;File:t8-p2-asuka-1+3.mp4
+* Throw break 1 or 2";hom fbr;;Asuka-1+3;Aiki Nage;r25;;File:t8-p2-asuka-1+3.mp4
 2+4;t;35;i12~14;-2;+0d;;"* Homing
 * Throw break 1 or 2
 * Side switch on hit
-* Opponent recovers FDFA on hit";hom;Asuka-2+4;Katanuki;r25;;File:t8-p2-asuka-2+4.mp4
+* Opponent recovers FDFA on hit";hom;;Asuka-2+4;Katanuki;r25;;File:t8-p2-asuka-2+4.mp4
 Back throw;t;50;;;+7d;;"* Unbreakable
 * Side switch on hit
-* Opponent recovers FDFA on hit";;Asuka-Back throw;Twisted Limbs;;;
+* Opponent recovers FDFA on hit";;;Asuka-Back throw;Twisted Limbs;;;
 FC.db+1+2;t;15,15,15;i11;-6;+56a (+28);;"* Throw break 1+2
 * Side switch on hit
 * 2nd damage on landing
-* 3rd damage without tech roll";;Asuka-FC.db+1+2;Falling Rain;r26;;File:t8-p2-asuka-fc.db+1+2.mp4
+* 3rd damage without tech roll";;;Asuka-FC.db+1+2;Falling Rain;r26;;File:t8-p2-asuka-fc.db+1+2.mp4
 Left throw;t;40;;-3;-3d;;"* Throw break 1
-* Opponent recovers FDFT on hit";;Asuka-Left Throw;Cloud Taste;;;
+* Opponent recovers FDFT on hit";;;Asuka-Left Throw;Cloud Taste;;;
 Right throw;t;40;;-3;+0d;;"* Throw break 2
 * Side switch on hit
-* Opponent recovers FUFA on hit";;Asuka-Right Throw;Wind Wheel;;;
+* Opponent recovers FUFA on hit";;;Asuka-Right Throw;Wind Wheel;;;
 df+2+3;t;40;i12;-6;-6d;;"* Floor Break
 * Throw break 2
 * Opponent recovers off-axis FUFT on hit
-* Can side switch on hit";fbr;Asuka-df+2+3;White Mountain;r27;;File:t8-p2-asuka-df+2+3.mp4
-f+1+3;t;0;i19~20;;+17;;;;Asuka-f+1+3;Destabilizer (DST);r26;;File:t8-p2-asuka-f+1+3.mp4
+* Can side switch on hit";fbr;;Asuka-df+2+3;White Mountain;r27;;File:t8-p2-asuka-df+2+3.mp4
+f+1+3;t;0;i19~20;;+17;;;;;Asuka-f+1+3;Destabilizer (DST);r26;;File:t8-p2-asuka-f+1+3.mp4
 uf+1+2;t;40;i12;-3;+0d;;"* Throw break 1+2
-* Opponent recovers FUFA on hit";;Asuka-uf+1+2;Cherry Blossom;r27;;File:t8-p2-asuka-uf+1+2.mp4
+* Opponent recovers FUFA on hit";;;Asuka-uf+1+2;Cherry Blossom;r27;;File:t8-p2-asuka-uf+1+2.mp4
