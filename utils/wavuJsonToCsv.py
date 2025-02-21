@@ -47,7 +47,7 @@ def getTransitions(move) :
     if recoveryValue :
         splitted = recoveryValue.split("/")
         for recovery in splitted :
-            if not re.match(r'^[rs]\??$', recovery) and not re.match(r'^[irt]?\d', recovery) and not re.match(r'^js?\d?', recovery) and not re.match(r'^a?s', recovery) and not recovery == "ws" and not recovery == "HEAT" :
+            if not re.match(r'^[rs]\??$', recovery) and not re.match(r'^[irt]?\d', recovery) and not re.match(r'^js?\d?', recovery) and not re.match(r'^a?s', recovery) and not recovery == "ws" and not recovery == "HEAT" and not recovery == "H" :
                 filtered.append("FC" if recovery == "rFC" or recovery == "hFC" else recovery)
     if len(filtered) > 0 :
         filtered = [re.sub(r'[(),]', '', s) for s in filtered]
