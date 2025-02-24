@@ -8,6 +8,7 @@ import {
 import { Link, Outlet, type ShouldRevalidateFunction } from '@remix-run/react'
 import { ContentContainer } from '~/components/ContentContainer'
 import { AppErrorBoundary } from '~/components/ErrorBoundary'
+import tekkenDocsLogoIcon from '~/images/logo/tekkendocs-logo-icon.svg'
 import {
   facebooklink,
   githubLink,
@@ -30,7 +31,7 @@ const MainLayoutTemplate = ({ children }: MainLayoutTemplateProps) => {
           <div className="grid grid-cols-[1fr_auto_1fr] items-center justify-between py-1">
             <Link to="/">
               <img
-                src="/logo-128.png"
+                src={tekkenDocsLogoIcon}
                 height="32px"
                 width="32px"
                 className="object-contain"
