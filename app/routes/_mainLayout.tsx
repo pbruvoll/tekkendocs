@@ -32,9 +32,7 @@ const MainLayoutTemplate = ({ children }: MainLayoutTemplateProps) => {
             <Link to="/">
               <img
                 src={tekkenDocsLogoIcon}
-                height="32px"
-                width="32px"
-                className="object-contain"
+                className="aspect-[0.76] h-[32px]"
                 alt="home"
               />
             </Link>

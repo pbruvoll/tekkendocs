@@ -17,14 +17,12 @@ import {
   useRouteError,
 } from '@remix-run/react'
 import { captureRemixErrorBoundaryError } from '@sentry/remix'
-import stylesUrl from '~/global.css?url'
 import tailwindStyleSheetUrl from './tailwind.css?url'
 import { getCacheControlHeaders } from './utils/headerUtils'
 
 export const links: LinksFunction = () => {
   return [
     { rel: 'stylesheet', href: tailwindStyleSheetUrl },
-    { rel: 'stylesheet', href: stylesUrl },
     { rel: 'stylesheet', href: radixStyles },
   ].filter(Boolean)
 }
@@ -73,13 +71,13 @@ export default function App() {
           rel="icon"
           type="image/png"
           sizes="32x32"
-          href="/favicon-32x32.png"
+          href="/favicon-32x32.png?v=2"
         />
         <link
           rel="icon"
           type="image/png"
           sizes="16x16"
-          href="/favicon-16x16.png"
+          href="/favicon-16x16.png?v=2"
         />
         <link rel="icon" sizes="512x512" href="/logo-512.png" />
         <link rel="icon" sizes="256x256" href="/logo-256.png" />

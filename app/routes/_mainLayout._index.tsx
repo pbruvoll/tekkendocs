@@ -109,8 +109,10 @@ export default function Index() {
         </Link>
       </div>
 
-      <Heading as="h2" mt="7" mb="2" size="5">
-        <Link to="t8">Tekken 8</Link>
+      <Heading as="h2" mt="7" mb="4" size="5">
+        <Link to="t8">
+          <span className="sr-only">Tekken 8 </span>Characters
+        </Link>
       </Heading>
 
       <CharacterGrid
