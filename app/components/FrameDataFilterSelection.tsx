@@ -138,7 +138,7 @@ export const FrameDataFilterSelection = ({
               }
             }}
           >
-            Pluss
+            Plus
           </Button>
           <Button
             variant={blockFrameMax === -10 ? 'solid' : 'outline'}
