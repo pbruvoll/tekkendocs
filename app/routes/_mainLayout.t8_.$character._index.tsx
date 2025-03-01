@@ -102,7 +102,7 @@ export const meta: MetaFunction = ({ data, params, matches, location }) => {
     description,
     title,
     url: '/t8/' + characterId,
-    image: { url: `/t8/avatars/${characterId}-512.png` },
+    image: { url: `/t8/avatars/${characterId}-brand-512.png` },
   })
 }
 
