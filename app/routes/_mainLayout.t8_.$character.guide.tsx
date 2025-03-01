@@ -40,6 +40,8 @@ import { getCacheControlHeaders } from '~/utils/headerUtils'
 import { generateMetaTags } from '~/utils/seoUtils'
 import { sheetToSections } from '~/utils/sheetUtils.server'
 import { t8AvatarMap } from '~/utils/t8AvatarMap'
+import { t8GuideImgMap } from '~/utils/t8GuideImgMap'
+import { t8GuideImgSmallMap } from '~/utils/t8GuideImgSmallMap'
 
 const navData: NavLinkInfo[] = [
   { link: '../', displayName: 'Frame data' },
@@ -129,7 +131,9 @@ export const meta: MetaFunction<typeof loader> = ({
       url:
         characterId === 'dragunov'
           ? `/t8/avatars/${characterId}-512.png`
-          : `/t8/guides/${characterId}.jpg`,
+          : characterId === 'lili'
+            ? `/t8/guides/${characterId}-1200.png`
+            : `/t8/guides/${characterId}.jpg`,
     },
     url: `/t8/${characterId}/guide`,
   })
@@ -216,6 +220,20 @@ export default function Index() {
       <h1 className="sr-only">
         {characterId} {gameNameMap[game]} Guide
       </h1>
+      {characterId === 'lili' && (
+        <>
+          <img
+            src={t8GuideImgSmallMap['lili']}
+            className="m-2 mx-auto aspect-[1.77] w-full max-w-4xl md:hidden"
+            alt=""
+          ></img>
+          <img
+            src={t8GuideImgMap['lili']}
+            className="m-2 mx-auto aspect-[1.77] w-full max-w-4xl max-md:hidden"
+            alt=""
+          ></img>
+        </>
+      )}
       <ContentContainer enableBottomPadding>
         {!!authors?.length && (
           <div className="mt-4">
