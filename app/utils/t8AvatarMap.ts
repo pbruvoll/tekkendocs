@@ -115,8 +115,8 @@ export const t8AvatarMap: Record<string, string> = {
 
 export const t8AvatarBrandMap: Record<string, string> = {
   alisa: alisaBrand,
-  asuka : asukaBrand,
-  azucena : azucenaBrand,
+  asuka: asukaBrand,
+  azucena: azucenaBrand,
   claudio: claudioBrand,
   clive: cliveBrand,
   bryan: bryanBrand,
@@ -133,7 +133,7 @@ export const t8AvatarBrandMap: Record<string, string> = {
   king: kingBrand,
   kuma: kumaBrand,
   lars: larsBrand,
-  law:  lawBrand,
+  law: lawBrand,
   lee: leeBrand,
   leo: leoBrand,
   leroy: leroyBrand,

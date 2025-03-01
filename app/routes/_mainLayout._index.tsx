@@ -18,7 +18,7 @@ import type { GamePageData } from '~/types/GamePageData'
 import { getCacheControlHeaders } from '~/utils/headerUtils'
 import { generateMetaTags } from '~/utils/seoUtils'
 import { t7AvatarMap } from '~/utils/t7AvatarMap'
-import { t8AvatarBrandMap, t8AvatarMap } from '~/utils/t8AvatarMap'
+import { t8AvatarBrandMap } from '~/utils/t8AvatarMap'
 
 type LoaderData = {
   gamePageDataT7: GamePageData
