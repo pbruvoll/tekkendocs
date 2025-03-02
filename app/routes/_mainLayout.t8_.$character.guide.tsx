@@ -131,9 +131,7 @@ export const meta: MetaFunction<typeof loader> = ({
       url:
         characterId === 'dragunov'
           ? `/t8/avatars/${characterId}-512.png`
-          : characterId === 'lili'
-            ? `/t8/guides/${characterId}-1200.png`
-            : `/t8/guides/${characterId}.jpg`,
+          : `/t8/guides/${characterId}-1200.png`,
     },
     url: `/t8/${characterId}/guide`,
   })
@@ -220,20 +218,17 @@ export default function Index() {
       <h1 className="sr-only">
         {characterId} {gameNameMap[game]} Guide
       </h1>
-      {characterId === 'lili' && (
-        <>
-          <img
-            src={t8GuideImgSmallMap['lili']}
-            className="m-2 mx-auto aspect-[1.77] w-full max-w-4xl md:hidden"
-            alt=""
-          ></img>
-          <img
-            src={t8GuideImgMap['lili']}
-            className="m-2 mx-auto aspect-[1.77] w-full max-w-4xl max-md:hidden"
-            alt=""
-          ></img>
-        </>
-      )}
+      <img
+        src={t8GuideImgSmallMap[characterId]}
+        className="m-2 mx-auto aspect-[1.77] w-full max-w-4xl md:hidden"
+        alt=""
+      ></img>
+      <img
+        src={t8GuideImgMap[characterId]}
+        className="m-2 mx-auto aspect-[1.77] w-full max-w-4xl max-md:hidden"
+        alt=""
+      ></img>
+
       <ContentContainer enableBottomPadding>
         {!!authors?.length && (
           <div className="mt-4">
