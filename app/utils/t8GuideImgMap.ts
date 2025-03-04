@@ -10,6 +10,7 @@ import xiaoyu from '~/images/t8/guides/xiaoyu-1200.webp'
 export const t8GuideImgMap: Record<string, string> = {
   lili,
   asuka,
+  bryan,
   claudio,
   jin,
   lidia,
