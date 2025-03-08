@@ -15,6 +15,14 @@ export const getFilterFromParams = (
       searchParams,
       filterKey.HitLevel,
     ),
+    startupFrameMin: getSearchParamNumber(
+      searchParams,
+      filterKey.StartupFrameMin,
+    ),
+    startupFrameMax: getSearchParamNumber(
+      searchParams,
+      filterKey.StartupFrameMax,
+    ),
     blockFrameMin: getSearchParamNumber(searchParams, filterKey.BlockFrameMin),
     blockFrameMax: getSearchParamNumber(searchParams, filterKey.BlockFrameMax),
     hitFrameMin: getSearchParamNumber(searchParams, filterKey.HitFrameMin),
