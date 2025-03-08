@@ -27,6 +27,8 @@ export const FrameDataFilterSelection = ({
 }: FrameDataFilterSectionProps) => {
   const {
     hitLevels,
+    startupFrameMin,
+    startupFrameMax,
     blockFrameMin,
     blockFrameMax,
     hitFrameMin,
@@ -224,6 +226,26 @@ export const FrameDataFilterSelection = ({
             if (values[1] === undefined) {
               removeFilterValue(filterKey.HitFrameMax)
             } else setFilterValue(filterKey.HitFrameMax, values[1].toString())
+          }}
+        />
+      </section>
+      <section className="flex flex-col gap-3">
+        <Text as="div" size="2" mb="1" weight="bold">
+          Startup frames
+        </Text>
+        <RangeSlider
+          values={[startupFrameMin, startupFrameMax]}
+          max={30}
+          min={6}
+          onValuesCommit={values => {
+            if (values[0] === undefined) {
+              removeFilterValue(filterKey.StartupFrameMin)
+            } else
+              setFilterValue(filterKey.StartupFrameMin, values[0].toString())
+            if (values[1] === undefined) {
+              removeFilterValue(filterKey.StartupFrameMax)
+            } else
+              setFilterValue(filterKey.StartupFrameMax, values[1].toString())
           }}
         />
       </section>

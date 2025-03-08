@@ -2,6 +2,8 @@ import { type HitLevel } from './FilterTypes'
 
 export type MoveFilter = {
   hitLevels?: HitLevel[]
+  startupFrameMin?: number
+  startupFrameMax?: number
   blockFrameMin?: number
   blockFrameMax?: number
   hitFrameMin?: number

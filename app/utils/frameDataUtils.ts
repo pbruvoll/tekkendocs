@@ -209,6 +209,28 @@ export const filterRows = (
     })
   }
 
+  if (filter.startupFrameMax !== undefined) {
+    const startupFrameMax = filter.startupFrameMax
+    filterFuncs.push((row: string[]) => {
+      const startupFrameStr = row[3]
+      if (!startupFrameStr) {
+        return false
+      }
+      return parseInt(startupFrameStr) <= startupFrameMax
+    })
+  }
+
+  if (filter.startupFrameMin !== undefined) {
+    const startupFrameMin = filter.startupFrameMin
+    filterFuncs.push((row: string[]) => {
+      const startupFrameStr = row[3]
+      if (!startupFrameStr) {
+        return false
+      }
+      return parseInt(startupFrameStr) >= startupFrameMin
+    })
+  }
+
   if (filter.blockFrameMax !== undefined) {
     const blockFrameMax = filter.blockFrameMax
     filterFuncs.push((row: string[]) => {
@@ -309,6 +331,28 @@ export const filterMoves = (moves: Move[], filter: MoveFilter | undefined) => {
     filterFuncs.push((move: Move) => {
       const lastHitLevel = move.hitLevel?.split(', ').pop()?.[0]?.toLowerCase()
       return !!filter.hitLevels?.includes(lastHitLevel as HitLevel)
+    })
+  }
+
+  if (filter.startupFrameMax !== undefined) {
+    const startupFrameMax = filter.startupFrameMax
+    filterFuncs.push((move: Move) => {
+      const startupFrameStr = move.startup
+      if (!startupFrameStr) {
+        return false
+      }
+      return parseInt(startupFrameStr.replace("i", "")) <= startupFrameMax
+    })
+  }
+
+  if (filter.startupFrameMin !== undefined) {
+    const startupFrameMin = filter.startupFrameMin
+    filterFuncs.push((move: Move) => {
+      const startupFrameStr = move.startup
+      if (!startupFrameStr) {
+        return false
+      }
+      return parseInt(startupFrameStr.replace("i", "")) >= startupFrameMin
     })
   }
 
