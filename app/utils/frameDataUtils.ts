@@ -341,7 +341,7 @@ export const filterMoves = (moves: Move[], filter: MoveFilter | undefined) => {
       if (!startupFrameStr) {
         return false
       }
-      return parseInt(startupFrameStr.replace("i", "")) <= startupFrameMax
+      return parseInt(startupFrameStr.replace('i', '')) <= startupFrameMax
     })
   }
 
@@ -352,7 +352,7 @@ export const filterMoves = (moves: Move[], filter: MoveFilter | undefined) => {
       if (!startupFrameStr) {
         return false
       }
-      return parseInt(startupFrameStr.replace("i", "")) >= startupFrameMin
+      return parseInt(startupFrameStr.replace('i', '')) >= startupFrameMin
     })
   }
 
