@@ -102,6 +102,7 @@ const characterInfoListT7: CharacterInfo[] = charsT7.map(char => ({
 export const characterGuideAuthors: Record<Game, Record<string, string>> = {
   T8: {
     asuka: 'Fergus',
+    azucena: 'Koenji',
     bryan: 'Ty',
     claudio: 'Tetsu',
     jin: 'Bok Dibi',
