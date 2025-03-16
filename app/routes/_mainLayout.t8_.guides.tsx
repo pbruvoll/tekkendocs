@@ -18,8 +18,8 @@ export const meta: MetaFunction = ({ matches }) => {
     matches,
     title: 'Tekken Guides | TekkenDocs',
     description:
-      'Guides for Tekken 8 characters. The guides are written by high skilled players and include key moves, combos, punishhers, frametraps defensive tips and more',
-    image: { url: `/images/tekkendocs-og-image-v2.png` },
+      'Guides for Tekken 8 characters. The guides are written by high skilled players and include key moves, combos, punishers, frametraps, defensive tips and more',
+    image: { url: `/t8/pages/character-guides.png` },
     url: `/t8/guides`,
   })
 }
