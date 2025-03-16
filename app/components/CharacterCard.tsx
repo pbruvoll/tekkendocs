@@ -1,7 +1,9 @@
 import { Card, Inset } from '@radix-ui/themes'
 import { Link } from '@remix-run/react'
+import { cx } from 'class-variance-authority'
 
 export type CharacterCard2Props = {
+  size?: 'medium' | 'large'
   url: string
   name: string
   author?: string
@@ -11,6 +13,7 @@ export type CharacterCard2Props = {
 export const CharacterCard2 = ({
   url,
   name,
+  size,
   imgUrl,
   author,
 }: CharacterCard2Props) => {
@@ -21,8 +24,12 @@ export const CharacterCard2 = ({
           <img
             src={imgUrl}
             alt={name}
-            className="h-full w-full  
-              rounded object-contain"
+            className={cx(
+              'h-full w-full rounded',
+              size === 'large'
+                ? 'aspect-[1.4] object-cover object-[80%_50%]'
+                : 'object-contain',
+            )}
           />
         </Inset>
         <Inset clip="padding-box" side="x">

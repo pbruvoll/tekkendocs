@@ -7,7 +7,7 @@ import {
 } from '~/services/staticDataService'
 import { getCacheControlHeaders } from '~/utils/headerUtils'
 import { generateMetaTags } from '~/utils/seoUtils'
-import { t8AvatarMap } from '~/utils/t8AvatarMap'
+import { t8GuideImgSmallMap } from '~/utils/t8GuideImgSmallMap'
 
 export const headers: HeadersFunction = () => ({
   ...getCacheControlHeaders({ seconds: 60 * 5 }),
@@ -44,10 +44,11 @@ export default function () {
           characterCards={characterInfoList
             .filter(({ id }) => characterGuideAuthors['T8'][id])
             .map(({ id, displayName }) => {
-              const imgSrc = t8AvatarMap[id]
+              const imgSrc = t8GuideImgSmallMap[id]
               return {
                 name: displayName,
                 author: characterGuideAuthors['T8'][id],
+                size: 'large',
                 imgSrc,
                 url: '/t8/' + id + '/guide',
               }

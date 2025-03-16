@@ -27,11 +27,11 @@ export const CharacterGrid = ({ characterCards, size }: CharacterGridProps) => {
         className={cx(
           'grid gap-x-1 gap-y-1',
           size === 'large'
-            ? 'grid-cols-3 xs:grid-cols-4 xs:gap-x-2 xs:gap-y-3 sm:grid-cols-5 md:grid-cols-6'
+            ? 'grid-cols-3 gap-x-2 gap-y-2 xs:grid-cols-4 xs:gap-x-3 xs:gap-y-4 sm:grid-cols-5 md:grid-cols-6'
             : 'grid-cols-4 xs:grid-cols-5 xs:gap-x-2 xs:gap-y-3 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-9',
         )}
       >
-        {characterCards.map(({ name, url, imgSrc, author }, index) => {
+        {characterCards.map(({ name, url, size, imgSrc, author }, index) => {
           return (
             <motion.div
               variants={{
@@ -54,6 +54,7 @@ export const CharacterGrid = ({ characterCards, size }: CharacterGridProps) => {
               <li className="cursor-pointer" key={name}>
                 <CharacterCard2
                   imgUrl={imgSrc}
+                  size={size}
                   name={name}
                   url={url}
                   author={author}
