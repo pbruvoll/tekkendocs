@@ -10,28 +10,36 @@ H.BT.2+3;l,M,M,M;15,5,5,20;i16 i27~28 i6~8 i20~22;-8;+23a (+5);;"* Heat Smash
 * Homing
 * Balcony Break
 High crush 4~? Low crush 25~?";hs hom bbr cs4~? js25~?;BT;Lili-H.BT.2+3;Rosa Giganteia Mezzo Forte;BT;;
-H.RAB.3;L;20;i20~21;-13;+24a;+70a (+54);"* Homing
+H.RAB.2;m;24;i20;-9;+39d (-19);;"* Heat Engager
+
+* Heat Dash +5, +36a (+26) 
+
+* Balcony Break
+* Partially consumes remaining Heat Time";he bbr;;Lili-H.RAB.2;Rabbit Song;;;File:t8-p2-lili-b+3,2.mp4
+H.RAB.3;L;22;i20~21;-13;+24a;+70a (+54);"* Homing
+* Tornado on CH
 * Partially consumes remaining Heat time
 High crush 6~";hom cs6~;FC;Lili-H.RAB.3;Rabbit Dance (Heat);FC;;
+H.RAB.4;m;36;i23~29;+7~+13;+20~26a (-6~+0);;"* Balcony Break
+* Partially consumes remaining Heat Time
+Low crush 15~";bbr js15~;;Lili-H.RAB.4;Rabbit Piercing Thorn (Heat);;;
 H.b+3*;;;;;;;"* Transitions to Feisty Rabbit Deuxime
 * All RAB moves are available
 * Partially restores remaining Heat Time
 * Transition to DEW with F
-Low crush 10";js10;DEW;Lili-H.b+3*;Feisty Rabbit Deuxiéme;;;File:t8-p2-lili-h.b+3s.mp4
-H.f,F+3+4 (etc.);m;36;i19;+4 (+9w);+20a (-6);;"* All moves named Piercing Thorn share these properties when in Heat
-* H.RAB4 (js15~)
-* Balcony Break
-* Chip damage on block [16]
+Low crush 10";js10;DEW,RAB;Lili-H.b+3*;Feisty Rabbit Deuxiéme;RAB;;File:t8-p2-lili-h.b+3s.mp4
+H.f,F+3+4;m;36;i19~25;+7~+13;+20~26a (-6~+0);;"* Balcony Break
+* 16 chip damage on block
 * Partially consumes remaining Heat time
-Low crush";bbr chp js;;Lili-H.f,F+3+4;Piercing Thorn (Heat);;;
-H.2+3;h,t;55;i23;+9;-3d;;"* Heat Smash
-* Homing
-* Floor Break
-Low crush 22~";hs hom fbr js22~;BT;Lili-H.2+3;White Swan Mezzo Forte;BT;;
+Low crush";bbr js;;Lili-H.f,F+3+4;Piercing Thorn (Heat);;;
 H.2+3;h,h,m,M;15,15,15,30;i23~24 i14~15 i36~38 i9~11;+9;+20d(-15);;"* Heat Smash
 * Homing
 * Floor Break
 Low crush 22?";hs hom fbr js22?;BT;Lili-H.2+3;White Swan Mezzo Forte (Block);BT;;
+H.2+3;h,t;55;i23;+9;-3d;;"* Heat Smash
+* Homing
+* Floor Break
+Low crush 22~";hs hom fbr js22~;BT;Lili-H.2+3;White Swan Mezzo Forte;BT;;
 R.df+1+2;m,t;55+;i20;-15;+0d;;"* Rage Art
 * Removes Recoverable Health
 * Reversal Break
@@ -56,13 +64,23 @@ Power crush 8~";pc8~;;Lili-R.df+1+2;La Vie en Rose Fortissimo;r39;;
 * Chip on block [6]
 * Input can be delayed 4f
 * Move can be delayed 3f
-* Powers up in Heat: 30 damage, +2 ob, Wall Crush +7g, 13 Chip, +18a (-8) oh
+* Powers up in Heat
 * Partially consumes remaining Heat time
 &lt;div class=&quot;plainlist&quot;&gt;
 * ,Low crush 21~41
 * fs42~44&lt;/div&gt;";"bbr chp &lt;div class=&quot;plainlist&quot;&gt;
 * js21~41
 * fs42~44&lt;/div&gt;";;Lili-1,2,4;Left Right Piercing Thorn;r42;;File:t8-p2-lili-1,2,4.mp4
+H.1,2,4;h, h, m;5, 12, 30;i10, ,i29~34;+5~+10;+18~23a (-8~-3);;"* Balcony Break
+* 13 chip damage on block
+* Input can be delayed 4?f
+* Move can be delayed 3?f
+* Partially consumes remaining Heat time
+&lt;div class=&quot;plainlist&quot;&gt;
+* ,Low crush 21?~41?
+* fs42?~44?&lt;/div&gt;";"bbr &lt;div class=&quot;plainlist&quot;&gt;
+* js21?~41?
+* fs42?~44?&lt;/div&gt;";;Lili-1,2,H.4;Left Right Piercing Thorn (Heat);r42?;;
 2;h;8;i10;+0;+8;;;;;Lili-2;;r19;;
 2,3;h, L;8, 13;i10, i26;-12;-2;+6c;"* Combo from 1st hit
 ,High crush 10~45";cs10~45;;Lili-2,3;Sunrise Sunset;r32;;File:t8-p2-lili-2,3.mp4
@@ -159,7 +177,7 @@ b+1,4;m, m;16, 22;i17, i25;-11;+32a (+17);;"* Tornado
 b+2;h;15;i13;-11;+0;;;;;Lili-b+2;;;;
 b+2,1;h, m;15, 13;i13, i20;-4;+7;+9;"* Elbow
 * Combos from 1st hit
-* Transition to -4, +7, +9 BT with F
+* Transition to -4, +7, +9 BT with B
 * Transition to -4, +7, +9 DEW with F";elb;BT,DEW;Lili-b+2,1;;;;
 b+2,1,1+2;h, m, m;15, 13, 27;i13, ,i23;-12;+20a (+10);;"* Balcony Break
 * Combos from 2nd hit CH";bbr;;Lili-b+2,1,1+2;Heliotrope Corsage;;;File:t8-p2-lili-b+2,1,1+2.mp4
@@ -218,14 +236,14 @@ f,F+1+2;m;28;i18;-9;+17a (+8);;"* Homing
 * Hold to power up:
 ** 2 spins (i33 delay + i18): +12 on block, 11 chip damage
 ** 3 spins (i56 delay + i18): Unblockable, 50 damage";hom bbr;;Lili-f,F+1+2;Lashing Iris;;;File:t8-p2-lili-f,f+1+2.mp4
-f,F+3+4;m;30;i19;-2 / +4 H +7wc;+4a (-5);;"* Balcony Break
+f,F+3+4;m;30;i19;-2;+4a (-5);;"* Balcony Break
 * Chip damage on block [9]
-* Powers up in Heat: 36 damage, +4 ob, Wall Crush +7g, 16 Chip, +18a (-8) oh
+* Powers up in Heat
 * Partially consumes remaining Heat time
 Low crush";bbr chp js;;Lili-f,F+3+4;Piercing Thorn;;;File:t8-p2-lili-f,f+3+4.mp4
-qcf;;;;;;;"* Transitions to Dew Glide
-* Transition to Crouch with d,DF
-* Transition to RAB with b+3 or b+4";;Crouch,RAB;Lili-qcf;Dew Glide;;;File:t8-p2-lili-qcf.mp4
+qcf;;;;;;;"* Transitions to DEW
+* Transition to FC with d,DF
+* Transition to RAB with b+3 or b+4";;FC,RAB;Lili-qcf;Dew Glide;;;File:t8-p2-lili-qcf.mp4
 uf,n,4;m;20;i23~25;-13~-11;+32a (+22);;"*
 Low crush";js;;Lili-uf,n,4;Delayed Rising Toe Kick;;;File:t8-p2-lili-uf,n,4.mp4
 f,f,F+3;m;30;i23;+3;+20a (+10);;"* Balcony Break
@@ -305,6 +323,11 @@ DEW.1,4;m, m;12, 30;i15, i25~31;-9;+2a (-7);;"* Balcony Break
 * Chip damage on block [9]
 * Partially consumes remaining Heat time
 Low crush 17~";bbr chp js17~;;Lili-DEW.1,4;Rose Piercing Thorn;;;File:t8-p2-lili-dew.1,4.mp4
+H.DEW.1,4;m, m;12, 36;i15, i25~31;+7~+13;+20~26a (-6~+0);;"* Balcony Break
+* Combos from 1st hit CH
+* 16 chip damage on block 
+* Partially consumes remaining Heat time
+Low crush 17~";bbr js17~;;Lili-DEW.1,H.4;Rose Piercing Thorn (Heat);;;
 DEW.2;m;13;i14;-9;+0;;* Homing;hom;;Lili-DEW.2;;;;
 DEW.2,1;m, m;13, 20;i14, i22;-13;+17d;;"* Heat Engager
 
@@ -328,16 +351,16 @@ RAB.2;m;20;i20;-9;+39d (-19);;"* Heat Engager
 
 * Balcony Break
 * Powered up during Heat: 24 damage
-* Partially consumes remaining Heat Time";he bbr;;Lili-b+3,2;Rabbit Song;;;File:t8-p2-lili-b+3,2.mp4
-RAB.3;L;20;i20;-13;+3c / +24a H;+70a (+54);"* Homing
-* Powered up during Heat: KND on normal hit
+* Partially consumes remaining Heat Time";he bbr;;Lili-RAB.2;Rabbit Song;;;File:t8-p2-lili-b+3,2.mp4
+RAB.3;L;20;i20;-13;+3c;+70a (+54);"* Homing
+* Tornado on CH
+* Powered up during Heat: 22 damage and KND on normal hit
 * Partially consumes remaining Heat Time
-High crush 6~";hom cs6~;FC;Lili-b+3,3;Rabbit Dance;FC;;File:t8-p2-lili-b+3,3.mp4
-RAB.4;m;24 (36);i23;-2 / +4 H +9wc;+4a (-5);;"* Balcony Break
-* Powered up during Heat: 
-36 damage, +4 ob, Wall Crush +9g
+High crush 6~";hom cs6~;FC;Lili-RAB.3;Rabbit Dance;FC;;File:t8-p2-lili-b+3,3.mp4
+RAB.4;m;24;i23;-2;+4a (-5);;"* Balcony Break
+* Powered up during Heat
 * Partially consumes remaining Heat Time
-Low crush 15~";bbr js15~;;Lili-b+3,4;Rabbit Piercing Thorn;;;File:t8-p2-lili-b+3,4.mp4
+Low crush 15~";bbr js15~;;Lili-RAB.4;Rabbit Piercing Thorn;;;File:t8-p2-lili-b+3,4.mp4
 (During Enemy wall stun) 1+3;t;39;i12;!;+0d;;"* Wall throw (Unbreakable)
 * Alternate input 2+4, uf+1+2";;;Lili-(During Enemy wall stun) 1+3;Larkspur;;;
 1+3;t;35;i12;-3;;;"* Throw break 1 or 2

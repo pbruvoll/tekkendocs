@@ -11,23 +11,24 @@ H.b,b,n,3+4;;;;;;;"* Consumes all of the remaining Heat time
 H.db+1+2;M;25;i30;+0;+0a (-17);;"* Tornado
 * Reversal Break
 * Balcony Break
-* Chip damage on block
+* 11 chip damage on block
+* 12 chip damage on block after absorbing an attack in power crush state
 * Consumes remaining Heat time
-Power crush 7~29";trn bbr chp pc7~29;;Heihachi-H.db+1+2;Thunderous Battering Ram;r50;;
+Power crush 7~29";trn bbr pc7~29;;Heihachi-H.db+1+2;Thunderous Battering Ram;r50;;
 H.2+3;m,m;50;i15;+10;+0d;;"* Heat Smash
 * Reversal Break
 * Floor Break
-* Chip damage on block
+* 15 chip damage on block
 * Transition to attack throw on hit
 * Transition to RAI on block only
-* Cancel RAI transition with B, +6 on block instead";hs fbr chp;RAI;Heihachi-H.2+3;Enraged Tettsui Otoshi;r36;;
+* Cancel RAI transition with B, +6 on block instead";hs fbr;RAI;Heihachi-H.2+3;Enraged Tettsui Otoshi;r36;;
 H.2+3,F;m;50;i15;+10;-2d;;"* Heat Smash
 * Reversal Break
 * Balcony Break
-* Chip damage on block
+* 15 chip damage on block
 * Transition to attack throw on hit
 * Transition to RAI on block only
-* Cancel RAI transition with B, +6 on block instead";hs bbr chp;RAI;Heihachi-H.2+3,F;Eight Thunder Kami Slayer;r36;;
+* Cancel RAI transition with B, +6 on block instead";hs bbr;RAI;Heihachi-H.2+3,F;Eight Thunder Kami Slayer;r36;;
 R.df+1+2;m,t;55+;i20;-15;+0d;;"* Rage Art
 * Removes Recoverable Health
 * Reversal Break
@@ -192,7 +193,7 @@ b+1+2;m;20;i42;-11;+23a (+13);;"* Heat Engager
 * Attack is guaranteed after a successful parry
 Parry state 5~25";he bbr ps5~25;;Heihachi-b+1+2;Heaven's Merciless Wrath;r33;;File:t8-p2-heihachi-b+1+2.mp4
 ub+2;h;25;i18~19;-6;+40d (-18);;"* Parries mid or high punches
-* ? on successful parry
+* +40d (-18) on successful parry
 * Balcony Break
 Parry state 5~12";bbr ps5~12;;Heihachi-ub+2;Skull Rupture;r33;;File:t8-p2-heihachi-ub+2.mp4
 uf+1;m;25;i24~25;-13;+14a (+5);;"* Balcony Break
@@ -425,4 +426,4 @@ uf+1+2;t;35;i12;+0;+26a (+7);;"* Balcony Break
 uf+1+4;t;30;i12 i48;-6;+28d (-30);;"* Balcony Break
 * Throw break 1+2
 * Headbutt can be reversed with input 1 or 2 or 3 or 4
-* Works on Male characters only";bbr;;Heihachi-uf+1+4;Headbutt Clash;r27;;File:t8-p2-heihachi-uf+1+4.mp4
+* Only works on Male characters and Reina";bbr;;Heihachi-uf+1+4;Headbutt Clash;r27;;File:t8-p2-heihachi-uf+1+4.mp4
