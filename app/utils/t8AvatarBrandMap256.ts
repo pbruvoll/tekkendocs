@@ -75,4 +75,3 @@ export const t8AvatarBrandMap256: Record<string, string> = {
   yoshimitsu,
   zafina,
 }
-
