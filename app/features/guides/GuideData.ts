@@ -85,4 +85,5 @@ export type GuideData = {
   defensiveTips: DefensiveTip[]
   defensiveMoves: KeyMove[]
   stances: Stance[]
+  about: Record<string, string>
 }

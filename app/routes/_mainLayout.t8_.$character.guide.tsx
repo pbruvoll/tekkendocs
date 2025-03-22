@@ -8,6 +8,7 @@ import {
 } from '@remix-run/node'
 import { useLoaderData } from '@remix-run/react'
 import invariant from 'tiny-invariant'
+import { About } from '~/components/About'
 import { Authors } from '~/components/Authors'
 import { ContentContainer } from '~/components/ContentContainer'
 import Nav, { type NavLinkInfo } from '~/components/Nav'
@@ -177,11 +178,14 @@ export default function Index() {
     defensiveTips,
     defensiveMoves,
     stances,
+    about,
   } = guideData
   const { top10Moves, notableMoves } = {
     top10Moves: keyMoves?.slice(0, 10),
     notableMoves: keyMoves?.slice(10),
   }
+
+  console.log('guideData', about)
 
   return (
     <GuideContext.Provider
@@ -228,13 +232,13 @@ export default function Index() {
         className="m-2 mx-auto aspect-[1.77] w-full max-w-4xl max-md:hidden"
         alt=""
       ></img>
-
       <ContentContainer enableBottomPadding>
         {!!authors?.length && (
           <div className="mt-4">
             <Authors authors={authors} />
           </div>
         )}
+        {about && <About about={about} />}
         <GuideNav guideData={guideData}></GuideNav>
         {introduction?.length && <Introduction sections={introduction} />}
         {(strengths?.length || weaknesses?.length) && (
