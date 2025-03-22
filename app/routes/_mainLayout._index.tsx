@@ -18,6 +18,7 @@ import type { GamePageData } from '~/types/GamePageData'
 import { getCacheControlHeaders } from '~/utils/headerUtils'
 import { generateMetaTags } from '~/utils/seoUtils'
 import { t7AvatarMap } from '~/utils/t7AvatarMap'
+import { t8AvatarBrandMap256 } from '~/utils/t8AvatarBrandMap256'
 import { t8AvatarBrandMap } from '~/utils/t8AvatarMap'
 
 type LoaderData = {
@@ -118,7 +119,7 @@ export default function Index() {
       <CharacterGrid
         characterCards={gamePageDataT8.characterInfoList.map(
           ({ id, displayName }) => {
-            const imgSrc = t8AvatarBrandMap[id]
+            const imgSrc = t8AvatarBrandMap256[id]
             return { name: displayName, imgSrc, url: '/t8/' + id }
           },
         )}
