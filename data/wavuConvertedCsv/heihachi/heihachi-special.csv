@@ -11,23 +11,24 @@ H.b,b,n,3+4;;;;;;;"* Consumes all of the remaining Heat time
 H.db+1+2;M;25;i30;+0;+0a (-17);;"* Tornado
 * Reversal Break
 * Balcony Break
-* Chip damage on block
+* 11 chip damage on block
+* 12 chip damage on block after absorbing an attack in power crush state
 * Consumes remaining Heat time
-Power crush 7~29";trn bbr chp pc7~29;;Heihachi-H.db+1+2;Thunderous Battering Ram;r50;;
+Power crush 7~29";trn bbr pc7~29;;Heihachi-H.db+1+2;Thunderous Battering Ram;r50;;
 H.2+3;m,m;50;i15;+10;+0d;;"* Heat Smash
 * Reversal Break
 * Floor Break
-* Chip damage on block
+* 15 chip damage on block
 * Transition to attack throw on hit
 * Transition to RAI on block only
-* Cancel RAI transition with B, +6 on block instead";hs fbr chp;RAI;Heihachi-H.2+3;Enraged Tettsui Otoshi;r36;;
+* Cancel RAI transition with B, +6 on block instead";hs fbr;RAI;Heihachi-H.2+3;Enraged Tettsui Otoshi;r36;;
 H.2+3,F;m;50;i15;+10;-2d;;"* Heat Smash
 * Reversal Break
 * Balcony Break
-* Chip damage on block
+* 15 chip damage on block
 * Transition to attack throw on hit
 * Transition to RAI on block only
-* Cancel RAI transition with B, +6 on block instead";hs bbr chp;RAI;Heihachi-H.2+3,F;Eight Thunder Kami Slayer;r36;;
+* Cancel RAI transition with B, +6 on block instead";hs bbr;RAI;Heihachi-H.2+3,F;Eight Thunder Kami Slayer;r36;;
 R.df+1+2;m,t;55+;i20;-15;+0d;;"* Rage Art
 * Removes Recoverable Health
 * Reversal Break
@@ -66,8 +67,9 @@ Low crush 38~61";js38~61;;Heihachi-1,b+2,1;Demon Massacre;r30;;File:t8-p2-heihac
 * Head
 * Combo from 2nd hit";spk;;Heihachi-1,b+2,2;Demon Basara;r36;;File:t8-p2-heihachi-1,b+2,2.mp4
 1,b+2,4;h, m, m;5, 17, 30;i10, ,i39;+5;+30a (+9);;"* Balcony Break
-* Chip damage on block
-Low crush 17~39";bbr chp js17~39;;Heihachi-1,b+2,4;Demon Lair;r41;;File:t8-p2-heihachi-1,b+2,4.mp4
+* 12 chip damage on block
+* 13 chip damage on block in heat
+Low crush 17~39";bbr js17~39;;Heihachi-1,b+2,4;Demon Lair;r41;;File:t8-p2-heihachi-1,b+2,4.mp4
 WAR.1,b+2,2;h, m, m;5, 17, 22;i10, ,i25~26;-13;+23a (+13);;"* Reversal Break
 * Balcony Break
 * Head
@@ -119,14 +121,19 @@ df+1,1;m, h;10, 8;i13~14, i15;-2;+4;;* Combo from 1st hit;;;Heihachi-df+1,1;Muso
 df+1,2;m, m;10, 20;i13~14, i21;-13;+3;;* Combo from 1st hit;;;Heihachi-df+1,2;Muso Tekken;r36;;File:t8-p2-heihachi-df+1,2.mp4
 df+1,2*;m, m;10, 28;i13~14, i38~39;+1;+32a (+11);;"* Reversal Break
 * Balcony Break
-* Chip damage on block";bbr chp;;Heihachi-df+1,2*;True Muso Tekken;r37;;File:t8-p2-heihachi-df+1,2s.mp4
-df+1:2*;m, m;10, 23;i13~14, i28~29;-9;+19a (+14);;"* Tornado
+* 11 chip damage on block
+* 12 chip damage on block in heat";bbr;;Heihachi-df+1,2*;True Muso Tekken;r37;;File:t8-p2-heihachi-df+1,2s.mp4
+df+1:2*;m, m;10, 23 (28);i13~14, i28~29;-9;+19a (+14);;"* Tornado
 * Reversal Break
 * Combo from 1st hit
-* Chip damage on block
-* Restores recoverable health on hit or block
+* 9 chip damage on block
+* 10 chip damage on block in heat
+* 11 chip damage on block with perfect frame input
+* 12 chip damage on block with perfect frame input in heat
+* Restores 6 additional recoverable health on hit or block
+* Restores 9 additional recoverable health on hit or block with perfect frame input
 * 23 damage upon releasing input within the 5f window (frames 1822)
-* 28 damage on a perfect input release exactly on frame 17";trn chp;;Heihachi-df+1:2*;Zenith Muso Tekken;r36;;File:t8-p2-heihachi-df+1c2s.mp4
+* 28 damage on a perfect input release exactly on frame 17 (gold spark)";trn;;Heihachi-df+1:2*;Zenith Muso Tekken;r36;;File:t8-p2-heihachi-df+1c2s.mp4
 df+2;m;8;i13~14;-7;+4;;;;;Heihachi-df+2;;r25;;
 df+2,1;m, m;8, 20;i13~14, i20~21;-17;+12a (+5);;* Combo from 1st hit;;;Heihachi-df+2,1;Reverse Muso Renken;r38;;File:t8-p2-heihachi-df+2,1.mp4
 WAR.df+2,1;m, m;8, 20;i13~14, i20~21;-17;+66a (+50);;"* Tornado
@@ -192,7 +199,7 @@ b+1+2;m;20;i42;-11;+23a (+13);;"* Heat Engager
 * Attack is guaranteed after a successful parry
 Parry state 5~25";he bbr ps5~25;;Heihachi-b+1+2;Heaven's Merciless Wrath;r33;;File:t8-p2-heihachi-b+1+2.mp4
 ub+2;h;25;i18~19;-6;+40d (-18);;"* Parries mid or high punches
-* ? on successful parry
+* +40d (-18) on successful parry
 * Balcony Break
 Parry state 5~12";bbr ps5~12;;Heihachi-ub+2;Skull Rupture;r33;;File:t8-p2-heihachi-ub+2.mp4
 uf+1;m;25;i24~25;-13;+14a (+5);;"* Balcony Break
@@ -394,7 +401,7 @@ WAR.RAI.1;M;42;i17~19;-8;+12a (+2);;"* Reversal Break
 Low crush 17~";chp js17~;;Heihachi-WAR.RAI.1;Ultimate Hidden Thunder God Fist;r49;;File:t8-p2-heihachi-war.rai.1.mp4
 WAR.f,F+2;M;30;i19~21;-16;+37a (+27);;"* Tornado
 * Chip Damage on block";trn chp;;Heihachi-WAR.f,F+2;Ultimate Demon God Fist;r33;;File:t8-p2-heihachi-war.f,f+2.mp4
-WAR.f,F+3;m;25;i20~22;+1;+56a;;"* Spike
+WAR.f,F+3;m;25;i20~22;+1c;+56a;;"* Spike
 * Chip Damage on block";spk chp;;Heihachi-WAR.f,F+3;Ultimate Splits Kick;r28;;File:t8-p2-heihachi-war.f,f+3.mp4
 WAR.f,n,d,DF+4;L;17;i16~17;-14;+8c;+28a;"* No stagger on block
 * Links to f,n,d,DF+4 extensions";;fndDF+4 extensions;Heihachi-WAR.f,n,d,DF+4;Ultimate Spinning Demon;r32;;File:t8-p2-heihachi-war.f,n,d,df+4.mp4
@@ -425,4 +432,4 @@ uf+1+2;t;35;i12;+0;+26a (+7);;"* Balcony Break
 uf+1+4;t;30;i12 i48;-6;+28d (-30);;"* Balcony Break
 * Throw break 1+2
 * Headbutt can be reversed with input 1 or 2 or 3 or 4
-* Works on Male characters only";bbr;;Heihachi-uf+1+4;Headbutt Clash;r27;;File:t8-p2-heihachi-uf+1+4.mp4
+* Only works on Male characters and Reina";bbr;;Heihachi-uf+1+4;Headbutt Clash;r27;;File:t8-p2-heihachi-uf+1+4.mp4
