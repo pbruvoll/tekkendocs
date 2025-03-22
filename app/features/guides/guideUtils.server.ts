@@ -152,4 +152,8 @@ const tableHandlers: Partial<
       description: row[2],
     }))
   },
+  about: (rows, guideData) => {
+    console.log('about', rows)
+    guideData.about = Object.fromEntries(rows)
+  },
 }

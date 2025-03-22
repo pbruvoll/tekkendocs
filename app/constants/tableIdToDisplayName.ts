@@ -32,4 +32,5 @@ export const tableIdToDisplayName: Record<TableId, string> = {
   knowledge_checks: 'Knowledge checks',
   defense_tips: 'Defense tips',
   defense_moves: 'Defense moves',
+  about: 'About',
 }
