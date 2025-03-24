@@ -11,7 +11,7 @@ import { type Move, type MoveT8 } from '~/types/Move'
 import { type MoveFilter } from '~/types/MoveFilter'
 import { type SortOrder } from '~/types/SortOrder'
 import { filterMoves, sortMovesV2 } from '~/utils/frameDataUtils'
-import { charIdFromMove, commandToUrlSegment } from '~/utils/moveUtils'
+import { charIdFromMove, commandToUrlSegmentEncoded } from '~/utils/moveUtils'
 import { getSortSettings } from '~/utils/sortingUtils'
 import { ContentContainer } from './ContentContainer'
 import { MovePreviewDialogButton } from './MovePreviewDialogButton'
@@ -120,7 +120,7 @@ export const FrameDataTable = ({
               : undefined
             const moveUrl =
               (charId ? `../${charId}/` : '') +
-              commandToUrlSegment(move.command)
+              commandToUrlSegmentEncoded(move.command)
             return (
               <Table.Row key={move.moveNumber}>
                 {charId && <Table.Cell>{charId}</Table.Cell>}
