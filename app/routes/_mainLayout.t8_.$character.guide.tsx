@@ -22,6 +22,7 @@ import { GuideContext } from '~/features/guides/GuideContext'
 import { GuideNav } from '~/features/guides/GuideNav'
 import { tablesToGuideData } from '~/features/guides/guideUtils.server'
 import { HeatSystem } from '~/features/guides/HeatSystem'
+import { Installments } from '~/features/guides/Installments'
 import { Introduction } from '~/features/guides/Introduction'
 import { KeyMoves } from '~/features/guides/KeyMoves'
 import { Punishers } from '~/features/guides/Punishers'
@@ -178,6 +179,7 @@ export default function Index() {
     defensiveTips,
     defensiveMoves,
     stances,
+    installments,
     about,
   } = guideData
   const { top10Moves, notableMoves } = {
@@ -245,6 +247,7 @@ export default function Index() {
           <StrengthsWeaknesses strengths={strengths} weaknesses={weaknesses} />
         )}
         {heatSystem?.length && <HeatSystem heatSystem={heatSystem} />}
+        {installments?.length && <Installments installments={installments} />}
         {top10Moves?.length && (
           <KeyMoves moves={top10Moves} title="Top 10 Moves" />
         )}

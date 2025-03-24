@@ -10,6 +10,7 @@ export type TableId =
   | 'moves_powercrush'
   | 'key_moves'
   | 'stances'
+  | 'installments'
   | 'panic_moves'
   | 'introduction'
   | 'strengths'
