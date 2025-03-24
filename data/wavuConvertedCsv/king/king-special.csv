@@ -129,25 +129,25 @@ db+3;l;17;i23;-14;+4c;+25d;* Tracks left side. (one of the few for King);;FC;Kin
 db+4;l;20;i29~31;-17;-3d;+27d;"* Hits OTG.
 * Recovers in crouch on hit.
 * Otherwise recovers in FDFT.";;FC,FDFT;King-db+4;Low Drop Kick;r FC/FDFT;;File:t8-p2-king-db+4.mp4
-db+1+2;;;i6~??;;;;"* Able to tank 10 frame jab if King is -4 or less (1 frame earlier than other Power Crush)
-* Armor duration is  24 frames if you let it end normally
-* Armor move is cancelable into anything at frame 17
-* Can be cancel into anything after chest out.
-Power crush";pc;;King-db+1+2;Muscle Armor;;;
+db+1+2;;;;;;;"* Cancel into db1+2,2 (Emerald Elbow) at frame 17 to frame 60? with input 2
+* Cancel into movement or crouch or any attack at frame 30 (r30)?
+* Cancel into r30? JGS with input 3+4 at frame 35? 
+* Recovery extended by r15 after absorbing an attack?
+Power crush 6~60?";pc6~60?;;King-db+1+2;Muscle Armor;r60?;;
 db+1+2,2;m,t;15,25;i15;-9/-5;+35g/+8g;;"* Heat Engager
 
 * Heat Dash +5 on block, +18 on wall block.
 
+* Effective startup is i32
 * Elbow has no armor, and input is delayable.
 * Shifts to throw on front grounded hit.
 * +8 on hit during heat or after heat.
 * If attack absorbed,chip damage & -5 on block.
 Power crush";he pc;;King-db+1+2,2;Muscle Armor > Emerald Elbow;;;File:t8-p2-king-db+1+2,2.mp4
-db+1+2,3+4;;;;;;;"* Run immediately without pointing finger.
+db+1+2,3+4;;;;;;;"* Effective startup for stance moves is increased by 65 frames starting from db1+2 (Muscle Armor) startup
+* pc7~ in heat
 * Run much longer to action than regular run.
-* Running has no armor if not during heat.
-* Cancel window is smaller than Emerald Elbow.
-Power crush";pc;;King-db+1+2,3+4;Muscle Armor > Jaguar Sprint;;;File:t8-p2-king-db+1+2,3+4.mp4
+* Cancel window is smaller than Emerald Elbow.";;JGS?;King-db+1+2,3+4;Muscle Armor > Jaguar Sprint;r30 JGS?;;File:t8-p2-king-db+1+2,3+4.mp4
 b+1;h;13;i12;-8;+3;+3a;Momentarily makes opponent airborne on CH, thus b+1,2 launches.;;;King-b+1;Quick Hook;;;
 b+1,2;h, h;13, 20;i12, i19~20;-13;+5;+70a(+54)*;"* Tornado
 * Launches opponent if b+1 on CH.";trn;;King-b+1,2;Quick Hook > Uppercut;;;File:t8-p2-king-b+1,2.mp4
@@ -169,8 +169,10 @@ b+2+4:3+4;r(m);25(,28);i10;;+27d(+1d);;"* 2 Throw Break
 * Opponent recovers in FUFT.";;;King-b+2+4:3+4;Leg Screw > Figure Four Leg Lock;;;
 b+3;h;23;i16~18;-10/-5;+39d;;"* Tornado
 * Balcony Break
-* Becomes -5 on block with chip damage if attack absorbed.
-Power crush";trn bbr pc;;King-b+3;Toll Kick;;;File:t8-p2-king-b+3.mp4
+* -5 on block after absorbing an attack in power crush state.
+* 9 chip damage on block after absorbing an attack in power crush state.
+* 10 chip damage on block after absorbing an attack in power crush state while in heat.
+Power crush 7~";trn bbr pc7~;;King-b+3;Toll Kick;;;File:t8-p2-king-b+3.mp4
 b+3:1+2;h, t;23, 20;i16~18, ;;-7d;;"* Shifts to throw on front grounded hit.
 * Input 1+2 before b+3 hits.";;;King-b+3:1+2;Guillotine Drop;;;File:t8-p2-king-b+3c1+2.mp4
 b+4;h;25;i17~21;+2;+14g;;"* Balcony Break
@@ -192,10 +194,13 @@ uf+2;m;35;i47~53;-17c;-7d/-4c;;"* Hits OTG.
 * Force Crouching on block. (ub+2 also on hit)";;FUFA;King-uf+2;High Elbow Drop;r FUFA;;File:t8-p2-king-uf+2.mp4
 uf+3;m;23;i22~29;-10;-1d;;* Can also be done by ub+3/u+3.;;FUFA,FUFT;King-uf+3;Falling Heel Kick;r FUFA/FUFT;;File:t8-p2-king-uf+3.mp4
 uf+4;m;13;i15;-13;+33a(+23);;* Can also be done by u+4.;;;King-uf+4;Jumping Knee Lift;;;File:t8-p2-king-uf+4.mp4
-uf+3+4;m;23;i22~23;-12/-7;+25g;;"* Tornado
-* If absorbs attack, -7 on block & chip damage.
-* Shifts to JGR on hit (Hold b to cancel shift).
-Power crush";trn pc;;King-uf+3+4;Sole Crusher;;;File:t8-p2-king-uf+3+4.mp4
+uf+3+4;m;23;i22~23;-12/-7;+25g / +22g;;"* Tornado
+* -7 on block after absorbing an attack in power crush state.
+* 9 chip damage on block after absorbing an attack in power crush state.
+* 10 chip damage on block after absorbing an attack in power crush state while in heat.
+* Shifts to r27 JGR on hit.
+* Cancel shift into JGR on hit at +22 r55?  with input B
+Power crush 7~";trn pc7~;;King-uf+3+4;Sole Crusher;r32?;;File:t8-p2-king-uf+3+4.mp4
 1+2+3+4;;;;;;;"* Takes some time to charge and can cancel into anything.
 * After charged next hit by either side becomes counter hit.";;;King-1+2+3+4;Ki Charge;;;File:t8-p2-king-1+2+3+4.mp4
 DF;r(l);0;;;+51a(+35);;"* Generic low parry.
