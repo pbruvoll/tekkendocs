@@ -41,6 +41,11 @@ export type Stance = {
   description: string
 }
 
+export type Installment = {
+  name: string
+  description: string
+}
+
 export type ComboEnderType = 'wall_break' | 'floor_break' | 'carry'
 export type ComboEnder = {
   type: ComboEnderType
@@ -85,5 +90,6 @@ export type GuideData = {
   defensiveTips: DefensiveTip[]
   defensiveMoves: KeyMove[]
   stances: Stance[]
+  installments: Installment[]
   about: Record<string, string>
 }

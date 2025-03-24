@@ -152,8 +152,13 @@ const tableHandlers: Partial<
       description: row[2],
     }))
   },
+  installments: (rows, guideData) => {
+    guideData.installments = rows.map(row => ({
+      name: row[0],
+      description: row[1],
+    }))
+  },
   about: (rows, guideData) => {
-    console.log('about', rows)
     guideData.about = Object.fromEntries(rows)
   },
 }

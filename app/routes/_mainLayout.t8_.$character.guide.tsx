@@ -178,6 +178,7 @@ export default function Index() {
     defensiveTips,
     defensiveMoves,
     stances,
+    installments,
     about,
   } = guideData
   const { top10Moves, notableMoves } = {
@@ -245,6 +246,7 @@ export default function Index() {
           <StrengthsWeaknesses strengths={strengths} weaknesses={weaknesses} />
         )}
         {heatSystem?.length && <HeatSystem heatSystem={heatSystem} />}
+        {installments?.length && <Installments installments={installments} />}
         {top10Moves?.length && (
           <KeyMoves moves={top10Moves} title="Top 10 Moves" />
         )}
