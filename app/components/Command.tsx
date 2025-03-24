@@ -1,7 +1,7 @@
 import { Link } from '@remix-run/react'
 import { type Move } from '~/types/Move'
 import { compressCommand } from '~/utils/commandUtils'
-import { commandToUrlSegment } from '~/utils/moveUtils'
+import { commandToUrlSegmentEncoded } from '~/utils/moveUtils'
 
 export type CommandProps = {
   command: string
@@ -21,7 +21,7 @@ export const Command = ({
     <Link
       className="text-text-primary"
       style={{ textDecoration: 'none' }}
-      to={charUrl + '/' + commandToUrlSegment(move.command)}
+      to={charUrl + '/' + commandToUrlSegmentEncoded(move.command)}
     >
       {command}
     </Link>

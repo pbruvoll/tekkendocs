@@ -7,7 +7,7 @@ import { ContentContainer } from '~/components/ContentContainer'
 import { getTekken8Characters } from '~/services/staticDataService'
 import { type CharacterFrameDataPage } from '~/types/CharacterFrameDataPage'
 import { type Move, type MoveT8 } from '~/types/Move'
-import { charIdFromMove, commandToUrlSegment } from '~/utils/moveUtils'
+import { charIdFromMove, commandToUrlSegmentEncoded } from '~/utils/moveUtils'
 import { generateMetaTags } from '~/utils/seoUtils'
 
 export const meta: MetaFunction = ({ matches }) => {
@@ -157,7 +157,7 @@ export default function () {
       }
       if (moveQuery && paginatedMoves.length > 0) {
         navigate(
-          `/t8/${selectedCharId}/${commandToUrlSegment(paginatedMoves[0].command)}`,
+          `/t8/${selectedCharId}/${commandToUrlSegmentEncoded(paginatedMoves[0].command)}`,
         )
       }
     }
@@ -237,7 +237,7 @@ const MoveItem = ({
   return (
     <Link
       className="inline-flex items-start gap-2"
-      to={`/t8/${charId}/${commandToUrlSegment(move.command)}`}
+      to={`/t8/${charId}/${commandToUrlSegmentEncoded(move.command)}`}
     >
       <div className="inline-flex items-center gap-2 text-text-primary no-underline">
         {prefix}

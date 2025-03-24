@@ -4,7 +4,7 @@ import { Link, type MetaFunction } from '@remix-run/react'
 import { ContentContainer } from '~/components/ContentContainer'
 import { TrophyProgress } from '~/components/TrophyProgress'
 import { useAppState } from '~/hooks/useAppState'
-import { commandToUrlSegment } from '~/utils/moveUtils'
+import { commandToUrlSegmentEncoded } from '~/utils/moveUtils'
 import { generateMetaTags } from '~/utils/seoUtils'
 import { t8AvatarMap } from '~/utils/t8AvatarMap'
 import { rankGroups } from './_mainLayout.t8_.ranks'
@@ -294,7 +294,7 @@ export default function () {
                           '/t8/' +
                           characterId +
                           '/' +
-                          commandToUrlSegment(moveCommand)
+                          commandToUrlSegmentEncoded(moveCommand)
                         }
                       >
                         {moveCommand}
@@ -307,7 +307,7 @@ export default function () {
                           '/t8/' +
                           characterId +
                           '/' +
-                          commandToUrlSegment(mixupCommand)
+                          commandToUrlSegmentEncoded(mixupCommand)
                         }
                       >
                         {mixupCommand}
