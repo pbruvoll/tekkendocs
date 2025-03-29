@@ -1,9 +1,10 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Transitions;Wavu id;Name;Recovery;Image;Video
 2+3;m;12 (12);i16;+1;+2c;;"* Heat Burst
 Power crush 7";hb pc7;;Xiaoyu-2+3;Heat Burst;;;
-H.BT.2+3;m,t;51;i15;+19;+16d;;"* Heat Smash
+H.BT.2+3;m,t;51;i15;+18;+20;;"* Heat Smash
 * Recovers in HYP, max level
-* Recover facing forward with F (+4)";hs;HYP;Xiaoyu-H.BT.2+3;Innumerable Moons;HYP;;
+* Recover facing forward with F (+3, +5)
+* 15 chip damage on block";hs;HYP;Xiaoyu-H.BT.2+3;Innumerable Moons;HYP;;
 H.f,F+1,2;m,m;13,23;i15, i20;+6c;+24d;;"* Balcony Break
 * Partially uses remaining Heat time
 * Combos from 1st hit
@@ -36,20 +37,22 @@ Power crush 8~";pc8~;;Xiaoyu-R.df+1+2;Wang's Celestial Epic;r39;;
 1,2,1;h, h, m;6, 9, 24;i10, ,i16;-9;+14a (+5);;"* Balcony Break
 * Combos from 2nd CH with 10F delay
 * Jail from 2nd block with 3F delay";bbr;;Xiaoyu-1,2,1;Bayonet Thruster;;;File:t8-p2-xiaoyu-1,2,1.mp4
-1,d+2;h, m;6, 10;i10, i20;-3;+8;;"* Combos from 1st hit
-* Recover facing forward with 1,D+2 (-4, +7)
-* Recover in HYP with 1,d+2~B (-2, +9)";;BT;Xiaoyu-1,d+2;Fan Dance;BT;;File:t8-p2-xiaoyu-1,d+2.mp4
-1,d+2,1+2;h, m, m;6, 10, 24;i10, ,i29;-12;+17a;;* Combos from 2nd hit CH;;;Xiaoyu-1,d+2,1+2;Fan Dance > Birds Flock;;;File:t8-p2-xiaoyu-1,d+2,1+2.mp4
+1,d+2;h, m;6, 10;i10, i20;-3;+8;+10;"* Combo from 1st hit with 4F delay
+* Move can be delayed by 10F
+* Recover facing forward with 1,D+2 or 1,d+2,F (-4, +7, +9)
+* Recover in HYP with 1,d+2~B (-2, +9, +11)";;BT;Xiaoyu-1,d+2;Fan Dance;BT;;File:t8-p2-xiaoyu-1,d+2.mp4
+1,d+2,1+2;h, m, m;6, 10, 24;i10, ,i29;-12;+17a;;* Combo from 2nd hit CH;;;Xiaoyu-1,d+2,1+2;Fan Dance > Birds Flock;;;File:t8-p2-xiaoyu-1,d+2,1+2.mp4
 1+3+4;;;;;;;;;;Xiaoyu-1+3+4;False Salute;;;File:t8-p2-xiaoyu-1+3+4.mp4
 2;h;8;i10;-2;+6;;*;;;Xiaoyu-2;;;;
-2,1;h, m;8, 10;i10, i19;-4;+7;;"* Combos from 1st hit CH
-* Recover facing forward with 2,DF+1 (-4, +7)";;BT;Xiaoyu-2,1;April Showers;BT;;File:t8-p2-xiaoyu-2,1.mp4
+2,1;h, m;8, 10;i10, i19;-4;+7;;"* Combo from 1st hit CH
+* Jai1 from 1st block
+* Recover facing forward with 2,DF+1 or 2,df+1,f or 2,df+1,b (-4, +7)";;BT;Xiaoyu-2,1;April Showers;BT;;File:t8-p2-xiaoyu-2,1.mp4
 3;h;17;i14;-11;+22a;;*;;;Xiaoyu-3;Cloud Kick;;;File:t8-p2-xiaoyu-3.mp4
 4;h;15;i11;-9;+8;+33a;*;;;Xiaoyu-4;;;;
 1+2;m;24;i20;-7;+20a;;*;;;Xiaoyu-1+2;Birds Flock;;;File:t8-p2-xiaoyu-1+2.mp4
 2+3+4;;;;;;;;;;Xiaoyu-2+3+4;Greetings;;;File:t8-p2-xiaoyu-2+3+4.mp4
-3+4;m;23;i23;-1c;+3c;+19a;"* Transition to AOP with D (0, +4, +20a)
-Low crush";js;AOP;Xiaoyu-3+4;Crescent Moon Kick;;;File:t8-p2-xiaoyu-3+4.mp4
+3+4;m;23;i23;-1c;+3c;+19a;"* Transition to AOP with D (0, +4c, +20a)
+Low crush 10~";js10~;AOP;Xiaoyu-3+4;Crescent Moon Kick;;;File:t8-p2-xiaoyu-3+4.mp4
 f+2;m;12;i16;-5;+4;;;;;Xiaoyu-f+2;;;;
 f+2,1;m, h;12, 14;i16, i20;-6;+5;+7;"* Combos from 1st hit
 * Jails from 1st block
@@ -86,7 +89,7 @@ d+3,4;l, h;12, 21;i14, i25;+0;+26a (+17);;"* Balcony Break
 d+4;l;6;i12;-15;-4;;* Alternate input FC.4;;FC;Xiaoyu-d+4;;FC;;
 d+1+2;;;;;;;"* Transitions to AOP
 * Alternate input BT.d+1+2
-High crush";cs;;Xiaoyu-d+1+2;Phoenix;;;
+High crush 1~";cs1~;AOP;Xiaoyu-d+1+2;Phoenix;r20 AOP;;
 d+3+4;special;;;;;;* Alternate input u+3+4;;;Xiaoyu-d+3+4;Spinner;;;File:t8-p2-xiaoyu-d+3+4.mp4
 db+1;m;30;i18;-9;+14a (+5);;"* Heat Engager
 
@@ -98,19 +101,17 @@ db+2;l;13;i18;-8;+5c;+18g;*;;BT;Xiaoyu-db+2;Feathered Fan;BT;;File:t8-p2-xiaoyu-
 db+3;l;0;i15;+2c;+2c;+14;*;;;Xiaoyu-db+3;Knee Cracker;;;File:t8-p2-xiaoyu-db+3.mp4
 db+4;l;14;i18;-12;+4c;+14;*;;;Xiaoyu-db+4;Nutcracker;;;File:t8-p2-xiaoyu-db+4.mp4
 db+1+2;;;;;;;"* Transitions to HYP
-* Punch parry (+9 HYP, opponent BT)
-* Successful parry partially restores remaining Heat time
-* Alternate input ub+1+2
-Parry state 2~10?";ps2~10?;HYP;Xiaoyu-db+1+2;Hypnotist;HYP;;
-db+1+2;;;;;;;"* Transitions to HYP
 * Actionable for 70F
 * Stance move properties change with amount of time spent in stance:
 * 1 step: 20~24F
 * 2 steps: 45~50F
 * 3 steps: 70~90F
 * Can cancel stance after 40F with b, db, u, uf, f, df or 1 jab
-* During Heat, taking 3 steps (70f in AOP) partially restores remaining Heat time
-* Alternate input ub+1+2";;AOP;Xiaoyu-db+1+2;Hypnotist;r20 AOP;;
+* Punch parry (+9 HYP, opponent BT)
+* During Heat, taking 3 steps (70f in HYP) partially restores remaining Heat time
+* Successful parry partially restores remaining Heat time
+* Alternate input ub+1+2
+Parry state 2~10?";ps2~10?;HYP;Xiaoyu-db+1+2;Hypnotist;r20 HYP;;
 db+3+4;;;;;;;"* Transitions to BT
 High crush";cs;BT;Xiaoyu-FC.db+3+4;Low Back Turn;BT;;File:t8-p2-xiaoyu-fc.db+3+4.mp4
 b+1;m;10;i8;-12;+1;;"* Automatically transitions to BT on hit
@@ -133,7 +134,7 @@ b+4,1;m, m;10, 20;i13, i27;-14;+40d (-18);;"* Heat Engager
 * Balcony Break";he bbr;;Xiaoyu-b+4,1;Moonhare Palm;;;File:t8-p2-xiaoyu-b+4,1.mp4
 b+1+2;m;20;i15;-13;+29a (+19);;*;;;Xiaoyu-b+1+2;Cross Lifting Palms;;;File:t8-p2-xiaoyu-b+1+2.mp4
 b+3+4;;;;;;;"* Transitions to BT
-* Alternate input BT.b+3+4, AOP.b+3+4";;;Xiaoyu-b+3+4;Rain Dance;;;
+* Alternate input BT.b+3+4, AOP.b+3+4";;BT;Xiaoyu-b+3+4;Rain Dance;r21 BT;;
 ub+3;m;23;i20;-13;+36a (+26);;"* Tornado
 * Transitions to AOP on hit or block
 Low crush";trn js;AOP;Xiaoyu-ub+3;From the Ashes;AOP;;File:t8-p2-xiaoyu-ub+3.mp4
