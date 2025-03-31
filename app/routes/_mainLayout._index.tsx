@@ -82,6 +82,11 @@ export default function Index() {
             Match videos
           </Badge>
         </Link> */}
+        <Link to="/t8/getting-started" className="cursor-pointer">
+          <Badge size="2" style={{ cursor: 'pointer' }} variant="outline">
+            Getting started with Tekken
+          </Badge>
+        </Link>
         <Link to="/t8/guides" className="cursor-pointer">
           <Badge size="2" style={{ cursor: 'pointer' }} variant="outline">
             Character Guides
