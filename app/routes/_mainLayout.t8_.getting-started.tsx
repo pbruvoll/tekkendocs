@@ -1,10 +1,6 @@
-import { Fragment, useMemo } from 'react'
-import { Link, type MetaFunction, useSearchParams } from '@remix-run/react'
-import cx from 'classix'
+import { type MetaFunction } from '@remix-run/react'
 import { ContentContainer } from '~/components/ContentContainer'
-import charMoveCount from '~/data/character-move-count.json'
 import { generateMetaTags } from '~/utils/seoUtils'
-import { t8AvatarMap } from '~/utils/t8AvatarMap'
 
 export const meta: MetaFunction = ({ matches }) =>
   generateMetaTags({
