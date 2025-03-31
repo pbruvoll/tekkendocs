@@ -359,7 +359,7 @@ BT.1,4;h, m;9, 21;i10~11, i24~25;-11;+8;+53a;"* Combo from 1st hit
 * Input can be delayed 10f
 * Will not combo if the kick impacts on i25";;;Azucena-BT.1,4;Mocha Attaque Sidamo;r33;;File:t8-p2-azucena-bt.1,4.mp4
 BT.2;m;15;i17~18;-8;+3;;Transition to attack throw on front standing hit by inputting 2 on frames 10~16;;;Azucena-BT.2;;r31;;
-BT.2:2;m, t;15, 23;i17~18, ;;+0d;;;;;Azucena-BT.2,2;Qhapaq Ñan;;;File:t8-p2-azucena-bt.2,2.mp4
+BT.2:2;m, t;15, 23;i17~18, ;;+0d;;Transition to attack throw on front standing hit by inputting 2 on frames 10~16;;;Azucena-BT.2,2;Qhapaq Ñan;;;File:t8-p2-azucena-bt.2,2.mp4
 BT.3;L;23;i19~20;-13;+4 LIB;+14c;"* Strong Aerial Tailspin
 * Balcony break on airborne hit
 * Transition to LIB on hit";;LIB;Azucena-BT.3;Calf Reaper;r34;;File:t8-p2-azucena-bt.3.mp4
@@ -398,7 +398,7 @@ LIB.3;L;15;i16~17;-9;+2;;;;BT;Azucena-LIB.3;Acerbic Low Kick;r27 BT;;File:t8-p2-
 LIB.3,1;L, m;15, 20;i16~17, i22~23;-10;+21d;;"* Spike
 * Combo from 1st CH with 7f delay
 * Input can be delayed 8f
-* On block only regular i10 punishers are guaranteed, even though she is backturned.}";spk;BT;Azucena-LIB.3,1;Blend Reganar;r32 BT;;File:t8-p2-azucena-lib.3,1.mp4
+* On block only regular i10 punishers are guaranteed, even though she is backturned";spk;BT;Azucena-LIB.3,1;Blend Reganar;r32 BT;;File:t8-p2-azucena-lib.3,1.mp4
 LIB.4;m;14;i15~16;-3;+10;+10a;;;LIB;Azucena-LIB.4;;r24 LIB;;
 LIB.4,1;m, h;14, 10;i15~16, i23~24;-1;+5;+10;"* Combo from 1st hit with 9f delay
 * Launches from first counter hit";;;Azucena-LIB.4,1;;r19;;
@@ -428,9 +428,11 @@ Parry state 1~";ps1~;LIB;Azucena-LIB.B;Salida Castillo;r1 LIB;;File:t8-p2-azucen
 LIB.F;;;;;;;"* Parries all high or low attacks
 * Regenerates heat with each step
 Parry state 1~";ps1~;LIB;Azucena-LIB.F;Azucena Admission;r1 LIB;;File:t8-p2-azucena-lib.f.mp4
-LIB.P (High);;0;;;Frame advantage depends on the move that gets parried.;;"Restores recoverable health
+LIB.P (High);;0;;;;;"* Restores recoverable health
+* Frame advantage depends on the move that gets parried
 is1~16";is1~16;LIB;Azucena-LIB.P (High);Crema Petalo;r22 LIB;;
-LIB.P (Low);m,m;15,20;i7~8 i19~20;;+8 on standing lows, will cause a juggle on lows with float properties;;"Restores recoverable health
+LIB.P (Low);m,m;15,20;i7~8 i19~20;;;;"* Restores recoverable health
+* +8 on standing lows, will cause a juggle on lows with float properties
 &lt;div class=&quot;plainlist&quot;&gt;
 * is1~6
 * fs7
@@ -443,7 +445,7 @@ LIB.P (Low);m,m;15,20;i7~8 i19~20;;+8 on standing lows, will cause a juggle on l
 LIB.U;;;;;;;"* Parries all high or low attacks
 * Regenerates heat with each step
 Parry state 1~";ps1~;LIB;Azucena-LIB.U_D;Milagros Show;r1 LIB;;File:t8-p2-azucena-lib.u_d.mp4
-LIB.b,b;;;;;;;* Can be canceled at r20 with 1, performs the same attack as uf+1;;LIB;Azucena-LIB.b,b;Caer Back Funnel;r32 LIB;;File:t8-p2-azucena-lib.b,b.mp4
+LIB.b,b;;;;;;;* Can be canceled at r20 with b+1 or uf+1, performs the same attack as uf+1;;LIB;Azucena-LIB.b,b;Caer Back Funnel;r32 LIB;;File:t8-p2-azucena-lib.b,b.mp4
 LIB.d+4;L;14;i19~20;-31;-2;;;;;Azucena-LIB.d+4;;r31;;
 LIB.d+4,4;L, h;14, 27;i19~20, i30~31;-7;+14a (+5);;"* Balcony Break
 * Combo from 1st hit";bbr;;Azucena-LIB.d+4,4;Blend Cortar;r34;;File:t8-p2-azucena-lib.d+4,4.mp4

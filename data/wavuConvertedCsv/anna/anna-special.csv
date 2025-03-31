@@ -2,8 +2,17 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 H.2+3;m;50;i13;;+0d;;"* Heat Smash
 * Reversal Break
 * Balcony Break
-* Debuff on hit or block, opponent receives chip damage from any attack, removed when they attack you
-High crush 7?~?";hs bbr cs7?~?;;Anna-H.2+3;;;;
+* Fragile debuff on hit or block, opponent receives chip damage from any attack, removed when they attack you
+High crush 7?~?";hs bbr cs7?~?;;Anna-H.2+3;From Éire with Love;;;
+R.df+1+2;m,t;;i20;-15;+0d;;"* Rage Art
+* Removes Recoverable Health
+* Reversal Break
+* Damage increases with lower health, maximum ??
+* Freezes match timer on activation and on hit
+* Restores recoverable health on hit
+* Transition to attack throw on hit
+* Consumes Rage
+Power crush 8~";pc8~;;Anna-R.df+1+2;Some Like It Rough!;r39;;
 1;h;5;i10;+1;+8;;Recovers 2f faster on hit or block (t27 r17);;;Anna-1;Jab;r19;;
 1,2;h, h;5, 8;i10, i10;;;;*;;;Anna-1,2;Left Right Combo;;;
 1,2,1;h, h, h;5, 8, 4;i10, ,i16;-4;;;* Combo from 1st hit;;;Anna-1,2,1;Left Right Left;;;
@@ -11,20 +20,22 @@ High crush 7?~?";hs bbr cs7?~?;;Anna-H.2+3;;;;
 1,2,1,2;h, h, h, m,m,m;5, 8, 4;i10, ,i23~72 i36~85 i54~103;-3~+49g?;;;* Weapon;wpn;;Anna-1,2,1,H.2;Roasted with Eternal Love;;;
 1,2,2;h, h, M;5, 8;i10, ,i26~27;-8;;;*;;;Anna-1,2,2;;;;
 2;h;10;i10;;;;*;;;Anna-2;;;;
-2,2;h, M;10, 20;i10, i26~27;-6;+12;;*;;HMC;Anna-2,2;;r HMC;;
+2,2;h, M;10, 20;i10, i26~27;-6;+12;;* Cancel transition with db? at +9 on hit?;;HMC;Anna-2,2;;r HMC;;
 2,3;h, m;10, 14;i10, i19~20;;+8;;* Combo from 1st hit;;CJM;Anna-2,3;Straight Face Wash;r CJM;;
 3;m;17;i14~16;;;;* Knee;kne;;Anna-3;;;;
 3,2;m, m;17, 20;i14~16, i20;-11c;+4c;;* Spike;spk;;Anna-3,2;Serval Cleaver;;;
-1+2;m;5;i16~18;+1;+9;+14;* Homing;hom;;Anna-1+2;Open Sesame;;;
+4;h;;i11;-9;;;;;;Anna-4;Right High Kick;;;
+1+2;m;5;i16~18;+1;+9;+14;"* Homing
+* Only deals recoverable damage";hom;;Anna-1+2;Open Sesame;;;
 3+4;m;26;i14;;;;"* Heat Engager
 
 * Heat Dash +5, ?
 
 * Balcony Break";he bbr;;Anna-3+4;Aphrodite's Scorn;;;
-f+2;h;20;,i19~20;;+12;;"* Balcony Break
-* Elbow
-* Combo from 1st hit";bbr elb;;Anna-f+2;Poison Wire;;;
 f+2;h;14;i14;;;;* Elbow;elb;;Anna-f+2;Poison Sting;;;
+f+2,3;h, h;14, 20;i14, i19~20;;+12;;"* Balcony Break
+* Elbow
+* Combo from 1st hit";bbr elb;;Anna-f+2,3;Poison Wire;;;
 f+3;;;;;;;*;;;Anna-f+3;Hammer Chance;;;
 df+1;m;10;i13~14;-1;+5;;;;;Anna-df+1;Uppercut Jab;;;
 df+1,2;m, h;10, 10;i13~14, i16;-5;+2;;"* Combo from 1st hit
@@ -37,47 +48,54 @@ df+3;m;;i14;;;;*;;;Anna-df+3;;;;
 df+3,1;m, h;;i14, i30;;;;*;;;Anna-df+3,1;;;;
 df+3,1,2;m, h, M?;;i14, ,i30~42;;;;"* Weapon
 ,Low crush ?~?";wpn js?~?;;Anna-df+3,1,2;;;;
-df+4;L;17;i16~17;+5;+;;*;;;Anna-df+4;Wine Opener;;;
-db+2;m;17;i15~16;;+8;;*;;PLT;Anna-db+2;Ocelot Claw;r PLT;;
+df+4;L;17;i16~17;+5c;-15;+25d;"* Tracking notes:
+* Homing to SSR side?";;;Anna-df+4;Wine Opener;;;
+db+2;m;17;i15~16;;+8;;*;;TOM;Anna-db+2;Ocelot Claw;r TOM;;
 db+3;L;;i30~32;-26;;;"* Stagger on block
 High crush ?~?";cs?~?;;Anna-db+3;;;;
-db+4;L;14;i17~18;-13;+8c;+13;* Transition to HMC on hit only;;HMC;Anna-db+4;Scorned Mistress;;;
+db+4;L;14;i17~18;-13;+8c HMC;+13;* Transition to HMC on hit only?;;HMC;Anna-db+4;Scorned Mistress;;;
 b+2;h;10;i13~14;;+1;;* Homing;hom;;Anna-b+2;;;;
 b+2,2;h, h;10, 20;i13~14, i18~19;;+5;;;;;Anna-b+2,2;Double Slap;;;
 b+3;;;;;;;*;;;Anna-b+3;Chaos Judgement;;;
 b+4;m;17;i19~21;-9;+11;;"* Homing
 * Transition to HMC on hit only";hom;HMC;Anna-b+4;Leopard Swipe;;;
 b+1+2;m;21;i20~21;+4;+20a (+15);;"*
-Power crush ?~?";pc?~?;;Anna-b+1+2;;;;
-uf+2;M;18;i20~21;-8;+12;+72a (+56);* Transition to HMC on hit only;;HMC;Anna-uf+2;Bane Stinger;;;
-uf+3;m;;i23~24;+0;+30g;;"* Balcony Break
-* Opponent recovers crouching on hit
+Power crush ?~?";pc?~?;;Anna-b+1+2;Weeping Slap;;;
+uf+2;M;18;i20~21;-8;+12;+72a (+56);"* Transition to HMC on hit only
+* Cancel HMC transition with input db?";;HMC;Anna-uf+2;Bane Stinger;;;
+uf+3;m;22;i23~24;+0;+27d;;"* Balcony Break
+* Opponent recovers crouching on hit?
 Low crush ?~?";bbr js?~?;;Anna-uf+3;Sudden Storm;;;
-H.uf+3,1;m, h;20;i23~24, i40~89;+4~;;;"* Balcony Break
+H.uf+3,1;m, h;22, 20;i23~24, i40~89;+4~;+20a (-6);;"* Balcony Break
 * Weapon
 * Combo from 1st hit
-* Debuff on hit or block, opponent receives chip damage from any attack, removed when they attack you";bbr wpn;;Anna-uf+3,H.1;Sudden Fascinator;;;
-H.uf+3,2;m, h;30;i23~24, i40~139;;+20a (-6);;"* Balcony Break
+* Fragile debuff on hit or block, opponent receives chip damage from any attack, removed when they attack you
+* 6 chip damage on block";bbr wpn;;Anna-uf+3,H.1;Sudden Fascinator;;;
+H.uf+3,2;m, h;22, 30;i23~24, i40~139;-1;+20a (-6);;"* Balcony Break
 * Weapon
 * Combo from 1st hit
 * Chip damage on block";bbr wpn chp;;Anna-uf+3,H.2;Sudden Penetrator;;;
 uf+4;m;24;i18~20;;+27a (+17);;"* Tornado
 Low crush ?~?";trn js?~?;;Anna-uf+4;Quick Somersault Kick;;;
 ;;;;;;;*;;;Anna-;;;;
-f,F+2;m;21;i17~18;+4;+15d;;"* Homing
-* Weapon";hom wpn;;Anna-f,F+2;Headless Horseman;;;
+f,F+2;h;21;i17~18;+4;+15d;;"* Homing
+* Weapon
+* 6 chip damage on block
+* ? chip damage on block in heat";hom wpn;;Anna-f,F+2;Headless Horseman;;;
 f,F+3;m;14;i15;;;;*;;;Anna-f,F+3;;;;
 f,F+3,2;m, M;14, 20;i15, i28~29;-7;+20d;;"* Heat Engager
 
 * Heat Dash +5, +67a (+50)
 
 * Weapon
-* Combo from 1st hit";he wpn;;Anna-f,F+3,2;Gancanagh's Pipe;;;
+* Combo from 1st hit
+* 6 chip damage on block
+* ? chip damage on block in heat";he wpn;;Anna-f,F+3,2;Gancanagh's Pipe;;;
 hcf+1;h;;i13~17;;;;"* Elbow
 * can also be performed with qcf?
 * Can be buffered?";elb;;Anna-hcf+1;Assassin's Dagger;;;
 qcf;;;;;;;;;;Anna-qcf;Crouch Dash;;;
-qcf+2;m;10;i16;;;;;;;Anna-qcf+2;Crimson Arrow;;;
+qcf+2;m;10;i16;;+3;;;;;Anna-qcf+2;Crimson Arrow;;;
 qcf+2,3;m, m;10, 16;i16, i22~24;;+67a (+51);;"* Tornado
 * Combo from 1st hit";trn;;Anna-qcf+2,3;Artemis Arrow;;;
 f,f,F+3;L;12?;i16~20;-20;;;"*
@@ -85,14 +103,16 @@ High crush ?~?";cs?~?;;Anna-f,f,F+3;;;;
 f,f,F+3,2;L, SL?;12?, 20?;i16~20, i28~77;;+19a (+9);;"* Weapon
 * Combo from 1st CH?";wpn;;Anna-f,f,F+3,2;;;;
 H.f,f,F+3,2,2,2;L, SL,SL,SL;12?, 20?,8?,30?;i16~20, i28~77 i41~90 i60~109;-1;+21a (-5);;"* Weapon
-* {[WallCrush
-* Combo from 1st CH?";wpn;FC;Anna-f,f,F+3,H.2,2,2;;r FC;;
+* Wall Crush  +g
+
+
+* Combo from 1st CH?";wpn wc;FC;Anna-f,f,F+3,H.2,2,2;;r FC;;
 ws1;m;10;i13~14;;+5;;*;;;Anna-ws1;;;;
-ws1,2;m, m;10, 17;i13~14, i18~19;;+9;;*;;PLT;Anna-ws1,2;Ocelot Frenzy;r PLT;;
-ws2;m;;i16~17;-13;;;*;;;Anna-ws2;Rising Palm;;;
-ws3;m;20;i11~12;;+8;;*;;CJM;Anna-ws3;Face Wash;r CJM;;
+ws1,2;m, m;10, 17;i13~14, i18~19;;+9;;*;;TOM;Anna-ws1,2;Ocelot Frenzy;r TOM;;
+ws2;m;16;i16~17;-13;+27a(+17);;*;;;Anna-ws2;Rising Palm;;;
+ws3;m;20;i11~12;-3;+8;;;;CJM;Anna-ws3;Face Wash;r CJM;;
 ws4;m;16;i11~12;;+5;;*;;;Anna-ws4;Toe Smash;;;
-SS.2;L;12;i20~21;-12;+0;+14;"*
+SS.2;L;12;i20~21;-12;+0;+14g;"*
 High crush ?~?";cs?~?;FC;Anna-SS.2;Chaos Tail;r FC;;
 SS.1+2;m,m;;i19~20 i5~9;-11;;;*;;;Anna-SS.1+2;Bloody Chaos;;;
 FC.df+1;m;;i20;-10;+21d (+11);;"* Heat Engager
@@ -100,29 +120,58 @@ FC.df+1;m;;i20;-10;+21d (+11);;"* Heat Engager
 * Heat Dash +5, +36a (+26)
 
 * Weapon
-High crush 1~";he wpn cs1~;;Anna-FC.df+1;;;;
+High crush 1~";he wpn cs1~;;Anna-FC.df+1;Cat Sith's Paw;;;
 FC.df+2;L;12;i20;;+70a (+54);;"* Deals only 6 damage when using its follow up attack in Heat
 High crush 1~";cs1~;;Anna-FC.df+2;Right Handed Sweep;;;
 H.FC.df+2,1;L, L;12, 18;i20, i27~28;;+64a (+48);;"* Weapon
-* Combo from 1st hit";wpn;;Anna-FC.df+2,H.1;Right Handed Sweep > Cold Blade?;;;
+* Combo from 1st hit";wpn;;Anna-FC.df+2~H.1;Right Handed Sweep > Cold Blade?;;;
+CJM.1;h;17;i11~12;;+7;;;;;Anna-CJM.1;Infernal Storm;;;
+CJM.2;h?;;i10?;;;;;;;Anna-CJM.2;;;;
+CJM.2,1;h?, m?;;i10?, i?;;?;;"* Heat Engager
+
+* Heat Dash +5, +?
+
+* Combo from 1st hit?";he;;Anna-CJM.2,1;Carmine Hands;;;
+CJM.3;m;;i12~14;-12;;;;;;Anna-CJM.3;Picking Heel;;;
+CJM.1+2;M?;20;i17~18;+2c;;;"* Spike?
+* 4 chip damage on block
+* ? chip damage on block in heat";;FC?;Anna-CJM.1+2;Caracal;FC?;;
+CJM.3+4;m;23;i20~21;;+10a;;"* Balcony Break
+Power crush 8?~";bbr pc8?~;;Anna-CJM.3+4;Queen Heel;;;
+CJM.d+3;L;;i15;;;;*;;FC?;Anna-CJM.d+3;;r FC?;;
+CJM.d+3,3;L, h;;i15, i21;;;;* Combo from 1st hit;;;Anna-CJM.d+3,3;Dendrobates Azureus;;;
 HMC.1;h;20;i13~14;+6;;;"* Heat Engager
 
 * Heat Dash +5, ?
 
-* Elbow";he elb;;Anna-HMC.1;Assassin's Dagger;;;
-HMC.2;m;12;i15~16;;;;"* Weapon
-* Chip damage on block";wpn chp;;Anna-HMC.2;;;;
-HMC.2,1;m, h;12;i15~16, i25~26;;;;"* Strong Aerial Tailspin
+* Elbow
+* Balcony Break
+* 6 chip damage on block
+* ? chip damage on block in heat";he elb bbr;;Anna-HMC.1;Cupid's Arrow;;;
+HMC.2;m;12;i15~16;;+3;;"* Weapon
+* 2 chip damage on block
+* ? chip damage on block in heat";wpn;;Anna-HMC.2;;;;
+HMC.2,1;m, h;12, 23?;i15~16, i25~26;;+17a (+8a)?;;"* Strong Aerial Tailspin
 * Weapon
-* Chip damage on block";wpn chp;;Anna-HMC.2,1;;;;
-HMC.2,1,2;m, h, M;12;i15~16, ,i33~34;+6c;;;"* Weapon
-* Chip damage on block";wpn chp;FC;Anna-HMC.2,1,2;;r FC;;
-HMC.2,2;m, M?;12, 23;i15~16, i22~23;-14;;;"* Tornado
-* Weapon";trn wpn;PLT;Anna-HMC.2,2;;r PLT;;
-HMC.3;L;17;i20~21;;-3;+6;"*
-High crush ?~?";cs?~?;FC;Anna-HMC.3;;r FC;;
+* Combo from 1st hit?
+* 6 chip damage on block
+* ? chip damage on block in heat";wpn;;Anna-HMC.2,1;;;;
+HMC.2,1,2;m, h, M;12, 23?;i15~16, ,i33~34;+6c;;;"* Weapon
+* 9 chip damage on block
+* ? chip damage on block in heat";wpn;FC;Anna-HMC.2,1,2;;r FC;;
+HMC.2,2;m, M?;12, 23;i15~16, i22~23;-14;+33;;"* Tornado
+* Weapon
+* 6 chip damage on block
+* ? chip damage on block in heat";trn wpn;TOM;Anna-HMC.2,2;;r TOM;;
+HMC.3;L;17;i20~21;;-3;+6;"* Homing
+High crush ?~?";hom cs?~?;FC;Anna-HMC.3;;r FC;;
 HMC.4;m,m;;i16~19 i4~6;-12;;;"*
 High crush ?~?";cs?~?;FC;Anna-HMC.4;;r FC;;
 HMC.1+2;M;;i24~25;+6c;;;"* Weapon
-* Chip damage on block";wpn chp;FC;Anna-HMC.1+2;;r FC;;
-PLT.2;m;;8~107;;-1a (-2);;*;;;Anna-PLT.2;;;;
+* 14 chip damage on block
+* ? chip damage on block in heat";wpn;FC;Anna-HMC.1+2;;r FC;;
+TOM.1;m;;8~57;+4;;;"* Applies Fragile debuff
+* 4 chip damage on block
+* ? chip damage on block";;;Anna-TOM.1;;;;
+TOM.2;m;;8~107;-1;-1a (-2);;"* 21 chip damage on block
+* ? chip damage on block in heat";;;Anna-TOM.2;;;;
