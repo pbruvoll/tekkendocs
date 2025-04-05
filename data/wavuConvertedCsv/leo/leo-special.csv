@@ -1,9 +1,6 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Transitions;Wavu id;Name;Recovery;Image;Video
 2+3;m;12 (12);i16~17;+1~+2;+2c;;"* Heat Burst
 Power crush";hb pc;;Leo-2+3;Heat Burst;;;
-H.KNK.2+3;l,m,m;8,13,14 (35);i20~21;-13~-12;+31a (+13);;"* Heat Smash
-* Balcony Break
-* 11 chip damage on block";hs bbr;;Leo-H.KNK.2+3;Ultimate Huo Jian Qiang Fist;;;
 H.2+3;m,m,h;14,13,23 (50);i16~17;+8~+9;+5a;;"* Heat Smash
 * Balcony Break
 * Enter CD +16g with df on block
@@ -113,7 +110,7 @@ LTG.db+4,1,1+2;L, m, m;11, 27, 20;i20~22, ,i15~16;-15~-14;+6a (-3);;"* Balcony B
 db+1+2;m;17;i21~23;-9~-7;+7;;* Enter BOK -12 +4 with d;;BOK;Leo-db+1+2;;;;
 db+1+2,1;m, m;17, 20;i21~23, i17~18;-12~-11;+22a (+17);;"* Balcony Break
 * Combo from 1st hit with delay";bbr;;Leo-db+1+2,1;Ba Wang Zhe Jiang;;;File:t8-p2-leo-db+1+2,1.mp4
-b+1;m;17;i18~19;-12~-11;+1;;;;;Leo-b+1;;;;
+b+1;m;17;i18~19;-9;+1;;;;;Leo-b+1;;;;
 b+1,4;m, m;17, 14;i18~19, i23;+9;+15g;+19;* Combo from 1st CH;;KNK;Leo-b+1,4;Ding Zhou Jin Ji Du Li;KNK;;File:t8-p2-leo-b+1,4.mp4
 b+1,1+2;m, m;17, 18;i18~19, i22~23;-12~-11;+9;;"* Combo from 1st hit
 * Enter BOK -10 +11 with d";;BOK;Leo-b+1,1+2;Ding Zhou Meng Po Kao;;;File:t8-p2-leo-b+1,1+2.mp4
@@ -122,7 +119,7 @@ Parry state 5~12";ps5~12;;Leo-b+1+3;Shi Zi Xiao Zhang Kou;;;
 b+1+3,P.2;m;30;i14~15;-9~-8;-9a;;"* Balcony Break
 * Combo from parry
 * Gain LTG on hit";bbr;;Leo-b+1+3,P.2;Shang Bu Zhuang Quan;;;
-b+2;m;11;i14;-11;+0;;;;;Leo-b+2;;;;
+b+2;m;11;i14;-9;+0;;;;;Leo-b+2;;;;
 b+2,1;m, h;11, 11;i14, i22~23;-4~-3;+7;;Combo from 1st hit;;;Leo-b+2,1;Wu Hu Chu Dong;;;File:t8-p2-leo-b+2,1.mp4
 b+2,1+2;m, m;11, 21;i14, i27~28;-11c~-10c;+8;;"* Heat Engager
 
@@ -139,7 +136,7 @@ b+3,1;m, m;12, 13;i14~15, i20;-10;+4;;"* Spike
 * Combo from 1st hit
 * Enter BOK -8 +5 with d
 * Enter KNK -10 +1 with b";spk;BOK,KNK;Leo-b+3,1;Ying Mian Tui;;;File:t8-p2-leo-b+3,1.mp4
-LTG.b+3,1,2;m, m, m;12, 13, 25;i14~15, ,i17;-13;+10a;;"* Balcony Break
+LTG.b+3,1,2;m, m, m;12, 13, 25;i14~15, ,i17;-12;+10a;;"* Balcony Break
 * Combo from 1st hit
 * 10 chip damage on block
 * 11 chip damage on block in heat";bbr;;Leo-b+3,1,LTG.2;Jue Zhao Ying Mian Tui;;;File:t8-p2-leo-b+3,1,ltg.2.mp4
@@ -271,17 +268,20 @@ qcf+3+4;m,m;6,20;i18~20 i22~24;-6~-4;+13g;;"* Homing
 * Balcony Break
 Low crush 17~";hom bbr js17~;;Leo-CD.3+4;Swallow Step;;;File:t8-p2-leo-cd.3+4.mp4
 KNK.1;h;12;i18;-9;+2;;* Enter BOK -7 +4 with d;;BOK;Leo-KNK.1;;;;
-KNK.1,2;h, m;12, 17;i18, i18;-9;+17;;"* Heat Engager
+KNK.1,2;h, m;12, 17;i18, i18;-10;+17;;"* Heat Engager
 
 * Heat Dash +5 +36a (+26)
 
 * Combo from 1st hit";he;;Leo-KNK.1,2;Bai She Tui Chuang;;;File:t8-p2-leo-knk.1,2.mp4
-KNK.2;h;20;i13;-4;+22a (+13);+58a;* Balcony Break;bbr;;Leo-KNK.2;Heng Quan;;;File:t8-p2-leo-knk.2.mp4
+KNK.2;h;20;i13~14;-4;+22a (+13);+58a;* Balcony Break;bbr;;Leo-KNK.2;Heng Quan;;;File:t8-p2-leo-knk.2.mp4
 KNK.3;m;13;i20;-13;+28a (+18);;Low crush 13~;js13~;;Leo-KNK.3;Yi Qi Jiao;;;
 KNK.3,4;m, m;13, 18;i20, i15;-12;+80a;;"Tornado
 Low crush 1~";trn js1~;;Leo-KNK.3,4;Er Qi Jiao;;;File:t8-p2-leo-knk.3,4.mp4
 KNK.4;L;18;i20;-12;+4c;+17d;"* Spike
 * Enter CD -10 +6c +19d with df";spk;CD;Leo-KNK.4;Cuo Ti Fu Ren;;;File:t8-p2-leo-knk.4.mp4
+LTG.KNK.4,1+2;L, m,m;18, 13,14 (35);i20, i;-14~-13;+31a (+13);;"* Balcony Break
+* 11 chip damage on block
+* Combo from 1st hit";bbr;;Leo-KNK.4,LTG.1+2;Ultimate Huo Jian Qiang Fist;;;
 KNK.1+2;M;20;i25;-6;+21;+41a (+31);"* Tornado
 * Balcony Break
 ** On non-CH grounded connect

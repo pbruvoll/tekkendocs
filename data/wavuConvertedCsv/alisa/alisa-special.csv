@@ -154,7 +154,8 @@ df+1,1;m, h;10, 20;i13, i30~31;+1;+8;;"* Balcony Break
 df+1,1,2;m, h, h;10, 20, 28;i13, ,i22~25;+6;+8;;"* Combo from 2nd hit
 * 2 chip damage on block";;DES;Alisa-df+1,1,2;Cyclone Mixer;r22 DES;;File:t8-p2-alisa-df+1,1,2.mp4
 df+1,4;m, m;10, 17;i13, i26~27;-11;+3c;+13c;"* Spike
-* Combo from 1st CH";spk;;Alisa-df+1,4;Cyclone Hacker;r30;;File:t8-p2-alisa-df+1,4.mp4
+* Combo from 1st CH
+* Transition to DES with 1+2";spk;DES;Alisa-df+1,4;Cyclone Hacker;r30;;File:t8-p2-alisa-df+1,4.mp4
 df+2;m;16;i16~17;-9;+32a (+22);;"* +7 on hit against crouching opponent
 * Does not launch crouching opponent except on CH";;;Alisa-df+2;Pickup;r27;;File:t8-p2-alisa-df+2.mp4
 df+3;m;14;i16;-9;+1;;;;;Alisa-df+3;;r31;;
@@ -200,7 +201,7 @@ db+2,2;m, m;10, 10;i18~19, i19~20;-9;+5;;"* Combo from 1st hit with 12f delay
 * Move can be delayed 14f
 * Enter DES with 1+2";;DES;Alisa-db+2,2;Daisy Chain;r36;;File:t8-p2-alisa-db+2,2.mp4
 db+3;L;11;i16;-13;-2;+3;High crush 4~;cs4~;FC;Alisa-db+3;Deep Link;r32 FC;;File:t8-p2-alisa-db+3.mp4
-db+4;L;23;i24~25;-17;+9a;;High crush 6~;cs6~;FC;Alisa-db+4;Deep Web;r35 FC;;File:t8-p2-alisa-db+4.mp4
+db+4;L;17;i20~21;-14;+2c;+12g;High crush 6~;cs6~;FC;Alisa-db+4;Deep Web;r35 FC;;File:t8-p2-alisa-db+4.mp4
 b+1;m;15;i15~16;-5;+8;;High crush 12~;cs12~;FC;Alisa-b+1;;r28 FC;;
 b+1,1+2;m, SL,m;15, 1,30;i15~16, i25~40 i26~28;-16;+71a;;"* Tornado
 * Head
@@ -583,7 +584,7 @@ DBT.f+2,2;L, m;16, 14 (9);i19~20, i35~37;-33;-6a (-13);;"* Balcony Break
 * fs68~70&lt;/div&gt;";"bbr wpn &lt;div class=&quot;plainlist&quot;&gt;
 * js35~67
 * fs68~70&lt;/div&gt;";;Alisa-DBT.f+2,2;Shut Down;r53;;File:t8-p2-alisa-dbt.f+2,2.mp4
-DES.1;m,m,h,h,h,m;35;i13~18 i1~5 i1~7 i1~5 i1~4 i16~17;-9;+23a;;"* Weapon
+DES.1;m,m,h,h,h,m;35;i13~18 i1~5 i1~7 i1~5 i1~4 i16~17;-9;+17a;;"* Weapon
 * 3 chip damage on block
 * Final hit available only on hit";wpn;DES;Alisa-DES.1;Shredder;r32 DES;;File:t8-p2-alisa-des.1.mp4
 DES.2;M,M,m;5,5,5;i20~21 i1~2 i1~2;-8;+37a (+27);;"* Weapon
@@ -612,11 +613,11 @@ DES.b+3;;;;;;;"&lt;div class=&quot;plainlist&quot;&gt;
 * fs34~36&lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
 * js7~33
 * fs34~36&lt;/div&gt;";DES;Alisa-DES.b+3;Retro Rockets;r41 DES;;File:t8-p2-alisa-des.b+3.mp4
-DES.d+1;L,L,L,L,L;20;i20~24 i1~5 i1~5 i1~5 i1~3;-12;+4;;"* Weapon
+DES.d+1;L,L,L,L,L;17;i20~24 i1~5 i1~5 i1~5 i1~3;-13;+4;;"* Weapon
 * Combo from any hit
 * 2 chip damage on block
 High crush 4~48";wpn cs4~48;DES;Alisa-DES.d+1;Hertz Blade - Scud;r32 DES;;File:t8-p2-alisa-des.d+1.mp4
-DES.d+2;L,L,L;3,3,20;i22~23;-14;+4c;;"* Homing
+DES.d+2;L,L,L;3,3,17;i22~23;-14;+0c;;"* Homing
 * Weapon
 * Combo from any hit
 * 6 chip damage on block
@@ -659,10 +660,10 @@ DES.f+3;;;;;;;"* Cancel to r33 with DBT.b
 * fs41~43&lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
 * js18~40
 * fs41~43&lt;/div&gt;";SS,DBT;Alisa-DES.f+3;Dual Boot;r17 DBT;;
-DES.f+1+2;m,m,m,m,m,m,m,m;34;i23~27 i1~5 i1~4 i1~4 i1~5 i1~5 i1~4 i1~1;+5;+33a;;"* Weapon
+DES.f+1+2;m,m,m,m,m,m,m,m;29;i23~27 i1~5 i1~4 i1~4 i1~5 i1~5 i1~4 i1~1;+1;+33a;;"* Weapon
 * Combo from any hit
 * 6 chip damage on block";wpn;DES;Alisa-DES.f+1+2;;r20 DES;;
-DES.f+1+2,1+2;m,m,m,m,m,m,m,m, m;34, 20;i23~27 i1~5 i1~4 i1~4 i1~5 i1~5 i1~4 i1~1, i20~26;-53;+41a;;"* Weapon
+DES.f+1+2,1+2;m,m,m,m,m,m,m,m, m;29, 20;i23~27 i1~5 i1~4 i1~4 i1~5 i1~5 i1~4 i1~1, i20~26;-53;+41a;;"* Weapon
 * 6 chip damage on block";wpn;DES;Alisa-DES.f+1+2,1+2;Hertz Blade - Diablo;r68 DES;;File:t8-p2-alisa-des.f+1+2,1+2.mp4
 DES.uf+2;h,h,h,h,h;5,5,5,5,5;i10~14 i1~5 i1~5 i1~5 i1~1;;+35a (+28);;"* Weapon
 * Only hits airborne opponents";wpn;DES;Alisa-DES.uf+2;Hertz Blade - Aegis;r16 DES;;File:t8-p2-alisa-des.uf+2.mp4
