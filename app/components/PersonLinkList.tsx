@@ -2,6 +2,7 @@ import { Fragment } from 'react'
 import { FaYoutube } from 'react-icons/fa'
 import { TwitterLogoIcon } from '@radix-ui/react-icons'
 import { Link } from '@remix-run/react'
+import metafyGradientIcon from '~/images/icons/metafy-gradient.svg'
 
 export type PersonLink = {
   name: string
@@ -49,6 +50,14 @@ const PersonLinkComponent = ({ name, url }: PersonLink) => {
               </Link>
             )
           }
+          if (url.includes('metafy.gg')) {
+            return (
+              <Link key="metafy" to={url + '?utm_source=tekkendocs'}>
+                <img className="h-4 w-4" src={metafyGradientIcon} alt="" />
+              </Link>
+            )
+          }
+
           return null
         })}
       </div>
