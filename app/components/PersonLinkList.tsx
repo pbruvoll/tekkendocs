@@ -2,6 +2,7 @@ import { Fragment } from 'react'
 import { FaYoutube } from 'react-icons/fa'
 import { TwitterLogoIcon } from '@radix-ui/react-icons'
 import { Link } from '@remix-run/react'
+import metafyGradientIcon from '~/images/icons/metafy-gradient.svg'
 
 export type PersonLink = {
   name: string
@@ -31,6 +32,7 @@ export const PersonLinkList = ({ persons }: PersonLinkListProps) => {
 const PersonLinkComponent = ({ name, url }: PersonLink) => {
   if (url) {
     const urls = url.split('|').map(link => link.trim())
+    urls.push('https://metafy.gg/@dewglider')
     return (
       <div className="inline-flex items-center gap-1 text-text-primary underline underline-offset-2">
         <Link to={urls[0]}>{name}</Link>{' '}
@@ -49,6 +51,14 @@ const PersonLinkComponent = ({ name, url }: PersonLink) => {
               </Link>
             )
           }
+          if (url.includes('metafy.gg')) {
+            return (
+              <Link key="metafy" to={url}>
+                <img className="h-4 w-4" src={metafyGradientIcon} alt="" />
+              </Link>
+            )
+          }
+
           return null
         })}
       </div>
