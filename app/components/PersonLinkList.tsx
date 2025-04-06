@@ -32,7 +32,6 @@ export const PersonLinkList = ({ persons }: PersonLinkListProps) => {
 const PersonLinkComponent = ({ name, url }: PersonLink) => {
   if (url) {
     const urls = url.split('|').map(link => link.trim())
-    urls.push('https://metafy.gg/@dewglider')
     return (
       <div className="inline-flex items-center gap-1 text-text-primary underline underline-offset-2">
         <Link to={urls[0]}>{name}</Link>{' '}
@@ -53,7 +52,7 @@ const PersonLinkComponent = ({ name, url }: PersonLink) => {
           }
           if (url.includes('metafy.gg')) {
             return (
-              <Link key="metafy" to={url}>
+              <Link key="metafy" to={url + '?utm_source=tekkendocs'}>
                 <img className="h-4 w-4" src={metafyGradientIcon} alt="" />
               </Link>
             )
