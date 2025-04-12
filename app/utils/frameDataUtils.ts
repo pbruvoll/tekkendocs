@@ -327,18 +327,17 @@ export const filterMoves = (moves: Move[], filter: MoveFilter | undefined) => {
     return moves
   }
 
-  if(filter.searchQuery) {
+  if (filter.searchQuery) {
     const searchQuery = filter.searchQuery.toLowerCase()
     return moves.filter(move => {
       return (
-        cleanCommand(move.command).includes(cleanCommand(searchQuery)) || 
-        (searchQuery.length >= 3 && !(/\d/.test(searchQuery)) && (
-          move.hitLevel.toLowerCase().includes(searchQuery) ||
-          move.notes?.toLowerCase().includes(searchQuery) ||
-          move.name?.toLowerCase().includes(searchQuery) ||
-          move.tags?.[searchQuery] !== undefined
-          )
-        )
+        cleanCommand(move.command).includes(cleanCommand(searchQuery)) ||
+        (searchQuery.length >= 3 &&
+          !/\d/.test(searchQuery) &&
+          (move.hitLevel.toLowerCase().includes(searchQuery) ||
+            move.notes?.toLowerCase().includes(searchQuery) ||
+            move.name?.toLowerCase().includes(searchQuery) ||
+            move.tags?.[searchQuery] !== undefined))
       )
     })
   }
