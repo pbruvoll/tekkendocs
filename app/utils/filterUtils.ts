@@ -7,6 +7,15 @@ import {
   getSearchParamStringList,
 } from './urlUtils'
 
+/** A function which removes "+", but only if it is not between two digits, e.g d+2 => d2 and 1+2 => 1+2 */
+
+export const cleanCommand = (move: string): string => {
+  return move
+    .replace(/,|n,|\//g, '')
+    .replace(/([A-Za-z])\+/g, '$1')
+    .toLowerCase()
+}
+
 export const getFilterFromParams = (
   searchParams: URLSearchParams,
 ): MoveFilter => {
