@@ -7,6 +7,7 @@ import { ContentContainer } from '~/components/ContentContainer'
 import { getTekken8Characters } from '~/services/staticDataService'
 import { type CharacterFrameDataPage } from '~/types/CharacterFrameDataPage'
 import { type Move, type MoveT8 } from '~/types/Move'
+import { cleanCommand } from '~/utils/filterUtils'
 import { charIdFromMove, commandToUrlSegmentEncoded } from '~/utils/moveUtils'
 import { generateMetaTags } from '~/utils/seoUtils'
 
@@ -21,15 +22,6 @@ export const meta: MetaFunction = ({ matches }) => {
     image: { url: '/images/tekkendocs-og-image-v2.png' },
     url: `/t8/challenge`,
   })
-}
-
-/** A function which removes "+", but only if it is not between two digits, e.g d+2 => d2 and 1+2 => 1+2 */
-
-const cleanCommand = (move: string): string => {
-  return move
-    .replace(/,|n,|\//g, '')
-    .replace(/([A-Za-z])\+/g, '$1')
-    .toLowerCase()
 }
 
 const maxMovesToShow = 400

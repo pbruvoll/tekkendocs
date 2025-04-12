@@ -1,13 +1,17 @@
+import { useState } from 'react'
 import { Pencil1Icon } from '@radix-ui/react-icons'
 import { Heading, Link as RadixLink, Table } from '@radix-ui/themes'
 import type { HeadersFunction } from '@remix-run/node'
 import { Link, type MetaFunction, NavLink, useMatches } from '@remix-run/react'
+import { Filter } from 'lucide-react'
+import { Input } from '@/components/ui/input'
 import { ContentContainer } from '~/components/ContentContainer'
 import { FrameDataTable } from '~/components/FrameDataTable'
 import { tableIdToDisplayName } from '~/constants/tableIdToDisplayName'
 import type { CharacterFrameData } from '~/types/CharacterFrameData'
 import type { RouteHandle } from '~/types/RouteHandle'
 import { type TableDataWithHeader } from '~/types/TableData'
+import { cleanCommand } from '~/utils/filterUtils'
 import { getCacheControlHeaders } from '~/utils/headerUtils'
 import { commandToUrlSegment } from '~/utils/moveUtils'
 
@@ -57,6 +61,9 @@ export default function Index() {
   const frameData = matches.find(
     m => (m.handle as RouteHandle)?.type === 'frameData',
   )?.data
+
+  const [searchQuery, setSearchQuery] = useState<string>('')
+
   if (!frameData) {
     return <div>Could not load data</div>
   }
@@ -64,6 +71,12 @@ export default function Index() {
   if (tables.length === 0) {
     return <div>Invalid or no data</div>
   }
+
+  const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const searchValue = event.target.value
+    setSearchQuery(searchValue)
+  }
+
   return (
     <>
       <ContentContainer enableTopPadding>
@@ -86,6 +99,13 @@ export default function Index() {
           <NavLink to="meta">Guide</NavLink>
           <NavLink to="antistrat">Anti strats</NavLink>
         </nav>
+        <div className="mb-3 flex items-center gap-2">
+          <Filter />
+          <Input
+            onChange={e => handleOnChange(e)}
+            placeholder="ff2,1+2"
+          ></Input>
+        </div>
       </ContentContainer>
       <ContentContainer disableXPadding>
         {tables.map(table => {
@@ -93,10 +113,21 @@ export default function Index() {
             (_, index) => index,
           )
           if (table.headers && table.name === 'frames_normal') {
+            let filteredRows = table.rows
+            if (searchQuery) {
+              const cleanedSearchQuery = cleanCommand(
+                searchQuery.replace(/ /g, ''),
+              )
+              filteredRows = table.rows.filter(row => {
+                return cleanCommand(row[0] || '')
+                  .replace(/ /g, '')
+                  .includes(cleanedSearchQuery)
+              })
+            }
             return (
               <FrameDataTable
                 key={table.name}
-                table={table as TableDataWithHeader}
+                table={{ ...table, rows: filteredRows } as TableDataWithHeader}
               />
             )
           }
