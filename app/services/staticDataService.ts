@@ -107,6 +107,7 @@ export const characterGuideAuthors: Record<Game, Record<string, string>> = {
     bryan: 'Ty',
     claudio: 'Tetsu',
     jin: 'Bok Dibi',
+    lee: 'Super Akouma',
     lidia: 'Leemishima',
     lili: 'DewGlider',
     raven: 'JacobKaas',
