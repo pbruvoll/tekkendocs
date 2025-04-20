@@ -1,7 +1,7 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Transitions;Wavu id;Name;Recovery;Image;Video
 2+3;m;"[12;12]";i16;+1;+2c;;"* Heat Burst
-* Cancel to r45 with b,b
-* 3 chip damage on block
+* Cancel to r45 with b,b on frame 42
+* 2 chip damage on block
 * 12 chip damage on hit
 * Only deals recoverable damage
 * Cannot cause a K.O.
@@ -32,14 +32,12 @@ H.f,F+3+4;m;36;i19~25;+7~+13;+20~26a (-6~+0);;"* Balcony Break
 * 16 chip damage on block
 * Partially consumes remaining Heat time
 Low crush";bbr js;;Lili-H.f,F+3+4;Piercing Thorn (Heat);;;
-H.2+3;h,t;55;i23;+9;-3d;;"* Heat Smash
-* Homing
-* Floor Break
-Low crush 22~";hs hom fbr js22~;BT;Lili-H.2+3;White Swan Mezzo Forte;BT;;
-H.2+3;h,h,m,M;15,15,15,30;i23~24 i14~15 i36~38 i9~11;+9;+20d(-15);;"* Heat Smash
-* Homing
-* Floor Break
-Low crush 22?";hs hom fbr js22?;BT;Lili-H.2+3;White Swan Mezzo Forte (Block);BT;;
+H.2+3;m,t;55;i16;+7;?;;"* Heat Smash
+* Balcony Break";hs bbr;;Lili-H.2+3;Le Rosier Millénaire Mezzo Forte;;;
+H.2+3;m,m,m;10,10,20;i16~17 i17~18 i24~25;+7;?;;"* Heat Smash
+* Balcony Break
+* Enter DEW +14 with F on block 
+*2,2,4 chip damage on block";hs bbr;DEW;Lili-H.2+3;Le Rosier Millénaire Mezzo Forte (Block);;;
 R.df+1+2;m,t;55+;i20;-15;+0d;;"* Rage Art
 * Removes Recoverable Health
 * Reversal Break
@@ -82,7 +80,7 @@ H.1,2,4;h, h, m;5, 12, 30;i10, ,i29~34;+5~+10;+18~23a (-8~-3);;"* Balcony Break
 * js21?~41?
 * fs42?~44?&lt;/div&gt;";;Lili-1,2,H.4;Left Right Piercing Thorn (Heat);r42?;;
 2;h;8;i10;+0;+8;;;;;Lili-2;;r19;;
-2,3;h, L;8, 13;i10, i26;-12;-2;+6c;"* Combo from 1st hit
+2,3;h, L;8, 13;i10, i26;-13;-2;+6c;"* Combo from 1st hit
 ,High crush 10~45";cs10~45;;Lili-2,3;Sunrise Sunset;r32;;File:t8-p2-lili-2,3.mp4
 2,4;h, h;8, 20;i10, i22~26;-2~+2;+24a (+15);;"* Balcony Break 
 * Combo from 1st hit with 5f delay
@@ -118,6 +116,14 @@ H.1,2,4;h, h, m;5, 12, 30;i10, ,i29~34;+5~+10;+18~23a (-8~-3);;"* Balcony Break
 * fs37~39&lt;/div&gt;";"he hom bbr chp &lt;div class=&quot;plainlist&quot;&gt;
 * js22~36
 * fs37~39&lt;/div&gt;";;Lili-3+4;Black Swan;r29;;File:t8-p2-lili-3+4.mp4
+H.3+4,3+4;h,h,m,M;10,10,15,20;i23~24 i14~15 i36~38 i9~11;+7;+20d(-15);;"* Homing
+* Floor Break 
+* Partially consumes remaining Heat time
+Low crush 22?";hom fbr js22?;BT;Lili-3+4,H.3+4;White Swan Mezzo Piano (Block);BT;;
+H.3+4,3+4;h,t;45;i23;+7;-3d;;"* Homing
+* Floor Break 
+* Partially consumes remaining Heat time
+Low crush 22~";hom fbr js22~;BT;Lili-3+4,H.3+4;White Swan Mezzo Piano;BT;;
 f+2;h;10;i12;-9;-1;;;;;Lili-f+2;;;;
 f+2,3;h, m;10, 20;i12, i22;-15;+24a (+7);;"* Balcony Break
 * Combo from 1st hit with 3?F delay";bbr;;Lili-f+2,3;Mars Sword;;;File:t8-p2-lili-f+2,3.mp4
@@ -135,7 +141,7 @@ f+3+4,3,4;m,M, M;6,20, 20;i18~20 i30~33, i19;-20;+10 (+3);;"* Combos from 1st hi
 Low crush";js;;Lili-f+3+4,3,4;Garland Kick Combo;as;;File:t8-p2-lili-f+3+4,3,4.mp4
 df+1;m;10;i13;-1;+8;;;;;Lili-df+1;;;;
 df+2;m;15;i16;-11;+31a (+21);;* Transition to -11, +31a (+21) BT with B;;BT;Lili-df+2;Orleans Sword;;;File:t8-p2-lili-df+2.mp4
-df+3;m;23;i20;+3c;+8c;+19a;;;;Lili-df+3;Submissive Heel;;;File:t8-p2-lili-df+3.mp4
+df+3;m;20;i20;+3c;+8c;+19a;;;;Lili-df+3;Submissive Heel;;;File:t8-p2-lili-df+3.mp4
 df+4;m;12;i13;-8;-2;+5;* Knee;kne;;Lili-df+4;;;;
 df+4,4;m, L;12, 23;i13, i20;-13;-2;+8;* Combos from 1st hit;;;Lili-df+4,4;Dominating Heel;;;File:t8-p2-lili-df+4,4.mp4
 df+3+4;m;14;i24~29;-4;+27a;;Low crush 12~;js12~;BT;Lili-df+3+4;Backflip;BT;;File:t8-p2-lili-df+3+4.mp4
@@ -149,10 +155,11 @@ d+1,2;L, h;10, 8;i18, i18;-8;+3;+5;"* Combos from 1st hit
 d+1,2,4;L, h, m;10, 8, 24;i18, ,i30;-12;+17a (+8);;"* Balcony Break
 * Combos from 2nd hit CH";bbr;;Lili-d+1,2,4;Heavy Languish;;;File:t8-p2-lili-d+1,2,4.mp4
 d+2;m;16;i16;-7;+1;;*;;;Lili-d+2;;;;
-d+2,2;m, h;16, 10;i16, i17;-10;-4;-2;* Combos from 1st hit;;;Lili-d+2,2;;;;
+d+2,2;m, h;16, 10;i16, i17;-10;-4;-2;"* Combos from 1st hit
+* Transition to -7, -1, +1 RAB with b+3 or b+4";;RAB;Lili-d+2,2;;;;
 d+2,2,3;m, h, h;16, 10, 24;i16, ,i25;-3;+23a (+14);;"* Balcony Break
 * Combos from 2nd hit CH";bbr;;Lili-d+2,2,3;Bloody Masquerade Piton;;;File:t8-p2-lili-d+2,2,3.mp4
-d+2,2,4;m, h, m;16, 10, 24;i16, ,i22;-17;+35d (-23);;"* Tornado
+d+2,2,4;m, h, m;16, 10, 24;i16, ,i22;-13;+35d (-23);;"* Tornado
 * Balcony Break
 * Combos from 2nd hit CH";trn bbr;;Lili-d+2,2,4;Bloody Masquerade Lance;;;File:t8-p2-lili-d+2,2,4.mp4
 d+3;L;14;i19;-12;+1;+5c;;;;Lili-d+3;Thorn Whip;;;File:t8-p2-lili-d+3.mp4
@@ -171,7 +178,7 @@ db+4;L;20;i30;-24;+76a (+60);;"* Homing
 * Instant Tornado
 High crush 7~";hom cs7~;;Lili-db+4;Edelweiss;;;File:t8-p2-lili-db+4.mp4
 db+3+4;L;20;i24;-18;+3d;+33a;High crush 16~;cs16~;;Lili-db+3+4;Freesia Thrust;;;File:t8-p2-lili-db+3+4.mp4
-b+1;m;16;i17;-6;+2;+8;* Transition to +0, +8, +14 DEW with F;;DEW;Lili-b+1;Élysée Le Bras Allongé;;;
+b+1;m;16;i17;-8;+2;+8;* Transition to -2, +8, +14 DEW with F;;DEW;Lili-b+1;Élysée Le Bras Allongé;;;
 b+1,4;m, m;16, 22;i17, i25;-11;+32a (+17);;"* Tornado
 * Combos from 1st hit";trn;;Lili-b+1,4;Élysée Le Bras Allongé Caracole;;;File:t8-p2-lili-b+1,4.mp4
 b+2;h;15;i13;-11;+0;;;;;Lili-b+2;;;;
@@ -203,6 +210,12 @@ Floor Break
 * Combos from 1st hit
 * Alternate input ub+3,3,3+4
 Low crush";fbr js;;Lili-u+3,3,3+4;Moonsault Alstroemeria;;;File:t8-p2-lili-u+3,3,3+4.mp4
+u+1+2;m;28;i18;-9;+17a (+8);;"* Homing
+* Balcony Break
+* 1 spin (i10 delay + i18)
+* Hold to power up:
+** 2 spins (i33 delay + i18): +12 on block, 11 chip damage
+** 3 spins (i56 delay + i18): Unblockable, 50 damage";hom bbr;;Lili-u+1+2;Lashing Iris;;;File:t8-p2-lili-f,f+1+2.mp4
 u+3+4;m (t);18 (28 );i36;-8;+13d (+39a);;"* Becomes a 28 damage +39a throw when hit at close range
 Low crush 5~";js5~;;Lili-u+3+4;Divine Step;;;File:t8-p2-lili-u+3+4.mp4
 uf+2;m;21;i20;-10;+15a (+6);;"* Balcony Break
@@ -210,7 +223,7 @@ uf+2;m;21;i20;-10;+15a (+6);;"* Balcony Break
 uf+3;m;13;i15~17;-13~-11;+30a (+20);;Low crush 9~ fs9~;js9~ fs9~;;Lili-uf+3;Capricorn Kick;;;File:t8-p2-lili-uf+3.mp4
 uf+4;m;18;i25;-12;+1c;;"* Transition to -7, +6c BT with B
 Low crush 9~";js9~;BT;Lili-uf+4;;;;
-uf+4,3;m, m;18, 30;i25, i24;-9;+41d (-17);+32d (+24);"* Tornado
+uf+4,3;m, m;18, 25;i25, i24;-9;+41d (-17);+32d (+24);"* Tornado
 * Balcony Break
 * Combos from 1st hit";trn bbr;;Lili-uf+4,3;Sunflower Lance;;;File:t8-p2-lili-uf+4,3.mp4
 uf+3+4;m;15;i15~18;-9~-6;+2;;"* Knee
@@ -229,12 +242,6 @@ Floor Break
 * Combos from 1st hit
 Low crush";fbr js;;Lili-f,F+3,3+4;Alstroemeria;;;File:t8-p2-lili-f,f+3,3+4.mp4
 f,F+4;L;23;i22;-12;+4;+4;* Transition to -6, +10g, +10 BT with B;;BT;Lili-f,F+4;Root of Evil;;;File:t8-p2-lili-f,f+4.mp4
-f,F+1+2;m;28;i18;-9;+17a (+8);;"* Homing
-* Balcony Break
-* 1 spin (i10 delay + i18)
-* Hold to power up:
-** 2 spins (i33 delay + i18): +12 on block, 11 chip damage
-** 3 spins (i56 delay + i18): Unblockable, 50 damage";hom bbr;;Lili-f,F+1+2;Lashing Iris;;;File:t8-p2-lili-f,f+1+2.mp4
 f,F+3+4;m;30;i19;-2;+4a (-5);;"* Balcony Break
 * Chip damage on block [9]
 * Powers up in Heat
@@ -249,6 +256,9 @@ f,f,F+3;m;30;i23;+3;+20a (+10);;"* Balcony Break
 * Chip damage on block
 * Alternate input wr3
 Low crush";bbr chp js;;Lili-f,f,F+3;Sabre Slash;;;File:t8-p2-lili-f,f,f+3.mp4
+f,f,F+1+2;h,h;10,15;i13~14 i7~8;+4;+30a;;"* Balcony Break
+* 4 chip damage on block
+* Alternate input wr1+2";bbr;;Lili-f,f,F+1+2;Zephyranthes;;;
 ws1;m;10;i13;-11;+0;;;;;Lili-ws1;;;;
 ws1,2;m, h;10, 16;i13, i22;-3;+8;;"* Combos from 1st hit
 * Transition to -1, +10g DEW with F";;DEW;Lili-ws1,2;;;;
@@ -263,7 +273,11 @@ ws3,4;m, M;25, 25;i15, i44;+4c;+26d;;"* Floor Break
 Low crush 27~";fbr js27~;;Lili-ws3,4;Honeysuckle;;;File:t8-p2-lili-ws3,4.mp4
 ws4;m;18;i11;-9;+20a (+13);;alternate input: DEW.4;;;Lili-ws4;Cane Smash;;;File:t8-p2-lili-ws4.mp4
 ss3;M;20;i16;-9;+35d (+27);;* Balcony Break;bbr;;Lili-ss3;Stunning Toe Kick;;;File:t8-p2-lili-ss3.mp4
-ss4;m;18;i20;-2;+4;+11g;"* Transition to -13, -7, +0 RAB with b+3 or b+4
+ss4;m;18;i20;-4;+4;+11g;"* Alternate input DEW.df+4
+* Alternate input FC.df+4
+* Alternate input d,DF+4
+* Transition to -15, -7, +0 RAB with b+3 or b+4 
+*A
 High crush 6~11?";cs6~11?;RAB,BT;Lili-ss4;Demilune;BT;;File:t8-p2-lili-ss4.mp4
 ss1+2;m;21;i19;+0;+25a (+16);+64a;* Balcony Break;bbr;;Lili-ss1+2;Minuet;;;File:t8-p2-lili-ss1+2.mp4
 FC.1;sl;5;i10;-5;+6;;"* Alternate input db+1
@@ -274,7 +288,8 @@ FC.3;L;10;i16;-17;-6;;High crush;cs;;Lili-FC.3;;;;
 FC.4;l;6;i12;-15;-4;;"* Alternate input d+4
 High crush";cs;;Lili-FC.4;;;;
 FC.df+1;m;25;i14;-6;+19a (+2);+34d (+26);* Balcony Break;bbr;;Lili-FC.df+1;Slashing Vine;;;File:t8-p2-lili-fc.df+1.mp4
-FC.df+3;L;19;i23;-18;-2;+26a;"alternate input: d,DF+3
+FC.df+3;L;19;i19-28;-18;-2;+26a;"Alternate input: d,DF+3
+Alternate input: DEW.df+3
 High crush 10~46?";cs10~46?;;Lili-FC.df+3;Horizon Slide;r28?;;File:t8-p2-lili-fc.df+3.mp4
 BT.1;h;8;i8;-8;+3;;;;;Lili-BT.1;;;;
 BT.1,2;h, m;8, 20;i8, i24;-13;+16a (-1);;"* Tornado
@@ -294,10 +309,10 @@ High crush 4~";hom cs4~;;Lili-BT.3;;;;
 BT.3,4;m, m;12, 20;i14, i30;-12;+39d (+31);;"* Balcony Break
 * Combos from 1st hit
 Low crush 26~";bbr js26~;;Lili-BT.3,4;Arc-en-Ciel;;;File:t8-p2-lili-bt.3,4.mp4
-BT.4;m,m;10,20;i26~28 i21~22;-11;+11d;;"* 2-hit move, 2nd hit only combos on CH
+BT.4;m,m;10,20;i26~28 i21~22;-11;+11d;;"* Combos from 1st hit
 Low crush 13~28, Low crush 1~?";js13~28 js1~?;BT;Lili-BT.4;Shears;BT;;
-BT.4,3+4;m,m, m;10,20, 12;i26~28 i21~22, i28;-10;+4d;;"* Floor Break
-* Combos from 2nd hit
+BT.4,3+4;m,m, m;10,20, 12;i26~28 i21~22, i28;-7;+4d;;"* Floor Break
+* Combos from 1st hit
 Low crush 14~";fbr js14~;BT;Lili-BT.4,3+4;Shears > Spinning Edge;BT;;File:t8-p2-lili-bt.4,3+4.mp4
 BT.1+2;m,m;5,20;i13~14 i3~4;-11c;+16a;;;;;Lili-BT.1+2;Tempest;;;File:t8-p2-lili-bt.1+2.mp4
 BT.3+4;m;24;i29;+2;+7c;;"* Chip on block [9]
@@ -341,7 +356,8 @@ DEW.3;M;28;i17;-11;+20a (+3);;"* Tornado
 DEW.1+2;m;28;i16;-11;+17cg;;"* Tornado
 * Balcony Break
 Power crush 6~";trn bbr pc6~;;Lili-DEW.1+2;Angel Heart;;;File:t8-p2-lili-dew.1+2.mp4
-DEW.3+4;h;6,20;i12~14, i5~6;+6;+17g;;"* Balcony Break
+DEW.3+4;h;6,20;i12~14, i5~6;+6;+17g;;"* Strong Aerial Tailspin
+* Balcony Break
 * Transition to +0, +11 RAB with b+3 or b+4
 Low crush 12~?, Low crush 17?~?";bbr js12~? js17?~?;RAB;Lili-DEW.3+4;Cloisonne;;;File:t8-p2-lili-dew.3+4.mp4
 RAB.2;m;20;i20;-9;+39d (-19);;"* Heat Engager

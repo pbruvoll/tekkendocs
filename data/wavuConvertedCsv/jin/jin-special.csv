@@ -1,7 +1,7 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Transitions;Wavu id;Name;Recovery;Image;Video
 2+3;m;"[12;12]";i16;+1;+2c;;"* Heat Burst
-* Cancel to r45 with b,b
-* 3 chip damage on block
+* Cancel to r45 with b,b on frame 42
+* 2 chip damage on block
 * 12 chip damage on hit
 * Only deals recoverable damage
 * Cannot cause a K.O.
@@ -47,14 +47,11 @@ H.2+3;m,h,m;57;i15~16;+3;+0d;;"* Heat Smash
 * Jail from 1st attack
 * Ends Heat";hs bbr chp;;Jin-H.2+3;Hellfire Trespass Slayer;r33;;
 H.2+3,4;m,h,m;48;i15~16;+9;+32a (-4);;"* Heat Smash
-* Wall Crush +21g on block
-
-
 * Reversal Break
 * Balcony Break
 * Chip damage on block
 * Jail from 1st attack
-* Ends Heat";hs wc bbr chp;;Jin-H.2+3,4;Hellfire Darkside Slayer;r32;;
+* Ends Heat";hs bbr chp;;Jin-H.2+3,4;Hellfire Darkside Slayer;r32;;
 R.df+1+2;m,t;55+;i20;-15;+0d;;"* Rage Art
 * Removes Recoverable Health
 * Reversal Break
@@ -96,10 +93,10 @@ Power crush 8~";pc8~;;Jin-R.df+1+2;Polar Demon Gouge;r39;;
 2;h;9;i10;+0;+9;;;;;Jin-2;Right Jab;r19;;
 2,1;h, m;9, 9;i10, i16~17;-3;+6;;"* Jail from 1st attack with 2f delay
 * Same animation as df+1";;;Jin-2,1;Double Thrust;r20;;
-2,1,4;h, m, m;9, 9, 18;i10, ,i18~20;-9;+4;+27a;"* Combo from 2nd CH with 8f delay
+2,1,4;h, m, m;9, 9, 18;i10, ,i18~20;-10;+3;+26a;"* Combo from 2nd CH with 8f delay
 * Input can be delayed 10f";;;Jin-2,1,4;Double Thrust > Roundhouse;r26;;File:t8-p2-jin-2,1,4.mp4
 2,1,4~4;h, m, l;9, 9, 20;i10, ,i20~21;-12;+16a;;Interrupt with i16 from 2nd block;;;Jin-2,1,4~4;Double Thrust > Low Trick Kick;r28;;File:t8-p2-jin-2,1,4t4.mp4
-2,4;h, h;9, 20;i10, i24~27;-9;+11;;"* Balcony Break
+2,4;h, h;9, 20;i10, i24~27;-13;+7;;"* Balcony Break
 * Combo from 1st hit with 2f delay
 * Enter ZEN -6 +14 r26 with F";bbr;ZEN;Jin-2,4;Switchblade;r29;;File:t8-p2-jin-2,4.mp4
 3;h;19;i14;-7;+4;;;;;Jin-3;;;;
@@ -244,7 +241,8 @@ uf+4;m;13;i15~17;-13;+33a (+23a);;"&lt;div class=&quot;plainlist&quot;&gt;
 uf+1+2;h;40;i12;+0;+0d;;"* Floor Break
 * Throw break 1+2";fbr;;Jin-uf+1+2;Tidal Wave;r27;;File:t8-p2-jin-uf+1+2.mp4
 1+2+3+4;;;;;;;"* Can't block for 5 seconds
-* CH state for 5 seconds";;;Jin-1+2+3+4;"<div class=""dotlist"">
+* CH state on you for 5 seconds
+* 50% damage increase on the next attack for 5 seconds";;;Jin-1+2+3+4;"<div class=""dotlist"">
 
 * Ki Charge
 * Supercharger
@@ -378,21 +376,18 @@ ZEN.4;M;24;i27~i33;+2~+8;+17d~+23d;;"* Spike
 * fs34~36&lt;/div&gt;";"spk chp &lt;div class=&quot;plainlist&quot;&gt;
 * js7~33
 * fs34~36&lt;/div&gt;";;Jin-ZEN.4;Corpse Crusher;r31;;File:t8-p2-jin-zen.4.mp4
-ZEN.1+2;l,t;10,20;i24 i61;-14;+4 +16w;;"* Wall Crush +16g on hit
+ZEN.1+2;l,t;10,20;i24 i61;-14;+4 +8w;;"* Wall Crush +8g on hit
 
 
 * Transition to attack throw on standing hit
 * Recover standing after throw
 High crush 10~";wc cs10~;FC;Jin-ZEN.1+2;Low Chop > Karmic Epicenter;r33 FC;;File:t8-p2-jin-zen.1+2.mp4
-ZEN.3+4;h;25;i21~27;+9g~+15g;+19a (+9) +15w;;"* Wall Crush +15g~+21g on block
-
-
-* Balcony Break
+ZEN.3+4;h;25;i21~27;+9g~+15g;+19a (+9) +15w;;"* Balcony Break
 * Enter Breaking Step +8 +18a (+8) r32 with DF on frame 40
 * Chip damage on block
 &lt;div class=&quot;plainlist&quot;&gt;
 * Low crush 10~32
-* fs33~35&lt;/div&gt;";"wc bbr chp &lt;div class=&quot;plainlist&quot;&gt;
+* fs33~35&lt;/div&gt;";"bbr chp &lt;div class=&quot;plainlist&quot;&gt;
 * js10~32
 * fs33~35&lt;/div&gt;";Breaking Step;Jin-ZEN.3+4;Black Wing Bolt;r31;;File:t8-p2-jin-zen.3+4.mp4
 ZEN.u+1;m;20;i14~i16;-16;+31a (+21);;"* Tornado

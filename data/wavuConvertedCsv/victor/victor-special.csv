@@ -2,9 +2,10 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 2+3;m;12;i16;+1;+2;;"* Heat Burst
 * Alternate input: R1
 * Can be cancelled with input b,b
+* Can be performed while in PRF
 Power crush 7";hb pc7;;Victor-2+3;Heat Burst;;;
 H.IAI.d+2;m;45;i23~24;+8;+20 (+2);;"* Transition to IAI
-* Deals 13 chip damage on block";;IAI;Victor-H.IAI.d+2;Longinus;;;
+* Deals 10 chip damage on block";;IAI;Victor-H.IAI.d+2;Longinus;;;
 H.db+1+2;m;30;i28~29;+9;+6a (-4);;"* Transitions to IAI
 * Partially uses remaining Heat time";;;Victor-H.db+1+2;Monsieur Samurai;49;;
 H.u+1+2;m;46;i31~32;-4;+0a (-1);;"* Balcony Break
@@ -12,7 +13,8 @@ H.u+1+2;m;46;i31~32;-4;+0a (-1);;"* Balcony Break
 * Deals 23 chip damage on block
 is10~? Low crush ?~";bbr is10~? js?~;;Victor-H.u+1+2;Excalibur;;;File:t8-p2-victor-h.u+1+2.mp4
 H.2+3;l,m;39;i20;-14;th;;"* Heat Smash
-* Alternate input: H.R1";hs;;Victor-H.2+3;Élimination Samouraï;;;
+* Alternate input: H.R1
+*Can be performed while in PRF";hs;;Victor-H.2+3;Élimination Samouraï;;;
 R.df+1+2;m,t;55+;i20;-15;+0d;;"* Rage Art
 * Removes Recoverable Health
 * Reversal Break
@@ -23,8 +25,9 @@ R.df+1+2;m,t;55+;i20;-15;+0d;;"* Rage Art
 * Consumes Rage
 Power crush 8~";pc8~;;Victor-R.df+1+2;Coup de Chevalier;r39;;
 1;h;5;i10;+1;+8;;;;;Victor-1;Jab;19;;
-1,1;h, h;5, 7;i10, i16;-3;+8;;* Combo from 1st hit;;;Victor-1,1;;;;
-1,1,2;h, h, h,h;5, 7, 5,10;i10, ,i17~18,i9~10;-12;+3;;* Combo from 1st hit;;;Victor-1,1,2;Double Cabochon Cut;;;File:t8-p2-victor-1,1,2.mp4
+1,1;h, h;5, 5;i10, i16;-3;+8;;* Combo from 1st hit;;;Victor-1,1;;;;
+1,1,2;h, h, h,h;5, 5, 5,7;i10, ,i17~18,i9~10;-12;+3 / PRF +7;;"* Combo from 1st hit
+* Transition to PRF with F";;PRF;Victor-1,1,2;Double Cabochon Cut;;;File:t8-p2-victor-1,1,2.mp4
 1,2;h, h;5, 12;i10, i10;-3;+8;;* Combo from 1st hit;;;Victor-1,2;Basic Etiquette;;;File:t8-p2-victor-1,2.mp4
 1,2,1;h, h, m;5, 12, 20;i10, ,i26~27;-12;+18a (+1);+72a (+56a);"* Tornado
 * Balcony Break
@@ -35,7 +38,7 @@ Power crush 8~";pc8~;;Victor-R.df+1+2;Coup de Chevalier;r39;;
 2;h;10;i12~13;-12;-2;;;;;Victor-2;Right Jab;32;;
 2,1;h, h;10, 12;i12~13, i16;-6 / -4 PRF;+5 / +7 PRF;;"* Transition to PRF with F
 * Combo from 1st hit";;PRF;Victor-2,1;Cutlery Etiquette;;;File:t8-p2-victor-2,1.mp4
-2,2;h, m,m;10, 5,5;i12~13, i17~18,i7;-12;-2;;"*-10 if last hit whiffs
+2,2;h, m,m;10, 5,5;i12~13, i17~18,i7;-10;-2;;"*-10 if last hit whiffs
 * Combo from 1st hit";;;Victor-2,2;;;;
 2,2,2;h, m,m, h;10, 5,5, 12;i12~13, ,i22;-3;+4;;"* Strong Aerial Tailspin
 * Wall Crush +12g on hit
@@ -54,11 +57,11 @@ Power crush 8~";pc8~;;Victor-R.df+1+2;Coup de Chevalier;r39;;
 4,3,2;h, m, m;15, 17, 25;i13~14, ,i25~26;-13;+34d (+13);;"* Balcony Break
 * Combo from 2nd CH
 * Deals 7 chip damage on block";bbr;;Victor-4,3,2;Asterism of Benevolence;;;File:t8-p2-victor-4,3,2.mp4
-1+2;m;17;i15;-8;+2;+46a;;;;Victor-1+2;Eden;31;;
+1+2;m;17;i15;-9;+2;+46a;;;;Victor-1+2;Eden;31;;
 2+3+4;sp;;;;;;;;;Victor-2+3+4;Taunt;;;
+3+4;sp;;i30;;;;* 1f of intangibility on transition;;;Victor-3+4;Iai Stance;;;
 3+4;sp;;i30;;;;* Cancel stance with db;;;Victor-3+4;Iai Stance;;;
 3+4;sp;;i30;;;;* Can cancel into FC with db;;;Victor-3+4;Iai Stance;11;;
-3+4;sp;;i30;;;;* 1f of intangibility on transition;;;Victor-3+4;Iai Stance;;;
 f+2;h;10;i13~14;-11;+5;;;;;Victor-f+2;;30;;
 f+2,2;h, h;10, 10;i13~14, i11;-15;-4;;* Combo from 1st hit;;;Victor-f+2,2;;;;
 f+2,2,1;h, h, m;10, 10, 12;i13~14, ,i13~14;-11;0;;* Combo from 2nd CH;;;Victor-f+2,2,1;;;;
@@ -68,9 +71,10 @@ f+2,2,1,1;h, h, m, m;10, 10, 12, 25;i13~14, ,i20~21;-15;+20 (+15);;"* Balcony Br
 * Hit confirmable if (f22)1 is ch";bbr;;Victor-f+2,2,1,1;Gorlagon;;;File:t8-p2-victor-f+2,2,1,1.mp4
 f+2,2,2;h, h, h,m,m;10, 10, 7,5,20;i13~14, ,i14,i12~13,i7~8;-13;+20a;;"* Balcony Break
 * Combo from 2nd CH";bbr;;Victor-f+2,2,2;Radiant Cut;;;File:t8-p2-victor-f+2,2,2.mp4
-f+3;sp;;i20;;;;"* Can cancel into FC with df
+f+3;sp;;i20;;;;"* Can cancel into r20 cs5~ FC with df
 * Punch parry only
 * Successful parry puts Victor in PRF at +15
+* Can perform Heat Burst and Heat Smash from stance
 Parry state 5-10";ps5-10;;Victor-f+3;Perfumer;22;;
 f+3;sp;;i20;;;;"* Can transition to FC with df
 * Punch parry from frame 5 to 10";;FC;Victor-f+3;Perfumer;i43;;
@@ -107,7 +111,7 @@ df+4,2;m, h;15, 16;i13~14, i22;-3;+4;;"* Strong Aerial Tailspin
 * Combo from 1st hit
 * Deals 6 chip damage on blocked gunshot
 * Transitions to IAI (cannot cancel)";wc;;Victor-df+4,2;Selfish Miranda;;;File:t8-p2-victor-df+4,2.mp4
-df+3+4;m;32;i14~15;-17;+16 (+11);;* Balcony Break;bbr;;Victor-df+3+4;Llamrei;39;;File:t8-p2-victor-df+3+4.mp4
+df+3+4;m;28;i14~15;-17;+16 (+11);;* Balcony Break;bbr;;Victor-df+3+4;Llamrei;39;;File:t8-p2-victor-df+3+4.mp4
 d+1;l;7;i16;-17;-6;;* Cannot be parried (weapon low);;FC;Victor-d+1;;36 FC;;
 d+1,1;l, h;7, 15;i16, i18;-7;+6;;"* Combo from 1st hit
 * -26 on 1st block";;;Victor-d+1,1;Concave Cut;;;File:t8-p2-victor-d+1,1.mp4
@@ -115,10 +119,9 @@ d+2;m;21;i18;+0;+4 / HE;;"* Heat Engager
 
 * Heat Dash +5, +67a (+50a)
 
-* 6 chip damage on block
-* 8 chip damage on block in heat";he;;Victor-d+2;Llawfrodedd;34;;File:t8-p2-victor-d+2.mp4
+* 6 chip damage on block";he;;Victor-d+2;Llawfrodedd;34;;File:t8-p2-victor-d+2.mp4
 d+3;l;11;i18~19;-13;-2;;;;;Victor-d+3;Good Manners;32;;File:t8-p2-victor-d+3.mp4
-d+4;l;10;i16;-14;-3;+0 (th);;;;Victor-d+4;Fine Salute;33;;File:t8-p2-victor-d+4.mp4
+d+4;l;10;i16;-13;-2;+0 (th);;;;Victor-d+4;Fine Salute;33;;File:t8-p2-victor-d+4.mp4
 d+1+2;sm;21;i19~21;-9;+17 (+10);+35a;"* Tornado
 * Deals 6 chip damage on block";trn;;Victor-d+1+2;Iridescence of Prowess;33;;File:t8-p2-victor-d+1+2.mp4
 db+1;m;9;i14~15;-9;-2;;;;;Victor-db+1;;32;;
@@ -140,15 +143,15 @@ b+3,1;m, m;15, 25;i17, i25~26;-13;+21a (+16);;"* Combo from 1st hit
 * Balcony Break";bbr;;Victor-b+3,1;Caval;;;
 b+4;h;20;i18~19;-2;+13;+13;"* Homing
 * Balcony Break";hom bbr;;Victor-b+4;Cordial Circuit;30;;
-b+1+2;h;25;i19~20;-9;+42d (-16d) / HE;+42d (-16d) / HE;"* Balcony Break
-* Deals 7 chip damage on block
+b+1+2;h;25;i19~20;-9;+16d;+16d;"* Balcony Break
+* 7 chip damage on block
 Power crush 7~";bbr pc7~;;Victor-b+1+2;Failnaught;32;;File:t8-p2-victor-b+1+2.mp4
 b+1+4;m;24;i26~27;-21;+37 (+6);;;;;Victor-b+1+4;Dun Stallion;49;;File:t8-p2-victor-b+1+4.mp4
 u+1+2;m;32;i31~32;-20;+1a;;"* Deals 11 chip damage on block
 * Victor teleports overhead on frame 10 and descends downward for the rest of the startup; evades some highs and mids but vulnerable on descent (lows, throws, etc. hit)
 is10~? Low crush ?~";is10~? js?~;;Victor-u+1+2;Caliburnus;49;;File:t8-p2-victor-u+1+2.mp4
 uf+1;m;9;i13;-9;+4;;;;;Victor-uf+1;;31;;
-uf+1,1;m, m;9, 21;i13, i25~26;-14 / -10 IAI;+15 / +3 IAI;;"* Tornado
+uf+1,1;m, m;9, 21;i13, i25~26;-14 / -10 IAI;+15 / +3 IAI / +19 PRF;;"* Tornado
 * Balcony Break
 * Combo from 1st hit
 * Twitch confirmable
@@ -182,11 +185,12 @@ ub,b;sp;;;;;;;;;Victor-ub,b;Le Blanc;;;File:t8-p2-victor-ub,b.mp4
 f,f,F+2;m;21;i18~19;+2;+34d (-24d);+61a (+45a);"* Balcony Break
 * Deals 6 chip damage on block
 * Transition to IAI with d or 3+4 at +5 / +37d (-21d) / +64a (+48a)";bbr;IAI;Victor-f,f,F+2;Asterism of Virtue;40;;File:t8-p2-victor-f,f,f+2.mp4
-f,f,F+1+2;l,l;10,14;i18;-14;+4 IAI;+15g;* Transition to IAI at +4 on hit;;IAI;Victor-f,f,F+1+2;Tear Drop Cut;;;
+f,f,F+1+2;l,l;10,14;i18, i14~15;-14;+4 IAI;+15g;"* Transition to r18 IAI at +4 on hit
+High crush 15~";cs15~;IAI;Victor-f,f,F+1+2;Tear Drop Cut;r32;;
 ws1;m;20;i15~16;-16;+53a;;;;;Victor-ws1;Oval Cut;36;;File:t8-p2-victor-ws1.mp4
 ws2;m;15;i14~15;-8;+6;+35a (+25);;;;Victor-ws2;Baguette Cut;29;;File:t8-p2-victor-ws2.mp4
-ws3;h;16;i15~16;-14;+6;;;;;Victor-ws3;;35;;
-ws3,2;h, sm;16, 23;i15~16, i30~32;-9;+17a (+10a);+35a;"* Tornado
+ws3;h;16;i14~15;-14;+6;;;;;Victor-ws3;;35;;
+ws3,2;h, sm;16, 23;i14~15, i30~32;-9;+17a (+10a);+35a;"* Tornado
 * Combo from 1st hit
 * Deals 6 chip damage on block";trn;;Victor-ws3,2;Iridescence of Faith;;;File:t8-p2-victor-ws3,2.mp4
 ws4;m;16;i11~12;-6;+5;;;;;Victor-ws4;Praise Smash;25;;File:t8-p2-victor-ws4.mp4
@@ -235,11 +239,12 @@ IAI.P.f;m;21;i16~17;;+60 (+44);;"* Balcony Break
 * Tornado";bbr trn;;Victor-IAI.P.f;Gwen;;;
 IAI.b;sp;;;;;;;;;Victor-IAI.b;Move Backward;;;File:t8-p2-victor-iai.b.mp4
 IAI.d;sp;;;;;;High crush 1~30;cs1~30;;Victor-IAI.d;Take a Bow;;;File:t8-p2-victor-iai.d.mp4
-IAI.d+1;m;25;i18;-2;+24a / HE;;"* Heat Engager
+IAI.d+1;M;25;i18;-2;+24a / HE;;"* Heat Engager
 
 * Heat Dash +5, +42a (+27a)
 
-* Deals 7 chip damage on block";he;;Victor-IAI.d+1;Passelande;;;
+* Balcony Break
+* 7 chip damage on block";he bbr;;Victor-IAI.d+1;Passelande;r40;;
 IAI.d+2;m;31;i23~24;+4;0 (-7);;"* Transition to IAI
 * Deals 6 chip damage on block";;IAI;Victor-IAI.d+2;Rhongomyniad;68;;File:t8-p2-victor-iai.d+2.mp4
 IAI.d+1+2;l,l;10,20;i20~21,i14~15;-29;-3;;;;;Victor-IAI.d+1+2;Espee Aventureuse;58;;File:t8-p2-victor-iai.d+1+2.mp4
@@ -264,4 +269,6 @@ PRF.4;h;17;i18~19;-2;+13;+13;"* Homing
 * Balcony Break";hom bbr;;Victor-PRF.4;Cordial Circuit;30;;
 PRF.1+2;m;25;i25~27;+6;+14a;;"* Balcony Break
 * Deals 7 chip damage on block";bbr;;Victor-PRF.1+2;Hengroen;36;;File:t8-p2-victor-prf.1+2.mp4
-PRF.df;sp;;i21;;;;*Recovers crouched;;FC;Victor-PRF.df;Sillage;FC;;File:t8-p2-victor-prf.df.mp4
+PRF.b+2;h;5;i10;-9;+2;+14;;;;Victor-PRF.b+2;Strobing Memories;30;;File:t8-p2-victor-b+2.mp4
+PRF.df;sp;;i21;;;;"*Recovers crouched
+High crush 5~";cs5~;FC;Victor-PRF.df;Sillage;FC;;File:t8-p2-victor-prf.df.mp4

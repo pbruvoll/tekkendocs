@@ -1,7 +1,7 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Transitions;Wavu id;Name;Recovery;Image;Video
 2+3;m;"[12;12]";i16;+1;+2c;;"* Heat Burst
-* Cancel to r45 with b,b
-* 3 chip damage on block
+* Cancel to r45 with b,b on frame 42
+* 2 chip damage on block
 * 12 chip damage on hit
 * Only deals recoverable damage
 * Cannot cause a K.O.
@@ -476,12 +476,11 @@ PAB.df+1,1,2,1;m, m, m, m;12, 14, 12, 20;i15~16, ,i16;-13;+17d;;"* Spike
 * Combo from 3rd hit with 2F delay
 * Jail from 3rd block with no delay
 * Move can be delayed by 2F";spk;;Steve-PAB.df+1,1,2,1;Argos Rush;;;File:t8-p2-steve-pab.df+1,1,2,1.mp4
-PAB.df+1,2;m, h;12, 20;i15~16, i18-19;-6;+10;;"* Wall Crush +18g on hit
-
-
-* Combo from 1st hit with 8F delay
+PAB.df+1,2;m, h;12, 20;i15~16, i18-19;-6;+8;;"* Combo from 1st hit with 8F delay
+* Transitions to LNH
+* Transition to +4 Standing with B
 * 6 Chip Damage on block
-* 8 Chip Damage on block in heat";wc;;Steve-PAB.df+1,2;Cross Cut;;;File:t8-p2-steve-pab.df+1,2.mp4
+* 8 Chip Damage on block in heat";;LNH;Steve-PAB.df+1,2;Cross Cut;LNH;;File:t8-p2-steve-pab.df+1,2.mp4
 PAB.df+2;m;16;i16~17;-10;+31a (+21);;* Elbow;elb;PAB;Steve-PAB.df+2;Cutting Elbow;PAB;;File:t8-p2-steve-pab.df+2.mp4
 PAB.d+1;l;11;i15~16;-12;+2;;"* Alternate input: FC df1
 High crush 6~";cs6~;PAB;Steve-PAB.d+1;Patella Smash;PAB;;File:t8-p2-steve-pab.d+1.mp4

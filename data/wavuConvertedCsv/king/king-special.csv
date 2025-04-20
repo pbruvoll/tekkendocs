@@ -1,19 +1,16 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Transitions;Wavu id;Name;Recovery;Image;Video
 2+3;m;"[12;12]";i16;+1;+2c;;"* Heat Burst
-* Cancel to r45 with b,b
-* 3 chip damage on block
+* Cancel to r45 with b,b on frame 42
+* 2 chip damage on block
 * 12 chip damage on hit
 * Only deals recoverable damage
 * Cannot cause a K.O.
 Power crush 7~16";hb pc7~16;;King-2+3;Heat Burst;r30;;
 H.JGR.1;m;21;i16~17;-8;+75a(+59);;"* 6 chip damage on block
 * Partially uses remaining Heat time.";;;King-H.JGR.1;Running Elbow Smash (Heat);r28;;File:t8-p2-king-jgr.1.mp4
-H.JGR.2;h;26;i18~19;+6;+4a;;"* Wall Crush +18gc on block
-
-
-* 13 chip damage on block.
+H.JGR.2;h;26;i18~19;+8;+4a;;"* 13 chip damage on block.
 * Forces crouching at +18c on wall crush.
-* Partially uses remaining Heat time.";wc;;King-H.JGR.2;Jaguar Axe (Heat);r33;;File:t8-p2-king-jgr.2.mp4
+* Partially uses remaining Heat time.";;;King-H.JGR.2;Jaguar Axe (Heat);r33;;File:t8-p2-king-jgr.2.mp4
 H.2+3;m,t;20,40;i17;+12;+0d;;"* Heat Smash
 * Floor Break
 * Shifts to JGR on block (without heat).
@@ -404,13 +401,13 @@ AIR.d+1+3;t(a);15;i12~13;;-5d;;"* Cannot throw break.
 * Opponent recovers in FDFL.";;;King-AIR.d+1+3;Double Heel Hold (DHH);;;
 AIR.f,f,F+2+4;t(a);65(70);i10;;+4d;;"Floor Break
 * Cannot throw break.
-* Input quickly to ""blue spark"" (+5 damage).
+* Input n,f,F+2+4 within 6 frames after dash startup (f,n,f) to execute ""blue spark"" (+5 damage).
 * Partially restores remaining Heat time.
 * Opponent recovers in FUFT.";fbr;;King-AIR.f,f,F+2+4;Running Jaguar Bomb;;;
 AIR.f,hcf+1;t(a);55(60);i10 / i12~14;;+3d;;"Floor Break
 * Cannot throw break.
 * Also by JGR.1+3 against airborne opponent.
-* Input quickly to ""blue spark"" (+5 damage).
+* Input all 6 directions of throw, press df for 1-3F, at most 1F of f followed by f+1 or f+2 for blue spark (+5 damage).
 * Partially restores remaining Heat time.
 * Opponent recovers in FUFT.";fbr;;King-AIR.f,hcf+1;Aerial Jaguar Bomb;;;
 Behind.b,f+1+2;t;75;i10;;+1d;;"Floor Break
@@ -543,7 +540,8 @@ UT,3+4:1+2;t, t;20, 30;i69?, ;;+1d;;"* Input 1+2 during frames 68-70 of Leg Cros
 * Cannot throw break.
 * Opponent recovers in FDFL.";;;King-UT,3+4,1+2;Stretch Combo;;;File:t8-p2-king-ut,3+4,1+2.mp4
 WALL.f,hcf+1 / WALL.f,f,F+2+4;t(w);65(70);i10;;-5d;;"* Cannot throw break. Also converts from RKO.
-* Input quickly to ""blue spark"" (+5 damage).
+* (f,hcf+1): Input n,f,F+2+4 within 6 frames after dash startup (f,n,f) to execute ""blue spark"" (+5 damage).
+* (f,f,F+2+4): Input all 6 directions of throw, press df for 1-3F, at most 1F of f followed by f+1 or f+2 for blue spark (+5 damage).
 * Partially restores remaining Heat time.
 * Opponent recovers in FUFR.";;;King-WALL.f,hcf+1;Shining Torpedo;;;
 WallBack.b,b,ub;t / m;45 / 21;i43~48 / i44~63;-8;+2 / +15;;"* Airborne from 5F, invincibility from 8 to 13F.
@@ -591,16 +589,16 @@ d+1+4;t(c);35;i12~13;;+0d;;"* Heat Engager
 * Restores some Heat Gauge in Heat.
 * Cannot heat dash.Opponent recovers in FDFA.";he;;King-d+1+4;Freedom Face Buster (Pedigree);;;File:t8-p2-king-d+1+4.mp4
 f,f,F+2+4;t;40(45);i10;-5;+1d;;"* 1+2 throw break.
-* Input quickly to ""blue spark"" (+5 damage).
+* Input n,f,F+2+4 within 6 frames after dash startup (f,n,f) to execute ""blue spark"" (+5 damage).
 * Partially restores remaining Heat time.
 * Opponent recovers in FUFL.";;;King-f,f,F+2+4;Tomahawk;;;File:t8-p2-king-f,f,f+2+4.mp4
 f,hcf+1;t;45(50),20 / 70;i10;-13;-22d(-50);;"* 1 throw break. Side switch. 
-* Input quickly to ""blue spark"" (+5 damage).
+* Input all 6 directions of throw, press df for 1-3F, at most 1F of f followed by f+1 for blue spark (+5 damage).
 * Partially restores remaining Heat time.
 * Mash 1/2/3/4 to roll in midscreen to reduce 20 damage, on wall splat damage is 70.
 * Opponent recovers in FUFT if fails to roll.";;;King-f,hcf+1;Giant Swing;;;
 f,hcf+2;t;50(55);i12~14;-6;+1d;;"* 2 throw break.
-* Input quickly to ""blue spark"" (+5 damage).
+* Input all 6 directions of throw, press df for 1-3F, at most 1F of f followed by f+2 for blue spark (+5 damage).
 * Partially restores remaining Heat time.
 * f,b,d,f are required, so it can be done by f,b,db,d(,n),f+2. (same for Giant Swing)
 * Opponent recovers in FUFL.";;;King-f,hcf+2;Tijuana Twister;;;File:t8-p2-king-f,hcf+2.mp4

@@ -21,36 +21,34 @@ Power crush 8~";pc8~;;Anna-R.df+1+2;Some Like It Rough!;r39;;
 1,2,1;h, h, h;5, 8, 4;i10, ,i16;-4;+0;;"* Jail from 1st attack with 3f delay
 * Combo from 1st hit with 4f delay
 * Input can be delayed 10f";;;Anna-1,2,1;Left Right Left;r25;;
-1,2,1,2;h, h, h, m;5, 8, 4, 24;i10, ,i23~72;-14~+35;+21a (+11);;"* Balcony Break
-* Weapon
+1,2,1,2;h, h, h, m;5, 8, 4, 24;i10, ,i23~72;-14~+35;+21a (+11);;"* Weapon
 * Combo from 3rd CH
-* Chip damage on block";bbr wpn chp;;Anna-1,2,1,2;Roasted with Love;r13;;
+* Chip damage on block";wpn chp;;Anna-1,2,1,2;Roasted with Love;r13;;
 1,2,1,4;h, h, h, m;5, 8, 4, 18;i10, ,i20~21;+4;+32a (+22);;"* Tornado
 * Chip damage on block
 ,fs20~39";trn chp fs20~39;;Anna-1,2,1,4;Frost Combination;r37;;
 H.1,2,1,2;h, h, h, m,m,m;5, 8, 4;i10, ,i23~72 i36~85 i54~103;-2~+47g;+23a (-3);;"* Weapon
-* Wall Crush +5g~ minimum
-
-
 * Combo from 3rd CH
 * Jails from 4th hit
-* Partially uses remaining Heat time";wpn wc;;Anna-1,2,1,H.2;Roasted with Eternal Love;r24;;
+* Partially uses remaining Heat time";wpn;;Anna-1,2,1,H.2;Roasted with Eternal Love;r24;;
 1,2,2;h, h, M;5, 8, 20;i10, ,i26~27;-8;+12;+76a (+60);* Transition to HAM on hit automatically;;HAM;Anna-1,2,2;Left Right Stinger;r31;;
 1,2,4;h, h, h;5, 8, 22;i10, ,i22;-6;+20a (+11);+49a;"* Balcony Break
 * Combo from 2nd CH";bbr;;Anna-1,2,4;Bermuda Triangle;r30;;
 1,4;h, L;5, 12;i10, i22~23;-13;-2;;"* Balcony Break
 * Combo from 1st hit
 ,High crush 10~";bbr cs10~;FC;Anna-1,4;Reverse PDK Combo;r32 FC;;
-2;h;10;i10;-3;+3;+9;* Enter HMC +1 +7 +13 with F;;HMC;Anna-2;;r22;;
+2;h;10;i10;-3;+3;+9;* Enter HAM +1 +7 +13 with F;;HAM;Anna-2;;r22;;
 2,2;h, M;10, 20;i10, i26~27;-8;+12;+76a (+60);"* Combo from 1st CH
+* High evasion
+* Interrupt with i11 from 1st block
 * Input can be delayed 5f
 * Transition to HAM on hit automatically";;HAM;Anna-2,2;Quick Stinger;r31;;
 2,3;h, m;10, 14;i10, i19~20;-3;+8;+12;"* Jail from 1st attack
-* Combo from 1st CH with 2f delay
+* Combo from 1st hit with ?f delay
 * Input can be delayed 2f";;CJM;Anna-2,3;Straight Face Wash;r20 CJM;;
 2,4;h, h;10, 22;i10, i22;-6;+20a (+11);+49a;"* Balcony Break
 * Combo from 1st CH with 9f delay
-* Input can be delayed 10f";bbr;CJM;Anna-2,4;Jab Roundhouse;r20 CJM;;
+* Input can be delayed 10f";bbr;;Anna-2,4;Jab Roundhouse;;;
 3;m;17;i14~16;-6;+3;;* Knee;kne;CJM;Anna-3;;r25 CJM;;
 3,2;m, m;17, 20;i14~16, i20;-11c;+4c;;"* Spike
 * Combo from 1st hit";spk;FC;Anna-3,2;Serval Cleaver;r38 FC;;
@@ -144,7 +142,7 @@ df+3,2;m, h;13, 9;i14, i19;-2;+4;+10;"* Combo from 1st hit with 10f delay
 * Enter HAM -2 +4 +10 r21 with F";;HAM;Anna-df+3,2;Creeping Snake;r21;;
 df+3,2,1;m, h;13, 9;i14, ,;;;;;;;Anna-df+3,2,1;;;;
 df+3,2,1,2;m, h;13, 9;i14, ,;;;;;;;Anna-df+3,2,1,2;;;;
-df+3,2,1,2,4;m, h;13, 9;i14, ,;;;;* Transition to CJM with B;;CJM;Anna-df+3,2,1,2,4;;;;
+df+3,2,1,2,4;m, h;13, 9;i14, ,;;;;* Transition to -21 -10 +9a CJM with B;;CJM;Anna-df+3,2,1,2,4;;;;
 df+3,2,1,2,4,1;m, h;13, 9;i14, ,;;;;;;;Anna-df+3,2,1,2,4,1;;;;
 df+3,2,1,2,4,1,2;m, h;13, 9;i14, ,;;;;;;;Anna-df+3,2,1,2,4,1,2;;;;
 df+3,2,1,2,4,1,2,2;m, h;13, 9;i14, ,;;;;;;;Anna-df+3,2,1,2,4,1,2,2;;;;
@@ -154,7 +152,7 @@ df+3,2,2;m, h, M;13, 9, 20;i14, ,i26~27;-8;+12;+76a (+60);"* Combo from 2nd CH
 * Input can be delayed 10f
 * Move can be delayed 5f
 * Transition to HAM on hit automatically";;HAM;Anna-df+3,2,2;Creeping Stinger;r31;;
-df+3,2,4;m, h, h;13, 9, 22;i14, ,i22;;+20a (+11);+49a;"* Balcony Break
+df+3,2,4;m, h, h;13, 9, 22;i14, ,i22;-6;+20a (+11);+49a;"* Balcony Break
 * Combo from 2nd CH with 9f delay
 * Input can be delayed 10f";bbr;;Anna-df+3,2,4;Creeping Snake > Right High Kick;r30;;
 df+3,3+4;m, m,m;13, 6,10;i14, i32~34 i11~12;-4;+78a (+62);;"* Tornado
@@ -164,10 +162,10 @@ df+3,3+4;m, m,m;13, 6,10;i14, i32~34 i11~12;-4;+78a (+62);;"* Tornado
 * Instant Tornado only if both knees connect
 * +27a (+17) if only the last hit connects
 Low crush 34~46";trn bbr kne js34~46;;Anna-df+3,3+4;Furious Hail;r22;;
-df+4;L;17;i16~17;+5c;-15;+25d;"* Tracking notes:
+df+4;L;17;i16~17;-15;+5c;+25d;"* Tracking notes:
 * Homing to SSR side";;;Anna-df+4;Wine Opener;r32;;
 d+1;sl;5;i10;-5;+6;;* Can recover standing with F;;FC;Anna-d+1;Low Jab;r24 FC;;
-d+1,4;sl, m;5, 10;i10, i16~17;-11;+0;;* Combo from 1st CH;;FC;Anna-d+1,4;Low Jab Rising Kick;r29 FC;;
+d+1,4;sl, m;5, 10;i10, i16~17;-11;+0;;* Combo from 1st CH;;;Anna-d+1,4;Low Jab Rising Kick;r29;;
 d+2;m;17;i16~17;+1;+7c;+24d;* Spike;spk;;Anna-d+2;Ice Sickle;r29;;
 d+3;L;10;16;-17;-6;;High crush 4~;cs4~;FC;Anna-d+3;Left Spin Low Kick;r36 FC;;
 d+3,2;L, m;10, 18;16, i25~27;-11;+14~+16;;* Combo from 1st CH;;;Anna-d+3,2;Left Spin Low Kick > Right Upper;r30;;
@@ -226,8 +224,8 @@ b+2,2;h, h;10, 20;i13~14, i18~19;-9;+5;;"* Balcony Break (airborne)
 * Female characters can slap back with 2 on hit
 * Male characters can slap back with 2 on hit (likely a bug)";;;Anna-b+2,2;Double Slap;r33;;
 b+3;;;;;;;"* Actionable after 16f
-* Parries all lows (including Heat Smash lows)
-* Parries throws: +0d and 25 damage
+* i3? low parry: parries all lows (including Heat Smash lows)
+* i3? throw parry: +0d and 25 damage
 * Enter HAM with f+3 on frame 16
 Parry state 3~47";ps3~47;HAM,CJM;Anna-b+3;Chaos Judgement;r16 CJM;;
 b+4;m;17;i19~21;-9;+11g;;"* Strong Aerial Tailspin
@@ -305,8 +303,8 @@ f,F+4;M;20;i31~34;+5;+19a;;"* Spike
 Low crush 16~31";spk chp js16~31;CJM,FC;Anna-f,F+4;Falling Heel;r28 FC;;
 f,F+1+2;m;25;i18~20;-9;+19a (+14);;"* Balcony Break
 * 5 chip damage on block";bbr;;Anna-f,F+1+2;Sosho Zanha;r35;;
-f,F+1+2;m;30;i27~29;+5~+7;+33a (+12);;"* Balcony Break
-* 12 chip damage on block";bbr;;Anna-f,F+1+2;Sosho Zanha;r35;;
+f,F+1+2*;m;30;i27~29;+5~+7;+33a (+12);;"* Balcony Break
+* 12 chip damage on block";bbr;;Anna-f,F+1+2*;Sosho Zanha;r35;;
 f,F+3+4;m,m,m;8,8,10;i15~16 i8~11 i7~8;+0;+9;+30a (+23);"* CH advantage is for the first hit
 Low crush 13~";js13~;CJM;Anna-f,F+3+4;Treading Water;r20 CJM;;
 qcf+1;h;20;i13~17;+1~+5;+3~+7;+47a (+37);"* Elbow
@@ -333,20 +331,15 @@ f,f,F+2,4;m, m;10, 28;i15~16, i28~30;-13;+9a (+0);;"* Balcony Break
 * fs46~48&lt;/div&gt;";;Anna-f,f,F+2,4;Double Meteor Alter;r33;;
 f,f,F+3;L;12;i16~20;-20;-2c;;"*
 High crush 9~";cs9~;FC;Anna-f,f,F+3;;r35 FC;;
-f,f,F+3,2;L, SL;12, 24;i16~20, i28~77;-16~+33g;+19a (+9);;"* Balcony Break
-* Weapon
+f,f,F+3,2;L, SL;12, 24;i16~20, i28~77;-16~+33g;+19a (+9);;"* Weapon
 * Combo from 1st CH
 * Chip damage on block
-* Power up in Heat";bbr wpn chp;FC;Anna-f,f,F+3,2;Grilled with Love;r27 FC;;
-H.f,f,F+3,2;L, SL,SL,SL;12, 9,9,32;i16~20, i28~77 i41~90 i60~109;-5~+44g;+21a (-5);;"* Balcony Break
-* Weapon
-* Wall Crush +2g~ minimum
-
-
+* Power up in Heat";wpn chp;FC;Anna-f,f,F+3,2;Grilled with Love;r27 FC;;
+H.f,f,F+3,2;L, SL,SL,SL;12, 9,9,32;i16~20, i28~77 i41~90 i60~109;-5~+44g;+21a (-5);;"* Weapon
 * Combo from 1st CH
 * Jails from 2nd hit
 * Chip damage on block
-* Partially uses remaining Heat time";bbr wpn wc chp;FC;Anna-f,f,F+3,H.2;Grilled with Eternal Love;r40 FC;;
+* Partially uses remaining Heat time";wpn chp;FC;Anna-f,f,F+3,H.2;Grilled with Eternal Love;r40 FC;;
 f,f,F+4;m;28;i19~20;+3;+19a (+9);;"* Balcony Break
 * Chip damage on block
 * Hitstop 20f on hit
@@ -403,19 +396,14 @@ CJM.2,1;h, m;10, 16;i10, i20~21;-11;+24a (+19);;"* Heat Engager
 * Balcony Break
 * Combo from 1st hit with 6f delay";he bbr;;Anna-CJM.2,1;Carmine Hands;r31;;
 CJM.3;m;12;i12~14;-12;+3;;;;;Anna-CJM.3;Picking Heel;r32;;
-CJM.3,2;m, m;12, 24;i12~14, i28~77;-14~+35;+21a (+11);;"* Balcony Break
-* Weapon
+CJM.3,2;m, m;12, 24;i12~14, i28~77;-14~+35;+21a (+11);;"* Weapon
 * Combo from 1st hit
-* Chip damage on block";bbr wpn chp;;Anna-CJM.3,2;Baked with Love;r13;;
-H.CJM.3,2;m, m,m,m;12, 9,9,32;i12~14, i28~77 i41~90 i59~108;-2~+47g;+26a (+0);;"* Balcony Break
-* Weapon
-* Wall Crush +5g~ minimum
-
-
+* Chip damage on block";wpn chp;;Anna-CJM.3,2;Baked with Love;r13;;
+H.CJM.3,2;m, m,m,m;12, 9,9,32;i12~14, i28~77 i41~90 i59~108;-2~+47g;+26a (+0);;"* Weapon
 * Combo from 1st hit
 * Jails from 2nd hit
 * Chip damage on block
-* Partially uses remaining Heat time";bbr wpn wc chp;;Anna-CJM.3,H.2;Baked with Eternal Love;r29;;
+* Partially uses remaining Heat time";wpn chp;;Anna-CJM.3,H.2;Baked with Eternal Love;r29;;
 CJM.4;M;23;i20~21;-13;+10a;;"* Balcony Break
 * Spike
 * -9 on block after absorbing an attack
@@ -506,7 +494,8 @@ HAM.1+2;M;36;i24~25;+6c;+17a (+7);;"* Reversal Break
 * 14 chip damage on block
 * 16 chip damage on block in heat";bbr spk wpn;FC;Anna-HAM.1+2;Dullahan Smash;r38 FC;;
 HAM.b+3;;;;;;;;;;Anna-HAM.b+3;;;;
-OTG.d+3+4;=L;30;i17~18;-17;-7d;;"* Spike
+LIB.d+3;m;25;i24~26;+2;+13a;+38a;High crush 6~;cs6~;;Anna-LIB.d+3;Pedalada Tron;r35;;
+OTG.d+3+4;L;30;i17~18;-17;-7d;;"* Spike
 * Partially restores remaining Heat time on hit";spk;;Anna-OTG.d+3+4;Heel Grind;r35;;
 ROLL.3;m;27;i10~11;-9;+32d (+24);;"* Balcony Break
 ,High crush 1~";bbr cs1~;FC;Anna-ROLL.3;Rolling Stone;r32 FC;;
@@ -535,8 +524,8 @@ TOM.2;m;30;8~107;-1~+98;+20a (-6);;"* Balcony Break
 * 16 chip damage on block in heat
 * Power up in Heat: +10 damage";bbr wpn wc;;Anna-TOM.2;Machree Penetrator;r36;;
 TOM.3;;;;;;;"* Actionable after 16f
-* Parries all lows (including Heat Smash lows)
-* Parries throws: +0d and 25 damage
+* i3? low parry: parries all lows (including Heat Smash lows)
+* i3? throw parry: +0d and 25 damage
 * Enter HAM with f+3 on frame 16
 Parry state 3~47";ps3~47;HAM,CJM;Anna-TOM.3;Chaos Judgement;r26 CJM;;
 TOM.4;L;21;i15;-13;+28d;;;;FC;Anna-TOM.4;Banquet Crasher;r32 FC;;

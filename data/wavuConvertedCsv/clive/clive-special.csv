@@ -1,7 +1,7 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Transitions;Wavu id;Name;Recovery;Image;Video
 2+3;m;"[12;12]";i16;+1;+2c;;"* Heat Burst
-* Cancel to r45 with b,b
-* 3 chip damage on block
+* Cancel to r45 with b,b on frame 42
+* 2 chip damage on block
 * 12 chip damage on hit
 * Only deals recoverable damage
 * Cannot cause a K.O.
@@ -28,9 +28,6 @@ H.u+1+2,2,1;m,m, h,h, m,m;18,21, 10,12, 10,16;i19~20,i20~21, ,i20~21,i11~12;-8;+
 * Same move as (df+1,H.1,2),1?";trn bbr;;Clive-H.u+1+2,2,1;Blazing Eruption;;;
 H.2+3;m,t,m,m,m,m,m,m;55;i18;+8;-10;;"* Heat Smash
 * Balcony Break
-* Wall Crush +10g on block
-
-
 * Transition to attack throw on 1st hit
 * 45 damage Balcony Break on 1st whiff
 * Recover 27-45 recoverable health on hit:
@@ -40,7 +37,7 @@ H.2+3;m,t,m,m,m,m,m,m;55;i18;+8;-10;;"* Heat Smash
 * 19 Chip Damage on block
 &lt;div class=&quot;plainlist&quot;&gt;
 * Low crush 23~117
-* fs118~120&lt;/div&gt;";"hs bbr wc &lt;div class=&quot;plainlist&quot;&gt;
+* fs118~120&lt;/div&gt;";"hs bbr &lt;div class=&quot;plainlist&quot;&gt;
 * js23~117
 * fs118~120&lt;/div&gt;";;Clive-H.2+3;Infernal Flames of Rebirth;r48;;
 R.df+1+2;m,t;55+;i20;-15;+0d;;"* Rage Art
@@ -127,7 +124,7 @@ Power crush 8~";pc8~;;Clive-R.df+1+2;Hellfire;r39;;
 4,4;m, h;8, 13;i12, i25;-8;+0;;"* Combo from 1st hit
 * Input can be delayed 3f
 * Enter PHX +6 +14 r21 with F or 4 on hit or block";;PHX;Clive-4,4;Roundabout;r35;;File:t8-p2-clive-4,4.mp4
-1+2;m;24;i13;-9;+2;;"* Heat Engager
+1+2;m;21;i13;-9;+2;;"* Heat Engager
 
 * Heat Dash +5, +43d (+35d)
 
@@ -185,16 +182,20 @@ f+2,2,2;m, m, M;10, 7, 20;i15, ,i27~228;-13;+9a;;"* Heat Engager
 * Weapon
 * Combo from 1st CH
 * Combo from 2nd hit
-* Interrupt with i8 from 2nd block";he bbr spk wpn;;Clive-f+2,2,2;Burning Chain;r40;;File:t8-p2-clive-f+2,2,2.mp4
+* Interrupt with i8 from 2nd block
+* Input can be delayed by 8F
+* Move cannot be delayed";he bbr spk wpn;;Clive-f+2,2,2;Burning Chain;r40;;File:t8-p2-clive-f+2,2,2.mp4
 f+2,2,1+2;m, m, M;10, 7, 18;i15, ,i27~228;-13c;+9a;;"* Balcony Break
 * Spike
 * Weapon
 * Combo from 1st CH
 * Combo from 2nd hit
 * Interrupt with i8 from 2nd block
-* Increases ZAN gauge by 0.30 on hit
-* Increases ZAN gauge by 0.10 on block
-* Only deals recoverable damage";bbr spk wpn;;Clive-f+2,2,1+2;Sanngetall;r40;;File:t8-p2-clive-f+2,2,1+2.mp4
+* Increases ZAN gauge by 0.70 on hit
+* Increases ZAN gauge by 0.30 on block
+* Only deals recoverable damage
+* Input can be delayed by 8F
+* Move cannot be delayed";bbr spk wpn;;Clive-f+2,2,1+2;Sanngetall;r40;;File:t8-p2-clive-f+2,2,1+2.mp4
 H.f+2,2,1;m, m, m;10, 7, 25;i15, ,i26~27;+2;+40d(-18d);;"* Balcony Break
 * Combo from 1st hit
 * Consumes heat
@@ -288,7 +289,8 @@ d+1+2;M;23;i22~23;-6;+9a (-8);+63a (+47);"* Tornado
 * Tracking notes:
 * Opponent can sidewalk left at -1 (or -2?)
 * Opponent cannot sidestep right or sidewalk right?.";trn bbr wpn;;Clive-d+1+2;Pile Driver;r40;;File:t8-p2-clive-d+1+2.mp4
-db+1;h;10;i17~18;-8;+4;+12a;* Homing;hom;;Clive-db+1;;r35;;
+db+1;h;10;i17~18;0;+4;+12a;"* Homing
+* 5 Chip Damage on block";hom;;Clive-db+1;;r35;;
 db+1,1;h, m,m;10, 7,20;i17~18, i21~22 i18~19;;+31d (+10d);;"* Tornado
 * Homing
 * Balcony Break
@@ -359,19 +361,26 @@ Power crush 7~23";bbr pc7~23;;Clive-b+1+2;"<div class=""dotlist"">
 * Windup Counter
 </div>";r?;;File:t8-p2-clive-b+1+2.mp4
 1+2+3+4;;;;;;;"* Can't block for 5 seconds
-* CH state for 5 seconds";;;Clive-1+2+3+4;"<div class=""dotlist"">
+* CH state on you for 5 seconds
+* 50% damage increase on the next attack for 5 seconds";;;Clive-1+2+3+4;"<div class=""dotlist"">
 
 * Ki Charge
 * Supercharger
 </div>";r55;;File:t8-p2-clive-1+2+3+4.mp4
 b,B+1+4;m!;40;i80~81;;+56a;;* Hitstop on frame 80 for 20f?;;;Clive-b,B+1+4;Pulverize;r57;;File:t8-p2-clive-b,b+1+4.mp4
-f,F+2;M;21;i21~22;-7;+6c;+38a;"* Spike
+f,F+2;M;21;i19~20;-7;+6c;+38a;"* Spike
 * Weapon
 * Increases ZAN gauge by 0.40 on hit
 * Increases ZAN gauge by 0.14 on block
 * Only deals recoverable damage
 * Tracking notes:
-* Assuming i24 startup (f,n,f,f+2)";spk wpn;;Clive-f,F+2;Soul Cleave;r36;;File:t8-p2-clive-f,f+2.mp4
+* Assuming i22 startup (f,n,f,f+2)";spk wpn;;Clive-f,F+2;Soul Cleave;r36;;File:t8-p2-clive-f,f+2.mp4
+f,F+1+2;m;22;i20;-3;+9c;;"* Spike
+* Weapon
+* 2 Chip Damage on block";spk wpn;;Clive-f,F+1+2;Staff of Judgment;r30;;File:Clive-ff1%2B2.mp4
+qcf+1;h;5;i20-31;-12~-10;+8~+10;;"* 1 Chip Damage on block
+* Cancel to PHX with 4
+* Transitions to unbreakable throw from i23-31 5,10 +3";;PHX;Clive-qcf+1;Deadly Embrace;r38;;File:Clive-qcf+1.mp4
 uf;;;;;;;Low crush 9~43;js9~43;GAR;Clive-uf;Updraft;r17 GAR;;
 f,f,F+2;m;20;i24~26;+2;+31d (+10);;"* Balcony Break
 * Weapon
@@ -380,7 +389,7 @@ f,f,F+2;m;20;i24~26;+2;+31d (+10);;"* Balcony Break
 * 7 Chip Damage on block in heat";bbr wpn;PHX;Clive-f,f,F+2;Lunge;r38;;File:t8-p2-clive-f,f,f+2.mp4
 ws1;m;11;i13~14;-4;+3;+8;"* Elbow
 * Enter PHX -1 +6 +11 r23 with F or 4 on hit or block";elb;PHX;Clive-ws1;;r26;;
-ws1,2;m, m;11, 19;i13~14, i26~27;-13;+9;+21a;"* Balcony Break
+ws1,2;m, m;11, 19;i13~14, i26~27;-12;+9;+21a;"* Balcony Break
 * Weapon
 * Combo from 1st hit with 3f delay
 * Combo from 1st CH with 8f delay
@@ -409,12 +418,15 @@ SS.1+2;m;21;i25~26;+2;+49a;;"* Spike
 * Weapon
 * 6 Chip Damage on block
 * 8 Chip Damage on block in heat
-* Side step takes 9f, effective startup i34~35";spk wpn;;Clive-SS.1+2;Stone Smite;r36;;File:t8-p2-clive-ss.1+2.mp4
+* Transition to FC with D
+* Side step takes 9f, effective startup i34~35";spk wpn;FC;Clive-SS.1+2;Stone Smite;r36;;File:t8-p2-clive-ss.1+2.mp4
 FC.1;sl;5;i10;-5;+6;;"* Transition to Standing with f
 High crush 4~";cs4~;FC;Clive-FC.1;Crouch Jab;r24 FC;;
 FC.df+2;L;18;i19~20;-12;+3c;;"* Weapon
 High crush 1~20";wpn cs1~20;;Clive-FC.df+2;Swift Edge;r32;;File:t8-p2-clive-fc.df+2.mp4
-GAR.1;m;18;i15~17;-12~-10;+17a;;"* Balcony Break
+CH.f,F+1+2;m;50;i20;;0;;"* Spike
+* Weapon";spk wpn;;Clive-CH.f,F+1+2;Judgment Bolt;;;
+GAR.1;m;18;i15~17;-5~-3;+17a;;"* Balcony Break
 * Spike
 * 21 damage with delayed input
 * Jump takes 17f, effective minimum startup i32~34
@@ -495,6 +507,7 @@ PHX.1+2;m,m;10,23;i23~24 i19~20;-7;+9a (+0);;"* Heat Engager
 * 6 Chip Damage on block
 * 12 Chip Damage on block in heat
 * On hit regain 3 additional recoverable health";he bbr wpn;;Clive-PHX.1+2;Scarlet Cyclone;r40;;File:t8-p2-clive-phx.1+2.mp4
+PHX.1+4;;;;;;;;;;Clive-PHX.1+4;;;;
 PHX.3+4;m;20;i28~29;+7;+18a (+8);;"* Homing
 * Balcony Break
 * 6 Chip Damage on block
@@ -522,7 +535,7 @@ WOL.4;;;;;;;Actionable after 15f;;;Clive-WOL.4;Phoenix Shift;r15;;
 * Side switch on hit and on throw break
 * Opponent recovers in FUFT";hom;;Clive-2+4;Punisher;r25;;
 Back Throw;t;50;;;+0d;;"* Unbreakable
-* Opponent recovers in FUFA";;;Clive-Back Throw;Judgment Throw;;;
+* Opponent recovers in FUFA";;;Clive-Back Throw;Judgment Bolt;;;
 Left Throw;t;40;i12~14;-3;+0d;;"* Throw break 1
 * Opponent recovers in FUFA";;;Clive-Left Throw;Fangs of Ruin;;;
 Right Throw;t;40;i12~14;-3;+0d;;"* Throw break 2
