@@ -1,18 +1,31 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Transitions;Wavu id;Name;Recovery;Image;Video
-2+3;m;12 (12);i16;+1;+2c;;"* Heat Burst
-Power crush";hb pc;;Lars-2+3;Heat Burst;;;
+2+3;m;"[12;12]";i16;+1;+2c;;"* Heat Burst
+* Cancel to r45 with b,b on frame 42
+* 2 chip damage on block
+* 12 chip damage on hit
+* Only deals recoverable damage
+* Cannot cause a K.O.
+Power crush 7~16";hb pc7~16;;Lars-2+3;Heat Burst;r30;;
+H.DEN.3+4;L,SM;11,10;i22~23, i9;-14;+21d;;"* 4 chip damage on block
+* Transition to r19? SEN with input F (-2/+34d)
+* Partially uses remaining heat time";;SEN;Lars-H.DEN.3+4;Stack Up Insurgence;r25;;
 H.LEN.1;l,th;20,15;i16~17;-12c;+5;;"* 6 chip damage on block
 * Side switch on hit throw
 * Opponent is left FUFA";;;Lars-H.LEN.1;Blue Jet;;;File:t8-p2-lars-h.len.1.mp4
 H.LEN.2;m;20;i16~17;-9;+65a (+49);;"* Tornado
 * 9 chip damage on block";trn;;Lars-H.LEN.2;Rising Force (Heat);;;
+H.SS.2;m,SM;20,10;i16~17, i8;+6c;+27d;;"* 6 chip damage on block
+* Partially remaining heat time";;;Lars-H.SS.2;Shockwave Insurgence;r27;;
 H.f+3+4;sm;5 (5);i18~24;+5;+10;;"* Transition to SEN
 * Partially uses remaining heat time
 Power crush";pc;SEN;Lars-H.f+3+4;Rebellion;;;
-H.2+3;m;55;i18~19;+8c (+10c DEN);+0;;"* Heat Smash
+H.2+3;m, t;55;i18~19, i38~41;+13c;+0;;"* Heat Smash
 * Spike
+* Transition to throw on hit
+* Transition to i38~41 2nd hit on block
 * Transition to DEN on block
-* Cancel auto-DEN transition with input B";hs spk;DEN;Lars-H.2+3;Thunderbird Descent;;;
+* Transition to standing on block (+10c) with input B
+* 10 chip damage on block";hs spk;i38~41,DEN,DEN;Lars-H.2+3;Thunderbird Descent;DEN;;
 R.df+1+2;m,t;55+;i20;-15;+0d;;"* Rage Art
 * Removes Recoverable Health
 * Reversal Break
@@ -23,40 +36,43 @@ R.df+1+2;m,t;55+;i20;-15;+0d;;"* Rage Art
 * Consumes Rage
 Power crush 8~";pc8~;;Lars.df+1+2;Zeus Unlimited;r39;;
 1;h;5;i10;+1;+8;;;;;Lars-1;;;;
-1,1;h, m;5, 8;i10, i18~19;-8;+0;;* Combo from 1st hit CH;;;Lars-1,1;;;;
+1,1;h, m;5, 8;i10, i18~19;-8;+0;;"* Combo from 1st hit CH with 3F delay
+* Jail from 1st block with no delay";;;Lars-1,1;;;;
 1,1,1;h, m, m;5, 8, 20;i10, ,i25~26;-12;+5c;;"* Heat Engager
 
 * Heat Dash +5, +43d (+35)
 
 * Balcony Break
-* Combo from 2nd hit
-* Combo from 1st CH
-* This move is essentially homing";he bbr;;Lars-1,1,1;Delta Slicer;;;File:t8-p2-lars-1,1,1.mp4
-1,2;h, h;5, 9;i10, i10;-3;+8;;* Jails;;;Lars-1,2;Left Right Combo;;;File:t8-p2-lars-1,2.mp4
-1,4;h, l;5, 10;i10, i22;-12;+1;;"* Combo from 1st CH
-* Transition to LEN with input D";;LEN;Lars-1,4;Legionnaire's Spin;;;File:t8-p2-lars-1,4.mp4
+* Combo from 2nd hit with 4F delay
+* Combo from 1st CH with 4F delay
+* Move can be delayed by 5F";he bbr;;Lars-1,1,1;Delta Slicer;;;File:t8-p2-lars-1,1,1.mp4
+1,2;h, h;5, 9;i10, i10;-3;+8;;"* Combo from 1st hit with 4F delay
+* Jail from 1st block with 4F delay";;;Lars-1,2;Left Right Combo;;;File:t8-p2-lars-1,2.mp4
+1,4;h, l;5, 10;i10, i22;-12;+1;;"* Combo from 1st CH with 2F delay
+* Transition to LEN with input D (-12/+3)";;LEN;Lars-1,4;Legionnaire's Spin;;;File:t8-p2-lars-1,4.mp4
 2;h;10;i10;+0;+8;;;;;Lars-2;;;;
-2,1;h, m;10, 12;i10, i20~21;-6;+8;;"* Combo from 1st hit
+2,1;h, m;10, 12;i10, i20~21;-6;+8;;"* Combo from 1st hit with 3F delay
+* Input can be delayed by 3F
 * Transition to LEN, cannot cancel";;LEN,LEN;Lars-2,1;Ring Current;LEN;;File:t8-p2-lars-2,1.mp4
-3;h;16;i15;-17;+0;;* Transition to LEN with input D;;LEN;Lars-3;Kick Start;;;File:t8-p2-lars-3.mp4
-3~D;h;16;i15, ;-11;+6;;;;LEN;Lars-3~D;;LEN;;
+3;h;16;i15;-17;+0;;* Transition to LEN with input D (-11/+6);;LEN;Lars-3;Kick Start;;;File:t8-p2-lars-3.mp4
 4;h;27;i17~18;-7;+18 (+9);;* Balcony Break;bbr;;Lars-4;Spinning Cutter;;;File:t8-p2-lars-4.mp4
-1+2;m;25;i25;-12;+7;;Power crush 7~;pc7~;;Lars-1+2;X-Ray;;;File:t8-p2-lars-1+2.mp4
-3+4;m;22;i17~18;-8;+43d (-15);;"* Heat Engager
+1+2;m;25;i25;-12;+7;;Power crush 7~24;pc7~24;;Lars-1+2;X-Ray;;;File:t8-p2-lars-1+2.mp4
+3+4;m;22;i17~18;-8;+17d;;"* Heat Engager
 
 * Heat Dash +5, +36a (+26)
 
 * Balcony Break";he bbr;;Lars-3+4;Electric Jolt;;;File:t8-p2-lars-3+4.mp4
 f+1;h;10;i13;-5;+6;;;;;Lars-f+1;;;;
-f+1,2;h, m;10, 11;i13, i12;-5;+6;;"* Combo from 1st hit
-* Transition to SEN
-* Cancel SEN transition with input B";;SEN,SEN;Lars-f+1,2;Flash Claw;SEN;;File:t8-p2-lars-f+1,2.mp4
+f+1,2;h, m;10, 11;i13, i12;-5;+6;;"* Transition to SEN
+* Combo from 1st hit with 1F delay
+* Input can be delayed by 1F
+* Jails from 1st block
+* Transition to standing with B (-8/+3)";;SEN,SEN;Lars-f+1,2;Flash Claw;SEN;;File:t8-p2-lars-f+1,2.mp4
 f+1,2,3;h, m, m;10, 11, 20;i13, ,i24;-5;+48d (-10);+49a;"* Balcony Break
 * Combo from 2nd hit CH
 * Transition to DEN
 * Cancel DEN transition with input B";bbr;DEN,DEN;Lars-f+1,2,3;Flash Bang;DEN;;File:t8-p2-lars-f+1,2,3.mp4
 f+1,2,3~B;h, m, m;10, 11, 20;i13, ,;-12;+41d (-17);+42a;;;;Lars-f+1,2,3~B;;;;
-f+1,2~B;h, m;10, 11;i13, ,;-8;+3;;;;;Lars-f+1,2~B;;;;
 f+2;h;10;i12;-6;+3;;;;;Lars-f+2;;;;
 f+2,1;h, h;10, 15;i12, i13;-5;+6;;"* Combo from 1st hit
 * Jails
@@ -64,31 +80,49 @@ f+2,1;h, h;10, 15;i12, i13;-5;+6;;"* Combo from 1st hit
 * Cancel SEN transition with input B";;SEN,SEN;Lars-f+2,1;Charge Factor;SEN;;File:t8-p2-lars-f+2,1.mp4
 f+2,1~B;h, h;10, 15;i12, ,;-6;+5;;;;;Lars-f+2,1~B;;;;
 f+2,4;h, h;10, 22;i12, i18~19;-12;+15 (+6);;* Balcony Break;bbr;;Lars-f+2,4;Death Mask;;;File:t8-p2-lars-f+2,4.mp4
-f+3;sp;;;;;;* Transition to DEN;;DEN;Lars-f+3;Dynamic Entry;;;
+f+3;sp;;;;;;"* Transition to DEN
+* Recover 30F heat on transition";;DEN;Lars-f+3;Dynamic Entry;;;
 f+4;m;12;i17;-9;+7;;* Knee;kne;;Lars-f+4;;;;
-f+4,1;m, m;12, 8;i17, i21~22;-9;+2;;;;;Lars-f+4,1;;;;
-f+4,1,2;m, m, m;12, 8, 8;i17, ,i12;-10;+2;;;;;Lars-f+4,1,2;;;;
-f+4,1,2,1;m, m, m, m;12, 8, 8, 20;i17, ,i24~25;-14;+19 (+9);;* Balcony Break;bbr;;Lars-f+4,1,2,1;Volcanic Lightning;;;File:t8-p2-lars-f+4,1,2,1.mp4
+f+4,1;m, m;12, 8;i17, i21~22;-9;+2;;Combo from 1st CH;;;Lars-f+4,1;;;;
+f+4,1,2;m, m, m;12, 8, 8;i17, ,i12;-10;+2;;Combo from 2nd hit;;;Lars-f+4,1,2;;;;
+f+4,1,2,1;m, m, m, m;12, 8, 8, 20;i17, ,i24~25;-14;+19 (+9);;"* Balcony Break
+* Combo from 3rd CH";bbr;;Lars-f+4,1,2,1;Volcanic Lightning;;;File:t8-p2-lars-f+4,1,2,1.mp4
 f+1+2;m;20;i15~16;-13;+28;;;;;Lars-f+1+2;Ark Blast;;;File:t8-p2-lars-f+1+2.mp4
 f+1+4;m;28;i13~14;-18;+18 (+8);;"* Balcony Break
 * Shoulder";bbr;;Lars-f+1+4;Power Slug;;;File:t8-p2-lars-f+1+4.mp4
-df+1;m;14;i13;-1;+5;;;;;Lars-df+1;;;;
-df+2;m;15;i14;-3;+9;+39 (+31);"* Elbow
+df+1;m;12;i13;-1;+5;;;;;Lars-df+1;;r20;;
+df+1,1;m, h;12, 12;i13, i21;-6;+6;;"* Combo from 1st hit with 1F delay
+* Input can be delayed by 1F
+* Transition to r19? DEN with D (-2/+10)";;DEN;Lars-df+1,1;;r29;;
+df+1,1,3;m, h, m;12, 12, 25;i13, ,i25~26;-8;+16d;;"* Balcony Break
+* Combo from 2nd CH with 9F delay
+* Move can be delayed by 10F
+* Input can be delayed by 14F";bbr;;Lars-df+1,1,3;Lightning Barrage;r30;;
+df+1,3;m, m;12, 20;i13, i24;-12;+13a (+4);;"* Balcony Break
+* Combo from 1st CH with 1F delay
+* Input can be delayed by 1F";bbr;;Lars-df+1,3;Lightning Spark;r32;;
+df+2;m;15;i14;-3;+9;+13c;"* Elbow
 * Transition to SEN
-* Cancel SEN transition with input B";elb;SEN,SEN;Lars-df+2;Flash Bullet;SEN;;File:t8-p2-lars-df+2.mp4
-df+2~B;m;15;i14, ;-11;+1;+31 (+23);;;;Lars-df+2~B;;;;
-df+3;m;15;i16;-7;+5;;* Transition to DEN with input D;;DEN;Lars-df+3;;;;
-df+3,3;m, m;15, 24;i16, i25~26;-15;+29 (+14);;Low crush 23~;js23~;;Lars-df+3,3;Outpost Blitz;;;File:t8-p2-lars-df+3,3.mp4
-df+3~D;m;15;i16, ;-4;+8;;;;DEN;Lars-df+3~D;;DEN;;
+* Recover 30F heat on transition
+* Transition to standing with B (-11/+1/+5c)";elb;SEN,SEN;Lars-df+2;Flash Bullet;SEN;;File:t8-p2-lars-df+2.mp4
+df+3;m;15;i16;-11;+8;;* Transition to DEN with input D (-4/+15);;DEN;Lars-df+3;;;;
+df+3,3;m, m;15, 24 (16);i16, i25~26;-15;+29a (+14a);;"* Combo from 1st hit with 2F delay
+* 16 damage with scaling from 1st hit 
+* Input can be delayed by 2F
+* Move cannot be delayed
+Low crush 23~";js23~;;Lars-df+3,3;Outpost Blitz;;;File:t8-p2-lars-df+3,3.mp4
 df+4;m;16;i15~16;-8;+2;;;;;Lars-df4;;;;
 d+2;m;17;i18~19;+0c;+8c;+10d;"* Elbow
 * Transition to FC with input D";elb;FC;Lars-d+2;Tactical Sword;;;File:t8-p2-lars-d+2.mp4
 d+3;l;8;i15;-14;-3;;;;;Lars-d+3;;;;
-d+3,1;l, hh;8, 4,10;i15, i19,i18;-7;+4;;* Combo from 1st hit CH;;;Lars-d+3,1;Tesla Gravity;;;File:t8-p2-lars-d+3,1.mp4
+d+3,1;l, h,h;8, 4,10;i15, i19,i18;-7;+4;;* Combo from 1st hit CH;;;Lars-d+3,1;Tesla Gravity;;;File:t8-p2-lars-d+3,1.mp4
+d+3,1(wall stun);l, h,h, m;8, 4,10, 27;i15, ,i35~36;;-3a (-15);;* Spike?;;;Lars-d+3,1 (wall stun);Tesla Gravity Thrust;;;
 d+1+2;l;25;i24~25;-20;+9d;;High crush 20~;cs20~;FC;Lars-d+1+2;Earth Battery;FC;;File:t8-p2-lars-d+1+2.mp4
 db+1;l;9;i17;-12;-1;;High crush 6~;cs6~;FC;Lars-db+1;;FC;;
 db+1,3;l, h;9, 10;i17, i19;-12;-1;;"* Combo from 1st hit
-* Transition to LEN with input D";;LEN;Lars-db+1,3;Arc Combination;;;File:t8-p2-lars-db+1,3.mp4
+* -31 on 1st block
+* Transition to LEN with input D (-31/-12/+3)
+* Recover 30F heat on transition";;LEN;Lars-db+1,3;Arc Combination;;;File:t8-p2-lars-db+1,3.mp4
 db+2;m;12;i15;-8;+3;;* Transition to SEN with input F;;SEN;Lars-db+2;;;;
 db+2,1;m, m;12, 8;i15, i15~16;-8;+6;;;;;Lars-db+2,1;Double Tap;;;File:t8-p2-lars-db+2,1.mp4
 db+2,3;m, m;12, 15;i15, i19;-13;+8;;"* Tornado
@@ -99,57 +133,60 @@ db+2,3;m, m;12, 15;i15, i19;-13;+8;;"* Tornado
 * Input can be delayed by 5F? from 1st?";trn wc;;Lars-db+2,3;HE Combination;;;File:t8-p2-lars-db+2,3.mp4
 db+2,3*;m, m;12, 25;i15, i51;+13;+24d (+14);;"* Tornado
 * Balcony Break
-* Wall Crush +20g on block
-
-
 * Input can be partially held from i? to i?
-* 10 chip damage on block
-* 11 chip damage on block in heat";trn bbr wc;;Lars-db+2,3*;HE Combination (Hold);;;
+* 10 chip damage on block";trn bbr;;Lars-db+2,3*;HE Combination (Hold);;;
 db+2~F;m;12;i15, ;-5;+6;;;;SEN;Lars-db+2~F;;SEN;;
-db+4;l;19;i21~22;-26;+5c;+29a;High crush 6~;cs6~;;Lars-db+4;Shadow Cutter;;;File:t8-p2-lars-db+4.mp4
-db+1+2;m;18;i26;-13;+6;+10;"* Transition to DEN with input D
+db+4;l;19;i20~21;-26;+5c;+29a;High crush 6~;cs6~;;Lars-db+4;Shadow Cutter;;;File:t8-p2-lars-db+4.mp4
+db+1+2;m;12;i26;-13;+8;;"* Transition to DEN with input D (-6/+11)
 * Backsway";;DEN;Lars-db+1+2;Inductance;;;File:t8-p2-lars-db+1+2.mp4
-db+1+2~D;m;18;i26, ;-8;+7;+11;;;DEN;Lars-db+1+2~D;;DEN;;
-b+1;m;17;i15~17;-9;+4;;* Homing;hom;;Lars-b+1;Chevron Slash;;;File:t8-p2-lars-b+1.mp4
+b+1;m;17;i15~17;-9;+4;+14a;"* Homing
+* Balcony Break on CH";hom;;Lars-b+1;Chevron Slash;r29;;File:t8-p2-lars-b+1.mp4
 b+2;m;12;i15;-7;+4;;;;;Lars-b+2;;;;
-b+2,1;m, m;12, 17;i15, i15;-10;+4;+32a;"* Combo from 1st hit
-* Can be delayed from 1st hit by ??? frames
-* Can be delayed by a total of ??? frames";;;Lars-b+2,1;Gilbert Smash;;;File:t8-p2-lars-b+2,1.mp4
+b+2,1;m, m;12, 17;i15, i15;-10;+4;+32a;"* Combo from 1st hit with 15F delay
+* Move can be delayed by 10F
+* Input can be delayed by 15F";;;Lars-b+2,1;Gilbert Smash;r31;;File:t8-p2-lars-b+2,1.mp4
 b+2,3;m, h;12, 21;i15, i18;-8;+38d (-20);;"* Balcony Break
-* Tornado";bbr trn;;Lars-b+2,3;Gilbert Cannon;;;File:t8-p2-lars-b+2,3.mp4
+* Tornado
+* Combo from 1st hit with 5F delay
+* Move cannot be delayed
+* Input can be delayed by 5F";bbr trn;;Lars-b+2,3;Gilbert Cannon;r36;;File:t8-p2-lars-b+2,3.mp4
 b+3;m;14;i17;-12;+4;;* Transition to SEN with input F;;SEN;Lars-b+3;;;;
 b+3,4;m, h;14, 20;i17, i23~24;-8;+19 (+10);;* Balcony Break;bbr;;Lars-b+3,4;Impulse Plus;;;File:t8-p2-lars-b+3,4.mp4
 b+3~F;m;14;i17, ;-5;+11;;;;SEN;Lars-b+3~F;;SEN;;
 b+4;m;23;i15;-8;+8;;Knee;kne;;Lars-b+4;Magnetic Knee;;;File:t8-p2-lars-b+4.mp4
+b+4,1+2;m, th;23, 15;i15, ;;0;;* Available on b+4 frontal standing hit;;;Lars-b+4,1+2;Magnetic Knee Blast;;;
 b+1+2;m,m;4,20;i21~22,i8~9;-9;+9;;"* Balcony Break
 * Homing
 * Can evade jabs from range";bbr hom;;Lars-b+1+2;Wind Liger;;;File:t8-p2-lars-b+1+2.mp4
-b+2+3;ub(m);45;i84~85;;+61a;;;;;Lars-b+2+3;Zeus;;;File:t8-p2-lars-b+2+3.mp4
+ub+1+2;ub(m);45;i84~85;;+61a;;;;;Lars-ub+1+2;Zeus;;;File:t8-p2-lars-b+2+3.mp4
 uf+3;mm;26 (9);i16~17;-26;+33a (+15);;Low crush 12~;js12~;;Lars-uf+3;Lightning Screw;;;File:t8-p2-lars-uf+3.mp4
 uf+4;m;20;i25~27;-8;+42a;;Low crush 9~;js9~;;Lars-uf+4;Storm Axle;;;File:t8-p2-lars-uf+4.mp4
 uf+3+4;sp;;;;;;Low crush 11~;js11~;;Lars-uf+3+4;Avalanche Flip;;;File:t8-p2-lars-uf+3+4.mp4
 uf+3+4,4;sp, m,th;20,20;,i17~18;-4;0;;Low crush 1~;js1~;;Lars-uf+3+4,4;Avalanche Flip Break Down;;;File:t8-p2-lars-uf+3+4,4.mp4
 uf+3+4,1+2;sp, th(h);40;,i9~11;;+1;;* Throw break: 1+2;;;Lars-uf+3+4,1+2;Avalanche Drop;;;File:t8-p2-lars-uf+3+4,1+2.mp4
 1+2+3+4;sp;;;;;;;;;Lars-1+2+3+4;Ki Charge;;;File:t8-p2-lars-1+2+3+4.mp4
-CH b+4;m,th;27,28;i15;;0;;Knee;kne;;Lars-CH.b+4;Magnetic Knee Blast;;;
-f,F+2;m;20;i21~22;-13;+35a;;"* Tornado
+f,F+2;M;20;i21~22;-13;+35a;;"* Tornado
 * Transition to SEN on hit with input F";trn;SEN;Lars-f,F+2;Surge Blast;;;File:t8-p2-lars-f,f+2.mp4
-f,F+2~F;m;20;i21~22, ;;+37a;;"* On hit only
+f,F+2~F;M;20;i21~22, ;;+37a;;"* On hit only
 * Switches sides";;SEN;Lars-f,F+2~F;;SEN;;
 f,F+4;l;12;i21;-31;+5;;;;;Lars-f,F+4;;;;
-f,F+4,2;l, h;12, 15;i21, i24;-7;+9;;Cannot cancel DEN transition;;DEN;Lars-f,F+4,2;Cross Transistor;DEN;;File:t8-p2-lars-f,f+4,2.mp4
+f,F+4,2;l, h;12, 15;i21, i24;-7;+11;;Cannot cancel DEN transition;;DEN;Lars-f,F+4,2;Cross Transistor;DEN;;File:t8-p2-lars-f,f+4,2.mp4
 f,F+4,3;l, m;12, 20;i21, i28;-16;-3;;;;;Lars-f,F+4,3;Double Pulse;;;File:t8-p2-lars-f,f+4,3.mp4
 f,F+1+2;m;20;i16~17;-9;+14 (+5);+59a (+39);"* Elbow
 * Balcony Break
-* 4 chip damage on block
-* 7 chip damage on block in heat";elb bbr;;Lars-f,F+1+2;Elbow Corona;;;File:t8-p2-lars-f,f+1+2.mp4
+* 4 chip damage on block";elb bbr;;Lars-f,F+1+2;Elbow Corona;;;File:t8-p2-lars-f,f+1+2.mp4
 f,F+3+4;l,l;26;i19~20;-16;+0c;;High crush 21~;cs21~;;Lars-f,F+3+4;Double Action;;;File:t8-p2-lars-f,f+3+4.mp4
 f,n,b+2;m;10;i14;-12;0;;;;;Lars-f,n,b+2;;;;
 f,n,b+2,1;m, m;10, 10;i14, i16;-18;+47a (+39);;;;;Lars-f,n,b+2,1;Blue Bolt;;;File:t8-p2-lars-f,n,b+2,1.mp4
 uf,n,4;m;20;i23~25;-13;+32a (+22);;Low crush;js;;Lars-uf,n,4;Delayed Rising Toe Kick;;;File:t8-p2-lars-uf,n,4.mp4
-f,f,F+3;m;30;i20~26;+6;+33 (-25);;"* Balcony Break
+f,f,F+1;h;23;i18~20;+7;+36a;;"* Strong Aerial Tailspin
+* Balcony Break
 * 9 chip damage on block
-* 12 chip damage on block in heat
+* Transition to t51? r33? standing with B (+5/+34a)
+* Tracking notes:
+* Effectively homing?";bbr;SEN;Lars-f,f,F+1;Flash Blade;r31? SEN;;
+f,f,F+3;m;30;i20~26;+6;+15a (+5);;"* Balcony Break
+* 9 chip damage on block
 Low crush 3~";bbr js3~;;Lars-f,f,F+3;Red Sprite;;;File:t8-p2-lars-f,f,f+3.mp4
 ws1;m;16;i15~16;-12;+38a;;"* Tornado
 * Transition to SEN with F on hit";trn;SEN;Lars-ws1;Streamer;;;File:t8-p2-lars-ws1.mp4
@@ -166,9 +203,9 @@ ws2~F;m;13;i13~14, ;-5;+6;;;;SEN;Lars-ws2~F;;SEN;;
 ws3;h;30;i20;0;+21 (+15);;* Transition to LEN with input D;;LEN;Lars-ws3;Tower Cannon;;;File:t8-p2-lars-ws3.mp4
 ws3~D;h;30;i20, ;+4;+26 (+20);;;;LEN;Lars-ws3~D;;LEN;;
 ws4;m;16;i11~12;-6;+5;;;;;Lars-ws4;Shell Smash;;;File:t8-p2-lars-ws4.mp4
-SS.2;m;20;i16~17;-7;+22d;;"* 4 Chip damage on block
-* 7 Chip damage on block in heat";;;Lars-SS.2;Shockwave;;;File:t8-p2-lars-ss.2.mp4
-FC.1+2;ll;24;i18;-12;+1;;High crush 1~;cs1~;;Lars-FC.1+2;Double Smack;;;File:t8-p2-lars-fc.1+2.mp4
+SS.2;m;20;i16~17;-7;+22d;;* 4 chip damage on block;;;Lars-SS.2;Shockwave;;;File:t8-p2-lars-ss.2.mp4
+FC.1+2;l,l;9,15;i18,i14~i15;-12;+1;;"* Transition to LEN on hit with input n,D (+3)
+High crush 1~";cs1~;LEN;Lars-FC.1+2;Double Smack;;;File:t8-p2-lars-fc.1+2.mp4
 FC.df+2;m;19;i15~16;-8;+5;+63a;;;;Lars-FC.df+2;Power Spike;;;File:t8-p2-lars-fc.df+2.mp4
 (Back to wall).b,b,UB;m;25;i29~30;-1;+45d (-13);;"* Balcony Break
 * Bryan
@@ -191,29 +228,27 @@ DEN.1,2;h, h;14, 20;i11~12, i14~15;-6;+47a (-11);;"* Heat Engager
 
 * Balcony Break";he bbr;;Lars-DEN.1,2;Double Barrel;;;File:t8-p2-lars-den.1,2.mp4
 DEN.1~F;h;14;i11~12, ;-3;+4;;;;SEN;Lars-DEN.1~F;;SEN;;
-DEN.2;m;19;i17~19;-7;+7;+62a;* Transition to Avalanche Flip on hit with input UF;;;Lars-DEN.2;Rimfire;;;File:t8-p2-lars-den.2.mp4
-DEN.2~UF;m;19;i17~19, ;;+9;+64;* On hit only;;Flip;Lars-DEN.2~UF;;Flip;;
+DEN.2;m;17;i17~19;-7;+7;+62a;* Transition to Avalanche Flip on hit with input UF;;;Lars-DEN.2;Rimfire;;;File:t8-p2-lars-den.2.mp4
+DEN.2~UF;m;17;i17~19, ;;+9;+64;* On hit only;;Flip;Lars-DEN.2~UF;;Flip;;
 DEN.3;m;23;i22~23;+5;+5;;"* Heat Engager
 
 * Heat Dash +5, +34a (+27)
 
 * Homing
 * Transition to SEN (cannot cancel, does not transition when using Heat Dash)
-* 4 chip damage on block
-* 8 chip damage on block in heat
+* 9 chip damage on block
 Low crush 8~";he hom js8~;SEN,SEN;Lars-DEN.3;Bow Shock;SEN;;File:t8-p2-lars-den.3.mp4
-DEN.4;l;14;i23~25;-12;+1;;* Transition to LEN with input D;;LEN;Lars-DEN.4;Legionnaire's Shot;;;File:t8-p2-lars-den.4.mp4
+DEN.4;l;14;i23~25;-12;+1;;* Transition to LEN with input D (-12/+3);;LEN;Lars-DEN.4;Legionnaire's Shot;;;File:t8-p2-lars-den.4.mp4
 DEN.1+2;h;20;i12~13;-10;+63a (+47);;"* Tornado
 * Balcony Break";trn bbr;;Lars-DEN.1+2;Into the Storm;;;File:t8-p2-lars-den.1+2.mp4
 DEN.2+3;;;;;;;;;;Lars-DEN.2+3;;;;
-DEN.3+4;l;21;i22~23;-14;-3;+5;* Transition to SEN with input F;;SEN;Lars-DEN.3+4;Stack Up;;;File:t8-p2-lars-den.3+4.mp4
-DEN.3+4~F;l;21;i22~23, ;-7;+4;+12;;;SEN;Lars-DEN.3+4~F;;SEN;;
+DEN.3+4;L;21;i22~23;-14;-3;+5;* Transition to SEN with input F (-7/+4/+12);;SEN;Lars-DEN.3+4;Stack Up;;;File:t8-p2-lars-den.3+4.mp4
 DEN.B;sp;;;;;;"* Transition to DEN
 * Can only performed on first DEN transition";;DEN;Lars-DEN.B;Dynamic Entry;;;
 DEN.n,F;sp;;;;;;"* Transition to SEN
-High crush 1?~";cs1?~;SEN;Lars-DEN.n,F;Silent Entry;;;File:t8-p2-lars-den.n,f.mp4
-LEN.1;l;20;i16~17;-12;+4;;High crush 1~;cs1~;;Lars-LEN.1;Blasting Smack;;;File:t8-p2-lars-len.1.mp4
-LEN.2;m;20;i16~17;-9;+25 (+15);;"* Tornado
+High crush 12?~";cs12?~;SEN;Lars-DEN.n,F;Silent Entry;;;File:t8-p2-lars-den.n,f.mp4
+LEN.1;l;20;i16~17;-12;+4c;;High crush 1~;cs1~;;Lars-LEN.1;Blasting Smack;;;File:t8-p2-lars-len.1.mp4
+LEN.2;m;25;i16~17;-9;+25 (+15);;"* Tornado
 * 8 chip damage on block
 * Powers up during Heat (Uses Heat Time, Tornado launches on hit)
 High crush 1~15, Low crush 16~";trn cs1~15 js16~;;Lars-LEN.2;Rising Force;;;File:t8-p2-lars-len.2.mp4
@@ -224,18 +259,22 @@ SEN.1;m;26;i12~13;-6;+23a (+13);;"* Heat Engager
 * Balcony Break";he bbr;;Lars-SEN.1;Lightning Thrust;;;File:t8-p2-lars-sen.1.mp4
 SEN.2;l;23;i17~19;-12;+6c;+73a (+57);"* Tornado
 High crush 1~";trn cs1~;;Lars-SEN.2;Turbine Hook;;;File:t8-p2-lars-sen.2.mp4
-SEN.3;m;20;i14~16;-14;+29a (+19);;Low crush 14~;js14~;;Lars-SEN.3;Rising Storm;;;File:t8-p2-lars-sen.3.mp4
-SEN.4;h;28;i17~18;-9;+18 (+9);;"* Homing
+SEN.3;m;20;i14~16;-13;+29a (+19);;Low crush 14~;js14~;;Lars-SEN.3;Rising Storm;;;File:t8-p2-lars-sen.3.mp4
+SEN.4;h;19;i17~18;+4;+31a;;"* Strong Aerial Tailspin
+* Homing
 * Balcony Break
-Power crush 6~";hom bbr pc6~;;Lars-SEN.4;Electric Volley;;;File:t8-p2-lars-sen.4.mp4
-SEN.1+2;m;21;i14~16;-9;+20a (+3);;"* Tornado
-* Balcony Break";trn bbr;;Lars-SEN.1+2;Entangling Ejector;;;File:t8-p2-lars-sen.1+2.mp4
+* 7 chip damage on block";hom bbr;;Lars-SEN.4;Electric Volley;r35;;File:t8-p2-lars-sen.4.mp4
+SEN.1+2;m;21;i14~16;-13;+20a (+3);;"* Tornado
+* Balcony Break
+* Recovers 6F faster on hit (t44 r28)
+Power crush 6~";trn bbr pc6~;;Lars-SEN.1+2;Entangling Ejector;r34;;File:t8-p2-lars-sen.1+2.mp4
 SEN.3+4;mm;22 (11);i13~14,i18~19;+0c;+22d (-13);;"* Spike
 * 6 chip damage on block
-* 10 chip damage on block in heat
 Low crush 7~";spk js7~;;Lars-SEN.3+4;Lightning Axle;;;File:t8-p2-lars-sen.3+4.mp4
-SEN.B;sp;;;;;;* Transition to DEN;;DEN;Lars-SEN.B;Dynamic Entry;;;
+SEN.B;sp;;;;;;"* Transition to DEN
+* Recover 30F heat on transition";;DEN;Lars-SEN.B;Dynamic Entry;;;
 SEN.D;sp;;;;;;"* Transition to LEN
+* Recover 30F heat on transition
 High crush 24~27?";cs24~27?;LEN;Lars-SEN.D;Limited Entry;;;File:t8-p2-lars-sen.d.mp4
 (airborne).f,f,F+2+4;th(h);31 (21);i11;;0;;"* Throw break: none
 * Opponent status on hit: FUFT";;;Lars-(airborne).f,f,F+2+4;Rejection;;;

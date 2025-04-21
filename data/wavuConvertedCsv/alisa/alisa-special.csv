@@ -1,6 +1,6 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Transitions;Wavu id;Name;Recovery;Image;Video
 2+3;m;"[12;12]";i16;+1;+2c;;"* Heat Burst
-* Cancel to r45 with b,b
+* Cancel to r45 with b,b on frame 42
 * 3 chip damage on block
 * 12 chip damage on hit
 * Only deals recoverable damage
@@ -147,7 +147,7 @@ f+3+4;;;;;;;"&lt;div class=&quot;plainlist&quot;&gt;
 * fs55~57&lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
 * js26~54
 * fs55~57&lt;/div&gt;";SBT;Alisa-f+3+4;Boot;r25 SBT;;
-df+1;m;10;i13;-6;+5;+8;;;;Alisa-df+1;;r25;;
+df+1;m;10;i13;-6;+5;+8;* +5c on hit against crouching opponents;;;Alisa-df+1;;r25;;
 df+1,1;m, h;10, 20;i13, i30~31;+1;+8;;"* Balcony Break
 ** on airborne hit
 * Combo from 1st CH with 2f delay";bbr;;Alisa-df+1,1;;r19;;
@@ -485,7 +485,9 @@ FC.d+4;l;6;i12;-15;-4;;High crush 1~;cs1~;FC;Alisa-FC.d+4;;r34 FC;;
 * fs58~60&lt;/div&gt;";;Alisa-(Back to wall).b,b,UB;[[Wall Jump Attack]];r75;;
 BKP.1;h;31;i11~13;+4~+6;+27a (+1);;"* Strong Aerial Tailspin
 * Balcony Break
-* 9 chip damage on block";bbr;;Alisa-BKP.1;Recovery Hook;r37;;File:t8-p2-alisa-bkp.1.mp4
+* 9 chip damage on block
+* Transition to SBT at +6/+29 (+3) with 3 or 4
+* Transition to DBT at +6/+29 (+3) with f+3 or f+4";bbr;SBT,DBT;Alisa-BKP.1;Recovery Hook;r37;;File:t8-p2-alisa-bkp.1.mp4
 BKP.2;h;34;i11~33;-9~+13;+21 (+6);;"* Tornado
 * 6 chip damage on block";trn;;Alisa-BKP.2;Rapid Rocket Punch;r22;;File:t8-p2-alisa-bkp.2.mp4
 BKP.3;m;30;i24~27;-9;+72a;;"Balcony Break
@@ -505,11 +507,12 @@ BKP.1+2;h!;20,3;i34~71;;+58;;* Weapon;wpn;;Alisa-BKP.1+2;Rocket Punch;r20;;File:
 BT.4;m;20;i16~17;-3;+19a (+2);;"* Balcony Break
 High crush 5~12";bbr cs5~12;;Alisa-BT.4;Goody Two Shoes;;;File:t8-p2-alisa-bt.4.mp4
 CLK(Two spins).3;m;22;i13~14;+0;+63a (+43);;"* Balcony Break
+* Effective startup time is i32~33?
 * 8 chip damage on block";bbr;;Alisa-CLK(Two spins).3;;r31;;
 CLK.3;m;20;i13~14;-9;+12g;;"* Strong Aerial Tailspin
 * Balcony Break
 * Combo from 1st hit
-* Power up after 2 or more spins
+* Power up after 2 or more spins (i19?)
 * Interrupt with i8 from 1st block";bbr;;Alisa-CLK.3;Clockwork Spring Middle;r30;;File:t8-p2-alisa-clk.3.mp4
 CLK.B;m;18;i19~20;-12;-1;;* Cancel with B;;;Alisa-ws3,B;Clockwork Cancel;r35;;
 CLK.d+3;L;20;i30~31;-12;+73a (+57);;"* 8 chip damage on block
@@ -584,6 +587,13 @@ DBT.f+2,2;L, m;16, 14 (9);i19~20, i35~37;-33;-6a (-13);;"* Balcony Break
 * fs68~70&lt;/div&gt;";"bbr wpn &lt;div class=&quot;plainlist&quot;&gt;
 * js35~67
 * fs68~70&lt;/div&gt;";;Alisa-DBT.f+2,2;Shut Down;r53;;File:t8-p2-alisa-dbt.f+2,2.mp4
+DBT.f+1+2;m,m,m,m,m;28;i17-18;+7;+25a (-1);;"* Balcony Break
+* Weapon
+* 8 chip damage on block
+* 9 chip damage on block in heat
+&lt;div class=&quot;plainlist&quot;&gt;
+* Low crush &lt;/div&gt;";"bbr wpn &lt;div class=&quot;plainlist&quot;&gt;
+* js&lt;/div&gt;";DES;Alisa-DBT.f+1+2;Hello World;DES;;
 DES.1;m,m,h,h,h,m;35;i13~18 i1~5 i1~7 i1~5 i1~4 i16~17;-9;+17a;;"* Weapon
 * 3 chip damage on block
 * Final hit available only on hit";wpn;DES;Alisa-DES.1;Shredder;r32 DES;;File:t8-p2-alisa-des.1.mp4
@@ -623,11 +633,12 @@ DES.d+2;L,L,L;3,3,17;i22~23;-14;+0c;;"* Homing
 * 6 chip damage on block
 High crush 22~91";hom wpn cs22~91;;Alisa-DES.d+2;Clock Boosting;r32;;File:t8-p2-alisa-des.d+2.mp4
 DES.d+3;;;;;;;"* DES.d+3_4 goes to foreground, DES.u+3_4 goes to background
+* Transition to r20 DBT with 3_4
 &lt;div class=&quot;plainlist&quot;&gt;
 * Low crush 5~22
 * fs23~25&lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
 * js5~22
-* fs23~25&lt;/div&gt;";DES;Alisa-DES.d+3;Evasive Action;r25 DES;;File:t8-p2-alisa-des.d+3.mp4
+* fs23~25&lt;/div&gt;";DBT,DES;Alisa-DES.d+3;Evasive Action;r25 DES;;File:t8-p2-alisa-des.d+3.mp4
 DES.d+3,1;m;25;,i20~21;-13;+14c;;"* Balcony Break
 * Weapon
 * 7 chip damage on block";bbr wpn;DES;Alisa-DES.d+3,1;Evasive Slash;r35 DES;;File:t8-p2-alisa-des.d+3,1.mp4
@@ -638,7 +649,8 @@ DES.f+2;m,m;9;i15 i1~1;-9;+0c;;"* Weapon
 * 2 chip damage on block";wpn;DES;Alisa-DES.f+2;;r30 DES;;
 DES.f+2,1;m,m, m,m;9, 9;i15 i1~1, i23 i1~1;-12;-3c;;"* Weapon
 * Combo from 1st hit
-* 2 chip damage on block";wpn;DES;Alisa-DES.f+2,1;;r33 DES;;
+* 2 chip damage on block
+* During heat: Transition to r20 DBT at -6/+3 with 3_4; partially uses remaining heat time";wpn;DBT,DES;Alisa-DES.f+2,1;;r33 DES;;
 DES.f+2,1,2;m,m, m,m, m,m;9, 9, 23;i15 i1~1, ,i23~24 i4~5;-13;+30d;;"* Heat Engager
 
 * Heat Dash +5, +62a (+42)
@@ -646,13 +658,6 @@ DES.f+2,1,2;m,m, m,m, m,m;9, 9, 23;i15 i1~1, ,i23~24 i4~5;-13;+30d;;"* Heat Enga
 * Weapon
 * Combo from 1st or 2nd CH
 * 6 chip damage on block";he wpn;;Alisa-DES.f+2,1,2;Gigahertz Storm;r42;;File:t8-p2-alisa-des.f+2,1,2.mp4
-DES.f+3;;;;;;;"* Cancel to r33 with DBT.B
-* Transition to Evasive Action with input DBT.U_D
-&lt;div class=&quot;plainlist&quot;&gt;
-* Low crush 18~40
-* fs41~43&lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
-* js18~40
-* fs41~43&lt;/div&gt;";DBT;Alisa-DES.f+3;Dual Boot;r17 DBT;;
 DES.f+3;;;;;;;"* Cancel to r33 with DBT.b
 * Transition to r50 SS with DBT.u_d
 &lt;div class=&quot;plainlist&quot;&gt;
@@ -660,6 +665,13 @@ DES.f+3;;;;;;;"* Cancel to r33 with DBT.b
 * fs41~43&lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
 * js18~40
 * fs41~43&lt;/div&gt;";SS,DBT;Alisa-DES.f+3;Dual Boot;r17 DBT;;
+DES.f+3;;;;;;;"* Cancel to r33 with DBT.B
+* Transition to Evasive Action with input DBT.U_D
+&lt;div class=&quot;plainlist&quot;&gt;
+* Low crush 18~40
+* fs41~43&lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
+* js18~40
+* fs41~43&lt;/div&gt;";DBT;Alisa-DES.f+3;Dual Boot;r17 DBT;;
 DES.f+1+2;m,m,m,m,m,m,m,m;29;i23~27 i1~5 i1~4 i1~4 i1~5 i1~5 i1~4 i1~1;+1;+33a;;"* Weapon
 * Combo from any hit
 * 6 chip damage on block";wpn;DES;Alisa-DES.f+1+2;;r20 DES;;
@@ -751,6 +763,14 @@ SBT.1+2;h!;20;i27~28;;+8;;"* Balcony Break
 Low crush 26~53";bbr wpn js26~53;DES;Alisa-SBT.1+2;Wire Clipper;r34 DES;;File:t8-p2-alisa-sbt.1+2.mp4
 SBT.D;;;;;;;"* Transition to r32 BKP with B (Backswing)
 High crush 34~";cs34~;BKP,BKP;Alisa-SBT.D;Abort;r21 BKP;;File:t8-p2-alisa-sbt.d.mp4
+H.f,F+2,1+2;m, m,m,m,m,m;18, 28;i16~17, i22-23;+3;+25a (-1);;"* Balcony Break
+* Weapon
+* Combo from 1st hit
+* 8 chip damage on block
+* Partially uses remaining heat time
+&lt;div class=&quot;plainlist&quot;&gt;
+* Low crush &lt;/div&gt;";"bbr wpn &lt;div class=&quot;plainlist&quot;&gt;
+* js&lt;/div&gt;";DES;Alisa-f,F+2,H.1+2;Emergency Hello World;DES;;
 1+3;t;35;i12~14;-7;+0d;;"* Homing
 * Throw break: 1 or 2
 * Opponent recovery on hit: FDFT

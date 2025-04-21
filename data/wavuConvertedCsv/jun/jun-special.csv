@@ -1,19 +1,18 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Transitions;Wavu id;Name;Recovery;Image;Video
 2+3;m;"[12;12]";i16;+1;+2c;;"* Heat Burst
-* Cancel to r45 with b,b
-* 3 chip damage on block
+* Cancel to r45 with b,b on frame 42
+* 2 chip damage on block
 * 12 chip damage on hit
 * Only deals recoverable damage
 * Cannot cause a K.O.
 Power crush 7~16";hb pc7~16;;Jun-2+3;Heat Burst;r30;;
-H.GEN.2+3;L,M;14,28;i20~21 i26~41;-12~+3;+25 (+7);;"* Heat Smash
-* Reversal Break
+H.GEN.1,1+2;L,M;14,35;i20~21 i26~41;-14;+25 (+7);;"* Reversal Break
 * Balcony Break
 * Jail from 1st attack
-* Restores 12 recoverable (6 on block)
-* Chip damage (4,12) on block
-* Ends heat
-High crush 11~21";hs bbr chp cs11~21;;Jun-H.GEN.2+3;Yomotsu Mihashira;r25;;
+* Restores 6 recoverable (3 on block)
+* Chip damage (2,7) on block
+* Consumes 450f of heat timer
+High crush 11~21";bbr chp cs11~21;;Jun-H.GEN.1,1+2;Yomotsu Mihashira;r25;;
 H.f+1+2,P;h;0;i12;;+40g;;"* Sabaki, parries mid or high punches or kicks
 Parry state 5~";ps5~;MIA;Jun-H.f+1+2,P;;r30 MIA;;
 H.2+3;m,m;20,30;i13 i32~75;-6~+37g;+21a~+64a (-5~+38);;"* Heat Smash
@@ -33,8 +32,9 @@ Power crush 8~";pc8~;;Jun-R.df+1+2;Amatsu Izanami;r39;;
 1,1;h, m;5, 15;i10, i25;-1;+8;+13;"* Combo from 1st hit with 1f delay
 * Restores 2 health and 2 recoverable on hit";;IZU;Jun-1,1;Suikei > Izumo Smash;r28 IZU;;File:t8-p2-jun-1,1.mp4
 1,2;h, h;5, 8;i10, i16;-3;+6;;"* Jail from 1st attack with 2f delay
+* Combo from 1st hit with 2f delay
 * Enter SS +1 +10g r16 with u or d";;SS;Jun-1,2;Spear Step;r24;;File:t8-p2-jun-1,2.mp4
-1,2,2;h, h, h;5, 8, 17;i10, ,i16~17;+6;+11;+20c;"* Homing
+1,2,2;h, h, h;5, 8, 12;i10, ,i16~17;+4;+11;+20c;"* Homing
 * Combo from 2nd CH with 5f delay
 * Jail from 2nd block with 1f delay
 * Restores 2 health on hit";hom;IZU;Jun-1,2,2;Spear Step > Izumo Strike;r39 IZU;;File:t8-p2-jun-1,2,2.mp4
@@ -138,6 +138,8 @@ d+4,4;L, h;10, 20;i15, i25~26;-9;+13a (+4);;"* Balcony Break
 * Combo from 1st CH";bbr;;Jun-d+4,4;Suminagashi;r36;;File:t8-p2-jun-d+4,4.mp4
 d+1+2;M;28;i26;-9;+72a (+56);;"* Tornado
 * Chip damage (11) on block
+* Divine Aura: 15 chip damage on block
+* Divine Aura: +10 damage on hit (38)
 * Deals 12 damage to self (8 recoverable)
 * Unparryable";trn chp;;Jun-d+1+2;Kamudo-no-Tsurugi;r32;;File:t8-p2-jun-d+1+2.mp4
 d+3+4;l,h;5,20;i14 i24~27;-25;+30a (+20);;"* Combo from 1st CH
@@ -209,7 +211,7 @@ b+2+3;m!;50;i57~58;;+6a;;Balcony Break;bbr;;Jun-b+2+3;Shinki;r37;;File:t8-p2-jun
 b+3+4;m;25;i28~29;-12;+9a (+0);;"* Balcony Break
 * -8 on block after absorbing an attack
 Power crush 7~27";bbr pc7~27;;Jun-b+3+4;Omoikane;r35;;File:t8-p2-jun-b+3+4.mp4
-u+2;h;17;i23~24;+6;+11;+20c;"* Homing
+u+2;h;17;i23~24;+4;+11;+20c;"* Homing
 * Restores 2 health and 2 recoverable on hit";hom;IZU;Jun-u+2;Izumo Strike;r40 IZU;;File:Jun-69.mp4
 u+4;m;21;i22~23;-3~-2;+22a;;"* Balcony Break (airborne)
 Low crush 8~28 fs29~31";js8~28 fs29~31;;Jun-u+4;Chikura;r30;;File:t8-p2-jun-u+4.mp4
@@ -234,7 +236,8 @@ uf+4,3;m, m,M;10, 8,20;i16~18, i29 i18;-12;+84a (+68);;"* Tornado
 uf+3+4;m,M;5,21;i20~23 i2~6;-8~-4;+18a;;"* Spike
 Low crush 9~30";spk js9~30;FC;Jun-uf+3+4;Saiuntsui;r28 FC;;File:t8-p2-jun-uf+3+4.mp4
 1+2+3+4;;;;;;;"* Can't block for 5 seconds
-* CH state for 5 seconds";;;Jun-1+2+3+4;"<div class=""dotlist"">
+* CH state on you for 5 seconds
+* 50% damage increase on the next attack for 5 seconds";;;Jun-1+2+3+4;"<div class=""dotlist"">
 
 * Ki Charge
 * Supercharger
@@ -346,7 +349,8 @@ GEN.3,2;M, M;14, 16;i17~20, i24;-9;+33a (+18);;"* Combo from 1st hit with 8f del
 GEN.4;h;24;i26~28;+4~+6;+26a (+17);;"* Homing
 * Balcony Break
 Low crush 16~33 fs34~36";hom bbr js16~33 fs34~36;;Jun-GEN.4;Nichiun;r22;;File:t8-p2-jun-gen.4.mp4
-IZU.1;h;7;i13~14;-7;+4;;;;;Jun-IZU.1;;r25;;
+IZU.1;h;7;i13~14;-7;+4;;"Enter GEN +1 +5 r18 with F
+Enter MIA +1 +5 r18 with B";;GEN,MIA;Jun-IZU.1;;r25;;
 IZU.1,1;h, h;7, 26;i13~14, i23~24;-4;+30a (+20);;"* Balcony Break
 * Tornado
 * Combo from 1st hit with 6f delay
@@ -368,33 +372,34 @@ IZU.3;m,h;10,16;i16~15 i14~15;-6;+12a (+3);;"* Heat Engager
 * Balcony Break
 * Jail from 1st attack
 Low crush 20~53 fs54~56";he bbr js20~53 fs54~56;;Jun-IZU.3;Zuiun Renkyaku;r32;;File:t8-p2-jun-izu.3.mp4
-IZU.4;L;15;i21~22;-37;-1c;+23a;High crush 13~;cs13~;FC;Jun-IZU.4;;r37 FC;;
-IZU.4,1;L, M;15, 15;i21~22, i19~20;-14~-13;+14a (+3);;"* Balcony Break
-* Combo from 1st hit
-* Chip damage on block
+IZU.4;L;10;i21~22;-37;-1c;+23a;High crush 13~;cs13~;FC;Jun-IZU.4;;r37 FC;;
+IZU.4,1;L, M;10, 21;i21~22, i19~20;-14~-13;+14a (+3);;"* Balcony Break
+* 2nd hit only available as combo from 1st hit
+* DA: +9 damage on hit (30)
 * Deals 18 damage to self (12 recoverable)
 * Unparryable
-,Low crush 22~38 fs39~41";bbr chp js22~38 fs39~41;;Jun-IZU.4,1;Wakeikazuchi - Misogi;r37;;File:t8-p2-jun-izu.4,1.mp4
+,Low crush 22~38 fs39~41";bbr js22~38 fs39~41;;Jun-IZU.4,1;Wakeikazuchi - Misogi;r37;;File:t8-p2-jun-izu.4,1.mp4
 IZU.1+2;M;24;i21~22;-12;+19a;;"* Balcony Break
 * Spike
 * Frame advantage is -6 if an attack is absorbed
 Power crush 8~20";bbr spk pc8~20;;Jun-IZU.1+2;Mihikarioroshi;r30;;File:t8-p2-jun-izu.1+2.mp4
-IZU.f+1+2;m;21;i16~17;-9;+2;+23;"* Homing
+IZU.f+1+2;m;21;i16~17;-6;+5;+25;"* Homing
 * Balcony Break (airborne)
-* Only i13 or faster attacks guaranteed on CH";hom;;Jun-IZU.f+1+2;Dianthus Garden;r32;;File:t8-p2-jun-izu.f+1+2.mp4
+* Only i15 or faster attacks guaranteed on CH";hom;;Jun-IZU.f+1+2;Dianthus Garden;r32;;File:t8-p2-jun-izu.f+1+2.mp4
 MIA.1;M;30;i24~25;-9;+72a (+56);;"* Tornado
 * Chip damage (12) on block
 * Deals 12 damage to self (8 recoverable)
 * Unparryable";trn chp;;Jun-MIA.1;Ame-no-Sakahoko;r31;;File:t8-p2-jun-mia.1.mp4
-MIA.2;sm;30;i16;-20;+26a (+0);;"* Heat Engager
+MIA.2;sm;28;i16;-20;+26a (+0);;"* Heat Engager
 
 * Heat Dash +5, +36a (+26)
 
 * Balcony Break
-* Chip damage (9) on block
+* DA: Range increases to 4.0
+* Deals 8 (DA:11) chip damage on block
 * Deals 6 damage to self (4 recoverable)
-* Unparryable";he bbr chp;;Jun-MIA.2;Ame-no-Nuboko;r40;;File:t8-p2-jun-mia.2.mp4
-MIA.1+2;h;17;i23~24;+6;+11;+20c;"* Homing
+* Unparryable";he bbr;;Jun-MIA.2;Ame-no-Nuboko;r40;;File:t8-p2-jun-mia.2.mp4
+MIA.1+2;m;17;20;+4;+11;+11;"* Homing
 * Restores 2 health and 2 recoverable on hit";hom;IZU;Jun-MIA.1+2;Izumo Strike;r40 IZU;;File:Jun-116.mp4
 MIA.F;;;;;;;"* Cancel to r34 FC with D on frame 16
 * Parries low punches or kicks
@@ -409,7 +414,8 @@ Back throw;t;50;;;+7d;;"* Unbreakable
 * Side switch";;;Jun-Back throw;Twisted Limbs;;;File:Jun-122.mp4
 FC.db+1+2;t;15,15,15;i14~15;-6;+56a (+28);;"* Throw break 1+2
 * Opponent can tech roll to reduce the landing damage";;;Jun-FC.db+1+2;Falling Rain;r26;;File:t8-p2-jun-fc.db+1+2.mp4
-IZU.1+4;t;35;i14;-6;+0d;;* Throw break 1+2;;;Jun-IZU.1+4;Tsukuyomi;r25;;File:t8-p2-jun-izu.1+4.mp4
+IZU.1+3;t;35;i14;-6;+0d;;"* Throw break 1+2
+* Restores 8 life and 12 recoverable";;;Jun-IZU.1+3;Tsukuyomi;r25;;File:t8-p2-jun-izu.1+4.mp4
 Left throw;t;40;;-3;+0d;;* Throw break 1;;;Jun-Left throw;Cloud Taste;;;File:Jun-120.mp4
 Right throw;t;40;;-3;+0d;;"* Throw break 2
 * Side switch on hit";;;Jun-Right throw;Wind Wheel;;;File:Jun-121.mp4
