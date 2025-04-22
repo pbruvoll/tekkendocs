@@ -31,7 +31,10 @@ export const FrameDataSection = ({
 
   const filter: MoveFilter = useMemo(() => {
     const filterFromParams = getFilterFromParams(searchParams)
-    return { ...filterFromParams, searchQuery }
+    return {
+      ...filterFromParams,
+      searchQuery: searchQuery.toLowerCase().replace(/ /g, ''),
+    }
   }, [searchParams, searchQuery])
 
   const moveTypes = useMemo(() => getMoveFilterTypes(moves), [moves])
@@ -72,7 +75,7 @@ export const FrameDataSection = ({
 
   return (
     <>
-      <ContentContainer className="flex items-center justify-between gap-4">
+      <ContentContainer className="flex flex-wrap items-center justify-between gap-4">
         <div className="flex items-center gap-2">
           <Filter />
           <Input
