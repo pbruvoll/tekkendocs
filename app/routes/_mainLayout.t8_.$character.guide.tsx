@@ -120,23 +120,66 @@ export const meta: MetaFunction<typeof loader> = ({
   const { characterName } = frameData as CharacterFrameData
   const characterId = characterName.toLocaleLowerCase()
   const author = data?.guideData?.authors?.[0].name
+  const authorLink = data?.guideData?.authors?.[0].url?.split(' | ')[0]
   const characterTitle =
     characterName[0].toUpperCase() + characterName.substring(1)
   const title = `${characterTitle} Tekken 8 Guide ${author ? 'by ' + author : ''} | TekkenDocs`
   const description = `An overview of the most important information for ${characterTitle} in Tekken 8. Quickly learn how to play the character by learning key moves, punishers, and combos.`
 
-  return generateMetaTags({
-    matches,
-    title,
-    description,
-    image: {
-      url:
-        characterId === 'dragunov'
-          ? `/t8/avatars/${characterId}-512.png`
-          : `/t8/guides/${characterId}-1200.png`,
+  const imageUrl =
+    characterId === 'dragunov'
+      ? `/t8/avatars/${characterId}-512.png`
+      : `/t8/guides/${characterId}-1200.png`
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: title,
+    description: description,
+    image: imageUrl,
+    author: author
+      ? {
+          '@type': 'Person',
+          name: author,
+          url: authorLink,
+        }
+      : undefined,
+    publisher: {
+      '@type': 'Organization',
+      name: 'TekkenDocs',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://tekkendocs.com//logo-256.png',
+        width: 256,
+      },
     },
-    url: `/t8/${characterId}/guide`,
-  })
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://tekkendocs.com/t8/${characterId}/guide`,
+    },
+    about: {
+      '@type': 'VideoGame',
+      name: 'Tekken 8',
+      character: characterTitle,
+      genre: 'Fighting Game',
+      gamePlatform: ['PlayStation 5', 'Xbox Series X|S', 'PC'],
+    },
+  }
+
+  return [
+    ...generateMetaTags({
+      matches,
+      title,
+      description,
+      image: {
+        url: imageUrl,
+      },
+      url: `/t8/${characterId}/guide`,
+    }),
+    {
+      'script:ld+json': jsonLd,
+    },
+  ]
 }
 
 export default function Index() {
@@ -186,8 +229,6 @@ export default function Index() {
     top10Moves: keyMoves?.slice(0, 10),
     notableMoves: keyMoves?.slice(10),
   }
-
-  console.log('guideData', about)
 
   return (
     <GuideContext.Provider
