@@ -7,7 +7,7 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * Cannot cause a K.O.
 Power crush 7~16";hb pc7~16;;Lars-2+3;Heat Burst;r30;;
 H.DEN.3+4;L,SM;11,10;i22~23, i9;-14;+21d;;"* 4 chip damage on block
-* Transition to r19? SEN with input F (-2/+34d)
+* Transition to r19 SEN with input F (-2/+34d)
 * Partially uses remaining heat time";;SEN;Lars-H.DEN.3+4;Stack Up Insurgence;r25;;
 H.LEN.1;l,th;20,15;i16~17;-12c;+5;;"* 6 chip damage on block
 * Side switch on hit throw
@@ -16,16 +16,17 @@ H.LEN.2;m;20;i16~17;-9;+65a (+49);;"* Tornado
 * 9 chip damage on block";trn;;Lars-H.LEN.2;Rising Force (Heat);;;
 H.SS.2;m,SM;20,10;i16~17, i8;+6c;+27d;;"* 6 chip damage on block
 * Partially remaining heat time";;;Lars-H.SS.2;Shockwave Insurgence;r27;;
-H.f+3+4;sm;5 (5);i18~24;+5;+10;;"* Transition to SEN
+H.f+3+4;sm;5;i18~24;+5;+10;;"* Transition to SEN
 * Partially uses remaining heat time
-Power crush";pc;SEN;Lars-H.f+3+4;Rebellion;;;
-H.2+3;m, t;55;i18~19, i38~41;+13c;+0;;"* Heat Smash
+* Only deals recoverable damage
+Power crush 6~";pc6~;SEN,SEN;Lars-H.f+3+4;Rebellion;r16 SEN;;
+H.2+3;m,M;25,25;i18~19, i38~41;+13c;+0 / +81a;;"* Heat Smash
 * Spike
-* Transition to throw on hit
-* Transition to i38~41 2nd hit on block
-* Transition to DEN on block
-* Transition to standing on block (+10c) with input B
-* 10 chip damage on block";hs spk;i38~41,DEN,DEN;Lars-H.2+3;Thunderbird Descent;DEN;;
+* Transition to i38~41 2nd hit on 1st block or whiff
+* Transition to 30dmg attack throw on 1st hit (+0)
+* Transition to r30 DEN on block or whiff (+13c/+81a)
+* Transition to r37 standing on block (+10c/+79a) or whiff with input B
+* 10 chip damage on block";hs spk;i38~41,DEN,DEN;Lars-H.2+3;Thunderbird Descent;r30 DEN;;
 R.df+1+2;m,t;55+;i20;-15;+0d;;"* Rage Art
 * Removes Recoverable Health
 * Reversal Break
