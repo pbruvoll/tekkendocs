@@ -1,7 +1,7 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Transitions;Wavu id;Name;Recovery;Image;Video
 2+3;m;"[12;12]";i16;+1;+2c;;"* Heat Burst
-* Cancel to r45 with b,b
-* 3 chip damage on block
+* Cancel to r45 with b,b on frame 42
+* 2 chip damage on block
 * 12 chip damage on hit
 * Only deals recoverable damage
 * Cannot cause a K.O.
@@ -293,7 +293,8 @@ uf+3+4;m,m;10,14;i20 i13~14;-11;+14a (+5);;"* Balcony Break
 * First hit can be parried
 Low crush 21~38";bbr js21~38;;Claudio-uf+3+4;Pollux;r30;;File:t8-p2-claudio-uf+3+4.mp4
 1+2+3+4;;;;;;;"* Can't block for 5 seconds
-* CH state for 5 seconds";;;Claudio-1+2+3+4;"<div class=""dotlist"">
+* CH state on you for 5 seconds
+* 50% damage increase on the next attack for 5 seconds";;;Claudio-1+2+3+4;"<div class=""dotlist"">
 
 * Ki Charge
 * Supercharger
@@ -348,7 +349,7 @@ f,f,F+2;h;40;i13~16;+6;+24a (+19);;"* Heat Engager
 * js3~26
 * fs27~29&lt;/div&gt;";STB;Claudio-f,f,F+2;Ira;r28;;File:t8-p2-claudio-f,f,f+2.mp4
 ws1;m;12;i12~13;-4;+7;;;;;Claudio-ws1;;r22;;
-ws1,1;m, h;12, 15;i12~13, i20;-12;+9;;Combo from 1st hit with 1f delay;;;Claudio-ws1,1;Noble Step;r31;;File:t8-p2-claudio-ws1,1.mp4
+ws1,1;m, h;12, 15;i12~13, i20;-7;+9;;Combo from 1st hit with 1f delay;;;Claudio-ws1,1;Noble Step;r31;;File:t8-p2-claudio-ws1,1.mp4
 ws1,2;m, M;12, 12;i12~13, i28~29;-9;+4;;"* Tornado
 * Combo from 1st hit with 1f delay
 * Interrupt with i10 from 1st block";trn;;Claudio-ws1,2;Malefic Draw;r36;;File:t8-p2-claudio-ws1,2.mp4
