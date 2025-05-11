@@ -26,7 +26,7 @@ def get_wavu_character_movelist(character_name: str) -> List[Move]:
     params = {
         "action": "cargoquery",
         "tables": "Move",
-        "fields": "id, name, input, alias, alt, parent, image, video, target, damage, reach, tracksLeft, tracksRight, startup, recv, tot, crush, block, hit, ch, notes, _pageNamespace=ns",
+        "fields": "id, name, input, alias, alt, num, parent, image, video, target, damage, reach, tracksLeft, tracksRight, startup, recv, tot, crush, block, hit, ch, notes, _pageNamespace=ns",
         "join_on": "",
         "group_by": "",
         "where": "id LIKE '" + _upper_first_letter(character_name) + "%'",
@@ -163,6 +163,9 @@ def _convert_json_movelist(move_list_json: list) -> List[Move]:
             crush = _normalize_data(move["title"]["crush"])
             image = _normalize_data(move["title"]["image"])
             video = _normalize_data(move["title"]["video"])
+            alt = _normalize_data(move["title"]["alt"])
+            alt = BeautifulSoup(alt, features="lxml").get_text()
+            num = _normalize_data(move["title"]["num"])
 
             if(len(startupArray) > 0) :
                 startup = startupArray[0] +  ", " + ("," if len(startupArray) > 1 else "") + (startup[1:] if startup.startswith(",") else startup)
@@ -176,7 +179,7 @@ def _convert_json_movelist(move_list_json: list) -> List[Move]:
                 notes = "\n".join([notes, _crush_to_note(crush)])
 
             notes = notes.strip()
-            move = Move(id, name, input, target, damage, on_block, on_hit, on_ch, startup, recovery, crush, notes, short_notes, "", tags, image, video, alias)
+            move = Move(id, name, input, target, damage, on_block, on_hit, on_ch, startup, recovery, crush, notes, short_notes, "", tags, image, video, alias, alt, num)
             move_list.append(move)
     return move_list
 

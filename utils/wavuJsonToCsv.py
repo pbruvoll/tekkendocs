@@ -85,6 +85,9 @@ def correctMove(move, charName) :
 
     move["notes"] = re.sub(notesCleanPattern, r'\1', move["notes"])
 
+    # currently needed for moves like Paul H.b+2,1*
+    move["on_block"] = re.sub(notesCleanPattern, r'\1', move["on_block"])
+
     move["transitions"] = getTransitions(move)
     if move["transitions"].find("ws") > -1 : 
         print("error move : ", move["input"], move["notes"])
