@@ -1,11 +1,13 @@
 import { Card, Inset } from '@radix-ui/themes'
 import { Link } from '@remix-run/react'
 import { cx } from 'class-variance-authority'
+import { Badge } from '@/components/ui/badge'
 
 export type CharacterCard2Props = {
   size?: 'medium' | 'large'
   url: string
   name: string
+  badge?: string
   author?: string
   imgUrl?: string
 }
@@ -13,6 +15,7 @@ export type CharacterCard2Props = {
 export const CharacterCard2 = ({
   url,
   name,
+  badge,
   size,
   imgUrl,
   author,
@@ -20,7 +23,7 @@ export const CharacterCard2 = ({
   return (
     <Link to={url} className="cursor-pointer">
       <Card className="group transform transition duration-500 hover:scale-110 hover:border-b-2 hover:border-b-gray-700 hover:shadow">
-        <Inset clip="padding-box" side="top" pb="current">
+        <Inset clip="padding-box" className="relative" side="top" pb="current">
           <img
             src={imgUrl}
             alt={name}
@@ -31,6 +34,11 @@ export const CharacterCard2 = ({
                 : 'object-contain',
             )}
           />
+          {badge && (
+            <Badge variant="secondary" className="absolute bottom-4 left-0.5">
+              {badge}
+            </Badge>
+          )}
         </Inset>
         <Inset clip="padding-box" side="x">
           {author ? (

@@ -31,6 +31,7 @@ import { StrengthsWeaknesses } from '~/features/guides/StrengthsWeaknesses'
 import { WallCombos } from '~/features/guides/WallCombos'
 import { useFrameData } from '~/hooks/useFrameData'
 import { getSheet } from '~/services/googleSheetService.server'
+import { characterGuideAuthors } from '~/services/staticDataService'
 import type { CharacterFrameData } from '~/types/CharacterFrameData'
 import type { Game } from '~/types/Game'
 import { type Move } from '~/types/Move'
@@ -121,9 +122,10 @@ export const meta: MetaFunction<typeof loader> = ({
   const characterId = characterName.toLocaleLowerCase()
   const author = data?.guideData?.authors?.[0].name
   const authorLink = data?.guideData?.authors?.[0].url?.split(' | ')[0]
+  const version = characterGuideAuthors.T8[characterId].version
   const characterTitle =
     characterName[0].toUpperCase() + characterName.substring(1)
-  const title = `${characterTitle} Tekken 8 Guide ${author ? 'by ' + author : ''} | TekkenDocs`
+  const title = `${characterTitle} Tekken 8 ${version === 'S2' ? 'Season 2 ' : ''}Guide ${author ? 'by ' + author : ''} | TekkenDocs`
   const description = `An overview of the most important information for ${characterTitle} in Tekken 8. Quickly learn how to play the character by learning key moves, punishers, and combos.`
 
   const imageUrl =
@@ -230,6 +232,8 @@ export default function Index() {
     notableMoves: keyMoves?.slice(10),
   }
 
+  const version = characterGuideAuthors.T8[characterId].version
+
   return (
     <GuideContext.Provider
       value={{
@@ -263,7 +267,8 @@ export default function Index() {
         <Nav navData={navData}></Nav>
       </ContentContainer>
       <h1 className="sr-only">
-        {characterId} {gameNameMap[game]} Guide
+        {characterId} {gameNameMap[game]} {version === 'S2' ? 'Season 2' : ''}{' '}
+        Guide
       </h1>
       <img
         src={t8GuideImgSmallMap[characterId]}

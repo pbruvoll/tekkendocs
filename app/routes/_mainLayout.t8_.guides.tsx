@@ -47,7 +47,8 @@ export default function () {
               const imgSrc = t8GuideImgSmallMap[id]
               return {
                 name: displayName,
-                author: characterGuideAuthors['T8'][id],
+                badge: characterGuideAuthors.T8[id].version,
+                author: characterGuideAuthors.T8[id].author,
                 size: 'large',
                 imgSrc,
                 url: '/t8/' + id + '/guide',
