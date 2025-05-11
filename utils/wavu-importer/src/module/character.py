@@ -23,8 +23,8 @@ class Move:
         self.tags = tags
         self.image = image
         self.video = video
-        self.alt = alt
-        self.num = num
+        # self.alt = alt
+        # self.num = num
         if alias:
             self.alias = alias
 

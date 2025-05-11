@@ -164,6 +164,7 @@ def _convert_json_movelist(move_list_json: list) -> List[Move]:
             image = _normalize_data(move["title"]["image"])
             video = _normalize_data(move["title"]["video"])
             alt = _normalize_data(move["title"]["alt"])
+            alt = BeautifulSoup(alt, features="lxml").get_text()
             num = _normalize_data(move["title"]["num"])
 
             if(len(startupArray) > 0) :
