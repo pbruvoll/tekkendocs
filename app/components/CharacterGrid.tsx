@@ -31,38 +31,41 @@ export const CharacterGrid = ({ characterCards, size }: CharacterGridProps) => {
             : 'grid-cols-4 xs:grid-cols-5 xs:gap-x-2 xs:gap-y-3 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-9',
         )}
       >
-        {characterCards.map(({ name, url, size, imgSrc, author }, index) => {
-          return (
-            <motion.div
-              variants={{
-                hidden: {
-                  opacity: 0,
-                  scale: 0.7,
-                  filter: 'blur(10px)',
-                  translateY: '20px',
-                },
-                visible: {
-                  opacity: 1,
-                  scale: 1,
-                  filter: 'blur(0px)',
-                  translateY: '0px',
-                },
-              }}
-              key={index}
-              className="mb-4"
-            >
-              <li className="cursor-pointer" key={name}>
-                <CharacterCard2
-                  imgUrl={imgSrc}
-                  size={size}
-                  name={name}
-                  url={url}
-                  author={author}
-                />
-              </li>
-            </motion.div>
-          )
-        })}
+        {characterCards.map(
+          ({ name, badge, url, size, imgSrc, author }, index) => {
+            return (
+              <motion.div
+                variants={{
+                  hidden: {
+                    opacity: 0,
+                    scale: 0.7,
+                    filter: 'blur(10px)',
+                    translateY: '20px',
+                  },
+                  visible: {
+                    opacity: 1,
+                    scale: 1,
+                    filter: 'blur(0px)',
+                    translateY: '0px',
+                  },
+                }}
+                key={index}
+                className="mb-4"
+              >
+                <li className="cursor-pointer" key={name}>
+                  <CharacterCard2
+                    imgUrl={imgSrc}
+                    size={size}
+                    name={name}
+                    badge={badge}
+                    url={url}
+                    author={author}
+                  />
+                </li>
+              </motion.div>
+            )
+          },
+        )}
       </ul>
     </InView>
   )

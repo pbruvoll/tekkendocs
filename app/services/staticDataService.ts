@@ -100,18 +100,25 @@ const characterInfoListT7: CharacterInfo[] = charsT7.map(char => ({
   displayName: char.replaceAll('-', ' '),
 }))
 
-export const characterGuideAuthors: Record<Game, Record<string, string>> = {
+export type GuideMetaData = {
+  author: string
+  version?: string
+}
+export const characterGuideAuthors: Record<
+  Game,
+  Record<string, GuideMetaData>
+> = {
   T8: {
-    asuka: 'Fergus',
-    azucena: 'Koenji',
-    bryan: 'Ty',
-    claudio: 'Tetsu',
-    jin: 'Bok Dibi',
-    lee: 'Super Akouma',
-    lidia: 'Leemishima',
-    lili: 'DewGlider',
-    raven: 'JacobKaas',
-    xiaoyu: 'Kanda',
+    asuka: { author: 'Fergus', version: 'S2' },
+    azucena: { author: 'Koenji' },
+    bryan: { author: 'Ty' },
+    claudio: { author: 'Tetsu' },
+    jin: { author: 'Bok Dibi', version: 'S2' },
+    lee: { author: 'Super Akouma', version: 'S2' },
+    lidia: { author: 'Leemishima' },
+    lili: { author: 'DewGlider' },
+    raven: { author: 'JacobKaas' },
+    xiaoyu: { author: 'Kanda', version: 'S2' },
   },
   T7: {},
   TT2: {},
