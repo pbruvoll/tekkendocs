@@ -335,8 +335,8 @@ export const filterMoves = (moves: Move[], filter: MoveFilter | undefined) => {
         (searchQuery.length >= 3 &&
           !/\d/.test(searchQuery) &&
           (move.hitLevel.toLowerCase().includes(searchQuery) ||
-            move.notes?.toLowerCase().includes(searchQuery) ||
-            move.name?.toLowerCase().includes(searchQuery) ||
+            move.notes?.replace(/ /g, '').toLowerCase().includes(searchQuery) ||
+            move.name?.replace(/ /g, '').toLowerCase().includes(searchQuery) ||
             move.tags?.[searchQuery] !== undefined))
       )
     })
