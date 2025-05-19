@@ -17,13 +17,14 @@ export const FrameDataFilterDialog = ({
   states,
   transitions,
 }: FrameDataFilterDialogProps) => {
-  const filterCount = Object.entries(filter).filter(([, value]) => {
+  const filterCount = Object.entries(filter).filter(([k, value]) => {
     if (value === undefined) {
       return false
     }
     if (value instanceof Array) {
       return value.length > 0
     }
+    console.log(k, ' ', value)
     return true
   }).length
 
