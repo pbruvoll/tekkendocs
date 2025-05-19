@@ -49,6 +49,7 @@ export const getFilterFromParams = (
     highCrush: getSearchParamBoolean(searchParams, filterKey.HighCrush),
     lowCrush: getSearchParamBoolean(searchParams, filterKey.LowCrush),
     powerCrush: getSearchParamBoolean(searchParams, filterKey.PowerCrush),
+    parry: getSearchParamBoolean(searchParams, filterKey.Parry),
     elbow: getSearchParamBoolean(searchParams, filterKey.Elbow),
     knee: getSearchParamBoolean(searchParams, filterKey.Knee),
     weapon: getSearchParamBoolean(searchParams, filterKey.Weapon),

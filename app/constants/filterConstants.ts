@@ -19,6 +19,7 @@ export const filterKey = {
   HighCrush: 'cs',
   LowCrush: 'js',
   PowerCrush: 'pc',
+  Parry: 'ps',
   Spike: 'spk',
   FloorBreak: 'fbr',
   Knee: 'kne',

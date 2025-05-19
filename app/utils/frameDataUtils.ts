@@ -448,6 +448,7 @@ export const filterMoves = (moves: Move[], filter: MoveFilter | undefined) => {
     [filter.powerCrush, (move: Move) => hasTag('pc', move)],
     [filter.highCrush, (move: Move) => hasTag('cs', move)],
     [filter.lowCrush, (move: Move) => hasTag('js', move)],
+    [filter.parry, (move: Move) => hasTag('ps', move)],
     [filter.spike, (move: Move) => hasTag('spk', move)],
     [filter.wallCrush, (move: Move) => hasTag('wc', move)],
     [filter.elbow, (move: Move) => hasTag('elb', move)],
