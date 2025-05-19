@@ -1,4 +1,5 @@
 import invariant from 'tiny-invariant'
+import { StanceNormal } from '~/constants/filterConstants'
 import { type HitLevel } from '~/types/FilterTypes'
 import { type Move } from '~/types/Move'
 import { type MoveFilter } from '~/types/MoveFilter'
@@ -469,6 +470,14 @@ export const filterMoves = (moves: Move[], filter: MoveFilter | undefined) => {
     filterFuncs.push((move: Move) => {
       if (!move.command) return false
       const stanceSplitted = move.command.split('.', 2)
+      if (stance.includes(StanceNormal)) {
+        return (
+          stanceSplitted.length === 1 &&
+          !move.command.startsWith('ws') &&
+          (move.hitLevel?.split(', ').pop()?.[0]?.toLowerCase() as HitLevel) !==
+            't'
+        )
+      }
       if (stanceSplitted.length > 1) return stance.includes(stanceSplitted[0])
       return !!(move.command && stance.some(s => move.command.startsWith(s)))
     })
@@ -745,7 +754,7 @@ export const getMoveFilterTypes = (moves: Move[]): MoveFilterTypes => {
   })
 
   const stances: string[] = []
-  const states: string[] = []
+  const states: string[] = [StanceNormal]
   Array.from(allStances).forEach(stance => {
     if (knownStates.has(stance.toLowerCase())) {
       states.push(stance)

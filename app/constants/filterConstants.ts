@@ -40,3 +40,5 @@ export const hitLevelValue = {
   High: 'h',
   Throw: 't',
 } as const
+
+export const StanceNormal = 'Normal'
