@@ -20,7 +20,7 @@ export type MoveFilter = {
   highCrush?: boolean
   lowCrush?: boolean
   powerCrush?: boolean
-  parry?: boolean,
+  parry?: boolean
   spike?: boolean
   removeRecoveryHealth?: boolean
   recoverFullCrouch?: boolean
