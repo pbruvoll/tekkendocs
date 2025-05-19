@@ -33,7 +33,9 @@ export const FrameDataSection = ({
     const filterFromParams = getFilterFromParams(searchParams)
     return {
       ...filterFromParams,
-      searchQuery: searchQuery.toLowerCase().replace(/ /g, ''),
+      searchQuery: searchQuery
+        ? searchQuery.toLowerCase().replace(/ /g, '')
+        : undefined,
     }
   }, [searchParams, searchQuery])
 

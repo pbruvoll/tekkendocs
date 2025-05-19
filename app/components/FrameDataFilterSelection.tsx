@@ -51,6 +51,7 @@ export const FrameDataFilterSelection = ({
     weapon,
     floorBreak,
     powerCrush,
+    parry,
     wallCrush,
     hitsGrounded,
     video,
@@ -259,6 +260,7 @@ export const FrameDataFilterSelection = ({
               [filterKey.LowCrush, lowCrush, 'Low crush'],
               [filterKey.HighCrush, highCrush, 'High crush'],
               [filterKey.PowerCrush, powerCrush, 'Power crush'],
+              [filterKey.Parry, parry, 'Parry'],
             ] as const
           ).map(([key, value, displayName]) => {
             return (
