@@ -1,12 +1,9 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Transitions;Wavu id;Name;Recovery;Image;Video
-H.SCR.2+3;L,m;10,20;i19;-14;+44d (+25);;"* Heat Smash
-* Reversal Break
-* Balcony Break
-High crush 6~";hs bbr cs6~;;Zafina-H.SCR.2+3;Malice of Azazel;;;File:Zafina SCR Heat Smash.mp4
 H.2+3;h,sm;51;i12~13 i47~53 i1~7 i1~7 i1~6 i1~2;+3;+0d;;"* Heat Smash
 * Reversal Break
 * Balcony Break
 * Jail from 1st attack
+* 10 chip damage on block
 * Transition to attack throw on hit";hs bbr;;Zafina-H.2+3;Curse of Azazel;;;File:Zafina Heat Smash.mp4
 R.df+1+2;m,t;55+;i20;-15;+0d;;"* Rage Art
 * Removes Recoverable Health
@@ -26,9 +23,9 @@ Power crush 8~";pc8~;;Zafina-R.df+1+2;Semper Avarus Eget;r39;;
 * Jail from 1st attack with 1f delay
 * Move can be delayed 2f
 * Cancel SCR transition -8 +1 t55 r26 with B";;SCR;Zafina-1,3;Anzu;r31 SCR;;
-1,4;h, m;5, 17;i10, i19;-5;+22g;+53a;"* Tornado
+1,4;h, m;5, 17;i10, i19;-5;+8;+42a;"* Tornado
 * Combo from 1st hit with 3f delay
-* Move can be delayed 1f";trn;TRT;Zafina-1,4;Ecdysis;r32 TRT;;File:t8-p2-zafina-1,4.mp4
+* Move can be delayed 1f";trn;TRT;Zafina-1,4;Ecdysis;r25 TRT;;File:t8-p2-zafina-1,4.mp4
 2;h;8;i10;-7;-1;;;;;Zafina-2;;r26;;
 2,1;h, m;8, 9;i10, i23~25;-6c;+2;;"* Spike
 * Combo from 1st hit CH with 3f delay
@@ -69,25 +66,37 @@ f+2,3;m, h;17, 12;i19, i19;+0;+9;;"* Cancel SCR transition -9 +0 t68 r28 with B
 * Move can be delayed 15f";;SCR;Zafina-f+2,3;;r40 SCR;;
 f+2,3,4;m, h, m;17, 12, 25;i19, ,i28~29;-18;+18a (+8);;"* Balcony Break
 * Combo from 2nd CH";bbr;;Zafina-f+2,3,4;Ettimu;r37;;File:t8-p2-zafina-f+2,3,4.mp4
-f+3;h;28;i21;+3;+68a (+48);;"* Balcony Break
-* Cancel SCR transition -1 +64a (+44) t52 r31 with B";bbr;SCR;Zafina-f+3;Scarecrow Side Kick;r27 SCR;;File:t8-p2-zafina-f+3.mp4
+f+3;h;28;i17;+3;+14c;;"* Balcony Break
+* Good left sidestep tracking
+* Cancel SCR transition -1 +10c t? r? with B";bbr;SCR;Zafina-f+3;Scarecrow Side Kick;r31 SCR;;File:t8-p2-zafina-f+3.mp4
 f+4;h;13;i14~15;-6;+22a;;;;;Zafina-f+4;Aqrabuamelu;r30;;File:t8-p2-zafina-f+4.mp4
 f+1+2;m,m;16,22;i19~20 i13~14;-9;+5a (-5);;"* Heat Engager
 
 * Heat Dash +5, +36a (+26)
 
 * Balcony Break
-* Zafina receives recoverable health damage
 * Second hit available only on hit or block
 * 8 chip damage on block
-* Azazel's Power";he bbr;;Zafina-f+1+2;Malicious Nail;r28;;File:t8-p2-zafina-f+1+2.mp4
+* Azazel's Power
+* Deal 15 (18) recoverable damage to self on hit without Heat
+* Gain ORB on hit or heat activation";he bbr;;Zafina-f+1+2;Malicious Nail;r28;;File:t8-p2-zafina-f+1+2.mp4
 df+1;m;10;i13~14;-5;+7;;;;;Zafina-df+1;;r22;;
 df+1,2;m, m;10, 16;i13~14, i15~16;-13;+3;;* Combo from 1st hit with 3f delay;;;Zafina-df+1,2;;r36;;
-df+1,2,1;m, m, m;10, 16, 20;i13~14, ,i25;-13;+23a (+13);;"* Balcony Break
+df+1,2,1;m, m, m;10, 16, 16;i13~14, ,i25;-12;+7;;"* Balcony Break
 * Combo from 2nd hit CH with 12f delay
-* Interrupt with i1 from 2nd block";bbr;;Zafina-df+1,2,1;Bloody Saif - Execution;r32;;File:t8-p2-zafina-df+1,2,1.mp4
-df+1,4;m, h;10, 18;i13~14, i19~20;-6;+12g;;"* Balcony Break
-* Combo from 1st hit";bbr;;Zafina-df+1,4;Sharp Shamshir;r30;;File:t8-p2-zafina-df+1,4.mp4
+* Interrupt with i1 from 2nd block
+* Transition to standing with B (-12/+4)";bbr;SCR;Zafina-df+1,2,1;Bloody Saif - Execution;SCR;;File:t8-p2-zafina-df+1,2,1.mp4
+df+1,2,1+2;m, m, sm;10, 16, 10,10 (7),20 (10);i13~14, ,i37;-9;+17a (+16);;"* Balcony Break
+* Combo from 2nd hit CH with 2F delay
+* Deal 18 recoverable damage to self without Heat
+* Interrupt with i13 from 2nd block
+* 27 damage with aerial combo scaling
+* Gain ORB on hit
+* Azazel's Power
+* 13 chip damage on block
+* Available on 2nd hit or block only";bbr;;Zafina-df+1,2,1+2;Calamity Trifecta;;;
+df+1,4;m, h;10, 18;i13~14, i19~20;-6;+7;;"* Balcony Break on airborne hit
+* Combo from 1st hit";;;Zafina-df+1,4;Sharp Shamshir;r30;;File:t8-p2-zafina-df+1,4.mp4
 df+2;m;13;i16~17;-12;+32a (+22);;"* Launches crouching opponent
 * Can evade some highs";;;Zafina-df+2;Lamashtu Claw;r31;;File:t8-p2-zafina-df+2.mp4
 df+3;m;15;i15~16;-5;+4;;* Cancel SCR transition -10 -1 t43 r28 with B;;SCR;Zafina-df+3;;r22 SCR;;
@@ -95,8 +104,8 @@ df+3,4;m, h;15, 17;i15~16, i23~24;-6;+22a;+55a;"* Balcony break on airborne hit
 * Combo from 1st hit";;;Zafina-df+3,4;Dueling Scimitars;r30;;File:t8-p2-zafina-df+3,4.mp4
 df+3,d+4;m, L;15, 15;i15~16, i25~26;-14;+1c;;"Combo from 1st hit
 ,High crush 11~";cs11~;FC;Zafina-df+3,d+4;Pukku;r35 FC;;File:t8-p2-zafina-df+3,d+4.mp4
-df+4;m;14;i14;-13;+3;;;;;Zafina-df+4;;r32;;
-df+4,1;m, m;14, 22;i14, i31;-12;+3a;;"* Heat Engager
+df+4;m;14;i13;-13;+3;;;;;Zafina-df+4;;r32;;
+df+4,1;m, m;14, 22;i13, i31;-9;+3a;;"* Heat Engager
 
 * Heat Dash +5, +43a (+35)
 
@@ -104,14 +113,13 @@ df+4,1;m, m;14, 22;i14, i31;-12;+3a;;"* Heat Engager
 * Spike
 * Combo from 1st hit
 * Cancel to FC -18 -2 r37 with D
-* Zafina receives recoverable health damage
+* Deal 18 recoverable damage to self without Heat
 * Unparryable by traditional parries, Asuka, Nina, etc
 * 8 chip damage on block
-* Azazel's Power";he bbr spk;FC;Zafina-df+4,1;Miasma Bearer;r47;;File:t8-p2-zafina-df+4,1.mp4
-df+4,2;m, m;14, 20;i14, i27~29;-13;+24a (+9);;"* Tornado
+* Azazel's Power
+* Gain ORB on hit or heat activation";he bbr spk;FC;Zafina-df+4,1;Miasma Bearer;r47;;File:t8-p2-zafina-df+4,1.mp4
+df+4,2;m, m;14, 20;i13, i27~29;-13;+24a (+9);;"* Tornado
 * Combo from 1st hit";trn;;Zafina-df+4,2;Cerberus Strike;r39;;File:t8-p2-zafina-df+4,2.mp4
-df+2+3;m;20;i36~37;-9;+60a;;"* Homing
-High crush 6~35";hom cs6~35;;Zafina-df+2+3;Kur;r29;;
 d+1;m;11;i12;-16;-8;-3c;* Spike;spk;;Zafina-d+1;;r38;;
 d+1,1;m, m;11, 17;i12, i17~18;-12;+19a (+12);+29a (+23);"* Combo from 1st hit CH with 18f delay
 * Input can be delayed 18f
@@ -125,7 +133,7 @@ d+2,4;m, m;17, 10;i19~20, i26;-22;-4;-4c;"* Spike
 * cs56~84
 * fs6~55&lt;/div&gt;";TRT,MNT;Zafina-d+2,4;;r44 MNT;;
 d+2,4,3;m, m, m;17, 10, 10;i19~20, ,i28~31;-13~-10;+18a;;* Combo from 2nd hit CH;;;Zafina-d+2,4,3;Poison Rosette;r29;;File:t8-p2-zafina-d+2,4,3.mp4
-d+3;L;14;i22;-15;+5c;+20a;"* Enter MNT -13 +7c r32 with D
+d+3;L;14;i22;-15;+5c;+24d;"* Transition to MNT -13 +7c +26d r32 with D
 * Evasive (can go under some mids)
 High crush 6~";cs6~;MNT,FC;Zafina-d+3;Earwig Pincer;r34 FC;;File:t8-p2-zafina-d+3.mp4
 d+4;L;8;i17~18;-19;-3;+7;;;;Zafina-d+4;;r37;;
@@ -137,6 +145,7 @@ d+4,3;L, h;8, 10;i17~18, i19;-6;+36a (+26);;"* Combo from 1st hit CH with 11f de
 * js11~17
 * fs18~20&lt;/div&gt;";;Zafina-d+4,3;Iskur;r34;;
 d+1+2;;;;;;;"* Cancel to r30 with DB_UB_U_UF
+* Cancel to r10 standing guard with DB
 * Crawl with F
 &lt;div class=&quot;plainlist&quot;&gt;
 * High crush 6~33
@@ -150,7 +159,17 @@ d+3+4;;;;;;;"* Cancel to r30 with db
 * Move backward/forward with b_f
 * Dash with f,f
 High crush 6~30";cs6~30;MNT;Zafina-d+3+4;Mantis Stance;r30 MNT;;
-db+2;m;17;i13~14;-9;+3;+16a;;;;Zafina-db+2;Backhand Thrust;r36;;File:t8-p2-zafina-db+2.mp4
+db+2;m;17;i13~14;-13;+3;;;;;Zafina-db+2;Backhand Thrust;r36;;File:t8-p2-zafina-db+2.mp4
+db+2,1;m, m;17, 16;i13~14, i25;-12;+7;;* Transition to standing with B (-12/+4);;SCR;Zafina-db+2,1;Shulshaga;SCR;;
+db+2,1+2;m, sm;17, 10,10 (7),20 (10);i13~14, i37;-9;+17a (+16);;"* Balcony Break
+* Combo from 1st CH with 2F delay
+* Deal 18 recoverable damage to self without Heat
+* Interrupt with i13 from 1st block
+* 27 damage with aerial combo scaling
+* Gain ORB on hit
+* 13 chip damage on block
+* Azazel's Power
+* Available on 1st hit or block only";bbr;;Zafina-db+2,1+2;Calamity Vortex;;;
 db+3;L;13;i18;-8;+3;;* Cancel SCR transition -11 +0 t48 r30 with B;;SCR;Zafina-db+3;Acinaces;r27 SCR;;File:t8-p2-zafina-db+3.mp4
 db+4;L;14;i21~22;-12;-3;+3;"* Transition to -13 -4 +2 MNT with D
 High crush 6~40";cs6~40;MNT;Zafina-db+4;;r31;;
@@ -160,30 +179,62 @@ db+1+2,1+2;L, m;10, 20;i28~29, i33;-16;+5a (-4);+37a (-10);"* Tornado
 * Balcony Break
 * Combos from 1st hit";trn bbr;;Zafina-db+1+2,1+2;Sirrush;r40;;File:t8-p2-zafina-db+1+2,1+2.mp4
 b+1;m;14;i18;-14;+2;;"* Transition to attack throw on standing or airborne front hit with 1+2
-* 4f input window for attack throw (frames 14~17)";;;Zafina-b+1;Cursed Crow;r38;;File:t8-p2-zafina-b+1.mp4
-b+1:1+2;m, t;14, 36;i18, ;;+0d;;"* Zafina receives recoverable health damage
+* 8f input window for attack throw (frames 10~17)";;;Zafina-b+1;Cursed Crow;r38;;File:t8-p2-zafina-b+1.mp4
+b+1:1;m, t;14, 36;i18, ;;+0d;;"* Deal 5 (8) recoverable damage to self without Heat
 * Side switch on hit
+* Gain ORB on hit
 * Azazel's Power
 &lt;div class=&quot;plainlist&quot;&gt;
 * ,Low crush 80~92
 * fs93~95&lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
 * js80~92
-* fs93~95&lt;/div&gt;";;Zafina-b+1:1+2;Cursed Claw;;;File:t8-p2-zafina-b+1c1+2.mp4
+* fs93~95&lt;/div&gt;";;Zafina-b+1:1;Cursed Claw;;;File:t8-p2-zafina-b+1c1+2.mp4
+b+1:ORB.1+2;m, t;14, 45;i18, ;;+0d;;"* Consumes ORB
+* Partially consumes remaining Heat time
+* Azazel's Power
+* Deals 8 recoverable damage to Zafina without Heat
+* Deals 5 additional damage when Zafina's remaining health is 42 or lower
+* Available only from 1st front hit";;;Zafina-b+1:ORB.1+2;Anathematic Claw;;;
 b+1+3;;;;;+12d;;"* Zafina automatically retaliates on a successful parry
-* Deals recoverable self-damage
+* Deal 8 recoverable damage to self without Heat
 Parry state 6~29";ps6~29;;Zafina-b+1+3;Revenge Hand;r75;;
-b+1+3,P;m,m;5,35;,i30~34 i29~30;+2;+12d;;* 17 chip damage on block;;;Zafina-b+1+3,P;;;;
-b+2;h;22;i22~23;-5;+12;;"* Homing
-* Balcony break on airborne hit
+b+1+3,P;m,m;5,35;,i30~34 i29~30;+2;+12d;;"* 17 chip damage on block
+* Gain ORB on hit";;;Zafina-b+1+3,P;;;;
+b+2;h;22;i22~23;-5;+14;;"* Homing
+* Balcony Break on airborne hit
 * +23a on BT hit";hom;;Zafina-b+2;Brisingamen Backfist;r29;;File:t8-p2-zafina-b+2.mp4
 b+3;m;23;i24~26;-14;+12a;;"* Balcony Break
 * Spike
 Power crush 7~23";bbr spk pc7~23;;Zafina-b+3;Ereshkigal Stomp;r36;;File:t8-p2-zafina-b+3.mp4
+b+3,ORB.1+2;m;35;i24~26;-9;-14a (-15);;"* Balcony Break
+* Consumes ORB
+* Partially consumes remaining Heat time
+* Deals 3 additional damage when Zafina's remaining health is 42 or lower
+* 8 chip damage on block
+** 13 chip damage on block when Zafina's remaining health is 42 or lower
+* Available only on hit or block
+Power crush 7~23";bbr pc7~23;;Zafina-b+3,ORB.1+2;Anathematic Stomp;;;
 b+4;m;14;i22~23;-9;+4;;;;;Zafina-b+4;;r32;;
 b+4,4;m, m;14, 20;i22~23, i20~22;-14;+9a (+0);+41a (-6);"* Balcony Break
 * Combos from 1st hit with 16f delay
 * Move can be delayed 9f";bbr;;Zafina-b+4,4;Tiamat's Tail;r34;;File:t8-p2-zafina-b+4,4.mp4
-b+2+3;m!;40;i64;;+41a (+10);;* +45a on side/BT hit;;;Zafina-b+2+3;Spear of Alu;r44;;File:t8-p2-zafina-b+2+3.mp4
+b+1+2;m;27;i19~20;-6;+12a (+3);;"* Balcony Break
+* Homing
+* Deals 12 recoverable damage to self without Heat
+* Gain ORB on hit
+* Azazel's Power
+* 10 chip damage on block";bbr hom;;Zafina-b+1+2;Evil Razer;r37;;
+b+1+2,ORB.1+2;m;17,5,15;i19~20;+4;+10a (-16);;"* Balcony Break
+* Homing
+* Deals 12 recoverable damage to self without Heat
+* Consumes ORB
+* Partially consumes remaining Heat time
+* Azazel's Power
+* Deals 5 additional damage when Zafina's remaining health is 42 or lower
+* 11 chip damage on block
+** Deals 16 chip damage on block when Zafina's remaining health is 42 or lower
+* Available only on hit or block";bbr hom;;Zafina-b+1+2,ORB.1+2;Anathematic Razer;;;
+b+2+3;m!;40;i64;;+41a (+10);;* +45a on side/BT hit;;;Zafina-ub+2+3;Spear of Alu;r44;;File:t8-p2-zafina-b+2+3.mp4
 ub+3;m;19;i22~23;-17;-6;;"* Balcony break on airborne hit
 &lt;div class=&quot;plainlist&quot;&gt;
 * Low crush 8~31
@@ -198,7 +249,12 @@ ub+4;m;18;i17~18;-13;+19a (+9);+29a (+19);"* Balcony Break
 * js9~30
 * fs31~33&lt;/div&gt;";;Zafina-ub+4;;r32;;
 uf+1;h;19;i19;+4;+9;;;;;Zafina-uf+1;Lapis Dagger;r21;;File:t8-p2-zafina-uf+1.mp4
-uf+3;m;25;i22~23;-8;+17a;;"* Balcony break on airborne hit
+uf+2;m;20;i36~37;-9;+60a;;"* Strong Aerial Tailspin
+* Homing
+High crush 6~35";hom cs6~35;;Zafina-uf+2;Kur;r29;;
+uf+3;m;19;i22~23;-8;+17a;;"* Strong Aerial Tailspin
+* Balcony Break on airborne hit
+* No forward movement when using input ub+3
 &lt;div class=&quot;plainlist&quot;&gt;
 * Low crush 8~31
 * fs32~34&lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
@@ -211,7 +267,8 @@ uf+4;m;18;i17~18;-13;+29a (+19);;"* Recovers 2 frames faster on hit (t48 r30)
 * js9~30
 * fs31~33&lt;/div&gt;";;Zafina-uf+4;Rahab;r32;;File:t8-p2-zafina-uf+4.mp4
 1+2+3+4;;;;;;;"* Can't block for 5 seconds
-* CH state for 5 seconds";;;Zafina-1+2+3+4;"<div class=""dotlist"">
+* CH state on you for 5 seconds
+* 50% damage increase on the next attack for 5 seconds";;;Zafina-1+2+3+4;"<div class=""dotlist"">
 
 * Ki Charge
 * Supercharger
@@ -224,7 +281,7 @@ f,F+3;m;20;i20~22;+4;+9c;+14c;"* Spike
 f,F+3,1;m, m;20, 24;i20~22, i18;-16;+5a;;"* Balcony Break
 * Combos from 1st hit CH with 11f? delay
 * Can be delayed";bbr;;Zafina-f,f+3,1;Sagaris Smash;r40;;File:t8-p2-zafina-f,f+3,1.mp4
-f,F+4;m;20;i17~19;-8;+18a (+9);;"* Homing
+f,F+4;m;16;i17~19;-8;+6;;"* Homing
 * Balcony Break";hom bbr;;Zafina-f,f+4;Roundhouse Kick;r30;;File:t8-p2-zafina-f,f+4.mp4
 f,F+3+4;m,m;10,21;i21 i8~12;-11;+15a (+6);;"* Balcony Break
 * Enter MNT -12 +14a (+5) with D
@@ -241,7 +298,7 @@ f,f,F+3;m;30;i23~26;+7;+19a (+9);;"* Balcony Break
 * fs35~37&lt;/div&gt;";"bbr &lt;div class=&quot;plainlist&quot;&gt;
 * js3~34
 * fs35~37&lt;/div&gt;";SCR;Zafina-f,f,F+3;Leaping Side Kick;r28 SCR;;File:t8-p2-zafina-f,f,f+3.mp4
-f,f,F+1+2;h;20;i20~24;+8;+32a;;"* Strong Aerial Tailspin
+f,f,F+1+2;h;20;i20~21;+6;+32a;;"* Strong Aerial Tailspin
 * Homing
 * Balcony Break
 * 8 chip damage on block
@@ -255,7 +312,7 @@ ws1,2;m, m;8, 8;i15~16, i20~21;-13;+36a (+26);;"* Combo from 1st hit with 9f del
 * Delay does not change the timing of the attack";;;Zafina-ws1,2;Alraune;r23;;File:t8-p2-zafina-ws1,2.mp4
 ws2;m;20;i18~19;-14;+28a (+18);;"* Tornado
 * Enter MNT -40 +2a (-8) r60 with D";trn;MNT;Zafina-ws2;Rising Claw;r41;;File:t8-p2-zafina-ws2.mp4
-ws3;m;20;i12;0;+9;;* Cancel SCR transition -8 +1 t39 r27 with B;;SCR;Zafina-ws3;Shargaz;r19 SCR;;File:t8-p2-zafina-ws3.mp4
+ws3;m;16;i12;+0;+9;;* Cancel SCR transition -8 +1 t39 r27 with B;;SCR;Zafina-ws3;Shargaz;r19 SCR;;File:t8-p2-zafina-ws3.mp4
 ws4;m;14;i11;-7;+4;;;;;Zafina-ws4;Bashmu;r26;;File:t8-p2-zafina-ws4.mp4
 SS.1+2;m;22;i17~18;-2;+8c;+28a;* Spike;spk;;Zafina-SS.1+2;Adramelech;r31;;File:t8-p2-zafina-ss.1+2.mp4
 FC.df+3;L;15;i23~24;-26;+14a;;"* Enter MNT -26 +13a with D
@@ -282,17 +339,19 @@ MNT.4,3;L, m;13, 23;i17~18, i27;-30;+32a (+22);;"* Tornado
 MNT.1+2;m;21;i20;-12;+18a;;"* Spike
 Power crush 8~19";spk pc8~19;;Zafina-MNT.1+2;Scarecrow Strike;r42;;File:t8-p2-zafina-mnt.1+2.mp4
 MNT.2+3;;;;;;;;;MNT;Zafina-MNT.2+3;Paradox;r25 BT MNT;;File:t8-p2-zafina-mnt.2+3.mp4
-MNT.df+1;M;30;i24~25;+6;+7a;;"* Heat Engager
+MNT.df+1;M;30;i20~21;+10;+11a;;"* Heat Engager
 
 * Heat Dash +5, +67a (+50)
 
 * Balcony Break
 * Spike
-* 9 chip damage on block
-* Zafina receives recoverable health damage
+* 12 chip damage on block
+* Transition to SCR on normal hit
+* Transition to standing with B (+6/+11a)
+* Deal 8 recoverable damage to self without heat
 * Unparryable by traditional parries, Asuka, Nina, etc
-* Gains Power Crush frames during Heat (pc8~23)
-* Azazel's Power";he bbr spk;;Zafina-MNT.df+1;Vicious Claw;r42;;File:Zafina MNT.df+1.mp4
+* Gain ORB on hit or heat activation
+* Azazel's Power";he bbr spk;SCR,SCR;Zafina-MNT.df+1;Vicious Claw;SCR;;File:Zafina MNT.df+1.mp4
 MNT.df+2;m;10;i19~20;-9;+32a (+22);;;;;Zafina-MNT.df+2;Enlil;r29;;
 MNT.df+3;m;20;i15~16;-17;+19g;;"* Balcony break on airborne hit
 * Hitbox extends to both legs, can hit while Zafina is BT
@@ -317,6 +376,14 @@ MNT.uf+3;M;25;i26~28;-9c;+11d;;"* Spike
 * js7~23
 * fs24~26
 * cs27~50&lt;/div&gt;";MNT,FC;Zafina-MNT.uf+3;Enki;r37 FC;;
+ORB.SCR.df+3+4;L,m,m,sm;6,15,13;i19;-14;-13a (-14);;"* Balcony Break
+* Transition to 3rd hit on 2nd hit
+* Consumes ORB
+* Partially consumes remaining Heat time
+* Deals 5 additional damage when Zafina's remaining health is 42 or lower
+* 4 chip damage on block
+** Deals 6 chip damage on block when Zafina's remaining health is 42 or lower
+High crush 6~";bbr cs6~;3rd;Zafina-ORB.SCR.df+3+4;Anathematic Malice;;;File:Zafina SCR Heat Smash.mp4
 SCR.1;h;12;i10~11;-2;+9;;;;SCR;Zafina-SCR.1;;r20 SCR;;
 SCR.1,4;h, m;12, 18;i10~11, i22;-6;+7;+32a;"* Spike
 * Combo from 1st hit";spk;TRT;Zafina-SCR.1,4;Scarecrow Nightmare;r28 TRT;;File:t8-p2-zafina-scr.1,4.mp4
@@ -327,8 +394,9 @@ SCR.2,1;m, m;17, 25;i14, i21;-6;+30a (+20);;"* Heat Engager
 
 * Balcony Break
 * 10 chip damage on block
-* Zafina receives recoverable damage
+* Deal 18 recoverable damage to self without Heat
 * Unparryable by traditional parries, Asuka, Nina, etc
+* Gain ORB on hit
 * Azazel's Power";he bbr;;Zafina-SCR.2,1;Binal Venom;r48;;File:t8-p2-zafina-scr.2,1.mp4
 SCR.2,2;m, m;17, 17;i14, i22;-10;+8c;+8a;"* Spike
 * Combo from 1st hit with 6f delay
@@ -341,21 +409,26 @@ SCR.4;M;20;i15~16;-18;+58a (+42);;"* Tornado
 Power crush 8~14";trn pc8~14;;Zafina-SCR.4;Spinning Sappara;r44;;File:t8-p2-zafina-scr.4.mp4
 SCR.1+2;m;20;i17~19;+6;+17a;;"* Spike
 * Enter TRT with D";spk;TRT;Zafina-SCR.1+2;Huwawa;r41;;File:t8-p2-zafina-scr.1+2.mp4
-SCR.3+4;m,m;10,20;i18~19 i6~8;-12;+8g;;"* Balcony Break
+SCR.3+4;m,m;10,20;i18~19 i6~8;-12;+8g;;"* Strong Aerial Tailspin
+* Balcony Break
 * Jail from 1st attack
 &lt;div class=&quot;plainlist&quot;&gt;
 * Low crush 6~22
 * fs23~25&lt;/div&gt;";"bbr &lt;div class=&quot;plainlist&quot;&gt;
 * js6~22
 * fs23~25&lt;/div&gt;";;Zafina-SCR.3+4;Kigal;r33;;
-SCR.b+1+2;L;16;i16;-17;+3c;+12a;"* Evasive (can go below some mids)
-High crush 7~35";cs7~35;;Zafina-SCR.b+1+2;Inanna's Fury;r36;;File:t8-p2-zafina-scr.b+1+2.mp4
-SCR.df+1;m,M;10,20;i18 i17~19;-9;+33a (+18);;"* Tornado
+SCR.b+1+2;L;20;i16;-18;+23a;;"* Evasive (can go below some mids)
+* Gain ORB on hit
+* Azazel's Power
+* Deal 18 recoverable damage to self without Heat
+High crush 7~35";cs7~35;;Zafina-SCR.b+1+2;Sinister Bite;r37?;;File:t8-p2-zafina-scr.b+1+2.mp4
+SCR.df+1;m,M;10,30;i18 i17~19;-9;+68a (+52);;"* Tornado
+* Instant tornado on 1st hit
 * Jail from 1st attack
-* 8 chip damage on block
-* Zafina receives recoverable health damage
+* 15 chip damage on block
+* Deal 24 recoverable damage to self without Heat
 * Unparryable by traditional parries, Asuka, Nina, etc
-* Gains Power Crush frames during Heat (pc8~17)
+* Gain ORB on hit
 * Azazel's Power";trn;;Zafina-SCR.df+1;Dark Rising;r30;;
 SCR.df+3;L;10;i28~30;-23;-10c;;"* Homing
 High crush 6~";hom cs6~;FC;Zafina-SCR.df+3;;r30 FC;;
@@ -375,14 +448,17 @@ SCR.d+3+4;;;;;;;"&lt;div class=&quot;plainlist&quot;&gt;
 * cs1~70
 * fs6~50&lt;/div&gt;";MNT;Zafina-SCR.d+3+4;Mantis Stance;r67 MNT;;
 TRT.1;L;13;i18;-11;+5;+15a;;;TRT;Zafina-TRT.1;Tarantula Shotel;r30 TRT;;File:t8-p2-zafina-trt.1.mp4
-TRT.2;M;24;i34~36;-9;+40a (+30);;* Tornado;trn;;Zafina-TRT.2;Tarantula Cutlass;r28;;File:t8-p2-zafina-trt.2.mp4
-TRT.3;m;16;i14~i15;-7;+15a;;* Spike;spk;TRT;Zafina-TRT.3;Deathstalker;r34 TRT;;File:t8-p2-zafina-trt.3.mp4
+TRT.2;M;24;i34~36;-13;+38a;;"* Tornado
+* Recover 4f faster on hit (t64 r28)
+Power crush 8";trn pc8;;Zafina-TRT.2;Tarantula Cutlass;r32;;File:t8-p2-zafina-trt.2.mp4
+TRT.3;m;16;i14~i15;-7;+5c;+19c;* Spike;spk;TRT;Zafina-TRT.3;Deathstalker;r34 TRT;;File:t8-p2-zafina-trt.3.mp4
 TRT.4;m;10;i26;-22;-4;-4c;* Cancel MNT transition with D, recover in TRT;;MNT;Zafina-TRT.4;;r44 MNT;;
 TRT.4,3;m, m;10, 10;i26, i28~31;-13;+18a;;* Combo from 1st CH;;;Zafina-TRT.4,3;Tarantula's Bite;r29;;File:t8-p2-zafina-trt.4,3.mp4
 TRT.1+2;m,M;7,20;i19~20 i9~10;-12c;+14a;;"* Balcony Break
+* Homing
 &lt;div class=&quot;plainlist&quot;&gt;
 * Low crush 7~24
-* fs25~27&lt;/div&gt;";"bbr &lt;div class=&quot;plainlist&quot;&gt;
+* fs25~27&lt;/div&gt;";"bbr hom &lt;div class=&quot;plainlist&quot;&gt;
 * js7~24
 * fs25~27&lt;/div&gt;";;Zafina-TRT.1+2;Tarantula Claw;r68;;File:t8-p2-zafina-trt.1+2.mp4
 TRT.df+1;M;30;i19~20;+6;+30a (+15);;"* Heat Engager
@@ -390,9 +466,9 @@ TRT.df+1;M;30;i19~20;+6;+30a (+15);;"* Heat Engager
 * Heat Dash +5, +35a (+27)
 
 * 12 chip damage on block
-* Zafina receives recoverable health damage
+* Deal 8 recoverable damage to self without Heat
 * Unparryable by traditional parries, Asuka, Nina, etc
-* Gains Power Crush frames during Heat (pc6~18)
+* Gain ORB on hit or heat activation
 * Azazel's Power";he;;Zafina-TRT.df+1;Primitive Grudge;r34;;File:Zafina TRT.df+1.mp4
 TRT.d+1+2;L;20;i25;-21;+10a;;;;MNT;Zafina-TRT.d+1+2;Tarantula Scimitar;r40 MNT;;File:t8-p2-zafina-trt.d+1+2.mp4
 WR.f+4;L;21;i14~30;-52~-36;-7a;;"* Enter BT -52 -7a with U
