@@ -1,18 +1,26 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Transitions;Wavu id;Name;Recovery;Image;Video
-2+3;m;12 (12);i16;+1;+2c;;"* Heat Burst
-* Cancel to r45 with b,b
-Power crush 7~";hb pc7~;;Shaheen-2+3;Heat Burst;;;
+2+3;m;"[12;12]";i16;+1;+2c;;"* Heat Burst
+* Cancel to r45 with b,b on frame 42
+* 2 chip damage on block
+* 12 chip damage on hit
+* Only deals recoverable damage
+* Cannot cause a K.O.
+Power crush 7~16";hb pc7~16;;Shaheen-2+3;Heat Burst;r30;;
 H.D*,u+2;h;35;i18~19;+13;+63a (+47);;"* Balcony Break
 * Tornado
 * Guard break
 * Read more
 Low crush";bbr trn js;;Shaheen-H.D*,u+2;Al-Ghul Master;;;
-H.SNK.2+3;L,m,m;40;i20~21;-14;+24a (+14);;"* Balcony Break
-* Heat Smash";bbr hs;;Shaheen-H.SNK.2+3;Rumh al-Muzaffar;;;
-H.2+3;m;50;i16~17;+6;+27d (-8);;"* Floor Break
+H.f,F+1+2;m;15,25 (17);i16~17;+4 SNK;+27d (-8);;"* Floor Break
+* Spike
+* 32 damage with scaling from 1st hit
+* Transition to SNK on hit or block
+* Consumes 450F of remaining Heat time
+Low crush 28~";fbr spk js28~;SNK;Shaheen-H.f,F+1+2;Rumh al-Dawla;;;
+H.2+3;L,t;40;i20~21;-14;+24a (+14);;"* Balcony Break
 * Heat Smash
-* Transition to SNK
-Low crush";fbr hs js;SNK,SNK;Shaheen-H.2+3;Rumh al-Dawla;SNK;;
+* Transition to attack throw on 1st hit
+* 8 chip damage on block";bbr hs;;Shaheen-H.2+3;Rumh al-Muzaffar;;;
 R.df+1+2;m,t;55+;i20;-15;+0d;;"* Rage Art
 * Removes Recoverable Health
 * Reversal Break
@@ -24,14 +32,20 @@ R.df+1+2;m,t;55+;i20;-15;+0d;;"* Rage Art
 Power crush 8~";pc8~;;Shaheen-R.df+1+2;Najm Alshamal;r39;;
 1;h;5;i10;+1;+8;;;;;Shaheen-1;;;;
 1,2;h, h;5, 9;i10, i12;-3;+8;;;;;Shaheen-1,2;Spica;;;
-1,2,2;h, h, m;5, 9, 17;i10, ,i20~21;-11;+3;+58a;"* Counter hit combo from 1st hit
-* Can be delayed";;;Shaheen-1,2,2;Spica Gut Punch;;;File:t8-p2-shaheen-1,2,2.mp4
+1,2,2;h, h, m;5, 9, 17;i10, ,i20~21;-11;+3;+58a;"* Combo from 1st CH with 9F delay
+* Combo from 2nd CH with 9F delay
+* Move can be delayed by 10F
+* Input can be delayed by 12F
+* Cancel into SNK (-13/-2) with DF";;;Shaheen-1,2,2;Spica Gut Punch;;;File:t8-p2-shaheen-1,2,2.mp4
 1,2,3;h, h, h;5, 9, 18;i10, ,i20;-8;+3;;"* Transition to -1, +10 SNK with DF
-* Counter hit combo from 1st hit";;SNK;Shaheen-1,2,3;Spica Blinding Sands;;;File:t8-p2-shaheen-1,2,3.mp4
-1,2,4;h, h, m;5, 9, 20;i10, ,i24~26;-13;+33a (+18);;* Tornado;trn;;Shaheen-1,2,4;Spica Wheel Spin;;;File:t8-p2-shaheen-1,2,4.mp4
+* Combo from 1st CH with 5F delay";;SNK;Shaheen-1,2,3;Spica Blinding Sands;;;File:t8-p2-shaheen-1,2,3.mp4
+1,2,4;h, h, m;5, 9, 20;i10, ,i24~26;-13;+33a (+18);;"* Tornado
+* Combo from 1st or 2nd CH with 2F delay
+* Move cannot be delayed
+* Input can be delayed by 2F";trn;;Shaheen-1,2,4;Spica Wheel Spin;;;File:t8-p2-shaheen-1,2,4.mp4
 2;h;10;i10;0;6;;;;;Shaheen-2;;;;
 2,1;h, m;10, 7;i10, i17~18;-4;+2;;;;;Shaheen-2,1;Cut In;;;File:t8-p2-shaheen-2,1.mp4
-2,3;h, h;10, 18;i10, i20;-8;+3;;* Transition to -1, +10 SNK with DF;;SNK;Shaheen-2,3;Porrima Blinding Sands;;;File:t8-p2-shaheen-2,3.mp4
+2,3;h, h;10, 13;i10, i20;-8;+3;;* Transition to -1, +10 SNK with DF;;SNK;Shaheen-2,3;Porrima Blinding Sands;;;File:t8-p2-shaheen-2,3.mp4
 3;h;18;i14;-8;+3;;* Transition to -1, +10 SNK with DF;;SNK;Shaheen-3;Blinding Sands;;;File:t8-p2-shaheen-3.mp4
 4;h;16;i13;-10;+1;;;;;Shaheen-4;Hallux Kick;;;
 4,1;h, h;16, 14;i13, i18;-5;+5;+31a (+24);;;;Shaheen-4,1;Hallux Kick > Algenib;;;File:t8-p2-shaheen-4,1.mp4
@@ -40,14 +54,20 @@ Power crush 8~";pc8~;;Shaheen-R.df+1+2;Najm Alshamal;r39;;
 * When combo from 1st hit: 
 Floor Break";fbr;;Shaheen-4,4;Hallux Kick > Ra'd;;;File:t8-p2-shaheen-4,4.mp4
 f+2;h;10;i12;-8;-2;;;;;Shaheen-f+2;;;;
-f+2,3;h, h;10, 23;i12, i18;-12;+20g;;"* Tornado
-* Can be delayed";trn;;Shaheen-f+2,3;Silent Sting;;;File:t8-p2-shaheen-f+2,3.mp4
-f+2,4;h, L;10, 13;i12, i22~23;-13;-2;+29a;"* Transition to -11,+0, +31a SNK with DF
-* Can be delayed";;SNK;Shaheen-f+2,4;;;;
-f+2,4,4;h, L, h;10, 13, 21;i12, ,i26~27;-7;+10g;+62a (+42);"* Strong Aerial Tailspin
+f+2,3;h, h;10, 23;i12, i18;-12;+21a (+16);;"* Tornado
+* Combo from 1st hit with 5F delay
+* Move can be delayed by 9F
+* Input can be delayed by 10F";trn;;Shaheen-f+2,3;Silent Sting;;;File:t8-p2-shaheen-f+2,3.mp4
+f+2,4;h, L;10, 16;i12, i22~23;-13;+2;+29a;"* Combo from 1st hit with 2F delay
+* Transition to -11,+0, +31a SNK with DF
+* Move can be delayed by 10F
+* Input can be delayed by 11F";;SNK;Shaheen-f+2,4;;;;
+f+2,4,4;h, L, h;10, 16, 21;i12, ,i26~27;-7;+10g;+14c;"* Strong Aerial Tailspin
 * Balcony Break";bbr;;Shaheen-f+2,4,4;Silent Flow;;;File:t8-p2-shaheen-f+2,4,4.mp4
-f+3;m;17;i20~21;-5;+6;+31a;Low crush;js;;Shaheen-f+3;Crescent Moon;;;File:t8-p2-shaheen-f+3.mp4
-f+4;h;21;i15~16;-2;+25a;;"* Balcony Break
+f+3;m;17;i20;-5;+6;+13c;"* Good right sidestep tracking
+* Transition to SNK (-3/+8/+15c) with DF
+Low crush 13~";js13~;SNK;Shaheen-f+3;Crescent Moon;r29;;File:t8-p2-shaheen-f+3.mp4
+f+4;h;24;i15~16;+0;+13g;;"* Balcony Break
 * Homing
 * chip damage on block";bbr hom chp;;Shaheen-f+4;Piercing Talon;;;File:t8-p2-shaheen-f+4.mp4
 f+3+4;M,M;20;i22~23;+3;+11c;;"* chip damage on block
@@ -55,20 +75,22 @@ f+3+4;M,M;20;i22~23;+3;+11c;;"* chip damage on block
 * Floor Break";chp fbr;SNK;Shaheen-f+3+4;Skyline;SNK;;File:t8-p2-shaheen-f+3+4.mp4
 df+1;m;12;i13~14;-1;+5;;Tracks SSR/SWR completely;;;Shaheen-df+1;;r19;;
 df+2;m;13;i15~16;-7;+34 (+24);;Only launches standing opponents. +4 on hit against crouching opponents.;;;Shaheen-df+2;Rising Falcon;;;File:t8-p2-shaheen-df+2.mp4
-df+3;m;20;i17;-9;+21d;;* Homing;hom;;Shaheen-df+3;Whirlwind Kick;;;File:t8-p2-shaheen-df+3.mp4
+df+3;m;20;i17;-13;+21d;;* Homing;hom;;Shaheen-df+3;Whirlwind Kick;r34;;File:t8-p2-shaheen-df+3.mp4
 df+4;m;13;i14;-7;0;;;;;Shaheen-df+4;;;;
 df+4,1;m, m;13, 10;i14, i22~23;-9;+2;;* Transition to -2, +9 SNK with DF;;SNK;Shaheen-df+4,1;;;;
 df+4,1,3;m, m, m;13, 10, 28;i14, ,i27~28;-13;+19a (+9);;"* Balcony Break
 * Can be delayed
 Low crush";bbr js;;Shaheen-df+4,1,3;Al-Faras;;;File:t8-p2-shaheen-df+4,1,3.mp4
 df+4,3;m, h;13, 23;i14, i23~24;-4;+23a (+14);;* Balcony Break;bbr;;Shaheen-df+4,3;Al-Fard al-Shuja;;;File:t8-p2-shaheen-df+4,3.mp4
+df+3+4;sp;;;;;;* Transition to FC with SNK.DB;;FC;Shaheen-df+3+4;Stealth Step;;;
 df+3+4;sp;;;;;;"* Transitions to SNK
 * Transition to FC with SNK.DB";;FC,SNK;Shaheen-df+3+4;Stealth Step;SNK;;
-df+3+4;sp;;;;;;* Transition to FC with SNK.DB;;FC;Shaheen-df+3+4;Stealth Step;;;
+d+1;L;16;i20~21;-13;+4;+28d;"* Partially restores remaining Heat time on hit
+High crush 6~";cs6~;FC;Shaheen-d+1;Hermit Needle;r31 FC;;
 d+2;m;15;i18~19;-6;+8;;High crush;cs;;Shaheen-d+2;Gut Impact;;;File:t8-p2-shaheen-d+2.mp4
 d+3;L;12;i16~17;-14;+0;;"* Transition to -10, +4 SNK with DF
 High crush";cs;SNK;Shaheen-d+3;Silent Rigel;;;File:t8-p2-shaheen-d+3.mp4
-d+4;L;13;i19;-12;+1;;;;;Shaheen-d+4;Vicious Stomp;;;File:t8-p2-shaheen-d+4.mp4
+d+4;L;10;i19;-12;+1;;;;;Shaheen-d+4;Vicious Stomp;;;File:t8-p2-shaheen-d+4.mp4
 db+2;m;11;i14;-10;+1;;* Transition to SNK with input db+2,DF (-3/+8/+8);;SNK;Shaheen-db+2;;;;
 db+2,1;m, h;11, 24;i14, i20;-11;+41d (-17);;"* Balcony Break
 * Heat Engager
@@ -95,36 +117,34 @@ b+1+3;sp;15 (15);;;;;"* Removes Recoverable Health
 * Hit throw on successful parry
 * Side switch on parry
 Parry state 5?";ps5?;;Shaheen-b+1+3;Silent Death Trap;;;
-b+2;m(th);12,16;i15~16;-9;-2d;;"* Transition to attack throw on standing front hit
+b+2;m(th);12,16;i14~15;-9;-2d;;"* Transition to attack throw on standing front hit
 * Erases opponent recoverable health on hit";;;Shaheen-b+2;Dust Storm;;;File:t8-p2-shaheen-b+2.mp4
-b+3;m;17;i19;+3c;+3c;+14c;;;;Shaheen-b+3;Heel Strike;;;File:t8-p2-shaheen-b+3.mp4
+b+3;m;17;i19;+1c;+3c;+14c;* 5 chip damage on block;;;Shaheen-b+3;Heel Strike;;;File:t8-p2-shaheen-b+3.mp4
 b+4;M;23;i17;-15;+4;+29a (+23);;;;Shaheen-b+4;Broken Mirage;;;File:t8-p2-shaheen-b+4.mp4
 b+3+4;h;25;i16;-9;+19a (+9);;"* Balcony Break
-* Heat Engager
-
-* Heat Dash  +43d (+35)
-Power crush";bbr he pc;;Shaheen-b+3+4;Elnath;;;File:t8-p2-shaheen-b+3+4.mp4
+Power crush";bbr pc;;Shaheen-b+3+4;Elnath;;;File:t8-p2-shaheen-b+3+4.mp4
 uf+1;m;25;i24~25;+1;+20d;;"* Balcony Break
 * Heat Engager
 
 * Heat Dash +67a (+50)
 
-* chip damage on block
+* 10 chip damage on block
 * during Heat, partially restore remaining Heat time
 * Cancel to FC with input uf+1,D
-Low crush 9";bbr he chp js9;FC;Shaheen-uf+1;Vega;;;File:t8-p2-shaheen-uf+1.mp4
+Low crush 9";bbr he js9;FC;Shaheen-uf+1;Vega;;;File:t8-p2-shaheen-uf+1.mp4
 uf+3;m;22;i25~26;-7;+24;;"* Alternate input: ub+3 or u+3
 Low crush 9";js9;;Shaheen-uf+3;Crescent Cleaver;;;File:t8-p2-shaheen-uf+3.mp4
 uf+4;m;13;i15~17;-13;+33 (+23);;"* Alternate input: ub+4 or u+4
 Low crush 9";js9;;Shaheen-uf+4;Altair;;;
 1+2+3+4;sp;;;;;;;;;Shaheen-1+2+3+4;Ki Charge;;;File:t8-p2-shaheen-1+2+3+4.mp4
-D*,u+2;h;30;i18~19;+4;+28 (+2);;"* Balcony Break
+D*,u+2;h;30;i18~19;+6;+30d;;"* Balcony Break
 * Tornado
 * Alternate input: SNK.D*,u+2
-* Chip damage on block
+* 12 chip damage on block
+* FUFA knockdown on hit
 * Powered up during Heat
 * Read more
-Low crush";bbr trn chp js;;Shaheen-D*,u+2;Al-Ghul;;;File:t8-p2-shaheen-ds,u+2.mp4
+Low crush 18~";bbr trn js18~;;Shaheen-D*,u+2;Al-Ghul;;;File:t8-p2-shaheen-ds,u+2.mp4
 f,F+3;m;23;i17;-12;+63 (+48);;"* Tornado
 * Alternate input: f,f,F+3
 * Hit throw which side switches
@@ -140,7 +160,7 @@ f:b+2;h;42;i13;-4;0;;"* Tornado
 * Quick input properties during Heat
 * Partially restores remaining Heat time on hit";trn;;Shaheen-f:b+2;Hornet;;;
 uf,n,4;m;20;i23~25;-13;+32 (+22);;Low crush;js;;Shaheen-uf,n,4;Delayed Rising Toe Kick;;;File:t8-p2-shaheen-uf,n,4.mp4
-f,f,F+2;m;30;i17~18;+5;+21 (+11);;"* Balcony Break
+f,f,F+2;m;30;i17~18;+5;+13d;;"* Balcony Break
 * chip damage on block
 * during Heat, partially restores remaining Heat time";bbr chp;;Shaheen-f,f,F+2;Antares;;;File:t8-p2-shaheen-f,f,f+2.mp4
 ws1;m;17;i14;-2;+4;+14;;;;Shaheen-ws1;Albireo;;;File:t8-p2-shaheen-ws1.mp4
@@ -149,36 +169,49 @@ ws3;m;9;i13;-11;0;;* Transition to -7, +4 SNK with DF;;SNK;Shaheen-ws3;;;;
 ws3,3;m, m;9, 25;i13, i17;-13;+11a (+2);+43a (-4);"* Tornado
 * Balcony Break";trn bbr;;Shaheen-ws3,3;Double Scorpion;;;File:t8-p2-shaheen-ws3,3.mp4
 ws4;m;16;i11~12;-6;+5;;;;;Shaheen-ws4;Jaw Smash;;;File:t8-p2-shaheen-ws4.mp4
-SS.2;L;17;i20;-13;+0c;+13g;High crush;cs;;Shaheen-SS.2;Nisf Kamar;;;File:t8-p2-shaheen-ss.2.mp4
+SS.2;L;14;i20;-12;+1c;;"* Sidestep takes 9f; effective startup i29
+High crush 15~";cs15~;FC;Shaheen-SS.2;Nisif Kamar;FC;;File:t8-p2-shaheen-ss.2.mp4
+SS.1+2;m;23;i19~20;+3;+22g;;"* Partially restore remaining Heat time on hit
+* Sidestep takes 9f; effective startup i28
+* 6 chip damage on block";;;Shaheen-SS.1+2;Haboob;;;
 FC.df,d,DF;sp;;;;;;High crush;cs;;Shaheen-FC.df,d,DF;Slide Step;;;File:t8-p2-shaheen-fc.df,d,df.mp4
-FC.df,d,DF+3;L;20;i16~20;-23a;+7a;;"* Transitions to SNK on hit
+FC.df,d,DF+3;L;17;i16~20;-23a;+7a;;"* Transitions to SNK on hit
 Low crush";js;SNK;Shaheen-FC.df,d,DF+3;Sand Storm;SNK;;File:t8-p2-shaheen-fc.df,d,df+3.mp4
-FC.df+2;m;21;i18~19;-9;+17a (+8);;"* Balcony Break
-* Partially restore remaining Heat time on hit
-* Causes Strong Aerial Tailspin";bbr;;Shaheen-FC.df+2;Janbiya;;;File:t8-p2-shaheen-fc.df+2.mp4
+FC.df+2;m;21;i18~19;-9;+17a (+8);;"* Strong Aerial Tailspin
+* Balcony Break
+* Partially restore remaining Heat time on hit";bbr;;Shaheen-FC.df+2;Janbiya;;;File:t8-p2-shaheen-fc.df+2.mp4
 FC.df+4;L;16;i16~17;-14;+1;;* Transition to -11, +4 SNK with DF;;SNK;Shaheen-FC.df+4;;;;
-FC.df+4,1;L, h;16, 20;i16~17, i26;-2;+24a (+15);+69a (+49);"* Balcony Break
-* Counter hit combo from 1st hit";bbr;;Shaheen-FC.df+4,1;Serpens;;;File:t8-p2-shaheen-fc.df+4,1.mp4
+FC.df+4,1;L, h;16, 20;i16~17, i26;-2;+24a (+15);;"* Balcony Break
+* Combo from 1st CH";bbr;;Shaheen-FC.df+4,1;Serpens;;;File:t8-p2-shaheen-fc.df+4,1.mp4
 BT.2;m;20;i14~15;-3;+42a;;;;;Shaheen-BT.2;Reverse Edge;;;File:t8-p2-shaheen-bt.2.mp4
 SNK.1;h;10;i12;-1;+5;+14;;;;Shaheen-SNK.1;Blinding Snake;;;File:t8-p2-shaheen-snk.1.mp4
 SNK.2;M;17;i15~16;-9;+8;+23a (+6);Balcony BreakOn counterhit;;;Shaheen-SNK.2;Crimson Tempest;;;File:t8-p2-shaheen-snk.2.mp4
 SNK.3;m;23;i20;-12;+63 (+48);;"* Tornado
 * Hit throw which side switches
 Low crush 13";trn js13;;Shaheen-SNK.3;Hunting Falcon Dive;;;
-SNK.4;L;17;i20~22;-14;+3c;+15d;;;;Shaheen-SNK.4;Sliding Shave;;;File:t8-p2-shaheen-snk.4.mp4
-SNK.1+2;m;21;i19;+2c;+8c;;"* Heat Engager
+SNK.4;L;20;i20~22;-14;+3c;+14c;;;;Shaheen-SNK.4;Sliding Shave;;;File:t8-p2-shaheen-snk.4.mp4
+SNK.1+2;m;21;i19;+4c;+8c;;"* Heat Engager
 
 * Heat Dash +67a (+50)
 
 * Floor Break
-* chip damage on block";he fbr chp;FC;Shaheen-SNK.1+2;Al-Sayf;FC;;File:t8-p2-shaheen-snk.1+2.mp4
-SNK.df+1;m;12;i15~16;-5;+6;;;;;Shaheen-SNK.df+1;;;;
+* 6 chip damage on block";he fbr;FC;Shaheen-SNK.1+2;Al-Sayf;FC;;File:t8-p2-shaheen-snk.1+2.mp4
+SNK.df+1;m;12;i15~16;-5;+6;;* Good left sidestep tracking;;;Shaheen-SNK.df+1;;;;
 SNK.df+1,2;m, h;12, 40;i15~16, i20;-4;0;;"* Tornado
 * Removes Recoverable Health
+* Combo from 1st hit with 7F delay
+* Move can be delayed by 6F
+* Input can be delayed by 7F
 * Transition to attack throw on standing front hit";trn;;Shaheen-SNK.df+1,2;Flash Hornet;;;File:t8-p2-shaheen-snk.df+1,2.mp4
-SNK.df+1,3;m, m;12, 28;i15~16, i27~28;-13;+19 (+9);;"* Balcony Break
-* Can be delayed
-Low crush";bbr js;;Shaheen-SNK.df+1,3;Flash Deneb;;;File:t8-p2-shaheen-snk.df+1,3.mp4
+SNK.df+1,3;m, m;12, 28;i15~16, i27~28;-13;+19 (+9);;"* Heat Engager
+
+* Heat Dash  +43d (+35)
+
+* Balcony Break
+* Combo from 1st hit with 1F delay
+* Move can be delayed by 6F
+* Input can be delayed by 7F
+Low crush";he bbr js;;Shaheen-SNK.df+1,3;Flash Deneb;;;File:t8-p2-shaheen-snk.df+1,3.mp4
 1+3;th(h);35;i12~14;;;;"* Homing
 * Throw escape: 1 or 2
 * Opponent status on hit: FUFA";hom;;Shaheen-1+3;Desert Fang;;;File:t8-p2-shaheen-1+3.mp4

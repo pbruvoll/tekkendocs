@@ -1,4 +1,13 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Transitions;Wavu id;Name;Recovery;Image;Video
+H.df+3+4;m;35;i16~17;+0;+26a;+26a;"* Homing
+* Balcony Break
+* 7 chip damage on block
+* Partially consumes remaining Heat Time
+* Transition to +0, +26a MS with F";hom bbr;MS;Lee-H.df+3+4;Crimson Howl;;;File:t8-p2-lee-d+3+4.mp4
+H.d+1+2;m;30;i18~19;+6;+21a (+11);+21a (+11);"* Balcony Break
+* 6 chip damage on block
+* Partially consumes remaining Heat Time
+* Transition to +8, +21a (+11) HMS with 3+4";bbr;HMS;Lee-H.d+1+2;Phantom Rose;;;File:t8-p2-lee-d+3+4.mp4
 H.2+3;l,t;37;i20;-14;+0d;;"* Heat Smash
 * Balcony Break";hs bbr;;Lee-H.2+3;Paradigm Breaker;;;
 R.df+1+2;m,t;55+;i20;-15;+0d;;"* Rage Art
@@ -121,11 +130,15 @@ f+3+4;m,m;10,20;i30;+4c;+8c;;"Floor Break 9 chip damage
 Low crush";js;;Lee-f+3+4;Feather Landing;;;File:t8-p2-lee-f+3+4.mp4
 df+1;m;10;i13;-1;+5;;;;;Lee-df+1;;;;
 df+2;m;12;i15;-7;+34a (+24);;;;;Lee-df+2;Silver Uppercut;;;File:t8-p2-lee-df+2.mp4
-df+3;m;13;i15;-8;+3;;;;;Lee-df+3;;;;
-df+3,2;m, h;13, 13;i15, i19;-6;+5;;"* Combos from 1st hit
+df+3;m;13;i14~15;-8;+3;;;;;Lee-df+3;;;;
+df+3,2;m, h;13, 13;i14~15, i19;-10;+5;;"* Combos from 1st hit
 * Delayable";;;Lee-df+3,2;;;;
-df+3,2,3;m, h, m;13, 13, 20;i15, ,i22;-16;+13c g;;"* Balcony Break
-* Combos from 2nd hit";bbr;;Lee-df+3,2,3;Mercury Drive;;;File:t8-p2-lee-df+3,2,3.mp4
+df+3,2,3;m, h, m;13, 13, 20;i14~15, ,i22;-14;+13c g;;"* Heat Engager
+
+* Heat Dash +5, +42a (+27) 
+
+* Balcony Break
+* Combos from 2nd CH";he bbr;;Lee-df+3,2,3;Mercury Drive;;;File:t8-p2-lee-df+3,2,3.mp4
 df+4;m;14;i13-14;-9;+5;;Transition to -9, +5 HMS with 3;;HMS;Lee-df+4;;;;
 df+4,4;m, h;14, 22;i13-14, i22-23;-9;+10g;;"* Heat Engager
 
@@ -146,9 +159,6 @@ High crush 6~";cs6~;HMS;Lee-d+3;Silver Low;;;File:t8-p2-lee-d+3.mp4
 d+4;l;7;i12;-13;-14;-2;;;;Lee-d+4;Shin;;;
 d+4,n,4;l, h;7, 16;i12, i23;-9;+2;+27a (+17);"* Links to attacks from 4 (4,4:4, 4,3,4, etc.)
 * Combos from 1st hit CH";;;Lee-d+4,n,4;Shin > Head Kick;;;File:t8-p2-lee-d+4,n,4.mp4
-d+3+4;!;60;i60;!;+9a;;"* Balcony Break 
-* Unblockable
-* Cancel and transition to HMS with 3+4";bbr;HMS;Lee-d+3+4;Silver Cyclone;;;File:t8-p2-lee-d+3+4.mp4
 db+2;s;8;i11;-4;+7;;"Alternate input FC.2
 High crush";cs;;Lee-db+2;;;;
 db+3;l;12;i20;-12;-1;;;;;Lee-db+3;Bump Kick;;;File:t8-p2-lee-db+3.mp4
@@ -193,14 +203,13 @@ b+4;m;20;i20;-3;+7c;+64a;"* Floor Break
 * Spike
 * Transition to -2, +8c, +65a HMS with 3
 * +18d on crouching opponent";fbr spk;HMS;Lee-b+4;Silver Heel;;;File:t8-p2-lee-b+4.mp4
-b+3+4;h;23;i20;-7;+15a (+6);;"* Heat Engager
-
-* Heat Dash +5, +34d
-
-* Balcony Break
-Power crush";he bbr pc;;Lee-b+3+4;Silver Revolution;;;File:t8-p2-lee-b+3+4.mp4
+b+3+4;h;23;i20;-9;+15a (+6);;"* Balcony Break
+Power crush";bbr pc;;Lee-b+3+4;Silver Revolution;;;File:t8-p2-lee-b+3+4.mp4
 ub+3;m;20;i18;-13;+20a (+13);+74a (+58);"* Tornado
 Low crush";trn js;;Lee-ub+3;Wheel of Fate;;;File:t8-p2-lee-ub+3.mp4
+ub+3+4;!;60;i60;!;+9a;;"* Balcony Break 
+* Unblockable
+* Cancel and transition to HMS with 3+4";bbr;HMS;Lee-ub+3+4;Silver Cyclone;;;File:t8-p2-lee-d+3+4.mp4
 u+3;;;;;;;"* Transition to FC with D
 * Transition to HMS with 3+4
 Low crush";js;FC,HMS;Lee-u+3;Fake;;;
@@ -223,7 +232,7 @@ b,n;;;;;;;*;;FC;Lee-MS.b,n;Sway;hFC;;
 b,n,4;l;18;i21;-13;+3;+12;"*
 High crush";cs;;Lee-MS.b,n,4;Axe Sweep;;;File:t8-p2-lee-ms.b,n,4.mp4
 d,DB+4;m;24;i22;-17;+50a (+40);;* Tornado;trn;;Lee-d,DB+4;Blazing Kick;;;File:t8-p2-lee-d,db+4.mp4
-f,F+2;h;23;i18;+2;+18gc;+69a (+53);"* Tornado
+f,F+2;h;23;i15;+2;+18gc;+69a (+53);"* Tornado
 * Balcony Break
 * Transition to +5, +21gc, +72a (+56) MS with F
 * 6 chip damage";trn bbr;MS;Lee-f,F+2;Jostle Wolf;;;File:t8-p2-lee-f,f+2.mp4
@@ -238,7 +247,7 @@ High crush 5~";cs5~;;Lee-f,F+4;Deadly Edge;;;File:t8-p2-lee-f,f+4.mp4
 f,n;;;;;;;"* Transitions to MS
 * Alternate input HMS.f,n
 High crush";cs;;Lee-f,n;Mist Step;;;File:t8-p2-lee-f,n.mp4
-f:F+2;h;26;i18;+2;+18gc;+69a (+53);"* Tornado
+f:F+2;h;26;i15;+2;+18gc;+69a (+53);"* Tornado
 * Balcony Break
 * Transition to +5, +21gc, +72a (+56) MS with F
 * 11 chip damage
@@ -294,23 +303,27 @@ FC.UF+3+4;m;30;i46~49;-4;+18a (+8);;"* Balcony Break
 Low crush";bbr js;FUFT;Lee-FC.UF+3+4;Catapult Drop;FUFT;;File:t8-p2-lee-fc.uf+3+4.mp4
 FC.df,d,DF;;;;;;;"*
 High crush";cs;FC;Lee-FC.df,d,DF;Slide Step;FC;;File:t8-p2-lee-fc.df,d,df.mp4
-FC.df,d,DF:3;l;23;i18~24;-15~-9;+3;+5d;"* * Frame advantage on block depends on spacing.: Ranges from -15 up close, to -9 at tip range.
+FC.df,d,DF:3;l;26;i18~24;-15~-9;+5;+5d;"* * Frame advantage on block depends on spacing.: Ranges from -15 up close, to -9 at tip range.
 * Perfect Input not required during Heat
 * Perfect input when DF and 3 are input during the same frame
 * Partially consumes remaining Heat Time, while Perfect input restores Heat Time
 * Is not bufferable from full crouch (regular version gets buffered instead)
 High crush  Low crush";cs js;FC;Lee-FC.df,d,DF${justFrame}3;Friction Spear Cardinal;FC;;File:t8-p2-lee-fc.df,d,dfh3.mp4
-FC.df,d,DF+3;l;20;i18~24;-15~-9;+3;+5d;"* * Frame advantage on block depends on spacing: Ranges from -15 up close, to -9 at tip range.
+FC.df,d,DF+3;l;20;i18~24;-15~-9;+5;+5d;"* * Frame advantage on block depends on spacing: Ranges from -15 up close, to -9 at tip range.
 * Bufferable from full crouch
 High crush  Low crush";cs js;FC;Lee-FC.df,d,DF+3;Friction Spear;FC;;
-FC.df+4;l;17;i16~17;-14;-3;+25d;"* Transition to -14, -3, +25d HMS with 3
+FC.df+4;l;17;i16~17;-14;+3;+25d;"* Transition to -14, +3, +25d HMS with 3
 High crush";cs;HMS,FC;Lee-FC.df+4;Silver Tail;FC;;File:t8-p2-lee-fc.df+4.mp4
 HMS.1;h;7;i12;+2;+9;;"* Cancel and transition MS with F
 * Cancel into Scatter Kick (HMS.3) with input HMS.1~3";;HMS;Lee-HMS.1;Freaker Jab;HMS;;File:t8-p2-lee-hms.1.mp4
 HMS.1,1;h, h;7, 7;i12, i14;-2;+8;;"* Cancel and transition to +1, +8 MS with F
 * Combos from 1st hit";;MS,HMS;Lee-HMS.1,1;;HMS;;
-HMS.1,1,1;h, h, h;7, 7, 20;i12, ,i20;-7;+44d (-14);;"* Balcony Break
-* Combos from 1st hit";bbr;;Lee-HMS.1,1,1;Amazing Swipe;;;File:t8-p2-lee-hms.1,1,1.mp4
+HMS.1,1,1;h, h, h;7, 7, 20;i12, ,i20;-7;+44d (-14);;"* Heat Engager
+
+* Heat Dash +5, +34d
+
+* Balcony Break
+* Combos from 1st hit";he bbr;;Lee-HMS.1,1,1;Amazing Swipe;;;File:t8-p2-lee-hms.1,1,1.mp4
 HMS.1,4;h, m;7, 17;i12, i15;-8;+4;+57a;* Transition to -8, +4, +58a HMS with 3;;HMS;Lee-HMS.1,4;Excellent Combo;;;File:t8-p2-lee-hms.1,4.mp4
 HMS.2;m;23;i19;-13;+39a (+29);;* Tornado;trn;;Lee-HMS.2;Scatter Blow;;;File:t8-p2-lee-hms.2.mp4
 HMS.3;h,t;21,20;i18;-3;+0d;;"* Strong Aerial Tailspin
@@ -322,14 +335,10 @@ HMS.4;l;20;i22;-13;+4c;+72a (+56);"* Instant Tornado on CH
 High crush 6~";cs6~;;Lee-HMS.4;Shin Slicer;;;File:t8-p2-lee-hms.4.mp4
 HMS.1+2;m,m;10,15;i15;-5;+6;+19a (+10);"* On CH: 
 Balcony Break";bbr;HMS;Lee-HMS.1+2;Poison Touch;HMS;;File:t8-p2-lee-hms.1+2.mp4
-HMS.u+3;m;26;i20~22;-9;+23d (+13);;"* Heat Engager
-
-* Heat Dash +5g +36d
-
-* Balcony Break
+HMS.u+3;m;32;i20~22;-9;+23d (+13);;"* Balcony Break
 * Transition to -9, +23d (+13) FC with D
 * 7 chip damage
-Low crush 9~";he bbr js9~;FC;Lee-HMS.u+3;Silver Slash;;;File:t8-p2-lee-hms.u+3.mp4
+Low crush 9~";bbr js9~;FC;Lee-HMS.u+3;Silver Slash;;;File:t8-p2-lee-hms.u+3.mp4
 HMS.u+4;m;20;i26~29;-7c;+13c;;"*
 Low crush 16~";js16~;;Lee-HMS.u+4;Silver Circle;;;File:t8-p2-lee-hms.u+4.mp4
 MS.3;m;10;i15;-12;-1;;"*

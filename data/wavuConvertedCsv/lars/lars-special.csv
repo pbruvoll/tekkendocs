@@ -6,8 +6,10 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * Only deals recoverable damage
 * Cannot cause a K.O.
 Power crush 7~16";hb pc7~16;;Lars-2+3;Heat Burst;r30;;
-H.DEN.3+4;L,SM;11,10;i22~23, i9;-14;+21d;;"* 4 chip damage on block
-* Transition to r19 SEN with input F (-2/+34d)
+H.DEN.3+4;L,SM;11,10;i22~23, i9;-14;+21d;;"* 2 chip damage on block
+* 2nd hit only occurs on 1st hit
+* Recovers ?F faster on hit
+* Transition to r19 SEN with input F (-7/+34d)
 * Partially uses remaining heat time";;SEN;Lars-H.DEN.3+4;Stack Up Insurgence;r25;;
 H.LEN.1;l,th;20,15;i16~17;-12c;+5;;"* 6 chip damage on block
 * Side switch on hit throw
@@ -26,7 +28,7 @@ H.2+3;m,M;25,25;i18~19, i38~41;+13c;+0 / +81a;;"* Heat Smash
 * Transition to 30dmg attack throw on 1st hit (+0)
 * Transition to r30 DEN on block or whiff (+13c/+81a)
 * Transition to r37 standing on block (+10c/+79a) or whiff with input B
-* 10 chip damage on block";hs spk;i38~41,DEN,DEN;Lars-H.2+3;Thunderbird Descent;r30 DEN;;
+* 7 chip damage on block";hs spk;i38~41,DEN,DEN;Lars-H.2+3;Thunderbird Descent;r30 DEN;;
 R.df+1+2;m,t;55+;i20;-15;+0d;;"* Rage Art
 * Removes Recoverable Health
 * Reversal Break
@@ -265,10 +267,9 @@ SEN.4;h;19;i17~18;+4;+31a;;"* Strong Aerial Tailspin
 * Homing
 * Balcony Break
 * 7 chip damage on block";hom bbr;;Lars-SEN.4;Electric Volley;r35;;File:t8-p2-lars-sen.4.mp4
-SEN.1+2;m;21;i14~16;-13;+20a (+3);;"* Tornado
-* Balcony Break
-* Recovers 6F faster on hit (t44 r28)
-Power crush 6~";trn bbr pc6~;;Lars-SEN.1+2;Entangling Ejector;r34;;File:t8-p2-lars-sen.1+2.mp4
+SEN.1+2;m;21;i14~16;-14;+20a (+13);;"* Tornado
+* Recovers 7F? faster on hit (t44 r28?)
+Power crush 6~";trn pc6~;;Lars-SEN.1+2;Entangling Ejector;r35?;;File:t8-p2-lars-sen.1+2.mp4
 SEN.3+4;mm;22 (11);i13~14,i18~19;+0c;+22d (-13);;"* Spike
 * 6 chip damage on block
 Low crush 7~";spk js7~;;Lars-SEN.3+4;Lightning Axle;;;File:t8-p2-lars-sen.3+4.mp4

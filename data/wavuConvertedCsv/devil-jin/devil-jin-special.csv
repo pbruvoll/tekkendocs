@@ -7,7 +7,7 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * Cannot cause a K.O.
 Power crush 7~16";hb pc7~16;;Devil Jin-2+3;Heat Burst;r30;;
 H.MCR.1+2;h!,t;12,27;i20;;+0d;;"* Transition to attack throw on standing or airborne hit
-* Consumes 300F of the heat timer
+* Consumes 180?F of the heat timer
 Low crush 1~12";js1~12;;Devil Jin-H.MCR.1+2;Inner Purgatory;r35;;
 H.2+3;m,h,t;20,22,10;i18;+11;+5d;;"* Heat Smash
 * Jail from 1st attack
@@ -53,10 +53,10 @@ Power crush 8~";pc8~;;Devil Jin-R.df+1+2;Devil Dimension: Tainted Chains;r39;;
 * Input can be delayed 12f
 * Move can be delayed 4f
 * Interrupt with i9 from 2nd block";trn;;Devil Jin-3,1,2;Hell Cyclone;r29;;File:t8-p2-devil jin-3,1,2.mp4
-3,1,4;m, h, m;16, 11, 20;i17~19, ,i23~24;-9;+15a (+6);+59a;"* Balcony Break
+3,1,4;m, h, m;16, 11, 20;i17~19, ,i23~24;-9;+15a (+6);+59a;"* Balcony Break on normal hit
 * Input can be delayed 12f
 * Move can be delayed 4f
-* Interrupt with i7 from 2nd block";bbr;;Devil Jin-3,1,4;Hell Spiral;r29;;File:t8-p2-devil jin-3,1,4.mp4
+* Interrupt with i7 from 2nd block";;;Devil Jin-3,1,4;Hell Spiral;r29;;File:t8-p2-devil jin-3,1,4.mp4
 3,1,f,F;m, h;16, 11;i17~19, ,;-2;+4;;;;;Devil Jin-3,1,f,F;Demon March;r24;;File:t8-p2-devil jin-3,1,f,f.mp4
 4;h;24;i17~18;-5;+10g;;"* Homing
 * Balcony Break
@@ -106,7 +106,7 @@ f+4,3;m, m;10, 15;i15~16, i26~27;-22;+18a (+8);;"* Tornado
 * js27~51
 * fs52~54&lt;/div&gt;";FLY;Devil Jin-f+4,3;Twisted Samsara;r51;;File:t8-p2-devil jin-f+4,3.mp4
 df+1;m;11;i13;-6;+5;+9;;;;Devil Jin-df+1;;r25;;
-df+1,2;m, h;11, 20;i13, i17;-9;+20a;;"* Balcony Break
+df+1,2;m, h;11, 20;i13, i17;-9;+26a (+16);;"* Balcony Break
 * Combo on 1st hit with 6f delay
 * Combo on 1st CH with 10f delay
 * Move can be delayed 4f";bbr;;Devil Jin-df+1,2;Dark Twin Lancer;r30;;File:t8-p2-devil jin-df+1,2.mp4
@@ -129,12 +129,12 @@ df+3,2,4;m, m, m;12, 10, 20;i16~17, ,i26-27;-22;+18a (+8);;"* Tornado
 * Combo from 2nd CH with 4f delay
 * Input can be delayed 16f
 * Jails for 3?F from 2nd hit
-* Enter MCR +36a (+26) with ub_u_uf on hit
+* Enter FLY +36a (+26) with ub_u_uf on hit
 &lt;div class=&quot;plainlist&quot;&gt;
 * ,Low crush 27~50
 * ,fs51~53&lt;/div&gt;";"trn &lt;div class=&quot;plainlist&quot;&gt;
 * js27~50
-* fs51~53&lt;/div&gt;";MCR;Devil Jin-df+3,2,4;Rengoku;r51;;File:t8-p2-devil jin-df+3,2,4.mp4
+* fs51~53&lt;/div&gt;";FLY;Devil Jin-df+3,2,4;Rengoku;r51;;File:t8-p2-devil jin-df+3,2,4.mp4
 df+4;m;10;i13~14;-9;+2;;;;;Devil Jin-df+4;;r27;;
 df+4,4;m, m;10, 16;i13~14, i13~14;-15;-4c;;"* Spike
 * Combo from 1st hit with 11?f delay
@@ -157,7 +157,7 @@ High crush 6~";cs6~;FC;Devil Jin-db+2;Malicious Mace;r31 FC;;File:t8-p2-devil ji
 db+3;L;10;i16;-17;-6;;High crush 4~;cs4~;FC;Devil Jin-db+3;Crouch Spin Kick;r36 FC;;
 db+1+2;m;15;i23~38;-9;+4;;"* Cancel to r27 MCR with F (js27~)
 * Balcony Break on air hit";;MCR;Devil Jin-db+1+2;Demon's Spear;r31;;File:t8-p2-devil jin-db+1+2.mp4
-db+1+2*;m;25;i39~60;+17g;+7;+37d (+29);"* Balcony Break on CH or air hit
+db+1+2*;m;25;i39~60;+5g;+7;+37d (+29);"* Balcony Break on CH or air hit
 * Cancel to r27 MCR with F (js27~)
 * 10 chip damage on block";;MCR;Devil Jin-db+1+2*;Demon's Spear (Slight Hold);r26;;
 db+1+2**;m;42;i61~63;+10;+37d;;"* Balcony Break
@@ -190,7 +190,7 @@ b+2,1;h, m;11, 21;i14~16, i30-31;-16;+29a (+19);;"* Tornado
 * ,fs52~54&lt;/div&gt;";"trn &lt;div class=&quot;plainlist&quot;&gt;
 * js30~51
 * fs52~54&lt;/div&gt;";;Devil Jin-b+2,1;Rakshasa's Rampage;r34;;File:t8-p2-devil jin-b+2,1.mp4
-b+2,3;h, m;11, 23;i14~16, i25~127;-14;+8a (-1);;"* Heat Engager
+b+2,3;h, m;11, 23;i14~16, i25~27;-14;+8a (-1);;"* Heat Engager
 
 * Heat Dash +5, +62a (+42)
 
@@ -256,7 +256,7 @@ uf+4;m;21;i18;-8;+11;;"* Heat Engager
 * Balcony Break
 * 6 chip damage on heat dash
 Low crush 8~18";he bbr js8~18;;Devil Jin-uf+4;Wraith Kick;r32;;File:t8-p2-devil jin-uf+4.mp4
-uf+3+4;m,m;8,20;i16~17 i13~14;-16;+33a (-25);;"* Balcony Break
+uf+3+4;m,m;8,20;i16~17 i13~14;-16;+7;;"* Balcony Break
 * Tracking notes:
 * Can be sidestepped right at -10
 * Can be sidewalked left from +1 to +2 only
@@ -333,13 +333,13 @@ f,F+2;m;24;i15~16;-8;+15a (+6);;"* Heat Engager
 * 7 chip damage on block
 * 9 chip damage on heat dash
 * Active frame 1 range: 2.73";he bbr;;Devil Jin-f,F+2;Demon's Paw;r29;;File:t8-p2-devil jin-f,f+2.mp4
-f,F+4;m;22;i20~21;-6;+16g;+55a;"* Balcony Break
+f,F+4;m;22;i20~21;-6;+16g;+55a;"* Balcony Break on normal hit
 * i23 startup when unbuffered, and i21 startup when buffered
 * Opponent recovers crouching on hit
 * Active frame 1 range: 3.70
 &lt;div class=&quot;plainlist&quot;&gt;
 * Low crush 10~30
-* fs31~33&lt;/div&gt;";"bbr &lt;div class=&quot;plainlist&quot;&gt;
+* fs31~33&lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
 * js10~30
 * fs31~33&lt;/div&gt;";;Devil Jin-f,F+4;Demon's Shaft;r33;;File:t8-p2-devil jin-f,f+4.mp4
 f,n,d,DF+3;L;24;i33~34;-23;-2a;;"* Opponent recovers FDFA on hit
@@ -534,11 +534,11 @@ MCR.4,2,1+2;M, m, m!,M!;10, 20, 14, 20;i20~21, ,i27~28 i22~60;;-6a;;"* Available
 * 20 damage (10+10) with combo scaling from 2nd hit
 * 40 damage total from 2nd hit
 Low crush 1~";js1~;;Devil Jin-MCR.4,2,1+2;Devil Starstorm;r54?;;
-MCR.1+2;h!;12;i20;;+5;;"&lt;div class=&quot;plainlist&quot;&gt;
+MCR.1+2;h!;12;i20;;+0;;"&lt;div class=&quot;plainlist&quot;&gt;
 * Low crush 1~12
 * fs13~15&lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
 * js1~12
-* fs13~15&lt;/div&gt;";;Devil Jin-MCR.1+2;Inner Turmoil;r33;;
+* fs13~15&lt;/div&gt;";;Devil Jin-MCR.1+2;Inner Turmoil;r35?;;
 OTG.d+1+2;L;25;i23~31;-16~-8;+5a~+13a;;"* Weapon
 * Balcony break on CH
 * Typically connects grounded on frames i25~26 of startup at -14~-13/+12a~+13a(+0a~+1a)";wpn;;Devil Jin-OTG.d+1+2;Hellfire Incinerator;r27;;
@@ -551,6 +551,7 @@ H.f,n,d,DF+4,3;L, SM;7, 26 (18);i16, i31;;+72a (+56a);;"* Tornado
 * Spike
 * Available only on hit
 * 18dmg with combo scaling from 1st
+* Consumes 180?F of remaining Heat timer on hit or block or whiff
 Low crush 15~30?";trn spk js15~30?;;Devil Jin-f,n,d,DF+4,H.3;Spinning Demon Leviathan;r34;;
 H.f,n,d,df+1+2,1+2;m, SM;25, 20;i26~27, i25~36;+2;+60a(+44);;"* Tornado
 * Weapon
