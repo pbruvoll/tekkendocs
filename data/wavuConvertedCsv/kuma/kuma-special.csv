@@ -1,6 +1,11 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Transitions;Wavu id;Name;Recovery;Image;Video
-2+3;m;12 (12);i16;+1;+2c;;"* Heat Burst
-Power crush";hb pc;;Kuma-2+3;Heat Burst;;;
+2+3;m;"[12;12]";i16;+1;+2c;;"* Heat Burst
+* Cancel to r45 with b,b on frame 42
+* 2 chip damage on block
+* 12 chip damage on hit
+* Only deals recoverable damage
+* Cannot cause a K.O.
+Power crush 7~16";hb pc7~16;;Kuma-2+3;Heat Burst;r30;;
 H.df+2+3;sm;20;i15~16;+5;+39 (+29);;"* Partially uses remaining heat time
 * H.f,n,d,df+2 to power up";;;Kuma-H.df+2+3;Wind Bear Fist;;;
 H.df+2+3*;sm;26;i25~26;+9;+45 (+35);;"* Partially uses remaining heat time
@@ -12,7 +17,9 @@ H.f,f,F+1+2;m;30;i20~24;+3;+35d (-23);;"* Balcony Break
 * Chip damage
 * Transition to HBS with input D or 3+4 (does not shift when using Heat Dash)
 Low crush  21F";bbr he chp js 21F;HBS;Kuma-H.f,f,F+1+2;Rabid Bear;;;
-H.2+3;m;51;i13~15;+10;+33 (+23);;* Heat Smash;hs;;Kuma-H.2+3;Salmon Fishing Cast;;;
+H.2+3;m;51;i13~15;0;+33a (+23);;"* Heat Smash
+* Balcony Break
+* 10 chip damage";hs bbr;;Kuma-H.2+3;Salmon Fishing Cast;;;
 R.df+1+2;m,t;55+;i20;-15;+0d;;"* Rage Art
 * Removes Recoverable Health
 * Reversal Break
@@ -74,8 +81,9 @@ df+2;m;10;i15~16;-9;+2;;;;;Kuma-df+2;;;;
 df+2,1;m, m;10, 12;i15~16, i20~21;-16;+35a (+25);;"* Combo from 1st hit with 4F delay
 * Input can be delayed by 4F
 * Move cannot be delayed";;;Kuma-df+2,1;Kuma Musou;;;File:t8-p2-kuma-df+2,1.mp4
-df+3;m;13;i16;-9;+2;;;;;Kuma-df+3;;;;
-df+3,2;m, h;13, 24;i16, i27~28;-5;+22a;;"* Combo from 1st hit
+df+3;m;13;i16;-9;+2;;* +2c on crouching hit;;;Kuma-df+3;;;;
+df+3,2;m, h;13, 24;i16, i27~28;-5;+22a;;"* Balcony Break on airborne hit
+* Combo from 1st hit
 * 9 chip damage on block";;;Kuma-df+3,2;Honey Trap;;;File:t8-p2-kuma-df+3,2.mp4
 df+4;m;15;i12;-4;+7;;;;;Kuma-df+4;;;;
 d+1;sl;5;i10;-5;+6;;"* Transition to Standing with f
@@ -83,23 +91,27 @@ High crush 4~";cs4~;FC;Kuma-d+1;Crouch Jab;r24 FC;;
 d+2;sl;8;i11;-4;+7;;High crush 4~;cs4~;FC;Kuma-d+2;Crouch Straight;r23 FC;;
 d+3;L;12;i20;-17;-6;;High crush 4~;cs4~;FC;Kuma-d+3;Crouch Spin Kick;r36 FC;;
 d+4;l;10;i16;-15;-4;;High crush 4~;cs4~;FC;Kuma-d+4;Crouch Shin Kick;r34 FC;;
-d+1+2;m;28;i14~15;-15;+20d (+10);;* Balcony Break;bbr;;Kuma-d+1+2;Hip Smash;;;File:t8-p2-kuma-d+1+2.mp4
+d+1+2;m;23;i14~15;-15;+13d (+3);;"* Balcony Break
+* 27 damage on clean hit";bbr;;Kuma-d+1+2;Hip Smash;;;File:t8-p2-kuma-d+1+2.mp4
 d+3+4;sp;;;;;;"* Alternative input: db+3+4
 * Transition to ROL with input SIT.F
 * Transition to California Roll with input SIT.B";;ROL,California Roll;Kuma-d+3+4;Bear Sit;;;
 d+3+4;sp;;;;;;"* Transition to SIT
 * Transition to ROL with input f";;SIT,ROL;Kuma-d+3+4;Bear Sit;;;
 db+1;h;11;i14~15;-10;+4;+9;;;;Kuma-db+1;;;;
-db+1,2;h, m;11, 20;i14~15, i17~18;-13;+4;+13c;"* Combo from 1st hit
+db+1,2;h, m;11, 20;i14~15, i22~23;-13;+4;+13c;"* Spike
+* Combo from 1st hit
 * Hold 2 to power up, up to 2 charge levels
-* Transition to HBS with input D or 3+4";;HBS;Kuma-db+1,2;Double Wild Slap;;;
-db+1,2*;h, m;11, 20;i14~15, i34~35;-12;+13c;+42a;"* chip damage on block
+* Transition to HBS with input D or 3+4";spk;HBS;Kuma-db+1,2;Double Wild Slap;;;
+db+1,2*;h, m;11, 20;i14~15, i33~34;-12;+13c;+42a;"* Spike
+* chip damage on block
 * Heat skips to Level 2 charge
-* Transition to HBS with input D or 3+4";chp;HBS;Kuma-db+1,2*;Double Wild Slap;;;
-db+1,2**;h, m;11, 30;i14~15, i47~48;+3;+42a;;"* chip damage on block
+* Transition to HBS with input D or 3+4";spk chp;HBS;Kuma-db+1,2*;Double Wild Slap;;;
+db+1,2**;h, m;11, 30;i14~15, i47~48;+3;+42a;;"* Spike
+* chip damage on block
 * Cannot absorb with power crush
 * Heat reduces charge length (consumes partial Heat time)
-* Transition to HBS with input D or 3+4";chp;HBS;Kuma-db+1,2**;Fresh Wild Slap;;;File:t8-p2-kuma-db+1,2ss.mp4
+* Transition to HBS with input D or 3+4";spk chp;HBS;Kuma-db+1,2**;Fresh Wild Slap;;;File:t8-p2-kuma-db+1,2ss.mp4
 db+2;l;10;i18;-15 / -17 HBS;-1 / -3 HBS;;* Transition to HBS with input D or 3+4;;HBS;Kuma-db+2;Bear Lariat;;;File:t8-p2-kuma-db+2.mp4
 db+3;l;12;i18;-12;+1;;;;;Kuma-db+3;Bear Pump in Pedal;;;File:t8-p2-kuma-db+3.mp4
 db+4;l;20;i21~22;-23;+6;+74a (+38);"* Tornado
@@ -107,9 +119,12 @@ High crush 6~";trn cs6~;;Kuma-db+4;Spinning Kuma;;;File:t8-p2-kuma-db+4.mp4
 db+1+2;mm;4,4;i14~15;-9;+2~3;;;;;Kuma-db+1+2;;;;
 db+1+2,1+2;mm, mm;4,4, 4,4;i14~15, i15~16;-11;0;;;;;Kuma-db+1+2,1+2;;;;
 db+1+2,1+2,2;mm, mm, m;4,4, 4,4, 18;i14~15, ,i20~21;-15;+22a (+12);;;;;Kuma-db+1+2,1+2,2;Drum Roll;;;File:t8-p2-kuma-db+1+2,1+2,2.mp4
-db+2+3;l;30;i32~34;-12;+39a;;* Hold 2+3 to power up, up to 2 charge levels and deal more chip damage on block;;;Kuma-db+2+3;Salmon Hunter;;;
-db+2+3*;l;40;i45~47;-12;+39a;;* chip damage on block;chp;;Kuma-db+2+3*;Salmon Hunter;;;
-db+2+3**;l;60;i60~62;-4;+43a;;* chip damage on block;chp;;Kuma-db+2+3**;Fresh Salmon Hunter;;;File:t8-p2-kuma-db+2+3ss.mp4
+db+2+3;l;30;i32~34;-12;+39a;;"* Balcony Break on airborne hit
+* Hold 2+3 to power up, up to 2 charge levels and deal more chip damage on block";;;Kuma-db+2+3;Salmon Hunter;;;
+db+2+3*;l;40;i45~47;-12;+39a;;"* Balcony Break on airborne hit
+* chip damage on block";chp;;Kuma-db+2+3*;Salmon Hunter;;;
+db+2+3**;l;60;i60~62;-4;+43a;;"* Balcony Break on airborne hit
+* chip damage on block";chp;;Kuma-db+2+3**;Fresh Salmon Hunter;;;File:t8-p2-kuma-db+2+3ss.mp4
 b+1;m;24;i22~23;-13;+13a;;"* Balcony Break
 * Transition to -13 HBS with input D or 3+4
 * 9 chip damage on block
@@ -140,7 +155,7 @@ u+1+2;m;24;i18~23;-4 / -3 HBS;+3 / +4 HBS;;* Transition to HBS with input D or 3
 u+3+4;m;21;i34~39;+10;+20;;* Transition to SIT (cannot cancel);;SIT;Kuma-u+3+4;Pancake Press;;;File:t8-p2-kuma-u+3+4.mp4
 uf+1;m;20;i26~28;-6;+22a;;"* Alternate input: ub+1 or u+1
 * chip damage on block";chp;;Kuma-uf+1;Hornet Sweep;;;File:t8-p2-kuma-uf+1.mp4
-uf+2;m;27;i28~30;-6;+30a;+65a (+45);"* Balcony Break
+uf+2;m;20;i28~30;-6;+30a;+65a (+45);"* Balcony Break
 * Homing
 * Tailspin
 * Alternate input: ub+2 or u+2";bbr hom;;Kuma-uf+2;Ultra Kuma;;;File:t8-p2-kuma-uf+2.mp4
@@ -161,7 +176,12 @@ b,f+2;h;26;i15~17;-5;+17a (+8);+62a (+42);"* Balcony Break
 Tailspin
 * Chip damage on block";bbr chp;;Kuma-b,f+2;Anger Hook;;;File:t8-p2-kuma-b,f+2.mp4
 d,df,f+2;m;15;i18~19;-8;+3;;;;;Kuma-qcf+2;;;;
-d,df,f+2,1;m, m;15, 25;i18~19, i27;-14;+29a (+3);;* Balcony Break;bbr;;Kuma-qcf+2,1;Grizzly Claws;;;File:t8-p2-kuma-qcf+2,1.mp4
+d,df,f+2,1;m, m;15, 25;i18~19, i27;-14;+29a (+3);;"* Heat Engager
+
+* Heat Dash +36a (+26)
+
+* Balcony Break
+* Combos from 1st hit";he bbr;;Kuma-qcf+2,1;Grizzly Claws;;;File:t8-p2-kuma-qcf+2,1.mp4
 d,df,f+2,2;m, l;15, 22;i18~19, i33~34;-18;+40a;;* Chip damage on block;chp;;Kuma-qcf+2,2;Grizzly Claw Smash;;;File:t8-p2-kuma-qcf+2,2.mp4
 f,F+2;m;23;i19~21;-19;+45a (+35);;;;;Kuma-f,F+2;Demon Uppercut;;;File:t8-p2-kuma-f,f+2.mp4
 f,F+1+2;m;30;i37~38;+8 HBS / +5 ROL;52a HBS / +49a ROL;;"* Chip damage
@@ -183,7 +203,7 @@ ws1,2;m, m;13, 20;i13~15, i18~19;-13;+6 (+20g);+18;"* Hold 2 to power up, up to 
 
 
 * Wallsplat on CH";trn wc;HBS;Kuma-ws1,2;Killing Claws;;;
-ws1,2*;m, m;13, 28;i13~15, i35;-12;+18c;+33a (-2);"* Heat skips to Level 2 charge
+ws1,2*;m, m;13, 28;i13~15, i33;-12;+18c;+33a (-2);"* Heat skips to Level 2 charge
 * Transition to HBS with input D or 3+4
 * Balcony Break
 * Tornado";bbr trn;HBS;Kuma-ws1,2*;Killing Claws;;;
@@ -197,7 +217,8 @@ ws2;m;20;i15~16;-12;+29a (+19);;;;;Kuma-ws2;Mad Angler;;;File:t8-p2-kuma-ws2.mp4
 ws3;m;21;i18~20;-9;+17 (+8);;"* Balcony Break
 * Homing";bbr hom;;Kuma-ws3;Spinning Bear Kick;;;File:t8-p2-kuma-ws3.mp4
 ws4;m;20;i11~12;-6;+5;;;;;Kuma-ws4;Paw Smash;;;File:t8-p2-kuma-ws4.mp4
-SS.1+2;m;23;i22~23;-9c;+11d;;;;;Kuma-SS.1+2;Salmon Swipe;;;File:t8-p2-kuma-ss.1+2.mp4
+SS.1+2;m;23;i22~23;-3;+6c;;"* 9 chip damage
+* Transition to +12 +3 HBS with D";;HBS;Kuma-SS.1+2;Salmon Swipe;;;File:t8-p2-kuma-ss.1+2.mp4
 FC.1;l;12;i19~21;-8;+2;;;;;Kuma-FC.1;Watch Your Feet;;;File:t8-p2-kuma-fc.1.mp4
 FC.1+2;sp;;N/A / i26~i31 Heat;+1~+6 / -6~-1 HBS;+7~+12 / 0~+5 HBS;;"* Transition to ROL
 * becomes special mid attack during Heat (partially uses remaining Heat time)";;ROL;Kuma-FC.1+2;Bear Roll;;;
@@ -206,26 +227,33 @@ FUFA.1+2;m;15;i17~19;-2 (-2);+6 (+6);+6 (+6);* Transition to HBS (Cannot cancel)
 FUFT.d+1+2;m;21;i30;+17;+37a;+37a;* Transition to SIT (Cannot cancel);;SIT;Kuma-FUFT.d+1+2;Get Up Punch;;;
 HBS.1;m;10;i12~13;-13;+2;+12;;;;Kuma-HBS.1;;;;
 HBS.1,2;m, m;10, 20;i12~13, i24~25;-13;+4;+13c;*Hold 2 to power up, up to 2 charge levels;;;Kuma-HBS.1,2;Honeycomb Spike;;;
-HBS.1,2*;m, m;10, 20;i12~13, i33~34;-12;+13c;+49a;"* chip damage on block
+HBS.1,2*;m, m;10, 23;i12~13, i33~34;-12;+13c;+49a;"* chip damage on block
 * Heat skips to Level 2 charge";chp;;Kuma-HBS.1,2*;Honeycomb Spike;;;
 HBS.1,2**;m, m;10, 30;i12~13, i44~45;+3;+49a;;"* chip damage on block
 * Cannot absorb with power crush
 * Heat reduces charge length (consumes partial Heat time)";chp;;Kuma-HBS.1,2**;Fresh Honeycomb Spike;;;File:t8-p2-kuma-hbs.1,2ss.mp4
-HBS.2;l;16;i21~24;-15;+21g;;* Transition to HBS;;HBS;Kuma-HBS.2;Bear Claw;;;File:t8-p2-kuma-hbs.2.mp4
+HBS.2;L;16;i21~24;-15;+21g;;"* Transition to HBS
+High crush 1~";cs1~;HBS,HBS;Kuma-HBS.2;Bear Claw;HBS;;File:t8-p2-kuma-hbs.2.mp4
 HBS.3;sp;;;;;;"* Transition to FUFA
 * Alternative input: HBS.4 (HBS.3 is into background, HBS.4 is into foreground)";;FUFA;Kuma-HBS.3;Hunting to Roll Over;;;File:t8-p2-kuma-hbs.3.mp4
 HBS.1+2;m;24;i19~22;-15;+79a;;* Tornado;trn;;Kuma-HBS.1+2;Bear Fling;;;File:t8-p2-kuma-hbs.1+2.mp4
-HBS.3+4;m;21;i25~30;-12;-2a (-11);;"* Balcony Break
-Power crush 8~";bbr pc8~;;Kuma-HBS.3+4;Bear Tackle;;;File:t8-p2-kuma-hbs.3+4.mp4
+HBS.3+4;m;21;i20~24;-14;+9a (-1);;"* Heat Engager
+
+* Heat Dash +43d (+35)
+
+* Balcony Break
+Power crush 8~";he bbr pc8~;;Kuma-HBS.3+4;Bear Tackle;;;File:t8-p2-kuma-hbs.3+4.mp4
 HBS.b,b;sp;;;;;;"* Alternate input: SIT.B
 * Transition to HBS with input D or 3+4";;HBS;Kuma-HBS.b,b;Backward Roll;;;File:t8-p2-kuma-hbs.b,b.mp4
-HBS.b+1+2;l;16;i26~29;-25c;+14a;;* Transition to HBS with input D or 3+4;;HBS;Kuma-HBS.b+1+2;;;;
+HBS.b+1+2;l;16;i26~29;-20c;+3c;;* Transition to HBS with input D or 3+4;;HBS;Kuma-HBS.b+1+2;;;;
 HBS.b+1+2,1+2;l, l;16, 33;i26~29, i22~24;-29c;+8a / -3a (-10);;"* Balcony Break
 * Less frame advantage occurs after Combo from last hit";bbr;;Kuma-HBS.b+1+2,1+2;Break'n;;;File:t8-p2-kuma-hbs.b+1+2,1+2.mp4
+HBS.df+1;m;23;i25~27;-7;+20a (+11);;"* Homing
+* Balcony Break
+* Strong Aerial Tailspin
+* 9 chip damage";hom bbr;;Kuma-HBS.df+1;Hornet Buster;;;
 HBS.df+2;m;20;i15~16;-17;+35a (+25);;* Tornado;trn;;Kuma-HBS.df+2;Big Tree;;;File:t8-p2-kuma-hbs.df+2.mp4
-HBS.d+1+2;m;22;i16~20;-9;0 / HE;;"* Heat Engager
-
-* Transition to HBS (does not shift when using Heat Dash)";he;HBS;Kuma-HBS.d+1+2;Frolicking Bear;;;File:t8-p2-kuma-hbs.d+1+2.mp4
+HBS.d+1+2;m;22;i16~20;-3;+4;;* Transition to HBS;;HBS;Kuma-HBS.d+1+2;Frolicking Bear;;;File:t8-p2-kuma-hbs.d+1+2.mp4
 HBS.d+3+4;sp;;;;;;* Transition to FDFA;;FDFA;Kuma-HBS.d+3+4;Hunting to Play Dead;;;File:t8-p2-kuma-hbs.d+3+4.mp4
 HBS.f,f;sp;;N/A / i26~i31 Heat;+1~+6 / -6~-1 HBS;+7~+12 / 0~+5 HBS;;"* Transition to ROL
 * Becomes Special Mid attack during Heat (partially uses remaining Heat time)";;ROL;Kuma-HBS.f,f;Bear Roll;;;
@@ -256,7 +284,7 @@ SIT.f;sp;;N/A / i26~i31 Heat;+1~+6 / -6~-1 HBS;+7~+12 / 0~+5 HBS;;"* Alternative
 * Side switch on hit";;;Kuma-2+4;Bear Hug;;;File:t8-p2-kuma-2+4.mp4
 Back throw;th(h);70;i12~14;;+1;;"* Throw break: none
 * Opponent status on hit: FUFA";;;Kuma-Back throw;Swing Swung;;;
-HBS.f+1+2;th(h);35;i26~27;;+1;;"* Removes Recoverable Health
+HBS.f+1+2;th(h);30;i26~27;;+1;;"* Removes Recoverable Health
 * Spike
 * Throw break: none
 * Opponent status on hit: FUFA";spk;;Kuma-HBS.f+1+2;Bear Toss;;;File:t8-p2-kuma-hbs.f+1+2.mp4

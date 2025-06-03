@@ -6,7 +6,7 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * Only deals recoverable damage
 * Cannot cause a K.O.
 Power crush 7~16";hb pc7~16;;Jun-2+3;Heat Burst;r30;;
-H.GEN.1,1+2;L,M;14,35;i20~21 i26~41;-14;+25 (+7);;"* Reversal Break
+H.GEN.1,1+2;L,M;14,35;i20~21 i26~41;-14;+25a (+7);;"* Reversal Break
 * Balcony Break
 * Jail from 1st attack
 * Restores 6 recoverable (3 on block)
@@ -18,7 +18,7 @@ Parry state 5~";ps5~;MIA;Jun-H.f+1+2,P;;r30 MIA;;
 H.2+3;m,m;20,30;i13 i32~75;-6~+37g;+21a~+64a (-5~+38);;"* Heat Smash
 * Balcony Break
 * Restores 32 recoverable on hit (16 on block)
-* Chip damage (8,9) on block";hs bbr chp;;Jun-H.2+3;Yomotsu Ooyumi;r1;;
+* 10 Chip damage on block";hs bbr;;Jun-H.2+3;Yomotsu Ooyumi;r1;;
 R.df+1+2;m,t;55+;i20;-15;+0d;;"* Rage Art
 * Removes Recoverable Health
 * Reversal Break
@@ -35,7 +35,7 @@ Power crush 8~";pc8~;;Jun-R.df+1+2;Amatsu Izanami;r39;;
 * Combo from 1st hit with 2f delay
 * Enter SS +1 +10g r16 with u or d";;SS;Jun-1,2;Spear Step;r24;;File:t8-p2-jun-1,2.mp4
 1,2,2;h, h, h;5, 8, 12;i10, ,i16~17;+4;+11;+20c;"* Homing
-* Combo from 2nd CH with 5f delay
+* Combo from 2nd hit
 * Jail from 2nd block with 1f delay
 * Restores 2 health on hit";hom;IZU;Jun-1,2,2;Spear Step > Izumo Strike;r39 IZU;;File:t8-p2-jun-1,2,2.mp4
 1,2,4;h, h, m;5, 8, 16;i10, ,i27~28;-12;+5;+15a (+6);"* Balcony Break (airborne)
@@ -138,8 +138,8 @@ d+4,4;L, h;10, 20;i15, i25~26;-9;+13a (+4);;"* Balcony Break
 * Combo from 1st CH";bbr;;Jun-d+4,4;Suminagashi;r36;;File:t8-p2-jun-d+4,4.mp4
 d+1+2;M;28;i26;-9;+72a (+56);;"* Tornado
 * Chip damage (11) on block
-* Divine Aura: 15 chip damage on block
-* Divine Aura: +10 damage on hit (38)
+* Divine Aura: 12 chip damage on block
+* Divine Aura: +4 damage on hit (32)
 * Deals 12 damage to self (8 recoverable)
 * Unparryable";trn chp;;Jun-d+1+2;Kamudo-no-Tsurugi;r32;;File:t8-p2-jun-d+1+2.mp4
 d+3+4;l,h;5,20;i14 i24~27;-25;+30a (+20);;"* Combo from 1st CH
@@ -206,11 +206,11 @@ b+4,2;m, M;14, 17;i13~14, i22~23;-13;+5;+28a (+18);Combo from 1st hit with 8f de
 b+1+2;;;;;;;"* Enter SS r16 with u_d
 * r30 when blocking after SS
 * Cancel to r15 with DB
-* Restores 2 recoverable with each pulse";;SS,MIA;Jun-b+1+2;Miare;r10 MIA;;File:Jun-113.mp4
-b+2+3;m!;50;i57~58;;+6a;;Balcony Break;bbr;;Jun-b+2+3;Shinki;r37;;File:t8-p2-jun-b+2+3.mp4
+* Restores 3 recoverable health and gain Kazama Essence with each pulse";;SS,MIA;Jun-b+1+2;Miare;r10 MIA;;File:Jun-113.mp4
 b+3+4;m;25;i28~29;-12;+9a (+0);;"* Balcony Break
 * -8 on block after absorbing an attack
 Power crush 7~27";bbr pc7~27;;Jun-b+3+4;Omoikane;r35;;File:t8-p2-jun-b+3+4.mp4
+ub+1+2;m!;50;i57~58;;+6a;;Balcony Break;bbr;;Jun-ub+1+2;Shinki;r37;;File:t8-p2-jun-b+2+3.mp4
 u+2;h;17;i23~24;+4;+11;+20c;"* Homing
 * Restores 2 health and 2 recoverable on hit";hom;IZU;Jun-u+2;Izumo Strike;r40 IZU;;File:Jun-69.mp4
 u+4;m;21;i22~23;-3~-2;+22a;;"* Balcony Break (airborne)
@@ -236,8 +236,8 @@ uf+4,3;m, m,M;10, 8,20;i16~18, i29 i18;-12;+84a (+68);;"* Tornado
 uf+3+4;m,M;5,21;i20~23 i2~6;-8~-4;+18a;;"* Spike
 Low crush 9~30";spk js9~30;FC;Jun-uf+3+4;Saiuntsui;r28 FC;;File:t8-p2-jun-uf+3+4.mp4
 1+2+3+4;;;;;;;"* Can't block for 5 seconds
-* CH state on you for 5 seconds
-* 50% damage increase on the next attack for 5 seconds";;;Jun-1+2+3+4;"<div class=""dotlist"">
+* CH state on you for 5 seconds ''(Tekken 7 and prior games)''
+* 50% damage increase on the next attack for 5 seconds ''(Tekken 8 season 2 patch onward)''";;;Jun-1+2+3+4;"<div class=""dotlist"">
 
 * Ki Charge
 * Supercharger
@@ -259,9 +259,11 @@ f,F+3,3+4;m, m,m;23, 12,15;i18~19, i35~36 i41~42;+3;+19a;;"* Spike
 * +14d on BT hit
 ,fs25~39";spk chp fs25~39;;Jun-f,F+3,3+4;Yukimiguruma;r25;;File:t8-p2-jun-f,f+3,3+4.mp4
 f,F+1+2;m;32;i22;+6;+23a (+13);;"* Balcony Break
-* Chip damage (6) on block; +5 chip damage in Heat
-* Deals 6 damage to self (4 recoverable) 
-* Non-limb attack, unparryable by Asuka, Nina, etc";bbr chp;;Jun-f,F+1+2;Tokkei - Misogi;r32;;File:t8-p2-jun-f,f+1+2.mp4
+* 6 Chip damage on block
+* Transition to +9, +26a (+16) GEN with F
+* Transition to +9, +26a (+16) MIA with B
+* Deals 6 damage to self (4 recoverable)
+* Non-limb attack, unparryable by Asuka, Nina, etc";bbr;GEN,MIA;Jun-f,F+1+2;Tokkei - Misogi;r32;;File:t8-p2-jun-f,f+1+2.mp4
 f,f,F+3;m;28;i24~28;+3~+7;+14a (+5);+46d (-1);"* Balcony Break
 * Chip damage on block
 Low crush 3~30 Low crush 31~33";bbr chp js3~30 js31~33;;Jun-f,f,F+3;Ame-no-Uzume;r27;;File:t8-p2-jun-f,f,f+3.mp4
@@ -349,8 +351,8 @@ GEN.3,2;M, M;14, 16;i17~20, i24;-9;+33a (+18);;"* Combo from 1st hit with 8f del
 GEN.4;h;24;i26~28;+4~+6;+26a (+17);;"* Homing
 * Balcony Break
 Low crush 16~33 fs34~36";hom bbr js16~33 fs34~36;;Jun-GEN.4;Nichiun;r22;;File:t8-p2-jun-gen.4.mp4
-IZU.1;h;7;i13~14;-7;+4;;"Enter GEN +1 +5 r18 with F
-Enter MIA +1 +5 r18 with B";;GEN,MIA;Jun-IZU.1;;r25;;
+IZU.1;h;7;i13~14;-7;+4;;"Enter GEN -6, +5 r18 with F
+Enter MIA -6, +5 r18 with B";;GEN,MIA;Jun-IZU.1;;r25;;
 IZU.1,1;h, h;7, 26;i13~14, i23~24;-4;+30a (+20);;"* Balcony Break
 * Tornado
 * Combo from 1st hit with 6f delay
@@ -372,8 +374,8 @@ IZU.3;m,h;10,16;i16~15 i14~15;-6;+12a (+3);;"* Heat Engager
 * Balcony Break
 * Jail from 1st attack
 Low crush 20~53 fs54~56";he bbr js20~53 fs54~56;;Jun-IZU.3;Zuiun Renkyaku;r32;;File:t8-p2-jun-izu.3.mp4
-IZU.4;L;10;i21~22;-37;-1c;+23a;High crush 13~;cs13~;FC;Jun-IZU.4;;r37 FC;;
-IZU.4,1;L, M;10, 21;i21~22, i19~20;-14~-13;+14a (+3);;"* Balcony Break
+IZU.4;L;10;i19;-37;-1c;+23a;High crush 13~;cs13~;FC;Jun-IZU.4;;r37 FC;;
+IZU.4,1;L, M;10, 21;i19, i19~20;-14~-13;+14a (+3);;"* Balcony Break
 * 2nd hit only available as combo from 1st hit
 * DA: +9 damage on hit (30)
 * Deals 18 damage to self (12 recoverable)
@@ -387,9 +389,9 @@ IZU.f+1+2;m;21;i16~17;-6;+5;+25;"* Homing
 * Balcony Break (airborne)
 * Only i15 or faster attacks guaranteed on CH";hom;;Jun-IZU.f+1+2;Dianthus Garden;r32;;File:t8-p2-jun-izu.f+1+2.mp4
 MIA.1;M;30;i24~25;-9;+72a (+56);;"* Tornado
-* Chip damage (12) on block
-* Deals 12 damage to self (8 recoverable)
-* Unparryable";trn chp;;Jun-MIA.1;Ame-no-Sakahoko;r31;;File:t8-p2-jun-mia.1.mp4
+* 12 Chip damage on block
+* Deals 9 damage to self (8 recoverable)
+* Unparryable";trn;;Jun-MIA.1;Ame-no-Sakahoko;r31;;File:t8-p2-jun-mia.1.mp4
 MIA.2;sm;28;i16;-20;+26a (+0);;"* Heat Engager
 
 * Heat Dash +5, +36a (+26)
@@ -399,8 +401,12 @@ MIA.2;sm;28;i16;-20;+26a (+0);;"* Heat Engager
 * Deals 8 (DA:11) chip damage on block
 * Deals 6 damage to self (4 recoverable)
 * Unparryable";he bbr;;Jun-MIA.2;Ame-no-Nuboko;r40;;File:t8-p2-jun-mia.2.mp4
-MIA.1+2;m;17;20;+4;+11;+11;"* Homing
-* Restores 2 health and 2 recoverable on hit";hom;IZU;Jun-MIA.1+2;Izumo Strike;r40 IZU;;File:Jun-116.mp4
+MIA.1+2;m;17;i20~21;+4;+11g;;"* Homing
+* Strong Aerial Tailspin
+* Balcony Break on airborne hit
+* Transitions to IZU on hit or block
+* Gain 6 Kazama Essence on hit and 5 on block
+High crush";hom cs;IZU;Jun-MIA.1+2;Yakumodachi;IZU;;
 MIA.F;;;;;;;"* Cancel to r34 FC with D on frame 16
 * Parries low punches or kicks
 * Parries throws
