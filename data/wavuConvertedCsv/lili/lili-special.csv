@@ -9,6 +9,7 @@ Power crush 7~16";hb pc7~16;;Lili-2+3;Heat Burst;r30;;
 H.BT.2+3;l,M,M,M;15,5,5,20;i16 i27~28 i6~8 i20~22;-8;+23a (+5);;"* Heat Smash
 * Homing
 * Balcony Break
+* 5 chip damage
 High crush 4~? Low crush 25~?";hs hom bbr cs4~? js25~?;BT;Lili-H.BT.2+3;Rosa Giganteia Mezzo Forte;BT;;
 H.RAB.2;m;24;i20;-9;+39d (-19);;"* Heat Engager
 
@@ -32,12 +33,10 @@ H.f,F+3+4;m;36;i19~25;+7~+13;+20~26a (-6~+0);;"* Balcony Break
 * 16 chip damage on block
 * Partially consumes remaining Heat time
 Low crush";bbr js;;Lili-H.f,F+3+4;Piercing Thorn (Heat);;;
-H.2+3;m,t;55;i16;+7;?;;"* Heat Smash
-* Balcony Break";hs bbr;;Lili-H.2+3;Le Rosier Millénaire Mezzo Forte;;;
-H.2+3;m,m,m;10,10,20;i16~17 i17~18 i24~25;+7;?;;"* Heat Smash
+H.2+3;m,t;55;i16;+7;+0d;;"* Heat Smash
 * Balcony Break
-* Enter DEW +14 with F on block 
-*2,2,4 chip damage on block";hs bbr;DEW;Lili-H.2+3;Le Rosier Millénaire Mezzo Forte (Block);;;
+* Transition to +14g DEW with F on block 
+* 6 chip damage on block";hs bbr;DEW;Lili-H.2+3;Le Rosier Millénaire Mezzo Forte;;;
 R.df+1+2;m,t;55+;i20;-15;+0d;;"* Rage Art
 * Removes Recoverable Health
 * Reversal Break
@@ -116,14 +115,14 @@ H.1,2,4;h, h, m;5, 12, 30;i10, ,i29~34;+5~+10;+18~23a (-8~-3);;"* Balcony Break
 * fs37~39&lt;/div&gt;";"he hom bbr chp &lt;div class=&quot;plainlist&quot;&gt;
 * js22~36
 * fs37~39&lt;/div&gt;";;Lili-3+4;Black Swan;r29;;File:t8-p2-lili-3+4.mp4
-H.3+4,3+4;h,h,m,M;10,10,15,20;i23~24 i14~15 i36~38 i9~11;+7;+20d(-15);;"* Homing
-* Floor Break 
-* Partially consumes remaining Heat time
-Low crush 22?";hom fbr js22?;BT;Lili-3+4,H.3+4;White Swan Mezzo Piano (Block);BT;;
 H.3+4,3+4;h,t;45;i23;+7;-3d;;"* Homing
 * Floor Break 
 * Partially consumes remaining Heat time
 Low crush 22~";hom fbr js22~;BT;Lili-3+4,H.3+4;White Swan Mezzo Piano;BT;;
+H.3+4,3+4;h,h,m,M;10,10,15,20;i23~24 i14~15 i36~38 i9~11;+7;+20d(-15);;"* Homing
+* Floor Break 
+* Partially consumes remaining Heat time
+Low crush 22?";hom fbr js22?;BT;Lili-3+4,H.3+4;White Swan Mezzo Piano (Block);BT;;
 f+2;h;10;i12;-9;-1;;;;;Lili-f+2;;;;
 f+2,3;h, m;10, 20;i12, i22;-15;+24a (+7);;"* Balcony Break
 * Combo from 1st hit with 3?F delay";bbr;;Lili-f+2,3;Mars Sword;;;File:t8-p2-lili-f+2,3.mp4
@@ -256,7 +255,7 @@ f,f,F+3;m;30;i23;+3;+20a (+10);;"* Balcony Break
 * Chip damage on block
 * Alternate input wr3
 Low crush";bbr chp js;;Lili-f,f,F+3;Sabre Slash;;;File:t8-p2-lili-f,f,f+3.mp4
-f,f,F+1+2;h,h;10,15;i13~14 i7~8;+4;+30a;;"* Balcony Break
+f,f,F+1+2;h,h;9,16;i13~14 i7~8;+4;+30a;;"* Balcony Break
 * 4 chip damage on block
 * Alternate input wr1+2";bbr;;Lili-f,f,F+1+2;Zephyranthes;;;
 ws1;m;10;i13;-11;+0;;;;;Lili-ws1;;;;
@@ -287,7 +286,7 @@ High crush";cs;;Lili-FC.2;;;;
 FC.3;L;10;i16;-17;-6;;High crush;cs;;Lili-FC.3;;;;
 FC.4;l;6;i12;-15;-4;;"* Alternate input d+4
 High crush";cs;;Lili-FC.4;;;;
-FC.df+1;m;25;i14;-6;+19a (+2);+34d (+26);* Balcony Break;bbr;;Lili-FC.df+1;Slashing Vine;;;File:t8-p2-lili-fc.df+1.mp4
+FC.df+1;m;24;i14;-6;+19a (+2);+34d (+26);* Balcony Break;bbr;;Lili-FC.df+1;Slashing Vine;;;File:t8-p2-lili-fc.df+1.mp4
 FC.df+3;L;19;i19-28;-18;-2;+26a;"Alternate input: d,DF+3
 Alternate input: DEW.df+3
 High crush 10~46?";cs10~46?;;Lili-FC.df+3;Horizon Slide;r28?;;File:t8-p2-lili-fc.df+3.mp4
@@ -332,12 +331,12 @@ DEW.1;m;12;i15;-9;-4;+2;;;;Lili-DEW.1;Rose;;;
 DEW.1,2;m, m;12, 20;i15, i23;-14;+20a (+10);+54a;"* Balcony Break
 * Combos from 1st hit";bbr;;Lili-DEW.1,2;Rose Pique;;;File:t8-p2-lili-dew.1,2.mp4
 DEW.1,2~B;m;12;i15, ;-14~-15;-9~-8;-3~-2;;;BT;Lili-DEW.1,2~B;;BT;;
-DEW.1,4;m, m;12, 30;i15, i25~31;-9;+2a (-7);;"* Balcony Break
+DEW.1,4;m, m;12, 26;i15, i25~31;-9;+2a (-7);;"* Balcony Break
 * Combos from 1st hit CH
 * Chip damage on block [9]
 * Partially consumes remaining Heat time
 Low crush 17~";bbr chp js17~;;Lili-DEW.1,4;Rose Piercing Thorn;;;File:t8-p2-lili-dew.1,4.mp4
-H.DEW.1,4;m, m;12, 36;i15, i25~31;+7~+13;+20~26a (-6~+0);;"* Balcony Break
+H.DEW.1,4;m, m;12, 30;i15, i25~31;+7~+13;+20~26a (-6~+0);;"* Balcony Break
 * Combos from 1st hit CH
 * 16 chip damage on block 
 * Partially consumes remaining Heat time
@@ -356,7 +355,7 @@ DEW.3;M;28;i17;-11;+20a (+3);;"* Tornado
 DEW.1+2;m;28;i16;-11;+17cg;;"* Tornado
 * Balcony Break
 Power crush 6~";trn bbr pc6~;;Lili-DEW.1+2;Angel Heart;;;File:t8-p2-lili-dew.1+2.mp4
-DEW.3+4;h;6,20;i12~14, i5~6;+6;+17g;;"* Strong Aerial Tailspin
+DEW.3+4;h;6,19;i12~14, i5~6;+6;+17g;;"* Strong Aerial Tailspin
 * Balcony Break
 * Transition to +0, +11 RAB with b+3 or b+4
 Low crush 12~?, Low crush 17?~?";bbr js12~? js17?~?;RAB;Lili-DEW.3+4;Cloisonne;;;File:t8-p2-lili-dew.3+4.mp4

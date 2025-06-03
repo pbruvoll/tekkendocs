@@ -1,6 +1,7 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Transitions;Wavu id;Name;Recovery;Image;Video
 2+3;m;15;;;;;* Heat Burst;hb;;Kazuya-2+3;Heat Burst;;;
-H.2+3;l,m,th;12,20,34;i18;-14;Th;Th;* Heat Smash;hs;;Kazuya-H.2+3;Omega Crash;;;
+H.2+3;l,m,th;12,20,34;i18;-14;Th;Th;"* Heat Smash
+* 8 chip damage";hs;;Kazuya-H.2+3;Omega Crash;;;
 R.df+1+2;m,t;55+;i20;-15;+0d;;"* Rage Art
 * Removes Recoverable Health
 * Reversal Break
@@ -13,10 +14,10 @@ Power crush 8~";pc8~;;Kazuya-R.df+1+2;Demonic Catastrophe;r39;;
 1;h;5;i10;+1;+8;;Recovers 2f faster on hit or block (t27 r17);;;Kazuya-1;Jab;r19;;
 1,1;h, h;5, 6;i10, i15;-1;+6;;"* Jails
 * Combo from 1st hit";;;Kazuya-1,1;;44;;
-1,1,2;h, h, m;5, 6, 12;i10, ,i13;-17;+20a(+15);;"* Combo from 1st hit
+1,1,2;h, h, m;5, 6, 14;i10, ,i13;-17;+20a (+15);;"* Combo from 1st hit
 * Can be delayed 11F
 * Balcony Break on Air hit";;;Kazuya-1,1,2;Flash Punch Combo;;;File:t8-p2-kazuya-1,1,2.mp4
-1,1,2,DVK.F;h,h,m,th;5,6,12,8;i10;-17;+5;;"* Jails
+1,1,2,DVK.F;h,h,m,th;5,6,14,8;i10;-17;+5;;"* Jails
 * Partially uses remaining Heat time
 * Only on hit";;;Kazuya-1,1,2,DVK.F;Devil Break;;;File:t8-p2-kazuya-1,1,2,dvk.f.mp4
 1,2;h, h;5, 8;i10, i10;-1;+8;;"* Jails
@@ -50,6 +51,7 @@ f+3;m;22;i17;-13;+5;+54a(+23);Balcony Break on air hit;;;Kazuya-f+3;Oni Front Ki
 f+4;m;20;i19~20;+4c;+7c;+31d;Spike;spk;;Kazuya-f+4;Right Splits Kick;;;File:t8-p2-kazuya-f+4.mp4
 f+1+2;m;20;i25;-9;+11a(+2);;"* Balcony Break
 * Parries high and mid punches
+* 25 damage on successful parry
 Parry state 3?~10?";bbr ps3?~10?;;Kazuya-f+1+2;Glorious Demon God Fist;;;File:t8-p2-kazuya-f+1+2.mp4
 df+1;m;11;i15~16;-7;+9;;"* Tracking notes:
 * Can sidewalk left at -6 to +8
@@ -70,9 +72,10 @@ df+2;m;22;i14;-12;+5;+59a;"* Homing
 * Balcony Break on air hit
 * Crumple stun +13F after CH";hom;;Kazuya-df+2;Abolishing Fist;32;;File:t8-p2-kazuya-df+2.mp4
 df+3;m;13;i18;-7;+9;;Knee;kne;;Kazuya-df+3;Impaling Knee;;;
-df+3,1;m, h;13, 17;i18, ;-7;+15g;+13c;"* Combo from 1st hit
-* Can be delayed 8F
-* Combo can be delayed 8F from hit";;;Kazuya-df+3,1;Impaling Knee Elbow Slash;;;
+df+3,1;m, h;13, 17;i18, ;-7;+15g;+13c;"*
+Elbow
+* Combo from 1st hit
+* Can be delayed 8F";elb;;Kazuya-df+3,1;Impaling Knee Elbow Slash;;;
 df+3,2;m, m;13, 15;i18, ;-11;+5;;"* Combo from 1st hit
 * Can be delayed 10F
 * Combo can be delayed 10F from hit";;;Kazuya-df+3,2;;;;
@@ -149,7 +152,7 @@ Low crush ~9";spk js~9;;Kazuya-ub+1;;;;
 ub+1+2;h;32;i41;+19d (-39);+19d (-39);;"* Chip damage when guarded
 * Jack-8 or Alisa can recovery 20 by input 1+2
 * Balcony Break";chp bbr;;Kazuya-ub+1+2;Inferno;;;
-uf+1;m;20;i20;-7;+3;+3;* Homing;hom;;Kazuya-uf+1;Raijen Uraken;;;
+uf+1;m;16;i20;-7;+3;+3;;;;Kazuya-uf+1;Raijen Uraken;;;
 uf+2;h;17;i15;-12;+9;;* Balcony Break on air hit;;;Kazuya-uf+2;Hook;;;
 uf+3;m;25;i19;-9;+17(+9);;"* Balcony Break
 Low crush 9~";bbr js9~;;Kazuya-uf+3;Searing Edge;;;File:t8-p2-kazuya-uf+3.mp4
@@ -204,10 +207,13 @@ ws4,4;m, m;13, 16;i11~12, ;-15;+0c;;* Combo from 1st hit;;;Kazuya-ws4,4;Tsunami 
 ws1+2;m;25;i13;-9;+8;+24a;;;;Kazuya-ws1+2;Fujin Uraken;;;File:t8-p2-kazuya-ws1+2.mp4
 SS.3;m;23;i23;-7;+16a(+7);+50d;Balcony Break;bbr;;Kazuya-SS.3;Shattered Spine;;;File:t8-p2-kazuya-ss.3.mp4
 SS.4;m;16;i15;-6;+4;+4;Balcony Break;bbr;;Kazuya-SS.4;;;;
-SS.4,1;m, m;16, 22;i15, i21-22;-13;+21(+12);+21(+12);"*Combo from first hit with 15f Delay
+SS.4,1;m, m;16, 22;i15, i21-22;-13;+21a (+12);+21a (+12);"* Strong Aerial Tailspin
+*Combo from first hit with 15f Delay
 *Input can be delayed 15f
 *Move can be delayed 15f";;;Kazuya-SS.4,1;Hanetoguro;;;
-SS.1+2;h;25;i19;+5;+11a;;;;;Kazuya-SS.1+2;Elkeid;;;File:t8-p2-kazuya-ss.1+2.mp4
+SS.1+2;h;25;i19;+5;+26g;;"* Homing
+* 7 chip damage on block
+* Transition to WGS (Wind God Step) with DF";hom;WGS;Kazuya-SS.1+2;Elkeid;;;File:t8-p2-kazuya-ss.1+2.mp4
 FC.df+3+4;m;24;i23;-11c;+11a;;High crush ,Low crush 13~;csjs13~;FC;Kazuya-FC.df+3+4;Tombstone Crusher;FC;;File:t8-p2-kazuya-fc.df+3+4.mp4
 (back to wall).b,b,ub;m;25;i29;-1;+45d (-13);;"* Air Status 5F
 is8~13";is8~13;;Kazuya-(back to wall).b,b,ub;Wall Jumping Attack;;;
@@ -229,8 +235,9 @@ Low crush 25~";js25~;;Kazuya-DVK.3+4;Devil Blaster;;;File:t8-p2-kazuya-dvk.3+4.m
 DVK.OTG.db+1+2;l;20;i24~29;-13;+13a (+1);;* Partially uses remaining Heat time;;;Kazuya-DVK.OTG.db+1+2;Grand Inferno;;;
 DVK.SS.2;m;25;i17;-15;+76a;;"* Tornado
 * Partially uses remaining Heat time";trn;;Kazuya-DVK.SS.2;Devil Twister;;;File:t8-p2-kazuya-dvk.ss.2.mp4
-DVK.db+3+4;l;0;i24;-19;+2;;* Partially uses remaining Heat time;;;Kazuya-DVK.db+3+4;Devil Impact;;;File:t8-p2-kazuya-dvk.db+3+4.mp4
-DVK.db+3+4,DF;l, sp;0, 0;i24, ;-19;+11;;* Partially uses remaining Heat time;;;Kazuya-DVK.db+3+4~df;Devil Impact to Wind God Step;;;
+DVK.db+3+4;l;(10);i24;-19;+2;;"* Deals 10 recoverable damage on hit - Cannot K.O
+* Partially uses remaining Heat time";;;Kazuya-DVK.db+3+4;Devil Impact;;;File:t8-p2-kazuya-dvk.db+3+4.mp4
+DVK.db+3+4,DF;l, sp;(10), 0;i24, ;-19;+11;;* Partially uses remaining Heat time;;;Kazuya-DVK.db+3+4~df;Devil Impact to Wind God Step;;;
 DVK.f,F+2;m,th;20,20;i16;-9;+0;;"* Partially uses remaining Heat time
 * Only on hit
 * Throw can be canceled with B";;;Kazuya-DVK.f,F+2;Chaos Inferno;;;File:t8-p2-kazuya-dvk.f,f+2.mp4
@@ -242,7 +249,10 @@ DVK.f,n,d,df+3;h,th;30,15;i18;+6;Th;;"* Partially uses remaining heat
 Low crush";js;;Kazuya-DVK.f,n,d,df+3;Tempest Blaster;;;File:t8-p2-kazuya-dvk.f,n,d,df+3.mp4
 DVK.ub+1+2;ub(h);40;i41;;+14 (-44);;"* Partially uses remaining Heat time
 * Jack-8 or Alisa can recovery 20 by input 1+2";;;Kazuya-DVK.ub+1+2;Inferno;;;
-DVK.uf+1,3;m;20;i30;-7;+17(0);+17(0);* Replenishes most heat used;;;Kazuya-DVK.uf+1,3;Devil Trample;;;
+DVK.uf+1,3;m;20;i30;-9;+17a;+17a;"* Balcony Break
+* Partially uses remaining Heat
+* Partially restores remaining Heat on hit
+* Jails from 1st hit";bbr;;Kazuya-DVK.uf+1,3;Devil Trample;;;
 DVK.uf+1+2;ub(h);26;i22;;;;;;;Kazuya-DVK.uf+1+2;Air Inferno;;;File:t8-p2-kazuya-dvk.uf+1+2.mp4
 OTG.d+3+4;l;25;i23;-12;-1;;;;;Kazuya-OTG.d+3+4;Oni Stomp;;;
 f,(even numbers frames).n;sp;;;;;;;;;Kazuya-f,(even numbers frames).n;Mist Step (Left Side);;;

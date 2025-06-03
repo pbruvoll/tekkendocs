@@ -15,7 +15,8 @@ H.2+3;m,t;20,40;i17;+12;+0d;;"* Heat Smash
 * Floor Break
 * Shifts to JGR on block (without heat).
 * Hold b to cancel shift, becomes +7 on block.
-* Beats all Power Crush armor, hits OTG.";hs fbr;;King-H.2+3;Ultimo Jaguar;;;
+* Hits OTG
+* 5 chip damage";hs fbr;;King-H.2+3;Ultimo Jaguar;;;
 R.df+1+2;m,t;55+;i20;-15;+0d;;"* Rage Art
 * Removes Recoverable Health
 * Reversal Break
@@ -43,14 +44,17 @@ Power crush 8~";pc8~;;King-R.df+1+2;Anger Of The Beast;r39;;
 2,1;h, m;10, 15;i10, i23~24;-3;+8;;"* Forces standing on hit.
 * Combo from 1st hit.";;;King-2,1;Right Jab > Uppercut;r21;;File:t8-p2-king-2,1.mp4
 3;h;17;i15~16;-9;+2;;;;;King-3;Left Kick;r27;;
-3,2;h, m;17, 18;i15~16, i20~21;-9;+5c;;"* Move can be delayed by 10F
-* Input can be delayed by 11F";;;King-3,2;;r28;;
-3,2,2;h, m, m;17, 18, 24;i15~16, ,i23~24;-13;+17g JGR;;"* Balcony Break
+3,2;h, m;17, 18;i15~16, i20~21;-9;+5c;;"* Elbow
+* Move can be delayed by 10F
+* Input can be delayed by 11F";elb;;King-3,2;;r28;;
+3,2,2;h, m, m;17, 18, 24;i15~16, ,i23~24;-13;+17g JGR;;"* Elbow
+* Balcony Break
+* Floor Break
 * Transition to +17g JGR on hit
 * Transition to +12g standing on hit with B 
 * Combo from 2nd CH with 10F delay
 * Move can be delayed by 11F
-* Input can be delayed by 12F";bbr;JGR;King-3,2,2;Stampede Crush;r35;;
+* Input can be delayed by 12F";elb bbr fbr;JGR;King-3,2,2;Stampede Crush;r35;;
 3,2,2*;h, m, m;17, 18, 30;i15~16, ,i34~35;+9c JGR;+25a (+15) JGR;;"* Balcony Break
 * Transition to JGR on hit or block (+9/+25a (+15))
 * Transition to standing on hit or block with B  (+4c/+20a (+10))
@@ -149,10 +153,9 @@ d+3+4;L;14;i16;-25;-9;;"* On CH, can access Stagger Kicks Flurry (d+3+4,4,4,4)
 High crush 6~";cs6~;FC;King-d+3+4;;r44 FC;;
 d+3+4,4;L, L;14, 7;i16, i29;-25;-9;;"* Combo from 1st hit on CH.
 High crush 1~";cs1~;FC;King-d+3+4,4;;r FC;;
-d+3+4,4,4;L, L, L;14, 7, 7;i16, ,i29;-29;+7;;"* Combo from 2nd hit on CH.
+d+3+4,4,4;L, L, L;14, 7, 7;i16, ,i29;-25;-9;;"* Combo from 2nd hit on CH.
 High crush 1~";cs1~;FC;King-d+3+4,4,4;Stagger Kicks;r FC;;File:t8-p2-king-d+3+4,4,4.mp4
-d+3+4,4,4,2;L, L, L, m;14, 7, 7, 10;i16, ,i28;-15;+16d(+6);;"* Balcony Break
-* Combo from 1st or 2nd CH or 3rd hit";bbr;;King-d+3+4,4,4,2;Stagger Kick Spinning Uppercut;;;File:t8-p2-king-d+3+4,4,4,2.mp4
+d+3+4,4,4,2;L, L, L, m;14, 7, 7, 10;i16, ,i28;-15;+16d(+6);;* Balcony Break;bbr;;King-d+3+4,4,4,2;Stagger Kick Spinning Uppercut;;;File:t8-p2-king-d+3+4,4,4,2.mp4
 d+3+4,4,4,4;L, L, L, L,L;14, 7, 7, 4,3;i16, ,i29,i29;-26;+15;;"* Only available if 1st hit on CH.
 * Combo from 3rd hit
 High crush 1~";cs1~;FC;King-d+3+4,4,4,4;Stagger Kick Flurry;r FC;;
@@ -340,9 +343,10 @@ FUFT.b+3+4;m;25;i16~28;-25;+4a(-6);;"Balcony Break
 * Faster than normal spring kick and knocks down.";bbr;;King-FUFT.b+3+4;Whirling Spring Kick;;;
 JGR.1;m;21;i16~17;-8;+39d/+75a(+59);;"* In heat it becomes Tornado on grounded hit.
 * Partially uses remaining Heat time.";;;King-JGR.1;Running Elbow Smash;r28;;File:t8-p2-king-jgr.1.mp4
-JGR.2;h;26;i18~19;+3/+6/+18c;+4d;;"* Chip damage on block.
+JGR.2;h;26;i18~19;+3/+6/+18c;+4d;;"* Strong Aerial Tailspin
+* 4 Chip damage on block.
 * In heat it becomes +6 on block, and forces crouching +18 near wall.
-* Partially uses remaining Heat time.";chp;;King-JGR.2;Jaguar Axe;r33;;File:t8-p2-king-jgr.2.mp4
+* Partially uses remaining Heat time.";;;King-JGR.2;Jaguar Axe;r33;;File:t8-p2-king-jgr.2.mp4
 JGR.3;m;30;i22~23;-9;+11d (+1);;"* Balcony Break
 * Homing
 Low crush 11~30 fs31~33";bbr hom js11~30 fs31~33;;King-JGR.3;Sprint K.;r43;;File:t8-p2-king-jgr.3.mp4
@@ -355,7 +359,8 @@ JGS.1;h;21/25/31;i17~18/i19~20;-7/-1;+47d/+53d;;"* Crumple on hit.
 JGS.2;m;15/18/22;i11~12;-9/-2/0c;+12c;;"* Forces Crouching on hit.
 * Forces Crouching on block from 3rd spin on.
 * Damage increase up to 3rd spin.";;;King-JGS.2;Jaguar Step > Hammer;;;File:t8-p2-king-jgs.2.mp4
-JGS.3;m;23/27/34;i22~23;-5/-1;+21a(+12)/+25a(+16);;"Balcony Break
+JGS.3;m;23/27/34;i22~23;-5/-1;+21a(+12)/+25a(+16);;"* Balcony Break
+* Strong Aerial Tailspin
 * On block / hit increases up to 2nd spin.
 * Damage increase up to 3rd spin.";bbr;;King-JGS.3;Jaguar Step > Sobat;;;File:t8-p2-king-jgs.3.mp4
 JGS.3,2+3;m, m,t;23/27/34, 20,15;i22~23, i21~43;-16c~+2c;-19c~+3c/-5d;;"* Throw when hit standing in front close range.
