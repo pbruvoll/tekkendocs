@@ -2,6 +2,7 @@ import { useMemo } from 'react'
 import { Pencil1Icon } from '@radix-ui/react-icons'
 import { Text } from '@radix-ui/themes'
 import {
+  data,
   json,
   type LoaderFunctionArgs,
   type MetaFunction,
@@ -56,7 +57,10 @@ const navData: NavLinkInfo[] = [
 
 export const headers = () => getCacheControlHeaders({ seconds: 60 * 5 })
 
-export const loader = async ({ params }: LoaderFunctionArgs) => {
+export const loader = async ({ params, request }: LoaderFunctionArgs) => {
+  const url = new URL(request.url)
+  const isPreview = url.searchParams.get('preview') !== null
+
   const character = params.character
   if (!character) {
     throw new Response(null, {
@@ -65,23 +69,35 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
     })
   }
 
+  if (!characterGuideAuthors.T8[character] && !isPreview) {
+    throw data('Guide not found', {
+      status: 404,
+      statusText: 'Not found',
+    })
+  }
+
   const game: Game = 'T8'
 
   const sheetName = `${character}-guide`
   const key = `${sheetName}|_|${game}`
-  const { guideData, editUrl, freshValueContext } = await cachified({
-    key,
-    ttl: 1000 * 30,
-    staleWhileRevalidate: 1000 * 60 * 60 * 24 * 3,
-    async getFreshValue(context) {
-      const sheet = await getSheet(sheetName, game)
-      const { editUrl, rows } = sheet
-      const sheetSections = sheetToSections(rows)
-      const guideData = tablesToGuideData(sheetSections)
 
-      return { guideData, editUrl, freshValueContext: context }
-    },
-  })
+  const getFreshValue = async () => {
+    const sheet = await getSheet(sheetName, game)
+    const { editUrl, rows } = sheet
+    const sheetSections = sheetToSections(rows)
+    const guideData = tablesToGuideData(sheetSections)
+
+    return { guideData, editUrl }
+  }
+
+  const { guideData, editUrl } = isPreview
+    ? await getFreshValue()
+    : await cachified({
+        key,
+        ttl: 1000 * 30,
+        staleWhileRevalidate: 1000 * 60 * 60 * 24 * 3,
+        getFreshValue,
+      })
   if (!guideData) {
     throw new Response(
       `Not able to find data for character ${character} in game ${game}`,
@@ -93,8 +109,7 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
     { characterName: character, editUrl, guideData, game },
     {
       headers: {
-        ...getCacheControlHeaders({ seconds: 60 * 5 }),
-        'X-Td-Cachecontext': JSON.stringify(freshValueContext),
+        ...getCacheControlHeaders({ seconds: isPreview ? 60 * 5 : 5 }),
       },
     },
   )
