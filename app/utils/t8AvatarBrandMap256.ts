@@ -1,5 +1,5 @@
 import alisa from '~/images/t8/avatars/alisa-brand-256.webp'
-import anna from '~/images/t8/avatars/anna-128.webp'
+import anna from '~/images/t8/avatars/anna-brand-256.webp'
 import asuka from '~/images/t8/avatars/asuka-brand-256.webp'
 import azucena from '~/images/t8/avatars/azucena-brand-256.webp'
 import bryan from '~/images/t8/avatars/bryan-brand-256.webp'

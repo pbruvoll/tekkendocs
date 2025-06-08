@@ -122,7 +122,7 @@ export const meta: MetaFunction<typeof loader> = ({
   const characterId = characterName.toLocaleLowerCase()
   const author = data?.guideData?.authors?.[0].name
   const authorLink = data?.guideData?.authors?.[0].url?.split(' | ')[0]
-  const version = characterGuideAuthors.T8[characterId].version
+  const version = characterGuideAuthors.T8[characterId]?.version
   const characterTitle =
     characterName[0].toUpperCase() + characterName.substring(1)
   const title = `${characterTitle} Tekken 8 ${version === 'S2' ? 'Season 2 ' : ''}Guide ${author ? 'by ' + author : ''} | TekkenDocs`
@@ -232,7 +232,7 @@ export default function Index() {
     notableMoves: keyMoves?.slice(10),
   }
 
-  const version = characterGuideAuthors.T8[characterId].version
+  const version = characterGuideAuthors.T8[characterId]?.version
 
   return (
     <GuideContext.Provider

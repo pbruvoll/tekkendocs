@@ -9,6 +9,7 @@ import lidia from '~/images/t8/guides/lidia-1200.webp'
 import lili from '~/images/t8/guides/lili-1200.webp'
 import raven from '~/images/t8/guides/raven-1200.webp'
 import xiaoyu from '~/images/t8/guides/xiaoyu-1200.webp'
+import yoshimitsu from '~/images/t8/guides/yoshimitsu-1200.webp'
 
 export const t8GuideImgMap: Record<string, string> = {
   anna,
@@ -22,4 +23,5 @@ export const t8GuideImgMap: Record<string, string> = {
   lidia,
   raven,
   xiaoyu,
+  yoshimitsu,
 }

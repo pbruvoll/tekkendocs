@@ -1,6 +1,7 @@
 import alisa from '~/images/t8/avatars/alisa-128.webp'
 import alisaBrand from '~/images/t8/avatars/alisa-brand-128.webp'
 import anna from '~/images/t8/avatars/anna-128.webp'
+import annaBrand from '~/images/t8/avatars/anna-brand-128.webp'
 import asuka from '~/images/t8/avatars/asuka-128.webp'
 import asukaBrand from '~/images/t8/avatars/asuka-brand-128.webp'
 import azucena from '~/images/t8/avatars/azucena-128.webp'
@@ -117,7 +118,7 @@ export const t8AvatarMap: Record<string, string> = {
 
 export const t8AvatarBrandMap: Record<string, string> = {
   alisa: alisaBrand,
-  anna,
+  anna: annaBrand,
   asuka: asukaBrand,
   azucena: azucenaBrand,
   claudio: claudioBrand,
