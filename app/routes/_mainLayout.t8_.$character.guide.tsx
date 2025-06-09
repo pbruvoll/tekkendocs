@@ -109,7 +109,7 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
     { characterName: character, editUrl, guideData, game },
     {
       headers: {
-        ...getCacheControlHeaders({ seconds: isPreview ? 60 * 5 : 5 }),
+        ...getCacheControlHeaders({ seconds: isPreview ? 5 : 60 * 5 }),
       },
     },
   )
