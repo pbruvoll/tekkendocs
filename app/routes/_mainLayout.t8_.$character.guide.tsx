@@ -3,6 +3,7 @@ import { Pencil1Icon } from '@radix-ui/react-icons'
 import { Text } from '@radix-ui/themes'
 import {
   data,
+  type HeadersFunction,
   json,
   type LoaderFunctionArgs,
   type MetaFunction,
@@ -55,7 +56,9 @@ const navData: NavLinkInfo[] = [
   { link: '', displayName: 'Guide' },
 ]
 
-export const headers = () => getCacheControlHeaders({ seconds: 60 * 5 })
+export const headers: HeadersFunction = ({ loaderHeaders }) => {
+  return loaderHeaders || getCacheControlHeaders({ seconds: 60 * 5 })
+}
 
 export const loader = async ({ params, request }: LoaderFunctionArgs) => {
   const url = new URL(request.url)
