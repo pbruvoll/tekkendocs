@@ -118,6 +118,7 @@ export const characterGuideAuthors: Record<
     lidia: { author: 'Leemishima' },
     lili: { author: 'DewGlider' },
     raven: { author: 'JacobKaas' },
+    yoshimitsu: { author: 'Trizzy the Rapper', version: 'S2' },
     xiaoyu: { author: 'Kanda', version: 'S2' },
   },
   T7: {},
