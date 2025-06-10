@@ -1,5 +1,5 @@
 import { Fragment } from 'react'
-import { FaYoutube } from 'react-icons/fa'
+import { FaTwitch, FaYoutube } from 'react-icons/fa'
 import { TwitterLogoIcon } from '@radix-ui/react-icons'
 import { Link } from '@remix-run/react'
 import metafyGradientIcon from '~/images/icons/metafy-gradient.svg'
@@ -40,6 +40,13 @@ const PersonLinkComponent = ({ name, url }: PersonLink) => {
             return (
               <Link key="twitter" to={url}>
                 <TwitterLogoIcon width="1em" height="1em" />
+              </Link>
+            )
+          }
+          if (url.includes('twitch.tv')) {
+            return (
+              <Link key="twitch" to={url}>
+                <FaTwitch width="1em" height="1em" />
               </Link>
             )
           }
