@@ -56,7 +56,7 @@ H.f,f,F+1;h;37;i13~15;+5;+31a (+23);;"* Tornado
 H.2+3;m,m,m,h;55;i18;+10g;+0d;;"* Heat Smash
 * Balcony Break
 * Transition to r31 HAE on block
-* Cancel HAE transition with B
+** Cancel HAE transition with B on block
 * Transition to attack throw on hit
 * Increases HAE level by 1 on hit
 * 8 chip on block
@@ -358,21 +358,24 @@ CAT.F;;;;;;;Actionable after 20f;;WLF;Lidia-CAT.F;Cat Stance > Stalking Wolf Sta
 CAT.b;;;;;;;"* After recovery, limited to blocking for 13 frames
 * Takes 8f to cancel into block";;;Lidia-CAT.b;Cat Stance > Cancel;r15;;
 CAT.b,B;;;;;;;Low crush 11~25 fs26~28;js11~25 fs26~28;;Lidia-CAT.b,B;Cat Stance > Vacuity;r32;;File:t8-p2-lidia-cat.b,b.mp4
-HAE.1;m;21;i18~19;-11;+80a (+60);;"* Spike
+HAE.1;m;21/23;i18~19;-11;+80a (+60);;"* Spike
 * Power up based on Heaven and Earth level
-* Chip damage on block
+* 4/6/7 chip damage on block
 * Guarantees grounded hit vs airborne opponent
-Power crush 7~17";spk chp pc7~17;;Lidia-HAE.1;Heaven's Gavel: Injustice Banish;r36;;File:t8-p2-lidia-hae.1.mp4
-HAE.2;m,m;10,26;i13, i20~21;+6;+14a;;"* Balcony Break
-* Chip damage on block
+* +51a on BT hit
+Power crush 7~17";spk pc7~17;;Lidia-HAE.1;Heaven's Gavel: Injustice Banish;r36;;File:t8-p2-lidia-hae.1.mp4
+HAE.2;m,m;10,26/30/34;i13, i20~21;+6;+14a;;"* Balcony Break
+* 7/11/12 chip damage on block
 * Power up based on Heaven and Earth level
 * +35a (-1) on hit with HAE level 3
-* 2nd hit available on hit or block only";bbr chp;;Lidia-HAE.2;Heaven's Sword: Wreath Puncture;r34;;File:t8-p2-lidia-hae.2.mp4
-HAE.1+2;h!;35;i16;;+0a;;"* Tornado
+* 2nd hit available on hit or block only";bbr;;Lidia-HAE.2;Heaven's Sword: Wreath Puncture;r34;;File:t8-p2-lidia-hae.2.mp4
+HAE.1+2;h!;35/38/41;i16;;+0a;;"* Tornado
 * Power up based on Heaven and Earth level";trn;;Lidia-HAE.1+2;Heaven's Cannon: Crushing Defamation;r39;;File:t8-p2-lidia-hae.1+2.mp4
 HRS.1;h;22;i17;+1;+16g;;"* Balcony Break
 * Homing
-Power crush 7~16";bbr hom pc7~16;WLF;Lidia-HRS.1;Hachi-wari;r26 WLF;;File:t8-p2-lidia-hrs.1.mp4
+* Transition to WLF on hit or block
+* 8 chip damage on block after absorbing an attack in power crush state
+Power crush 7~16";bbr hom pc7~16;WLF;Lidia-HRS.1;Hachi-wari;r26;;File:t8-p2-lidia-hrs.1.mp4
 HRS.2;m,t;18,10;i16;-10;+8;;"* Heat Engager
 
 * Heat Dash +5, +67a (+50)
@@ -380,8 +383,9 @@ HRS.2;m,t;18,10;i16;-10;+8;;"* Heat Engager
 * Transitions to attack throw on front hit
 * Does not transition to throw when using Heat Dash
 * Activates Heat when throw is completed
-* Transition to r33 HAE on hit only
-* Cancel HAE transition with B";he;HAE;Lidia-HRS.2;Unanimous Consent;r25;;File:t8-p2-lidia-hrs.2.mp4
+* Transition to r33 HAE on hit only when heat is not depleted
+* Cancel HAE transition with B (+6)
+* +6 on hit when heat is depleted";he;HAE;Lidia-HRS.2;Unanimous Consent;r25;;File:t8-p2-lidia-hrs.2.mp4
 HRS.3;m;21;i22~24;-4;+14;;"* Strong Aerial Tailspin
 * Balcony Break
 * Homing
@@ -401,6 +405,7 @@ OTG.d+1+2;L;24;i18~19;-13;+6c;;"* Spike
 * Power up based on Heaven and Earth level
 * Regain recoverable health";spk;;Lidia-OTG.d+1+2;Veto;r31;;
 P.HAE;;;;;;;"* Transition to HAE
+* Strong parry effect
 * Partially restore remaining Heat time";;HAE,HAE;Lidia-P.HAE;Heaven and Earth;r28 HAE;;
 P.b+1+3;h,h,h;5,5,20;i16, i16, i16;;+23a (+18);;"Input 2 within a 2f window (15~16) on the second punch, adds 2 damage
 15 16";15 16;;Lidia-P.b+1+3;Law of the Land;r32;;
@@ -437,12 +442,12 @@ WLF.b,B;;;;;;;Low crush 11~25 fs26~28;js11~25 fs26~28;;Lidia-WLF.b,B;Stalking Wo
 Back throw;t;50;;;+0d;;"* Homing
 * Throw break: none
 * Opponent on hit: FDFT";hom;;Lidia-Back throw;Smear Campaign;;;
-CH.db+3;t;41;i16~17;;-2f;;"* Power up based on Heaven and Earth level:
-** HAE lvl.0 17 damage
-** HAE lvl.1 19 damage
-** HAE lvl.2 21 damage
-** HAE lvl.3 27 damage
-*** lvl.3 
+CH.db+3;t;20/24,17/19/21/27;i16~17;;-2;;"* Power up based on Heaven and Earth level:
+** Level 0: 17 damage
+** Level 1: 19 damage
+** Level 2: 21 damage
+** Level 3: 27 damage
+*** Level 3: 
 Removes Recoverable Health
 * Restores recoverable health";;;Lidia-CH.db+3;Red Tape;;;
 Left throw;t;40;;-3;+4;;"* Throw break: 1
