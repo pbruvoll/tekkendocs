@@ -91,7 +91,7 @@
     "short_notes": "* 10 chip damage",
     "startup": "i13~15",
     "tags": "hs bbr",
-    "target": "m",
+    "target": "M,M",
     "video": ""
   },
   {
@@ -585,7 +585,7 @@
     "short_notes": "* Combo from 2nd hit with 9F delay\n* Combo from 1st CH\n* Move can be delayed by 8F\n* Input can be delayed by 10F",
     "startup": "i15~16, ,i25~26",
     "tags": "",
-    "target": "m, m, m",
+    "target": "m, m, M",
     "video": "File:t8-p2-kuma-df+1,2,1+2.mp4"
   },
   {
@@ -775,7 +775,7 @@
     "short_notes": "* 27 damage on clean hit",
     "startup": "i14~15",
     "tags": "bbr",
-    "target": "m",
+    "target": "M",
     "video": "File:t8-p2-kuma-d+1+2.mp4"
   },
   {
@@ -851,7 +851,7 @@
     "short_notes": "* Combo from 1st hit\n* Hold 2 to power up, up to 2 charge levels\n* Transition to HBS with input D or 3+4",
     "startup": "i14~15, i22~23",
     "tags": "spk",
-    "target": "h, m",
+    "target": "h, M",
     "video": ""
   },
   {
@@ -870,7 +870,7 @@
     "short_notes": "* Heat skips to Level 2 charge\n* Transition to HBS with input D or 3+4",
     "startup": "i14~15, i33~34",
     "tags": "spk chp",
-    "target": "h, m",
+    "target": "h, M",
     "video": ""
   },
   {
@@ -889,7 +889,7 @@
     "short_notes": "* Cannot absorb with power crush\n* Heat reduces charge length (consumes partial Heat time)\n* Transition to HBS with input D or 3+4",
     "startup": "i14~15, i47~48",
     "tags": "spk chp",
-    "target": "h, m",
+    "target": "h, M",
     "video": "File:t8-p2-kuma-db+1,2ss.mp4"
   },
   {
@@ -904,11 +904,11 @@
     "on_block": "-15 / -17 HBS",
     "on_ch": "",
     "on_hit": "-1 / -3 HBS",
-    "recovery": "",
+    "recovery": "FC",
     "short_notes": "* Transition to HBS with input D or 3+4",
     "startup": "i18",
     "tags": "",
-    "target": "l",
+    "target": "L",
     "video": "File:t8-p2-kuma-db+2.mp4"
   },
   {
@@ -965,7 +965,7 @@
     "short_notes": "",
     "startup": "i14~15",
     "tags": "",
-    "target": "mm",
+    "target": "m,m",
     "video": ""
   },
   {
@@ -984,7 +984,7 @@
     "short_notes": "",
     "startup": "i14~15, i15~16",
     "tags": "",
-    "target": "mm, mm",
+    "target": "m,m, m,m",
     "video": ""
   },
   {
@@ -1003,7 +1003,7 @@
     "short_notes": "",
     "startup": "i14~15, ,i20~21",
     "tags": "",
-    "target": "mm, mm, m",
+    "target": "m,m, m,m, m",
     "video": "File:t8-p2-kuma-db+1+2,1+2,2.mp4"
   },
   {
@@ -1079,7 +1079,7 @@
     "short_notes": "* Transition to -13 HBS with input D or 3+4\n* 9 chip damage on block\n* 12 chip damage on block after absorbing an attack in power crush state\n* -3 on block after absorbing an attack in power crush state",
     "startup": "i22~23",
     "tags": "bbr pc7~21",
-    "target": "m",
+    "target": "M",
     "video": "File:t8-p2-kuma-b+1.mp4"
   },
   {
@@ -1495,7 +1495,7 @@
     "on_hit": "+3",
     "recovery": "",
     "short_notes": "",
-    "startup": "i18~19",
+    "startup": "i17~18",
     "tags": "",
     "target": "m",
     "video": ""
@@ -1509,12 +1509,12 @@
     "input": "d,df,f+2,1",
     "name": "Grizzly Claws",
     "notes": "* Heat Engager\n\n* Heat Dash +36a (+26)\n\n* Balcony Break\n* Combos from 1st hit",
-    "on_block": "-14",
+    "on_block": "-10",
     "on_ch": "",
-    "on_hit": "+29a (+3)",
+    "on_hit": "+33a (+7)",
     "recovery": "",
     "short_notes": "\n* Heat Dash +36a (+26)\n\n* Combos from 1st hit",
-    "startup": "i18~19, i27",
+    "startup": "i17~18, i27",
     "tags": "he bbr",
     "target": "m, m",
     "video": "File:t8-p2-kuma-qcf+2,1.mp4"
@@ -1533,7 +1533,7 @@
     "on_hit": "+40a",
     "recovery": "",
     "short_notes": "",
-    "startup": "i18~19, i33~34",
+    "startup": "i17~18, i33~34",
     "tags": "chp",
     "target": "m, l",
     "video": "File:t8-p2-kuma-qcf+2,2.mp4"
@@ -1995,21 +1995,21 @@
     "video": "File:t8-p2-kuma-hbs.1+2.mp4"
   },
   {
-    "crush": "pc8~",
+    "crush": "pc7~",
     "damage": "21",
     "gif": "",
     "id": "Kuma-HBS.3+4",
     "image": "",
     "input": "HBS.3+4",
     "name": "Bear Tackle",
-    "notes": "* Heat Engager\n\n* Heat Dash +43d (+35)\n\n* Balcony Break\nPower crush 8~",
+    "notes": "* Heat Engager\n\n* Heat Dash +43d (+35)\n\n* Balcony Break\nPower crush 7~",
     "on_block": "-14",
     "on_ch": "",
     "on_hit": "+9a (-1)",
     "recovery": "",
     "short_notes": "\n* Heat Dash +43d (+35)\n",
     "startup": "i20~24",
-    "tags": "he bbr pc8~",
+    "tags": "he bbr pc7~",
     "target": "m",
     "video": "File:t8-p2-kuma-hbs.3+4.mp4"
   },
@@ -2116,14 +2116,14 @@
     "image": "",
     "input": "HBS.d+1+2",
     "name": "Frolicking Bear",
-    "notes": "* Transition to HBS",
+    "notes": "* Tornado\n* Transition to HBS\n* Tornado on CH only",
     "on_block": "-3",
-    "on_ch": "",
+    "on_ch": "+76(+60)",
     "on_hit": "+4",
     "recovery": "",
-    "short_notes": "* Transition to HBS",
+    "short_notes": "* Transition to HBS\n* Tornado on CH only",
     "startup": "i16~20",
-    "tags": "",
+    "tags": "trn",
     "target": "m",
     "video": "File:t8-p2-kuma-hbs.d+1+2.mp4"
   },

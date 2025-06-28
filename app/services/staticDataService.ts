@@ -115,7 +115,7 @@ export const characterGuideAuthors: Record<
     claudio: { author: 'Tetsu' },
     jin: { author: 'Bok Dibi', version: 'S2' },
     lee: { author: 'Super Akouma', version: 'S2' },
-    lidia: { author: 'Leemishima' },
+    lidia: { author: 'Leemishima', version: 'S2' },
     lili: { author: 'DewGlider' },
     raven: { author: 'JacobKaas', version: 'S2' },
     yoshimitsu: { author: 'Trizzy the Rapper', version: 'S2' },
