@@ -403,15 +403,18 @@ ws1;m;12;i13~14;-6;+5;+9;;;;Devil Jin-ws1;Solo Piston;r24;;
 ws1,1;m, h;12, 10;i13~14, i30~32;+11;+16;;"* Strong Aerial Tailspin
 * Balcony Break On air hit
 * Weapon
-* Combo from 1st CH with 1f delay
+* Combo from 1st CH
+* Interrupt with i12 from 1st block
 * Transition to MCR on hit or block only
 * Only deals recoverable damage
 * 2 chip damage on block";wpn;MCR;Devil Jin-ws1,1;Infernal Shackle;r41;;
 ws1,2;m, m;12, 15;i13~14, i22;-11;+6;+10;"* Enter MCR +14 with F on hit
 * Enter MCR +17 with F on CH
-* Combos from 1st hit with 7f delay
-* Input can be delayed 10f
-* Move can be delayed 9f";;MCR,MCR;Devil Jin-ws1,2;Bloody Glaive;r26;;
+* Combos from 1st hit with 7F delay
+* Combos from 1st CH with 11F delay
+* Interrupt with i4 from 1st block (trade with i5)
+* Input can be delayed 11F
+* Move can be delayed 9F";;MCR,MCR;Devil Jin-ws1,2;Bloody Glaive;r26;;
 ws2;m;20;i15~16;-12~-11;+72a (+56);;"* Tornado
 * First active frame range: 2.50
 * 6 chip damage on block";trn;;Devil Jin-ws2;Alaya;r31;;File:t8-p2-devil jin-ws2.mp4
@@ -420,7 +423,10 @@ ws3;m;16;i14;-11;+9;+14;"* Knee
 * Enter MCR +23 with F on CH";kne;MCR,MCR;Devil Jin-ws3;Organ Wrecker;r26;;File:t8-p2-devil jin-ws3.mp4
 ws4;m;10;i11~12;-3;+8;;;;;Devil Jin-ws4;;r21;;
 ws4,4;m, M;10, 20;i11~12, i27~28;-16;+7c;;"* Spike
-* Combo from 1st hit";spk;;Devil Jin-ws4,4;Wretched Heel;r34;;File:t8-p2-devil jin-ws4,4.mp4
+* Combo from 1st hit with 1F delay
+* Interrupt with i8 from 1st block
+* Input can be delayed by 1F
+* Move cannot be delayed";spk;;Devil Jin-ws4,4;Wretched Heel;r34;;File:t8-p2-devil jin-ws4,4.mp4
 SS.2;m;25;i17~18;-22;+72a;;"* Transition to Hell's Gate on hit with U
 * Sidestep adds 9f, effective move startup: i26";;;Devil Jin-SS.2;Devil Twister;r42;;File:t8-p2-devil jin-ss.2.mp4
 SS.2,U;m!,M!;35 (24), 40 (20);i37~38 i22~60;;-5a;;"* Only available as combo from 1st hit
@@ -451,10 +457,13 @@ FLY.4;M;10;i20~21;-29;-20s;;"&lt;div class=&quot;plainlist&quot;&gt;
 FLY.4,1;M, h;10, 20;i20~21, i40~41;+1;+71a (+51);;"* Strong Aerial Tailspin
 * 14 damage with combo scaling from 1st hit
 * 24 damage total from 1st hit
+* Interrupt with i19 from 1st block
 Low crush 1~";js1~;;Devil Jin-FLY.4,1;Forsaken Soul;r23;;
 FLY.4,2;M, m;10, 20;i20~21, i22~23;-27;+52a (+7);;"* 14 damage with combo scaling from 1st hit
-* 24 damage total from 1st hit";;;Devil Jin-FLY.4,2;;r47;;
-FLY.4,2,1;M, m, m;10, 20, 20;i20~21, ,i22~24;-16;+29a(+19a);;Low crush 22~;js22~;;Devil Jin-FLY.4,2,1;;r33;;
+* 24 damage total from 1st hit
+* Interrupt with i1 from 1st block";;;Devil Jin-FLY.4,2;;r47;;
+FLY.4,2,1;M, m, m;10, 20, 20;i20~21, ,i22~24;-16;+29a(+19a);;"* Interrupt with i24 from 2nd block
+Low crush 22~";js22~;;Devil Jin-FLY.4,2,1;;r33;;
 FLY.4,2,1,UF;M, m, m, t;10, 20, 20, 14 (10);i20~21, ,i55?;;-4d;;"* Transition to attack throw on hit
 * Available only on hit
 * 10dmg with combo scaling from previous hit
@@ -496,8 +505,10 @@ MCR.2,2;m, M;12, 20;i15~16, i24-26;-14c;+2a;;"* Heat Engager
 
 * Spike
 * 6 chip damage on blocked Heat Dash
-* Combo from 1st hit
+* Combo from 1st hit with 2F delay
 * Opponent recovers FDFA on hit
+* Input can be delayed by 2F
+* Move cannot be delayed
 &lt;div class=&quot;plainlist&quot;&gt;
 * ,Low crush 1~17
 * ,fs18~20&lt;/div&gt;";"he spk &lt;div class=&quot;plainlist&quot;&gt;
@@ -519,10 +530,13 @@ MCR.4;M;10;i20~21;-29;-20s;;"&lt;div class=&quot;plainlist&quot;&gt;
 MCR.4,1;M, h;10, 20;i20~21, i40~41;+1;+71a (+51);;"* Strong Aerial Tailspin
 * 14 damage with combo scaling from 1st hit
 * 24 damage total from 1st hit
+* Interrupt with i19 from 1st block
 Low crush 1~";js1~;;Devil Jin-MCR.4,1;Forsaken Soul;r23;;
 MCR.4,2;M, m;10, 20;i20~21, i22~23;-27;+52a (+7);;"* 14 damage with combo scaling from 1st hit
-* 24 damage total from 1st hit";;;Devil Jin-MCR.4,2;;r47;;
-MCR.4,2,1;M, m, m;10, 20, 20;i20~21, ,i22~24;-16;+29a(+19a);;Low crush 22~;js22~;;Devil Jin-MCR.4,2,1;;r33;;
+* 24 damage total from 1st hit
+* Interrupt with i1 from 1st block";;;Devil Jin-MCR.4,2;;r47;;
+MCR.4,2,1;M, m, m;10, 20, 20;i20~21, ,i22~24;-16;+29a(+19a);;"* Interrupt with i24 from 2nd block
+Low crush 22~";js22~;;Devil Jin-MCR.4,2,1;;r33;;
 MCR.4,2,1,UF;M, m, m, t;10, 20, 20, 14 (10);i20~21, ,i55?;;-4d;;"* Transition to attack throw on hit
 * Available only on hit
 * 10dmg with combo scaling from previous hit
