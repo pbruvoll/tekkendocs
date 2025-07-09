@@ -196,7 +196,7 @@ db+2;m;17;i15~16;-9;+8s;+36d;"* Strong Aerial Tailspin
 db+3;L;21;i30~32;-26;+68a (+52);;"* Stagger on block
 * Instant Tornado on hit
 High crush 16~63";cs16~63;FC;Anna-db+3;Mudslide;r34 FC;;
-db+4;L;14;i17~18;-13;+8c;+13;"* Transition to r26 HAM on hit automatically
+db+4;L;14;i17~18;-13;+6c;+13;"* Transition to r26 HAM on hit automatically
 * Cancel HAM transition -13 +3c +8 with B";;HAM;Anna-db+4;Scorned Mistress;r31;;
 db+3+4;L;18;i24;-26;-6;;"* Clean hit -4 on hit, +3 damage
 High crush 6~";cs6~;FC;Anna-db+3+4;;r34 FC;;
@@ -351,9 +351,9 @@ f,f,F+4;m;28;i19~20;+3;+19a (+9);;"* Balcony Break
 ws1;m;10;i13~14;-8;+5;;;;;Anna-ws1;;r26;;
 ws1,2;m, M;10, 17;i13~14, i18~19;-13;+9s;;"* Strong Aerial Tailspin
 * Transition to r30 TOM on hit automatically
-* Combo from 1st hit with 13f delay
-* Input can be delayed 13f
-* Move can be delayed 9f";;TOM;Anna-ws1,2;Ocelot Frenzy;r31;;
+* Combo from 1st hit with 9?f delay
+* Input can be delayed 9?f
+* Move can be delayed 5?f";;TOM;Anna-ws1,2;Ocelot Frenzy;r31;;
 ws2;m;16;i16~17;-13;+27a (+17);;* Tornado;trn;;Anna-ws2;Rising Palm;r35;;
 ws3;m;20;i11~12;-3;+8;+12;;;CJM;Anna-ws3;Face Wash;r21 CJM;;
 ws4;m;16;i11~12;-6;+5;;;;;Anna-ws4;Toe Smash;r24;;
@@ -412,7 +412,9 @@ Power crush 7~19";bbr spk pc7~19;;Anna-CJM.4;Queen Heel;r39;;
 CJM.1+2;M;23;i17~18;+2c;+8c;+23d;"* Spike
 * 4 chip damage on block
 * 7 chip damage on block in heat";spk;FC;Anna-CJM.1+2;Caracal;r30 FC;;
-CJM.P;m;20;i15~16;-14;+29a (+19);;is1~;is1~;;Anna-CJM.P;Stryx;r34;;
+CJM.P;m;20;i15~16;-14;+29a (+19);;"* Tornado
+* Tornado launch on hit
+is1~";trn is1~;;Anna-CJM.P;Stryx;r34;;
 CJM.df;;;;;;;"&lt;div class=&quot;plainlist&quot;&gt;
 * High crush 5~
 * fs8~35&lt;/div&gt;";"&lt;div class=&quot;plainlist&quot;&gt;
@@ -465,13 +467,12 @@ HAM.2,1;m, h;12, 23;i15~16, i25~26;;+17a (+8);;"* Strong Aerial Tailspin
 * Balcony Break
 * Weapon
 * Combo from 1st hit
-* 6 chip damage on block";bbr wpn;;Anna-HAM.2,1;;r32;;
-HAM.2,1,2;m, h, M;12, 23, 32;i15~16, ,i33~34;+6c;+17a (+7);;"* Reversal Break
-* Spike
+* 4 chip damage on block";bbr wpn;;Anna-HAM.2,1;;r32;;
+HAM.2,1,2;m, h, M;12, 23, 32;i15~16, ,i33~34;+6c;+17a (+7);;"* Spike
 * Weapon
 * Combo from 1st hit
-* 9 chip damage on block
-* 12 chip damage on block in heat";spk wpn;FC;Anna-HAM.2,1,2;Banshee Scream;r38 FC;;
+* 6 chip damage on block
+* 9 chip damage on block in heat";spk wpn;FC;Anna-HAM.2,1,2;Banshee Scream;r38 FC;;
 HAM.2,2;m, M;12, 23;i15~16, i22~23;-14;+33a;;"* Tornado
 * Weapon
 * Combo from 1st hit
@@ -483,12 +484,11 @@ HAM.3;L;17;i20~21;-14;-3;+6c;"* Homing
 High crush 8~";hom cs8~;CJM,FC;Anna-HAM.3;Rat Sweep;r32 FC;;
 HAM.4;m,m;12,12;i16~19 i4~6;-12;+6;;"* Balcony Break
 High crush 5~";bbr cs5~;FC;Anna-HAM.4;Piston Kick;r35 FC;;
-HAM.1+2;M;30;i24~25;+6c;+17a (+7);;"* Reversal Break
-* Balcony Break
+HAM.1+2;M;30;i24~25;+2c;+17a (+7);;"* Balcony Break
 * Spike
 * Weapon
-* 12 chip damage on block
-* 15 chip damage on block in heat";bbr spk wpn;FC;Anna-HAM.1+2;Dullahan Smash;r38 FC;;
+* 6 chip damage on block
+* 9 chip damage on block in heat";bbr spk wpn;FC;Anna-HAM.1+2;Dullahan Smash;r38 FC;;
 HAM.b+3;;;;;;;;;;Anna-HAM.b+3;;;;
 LIB.d+3;m;25;i24~26;+2;+13a;+38a;"* Balcony Break
 * Floor Break on airborne hit
