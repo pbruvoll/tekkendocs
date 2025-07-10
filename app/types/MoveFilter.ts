@@ -32,6 +32,8 @@ export type MoveFilter = {
   hitsGrounded?: boolean
   video?: boolean
   chip?: boolean
+  forcesCrouchOnBlock?: boolean
+  forcesCrouchOnHit?: boolean
   searchQuery?: string
   stance?: string[]
   transition?: string[]

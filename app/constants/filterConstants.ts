@@ -32,6 +32,8 @@ export const filterKey = {
   HitsGrounded: 'hitsGrounded',
   RemoveRecoveryHealth: 'removeRecoveryHealth',
   RecoverFullCrouch: 'recoverFullCrouch',
+  ForcesCrouchOnBlock: 'forcesCrouchOnBlock',
+  ForcesCrouchOnHit: 'forcesCrouchOnHit',
 } as const
 
 export const hitLevelValue = {
