@@ -67,6 +67,14 @@ export const getFilterFromParams = (
       searchParams,
       filterKey.RemoveRecoveryHealth,
     ),
+    forcesCrouchOnBlock: getSearchParamBoolean(
+      searchParams,
+      filterKey.ForcesCrouchOnBlock,
+    ),
+    forcesCrouchOnHit: getSearchParamBoolean(
+      searchParams,
+      filterKey.ForcesCrouchOnHit,
+    ),
     chip: getSearchParamBoolean(searchParams, filterKey.Chip),
   }
 }

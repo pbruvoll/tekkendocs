@@ -58,6 +58,8 @@ export const FrameDataFilterSelection = ({
     stance: stanceFilter,
     transition: transitionFilter,
     removeRecoveryHealth,
+    forcesCrouchOnBlock,
+    forcesCrouchOnHit,
     recoverFullCrouch,
   } = filter
   return (
@@ -304,6 +306,16 @@ export const FrameDataFilterSelection = ({
                 'Removes recoverable health',
               ],
               [filterKey.RecoverFullCrouch, recoverFullCrouch, 'Recover FC'],
+              [
+                filterKey.ForcesCrouchOnBlock,
+                forcesCrouchOnBlock,
+                'Forces crouch on block',
+              ],
+              [
+                filterKey.ForcesCrouchOnHit,
+                forcesCrouchOnHit,
+                'Forces crouch on hit or counter',
+              ],
               [filterKey.Spike, spike, 'Spike'],
               [filterKey.FloorBreak, floorBreak, 'Floor break'],
               [filterKey.Elbow, elbow, 'Elbow'],

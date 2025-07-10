@@ -191,6 +191,14 @@ export const recoverFullCrouch = (move: Move) => {
   )
 }
 
+export const forcesCrouchOnBlock = (move: Move) => {
+  return /\dc/i.test(move.block || '')
+}
+
+export const forcesCrouchOnHit = (move: Move) => {
+  return /\dc/.test(move.hit || '') || /\dc/.test(move.counterHit || '')
+}
+
 export const hasTag = (tag: string, move: Move) => {
   return move.tags?.[tag] !== undefined
 }
@@ -301,6 +309,9 @@ export const filterRows = (
     [filter.jails, jails],
     [filter.chip, isChip],
     [filter.removeRecoveryHealth, removesRecoverableHealth],
+    [filter.recoverFullCrouch, recoverFullCrouch],
+    [filter.forcesCrouchOnBlock, forcesCrouchOnBlock],
+    [filter.forcesCrouchOnHit, forcesCrouchOnHit],
   ] as const
   propFilters.forEach(([filterValue, filterFunc]) => {
     if (filterValue) {
@@ -446,6 +457,8 @@ export const filterMoves = (moves: Move[], filter: MoveFilter | undefined) => {
     [filter.chip, isChip],
     [filter.removeRecoveryHealth, removesRecoverableHealth],
     [filter.recoverFullCrouch, recoverFullCrouch],
+    [filter.forcesCrouchOnBlock, forcesCrouchOnBlock],
+    [filter.forcesCrouchOnHit, forcesCrouchOnHit],
     [filter.powerCrush, (move: Move) => hasTag('pc', move)],
     [filter.highCrush, (move: Move) => hasTag('cs', move)],
     [filter.lowCrush, (move: Move) => hasTag('js', move)],
