@@ -65,7 +65,7 @@ const charsT8: string[] = [
   'devil-jin',
   'dragunov',
   'eddy',
-  //'fahkumram',
+  'fahkumram',
   'feng',
   'heihachi',
   'hwoarang',
