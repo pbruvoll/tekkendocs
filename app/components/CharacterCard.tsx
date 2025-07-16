@@ -35,7 +35,10 @@ export const CharacterCard2 = ({
             )}
           />
           {badge && (
-            <Badge variant="secondary" className="absolute bottom-4 left-0.5">
+            <Badge
+              variant="secondary"
+              className="absolute bottom-4 left-0.5 border border-black/60"
+            >
               {badge}
             </Badge>
           )}
