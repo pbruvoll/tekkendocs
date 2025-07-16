@@ -113,7 +113,7 @@ export const characterGuideAuthors: Record<
     asuka: { author: 'Fergus', version: 'S2' },
     azucena: { author: 'Koenji' },
     bryan: { author: 'Ty' },
-    claudio: { author: 'Tetsu' },
+    claudio: { author: 'Tetsu', version: 'S2' },
     jin: { author: 'Bok Dibi', version: 'S2' },
     lee: { author: 'Super Akouma', version: 'S2' },
     lidia: { author: 'Leemishima', version: 'S2' },
