@@ -145,6 +145,10 @@ export const isBalconyBreak = (move: Move) => {
   return /balcony break/i.test(move.notes || '')
 }
 
+export const isReversalBreak = (move: Move) => {
+  return /reversal break/i.test(move.notes || '')
+}
+
 export const isHeatEngager = (move: Move) => {
   return /heat engager/i.test(move.notes || '')
 }
@@ -303,6 +307,7 @@ export const filterRows = (
 
   const propFilters = [
     [filter.balconyBreak, isBalconyBreak],
+    [filter.reversalBreak, isReversalBreak],
     [filter.heatEngager, isHeatEngager],
     [filter.homing, isHomingMove],
     [filter.tornado, isTornadoMove],
@@ -446,6 +451,7 @@ export const filterMoves = (moves: Move[], filter: MoveFilter | undefined) => {
 
   const propFilters = [
     [filter.balconyBreak, isBalconyBreak],
+    [filter.reversalBreak, isReversalBreak],
     [filter.heatSmash, (move: Move) => hasTag('hs', move)],
     [filter.heatEngager, isHeatEngager],
     [filter.homing, isHomingMove],

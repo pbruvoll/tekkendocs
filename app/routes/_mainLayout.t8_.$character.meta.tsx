@@ -34,6 +34,7 @@ import {
   isHeatMove,
   isHomingMove,
   isPowerCrush,
+  isReversalBreak,
   isTornadoMove,
 } from '~/utils/frameDataUtils'
 import { getCacheControlHeaders } from '~/utils/headerUtils'
