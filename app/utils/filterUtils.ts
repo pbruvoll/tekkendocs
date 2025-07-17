@@ -37,6 +37,7 @@ export const getFilterFromParams = (
     hitFrameMin: getSearchParamNumber(searchParams, filterKey.HitFrameMin),
     hitFrameMax: getSearchParamNumber(searchParams, filterKey.HitFrameMax),
     balconyBreak: getSearchParamBoolean(searchParams, filterKey.BalconyBreak),
+    reversalBreak: getSearchParamBoolean(searchParams, filterKey.ReversalBreak),
     heatSmash: getSearchParamBoolean(searchParams, filterKey.HeatSmash),
     heatEngager: getSearchParamBoolean(searchParams, filterKey.HeatEngager),
     homing: getSearchParamBoolean(searchParams, filterKey.Homing),

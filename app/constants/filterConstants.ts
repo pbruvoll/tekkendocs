@@ -12,6 +12,7 @@ export const filterKey = {
   HeatEngager: 'heatEngager',
   Homing: 'homing',
   BalconyBreak: 'balconyBreak',
+  ReversalBreak: 'reversalBreak',
   Tornado: 'tonrnado',
   Jails: 'jails',
   NoJails: 'noJails',

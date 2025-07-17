@@ -221,6 +221,8 @@ def _get_tag(noteLine: str) :
             return "he"
         case "balcony break" :
             return "bbr"
+        case "reversal break":
+            return "rbr"
         
     
     if cleanLine.startswith("wall crush") :

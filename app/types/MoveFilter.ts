@@ -11,6 +11,7 @@ export type MoveFilter = {
   homing?: boolean
   tornado?: boolean
   balconyBreak?: boolean
+  reversalBreak?: boolean
   heatSmash?: boolean
   heatEngager?: boolean
   jails?: boolean
