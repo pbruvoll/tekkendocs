@@ -117,7 +117,7 @@ export const characterGuideAuthors: Record<
     jin: { author: 'Bok Dibi', version: 'S2' },
     lee: { author: 'Super Akouma', version: 'S2' },
     lidia: { author: 'Leemishima', version: 'S2' },
-    lili: { author: 'DewGlider' },
+    lili: { author: 'DewGlider', version: 'S2' },
     raven: { author: 'JacobKaas', version: 'S2' },
     yoshimitsu: { author: 'Trizzy the Rapper', version: 'S2' },
     xiaoyu: { author: 'Kanda', version: 'S2' },
