@@ -136,7 +136,6 @@ export const meta: MetaFunction<typeof loader> = ({
       },
     ]
   }
-  console.log('Generating meta for T8 guide', params.character, data)
   const { characterName } = frameData as CharacterFrameData
   const characterId = characterName.toLocaleLowerCase()
   const author = data?.guideData?.authors?.[0]?.name
@@ -187,7 +186,6 @@ export const meta: MetaFunction<typeof loader> = ({
     },
   }
 
-  console.log('Meta for T8 guide', characterId, title, description)
   return [
     ...generateMetaTags({
       matches,
