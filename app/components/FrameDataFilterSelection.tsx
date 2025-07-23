@@ -476,7 +476,6 @@ export const FrameDataFilterSelection = ({
             }
             onClick={() => {
               removeFilterValue(filterKey.NumHitsMax)
-              console.log(numHitsMin, numHitsMax)
               if (numHitsMin === 3 && numHitsMax === undefined) {
                 removeFilterValue(filterKey.NumHitsMin)
               } else {
