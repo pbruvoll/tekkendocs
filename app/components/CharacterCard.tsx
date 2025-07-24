@@ -30,7 +30,7 @@ export const CharacterCard2 = ({
             className={cx(
               'h-full w-full rounded',
               size === 'large'
-                ? 'aspect-[1.4] object-cover object-[80%_50%]'
+                ? 'aspect-[1.55] object-cover object-[80%_50%]'
                 : 'object-contain',
             )}
           />
