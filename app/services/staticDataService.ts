@@ -116,6 +116,7 @@ export const characterGuideAuthors: Record<
     claudio: { author: 'Tetsu', version: 'S2' },
     'devil-jin': { author: 'Vermilion', version: 'S2' },
     jin: { author: 'Bok Dibi', version: 'S2' },
+    jun: { author: 'Pagani', version: 'S2' },
     lee: { author: 'Super Akouma', version: 'S2' },
     lidia: { author: 'Leemishima', version: 'S2' },
     lili: { author: 'DewGlider', version: 'S2' },
