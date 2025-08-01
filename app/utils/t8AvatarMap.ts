@@ -19,6 +19,7 @@ import dragunovBrand from '~/images/t8/avatars/dragunov-brand-128.webp'
 import eddy from '~/images/t8/avatars/eddy-128.webp'
 import eddyBrand from '~/images/t8/avatars/eddy-brand-128.webp'
 import fahkumram from '~/images/t8/avatars/fahkumram-128.webp'
+import fahkumramBrand from '~/images/t8/avatars/fahkumram-brand-128.webp'
 import feng from '~/images/t8/avatars/feng-128.webp'
 import fengBrand from '~/images/t8/avatars/feng-brand-128.webp'
 import heihachi from '~/images/t8/avatars/heihachi-128.webp'
@@ -129,7 +130,7 @@ export const t8AvatarBrandMap: Record<string, string> = {
   'devil-jin': devilJinBrand,
   dragunov: dragunovBrand,
   eddy: eddyBrand,
-  fahkumram,
+  fahkumram: fahkumramBrand,
   feng: fengBrand,
   hwoarang: hwoarangBrand,
   heihachi: heihachiBrand,
