@@ -304,6 +304,14 @@ export default function Index() {
             <Authors authors={authors} />
           </div>
         )}
+        {!!contributors?.length && (
+          <div className="mt-2">
+            <div>
+              <span>Contributors : </span>
+              <PersonLinkList persons={contributors} />
+            </div>
+          </div>
+        )}
         {about && <About about={about} />}
         <GuideNav guideData={guideData}></GuideNav>
         {introduction?.length && <Introduction sections={introduction} />}
@@ -350,14 +358,6 @@ export default function Index() {
         )}
         {externalResources?.length && (
           <ExternalResources externalResources={externalResources} />
-        )}
-        {!!contributors?.length && (
-          <div className="mb-3 mt-3 flex justify-end">
-            <div>
-              <span>Contributors : </span>
-              <PersonLinkList persons={contributors} />
-            </div>
-          </div>
         )}
       </ContentContainer>
     </GuideContext.Provider>
