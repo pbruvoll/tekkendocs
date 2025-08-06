@@ -16,13 +16,13 @@ H.b+1;h;20;i10~11;-8;+36d (+28);;"* Balcony Break
 H.f,F+1+2*;m;30;i39;+11;+22a (+12);;"* Balcony Break
 * Guard Break
 * Partially uses remaining Heat Time";bbr;;Feng-H.f,F+1+2*;Essence of Nian Zhang Mie Ba;;;
+H.2+3;m,m;22,26;i21,24;+12, +24 on STC at Wall, +19 at Wall;+30d (-6);;"Heat Smash
+* Chip damage on block
+* Transitions to STC on block, can cancel with b, change to BKP with b, in STC stance.";hs chp;;Feng-H.2+3;Yinglong Mountain Crusher;;;
 H.2+3;m,t;20,35;i20~21;+12;+0;;"* Heat Smash
 * Balcony Break
 * 7 chip damage on block
 * Transitions to STC on block, can cancel with b at +7 on block";hs bbr;;Feng-H.2+3;Yinglong Mountain Crusher;;;
-H.2+3;m,m;22,26;i21,24;+12, +24 on STC at Wall, +19 at Wall;+30d (-6);;"Heat Smash
-* Chip damage on block
-* Transitions to STC on block, can cancel with b, change to BKP with b, in STC stance.";hs chp;;Feng-H.2+3;Yinglong Mountain Crusher;;;
 R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Removes Recoverable Health
 * Reversal Break
@@ -80,10 +80,10 @@ f+3,2;m, h;10, 17;i21, i21~22;-3;+8;+43d (+35);"* Combo from 1st hit
 * Move can be delayed";;;Feng-f+3,2;Piercing Dragon;;;File:t8-p2-feng-f+3,2.mp4
 f+3,4;m, m;10, 15;i21, i23~24;-16;+33a (+23);;"* Combo from 1st hit
 * Tornado
-Low crush 21";trn js21;;Feng-f+3,4;Climbing Dragon;;;
+Low crush 21";trn js21;;Feng-f+3,4;Climbing Dragon;;;File:t8-p2-feng-f+3,4.mp4
 f+3,4;m, m;10, 15;i21, i23~24;-16;+33a (+23);;"* Combo from 1st hit
 * Tornado
-Low crush 21";trn js21;;Feng-f+3,4;Climbing Dragon;;;File:t8-p2-feng-f+3,4.mp4
+Low crush 21";trn js21;;Feng-f+3,4;Climbing Dragon;;;
 f+4;h;19;i18~19;-9;+52a;;"* Good left sidestep tracking
 * Transition to -5 +56a BT with B";;BT;Feng-f+4;;;;
 f+4,2;h, m;19, 16;i18~19, i24~25;-14;+70a (+54);;"* Combo from 1st hit
@@ -98,8 +98,8 @@ Power crush 7";bbr pc7;;Feng-f+1+2;Tiger's Claw;;;File:t8-p2-feng-f+1+2.mp4
 f+3+4;;;;;;;"*Takes 20 Frames
 *Parry State from 3~18 Frame
 *Parries high and mid fist and feet moves (not elbows/knees/heads etc)
-*Can be do it by QCF+3+4
-*If 1 hit is parried, you can still do your STC move, if 2 hits are parried it launches
+*Can be done with input QCF+3+4
+* Recovers in STC after absorbing one hit, transitions to STC.P after absorbing two hits
 Parry state 3";ps3;;Feng-f+3+4;Shifting Clouds;r20;;
 df+1;m;11;i14;0;+6;+36g;;;;Feng-df+1;Stunning Palm;;;File:t8-p2-feng-df+1.mp4
 df+2;m;15;i20~21;-8;;;;;;Feng-df+2;;;;
@@ -197,9 +197,9 @@ uf+4;m;13;i15~17;-13;+33a (+23);;"* Alternate input with uf or u
 Low crush 9";js9;;Feng-uf+4;Soaring Eagle;;;
 uf+4;m;13;i15~17;-13;+33a (+23);;"* Alternate input with uf or u
 Low crush 9";js9;;Feng-uf+4;Soaring Eagle;;;File:t8-p2-feng-uf+4.mp4
-uf+3+4;M,h,h;10,10,7;i24,4,3;-14;+25a (+18);;High crush 6~24Low crush 25;cs6~24js25;;Feng-uf+3+4;;;;
 uf+3+4;m,h,h;10,10,7;i24,4,3;-14;+25a (+18);;High crush 6~24Low crush 25;cs6~24js25;;Feng-uf+3+4;;;;
-uf+3+4,3;M,h,h, h;10,10,7, 11;i24,4,3, i17~18;-6;+70a (+54);;"* Balcony Break
+uf+3+4;M,h,h;10,10,7;i24,4,3;-14;+25a (+18);;High crush 6~24Low crush 25;cs6~24js25;;Feng-uf+3+4;;;;
+uf+3+4,3;m,h,h, h;10,10,7, 11;i24,4,3, i17~18;-6;+70a (+54);;"* Balcony Break
 * Tornado
 * Combo from 1st hit
 * causes 1st hit not to crush";bbr trn;;Feng-uf+3+4,3;Assassin's Bow;;;File:t8-p2-feng-uf+3+4,3.mp4
@@ -307,8 +307,8 @@ STC.3;h;25;i22~23;+6;+23d;;"* Homing
 * 9 chip damage on block in heat";hom bbr;BT;Feng-STC.3;Spiraling Tiger Kick;BT;;File:t8-p2-feng-stc.3.mp4
 STC.4;l;20;i20;-13;+3;+14;;;;Feng-STC.4;Jin Bu Zhen;;;File:t8-p2-feng-stc.4.mp4
 STC.1+2;m;20;i18;-9c;+17d;;;;;Feng-STC.1+2;Pummeling Fists;;;File:t8-p2-feng-stc.1+2.mp4
-STC.F+3+4;m;21;i18;;+53a;;"* Only occurs during STC after absorbing 2 attacks
-Parry state";ps;;Feng-STC.F+3+4;Falcon Beak's Snare;;;
+STC.P;m;21;i18;;+53a;;"* Only occurs during STC after absorbing 2 hits
+Parry state 3";ps3;;Feng-STC.P;Falcon Beak's Snare;;;
 1+3;t;35;i12~14;-6;-4;;* Throw break 1 or 2;;;Feng-1+3;Neck Twister;;;File:t8-p2-feng-1+3.mp4
 2+4;t;35;i12~14;-3;0;;* Throw break 1 or 2;;;Feng-2+4;Serpent Slayer;;;File:t8-p2-feng-2+4.mp4
 BT.1+4;t;45;;-6;-4;;* Throw break 1+2;;;Feng-BT.1+4_2+3;Pao Lau Impaler;;;File:t8-p2-feng-bt.1+4_2+3.mp4
