@@ -115,6 +115,7 @@ export const characterGuideAuthors: Record<
     bryan: { author: 'Ty' },
     claudio: { author: 'Tetsu', version: 'S2' },
     'devil-jin': { author: 'Vermilion', version: 'S2' },
+    eddy: { author: 'Ace', version: 'S2' },
     hwoarang: { author: 'Kicking Macine', version: 'S2' },
     jin: { author: 'Bok Dibi', version: 'S2' },
     jun: { author: 'Pagani', version: 'S2' },
