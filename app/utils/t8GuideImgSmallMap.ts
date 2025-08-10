@@ -4,6 +4,7 @@ import azucena from '~/images/t8/guides/azucena-600.webp'
 import bryan from '~/images/t8/guides/bryan-600.webp'
 import claudio from '~/images/t8/guides/claudio-600.webp'
 import devilJin from '~/images/t8/guides/devil-jin-600.webp'
+import dragunov from '~/images/t8/guides/dragunov-600.webp'
 import eddy from '~/images/t8/guides/eddy-600.webp'
 import hwoarang from '~/images/t8/guides/hwoarang-600.webp'
 import jin from '~/images/t8/guides/jin-600.webp'
@@ -22,6 +23,7 @@ export const t8GuideImgSmallMap: Record<string, string> = {
   bryan,
   claudio,
   'devil-jin': devilJin,
+  dragunov,
   eddy,
   hwoarang,
   jin,
