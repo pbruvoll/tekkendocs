@@ -63,12 +63,12 @@ export const rankGroups: RankGroup[] = [
       },
       {
         name: '1st Dan',
-        points: 400,
+        points: 4000,
         image: firstDan,
       },
       {
         name: '2nd Dan',
-        points: 1000,
+        points: 8000,
         image: secondDan,
       },
     ],
@@ -78,17 +78,17 @@ export const rankGroups: RankGroup[] = [
     ranks: [
       {
         name: 'Fighter',
-        points: 1600,
+        points: 12001,
         image: fighter,
       },
       {
         name: 'Strategist',
-        points: 2600,
+        points: 17002,
         image: strategist,
       },
       {
         name: 'Combatant',
-        points: 3400,
+        points: 22003,
         image: combatant,
       },
     ],
@@ -98,17 +98,17 @@ export const rankGroups: RankGroup[] = [
     ranks: [
       {
         name: 'Brawler',
-        points: 4200,
+        points: 27004,
         image: brawler,
       },
       {
         name: 'Ranger',
-        points: 5400,
+        points: 33005,
         image: ranger,
       },
       {
         name: 'Cavalry',
-        points: 6400,
+        points: 39006,
         image: cavalry,
       },
     ],
@@ -118,17 +118,17 @@ export const rankGroups: RankGroup[] = [
     ranks: [
       {
         name: 'Warrior',
-        points: 7400,
+        points: 45007,
         image: warrior,
       },
       {
-        name: 'Assaliant',
-        points: 9200,
+        name: 'Assailant',
+        points: 51009,
         image: assaliant,
       },
       {
         name: 'Dominator',
-        points: 10800,
+        points: 57009,
         image: dominator,
       },
     ],
@@ -138,17 +138,17 @@ export const rankGroups: RankGroup[] = [
     ranks: [
       {
         name: 'Vanquisher',
-        points: 12400,
+        points: 63010,
         image: vanquisher,
       },
       {
         name: 'Destroyer',
-        points: 14700,
+        points: 70011,
         image: destroyer,
       },
       {
         name: 'Eliminator',
-        points: 16600,
+        points: 77012,
         image: eliminator,
       },
     ],
@@ -157,18 +157,18 @@ export const rankGroups: RankGroup[] = [
     name: 'Red',
     ranks: [
       {
-        name: 'Ganryu',
-        points: 18500,
+        name: 'Garyu',
+        points: 84013,
         image: ganryu,
       },
       {
         name: 'Shinryu',
-        points: 23100,
+        points: 94014,
         image: shinryu,
       },
       {
         name: 'Tenryu',
-        points: 27300,
+        points: 104015,
         image: tenryu,
       },
     ],
@@ -178,17 +178,17 @@ export const rankGroups: RankGroup[] = [
     ranks: [
       {
         name: 'Mighty Ruler',
-        points: 31500,
+        points: 114016,
         image: mightyRuler,
       },
       {
         name: 'Flame Ruler',
-        points: 36500,
+        points: 125017,
         image: flameRuler,
       },
       {
         name: 'Battle Ruler',
-        points: 41100,
+        points: 136018,
         image: battleRuler,
       },
     ],
@@ -198,22 +198,22 @@ export const rankGroups: RankGroup[] = [
     ranks: [
       {
         name: 'Fujin',
-        points: 45700,
+        points: 147019,
         image: fujin,
       },
       {
         name: 'Raijin',
-        points: 52300,
+        points: 159020,
         image: raijin,
       },
       {
         name: 'Kishin',
-        points: 58500,
+        points: 171021,
         image: kisin,
       },
       {
         name: 'Bushin',
-        points: 64700,
+        points: 183022,
         image: bushin,
       },
     ],
@@ -223,12 +223,12 @@ export const rankGroups: RankGroup[] = [
     ranks: [
       {
         name: 'Tekken King',
-        points: 70900,
+        points: 195023,
         image: tekkenKing,
       },
       {
         name: 'Tekken Emperor',
-        points: 79100,
+        points: 208024,
         image: tekkenEmperor,
       },
     ],
@@ -238,12 +238,12 @@ export const rankGroups: RankGroup[] = [
     ranks: [
       {
         name: 'Tekken God',
-        points: 87900,
+        points: 222025,
         image: tekkenGod,
       },
       {
         name: 'Tekken God Supreme',
-        points: 97300,
+        points: 237026,
         image: tekkenGodSupreme,
       },
     ],
