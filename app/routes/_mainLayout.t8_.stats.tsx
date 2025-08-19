@@ -40,10 +40,14 @@ export default function () {
           Total <strong>{totalMove}</strong> moves
         </div>
         <p className="text-justify">
-          The stats were created by counting the number of entries in each characters movelist imported from wavu wiki. Each hit in a string
-          counts as a separate move since it has its own frame data. Throws are included, but 10-hit strings are not. Some moves are basically the
-          same for all characters like 2+3, 1+3 and 1+2+3+4. Also some commands are counted muliple times, since they have different properties in
-          different situations, like generic throws connecting from the front, side or back. Panda and Kuma are counted as separate characters.
+          The stats were created by counting the number of entries in each
+          characters movelist imported from wavu wiki. Each hit in a string
+          counts as a separate move since it has its own frame data. Throws are
+          included, but 10-hit strings are not. Some moves are basically the
+          same for all characters like 2+3, 1+3 and 1+2+3+4. Also some commands
+          are counted muliple times, since they have different properties in
+          different situations, like generic throws connecting from the front,
+          side or back. Panda and Kuma are counted as separate characters.
         </p>
       </ContentContainer>
     </>

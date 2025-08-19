@@ -37,8 +37,8 @@ export default function Credits() {
       data from his{' '}
       <a href="https://docs.google.com/spreadsheets/d/11ETDnPJuku2ref3PzODMpZ4y7e5_wfILR2aPv83WpSw/edit?usp=sharing">
         Tekken 7 cheat sheet
-      </a>.
-      See the readme in the link for all members who have contributed.
+      </a>
+      . See the readme in the link for all members who have contributed.
       <h3>Frame data update helpers</h3>
       <h4>Season 4</h4>
       <p>Bager, Mollatt, The Last Phoenix, Seik, JBoy and Kokkos</p>
