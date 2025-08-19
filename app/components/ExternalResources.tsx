@@ -48,7 +48,7 @@ const data: ExternalResourceLink[] = [
   },
   {
     name: 'Sidestep chart',
-    url: 'https://scontent.fsvg1-1.fna.fbcdn.net/v/t39.30808-6/471524367_9217752261608720_975363073828196495_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=AdXUFCY6azsQ7kNvgFDvKZ7&_nc_oc=AdmxxzkuSkA1sh3LGJsFDIzLaDcDEnwu7LYElQ_CWkE8YwmNv5m-Fohbe7Ccp4qW7lzMNGenjXqP1m7Yx3LniREb&_nc_zt=23&_nc_ht=scontent.fsvg1-1.fna&_nc_gid=wts9OCBlFx7k1mZBMnuL5Q&oh=00_AYHlJ3nX-UZ8kG8RtwTof-OyH2Q-aotOaS7XQ1ELVhTe9w&oe=67E4B98A',
+    url: 'https://scontent.fsvg1-1.fna.fbcdn.net/v/t39.30808-6/514395743_24239677972322903_3698915202611201122_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=2UiA1mbpfYoQ7kNvwFTDwnV&_nc_oc=Adl_XC-bNDCPl6x6WWYpO5TrlJspyd7iJZJAWmBMAEwT1jmJ1GW_FG8dgHnHxvKZaxgdzcsEhBP7ggIdBGUOxY5U&_nc_zt=23&_nc_ht=scontent.fsvg1-1.fna&_nc_gid=4OuYPe_O8xiA3D_WL-hWlA&oh=00_AfUw36uJRkvyYiEae1j4Aee6CTCo5FYYH5Qh64oaRENETA&oe=68AA6820',
     imageUrl: sidestepChart,
     description: 'Advice on which side to generally step against a character',
   },
