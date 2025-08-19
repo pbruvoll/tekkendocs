@@ -16,7 +16,6 @@ import firstDan from '~/images/t8/ranks/first-dan.png'
 import flameRuler from '~/images/t8/ranks/flame-ruler.png'
 import fujin from '~/images/t8/ranks/fujin.png'
 import ganryu from '~/images/t8/ranks/ganryu.png'
-import godOfDestruction from '~/images/t8/ranks/god-of-destruction.png'
 import kisin from '~/images/t8/ranks/kishin.png'
 import mightyRuler from '~/images/t8/ranks/mighty-ruler.png'
 import raijin from '~/images/t8/ranks/raijin.png'
@@ -31,12 +30,21 @@ import tekkenKing from '~/images/t8/ranks/tekken-king.png'
 import tenryu from '~/images/t8/ranks/tenryu.png'
 import vanquisher from '~/images/t8/ranks/vanquisher.png'
 import warrior from '~/images/t8/ranks/warrior.png'
+import godOfDestruction from '~/images/t8/ranks/god-of-destruction.png'
+import godOfDestruction1 from '~/images/t8/ranks/god-of-destruction-1.png'
+import godOfDestruction2 from '~/images/t8/ranks/god-of-destruction-2.png'
+import godOfDestruction3 from '~/images/t8/ranks/god-of-destruction-3.png'
+import godOfDestruction4 from '~/images/t8/ranks/god-of-destruction-4.png'
+import godOfDestruction5 from '~/images/t8/ranks/god-of-destruction-5.png'
+import godOfDestruction6 from '~/images/t8/ranks/god-of-destruction-6.png'
+import godOfDestruction7 from '~/images/t8/ranks/god-of-destruction-7.png'
+import godOfDestructionInf from '~/images/t8/ranks/god-of-destruction-inf.png'
 import { generateMetaTags } from '~/utils/seoUtils'
 
 type Rank = {
   name: string
   image: string
-  points: number
+  points: number | undefined
 }
 
 type RankGroup = {
@@ -55,12 +63,12 @@ export const rankGroups: RankGroup[] = [
       },
       {
         name: '1st Dan',
-        points: 400,
+        points: 4000,
         image: firstDan,
       },
       {
         name: '2nd Dan',
-        points: 1000,
+        points: 8000,
         image: secondDan,
       },
     ],
@@ -70,17 +78,17 @@ export const rankGroups: RankGroup[] = [
     ranks: [
       {
         name: 'Fighter',
-        points: 1600,
+        points: 12001,
         image: fighter,
       },
       {
         name: 'Strategist',
-        points: 2600,
+        points: 17002,
         image: strategist,
       },
       {
         name: 'Combatant',
-        points: 3400,
+        points: 22003,
         image: combatant,
       },
     ],
@@ -90,17 +98,17 @@ export const rankGroups: RankGroup[] = [
     ranks: [
       {
         name: 'Brawler',
-        points: 4200,
+        points: 27004,
         image: brawler,
       },
       {
         name: 'Ranger',
-        points: 5400,
+        points: 33005,
         image: ranger,
       },
       {
         name: 'Cavalry',
-        points: 6400,
+        points: 39006,
         image: cavalry,
       },
     ],
@@ -110,17 +118,17 @@ export const rankGroups: RankGroup[] = [
     ranks: [
       {
         name: 'Warrior',
-        points: 7400,
+        points: 45007,
         image: warrior,
       },
       {
-        name: 'Assaliant',
-        points: 9200,
+        name: 'Assailant',
+        points: 51009,
         image: assaliant,
       },
       {
         name: 'Dominator',
-        points: 10800,
+        points: 57009,
         image: dominator,
       },
     ],
@@ -130,17 +138,17 @@ export const rankGroups: RankGroup[] = [
     ranks: [
       {
         name: 'Vanquisher',
-        points: 12400,
+        points: 63010,
         image: vanquisher,
       },
       {
         name: 'Destroyer',
-        points: 14700,
+        points: 70011,
         image: destroyer,
       },
       {
         name: 'Eliminator',
-        points: 16600,
+        points: 77012,
         image: eliminator,
       },
     ],
@@ -149,18 +157,18 @@ export const rankGroups: RankGroup[] = [
     name: 'Red',
     ranks: [
       {
-        name: 'Ganryu',
-        points: 18500,
+        name: 'Garyu',
+        points: 84013,
         image: ganryu,
       },
       {
         name: 'Shinryu',
-        points: 23100,
+        points: 94014,
         image: shinryu,
       },
       {
         name: 'Tenryu',
-        points: 27300,
+        points: 104015,
         image: tenryu,
       },
     ],
@@ -170,17 +178,17 @@ export const rankGroups: RankGroup[] = [
     ranks: [
       {
         name: 'Mighty Ruler',
-        points: 31500,
+        points: 114016,
         image: mightyRuler,
       },
       {
         name: 'Flame Ruler',
-        points: 36500,
+        points: 125017,
         image: flameRuler,
       },
       {
         name: 'Battle Ruler',
-        points: 41100,
+        points: 136018,
         image: battleRuler,
       },
     ],
@@ -190,37 +198,37 @@ export const rankGroups: RankGroup[] = [
     ranks: [
       {
         name: 'Fujin',
-        points: 45700,
+        points: 147019,
         image: fujin,
       },
       {
         name: 'Raijin',
-        points: 52300,
+        points: 159020,
         image: raijin,
       },
       {
         name: 'Kishin',
-        points: 58500,
+        points: 171021,
         image: kisin,
       },
       {
         name: 'Bushin',
-        points: 64700,
+        points: 183022,
         image: bushin,
       },
     ],
   },
   {
-    name: 'Gold purple',
+    name: 'Gold (Purple)',
     ranks: [
       {
         name: 'Tekken King',
-        points: 70900,
+        points: 195023,
         image: tekkenKing,
       },
       {
         name: 'Tekken Emperor',
-        points: 79100,
+        points: 208024,
         image: tekkenEmperor,
       },
     ],
@@ -230,18 +238,63 @@ export const rankGroups: RankGroup[] = [
     ranks: [
       {
         name: 'Tekken God',
-        points: 87900,
+        points: 222025,
         image: tekkenGod,
       },
       {
         name: 'Tekken God Supreme',
-        points: 97300,
+        points: 237026,
         image: tekkenGodSupreme,
       },
+    ],
+  },
+  {
+    name: 'God of Destruction',
+    ranks: [
       {
         name: 'God of Destruction',
-        points: 109700,
+        points: 253027,
         image: godOfDestruction,
+      },
+      {
+        name: 'God of Destruction I',
+        points: 308028,
+        image: godOfDestruction1,
+      },
+      {
+        name: 'God of Destruction II',
+        points: 330029,
+        image: godOfDestruction2,
+      },
+      {
+        name: 'God of Destruction III',
+        points: 352030,
+        image: godOfDestruction3,
+      },
+      {
+        name: 'God of Destruction IV',
+        points: 374031,
+        image: godOfDestruction4,
+      },
+      {
+        name: 'God of Destruction V',
+        points: 396032,
+        image: godOfDestruction5,
+      },
+      {
+        name: 'God of Destruction VI',
+        points: undefined,
+        image: godOfDestruction6,
+      },
+      {
+        name: 'God of Destruction VII',
+        points: undefined,
+        image: godOfDestruction7,
+      },
+      {
+        name: 'God of Destruction ∞',
+        points: undefined,
+        image: godOfDestructionInf,
       },
     ],
   },
@@ -278,7 +331,7 @@ const RankCard = ({ image, name, points }: Rank) => {
       </Inset>
       <div className="flex flex-col flex-wrap items-center gap-1 text-center text-sm">
         <div>{name}</div>
-        <div>{points} pts</div>
+        <div>{points ?? '???'} pts</div>
       </div>
     </Card>
   )
