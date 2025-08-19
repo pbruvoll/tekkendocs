@@ -40,7 +40,7 @@ const MainLayoutTemplate = ({ children }: MainLayoutTemplateProps) => {
               TekkenDocs
             </Link>
             <div className="flex place-self-end">
-              <Link title="Serach" to="/t8/search" className="px-2">
+              <Link title="Search" to="/t8/search" className="px-2">
                 <MagnifyingGlassIcon width="2em" height="2em" />
               </Link>
               <a
@@ -51,7 +51,7 @@ const MainLayoutTemplate = ({ children }: MainLayoutTemplateProps) => {
                 <DiscordLogoIcon width="2em" height="2em" />
               </a>
               <a
-                title="TekkenDocs source code on Github"
+                title="TekkenDocs source code on GitHub"
                 href={githubLink}
                 className="px-2"
               >
@@ -69,7 +69,7 @@ const MainLayoutTemplate = ({ children }: MainLayoutTemplateProps) => {
               <a
                 title="Invite to Tekkendocs Discord server"
                 href={contactByDiscord.buildContactUrl('invite')}
-                className="flex items-center gap-2 px-2"
+                className="flex items-center gap-2"
               >
                 Discord <DiscordLogoIcon width="2em" height="2em" />
               </a>
@@ -78,7 +78,7 @@ const MainLayoutTemplate = ({ children }: MainLayoutTemplateProps) => {
               <a
                 title="TekkenDocs on Twitter (X)"
                 href={twitterLink}
-                className="flex items-center gap-2 px-2"
+                className="flex items-center gap-2"
               >
                 Twitter <TwitterLogoIcon width="2em" height="2em" />
               </a>
@@ -87,7 +87,7 @@ const MainLayoutTemplate = ({ children }: MainLayoutTemplateProps) => {
               <a
                 title="TekkenDocs on Facebook"
                 href={facebooklink}
-                className="flex items-center gap-2 px-2"
+                className="flex items-center gap-2"
               >
                 Facebook <FaFacebook fontSize="2em" />
               </a>
@@ -96,7 +96,7 @@ const MainLayoutTemplate = ({ children }: MainLayoutTemplateProps) => {
               <a
                 title="TekkenDocs source code on Github"
                 href={githubLink}
-                className="flex items-center gap-2 px-2"
+                className="flex items-center gap-2"
               >
                 Github <GitHubLogoIcon width="2em" height="2em" />
               </a>
@@ -105,7 +105,7 @@ const MainLayoutTemplate = ({ children }: MainLayoutTemplateProps) => {
               <a
                 title="RBNorway"
                 href={rbNorwayLink}
-                className="flex items-center gap-2 px-2"
+                className="flex items-center gap-2"
               >
                 RBNorway
               </a>
