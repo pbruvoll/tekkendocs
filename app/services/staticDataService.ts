@@ -112,9 +112,11 @@ export const characterGuideAuthors: Record<
   T8: {
     asuka: { author: 'Fergus', version: 'S2' },
     azucena: { author: 'Koenji' },
-    bryan: { author: 'Ty' },
+    bryan: { author: 'Ty', version: 'S2' },
     claudio: { author: 'Tetsu', version: 'S2' },
     'devil-jin': { author: 'Vermilion', version: 'S2' },
+    dragunov: { author: 'Fear of Silence', version: 'S2' },
+    eddy: { author: 'Ace', version: 'S2' },
     hwoarang: { author: 'Kicking Macine', version: 'S2' },
     jin: { author: 'Bok Dibi', version: 'S2' },
     jun: { author: 'Pagani', version: 'S2' },

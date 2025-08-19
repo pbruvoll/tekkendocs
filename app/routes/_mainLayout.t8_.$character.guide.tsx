@@ -146,10 +146,7 @@ export const meta: MetaFunction<typeof loader> = ({
   const title = `${characterTitle} Tekken 8 ${version === 'S2' ? 'Season 2 ' : ''}Guide ${author ? 'by ' + author : ''} | TekkenDocs`
   const description = `An overview of the most important information for ${characterTitle} in Tekken 8. Quickly learn how to play the character by learning key moves, punishers, and combos.`
 
-  const imageUrl =
-    characterId === 'dragunov'
-      ? `/t8/avatars/${characterId}-512.png`
-      : `/t8/guides/${characterId}-1200.png`
+  const imageUrl = `/t8/guides/${characterId}-1200.png`
 
   const jsonLd = {
     '@context': 'https://schema.org',
