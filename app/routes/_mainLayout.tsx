@@ -26,7 +26,7 @@ const MainLayoutTemplate = ({ children }: MainLayoutTemplateProps) => {
   const contactByDiscord = new DiscordContactProvider()
   return (
     <>
-      <header style={{ background: 'var(--accent-4' }}>
+      <header className="bg-[var(--accent-4)] py-1">
         <ContentContainer>
           <div className="grid grid-cols-[1fr_auto_1fr] items-center justify-between py-1">
             <Link to="/">
