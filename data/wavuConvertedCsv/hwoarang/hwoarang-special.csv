@@ -29,172 +29,228 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Consumes Rage
 * Possible during all stances except Backturn Stance
 Power crush 8~";rbr pc8~;;Hwoarang-R.df+1+2;Sky Burial;r39;;
-1;h;5;i10;+1;+8;;;;;Hwoarang-1;;r17;;
-1,1;h, h;5, 8;i10, i12;-3;+8;;Jails;;;Hwoarang-1,1;;;;
-1,1,3;h, h, l;5, 8, 10;i10, ,i21;-12;-1;;;;;Hwoarang-1,1,3;;;;
-1,1,3,3;h, h, l, h;5, 8, 10, 14;i10, ,i20;-14;+4;;;;;Hwoarang-1,1,3,3;Home Surgery;;;File:t8-p2-hwoarang-1,1,3,3.mp4
-1,2;h, h;5, 10;i10, i10;-3;+6;;"* Jails
-* 1,2,3 to shift to Left Flamingo
-* 1,2,4 to shift to Right Flamingo";;;Hwoarang-1,2;Left Right Combo;;;
-1,2,f+3;h, h, m;5, 10, 14;i10, ,i21;-8;+9;;Wall Crush +21g on hit;wc;;Hwoarang-1,2,f+3;Rejector;;;File:t8-p2-hwoarang-1,2,f+3.mp4
+1;h;5;i10;+1;+8;;Recovers 2f faster on hit or block (t27 r17);;;Hwoarang-1;Jab;r19;;
+1,1;h, h;5, 8;i10, i12;-3;+8;;"* Jail from 1st block
+* Combo from 1st hit";;;Hwoarang-1,1;;;;
+1,1,3;h, h, l;5, 8, 10;i10, ,i21;-12;-1;;* Combo from 2nd CH;;;Hwoarang-1,1,3;;;;
+1,1,3,3;h, h, l, h;5, 8, 10, 14;i10, ,i20;-14;+4;;* Combo from 3rd hit;;;Hwoarang-1,1,3,3;Home Surgery;;;File:t8-p2-hwoarang-1,1,3,3.mp4
+1,2;h, h;5, 10;i10, i10;-3;+6;;"* Jail from 1st block with 4F delay
+* Combo from 1st hit with 4F delay
+* Transition to LFS with 3 (+3/+12g?/+12)
+* Transition to RFS with 4 (+3/+12g?/+12)";;LFS,RFS;Hwoarang-1,2;Left Right Combo;;;
+1,2,f+3;h, h, m;5, 10, 14;i10, ,i21;-8;+9;;"* Wall Crush +21g on hit
+
+
+* Combo from 2nd CH with 4F delay";wc;;Hwoarang-1,2,f+3;Rejector;;;File:t8-p2-hwoarang-1,2,f+3.mp4
 1,2,f+4;h, h, h;5, 10, 20;i10, ,i24;-2;+35 (KND);;"* Balcony Break
-Low crush";bbr js;;Hwoarang-1,2,f+4;Rejection;;;File:t8-p2-hwoarang-1,2,f+4.mp4
-2;h;9;i10;+0;+8;+9;"* 2,3 to shift to Left Flamingo 
-* 2,4 to shift to Right Flamingo (+3/+11g/+12)";;;Hwoarang-2;Right Jab;;;File:t8-p2-hwoarang-2.mp4
-2,f+3;h, m;9, 14;i10, i21;-8;+9;;Wall Crush +21g on hit;wc;;Hwoarang-2,f+3;Right Jab Side Kick;;;File:t8-p2-hwoarang-2,f+3.mp4
+* Combo from 2nd CH with 4F delay
+Low crush 14~";bbr js14~;;Hwoarang-1,2,f+4;Rejection;;;File:t8-p2-hwoarang-1,2,f+4.mp4
+2;h;9;i10;+0;+8;+15?;"* Transition to LFS with 3 (+3/+11g/+12)
+* Transition to RFS with 4 (+3/+11g/+12)
+* +28 on CH in framedata display (bug?) 
+* 70% scaling on next hit";;LFS,RFS;Hwoarang-2;Right Jab;;;File:t8-p2-hwoarang-2.mp4
+2,f+3;h, m;9, 14;i10, i21;-8;+9;;"* Wall Crush +21g on hit
+
+
+* Combo from 1st CH with 4F delay";wc;;Hwoarang-2,f+3;Right Jab Side Kick;;;File:t8-p2-hwoarang-2,f+3.mp4
 2,f+4;h, h;9, 20;i10, i24~25;-2;+35;;"* Balcony Break
-Low crush";bbr js;;Hwoarang-2,f+4;Right Jab > Spinning Back Kick;;;File:t8-p2-hwoarang-2,f+4.mp4
+* Combo from 1st CH with 4F delay
+Low crush 14~";bbr js14~;;Hwoarang-2,f+4;Right Jab > Spinning Back Kick;;;File:t8-p2-hwoarang-2,f+4.mp4
 3;h;15;i14;-7;+8;;;;;Hwoarang-3;;;;
-3,3;h, m;15, 12;i14, i18;-13;-7;;;;;Hwoarang-3,3;;;;
-3,3,2;h, m, M;15, 12, 12;i14, ,i21~22;-11;+1c;;;;;Hwoarang-3,3,2;Siege Mortar Combo;;;File:t8-p2-hwoarang-3,3,2.mp4
-3,3,3;h, m, m;15, 12, 15;i14, ,i21;-14;+32;;"* Balcony Break
-* 3,3,F to shift to Left Flamingo";bbr;;Hwoarang-3,3,3;Left Kicks;;;File:t8-p2-hwoarang-3,3,3.mp4
-3,3,4;h, m, h;15, 12, 15;i14, ,i21~23;+8;+19;;* Shifts to Right Flamingo;;RFS;Hwoarang-3,3,4;Left Kicks > Right Hook Kick;RFS;;File:t8-p2-hwoarang-3,3,4.mp4
-3,3,f+4;h, m, h;15, 12, 20;i14, ,i21~27;-1;+40 (+14);;* Balcony Break;bbr;;Hwoarang-3,3,f+4;Left Kicks > Backlash;;;File:t8-p2-hwoarang-3,3,f+4.mp4
-3~4;m,m;11,21;i22,i7;-3;+26 (+16);;* Power up with quick input;;;Hwoarang-3~4;Flying Eagle;;;
+3,3;h, m;15, 12;i14, i18;-13;-7;-2;"* Jail from 1st block
+* Combo from 1st CH
+* Transition to LFS with F (+2/+8/+13)";;LFS;Hwoarang-3,3;;;;
+3,3,2;h, m, M;15, 12, 12;i14, ,i21~22;-11;+1c;;"* Combo from 2nd CH with 8F delay
+* Move can be delayed by 10F";;;Hwoarang-3,3,2;Siege Mortar Combo;;;File:t8-p2-hwoarang-3,3,2.mp4
+3,3,3;h, m, m;15, 12, 15;i14, ,i21;-14;+32d (+24);;"* Balcony Break
+* Combo from 2nd CH with 9F delay
+* Move can be delayed by 10F";bbr;;Hwoarang-3,3,3;Left Kicks;;;File:t8-p2-hwoarang-3,3,3.mp4
+3,3,4;h, m, h;15, 12, 15;i14, ,i21~23;+8;+19g;+19;"* Transition to RFS
+* Combo from 2nd CH with 8F delay";;RFS,RFS;Hwoarang-3,3,4;Left Kicks > Right Hook Kick;RFS;;File:t8-p2-hwoarang-3,3,4.mp4
+3,3,f+4;h, m, h;15, 12, 20;i14, ,i21~27;-1;+40 (+14);;"* Balcony Break
+* Combo from 2nd CH with 5F delay";bbr;;Hwoarang-3,3,f+4;Left Kicks > Backlash;;;File:t8-p2-hwoarang-3,3,f+4.mp4
+3~4;m,m;11,21;i22,i7;-3;+26 (+16);;* Power up with quick input (input 4 during frame 1 of 3?);;;Hwoarang-3~4;Flying Eagle;;;
 4;h;14;i11~12;-6;+5;;;;;Hwoarang-4;;;;
 4 (after parry);m,h,h;10,8,10;i15,i8,i9;;+17a;;* Pressing 4 after successful parry;;;Hwoarang-Shotgun Shuffle;Shotgun Shuffle;;;
-4,3;h, m;14, 16;i11~12, i22;-6;+5;;* 4,3F to cancel the second hit and shift to Left Flamingo;;;Hwoarang-4,3;Right Left Kick Combo;;;File:t8-p2-hwoarang-4,3.mp4
-4,4;h, h;14, 13;i11~12, i16;-1;+10;;"* Jails
-* Shifts to Right Flamingo";;RFS;Hwoarang-4,4;;RFS;;
-4,4,3;h, h, M;14, 13, 20;i11~12, ,i25~31;-14c;+14;;* Shifts to Right Stance;;RFF;Hwoarang-4,4,3;Right Kicks > Chainsaw Heel;RFF;;File:t8-p2-hwoarang-4,4,3.mp4
-4,4,4;h, h, h;14, 13, 17;i11~12, ,i25~26;-2;+8;;"* Shifts to Right Stance
-* 4,4,4,F to cancel and shift to Right Flamingo
-Low crush";js;RFF;Hwoarang-4,4,4;;RFF;;
-4,4,4,4;h, h, h, h;14, 13, 17, 20;i11~12, ,i31~32;+0;+36 (-22);;"* Tornado
-* Deals chip damage on hit
+4,3;h, m;14, 16;i11~12, i22;-6;+5;+20a (+11);"* Balcony Break on CH
+* Combo from 1st hit
+* Cancel the second hit and transition to LFS with F (-6/+5)";;LFS;Hwoarang-4,3;Right Left Kick Combo;;;File:t8-p2-hwoarang-4,3.mp4
+4,4;h, h;14, 13;i11~12, i16;-1;+10;;"* Jail from 1st block
+* Combo from 1st hit
+* Transition to RFS";;RFS,RFS;Hwoarang-4,4;;RFS;;
+4,4,3;h, h, M;14, 13, 20;i11~12, ,i25~31;-14c;+14d;;"* Transition to RFF
+* Combo from 2nd CH";;RFF,RFF;Hwoarang-4,4,3;Right Kicks > Chainsaw Heel;RFF;;File:t8-p2-hwoarang-4,4,3.mp4
+4,4,4;h, h, h;14, 13, 17;i11~12, ,i25~26;-2;+8;;"* Transition to RFF
+* Combo from 2nd CH
+* Cancel and transition to RFS with F (-17/-6)
+Low crush";js;RFF,RFS,RFF;Hwoarang-4,4,4;;RFF;;
+4,4,4,4;h, h, h, h;14, 13, 17, 20;i11~12, ,i31~32;+0;+10c;;"* Balcony Break
+* Tornado
+* Combo from 3rd hit with 4F delay
+* Input can be delayed by 4F
+* Move cannot be delayed
+* 6 chip damage on block
+* Forces backroll on hit (opponent recovers crouching)
 *Alternate input:(RFS.u+4),4
-Low crush";trn js;;Hwoarang-4,4,4,4;Right Kicks > Raptor Combo;;;File:t8-p2-hwoarang-4,4,4,4.mp4
-1+2;;;;;;;* Shifts to Backturn Stance;;BT;Hwoarang-1+2;Disrespect;BT;;
-3+4;;;;;;;* Shifts to Right Stance;;RFF;Hwoarang-3+4;Motion Switch;RFF;;
-f+2;;15;i16;-2;+9;;* Shifts to Right Stance;;RFF;Hwoarang-f+2;Rusty Knife;RFF;;File:t8-p2-hwoarang-f+2.mp4
-f+3;;;;;;;"* Shifts to Left Flamingo
-* Sidesteps to the right";;LFS;Hwoarang-f+3;Left Flamingo Feint;LFS;;
-f+3~3;m;25;i20;-16;+7 (-2);;* Sidesteps to the right;;;Hwoarang-f+3~3;Cheap Shot Snap Kick;;;File:t8-p2-hwoarang-f+3~3.mp4
-f+4;h;21;i17~23;+7~8;+18;;* Shifts to Right Flamingo;;RFS;Hwoarang-f+4;Right Hook Kick;RFS;;File:t8-p2-hwoarang-f+4.mp4
-f+1+2;m;17;i15;-9;+2;;* Also possible during Right Stance;;;Hwoarang-f+1+2;Push Hands;;;File:t8-p2-hwoarang-f+1+2.mp4
-df+1;m;10;i13~14;-1;+6;;* Also possible during Right Stance;;;Hwoarang-df+1;;;;
-df+1,3;m, m;10, 15;i13~14, i22~23;-2;+6;;* Shifts to Left Flamingo;;LFS;Hwoarang-df+1,3;Left Uppercut & Middle Kick;LFS;;File:t8-p2-hwoarang-df+1,3.mp4
-df+2;m;13;i15~16;-7;+34 (+24);;* Also possible during Right Stance;;;Hwoarang-df+2;Right Uppercut;;;File:t8-p2-hwoarang-df+2.mp4
-df+3;m;12;i22~23;-14;-4;;"* df+3,F/U/D to cancel and shift to Left Flamingo
-Power crush";pc;;Hwoarang-df+3;;;;
-df+3,4;m, m;12, 20;i22~23, i24~25;-14;+7;;;;;Hwoarang-df+3,4;Double Claymore;;;
-df+4;m;20;i16~17;-8;+8;;"* Homing
-* Shift to Right Stance";hom;RFF;Hwoarang-df+4;Middle Claymore;RFF;;File:t8-p2-hwoarang-df+4.mp4
-df+3+4;m,h,m;7,4,17;i13,i14,i24~25;-14;+4;;"* Heat Engager
+Low crush";bbr trn js;;Hwoarang-4,4,4,4;Right Kicks > Raptor Combo;;;File:t8-p2-hwoarang-4,4,4,4.mp4
+1+2;;;;;;;* Transition to BT;;BT,BT;Hwoarang-1+2;Disrespect;r7 BT;;
+3+4;;;;;;;* Transition to RFF;;RFF,RFF;Hwoarang-3+4;Motion Switch;r10 RFF;;
+f+2;m;15;i16;-2;+9;;* Transition to RFF;;RFF,RFF;Hwoarang-f+2;Rusty Knife;RFF;;File:t8-p2-hwoarang-f+2.mp4
+f+3;;;;;;;"* Transition to LFS
+* Sidesteps to the right";;LFS,LFS;Hwoarang-f+3;Left Flamingo Feint;LFS;;
+f+3~3;m;25;i20;-16;+7 (-2);;"* Balcony Break
+* Sidesteps to the right";bbr;;Hwoarang-f+3~3;Cheap Shot Snap Kick;;;File:t8-p2-hwoarang-f+3~3.mp4
+f+4;h;21;i17~23;+7~8;+18g;+18;* Transition to RFS;;RFS,RFS;Hwoarang-f+4;Right Hook Kick;RFS;;File:t8-p2-hwoarang-f+4.mp4
+f+1+2;m;17;i15;-9;+2;+14;* Also possible during RFF;;;Hwoarang-f+1+2;Push Hands;;;File:t8-p2-hwoarang-f+1+2.mp4
+df+1;m;10;i13~14;-1;+6;;* Also possible during RFF;;;Hwoarang-df+1;;;;
+df+1,3;m, m;10, 15;i13~14, i22~23;-2;+6;;"* Combo from 1st hit 
+* Transition to Left Flamingo";;Left,LFS;Hwoarang-df+1,3;Left Uppercut & Middle Kick;LFS;;File:t8-p2-hwoarang-df+1,3.mp4
+df+2;m;13;i15~16;-7;+34a (+24);;"* +4s on crouching normal hit
+* Also possible during RFF";;;Hwoarang-df+2;Right Uppercut;;;File:t8-p2-hwoarang-df+2.mp4
+df+3;m;12;i22~23;-14;-4;;"* Cancel and transition to r1 LFS with F_U_D at frame 20 of move startup
+Power crush 7~21";pc7~21;LFS;Hwoarang-df+3;;;;
+df+3,4;m, m;12, 20;i22~23, i24~25;-14;+4a;;* Combo from 1st hit with 7F delay;;;Hwoarang-df+3,4;Double Claymore;;;
+df+4;m;20;i16~17;-8;+8;+18a (+9);"* Homing
+* Balcony Break on CH
+* Transition to RFF";hom;RFF,RFF;Hwoarang-df+4;Middle Claymore;RFF;;File:t8-p2-hwoarang-df+4.mp4
+df+3+4;m,h,m;7,4,17;i13,i14,i24~25;-14;+4c;;"* Heat Engager
+
+* Heat Dash +5, +43d (+35)
 
 * Jails
-* Deals chip damage on block
-* Also possible during Right Stance";he;;Hwoarang-df+3+4;Ignition Barrage;;;File:t8-p2-hwoarang-df+3+4.mp4
+* 5 chip damage on block
+* Also possible during RFF";he;;Hwoarang-df+3+4;Ignition Barrage;;;File:t8-p2-hwoarang-df+3+4.mp4
 d+3;l;7;i17;-13;-2;;;;;Hwoarang-d+3;;;;
-d+3,4;l, h;7, 10;i17, i21~23;+8;+14;;* Shift to Right Flamingo;;RFS;Hwoarang-d+3,4;Smash Low Right;RFS;;File:t8-p2-hwoarang-d+3,4.mp4
-d+4;l;7;i19;-17;-6;;* Also possible during Right Stance;;;Hwoarang-d+4;;;;
-d+4,4;l, h;7, 22;i19, i20;-13;+69 (+53);;"* Tornado
-* Also possible during Right Stance";trn;;Hwoarang-d+4,4;Firecracker;;;File:t8-p2-hwoarang-d+4,4.mp4
+d+3,4;l, h;7, 10;i17, i21~23;+8;+14g;+19;"* Transition to RFS
+* Combo from 1st hit";;RFS,RFS;Hwoarang-d+3,4;Smash Low Right;RFS;;File:t8-p2-hwoarang-d+3,4.mp4
+d+4;l;7;i19;-17;-6;+4s;* Also possible during RFF;;FC;Hwoarang-d+4;;FC;;
+d+4,4;l, h;7, 22;i19, i20;-13;+69a (+53);;"* Tornado
+* Combo from 1st CH
+* Also possible during RFF";trn;;Hwoarang-d+4,4;Firecracker;;;File:t8-p2-hwoarang-d+4,4.mp4
 d+3+4;L;18;i21~22;-14;+6;;"* Homing
 * Transitions to LFS on hit
-High crush 6~";hom cs6~;FC;Hwoarang-d+3+4;Dark Halberd;FC;;
+High crush 6~22";hom cs6~22;FC;Hwoarang-d+3+4;Dark Halberd;FC;;
 db+3;l;12;i19;-13;-1;+17g;* Also possible during Right Stance;;;Hwoarang-db+3;Sweep Kick;;;File:t8-p2-hwoarang-db+3.mp4
-db+4;l;14;i16;-12;-8;;"* db+4,F to shift to -1? +3 RFS
-* Also possible during Right Stance";;;Hwoarang-db+4;;;;
-db+4,4;l, h;14, 21;i16, i17~19;0;+24;;* Natural on CH;;;Hwoarang-db+4,4;Ankle Biter > Crescent Kick;;;File:t8-p2-hwoarang-db+4,4.mp4
-db+3+4;m!;40;i61~62;;+17a;;"* Also possible during Right Stance
-* db+3+4,b,b to cancel and shift to Left Flamingo";;;Hwoarang-db+3+4;Dynamite Heel;;;File:t8-p2-hwoarang-db+3+4.mp4
+db+4;l;14;i16;-12;-8;-1;"* Transition to RFS with F (-1/+3/+10)
+* Also possible during Right Stance";;RFS;Hwoarang-db+4;;;;
+db+4,4;l, h;14, 21;i16, i17~19;-1;+24;;* Combo from 1st CH;;;Hwoarang-db+4,4;Ankle Biter > Crescent Kick;;;File:t8-p2-hwoarang-db+4,4.mp4
+db+3+4;m!;40;i61~62;;+17a;;"* Also possible during RFF
+* Cancel and transition to r24? LFS at frame 25? with b,b";;LFS;Hwoarang-db+3+4;Dynamite Heel;;;File:t8-p2-hwoarang-db+3+4.mp4
 b+1;m;15;i15;-14;-1;;* Sidesteps to the right;;;Hwoarang-b+1;Stealth Needle;;;
 b+1+3/b+2+4;;;i6;;+9;;* Parries high and mid punches. Pressing 4 on successful parry gives Shotgun Shuffle;;;Hwoarang-b+1+3 or b+2+4;Parry;;;
 b+2;h;18;i14;-4;+6;+14c;"* Elbow
 * Good right sidestep tracking";elb;;Hwoarang-b+2;Right Back Elbow;;;
-b+3;M;17;i16~17;-19;+35 (+25);;* Tornado;trn;;Hwoarang-b+3;Left Plasma Blade;;;
-b+4;h;17;i13~14;-10;+1;;* Shifts to Right Stance;;RFF;Hwoarang-b+4;Nose Bleeder;RFF;;
-ub+4;m;18;i17~20;-8;+10;;* Also possible during Right Stance;;;Hwoarang-ub+4;Fade-Away Kick;;;File:t8-p2-hwoarang-ub+4.mp4
-u+2;h;18;i13~15;-9;+15;;"* Homing
-* Also possible during Right Stance
-* Sidesteps to the left";hom;;Hwoarang-u+2;Knife Hand Strike;;;
-u+3;h;25;i20;+5;+44 (+38);;"* Also possible during Right Stance
-* Shifts to Left Flamingo
-Low crush";js;LFS;Hwoarang-u+3;Jump Kick;LFS;;File:t8-p2-hwoarang-u+3.mp4
-u+4;m;18;i16~18;+3;+11;;"* Also possible during Right Stance
-* Shifts to Right Flamingo
-Low crush";js;RFS;Hwoarang-u+4;Scorpion Side Kick;RFS;;File:t8-p2-hwoarang-u+4.mp4
-u+3+4;m;20;i25~26;-7;+24;;"* Also possible during Right Stance
-Low crush";js;;Hwoarang-u+3+4;Bloody Guillotine;;;File:t8-p2-hwoarang-u+3+4.mp4
-uf+2;m;22;i26;+5c;+6c;;"* Also possible during Right Stance
-Low crush";js;;Hwoarang-uf+2;Bone Stinger;;;File:t8-p2-hwoarang-uf+2.mp4
-uf+3;m;11;i28~29;-6;-7;;"* Also possible during Right Stance
-Low crush";js;;Hwoarang-uf+3;;;;
-uf+3,4;m, m;11, 12;i28~29, i20~21;+2;+13;;"* Also possible during Right Stance
-* Shifts to Right Flamingo
-Low crush";js;RFS;Hwoarang-uf+3,4;;RFS;;
-uf+3,4,3;m, m, m;11, 12, 20;i28~29, ,i27~28;-14;0c;;"* Also possible during Right Stance
-Low crush";js;;Hwoarang-uf+3,4,3;Hunting Hawk;;;File:t8-p2-hwoarang-uf+3,4,3.mp4
-uf+4;h;12;i22~23;-2;+4;;"* Also possible during Right Stance
-* Shifts to Right Flamingo
-Low crush";js;RFS;Hwoarang-uf+4;;RFS;;
-uf+4,4;h, m;12, 12;i22~23, i11~12;0;+6;;"* Also possible during Right Stance
-* Shifts to Right Flamingo
-Low crush";js;RFS;Hwoarang-uf+4,4;;RFS;;
-uf+4,4,4;h, m, l;12, 12, 12;i22~23, ,i9~10;+1;+7;;"* Also possible during Right Stance
-* Shifts to Right Flamingo
-* Third hit is not low parryable (airborne)";;RFS;Hwoarang-uf+4,4,4;Air Raid;RFS;;File:t8-p2-hwoarang-uf+4,4,4.mp4
+b+3;M;17;i16~17;-19;+35a (+25);;* Tornado;trn;;Hwoarang-b+3;Left Plasma Blade;;;
+b+4;h;17;i13~14;-10;+1;+50a;* Shifts to Right Stance;;RFF;Hwoarang-b+4;Nose Bleeder;RFF;;
+ub+4;m;18;i17~20;-8;+10;;"* Opponent recovers non-guarding on hit (situational guaranteed follow-up)
+* Also possible during RFF
+Low crush 5~";js5~;;Hwoarang-ub+4;Fade-Away Kick;;;File:t8-p2-hwoarang-ub+4.mp4
+u+2;h;18;i13~15;-9;+15;;"* Balcony Break
+* Homing
+* Also possible during RFF
+* Sidesteps to the left";bbr hom;;Hwoarang-u+2;Knife Hand Strike;;;
+u+3;h;25;i20;+5;+44a (+38);;"* Also possible during RFF
+* Transition to LFS
+Low crush 9~";js9~;LFS,LFS;Hwoarang-u+3;Jump Kick;LFS;;File:t8-p2-hwoarang-u+3.mp4
+u+4;m;18;i16~18;+3;+11g;+11;"* Also possible during RFF
+* Transition to RFS
+Low crush 9~";js9~;RFS,RFS;Hwoarang-u+4;Scorpion Side Kick;RFS;;File:t8-p2-hwoarang-u+4.mp4
+u+3+4;m;20;i25~26;-7;+24a;;"* Also possible during RFF
+Low crush 8~";js8~;;Hwoarang-u+3+4;Bloody Guillotine;;;File:t8-p2-hwoarang-u+3+4.mp4
+uf+2;m;22;i26;+5c;+6c;+28d;"* Also possible during RFF
+Low crush 13~";js13~;;Hwoarang-uf+2;Bone Stinger;;;File:t8-p2-hwoarang-uf+2.mp4
+uf+3;m;11;i28~29;-6;-7;;"* Also possible during RFF
+Low crush 9~";js9~;;Hwoarang-uf+3;;r36;;
+uf+3,4;m, m;11, 12;i28~29, i20~21;+2;+13;;"* Available on hit or block only
+* Jail from 1st block
+* Combo from 1st hit
+* Also possible during RFF
+* Transition to RFS
+fs1~";fs1~;RFS,RFS;Hwoarang-uf+3,4;;RFS;;
+uf+3,4,3;m, m, m;11, 12, 20;i28~29, ,i27~28;-14;+0c;;"* Combo from 1st hit
+* Also possible during RFF
+fs1~";fs1~;;Hwoarang-uf+3,4,3;Hunting Hawk;;;File:t8-p2-hwoarang-uf+3,4,3.mp4
+uf+4;h;12;i22~23;-2;+4;;"* Also possible during RFF
+* Transition to RFS
+Low crush 10~";js10~;RFS,RFS;Hwoarang-uf+4;;RFS;;
+uf+4,4;h, m;12, 12;i22~23, i11~12;0;+6;;"* Combo from 1st hit
+* Also possible during RFF
+* Transition to RFS
+Low crush";js;RFS,RFS;Hwoarang-uf+4,4;;RFS;;
+uf+4,4,4;h, m, l;12, 12, 12;i22~23, ,i9~10;+1;+7;;"* Combo from 2nd CH
+* Also possible during RFF
+* Transition to RFS
+* Third hit is not low parryable (airborne)";;RFS,RFS;Hwoarang-uf+4,4,4;Air Raid;RFS;;File:t8-p2-hwoarang-uf+4,4,4.mp4
 uf+3+4;m,h;10,8;i14,i9;-10;+1;;"* Jails
-* Also possible during Right Stance
-* Shifts to Right Stance
-* uf+3+4,F to shift to Left Flamingo
-Low crush";js;RFF;Hwoarang-uf+3+4;;RFF;;
-uf+3+4,4;m,h, m;10,8, 13;i14,i9, i14~15;-10;+7;;"* Also possible during Right Stance
-* Shifts to Right Stance";;RFF;Hwoarang-uf+3+4,4;Flashing Trident;RFF;;File:t8-p2-hwoarang-uf+3+4,4.mp4
+* Also possible during RFF
+* Transition to RFF
+* Transition to LFS with F (-2/+9)
+Low crush 9~";js9~;RFF,LFS,RFF;Hwoarang-uf+3+4;;RFF;;
+uf+3+4,4;m,h, m;10,8, 13;i14,i9, i14~15;-10;+7;;"* Combo from 1st hit
+* Also possible during RFF
+* Transition to RFF";;RFF,RFF;Hwoarang-uf+3+4,4;Flashing Trident;RFF;;File:t8-p2-hwoarang-uf+3+4,4.mp4
 1+2+3+4;;;;;;;;;;Hwoarang-1+2+3+4;Ki Charge;;;File:t8-p2-hwoarang-1+2+3+4.mp4
 f,F+3;M;24;i20~24;+6c;+6c;;* Shifts to Right Stance;;RFF;Hwoarang-f,F+3;Spinning Axe Kick;RFF;;File:t8-p2-hwoarang-f,f+3.mp4
-f,F+4;m;22;i17~18;-7;+19 (+10);;"* Balcony Break
-* Heat Engager
+f,F+4;m;22;i17~18;-7;+19a (+10);;"* Heat Engager
 
-* Also possible during Right Stance
-* Shifts to Right Stance (does not shift when using heat dash)";bbr he;;Hwoarang-f,F+4;Peacekeeper;RFF r28?;;File:t8-p2-hwoarang-f,f+4.mp4
-f,n,4;;;;;;;"* Shifts to Right Flamingo
-* Sidesteps to the left";;RFS;Hwoarang-f,n,4;Right Flamingo Feint;RFS;;
+* Heat Dash +5, +36a (+26)
+
+* Balcony Break
+* Also possible during RFF
+* Transition to RFF (does not shift when using heat dash)";he bbr;RFF,RFF;Hwoarang-f,F+4;Peacekeeper;r28 RFF;;File:t8-p2-hwoarang-f,f+4.mp4
+f,n,4;;;;;;;"* Transition to RFS
+* Sidesteps to the left";;RFS,RFS;Hwoarang-f,n,4;Right Flamingo Feint;RFS;;
 f,n,d,df;;;;;;;;;;Hwoarang-f,n,d,df;Shark Step;;;File:t8-p2-hwoarang-f,n,d,df.mp4
-f,n,df:4;m;18;i16;-8;+59 (+49);;"* Tornado
-* Chip damage on block
-* Also possible during Right Stance. The 4 input can be delayed up to 10 frames after the df input in RFF.";trn chp;;Hwoarang-f,n,df${justFrame}4;Lethal Sky Rocket;;;File:t8-p2-hwoarang-f,n,dfh4.mp4
-uf,n,4;m;20;i23~25;-13;+32 (+22);;"* Also possible during Right Stance
+f,n,df:4;m;18;i16;-8;+59a (+49);;"* Tornado
+* 3 chip damage on block
+* Also possible during RFF. 
+* The 4 input can be delayed up to 10 frames after df input during RFF.";trn;;Hwoarang-f,n,df${justFrame}4;Lethal Sky Rocket;;;File:t8-p2-hwoarang-f,n,dfh4.mp4
+uf,n,4;m;20;i23~25;-13;+32a (+22);;"* Also possible during Right Stance
 Low crush";js;;Hwoarang-uf,n,4;Delayed Rising Toe Kick;;;File:t8-p2-hwoarang-uf,n,4.mp4
-f,f,F+3;m;30;i22~24;+6;+23;;"* Balcony Break
-* Chip damage on block
-* Also possible during Right Stance
-Low crush";bbr chp js;;Hwoarang-f,f,F+3;Flying Nerichagi;;;File:t8-p2-hwoarang-f,f,f+3.mp4
-f,f,F+4;h;28;i18~19;+5;+8;;"* Chip damage on block
-* Also possible during Right Stance
+f,f,F+3;m;30;i22~24;+6;+23a;;"* Balcony Break
+* 9 chip damage on block
+* Also possible during RFF
+Low crush 3~";bbr js3~;;Hwoarang-f,f,F+3;Flying Nerichagi;r25;;File:t8-p2-hwoarang-f,f,f+3.mp4
+f,f,F+4;h;28;i18~19;+5;+8;;"* 11 chip damage on block
+* Also possible during RFF
 * Sideswaps and leaves opponent backturned on hit
-* Shifts to Backturn Stance on block
-Low crush";chp js;;Hwoarang-f,f,F+4;Torpedo Kick;;;File:t8-p2-hwoarang-f,f,f+4.mp4
+* Transition to BT on block
+Low crush 15~";js15~;BT;Hwoarang-f,f,F+4;Torpedo Kick;;;File:t8-p2-hwoarang-f,f,f+4.mp4
 ws1;m;12;i12~13;-3;+8;;;;;Hwoarang-ws1;;;;
 ws1,4;m, m;12, 18;i12~13, i22~23;+0;+8;;* Combo from 1st hit;;RFS;Hwoarang-ws1,4;Twin Mustang;RFS;;
 ws2;m;8;i15~16;-7;+4;;;;;Hwoarang-ws2;;;;
-ws2,3;m, h;8, 10;i15~16, i23~25;+3;+72 (+56);;"* Tornado
-* Shifts to Left Flamingo
-Low crush";trn js;LFS;Hwoarang-ws2,3;Chonsan Spin;LFS;;File:t8-p2-hwoarang-ws2,3.mp4
-ws3;m;20;i14~16;-12;+22;;;;;Hwoarang-ws3;Iron Heel;;;File:t8-p2-hwoarang-ws3.mp4
+ws2,3;m, h;8, 10;i15~16, i23~25;+3;+72a (+56);;"* Tornado
+* Combo from 1st hit
+* Transition to LFS
+Low crush 17~";trn js17~;LFS,LFS;Hwoarang-ws2,3;Chonsan Spin;LFS;;File:t8-p2-hwoarang-ws2,3.mp4
+ws3;m;20;i14~16;-12;+14c;;;;;Hwoarang-ws3;Iron Heel;;;File:t8-p2-hwoarang-ws3.mp4
 ws4;m;12;i11~12;-3;+8;;;;;Hwoarang-ws4;;;;
-ws4,4;m, M;12, 13;i11~12, i15~19;-9;+4c;;"* Shifts to Right Stance
-* Combo from 1st hit";;RFF;Hwoarang-ws4,4;Tsunami Kick;RFF;;File:t8-p2-hwoarang-ws4,4.mp4
+ws4,4;m, M;12, 13;i11~12, i15~19;-9;+4c;;"* Jail from 1st block
+* Combo from 1st hit
+* Transition to RFF";;RFF,RFF;Hwoarang-ws4,4;Tsunami Kick;RFF;;File:t8-p2-hwoarang-ws4,4.mp4
 ws3+4;m;16;i20~21;-9;+2;;"* Alternate input: f,n,d,df+3+4 (CD.3+4)
-* Shifts to Backturn Stance";;BT;Hwoarang-ws3+4;;BT;;
-ws3+4,3;m, M;16, 20;i20~21, i21~26;-6;+5c;;;;;Hwoarang-ws3+4,3;Spinning Scythe > Axe Heel;;;File:t8-p2-hwoarang-ws3+4,3.mp4
-SS.3;m;13;i18~19;-12;-1;;;;;Hwoarang-SS.3;;;;
-SS.3,3;m, h;13, 16;i18~19, i9~10;+3;+14;Launch;* Shifts to Left Flamingo;;LFS;Hwoarang-SS.3,3;Eruption;LFS;;File:t8-p2-hwoarang-ss.3,3.mp4
+* Transition to BT";;BT,BT;Hwoarang-ws3+4;;BT;;
+ws3+4,3;m, M;16, 20;i20~21, i21~26;-6;+5c~+10c;+29d;"* Combo from 1st hit with 7F delay
+* Input can be delayed by 7F
+* Move cannot be delayed";;;Hwoarang-ws3+4,3;Spinning Scythe > Axe Heel;;;File:t8-p2-hwoarang-ws3+4,3.mp4
+SS.3;m;13;i18~19;-12;-1;+5;;;;Hwoarang-SS.3;;;;
+SS.3,3;m, h;13, 16;i18~19, i9~10;+3;+14;;"* Jail from 1st block
+* Combo from 1st hit
+* +34a (+27) on 1st CH
+* Shifts to Left Flamingo";;LFS;Hwoarang-SS.3,3;Eruption;LFS;;File:t8-p2-hwoarang-ss.3,3.mp4
 SS.4;l;18;i19~20;-13;+5c;+31a;* Shifts to Right Stance;;RFF;Hwoarang-SS.4;Spinning Trip Kick;RFF;;File:t8-p2-hwoarang-ss.4.mp4
-BT.3;M;20;i14~16;-13;+38 (+28);;;;;Hwoarang-BT.3;Left Plasma Blade;;;
-BT.4;M;20;i14~16;-13;+40 (+30);;* Shifts to Right Stance;;RFF;Hwoarang-BT.4;Plasma Blade;RFF;;
-BT.d+3;l;20;i18~19;-13;-2;;High crush;cs;;Hwoarang-BT.d+3;Spinning Low Kick;;;File:t8-p2-hwoarang-bt.d+3.mp4
-CD.3;m;27;i18~19;+4;+25 (+16);;"* Tornado
+BT.3;M;20;i14~16;-13;+38a (+28);;;;;Hwoarang-BT.3;Left Plasma Blade;;;
+BT.4;M;20;i14~16;-13;+40 (+30);;* Transition to RFF;;RFF,RFF;Hwoarang-BT.4;Plasma Blade;RFF;;
+BT.d+3;L;20;i18~19;-13;-2;+31a;High crush 4~50;cs4~50;;Hwoarang-BT.d+3;Spinning Low Kick;;;File:t8-p2-hwoarang-bt.d+3.mp4
+CD.3;m;27;i18~19;+4;+25a (+16);+57a (+10);"* Tornado
 * Balcony Break
-* Chip damage on block
-* Also possible during Right Stance
-* Shifts to Left Flamingo";trn bbr chp;LFS;Hwoarang-CD.3;Phalanx;LFS;;File:t8-p2-hwoarang-cd.3.mp4
-CD.4;m;18;i16;-18;+53 (+43);;"* Tornado
-* Also possible during Right Stance";trn;;Hwoarang-CD.4;Sky Rocket;;;File:t8-p2-hwoarang-cd.4.mp4
+* 8 chip damage on block
+* Also possible during RFF
+* Transition to LFS";trn bbr;LFS,LFS;Hwoarang-CD.3;Phalanx;LFS;;File:t8-p2-hwoarang-cd.3.mp4
+CD.4;m;18;i16;-18;+53a (+43);;"* Tornado
+* Also possible during RFF";trn;;Hwoarang-CD.4;Sky Rocket;;;File:t8-p2-hwoarang-cd.4.mp4
 LFS.1;h;6;i13;+5;+7;;;;LFF;Hwoarang-LFS.1;Left Flamingo > Back Hand;r14? LFF;;File:t8-p2-hwoarang-lfs.1.mp4
-LFS.2;m;15;i16;-2;+9;;* Shifts to Right Stance;;;Hwoarang-LFS.2;Right Backhand;RFF r21?;;File:t8-p2-hwoarang-lfs.2.mp4
+LFS.2;m;15;i16;-2;+9;;* Shifts to Right Stance;;RFF;Hwoarang-LFS.2;Right Backhand;r21? RFF;;File:t8-p2-hwoarang-lfs.2.mp4
 LFS.3;m;10;i14;-13;-7;;* LFS.3,F to transition to +2 +8 LFS;;LFS,LFF;Hwoarang-LFS.3;;LFF;;
 LFS.3,2;m, M;10, 20;i14, i21~22;-11;+1c;;* Combo from 1st CH with ?F delay;;LFF;Hwoarang-LFS.3,2;Flamingo Siege Combo;LFF;;File:t8-p2-hwoarang-lfs.3,2.mp4
 LFS.3,3;m, m;10, 15;i14, i21;-14;+32 (+24);;"* Balcony Break
@@ -250,7 +306,7 @@ RFF.1,1;h, m;10, 12;i10, i19;-8;+3;;;;;Hwoarang-RFF.1,1;Migraine;;;File:t8-p2-hw
 RFF.2;h;6;i10;+2;+8;;* Remains in Right Stance;;;Hwoarang-RFF.2;;RFF r17?;;
 RFF.2,1;h, h;6, 10;i10, i10;+0;+6;;"* Jails
 * Remains in Right Stance";;RFF;Hwoarang-RFF.2,1;;RFF;;
-RFF.2,1,1;h, h, m;6, 10, 12;i10, ,i19;-8;+3;;;;;Hwoarang-RFF.2,1,1;Big Fists;;;File:t8-p2-hwoarang-rff.2,1,1.mp4
+RFF.2,1,1;h, h, m;6, 10, 12;i10, ,i19;-8;+3;;* Shifts to Left Stance;;;Hwoarang-RFF.2,1,1;Big Fists;;;File:t8-p2-hwoarang-rff.2,1,1.mp4
 RFF.2,3;h, h;6, 24;i10, i19~20;-9;+20;;"* Tornado
 Low crush";trn js;;Hwoarang-RFF.2,3;Hawk Strike;;;File:t8-p2-hwoarang-rff.2,3.mp4
 RFF.2,4;h, h;6, 9;i10, i12;-8;+3;;"* Jails
@@ -278,7 +334,7 @@ RFF.b+1;h;18;i14;-4;+6;+14c;"* Elbow
 * Good left sidestep tracking";elb;RFF;Hwoarang-RFF.b+1;Left Back Elbow;RFF;;
 RFF.b+2;m;17;i16~17;+4;+6c;;"* 5 chip damage on block
 * Remains in Right Stance";;RFF;Hwoarang-RFF.b+2;Blast Fist;RFF;;File:t8-p2-hwoarang-rff.b+2.mp4
-RFF.b+3;h;17;i13~14;-10;+1;;* Sidesteps to the right;;;Hwoarang-RFF.b+3;Nose Bleeder;;;
+RFF.b+3;h;17;i13~14;-10;+1;+50a;* Sidesteps to the right;;;Hwoarang-RFF.b+3;Nose Bleeder;;;
 RFF.b+4;h;21;i18~19;-9;+12;+13c;* Balcony Break;bbr;;Hwoarang-RFF.b+4;Spin Kick;;;File:t8-p2-hwoarang-rff.b+4.mp4
 RFF.df+3;m;21;i22~24;+1;+6;;"* Homing
 * Heat Engager
@@ -294,7 +350,7 @@ RFF.df+2+3,4;m, m;12, 20;i22~23, i24~25;-14;+7;;* Deals chip damage on block if 
 RFF.d+3;l;10;i18;-11;0;;* Shifts to Backturn Stance;;BT;Hwoarang-RFF.d+3;;BT;;
 RFF.d+3,4;l, h;10, 10;i18, i21~23;+8;+14;;"* Shifts to Right Flamingo
 * Combo from 1st hit";;RFS;Hwoarang-RFF.d+3,4;Triumph Low Right;RFS;;File:t8-p2-hwoarang-rff.d+3,4.mp4
-RFF.d+3+4;l;19;i19;-11;+5;;* Remains in Right Stance;;RFF;Hwoarang-RFF.d+3+4;Heel Screw;RFF;;File:t8-p2-hwoarang-rff.d+3+4.mp4
+RFF.d+3+4;l;19;i19;-11;+5;+15g;* Remains in Right Stance;;RFF;Hwoarang-RFF.d+3+4;Heel Screw;RFF;;File:t8-p2-hwoarang-rff.d+3+4.mp4
 RFF.f,F+3;M;22;i22~25;-7;+19;;Low crush;js;;Hwoarang-RFF.f,F+3;Hunting Heel;;;File:t8-p2-hwoarang-rff.f,f+3.mp4
 RFF.f+1;h;5;i10;+1;+8;;;;;Hwoarang-RFF.f+1;;;;
 RFF.f+1,2;h, h;5, 10;i10, i10;-3;+6;;Jails;;;Hwoarang-RFF.f+1,2;Left Right Combo;;;
@@ -305,7 +361,7 @@ RFF.f+4~4;M;20;i18~20;-13;+41 (+31);;"* Tornado
 * Remains in Right Stance";trn;RFF;Hwoarang-RFF.f+4~4;Plasma Blade;RFF;;
 RFS.1;m;15;i16;-2;+9;;;;;Hwoarang-RFS.1;Left Punch;r21?;;File:t8-p2-hwoarang-rfs.1.mp4
 RFS.2;h;6;i13;+5;+7;;"* Shifts to Right Stance
-* Links to RFF.2 extensions";;RFF.2 extensions;Hwoarang-RFS.2;Right Flamingo > Back Hand;RFF r14?;;File:t8-p2-hwoarang-rfs.2.mp4
+* Links to RFF.2 extensions";;RFF.2 extensions,RFF;Hwoarang-RFS.2;Right Flamingo > Back Hand;r14? RFF;;File:t8-p2-hwoarang-rfs.2.mp4
 RFS.3;h;24;i14~16;+4;+27 (+18);;"* Balcony Break
 * Shifts to Left Flamingo
 * Sidesteps to the left

@@ -6,17 +6,12 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * Only deals recoverable damage
 * Cannot cause a K.O.
 Power crush 7~16";hb pc7~16;;King-2+3;Heat Burst;r30;;
-H.JGR.1;m;21;i16~17;-8;+75a(+59);;"* 6 chip damage on block
-* Partially uses remaining Heat time.";;;King-H.JGR.1;Running Elbow Smash (Heat);r28;;File:t8-p2-king-jgr.1.mp4
-H.JGR.2;h;26;i18~19;+8;+4a;;"* 13 chip damage on block.
-* Forces crouching at +18c on wall crush.
-* Partially uses remaining Heat time.";;;King-H.JGR.2;Jaguar Axe (Heat);r33;;File:t8-p2-king-jgr.2.mp4
-H.2+3;m,t;20,40;i17;+12;+0d;;"* Heat Smash
+H.2+3;m,t;20,40;i17,i21~22;+12 JGR;+0d;;"* Heat Smash
 * Floor Break
 * Shifts to JGR on block (without heat).
 * Hold b to cancel shift, becomes +7 on block.
 * Hits OTG
-* 5 chip damage";hs fbr;;King-H.2+3;Ultimo Jaguar;;;
+* 5 chip damage";hs fbr;;King-H.2+3;Ultimo Jaguar;r35?;;
 R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Removes Recoverable Health
 * Reversal Break
@@ -28,14 +23,14 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 Power crush 8~";rbr pc8~;;King-R.df+1+2;Anger Of The Beast;r39;;
 1;h;5;i10;+1;+8;;Recovers 2f faster on hit or block (t27 r17);;;King-1;Jab;r19;;
 1,2;h, h;5, 15;i10, i10~12;-3;+8;;"* Combo from 1st hit with 6F delay
-* Jail from 1st block with 5F delay";;;King-1,2;Palm Strike;;;File:t8-p2-king-1,2.mp4
+* Jail from 1st block with 5F delay";;;King-1,2;Palm Strike;r21;;File:t8-p2-king-1,2.mp4
 1,2,1;h, h, m;5, 15, 10;i10, ,i24~25;-4;+5s;+10s;"* Forces standing on hit.
 * Move can be delayed by 9F
 * Starter of 10 Strings, 3rd~5th hits are combo.";;;King-1,2,1;Palm Strike Uppercut;r19;;File:t8-p2-king-1,2,1.mp4
-1,2,1,2+4;h, h, m, t;5, 15, 10, 40;i10, ,i26~28;;+0d;;* Throw break 2.;;;King-1,2,1,2+4;Palm Strike Uppercut > Suplex;;;File:t8-p2-king-1,2,1,2+4.mp4
+1,2,1,2+4;h, h, m, t;5, 15, 10, 40;i10, ,i26~28;;+0d;;* Throw break 2.;;;King-1,2,1,2+4;Palm Strike Uppercut > Suplex;r26;;File:t8-p2-king-1,2,1,2+4.mp4
 1,2,1,d+2+4;h, h, m, t(c);5, 15, 10, 35;i10, ,i28~30;;+1d;;"* Floor Break
 * Crouch throw, cannot throw break.
-* Opponent recovers in FDFA.";fbr;;King-1,2,1,d+2+4;Palm Strike Uppercut > V Driver;;;File:t8-p2-king-1,2,1,d+2+4.mp4
+* Opponent recovers in FDFA.";fbr;;King-1,2,1,d+2+4;Palm Strike Uppercut > V Driver;r25;;File:t8-p2-king-1,2,1,d+2+4.mp4
 1,2,2+4;h, h, t;5, 15, 30;i10, ,i30;;+1d;;* Throw break 2.;;;King-1,2,2+4;Palm Strike > Head Jammer;;;File:t8-p2-king-1,2,2+4.mp4
 1,2,d+2+4;h, h, t(c);5, 15, 35;i10, ,i27;;+1d;;"* Floor Break
 * Crouch throw, cannot throw break.
@@ -101,16 +96,18 @@ f+3:1+2;m, t;18, 20;i15~16, ;;-5d;;"* Input 1+2 during frames 16-19 of f+3
 f+4;m;25;i18~20;-9;+12a(+3);;"Balcony Break
 Homing
 Low crush 9~";bbr hom js9~;;King-f+4;Rolling Sobat;r31;;File:t8-p2-king-f+4.mp4
-f+1+2;h;23;i16~17;+0;+10d;;;;;King-f+1+2;Shadow Lariat;r27;;File:t8-p2-king-f+1+2.mp4
+f+1+2;h;23;i16~17;+0~+1;+10d;;;;;King-f+1+2;Shadow Lariat;r27;;File:t8-p2-king-f+1+2.mp4
 f+1+4;m;21;i17~19;+3;+7s;;* Forces standing on hit.;;;King-f+1+4;Body Check;r26;;File:t8-p2-king-f+1+4.mp4
 f+2+3;m;27;i20~24;-9;+8a(-1a);;"* Heat Engager
 
 * Heat Dash +5 on block, +36a(+26a) on hit.
 
 * Balcony Break";he bbr;;King-f+2+3;Shoulder Tackle;r33;;File:t8-p2-king-f+2+3.mp4
-f+3+4;;;;;;;"* Cancel to r25 with b on frame 34~ at the earliest, able to block high.
-* Gains armor during Heat.
-* Partially uses remaining Heat time (same for uf+3+4 / db+1+2,3+4 / b+1+2 ).";;JGR;King-f+3+4;Jaguar Sprint;r30 JGR;;
+f+3+4;;;;;;;"* Cancel to r25 standing block with b on frame 35~ at the earliest
+* Access powered-up JGR moves starting at frame 60?
+* Immediately access powered-up JGR moves during Heat
+* Becomes pc7~89 during Heat.
+* Partially uses remaining Heat time";;JGR;King-f+3+4;Jaguar Sprint;r30 JGR;;
 df+1;m;15;i14~15;-1;+3s;;* Forces standing on hit.;;;King-df+1;;r26;;
 df+1,2;m, m;15, 15;i14~15, i20~21;-10;+5s;;"* Combo from 1st hit with 5F delay
 * Combo from 1st CH with 9F delay
@@ -155,7 +152,7 @@ d+3+4,4;L, L;14, 7;i16, i29;-25;-9;;"* Combo from 1st hit on CH.
 High crush 1~";cs1~;FC;King-d+3+4,4;;r FC;;
 d+3+4,4,4;L, L, L;14, 7, 7;i16, ,i29;-25;-9;;"* Combo from 2nd hit on CH.
 High crush 1~";cs1~;FC;King-d+3+4,4,4;Stagger Kicks;r FC;;File:t8-p2-king-d+3+4,4,4.mp4
-d+3+4,4,4,2;L, L, L, m;14, 7, 7, 10;i16, ,i28;-15;+16d(+6);;* Balcony Break;bbr;;King-d+3+4,4,4,2;Stagger Kick Spinning Uppercut;;;File:t8-p2-king-d+3+4,4,4,2.mp4
+d+3+4,4,4,2;L, L, L, m;14, 7, 7, 10;i16, ,i28;-15;+5;;* Balcony Break;bbr;;King-d+3+4,4,4,2;Stagger Kick Spinning Uppercut;;;File:t8-p2-king-d+3+4,4,4,2.mp4
 d+3+4,4,4,4;L, L, L, L,L;14, 7, 7, 4,3;i16, ,i29,i29;-26;+15;;"* Only available if 1st hit on CH.
 * Combo from 3rd hit
 High crush 1~";cs1~;FC;King-d+3+4,4,4,4;Stagger Kick Flurry;r FC;;
@@ -174,6 +171,7 @@ db+1+2,2;m,t;15,20;i15;-9;+8g;;"* Heat Engager
 
 * Heat Dash +5 on block, +67a(+50a) on hit.
 
+* Reversal Break after absorbing attack with muscle armor
 * Effective startup is i32
 * +35g on heat engager hit
 * Shifts to throw on front grounded hit.
@@ -189,7 +187,7 @@ b+1,2;h, h;13, 20;i12, i19~20;-13;+5;+70a(+54)*;"* Tornado
 * Launches opponent if b+1 on CH.
 * Move can be delayed by 6F
 * Input can be delayed by 10F";trn;;King-b+1,2;Quick Hook > Uppercut;;;File:t8-p2-king-b+1,2.mp4
-b+1,4;h, m;13, 23;i12, i26~28;-11;+1d;+18(-17)*;"* Combo from 1st CH with no delay.
+b+1,4;h, m;13, 23;i12, i26~28;-10;+1d;+18(-17)*;"* Combo from 1st CH with no delay.
 * Recovers in FUFT.
 * Move can be delayed by 6F
 * Input can be delayed by 10F";;FUFT;King-b+1,4;Quick Hook > Heel Kick;r FUFT;;File:t8-p2-king-b+1,4.mp4
@@ -204,7 +202,7 @@ b+2,1;h, h;16, 21;i14, i20~21;-9;+19a(+10);;"* Balcony Break
 b+2,4;h, m,t;16, 18,20;i14, i21;-8;+10s/+0;;"* Shifts to throw on front grounded hit.
 * Move can be delayed by 10F
 * Input can be delayed by 15F";;;King-b+2,4;Chupacabra > Olympia Slam;r26;;File:t8-p2-king-b+2,4.mp4
-b+2,1+2;h, h;16, 22;i14, i24~25;+2c;+22d;;"* Forces crouching on block.
+b+2,1+2;h, h;16, 22;i14, i24~25;+2c;+22a;;"* Forces crouching on block.
 * Move can be delayed by 10F
 * Input can be delayed by 15F";;;King-b+2,1+2;Chupacabra > Head Butt;r27;;File:t8-p2-king-b+2,1+2.mp4
 b+2+4;r(m);25;i10;;+24d;;"* Parry opponent's left kick.
@@ -228,7 +226,7 @@ b+3+4;;;;;;;"* Cannot be held to continue spinning.
 Low crush 6~21 fs22~24";js6~21 fs22~24;JGS;King-b+3+4;Reverse Jaguar Step;r24 JGS;;File:t8-p2-king-b+3+4.mp4
 ub+4;m;15;i15;-13;+19a(+9);+33a(+23);"* Jump straight up knee, very short range.
 Low crush 9~";js9~;;King-ub+4;;;;
-u+1+2;m;25;i35~36;+2c;+22d;;"* Tap 1+2 otherwise it becomes u+1+2(hold).
+u+1+2;m;25;i35~36;+2c;+22a;;"* Tap 1+2 otherwise it becomes u+1+2(hold).
 * Forces Crouching on block.
 Low crush 9~";js9~;;King-u+1+2;Capital Punishment;r27;;File:t8-p2-king-u+1+2.mp4
 u+1+2*;m!;40;i67;;+11d;;"* Unblockable mid.
@@ -260,9 +258,9 @@ f,F+2;m;21;i31~32;+7;+12c;;"* Forces crouching on hit.
 * Allow crouching throw on hit.
 * 6 chip damage on block.
 * 8 chip damage on block in heat.";;;King-f,F+2;Beast Elbow;r30;;File:t8-p2-king-f,f,2.mp4
-f,F+4;m;25(30,14);i15;-15;+14a(+4);+1d;"* Tornado
+f,F+4;m,(t);25,(14);i15;-15;+14a(+4);+1d;"* Tornado
 * Balcony Break
-* Shifts to throw on front grounded CH.";trn bbr;;King-f,F+4;Konvict Kick;;;File:t8-p2-king-f,f,4.mp4
+* Shifts to 14dmg throw on front grounded CH.";trn bbr;;King-f,F+4;Konvict Kick;;;File:t8-p2-king-f,f,4.mp4
 f,F+2+3;M,t;20,15;i21~43;-16c~+2c;-19c~+3c/-5d;;"* Forces crouching on block and hit.
 * Throw when hit standing in front close range.
 Low crush 12~";js12~;FDFA;King-f,F+2+3;Diving Body Press;r FDFA;;
@@ -299,10 +297,11 @@ ws2;m;11;i14;-9;+1s;;"* Homing
 ws2,2;m, m;11, 25;i14, i15~16;-12;+12g;;"* Balcony Break
 * Combo from 1st hit with 9F delay
 * Combo from 1st CH with 16F delay
-* Recover 3F faster on hit or block? (r30? t66?)
+* Recover 3F faster on hit(r30? t66?)
 * Transition to JGR on hit
+* Cancel to standing with B
 * Move can be delayed by 10F
-* Input can be delayed by 16F";bbr;JGR;King-ws2,2;Round Trip Chop;r33?;;File:t8-p2-king-ws2,2.mp4
+* Input can be delayed by 16F";bbr;JGR;King-ws2,2;Round Trip Chop;r33;;File:t8-p2-king-ws2,2.mp4
 ws3;h;20;i16;0;+22a(+12);;;;;King-ws3;;r28;;
 ws4;m;20;i11~12;-6;+5;;;;;King-ws4;Toe Smash;r24;;File:t8-p2-king-ws4.mp4
 ws1+2;m;20;i18~19;-10;+35a(+25);;;;;King-ws1+2;Snap Uppercut;r28;;File:t8-p2-king-ws1+2.mp4
@@ -341,18 +340,42 @@ CD.DF+4;m;21;i15~16;-9;+49a(+18);+53a;"* Special down state that allows low jugg
 * Crumple on CH for full combo.";;;King-CD.DF+4;Knee Lift;r36;;File:t8-p2-king-cd.4.mp4
 FUFT.b+3+4;m;25;i16~28;-25;+4a(-6);;"Balcony Break
 * Faster than normal spring kick and knocks down.";bbr;;King-FUFT.b+3+4;Whirling Spring Kick;;;
-JGR.1;m;21;i16~17;-8;+39d/+75a(+59);;"* In heat it becomes Tornado on grounded hit.
-* Partially uses remaining Heat time.";;;King-JGR.1;Running Elbow Smash;r28;;File:t8-p2-king-jgr.1.mp4
-JGR.2;h;26;i18~19;+3/+6/+18c;+4d;;"* Strong Aerial Tailspin
-* 4 Chip damage on block.
-* In heat it becomes +6 on block, and forces crouching +18 near wall.
-* Partially uses remaining Heat time.";;;King-JGR.2;Jaguar Axe;r33;;File:t8-p2-king-jgr.2.mp4
-JGR.3;m;30;i22~23;-9;+11d (+1);;"* Balcony Break
+JGR.1;m;21;i16~17;-8;+26c;;"* Balcony Break
+* Power up into JGR.1* after 30F? or during Heat
+** Partially uses remaining Heat time during Heat.";bbr;;King-JGR.1;Running Elbow Smash;r28;;File:t8-p2-king-jgr.1.mp4
+JGR.1*;m;25;i16~17;-4;+75a (+59);;"* Tornado on normal hit
+* Effective startup i46~47?
+* Partially uses remaining Heat time during Heat.";;;King-JGR.1*;Running Elbow Smash (charged);r28;;
+JGR.2;h;24;i18~19;+3;+5a;;"* Strong Aerial Tailspin
+* 4 chip damage on block.
+* Power up into JGR.2* after 30F? or during Heat
+** Partially uses remaining Heat time during Heat.";;;King-JGR.2;Jaguar Axe;r33;;File:t8-p2-king-jgr.2.mp4
+JGR.2*;h;28;i18~19;+8;+32a;;"* Balcony Break
+* Effective startup i48~49?
+* 8 chip damage on block
+* Partially uses remaining Heat time during Heat";bbr;;King-JGR.2*;Jaguar Axe (charged);r33;;
+JGR.3;m;30;i22~23;-9;+12d (+2);;"* Balcony Break
 * Homing
+* Power up into JGR.3* after 30F? or during Heat
+** Partially uses remaining Heat time during Heat.
 Low crush 11~30 fs31~33";bbr hom js11~30 fs31~33;;King-JGR.3;Sprint K.;r43;;File:t8-p2-king-jgr.3.mp4
-JGR.4;L;20;i20~24;-21;+0c;;Low crush 7~23 fs24~;js7~23 fs24~;FUFT;King-JGR.4;Dashing Low Drop Kick;r36 FUFT;;File:t8-p2-king-jgr.4.mp4
+JGR.3*;m;34;i22~23;+2;+21a (-5);;"* Balcony Break
+* Homing
+* Effective startup i52~53?
+* 10 chip damage on block
+* Partially uses remaining Heat time during Heat
+Low crush 11~30 fs31~33";bbr hom js11~30 fs31~33;;King-JGR.3*;Sprint K. (charged);r43;;
+JGR.4;L;20;i20~24;-21;+0c;;"* Power up into JGR.4* after 30F? or during Heat
+** Partially uses remaining Heat time during Heat.
+Low crush 7~23 fs24~";js7~23 fs24~;FUFT;King-JGR.4;Dashing Low Drop Kick;r36 FUFT;;File:t8-p2-king-jgr.4.mp4
+JGR.4*;L;24;i20~24;-21;+20a;;"* Effective startup i50~54?
+* Partially uses remaining Heat time during Heat.
+Low crush 7~23 fs24~";js7~23 fs24~;FUFT;King-JGR.4*;Dashing Low Drop Kick (charged);r36 FUFT;;
 JGR.1+2;M,t;20,15;i21~43;-16c~+2c;-19c~+3c/-5d;;"* Throw when hit standing in front close range.
-* King recovers off axis";;FDFA;King-JGR.1+2;Diving Body Press;r27 FDFA;;
+* King recovers off axis
+* Power up into JGR.1+2* after 30F? or during Heat
+** 24,15dmg and i51~73? effective startup (without Heat)
+** Partially uses remaining Heat time during Heat";;FDFA;King-JGR.1+2;Diving Body Press;r27 FDFA;;
 JGS.1;h;21/25/31;i17~18/i19~20;-7/-1;+47d/+53d;;"* Crumple on hit.
 * On block / hit / startup increases up to 2nd spin.
 * Damage increase up to 3rd spin.";;;King-JGS.1;Jaguar Step > Hook;;;File:t8-p2-king-jgs.1.mp4
@@ -390,11 +413,11 @@ JGS.df+4;m;30/36/45;i17~19;-16/+8;+5a(-4);;"Balcony Break
 * 1 or 2 throw break.
 * Input f+1+3 to increase throw range, but its startup is 3 frames slower.
 * Opponent recovers in FUFA.
-* Side switch on successful throw break";hom;;King-1+3;Winding Nut;;;
+* Side switch on successful throw break";hom;;King-1+3;Winding Nut;r31/33;;
 2+4 / f+2+4;t;35;i12~15 / i15~17;-3;+0d;;"* Homing
 * 1 or 2 throw break.
 * Input f+2+4 to increase throw range, but its startup is 3 frames slower.
-* Side switch. Opponent recovers in FUFA.";hom;;King-2+4;Suplex;;;
+* Side switch. Opponent recovers in FUFA.";hom;;King-2+4;Suplex;r31/33;;
 AB1.1,1+2;t;12,18;;-3;+2d;;"* 1 throw break.
 * Opponent recovers in FUFT. Max damage 50.";;;King-AB1.1,1+2;Triple Arm Breaker (AB2a);;;File:t8-p2-king-ab1.1,1+2.mp4
 AB1.2,1,1+3;t;20;;-3;+0d;;"* 1+2 throw break.
@@ -431,7 +454,7 @@ AIR.f,hcf+1;t(a);55(60);i10 / i12~14;;+3d;;"Floor Break
 * Opponent recovers in FUFT.";fbr;;King-AIR.f,hcf+1;Aerial Jaguar Bomb;;;
 Behind.b,f+1+2;t;75;i10;;+1d;;"Floor Break
 * Cannot throw break.
-* Opponent recovers FUFR.";fbr;;King-Behind.b,f+1+2;Stretch Buster;;;
+* Opponent recovers FUFR.";fbr;;King-Behind.b,f+1+2;Stretch Buster;r29;;
 CD.1+3;t;20;i12;-2;+1d;;"* 1 Throw break.
 * Opponent recovers in FUFT.";;;King-CD.1+3;Arm Breaker (AB1);;;File:t8-p2-king-cd.1+4.mp4
 CD.2+4;t;25;i12;-2;+0d;;"* 2 throw break.
@@ -445,7 +468,7 @@ FC.1+2;t(s);0;i26;-5;+3d;;"* 1+2 throw break (except from behind).
 * Catches standing and crouching opponent from all directions.";;;King-FC.1+2;Ultimate Tackle (UT);;;File:t8-p2-king-fc.1+2.mp4
 FC.db,d,db+1+2;t;45;i12;-6;+0d;;"Floor Break
 * 1+2 throw break.
-* Opponent recovers in FUFR.";fbr;;King-FC.db,d,db+1+2;Clothesline Press (Rock Bottom);;;File:t8-p2-king-fc.db,d,db+1+2.mp4
+* Opponent recovers in FUFR.";fbr;;King-FC.db,d,db+1+2;Clothesline Press (Rock Bottom);r27;;File:t8-p2-king-fc.db,d,db+1+2.mp4
 FDFA.db+1+3;t(g);32;i18~20;+0;+0d;;"* 1 or 2 throw break, depending on King's input.
 * Opponent recovers in FDFA.";;;King-FDFA.db+1+3;Wing Tearer;;;
 FDFL.db+1+3;t(g);37;i18~20;+0;+0d;;"* 1 or 2 throw break, depending on King's input.
@@ -472,8 +495,11 @@ JGR.1+3;t;45;i23;;+1d;;"* Heat Engager
 
 * Homing
 * Cannot throw break. Cannot heat dash.
-* Restores some Heat Gauge in Heat.
-* Opponent recovers in FUFA.";he hom;;King-JGR.1+3;Rapid King Onslaught;;;File:t8-p2-king-jgr.1+3.mp4
+* Restores some Heat Gauge in Heat on successful hit.
+* Opponent recovers in FUFA.
+* Power up into JGR.1+3* after 30F? or during Heat
+** 49dmg and i53? effective startup (without Heat)
+** Partially uses remaining Heat time during Heat.";he hom;;King-JGR.1+3;Rapid King Onslaught;r24;;File:t8-p2-king-jgr.1+3.mp4
 JGS.1+3;t;20;i12;-3;+0d;;"* Homing
 * 1 or 2 throw break, depending on King's input.
 * Opponent recovers in FDFT.
@@ -569,15 +595,18 @@ WallBack.b,b,ub;t / m;45 / 21;i43~48 / i44~63;-8;+2 / +15;;"* Airborne from 5F, 
 b+1+2(,f,F);t;0;i12~17;-3;+14g / -2;;"* Homing
 * 1+2 throw break. Side switch.
 * Damage becomes 15 on wall splat.
-* Shifts to JGR, input f,F / b,B to cancel shift.";hom;;King-b+1+2;Throw Away;;;File:t8-p2-king-b+1+2.mp4
+* Shifts to JGR, input f,F / b,B to cancel shift.";hom;;King-b+1+2;Throw Away;r20;;File:t8-p2-king-b+1+2.mp4
 b+1+2,1+2(,f,F);t;0;i12~17;;+11g / -6;;"* 1+2 throw break.
 * Damage becomes 15 on wall splat.
 * Shifts to JGR, input f,F / b,B to cancel shift.";;;King-b+1+2,1+2;Throw Away > Back Swing;;;File:t8-p2-king-b+1+2,1+2.mp4
 db,n,f+2+4;t;53;i11;-2;-1d;;"Floor Break
-* 2 throw break. Can also be done by qcb,n,f+2+4 / b,db,d,n,f+2+4.
-* Opponent recovers in FUFA.";fbr;;King-db,n,f+2+4;Tombstone Pile Driver;;;File:t8-p2-king-db,n,f+2+4.mp4
+* 2 throw break
+* Input n,f+2+4 in 30 frames
+* Cannot be buffered from crouch
+* Cannot be executed during while standing
+* Opponent recovers in FUFA";fbr;;King-db,n,f+2+4;Tombstone Pile Driver;r28;;File:t8-p2-king-db,n,f+2+4.mp4
 db+2+3;t;40 (8+20+12);i12;-6;+1d / 0d;;"* 1+2 throw break.
-* Opponent recovers in FUFT / FDFT.";;;King-db+2+3;Figure Four Leg Lock;;;
+* Opponent recovers in FUFT / FDFT.";;;King-db+2+3;Figure Four Leg Lock;r27;;
 df+1+3;t;19;i32;-2;+1d;;"* Homing
 * 1 throw break. Side Switch.
 * Very slow crouch dash then grab.
@@ -587,7 +616,7 @@ df+2+4;t;20;i32;-2;+1d;;"* Homing
 * Very slow crouch dash then grab.
 * Opponent recovers in FUFT.";hom;;King-df+2+4;Reverse Special Stretch Bomb (RSSB1);;;File:t8-p2-king-df+2+4.mp4
 df+2+3;t;40;i12;-2;+0d;;"* 2 throw break.
-* Opponent recovers in FUFT.";;;King-df+2+3;Knee Bash;;;File:t8-p2-king-df+2+3.mp4
+* Opponent recovers in FUFT.";;;King-df+2+3;Knee Bash;r27;;File:t8-p2-king-df+2+3.mp4
 df+3+4;t/s;30/15;i28~35;-12~-18;+18d/-7~0;;"* Throw only when opponent standing close.
 * Cannot throw break.
 * Recovers in BT/FUFT on throw success/failed.
@@ -605,35 +634,45 @@ d+1+4;t(c);35;i12~13;;+0d;;"* Heat Engager
 * Crouch throw, cannot throw break.
 * Can also be done by db+1+4 and in FC too.
 * Restores some Heat Gauge in Heat.
-* Cannot heat dash.Opponent recovers in FDFA.";he;;King-d+1+4;Freedom Face Buster (Pedigree);;;File:t8-p2-king-d+1+4.mp4
-f,f,F+2+4;t;40(45);i10;-5;+1d;;"* 1+2 throw break
-* Input n,f,F+2+4 within 6 frames after dash startup (f,n,f) to execute blue spark (+5 damage).
-** 18F throw break window on blue spark; 7F throw break window on CH blue spark
+* Cannot heat dash.Opponent recovers in FDFA.";he;;King-d+1+4;Freedom Face Buster;;;File:t8-p2-king-d+1+4.mp4
+f,f,F+2+4;t;40(45);i10;-5;+1d;;"* Homing during heat
+* 1+2 throw break
+* Input f,F+2+4 in 6 frames after f,f for bluespark.
+* 45 damage on bluespark
+* 18F throw break window on bluespark
+* 7F throw break window on CH bluespark
 * Partially restores remaining Heat time.
-* Opponent recovers in FUFL.";;;King-f,f,F+2+4;Tomahawk;;;File:t8-p2-king-f,f,f+2+4.mp4
-f,hcf+1;t;45(50)/70,5;i10;-13;-22d(-50);;"* 1 throw break
+* Opponent recovers in FUFL.";;;King-f,f,F+2+4;Tomahawk;r29;;File:t8-p2-king-f,f,f+2+4.mp4
+f,hcf+1;t;45(50)/70,5;i10;-13;-22d(-50);;"* Homing during heat
+* 1 throw break
 * Side switch 
-* Input all 6 directions of throw, press df for 1-3F, at most 1F of f followed by f+1 for blue spark (+5 damage).
-** 18F throw break window on blue spark; 7F throw break window on CH blue spark
-* f,b,d,f are required input, so it can be done by f,b,db,d(,n),f+2
+* Input all directions, df for 1-3F, f for 0-1F, and f+1 to execute bluespark.
+* 50 damage on bluespark
+* 18F throw break window on bluespark
+* 7F throw break window on CH bluespark
 * Partially restores remaining Heat time.
 * Perform tech ukemi to reduce 5 damage.
-* 70 damage on wall splat (normal and perfect input).
-* Opponent recovers in FUFT.";;;King-f,hcf+1;Giant Swing;;;
-f,hcf+2;t;50(55);i12~14;-6;+1d;;"* 2 throw break
-* Input all 6 directions of throw, press df for 1-3F, at most 1F of f followed by f+2 for blue spark (+5 damage)
-** 18F throw break window on blue spark; 7F throw break window on CH blue spark
+* 70 damage on wall splat regardless of input.
+* f,b,d,f are required inputs for normal throw
+* Opponent recovers in FUFT.";;;King-f,hcf+1;Giant Swing;r29;;
+f,hcf+2;t;50(55);i12~14;-6;+1d;;"* Homing during heat
+* 2 throw break
+* Input all directions, df for 1-3F, f for 0-1F, and f+2 to execute bluespark.
+* 55 damage on bluespark
+* 18F throw break window on bluespark
+* 7F throw break window on CH bluespark
 * Partially restores remaining Heat time.
-* f,b,d,f are required input, so it can be done by f,b,db,d(,n),f+2
-* Opponent recovers in FUFL.";;;King-f,hcf+2;Tijuana Twister;;;File:t8-p2-king-f,hcf+2.mp4
-qcb+1+2;t;50;i11;-6;-6d;;"Floor Break
-* 1+2 throw break. 
-* Side switch.
-* King recovers in backturn stance.
-* Partially restores remaining Heat time.
-* Opponent recovers in FUFA.";fbr;BT;King-qcb+1+2;Muscle Buster;r BT;;File:t8-p2-king-qcb+1+2.mp4
+* f,b,d,f are required inputs for normal throw
+* Opponent recovers in FUFL.";;;King-f,hcf+2;Tijuana Twister;r25;;File:t8-p2-king-f,hcf+2.mp4
+qcb+1+2;t;50;i11;-6;-6d;;"* Floor Break
+* Homing during heat
+* 1+2 throw break
+* Side switch
+* King recovers in BT
+* Partially restores remaining Heat time
+* Opponent recovers in FUFA.";fbr;;King-qcb+1+2;Muscle Buster;r28;;File:t8-p2-king-qcb+1+2.mp4
 qcf+1;t;30;i11;-2/-7;+8d;;"* 1 throw break.
-* Opponent recovers in FUFT.";;;King-qcf+1;Pile Driver (PD);;;File:t8-p2-king-qcf+1.mp4
+* Opponent recovers in FUFT.";;;King-qcf+1;Pile Driver (PD);r28;;File:t8-p2-king-qcf+1.mp4
 ss2+4;t;15 / 20;i13;-3;+0d / +1d;;"* Homing
 * 2 throw break (except from behind).
 * RSSB2 from side/behind, RSSB1 from front, doesn't change to left/right/behind throw.
@@ -642,4 +681,4 @@ ss2+4;t;15 / 20;i13;-3;+0d / +1d;;"* Homing
 uf+1+2 / uf+1+2,B;t;30;i12;-6;+19d(-7) / +17d(-13);;"* 1+2 throw break.
 * Hold b to throw backwards.
 * Damage becomes 15 on wall splat.
-* Opponent recovers in FUFT.";;;King-uf+1+2;Executioner Drop;;;File:t8-p2-king-uf+1+2.mp4
+* Opponent recovers in FUFT.";;;King-uf+1+2;Executioner Drop;r27;;File:t8-p2-king-uf+1+2.mp4
