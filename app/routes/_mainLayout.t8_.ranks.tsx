@@ -16,7 +16,6 @@ import firstDan from '~/images/t8/ranks/first-dan.png'
 import flameRuler from '~/images/t8/ranks/flame-ruler.png'
 import fujin from '~/images/t8/ranks/fujin.png'
 import ganryu from '~/images/t8/ranks/ganryu.png'
-import godOfDestruction from '~/images/t8/ranks/god-of-destruction.png'
 import kisin from '~/images/t8/ranks/kishin.png'
 import mightyRuler from '~/images/t8/ranks/mighty-ruler.png'
 import raijin from '~/images/t8/ranks/raijin.png'
@@ -31,12 +30,21 @@ import tekkenKing from '~/images/t8/ranks/tekken-king.png'
 import tenryu from '~/images/t8/ranks/tenryu.png'
 import vanquisher from '~/images/t8/ranks/vanquisher.png'
 import warrior from '~/images/t8/ranks/warrior.png'
+import godOfDestruction from '~/images/t8/ranks/god-of-destruction.png'
+import godOfDestruction1 from '~/images/t8/ranks/god-of-destruction-1.png'
+import godOfDestruction2 from '~/images/t8/ranks/god-of-destruction-2.png'
+import godOfDestruction3 from '~/images/t8/ranks/god-of-destruction-3.png'
+import godOfDestruction4 from '~/images/t8/ranks/god-of-destruction-4.png'
+import godOfDestruction5 from '~/images/t8/ranks/god-of-destruction-5.png'
+import godOfDestruction6 from '~/images/t8/ranks/god-of-destruction-6.png'
+import godOfDestruction7 from '~/images/t8/ranks/god-of-destruction-7.png'
+import godOfDestructionInf from '~/images/t8/ranks/god-of-destruction-inf.png'
 import { generateMetaTags } from '~/utils/seoUtils'
 
 type Rank = {
   name: string
   image: string
-  points: number
+  points: number | undefined
 }
 
 type RankGroup = {
@@ -211,7 +219,7 @@ export const rankGroups: RankGroup[] = [
     ],
   },
   {
-    name: 'Gold purple',
+    name: 'Gold (Purple)',
     ranks: [
       {
         name: 'Tekken King',
@@ -238,10 +246,55 @@ export const rankGroups: RankGroup[] = [
         points: 97300,
         image: tekkenGodSupreme,
       },
+    ],
+  },
+  {
+    name: 'God of Destruction',
+    ranks: [
       {
         name: 'God of Destruction',
-        points: 109700,
+        points: 253027,
         image: godOfDestruction,
+      },
+      {
+        name: 'God of Destruction I',
+        points: 308028,
+        image: godOfDestruction1,
+      },
+      {
+        name: 'God of Destruction II',
+        points: 330029,
+        image: godOfDestruction2,
+      },
+      {
+        name: 'God of Destruction III',
+        points: 352030,
+        image: godOfDestruction3,
+      },
+      {
+        name: 'God of Destruction IV',
+        points: 374031,
+        image: godOfDestruction4,
+      },
+      {
+        name: 'God of Destruction V',
+        points: 396032,
+        image: godOfDestruction5,
+      },
+      {
+        name: 'God of Destruction VI',
+        points: undefined,
+        image: godOfDestruction6,
+      },
+      {
+        name: 'God of Destruction VII',
+        points: undefined,
+        image: godOfDestruction7,
+      },
+      {
+        name: 'God of Destruction ∞',
+        points: undefined,
+        image: godOfDestructionInf,
       },
     ],
   },
@@ -278,7 +331,7 @@ const RankCard = ({ image, name, points }: Rank) => {
       </Inset>
       <div className="flex flex-col flex-wrap items-center gap-1 text-center text-sm">
         <div>{name}</div>
-        <div>{points} pts</div>
+        <div>{points ?? '???'} pts</div>
       </div>
     </Card>
   )
