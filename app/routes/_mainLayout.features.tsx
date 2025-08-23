@@ -9,7 +9,7 @@ export default function Features() {
         <h2>Frame data</h2>
         <p>
           The site contains frame data for all tekken 7 characters. We are in
-          the process of adding frame data for Tekken 8
+          the process of adding frame data for Tekken 8.
         </p>
 
         <h2>Data in google sheets</h2>
@@ -25,7 +25,7 @@ export default function Features() {
 
         <h2>Command pages and deep linking</h2>
         <p>
-          Each command has it's own page. You just add the character and the
+          Each command has its own page. You just add the character and the
           command to the url, e.g https://tekkendocs.com/bryan/b1. This also
           generates a preview link with the data for the move. If you paste this
           link in discord, you will see the data similar to how you see it from
@@ -49,14 +49,14 @@ export default function Features() {
         <p>
           Thanks to the datagathering done by Applay, each character has a page
           with a quick overview. This page contains key moves, punishers,
-          comboes and so on. E.g. http://localhost:3000/t7/asuka/meta
+          comboes and so on. E.g. https://tekkendocs.com/asuka/meta
         </p>
 
         <h2>Community</h2>
         <p>
           There is a discord server for the site. Click the discord logo in the
-          header to join. The source code of the site is available at github and
-          we are open for contributions. Click the github logo in the header.
+          header to join. The source code of the site is available at GitHub and
+          we are open for contributions. Click the GitHub logo in the header.
         </p>
 
         <h2>Flexibility</h2>
@@ -72,8 +72,8 @@ export default function Features() {
         </p>
 
         <p>
-          I know there are other sites out there which will provide tekken 8
-          frame data. Wavu wiki and geppopotamus looks very nice. But all sites
+          I know there are other sites out there which will provide Tekken 8
+          frame data. Wavu wiki and geppopotamus look very nice. But all sites
           have their strengths and weaknesses. I hope to build an awesome site
           that will complement what is already out there. Please get in touch if
           you want to contribute :)

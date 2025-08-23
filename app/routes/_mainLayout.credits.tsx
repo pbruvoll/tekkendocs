@@ -34,11 +34,11 @@ export default function Credits() {
       <h3>Main programmer and frame translator</h3>
       <p>MadCow</p>
       <h3>Guide data source</h3>A big thanks to Applay for letting us use the
-      data from his
+      data from his{' '}
       <a href="https://docs.google.com/spreadsheets/d/11ETDnPJuku2ref3PzODMpZ4y7e5_wfILR2aPv83WpSw/edit?usp=sharing">
         Tekken 7 cheat sheet
       </a>
-      See the readme in the link for all members who av contributed.
+      . See the readme in the link for all members who have contributed.
       <h3>Frame data update helpers</h3>
       <h4>Season 4</h4>
       <p>Bager, Mollatt, The Last Phoenix, Seik, JBoy and Kokkos</p>
