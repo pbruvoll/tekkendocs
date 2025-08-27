@@ -66,7 +66,7 @@ export const FrameDataFilterSelection = ({
   return (
     <Flex direction="column" gap="5">
       <section className="flex flex-col gap-3">
-        <Text as="div" size="2" mb="1" weight="bold">
+        <Text as="div" size="3" mb="1" weight="bold">
           Hit level
         </Text>
         <div className="flex flex-wrap gap-3">
@@ -129,7 +129,7 @@ export const FrameDataFilterSelection = ({
         </div>
       </section>
       <section className="flex flex-col gap-3">
-        <Text as="div" size="2" mb="1" weight="bold">
+        <Text as="div" size="3" mb="1" weight="bold">
           Block frames
         </Text>
         <div className="flex flex-wrap gap-3">
@@ -188,7 +188,7 @@ export const FrameDataFilterSelection = ({
         />
       </section>
       <section className="flex flex-col gap-3">
-        <Text as="div" size="2" mb="1" weight="bold">
+        <Text as="div" size="3" mb="1" weight="bold">
           Hit frames
         </Text>
         <div className="flex flex-wrap gap-3">
@@ -234,7 +234,7 @@ export const FrameDataFilterSelection = ({
         />
       </section>
       <section className="flex flex-col gap-3">
-        <Text as="div" size="2" mb="1" weight="bold">
+        <Text as="div" size="3" mb="1" weight="bold">
           Startup frames
         </Text>
         <RangeSlider
@@ -254,7 +254,7 @@ export const FrameDataFilterSelection = ({
         />
       </section>
       <section className="flex flex-col gap-3">
-        <Text as="div" size="2" mb="1" weight="bold">
+        <Text as="div" size="3" mb="1" weight="bold">
           Crush
         </Text>
         <div className="flex flex-wrap gap-3">
@@ -285,7 +285,7 @@ export const FrameDataFilterSelection = ({
         </div>
       </section>
       <section className="flex flex-col gap-3">
-        <Text as="div" size="2" mb="1" weight="bold">
+        <Text as="div" size="3" mb="1" weight="bold">
           Properties
         </Text>
         <div className="flex flex-wrap gap-3">
@@ -344,7 +344,7 @@ export const FrameDataFilterSelection = ({
         </div>
       </section>
       <section className="flex flex-col gap-3">
-        <Text as="div" size="2" mb="1" weight="bold">
+        <Text as="div" size="3" mb="1" weight="bold">
           States
         </Text>
         <div className="flex flex-wrap gap-3">
@@ -369,7 +369,7 @@ export const FrameDataFilterSelection = ({
         </div>
       </section>
       <section className="flex flex-col gap-3">
-        <Text as="div" size="2" mb="1" weight="bold">
+        <Text as="div" size="3" mb="1" weight="bold">
           Stances
         </Text>
         <div className="flex flex-wrap gap-3">
@@ -394,7 +394,7 @@ export const FrameDataFilterSelection = ({
         </div>
       </section>
       <section className="flex flex-col gap-3">
-        <Text as="div" size="2" mb="1" weight="bold">
+        <Text as="div" size="3" mb="1" weight="bold">
           Transitions / Recovery
         </Text>
         <div className="flex flex-wrap gap-3">
@@ -419,7 +419,7 @@ export const FrameDataFilterSelection = ({
         </div>
       </section>
       <section className="flex flex-col gap-3">
-        <Text as="div" size="2" mb="1" weight="bold">
+        <Text as="div" size="3" mb="1" weight="bold">
           Media
         </Text>
         <div className="flex flex-wrap gap-3">
@@ -438,7 +438,7 @@ export const FrameDataFilterSelection = ({
         </div>
       </section>
       <section className="flex flex-col gap-3">
-        <Text as="div" size="2" mb="1" weight="bold">
+        <Text as="div" size="3" mb="1" weight="bold">
           Number of hits
         </Text>
         <div className="flex flex-wrap gap-3">

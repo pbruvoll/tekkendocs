@@ -78,38 +78,38 @@ export default function Index() {
       </Heading>
       <div className="flex flex-wrap gap-3">
         {/* <Link to="/matchvideo" className="cursor-pointer">
-          <Badge size="2" style={{ cursor: 'pointer' }} variant="outline">
+          <Badge size="3" style={{ cursor: 'pointer' }} variant="outline">
             Match videos
           </Badge>
         </Link> */}
         <Link to="/t8/getting-started" className="cursor-pointer">
-          <Badge size="2" style={{ cursor: 'pointer' }} variant="outline">
-            Getting started with Tekken
+          <Badge size="3" style={{ cursor: 'pointer' }} variant="outline">
+            <span className="p-0.5 px-1">Getting started with Tekken</span>
           </Badge>
         </Link>
         <Link to="/t8/guides" className="cursor-pointer">
-          <Badge size="2" style={{ cursor: 'pointer' }} variant="outline">
-            Character Guides
+          <Badge size="3" style={{ cursor: 'pointer' }} variant="outline">
+            <span className="p-0.5 px-1">Character Guides</span>
           </Badge>
         </Link>
         <Link to="/t8/stats" className="cursor-pointer">
-          <Badge size="2" style={{ cursor: 'pointer' }} variant="outline">
-            Stats
+          <Badge size="3" style={{ cursor: 'pointer' }} variant="outline">
+            <span className="p-0.5 px-1">Stats</span>
           </Badge>
         </Link>
         <Link to="/t8/ranks" className="cursor-pointer">
-          <Badge size="2" style={{ cursor: 'pointer' }} variant="outline">
-            Ranks
+          <Badge size="3" style={{ cursor: 'pointer' }} variant="outline">
+            <span className="p-0.5 px-1">Ranks</span>
           </Badge>
         </Link>
         <Link to="/t8/challenge" className="cursor-pointer">
-          <Badge size="2" style={{ cursor: 'pointer' }} variant="outline">
-            Challenges
+          <Badge size="3" style={{ cursor: 'pointer' }} variant="outline">
+            <span className="p-0.5 px-1">Challenges</span>
           </Badge>
         </Link>
         <Link to="/t8/flashcard" className="cursor-pointer">
-          <Badge size="2" style={{ cursor: 'pointer' }} variant="outline">
-            Flash cards
+          <Badge size="3" style={{ cursor: 'pointer' }} variant="outline">
+            <span className="p-0.5 px-1">Flash cards</span>
           </Badge>
         </Link>
       </div>
