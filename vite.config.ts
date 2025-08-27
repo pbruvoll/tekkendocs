@@ -21,10 +21,6 @@ export default defineConfig({
     }),
   ],
 
-  ssr: {
-    noExternal: ['@radix-ui/themes'],
-  },
-
   build: {
     sourcemap: true,
   },

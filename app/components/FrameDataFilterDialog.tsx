@@ -38,7 +38,7 @@ export const FrameDataFilterDialog = ({
 
       <Dialog.Content style={{ maxWidth: 450 }} className="relative">
         <Dialog.Title>Filter</Dialog.Title>
-        <Dialog.Description size="2" mb="4">
+        <Dialog.Description size="3" mb="4">
           Filter the displayed moves
         </Dialog.Description>
 
