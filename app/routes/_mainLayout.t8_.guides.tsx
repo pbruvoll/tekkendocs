@@ -30,13 +30,14 @@ export default function () {
     <ContentContainer enableBottomPadding enableTopPadding>
       <h1 className="my-4 text-2xl">Tekken 8 Guides</h1>
       <section>
-        <h2 className="my-3 text-xl">Character Guides</h2>
+        <h2 className="my-3 text-xl">Character Guides (Season 2)</h2>
         <p className="mb-6">
-          The character guides are written by high skilled players and are a
-          good starting points for learning how to play with or against a
-          character. The guides include information like overview, strengths,
-          weaknesses, top 10 moves, combos, punishers, frametraps, notabable
-          moves, defensive tips and more.
+          These character guides are written by high-level players and serve as
+          comprehensive starting points for learning how to play with or against
+          each character. Each guide includes an overview, strengths and
+          weaknesses, top 10 moves, combos, punishers, frame traps, notable
+          moves, defensive strategies, and more. All guides are up to date with
+          season 2.
         </p>
 
         <CharacterGrid
@@ -45,9 +46,10 @@ export default function () {
             .filter(({ id }) => characterGuideAuthors['T8'][id])
             .map(({ id, displayName }) => {
               const imgSrc = t8GuideImgSmallMap[id]
+              const version = characterGuideAuthors.T8[id].version
               return {
                 name: displayName,
-                badge: characterGuideAuthors.T8[id].version,
+                badge: version !== 'S2' ? version : undefined,
                 author: characterGuideAuthors.T8[id].author,
                 size: 'large',
                 imgSrc,
