@@ -53,7 +53,9 @@ export const MoveVideo = ({
           autoPlay
           muted
         />
-        <div className="text-sm">Video from Wavu wiki</div>
+        <div className="text-xs text-muted-foreground">
+          Video from Wavu wiki
+        </div>
       </div>
     )
   }

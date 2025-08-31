@@ -8,11 +8,13 @@ import { type Move } from '~/types/Move'
 export type ShowVideoButtonProps = {
   move: Move
   className?: string
+  autoPlay?: boolean
   hideFrameData?: boolean
 }
 export const ShowVideoButton = ({
   move,
   className,
+  autoPlay,
   hideFrameData,
 }: ShowVideoButtonProps) => {
   const [showVideo, setShowVideo] = useState(false)
@@ -20,7 +22,7 @@ export const ShowVideoButton = ({
   if (!moveHasVideo) {
     return null
   }
-  if (showVideo) {
+  if (showVideo || autoPlay) {
     return (
       <MoveVideo
         move={move}

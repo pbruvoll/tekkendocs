@@ -7,11 +7,13 @@ import { ShowVideoButton } from './showVideoButton'
 export type FlashCardFrontProps = {
   move: Move
   showCharName: boolean
+  autoPlay?: boolean
   onFlip: () => void
 }
 export const FlashCardFront = ({
   move,
   showCharName,
+  autoPlay,
   onFlip,
 }: FlashCardFrontProps) => {
   return (
@@ -24,7 +26,12 @@ export const FlashCardFront = ({
         {showCharName && `${charIdFromMove(move as MoveT8)} `}
         {move.command}
       </button>
-      <ShowVideoButton move={move} className="m-1 my-3" hideFrameData />
+      <ShowVideoButton
+        autoPlay={autoPlay}
+        move={move}
+        className="m-1 my-3"
+        hideFrameData
+      />
       <button
         className="flex w-full items-center justify-center p-2 text-lg"
         onClick={onFlip}
