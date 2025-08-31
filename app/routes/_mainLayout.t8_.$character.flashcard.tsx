@@ -6,6 +6,7 @@ import invariant from 'tiny-invariant'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
+import { Switch } from '@/components/ui/switch'
 import { ContentContainer } from '~/components/ContentContainer'
 import Nav, { type NavLinkInfo } from '~/components/Nav'
 import { TaskProgress } from '~/components/TaskProgress'
@@ -413,7 +414,7 @@ const FlashCardGame = ({
   showCharName,
 }: FlashCardGameProps) => {
   const [flipped, setFlipped] = useState(false)
-
+  const [autoPlay, setAutoPlay] = useState(false)
   const handleAnswer = (answer: FlashCardAnswerType) => {
     setFlipped(false)
     onAnswer(answer)
@@ -427,7 +428,7 @@ const FlashCardGame = ({
       >
         <div
           className={cx(
-            'grid rounded-md border-[1.5px] border-foreground/50 transition-all duration-500 [transform-style:preserve-3d]',
+            'grid rounded-2xl border-[1.5px] border-foreground/50 transition-all duration-500 [transform-style:preserve-3d]',
             flipped && '[transform:rotateY(180deg)]',
           )}
         >
@@ -435,6 +436,7 @@ const FlashCardGame = ({
             <FlashCardFront
               move={moveToShow}
               showCharName={showCharName}
+              autoPlay={autoPlay}
               onFlip={() => setFlipped(true)}
             />
           </div>
@@ -448,6 +450,10 @@ const FlashCardGame = ({
         numCompleted={numCorrect}
         total={numCorrect + numUnseen + numWrong}
       />
+      <div className="flex items-center gap-4">
+        <div>Auto play</div>
+        <Switch checked={autoPlay} onCheckedChange={setAutoPlay} />
+      </div>
     </>
   )
 }
