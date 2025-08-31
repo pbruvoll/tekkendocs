@@ -427,7 +427,7 @@ const FlashCardGame = ({
       >
         <div
           className={cx(
-            'grid rounded-md border-[1.5px] border-foreground/50 transition-all duration-500 [transform-style:preserve-3d]',
+            'grid rounded-2xl border-[1.5px] border-foreground/50 transition-all duration-500 [transform-style:preserve-3d]',
             flipped && '[transform:rotateY(180deg)]',
           )}
         >
