@@ -3,14 +3,6 @@ import { VideoIcon } from '@radix-ui/react-icons'
 import { type MetaFunction } from '@remix-run/node'
 import { Link, useFetcher, useNavigate } from '@remix-run/react'
 import { Input } from '@/components/ui/input'
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from '@/components/ui/table'
 import { ContentContainer } from '~/components/ContentContainer'
 import { getTekken8Characters } from '~/services/staticDataService'
 import { type CharacterFrameDataPage } from '~/types/CharacterFrameDataPage'
@@ -33,6 +25,12 @@ export const meta: MetaFunction = ({ matches }) => {
 }
 
 const maxMovesToShow = 400
+
+// Helper function to remove text in parentheses
+const removeParentheses = (text: string | undefined): string => {
+  if (!text) return ''
+  return text.replace(/\s*\([^)]*\)/g, '').trim()
+}
 
 export default function () {
   const [searchQuery, setSearchQuery] = useState('')
@@ -198,49 +196,70 @@ export default function () {
       {selectedCharId && state !== 'idle' && <div>Loading...</div>}
 
       {paginatedMoves.length > 0 && selectedCharId && (
-        <Table>
-          <TableHeader>
-            <TableRow>
-              <TableHead>Move</TableHead>
-              <TableHead>Hit Level</TableHead>
-              <TableHead>Startup</TableHead>
-              <TableHead>Block</TableHead>
-              <TableHead>Hit</TableHead>
-              <TableHead>Counter Hit</TableHead>
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            {paginatedMoves.map(move => (
-              <TableRow key={move.moveNumber}>
-                <TableCell>
-                  <Link
-                    className="inline-flex items-center gap-2 text-primary hover:underline"
-                    to={`/t8/${
-                      showsMultipleChars
-                        ? charIdFromMove(move as MoveT8)
-                        : selectedCharId
-                    }/${commandToUrlSegmentEncoded(move.command)}`}
-                  >
-                    {includeCharNameInFrames && (
-                      <span className="text-muted-foreground">
-                        {showsMultipleChars
+        <div className="relative w-full">
+          <table className="w-full text-sm">
+            <thead className="[&_tr]:border-b">
+              <tr className="border-b transition-colors hover:bg-muted/50">
+                <th className="sticky top-0 z-10 h-12 bg-background px-2 text-left align-middle font-medium text-muted-foreground sm:px-4">
+                  Cmd
+                </th>
+                <th className="sticky top-0 z-10 h-12 bg-background px-2 text-left align-middle font-medium text-muted-foreground sm:px-4">
+                  Hit Lvl
+                </th>
+                <th className="sticky top-0 z-10 h-12 bg-background px-2 text-left align-middle font-medium text-muted-foreground sm:px-4">
+                  Startup
+                </th>
+                <th className="sticky top-0 z-10 h-12 bg-background px-2 text-left align-middle font-medium text-muted-foreground sm:px-4">
+                  Block
+                </th>
+                <th className="sticky top-0 z-10 h-12 bg-background px-2 text-left align-middle font-medium text-muted-foreground sm:px-4">
+                  Hit / CH
+                </th>
+              </tr>
+            </thead>
+            <tbody className="[&_tr:last-child]:border-0">
+              {paginatedMoves.map(move => (
+                <tr
+                  key={move.moveNumber}
+                  className="border-b transition-colors hover:bg-muted/50"
+                >
+                  <td className="p-2 align-middle sm:p-4">
+                    <Link
+                      className="inline-flex items-center gap-2 text-primary hover:underline"
+                      to={`/t8/${
+                        showsMultipleChars
                           ? charIdFromMove(move as MoveT8)
-                          : selectedCharId}{' '}
+                          : selectedCharId
+                      }/${commandToUrlSegmentEncoded(move.command)}`}
+                    >
+                      {includeCharNameInFrames && (
+                        <span className="text-muted-foreground">
+                          {showsMultipleChars
+                            ? charIdFromMove(move as MoveT8)
+                            : selectedCharId}{' '}
+                        </span>
+                      )}
+                      {move.command}
+                      {(move.video || move.ytVideo) && <VideoIcon />}
+                    </Link>
+                  </td>
+                  <td className="p-2 align-middle sm:p-4">{move.hitLevel}</td>
+                  <td className="p-2 align-middle sm:p-4">{move.startup}</td>
+                  <td className="p-2 align-middle sm:p-4">{move.block}</td>
+                  <td className="p-2 align-middle sm:p-4">
+                    {removeParentheses(move.hit)}
+                    {move.counterHit && move.counterHit !== move.hit && (
+                      <span className="text-muted-foreground">
+                        {' '}
+                        / {removeParentheses(move.counterHit)}
                       </span>
                     )}
-                    {move.command}
-                    {(move.video || move.ytVideo) && <VideoIcon />}
-                  </Link>
-                </TableCell>
-                <TableCell>{move.hitLevel}</TableCell>
-                <TableCell>{move.startup}</TableCell>
-                <TableCell>{move.block}</TableCell>
-                <TableCell>{move.hit}</TableCell>
-                <TableCell>{move.counterHit || move.hit}</TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       )}
       {paginatedMoves.length < filteredMoves.length && (
         <p className="my-2">
