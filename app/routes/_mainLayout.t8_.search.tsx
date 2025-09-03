@@ -1,7 +1,12 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo } from 'react'
 import { VideoIcon } from '@radix-ui/react-icons'
 import { type MetaFunction } from '@remix-run/node'
-import { Link, useFetcher, useNavigate } from '@remix-run/react'
+import {
+  Link,
+  useFetcher,
+  useNavigate,
+  useSearchParams,
+} from '@remix-run/react'
 import { Input } from '@/components/ui/input'
 import { ContentContainer } from '~/components/ContentContainer'
 import { getTekken8Characters } from '~/services/staticDataService'
@@ -26,8 +31,30 @@ export const meta: MetaFunction = ({ matches }) => {
 
 const maxMovesToShow = 400
 
+// Helper function to remove text in parentheses
+const removeParentheses = (text: string | undefined): string => {
+  if (!text) return ''
+  return text.replace(/\s*\([^)]*\)/g, '').trim()
+}
+
+// Helper function to format command for line breaks at commas
+const formatWordWithBreaks = (command: string) => {
+  return command.split(',').map((part, index, array) => (
+    <span key={index} className="inline-block">
+      {part}
+      {index < array.length - 1 && (
+        <>
+          ,<wbr />
+        </>
+      )}
+    </span>
+  ))
+}
+
 export default function () {
-  const [searchQuery, setSearchQuery] = useState('')
+  const [searchParams, setSearchParams] = useSearchParams()
+  const searchQuery = searchParams.get('q') || ''
+
   const [characterQuery, moveQuery] = useMemo(() => {
     if (!searchQuery) {
       return ['', '']
@@ -138,7 +165,11 @@ export default function () {
 
   const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const searchValue = event.target.value
-    setSearchQuery(searchValue)
+    if (searchValue) {
+      setSearchParams({ q: searchValue })
+    } else {
+      setSearchParams({})
+    }
   }
 
   const handleOnKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
@@ -160,6 +191,7 @@ export default function () {
       <h1 className="pb-2 text-2xl">Search</h1>
       <p className="py-2">Enter a character, followed by a command</p>
       <Input
+        value={searchQuery}
         onChange={e => handleOnChange(e)}
         onKeyDown={handleOnKeyDown}
         placeholder="drag fff2"
@@ -189,60 +221,81 @@ export default function () {
 
       {selectedCharId && state !== 'idle' && <div>Loading...</div>}
 
-      {paginatedMoves.length > 0 &&
-        selectedCharId &&
-        paginatedMoves.map(move => {
-          return (
-            <li key={move.moveNumber} className="list-none">
-              <MoveItem
-                charId={
-                  showsMultipleChars
-                    ? charIdFromMove(move as MoveT8)
-                    : selectedCharId
-                }
-                move={move}
-                showCharId={includeCharNameInFrames}
-              />
-            </li>
-          )
-        })}
+      {paginatedMoves.length > 0 && selectedCharId && (
+        <div className="relative w-full">
+          <table className="w-full text-sm">
+            <thead className="[&_tr]:border-b">
+              <tr className="border-b transition-colors hover:bg-muted/50">
+                <th className="sticky top-0 z-10 h-12 bg-background px-2 text-left align-middle font-medium text-muted-foreground sm:px-4">
+                  Cmd
+                </th>
+                <th className="sticky top-0 z-10 h-12 bg-background px-2 text-left align-middle font-medium text-muted-foreground sm:px-4">
+                  Hit Lvl
+                </th>
+                <th className="sticky top-0 z-10 h-12 bg-background px-2 text-left align-middle font-medium text-muted-foreground sm:px-4">
+                  Startup
+                </th>
+                <th className="sticky top-0 z-10 h-12 bg-background px-2 text-left align-middle font-medium text-muted-foreground sm:px-4">
+                  Block
+                </th>
+                <th className="sticky top-0 z-10 h-12 bg-background px-2 text-left align-middle font-medium text-muted-foreground sm:px-4">
+                  Hit / CH
+                </th>
+              </tr>
+            </thead>
+            <tbody className="[&_tr:last-child]:border-0">
+              {paginatedMoves.map(move => (
+                <tr
+                  key={move.moveNumber}
+                  className="border-b transition-colors hover:bg-muted/50"
+                >
+                  <td className="p-2 align-middle sm:p-4">
+                    <Link
+                      className="inline-flex flex-wrap items-center gap-2 text-primary hover:underline"
+                      to={`/t8/${
+                        showsMultipleChars
+                          ? charIdFromMove(move as MoveT8)
+                          : selectedCharId
+                      }/${commandToUrlSegmentEncoded(move.command)}`}
+                    >
+                      {includeCharNameInFrames && (
+                        <span className="text-muted-foreground">
+                          {showsMultipleChars
+                            ? charIdFromMove(move as MoveT8)
+                            : selectedCharId}{' '}
+                        </span>
+                      )}
+                      <span className="break-words">
+                        {formatWordWithBreaks(move.command)}
+                      </span>
+                      {(move.video || move.ytVideo) && <VideoIcon />}
+                    </Link>
+                  </td>
+                  <td className="p-2 align-middle sm:p-4">
+                    {formatWordWithBreaks(move.hitLevel)}
+                  </td>
+                  <td className="p-2 align-middle sm:p-4">{move.startup}</td>
+                  <td className="p-2 align-middle sm:p-4">{move.block}</td>
+                  <td className="p-2 align-middle sm:p-4">
+                    {removeParentheses(move.hit)}
+                    {move.counterHit && move.counterHit !== move.hit && (
+                      <span className="text-muted-foreground">
+                        {' '}
+                        / {removeParentheses(move.counterHit)}
+                      </span>
+                    )}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
       {paginatedMoves.length < filteredMoves.length && (
         <p className="my-2">
-          Showing {paginatedMoves.length} og {filteredMoves.length}
+          Showing {paginatedMoves.length} of {filteredMoves.length}
         </p>
       )}
     </ContentContainer>
-  )
-}
-
-const MoveItem = ({
-  move,
-  charId,
-  showCharId,
-}: {
-  move: Move
-  charId: string
-  showCharId: boolean
-}) => {
-  const prefix = showCharId ? charId + ' ' : ''
-
-  return (
-    <Link
-      className="inline-flex items-start gap-2"
-      to={`/t8/${charId}/${commandToUrlSegmentEncoded(move.command)}`}
-    >
-      <div className="inline-flex items-center gap-2 text-text-primary no-underline">
-        {prefix}
-        {move.command} {(move.video || move.ytVideo) && <VideoIcon />}
-      </div>
-      <div> | </div>
-      {[
-        move.hitLevel,
-        move.startup,
-        move.block,
-        move.hit,
-        move.counterHit || move.hit,
-      ].join(' | ')}
-    </Link>
   )
 }
