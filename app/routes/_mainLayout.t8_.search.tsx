@@ -3,6 +3,14 @@ import { VideoIcon } from '@radix-ui/react-icons'
 import { type MetaFunction } from '@remix-run/node'
 import { Link, useFetcher, useNavigate } from '@remix-run/react'
 import { Input } from '@/components/ui/input'
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '@/components/ui/table'
 import { ContentContainer } from '~/components/ContentContainer'
 import { getTekken8Characters } from '~/services/staticDataService'
 import { type CharacterFrameDataPage } from '~/types/CharacterFrameDataPage'
@@ -189,60 +197,56 @@ export default function () {
 
       {selectedCharId && state !== 'idle' && <div>Loading...</div>}
 
-      {paginatedMoves.length > 0 &&
-        selectedCharId &&
-        paginatedMoves.map(move => {
-          return (
-            <li key={move.moveNumber} className="list-none">
-              <MoveItem
-                charId={
-                  showsMultipleChars
-                    ? charIdFromMove(move as MoveT8)
-                    : selectedCharId
-                }
-                move={move}
-                showCharId={includeCharNameInFrames}
-              />
-            </li>
-          )
-        })}
+      {paginatedMoves.length > 0 && selectedCharId && (
+        <Table>
+          <TableHeader>
+            <TableRow>
+              <TableHead>Move</TableHead>
+              <TableHead>Hit Level</TableHead>
+              <TableHead>Startup</TableHead>
+              <TableHead>Block</TableHead>
+              <TableHead>Hit</TableHead>
+              <TableHead>Counter Hit</TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            {paginatedMoves.map(move => (
+              <TableRow key={move.moveNumber}>
+                <TableCell>
+                  <Link
+                    className="inline-flex items-center gap-2 text-primary hover:underline"
+                    to={`/t8/${
+                      showsMultipleChars
+                        ? charIdFromMove(move as MoveT8)
+                        : selectedCharId
+                    }/${commandToUrlSegmentEncoded(move.command)}`}
+                  >
+                    {includeCharNameInFrames && (
+                      <span className="text-muted-foreground">
+                        {showsMultipleChars
+                          ? charIdFromMove(move as MoveT8)
+                          : selectedCharId}{' '}
+                      </span>
+                    )}
+                    {move.command}
+                    {(move.video || move.ytVideo) && <VideoIcon />}
+                  </Link>
+                </TableCell>
+                <TableCell>{move.hitLevel}</TableCell>
+                <TableCell>{move.startup}</TableCell>
+                <TableCell>{move.block}</TableCell>
+                <TableCell>{move.hit}</TableCell>
+                <TableCell>{move.counterHit || move.hit}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      )}
       {paginatedMoves.length < filteredMoves.length && (
         <p className="my-2">
-          Showing {paginatedMoves.length} og {filteredMoves.length}
+          Showing {paginatedMoves.length} of {filteredMoves.length}
         </p>
       )}
     </ContentContainer>
-  )
-}
-
-const MoveItem = ({
-  move,
-  charId,
-  showCharId,
-}: {
-  move: Move
-  charId: string
-  showCharId: boolean
-}) => {
-  const prefix = showCharId ? charId + ' ' : ''
-
-  return (
-    <Link
-      className="inline-flex items-start gap-2"
-      to={`/t8/${charId}/${commandToUrlSegmentEncoded(move.command)}`}
-    >
-      <div className="inline-flex items-center gap-2 text-text-primary no-underline">
-        {prefix}
-        {move.command} {(move.video || move.ytVideo) && <VideoIcon />}
-      </div>
-      <div> | </div>
-      {[
-        move.hitLevel,
-        move.startup,
-        move.block,
-        move.hit,
-        move.counterHit || move.hit,
-      ].join(' | ')}
-    </Link>
   )
 }
