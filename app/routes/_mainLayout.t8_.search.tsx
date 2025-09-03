@@ -1,7 +1,12 @@
 import { useEffect, useMemo } from 'react'
 import { VideoIcon } from '@radix-ui/react-icons'
 import { type MetaFunction } from '@remix-run/node'
-import { Link, useFetcher, useNavigate, useSearchParams } from '@remix-run/react'
+import {
+  Link,
+  useFetcher,
+  useNavigate,
+  useSearchParams,
+} from '@remix-run/react'
 import { Input } from '@/components/ui/input'
 import { ContentContainer } from '~/components/ContentContainer'
 import { getTekken8Characters } from '~/services/staticDataService'
@@ -32,10 +37,24 @@ const removeParentheses = (text: string | undefined): string => {
   return text.replace(/\s*\([^)]*\)/g, '').trim()
 }
 
+// Helper function to format command for line breaks at commas
+const formatWordWithBreaks = (command: string) => {
+  return command.split(',').map((part, index, array) => (
+    <span key={index} className="inline-block">
+      {part}
+      {index < array.length - 1 && (
+        <>
+          ,<wbr />
+        </>
+      )}
+    </span>
+  ))
+}
+
 export default function () {
   const [searchParams, setSearchParams] = useSearchParams()
   const searchQuery = searchParams.get('q') || ''
-  
+
   const [characterQuery, moveQuery] = useMemo(() => {
     if (!searchQuery) {
       return ['', '']
@@ -232,7 +251,7 @@ export default function () {
                 >
                   <td className="p-2 align-middle sm:p-4">
                     <Link
-                      className="inline-flex items-center gap-2 text-primary hover:underline"
+                      className="inline-flex flex-wrap items-center gap-2 text-primary hover:underline"
                       to={`/t8/${
                         showsMultipleChars
                           ? charIdFromMove(move as MoveT8)
@@ -246,11 +265,15 @@ export default function () {
                             : selectedCharId}{' '}
                         </span>
                       )}
-                      {move.command}
+                      <span className="break-words">
+                        {formatWordWithBreaks(move.command)}
+                      </span>
                       {(move.video || move.ytVideo) && <VideoIcon />}
                     </Link>
                   </td>
-                  <td className="p-2 align-middle sm:p-4">{move.hitLevel}</td>
+                  <td className="p-2 align-middle sm:p-4">
+                    {formatWordWithBreaks(move.hitLevel)}
+                  </td>
                   <td className="p-2 align-middle sm:p-4">{move.startup}</td>
                   <td className="p-2 align-middle sm:p-4">{move.block}</td>
                   <td className="p-2 align-middle sm:p-4">
