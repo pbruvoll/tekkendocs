@@ -166,7 +166,7 @@ export default function () {
   const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const searchValue = event.target.value
     if (searchValue) {
-      setSearchParams({ q: searchValue })
+      setSearchParams({ q: searchValue }, { replace: true })
     } else {
       setSearchParams({})
     }
@@ -274,9 +274,13 @@ export default function () {
                   <td className="p-2 align-middle sm:p-4">
                     {formatWordWithBreaks(move.hitLevel)}
                   </td>
-                  <td className="p-2 align-middle sm:p-4">{move.startup}</td>
-                  <td className="p-2 align-middle sm:p-4">{move.block}</td>
-                  <td className="p-2 align-middle sm:p-4">
+                  <td className="break-words p-2 align-middle sm:p-4">
+                    {move.startup}
+                  </td>
+                  <td className="break-words p-2 align-middle sm:p-4">
+                    {move.block}
+                  </td>
+                  <td className="break-words p-2 align-middle sm:p-4">
                     {removeParentheses(move.hit)}
                     {move.counterHit && move.counterHit !== move.hit && (
                       <span className="text-muted-foreground">
