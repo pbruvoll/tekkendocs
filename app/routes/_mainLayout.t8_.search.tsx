@@ -275,7 +275,7 @@ export default function () {
                     {formatWordWithBreaks(move.hitLevel)}
                   </td>
                   <td className="break-words p-2 align-middle sm:p-4">
-                    {move.startup}
+                    {formatWordWithBreaks(move.startup)}
                   </td>
                   <td className="break-words p-2 align-middle sm:p-4">
                     {move.block}
