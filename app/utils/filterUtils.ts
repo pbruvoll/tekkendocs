@@ -44,7 +44,10 @@ export const getFilterFromParams = (
     tornado: getSearchParamBoolean(searchParams, filterKey.Tornado),
     jails: getSearchParamBoolean(searchParams, filterKey.Jails),
     noJails: getSearchParamBoolean(searchParams, filterKey.NoJails),
-    duckableString: getSearchParamBoolean(searchParams, filterKey.DuckableString),
+    duckableString: getSearchParamBoolean(
+      searchParams,
+      filterKey.DuckableString,
+    ),
     numHitsMin: getSearchParamNumber(searchParams, filterKey.NumHitsMin),
     numHitsMax: getSearchParamNumber(searchParams, filterKey.NumHitsMax),
     stance: getSearchParamStringList(searchParams, filterKey.Stance),
