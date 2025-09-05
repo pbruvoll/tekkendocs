@@ -16,6 +16,7 @@ export const filterKey = {
   Tornado: 'tonrnado',
   Jails: 'jails',
   NoJails: 'noJails',
+  DuckableString: 'duckableString',
   Chip: 'chip',
   HighCrush: 'cs',
   LowCrush: 'js',

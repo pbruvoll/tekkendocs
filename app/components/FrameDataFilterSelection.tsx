@@ -43,6 +43,7 @@ export const FrameDataFilterSelection = ({
     tornado,
     jails,
     noJails,
+    duckableString,
     chip,
     spike,
     highCrush,
@@ -300,6 +301,7 @@ export const FrameDataFilterSelection = ({
               [filterKey.Tornado, tornado, 'Tornado Spin'],
               [filterKey.Jails, jails, 'Jails'],
               [filterKey.NoJails, noJails, 'Doesnt jail'],
+              [filterKey.DuckableString, duckableString, 'Duckable string'],
               [filterKey.HitsGrounded, hitsGrounded, 'Hits grounded'],
               [filterKey.Chip, chip, 'Chip'],
               [
