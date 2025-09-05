@@ -16,6 +16,7 @@ export type MoveFilter = {
   heatEngager?: boolean
   jails?: boolean
   noJails?: boolean
+  duckableString?: boolean
   numHitsMin?: number
   numHitsMax?: number
   highCrush?: boolean

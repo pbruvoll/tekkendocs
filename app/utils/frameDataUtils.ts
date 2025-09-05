@@ -172,6 +172,11 @@ export const noJails = (move: Move) => {
   )
 }
 
+export const isDuckableString = (move: Move) => {
+  const lastHitLevel = move.hitLevel?.split(', ').pop()?.[0]?.toLowerCase()
+  return noJails(move) && (lastHitLevel as HitLevel) === 'h'
+}
+
 export const hitsGrounded = (move: Move) => {
   const lastHitLevel = move.hitLevel?.split(',').pop()
   return !!lastHitLevel && lastHitLevel === lastHitLevel.toUpperCase()
@@ -458,6 +463,7 @@ export const filterMoves = (moves: Move[], filter: MoveFilter | undefined) => {
     [filter.tornado, isTornadoMove],
     [filter.jails, jails],
     [filter.noJails, noJails],
+    [filter.duckableString, isDuckableString],
     [filter.hitsGrounded, hitsGrounded],
     [filter.video, (move: Move) => !!(move.video || move.ytVideo)],
     [filter.chip, isChip],
