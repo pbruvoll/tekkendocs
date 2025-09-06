@@ -32,12 +32,6 @@ export const meta: MetaFunction = ({ matches }) => {
 
 const maxMovesToShow = 400
 
-// Helper function to remove text in parentheses
-const removeParentheses = (text: string | undefined): string => {
-  if (!text) return ''
-  return text.replace(/\s*\([^)]*\)/g, '').trim()
-}
-
 // Helper function to format command for line breaks at commas
 const formatWordWithBreaks = (command: string) => {
   return command.split(',').map((part, index, array) => (
