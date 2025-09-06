@@ -7,6 +7,7 @@ import {
   useNavigate,
   useSearchParams,
 } from '@remix-run/react'
+import cx from 'classix'
 import { Input } from '@/components/ui/input'
 import { ContentContainer } from '~/components/ContentContainer'
 import { getTekken8Characters } from '~/services/staticDataService'
@@ -31,12 +32,6 @@ export const meta: MetaFunction = ({ matches }) => {
 
 const maxMovesToShow = 400
 
-// Helper function to remove text in parentheses
-const removeParentheses = (text: string | undefined): string => {
-  if (!text) return ''
-  return text.replace(/\s*\([^)]*\)/g, '').trim()
-}
-
 // Helper function to format command for line breaks at commas
 const formatWordWithBreaks = (command: string) => {
   return command.split(',').map((part, index, array) => (
@@ -51,6 +46,10 @@ const formatWordWithBreaks = (command: string) => {
   ))
 }
 
+// function which extract just the number from frame data, eg "i15~16, i30~32,i31~32" => "i15"
+const simplifyFrameValue = (frameData: string) => {
+  return frameData.match(/i?[+-]?\d+/)?.[0] || ''
+}
 export default function () {
   const [searchParams, setSearchParams] = useSearchParams()
   const searchQuery = searchParams.get('q') || ''
@@ -244,53 +243,65 @@ export default function () {
               </tr>
             </thead>
             <tbody className="[&_tr:last-child]:border-0">
-              {paginatedMoves.map(move => (
-                <tr
-                  key={move.moveNumber}
-                  className="border-b transition-colors hover:bg-muted/50"
-                >
-                  <td className="p-2 align-middle sm:p-4">
-                    <Link
-                      className="inline-flex flex-wrap items-center gap-2 text-primary hover:underline"
-                      to={`/t8/${
-                        showsMultipleChars
-                          ? charIdFromMove(move as MoveT8)
-                          : selectedCharId
-                      }/${commandToUrlSegmentEncoded(move.command)}`}
-                    >
-                      {includeCharNameInFrames && (
-                        <span className="text-muted-foreground">
-                          {showsMultipleChars
+              {paginatedMoves.map(move => {
+                const simpleBlock = simplifyFrameValue(move.block || '')
+                const blockValue = Number(simpleBlock)
+                const simpleHit = simplifyFrameValue(move.hit || '')
+                const simpleCh = simplifyFrameValue(move.counterHit || '')
+                return (
+                  <tr
+                    key={move.moveNumber}
+                    className="border-b transition-colors hover:bg-muted/50"
+                  >
+                    <td className="p-2 align-middle sm:p-4">
+                      <Link
+                        className="inline-flex flex-wrap items-center gap-2 text-primary hover:underline"
+                        to={`/t8/${
+                          showsMultipleChars
                             ? charIdFromMove(move as MoveT8)
-                            : selectedCharId}{' '}
+                            : selectedCharId
+                        }/${commandToUrlSegmentEncoded(move.command)}`}
+                      >
+                        {includeCharNameInFrames && (
+                          <span className="text-muted-foreground">
+                            {showsMultipleChars
+                              ? charIdFromMove(move as MoveT8)
+                              : selectedCharId}{' '}
+                          </span>
+                        )}
+                        <span className="break-words">
+                          {formatWordWithBreaks(move.command)}
+                        </span>
+                        {(move.video || move.ytVideo) && <VideoIcon />}
+                      </Link>
+                    </td>
+                    <td className="p-2 align-middle sm:p-4">
+                      {formatWordWithBreaks(move.hitLevel)}
+                    </td>
+                    <td className="break-words p-2 align-middle sm:p-4">
+                      {simplifyFrameValue(move.startup || '')}
+                    </td>
+                    <td
+                      className={cx(
+                        'break-words p-2 align-middle sm:p-4',
+                        blockValue <= -10 && 'text-text-destructive',
+                        blockValue > 0 && 'text-text-success',
+                      )}
+                    >
+                      {simpleBlock}
+                    </td>
+                    <td className="break-words p-2 align-middle sm:p-4">
+                      {simpleHit}
+                      {move.counterHit && move.counterHit !== move.hit && (
+                        <span className="text-muted-foreground">
+                          {' '}
+                          / {simpleCh}
                         </span>
                       )}
-                      <span className="break-words">
-                        {formatWordWithBreaks(move.command)}
-                      </span>
-                      {(move.video || move.ytVideo) && <VideoIcon />}
-                    </Link>
-                  </td>
-                  <td className="p-2 align-middle sm:p-4">
-                    {formatWordWithBreaks(move.hitLevel)}
-                  </td>
-                  <td className="break-words p-2 align-middle sm:p-4">
-                    {formatWordWithBreaks(move.startup)}
-                  </td>
-                  <td className="break-words p-2 align-middle sm:p-4">
-                    {move.block}
-                  </td>
-                  <td className="break-words p-2 align-middle sm:p-4">
-                    {removeParentheses(move.hit)}
-                    {move.counterHit && move.counterHit !== move.hit && (
-                      <span className="text-muted-foreground">
-                        {' '}
-                        / {removeParentheses(move.counterHit)}
-                      </span>
-                    )}
-                  </td>
-                </tr>
-              ))}
+                    </td>
+                  </tr>
+                )
+              })}
             </tbody>
           </table>
         </div>
