@@ -28,6 +28,8 @@ const config = {
         text: {
           primary: 'var(--accent-a11)', // left overs from radix theme
           'primary-subtle': 'var(--accent-5)',
+          success: 'hsl(120 62.8% 40.6%)',
+          destructive: 'hsl(0 94.2% 60.2%)',
         },
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',

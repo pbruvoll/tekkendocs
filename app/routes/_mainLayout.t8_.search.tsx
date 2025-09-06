@@ -7,6 +7,7 @@ import {
   useNavigate,
   useSearchParams,
 } from '@remix-run/react'
+import cx from 'classix'
 import { Input } from '@/components/ui/input'
 import { ContentContainer } from '~/components/ContentContainer'
 import { getTekken8Characters } from '~/services/staticDataService'
@@ -250,6 +251,7 @@ export default function () {
             <tbody className="[&_tr:last-child]:border-0">
               {paginatedMoves.map(move => {
                 const simpleBlock = simplifyFrameValue(move.block || '')
+                const blockValue = Number(simpleBlock)
                 const simpleHit = simplifyFrameValue(move.hit || '')
                 const simpleCh = simplifyFrameValue(move.counterHit || '')
                 return (
@@ -285,7 +287,13 @@ export default function () {
                     <td className="break-words p-2 align-middle sm:p-4">
                       {simplifyFrameValue(move.startup || '')}
                     </td>
-                    <td className="break-words p-2 align-middle sm:p-4">
+                    <td
+                      className={cx(
+                        'break-words p-2 align-middle sm:p-4',
+                        blockValue <= -10 && 'text-text-destructive',
+                        blockValue > 0 && 'text-text-success',
+                      )}
+                    >
                       {simpleBlock}
                     </td>
                     <td className="break-words p-2 align-middle sm:p-4">
