@@ -52,6 +52,11 @@ export default function () {
       moveCommand: 'db+4',
       mixupCommand: '4~3',
       startup: 30,
+      completed: {
+        name: 'Son Broku',
+        sosial: 'https://x.com/PhantomOtakuu',
+        video: 'https://www.youtube.com/watch?v=wGzbb0zQm7c',
+      },
     },
     {
       characterId: 'bryan',
@@ -179,6 +184,11 @@ export default function () {
       moveCommand: 'd+2',
       mixupCommand: 'f+3,1',
       startup: 22,
+      completed: {
+        name: 'dugong',
+        sosial: 'https://x.com/tobyDM_',
+        video: 'https://www.youtube.com/watch?v=kWUmQUSIUDQ',
+      },
     },
     {
       characterId: 'leo',
@@ -342,13 +352,14 @@ export default function () {
                       <div className="mt-2 text-center text-xs">
                         First completed by{' '}
                         {completed.sosial ? (
-                          <a href={completed.sosial}>{completed.name}</a>
+                          <a href={completed.sosial} className="mr-1 underline">
+                            {completed.name}{' '}
+                          </a>
                         ) : (
                           completed.name
                         )}{' '}
                         <Link
-                          className="text-xl text-text-primary"
-                          style={{ textDecoration: 'none' }}
+                          className="text-xl text-text-primary no-underline"
                           to={completed.video}
                         >
                           <VideoIcon
