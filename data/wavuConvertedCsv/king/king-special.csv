@@ -72,7 +72,8 @@ Power crush 8~";rbr pc8~;;King-R.df+1+2;Anger Of The Beast;r39;;
 * Move can be delayed by 4F
 * Input can be delayed by 5F";bbr trn;;King-1+2,3;Brutal Sting;r37;;File:t8-p2-king-1+2,3.mp4
 3+4;;;;;;;"* Hold to continue spinning and power up strikes, but King doesn't change direction.
-* King gets dizzy and falls after 6th spin.
+* King gets dizzy and falls after 6th spin: r102 FUFT fs?.
+* 2nd spin onward: r32 JGS
 Low crush 6~21 fs22~24";js6~21 fs22~24;JGS;King-3+4;Jaguar Step;r24 JGS;;
 f+2;m;12;i15~16;-11;+2s;;* Forces standing on hit?;;;King-f+2;;r29;;
 f+2,1;m, h;12, 25;i15~16, i15~16;-9;+16a;;"* Heat Engager
@@ -90,7 +91,8 @@ f+2,d+1,2;m, m, m;12, 15, 16;i15~16, ,i22~23;-15;+27a(+17);;"* Combo from 2nd hi
 * Move can be delayed by 10F
 * Input can be delayed by 13F
 * Jail from 2nd block with no delay";;;King-f+2,d+1,2;Jaguar Smash Combo;;;File:t8-p2-king-f+2,d+1,2.mp4
-f+3;m;18;i15~16;-8;+1;+9s;* Only forces standing on CH.;;;King-f+3;Front Kick;r27?;;File:t8-p2-king-f+3.mp4
+f+3;m;18;i15~16;-8;+1;+9s;"* Only forces standing on CH.
+* +1c on crouching hit";;;King-f+3;Front Kick;r27?;;File:t8-p2-king-f+3.mp4
 f+3:1+2;m, t;18, 20;i15~16, ;;-5d;;"* Input 1+2 during frames 16-19 of f+3
 * Shifts to throw on front grounded hit.";;;King-f+3:1+2;Front Kick > DDT;;;File:t8-p2-king-f+3c1+2.mp4
 f+4;m;25;i18~20;-9;+12a(+3);;"Balcony Break
@@ -276,10 +278,12 @@ f,F+3+4;h;25;i28~30;0;+24d(-34);;"* Wall Crush +2gc on block
 * 10 chip damage on block in heat.
 * 13 chip damage on block as wall crush in heat.
 Low crush 9~";wc bbr chp js9~;FUFT;King-f,F+3+4;Exploder;r (FUFT);;File:t8-p2-king-f,f,3+4.mp4
-f,f,n,2;L,(t);17,(30);i18;-13;+5s/(0d);;"* Shifts to throw on front grounded CH.
-* Hits OTG.
-High crush 6~";cs6~;;King-f,f,n,2;Stomach Smash / Jaguar Hammer;r32;;File:t8-p2-king-f,f,n,2.mp4
-f,f,n,1+2;m;0;i9;+0;+7s;+18s;"* Forces Standing on hit.
+f,f,n,2;L,(t);17,(30);i18;-13;+5s/(0d);;"* i19 startup with buffered input
+* Shifts to throw on front grounded CH.
+* Unexecutable at long range from opponent
+High crush 6~29";cs6~29;;King-f,f,n,2;Stomach Smash / Jaguar Hammer;r32;;File:t8-p2-king-f,f,n,2.mp4
+f,f,n,1+2;m;0;i9;+0;+7s;+18s;"* i10 startup with buffered input
+* Forces Standing on hit.
 * Allows follow up on CH.";;;King-f,f,n,1+2;Lay Off;r23;;File:t8-p2-king-f,f,n,1+2.mp4
 f,n,d,df;;;;;;;"* Duck high while moving forward.
 * Input f,n,d,df,f+(button) for instant ws moves.
@@ -638,6 +642,7 @@ d+1+4;t(c);35;i12~13;;+0d;;"* Heat Engager
 f,f,F+2+4;t;40(45);i10;-5;+1d;;"* Homing during heat
 * 1+2 throw break
 * Input f,F+2+4 in 6 frames after f,f for bluespark.
+* i13 startup for Bluespark throw with buffered input
 * 45 damage on bluespark
 * 18F throw break window on bluespark
 * 7F throw break window on CH bluespark
@@ -647,6 +652,7 @@ f,hcf+1;t;45(50)/70,5;i10;-13;-22d(-50);;"* Homing during heat
 * 1 throw break
 * Side switch 
 * Input all directions, df for 1-3F, f for 0-1F, and f+1 to execute bluespark.
+* i11 startup for Bluespark throw with buffered input
 * 50 damage on bluespark
 * 18F throw break window on bluespark
 * 7F throw break window on CH bluespark
@@ -658,6 +664,7 @@ f,hcf+1;t;45(50)/70,5;i10;-13;-22d(-50);;"* Homing during heat
 f,hcf+2;t;50(55);i12~14;-6;+1d;;"* Homing during heat
 * 2 throw break
 * Input all directions, df for 1-3F, f for 0-1F, and f+2 to execute bluespark.
+* i13 startup for Bluespark throw with buffered input
 * 55 damage on bluespark
 * 18F throw break window on bluespark
 * 7F throw break window on CH bluespark
