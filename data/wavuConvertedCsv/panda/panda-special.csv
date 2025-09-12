@@ -5,11 +5,11 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * 12 chip damage on hit
 * Only deals recoverable damage
 * Cannot cause a K.O.
-Power crush 7~16";hb pc7~16;;Panda-2+3;Heat Burst;r30;;
+* Power crush 7~16";hb pc7~16;;Panda-2+3;Heat Burst;r30;;
 H.uf+3+4;m;21 (8);i16~17;+12g;+7a;;"* Alternate input: H.ROL.uf+3+4
 * Partially uses remaining heat time
 * Transition to SIT (cannot cancel)
-Low crush";js;SIT,SIT;Panda-H.uf+3+4;Panda Shooting Star;SIT;;
+* Low crush";js;SIT,SIT;Panda-H.uf+3+4;Panda Shooting Star;SIT;;
 H.2+3;m;50;i15~16;+9;-3d;;"* Heat Smash
 * Floor Break
 * Balcony Break
@@ -17,7 +17,7 @@ H.2+3;m;50;i15~16;+9;-3d;;"* Heat Smash
 * Transition to +6 ROL with F on block only
 * Transition to +13g HBS with D or 3+4 on block only
 * 9 chip damage on block
-Low crush";hs fbr bbr js;ROL,HBS;Panda-H.2+3;Panda Super Attack;;;
+* Low crush";hs fbr bbr js;ROL,HBS;Panda-H.2+3;Panda Super Attack;;;
 R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Removes Recoverable Health
 * Reversal Break
@@ -26,7 +26,7 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Restores recoverable health on hit
 * Transition to attack throw on hit
 * Consumes Rage
-Power crush 8~";rbr pc8~;;Panda-R.df+1+2;Close Call! Panda Storming Flower;r39;;
+* Power crush 8~";rbr pc8~;;Panda-R.df+1+2;Close Call! Panda Storming Flower;r39;;
 1;h;5;i10;+1;+8;;Recovers 2f faster on hit or block (t27 r17);;;Panda-1;Jab;r19;;
 1,1;h, m;5, 8;i10, i22~23;-15;-4c;;"* Combo from 1st hit CH with 2F delay
 * Move can be delayed by 3F";;;Panda-1,1;;;;
@@ -55,7 +55,7 @@ Power crush 8~";rbr pc8~;;Panda-R.df+1+2;Close Call! Panda Storming Flower;r39;;
 * Transition to standing with input ub or u or uf";;HBS;Panda-3+4;Hunting;;;
 3+4;sp;;;;;;"* Alternate input: FDFA.3+4
 * Transition to HBS
-High crush 4~";cs4~;HBS,HBS;Panda-3+4;Hunting;r15 HBS;;
+* High crush 4~";cs4~;HBS,HBS;Panda-3+4;Hunting;r15 HBS;;
 f+2;h;11;i12;-13;+3;;;;;Panda-f+2;;;;
 f+2,1;h, h;11, 20;i12, i20;-5;+36a (+10);;"* Balcony Break
 * Combo from 1st hit with 9F delay
@@ -66,9 +66,9 @@ f+1+2;m;16;i18;-15;+18a;;;;;Panda-f+1+2;;;;
 f+1+2,1+2;m, M;16, 20;i18, i30~31;-14;+65a (+49);;"* Tornado
 * Combo from 1st hit
 * Grounded hit on off-axis hit against large body size characters?";trn;;Panda-f+1+2,1+2;Bear Claw Cross;;;File:t8-p2-panda-f+1+2,1+2.mp4
-f+3+4;L;20;i28~30;-23;+6a;;High crush 6~;cs6~;FC;Panda-f+3+4;Shape-Up Kick;r40? FC;;File:t8-p2-panda-f+3+4.mp4
+f+3+4;L;20;i28~30;-23;+6a;;* High crush 6~;cs6~;FC;Panda-f+3+4;Shape-Up Kick;r40? FC;;File:t8-p2-panda-f+3+4.mp4
 f+3+4,1+2;L, M;20, 30 (24);i28~30, i50~i60;-16;-13a;;"24 damage from 1st hit with grounded scaling
-High crush 0~";cs0~;;Panda-f+3+4,1+2;Shape-Up Hip;r43?;;File:t8-p2-panda-f+3+4,1+2.mp4
+* High crush 0~";cs0~;;Panda-f+3+4,1+2;Shape-Up Hip;r43?;;File:t8-p2-panda-f+3+4,1+2.mp4
 df+1;m;6;i15~16;-6;+2;;;;;Panda-df+1;;;;
 df+1,2;m, m;6, 9;i15~16, i22~23;-11;-2;;* Combo from 1st CH;;;Panda-df+1,2;;;;
 df+1,2,1+2;m, m, M;6, 9, 20;i15~16, ,i25~26;-14c;+17d;;"* Combo from 2nd hit with 9F delay
@@ -85,10 +85,10 @@ df+3,2;m, h;13, 24;i16, i27~28;-5;+22a;;"* Balcony Break on airborne hit
 * 9 chip damage on block";;;Panda-df+3,2;Honey Trap;;;File:t8-p2-panda-df+3,2.mp4
 df+4;m;15;i12;-4;+7;;;;;Panda-df+4;;;;
 d+1;sl;5;i10;-5;+6;;"* Transition to Standing with f
-High crush 4~";cs4~;FC;Panda-d+1;Crouch Jab;r24 FC;;
-d+2;sl;8;i11;-4;+7;;High crush 4~;cs4~;FC;Panda-d+2;Crouch Straight;r23 FC;;
-d+3;L;12;i20;-17;-6;;High crush 4~;cs4~;FC;Panda-d3;Crouch Spin Kick;r36 FC;;
-d+4;l;10;i16;-15;-4;;High crush 4~;cs4~;FC;Panda-d+4;Crouch Shin Kick;r34 FC;;
+* High crush 4~";cs4~;FC;Panda-d+1;Crouch Jab;r24 FC;;
+d+2;sl;8;i11;-4;+7;;* High crush 4~;cs4~;FC;Panda-d+2;Crouch Straight;r23 FC;;
+d+3;L;12;i20;-17;-6;;* High crush 4~;cs4~;FC;Panda-d3;Crouch Spin Kick;r36 FC;;
+d+4;l;10;i16;-15;-4;;* High crush 4~;cs4~;FC;Panda-d+4;Crouch Shin Kick;r34 FC;;
 d+1+2;M;23;i14~15;-15;+13d (+3);;"* Balcony Break
 * 27 damage on clean hit";bbr;;Panda-d+1+2;Hip Smash;;;File:t8-p2-panda-d+1+2.mp4
 d+3+4;sp;;;;;;"* Alternative input: db+3+4
@@ -111,10 +111,10 @@ db+1,2**;h, m;11, 30;i14~15, i47~48;+3;+42a;;"* Floor Break
 * Heat reduces charge length (consumes remaining time)
 * Transition to HBS with input D or 3+4";fbr chp;HBS;Panda-db+1,2**;Fresh Wild Slap;;;File:t8-p2-panda-db+1,2ss.mp4
 db+2;l;10;i18;-15 / -17 HBS;-1 / -3 HBS;;"* Transition to HBS with input D or 3+4
-High crush";cs;HBS,FC;Panda-db+2;Bear Lariat;FC;;File:t8-p2-panda-db+2.mp4
+* High crush";cs;HBS,FC;Panda-db+2;Bear Lariat;FC;;File:t8-p2-panda-db+2.mp4
 db+3;l;12;i18;-12;+1;;;;;Panda-db+3;Bear Pump in Pedal;;;File:t8-p2-panda-db+3.mp4
 db+4;l;20;i21~22;-23;+6;+74a (+58);"* Tornado
-High crush 6~";trn cs6~;FC;Panda-db+4;Spinning Kuma;FC;;File:t8-p2-panda-db+4.mp4
+* High crush 6~";trn cs6~;FC;Panda-db+4;Spinning Kuma;FC;;File:t8-p2-panda-db+4.mp4
 db+1+2;mm;4,4;i14~15;-9;+2~3;;;;;Panda-db+1+2;;;;
 db+1+2,1+2;mm, mm;4,4, 4,4;i14~15, i15~16;-11;0;;"* Combos from 1st hit
 +10 CH but only on the last hit";;;Panda-db+1+2,1+2;;;;
@@ -130,7 +130,7 @@ b+1;M;24;i22~23;-13;+13a;;"* Balcony Break
 * 9 chip damage on block
 * 12 chip damage on block after absorbing an attack in power crush state
 * -3 on block after absorbing an attack in power crush state
-Power crush 7~21";bbr pc7~21;HBS;Panda-b+1;Bear Slash;;;File:t8-p2-panda-b+1.mp4
+* Power crush 7~21";bbr pc7~21;HBS;Panda-b+1;Bear Slash;;;File:t8-p2-panda-b+1.mp4
 b+2;m;12;i15;-9;+2;;;;;Panda-b+2;;;;
 b+2,1;m, h;12, 14;i15, i23;-3 / - 4 HBS / -14 ROL;+8 / +7 HBS / -3 ROL;;"* Combos from 1st hit
 * Transition to HBS with input D or 3+4
@@ -141,7 +141,7 @@ b+2,2;m, m;12, 15;i15, i25;-10;+6;;Combos from 1st hit CH;;;Panda-b+2,2;;;;
 b+2,2,1;m, m, m;12, 15, 25;i15, ,i35~39;-15;+25a (+15);;"* Tornado
 * Does not Tornado on wall hit
 * Combos from 2nd hit CH
-Low crush";trn js;;Panda-b+2,2,1;Salmon Massacre;;;File:t8-p2-panda-b+2,2,1.mp4
+* Low crush";trn js;;Panda-b+2,2,1;Salmon Massacre;;;File:t8-p2-panda-b+2,2,1.mp4
 b+1+2;h,m;10,20;i18~19 i12~13;-8;+13d / HE;;"* Balcony Break
 * Floor Break
 * Heat Engager
@@ -156,30 +156,30 @@ b+1+4,f,f;sm;40;i55~i130;-20~+55;+42a~+117a;;"* Hold F to extend attack
 b+3+4;m;20;i22~23;-28;+61a;;"* Alternate input: ws3+4
 * Tornado";trn;;Panda-b+3+4;High Jinks;;;File:t8-p2-panda-b+3+4.mp4
 ub+1+2;l;25;i31~32;-17;+12a;;"* Cancel into HBS with input D or 3+4
-Low crush";js;;Panda-ub+1+2;Bear Skip;;;File:t8-p2-panda-ub+1+2.mp4
+* Low crush";js;;Panda-ub+1+2;Bear Skip;;;File:t8-p2-panda-ub+1+2.mp4
 u+1+2;m;24;i18~23;-4 / -3 HBS;+3 / +4 HBS;;"* Transition to HBS with input D or 3+4
-Low crush";js;HBS;Panda-u+1+2;Big Bear Attack;;;File:t8-p2-panda-u+1+2.mp4
+* Low crush";js;HBS;Panda-u+1+2;Big Bear Attack;;;File:t8-p2-panda-u+1+2.mp4
 u+3+4;m;21;i34~39;+14cg;+20d;;"* Transition to SIT (cannot cancel)
-Low crush";js;SIT;Panda-u+3+4;Pancake Press;;;File:t8-p2-panda-u+3+4.mp4
+* Low crush";js;SIT;Panda-u+3+4;Pancake Press;;;File:t8-p2-panda-u+3+4.mp4
 uf+1;m;20;i26~28;-6;+22a;;"* Alternate input: ub+1 or u+1
 * chip damage on block
-Low crush";chp js;;Panda-uf+1;Hornet Sweep;;;File:t8-p2-panda-uf+1.mp4
+* Low crush";chp js;;Panda-uf+1;Hornet Sweep;;;File:t8-p2-panda-uf+1.mp4
 uf+2;m;20;i28~30;-6;+30a;+65a (+45);"* Balcony Break
 * Homing
 * Tailspin
 * Alternate input: ub+2 or u+2";bbr hom;;Panda-uf+2;Ultra Kuma;;;File:t8-p2-panda-uf+2.mp4
-uf+3;m;13;i16~17;-13;+30a (+20);;Low crush;js;;Panda-uf+3;;;;
+uf+3;m;13;i16~17;-13;+30a (+20);;* Low crush;js;;Panda-uf+3;;;;
 uf+3,4;m, m;13, 13;i16~17, i10~12;-11;+30a (+20) / +21a (+14);;"Less frame advantage occurs after Combo from last hit
-Low crush";js;;Panda-uf+3,4;;;;
+* Low crush";js;;Panda-uf+3,4;;;;
 uf+3,4,1+2;m, m, m;13, 13, 22;i16~17, ,i18~19;-15;+16a / -2a;;"* Spike
 * Transition to HBS with input D or 3+4
 * Less frame advantage occurs after Combo from last hit";spk;HBS;Panda-uf+3,4,1+2;Bear Double Hop Kick Combo;;;File:t8-p2-panda-uf+3,4,1+2.mp4
 uf+4;m;20;i29~30;-6;-10a (-20);;"* Balcony Break
-Low crush";bbr js;;Panda-uf+4;;;;
+* Low crush";bbr js;;Panda-uf+4;;;;
 uf+4,3;m, m;20, 25;i29~30, i20~21;+7;+21a (+14);;"* Balcony Break
 * Only connects on hit or block
 * Recovers in FUFT
-Low crush";bbr js;;Panda-uf+4,3;Kuma Hell Axle;;;File:t8-p2-panda-uf+4,3.mp4
+* Low crush";bbr js;;Panda-uf+4,3;Kuma Hell Axle;;;File:t8-p2-panda-uf+4,3.mp4
 1+2+3+4;;;;;;;;;;Panda-1+2+3+4;Ki Charge;;;File:t8-p2-panda-1+2+3+4.mp4
 b,f+2;h;26;i15~17;-5;+17a (+8);+62a (+42);"* Balcony Break
 Tailspin
@@ -199,7 +199,8 @@ f,f,F+1+2;m;30;i20~24;+3;+35d (-23);;"* Balcony Break
 
 * Chip damage
 * Transition to HBS with input D or 3+4 (does not shift when using Heat Dash)
-Low crush  21F";bbr he chp js 21F;HBS;Panda-f,f,F+1+2;Rabid Bear;;;File:t8-p2-panda-f,f,f+1+2.mp4
+* Low crush 
+* 21F";bbr he chp js 21F;HBS;Panda-f,f,F+1+2;Rabid Bear;;;File:t8-p2-panda-f,f,f+1+2.mp4
 ws1;m;13;i13~15;-11;+2;+7;;;;Panda-ws1;;;;
 ws1,2;m, m;13, 20;i13~15, i18~19;-13;+6 (+20g);+18;"* Hold 2 to power up, up to 2 charge levels
 * Transition to HBS with input D or 3+4
@@ -238,7 +239,7 @@ HBS.1,2**;m, m;10, 30;i12~13, i44~45;+3;+49a;;"* chip damage on block
 * Cannot absorb with power crush
 * Heat reduces charge length (consumes partial Heat time)";chp;;Panda-HBS.1,2**;Fresh Honeycomb Spike;;;File:t8-p2-panda-hbs.1,2ss.mp4
 HBS.2;L;16;i21~24;-15;+21g;;"* Transition to HBS
-High crush 1~";cs1~;HBS,HBS;Panda-HBS.2;Bear Claw;HBS;;File:t8-p2-panda-hbs.2.mp4
+* High crush 1~";cs1~;HBS,HBS;Panda-HBS.2;Bear Claw;HBS;;File:t8-p2-panda-hbs.2.mp4
 HBS.3;sp;;;;;;"* Transition to FUFA
 * Alternative input: HBS.4 (HBS.3 is into background, HBS.4 is into foreground)";;FUFA;Panda-HBS.3;Hunting to Roll Over;;;File:t8-p2-panda-hbs.3.mp4
 HBS.1+2;m;24;i19~22;-15;+79a;;* Tornado;trn;;Panda-HBS.1+2;Bear Fling;;;File:t8-p2-panda-hbs.1+2.mp4
@@ -247,7 +248,7 @@ HBS.3+4;M;21;i20~24;-14;+9a (-1);;"* Heat Engager
 * Heat Dash +43d (+35)
 
 * Balcony Break
-Power crush 7~";he bbr pc7~;;Panda-HBS.3+4;Bear Tackle;;;File:t8-p2-panda-hbs.3+4.mp4
+* Power crush 7~";he bbr pc7~;;Panda-HBS.3+4;Bear Tackle;;;File:t8-p2-panda-hbs.3+4.mp4
 HBS.b,b;sp;;;;;;"* Alternate input: SIT.B
 * Transition to HBS with input D or 3+4";;HBS;Panda-HBS.b,b;Backward Roll;;;File:t8-p2-panda-hbs.b,b.mp4
 HBS.b+1+2;l;16;i26~29;-25c;+14a;;* Transition to HBS with input D or 3+4;;HBS;Panda-HBS.b+1+2;;;;
