@@ -162,13 +162,14 @@ export const isPowerCrush = (move: Move) => {
 }
 
 export const jails = (move: Move) => {
-  return /jail/i.test(move.notes || '')
+  return /jail/i.test(move.notes || '') && !/not jail/i.test(move.notes || '')
 }
 
 export const noJails = (move: Move) => {
   return (
-    (move.hitLevel || '').split(',').length > 1 &&
-    !/jail/i.test(move.notes || '')
+    ((move.hitLevel || '').split(', ').length > 1 &&
+      !/jail/i.test(move.notes || '')) ||
+    /not jail/i.test(move.notes || '')
   )
 }
 
