@@ -160,12 +160,19 @@ def _convert_json_movelist(move_list_json: list) -> List[Move]:
             on_ch = _remove_html_tags(_normalize_data(_normalize_hit_ch_input(move["title"]["ch"])))
             startup = _normalize_data(move["title"]["startup"])
             recovery = _normalize_data(move["title"]["recv"])
-            crush = _normalize_data(move["title"]["crush"])
+            crush = html.unescape(_normalize_data(move["title"]["crush"]))
+            crush = BeautifulSoup(crush, features="lxml").get_text()
             image = _normalize_data(move["title"]["image"])
             video = _normalize_data(move["title"]["video"])
             alt = _normalize_data(move["title"]["alt"])
             alt = BeautifulSoup(alt, features="lxml").get_text()
             num = _normalize_data(move["title"]["num"])
+
+            # remove new lines and *. Replace "," with space
+            crush = crush.replace("\n", "").replace("*", "").replace(",", " ")
+            # split on spaces, but dont keep empty entries
+            crushList = [part for part in crush.split(" ") if part]
+            crush = " ".join(crushList)
 
             if(len(startupArray) > 0) :
                 startup = startupArray[0] +  ", " + ("," if len(startupArray) > 1 else "") + (startup[1:] if startup.startswith(",") else startup)
@@ -174,9 +181,9 @@ def _convert_json_movelist(move_list_json: list) -> List[Move]:
             notes = BeautifulSoup(notes, features="lxml").get_text()
             notes = notes.replace("* \n", "* ").strip()
             (short_notes, tags) = _parse_notes(notes)
-            tags = " ".join(item for item in [tags, crush.replace(",","")] if item)
+            tags = " ".join(item for item in [tags, crush] if item)
             if(crush) :
-                notes = "\n".join([notes, _crush_to_note(crush)])
+                notes = "\n".join([notes, _crush_to_note(crushList)])
 
             notes = notes.strip()
             move = Move(id, name, input, target, damage, on_block, on_hit, on_ch, startup, recovery, crush, notes, short_notes, "", tags, image, video, alias, alt, num)
@@ -234,8 +241,8 @@ def _get_tag(noteLine: str) :
     return None
 
 
-def _crush_to_note(crush: str) : 
-    return crush.replace("ps", "Parry state ").replace("pc", "Power crush ").replace("js", "Low crush ").replace("cs", "High crush ")
+def _crush_to_note(crushList: list) : 
+    return "* " + "\n* ".join(crushList).replace("ps", "Parry state ").replace("pc", "Power crush ").replace("js", "Low crush ").replace("cs", "High crush ").replace("fs", "Floating state")
 
 def _sort_json_movelist(move_list: List[Move]) :
     # a trick to generate a string for sorting frames. + is replaced by _ just to make "+" sort after ","
