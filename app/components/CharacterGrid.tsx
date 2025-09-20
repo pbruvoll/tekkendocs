@@ -1,5 +1,5 @@
 import cx from 'classix'
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 import { InView } from '@/components/core/InView'
 import {
   CharacterCard2,
