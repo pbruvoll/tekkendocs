@@ -252,7 +252,7 @@ export default function () {
                   <tr
                     key={move.moveNumber}
                     className={`border-b transition-colors hover:bg-muted/50 ${
-                      index % 2 === 0 ? 'bg-muted/25' : 'bg-transparent'
+                      index % 2 === 0 ? 'bg-muted/40' : 'bg-transparent'
                     }`}
                   >
                     <td className="p-2 align-middle sm:p-4">
