@@ -243,7 +243,7 @@ export default function () {
               </tr>
             </thead>
             <tbody className="[&_tr:last-child]:border-0">
-              {paginatedMoves.map(move => {
+              {paginatedMoves.map((move, index) => {
                 const simpleBlock = simplifyFrameValue(move.block || '')
                 const blockValue = Number(simpleBlock)
                 const simpleHit = simplifyFrameValue(move.hit || '')
@@ -251,7 +251,9 @@ export default function () {
                 return (
                   <tr
                     key={move.moveNumber}
-                    className="border-b transition-colors hover:bg-muted/50"
+                    className={`border-b transition-colors hover:bg-muted/50 ${
+                      index % 2 === 0 ? 'bg-muted/25' : 'bg-transparent'
+                    }`}
                   >
                     <td className="p-2 align-middle sm:p-4">
                       <Link
