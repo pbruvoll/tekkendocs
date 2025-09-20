@@ -221,92 +221,90 @@ export default function () {
       {selectedCharId && state !== 'idle' && <div>Loading...</div>}
 
       {paginatedMoves.length > 0 && selectedCharId && (
-        <div className="relative w-full">
-          <table className="w-full text-sm">
-            <thead className="[&_tr]:border-b">
-              <tr className="border-b transition-colors hover:bg-muted/50">
-                <th className="sticky top-0 z-10 h-12 bg-background px-2 text-left align-middle font-medium text-muted-foreground sm:px-4">
-                  Cmd
-                </th>
-                <th className="sticky top-0 z-10 h-12 bg-background px-2 text-left align-middle font-medium text-muted-foreground sm:px-4">
-                  Hit Lvl
-                </th>
-                <th className="sticky top-0 z-10 h-12 bg-background px-2 text-left align-middle font-medium text-muted-foreground sm:px-4">
-                  Startup
-                </th>
-                <th className="sticky top-0 z-10 h-12 bg-background px-2 text-left align-middle font-medium text-muted-foreground sm:px-4">
-                  Block
-                </th>
-                <th className="sticky top-0 z-10 h-12 bg-background px-2 text-left align-middle font-medium text-muted-foreground sm:px-4">
-                  Hit / CH
-                </th>
-              </tr>
-            </thead>
-            <tbody className="[&_tr:last-child]:border-0">
-              {paginatedMoves.map((move, index) => {
-                const simpleBlock = simplifyFrameValue(move.block || '')
-                const blockValue = Number(simpleBlock)
-                const simpleHit = simplifyFrameValue(move.hit || '')
-                const simpleCh = simplifyFrameValue(move.counterHit || '')
-                return (
-                  <tr
-                    key={move.moveNumber}
-                    className={`border-b transition-colors hover:bg-muted/50 ${
-                      index % 2 === 0 ? 'bg-muted/40' : 'bg-transparent'
-                    }`}
-                  >
-                    <td className="p-2 align-middle sm:p-4">
-                      <Link
-                        className="inline-flex flex-wrap items-center gap-2 text-primary hover:underline"
-                        to={`/t8/${
-                          showsMultipleChars
-                            ? charIdFromMove(move as MoveT8)
-                            : selectedCharId
-                        }/${commandToUrlSegmentEncoded(move.command)}`}
-                      >
-                        {includeCharNameInFrames && (
-                          <span className="text-muted-foreground">
-                            {showsMultipleChars
-                              ? charIdFromMove(move as MoveT8)
-                              : selectedCharId}{' '}
-                          </span>
-                        )}
-                        <span className="break-words">
-                          {formatWordWithBreaks(move.command)}
-                        </span>
-                        {(move.video || move.ytVideo) && <VideoIcon />}
-                      </Link>
-                    </td>
-                    <td className="p-2 align-middle sm:p-4">
-                      {formatWordWithBreaks(move.hitLevel)}
-                    </td>
-                    <td className="break-words p-2 align-middle sm:p-4">
-                      {simplifyFrameValue(move.startup || '')}
-                    </td>
-                    <td
-                      className={cx(
-                        'break-words p-2 align-middle sm:p-4',
-                        blockValue <= -10 && 'text-text-destructive',
-                        blockValue > 0 && 'text-text-success',
-                      )}
+        <table className="relative w-full text-sm">
+          <thead className="[&_tr]:border-b">
+            <tr className="border-b transition-colors hover:bg-muted/50">
+              <th className="sticky top-0 z-10 h-12 bg-background px-2 text-left align-middle font-medium text-muted-foreground sm:px-4">
+                Cmd
+              </th>
+              <th className="sticky top-0 z-10 h-12 bg-background px-2 text-left align-middle font-medium text-muted-foreground sm:px-4">
+                Hit Lvl
+              </th>
+              <th className="sticky top-0 z-10 h-12 bg-background px-2 text-left align-middle font-medium text-muted-foreground sm:px-4">
+                Startup
+              </th>
+              <th className="sticky top-0 z-10 h-12 bg-background px-2 text-left align-middle font-medium text-muted-foreground sm:px-4">
+                Block
+              </th>
+              <th className="sticky top-0 z-10 h-12 bg-background px-2 text-left align-middle font-medium text-muted-foreground sm:px-4">
+                Hit / CH
+              </th>
+            </tr>
+          </thead>
+          <tbody className="[&_tr:last-child]:border-0">
+            {paginatedMoves.map((move, index) => {
+              const simpleBlock = simplifyFrameValue(move.block || '')
+              const blockValue = Number(simpleBlock)
+              const simpleHit = simplifyFrameValue(move.hit || '')
+              const simpleCh = simplifyFrameValue(move.counterHit || '')
+              return (
+                <tr
+                  key={move.moveNumber}
+                  className={`border-b transition-colors hover:bg-muted/50 ${
+                    index % 2 === 0 ? 'bg-muted/40' : 'bg-transparent'
+                  }`}
+                >
+                  <td className="p-2 align-middle sm:p-4">
+                    <Link
+                      className="inline-flex flex-wrap items-center gap-2 text-primary hover:underline"
+                      to={`/t8/${
+                        showsMultipleChars
+                          ? charIdFromMove(move as MoveT8)
+                          : selectedCharId
+                      }/${commandToUrlSegmentEncoded(move.command)}`}
                     >
-                      {simpleBlock}
-                    </td>
-                    <td className="break-words p-2 align-middle sm:p-4">
-                      {simpleHit}
-                      {move.counterHit && move.counterHit !== move.hit && (
+                      {includeCharNameInFrames && (
                         <span className="text-muted-foreground">
-                          {' '}
-                          / {simpleCh}
+                          {showsMultipleChars
+                            ? charIdFromMove(move as MoveT8)
+                            : selectedCharId}{' '}
                         </span>
                       )}
-                    </td>
-                  </tr>
-                )
-              })}
-            </tbody>
-          </table>
-        </div>
+                      <span className="break-words">
+                        {formatWordWithBreaks(move.command)}
+                      </span>
+                      {(move.video || move.ytVideo) && <VideoIcon />}
+                    </Link>
+                  </td>
+                  <td className="p-2 align-middle sm:p-4">
+                    {formatWordWithBreaks(move.hitLevel)}
+                  </td>
+                  <td className="break-words p-2 align-middle sm:p-4">
+                    {simplifyFrameValue(move.startup || '')}
+                  </td>
+                  <td
+                    className={cx(
+                      'break-words p-2 align-middle sm:p-4',
+                      blockValue <= -10 && 'text-text-destructive',
+                      blockValue > 0 && 'text-text-success',
+                    )}
+                  >
+                    {simpleBlock}
+                  </td>
+                  <td className="break-words p-2 align-middle sm:p-4">
+                    {simpleHit}
+                    {move.counterHit && move.counterHit !== move.hit && (
+                      <span className="text-muted-foreground">
+                        {' '}
+                        / {simpleCh}
+                      </span>
+                    )}
+                  </td>
+                </tr>
+              )
+            })}
+          </tbody>
+        </table>
       )}
       {paginatedMoves.length < filteredMoves.length && (
         <p className="my-2">
