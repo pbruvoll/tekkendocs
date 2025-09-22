@@ -113,7 +113,8 @@ df+3,1,2;m, h, M;13, 10, 35;i14, ,i30~42;-11~+1;+3d;;"* Balcony Break
 df+3,1,4;m, h, h;13, 10, 20;i14, ,i15~16;-3;+4;;"* Combo from 1st CH
 * Combo from 2nd hit with 10f delay
 * Input can be delayed 10f
-* Move can be delayed 8f";;;Anna-df+3,1,4;Twisting Combo;r27;;
+* Move can be delayed 8f
+* Jail from 2nd attack";;;Anna-df+3,1,4;Twisting Combo;r27;;
 df+3,2;m, h;13, 9;i14, i19;-2;+4;+10;"* Combo from 1st hit with 10f delay
 * Input can be delayed 10f
 * Enter HAM -2 +4 +10 r21 with F";;HAM;Anna-df+3,2;Creeping Snake;r21;;
@@ -183,7 +184,8 @@ db+3+4,4;L, h;18, 23;i24, i29~30;-9;+14a (+5);;"* Balcony Break
 * Low crush 18~29
 * Floating state30~32";bbr js18~29 fs30~32;;Anna-db+3+4,4;Stalker Repellant Alter;r35;;
 b+1;m;14;i16~17;-2;+1;;;;;Anna-b+1;;r28;;
-b+1,2;m, h;14, 12;i16~17, i24;-11;+5;;* Combo from 1st hit;;;Anna-b+1,2;;r30;;
+b+1,2;m, h;14, 12;i16~17, i24;-11;+5;;"* Combo from 1st hit
+* Jails from 1st attack";;;Anna-b+1,2;;r30;;
 b+1,2,2;m, h, m;14, 12, 24;i16~17, ,i26~27;-12;+20a (+15);+29d (+21);"* Balcony Break (airborne)
 * Elbow
 * Combo from 1st CH
@@ -196,7 +198,7 @@ b+2;h;10;i13~14;-5;+1;;* Homing;hom;;Anna-b+2;;r27;;
 b+2,2;h, h;10, 20;i13~14, i18~19;-9;+5;;"* Balcony Break (airborne)
 * Combo from 1st hit
 * Female characters can slap back with 2 on hit
-* Male characters can slap back with 2 on hit (likely a bug)";;;Anna-b+2,2;Double Slap;r33;;
+* Jails from 1st attack";;;Anna-b+2,2;Double Slap;r33;;
 b+3;;;;;;;"* Actionable after 16f
 * i3? low parry: parries all lows (including Heat Smash lows)
 * i3? throw parry: +0d and 25 damage
@@ -234,13 +236,15 @@ H.uf+3,1;m, h;22, 20;i23~24, i40~89;+4g~+53g;+20a (-6);;"* Strong Aerial Tailspi
 * Combo from 1st hit
 * Fragile debuff on hit or block, opponent receives chip damage from any attack, removed when land a hit on you
 * 6 chip damage on block
-* Partially uses remaining Heat time";bbr wpn;;Anna-uf+3,H.1;Sudden Fascinator;r16;;
+* Partially uses remaining Heat time
+* Jails from 1st attack";bbr wpn;;Anna-uf+3,H.1;Sudden Fascinator;r16;;
 H.uf+3,2;m, h;22, 30;i23~24, i40~139;-1~+98g;+20a (-6);;"* Strong Aerial Tailspin
 * Balcony Break
 * Weapon
 * Combo from 1st hit
 * Chip damage on block
-* Partially uses remaining Heat time";bbr wpn chp;;Anna-uf+3,H.2;Sudden Penetrator;r16;;
+* Partially uses remaining Heat time
+* Jails from 1st attack";bbr wpn chp;;Anna-uf+3,H.2;Sudden Penetrator;r16;;
 uf+4;m;24;i18~20;-18;+27a (+17);;"* Tornado
 * 18 damage when using ub+4
 * Low crush 13~31
