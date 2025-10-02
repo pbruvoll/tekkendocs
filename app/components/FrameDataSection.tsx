@@ -2,16 +2,18 @@ import { useMemo, useState } from 'react'
 import { useSearchParams } from '@remix-run/react'
 import { Filter } from 'lucide-react'
 import { Input } from '@/components/ui/input'
+import { Switch } from '@/components/ui/switch'
 import { orderByKey } from '~/constants/sortConstants'
 import { sortOptions } from '~/constants/sortOptions'
 import { type Move } from '~/types/Move'
 import { type MoveFilter } from '~/types/MoveFilter'
 import { getFilterFromParams } from '~/utils/filterUtils'
-import { getMoveFilterTypes } from '~/utils/frameDataUtils'
+import { filterMoves, getMoveFilterTypes } from '~/utils/frameDataUtils'
 import { getSortByQueryParamValue, getSortSettings } from '~/utils/sortingUtils'
 import { ContentContainer } from './ContentContainer'
 import { FrameDataFilterDialog } from './FrameDataFilterDialog'
 import { FrameDataTable } from './FrameDataTableV2'
+import { SimpleMovesTable } from './SimpleMovesTable'
 
 export type FrameDataSectionProps = {
   moves: Move[]
@@ -28,6 +30,7 @@ export const FrameDataSection = ({
     : ''
 
   const [searchQuery, setSearchQuery] = useState<string>('')
+  const [isSimpleView, setIsSimpleView] = useState<boolean>(false)
 
   const filter: MoveFilter = useMemo(() => {
     const filterFromParams = getFilterFromParams(searchParams)
@@ -40,6 +43,20 @@ export const FrameDataSection = ({
   }, [searchParams, searchQuery])
 
   const moveTypes = useMemo(() => getMoveFilterTypes(moves), [moves])
+
+  const filteredMoves = useMemo(() => {
+    return filterMoves(moves, filter)
+  }, [moves, filter])
+
+  // Get a character ID for the SimpleMovesTable
+  const selectedCharId = useMemo(() => {
+    if (hasMultipleCharacters) {
+      return ''
+    }
+    // Try to get character ID from the first move if available
+    const firstMove = moves[0] as any
+    return firstMove?.characterId || firstMove?.charId || 'unknown'
+  }, [moves, hasMultipleCharacters])
 
   const setFilterValue = (key: string, value: string) => {
     setSearchParams(prev => {
@@ -125,12 +142,39 @@ export const FrameDataSection = ({
         </div>
       </ContentContainer>
 
-      <FrameDataTable
-        className="mt-3"
-        moves={moves}
-        filter={filter}
-        hasMultipleCharacters={hasMultipleCharacters}
-      />
+      <ContentContainer className="flex items-center justify-between gap-4 py-2">
+        <div className="flex items-center gap-2">
+          <Switch
+            id="simple-view"
+            checked={isSimpleView}
+            onCheckedChange={setIsSimpleView}
+          />
+          <label
+            htmlFor="simple-view"
+            className="cursor-pointer text-sm font-medium"
+          >
+            Simple View
+          </label>
+        </div>
+      </ContentContainer>
+
+      {isSimpleView ? (
+        <div className="mt-3">
+          <SimpleMovesTable
+            moves={filteredMoves}
+            selectedCharId={selectedCharId}
+            showsMultipleChars={hasMultipleCharacters}
+            includeCharNameInFrames={hasMultipleCharacters}
+          />
+        </div>
+      ) : (
+        <FrameDataTable
+          className="mt-3"
+          moves={moves}
+          filter={filter}
+          hasMultipleCharacters={hasMultipleCharacters}
+        />
+      )}
     </>
   )
 }

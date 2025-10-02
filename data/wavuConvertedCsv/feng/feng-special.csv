@@ -16,13 +16,13 @@ H.b+1;h;20;i10~11;-8;+36d (+28);;"* Balcony Break
 H.f,F+1+2*;m;30;i39;+11;+22a (+12);;"* Balcony Break
 * Guard Break
 * Partially uses remaining Heat Time";bbr;;Feng-H.f,F+1+2*;Essence of Nian Zhang Mie Ba;;;
-H.2+3;m,m;22,26;i21,24;+12, +24 on STC at Wall, +19 at Wall;+30d (-6);;"Heat Smash
-* Chip damage on block
-* Transitions to STC on block, can cancel with b, change to BKP with b, in STC stance.";hs chp;;Feng-H.2+3;Yinglong Mountain Crusher;;;
 H.2+3;m,t;20,35;i20~21;+12;+0;;"* Heat Smash
 * Balcony Break
 * 7 chip damage on block
 * Transitions to STC on block, can cancel with b at +7 on block";hs bbr;;Feng-H.2+3;Yinglong Mountain Crusher;;;
+H.2+3;m,m;22,26;i21,24;+12, +24 on STC at Wall, +19 at Wall;+30d (-6);;"Heat Smash
+* Chip damage on block
+* Transitions to STC on block, can cancel with b, change to BKP with b, in STC stance.";hs chp;;Feng-H.2+3;Yinglong Mountain Crusher;;;
 R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Removes Recoverable Health
 * Reversal Break
@@ -152,6 +152,8 @@ db+1+2,2;m, l;13, 10;i21~22, i29~30;-12;-1;;"* Combo from 1st CH
 * Move can be delayed
 * High crush 8";cs8;FC;Feng-db+1+2,2;Dragon Slayer;FC;;File:t8-p2-feng-db+1+2,2.mp4
 b+1;h;17;i10~11;-12;+1;+36d (+28);* Balcony Break on CH;;;Feng-b+1;Iron Palm;;;File:t8-p2-feng-b+1.mp4
+b+1+3;;25;;;;;"* Timed with opponent punch
+* Parry state 5~?";ps5~?;;Feng-b+1+3;Attack Reversal;;;
 b+2;m;13;i17;-11;+0c;;Floor Break;fbr;;Feng-b+2;;;;
 b+2,3;m, l;13, 6;i17, i22~24;-11;0;;"* Combo from 1st hit 
 * Move can be delayed";;;Feng-b+2,3;;;;
@@ -194,18 +196,16 @@ uf+3;m;16;i22~23;-7;+22d;;"* Strong Aerial Tailspin
 * Alternate input with uf or u
 * Low crush 9";js9;;Feng-uf+3;Side Swipe;;;File:t8-p2-feng-uf+3.mp4
 uf+4;m;13;i15~17;-13;+33a (+23);;"* Alternate input with uf or u
-* Low crush 9";js9;;Feng-uf+4;Soaring Eagle;;;
-uf+4;m;13;i15~17;-13;+33a (+23);;"* Alternate input with uf or u
 * Low crush 9";js9;;Feng-uf+4;Soaring Eagle;;;File:t8-p2-feng-uf+4.mp4
-uf+3+4;m,h,h;10,10,7;i24,4,3;-14;+25a (+18);;* High crush 6~24Low crush 25;cs6~24js25;;Feng-uf+3+4;;;;
+uf+4;m;13;i15~17;-13;+33a (+23);;"* Alternate input with uf or u
+* Low crush 9";js9;;Feng-uf+4;Soaring Eagle;;;
 uf+3+4;M,h,h;10,10,7;i24,4,3;-14;+25a (+18);;* High crush 6~24Low crush 25;cs6~24js25;;Feng-uf+3+4;;;;
-uf+3+4,3;m,h,h, h;10,10,7, 11;i24,4,3, i17~18;-6;+70a (+54);;"* Balcony Break
+uf+3+4;m,h,h;10,10,7;i24,4,3;-14;+25a (+18);;* High crush 6~24Low crush 25;cs6~24js25;;Feng-uf+3+4;;;;
+uf+3+4,3;M,h,h, h;10,10,7, 11;i24,4,3, i17~18;-6;+70a (+54);;"* Balcony Break
 * Tornado
 * Combo from 1st hit
 * causes 1st hit not to crush";bbr trn;;Feng-uf+3+4,3;Assassin's Bow;;;File:t8-p2-feng-uf+3+4,3.mp4
 1+2+3+4;;;;;;;;;;Feng-1+2+3+4;Ki Charge;;;File:t8-p2-feng-1+2+3+4.mp4
-b1+3;;25;;;;;"* Timed with opponent punch
-* Parry state";ps;;Feng-b+1+3_2+4;Attack Reversal;;;
 f,F+2;m;25;i18~19;-9;+16a (+7);;"* Heat Engager
 
 * Heat Dash +5, +36a (+26)
