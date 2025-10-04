@@ -6,6 +6,8 @@
   "scripts": {
     "build": "remix vite:build",
     "build:sitemap": "remix-sitemap",
+    "check": "biome check",
+		"check:fix": "biome check --fix",
     "dev": "node ./server.js",
     "dev-mock-data": "cross-env USE_MOCK_DATA=1 remix dev --manual -c \"node server.js\"",
     "start": "cross-env NODE_ENV=production node ./server.js",
@@ -14,8 +16,12 @@
     "test": "vitest",
     "lint": "eslint .",
     "lint-fix": "eslint --fix .",
+    "lint-biome": "biome lint",
+		"lint-biome:fix": "biome lint --fix",
     "format": "prettier --write .",
     "formatcheck": "prettier --check .",
+    "format-biome": "biome format .",
+    "format-biome:fix": "biome format --write",
     "validate": "run-p \"test -- --run\" lint typecheck",
     "typecheck": "tsc"
   },
@@ -58,6 +64,7 @@
     "zod": "^3.23.6"
   },
   "devDependencies": {
+    "@biomejs/biome": "2.2.5",
     "@remix-run/dev": "2.16.6",
     "@remix-run/eslint-config": "2.16.6",
     "@tailwindcss/typography": "^0.5.10",
