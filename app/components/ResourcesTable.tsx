@@ -25,7 +25,7 @@ export const ResourcesTable = ({
           </Table.Header>
         )}
         <Table.Body>
-          {rows.map((row, i) => {
+          {rows.map((row, _i) => {
             return (
               <Table.Row key={row[0]}>
                 <Table.Cell>

@@ -27,7 +27,7 @@ export default function T8() {
       <CharacterGrid
         characterCards={characterInfoList.map(({ id, displayName }) => {
           const imgSrc = t8AvatarMap[id]
-          return { name: displayName, imgSrc, url: '/t8/' + id }
+          return { name: displayName, imgSrc, url: `/t8/${id}` }
         })}
       />
     </ContentContainer>

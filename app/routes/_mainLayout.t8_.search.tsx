@@ -139,7 +139,7 @@ export default function () {
       state === 'idle' &&
       data?.characterName !== selectedCharId
     ) {
-      load('/t8/' + selectedCharId)
+      load(`/t8/${selectedCharId}`)
     }
   }, [selectedCharId, state, load, data?.characterName])
 

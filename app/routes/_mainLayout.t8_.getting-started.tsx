@@ -12,8 +12,7 @@ export const meta: MetaFunction = ({ matches }) =>
 
 export default function () {
   return (
-    <>
-      <ContentContainer
+    <ContentContainer
         enableTopPadding
         enableBottomPadding
         className="min-h-svh"
@@ -36,6 +35,5 @@ export default function () {
           />
         </div>
       </ContentContainer>
-    </>
   )
 }

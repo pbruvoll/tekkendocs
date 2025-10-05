@@ -117,7 +117,7 @@ export const meta: MetaFunction<typeof loader> = ({ data, params }) => {
     {
       tagName: 'link',
       rel: 'canonical',
-      href: 'https://tekkendocs.com/t7/' + characterId + '/' + move,
+      href: `https://tekkendocs.com/t7/${characterId}/${move}`,
     },
   ]
 }
@@ -133,7 +133,7 @@ export default function Move() {
     <ContentContainer enableTopPadding enableBottomPadding>
       <Heading mt="2" mb="4" as="h1" className="capitalize">
         <RadixLink asChild>
-          <Link to={'/' + characterName}>{characterName} </Link>
+          <Link to={`/${characterName}`}>{characterName} </Link>
         </RadixLink>
         : {moveRow[0]}
       </Heading>

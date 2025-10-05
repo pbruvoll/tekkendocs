@@ -27,7 +27,7 @@ export default function T7() {
       <CharacterGrid
         characterCards={characterInfoList.map(({ id, displayName }) => {
           const imgSrc = t7AvatarMap[id]
-          return { name: displayName, imgSrc, url: '/t7/' + id }
+          return { name: displayName, imgSrc, url: `/t7/${id}` }
         })}
       />
     </ContentContainer>

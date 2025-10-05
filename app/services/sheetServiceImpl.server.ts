@@ -96,7 +96,7 @@ export class SheetServiceImpl implements SheetService {
     }
   }
 
-  async getGameData(game: Game, dataType: GameDataType): Promise<SheetObject> {
+  async getGameData(_game: Game, _dataType: GameDataType): Promise<SheetObject> {
     throw createErrorResponse({
       title: 'getGameData is not yet implemented',
       status: ServerStatusCode.NotFound,

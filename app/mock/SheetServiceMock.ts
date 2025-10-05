@@ -21,7 +21,7 @@ export class SheetServiceMock implements SheetService {
     })
   }
 
-  getGameData(game: Game, dataType: 'todo'): Promise<SheetObject> {
+  getGameData(_game: Game, _dataType: 'todo'): Promise<SheetObject> {
     throw 'not implemented'
   }
 }
