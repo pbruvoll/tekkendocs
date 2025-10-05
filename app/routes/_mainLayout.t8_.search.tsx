@@ -93,7 +93,7 @@ export default function () {
       if (cleanMoveQuery.includes('?')) {
         // filter by wildcard, so "1?2", matches "1,2,3".
         // we use ? as wildcard instead of *, since som move have * in them (it means hold button)
-        let w = cleanMoveQuery.replace(/[*.+^${}()|[\]\\]/g, '\\$&') // regexp escape
+        const w = cleanMoveQuery.replace(/[*.+^${}()|[\]\\]/g, '\\$&') // regexp escape
         const re = new RegExp(
           `^${w.replace(/\?/g, '.*')}${searchQuery.endsWith(' ') ? '' : '.*'}$`,
         )
