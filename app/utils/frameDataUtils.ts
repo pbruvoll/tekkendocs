@@ -24,8 +24,7 @@ export const frameDataTableToJson = (normalFrameData: TableData): Move[] => {
   const startupIndex = lowerCaseHeaders.indexOf('start up frame')
   const blockIndex = lowerCaseHeaders.indexOf('block frame')
   const hitIndex = lowerCaseHeaders.indexOf('hit frame')
-  const counterHitIndex = lowerCaseHeaders.indexOf('counter hit frame',
-  )
+  const counterHitIndex = lowerCaseHeaders.indexOf('counter hit frame')
   const notesIndex = lowerCaseHeaders.indexOf('notes')
 
   invariant(commandIndex >= 0)
@@ -192,7 +191,7 @@ export const removesRecoverableHealth = (move: Move) => {
 
 export const recoverFullCrouch = (move: Move) => {
   return (
-    (move.recovery?.includes('FC')) ||
+    move.recovery?.includes('FC') ||
     move.notes
       .toLowerCase()
       .split('\n')
@@ -511,9 +510,7 @@ export const filterMoves = (moves: Move[], filter: MoveFilter | undefined) => {
   if (filter.transition && filter.transition.length > 0) {
     const transition = filter.transition
     filterFuncs.push((move: Move) => {
-      return !!(
-        move.transitions?.some(t => transition.includes(t))
-      )
+      return !!move.transitions?.some(t => transition.includes(t))
     })
   }
 
@@ -590,8 +587,7 @@ export const sortMoves = (
     case `notes`: {
       return sortMovesByNumber(
         moves,
-        (move: Move) =>
-          move.tags?.js || move.tags?.cs || move.tags?.pc || '',
+        (move: Move) => move.tags?.js || move.tags?.cs || move.tags?.pc || '',
         asc,
       )
     }
@@ -640,8 +636,7 @@ export const sortMovesV2 = (
     case `notes`: {
       return sortMovesByNumber(
         moves,
-        (move: Move) =>
-          move.tags?.js || move.tags?.cs || move.tags?.pc || '',
+        (move: Move) => move.tags?.js || move.tags?.cs || move.tags?.pc || '',
         asc,
       )
     }
