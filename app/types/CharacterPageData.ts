@@ -1,7 +1,7 @@
 import { type CharacterDataType } from './CharacterDataType'
 import { type Game } from './Game'
 import { type Move } from './Move'
-import type { TableData } from './TableData'
+import { type TableData } from './TableData'
 
 export type CharacterPageData = {
   game: Game

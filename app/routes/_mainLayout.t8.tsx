@@ -4,7 +4,7 @@ import { Link, useLoaderData } from '@remix-run/react'
 import { CharacterGrid } from '~/components/CharacterGrid'
 import { ContentContainer } from '~/components/ContentContainer'
 import { getTekken8Characters } from '~/services/staticDataService'
-import type { GamePageData } from '~/types/GamePageData'
+import { type GamePageData } from '~/types/GamePageData'
 import { getCacheControlHeaders } from '~/utils/headerUtils'
 import { t8AvatarMap } from '~/utils/t8AvatarMap'
 

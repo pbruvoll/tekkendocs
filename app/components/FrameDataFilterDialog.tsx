@@ -75,6 +75,7 @@ export const FrameDataFilterDialog = ({
               strokeLinejoin="round"
               className="lucide lucide-x h-4 w-4"
             >
+              <title>Close</title>
               <path d="M18 6 6 18"></path>
               <path d="m6 6 12 12"></path>
             </svg>

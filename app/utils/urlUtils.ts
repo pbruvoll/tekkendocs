@@ -20,7 +20,7 @@ export const getSearchParamBoolean = (
   key: string,
 ): boolean | undefined => {
   const valueStr = searchParams.get(key)
-  if (valueStr == undefined) return undefined
+  if (valueStr === null) return undefined
   return true
 }
 

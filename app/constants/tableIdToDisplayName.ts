@@ -1,4 +1,4 @@
-import type { TableId } from '~/types/TableId'
+import { type TableId } from '~/types/TableId'
 
 export const tableIdToDisplayName: Record<TableId, string> = {
   frames_normal: 'Standard',

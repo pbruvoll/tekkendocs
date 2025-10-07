@@ -1,4 +1,4 @@
-import type { CharacterInfo } from '~/types/CharacterInfo'
+import { type CharacterInfo } from '~/types/CharacterInfo'
 import { type Game } from '~/types/Game'
 
 const charsT7: string[] = [

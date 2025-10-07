@@ -10,11 +10,20 @@
     "rules": {
       "style": {
         "useImportType": {
+          "level": "error",
           "options": {
             "style": "inlineType"
           }
         }
+      },
+      "correctness": {
+        "useUniqueElementIds": "warn"
+      },
+      "suspicious": {
+        "noArrayIndexKey": "warn",
+        "noShadowRestrictedNames": "warn"
       }
     }
+    
   }
 }
