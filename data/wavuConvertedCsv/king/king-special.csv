@@ -6,12 +6,22 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * Only deals recoverable damage
 * Cannot cause a K.O.
 * Power crush 7~16";hb pc7~16;;King-2+3;Heat Burst;r30;;
-H.2+3;m,t;20,40;i17,i21~22;+12 JGR;+0d;;"* Heat Smash
+H.2+3;M,t;20,40;i17~18,i21~22;+12 JGR;+0d;;"* Heat Smash
 * Floor Break
-* Shifts to JGR on block (without heat).
-* Hold b to cancel shift, becomes +7 on block.
+* Transition to attack throw on standing hit
+* Transition to JGR on block
+* Cancel transition to JGR on block with B (+7)
+* Transition to 2nd i21~22 23dmg mid hit on 1st block or whiff
+** Tornado
+** Balcony Break
+** Hard balcony break
+** i21~22 23dmg
+** Jail from 1st block
+** Forces crouch on 2nd hit
+** +24 JGR on hit
+** Cancel transition to JGR on hit with B (+19)
 * Hits OTG
-* 5 chip damage";hs fbr;;King-H.2+3;Ultimo Jaguar;r35?;;
+* 5 chip damage on block";hs fbr trn bbr;JGR,JGR,2nd,JGR;King-H.2+3;Ultimo Jaguar;r35?;;
 R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Removes Recoverable Health
 * Reversal Break
@@ -26,6 +36,7 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Jail from 1st block with 5F delay";;;King-1,2;Palm Strike;r21;;File:t8-p2-king-1,2.mp4
 1,2,1;h, h, m;5, 15, 10;i10, ,i24~25;-4;+5s;+10s;"* Forces standing on hit.
 * Move can be delayed by 9F
+* Jail from 2nd normal hit with 4F delay
 * Starter of 10 Strings, 3rd~5th hits are combo.";;;King-1,2,1;Palm Strike Uppercut;r19;;File:t8-p2-king-1,2,1.mp4
 1,2,1,2+4;h, h, m, t;5, 15, 10, 40;i10, ,i26~28;;+0d;;* Throw break 2.;;;King-1,2,1,2+4;Palm Strike Uppercut > Suplex;r26;;File:t8-p2-king-1,2,1,2+4.mp4
 1,2,1,d+2+4;h, h, m, t(c);5, 15, 10, 35;i10, ,i28~30;;+1d;;"* Floor Break
@@ -47,22 +58,27 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Floor Break
 * Transition to +17g JGR on hit
 * Transition to +12g standing on hit with B 
+* Jail from 2nd hit with 10F delay
 * Combo from 2nd CH with 10F delay
 * Move can be delayed by 11F
-* Input can be delayed by 12F";elb bbr fbr;JGR;King-3,2,2;Stampede Crush;r35;;
+* Input can be delayed by 12F
+* Forces tech backroll on hit
+* Opponent recovers crouching";elb bbr fbr;JGR;King-3,2,2;Stampede Crush;r35;;
 3,2,2*;h, m, m;17, 18, 30;i15~16, ,i34~35;+9c JGR;+25a (+15) JGR;;"* Balcony Break
+* Elbow
 * Transition to JGR on hit or block (+9/+25a (+15))
 * Transition to standing on hit or block with B  (+4c/+20a (+10))
 * Move can be delayed by 11F
 * Input can be delayed by 12F
-* 12 chip damage on block";bbr;JGR;King-3,2,2*;Stampede Crush (hold);r35;;
-4;h;20;i13;-5;+6;+31d;* Knocks down on CH for dash OTG throw.;;;King-4;Right Kick;;;
-1+2;m;17;i18;-11;-2s;+0s;"* Forces standing on hit.
-* Shifts into backturn stance.";;BT;King-1+2;;r30? BT;;
-1+2,1;m, m;17, 21;i18, i22;-13/-18;+12a(+3)/-9;;"* Balcony Break
+* 12 chip damage on block";bbr elb;JGR;King-3,2,2*;Stampede Crush (hold);r35;;
+4;h;20;i13;-5;+6;+31a;* Knocks down on CH for dash OTG throw.;;;King-4;Right Kick;;;
+1+2;m;17;i18;-11;-2s;+0s;"* Elbow
+* Forces standing on hit.
+* Transition to BT.";elb;BT.,BT;King-1+2;;r30? BT;;
+1+2,1;m, m;17, 21;i18, i22;-13;+12a(+3);;"* Balcony Break
 * Combo from 1st hit with 3F delay
 * Interrupt with i5 from 1st block
-* Hold back during 2nd hit to feint
+* Cancel move at frame 19 with B (-18/-9/-7) 
 * Input can be delayed by 3F
 * Move cannot be delayed";bbr;;King-1+2,1;Head Spinner;r33;;File:t8-p2-king-1+2,1.mp4
 1+2,3;m, h;17, 25;i18, i24~25;-3;+12a(+3);;"* Balcony Break
@@ -76,7 +92,8 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * 2nd spin onward: r32 JGS
 * Low crush 6~21
 * Floating state 22~24";js6~21 fs22~24;JGS;King-3+4;Jaguar Step;r24 JGS;;
-f+2;m;12;i15~16;-11;+2s;;* Forces standing on hit?;;;King-f+2;;r29;;
+f+2;m;12;i15~16;-11;+2s;;"* Elbow
+* Forces standing on hit?";elb;;King-f+2;;r29;;
 f+2,1;m, h;12, 25;i15~16, i15~16;-9;+16a;;"* Heat Engager
 
 * Heat Dash +5 on block, +36a(+26a) on hit.
@@ -100,23 +117,26 @@ f+4;m;25;i18~20;-9;+12a(+3);;"Balcony Break
 Homing
 * Low crush 9~";bbr hom js9~;;King-f+4;Rolling Sobat;r31;;File:t8-p2-king-f+4.mp4
 f+1+2;h;23;i16~17;+0~+1;+10d;;;;;King-f+1+2;Shadow Lariat;r27;;File:t8-p2-king-f+1+2.mp4
-f+1+4;m;21;i17~19;+3;+7s;;* Forces standing on hit.;;;King-f+1+4;Body Check;r26;;File:t8-p2-king-f+1+4.mp4
+f+1+4;m;21;i17~19;+3;+7s;;"* Body charge attack
+* Forces standing on hit.";;;King-f+1+4;Body Check;r26;;File:t8-p2-king-f+1+4.mp4
 f+2+3;m;27;i20~24;-9;+8a(-1a);;"* Heat Engager
 
 * Heat Dash +5 on block, +36a(+26a) on hit.
 
-* Balcony Break";he bbr;;King-f+2+3;Shoulder Tackle;r33;;File:t8-p2-king-f+2+3.mp4
+* Balcony Break
+* Shoulder";he bbr;;King-f+2+3;Shoulder Tackle;r33;;File:t8-p2-king-f+2+3.mp4
 f+3+4;;;;;;;"* Cancel to r25 standing block with b on frame 35~ at the earliest
 * Access powered-up JGR moves starting at frame 60?
 * Immediately access powered-up JGR moves during Heat
 * Becomes pc7~89 during Heat.
 * Partially uses remaining Heat time";;JGR;King-f+3+4;Jaguar Sprint;r30 JGR;;
 df+1;m;15;i14~15;-1;+3s;;* Forces standing on hit.;;;King-df+1;;r26;;
-df+1,2;m, m;15, 15;i14~15, i20~21;-10;+5s;;"* Combo from 1st hit with 5F delay
+df+1,2;m, m;15, 15;i14~15, i20~21;-10;+5s;;"* Elbow
+* Combo from 1st hit with 5F delay
 * Combo from 1st CH with 9F delay
 * Jail from 1st block with 5F delay
 * Move can be delayed by 11F
-* Input can be delayed by 13F";;;King-df+1,2;Elbow Sting;r29;;File:t8-p2-king-df+1,2.mp4
+* Input can be delayed by 13F";elb;;King-df+1,2;Elbow Sting;r29;;File:t8-p2-king-df+1,2.mp4
 df+2;m;12;i13;-6;+4s;;* Forces standing on hit.;;;King-df+2;;r25;;
 df+2,1;m, h;12, 15;i13, i20~21;-4;+24a;;"* Combo from 1st CH with 12F delay
 * Move can be delayed by 13F";;;King-df+2,1;Double Hook Disaster;r28;;File:t8-p2-king-df+2,1.mp4
@@ -148,8 +168,9 @@ d+1+2;m;21;i23;-24;+45a(+35);;"* Tornado
 * High crush 6~23";trn cs6~23;;King-d+1+2;Atlas Hammer;r45;;File:t8-p2-king-d+1+2.mp4
 d+2+3;M;25;i30~35;-8;+0c;;"*
 Floor Break
+* Elbow
 * Low crush 21~32
-* Floating state 33~54";fbr js21~32 fs33~54;;King-d+2+3;Corporate Elbow;r43?;;File:t8-p2-king-d+2+3.mp4
+* Floating state 33~54";fbr elb js21~32 fs33~54;;King-d+2+3;Corporate Elbow;r43?;;File:t8-p2-king-d+2+3.mp4
 d+3+4;L;14;i16;-25;-9;;"* On CH, can access Stagger Kicks Flurry (d+3+4,4,4,4)
 * High crush 6~";cs6~;FC;King-d+3+4;;r44 FC;;
 d+3+4,4;L, L;14, 7;i16, i29;-25;-9;;"* Combo from 1st hit on CH.
@@ -173,17 +194,19 @@ db+1+2;;;;;;;"* Damage taken during power crush state is recoverable
 * Cancel into r30 JGR with input 3+4 on frame 35
 * Cancel into movement or crouch or any attack on frame 40 (r40)
 * Power crush 6~59";pc6~59;;King-db+1+2;Muscle Armor;r17;;
-db+1+2,2;m,t;15,20;i15;-9;+8g;;"* Heat Engager
+db+1+2,2;m,t;15,20;i15;-9;+35g;;"* Heat Engager
 
 * Heat Dash +5 on block, +67a(+50a) on hit.
 
 * Reversal Break after absorbing attack with muscle armor
+* Elbow
 * Effective startup is i32
 * +35g on heat engager hit
 * Shifts to throw on front grounded hit.
+* +8g on normal hit without throw
 * -5 on block after absorbing an attack with muscle armor.
 * 6 chip damage on block after absorbing an attack with muscle armor.
-* Transition into +12? JGR with input 3+4 on throw hit";he;;King-db+1+2,2;Muscle Armor > Emerald Elbow;r28;;File:t8-p2-king-db+1+2,2.mp4
+* Transition into +12? JGR with input 3+4 on throw hit";he elb;;King-db+1+2,2;Muscle Armor > Emerald Elbow;r28;;File:t8-p2-king-db+1+2,2.mp4
 db+1+2,3+4;;;;;;;"* Effective startup for stance moves is increased by 65 frames starting from db1+2 (Muscle Armor) startup
 * pc7~ in heat";;JGR?;King-db+1+2,3+4;Muscle Armor > Jaguar Sprint;r30 JGR?;;File:t8-p2-king-db+1+2,3+4.mp4
 b+1;h;13;i12;-8;+3;+3a;;;;King-b+1;Quick Hook;r27;;
@@ -203,13 +226,15 @@ b+1+3;r(m);25;i10;;+2d;;"Floor Break
 * Parry state 5~15?";fbr ps5~15?;;King-b+1+3;Arm Whip;;;File:t8-p2-king-b+1+3.mp4
 b+2;h;16;i14;-5;+1;;;;;King-b+2;Chupacabra;r24;;
 b+2,1;h, h;16, 21;i14, i20~21;-9;+19a(+10);;"* Balcony Break
+* Elbow
 * Combo from 1st hit with 5F delay (buffered).
 * Move can be delayed by 10F
-* Input can be delayed by 15F";bbr;;King-b+2,1;Chupacabra > Spinning Back Elbow;r32;;File:t8-p2-king-b+2,1.mp4
+* Input can be delayed by 15F";bbr elb;;King-b+2,1;Chupacabra > Spinning Back Elbow;r32;;File:t8-p2-king-b+2,1.mp4
 b+2,4;h, m,t;16, 18,20;i14, i21;-8;+10s/+0;;"* Shifts to throw on front grounded hit.
 * Move can be delayed by 10F
 * Input can be delayed by 15F";;;King-b+2,4;Chupacabra > Olympia Slam;r26;;File:t8-p2-king-b+2,4.mp4
-b+2,1+2;h, h;16, 22;i14, i24~25;+2c;+22a;;"* Forces crouching on block.
+b+2,1+2;h, h;16, 22;i14, i24~25;+2c;+22a;;"* Head
+* Forces crouching on block.
 * Move can be delayed by 10F
 * Input can be delayed by 15F";;;King-b+2,1+2;Chupacabra > Head Butt;r27;;File:t8-p2-king-b+2,1+2.mp4
 b+2+4;r(m);25;i10;;+24d;;"* Parry opponent's left kick.
@@ -234,23 +259,25 @@ b+4;h;25;i17~21;+2;+14gc;;"* Balcony Break
 b+3+4;;;;;;;"* Cannot be held to continue spinning.
 * Low crush 6~21
 * Floating state 22~24";js6~21 fs22~24;JGS;King-b+3+4;Reverse Jaguar Step;r24 JGS;;File:t8-p2-king-b+3+4.mp4
-ub+4;m;15;i15;-13;+19a(+9);+33a(+23);"* Jump straight up knee, very short range.
-* Low crush 9~";js9~;;King-ub+4;;;;
-u+1+2;m;25;i35~36;+2c;+22a;;"* Tap 1+2 otherwise it becomes u+1+2(hold).
-* Forces Crouching on block.
+ub+4;m;15;i15;-13;+19a(+9);+33a(+23);"* Knee
+* Jump straight up knee, very short range.
+* Low crush 9~";kne js9~;;King-ub+4;;;;
+u+1+2;m;25;i35~36;+2c;+22a;;"* Parryable by traditional punch parries
 * Low crush 9~";js9~;;King-u+1+2;Capital Punishment;r27;;File:t8-p2-king-u+1+2.mp4
 u+1+2*;m!;40;i67;;+11d;;"* Unblockable mid.
 * Auto switch side if fly over opponent.
 * Low crush 9?~";js9?~;;King-u+1+2*;Burning Knuckle;r38?;;File:t8-p2-king-u+1+2s.mp4
 uf+1;h;21;i20~23;-3;+36a(+27);;"Homing
 Balcony Break";hom bbr;;King-uf+1;Water Parting Chop;r27;;File:t8-p2-king-uf+1.mp4
-uf+2;M;35;i47~53;-17c;-7d/-4c;;"* Hits OTG.
+uf+2;M;35;i47~53;-17c;-7d/-4c;;"* Elbow
+* Hits OTG.
 * u+2 to jump vertical (js9~), ub+2 to jump back (js9~).
 * Force Crouching on block. (ub+2 also on hit)
-* Low crush 10~";js10~;FUFA;King-uf+2;High Elbow Drop;r FUFA;;File:t8-p2-king-uf+2.mp4
+* Low crush 10~";elb js10~;FUFA;King-uf+2;High Elbow Drop;r FUFA;;File:t8-p2-king-uf+2.mp4
 uf+3;M;23;i22~29;-10;-1d;;* Low crush 13~;js13~;FUFA,FUFT;King-uf+3;Falling Heel Kick;r FUFA/FUFT;;File:t8-p2-king-uf+3.mp4
-uf+4;m;13;i15;-13;+33a(+23);;"* Recovers 2F faster on hit or block (r30? t46?)
-* Low crush 9~";js9~;;King-uf+4;Jumping Knee Lift;r32?;;File:t8-p2-king-uf+4.mp4
+uf+4;m;13;i15;-13;+33a(+23);;"* Knee
+* Recovers 2F faster on hit or block (r30? t46?)
+* Low crush 9~";kne js9~;;King-uf+4;Jumping Knee Lift;r32?;;File:t8-p2-king-uf+4.mp4
 uf+3+4;m;23;i22~23;-12/-7;+25g / +22g;;"* Tornado
 * -7 on block after absorbing an attack in power crush state.
 * 9 chip damage on block after absorbing an attack in power crush state.
@@ -264,10 +291,11 @@ DF;r(l);0;;;+51a(+35);;"* Generic low parry.
 * Tornado affect on success.";;;King-DF;Low Parry;;;File:t8-p2-king-df.mp4
 f,F+1;m;21;i20~21;-5;+14g;+38d;"* Homing
 * Balcony Break";hom bbr;;King-f,F+1;Jaguar Hook;r28;;File:t8-p2-king-f,f,1.mp4
-f,F+2;m;21;i31~32;+7;+12c;;"* Forces crouching on hit.
+f,F+2;m;21;i31~32;+7;+12c;;"* Elbow
+* Forces crouching on hit.
 * Allow crouching throw on hit.
 * 6 chip damage on block.
-* 8 chip damage on block in heat.";;;King-f,F+2;Beast Elbow;r30;;File:t8-p2-king-f,f,2.mp4
+* 8 chip damage on block in heat.";elb;;King-f,F+2;Beast Elbow;r30;;File:t8-p2-king-f,f,2.mp4
 f,F+4;m,(t);25,(14);i15;-15;+14a(+4);+1d;"* Tornado
 * Balcony Break
 * Shifts to 14dmg throw on front grounded CH.";trn bbr;;King-f,F+4;Konvict Kick;;;File:t8-p2-king-f,f,4.mp4
@@ -297,9 +325,10 @@ f,n,d,df;;;;;;;"* Duck high while moving forward.
 * Input f,n,d,df,f+(button) for instant ws moves.
 * 1st f cannot be held more than 10 frames.";;;King-f,n,d,df;Beast Step;r1;;File:t8-p2-king-f,n,d,df.mp4
 uf,n,4;m;20;i23~25;-13;+32a(+22);;* Low crush 9~;js9~;;King-uf,n,4;Delayed Rising Toe Kick;;;File:t8-p2-king-uf,n,4.mp4
-f,f,F+3;m;25;i20~25;+3;+30(+22);;"Balcony Break
+f,f,F+3;m;25;i20~25;+3;+30(+22);;"* Balcony Break
+* Knee
 * 7 chip damage on block.
-* 10 chip damage on block in heat.";bbr;;King-f,f,F+3;Strong Knee;r30;;File:t8-p2-king-f,f,f,3.mp4
+* 10 chip damage on block in heat.";bbr kne;;King-f,f,F+3;Strong Knee;r30;;File:t8-p2-king-f,f,f,3.mp4
 f,f,F+3+4;m;40;i28~34;+17;+32d(-26);;"Balcony Break
 * Low crush 9~";bbr js9~;FUFT;King-f,f,F+3+4;Running Exploder;r42? FUFT;;File:t8-p2-king-f,f,f,3+4.mp4
 ws1;m;12;i10~11;-3;+4s;;"* Acts like 11 frame attack.
@@ -316,7 +345,7 @@ ws2,2;m, m;11, 25;i14, i15~16;-12;+12g;;"* Balcony Break
 * Input can be delayed by 16F";bbr;JGR;King-ws2,2;Round Trip Chop;r33;;File:t8-p2-king-ws2,2.mp4
 ws3;h;20;i16;0;+22a(+12);;;;;King-ws3;;r28;;
 ws4;m;20;i11~12;-6;+5;;;;;King-ws4;Toe Smash;r24;;File:t8-p2-king-ws4.mp4
-ws1+2;m;20;i18~19;-10;+35a(+25);;;;;King-ws1+2;Snap Uppercut;r28;;File:t8-p2-king-ws1+2.mp4
+ws1+2;m;20;i18~19;-10;+35a(+25);;* Elbow;elb;;King-ws1+2;Snap Uppercut;r28;;File:t8-p2-king-ws1+2.mp4
 ss2;h;25;i19~20;-5;+18a(+9);;Balcony Break;bbr;;King-ss2;Victory Palm;;;File:t8-p2-king-ss2.mp4
 ss2+4,b/db;;;;;;;"* Side Step that ducks high and covers long distance quickly, recovers in crouch.
 * Input by u/d,n,n+2+4,b/db.";;FC;King-ss2+4,b;Reverse Special Stretch Bomb (Cancel);r FC;;
@@ -348,16 +377,19 @@ BT.d+4;l;20;i22~24;-14;-2d;+28d;"* Recovers in FDFT on block and whiff.
 * Low crush 11~";js11~;FC,FDFT;King-BT.d+4;Low Drop Kick (BT);r FC/FDFT;;
 CD.1+2;M;24;i20~23;-5c;+16d;+52a;"Balcony Break
 * Bounce off ground on CH for full combo.";bbr;;King-CD.DF+1+2;Black Bomb;r32;;File:t8-p2-king-cd.1+2.mp4
-CD.DF+4;m;21;i15~16;-9;+49a(+18);+53a;"* Special down state that allows low juggle (on normal hit).
-* Crumple on CH for full combo.";;;King-CD.DF+4;Knee Lift;r36;;File:t8-p2-king-cd.4.mp4
+CD.DF+4;m;21;i15~16;-9;+49a(+18);+53a;"* Knee
+* Special down state that allows low juggle (on normal hit).
+* Crumple on CH for full combo.";kne;;King-CD.DF+4;Knee Lift;r36;;File:t8-p2-king-cd.4.mp4
 FUFT.b+3+4;m;25;i16~28;-25;+4a(-6);;"Balcony Break
 * Faster than normal spring kick and knocks down.";bbr;;King-FUFT.b+3+4;Whirling Spring Kick;;;
 JGR.1;m;21;i16~17;-8;+26c;;"* Balcony Break
+* Elbow
 * Power up into JGR.1* after 30F? or during Heat
-** Partially uses remaining Heat time during Heat.";bbr;;King-JGR.1;Running Elbow Smash;r28;;File:t8-p2-king-jgr.1.mp4
-JGR.1*;m;25;i16~17;-4;+75a (+59);;"* Tornado on normal hit
+** Partially uses remaining Heat time during Heat.";bbr elb;;King-JGR.1;Running Elbow Smash;r28;;File:t8-p2-king-jgr.1.mp4
+JGR.1*;m;25;i16~17;-4;+75a (+59);;"* Tornado
+* Elbow
 * Effective startup i46~47?
-* Partially uses remaining Heat time during Heat.";;;King-JGR.1*;Running Elbow Smash (charged);r28;;
+* Partially uses remaining Heat time during Heat.";trn elb;;King-JGR.1*;Running Elbow Smash (charged);r28;;
 JGR.2;h;24;i18~19;+3;+5a;;"* Strong Aerial Tailspin
 * 4 chip damage on block.
 * Power up into JGR.2* after 30F? or during Heat
@@ -397,7 +429,7 @@ JGS.1;h;21/25/31;i17~18/i19~20;-7/-1;+47d/+53d;;"* Crumple on hit.
 * Damage increase up to 3rd spin.";;;King-JGS.1;Jaguar Step > Hook;;;File:t8-p2-king-jgs.1.mp4
 JGS.2;m;15/18/22;i11~12;-9/-2/0c;+12c;;"* Forces Crouching on hit.
 * Forces Crouching on block from 3rd spin on.
-* Damage increase up to 3rd spin.";;;King-JGS.2;Jaguar Step > Hammer;;;File:t8-p2-king-jgs.2.mp4
+* Damage increase up to 3rd spin.";;;King-JGS.2;Jaguar Step > Hammer;r27;;File:t8-p2-king-jgs.2.mp4
 JGS.3;m;23/27/34;i22~23;-5/-1;+21a(+12)/+25a(+16);;"* Balcony Break
 * Strong Aerial Tailspin
 * On block / hit increases up to 2nd spin.
@@ -648,9 +680,9 @@ d+2+4;t(c);35;i12~13;;+0d;;"Floor Break
 d+1+4;t(c);35;i12~13;;+0d;;"* Heat Engager
 
 * Crouch throw, cannot throw break.
-* Can also be done by db+1+4 and in FC too.
 * Restores some Heat Gauge in Heat.
-* Cannot heat dash.Opponent recovers in FDFA.";he;;King-d+1+4;Freedom Face Buster;;;File:t8-p2-king-d+1+4.mp4
+* Cannot heat dash
+* Opponent recovers in FDFA.";he;;King-d+1+4;Freedom Face Buster;r24;;File:t8-p2-king-d+1+4.mp4
 f,f,F+2+4;t;40(45);i10;-5;+1d;;"* Homing during heat
 * 1+2 throw break
 * Input f,F+2+4 in 6 frames after f,f for bluespark.
