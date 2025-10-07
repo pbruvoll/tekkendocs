@@ -4,6 +4,7 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card'
+import ewgf from '~/images/t8/externalResources/ewgf.webp'
 import naGuide from '~/images/t8/externalResources/naguide.webp'
 import sidestepChart from '~/images/t8/externalResources/sidestep-chart.webp'
 import tekkenLibrary from '~/images/t8/externalResources/tekken-library.webp'
@@ -51,6 +52,13 @@ const data: ExternalResourceLink[] = [
     url: '/t8/sidestep-chart.webp',
     imageUrl: sidestepChart,
     description: 'Advice on which side to generally step against a character',
+  },
+  {
+    name: 'Ewgf.gg - stats',
+    url: '/t8/ewgf.webp',
+    imageUrl: ewgf,
+    description:
+      'Stats for rank distribution, character win rate, leaderboards, player profiles etc.',
   },
 ]
 
