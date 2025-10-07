@@ -43,7 +43,7 @@ export default function () {
         <CharacterGrid
           size="large"
           characterCards={characterInfoList
-            .filter(({ id }) => characterGuideAuthors['T8'][id])
+            .filter(({ id }) => characterGuideAuthors.T8[id])
             .map(({ id, displayName }) => {
               const imgSrc = t8GuideImgSmallMap[id]
               const version = characterGuideAuthors.T8[id].version
@@ -53,7 +53,7 @@ export default function () {
                 author: characterGuideAuthors.T8[id].author,
                 size: 'large',
                 imgSrc,
-                url: '/t8/' + id + '/guide',
+                url: `/t8/${id}/guide`,
               }
             })}
         />

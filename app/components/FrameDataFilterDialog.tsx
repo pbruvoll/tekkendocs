@@ -21,7 +21,7 @@ export const FrameDataFilterDialog = ({
     if (value === undefined) {
       return false
     }
-    if (value instanceof Array) {
+    if (Array.isArray(value)) {
       return value.length > 0
     }
     return true

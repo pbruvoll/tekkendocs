@@ -18,16 +18,14 @@ import { tagStringToRecord } from './tagUtils'
 export const frameDataTableToJson = (normalFrameData: TableData): Move[] => {
   invariant(normalFrameData.headers)
   const lowerCaseHeaders = normalFrameData.headers.map(h => h.toLowerCase())
-  const commandIndex = lowerCaseHeaders.findIndex(h => h === 'command')
-  const hitLevelIndex = lowerCaseHeaders.findIndex(h => h === 'hit level')
-  const damageIndex = lowerCaseHeaders.findIndex(h => h === 'damage')
-  const startupIndex = lowerCaseHeaders.findIndex(h => h === 'start up frame')
-  const blockIndex = lowerCaseHeaders.findIndex(h => h === 'block frame')
-  const hitIndex = lowerCaseHeaders.findIndex(h => h === 'hit frame')
-  const counterHitIndex = lowerCaseHeaders.findIndex(
-    h => h === 'counter hit frame',
-  )
-  const notesIndex = lowerCaseHeaders.findIndex(h => h === 'notes')
+  const commandIndex = lowerCaseHeaders.indexOf('command')
+  const hitLevelIndex = lowerCaseHeaders.indexOf('hit level')
+  const damageIndex = lowerCaseHeaders.indexOf('damage')
+  const startupIndex = lowerCaseHeaders.indexOf('start up frame')
+  const blockIndex = lowerCaseHeaders.indexOf('block frame')
+  const hitIndex = lowerCaseHeaders.indexOf('hit frame')
+  const counterHitIndex = lowerCaseHeaders.indexOf('counter hit frame')
+  const notesIndex = lowerCaseHeaders.indexOf('notes')
 
   invariant(commandIndex >= 0)
   invariant(hitLevelIndex >= 0)
@@ -38,13 +36,13 @@ export const frameDataTableToJson = (normalFrameData: TableData): Move[] => {
   invariant(counterHitIndex >= 0)
   invariant(notesIndex >= 0)
 
-  const tagsIndex = lowerCaseHeaders.findIndex(h => h === 'tags')
-  const transitionIndex = lowerCaseHeaders.findIndex(h => h === 'transitions')
-  const imageIndex = lowerCaseHeaders.findIndex(h => h === 'image')
-  const videoIndex = lowerCaseHeaders.findIndex(h => h === 'video')
-  const wavuIdIndex = lowerCaseHeaders.findIndex(h => h === 'wavu id')
-  const nameIndex = lowerCaseHeaders.findIndex(h => h === 'name')
-  const recoveryIndex = lowerCaseHeaders.findIndex(h => h === 'recovery')
+  const tagsIndex = lowerCaseHeaders.indexOf('tags')
+  const transitionIndex = lowerCaseHeaders.indexOf('transitions')
+  const imageIndex = lowerCaseHeaders.indexOf('image')
+  const videoIndex = lowerCaseHeaders.indexOf('video')
+  const wavuIdIndex = lowerCaseHeaders.indexOf('wavu id')
+  const nameIndex = lowerCaseHeaders.indexOf('name')
+  const recoveryIndex = lowerCaseHeaders.indexOf('recovery')
 
   // check optional columns
   if (tagsIndex >= 0) {
@@ -84,11 +82,11 @@ export const applyOverride = (
   const lowerCaseHeaders = overrideNormalFrameData.headers.map(h =>
     h.toLowerCase(),
   )
-  const commandIndex = lowerCaseHeaders.findIndex(h => h === 'command')
-  const wavuIdIndex = lowerCaseHeaders.findIndex(h => h === 'wavu id')
-  const ytVideoIndex = lowerCaseHeaders.findIndex(h => h === 'yt video')
-  const ytStartIndex = lowerCaseHeaders.findIndex(h => h === 'yt start')
-  const ytEndIndex = lowerCaseHeaders.findIndex(h => h === 'yt end')
+  const commandIndex = lowerCaseHeaders.indexOf('command')
+  const wavuIdIndex = lowerCaseHeaders.indexOf('wavu id')
+  const ytVideoIndex = lowerCaseHeaders.indexOf('yt video')
+  const ytStartIndex = lowerCaseHeaders.indexOf('yt start')
+  const ytEndIndex = lowerCaseHeaders.indexOf('yt end')
   const [overrideRecordByCommand, overrideRecordByWavuId] =
     overrideNormalFrameData.rows.reduce<
       [Record<string, Partial<Move>>, Record<string, Partial<Move>>]
@@ -193,7 +191,7 @@ export const removesRecoverableHealth = (move: Move) => {
 
 export const recoverFullCrouch = (move: Move) => {
   return (
-    (move.recovery && move.recovery.includes('FC')) ||
+    move.recovery?.includes('FC') ||
     move.notes
       .toLowerCase()
       .split('\n')
@@ -222,7 +220,7 @@ export const filterRows = (
   }
 
   const filterFuncs: ((row: string[]) => boolean)[] = []
-  if (filter.hitLevels && filter.hitLevels.length) {
+  if (filter.hitLevels?.length) {
     filterFuncs.push((row: string[]) => {
       const lastHitLevel = row[1]?.split(', ').pop()?.[0]?.toLowerCase()
       return !!filter.hitLevels?.includes(lastHitLevel as HitLevel)
@@ -236,7 +234,7 @@ export const filterRows = (
       if (!startupFrameStr) {
         return false
       }
-      return parseInt(startupFrameStr) <= startupFrameMax
+      return parseInt(startupFrameStr, 10) <= startupFrameMax
     })
   }
 
@@ -247,7 +245,7 @@ export const filterRows = (
       if (!startupFrameStr) {
         return false
       }
-      return parseInt(startupFrameStr) >= startupFrameMin
+      return parseInt(startupFrameStr, 10) >= startupFrameMin
     })
   }
 
@@ -258,7 +256,7 @@ export const filterRows = (
       if (!blockFrameStr) {
         return false
       }
-      return parseInt(blockFrameStr) <= blockFrameMax
+      return parseInt(blockFrameStr, 10) <= blockFrameMax
     })
   }
 
@@ -269,7 +267,7 @@ export const filterRows = (
       if (!blockFrameStr) {
         return false
       }
-      return parseInt(blockFrameStr) >= blockFrameMin
+      return parseInt(blockFrameStr, 10) >= blockFrameMin
     })
   }
 
@@ -280,7 +278,7 @@ export const filterRows = (
       if (!hitFrameStr) {
         return false
       }
-      return parseInt(hitFrameStr) <= hitFrameMax
+      return parseInt(hitFrameStr, 10) <= hitFrameMax
     })
   }
 
@@ -291,7 +289,7 @@ export const filterRows = (
       if (!hitFrameStr) {
         return false
       }
-      return parseInt(hitFrameStr) >= hitFrameMin
+      return parseInt(hitFrameStr, 10) >= hitFrameMin
     })
   }
 
@@ -366,7 +364,7 @@ export const filterMoves = (moves: Move[], filter: MoveFilter | undefined) => {
   }
 
   const filterFuncs: ((move: Move) => boolean)[] = []
-  if (filter.hitLevels && filter.hitLevels.length) {
+  if (filter.hitLevels?.length) {
     filterFuncs.push((move: Move) => {
       const lastHitLevel = move.hitLevel?.split(', ').pop()?.[0]?.toLowerCase()
       return !!filter.hitLevels?.includes(lastHitLevel as HitLevel)
@@ -380,7 +378,7 @@ export const filterMoves = (moves: Move[], filter: MoveFilter | undefined) => {
       if (!startupFrameStr) {
         return false
       }
-      return parseInt(startupFrameStr.replace('i', '')) <= startupFrameMax
+      return parseInt(startupFrameStr.replace('i', ''), 10) <= startupFrameMax
     })
   }
 
@@ -391,7 +389,7 @@ export const filterMoves = (moves: Move[], filter: MoveFilter | undefined) => {
       if (!startupFrameStr) {
         return false
       }
-      return parseInt(startupFrameStr.replace('i', '')) >= startupFrameMin
+      return parseInt(startupFrameStr.replace('i', ''), 10) >= startupFrameMin
     })
   }
 
@@ -402,7 +400,7 @@ export const filterMoves = (moves: Move[], filter: MoveFilter | undefined) => {
       if (!blockFrameStr) {
         return false
       }
-      return parseInt(blockFrameStr) <= blockFrameMax
+      return parseInt(blockFrameStr, 10) <= blockFrameMax
     })
   }
 
@@ -413,7 +411,7 @@ export const filterMoves = (moves: Move[], filter: MoveFilter | undefined) => {
       if (!blockFrameStr) {
         return false
       }
-      return parseInt(blockFrameStr) >= blockFrameMin
+      return parseInt(blockFrameStr, 10) >= blockFrameMin
     })
   }
 
@@ -424,7 +422,7 @@ export const filterMoves = (moves: Move[], filter: MoveFilter | undefined) => {
       if (!hitFrameStr) {
         return false
       }
-      return parseInt(hitFrameStr) <= hitFrameMax
+      return parseInt(hitFrameStr, 10) <= hitFrameMax
     })
   }
 
@@ -435,7 +433,7 @@ export const filterMoves = (moves: Move[], filter: MoveFilter | undefined) => {
       if (!hitFrameStr) {
         return false
       }
-      return parseInt(hitFrameStr) >= hitFrameMin
+      return parseInt(hitFrameStr, 10) >= hitFrameMin
     })
   }
 
@@ -512,9 +510,7 @@ export const filterMoves = (moves: Move[], filter: MoveFilter | undefined) => {
   if (filter.transition && filter.transition.length > 0) {
     const transition = filter.transition
     filterFuncs.push((move: Move) => {
-      return !!(
-        move.transitions && move.transitions.some(t => transition.includes(t))
-      )
+      return !!move.transitions?.some(t => transition.includes(t))
     })
   }
 
@@ -591,8 +587,7 @@ export const sortMoves = (
     case `notes`: {
       return sortMovesByNumber(
         moves,
-        (move: Move) =>
-          move.tags?.['js'] || move.tags?.['cs'] || move.tags?.['pc'] || '',
+        (move: Move) => move.tags?.js || move.tags?.cs || move.tags?.pc || '',
         asc,
       )
     }
@@ -641,22 +636,21 @@ export const sortMovesV2 = (
     case `notes`: {
       return sortMovesByNumber(
         moves,
-        (move: Move) =>
-          move.tags?.['js'] || move.tags?.['cs'] || move.tags?.['pc'] || '',
+        (move: Move) => move.tags?.js || move.tags?.cs || move.tags?.pc || '',
         asc,
       )
     }
     case 'highCrush': {
       return sortMovesByNumber(
         moves,
-        (move: Move) => (move.tags?.['cs'] ?? '100') || '90', // if no cs, use 100 to make it sort last, if no value for cs, make it 90 to sort after moves with a cs value
+        (move: Move) => (move.tags?.cs ?? '100') || '90', // if no cs, use 100 to make it sort last, if no value for cs, make it 90 to sort after moves with a cs value
         asc,
       )
     }
     case 'lowCrush': {
       return sortMovesByNumber(
         moves,
-        (move: Move) => (move.tags?.['js'] ?? '100') || '90',
+        (move: Move) => (move.tags?.js ?? '100') || '90',
         asc,
       )
     }

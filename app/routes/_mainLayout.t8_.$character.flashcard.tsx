@@ -248,7 +248,7 @@ export default function FlashCard() {
 
         <Nav
           navData={
-            characterGuideAuthors['T8'][characterName]
+            characterGuideAuthors.T8[characterName]
               ? [...navData, { displayName: 'Guide', link: '../guide' }]
               : navData
           }

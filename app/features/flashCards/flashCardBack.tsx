@@ -28,7 +28,7 @@ export const FlashCardBack = ({ move, onAnswer }: FlashCardBackProps) => {
           <div className="truncate">
             {move.tags &&
               Object.entries(move.tags)
-                .map(([key, tag]) => key)
+                .map(([key, _tag]) => key)
                 .join(', ')}
           </div>
         </div>

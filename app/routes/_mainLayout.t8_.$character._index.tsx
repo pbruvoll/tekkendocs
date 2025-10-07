@@ -101,7 +101,7 @@ export const meta: MetaFunction = ({ data, params, matches, location }) => {
     matches,
     description,
     title,
-    url: '/t8/' + characterId,
+    url: `/t8/${characterId}`,
     image: { url: `/t8/avatars/${characterId}-brand-512.png` },
   })
 }
@@ -138,7 +138,7 @@ export default function Index() {
 
         <Nav
           navData={
-            characterGuideAuthors['T8'][characterName]
+            characterGuideAuthors.T8[characterName]
               ? [...navData, { displayName: 'Guide', link: 'guide' }]
               : navData
           }

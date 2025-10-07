@@ -22,15 +22,15 @@ export const sortMovesByString = (
 }
 
 const compareNumberStrings = (a: string, b: string, asc: boolean) => {
-  const aInt = parseInt(a?.startsWith('i') ? a.slice(1) : a)
-  const bInt = parseInt(b?.startsWith('i') ? b.slice(1) : b)
-  if (isNaN(aInt) && isNaN(bInt)) {
+  const aInt = parseInt(a?.startsWith('i') ? a.slice(1) : a, 10)
+  const bInt = parseInt(b?.startsWith('i') ? b.slice(1) : b, 10)
+  if (Number.isNaN(aInt) && Number.isNaN(bInt)) {
     return 0
   }
-  if (isNaN(aInt)) {
+  if (Number.isNaN(aInt)) {
     return 1
   }
-  if (isNaN(bInt)) {
+  if (Number.isNaN(bInt)) {
     return -1
   }
   return asc ? bInt - aInt : aInt - bInt

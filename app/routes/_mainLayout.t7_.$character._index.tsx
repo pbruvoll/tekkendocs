@@ -51,7 +51,7 @@ export const meta: MetaFunction = ({ data, params, matches }) => {
     {
       tagName: 'link',
       rel: 'canonical',
-      href: 'https://tekkendocs.com/t7/' + characterId,
+      href: `https://tekkendocs.com/t7/${characterId}`,
     },
   ]
 }
@@ -151,7 +151,7 @@ export default function Index() {
                   </Table.Header>
                 )}
                 <Table.Body>
-                  {table.rows.map((row, i) => {
+                  {table.rows.map((row, _i) => {
                     return (
                       <Table.Row key={row[0]}>
                         {columnNums.map(j => {

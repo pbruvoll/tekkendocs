@@ -65,8 +65,12 @@ def correctMove(move, charName) :
             input = moveInstallmentToFront(input, "STB")
         case "heihachi":
             input = moveInstallmentToFront(input, "WAR")
+        case "fahkumram":
+                input = moveInstallmentToFront(input, "GRF")
         case "jin": 
             input = input.replace("CD.", "f,n,d,")
+        case "kazuya":
+            input = moveInstallmentToFront(input, "DVK")            
         case "nina":
             input = input.replace("SWA.b", "qcb").replace("CD.", "qcf+")
         case "paul":

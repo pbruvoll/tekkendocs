@@ -7,10 +7,12 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * Cannot cause a K.O.
 * Power crush 7~16";hb pc7~16;;Kuma-2+3;Heat Burst;r30;;
 H.df+2+3;sm;20;i15~16;+5;+39 (+29);;"* Partially uses remaining heat time
-* H.f,n,d,df+2 to power up";;;Kuma-H.df+2+3;Wind Bear Fist;;;
+* H.f,n,d,df+2 to power up
+* High crush 6~12";cs6~12;;Kuma-H.df+2+3;Wind Bear Fist;;;
 H.df+2+3*;sm;26;i25~26;+9;+45 (+35);;"* Partially uses remaining heat time
 * H.f,n,d,df+2* to power up
-* Cannot absorb with power crush";;;Kuma-H.df+2+3*;Fresh Wind Bear Fist;;;
+* Cannot absorb with power crush
+* High crush 6~22";cs6~22;;Kuma-H.df+2+3*;Fresh Wind Bear Fist;;;
 H.f,f,F+1+2;m;30;i20~24;+3;+35d (-23);;"* Balcony Break
 * Heat Engager
 
@@ -226,7 +228,7 @@ FC.1+2;sp;;N/A / i26~i31 Heat;+1~+6 / -6~-1 HBS;+7~+12 / 0~+5 HBS;;"* Transition
 * becomes special mid attack during Heat (partially uses remaining Heat time)";;ROL;Kuma-FC.1+2;Bear Roll;;;
 FDFA.1+2;l;10;i14~16;-12;+6;+6;* Transition to HBS;;HBS;Kuma-FDFA.1+2;Bear Butterfly;;;
 FUFA.1+2;M;15;i17~19;-2 (-2);+6 (+6);+6 (+6);* Transition to HBS (Cannot cancel);;HBS;Kuma-FUFA.1+2;Bear Backstroke;;;
-FUFT.d+1+2;m;21;i30;+17;+37a;+37a;* Transition to SIT (Cannot cancel);;SIT;Kuma-FUFT.d+1+2;Get Up Punch;;;
+FUFT.d+1+2;m;21;i29~31;+18~+20;+37a;+37a;* Transition to SIT (Cannot cancel);;SIT;Kuma-FUFT.d+1+2;Get Up Punch;;;
 HBS.1;M;10;i12~13;-13;+2;+12;;;;Kuma-HBS.1;;;;
 HBS.1,2;M, M;10, 20;i12~13, i24~25;-13;+4;+13c;*Hold 2 to power up, up to 2 charge levels;;;Kuma-HBS.1,2;Honeycomb Spike;;;
 HBS.1,2*;M, M;10, 23;i12~13, i33~34;-12;+13c;+49a;"* chip damage on block
@@ -273,8 +275,8 @@ ROL.3;l;20;i18~26;-18;+33a;;Recovers in FUFT;;;Kuma-ROL.3;Bear Slide;;;File:t8-p
 ROL.4;M;20;i26~30;+7;+26a;;Recovers in FUFT;;;Kuma-ROL.4;Bear Rolling Kick;;;File:t8-p2-kuma-rol.4.mp4
 ROL.1+2;SM;22;i10~40;-30;+45a;;"* Recovers in FUFT on hit
 * Recovers in off axis FUFT on block";;;Kuma-ROL.1+2;Giant Roll;;;File:t8-p2-kuma-rol.1+2.mp4
-SIT.1;l;15;i21~22;-12;+4;+9;;;;Kuma-SIT.1;;;;
-SIT.1,1;l, l;15, 13;i21~22, i25~26;-12;+6;;Combo from 1st CH;;;Kuma-SIT.1,1;Double Trout Sweep;;;File:t8-p2-kuma-sit.1,1.mp4
+SIT.1;l;15;i21~22;-12;+4;+9;;;FC;Kuma-SIT.1;;FC;;
+SIT.1,1;l, l;15, 13;i21~22, i25~26;-12;+6;;Combo from 1st CH;;FC;Kuma-SIT.1,1;Double Trout Sweep;FC;;File:t8-p2-kuma-sit.1,1.mp4
 SIT.2;m;18;i19~21;-12;+73a (+57);;* Tornado;trn;;Kuma-SIT.2;Trout Smash;;;File:t8-p2-kuma-sit.2.mp4
 SIT.3+4;M;20;i25;-12 / -10 ROL;-4a / -2a ROL;;* Transition to ROL with input SIT.F;;ROL;Kuma-SIT.3+4;Rebound;;;File:t8-p2-kuma-sit.3+4.mp4
 SIT.f;sp;;N/A / i26~i31 Heat;+1~+6 / -6~-1 HBS;+7~+12 / 0~+5 HBS;;"* Alternative input: FC.3+4 or FDFA.f

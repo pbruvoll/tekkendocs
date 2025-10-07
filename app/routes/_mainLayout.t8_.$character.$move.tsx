@@ -63,10 +63,9 @@ export const meta: MetaFunction = ({ params, matches }) => {
     .map((header, index) => `${header}:   ${moveRow[index] || ''}`)
     .join('\n')
 
-  let image =
-    move?.image && move?.image.startsWith('File:')
-      ? `https://wavu.wiki/t/Special:Redirect/file/${move?.image}`
-      : `/t8/avatars/${characterId}-512.png`
+  let image = move?.image?.startsWith('File:')
+    ? `https://wavu.wiki/t/Special:Redirect/file/${move?.image}`
+    : `/t8/avatars/${characterId}-512.png`
 
   if (move?.wavuId === 'Paul-CS.2') {
     image = `/t8/moves/${characterId}/Paul_CS.2.gif`
@@ -82,7 +81,7 @@ export const meta: MetaFunction = ({ params, matches }) => {
     {
       tagName: 'link',
       rel: 'canonical',
-      href: 'https://tekkendocs.com/t8/' + characterId + '/' + command,
+      href: `https://tekkendocs.com/t8/${characterId}/${command}`,
     },
   ]
 }
@@ -100,8 +99,8 @@ const findMove = (command: string, moves: Move[]): Move | undefined => {
 
 export default function Move() {
   const params = useParams()
-  const command = params['move']
-  const characterName = params['character']
+  const command = params.move
+  const characterName = params.character
 
   const matches = useMatches()
   const moves = getCharacterFrameDataMoves(matches)
@@ -120,7 +119,7 @@ export default function Move() {
         Tekken 8
       </Text>
       <Heading mt="2" mb="4" as="h1" className="flex flex-wrap gap-2">
-        <Link to={'/' + characterName} className="capitalize text-text-primary">
+        <Link to={`/${characterName}`} className="capitalize text-text-primary">
           {characterName}
         </Link>
         {move.command}

@@ -160,13 +160,20 @@ def _convert_json_movelist(move_list_json: list) -> List[Move]:
             on_ch = _remove_html_tags(_normalize_data(_normalize_hit_ch_input(move["title"]["ch"])))
             startup = _normalize_data(move["title"]["startup"])
             recovery = _normalize_data(move["title"]["recv"])
-            crush = html.unescape(_normalize_data(move["title"]["crush"]))
+            crush = html.unescape(html.unescape(_normalize_data(move["title"]["crush"]))
+            crush = BeautifulSoup(crush, features="lxml").get_text())
             crush = BeautifulSoup(crush, features="lxml").get_text()
             image = _normalize_data(move["title"]["image"])
             video = _normalize_data(move["title"]["video"])
             alt = _normalize_data(move["title"]["alt"])
             alt = BeautifulSoup(alt, features="lxml").get_text()
             num = _normalize_data(move["title"]["num"])
+
+            # remove new lines and *. Replace "," with space
+            crush = crush.replace("\n", "").replace("*", "").replace(",", " ")
+            # split on spaces, but dont keep empty entries
+            crushList = [part for part in crush.split(" ") if part]
+            crush = " ".join(crushList)
 
             # remove new lines and *. Replace "," with space
             crush = crush.replace("\n", "").replace("*", "").replace(",", " ")
@@ -182,8 +189,9 @@ def _convert_json_movelist(move_list_json: list) -> List[Move]:
             notes = notes.replace("* \n", "* ").strip()
             (short_notes, tags) = _parse_notes(notes)
             tags = " ".join(item for item in [tags, crush] if item)
+            tags = " ".join(item for item in [tags, crush] if item)
             if(crush) :
-                notes = "\n".join([notes, _crush_to_note(crushList)])
+                notes = "\n".join([notes, _crush_to_note(crushListList)])
 
             notes = notes.strip()
             move = Move(id, name, input, target, damage, on_block, on_hit, on_ch, startup, recovery, crush, notes, short_notes, "", tags, image, video, alias, alt, num)
