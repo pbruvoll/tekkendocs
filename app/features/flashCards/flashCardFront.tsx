@@ -34,6 +34,7 @@ export const FlashCardFront = ({
       />
       <button
         className="flex w-full items-center justify-center p-2 text-lg"
+        type="button"
         onClick={onFlip}
       >
         <div

@@ -14,7 +14,7 @@ import {
   getTekken7Characters,
   getTekken8Characters,
 } from '~/services/staticDataService'
-import type { GamePageData } from '~/types/GamePageData'
+import { type GamePageData } from '~/types/GamePageData'
 import { getCacheControlHeaders } from '~/utils/headerUtils'
 import { generateMetaTags } from '~/utils/seoUtils'
 import { t7AvatarMap } from '~/utils/t7AvatarMap'

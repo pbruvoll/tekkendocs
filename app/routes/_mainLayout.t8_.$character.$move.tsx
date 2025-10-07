@@ -97,7 +97,7 @@ const findMove = (command: string, moves: Move[]): Move | undefined => {
   return moves.find(move => commandToUrlSegment(move.command) === command)
 }
 
-export default function Move() {
+export default function MoveRoute() {
   const params = useParams()
   const command = params.move
   const characterName = params.character

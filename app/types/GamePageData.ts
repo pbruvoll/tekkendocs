@@ -1,4 +1,4 @@
-import type { CharacterInfo } from './CharacterInfo'
+import { type CharacterInfo } from './CharacterInfo'
 
 export type GamePageData = {
   characterInfoList: CharacterInfo[]

@@ -2,7 +2,7 @@ import { json } from '@remix-run/node'
 import { google, type sheets_v4 } from 'googleapis'
 import { type GaxiosResponse } from '~/types/GaxiosResponse'
 import { ServerStatusCode } from '~/types/ServerStatusCode'
-import type { SpreadSheetDocName } from '~/types/SpreadSheetDocName'
+import { type SpreadSheetDocName } from '~/types/SpreadSheetDocName'
 import { createErrorResponse } from '~/utils/errorUtils'
 
 const spreadSheetToSheetId: Record<SpreadSheetDocName, string> = {

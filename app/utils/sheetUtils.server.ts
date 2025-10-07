@@ -1,5 +1,5 @@
-import type { TableData } from '~/types/TableData'
-import type { TableId } from '~/types/TableId'
+import { type TableData } from '~/types/TableData'
+import { type TableId } from '~/types/TableId'
 
 export type SheetSection = {
   sectionId: TableId
