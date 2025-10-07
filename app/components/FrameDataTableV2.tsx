@@ -50,12 +50,12 @@ export const FrameDataTable = ({
       if (sortSettings.sortDirection === 'desc') {
         searchParamsCopy.delete(orderByKey)
       } else {
-        searchParamsCopy.set(orderByKey, columnName + '_desc')
+        searchParamsCopy.set(orderByKey, `${columnName}_desc`)
       }
     } else {
-      searchParamsCopy.set(orderByKey, columnName + '_asc')
+      searchParamsCopy.set(orderByKey, `${columnName}_asc`)
     }
-    return location.pathname + '?' + searchParamsCopy.toString()
+    return `${location.pathname}?${searchParamsCopy.toString()}`
   }
 
   const filteredMoves = useMemo(() => {
@@ -141,10 +141,9 @@ export const FrameDataTable = ({
                 <Table.Cell>{move.hit}</Table.Cell>
                 <Table.Cell>{move.counterHit}</Table.Cell>
                 <Table.Cell>
-                  {move.notes &&
-                    move.notes
-                      .split('\n')
-                      .map((line, index) => <div key={index}>{line}</div>)}
+                  {move.notes
+                    ?.split('\n')
+                    .map((line, index) => <div key={index}>{line}</div>)}
                 </Table.Cell>
               </Table.Row>
             )

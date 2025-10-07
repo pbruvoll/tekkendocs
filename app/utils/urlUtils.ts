@@ -11,8 +11,8 @@ export const getSearchParamNumber = (
 ): number | undefined => {
   const valueStr = searchParams.get(key)
   if (!valueStr) return undefined
-  const value = parseInt(valueStr)
-  return isNaN(value) ? undefined : value
+  const value = parseInt(valueStr, 10)
+  return Number.isNaN(value) ? undefined : value
 }
 
 export const getSearchParamBoolean = (

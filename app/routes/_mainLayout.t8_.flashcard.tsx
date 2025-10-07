@@ -55,7 +55,7 @@ export default function () {
             return {
               name: displayName,
               imgSrc,
-              url: '/t8/' + id + '/flashcard',
+              url: `/t8/${id}/flashcard`,
             }
           },
         )}

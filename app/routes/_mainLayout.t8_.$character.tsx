@@ -37,9 +37,9 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
     'frameData',
   )
 
-  let overrideNormalMoves: TableData | undefined = undefined
+  let overrideNormalMoves: TableData | undefined
 
-  let overrideSheetData: CharacterPageData | undefined = undefined
+  let overrideSheetData: CharacterPageData | undefined
   try {
     overrideSheetData = await service.getCharacterData(
       game,

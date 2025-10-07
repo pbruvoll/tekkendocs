@@ -19,7 +19,7 @@ export const TaskProgress = ({
       <div className="h-5 flex-grow rounded-3xl bg-text-primary-subtle ">
         <div
           className="h-full rounded-3xl bg-text-primary"
-          style={{ width: progressPercentage + '%' }}
+          style={{ width: `${progressPercentage}%` }}
         />
       </div>
       <div>

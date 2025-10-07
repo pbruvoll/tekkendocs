@@ -124,7 +124,7 @@ export default function Index() {
         characterCards={gamePageDataT8.characterInfoList.map(
           ({ id, displayName }) => {
             const imgSrc = t8AvatarBrandMap256[id]
-            return { name: displayName, imgSrc, url: '/t8/' + id }
+            return { name: displayName, imgSrc, url: `/t8/${id}` }
           },
         )}
       />
@@ -142,7 +142,7 @@ export default function Index() {
         characterCards={gamePageDataT7.characterInfoList.map(
           ({ id, displayName }) => {
             const imgSrc = t7AvatarMap[id]
-            return { name: displayName, imgSrc, url: '/t7/' + id }
+            return { name: displayName, imgSrc, url: `/t7/${id}` }
           },
         )}
       />

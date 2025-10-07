@@ -45,10 +45,10 @@ export const getSheet = async (
       }
     }
     console.warn(
-      'Error getting data: ' + response.status + ' ' + response.statusText,
+      `Error getting data: ${response.status} ${response.statusText}`,
     )
   } catch (e) {
-    console.warn('Exception getting data ' + e)
+    console.warn(`Exception getting data ${e}`)
     throw e
   }
   throw json(`There were no rows for sheet ${sheetName}`, {
@@ -108,7 +108,7 @@ export const getSheetObject = async (
   }
 
   return {
-    editUrl: 'https://docs.google.com/spreadsheets/d/' + spreadSheetDocumentId,
+    editUrl: `https://docs.google.com/spreadsheets/d/${spreadSheetDocumentId}`,
     rows,
   }
 }

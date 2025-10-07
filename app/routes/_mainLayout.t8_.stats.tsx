@@ -108,7 +108,7 @@ const CharacterStatistics = ({
                       style={{ height: `${(value * 100) / max}%` }}
                     />
                   </div>
-                  <Link to={'/t8/' + name}>
+                  <Link to={`/t8/${name}`}>
                     <img
                       src={t8AvatarMap[name]}
                       className="aspect-square h-10"
@@ -122,7 +122,7 @@ const CharacterStatistics = ({
             }
             return (
               <Fragment key={name}>
-                <Link to={'/t8/' + name}>
+                <Link to={`/t8/${name}`}>
                   <img
                     src={t8AvatarMap[name]}
                     className="aspect-square h-10"

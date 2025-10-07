@@ -59,7 +59,7 @@ const PersonLinkComponent = ({ name, url }: PersonLink) => {
           }
           if (url.includes('metafy.gg')) {
             return (
-              <Link key="metafy" to={url + '?utm_source=tekkendocs'}>
+              <Link key="metafy" to={`${url}?utm_source=tekkendocs`}>
                 <img className="h-4 w-4" src={metafyGradientIcon} alt="" />
               </Link>
             )

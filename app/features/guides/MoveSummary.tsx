@@ -14,7 +14,7 @@ export const MoveSummary = ({
     <div className="text-sm text-muted-foreground">
       {[
         move.hitLevel && move.hitLevel,
-        move.startup && move.startup.split(',')[0],
+        move.startup?.split(',')[0],
         move.block && `${move.block} oB`,
         move.hit && `${move.hit} oH`,
         move.counterHit && `${move.counterHit} oCH`,

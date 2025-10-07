@@ -249,7 +249,7 @@ export default function () {
           <div className="h-5 flex-grow rounded-3xl bg-text-primary-subtle ">
             <div
               className="h-full rounded-3xl bg-text-primary"
-              style={{ width: completedPercentage + '%' }}
+              style={{ width: `${completedPercentage}%` }}
             />
           </div>
           <div>
@@ -277,7 +277,7 @@ export default function () {
               return (
                 <Fragment key={characterId + moveCommand}>
                   <div className="flex flex-row-reverse flex-wrap justify-center gap-x-2 place-self-start">
-                    <Link to={'/t8/' + characterId}>
+                    <Link to={`/t8/${characterId}`}>
                       <img
                         className="max-h-16"
                         src={t8AvatarMap[characterId]}

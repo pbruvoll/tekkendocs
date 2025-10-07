@@ -136,7 +136,7 @@ export default function Index() {
 
         <Nav
           navData={
-            characterGuideAuthors['T8'][characterName]
+            characterGuideAuthors.T8[characterName]
               ? [...navData, { displayName: 'Guide', link: '../guide' }]
               : navData
           }

@@ -153,7 +153,7 @@ export default function Index() {
                   </Table.Header>
                 )}
                 <Table.Body>
-                  {table.rows.map((row, i) => {
+                  {table.rows.map((row, _i) => {
                     return (
                       <Table.Row key={row[0]}>
                         {columnNums.map(j => {

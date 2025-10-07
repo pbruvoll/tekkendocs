@@ -81,7 +81,6 @@ export const FrameDataSection = ({
 
   const removeFilterElement = (key: string, element: string) => {
     setSearchParams(prev => {
-      /** @ts-ignore */
       prev.delete(key, element)
       return prev
     })
