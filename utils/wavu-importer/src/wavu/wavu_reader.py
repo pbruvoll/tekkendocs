@@ -160,13 +160,19 @@ def _convert_json_movelist(move_list_json: list) -> List[Move]:
             on_ch = _remove_html_tags(_normalize_data(_normalize_hit_ch_input(move["title"]["ch"])))
             startup = _normalize_data(move["title"]["startup"])
             recovery = _normalize_data(move["title"]["recv"])
-            crush = html.unescape(_normalize_data(move["title"]["crush"]))
+            crush = html.unescape(html.unescape(_normalize_data(move["title"]["crush"])))
             crush = BeautifulSoup(crush, features="lxml").get_text()
             image = _normalize_data(move["title"]["image"])
             video = _normalize_data(move["title"]["video"])
             alt = _normalize_data(move["title"]["alt"])
             alt = BeautifulSoup(alt, features="lxml").get_text()
             num = _normalize_data(move["title"]["num"])
+
+            # remove new lines and *. Replace "," with space
+            crush = crush.replace("\n", "").replace("*", "").replace(",", " ")
+            # split on spaces, but dont keep empty entries
+            crushList = [part for part in crush.split(" ") if part]
+            crush = " ".join(crushList)
 
             # remove new lines and *. Replace "," with space
             crush = crush.replace("\n", "").replace("*", "").replace(",", " ")
@@ -242,7 +248,7 @@ def _get_tag(noteLine: str) :
 
 
 def _crush_to_note(crushList: list) : 
-    return "* " + "\n* ".join(crushList).replace("ps", "Parry state ").replace("pc", "Power crush ").replace("js", "Low crush ").replace("cs", "High crush ").replace("fs", "Floating state")
+    return "* " + "\n* ".join(crushList).replace("ps", "Parry state ").replace("pc", "Power crush ").replace("js", "Low crush ").replace("cs", "High crush ").replace("fs", "Floating state ")
 
 def _sort_json_movelist(move_list: List[Move]) :
     # a trick to generate a string for sorting frames. + is replaced by _ just to make "+" sort after ","
