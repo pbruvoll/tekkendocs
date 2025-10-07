@@ -48,7 +48,7 @@ const data: ExternalResourceLink[] = [
   },
   {
     name: 'Sidestep chart',
-    url: 'https://scontent.fsvg1-1.fna.fbcdn.net/v/t39.30808-6/514395743_24239677972322903_3698915202611201122_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=2UiA1mbpfYoQ7kNvwFTDwnV&_nc_oc=Adl_XC-bNDCPl6x6WWYpO5TrlJspyd7iJZJAWmBMAEwT1jmJ1GW_FG8dgHnHxvKZaxgdzcsEhBP7ggIdBGUOxY5U&_nc_zt=23&_nc_ht=scontent.fsvg1-1.fna&_nc_gid=4OuYPe_O8xiA3D_WL-hWlA&oh=00_AfUw36uJRkvyYiEae1j4Aee6CTCo5FYYH5Qh64oaRENETA&oe=68AA6820',
+    url: '/t8/sidestep-chart.webp',
     imageUrl: sidestepChart,
     description: 'Advice on which side to generally step against a character',
   },
