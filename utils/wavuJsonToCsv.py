@@ -30,7 +30,7 @@ columns = [
 
 # 2,STB.4 -> STB.4,2
 def moveInstallmentToFront(input, installment):
-    match = re.search(r'(\s|,)' + re.escape(installment) + r'\.', input)
+    match = re.search(r'(\s|,|~)' + re.escape(installment) + r'\.', input)
     if match :
         input = input[:match.start()+1] + input[match.end():]
         return installment + "." + input
