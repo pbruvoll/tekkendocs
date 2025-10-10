@@ -111,6 +111,7 @@ export const characterGuideAuthors: Record<
 > = {
   T8: {
     asuka: { author: 'Fergus', version: 'S2' },
+    anna: { author: 'Joi', version: 'S2' },
     azucena: { author: 'Koenji', version: 'S2' },
     bryan: { author: 'Ty', version: 'S2' },
     claudio: { author: 'Tetsu', version: 'S2' },
