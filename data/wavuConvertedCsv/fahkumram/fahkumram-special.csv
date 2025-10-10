@@ -15,36 +15,43 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Transition to attack throw on hit
 * Consumes Rage
 * Power crush 8~";rbr pc8~;;Fahkumram-R.df+1+2;Avatar of Garuda;r39;;
-1;h;5;i10;+1;+8;;;;;Fahkumram-1;Jab;;;
-1,1;h, m;5, 20;i10, i20;-9;+8c;;"* Elbow
+1;h;5;i10;+1;+8;;Recovers 2f faster on hit or block (t27 r17);;;Fahkumram-1;Jab;r19;;
+1,1;h, m;5, 20;i10, i20~21;-9;+8c;;"* Floor Break
+* Elbow
 * Combo from 1st CH with 2F delay
 * Input can be delayed by 2F
-* Move cannot be delayed";elb;;Fahkumram-1,1;Jab > Elbow Scythe;;;
-1,2;h, h;5, 8;i10, i10;-3;+5;;"* Combos from 1st hit
-* Jails from 1st hit";;;Fahkumram-1,2;Left Right Combo;;;
-1,2,1;h, h, m;5, 8, 15;i10, ,i17;-10;+3;;* Delayable;;;Fahkumram-1,2,1;;;;
-1,2,1,4;h, h, m, m;5, 8, 15, 23;i10, ,i21;-14;+13a (+4);;"* Balcony Break
+* Move cannot be delayed
+* +10a on BT hit";fbr elb;;Fahkumram-1,1;Jab > Elbow Scythe;r29;;
+1,2;h, h;5, 8;i10, i10;-3;+5;;* Jail from 1st attack with 2f delay;;;Fahkumram-1,2;Left Right Combo;r21;;
+1,2,1;h, h, m;5, 8, 15;i10, ,i17~18;-10;+3;;* Input can be delayed 12f;;;Fahkumram-1,2,1;;r28;;
+1,2,1,4;h, h, m, m;5, 8, 15, 23;i10, ,i21~22;-14;+13a (+4);;"* Balcony Break
 * Knee
-* Combos from 3rd hit
-* Delayable";bbr kne;;Fahkumram-1,2,1,4;Ban Chiang Combination;;;
-1,2,4;h, h, h;5, 8, 10;i10, ,i17;-9;+6;;;;;Fahkumram-1,2,4;;r27;;
-1,2,4,3;h, h, h, h;5, 8, 10, 14;i10, ,i19;-7;+6;+29a;* Combos from 3rd hit;;;Fahkumram-1,2,4,3;Left Right Combo > Thunderstorm;r25;;
-1,2,4,3~4;h, h, h, m;5, 8, 10, 20;i10, ,i21;-5;+9;+44a;"* Knee
-* Effective startup i36
+* Combo from 3rd hit with 10f delay
+* Input can be delayed 12f
+* Move can be delayed 10f";bbr kne;;Fahkumram-1,2,1,4;Ban Chiang Combination;r34;;
+1,2,4;h, h, h;5, 8, 10;i10, ,i17;-9;+6;;"* Input can be delayed 2f
+* Move cannot be delayed";;;Fahkumram-1,2,4;;r27;;
+1,2,4,3;h, h, h, h;5, 8, 10, 14;i10, ,i19~20;-7;+6;+29a;"* Balcony Break (airborne)
+* Combo from 3rd hit";;;Fahkumram-1,2,4,3;Left Right Combo > Thunderstorm;r25;;
+1,2,4,3~4;h, h, h, m;5, 8, 10, 20;i10, ,i21~22;-5;+9;+44a;"* Knee
+* Can be charged with held input
+* Effective startup i36~37
 * Interrupt with i17 from 3rd block
 * Interrupt with i5 from 3rd hit
-* Can be charged
-* Move can be delayed by 2F";kne;;Fahkumram-1,2,4,3~4;Left Right Combo > Erupting Knee Convergence;r23;;
-1,2,4,3~4*;h, h, h, m;5, 8, 10, 25;i10, ,i36;+9;+73a (+57);;"* Tornado
-* Knee
-* Effective startup i51
+* Move can be delayed by 2F
+* Recovers 2f slower on hit or block";kne;;Fahkumram-1,2,4,3~4;Left Right Combo > Erupting Knee Convergence;r23;;
+1,2,4,3~4*;h, h, h, m;5, 8, 10, 25;i10, ,i36~37;+9;+73a (+57);;"* Knee
+* Unparryable
+* Instant Tornado on hit
+* Chip damage on block
+* Effective startup i51~52
 * Interrupt with i32 from 3rd block
 * Interrupt with i20 from 3rd hit
 * Cancel into r20 FC with F at frames 16-24 (frames 31-39 from 3rd attack)
 ** Interrupt with i33? mid/low from 3rd block
 ** Interrupt with i21? mid/low from 3rd hit
 * Move can be delayed by 2F
-* Powered up with GRF";trn kne;;Fahkumram-1,2,4,3~4*;Left Right Combo > Erupting Knee Convergence (charged);r30;;
+* Power up in Heat or GRF";kne chp;;Fahkumram-1,2,4,3~4*;Left Right Combo > Charged Erupting Knee;r30;;
 1,2,4,3~4*~B;h, h, h, m;5, 8, 10, 25;i10, ,i22;-7;+9;;"* Homing
 * Balcony Break
 * Effective startup i53
