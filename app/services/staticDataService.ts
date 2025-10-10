@@ -57,6 +57,7 @@ const charsT7: string[] = [
 const charsT8: string[] = [
   'alisa',
   'anna',
+  'armor-king',
   'asuka',
   'azucena',
   'bryan',

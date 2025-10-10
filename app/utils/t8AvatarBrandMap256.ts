@@ -1,5 +1,6 @@
 import alisa from '~/images/t8/avatars/alisa-brand-256.webp'
 import anna from '~/images/t8/avatars/anna-brand-256.webp'
+import armorKing from '~/images/t8/avatars/armor-king-256.webp'
 import asuka from '~/images/t8/avatars/asuka-brand-256.webp'
 import azucena from '~/images/t8/avatars/azucena-brand-256.webp'
 import bryan from '~/images/t8/avatars/bryan-brand-256.webp'
@@ -41,6 +42,7 @@ import zafina from '~/images/t8/avatars/zafina-brand-256.webp'
 export const t8AvatarBrandMap256: Record<string, string> = {
   alisa,
   anna,
+  'armor-king': armorKing,
   asuka,
   azucena,
   claudio,
