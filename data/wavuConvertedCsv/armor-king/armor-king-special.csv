@@ -1,43 +1,165 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Transitions;Wavu id;Name;Recovery;Image;Video
-2+3;m;"[12;12]";i16;+1;+2c;;"* Heat Burst
-* Cancel to r45 with b,b on frame 42
-* 2 chip damage on block
-* 12 chip damage on hit
-* Only deals recoverable damage
-* Cannot cause a K.O.
-* Power crush 7~16";hb pc7~16;;Armor King-2+3;Heat Burst;r30;;
+2+3;m;"[12;12]";i16;+1;+2c;;"* Can also be done during BAD
+* Power crush 7~16";pc7~16;;Armor King-2+3;Heat Burst;r30;;
+H.2+3;m,t;54;i17;;+1d;;"* Heat Smash
+* Balcony Break
+* Can also be done during BAD
+* Transition to attack throw on hit
+* Opponent left FUFT";hs bbr;;Armor King-H.2+3;;;;
 1;h;5;i10;+1;+8;;Recovers 2f faster on hit or block (t27 r17);;;Armor King-1;Jab;r19;;
-2;h;;i10;;;;* ???;;;Armor King-2;;;;
-2,1;h, m;;i10, i23;;+7;;* ???;;;Armor King-2,1;;;;
-4;h;;i13;;;;* ???;;;Armor King-4;;;;
-4,3;h, h;;i13, i25~26;;+9;;* ???;;;Armor King-4,3;;;;
-f+2;m;;i15;;;;* ???;;;Armor King-f+2;;;;
-f+2,1;m, h;;i15, i18;;;;"* ???
-* Heat Engager";he;;Armor King-f+2,1;;;;
-f+1+4;m;;i13~15;;+17(+12);;* ???;;;Armor King-f+1+4;;;;
-db+2;m;;i14;;;;* ???;;;Armor King-db+2;;;;
-db+2,3;m, m;;i14, i26~27;;+11(+2);;* ???;;;Armor King-db+2,3;;;;
-db+2,4;m;;i14, i26~27;;;;* ???;;;Armor King-db+2,4;;;;
-db+2,4,2;m;;i14, ,i30~31;;+32(+6);;* ???;;;Armor King-db+2,4,2;;;;
-b+1;h;;i12;;;;* ???;;;Armor King-b+1;;;;
-b+1,2;h, m;;i12, i20;;+8;;"* ???
-* Go into BAJ with F";;;Armor King-b+1,2;;;;
-b+3;h;;i16~18;;+66(+50);;"* ???
-* Tornado";trn;;Armor King-b+3;;;;
-b+4;m;;i15~16;;;;* ???;;;Armor King-b+4;;;;
-b+4:1+2;m, th;;i15~16, ;;+0;;* ???;;;Armor King-b+4:1+2;;;;
-uf+2;m;;i15;;;;* ???;;;Armor King-uf+2;Death Sandwich;;;
-uf+2,1;m, m;;i15, i25~26;;+45(+37);;"* ???
-* Bound";;;Armor King-uf+2,1;Death Sandwich;;;
-uf+4;m;;i15;;+33(+23);;* ???;;;Armor King-uf+4;;;;
-f,F+4;m;;i14;;;;"* ???
-* Heat Engager";he;;Armor King-f,F+4;;;;
+1,2;h, h;5, 10;i10, i10;;+6;;;;;Armor King-1,2;;;;
+1,2,1;h, h, m;5, 10, 14;i10, ,i24~25;;+1;;* Enter BAD with F;;BAD;Armor King-1,2,1;;;;
+2;h;10;i10;;;;;;;Armor King-2;;;;
+2,1;h, m;10, 15;i10, i23;;+7;;;;;Armor King-2,1;;;;
+3;h;17;i15~16;;;;;;;Armor King-3;;;;
+3,4;h, m;17, 15;i15~16, i27~29;;;;;;;Armor King-3,4;;;;
+3,4,1;h, m, m;17, 15, 28;i15~16, ,i21~22;;+15a(+6);;"* Enter BT with B
+* Balcony Break";bbr;BT;Armor King-3,4,1;;;;
+4;h;17;i13;;;;;;;Armor King-4;;;;
+4,3;h, h;17, 18;i13, i25~26;;+9;;* Enter BT with B;;BT;Armor King-4,3;;;;
+1+2;m;10;i17~19;;+0;;;;;Armor King-1+2;;;;
+1+2,2;m, h;10, 20;i17~19, i18;;+16d;;* Enter BT with B;;BT;Armor King-1+2,2;;;;
+1+2,4;m, m;10, 17;i17~19, i19~20;;+8;;* Enter BT with B;;BT;Armor King-1+2,4;;;;
+3+4;m;14;i25~32;;+3;;;;;Armor King-3+4;;;;
+3+4*;h;40;i35;;+0;;"* Floor Break
+* Opponent is left FUFL";fbr;;Armor King-3+4*;;;;
+3+4,1;m, h;14, 17;i25~32, i14~15;;+8;;* Enter BAD with F;;BAD;Armor King-3+4,1;;;;
+3+4,2;m, m;14, 25;i25~32, i17~i34;;-24a(-50);;"* Balcony Break
+* Opponent recovers FDFA";bbr;;Armor King-3+4,2;;;;
+3+4,1+2;m, m;14, 25,5;i25~32, i24~34;;-5d;;"* Opponent left FUFA
+* Armor King recovers FUFR";;;Armor King-3+4,1+2;;;;
+f+2;m;12;i15~16;;;;;;;Armor King-f+2;;;;
+f+2,1;m, h;12, 25;i15~16, i18~19;-9?;+9a?;;"* Heat Engager
+
+* Balcony Break";he bbr;;Armor King-f+2,1;;;;
+f+3;m;12;i15~16;;;;;;;Armor King-f+3;;;;
+f+3,2;m, m;12, 13;i15~16, i20~21;;;;* Enter CD with DF?;;CD;Armor King-f+3,2;;;;
+f+3,2,1;m, m, m;12, 13, 22;i15~16, ,i24~26;;+34a;;"* Tornado
+* Opponent recovers FUFA?";trn;;Armor King-f+3,2,1;;;;
+f+4;m;21;i23~25;;+7c;;;;;Armor King-f+4;;;;
+f+1+2;m;21;i22~23;;+22;;"* Enter BAD with F on hit?
+* Power crush 7~21";pc7~21;BAD;Armor King-f+1+2;;;;
+f+1+4;m;28;i13~15;;+17d(+12);;"* Balcony Break
+* Opponent recovers FUFT";bbr;;Armor King-f+1+4;;;;
+f+3+4;sp;;;;;ps5?-???;"*Parries mid and high punches
+*Transition to BAD";;BAD,BAD;Armor King-f+3+4;Bad Jaguar;BAD;;
+f+3+4,P;h!;[6];i25~34;;+23g;;"*On successful parry, gives a special stun that makes throws unbreakable for the stun duration
+*Cannot K.O";;;Armor King-f+3+4,P;Unforgiven;;;
+df+1;m;12;i13~14;;+7;;;;;Armor King-df+1;;;;
+df+1,2;m, h;12, 19;i13~14, i18~19;;+8;;* Tornado;trn;;Armor King-df+1,2;;;;
+df+2;m;21;i15~16;;+4;;;;;Armor King-df+2;;;;
+df+2,1;m, h;21, 8;i15~16, i15~16;;+8;;* Enter BAD with F;;BAD;Armor King-df+2,1;;;;
+df+3;m;17;i17~18;;+5;;;;;Armor King-df+3;;;;
+df+3+4;m;15,30;i28~35;;+17?;;"* Opponent recovers FUFA
+* Armor King recovers BT";;;Armor King-df+3+4;;;;
+d+1;sl;5;i10;;;;;;;Armor King-d+1;;;;
+d+1,4;sl, m;5, 13;i10, i15;;+6;;;;;Armor King-d+1,4;;;;
+d+2;m;17;i17~18;;;;;;;Armor King-d+2;;;;
+d+2,4;m, m;17, 13;i17~18, i22~23;;;;;;;Armor King-d+2,4;;;;
+d+2,4,3;m, m, m;17, 13, 20;i17~18, ,i35~40;;+7d;;"* Opponent left FUFT
+* Armor King recovers in crouch";;;Armor King-d+2,4,3;;;;
+d+3;l;14;i17;;+2;;;;;Armor King-d+3;;;;
+d+4;l;;;;-4;;;;;Armor King-d+4;;;;
+d+2+3;m;25;i30~35;;+0c;;;;;Armor King-d+2+3;;;;
+d+3+4;L;15;i17;;-2;;;;;Armor King-d+3+4;;;;
+d+3+4,1;L, g;15, 12;i17, i20~21;;+15;;* Balcony Break;bbr;;Armor King-d+3+4,1;;;;
+d+3+4,3;L, m;15, 16;i17, i23~24;;+15a(-2);;"* Balcony Break
+* Tornado
+* Opponent recovers FDFA";bbr trn;;Armor King-d+3+4,3;;;;
+db+2;m;12;i14;;;;;;;Armor King-db+2;;;;
+db+2,3;m, m;12, 24;i14, i26~27;;+11a(+2);;"* Balcony Break
+* Opponent recovers FUFT";bbr;;Armor King-db+2,3;;;;
+db+2,4;m, h;12, 20;i14, i20~21;;;;;;;Armor King-db+2,4;;;;
+db+2,4,2;m, h, m;12, 20, 24;i14, ,i30~31;;+32a(+6);;"* Balcony Break
+* Opponent recovers FUFT";bbr;;Armor King-db+2,4,2;;;;
+db+3;L;26;i22~24;;+6;;* Homing;hom;;Armor King-db+3;;;;
+db+4;L;20;i29~31;;-3d;;"* Opponent recovers FDFA
+* Armor King recovers in crouch";;;Armor King-db+4;;;;
+b+1;h;12;i12~13;;+5;;;;;Armor King-b+1;;;;
+b+1,2;h, m;12, 20;i12~13, i20~21;;+8;;* Enter BAD with F;;BAD;Armor King-b+1,2;;;;
+b+2;m;10;i13;;;;;;;Armor King-b+2;;;;
+b+2,1;m, m;10, 8;i13, i18;;;;;;;Armor King-b+2,1;;;;
+b+2,1,2;m, m, h;10, 8, 20;i13, ,i25~26;;+19a(+10);;* Balcony Break;bbr;;Armor King-b+2,1,2;;;;
+b+3;h;17;i16~18;;+66a(+50);;"* Balcony Break
+* Tornado";bbr trn;;Armor King-b+3;;;;
+b+4;m;15;i15~18;;+2;;;;;Armor King-b+4;;;;
+b+4:1+2;m, th;15, 20;i15~18, ;;0d;;;;;Armor King-b+4:1+2;;;;
+b+1+2;m;0;i16~17;;+4;+15?;;;;Armor King-b+1+2;;;;
+ub+1;h;21;i24~25;;;;"* Balcony Break
+* Homing";bbr hom;;Armor King-ub+1;;;;
+ub+1+2;m;20;i30~31;;;;* Balcony Break;bbr;;Armor King-ub+1+2;;;;
+ub+1+2*;m;24;i50~52;;;;* Tornado;trn;;Armor King-ub+1+2*;;;;
+u+1+2;m;25;i35~36;;;;;;;Armor King-u+1+2;;;;
+u+1+2*;m!;45;i67;;;;;;;Armor King-u+1+2*;;;;
+uf+1;m;20;i23~24;;;;* Balcony Break;bbr;;Armor King-uf+1;;;;
+uf+2;m;7;i15~16;;;;;;;Armor King-uf+2;;;;
+uf+2,1;m, m;7, 10;i15~16, i26~26;;;;* Bound;;;Armor King-uf+2,1;;;;
+uf+3;m;17;i17~21;;;;;;;Armor King-uf+3;;;;
+uf+4;m;13;i15;;;;;;;Armor King-uf+4;;;;
+uf+3+4;m;23;i32~38;;;;;;;Armor King-uf+3+4;;;;
+b,B+4;m;22;i20~21;;;;"* Balcony Break
+* Homing";bbr hom;;Armor King-b,B+4;;;;
+b,B+2+3;!;50;i63~66;;;;* Cancel with D;;;Armor King-b,B+2+3;;;;
+f,F+2;m;20;i16~17;;;;;;;Armor King-f,F+2;;;;
+f,F+3;h;23;i17~19;;;;"* Balcony Break
+* Homing";bbr hom;;Armor King-f,F+3;;;;
+f,F+4;m;25;i14;;;;"* Heat Engager
+
+* Balcony Break";he bbr;;Armor King-f,F+4;;;;
+f,F+3+4;h;35;i23~24;;;;* Balcony Break;bbr;;Armor King-f,F+3+4;;;;
 f,f,n,2;L?;20;i19;-13;+5;;"* Enter stance +8 with F
 * Bufferable?";;stance;Armor King-f,f,n,2;Underhanded;;;
-ws1;m;;i15;;+31(+21);;* ???;;;Armor King-ws1;;;;
-ws2;m;;i12~13;;+3;;* ???;;;Armor King-ws2;;;;
-ws3;m;;i13~14;;;;* ???;;;Armor King-ws3;;;;
-ws3,1;m, h;;i13~14, i24~25;;;;"* ???
-* Heat Engager";he;;Armor King-ws3,1;;;;
-ws4;m;;i11;;+5;;* ???;;;Armor King-ws4;;;;
-FC.df+2;m;;i24;;+52;;* ???;;;Armor King-FC.df+2;;;;
+f,n,d,df;;;;;;;"* Cannot be buffered
+* Stance moves can be buffered out of heat dash
+* Cancel to SS with u
+* Cancel to block with b";;SS;Armor King-f,n,d,df;Beast Step;;;
+f,n,d,df+1;h;20;i15~16;+6?;+16d;;*Opponent left FDFA on hit;;;Armor King-f,n,d,df+1;Shadow Lariat?;;;
+f,n,d,df+2;h;20;i11~12;-10?;+36a (+26);;*;;;Armor King-f,n,d,df+2;Dark Smash?;;;
+f,n,d,df+3;h!;30;i35~37;;+19a (+10);;"*
+Balcony Break
+*Hold B to cancel";bbr;;Armor King-f,n,d,df+3;Dark Inferno?;;;
+f,n,d,df+4;m;22;i16~18;-9?;+28d (+20);;"*
+Balcony Break
+*
+Tornado";bbr trn;;Armor King-f,n,d,df+4;Knee Vault?;;;
+f,n,d,df+1+2;h!;[5];i35~38;;+23g;;"*On hit, gives a special stun that makes throws unbreakable for the stun duration
+*Comes out faster in heat
+*Cannot K.O";;;Armor King-f,n,d,df+1+2;Poison Mist?;;;
+uf,n,4;m;20;i23~25;;;;;;;Armor King-uf,n,4;;;;
+f,f,F+3;m;30;i23~25;;;;* Balcony Break;bbr;;Armor King-f,f,F+3;;;;
+f,f,F+3+4;m;40;i28~34;;;;* Balcony Break;bbr;;Armor King-f,f,F+3+4;;;;
+ws1;m;16;i15~16;;;;;;;Armor King-ws1;;;;
+ws2;m;17;i12;;;;"* Hold 2 during CH to ki charge
+* Input f,d,df+2 during ki charge to do Bluespark DU";;;Armor King-ws2;;;;
+ws3;m;12;i13~14;;+6;;;;;Armor King-ws3;;;;
+ws3,1;m, m;12, 24;i13~14, i24~25;;;;"* Heat Engager
+
+* Balcony Break";he bbr;;Armor King-ws3,1;;;;
+ws4;m;20;i11~12;;;;;;;Armor King-ws4;;;;
+FC.df+2;m;23;i24~25;;+52a;;* ???;;;Armor King-FC.df+2;;;;
+BAD.1;h;13;i11;;+8;;;;;Armor King-BAD.1;;;;
+BAD.1,2;h, m;13, 24;i11, i24~25;;;;"* Heat Engager
+
+* Balcony Break";he bbr;;Armor King-BAD.1,2;;;;
+BAD.1,4;h, h;13, 22;i11, i22~23;;+11c g;;* Recovers in BT;;;Armor King-BAD.1,4;;;;
+BAD.2;m;12;i15~16;;+4;;;;;Armor King-BAD.2;;;;
+BAD.2,3;m, h;12, 24;i15~16, i22~23;;+18c g;;"* Balcony Break
+* Tornado";bbr trn;;Armor King-BAD.2,3;;;;
+BAD.2,4;m, m,t;12, 15,20;i15~16, i18~19;;+0d;;"* Transitions to attack throw on front hit only 
+* Opponent left FUFT";;;Armor King-BAD.2,4;S.C.S;;;
+BAD.3;m;20;i20~21;-13;+11a(+2);+26d;"* Balcony Break
+* Tracks to Armor King's left
+* Power crush";bbr pc;;Armor King-BAD.3;;;;
+H.BAD.3,2;m,m;15,25;i20~21;+5;+1d;;"* Balcony Break
+* Tracks to Armor King's left
+* Opponent left FDFA
+* Power crush";bbr pc;;Armor King-BAD.3,H.2;;;;
+BAD.4;l;23;i17~18;-13;+3c;+26d;;;;Armor King-BAD.4;;;;
+BAD.1+2;m;22;i26~27;+5;+12c;;* 6 chip damage on block;;;Armor King-BAD.1+2;;;;
+BJB.f,d,df+2;m;20?;i11~12;+1?;+35a(+28);;;;;Armor King-BJB.f,d,df+2;True Dark Smash;;;
+d+2+4;th(m);35;i12~13;;+0d;;"* Heat Engager
+
+* Opponent left FUFA";he;;Armor King-d+2+4;;;;
+f,n,d,df+1+3;t;20;i12;;;;"*Alternate input with 1+4 or 2+3
+*1 or 2 break depending on Armor King's input (1 for 1+3/1+4, 2 for 2+4/2+3) 
+*Shift to Cobra Clutch";;;Armor King-f,n,d,df+1+3;Cobra Clutch?;;;
