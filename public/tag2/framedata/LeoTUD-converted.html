@@ -1,1635 +1,1834 @@
 <html>
-<body>
-<a href="/tag2">To character select</a> | <a href="#special">Special Moves</a>  | <a href="#basic">Basic Moves</a> 
-<div id="special"></div>
-<h3>Special Moves</h3>
-<table border="1">
-<tr BGCOLOR="LightGray"><td><b>Command</b></td><td><b>Hit level</b></td><td><b>Damage</b></td><td><b>Start up frame</b></td><td><b>Block frame</b></td><td><b>Hit frame</b></td><td><b>Counter hit frame</b></td><td>Notes</td></tr>
-<tr><td>1</td>
-<td>h</td>
-<td>9</td>
-<td>10</td>
-<td>+1</td>
-<td>+8</td>
-<td>+8</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>1, 2</td>
-<td>h, h</td>
-<td>9,13</td>
-<td>10</td>
-<td>-1</td>
-<td>+7</td>
-<td>+7</td>
-<td></td>
-</tr>
-<tr><td>1, 2, B</td>
-<td>h, h, (KNK)</td>
-<td>9,13</td>
-<td>10</td>
-<td>-10</td>
-<td>-2</td>
-<td>-2</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>1, 2, 1</td>
-<td>h, h, h</td>
-<td>9,13,21</td>
-<td>10</td>
-<td>-5</td>
-<td>+6</td>
-<td>+9</td>
-<td></td>
-</tr>
-<tr><td>1, 2, 1, 1</td>
-<td>h, h, h, m</td>
-<td>9,13,21,28</td>
-<td>10</td>
-<td>-14</td>
-<td>KND</td>
-<td>KND</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>1, 2, 1, 4</td>
-<td>h, h, h, h</td>
-<td>9,13,21,40</td>
-<td>10</td>
-<td>-6</td>
-<td>KND</td>
-<td>KND</td>
-<td></td>
-</tr>
-<tr><td>1, 2, 4</td>
-<td>h, h, l</td>
-<td>9,13,20</td>
-<td>10</td>
-<td>-13</td>
-<td>+3</td>
-<td>+3</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>1, 4</td>
-<td>h, h</td>
-<td>9,22</td>
-<td>10</td>
-<td>-4</td>
-<td>+5</td>
-<td>Launch (JG?)</td>
-<td></td>
-</tr>
-<tr><td>2</td>
-<td>h</td>
-<td>12</td>
-<td>11</td>
-<td>-1</td>
-<td>+5</td>
-<td>+5</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>2, 1</td>
-<td>h, h</td>
-<td>12,16</td>
-<td>11</td>
-<td>-7</td>
-<td>+4</td>
-<td>+4</td>
-<td></td>
-</tr>
-<tr><td>2, 2</td>
-<td>h, m</td>
-<td>12,27</td>
-<td>11</td>
-<td>-15</td>
-<td>KND</td>
-<td>KND</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>3</td>
-<td>h</td>
-<td>20</td>
-<td>14</td>
-<td>-8</td>
-<td>+4</td>
-<td>+4</td>
-<td></td>
-</tr>
-<tr><td>3, 2</td>
-<td>h, h</td>
-<td>20,13</td>
-<td>14</td>
-<td>-2</td>
-<td>+9</td>
-<td>+9</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>3, 2, D</td>
-<td>h, h, (BOK)</td>
-<td>20,13</td>
-<td>14</td>
-<td>-6</td>
-<td>+5</td>
-<td>+5</td>
-<td></td>
-</tr>
-<tr><td>3, 2, 3</td>
-<td>h, h, m (TJ)</td>
-<td>20,13,35</td>
-<td>14</td>
-<td>-7</td>
-<td>KND</td>
-<td>KFUD</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>3, 2, 3, B (Cancel)</td>
-<td>h, h</td>
-<td>20,13</td>
-<td>14</td>
-<td>-15</td>
-<td>-4</td>
-<td>-4</td>
-<td></td>
-</tr>
-<tr><td>3, 2, 4</td>
-<td>h, h, m, (KNK)</td>
-<td>20,13,18</td>
-<td>14</td>
-<td>+8</td>
-<td>+14</td>
-<td>+14</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>2+3</td>
-<td>m(Absorbs 1 h/m hit)</td>
-<td>28</td>
-<td>30</td>
-<td>-8</td>
-<td>+5</td>
-<td>KND</td>
-<td></td>
-</tr>
-<tr><td>f+2</td>
-<td>h</td>
-<td>18</td>
-<td>14~15</td>
-<td>-5~-4</td>
-<td>+6~+7</td>
-<td>+6~+7</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>f+2, 2</td>
-<td>h, m</td>
-<td>18,28</td>
-<td>14~15</td>
-<td>-12</td>
-<td>+6</td>
-<td>KND</td>
-<td></td>
-</tr>
-<tr><td>f+3</td>
-<td>h</td>
-<td>31</td>
-<td>20</td>
-<td>0</td>
-<td>+4</td>
-<td>KND</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>f+3, D</td>
-<td>h, (BOK)</td>
-<td>31</td>
-<td>20</td>
-<td>+1</td>
-<td>+5</td>
-<td>KND</td>
-<td></td>
-</tr>
-<tr><td>f+1+2</td>
-<td>m</td>
-<td>43</td>
-<td>18~19</td>
-<td>-14~-13</td>
-<td>KND</td>
-<td>KND</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>f+2+3</td>
-<td>h</td>
-<td>28</td>
-<td>20</td>
-<td>-9</td>
-<td>KND</td>
-<td>KND</td>
-<td></td>
-</tr>
-<tr><td>d/f+1</td>
-<td>m</td>
-<td>17</td>
-<td>13</td>
-<td>-1</td>
-<td>+7</td>
-<td>+7</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>d/f+1, 2</td>
-<td>m, h</td>
-<td>17,27</td>
-<td>13</td>
-<td>-6</td>
-<td>KND</td>
-<td>KND</td>
-<td></td>
-</tr>
-<tr><td>d/f+2</td>
-<td>m</td>
-<td>18</td>
-<td>15~16</td>
-<td>-13~-12</td>
-<td>Launch (JG?)(-2)</td>
-<td>Launch (JG?)</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>d/f+3</td>
-<td>m</td>
-<td>29</td>
-<td>17~18</td>
-<td>-9~-8</td>
-<td>KND</td>
-<td>KFUD</td>
-<td>Homing</td>
-</tr>
-<tr><td>d/f+1+2</td>
-<td>m</td>
-<td>17</td>
-<td>17</td>
-<td>-23</td>
-<td>-11</td>
-<td>-11</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>d/f+1+2, 1+2</td>
-<td>m, m</td>
-<td>17,14</td>
-<td>17</td>
-<td>-20~-19</td>
-<td>-9~-8</td>
-<td>+5~+6</td>
-<td></td>
-</tr>
-<tr><td>d/f+1+2, 1+2, qcf+2</td>
-<td>m, m, m</td>
-<td>17,14,29</td>
-<td>17</td>
-<td>-18</td>
-<td>KND</td>
-<td>KND</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>d/f+2+3</td>
-<td>l (TC)</td>
-<td>25</td>
-<td>23 RC</td>
-<td>-11</td>
-<td>+5</td>
-<td>KND</td>
-<td></td>
-</tr>
-<tr><td>d+1</td>
-<td>m</td>
-<td>24</td>
-<td>18~19</td>
-<td>-1~0</td>
-<td>+4~+5 OC</td>
-<td>KND</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>d+1, D</td>
-<td>m</td>
-<td>24</td>
-<td>18~19 RC</td>
-<td>-1~0</td>
-<td>+4~+5 OC</td>
-<td>KND</td>
-<td></td>
-</tr>
-<tr><td>d+2</td>
-<td>m</td>
-<td>31</td>
-<td>21</td>
-<td>+2</td>
-<td>+6 OC</td>
-<td>KND</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>d+4</td>
-<td>l</td>
-<td>13</td>
-<td>16</td>
-<td>-12</td>
-<td>-1</td>
-<td>-1</td>
-<td></td>
-</tr>
-<tr><td>d+4, 2</td>
-<td>l, h</td>
-<td>13,31</td>
-<td>16</td>
-<td>-5</td>
-<td>KND</td>
-<td>KND</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>d/b+2</td>
-<td>h</td>
-<td>14</td>
-<td>14</td>
-<td>-17</td>
-<td>+2</td>
-<td>+8</td>
-<td></td>
-</tr>
-<tr><td>d/b+2, 2</td>
-<td>h, m</td>
-<td>14,22</td>
-<td>14</td>
-<td>-7</td>
-<td>+5 OC</td>
-<td>KND</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>d/b+3</td>
-<td>h</td>
-<td>31</td>
-<td>33</td>
-<td>-8</td>
-<td>Launch</td>
-<td>Launch</td>
-<td></td>
-</tr>
-<tr><td>d/b+4 (Close)</td>
-<td>l (TC)</td>
-<td>24</td>
-<td>20</td>
-<td>-31</td>
-<td>+2(KND)</td>
-<td>KND</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>d/b+4</td>
-<td>l (TC)</td>
-<td>16</td>
-<td>20</td>
-<td>-31</td>
-<td>+2(KND)</td>
-<td>KND</td>
-<td></td>
-</tr>
-<tr><td>d/b+4, 1</td>
-<td>l (TC), m</td>
-<td>16(24),40</td>
-<td>20</td>
-<td>-16</td>
-<td>KND</td>
-<td>KND</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>d/b+1+2</td>
-<td>m</td>
-<td>22</td>
-<td>21~22</td>
-<td>-9~-8</td>
-<td>+7~+8</td>
-<td>+7~+8</td>
-<td></td>
-</tr>
-<tr><td>d/b+1+2, 1</td>
-<td>m, m</td>
-<td>22,27</td>
-<td>21~22</td>
-<td>-12</td>
-<td>KND</td>
-<td>KND</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>d/b+1+2, D</td>
-<td>m, (BOK)</td>
-<td>22</td>
-<td>21~22</td>
-<td>-12~-11</td>
-<td>+4~+5</td>
-<td>+4~+5</td>
-<td></td>
-</tr>
-<tr><td>b+1</td>
-<td>m</td>
-<td>22</td>
-<td>18</td>
-<td>-12</td>
-<td>+1</td>
-<td>CS</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>b+1, 4</td>
-<td>m, m, (KNK)</td>
-<td>22,18</td>
-<td>18</td>
-<td>+8</td>
-<td>+14</td>
-<td>+14</td>
-<td></td>
-</tr>
-<tr><td>b+2</td>
-<td>m</td>
-<td>14</td>
-<td>17</td>
-<td>-11</td>
-<td>0</td>
-<td>0</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>b+2, 1</td>
-<td>m, h</td>
-<td>14,14</td>
-<td>17</td>
-<td>-4</td>
-<td>+7</td>
-<td>+7</td>
-<td></td>
-</tr>
-<tr><td>b+2, 1+2</td>
-<td>m, m</td>
-<td>14,28</td>
-<td>17</td>
-<td>-11 OC</td>
-<td>+8 OC</td>
-<td>KND</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>b+3</td>
-<td>m</td>
-<td>20</td>
-<td>14</td>
-<td>-7</td>
-<td>+4</td>
-<td>+4</td>
-<td></td>
-</tr>
-<tr><td>b+3, 1</td>
-<td>m, m</td>
-<td>20,21</td>
-<td>14</td>
-<td>-7</td>
-<td>+4</td>
-<td>+4</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>b+3, 1, B</td>
-<td>m, m, (KNK)</td>
-<td>20,21</td>
-<td>14</td>
-<td>-11</td>
-<td>0</td>
-<td>0</td>
-<td></td>
-</tr>
-<tr><td>b+3, 1, D</td>
-<td>m, m, (BOK)</td>
-<td>20,21</td>
-<td>14</td>
-<td>-6</td>
-<td>+5</td>
-<td>+5</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>b+4</td>
-<td>m</td>
-<td>20</td>
-<td>18</td>
-<td>-8</td>
-<td>+5</td>
-<td>+5</td>
-<td></td>
-</tr>
-<tr><td>b+4, 1+2</td>
-<td>m, m</td>
-<td>20,28</td>
-<td>18</td>
-<td>-9</td>
-<td>KND</td>
-<td>KFUD</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>b+1+4</td>
-<td>hl</td>
-<td>13,20</td>
-<td>19,21</td>
-<td>-13</td>
-<td>+3</td>
-<td>+16 OC</td>
-<td></td>
-</tr>
-<tr><td>b+1+4 (First hit only)</td>
-<td>h</td>
-<td>13</td>
-<td>19</td>
-<td>-15</td>
-<td>-4</td>
-<td>-4</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>b+1+4 (Second hit only)</td>
-<td>l</td>
-<td>20</td>
-<td>21</td>
-<td>-13</td>
-<td>+3</td>
-<td>+3</td>
-<td></td>
-</tr>
-<tr><td>u/f+1</td>
-<td>h</td>
-<td>10</td>
-<td>13</td>
-<td>-1</td>
-<td>+6</td>
-<td>+6</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>u/f+1, 2</td>
-<td>h, m</td>
-<td>10,28</td>
-<td>13</td>
-<td>-14</td>
-<td>KND</td>
-<td>KND</td>
-<td></td>
-</tr>
-<tr><td>u/f+2</td>
-<td>m (TJ)</td>
-<td>20</td>
-<td>18~19</td>
-<td>-14~-13</td>
-<td>KND</td>
-<td>KND</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>u/f+2, 1</td>
-<td>m (TJ), m</td>
-<td>20,18</td>
-<td>18~19</td>
-<td>-8</td>
-<td>+4</td>
-<td>FS(+9) 22</td>
-<td></td>
-</tr>
-<tr><td>u+3</td>
-<td>m (TJ)</td>
-<td>27</td>
-<td>17</td>
-<td>-9</td>
-<td>KND</td>
-<td>KND</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>u/f+3</td>
-<td>m (TJ)</td>
-<td>28</td>
-<td>17</td>
-<td>-9</td>
-<td>KND</td>
-<td>KND</td>
-<td></td>
-</tr>
-<tr><td>u/b+4</td>
-<td>m (TJ)</td>
-<td>14</td>
-<td>15~16</td>
-<td>-19~-18</td>
-<td>-8~-7</td>
-<td>-8~-7</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>u+4</td>
-<td>m (TJ)</td>
-<td>20</td>
-<td>15~16</td>
-<td>-13~-12</td>
-<td>KND</td>
-<td>Launch (JG?)</td>
-<td></td>
-</tr>
-<tr><td>u/f+4</td>
-<td>m (TJ)</td>
-<td>17</td>
-<td>15~16</td>
-<td>-13~-12</td>
-<td>Launch (JG?)</td>
-<td>Launch (JG?)</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>f, F+2</td>
-<td>m</td>
-<td>31</td>
-<td>14(15~)</td>
-<td>-10</td>
-<td>KND</td>
-<td>KND</td>
-<td></td>
-</tr>
-<tr><td>f, F+3</td>
-<td>m (TJ)</td>
-<td>27</td>
-<td>26~29 (27~)</td>
-<td>-4~-1 OC</td>
-<td>KND</td>
-<td>KND</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>f, F+3, D</td>
-<td>m (TJ), (BOK)</td>
-<td>27</td>
-<td>26~29 (27~)</td>
-<td>+1~+4 OC</td>
-<td>KND</td>
-<td>KND</td>
-<td></td>
-</tr>
-<tr><td>f, F+4</td>
-<td>m</td>
-<td>21</td>
-<td>19(20~)</td>
-<td>-13</td>
-<td>Launch (JG?)</td>
-<td>Launch (JG?)</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>f, F+4, 3</td>
-<td>m, h</td>
-<td>21,16</td>
-<td>19(20~)</td>
-<td>-13~-12</td>
-<td>Launch (JG?)</td>
-<td>Launch (JG?)</td>
-<td></td>
-</tr>
-<tr><td>f, F+4, 3, 4</td>
-<td>m, h, l (TC)</td>
-<td>21,16,20</td>
-<td>19(20~)</td>
-<td>-31</td>
-<td>KND</td>
-<td>KND</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>b, B+1+2</td>
-<td>!</td>
-<td>81</td>
-<td>70(71~)</td>
-<td>KND</td>
-<td>KND</td>
-<td>KND</td>
-<td></td>
-</tr>
-<tr><td>f, f, f+3 or 2+4+3</td>
-<td>m (TJ)</td>
-<td>40</td>
-<td>23~26 (26~)</td>
-<td>+9~+12 GB</td>
-<td>KND</td>
-<td>KND</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>WS+1</td>
-<td>m</td>
-<td>17</td>
-<td>14~15</td>
-<td>-8~-7</td>
-<td>+4~+5</td>
-<td>+4~+5</td>
-<td></td>
-</tr>
-<tr><td>WS+1, 4</td>
-<td>m, l</td>
-<td>17,16</td>
-<td>14~15</td>
-<td>-12</td>
-<td>-1</td>
-<td>-1</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>WS+1, 4, 1</td>
-<td>m, l, m</td>
-<td>17,16,32</td>
-<td>14~15</td>
-<td>-14</td>
-<td>KND</td>
-<td>KND</td>
-<td></td>
-</tr>
-<tr><td>WS+2</td>
-<td>m</td>
-<td>20</td>
-<td>16~17</td>
-<td>-13~-12</td>
-<td>Launch (JG?)</td>
-<td>Launch (JG?)</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>WS+3</td>
-<td>m</td>
-<td>17</td>
-<td>13~14</td>
-<td>-6~-5</td>
-<td>+5~+6</td>
-<td>+5~+6</td>
-<td></td>
-</tr>
-<tr><td>WS+3, 1</td>
-<td>m, m</td>
-<td>17,14</td>
-<td>13~14</td>
-<td>-15</td>
-<td>+3</td>
-<td>+3</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>WS+3, 1, 2</td>
-<td>m, m, h</td>
-<td>17,14,24</td>
-<td>13~14</td>
-<td>-18</td>
-<td>KND</td>
-<td>KND</td>
-<td></td>
-</tr>
-<tr><td>WS+4</td>
-<td>m</td>
-<td>20</td>
-<td>11</td>
-<td>-5</td>
-<td>+6</td>
-<td>+6</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>WS+1+2</td>
-<td>m</td>
-<td>29</td>
-<td>14</td>
-<td>-14</td>
-<td>+18(KND)</td>
-<td>+18(KND)</td>
-<td></td>
-</tr>
-<tr><td>FC+d/f+3</td>
-<td>l</td>
-<td>28</td>
-<td>23 RC</td>
-<td>-14</td>
-<td>KND</td>
-<td>KND</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>SS+1+2</td>
-<td>m</td>
-<td>40</td>
-<td>19(28~)</td>
-<td>-10</td>
-<td>KND</td>
-<td>KND</td>
-<td></td>
-</tr>
-<tr><td>BT 1+2</td>
-<td>m</td>
-<td>28</td>
-<td>11</td>
-<td>-20</td>
-<td>KND</td>
-<td>KFUD</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>Opponent Down d+3+4</td>
-<td>On grounded opponent(l)</td>
-<td>24</td>
-<td>24</td>
-<td>-13</td>
-<td>+3</td>
-<td>+3</td>
-<td></td>
-</tr>
-<tr><td>1+2+3+4</td>
-<td>(Special)</td>
-<td></td>
-<td>24</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>1+2+3+4, b+3</td>
-<td>m</td>
-<td>24</td>
-<td>14(79~)</td>
-<td>-7</td>
-<td>+4</td>
-<td>+4</td>
-<td></td>
-</tr>
-<tr><td>1+2+3+4, b+3, 1</td>
-<td>m, m</td>
-<td>24,21</td>
-<td>14(79~)</td>
-<td>-7</td>
-<td>+4</td>
-<td>+4</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>1+2+3+4, b+3, 1, 2</td>
-<td>m, m, m</td>
-<td>24,21,27</td>
-<td>14(79~)</td>
-<td>-15</td>
-<td>KND</td>
-<td>KND</td>
-<td></td>
-</tr>
-<tr><td>1+2+3+4, d/b+4</td>
-<td>l (TC)</td>
-<td>19(28)</td>
-<td>20(85~)</td>
-<td>-31</td>
-<td>KND</td>
-<td>KND</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>1+2+3+4, d/b+4, 1</td>
-<td>l, m</td>
-<td>19(28),40</td>
-<td>20(85~)</td>
-<td>-16</td>
-<td>KND</td>
-<td>KND</td>
-<td></td>
-</tr>
-<tr><td>1+2+3+4, d/b+4, 1, 2</td>
-<td>l, m, m</td>
-<td>19(28),40,27</td>
-<td>20(85~)</td>
-<td>-15</td>
-<td>KND</td>
-<td>KND</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>f+4</td>
-<td>m, (KNK)</td>
-<td>18</td>
-<td>17</td>
-<td>+8</td>
-<td>+14</td>
-<td>+14</td>
-<td></td>
-</tr>
-<tr><td>b+3+4</td>
-<td>(KNK)</td>
-<td></td>
-<td>17</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>f+4, d/f or KNK d/f (to CD)</td>
-<td>m, (CD)</td>
-<td>18</td>
-<td>17 RC</td>
-<td>-5</td>
-<td>+1</td>
-<td>+1</td>
-<td></td>
-</tr>
-<tr><td>KNK 1</td>
-<td>h</td>
-<td>18</td>
-<td>18~19</td>
-<td>-9~-8</td>
-<td>+2~+3</td>
-<td>+2~+3</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>KNK 1, 2</td>
-<td>h, m</td>
-<td>18,22</td>
-<td>18~19</td>
-<td>-12</td>
-<td>+7</td>
-<td>KND</td>
-<td></td>
-</tr>
-<tr><td>KNK 1, D</td>
-<td>m, (BOK)</td>
-<td>18</td>
-<td>18~19</td>
-<td>-7~-6</td>
-<td>+4~+5</td>
-<td>+4~+5</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>KNK 2</td>
-<td>h</td>
-<td>24</td>
-<td>15</td>
-<td>-4</td>
-<td>+7OB</td>
-<td>CS</td>
-<td></td>
-</tr>
-<tr><td>KNK 3</td>
-<td>m (TJ)</td>
-<td>22</td>
-<td>20</td>
-<td>-13</td>
-<td>Launch (JG?)</td>
-<td>Launch (JG?)</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>KNK 3, 4</td>
-<td>m (TJ), m</td>
-<td>22,25</td>
-<td>20</td>
-<td>-13</td>
-<td>Launch (JG?)</td>
-<td>Launch (JG?)</td>
-<td></td>
-</tr>
-<tr><td>KNK 4</td>
-<td>l</td>
-<td>24</td>
-<td>20</td>
-<td>-19</td>
-<td>-3</td>
-<td>+7</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>d+1+2 or FC+d/b or d+1+2</td>
-<td>(Special) (TC)(BOK)</td>
-<td></td>
-<td>( RC)</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr><td>BOK 1</td>
-<td>m</td>
-<td>18</td>
-<td>13(33~)</td>
-<td>-4</td>
-<td>+9</td>
-<td>+9</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>BOK 1, 2</td>
-<td>m, m</td>
-<td>18,27</td>
-<td>13(33~)</td>
-<td>-14</td>
-<td>+2</td>
-<td>+2</td>
-<td></td>
-</tr>
-<tr><td>BOK 2</td>
-<td>m</td>
-<td>27</td>
-<td>19(39~)</td>
-<td>-11</td>
-<td>Launch(JG?)</td>
-<td>Launch(JG?)</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>BOK 3</td>
-<td>h (TJ)</td>
-<td>40</td>
-<td>21~22 (41~)</td>
-<td>+9</td>
-<td>KND</td>
-<td>KND</td>
-<td>Homing</td>
-</tr>
-<tr><td>BOK 4</td>
-<td>m, (KNK)</td>
-<td>18</td>
-<td>20(40~)</td>
-<td>+8</td>
-<td>+14</td>
-<td>+14</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>BOK 1+2</td>
-<td>h(Absorbs 1 h/m hit)</td>
-<td>40</td>
-<td>26(46~)</td>
-<td>-9</td>
-<td>ATD</td>
-<td>ATD</td>
-<td></td>
-</tr>
-<tr><td>qcf or KNK D/F</td>
-<td>(CD)</td>
-<td></td>
-<td>26(46~)</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>qcf+1</td>
-<td>l (TC)</td>
-<td>22</td>
-<td>18 RC(20~)</td>
-<td>-13</td>
-<td>-2</td>
-<td>-2</td>
-<td></td>
-</tr>
-<tr><td>qcf+2 (Close)</td>
-<td>m</td>
-<td>32</td>
-<td>16(18~)</td>
-<td>-4</td>
-<td>+9</td>
-<td>KND</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>qcf+2</td>
-<td>m</td>
-<td>21</td>
-<td>16(18~)</td>
-<td>-4</td>
-<td>+9</td>
-<td>KND</td>
-<td></td>
-</tr>
-<tr><td>qcf+2, B</td>
-<td>m, (KNK)</td>
-<td>21(32)</td>
-<td>16(18~)</td>
-<td>-5</td>
-<td>+8</td>
-<td>KND</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>qcf+1+2</td>
-<td>m</td>
-<td>29</td>
-<td>14(16~)</td>
-<td>-14</td>
-<td>+18(KND)</td>
-<td>+18(KND)</td>
-<td></td>
-</tr>
-<tr><td>qcf+3+4</td>
-<td>mm (TJ)</td>
-<td>8,27</td>
-<td>18,24~25 (20~)</td>
-<td>-6~-5</td>
-<td>KND</td>
-<td>KND</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>qcf+3+4 (First hit only, Second hit miss)</td>
-<td>m (TJ)</td>
-<td>8</td>
-<td>18(20~)</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>Homing</td>
-</tr>
-<tr><td>QCF+3</td>
-<td>m</td>
-<td>17</td>
-<td>13~14 (16~)</td>
-<td>-6~-5</td>
-<td>+5~+6</td>
-<td>+5~+6</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>QCF+3, 1</td>
-<td>m, m</td>
-<td>17,14</td>
-<td>13~14 (16~)</td>
-<td>-15</td>
-<td>+3</td>
-<td>+3</td>
-<td></td>
-</tr>
-<tr><td>QCF+3, 1, 2</td>
-<td>m, m, h</td>
-<td>17,14,24</td>
-<td>13~14 (16~)</td>
-<td>-18</td>
-<td>KND</td>
-<td>KND</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>QCF+4</td>
-<td>m</td>
-<td>20</td>
-<td>11(14~)</td>
-<td>-5</td>
-<td>+6</td>
-<td>+6</td>
-<td></td>
-</tr>
-</table>
-<div id="basic"></div>
-<h3>Basic Moves</h3>
-<table border="1">
-<tr BGCOLOR="LightGray"><td><b>Command</b></td><td><b>Hit level</b></td><td><b>Damage</b></td><td><b>Start up frame</b></td><td><b>Block frame</b></td><td><b>Hit frame</b></td><td><b>Counter hit frame</b></td><td>Notes</td></tr>
-<tr><td>1</td>
-<td>h</td>
-<td>9</td>
-<td>10</td>
-<td>+1</td>
-<td>+8</td>
-<td>+8</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>2</td>
-<td>h</td>
-<td>12</td>
-<td>11</td>
-<td>-1</td>
-<td>+5</td>
-<td>+5</td>
-<td></td>
-</tr>
-<tr><td>3</td>
-<td>h</td>
-<td>20</td>
-<td>14</td>
-<td>-8</td>
-<td>+4</td>
-<td>+4</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>4</td>
-<td>h</td>
-<td>22</td>
-<td>12</td>
-<td>-8</td>
-<td>+6</td>
-<td>Launch (JG?)</td>
-<td></td>
-</tr>
-<tr><td>b+1</td>
-<td>m</td>
-<td>22</td>
-<td>18</td>
-<td>-12</td>
-<td>+1</td>
-<td>CS</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>b+2</td>
-<td>m</td>
-<td>14</td>
-<td>17</td>
-<td>-11</td>
-<td>0</td>
-<td>0</td>
-<td></td>
-</tr>
-<tr><td>b+3</td>
-<td>m</td>
-<td>20</td>
-<td>14</td>
-<td>-7</td>
-<td>+4</td>
-<td>+4</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>b+4</td>
-<td>m</td>
-<td>20</td>
-<td>18</td>
-<td>-8</td>
-<td>+5</td>
-<td>+5</td>
-<td></td>
-</tr>
-<tr><td>f+1</td>
-<td>h</td>
-<td>9</td>
-<td>10</td>
-<td>+1</td>
-<td>+8</td>
-<td>+8</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>f+2</td>
-<td>m</td>
-<td>18</td>
-<td>14</td>
-<td>-5</td>
-<td>+6</td>
-<td>+6</td>
-<td></td>
-</tr>
-<tr><td>f+3</td>
-<td>h</td>
-<td>31</td>
-<td>20</td>
-<td>0</td>
-<td>+4</td>
-<td>KND</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>f+4</td>
-<td>m, (KNK)</td>
-<td>18</td>
-<td>17</td>
-<td>+8</td>
-<td>+14</td>
-<td>+14</td>
-<td></td>
-</tr>
-<tr><td>f, F+1</td>
-<td>h</td>
-<td>9</td>
-<td>10(11~)</td>
-<td>+1</td>
-<td>+8</td>
-<td>+8</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>f, F+2</td>
-<td>m</td>
-<td>31</td>
-<td>14(15~)</td>
-<td>-10</td>
-<td>KND</td>
-<td>KND</td>
-<td></td>
-</tr>
-<tr><td>f, F+3</td>
-<td>m (TJ)</td>
-<td>27</td>
-<td>26~29 (27~)</td>
-<td>-4~-1 OC</td>
-<td>KND</td>
-<td>KND</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>f, F+4</td>
-<td>m</td>
-<td>21</td>
-<td>19(20~)</td>
-<td>-13</td>
-<td>Launch (JG?)</td>
-<td>Launch (JG?)</td>
-<td></td>
-</tr>
-<tr><td>d/b+1</td>
-<td>Sm (TC)</td>
-<td>6</td>
-<td>10 RC</td>
-<td>-5</td>
-<td>+6</td>
-<td>+6</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>d+1</td>
-<td>m</td>
-<td>24</td>
-<td>18~19</td>
-<td>-1~0</td>
-<td>+4~+5 OC</td>
-<td>KND</td>
-<td></td>
-</tr>
-<tr><td>d/b+2</td>
-<td>h</td>
-<td>14</td>
-<td>14</td>
-<td>-17</td>
-<td>+2</td>
-<td>+8</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>d+2</td>
-<td>m</td>
-<td>31</td>
-<td>21</td>
-<td>+2 OC</td>
-<td>+6 OC</td>
-<td>KND</td>
-<td></td>
-</tr>
-<tr><td>d/b+3</td>
-<td>h</td>
-<td>31</td>
-<td>33</td>
-<td>-8</td>
-<td>Launch</td>
-<td>Launch</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>d+3</td>
-<td>l (TC)</td>
-<td>16</td>
-<td>16 RC</td>
-<td>-17</td>
-<td>-3</td>
-<td>-3</td>
-<td></td>
-</tr>
-<tr><td>d/b+4</td>
-<td>l (TC)</td>
-<td>16(24)</td>
-<td>20</td>
-<td>-31</td>
-<td>+2(KND)</td>
-<td>KND</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>d+4</td>
-<td>l</td>
-<td>13</td>
-<td>16</td>
-<td>-12</td>
-<td>-1</td>
-<td>-1</td>
-<td></td>
-</tr>
-<tr><td>d+3+4</td>
-<td>l (TC)</td>
-<td>9</td>
-<td>12 RC</td>
-<td>-13</td>
-<td>-2</td>
-<td>-2</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>FC+1</td>
-<td>Sm (TC)</td>
-<td>6</td>
-<td>10 RC</td>
-<td>-5</td>
-<td>+6</td>
-<td>+6</td>
-<td></td>
-</tr>
-<tr><td>FC+2</td>
-<td>Sm (TC)</td>
-<td>10</td>
-<td>11 RC</td>
-<td>-4</td>
-<td>+7</td>
-<td>+7</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>FC+d/b or d+3</td>
-<td>l (TC)</td>
-<td>16</td>
-<td>16 RC</td>
-<td>-17</td>
-<td>-3</td>
-<td>-3</td>
-<td></td>
-</tr>
-<tr><td>FC+4</td>
-<td>l (TC)</td>
-<td>13</td>
-<td>12 RC</td>
-<td>-15</td>
-<td>-4</td>
-<td>-4</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>WS+1</td>
-<td>m</td>
-<td>17</td>
-<td>14~15</td>
-<td>-8~-7</td>
-<td>+4~+5</td>
-<td>+4~+5</td>
-<td></td>
-</tr>
-<tr><td>WS+2</td>
-<td>m</td>
-<td>20</td>
-<td>16~17</td>
-<td>-13~-12</td>
-<td>Launch (JG?)</td>
-<td>Launch (JG?)</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>WS+3</td>
-<td>m</td>
-<td>17</td>
-<td>13~14</td>
-<td>-6~-5</td>
-<td>+5~+6</td>
-<td>+5~+6</td>
-<td></td>
-</tr>
-<tr><td>WS+4</td>
-<td>m</td>
-<td>20</td>
-<td>11</td>
-<td>-5</td>
-<td>+6</td>
-<td>+6</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>d/f+1</td>
-<td>m</td>
-<td>17</td>
-<td>13</td>
-<td>-1</td>
-<td>+7</td>
-<td>+7</td>
-<td></td>
-</tr>
-<tr><td>d/f+2</td>
-<td>m</td>
-<td>18</td>
-<td>15~16</td>
-<td>-13~-12</td>
-<td>Launch (JG?)(-2)</td>
-<td>Launch (JG?)</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>d/f+3</td>
-<td>m</td>
-<td>29</td>
-<td>17~18</td>
-<td>-9~-8</td>
-<td>KND</td>
-<td>KFUD</td>
-<td>Homing</td>
-</tr>
-<tr><td>d/f+4</td>
-<td>m</td>
-<td>18</td>
-<td>13</td>
-<td>-6</td>
-<td>+5</td>
-<td>+5</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>u/b+1</td>
-<td>(Special)(h or m punch parry)</td>
-<td></td>
-<td>13</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr><td>u+1 or u/f+1+2</td>
-<td>m (TJ)</td>
-<td>16</td>
-<td>18</td>
-<td>-8</td>
-<td>+3</td>
-<td>+3</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>u/f+1</td>
-<td>h</td>
-<td>10</td>
-<td>13</td>
-<td>-1</td>
-<td>+6</td>
-<td>+6</td>
-<td></td>
-</tr>
-<tr><td>u/b or u+2</td>
-<td>h</td>
-<td>22</td>
-<td>15</td>
-<td>-12</td>
-<td>+9</td>
-<td>+9</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>u/f+2</td>
-<td>m (TJ)</td>
-<td>20</td>
-<td>18~19</td>
-<td>-14~-13</td>
-<td>KND</td>
-<td>KND</td>
-<td></td>
-</tr>
-<tr><td>u/b+3</td>
-<td>m</td>
-<td>33</td>
-<td>21</td>
-<td>-17</td>
-<td>KND</td>
-<td>KND</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>u+3</td>
-<td>m</td>
-<td>27</td>
-<td>17</td>
-<td>-9</td>
-<td>KND</td>
-<td>KND</td>
-<td></td>
-</tr>
-<tr><td>u/f+3</td>
-<td>m</td>
-<td>28</td>
-<td>17</td>
-<td>-9</td>
-<td>KND</td>
-<td>KND</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>u/b+4</td>
-<td>m (TJ)</td>
-<td>14</td>
-<td>15~16</td>
-<td>-19~-18</td>
-<td>-8~-7</td>
-<td>-8~-7</td>
-<td></td>
-</tr>
-<tr><td>u+4</td>
-<td>m (TJ)</td>
-<td>20</td>
-<td>15~16</td>
-<td>-13~-12</td>
-<td>KND</td>
-<td>Launch (JG?)</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>u/f+4</td>
-<td>m (TJ)</td>
-<td>17</td>
-<td>15~16</td>
-<td>-13~-12</td>
-<td>Launch (JG?)</td>
-<td>Launch (JG?)</td>
-<td></td>
-</tr>
-<tr><td>SS+1</td>
-<td>h</td>
-<td>9</td>
-<td>10(11~)</td>
-<td>+1</td>
-<td>+8</td>
-<td>+8</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>SS+2</td>
-<td>h</td>
-<td>12</td>
-<td>11(12~)</td>
-<td>-1</td>
-<td>+5</td>
-<td>+5</td>
-<td></td>
-</tr>
-<tr><td>SS+3</td>
-<td>h</td>
-<td>20</td>
-<td>14(15~)</td>
-<td>-8</td>
-<td>+4</td>
-<td>+4</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>SS+4</td>
-<td>h</td>
-<td>22</td>
-<td>12(13~)</td>
-<td>-8</td>
-<td>+6</td>
-<td>Launch (JG?)</td>
-<td></td>
-</tr>
-<tr><td>BT 1 or 2</td>
-<td>h</td>
-<td>20</td>
-<td>8</td>
-<td>-8</td>
-<td>+3</td>
-<td>+3</td>
-<td></td>
-</tr>
-<tr BGCOLOR="LightGray"><td>BT 3 or 4</td>
-<td>h</td>
-<td>33</td>
-<td>10</td>
-<td>-8</td>
-<td>KND</td>
-<td>KND</td>
-<td></td>
-</tr>
-</table>
-</body>
+  <body>
+    <a href="/tag2">To character select</a> |
+    <a href="#special">Special Moves</a> | <a href="#basic">Basic Moves</a>
+    <div id="special"></div>
+    <h3>Special Moves</h3>
+    <table border="1">
+      <tr bgcolor="LightGray">
+        <td><b>Command</b></td>
+        <td><b>Hit level</b></td>
+        <td><b>Damage</b></td>
+        <td><b>Start up frame</b></td>
+        <td><b>Block frame</b></td>
+        <td><b>Hit frame</b></td>
+        <td><b>Counter hit frame</b></td>
+        <td>Notes</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>h</td>
+        <td>9</td>
+        <td>10</td>
+        <td>+1</td>
+        <td>+8</td>
+        <td>+8</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>1, 2</td>
+        <td>h, h</td>
+        <td>9,13</td>
+        <td>10</td>
+        <td>-1</td>
+        <td>+7</td>
+        <td>+7</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>1, 2, B</td>
+        <td>h, h, (KNK)</td>
+        <td>9,13</td>
+        <td>10</td>
+        <td>-10</td>
+        <td>-2</td>
+        <td>-2</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>1, 2, 1</td>
+        <td>h, h, h</td>
+        <td>9,13,21</td>
+        <td>10</td>
+        <td>-5</td>
+        <td>+6</td>
+        <td>+9</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>1, 2, 1, 1</td>
+        <td>h, h, h, m</td>
+        <td>9,13,21,28</td>
+        <td>10</td>
+        <td>-14</td>
+        <td>KND</td>
+        <td>KND</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>1, 2, 1, 4</td>
+        <td>h, h, h, h</td>
+        <td>9,13,21,40</td>
+        <td>10</td>
+        <td>-6</td>
+        <td>KND</td>
+        <td>KND</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>1, 2, 4</td>
+        <td>h, h, l</td>
+        <td>9,13,20</td>
+        <td>10</td>
+        <td>-13</td>
+        <td>+3</td>
+        <td>+3</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>1, 4</td>
+        <td>h, h</td>
+        <td>9,22</td>
+        <td>10</td>
+        <td>-4</td>
+        <td>+5</td>
+        <td>Launch (JG?)</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>h</td>
+        <td>12</td>
+        <td>11</td>
+        <td>-1</td>
+        <td>+5</td>
+        <td>+5</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>2, 1</td>
+        <td>h, h</td>
+        <td>12,16</td>
+        <td>11</td>
+        <td>-7</td>
+        <td>+4</td>
+        <td>+4</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>2, 2</td>
+        <td>h, m</td>
+        <td>12,27</td>
+        <td>11</td>
+        <td>-15</td>
+        <td>KND</td>
+        <td>KND</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>3</td>
+        <td>h</td>
+        <td>20</td>
+        <td>14</td>
+        <td>-8</td>
+        <td>+4</td>
+        <td>+4</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>3, 2</td>
+        <td>h, h</td>
+        <td>20,13</td>
+        <td>14</td>
+        <td>-2</td>
+        <td>+9</td>
+        <td>+9</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>3, 2, D</td>
+        <td>h, h, (BOK)</td>
+        <td>20,13</td>
+        <td>14</td>
+        <td>-6</td>
+        <td>+5</td>
+        <td>+5</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>3, 2, 3</td>
+        <td>h, h, m (TJ)</td>
+        <td>20,13,35</td>
+        <td>14</td>
+        <td>-7</td>
+        <td>KND</td>
+        <td>KFUD</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>3, 2, 3, B (Cancel)</td>
+        <td>h, h</td>
+        <td>20,13</td>
+        <td>14</td>
+        <td>-15</td>
+        <td>-4</td>
+        <td>-4</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>3, 2, 4</td>
+        <td>h, h, m, (KNK)</td>
+        <td>20,13,18</td>
+        <td>14</td>
+        <td>+8</td>
+        <td>+14</td>
+        <td>+14</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>2+3</td>
+        <td>m(Absorbs 1 h/m hit)</td>
+        <td>28</td>
+        <td>30</td>
+        <td>-8</td>
+        <td>+5</td>
+        <td>KND</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>f+2</td>
+        <td>h</td>
+        <td>18</td>
+        <td>14~15</td>
+        <td>-5~-4</td>
+        <td>+6~+7</td>
+        <td>+6~+7</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>f+2, 2</td>
+        <td>h, m</td>
+        <td>18,28</td>
+        <td>14~15</td>
+        <td>-12</td>
+        <td>+6</td>
+        <td>KND</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>f+3</td>
+        <td>h</td>
+        <td>31</td>
+        <td>20</td>
+        <td>0</td>
+        <td>+4</td>
+        <td>KND</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>f+3, D</td>
+        <td>h, (BOK)</td>
+        <td>31</td>
+        <td>20</td>
+        <td>+1</td>
+        <td>+5</td>
+        <td>KND</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>f+1+2</td>
+        <td>m</td>
+        <td>43</td>
+        <td>18~19</td>
+        <td>-14~-13</td>
+        <td>KND</td>
+        <td>KND</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>f+2+3</td>
+        <td>h</td>
+        <td>28</td>
+        <td>20</td>
+        <td>-9</td>
+        <td>KND</td>
+        <td>KND</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>d/f+1</td>
+        <td>m</td>
+        <td>17</td>
+        <td>13</td>
+        <td>-1</td>
+        <td>+7</td>
+        <td>+7</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>d/f+1, 2</td>
+        <td>m, h</td>
+        <td>17,27</td>
+        <td>13</td>
+        <td>-6</td>
+        <td>KND</td>
+        <td>KND</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>d/f+2</td>
+        <td>m</td>
+        <td>18</td>
+        <td>15~16</td>
+        <td>-13~-12</td>
+        <td>Launch (JG?)(-2)</td>
+        <td>Launch (JG?)</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>d/f+3</td>
+        <td>m</td>
+        <td>29</td>
+        <td>17~18</td>
+        <td>-9~-8</td>
+        <td>KND</td>
+        <td>KFUD</td>
+        <td>Homing</td>
+      </tr>
+      <tr>
+        <td>d/f+1+2</td>
+        <td>m</td>
+        <td>17</td>
+        <td>17</td>
+        <td>-23</td>
+        <td>-11</td>
+        <td>-11</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>d/f+1+2, 1+2</td>
+        <td>m, m</td>
+        <td>17,14</td>
+        <td>17</td>
+        <td>-20~-19</td>
+        <td>-9~-8</td>
+        <td>+5~+6</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>d/f+1+2, 1+2, qcf+2</td>
+        <td>m, m, m</td>
+        <td>17,14,29</td>
+        <td>17</td>
+        <td>-18</td>
+        <td>KND</td>
+        <td>KND</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>d/f+2+3</td>
+        <td>l (TC)</td>
+        <td>25</td>
+        <td>23 RC</td>
+        <td>-11</td>
+        <td>+5</td>
+        <td>KND</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>d+1</td>
+        <td>m</td>
+        <td>24</td>
+        <td>18~19</td>
+        <td>-1~0</td>
+        <td>+4~+5 OC</td>
+        <td>KND</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>d+1, D</td>
+        <td>m</td>
+        <td>24</td>
+        <td>18~19 RC</td>
+        <td>-1~0</td>
+        <td>+4~+5 OC</td>
+        <td>KND</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>d+2</td>
+        <td>m</td>
+        <td>31</td>
+        <td>21</td>
+        <td>+2</td>
+        <td>+6 OC</td>
+        <td>KND</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>d+4</td>
+        <td>l</td>
+        <td>13</td>
+        <td>16</td>
+        <td>-12</td>
+        <td>-1</td>
+        <td>-1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>d+4, 2</td>
+        <td>l, h</td>
+        <td>13,31</td>
+        <td>16</td>
+        <td>-5</td>
+        <td>KND</td>
+        <td>KND</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>d/b+2</td>
+        <td>h</td>
+        <td>14</td>
+        <td>14</td>
+        <td>-17</td>
+        <td>+2</td>
+        <td>+8</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>d/b+2, 2</td>
+        <td>h, m</td>
+        <td>14,22</td>
+        <td>14</td>
+        <td>-7</td>
+        <td>+5 OC</td>
+        <td>KND</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>d/b+3</td>
+        <td>h</td>
+        <td>31</td>
+        <td>33</td>
+        <td>-8</td>
+        <td>Launch</td>
+        <td>Launch</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>d/b+4 (Close)</td>
+        <td>l (TC)</td>
+        <td>24</td>
+        <td>20</td>
+        <td>-31</td>
+        <td>+2(KND)</td>
+        <td>KND</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>d/b+4</td>
+        <td>l (TC)</td>
+        <td>16</td>
+        <td>20</td>
+        <td>-31</td>
+        <td>+2(KND)</td>
+        <td>KND</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>d/b+4, 1</td>
+        <td>l (TC), m</td>
+        <td>16(24),40</td>
+        <td>20</td>
+        <td>-16</td>
+        <td>KND</td>
+        <td>KND</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>d/b+1+2</td>
+        <td>m</td>
+        <td>22</td>
+        <td>21~22</td>
+        <td>-9~-8</td>
+        <td>+7~+8</td>
+        <td>+7~+8</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>d/b+1+2, 1</td>
+        <td>m, m</td>
+        <td>22,27</td>
+        <td>21~22</td>
+        <td>-12</td>
+        <td>KND</td>
+        <td>KND</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>d/b+1+2, D</td>
+        <td>m, (BOK)</td>
+        <td>22</td>
+        <td>21~22</td>
+        <td>-12~-11</td>
+        <td>+4~+5</td>
+        <td>+4~+5</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>b+1</td>
+        <td>m</td>
+        <td>22</td>
+        <td>18</td>
+        <td>-12</td>
+        <td>+1</td>
+        <td>CS</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>b+1, 4</td>
+        <td>m, m, (KNK)</td>
+        <td>22,18</td>
+        <td>18</td>
+        <td>+8</td>
+        <td>+14</td>
+        <td>+14</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>b+2</td>
+        <td>m</td>
+        <td>14</td>
+        <td>17</td>
+        <td>-11</td>
+        <td>0</td>
+        <td>0</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>b+2, 1</td>
+        <td>m, h</td>
+        <td>14,14</td>
+        <td>17</td>
+        <td>-4</td>
+        <td>+7</td>
+        <td>+7</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>b+2, 1+2</td>
+        <td>m, m</td>
+        <td>14,28</td>
+        <td>17</td>
+        <td>-11 OC</td>
+        <td>+8 OC</td>
+        <td>KND</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>b+3</td>
+        <td>m</td>
+        <td>20</td>
+        <td>14</td>
+        <td>-7</td>
+        <td>+4</td>
+        <td>+4</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>b+3, 1</td>
+        <td>m, m</td>
+        <td>20,21</td>
+        <td>14</td>
+        <td>-7</td>
+        <td>+4</td>
+        <td>+4</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>b+3, 1, B</td>
+        <td>m, m, (KNK)</td>
+        <td>20,21</td>
+        <td>14</td>
+        <td>-11</td>
+        <td>0</td>
+        <td>0</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>b+3, 1, D</td>
+        <td>m, m, (BOK)</td>
+        <td>20,21</td>
+        <td>14</td>
+        <td>-6</td>
+        <td>+5</td>
+        <td>+5</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>b+4</td>
+        <td>m</td>
+        <td>20</td>
+        <td>18</td>
+        <td>-8</td>
+        <td>+5</td>
+        <td>+5</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>b+4, 1+2</td>
+        <td>m, m</td>
+        <td>20,28</td>
+        <td>18</td>
+        <td>-9</td>
+        <td>KND</td>
+        <td>KFUD</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>b+1+4</td>
+        <td>hl</td>
+        <td>13,20</td>
+        <td>19,21</td>
+        <td>-13</td>
+        <td>+3</td>
+        <td>+16 OC</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>b+1+4 (First hit only)</td>
+        <td>h</td>
+        <td>13</td>
+        <td>19</td>
+        <td>-15</td>
+        <td>-4</td>
+        <td>-4</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>b+1+4 (Second hit only)</td>
+        <td>l</td>
+        <td>20</td>
+        <td>21</td>
+        <td>-13</td>
+        <td>+3</td>
+        <td>+3</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>u/f+1</td>
+        <td>h</td>
+        <td>10</td>
+        <td>13</td>
+        <td>-1</td>
+        <td>+6</td>
+        <td>+6</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>u/f+1, 2</td>
+        <td>h, m</td>
+        <td>10,28</td>
+        <td>13</td>
+        <td>-14</td>
+        <td>KND</td>
+        <td>KND</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>u/f+2</td>
+        <td>m (TJ)</td>
+        <td>20</td>
+        <td>18~19</td>
+        <td>-14~-13</td>
+        <td>KND</td>
+        <td>KND</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>u/f+2, 1</td>
+        <td>m (TJ), m</td>
+        <td>20,18</td>
+        <td>18~19</td>
+        <td>-8</td>
+        <td>+4</td>
+        <td>FS(+9) 22</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>u+3</td>
+        <td>m (TJ)</td>
+        <td>27</td>
+        <td>17</td>
+        <td>-9</td>
+        <td>KND</td>
+        <td>KND</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>u/f+3</td>
+        <td>m (TJ)</td>
+        <td>28</td>
+        <td>17</td>
+        <td>-9</td>
+        <td>KND</td>
+        <td>KND</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>u/b+4</td>
+        <td>m (TJ)</td>
+        <td>14</td>
+        <td>15~16</td>
+        <td>-19~-18</td>
+        <td>-8~-7</td>
+        <td>-8~-7</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>u+4</td>
+        <td>m (TJ)</td>
+        <td>20</td>
+        <td>15~16</td>
+        <td>-13~-12</td>
+        <td>KND</td>
+        <td>Launch (JG?)</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>u/f+4</td>
+        <td>m (TJ)</td>
+        <td>17</td>
+        <td>15~16</td>
+        <td>-13~-12</td>
+        <td>Launch (JG?)</td>
+        <td>Launch (JG?)</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>f, F+2</td>
+        <td>m</td>
+        <td>31</td>
+        <td>14(15~)</td>
+        <td>-10</td>
+        <td>KND</td>
+        <td>KND</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>f, F+3</td>
+        <td>m (TJ)</td>
+        <td>27</td>
+        <td>26~29 (27~)</td>
+        <td>-4~-1 OC</td>
+        <td>KND</td>
+        <td>KND</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>f, F+3, D</td>
+        <td>m (TJ), (BOK)</td>
+        <td>27</td>
+        <td>26~29 (27~)</td>
+        <td>+1~+4 OC</td>
+        <td>KND</td>
+        <td>KND</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>f, F+4</td>
+        <td>m</td>
+        <td>21</td>
+        <td>19(20~)</td>
+        <td>-13</td>
+        <td>Launch (JG?)</td>
+        <td>Launch (JG?)</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>f, F+4, 3</td>
+        <td>m, h</td>
+        <td>21,16</td>
+        <td>19(20~)</td>
+        <td>-13~-12</td>
+        <td>Launch (JG?)</td>
+        <td>Launch (JG?)</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>f, F+4, 3, 4</td>
+        <td>m, h, l (TC)</td>
+        <td>21,16,20</td>
+        <td>19(20~)</td>
+        <td>-31</td>
+        <td>KND</td>
+        <td>KND</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>b, B+1+2</td>
+        <td>!</td>
+        <td>81</td>
+        <td>70(71~)</td>
+        <td>KND</td>
+        <td>KND</td>
+        <td>KND</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>f, f, f+3 or 2+4+3</td>
+        <td>m (TJ)</td>
+        <td>40</td>
+        <td>23~26 (26~)</td>
+        <td>+9~+12 GB</td>
+        <td>KND</td>
+        <td>KND</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>WS+1</td>
+        <td>m</td>
+        <td>17</td>
+        <td>14~15</td>
+        <td>-8~-7</td>
+        <td>+4~+5</td>
+        <td>+4~+5</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>WS+1, 4</td>
+        <td>m, l</td>
+        <td>17,16</td>
+        <td>14~15</td>
+        <td>-12</td>
+        <td>-1</td>
+        <td>-1</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>WS+1, 4, 1</td>
+        <td>m, l, m</td>
+        <td>17,16,32</td>
+        <td>14~15</td>
+        <td>-14</td>
+        <td>KND</td>
+        <td>KND</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>WS+2</td>
+        <td>m</td>
+        <td>20</td>
+        <td>16~17</td>
+        <td>-13~-12</td>
+        <td>Launch (JG?)</td>
+        <td>Launch (JG?)</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>WS+3</td>
+        <td>m</td>
+        <td>17</td>
+        <td>13~14</td>
+        <td>-6~-5</td>
+        <td>+5~+6</td>
+        <td>+5~+6</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>WS+3, 1</td>
+        <td>m, m</td>
+        <td>17,14</td>
+        <td>13~14</td>
+        <td>-15</td>
+        <td>+3</td>
+        <td>+3</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>WS+3, 1, 2</td>
+        <td>m, m, h</td>
+        <td>17,14,24</td>
+        <td>13~14</td>
+        <td>-18</td>
+        <td>KND</td>
+        <td>KND</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>WS+4</td>
+        <td>m</td>
+        <td>20</td>
+        <td>11</td>
+        <td>-5</td>
+        <td>+6</td>
+        <td>+6</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>WS+1+2</td>
+        <td>m</td>
+        <td>29</td>
+        <td>14</td>
+        <td>-14</td>
+        <td>+18(KND)</td>
+        <td>+18(KND)</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>FC+d/f+3</td>
+        <td>l</td>
+        <td>28</td>
+        <td>23 RC</td>
+        <td>-14</td>
+        <td>KND</td>
+        <td>KND</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>SS+1+2</td>
+        <td>m</td>
+        <td>40</td>
+        <td>19(28~)</td>
+        <td>-10</td>
+        <td>KND</td>
+        <td>KND</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>BT 1+2</td>
+        <td>m</td>
+        <td>28</td>
+        <td>11</td>
+        <td>-20</td>
+        <td>KND</td>
+        <td>KFUD</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>Opponent Down d+3+4</td>
+        <td>On grounded opponent(l)</td>
+        <td>24</td>
+        <td>24</td>
+        <td>-13</td>
+        <td>+3</td>
+        <td>+3</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>1+2+3+4</td>
+        <td>(Special)</td>
+        <td></td>
+        <td>24</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>1+2+3+4, b+3</td>
+        <td>m</td>
+        <td>24</td>
+        <td>14(79~)</td>
+        <td>-7</td>
+        <td>+4</td>
+        <td>+4</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>1+2+3+4, b+3, 1</td>
+        <td>m, m</td>
+        <td>24,21</td>
+        <td>14(79~)</td>
+        <td>-7</td>
+        <td>+4</td>
+        <td>+4</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>1+2+3+4, b+3, 1, 2</td>
+        <td>m, m, m</td>
+        <td>24,21,27</td>
+        <td>14(79~)</td>
+        <td>-15</td>
+        <td>KND</td>
+        <td>KND</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>1+2+3+4, d/b+4</td>
+        <td>l (TC)</td>
+        <td>19(28)</td>
+        <td>20(85~)</td>
+        <td>-31</td>
+        <td>KND</td>
+        <td>KND</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>1+2+3+4, d/b+4, 1</td>
+        <td>l, m</td>
+        <td>19(28),40</td>
+        <td>20(85~)</td>
+        <td>-16</td>
+        <td>KND</td>
+        <td>KND</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>1+2+3+4, d/b+4, 1, 2</td>
+        <td>l, m, m</td>
+        <td>19(28),40,27</td>
+        <td>20(85~)</td>
+        <td>-15</td>
+        <td>KND</td>
+        <td>KND</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>f+4</td>
+        <td>m, (KNK)</td>
+        <td>18</td>
+        <td>17</td>
+        <td>+8</td>
+        <td>+14</td>
+        <td>+14</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>b+3+4</td>
+        <td>(KNK)</td>
+        <td></td>
+        <td>17</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>f+4, d/f or KNK d/f (to CD)</td>
+        <td>m, (CD)</td>
+        <td>18</td>
+        <td>17 RC</td>
+        <td>-5</td>
+        <td>+1</td>
+        <td>+1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>KNK 1</td>
+        <td>h</td>
+        <td>18</td>
+        <td>18~19</td>
+        <td>-9~-8</td>
+        <td>+2~+3</td>
+        <td>+2~+3</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>KNK 1, 2</td>
+        <td>h, m</td>
+        <td>18,22</td>
+        <td>18~19</td>
+        <td>-12</td>
+        <td>+7</td>
+        <td>KND</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>KNK 1, D</td>
+        <td>m, (BOK)</td>
+        <td>18</td>
+        <td>18~19</td>
+        <td>-7~-6</td>
+        <td>+4~+5</td>
+        <td>+4~+5</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>KNK 2</td>
+        <td>h</td>
+        <td>24</td>
+        <td>15</td>
+        <td>-4</td>
+        <td>+7OB</td>
+        <td>CS</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>KNK 3</td>
+        <td>m (TJ)</td>
+        <td>22</td>
+        <td>20</td>
+        <td>-13</td>
+        <td>Launch (JG?)</td>
+        <td>Launch (JG?)</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>KNK 3, 4</td>
+        <td>m (TJ), m</td>
+        <td>22,25</td>
+        <td>20</td>
+        <td>-13</td>
+        <td>Launch (JG?)</td>
+        <td>Launch (JG?)</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>KNK 4</td>
+        <td>l</td>
+        <td>24</td>
+        <td>20</td>
+        <td>-19</td>
+        <td>-3</td>
+        <td>+7</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>d+1+2 or FC+d/b or d+1+2</td>
+        <td>(Special) (TC)(BOK)</td>
+        <td></td>
+        <td>( RC)</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>BOK 1</td>
+        <td>m</td>
+        <td>18</td>
+        <td>13(33~)</td>
+        <td>-4</td>
+        <td>+9</td>
+        <td>+9</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>BOK 1, 2</td>
+        <td>m, m</td>
+        <td>18,27</td>
+        <td>13(33~)</td>
+        <td>-14</td>
+        <td>+2</td>
+        <td>+2</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>BOK 2</td>
+        <td>m</td>
+        <td>27</td>
+        <td>19(39~)</td>
+        <td>-11</td>
+        <td>Launch(JG?)</td>
+        <td>Launch(JG?)</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>BOK 3</td>
+        <td>h (TJ)</td>
+        <td>40</td>
+        <td>21~22 (41~)</td>
+        <td>+9</td>
+        <td>KND</td>
+        <td>KND</td>
+        <td>Homing</td>
+      </tr>
+      <tr>
+        <td>BOK 4</td>
+        <td>m, (KNK)</td>
+        <td>18</td>
+        <td>20(40~)</td>
+        <td>+8</td>
+        <td>+14</td>
+        <td>+14</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>BOK 1+2</td>
+        <td>h(Absorbs 1 h/m hit)</td>
+        <td>40</td>
+        <td>26(46~)</td>
+        <td>-9</td>
+        <td>ATD</td>
+        <td>ATD</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>qcf or KNK D/F</td>
+        <td>(CD)</td>
+        <td></td>
+        <td>26(46~)</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>qcf+1</td>
+        <td>l (TC)</td>
+        <td>22</td>
+        <td>18 RC(20~)</td>
+        <td>-13</td>
+        <td>-2</td>
+        <td>-2</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>qcf+2 (Close)</td>
+        <td>m</td>
+        <td>32</td>
+        <td>16(18~)</td>
+        <td>-4</td>
+        <td>+9</td>
+        <td>KND</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>qcf+2</td>
+        <td>m</td>
+        <td>21</td>
+        <td>16(18~)</td>
+        <td>-4</td>
+        <td>+9</td>
+        <td>KND</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>qcf+2, B</td>
+        <td>m, (KNK)</td>
+        <td>21(32)</td>
+        <td>16(18~)</td>
+        <td>-5</td>
+        <td>+8</td>
+        <td>KND</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>qcf+1+2</td>
+        <td>m</td>
+        <td>29</td>
+        <td>14(16~)</td>
+        <td>-14</td>
+        <td>+18(KND)</td>
+        <td>+18(KND)</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>qcf+3+4</td>
+        <td>mm (TJ)</td>
+        <td>8,27</td>
+        <td>18,24~25 (20~)</td>
+        <td>-6~-5</td>
+        <td>KND</td>
+        <td>KND</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>qcf+3+4 (First hit only, Second hit miss)</td>
+        <td>m (TJ)</td>
+        <td>8</td>
+        <td>18(20~)</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>Homing</td>
+      </tr>
+      <tr>
+        <td>QCF+3</td>
+        <td>m</td>
+        <td>17</td>
+        <td>13~14 (16~)</td>
+        <td>-6~-5</td>
+        <td>+5~+6</td>
+        <td>+5~+6</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>QCF+3, 1</td>
+        <td>m, m</td>
+        <td>17,14</td>
+        <td>13~14 (16~)</td>
+        <td>-15</td>
+        <td>+3</td>
+        <td>+3</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>QCF+3, 1, 2</td>
+        <td>m, m, h</td>
+        <td>17,14,24</td>
+        <td>13~14 (16~)</td>
+        <td>-18</td>
+        <td>KND</td>
+        <td>KND</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>QCF+4</td>
+        <td>m</td>
+        <td>20</td>
+        <td>11(14~)</td>
+        <td>-5</td>
+        <td>+6</td>
+        <td>+6</td>
+        <td></td>
+      </tr>
+    </table>
+    <div id="basic"></div>
+    <h3>Basic Moves</h3>
+    <table border="1">
+      <tr bgcolor="LightGray">
+        <td><b>Command</b></td>
+        <td><b>Hit level</b></td>
+        <td><b>Damage</b></td>
+        <td><b>Start up frame</b></td>
+        <td><b>Block frame</b></td>
+        <td><b>Hit frame</b></td>
+        <td><b>Counter hit frame</b></td>
+        <td>Notes</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>h</td>
+        <td>9</td>
+        <td>10</td>
+        <td>+1</td>
+        <td>+8</td>
+        <td>+8</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>2</td>
+        <td>h</td>
+        <td>12</td>
+        <td>11</td>
+        <td>-1</td>
+        <td>+5</td>
+        <td>+5</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>h</td>
+        <td>20</td>
+        <td>14</td>
+        <td>-8</td>
+        <td>+4</td>
+        <td>+4</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>4</td>
+        <td>h</td>
+        <td>22</td>
+        <td>12</td>
+        <td>-8</td>
+        <td>+6</td>
+        <td>Launch (JG?)</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>b+1</td>
+        <td>m</td>
+        <td>22</td>
+        <td>18</td>
+        <td>-12</td>
+        <td>+1</td>
+        <td>CS</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>b+2</td>
+        <td>m</td>
+        <td>14</td>
+        <td>17</td>
+        <td>-11</td>
+        <td>0</td>
+        <td>0</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>b+3</td>
+        <td>m</td>
+        <td>20</td>
+        <td>14</td>
+        <td>-7</td>
+        <td>+4</td>
+        <td>+4</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>b+4</td>
+        <td>m</td>
+        <td>20</td>
+        <td>18</td>
+        <td>-8</td>
+        <td>+5</td>
+        <td>+5</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>f+1</td>
+        <td>h</td>
+        <td>9</td>
+        <td>10</td>
+        <td>+1</td>
+        <td>+8</td>
+        <td>+8</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>f+2</td>
+        <td>m</td>
+        <td>18</td>
+        <td>14</td>
+        <td>-5</td>
+        <td>+6</td>
+        <td>+6</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>f+3</td>
+        <td>h</td>
+        <td>31</td>
+        <td>20</td>
+        <td>0</td>
+        <td>+4</td>
+        <td>KND</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>f+4</td>
+        <td>m, (KNK)</td>
+        <td>18</td>
+        <td>17</td>
+        <td>+8</td>
+        <td>+14</td>
+        <td>+14</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>f, F+1</td>
+        <td>h</td>
+        <td>9</td>
+        <td>10(11~)</td>
+        <td>+1</td>
+        <td>+8</td>
+        <td>+8</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>f, F+2</td>
+        <td>m</td>
+        <td>31</td>
+        <td>14(15~)</td>
+        <td>-10</td>
+        <td>KND</td>
+        <td>KND</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>f, F+3</td>
+        <td>m (TJ)</td>
+        <td>27</td>
+        <td>26~29 (27~)</td>
+        <td>-4~-1 OC</td>
+        <td>KND</td>
+        <td>KND</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>f, F+4</td>
+        <td>m</td>
+        <td>21</td>
+        <td>19(20~)</td>
+        <td>-13</td>
+        <td>Launch (JG?)</td>
+        <td>Launch (JG?)</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>d/b+1</td>
+        <td>Sm (TC)</td>
+        <td>6</td>
+        <td>10 RC</td>
+        <td>-5</td>
+        <td>+6</td>
+        <td>+6</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>d+1</td>
+        <td>m</td>
+        <td>24</td>
+        <td>18~19</td>
+        <td>-1~0</td>
+        <td>+4~+5 OC</td>
+        <td>KND</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>d/b+2</td>
+        <td>h</td>
+        <td>14</td>
+        <td>14</td>
+        <td>-17</td>
+        <td>+2</td>
+        <td>+8</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>d+2</td>
+        <td>m</td>
+        <td>31</td>
+        <td>21</td>
+        <td>+2 OC</td>
+        <td>+6 OC</td>
+        <td>KND</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>d/b+3</td>
+        <td>h</td>
+        <td>31</td>
+        <td>33</td>
+        <td>-8</td>
+        <td>Launch</td>
+        <td>Launch</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>d+3</td>
+        <td>l (TC)</td>
+        <td>16</td>
+        <td>16 RC</td>
+        <td>-17</td>
+        <td>-3</td>
+        <td>-3</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>d/b+4</td>
+        <td>l (TC)</td>
+        <td>16(24)</td>
+        <td>20</td>
+        <td>-31</td>
+        <td>+2(KND)</td>
+        <td>KND</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>d+4</td>
+        <td>l</td>
+        <td>13</td>
+        <td>16</td>
+        <td>-12</td>
+        <td>-1</td>
+        <td>-1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>d+3+4</td>
+        <td>l (TC)</td>
+        <td>9</td>
+        <td>12 RC</td>
+        <td>-13</td>
+        <td>-2</td>
+        <td>-2</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>FC+1</td>
+        <td>Sm (TC)</td>
+        <td>6</td>
+        <td>10 RC</td>
+        <td>-5</td>
+        <td>+6</td>
+        <td>+6</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>FC+2</td>
+        <td>Sm (TC)</td>
+        <td>10</td>
+        <td>11 RC</td>
+        <td>-4</td>
+        <td>+7</td>
+        <td>+7</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>FC+d/b or d+3</td>
+        <td>l (TC)</td>
+        <td>16</td>
+        <td>16 RC</td>
+        <td>-17</td>
+        <td>-3</td>
+        <td>-3</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>FC+4</td>
+        <td>l (TC)</td>
+        <td>13</td>
+        <td>12 RC</td>
+        <td>-15</td>
+        <td>-4</td>
+        <td>-4</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>WS+1</td>
+        <td>m</td>
+        <td>17</td>
+        <td>14~15</td>
+        <td>-8~-7</td>
+        <td>+4~+5</td>
+        <td>+4~+5</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>WS+2</td>
+        <td>m</td>
+        <td>20</td>
+        <td>16~17</td>
+        <td>-13~-12</td>
+        <td>Launch (JG?)</td>
+        <td>Launch (JG?)</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>WS+3</td>
+        <td>m</td>
+        <td>17</td>
+        <td>13~14</td>
+        <td>-6~-5</td>
+        <td>+5~+6</td>
+        <td>+5~+6</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>WS+4</td>
+        <td>m</td>
+        <td>20</td>
+        <td>11</td>
+        <td>-5</td>
+        <td>+6</td>
+        <td>+6</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>d/f+1</td>
+        <td>m</td>
+        <td>17</td>
+        <td>13</td>
+        <td>-1</td>
+        <td>+7</td>
+        <td>+7</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>d/f+2</td>
+        <td>m</td>
+        <td>18</td>
+        <td>15~16</td>
+        <td>-13~-12</td>
+        <td>Launch (JG?)(-2)</td>
+        <td>Launch (JG?)</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>d/f+3</td>
+        <td>m</td>
+        <td>29</td>
+        <td>17~18</td>
+        <td>-9~-8</td>
+        <td>KND</td>
+        <td>KFUD</td>
+        <td>Homing</td>
+      </tr>
+      <tr>
+        <td>d/f+4</td>
+        <td>m</td>
+        <td>18</td>
+        <td>13</td>
+        <td>-6</td>
+        <td>+5</td>
+        <td>+5</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>u/b+1</td>
+        <td>(Special)(h or m punch parry)</td>
+        <td></td>
+        <td>13</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>u+1 or u/f+1+2</td>
+        <td>m (TJ)</td>
+        <td>16</td>
+        <td>18</td>
+        <td>-8</td>
+        <td>+3</td>
+        <td>+3</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>u/f+1</td>
+        <td>h</td>
+        <td>10</td>
+        <td>13</td>
+        <td>-1</td>
+        <td>+6</td>
+        <td>+6</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>u/b or u+2</td>
+        <td>h</td>
+        <td>22</td>
+        <td>15</td>
+        <td>-12</td>
+        <td>+9</td>
+        <td>+9</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>u/f+2</td>
+        <td>m (TJ)</td>
+        <td>20</td>
+        <td>18~19</td>
+        <td>-14~-13</td>
+        <td>KND</td>
+        <td>KND</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>u/b+3</td>
+        <td>m</td>
+        <td>33</td>
+        <td>21</td>
+        <td>-17</td>
+        <td>KND</td>
+        <td>KND</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>u+3</td>
+        <td>m</td>
+        <td>27</td>
+        <td>17</td>
+        <td>-9</td>
+        <td>KND</td>
+        <td>KND</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>u/f+3</td>
+        <td>m</td>
+        <td>28</td>
+        <td>17</td>
+        <td>-9</td>
+        <td>KND</td>
+        <td>KND</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>u/b+4</td>
+        <td>m (TJ)</td>
+        <td>14</td>
+        <td>15~16</td>
+        <td>-19~-18</td>
+        <td>-8~-7</td>
+        <td>-8~-7</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>u+4</td>
+        <td>m (TJ)</td>
+        <td>20</td>
+        <td>15~16</td>
+        <td>-13~-12</td>
+        <td>KND</td>
+        <td>Launch (JG?)</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>u/f+4</td>
+        <td>m (TJ)</td>
+        <td>17</td>
+        <td>15~16</td>
+        <td>-13~-12</td>
+        <td>Launch (JG?)</td>
+        <td>Launch (JG?)</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>SS+1</td>
+        <td>h</td>
+        <td>9</td>
+        <td>10(11~)</td>
+        <td>+1</td>
+        <td>+8</td>
+        <td>+8</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>SS+2</td>
+        <td>h</td>
+        <td>12</td>
+        <td>11(12~)</td>
+        <td>-1</td>
+        <td>+5</td>
+        <td>+5</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>SS+3</td>
+        <td>h</td>
+        <td>20</td>
+        <td>14(15~)</td>
+        <td>-8</td>
+        <td>+4</td>
+        <td>+4</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>SS+4</td>
+        <td>h</td>
+        <td>22</td>
+        <td>12(13~)</td>
+        <td>-8</td>
+        <td>+6</td>
+        <td>Launch (JG?)</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>BT 1 or 2</td>
+        <td>h</td>
+        <td>20</td>
+        <td>8</td>
+        <td>-8</td>
+        <td>+3</td>
+        <td>+3</td>
+        <td></td>
+      </tr>
+      <tr bgcolor="LightGray">
+        <td>BT 3 or 4</td>
+        <td>h</td>
+        <td>33</td>
+        <td>10</td>
+        <td>-8</td>
+        <td>KND</td>
+        <td>KND</td>
+        <td></td>
+      </tr>
+    </table>
+  </body>
 </html>
