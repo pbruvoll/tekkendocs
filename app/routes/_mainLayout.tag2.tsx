@@ -1,15 +1,22 @@
 import { Heading } from '@radix-ui/themes'
-import { json, type TypedResponse } from '@remix-run/node'
-import { Link } from '@remix-run/react'
-import { motion } from 'motion/react'
-import { InView } from '@/components/core/InView'
+import { json, type MetaFunction, type TypedResponse } from '@remix-run/node'
 import { ContentContainer } from '~/components/ContentContainer'
 import { charsTag2 } from '~/services/staticDataService'
 import { getCacheControlHeaders } from '~/utils/headerUtils'
+import { generateMetaTags } from '~/utils/seoUtils'
 
 export const loader = async (): Promise<TypedResponse<null>> => {
   return json(null, {
     headers: getCacheControlHeaders({ seconds: 60 * 5 }),
+  })
+}
+
+export const meta: MetaFunction = ({ matches }) => {
+  return generateMetaTags({
+    matches,
+    description: 'Frame data for Tekken Tag Tournament 2',
+    title: 'Tekken Tag 2 Frame data',
+    url: '',
   })
 }
 
