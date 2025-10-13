@@ -55,7 +55,7 @@ const data: ExternalResourceLink[] = [
   },
   {
     name: 'Ewgf.gg - stats',
-    url: '/t8/ewgf.webp',
+    url: 'https://ewgf.gg',
     imageUrl: ewgf,
     description:
       'Stats for rank distribution, character win rate, leaderboards, player profiles etc.',
