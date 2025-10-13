@@ -146,6 +146,17 @@ export default function Index() {
           },
         )}
       />
+
+      <Heading as="h2" mt="7" mb="4" size="5">
+        <Link to="tag2">Tekken Tag 2</Link>
+      </Heading>
+
+      <Link
+        to="tag2"
+        className="text-text-primary underline underline-offset-2"
+      >
+        Go to character select
+      </Link>
     </ContentContainer>
   )
 }
