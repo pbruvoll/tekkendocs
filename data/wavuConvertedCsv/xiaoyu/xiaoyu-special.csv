@@ -6,30 +6,17 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * Only deals recoverable damage
 * Cannot cause a K.O.
 * Power crush 7~16";hb pc7~16;;Xiaoyu-2+3;Heat Burst;r30;;
-H.BT.2+3;m,t;51;i15;+9;+20g;;"* Heat Smash
-* Recovers in HYP, max level
-* Transition to r115?standing with F (+3, +5)
-* 7 chip damage on block";hs;HYP;Xiaoyu-H.BT.2+3;Innumerable Moons;HYP;;
-H.f,F+1,2;m,m;13,20;i15, i20;+6;+24d;;"* Balcony Break
-* Partially uses remaining Heat time
-* Combos from 1st hit
-* Recovers in BT
-* Recover facing forward with F (+4/+22d/+47a)
-* Low crush";bbr js;BT;Xiaoyu-H.f,F+1,2;Bai Lian Yan Di Po;BT;;
-H.f+2,1,2;m,h,m;12,14,20;i16, i20, i20;+6;+23d;+49a;"* Balcony Break
-* Partially uses remaining Heat time
-* Combo from 1st hit with no delay
-* Combo from 2nd CH with 5F delay
-* Move can be delayed by 5-10F
-* Recovers in BT
-* Recover facing forward with F (+4, +21d, +47a)
-* Low crush";bbr js;BT;Xiaoyu-H.f+2,1,2;Bai Yang Yan Di Po;BT;;
-H.2+3;m,t;50;i15;+9;+0d;;"* Heat Smash
+H.BT.2+3;m,m,m,m;51;i15~16 i7~8 i9~10 i23~27;+9;+20g;;"* Heat Smash
+* Spike
+* Recovers in HYP 2nd step
+* Recover standing with F (+3, +5)
+* Chip on block [7]";hs spk chp;HYP;Xiaoyu-H.BT.2+3;Innumerable Moons;HYP;;
+H.2+3;m,m,m,M;50;i15~16 i9~10 i7~8 i15~17;+9;+0d;;"* Heat Smash
 * Balcony Break
-* Recovers in BT
-* Transition to r59? standing with F (+5) 
-* 7 chip damage on block
-* Low crush";hs bbr js;BT;Xiaoyu-H.2+3;Divine Shooting Star;BT;;
+* Recover facing forward with F (+5 oB)
+* Transition to attack throw on hit
+* Chip on block [7]
+* Low crush 9~";hs bbr chp js9~;BT;Xiaoyu-H.2+3;Divine Shooting Star;BT;;
 R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Removes Recoverable Health
 * Reversal Break
@@ -42,70 +29,91 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 1;h;5;i10;+1;+8;;;;;Xiaoyu-1;;;;
 1,2;h, h;5, 8;i10, i11;-3;+7;;"* Combo from 1st hit with 4F delay
 * Jail from 1st block with 4F delay";;;Xiaoyu-1,2;Bayonet;;;File:t8-p2-xiaoyu-1,2.mp4
-1,2,1;h, h, m;5, 8, 20;i10, ,i16;-9;+14a (+5);;"* Balcony Break
+1,2,1;h, h, m;5, 8, 20;i10, ,i16~17;-9;+14a (+5);;"* Balcony Break
 * Combo from 2nd CH with 10F delay
 * Jail from 2nd block with 3F delay";bbr;;Xiaoyu-1,2,1;Bayonet Thruster;;;File:t8-p2-xiaoyu-1,2,1.mp4
-1,d+2;h, m;5, 10;i10, i20;-3;+8;+10;"* Combo from 1st hit with 4F delay
+1,d+2;h, m;5, 10;i10, i20~23;-3;+8;+10;"* Combo from 1st hit with 4F delay
 * Move can be delayed by 10F
 * Recover facing forward with 1,D+2 or 1,d+2,F (-4, +7, +9)
 * Recover in HYP with 1,d+2~B (-2, +9, +11)";;BT;Xiaoyu-1,d+2;Fan Dance;BT;;File:t8-p2-xiaoyu-1,d+2.mp4
-1,d+2,1+2;h, m, m;5, 10, 24;i10, ,i29;-12;+17a;;* Combo from 2nd hit CH;;;Xiaoyu-1,d+2,1+2;Fan Dance > Birds Flock;;;File:t8-p2-xiaoyu-1,d+2,1+2.mp4
+1,d+2,1+2;h, m, m;5, 10, 24;i10, ,i29~31;-12;+17a;;* Combo from 2nd hit CH;;;Xiaoyu-1,d+2,1+2;Fan Dance > Birds Flock;;;File:t8-p2-xiaoyu-1,d+2,1+2.mp4
 1+3+4;;;;;;;* Low crush 8~15;js8~15;;Xiaoyu-1+3+4;False Salute;;;File:t8-p2-xiaoyu-1+3+4.mp4
 2;h;8;i10;-2;+6;;*;;;Xiaoyu-2;;;;
-2,1;h, m;8, 10;i10, i19;-4;+7;;"* Combo from 1st hit CH
+2,1;h, m;8, 10;i10, i19;-4;+7;;"* Combo from 1st CH
 * Jail from 1st block
-* Recover facing forward with 2,DF+1 or 2,df+1,f or 2,df+1,b (-4, +7)";;BT;Xiaoyu-2,1;April Showers;BT;;File:t8-p2-xiaoyu-2,1.mp4
-3;h;17;i14;-11;+22a;;*;;;Xiaoyu-3;Cloud Kick;;;File:t8-p2-xiaoyu-3.mp4
-4;h;15;i11;-9;+8;+33a;*;;;Xiaoyu-4;;;;
-1+2;m;24;i20;-7;+20a;;*;;;Xiaoyu-1+2;Birds Flock;;;File:t8-p2-xiaoyu-1+2.mp4
+* Recover facing forward by holding any direction (-4, +7)";;BT;Xiaoyu-2,1;April Showers;BT;;File:t8-p2-xiaoyu-2,1.mp4
+3;h;17;i14~15;-11;+22a;;*;;;Xiaoyu-3;Cloud Kick;;;File:t8-p2-xiaoyu-3.mp4
+4;h;15;i11;-9;+8;+33a;* Balcony Break on CH;;;Xiaoyu-4;;;;
+1+2;m;24;i20~21;-7;+20a;;*;;;Xiaoyu-1+2;Birds Flock;;;File:t8-p2-xiaoyu-1+2.mp4
 2+3+4;;;;;;;;;;Xiaoyu-2+3+4;Greetings;;;File:t8-p2-xiaoyu-2+3+4.mp4
-3+4;m;23;i23;-1c;+3c;+19a;"* Transition to AOP with D (0, +4c, +20a)
-* Low crush 10~";js10~;AOP;Xiaoyu-3+4;Crescent Moon Kick;;;File:t8-p2-xiaoyu-3+4.mp4
-f+2;m;12;i16;-5;+4;;;;;Xiaoyu-f+2;;;;
-f+2,1;m, h;12, 14;i16, i20;-6;+5;+7;"* Combo from 1st hit
+3+4;m;23;i23;-1c;+3c;+19a;"* Spike
+* Transition to AOP with D (0, +4c, +20a)
+* Low crush 10~";spk js10~;AOP;Xiaoyu-3+4;Crescent Moon Kick;;;File:t8-p2-xiaoyu-3+4.mp4
+f+2;m;12;i16~17;-5;+4;;;;;Xiaoyu-f+2;;;;
+f+2,1;m, h;12, 14;i16~17, i20;-6;+5;+7;"* Combo from 1st hit
 * Jails from 1st block
 * Transition to HYP with B (+0, +11)";;HYP;Xiaoyu-f+2,1;;;;
-f+2,1,4;m, h, m;12, 14, 20;i16, ,i26;-13;+17a (+8);+62a (+42);"* Balcony Break
+f+2,1,4;m, h, m;12, 14, 20;i16~17, ,i26~27;-13;+17a (+8);+62a (+42);"* Balcony Break
 * Combo from 2nd CH with 5F delay
 * Move can be delayed by 10F";bbr;;Xiaoyu-f+2,1,4;Bai Yang Zhuan Wu;;;File:t8-p2-xiaoyu-f+2,1,4.mp4
-f+3;m;14;i16;-9;+2;;* Knee;kne;;Xiaoyu-f+3;;;;
-f+3,1;m, m;14, 8;i16, i22;-3;+8;;* Combo from 1st hit;;BT;Xiaoyu-f+3,1;;BT;;
-f+3,1,4;m, m, m;14, 8, 20;i16, ,i26;-22;+62a (+46);;"* Tornado
+H.f+2,1,2;m, h, m;12, 14, 20;i16~17, ,i26~28;+6;+23d;+50a;"* Balcony Break
+* Spike
+* Partially uses remaining Heat time
+* Combo from 1st hit with no delay
+* Combo from 2nd CH with 5F delay
+* Move can be delayed by 5-10F
+* Recover facing forward with F (+4, +21d, +47a)
+* Low crush";bbr spk js;BT;Xiaoyu-f+2,1,H.2;Bai Yang Yan Di Po;BT;;
+f+3;M;14;i16~18;-9;+2;;"* Knee 
+* Doesn't hit grounded if opponent is on-axis in FUFT";kne;;Xiaoyu-f+3;;;;
+f+3,1;M, m;14, 8;i16~18, i22~23;-3;+8;;* Combo from 1st hit;;BT;Xiaoyu-f+3,1;;BT;;
+f+3,1,4;M, m, M;14, 8, 20;i16~18, ,i26;-22;+62a (+46);;"* Tornado
 * Instant Tornado
 * Combo from 2nd hit CH";trn;;Xiaoyu-f+3,1,4;Talons of Fury;;;File:t8-p2-xiaoyu-f+3,1,4.mp4
-f+3,1,1+2;m, m, m;14, 8, 27;i16, ,i16;-12;+7c;;* Combo from 2nd hit CH;;;Xiaoyu-f+3,1,1+2;Wings of Fury;;;File:t8-p2-xiaoyu-f+3,1,1+2.mp4
+f+3,1,1+2;M, m, m,M;14, 8, 6,20;i16~18, ,i16~18 i5~6;-12;+7c;;"* Spike
+* Combo from 2nd CH";spk;;Xiaoyu-f+3,1,1+2;Wings of Fury;;;File:t8-p2-xiaoyu-f+3,1,1+2.mp4
 f+4;h;23;i19;+1;+13;;"* Homing
 * Chip on block [4]";hom chp;;Xiaoyu-f+4;Swivel Kick;;;File:t8-p2-xiaoyu-f+4.mp4
-f+1+2;m;30;i12;-16;+15d (+10);;* Balcony Break;bbr;;Xiaoyu-f+1+2;Clouded Peak;;;File:t8-p2-xiaoyu-f+1+2.mp4
+f+1+2;m;30;i12;-16;+15d (+10);;"* Balcony Break 
+* Shoulder";bbr;;Xiaoyu-f+1+2;Clouded Peak;;;File:t8-p2-xiaoyu-f+1+2.mp4
 f+3+4;;;;;;;"* Transition to AOP with D
 * Low crush 9~";js9~;AOP,FC;Xiaoyu-f+3+4;Forward Roll;FC;;
-f+3+4,3+4;m;8,8,16;i20~21,i4~5, i5~8;+8;+2d;;"*
+f+3+4,3+4;m,m,m;8,8,14;i20~21 i4~5 i5~8;+8;+2d;;"*
 * Low crush 23~";js23~;;Xiaoyu-f+3+4,3+4;Forward Roll > Phoenix Talon;;;File:t8-p2-xiaoyu-f+3+4,3+4.mp4
-df+1;m;13;i14;-2;+9;;* Recover facing forward with F (-4, +7);;BT;Xiaoyu-df+1;Belly Chop;BT;;File:t8-p2-xiaoyu-df+1.mp4
+df+1;m;13;i14;-2;+9;;"* Recover facing forward by holding any direction (-4, +7)
+* High crush 6~14";cs6~14;BT;Xiaoyu-df+1;Belly Chop;BT;;File:t8-p2-xiaoyu-df+1.mp4
 df+2;m;15;i14;-6;+7;;*;;;Xiaoyu-df+2;;;;
-df+2,3;m, h;15, 23;i14, i23;-1;+35a (+9);;"* Balcony Break
-* Cancel to r15 FC (-16/-3) with D
+df+2,3;m, h;15, 23;i14, i23~24;-1;+35a (+9);;"* Balcony Break
+* Cancel to r15 FC with DB, D, or DF (-3, -16)
 * Combo from 1st hit with 8F delay
 * Move can be delayed by 6F
 * Input can be delayed by 9F";bbr;FC;Xiaoyu-df+2,3;Moon Swallow;r30;;File:t8-p2-xiaoyu-df+2,3.mp4
 df+2,1+2;m, m;15, 25;i14, i24~25;-14;+21a (+16);;"* Balcony Break
+* Shoulder
 * Combo from 1st hit with 7F delay
 * Move can be delayed by 6F
 * Input can be delayed by 9F";bbr;;Xiaoyu-df+2,1+2;Moon Scorched Feather Tackle;;;
-df+3;l;23;i29;-23;+71a (+55);;"* Homing
-* Tornado
-* Cancel into BT with B
-* On hit, transition to AOP with D
-* Snake Edge";hom trn;AOP;Xiaoyu-df+3;Phoenix Tail;;;File:t8-p2-xiaoyu-df+3.mp4
+df+3;L;23;i29~30;-23;+71a (+55);;"* Tornado
+* Instant Tornado
+* Homing
+* Cancel into BT with B (r31)
+* On hit of whiff, transition to AOP with D
+* Snake Edge
+* High crush 6~29";trn hom cs6~29;AOP;Xiaoyu-df+3;Phoenix Tail;;;File:t8-p2-xiaoyu-df+3.mp4
 df+4;m;12;i12;-4;+7;;*;;;Xiaoyu-df+4;;;;
-d+1;m;21;i17;-6;+8c;+9c;* Recover in AOP with D+1 (-10, +4c, +5c);;FC;Xiaoyu-d+1;Sunset Fan;FC;;File:t8-p2-xiaoyu-d+1.mp4
-d+2;s;8;i11;-4;+7;;* Alternate input FC.2;;FC;Xiaoyu-d+2;;FC;;
-d+3;l;12;i14;-12;-3;;*;;FC;Xiaoyu-d+3;;FC;;
-d+3,4;l, h;12, 21;i14, i25;+0;+26a (+17);;"* Balcony Break
+d+1;m,m,M;7,7,7;i17~19 i4~6 i3~9;-5;+8c;+9c;"* Recover in AOP with D+1 (-10, +4c, +5c)
+* This move can become more minus if the final hit whiffs
+* Standing (-13, -2c) 
+* AOP (-17, -5c)";;FC;Xiaoyu-d+1;Sunset Fan;FC;;File:t8-p2-xiaoyu-d+1.mp4
+d+2;sl;8;i11;-4;+7;;"* Alternate input FC.2
+* High crush 4~";cs4~;FC;Xiaoyu-d+2;;FC;;
+d+3;L;12;i14;-12;-3;+1;"*
+* High crush 6~";cs6~;FC;Xiaoyu-d+3;;FC;;
+d+3,4;L, h;12, 21;i14, i25~26;+0;+26a (+17);;"* Balcony Break
 * Combo from 1st CH";bbr;;Xiaoyu-d+3,4;Giant Slayer;;;File:t8-p2-xiaoyu-d+3,4.mp4
 d+4;l;6;i12;-15;-4;;* Alternate input FC.4;;FC;Xiaoyu-d+4;;FC;;
 d+1+2;;;;;;;"* Transitions to AOP
-* AOP.u to recover in r10? FC
+* AOP.u to recover in r10 FC
 * Alternate input BT.d+1+2
 * High crush 1~";cs1~;AOP;Xiaoyu-d+1+2;Phoenix;r20 AOP;;
 d+3+4;special;;;;;;* Alternate input u+3+4;;;Xiaoyu-d+3+4;Spinner;;;File:t8-p2-xiaoyu-d+3+4.mp4
@@ -115,9 +123,10 @@ db+1;m;22;i18;-9;+14a (+5);;"* Heat Engager
 
 * Balcony Break
 * Clean hit damage: 30";he bbr;;Xiaoyu-db+1;Storming Flower;;;File:t8-p2-xiaoyu-db+1.mp4
-db+2;l;13;i18;-8;+5c;+12;*;;BT;Xiaoyu-db+2;Feathered Fan;BT;;File:t8-p2-xiaoyu-db+2.mp4
-db+3;l;0;i15;+2c;+2c;+14;*;;;Xiaoyu-db+3;Knee Cracker;;;File:t8-p2-xiaoyu-db+3.mp4
-db+4;l;14;i18;-12;+4c;+14;*;;;Xiaoyu-db+4;Nutcracker;;;File:t8-p2-xiaoyu-db+4.mp4
+db+2;L;13;i18~19;-8;+5c;+12;"*
+* High crush 6~";cs6~;BT;Xiaoyu-db+2;Feathered Fan;BT;;File:t8-p2-xiaoyu-db+2.mp4
+db+3;L;0;i15;+2c;+2c;+14;*;;;Xiaoyu-db+3;Knee Cracker;;;File:t8-p2-xiaoyu-db+3.mp4
+db+4;L;14;i18;-12;+4c;+14;* This move is +20 on a traded hit;;;Xiaoyu-db+4;Nutcracker;;;File:t8-p2-xiaoyu-db+4.mp4
 db+1+2;;;;;;;"* Transitions to HYP
 * Actionable for 70F
 * Stance move properties change with amount of time spent in stance:
@@ -132,56 +141,58 @@ db+1+2;;;;;;;"* Transitions to HYP
 * Parry state 2~10?";ps2~10?;HYP;Xiaoyu-db+1+2;Hypnotist;r20 HYP;;
 db+3+4;;;;;;;"* Transitions to BT
 * High crush";cs;BT;Xiaoyu-FC.db+3+4;Low Back Turn;BT;;File:t8-p2-xiaoyu-fc.db+3+4.mp4
-b+1;m;10;i8;-12;+1;;"* Automatically transitions to BT on hit
+b+1;m;10;i8~13;-12;+1;;"* Automatically transitions to BT on hit
 * Recover facing forward with B+1 (between -1 and +4)";;;Xiaoyu-b+1;Great Wall Left;;;File:t8-p2-xiaoyu-b+1.mp4
 b+1+3;;;;;+6;;"* Automatically transitions to BT
 * Alternate input b+2+4
 * Also possible during HYP and BT
 * Parry state 5";ps5;BT;Xiaoyu-b+1+3;High Mid Parry;BT;;
-b+2;m;13;i15;-6;+5;;"* Homing 
+b+2;m;13;i15~16;-6;+5;;"* Homing 
 Automatically transitions to BT";hom;BT;Xiaoyu-b+2;;BT;;
-b+2,2;m, l;13, 15;i15, i21;-7;+4;+22a;"* Automatically transitions to BT
+b+2,2;m, L;13, 15;i15~16, i21~23;-7;+4;+22a;"* Automatically transitions to BT
 * Combo from 1st hit";;BT;Xiaoyu-b+2,2;Seven Star Fist;BT;;File:t8-p2-xiaoyu-b+2,2.mp4
-b+3;h;22;i18;+3;+8c;+32d;"* Chip on block [6] 
+b+3;h;22;i18~19;+3;+8c;+32d;"* Chip on block [6] 
 Automatically transitions to BT";chp;BT;Xiaoyu-b+3;Peacock Kick;BT;;File:t8-p2-xiaoyu-b+3.mp4
-b+4;m;10;i13;-11;+0;;*;;;Xiaoyu-b+4;;;;
-b+4,1;m, m;10, 20;i13, i27;-14;+40d (-18);;"* Heat Engager
+b+4;m;10;i13~14;-11;+0;;*;;;Xiaoyu-b+4;;;;
+b+4,1;m, m;10, 20;i13~14, i27;-14;+40d (-18);;"* Heat Engager
 
 * Heat Dash +5, +43d (+35)
 
+* Balcony Break
 * Combo from 1st hit with 7F delay
 * Move can be delayed by 5F
-* Input can be delayed by 8F
-* Balcony Break";he bbr;;Xiaoyu-b+4,1;Moonhare Palm;;;File:t8-p2-xiaoyu-b+4,1.mp4
-b+1+2;m;20;i15;-13;+29a (+19);;*;;;Xiaoyu-b+1+2;Cross Lifting Palms;;;File:t8-p2-xiaoyu-b+1+2.mp4
+* Input can be delayed by 8F";he bbr;;Xiaoyu-b+4,1;Moonhare Palm;;;File:t8-p2-xiaoyu-b+4,1.mp4
+b+1+2;M,M;8,12;i15~16 i5~6;-13;+29a (+19);;*;;;Xiaoyu-b+1+2;Cross Lifting Palms;;;File:t8-p2-xiaoyu-b+1+2.mp4
 b+3+4;;;;;;;"* Transitions to BT
 * Alternate input BT.b+3+4, AOP.b+3+4";;BT;Xiaoyu-b+3+4;Rain Dance;r21 BT;;
-ub+3;m;23;i20;-13;+36a (+26);;"* Tornado
+ub+3;m;23;i20~21;-13;+36a (+26);;"* Tornado
 * Transitions to AOP on hit or block
 * Low crush 18~";trn js18~;AOP;Xiaoyu-ub+3;From the Ashes;AOP;;File:t8-p2-xiaoyu-ub+3.mp4
-ub+4;m;20;i22;-13;+13d (-4);;"* Tornado
+ub+4;m;20;i22~24;-13;+13d (-4);;"* Tornado
 * Balcony Break
 * Power crush 7~21";trn bbr pc7~21;;Xiaoyu-ub+4;Born of Fire;r35;;File:t8-p2-xiaoyu-ub+4.mp4
-u+1+2;m;10;i17;-11;+0c;;*;;;Xiaoyu-u+1+2;;;;
-u+1+2,2;m, m;10, 12;i17, i27;-12;-1;;*;;;Xiaoyu-u+1+2,2;;;;
-u+1+2,2,1;m, m, m;10, 12, 20;i17, ,i27;-12;+16a (+7);;"* Balcony Break
+u+1+2;m,m;5,5;i16~18 i2~4;-11;+0c;;*;;;Xiaoyu-u+1+2;;;;
+u+1+2,2;m,m, m;5,5, 12;i16~18 i2~4, i27;-12;-1;;* Combo from 1st CH;;;Xiaoyu-u+1+2,2;;;;
+u+1+2,2,1;m,m, m, m;5,5, 12, 20;i16~18 i2~4, ,i27~28;-12;+16a (+7);;"* Balcony Break
 * Combo from 2nd hit
 * Combo from 1st CH
 * Cancel into BT with B (-19/-8)";bbr;;Xiaoyu-u+1+2,2,1;Fortune Cookie;;;File:t8-p2-xiaoyu-u+1+2,2,1.mp4
 uf+1;L;15;i33;-7;+10g c;;"* Cancel into r42? FC with D
 * Low crush 9~";js9~;AOP;Xiaoyu-uf+1;Silver Needle;AOP;;
-uf+2;m;23;i26;+6c;+7c;+49a;"* Recover facing forward with F (+4c, +5c, +47a)
+uf+2;m;23;i26~27;+6c;+7c;+49a;"* Spike
+* Recover facing forward with F (+4c, +5c, +47a)
 * Alternate input u+2
 * Chip on block [6]
-* Low crush 9~";chp js9~;BT;Xiaoyu-uf+2;Phoenix Flight;BT;;File:t8-p2-xiaoyu-uf+2.mp4
-uf+3;m;13;i16;-13;+29a (+19);;* Low crush 9~;js9~;;Xiaoyu-uf+3;Bolting Rabbit;;;File:t8-p2-xiaoyu-uf+3.mp4
-uf+4;m;20;i23;-7;+4;+24a;"* Transition to FC with D (-7, +4c, +24a)
+* Low crush 9~";spk chp js9~;BT;Xiaoyu-uf+2;Phoenix Flight;BT;;File:t8-p2-xiaoyu-uf+2.mp4
+uf+3;m;13;i16~17;-13;+29a (+19);;* Low crush 9~;js9~;;Xiaoyu-uf+3;Bolting Rabbit;;;File:t8-p2-xiaoyu-uf+3.mp4
+uf+4;m;20;i23~26;-7;+4;+24a;"* Spike
+* Transition to FC with D (-7, +4c, +24a)
 * Transition with AOP with d+1+2 (-9, +2, +22)
-* Low crush 9~";js9~;FC;Xiaoyu-uf+4;Flare Kick;;;File:t8-p2-xiaoyu-uf+4.mp4
+* Low crush 9~";spk js9~;FC;Xiaoyu-uf+4;Flare Kick;;;File:t8-p2-xiaoyu-uf+4.mp4
 uf+3+4;m,m,m;8,10,12;i16~17, i10~11, i8~9;-1;+4d;;"* Balcony Break
-* Floor Break on airborne opponent
+* Spike
 * Transitions to BT on block or whiff
-* Low crush 9~";bbr js9~;BT;Xiaoyu-uf+3+4;Shooting Star;BT;;File:t8-p2-xiaoyu-uf+3+4.mp4
+* Low crush 9~";bbr spk js9~;BT;Xiaoyu-uf+3+4;Shooting Star;BT;;File:t8-p2-xiaoyu-uf+3+4.mp4
 1+2+3+4;;;;;;;;;;Xiaoyu-1+2+3+4;Ki Charge;;;File:t8-p2-xiaoyu-1+2+3+4.mp4
 While in the air 3;m;30;i14;-2;+29d;;"* Strong Aerial Tailspin
 * Balcony Break
@@ -190,33 +201,37 @@ While in the air 3;m;30;i14;-2;+29d;;"* Strong Aerial Tailspin
 While landing 3;L;19;i15;-18;+27a;;*;;FC;Xiaoyu-While landing 3;Sky Kick;FC;;File:t8-p2-xiaoyu-while landing 3.mp4
 While landing 4;m;25;i8;-8;+23a (+13);;"* Balcony Break
 * Low crush";bbr js;;Xiaoyu-While in the air 4;Crane Kick;;;File:t8-p2-xiaoyu-while in the air 4.mp4
-f,F+1;m;13;i15;-11;+7c;;* Transition to AOP with D (-5, +13);;AOP;Xiaoyu-f,F+1;;;;
-f,F+1,3;m, h;13, 20;i15, i18;-1;+20a (+11);;"* Balcony Break
+f,F+1;m;13;i15;-11;+7c;;"* Spike
+* Transition to AOP with D (-5, +13)";spk;AOP;Xiaoyu-f,F+1;;;;
+f,F+1,3;m, h;13, 20;i15, i18~19;-1;+20a (+11);;"* Balcony Break
 * Combos from 1st hit";bbr;;Xiaoyu-f,F+1,3;Poison Flower;;;File:t8-p2-xiaoyu-f,f+1,3.mp4
-f,F+1,4;m, m;13, 20;i15, i21;-12;+22d;;* Combos from 1st hit CH;;;Xiaoyu-f,F+1,4;Eclipsing Moon;;;File:t8-p2-xiaoyu-f,f+1,4.mp4
+f,F+1,4;m, m;13, 20;i15, i21~22;-12;+22d;;* Combos from 1st CH;;;Xiaoyu-f,F+1,4;Eclipsing Moon;;;File:t8-p2-xiaoyu-f,f+1,4.mp4
 f,F+2;m;12;i15;-5;+6;;*;;;Xiaoyu-f,F+2;;;;
-f,F+2,1;m, m;12, 20;i15, i27;-12;+16a (+7);;"* Balcony Break
+f,F+2,1;m, m;12, 20;i15, i27~28;-12;+16a (+7);;"* Balcony Break
 * Combo from 1st hit with 2F delay
 * Move can be delayed by 12F
-* Cancel into BT with B (-19/-8)";bbr;;Xiaoyu-f,F+2,1;Fortune;;;File:t8-p2-xiaoyu-f,f+2,1.mp4
-f,F+3;m;12;i14;-5;+6;+12;*;;BT;Xiaoyu-f,F+3;Raccoon Swing;BT;;File:t8-p2-xiaoyu-f,f+3.mp4
-f,F+4;h;20;i20;+9;+13g c;+58a (+38);"* Strong Aerial Tailspin
+* Cancel into BT with B (-19,-8)";bbr;;Xiaoyu-f,F+2,1;Fortune;;;File:t8-p2-xiaoyu-f,f+2,1.mp4
+f,F+3;m;12;i14~15;-5;+6;+12g;*;;BT;Xiaoyu-f,F+3;Raccoon Swing;BT;;File:t8-p2-xiaoyu-f,f+3.mp4
+f,F+4;h;20;i20~23;+9;+13g c;+58a (+38);"* Strong Aerial Tailspin
 * Balcony Break
 * Automatically transitions to HYP on hit or block
 * Chip on block [6]";bbr chp;HYP;Xiaoyu-f,F+4;Soaring Blaze;HYP;;File:t8-p2-xiaoyu-f,f+4.mp4
 f,F+1+2;m;12;i14~16;-9;+5;;;;;Xiaoyu-f,F+1+2;;;;
-f,F+1+2,1+2;m, m;12, 20;i14~16, i19~20;-8;+7c;+43a;"* Combo from 1st hit with 8F delay
+f,F+1+2,1+2;m, m;12, 20;i14~16, i19~20;-8;+7c;+43a;"* Spike
+* Combo from 1st hit with 8F delay
 * Jail from 1st block with no delay
 * Move can be delayed by 14F
-* Input can be delayed by 16F";;;Xiaoyu-f,F+1+2,1+2;X Marks the Spot;;;File:t8-p2-xiaoyu-f,f+1+2,1+2.mp4
-f,F+3+4;m;23;i37;-3;+39d;;"* Chip on block [9]
-* Low crush 9~";chp js9~;;Xiaoyu-f,F+3+4;Front Layout;;;File:t8-p2-xiaoyu-f,f+3+4.mp4
-uf,n,4;m;20;i23;-18;+27a (+17);;"*
+* Input can be delayed by 16F";spk;;Xiaoyu-f,F+1+2,1+2;X Marks the Spot;;;File:t8-p2-xiaoyu-f,f+1+2,1+2.mp4
+f,F+3+4;M;23;i37~45;-3;+39a;;"* Spike
+* Chip on block [9]
+* Low crush 9~";spk chp js9~;;Xiaoyu-f,F+3+4;Front Layout;;;File:t8-p2-xiaoyu-f,f+3+4.mp4
+uf,n,4;m;20;i23~24;-18;+27a (+17);;"*
 * Low crush 9~";js9~;;Xiaoyu-uf,n,4;Delayed Rising Toe Kick;;;File:t8-p2-xiaoyu-uf,n,4.mp4
-f,f,F+3;m;20;i23;+7;+29a (+19);;"* Automatically transitions to AOP on hit or block
+f,f,F+3;m;20;i23~30;+7;+29a (+19);;"* Balcony Break
+* Automatically transitions to AOP on hit or block
 * Chip on block [9]
 * Alternate input wr3
-* Low crush 3~";chp js3~;;Xiaoyu-f,f,F+3;Diving Falcon;;;File:t8-p2-xiaoyu-f,f,f+3.mp4
+* Low crush 3~";bbr chp js3~;;Xiaoyu-f,f,F+3;Diving Falcon;;;File:t8-p2-xiaoyu-f,f,f+3.mp4
 ws1;m;8;i12;-7;+4;;* Combo from 1st hit;;;Xiaoyu-ws1;;;;
 ws1,4;m, m;8, 16;i12, i22;-10;+12g;;*;;BT;Xiaoyu-ws1,4;Whirlwind Cross Kick;BT;;File:t8-p2-xiaoyu-ws1,4.mp4
 ws2;m;17;i13;-3;+7;+38a (+28);* Recover facing forward by holding down any direction (-5, +5, +36a (+26));;BT;Xiaoyu-ws2;Sunflower;BT;;File:t8-p2-xiaoyu-ws2.mp4
@@ -224,34 +239,35 @@ ws2*;m;20;i22;-3;+38a (+28);;* Recover facing forward by holding down any direct
 ws3;m;22;i22;+3c;+6c;+51a;*;;;Xiaoyu-ws3;Rising Axe Kick;;;File:t8-p2-xiaoyu-ws3.mp4
 ws4;m;20;i11;-10;+20a (+13);;*;;;Xiaoyu-ws4;Skyscraper Kick;;;File:t8-p2-xiaoyu-ws4.mp4
 ws1+2;m;12;i14~16;-9;+5;;;;;Xiaoyu-ws+1+2;;;;
-ws1+2,1+2;m, m;12, 20;i14~16, i19~20;-8;+7c;+43a;"* Combo from 1st hit with 8F delay
+ws1+2,1+2;m, m;12, 20;i14~16, i19~20;-8;+7c;+43a;"* Spike
+* Combo from 1st hit with 8F delay
 * Jail from 1st block with no delay
 * Move can be delayed by 14F
-* Input can be delayed by 16F";;;Xiaoyu-ws+1+2,1+2;X Marks the Spot;;;File:t8-p2-xiaoyu-f,f+1+2,1+2.mp4
+* Input can be delayed by 16F";spk;;Xiaoyu-ws+1+2,1+2;X Marks the Spot;;;File:t8-p2-xiaoyu-f,f+1+2,1+2.mp4
 SS.4;l;19;i18;-13;-2;+29a;"*
 * High crush 6~";cs6~;FC;Xiaoyu-ss4;Street Sweeper;FC;;File:t8-p2-xiaoyu-ss4.mp4
-FC.1;s;5;i10;-5;+6;;* High crush 1~34;cs1~34;FC;Xiaoyu-FC.1;;FC;;
-FC.2;s;8;i11;-4;+7;;* High crush 1~34;cs1~34;FC;Xiaoyu-FC.2;;FC;;
-FC.3;l;11;i15;-15;-4;;* High crush 1~49;cs1~49;FC;Xiaoyu-FC.3;;FC;;
-FC.3,2;l, h;11, 6;i15, i18;+0;+7;;* Combo from 1st hit CH;;BT;Xiaoyu-FC.3,2;;BT;;
-FC.3,2,1;l, h, h;11, 6, 6;i15, ,i14;-1;+6;+10g;"* Transition to HYP with B (-2, +5)
+FC.1;sl;5;i10;-5;+6;;* High crush 1~34;cs1~34;FC;Xiaoyu-FC.1;;FC;;
+FC.2;sl;8;i11;-4;+7;;* High crush 1~34;cs1~34;FC;Xiaoyu-FC.2;;FC;;
+FC.3;L;11;i15~17;-15;-4;;* High crush 1~49;cs1~49;FC;Xiaoyu-FC.3;;FC;;
+FC.3,2;L, h;11, 6;i15~17, i18;+0;+7;;* Combo from 1st hit CH;;BT;Xiaoyu-FC.3,2;;BT;;
+FC.3,2,1;L, h, h;11, 6, 6;i15~17, ,i14;-1;+6;+10g;"* Transition to HYP with B (-2, +5)
 * Combo from 2nd hit
 * Jail from 2nd block";;HYP;Xiaoyu-FC.3,2,1;;;;
-FC.3,2,1,4;l, h, h, m;11, 6, 6, 12;i15, ,i18;-18;+33a (+23);;"* Combo from 3rd hit CH with 11F delay
+FC.3,2,1,4;L, h, h, m;11, 6, 6, 12;i15~17, ,i18~20;-18;+33a (+23);;"* Combo from 3rd hit CH with 11F delay
 * Jail from 3rd block with no delay
 * Move can be delayed by 14F";;;Xiaoyu-FC.3,2,1,4;Fire Dancer;;;File:t8-p2-xiaoyu-fc.3,2,1,4.mp4
 FC.4;l;6;i12;-15;-4;;"*
 * High crush 1~46";cs1~46;FC;Xiaoyu-FC.4;;FC;;
-FC.df+2;l;8;i19;-8;+3;;"* Recover in FC BT with DF_D_DB
+FC.df+2;L;8;i19;-8;+3;;"* Recover in FC BT with DF_D_DB
 * High crush 1~27";cs1~27;BT;Xiaoyu-FC.df+2;;BT;;
-FC.df+2,1;l, l;8, 10;i19, i18;-8;+3;;"* Combo from 1st hit
+FC.df+2,1;L, l;8, 10;i19, i18;-8;+3;;"* Combo from 1st hit
 * Jail from 1st block
 * Recover in FC BT with DF_D_DB
 * High crush 1~45";cs1~45;BT;Xiaoyu-FC.df+2,1;Lotus Twist;BT;;File:t8-p2-xiaoyu-fc.df+2,1.mp4
-FC.df+4;l;13;i18;-7;+4;;"* Automatically transitions to AOP
+FC.df+4;L;13;i18~20;-7;+4;;"* Automatically transitions to AOP
 * Alternate input AOP.f+4
 * High crush 1~";cs1~;AOP;Xiaoyu-FC.df+4;;AOP;;
-FC.df+4,4;l, l;13, 13;i18, i28;-6;+5;;"* Combo from 1st hit CH
+FC.df+4,4;L, L;13, 13;i18~20, i27~29;-6;+5;;"* Combo from 1st hit CH
 * Alternate input AOP.f+4,4
 * High crush 1~";cs1~;FC;Xiaoyu-FC.df+4,4;Flower Garden;FC;;
 AOP.1;m;11;i18;-5;+6;;* Transition to HYP with B (-2, +9);;HYP,FC;Xiaoyu-AOP.1;;FC;;
@@ -401,6 +417,11 @@ HYP.3+4;h;20;i25;+8;+30a;;"* Strong Aerial Tailspin
 * Cancel into BT with B
 * Chip on block [8]
 * Low crush 12~";chp js12~;;Xiaoyu-HYP.3+4;Deadly Orchid;;;File:t8-p2-xiaoyu-hyp.3+4.mp4
+H.f,F+1,2;m, m;13, 20;i15, i26~28;+6;+24d;+50a;"* Balcony Break
+* Partially uses remaining Heat time
+* Combos from 1st hit
+* Recover facing forward with F (+4, +22d, +48a)
+* Low crush";bbr js;BT;Xiaoyu-f,F+1,H.2;Bai Lian Yan Di Po;BT;;
 1+3;t;35;i12;-6;+1d;;"* Homing
 * Throw break 1 or 2";hom;;Xiaoyu-1+3;Jade;;;File:t8-p2-xiaoyu-1+3.mp4
 2+4;t;35;i12;-3;+0d;;"* Homing
