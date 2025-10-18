@@ -16,7 +16,7 @@ import {
   type ShouldRevalidateFunction,
   useRouteError,
 } from '@remix-run/react'
-import { captureRemixErrorBoundaryError } from '@sentry/remix'
+//import { captureRemixErrorBoundaryError } from '@sentry/remix'
 import tailwindStyleSheetUrl from './tailwind.css?url'
 import { getCacheControlHeaders } from './utils/headerUtils'
 
@@ -55,7 +55,7 @@ export const shouldRevalidate: ShouldRevalidateFunction = () => {
 
 export const ErrorBoundary = () => {
   const error = useRouteError()
-  captureRemixErrorBoundaryError(error)
+  //captureRemixErrorBoundaryError(error)
   return <div>Something went wrong</div>
 }
 

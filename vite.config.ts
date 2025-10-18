@@ -1,12 +1,10 @@
 import { vitePlugin as remix } from '@remix-run/dev'
-import { sentryVitePlugin } from '@sentry/vite-plugin'
-import { remixDevTools } from 'remix-development-tools'
+//import { sentryVitePlugin } from '@sentry/vite-plugin'
 import { defineConfig } from 'vite'
 import tsconfigPaths from 'vite-tsconfig-paths'
 
 export default defineConfig({
   plugins: [
-    remixDevTools(),
     remix({
       future: {
         v3_fetcherPersist: true,
@@ -15,10 +13,10 @@ export default defineConfig({
       },
     }),
     tsconfigPaths(),
-    sentryVitePlugin({
-      org: 'philip-bruvoll',
-      project: 'javascript-remix',
-    }),
+    // sentryVitePlugin({
+    //   org: 'philip-bruvoll',
+    //   project: 'javascript-remix',
+    // }),
   ],
 
   build: {
