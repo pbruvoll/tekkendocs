@@ -252,7 +252,7 @@ export default function Index() {
   const version = characterGuideAuthors.T8[characterId]?.version
 
   return (
-    <GuideContext.Provider
+    <GuideContext
       value={{
         compressedCommandMap,
         charUrl: `/${gameId}/${characterId}`,
@@ -359,6 +359,6 @@ export default function Index() {
           <ExternalResources externalResources={externalResources} />
         )}
       </ContentContainer>
-    </GuideContext.Provider>
+    </GuideContext>
   )
 }
