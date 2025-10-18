@@ -1,5 +1,5 @@
-import { json, type MetaFunction, type TypedResponse } from '@remix-run/node'
-import { useLoaderData } from '@remix-run/react'
+import { data, type MetaFunction } from 'react-router'
+import { useLoaderData } from 'react-router'
 import { CharacterGrid } from '~/components/CharacterGrid'
 import { ContentContainer } from '~/components/ContentContainer'
 import { getTekken8Characters } from '~/services/staticDataService'
@@ -21,8 +21,8 @@ export const meta: MetaFunction = ({ matches }) => {
 type LoaderData = {
   gamePageDataT8: GamePageData
 }
-export const loader = async (): Promise<TypedResponse<LoaderData>> => {
-  return json<LoaderData>(
+export const loader = async () => {
+  return data<LoaderData>(
     {
       gamePageDataT8: { characterInfoList: getTekken8Characters() },
     },

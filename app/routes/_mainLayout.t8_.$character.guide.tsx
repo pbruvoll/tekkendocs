@@ -4,11 +4,10 @@ import { Text } from '@radix-ui/themes'
 import {
   data,
   type HeadersFunction,
-  json,
   type LoaderFunctionArgs,
   type MetaFunction,
-} from '@remix-run/node'
-import { useLoaderData } from '@remix-run/react'
+} from 'react-router'
+import { useLoaderData } from 'react-router'
 import invariant from 'tiny-invariant'
 import { About } from '~/components/About'
 import { Authors } from '~/components/Authors'
@@ -108,7 +107,7 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
     )
   }
 
-  return json(
+  return data(
     { characterName: character, editUrl, guideData, game },
     {
       headers: {
@@ -119,7 +118,7 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 }
 
 export const meta: MetaFunction<typeof loader> = ({
-  data,
+  data: loaderData,
   params,
   matches,
 }) => {
@@ -138,8 +137,8 @@ export const meta: MetaFunction<typeof loader> = ({
   }
   const { characterName } = frameData as CharacterFrameData
   const characterId = characterName.toLocaleLowerCase()
-  const author = data?.guideData?.authors?.[0]?.name
-  const authorLink = data?.guideData?.authors?.[0]?.url?.split(' | ')?.[0]
+  const author = loaderData?.guideData?.authors?.[0]?.name
+  const authorLink = loaderData?.guideData?.authors?.[0]?.url?.split(' | ')?.[0]
   const version = characterGuideAuthors.T8[characterId]?.version
   const characterTitle =
     characterName[0].toUpperCase() + characterName.substring(1)
@@ -183,8 +182,8 @@ export const meta: MetaFunction<typeof loader> = ({
     },
   }
 
-  return [
-    ...generateMetaTags({
+  const generatedTags =
+    generateMetaTags({
       matches,
       title,
       description,
@@ -192,7 +191,10 @@ export const meta: MetaFunction<typeof loader> = ({
         url: imageUrl,
       },
       url: `/t8/${characterId}/guide`,
-    }),
+    }) || []
+
+  return [
+    ...generatedTags,
     {
       'script:ld+json': jsonLd,
     },

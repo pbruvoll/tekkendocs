@@ -1,4 +1,4 @@
-import { json, type LoaderFunctionArgs } from '@remix-run/node'
+import { data, type LoaderFunctionArgs } from 'react-router'
 import { environment } from '~/constants/environment.server'
 import { SheetServiceMock } from '~/mock/SheetServiceMock'
 import { SheetServiceImpl } from '~/services/sheetServiceImpl.server'
@@ -34,7 +34,15 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
   const normalMoves = tables.find(t => t.name === 'frames_normal')
   const moves: Move[] = normalMoves ? frameDataTableToJson(normalMoves) : []
   const stances = Array.from(getStances(moves))
-  const data = { characterName, editUrl, game, framesNormal: moves, stances }
+  const loaderData = {
+    characterName,
+    editUrl,
+    game,
+    framesNormal: moves,
+    stances,
+  }
 
-  return json(data, { headers: getCacheControlHeaders({ seconds: 60 * 5 }) })
+  return data(loaderData, {
+    headers: getCacheControlHeaders({ seconds: 60 * 5 }),
+  })
 }

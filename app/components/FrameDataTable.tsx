@@ -5,7 +5,7 @@ import {
   CaretUpIcon,
 } from '@radix-ui/react-icons'
 import { Table } from '@radix-ui/themes'
-import { Link, useLocation, useSearchParams } from '@remix-run/react'
+import { Link, useLocation, useSearchParams } from 'react-router';
 import { orderByKey } from '~/constants/sortConstants'
 import { type MoveFilter } from '~/types/MoveFilter'
 import { type SortOrder } from '~/types/SortOrder'

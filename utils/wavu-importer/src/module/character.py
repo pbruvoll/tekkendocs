@@ -42,7 +42,7 @@ class Character:
         self.move_list_path = move_list_path
         self.wavu_page = wavu_page
 
-    def export_movelist_as_json(self):
+    def export_movelist_as_data(self):
         self.__create_move_list_file()
         with open(self.move_list_path, "w", encoding='utf-8') as outfile:
             json.dump(self.move_list, outfile, sort_keys=True, indent=4, cls=MoveEncoder, ensure_ascii=False)

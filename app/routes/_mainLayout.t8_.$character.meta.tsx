@@ -1,12 +1,8 @@
 import { useMemo } from 'react'
 import { Pencil1Icon } from '@radix-ui/react-icons'
 import { Heading, Link as RadixLink, Table } from '@radix-ui/themes'
-import {
-  json,
-  type LoaderFunctionArgs,
-  type MetaFunction,
-} from '@remix-run/node'
-import { useLoaderData, useParams } from '@remix-run/react'
+import { data, type LoaderFunctionArgs, type MetaFunction } from 'react-router'
+import { useLoaderData, useParams } from 'react-router'
 import invariant from 'tiny-invariant'
 import { Authors } from '~/components/Authors'
 import { Command } from '~/components/Command'
@@ -90,7 +86,7 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
     }),
   )
 
-  return json(
+  return data(
     { characterName: character, editUrl, tables },
     {
       headers: {

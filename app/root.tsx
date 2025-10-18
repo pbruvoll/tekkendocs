@@ -1,21 +1,17 @@
 import { Theme } from '@radix-ui/themes'
 import radixStyles from '@radix-ui/themes/styles.css?url'
-import {
-  json,
-  type LinksFunction,
-  type LoaderFunctionArgs,
-  type TypedResponse,
-} from '@remix-run/node'
+import { type LinksFunction, type LoaderFunctionArgs } from 'react-router'
 import {
   Links,
   Meta,
+  data,
   type MetaFunction,
   Outlet,
   Scripts,
   ScrollRestoration,
   type ShouldRevalidateFunction,
   useRouteError,
-} from '@remix-run/react'
+} from 'react-router'
 //import { captureRemixErrorBoundaryError } from '@sentry/remix'
 import tailwindStyleSheetUrl from './tailwind.css?url'
 import { getCacheControlHeaders } from './utils/headerUtils'
@@ -41,10 +37,8 @@ export const meta: MetaFunction = () => [
 export type LoaderData = {
   url: string
 }
-export const loader = async ({
-  request,
-}: LoaderFunctionArgs): Promise<TypedResponse<LoaderData>> => {
-  return json({
+export const loader = async ({ request }: LoaderFunctionArgs) => {
+  return data({
     url: request.url,
   })
 }

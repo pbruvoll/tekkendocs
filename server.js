@@ -1,11 +1,8 @@
 import './instrumentation.server.mjs'
-import { createRequestHandler } from '@remix-run/express'
-import { installGlobals } from '@remix-run/node'
+import { createRequestHandler } from '@react-router/express';
 import compression from 'compression'
 import express from 'express'
 import morgan from 'morgan'
-
-installGlobals()
 
 const viteDevServer =
   process.env.NODE_ENV === 'production'
@@ -18,7 +15,7 @@ const viteDevServer =
 
 const remixHandler = createRequestHandler({
   build: viteDevServer
-    ? () => viteDevServer.ssrLoadModule('virtual:remix/server-build')
+    ? () => viteDevServer.ssrLoadModule('virtual:react-router/server-build')
     : await import('./build/server/index.js'),
 })
 

@@ -1,5 +1,5 @@
-import { type DataFunctionArgs, json } from '@remix-run/node'
-import { Outlet } from '@remix-run/react'
+import { data, LoaderFunctionArgs } from 'react-router'
+import { Outlet } from 'react-router'
 import { hasHeaderMap } from '~/constants/hasHeaderMap'
 import { getSheet } from '~/services/googleSheetService.server'
 import { type Game } from '~/types/Game'
@@ -7,7 +7,7 @@ import { cachified } from '~/utils/cache.server'
 import { getCacheControlHeaders } from '~/utils/headerUtils'
 import { sheetSectionToTable, sheetToSections } from '~/utils/sheetUtils.server'
 
-export const loader = async ({ params }: DataFunctionArgs) => {
+export const loader = async ({ params }: LoaderFunctionArgs) => {
   const character = params.character
   if (!character) {
     throw new Response(null, {
@@ -45,7 +45,7 @@ export const loader = async ({ params }: DataFunctionArgs) => {
     }),
   )
 
-  return json(
+  return data(
     { characterName: character, editUrl, tables },
     {
       headers: {

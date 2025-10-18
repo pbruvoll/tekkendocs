@@ -1,4 +1,4 @@
-import { json } from '@remix-run/node'
+import { data } from 'react-router';
 import { environment } from '~/constants/environment.server'
 import { type ServerError } from '~/types/ServerError'
 import { type ServerStatusCode } from '~/types/ServerStatusCode'
@@ -10,8 +10,8 @@ const statusToText: Record<ServerStatusCode, string> = {
   '502': 'Bad gateway',
 }
 
-export const createErrorResponse = (serverError: ServerError): Response => {
-  return json(
+export const createErrorResponse = (serverError: ServerError) => {
+  return data(
     {
       title: serverError.title,
       detail: serverError.detail,

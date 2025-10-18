@@ -1,6 +1,6 @@
 import { Fragment } from 'react/jsx-runtime'
 import { VideoIcon } from '@radix-ui/react-icons'
-import { Link, type MetaFunction } from '@remix-run/react'
+import { Link, type MetaFunction } from 'react-router';
 import { ContentContainer } from '~/components/ContentContainer'
 import { TrophyProgress } from '~/components/TrophyProgress'
 import { useAppState } from '~/hooks/useAppState'

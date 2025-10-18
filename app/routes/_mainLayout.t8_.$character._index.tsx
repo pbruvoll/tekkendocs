@@ -1,7 +1,7 @@
 import { Pencil1Icon } from '@radix-ui/react-icons'
 import { Heading } from '@radix-ui/themes'
-import { type HeadersFunction } from '@remix-run/node'
-import { type MetaFunction } from '@remix-run/react'
+import { type HeadersFunction } from 'react-router';
+import { type MetaFunction } from 'react-router';
 import { ContentContainer } from '~/components/ContentContainer'
 import { FrameDataSection } from '~/components/FrameDataSection'
 import Nav, { type NavLinkInfo } from '~/components/Nav'

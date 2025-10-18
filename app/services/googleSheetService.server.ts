@@ -1,4 +1,4 @@
-import { json } from '@remix-run/node'
+import { data } from 'react-router';
 import { google, type sheets_v4 } from 'googleapis'
 import { type GaxiosResponse } from '~/types/GaxiosResponse'
 import { ServerStatusCode } from '~/types/ServerStatusCode'
@@ -51,7 +51,7 @@ export const getSheet = async (
     console.warn(`Exception getting data ${e}`)
     throw e
   }
-  throw json(`There were no rows for sheet ${sheetName}`, {
+  throw data(`There were no rows for sheet ${sheetName}`, {
     status: ServerStatusCode.NotFound,
     statusText: 'Not found',
   })

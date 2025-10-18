@@ -1,4 +1,4 @@
-import { type HeadersFunction, type MetaFunction } from '@remix-run/node'
+import { type HeadersFunction, type MetaFunction } from 'react-router';
 import { CharacterGrid } from '~/components/CharacterGrid'
 import { ContentContainer } from '~/components/ContentContainer'
 import {

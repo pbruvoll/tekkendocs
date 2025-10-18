@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { Pencil1Icon } from '@radix-ui/react-icons'
 import { Button } from '@radix-ui/themes'
-import { json, type MetaFunction, type TypedResponse } from '@remix-run/node'
-import { useLoaderData } from '@remix-run/react'
+import { data, type MetaFunction } from 'react-router'
+import { useLoaderData } from 'react-router'
 import { ContentContainer } from '~/components/ContentContainer'
 import { getSheet } from '~/services/googleSheetService.server'
 import { type MatchVideo, type MatchVideoSet } from '~/types/MatchVideo'
@@ -37,7 +37,7 @@ type LoaderData = {
   matchVideoSets: MatchVideoSet[]
 }
 
-export const loader = async (): Promise<TypedResponse<LoaderData>> => {
+export const loader = async () => {
   const sheetDoc: SpreadSheetDocName = 'T7_MatchVideo'
   const { sheet } = await cachified({
     key: sheetDoc,
@@ -59,7 +59,7 @@ export const loader = async (): Promise<TypedResponse<LoaderData>> => {
   const sheetSections = sheetToSections(rows)
   const videoSection = sheetSections.find(s => s.sectionId === 'videos_match')
   if (!videoSection) {
-    throw json('Not able to find match video section', { status: 404 })
+    throw data('Not able to find match video section', { status: 404 })
   }
 
   const matchVideoSets = videoSection.rows
@@ -86,7 +86,7 @@ export const loader = async (): Promise<TypedResponse<LoaderData>> => {
       return matchSetList
     }, [])
 
-  return json(
+  return data(
     { matchVideoSets, editUrl },
     {
       headers: getCacheControlHeaders({ seconds: 60 * 5 }),

@@ -1,11 +1,6 @@
 import { useEffect, useMemo } from 'react'
-import { type MetaFunction } from '@remix-run/node'
-import {
-  Link,
-  useFetcher,
-  useNavigate,
-  useSearchParams,
-} from '@remix-run/react'
+import { type MetaFunction } from 'react-router';
+import { Link, useFetcher, useNavigate, useSearchParams } from 'react-router';
 import { Input } from '@/components/ui/input'
 import { ContentContainer } from '~/components/ContentContainer'
 import { SimpleMovesTable } from '~/components/SimpleMovesTable'
