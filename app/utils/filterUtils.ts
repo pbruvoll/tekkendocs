@@ -62,6 +62,7 @@ export const getFilterFromParams = (
     wallCrush: getSearchParamBoolean(searchParams, filterKey.WallCrush),
     hitsGrounded: getSearchParamBoolean(searchParams, filterKey.HitsGrounded),
     video: getSearchParamBoolean(searchParams, filterKey.Video),
+    noVideo: getSearchParamBoolean(searchParams, filterKey.NoVideo),
     spike: getSearchParamBoolean(searchParams, filterKey.Spike),
     transition: getSearchParamStringList(searchParams, filterKey.Transition),
     recoverFullCrouch: getSearchParamBoolean(

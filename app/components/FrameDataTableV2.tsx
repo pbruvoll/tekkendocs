@@ -129,7 +129,7 @@ export const FrameDataTable = ({
                     <Link style={{ textDecoration: 'none' }} to={moveUrl}>
                       {move.command}
                     </Link>
-                    {(move.video || move.ytVideo) && (
+                    {move.ytVideo && (
                       <MovePreviewDialogButton move={move} url={moveUrl} />
                     )}
                   </span>

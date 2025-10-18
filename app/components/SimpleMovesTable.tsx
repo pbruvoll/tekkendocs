@@ -89,7 +89,7 @@ export function SimpleMovesTable({
                   <span className="break-words">
                     {formatWordWithBreaks(move.command)}
                   </span>
-                  {(move.video || move.ytVideo) && <VideoIcon />}
+                  {move.ytVideo && <VideoIcon />}
                 </Link>
               </td>
               <td className="p-2 align-middle sm:p-4">

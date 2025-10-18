@@ -31,6 +31,7 @@ export const filterKey = {
   Transition: 'transition',
   WallCrush: 'wc',
   Video: 'video',
+  NoVideo: 'noVideo',
   HitsGrounded: 'hitsGrounded',
   RemoveRecoveryHealth: 'removeRecoveryHealth',
   RecoverFullCrouch: 'recoverFullCrouch',
