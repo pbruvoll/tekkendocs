@@ -1,10 +1,5 @@
 import { Heading, Table, Text } from '@radix-ui/themes'
-import {
-  Link,
-  type MetaFunction,
-  useMatches,
-  useParams,
-} from '@remix-run/react'
+import { Link, type MetaFunction, useMatches, useParams } from 'react-router'
 import { ContentContainer } from '~/components/ContentContainer'
 import { MoveVideo } from '~/components/MoveVideo'
 import { type Move } from '~/types/Move'

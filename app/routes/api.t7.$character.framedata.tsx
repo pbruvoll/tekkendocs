@@ -1,4 +1,4 @@
-import { type DataFunctionArgs, json } from '@remix-run/node'
+import { data, type LoaderFunctionArgs } from 'react-router'
 import { hasHeaderMap } from '~/constants/hasHeaderMap'
 import { getSheet } from '~/services/googleSheetService.server'
 import { type Game } from '~/types/Game'
@@ -8,7 +8,7 @@ import { cachified } from '~/utils/cache.server'
 import { getCacheControlHeaders } from '~/utils/headerUtils'
 import { sheetSectionToTable, sheetToSections } from '~/utils/sheetUtils.server'
 
-export const loader = async ({ params }: DataFunctionArgs) => {
+export const loader = async ({ params }: LoaderFunctionArgs) => {
   const character = params.character
   if (!character) {
     throw new Response(null, {
@@ -47,7 +47,7 @@ export const loader = async ({ params }: DataFunctionArgs) => {
   )
   const framesNormalTable = tables.find(t => t.name === 'frames_normal')
   if (!framesNormalTable) {
-    throw json('Not able to find frame for character', { status: 500 })
+    throw data('Not able to find frame for character', { status: 500 })
   }
 
   const framesNormal = framesNormalTable.rows.map<Move>((row, index) => ({
@@ -76,7 +76,7 @@ export const loader = async ({ params }: DataFunctionArgs) => {
       }))
     : undefined
 
-  return json(
+  return data(
     { characterName: character, editUrl, framesNormal, framesThrows },
     {
       headers: getCacheControlHeaders({ seconds: 60 * 5 }),

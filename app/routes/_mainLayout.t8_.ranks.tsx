@@ -1,5 +1,5 @@
 import { Card, Inset } from '@radix-ui/themes'
-import { type MetaFunction } from '@remix-run/node'
+import { type MetaFunction } from 'react-router'
 import { ContentContainer } from '~/components/ContentContainer'
 import assaliant from '~/images/t8/ranks/assaliant.png'
 import battleRuler from '~/images/t8/ranks/battle-ruler.png'

@@ -1,6 +1,6 @@
 import ReactPlayer from 'react-player/youtube'
 import cx from 'classix'
-import { useHydrated } from '~/hooks/useHydrated'
+import { useHydrated } from 'remix-utils/use-hydrated'
 import { type Move } from '~/types/Move'
 
 export type MoveVideoProps = {

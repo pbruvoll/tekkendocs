@@ -1,7 +1,7 @@
 import { Pencil1Icon } from '@radix-ui/react-icons'
 import { Heading, Link as RadixLink, Table } from '@radix-ui/themes'
-import { type DataFunctionArgs, json, type MetaFunction } from '@remix-run/node'
-import { Link, NavLink, useLoaderData } from '@remix-run/react'
+import { data, type LoaderFunctionArgs, type MetaFunction } from 'react-router'
+import { Link, NavLink, useLoaderData } from 'react-router'
 import { ContentContainer } from '~/components/ContentContainer'
 import { hasHeaderMap } from '~/constants/hasHeaderMap'
 import { tableIdToDisplayName } from '~/constants/tableIdToDisplayName'
@@ -14,7 +14,7 @@ import { getCacheControlHeaders } from '~/utils/headerUtils'
 import { commandToUrlSegment } from '~/utils/moveUtils'
 import { sheetSectionToTable, sheetToSections } from '~/utils/sheetUtils.server'
 
-export const loader = async ({ params }: DataFunctionArgs) => {
+export const loader = async ({ params }: LoaderFunctionArgs) => {
   const character = params.character
   if (!character) {
     throw new Response(null, {
@@ -53,7 +53,7 @@ export const loader = async ({ params }: DataFunctionArgs) => {
     }),
   )
 
-  return json(
+  return data(
     { characterName: character, editUrl, tables },
     {
       headers: {

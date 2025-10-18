@@ -1,5 +1,5 @@
 import { VideoIcon } from '@radix-ui/react-icons'
-import { Link } from '@remix-run/react'
+import { Link } from 'react-router'
 import cx from 'classix'
 import { type Move, type MoveT8 } from '~/types/Move'
 import { charIdFromMove, commandToUrlSegmentEncoded } from '~/utils/moveUtils'

@@ -1,6 +1,6 @@
 import { Heading } from '@radix-ui/themes'
-import { json, type TypedResponse } from '@remix-run/node'
-import { Link, useLoaderData } from '@remix-run/react'
+import { data } from 'react-router'
+import { Link, useLoaderData } from 'react-router'
 import { CharacterGrid } from '~/components/CharacterGrid'
 import { ContentContainer } from '~/components/ContentContainer'
 import { getTekken7Characters } from '~/services/staticDataService'
@@ -8,8 +8,8 @@ import { type GamePageData } from '~/types/GamePageData'
 import { getCacheControlHeaders } from '~/utils/headerUtils'
 import { t7AvatarMap } from '~/utils/t7AvatarMap'
 
-export const loader = async (): Promise<TypedResponse<GamePageData>> => {
-  return json<GamePageData>(
+export const loader = async () => {
+  return data<GamePageData>(
     { characterInfoList: getTekken7Characters() },
     {
       headers: getCacheControlHeaders({ seconds: 60 * 5 }),

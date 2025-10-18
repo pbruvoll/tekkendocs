@@ -1,12 +1,12 @@
 import { useMemo } from 'react'
 import { Pencil1Icon } from '@radix-ui/react-icons'
 import { Heading, Table } from '@radix-ui/themes'
-import { type DataFunctionArgs, json, type MetaFunction } from '@remix-run/node'
+import { data, type LoaderFunctionArgs, type MetaFunction } from 'react-router'
 import {
   isRouteErrorResponse,
   useLoaderData,
   useRouteError,
-} from '@remix-run/react'
+} from 'react-router'
 import { Commands } from '~/components/Commands'
 import { ContentContainer } from '~/components/ContentContainer'
 import { AppErrorBoundary } from '~/components/ErrorBoundary'
@@ -34,7 +34,7 @@ const navData: NavLinkInfo[] = [
 
 export const headers = () => getCacheControlHeaders({ seconds: 60 * 5 })
 
-export const loader = async ({ params }: DataFunctionArgs) => {
+export const loader = async ({ params }: LoaderFunctionArgs) => {
   const character = getCharacterFromParams(params)
   if (['lidia', 'heihachi', 'mokujin'].includes(character)) {
     throw new Response(null, {
@@ -51,7 +51,7 @@ export const loader = async ({ params }: DataFunctionArgs) => {
 
   const { editUrl, tables } = sheet
 
-  return json(
+  return data(
     { characterName: character, editUrl, tables, gameId: sheet.game },
     {
       headers: {

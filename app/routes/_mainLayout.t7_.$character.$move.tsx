@@ -1,13 +1,13 @@
 import { Heading, Link as RadixLink, Table } from '@radix-ui/themes'
-import { type DataFunctionArgs, json } from '@remix-run/node'
-import { Link, type MetaFunction, useLoaderData } from '@remix-run/react'
+import { type LoaderFunctionArgs, data } from 'react-router'
+import { Link, type MetaFunction, useLoaderData } from 'react-router'
 import { ContentContainer } from '~/components/ContentContainer'
 import { google } from '~/google.server'
 import { ServerStatusCode } from '~/types/ServerStatusCode'
 import { getCacheControlHeaders } from '~/utils/headerUtils'
 import { commandToUrlSegment } from '~/utils/moveUtils'
 
-export const loader = async ({ params }: DataFunctionArgs) => {
+export const loader = async ({ params }: LoaderFunctionArgs) => {
   const character = params.character
   const move = params.move
   if (!character) {
@@ -40,14 +40,14 @@ export const loader = async ({ params }: DataFunctionArgs) => {
       range: character, // sheet name
     })
     .catch(() => {
-      throw new Response(null, {
+      throw data(null, {
         status: ServerStatusCode.ServerError,
         statusText: 'server error',
       })
     })
 
   if (!response.data.values) {
-    throw json('not found', {
+    throw data('not found', {
       status: ServerStatusCode.NotFound,
       statusText: 'Not found 2',
     })
@@ -56,7 +56,7 @@ export const loader = async ({ params }: DataFunctionArgs) => {
   rows = response.data.values
 
   if (rows[0][0] !== '#frames_normal' || rows.length < 3) {
-    throw json('no frame data found', {
+    throw data('no frame data found', {
       status: ServerStatusCode.NotFound,
       statusText: 'Not found 2',
     })
@@ -66,13 +66,13 @@ export const loader = async ({ params }: DataFunctionArgs) => {
     row => row[0] && commandToUrlSegment(row[0]) === move,
   )
   if (!moveRow) {
-    throw json('move not found in frame data', {
+    throw data('move not found in frame data', {
       status: ServerStatusCode.NotFound,
       statusText: 'Not found 4',
     })
   }
 
-  return json(
+  return data(
     { characterName: character, dataHeaders, moveRow },
     {
       headers: getCacheControlHeaders({ seconds: 60 * 5 }),

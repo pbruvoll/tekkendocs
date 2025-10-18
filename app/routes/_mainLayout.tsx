@@ -5,7 +5,7 @@ import {
   MagnifyingGlassIcon,
   TwitterLogoIcon,
 } from '@radix-ui/react-icons'
-import { Link, Outlet, type ShouldRevalidateFunction } from '@remix-run/react'
+import { Link, Outlet, type ShouldRevalidateFunction } from 'react-router'
 import { ContentContainer } from '~/components/ContentContainer'
 import { AppErrorBoundary } from '~/components/ErrorBoundary'
 import tekkenDocsLogoIcon from '~/images/logo/tekkendocs-logo-icon.svg'

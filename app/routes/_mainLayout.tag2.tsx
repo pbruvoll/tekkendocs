@@ -1,12 +1,12 @@
 import { Heading } from '@radix-ui/themes'
-import { json, type MetaFunction, type TypedResponse } from '@remix-run/node'
+import { data, type MetaFunction } from 'react-router'
 import { ContentContainer } from '~/components/ContentContainer'
 import { charsTag2 } from '~/services/staticDataService'
 import { getCacheControlHeaders } from '~/utils/headerUtils'
 import { generateMetaTags } from '~/utils/seoUtils'
 
-export const loader = async (): Promise<TypedResponse<null>> => {
-  return json(null, {
+export const loader = async () => {
+  return data(null, {
     headers: getCacheControlHeaders({ seconds: 60 * 5 }),
   })
 }

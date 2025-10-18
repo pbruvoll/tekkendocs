@@ -1,5 +1,5 @@
 import { Fragment } from 'react'
-import { Link } from '@remix-run/react'
+import { Link } from 'react-router'
 import { type GuideData } from './GuideData'
 
 type GuideNavPros = {

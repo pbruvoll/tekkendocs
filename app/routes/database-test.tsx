@@ -1,8 +1,8 @@
 import {
   type ActionFunctionArgs,
-  json,
+  data,
   type LoaderFunctionArgs,
-} from '@remix-run/node'
+} from 'react-router'
 //import { Form, useLoaderData } from '@remix-run/react'
 //import { prisma } from '~/db.server'
 export async function action({ request }: ActionFunctionArgs) {
@@ -24,10 +24,10 @@ export async function action({ request }: ActionFunctionArgs) {
 }
 export async function loader({ request }: LoaderFunctionArgs) {
   // const data = await prisma.issue.findMany()
-  // return json({
+  // return data({
   //   data,
   // })
-  return json({ data: [] })
+  return data({ data: [] })
 }
 export default function Index() {
   // const { data } = useLoaderData<typeof loader>()

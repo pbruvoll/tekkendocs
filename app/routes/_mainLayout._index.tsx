@@ -1,10 +1,10 @@
 import { Badge, Heading } from '@radix-ui/themes'
-import { json, type MetaFunction, type TypedResponse } from '@remix-run/node'
+import { data, type MetaFunction } from 'react-router'
 import {
   Link,
   type ShouldRevalidateFunction,
   useLoaderData,
-} from '@remix-run/react'
+} from 'react-router'
 import { TextEffect } from '@/components/core/TextEffect'
 import { CharacterGrid } from '~/components/CharacterGrid'
 import { ContentContainer } from '~/components/ContentContainer'
@@ -24,8 +24,8 @@ type LoaderData = {
   gamePageDataT7: GamePageData
   gamePageDataT8: GamePageData
 }
-export const loader = async (): Promise<TypedResponse<LoaderData>> => {
-  return json<LoaderData>(
+export const loader = async () => {
+  return data<LoaderData>(
     {
       gamePageDataT7: { characterInfoList: getTekken7Characters() },
       gamePageDataT8: { characterInfoList: getTekken8Characters() },

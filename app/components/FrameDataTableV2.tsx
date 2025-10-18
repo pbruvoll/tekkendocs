@@ -5,7 +5,7 @@ import {
   CaretUpIcon,
 } from '@radix-ui/react-icons'
 import { Table } from '@radix-ui/themes'
-import { Link, useLocation, useSearchParams } from '@remix-run/react'
+import { Link, useLocation, useSearchParams } from 'react-router'
 import { orderByKey } from '~/constants/sortConstants'
 import { type Move, type MoveT8 } from '~/types/Move'
 import { type MoveFilter } from '~/types/MoveFilter'
@@ -141,9 +141,9 @@ export const FrameDataTable = ({
                 <Table.Cell>{move.hit}</Table.Cell>
                 <Table.Cell>{move.counterHit}</Table.Cell>
                 <Table.Cell>
-                  {move.notes
-                    ?.split('\n')
-                    .map((line, index) => <div key={index}>{line}</div>)}
+                  {move.notes?.split('\n').map((line, index) => (
+                    <div key={index}>{line}</div>
+                  ))}
                 </Table.Cell>
               </Table.Row>
             )

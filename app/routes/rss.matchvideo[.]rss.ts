@@ -1,4 +1,4 @@
-import { json, type LoaderFunctionArgs } from '@remix-run/node'
+import { data, type LoaderFunctionArgs } from 'react-router'
 import { getSheet } from '~/services/googleSheetService.server'
 import { type MatchVideo, type MatchVideoSet } from '~/types/MatchVideo'
 import { type SpreadSheetDocName } from '~/types/SpreadSheetDocName'
@@ -41,7 +41,7 @@ const getMatchVidoeSets = async () => {
   const sheetSections = sheetToSections(rows)
   const videoSection = sheetSections.find(s => s.sectionId === 'videos_match')
   if (!videoSection) {
-    throw json('Not able to find match video section', { status: 404 })
+    throw data('Not able to find match video section', { status: 404 })
   }
 
   const matchVideoSets = videoSection.rows

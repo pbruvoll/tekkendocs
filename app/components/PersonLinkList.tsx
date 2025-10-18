@@ -1,7 +1,7 @@
 import { Fragment } from 'react'
 import { FaTwitch, FaYoutube } from 'react-icons/fa'
 import { TwitterLogoIcon } from '@radix-ui/react-icons'
-import { Link } from '@remix-run/react'
+import { Link } from 'react-router'
 import metafyGradientIcon from '~/images/icons/metafy-gradient.svg'
 
 export type PersonLink = {
