@@ -1,5 +1,5 @@
 import { VideoIcon } from '@radix-ui/react-icons'
-import { Link } from 'react-router';
+import { Link } from 'react-router'
 import cx from 'classix'
 import { type Move, type MoveT8 } from '~/types/Move'
 import { charIdFromMove, commandToUrlSegmentEncoded } from '~/utils/moveUtils'
@@ -20,7 +20,7 @@ const formatWordWithBreaks = (command: string) => {
 
 // function which extract just the number from frame data, eg "i15~16, i30~32,i31~32" => "i15"
 const simplifyFrameValue = (frameData: string) => {
-  return frameData.match(/i?[+-]?\d+/)?.[0] || '';
+  return frameData.match(/i?[+-]?\d+/)?.[0] || ''
 }
 
 interface SimpleMovesTableProps {

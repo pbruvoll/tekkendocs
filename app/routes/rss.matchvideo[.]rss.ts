@@ -1,4 +1,4 @@
-import { data, type LoaderFunctionArgs } from 'react-router';
+import { data, type LoaderFunctionArgs } from 'react-router'
 import { getSheet } from '~/services/googleSheetService.server'
 import { type MatchVideo, type MatchVideoSet } from '~/types/MatchVideo'
 import { type SpreadSheetDocName } from '~/types/SpreadSheetDocName'
@@ -6,7 +6,7 @@ import { cachified } from '~/utils/cache.server'
 import { sheetToSections } from '~/utils/sheetUtils.server'
 
 function escapeCdata(s: string) {
-  return s.replace(/\]\]>/g, ']]]]><![CDATA[>');
+  return s.replace(/\]\]>/g, ']]]]><![CDATA[>')
 }
 
 function escapeHtml(s: string) {
@@ -15,7 +15,7 @@ function escapeHtml(s: string) {
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#039;');
+    .replace(/'/g, '&#039;')
 }
 
 const getMatchVidoeSets = async () => {

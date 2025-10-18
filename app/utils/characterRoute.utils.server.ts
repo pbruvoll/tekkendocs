@@ -1,4 +1,4 @@
-import { type Params } from 'react-router';
+import { type Params } from 'react-router'
 
 export const getCharacterFromParams = (params: Params<string>): string => {
   const character = params.character

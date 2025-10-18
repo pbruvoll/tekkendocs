@@ -1,6 +1,6 @@
 import { Pencil1Icon } from '@radix-ui/react-icons'
 import { Heading, Link as RadixLink, Table } from '@radix-ui/themes'
-import { data, LoaderFunctionArgs, type MetaFunction } from 'react-router'
+import { data, type LoaderFunctionArgs, type MetaFunction } from 'react-router'
 import { Link, NavLink, useLoaderData } from 'react-router'
 import { ContentContainer } from '~/components/ContentContainer'
 import { hasHeaderMap } from '~/constants/hasHeaderMap'

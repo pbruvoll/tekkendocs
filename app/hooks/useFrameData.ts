@@ -1,4 +1,4 @@
-import { useMatches } from 'react-router';
+import { useMatches } from 'react-router'
 import { type CharacterFrameDataPage } from '~/types/CharacterFrameDataPage'
 import { type RouteHandle } from '~/types/RouteHandle'
 

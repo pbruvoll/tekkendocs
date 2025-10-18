@@ -1,4 +1,4 @@
-import { data } from 'react-router';
+import { data } from 'react-router'
 import { environment } from '~/constants/environment.server'
 import { type ServerError } from '~/types/ServerError'
 import { type ServerStatusCode } from '~/types/ServerStatusCode'

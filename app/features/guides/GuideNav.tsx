@@ -1,5 +1,5 @@
 import { Fragment } from 'react'
-import { Link } from 'react-router';
+import { Link } from 'react-router'
 import { type GuideData } from './GuideData'
 
 type GuideNavPros = {
@@ -24,11 +24,11 @@ export const GuideNav = ({ guideData }: GuideNavPros) => {
     !!guideData.externalResources && 'External Resources',
   ]
   return (
-    (<nav className="mt-4">
+    <nav className="mt-4">
       {navItems.map((name, index) => {
         if (!name) return undefined
         return (
-          (<Fragment key={index}>
+          <Fragment key={index}>
             <Link
               className="text-text-primary"
               to={`#${name.toLowerCase().replace(/ /g, '-')}`}
@@ -36,9 +36,9 @@ export const GuideNav = ({ guideData }: GuideNavPros) => {
               {name}
             </Link>
             {index < navItems.length - 1 && <span> | </span>}
-          </Fragment>)
-        );
+          </Fragment>
+        )
       })}
-    </nav>)
-  );
+    </nav>
+  )
 }

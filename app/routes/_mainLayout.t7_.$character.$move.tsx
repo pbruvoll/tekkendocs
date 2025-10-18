@@ -1,5 +1,5 @@
 import { Heading, Link as RadixLink, Table } from '@radix-ui/themes'
-import { LoaderFunctionArgs, data } from 'react-router'
+import { type LoaderFunctionArgs, data } from 'react-router'
 import { Link, type MetaFunction, useLoaderData } from 'react-router'
 import { ContentContainer } from '~/components/ContentContainer'
 import { google } from '~/google.server'

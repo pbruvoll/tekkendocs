@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 import { Pencil1Icon } from '@radix-ui/react-icons'
 import { Heading, Table } from '@radix-ui/themes'
-import { data, LoaderFunctionArgs, type MetaFunction } from 'react-router'
+import { data, type LoaderFunctionArgs, type MetaFunction } from 'react-router'
 import {
   isRouteErrorResponse,
   useLoaderData,

@@ -1,6 +1,6 @@
 import { type ChangeEvent, useMemo, useState } from 'react'
 import { Heading } from '@radix-ui/themes'
-import { type MetaFunction } from 'react-router';
+import { type MetaFunction } from 'react-router'
 import cx from 'classix'
 import invariant from 'tiny-invariant'
 import { Button } from '@/components/ui/button'

@@ -1,4 +1,4 @@
-import { data } from 'react-router';
+import { data } from 'react-router'
 import { google, type sheets_v4 } from 'googleapis'
 import { type GaxiosResponse } from '~/types/GaxiosResponse'
 import { ServerStatusCode } from '~/types/ServerStatusCode'

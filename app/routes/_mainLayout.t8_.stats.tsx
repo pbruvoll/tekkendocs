@@ -1,5 +1,5 @@
 import { Fragment, useMemo } from 'react'
-import { Link, type MetaFunction, useSearchParams } from 'react-router';
+import { Link, type MetaFunction, useSearchParams } from 'react-router'
 import cx from 'classix'
 import { ContentContainer } from '~/components/ContentContainer'
 import charMoveCount from '~/data/character-move-count.json'

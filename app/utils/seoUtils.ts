@@ -1,4 +1,4 @@
-import { type MetaFunction } from 'react-router';
+import { type MetaFunction } from 'react-router'
 import { type LoaderData as RootLoaderData } from '~/root'
 
 type GenerateMetaTagsOptions = {

@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react'
-import { useSearchParams } from 'react-router';
+import { useSearchParams } from 'react-router'
 import { Filter } from 'lucide-react'
 import { Input } from '@/components/ui/input'
 import { Switch } from '@/components/ui/switch'
@@ -39,7 +39,7 @@ export const FrameDataSection = ({
       searchQuery: searchQuery
         ? searchQuery.toLowerCase().replace(/ /g, '')
         : undefined,
-    };
+    }
   }, [searchParams, searchQuery])
 
   const moveTypes = useMemo(() => getMoveFilterTypes(moves), [moves])

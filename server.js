@@ -1,5 +1,5 @@
 import './instrumentation.server.mjs'
-import { createRequestHandler } from '@react-router/express';
+import { createRequestHandler } from '@react-router/express'
 import compression from 'compression'
 import express from 'express'
 import morgan from 'morgan'

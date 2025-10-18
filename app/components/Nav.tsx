@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router';
+import { NavLink } from 'react-router'
 export type NavLinkInfo = {
   link: string
   displayName: string
