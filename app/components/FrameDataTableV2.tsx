@@ -129,7 +129,7 @@ export const FrameDataTable = ({
                     <Link style={{ textDecoration: 'none' }} to={moveUrl}>
                       {move.command}
                     </Link>
-                    {(move.video || move.ytVideo) && (
+                    {move.ytVideo && (
                       <MovePreviewDialogButton move={move} url={moveUrl} />
                     )}
                   </span>
@@ -141,9 +141,9 @@ export const FrameDataTable = ({
                 <Table.Cell>{move.hit}</Table.Cell>
                 <Table.Cell>{move.counterHit}</Table.Cell>
                 <Table.Cell>
-                  {move.notes?.split('\n').map((line, index) => (
-                    <div key={index}>{line}</div>
-                  ))}
+                  {move.notes
+                    ?.split('\n')
+                    .map((line, index) => <div key={index}>{line}</div>)}
                 </Table.Cell>
               </Table.Row>
             )

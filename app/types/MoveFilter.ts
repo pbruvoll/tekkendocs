@@ -33,6 +33,7 @@ export type MoveFilter = {
   wallCrush?: boolean
   hitsGrounded?: boolean
   video?: boolean
+  noVideo?: boolean
   chip?: boolean
   forcesCrouchOnBlock?: boolean
   forcesCrouchOnHit?: boolean

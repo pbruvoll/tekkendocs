@@ -57,6 +57,7 @@ export const FrameDataFilterSelection = ({
     wallCrush,
     hitsGrounded,
     video,
+    noVideo,
     stance: stanceFilter,
     transition: transitionFilter,
     removeRecoveryHealth,
@@ -436,6 +437,18 @@ export const FrameDataFilterSelection = ({
             }}
           >
             Video
+          </Button>
+          <Button
+            variant={noVideo ? 'solid' : 'outline'}
+            onClick={() => {
+              if (noVideo) {
+                removeFilterValue(filterKey.NoVideo)
+              } else {
+                setFilterValue(filterKey.NoVideo, '')
+              }
+            }}
+          >
+            No Video
           </Button>
         </div>
       </section>
