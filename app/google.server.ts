@@ -1,1 +1,1 @@
-export { google } from 'googleapis'
+export { google } from 'googleapis';

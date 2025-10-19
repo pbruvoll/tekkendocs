@@ -1,4 +1,4 @@
-import { type TableId } from '~/types/TableId'
+import { type TableId } from '~/types/TableId';
 
 export const tableIdToDisplayName: Record<TableId, string> = {
   frames_normal: 'Standard',
@@ -34,4 +34,4 @@ export const tableIdToDisplayName: Record<TableId, string> = {
   defense_tips: 'Defense tips',
   defense_moves: 'Defense moves',
   about: 'About',
-}
+};

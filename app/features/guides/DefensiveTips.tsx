@@ -1,14 +1,14 @@
-import { Heading } from '@radix-ui/themes'
-import { TextWithCommand } from '~/components/TextWithCommand'
-import { useGuideContext } from './GuideContext'
-import { type DefensiveTip } from './GuideData'
-import { GuideSectionHeading } from './GuideSectionHeading'
+import { Heading } from '@radix-ui/themes';
+import { TextWithCommand } from '~/components/TextWithCommand';
+import { useGuideContext } from './GuideContext';
+import { type DefensiveTip } from './GuideData';
+import { GuideSectionHeading } from './GuideSectionHeading';
 
 type DefensiveTipsProps = {
-  tips: DefensiveTip[]
-}
+  tips: DefensiveTip[];
+};
 export const DefensiveTips = ({ tips }: DefensiveTipsProps) => {
-  const { charUrl, compressedCommandMap } = useGuideContext()
+  const { charUrl, compressedCommandMap } = useGuideContext();
   return (
     <section className="my-6 mb-10" id="defensive-tips">
       <GuideSectionHeading title="Defensive tips" />
@@ -26,5 +26,5 @@ export const DefensiveTips = ({ tips }: DefensiveTipsProps) => {
         </section>
       ))}
     </section>
-  )
-}
+  );
+};

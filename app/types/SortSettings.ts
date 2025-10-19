@@ -1,7 +1,7 @@
-import { type SortByKey } from './SortByKey'
-import { type SortOrder } from './SortOrder'
+import { type SortByKey } from './SortByKey';
+import { type SortOrder } from './SortOrder';
 
 export type SortSettings = {
-  sortByKey: SortByKey
-  sortDirection: Exclude<SortOrder, ''>
-}
+  sortByKey: SortByKey;
+  sortDirection: Exclude<SortOrder, ''>;
+};

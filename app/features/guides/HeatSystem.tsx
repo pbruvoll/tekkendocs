@@ -1,12 +1,12 @@
-import { TextWithCommand } from '~/components/TextWithCommand'
-import { useGuideContext } from './GuideContext'
-import { GuideSectionHeading } from './GuideSectionHeading'
+import { TextWithCommand } from '~/components/TextWithCommand';
+import { useGuideContext } from './GuideContext';
+import { GuideSectionHeading } from './GuideSectionHeading';
 
 type HeatSystemProps = {
-  heatSystem: string[]
-}
+  heatSystem: string[];
+};
 export const HeatSystem = ({ heatSystem }: HeatSystemProps) => {
-  const { charUrl, compressedCommandMap } = useGuideContext()
+  const { charUrl, compressedCommandMap } = useGuideContext();
   return (
     <section className="my-6 mb-10" id="heat-system">
       <GuideSectionHeading title="Heat System" />
@@ -22,5 +22,5 @@ export const HeatSystem = ({ heatSystem }: HeatSystemProps) => {
         ))}
       </ul>
     </section>
-  )
-}
+  );
+};

@@ -1,8 +1,8 @@
-import { Heading } from '@radix-ui/themes'
+import { Heading } from '@radix-ui/themes';
 
 type GuideSectionHeadingProps = {
-  title: string
-}
+  title: string;
+};
 export const GuideSectionHeading = ({ title }: GuideSectionHeadingProps) => {
   return (
     <>
@@ -11,5 +11,5 @@ export const GuideSectionHeading = ({ title }: GuideSectionHeadingProps) => {
       </Heading>
       <div className="mb-4 mt-1 h-0.5 w-[60%] bg-text-primary-subtle" />
     </>
-  )
-}
+  );
+};

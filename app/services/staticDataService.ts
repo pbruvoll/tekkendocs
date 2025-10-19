@@ -1,5 +1,5 @@
-import { type CharacterInfo } from '~/types/CharacterInfo'
-import { type Game } from '~/types/Game'
+import { type CharacterInfo } from '~/types/CharacterInfo';
+import { type Game } from '~/types/Game';
 
 const charsT7: string[] = [
   'Akuma',
@@ -52,7 +52,7 @@ const charsT7: string[] = [
   'Xiaoyu',
   'Yoshimitsu',
   'Zafina',
-]
+];
 
 const charsT8: string[] = [
   'alisa',
@@ -95,7 +95,7 @@ const charsT8: string[] = [
   'yoshimitsu',
   'zafina',
   'mokujin',
-]
+];
 
 export const charsTag2 = [
   'Alex',
@@ -153,17 +153,17 @@ export const charsTag2 = [
   'Xiaoyu',
   'Yoshimitsu',
   'Zafina',
-]
+];
 
-const characterInfoListT7: CharacterInfo[] = charsT7.map(char => ({
+const characterInfoListT7: CharacterInfo[] = charsT7.map((char) => ({
   id: char.toLocaleLowerCase(),
   displayName: char.replaceAll('-', ' '),
-}))
+}));
 
 export type GuideMetaData = {
-  author: string
-  version?: string
-}
+  author: string;
+  version?: string;
+};
 export const characterGuideAuthors: Record<
   Game,
   Record<string, GuideMetaData>
@@ -191,23 +191,23 @@ export const characterGuideAuthors: Record<
   },
   T7: {},
   TT2: {},
-}
+};
 
 export const getTekken7Characters = (): CharacterInfo[] => {
-  return characterInfoListT7
-}
+  return characterInfoListT7;
+};
 
-const characterInfoListT8: CharacterInfo[] = charsT8.map(char => ({
+const characterInfoListT8: CharacterInfo[] = charsT8.map((char) => ({
   id: char.toLocaleLowerCase(),
   displayName: char.replaceAll('-', ' '),
-}))
+}));
 
 export const getTekken8Characters = (): CharacterInfo[] => {
-  return characterInfoListT8
-}
+  return characterInfoListT8;
+};
 
-export const githubLink = 'https://github.com/pbruvoll/tekkendocs'
-export const rbNorwayLink = 'https://rbnorway.org'
-export const twitterLink = 'https://x.com/tekkendocs'
+export const githubLink = 'https://github.com/pbruvoll/tekkendocs';
+export const rbNorwayLink = 'https://rbnorway.org';
+export const twitterLink = 'https://x.com/tekkendocs';
 export const facebooklink =
-  'https://www.facebook.com/profile.php?id=61555959516665'
+  'https://www.facebook.com/profile.php?id=61555959516665';

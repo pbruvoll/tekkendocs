@@ -1,13 +1,13 @@
-import { Commands } from '~/components/Commands'
-import { useGuideContext } from './GuideContext'
-import { type Punisher, type WhiffPunisher } from './GuideData'
-import { GuideSectionHeading } from './GuideSectionHeading'
+import { Commands } from '~/components/Commands';
+import { useGuideContext } from './GuideContext';
+import { type Punisher, type WhiffPunisher } from './GuideData';
+import { GuideSectionHeading } from './GuideSectionHeading';
 
 type PunishersProps = {
-  standing?: Punisher[]
-  crouching?: Punisher[]
-  whiff?: WhiffPunisher[]
-}
+  standing?: Punisher[];
+  crouching?: Punisher[];
+  whiff?: WhiffPunisher[];
+};
 export const Punishers = ({ standing, crouching, whiff }: PunishersProps) => {
   return (
     <section id="punishers">
@@ -18,17 +18,17 @@ export const Punishers = ({ standing, crouching, whiff }: PunishersProps) => {
         {whiff && <PunisherList title="Whiff punishers" punishers={whiff} />}
       </div>
     </section>
-  )
-}
+  );
+};
 
 const PunisherList = ({
   title,
   punishers,
 }: {
-  title: string
-  punishers: (Omit<Punisher, 'startup'> & { startup?: string })[]
+  title: string;
+  punishers: (Omit<Punisher, 'startup'> & { startup?: string })[];
 }) => {
-  const { charUrl, compressedCommandMap } = useGuideContext()
+  const { charUrl, compressedCommandMap } = useGuideContext();
   return (
     <section className="flex-grow">
       <div className="mb-2 bg-muted text-center">{title}</div>
@@ -44,5 +44,5 @@ const PunisherList = ({
         </div>
       ))}
     </section>
-  )
-}
+  );
+};

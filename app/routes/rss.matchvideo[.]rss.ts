@@ -1,12 +1,12 @@
-import { data, type LoaderFunctionArgs } from 'react-router'
-import { getSheet } from '~/services/googleSheetService.server'
-import { type MatchVideo, type MatchVideoSet } from '~/types/MatchVideo'
-import { type SpreadSheetDocName } from '~/types/SpreadSheetDocName'
-import { cachified } from '~/utils/cache.server'
-import { sheetToSections } from '~/utils/sheetUtils.server'
+import { data, type LoaderFunctionArgs } from 'react-router';
+import { getSheet } from '~/services/googleSheetService.server';
+import { type MatchVideo, type MatchVideoSet } from '~/types/MatchVideo';
+import { type SpreadSheetDocName } from '~/types/SpreadSheetDocName';
+import { cachified } from '~/utils/cache.server';
+import { sheetToSections } from '~/utils/sheetUtils.server';
 
 function escapeCdata(s: string) {
-  return s.replace(/\]\]>/g, ']]]]><![CDATA[>')
+  return s.replace(/\]\]>/g, ']]]]><![CDATA[>');
 }
 
 function escapeHtml(s: string) {
@@ -15,39 +15,41 @@ function escapeHtml(s: string) {
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#039;')
+    .replace(/'/g, '&#039;');
 }
 
 const getMatchVidoeSets = async () => {
   //copy paste from loader in _mainLayout.matchvideo for now
-  const sheetDoc: SpreadSheetDocName = 'T7_MatchVideo'
+  const sheetDoc: SpreadSheetDocName = 'T7_MatchVideo';
   const { sheet } = await cachified({
     key: sheetDoc,
     ttl: 1000 * 30,
     staleWhileRevalidate: 1000 * 60 * 60 * 24 * 3,
     async getFreshValue() {
-      const sheet = await getSheet('videos_match', sheetDoc)
-      return { sheet }
+      const sheet = await getSheet('videos_match', sheetDoc);
+      return { sheet };
     },
-  })
+  });
   if (!sheet) {
     throw new Response(`Not able to find data for match videos`, {
       status: 500,
       statusText: 'server error',
-    })
+    });
   }
 
-  const { rows } = sheet
-  const sheetSections = sheetToSections(rows)
-  const videoSection = sheetSections.find(s => s.sectionId === 'videos_match')
+  const { rows } = sheet;
+  const sheetSections = sheetToSections(rows);
+  const videoSection = sheetSections.find(
+    (s) => s.sectionId === 'videos_match',
+  );
   if (!videoSection) {
-    throw data('Not able to find match video section', { status: 404 })
+    throw data('Not able to find match video section', { status: 404 });
   }
 
   const matchVideoSets = videoSection.rows
     .slice(1)
     .reduce<MatchVideoSet[]>((matchSetList, row) => {
-      const setName = row[1]
+      const setName = row[1];
       const matchVideo: MatchVideo = {
         url: row[0],
         name: row[2],
@@ -57,34 +59,37 @@ const getMatchVidoeSets = async () => {
         characters: row[6],
         thumbnail: row[7],
         date: new Date(row[8]),
-      }
+      };
       const prevSet: MatchVideoSet | undefined =
-        matchSetList[matchSetList.length - 1]
+        matchSetList[matchSetList.length - 1];
       if (prevSet && (prevSet.setName === setName || !setName)) {
-        prevSet.videos.push(matchVideo)
+        prevSet.videos.push(matchVideo);
       } else {
-        matchSetList.push({ setName, videos: [matchVideo] })
+        matchSetList.push({ setName, videos: [matchVideo] });
       }
-      return matchSetList
-    }, [])
+      return matchSetList;
+    }, []);
 
-  return matchVideoSets
-}
+  return matchVideoSets;
+};
 
 export const loader = async ({ request }: LoaderFunctionArgs) => {
-  const matchSets = await getMatchVidoeSets()
-  const matchVidoes: MatchVideo[] = matchSets.map(vSet => {
-    return { ...vSet.videos[0], name: `${vSet.setName} ${vSet.videos[0].name}` }
-  })
+  const matchSets = await getMatchVidoeSets();
+  const matchVidoes: MatchVideo[] = matchSets.map((vSet) => {
+    return {
+      ...vSet.videos[0],
+      name: `${vSet.setName} ${vSet.videos[0].name}`,
+    };
+  });
 
   const host =
-    request.headers.get('X-Forwarded-Host') ?? request.headers.get('host')
+    request.headers.get('X-Forwarded-Host') ?? request.headers.get('host');
   if (!host) {
-    throw new Error('Could not determine domain URL.')
+    throw new Error('Could not determine domain URL.');
   }
-  const protocol = host.includes('localhost') ? 'http' : 'https'
-  const domain = `${protocol}://${host}`
-  const rssUrl = `${domain}/rss/matchvideo`
+  const protocol = host.includes('localhost') ? 'http' : 'https';
+  const domain = `${protocol}://${host}`;
+  const rssUrl = `${domain}/rss/matchvideo`;
 
   const rssString = `
     <rss xmlns:blogChannel="${rssUrl}" version="2.0">
@@ -101,7 +106,7 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
         </image> 
         <ttl>60</ttl>
         ${matchVidoes
-          .map(matchVideo =>
+          .map((matchVideo) =>
             `
             <item>
               <title><![CDATA[${escapeCdata(matchVideo.name)}]]></title>
@@ -117,7 +122,7 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
           .join('\n')}
       </channel>
     </rss>
-  `.trim()
+  `.trim();
 
   return new Response(rssString, {
     headers: {
@@ -125,5 +130,5 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
       'Content-Type': 'application/xml',
       'Content-Length': String(Buffer.byteLength(rssString)),
     },
-  })
-}
+  });
+};

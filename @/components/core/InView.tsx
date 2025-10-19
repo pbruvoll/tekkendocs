@@ -1,27 +1,27 @@
-'use client'
-import { type ReactNode, useRef } from 'react'
+'use client';
+import { type ReactNode, useRef } from 'react';
 import {
   motion,
   type Transition,
   useInView,
   type UseInViewOptions,
   type Variant,
-} from 'motion/react'
+} from 'motion/react';
 
 interface InViewProps {
-  children: ReactNode
+  children: ReactNode;
   variants?: {
-    hidden: Variant
-    visible: Variant
-  }
-  transition?: Transition
-  viewOptions?: UseInViewOptions
+    hidden: Variant;
+    visible: Variant;
+  };
+  transition?: Transition;
+  viewOptions?: UseInViewOptions;
 }
 
 const defaultVariants = {
   hidden: { opacity: 0 },
   visible: { opacity: 1 },
-}
+};
 
 export function InView({
   children,
@@ -29,8 +29,8 @@ export function InView({
   transition,
   viewOptions,
 }: InViewProps) {
-  const ref = useRef(null)
-  const isInView = useInView(ref, viewOptions)
+  const ref = useRef(null);
+  const isInView = useInView(ref, viewOptions);
 
   return (
     <motion.div
@@ -42,5 +42,5 @@ export function InView({
     >
       {children}
     </motion.div>
-  )
+  );
 }

@@ -41,7 +41,7 @@ export default function SentryExamplePage() {
             margin: '18px',
           }}
           onClick={() => {
-            throw new Error('Sentry Example Frontend Error')
+            throw new Error('Sentry Example Frontend Error');
           }}
         >
           Throw error!
@@ -62,5 +62,5 @@ export default function SentryExamplePage() {
         </p>
       </main>
     </div>
-  )
+  );
 }

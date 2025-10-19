@@ -1,21 +1,21 @@
-import { Link } from 'react-router'
-import { type Move } from '~/types/Move'
-import { compressCommand } from '~/utils/commandUtils'
-import { commandToUrlSegmentEncoded } from '~/utils/moveUtils'
+import { Link } from 'react-router';
+import { type Move } from '~/types/Move';
+import { compressCommand } from '~/utils/commandUtils';
+import { commandToUrlSegmentEncoded } from '~/utils/moveUtils';
 
 export type CommandProps = {
-  command: string
-  charUrl: string
-  compressedCommandMap: Record<string, Move>
-}
+  command: string;
+  charUrl: string;
+  compressedCommandMap: Record<string, Move>;
+};
 export const Command = ({
   command,
   charUrl,
   compressedCommandMap,
 }: CommandProps) => {
-  const move = compressedCommandMap[compressCommand(command)]
+  const move = compressedCommandMap[compressCommand(command)];
   if (!move) {
-    return <b>{command}</b>
+    return <b>{command}</b>;
   }
   return (
     <Link
@@ -25,5 +25,5 @@ export const Command = ({
     >
       {command}
     </Link>
-  )
-}
+  );
+};

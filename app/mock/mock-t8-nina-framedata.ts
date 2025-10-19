@@ -1,4 +1,4 @@
-import { type TableData } from '~/types/TableData'
+import { type TableData } from '~/types/TableData';
 
 export const tables: TableData[] = [
   {
@@ -161,4 +161,4 @@ export const tables: TableData[] = [
       ['qcb+4', '', '', '', '', 'T!', '', '', 'T!'],
     ],
   },
-]
+];

@@ -1,20 +1,20 @@
-import ReactPlayer from 'react-player/youtube'
-import cx from 'classix'
-import { useHydrated } from 'remix-utils/use-hydrated'
-import { type Move } from '~/types/Move'
+import ReactPlayer from 'react-player/youtube';
+import cx from 'classix';
+import { useHydrated } from 'remix-utils/use-hydrated';
+import { type Move } from '~/types/Move';
 
 export type MoveVideoProps = {
-  move: Move
-  hideFrameData?: boolean
-  className?: string
-}
+  move: Move;
+  hideFrameData?: boolean;
+  className?: string;
+};
 
 export const MoveVideo = ({
   move,
   hideFrameData,
   className,
 }: MoveVideoProps) => {
-  const isHydrated = useHydrated()
+  const isHydrated = useHydrated();
 
   if (move.ytVideo && isHydrated) {
     return (
@@ -39,7 +39,7 @@ export const MoveVideo = ({
           <div className="absolute bottom-0 right-[2%] aspect-square w-1/12 bg-black" />
         )}
       </div>
-    )
+    );
   }
 
   if (move.video) {
@@ -57,8 +57,8 @@ export const MoveVideo = ({
           Video from Wavu wiki
         </div>
       </div>
-    )
+    );
   }
 
-  return null
-}
+  return null;
+};

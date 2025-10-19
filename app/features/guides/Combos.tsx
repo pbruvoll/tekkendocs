@@ -1,15 +1,15 @@
-import { Commands } from '~/components/Commands'
-import { useGuideContext } from './GuideContext'
-import { type Combo } from './GuideData'
-import { GuideSectionHeading } from './GuideSectionHeading'
-import { formatCombo } from './guideUtils'
+import { Commands } from '~/components/Commands';
+import { useGuideContext } from './GuideContext';
+import { type Combo } from './GuideData';
+import { GuideSectionHeading } from './GuideSectionHeading';
+import { formatCombo } from './guideUtils';
 
 type CombosProps = {
-  combos: Combo[]
-  title: string
-}
+  combos: Combo[];
+  title: string;
+};
 export const Combos = ({ combos, title }: CombosProps) => {
-  const { charUrl, compressedCommandMap } = useGuideContext()
+  const { charUrl, compressedCommandMap } = useGuideContext();
   return (
     <section className="my-6 mb-10" id={title.toLowerCase().replace(/ /g, '-')}>
       <GuideSectionHeading title={title} />
@@ -24,5 +24,5 @@ export const Combos = ({ combos, title }: CombosProps) => {
         </section>
       ))}
     </section>
-  )
-}
+  );
+};

@@ -1,4 +1,4 @@
-import { type TableId } from '~/types/TableId'
+import { type TableId } from '~/types/TableId';
 
 export const hasHeaderMap: Record<TableId, boolean> = {
   frames_normal: true,
@@ -34,4 +34,4 @@ export const hasHeaderMap: Record<TableId, boolean> = {
   stances: true,
   installments: true,
   about: true,
-}
+};

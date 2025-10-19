@@ -1,15 +1,15 @@
-import { Command } from '~/components/Command'
-import { useGuideContext } from './GuideContext'
-import { type WallCombo } from './GuideData'
-import { GuideSectionHeading } from './GuideSectionHeading'
-import { formatCombo } from './guideUtils'
+import { Command } from '~/components/Command';
+import { useGuideContext } from './GuideContext';
+import { type WallCombo } from './GuideData';
+import { GuideSectionHeading } from './GuideSectionHeading';
+import { formatCombo } from './guideUtils';
 
 type WallCombosProps = {
-  wallCombos: WallCombo[]
-}
+  wallCombos: WallCombo[];
+};
 export const WallCombos = ({ wallCombos }: WallCombosProps) => {
-  const normal = wallCombos.filter(c => c.type === 'normal')
-  const tornado = wallCombos.filter(c => c.type === 'tornado')
+  const normal = wallCombos.filter((c) => c.type === 'normal');
+  const tornado = wallCombos.filter((c) => c.type === 'tornado');
 
   return (
     <section
@@ -24,17 +24,17 @@ export const WallCombos = ({ wallCombos }: WallCombosProps) => {
         )}
       </div>
     </section>
-  )
-}
+  );
+};
 
 const EnderList = ({
   title,
   enders,
 }: {
-  title: string
-  enders: { combo: string }[]
+  title: string;
+  enders: { combo: string }[];
 }) => {
-  const { charUrl, compressedCommandMap } = useGuideContext()
+  const { charUrl, compressedCommandMap } = useGuideContext();
   return (
     <section className="flex-grow">
       <div className="mb-2 bg-muted text-center">{title}</div>
@@ -52,5 +52,5 @@ const EnderList = ({
         </div>
       ))}
     </section>
-  )
-}
+  );
+};

@@ -1,10 +1,10 @@
-import { Fragment } from 'react'
-import { Link } from 'react-router'
-import { type GuideData } from './GuideData'
+import { Fragment } from 'react';
+import { Link } from 'react-router';
+import { type GuideData } from './GuideData';
 
 type GuideNavPros = {
-  guideData: Partial<GuideData>
-}
+  guideData: Partial<GuideData>;
+};
 export const GuideNav = ({ guideData }: GuideNavPros) => {
   const navItems = [
     !!guideData.introduction && 'Introduction',
@@ -22,11 +22,11 @@ export const GuideNav = ({ guideData }: GuideNavPros) => {
     !!guideData.knowledgeChecks && 'Knowledge Checks',
     !!(guideData.defensiveTips || guideData.defensiveMoves) && 'Defensive Tips',
     !!guideData.externalResources && 'External Resources',
-  ]
+  ];
   return (
     <nav className="mt-4">
       {navItems.map((name, index) => {
-        if (!name) return undefined
+        if (!name) return undefined;
         return (
           <Fragment key={index}>
             <Link
@@ -37,8 +37,8 @@ export const GuideNav = ({ guideData }: GuideNavPros) => {
             </Link>
             {index < navItems.length - 1 && <span> | </span>}
           </Fragment>
-        )
+        );
       })}
     </nav>
-  )
-}
+  );
+};

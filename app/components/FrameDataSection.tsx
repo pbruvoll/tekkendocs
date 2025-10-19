@@ -1,95 +1,98 @@
-import { useMemo, useState } from 'react'
-import { useSearchParams } from 'react-router'
-import { Filter } from 'lucide-react'
-import { Input } from '@/components/ui/input'
-import { Switch } from '@/components/ui/switch'
-import { orderByKey } from '~/constants/sortConstants'
-import { sortOptions } from '~/constants/sortOptions'
-import { type Move } from '~/types/Move'
-import { type MoveFilter } from '~/types/MoveFilter'
-import { getFilterFromParams } from '~/utils/filterUtils'
-import { filterMoves, getMoveFilterTypes } from '~/utils/frameDataUtils'
-import { getSortByQueryParamValue, getSortSettings } from '~/utils/sortingUtils'
-import { ContentContainer } from './ContentContainer'
-import { FrameDataFilterDialog } from './FrameDataFilterDialog'
-import { FrameDataTable } from './FrameDataTableV2'
-import { SimpleMovesTable } from './SimpleMovesTable'
+import { useMemo, useState } from 'react';
+import { useSearchParams } from 'react-router';
+import { Filter } from 'lucide-react';
+import { Input } from '@/components/ui/input';
+import { Switch } from '@/components/ui/switch';
+import { orderByKey } from '~/constants/sortConstants';
+import { sortOptions } from '~/constants/sortOptions';
+import { type Move } from '~/types/Move';
+import { type MoveFilter } from '~/types/MoveFilter';
+import { getFilterFromParams } from '~/utils/filterUtils';
+import { filterMoves, getMoveFilterTypes } from '~/utils/frameDataUtils';
+import {
+  getSortByQueryParamValue,
+  getSortSettings,
+} from '~/utils/sortingUtils';
+import { ContentContainer } from './ContentContainer';
+import { FrameDataFilterDialog } from './FrameDataFilterDialog';
+import { FrameDataTable } from './FrameDataTableV2';
+import { SimpleMovesTable } from './SimpleMovesTable';
 
 export type FrameDataSectionProps = {
-  moves: Move[]
-  hasMultipleCharacters: boolean
-}
+  moves: Move[];
+  hasMultipleCharacters: boolean;
+};
 export const FrameDataSection = ({
   moves,
   hasMultipleCharacters,
 }: FrameDataSectionProps) => {
-  const [searchParams, setSearchParams] = useSearchParams()
-  const sortSettings = getSortSettings(searchParams)
+  const [searchParams, setSearchParams] = useSearchParams();
+  const sortSettings = getSortSettings(searchParams);
   const sortByQueryParamValue = sortSettings
     ? getSortByQueryParamValue(sortSettings)
-    : ''
+    : '';
 
-  const [searchQuery, setSearchQuery] = useState<string>('')
-  const [isSimpleView, setIsSimpleView] = useState<boolean>(false)
+  const [searchQuery, setSearchQuery] = useState<string>('');
+  const [isSimpleView, setIsSimpleView] = useState<boolean>(false);
 
   const filter: MoveFilter = useMemo(() => {
-    const filterFromParams = getFilterFromParams(searchParams)
+    const filterFromParams = getFilterFromParams(searchParams);
     return {
       ...filterFromParams,
       searchQuery: searchQuery
         ? searchQuery.toLowerCase().replace(/ /g, '')
         : undefined,
-    }
-  }, [searchParams, searchQuery])
+    };
+  }, [searchParams, searchQuery]);
 
-  const moveTypes = useMemo(() => getMoveFilterTypes(moves), [moves])
+  const moveTypes = useMemo(() => getMoveFilterTypes(moves), [moves]);
 
   const filteredMoves = useMemo(() => {
-    return filterMoves(moves, filter)
-  }, [moves, filter])
+    return filterMoves(moves, filter);
+  }, [moves, filter]);
 
   // Get a character ID for the SimpleMovesTable
   const selectedCharId = useMemo(() => {
     if (hasMultipleCharacters) {
-      return ''
+      return '';
     }
     // Try to get character ID from the first move if available
-    const firstMove = moves[0] as any
-    return firstMove?.characterId || firstMove?.charId || 'unknown'
-  }, [moves, hasMultipleCharacters])
+    const firstMove = moves[0] as any;
+    return firstMove?.characterId || firstMove?.charId || 'unknown';
+  }, [moves, hasMultipleCharacters]);
 
   const setFilterValue = (key: string, value: string) => {
-    setSearchParams(prev => {
-      prev.set(key, value)
-      return prev
-    })
-  }
+    setSearchParams((prev) => {
+      prev.set(key, value);
+      return prev;
+    });
+  };
 
   const removeFilterValue = (key: string) => {
-    setSearchParams(prev => {
-      prev.delete(key)
-      return prev
-    })
-  }
+    setSearchParams((prev) => {
+      prev.delete(key);
+      return prev;
+    });
+  };
 
   const addFilterElement = (key: string, element: string) => {
-    setSearchParams(prev => {
-      prev.append(key, element)
-      return prev
-    })
-  }
+    setSearchParams((prev) => {
+      prev.append(key, element);
+      return prev;
+    });
+  };
 
   const removeFilterElement = (key: string, element: string) => {
-    setSearchParams(prev => {
-      prev.delete(key, element)
-      return prev
-    })
-  }
+    setSearchParams((prev) => {
+      prev.delete(key, element);
+      return prev;
+    });
+  };
 
   const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const searchValue = event.target.value
-    setSearchQuery(searchValue)
-  }
+    const searchValue = event.target.value;
+    setSearchQuery(searchValue);
+  };
 
   return (
     <>
@@ -97,7 +100,7 @@ export const FrameDataSection = ({
         <div className="flex items-center gap-2">
           <Filter />
           <Input
-            onChange={e => handleOnChange(e)}
+            onChange={(e) => handleOnChange(e)}
             placeholder="ff2,1+2"
           ></Input>
         </div>
@@ -107,15 +110,15 @@ export const FrameDataSection = ({
             <select
               aria-label="Sort by"
               value={sortByQueryParamValue}
-              onChange={e => {
-                setSearchParams(prev => {
+              onChange={(e) => {
+                setSearchParams((prev) => {
                   if (e.target.value) {
-                    prev.set(orderByKey, e.target.value)
+                    prev.set(orderByKey, e.target.value);
                   } else {
-                    prev.delete(orderByKey)
+                    prev.delete(orderByKey);
                   }
-                  return prev
-                })
+                  return prev;
+                });
               }}
               className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 py-1.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
             >
@@ -175,5 +178,5 @@ export const FrameDataSection = ({
         />
       )}
     </>
-  )
-}
+  );
+};

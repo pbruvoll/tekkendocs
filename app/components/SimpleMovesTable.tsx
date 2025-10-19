@@ -1,8 +1,8 @@
-import { VideoIcon } from '@radix-ui/react-icons'
-import { Link } from 'react-router'
-import cx from 'classix'
-import { type Move, type MoveT8 } from '~/types/Move'
-import { charIdFromMove, commandToUrlSegmentEncoded } from '~/utils/moveUtils'
+import { VideoIcon } from '@radix-ui/react-icons';
+import { Link } from 'react-router';
+import cx from 'classix';
+import { type Move, type MoveT8 } from '~/types/Move';
+import { charIdFromMove, commandToUrlSegmentEncoded } from '~/utils/moveUtils';
 
 // Helper function to format command for line breaks at commas
 const formatWordWithBreaks = (command: string) => {
@@ -15,19 +15,19 @@ const formatWordWithBreaks = (command: string) => {
         </>
       )}
     </span>
-  ))
-}
+  ));
+};
 
 // function which extract just the number from frame data, eg "i15~16, i30~32,i31~32" => "i15"
 const simplifyFrameValue = (frameData: string) => {
-  return frameData.match(/i?[+-]?\d+/)?.[0] || ''
-}
+  return frameData.match(/i?[+-]?\d+/)?.[0] || '';
+};
 
 interface SimpleMovesTableProps {
-  moves: Move[]
-  selectedCharId: string
-  showsMultipleChars: boolean
-  includeCharNameInFrames: boolean
+  moves: Move[];
+  selectedCharId: string;
+  showsMultipleChars: boolean;
+  includeCharNameInFrames: boolean;
 }
 
 export function SimpleMovesTable({
@@ -59,10 +59,10 @@ export function SimpleMovesTable({
       </thead>
       <tbody className="[&_tr:last-child]:border-0">
         {moves.map((move, index) => {
-          const simpleBlock = simplifyFrameValue(move.block || '')
-          const blockValue = Number(simpleBlock)
-          const simpleHit = simplifyFrameValue(move.hit || '')
-          const simpleCh = simplifyFrameValue(move.counterHit || '')
+          const simpleBlock = simplifyFrameValue(move.block || '');
+          const blockValue = Number(simpleBlock);
+          const simpleHit = simplifyFrameValue(move.hit || '');
+          const simpleCh = simplifyFrameValue(move.counterHit || '');
           return (
             <tr
               key={move.moveNumber}
@@ -114,9 +114,9 @@ export function SimpleMovesTable({
                 )}
               </td>
             </tr>
-          )
+          );
         })}
       </tbody>
     </table>
-  )
+  );
 }

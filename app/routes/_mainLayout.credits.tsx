@@ -1,4 +1,4 @@
-import { ContentContainer } from '~/components/ContentContainer'
+import { ContentContainer } from '~/components/ContentContainer';
 
 export default function Credits() {
   return (
@@ -47,5 +47,5 @@ export default function Credits() {
         Seik, Bager, Mollatt, LastPheonix, DopeShoe, JBoy, Deku, Mode and Knekk
       </p>
     </ContentContainer>
-  )
+  );
 }

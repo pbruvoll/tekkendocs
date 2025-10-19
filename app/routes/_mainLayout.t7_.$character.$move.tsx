@@ -1,38 +1,38 @@
-import { Heading, Link as RadixLink, Table } from '@radix-ui/themes'
-import { type LoaderFunctionArgs, data } from 'react-router'
-import { Link, type MetaFunction, useLoaderData } from 'react-router'
-import { ContentContainer } from '~/components/ContentContainer'
-import { google } from '~/google.server'
-import { ServerStatusCode } from '~/types/ServerStatusCode'
-import { getCacheControlHeaders } from '~/utils/headerUtils'
-import { commandToUrlSegment } from '~/utils/moveUtils'
+import { Heading, Link as RadixLink, Table } from '@radix-ui/themes';
+import { type LoaderFunctionArgs, data } from 'react-router';
+import { Link, type MetaFunction, useLoaderData } from 'react-router';
+import { ContentContainer } from '~/components/ContentContainer';
+import { google } from '~/google.server';
+import { ServerStatusCode } from '~/types/ServerStatusCode';
+import { getCacheControlHeaders } from '~/utils/headerUtils';
+import { commandToUrlSegment } from '~/utils/moveUtils';
 
 export const loader = async ({ params }: LoaderFunctionArgs) => {
-  const character = params.character
-  const move = params.move
+  const character = params.character;
+  const move = params.move;
   if (!character) {
     throw new Response(null, {
       status: ServerStatusCode.BadRequest,
       statusText: 'Character cant be empty',
-    })
+    });
   }
 
   if (!move) {
     throw new Response(null, {
       status: ServerStatusCode.BadRequest,
       statusText: 'Move cant be empty',
-    })
+    });
   }
 
-  const target = ['https://www.googleapis.com/auth/spreadsheets.readonly']
+  const target = ['https://www.googleapis.com/auth/spreadsheets.readonly'];
   const jwt = new google.auth.JWT({
     email: process.env.GOOGLE_SHEETS_CLIENT_EMAIL,
     scopes: target,
     key: (process.env.GOOGLE_SHEETS_PRIVATE_KEY || '').replace(/\\n/g, '\n'),
-  })
+  });
 
-  const sheets = google.sheets({ version: 'v4', auth: jwt })
-  let rows: any[][]
+  const sheets = google.sheets({ version: 'v4', auth: jwt });
+  let rows: any[][];
 
   const response = await sheets.spreadsheets.values
     .get({
@@ -43,33 +43,33 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
       throw data(null, {
         status: ServerStatusCode.ServerError,
         statusText: 'server error',
-      })
-    })
+      });
+    });
 
   if (!response.data.values) {
     throw data('not found', {
       status: ServerStatusCode.NotFound,
       statusText: 'Not found 2',
-    })
+    });
   }
 
-  rows = response.data.values
+  rows = response.data.values;
 
   if (rows[0][0] !== '#frames_normal' || rows.length < 3) {
     throw data('no frame data found', {
       status: ServerStatusCode.NotFound,
       statusText: 'Not found 2',
-    })
+    });
   }
-  const dataHeaders = rows[1]
+  const dataHeaders = rows[1];
   const moveRow = rows.find(
-    row => row[0] && commandToUrlSegment(row[0]) === move,
-  )
+    (row) => row[0] && commandToUrlSegment(row[0]) === move,
+  );
   if (!moveRow) {
     throw data('move not found in frame data', {
       status: ServerStatusCode.NotFound,
       statusText: 'Not found 4',
-    })
+    });
   }
 
   return data(
@@ -77,14 +77,14 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
     {
       headers: getCacheControlHeaders({ seconds: 60 * 5 }),
     },
-  )
-}
+  );
+};
 
-export const headers = () => getCacheControlHeaders({ seconds: 60 * 5 })
+export const headers = () => getCacheControlHeaders({ seconds: 60 * 5 });
 
 export const meta: MetaFunction<typeof loader> = ({ data, params }) => {
-  const character = params.character
-  const move = params.move
+  const character = params.character;
+  const move = params.move;
   if (!data || !character) {
     return [
       {
@@ -93,19 +93,19 @@ export const meta: MetaFunction<typeof loader> = ({ data, params }) => {
       {
         description: `There is no character with the ID of ${params.character}.`,
       },
-    ]
+    ];
   }
 
   const { dataHeaders, moveRow }: { dataHeaders: string[]; moveRow: string[] } =
-    data
+    data;
 
-  const characterId = character?.toLocaleLowerCase()
-  const characterTitle = character[0].toUpperCase() + character.substring(1)
+  const characterId = character?.toLocaleLowerCase();
+  const characterTitle = character[0].toUpperCase() + character.substring(1);
 
-  const title = `${move} - ${characterTitle} Tekken7 Frame Data | TekkenDocs`
+  const title = `${move} - ${characterTitle} Tekken7 Frame Data | TekkenDocs`;
   const description = dataHeaders
     .map((header, index) => `${header}:   ${moveRow[index] || ''}`)
-    .join('\n')
+    .join('\n');
 
   return [
     { title },
@@ -119,15 +119,15 @@ export const meta: MetaFunction<typeof loader> = ({ data, params }) => {
       rel: 'canonical',
       href: `https://tekkendocs.com/t7/${characterId}/${move}`,
     },
-  ]
-}
+  ];
+};
 
 export default function Move() {
   const {
     dataHeaders: headers,
     moveRow,
     characterName,
-  } = useLoaderData<typeof loader>()
+  } = useLoaderData<typeof loader>();
 
   return (
     <ContentContainer enableTopPadding enableBottomPadding>
@@ -145,10 +145,10 @@ export default function Move() {
                 <Table.Cell>{header}</Table.Cell>
                 <Table.Cell>{moveRow[i + 1] || ''}</Table.Cell>
               </Table.Row>
-            )
+            );
           })}
         </Table.Body>
       </Table.Root>
     </ContentContainer>
-  )
+  );
 }

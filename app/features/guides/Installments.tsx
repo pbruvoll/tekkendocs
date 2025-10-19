@@ -1,14 +1,14 @@
-import { Heading } from '@radix-ui/themes'
-import { TextWithCommand } from '~/components/TextWithCommand'
-import { useGuideContext } from './GuideContext'
-import { type Installment } from './GuideData'
-import { GuideSectionHeading } from './GuideSectionHeading'
+import { Heading } from '@radix-ui/themes';
+import { TextWithCommand } from '~/components/TextWithCommand';
+import { useGuideContext } from './GuideContext';
+import { type Installment } from './GuideData';
+import { GuideSectionHeading } from './GuideSectionHeading';
 
 type InstallmentsProps = {
-  installments: Installment[]
-}
+  installments: Installment[];
+};
 export const Installments = ({ installments }: InstallmentsProps) => {
-  const { charUrl, compressedCommandMap } = useGuideContext()
+  const { charUrl, compressedCommandMap } = useGuideContext();
   return (
     <section className="my-6 mb-10" id="installments">
       <GuideSectionHeading title="Installments" />
@@ -26,5 +26,5 @@ export const Installments = ({ installments }: InstallmentsProps) => {
         </section>
       ))}
     </section>
-  )
-}
+  );
+};

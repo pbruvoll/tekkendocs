@@ -1,17 +1,17 @@
-import { Heading } from '@radix-ui/themes'
-import { cx } from 'class-variance-authority'
-import { Commands } from '~/components/Commands'
-import { TextWithCommand } from '~/components/TextWithCommand'
-import { useGuideContext } from './GuideContext'
-import { type Stance } from './GuideData'
-import { GuideSectionHeading } from './GuideSectionHeading'
-import { MoveSummary } from './MoveSummary'
+import { Heading } from '@radix-ui/themes';
+import { cx } from 'class-variance-authority';
+import { Commands } from '~/components/Commands';
+import { TextWithCommand } from '~/components/TextWithCommand';
+import { useGuideContext } from './GuideContext';
+import { type Stance } from './GuideData';
+import { GuideSectionHeading } from './GuideSectionHeading';
+import { MoveSummary } from './MoveSummary';
 
 type StancesProps = {
-  stances: Stance[]
-}
+  stances: Stance[];
+};
 export const Stances = ({ stances }: StancesProps) => {
-  const { charUrl, compressedCommandMap } = useGuideContext()
+  const { charUrl, compressedCommandMap } = useGuideContext();
   return (
     <section className="my-6 mb-10" id="stances">
       <GuideSectionHeading title="Stances" />
@@ -44,5 +44,5 @@ export const Stances = ({ stances }: StancesProps) => {
         </section>
       ))}
     </section>
-  )
-}
+  );
+};

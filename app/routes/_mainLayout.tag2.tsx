@@ -1,15 +1,15 @@
-import { Heading } from '@radix-ui/themes'
-import { data, type MetaFunction } from 'react-router'
-import { ContentContainer } from '~/components/ContentContainer'
-import { charsTag2 } from '~/services/staticDataService'
-import { getCacheControlHeaders } from '~/utils/headerUtils'
-import { generateMetaTags } from '~/utils/seoUtils'
+import { Heading } from '@radix-ui/themes';
+import { data, type MetaFunction } from 'react-router';
+import { ContentContainer } from '~/components/ContentContainer';
+import { charsTag2 } from '~/services/staticDataService';
+import { getCacheControlHeaders } from '~/utils/headerUtils';
+import { generateMetaTags } from '~/utils/seoUtils';
 
 export const loader = async () => {
   return data(null, {
     headers: getCacheControlHeaders({ seconds: 60 * 5 }),
-  })
-}
+  });
+};
 
 export const meta: MetaFunction = ({ matches }) => {
   return generateMetaTags({
@@ -17,13 +17,13 @@ export const meta: MetaFunction = ({ matches }) => {
     description: 'Frame data for Tekken Tag Tournament 2',
     title: 'Tekken Tag 2 Frame data',
     url: '',
-  })
-}
+  });
+};
 
 type Tag2CharacterCardProps = {
-  name: string
-  url: string
-}
+  name: string;
+  url: string;
+};
 
 const Tag2CharacterCard = ({ name, url }: Tag2CharacterCardProps) => {
   return (
@@ -39,8 +39,8 @@ const Tag2CharacterCard = ({ name, url }: Tag2CharacterCardProps) => {
         <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-orange-500 via-orange-600 to-orange-500 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
       </div>
     </a>
-  )
-}
+  );
+};
 
 export default function Tag2() {
   return (
@@ -51,16 +51,16 @@ export default function Tag2() {
       <ul className="grid grid-cols-2 gap-x-2 gap-y-2 xs:grid-cols-3 xs:gap-x-3 xs:gap-y-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6">
         {charsTag2.map((charName, index) => {
           // Map character name to filename format
-          const fileName = charName.replaceAll('-', '_').replaceAll(' ', '_')
-          const url = `/tag2/framedata/${fileName}TUD-converted.html`
+          const fileName = charName.replaceAll('-', '_').replaceAll(' ', '_');
+          const url = `/tag2/framedata/${fileName}TUD-converted.html`;
 
           return (
             <li key={charName}>
               <Tag2CharacterCard name={charName} url={url} />
             </li>
-          )
+          );
         })}
       </ul>
     </ContentContainer>
-  )
+  );
 }

@@ -1,8 +1,8 @@
-import { isRouteErrorResponse, useRouteError } from 'react-router'
-import { type ServerError } from '~/types/ServerError'
+import { isRouteErrorResponse, useRouteError } from 'react-router';
+import { type ServerError } from '~/types/ServerError';
 
 export const AppErrorBoundary = () => {
-  const error = useRouteError()
+  const error = useRouteError();
 
   if (isRouteErrorResponse(error)) {
     return (
@@ -12,7 +12,7 @@ export const AppErrorBoundary = () => {
         </h1>
         <ErrorData data={error.data} />
       </div>
-    )
+    );
   } else if (error instanceof Error) {
     return (
       <div className="prose prose-invert p-4">
@@ -21,20 +21,20 @@ export const AppErrorBoundary = () => {
         <p>The stack trace is:</p>
         <pre>{error.stack}</pre>
       </div>
-    )
+    );
   } else {
     return (
       <div className="prose prose-invert p-4">
         <h1>Unknown Error</h1>
       </div>
-    )
+    );
   }
-}
+};
 
-type ErrorDataProps = { data: any }
+type ErrorDataProps = { data: any };
 const ErrorData = ({ data }: ErrorDataProps) => {
   if (typeof data === 'object' && 'title' in data) {
-    const serverError = data as ServerError
+    const serverError = data as ServerError;
     return (
       <div>
         <h2>{serverError.title}</h2>
@@ -46,9 +46,9 @@ const ErrorData = ({ data }: ErrorDataProps) => {
           <p>exception : {JSON.stringify(serverError.upstreamErrorResponse)}</p>
         )}
       </div>
-    )
+    );
   } else if (typeof data === 'string') {
-    return data
+    return data;
   }
-  return <p>JSON.stringify(data)</p>
-}
+  return <p>JSON.stringify(data)</p>;
+};

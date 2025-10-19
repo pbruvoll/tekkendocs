@@ -1,10 +1,10 @@
-import { Fragment, useMemo } from 'react'
-import { Link, type MetaFunction, useSearchParams } from 'react-router'
-import cx from 'classix'
-import { ContentContainer } from '~/components/ContentContainer'
-import charMoveCount from '~/data/character-move-count.json'
-import { generateMetaTags } from '~/utils/seoUtils'
-import { t8AvatarMap } from '~/utils/t8AvatarMap'
+import { Fragment, useMemo } from 'react';
+import { Link, type MetaFunction, useSearchParams } from 'react-router';
+import cx from 'classix';
+import { ContentContainer } from '~/components/ContentContainer';
+import charMoveCount from '~/data/character-move-count.json';
+import { generateMetaTags } from '~/utils/seoUtils';
+import { t8AvatarMap } from '~/utils/t8AvatarMap';
 
 export const meta: MetaFunction = ({ matches }) =>
   generateMetaTags({
@@ -14,14 +14,14 @@ export const meta: MetaFunction = ({ matches }) =>
       'The page shows a sorted list of how many moves each character in Tekken 8 has',
     image: { url: `/t8/pages/stats.png` },
     url: `/t8/stats`,
-  })
+  });
 
 export default function () {
   const totalMove = charMoveCount.reduce<number>(
     (prev, current) => prev + current.value,
     0,
-  )
-  const landscape = useSearchParams()[0].get('landscape') !== null
+  );
+  const landscape = useSearchParams()[0].get('landscape') !== null;
   return (
     <>
       <ContentContainer enableTopPadding>
@@ -51,18 +51,18 @@ export default function () {
         </p>
       </ContentContainer>
     </>
-  )
+  );
 }
 
 type CharacterStat = {
-  name: string
-  value: number
-}
+  name: string;
+  value: number;
+};
 type CharactersStatisticsProps = {
-  characterStatistics: CharacterStat[]
-  className?: string
-  landscape?: boolean
-}
+  characterStatistics: CharacterStat[];
+  className?: string;
+  landscape?: boolean;
+};
 
 const CharacterStatistics = ({
   characterStatistics,
@@ -70,8 +70,8 @@ const CharacterStatistics = ({
   landscape,
 }: CharactersStatisticsProps) => {
   const max: number = useMemo(() => {
-    return Math.max(...characterStatistics.map(c => c.value))
-  }, [characterStatistics])
+    return Math.max(...characterStatistics.map((c) => c.value));
+  }, [characterStatistics]);
   const colorClassnames = [
     'bg-stone-400',
     'bg-orange-400',
@@ -83,7 +83,7 @@ const CharacterStatistics = ({
     'bg-green-400',
     'bg-purple-400',
     'bg-rose-400',
-  ]
+  ];
   return (
     <div className={className}>
       <div
@@ -118,7 +118,7 @@ const CharacterStatistics = ({
 
                   <div className="self-center">{value}</div>
                 </Fragment>
-              )
+              );
             }
             return (
               <Fragment key={name}>
@@ -140,9 +140,9 @@ const CharacterStatistics = ({
                 </div>
                 <div className="self-center">{value}</div>
               </Fragment>
-            )
+            );
           })}
       </div>
     </div>
-  )
-}
+  );
+};

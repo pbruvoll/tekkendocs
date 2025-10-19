@@ -1,1 +1,1 @@
-export { default, meta } from '~/routes/_mainLayout.t8_.ranks'
+export { default, meta } from '~/routes/_mainLayout.t8_.ranks';

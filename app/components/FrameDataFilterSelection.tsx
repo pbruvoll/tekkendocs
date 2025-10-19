@@ -1,19 +1,19 @@
-import { Button, Flex, Text } from '@radix-ui/themes'
-import { filterKey, hitLevelValue } from '~/constants/filterConstants'
-import { stanceNameMap, stateNameMap } from '~/constants/stanceNameMap'
-import { type MoveFilter } from '~/types/MoveFilter'
-import { RangeSlider } from './RangeSlider'
+import { Button, Flex, Text } from '@radix-ui/themes';
+import { filterKey, hitLevelValue } from '~/constants/filterConstants';
+import { stanceNameMap, stateNameMap } from '~/constants/stanceNameMap';
+import { type MoveFilter } from '~/types/MoveFilter';
+import { RangeSlider } from './RangeSlider';
 
 export type FrameDataFilterSectionProps = {
-  filter: MoveFilter
-  stances: string[]
-  states: string[]
-  transitions: string[]
-  setFilterValue: (key: string, value: string) => void
-  removeFilterValue: (key: string) => void
-  addFilterElement: (key: string, element: string) => void
-  removeFilterElement: (key: string, element: string) => void
-}
+  filter: MoveFilter;
+  stances: string[];
+  states: string[];
+  transitions: string[];
+  setFilterValue: (key: string, value: string) => void;
+  removeFilterValue: (key: string) => void;
+  addFilterElement: (key: string, element: string) => void;
+  removeFilterElement: (key: string, element: string) => void;
+};
 
 export const FrameDataFilterSelection = ({
   filter,
@@ -64,7 +64,7 @@ export const FrameDataFilterSelection = ({
     forcesCrouchOnBlock,
     forcesCrouchOnHit,
     recoverFullCrouch,
-  } = filter
+  } = filter;
   return (
     <Flex direction="column" gap="5">
       <section className="flex flex-col gap-3">
@@ -78,9 +78,9 @@ export const FrameDataFilterSelection = ({
             }
             onClick={() => {
               if (hitLevels?.includes(hitLevelValue.Low)) {
-                removeFilterElement(filterKey.HitLevel, hitLevelValue.Low)
+                removeFilterElement(filterKey.HitLevel, hitLevelValue.Low);
               } else {
-                addFilterElement(filterKey.HitLevel, hitLevelValue.Low)
+                addFilterElement(filterKey.HitLevel, hitLevelValue.Low);
               }
             }}
           >
@@ -92,9 +92,9 @@ export const FrameDataFilterSelection = ({
             }
             onClick={() => {
               if (hitLevels?.includes(hitLevelValue.Mid)) {
-                removeFilterElement(filterKey.HitLevel, hitLevelValue.Mid)
+                removeFilterElement(filterKey.HitLevel, hitLevelValue.Mid);
               } else {
-                addFilterElement(filterKey.HitLevel, hitLevelValue.Mid)
+                addFilterElement(filterKey.HitLevel, hitLevelValue.Mid);
               }
             }}
           >
@@ -106,9 +106,9 @@ export const FrameDataFilterSelection = ({
             }
             onClick={() => {
               if (hitLevels?.includes(hitLevelValue.High)) {
-                removeFilterElement(filterKey.HitLevel, hitLevelValue.High)
+                removeFilterElement(filterKey.HitLevel, hitLevelValue.High);
               } else {
-                addFilterElement(filterKey.HitLevel, hitLevelValue.High)
+                addFilterElement(filterKey.HitLevel, hitLevelValue.High);
               }
             }}
           >
@@ -120,9 +120,9 @@ export const FrameDataFilterSelection = ({
             }
             onClick={() => {
               if (hitLevels?.includes(hitLevelValue.Throw)) {
-                removeFilterElement(filterKey.HitLevel, hitLevelValue.Throw)
+                removeFilterElement(filterKey.HitLevel, hitLevelValue.Throw);
               } else {
-                addFilterElement(filterKey.HitLevel, hitLevelValue.Throw)
+                addFilterElement(filterKey.HitLevel, hitLevelValue.Throw);
               }
             }}
           >
@@ -138,11 +138,11 @@ export const FrameDataFilterSelection = ({
           <Button
             variant={blockFrameMin === 1 ? 'solid' : 'outline'}
             onClick={() => {
-              removeFilterValue(filterKey.BlockFrameMax)
+              removeFilterValue(filterKey.BlockFrameMax);
               if (blockFrameMin === 1) {
-                removeFilterValue(filterKey.BlockFrameMin)
+                removeFilterValue(filterKey.BlockFrameMin);
               } else {
-                setFilterValue(filterKey.BlockFrameMin, '1')
+                setFilterValue(filterKey.BlockFrameMin, '1');
               }
             }}
           >
@@ -151,11 +151,11 @@ export const FrameDataFilterSelection = ({
           <Button
             variant={blockFrameMax === -10 ? 'solid' : 'outline'}
             onClick={() => {
-              removeFilterValue(filterKey.BlockFrameMin)
+              removeFilterValue(filterKey.BlockFrameMin);
               if (blockFrameMax === -10) {
-                removeFilterValue(filterKey.BlockFrameMax)
+                removeFilterValue(filterKey.BlockFrameMax);
               } else {
-                setFilterValue(filterKey.BlockFrameMax, '-10')
+                setFilterValue(filterKey.BlockFrameMax, '-10');
               }
             }}
           >
@@ -164,11 +164,11 @@ export const FrameDataFilterSelection = ({
           <Button
             variant={blockFrameMin === -9 ? 'solid' : 'outline'}
             onClick={() => {
-              removeFilterValue(filterKey.BlockFrameMax)
+              removeFilterValue(filterKey.BlockFrameMax);
               if (blockFrameMin === -9) {
-                removeFilterValue(filterKey.BlockFrameMin)
+                removeFilterValue(filterKey.BlockFrameMin);
               } else {
-                setFilterValue(filterKey.BlockFrameMin, '-9')
+                setFilterValue(filterKey.BlockFrameMin, '-9');
               }
             }}
           >
@@ -179,13 +179,15 @@ export const FrameDataFilterSelection = ({
           values={[blockFrameMin, blockFrameMax]}
           max={10}
           min={-17}
-          onValuesCommit={values => {
+          onValuesCommit={(values) => {
             if (values[0] === undefined) {
-              removeFilterValue(filterKey.BlockFrameMin)
-            } else setFilterValue(filterKey.BlockFrameMin, values[0].toString())
+              removeFilterValue(filterKey.BlockFrameMin);
+            } else
+              setFilterValue(filterKey.BlockFrameMin, values[0].toString());
             if (values[1] === undefined) {
-              removeFilterValue(filterKey.BlockFrameMax)
-            } else setFilterValue(filterKey.BlockFrameMax, values[1].toString())
+              removeFilterValue(filterKey.BlockFrameMax);
+            } else
+              setFilterValue(filterKey.BlockFrameMax, values[1].toString());
           }}
         />
       </section>
@@ -197,11 +199,11 @@ export const FrameDataFilterSelection = ({
           <Button
             variant={hitFrameMin === 0 ? 'solid' : 'outline'}
             onClick={() => {
-              removeFilterValue(filterKey.HitFrameMax)
+              removeFilterValue(filterKey.HitFrameMax);
               if (hitFrameMin === 0) {
-                removeFilterValue(filterKey.HitFrameMin)
+                removeFilterValue(filterKey.HitFrameMin);
               } else {
-                setFilterValue(filterKey.HitFrameMin, '0')
+                setFilterValue(filterKey.HitFrameMin, '0');
               }
             }}
           >
@@ -210,11 +212,11 @@ export const FrameDataFilterSelection = ({
           <Button
             variant={hitFrameMax === -1 ? 'solid' : 'outline'}
             onClick={() => {
-              removeFilterValue(filterKey.HitFrameMin)
+              removeFilterValue(filterKey.HitFrameMin);
               if (hitFrameMax === -1) {
-                removeFilterValue(filterKey.HitFrameMax)
+                removeFilterValue(filterKey.HitFrameMax);
               } else {
-                setFilterValue(filterKey.HitFrameMax, '-1')
+                setFilterValue(filterKey.HitFrameMax, '-1');
               }
             }}
           >
@@ -225,13 +227,13 @@ export const FrameDataFilterSelection = ({
           values={[hitFrameMin, hitFrameMax]}
           max={10}
           min={-10}
-          onValuesCommit={values => {
+          onValuesCommit={(values) => {
             if (values[0] === undefined) {
-              removeFilterValue(filterKey.HitFrameMin)
-            } else setFilterValue(filterKey.HitFrameMin, values[0].toString())
+              removeFilterValue(filterKey.HitFrameMin);
+            } else setFilterValue(filterKey.HitFrameMin, values[0].toString());
             if (values[1] === undefined) {
-              removeFilterValue(filterKey.HitFrameMax)
-            } else setFilterValue(filterKey.HitFrameMax, values[1].toString())
+              removeFilterValue(filterKey.HitFrameMax);
+            } else setFilterValue(filterKey.HitFrameMax, values[1].toString());
           }}
         />
       </section>
@@ -243,15 +245,15 @@ export const FrameDataFilterSelection = ({
           values={[startupFrameMin, startupFrameMax]}
           max={30}
           min={6}
-          onValuesCommit={values => {
+          onValuesCommit={(values) => {
             if (values[0] === undefined) {
-              removeFilterValue(filterKey.StartupFrameMin)
+              removeFilterValue(filterKey.StartupFrameMin);
             } else
-              setFilterValue(filterKey.StartupFrameMin, values[0].toString())
+              setFilterValue(filterKey.StartupFrameMin, values[0].toString());
             if (values[1] === undefined) {
-              removeFilterValue(filterKey.StartupFrameMax)
+              removeFilterValue(filterKey.StartupFrameMax);
             } else
-              setFilterValue(filterKey.StartupFrameMax, values[1].toString())
+              setFilterValue(filterKey.StartupFrameMax, values[1].toString());
           }}
         />
       </section>
@@ -274,15 +276,15 @@ export const FrameDataFilterSelection = ({
                 variant={value ? 'solid' : 'outline'}
                 onClick={() => {
                   if (value) {
-                    removeFilterValue(key)
+                    removeFilterValue(key);
                   } else {
-                    setFilterValue(key, '')
+                    setFilterValue(key, '');
                   }
                 }}
               >
                 {displayName}
               </Button>
-            )
+            );
           })}
         </div>
       </section>
@@ -334,15 +336,15 @@ export const FrameDataFilterSelection = ({
                 variant={value ? 'solid' : 'outline'}
                 onClick={() => {
                   if (value) {
-                    removeFilterValue(key)
+                    removeFilterValue(key);
                   } else {
-                    setFilterValue(key, '')
+                    setFilterValue(key, '');
                   }
                 }}
               >
                 {displayName}
               </Button>
-            )
+            );
           })}
         </div>
       </section>
@@ -351,23 +353,23 @@ export const FrameDataFilterSelection = ({
           States
         </Text>
         <div className="flex flex-wrap gap-3">
-          {states.map(state => {
-            const active = stanceFilter?.includes(state)
+          {states.map((state) => {
+            const active = stanceFilter?.includes(state);
             return (
               <Button
                 key={state}
                 variant={active ? 'solid' : 'outline'}
                 onClick={() => {
                   if (active) {
-                    removeFilterElement(filterKey.Stance, state)
+                    removeFilterElement(filterKey.Stance, state);
                   } else {
-                    addFilterElement(filterKey.Stance, state)
+                    addFilterElement(filterKey.Stance, state);
                   }
                 }}
               >
                 {stateNameMap[state] || state}
               </Button>
-            )
+            );
           })}
         </div>
       </section>
@@ -376,23 +378,23 @@ export const FrameDataFilterSelection = ({
           Stances
         </Text>
         <div className="flex flex-wrap gap-3">
-          {stances.map(stance => {
-            const active = stanceFilter?.includes(stance)
+          {stances.map((stance) => {
+            const active = stanceFilter?.includes(stance);
             return (
               <Button
                 key={stance}
                 variant={active ? 'solid' : 'outline'}
                 onClick={() => {
                   if (active) {
-                    removeFilterElement(filterKey.Stance, stance)
+                    removeFilterElement(filterKey.Stance, stance);
                   } else {
-                    addFilterElement(filterKey.Stance, stance)
+                    addFilterElement(filterKey.Stance, stance);
                   }
                 }}
               >
                 {stanceNameMap[stance] || stance}
               </Button>
-            )
+            );
           })}
         </div>
       </section>
@@ -401,23 +403,23 @@ export const FrameDataFilterSelection = ({
           Transitions / Recovery
         </Text>
         <div className="flex flex-wrap gap-3">
-          {transitions.map(transition => {
-            const active = transitionFilter?.includes(transition)
+          {transitions.map((transition) => {
+            const active = transitionFilter?.includes(transition);
             return (
               <Button
                 key={transition}
                 variant={active ? 'solid' : 'outline'}
                 onClick={() => {
                   if (active) {
-                    removeFilterElement(filterKey.Transition, transition)
+                    removeFilterElement(filterKey.Transition, transition);
                   } else {
-                    addFilterElement(filterKey.Transition, transition)
+                    addFilterElement(filterKey.Transition, transition);
                   }
                 }}
               >
                 {transition}
               </Button>
-            )
+            );
           })}
         </div>
       </section>
@@ -430,9 +432,9 @@ export const FrameDataFilterSelection = ({
             variant={video ? 'solid' : 'outline'}
             onClick={() => {
               if (video) {
-                removeFilterValue(filterKey.Video)
+                removeFilterValue(filterKey.Video);
               } else {
-                setFilterValue(filterKey.Video, '')
+                setFilterValue(filterKey.Video, '');
               }
             }}
           >
@@ -442,9 +444,9 @@ export const FrameDataFilterSelection = ({
             variant={noVideo ? 'solid' : 'outline'}
             onClick={() => {
               if (noVideo) {
-                removeFilterValue(filterKey.NoVideo)
+                removeFilterValue(filterKey.NoVideo);
               } else {
-                setFilterValue(filterKey.NoVideo, '')
+                setFilterValue(filterKey.NoVideo, '');
               }
             }}
           >
@@ -461,11 +463,11 @@ export const FrameDataFilterSelection = ({
             variant={numHitsMin === 1 && numHitsMax === 1 ? 'solid' : 'outline'}
             onClick={() => {
               if (numHitsMin === 1 && numHitsMax === 1) {
-                removeFilterValue(filterKey.NumHitsMin)
-                removeFilterValue(filterKey.NumHitsMax)
+                removeFilterValue(filterKey.NumHitsMin);
+                removeFilterValue(filterKey.NumHitsMax);
               } else {
-                setFilterValue(filterKey.NumHitsMin, '1')
-                setFilterValue(filterKey.NumHitsMax, '1')
+                setFilterValue(filterKey.NumHitsMin, '1');
+                setFilterValue(filterKey.NumHitsMax, '1');
               }
             }}
           >
@@ -475,11 +477,11 @@ export const FrameDataFilterSelection = ({
             variant={numHitsMin === 2 && numHitsMax === 2 ? 'solid' : 'outline'}
             onClick={() => {
               if (numHitsMin === 2 && numHitsMax === 2) {
-                removeFilterValue(filterKey.NumHitsMin)
-                removeFilterValue(filterKey.NumHitsMax)
+                removeFilterValue(filterKey.NumHitsMin);
+                removeFilterValue(filterKey.NumHitsMax);
               } else {
-                setFilterValue(filterKey.NumHitsMin, '2')
-                setFilterValue(filterKey.NumHitsMax, '2')
+                setFilterValue(filterKey.NumHitsMin, '2');
+                setFilterValue(filterKey.NumHitsMax, '2');
               }
             }}
           >
@@ -490,11 +492,11 @@ export const FrameDataFilterSelection = ({
               numHitsMin === 3 && numHitsMax === undefined ? 'solid' : 'outline'
             }
             onClick={() => {
-              removeFilterValue(filterKey.NumHitsMax)
+              removeFilterValue(filterKey.NumHitsMax);
               if (numHitsMin === 3 && numHitsMax === undefined) {
-                removeFilterValue(filterKey.NumHitsMin)
+                removeFilterValue(filterKey.NumHitsMin);
               } else {
-                setFilterValue(filterKey.NumHitsMin, '3')
+                setFilterValue(filterKey.NumHitsMin, '3');
               }
             }}
           >
@@ -503,5 +505,5 @@ export const FrameDataFilterSelection = ({
         </div>
       </section>
     </Flex>
-  )
-}
+  );
+};

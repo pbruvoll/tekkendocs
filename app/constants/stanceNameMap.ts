@@ -6,7 +6,7 @@ export const stanceNameMap: Record<string, string> = {
   ws: 'While rising',
   BT: 'Back turn',
   WR: 'While running',
-}
+};
 
 export const stateNameMap: Record<string, string> = {
   H: 'Heat',
@@ -17,4 +17,4 @@ export const stateNameMap: Record<string, string> = {
   WR: 'While running',
   R: 'Rage',
   P: 'Successful parry',
-}
+};

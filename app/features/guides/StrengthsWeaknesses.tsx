@@ -1,14 +1,14 @@
-import { Heading } from '@radix-ui/themes'
-import cx from 'classix'
-import { TextWithCommand } from '~/components/TextWithCommand'
-import { useGuideContext } from './GuideContext'
+import { Heading } from '@radix-ui/themes';
+import cx from 'classix';
+import { TextWithCommand } from '~/components/TextWithCommand';
+import { useGuideContext } from './GuideContext';
 
 type CoreProps = {
-  section: string[]
-  type: 'strengths' | 'weaknesses'
-}
+  section: string[];
+  type: 'strengths' | 'weaknesses';
+};
 const Core = ({ section, type }: CoreProps) => {
-  const { charUrl, compressedCommandMap } = useGuideContext()
+  const { charUrl, compressedCommandMap } = useGuideContext();
   return (
     <section className="mb-4" id={type}>
       <Heading
@@ -33,13 +33,13 @@ const Core = ({ section, type }: CoreProps) => {
         ))}
       </ul>
     </section>
-  )
-}
+  );
+};
 
 type StrengthsWeaknessesProps = {
-  strengths?: string[]
-  weaknesses?: string[]
-}
+  strengths?: string[];
+  weaknesses?: string[];
+};
 
 export const StrengthsWeaknesses = ({
   strengths,
@@ -50,5 +50,5 @@ export const StrengthsWeaknesses = ({
       {strengths?.length && <Core section={strengths} type="strengths" />}
       {weaknesses?.length && <Core section={weaknesses} type="weaknesses" />}
     </section>
-  )
-}
+  );
+};

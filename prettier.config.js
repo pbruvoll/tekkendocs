@@ -5,4 +5,4 @@ export default {
   trailingComma: 'all',
   arrowParens: 'avoid',
   plugins: ['prettier-plugin-tailwindcss'],
-}
+};

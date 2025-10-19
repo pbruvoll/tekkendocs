@@ -1,35 +1,35 @@
-import { useMemo } from 'react'
+import { useMemo } from 'react';
 import {
   CaretDownIcon,
   CaretSortIcon,
   CaretUpIcon,
-} from '@radix-ui/react-icons'
-import { Table } from '@radix-ui/themes'
-import { Link, useLocation, useSearchParams } from 'react-router'
-import { orderByKey } from '~/constants/sortConstants'
-import { type Move, type MoveT8 } from '~/types/Move'
-import { type MoveFilter } from '~/types/MoveFilter'
-import { type SortOrder } from '~/types/SortOrder'
-import { filterMoves, sortMovesV2 } from '~/utils/frameDataUtils'
-import { charIdFromMove, commandToUrlSegmentEncoded } from '~/utils/moveUtils'
-import { getSortSettings } from '~/utils/sortingUtils'
-import { ContentContainer } from './ContentContainer'
-import { MovePreviewDialogButton } from './MovePreviewDialogButton'
+} from '@radix-ui/react-icons';
+import { Table } from '@radix-ui/themes';
+import { Link, useLocation, useSearchParams } from 'react-router';
+import { orderByKey } from '~/constants/sortConstants';
+import { type Move, type MoveT8 } from '~/types/Move';
+import { type MoveFilter } from '~/types/MoveFilter';
+import { type SortOrder } from '~/types/SortOrder';
+import { filterMoves, sortMovesV2 } from '~/utils/frameDataUtils';
+import { charIdFromMove, commandToUrlSegmentEncoded } from '~/utils/moveUtils';
+import { getSortSettings } from '~/utils/sortingUtils';
+import { ContentContainer } from './ContentContainer';
+import { MovePreviewDialogButton } from './MovePreviewDialogButton';
 
 export type FrameDataTableProps = {
-  moves: Move[]
-  filter?: MoveFilter
-  className?: string
-  hasMultipleCharacters: boolean
-}
+  moves: Move[];
+  filter?: MoveFilter;
+  className?: string;
+  hasMultipleCharacters: boolean;
+};
 
 const sortOrderIconMap: Record<SortOrder, React.ReactNode> = {
   '': <CaretSortIcon width="1.5rem" height="1.5rem" />,
   asc: <CaretDownIcon width="1.5rem" height="1.5rem" />,
   desc: <CaretUpIcon width="1.5rem" height="1.5rem" />,
-}
+};
 
-const maxMovesToShow = 400
+const maxMovesToShow = 400;
 
 export const FrameDataTable = ({
   moves,
@@ -37,41 +37,41 @@ export const FrameDataTable = ({
   filter,
   hasMultipleCharacters,
 }: FrameDataTableProps) => {
-  const [searchParams] = useSearchParams()
-  const location = useLocation()
+  const [searchParams] = useSearchParams();
+  const location = useLocation();
   const sortSettings = useMemo(
     () => getSortSettings(searchParams),
     [searchParams],
-  )
+  );
 
   const createOrderLinkWithSearchParams = (columnName: string) => {
-    const searchParamsCopy = new URLSearchParams(searchParams.toString())
+    const searchParamsCopy = new URLSearchParams(searchParams.toString());
     if (columnName === sortSettings?.sortByKey) {
       if (sortSettings.sortDirection === 'desc') {
-        searchParamsCopy.delete(orderByKey)
+        searchParamsCopy.delete(orderByKey);
       } else {
-        searchParamsCopy.set(orderByKey, `${columnName}_desc`)
+        searchParamsCopy.set(orderByKey, `${columnName}_desc`);
       }
     } else {
-      searchParamsCopy.set(orderByKey, `${columnName}_asc`)
+      searchParamsCopy.set(orderByKey, `${columnName}_asc`);
     }
-    return `${location.pathname}?${searchParamsCopy.toString()}`
-  }
+    return `${location.pathname}?${searchParamsCopy.toString()}`;
+  };
 
   const filteredMoves = useMemo(() => {
-    return filterMoves(moves, filter)
-  }, [filter, moves])
+    return filterMoves(moves, filter);
+  }, [filter, moves]);
 
   const sortedMoves = useMemo(() => {
-    return sortMovesV2(filteredMoves, sortSettings)
-  }, [filteredMoves, sortSettings])
+    return sortMovesV2(filteredMoves, sortSettings);
+  }, [filteredMoves, sortSettings]);
 
   const paginatedMoves = useMemo(() => {
     if (sortedMoves.length > maxMovesToShow) {
-      return sortedMoves.slice(0, maxMovesToShow)
+      return sortedMoves.slice(0, maxMovesToShow);
     }
-    return sortedMoves
-  }, [sortedMoves])
+    return sortedMoves;
+  }, [sortedMoves]);
 
   /**  Frame data imported from wavu wiki might not have unique commands. This might brake sorting
    * since react does not update dom properly. Therefor we set key based on sorting to force React
@@ -86,7 +86,7 @@ export const FrameDataTable = ({
     { id: 'hit', displayName: 'Hit' },
     { id: 'counterHit', displayName: 'Counter hit' },
     { id: 'notes', displayName: 'Notes' },
-  ]
+  ];
 
   return (
     <>
@@ -96,7 +96,7 @@ export const FrameDataTable = ({
             {hasMultipleCharacters && (
               <Table.ColumnHeaderCell>Char</Table.ColumnHeaderCell>
             )}
-            {tableHeaders.map(h => (
+            {tableHeaders.map((h) => (
               <Table.ColumnHeaderCell key={h.id}>
                 <Link
                   to={createOrderLinkWithSearchParams(h.id)}
@@ -114,13 +114,13 @@ export const FrameDataTable = ({
           </Table.Row>
         </Table.Header>
         <Table.Body>
-          {paginatedMoves.map(move => {
+          {paginatedMoves.map((move) => {
             const charId = hasMultipleCharacters
               ? charIdFromMove(move as MoveT8)
-              : undefined
+              : undefined;
             const moveUrl =
               (charId ? `../${charId}/` : '') +
-              commandToUrlSegmentEncoded(move.command)
+              commandToUrlSegmentEncoded(move.command);
             return (
               <Table.Row key={move.moveNumber}>
                 {charId && <Table.Cell>{charId}</Table.Cell>}
@@ -146,7 +146,7 @@ export const FrameDataTable = ({
                   ))}
                 </Table.Cell>
               </Table.Row>
-            )
+            );
           })}
         </Table.Body>
       </Table.Root>
@@ -156,5 +156,5 @@ export const FrameDataTable = ({
         </ContentContainer>
       )}
     </>
-  )
-}
+  );
+};

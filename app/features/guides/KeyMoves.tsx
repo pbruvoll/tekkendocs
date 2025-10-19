@@ -1,17 +1,17 @@
-import { Heading } from '@radix-ui/themes'
-import { Commands } from '~/components/Commands'
-import { TextWithCommand } from '~/components/TextWithCommand'
-import { useGuideContext } from './GuideContext'
-import { type KeyMove } from './GuideData'
-import { GuideSectionHeading } from './GuideSectionHeading'
-import { MoveSummary } from './MoveSummary'
+import { Heading } from '@radix-ui/themes';
+import { Commands } from '~/components/Commands';
+import { TextWithCommand } from '~/components/TextWithCommand';
+import { useGuideContext } from './GuideContext';
+import { type KeyMove } from './GuideData';
+import { GuideSectionHeading } from './GuideSectionHeading';
+import { MoveSummary } from './MoveSummary';
 
 type KeyMovesProps = {
-  moves: KeyMove[]
-  title: string
-}
+  moves: KeyMove[];
+  title: string;
+};
 export const KeyMoves = ({ moves, title }: KeyMovesProps) => {
-  const { charUrl, compressedCommandMap } = useGuideContext()
+  const { charUrl, compressedCommandMap } = useGuideContext();
   return (
     <section className="my-6 mb-10" id={title.toLowerCase().replace(/ /g, '-')}>
       <GuideSectionHeading title={title} />
@@ -38,5 +38,5 @@ export const KeyMoves = ({ moves, title }: KeyMovesProps) => {
         </section>
       ))}
     </section>
-  )
-}
+  );
+};

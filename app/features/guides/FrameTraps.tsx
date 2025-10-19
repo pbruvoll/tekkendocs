@@ -1,13 +1,13 @@
-import { Commands } from '~/components/Commands'
-import { useGuideContext } from './GuideContext'
-import { type FrameTrap } from './GuideData'
-import { GuideSectionHeading } from './GuideSectionHeading'
+import { Commands } from '~/components/Commands';
+import { useGuideContext } from './GuideContext';
+import { type FrameTrap } from './GuideData';
+import { GuideSectionHeading } from './GuideSectionHeading';
 
 type FrameTrapsProps = {
-  frameTraps: FrameTrap[]
-}
+  frameTraps: FrameTrap[];
+};
 export const FrameTraps = ({ frameTraps }: FrameTrapsProps) => {
-  const { charUrl, compressedCommandMap } = useGuideContext()
+  const { charUrl, compressedCommandMap } = useGuideContext();
   return (
     <section className="my-6 mb-10" id="frame-traps">
       <GuideSectionHeading title="Frame Traps" />
@@ -27,5 +27,5 @@ export const FrameTraps = ({ frameTraps }: FrameTrapsProps) => {
         </section>
       ))}
     </section>
-  )
-}
+  );
+};

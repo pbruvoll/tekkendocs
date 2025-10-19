@@ -1,1 +1,1 @@
-export const orderByKey = 'orderby'
+export const orderByKey = 'orderby';
