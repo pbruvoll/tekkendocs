@@ -77,7 +77,9 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Transition to NSS on hit or block only
 * Recovers 2f faster on hit or block
 * Interrupt with i5 from 1st block
-* Actual startup is i25, in-game frame data display is bugged";trn;KIN,NSS;Yoshimitsu-2,2;Mushibami;r27;;File:t8-p2-yoshimitsu-2,2.mp4
+* Actual startup is i25, in-game frame data display is bugged
+* Input can be delayed 1f
+* Move cannot be delayed";trn;KIN,NSS;Yoshimitsu-2,2;Mushibami;r27;;File:t8-p2-yoshimitsu-2,2.mp4
 2,3;h, h;10, 24;i11, i26~27;-10;+16a (+7);;"* Balcony Break
 * Combo from 1st CH with 2f delay
 * Input can be delayed 5f";bbr;;Yoshimitsu-2,3;PK Combo;r33;;File:t8-p2-yoshimitsu-2,3.mp4
@@ -360,22 +362,28 @@ db+3,3,3,3,3,4;l, l, l, l, l, m;8, 7, 7, 5, 5, 15;i18~19, ,i12~13;-8;+23a (+13);
 * Enter KIN -6 +25a (+15) r21 with 1+2
 * Enter NSS -6 +25a (+15) r24 with B
 * Same animation as ws4
-* Can be performed following any number of db+3 lows except the first one";bbr;KIN,NSS;Yoshimitsu-db+3,3,3,3,3,4;Manji Spin Low Kicks Front Kick;r26;;File:t8-p2-yoshimitsu-db+3,3,3,3,3,4.mp4
+* Can be performed following any number of db+3 lows except the first and last";bbr;KIN,NSS;Yoshimitsu-db+3,3,3,3,3,4;Manji Spin Low Kicks Front Kick;r26;;File:t8-p2-yoshimitsu-db+3,3,3,3,3,4.mp4
 db+4;L;14;i17;-12;-1;;;;;Yoshimitsu-db+4;Nozuchi Fumi;r31;;File:t8-p2-yoshimitsu-db+4.mp4
 B+1;h;8;i17;+1;+7;+12;Can transition to Spinning Evade with b+3 or b+4;;Spinning;Yoshimitsu-B+1;;r18;;
-B+1,1;h, h;8, 9;i17, i11~12;+4;+5;+10;Can transition to Spinning Evade with b+3 or b+4;;Spinning;Yoshimitsu-B+1,1;;r14;;
-B+1,1,1;h, h, h;8, 9, 10;i17, ,i11~12;+4;+5;+10;Can transition to Spinning Evade with b+3 or b+4;;Spinning;Yoshimitsu-B+1,1,1;;r14;;
-B+1,1,1,1;h, h, h, h;8, 9, 10, 12;i17, ,i11~12;+4;+5;+10;Can transition to Spinning Evade with b+3 or b+4;;Spinning;Yoshimitsu-B+1,1,1,1;;r14;;
-B+1,1,1,1,1;h, h, h, h, h;8, 9, 10, 12, 14;i17, ,i11~12;+4;+5;+10;Can transition to Spinning Evade with b+3 or b+4;;Spinning;Yoshimitsu-B+1,1,1,1,1;;r14;;
-B+1,1,1,1,1,1;h, h, h, h, h, h;8, 9, 10, 12, 14, 16;i17, ,i11~12;-73;-71;-67;;;FUFT;Yoshimitsu-B+1,1,1,1,1,1;Slap U Silly;r80 FUFT;;File:t8-p2-yoshimitsu-b+1,1,1,1,1,1.mp4
+B+1,1;h, h;8, 9;i17, i11~12;+4;+5;+10;"* Combo from 1st hit
+* Can transition to Spinning Evade with b+3 or b+4";;Spinning;Yoshimitsu-B+1,1;;r14;;
+B+1,1,1;h, h, h;8, 9, 10;i17, ,i11~12;+4;+5;+10;"* Combo from 1st hit
+* Can transition to Spinning Evade with b+3 or b+4";;Spinning;Yoshimitsu-B+1,1,1;;r14;;
+B+1,1,1,1;h, h, h, h;8, 9, 10, 12;i17, ,i11~12;+4;+5;+10;"* Combo from 3rd CH
+* Can transition to Spinning Evade with b+3 or b+4";;Spinning;Yoshimitsu-B+1,1,1,1;;r14;;
+B+1,1,1,1,1;h, h, h, h, h;8, 9, 10, 12, 14;i17, ,i11~12;+4;+5;+10;"* Combo from 4th hit
+* Combo from 3rd CH
+* Can transition to Spinning Evade with b+3 or b+4";;Spinning;Yoshimitsu-B+1,1,1,1,1;;r14;;
+B+1,1,1,1,1,1;h, h, h, h, h, h;8, 9, 10, 12, 14, 16;i17, ,i11~12;-73;-71;-67;"* Combo from 4th hit
+* Combo from 3rd CH";;FUFT;Yoshimitsu-B+1,1,1,1,1,1;Slap U Silly;r80 FUFT;;File:t8-p2-yoshimitsu-b+1,1,1,1,1,1.mp4
 B+1,1,DB+3;h, h, l;8, 9, 7;i17, ,i13~14;-20;-9;;"* Combo from 1st hit
-* Leads to db+3 extensions
-* Can be performed from a single B+1
+* Can combo to DB+3 extensions
+* Can be performed after one or three b+1
 * High crush 10~";cs10~;FC;Yoshimitsu-B+1,1,DB+3;;r38 FC;;
 B+1,1,DB+3,3;h, h, l, l;8, 9, 7, 5;i17, ,i15~17;-19;-7;;"* Combo from 3rd CH
-* Leads to db+3 extensions
+* Can combo to DB+3 extensions
 * Enter IND r20 with d+3+4
-* Can be performed from a single B+1
+* Can be performed after one or three b+1
 * High crush 1~";cs1~;IND,FC;Yoshimitsu-B+1,1,DB+3,3;;r38 FC;;
 b+2;m;12;i14~15;-9;+2;;Enter KIN r27 with n,1+2;;KIN;Yoshimitsu-b+2;;r27;;
 b+2,1;m, M;12, 20;i14~15, i27~28;-17;+28a (+18);;"* Weapon
@@ -556,11 +564,7 @@ uf+3+4,3+4;M, m;20, 25;i31~35, i25~26;-13;+52a (+42);;"* Tornado
 1+2+3+4;;;;;;;"* Can't block for 5 seconds
 * CH state on your next attack for 5 seconds ''(Tekken 7 and prior games)''
 * 50% damage increase on the next attack for 5 seconds ''(Tekken 8 season 2 patch onward)''
-* Attacks taken will be CH for 5 seconds";;;Yoshimitsu-1+2+3+4;"<div class=""dotlist"">
-
-* Ki Charge
-* Supercharger
-</div>";r55;;File:t8-p2-yoshimitsu-1+2+3+4.mp4
+* Attacks taken will be CH for 5 seconds";;;Yoshimitsu-1+2+3+4;Ki Charge;r55;;File:t8-p2-yoshimitsu-1+2+3+4.mp4
 b,B+1+4;m!;50;i59~61;;+2a;;"* Weapon
 * Cannot be buffered
 * Poor hitbox, will go over crouching opponents sometimes";wpn;;Yoshimitsu-b,B+1+4;Thunder Blade;r51;;File:t8-p2-yoshimitsu-b,b+1+4.mp4

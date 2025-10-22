@@ -13,9 +13,10 @@ H.f+1+4;;;;;;;"* Consumes 150F of remaining Heat time
 * Low crush 18~40
 * Floating state 41~43";js18~40 fs41~43;DBT;Alisa-H.f+1+4;Emergency Dual Boot;r17 DBT;;
 H.2+3;m;50 (28);i20~21;+8;-15d;;"* Heat Smash
+* Transition to DES with 1+2
 * Transition to SBT with 3_4
 * Transition to DBT with f+3_f+4
-* 8 chip damage on block";hs;SBT,DBT;Alisa-H.2+3;Quick-fix Protocol;r45;;
+* 8 chip damage on block";hs;DES,SBT,DBT;Alisa-H.2+3;Quick-fix Protocol;r45;;
 R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Removes Recoverable Health
 * Reversal Break
@@ -512,12 +513,14 @@ DES.BT.1;m,m,m,m,m,m;4,4,4,4,4,4;i19~22 i1~3 i1~3 i1~3 i1~3 i1~3;-9;+25a;;"* Wea
 * 1 chip damage on block
 * 11 chip damage on block in heat";wpn;DES;Alisa-DES.BT.1;Hertz Blade - Flare;r29 DES;;File:t8-p2-alisa-des.bt.1.mp4
 DES.b,b;;;;;;;;;DES;Alisa-DES.b,b;Move Back;r1 DES;;File:t8-p2-alisa-des.b,b.mp4
-DES.b+2;m;17;i18~20;-12;0;+18a;"* Weapon
+DES.b+2;m;17;i18~20;-12;+0;+18a;"* Weapon
 * 5 chip damage on block
 * 6 chip damage on block in heat";wpn;;Alisa-DES.b+2;;r35;;
 DES.b+2,1;m, m,SL,SL,SL,SL;17, 8,5,5,5,5;i18~20, i20~21 i1~6 i1~5 i1~5 i1~3;-3c;+5;;"* Spike
 * Weapon
-* Combo from any hit
+* Combo from 1st hit with 17F delay
+* Move can be delayed by 10F
+* Input can be delayed by 23F
 * 3 chip damage on block
 * 7 chip damage on block in heat";spk wpn;DES;Alisa-DES.b+2,1;Hertz Blade - Tomahawk;r20 DES;;File:t8-p2-alisa-des.b+2,1.mp4
 DES.b+3;;;;;;;"* Low crush 7~33
@@ -547,10 +550,13 @@ DES.f+1;h;21;i11~13 i1~3 i1~3 i1~3 i1~3 i1~3 i1~1;+3;+9;;"* Weapon
 * 1 chip damage on block
 * 7 chip damage on block in heat";wpn;DES;Alisa-DES.f+1;Hertz Blade;r21 DES;;File:t8-p2-alisa-des.f+1.mp4
 DES.f+2;m,m;9;i15 i1~1;-9;+0c;;"* Weapon
+* Timestop on hit?
 * 2 chip damage on block
 * 3 chip damage on block in heat";wpn;DES;Alisa-DES.f+2;;r30 DES;;
 DES.f+2,1;m,m, m,m;9, 9;i15 i1~1, i23 i1~1;-12;-3c;;"* Weapon
-* Combo from 1st hit
+* Combo from 1st hit with 1?F delay
+* Move cannot be delayed
+* Timestop on hit?
 * 2 chip damage on block
 * 3 chip damage on block in heat
 * During heat: Transition to r20 DBT at -6/+3 with 3_4; partially uses remaining heat time";wpn;DBT,DES;Alisa-DES.f+2,1;;r33 DES;;
@@ -559,7 +565,8 @@ DES.f+2,1,2;m,m, m,m, m,m;9, 9, 23;i15 i1~1, ,i23~24 i4~5;-13;+30d;;"* Heat Enga
 * Heat Dash +5, +62a (+42)
 
 * Weapon
-* Combo from 1st or 2nd CH
+* Combo from 1st or 2nd CH with 3?F delay
+* Move cannot be delayed
 * 6 chip damage on block
 * 7 chip damage on block in heat";he wpn;;Alisa-DES.f+2,1,2;Gigahertz Storm;r42;;File:t8-p2-alisa-des.f+2,1,2.mp4
 DES.f+3;;;;;;;"* Cancel to r33 standing block with DBT.B

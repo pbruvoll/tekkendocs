@@ -31,54 +31,68 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Consumes Rage
 * Power crush 8~";rbr pc8~;;Armor King-R.df+1+2;Dark Supernova;r39;;
 1;h;5;i10;+1;+8;;Recovers 2f faster on hit or block (t27 r17);;;Armor King-1;Jab;r19;;
-1,2;h, h;5, 10;i10, i10;-3;+6;;"* Combo from 1st hit
-* Jails from 1st block";;;Armor King-1,2;One Two Punch;;;
-1,2,1;h, h, m;5, 10, 14;i10, ,i24~25;-5;+1;+11;"* Combo from 2nd CH
-* Transition to BAD with F (-11, -19)";;BAD;Armor King-1,2,1;Left Right Uppercut;;;
+1,2;h, h;5, 10;i10, i10;-3;+6;;"* Combo from 1st hit with 2F delay
+* Jail from 1st block with 2F delay";;;Armor King-1,2;One Two Punch;r22;;
+1,2,1;h, h, m;5, 10, 14;i10, ,i24~25;-5;+1;+11;"* Combo from 2nd CH with 3F delay
+* Interrupt with i4 from 2nd block
+* Move can be delayed by 10F
+* Transition to r25 BAD with F (-19/-11)";;BAD;Armor King-1,2,1;Left Right Uppercut;r23;;
 1+3+4;h!;25?;i37~44;;+12g?;;* Extremely high hitbox;;;Armor King-1+3+4;;;;
-2;h;10;i10;+1;+7;;;;;Armor King-2;;;;
-2,1;h, m;10, 15;i10, i23;-3;+7;;* Combo from 1st hit;;;Armor King-2,1;Right Jab > Uppercut;;;
-3;h;17;i15~16;+3;-4;;;;;Armor King-3;;;;
-3,4;h, m;17, 15;i15~16, i27~29;-9;+3;;Combo from 1st hit;;;Armor King-3,4;;;;
+2;h;10;i10;+1;+7;;;;;Armor King-2;;r18;;
+2,1;h, m;10, 15;i10, i23;-3;+7;;"* Combo from 1st hit
+* Interrupt with i3 from 1st block
+* t43 r19? on hit";;;Armor King-2,1;Right Jab > Uppercut;r21?;;
+3;h;17;i15~16;-4;+3;;* Has good right sidestep tracking;;;Armor King-3;;r31;;
+3,4;h, m;17, 15;i15~16, i27~29;-9;+3;;"* Combo from 1st hit with 6F delay
+* Move can be delayed by 7F
+* Input can be delayed by 9F";;;Armor King-3,4;;r30;;
 3,4,1;h, m, m;17, 15, 28;i15~16, ,i21~22;-13;+15a(+6);;"* Balcony Break
-* Combo from 2nd CH
-* Cancel with B (-2, -14)";bbr;;Armor King-3,4,1;Dark Stampede;;;
-4;h;17;i13;-5;+6;;;;;Armor King-4;;;;
-4,3;h, h;17, 18;i13, i25~26;+0;+9;+27d;"* Balcony Break
-* Balcony Break is only on 2nd CH
-* Combo from 1st hit
-* Combo from 1st CH +23a (+16)
-* Cancel with B (-5, -16)";bbr;;Armor King-4,3;High Kick Tornado;;;
+* Combo from 2nd CH with 14F delay
+* Move can be delayed by 13F
+* Input can be delayed by 16F
+* i17 r17 cancel with B (-14/-2)";bbr;;Armor King-3,4,1;Dark Stampede;r33;;
+4;h;17;i13;-5;+6;+6s;;;;Armor King-4;;r24;;
+4,3;h, h;17, 18;i13, i25~26;+0;+9;+27d;"* Balcony Break on 2nd CH
+* Combo from 1st hit with 5F delay
+* Combo from 1st CH with 5F delay (+23a (+16))
+* i18 r17 cancel with B (-16/-5)
+* Move can be delayed by 6F";;;Armor King-4,3;High Kick Tornado;r27;;
 1+2;m;10;i17~19;-10;+0;;"* Elbow
-* Transition to BT with B (+0, -10)";elb;BT;Armor King-1+2;;;;
-1+2,2;m, h;10, 20;i17~19, i18;-3;+16d;;* Combo from 1st hit;;;Armor King-1+2,2;Dark Cyclone;;;
-1+2,4;m, m;10, 17;i17~19, i19~20;-13;+8;+58a;* Combo from 1st hit;;;Armor King-1+2,4;Dark Buzzsaw;;;
-3+4;M;14;i25~32;-7;+3;;* Low crush 11~36;js11~36;BT;Armor King-3+4;Round Out Kick;BT;;
-3+4*;h,t;0,40;i35;;+0;;"* Floor Break
+* Transition to r15 BT with B (-10/+0)";elb;BT;Armor King-1+2;;r36;;
+1+2,2;m, h;10, 20;i17~19, i18;-3;+16a;;"* Combo from 1st hit with 13F delay
+* Move cannot be delayed
+* Input can be delayed by 13F";;;Armor King-1+2,2;Dark Cyclone;r24;;
+1+2,4;m, m;10, 17;i17~19, i19~20;-13;+8;+58a;* Combo from 1st hit;;;Armor King-1+2,4;Dark Buzzsaw;r31;;
+3+4;M;14;i25~32;-7;+3;;"* BT.3+4 spins backwards and recovers frontfacing
+* Low crush 11~36";js11~36;BT;Armor King-3+4;Round Out Kick;r20 BT;;
+3+4*;M, h,t;14, 0,40;i25~32, i35;;+0;;"* Floor Break
 * Transitions to throw on front grounded hit
 * Cannot throw break
-* Opponent is left FUFL";fbr;;Armor King-3+4*;Phenomenon Shadow DDT;;;
+* Opponent is left FUFL";fbr;BT;Armor King-3+4*;Phenomenon Shadow DDT;r22 BT;;
 3+4,1;M, h;14, 17;i25~32, i14~15;-8;+8;;"* Combo from 1st hit
-* Transition to BAD with F (+8, -8)";;BAD;Armor King-3+4,1;Dark Blast;r28;;
+* Transition to BAD with F (-8/+8)";;BAD;Armor King-3+4,1;Dark Blast;r28;;
 3+4,2;M, M;14, 25;i25~32, i17~i34;-18d;-24a(-50);;"* Shoulder
 * Balcony Break
 * Combo from 1st hit
 * Opponent recovers FDFA
-* Low crush";bbr js;;Armor King-3+4,2;Round Out Elbow;;;
-3+4,1+2;M, m,t;14, 25,5;i25~32, i24~34;+0c;-5d;;"* Opponent left FUFA
-* Armor King recovers FUFR on hit, and FDFR on block
-* Low crush";js;;Armor King-3+4,1+2;Round Out Body Press;;;
+* AK recovers standing on hit
+* Low crush 9~37?";bbr js9~37?;FUFA;Armor King-3+4,2;Round Out Elbow;r25? FUFA;;
+3+4,1+2;M, M,t;14, 25,5;i25~32, i24~34;+0c;-5d;;"* Transition to attack throw on close range front hit
+* +2c~+12c on mid hit
+* Opponent left FUFA
+* Armor King recovers FUFL on hit, and FDFL on block
+* Low crush 9~34";js9~34;FDFL;Armor King-3+4,1+2;Round Out Body Press;r21 FDFL;;
 f+2;m;12;i15~16;-11;+2;;Elbow;elb;;Armor King-f+2;;r29;;
 f+2,1;m, h;12, 25;i15~16, i18~19;-9;+16a;;"* Heat Engager
 
 * Heat Dash +5, +36a (+26)
 
 * Balcony Break
-* Combo from 1st hit with 7F delay
+* Combo from 1st hit with 6F delay
 * Combo from 1st CH with 12F delay
 * Move can be delayed by 10F
 * Input can be delayed by 12F
-* FDFA";he bbr;;Armor King-f+2,1;Dark Elbow Hook;r33;;
+* Opponent recovers in FDFA";he bbr;;Armor King-f+2,1;Dark Elbow Hook;r33;;
 f+3;m;12;i15~16;-9;+7;;;;;Armor King-f+3;;;;
 f+3,2;m, m;12, 13;i15~16, i20~21;-11;+5;;"* Combo from 1st hit
 * Transition to CD with DF (+15, -1)";;CD;Armor King-f+3,2;;;;
@@ -92,6 +106,7 @@ f+1+4;m;28;i13~15;-19;+17d(+12);;"* Balcony Break
 * Shoulder
 * Opponent recovers FUFT";bbr;;Armor King-f+1+4;Shoulder Impact;;;
 f+3+4;sp;;;;;;"* Parries mid and high punches
+* Cannot block in stance
 * Transition to BAD
 * Parry state 5-Parry state 12?";ps5-ps12?;BAD,BAD;Armor King-f+3+4;Bad Jaguar;r25 BAD;;
 f+3+4,P;h!;[5];i25~34;;+23g;;"* On successful parry, gives a special stun that makes throws unbreakable for the stun duration
@@ -127,37 +142,48 @@ d+3+4,3;l, m;15, 16;i17, i23~24;-15;+15a(-2);;"* Balcony Break
 * Tornado
 * Combo from 1st CH
 * Opponent recovers FDFA";bbr trn;;Armor King-d+3+4,3;Taurus Cutter Trap;;;
-db+2;m;12;i14;-11;+0;;;;;Armor King-db+2;;;;
+db+2;m;12;i14;-11;+0;;;;;Armor King-db+2;;r30;;
 db+2,3;m, m;12, 24;i14, i26~27;-12;+11a(+2);;"* Balcony Break
-* Combos from 1st hit
-* Opponent recovers FUFT";bbr;;Armor King-db+2,3;Killer PK Combo;;;
-db+2,4;m, h;12, 20;i14, i20~21;-5;+7;;Combos from 1st hit;;;Armor King-db+2,4;;;;
-db+2,4,2;m, h, m;12, 20, 24;i14, ,i30~31;-12;+32a(+6);;"* Balcony Break
-* Combos from 2nd hit CH
-* Opponent recovers FUFT";bbr;;Armor King-db+2,4,2;Dark Flood;;;
+* Combo from 1st hit";bbr;;Armor King-db+2,3;Killer PK Combo;r33;;
+db+2,4;m, h;12, 20;i14, i20~21;-5;+7;;"* Balcony Break on airborne hit
+* Combo from 1st hit";;;Armor King-db+2,4;;r29;;
+db+2,4,2;m, h, m;12, 20, 24;i14, ,i30~31;-12;+32a (+6);;"* Balcony Break
+* Combo from 2nd CH with 5F delay
+* Move can be delayed by 4F
+* Input can be delayed by 5F";bbr;;Armor King-db+2,4,2;Dark Flood;r32;;
 H.db+2,1;m, m;12, 25;i14, i26~27;+3;+17a (+8);;"* Balcony Break
 * Combo from 1st hit
 * Interrupt with i4 from 1st block
 * Partially uses remaining Heat time";bbr;;Armor King-db+2,H.1;Outbreak: Villain;r31;;
-db+3;l;26;i22~24;-26;+6;+74a (+58);"* Homing
-* High crush";hom cs;;Armor King-db+3;Foot Sweep;;;
+db+3;L;26;i22~24;-26;+6;+74a (+58);"* Homing
+* High crush 6~51";hom cs6~51;FC;Armor King-db+3;Foot Sweep;r27 FC;;
 db+4;L;20;i29~31;-17d;-3d;+27a;"* Opponent recovers FDFA
 * Armor King recovers in crouch on hit and FDFT on block
-* Low crush";js;;Armor King-db+4;Low Drop Kick;;;
-b+1;h;12;i12~13;-7;+5;;;;;Armor King-b+1;Dark Jab;;;
-b+1,2;h, m;12, 20;i12~13, i20~21;;+8;;"* Combos from 1st hit
-* Transition to BAD with F (+8, -12)";;BAD;Armor King-b+1,2;Dark Jab > Hell Stab;;;
-b+2;m;10;i13;-11;+0c;;;;;Armor King-b+2;;;;
-b+2,1;m, m;10, 8;i13, i18;-12;-1;;Combos from 1st hit;;;Armor King-b+2,1;;;;
-b+2,1,2;m, m, h;10, 8, 20;i13, ,i25~26;-7;+19a(+10);;"* Balcony Break
-* Combos from 2nd hit CH";bbr;;Armor King-b+2,1,2;Knife Edge Combo;;;
-b+3;h;17;i16~18;-12;+66a(+50);;"* Balcony Break
-* Tornado";bbr trn;;Armor King-b+3;Dark Toll Kick;;;
-b+4;m;15;i15~18;-9;+2;;;;;Armor King-b+4;Toe Kick;;;
+* High crush 6~14
+* Low crush 16~";cs6~14 js16~;;Armor King-db+4;Low Drop Kick;r31?;;
+b+1;h;12;i12~13;-7;+5;;;;;Armor King-b+1;Dark Jab;r29;;
+b+1,2;h, m;12, 20;i12~13, i20~21;-12;+8;+11;"* Combo from 1st hit with 12F delay
+* Transition to r30 BAD with F (-12/+8/+11)
+* Move can be delayed by 10F
+* Input can be delayed by 12F";;BAD;Armor King-b+1,2;Dark Jab > Hell Stab;30;;
+b+1+3;;25;;;+0d;;"* Reverses High or Mid punches only
+* Opponent recovers FUFA when parrying a left punch
+* Opponent recovers FDFL when parrying a right punch
+* Has a followup on whiff only
+* Parry state 5~12";ps5~12;;Armor King-b+1+3;Catch;;;
+b+1+3,2;m;17;i17;-9;+3;+27a;* On CH transition to True Dark Smash;;True;Armor King-b+1+3,2;Jugular Thrust Trap;;;
+b+2;m;10;i13;-11;+0c;;;;;Armor King-b+2;;r30;;
+b+2,1;m, m;10, 8;i13, i18;-12;-1;;* Combo from 1st hit;;;Armor King-b+2,1;;r31;;
+b+2,1,2;m, m, h;10, 8, 20;i13, ,i25~26;-7;+19a (+10);;"* Balcony Break
+* Combo from 1st or 2nd CH with 5F delay
+* Move can be delayed by 20F";bbr;;Armor King-b+2,1,2;Knife Edge Combo;r30;;
+b+3;h;17;i16~18;-12;+66a (+50);;"* Balcony Break
+* Tornado";bbr trn;;Armor King-b+3;Dark Toll Kick;r33;;
+b+4;m;15;i15~18;-9;+2;;;;;Armor King-b+4;Toe Kick;r32;;
 b+4,1+2;m, t;15, 20;i15~18, ;;+0d;;Throw only comes out on front hit;;;Armor King-b+4,1+2;Toe Kick > Stunner;;;
-b+1+2;m;0;i16~17;+0;+4;+15;;;;Armor King-b+1+2;Blindside;;;
+b+1+2;m;0;i16~17;+0;+4;+15;;;;Armor King-b+1+2;Blindside;r27;;
 b+3+4;m;22;i20~21;-9;+12a (+3);;"* Homing
-* Balcony Break";hom bbr;;Armor King-b+3+4;Pendulum Kick;;;
+* Balcony Break";hom bbr;;Armor King-b+3+4;Pendulum Kick;r37;;
 ub+1;h;21;i24~25;+5;+39d (+31);;"* Balcony Break
 * Homing
 * 5 chip damage on block
@@ -172,8 +198,7 @@ u+1+2*;m!;45;i67;!;+11a;;* Low crush;js;;Armor King-u+1+2*;Burning Knuckle;;;
 uf+1;m;20;i23~24;+4;+11g;+58a;"* Balcony Break
 * 6 chip damage on block";bbr;;Armor King-uf+1;Spinning Lariat;;;
 uf+2;m;7;i15~16;-12;-1;;;;;Armor King-uf+2;;;;
-uf+2,1;m, m;7, 10;i15~16, i26~26;-13;+45a (+37);;"* Bound
-* Floor Break
+uf+2,1;m, m;7, 10;i15~16, i26~26;-13;+45a (+37);;"* Floor Break
 * Elbow
 * Combos from 1st hit";fbr elb;;Armor King-uf+2,1;Death Sandwich;;;
 uf+3;m;17;i19~21;-8;+5;+35a (+25);"Knee
@@ -181,38 +206,46 @@ uf+3;m;17;i19~21;-8;+5;+35a (+25);"Knee
 uf+4;m;13;i15~17;-13;+33a (+23);;* Low crush;js;;Armor King-uf+4;Rising Toe Kick;;;
 uf+3+4;m;23;i32~38;-7d;+22a (+9);;* Low crush;js;FUFT;Armor King-uf+3+4;Scissors Kick;FUFT;;
 (2 steps or more) wr4;l;20;i20~24;-21;+0d;+30a;* Low crush;js;FUFT;Armor King-wr4;Dashing Low Drop Kick;FUFT;;
-CH ws2,2;m,m;20, 15;i11~12;?;+35a(+28);;* input f,d,df+2 during the taunt animation for blue spark Dark Upper: 25dmg (17dmg with scaling);;;Armor King-CH.ws2,2;True Dark Smash;r23?;;
 b,B+2+3;!;50;i63~66;!;+52a;;"* Cancel with D
 * Low crush";js;BT;Armor King-b,B+2+3;Dark Destroyer;BT;;
-f,F+2;m;20;i16~17;+6;+6;+44a;;;;Armor King-f,F+2;Hell-Shaker Punch;;;
+f,F+2;m;20;i16~17;-6;+6;+44a;;;;Armor King-f,F+2;Hell-Shaker Punch;;;
 f,F+3;h;23;i17~19;+2;+15a (+6);;"* Balcony Break
 * Homing
 * 6 chip damage on block";bbr hom;;Armor King-f,F+3;Comeback Kick;;;
-f,F+4;m;25;i14;-8;+13d;;"* Heat Engager
+f,F+4;m;25;i14;-8;+13c;;"* Heat Engager
 
 * Heat Dash +36a (+26)
 
-* Balcony Break";he bbr;;Armor King-f,F+4;Brawler Kick;;;
-f,F+3+4;h;35;i23~24;-10d;+10d;;"* Balcony Break
-* Low crush";bbr js;;Armor King-f,F+3+4;Drop Kick;;;
-f,f,n,2;L;20;i19;-13;+5;+10;"* Transition to BAD on hit with F (+8, +13 ch)
-* High crush";cs;BAD;Armor King-f,f,n,2;Underhanded;;;
+* Balcony Break
+* Forces tech backroll wakeup on hit
+** Opponent recovers crouching";he bbr;;Armor King-f,F+4;Brawler Kick;r35;;
+f,F+3+4;h;35;i23~24;-10;+10c;;"* Balcony Break
+* Forces tech backroll wakeup on hit
+** Opponent recovers crouching
+* 10 chip damage on block
+* Low crush 14~";bbr js14~;FDFT;Armor King-f,F+3+4;Drop Kick;FDFT;;
+f,f,n,2;L;20;i19;-13;+5;+10;"* Transition to BAD on hit with F (+8/+13)
+* High crush 8~37";cs8~37;BAD;Armor King-f,f,n,2;Underhanded;;;
 f,n,d,DF+3;h!;30;i35~37;;+19a (+10);;"*
 Balcony Break
-*Hold B to cancel";bbr;;Armor King-f,n,d,DF+3;Dark Inferno;;;
-f,n,d,DF+4;m;22;i16~18;-9?;+28d (+20);;"*
+*Hold B to cancel at frame 19 into r23 standing";bbr;;Armor King-f,n,d,DF+3;Dark Inferno;r28;;
+f,n,d,DF+4;m;22;i16~18;-9;+28a (+20);;"*
 Balcony Break
 *
-Tornado";bbr trn;;Armor King-f,n,d,DF+4;Knee Vault;;;
+Tornado
+* Low crush 11~27";bbr trn js11~27;;Armor King-f,n,d,DF+4;Knee Vault;r35;;
 f,n,d,df;;;;;;;"* Cannot be buffered
 * Stance moves can be buffered out of heat dash
+* Recovers in FC at frame 20
 * Cancel to SS with u
-* Cancel to block with b";;SS;Armor King-f,n,d,df;Beast Step;;;
-f,n,d,df+1;h;20;i15~16;+6?;+16d;;*Opponent left FDFA on hit;;;Armor King-f,n,d,df+1;Shadow Lariat;;;
-f,n,d,df+2;h;20;i11~12;-10?;+36a (+26);;*;;;Armor King-f,n,d,df+2;Dark Smash;;;
+* Cancel to standing block with b";;SS;Armor King-f,n,d,df;Beast Step;r1;;
+f,n,d,df+1;h;20;i15~16;+5;+16a;;"* 6 chip damage on block
+* Opponent left FDFA on hit";;;Armor King-f,n,d,df+1;Shadow Lariat;r30;;
+f,n,d,df+2;h;20;i11~12 (i14+);-10;+36a (+26);;"* Can also be performed with f,n,df#2 (i13+)
+* t39? r27? on hit";;;Armor King-f,n,d,df+2;Dark Smash;r28?;;
 f,n,d,df+1+2;h!;[5];i35~38;;+23g;;"*On hit, gives a special stun that makes throws unbreakable for the stun duration
 *Comes out faster in heat
-*Cannot K.O";;;Armor King-f,n,d,df+1+2;Poison Mist;;;
+*Cannot K.O";;;Armor King-f,n,d,df+1+2;Poison Mist;r29;;
 uf,n,4;m;20;i23~25;-13;+32a (+22);;* Low crush;js;;Armor King-uf,n,4;Delayed Rising Toe Kick;;;
 f,f,F+3;m;30;i23~25;+6;+22d;;"* Balcony Break
 * 9 chip damage on block
@@ -228,10 +261,21 @@ ws3,1;m, m;12, 24;i13~14, i24~25;-13;+28a (+2);;"* Heat Engager
 
 * Balcony Break
 * Combo from 1st hit with 5F delay";he bbr;;Armor King-ws3,1;Prison Crusher;;;
-ws4;m;20;i11~12;+6;+5;;;;;Armor King-ws4;Toe Smash;;;
+ws4;m;20;i11~12;-6;+5;;;;;Armor King-ws4;Toe Smash;;;
 SS.2;l;17;i19~20;-12;+3;+6c;* High crush;cs;;Armor King-SS.2;Shadow Sweep;;;
 SS.4;m;22;i19~20;-8;+13a;+58a;;;;Armor King-SS.4;Buzz Saw Kick;;;
+FC.1;sl;5;i10;-5;+6;;* High crush 4~;cs4~;FC;Armor King-FC.1;;FC;;
+FC.2;sl;8;i11;-4;+7;;* High crush;cs;FC;Armor King-FC.2;;FC;;
+FC.3;l;12;i18;-16;-2;;* High crush;cs;FC;Armor King-FC.3;;FC;;
+FC.4;sl;6;i14;-15;-4;;* High crush;cs;FC;Armor King-FC.4;;FC;;
 FC.df+2;m;23;i24~25;+1;+52a;;* 6 chip damage on block;;;Armor King-FC.df+2;Backhand Chop;;;
+(Back to wall).b,b,UB;h!,t;40;i40~45;;+0d;;"* Floor Break
+* Transition to attack throw on hit
+* Opponent recovers FUFR?
+* is9?~24?
+* Floating state 25?~34?
+* Low crush 35?~39?
+* Floating state 40?~47?";fbr is9?~24? fs25?~34? js35?~39? fs40?~47?;;Armor King-(Back to wall).b,b,UB;[[Wall Jump Attack]];r24?;;
 BAD.1;h;13;i11;+1;+8;;;;;Armor King-BAD.1;;r22;;
 BAD.1,2;h, m;13, 24;i11, i24~25;-12;+18a (+13);;"* Heat Engager
 
@@ -268,7 +312,7 @@ BAD.3;m;20;i20~21;-13;+11a(+2);+26d;"* Balcony Break
 ** 8 chip damage on block
 ** -9 on block
 * Power crush 7~19";bbr rbr pc7~19;;Armor King-BAD.3;Blackguard Gut Rench;r33;;
-H.BAD.3,2;m,M;15,25;i20~21;+5;+1a;;"* Balcony Break
+H.BAD.3,2;m,M;15,25;i34~36;+5;+1a;;"* Balcony Break
 * Jail from 1st block
 * Opponent left FDFA
 * Partially uses remaining Heat time
@@ -281,17 +325,25 @@ BAD.db+1+2;m,t;18,15;i14~17;-18c;+0d;;"* Transition into hit grab on grounded, a
 * AK is left FDFA on whiff/block
 * Opponent is left FUFT on hit
 * Low crush 14~34";js14~34;FDFA;Armor King-BAD.db+1+2;Shadow Press;r43? FDFA;;
-BAD.f+1+2;h!;[5];i35~38;;+23g;;"*On hit, gives a special stun that makes throws unbreakable for the stun duration
-*Comes out faster in heat
-*Cannot K.O";;;Armor King-BAD.f+1+2;Poison Mist;;;
 BT.1;h;15;i8;-3;+8;;;;;Armor King-BT.1;;;;
 BT.2;h;15;i8;-3;+8;;;;;Armor King-BT.2;;;;
 BT.3;m;20;i13~14;-14;+49a;;* Tornado;trn;;Armor King-BT.3;Blind Kick;;;
-BT.4;;20;i18;-10;+11a (+2);;* Balcony Break;bbr;;Armor King-BT.4;Turn Sobat;;;
+BT.4;m;20;i18;-10;+11a (+2);;* Balcony Break;bbr;;Armor King-BT.4;Turn Sobat;;;
 BT.1+4;m!;20;i41~47;!;+0d;;"* Armor King recovers FDFR on close hit, and FUFT on far hit or whiff
 * Low crush";js;;Armor King-BT.1+4;Moonsault Drop;;;
+CH.ws2,2;m,m;20,22 (15) / 25 (17);i12, i11~12;+1;+35a(+28);;* Power up with input f,d,df+2;;;Armor King-CH.ws2,2;True Dark Smash;r23?;;
 FUFT.b+3+4;m;25;i16~28;-25;+4a(-6);;"Balcony Break
 * Faster than normal spring kick and knocks down.";bbr;BT;Armor King-FUFT.b+3+4;Whirling Spring Kick;BT;;
+OTG.d+4;L;18;i19~21;-16;-5d (-13);;* -5 on hit when opponent is standing;;;Armor King-OTG.d+4;;;;
+OTG.d+4,4;L, L;18, 8;i19~21, i18~21;-16;-8d;;"* Floor Break
+* Combos from 1st hit on grounded opponent
+* -5 on hit when opponent is standing";fbr;;Armor King-OTG.d+4,4;;;;
+OTG.d+4,4,4;L, L, L;18, 8, 6;i19~21, ,i18~21;-16;-8d;;"* Floor Break
+* Combos from 1st hit on grounded opponent
+* -5 on hit when opponent is standing";fbr;;Armor King-OTG.d+4,4,4;Crazy Stomp;;;
+OTG.d+4,4,3+4;L, L, SM;18, 8, 20;i19~21, ,i30~32;-17;+0d;;"* Combos from 1st hit on grounded opponent
+* +5 on hit when opponent is standing
+* Low crush 13~32";js13~32;;Armor King-OTG.d+4,4,3+4;Crazy Torment;;;
 (Back Throw);th(h);60;i12~14;!;-4d;;"* Unbreakable throw
 * Opponent left FUFA";;;Armor King-Back Throw;Quick Reverse DDT;;;
 (Left Side Throw);th(h);40;i12~14;-3;+0d;;"* Balcony Break
@@ -308,6 +360,93 @@ FUFT.b+3+4;m;25;i16~28;-25;+4a(-6);;"Balcony Break
 2+4,d+1+2;th(h);35, 38;i12~14, ;;-10d;;"* Floor Break
 * Unbreakable throw extension
 * Opponent left FUFA";fbr;;Armor King-2+4,d+1+2;Jaguar Screwdriver;;;
+AIR.BAD.2+4;t(a);45;i14;!;+0d;;"* Cannot throw break
+* Partially restores remaining Heat time.
+* Opponent recovers in FDFA.";;;Armor King-AIR.BAD.2+4;D Trigger;;;
+AIR.f,f,F+2+4;t(a);50(55);i10;!;+0d;;"* Floor Break
+* Cannot throw break.
+* Input n,f,F+2+4 within 6 frames after dash startup (f,n,f) to execute ""blue spark"" (+5 damage).
+* Partially restores remaining Heat time.
+* Opponent recovers in FUFT.";fbr;;Armor King-AIR.f,f,F+2+4;Running Cross Driver;;;
+AIR.f,hcf+1;t(a);40(45);i10;!;+0d;;"* Floor Break
+* Cannot throw break.
+* Input all 6 directions of throw, press df for 1-3F, at most 1F of f followed by f+1 for blue spark (+5 damage).
+* AIR.BAD1+3: i14 startup. Cannot execute blue spark variant
+* Partially restores remaining Heat time.
+* Opponent recovers in FDFA.
+* Side switch";fbr;;Armor King-AIR.f,hcf+1;Muscle Driver;;;
+BM,2,1,2,1;t;5,5,5,15;;+0;-6d;;"* Could be any 1/2 combination (e.g. 1,1,1,1 / 1,2,2,1)
+* Throw break the 1st/4th hit by input the opposite to King's 1st/4th button.
+* Opponent recovers FDFT";;;Armor King-BM,2,1,2,1;Back Mount > Ultimate Punch;;;
+DMD.1;t;20 (25);;-3;+0d;;"* 1 break
+* Power up with input 2+4,1+2 
+* 40/45 total damage
+* Opponent recovers FDFA
+* Side switch on hit or break";;;Armor King-DMD.1;Flinging Half Nelson;;;
+DMD.2;t;10 (15);;-3;-3d;;"* 2 break
+* Power up with input 3+4,1+2 
+* 30/35 total damage
+* Opponent recovers FDFR?
+* Side switch on break";;;Armor King-DMD.2;Sleeper;;;
+DMD.2,1;t, t;10 (15), 15 (20);;+4;-3d;;"* 1 break
+* Power up with input 1,1,1+2 
+* 45/55 total damage
+* Opponent recovers FDFR?
+* AK recovers FUFA on break
+* Side switch on break";;;Armor King-DMD.2,1;Triple Trouble;;;
+DMD.2,2;t, t;10 (15), 20 (25);;+4;-3d;;"* 2 break
+* Power up with input 3,4,1+2 
+* 50/60 total damage
+* Opponent recovers FDFL?
+* AK recovers FUFA on break
+* Side switch on break";;;Armor King-DMD.2,2;Human Necktie;;;
+DMD.1+2;t;10 (15);;+0;-3d;;"* 1+2 break
+* Power up with input 2,1,1+2 
+* 30/35 total damage
+* Opponent recovers FDFA
+* Side switch on break";;;Armor King-DMD.1+2;Neck Drop;;;
+DMD.1+2,1;t, t;10 (15), 20 (25);;+4;-3d;;"* 1 break
+* Power up with input 4,3,4,1+2 
+* 50/60 total damage
+* Opponent recovers FDFL?
+* AK recovers FUFA on break
+* Side switch on break";;;Armor King-DMD.1+2,1;Choke Sleeper;;;
+DMD.1+2,2;t, t;10 (15), 25 (30);;+4;-3d;;"* 2 break
+* Power up with input 2,1,1,1+2 
+* 55/65 total damage
+* Opponent recovers FDFR?
+* AK recovers FUFA on break
+* Side switch on break";;;Armor King-DMD.1+2,2;3-Count Pound;;;
+FC.1+2;t(s);0;i26;-5;+3d;;"* 1+2 throw break (except from behind).
+* Catches standing and crouching opponent from all directions.";;;Armor King-FC.1+2;Ultimate Tackle (UT);;;
+FDFA.db+1+3;th(g);40;i18~20;+0;+8d;;"* Throw break 1
+* Opponent recovers FUFT";;;Armor King-FDFA.db+1+3;Wake-Up Lariat;;;
+FDFL.db+1+3+1+3;th(g);0;i18~20;+8;-10d;;"* 1 or 2 throw break, depending on Armor King's input.
+* Transitions to Back Mount (BM), which has the Ultimate Punch followup
+* Opponent recovers in FDFT.";;;Armor King-FDFL/FDFR.db+1+3;Back Mount (BM);;;
+FDFT.db+1+3;th(g);35;i18~20;+0;+0d;;"* Throw break 1
+* Opponent recovers FUFT";;;Armor King-FDFT.db+1+3;Standing Ankle Hold;;;
+FUFA.db+1+3;th(g);35;i18~20;+0;35;;"* Balcony Break
+* Throw break 1
+* Opponent recovers FDFT";bbr;;Armor King-FUFA.db+1+3;Enzui Knee;;;
+FUFL.db+1+3b+1+3;th(g);0;i18~20;+0;+25d;;"* 1 or 2 throw break, depending on Armor King's input.
+* Opponent recovers in FDFL/FDFR.";;;Armor King-FUFL/FUFR.db+1+3;Turn Over;;;
+FUFT.db+1+3;th(g);30;i18~20;+0;+20d;;"* Balcony Break
+* Throw break 1
+* Side swap
+* Opponent recovers FDFT";bbr;;Armor King-FUFT.db+1+3;Seesaw Whip;;;
+OTG.db+2+4;th(g);0;i18~20;+0;+12;;"* Throw break 2
+* Opponent recovers standing (+12)
+* Opponent can be FUFT,FUFA,FDFT,FDFA
+* If opponent was FUFA or FDFA, opponent recovers BT (+9)";;;Armor King-OTG.db+2+4;Stand Up;;;
+UT,2,1,2,1;t;5,5,5,15;;+0;+0d;;"* Could be any 1/2 combination (e.g. 1,1,1,1 / 1,2,2,1)
+* Throw break the 1st/4th hit by input the opposite to King's 1st/4th button.";;;Armor King-UT,2,1,2,1;Ultimate Punch;;;
+UT,1+2;t;25;;-9;+1d;;"* 1+2 throw break.
+* Can also input at 3rd hit of Ultimate Punch.
+* Opponent recovers in FUFR.";;;Armor King-UT,1+2;Armbar;;;
+WALL.1+3;t(w);65;i10;!;+0d;;"* Homing
+* Cannot throw break. 
+* Opponent recovers in FUFT.";hom;;Armor King-WALL.1+3;Black Rain of Hell;;;
 db,n,f+2+4;th(h);53;i11;-2;-3d;;"* Floor Break
 * Throw break 2
 * Opponent left FUFA";fbr;;Armor King-db,n,f+2+4;Tombstone Piledriver;;;
@@ -317,20 +456,40 @@ db+1+2;th(h);40;i12;-6;+2d;;"* Throw break 1+2
 df+2+3;th(h);40;i12;-3;+0d;;"* Floor Break
 * Throw break 2
 * Opponent left FUFT";fbr;;Armor King-df+2+3;Driving Headbutt;;;
-d+2+4;th(m);35;i12~13;;+0d;;"* Heat Engager
+d+1+3;th(m);35;i12~13;!;+0d;;"* Floor Break
+* Unbreakable
+* Opponent recovers FUFA";fbr;;Armor King-d+1+3;Demon Bomb;;;
+d+2+4;th(m);35;i12~13;!;+0d;;"* Heat Engager
 
-* Opponent left FUFA";he;;Armor King-d+2+4;;;;
-f,f,F+2+4;th(h);40;i10;-5;+10d;;"* Balcony Break
+* Unable to Heat Dash
+* Partially restores remaining Heat Time
+* Unbreakable
+* Opponent recovers FUFA";he;;Armor King-d+2+4;Storm Maker;;;
+f,f,F+2+4;th(h);40 (45);i10;-5;+10d;;"* Balcony Break
 * Throw break 1+2
+* Input n,f,F+2+4 within 6 frames after dash startup (f,n,f) to execute ""blue spark"" (+5 damage).
+* i13 startup for Bluespark throw with buffered input
 * Opponent left FUFT
 * Armor King recovers FUFT
 * becomes Homing in heat
-* Partially restores remaining Heat Time";bbr;;Armor King-f,f,F+2+4;Brilliant Brawler Kick;;;
-f,hcf+1;th(h);45(50);i10;;;;"* Also called Giant Swing (GS)
-* Opponent left FUFA";;;Armor King-f,hcf+1;Double Arm Swing;;;
-f,n,d,df+1+3;t;20;i12;;;;"* Alternate input with 1+4 or 2+3
-* 1 or 2 break depending on Armor King's input (1 for 1+3/1+4, 2 for 2+4/2+3) 
-* Shift to Cobra Clutch";;;Armor King-f,n,d,df+1+3;Cobra Clutch;;;
+* Partially restores remaining Heat Time";bbr;FUFT;Armor King-f,f,F+2+4;Brilliant Brawler Kick;FUFT;;
+f,hcf+1;th(h);40(45)/70,5;i10;-7;-20d (-50);;"* Throw break 1
+* Perform tech ukemi to reduce 5 damage.
+* Side switch 
+* 70 damage on wall splat regardless of input.
+* Input all directions, df for 1-3F, f for 0-1F, and f+1 to execute bluespark.
+* f,b,d,f are required inputs for normal throw
+* i11 startup for Bluespark throw with buffered input
+* 18F throw break window on Bluespark
+* 7F throw break window on CH Bluespark
+* BAD.1+3: i14 startup. Cannot execute blue spark variant
+* Partially restores remaining Heat time.
+* Opponent recovers in FDFT.";;;Armor King-f,hcf+1;Double Arm Swing;;;
+f,n,d,df+1+3;t;20;i12;-3;+0;;"* 1 or 2 break depending on Armor King's input
+** 1 for CD1+3/1+4, 2 for CD2+4/2+3 
+* Transition to DMD
+* Opponent recovers FDFT
+* Side switch on hit or break";;DMD;Armor King-f,n,d,df+1+3;Cobra Clutch (DMD);r27;;
 qcb+1+2;th(h);40(45);i11;-3;+0d;;"* Balcony Break
 * Opponent takes 5 additional damage when they hit the ground
 * Opponent takes 4 additional damage when they hit a wall
