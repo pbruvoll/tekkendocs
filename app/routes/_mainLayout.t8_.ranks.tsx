@@ -1,56 +1,56 @@
-import { Card, Inset } from '@radix-ui/themes'
-import { type MetaFunction } from 'react-router'
-import { ContentContainer } from '~/components/ContentContainer'
-import assaliant from '~/images/t8/ranks/assaliant.png'
-import battleRuler from '~/images/t8/ranks/battle-ruler.png'
-import beginner from '~/images/t8/ranks/beginner.png'
-import brawler from '~/images/t8/ranks/brawler.png'
-import bushin from '~/images/t8/ranks/bushin.png'
-import cavalry from '~/images/t8/ranks/cavalry.png'
-import combatant from '~/images/t8/ranks/combatant.png'
-import destroyer from '~/images/t8/ranks/destroyer.png'
-import dominator from '~/images/t8/ranks/dominator.png'
-import eliminator from '~/images/t8/ranks/eliminator.png'
-import fighter from '~/images/t8/ranks/fighter.png'
-import firstDan from '~/images/t8/ranks/first-dan.png'
-import flameRuler from '~/images/t8/ranks/flame-ruler.png'
-import fujin from '~/images/t8/ranks/fujin.png'
-import ganryu from '~/images/t8/ranks/ganryu.png'
-import godOfDestruction from '~/images/t8/ranks/god-of-destruction.png'
-import godOfDestruction1 from '~/images/t8/ranks/god-of-destruction-1.png'
-import godOfDestruction2 from '~/images/t8/ranks/god-of-destruction-2.png'
-import godOfDestruction3 from '~/images/t8/ranks/god-of-destruction-3.png'
-import godOfDestruction4 from '~/images/t8/ranks/god-of-destruction-4.png'
-import godOfDestruction5 from '~/images/t8/ranks/god-of-destruction-5.png'
-import godOfDestruction6 from '~/images/t8/ranks/god-of-destruction-6.png'
-import godOfDestruction7 from '~/images/t8/ranks/god-of-destruction-7.png'
-import godOfDestructionInf from '~/images/t8/ranks/god-of-destruction-inf.png'
-import kisin from '~/images/t8/ranks/kishin.png'
-import mightyRuler from '~/images/t8/ranks/mighty-ruler.png'
-import raijin from '~/images/t8/ranks/raijin.png'
-import ranger from '~/images/t8/ranks/ranger.png'
-import secondDan from '~/images/t8/ranks/second-dan.png'
-import shinryu from '~/images/t8/ranks/shinryu.png'
-import strategist from '~/images/t8/ranks/strategist.png'
-import tekkenEmperor from '~/images/t8/ranks/tekken-emperor.png'
-import tekkenGod from '~/images/t8/ranks/tekken-god.png'
-import tekkenGodSupreme from '~/images/t8/ranks/tekken-god-supreme.png'
-import tekkenKing from '~/images/t8/ranks/tekken-king.png'
-import tenryu from '~/images/t8/ranks/tenryu.png'
-import vanquisher from '~/images/t8/ranks/vanquisher.png'
-import warrior from '~/images/t8/ranks/warrior.png'
-import { generateMetaTags } from '~/utils/seoUtils'
+import { Card, Inset } from '@radix-ui/themes';
+import { type MetaFunction } from 'react-router';
+import { ContentContainer } from '~/components/ContentContainer';
+import assaliant from '~/images/t8/ranks/assaliant.png';
+import battleRuler from '~/images/t8/ranks/battle-ruler.png';
+import beginner from '~/images/t8/ranks/beginner.png';
+import brawler from '~/images/t8/ranks/brawler.png';
+import bushin from '~/images/t8/ranks/bushin.png';
+import cavalry from '~/images/t8/ranks/cavalry.png';
+import combatant from '~/images/t8/ranks/combatant.png';
+import destroyer from '~/images/t8/ranks/destroyer.png';
+import dominator from '~/images/t8/ranks/dominator.png';
+import eliminator from '~/images/t8/ranks/eliminator.png';
+import fighter from '~/images/t8/ranks/fighter.png';
+import firstDan from '~/images/t8/ranks/first-dan.png';
+import flameRuler from '~/images/t8/ranks/flame-ruler.png';
+import fujin from '~/images/t8/ranks/fujin.png';
+import ganryu from '~/images/t8/ranks/ganryu.png';
+import godOfDestruction from '~/images/t8/ranks/god-of-destruction.png';
+import godOfDestruction1 from '~/images/t8/ranks/god-of-destruction-1.png';
+import godOfDestruction2 from '~/images/t8/ranks/god-of-destruction-2.png';
+import godOfDestruction3 from '~/images/t8/ranks/god-of-destruction-3.png';
+import godOfDestruction4 from '~/images/t8/ranks/god-of-destruction-4.png';
+import godOfDestruction5 from '~/images/t8/ranks/god-of-destruction-5.png';
+import godOfDestruction6 from '~/images/t8/ranks/god-of-destruction-6.png';
+import godOfDestruction7 from '~/images/t8/ranks/god-of-destruction-7.png';
+import godOfDestructionInf from '~/images/t8/ranks/god-of-destruction-inf.png';
+import kisin from '~/images/t8/ranks/kishin.png';
+import mightyRuler from '~/images/t8/ranks/mighty-ruler.png';
+import raijin from '~/images/t8/ranks/raijin.png';
+import ranger from '~/images/t8/ranks/ranger.png';
+import secondDan from '~/images/t8/ranks/second-dan.png';
+import shinryu from '~/images/t8/ranks/shinryu.png';
+import strategist from '~/images/t8/ranks/strategist.png';
+import tekkenEmperor from '~/images/t8/ranks/tekken-emperor.png';
+import tekkenGod from '~/images/t8/ranks/tekken-god.png';
+import tekkenGodSupreme from '~/images/t8/ranks/tekken-god-supreme.png';
+import tekkenKing from '~/images/t8/ranks/tekken-king.png';
+import tenryu from '~/images/t8/ranks/tenryu.png';
+import vanquisher from '~/images/t8/ranks/vanquisher.png';
+import warrior from '~/images/t8/ranks/warrior.png';
+import { generateMetaTags } from '~/utils/seoUtils';
 
 type Rank = {
-  name: string
-  image: string
-  points: number | undefined
-}
+  name: string;
+  image: string;
+  points: number | undefined;
+};
 
 type RankGroup = {
-  name: string
-  ranks: Rank[]
-}
+  name: string;
+  ranks: Rank[];
+};
 
 export const rankGroups: RankGroup[] = [
   {
@@ -298,7 +298,7 @@ export const rankGroups: RankGroup[] = [
       },
     ],
   },
-]
+];
 
 export const meta: MetaFunction = ({ matches }) => {
   return generateMetaTags({
@@ -307,21 +307,21 @@ export const meta: MetaFunction = ({ matches }) => {
     matches,
     image: { url: `/t8/pages/ranks.png` },
     url: `/t8/ranks`,
-  })
-}
+  });
+};
 
 const Ranks = () => {
   return (
     <ContentContainer enableBottomPadding enableTopPadding>
       <h1 className="text-xl">Tekken 8 ranks</h1>
-      {rankGroups.map(rg => (
+      {rankGroups.map((rg) => (
         <RankGroup key={rg.name} name={rg.name} ranks={rg.ranks} />
       ))}
     </ContentContainer>
-  )
-}
+  );
+};
 
-export default Ranks
+export default Ranks;
 
 const RankCard = ({ image, name, points }: Rank) => {
   return (
@@ -334,15 +334,15 @@ const RankCard = ({ image, name, points }: Rank) => {
         <div>{points ?? '???'} pts</div>
       </div>
     </Card>
-  )
-}
+  );
+};
 
 const RankGroup = ({ name, ranks }: RankGroup) => {
   return (
     <section className="mt-6">
       <h2 className="mt-3 text-lg">{name}</h2>
       <div className="mt-3 grid grid-cols-3 gap-2 md:grid-cols-4 lg:grid-cols-5">
-        {ranks.map(r => (
+        {ranks.map((r) => (
           <RankCard
             key={r.name}
             image={r.image}
@@ -352,5 +352,5 @@ const RankGroup = ({ name, ranks }: RankGroup) => {
         ))}
       </div>
     </section>
-  )
-}
+  );
+};

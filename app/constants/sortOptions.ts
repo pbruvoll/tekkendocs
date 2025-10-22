@@ -1,8 +1,8 @@
-import { getSortByQueryParamValue } from '~/utils/sortingUtils'
+import { getSortByQueryParamValue } from '~/utils/sortingUtils';
 
 export const sortOptions: {
-  displayName: string
-  value: string
+  displayName: string;
+  value: string;
 }[] = [
   {
     displayName: 'Start up',
@@ -68,4 +68,4 @@ export const sortOptions: {
       sortDirection: 'desc',
     }),
   },
-]
+];

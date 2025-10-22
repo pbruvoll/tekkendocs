@@ -1,11 +1,11 @@
-import { filterKey } from '~/constants/filterConstants'
-import { type HitLevel } from '~/types/FilterTypes'
-import { type MoveFilter } from '~/types/MoveFilter'
+import { filterKey } from '~/constants/filterConstants';
+import { type HitLevel } from '~/types/FilterTypes';
+import { type MoveFilter } from '~/types/MoveFilter';
 import {
   getSearchParamBoolean,
   getSearchParamNumber,
   getSearchParamStringList,
-} from './urlUtils'
+} from './urlUtils';
 
 /** A function which removes "+", but only if it is not between two digits, e.g d+2 => d2 and 1+2 => 1+2 */
 
@@ -13,8 +13,8 @@ export const cleanCommand = (move: string): string => {
   return move
     .replace(/,|n,|\//g, '')
     .replace(/([A-Za-z])\+/g, '$1')
-    .toLowerCase()
-}
+    .toLowerCase();
+};
 
 export const getFilterFromParams = (
   searchParams: URLSearchParams,
@@ -82,12 +82,12 @@ export const getFilterFromParams = (
       filterKey.ForcesCrouchOnHit,
     ),
     chip: getSearchParamBoolean(searchParams, filterKey.Chip),
-  }
-}
+  };
+};
 
 export const filterToDescription = (filter: MoveFilter): string => {
   return Object.entries(filter)
     .filter(([, value]) => value !== undefined)
     .map(([key, value]) => `${key}=${value}`)
-    .join(' & ')
-}
+    .join(' & ');
+};

@@ -1,29 +1,29 @@
-import { Badge, Heading } from '@radix-ui/themes'
-import { data, type MetaFunction } from 'react-router'
+import { Badge, Heading } from '@radix-ui/themes';
+import { data, type MetaFunction } from 'react-router';
 import {
   Link,
   type ShouldRevalidateFunction,
   useLoaderData,
-} from 'react-router'
-import { TextEffect } from '@/components/core/TextEffect'
-import { CharacterGrid } from '~/components/CharacterGrid'
-import { ContentContainer } from '~/components/ContentContainer'
-import { ExternalResources } from '~/components/ExternalResources'
-import tekkenDocsLogoLarge from '~/images/logo/tekkendocs-logo-large-v2.svg'
+} from 'react-router';
+import { TextEffect } from '@/components/core/TextEffect';
+import { CharacterGrid } from '~/components/CharacterGrid';
+import { ContentContainer } from '~/components/ContentContainer';
+import { ExternalResources } from '~/components/ExternalResources';
+import tekkenDocsLogoLarge from '~/images/logo/tekkendocs-logo-large-v2.svg';
 import {
   getTekken7Characters,
   getTekken8Characters,
-} from '~/services/staticDataService'
-import { type GamePageData } from '~/types/GamePageData'
-import { getCacheControlHeaders } from '~/utils/headerUtils'
-import { generateMetaTags } from '~/utils/seoUtils'
-import { t7AvatarMap } from '~/utils/t7AvatarMap'
-import { t8AvatarBrandMap256 } from '~/utils/t8AvatarBrandMap256'
+} from '~/services/staticDataService';
+import { type GamePageData } from '~/types/GamePageData';
+import { getCacheControlHeaders } from '~/utils/headerUtils';
+import { generateMetaTags } from '~/utils/seoUtils';
+import { t7AvatarMap } from '~/utils/t7AvatarMap';
+import { t8AvatarBrandMap256 } from '~/utils/t8AvatarBrandMap256';
 
 type LoaderData = {
-  gamePageDataT7: GamePageData
-  gamePageDataT8: GamePageData
-}
+  gamePageDataT7: GamePageData;
+  gamePageDataT8: GamePageData;
+};
 export const loader = async () => {
   return data<LoaderData>(
     {
@@ -33,12 +33,12 @@ export const loader = async () => {
     {
       headers: getCacheControlHeaders({ seconds: 60 * 5 }),
     },
-  )
-}
+  );
+};
 
 export const shouldRevalidate: ShouldRevalidateFunction = () => {
-  return false
-}
+  return false;
+};
 
 export const meta: MetaFunction = ({ matches }) => {
   return generateMetaTags({
@@ -48,13 +48,13 @@ export const meta: MetaFunction = ({ matches }) => {
     image: { url: '/images/tekkendocs-og-image-v2.png' },
     title: 'TekkenDocs - Frame data and resources for Tekken',
     url: '',
-  })
-}
+  });
+};
 
-export const headers = () => getCacheControlHeaders({ seconds: 60 * 5 })
+export const headers = () => getCacheControlHeaders({ seconds: 60 * 5 });
 
 export default function Index() {
-  const { gamePageDataT7, gamePageDataT8 } = useLoaderData<typeof loader>()
+  const { gamePageDataT7, gamePageDataT8 } = useLoaderData<typeof loader>();
   return (
     <ContentContainer enableBottomPadding enableTopPadding>
       <h1 className="sr-only mb-4 text-2xl font-bold">TekkenDocs</h1>
@@ -123,8 +123,8 @@ export default function Index() {
       <CharacterGrid
         characterCards={gamePageDataT8.characterInfoList.map(
           ({ id, displayName }) => {
-            const imgSrc = t8AvatarBrandMap256[id]
-            return { name: displayName, imgSrc, url: `/t8/${id}` }
+            const imgSrc = t8AvatarBrandMap256[id];
+            return { name: displayName, imgSrc, url: `/t8/${id}` };
           },
         )}
       />
@@ -141,8 +141,8 @@ export default function Index() {
       <CharacterGrid
         characterCards={gamePageDataT7.characterInfoList.map(
           ({ id, displayName }) => {
-            const imgSrc = t7AvatarMap[id]
-            return { name: displayName, imgSrc, url: `/t7/${id}` }
+            const imgSrc = t7AvatarMap[id];
+            return { name: displayName, imgSrc, url: `/t7/${id}` };
           },
         )}
       />
@@ -158,5 +158,5 @@ export default function Index() {
         Go to character select
       </Link>
     </ContentContainer>
-  )
+  );
 }

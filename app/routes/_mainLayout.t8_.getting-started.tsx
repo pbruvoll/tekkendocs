@@ -1,6 +1,6 @@
-import { type MetaFunction } from 'react-router'
-import { ContentContainer } from '~/components/ContentContainer'
-import { generateMetaTags } from '~/utils/seoUtils'
+import { type MetaFunction } from 'react-router';
+import { ContentContainer } from '~/components/ContentContainer';
+import { generateMetaTags } from '~/utils/seoUtils';
 
 export const meta: MetaFunction = ({ matches }) =>
   generateMetaTags({
@@ -8,7 +8,7 @@ export const meta: MetaFunction = ({ matches }) =>
     title: 'Getting started with Tekken 8 | TekkenDocs',
     description: 'Learn how to get started with Tekken 8 as a new player',
     url: `/t8/getting-started`,
-  })
+  });
 
 export default function () {
   return (
@@ -35,5 +35,5 @@ export default function () {
         />
       </div>
     </ContentContainer>
-  )
+  );
 }

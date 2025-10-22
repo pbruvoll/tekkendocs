@@ -1,29 +1,29 @@
-import { Fragment } from 'react/jsx-runtime'
-import { VideoIcon } from '@radix-ui/react-icons'
-import { Link, type MetaFunction } from 'react-router'
-import { ContentContainer } from '~/components/ContentContainer'
-import { TrophyProgress } from '~/components/TrophyProgress'
-import { useAppState } from '~/hooks/useAppState'
-import { commandToUrlSegmentEncoded } from '~/utils/moveUtils'
-import { generateMetaTags } from '~/utils/seoUtils'
-import { t8AvatarMap } from '~/utils/t8AvatarMap'
-import { rankGroups } from './_mainLayout.t8_.ranks'
+import { Fragment } from 'react/jsx-runtime';
+import { VideoIcon } from '@radix-ui/react-icons';
+import { Link, type MetaFunction } from 'react-router';
+import { ContentContainer } from '~/components/ContentContainer';
+import { TrophyProgress } from '~/components/TrophyProgress';
+import { useAppState } from '~/hooks/useAppState';
+import { commandToUrlSegmentEncoded } from '~/utils/moveUtils';
+import { generateMetaTags } from '~/utils/seoUtils';
+import { t8AvatarMap } from '~/utils/t8AvatarMap';
+import { rankGroups } from './_mainLayout.t8_.ranks';
 
 type LowReactionMove = {
-  characterId: string
-  moveCommand: string
-  mixupCommand: string
-  startup: number
+  characterId: string;
+  moveCommand: string;
+  mixupCommand: string;
+  startup: number;
   completed?: {
-    name: string
-    sosial?: string
-    video: string
-  }
-}
+    name: string;
+    sosial?: string;
+    video: string;
+  };
+};
 
 export const meta: MetaFunction = ({ matches }) => {
-  const title = 'Tekken 8 Challenges | TekkenDocs'
-  const description = `A set of challenges to test your skills at Tekken 8. See how many low moves you can block on reaction`
+  const title = 'Tekken 8 Challenges | TekkenDocs';
+  const description = `A set of challenges to test your skills at Tekken 8. See how many low moves you can block on reaction`;
 
   return generateMetaTags({
     matches,
@@ -31,8 +31,8 @@ export const meta: MetaFunction = ({ matches }) => {
     description,
     image: { url: `/t8/pages/challenge.png` },
     url: `/t8/challenge`,
-  })
-}
+  });
+};
 
 export default function () {
   const lowReactionMoves: LowReactionMove[] = [
@@ -201,19 +201,19 @@ export default function () {
         video: 'https://www.youtube.com/watch?v=AO3LI6PSv1U',
       },
     },
-  ]
+  ];
 
-  const [appState, setAppState] = useAppState()
-  const completedLowBlock = appState.reactChallenge.completedLowBlocks
+  const [appState, setAppState] = useAppState();
+  const completedLowBlock = appState.reactChallenge.completedLowBlocks;
 
-  const ranks = rankGroups.flatMap(rg => rg.ranks)
+  const ranks = rankGroups.flatMap((rg) => rg.ranks);
 
-  const numCompleted = lowReactionMoves.filter(m => {
-    const moveId = `${m.characterId}-${m.moveCommand}`
-    return completedLowBlock.includes(moveId)
-  }).length
+  const numCompleted = lowReactionMoves.filter((m) => {
+    const moveId = `${m.characterId}-${m.moveCommand}`;
+    return completedLowBlock.includes(moveId);
+  }).length;
 
-  const completedPercentage = (numCompleted / lowReactionMoves.length) * 100
+  const completedPercentage = (numCompleted / lowReactionMoves.length) * 100;
 
   return (
     <ContentContainer enableBottomPadding enableTopPadding>
@@ -273,7 +273,7 @@ export default function () {
               { characterId, mixupCommand, moveCommand, startup, completed },
               index,
             ) => {
-              const moveId = `${characterId}-${moveCommand}`
+              const moveId = `${characterId}-${moveCommand}`;
               return (
                 <Fragment key={characterId + moveCommand}>
                   <div className="flex flex-row-reverse flex-wrap justify-center gap-x-2 place-self-start">
@@ -330,12 +330,12 @@ export default function () {
                       <input
                         id={`completed-${moveId}`}
                         type="checkbox"
-                        onChange={e => {
+                        onChange={(e) => {
                           const filtered = completedLowBlock.filter(
-                            c => c !== moveId,
-                          )
+                            (c) => c !== moveId,
+                          );
                           if (e.currentTarget.checked) {
-                            filtered.push(moveId)
+                            filtered.push(moveId);
                           }
                           setAppState({
                             ...appState,
@@ -343,7 +343,7 @@ export default function () {
                               ...appState.reactChallenge,
                               completedLowBlocks: filtered,
                             },
-                          })
+                          });
                         }}
                         checked={completedLowBlock.includes(moveId)}
                       />
@@ -372,11 +372,11 @@ export default function () {
                     )}
                   </div>
                 </Fragment>
-              )
+              );
             },
           )}
         </div>
       </section>
     </ContentContainer>
-  )
+  );
 }

@@ -1,10 +1,10 @@
-import { type SheetObject } from '~/services/googleSheetService.server'
-import { type CharacterDataType } from '~/types/CharacterDataType'
-import { type CharacterPageData } from '~/types/CharacterPageData'
-import { type Game } from '~/types/Game'
-import { type SheetService } from '~/types/SheetService'
-import { tables as kazuyaTables } from './mock-t8-kazuya-framedata'
-import { tables as ninaTables } from './mock-t8-nina-framedata'
+import { type SheetObject } from '~/services/googleSheetService.server';
+import { type CharacterDataType } from '~/types/CharacterDataType';
+import { type CharacterPageData } from '~/types/CharacterPageData';
+import { type Game } from '~/types/Game';
+import { type SheetService } from '~/types/SheetService';
+import { tables as kazuyaTables } from './mock-t8-kazuya-framedata';
+import { tables as ninaTables } from './mock-t8-nina-framedata';
 
 export class SheetServiceMock implements SheetService {
   getCharacterData(
@@ -18,10 +18,10 @@ export class SheetServiceMock implements SheetService {
       editUrl: 'https://tekkendocs.com/fakeUrl',
       game,
       tables: characterId === 'nina' ? ninaTables : kazuyaTables,
-    })
+    });
   }
 
   getGameData(_game: Game, _dataType: 'todo'): Promise<SheetObject> {
-    throw 'not implemented'
+    throw 'not implemented';
   }
 }

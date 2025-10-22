@@ -1,43 +1,43 @@
-import { Pencil1Icon } from '@radix-ui/react-icons'
-import { Heading } from '@radix-ui/themes'
-import { type HeadersFunction } from 'react-router'
-import { type MetaFunction } from 'react-router'
-import { ContentContainer } from '~/components/ContentContainer'
-import { FrameDataSection } from '~/components/FrameDataSection'
-import Nav, { type NavLinkInfo } from '~/components/Nav'
-import { orderByKey } from '~/constants/sortConstants'
-import { useFrameData } from '~/hooks/useFrameData'
-import { characterGuideAuthors } from '~/services/staticDataService'
-import { type CharacterFrameDataPage } from '~/types/CharacterFrameDataPage'
-import { type Move } from '~/types/Move'
-import { type RouteHandle } from '~/types/RouteHandle'
-import { type SortOrder } from '~/types/SortOrder'
-import { filterToDescription, getFilterFromParams } from '~/utils/filterUtils'
-import { filterMoves, sortMoves } from '~/utils/frameDataUtils'
-import { getCacheControlHeaders } from '~/utils/headerUtils'
-import { generateMetaTags } from '~/utils/seoUtils'
-import { t8AvatarMap } from '~/utils/t8AvatarMap'
+import { Pencil1Icon } from '@radix-ui/react-icons';
+import { Heading } from '@radix-ui/themes';
+import { type HeadersFunction } from 'react-router';
+import { type MetaFunction } from 'react-router';
+import { ContentContainer } from '~/components/ContentContainer';
+import { FrameDataSection } from '~/components/FrameDataSection';
+import Nav, { type NavLinkInfo } from '~/components/Nav';
+import { orderByKey } from '~/constants/sortConstants';
+import { useFrameData } from '~/hooks/useFrameData';
+import { characterGuideAuthors } from '~/services/staticDataService';
+import { type CharacterFrameDataPage } from '~/types/CharacterFrameDataPage';
+import { type Move } from '~/types/Move';
+import { type RouteHandle } from '~/types/RouteHandle';
+import { type SortOrder } from '~/types/SortOrder';
+import { filterToDescription, getFilterFromParams } from '~/utils/filterUtils';
+import { filterMoves, sortMoves } from '~/utils/frameDataUtils';
+import { getCacheControlHeaders } from '~/utils/headerUtils';
+import { generateMetaTags } from '~/utils/seoUtils';
+import { t8AvatarMap } from '~/utils/t8AvatarMap';
 
 const navData: NavLinkInfo[] = [
   { link: '', displayName: 'Frame data' },
   { link: 'meta', displayName: 'Cheat Sheet' },
   { link: 'antistrat', displayName: 'Anti strats' },
   { link: 'flashcard', displayName: 'Flash card' },
-]
+];
 
-export const headers: HeadersFunction = args => ({
+export const headers: HeadersFunction = (args) => ({
   ...getCacheControlHeaders({ seconds: 60 * 5 }),
   'X-Td-Cachecontext': args.loaderHeaders.get('X-Td-Cachecontext') || 'none',
-})
+});
 
 export function shouldRevalidate() {
-  return false
+  return false;
 }
 
 export const meta: MetaFunction = ({ data, params, matches, location }) => {
   const frameData = matches.find(
-    m => (m.handle as RouteHandle)?.type === 'frameData',
-  )?.data
+    (m) => (m.handle as RouteHandle)?.type === 'frameData',
+  )?.data;
   if (!frameData) {
     return [
       {
@@ -46,40 +46,41 @@ export const meta: MetaFunction = ({ data, params, matches, location }) => {
       {
         description: `There is no character with the ID of ${params.character}.`,
       },
-    ]
+    ];
   }
 
-  const { characterName, moves } = frameData as CharacterFrameDataPage
-  const characterId = characterName.toLocaleLowerCase()
+  const { characterName, moves } = frameData as CharacterFrameDataPage;
+  const characterId = characterName.toLocaleLowerCase();
   const characterTitle =
-    characterName[0].toUpperCase() + characterName.substring(1)
-  const title = `${characterTitle} Tekken 8 Frame Data | TekkenDocs`
+    characterName[0].toUpperCase() + characterName.substring(1);
+  const title = `${characterTitle} Tekken 8 Frame Data | TekkenDocs`;
 
-  let rowsDescription: string = ''
+  let rowsDescription: string = '';
   // the the actual filtered and sorted frame data
-  const searchParams = new URLSearchParams(location.search)
+  const searchParams = new URLSearchParams(location.search);
 
-  const orderByParamValue = searchParams.get(orderByKey) || ''
-  const [orderByColumnName, orderDirectionName] = orderByParamValue.split('_')
+  const orderByParamValue = searchParams.get(orderByKey) || '';
+  const [orderByColumnName, orderDirectionName] = orderByParamValue.split('_');
 
-  const sortDirection: SortOrder = orderDirectionName === 'asc' ? 'asc' : 'desc'
+  const sortDirection: SortOrder =
+    orderDirectionName === 'asc' ? 'asc' : 'desc';
 
-  const filter = getFilterFromParams(searchParams)
+  const filter = getFilterFromParams(searchParams);
 
-  const filteredMoves = filterMoves(moves, filter)
+  const filteredMoves = filterMoves(moves, filter);
 
   const sortedMoves = sortMoves(
     filteredMoves,
     orderByColumnName as keyof Move,
     sortDirection,
-  )
+  );
 
   const orderDesription = orderDirectionName
     ? `order by ${orderByColumnName} ${orderDirectionName}`
-    : ''
+    : '';
 
-  const filterStr = filterToDescription(filter)
-  const filterDescription = filterStr ? `filter : ${filterStr}` : ''
+  const filterStr = filterToDescription(filter);
+  const filterDescription = filterStr ? `filter : ${filterStr}` : '';
 
   rowsDescription = [
     [orderDesription, filterDescription].filter(Boolean).join(', '),
@@ -93,9 +94,9 @@ export const meta: MetaFunction = ({ data, params, matches, location }) => {
         ),
     )
     .filter(Boolean)
-    .join('\n')
+    .join('\n');
 
-  const description = `Frame data for ${characterTitle} in Tekken 8\n${rowsDescription}`
+  const description = `Frame data for ${characterTitle} in Tekken 8\n${rowsDescription}`;
 
   return generateMetaTags({
     matches,
@@ -103,13 +104,13 @@ export const meta: MetaFunction = ({ data, params, matches, location }) => {
     title,
     url: `/t8/${characterId}`,
     image: { url: `/t8/avatars/${characterId}-brand-512.png` },
-  })
-}
+  });
+};
 
 export default function Index() {
-  const { tables, editUrl, characterName, moves } = useFrameData()
+  const { tables, editUrl, characterName, moves } = useFrameData();
   if (moves.length === 0) {
-    return <div>Invalid or no data</div>
+    return <div>Invalid or no data</div>;
   }
   return (
     <>
@@ -145,7 +146,7 @@ export default function Index() {
         ></Nav>
       </ContentContainer>
       <ContentContainer disableXPadding>
-        {tables.map(table => {
+        {tables.map((table) => {
           if (table.headers && table.name === 'frames_normal') {
             return (
               <FrameDataSection
@@ -153,11 +154,11 @@ export default function Index() {
                 moves={moves}
                 hasMultipleCharacters={characterName === 'mokujin'}
               />
-            )
+            );
           }
-          return <div key={table.name}>Unknown table name {table.name}</div>
+          return <div key={table.name}>Unknown table name {table.name}</div>;
         })}
       </ContentContainer>
     </>
-  )
+  );
 }

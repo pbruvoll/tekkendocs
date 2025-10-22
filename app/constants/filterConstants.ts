@@ -37,13 +37,13 @@ export const filterKey = {
   RecoverFullCrouch: 'recoverFullCrouch',
   ForcesCrouchOnBlock: 'forcesCrouchOnBlock',
   ForcesCrouchOnHit: 'forcesCrouchOnHit',
-} as const
+} as const;
 
 export const hitLevelValue = {
   Low: 'l',
   Mid: 'm',
   High: 'h',
   Throw: 't',
-} as const
+} as const;
 
-export const StanceNormal = 'Normal'
+export const StanceNormal = 'Normal';

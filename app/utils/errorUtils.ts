@@ -1,14 +1,14 @@
-import { data } from 'react-router'
-import { environment } from '~/constants/environment.server'
-import { type ServerError } from '~/types/ServerError'
-import { type ServerStatusCode } from '~/types/ServerStatusCode'
+import { data } from 'react-router';
+import { environment } from '~/constants/environment.server';
+import { type ServerError } from '~/types/ServerError';
+import { type ServerStatusCode } from '~/types/ServerStatusCode';
 
 const statusToText: Record<ServerStatusCode, string> = {
   '400': 'Bad request',
   '404': 'Not found',
   '500': 'Server error',
   '502': 'Bad gateway',
-}
+};
 
 export const createErrorResponse = (serverError: ServerError) => {
   return data(
@@ -30,5 +30,5 @@ export const createErrorResponse = (serverError: ServerError) => {
       status: serverError.status,
       statusText: serverError.statusText || statusToText[serverError.status],
     },
-  )
-}
+  );
+};

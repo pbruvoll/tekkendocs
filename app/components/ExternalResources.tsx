@@ -3,20 +3,20 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from '@/components/ui/card'
-import ewgf from '~/images/t8/externalResources/ewgf.webp'
-import naGuide from '~/images/t8/externalResources/naguide.webp'
-import sidestepChart from '~/images/t8/externalResources/sidestep-chart.webp'
-import tekkenLibrary from '~/images/t8/externalResources/tekken-library.webp'
-import wavuWank from '~/images/t8/externalResources/wavu-wank.webp'
-import wavuWiki from '~/images/t8/externalResources/wavu-wiki.webp'
+} from '@/components/ui/card';
+import ewgf from '~/images/t8/externalResources/ewgf.webp';
+import naGuide from '~/images/t8/externalResources/naguide.webp';
+import sidestepChart from '~/images/t8/externalResources/sidestep-chart.webp';
+import tekkenLibrary from '~/images/t8/externalResources/tekken-library.webp';
+import wavuWank from '~/images/t8/externalResources/wavu-wank.webp';
+import wavuWiki from '~/images/t8/externalResources/wavu-wiki.webp';
 
 type ExternalResourceLink = {
-  name: string
-  url: string
-  imageUrl: string
-  description: string
-}
+  name: string;
+  url: string;
+  imageUrl: string;
+  description: string;
+};
 
 const data: ExternalResourceLink[] = [
   {
@@ -60,7 +60,7 @@ const data: ExternalResourceLink[] = [
     description:
       'Stats for rank distribution, character win rate, leaderboards, player profiles etc.',
   },
-]
+];
 
 export const ExternalResources = () => {
   return (
@@ -79,5 +79,5 @@ export const ExternalResources = () => {
         </a>
       ))}
     </div>
-  )
-}
+  );
+};

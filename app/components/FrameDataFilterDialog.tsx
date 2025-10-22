@@ -1,11 +1,11 @@
-import { MixerHorizontalIcon } from '@radix-ui/react-icons'
-import { Button, Dialog } from '@radix-ui/themes'
+import { MixerHorizontalIcon } from '@radix-ui/react-icons';
+import { Button, Dialog } from '@radix-ui/themes';
 import {
   type FrameDataFilterSectionProps,
   FrameDataFilterSelection,
-} from './FrameDataFilterSelection'
+} from './FrameDataFilterSelection';
 
-type FrameDataFilterDialogProps = FrameDataFilterSectionProps
+type FrameDataFilterDialogProps = FrameDataFilterSectionProps;
 
 export const FrameDataFilterDialog = ({
   filter,
@@ -19,13 +19,13 @@ export const FrameDataFilterDialog = ({
 }: FrameDataFilterDialogProps) => {
   const filterCount = Object.entries(filter).filter(([, value]) => {
     if (value === undefined) {
-      return false
+      return false;
     }
     if (Array.isArray(value)) {
-      return value.length > 0
+      return value.length > 0;
     }
-    return true
-  }).length
+    return true;
+  }).length;
 
   return (
     <Dialog.Root>
@@ -84,5 +84,5 @@ export const FrameDataFilterDialog = ({
         </Dialog.Close>
       </Dialog.Content>
     </Dialog.Root>
-  )
-}
+  );
+};

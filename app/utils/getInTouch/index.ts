@@ -1,2 +1,2 @@
-export { DiscordContactProvider } from './discordContactProvider'
-export { GitHubIssueContactProvider } from './githubIssueContactProvider'
+export { DiscordContactProvider } from './discordContactProvider';
+export { GitHubIssueContactProvider } from './githubIssueContactProvider';

@@ -1,11 +1,11 @@
-import { NavLink } from 'react-router'
+import { NavLink } from 'react-router';
 export type NavLinkInfo = {
-  link: string
-  displayName: string
-}
+  link: string;
+  displayName: string;
+};
 type NavProps = {
-  navData: NavLinkInfo[]
-}
+  navData: NavLinkInfo[];
+};
 
 function Nav({ navData }: NavProps) {
   return (
@@ -23,7 +23,7 @@ function Nav({ navData }: NavProps) {
         </NavLink>
       ))}
     </nav>
-  )
+  );
 }
 
-export default Nav
+export default Nav;

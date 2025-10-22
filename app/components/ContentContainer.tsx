@@ -1,12 +1,12 @@
-import cx from 'classix'
+import cx from 'classix';
 
 export type ContentContainerProps = React.PropsWithChildren<{
-  disableXPadding?: boolean
-  disableMaxWidth?: boolean
-  enableTopPadding?: boolean
-  enableBottomPadding?: boolean
-  className?: string
-}>
+  disableXPadding?: boolean;
+  disableMaxWidth?: boolean;
+  enableTopPadding?: boolean;
+  enableBottomPadding?: boolean;
+  className?: string;
+}>;
 
 export const ContentContainer = ({
   disableXPadding: disableXMargin,
@@ -29,5 +29,5 @@ export const ContentContainer = ({
     >
       {children}
     </div>
-  )
-}
+  );
+};

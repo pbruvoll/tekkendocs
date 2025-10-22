@@ -1,3 +1,3 @@
 export interface GetInTouchProvider<T> {
-  buildContactUrl: (channel: T) => string
+  buildContactUrl: (channel: T) => string;
 }

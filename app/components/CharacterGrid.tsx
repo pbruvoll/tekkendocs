@@ -1,15 +1,15 @@
-import cx from 'classix'
-import { motion } from 'motion/react'
-import { InView } from '@/components/core/InView'
+import cx from 'classix';
+import { motion } from 'motion/react';
+import { InView } from '@/components/core/InView';
 import {
   CharacterCard2,
   type CharacterCard2Props,
-} from '~/components/CharacterCard'
+} from '~/components/CharacterCard';
 
 export type CharacterGridProps = {
-  characterCards: (CharacterCard2Props & { imgSrc: string })[]
-  size?: 'medium' | 'large'
-}
+  characterCards: (CharacterCard2Props & { imgSrc: string })[];
+  size?: 'medium' | 'large';
+};
 export const CharacterGrid = ({ characterCards, size }: CharacterGridProps) => {
   return (
     <InView
@@ -63,10 +63,10 @@ export const CharacterGrid = ({ characterCards, size }: CharacterGridProps) => {
                   />
                 </li>
               </motion.div>
-            )
+            );
           },
         )}
       </ul>
     </InView>
-  )
-}
+  );
+};

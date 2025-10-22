@@ -1,6 +1,6 @@
-import { VideoIcon } from '@radix-ui/react-icons'
-import { Link } from 'react-router'
-import { Button } from '@/components/ui/button'
+import { VideoIcon } from '@radix-ui/react-icons';
+import { Link } from 'react-router';
+import { Button } from '@/components/ui/button';
 import {
   Dialog,
   DialogClose,
@@ -10,14 +10,14 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from '@/components/ui/dialog'
-import { type Move } from '~/types/Move'
-import { MoveVideo } from './MoveVideo'
+} from '@/components/ui/dialog';
+import { type Move } from '~/types/Move';
+import { MoveVideo } from './MoveVideo';
 
 export type MovePreviewDialogProps = {
-  move: Move
-  url: string
-}
+  move: Move;
+  url: string;
+};
 export function MovePreviewDialogButton({ move, url }: MovePreviewDialogProps) {
   return (
     <Dialog>
@@ -45,5 +45,5 @@ export function MovePreviewDialogButton({ move, url }: MovePreviewDialogProps) {
         </DialogFooter>
       </DialogContent>
     </Dialog>
-  )
+  );
 }

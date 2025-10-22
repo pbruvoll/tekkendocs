@@ -1,15 +1,15 @@
-import { type Move } from '~/types/Move'
-import { compressCommand } from '~/utils/commandUtils'
+import { type Move } from '~/types/Move';
+import { compressCommand } from '~/utils/commandUtils';
 
 export const MoveSummary = ({
   command,
   compressedCommandMap,
 }: {
-  command: string
-  compressedCommandMap: Record<string, Move>
+  command: string;
+  compressedCommandMap: Record<string, Move>;
 }) => {
-  const move = compressedCommandMap[compressCommand(command.split(' | ')[0])]
-  if (!move) return null
+  const move = compressedCommandMap[compressCommand(command.split(' | ')[0])];
+  if (!move) return null;
   return (
     <div className="text-sm text-muted-foreground">
       {[
@@ -22,5 +22,5 @@ export const MoveSummary = ({
         .filter(Boolean)
         .join(', ')}
     </div>
-  )
-}
+  );
+};

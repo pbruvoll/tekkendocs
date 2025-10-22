@@ -1,13 +1,13 @@
-import { guideAbout } from '~/constants/guideAbout'
+import { guideAbout } from '~/constants/guideAbout';
 
 type AboutProps = {
-  about: Record<string, string>
-}
+  about: Record<string, string>;
+};
 export const About = ({ about }: AboutProps) => {
-  const lastUpdated = about[guideAbout.lastUpdated]
-  const gameVersion = about[guideAbout.gameVersion]
+  const lastUpdated = about[guideAbout.lastUpdated];
+  const gameVersion = about[guideAbout.gameVersion];
   if (!lastUpdated && !gameVersion) {
-    return null
+    return null;
   }
   return (
     <div className="flex flex-wrap gap-2 py-2 text-sm opacity-90">
@@ -24,5 +24,5 @@ export const About = ({ about }: AboutProps) => {
       )}
       {gameVersion && <span>Game version {gameVersion}</span>}
     </div>
-  )
-}
+  );
+};

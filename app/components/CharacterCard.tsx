@@ -1,16 +1,16 @@
-import { Card, Inset } from '@radix-ui/themes'
-import { Link } from 'react-router'
-import { cx } from 'class-variance-authority'
-import { Badge } from '@/components/ui/badge'
+import { Card, Inset } from '@radix-ui/themes';
+import { Link } from 'react-router';
+import { cx } from 'class-variance-authority';
+import { Badge } from '@/components/ui/badge';
 
 export type CharacterCard2Props = {
-  size?: 'medium' | 'large'
-  url: string
-  name: string
-  badge?: string
-  author?: string
-  imgUrl?: string
-}
+  size?: 'medium' | 'large';
+  url: string;
+  name: string;
+  badge?: string;
+  author?: string;
+  imgUrl?: string;
+};
 
 export const CharacterCard2 = ({
   url,
@@ -61,5 +61,5 @@ export const CharacterCard2 = ({
         </Inset>
       </Card>
     </Link>
-  )
-}
+  );
+};

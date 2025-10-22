@@ -1,29 +1,29 @@
-import { FaFacebook } from 'react-icons/fa'
+import { FaFacebook } from 'react-icons/fa';
 import {
   DiscordLogoIcon,
   GitHubLogoIcon,
   MagnifyingGlassIcon,
   TwitterLogoIcon,
-} from '@radix-ui/react-icons'
-import { Link, Outlet, type ShouldRevalidateFunction } from 'react-router'
-import { ContentContainer } from '~/components/ContentContainer'
-import { AppErrorBoundary } from '~/components/ErrorBoundary'
-import tekkenDocsLogoIcon from '~/images/logo/tekkendocs-logo-icon.svg'
+} from '@radix-ui/react-icons';
+import { Link, Outlet, type ShouldRevalidateFunction } from 'react-router';
+import { ContentContainer } from '~/components/ContentContainer';
+import { AppErrorBoundary } from '~/components/ErrorBoundary';
+import tekkenDocsLogoIcon from '~/images/logo/tekkendocs-logo-icon.svg';
 import {
   facebooklink,
   githubLink,
   rbNorwayLink,
   twitterLink,
-} from '~/services/staticDataService'
+} from '~/services/staticDataService';
 import {
   DiscordContactProvider,
   GitHubIssueContactProvider,
-} from '~/utils/getInTouch'
+} from '~/utils/getInTouch';
 
-type MainLayoutTemplateProps = React.PropsWithChildren<{}>
+type MainLayoutTemplateProps = React.PropsWithChildren<{}>;
 const MainLayoutTemplate = ({ children }: MainLayoutTemplateProps) => {
-  const contactByGithub = new GitHubIssueContactProvider()
-  const contactByDiscord = new DiscordContactProvider()
+  const contactByGithub = new GitHubIssueContactProvider();
+  const contactByDiscord = new DiscordContactProvider();
   return (
     <>
       <header className="bg-[var(--accent-4)] py-1">
@@ -152,19 +152,19 @@ const MainLayoutTemplate = ({ children }: MainLayoutTemplateProps) => {
         </ContentContainer>
       </footer>
     </>
-  )
-}
+  );
+};
 
 export const shouldRevalidate: ShouldRevalidateFunction = () => {
-  return false
-}
+  return false;
+};
 
 export default function MainLayout() {
   return (
     <MainLayoutTemplate>
       <Outlet />
     </MainLayoutTemplate>
-  )
+  );
 }
 
 export function ErrorBoundary() {
@@ -172,5 +172,5 @@ export function ErrorBoundary() {
     <MainLayoutTemplate>
       <AppErrorBoundary />
     </MainLayoutTemplate>
-  )
+  );
 }

@@ -1,1 +1,1 @@
-export type GameDataType = 'todo'
+export type GameDataType = 'todo';

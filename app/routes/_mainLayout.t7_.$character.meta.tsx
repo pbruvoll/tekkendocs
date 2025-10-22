@@ -1,57 +1,60 @@
-import { Pencil1Icon } from '@radix-ui/react-icons'
-import { Heading, Link as RadixLink, Table } from '@radix-ui/themes'
-import { data, type LoaderFunctionArgs, type MetaFunction } from 'react-router'
-import { Link, NavLink, useLoaderData } from 'react-router'
-import { ContentContainer } from '~/components/ContentContainer'
-import { hasHeaderMap } from '~/constants/hasHeaderMap'
-import { tableIdToDisplayName } from '~/constants/tableIdToDisplayName'
-import { getSheet } from '~/services/googleSheetService.server'
-import { type CharacterFrameData } from '~/types/CharacterFrameData'
-import { type Game } from '~/types/Game'
-import { type RouteHandle } from '~/types/RouteHandle'
-import { cachified } from '~/utils/cache.server'
-import { getCacheControlHeaders } from '~/utils/headerUtils'
-import { commandToUrlSegment } from '~/utils/moveUtils'
-import { sheetSectionToTable, sheetToSections } from '~/utils/sheetUtils.server'
+import { Pencil1Icon } from '@radix-ui/react-icons';
+import { Heading, Link as RadixLink, Table } from '@radix-ui/themes';
+import { data, type LoaderFunctionArgs, type MetaFunction } from 'react-router';
+import { Link, NavLink, useLoaderData } from 'react-router';
+import { ContentContainer } from '~/components/ContentContainer';
+import { hasHeaderMap } from '~/constants/hasHeaderMap';
+import { tableIdToDisplayName } from '~/constants/tableIdToDisplayName';
+import { getSheet } from '~/services/googleSheetService.server';
+import { type CharacterFrameData } from '~/types/CharacterFrameData';
+import { type Game } from '~/types/Game';
+import { type RouteHandle } from '~/types/RouteHandle';
+import { cachified } from '~/utils/cache.server';
+import { getCacheControlHeaders } from '~/utils/headerUtils';
+import { commandToUrlSegment } from '~/utils/moveUtils';
+import {
+  sheetSectionToTable,
+  sheetToSections,
+} from '~/utils/sheetUtils.server';
 
 export const loader = async ({ params }: LoaderFunctionArgs) => {
-  const character = params.character
+  const character = params.character;
   if (!character) {
     throw new Response(null, {
       status: 400,
       statusText: 'Character cant be empty',
-    })
+    });
   }
 
-  const game: Game = 'T7'
+  const game: Game = 'T7';
 
-  const sheetName = `${character}-meta`
-  const key = `${sheetName}|_|${game}`
+  const sheetName = `${character}-meta`;
+  const key = `${sheetName}|_|${game}`;
   const { sheet, freshValueContext } = await cachified({
     key,
     ttl: 1000 * 30,
     staleWhileRevalidate: 1000 * 60 * 60 * 24 * 3,
     async getFreshValue(context) {
-      const sheet = await getSheet(sheetName, game)
-      return { sheet, freshValueContext: context }
+      const sheet = await getSheet(sheetName, game);
+      return { sheet, freshValueContext: context };
     },
-  })
+  });
   if (!sheet) {
     throw new Response(
       `Not able to find data for character ${character} in game ${game}`,
       { status: 500, statusText: 'server error' },
-    )
+    );
   }
 
-  const { editUrl, rows } = sheet
-  const sheetSections = sheetToSections(rows)
-  const tables = sheetSections.map(ss =>
+  const { editUrl, rows } = sheet;
+  const sheetSections = sheetToSections(rows);
+  const tables = sheetSections.map((ss) =>
     sheetSectionToTable({
       name: ss.sectionId,
       sheetSection: ss,
       hasHeader: hasHeaderMap[ss.sectionId],
     }),
-  )
+  );
 
   return data(
     { characterName: character, editUrl, tables },
@@ -61,13 +64,13 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
         'X-Td-Cachecontext': JSON.stringify(freshValueContext),
       },
     },
-  )
-}
+  );
+};
 
 export const meta: MetaFunction = ({ data, params, matches }) => {
   const frameData = matches.find(
-    m => (m.handle as RouteHandle)?.type === 'frameData',
-  )?.data
+    (m) => (m.handle as RouteHandle)?.type === 'frameData',
+  )?.data;
   if (!frameData) {
     return [
       {
@@ -76,14 +79,14 @@ export const meta: MetaFunction = ({ data, params, matches }) => {
       {
         description: `There is no character with the ID of ${params.character}.`,
       },
-    ]
+    ];
   }
-  const { characterName } = frameData as CharacterFrameData
-  const characterId = characterName.toLocaleLowerCase()
+  const { characterName } = frameData as CharacterFrameData;
+  const characterId = characterName.toLocaleLowerCase();
   const characterTitle =
-    characterName[0].toUpperCase() + characterName.substring(1)
-  const title = `${characterTitle} Tekken 7 Guide | TekkenDocs`
-  const description = `Guide with cheat sheet for ${characterTitle} in Tekken 7`
+    characterName[0].toUpperCase() + characterName.substring(1);
+  const title = `${characterTitle} Tekken 7 Guide | TekkenDocs`;
+  const description = `Guide with cheat sheet for ${characterTitle} in Tekken 7`;
 
   return [
     { title },
@@ -97,14 +100,14 @@ export const meta: MetaFunction = ({ data, params, matches }) => {
       rel: 'canonical',
       href: `https://tekkendocs.com/t7/${characterId}/meta`,
     },
-  ]
-}
+  ];
+};
 
 export default function Index() {
-  const { characterName, editUrl, tables } = useLoaderData<typeof loader>()
+  const { characterName, editUrl, tables } = useLoaderData<typeof loader>();
 
   if (tables.length === 0) {
-    return <div>Invalid or no data</div>
+    return <div>Invalid or no data</div>;
   }
   return (
     <>
@@ -129,10 +132,10 @@ export default function Index() {
         </div>
       </ContentContainer>
       <ContentContainer disableXPadding>
-        {tables.map(table => {
+        {tables.map((table) => {
           const columnNums = (table.headers || table.rows[0]).map(
             (_, index) => index,
-          )
+          );
           return (
             <section key={table.name} className="mt-8">
               <ContentContainer>
@@ -144,7 +147,7 @@ export default function Index() {
                 {table.headers && (
                   <Table.Header>
                     <Table.Row>
-                      {table.headers.map(h => (
+                      {table.headers.map((h) => (
                         <Table.ColumnHeaderCell key={h}>
                           {h}
                         </Table.ColumnHeaderCell>
@@ -156,8 +159,8 @@ export default function Index() {
                   {table.rows.map((row, _i) => {
                     return (
                       <Table.Row key={row[0]}>
-                        {columnNums.map(j => {
-                          const cell = row[j] || ''
+                        {columnNums.map((j) => {
+                          const cell = row[j] || '';
                           if (table.headers && table.headers[j] === 'Command') {
                             //this is a command, so make it link
                             return (
@@ -174,19 +177,19 @@ export default function Index() {
                                   </Link>
                                 </RadixLink>
                               </Table.Cell>
-                            )
+                            );
                           }
-                          return <Table.Cell key={j}>{cell}</Table.Cell>
+                          return <Table.Cell key={j}>{cell}</Table.Cell>;
                         })}
                       </Table.Row>
-                    )
+                    );
                   })}
                 </Table.Body>
               </Table.Root>
             </section>
-          )
+          );
         })}
       </ContentContainer>
     </>
-  )
+  );
 }

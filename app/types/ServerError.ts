@@ -1,14 +1,14 @@
-import { type ServerStatusCode } from './ServerStatusCode'
+import { type ServerStatusCode } from './ServerStatusCode';
 
 export type ServerError = {
-  title: string
-  detail?: string
-  status: ServerStatusCode
-  statusText?: string
-  exception?: unknown
+  title: string;
+  detail?: string;
+  status: ServerStatusCode;
+  statusText?: string;
+  exception?: unknown;
   upstreamErrorResponse?: {
-    body?: string
-    status: number
-    statusText: string
-  }
-}
+    body?: string;
+    status: number;
+    statusText: string;
+  };
+};

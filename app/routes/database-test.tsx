@@ -2,7 +2,7 @@ import {
   type ActionFunctionArgs,
   data,
   type LoaderFunctionArgs,
-} from 'react-router'
+} from 'react-router';
 //import { Form, useLoaderData } from '@remix-run/react'
 //import { prisma } from '~/db.server'
 export async function action({ request }: ActionFunctionArgs) {
@@ -20,14 +20,14 @@ export async function action({ request }: ActionFunctionArgs) {
   // })
   return {
     success: true,
-  }
+  };
 }
 export async function loader({ request }: LoaderFunctionArgs) {
   // const data = await prisma.issue.findMany()
   // return data({
   //   data,
   // })
-  return data({ data: [] })
+  return data({ data: [] });
 }
 export default function Index() {
   // const { data } = useLoaderData<typeof loader>()
@@ -43,5 +43,5 @@ export default function Index() {
         <input type="submit" value="Submit" />
       </Form> */}
     </div>
-  )
+  );
 }

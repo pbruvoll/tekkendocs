@@ -1,16 +1,16 @@
-import { Command } from '~/components/Command'
-import { useGuideContext } from './GuideContext'
-import { type ComboEnder } from './GuideData'
-import { GuideSectionHeading } from './GuideSectionHeading'
-import { formatCombo } from './guideUtils'
+import { Command } from '~/components/Command';
+import { useGuideContext } from './GuideContext';
+import { type ComboEnder } from './GuideData';
+import { GuideSectionHeading } from './GuideSectionHeading';
+import { formatCombo } from './guideUtils';
 
 type ComboEndersProps = {
-  comboEnders: ComboEnder[]
-}
+  comboEnders: ComboEnder[];
+};
 export const ComboEnders = ({ comboEnders }: ComboEndersProps) => {
-  const carry = comboEnders.filter(c => c.type === 'carry')
-  const floorBreak = comboEnders.filter(c => c.type === 'floor_break')
-  const wallBreak = comboEnders.filter(c => c.type === 'wall_break')
+  const carry = comboEnders.filter((c) => c.type === 'carry');
+  const floorBreak = comboEnders.filter((c) => c.type === 'floor_break');
+  const wallBreak = comboEnders.filter((c) => c.type === 'wall_break');
 
   return (
     <section
@@ -28,17 +28,17 @@ export const ComboEnders = ({ comboEnders }: ComboEndersProps) => {
         )}
       </div>
     </section>
-  )
-}
+  );
+};
 
 const EnderList = ({
   title,
   enders,
 }: {
-  title: string
-  enders: { combo: string }[]
+  title: string;
+  enders: { combo: string }[];
 }) => {
-  const { charUrl, compressedCommandMap } = useGuideContext()
+  const { charUrl, compressedCommandMap } = useGuideContext();
   return (
     <section className="flex-grow">
       <div className="mb-2 bg-muted text-center">{title}</div>
@@ -56,5 +56,5 @@ const EnderList = ({
         </div>
       ))}
     </section>
-  )
-}
+  );
+};

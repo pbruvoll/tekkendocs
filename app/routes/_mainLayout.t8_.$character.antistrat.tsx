@@ -1,55 +1,55 @@
-import { useMemo } from 'react'
-import { Pencil1Icon } from '@radix-ui/react-icons'
-import { Heading, Table } from '@radix-ui/themes'
-import { data, type LoaderFunctionArgs, type MetaFunction } from 'react-router'
+import { useMemo } from 'react';
+import { Pencil1Icon } from '@radix-ui/react-icons';
+import { Heading, Table } from '@radix-ui/themes';
+import { data, type LoaderFunctionArgs, type MetaFunction } from 'react-router';
 import {
   isRouteErrorResponse,
   useLoaderData,
   useRouteError,
-} from 'react-router'
-import { Commands } from '~/components/Commands'
-import { ContentContainer } from '~/components/ContentContainer'
-import { AppErrorBoundary } from '~/components/ErrorBoundary'
-import Nav, { type NavLinkInfo } from '~/components/Nav'
-import { TextWithCommand } from '~/components/TextWithCommand'
-import { tableIdToDisplayName } from '~/constants/tableIdToDisplayName'
-import { useFrameData } from '~/hooks/useFrameData'
-import { characterGuideAuthors } from '~/services/staticDataService'
-import { type CharacterFrameData } from '~/types/CharacterFrameData'
-import { type Move } from '~/types/Move'
-import { type RouteHandle } from '~/types/RouteHandle'
-import { getCharacterFromParams } from '~/utils/characterRoute.utils.server'
-import { compressCommand } from '~/utils/commandUtils'
-import { getCacheControlHeaders } from '~/utils/headerUtils'
-import { generateMetaTags } from '~/utils/seoUtils'
-import { getSheetService } from '~/utils/sheetServiceUtils.server'
-import { t8AvatarMap } from '~/utils/t8AvatarMap'
+} from 'react-router';
+import { Commands } from '~/components/Commands';
+import { ContentContainer } from '~/components/ContentContainer';
+import { AppErrorBoundary } from '~/components/ErrorBoundary';
+import Nav, { type NavLinkInfo } from '~/components/Nav';
+import { TextWithCommand } from '~/components/TextWithCommand';
+import { tableIdToDisplayName } from '~/constants/tableIdToDisplayName';
+import { useFrameData } from '~/hooks/useFrameData';
+import { characterGuideAuthors } from '~/services/staticDataService';
+import { type CharacterFrameData } from '~/types/CharacterFrameData';
+import { type Move } from '~/types/Move';
+import { type RouteHandle } from '~/types/RouteHandle';
+import { getCharacterFromParams } from '~/utils/characterRoute.utils.server';
+import { compressCommand } from '~/utils/commandUtils';
+import { getCacheControlHeaders } from '~/utils/headerUtils';
+import { generateMetaTags } from '~/utils/seoUtils';
+import { getSheetService } from '~/utils/sheetServiceUtils.server';
+import { t8AvatarMap } from '~/utils/t8AvatarMap';
 
 const navData: NavLinkInfo[] = [
   { link: '../', displayName: 'Frame data' },
   { link: '../meta', displayName: 'Cheat sheet' },
   { link: '', displayName: 'Anti strats' },
   { link: '../flashcard', displayName: 'Flash card' },
-]
+];
 
-export const headers = () => getCacheControlHeaders({ seconds: 60 * 5 })
+export const headers = () => getCacheControlHeaders({ seconds: 60 * 5 });
 
 export const loader = async ({ params }: LoaderFunctionArgs) => {
-  const character = getCharacterFromParams(params)
+  const character = getCharacterFromParams(params);
   if (['lidia', 'heihachi', 'mokujin'].includes(character)) {
     throw new Response(null, {
       status: 404,
       statusText: 'Character not found',
-    })
+    });
   }
-  const sheetService = getSheetService()
+  const sheetService = getSheetService();
   const sheet = await sheetService.getCharacterData(
     'T8',
     character,
     'antiStrat',
-  )
+  );
 
-  const { editUrl, tables } = sheet
+  const { editUrl, tables } = sheet;
 
   return data(
     { characterName: character, editUrl, tables, gameId: sheet.game },
@@ -58,13 +58,13 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
         ...getCacheControlHeaders({ seconds: 60 * 5 }),
       },
     },
-  )
-}
+  );
+};
 
 export const meta: MetaFunction = ({ data, params, matches }) => {
   const frameData = matches.find(
-    m => (m.handle as RouteHandle)?.type === 'frameData',
-  )?.data
+    (m) => (m.handle as RouteHandle)?.type === 'frameData',
+  )?.data;
   if (!frameData) {
     return [
       {
@@ -73,14 +73,14 @@ export const meta: MetaFunction = ({ data, params, matches }) => {
       {
         description: `There is no character with the ID of ${params.character}.`,
       },
-    ]
+    ];
   }
-  const { characterName } = frameData as CharacterFrameData
-  const characterId = characterName.toLocaleLowerCase()
+  const { characterName } = frameData as CharacterFrameData;
+  const characterId = characterName.toLocaleLowerCase();
   const characterTitle =
-    characterName[0].toUpperCase() + characterName.substring(1)
-  const title = `${characterTitle} Tekken 8 Anti Strat | TekkenDocs`
-  const description = `An overview of the most important information for for how to beat ${characterTitle} in Tekken 8. See the most important moves to punish, which side to to side step, strings to duck and much more`
+    characterName[0].toUpperCase() + characterName.substring(1);
+  const title = `${characterTitle} Tekken 8 Anti Strat | TekkenDocs`;
+  const description = `An overview of the most important information for for how to beat ${characterTitle} in Tekken 8. See the most important moves to punish, which side to to side step, strings to duck and much more`;
 
   return generateMetaTags({
     title,
@@ -88,25 +88,25 @@ export const meta: MetaFunction = ({ data, params, matches }) => {
     matches,
     image: { url: `/t8/avatars/${characterId}-512.png` },
     url: `/t8/${characterId}/antistrat`,
-  })
-}
+  });
+};
 
 export default function Index() {
   const { characterName, editUrl, tables, gameId } =
-    useLoaderData<typeof loader>()
+    useLoaderData<typeof loader>();
 
-  const { moves: frameData } = useFrameData()
+  const { moves: frameData } = useFrameData();
   const compressedCommandMap = useMemo(() => {
     return frameData.reduce<Record<string, Move>>((prev, current) => {
-      prev[compressCommand(current.command)] = current
-      return prev
-    }, {})
-  }, [frameData])
+      prev[compressCommand(current.command)] = current;
+      return prev;
+    }, {});
+  }, [frameData]);
 
-  const charUrl = `/${gameId.toLowerCase()}/${characterName}`
+  const charUrl = `/${gameId.toLowerCase()}/${characterName}`;
 
   if (tables.length === 0) {
-    return <div>Invalid or no data</div>
+    return <div>Invalid or no data</div>;
   }
 
   return (
@@ -147,10 +147,10 @@ export default function Index() {
         enableBottomPadding
         disableXPadding
       >
-        {tables.map(table => {
+        {tables.map((table) => {
           const columnNums = (table.headers || table.rows[0]).map(
             (_, index) => index,
-          )
+          );
           return (
             <section key={table.name} className="mt-8">
               <ContentContainer>
@@ -163,8 +163,8 @@ export default function Index() {
                   {table.rows.map((row, i) => {
                     return (
                       <Table.Row key={i}>
-                        {columnNums.map(j => {
-                          const cell = row[j] || ''
+                        {columnNums.map((j) => {
+                          const cell = row[j] || '';
                           return (
                             <Table.Cell key={j}>
                               {characterName === 'asuka' ? (
@@ -181,23 +181,23 @@ export default function Index() {
                                 />
                               )}
                             </Table.Cell>
-                          )
+                          );
                         })}
                       </Table.Row>
-                    )
+                    );
                   })}
                 </Table.Body>
               </Table.Root>
             </section>
-          )
+          );
         })}
       </ContentContainer>
     </>
-  )
+  );
 }
 
 export function ErrorBoundary() {
-  const error = useRouteError()
+  const error = useRouteError();
   if (isRouteErrorResponse(error) && error.status === 404) {
     return (
       <div className="prose prose-invert p-4">
@@ -207,8 +207,8 @@ export function ErrorBoundary() {
           one, please get in touch in discord, github or on X.
         </p>
       </div>
-    )
+    );
   }
 
-  return <AppErrorBoundary />
+  return <AppErrorBoundary />;
 }

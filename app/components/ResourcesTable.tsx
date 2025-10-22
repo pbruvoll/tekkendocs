@@ -1,12 +1,12 @@
-import { Heading, Link as RadixLink, Table } from '@radix-ui/themes'
-import { ContentContainer } from './ContentContainer'
+import { Heading, Link as RadixLink, Table } from '@radix-ui/themes';
+import { ContentContainer } from './ContentContainer';
 
 export const ResourcesTable = ({
   rows,
   headers,
 }: {
-  rows: string[][]
-  headers: string[]
+  rows: string[][];
+  headers: string[];
 }) => {
   return (
     <section className="mt-8">
@@ -37,10 +37,10 @@ export const ResourcesTable = ({
                 </Table.Cell>
                 <Table.Cell>{row[2]}</Table.Cell>
               </Table.Row>
-            )
+            );
           })}
         </Table.Body>
       </Table.Root>
     </section>
-  )
-}
+  );
+};

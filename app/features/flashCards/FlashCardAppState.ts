@@ -1,4 +1,4 @@
-import { z } from 'zod'
+import { z } from 'zod';
 
 export const flashCardAppStateSchema = z.record(
   z.string(),
@@ -7,6 +7,6 @@ export const flashCardAppStateSchema = z.record(
     wrong: z.array(z.string()),
     ignored: z.array(z.string()),
   }),
-)
+);
 
-export type FlashCardAppState = z.infer<typeof flashCardAppStateSchema>
+export type FlashCardAppState = z.infer<typeof flashCardAppStateSchema>;

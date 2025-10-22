@@ -1,21 +1,21 @@
-import { Heading, Table, Text } from '@radix-ui/themes'
-import { Link, type MetaFunction, useMatches, useParams } from 'react-router'
-import { ContentContainer } from '~/components/ContentContainer'
-import { MoveVideo } from '~/components/MoveVideo'
-import { type Move } from '~/types/Move'
+import { Heading, Table, Text } from '@radix-ui/themes';
+import { Link, type MetaFunction, useMatches, useParams } from 'react-router';
+import { ContentContainer } from '~/components/ContentContainer';
+import { MoveVideo } from '~/components/MoveVideo';
+import { type Move } from '~/types/Move';
 import {
   getCharacterFrameData,
   getCharacterFrameDataMoves,
-} from '~/utils/characterPageUtils'
-import { getCacheControlHeaders } from '~/utils/headerUtils'
-import { commandToUrlSegment } from '~/utils/moveUtils'
+} from '~/utils/characterPageUtils';
+import { getCacheControlHeaders } from '~/utils/headerUtils';
+import { commandToUrlSegment } from '~/utils/moveUtils';
 
-export const headers = () => getCacheControlHeaders({ seconds: 60 * 5 })
+export const headers = () => getCacheControlHeaders({ seconds: 60 * 5 });
 
 export const meta: MetaFunction = ({ params, matches }) => {
-  const character = params.character
-  const command = params.move
-  const frameData = getCharacterFrameData(matches)
+  const character = params.character;
+  const command = params.move;
+  const frameData = getCharacterFrameData(matches);
 
   if (!frameData || !command || !character || !frameData.headers) {
     return [
@@ -25,13 +25,13 @@ export const meta: MetaFunction = ({ params, matches }) => {
       {
         description: `There is no character with the ID of ${params.character}.`,
       },
-    ]
+    ];
   }
-  const characterId = character?.toLocaleLowerCase()
-  const characterTitle = character[0].toUpperCase() + character.substring(1)
-  let title = `${command} - ${characterTitle} Tekken8 Frame Data | TekkenDocs`
+  const characterId = character?.toLocaleLowerCase();
+  const characterTitle = character[0].toUpperCase() + character.substring(1);
+  let title = `${command} - ${characterTitle} Tekken8 Frame Data | TekkenDocs`;
 
-  const data = findMoveRow(command, frameData.rows)
+  const data = findMoveRow(command, frameData.rows);
   if (!data) {
     return [
       {
@@ -40,30 +40,30 @@ export const meta: MetaFunction = ({ params, matches }) => {
       {
         description: `Frame data for ${params.move}.`,
       },
-    ]
+    ];
   }
 
-  const { headers: dataHeaders, rows } = frameData
-  const moveRow = findMoveRow(command, rows) || []
+  const { headers: dataHeaders, rows } = frameData;
+  const moveRow = findMoveRow(command, rows) || [];
 
-  const moves = getCharacterFrameDataMoves(matches)
-  const move: Move | undefined = moves ? findMove(command, moves) : undefined
+  const moves = getCharacterFrameDataMoves(matches);
+  const move: Move | undefined = moves ? findMove(command, moves) : undefined;
 
   if (move) {
-    title = `${move.command} - ${characterTitle} Tekken8 Frame Data | TekkenDocs`
+    title = `${move.command} - ${characterTitle} Tekken8 Frame Data | TekkenDocs`;
   }
 
   const description = dataHeaders
     .slice(0, 8)
     .map((header, index) => `${header}:   ${moveRow[index] || ''}`)
-    .join('\n')
+    .join('\n');
 
   let image = move?.image?.startsWith('File:')
     ? `https://wavu.wiki/t/Special:Redirect/file/${move?.image}`
-    : `/t8/avatars/${characterId}-512.png`
+    : `/t8/avatars/${characterId}-512.png`;
 
   if (move?.wavuId === 'Paul-CS.2') {
-    image = `/t8/moves/${characterId}/Paul_CS.2.gif`
+    image = `/t8/moves/${characterId}/Paul_CS.2.gif`;
   }
 
   return [
@@ -78,34 +78,34 @@ export const meta: MetaFunction = ({ params, matches }) => {
       rel: 'canonical',
       href: `https://tekkendocs.com/t8/${characterId}/${command}`,
     },
-  ]
-}
+  ];
+};
 
 const findMoveRow = (
   command: string,
   rows: string[][],
 ): string[] | undefined => {
-  return rows.find(row => row[0] && commandToUrlSegment(row[0]) === command)
-}
+  return rows.find((row) => row[0] && commandToUrlSegment(row[0]) === command);
+};
 
 const findMove = (command: string, moves: Move[]): Move | undefined => {
-  return moves.find(move => commandToUrlSegment(move.command) === command)
-}
+  return moves.find((move) => commandToUrlSegment(move.command) === command);
+};
 
 export default function MoveRoute() {
-  const params = useParams()
-  const command = params.move
-  const characterName = params.character
+  const params = useParams();
+  const command = params.move;
+  const characterName = params.character;
 
-  const matches = useMatches()
-  const moves = getCharacterFrameDataMoves(matches)
+  const matches = useMatches();
+  const moves = getCharacterFrameDataMoves(matches);
   if (!characterName || !command || !moves || moves.length === 0) {
-    return <div>Missing character, move, frame data or headers</div>
+    return <div>Missing character, move, frame data or headers</div>;
   }
 
-  const move: Move | undefined = moves ? findMove(command, moves) : undefined
+  const move: Move | undefined = moves ? findMove(command, moves) : undefined;
   if (!move) {
-    return <div>Not able to find frame data for the move {command}</div>
+    return <div>Not able to find frame data for the move {command}</div>;
   }
 
   return (
@@ -158,5 +158,5 @@ export default function MoveRoute() {
         </Table.Body>
       </Table.Root>
     </ContentContainer>
-  )
+  );
 }

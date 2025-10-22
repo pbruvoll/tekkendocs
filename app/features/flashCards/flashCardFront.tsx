@@ -1,15 +1,15 @@
-import cx from 'classix'
-import { buttonVariants } from '@/components/ui/button'
-import { type Move, type MoveT8 } from '~/types/Move'
-import { charIdFromMove } from '~/utils/moveUtils'
-import { ShowVideoButton } from './showVideoButton'
+import cx from 'classix';
+import { buttonVariants } from '@/components/ui/button';
+import { type Move, type MoveT8 } from '~/types/Move';
+import { charIdFromMove } from '~/utils/moveUtils';
+import { ShowVideoButton } from './showVideoButton';
 
 export type FlashCardFrontProps = {
-  move: Move
-  showCharName: boolean
-  autoPlay?: boolean
-  onFlip: () => void
-}
+  move: Move;
+  showCharName: boolean;
+  autoPlay?: boolean;
+  onFlip: () => void;
+};
 export const FlashCardFront = ({
   move,
   showCharName,
@@ -47,5 +47,5 @@ export const FlashCardFront = ({
         </div>
       </button>
     </div>
-  )
-}
+  );
+};

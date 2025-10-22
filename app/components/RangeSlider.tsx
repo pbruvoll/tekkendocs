@@ -1,12 +1,12 @@
-import { useMemo, useState } from 'react'
-import { Slider } from '@/components/ui/slider'
+import { useMemo, useState } from 'react';
+import { Slider } from '@/components/ui/slider';
 
 export type RangeSliderProps = {
-  values: [number | undefined, number | undefined]
-  min: number
-  max: number
-  onValuesCommit: (values: [number | undefined, number | undefined]) => void
-}
+  values: [number | undefined, number | undefined];
+  min: number;
+  max: number;
+  onValuesCommit: (values: [number | undefined, number | undefined]) => void;
+};
 
 export const RangeSlider = ({
   values: valuesFromProps,
@@ -20,16 +20,16 @@ export const RangeSlider = ({
       valuesFromProps[1] === undefined ? max : valuesFromProps[1],
     ],
     [max, min, valuesFromProps],
-  )
-  const [originalValues, setOriginalValues] = useState(valuesFromPropsFixed)
-  const [values, setValues] = useState(valuesFromPropsFixed)
+  );
+  const [originalValues, setOriginalValues] = useState(valuesFromPropsFixed);
+  const [values, setValues] = useState(valuesFromPropsFixed);
 
   if (
     valuesFromPropsFixed[0] !== originalValues[0] ||
     valuesFromPropsFixed[1] !== originalValues[1]
   ) {
-    setOriginalValues(valuesFromPropsFixed)
-    setValues(valuesFromPropsFixed)
+    setOriginalValues(valuesFromPropsFixed);
+    setValues(valuesFromPropsFixed);
   }
 
   return (
@@ -47,8 +47,8 @@ export const RangeSlider = ({
         max={max}
         min={min}
         step={1}
-        onValueChange={value => setValues([value[0], value[1]])}
-        onValueCommit={value =>
+        onValueChange={(value) => setValues([value[0], value[1]])}
+        onValueCommit={(value) =>
           onValuesCommit([
             value[0] === min ? undefined : value[0],
             value[1] === max ? undefined : value[1],
@@ -63,10 +63,10 @@ export const RangeSlider = ({
             onValuesCommit([
               values[0] === min ? undefined : values[0],
               values[1] === max ? undefined : values[1],
-            ])
+            ]);
           }
         }}
       />
     </div>
-  )
-}
+  );
+};

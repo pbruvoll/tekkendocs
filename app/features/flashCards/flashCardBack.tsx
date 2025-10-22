@@ -1,12 +1,12 @@
-import { Button } from '@/components/ui/button'
-import { type Move } from '~/types/Move'
-import { FlashCardAnswer, type FlashCardAnswerType } from './FlashCardAnswer'
-import { ShowVideoButton } from './showVideoButton'
+import { Button } from '@/components/ui/button';
+import { type Move } from '~/types/Move';
+import { FlashCardAnswer, type FlashCardAnswerType } from './FlashCardAnswer';
+import { ShowVideoButton } from './showVideoButton';
 
 export type FlashCardBackProps = {
-  move: Move
-  onAnswer: (flashCardAnswer: FlashCardAnswerType) => void
-}
+  move: Move;
+  onAnswer: (flashCardAnswer: FlashCardAnswerType) => void;
+};
 
 export const FlashCardBack = ({ move, onAnswer }: FlashCardBackProps) => {
   return (
@@ -55,5 +55,5 @@ export const FlashCardBack = ({ move, onAnswer }: FlashCardBackProps) => {
         </Button>
       </div>
     </div>
-  )
-}
+  );
+};

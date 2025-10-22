@@ -1,19 +1,19 @@
-import { useEffect, useMemo } from 'react'
-import { type MetaFunction } from 'react-router'
-import { Link, useFetcher, useNavigate, useSearchParams } from 'react-router'
-import { Input } from '@/components/ui/input'
-import { ContentContainer } from '~/components/ContentContainer'
-import { SimpleMovesTable } from '~/components/SimpleMovesTable'
-import { getTekken8Characters } from '~/services/staticDataService'
-import { type CharacterFrameDataPage } from '~/types/CharacterFrameDataPage'
-import { type Move } from '~/types/Move'
-import { cleanCommand } from '~/utils/filterUtils'
-import { commandToUrlSegmentEncoded } from '~/utils/moveUtils'
-import { generateMetaTags } from '~/utils/seoUtils'
+import { useEffect, useMemo } from 'react';
+import { type MetaFunction } from 'react-router';
+import { Link, useFetcher, useNavigate, useSearchParams } from 'react-router';
+import { Input } from '@/components/ui/input';
+import { ContentContainer } from '~/components/ContentContainer';
+import { SimpleMovesTable } from '~/components/SimpleMovesTable';
+import { getTekken8Characters } from '~/services/staticDataService';
+import { type CharacterFrameDataPage } from '~/types/CharacterFrameDataPage';
+import { type Move } from '~/types/Move';
+import { cleanCommand } from '~/utils/filterUtils';
+import { commandToUrlSegmentEncoded } from '~/utils/moveUtils';
+import { generateMetaTags } from '~/utils/seoUtils';
 
 export const meta: MetaFunction = ({ matches }) => {
-  const title = 'Tekken 8 Frame data search page | TekkenDocs'
-  const description = `Search for any move in the game to see its's frame data. Exampel: "Drag fff2"`
+  const title = 'Tekken 8 Frame data search page | TekkenDocs';
+  const description = `Search for any move in the game to see its's frame data. Exampel: "Drag fff2"`;
 
   return generateMetaTags({
     matches,
@@ -21,60 +21,63 @@ export const meta: MetaFunction = ({ matches }) => {
     description,
     image: { url: '/images/tekkendocs-og-image-v2.png' },
     url: `/t8/challenge`,
-  })
-}
+  });
+};
 
-const maxMovesToShow = 400
+const maxMovesToShow = 400;
 
 export default function () {
-  const [searchParams, setSearchParams] = useSearchParams()
-  const searchQuery = searchParams.get('q') || ''
+  const [searchParams, setSearchParams] = useSearchParams();
+  const searchQuery = searchParams.get('q') || '';
 
   const [characterQuery, moveQuery] = useMemo(() => {
     if (!searchQuery) {
-      return ['', '']
+      return ['', ''];
     }
-    const splitted = searchQuery.split(' ')
+    const splitted = searchQuery.split(' ');
     if (splitted.length === 1) {
-      return [searchQuery.toLowerCase(), '']
+      return [searchQuery.toLowerCase(), ''];
     }
     if (splitted.length === 2) {
-      return [splitted[0].toLowerCase(), splitted[1].toLowerCase()]
+      return [splitted[0].toLowerCase(), splitted[1].toLowerCase()];
     }
-    return [splitted[0].toLowerCase(), splitted.slice(1).join('').toLowerCase()]
-  }, [searchQuery])
+    return [
+      splitted[0].toLowerCase(),
+      splitted.slice(1).join('').toLowerCase(),
+    ];
+  }, [searchQuery]);
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
-  const charList = getTekken8Characters()
+  const charList = getTekken8Characters();
 
   const filteredCharList =
     characterQuery === '?'
-      ? charList.filter(char => char.id === 'mokujin')
-      : charList.filter(char =>
+      ? charList.filter((char) => char.id === 'mokujin')
+      : charList.filter((char) =>
           char.id
             .replace('-', '')
             .replace(' ', '')
             .toLowerCase()
             .startsWith(characterQuery.replace('-', '')),
-        )
+        );
 
   const selectedCharacter =
-    filteredCharList.length === 1 ? filteredCharList[0] : undefined
+    filteredCharList.length === 1 ? filteredCharList[0] : undefined;
   const selectedCharId = useMemo(() => {
-    return selectedCharacter?.id
-  }, [selectedCharacter?.id])
+    return selectedCharacter?.id;
+  }, [selectedCharacter?.id]);
 
-  const showsMultipleChars = selectedCharId === 'mokujin'
+  const showsMultipleChars = selectedCharId === 'mokujin';
 
   const includeCharNameInFrames = useMemo(
     () => showsMultipleChars || (!moveQuery && !searchQuery.endsWith(' ')),
     [moveQuery, searchQuery, showsMultipleChars],
-  )
+  );
 
   const { load, state, data } = useFetcher<CharacterFrameDataPage>({
     key: selectedCharId,
-  })
+  });
 
   const filteredMoves = useMemo(() => {
     if (
@@ -82,51 +85,51 @@ export default function () {
       data &&
       data.characterName === selectedCharId
     ) {
-      const cleanMoveQuery = cleanCommand(moveQuery)
+      const cleanMoveQuery = cleanCommand(moveQuery);
 
-      let filteredByCommand: Move[] = []
+      let filteredByCommand: Move[] = [];
       if (cleanMoveQuery.includes('?')) {
         // filter by wildcard, so "1?2", matches "1,2,3".
         // we use ? as wildcard instead of *, since som move have * in them (it means hold button)
-        const w = cleanMoveQuery.replace(/[*.+^${}()|[\]\\]/g, '\\$&') // regexp escape
+        const w = cleanMoveQuery.replace(/[*.+^${}()|[\]\\]/g, '\\$&'); // regexp escape
         const re = new RegExp(
           `^${w.replace(/\?/g, '.*')}${searchQuery.endsWith(' ') ? '' : '.*'}$`,
-        )
-        filteredByCommand = data.moves.filter(move => re.test(move.command))
+        );
+        filteredByCommand = data.moves.filter((move) => re.test(move.command));
       } else if (!!cleanMoveQuery && searchQuery.endsWith(' ')) {
         filteredByCommand = data.moves.filter(
-          move => cleanCommand(move.command) === cleanMoveQuery,
-        )
+          (move) => cleanCommand(move.command) === cleanMoveQuery,
+        );
       } else {
-        filteredByCommand = data.moves.filter(move =>
+        filteredByCommand = data.moves.filter((move) =>
           cleanCommand(move.command).startsWith(cleanMoveQuery),
-        )
+        );
       }
       if (filteredByCommand.length > 0) {
-        return filteredByCommand
+        return filteredByCommand;
       }
       if (moveQuery.length > 2) {
-        const filteredByName = data.moves.filter(move =>
+        const filteredByName = data.moves.filter((move) =>
           move.name
             ?.toLowerCase()
             .replace(' ', '')
             .includes(moveQuery.toLowerCase()),
-        )
+        );
         if (filteredByName.length > 0) {
-          return filteredByName
+          return filteredByName;
         }
       }
-      return []
+      return [];
     }
-    return []
-  }, [data, filteredCharList.length, moveQuery, searchQuery, selectedCharId])
+    return [];
+  }, [data, filteredCharList.length, moveQuery, searchQuery, selectedCharId]);
 
   const paginatedMoves = useMemo(() => {
     if (filteredMoves.length > maxMovesToShow) {
-      return filteredMoves.slice(0, maxMovesToShow)
+      return filteredMoves.slice(0, maxMovesToShow);
     }
-    return filteredMoves
-  }, [filteredMoves])
+    return filteredMoves;
+  }, [filteredMoves]);
 
   useEffect(() => {
     if (
@@ -134,32 +137,32 @@ export default function () {
       state === 'idle' &&
       data?.characterName !== selectedCharId
     ) {
-      load(`/t8/${selectedCharId}`)
+      load(`/t8/${selectedCharId}`);
     }
-  }, [selectedCharId, state, load, data?.characterName])
+  }, [selectedCharId, state, load, data?.characterName]);
 
   const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const searchValue = event.target.value
+    const searchValue = event.target.value;
     if (searchValue) {
-      setSearchParams({ q: searchValue }, { replace: true })
+      setSearchParams({ q: searchValue }, { replace: true });
     } else {
-      setSearchParams({})
+      setSearchParams({});
     }
-  }
+  };
 
   const handleOnKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === 'Enter') {
       if (characterQuery && !moveQuery) {
-        navigate(`/t8/${filteredCharList[0].id}`)
-        return
+        navigate(`/t8/${filteredCharList[0].id}`);
+        return;
       }
       if (moveQuery && paginatedMoves.length > 0) {
         navigate(
           `/t8/${selectedCharId}/${commandToUrlSegmentEncoded(paginatedMoves[0].command)}`,
-        )
+        );
       }
     }
-  }
+  };
 
   return (
     <ContentContainer enableBottomPadding enableTopPadding className="min-h-96">
@@ -167,7 +170,7 @@ export default function () {
       <p className="py-2">Enter a character, followed by a command</p>
       <Input
         value={searchQuery}
-        onChange={e => handleOnChange(e)}
+        onChange={(e) => handleOnChange(e)}
         onKeyDown={handleOnKeyDown}
         placeholder="drag fff2"
         className="mb-4"
@@ -177,7 +180,7 @@ export default function () {
         <div>No characters matches the search query</div>
       )}
       {filteredCharList.length > 1 &&
-        filteredCharList.map(char => (
+        filteredCharList.map((char) => (
           <li key={char.id}>
             <Link
               className="text-text-primary no-underline"
@@ -210,5 +213,5 @@ export default function () {
         </p>
       )}
     </ContentContainer>
-  )
+  );
 }

@@ -1,51 +1,51 @@
-import { useMemo } from 'react'
-import { Pencil1Icon } from '@radix-ui/react-icons'
-import { Text } from '@radix-ui/themes'
+import { useMemo } from 'react';
+import { Pencil1Icon } from '@radix-ui/react-icons';
+import { Text } from '@radix-ui/themes';
 import {
   data,
   type HeadersFunction,
   type LoaderFunctionArgs,
   type MetaFunction,
-} from 'react-router'
-import { useLoaderData } from 'react-router'
-import invariant from 'tiny-invariant'
-import { About } from '~/components/About'
-import { Authors } from '~/components/Authors'
-import { ContentContainer } from '~/components/ContentContainer'
-import Nav, { type NavLinkInfo } from '~/components/Nav'
-import { PersonLinkList } from '~/components/PersonLinkList'
-import { ComboEnders } from '~/features/guides/ComboEnders'
-import { Combos } from '~/features/guides/Combos'
-import { DefensiveTips } from '~/features/guides/DefensiveTips'
-import { ExternalResources } from '~/features/guides/ExternalResources'
-import { FrameTraps } from '~/features/guides/FrameTraps'
-import { GuideContext } from '~/features/guides/GuideContext'
-import { GuideNav } from '~/features/guides/GuideNav'
-import { tablesToGuideData } from '~/features/guides/guideUtils.server'
-import { HeatSystem } from '~/features/guides/HeatSystem'
-import { Installments } from '~/features/guides/Installments'
-import { Introduction } from '~/features/guides/Introduction'
-import { KeyMoves } from '~/features/guides/KeyMoves'
-import { Punishers } from '~/features/guides/Punishers'
-import { Stances } from '~/features/guides/Stances'
-import { StrengthsWeaknesses } from '~/features/guides/StrengthsWeaknesses'
-import { WallCombos } from '~/features/guides/WallCombos'
-import { useFrameData } from '~/hooks/useFrameData'
-import { getSheet } from '~/services/googleSheetService.server'
-import { characterGuideAuthors } from '~/services/staticDataService'
-import { type CharacterFrameData } from '~/types/CharacterFrameData'
-import { type Game } from '~/types/Game'
-import { type Move } from '~/types/Move'
-import { type RouteHandle } from '~/types/RouteHandle'
-import { cachified } from '~/utils/cache.server'
-import { compressCommand } from '~/utils/commandUtils'
-import { gameNameMap } from '~/utils/gameNameMap'
-import { getCacheControlHeaders } from '~/utils/headerUtils'
-import { generateMetaTags } from '~/utils/seoUtils'
-import { sheetToSections } from '~/utils/sheetUtils.server'
-import { t8AvatarMap } from '~/utils/t8AvatarMap'
-import { t8GuideImgMap } from '~/utils/t8GuideImgMap'
-import { t8GuideImgSmallMap } from '~/utils/t8GuideImgSmallMap'
+} from 'react-router';
+import { useLoaderData } from 'react-router';
+import invariant from 'tiny-invariant';
+import { About } from '~/components/About';
+import { Authors } from '~/components/Authors';
+import { ContentContainer } from '~/components/ContentContainer';
+import Nav, { type NavLinkInfo } from '~/components/Nav';
+import { PersonLinkList } from '~/components/PersonLinkList';
+import { ComboEnders } from '~/features/guides/ComboEnders';
+import { Combos } from '~/features/guides/Combos';
+import { DefensiveTips } from '~/features/guides/DefensiveTips';
+import { ExternalResources } from '~/features/guides/ExternalResources';
+import { FrameTraps } from '~/features/guides/FrameTraps';
+import { GuideContext } from '~/features/guides/GuideContext';
+import { GuideNav } from '~/features/guides/GuideNav';
+import { tablesToGuideData } from '~/features/guides/guideUtils.server';
+import { HeatSystem } from '~/features/guides/HeatSystem';
+import { Installments } from '~/features/guides/Installments';
+import { Introduction } from '~/features/guides/Introduction';
+import { KeyMoves } from '~/features/guides/KeyMoves';
+import { Punishers } from '~/features/guides/Punishers';
+import { Stances } from '~/features/guides/Stances';
+import { StrengthsWeaknesses } from '~/features/guides/StrengthsWeaknesses';
+import { WallCombos } from '~/features/guides/WallCombos';
+import { useFrameData } from '~/hooks/useFrameData';
+import { getSheet } from '~/services/googleSheetService.server';
+import { characterGuideAuthors } from '~/services/staticDataService';
+import { type CharacterFrameData } from '~/types/CharacterFrameData';
+import { type Game } from '~/types/Game';
+import { type Move } from '~/types/Move';
+import { type RouteHandle } from '~/types/RouteHandle';
+import { cachified } from '~/utils/cache.server';
+import { compressCommand } from '~/utils/commandUtils';
+import { gameNameMap } from '~/utils/gameNameMap';
+import { getCacheControlHeaders } from '~/utils/headerUtils';
+import { generateMetaTags } from '~/utils/seoUtils';
+import { sheetToSections } from '~/utils/sheetUtils.server';
+import { t8AvatarMap } from '~/utils/t8AvatarMap';
+import { t8GuideImgMap } from '~/utils/t8GuideImgMap';
+import { t8GuideImgSmallMap } from '~/utils/t8GuideImgSmallMap';
 
 const navData: NavLinkInfo[] = [
   { link: '../', displayName: 'Frame data' },
@@ -53,44 +53,44 @@ const navData: NavLinkInfo[] = [
   { link: '../antistrat', displayName: 'Anti strats' },
   { link: '../flashcard', displayName: 'Flash card' },
   { link: '', displayName: 'Guide' },
-]
+];
 
 export const headers: HeadersFunction = ({ loaderHeaders }) => {
-  return loaderHeaders || getCacheControlHeaders({ seconds: 60 * 5 })
-}
+  return loaderHeaders || getCacheControlHeaders({ seconds: 60 * 5 });
+};
 
 export const loader = async ({ params, request }: LoaderFunctionArgs) => {
-  const url = new URL(request.url)
-  const isPreview = url.searchParams.get('preview') !== null
+  const url = new URL(request.url);
+  const isPreview = url.searchParams.get('preview') !== null;
 
-  const character = params.character
+  const character = params.character;
   if (!character) {
     throw new Response(null, {
       status: 400,
       statusText: 'Character cant be empty',
-    })
+    });
   }
 
   if (!characterGuideAuthors.T8[character] && !isPreview) {
     throw data('Guide not found', {
       status: 404,
       statusText: 'Not found',
-    })
+    });
   }
 
-  const game: Game = 'T8'
+  const game: Game = 'T8';
 
-  const sheetName = `${character}-guide`
-  const key = `${sheetName}|_|${game}`
+  const sheetName = `${character}-guide`;
+  const key = `${sheetName}|_|${game}`;
 
   const getFreshValue = async () => {
-    const sheet = await getSheet(sheetName, game)
-    const { editUrl, rows } = sheet
-    const sheetSections = sheetToSections(rows)
-    const guideData = tablesToGuideData(sheetSections)
+    const sheet = await getSheet(sheetName, game);
+    const { editUrl, rows } = sheet;
+    const sheetSections = sheetToSections(rows);
+    const guideData = tablesToGuideData(sheetSections);
 
-    return { guideData, editUrl }
-  }
+    return { guideData, editUrl };
+  };
 
   const { guideData, editUrl } = isPreview
     ? await getFreshValue()
@@ -99,12 +99,12 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
         ttl: 1000 * 30,
         staleWhileRevalidate: 1000 * 60 * 60 * 24 * 3,
         getFreshValue,
-      })
+      });
   if (!guideData) {
     throw new Response(
       `Not able to find data for character ${character} in game ${game}`,
       { status: 500, statusText: 'server error' },
-    )
+    );
   }
 
   return data(
@@ -114,8 +114,8 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
         ...getCacheControlHeaders({ seconds: isPreview ? 5 : 60 * 5 }),
       },
     },
-  )
-}
+  );
+};
 
 export const meta: MetaFunction<typeof loader> = ({
   data: loaderData,
@@ -123,8 +123,8 @@ export const meta: MetaFunction<typeof loader> = ({
   matches,
 }) => {
   const frameData = matches.find(
-    m => (m.handle as RouteHandle)?.type === 'frameData',
-  )?.data
+    (m) => (m.handle as RouteHandle)?.type === 'frameData',
+  )?.data;
   if (!frameData) {
     return [
       {
@@ -133,19 +133,20 @@ export const meta: MetaFunction<typeof loader> = ({
       {
         description: `There is no character with the ID of ${params.character}.`,
       },
-    ]
+    ];
   }
-  const { characterName } = frameData as CharacterFrameData
-  const characterId = characterName.toLocaleLowerCase()
-  const author = loaderData?.guideData?.authors?.[0]?.name
-  const authorLink = loaderData?.guideData?.authors?.[0]?.url?.split(' | ')?.[0]
-  const version = characterGuideAuthors.T8[characterId]?.version
+  const { characterName } = frameData as CharacterFrameData;
+  const characterId = characterName.toLocaleLowerCase();
+  const author = loaderData?.guideData?.authors?.[0]?.name;
+  const authorLink =
+    loaderData?.guideData?.authors?.[0]?.url?.split(' | ')?.[0];
+  const version = characterGuideAuthors.T8[characterId]?.version;
   const characterTitle =
-    characterName[0].toUpperCase() + characterName.substring(1)
-  const title = `${characterTitle} Tekken 8 ${version === 'S2' ? 'Season 2 ' : ''}Guide ${author ? `by ${author}` : ''} | TekkenDocs`
-  const description = `An overview of the most important information for ${characterTitle} in Tekken 8. Quickly learn how to play the character by learning key moves, punishers, and combos.`
+    characterName[0].toUpperCase() + characterName.substring(1);
+  const title = `${characterTitle} Tekken 8 ${version === 'S2' ? 'Season 2 ' : ''}Guide ${author ? `by ${author}` : ''} | TekkenDocs`;
+  const description = `An overview of the most important information for ${characterTitle} in Tekken 8. Quickly learn how to play the character by learning key moves, punishers, and combos.`;
 
-  const imageUrl = `/t8/guides/${characterId}-1200.png`
+  const imageUrl = `/t8/guides/${characterId}-1200.png`;
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -180,7 +181,7 @@ export const meta: MetaFunction<typeof loader> = ({
       genre: 'Fighting Game',
       gamePlatform: ['PlayStation 5', 'Xbox Series X|S', 'PC'],
     },
-  }
+  };
 
   const generatedTags =
     generateMetaTags({
@@ -191,15 +192,15 @@ export const meta: MetaFunction<typeof loader> = ({
         url: imageUrl,
       },
       url: `/t8/${characterId}/guide`,
-    }) || []
+    }) || [];
 
   return [
     ...generatedTags,
     {
       'script:ld+json': jsonLd,
     },
-  ]
-}
+  ];
+};
 
 export default function Index() {
   const {
@@ -207,16 +208,16 @@ export default function Index() {
     editUrl,
     guideData,
     game,
-  } = useLoaderData<typeof loader>()
-  const { moves: frameData } = useFrameData()
-  const gameId = game.toLowerCase()
+  } = useLoaderData<typeof loader>();
+  const { moves: frameData } = useFrameData();
+  const gameId = game.toLowerCase();
   const compressedCommandMap = useMemo(() => {
     return frameData.reduce<Record<string, Move>>((prev, current) => {
-      prev[compressCommand(current.command)] = current
-      return prev
-    }, {})
-  }, [frameData])
-  invariant(frameData)
+      prev[compressCommand(current.command)] = current;
+      return prev;
+    }, {});
+  }, [frameData]);
+  invariant(frameData);
 
   const {
     authors,
@@ -243,13 +244,13 @@ export default function Index() {
     stances,
     installments,
     about,
-  } = guideData
+  } = guideData;
   const { top10Moves, notableMoves } = {
     top10Moves: keyMoves?.slice(0, 10),
     notableMoves: keyMoves?.slice(10),
-  }
+  };
 
-  const version = characterGuideAuthors.T8[characterId]?.version
+  const version = characterGuideAuthors.T8[characterId]?.version;
 
   return (
     <GuideContext
@@ -360,5 +361,5 @@ export default function Index() {
         )}
       </ContentContainer>
     </GuideContext>
-  )
+  );
 }

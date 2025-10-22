@@ -1,6 +1,6 @@
-import { Theme } from '@radix-ui/themes'
-import radixStyles from '@radix-ui/themes/styles.css?url'
-import { type LinksFunction, type LoaderFunctionArgs } from 'react-router'
+import { Theme } from '@radix-ui/themes';
+import radixStyles from '@radix-ui/themes/styles.css?url';
+import { type LinksFunction, type LoaderFunctionArgs } from 'react-router';
 import {
   Links,
   Meta,
@@ -11,19 +11,19 @@ import {
   ScrollRestoration,
   type ShouldRevalidateFunction,
   useRouteError,
-} from 'react-router'
+} from 'react-router';
 //import { captureRemixErrorBoundaryError } from '@sentry/remix'
-import tailwindStyleSheetUrl from './tailwind.css?url'
-import { getCacheControlHeaders } from './utils/headerUtils'
+import tailwindStyleSheetUrl from './tailwind.css?url';
+import { getCacheControlHeaders } from './utils/headerUtils';
 
 export const links: LinksFunction = () => {
   return [
     { rel: 'stylesheet', href: tailwindStyleSheetUrl },
     { rel: 'stylesheet', href: radixStyles },
-  ].filter(Boolean)
-}
+  ].filter(Boolean);
+};
 
-export const headers = () => getCacheControlHeaders({ seconds: 60 * 5 })
+export const headers = () => getCacheControlHeaders({ seconds: 60 * 5 });
 
 export const meta: MetaFunction = () => [
   {
@@ -32,26 +32,26 @@ export const meta: MetaFunction = () => [
   {
     description: 'Frame data and usefull resources for Tekken',
   },
-]
+];
 
 export type LoaderData = {
-  url: string
-}
+  url: string;
+};
 export const loader = async ({ request }: LoaderFunctionArgs) => {
   return data({
     url: request.url,
-  })
-}
+  });
+};
 
 export const shouldRevalidate: ShouldRevalidateFunction = () => {
-  return false
-}
+  return false;
+};
 
 export const ErrorBoundary = () => {
-  const error = useRouteError()
+  const error = useRouteError();
   //captureRemixErrorBoundaryError(error)
-  return <div>Something went wrong</div>
-}
+  return <div>Something went wrong</div>;
+};
 
 export default function App() {
   return (
@@ -108,5 +108,5 @@ export default function App() {
         <Scripts />
       </body>
     </html>
-  )
+  );
 }

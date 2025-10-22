@@ -1,4 +1,4 @@
-import { ContentContainer } from '~/components/ContentContainer'
+import { ContentContainer } from '~/components/ContentContainer';
 
 export default function Features() {
   return (
@@ -80,5 +80,5 @@ export default function Features() {
         </p>
       </div>
     </ContentContainer>
-  )
+  );
 }

@@ -1,26 +1,26 @@
-import { useState } from 'react'
-import { PlayIcon } from '@radix-ui/react-icons'
-import cx from 'classix'
-import { Button } from '@/components/ui/button'
-import { MoveVideo } from '~/components/MoveVideo'
-import { type Move } from '~/types/Move'
+import { useState } from 'react';
+import { PlayIcon } from '@radix-ui/react-icons';
+import cx from 'classix';
+import { Button } from '@/components/ui/button';
+import { MoveVideo } from '~/components/MoveVideo';
+import { type Move } from '~/types/Move';
 
 export type ShowVideoButtonProps = {
-  move: Move
-  className?: string
-  autoPlay?: boolean
-  hideFrameData?: boolean
-}
+  move: Move;
+  className?: string;
+  autoPlay?: boolean;
+  hideFrameData?: boolean;
+};
 export const ShowVideoButton = ({
   move,
   className,
   autoPlay,
   hideFrameData,
 }: ShowVideoButtonProps) => {
-  const [showVideo, setShowVideo] = useState(false)
-  const moveHasVideo = !!(move.video || move.ytVideo)
+  const [showVideo, setShowVideo] = useState(false);
+  const moveHasVideo = !!(move.video || move.ytVideo);
   if (!moveHasVideo) {
-    return null
+    return null;
   }
   if (showVideo || autoPlay) {
     return (
@@ -29,7 +29,7 @@ export const ShowVideoButton = ({
         className={className}
         hideFrameData={hideFrameData}
       />
-    )
+    );
   }
   return (
     <div className={cx('flex items-center justify-center', className)}>
@@ -42,5 +42,5 @@ export const ShowVideoButton = ({
         <PlayIcon />
       </Button>
     </div>
-  )
-}
+  );
+};

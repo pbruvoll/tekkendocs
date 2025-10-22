@@ -1,16 +1,16 @@
-import cx from 'classix'
+import cx from 'classix';
 
 export type TrophyProgressProps = {
-  progressPercentage: number
-}
+  progressPercentage: number;
+};
 export const TrophyProgress = ({ progressPercentage }: TrophyProgressProps) => {
-  const opacityClass = progressPercentage < 25 ? 'opacity-30' : ''
-  let tropyIcon = '🥉'
+  const opacityClass = progressPercentage < 25 ? 'opacity-30' : '';
+  let tropyIcon = '🥉';
   if (progressPercentage === 100) {
-    tropyIcon = '🥇'
+    tropyIcon = '🥇';
   } else if (progressPercentage >= 75) {
-    tropyIcon = '🥈'
+    tropyIcon = '🥈';
   }
 
-  return <span className={cx('text-3xl', opacityClass)}>{tropyIcon}</span>
-}
+  return <span className={cx('text-3xl', opacityClass)}>{tropyIcon}</span>;
+};
