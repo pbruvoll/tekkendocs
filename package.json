@@ -18,7 +18,9 @@
     "lint:supress-warnings": "biome lint --diagnostic-level=error",
     "lint:fix": "biome lint --fix",
     "format": "biome format --write",
+    "format-windows": "biome format --line-ending=crlf --write",
     "formatcheck": "biome format .",
+    "formatcheck-windows": "biome format --line-ending=crlf .",
     "validate": "run-p \"test -- --run\" lint typecheck",
     "typecheck": "react-router typegen && tsc"
   },
