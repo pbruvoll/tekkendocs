@@ -15,7 +15,10 @@ export const loader = () => {
       },
     }),
   );
-    return data( { characters: charListMapped }, {
-    headers: getCacheControlHeaders({ seconds: 60 * 5 }),
-  });
+  return data(
+    { characters: charListMapped },
+    {
+      headers: getCacheControlHeaders({ seconds: 60 * 5 }),
+    },
+  );
 };
