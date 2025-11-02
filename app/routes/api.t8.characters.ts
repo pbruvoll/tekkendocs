@@ -1,7 +1,9 @@
+import { data } from 'react-router';
 import { characterInfoT8List } from '~/constants/characterInfoListT8';
+import { getCacheControlHeaders } from '~/utils/headerUtils';
 
 export const loader = () => {
-  const data = characterInfoT8List.map(
+  const charListMapped = characterInfoT8List.map(
     ({ id, displayName, wavuName, aliasList }) => ({
       id,
       displayName,
@@ -13,5 +15,10 @@ export const loader = () => {
       },
     }),
   );
-  return { characters: data };
+  return data(
+    { characters: charListMapped },
+    {
+      headers: getCacheControlHeaders({ seconds: 60 * 5 }),
+    },
+  );
 };
