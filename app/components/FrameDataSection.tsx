@@ -1,6 +1,6 @@
+import { Filter } from 'lucide-react';
 import { useMemo, useState } from 'react';
 import { useSearchParams } from 'react-router';
-import { Filter } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Switch } from '@/components/ui/switch';
 import { orderByKey } from '~/constants/sortConstants';
@@ -63,8 +63,9 @@ export const FrameDataSection = ({
 
   const setFilterValue = (key: string, value: string) => {
     setSearchParams((prev) => {
-      prev.set(key, value);
-      return prev;
+      const newSearchParams = new URLSearchParams(prev);
+      newSearchParams.set(key, value);
+      return newSearchParams;
     });
   };
 
@@ -146,11 +147,7 @@ export const FrameDataSection = ({
 
       <ContentContainer className="flex items-center justify-between gap-4 py-2">
         <div className="flex items-center gap-2">
-          <Switch
-            id="simple-view"
-            checked={isSimpleView}
-            onCheckedChange={setIsSimpleView}
-          />
+          <Switch checked={isSimpleView} onCheckedChange={setIsSimpleView} />
           <label
             htmlFor="simple-view"
             className="cursor-pointer text-sm font-medium"

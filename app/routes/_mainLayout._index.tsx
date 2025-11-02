@@ -1,10 +1,5 @@
 import { Badge, Heading } from '@radix-ui/themes';
-import { data, type MetaFunction } from 'react-router';
-import {
-  Link,
-  type ShouldRevalidateFunction,
-  useLoaderData,
-} from 'react-router';
+import { Link, type MetaFunction } from 'react-router';
 import { TextEffect } from '@/components/core/TextEffect';
 import { CharacterGrid } from '~/components/CharacterGrid';
 import { ContentContainer } from '~/components/ContentContainer';
@@ -14,31 +9,10 @@ import {
   getTekken7Characters,
   getTekken8Characters,
 } from '~/services/staticDataService';
-import { type GamePageData } from '~/types/GamePageData';
 import { getCacheControlHeaders } from '~/utils/headerUtils';
 import { generateMetaTags } from '~/utils/seoUtils';
 import { t7AvatarMap } from '~/utils/t7AvatarMap';
 import { t8AvatarBrandMap256 } from '~/utils/t8AvatarBrandMap256';
-
-type LoaderData = {
-  gamePageDataT7: GamePageData;
-  gamePageDataT8: GamePageData;
-};
-export const loader = async () => {
-  return data<LoaderData>(
-    {
-      gamePageDataT7: { characterInfoList: getTekken7Characters() },
-      gamePageDataT8: { characterInfoList: getTekken8Characters() },
-    },
-    {
-      headers: getCacheControlHeaders({ seconds: 60 * 5 }),
-    },
-  );
-};
-
-export const shouldRevalidate: ShouldRevalidateFunction = () => {
-  return false;
-};
 
 export const meta: MetaFunction = ({ matches }) => {
   return generateMetaTags({
@@ -54,7 +28,8 @@ export const meta: MetaFunction = ({ matches }) => {
 export const headers = () => getCacheControlHeaders({ seconds: 60 * 5 });
 
 export default function Index() {
-  const { gamePageDataT7, gamePageDataT8 } = useLoaderData<typeof loader>();
+  const characterInfoListT7 = getTekken7Characters();
+  const characterInfoListT8 = getTekken8Characters();
   return (
     <ContentContainer enableBottomPadding enableTopPadding>
       <h1 className="sr-only mb-4 text-2xl font-bold">TekkenDocs</h1>
@@ -121,12 +96,10 @@ export default function Index() {
       </Heading>
 
       <CharacterGrid
-        characterCards={gamePageDataT8.characterInfoList.map(
-          ({ id, displayName }) => {
-            const imgSrc = t8AvatarBrandMap256[id];
-            return { name: displayName, imgSrc, url: `/t8/${id}` };
-          },
-        )}
+        characterCards={characterInfoListT8.map(({ id, displayName }) => {
+          const imgSrc = t8AvatarBrandMap256[id];
+          return { name: displayName, imgSrc, url: `/t8/${id}` };
+        })}
       />
 
       <Heading as="h2" mt="7" mb="4" size="5" id="externalResources">
@@ -139,12 +112,10 @@ export default function Index() {
       </Heading>
 
       <CharacterGrid
-        characterCards={gamePageDataT7.characterInfoList.map(
-          ({ id, displayName }) => {
-            const imgSrc = t7AvatarMap[id];
-            return { name: displayName, imgSrc, url: `/t7/${id}` };
-          },
-        )}
+        characterCards={characterInfoListT7.map(({ id, displayName }) => {
+          const imgSrc = t7AvatarMap[id];
+          return { name: displayName, imgSrc, url: `/t7/${id}` };
+        })}
       />
 
       <Heading as="h2" mt="7" mb="4" size="5">

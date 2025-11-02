@@ -1,6 +1,6 @@
-import { useState } from 'react';
 import { PlayIcon } from '@radix-ui/react-icons';
 import cx from 'classix';
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { MoveVideo } from '~/components/MoveVideo';
 import { type Move } from '~/types/Move';
