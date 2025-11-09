@@ -11,6 +11,7 @@ export const FrameDataFilterDialog = ({
   filter,
   setFilterValue,
   removeFilterValue,
+  updateFilterValues,
   addFilterElement,
   removeFilterElement,
   stances,
@@ -49,6 +50,7 @@ export const FrameDataFilterDialog = ({
           transitions={transitions}
           setFilterValue={setFilterValue}
           removeFilterValue={removeFilterValue}
+          updateFilterValues={updateFilterValues}
           addFilterElement={addFilterElement}
           removeFilterElement={removeFilterElement}
         />

@@ -2,6 +2,8 @@ import { Button, Flex, Text } from '@radix-ui/themes';
 import { filterKey, hitLevelValue } from '~/constants/filterConstants';
 import { stanceNameMap, stateNameMap } from '~/constants/stanceNameMap';
 import { type MoveFilter } from '~/types/MoveFilter';
+import { type SearchParamsChanges } from '~/types/SearchParamsChanges';
+import { SearchParamsState } from '~/utils/searchParameState';
 import { RangeSlider } from './RangeSlider';
 
 export type FrameDataFilterSectionProps = {
@@ -11,6 +13,7 @@ export type FrameDataFilterSectionProps = {
   transitions: string[];
   setFilterValue: (key: string, value: string) => void;
   removeFilterValue: (key: string) => void;
+  updateFilterValues: (changes: SearchParamsChanges) => void;
   addFilterElement: (key: string, element: string) => void;
   removeFilterElement: (key: string, element: string) => void;
 };
@@ -19,6 +22,7 @@ export const FrameDataFilterSelection = ({
   filter,
   setFilterValue,
   removeFilterValue,
+  updateFilterValues,
   addFilterElement,
   removeFilterElement,
   stances,
@@ -138,12 +142,14 @@ export const FrameDataFilterSelection = ({
           <Button
             variant={blockFrameMin === 1 ? 'solid' : 'outline'}
             onClick={() => {
-              removeFilterValue(filterKey.BlockFrameMax);
+              const searchParamsState = new SearchParamsState();
+              searchParamsState.remove(filterKey.BlockFrameMax);
               if (blockFrameMin === 1) {
-                removeFilterValue(filterKey.BlockFrameMin);
+                searchParamsState.remove(filterKey.BlockFrameMin);
               } else {
-                setFilterValue(filterKey.BlockFrameMin, '1');
+                searchParamsState.set(filterKey.BlockFrameMin, '1');
               }
+              updateFilterValues(searchParamsState.getChanges());
             }}
           >
             Plus
@@ -151,12 +157,14 @@ export const FrameDataFilterSelection = ({
           <Button
             variant={blockFrameMax === -10 ? 'solid' : 'outline'}
             onClick={() => {
-              removeFilterValue(filterKey.BlockFrameMin);
+              const searchParamsState = new SearchParamsState();
+              searchParamsState.remove(filterKey.BlockFrameMin);
               if (blockFrameMax === -10) {
-                removeFilterValue(filterKey.BlockFrameMax);
+                searchParamsState.remove(filterKey.BlockFrameMax);
               } else {
-                setFilterValue(filterKey.BlockFrameMax, '-10');
+                searchParamsState.set(filterKey.BlockFrameMax, '-10');
               }
+              updateFilterValues(searchParamsState.getChanges());
             }}
           >
             Unsafe
@@ -164,12 +172,14 @@ export const FrameDataFilterSelection = ({
           <Button
             variant={blockFrameMin === -9 ? 'solid' : 'outline'}
             onClick={() => {
-              removeFilterValue(filterKey.BlockFrameMax);
+              const searchParamsState = new SearchParamsState();
+              searchParamsState.remove(filterKey.BlockFrameMax);
               if (blockFrameMin === -9) {
-                removeFilterValue(filterKey.BlockFrameMin);
+                searchParamsState.remove(filterKey.BlockFrameMin);
               } else {
-                setFilterValue(filterKey.BlockFrameMin, '-9');
+                searchParamsState.set(filterKey.BlockFrameMin, '-9');
               }
+              updateFilterValues(searchParamsState.getChanges());
             }}
           >
             Safe
@@ -180,14 +190,24 @@ export const FrameDataFilterSelection = ({
           max={10}
           min={-17}
           onValuesCommit={(values) => {
+            const searchParamsState = new SearchParamsState();
             if (values[0] === undefined) {
-              removeFilterValue(filterKey.BlockFrameMin);
-            } else
-              setFilterValue(filterKey.BlockFrameMin, values[0].toString());
+              searchParamsState.remove(filterKey.BlockFrameMin);
+            } else {
+              searchParamsState.set(
+                filterKey.BlockFrameMin,
+                values[0].toString(),
+              );
+            }
             if (values[1] === undefined) {
-              removeFilterValue(filterKey.BlockFrameMax);
-            } else
-              setFilterValue(filterKey.BlockFrameMax, values[1].toString());
+              searchParamsState.remove(filterKey.BlockFrameMax);
+            } else {
+              searchParamsState.set(
+                filterKey.BlockFrameMax,
+                values[1].toString(),
+              );
+            }
+            updateFilterValues(searchParamsState.getChanges());
           }}
         />
       </section>
@@ -199,12 +219,14 @@ export const FrameDataFilterSelection = ({
           <Button
             variant={hitFrameMin === 0 ? 'solid' : 'outline'}
             onClick={() => {
-              removeFilterValue(filterKey.HitFrameMax);
+              const searchParamsState = new SearchParamsState();
+              searchParamsState.remove(filterKey.HitFrameMax);
               if (hitFrameMin === 0) {
-                removeFilterValue(filterKey.HitFrameMin);
+                searchParamsState.remove(filterKey.HitFrameMin);
               } else {
-                setFilterValue(filterKey.HitFrameMin, '0');
+                searchParamsState.set(filterKey.HitFrameMin, '0');
               }
+              updateFilterValues(searchParamsState.getChanges());
             }}
           >
             Non negative
@@ -212,12 +234,14 @@ export const FrameDataFilterSelection = ({
           <Button
             variant={hitFrameMax === -1 ? 'solid' : 'outline'}
             onClick={() => {
-              removeFilterValue(filterKey.HitFrameMin);
+              const searchParamsState = new SearchParamsState();
+              searchParamsState.remove(filterKey.HitFrameMin);
               if (hitFrameMax === -1) {
-                removeFilterValue(filterKey.HitFrameMax);
+                searchParamsState.remove(filterKey.HitFrameMax);
               } else {
-                setFilterValue(filterKey.HitFrameMax, '-1');
+                searchParamsState.set(filterKey.HitFrameMax, '-1');
               }
+              updateFilterValues(searchParamsState.getChanges());
             }}
           >
             Negative
@@ -228,12 +252,24 @@ export const FrameDataFilterSelection = ({
           max={10}
           min={-10}
           onValuesCommit={(values) => {
+            const searchParamsState = new SearchParamsState();
             if (values[0] === undefined) {
-              removeFilterValue(filterKey.HitFrameMin);
-            } else setFilterValue(filterKey.HitFrameMin, values[0].toString());
+              searchParamsState.remove(filterKey.HitFrameMin);
+            } else {
+              searchParamsState.set(
+                filterKey.HitFrameMin,
+                values[0].toString(),
+              );
+            }
             if (values[1] === undefined) {
-              removeFilterValue(filterKey.HitFrameMax);
-            } else setFilterValue(filterKey.HitFrameMax, values[1].toString());
+              searchParamsState.remove(filterKey.HitFrameMax);
+            } else {
+              searchParamsState.set(
+                filterKey.HitFrameMax,
+                values[1].toString(),
+              );
+            }
+            updateFilterValues(searchParamsState.getChanges());
           }}
         />
       </section>
@@ -246,14 +282,24 @@ export const FrameDataFilterSelection = ({
           max={30}
           min={6}
           onValuesCommit={(values) => {
+            const searchParamsState = new SearchParamsState();
             if (values[0] === undefined) {
-              removeFilterValue(filterKey.StartupFrameMin);
-            } else
-              setFilterValue(filterKey.StartupFrameMin, values[0].toString());
+              searchParamsState.remove(filterKey.StartupFrameMin);
+            } else {
+              searchParamsState.set(
+                filterKey.StartupFrameMin,
+                values[0].toString(),
+              );
+            }
             if (values[1] === undefined) {
-              removeFilterValue(filterKey.StartupFrameMax);
-            } else
-              setFilterValue(filterKey.StartupFrameMax, values[1].toString());
+              searchParamsState.remove(filterKey.StartupFrameMax);
+            } else {
+              searchParamsState.set(
+                filterKey.StartupFrameMax,
+                values[1].toString(),
+              );
+            }
+            updateFilterValues(searchParamsState.getChanges());
           }}
         />
       </section>
@@ -462,13 +508,15 @@ export const FrameDataFilterSelection = ({
           <Button
             variant={numHitsMin === 1 && numHitsMax === 1 ? 'solid' : 'outline'}
             onClick={() => {
+              const searchParamsState = new SearchParamsState();
               if (numHitsMin === 1 && numHitsMax === 1) {
-                removeFilterValue(filterKey.NumHitsMin);
-                removeFilterValue(filterKey.NumHitsMax);
+                searchParamsState.remove(filterKey.NumHitsMin);
+                searchParamsState.remove(filterKey.NumHitsMax);
               } else {
-                setFilterValue(filterKey.NumHitsMin, '1');
-                setFilterValue(filterKey.NumHitsMax, '1');
+                searchParamsState.set(filterKey.NumHitsMin, '1');
+                searchParamsState.set(filterKey.NumHitsMax, '1');
               }
+              updateFilterValues(searchParamsState.getChanges());
             }}
           >
             1
@@ -476,13 +524,15 @@ export const FrameDataFilterSelection = ({
           <Button
             variant={numHitsMin === 2 && numHitsMax === 2 ? 'solid' : 'outline'}
             onClick={() => {
+              const searchParamsState = new SearchParamsState();
               if (numHitsMin === 2 && numHitsMax === 2) {
-                removeFilterValue(filterKey.NumHitsMin);
-                removeFilterValue(filterKey.NumHitsMax);
+                searchParamsState.remove(filterKey.NumHitsMin);
+                searchParamsState.remove(filterKey.NumHitsMax);
               } else {
-                setFilterValue(filterKey.NumHitsMin, '2');
-                setFilterValue(filterKey.NumHitsMax, '2');
+                searchParamsState.set(filterKey.NumHitsMin, '2');
+                searchParamsState.set(filterKey.NumHitsMax, '2');
               }
+              updateFilterValues(searchParamsState.getChanges());
             }}
           >
             2
@@ -492,12 +542,14 @@ export const FrameDataFilterSelection = ({
               numHitsMin === 3 && numHitsMax === undefined ? 'solid' : 'outline'
             }
             onClick={() => {
-              removeFilterValue(filterKey.NumHitsMax);
+              const searchParamsState = new SearchParamsState();
+              searchParamsState.remove(filterKey.NumHitsMax);
               if (numHitsMin === 3 && numHitsMax === undefined) {
-                removeFilterValue(filterKey.NumHitsMin);
+                searchParamsState.remove(filterKey.NumHitsMin);
               } else {
-                setFilterValue(filterKey.NumHitsMin, '3');
+                searchParamsState.set(filterKey.NumHitsMin, '3');
               }
+              updateFilterValues(searchParamsState.getChanges());
             }}
           >
             3+
