@@ -7,6 +7,7 @@ import { orderByKey } from '~/constants/sortConstants';
 import { sortOptions } from '~/constants/sortOptions';
 import { type Move } from '~/types/Move';
 import { type MoveFilter } from '~/types/MoveFilter';
+import { type SearchParamsChanges } from '~/types/SearchParamsChanges';
 import { getFilterFromParams } from '~/utils/filterUtils';
 import { filterMoves, getMoveFilterTypes } from '~/utils/frameDataUtils';
 import {
@@ -76,6 +77,20 @@ export const FrameDataSection = ({
     });
   };
 
+  const updateFilterValues = (changes: SearchParamsChanges) => {
+    setSearchParams((prev) => {
+      const newSearchParams = new URLSearchParams(prev);
+      changes.set.forEach(({ key, value }) => {
+        newSearchParams.set(key, value);
+      });
+      changes.remove.forEach((key) => {
+        newSearchParams.delete(key);
+      });
+      console.log('Updated search params:', newSearchParams.toString());
+      return newSearchParams;
+    });
+  };
+
   const addFilterElement = (key: string, element: string) => {
     setSearchParams((prev) => {
       prev.append(key, element);
@@ -139,6 +154,7 @@ export const FrameDataSection = ({
             transitions={moveTypes.transitions}
             removeFilterValue={removeFilterValue}
             setFilterValue={setFilterValue}
+            updateFilterValues={updateFilterValues}
             addFilterElement={addFilterElement}
             removeFilterElement={removeFilterElement}
           />
