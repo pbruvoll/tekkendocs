@@ -86,7 +86,6 @@ export const FrameDataSection = ({
       changes.remove.forEach((key) => {
         newSearchParams.delete(key);
       });
-      console.log('Updated search params:', newSearchParams.toString());
       return newSearchParams;
     });
   };
