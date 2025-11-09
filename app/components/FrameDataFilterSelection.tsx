@@ -143,11 +143,11 @@ export const FrameDataFilterSelection = ({
             variant={blockFrameMin === 1 ? 'solid' : 'outline'}
             onClick={() => {
               const searchParamsState = new SearchParamsState();
-              searchParamsState.removeFilterValue(filterKey.BlockFrameMax);
+              searchParamsState.remove(filterKey.BlockFrameMax);
               if (blockFrameMin === 1) {
-                searchParamsState.removeFilterValue(filterKey.BlockFrameMin);
+                searchParamsState.remove(filterKey.BlockFrameMin);
               } else {
-                searchParamsState.setFilterValue(filterKey.BlockFrameMin, '1');
+                searchParamsState.set(filterKey.BlockFrameMin, '1');
               }
               updateFilterValues(searchParamsState.getChanges());
             }}
@@ -173,11 +173,11 @@ export const FrameDataFilterSelection = ({
             variant={blockFrameMin === -9 ? 'solid' : 'outline'}
             onClick={() => {
               const searchParamsState = new SearchParamsState();
-              searchParamsState.removeFilterValue(filterKey.BlockFrameMax);
+              searchParamsState.remove(filterKey.BlockFrameMax);
               if (blockFrameMin === -9) {
-                searchParamsState.removeFilterValue(filterKey.BlockFrameMin);
+                searchParamsState.remove(filterKey.BlockFrameMin);
               } else {
-                searchParamsState.setFilterValue(filterKey.BlockFrameMin, '-9');
+                searchParamsState.set(filterKey.BlockFrameMin, '-9');
               }
               updateFilterValues(searchParamsState.getChanges());
             }}
