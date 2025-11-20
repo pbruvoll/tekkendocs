@@ -35,6 +35,7 @@ export type MoveFilter = {
   video?: boolean;
   noVideo?: boolean;
   chip?: boolean;
+  counterHit?: boolean;
   forcesCrouchOnBlock?: boolean;
   forcesCrouchOnHit?: boolean;
   searchQuery?: string;

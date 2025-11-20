@@ -207,6 +207,13 @@ export const forcesCrouchOnHit = (move: Move) => {
   return /\dc/.test(move.hit || '') || /\dc/.test(move.counterHit || '');
 };
 
+export const isCounterHitMove = (move: Move) => {
+  if (move.counterHit && move.counterHit !== move.hit) return true;
+  if (move.command.startsWith('CH ') || move.command.startsWith('CH.'))
+    return true;
+  return false;
+};
+
 export const hasTag = (tag: string, move: Move) => {
   return move.tags?.[tag] !== undefined;
 };
@@ -471,6 +478,7 @@ export const filterMoves = (moves: Move[], filter: MoveFilter | undefined) => {
     [filter.recoverFullCrouch, recoverFullCrouch],
     [filter.forcesCrouchOnBlock, forcesCrouchOnBlock],
     [filter.forcesCrouchOnHit, forcesCrouchOnHit],
+    [filter.counterHit, isCounterHitMove],
     [filter.powerCrush, (move: Move) => hasTag('pc', move)],
     [filter.highCrush, (move: Move) => hasTag('cs', move)],
     [filter.lowCrush, (move: Move) => hasTag('js', move)],
