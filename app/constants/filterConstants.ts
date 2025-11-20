@@ -37,6 +37,7 @@ export const filterKey = {
   RecoverFullCrouch: 'recoverFullCrouch',
   ForcesCrouchOnBlock: 'forcesCrouchOnBlock',
   ForcesCrouchOnHit: 'forcesCrouchOnHit',
+  CounterHit: 'counterHit',
 } as const;
 
 export const hitLevelValue = {

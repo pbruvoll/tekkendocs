@@ -68,6 +68,7 @@ export const FrameDataFilterSelection = ({
     forcesCrouchOnBlock,
     forcesCrouchOnHit,
     recoverFullCrouch,
+    counterHit,
   } = filter;
   return (
     <Flex direction="column" gap="5">
@@ -369,6 +370,7 @@ export const FrameDataFilterSelection = ({
                 forcesCrouchOnHit,
                 'Forces crouch on hit or counter',
               ],
+              [filterKey.CounterHit, counterHit, 'Counter hit'],
               [filterKey.Spike, spike, 'Spike'],
               [filterKey.FloorBreak, floorBreak, 'Floor break'],
               [filterKey.Elbow, elbow, 'Elbow'],
