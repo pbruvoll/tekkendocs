@@ -14,6 +14,7 @@ import {
   getSortByQueryParamValue,
   getSortSettings,
 } from '~/utils/sortingUtils';
+import { type FrameDataViewMode, useUserSettings } from '~/utils/userSettings';
 import { ContentContainer } from './ContentContainer';
 import { FrameDataFilterDialog } from './FrameDataFilterDialog';
 import { FrameDataTable } from './FrameDataTableV2';
@@ -28,13 +29,13 @@ export const FrameDataSection = ({
   hasMultipleCharacters,
 }: FrameDataSectionProps) => {
   const [searchParams, setSearchParams] = useSearchParams();
+  const { frameDataViewMode, setFrameDataViewMode } = useUserSettings();
   const sortSettings = getSortSettings(searchParams);
   const sortByQueryParamValue = sortSettings
     ? getSortByQueryParamValue(sortSettings)
     : '';
 
   const [searchQuery, setSearchQuery] = useState<string>('');
-  const [isSimpleView, setIsSimpleView] = useState<boolean>(false);
 
   const filter: MoveFilter = useMemo(() => {
     const filterFromParams = getFilterFromParams(searchParams);
@@ -162,7 +163,12 @@ export const FrameDataSection = ({
 
       <ContentContainer className="flex items-center justify-between gap-4 py-2">
         <div className="flex items-center gap-2">
-          <Switch checked={isSimpleView} onCheckedChange={setIsSimpleView} />
+          <Switch
+            checked={frameDataViewMode === 'simple'}
+            onCheckedChange={(checked) =>
+              setFrameDataViewMode(checked ? 'simple' : 'default')
+            }
+          />
           <label
             htmlFor="simple-view"
             className="cursor-pointer text-sm font-medium"
@@ -172,7 +178,7 @@ export const FrameDataSection = ({
         </div>
       </ContentContainer>
 
-      {isSimpleView ? (
+      {frameDataViewMode === 'simple' ? (
         <div className="mt-3">
           <SimpleMovesTable
             moves={filteredMoves}
