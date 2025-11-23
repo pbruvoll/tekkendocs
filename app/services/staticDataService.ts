@@ -181,6 +181,7 @@ export const characterGuideAuthors: Record<
     hwoarang: { author: 'Kicking Macine', version: 'S2' },
     jin: { author: 'Bok Dibi', version: 'S2' },
     jun: { author: 'Pagani', version: 'S2' },
+    lars: { author: 'KayDash', version: 'S2' },
     lee: { author: 'Super Akouma', version: 'S2' },
     lidia: { author: 'Leemishima', version: 'S2' },
     lili: { author: 'DewGlider', version: 'S2' },
