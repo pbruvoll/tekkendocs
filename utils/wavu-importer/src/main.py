@@ -22,12 +22,14 @@ character_list = []
 def create_json_movelists(character_list_path: str) -> List[character.Character]:
     with open(character_list_path) as file:
         all_characters = json.load(file)
+
         cha_list = []
 
         for character_meta in all_characters:
             print("importing " + character_meta["name"])
             # if(character_meta["name"] != "azucena") :
             #     continue
+            character_meta["name"] = character_meta["name"].lower().replace(" ", "_")
             cha = wavu_importer.import_character(character_meta)
             cha.export_movelist_as_data()
             cha_list.append(cha)

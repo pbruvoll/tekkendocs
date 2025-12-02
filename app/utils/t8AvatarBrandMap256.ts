@@ -26,6 +26,7 @@ import leo from '~/images/t8/avatars/leo-brand-256.webp';
 import leroy from '~/images/t8/avatars/leroy-brand-256.webp';
 import lidia from '~/images/t8/avatars/lidia-brand-256.webp';
 import lili from '~/images/t8/avatars/lili-brand-256.webp';
+import miary from '~/images/t8/avatars/miary-brand-256.webp';
 import mokujin from '~/images/t8/avatars/mokujin-brand-256.webp';
 import nina from '~/images/t8/avatars/nina-brand-256.webp';
 import panda from '~/images/t8/avatars/panda-brand-256.webp';
@@ -70,6 +71,7 @@ export const t8AvatarBrandMap256: Record<string, string> = {
   lili,
   mokujin,
   raven,
+  miary,
   nina,
   reina,
   panda,

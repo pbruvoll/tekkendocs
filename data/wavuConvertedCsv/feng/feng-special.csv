@@ -16,13 +16,13 @@ H.b+1;h;20;i10~11;-8;+36d (+28);;"* Balcony Break
 H.f,F+1+2*;m;30;i39;+11;+22a (+12);;"* Balcony Break
 * Guard Break
 * Partially uses remaining Heat Time";bbr;;Feng-H.f,F+1+2*;Essence of Nian Zhang Mie Ba;;;
+H.2+3;m,m;22,26;i21,24;+12, +24 on STC at Wall, +19 at Wall;+30d (-6);;"Heat Smash
+* Chip damage on block
+* Transitions to STC on block, can cancel with b, change to BKP with b, in STC stance.";hs chp;;Feng-H.2+3;Yinglong Mountain Crusher;;;
 H.2+3;m,t;20,35;i20~21;+12;+0;;"* Heat Smash
 * Balcony Break
 * 7 chip damage on block
 * Transitions to STC on block, can cancel with b at +7 on block";hs bbr;;Feng-H.2+3;Yinglong Mountain Crusher;;;
-H.2+3;m,m;22,26;i21,24;+12, +24 on STC at Wall, +19 at Wall;+30d (-6);;"Heat Smash
-* Chip damage on block
-* Transitions to STC on block, can cancel with b, change to BKP with b, in STC stance.";hs chp;;Feng-H.2+3;Yinglong Mountain Crusher;;;
 R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Removes Recoverable Health
 * Reversal Break
@@ -80,10 +80,10 @@ f+3,2;m, h;10, 17;i21, i21~22;-3;+8;+43d (+35);"* Combo from 1st hit
 * Move can be delayed";;;Feng-f+3,2;Piercing Dragon;;;File:t8-p2-feng-f+3,2.mp4
 f+3,4;m, m;10, 15;i21, i23~24;-16;+33a (+23);;"* Combo from 1st hit
 * Tornado
-* Low crush 21";trn js21;;Feng-f+3,4;Climbing Dragon;;;File:t8-p2-feng-f+3,4.mp4
+* Low crush 21";trn js21;;Feng-f+3,4;Climbing Dragon;;;
 f+3,4;m, m;10, 15;i21, i23~24;-16;+33a (+23);;"* Combo from 1st hit
 * Tornado
-* Low crush 21";trn js21;;Feng-f+3,4;Climbing Dragon;;;
+* Low crush 21";trn js21;;Feng-f+3,4;Climbing Dragon;;;File:t8-p2-feng-f+3,4.mp4
 f+4;h;19;i18~19;-9;+52a;;"* Good left sidestep tracking
 * Transition to -5 +56a BT with B";;BT;Feng-f+4;;;;
 f+4,2;h, m;19, 16;i18~19, i24~25;-14;+70a (+54);;"* Combo from 1st hit
@@ -163,8 +163,7 @@ b+2,3,4,2;m, l, m, M;13, 6, 13, 22;i17, ,i24~25;-6;+4;;"* Combo from 3rd hit
 b+3;m;21;i22~23;+4;+6;+10d;"* 4 chip damage on block
 * 6 chip damage on block in heat
 * Transition into +6 +8 +12d CD on hit or block with df";;;Feng-b+3;Chin Breaker;;;File:t8-p2-feng-b+3.mp4
-b+3~4;;;;;;;"* Transitions to BT
-* Enter STC with F";;STC,BT;Feng-b+3~4;Zhuan Shen Huan Wu;BT;;File:t8-p2-feng-b+3~4.mp4
+b+3~4;;;;;;;* Transitions to BT;;BT;Feng-b+3~4;Zhuan Shen Huan Wu;BT;;File:t8-p2-feng-b+3~4.mp4
 b+4;m;10;i12~13;-10;+2;;;;;Feng-b+4;Fish Hook;;;File:t8-p2-feng-b+4.mp4
 b+4,2;m, h;10, 19;i12~13, i22;-6;+3;+20cg;"* Balcony Break on CH
 * Combo from 1st hit with 7F delay
@@ -199,9 +198,9 @@ uf+4;m;13;i15~17;-13;+33a (+23);;"* Alternate input with uf or u
 * Low crush 9";js9;;Feng-uf+4;Soaring Eagle;;;File:t8-p2-feng-uf+4.mp4
 uf+4;m;13;i15~17;-13;+33a (+23);;"* Alternate input with uf or u
 * Low crush 9";js9;;Feng-uf+4;Soaring Eagle;;;
-uf+3+4;M,h,h;10,10,7;i24,4,3;-14;+25a (+18);;* High crush 6~24Low crush 25;cs6~24js25;;Feng-uf+3+4;;;;
 uf+3+4;m,h,h;10,10,7;i24,4,3;-14;+25a (+18);;* High crush 6~24Low crush 25;cs6~24js25;;Feng-uf+3+4;;;;
-uf+3+4,3;M,h,h, h;10,10,7, 11;i24,4,3, i17~18;-6;+70a (+54);;"* Balcony Break
+uf+3+4;M,h,h;10,10,7;i24,4,3;-14;+25a (+18);;* High crush 6~24Low crush 25;cs6~24js25;;Feng-uf+3+4;;;;
+uf+3+4,3;m,h,h, h;10,10,7, 11;i24,4,3, i17~18;-6;+70a (+54);;"* Balcony Break
 * Tornado
 * Combo from 1st hit
 * causes 1st hit not to crush";bbr trn;;Feng-uf+3+4,3;Assassin's Bow;;;File:t8-p2-feng-uf+3+4,3.mp4
@@ -223,11 +222,11 @@ f,F+1+2*;m;30;i39;+6;+22a (+12);;"* Balcony Break
 * Becomes  Essence of Nian Zhang Mie Ba in Heat";bbr;;Feng-f,F+1+2*;Nian Zhang Mie Ba (charged);;;
 qcf;;;;;;;"* D,df to enter crouching state
 * High crush";cs;crouching;Feng-qcf;Lingering Shadow;;;File:t8-p2-feng-qcf.mp4
+qcf+1;l;23;i22~23;-14;+2;+31a;"Head
+* High crush 6";cs6;;Feng-qcf1;Landslide;;;
 qcf+1;l;18;i18~19;-14;+0;+12g;"* Head
 * Recover in FC with D
 * High crush 6";cs6;;Feng-qcf1;Landslide;;;File:t8-p2-feng-qcf1.mp4
-qcf+1;l;23;i22~23;-14;+2;+31a;"Head
-* High crush 6";cs6;;Feng-qcf1;Landslide;;;
 qcf+2;m;25;i18~19;-14;+67a (+51);;* Tornado;trn;;Feng-qcf2;Mountain Crusher;;;File:t8-p2-feng-qcf2.mp4
 qcf+1+2;m;25;i16~17;0c;+7c;+13;Head;;;Feng-qcf1+2;Yan Wang's Wrath;;;File:t8-p2-feng-qcf1+2.mp4
 qcf+3+4;;;;;;;Transitions to STC;;;Feng-qcf3+4;;;;

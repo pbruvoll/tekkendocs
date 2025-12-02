@@ -14,9 +14,11 @@ H.2+3;m;50;i15~16;+9;-3d;;"* Heat Smash
 * Floor Break
 * Balcony Break
 * Alternate input: H.HBS.2+3
-* Transition to +6 ROL with F on block only
+* Transition to +8 ROL with F on block only
 * Transition to +13g HBS with D or 3+4 on block only
 * 9 chip damage on block
+* Floor breaks if 1st hit connects, or if 2nd hit connects on airborne opponent
+* Balcony breaks if only 2nd hit connects on standing opponent
 * Low crush";hs fbr bbr js;ROL,HBS;Panda-H.2+3;Panda Super Attack;;;
 R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Removes Recoverable Health
@@ -85,10 +87,14 @@ df+3,2;m, h;13, 24;i16, i27~28;-5;+22a;;"* Balcony Break on airborne hit
 * 9 chip damage on block";;;Panda-df+3,2;Honey Trap;;;File:t8-p2-panda-df+3,2.mp4
 df+4;m;15;i12;-4;+7;;;;;Panda-df+4;;;;
 d+1;sl;5;i10;-5;+6;;"* Transition to Standing with f
+* +6c on crouching hit
 * High crush 4~";cs4~;FC;Panda-d+1;Crouch Jab;r24 FC;;
-d+2;sl;8;i11;-4;+7;;* High crush 4~;cs4~;FC;Panda-d+2;Crouch Straight;r23 FC;;
-d+3;L;12;i20;-17;-6;;* High crush 4~;cs4~;FC;Panda-d3;Crouch Spin Kick;r36 FC;;
-d+4;l;10;i16;-15;-4;;* High crush 4~;cs4~;FC;Panda-d+4;Crouch Shin Kick;r34 FC;;
+d+2;sl;8;i11;-4;+7;;"* +7c on crouching hit
+* High crush 4~";cs4~;FC;Panda-d+2;Crouch Straight;r23 FC;;
+d+3;L;12;i20;-17;-6;;"* -6c on crouching hit
+* High crush 4~";cs4~;FC;Panda-d3;Crouch Spin Kick;r36 FC;;
+d+4;l;10;i16;-15;-4;;"* -4c on crouching hit
+* High crush 4~";cs4~;FC;Panda-d+4;Crouch Shin Kick;r34 FC;;
 d+1+2;M;23;i14~15;-15;+13d (+3);;"* Balcony Break
 * 27 damage on clean hit";bbr;;Panda-d+1+2;Hip Smash;;;File:t8-p2-panda-d+1+2.mp4
 d+3+4;sp;;;;;;"* Alternative input: db+3+4
@@ -228,7 +234,8 @@ SS.1+2;m;23;i22~23;-3;+6c;;"* 9 chip damage
 FC.1;l;12;i19~21;-8;+2;;;;;Panda-FC.1;Watch Your Feet;;;File:t8-p2-panda-fc.1.mp4
 FC.1+2;sp;;N/A / i26~i31 Heat;+1~+6 / -6~-1 HBS;+7~+12 / 0~+5 HBS;;"* Transition to ROL
 * Becomes Special Mid attack during Heat (partially uses remaining Heat time)";;ROL;Panda-FC.1+2;Bear Roll;;;
-FDFA.1+2;l;10;i14~16;-12;+6;+6;* Transition to HBS;;HBS;Panda-FDFA.1+2;Bear Butterfly;;;
+FDFA.1+2;l;10;i14~16;-12;+6;+6;"* Transition to HBS
+* Move is airborne, requires strong parry";;HBS;Panda-FDFA.1+2;Bear Butterfly;;;
 FUFA.1+2;m;15;i17~19;-2 (-2);+6 (+6);+6 (+6);* Transition to HBS (Cannot cancel);;HBS;Panda-FUFA.1+2;Bear Backstroke;;;
 FUFT.d+1+2;m;21;i30;+17;+37a;+37a;* Transition to SIT (Cannot cancel);;SIT;Panda-FUFT.d+1+2;Get Up Punch;;;
 HBS.1;m;10;i12~13;-13;+2;+12;;;;Panda-HBS.1;;;;
@@ -259,7 +266,7 @@ HBS.df+1;m;23;i25~27;-7;+20a (+11);;"* Homing
 * Strong Aerial Tailspin
 * 9 chip damage";hom bbr;;Panda-HBS.df+1;Hornet Buster;;;
 HBS.df+2;m;20;i15~16;-17;+35a (+25);;* Tornado;trn;;Panda-HBS.df+2;Big Tree;;;File:t8-p2-panda-hbs.df+2.mp4
-HBS.d+1+2;m;22;i16~20;-3;+4;+76(+60);"* Tornado
+HBS.d+1+2;m;22;i16~20;-3;+4;+76a (+60);"* Tornado
 * Transition to HBS
 * Tornado on CH only";trn;HBS;Panda-HBS.d+1+2;Frolicking Bear;;;File:t8-p2-panda-hbs.d+1+2.mp4
 HBS.d+3+4;sp;;;;;;* Transition to FDFA;;FDFA;Panda-HBS.d+3+4;Hunting to Play Dead;;;File:t8-p2-panda-hbs.d+3+4.mp4
