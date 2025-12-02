@@ -33,7 +33,9 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Restores 2 health and 2 recoverable on hit";;IZU;Jun-1,1;Suikei > Izumo Smash;r28 IZU;;File:t8-p2-jun-1,1.mp4
 1,2;h, h;5, 8;i10, i16;-3;+6;;"* Jail from 1st attack with 2f delay
 * Combo from 1st hit with 2f delay
-* Enter SS +1 +10g r16 with u or d";;SS;Jun-1,2;Spear Step;r24;;File:t8-p2-jun-1,2.mp4
+* Transition to r16/r30? SS with u_d (+1/-13, +10g/-4?)
+** r16 when attacking in SS stance
+** r30? when exiting SS stance";;/;Jun-1,2;Spear Step;r24;;File:t8-p2-jun-1,2.mp4
 1,2,2;h, h, h;5, 8, 12;i10, ,i16~17;+4;+11;+20c;"* Homing
 * Combo from 2nd hit
 * Jail from 2nd block with 1f delay
@@ -95,11 +97,15 @@ f+2,1+2;M, M;20, 20;i17~18, i29~32;-9;+32a (+17);;"* Heat Engager
 f+3;m;13;i16;-9;+7;;"* Enter SS -16 +14g r21 with u_d
 * r21 when attacking after SS
 * r35 when blocking after SS";;SS;Jun-f+3;;r28;;
-f+3,2;m, h;13, 17;i16, i20~21;+6;+11;+20c;"* Homing
-* Combo from 1st hit with 5f delay
+f+3,2;m, h;13, 17;i16, i20~21;+4;+11;+20c;"* Homing
+* Combo from 1st hit with 10F delay
+* Move can be delayed by 5F
+* Input can be delayed by 10F
 * Restores 2 health on hit";hom;IZU;Jun-f+3,2;Kanbashira > Izumo Strike;r39 IZU;;File:t8-p2-jun-f+3,2.mp4
 f+3,4;m, M;13, 22;i16, i20~22;-13~-11;+28a (+13);;"* Tornado
-* Combo from 1st hit with 5f delay";trn;;Jun-f+3,4;Double Kanbashira;r35;;File:t8-p2-jun-f+3,4.mp4
+* Combo from 1st hit with 10F delay
+* Move can be delayed by 5F
+* Input can be delayed by 10F";trn;;Jun-f+3,4;Double Kanbashira;r35;;File:t8-p2-jun-f+3,4.mp4
 f+4;h;21;i19~21;+3~+5;+13~+15;;"* Balcony Break (airborne)
 * Homing";hom;;Jun-f+4;Getsukankyaku;r23;;File:t8-p2-jun-f+4.mp4
 f+1+2;h;0;i12;+2;+26g;+23;"* Balcony Break (airborne)
@@ -142,7 +148,8 @@ d+1+2;M;28;i26;-9;+72a (+56);;"* Tornado
 * Divine Aura: 12 chip damage on block
 * Divine Aura: +4 damage on hit (32)
 * Deals 12 damage to self (8 recoverable)
-* Unparryable";trn chp;;Jun-d+1+2;Kamudo-no-Tsurugi;r32;;File:t8-p2-jun-d+1+2.mp4
+* Unparryable
+* High crush 8~24";trn chp cs8~24;;Jun-d+1+2;Kamudo-no-Tsurugi;r32;;File:t8-p2-jun-d+1+2.mp4
 d+3+4;l,h;5,20;i14 i24~27;-25;+30a (+20);;"* Combo from 1st CH
 * Jail from 1st attack
 * -6 only if 2nd hit is blocked
@@ -243,12 +250,9 @@ uf+4,3;m, m,M;10, 8,20;i16~18, i29 i18;-12;+84a (+68);;"* Tornado
 uf+3+4;m,M;5,21;i20~23 i2~6;-8~-4;+18a;;"* Spike
 * Low crush 9~30";spk js9~30;FC;Jun-uf+3+4;Saiuntsui;r28 FC;;File:t8-p2-jun-uf+3+4.mp4
 1+2+3+4;;;;;;;"* Can't block for 5 seconds
-* CH state on you for 5 seconds ''(Tekken 7 and prior games)''
-* 50% damage increase on the next attack for 5 seconds ''(Tekken 8 season 2 patch onward)''";;;Jun-1+2+3+4;"<div class=""dotlist"">
-
-* Ki Charge
-* Supercharger
-</div>";r55;;File:t8-p2-jun-1+2+3+4.mp4
+* CH state on your next attack for 5 seconds ''(Tekken 7 and prior games)''
+* 10% damage increase on the next attack for 5 seconds ''(Tekken 8 season 2 patch onward)''
+* Attacks taken will be CH for 5 seconds";;;Jun-1+2+3+4;Ki Charge;r55;;File:t8-p2-jun-1+2+3+4.mp4
 UB,b;;;;;;;"Can perform wr3 with input 3
 * Low crush 10~41
 * Floating state 42~44";js10~41 fs42~44;;Jun-UB,b;Back Handspring;;;
@@ -394,11 +398,12 @@ IZU.4,1;L, M;10, 21;i19, i19~20;-14~-13;+14a (+3);;"* Balcony Break
 * Floating state 39~41";bbr js22~38 fs39~41;;Jun-IZU.4,1;Wakeikazuchi - Misogi;r37;;File:t8-p2-jun-izu.4,1.mp4
 IZU.1+2;M;24;i21~22;-12;+19a;;"* Balcony Break
 * Spike
-* Frame advantage is -6 if an attack is absorbed
+* Frame advantage is -6c if an attack is absorbed
 * Power crush 8~20";bbr spk pc8~20;;Jun-IZU.1+2;Mihikarioroshi;r30;;File:t8-p2-jun-izu.1+2.mp4
 IZU.f+1+2;m;21;i16~17;-6;+5;+25;"* Homing
 * Balcony Break (airborne)
-* Only i15 or faster attacks guaranteed on CH";hom;;Jun-IZU.f+1+2;Dianthus Garden;r32;;File:t8-p2-jun-izu.f+1+2.mp4
+* Only i15 or faster attacks guaranteed on CH
+* Jab evasion";hom;;Jun-IZU.f+1+2;Dianthus Garden;r32;;File:t8-p2-jun-izu.f+1+2.mp4
 MIA.1;M;30;i24~25;-9;+72a (+56);;"* Tornado
 * 12 Chip damage on block
 * Deals 9 damage to self (8 recoverable)

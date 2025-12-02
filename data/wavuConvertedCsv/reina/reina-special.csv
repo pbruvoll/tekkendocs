@@ -180,9 +180,9 @@ d+3;sp;;;;;;"* Transitions to UNS (Kou, d)
 * Can execute EWGF or EWGK by inputting 2 or 3 respectively exactly one frame after DF
 * Parry state 5~13";ps5~13;UNS,UNS,WGS;Reina-d+3;Unsoku Kou;;;File:Reina-d+3.mp4
 d+4;l;6;i12;-15;-4;;* High crush 4~;cs4~;FC;Reina-d+4;Crouch Chin Kick;FC;;File:Reina-d+4.mp4
+d+1+2;sp;;;;;;;;;Reina-d+1+2;Heaven's Wrath;;;File:Reina-d+1+2.mp4
 d+1+2;;;;;;;"* Can transition to r14 SEN with input f+3
 * Can transition to r2 WGS with input DF";;SEN,WGS;Reina-d+1+2;Heaven's Wrath;r30;;File:Reina-d+1+2.mp4
-d+1+2;sp;;;;;;;;;Reina-d+1+2;Heaven's Wrath;;;File:Reina-d+1+2.mp4
 db+2;l,l;10,12;i20~21,i9~10;-16;-3;;;;;Reina-db+2;Eisaimon;;;File:Reina-db+2.mp4
 db+4;L;7;i16;-13;-2;+2;;;;Reina-db+4;;;;File:Reina-db+4.mp4
 db+4,1+2;L, m;7, 20;i16, i15;-12;+39d (-19);;"* Balcony Break
@@ -259,7 +259,7 @@ f,n;;;;;;;"* Can transition to WGS with input DF
 * Parry state 2~8";ps2~8;WGS;Reina-f,n;Wind Step;r2;;File:Reina-f,n Wind Step.mp4
 f,n,d,df:2;h;23;i11~12 (~i13);+5;+35a (+25);;* Chip damage when guarded;chp;;Reina-f,n,d,df${justFrame}2;Electric Wind God Fist;r24;;File:Reina-f,n,d,df2.mp4
 f,n,d,df:3;M;23;i15~17;-9;+13a (-4);+23a (+17);"* Balcony Break
-* 4 chip damage on block";bbr;;Reina-f,n,d,df${justFrame}3;Electric War God Kick;r39;;File:Reina-f,n,d,df3.mp4
+* 4 chip damage on block";bbr;FC;Reina-f,n,d,df${justFrame}3;Electric War God Kick;r39 FC;;File:Reina-f,n,d,df3.mp4
 f,f,F+3;m;22;i24~27;+6;+32a (+24);;"* Balcony Break
 * Chip damage when guarded
 * Low crush";bbr chp js;;Reina-f,f,F+3;Ten Chuten-geri;r28;;File:Reina-f,f,F+3.mp4
@@ -304,7 +304,7 @@ OTG.d+4;L;14 (11);i19;-19;-8 / -8a (-16);;22 (17) dmg if done with input OTG.d+4
 OTG.d+4,1;L, L;14 (11), 17 (20);i19, i20~21;-26;-10 / -15a (-23);;"* Blue spark with input OTG.d+4:1 on frames 15-18 for 20 (16) dmg
 * Jails from 1st block
 * Combo from 1st hit";;;Reina-OTG.d+4,1;Totetsu Jyurin;;;File:Reina-OTG.d+4,1.mp4
-SEN.1;m;12;i16;-14;+1;;* Power crush 6~16;pc6~16;;Reina-SEN.1;;r36;;File:Reina-SEN.1.mp4
+SEN.1;m;12;i16;-14;+1;;* Power crush 6~15;pc6~15;;Reina-SEN.1;;r36;;File:Reina-SEN.1.mp4
 SEN.1,2;m, m;12, 25;i16, i26;-16;+21a (+0);;"* Balcony Break
 * Blue spark with input qcf+2 for 5 extra damage
 * Hit-confirmable from 1st hit or if attack was absorbed
@@ -320,15 +320,17 @@ SEN.3;h;22;i12~13;+1;+7;;"* Homing
 * Heat Dash +5, +34a (+27)
 
 * Deals chip damage on block";hom he;;Reina-SEN.3;Sen Kaijo-geri;r26;File:Reina-SEN.3.jpg;File:Reina-SEN.3.mp4
-SEN.4;m;24;i26~27;+4;+12d;;"* Deals chip damage on block
+SEN.4;M;24;i26~27;+4;+12d;;"* Deals chip damage on block
 * Spike
 * Low crush 8~16
 * Floating state 17~19";spk js8~16 fs17~19;;Reina-SEN.4;Kandachi-geri;r26;;File:Reina-SEN.4.mp4
 SEN.1+2;m,m;13,17;i14~15,i12~13;-6 WRA;+31a (+23);;"* Tornado
 * Balcony Break
-* Transitions to WRA after recovery";trn bbr;WRA;Reina-SEN.1+2;Inverse Deva Laser;WRA;;File:Reina-SEN.1+2.mp4
-SEN.3+4;l,h;10,12;i20~21,i35~36;-29, -11;+4;;"* Homing
-* High crush";hom cs;;Reina-SEN.3+4;Yaksha Sweep;;;File:Reina-SEN.3+4.mp4
+* Transitions to r32? WRA after recovery";trn bbr;WRA;Reina-SEN.1+2;Inverse Deva Laser;r32? WRA;;File:Reina-SEN.1+2.mp4
+SEN.3+4;L,h;10,12;i20~21, i35~36;-29/-11;+4;;"* Homing
+* -29 stagger block on 1st block
+* -11 on 2nd block
+* High crush 10~34";hom cs10~34;;Reina-SEN.3+4;Yaksha Sweep;;;File:Reina-SEN.3+4.mp4
 UNS.4;m;23;i18~19;-8;+43a (-15);;"* Balcony Break
 * Heat Engager
 
@@ -358,13 +360,13 @@ WGS.DF+4,4;L, L;6, 16;i16, i17~18;-23;+2;+23a;"* Combo from 1st hit
 * High crush";cs;FC;Reina-WGS.DF+4,4;Spinning Demon;FC;;File:Reina-WGS.DF+4,4.mp4
 WGS.df+3;M;17;i15~17;-13;+13a (-4);+23a (+17);"* Becomes 22dmg Electric War God Kick during Heat (partially uses remaining Heat Time)
 ** 4 chip damage on block
-* 21dmg when performing f,n,d,DF+3/f,n,DF+3 without Heat";;;Reina-WGS.DF+3;War God Kick;r38;;File:Reina-WGS.df+3.mp4
+* 21dmg when performing f,n,d,DF+3/f,n,DF+3 without Heat";;FC;Reina-WGS.DF+3;War God Kick;r38 FC;;File:Reina-WGS.df+3.mp4
 WRA.1;h;12;i12;-4;+8;+14c;"* Homing
 * Deals chip damage on block
 * Transition to SEN (+0/+13/+18c) with input F
 * Transition to UNS (+0/+12/+18c) with u_d
 * Cannot block up to i14 on empty transition on block";hom;SEN,UNS;Reina-WRA.1;;r28;;File:Reina-WRA.1.mp4
-WRA.1,4;h, M;12, 22;i12, i25~26;-9;+9g;;"* Balcony Break
+WRA.1,4;h, M;12, 22;i12, i25~26;-9;+9d;;"* Balcony Break
 * Spike
 * Combo from 1st hit";bbr spk;;Reina-WRA.1,4;Funkei Goma;r40;;File:Reina-WRA.1,4.mp4
 WRA.2;m;30;i15~16;-9;+11a (+2);;"* Balcony Break
@@ -383,7 +385,8 @@ WRA.3,4;m, m;17, 20;i28, i18~19;+6;+17a (+16);;"* Balcony Break
 * Jails from 1st block
 * Combo from 1st hit
 * gives wallsplat at specific distances from the wall
-* can hard wall break if 1st hit connect close to the wall
+* can hard wall break if 1st hit connect close to the wall 
+* Available only on 1st hit or block
 * Low crush 9~36
 * Floating state 37~39";bbr js9~36 fs37~39;WRA;Reina-WRA.3,4;Hell Axle;r31;;File:Reina-WRA.3,4.mp4
 WRA.4;M,M;6,8;i17~18,i13;-10;-10;+7;"* Spike

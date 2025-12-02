@@ -53,10 +53,14 @@ R.df+1+2;M,t;55+;i20;-18;+0d;;"* Rage Art
 2,1,uf;h, m;10, 12;i11, ,;+1;+6;;"* Recover in crouch 
 * Can cancel into Make Some Noise by pressing 1+2 (uf,n,1+2)
 * Low crush 12";js12;FC;Jack-8-2,1,uf;Flying Fortress;r38 FC;;
-2,1,uf+1+2;h, m, m;10, 12, 20;i11, ,i21~22;+5 GMH;+17c GMH;;"* Transition to Gamma Howl on hit or block
-* Can be done from Flying Fortress(uf) with a delayed 1+2 press
+2,1,uf+1+2;h, m, m;10, 12, 20;i11, ,i21~22;+5 GMH;+17c GMH;;"* Strong Aerial Tailspin?
+* Transition to GMH on hit or block
+* Interrupt with i13 from 2nd block
+* Interrupt with i8 from 2nd hit
+* Input can be delayed by 14F
+* Move cannot be delayed
 * 4 chip damage on block
-* Low crush 12";js12;Gamma,GMH;Jack-8-2,1,uf+1+2;Make Some Noise;GMH;;
+* Low crush 12";js12;GMH;Jack-8-2,1,uf+1+2;Make Some Noise;;;
 2,3;h, m;10, 18;i11, i19;-13;+5;+30d (+22);"* Knee
 * Balcony Break on airborne hit
 * Combo from 1st hit
@@ -111,7 +115,7 @@ f+1,2,2*;m, h, m;13, 12, 40;i14, ,i61;-10;+13d (-13);;"* Balcony Break
 f+2;h;22;i10;-12;+5;+32a (+24);"* Tracking notes:
 * Can be sidewalked left at -2 or -1
 * Can be sidestepped right at -4";;;Jack-8-f+2;Pinpoint Assault;r33;File:Jack-8-f2.jpg;File:t8-p2-jack-8-f+2.mp4
-f+4;m;20;i17;-4;+7;+32a (+22);Balcony Break on CH;;;Jack-8-f+4;;;File:Jack-8-4.jpg;File:Jack-8-4.mp4
+f+4;h;20;i17;-4;+7;+32a (+22);* Balcony Break on CH;;;Jack-8-f+4;;;File:Jack-8-4.jpg;File:Jack-8-4.mp4
 f+4~1;h;80;i65;!;+5;;Unblockable;;;Jack-8-f+4~1;Dark Greeting;;File:Jack-8-f4-1.jpg;File:t8-p2-jack-8-f+4~1.mp4
 f+4~1,2;M;30;i15 (66~);+8;+0d;;"* Elbow
 * Floor Break";elb fbr;;Jack-8-f+4~1,2;Sudden Elbow;;File:Jack-8-f4-12.jpg;File:t8-p2-jack-8-f+4~1,2.mp4
@@ -141,7 +145,9 @@ df+1,2,1,2;m, h, h, h;12, 10, 2, 20;i14, ,i9;-18;+35d (-23);;"* Balcony Break
 * On air hit +12 (+5) 
 * Combos from 2nd hit
 * Combos from 1st hit CH";bbr;;Jack-8-df+1,2,1,2;Overdrive;;;File:t8-p2-jack-8-df+1,2,1,2.mp4
-df+1+3;SM;20;i30~49;-11;+0d~+19d;;{{}};;;Jack-8-df+1+3;Body Press;;;File:t8-p2-jack-8-df+1+3.mp4
+df+1+3;SM;20;i30~49;-18c~+1c;+0a~+19a;;"* Transition to 25dmg +3d high attack throw on close range standing hit 
+* -12c~-10c on block on average
+* Low crush 15~?";js15~?;high,FDFA;Jack-8-df+1+3;Body Press;FDFA;;File:t8-p2-jack-8-df+1+3.mp4
 df+2;m;13;i15;-14;+31a (+21);;;;;Jack-8-df+2;Programmed Uppercut;;;File:t8-p2-jack-8-df+2.mp4
 df+2,1;m, h;13, 16 (24);i15, i21;-32;+40a (+22);;"* Transition to GMH with D
 ** (+45a (+27) oH)
@@ -153,7 +159,7 @@ df+2,1*;m, h;13, 22 (32);i15, i35;-46;+69a (+53);;"* Tornado
 ** (+70a (+54) oH))
 * 28 damage with scaling from 1st hit";trn;GMH;Jack-8-df+2,1*;Cosmic Sweeper (charged);;;
 df+3;m;16;i16;-9;+2;;;;;Jack-8-df+3;;;;
-df+3,2;m, h;16, 20;i16, i20;-9;+25d;;Balcony Break;bbr;;Jack-8-df+3,2;Combine Harvester;;;File:t8-p2-jack-8-df+3,2.mp4
+df+3,2;m, h;16, 20;i16, i20;-7;+25d;;Balcony Break;bbr;;Jack-8-df+3,2;Combine Harvester;;;File:t8-p2-jack-8-df+3,2.mp4
 df+4;m;17;i15;-9;+5;+14c;;;;Jack-8-df+4;Mimesis Wrench Kick;;;File:t8-p2-jack-8-df+4.mp4
 df+1+4;L;23;i34;-37;+18d;;"* Homing
 * Alternate input b,db,d,df+1 to power up
@@ -202,7 +208,11 @@ db+4;l;14;i16;-13;-2;;"*
 * High crush 6";cs6;FC;Jack-8-db+4;Big Boot;rFC;;File:t8-p2-jack-8-db+4.mp4
 db+1+2;l,l;8,21;i18;-70;-5d;;* Floor Break;fbr;;Jack-8-db1+2;Megaton Earthquake;;;File:t8-p2-jack-8-db1+2.mp4
 b+1;m;17;i20;-11;+8;;*;;;Jack-8-b+1;;;;
-b+1,2;m, m;17, 17;i20, i26;-14c;+15d;+47a;* Combos from 1st hit;;;Jack-8-b+1,2;Double Biceps;;;File:t8-p2-jack-8-b+1,2.mp4
+b+1,2;m, m;17, 17;i20, i26;-14c;+15d;+47a;"* Combo from 1st hit with 6F delay
+* Combo from 1st CH with 11F delay
+* Interrupt with i8 from 1st block
+* Move can be delayed by 7F
+* Input can be delayed by 11F";;;Jack-8-b+1,2;Double Biceps;;;File:t8-p2-jack-8-b+1,2.mp4
 b+2;m;27;i19;+2;+2a;;"* Heat Engager
 
 * Heat Dash +5, +36a(+26)
@@ -222,20 +232,26 @@ b+2*;m;40;i35;-2;+17a (+9);;"* Heat Engager
 * 16 chip damage on block 
 * Gain GMC on Heat activation";he bbr wc;;Jack-8-b+2*;Piston Gun Assault (charged);;;
 b+3;m;14;i16;-9;+2;;*;;;Jack-8-b+3;;;;
-b+3,2;m, h;14, 13;i16, i22;-4;+1;;"* Transition to GMH with D
+b+3,2;m, h;14, 13;i16, i22;-4;+1;;"* Combo from 1st hit
+* Interrupt with i3 from 1st block
+* Transition to GMH with D
 ** (+0 oB, +5 oH)";;GMH;Jack-8-b+3,2;;;;
 b+3,2,2;m, h, h;14, 13, 20;i16, ,i25;-9;+44d (-14);;"* Balcony Break
+* Interrupt with i5 from 2nd block
 * Can be charged to power up";bbr;;Jack-8-b+3,2,2;Mad Dozer;;;File:t8-p2-jack-8-b+3,2,2.mp4
 b+3,2,2*;m, h, m;14, 13, 40;i16, ,i67;-7;+13d (+5);;"* Balcony Break
 * Wall Crush +3 on block
 
 
 * Gain GMC on hit or block
+* Interrupt with i47? from 2nd block
 * 16 chip damage on block";bbr wc;;Jack-8-b+3,2,2*;Mad Dozer (charged);;;
-b+4;m;16;i13;-13;-2;-2a;*;;;Jack-8-b+4;;;;
-b+4,4;m, M;16, 21;i13, i30;-4c;-8d;;"* Combos from 1st hit CH
-* When comboing from 1st hit: 
-Floor Break";fbr;;Jack-8-b+4,4;Sherman Stomp;;;File:t8-p2-jack-8-b+4,4.mp4
+b+4;m;16;i13;-13;-2;-2s;*;;;Jack-8-b+4;;;;
+b+4,4;m, M;16, 21;i13, i30;-4c;+3d;;"* Combo from 1st CH
+* When comboing from 1st CH: 
+** Floor Break
+** -8d on hit
+* Interrupt with i10 from 1st block";fbr;;Jack-8-b+4,4;Sherman Stomp;;;File:t8-p2-jack-8-b+4,4.mp4
 b+1+2;m;28;i14;-19;-1d (-10);;"* Heat Engager
 
 * Heat Dash +5, +43d(+35)
@@ -318,8 +334,8 @@ f,F+1+2,2;m, m;20, 24;i15, i32;-11;+11a (+2);;"*
 Balcony Break
 * Combos from 1st hit";bbr;;Jack-8-f,F+1+2,2;Cross Cut Blast;;;File:t8-p2-jack-8-f,f+1+2,2.mp4
 f,F+1+2,1+2;m, l;20, 21;i15, i28;-19;+13d;;* High crush;cs;;Jack-8-f,F+1+2,1+2;High and Low Cross Cut;;;File:t8-p2-jack-8-f,f+1+2,1+2.mp4
-f,F+1+4;M (l);25;i21;-82;-88;;"* Low attack on landing 
-(-110 oB, -65 oH)
+f,F+1+4;M (L);25;i21~30 (i31~40);-82~-73;-88~-79;;"* i31~40 Low attack on landing 
+** (-110~-101 oB, -65~-56 oH)
 * Low crush";js;;Jack-8-f,F+1+4;Sliding Attack;;;File:t8-p2-jack-8-f,f+1+4.mp4
 uf,n,2;m;28;i32;-1c;+10c;;"*
 * Low crush";js;;Jack-8-uf,n,2;;;;
@@ -400,15 +416,19 @@ FC.df+3+4*,uf;m;32;i30~35, ;+4;+29d (+21d);;"* Recover in crouch
 * Can cancel into Make Some Noise by pressing 1+2 (uf,n,1+2)
 * Low crush 15";js15;FC;Jack-8-FC.df+3+4*,uf;Flying Fortress;rFC;;
 FC.df+3+4*,uf+1+2;m, m;32, 20;i30~35, i21~22;+5 GMH;+17c GMH;;"* Transition to Gamma Howl on hit or block
-* Combos from 1st hit
-* Can be done from Flying Fortress(uf) with a delayed 1+2 press
+* Combo from 1st hit
+* Interrupt from 1st block with i10?
+* Input can be delayed by 14F
+* Move cannot be delayed
 * 4 chip damage on block
 * Low crush 15";js15;Gamma,GMH;Jack-8-FC.df+3+4*,uf+1+2;Make Some Noise;GMH;;
 FC.df+3+4,uf;m;28;i21, ;-1;+14g;;"* Recover in crouch
 * Can cancel into Make Some Noise by pressing 1+2 (uf,n,1+2)
 * Low crush 15";js15;FC;Jack-8-FC.df+3+4,uf;Flying Fortress;rFC;;
 FC.df+3+4,uf+1+2;m, m;28, 20;i21, i21~22;+5 GMH;+17c GMH;;"* Transition to Gamma Howl on hit or block
-* Can be done from Flying Fortress(uf) with a delayed 1+2 press
+* Interrupt with i15 from 1st block
+* Input can be delayed by 14F
+* Move cannot be delayed
 * 4 chip damage on block
 * Low crush 15";js15;Gamma,GMH;Jack-8-FC.df+3+4,uf+1+2;Make Some Noise;GMH;;
 GMC.1;m;22;i22;-6;+73a (+57);;"* Homing
@@ -463,7 +483,7 @@ GMH.uf;;;js12;;;;"* Recover in crouch
 * Can cancel into Make It Clap by pressing 1+2 (uf,n,1+2)
 * Low crush 12";js12;FC;Jack-8-GMH.uf;Flying Fortress;rFC;;File:t8-p2-jack-8-gmh.uf.mp4
 GMH.uf+1+2;m;20;i21~22;+5 GMH;+17c GMH;;"* Transition to Gamma Howl on hit or block
-* Can be done from Flying Fortress(uf) with a delayed 1+2 press
+* Input can be delayed by 14F
 * 4 chip damage on block
 * Low crush 15";js15;Gamma,GMH;Jack-8-GMH.uf+1+2;Make It Clap;GMH;;
 SIT.1;l;10;i19;-48;-37;;"*

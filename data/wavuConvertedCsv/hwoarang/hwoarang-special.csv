@@ -198,7 +198,8 @@ db+3+4;m!;40;i61~62;;+17a;;"* Also possible during RFF
 b+1;m;15;i15;-14;-1;;* Sidesteps to the right;;;Hwoarang-b+1;Stealth Needle;r36;;
 b+1+3;;;;;+9;;"* Parries high and mid punches. Pressing 4 on successful parry gives Shotgun Shuffle
 * Parry state 5~12?";ps5~12?;;Hwoarang-b+1+3;Parry;;;
-b+1+3,P.4;m,h,h;10,8,10;i15,i8,i9;;+17a;;* Pressing 4 after successful parry;;;Hwoarang-b+1+3,P.4;Shotgun Shuffle;;;
+b+1+3,P.4;m,h,h;10,8,10;i15,i8,i9;;+17a (+8);;"* Balcony Break
+* Pressing 4 after successful parry";bbr;;Hwoarang-b+1+3,P.4;Shotgun Shuffle;;;
 b+2;h;18;i14;-4;+6;+14c;"* Elbow
 * Good right sidestep tracking";elb;;Hwoarang-b+2;Right Back Elbow;r33;;
 b+3;M;17;i16~17;-19;+35a (+25);;* Tornado;trn;;Hwoarang-b+3;Left Plasma Blade;r34;;
@@ -310,8 +311,8 @@ SS.3;m;13;i18~19;-12;-1;+5s;;;;Hwoarang-SS.3;;;;
 SS.3,3;m, h;13, 16;i18~19, i9~10;+3;+14;;"* Jail from 1st block
 * Combo from 1st hit
 * +34a (+27) on 1st CH
-* Shifts to Left Flamingo";;LFS;Hwoarang-SS.3,3;Eruption;LFS;;File:t8-p2-hwoarang-ss.3,3.mp4
-SS.4;l;18;i19~20;-13;+5c;+31a;* Shifts to Right Stance;;RFF;Hwoarang-SS.4;Spinning Trip Kick;RFF;;File:t8-p2-hwoarang-ss.4.mp4
+* Transition to LFS";;LFS,LFS;Hwoarang-SS.3,3;Eruption;LFS;;File:t8-p2-hwoarang-ss.3,3.mp4
+SS.4;l;18;i19~20;-13;+5c;+31a;* Transition to RFF;;RFF,RFF;Hwoarang-SS.4;Spinning Trip Kick;RFF;;File:t8-p2-hwoarang-ss.4.mp4
 (Back to wall).b,b,UB;m;21;i36~38;+0c;+8a;;* Low crush 14?~32?;js14?~32?;;Hwoarang-(Back to wall).b,b,UB;[[Wall Jump Attack]];r30?;;
 BT.3;M;20;i14~16;-13;+38a (+28);;;;;Hwoarang-BT.3;Left Plasma Blade;r46;;
 BT.4;M;20;i14~16;-13;+40a (+30);;* Transition to RFF;;RFF,RFF;Hwoarang-BT.4;Plasma Blade;r44 RFF;;
@@ -328,13 +329,17 @@ LFS.2;m;15;i16;-2;+9;;"* Transition to RFF
 * Links to 10-hit string";;RFF,string,RFF;Hwoarang-LFS.2;Right Backhand;r21? RFF;;File:t8-p2-hwoarang-lfs.2.mp4
 LFS.2,2;m, h;15, 7;i16, i20;+0;+4;+9;Combo from 1st hit;;RFF;Hwoarang-LFS.2,2;2nd Hit;r19 RFF;;
 LFS.2,2,3;m, h, h;15, 7, 10;i16, ,i14~17;-6~-3;-3~+0;;"* Combo from 2nd hit (1st active frame only)
-* Combo from 2nd CH";;BT;Hwoarang-LFS.2,2,3;3rd Hit;r32 BT;;
+* Combo from 2nd CH
+* Interrupt from 2nd block with i3";;BT;Hwoarang-LFS.2,2,3;3rd Hit;r32 BT;;
 LFS.2,2,3,4;m, h, h, L;15, 7, 10, 7;i16, ,i22;-14;-3;;;;;Hwoarang-LFS.2,2,3,4;4th Hit;;;
-LFS.2,2,3,4,3;m, h, h, L, m;15, 7, 10, 7, 7;i16, ,i31;-9;-9;;;;;Hwoarang-LFS.2,2,3,4,3;5th Hit;;;
+LFS.2,2,3,4,3;m, h, h, L, m;15, 7, 10, 7, 7;i16, ,i31;-9;-9;;* Interrupt from 4th block with i13;;;Hwoarang-LFS.2,2,3,4,3;5th Hit;;;
 LFS.2,2,3,4,3,4;m, h, h, L, m, m;15, 7, 10, 7, 7, 8;i16, ,i22~24;-21;-10;;* Combo from 5th hit;;;Hwoarang-LFS.2,2,3,4,3,4;6th Hit;;;
-LFS.2,2,3,4,3,4,4;m, h, h, L, m, m, l;15, 7, 10, 7, 7, 8, 7;i16, ,i19;-27;-16;;;;FC;Hwoarang-LFS.2,2,3,4,3,4,4;7th Hit;FC;;
-LFS.2,2,3,4,3,4,4,4;m, h, h, L, m, m, l, h;15, 7, 10, 7, 7, 8, 7, 10;i16, ,i23;-28;+23a (+13);;;;;Hwoarang-LFS.2,2,3,4,3,4,4,4;8th Hit;r47?;;
-LFS.2,2,3,4,3,4,4,4,4;m, h, h, L, m, m, l, h, m;15, 7, 10, 7, 7, 8, 7, 10, 21 (14);i16, ,i22;-18;-16;;* Airborne combo from 8th hit;;;Hwoarang-LFS.2,2,3,4,3,4,4,4,4;9th Hit;;;
+LFS.2,2,3,4,3,4,4;m, h, h, L, m, m, l;15, 7, 10, 7, 7, 8, 7;i16, ,i19;-27;-16;;"* Interrupt from 6th block with i18
+* Can be sidestepped";;FC;Hwoarang-LFS.2,2,3,4,3,4,4;7th Hit;FC;;
+LFS.2,2,3,4,3,4,4,4;m, h, h, L, m, m, l, h;15, 7, 10, 7, 7, 8, 7, 10;i16, ,i23;-28;+23a (+13);;* Interrupt from 7th block with i3;;;Hwoarang-LFS.2,2,3,4,3,4,4,4;8th Hit;r47?;;
+LFS.2,2,3,4,3,4,4,4,4;m, h, h, L, m, m, l, h, m;15, 7, 10, 7, 7, 8, 7, 10, 21 (14);i16, ,i22;-18;-16;;"* Airborne combo from 8th hit
+* Interrupt from 8th block with i33
+* Can be sidestepped";;;Hwoarang-LFS.2,2,3,4,3,4,4,4,4;9th Hit;;;
 LFS.2,2,3,4,3,4,4,4,4,3;m, h, h, L, m, m, l, h, m, h;15, 7, 10, 7, 7, 8, 7, 10, 21 (14), 42 (21);i16, ,i16~19;+3;+4a (-6);;"* Balcony Break
 * Airborne combo from 8th hit
 * Combo from 9th hit
@@ -621,35 +626,36 @@ hFC.3;L;10;i16;-17;-6;;"* -6c on crouching hit
 * High crush 1~";cs1~;FC;Hwoarang-hFC.3;Crouch Spin Kick;r36 FC;;
 hFC.4;l;6;i12;-15;-4;;"* -4c on crouching hit
 * High crush 1~";cs1~;FC;Hwoarang-hFC.4;Crouch Shin Kick;r34 FC;;
-1+3;th(h);35;i12~14;;;;"* Break: 1 or 2
+1+3;th(h);35;i12~14;-3;-5d;;"* Break: 1 or 2
 * Opponent recovery on hit: FDFT
 * Sideswap on break";;;Hwoarang-1+3;Pickpocket;;;File:t8-p2-hwoarang-1+3.mp4
-2+4;th(h);25;i12~14;;;;"* Spike
+2+4;th(h);25;i12~14;-6;-2d;;"* Floor Break
 * Break: 1 or 2
-* Opponent recovery on hit: FDFT off-axis to the left, sideswap";spk;;Hwoarang-2+4;Falcon Dice Kick;;;File:t8-p2-hwoarang-2+4.mp4
-2+4,B;th(h);40;i12~14;-2;;;"* Break: 2
+* Opponent recovery on hit: FDFT off-axis to the left, sideswap";fbr;;Hwoarang-2+4;Falcon Dice Kick;;;File:t8-p2-hwoarang-2+4.mp4
+2+4,B;th(h);40;i12~14;-2;-6d;;"* Break: 2
 * Opponent recovery on hit: FUFA, sideswap
 * Transition to BT";;BT,BT;Hwoarang-2+4,B;Roll and Choke;BT;;File:t8-p2-hwoarang-b+2+4.mp4
-AIR.ub+3+4;th(m);26;i15~16;;;;"* Break: none
+AIR.ub+3+4;th(m);26;i15~16;;+10d;;"* Break: none
 * Opponent recovery on hit: FUFA, sideswap
 * Also possible during RFF";;;Hwoarang-AIR.ub+3+4;Overhead Kick;;;File:t8-p2-hwoarang-air.ub+3.mp4
-Back throw;th(h);60;i12~14;;;;"* Break: none
+Back throw;th(h);60;i12~14;;+1d;;"* Break: none
 * Opponent recovery on hit: FUFA
 * Also possible during RFF";;;Hwoarang-Back throw;Slaughterhouse;;;
-Left throw;th(h);45;i12~14;;;;"* Break: 1
+Left throw;th(h);45;i12~14;-3;-1d;;"* Break: 1
 * Opponent recovery on hit: FUFT off-axis to the left
 * Also possible during RFF";;;Hwoarang-Left throw;Bring It On;;;
-RFF.1+3;th(h);45;i12;;;;"* Break: 1+2
+RFF.1+3;th(h);45;i12;-6;-5d;;"* Break: 1+2
 * Opponent recovery on hit: FUFA, sideswap";;;Hwoarang-RFF.1+3;Jackknife;;;File:t8-p2-hwoarang-rff.1+3.mp4
-Right throw;th(h);44;i12~14;;;;"* Break: 2
+Right throw;th(h);44;i12~14;-3;+8d;;"* Break: 2
 * Opponent recovery on hit: FDFT off-axis to the right
 * Also possible during RFF";;;Hwoarang-Right throw;Dead-End;;;
-f+2+3;th(h);35;i12;;;;"* Break: 1+2
+f+2+3;th(h);35;i12;+0;+1d;;"* Break: 1+2
 * Opponent recovery on hit: FUFA, sideswap
+* Sideswap on break
 * Possible in RFF, LFS and RFS";;;Hwoarang-f+2+3;Human Cannonball;;;File:t8-p2-hwoarang-f+2+3.mp4
-qcb+3;th(h);45;i11;;;;"* Spike
+qcb+3;th(h);45;i11;-2;-5d;;"* Floor Break
 * Break: 1
-* Opponent recovery on hit: FUFA, sideswap";spk;;Hwoarang-qcb+3;Door Mat;;;File:t8-p2-hwoarang-d,db,b+3.mp4
-uf+1+2;th(h);40;i12;;;;"* Break: 1+2
+* Opponent recovery on hit: FUFA, sideswap";fbr;;Hwoarang-qcb+3;Door Mat;;;File:t8-p2-hwoarang-d,db,b+3.mp4
+uf+1+2;th(h);40;i12;-6;-5d;;"* Break: 1+2
 * Opponent recovery on hit: FUFA
 * Also possible during RFF";;;Hwoarang-uf+1+2;Leg Hook Throw;;;File:t8-p2-hwoarang-uf+1+2.mp4

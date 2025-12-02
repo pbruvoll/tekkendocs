@@ -7,14 +7,19 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * Cannot cause a K.O.
 * Power crush 7~16";hb pc7~16;;Eddy-2+3;Heat Burst;r30;;
 H.3+4;m;20;i20~22;+9;+66a(+50);;"* Tornado
-* Shifts to HSP on block
-* 6 chip damage on block";trn;;Eddy-H.3+4;Guerreiro Explosivo;;;
+* Transition to HSP on block
+* 6 chip damage on block
+* High crush 6~11?
+* Floating state 11?~?
+* Low crush 20~?";trn cs6~11? fs11?~? js20~?;HSP;Eddy-H.3+4;Guerreiro Explosivo;;;
 H.qcf+4;h;45;i22~23;+9;+34a(+8);;"* Balcony Break
 * 13 chip damage on block
-* Shifts to RLX";bbr;;Eddy-H.qcf+4;Rabo de Arraia Liberado;;;
+* Transition to RLX
+* Low crush 14~?";bbr js14~?;RLX,RLX;Eddy-H.qcf+4;Rabo de Arraia Liberado;RLX;;
 H.2+3;m;55;i18~19;+6;+0;;"* Heat Smash
 * Balcony Break
-* Shifts to RLX on block";hs bbr;;Eddy-H.2+3;Caveirinha Zangada;;;
+* Transition to RLX on block
+* Low crush 34~";hs bbr js34~;RLX;Eddy-H.2+3;Caveirinha Zangada;;;
 R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Removes Recoverable Health
 * Reversal Break
@@ -26,9 +31,10 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Power crush 8~";rbr pc8~;;Eddy-R.df+1+2;Enchente de Axé;r39;;
 1;h;5;i10;+1;+8;;Recovers 2f faster on hit or block (t27 r17);;;Eddy-1;Jab;r19;;
 1,2;h, h;5, 12;i10, i10;-3;+8;;"* Jail from 1st attack with 4f delay
-* Enter HSP -5 +6 r27 with F";;HSP;Eddy-1,2;One Two Galopantes;r22;;File:t8-p2-eddy-1,2.mp4
-1,2,3;h, h, h;5, 12, ;i10, ,i24~25;-9;+21a (+11);;"* Balcony Break
-* Combos from 1st hit CH";bbr;;Eddy-1,2,3;One Two Lunging Brush Fire;;;
+* Enter HSP -5 +6 r24 with F";;HSP;Eddy-1,2;One Two Galopantes;r22;;File:t8-p2-eddy-1,2.mp4
+1,2,3;h, h, h;5, 12, 21;i10, ,i24~25;-9;+21a (+11);;"* Balcony Break
+* Combo from 1st or 2nd CH with 4F delay
+* Interrupt from 2nd block with i5";bbr;;Eddy-1,2,3;One Two Lunging Brush Fire;r34;;
 1,2,4;h, h;5, 12;i10, ,;+6;+17;;"* Low crush 7~37
 * Floating state 38~40";js7~37 fs38~40;FC;Eddy-1,2,4;;r45 FC;;
 1,2,4~3;h, h, L;5, 12, 20;i10, ,i32~33;-14c;+18a;;* High crush 32~;cs32~;RLX;Eddy-1,2,4~3;One Two Galopantes > Chute Baixo;r65 RLX;;File:t8-p2-eddy-1,2,4~3.mp4
@@ -44,7 +50,8 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Input can be delayed 14f";bbr;;Eddy-2,1,4;Combo Furacão;r31;;File:t8-p2-eddy-2,1,4.mp4
 2,3;h, m;10, 20;i12, i20~21;-8;+8s;;Combo from 1st hit;;HSP;Eddy-2,3;Batida de Compasso;r26 HSP;;File:t8-p2-eddy-2,3.mp4
 3;m;12;i14~15;-9;+2;;;;;Eddy-3;;r27;;
-3,3;m, m;12, 22;i14~15, i23~25;-3;+8s;;Combo from 1st CH;;HSP;Eddy-3,3;Sincelo;r26 HSP;;File:t8-p2-eddy-3,3.mp4
+3,3;m, m;12, 22;i14~15, i23~25;-3;+8s;;"* Combo from 1st CH
+* Transition to HSP";;HSP,HSP;Eddy-3,3;Sincelo;r26 HSP;;File:t8-p2-eddy-3,3.mp4
 4;m;10;i13~14;-9;+7;;;;;Eddy-4;;r27;;
 4,4;m, m;10, 20;i13~14, i30~31;-7;+12g;;"* Heat Engager
 
@@ -64,7 +71,7 @@ f+2,4;m, l;15, 17;i18, i23~24;-14c;+2;+71a(+55);"* Combo from 1st CH with with 1
 f+3;h;16;i16~18;-5;+7;;Homing;hom;;Eddy-f+3;;r31;;
 f+3,4;h, m;16, 25;i16~18, i29~31;-11~-9;+15a (+6);+32a;"* Balcony Break
 * Combo from 1st hit
-* Cancel to HSP -14 -2 r43 with F on frame 20
+* Cancel to HSP -14 -2 r40 with F on frame 20
 * Floating state 25~46";bbr fs25~46;HSP;Eddy-f+3,4;Combo do Funâmbolo;r33;;File:t8-p2-eddy-f+3,4.mp4
 f+4;m;13;i23~25;-8;+8c;;"Spike
 * Floating state 16~";spk fs16~;HSP;Eddy-f+4;;r30 HSP;;
@@ -74,13 +81,14 @@ f+4,3;m, m;13, 8;i23~25, i23~24;-13;-1c;;"* Spike
 f+4,3,3+4;m, m, M,M;13, 8, 7,20;i23~25, ,i24~26;-12;+8a;;"* Spike
 * Combo from 2nd CH
 * Floating state 21~39";spk fs21~39;;Eddy-f+4,3,3+4;Aú do Sol;r31;;File:t8-p2-eddy-f+4,3,3+4.mp4
-f+4,3+4;m, L,L;13, 7,7;i23~25, i22~24 i5~6;-24c;+12a;;"* Transition to RLX only on hit
+f+4,3+4;m, L,L;13, 7,7;i23~25, i22~24 i5~6;-24c;+12a;;"* Transition to RLX on hit or whiff
 * Combo from 1st CH
 * Floating state 1~70
 * High crush 10~86";fs1~70 cs10~86;RLX,RLX;Eddy-f+4,3+4;Aú da Lua;r48 RLX;;File:t8-p2-eddy-f+4,3+4.mp4
 f+1+2;;;;;;;"* Auto low parry ps8?~ at Mandinga Level 1
-** Transition into Ogum Mandinga on successful parry
-*";;;Eddy-f+1+2;Bananeira;;;
+** Transition to Ogum Mandinga on successful parry
+* Transition to HSP
+* Floating state 14~53";fs14~53;Ogum,HSP,HSP;Eddy-f+1+2;Bananeira;r25 HSP;;
 f+3+4;m;25;i19~21;-9;+18a (+8);;"* Heat Engager
 
 * Heat Dash +5, +36a (+26)
@@ -109,11 +117,13 @@ df+3+4;m,M;10,16;i18~19 i8~11;-3~+0;+1a;;"* Spike
 * Floating state 9~26";spk fs9~26;;Eddy-df+3+4;Aú Reversão;r24;;File:t8-p2-eddy-df+3+4.mp4
 d+2;m;10;i17~18;-9;+0;;;;;Eddy-d+2;;;;
 d+2,3;m, M;10, 20;i17~18, i24~25;-4c;+5c;;"* Combos from 1st CH
-* Shift to RLX";;;Eddy-d+2,3;Palmares Giro;;;File:t8-p2-eddy-d+2,3.mp4
-d+3;L;17;i21~22;-14c;+4c;+27g;* High crush;cs;;Eddy-d+3;Sismo;;;File:t8-p2-eddy-d+3.mp4
-d+4;L;10;i15~16;-16c;-5;;Shift to FC;;;Eddy-d+4;;;;
-d+4,3;L, m;10, 20;i15~16, i21~22;-13c;+12c;Launch;;;;Eddy-d+4,3;Aú de Bico;;;File:t8-p2-eddy-d+4,3.mp4
-d+3+4;;;;;;;Can block with input RLX.B or RLX.DB;;;Eddy-d+3+4;Negativa;;;
+* Transition to RLX";;RLX,RLX;Eddy-d+2,3;Palmares Giro;RLX;;File:t8-p2-eddy-d+2,3.mp4
+d+3;L;17;i21~22;-14c;+4c;+27g;* High crush 6~54;cs6~54;;Eddy-d+3;Sismo;;;File:t8-p2-eddy-d+3.mp4
+d+4;L;10;i15~16;-16c;-5;;"* Transition to FC
+* High crush 6~50";cs6~50;FC,FC;Eddy-d+4;;FC;;
+d+4,3;L, m;10, 20;i15~16, i21~22;-13c;+12c;;;;;Eddy-d+4,3;Aú de Bico;;;File:t8-p2-eddy-d+4,3.mp4
+d+3+4;;;;;;;"Can block at frame 20? with B or DB
+* High crush 6~55";cs6~55;RLX;Eddy-d+3+4;Negativa;r20 RLX;;
 db+2;L;10;i18~19;-18c;-7;;;;;Eddy-db+2;;;;
 db+2,3;L, m;10, 23;i18~19, i27~28;-18;+64(+49);;"* Tornado
 * Combos from 1st CH";trn;;Eddy-db+2,3;Twister Mirage;;;File:t8-p2-eddy-db+2,3.mp4
@@ -124,13 +134,13 @@ db+4,4;m, h;14, 27;i17~18, i33~34;+1;+19a(-7);;"* Balcony Break
 * Mandinga level increases by 1 on hit
 * Combos from 1st hit";bbr;;Eddy-db+4,4;Rabo de Arraia;;;File:t8-p2-eddy-db+4,4.mp4
 db+1+2;m;20;i30;-8;+14c;;Spike;spk;;Eddy-db+1+2;Double Arm Stinger;;;File:t8-p2-eddy-db+1+2.mp4
-db+3+4;m,M;12,12;i20~22;-6;+1;;Shift to FC -6 on block & +1 on hit;;;Eddy-db+3+4;;;;
+db+3+4;m,M;12,12;i20~22;-6;+1;;* Transition to FC;;FC,FC;Eddy-db+3+4;;FC;;
 db+3+4,4;m,M, m;12,12, 10;i20~22, i21~22;-8;+5;;;;;Eddy-db+3+4,4;;;;
 db+3+4,4,3;m,M, m, m;12,12, 10, 26;i20~22, ,i22~23;-14;+15a(+6);;Combos from 2nd CH;;;Eddy-db+3+4,4,3;Meia-Lua de Compasso;;;File:t8-p2-eddy-db+3+4,4,3.mp4
-b+1;m;15;i14~15;-7;+8;;Shift to FC;;;Eddy-b+1;;;;
-b+1,4;m, m;15, 10;i14~15, i25~27;-8;+8c;;"* Shift to HSP
+b+1;m;15;i14~15;-7;+8;;* Transition to FC;;FC,FC;Eddy-b+1;;FC;;
+b+1,4;m, m;15, 10;i14~15, i25~27;-8;+8c;;"* Transition to HSP
 * Combos from 1st CH
-* Low crush 19~";js19~;;Eddy-b+1,4;;;;
+* Low crush 19~";js19~;HSP,HSP;Eddy-b+1,4;;HSP;;
 b+1,4,3;m, m, m;15, 10, 8;i14~15, ,i23~24;-13;-1c;;"* Combos from 1st CH
 * Combos from 2nd hit
 * Low crush 1~?";js1~?;;Eddy-b+1,4,3;;;;
@@ -146,29 +156,36 @@ b+2,3,3;m, m, M;12, 13, 25;i15~16, ,i33~35;-14;+13a(-4);;"* Balcony Break
 * Combo from 2nd CH";bbr;;Eddy-b+2,3,3;Godeme > Combo Martelo;;;File:t8-p2-eddy-b+2,3,3.mp4
 b+2,4;m, h;12, 23;i15~16, i25~26;-7;+14a(+5);;Combo from 1st hit;;;Eddy-b+2,4;Godeme > Calcanheira;;;File:t8-p2-eddy-b+2,4.mp4
 b+3;m;10;i13~14;-9;+8;;;;;Eddy-b+3;;;;
-b+3,3;m, M;10, 21;i13~14, i26~28;-15;+33a(+23);;"* Shift to RLX
-* Combos on 1st CH";;;Eddy-b+3,3;Knee Thruster > Relâmpago;;;File:t8-p2-eddy-b+3,3.mp4
+b+3,3;m, M;10, 21;i13~14, i26~28;-15;+33a(+23);;"* Transition to RLX
+* Combos on 1st CH";;RLX,RLX;Eddy-b+3,3;Knee Thruster > Relâmpago;RLX;;File:t8-p2-eddy-b+3,3.mp4
 b+4;h;14;i21~22;+0;+8;;;;;Eddy-b+4;;;;
 b+4,4;h, M,M;14, 6,6;i21~22, i29~31;-9;+8c;;"* Balcony Break
 * Combo from 1st CH
 * Can cancel into HSP with input b+4,4,F";bbr;;Eddy-b+4,4;;;;
 b+4,4,3;h, M,M, M;14, 6,6, 10;i21~22, ,i28~30;+4c;+14a;;"* Combo from 3rd hit
 * 3 Chip damage on block";;;Eddy-b+4,4,3;Leg Whip Mars Attack Flip;;;File:t8-p2-eddy-b+4,4,3.mp4
-b+1+2;;;;;;;Shift to HSP;;;Eddy-b+1+2;Back Bananeira;;;File:t8-p2-eddy-b+1+2.mp4
+b+1+2;;;;;;;"* Auto low parry ps8?~ at Mandinga Level 1
+** Transition to Ogum Mandinga on successful parry
+* Transition to HSP
+* Floating state 14~61";fs14~61;Ogum,HSP,HSP;Eddy-b+1+2;Back Bananeira;r28 HSP;;File:t8-p2-eddy-b+1+2.mp4
 b+3+4;h;28;i20~21;-7;+21a(+11);;"* Balcony Break
 * Absorb an attack to power up
 * Add chip damage when guarded
-* Power crush 7";bbr pc7;;Eddy-b+3+4;Lunging Brush Fire;;;File:t8-p2-eddy-b+3+4.mp4
+* Power crush 7~19";bbr pc7~19;;Eddy-b+3+4;Lunging Brush Fire;;;File:t8-p2-eddy-b+3+4.mp4
 ub+3;M;25;i31~33;+4c;+13a;;7 Chip damage on block;;;Eddy-ub+3;Perna da Lua;;;File:t8-p2-eddy-ub+3.mp4
-ub+4;m;12;i19~21;-17;-6;;;;;Eddy-ub+4;Satellite Moon;;;File:t8-p2-eddy-ub+4.mp4
+ub+4;m;12;i19~21;-17;-6;;* Floating state 20~?;fs20~?;;Eddy-ub+4;Satellite Moon;;;File:t8-p2-eddy-ub+4.mp4
 u+3;M;30;i38~42;+0;+5a(-5);;"*
 Balcony Break
-* 9 chip damage on block";bbr;;Eddy-u+3;Acrobacia;;;File:t8-p2-eddy-u+3.mp4
-u+4;sp;;;;;;Shift to FC;;;Eddy-u+4;Back Summy;;;
+* 9 chip damage on block
+* Low crush 10~42?";bbr js10~42?;;Eddy-u+3;Acrobacia;;;File:t8-p2-eddy-u+3.mp4
+u+4;sp;;;;;;"* Transition to FC
+* Low crush 7~";js7~;FC,FC;Eddy-u+4;Back Summy;FC;;
 u+4~3;L;20;i32~33;-14c;+18;;"* Balcony Break
-* Shift to RLX on hit";bbr;;Eddy-u+4~3;Back Summy > Chute Baixo;;;File:t8-p2-eddy-u+4~3.mp4
-u+4~4;h;27;i18~20;+8;+42d(-16);;Balcony Break;bbr;;Eddy-u+4~4;Back Summy > Chute Alto;;;File:t8-p2-eddy-u+4~4.mp4
-u+1+2;h;20;i16~17;+0;+18d;;;;;Eddy-u+1+2;Vassoura;;;File:t8-p2-eddy-u+1+2.mp4
+* Transition to RLX
+* Low crush 7?~";bbr js7?~;RLX,RLX;Eddy-u+4~3;Back Summy > Chute Baixo;RLX;;File:t8-p2-eddy-u+4~3.mp4
+u+4~4;h;27;i18~20;+8;+42d(-16);;"Balcony Break
+* Low crush 7?~";bbr js7?~;;Eddy-u+4~4;Back Summy > Chute Alto;;;File:t8-p2-eddy-u+4~4.mp4
+u+1+2;h;20;i16~17;+0;+18d;;* Low crush 9~;js9~;;Eddy-u+1+2;Vassoura;;;File:t8-p2-eddy-u+1+2.mp4
 uf+1;m;12;i14~15;-5;+5;;;;;Eddy-uf+1;;;;
 uf+1,3;m, m;12, 23;i14~15, i29~30;-13;+10a (+1);;"* Balcony Break
 * Combos from 1st hit
@@ -181,42 +198,48 @@ uf+1,4;m, h;12, 25;i14~15, i29~30;-8;+11g;;"* Heat Engager
 
 * Balcony Break
 * Combos from 1st hit
-* Low crush";he bbr js;;Eddy-uf+1,4;Oxum;;;
+* Low crush 18~?";he bbr js18~?;;Eddy-uf+1,4;Oxum;;;
 uf+2;m;21;i22~23;-13;+32a(+24);;Balcony Break;bbr;;Eddy-uf+2;Asfixiante;;;File:t8-p2-eddy-uf+2.mp4
-uf+3;m;15;i26~28;-10c;-8c;+12a;Can shift to HSP with input F -14 -12 +8a;;;Eddy-uf+3;;;;
+uf+3;m;15;i26~28;-10c;-8c;+12a;"* Transition to HSP with input F (-14/-12/+8a)
+* Low crush 13~";js13~;HSP;Eddy-uf+3;;;;
 uf+3,3;m, m;15, 20;i26~28, i21~24;-18;+31a(+21);;Tornado;trn;;Eddy-uf+3,3;Jumping Jacks Mirage;;;File:t8-p2-eddy-uf+3,3.mp4
 uf+3,4;m, L;15, 10;i26~28, i24~25;-14c;+7;+73a(+57);;;;Eddy-uf+3,4;Armada Pulada > Baixo;;;File:t8-p2-eddy-uf+3,4.mp4
 uf+4;m;20;i22~24;-9;+12;;"* Strong Aerial Tailspin
 * Homing
 * Balcony Break
-* Shift to RLX on hit";hom bbr;;Eddy-uf+4;Chapa Giratória;;;File:t8-p2-eddy-uf+4.mp4
+* Transition to RLX on hit
+* Low crush 9~";hom bbr js9~;RLX;Eddy-uf+4;Chapa Giratória;;;File:t8-p2-eddy-uf+4.mp4
 uf+3+4;m,h;10,14;i17~18;-13;+17a;;"* Balcony Break
 * Strong Aerial Tailspin
-* Low crush";bbr js;;Eddy-uf+3+4;Meia-Lua Pulando;;;File:t8-p2-eddy-uf+3+4.mp4
+* Low crush 15~";bbr js15~;;Eddy-uf+3+4;Meia-Lua Pulando;;;File:t8-p2-eddy-uf+3+4.mp4
 1+2+3+4;;;;;;;;;;Eddy-1+2+3+4;Ki Charge;;;File:t8-p2-eddy-1+2+3+4.mp4
 b,B+2+3;m!;25,30;i77~79;;-37a(-46);;"* Balcony Break
 * Can cancel with input b,B+2+3,b,b";bbr;;Eddy-b,B+2+3;Fruit Picker;;;File:t8-p2-eddy-b,b+2+3.mp4
-b,ub;;;;;;;Shift to RLX;;;Eddy-b,ub;Flic Flac;;;File:t8-p2-eddy-b,ub.mp4
-f,F+3;L;20;i21~22;-14c;+6c;+15c;"* Shift to RLX on hit
-* Shift to FC on block
-* High crush";cs;;Eddy-f,F+3;Terremoto;;;File:t8-p2-eddy-f,f+3.mp4
+b,ub;;;;;;;"* Transition to RLX
+* Low crush 10?~";js10?~;RLX,RLX;Eddy-b,ub;Flic Flac;RLX;;File:t8-p2-eddy-b,ub.mp4
+f,F+3;L;20;i21~22;-14c;+6c;+15c;"* Transition to RLX on hit
+* Transition to FC on block or whiff
+* High crush 15~33";cs15~33;RLX,FC,FC;Eddy-f,F+3;Terremoto;FC;;File:t8-p2-eddy-f,f+3.mp4
 f,F+4;M;25;i19~20;-12;+37a(+27);;"* Tornado
-* Shift to HSP";trn;;Eddy-f,F+4;Folha Ataque;;;File:t8-p2-eddy-f,f+4.mp4
+* Transition to HSP
+* Low crush 12~26?";trn js12~26?;HSP,HSP;Eddy-f,F+4;Folha Ataque;HSP;;File:t8-p2-eddy-f,f+4.mp4
 f,F+3+4;m,M;10,20;i23~24;+3c;+17a;;"* Balcony Break
 * Can cancel into HSP with input f,F+3+4,n,f
-* 6 Chip damage on block";bbr;;Eddy-f,F+3+4;Roda Gigante;;;File:t8-p2-eddy-f,f+3+4.mp4
+* 6 Chip damage on block
+* Floating state 8~";bbr fs8~;;Eddy-f,F+3+4;Roda Gigante;;;File:t8-p2-eddy-f,f+3+4.mp4
 qcb+4;h;25;i21~22;+3;+34a (+8);;"* Homing
 * Balcony Break
 * Mandinga level increases on hit
 * Becomes +19a (-7) on hit when Mandinga level increases
 * 7 chip damage on block
-* Low crush";hom bbr js;;Eddy-qcb+4;Voragem;;;
-uf,n,4;m;20;i23~25;-13;+32a(+22);;;;;Eddy-uf,n,4;Delayed Rising Toe Kick;;;File:t8-p2-eddy-uf,n,4.mp4
-f,f,F+3;m;30;i25~27;+8;+14a;;"* Shift to HSP on block
-* 9 Chip damage on block";;;Eddy-f,f,F+3;Trovão;;;File:t8-p2-eddy-f,f,f+3.mp4
+* Low crush 10~";hom bbr js10~;;Eddy-qcb+4;Voragem;;;
+uf,n,4;m;20;i23~25;-13;+32a(+22);;* Low crush 9~;js9~;;Eddy-uf,n,4;Delayed Rising Toe Kick;;;File:t8-p2-eddy-uf,n,4.mp4
+f,f,F+3;m;30;i25~27;+8;+14a;;"* Transition to HSP on block
+* 9 Chip damage on block
+* Low crush 9~";js9~;HSP;Eddy-f,f,F+3;Trovão;;;File:t8-p2-eddy-f,f,f+3.mp4
 ws1;h;6;i13~14;-6;+5;;;;;Eddy-ws1;;;;
-ws1,3;h, M;6, 14;i13~14, i19~21;-15;+38a(+20);;"* Shift to RLX
-* Combos from 1st hit";;;Eddy-ws1,3;Fuzilação;;;File:t8-p2-eddy-ws1,3.mp4
+ws1,3;h, M;6, 14;i13~14, i19~21;-15;+38a(+20);;"* Transition to RLX
+* Combo from 1st hit";;RLX,RLX;Eddy-ws1,3;Fuzilação;RLX;;File:t8-p2-eddy-ws1,3.mp4
 ws1,4;h, h;6, 23;i13~14, i23~25;-7;+8;;"* Balcony Break
 * Combos from 1st hit";bbr;;Eddy-ws1,4;Chapeu de Couro;;;File:t8-p2-eddy-ws1,4.mp4
 ws2;m;20;i15~16;-18;+51;;;;;Eddy-ws2;Machado;;;File:t8-p2-eddy-ws2.mp4
@@ -227,32 +250,38 @@ ws4,4,4;m, h, M,M;13, 10, 6,6;i11~13, ,i29~31;-9;+8c;;Can cancel into HSP with i
 ws4,4,4,3;m, h, M,M, M;13, 10, 6,6, 10;i11~13, ,i28~30;+4c;+14a;;"* Combos from 3rd hit
 * 3 Chip damage on block";;;Eddy-ws4,4,4,3;Tempestade;;;File:t8-p2-eddy-ws4,4,4,3.mp4
 ws3+4;M;20;i25~27;+5c;+14d;;"* Spike
-* Shifts to RLX
+* Transition to RLX
 * 6 chip damage on block
-* Low crush";spk js;RLX;Eddy-ws3+4;Front Stinger;RLX;;File:t8-p2-eddy-ws3+4.mp4
-SS.3;m;17;i25~26;+0;+8;;"* Shift to RLX
-* Can cancel into RLX with input SS.3,D";;;Eddy-SS.3;Hot Plate Special;;;File:t8-p2-eddy-ss.3.mp4
-SS.4;L,L;7,10;i21~22;-13c;+3c;;* High crush;cs;;Eddy-SS.4;Troca Baixa;;;File:t8-p2-eddy-ss.4.mp4
-SS.3+4;h,h;6,10;i14~15;-7;+31a(+24);;;;;Eddy-SS.3+4;Faísca;;;File:t8-p2-eddy-ss.3+4.mp4
+* Floating state 12~30";spk fs12~30;RLX,RLX;Eddy-ws3+4;Front Stinger;RLX;;File:t8-p2-eddy-ws3+4.mp4
+SS.3;m;17;i25~26;+0;+8;;"* Transition to RLX
+* Can cancel into RLX with input SS.3,D
+* High crush 6~54";cs6~54;RLX,RLX;Eddy-SS.3;Hot Plate Special;RLX;;File:t8-p2-eddy-ss.3.mp4
+SS.4;L,L;7,10;i21~22;-13c;+3c;;* High crush 6~31;cs6~31;;Eddy-SS.4;Troca Baixa;;;File:t8-p2-eddy-ss.4.mp4
+SS.3+4;h,h;6,10;i14~15;-7;+31a(+24);;"* Transition to FC
+* Low crush 11~30
+* Floating state 31~?
+* High crush ?~?";js11~30 fs31~? cs?~?;FC,FC;Eddy-SS.3+4;Faísca;FC;;File:t8-p2-eddy-ss.3+4.mp4
 FC.4;l;6;i13;-15;-4;;* Hits grounded up-close;;FC;Eddy-FC.4;;FC;;
-FC.df+3;m;20;i22~23;+6;+9c;+41a;"* Shift to RLX
-* 6 Chip damage on block";;;Eddy-FC.df+3;Gafanhoto;;;File:t8-p2-eddy-fc.df+3.mp4
-FC.df+4;L;25;i24~25;-21c;+9;+30a;Shift to HSP;;;Eddy-FC.df+4;Tornada;;;File:t8-p2-eddy-fc.df+4.mp4
+FC.df+3;m;20;i22~23;+6;+9c;+41a;"* Transition to RLX
+* 6 Chip damage on block";;RLX,RLX;Eddy-FC.df+3;Gafanhoto;RLX;;File:t8-p2-eddy-fc.df+3.mp4
+FC.df+4;L;25;i24~25;-21c;+9;+30a;"* Transition to HSP
+* Floating state 26~";fs26~;HSP,HSP;Eddy-FC.df+4;Tornada;HSP;;File:t8-p2-eddy-fc.df+4.mp4
 FUFT.b+3+4;m;25;i16-28;-15~-27;+2a(-10~)+18a(+6);;"* Floating state 1~11
 * Low crush 12~";fs1~11 js12~;;Eddy-FUFT.b+3+4;Whirling Spring Kick;;;
-HSP.1;M;21;i23~25;+6;+8c;+19d;"* Shift to RLX
-* 6 Chip damage on block";;;Eddy-HSP.1;Godeme Trovoada;;;File:t8-p2-eddy-hsp.1.mp4
+HSP.1;M;21;i23~25;+6;+8c;+19d;"* Transition to RLX
+* 6 Chip damage on block";;RLX,RLX;Eddy-HSP.1;Godeme Trovoada;RLX;;File:t8-p2-eddy-hsp.1.mp4
 HSP.2;m;15;i17~18;-8;+8;;;;;Eddy-HSP.2;;;;
 HSP.2,3;m, m;15, 23;i17~18, i26~27;-13;-2(-11);;"* Balcony Break
 * Combos from 1st hit
 * Mandinga level increases by 1 on hit
-* Can cancel into HSP with input HSP.2,3,F";bbr;;Eddy-HSP.2,3;Combo Escorão;;;File:t8-p2-eddy-hsp.2,3.mp4
-HSP.3;m;10;i17~18;-8;+7;;* Floating state 5;fs5;;Eddy-HSP.3;;;;
+* Can cancel into HSP with input HSP.2,3,F (-24/-8)";bbr;;Eddy-HSP.2,3;Combo Escorão;;;File:t8-p2-eddy-hsp.2,3.mp4
+HSP.3;m;10;i17~18;-8;+7;;"* Floating state 1~5
+* High crush 6~18";fs1~5 cs6~18;;Eddy-HSP.3;;;;
 HSP.3,3;m, h;10, 10;i17~18, i27~28;-3;+8;;Combos from 1st hit;;;Eddy-HSP.3,3;;;;
 HSP.3,3,3;m, h, h;10, 10, 23;i17~18, ,i30~31;-5;+13;;"* Tornado
-* Shift to RLX
-* Combos from 1st CH";trn;;Eddy-HSP.3,3,3;Enxurrada;;;File:t8-p2-eddy-hsp.3,3,3.mp4
-HSP.4;m;10;i12~13;-1;+10;+31a;Shift to HSP;;;Eddy-HSP.4;;;;
+* Transition to RLX
+* Combos from 1st CH";trn;RLX,RLX;Eddy-HSP.3,3,3;Enxurrada;RLX;;File:t8-p2-eddy-hsp.3,3,3.mp4
+HSP.4;m;10;i12~13;-1;+10;+31a;* Transition to HSP;;HSP,HSP;Eddy-HSP.4;;HSP;;
 HSP.4,2;m, m;10, 21;i12~13, i23~24;-13;+12a(+3);;"* Tornado
 * Balcony Break
 * Combos from 1st hit";trn bbr;;Eddy-HSP.4,2;Lança de Braço;;;File:t8-p2-eddy-hsp.4,2.mp4
@@ -260,40 +289,51 @@ HSP.4,2~3;m, M;10, 20;i12~13, i28~30;+4c;+14d;;6 Chip damage on block;;;Eddy-HSP
 HSP.1+2;m;20;i22~23;-12;+14c;;"* Spike
 * Absorb an attack to power up
 * Add chip damage when guarded
-* Power crush 7";spk pc7;;Eddy-HSP.1+2;Cabeçada Direta;;;File:t8-p2-eddy-hsp.1+2.mp4
+* Power crush 7~21";spk pc7~21;;Eddy-HSP.1+2;Cabeçada Direta;;;File:t8-p2-eddy-hsp.1+2.mp4
 HSP.b+3;m;20;i36~37;-12;+13a;+58a;Balcony Break;bbr;;Eddy-HSP.b+3;Chapa Esquivando;;;File:t8-p2-eddy-hsp.b+3.mp4
-HSP.n,d;;;;;;;Shift to RLX;;;Eddy-HSP.n,d;Bananeira > Negativa;;;File:t8-p2-eddy-hsp.n,d.mp4
-HSP.n,f;;;;;;;Shift to HSP;;;Eddy-HSP.n,f;Bananeira > Move Forward;;;File:t8-p2-eddy-hsp.n,f.mp4
-MD1.HSP.3+4;L,m,m;6,6,18;i21~22;-13;+4c;;;;;Eddy-MD1.HSP.3+4;Yansan Mandinga;;;
-MD1.HSP.b+4;m;25;i23~25;+7;+15d;;"* Can shift to RLX with input HSP.b+4,D
-* 7 Chip damage on block";;;Eddy-MD1.HSP.b+4;Ogum Mandinga;;;
-MD2.HSP.3+4;L,m,m;16,4,15;i21~22;-13;+18a(-17);;Spike;spk;;Eddy-MD2.HSP.3+4;Yansan Mandinga;;;
-MD2.HSP.b+4;m;25;i23~25;+7;+36a;;"* Floor Break
-* Can shift to RLX with input HSP.b+4,D
-* 7 Chip damage on block";fbr;;Eddy-MD2.HSP.b+4;Ogum Mandinga;;;
-RLX.1;L;11;i17;-11c;+0;;Can transition to FC with input RLX.1,D;;FC;Eddy-RLX.1;;;;
-RLX.1,3;L, m;11, 17;i17, i25~26;-14;+5c;+42a;"* Shifts to RLX
-* Combos on 1st CH";;;Eddy-RLX.1,3;Terra Gafanhoto;;;File:t8-p2-eddy-rlx.1,3.mp4
+HSP.n,d;;;;;;;* Transition to RLX;;RLX,RLX;Eddy-HSP.n,d;Bananeira > Negativa;RLX;;File:t8-p2-eddy-hsp.n,d.mp4
+HSP.n,f;;;;;;;* Transition to HSP;;HSP,HSP;Eddy-HSP.n,f;Bananeira > Move Forward;HSP;;File:t8-p2-eddy-hsp.n,f.mp4
+MD1.HSP.3+4;L,m,m;6,6,18;i21~22;-13;+4c;;* Low crush 28?~;js28?~;;Eddy-MD1.HSP.3+4;Yansan Mandinga;;;
+MD1.HSP.b+4;m;25;i23~25;+7;+15d;;"* Spike
+* Transition to RLX with D
+* 7 chip damage on block
+* Low crush 9~";spk js9~;RLX;Eddy-MD1.HSP.b+4;Ogum Mandinga;;;
+MD2.HSP.3+4;L,m,m;16,4,15;i21~22;-13;+18a(-17);;"Floor Break
+* Low crush 28?~";fbr js28?~;;Eddy-MD2.HSP.3+4;Yansan Mandinga;;;
+MD2.HSP.b+4;m;25;i23~25;+7;+36a;;"* Spike
+* Transition to RLX with D
+* 7 chip damage on block
+* Low crush 9~";spk js9~;RLX;Eddy-MD2.HSP.b+4;Ogum Mandinga;;;
+RLX.1;L;11;i17;-11c;+0;;"Recover in FC with D
+* High crush 1~19";cs1~19;;Eddy-RLX.1;;;;
+RLX.1,3;L, m;11, 17;i17, i25~26;-14;+5c;+42a;"* Transition to RLX
+* Combo from 1st CH with 5F delay
+* Move can be delayed by 9F
+* Input can be delayed by 10F";;RLX,RLX;Eddy-RLX.1,3;Terra Gafanhoto;RLX;;File:t8-p2-eddy-rlx.1,3.mp4
 RLX.2;m;16;i18~19;-2;+8;;;;;Eddy-RLX.2;;;;
-RLX.2,4;m, h;16, 17;i18~19, i29~30;-5;+2;;"* Combos from 1st hit
-* Can shift to RLX with input RLX.2,4,D at +3 on block & +10 on hit";;;Eddy-RLX.2,4;;;;
+RLX.2,4;m, h;16, 17;i18~19, i29~30;-5;+2;;"* Combo from 1st hit
+* Transition to RLX with D (+3/+10)";;RLX;Eddy-RLX.2,4;;;;
 RLX.2,4,4;m, h, m;16, 17, 25;i18~19, ,i32~33;-14;+15a(+6);;Balcony Break;bbr;;Eddy-RLX.2,4,4;Maré Cheia;;;File:t8-p2-eddy-rlx.2,4,4.mp4
-RLX.3;L;12;i16~17;-26c;-4;+27a;Shift to FC;;;Eddy-RLX.3;;;;
+RLX.3;L;12;i16~17;-26c;-4;+27a;"* Transition to FC
+* High crush 1~50";cs1~50;FC,FC;Eddy-RLX.3;;FC;;
 RLX.3,3;L, h;12, 30;i16~17, i25~26;-13;-2(-3);;"* Balcony Break
 * Combo from 1st clean hit
 * Jails from 1st hit
 * Mandinga level increases by 1 on hit";bbr;;Eddy-RLX.3,3;Iemanjá;;;File:t8-p2-eddy-rlx.3,3.mp4
-RLX.4;m;14;i15~16;-8;+8;;;;;Eddy-RLX.4;;;;
+RLX.4;m;14;i15~16;-8;+8;;* Transition to FC;;FC,FC;Eddy-RLX.4;;FC;;
 RLX.4,3;m, m;14, 25;i15~16, i28~30;-13;+16a/HE;;"* Heat Engager
 
 * Balcony Break
 * Heat Dash +67a(+50) on hit
-* Combos from 1st hit";he bbr;;Eddy-RLX.4,3;Chibata Ardente;;;File:t8-p2-eddy-rlx.4,3.mp4
+* Combos from 1st hit
+* Low crush 16~?";he bbr js16~?;;Eddy-RLX.4,3;Chibata Ardente;;;File:t8-p2-eddy-rlx.4,3.mp4
 RLX.1+2;m;25;i18~19;-8;+25a(+20);;"* Balcony Break
-* 7 chip damage on block";bbr;;Eddy-RLX.1+2;Cabeçada Fixa;;;File:t8-p2-eddy-rlx.1+2.mp4
-RLX.3+4;M;24;i17~18;-18;+29a(+19);;Tornado;trn;;Eddy-RLX.3+4;Troca e Ataque;;;File:t8-p2-eddy-rlx.3+4.mp4
-RLX.n,d;;;;;;;Shift to HSP;;;Eddy-RLX.n,d;Negativa > Bananeira;;;File:t8-p2-eddy-rlx.n,d.mp4
-RLX.n,f;;;;;;;Shift to RLX;;;Eddy-RLX.n,f;Negativa > Move Forward;;;File:t8-p2-eddy-rlx.n,f.mp4
+* 7 chip damage on block
+* High crush 1~17";bbr cs1~17;;Eddy-RLX.1+2;Cabeçada Fixa;;;File:t8-p2-eddy-rlx.1+2.mp4
+RLX.3+4;M;24;i17~18;-18;+29a(+19);;"Tornado
+* Floating state 1~56";trn fs1~56;;Eddy-RLX.3+4;Troca e Ataque;r42?;;File:t8-p2-eddy-rlx.3+4.mp4
+RLX.n,d;;;;;;;* Transition to HSP;;HSP,HSP;Eddy-RLX.n,d;Negativa > Bananeira;HSP;;File:t8-p2-eddy-rlx.n,d.mp4
+RLX.n,f;;;;;;;* Transition to RLX;;RLX,RLX;Eddy-RLX.n,f;Negativa > Move Forward;RLX;;File:t8-p2-eddy-rlx.n,f.mp4
 1+3;th(h);35;i12~14;-5;-7;;"* Floor Break
 * Throw break: 1 or 2";fbr;;Eddy-1+3;Rio Deal;;;File:t8-p2-eddy-1+3.mp4
 2+4;th(h);35;i12~14;-6;-9;;"* Floor Break
@@ -301,7 +341,7 @@ RLX.n,f;;;;;;;Shift to RLX;;;Eddy-RLX.n,f;Negativa > Move Forward;;;File:t8-p2-e
 * Sideswitch on break";fbr;;Eddy-2+4;Rio Special;;;File:t8-p2-eddy-2+4.mp4
 Back throw;th(h);50;i12~14;;+0;;Throw break: none;;;Eddy-Back throw;Back Rodeo Spin;;;
 HSP.1+3;th(h);26;i23~24;;+6;;"* Throw break: none
-* Shift to RLX on hit";;;Eddy-HSP.1+3;Batucada;;;File:t8-p2-eddy-hsp.1+3.mp4
+* Transition to RLX on hit";;RLX,HSP;Eddy-HSP.1+3;Batucada;HSP;;File:t8-p2-eddy-hsp.1+3.mp4
 Left throw;th(h);40;i12~14;-3;+0;;Throw break: 1;;;Eddy-Left throw;Missile Launcher;;;
 RLX.uf+1+2;th(h);40;i17~18;-6;+0;;"* Throw break: 1+2
 * Sideswitch on break";;;Eddy-RLX.uf+1+2;Rodeo Spin;;;File:t8-p2-eddy-rlx.uf+1+2.mp4
