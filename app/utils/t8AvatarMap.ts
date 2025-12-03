@@ -54,8 +54,8 @@ import lidia from '~/images/t8/avatars/lidia-128.webp';
 import lidiaBrand from '~/images/t8/avatars/lidia-brand-128.webp';
 import lili from '~/images/t8/avatars/lili-128.webp';
 import liliBrand from '~/images/t8/avatars/lili-brand-128.webp';
-import miary from '~/images/t8/avatars/miary-128.webp';
-import miaryBrand from '~/images/t8/avatars/miary-brand-128.webp';
+import miaryZo from '~/images/t8/avatars/miary-zo-128.webp';
+import miaryZoBrand from '~/images/t8/avatars/miary-zo-brand-128.webp';
 import mokujin from '~/images/t8/avatars/mokujin-128.webp';
 import mokujinBrand from '~/images/t8/avatars/mokujin-brand-128.webp';
 import nina from '~/images/t8/avatars/nina-128.webp';
@@ -112,7 +112,7 @@ export const t8AvatarMap: Record<string, string> = {
   lili,
   mokujin,
   raven,
-  miary,
+  'miary-zo': miaryZo,
   nina,
   reina,
   panda,
@@ -156,7 +156,7 @@ export const t8AvatarBrandMap: Record<string, string> = {
   lili: liliBrand,
   mokujin: mokujinBrand,
   raven: ravenBrand,
-  miary: miaryBrand,
+  'miary-zo': miaryZoBrand,
   nina: ninaBrand,
   reina: reinaBrand,
   panda: pandaBrand,
