@@ -11,6 +11,7 @@ import hwoarang from '~/images/t8/guides/hwoarang-1200.webp';
 import jin from '~/images/t8/guides/jin-1200.webp';
 import jun from '~/images/t8/guides/jun-1200.webp';
 import lars from '~/images/t8/guides/lars-1200.webp';
+import law from '~/images/t8/guides/law-1200.webp';
 import lee from '~/images/t8/guides/lee-1200.webp';
 import lidia from '~/images/t8/guides/lidia-1200.webp';
 import lili from '~/images/t8/guides/lili-1200.webp';
@@ -33,6 +34,7 @@ export const t8GuideImgMap: Record<string, string> = {
   lars,
   jin,
   jun,
+  law,
   lee,
   lili,
   lidia,
