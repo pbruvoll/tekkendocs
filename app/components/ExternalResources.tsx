@@ -65,7 +65,8 @@ const data: ExternalResourceLink[] = [
     name: 'Tournament Finder',
     url: 'https://sk-tekken.com/tracker',
     imageUrl: tournamentFinder,
-    description: 'Shows upcoming offline tournaments registered on start.gg on a world map',
+    description:
+      'Shows upcoming offline tournaments registered on start.gg on a world map',
   },
 ];
 
