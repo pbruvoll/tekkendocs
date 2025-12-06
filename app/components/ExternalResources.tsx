@@ -8,6 +8,7 @@ import ewgf from '~/images/t8/externalResources/ewgf.webp';
 import naGuide from '~/images/t8/externalResources/naguide.webp';
 import sidestepChart from '~/images/t8/externalResources/sidestep-chart.webp';
 import tekkenLibrary from '~/images/t8/externalResources/tekken-library.webp';
+import tournamentFinder from '~/images/t8/externalResources/tournament-finder.webp';
 import wavuWank from '~/images/t8/externalResources/wavu-wank.webp';
 import wavuWiki from '~/images/t8/externalResources/wavu-wiki.webp';
 
@@ -59,6 +60,12 @@ const data: ExternalResourceLink[] = [
     imageUrl: ewgf,
     description:
       'Stats for rank distribution, character win rate, leaderboards, player profiles etc.',
+  },
+  {
+    name: 'Tournament Finder',
+    url: 'https://sk-tekken.com/tracker',
+    imageUrl: tournamentFinder,
+    description: 'Shows upcoming offline tournaments registered on start.gg on a world map',
   },
 ];
 
