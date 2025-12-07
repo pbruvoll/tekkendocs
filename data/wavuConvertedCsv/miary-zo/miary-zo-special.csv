@@ -6,6 +6,24 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * Only deals recoverable damage
 * Cannot cause a K.O.
 * Power crush 7~16";hb pc7~16;;Miary Zo-2+3;Heat Burst;r30;;
+H.b+3+4;;;;;;;"* Transition to Tromba
+* d+3+4 foreground jump, u+3+4 background jump (r60 js9~34 fs35~37)
+* Partially consumes remaining Heat Time";;Tromba;Miary Zo-H.b+3+4;Zanahary Mihira;;;
+H.2+3;m,th;52;i17~18;+6;-5d;;"* Heat Smash
+* Floor Break
+* Transition to BAO +6 r24 automatically on block only
+Cancel BAO transition -13 -6 +23a (+13) r36 with B
+* 6 chip damage on block
+* Low crush";hs fbr js;BAO;Miary Zo-H.2+3;Fitahin-d Ratovantany;;;
+R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
+* Removes Recoverable Health
+* Reversal Break
+* Damage increases with lower health, maximum 82
+* Freezes match timer on activation and on hit
+* Restores recoverable health on hit
+* Transition to attack throw on hit
+* Consumes Rage
+* Power crush 8~";rbr pc8~;;Miary Zo-R.df+1+2;Hazon'n Andriamanitry ny Hay-ady;r39;;
 1;h;5;i10;+1;+8;;Recovers 2f faster on hit or block (t27 r17);;;Miary Zo-1;Jab;r19;;
 1,1;h, h;5, 5;i10, i16;-4;+3;;"* Jail from 1st attack with 2f delay
 * Combo from 1st hit with 4f delay
@@ -19,7 +37,7 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * Combo from 2nd hit with 7f delay
 * Input can be delayed 7f
 * Move can be delayed 4f
-* Enter MIR -8 +5 r28 with F on hit or block only";wc;MIR;Miary Zo-1,1,2;Mandihy ny Aye-aye;r31;;
+* Enter MOR -8 +5 r28 with F on hit or block only";wc;MOR;Miary Zo-1,1,2;Mandihy ny Aye-aye;r31;;
 1,2;h, h;5, 6;i10, i13;-3;+8;;"* Jail from 1st attack with 4f delay
 * Move can be delayed 4f";;;Miary Zo-1,2;One Two Punch;r22;;
 1,2,2;h, h, h;5, 6, 20;i10, ,i28~30;-7;+14d;+67a (+51);"* Tornado
@@ -33,6 +51,8 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * Move can be delayed 4f
 * +0c on crouching hit
 * Links to 10-hit strings";;;Miary Zo-1,3;Gidro Roa;r30;;
+1+3+4;;;;;;;"* Low crush 13~123
+* Floating state 124~126";js13~123 fs124~126;;Miary Zo-1+3+4;Taunt;r130;;
 2;h;10;i11;-2;+9;;;;;Miary Zo-2;Right Jab;r21;;
 2,2;h, h;10, 20;i11, i28~30;-7;+14d;+67a (+51);"* Tornado
 * Balcony Break
@@ -44,7 +64,7 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * Hit vs BT +11d";trn bbr wpn chp;;Miary Zo-2,2;Lefon'aina;r32;;
 3;m;12;i13~14;-9;+5;;;;;Miary Zo-3;;r30;;
 3,1;m, m;12, 10;i13~14, i18~19;-10;+1;;"* Jail from 1st attack
-* Enter MIR -7 +4 r25 with F";;MIR;Miary Zo-3,1;;r28;;
+* Enter MOR -7 +4 r25 with F";;MOR;Miary Zo-3,1;;r28;;
 3,1,2;m, m, m;12, 10, 22;i13~14, ,i16~18;-14;+28a (+13);;"* Combo from 2nd CH with 11f delay
 * Jail from 1st block
 * Input can be delayed 11f
@@ -57,8 +77,8 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * Combo from 1st hit with 5f delay
 * Move can be delayed 5f
 * Chip damage on block
-* Low crush 15~32
-* Floating state 33~35";he bbr chp js15~32 fs33~35;;Miary Zo-3,2;Basy Lelafo;r30;;
+* Low crush 14~31
+* Floating state 32~34";he bbr chp js14~31 fs32~34;;Miary Zo-3,2;Basy Lelafo;r30;;
 4;h;12;i12;-12;-2;;;;;Miary Zo-4;;r38;;
 4,4;h, h;12, 20;i12, i29~30;-13;+6;;"* Jail from 1st attack
 * Transition to BAO +6 r26 automatically on hit only
@@ -77,7 +97,7 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * Good sidestep right tracking
 * Hit vs BT +18a (+9)";he wc;;Miary Zo-1+2;Manafika;r31;;
 3+4;;;;;;;"* Actionable after 20f
-* Cancel to r15 with DB
+* Cancel to r35 with DB on frame 20
 * Low crush 5~58
 * 59~61";js5~58 59~61;BAO;Miary Zo-3+4;Baobab Mihira;r20 BAO;;
 f+2;m;23;i20;-13;+5;;"* Balcony Break (airborne)
@@ -86,7 +106,7 @@ f+2;m;23;i20;-13;+5;;"* Balcony Break (airborne)
 f+3;;;;;;;"* Actionable after 15f
 * Cancel to FC with DB on frame 16~
 * Stance moves available on frames 15~31
-* High crush 6~67";cs6~67;FC,MIR;Miary Zo-f+3;Morengy Miroso;r15 MIR;;
+* High crush 6~67";cs6~67;FC,MOR;Miary Zo-f+3;Morengy Miroso;r15 MOR;;
 f+4;m;12;i18;-6;+2;;"* Low crush 9~14
 * Floating state 15~17";js9~14 fs15~17;;Miary Zo-f+4;;r30;;
 f+4,2;m, m;12, 20;i18, i31;-9;+16a (+7);;"* Balcony Break
@@ -102,20 +122,29 @@ f+4,2;m, m;12, 20;i18, i31;-9;+16a (+7);;"* Balcony Break
 f+4,4;m, h;12, 15;i18, i26;-5;+9;;"* Combo from 1st hit with 1f delay
 * Input can be delayed 1f
 * Move cannot be delayed
-* Low crush 22~23
-* Floating state 24~26";js22~23 fs24~26;;Miary Zo-f+4,4;;r26;;
+* Low crush 21~22
+* Floating state 23~25";js21~22 fs23~25;;Miary Zo-f+4,4;;r26;;
 f+4,4,4;m, h, h;12, 15, 30;i18, ,i30~31;-9;+14d;;"* Balcony Break
 * Input can be delayed 1f
 * Move cannot be delayed
 * Hit vs BT +11d
-* Low crush 9~35
-* Floating state 36~38";bbr js9~35 fs36~38;;Miary Zo-f+4,4,4;Fomba'ny Vazimba;r32;;
+* Low crush 8~34
+* Floating state 35~37";bbr js8~34 fs35~37;;Miary Zo-f+4,4,4;Fomba'ny Vazimba;r32;;
+H.f+4,2;m, m;12, 25;i18, i31;+2;+16a (+7);;"* Balcony Break
+* Weapon
+* Combos from 1st hit
+* 7 chip damage on block
+* Partially consumes remaining Heat Time
+* f+4,H.d+2 to push opponenet to foreground
+* f+4,H.u+2 to push opponenet to background";bbr wpn;;Miary Zo-f+4,H.2;Fombafomban'ny Zanahary;;;
 f+1+2;m,m;3,3;,i14~15 i8~9;-10;-4;;;;;Miary Zo-f+1+2;Claw Rain;r28;;
 f+1+2,1+2;m,m, m,m,m;3,3, 3,2,2;,i14~15 i8~9, i14~15 i7~8 i7~8;-13;+3;;* Jail from 1st attack;;;Miary Zo-f+1+2,1+2;Lightning Claws;r31;;
 f+1+2,1+2,3+4;m,m, m,m,m, m,m;3,3, 3,2,2, 5,12;,i14~15 i8~9, ,i16~17 i6~7;-22;+6a (-11);;"* Balcony Break
-* Jail from 1st attack
-* Low crush 21~31
-* Floating state 32~34";bbr js21~31 fs32~34;;Miary Zo-f+1+2,1+2,3+4;Oram-Baratra;r42;;
+* Jail from 1st attack with 1f delay
+* Input can be delayed 1f
+* Move cannot be delayed
+* Low crush 19~28
+* Floating state 29~31";bbr js19~28 fs29~31;;Miary Zo-f+1+2,1+2,3+4;Oram-Baratra;r42;;
 f+3+4;m;10;i18;-9;+3;;"* Low crush 9~18
 * Floating state 19~21";js9~18 fs19~21;;Miary Zo-f+3+4;;r32;;
 f+3+4,2;m, m;10, 20;i18, i29~30;-20;+64a (+48);;"* Tornado
@@ -125,13 +154,13 @@ f+3+4,2;m, m;10, 20;i18, i29~30;-20;+64a (+48);;"* Tornado
 * Chip damage on block
 * Instant Tornado on hit
 * Can hit grounded when off-axis, steel pedal effect
-* Low crush 33~57
-* Floating state 58~60";trn chp js33~57 fs58~60;;Miary Zo-f+3+4,2;Fanasin'ny Mpamsavy;r39;;
+* Low crush 31~55
+* Floating state 56~58";trn chp js31~55 fs56~58;;Miary Zo-f+3+4,2;Fanasin'ny Mpamsavy;r39;;
 df+1;m;10;i13;-2;+5;;;;;Miary Zo-df+1;Mid Check;r20;;
 df+1,1;m, h;10, 17;i13, i19;-3;+5;;"* Combo from 1st hit with 2f delay
 * Input can be delayed 2f
 * Move cannot be delayed
-* Enter MIR +0 +8 r22 with F";;MIR;Miary Zo-df+1,1;;r25;;
+* Enter MOR +0 +8 r22 with F";;MOR;Miary Zo-df+1,1;;r25;;
 df+1,1,2;m, h, M;10, 17, 20;i13, ,i30;-12;+5a;+50a;"* Spike
 * Weapon
 * Input can be delayed 1f
@@ -143,15 +172,15 @@ df+1,1,1+2;m, h, M;10, 17, 23;i13, ,i27~28;-17;+35a (+25);;"* Tornado
 * Move cannot be delayed
 * Chip damage on block
 * Recovers 3f faster on hit
-* High crush 18~27";trn wpn chp cs18~27;;Miary Zo-df+1,1,1+2;Tandrokin'ny Ala;r37;;
+* High crush 17~26";trn wpn chp cs17~26;;Miary Zo-df+1,1,1+2;Tandrokin'ny Ala;r37;;
 df+1,4;m, m;10, 17;i13, i18~19;-13;+6;+35a (+25);"* Knee
 * Combo from 1st hit with 7f delay
 * Input can be delayed 9f
 * Move can be delayed 5f
 * Transition to BAO +6 r24 automatically on hit only
 * Cancel BAO transition -13 -6 +23a (+13) r36 with B
-* Low crush 15~38
-* Floating state 39~41";kne js15~38 fs39~41;BAO;Miary Zo-df+1,4;Sifaka An'ala;r36;;
+* Low crush 11~34
+* Floating state 35~37";kne js11~34 fs35~37;BAO;Miary Zo-df+1,4;Sifaka An'ala;r36;;
 df+2;m;12;i15~16;-7;+34a (+24);;"* +4s against crouching
 * Launches crouching on CH";;;Miary Zo-df+2;Sifaka An'ala;r25;;
 df+3;m;15;i20~21;-9;+4;;"* Homing
@@ -159,9 +188,9 @@ df+3;m;15;i20~21;-9;+4;;"* Homing
 df+3,3;m, m;15, 20;i20~21, .i26~27;-13;+15a (+6);;"* Balcony Break
 * Weapon";bbr wpn;;Miary Zo-df+3,3;Masoandro;r34;;
 df+4;m;17;i16;-4;+5;+57a;"* Knee
-* Enter MIR -1 +8 +60a r26 with F";kne;MIR;Miary Zo-df+4;Daka Varatra;r29;;
+* Enter MOR -1 +8 +60a r26 with F";kne;MOR;Miary Zo-df+4;Daka Varatra;r29;;
 df+3+4;L;17;i21;-15;-4;+6a;* High crush 6~45;cs6~45;;Miary Zo-df+3+4;Daka Fanala;r34;;
-d+2;M;20;i26;-4c;+8;+53a;"* Spike
+d+2;M;20;i26;-4c;+8d;+53a;"* Spike
 * Weapon
 * Chip damage on block";spk wpn chp;;Miary Zo-d+2;Famakin'naina;r32;;
 d+3;L;14;i20;-14;+1;+12g;"Weapon
@@ -177,15 +206,15 @@ d+1+2;M;23;i19~20;-17;+35a (+25);;"* Tornado
 </div>";r37;;
 db+2;m;10;i15;-11;+2;;;;;Miary Zo-db+2;;r29;;
 db+2,3;m, m;10, 10;i15, i23~24;-11;+2;;"* Knee
-* Combo from 1st hit with 8f delay 
+* Combo from 1st hit with 9f delay 
 * Move can be delayed 8f";kne;;Miary Zo-db+2,3;Tsingy Roa;r27;;
 db+2,4;m, m;10, 17;i15, i22~23;-13;+6;+35a (+25);"* Knee
-* Combo from 1st hit with delay
-* Input can be delayed
+* Combo from 1st hit with 9f delay
+* Move can be delayed by 8F
 * Transition to BAO +6 r24 automatically on hit only
 * Cancel BAO transition -13 -6 +23a (+13) r36 with B
-* Low crush 16~39
-* Floating state 40~42";kne js16~39 fs40~42;BAO;Miary Zo-db+2,4;Sifaka Roa;r36;;
+* Low crush 15~38
+* Floating state 39~41";kne js15~38 fs39~41;BAO;Miary Zo-db+2,4;Sifaka Roa;r36;;
 db+3;L;21;i22~23;-26;+5c;+44a;"* Stagger on block
 * High crush 8~";cs8~;FC;Miary Zo-db+3;Daka Zavona;r31 FC;;
 db+4;L;13;i18;-12;+1;;;;;Miary Zo-db+4;Daka Tany;r31;;
@@ -195,24 +224,25 @@ b+1,4;h, h;10, 21;i12~13, i22~23;-13;+16a (-1);;"* Tornado
 * Balcony Break
 * Combo from 1st hit with 3f delay
 * Move can be delayed 3f
-* Low crush 20~40
-* Floating state 41~43";trn bbr js20~40 fs41~43;;Miary Zo-b+1,4;Vavaky ny Avana;r33;;
+* Launches opponent if first hit is CH +71a (+55)
+* Low crush 19~39
+* Floating state 40~42";trn bbr js19~39 fs40~42;;Miary Zo-b+1,4;Vavaky ny Avana;r33;;
 b+2;h;10;i13;-12;+0;;* Homing;hom;;Miary Zo-b+2;;r31;;
 b+2,3;h, h;10, 16;i13, i18~19;-9;+2;;"* Combos from 1st hit
 * Jails from 1st hit
-* Enter MIR -6 +5 r28 with F";;MIR;Miary Zo-b+2,3;;r31;;
+* Enter MOR -6 +5 r28 with F";;MOR;Miary Zo-b+2,3;;r31;;
 b+2,3,2;h, h, h,h,h;10, 16, 5,8,12;i13, ,i27~29 i4~5 i5~6;-6;+21d;;"* Balcony Break
 * Weapon
 * Jail from 3rd attack
 * Chip damage on block";bbr wpn chp;;Miary Zo-b+2,3,2;Tondradrano Masina;r26;;
 b+3;m;9;i16~17;-13;-2;;;;;Miary Zo-b+3;;r31;;
 b+3,4;m, h;9, 13;i16~17, i24;-13;-5;;"* Combo from 1st hit
-* Low crush 15~43
-* Floating state 44~46";js15~43 fs44~46;;Miary Zo-b+3,4;;r35;;
+* Low crush 14~42
+* Floating state 43~45";js14~42 fs43~45;;Miary Zo-b+3,4;;r35;;
 b+3,4,2;m, h, h;9, 13, 19;i16~17, ,i28~29;-13;+7a (-2);;"* Strong Aerial Tailspin
 * Balcony Break
-* Enter MIR -1 +19a (+10) r30 with F
-* Chip damage on block";bbr chp;MIR;Miary Zo-b+3,4,2;Mandihy ny Indry;r42;;
+* Enter MOR -1 +19a (+10) r30 with F
+* Chip damage on block";bbr chp;MOR;Miary Zo-b+3,4,2;Mandihy ny Indry;r42;;
 b+4;m;19;i19;-2;+22a (+13);+39a;"* Balcony Break
 * Good SSR tracking
 * Low crush 9~35
@@ -229,6 +259,13 @@ u+3;m;17;i17~18;-9;+27g;+40a;"* Weapon
 * Opponent recovers crouching on hit
 * Low crush 9~28
 * Floating state 29~31";wpn js9~28 fs29~31;;Miary Zo-u+3;Hazavana;r27;;
+H.u+3,2;m, m;17, 27;i17~18, i30~32;-9;+65a (+49);;"* Tornado
+* Weapon
+* Combos from 1st hit
+* Available only on hit or block
+* 5 chip damage on block
+* Partially consumes remaining Heat Time
+* Low crush";trn wpn js;;Miary Zo-u+3,H.2;Hazavan'i Zanahary;;;
 u+4;m;17;i16~17;-13;+6;+35a (+25);"* Knee
 * Transition to BAO +6 r24 automatically on hit only
 * Cancel BAO transition -13 -6 +23a (+13) r36 with B
@@ -251,6 +288,11 @@ uf+3;h,h,m;6,6,12;i18~19 i9~10 i9~10;-7;+6;;"* Balcony Break (airborne)
 * Weapon
 * Low crush 9~38
 * Floating state 39~41";wpn js9~38 fs39~41;;Miary Zo-uf+3;Lanitra;r31;;
+H.uf+3,2;h,h,m, m;6,6,12, 22;i18~19 i9~10 i9~10, i24~25;+4;+17a (+7);;"* Balcony Break
+* Weapon
+* Combos from 1st hit
+* 4 chip damage on block
+* Partially consumes remaining Heat Time";bbr wpn;;Miary Zo-uf+3,H.2;Lanitry Zanahary;;;
 uf+4;m;10;i15~16;-15;-7s;;"* Low crush 9~31
 * Floating state 32~34";js9~31 fs32~34;;Miary Zo-uf+4;;r36;;
 uf+4,4;m, m;10, 23;i15~16, i24~25;-13;+67a (+51);;"* Tornado
@@ -262,6 +304,14 @@ uf+3+4;m;18;i25~16;-5;+20a;;"* Spike
 * Cancel to r50 with UB
 * Low crush 9~30
 * Floating state 31~33";spk js9~30 fs31~33;;Miary Zo-uf+3+4;Dakan'ny Kalanoro;r29;;
+1+2+3+4;;;;;;;"* Can't block for 5 seconds
+* CH state on your next attack for 5 seconds ''(Tekken 7 and prior games)''
+* 10% damage increase on the next attack for 5 seconds ''(Tekken 8 season 2 patch onward)''
+* Attacks taken will be CH for 5 seconds";;;Miary Zo-1+2+3+4;Ki Charge;r60;;
+Tromba;;;;;;;"* Miary Zo clings to the wall for a short time
+* Cancel with DB
+* Can enter Tromba without wall contact when in Heat with H.b+3+4
+* Low crush";js;Tromba;Miary Zo-Tromba;Tromba;;;
 b,B+2+3;m!;30;i62~63;;-6d;;* Balcony Break;bbr;;Miary Zo-b,B+2+3;Afo'n Andrianerinerina;r52;;
 f,F+2;m;14;i15~16;-9;+7;;;;;Miary Zo-f,F+2;;r32;;
 f,F+2,2;m, m;14, 14,4,10;i15~16, i22~23 i5 i5;-9;+32a (+6);;"* Balcony Break
@@ -281,7 +331,7 @@ f,f,F+2,1;m, h;12, 14;i14, i17~18;+1;+33d (+25);;"* Balcony Break
 * Elbow
 * Jail from 1st attack
 * Chip damage on block
-* Enter MIR -4 +36d (+28) r27 with F on hit or block only";bbr elb chp;MIR;Miary Zo-f,f,F+2,1;Mangatsiaka;r30;;
+* Enter MOR +4 +36d (+28) r27 with F on hit or block only";bbr elb chp;MOR;Miary Zo-f,f,F+2,1;Mangatsiaka;r30;;
 f,f,F+3;m;30;i23~26;+6~+9;+19a (+9);;"* Balcony Break
 * Chip damage on block
 * Transition to BAO +6 r34 automatically on hit or block only
@@ -300,11 +350,47 @@ ws2;m;15;i15~16;-13;+32a (+22);;;;;Miary Zo-ws2;Daroka Henjana;r31;;
 ws3;m;20;i20;+4;+7c;+54a;"* Spike
 * Hit vs BT +14d";spk;;Miary Zo-ws3;Daka Manorana;r31;;
 ws4;m;15;i11~12;-4;+7;;;;;Miary Zo-ws4;Toe Smash;r22;;
+SS.2;m;22;i20;+1;+3;+59a;"* Balcony Break (airborne)
+* Enter MOR +4 +6 r32 with F
+* 4 chip damage on block
+* Sidestep takes 9f, effective startup i29";;MOR;Miary Zo-SS.2;Antsy Afo;r34;;
 FC.df+4;L;16;i18~19;-26;+4c;;"* Clean hit +9a, 4 extra damage
 * Stagger on block
 * High crush 1~44";cs1~44;;Miary Zo-FC.df+4;Mpiady Mierona;r35;;
-MIR.1;m;14;i13;-4;+8;;* Good SSR tracking;;;Miary Zo-MIR.1;;r27;;
-MIR.1,2;m, h,h,h;14, 5,8,12;i13, i21~23 i4~5 i5~6;-3;+24d;;"* Heat Engager
+BAO.1;h;12;i13~14;+4;+9;;* Low crush 1~80;js1~80;BAO;Miary Zo-BAO.1;;r20 BAO;;
+BAO.1,4;h, m,m;12, 5,20;i13~14, i25~26 i7~8;-5;+24d;;"* Balcony Break
+* Floor Break
+* Combo from 1st hit with 1f delay
+* Input can be delayed 1f
+* Move cannot be delayed
+* 6 chip damage on block
+* Low crush 1~31
+* Floating state 32~34";bbr fbr js1~31 fs32~34;;Miary Zo-BAO.1,4;Hiran'ny Vonikazo;r25;;
+BAO.2;M;24;i23~25;-18;+33a (+23);;"* Tornado
+* Weapon
+* Steel pedal
+* Low crush 1~50
+* Floating state 51~53";trn wpn js1~50 fs51~53;;Miary Zo-BAO.2;Hiran'ny Fakany;r35;;
+BAO.3;m,m;15,25;i19~20 i10~11;-9;+15d (+5);;"* Heat Engager
+
+* Heat Dash +5, +36a (+26)
+
+* Homing
+* Balcony Break
+* Low crush 1~66
+* Floating state 67~69";he hom bbr js1~66 fs67~69;;Miary Zo-BAO.3;Hiran'ny Raviny;r40;;
+BAO.4;L,m;18,20;i18~19 i27~28;-24;-2d;+66a (+50);"* Tornado
+* 2nd available only on hit or block
+* Low crush 1~43
+* Floating state 44~46";trn js1~43 fs44~46;;Miary Zo-BAO.4;Hiran'ny Raviny;r45;;
+BAO.F;;;;;;;"* Low crush 1~12
+* Floating state 13~15
+* High crush 21~82";js1~12 fs13~15 cs21~82;MOR;Miary Zo-BAO.F;Baobab Mihira > Morengy Miroso;r30 MOR;;
+BAO.uf;;;;;;;"* Evasive forward leap
+* Low crush 1~83
+* Floating state 84~86";js1~83 fs84~86;BAO;Miary Zo-BAO.uf;Baobab Mihira > Move Forward;r32 BAO;;
+MOR.1;m;14;i13;-4;+8;;* Good SSR tracking;;;Miary Zo-MOR.1;;r27;;
+MOR.1,2;m, h,h,h;14, 5,8,12;i13, i21~23 i4~5 i5~6;-3;+24d;;"* Heat Engager
 
 * Heat Dash +5, +36a (+26)
 
@@ -314,30 +400,69 @@ MIR.1,2;m, h,h,h;14, 5,8,12;i13, i21~23 i4~5 i5~6;-3;+24d;;"* Heat Engager
 * Input can be delayed 10f
 * Move can be delayed 7f
 * Jail from 2nd attack
-* Chip damage on block";he bbr wpn chp;;Miary Zo-MIR.1,2;Bibilava Fotsy;r23;;
-MIR.1,4;m, h;14, 20;i13, i22~23;-13;+6;+35a (+25);"* Knee
-* Combo from 1st CH with 10f delay
+* Chip damage on block";he bbr wpn chp;;Miary Zo-MOR.1,2;Bibilava Fotsy;r23;;
+MOR.1,4;m, h;14, 20;i13, i22~23;-13;+6;+35a (+25);"* Knee
+* Combo from 1st hit with 10f delay
 * Input can be delayed 10f
 * Move can be delayed 7f
 * Transition to BAO +6 r24 automatically on hit only
 * Cancel BAO transition -13 -6 r36 with B
-* Low crush 18~75
-* Floating state 76~78";kne js18~75 fs76~78;BAO;Miary Zo-MIR.1,4;Sifaka Fotsy;r36;;
-MIR.2;M;20;i15~16;-6;+18a (+1);+72a (+56);"* Tornado
+* Low crush 15~38
+* Floating state 39~41";kne js15~38 fs39~41;BAO;Miary Zo-MOR.1,4;Sifaka Fotsy;r36;;
+MOR.2;M;20;i15~16;-6;+18a (+1);+72a (+56);"* Tornado
 * Balcony Break
 * Elbow
-* Steel pedal";trn bbr elb;;Miary Zo-MIR.2;Daroka Manga;r31;;
-MIR.3;m;20;i17;-13;+12a (+3);;"* Balcony Break
+* Steel pedal";trn bbr elb;;Miary Zo-MOR.2;Daroka Manga;r31;;
+MOR.3;m;20;i17;-13;+12a (+3);;"* Balcony Break
 * Block advantage -9 on successful attack absorption, deals chip damage
-* Power crush 7~16";bbr pc7~16;;Miary Zo-MIR.3;Tosika Mena;r33;;
-MIR.4;L;10;i17;-12;-1;;* High crush 1~29;cs1~29;;Miary Zo-MIR.4;;r31;;
-MIR.4,3;L, h;10, 14;i17, i22~23;-13;+6;;"* Balcony Break (airborne)
-* Combo from 1st hit";;;Miary Zo-MIR.4,3;Lako Mavo;r36;;
-MIR.1+2;m;23;i26;+6;+23d;+84a (+64);"* Spike
+* Power crush 7~16";bbr pc7~16;;Miary Zo-MOR.3;Tosika Mena;r33;;
+MOR.4;L;10;i17;-12;-1;;* High crush 1~29;cs1~29;;Miary Zo-MOR.4;;r31;;
+MOR.4,3;L, h;10, 14;i17, i22~23;-13;+6;;"* Balcony Break (airborne)
+* Combo from 1st hit";;;Miary Zo-MOR.4,3;Lako Mavo;r36;;
+H.MOR.4,3,1+2;L, h, m;10, 14, 20;i17, ,i29~30;-17;+14a (-3);;"* Balcony Break
+* Weapon
+* Combos from 1st hit
+* Partially consumes remaining Heat Time
+* High crush";bbr wpn cs;;Miary Zo-MOR.4,3,H.1+2;Tandrok'i Zanahary;;;
+MOR.1+2;m;23;i26;+6;+23d;+84a (+64);"* Spike
 * Transition to BAO automatically on hit or block only
 * Cancel BAO transition +6 +23d +83a (+63) r31 with B
 * Chip damage on block
-* Low crush 6~24";spk chp js6~24;BAO;Miary Zo-MIR.1+2;Tafika Maitso;r31;;
-MIR.3+4;;;;;;;* Low crush 6~15;js6~15;BAO;Miary Zo-MIR.3+4;Morengy Miroso > Baobab Mihira;r20 BAO;;
-MIR.u+3+4;m;16;i16~17;-2;+4;;"* Low crush 13~29
-* Floating state 30~32";js13~29 fs30~32;;Miary Zo-MIR.u+3+4;Arahaba tsy Miloko;r29;;
+* Low crush 6~24";spk chp js6~24;BAO;Miary Zo-MOR.1+2;Tafika Maitso;r31;;
+MOR.3+4;;;;;;;* Low crush 6~15;js6~15;BAO;Miary Zo-MOR.3+4;Morengy Miroso > Baobab Mihira;r20 BAO;;
+MOR.u+1+2;m;16;i16~17;-2;+4;;"* Low crush 13~29
+* Floating state 30~32";js13~29 fs30~32;;Miary Zo-MOR.u+1+2;Arahaba tsy Miloko;r29;;
+WAL.4;m;40;i12~20;+2;+10a (=34);;"* Balcony Break
+* Reversal Break
+* Transition to MIR +5 +13d with F
+* Low crush";bbr rbr js;MIR;Miary Zo-WAL.4;Dakan'ny Famadihana;;;
+WAL.F;;;;;;;"* Transition to MIR
+* Low crush 
+* High crush";js cs;MIR;Miary Zo-WAL.F;Tromba > Morengy Miroso;;;
+WAL.uf;;;;;;;"* Transition to BAO
+* Low crush";js;BAO;Miary Zo-WAL.uf;Tromba > Baobab Mihira;;;
+H.f,F+2,2;m, m;14, 33;i15~16, i22~23;-1;+40a (+14);;"* Balcony Break
+* Weapon
+* Combos from 1st hit
+* Available only on hit or block
+* 7 chip damage on block
+* Partially consumes remaining Heat Time";bbr wpn;;Miary Zo-f,F+2,H.2;Rano Masini'i Zanahary;;;
+1+3;t;35;i12~14;-9;-5d;;"* Floor Break
+* Homing
+* Throw break 1 or 2
+* Transition to Tromba on throw break if Miary Zo makes contact with a wall";fbr hom;Tromba;Miary Zo-1+3;Angano avy any Tandrefana;;;
+2+4;t;35;i12~14;-6;-3d;;"* Floor Break
+* Homing
+* Throw break 1 or 2
+* Side switch on hit and throw break";fbr hom;;Miary Zo-2+4;Tantara avy an Tatsinanana;;;
+Back Throw;t;50;i12~14;!;+0d;;"* Floor Break
+* Unbreakable";fbr;;Miary Zo-Back Throw;Finoana avy any Atsimo;;;
+Left Throw;t;40;i12~14;-3;-6d;;"* Floor Break
+* Homing
+* Throw break 1";fbr hom;;Miary Zo-Left Throw;Angano avy any Tandrefana;;;
+Right Throw;t;40;i12~14;-3;-3d;;"* Floor Break
+* Homing
+* Throw break 2
+* Side switch on hit";fbr hom;;Miary Zo-Right Throw;Tantara avy an Tatsinanana;;;
+uf+1+2;t;40;i12;-3;+0d;;"* Balcony Break
+* Throw break 1+2";bbr;;Miary Zo-uf+1+2;Honohono avy any Avaratra;;;
