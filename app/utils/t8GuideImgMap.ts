@@ -13,6 +13,7 @@ import jun from '~/images/t8/guides/jun-1200.webp';
 import lars from '~/images/t8/guides/lars-1200.webp';
 import law from '~/images/t8/guides/law-1200.webp';
 import lee from '~/images/t8/guides/lee-1200.webp';
+import leo from '~/images/t8/guides/leo-1200.webp';
 import lidia from '~/images/t8/guides/lidia-1200.webp';
 import lili from '~/images/t8/guides/lili-1200.webp';
 import raven from '~/images/t8/guides/raven-1200.webp';
@@ -36,6 +37,7 @@ export const t8GuideImgMap: Record<string, string> = {
   jun,
   law,
   lee,
+  leo,
   lili,
   lidia,
   raven,
