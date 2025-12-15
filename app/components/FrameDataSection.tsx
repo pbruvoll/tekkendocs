@@ -9,16 +9,15 @@ import { type Move } from '~/types/Move';
 import { type MoveFilter } from '~/types/MoveFilter';
 import { type SearchParamsChanges } from '~/types/SearchParamsChanges';
 import { getFilterFromParams } from '~/utils/filterUtils';
-import { filterMoves, getMoveFilterTypes } from '~/utils/frameDataUtils';
+import { getMoveFilterTypes } from '~/utils/frameDataUtils';
 import {
   getSortByQueryParamValue,
   getSortSettings,
 } from '~/utils/sortingUtils';
-import { type FrameDataViewMode, useUserSettings } from '~/utils/userSettings';
+import { useUserSettings } from '~/utils/userSettings';
 import { ContentContainer } from './ContentContainer';
+import { DynamicFrameDataList } from './DynamicFrameDataList';
 import { FrameDataFilterDialog } from './FrameDataFilterDialog';
-import { FrameDataTable } from './FrameDataTableV2';
-import { SimpleMovesTable } from './SimpleMovesTable';
 
 export type FrameDataSectionProps = {
   moves: Move[];
@@ -48,20 +47,6 @@ export const FrameDataSection = ({
   }, [searchParams, searchQuery]);
 
   const moveTypes = useMemo(() => getMoveFilterTypes(moves), [moves]);
-
-  const filteredMoves = useMemo(() => {
-    return filterMoves(moves, filter);
-  }, [moves, filter]);
-
-  // Get a character ID for the SimpleMovesTable
-  const selectedCharId = useMemo(() => {
-    if (hasMultipleCharacters) {
-      return '';
-    }
-    // Try to get character ID from the first move if available
-    const firstMove = moves[0] as any;
-    return firstMove?.characterId || firstMove?.charId || 'unknown';
-  }, [moves, hasMultipleCharacters]);
 
   const setFilterValue = (key: string, value: string) => {
     setSearchParams((prev) => {
@@ -178,23 +163,13 @@ export const FrameDataSection = ({
         </div>
       </ContentContainer>
 
-      {frameDataViewMode === 'simple' ? (
-        <div className="mt-3">
-          <SimpleMovesTable
-            moves={filteredMoves}
-            selectedCharId={selectedCharId}
-            showsMultipleChars={hasMultipleCharacters}
-            includeCharNameInFrames={hasMultipleCharacters}
-          />
-        </div>
-      ) : (
-        <FrameDataTable
-          className="mt-3"
-          moves={moves}
-          filter={filter}
-          hasMultipleCharacters={hasMultipleCharacters}
-        />
-      )}
+      <DynamicFrameDataList
+        className="mt-3"
+        moves={moves}
+        filter={filter}
+        hasMultipleCharacters={hasMultipleCharacters}
+        viewMode={frameDataViewMode}
+      />
     </>
   );
 };
