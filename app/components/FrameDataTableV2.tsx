@@ -8,17 +8,17 @@ import { useMemo } from 'react';
 import { Link, useLocation, useSearchParams } from 'react-router';
 import { orderByKey } from '~/constants/sortConstants';
 import { type Move, type MoveT8 } from '~/types/Move';
-import { type MoveFilter } from '~/types/MoveFilter';
 import { type SortOrder } from '~/types/SortOrder';
 import { charIdFromMove, commandToUrlSegmentEncoded } from '~/utils/moveUtils';
 import { getSortSettings } from '~/utils/sortingUtils';
 import { MovePreviewDialogButton } from './MovePreviewDialogButton';
 
 export type FrameDataTableProps = {
+  gameRouteId: string;
+  charId?: string;
   moves: Move[];
-  filter?: MoveFilter;
   className?: string;
-  hasMultipleCharacters: boolean;
+  forceShowCharacter?: boolean;
 };
 
 const sortOrderIconMap: Record<SortOrder, React.ReactNode> = {
@@ -28,9 +28,11 @@ const sortOrderIconMap: Record<SortOrder, React.ReactNode> = {
 };
 
 export const FrameDataTable = ({
+  gameRouteId,
+  charId,
   moves,
   className,
-  hasMultipleCharacters,
+  forceShowCharacter,
 }: FrameDataTableProps) => {
   const [searchParams] = useSearchParams();
   const location = useLocation();
@@ -38,6 +40,8 @@ export const FrameDataTable = ({
     () => getSortSettings(searchParams),
     [searchParams],
   );
+
+  const showCharacter = forceShowCharacter || !charId;
 
   const createOrderLinkWithSearchParams = (columnName: string) => {
     const searchParamsCopy = new URLSearchParams(searchParams.toString());
@@ -68,7 +72,7 @@ export const FrameDataTable = ({
     <Table.Root variant="surface" className={className}>
       <Table.Header>
         <Table.Row>
-          {hasMultipleCharacters && (
+          {showCharacter && (
             <Table.ColumnHeaderCell>Char</Table.ColumnHeaderCell>
           )}
           {tableHeaders.map((h) => (
@@ -90,15 +94,11 @@ export const FrameDataTable = ({
       </Table.Header>
       <Table.Body>
         {moves.map((move) => {
-          const charId = hasMultipleCharacters
-            ? charIdFromMove(move as MoveT8)
-            : undefined;
-          const moveUrl =
-            (charId ? `../${charId}/` : '') +
-            commandToUrlSegmentEncoded(move.command);
+          const computedCharId = charId || charIdFromMove(move as MoveT8);
+          const moveUrl = `/${gameRouteId}/${computedCharId}/${commandToUrlSegmentEncoded(move.command)}`;
           return (
             <Table.Row key={move.moveNumber}>
-              {charId && <Table.Cell>{charId}</Table.Cell>}
+              {showCharacter && <Table.Cell>{computedCharId}</Table.Cell>}
               <Table.Cell>
                 <span className="inline-flex items-center gap-2 text-text-primary">
                   <Link style={{ textDecoration: 'none' }} to={moveUrl}>

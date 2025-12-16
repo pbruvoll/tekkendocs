@@ -3,6 +3,7 @@ import cx from 'classix';
 import { Link } from 'react-router';
 import { type Move, type MoveT8 } from '~/types/Move';
 import { charIdFromMove, commandToUrlSegmentEncoded } from '~/utils/moveUtils';
+import { MovePreviewDialogButton } from './MovePreviewDialogButton';
 
 // Helper function to format command for line breaks at commas
 const formatWordWithBreaks = (command: string) => {
@@ -23,17 +24,22 @@ const simplifyFrameValue = (frameData: string) => {
   return frameData.match(/i?[+-]?\d+/)?.[0] || '';
 };
 
-interface SimpleMovesTableProps {
+type SimpleMovesTableProps = {
+  gameRouteId: string;
+  charId?: string;
   moves: Move[];
-  hasMultipleCharacters: boolean;
+  forceShowCharacter?: boolean;
   className?: string;
-}
+};
 
 export function SimpleMovesTable({
+  gameRouteId,
+  charId,
   moves,
-  hasMultipleCharacters,
+  forceShowCharacter,
   className,
 }: SimpleMovesTableProps) {
+  const showCharacter = forceShowCharacter || !charId;
   return (
     <table className={cx('relative w-full text-sm', className)}>
       <thead className="[&_tr]:border-b">
@@ -61,12 +67,8 @@ export function SimpleMovesTable({
           const blockValue = Number(simpleBlock);
           const simpleHit = simplifyFrameValue(move.hit || '');
           const simpleCh = simplifyFrameValue(move.counterHit || '');
-          const charId = hasMultipleCharacters
-            ? charIdFromMove(move as MoveT8)
-            : undefined;
-          const moveUrl =
-            (charId ? `../${charId}/` : '') +
-            commandToUrlSegmentEncoded(move.command);
+          const computedCharId = charId || charIdFromMove(move as MoveT8);
+          const moveUrl = `/${gameRouteId}/${computedCharId}/${commandToUrlSegmentEncoded(move.command)}`;
           return (
             <tr
               key={move.moveNumber}
@@ -75,18 +77,19 @@ export function SimpleMovesTable({
               }`}
             >
               <td className="p-2 align-middle sm:p-4">
-                <Link
-                  className="inline-flex flex-wrap items-center gap-2 text-primary hover:underline"
-                  to={moveUrl}
-                >
-                  {hasMultipleCharacters && (
-                    <span className="text-muted-foreground">{charId}:</span>
+                <span className="inline-flex items-center gap-2 text-text-primary">
+                  {showCharacter && (
+                    <span className="text-muted-foreground">
+                      {computedCharId}{' '}
+                    </span>
                   )}
-                  <span className="break-words">
+                  <Link style={{ textDecoration: 'none' }} to={moveUrl}>
                     {formatWordWithBreaks(move.command)}
-                  </span>
-                  {move.ytVideo && <VideoIcon />}
-                </Link>
+                  </Link>
+                  {move.ytVideo && (
+                    <MovePreviewDialogButton move={move} url={moveUrl} />
+                  )}
+                </span>
               </td>
               <td className="p-2 align-middle sm:p-4">
                 {formatWordWithBreaks(move.hitLevel)}

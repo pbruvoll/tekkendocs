@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Switch } from '@/components/ui/switch';
 import { orderByKey } from '~/constants/sortConstants';
 import { sortOptions } from '~/constants/sortOptions';
+import { type GameRouteId } from '~/types/GameRouteId';
 import { type Move } from '~/types/Move';
 import { type MoveFilter } from '~/types/MoveFilter';
 import { type SearchParamsChanges } from '~/types/SearchParamsChanges';
@@ -20,12 +21,14 @@ import { DynamicFrameDataList } from './DynamicFrameDataList';
 import { FrameDataFilterDialog } from './FrameDataFilterDialog';
 
 export type FrameDataSectionProps = {
+  gameRouteId: GameRouteId;
+  charId?: string;
   moves: Move[];
-  hasMultipleCharacters: boolean;
 };
 export const FrameDataSection = ({
+  gameRouteId,
+  charId,
   moves,
-  hasMultipleCharacters,
 }: FrameDataSectionProps) => {
   const [searchParams, setSearchParams] = useSearchParams();
   const { frameDataViewMode, setFrameDataViewMode } = useUserSettings();
@@ -165,9 +168,10 @@ export const FrameDataSection = ({
 
       <DynamicFrameDataList
         className="mt-3"
+        gameRouteId={gameRouteId}
         moves={moves}
         filter={filter}
-        hasMultipleCharacters={hasMultipleCharacters}
+        charId={charId}
         viewMode={frameDataViewMode}
       />
     </>

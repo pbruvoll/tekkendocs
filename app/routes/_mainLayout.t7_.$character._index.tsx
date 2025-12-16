@@ -1,9 +1,14 @@
-import { useState } from 'react';
 import { Pencil1Icon } from '@radix-ui/react-icons';
 import { Heading, Link as RadixLink, Table } from '@radix-ui/themes';
-import { type HeadersFunction } from 'react-router';
-import { Link, type MetaFunction, NavLink, useMatches } from 'react-router';
 import { Filter } from 'lucide-react';
+import { useState } from 'react';
+import {
+  type HeadersFunction,
+  Link,
+  type MetaFunction,
+  NavLink,
+  useMatches,
+} from 'react-router';
 import { Input } from '@/components/ui/input';
 import { ContentContainer } from '~/components/ContentContainer';
 import { FrameDataTable } from '~/components/FrameDataTable';
@@ -20,7 +25,7 @@ export const headers: HeadersFunction = (args) => ({
   'X-Td-Cachecontext': args.loaderHeaders.get('X-Td-Cachecontext') || 'none',
 });
 
-export const meta: MetaFunction = ({ data, params, matches }) => {
+export const meta: MetaFunction = ({ params, matches }) => {
   const frameData = matches.find(
     (m) => (m.handle as RouteHandle)?.type === 'frameData',
   )?.data;

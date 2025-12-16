@@ -1,5 +1,7 @@
 import { useMemo } from 'react';
 import { useSearchParams } from 'react-router';
+import { Game } from '~/types/Game';
+import { type GameRouteId } from '~/types/GameRouteId';
 import { type Move } from '~/types/Move';
 import { type MoveFilter } from '~/types/MoveFilter';
 import { filterMoves, sortMovesV2 } from '~/utils/frameDataUtils';
@@ -10,20 +12,22 @@ import { FrameDataTable } from './FrameDataTableV2';
 import { SimpleMovesTable } from './SimpleMovesTable';
 
 export type DynamicFrameDataListProps = {
+  gameRouteId: GameRouteId;
+  charId?: string;
   moves: Move[];
   filter?: MoveFilter;
   className?: string;
-  hasMultipleCharacters: boolean;
   viewMode: FrameDataViewMode;
 };
 
 const maxMovesToShow = 400;
 
 export const DynamicFrameDataList = ({
+  gameRouteId,
+  charId,
   moves,
   className,
   filter,
-  hasMultipleCharacters,
   viewMode,
 }: DynamicFrameDataListProps) => {
   const [searchParams] = useSearchParams();
@@ -51,15 +55,17 @@ export const DynamicFrameDataList = ({
     <>
       {viewMode === 'default' ? (
         <FrameDataTable
+          gameRouteId={gameRouteId}
+          charId={charId}
           className={className}
           moves={paginatedMoves}
-          hasMultipleCharacters={hasMultipleCharacters}
         />
       ) : (
         <SimpleMovesTable
+          gameRouteId={gameRouteId}
+          charId={charId}
           className={className}
           moves={paginatedMoves}
-          hasMultipleCharacters={hasMultipleCharacters}
         />
       )}
       {paginatedMoves.length < sortedMoves.length && (
