@@ -1,11 +1,17 @@
 import { useEffect, useMemo } from 'react';
-import { type MetaFunction } from 'react-router';
-import { Link, useFetcher, useNavigate, useSearchParams } from 'react-router';
+import {
+  Link,
+  type MetaFunction,
+  useFetcher,
+  useNavigate,
+  useSearchParams,
+} from 'react-router';
 import { Input } from '@/components/ui/input';
 import { ContentContainer } from '~/components/ContentContainer';
 import { SimpleMovesTable } from '~/components/SimpleMovesTable';
 import { getTekken8Characters } from '~/services/staticDataService';
 import { type CharacterFrameDataPage } from '~/types/CharacterFrameDataPage';
+import { type GameRouteId } from '~/types/GameRouteId';
 import { type Move } from '~/types/Move';
 import { cleanCommand } from '~/utils/filterUtils';
 import { commandToUrlSegmentEncoded } from '~/utils/moveUtils';
@@ -25,6 +31,7 @@ export const meta: MetaFunction = ({ matches }) => {
 };
 
 const maxMovesToShow = 400;
+const gameRouteId: GameRouteId = 't8';
 
 export default function () {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -137,7 +144,7 @@ export default function () {
       state === 'idle' &&
       data?.characterName !== selectedCharId
     ) {
-      load(`/t8/${selectedCharId}`);
+      load(`/${gameRouteId}/${selectedCharId}`);
     }
   }, [selectedCharId, state, load, data?.characterName]);
 
@@ -153,12 +160,12 @@ export default function () {
   const handleOnKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === 'Enter') {
       if (characterQuery && !moveQuery) {
-        navigate(`/t8/${filteredCharList[0].id}`);
+        navigate(`/${gameRouteId}/${filteredCharList[0].id}`);
         return;
       }
       if (moveQuery && paginatedMoves.length > 0) {
         navigate(
-          `/t8/${selectedCharId}/${commandToUrlSegmentEncoded(paginatedMoves[0].command)}`,
+          `/${gameRouteId}/${selectedCharId}/${commandToUrlSegmentEncoded(paginatedMoves[0].command)}`,
         );
       }
     }
@@ -200,10 +207,10 @@ export default function () {
       {selectedCharId && state !== 'idle' && <div>Loading...</div>}
       {paginatedMoves.length > 0 && selectedCharId && (
         <SimpleMovesTable
+          gameRouteId={gameRouteId}
+          charId={showsMultipleChars ? undefined : selectedCharId}
           moves={paginatedMoves}
-          selectedCharId={selectedCharId}
-          showsMultipleChars={showsMultipleChars}
-          includeCharNameInFrames={includeCharNameInFrames}
+          forceShowCharacter={includeCharNameInFrames}
         />
       )}
 

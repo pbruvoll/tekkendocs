@@ -1,8 +1,9 @@
 import { VideoIcon } from '@radix-ui/react-icons';
-import { Link } from 'react-router';
 import cx from 'classix';
+import { Link } from 'react-router';
 import { type Move, type MoveT8 } from '~/types/Move';
 import { charIdFromMove, commandToUrlSegmentEncoded } from '~/utils/moveUtils';
+import { MovePreviewDialogButton } from './MovePreviewDialogButton';
 
 // Helper function to format command for line breaks at commas
 const formatWordWithBreaks = (command: string) => {
@@ -23,21 +24,24 @@ const simplifyFrameValue = (frameData: string) => {
   return frameData.match(/i?[+-]?\d+/)?.[0] || '';
 };
 
-interface SimpleMovesTableProps {
+type SimpleMovesTableProps = {
+  gameRouteId: string;
+  charId?: string;
   moves: Move[];
-  selectedCharId: string;
-  showsMultipleChars: boolean;
-  includeCharNameInFrames: boolean;
-}
+  forceShowCharacter?: boolean;
+  className?: string;
+};
 
 export function SimpleMovesTable({
+  gameRouteId,
+  charId,
   moves,
-  selectedCharId,
-  showsMultipleChars,
-  includeCharNameInFrames,
+  forceShowCharacter,
+  className,
 }: SimpleMovesTableProps) {
+  const showCharacter = forceShowCharacter || !charId;
   return (
-    <table className="relative w-full text-sm">
+    <table className={cx('relative w-full text-sm', className)}>
       <thead className="[&_tr]:border-b">
         <tr className="border-b transition-colors hover:bg-muted/50">
           <th className="sticky top-0 z-10 h-12 bg-background px-2 text-left align-middle font-medium text-muted-foreground sm:px-4">
@@ -63,6 +67,8 @@ export function SimpleMovesTable({
           const blockValue = Number(simpleBlock);
           const simpleHit = simplifyFrameValue(move.hit || '');
           const simpleCh = simplifyFrameValue(move.counterHit || '');
+          const computedCharId = charId || charIdFromMove(move as MoveT8);
+          const moveUrl = `/${gameRouteId}/${computedCharId}/${commandToUrlSegmentEncoded(move.command)}`;
           return (
             <tr
               key={move.moveNumber}
@@ -71,26 +77,19 @@ export function SimpleMovesTable({
               }`}
             >
               <td className="p-2 align-middle sm:p-4">
-                <Link
-                  className="inline-flex flex-wrap items-center gap-2 text-primary hover:underline"
-                  to={`/t8/${
-                    showsMultipleChars
-                      ? charIdFromMove(move as MoveT8)
-                      : selectedCharId
-                  }/${commandToUrlSegmentEncoded(move.command)}`}
-                >
-                  {includeCharNameInFrames && (
+                <span className="inline-flex items-center gap-2 text-text-primary">
+                  {showCharacter && (
                     <span className="text-muted-foreground">
-                      {showsMultipleChars
-                        ? charIdFromMove(move as MoveT8)
-                        : selectedCharId}{' '}
+                      {computedCharId}{' '}
                     </span>
                   )}
-                  <span className="break-words">
+                  <Link style={{ textDecoration: 'none' }} to={moveUrl}>
                     {formatWordWithBreaks(move.command)}
-                  </span>
-                  {move.ytVideo && <VideoIcon />}
-                </Link>
+                  </Link>
+                  {move.ytVideo && (
+                    <MovePreviewDialogButton move={move} url={moveUrl} />
+                  )}
+                </span>
               </td>
               <td className="p-2 align-middle sm:p-4">
                 {formatWordWithBreaks(move.hitLevel)}

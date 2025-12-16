@@ -1,26 +1,24 @@
-import { useMemo } from 'react';
 import {
   CaretDownIcon,
   CaretSortIcon,
   CaretUpIcon,
 } from '@radix-ui/react-icons';
 import { Table } from '@radix-ui/themes';
+import { useMemo } from 'react';
 import { Link, useLocation, useSearchParams } from 'react-router';
 import { orderByKey } from '~/constants/sortConstants';
 import { type Move, type MoveT8 } from '~/types/Move';
-import { type MoveFilter } from '~/types/MoveFilter';
 import { type SortOrder } from '~/types/SortOrder';
-import { filterMoves, sortMovesV2 } from '~/utils/frameDataUtils';
 import { charIdFromMove, commandToUrlSegmentEncoded } from '~/utils/moveUtils';
 import { getSortSettings } from '~/utils/sortingUtils';
-import { ContentContainer } from './ContentContainer';
 import { MovePreviewDialogButton } from './MovePreviewDialogButton';
 
 export type FrameDataTableProps = {
+  gameRouteId: string;
+  charId?: string;
   moves: Move[];
-  filter?: MoveFilter;
   className?: string;
-  hasMultipleCharacters: boolean;
+  forceShowCharacter?: boolean;
 };
 
 const sortOrderIconMap: Record<SortOrder, React.ReactNode> = {
@@ -29,13 +27,12 @@ const sortOrderIconMap: Record<SortOrder, React.ReactNode> = {
   desc: <CaretUpIcon width="1.5rem" height="1.5rem" />,
 };
 
-const maxMovesToShow = 400;
-
 export const FrameDataTable = ({
+  gameRouteId,
+  charId,
   moves,
   className,
-  filter,
-  hasMultipleCharacters,
+  forceShowCharacter,
 }: FrameDataTableProps) => {
   const [searchParams] = useSearchParams();
   const location = useLocation();
@@ -43,6 +40,8 @@ export const FrameDataTable = ({
     () => getSortSettings(searchParams),
     [searchParams],
   );
+
+  const showCharacter = forceShowCharacter || !charId;
 
   const createOrderLinkWithSearchParams = (columnName: string) => {
     const searchParamsCopy = new URLSearchParams(searchParams.toString());
@@ -58,25 +57,6 @@ export const FrameDataTable = ({
     return `${location.pathname}?${searchParamsCopy.toString()}`;
   };
 
-  const filteredMoves = useMemo(() => {
-    return filterMoves(moves, filter);
-  }, [filter, moves]);
-
-  const sortedMoves = useMemo(() => {
-    return sortMovesV2(filteredMoves, sortSettings);
-  }, [filteredMoves, sortSettings]);
-
-  const paginatedMoves = useMemo(() => {
-    if (sortedMoves.length > maxMovesToShow) {
-      return sortedMoves.slice(0, maxMovesToShow);
-    }
-    return sortedMoves;
-  }, [sortedMoves]);
-
-  /**  Frame data imported from wavu wiki might not have unique commands. This might brake sorting
-   * since react does not update dom properly. Therefor we set key based on sorting to force React
-   * to create a new table */
-
   const tableHeaders: { id: keyof Move; displayName: string }[] = [
     { id: 'command', displayName: 'Command' },
     { id: 'hitLevel', displayName: 'Hit level' },
@@ -89,72 +69,61 @@ export const FrameDataTable = ({
   ];
 
   return (
-    <>
-      <Table.Root variant="surface" className={className}>
-        <Table.Header>
-          <Table.Row>
-            {hasMultipleCharacters && (
-              <Table.ColumnHeaderCell>Char</Table.ColumnHeaderCell>
-            )}
-            {tableHeaders.map((h) => (
-              <Table.ColumnHeaderCell key={h.id}>
-                <Link
-                  to={createOrderLinkWithSearchParams(h.id)}
-                  preventScrollReset
-                  replace
-                  className="flex flex-wrap items-end"
-                >
-                  {h.displayName}
-                  {h.id.toLowerCase() === sortSettings?.sortByKey
-                    ? sortOrderIconMap[sortSettings.sortDirection]
-                    : sortOrderIconMap['']}
-                </Link>
-              </Table.ColumnHeaderCell>
-            ))}
-          </Table.Row>
-        </Table.Header>
-        <Table.Body>
-          {paginatedMoves.map((move) => {
-            const charId = hasMultipleCharacters
-              ? charIdFromMove(move as MoveT8)
-              : undefined;
-            const moveUrl =
-              (charId ? `../${charId}/` : '') +
-              commandToUrlSegmentEncoded(move.command);
-            return (
-              <Table.Row key={move.moveNumber}>
-                {charId && <Table.Cell>{charId}</Table.Cell>}
-                <Table.Cell>
-                  <span className="inline-flex items-center gap-2 text-text-primary">
-                    <Link style={{ textDecoration: 'none' }} to={moveUrl}>
-                      {move.command}
-                    </Link>
-                    {move.ytVideo && (
-                      <MovePreviewDialogButton move={move} url={moveUrl} />
-                    )}
-                  </span>
-                </Table.Cell>
-                <Table.Cell>{move.hitLevel}</Table.Cell>
-                <Table.Cell>{move.damage}</Table.Cell>
-                <Table.Cell>{move.startup}</Table.Cell>
-                <Table.Cell>{move.block}</Table.Cell>
-                <Table.Cell>{move.hit}</Table.Cell>
-                <Table.Cell>{move.counterHit}</Table.Cell>
-                <Table.Cell>
-                  {move.notes?.split('\n').map((line, index) => (
-                    <div key={index}>{line}</div>
-                  ))}
-                </Table.Cell>
-              </Table.Row>
-            );
-          })}
-        </Table.Body>
-      </Table.Root>
-      {paginatedMoves.length < sortedMoves.length && (
-        <ContentContainer className="my-4">
-          Showing {paginatedMoves.length} of {sortedMoves.length} moves
-        </ContentContainer>
-      )}
-    </>
+    <Table.Root variant="surface" className={className}>
+      <Table.Header>
+        <Table.Row>
+          {showCharacter && (
+            <Table.ColumnHeaderCell>Char</Table.ColumnHeaderCell>
+          )}
+          {tableHeaders.map((h) => (
+            <Table.ColumnHeaderCell key={h.id}>
+              <Link
+                to={createOrderLinkWithSearchParams(h.id)}
+                preventScrollReset
+                replace
+                className="flex flex-wrap items-end"
+              >
+                {h.displayName}
+                {h.id.toLowerCase() === sortSettings?.sortByKey
+                  ? sortOrderIconMap[sortSettings.sortDirection]
+                  : sortOrderIconMap['']}
+              </Link>
+            </Table.ColumnHeaderCell>
+          ))}
+        </Table.Row>
+      </Table.Header>
+      <Table.Body>
+        {moves.map((move) => {
+          const computedCharId = charId || charIdFromMove(move as MoveT8);
+          const moveUrl = `/${gameRouteId}/${computedCharId}/${commandToUrlSegmentEncoded(move.command)}`;
+          return (
+            <Table.Row key={move.moveNumber}>
+              {showCharacter && <Table.Cell>{computedCharId}</Table.Cell>}
+              <Table.Cell>
+                <span className="inline-flex items-center gap-2 text-text-primary">
+                  <Link style={{ textDecoration: 'none' }} to={moveUrl}>
+                    {move.command}
+                  </Link>
+                  {move.ytVideo && (
+                    <MovePreviewDialogButton move={move} url={moveUrl} />
+                  )}
+                </span>
+              </Table.Cell>
+              <Table.Cell>{move.hitLevel}</Table.Cell>
+              <Table.Cell>{move.damage}</Table.Cell>
+              <Table.Cell>{move.startup}</Table.Cell>
+              <Table.Cell>{move.block}</Table.Cell>
+              <Table.Cell>{move.hit}</Table.Cell>
+              <Table.Cell>{move.counterHit}</Table.Cell>
+              <Table.Cell>
+                {move.notes?.split('\n').map((line, index) => (
+                  <div key={index}>{line}</div>
+                ))}
+              </Table.Cell>
+            </Table.Row>
+          );
+        })}
+      </Table.Body>
+    </Table.Root>
   );
 };
