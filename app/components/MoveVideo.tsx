@@ -1,5 +1,5 @@
-import ReactPlayer from 'react-player/youtube';
 import cx from 'classix';
+import ReactPlayer from 'react-player/youtube';
 import { useHydrated } from 'remix-utils/use-hydrated';
 import { type Move } from '~/types/Move';
 
@@ -18,7 +18,7 @@ export const MoveVideo = ({
 
   if (move.ytVideo && isHydrated) {
     return (
-      <div className="relative aspect-video">
+      <div className={cx('relative aspect-video', className)}>
         <ReactPlayer
           playing
           controls
