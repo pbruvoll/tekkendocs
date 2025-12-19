@@ -1,4 +1,5 @@
 import { Heading } from '@radix-ui/themes';
+import cx from 'classix';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Commands } from '~/components/Commands';
@@ -69,7 +70,7 @@ const KeyMoveHeading = ({
 
   return (
     <div>
-      <div className="flex gap-2 items-center mb-1">
+      <div className="flex gap-4 items-center mb-1">
         <Heading as="h3" size="3">
           <Commands
             charUrl={charUrl}
@@ -78,9 +79,19 @@ const KeyMoveHeading = ({
           />
         </Heading>
         {moveWithYtVideo && (
-          <button type="button" onClick={() => setShowVideo(!showVideo)}>
+          <Button
+            type="button"
+            variant="outline"
+            className={cx(
+              'rounded-full h-6 px-3 border-2 border-border text-xs',
+              showVideo
+                ? 'bg-accent text-accent-foreground hover:bg-accent'
+                : 'text-muted-foreground',
+            )}
+            onClick={() => setShowVideo(!showVideo)}
+          >
             {showVideo ? 'Hide video' : 'Show video'}
-          </button>
+          </Button>
         )}
       </div>
       {showVideo && moveWithYtVideo && (
