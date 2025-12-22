@@ -646,6 +646,13 @@ export const sortMovesV2 = (
     case 'counterHit': {
       return sortMovesByNumber(moves, (move: Move) => move.counterHit, asc);
     }
+    case 'recovery': {
+      return sortMovesByNumber(
+        moves,
+        (move: Move) => getRecoveryFrames(move) || '',
+        asc,
+      );
+    }
     case `notes`: {
       return sortMovesByNumber(
         moves,
@@ -802,4 +809,12 @@ export const getMoveFilterTypes = (moves: Move[]): MoveFilterTypes => {
     states,
     transitions: Array.from(allTransitions),
   };
+};
+
+export const getRecoveryFrames = (move: Move): string | undefined => {
+  if (!move.recovery) return undefined;
+
+  // match string like "t22 r18" or "r18? t22"
+  const match = move.recovery.match(/(?:^|\s)r(\d\S*)(?=\s|$)/i);
+  return match?.[1];
 };

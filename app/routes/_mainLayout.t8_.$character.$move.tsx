@@ -7,6 +7,7 @@ import {
   getCharacterFrameData,
   getCharacterFrameDataMoves,
 } from '~/utils/characterPageUtils';
+import { getRecoveryFrames } from '~/utils/frameDataUtils';
 import { getCacheControlHeaders } from '~/utils/headerUtils';
 import { commandToUrlSegment } from '~/utils/moveUtils';
 
@@ -150,6 +151,10 @@ export default function MoveRoute() {
           <Table.Row>
             <Table.RowHeaderCell>Counter hit</Table.RowHeaderCell>
             <Table.Cell>{move.counterHit}</Table.Cell>
+          </Table.Row>
+          <Table.Row>
+            <Table.RowHeaderCell>Recovery frames</Table.RowHeaderCell>
+            <Table.Cell>{getRecoveryFrames(move) ?? 'N/A'}</Table.Cell>
           </Table.Row>
           <Table.Row>
             <Table.RowHeaderCell>Notes</Table.RowHeaderCell>

@@ -68,4 +68,18 @@ export const sortOptions: {
       sortDirection: 'desc',
     }),
   },
+  {
+    displayName: 'Recovery (low - high)',
+    value: getSortByQueryParamValue({
+      sortByKey: 'recovery',
+      sortDirection: 'desc',
+    }),
+  },
+  {
+    displayName: 'Recovery (high - low)',
+    value: getSortByQueryParamValue({
+      sortByKey: 'recovery',
+      sortDirection: 'asc',
+    }),
+  },
 ];
