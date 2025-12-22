@@ -1,5 +1,9 @@
-import { data, type LoaderFunctionArgs } from 'react-router';
-import { Outlet } from 'react-router';
+import {
+  data,
+  type LoaderFunctionArgs,
+  Outlet,
+  type ShouldRevalidateFunctionArgs,
+} from 'react-router';
 import { environment } from '~/constants/environment.server';
 import { SheetServiceMock } from '~/mock/SheetServiceMock';
 import { SheetServiceImpl } from '~/services/sheetServiceImpl.server';
@@ -11,12 +15,19 @@ import { type SheetService } from '~/types/SheetService';
 import { type TableData } from '~/types/TableData';
 import { applyOverride, frameDataTableToJson } from '~/utils/frameDataUtils';
 import { getCacheControlHeaders } from '~/utils/headerUtils';
+import { type Route } from './+types/_mainLayout.t8_.$character';
 
-export function shouldRevalidate() {
+export function shouldRevalidate({
+  currentParams,
+  nextParams,
+}: ShouldRevalidateFunctionArgs): boolean {
+  if (currentParams.character !== nextParams.character) {
+    return true;
+  }
   return false;
 }
 
-export const loader = async ({ params }: LoaderFunctionArgs) => {
+export const loader = async ({ params }: Route.LoaderArgs) => {
   const characterId = params.character;
   if (!characterId) {
     throw new Response(null, {

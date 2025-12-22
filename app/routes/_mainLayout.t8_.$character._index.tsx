@@ -33,10 +33,10 @@ export function shouldRevalidate() {
   return false;
 }
 
-export const meta: MetaFunction = ({ data, params, matches, location }) => {
+export const meta: MetaFunction = ({ params, matches, location }) => {
   const frameData = matches.find(
     (m) => (m.handle as RouteHandle)?.type === 'frameData',
-  )?.data;
+  )?.loaderData;
   if (!frameData) {
     return [
       {
