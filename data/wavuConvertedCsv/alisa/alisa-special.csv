@@ -57,7 +57,7 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Floating state 42~44";bbr js13~41 fs42~44;;Alisa-2,3,3;Down Time;r32;;File:t8-p2-alisa-2,3,3.mp4
 2,3,4;h, m, L;10, 8, 20;i12, ,i42~45;-13;+13;;"* Low crush 24~39
 * Floating state 40~42";js24~39 fs40~42;;Alisa-2,3,4;Down Link;r32;;File:t8-p2-alisa-2,3,4.mp4
-3;m;10;i13~14;-12;-1;;;;;Alisa-3;Accelerator;r30;;
+3;m;10;i13~14;-12;-1;;;;;Alisa-3;;r30;;
 3,2;m, h;10, 20;i13~14, i26~27;-2;+20a (+11);;"* Heat Engager
 
 * Heat Dash +5, +34a (+27)
@@ -176,10 +176,10 @@ d+3+4;L;20;i27~i28;-37;+67a (+51);;"* Homing
 * Enter DES with 1+2
 * High crush 20~40
 * Floating state 5~55";hom cs20~40 fs5~55;DES;Alisa-d+3+4;Harpoon Sweep;r36;;File:t8-p2-alisa-d+3+4.mp4
-db+1;;;;;;;"* Transition to r9? FC with D or after d+3 BKP transition
+db+1;;;;;;;"* Transition to FC with D
 * Can perform WS moves after 24 frames
 * High crush 4~15";cs4~15;FC,BKP;Alisa-db+1;Backup;r15 BKP;;
-db+1;;;;;;;"* Transition to FC with D
+db+1;;;;;;;"* Transition to r9? FC with D or after d+3 BKP transition
 * Can perform WS moves after 24 frames
 * High crush 4~15";cs4~15;FC,BKP;Alisa-db+1;Backup;r15 BKP;;
 db+2;m;10;i18~19;-18;-5;;;;;Alisa-db+2;;r36;;
@@ -202,11 +202,11 @@ b+1+3,P;m!;25;i20~21;;-5a (-14);;"* Balcony Break
 b+2;m;12;i18;-9;+1;;;;;Alisa-b+2;;r31;;
 b+2,1;m, m;12, 17;i18, i25~26;-13;+3c;+17a;"* Spike
 * Combo from 1st hit with 7f delay
-* Input can be delayed 12f";spk;;Alisa-b+2,1;Trance Hammer;r31;;File:t8-p2-alisa-b+2,1.mp4
+* Move can be delayed 12f";spk;;Alisa-b+2,1;Trance Hammer;r31;;File:t8-p2-alisa-b+2,1.mp4
 b+2,3;m, m;12, 22;i18, i23~24;-15;+9a (-8);;"* Tornado
 * Balcony Break
 * Combo from 1st hit with 9f delay
-* Input can be delayed 12f
+* Move can be delayed 12f
 * Low crush 21~60
 * Floating state 61~63";trn bbr js21~60 fs61~63;;Alisa-b+2,3;Trance Generator;r40;;File:t8-p2-alisa-b+2,3.mp4
 b+2,4;m, h;12, 20;i18, i16~17;-7;+12g;+36a;"* Balcony Break
@@ -243,11 +243,11 @@ b+3+4,3+4;m, M;22, 25;i18~19, i56~61;+5c~+10c;+59a;;"* Spike
 ub+2;h;23;i16~20;-9;+38a (-20);;"* Balcony Break
 * 9 chip damage on block, +0 block advantage on attack absorption
 * Power crush 7~15
-* Floating state 20~30";bbr pc7~15 fs20~30;;Alisa-ub+2;Overload;r32;;
+* Floating state 20~30";bbr pc7~15 fs20~30;;Alisa-ub+2;Overload;r32;;File:t8-p2-alisa-ub+2.mp4
 ub+2;h;23;i16~20;-9;+38a (-20);;"* Balcony Break
 * 9 chip damage on block, +0 block advantage on attack absorption
 * Power crush 7~15
-* Floating state 20~30";bbr pc7~15 fs20~30;;Alisa-ub+2;Overload;r32;;File:t8-p2-alisa-ub+2.mp4
+* Floating state 20~30";bbr pc7~15 fs20~30;;Alisa-ub+2;Overload;r32;;
 ub+4;m;10;i18;-9;+7;;"* Low crush 9~31
 * Floating state 32~34";js9~31 fs32~34;;Alisa-ub+4;1st Hit;r27;;
 ub+4,1;m, m;10, 12;i18, i25~27;-21;-8;;"Combo from 1st CH
@@ -341,9 +341,9 @@ b,B+2+3;m!;50;i75~76;;+44;;"* Balcony Break
 * Head";bbr;;Alisa-b,B+2+3;Hang-Up;r102;;File:t8-p2-alisa-b+2+3.mp4
 f,F+2;m;18;i16~17;-18;+5a;;* Balcony Break;bbr;;Alisa-f,F+2;;r39;;
 f,F+2,3;m, m;18, 25;i16~17, i22~24;-13;+28a (+2);;"* Balcony Break
-* Combo from 1st hit
-* Input can be delayed 13f
-* Move can be delayed 8f";bbr;;Alisa-f,F+2,3;Jumper Switch;r36;;File:t8-p2-alisa-f,f+2,3.mp4
+* Combo from 1st hit with ~7~8?F delay (character-dependent)
+* Input can be delayed 14F
+* Move can be delayed 8F";bbr;;Alisa-f,F+2,3;Jumper Switch;r36;;File:t8-p2-alisa-f,f+2,3.mp4
 f,F+3;m;12;i18~19;-14;-6;;"* Low crush 15~41
 * Floating state 42~44";js15~41 fs42~44;;Alisa-f,F+3;;r35;;
 f,F+3,4;m, h;12, 15;i18~19, i19~20;-10;+20a (+11);;"* Balcony Break
@@ -359,7 +359,7 @@ f,F+4;m,m;14,22;i22~29 i34~39;-9~-2;+9a (+0);;"* Balcony Break
 * Knee
 * Transition to attack throw on front hit only
 * +8a (-1) on BT hit
-* Just frame input: f,F+4:1 to power up";bbr kne;;Alisa-f,F+4;Sandbox;r30;;File:t8-p2-alisa-f,f+4.mp4
+* Just frame input: Input 1 during frames 16-19? to add 5 more dmg";bbr kne;;Alisa-f,F+4;Sandbox;r30;;File:t8-p2-alisa-f,f+4.mp4
 f,F+1+2;m,m;5,10;i17~18 i12~13;-9;+4;+13;13 extra damage on CH, 28 in total;;;Alisa-f,F+1+2;Worm Virus;r27;;File:t8-p2-alisa-f,f+1+2.mp4
 f,f,F+2;h;30;i13~15;+5~+7;+28a (+20);;"* Balcony Break
 * 9 chip damage on block
@@ -372,6 +372,7 @@ f,f,F+3;m;15;i18~19;-4;+6;;"* Balcony Break
 * Floating state 31~33";bbr js3~30 fs31~33;;Alisa-f,f,F+3;;r33;;
 f,f,F+3,4;m, m;15, 20;i18~19, i20~22;-7;+31a (+5);;"* Balcony Break
 * Combo from 1st hit
+* Jail from 1st block
 * Low crush 3~50
 * Floating state 51~53";bbr js3~50 fs51~53;;Alisa-f,f,F+3,4;Linear Dropkick;r33;;File:t8-p2-alisa-f,f,f+3,4.mp4
 f,f,F+1+2;M;24;i18~36;-3;-17a (-26);;"* Balcony Break
@@ -499,6 +500,7 @@ DES.1;m,m,h,h,h,m;35;i13~18 i1~5 i1~7 i1~5 i1~4 i16~17;-9;+17a;;"* Weapon
 * 7 chip damage on block in heat
 * Final hit available only on hit";wpn;DES;Alisa-DES.1;Shredder;r32 DES;;File:t8-p2-alisa-des.1.mp4
 DES.2;M,M,m;5,5,5;i20~21 i1~2 i1~2;-8;+37a (+27);;"* Weapon
+* Jab evasion
 * 2 chip damage on block
 * 8 chip damage on block in heat";wpn;DES;Alisa-DES.2;Shredding Uppercut;r32 DES;;File:t8-p2-alisa-des.2.mp4
 DES.2,1;M,M,m, h!;5,5,5, 20;i20~21 i1~2 i1~2, i28~56;;+85a (+69);;"* Tornado
@@ -572,14 +574,14 @@ DES.f+2,1,2;m,m, m,m, m,m;9, 9, 23;i15 i1~1, ,i23~24 i4~5;-13;+30d;;"* Heat Enga
 * Move cannot be delayed
 * 6 chip damage on block
 * 7 chip damage on block in heat";he wpn;;Alisa-DES.f+2,1,2;Gigahertz Storm;r42;;File:t8-p2-alisa-des.f+2,1,2.mp4
-DES.f+3;;;;;;;"* Cancel to r33 standing block with DBT.B
-* Transition to Evasive Action with input DBT.U_D
-* Low crush 18~40
-* Floating state 41~43";js18~40 fs41~43;DBT;Alisa-DES.f+3;Dual Boot;r17 DBT;;
 DES.f+3;;;;;;;"* Cancel to r33 with DBT.b
 * Transition to r50 SS with DBT.u_d
 * Low crush 18~40
 * Floating state 41~43";js18~40 fs41~43;SS,DBT;Alisa-DES.f+3;Dual Boot;r17 DBT;;
+DES.f+3;;;;;;;"* Cancel to r33 standing block with DBT.B
+* Transition to Evasive Action with input DBT.U_D
+* Low crush 18~40
+* Floating state 41~43";js18~40 fs41~43;DBT;Alisa-DES.f+3;Dual Boot;r17 DBT;;
 DES.f+1+2;m,m,m,m,m,m,m,m;29;i23~27 i1~5 i1~4 i1~4 i1~5 i1~5 i1~4 i1~1;+1;+33a;;"* Weapon
 * Combo from any hit
 * Transition to DBT (+4/+36a) with 3_4
@@ -623,7 +625,7 @@ SBT.1,2,1,3+4;m, m, m, m,m;12, 13, 7, 33;i13~14, ,i18;-18;+4 (-13);;"* Balcony B
 * Transition to DES with input SBT.1,2,1,3+4,1+2
 * Low crush 26~150
 * Floating state 151~153";bbr js26~150 fs151~153;DES;Alisa-SBT.1,2,1,3+4;Hard Reset;r43;;File:t8-p2-alisa-sbt.1,2,1,3+4.mp4
-SBT.2;m;25;i16~17;-7;+6a (-4);;"* Balcony Break
+SBT.2;m;25;i16~27;-8;+6a (-4);;"* Balcony Break
 * Elbow
 * Transition to DES with SBT.1+2
 * Hitstop 20f on hit

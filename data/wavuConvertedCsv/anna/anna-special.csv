@@ -164,8 +164,8 @@ d+4,1;l, h;6, 10;i12, i25;+0;+6;+11;"* Combo from 1st CH with 5f delay
 * Cancel to CJM -10 +1 r29 with B on frame 14
 * r38 when blocking after SS";;SS,CJM;Anna-d+4,1;Right Low Kick > Back Spin Chop;r19;;
 d+4,1~4;l, M;6, 20;i12, i27~31;-14c;+0d;;"* Spike
-* Cancel to this move takes 6f
-* Low crush 13~28";spk js13~28;this;Anna-d+4,1~4;Sudden Severe Drop;r40;;
+* Move cancel takes 6f
+* Low crush 13~28";spk js13~28;;Anna-d+4,1~4;Sudden Severe Drop;r40;;
 db+1;m;16;i16~18;-12;+3;;"* Spike
 * Can recover in FC with DB_D_DF";spk;;Anna-db+1;Scarlet Rain;r30;;
 db+1,2;m, m;16, 20;i16~18, i25~26;-13;+5;;"* Balcony Break (airborne)
@@ -174,7 +174,7 @@ db+1,2;m, m;16, 20;i16~18, i25~26;-13;+5;;"* Balcony Break (airborne)
 db+1,4;m, h;16, 24;i16~18, i24;-8;+10a (+1);;"* Balcony Break
 * Combo from 1st CH with 9f delay
 * Input can be delayed 15f";bbr;;Anna-db+1,4;Scarlet Splatter;r35;;
-db+2;m;17;i15~16;-9;+8s;+36d;"* Strong Aerial Tailspin
+db+2;m;17;i15~16;-9;+8s;+36a;"* Strong Aerial Tailspin
 * Transition to r31 TOM on hit automatically
 * +13a (+4) on BT hit";;TOM;Anna-db+2;Ocelot Claw;r30;;
 db+3;L;21;i30~32;-26;+68a (+52);;"* Stagger on block
@@ -233,7 +233,6 @@ uf+1,3,3+4;h, m, m,m;6, 17, 6,10;i13, ,i32~34 i11~12;-4;+78a (+62);;"* Tornado
 uf+2;M;18;i20~21;-8;+12s;+72a (+56);"* Transition to r27 HAM on hit automatically
 * Instant Tornado on CH";;HAM;Anna-uf+2;Bane Stinger;r31;;
 uf+3;m;22;i23~24;+0;+27d;;"* Balcony Break
-* Power up in Heat
 * Low crush 9~30
 * Floating state 31~33";bbr js9~30 fs31~33;;Anna-uf+3;Sudden Storm;r27;;
 H.uf+3,1;m, h;22, 20;i23~24, i40~89;+4g~+53g;+20a (-6);;"* Strong Aerial Tailspin
@@ -260,8 +259,7 @@ uf+3+4;M,M;4,18;i25~28;-3c;+5c;;"* Spike
 f,F+2;h;21;i17~18;+4;+15d;;"* Homing
 * Balcony Break (airborne)
 * Weapon
-* 6 chip damage on block
-* 7 chip damage on block in heat";hom wpn;;Anna-f,F+2;Headless Horseman;r37;;
+* 6 chip damage on block";hom wpn;;Anna-f,F+2;Headless Horseman;r37;;
 f,F+3;m;14;i15;-11;+5;;*;;;Anna-f,F+3;;r32;;
 f,F+3,2;m, M;14, 20;i15, i28~29;-7;+20d;;"* Heat Engager
 
@@ -271,8 +269,7 @@ f,F+3,2;m, M;14, 20;i15, i28~29;-7;+20d;;"* Heat Engager
 * Spike
 * Weapon
 * Combo from 1st hit with 5f delay
-* 6 chip damage on block
-* 7 chip damage on block in heat";he bbr spk wpn;;Anna-f,F+3,2;Gancanagh's Pipe;r29;;
+* 6 chip damage on block";he bbr spk wpn;;Anna-f,F+3,2;Gancanagh's Pipe;r29;;
 f,F+3,3;m, L;14, 14;i15, i25;-14;+4c;+14;"* Combo from 1st hit with 5f delay
 * High crush 1~";cs1~;FC;Anna-f,F+3,3;Mouse Trouble;r33 FC;;
 f,F+4;M;20;i31~34;+5;+19a;;"* Spike
@@ -383,15 +380,15 @@ CJM.4;M;23;i20~21;-13;+10a;;"* Balcony Break
 * Deals chip damage on block after attack absorbtion
 * Power crush 7~19";bbr spk pc7~19;;Anna-CJM.4;Queen Heel;r39;;
 CJM.1+2;M;23;i17~18;+2c;+8c;+23d;"* Spike
-* 4 chip damage on block
-* 7 chip damage on block in heat";spk;FC;Anna-CJM.1+2;Caracal;r30 FC;;
+* 4 chip damage on block";spk;FC;Anna-CJM.1+2;Caracal;r30 FC;;
 CJM.P;m;20;i15~16;-14;+29a (+19);;"* Tornado
 * Tornado launch on hit
 * is1~";trn is1~;;Anna-CJM.P;Stryx;r34;;
 CJM.df;;;;;;;"* High crush 5~
 * Floating state 8~35";cs5~ fs8~35;FC;Anna-CJM.df;Forward Roll (ROLL);r40 FC;;
 CJM.d+3;L;8;i15;-11;+0;;*;;FC;Anna-CJM.d+3;;r30 FC;;
-CJM.d+3,3;L, h;8, 20;i15, i21;-7;+7;;* Combo from 1st hit;;;Anna-CJM.d+3,3;Dendrobates Azureus;r31;;
+CJM.d+3,3;L, h;8, 20;i15, i21;-7;+7;;"* Combo from 1st hit
+* -31 from 1st block";;;Anna-CJM.d+3,3;Dendrobates Azureus;r31;;
 CJM.f+3;;;;;;;"* Transition to r10 FC with db
 * Transition to r16 CJM with b+3";;FC,CJM;Anna-CJM.f+3;Hammer Chance;r13;;
 CJM.uf+1;M;25;i19~29;-11~+1;+9a (-1);;"* Balcony Break
@@ -406,7 +403,6 @@ CJM.uf+2;M;35;i19~29;-11~+1;+3a;;"* Balcony Break
 * Low crush 9~37
 * Floating state 38~40";bbr chp js9~37 fs38~40;;Anna-CJM.uf+2;Flying Penetrator;r37;;
 CJM.uf+3;m;22;i23~24;+0;+27d;;"* Balcony Break
-* Power up in Heat
 * Low crush 9~30
 * Floating state 31~33";bbr js9~30 fs31~33;;Anna-CJM.uf+3;Sudden Storm;r27;;
 CJM.uf+4;m;22;i15~16;-13;+30a (+20);;"* Tornado
@@ -430,7 +426,7 @@ HAM.2,1,2;m, h, M;12, 23, 32;i15~16, ,i33~34;+2c;+17a (+7);;"* Spike
 * Weapon
 * Combo from 1st hit
 * 6 chip damage on block
-* 9 chip damage on block in heat";spk wpn;FC;Anna-HAM.2,1,2;Banshee Scream;r38 FC;;
+* 9 chip damage on block in heat (30%)";spk wpn;FC;Anna-HAM.2,1,2;Banshee Scream;r38 FC;;
 HAM.2,2;m, M;12, 23;i15~16, i22~23;-14;+33a;;"* Tornado
 * Weapon
 * Combo from 1st hit
@@ -446,10 +442,10 @@ HAM.1+2;M;30;i24~25;+2c;+17a (+7);;"* Balcony Break
 * Spike
 * Weapon
 * 6 chip damage on block
-* 9 chip damage on block in heat";bbr spk wpn;FC;Anna-HAM.1+2;Dullahan Smash;r38 FC;;
+* 9 chip damage on block in heat (30%)";bbr spk wpn;FC;Anna-HAM.1+2;Dullahan Smash;r38 FC;;
 HAM.b+3;;;;;;;;;;Anna-HAM.b+3;;;;
 OTG.d+3+4;L;30;i17~18;-17;-7d;;"* Spike
-* Partially restores remaining Heat time on hit";spk;;Anna-OTG.d+3+4;Heel Grind;r35;;
+* Partially restores remaining Heat time on grounded hit";spk;;Anna-OTG.d+3+4;Heel Grind;r35;;
 ROLL.3;m;27;i10~11;-9;+32d (+24);;"* Balcony Break
 * High crush 1~";bbr cs1~;FC;Anna-ROLL.3;Rolling Stone;r32 FC;;
 ROLL.4;h;21;i20;+7;+32a (+22);+57a;"* Tornado
@@ -458,26 +454,28 @@ ROLL.4;h;21;i20;+7;+32a (+22);+57a;"* Tornado
 * High crush 39~69
 * Low crush 20~35
 * Floating state 36~38";trn chp cs39~69 js20~35 fs36~38;;Anna-ROLL.4;Falling Frost;r38;;
-TOM.1;m;30;i8~18;+4~+53;+20a (-6);;"* Balcony Break
+TOM.1;m;20;i8~57;+4~+53;+20a (-6);;"* Balcony Break
 * Weapon
-* Fragile debuff on hit or block, opponent receives chip damage from any attack, removed when land a hit on you
+* Fragile debuff on hit or block, opponent receives chip damage from any attack, removed when Anna is damaged
 * 4 chip damage on block
-* 9 chip damage on block in Heat
-* Power up in Heat: +10 damage";bbr wpn;;Anna-TOM.1;Machree Fascinator;r36;;
-TOM.2;m;30;8~107;-1~+98;+20a (-6);;"* Balcony Break
+* 6 chip damage on block in Heat
+* Power up in Heat: 30dmg
+* Partially uses remaining Heat time";bbr wpn;;Anna-TOM.1;Machree Fascinator;r36;;
+TOM.2;m;30;i8~107;-1~+98;+20a (-6);;"* Balcony Break
 * Weapon
 * Wall Crush +10g~ minimum
 
 
 * 12 chip damage on block
-* 16 chip damage on block in heat
-* Power up in Heat: +10 damage";bbr wpn wc;;Anna-TOM.2;Machree Penetrator;r36;;
+* 16 chip damage on block in heat (40%)
+* Power up in Heat: 40dmg
+* Partially uses remaining Heat time";bbr wpn wc;;Anna-TOM.2;Machree Penetrator;r36;;
 TOM.3;;;;;;;"* Actionable after 16f
 * i3? low parry: parries all lows (including Heat Smash lows)
 * i3? throw parry: +0d and 25 damage
 * Transition to r13 HAM with f+3
 * Parry state 3~47";ps3~47;HAM,CJM;Anna-TOM.3;Chaos Judgement;r26 CJM;;
-TOM.4;L;21;i15;-13;+28d;;;;FC;Anna-TOM.4;Banquet Crasher;r32 FC;;
+TOM.4;L;21;i15;-13;+28g;;;;FC;Anna-TOM.4;Banquet Crasher;r32 FC;;
 1+3;t;35;i12~14;-6;+0d;;"* Homing
 * Throw break 1 or 2";hom;;Anna-1+3;Cruel Punishment;r31;;
 2+4;t;21;i12~14;-3;+0d;;"* Homing

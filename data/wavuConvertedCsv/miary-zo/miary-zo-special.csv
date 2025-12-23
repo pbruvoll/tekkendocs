@@ -6,9 +6,9 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * Only deals recoverable damage
 * Cannot cause a K.O.
 * Power crush 7~16";hb pc7~16;;Miary Zo-2+3;Heat Burst;r30;;
-H.b+3+4;;;;;;;"* Transition to Tromba
+H.b+3+4;;;;;;;"* Transition to WAL
 * d+3+4 foreground jump, u+3+4 background jump (r60 js9~34 fs35~37)
-* Partially consumes remaining Heat Time";;Tromba;Miary Zo-H.b+3+4;Zanahary Mihira;;;
+* Partially consumes remaining Heat Time";;WAL,WAL;Miary Zo-H.b+3+4;Zanahary Mihira;WAL;;
 H.2+3;m,th;52;i17~18;+6;-5d;;"* Heat Smash
 * Floor Break
 * Transition to BAO +6 r24 automatically on block only
@@ -106,7 +106,7 @@ f+2;m;23;i20;-13;+5;;"* Balcony Break (airborne)
 f+3;;;;;;;"* Actionable after 15f
 * Cancel to r1? FC with DB on frame 16~. 1F cost?
 * Stance moves available on frames 15~31
-* High crush 6~67";cs6~67;FC,MOR;Miary Zo-f+3;Morengy Miroso;r15 MOR;;
+* High crush 6~44";cs6~44;FC,MOR;Miary Zo-f+3;Morengy Miroso;r15 MOR;;
 f+4;m;12;i18;-6;+2;;"* Low crush 9~14
 * Floating state 15~17";js9~14 fs15~17;;Miary Zo-f+4;;r30;;
 f+4,2;m, m;12, 20;i18, i31;-9;+16a (+7);;"* Balcony Break
@@ -256,10 +256,10 @@ b+1+2;m;25;i18;-13;+20a (+15);;"* Balcony Break
 * Spike
 * Block advantage -9 on successful attack absorption, deals chip damage
 * Power crush 7~17";bbr spk pc7~17;;Miary Zo-b+1+2;Ampinga Afo;r36;;
-b+3+4;;;;;;;"* Transition to Tromba r20 on contact with wall
+b+3+4;;;;;;;"* Transition to WAL r20 on contact with wall
 * d+3+4 foreground jump, u+3+4 background jump (r60 js9~34 fs35~37)
 * Low crush 9~35
-* Floating state 36~38";js9~35 fs36~38;Tromba;Miary Zo-b+3+4;Mikisaka Malaky;r70;;
+* Floating state 36~38";js9~35 fs36~38;WAL;Miary Zo-b+3+4;Mikisaka Malaky;r70;;
 u+3;m;17;i17~18;-9;+27g;+40a;"* Weapon
 * Opponent recovers crouching on hit
 * Low crush 9~28
@@ -315,8 +315,8 @@ uf+3+4;m;18;i25~16;-5;+20a;;"* Spike
 * Attacks taken will be CH for 5 seconds";;;Miary Zo-1+2+3+4;Ki Charge;r60;;
 Tromba;;;;;;;"* Miary Zo clings to the wall for a short time
 * Cancel with DB
-* Can enter Tromba without wall contact when in Heat with H.b+3+4
-* Low crush";js;Tromba;Miary Zo-Tromba;Tromba;;;
+* Can enter WAL without wall contact when in Heat with H.b+3+4
+* Low crush";js;WAL,WAL;Miary Zo-Tromba;Tromba;WAL;;
 b,B+2+3;m!;30;i62~63;;-6d;;* Balcony Break;bbr;;Miary Zo-b,B+2+3;Afo'n Andrianerinerina;r52;;
 f,F+2;m;14;i15~16;-9;+7;;;;;Miary Zo-f,F+2;;r32;;
 f,F+2,2;m, m;14, 14,4,10;i15~16, i22~23 i5 i5;-9;+32a (+6);;"* Balcony Break
@@ -396,7 +396,7 @@ BAO.4;L,m;18,20;i18~19 i27~28;-24;-2d;+66a (+50);"* Tornado
 * Floating state 44~46";trn js1~43 fs44~46;;Miary Zo-BAO.4;Hiran'ny Raviny;r45;;
 BAO.F;;;;;;;"* Low crush 1~12
 * Floating state 13~15
-* High crush 21~82";js1~12 fs13~15 cs21~82;MOR;Miary Zo-BAO.F;Baobab Mihira > Morengy Miroso;r30 MOR;;
+* High crush 21~59";js1~12 fs13~15 cs21~59;MOR;Miary Zo-BAO.F;Baobab Mihira > Morengy Miroso;r30 MOR;;
 BAO.uf;;;;;;;"* Evasive forward leap
 * Low crush 1~83
 * Floating state 84~86";js1~83 fs84~86;BAO;Miary Zo-BAO.uf;Baobab Mihira > Move Forward;r32 BAO;;
@@ -444,15 +444,16 @@ MOR.1+2;m;23;i26;+6;+23d;+84a (+64);"* Spike
 MOR.3+4;;;;;;;* Low crush 6~15;js6~15;BAO;Miary Zo-MOR.3+4;Morengy Miroso > Baobab Mihira;r20 BAO;;
 MOR.u+1+2;m;16;i16~17;-2;+4;;"* Low crush 13~29
 * Floating state 30~32";js13~29 fs30~32;;Miary Zo-MOR.u+1+2;Arahaba tsy Miloko;r29;;
-WAL.4;m;40;i12~20;+2;+10a (=34);;"* Balcony Break
+WAL.4;m;40;i12~20;+2;+10a (+34);;"* Balcony Break
 * Reversal Break
-* Transition to MIR +5 +13d with F
-* Low crush";bbr rbr js;MIR;Miary Zo-WAL.4;Dakan'ny Famadihana;;;
-WAL.F;;;;;;;"* Transition to MIR
-* Low crush 
-* High crush";js cs;MIR;Miary Zo-WAL.F;Tromba > Morengy Miroso;;;
+* Transition to MOR +5 +13d with F
+* Low crush";bbr rbr js;MOR;Miary Zo-WAL.4;Dakan'ny Famadihana;;;
+WAL.F;;;;;;;"* Transition to MOR
+* Low crush 1~12
+* Floating state 13~20
+* High crush 21~59";js1~12 fs13~20 cs21~59;MOR,MOR;Miary Zo-WAL.F;Tromba > Morengy Miroso;MOR;;
 WAL.uf;;;;;;;"* Transition to BAO
-* Low crush";js;BAO;Miary Zo-WAL.uf;Tromba > Baobab Mihira;;;
+* Low crush";js;BAO,BAO;Miary Zo-WAL.uf;Tromba > Baobab Mihira;BAO;;
 H.f,F+2,2;m, m;14, 33;i15~16, i22~23;-1;+40a (+14);;"* Balcony Break
 * Weapon
 * Combos from 1st hit
@@ -462,7 +463,7 @@ H.f,F+2,2;m, m;14, 33;i15~16, i22~23;-1;+40a (+14);;"* Balcony Break
 1+3;t;35;i12~14;-9;-5d;;"* Floor Break
 * Homing
 * Throw break 1 or 2
-* Transition to Tromba on throw break if Miary Zo makes contact with a wall";fbr hom;Tromba;Miary Zo-1+3;Angano avy any Tandrefana;;;
+* Transition to WAL on throw break if Miary Zo makes contact with a wall";fbr hom;WAL;Miary Zo-1+3;Angano avy any Tandrefana;;;
 2+4;t;35;i12~14;-6;-3d;;"* Floor Break
 * Homing
 * Throw break 1 or 2
