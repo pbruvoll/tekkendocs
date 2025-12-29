@@ -317,6 +317,7 @@ export default function Index() {
         {about && <About about={about} />}
         <GuideNav guideData={guideData}></GuideNav>
         {!!aboutAuthor?.length && <AboutAuthor sections={aboutAuthor} />}
+        {introduction?.length && <Introduction sections={introduction} />}
         {(strengths?.length || weaknesses?.length) && (
           <StrengthsWeaknesses strengths={strengths} weaknesses={weaknesses} />
         )}
