@@ -158,6 +158,9 @@ const tableHandlers: Partial<
       description: row[1],
     }));
   },
+  about_author: (rows, guideData) => {
+    guideData.aboutAuthor = rows.map((row) => row[0]);
+  },
   about: (rows, guideData) => {
     guideData.about = Object.fromEntries(rows);
   },
