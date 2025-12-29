@@ -26,6 +26,8 @@ export const TextWithLinks = ({ text }: TextWithLinksProps) => {
       <a
         key={`link-${match.index}`}
         href={url}
+        rel="noopener noreferrer"
+        target="_blank"
         className="text-text-primary underline underline-offset-4"
       >
         {label}
