@@ -1,19 +1,20 @@
-import { useMemo } from 'react';
 import { Pencil1Icon } from '@radix-ui/react-icons';
 import { Text } from '@radix-ui/themes';
+import { useMemo } from 'react';
 import {
   data,
   type HeadersFunction,
   type LoaderFunctionArgs,
   type MetaFunction,
+  useLoaderData,
 } from 'react-router';
-import { useLoaderData } from 'react-router';
 import invariant from 'tiny-invariant';
 import { About } from '~/components/About';
 import { Authors } from '~/components/Authors';
 import { ContentContainer } from '~/components/ContentContainer';
 import Nav, { type NavLinkInfo } from '~/components/Nav';
 import { PersonLinkList } from '~/components/PersonLinkList';
+import { AboutAuthor } from '~/features/guides/AboutAuthor';
 import { ComboEnders } from '~/features/guides/ComboEnders';
 import { Combos } from '~/features/guides/Combos';
 import { DefensiveTips } from '~/features/guides/DefensiveTips';
@@ -243,6 +244,7 @@ export default function Index() {
     defensiveMoves,
     stances,
     installments,
+    aboutAuthor,
     about,
   } = guideData;
   const { top10Moves, notableMoves } = {
@@ -314,6 +316,7 @@ export default function Index() {
         )}
         {about && <About about={about} />}
         <GuideNav guideData={guideData}></GuideNav>
+        {!!aboutAuthor?.length && <AboutAuthor sections={aboutAuthor} />}
         {introduction?.length && <Introduction sections={introduction} />}
         {(strengths?.length || weaknesses?.length) && (
           <StrengthsWeaknesses strengths={strengths} weaknesses={weaknesses} />

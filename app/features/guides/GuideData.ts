@@ -91,5 +91,6 @@ export type GuideData = {
   defensiveMoves: KeyMove[];
   stances: Stance[];
   installments: Installment[];
+  aboutAuthor: string[];
   about: Record<string, string>;
 };

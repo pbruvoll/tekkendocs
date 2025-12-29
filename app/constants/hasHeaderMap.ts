@@ -33,5 +33,6 @@ export const hasHeaderMap: Record<TableId, boolean> = {
   heat_system: true,
   stances: true,
   installments: true,
+  about_author: true,
   about: true,
 };

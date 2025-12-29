@@ -31,4 +31,5 @@ export type TableId =
   | 'defense_tips'
   | 'defense_moves'
   | 'credits'
+  | 'about_author'
   | 'about';
