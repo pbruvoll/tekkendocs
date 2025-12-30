@@ -1,5 +1,6 @@
 import { Heading } from '@radix-ui/themes';
 import cx from 'classix';
+import { AnimatePresence, motion } from 'motion/react';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Commands } from '~/components/Commands';
@@ -59,11 +60,11 @@ const KeyMoveHeading = ({
   const splitCommand = command.split(' | ');
 
   // find last youtube video
-  let moveWithYtVideo: Move | undefined;
+  let moveWithVideo: Move | undefined;
   for (let i = splitCommand.length - 1; i >= 0; i--) {
     const move = compressedCommandMap[compressCommand(splitCommand[i])];
-    if (move?.ytVideo) {
-      moveWithYtVideo = move;
+    if (move?.ytVideo || move?.video) {
+      moveWithVideo = move;
       break;
     }
   }
@@ -78,25 +79,58 @@ const KeyMoveHeading = ({
             command={command}
           />
         </Heading>
-        {moveWithYtVideo && (
-          <Button
-            type="button"
-            variant="outline"
-            className={cx(
-              'rounded-full h-6 px-3 border-2 border-border text-xs',
-              showVideo
-                ? 'bg-accent text-accent-foreground hover:bg-accent'
-                : 'text-muted-foreground',
-            )}
-            onClick={() => setShowVideo(!showVideo)}
-          >
-            {showVideo ? 'Hide video' : 'Show video'}
-          </Button>
+        {moveWithVideo && (
+          <ToogleVideoButton
+            showVideo={showVideo}
+            setShowVideo={setShowVideo}
+          />
         )}
       </div>
-      {showVideo && moveWithYtVideo && (
-        <MoveVideo className="max-w-96 my-4" move={moveWithYtVideo} />
-      )}
+      <AnimatePresence>
+        {showVideo && moveWithVideo && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
+            style={{ overflow: 'hidden' }}
+          >
+            <MoveVideo className="max-w-96 my-2" move={moveWithVideo} />
+            <ToogleVideoButton
+              showVideo={showVideo}
+              className="mb-2"
+              setShowVideo={setShowVideo}
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
+  );
+};
+
+const ToogleVideoButton = ({
+  showVideo,
+  setShowVideo,
+  className,
+}: {
+  showVideo: boolean;
+  setShowVideo: (show: boolean) => void;
+  className?: string;
+}) => {
+  return (
+    <Button
+      type="button"
+      variant="outline"
+      className={cx(
+        'rounded-full h-6 px-3 border-2 border-border text-xs',
+        showVideo
+          ? 'bg-accent text-accent-foreground hover:bg-accent'
+          : 'text-muted-foreground',
+        className,
+      )}
+      onClick={() => setShowVideo(!showVideo)}
+    >
+      {showVideo ? 'Hide video' : 'Show video'}
+    </Button>
   );
 };
