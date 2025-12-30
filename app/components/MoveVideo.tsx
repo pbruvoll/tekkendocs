@@ -45,14 +45,22 @@ export const MoveVideo = ({
   if (move.video) {
     return (
       <div className={cx(className)}>
-        <video
+        <iframe
+          className="aspect-video"
+          title="Move Video"
+          src={`https://wavu.wiki/t/Special:Redirect/file/${move?.video}`}
+        />
+        {/* Used to load vidoe directly frm wavu, but seems it's blocked due to bot detections, so we load it in an iframe 
+         The downside is that we loose autoPlay and loop
+        */}
+        {/* <video
           className="mb-2 aspect-video"
           src={`https://wavu.wiki/t/Special:Redirect/file/${move?.video}`}
           loop
           controls
           autoPlay
           muted
-        />
+        /> */}
         <div className="text-xs text-muted-foreground">
           Video from Wavu wiki
         </div>
