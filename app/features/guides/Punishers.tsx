@@ -30,7 +30,7 @@ const PunisherList = ({
 }) => {
   const { charUrl, compressedCommandMap } = useGuideContext();
   return (
-    <section className="flex-grow">
+    <section className="grow">
       <div className="mb-2 bg-muted text-center">{title}</div>
       {punishers?.map(({ startup, command, description }, index) => (
         <div key={index} className="mb-2">

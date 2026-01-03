@@ -22,7 +22,7 @@ export const CharacterCard2 = ({
 }: CharacterCard2Props) => {
   return (
     <Link to={url} className="cursor-pointer">
-      <Card className="group transform transition duration-500 hover:scale-110 hover:border-b-gray-700 hover:shadow">
+      <Card className="group transform transition duration-500 hover:scale-110 hover:border-b-gray-700 hover:shadow-sm">
         <Inset clip="padding-box" className="relative" side="top" pb="current">
           <img
             src={imgUrl}

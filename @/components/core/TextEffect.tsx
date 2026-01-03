@@ -1,14 +1,14 @@
 'use client';
-import React from 'react';
 import {
   AnimatePresence,
   motion,
   type TargetAndTransition,
   type Variants,
 } from 'motion/react';
+import React from 'react';
 import { cn } from '@/lib/utils';
 
-type PresetType = 'blur' | 'shake' | 'scale' | 'fade' | 'slide';
+type PresetType = 'blur-sm' | 'shake' | 'scale' | 'fade' | 'slide';
 
 type TextEffectProps = {
   children: string;
@@ -57,7 +57,7 @@ const presetVariants: Record<
   PresetType,
   { container: Variants; item: Variants }
 > = {
-  blur: {
+  'blur-sm': {
     container: defaultContainerVariants,
     item: {
       hidden: { opacity: 0, filter: 'blur(12px)' },

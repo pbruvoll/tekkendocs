@@ -51,10 +51,14 @@ export function SimpleMovesTable({
             Hit Lvl
           </th>
           <th className="sticky top-0 z-10 h-12 bg-background px-2 text-left align-middle font-medium text-muted-foreground sm:px-4">
-            Startup
+            Start
+            <wbr />
+            up
           </th>
           <th className="sticky top-0 z-10 h-12 bg-background px-2 text-left align-middle font-medium text-muted-foreground sm:px-4">
-            Block
+            Blo
+            <wbr />
+            ck
           </th>
           <th className="sticky top-0 z-10 h-12 bg-background px-2 text-left align-middle font-medium text-muted-foreground sm:px-4">
             Hit / CH
@@ -94,19 +98,19 @@ export function SimpleMovesTable({
               <td className="p-2 align-middle sm:p-4">
                 {formatWordWithBreaks(move.hitLevel)}
               </td>
-              <td className="break-words p-2 align-middle sm:p-4">
+              <td className="wrap-break-word p-2 align-middle sm:p-4">
                 {simplifyFrameValue(move.startup || '')}
               </td>
               <td
                 className={cx(
-                  'break-words p-2 align-middle sm:p-4',
+                  'wrap-break-word p-2 align-middle sm:p-4',
                   blockValue <= -10 && 'text-text-destructive',
                   blockValue > 0 && 'text-text-success',
                 )}
               >
                 {simpleBlock}
               </td>
-              <td className="break-words p-2 align-middle sm:p-4">
+              <td className="wrap-break-word p-2 align-middle sm:p-4">
                 {simpleHit}
                 {move.counterHit && move.counterHit !== move.hit && (
                   <span className="text-muted-foreground"> / {simpleCh}</span>
