@@ -84,11 +84,13 @@ f+3;;;;;;;"* Transition to r10 FC with db
 f+1+2;m;21;i17;-13;+19a (+14);+28d (+20);"* Tornado
 * Balcony Break";trn bbr;;Anna-f+1+2;Blonde Bomb;r37;;
 df+1;m;10;i13~14;-1;+5;;;;;Anna-df+1;Uppercut;r19;;
-df+1,2;m, h;10, 10;i13~14, i16;-5;+2;+9;"* Jail from 1st attack
-* Enter HAM +0 +7 +14 with F";;HAM;Anna-df+1,2;Uppercut Jab;r23;;
+df+1,2;m, h;10, 10;i13~14, i16;-5;+2;+9;"* Combo from 1st hit
+* Jail from 1st block
+* Transition to HAM with F (+0/+7/+14)";;HAM;Anna-df+1,2;Uppercut Jab;r23;;
 df+1,2,3;m, h, m;10, 10, 20;i13~14, ,i24~25;-12;+19a (+2);;"* Tornado
 * Balcony Break
-* Combo from 2nd CH
+* Combo from 2nd CH with 8F edlay
+* Move can be delayed by 10F
 * Cancel to CJM -17 -10 -3 r35 with B on frame 20
 * Low crush 17~26
 * Floating state 27~29";trn bbr js17~26 fs27~29;CJM;Anna-df+1,2,3;Uppercut Jab > Radiant Arch;r30;;
@@ -96,11 +98,14 @@ df+1,2,4;m, h, h;10, 10, 22;i13~14, ,i17~20;-5;+20a (+11);+14c;"* Balcony Break
 * Combo from 2nd CH with 10f delay
 * Input can be delayed 10f
 * Move can be delayed 8f";bbr;;Anna-df+1,2,4;Uppercut Jab > Cutting Crescent;r27;;
-df+2;m;12;,i15~16;-12;+32a (+22);;* Launches crouching opponent;;;Anna-df+2;Step-in Uppercut;r27;;
+df+2;m;12;,i15~16;-12;+32a (+22);;* Launches crouching opponent;;;Anna-df+2;Step-in Uppercut;r32;;
 df+3;m;13;i14;-11;+0;+1;*;;;Anna-df+3;Middle Kick;r29;;
-df+3,1;m, h;13, 10;i14, i30;-3;+7;;"* Cancel to CJM -15 -4 -3 r33 with B on frame 14
+df+3,1;m, h;13, 10;i14, i30;-3;+7;;"* Combo from 1st CH
+* Move can be delayed by 10F
+* Interrupt with i11 from 1st block
+* Cancel to CJM -15 -4 -3 r33 with B on frame 14
 * Cancel to SS -10 +1 +2 r37 with U_D on frame 28
-* r43 when blocking after SS";;CJM,SS;Anna-df+3,1;Leg Slicer;r22;;
+** r43 when blocking after SS";;CJM,SS;Anna-df+3,1;Leg Slicer;r22;;
 df+3,1,1;m, h, M;13, 10, 25;i14, ,i30~42;-11~+1;+9a (-1);;"* Balcony Break
 * Weapon
 * Fragile debuff on hit or block, opponent receives chip damage from any attack, removed when land a hit on you
@@ -210,8 +215,9 @@ b+3;;;;;;;"* Actionable after 16f
 * i3? throw parry: +0d and 25 damage
 * Transition to r13 HAM with f+3
 * Parry state 3~47";ps3~47;HAM,CJM;Anna-b+3;Chaos Judgement;r16 CJM;;
-b+4;m;17;i19~21;-9;+11g;;"* Strong Aerial Tailspin
+b+4;m;17;i19~21;-9;+11g;+17g;"* Strong Aerial Tailspin
 * Homing
+* Balcony Break on CH
 * Transition to r24 HAM on hit automatically";hom;HAM;Anna-b+4;Leopard Swipe;r26;;
 b+1+2;m;21;i20~21;-13;+20a (+15);;"* Balcony Break
 * -8 on block after absorbing an attack

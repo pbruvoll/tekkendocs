@@ -29,7 +29,7 @@ const Tag2CharacterCard = ({ name, url }: Tag2CharacterCardProps) => {
   return (
     <a href={url} className="group block cursor-pointer">
       <div className="relative overflow-hidden rounded-lg border border-gray-200 bg-white shadow-xs transition-all duration-300 hover:scale-105 hover:border-orange-400 hover:shadow-xl dark:border-gray-700 dark:bg-gray-800 dark:hover:border-orange-500">
-        <div className="flex min-h-[100px] items-center justify-center p-4">
+        <div className="flex min-h-25 items-center justify-center p-4">
           <div className="text-center">
             <div className="bg-linear-to-r from-gray-700 via-gray-800 to-gray-700 bg-clip-text text-base font-bold tracking-wide text-transparent transition-all duration-300 group-hover:scale-105 group-hover:from-orange-600 group-hover:via-orange-700 group-hover:to-orange-600 dark:from-gray-200 dark:via-gray-100 dark:to-gray-200 dark:group-hover:from-orange-400 dark:group-hover:via-orange-500 dark:group-hover:to-orange-400">
               {name}
