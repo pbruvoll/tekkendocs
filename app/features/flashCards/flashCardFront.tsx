@@ -20,7 +20,7 @@ export const FlashCardFront = ({
     <div className="flex h-full w-full flex-col bg-foreground/10">
       <button
         type="button"
-        className="flex w-full flex-grow items-center justify-center p-2 text-xl"
+        className="flex w-full grow items-center justify-center p-2 text-xl"
         onClick={onFlip}
       >
         {showCharName && `${charIdFromMove(move as MoveT8)} `}

@@ -26,7 +26,7 @@ const MainLayoutTemplate = ({ children }: MainLayoutTemplateProps) => {
   const contactByDiscord = new DiscordContactProvider();
   return (
     <>
-      <header className="bg-[var(--accent-4)] py-1">
+      <header className="bg-(--accent-4) py-1">
         <ContentContainer>
           <div className="grid grid-cols-[1fr_auto_1fr] items-center justify-between py-1">
             <Link to="/">
@@ -36,7 +36,7 @@ const MainLayoutTemplate = ({ children }: MainLayoutTemplateProps) => {
                 alt="home"
               />
             </Link>
-            <Link to="/" className="flex-grow text-center text-2xl">
+            <Link to="/" className="grow text-center text-2xl">
               TekkenDocs
             </Link>
             <div className="flex place-self-end">

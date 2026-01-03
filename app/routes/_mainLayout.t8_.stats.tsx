@@ -90,7 +90,7 @@ const CharacterStatistics = ({
         className={cx(
           'grid gap-2',
           landscape
-            ? 'h-[40rem] grid-flow-col grid-rows-[1fr_auto_auto]'
+            ? 'h-160 grid-flow-col grid-rows-[1fr_auto_auto]'
             : 'grid-cols-[auto_1fr_auto]',
         )}
       >

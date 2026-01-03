@@ -1,7 +1,7 @@
-import { type ChangeEvent, useMemo, useState } from 'react';
 import { Heading } from '@radix-ui/themes';
-import { type MetaFunction } from 'react-router';
 import cx from 'classix';
+import { type ChangeEvent, useMemo, useState } from 'react';
+import { type MetaFunction } from 'react-router';
 import invariant from 'tiny-invariant';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -35,10 +35,10 @@ const navData: NavLinkInfo[] = [
 
 export const headers = () => getCacheControlHeaders({ seconds: 60 * 5 });
 
-export const meta: MetaFunction = ({ data, params, matches }) => {
+export const meta: MetaFunction = ({ params, matches }) => {
   const frameData = matches.find(
     (m) => (m.handle as RouteHandle)?.type === 'frameData',
-  )?.data;
+  )?.loaderData;
   if (!frameData) {
     return [
       {
@@ -426,15 +426,15 @@ const FlashCardGame = ({
     <>
       <div
         key={moveToShow.command}
-        className="group w-80 animate-in fade-in [perspective:1000px]"
+        className="group w-80 animate-in fade-in perspective-[1000px]"
       >
         <div
           className={cx(
-            'grid rounded-2xl border-[1.5px] border-foreground/50 transition-all duration-500 [transform-style:preserve-3d]',
-            flipped && '[transform:rotateY(180deg)]',
+            'grid rounded-2xl border-[1.5px] border-foreground/50 transition-all duration-500 transform-3d',
+            flipped && 'rotate-y-180',
           )}
         >
-          <div className="col-start-1 row-start-1 [backface-visibility:hidden] [transform:rotateY(0deg)]">
+          <div className="col-start-1 row-start-1 backface-hidden">
             <FlashCardFront
               move={moveToShow}
               showCharName={showCharName}
@@ -442,7 +442,7 @@ const FlashCardGame = ({
               onFlip={() => setFlipped(true)}
             />
           </div>
-          <div className="col-start-1 row-start-1 [backface-visibility:hidden] [transform:rotateY(180deg)]">
+          <div className="col-start-1 row-start-1 backface-hidden rotate-y-180">
             <FlashCardBack move={moveToShow} onAnswer={handleAnswer} />
           </div>
         </div>
