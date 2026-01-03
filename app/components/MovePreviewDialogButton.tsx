@@ -26,7 +26,7 @@ export function MovePreviewDialogButton({ move, url }: MovePreviewDialogProps) {
           <VideoIcon />
         </button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[425px]">
+      <DialogContent className="sm:max-w-[425px] dark">
         <DialogHeader>
           <DialogTitle>
             <Link className="text-text-primary" to={url}>
