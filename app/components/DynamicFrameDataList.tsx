@@ -66,6 +66,7 @@ export const DynamicFrameDataList = ({
           charId={charId}
           className={className}
           moves={paginatedMoves}
+          sortSettings={sortSettings}
         />
       )}
       {paginatedMoves.length < sortedMoves.length && (
