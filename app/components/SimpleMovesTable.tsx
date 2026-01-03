@@ -2,6 +2,8 @@ import { VideoIcon } from '@radix-ui/react-icons';
 import cx from 'classix';
 import { Link } from 'react-router';
 import { type Move, type MoveT8 } from '~/types/Move';
+import { type SortSettings } from '~/types/SortSettings';
+import { getRecoveryFrames } from '~/utils/frameDataUtils';
 import { charIdFromMove, commandToUrlSegmentEncoded } from '~/utils/moveUtils';
 import { MovePreviewDialogButton } from './MovePreviewDialogButton';
 
@@ -30,6 +32,7 @@ type SimpleMovesTableProps = {
   moves: Move[];
   forceShowCharacter?: boolean;
   className?: string;
+  sortSettings?: SortSettings;
 };
 
 export function SimpleMovesTable({
@@ -38,6 +41,7 @@ export function SimpleMovesTable({
   moves,
   forceShowCharacter,
   className,
+  sortSettings,
 }: SimpleMovesTableProps) {
   const showCharacter = forceShowCharacter || !charId;
   return (
@@ -61,7 +65,15 @@ export function SimpleMovesTable({
             ck
           </th>
           <th className="sticky top-0 z-10 h-12 bg-background px-2 text-left align-middle font-medium text-muted-foreground sm:px-4">
-            Hit / CH
+            {sortSettings?.sortByKey === 'recovery' ? (
+              <>
+                Reco
+                <wbr />
+                very
+              </>
+            ) : (
+              'Hit / CH'
+            )}
           </th>
         </tr>
       </thead>
@@ -111,9 +123,18 @@ export function SimpleMovesTable({
                 {simpleBlock}
               </td>
               <td className="wrap-break-word p-2 align-middle sm:p-4">
-                {simpleHit}
-                {move.counterHit && move.counterHit !== move.hit && (
-                  <span className="text-muted-foreground"> / {simpleCh}</span>
+                {sortSettings?.sortByKey === 'recovery' ? (
+                  getRecoveryFrames(move)
+                ) : (
+                  <>
+                    {simpleHit}
+                    {move.counterHit && move.counterHit !== move.hit && (
+                      <span className="text-muted-foreground">
+                        {' '}
+                        / {simpleCh}
+                      </span>
+                    )}
+                  </>
                 )}
               </td>
             </tr>
