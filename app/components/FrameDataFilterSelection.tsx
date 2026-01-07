@@ -1,4 +1,5 @@
-import { Button, Flex, Text } from '@radix-ui/themes';
+import { Flex, Text } from '@radix-ui/themes';
+import { Button } from '@/components/ui/button';
 import { filterKey, hitLevelValue } from '~/constants/filterConstants';
 import { stanceNameMap, stateNameMap } from '~/constants/stanceNameMap';
 import { type MoveFilter } from '~/types/MoveFilter';
@@ -79,7 +80,7 @@ export const FrameDataFilterSelection = ({
         <div className="flex flex-wrap gap-3">
           <Button
             variant={
-              hitLevels?.includes(hitLevelValue.Low) ? 'solid' : 'outline'
+              hitLevels?.includes(hitLevelValue.Low) ? 'default' : 'outline'
             }
             onClick={() => {
               if (hitLevels?.includes(hitLevelValue.Low)) {
