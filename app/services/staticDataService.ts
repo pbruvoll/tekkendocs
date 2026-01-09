@@ -184,6 +184,7 @@ export const characterGuideAuthors: Record<
     jun: { author: 'Pagani', version: 'S2' },
     lars: { author: 'KayDash', version: 'S2' },
     lee: { author: 'Super Akouma', version: 'S2' },
+    leroy: { author: 'SYRAXSLAYER', version: 'S2' },
     lidia: { author: 'Leemishima', version: 'S2' },
     lili: { author: 'DewGlider', version: 'S2' },
     raven: { author: 'JacobKaas', version: 'S2' },
