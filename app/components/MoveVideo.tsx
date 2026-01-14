@@ -33,7 +33,7 @@ export const MoveVideo = ({
         {/* Video player on top - once loaded it covers the loading indicator */}
         <div className="absolute inset-0">
           <ReactPlayer
-            playing={false}
+            playing={playing}
             controls
             width="100%"
             height="100%"

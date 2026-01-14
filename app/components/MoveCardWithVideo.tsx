@@ -63,7 +63,10 @@ export const MoveCardWithVideo = ({
   const [hasBeenInView, setHasBeenInView] = useState(false);
 
   useEffect(() => {
-    if (isInView) setHasBeenInView(true);
+    if (isInView) {
+      const timeout = setTimeout(() => setHasBeenInView(true), 100);
+      return () => clearTimeout(timeout);
+    }
   }, [isInView]);
 
   return (
