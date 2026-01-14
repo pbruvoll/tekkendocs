@@ -50,7 +50,12 @@ export const MoveCardWithVideo = ({
   moveUrl,
 }: MoveCardWithVideoProps) => {
   const hasTags = move.tags && Object.keys(move.tags).length > 0;
-  const tagsList = hasTags && move.tags ? Object.values(move.tags) : [];
+  const tagsList =
+    hasTags && move.tags
+      ? Object.entries(move.tags).map(
+          ([key, value]) => key + (value ? `:${value}` : ''),
+        )
+      : [];
   const hasVideo = Boolean(move.ytVideo);
 
   const cardRef = useRef<HTMLAnchorElement>(null);
