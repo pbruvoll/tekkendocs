@@ -1,5 +1,5 @@
 import { useInView } from 'motion/react';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useEffectEvent, useRef, useState } from 'react';
 import { Link } from 'react-router';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
@@ -11,6 +11,11 @@ export type MoveCardWithVideoProps = {
   moveUrl: string;
   showCharacter?: boolean;
   charId?: string;
+  /** Whether this card should play its video. Used to ensure only one video plays at a time. */
+  shouldPlay?: boolean;
+  shouldLoadVideo?: boolean;
+  /** Callback when this card's in-view status changes */
+  onInViewChange?: (inView: boolean) => void;
 };
 
 /** Helper to determine frame advantage color */
@@ -48,6 +53,9 @@ const FrameCell = ({
 export const MoveCardWithVideo = ({
   move,
   moveUrl,
+  shouldPlay,
+  shouldLoadVideo,
+  onInViewChange,
 }: MoveCardWithVideoProps) => {
   const hasTags = move.tags && Object.keys(move.tags).length > 0;
   const tagsList =
@@ -59,14 +67,29 @@ export const MoveCardWithVideo = ({
   const hasVideo = Boolean(move.ytVideo);
 
   const cardRef = useRef<HTMLAnchorElement>(null);
-  const isInView = useInView(cardRef, { margin: '-100px' });
+  const isInView = useInView(cardRef, {
+    margin: '50px 0px 100px 0px',
+    amount: 'all',
+  });
   const [hasBeenInView, setHasBeenInView] = useState(false);
+
+  // Determine if video should play: use shouldPlay prop if provided, otherwise fall back to isInView
+  const isPlaying = shouldPlay !== undefined ? shouldPlay : isInView;
+
+  // Wrap callback in useEffectEvent to avoid stale closure issues
+  const notifyInViewChange = useEffectEvent((inView: boolean) => {
+    onInViewChange?.(inView);
+  });
 
   useEffect(() => {
     if (isInView) {
-      const timeout = setTimeout(() => setHasBeenInView(true), 100);
+      const timeout = setTimeout(() => {
+        setHasBeenInView(true);
+        notifyInViewChange(isInView);
+      }, 100);
       return () => clearTimeout(timeout);
     }
+    notifyInViewChange(isInView);
   }, [isInView]);
 
   return (
@@ -88,8 +111,8 @@ export const MoveCardWithVideo = ({
             {/* Video on small screens - shown right after command */}
             {hasVideo && (
               <div className="mb-4 aspect-video w-full lg:hidden">
-                {hasBeenInView ? (
-                  <MoveVideo move={move} playing={isInView} />
+                {shouldLoadVideo || hasBeenInView ? (
+                  <MoveVideo move={move} playing={isPlaying} />
                 ) : (
                   <div className="flex h-full w-full items-center justify-center bg-muted/30">
                     <span className="text-sm text-muted-foreground">
@@ -143,8 +166,8 @@ export const MoveCardWithVideo = ({
           {/* Video section on large screens - right side */}
           {hasVideo ? (
             <div className="hidden aspect-video w-1/2 shrink-0 lg:block">
-              {hasBeenInView ? (
-                <MoveVideo move={move} playing={isInView} />
+              {shouldLoadVideo || hasBeenInView ? (
+                <MoveVideo move={move} playing={isPlaying} />
               ) : (
                 <div className="flex h-full w-full items-center justify-center bg-muted/30">
                   <span className="text-sm text-muted-foreground">

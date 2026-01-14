@@ -1,6 +1,6 @@
 import { useWindowVirtualizer } from '@tanstack/react-virtual';
 import cx from 'classix';
-import { useRef } from 'react';
+import { useCallback, useRef, useState } from 'react';
 import { type FrameDataListProps } from '~/types/FrameDataListProps';
 import { type MoveT8 } from '~/types/Move';
 import { charIdFromMove, commandToUrlSegmentEncoded } from '~/utils/moveUtils';
@@ -23,10 +23,32 @@ export function MoveCardWithVideoList({
   const showCharacter = forceShowCharacter || !charId;
   const listRef = useRef<HTMLDivElement>(null);
 
+  // Track which move indices are currently in view
+  const [inViewIndices, setInViewIndices] = useState<Set<number>>(new Set());
+
+  // Callback to update in-view status for a specific index
+  const handleInViewChange = useCallback((index: number, inView: boolean) => {
+    setInViewIndices((prev) => {
+      const next = new Set(prev);
+      if (inView) {
+        next.add(index);
+      } else {
+        next.delete(index);
+      }
+      return next;
+    });
+  }, []);
+
+  // Get the first (smallest) index that is in view
+  const firstInViewIndex =
+    inViewIndices.size > 0 ? Math.min(...inViewIndices) : -1;
+
   const virtualizer = useWindowVirtualizer({
     count: moves.length,
     estimateSize: () => ESTIMATED_ITEM_HEIGHT + GAP_SIZE,
     scrollMargin: listRef.current?.offsetTop ?? 0,
+    measureElement: (element) =>
+      element.getBoundingClientRect().height + GAP_SIZE,
   });
 
   const virtualItems = virtualizer.getVirtualItems();
@@ -51,6 +73,8 @@ export function MoveCardWithVideoList({
           return (
             <div
               key={move.wavuId || `${computedCharId}-${move.command}`}
+              ref={virtualizer.measureElement}
+              data-index={virtualItem.index}
               style={{
                 position: 'absolute',
                 top: 0,
@@ -66,6 +90,16 @@ export function MoveCardWithVideoList({
                 moveUrl={moveUrl}
                 showCharacter={showCharacter}
                 charId={computedCharId}
+                shouldPlay={
+                  virtualItem.index === firstInViewIndex ||
+                  virtualItem.index === firstInViewIndex + 1
+                }
+                shouldLoadVideo={
+                  Math.abs(virtualItem.index - firstInViewIndex) <= 2
+                }
+                onInViewChange={(inView) =>
+                  handleInViewChange(virtualItem.index, inView)
+                }
               />
             </div>
           );
