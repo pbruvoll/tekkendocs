@@ -1,8 +1,7 @@
-import { VideoIcon } from '@radix-ui/react-icons';
 import cx from 'classix';
 import { Link } from 'react-router';
-import { type Move, type MoveT8 } from '~/types/Move';
-import { type SortSettings } from '~/types/SortSettings';
+import { type FrameDataListProps } from '~/types/FrameDataListProps';
+import { type MoveT8 } from '~/types/Move';
 import { getRecoveryFrames } from '~/utils/frameDataUtils';
 import { charIdFromMove, commandToUrlSegmentEncoded } from '~/utils/moveUtils';
 import { MovePreviewDialogButton } from './MovePreviewDialogButton';
@@ -26,14 +25,7 @@ const simplifyFrameValue = (frameData: string) => {
   return frameData.match(/i?[+-]?\d+/)?.[0] || '';
 };
 
-type SimpleMovesTableProps = {
-  gameRouteId: string;
-  charId?: string;
-  moves: Move[];
-  forceShowCharacter?: boolean;
-  className?: string;
-  sortSettings?: SortSettings;
-};
+type SimpleMovesTableProps = FrameDataListProps;
 
 export function SimpleMovesTable({
   gameRouteId,
