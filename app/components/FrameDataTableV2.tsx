@@ -7,19 +7,14 @@ import { Table } from '@radix-ui/themes';
 import { useMemo } from 'react';
 import { Link, useLocation, useSearchParams } from 'react-router';
 import { orderByKey } from '~/constants/sortConstants';
+import { type FrameDataListProps } from '~/types/FrameDataListProps';
 import { type Move, type MoveT8 } from '~/types/Move';
 import { type SortOrder } from '~/types/SortOrder';
 import { charIdFromMove, commandToUrlSegmentEncoded } from '~/utils/moveUtils';
 import { getSortSettings } from '~/utils/sortingUtils';
 import { MovePreviewDialogButton } from './MovePreviewDialogButton';
 
-export type FrameDataTableProps = {
-  gameRouteId: string;
-  charId?: string;
-  moves: Move[];
-  className?: string;
-  forceShowCharacter?: boolean;
-};
+export type FrameDataTableProps = FrameDataListProps;
 
 const sortOrderIconMap: Record<SortOrder, React.ReactNode> = {
   '': <CaretSortIcon width="1.5rem" height="1.5rem" />,

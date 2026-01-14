@@ -1,6 +1,5 @@
 import { useMemo } from 'react';
 import { useSearchParams } from 'react-router';
-import { Game } from '~/types/Game';
 import { type GameRouteId } from '~/types/GameRouteId';
 import { type Move } from '~/types/Move';
 import { type MoveFilter } from '~/types/MoveFilter';
@@ -9,6 +8,7 @@ import { getSortSettings } from '~/utils/sortingUtils';
 import { type FrameDataViewMode } from '~/utils/userSettings';
 import { ContentContainer } from './ContentContainer';
 import { FrameDataTable } from './FrameDataTableV2';
+import { MoveCardWithVideoList } from './MoveCardWithVideoList';
 import { SimpleMovesTable } from './SimpleMovesTable';
 
 export type DynamicFrameDataListProps = {
@@ -51,24 +51,25 @@ export const DynamicFrameDataList = ({
     return sortedMoves;
   }, [sortedMoves]);
 
+  const FrameDataList = useMemo(() => {
+    switch (viewMode) {
+      case 'videoCards':
+        return MoveCardWithVideoList;
+      case 'simple':
+        return SimpleMovesTable;
+      case 'default':
+        return FrameDataTable;
+    }
+  }, [viewMode]);
+
   return (
     <>
-      {viewMode === 'default' ? (
-        <FrameDataTable
-          gameRouteId={gameRouteId}
-          charId={charId}
-          className={className}
-          moves={paginatedMoves}
-        />
-      ) : (
-        <SimpleMovesTable
-          gameRouteId={gameRouteId}
-          charId={charId}
-          className={className}
-          moves={paginatedMoves}
-          sortSettings={sortSettings}
-        />
-      )}
+      <FrameDataList
+        gameRouteId={gameRouteId}
+        charId={charId}
+        moves={paginatedMoves}
+        className={className}
+      />
       {paginatedMoves.length < sortedMoves.length && (
         <ContentContainer className="my-4">
           Showing {paginatedMoves.length} of {sortedMoves.length} moves

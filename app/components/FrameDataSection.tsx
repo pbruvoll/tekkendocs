@@ -172,7 +172,11 @@ export const FrameDataSection = ({
         moves={moves}
         filter={filter}
         charId={charId}
-        viewMode={frameDataViewMode}
+        viewMode={
+          searchParams.get('viewMode') === 'video'
+            ? 'videoCards'
+            : frameDataViewMode
+        }
       />
     </>
   );

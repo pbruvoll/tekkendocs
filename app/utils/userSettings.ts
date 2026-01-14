@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 
-export type FrameDataViewMode = 'default' | 'simple';
+export type FrameDataViewMode = 'default' | 'simple' | 'videoCards';
 export type UserSettings = {
   frameDataViewMode: FrameDataViewMode;
   setFrameDataViewMode: (frameDataViewMode: FrameDataViewMode) => void;
