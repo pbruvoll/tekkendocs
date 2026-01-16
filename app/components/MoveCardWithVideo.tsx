@@ -54,7 +54,7 @@ export const MoveCardWithVideo = ({
   move,
   moveUrl,
   shouldPlay,
-  shouldLoadVideo,
+  shouldLoadVideo: shouldLoadVideoProp,
   onInViewChange,
 }: MoveCardWithVideoProps) => {
   const hasTags = move.tags && Object.keys(move.tags).length > 0;
@@ -68,10 +68,14 @@ export const MoveCardWithVideo = ({
 
   const cardRef = useRef<HTMLAnchorElement>(null);
   const isInView = useInView(cardRef, {
-    margin: '50px 0px 100px 0px',
+    margin: '50px 0px 300px 0px',
     amount: 'all',
   });
-  const [hasBeenInView, setHasBeenInView] = useState(false);
+  const [shouldLoadVideo, setShouldLoadVideo] = useState(shouldLoadVideoProp);
+
+  if (shouldLoadVideoProp && !shouldLoadVideo) {
+    setShouldLoadVideo(true);
+  }
 
   // Determine if video should play: use shouldPlay prop if provided, otherwise fall back to isInView
   const isPlaying = shouldPlay !== undefined ? shouldPlay : isInView;
@@ -84,7 +88,6 @@ export const MoveCardWithVideo = ({
   useEffect(() => {
     if (isInView) {
       const timeout = setTimeout(() => {
-        setHasBeenInView(true);
         notifyInViewChange(isInView);
       }, 100);
       return () => clearTimeout(timeout);
@@ -111,7 +114,7 @@ export const MoveCardWithVideo = ({
             {/* Video on small screens - shown right after command */}
             {hasVideo && (
               <div className="mb-4 aspect-video w-full lg:hidden">
-                {shouldLoadVideo || hasBeenInView ? (
+                {shouldLoadVideo || isPlaying ? (
                   <MoveVideo move={move} playing={isPlaying} />
                 ) : (
                   <div className="flex h-full w-full items-center justify-center bg-muted/30">
@@ -166,7 +169,7 @@ export const MoveCardWithVideo = ({
           {/* Video section on large screens - right side */}
           {hasVideo ? (
             <div className="hidden aspect-video w-1/2 shrink-0 lg:block">
-              {shouldLoadVideo || hasBeenInView ? (
+              {shouldLoadVideo || isPlaying ? (
                 <MoveVideo move={move} playing={isPlaying} />
               ) : (
                 <div className="flex h-full w-full items-center justify-center bg-muted/30">
