@@ -43,6 +43,8 @@ export function MoveCardWithVideoList({
   const firstInViewIndex =
     inViewIndices.size > 0 ? Math.min(...inViewIndices) : -1;
 
+  console.log('first index in view:', firstInViewIndex);
+
   const virtualizer = useWindowVirtualizer({
     count: moves.length,
     estimateSize: () => ESTIMATED_ITEM_HEIGHT + GAP_SIZE,
@@ -95,7 +97,7 @@ export function MoveCardWithVideoList({
                   virtualItem.index === firstInViewIndex + 1
                 }
                 shouldLoadVideo={
-                  Math.abs(virtualItem.index - firstInViewIndex) <= 2
+                  Math.abs(virtualItem.index - firstInViewIndex) <= 4
                 }
                 onInViewChange={(inView) =>
                   handleInViewChange(virtualItem.index, inView)
