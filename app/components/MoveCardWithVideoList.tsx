@@ -39,12 +39,6 @@ export function MoveCardWithVideoList({
     });
   }, []);
 
-  // Get the first (smallest) index that is in view
-  const firstInViewIndex =
-    inViewIndices.size > 0 ? Math.min(...inViewIndices) : -1;
-
-  console.log('first index in view:', firstInViewIndex);
-
   const virtualizer = useWindowVirtualizer({
     count: moves.length,
     estimateSize: () => ESTIMATED_ITEM_HEIGHT + GAP_SIZE,
@@ -54,6 +48,10 @@ export function MoveCardWithVideoList({
   });
 
   const virtualItems = virtualizer.getVirtualItems();
+
+  // Get the first (smallest) index that is in view
+  const firstInViewIndex =
+    virtualItems.find((item) => inViewIndices.has(item.index))?.index ?? -1;
 
   return (
     <ContentContainer>
