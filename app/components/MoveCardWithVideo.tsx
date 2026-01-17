@@ -14,6 +14,7 @@ export type MoveCardWithVideoProps = {
   /** Whether this card should play its video. Used to ensure only one video plays at a time. */
   shouldPlay?: boolean;
   shouldLoadVideo?: boolean;
+  shouldPreload?: boolean;
   /** Callback when this card's in-view status changes */
   onInViewChange?: (inView: boolean) => void;
 };
@@ -54,6 +55,7 @@ export const MoveCardWithVideo = ({
   move,
   moveUrl,
   shouldPlay,
+  shouldPreload,
   shouldLoadVideo: shouldLoadVideoProp,
   onInViewChange,
 }: MoveCardWithVideoProps) => {
@@ -115,7 +117,11 @@ export const MoveCardWithVideo = ({
             {hasVideo && (
               <div className="mb-4 aspect-video w-full lg:hidden">
                 {shouldLoadVideo || isPlaying ? (
-                  <MoveVideo move={move} playing={isPlaying} />
+                  <MoveVideo
+                    move={move}
+                    playing={isPlaying}
+                    preload={shouldPreload}
+                  />
                 ) : (
                   <div className="flex h-full w-full items-center justify-center bg-muted/30">
                     <span className="text-sm text-muted-foreground">
@@ -170,7 +176,11 @@ export const MoveCardWithVideo = ({
           {hasVideo ? (
             <div className="hidden aspect-video w-1/2 shrink-0 lg:block">
               {shouldLoadVideo || isPlaying ? (
-                <MoveVideo move={move} playing={isPlaying} />
+                <MoveVideo
+                  move={move}
+                  playing={isPlaying}
+                  preload={shouldPreload}
+                />
               ) : (
                 <div className="flex h-full w-full items-center justify-center bg-muted/30">
                   <span className="text-sm text-muted-foreground">

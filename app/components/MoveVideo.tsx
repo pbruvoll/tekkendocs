@@ -1,4 +1,5 @@
 import cx from 'classix';
+import { useState } from 'react';
 import ReactPlayer from 'react-player/youtube';
 import { useHydrated } from 'remix-utils/use-hydrated';
 import { type Move } from '~/types/Move';
@@ -8,6 +9,7 @@ export type MoveVideoProps = {
   hideFrameData?: boolean;
   className?: string;
   playing?: boolean;
+  preload?: boolean;
 };
 
 export const MoveVideo = ({
@@ -15,8 +17,11 @@ export const MoveVideo = ({
   hideFrameData,
   className,
   playing = true,
+  preload = false,
 }: MoveVideoProps) => {
   const isHydrated = useHydrated();
+
+  const [hasStarted, setHasStarted] = useState(false);
 
   if (move.ytVideo && isHydrated) {
     return (
@@ -33,8 +38,9 @@ export const MoveVideo = ({
         {/* Video player on top - once loaded it covers the loading indicator */}
         <div className="absolute inset-0">
           <ReactPlayer
-            playing={playing}
+            playing={playing || (preload && !hasStarted)}
             controls
+            onPlay={() => setHasStarted(true)}
             width="100%"
             height="100%"
             muted

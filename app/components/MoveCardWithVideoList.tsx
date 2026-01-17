@@ -51,7 +51,8 @@ export function MoveCardWithVideoList({
 
   // Get the first (smallest) index that is in view
   const firstInViewIndex =
-    virtualItems.find((item) => inViewIndices.has(item.index))?.index ?? -1;
+    virtualizer.getVirtualIndexes().find((index) => inViewIndices.has(index)) ??
+    -1;
 
   return (
     <ContentContainer>
@@ -90,10 +91,8 @@ export function MoveCardWithVideoList({
                 moveUrl={moveUrl}
                 showCharacter={showCharacter}
                 charId={computedCharId}
-                shouldPlay={
-                  virtualItem.index === firstInViewIndex ||
-                  virtualItem.index === firstInViewIndex + 1
-                }
+                shouldPlay={virtualItem.index === firstInViewIndex}
+                shouldPreload={virtualItem.index === firstInViewIndex + 1}
                 shouldLoadVideo={
                   Math.abs(virtualItem.index - firstInViewIndex) <= 4
                 }
