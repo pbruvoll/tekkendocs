@@ -3,8 +3,10 @@ export const simplifyFrameValue = (frameData: string) => {
   return frameData.match(/i?[+-]?\d+/)?.[0] || '';
 };
 
-export const getHitFrameColorClasses = (frameValue: string | undefined): string => {
-  if(!frameValue) {
+export const getHitFrameColorClasses = (
+  frameValue: string | undefined,
+): string => {
+  if (!frameValue) {
     return 'text-muted-foreground';
   }
 
@@ -15,8 +17,10 @@ export const getHitFrameColorClasses = (frameValue: string | undefined): string 
   return 'text-foreground';
 };
 
-export const getBlockFrameColorClasses = (frameValue: string | undefined): string => {
-  if(!frameValue) {
+export const getBlockFrameColorClasses = (
+  frameValue: string | undefined,
+): string => {
+  if (!frameValue) {
     return 'text-muted-foreground';
   }
   const num = parseInt(frameValue, 10);
@@ -24,4 +28,4 @@ export const getBlockFrameColorClasses = (frameValue: string | undefined): strin
   if (num > 0) return 'text-text-success';
   if (num <= -10) return 'text-text-destructive';
   return 'text-foreground';
-}
+};
