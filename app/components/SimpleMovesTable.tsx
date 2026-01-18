@@ -3,7 +3,11 @@ import { Link } from 'react-router';
 import { type FrameDataListProps } from '~/types/FrameDataListProps';
 import { type MoveT8 } from '~/types/Move';
 import { getRecoveryFrames } from '~/utils/frameDataUtils';
-import { simplifyFrameValue } from '~/utils/frameViewUtils';
+import {
+  getBlockFrameColorClasses,
+  getHitFrameColorClasses,
+  simplifyFrameValue,
+} from '~/utils/frameDataViewUtils';
 import { charIdFromMove, commandToUrlSegmentEncoded } from '~/utils/moveUtils';
 import { MovePreviewDialogButton } from './MovePreviewDialogButton';
 
@@ -104,8 +108,7 @@ export function SimpleMovesTable({
               <td
                 className={cx(
                   'wrap-break-word p-2 align-middle sm:p-4',
-                  blockValue <= -10 && 'text-text-destructive',
-                  blockValue > 0 && 'text-text-success',
+                  getBlockFrameColorClasses(simpleBlock),
                 )}
               >
                 {simpleBlock}
@@ -115,7 +118,10 @@ export function SimpleMovesTable({
                   getRecoveryFrames(move)
                 ) : (
                   <>
-                    {simpleHit}
+                    <span className={getHitFrameColorClasses(simpleHit)}>
+                      {simpleHit}
+                    </span>
+
                     {move.counterHit && move.counterHit !== move.hit && (
                       <span className="text-muted-foreground">
                         {' '}
