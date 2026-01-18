@@ -4,6 +4,7 @@ import { Link } from 'react-router';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
 import { type Move } from '~/types/Move';
+import { simplifyFrameValue } from '~/utils/frameViewUtils';
 import { MoveVideo } from './MoveVideo';
 
 export type MoveCardWithVideoProps = {
@@ -27,7 +28,7 @@ const getFrameColor = (value: string): string => {
   const num = parseInt(value, 10);
   if (Number.isNaN(num)) return 'text-foreground';
   if (num > 0) return 'text-text-success';
-  if (num < 0) return 'text-text-destructive';
+  if (num <= -10) return 'text-text-destructive';
   return 'text-foreground';
 };
 
@@ -134,7 +135,10 @@ export const MoveCardWithVideo = ({
 
             <CardContent className="space-y-4">
               <div className="grid grid-cols-3 gap-2 text-center">
-                <FrameCell label="Startup" value={move.startup} />
+                <FrameCell
+                  label="Startup"
+                  value={simplifyFrameValue(move.startup || '')}
+                />
                 <FrameCell label="Hit Level" value={move.hitLevel} />
                 <div className="flex flex-col items-center">
                   <span className="text-xs text-muted-foreground uppercase">
@@ -165,9 +169,21 @@ export const MoveCardWithVideo = ({
               </div>
 
               <div className="grid grid-cols-3 gap-2 text-center">
-                <FrameCell label="Block" value={move.block} colorize />
-                <FrameCell label="Hit" value={move.hit} colorize />
-                <FrameCell label="Counter" value={move.counterHit} colorize />
+                <FrameCell
+                  label="Block"
+                  value={simplifyFrameValue(move.block || '')}
+                  colorize
+                />
+                <FrameCell
+                  label="Hit"
+                  value={simplifyFrameValue(move.hit || '')}
+                  colorize
+                />
+                <FrameCell
+                  label="Counter"
+                  value={simplifyFrameValue(move.counterHit || '')}
+                  colorize
+                />
               </div>
             </CardContent>
           </div>

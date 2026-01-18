@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 import { type FrameDataListProps } from '~/types/FrameDataListProps';
 import { type MoveT8 } from '~/types/Move';
 import { getRecoveryFrames } from '~/utils/frameDataUtils';
+import { simplifyFrameValue } from '~/utils/frameViewUtils';
 import { charIdFromMove, commandToUrlSegmentEncoded } from '~/utils/moveUtils';
 import { MovePreviewDialogButton } from './MovePreviewDialogButton';
 
@@ -18,11 +19,6 @@ const formatWordWithBreaks = (command: string) => {
       )}
     </span>
   ));
-};
-
-// function which extract just the number from frame data, eg "i15~16, i30~32,i31~32" => "i15"
-const simplifyFrameValue = (frameData: string) => {
-  return frameData.match(/i?[+-]?\d+/)?.[0] || '';
 };
 
 type SimpleMovesTableProps = FrameDataListProps;
