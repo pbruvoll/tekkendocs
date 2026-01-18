@@ -61,9 +61,7 @@ export const MoveCardWithVideo = ({
   const hasTags = move.tags && Object.keys(move.tags).length > 0;
   const tagsList =
     hasTags && move.tags
-      ? Object.entries(move.tags).map(
-          ([key, value]) => key + (value ? `:${value}` : ''),
-        )
+      ? Object.keys(move.tags).filter((key) => key !== 'fs')
       : [];
   const hasVideo = Boolean(move.ytVideo);
 
@@ -138,14 +136,14 @@ export const MoveCardWithVideo = ({
                   value={simplifyFrameValue(move.startup || '')}
                 />
                 <FrameCell label="Hit Level" value={move.hitLevel} />
-                <div className="flex flex-col items-center">
+                <div className="flex flex-col items-center gap-1">
                   <span className="text-xs text-muted-foreground uppercase">
                     Properties
                   </span>
                   <span className="text-sm font-medium">
                     {hasTags ? (
-                      <span className="flex flex-wrap justify-center gap-1">
-                        {tagsList.slice(0, 3).map((tag) => (
+                      <span className="flex flex-wrap justify-center gap-1 uppercase">
+                        {tagsList.slice(0, 6).map((tag) => (
                           <span
                             key={tag}
                             className="rounded bg-muted px-1.5 py-0.5 text-xs"
@@ -153,9 +151,9 @@ export const MoveCardWithVideo = ({
                             {tag}
                           </span>
                         ))}
-                        {tagsList.length > 3 && (
+                        {tagsList.length > 6 && (
                           <span className="text-xs text-muted-foreground">
-                            +{tagsList.length - 3}
+                            +{tagsList.length - 6}
                           </span>
                         )}
                       </span>
