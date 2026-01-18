@@ -1,6 +1,6 @@
 import { useWindowVirtualizer } from '@tanstack/react-virtual';
 import cx from 'classix';
-import { useCallback, useRef, useState } from 'react';
+import { use, useCallback, useEffect, useRef, useState } from 'react';
 import { type FrameDataListProps } from '~/types/FrameDataListProps';
 import { type MoveT8 } from '~/types/Move';
 import { charIdFromMove, commandToUrlSegmentEncoded } from '~/utils/moveUtils';
@@ -22,6 +22,21 @@ export function MoveCardWithVideoList({
 }: MoveCardWithVideoListProps) {
   const showCharacter = forceShowCharacter || !charId;
   const listRef = useRef<HTMLDivElement>(null);
+  const [firstMove, setFirstMove] = useState<string | undefined>(
+    moves[0]?.command,
+  );
+  const [firstRender, setFirstRender] = useState(true);
+  if (firstMove !== moves[0]?.command) {
+    setFirstMove(moves[0]?.command);
+    setFirstRender(true);
+  }
+
+  useEffect(() => {
+    if (firstRender) {
+      const timer = setTimeout(() => setFirstRender(false), 100);
+      return () => clearTimeout(timer);
+    }
+  }, [firstRender]);
 
   // Track which move indices are currently in view
   const [inViewIndices, setInViewIndices] = useState<Set<number>>(new Set());
@@ -51,7 +66,8 @@ export function MoveCardWithVideoList({
 
   // Get the first (smallest) index that is in view
   const firstInViewIndex =
-    virtualItems.find((item) => inViewIndices.has(item.index))?.index ?? -1;
+    virtualizer.getVirtualIndexes().find((index) => inViewIndices.has(index)) ??
+    -1;
 
   return (
     <ContentContainer>
@@ -90,11 +106,12 @@ export function MoveCardWithVideoList({
                 moveUrl={moveUrl}
                 showCharacter={showCharacter}
                 charId={computedCharId}
-                shouldPlay={
-                  virtualItem.index === firstInViewIndex ||
-                  virtualItem.index === firstInViewIndex + 1
+                shouldPlay={virtualItem.index === firstInViewIndex}
+                shouldPreload={
+                  !firstRender && virtualItem.index === firstInViewIndex + 1
                 }
                 shouldLoadVideo={
+                  !firstRender &&
                   Math.abs(virtualItem.index - firstInViewIndex) <= 4
                 }
                 onInViewChange={(inView) =>
