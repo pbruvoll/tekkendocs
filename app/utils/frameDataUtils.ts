@@ -1,5 +1,6 @@
 import invariant from 'tiny-invariant';
 import { StanceNormal } from '~/constants/filterConstants';
+import { MoveTags } from '~/constants/moveTags';
 import { type HitLevel } from '~/types/FilterTypes';
 import { type Move } from '~/types/Move';
 import { type MoveFilter } from '~/types/MoveFilter';
@@ -87,6 +88,7 @@ export const applyOverride = (
   const ytVideoIndex = lowerCaseHeaders.indexOf('yt video');
   const ytStartIndex = lowerCaseHeaders.indexOf('yt start');
   const ytEndIndex = lowerCaseHeaders.indexOf('yt end');
+  const tagsIndex = lowerCaseHeaders.indexOf('tags');
   const [overrideRecordByCommand, overrideRecordByWavuId] =
     overrideNormalFrameData.rows.reduce<
       [Record<string, Partial<Move>>, Record<string, Partial<Move>>]
@@ -94,16 +96,25 @@ export const applyOverride = (
       (current, row) => {
         const [movesByCommand, movesByWavuId] = current;
         const ytVideo = row[ytVideoIndex];
-        if (ytVideo) {
-          movesByCommand[row[commandIndex]] = {
-            ytVideo: {
-              id: ytVideo,
-              start: row[ytStartIndex],
-              end: row[ytEndIndex],
-            },
-          };
-          movesByWavuId[row[wavuIdIndex]] = movesByCommand[row[commandIndex]];
+        const tags = row[tagsIndex] ? tagStringToRecord(row[tagsIndex]) : null;
+        if (!ytVideo && !tags) {
+          return current;
         }
+
+        const overrideMove: Partial<Move> = {};
+
+        if (ytVideo) {
+          overrideMove.ytVideo = {
+            id: ytVideo,
+            start: row[ytStartIndex],
+            end: row[ytEndIndex],
+          };
+        }
+        if (tags) {
+          overrideMove.tags = tags;
+        }
+        movesByCommand[row[commandIndex]] = overrideMove;
+        movesByWavuId[row[wavuIdIndex]] = overrideMove;
         return current;
       },
       [{}, {}],
@@ -114,8 +125,8 @@ export const applyOverride = (
       overrideRecordByCommand[move.command] ||
       overrideRecordByWavuId[move.wavuId || ''];
     if (override) {
-      move.ytVideo = override.ytVideo;
-      if (move.ytVideo) {
+      if (override.ytVideo) {
+        move.ytVideo = override.ytVideo;
         // see if this can be video can be used for moves that starts with same command (use video for 1,1,2 also for 1, 1)
         let prevIndex = index - 1;
         while (
@@ -126,6 +137,12 @@ export const applyOverride = (
           moves[prevIndex].ytVideo = move.ytVideo;
           prevIndex--;
         }
+      }
+      if (override.tags) {
+        move.tags = {
+          ...move.tags,
+          ...override.tags,
+        };
       }
     }
   });
@@ -172,6 +189,9 @@ export const noJails = (move: Move) => {
 };
 
 export const isDuckableString = (move: Move) => {
+  if (move.tags?.[MoveTags.Duckable] !== undefined) {
+    return true;
+  }
   const lastHitLevel = move.hitLevel?.split(', ').pop()?.[0]?.toLowerCase();
   return noJails(move) && (lastHitLevel as HitLevel) === 'h';
 };
