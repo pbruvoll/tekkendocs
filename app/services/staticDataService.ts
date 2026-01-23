@@ -183,6 +183,7 @@ export const characterGuideAuthors: Record<
     jin: { author: 'Bok Dibi', version: 'S2' },
     jun: { author: 'Pagani', version: 'S2' },
     lars: { author: 'KayDash', version: 'S2' },
+    law: { author: 'Landon D', version: 'S2' },
     lee: { author: 'Super Akouma', version: 'S2' },
     leroy: { author: 'SYRAXSLAYER', version: 'S2' },
     lidia: { author: 'Leemishima', version: 'S2' },
