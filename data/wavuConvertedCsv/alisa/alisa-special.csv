@@ -8,7 +8,12 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * Power crush 7~16";hb pc7~16;;Alisa-2+3;Heat Burst;r30;;
 H.d+1+2;;;;;;;"* Cancel to r30 with db
 * Consumes 60F of remaining Heat time
-* Power crush 6~36";pc6~36;DES;Alisa-H.d+1+2;Emergency Destructive Form;r47 DES;;
+* 75% damage reduction when absorbing attacks
+* Damage absorbed is recoverable
+* No hitstop during attack absorption
+* Automatic standing guard from frames 1 to 5
+* Can standing or crouching guard starting at frame 31
+* Power crush 6~30?";pc6~30?;DES;Alisa-H.d+1+2;Emergency Destructive Form;r42? DES;;
 H.f+1+4;;;;;;;"* Consumes 150F of remaining Heat time
 * Low crush 18~40
 * Floating state 41~43";js18~40 fs41~43;DBT;Alisa-H.f+1+4;Emergency Dual Boot;r17 DBT;;
@@ -176,10 +181,10 @@ d+3+4;L;20;i27~i28;-37;+67a (+51);;"* Homing
 * Enter DES with 1+2
 * High crush 20~40
 * Floating state 5~55";hom cs20~40 fs5~55;DES;Alisa-d+3+4;Harpoon Sweep;r36;;File:t8-p2-alisa-d+3+4.mp4
-db+1;;;;;;;"* Transition to FC with D
+db+1;;;;;;;"* Transition to r9? FC with D or after d+3 BKP transition
 * Can perform WS moves after 24 frames
 * High crush 4~15";cs4~15;FC,BKP;Alisa-db+1;Backup;r15 BKP;;
-db+1;;;;;;;"* Transition to r9? FC with D or after d+3 BKP transition
+db+1;;;;;;;"* Transition to FC with D
 * Can perform WS moves after 24 frames
 * High crush 4~15";cs4~15;FC,BKP;Alisa-db+1;Backup;r15 BKP;;
 db+2;m;10;i18~19;-18;-5;;;;;Alisa-db+2;;r36;;
@@ -243,11 +248,11 @@ b+3+4,3+4;m, M;22, 25;i18~19, i56~61;+5c~+10c;+59a;;"* Spike
 ub+2;h;23;i16~20;-9;+38a (-20);;"* Balcony Break
 * 9 chip damage on block, +0 block advantage on attack absorption
 * Power crush 7~15
-* Floating state 20~30";bbr pc7~15 fs20~30;;Alisa-ub+2;Overload;r32;;File:t8-p2-alisa-ub+2.mp4
+* Floating state 20~30";bbr pc7~15 fs20~30;;Alisa-ub+2;Overload;r32;;
 ub+2;h;23;i16~20;-9;+38a (-20);;"* Balcony Break
 * 9 chip damage on block, +0 block advantage on attack absorption
 * Power crush 7~15
-* Floating state 20~30";bbr pc7~15 fs20~30;;Alisa-ub+2;Overload;r32;;
+* Floating state 20~30";bbr pc7~15 fs20~30;;Alisa-ub+2;Overload;r32;;File:t8-p2-alisa-ub+2.mp4
 ub+4;m;10;i18;-9;+7;;"* Low crush 9~31
 * Floating state 32~34";js9~31 fs32~34;;Alisa-ub+4;1st Hit;r27;;
 ub+4,1;m, m;10, 12;i18, i25~27;-21;-8;;"Combo from 1st CH
@@ -378,9 +383,7 @@ f,f,F+3,4;m, m;15, 20;i18~19, i20~22;-7;+31a (+5);;"* Balcony Break
 f,f,F+1+2;M;24;i18~36;-3;-17a (-26);;"* Balcony Break
 * Low crush 5~36
 * Floating state 37~67";bbr js5~36 fs37~67;;Alisa-f,f,F+1+2;Thruster Double Punch;r44;;
-"ws&gt;1+2";m;24;i28~29;-4;+21;;"* Homing
-* Hold input to power up";hom;;"Alisa-ws&amp;gt;1+2";;r31;;
-ws1;M;12;i13~14;-12;+1;;* Elbow;elb;;Alisa-ws1;;r30;;
+ws1;M;12;i13~14;-12;-1;;* Elbow;elb;;Alisa-ws1;;r30;;
 ws1,2;M, h;12, 12;i13~14, i24~25;-5;+6;;"* Combo from 1st hit
 * Enter DES with 1+2";;DES;Alisa-ws1,2;;r23;;
 ws1,2,3;M, h, m;12, 12, 23;i13~14, ,i25~26;-10;+33a (+23);;"* Combo from 2nd CH with 5f delay
@@ -394,8 +397,10 @@ ws3;m;18;i19~20;+4;+15;;"* Cancel with B
 ws4;m;15;i11~12;-5;+6;;;;;Alisa-ws4;Key Smash;r23;;File:t8-p2-alisa-ws4.mp4
 ws1+2;m;20;i20~21;-8;+21;;"* Homing
 * Hold input to power up";hom;;Alisa-ws1+2;Cute But Deadly;r31;;File:t8-p2-alisa-ws1+2.mp4
-ws1+2*;m;28;i39~40;+0;+33a;;"* Homing
-* 11 chip damage on block";hom;;Alisa-ws1+2*;Cute But Deadly (Hold);r27;;
+ws1+2*;m;24;i28~29;-4;+21;;"* Homing
+* Hold input to power up";hom;;Alisa-ws1+2*;;r31;;
+ws1+2**;m;28;i39~40;+0;+33a;;"* Homing
+* 11 chip damage on block";hom;;Alisa-ws1+2**;Cute But Deadly (Hold);r27;;
 SS.4;L;16;i24~25;-12;+2;;* High crush 6~35;cs6~35;;Alisa-SS.4;;r30;;
 SS.4,1+2;L, h,h,h,m;16, 5,5,5,5;i24~25, i18~19 i3~5 i5~7 i4~5;-10;+8;;"* Spike
 * Combo from 1st CH
@@ -574,14 +579,14 @@ DES.f+2,1,2;m,m, m,m, m,m;9, 9, 23;i15 i1~1, ,i23~24 i4~5;-13;+30d;;"* Heat Enga
 * Move cannot be delayed
 * 6 chip damage on block
 * 7 chip damage on block in heat";he wpn;;Alisa-DES.f+2,1,2;Gigahertz Storm;r42;;File:t8-p2-alisa-des.f+2,1,2.mp4
-DES.f+3;;;;;;;"* Cancel to r33 with DBT.b
-* Transition to r50 SS with DBT.u_d
-* Low crush 18~40
-* Floating state 41~43";js18~40 fs41~43;SS,DBT;Alisa-DES.f+3;Dual Boot;r17 DBT;;
 DES.f+3;;;;;;;"* Cancel to r33 standing block with DBT.B
 * Transition to Evasive Action with input DBT.U_D
 * Low crush 18~40
 * Floating state 41~43";js18~40 fs41~43;DBT;Alisa-DES.f+3;Dual Boot;r17 DBT;;
+DES.f+3;;;;;;;"* Cancel to r33 with DBT.b
+* Transition to r50 SS with DBT.u_d
+* Low crush 18~40
+* Floating state 41~43";js18~40 fs41~43;SS,DBT;Alisa-DES.f+3;Dual Boot;r17 DBT;;
 DES.f+1+2;m,m,m,m,m,m,m,m;29;i23~27 i1~5 i1~4 i1~4 i1~5 i1~5 i1~4 i1~1;+1;+33a;;"* Weapon
 * Combo from any hit
 * Transition to DBT (+4/+36a) with 3_4

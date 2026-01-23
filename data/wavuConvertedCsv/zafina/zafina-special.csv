@@ -331,9 +331,11 @@ MNT.df+4;m;18;i17~18;-5;+13g;;"* Homing
 * High crush 1~40
 * gs41~56";hom bbr cs1~40 gs41~56;TRT;Zafina-MNT.df+4;Mantis Slash;r29 TRT;;File:t8-p2-zafina-mnt.df+4.mp4
 MNT.d+1;L;14;i15~16;-11;0;;* High crush 1~58;cs1~58;MNT;Zafina-MNT.d+1;;r29 MNT;;
-MNT.d+1,4;L, m;14, 23;i15~16, i27~30;-16;+15 (+6);+60a (+40);* Balcony Break;bbr;;Zafina-MNT.d+1,4;Mantis Sickle;r32;;File:t8-p2-zafina-mnt.d+1,4.mp4
-MNT.d+4;L;19;i20~27;-22~-15;+4c~+11c;+19a~+26a;"* Evasive (can go under mids)
-* High crush 1~";cs1~;MNT;Zafina-MNT.d+4;Mantis Slide;r34 MNT;;File:t8-p2-zafina-mnt.d+4.mp4
+MNT.d+1,4;L, m;14, 23;i15~16, i27~30;-16;+15 (+6);+60a (+40);"* Balcony Break
+* Combo from 1st CH";bbr;;Zafina-MNT.d+1,4;Mantis Sickle;r32;;File:t8-p2-zafina-mnt.d+1,4.mp4
+MNT.d+4;L;19;i20~27;-22~-15;+4c~+11c;+19a~+26a;"* Knee
+* Evasive (can go under mids)
+* High crush 1~";kne cs1~;MNT;Zafina-MNT.d+4;Mantis Slide;r34 MNT;;File:t8-p2-zafina-mnt.d+4.mp4
 MNT.uf+3;M;25;i26~28;-9c;+11d;;"* Spike
 * Enter MNT with D
 * Low crush 7~23
@@ -348,7 +350,8 @@ ORB.SCR.df+3+4;L,m,m,sm;6,15,3,10;i19;-14;-13a (-14);;"* Transition to 3rd hit o
 * High crush 6~";cs6~;3rd;Zafina-ORB.SCR.df+3+4;Anathematic Malice;;;File:Zafina SCR Heat Smash.mp4
 SCR.1;h;12;i10~11;-2;+9;;;;SCR;Zafina-SCR.1;;r20 SCR;;
 SCR.1,4;h, m;12, 18;i10~11, i22;-6;+7;+32a;"* Spike
-* Combo from 1st hit";spk;TRT;Zafina-SCR.1,4;Scarecrow Nightmare;r28 TRT;;File:t8-p2-zafina-scr.1,4.mp4
+* Combo from 1st hit
+* Unparryable with traditional kick parries";spk;TRT;Zafina-SCR.1,4;Scarecrow Nightmare;r28 TRT;;File:t8-p2-zafina-scr.1,4.mp4
 SCR.2;m;17;i14;-7;+7;;;;SCR;Zafina-SCR.2;;r28 SCR;;
 SCR.2,1;m, m;17, 25;i14, i21;-6;+30a (+20);;"* Heat Engager
 
@@ -377,7 +380,7 @@ SCR.3+4;m,m;10,20;i18~19 i6~8;-12;+8g;;"* Strong Aerial Tailspin
 * Jail from 1st attack
 * Low crush 6~22
 * Floating state 23~25";bbr js6~22 fs23~25;;Zafina-SCR.3+4;Kigal;r33;;
-SCR.b+1+2;L;20;i16;-18;+23d;;"* Weapon
+SCR.b+1+2;L;20;i16;-18;+23g;;"* Weapon
 * Evasive (can go under some mids)
 * Deal 10 recoverable damage to self without Heat
 * Gain ORB on hit
@@ -409,8 +412,10 @@ TRT.1;L;13;i18;-11;+5;+15a;;;TRT;Zafina-TRT.1;Tarantula Shotel;r30 TRT;;File:t8-
 TRT.2;M;24;i34~36;-13;+38a;;"* Tornado
 * Recover 4f faster on hit (t64 r28)
 * Power crush 8";trn pc8;;Zafina-TRT.2;Tarantula Cutlass;r32;;File:t8-p2-zafina-trt.2.mp4
-TRT.3;m;16;i14~i15;-7;+5c;+19c;* Spike;spk;TRT;Zafina-TRT.3;Deathstalker;r34 TRT;;File:t8-p2-zafina-trt.3.mp4
-TRT.4;m;10;i26;-22;-4;-4c;* Cancel MNT transition with D, recover in TRT;;MNT;Zafina-TRT.4;;r44 MNT;;
+TRT.3;m;16;i14~i15;-7;+5c;+19c;"* Spike
+* Floating state 1~49?";spk fs1~49?;TRT;Zafina-TRT.3;Deathstalker;r34 TRT;;File:t8-p2-zafina-trt.3.mp4
+TRT.4;m;10;i26;-22;-4;-4c;"* Transition to TRT with D
+* Floating state 1~70?";fs1~70?;TRT,MNT;Zafina-TRT.4;;r44 MNT;;
 TRT.4,3;m, m;10, 10;i26, i28~31;-13;+18a;;* Combo from 1st CH;;;Zafina-TRT.4,3;Tarantula's Bite;r29;;File:t8-p2-zafina-trt.4,3.mp4
 TRT.1+2;m,M;7,20;i19~20 i9~10;-12c;+14a;;"* Balcony Break
 * Homing

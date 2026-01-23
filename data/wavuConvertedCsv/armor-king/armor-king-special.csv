@@ -47,6 +47,7 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Move can be delayed by 7F
 * Input can be delayed by 9F";;;Armor King-3,4;;r30;;
 3,4,1;h, m, m;17, 15, 28;i15~16, ,i21~22;-13;+15a(+6);;"* Balcony Break
+* Shoulder
 * Combo from 2nd CH with 14F delay
 * Move can be delayed by 13F
 * Input can be delayed by 16F
@@ -71,12 +72,12 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Opponent is left FUFL";fbr;BT;Armor King-3+4*;Phenomenon Shadow DDT;r22 BT;;
 3+4,1;M, h;14, 17;i25~32, i14~15;-8;+8;;"* Combo from 1st hit
 * Transition to BAD with F (-8/+8)";;BAD;Armor King-3+4,1;Dark Blast;r28;;
-3+4,2;M, M;14, 25;i25~32, i17~i34;-18d;-24a(-50);;"* Shoulder
-* Balcony Break
+3+4,2;M, M;14, 25;i25~32, i17~i34;-18d;-24a(-50);;"* Balcony Break
+* Elbow
 * Combo from 1st hit
 * Opponent recovers FDFA
 * AK recovers standing on hit
-* Low crush 9~37?";bbr js9~37?;FUFA;Armor King-3+4,2;Round Out Elbow;r25? FUFA;;
+* Low crush 9~37?";bbr elb js9~37?;FUFA;Armor King-3+4,2;Round Out Elbow;r25? FUFA;;
 3+4,1+2;M, M,t;14, 25,5;i25~32, i24~34;+0c;-5d;;"* Transition to attack throw on close range front hit
 * +2c~+12c on mid hit
 * Opponent left FUFA
@@ -101,6 +102,7 @@ f+3,2,1;m, m, m;12, 13, 22;i15~16, ,i24~26;-13;+34d;+70a (+54);"* Tornado
 f+4;M;21;i23~25;+3c;+7c;+12c;;;;Armor King-f+4;Wind-Up Stomp;;;
 f+1+2;m;21;i22~23;-12;+22g;;"* Strong Aerial Tailspin
 * Transition to BAD on hit only with F (+26g)
+* -6 frame advantage and 8 chip damage on block after absorbing an attack in power crush state
 * Power crush 7~21";pc7~21;BAD;Armor King-f+1+2;Wrecking Cyclone;r32;;
 f+1+4;m;28;i13~15;-19;+17d(+12);;"* Balcony Break
 * Shoulder
@@ -229,11 +231,10 @@ f,f,n,2;L;20;i19;-13;+5;+10;"* Transition to BAD on hit with F (+8/+13)
 f,n,d,DF+3;h!;30;i35~37;;+19a (+10);;"*
 Balcony Break
 *Hold B to cancel at frame 19 into r23 standing";bbr;;Armor King-f,n,d,DF+3;Dark Inferno;r28;;
-f,n,d,DF+4;m;22;i16~18;-9;+28a (+20);;"*
-Balcony Break
-*
-Tornado
-* Low crush 11~27";bbr trn js11~27;;Armor King-f,n,d,DF+4;Knee Vault;r35;;
+f,n,d,DF+4;m;22;i16~18;-9;+28a (+20);;"* Balcony Break
+* Tornado
+* Knee
+* Low crush 11~27";bbr trn kne js11~27;;Armor King-f,n,d,DF+4;Knee Vault;r35;;
 f,n,d,df;;;;;;;"* Cannot be buffered
 * Stance moves can be buffered out of heat dash
 * Recovers in FC at frame 20
@@ -316,18 +317,18 @@ H.BAD.3,2;m,M;15,25;i34~36;+5;+1a;;"* Balcony Break
 * Jail from 1st block
 * Opponent left FDFA
 * Partially uses remaining Heat time
-* Power up if an attack is absorbed
-** Reversal Break
-** 11 chip damage on block";bbr rbr;;Armor King-BAD.3,H.2;Blackguard Rush: Villain;r46;;
+* 11 chip damage on block after absorbing an attack in power crush state";bbr;;Armor King-BAD.3,H.2;Blackguard Rush: Villain;r46;;
 BAD.4;L;23;i17~18;-13;+3c;+26a;;;;Armor King-BAD.4;Bandido Snatch;r31;;File:t8-p2-armor_king-bad.4.mp4
-BAD.1+2;m;22;i26~27;+5;+12c;+40a;* 6 chip damage on block;;;Armor King-BAD.1+2;Brigand Stomping Headbutt;r34;;File:t8-p2-armor_king-bad.1+2.mp4
+BAD.1+2;m;22;i26~27;+5;+12c;+40a;"* Head
+* 6 chip damage on block";;;Armor King-BAD.1+2;Brigand Stomping Headbutt;r34;;File:t8-p2-armor_king-bad.1+2.mp4
 BAD.db+1+2;m,t;18,15;i14~17;-18c;+0d;;"* Transition into hit grab on grounded, airborne, and backturn hit
 * AK is left FDFA on whiff/block
 * Opponent is left FUFT on hit
 * Low crush 14~34";js14~34;FDFA;Armor King-BAD.db+1+2;Shadow Press;r43? FDFA;;File:t8-p2-armor_king-bad.db+1+2.mp4
 BT.1;h;15;i8;-3;+8;;;;;Armor King-BT.1;;;;
 BT.2;h;15;i8;-3;+8;;;;;Armor King-BT.2;;;;
-BT.3;m;20;i13~14;-14;+49a;;* Tornado;trn;;Armor King-BT.3;Blind Kick;;;
+BT.3;m;20;i13~14;-14;+49a;;"* Tornado
+* Unparryable by traditional kick parries (bug?)";trn;;Armor King-BT.3;Blind Kick;;;
 BT.4;m;20;i18;-10;+11a (+2);;* Balcony Break;bbr;;Armor King-BT.4;Turn Sobat;;;
 BT.1+4;m!;20;i41~47;!;+0d;;"* Armor King recovers FDFR on close hit, and FUFT on far hit or whiff
 * Low crush";js;;Armor King-BT.1+4;Moonsault Drop;;;

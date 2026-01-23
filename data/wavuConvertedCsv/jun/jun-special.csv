@@ -9,6 +9,7 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 H.GEN.1,1+2;L,M;14,35;i20~21 i26~41;-14;+25a (+7);;"* Reversal Break
 * Balcony Break
 * Jail from 1st attack
+* Has good left sidestep tracking
 * Restores 6 recoverable (3 on block)
 * Chip damage (2,7) on block
 * Consumes 450f of heat timer
@@ -79,10 +80,10 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 1+4,3,4;SL,h, m, L;5,8, 15, 17;i14 i17, ,i25~26;-13~-12;+4c~+5c;+26a;Combo from 3rd CH;;;Jun-1+4,3,4;White Heron Moon Kick;r31;;File:t8-p2-jun-1+4,3,4.mp4
 3+4;m,M,M;6,18,20;i23~24 i30~31 i16;-6;+26a (+8);;"* Spike
 * 3rd hit available only as combo from 2nd hit
-* Can recover in r22 FC with D on whiff or block
+* Transition to r22 FC with D on whiff or block
 * Deals 12 damage to self (8 recoverable)
 * Low crush 5~33
-* Floating state 34~36";spk js5~33 fs34~36;;Jun-3+4;Ryuuntsui - Misogi;r24;;File:t8-p2-jun-3+4.mp4
+* Floating state 34~36";spk js5~33 fs34~36;FC;Jun-3+4;Ryuuntsui - Misogi;r24;;File:t8-p2-jun-3+4.mp4
 f+1;m;15;i20;+0;+9;+14;* Restores 2 health and 2 recoverable on hit;;IZU;Jun-f+1;Izumo Smash;r28 IZU;;File:t8-p2-jun-f+1.mp4
 f+2;M;20;i17~18;-18;+33a (+23);;Cancel to r26 FC with D;;FC;Jun-f+2;Demon Slayer;r36;;File:t8-p2-jun-f+2.mp4
 f+2,1+2;M, M;20, 20;i17~18, i29~32;-9;+32a (+17);;"* Heat Engager
@@ -209,7 +210,7 @@ b+3,2;m, M;20, 22;i16~17, i20;-9;+30a (+15);+69a (+53);"* Tornado
 * Unparryable";trn chp;;Jun-b+3,2;Ryuusha Renken;r35;;File:t8-p2-jun-b+3,2.mp4
 b+3,4;m, L;20, 14;i16~17, i20~22;-11;+0~+2;+3;"* Combo from 1st hit
 * Links to db+4 extensions
-* Can recover in r28 FC with D
+* Transition in r28 FC with D
 * High crush 1~42";cs1~42;db+4 extensions;Jun-b+3,4;Dragon Wheel Leg Cutter;r28;;File:t8-p2-jun-b+3,4.mp4
 b+4;m;14;i13~14;-7;+5;;Knee;kne;;Jun-b+4;;r28;;
 b+4,2;m, M;14, 17;i13~14, i22~23;-13;+5;+28a (+18);Combo from 1st hit with 8f delay;;;Jun-b+4,2;Shirabyoushi;r31;;File:t8-p2-jun-b+4,2.mp4
@@ -330,12 +331,12 @@ SS.1+2;h,h,m;7,9,18;i16 i17 i15~16;-4;+7c;;"* Homing
 * Spike
 * Jail from 1st attack
 * Combo from 1st or 2nd hit";hom spk;FC;Jun-SS.1+2;Sankouchou;r25 FC;;File:t8-p2-jun-ss.1+2.mp4
-FC.3+4;m,m;10,10;i21~22 i23~24;-6;+5c;;"* Can recover in r24 FC with D
+FC.3+4;m,m;10,10;i21~22 i23~24;-6;+5c;;"* Transition to r24 FC with D
 * Low crush 5~19
-* Floating state 20~22";js5~19 fs20~22;;Jun-FC.3+4;;r24;;
-FC.3+4,3;m,m, m,m;10,10, 10,10;i21~22 i23~24, i31~32 i40~41;+0~+1;+15a;;"* Can recover in r24 FC with D
+* Floating state 20~22";js5~19 fs20~22;FC;Jun-FC.3+4;;r24;;
+FC.3+4,3;m,m, m,m;10,10, 10,10;i21~22 i23~24, i31~32 i40~41;+0~+1;+15a;;"* Transition to r24 FC with D
 * Low crush ~21~31
-* Floating state 32~40";js~21~31 fs32~40;;Jun-FC.3+4,3;Twin Cloud Kicks;r24;;File:t8-p2-jun-fc.3+4,3.mp4
+* Floating state 32~40";js~21~31 fs32~40;FC;Jun-FC.3+4,3;Twin Cloud Kicks;r24;;File:t8-p2-jun-fc.3+4,3.mp4
 FC.df+1;sl,m;6,30;i10 i25~26;-19;+26a (+11);;"* Deals 18 damage to self (12 recoverable)
 * 2nd hit available only on hit or block
 * Recovery listed is for the 1st hit, t74 both hits
@@ -348,7 +349,8 @@ FC.df+3;L;12;i21;-19;+0c;;"* Clean hit +10a, 15 damage
 (Back to wall).b,b,UB;m;21;i39~41;+4c~+6c;+22a;;"* Floating state 5~13
 * Low crush 14~33
 * Floating state 34~36";fs5~13 js14~33 fs34~36;;Jun-(Back to wall).b,b,UB;[[Wall Jump Attack]];r26;;
-GEN.1;L;22;i20~21;-12;+3c;+26a;* High crush 11~;cs11~;FC;Jun-GEN.1;Rurikoukai;r31 FC;;File:t8-p2-jun-gen.1.mp4
+GEN.1;L;22;i20~21;-12;+3c;+26a;"* Has good left sidestep tracking
+* High crush 11~";cs11~;FC;Jun-GEN.1;Rurikoukai;r31 FC;;File:t8-p2-jun-gen.1.mp4
 GEN.2;m,t;16,32;i16~17;-13~-12;+0d;;"* Transition to attack throw on front standing or airborne hit 
 * Deals 12 damage to self (8 recoverable)
 * Frame advantage is -9 if an attack is absorbed
