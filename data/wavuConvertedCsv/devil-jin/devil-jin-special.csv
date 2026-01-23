@@ -9,7 +9,7 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 H.MCR.1+2;h!,t;12,27;i20;;+0d;;"* Transition to attack throw on standing or airborne hit
 * Consumes 300F of the heat timer
 * Low crush 1~12";js1~12;;Devil Jin-H.MCR.1+2;Inner Purgatory;r35;;
-H.2+3;m,h,t;20,22,10;i18;+11 MCR;+5d;;"* Heat Smash
+H.2+3;m,h,t;20,22,10;i18~28;+11 MCR;+5d;;"* Heat Smash
 * Jail from 1st attack
 * Transition to attack throw on hit
 * Transition to MCR on block only
@@ -66,6 +66,7 @@ R.df+1+2;m,t;10-15,3-5,42-60;i20;-18;+0d;;"* Rage Art
 * Floating state 24~26";spk js14~23 fs24~26;;Devil Jin-4~3;Wheel of Pain;r33;;File:t8-p2-devil jin-4~3.mp4
 H.4~3,1+2;M, SM;21, 15;i29-32, i24~35;+2;+4c~+15c;;"* Tornado
 * Weapon
+* Projectile (unparryable)
 * Forces backroll on hit
 * +58a (+42) from previous hit
 * Jail from 1st block
@@ -207,6 +208,7 @@ u+1+2;h;27;i18-35;;;;Hits airborne opponents only;;;Devil Jin-u+1+2;Hellfire Can
 uf+1;h;10;i21~23;+11~+13 MCR;+16~+18 MCR;;"* Strong Aerial Tailspin
 * Weapon
 * Balcony Break on airborne hit
+* Projectile (unparryable)
 * Transition to r20 MCR on hit or block only
 ** -14/-9 on an ""empty"" transition
 * r47 opponent hitstun 
@@ -231,6 +233,7 @@ uf+3+4;m,m;8,20;i16~17 i13~14;-16;+7c;;"* Balcony Break
 * Low crush 10~47
 * Floating state 48~50";bbr js10~47 fs48~50;;Devil Jin-uf+3+4;Hisou;r40;;
 H.uf+3+4,1+2;m,m, t;8,20, 20;i16~17 i13~14, i25~50;-15;+0d;;"* Weapon
+* Projectile (unparryable)
 * 4 chip damage on block
 * Available only on hit or block
 * Unavailable on whiff
@@ -268,11 +271,15 @@ b,f+2,1,df+2;m, m, m;12, 12, 20;i15~17, ,i18~19;-13;+25a (+8);;"* Tornado
 * Input can be delayed 14f
 * Opponent recovers FDFA on hit";trn;;Devil Jin-b,f+2,1,df+2;Laser Scraper;r31;;File:t8-p2-devil jin-b,f+2,1,df+2.mp4
 b,f+2,3;m, h;12, 21;i15~17, i19~20;-5;+16g;;"* Balcony Break
-* Combo from 1st hit with 8f delay
+* Combo from 1st hit with 8F delay
+* Interrupt with i4 from 1st block
 * Opponent recovers crouching on hit
 * Transition to MCR with F on hit with F (+14)
-** -11 on an empty MCR transition";bbr;MCR;Devil Jin-b,f+2,3;Laser Slice;r33;;File:t8-p2-devil jin-b,f+2,3.mp4
+** -11 on an empty MCR transition
+* Move cannot be delayed
+* Input can be delayed by 8F";bbr;MCR;Devil Jin-b,f+2,3;Laser Slice;r33;;File:t8-p2-devil jin-b,f+2,3.mp4
 b,f+1+2;m;6,6,6,6,6,6;i25 i6 i6 i6 i6 i6;-17;+31a (-2);;"* Weapon
+* Projectile (unparryable)
 * 17 damage on hit with scaling
 * 6 chip damage on block
 * Low crush 24~80
@@ -349,6 +356,7 @@ ws1;m;12;i13~14;-6;+5;+9;;;;Devil Jin-ws1;Solo Piston;r24;;
 ws1,1;m, h;12, 10;i13~14, i30~32;+11 MCR;+16 MCR;;"* Strong Aerial Tailspin
 * Balcony Break On air hit
 * Weapon
+* Projectile (unparryable)
 * Combo from 1st CH with 2F delay
 * Interrupt with i12 from 1st block
 * Transition to MCR on block or hit only
@@ -487,11 +495,13 @@ MCR.1+2;h!;12;i20;;+0;;"* Balcony Break (airborne)
 * Low crush 1~12
 * Floating state 13~15";js1~12 fs13~15;;Devil Jin-MCR.1+2;Inner Turmoil;r35;;
 OTG.d+1+2;L;25;i23~31;-16~-8;+5a~+13a;;"* Weapon
+* Projectile (unparryable)
 * Balcony break on CH
 * Typically connects grounded on frames i25~26 of startup at -14~-13/+12a~+13a(+0a~+1a)";wpn;;Devil Jin-OTG.d+1+2;Hellfire Incinerator;r27;;
 H.b,f+2,1,4,1+2;m, m, M, SM;12, 12, 21, 15;i15~17, ,i24~35;+2;+4c~+15c;;"* Balcony Break
 * Tornado
 * Weapon
+* Projectile (unparryable)
 * Forces backroll on hit
 * +59a(+43) from previous hit
 * Jail from 3rd block
@@ -506,6 +516,7 @@ H.f,n,d,DF+4,3;L, SM;7, 26 (18);i16, i31;;+72a (+56a);;"* Tornado
 * Floating state 28~30";trn spk js15~27 fs28~30;;Devil Jin-f,n,d,DF+4,H.3;Spinning Demon Leviathan;r34;;
 H.f,n,d,df+1+2,1+2;m, SM;25, 20;i26~27, i25~36;+2;+4c~+15c;;"* Tornado
 * Weapon
+* Projectile (unparryable)
 * Forces backroll on hit
 * +60a(+44) from previous hit
 * 4 chip damage on block

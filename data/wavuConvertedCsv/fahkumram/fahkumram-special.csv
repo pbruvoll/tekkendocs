@@ -180,8 +180,9 @@ f+1+2;m;25;i21;-4;+24a (+14);;"* Heat Engager
 * Balcony Break
 * 7 chip damage on block";he bbr;;Fahkumram-f+1+2;Horizon Dash;;;
 f+3+4;m;22;i22;-14;+19a (+14);;"* Knee
+* -9 frame advantage and 8 chip damage on block after absorbing an attack in power crush state
 * Grants GRF on hit
-* Power crush";kne pc;;Fahkumram-f+3+4;Deadly Knee;;;
+* Power crush 7~21";kne pc7~21;;Fahkumram-f+3+4;Deadly Knee;;;
 df+1;m;12;i15;-3;+6;;;;;Fahkumram-df+1;;;;
 df+1,2;m, M;12, 20;i15, i27;-13;+12d;;"* Floor Break
 * Elbow
@@ -261,7 +262,8 @@ db+2;m;16;i16;-10;+1;;* High evasion;;;Fahkumram-db+2;;;;
 db+2,2;m, m;16, 16;i16, i25;-13;+1;;"* Elbow
 * Combos from 1st hit";elb;;Fahkumram-db+2,2;Lightning Rod;;;
 db+4;h;23;i20;-6;+35d;;"* Balcony Break
-* Strong Aerial Tailspin";bbr;;Fahkumram-db+4;Haang Jora Khee;;;
+* Strong Aerial Tailspin
+* High crush 6~19";bbr cs6~19;;Fahkumram-db+4;Haang Jora Khee;;;
 db+3+4;m;25;i30;-9;+15a;;* Balcony Break;bbr;;Fahkumram-db+3+4;Encroaching Storm;;;
 b+1;m;20;i14;-13;+34d;;;;;Fahkumram-b+1;Surging Elbow;;;
 b+1+3;;;;;;;"* Parries high, mid and low kicks
@@ -374,8 +376,11 @@ FC.df+2;L;22;i19;-14;+4;+12d;"* Elbow
 GRF.1+2;sp;;;;;;"* Consumes GRF
 * Partially consumes remaining Heat time
 * Power crush 5~19";pc5~19;;Fahkumram-GRF.1+2;Garuda Pressure;;;
-GRF.1+2,P;sp, m;20;i21;;+13g;;"* Transitions to +13g RAM
-* Only occurs when GRF.1+2 absorbs an attack";;RAM;Fahkumram-GRF.1+2,P;Garuda Pressure (counterattack);RAM;;
+GRF.1+2,P;sp, m;20;i21;-9;+13g;;"* Transitions to +13g RAM
+* Only occurs when GRF.1+2 absorbs an attack
+* r21? freeze for the opponent after absorbing an attack 
+* i36? effective startup
+* 8 chip damage on block";;RAM;Fahkumram-GRF.1+2,P;Garuda Pressure (counterattack);RAM;;
 RAM.1;m;20;i19;+1;+20a (+3);;"* Balcony Break
 * Elbow
 * 6 chip damage on block";bbr elb;;Fahkumram-RAM.1;Nandaka;;;

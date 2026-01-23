@@ -156,7 +156,8 @@ f+2;h,t;12,22;i13;-5;+9;;"* Heat Engager +9
 f+3;h;11;i16~17;-9;+2;;* Homing;hom;;Paul-f+3;;r31;;File:Paul-f3.mp4
 f+3,1;h, m;11, 21;i16~17, i17;-10;+12d (+3);;"* Homing
 * Balcony Break
-* Combo from 1st hit";hom bbr;;Paul-f+3,1;Lion's Tempest;r40;;File:Paul-f3,1.mp4
+* Elbow
+* Combo from 1st hit";hom bbr elb;;Paul-f+3,1;Lion's Tempest;r40;;File:Paul-f3,1.mp4
 f+4;m;24;i22;-5;+6;;"* Heat Engager
 
 * Heat Dash +5, +62a (+42)
@@ -177,6 +178,7 @@ f+1+2*;m;26;i29~30;+7c;+20d FDFA;+55a;"* Balcony Break
 * f+1+2 from 0~23f charge
 * Transition to +4c, +17d DPD with DF";bbr chp;DPD;Paul-f+1+2*;Hammer of the Gods (Hold);r29;;File:Paul-f1p2-lvl2.mp4
 f+1+4;m;25;i21~23;-14;+41d (-17);;"* Balcony Break
+* Shoulder
 * Sharp leftward movement on startup";bbr;;Paul-f+1+4;Shoulder Tackle;r36;;File:Paul-f1p4.mp4
 f+3+4;sp;;;;;;* Transitions to CS;;CS;Paul-f+3+4;Cormorant Step;CS;;
 df+1;m;11;i14;-2;+4;;* Transition to r15 SWA +3 +9 from 2~14f, 16f with b;;SWA;Paul-df+1;;r20;;File:Paul-df1.mp4
@@ -241,10 +243,11 @@ d+2;sl;8;i11;-4;+7;;"* cs1~ from 6f d/db/df input hold
 d+4;L;9;i15;-31c;+14a FUFA;+14a;"* Clean Hit range 1.59
 * 8 damage, -17 on hit without Clean Hit
 * Stagger state on block";;;Paul-d+4;;r47;;File:Paul-d4.mp4
-d+4,2;L, m;9, 23;i15, i21;-18;-9;;"* Move can be delayed 3f
+d+4,2;L, m;9, 23;i15, i21;-18;-9;;"* Elbow
+* Move can be delayed 3f
 * Input can be delayed 4f
 * Combo from 1st CL with 3f delay +5d (-2) 
-* Combo from 1st CH with 3f delay +5d (-2)";;;Paul-d+4,2;Bone Breaker;r46;;File:Paul-d4,2.mp4
+* Combo from 1st CH with 3f delay +5d (-2)";elb;;Paul-d+4,2;Bone Breaker;r46;;File:Paul-d4,2.mp4
 d+4,2,1+2;L, m, m;9, 23, 26;i15, ,i26~27;-17;+3d (-6);+35a (-12);"* Balcony Break
 * Move can be delayed 4f
 * Input can be delayed 4f
@@ -260,14 +263,17 @@ d+4,2:1+2;L, m, m;9, 23, 30;i15, ,i26~27;-17;+3d (-6);+35a (-12);"* Balcony Brea
 * Combo from 2nd hit with 1f delay +13d (+6)
 * Perfect input window 21~22f after 2 input
 * Perfect input increases damage, wall carry";bbr;;Paul-d+4,2:1+2;Demolition Man (Perfect Input);r41;;File:Paul-d4,2,1p2 jf.mp4
-d+1+2;m;28;i12~13;-18;+16d (+11);+24d (+16);* Balcony Break;bbr;;Paul-d+1+2;Shoulder Smash;r39;;File:Paul-d1p2.mp4
+d+1+2;m;28;i12~13;-18;+16d (+11);+24d (+16);"* Balcony Break
+* Shoulder";bbr;;Paul-d+1+2;Shoulder Smash;r39;;File:Paul-d1p2.mp4
 db+1;sl;5;i10;-5;+6;;"* Transition to r24 standing with f
 * High crush";cs;FC;Paul-db+1;Dickjab;r24 FC;;File:Paul-db1.mp4
 db+2;M;21;i19~20;-11;+14d (-3) FDFA;+28a (+18);"* Tornado
 * Balcony Break";trn bbr;;Paul-db+2;Shoot the Moon;r35;;File:Paul-db2.mp4
-db+3;L;12;i15~i17;-18c;-4;;* High crush;cs;FC;Paul-db+3;;r22 FC;;File:Paul-db3.mp4
+db+3;L;12;i15~i17;-18c;-4;;"* -4c on crouching hit
+* High crush";cs;FC;Paul-db+3;;r22 FC;;File:Paul-db3.mp4
 db+4;L;6;i12;-15c;-4;;* High crush;cs;FC;Paul-db+4;;r32 FC;;File:Paul-db4.mp4
-db+1+2;M;21;i20~21;-14;+30a (+22);;"* Chip damage (11) if attack is absorbed
+db+1+2;M;21;i20~21;-14;+30a (+22);;"* Shoulder
+* Chip damage (11) if attack is absorbed
 * Power crush 7~19";chp pc7~19;;Paul-db+1+2;Chain Breaker;r24;;File:Paul-db1p2.mp4
 b+1;h;10;i12~13;-9;+2;;;;;Paul-b+1;;r25;;File:Paul-b1.mp4
 b+1,2;h, m;10, 21;i12~13, i20~21;-14;+16d (-1) FDFA;;"* Tornado
@@ -297,7 +303,7 @@ H.b+2,1*;m, m;22, 35;i18, i60~61;+12;+56a;;"* Balcony Break
 * Charge begins on frame 18
 * Requires 42f charge
 * b+2,1 from 0~41f charge";bbr chp;;Paul-H.b+2,1*;Crushing Wind (Hold);r30;;File:Paul-b2,hb1 lvl2.mp4
-b+3;h;16;i14~15;-6;+31a (+25);;;;;Paul-b+3;Lights Out;r27;;File:Paul-b3.mp4
+b+3;h;16;i14~15;-6;+31a (+25);;* Knee;kne;;Paul-b+3;Lights Out;r27;;File:Paul-b3.mp4
 b+4;L;14;i20~21;-12c;+4;+17g;;;;Paul-b+4;Leg Sweep;r26;;File:Paul-b4.mp4
 b+1+2;h;28;i24;-9;+21d (+16);;"* Balcony Break
 * Chip damage (11) if attack is absorbed
@@ -310,8 +316,9 @@ ub+2*;m;30;i27;+1;+17a;;"* Homing
 * Balcony Break
 * 9 chip damage";hom bbr;;Paul-ub+2*;Wrecking Ball (charged);;;
 uf+1;h;26;i28~31;-6;+24a (+14);;"* Balcony Break
+* Elbow
 * High Evasion
-* .73 backward movement over first 14f";bbr;;Paul-uf+1;Burning Spear;r29;;File:Paul-bf1.mp4
+* .73 backward movement over first 14f";bbr elb;;Paul-uf+1;Burning Spear;r29;;File:Paul-bf1.mp4
 uf+2;h;26;i22~23;+5;+17d FDFA;;"* Heat Engager
 
 * Heat Dash +5, +67a (+50)
@@ -382,7 +389,7 @@ f,F+3,4,f+4;m, m, m;17, 10, 18;i15~16, ,i27~29;-14;+12d (+3);;"* Balcony Break
 * Floating state 25~27";bbr js10~24 fs25~27;;Paul-f,F+3,4,f+4;Triple Kick Combo;r32;;File:Paul-ff3,4,f4.mp4
 f,F+4;M;20;i27~34;+2;+18a;;"* Chip damage (8)
 * Low crush 14~31
-* Floating state 32~34";chp js14~31 fs32~34;;Paul-f,F+4;Neutron Bomb;r25 ws;;File:Paul-ff4.mp4
+* Floating state 32~34";chp js14~31 fs32~34;FC;Paul-f,F+4;Neutron Bomb;r25 FC;;File:Paul-ff4.mp4
 uf,n,4;m;20;i23~25;-13;+32a (+22);;"* Can be delayed 12f after jump
 * Additional range with delay
 * Low crush 8~29
@@ -399,15 +406,16 @@ ws1,2~b;m, m;16, 17;i15~16, ,;+1;+14g;+15;"* Sidestep u can be buffered from 44f
 * SWA attacks can be buffered from 51f
 * Transition to cs1~ r9 -10 +4 +5 DPD from 60f with df";;DPD,SWA;Paul-ws1,2~b;;r19 SWA;;File:Paul-ws1,2~b.mp4
 ws2;m;20;i15~16;-14;+27a (+17);;;;;Paul-ws2;Thunder Palm;r36;;File:Paul-ws2.mp4
-ws3;M;16;i13~14;-8;+6;;;;;Paul-ws3;;r26;;File:Paul-ws3.mp4
+ws3;M;16;i13~14;-8;+6;;* Knee;kne;;Paul-ws3;;r26;;File:Paul-ws3.mp4
 ws3,2;M, h;16, 21;i13~14, i21~22;-9;+17d (+8);+46a;"* Balcony Break
 * Move can be delayed 12f
 * Input can be delayed 12f
 * Combo from 1st hit with 12f delay";bbr;;Paul-ws3,2;Shioh;r32;;File:Paul-ws3,2.mp4
 ws4;m;18;i11~12;-6;+5;;;;;Paul-ws4;Toe Smash;r28;;File:Paul-ws4.mp4
 SS.1;h;21;i20;+8;+35a (+27);;"* Balcony Break
+* Elbow
 * Chip damage (6)
-* Effective minimum startup 30f";bbr chp;;Paul-SS.1;Turn Thruster;r29;;File:Paul_SS.1.mp4
+* Effective minimum startup 30f";bbr elb chp;;Paul-SS.1;Turn Thruster;r29;;File:Paul_SS.1.mp4
 SS.3;L;17;i19;-12c;+4;+12c;* Effective minimum startup 28f;;;Paul-SS.3;Pump In Pedal;r32;;File:Paul-ss3.mp4
 FC.D;;;;;;;;;;Paul-FC.D;Somersault Kick Warm-Up Moves;;;
 FC.D,U+4;m;40;i13~18;-49d;-9d (-24);;* Deals recoverable damage to self;;FDFA;Paul-FC.D,U+4;Incomplete Somersault;FDFA;;
@@ -417,7 +425,8 @@ CD.df;;;;;;;"* Buffer window 2~9f (3~9f from SWA)
 * While standing attacks can be buffered
 * Cancel to r1 block from 10f with b
 * High crush 1~30";cs1~30;DPD;Paul-DPD;Deep Dive;r9 DPD;;File:Paul-dpd.mp4
-qcf+1;h;21;i16~17;-4;+33a (+26);;* Chip damage (4);chp;;Paul-CS.1;Thruster;r24;;File:Paul-qcf1.mp4
+qcf+1;h;21;i16~17;-4;+33a (+26);;"* Elbow
+* Chip damage (4)";elb chp;;Paul-CS.1;Thruster;r24;;File:Paul-qcf1.mp4
 qcf+2;m;45;i13~14;-17;+26a (-10) FDFA;;"Heat Engager
 
 Balcony Break
@@ -432,14 +441,14 @@ qcf+1+2;L;20;i32~33;-12c;+71a (+55);;"* Cancel to t41 FC with B
 * High crush 1~33";cs1~33;FC;Paul-CS.1+2;Gunba;r36;;File:Paul CS.1+2.mp4
 qcf+3+4;m;22;i19~20;-9;+35a (+27);+74a (+58);"* Tornado
 * Balcony Break
+* Knee
 * High Evasion (brief)
-* Low crush 19~39";trn bbr js19~39;;Paul-CS.3+4;Mountain Raze;r29;;File:Paul-qcf3p4.mp4
-DPD.df+1;h;19;i17;-1;+59a;;"* Tailspin
+* Low crush 19~39";trn bbr kne js19~39;;Paul-CS.3+4;Mountain Raze;r29;;File:Paul-qcf3p4.mp4
+DPD.df+1;h;19;i17;-1;+59a;;"* Strong Aerial Tailspin
 * Homing
 * Effective minimum startup 29f";hom;;Paul-DPD.df+1;Phoenix Axe;;;
 DPD.df+2;m;10;i14;-10;+6;;"* Balcony Break
-* Elbow
-* Effective minimum startup 24f";bbr elb;;Paul-DPD.df+2;;r31;;File:Paul-dpd2.mp4
+* Effective minimum startup 24f";bbr;;Paul-DPD.df+2;;r31;;File:Paul-dpd2.mp4
 DPD.df+2,1;m, h;10, 30;i14, i18~19;+4;+23d;;"* Tornado
 * Balcony Break
 * Move can be delayed 10f
