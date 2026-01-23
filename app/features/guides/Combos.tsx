@@ -20,7 +20,11 @@ export const Combos = ({ combos, title }: CombosProps) => {
             compressedCommandMap={compressedCommandMap}
             command={starter}
           />
-          <div className="ml-4 mt-1">{formatCombo(combo)}</div>
+          {combo.split(' | ').map((comboItem, index) => (
+            <div className="ml-4 mt-1" key={index}>
+              {formatCombo(comboItem)}
+            </div>
+          ))}
         </section>
       ))}
     </section>
