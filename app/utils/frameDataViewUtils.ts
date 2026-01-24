@@ -12,8 +12,8 @@ export const getHitFrameColorClasses = (
 
   const num = parseInt(frameValue, 10);
   if (Number.isNaN(num)) return 'text-foreground';
-  if (num >= 10) return 'text-text-success';
-  if (num < 0) return 'text-text-destructive';
+  if (num >= 10) return 'text-foreground-success';
+  if (num < 0) return 'text-foreground-destructive';
   return 'text-foreground';
 };
 
@@ -25,7 +25,7 @@ export const getBlockFrameColorClasses = (
   }
   const num = parseInt(frameValue, 10);
   if (Number.isNaN(num)) return 'text-foreground';
-  if (num > 0) return 'text-text-success';
-  if (num <= -10) return 'text-text-destructive';
+  if (num > 0) return 'text-foreground-success';
+  if (num <= -10) return 'text-foreground-destructive';
   return 'text-foreground';
 };

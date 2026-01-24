@@ -355,7 +355,6 @@ const StartPage = ({
           </Label>
           <Input
             type="string"
-            id="num-moves"
             value={numMovesToPractice}
             placeholder={totalMoves.toString()}
             onChange={handleNumMovesToPracticeChange}
@@ -369,7 +368,6 @@ const StartPage = ({
           </Label>
           <Input
             type="string"
-            id="start-move"
             placeholder="1"
             value={startFromMoveNum}
             onChange={handleStartFromMoveNumChange}

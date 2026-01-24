@@ -48,7 +48,7 @@ export const FlashCardBack = ({ move, onAnswer }: FlashCardBackProps) => {
           Correct
         </Button>
         <Button
-          variant="secondary"
+          variant="outline"
           onClick={() => onAnswer(FlashCardAnswer.Ignored)}
         >
           Ignore

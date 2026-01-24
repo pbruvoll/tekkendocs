@@ -31,6 +31,8 @@
 :root {
   --background: oklch(1 0 0);
   --foreground: oklch(0.13 0.028 261.692);
+  --foreground-destructive: oklch(0.45 0.22 27);
+  --foreground-success: oklch(0.45 0.18 145);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.13 0.028 261.692);
   --popover: oklch(1 0 0);
@@ -44,6 +46,8 @@
   --accent: oklch(0.967 0.003 264.542);
   --accent-foreground: oklch(0.21 0.034 264.665);
   --destructive: oklch(0.577 0.245 27.325);
+  --success: oklch(0.52 0.18 145);
+  --success-foreground: oklch(0.99 0.05 145);
   --border: oklch(0.928 0.006 264.531);
   --input: oklch(0.928 0.006 264.531);
   --ring: oklch(0.707 0.022 261.325);
@@ -66,12 +70,16 @@
 .dark {
   --background: oklch(0.13 0.028 261.692);
   --foreground: oklch(0.985 0.002 247.839);
+  --foreground-destructive: oklch(
+    0.72 0.19 25
+  ); /* Extended the original theme */
+  --foreground-success: oklch(0.72 0.17 145); /* Extended the original theme */
   --card: oklch(0.21 0.034 264.665);
   --card-foreground: oklch(0.985 0.002 247.839);
   --popover: oklch(0.21 0.034 264.665);
   --popover-foreground: oklch(0.985 0.002 247.839);
-  --primary: hsl(
-    42 100% 62%
+  --primary: oklch(
+    0.84 0.165 80
   ); /* Adjusted from the original shadcn abmer theme ( oklch(0.77 0.16 70);) */
   --primary-foreground: oklch(0.28 0.07 46);
   --secondary: oklch(0.274 0.006 286.033);
@@ -81,6 +89,8 @@
   --accent: oklch(0.278 0.033 256.848);
   --accent-foreground: oklch(0.985 0.002 247.839);
   --destructive: oklch(0.704 0.191 22.216);
+  --success: oklch(0.65 0.18 145);
+  --success-foreground: oklch(0.98 0.05 145);
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
   --ring: oklch(0.551 0.027 264.364);
@@ -118,6 +128,8 @@
   --color-input: var(--input);
   --color-border: var(--border);
   --color-destructive: var(--destructive);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
   --color-accent-foreground: var(--accent-foreground);
   --color-accent: var(--accent);
   --color-muted-foreground: var(--muted-foreground);
@@ -131,6 +143,8 @@
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
   --color-foreground: var(--foreground);
+  --color-foreground-destructive: var(--foreground-destructive);
+  --color-foreground-success: var(--foreground-success);
   --color-background: var(--background);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
