@@ -1,7 +1,13 @@
 import { Pencil1Icon } from '@radix-ui/react-icons';
 import { Heading, Link as RadixLink, Table } from '@radix-ui/themes';
-import { data, type LoaderFunctionArgs, type MetaFunction } from 'react-router';
-import { Link, NavLink, useLoaderData } from 'react-router';
+import {
+  data,
+  Link,
+  type LoaderFunctionArgs,
+  type MetaFunction,
+  NavLink,
+  useLoaderData,
+} from 'react-router';
 import { ContentContainer } from '~/components/ContentContainer';
 import { hasHeaderMap } from '~/constants/hasHeaderMap';
 import { tableIdToDisplayName } from '~/constants/tableIdToDisplayName';
@@ -117,9 +123,9 @@ export default function Index() {
             {characterName}
           </Heading>
           <a
-            className="flex items-center gap-2"
-            style={{ color: 'var(--accent-a11)' }}
-            target="blank"
+            className="flex items-center gap-2 text-primary"
+            target="_blank"
+            rel="noopener"
             href={editUrl}
           >
             <Pencil1Icon />
