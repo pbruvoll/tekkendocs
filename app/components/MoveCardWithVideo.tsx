@@ -1,3 +1,4 @@
+import { ChevronDown, ChevronRight } from 'lucide-react';
 import { useInView } from 'motion/react';
 import { useEffect, useEffectEvent, useRef, useState } from 'react';
 import { Link } from 'react-router';
@@ -60,10 +61,10 @@ export const MoveCardWithVideo = ({
   onInViewChange,
 }: MoveCardWithVideoProps) => {
   const hasTags = move.tags && Object.keys(move.tags).length > 0;
-  const tagsList =
-    hasTags && move.tags
-      ? Object.keys(move.tags).filter((key) => key !== 'fs')
-      : [];
+  // const tagsList =
+  //   hasTags && move.tags
+  //     ? Object.keys(move.tags).filter((key) => key !== 'fs')
+  //     : [];
   const hasVideo = Boolean(move.ytVideo);
 
   const cardRef = useRef<HTMLDivElement>(null);
@@ -188,8 +189,12 @@ export const MoveCardWithVideo = ({
                     onClick={() => setShowNotes(!showNotes)}
                     className="text-xs text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1"
                   >
-                    <span>{showNotes ? '▼' : '▶'}</span>
-                    <span>Details</span>
+                    {showNotes ? (
+                      <ChevronDown className="h-4 w-4" />
+                    ) : (
+                      <ChevronRight className="h-4 w-4" />
+                    )}
+                    <span>{showNotes ? 'Hide details' : 'View details'}</span>
                   </button>
                   {showNotes && (
                     <p className="mt-2 text-sm text-muted-foreground">
