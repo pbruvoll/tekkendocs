@@ -72,6 +72,7 @@ export const MoveCardWithVideo = ({
     amount: 'all',
   });
   const [shouldLoadVideo, setShouldLoadVideo] = useState(shouldLoadVideoProp);
+  const [showNotes, setShowNotes] = useState(false);
 
   if (shouldLoadVideoProp && !shouldLoadVideo) {
     setShouldLoadVideo(true);
@@ -179,6 +180,26 @@ export const MoveCardWithVideo = ({
                   colorize="counter-hit"
                 />
               </div>
+
+              {move.notes && (
+                <div className="pt-2">
+                  <button
+                    type="button"
+                    onClick={() => setShowNotes(!showNotes)}
+                    className="text-xs text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1"
+                  >
+                    <span>{showNotes ? '▼' : '▶'}</span>
+                    <span>Details</span>
+                  </button>
+                  {showNotes && (
+                    <p className="mt-2 text-sm text-muted-foreground">
+                      {move.notes.split('\n').map((line, index) => (
+                        <div key={index}>{line}</div>
+                      ))}
+                    </p>
+                  )}
+                </div>
+              )}
             </CardContent>
           </div>
 
