@@ -168,11 +168,13 @@ db+2,1+2;m, sm;17, 10,10 (7),20 (10);i13~14, i37;-9;+17a (+16);;"* Balcony Break
 db+3;L;13;i18;-8;+3;;* Cancel SCR transition -11 +0 t48 r30 with B;;SCR;Zafina-db+3;Acinaces;r27 SCR;;File:t8-p2-zafina-db+3.mp4
 db+4;L;14;i21~22;-12;-3;+3;"* Transition to -13 -4 +2 MNT with D
 * High crush 6~40";cs6~40;MNT;Zafina-db+4;;r31;;
-db+4,2;L, m;14, 17;i21~22, i29~32;-13;+68a (+52);;* Combo from 1st hit CH;;;Zafina-db+4,2;Euphrates Cannon;r33;;File:t8-p2-zafina-db+4,2.mp4
+db+4,2;L, m;14, 17;i21~22, i29~32;-13;+68a (+52);;"* Combo from 1st hit CH
+* Instant tornado launch on standing hit only";;;Zafina-db+4,2;Euphrates Cannon;r33;;File:t8-p2-zafina-db+4,2.mp4
 db+1+2;L;10;i28~29;-16;+15a;;* High crush 9~66;cs9~66;MNT;Zafina-db+1+2;;r34 MNT;;
-db+1+2,1+2;L, m;10, 20;i28~29, i33;-16;+5a (-4);+37a (-10);"* Tornado
-* Balcony Break
-* Combos from 1st hit";trn bbr;;Zafina-db+1+2,1+2;Sirrush;r40;;File:t8-p2-zafina-db+1+2,1+2.mp4
+db+1+2,1+2;L, m;10, 20;i28~29, i33;-16;+5a (-4);;"* Combos from 1st hit
+* Tornado when combo from first hit only.
+* +37a (-10) on combo from first hit 
+* Balcony Break on airborn hit";;;Zafina-db+1+2,1+2;Sirrush;r40;;File:t8-p2-zafina-db+1+2,1+2.mp4
 b+1;m;14;i18;-14;+2;;"* Transition to attack throw on standing or airborne front hit with 1+2
 * 8f input window for attack throw (frames 10~17)";;;Zafina-b+1;Cursed Crow;r38;;File:t8-p2-zafina-b+1.mp4
 b+1:1;m, t;14, 36;i18, ;;+0d;;"* Deal 5 (8) recoverable damage to self without Heat
@@ -403,7 +405,8 @@ SCR.df+4;L;17;i19~20;-14;+7c;+37a;* High crush 6~;cs6~;MNT;Zafina-SCR.df+4;Scare
 SCR.d+3;l;10;i18;-6;-3;+9c;"* Interrupt with i13 if Zafina uses SCR.4
 * Can hit grounded when off-axis";;SCR;Zafina-SCR.d+3;;r25 SCR;;
 SCR.d+3,3;l, h;10, 28;i18, i24;+3;+77a (+61);;"* Combo from 1st CH
-* Cancel SCR transition -1 +73a (+57) t55 r31 with B";;SCR;Zafina-SCR.d+3,3;Sag-Giga Sickle;r31 SCR;;File:t8-p2-zafina-scr.d+3,3.mp4
+* Cancel SCR transition -1 +73a (+57) t55 r31 with B
+* Tornado launches on standing hit only";;SCR;Zafina-SCR.d+3,3;Sag-Giga Sickle;r31 SCR;;File:t8-p2-zafina-scr.d+3,3.mp4
 SCR.d+4;L;20;i24~30;-25;-4a;;"* Enter MNT with D
 * High crush 10~";cs10~;MNT;Zafina-SCR.d+4;Scarecrow Slide;r38;;File:t8-p2-zafina-scr.d+4.mp4
 SCR.d+3+4;;;;;;;"* High crush 1~70
@@ -417,19 +420,20 @@ TRT.3;m;16;i14~i15;-7;+5c;+19c;"* Spike
 TRT.4;m;10;i26;-22;-4;-4c;"* Transition to TRT with D
 * Floating state 1~70?";fs1~70?;TRT,MNT;Zafina-TRT.4;;r44 MNT;;
 TRT.4,3;m, m;10, 10;i26, i28~31;-13;+18a;;* Combo from 1st CH;;;Zafina-TRT.4,3;Tarantula's Bite;r29;;File:t8-p2-zafina-trt.4,3.mp4
-TRT.1+2;m,M;7,20;i19~20 i9~10;-12c;+14a;;"* Balcony Break
+TRT.1+2;m,M;7,20;i19~20 i9~10;-12c;+14a;;"* Balcony Break on airborne hit
 * Homing
 * Low crush 7~24
-* Floating state 25~27";bbr hom js7~24 fs25~27;;Zafina-TRT.1+2;Tarantula Claw;r68;;File:t8-p2-zafina-trt.1+2.mp4
+* Floating state 25~27";hom js7~24 fs25~27;;Zafina-TRT.1+2;Tarantula Claw;r68;;File:t8-p2-zafina-trt.1+2.mp4
 TRT.df+1;M;30;i19~20;+6;+30a (+15);;"* Heat Engager
 
 * Heat Dash +5, +35a (+27)
 
+* Balcony Break
 * Weapon
 * 12 chip damage on block
 * Deal 8 recoverable damage to self without Heat
 * Gain ORB on hit or heat activation
-* Azazel's Power";he wpn;;Zafina-TRT.df+1;Primitive Grudge;r34;;File:Zafina TRT.df+1.mp4
+* Azazel's Power";he bbr wpn;;Zafina-TRT.df+1;Primitive Grudge;r34;;File:Zafina TRT.df+1.mp4
 TRT.d+1+2;L;20;i25;-21;+10a;;;;MNT;Zafina-TRT.d+1+2;Tarantula Scimitar;r40 MNT;;File:t8-p2-zafina-trt.d+1+2.mp4
 WR.f+4;L;21;i14~30;-52~-36;-7a;;"* Enter BT -52 -7a with U
 * Enter TRT -52 -7a r35 with D
