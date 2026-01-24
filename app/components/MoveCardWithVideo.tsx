@@ -1,3 +1,4 @@
+import { ChevronDown, ChevronRight } from 'lucide-react';
 import { useInView } from 'motion/react';
 import { useEffect, useEffectEvent, useRef, useState } from 'react';
 import { Link } from 'react-router';
@@ -9,6 +10,7 @@ import {
   getHitFrameColorClasses,
   simplifyFrameValue,
 } from '~/utils/frameDataViewUtils';
+import { MovePropertyIconList } from './MovePropertyIconList';
 import { MoveVideo } from './MoveVideo';
 
 export type MoveCardWithVideoProps = {
@@ -59,18 +61,19 @@ export const MoveCardWithVideo = ({
   onInViewChange,
 }: MoveCardWithVideoProps) => {
   const hasTags = move.tags && Object.keys(move.tags).length > 0;
-  const tagsList =
-    hasTags && move.tags
-      ? Object.keys(move.tags).filter((key) => key !== 'fs')
-      : [];
+  // const tagsList =
+  //   hasTags && move.tags
+  //     ? Object.keys(move.tags).filter((key) => key !== 'fs')
+  //     : [];
   const hasVideo = Boolean(move.ytVideo);
 
-  const cardRef = useRef<HTMLAnchorElement>(null);
+  const cardRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(cardRef, {
     margin: '50px 0px 300px 0px',
     amount: 'all',
   });
   const [shouldLoadVideo, setShouldLoadVideo] = useState(shouldLoadVideoProp);
+  const [showNotes, setShowNotes] = useState(false);
 
   if (shouldLoadVideoProp && !shouldLoadVideo) {
     setShouldLoadVideo(true);
@@ -95,18 +98,14 @@ export const MoveCardWithVideo = ({
   }, [isInView]);
 
   return (
-    <Link
-      ref={cardRef}
-      to={moveUrl}
-      className="block w-120 max-w-full lg:w-3xl"
-    >
+    <div ref={cardRef} className="block w-120 max-w-full lg:w-3xl">
       <Card className="overflow-hidden bg-muted/30 border-accent border-2 transition-colors hover:border-text-primary/50">
         <div className="lg:flex">
           {/* Info section */}
           <div className="flex flex-col lg:w-1/2">
             <CardHeader className="p-4 pl-6">
               <CardTitle className="text-primary text-xl font-bold">
-                {move.command}
+                <Link to={moveUrl}>{move.command}</Link>
               </CardTitle>
             </CardHeader>
 
@@ -142,21 +141,22 @@ export const MoveCardWithVideo = ({
                   </span>
                   <span className="text-sm font-medium">
                     {hasTags ? (
-                      <span className="flex flex-wrap justify-center gap-1 uppercase">
-                        {tagsList.slice(0, 6).map((tag) => (
-                          <span
-                            key={tag}
-                            className="rounded bg-muted px-1.5 py-0.5 text-xs"
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                        {tagsList.length > 6 && (
-                          <span className="text-xs text-muted-foreground">
-                            +{tagsList.length - 6}
-                          </span>
-                        )}
-                      </span>
+                      <MovePropertyIconList move={move} />
+                      // <span className="flex flex-wrap justify-center gap-1 uppercase">
+                      //   {tagsList.slice(0, 6).map((tag) => (
+                      //     <span
+                      //       key={tag}
+                      //       className="rounded bg-muted px-1.5 py-0.5 text-xs"
+                      //     >
+                      //       {tag}
+                      //     </span>
+                      //   ))}
+                      //   {tagsList.length > 6 && (
+                      //     <span className="text-xs text-muted-foreground">
+                      //       +{tagsList.length - 6}
+                      //     </span>
+                      //   )}
+                      // </span>
                     ) : (
                       <span className="text-muted-foreground">—</span>
                     )}
@@ -181,6 +181,30 @@ export const MoveCardWithVideo = ({
                   colorize="counter-hit"
                 />
               </div>
+
+              {move.notes && (
+                <div className="pt-2">
+                  <button
+                    type="button"
+                    onClick={() => setShowNotes(!showNotes)}
+                    className="text-xs text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1"
+                  >
+                    {showNotes ? (
+                      <ChevronDown className="h-4 w-4" />
+                    ) : (
+                      <ChevronRight className="h-4 w-4" />
+                    )}
+                    <span>{showNotes ? 'Hide details' : 'View details'}</span>
+                  </button>
+                  {showNotes && (
+                    <p className="mt-2 text-sm text-muted-foreground">
+                      {move.notes.split('\n').map((line, index) => (
+                        <div key={index}>{line}</div>
+                      ))}
+                    </p>
+                  )}
+                </div>
+              )}
             </CardContent>
           </div>
 
@@ -210,6 +234,6 @@ export const MoveCardWithVideo = ({
           )}
         </div>
       </Card>
-    </Link>
+    </div>
   );
 };
