@@ -30,4 +30,3 @@ export const moveTagToDescription: Partial<Record<MoveTag, string>> = {
   [MoveTags.Tornado]: 'Tornado attack',
   [MoveTags.WallBreak]: 'Breaks the wall on hit',
 };
-  
