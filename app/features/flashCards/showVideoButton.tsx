@@ -35,7 +35,7 @@ export const ShowVideoButton = ({
     <div className={cx('flex items-center justify-center', className)}>
       <Button
         size="lg"
-        variant="secondary"
+        variant="outline"
         onClick={() => setShowVideo(true)}
         className="flex w-16 items-center justify-center p-2"
       >

@@ -19,7 +19,7 @@ export const Command = ({
   }
   return (
     <Link
-      className="text-text-primary"
+      className="text-primary"
       style={{ textDecoration: 'none' }}
       to={`${charUrl}/${commandToUrlSegmentEncoded(move.command)}`}
     >

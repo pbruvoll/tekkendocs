@@ -189,10 +189,7 @@ export default function () {
       {filteredCharList.length > 1 &&
         filteredCharList.map((char) => (
           <li key={char.id}>
-            <Link
-              className="text-text-primary no-underline"
-              to={`/t8/${char.id}`}
-            >
+            <Link className="text-primary no-underline" to={`/t8/${char.id}`}>
               {char.id}
             </Link>
           </li>

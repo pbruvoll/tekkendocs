@@ -28,7 +28,7 @@ export const TextWithLinks = ({ text }: TextWithLinksProps) => {
         href={url}
         rel="noopener noreferrer"
         target="_blank"
-        className="text-text-primary underline underline-offset-4"
+        className="text-primary underline underline-offset-4"
       >
         {label}
       </a>,

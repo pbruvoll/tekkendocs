@@ -90,9 +90,8 @@ export default function Index() {
             {characterName}
           </Heading>
           <a
-            className="flex items-center gap-2"
-            style={{ color: 'var(--accent-a11)' }}
-            target="blank"
+            className="flex items-center gap-2 text-primary"
+            target="_blank"
             href={editUrl}
           >
             <Pencil1Icon />

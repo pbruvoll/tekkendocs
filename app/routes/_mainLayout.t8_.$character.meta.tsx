@@ -1,8 +1,13 @@
-import { useMemo } from 'react';
 import { Pencil1Icon } from '@radix-ui/react-icons';
 import { Heading, Link as RadixLink, Table } from '@radix-ui/themes';
-import { data, type LoaderFunctionArgs, type MetaFunction } from 'react-router';
-import { useLoaderData, useParams } from 'react-router';
+import { useMemo } from 'react';
+import {
+  data,
+  type LoaderFunctionArgs,
+  type MetaFunction,
+  useLoaderData,
+  useParams,
+} from 'react-router';
 import invariant from 'tiny-invariant';
 import { Authors } from '~/components/Authors';
 import { Command } from '~/components/Command';
@@ -222,9 +227,9 @@ export default function Index() {
             </Heading>
           </div>
           <a
-            className="flex items-center gap-2 text-text-primary"
-            style={{ color: 'var(--accent-a11)' }}
-            target="blank"
+            className="flex items-center gap-2 text-primary"
+            target="_blank"
+            rel="noopener"
             href={editUrl}
           >
             <Pencil1Icon />

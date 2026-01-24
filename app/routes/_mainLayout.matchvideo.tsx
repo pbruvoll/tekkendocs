@@ -1,8 +1,7 @@
-import { useState } from 'react';
 import { Pencil1Icon } from '@radix-ui/react-icons';
 import { Button } from '@radix-ui/themes';
-import { data, type MetaFunction } from 'react-router';
-import { useLoaderData } from 'react-router';
+import { useState } from 'react';
+import { data, type MetaFunction, useLoaderData } from 'react-router';
 import { ContentContainer } from '~/components/ContentContainer';
 import { getSheet } from '~/services/googleSheetService.server';
 import { type MatchVideo, type MatchVideoSet } from '~/types/MatchVideo';
@@ -105,19 +104,18 @@ export default function TournamentVideos() {
         <h1 className="mb-6 mt-4 text-4xl">Tournament videos</h1>
         <div className="flex gap-8">
           <a
-            className="flex items-center gap-2"
-            style={{ color: 'var(--accent-a11)' }}
-            target="blank"
+            className="flex items-center gap-2 text-primary"
+            target="_blank"
             href={editUrl}
           >
             <Pencil1Icon />
             Edit
           </a>
           <a
-            className="flex items-center gap-2"
-            style={{ color: 'var(--accent-a11)' }}
-            target="blank"
+            className="flex items-center gap-2 text-primary"
+            target="_blank"
             href="/rss/matchvideo.rss"
+            rel="noopener"
           >
             RSS Feed
           </a>

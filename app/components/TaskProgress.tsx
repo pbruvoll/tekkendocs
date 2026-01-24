@@ -16,9 +16,9 @@ export const TaskProgress = ({
   return (
     <div className={cx('my-3 mb-4 flex items-center gap-3', className)}>
       <h3>Progress</h3>
-      <div className="h-5 grow rounded-3xl bg-text-primary-subtle ">
+      <div className="h-5 grow rounded-3xl bg-muted ">
         <div
-          className="h-full rounded-3xl bg-text-primary"
+          className="h-full rounded-3xl bg-primary/80"
           style={{ width: `${progressPercentage}%` }}
         />
       </div>

@@ -85,7 +85,7 @@ export function SimpleMovesTable({
               }`}
             >
               <td className="p-2 align-middle sm:p-4">
-                <span className="inline-flex items-center gap-2 text-text-primary">
+                <span className="inline-flex items-center gap-2 text-primary">
                   {showCharacter && (
                     <span className="text-muted-foreground">
                       {computedCharId}{' '}
