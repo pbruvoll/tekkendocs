@@ -60,9 +60,9 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Move can be delayed 11f
 * Low crush 13~41
 * Floating state 42~44";bbr js13~41 fs42~44;;Alisa-2,3,3;Down Time;r32;;File:t8-p2-alisa-2,3,3.mp4
-2,3,4;h, m, L;10, 8, 20;i12, ,i42~45;-13;+13;;"* Low crush 24~39
+2,3,4;h, m, L;10, 8, 20;i12, ,i42~45;-13;+13a;;"* Low crush 24~39
 * Floating state 40~42";js24~39 fs40~42;;Alisa-2,3,4;Down Link;r32;;File:t8-p2-alisa-2,3,4.mp4
-3;m;10;i13~14;-12;-1;;;;;Alisa-3;;r30;;
+3;m;10;i13~14;-12~-11;-1~+0;;;;;Alisa-3;;r30;;
 3,2;m, h;10, 20;i13~14, i26~27;-2;+20a (+11);;"* Heat Engager
 
 * Heat Dash +5, +34a (+27)
@@ -133,7 +133,7 @@ f+4;m;14;i16;-9;+1;;"* Homing
 f+4,1;m, h;14, 14;i16, i25~26;-9;+15d (+7);;"* Balcony Break
 * Head
 * Combo from 1st hit";bbr;;Alisa-f+4,1;;r49;;
-f+4,1,4;m, h, m;14, 14, 19 (13);i16, ,i27~65;-12~+26g;+1a;;"* Combo from 2nd hit
+f+4,1,4;m, h, m;14, 14, 24 (19);i16, ,i27~65;-12~+26g;+1a;;"* Aerial combo from 2nd hit
 * i25-26 bounce, i25-26 travel, 
 (---)/i35(27-65) travel then explosion , 
 -3(-11) and -1(-9) for explosion then hit, respectively";;;Alisa-f+4,1,4;Logic Bomb;r1;;File:t8-p2-alisa-f+4,1,4.mp4
@@ -162,7 +162,7 @@ df+3,3;m, L;14, 17;i16, i23~24;-12;+1;+14a;"* Spike
 * Input can be delayed 16f
 * Move can be delayed 12f";spk;;Alisa-df+3,3;Double Socket;r30;;File:t8-p2-alisa-df+3,3.mp4
 df+4;m;13;i12;-7;+4;;;;;Alisa-df+4;;r26;;
-d+2;M;8;i24~26;-12;+2c;;Spike;spk;;Alisa-d+2;;r31;;
+d+2;M;8;i24~26;-14;+2c;;Spike;spk;;Alisa-d+2;;r31;;
 d+2,4;M, M;8, 20;i24~26, i18~21;-9;+28a (+13a);;"* Combo from 1st hit
 * Enter DES with 1+2
 * Low crush 21~43
@@ -181,10 +181,10 @@ d+3+4;L;20;i27~i28;-37;+67a (+51);;"* Homing
 * Enter DES with 1+2
 * High crush 20~40
 * Floating state 5~55";hom cs20~40 fs5~55;DES;Alisa-d+3+4;Harpoon Sweep;r36;;File:t8-p2-alisa-d+3+4.mp4
-db+1;;;;;;;"* Transition to r9? FC with D or after d+3 BKP transition
+db+1;;;;;;;"* Transition to FC with D
 * Can perform WS moves after 24 frames
 * High crush 4~15";cs4~15;FC,BKP;Alisa-db+1;Backup;r15 BKP;;
-db+1;;;;;;;"* Transition to FC with D
+db+1;;;;;;;"* Transition to r9? FC with D or after d+3 BKP transition
 * Can perform WS moves after 24 frames
 * High crush 4~15";cs4~15;FC,BKP;Alisa-db+1;Backup;r15 BKP;;
 db+2;m;10;i18~19;-18;-5;;;;;Alisa-db+2;;r36;;
@@ -226,8 +226,8 @@ b+4,3;m, m;17, 20;i15~16, i29~30;-11;+6c;+10a;"* Spike
 * Floating state 25~27";spk js17~24 fs25~27;DES;Alisa-b+4,3;Double Threading;r29;;File:t8-p2-alisa-b+4,3.mp4
 b+4,4;m, M;17, 17;i15~16, i25~27;-37;+9a (-1);;"* Tornado
 * Combo from 1st hit
-* Transition to SBT with input 3_4
-* Transition to DBT with input f+3_f+4
+* Transition to SBT -19 +27a (+17) with input 3_4
+* Transition to DBT -19 +27a (+17) with input f+3_f+4
 * Low crush 25~62
 * Floating state 63~65";trn js25~62 fs63~65;SBT,DBT;Alisa-b+4,4;Double Override;r63;;File:t8-p2-alisa-b+4,4.mp4
 b+1+2;m;25;i19~20;-13;+8;;"* Balcony Break
@@ -241,18 +241,18 @@ b+3+4;m;22;i18~19;-17;+32a (+22);;"* Tornado
 * Actually a js5 low crush (framedata display bug?)
 * Low crush 6~35
 * Floating state 36~53";trn js6~35 fs36~53;;Alisa-b+3+4;;r41;;
-b+3+4,3+4;m, M;22, 25;i18~19, i56~61;+5c~+10c;+59a;;"* Spike
-* Combo from 1st hit
+b+3+4,3+4;m, M;22, 37 (25);i18~19, i56~61;+5c~+10c;+59a;;"* Spike
+* Aerial combo from 1st hit
 * Low crush 6~78
 * Floating state 79~81";spk js6~78 fs79~81;;Alisa-b+3+4,3+4;Dynamic Range;r23;;File:t8-p2-alisa-b+3+4,3+4.mp4
 ub+2;h;23;i16~20;-9;+38a (-20);;"* Balcony Break
 * 9 chip damage on block, +0 block advantage on attack absorption
 * Power crush 7~15
-* Floating state 20~30";bbr pc7~15 fs20~30;;Alisa-ub+2;Overload;r32;;
+* Floating state 20~30";bbr pc7~15 fs20~30;;Alisa-ub+2;Overload;r32;;File:t8-p2-alisa-ub+2.mp4
 ub+2;h;23;i16~20;-9;+38a (-20);;"* Balcony Break
 * 9 chip damage on block, +0 block advantage on attack absorption
 * Power crush 7~15
-* Floating state 20~30";bbr pc7~15 fs20~30;;Alisa-ub+2;Overload;r32;;File:t8-p2-alisa-ub+2.mp4
+* Floating state 20~30";bbr pc7~15 fs20~30;;Alisa-ub+2;Overload;r32;;
 ub+4;m;10;i18;-9;+7;;"* Low crush 9~31
 * Floating state 32~34";js9~31 fs32~34;;Alisa-ub+4;1st Hit;r27;;
 ub+4,1;m, m;10, 12;i18, i25~27;-21;-8;;"Combo from 1st CH
@@ -579,14 +579,14 @@ DES.f+2,1,2;m,m, m,m, m,m;9, 9, 23;i15 i1~1, ,i23~24 i4~5;-13;+30d;;"* Heat Enga
 * Move cannot be delayed
 * 6 chip damage on block
 * 7 chip damage on block in heat";he wpn;;Alisa-DES.f+2,1,2;Gigahertz Storm;r42;;File:t8-p2-alisa-des.f+2,1,2.mp4
-DES.f+3;;;;;;;"* Cancel to r33 standing block with DBT.B
-* Transition to Evasive Action with input DBT.U_D
-* Low crush 18~40
-* Floating state 41~43";js18~40 fs41~43;DBT;Alisa-DES.f+3;Dual Boot;r17 DBT;;
 DES.f+3;;;;;;;"* Cancel to r33 with DBT.b
 * Transition to r50 SS with DBT.u_d
 * Low crush 18~40
 * Floating state 41~43";js18~40 fs41~43;SS,DBT;Alisa-DES.f+3;Dual Boot;r17 DBT;;
+DES.f+3;;;;;;;"* Cancel to r33 standing block with DBT.B
+* Transition to Evasive Action with input DBT.U_D
+* Low crush 18~40
+* Floating state 41~43";js18~40 fs41~43;DBT;Alisa-DES.f+3;Dual Boot;r17 DBT;;
 DES.f+1+2;m,m,m,m,m,m,m,m;29;i23~27 i1~5 i1~4 i1~4 i1~5 i1~5 i1~4 i1~1;+1;+33a;;"* Weapon
 * Combo from any hit
 * Transition to DBT (+4/+36a) with 3_4
