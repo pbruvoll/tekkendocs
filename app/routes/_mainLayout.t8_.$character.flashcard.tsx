@@ -1,6 +1,6 @@
 import { Heading } from '@radix-ui/themes';
 import cx from 'classix';
-import { type ChangeEvent, useMemo, useState } from 'react';
+import { type ChangeEvent, useId, useMemo, useState } from 'react';
 import { type MetaFunction } from 'react-router';
 import invariant from 'tiny-invariant';
 import { Button } from '@/components/ui/button';
@@ -328,6 +328,8 @@ const StartPage = ({
   onResetState,
 }: StartPageProps) => {
   const totalMoves = numCorrect + numUnseen + numWrong;
+  const numMovesId = useId();
+  const startFromMoveId = useId();
 
   return (
     <div className="flex flex-col items-center">
@@ -350,11 +352,12 @@ const StartPage = ({
         </p>
 
         <div className="mb-4 grid w-full max-w-sm items-center gap-1.5">
-          <Label htmlFor="num-moves">
+          <Label htmlFor={numMovesId}>
             Number of moves to practice (1 - {totalMoves})
           </Label>
           <Input
             type="string"
+            id={numMovesId}
             value={numMovesToPractice}
             placeholder={totalMoves.toString()}
             onChange={handleNumMovesToPracticeChange}
@@ -362,12 +365,13 @@ const StartPage = ({
         </div>
 
         <div className="mb-2 grid w-full max-w-sm items-center gap-1.5">
-          <Label htmlFor="start-move">
+          <Label htmlFor={startFromMoveId}>
             Start from move number (1 - {totalMoves - (numMovesToPractice || 0)}
             )
           </Label>
           <Input
             type="string"
+            id={startFromMoveId}
             placeholder="1"
             value={startFromMoveNum}
             onChange={handleStartFromMoveNumChange}
