@@ -1,6 +1,6 @@
 import { Card, Inset } from '@radix-ui/themes';
-import { Link } from 'react-router';
 import { cx } from 'class-variance-authority';
+import { Link } from 'react-router';
 import { Badge } from '@/components/ui/badge';
 
 export type CharacterCard2Props = {
@@ -49,12 +49,12 @@ export const CharacterCard2 = ({
               <div className="overflow-hidden text-ellipsis whitespace-nowrap text-center max-xs:text-xs">
                 <span className="capitalize">{name}</span> by
               </div>
-              <div className="overflow-hidden text-ellipsis whitespace-nowrap text-center capitalize text-text-primary max-xs:text-xs">
+              <div className="overflow-hidden text-ellipsis whitespace-nowrap text-center capitalize text-primary max-xs:text-xs">
                 {author}
               </div>
             </>
           ) : (
-            <div className="overflow-hidden text-ellipsis whitespace-nowrap text-center capitalize text-text-primary max-xs:text-xs">
+            <div className="overflow-hidden text-ellipsis whitespace-nowrap text-center capitalize text-primary max-xs:text-xs">
               {name}
             </div>
           )}

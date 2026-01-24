@@ -14,7 +14,7 @@ export const ExternalResources = ({
         {externalResources.map((resource) => (
           <li key={resource.name}>
             <a
-              className="block py-1 text-text-primary"
+              className="block py-1 text-primary"
               target="_blank"
               href={resource.url}
               rel="noreferrer"

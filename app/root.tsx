@@ -1,10 +1,11 @@
 import { Theme } from '@radix-ui/themes';
 import radixStyles from '@radix-ui/themes/styles.css?url';
-import { type LinksFunction, type LoaderFunctionArgs } from 'react-router';
 import {
-  Links,
-  Meta,
   data,
+  Links,
+  type LinksFunction,
+  type LoaderFunctionArgs,
+  Meta,
   type MetaFunction,
   Outlet,
   Scripts,

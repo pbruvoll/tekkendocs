@@ -1,10 +1,10 @@
-import { useMemo } from 'react';
 import {
   CaretDownIcon,
   CaretSortIcon,
   CaretUpIcon,
 } from '@radix-ui/react-icons';
 import { Table } from '@radix-ui/themes';
+import { useMemo } from 'react';
 import { Link, useLocation, useSearchParams } from 'react-router';
 import { orderByKey } from '~/constants/sortConstants';
 import { type MoveFilter } from '~/types/MoveFilter';
@@ -108,7 +108,7 @@ export const FrameDataTable = ({
                   return (
                     <Table.Cell key={j}>
                       <Link
-                        className="text-text-primary"
+                        className="text-primary"
                         style={{ textDecoration: 'none' }}
                         to={commandToUrlSegment(cell)}
                       >

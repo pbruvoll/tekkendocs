@@ -29,7 +29,7 @@ export function MovePreviewDialogButton({ move, url }: MovePreviewDialogProps) {
       <DialogContent className="sm:max-w-[425px] dark">
         <DialogHeader>
           <DialogTitle>
-            <Link className="text-text-primary" to={url}>
+            <Link className="text-primary" to={url}>
               {move.command}
             </Link>
           </DialogTitle>

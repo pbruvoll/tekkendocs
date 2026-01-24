@@ -1,6 +1,6 @@
+import { TwitterLogoIcon } from '@radix-ui/react-icons';
 import { Fragment } from 'react';
 import { FaTwitch, FaYoutube } from 'react-icons/fa';
-import { TwitterLogoIcon } from '@radix-ui/react-icons';
 import { Link } from 'react-router';
 import metafyGradientIcon from '~/images/icons/metafy-gradient.svg';
 
@@ -33,7 +33,7 @@ const PersonLinkComponent = ({ name, url }: PersonLink) => {
   if (url) {
     const urls = url.split('|').map((link) => link.trim());
     return (
-      <div className="inline-flex items-center gap-1 text-text-primary underline underline-offset-2">
+      <div className="inline-flex items-center gap-1 text-primary underline underline-offset-2">
         <Link to={urls[0]}>{name}</Link>{' '}
         {urls.map((url) => {
           if (url.includes('twitter.com') || url.includes('x.com')) {

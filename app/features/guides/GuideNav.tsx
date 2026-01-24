@@ -30,7 +30,7 @@ export const GuideNav = ({ guideData }: GuideNavPros) => {
         return (
           <Fragment key={index}>
             <Link
-              className="text-text-primary"
+              className="text-primary"
               to={`#${name.toLowerCase().replace(/ /g, '-')}`}
             >
               {name}

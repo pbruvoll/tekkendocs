@@ -1,5 +1,5 @@
-import { Fragment } from 'react/jsx-runtime';
 import { VideoIcon } from '@radix-ui/react-icons';
+import { Fragment } from 'react/jsx-runtime';
 import { Link, type MetaFunction } from 'react-router';
 import { ContentContainer } from '~/components/ContentContainer';
 import { TrophyProgress } from '~/components/TrophyProgress';
@@ -225,7 +225,7 @@ export default function () {
           intervall. Block at least <strong>12</strong> moves in a row to
           complete the challenge. See this{' '}
           <a
-            className="text-text-primary underline underline-offset-2"
+            className="text-primary underline underline-offset-2"
             href="https://www.youtube.com/watch?v=o_Ky7_Dd0Ss"
           >
             video
@@ -236,7 +236,7 @@ export default function () {
           If you are the first to complete a challenge, you can tweet us a link
           to a video where you complete it at{' '}
           <a
-            className="underline-offset-2t text-text-primary underline"
+            className="underline-offset-2t text-primary underline"
             href="https://twitter.com/tekkendocs"
           >
             @tekkendocs
@@ -298,7 +298,7 @@ export default function () {
                     </div>
                     <div className="text-center">
                       <Link
-                        className="text-text-primary"
+                        className="text-primary"
                         style={{ textDecoration: 'none' }}
                         to={
                           '/t8/' +
@@ -311,7 +311,7 @@ export default function () {
                       </Link>{' '}
                       /{' '}
                       <Link
-                        className="text-text-primary"
+                        className="text-primary"
                         style={{ textDecoration: 'none' }}
                         to={
                           '/t8/' +
@@ -359,7 +359,7 @@ export default function () {
                           completed.name
                         )}{' '}
                         <Link
-                          className="text-xl text-text-primary no-underline"
+                          className="text-xl text-primary no-underline"
                           to={completed.video}
                         >
                           <VideoIcon

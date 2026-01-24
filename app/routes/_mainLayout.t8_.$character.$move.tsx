@@ -115,7 +115,7 @@ export default function MoveRoute() {
         Tekken 8
       </Text>
       <Heading mt="2" mb="4" as="h1" className="flex flex-wrap gap-2">
-        <Link to={`/${characterName}`} className="capitalize text-text-primary">
+        <Link to={`/${characterName}`} className="capitalize text-primary">
           {characterName}
         </Link>
         {move.command}
