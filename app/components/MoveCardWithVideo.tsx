@@ -152,7 +152,7 @@ export const MoveCardWithVideo = ({
                 </span>
               </div>
 
-              <div className="flex justify-between">
+              <div className="flex justify-between mt-1">
                 <div className="pt-2 place-self-end">
                   {move.notes && (
                     <button
