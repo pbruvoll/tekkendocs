@@ -182,7 +182,7 @@ export const MoveCardWithVideo = ({
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.3, ease: 'easeInOut' }}
                     style={{ overflow: 'hidden' }}
-                    className="mt-2 ml-1 text-sm text-muted-foreground"
+                    className="mt-2 ml-1 text-sm"
                   >
                     {move.notes.split('\n').map((line, index) => (
                       <div key={index}>{line}</div>
