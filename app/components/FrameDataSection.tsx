@@ -2,7 +2,6 @@ import { Filter } from 'lucide-react';
 import { useMemo, useState } from 'react';
 import { useSearchParams } from 'react-router';
 import { Input } from '@/components/ui/input';
-import { Switch } from '@/components/ui/switch';
 import { orderByKey } from '~/constants/sortConstants';
 import { sortOptions } from '~/constants/sortOptions';
 import { type GameRouteId } from '~/types/GameRouteId';
@@ -100,17 +99,17 @@ export const FrameDataSection = ({
 
   return (
     <>
-      <ContentContainer className="flex flex-wrap items-center justify-between gap-4">
-        <div className="flex items-center gap-2">
-          <Filter />
+      <ContentContainer className="flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between">
+        <div className="flex w-full items-center gap-2 sm:w-auto">
+          <Filter className="shrink-0" />
           <Input
             onChange={(e) => handleOnChange(e)}
             placeholder="ff2,1+2"
           ></Input>
         </div>
 
-        <div className="flex items-center justify-end gap-4">
-          <div>
+        <div className="flex flex-wrap items-center gap-2 sm:gap-4">
+          <div className="flex-1 sm:flex-none">
             <select
               aria-label="Sort by"
               value={sortByQueryParamValue}
@@ -124,7 +123,7 @@ export const FrameDataSection = ({
                   return prev;
                 });
               }}
-              className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 py-1.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+              className="block w-full max-w-48 rounded-lg border border-gray-300 bg-gray-50 p-2.5 py-1.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
             >
               <option value="">Sort by</option>
               {sortOptions.map(({ displayName, value }) => (
@@ -149,21 +148,28 @@ export const FrameDataSection = ({
         </div>
       </ContentContainer>
 
-      <ContentContainer className="flex items-center justify-between gap-4 py-2">
-        <div className="flex items-center gap-2">
-          <Switch
-            checked={frameDataViewMode === 'simple'}
-            onCheckedChange={(checked) =>
-              setFrameDataViewMode(checked ? 'simple' : 'default')
-            }
-          />
-          <label
-            htmlFor="simple-view"
-            className="cursor-pointer text-sm font-medium"
-          >
-            Simple View
-          </label>
-        </div>
+      <ContentContainer className="flex items-center justify-end gap-2 py-2">
+        <label htmlFor="view-mode" className="text-sm font-medium">
+          View Mode
+        </label>
+        <select
+          id="view-mode"
+          aria-label="View mode"
+          value={frameDataViewMode}
+          onChange={(e) => {
+            setFrameDataViewMode(
+              (e.target.value || 'default') as
+                | 'default'
+                | 'simple'
+                | 'videoCards',
+            );
+          }}
+          className="rounded-lg border border-gray-300 bg-gray-50 p-2.5 py-1.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+        >
+          <option value="default">Default</option>
+          <option value="simple">Simple</option>
+          <option value="videoCards">Video Cards</option>
+        </select>
       </ContentContainer>
 
       <DynamicFrameDataList
@@ -172,11 +178,7 @@ export const FrameDataSection = ({
         moves={moves}
         filter={filter}
         charId={charId}
-        viewMode={
-          searchParams.get('viewMode') === 'video'
-            ? 'videoCards'
-            : frameDataViewMode
-        }
+        viewMode={frameDataViewMode}
       />
     </>
   );
