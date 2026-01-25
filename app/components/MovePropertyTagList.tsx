@@ -1,0 +1,41 @@
+import { type MoveTag, MoveTags } from '~/constants/moveTags';
+
+import { type Move } from '~/types/Move';
+import { isDuckableString } from '~/utils/frameDataUtils';
+
+const tagsToName: Partial<Record<MoveTag, string>> = {
+  [MoveTags.HighCrush]: 'High Crush',
+  [MoveTags.LowCrush]: 'Low Crush',
+  [MoveTags.Elbow]: 'Elbow',
+  [MoveTags.Knee]: 'Knee',
+  [MoveTags.Parry]: 'Parry',
+  [MoveTags.Weapon]: 'Weapon',
+  [MoveTags.WallCrush]: 'Wall Crush',
+};
+
+const TagComp = ({ name }: { name: string }) => (
+  <span className="rounded bg-muted px-1.5 py-0.5 text-xs">{name}</span>
+);
+
+type MovePropertyTagListProps = {
+  move: Move;
+};
+
+export const MovePropertyTagList = ({ move }: MovePropertyTagListProps) => {
+  const moveTags = move.tags || {};
+  const tagKeys = Object.keys(moveTags) as MoveTag[];
+
+  return (
+    <div className="flex flex-wrap gap-1">
+      {tagKeys.map((tagKey) => {
+        const name = tagsToName[tagKey];
+        if (!name) {
+          return null;
+        }
+
+        return <TagComp key={tagKey} name={name} />;
+      })}
+      {isDuckableString(move) && <TagComp key="duckable" name="Duckable" />}
+    </div>
+  );
+};

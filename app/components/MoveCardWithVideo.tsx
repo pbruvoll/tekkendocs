@@ -1,5 +1,5 @@
 import { ChevronDown, ChevronRight } from 'lucide-react';
-import { useInView } from 'motion/react';
+import { AnimatePresence, motion, useInView } from 'motion/react';
 import { useEffect, useEffectEvent, useRef, useState } from 'react';
 import { Link } from 'react-router';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -11,6 +11,7 @@ import {
   simplifyFrameValue,
 } from '~/utils/frameDataViewUtils';
 import { MovePropertyIconList } from './MovePropertyIconList';
+import { MovePropertyTagList } from './MovePropertyTagList';
 import { MoveVideo } from './MoveVideo';
 
 export type MoveCardWithVideoProps = {
@@ -26,30 +27,29 @@ export type MoveCardWithVideoProps = {
   onInViewChange?: (inView: boolean) => void;
 };
 
-/** Frame data cell component */
-const FrameCell = ({
-  label,
+const FrameHeading = ({ title }: { title: string }) => (
+  <span className="text-xs font-medium text-muted-foreground uppercase">
+    {title}
+  </span>
+);
+const FrameValue = ({
   value,
   colorize,
 }: {
-  label: string;
   value: string;
   colorize?: 'hit' | 'block' | 'counter-hit';
 }) => (
-  <div className="flex flex-col items-center gap-1">
-    <span className="text-xs text-muted-foreground uppercase">{label}</span>
-    <span
-      className={cn(
-        'text-lg font-semibold',
-        colorize &&
-          (colorize === 'block'
-            ? getBlockFrameColorClasses(value)
-            : getHitFrameColorClasses(value)),
-      )}
-    >
-      {value || '—'}
-    </span>
-  </div>
+  <span
+    className={cn(
+      'text-lg font-semibold',
+      colorize &&
+        (colorize === 'block'
+          ? getBlockFrameColorClasses(value)
+          : getHitFrameColorClasses(value)),
+    )}
+  >
+    {value || '—'}
+  </span>
 );
 
 export const MoveCardWithVideo = ({
@@ -60,11 +60,6 @@ export const MoveCardWithVideo = ({
   shouldLoadVideo: shouldLoadVideoProp,
   onInViewChange,
 }: MoveCardWithVideoProps) => {
-  const hasTags = move.tags && Object.keys(move.tags).length > 0;
-  // const tagsList =
-  //   hasTags && move.tags
-  //     ? Object.keys(move.tags).filter((key) => key !== 'fs')
-  //     : [];
   const hasVideo = Boolean(move.ytVideo);
 
   const cardRef = useRef<HTMLDivElement>(null);
@@ -128,83 +123,73 @@ export const MoveCardWithVideo = ({
               </div>
             )}
 
-            <CardContent className="space-y-4">
-              <div className="grid grid-cols-3 gap-2 text-center">
-                <FrameCell
-                  label="Startup"
-                  value={simplifyFrameValue(move.startup || '')}
-                />
-                <FrameCell label="Hit Level" value={move.hitLevel} />
-                <div className="flex flex-col items-center gap-1">
-                  <span className="text-xs text-muted-foreground uppercase">
-                    Properties
-                  </span>
-                  <span className="text-sm font-medium">
-                    {hasTags ? (
-                      <MovePropertyIconList move={move} />
-                      // <span className="flex flex-wrap justify-center gap-1 uppercase">
-                      //   {tagsList.slice(0, 6).map((tag) => (
-                      //     <span
-                      //       key={tag}
-                      //       className="rounded bg-muted px-1.5 py-0.5 text-xs"
-                      //     >
-                      //       {tag}
-                      //     </span>
-                      //   ))}
-                      //   {tagsList.length > 6 && (
-                      //     <span className="text-xs text-muted-foreground">
-                      //       +{tagsList.length - 6}
-                      //     </span>
-                      //   )}
-                      // </span>
-                    ) : (
-                      <span className="text-muted-foreground">—</span>
-                    )}
-                  </span>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-3 gap-2 text-center">
-                <FrameCell
-                  label="Block"
+            <CardContent className="space-y-3 p-4 pt-0">
+              <div className="grid grid-cols-4 flex-wrap items-center justify-around gap-x-3 gap-y-2">
+                <FrameHeading title="Startup" />
+                <FrameHeading title="Hit Level" />
+                <FrameHeading title="Block" />
+                <FrameHeading title="Hit / C.Hit" />
+                <FrameValue value={simplifyFrameValue(move.startup || '')} />
+                <FrameValue value={move.hitLevel} />
+                <FrameValue
                   value={simplifyFrameValue(move.block || '')}
                   colorize="block"
                 />
-                <FrameCell
-                  label="Hit"
-                  value={simplifyFrameValue(move.hit || '')}
-                  colorize="hit"
-                />
-                <FrameCell
-                  label="Counter"
-                  value={simplifyFrameValue(move.counterHit || '')}
-                  colorize="counter-hit"
-                />
+                <span>
+                  <FrameValue
+                    value={simplifyFrameValue(move.hit || '')}
+                    colorize="hit"
+                  />
+                  {move.counterHit && move.counterHit !== move.hit && (
+                    <>
+                      <span className="text-muted-foreground"> / </span>
+                      <FrameValue
+                        value={simplifyFrameValue(move.counterHit)}
+                        colorize="hit"
+                      />
+                    </>
+                  )}
+                </span>
               </div>
 
-              {move.notes && (
-                <div className="pt-2">
-                  <button
-                    type="button"
-                    onClick={() => setShowNotes(!showNotes)}
-                    className="text-xs text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1"
-                  >
-                    {showNotes ? (
-                      <ChevronDown className="h-4 w-4" />
-                    ) : (
-                      <ChevronRight className="h-4 w-4" />
-                    )}
-                    <span>{showNotes ? 'Hide details' : 'View details'}</span>
-                  </button>
-                  {showNotes && (
-                    <p className="mt-2 text-sm text-muted-foreground">
-                      {move.notes.split('\n').map((line, index) => (
-                        <div key={index}>{line}</div>
-                      ))}
-                    </p>
+              <div className="flex justify-between">
+                <div className="pt-2 place-self-end">
+                  {move.notes && (
+                    <button
+                      type="button"
+                      onClick={() => setShowNotes(!showNotes)}
+                      className="text-xs text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1"
+                    >
+                      {showNotes ? (
+                        <ChevronDown className="h-4 w-4" />
+                      ) : (
+                        <ChevronRight className="h-4 w-4" />
+                      )}
+                      <span>{showNotes ? 'Hide details' : 'View details'}</span>
+                    </button>
                   )}
                 </div>
-              )}
+                <div className="flex flex-col items-end gap-2">
+                  <MovePropertyIconList move={move} />
+                  <MovePropertyTagList move={move} />
+                </div>
+              </div>
+              <AnimatePresence>
+                {showNotes && (
+                  <motion.p
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: 'auto', opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3, ease: 'easeInOut' }}
+                    style={{ overflow: 'hidden' }}
+                    className="mt-2 ml-1 text-sm text-muted-foreground"
+                  >
+                    {move.notes.split('\n').map((line, index) => (
+                      <div key={index}>{line}</div>
+                    ))}
+                  </motion.p>
+                )}
+              </AnimatePresence>
             </CardContent>
           </div>
 
