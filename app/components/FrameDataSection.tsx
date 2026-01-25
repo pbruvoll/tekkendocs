@@ -1,5 +1,5 @@
 import { Filter } from 'lucide-react';
-import { useMemo, useState } from 'react';
+import { useId, useMemo, useState } from 'react';
 import { useSearchParams } from 'react-router';
 import { Input } from '@/components/ui/input';
 import { orderByKey } from '~/constants/sortConstants';
@@ -29,6 +29,7 @@ export const FrameDataSection = ({
   charId,
   moves,
 }: FrameDataSectionProps) => {
+  const viewModeId = useId();
   const [searchParams, setSearchParams] = useSearchParams();
   const { frameDataViewMode, setFrameDataViewMode } = useUserSettings();
   const sortSettings = getSortSettings(searchParams);
@@ -100,11 +101,11 @@ export const FrameDataSection = ({
   return (
     <>
       <ContentContainer className="flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between">
-        <div className="flex w-full items-center gap-2 sm:w-auto">
+        <div className="flex w-full items-center gap-2 mt-1 sm:w-auto">
           <Filter className="shrink-0" />
           <Input
             onChange={(e) => handleOnChange(e)}
-            placeholder="ff2,1+2"
+            placeholder="Search moves, ff2,1+2, power crush, etc."
           ></Input>
         </div>
 
@@ -148,12 +149,12 @@ export const FrameDataSection = ({
         </div>
       </ContentContainer>
 
-      <ContentContainer className="flex items-center justify-end gap-2 py-2">
-        <label htmlFor="view-mode" className="text-sm font-medium">
+      <ContentContainer className="flex items-center gap-2 py-2">
+        <label htmlFor={viewModeId} className="text-sm font-medium">
           View Mode
         </label>
         <select
-          id="view-mode"
+          id={viewModeId}
           aria-label="View mode"
           value={frameDataViewMode}
           onChange={(e) => {
