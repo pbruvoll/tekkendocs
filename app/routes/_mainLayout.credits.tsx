@@ -11,12 +11,16 @@ export default function Credits() {
       <h2>Tekken 8</h2>
       <h3>Frame data source</h3>
       <p>
-        {' '}
-        We are working on adding frame data for tekken 8. Currently the frame
-        data is imported from <a href="https://wavu.wiki/">wavu.wiki</a>.
+        Frame data for tekken 8 is imported from{' '}
+        <a href="https://wavu.wiki/">wavu.wiki</a>.
       </p>
       <h3>Main programmer</h3>
       <p>MadCow</p>
+      <h3>Icons</h3>
+      <p>
+        Icons for move properties and images for ranks are from{' '}
+        <a href="https://tekkenwarehouse.com">tekkenwarehouse.com</a>.
+      </p>
       <hr />
       <h2>Tekken 7</h2>
       <h3>Framedata source</h3>
