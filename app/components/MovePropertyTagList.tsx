@@ -1,6 +1,7 @@
 import { type MoveTag, MoveTags } from '~/constants/moveTags';
 
 import { type Move } from '~/types/Move';
+import { isDuckableString } from '~/utils/frameDataUtils';
 
 const tagsToName: Partial<Record<MoveTag, string>> = {
   [MoveTags.HighCrush]: 'High Crush',
@@ -11,6 +12,10 @@ const tagsToName: Partial<Record<MoveTag, string>> = {
   [MoveTags.Weapon]: 'Weapon',
   [MoveTags.WallCrush]: 'Wall Crush',
 };
+
+const TagComp = ({ name }: { name: string }) => (
+  <span className="rounded bg-muted px-1.5 py-0.5 text-xs">{name}</span>
+);
 
 type MovePropertyTagListProps = {
   move: Move;
@@ -28,12 +33,9 @@ export const MovePropertyTagList = ({ move }: MovePropertyTagListProps) => {
           return null;
         }
 
-        return (
-          <span key={tagKey} className="rounded bg-muted px-1.5 py-0.5 text-xs">
-            {name}
-          </span>
-        );
+        return <TagComp key={tagKey} name={name} />;
       })}
+      {isDuckableString(move) && <TagComp key="duckable" name="Duckable" />}
     </div>
   );
 };
