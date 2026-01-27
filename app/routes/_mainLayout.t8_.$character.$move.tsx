@@ -66,7 +66,13 @@ export const meta: MetaFunction = ({ params, matches }) => {
   if (move?.wavuId === 'Paul-CS.2') {
     image = `/t8/moves/${characterId}/Paul_CS.2.gif`;
   }
-
+  let video: string | undefined;
+  if (
+    (move?.video && move?.wavuId === 'Jun-1+2') ||
+    move?.wavuId === 'Jun-u+2'
+  ) {
+    video = `/t8/moves/${characterId}/${move.video?.replace('File:', '')}`;
+  }
   return [
     { title },
     { description },
@@ -74,6 +80,15 @@ export const meta: MetaFunction = ({ params, matches }) => {
     { property: 'description', content: description },
     { property: 'og:description', content: description },
     { property: 'og:image', content: image },
+    ...(video
+      ? [
+          { property: 'og:video:url', content: video },
+          { property: 'og:video:secure_url', content: video },
+          { property: 'og:video:type', content: 'video/mp4' },
+          { property: 'og:video:width', content: '640' },
+          { property: 'og:video:height', content: '360' },
+        ]
+      : []),
     {
       tagName: 'link',
       rel: 'canonical',
