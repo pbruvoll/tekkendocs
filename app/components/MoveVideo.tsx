@@ -66,7 +66,7 @@ export const MoveVideo = ({
     return (
       <div className={cx(className)}>
         <iframe
-          className="aspect-video"
+          className="aspect-video w-full"
           title="Move Video"
           src={`https://wavu.wiki/t/Special:Redirect/file/${move?.video}`}
         />

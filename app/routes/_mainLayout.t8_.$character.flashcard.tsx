@@ -1,19 +1,28 @@
 import { Heading } from '@radix-ui/themes';
-import cx from 'classix';
 import { type ChangeEvent, useId, useMemo, useState } from 'react';
 import { type MetaFunction } from 'react-router';
 import invariant from 'tiny-invariant';
 import { Button } from '@/components/ui/button';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Switch } from '@/components/ui/switch';
 import { ContentContainer } from '~/components/ContentContainer';
 import Nav, { type NavLinkInfo } from '~/components/Nav';
 import { TaskProgress } from '~/components/TaskProgress';
+import { AnimatedCollapsible } from '~/features/flashCards/AnimatedCollapsible';
 import {
   FlashCardAnswer,
   type FlashCardAnswerType,
 } from '~/features/flashCards/FlashCardAnswer';
+import { FlashCardDeck } from '~/features/flashCards/FlashCardDeck';
+import { FlipCard } from '~/features/flashCards/FlipCard';
 import { FlashCardBack } from '~/features/flashCards/flashCardBack';
 import { FlashCardFront } from '~/features/flashCards/flashCardFront';
 import { useFlashCardAppState } from '~/features/flashCards/useFlashCardAppState';
@@ -262,11 +271,12 @@ export default function FlashCard() {
         className="flex justify-center"
       >
         <div>
-          <h1 className="mb-4 p-2 text-center text-xl">Flash cards</h1>
+          <h1 className="sr-only">Flash cards</h1>
           {numViableMoves === 0 ? (
             <div>No moves available for {characterName}</div>
           ) : !moveToShow ? (
             <StartPage
+              characterName={characterName}
               onStart={() => findAndSetMoveToShow()}
               numUnseen={unseenMoves.length}
               numCorrect={charFlashCardState.correct.length}
@@ -304,6 +314,7 @@ export default function FlashCard() {
 }
 
 type StartPageProps = {
+  characterName: string;
   onStart: () => void;
   onResetState: () => void;
   numMovesToPractice: number | undefined;
@@ -316,6 +327,7 @@ type StartPageProps = {
   numIngnored: number;
 };
 const StartPage = ({
+  characterName,
   onStart,
   numMovesToPractice,
   startFromMoveNum,
@@ -333,70 +345,84 @@ const StartPage = ({
 
   return (
     <div className="flex flex-col items-center">
-      <Button onClick={onStart} className="m-4 text-xl">
-        Start
-      </Button>
-      <TaskProgress
-        className="self-stretch"
-        numCompleted={numCorrect}
-        total={totalMoves}
-      />
-      <div className="prose prose-invert mt-8">
-        <h3>How it works</h3>
-        <p>
-          A flash card shows a move on the front side. Your job is to guess a
-          property of the move, for example how many frames it is on block. Then
-          you flip the card and check if your guess was correct. Cards marked as
-          "Wrong" will be shown again sooner than cards marked as "Correct".
-          Card marked as "Ignore" will never be shown again.
-        </p>
+      <Card className="w-80">
+        <CardHeader className="text-center">
+          <CardTitle className="text-2xl">Flash Cards</CardTitle>
+          <CardDescription>
+            Test your knowledge of{' '}
+            <span className="capitalize">{characterName}</span>'s frame data
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-6">
+          <Button onClick={onStart} className="w-full text-lg" size="lg">
+            Start Practice
+          </Button>
 
-        <div className="mb-4 grid w-full max-w-sm items-center gap-1.5">
-          <Label htmlFor={numMovesId}>
-            Number of moves to practice (1 - {totalMoves})
-          </Label>
-          <Input
-            type="string"
-            id={numMovesId}
-            value={numMovesToPractice}
-            placeholder={totalMoves.toString()}
-            onChange={handleNumMovesToPracticeChange}
-          />
-        </div>
+          <TaskProgress numCompleted={numCorrect} total={totalMoves} />
 
-        <div className="mb-2 grid w-full max-w-sm items-center gap-1.5">
-          <Label htmlFor={startFromMoveId}>
-            Start from move number (1 - {totalMoves - (numMovesToPractice || 0)}
-            )
-          </Label>
-          <Input
-            type="string"
-            id={startFromMoveId}
-            placeholder="1"
-            value={startFromMoveNum}
-            onChange={handleStartFromMoveNumChange}
-          />
-        </div>
+          <div className="space-y-4 rounded-lg border border-border/50 bg-muted/30 p-4">
+            <h4 className="font-medium">Current Progress</h4>
+            <div className="grid grid-cols-2 gap-2 text-sm">
+              <span className="text-muted-foreground">Unseen:</span>
+              <span className="font-medium">{numUnseen}</span>
+              <span className="text-muted-foreground">Correct:</span>
+              <span className="font-medium text-green-500">{numCorrect}</span>
+              <span className="text-muted-foreground">Wrong:</span>
+              <span className="font-medium text-red-500">{numWrong}</span>
+              <span className="text-muted-foreground">Ignored:</span>
+              <span className="font-medium">{numIngnored}</span>
+            </div>
+          </div>
 
-        <h3 className="py-2">Current State</h3>
-        <div className="grid grid-cols-2 gap-2">
-          <div>Unseen: </div>
-          <div>{numUnseen}</div>
-          <div>Correct: </div>
-          <div>{numCorrect}</div>
-          <div>Wrong: </div>
-          <div>{numWrong}</div>
-          <div>Ignored: </div>
-          <div>{numIngnored}</div>
-        </div>
-      </div>
+          <AnimatedCollapsible title="Advanced Settings">
+            <div className="space-y-4">
+              <div className="space-y-2">
+                <Label htmlFor={numMovesId} className="text-sm">
+                  Moves to practice (1 - {totalMoves})
+                </Label>
+                <Input
+                  type="string"
+                  id={numMovesId}
+                  value={numMovesToPractice}
+                  placeholder={totalMoves.toString()}
+                  onChange={handleNumMovesToPracticeChange}
+                />
+              </div>
 
-      <Button onClick={onStart} className="mt-4 text-xl">
-        Start
-      </Button>
-      <Button className="m-4" onClick={onResetState} variant="secondary">
-        Reset state
-      </Button>
+              <div className="space-y-2">
+                <Label htmlFor={startFromMoveId} className="text-sm">
+                  Start from move # (1 -{' '}
+                  {totalMoves - (numMovesToPractice || 0)})
+                </Label>
+                <Input
+                  type="string"
+                  id={startFromMoveId}
+                  placeholder="1"
+                  value={startFromMoveNum}
+                  onChange={handleStartFromMoveNumChange}
+                />
+              </div>
+            </div>
+          </AnimatedCollapsible>
+
+          <AnimatedCollapsible title="How it works">
+            <p className="text-sm text-muted-foreground">
+              Guess a property of the move shown (e.g. frames on block), then
+              flip to check. "Wrong" cards appear more often. "Ignore" hides
+              cards permanently.
+            </p>
+          </AnimatedCollapsible>
+
+          <Button
+            onClick={onResetState}
+            variant="outline"
+            className="w-full"
+            size="sm"
+          >
+            Reset Progress
+          </Button>
+        </CardContent>
+      </Card>
     </div>
   );
 };
@@ -425,39 +451,33 @@ const FlashCardGame = ({
   };
 
   return (
-    <>
-      <div
-        key={moveToShow.command}
-        className="group w-80 animate-in fade-in perspective-[1000px]"
-      >
-        <div
-          className={cx(
-            'grid rounded-2xl border-[1.5px] border-foreground/50 transition-all duration-500 transform-3d',
-            flipped && 'rotate-y-180',
-          )}
-        >
-          <div className="col-start-1 row-start-1 backface-hidden">
+    <div className="flex flex-col items-center gap-6">
+      <FlashCardDeck cardKey={moveToShow.command}>
+        <FlipCard
+          flipped={flipped}
+          className="h-full w-full"
+          front={
             <FlashCardFront
               move={moveToShow}
               showCharName={showCharName}
               autoPlay={autoPlay}
               onFlip={() => setFlipped(true)}
             />
-          </div>
-          <div className="col-start-1 row-start-1 backface-hidden rotate-y-180">
-            <FlashCardBack move={moveToShow} onAnswer={handleAnswer} />
-          </div>
-        </div>
-      </div>
+          }
+          back={<FlashCardBack move={moveToShow} onAnswer={handleAnswer} />}
+        />
+      </FlashCardDeck>
+
       <TaskProgress
-        className="mt-4 self-stretch"
+        className="w-80"
         numCompleted={numCorrect}
         total={numCorrect + numUnseen + numWrong}
       />
+
       <div className="flex items-center gap-4">
-        <div>Auto play</div>
+        <span className="text-sm text-muted-foreground">Auto play video</span>
         <Switch checked={autoPlay} onCheckedChange={setAutoPlay} />
       </div>
-    </>
+    </div>
   );
 };
