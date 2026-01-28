@@ -20,28 +20,27 @@ export const FlashCardFront = ({
     <div className="flex h-full w-full flex-col bg-foreground/10">
       <button
         type="button"
-        className="flex w-full grow items-center justify-center p-2 text-xl"
+        className="flex w-full flex-1 items-center justify-center p-4 text-2xl font-semibold"
         onClick={onFlip}
       >
         {showCharName && `${charIdFromMove(move as MoveT8)} `}
         {move.command}
       </button>
-      <ShowVideoButton
-        autoPlay={autoPlay}
-        move={move}
-        className="m-1 my-3"
-        hideFrameData
-      />
+      <div className="flex flex-1 items-center justify-center px-4">
+        <ShowVideoButton
+          autoPlay={autoPlay}
+          move={move}
+          className="w-full"
+          hideFrameData
+        />
+      </div>
       <button
-        className="flex w-full items-center justify-center p-2 text-lg"
+        className="flex w-full flex-1 items-center justify-center p-2 text-lg"
         type="button"
         onClick={onFlip}
       >
         <div
-          className={cx(
-            buttonVariants({ variant: 'default' }),
-            'mt-auto h-12 w-24',
-          )}
+          className={cx(buttonVariants({ variant: 'default' }), 'h-12 w-24')}
         >
           Flip
         </div>
