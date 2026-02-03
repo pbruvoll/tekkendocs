@@ -6,28 +6,34 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * Only deals recoverable damage
 * Cannot cause a K.O.
 * Power crush 7~16";hb pc7~16;;Clive-2+3;Heat Burst;r30;;
-H.PHX.2+3;m;42;i15~16;+8;+0;;"* Floor Break
+H.PHX.2+3;m;42;i15~16;+8;+0;;"* Heat Smash
+* Floor Break
+* Weapon
 * Increases ZAN gauge by 1.16 on hit
 * Increases ZAN gauge by 0.66 on block
 * Transition to throw on hit
 * Opponent recovers in FDFA state
 * Only deals recoverable damage
-* 9 chip damage on block";fbr;;Clive-H.PHX.2+3;Dancing Steel;r34;;
-H.u+1+2;m,m;18,21;i19~20,i20~21;-12;+3c;;"* Consumes heat
+* 9 chip damage on block";hs fbr wpn;;Clive-H.PHX.2+3;Dancing Steel;r34;;
+H.u+1+2;m,m;18,21;i19~20,i20~21;-12;+3c;;"* Weapon 2nd hit
+* Consumes heat
 * Transition to r15 PHX with F or 4 on hit or block (-1/+14c)
 * 13 chip damage on block";;PHX;Clive-H.u+1+2;;r36?;;
 H.u+1+2,1;m,m, m,m;18,21, 17,22;i19~20,i20~21, i25~26,i20~21;-8;+14a(+4a);;"* Balcony Break
+* Weapon 2nd hit
 * Move cannot be delayed
 * Input can be delayed by 25F
 * Interrupt with i3 from 2nd block
 * 14 chip damage on block
 * Same move as (df+1,H.1),1";bbr;;Clive-H.u+1+2,1;Blazing Rush;r41?;;
-H.u+1+2,2;m,m, h,h;18,21, 10,12;i19~20,i20~21, i23~24,i12~13;-9;+8;;"* Jail from 2nd normal hit
+H.u+1+2,2;m,m, h,h;18,21, 10,12;i19~20,i20~21, i23~24,i12~13;-9;+8;;"* Weapon 1st hit
+* Jail from 2nd normal hit
 * 7 chip damage on block
 * Transition to r15 PHX with F or 4 on hit or block (-3/+14)
 * Same move as (df+1,H.1),2";;PHX;Clive-H.u+1+2,2;;;;
 H.u+1+2,2,1;m,m, h,h, m,m;18,21, 10,12, 10,16;i19~20,i20~21, ,i20~21,i11~12;-8;+15a(-2a);;"* Tornado
 * Balcony Break
+* Weapon 2nd hit
 * Combo from 4th hit with 17F delay
 * Move cannot be delayed
 * Input can be delayed by 17F
@@ -224,7 +230,8 @@ df+1,4,3;m, m, M;10, 12, 20;i14~15, ,i27~28;-18~-16;+12a (-5);+36a (+26);"* Torn
 * Balcony Break
 * Move can be delayed by 9f
 * Floating state 28~";trn bbr fs28~;WOL;Clive-df+1,4,3;Outlaw Wing;r36 WOL;;File:t8-p2-clive-df+1,4,3.mp4
-H.df+1,1;m, m,m;10, 13,15;i14~15, i22~23,i20~21;-12;+3c;;"* Combo from 1st hit with 1F delay
+H.df+1,1;m, m,m;10, 13,15;i14~15, i22~23,i20~21;-12;+3c;;"* Weapon 2nd hit
+* Combo from 1st hit with 1F delay
 * Input can be delayed by 1F
 * Move cannot be delayed by 2F
 * Move is delayed by 2F
@@ -232,15 +239,18 @@ H.df+1,1;m, m,m;10, 13,15;i14~15, i22~23,i20~21;-12;+3c;;"* Combo from 1st hit w
 * Transition to r15 PHX with F or 4 on hit or block (-1/+14c)
 * 9 chip damage on block";;PHX;Clive-df+1,H.1;;r36?;;
 H.df+1,1,1;m, m,m, m,m;10, 13,15, 17,22;i14~15, ,i25~26,i20~21;-8;+14a(+4a);;"* Balcony Break
+* Weapon 2nd hit
 * Move cannot be delayed
 * Input can be delayed by 25F
 * Interrupt with i3 from 3rd block
 * 14 chip damage on block";bbr;;Clive-df+1,H.1,1;Crimson Rush;r41?;;
-H.df+1,1,2;m, m,m, h,h;10, 13,15, 10,12;i14~15, ,i23~24,i12~13;-9;+8;;"* Jail from 3rd normal hit
+H.df+1,1,2;m, m,m, h,h;10, 13,15, 10,12;i14~15, ,i23~24,i12~13;-9;+8;;"* Weapon 1st hit
+* Jail from 3rd normal hit
 * Transition to r15 PHX with F or 4 on hit or block (-3/+14)
 * 7 chip damage on block";;PHX;Clive-df+1,H.1,2;;;;
 H.df+1,1,2,1;m, m,m, h,h, m,m;10, 13,15, 10,12, 10,16;i14~15, ,i20~21,i11~12;-8;+15a(-2a);;"* Tornado
 * Balcony Break
+* Weapon 2nd hit
 * Combo from 5th hit with 17F delay
 * Move cannot be delayed
 * Input can be delayed by 17F
@@ -465,9 +475,10 @@ PHX.2,2;m, m,t;12, 8,18;i15, i20;-13;+5d / +5a (-4);;"* Balcony Break
 * Increases ZAN gauge by 0.10 on block without throw
 * Side switch on hit";bbr wpn;;Clive-PHX.2,2;Steel Slash;r40;;File:t8-p2-clive-phx.2,2.mp4
 H.PHX.2,1+2;m, m;12, 32;i15, i23~24;+4;+25a(-1a);;"* Balcony Break
+* Weapon
 * Combo from 1st hit
 * Interrupt with i5 from 1st block
-* 9 chip damage on block";bbr;;Clive-PHX.2,H.1+2;Twin Flames;;;
+* 9 chip damage on block";bbr wpn;;Clive-PHX.2,H.1+2;Twin Flames;;;
 PHX.3;L;8;i21;-26;-3c;;* Stagger on block;;;Clive-PHX.3;;r42;;
 PHX.3,2;L, m,m;8, 18,20(36);i21, i30 i29~34;;+39a (+29);;"* Balcony Break
 * Power up in Heat

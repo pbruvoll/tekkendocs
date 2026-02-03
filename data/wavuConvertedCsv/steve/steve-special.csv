@@ -11,8 +11,9 @@ Homing
 * Unbreakable
 * Transitions to TFA";hom;;Steve-H.EXD.1+3;Two-Faced (TFA);r26;;
 H.LNH;sp, m, h (th);15;;;;;"* Parries high and mid punches and kicks?
+* Active after LNH is actionable 
 * Transitions to TFA after successful parry
-* Parry state 25?";ps25?;;Steve-H.LNH;Two-Faced;;;
+* Parry state 25~95?";ps25~95?;;Steve-H.LNH;Two-Faced;;;
 H.df+3+4;sp;;;;;;"* Transitions to r13 EXD
 * r25? EXD FC cancel?
 * Partially uses remaining heat time
@@ -225,8 +226,10 @@ b+1,d+2;h, l;10, 10;i13, i27~28;-11;+0;;"* Combo from 1st hit
 b+1,d+2,1;h, l, m;10, 10, 10;i13, ,i25~27;-9;+35a (+20a);;"* Tornado
 * Combo from 2nd CH";trn;;Steve-b+1,d+2,1;Frigate Combo;;;File:t8-p2-steve-b+1,d+2,1.mp4
 b+1+3;sp;;;;;;"* Parry h and m punches
-* Successful parry i14,30dmg (-12/+24a (+18)/+26a (+16))
-* Parry state 5?";ps5?;;Steve-b+1+3_b+2+4;Parry;;;File:t8-p2-steve-b+1+3_b+2+4.mp4
+* +7? on successful parry
+* Press 1 on successful parry for follow-up
+** i14,30dmg (-12/+24a (+18)/+26a (+16))
+* Parry state 5~12";ps5~12;;Steve-b+1+3;Parry;r23;;File:t8-p2-steve-b+1+3_b+2+4.mp4
 b+2;m;20;i17;-13;+14;;* Can evade highs;;;Steve-b+2;Body Bomb;r32?;;File:t8-p2-steve-b+2.mp4
 b+3;sp;;;;;;"* Transition to SWY
 * Actionable for 15F
@@ -446,8 +449,8 @@ LWV.2;m;13;i14~16;-5;+4;;"* Transition to r10? PAB with f (-1/+8)
 LWV.2,1;m, m;13, 21;i14~16, i19;-8;+4c;+7d;"* Spike
 * Combo from 1st CH with 5F delay
 * Move can be delayed by 11F";spk;;Steve-LWV.2,1;Right Shoulder Rush > Billy Club;;;File:t8-p2-steve-lwv.2,1.mp4
-OTG.d+1+2;l;14;i17;-11c;+2;+2;"* Recovers in crouch
-* High crush";cs;;Steve-OTG.d+1+2;Cheapshot;;;
+OTG.d+1+2;L;16;i17;-11c;+2;;"* Recovers in crouch
+* +0d (-8) on grounded hit";;;Steve-OTG.d+1+2;Cheapshot;r30;;
 PAB.1;h;10;i12~13;-2;+9;;;;PAB;Steve-PAB.1;;PAB;;
 PAB.1,2;h, h;10, 14;i12~13, i15~16;+0;+8;;"* Combo from 1st hit
 * Jail from 1st block";;PAB;Steve-PAB.1,2;;PAB;;
@@ -514,18 +517,24 @@ Balcony Break";bbr;;Steve-RWV.2;Gut Drill;;;File:t8-p2-steve-rwv.2.mp4
 SWY.1;m;26;i16~17;-1c~+0c;+14c~+15c;;"* Can be +15c at farther ranges
 * 10 chip damage on block";;;Steve-SWY.1;Billy Club;;;File:t8-p2-steve-swy.1.mp4
 SWY.2;m;30;i17~18;-18;+36a;;* High crush 1~;cs1~;;Steve-SWY.2;Snake Charmer;;;File:t8-p2-steve-swy.2.mp4
-1+3;throw;35;i12~14;-6;;;"*
-Homing
-* Throw break 1 or 2";hom;;Steve-1+3;Gut Wrencher;;;File:t8-p2-steve-1+3.mp4
-2+4;throw;35;i12~14;-3;;;"*
+1+3;t;35;i12~14;-6;+0d;;"* Homing
+* Throw break 1 or 2
+* Opponent left FUFA";hom;;Steve-1+3;Gut Wrencher;r31;;File:t8-p2-steve-1+3.mp4
+2+4;t;35;i12~14;-3;+0d;;"*
 Homing
 * Floor Break
-* Throw break 1 or 2";hom fbr;;Steve-2+4;Brain Pulverizer;;;File:t8-p2-steve-2+4.mp4
-Back throw;throw;55;i12;;;;* Unbreakable;;;Steve-Back throw;Schoolyard Bully;;;
+* Throw break 1 or 2
+* Sideswitch
+* Opponent left FDFT";hom fbr;;Steve-2+4;Brain Pulverizer;r31;;File:t8-p2-steve-2+4.mp4
+Back throw;t;55;;;+5d;;"* Unbreakable
+* Sideswitch
+* Opponent left FUFT";;;Steve-Back throw;Schoolyard Bully;;;
 FLK.1+2;th;40;i12~14;-6;+0d;;* 1+2 for throw break;;;Steve-FLK.1+2;Griffin Throw;;;File:t8-p2-steve-flk.1+2.mp4
-Left throw;throw;40;i12;;;;* Throw break 1;;;Steve-Left throw;Choke Slam;;;
+Left throw;t;40;;-3;+0d;;"* Throw break 1
+* Opponent left FUFR?";;;Steve-Left throw;Choke Slam;;;
 PAB.1+2;th;45;i11;0;+0d;;* 1+2 for throw break;;;Steve-PAB.1+2;Ten Count;;;File:t8-p2-steve-pab.1+2.mp4
-Right throw;throw;40;i12;;;;* Throw break 2;;;Steve-Right throw;Throw Down;;;
+Right throw;t;40;;-3;+0d;;"* Throw break 2
+* Opponent left FUFL?";;;Steve-Right throw;Throw Down;;;
 SWY.1+2;th;;i10~15;-2;+1 / +10~17wc;;"* 3 damage on wall crush
 * +10 when opponent hits the wall, if the throw is successful
 * Frame advantage on wall crush increases up to +17 the further the opponent is from the wall
@@ -542,5 +551,8 @@ TFA.1;th;15;;+0;+14;;"* Press 1 for throw break
 * Partially uses remaining heat time";;;Steve-H.EXDThrow.1;Dominion Rush;;;File:t8-p2-steve-h.exdthrow.1.mp4
 TFA.2;th;50;;+0;+0d;;"* Press 2 for throw break
 * Partially uses remaining heat time";;;Steve-H.EXDThrow.2;Debutante Ball;;;File:t8-p2-steve-h.exdthrow.2.mp4
-qcb+2+4;throw;40;i12;-2;;;* 2 Throw break;;;Steve-qcb+2+4;Spinning Elbow Drop;;;File:t8-p2-steve-qcb+2+4.mp4
-uf+1+2;throw;40;i12;+0;;;* 1+2 Throw break;;;Steve-uf+1+2;Armlock Throw;;;File:t8-p2-steve-uf+1+2.mp4
+qcb+2+4;t;40;i12~14;-2;+0d;;"* 2 Throw break
+* Opponent left FUFA";;;Steve-qcb+2+4;Spinning Elbow Drop;r25;;File:t8-p2-steve-qcb+2+4.mp4
+uf+1+2;t;40;i12~13;+0;+0d;;"* 1+2 Throw break
+* Sideswitch
+* Opponent left FUFA";;;Steve-uf+1+2;Armlock Throw;r26;;File:t8-p2-steve-uf+1+2.mp4
