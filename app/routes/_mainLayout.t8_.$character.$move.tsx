@@ -2,12 +2,13 @@ import { Heading, Table, Text } from '@radix-ui/themes';
 import { Link, type MetaFunction, useMatches, useParams } from 'react-router';
 import { ContentContainer } from '~/components/ContentContainer';
 import { MoveVideo } from '~/components/MoveVideo';
+import { SimpleMovesTable } from '~/components/SimpleMovesTable';
 import { type Move } from '~/types/Move';
 import {
   getCharacterFrameData,
   getCharacterFrameDataMoves,
 } from '~/utils/characterPageUtils';
-import { getRecoveryFrames } from '~/utils/frameDataUtils';
+import { getRecoveryFrames, getRelatedMoves } from '~/utils/frameDataUtils';
 import { getCacheControlHeaders } from '~/utils/headerUtils';
 import { commandToUrlSegment } from '~/utils/moveUtils';
 
@@ -124,6 +125,8 @@ export default function MoveRoute() {
     return <div>Not able to find frame data for the move {command}</div>;
   }
 
+  const relatedMoves = getRelatedMoves(move, moves);
+
   return (
     <ContentContainer enableTopPadding enableBottomPadding>
       <Text size="7" mr="6" as="span" className="sr-only">
@@ -140,7 +143,7 @@ export default function MoveRoute() {
         <MoveVideo move={move} />
       </div>
 
-      <Table.Root variant="surface" className="mt-4" style={{ width: '100%' }}>
+      <Table.Root variant="surface" className="mt-4 w-full">
         <Table.Body>
           <Table.Row>
             <Table.RowHeaderCell>Hit level</Table.RowHeaderCell>
@@ -173,10 +176,20 @@ export default function MoveRoute() {
           </Table.Row>
           <Table.Row>
             <Table.RowHeaderCell>Notes</Table.RowHeaderCell>
-            <Table.Cell>{move.notes}</Table.Cell>
+            <Table.Cell>
+              {move.notes?.split('\n').map((line, index) => (
+                <div key={index}>{line}</div>
+              ))}
+            </Table.Cell>
           </Table.Row>
         </Table.Body>
       </Table.Root>
+      <h2 className="text-base mt-5 mb-3">Related moves </h2>
+      <SimpleMovesTable
+        moves={relatedMoves}
+        charId={characterName}
+        gameRouteId="t8"
+      />
     </ContentContainer>
   );
 }

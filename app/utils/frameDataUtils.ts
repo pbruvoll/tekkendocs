@@ -838,3 +838,35 @@ export const getRecoveryFrames = (move: Move): string | undefined => {
   const match = move.recovery.match(/(?:^|\s)r(\d\S*)(?=\s|$)/i);
   return match?.[1];
 };
+
+export const getRelatedMoves = (move: Move, moves: Move[]): Move[] => {
+  const parts = move.command.split(',');
+  return moves
+    .filter((m) => {
+      if (!m.command || !move.command || m.command === move.command) {
+        return false;
+      }
+
+      // is ancestor
+      const mParts = m.command.split(',');
+      if (mParts.length < parts.length) {
+        return move.command.startsWith(m.command);
+      }
+
+      // is sibling
+      if (parts.length === mParts.length) {
+        return (
+          parts.length > 1 &&
+          parts.slice(0, -1).join('') === mParts.slice(0, -1).join('')
+        );
+      }
+
+      // is descendant
+      return m.command.startsWith(move.command);
+    })
+    .sort(
+      (a, b) =>
+        (a.command.split(',').length === parts.length ? 1 : 0) -
+        (b.command.split(',').length === parts.length ? 1 : 0),
+    );
+};

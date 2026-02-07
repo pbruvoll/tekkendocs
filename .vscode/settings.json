@@ -2,5 +2,16 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
   },
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "chat.tools.terminal.autoApprove": {
+    "npx vitest": true,
+    "/^node node_modules/\\.bin/vitest run app/utils/frameDataUtils\\.test\\.ts$/": {
+      "approve": true,
+      "matchCommandLine": true
+    },
+    "/^node node_modules/vitest/vitest\\.mjs run app/utils/frameDataUtils\\.test\\.ts$/": {
+      "approve": true,
+      "matchCommandLine": true
+    }
+  }
 }
