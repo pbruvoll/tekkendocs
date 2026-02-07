@@ -839,16 +839,21 @@ export const getRecoveryFrames = (move: Move): string | undefined => {
   return match?.[1];
 };
 
+export const splitMoveCommand = (command: string): string[] => {
+  return command.split(/(?<=\d),/);
+};
+
 export const getRelatedMoves = (move: Move, moves: Move[]): Move[] => {
-  const parts = move.command.split(',');
+  const parts = splitMoveCommand(move.command);
   return moves
     .filter((m) => {
       if (!m.command || !move.command || m.command === move.command) {
         return false;
       }
 
+      const mParts = splitMoveCommand(m.command);
+
       // is ancestor
-      const mParts = m.command.split(',');
       if (mParts.length < parts.length) {
         return move.command.startsWith(m.command);
       }
@@ -856,8 +861,10 @@ export const getRelatedMoves = (move: Move, moves: Move[]): Move[] => {
       // is sibling
       if (parts.length === mParts.length) {
         return (
-          parts.length > 1 &&
-          parts.slice(0, -1).join('') === mParts.slice(0, -1).join('')
+          m.command.replace(/\*/g, '').replace(/H\./g, '') ===
+            move.command.replace(/\*/g, '').replace(/H\./g, '') ||
+          (parts.length > 1 &&
+            parts.slice(0, -1).join('') === mParts.slice(0, -1).join(''))
         );
       }
 
@@ -866,7 +873,7 @@ export const getRelatedMoves = (move: Move, moves: Move[]): Move[] => {
     })
     .sort(
       (a, b) =>
-        (a.command.split(',').length === parts.length ? 1 : 0) -
-        (b.command.split(',').length === parts.length ? 1 : 0),
+        (splitMoveCommand(a.command).length === parts.length ? 1 : 0) -
+        (splitMoveCommand(b.command).length === parts.length ? 1 : 0),
     );
 };
