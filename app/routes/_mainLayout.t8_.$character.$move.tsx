@@ -184,12 +184,16 @@ export default function MoveRoute() {
           </Table.Row>
         </Table.Body>
       </Table.Root>
-      <h2 className="text-base mt-5 mb-3">Related moves </h2>
-      <SimpleMovesTable
-        moves={relatedMoves}
-        charId={characterName}
-        gameRouteId="t8"
-      />
+      {relatedMoves.length > 0 && (
+        <>
+          <h2 className="text-base mt-5 mb-3">Related moves </h2>
+          <SimpleMovesTable
+            moves={relatedMoves}
+            charId={characterName}
+            gameRouteId="t8"
+          />
+        </>
+      )}
     </ContentContainer>
   );
 }
