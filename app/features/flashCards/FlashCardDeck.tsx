@@ -56,7 +56,7 @@ const cardVariants = {
 
 export const FlashCardDeck = ({ cardKey, children }: FlashCardDeckProps) => {
   return (
-    <div className="relative h-115 w-full max-w-80">
+    <div className="relative h-115 w-full max-w-96">
       {/* Background deck cards */}
       {deckCardStyles.map((style) => (
         <div

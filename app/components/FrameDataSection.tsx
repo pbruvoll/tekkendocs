@@ -7,9 +7,9 @@ import { sortOptions } from '~/constants/sortOptions';
 import { type GameRouteId } from '~/types/GameRouteId';
 import { type Move } from '~/types/Move';
 import { type MoveFilter } from '~/types/MoveFilter';
-import { type SearchParamsChanges } from '~/types/SearchParamsChanges';
 import { getFilterFromParams } from '~/utils/filterUtils';
 import { getMoveFilterTypes } from '~/utils/frameDataUtils';
+import * as filterUtils from '~/utils/searchParamsFilterUtils';
 import {
   getSortByQueryParamValue,
   getSortSettings,
@@ -50,48 +50,6 @@ export const FrameDataSection = ({
   }, [searchParams, searchQuery]);
 
   const moveTypes = useMemo(() => getMoveFilterTypes(moves), [moves]);
-
-  const setFilterValue = (key: string, value: string) => {
-    setSearchParams((prev) => {
-      const newSearchParams = new URLSearchParams(prev);
-      newSearchParams.set(key, value);
-      return newSearchParams;
-    });
-  };
-
-  const removeFilterValue = (key: string) => {
-    setSearchParams((prev) => {
-      prev.delete(key);
-      return prev;
-    });
-  };
-
-  const updateFilterValues = (changes: SearchParamsChanges) => {
-    setSearchParams((prev) => {
-      const newSearchParams = new URLSearchParams(prev);
-      changes.set.forEach(({ key, value }) => {
-        newSearchParams.set(key, value);
-      });
-      changes.remove.forEach((key) => {
-        newSearchParams.delete(key);
-      });
-      return newSearchParams;
-    });
-  };
-
-  const addFilterElement = (key: string, element: string) => {
-    setSearchParams((prev) => {
-      prev.append(key, element);
-      return prev;
-    });
-  };
-
-  const removeFilterElement = (key: string, element: string) => {
-    setSearchParams((prev) => {
-      prev.delete(key, element);
-      return prev;
-    });
-  };
 
   const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const searchValue = event.target.value;
@@ -140,11 +98,21 @@ export const FrameDataSection = ({
             stances={moveTypes.stances}
             states={moveTypes.states}
             transitions={moveTypes.transitions}
-            removeFilterValue={removeFilterValue}
-            setFilterValue={setFilterValue}
-            updateFilterValues={updateFilterValues}
-            addFilterElement={addFilterElement}
-            removeFilterElement={removeFilterElement}
+            removeFilterValue={(key) =>
+              filterUtils.removeFilterValue(setSearchParams, key)
+            }
+            setFilterValue={(key, value) =>
+              filterUtils.setFilterValue(setSearchParams, key, value)
+            }
+            updateFilterValues={(changes) =>
+              filterUtils.updateFilterValues(setSearchParams, changes)
+            }
+            addFilterElement={(key, element) =>
+              filterUtils.addFilterElement(setSearchParams, key, element)
+            }
+            removeFilterElement={(key, element) =>
+              filterUtils.removeFilterElement(setSearchParams, key, element)
+            }
           />
         </div>
       </ContentContainer>
