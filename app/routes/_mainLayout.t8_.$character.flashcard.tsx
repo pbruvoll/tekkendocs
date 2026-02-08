@@ -1,6 +1,6 @@
 import { Heading } from '@radix-ui/themes';
 import { type ChangeEvent, useId, useMemo, useState } from 'react';
-import { type MetaFunction } from 'react-router';
+import { type MetaFunction, useSearchParams } from 'react-router';
 import invariant from 'tiny-invariant';
 import { Button } from '@/components/ui/button';
 import {
@@ -14,6 +14,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Switch } from '@/components/ui/switch';
 import { ContentContainer } from '~/components/ContentContainer';
+import { FrameDataFilterDialog } from '~/components/FrameDataFilterDialog';
 import Nav, { type NavLinkInfo } from '~/components/Nav';
 import { TaskProgress } from '~/components/TaskProgress';
 import { AnimatedCollapsible } from '~/features/flashCards/AnimatedCollapsible';
@@ -30,8 +31,13 @@ import { useFrameData } from '~/hooks/useFrameData';
 import { characterGuideAuthors } from '~/services/staticDataService';
 import { type CharacterFrameData } from '~/types/CharacterFrameData';
 import { type Move } from '~/types/Move';
+import { type MoveFilter } from '~/types/MoveFilter';
 import { type RouteHandle } from '~/types/RouteHandle';
+import { type SearchParamsChanges } from '~/types/SearchParamsChanges';
+import { getFilterFromParams } from '~/utils/filterUtils';
+import { filterMoves, getMoveFilterTypes } from '~/utils/frameDataUtils';
 import { getCacheControlHeaders } from '~/utils/headerUtils';
+import * as filterUtils from '~/utils/searchParamsFilterUtils';
 import { generateMetaTags } from '~/utils/seoUtils';
 import { t8AvatarMap } from '~/utils/t8AvatarMap';
 
@@ -78,9 +84,26 @@ export default function FlashCard() {
   const [moveToShow, setMoveToShow] = useState<Move | undefined>();
   const { characterName, moves } = useFrameData();
   const showCharName = characterName === 'mokujin';
-  const viableMoves = useMemo(
+  const allViableMoves = useMemo(
     () => moves.filter((move) => Boolean(move.block)),
     [moves],
+  );
+
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const moveFilter = useMemo(
+    () => getFilterFromParams(searchParams),
+    [searchParams],
+  );
+
+  const moveFilterTypes = useMemo(
+    () => getMoveFilterTypes(allViableMoves),
+    [allViableMoves],
+  );
+
+  const viableMoves = useMemo(
+    () => filterMoves(allViableMoves, moveFilter),
+    [allViableMoves, moveFilter],
   );
   const numViableMoves = viableMoves.length;
 
@@ -270,7 +293,7 @@ export default function FlashCard() {
         enableTopPadding
         className="flex justify-center"
       >
-        <div>
+        <div className="w-full max-w-96">
           <h1 className="sr-only">Flash cards</h1>
           {numViableMoves === 0 ? (
             <div>No moves available for {characterName}</div>
@@ -286,6 +309,25 @@ export default function FlashCard() {
               startFromMoveNum={startFromMoveNumber}
               handleStartFromMoveNumChange={handleStartFromMoveNumChange}
               handleNumMovesToPracticeChange={handleNumMovesToPracticeChange}
+              filter={moveFilter}
+              setFilterValue={(key, value) =>
+                filterUtils.setFilterValue(setSearchParams, key, value)
+              }
+              removeFilterValue={(key) =>
+                filterUtils.removeFilterValue(setSearchParams, key)
+              }
+              updateFilterValues={(changes) =>
+                filterUtils.updateFilterValues(setSearchParams, changes)
+              }
+              addFilterElement={(key, element) =>
+                filterUtils.addFilterElement(setSearchParams, key, element)
+              }
+              removeFilterElement={(key, element) =>
+                filterUtils.removeFilterElement(setSearchParams, key, element)
+              }
+              stances={moveFilterTypes.stances}
+              states={moveFilterTypes.states}
+              transitions={moveFilterTypes.transitions}
               onResetState={() =>
                 setFlashCardAppState({
                   ...flashCardAppState,
@@ -325,6 +367,15 @@ type StartPageProps = {
   numCorrect: number;
   numWrong: number;
   numIngnored: number;
+  filter: MoveFilter;
+  setFilterValue: (key: string, value: string) => void;
+  removeFilterValue: (key: string) => void;
+  updateFilterValues: (changes: SearchParamsChanges) => void;
+  addFilterElement: (key: string, element: string) => void;
+  removeFilterElement: (key: string, element: string) => void;
+  stances: string[];
+  states: string[];
+  transitions: string[];
 };
 const StartPage = ({
   characterName,
@@ -338,6 +389,15 @@ const StartPage = ({
   numUnseen,
   numWrong,
   onResetState,
+  filter,
+  setFilterValue,
+  removeFilterValue,
+  updateFilterValues,
+  addFilterElement,
+  removeFilterElement,
+  stances,
+  states,
+  transitions,
 }: StartPageProps) => {
   const totalMoves = numCorrect + numUnseen + numWrong;
   const numMovesId = useId();
@@ -345,7 +405,7 @@ const StartPage = ({
 
   return (
     <div className="flex flex-col items-center">
-      <Card className="w-80">
+      <Card className="w-full max-w-96">
         <CardHeader className="text-center">
           <CardTitle className="text-2xl">Flash Cards</CardTitle>
           <CardDescription>
@@ -366,9 +426,13 @@ const StartPage = ({
               <span className="text-muted-foreground">Unseen:</span>
               <span className="font-medium">{numUnseen}</span>
               <span className="text-muted-foreground">Correct:</span>
-              <span className="font-medium text-green-500">{numCorrect}</span>
+              <span className="font-medium text-foreground-success">
+                {numCorrect}
+              </span>
               <span className="text-muted-foreground">Wrong:</span>
-              <span className="font-medium text-red-500">{numWrong}</span>
+              <span className="font-medium text-foreground-destructive">
+                {numWrong}
+              </span>
               <span className="text-muted-foreground">Ignored:</span>
               <span className="font-medium">{numIngnored}</span>
             </div>
@@ -376,6 +440,20 @@ const StartPage = ({
 
           <AnimatedCollapsible title="Advanced Settings">
             <div className="space-y-4">
+              <div>
+                <FrameDataFilterDialog
+                  filter={filter}
+                  stances={stances}
+                  states={states}
+                  transitions={transitions}
+                  setFilterValue={setFilterValue}
+                  removeFilterValue={removeFilterValue}
+                  updateFilterValues={updateFilterValues}
+                  addFilterElement={addFilterElement}
+                  removeFilterElement={removeFilterElement}
+                />
+              </div>
+
               <div className="space-y-2">
                 <Label htmlFor={numMovesId} className="text-sm">
                   Moves to practice (1 - {totalMoves})
@@ -451,7 +529,7 @@ const FlashCardGame = ({
   };
 
   return (
-    <div className="flex flex-col items-center gap-6">
+    <div className="flex w-full flex-col items-center gap-6">
       <FlashCardDeck cardKey={moveToShow.command}>
         <FlipCard
           flipped={flipped}
@@ -469,7 +547,7 @@ const FlashCardGame = ({
       </FlashCardDeck>
 
       <TaskProgress
-        className="w-80"
+        className="w-full max-w-96"
         numCompleted={numCorrect}
         total={numCorrect + numUnseen + numWrong}
       />

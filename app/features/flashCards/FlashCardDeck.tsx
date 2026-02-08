@@ -7,62 +7,61 @@ export type FlashCardDeckProps = {
 };
 
 // Deck card variants for stacked background cards
+// Uses scale + vertical offset to stay within bounds (no overflow)
 const deckCardStyles = [
-  // Card 1 - middle of deck (slightly offset)
+  // Card 1 - middle of deck
   {
     id: 'deck-1',
-    transform: 'translateX(8px) translateY(8px) rotate(2deg)',
-    opacity: 0.6,
+    transform: 'translateY(6px) translateX(6px)',
+    opacity: 0.8,
     zIndex: 1,
   },
-  // Card 2 - back of deck (more offset)
+  // Card 2 - back of deck
   {
     id: 'deck-2',
-    transform: 'translateX(16px) translateY(16px) rotate(4deg)',
-    opacity: 0.3,
+    transform: 'translateY(12px) translateX(12px)',
+    opacity: 0.5,
     zIndex: 0,
   },
 ];
 
 // Animation variants for the active card
+// Enter: starts at the deck-1 position (behind the active card), then scales up
+// Exit: flies off to the left like a discarded card
 const cardVariants = {
   enter: {
-    x: 300,
-    opacity: 0,
-    rotate: 15,
-    scale: 0.9,
+    y: 8,
+    opacity: 0.8,
+    scale: 0.95,
   },
   center: {
-    x: 0,
+    y: 0,
     opacity: 1,
-    rotate: 0,
     scale: 1,
     transition: {
-      duration: 0.4,
-      type: 'spring' as const,
-      stiffness: 100,
-      damping: 15,
+      duration: 0.15,
+      ease: 'easeOut' as const,
     },
   },
   exit: {
     x: -300,
     opacity: 0,
-    rotate: -15,
-    scale: 0.9,
+    rotate: -10,
+    scale: 0.95,
     transition: {
-      duration: 0.3,
+      duration: 0.15,
     },
   },
 };
 
 export const FlashCardDeck = ({ cardKey, children }: FlashCardDeckProps) => {
   return (
-    <div className="relative h-115 w-80">
+    <div className="relative h-115 w-full max-w-96">
       {/* Background deck cards */}
       {deckCardStyles.map((style) => (
         <div
           key={style.id}
-          className="absolute inset-0 rounded-2xl border border-border/50 bg-muted/50 shadow-md"
+          className="absolute inset-0 rounded-2xl border border-border bg-muted shadow-md"
           style={{
             transform: style.transform,
             opacity: style.opacity,
@@ -72,7 +71,7 @@ export const FlashCardDeck = ({ cardKey, children }: FlashCardDeckProps) => {
       ))}
 
       {/* Active card with animations */}
-      <AnimatePresence mode="popLayout">
+      <AnimatePresence mode="wait">
         <motion.div
           key={cardKey}
           className="absolute inset-0"
