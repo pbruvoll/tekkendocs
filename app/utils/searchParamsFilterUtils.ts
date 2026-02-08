@@ -1,8 +1,6 @@
 import { type SearchParamsChanges } from '~/types/SearchParamsChanges';
 
-type SetSearchParams = (
-  fn: (prev: URLSearchParams) => URLSearchParams,
-) => void;
+type SetSearchParams = (fn: (prev: URLSearchParams) => URLSearchParams) => void;
 
 export const setFilterValue = (
   setSearchParams: SetSearchParams,
