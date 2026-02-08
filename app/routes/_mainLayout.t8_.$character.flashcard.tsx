@@ -270,7 +270,7 @@ export default function FlashCard() {
         enableTopPadding
         className="flex justify-center"
       >
-        <div>
+        <div className="w-full max-w-80">
           <h1 className="sr-only">Flash cards</h1>
           {numViableMoves === 0 ? (
             <div>No moves available for {characterName}</div>
@@ -345,7 +345,7 @@ const StartPage = ({
 
   return (
     <div className="flex flex-col items-center">
-      <Card className="w-80">
+      <Card className="w-full max-w-80">
         <CardHeader className="text-center">
           <CardTitle className="text-2xl">Flash Cards</CardTitle>
           <CardDescription>
@@ -366,9 +366,13 @@ const StartPage = ({
               <span className="text-muted-foreground">Unseen:</span>
               <span className="font-medium">{numUnseen}</span>
               <span className="text-muted-foreground">Correct:</span>
-              <span className="font-medium text-green-500">{numCorrect}</span>
+              <span className="font-medium text-foreground-success">
+                {numCorrect}
+              </span>
               <span className="text-muted-foreground">Wrong:</span>
-              <span className="font-medium text-red-500">{numWrong}</span>
+              <span className="font-medium text-foreground-destructive">
+                {numWrong}
+              </span>
               <span className="text-muted-foreground">Ignored:</span>
               <span className="font-medium">{numIngnored}</span>
             </div>
@@ -451,7 +455,7 @@ const FlashCardGame = ({
   };
 
   return (
-    <div className="flex flex-col items-center gap-6">
+    <div className="flex w-full flex-col items-center gap-6">
       <FlashCardDeck cardKey={moveToShow.command}>
         <FlipCard
           flipped={flipped}
@@ -469,7 +473,7 @@ const FlashCardGame = ({
       </FlashCardDeck>
 
       <TaskProgress
-        className="w-80"
+        className="w-full max-w-80"
         numCompleted={numCorrect}
         total={numCorrect + numUnseen + numWrong}
       />

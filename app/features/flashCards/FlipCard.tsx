@@ -18,7 +18,7 @@ export const FlipCard = ({
     <div className={className} style={{ perspective: '1200px' }}>
       <motion.div
         className="relative h-full w-full"
-        initial={false}
+        initial={{ rotateY: 0 }}
         animate={{ rotateY: flipped ? 180 : 0 }}
         transition={{
           duration: 0.6,
