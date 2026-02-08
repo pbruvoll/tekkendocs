@@ -43,7 +43,7 @@ export const FlashCardBack = ({ move, onAnswer }: FlashCardBackProps) => {
           </div>
         </div>
         <div className="flex min-h-36 items-center justify-center px-4 pb-2">
-          <ShowVideoButton move={move} className="w-full" hideFrameData />
+          <ShowVideoButton move={move} className="w-full" />
         </div>
       </div>
       <div className="flex w-full shrink-0 justify-between border-t border-border/50 p-2">
