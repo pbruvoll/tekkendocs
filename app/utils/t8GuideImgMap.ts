@@ -1,3 +1,4 @@
+import alisa from '~/images/t8/guides/alisa-1200.webp';
 import anna from '~/images/t8/guides/anna-1200.webp';
 import asuka from '~/images/t8/guides/asuka-1200.webp';
 import azucena from '~/images/t8/guides/azucena-1200.webp';
@@ -23,6 +24,7 @@ import xiaoyu from '~/images/t8/guides/xiaoyu-1200.webp';
 import yoshimitsu from '~/images/t8/guides/yoshimitsu-1200.webp';
 
 export const t8GuideImgMap: Record<string, string> = {
+  alisa,
   anna,
   asuka,
   azucena,
