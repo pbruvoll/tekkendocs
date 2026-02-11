@@ -130,7 +130,7 @@ b+1+3;sp;15 (15);;;;;"* Removes Recoverable Health
 * Punch parry
 * Hit throw on successful parry
 * Side switch on parry
-* Parry state 5?";ps5?;;Shaheen-b+1+3;Silent Death Trap;;;
+* Parry state 5~12";ps5~12;;Shaheen-b+1+3;Silent Death Trap;;;
 b+2;m(th);12,16;i14~15;-9;-2d;;"* Removes Recoverable Health
 * Transition to attack throw on standing front hit";;;Shaheen-b+2;Dust Storm;;;File:t8-p2-shaheen-b+2.mp4
 b+3;m;17;i19;+1c;+3c;+14c;* 5 chip damage on block;;;Shaheen-b+3;Heel Strike;;;File:t8-p2-shaheen-b+3.mp4
@@ -228,23 +228,25 @@ SNK.df+1,3;m, m;12, 28;i15~16, i27~28;-13;+19a (+9);;"* Heat Engager
 * Move can be delayed by 6F
 * Input can be delayed by 7F
 * Low crush";he bbr js;;Shaheen-SNK.df+1,3;Flash Deneb;;;File:t8-p2-shaheen-snk.df+1,3.mp4
-1+3;th(h);35;i12~14;;;;"* Homing
+1+3;th(h);35;i12~14;-3;+0d;;"* Homing
 * Throw escape: 1 or 2
 * Opponent status on hit: FUFA";hom;;Shaheen-1+3;Desert Fang;;;File:t8-p2-shaheen-1+3.mp4
-2+4;th(h);35;i12~14;;;;"* Homing
+2+4;th(h);35;i12~14;-6;+0d;;"* Homing
 * Floor Break
 * Throw escape: 1 or 2
 * Opponent status on hit: FUFA
 * Side switch on hit";hom fbr;;Shaheen-2+4;Aldebaran;;;File:t8-p2-shaheen-2+4.mp4
-Back throw;th(h);50;i12~14;;;;"* Throw escape: none
+Back throw;th(h);50;i12~14;;+0d;;"Removes Recoverable Health
+* Throw escape: none
 * Opponent status on hit: FUFA
 * Side switch on hit";;;Shaheen-Back throw;Silent Death;;;
-Left throw;th(h);40;i12~14;;;;"* Throw escape: 1
+Left throw;th(h);40;i12~14;-3;+0d;;"* Throw escape: 1
 * Opponent status on hit: FUFT
 * Side switch on hit";;;Shaheen-Left throw;Chasm Drop;;;
-Right throw;th(h);40;i12~14;;;;"* Throw escape: 2
+Right throw;th(h);40;i12~14;-3;+0d;;"Removes Recoverable Health
+* Throw escape: 2
 * Opponent status on hit: FUFA";;;Shaheen-Right throw;Axel Spinner;;;
-uf+1+2;th(h);40;i12~14;;;;"* Floor Break
+uf+1+2;th(h);40;i12~14;-3;+0d;;"* Floor Break
 * Throw escape: 1+2
 * Opponent status on hit: FUFA
 * Side switch on hit";fbr;;Shaheen-uf+1+2;Wezen;;;File:t8-p2-shaheen-uf+1+2.mp4
