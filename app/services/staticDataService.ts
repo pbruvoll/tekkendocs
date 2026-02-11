@@ -170,6 +170,7 @@ export const characterGuideAuthors: Record<
   Record<string, GuideMetaData>
 > = {
   T8: {
+    alisa: { author: 'Nick RM', version: 'S2' },
     asuka: { author: 'Fergus', version: 'S2' },
     anna: { author: 'Joi', version: 'S2' },
     azucena: { author: 'Koenji', version: 'S2' },
