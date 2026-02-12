@@ -11,6 +11,7 @@ import fahkumram from '~/images/t8/guides/fahkumram-600.webp';
 import hwoarang from '~/images/t8/guides/hwoarang-600.webp';
 import jin from '~/images/t8/guides/jin-600.webp';
 import jun from '~/images/t8/guides/jun-600.webp';
+import kuma from '~/images/t8/guides/kuma-600.webp';
 import lars from '~/images/t8/guides/lars-600.webp';
 import law from '~/images/t8/guides/law-600.webp';
 import lee from '~/images/t8/guides/lee-600.webp';
@@ -18,7 +19,9 @@ import leo from '~/images/t8/guides/leo-600.webp';
 import leroy from '~/images/t8/guides/leroy-600.webp';
 import lidia from '~/images/t8/guides/lidia-600.webp';
 import lili from '~/images/t8/guides/lili-600.webp';
+import panda from '~/images/t8/guides/panda-600.webp';
 import raven from '~/images/t8/guides/raven-600.webp';
+import steve from '~/images/t8/guides/steve-600.webp';
 import victor from '~/images/t8/guides/victor-600.webp';
 import xiaoyu from '~/images/t8/guides/xiaoyu-600.webp';
 import yoshimitsu from '~/images/t8/guides/yoshimitsu-600.webp';
@@ -37,6 +40,7 @@ export const t8GuideImgSmallMap: Record<string, string> = {
   hwoarang,
   jin,
   jun,
+  kuma,
   lars,
   law,
   lee,
@@ -44,7 +48,9 @@ export const t8GuideImgSmallMap: Record<string, string> = {
   leroy,
   lidia,
   lili,
+  panda,
   raven,
+  steve,
   victor,
   xiaoyu,
   yoshimitsu,

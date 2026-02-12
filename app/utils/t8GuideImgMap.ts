@@ -11,6 +11,7 @@ import fahkumram from '~/images/t8/guides/fahkumram-1200.webp';
 import hwoarang from '~/images/t8/guides/hwoarang-1200.webp';
 import jin from '~/images/t8/guides/jin-1200.webp';
 import jun from '~/images/t8/guides/jun-1200.webp';
+import kuma from '~/images/t8/guides/kuma-1200.webp';
 import lars from '~/images/t8/guides/lars-1200.webp';
 import law from '~/images/t8/guides/law-1200.webp';
 import lee from '~/images/t8/guides/lee-1200.webp';
@@ -18,7 +19,9 @@ import leo from '~/images/t8/guides/leo-1200.webp';
 import leroy from '~/images/t8/guides/leroy-1200.webp';
 import lidia from '~/images/t8/guides/lidia-1200.webp';
 import lili from '~/images/t8/guides/lili-1200.webp';
+import panda from '~/images/t8/guides/panda-1200.webp';
 import raven from '~/images/t8/guides/raven-1200.webp';
+import steve from '~/images/t8/guides/steve-1200.webp';
 import victor from '~/images/t8/guides/victor-1200.webp';
 import xiaoyu from '~/images/t8/guides/xiaoyu-1200.webp';
 import yoshimitsu from '~/images/t8/guides/yoshimitsu-1200.webp';
@@ -38,13 +41,16 @@ export const t8GuideImgMap: Record<string, string> = {
   lars,
   jin,
   jun,
+  kuma,
   law,
   lee,
   leo,
   leroy,
   lili,
   lidia,
+  panda,
   raven,
+  steve,
   victor,
   xiaoyu,
   yoshimitsu,
