@@ -1,6 +1,6 @@
 import { Link } from 'react-router';
 import { type Move } from '~/types/Move';
-import { compressCommand } from '~/utils/commandUtils';
+import { compressCommand, removeTransitionInput } from '~/utils/commandUtils';
 import { commandToUrlSegmentEncoded } from '~/utils/moveUtils';
 
 export type CommandProps = {
@@ -13,7 +13,10 @@ export const Command = ({
   charUrl,
   compressedCommandMap,
 }: CommandProps) => {
-  const move = compressedCommandMap[compressCommand(command)];
+  const compressCommanded = compressCommand(command);
+  const move =
+    compressedCommandMap[compressCommanded] ||
+    compressedCommandMap[removeTransitionInput(command)];
   if (!move) {
     return <b>{command}</b>;
   }
