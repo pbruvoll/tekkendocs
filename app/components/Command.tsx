@@ -13,10 +13,10 @@ export const Command = ({
   charUrl,
   compressedCommandMap,
 }: CommandProps) => {
-  const compressCommanded = compressCommand(command);
+  const compressedCommand = compressCommand(command);
   const move =
-    compressedCommandMap[compressCommanded] ||
-    compressedCommandMap[removeTransitionInput(command)];
+    compressedCommandMap[compressedCommand] ||
+    compressedCommandMap[removeTransitionInput(compressedCommand)];
   if (!move) {
     return <b>{command}</b>;
   }
