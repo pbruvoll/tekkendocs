@@ -7,3 +7,7 @@ export const compressCommand = (command: string): string => {
     .toLowerCase()
     .replace(/(?<=[a-z]),(?=[a-z])/g, ''); //f,f1,2 => ff1,2 // only relevant for anti strat guide
 };
+
+export const removeTransitionInput = (command: string): string => {
+  return command.replace(/[~,][a-z]+$/g, ''); //1,2~f => 1,2, f+2,df => f+2
+};
