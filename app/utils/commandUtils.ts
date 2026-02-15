@@ -10,4 +10,4 @@ export const compressCommand = (command: string): string => {
 
 export const removeTransitionInput = (command: string): string => {
   return command.replace(/[~,][a-z]+$/g, ''); //1,2~f => 1,2, f+2,df => f+2
-}
+};
