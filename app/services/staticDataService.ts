@@ -200,6 +200,8 @@ export const characterGuideAuthors: Record<
   TT2: {},
 };
 
+export const internalMoveVideoSet = new Set(['reina', 'jun']);
+
 export const getTekken7Characters = (): CharacterInfo[] => {
   return characterInfoListT7;
 };

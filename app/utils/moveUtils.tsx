@@ -1,4 +1,4 @@
-import { type MoveT8 } from '~/types/Move';
+import { type Move, type MoveT8 } from '~/types/Move';
 
 const urlEncodedColon = encodeURIComponent(':');
 
@@ -8,6 +8,10 @@ export const commandToUrlSegment = (command: string): string => {
 
 export const commandToUrlSegmentEncoded = (command: string): string => {
   return commandToUrlSegment(command).replace(/:/g, urlEncodedColon);
+};
+
+export const isWavuMove = (move: Move): move is MoveT8 => {
+  return 'wavuId' in move && move.wavuId !== undefined;
 };
 
 export const charIdFromMove = (move: MoveT8): string => {
