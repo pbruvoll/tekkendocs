@@ -38,10 +38,10 @@ def moveInstallmentToFront(input, installment):
     return input
 
 # "Transitions to ZEN", "Cancel to BT with" -> "ZEN", "BT"
-transToIgnore = ("with", "attack", "attacks", "standing", "throw", "block", "second", "triple", "releasing", "heel", "arm", "hell's", "awakened", "backdash", "dash", "evasive", "h", "n", "snap", "avalanche", "strings")
+transToIgnore = ("with", "attack", "attacks", "standing", "back", "throw", "hit", "block", "second", "triple", "releasing", "heel", "arm", "hell's", "awakened", "backdash", "dash", "evasive", "h", "n", "snap", "avalanche", "strings")
 def getTransitions(move) :
     notes = re.sub(r'r\d+\??', '', move["notes"])
-    matches = re.findall(r'(?:enter|cancel to|links to|transition to)\s+((?:(?:r\d|t\d|\d\d|cs|\+|-|\()[^\s]*\s+)*)?(\S*(\s\S*\s?(?:extensions|roll|step|tackle))?)', notes, re.IGNORECASE)
+    matches = re.findall(r'(?:enter|cancel (?:to|into)|links to|transitions? (?:to|into))\s+((?:(?:r\d|t\d|\d\d|cs|\+|-|\()[^\s]*\s+)*)?(\S*(\s\S*\s?(?:extensions|roll|step|tackle))?)', notes, re.IGNORECASE)
     filtered = [match[1] for match in matches if match[1].lower() not in transToIgnore]
     recoveryValue = move["recovery"].split(" ")[-1]
     if recoveryValue :
