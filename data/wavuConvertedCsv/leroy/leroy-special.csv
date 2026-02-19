@@ -1,6 +1,9 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Transitions;Wavu id;Name;Recovery;Image;Video
 2+3;m;12 (12);i16;+1;+2c;;"* Heat Burst
 * Power crush";hb pc;;Leroy-2+3;Heat Burst;;;
+H.b+1+2;;20;;-9;+35a (+27);;"* Balcony Break
+* Consumes 210F of remaining Heat time
+* Crumple stun +14F after CH";bbr;;Leroy-H.b+1+2;Outcast Dark Deluge;;;
 H.2+3;m;50 (25);i15;+6;+0;;"* Heat Smash
 * Balcony Break
 * Alternate input: H.HRM.2+3
@@ -16,7 +19,7 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Transition to attack throw on hit
 * Consumes Rage
 * Power crush 8~";rbr pc8~;;Leroy-R.df+1+2;Dark Dragon Commandment;r39;;
-1;h;5;i10;+1;+8;;;;;Leroy-1;;r19;;
+1;h;5;i10;+1;+8;;Recovers 2f faster on hit or block (t27 r17);;;Leroy-1;Jab;r19;;
 1,1;h, m;5, 7;i10, i18~19;-9~-8;+2~+3;;"* Combo from 1st hit CH
 * Slightly delayable 
 * Jails unless delayed";;;Leroy-1,1;;r25;;
@@ -33,12 +36,14 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Combo from 2nd hit CH
 * Low crush";bbr js;;Leroy-1,2,3;Front Palm Xuan Feng Jiao;;;File:t8-p2-leroy-1,2,3.mp4
 1,2,4;h, h, m;5, 9, 11;i10, ,i16;-9;+3;;"* Transition to HRM
-* Combo from 1st hit";;HRM,HRM;Leroy-1,2,4;Front Palm Snap Kick;HRM;;File:t8-p2-leroy-1,2,4.mp4
+* Combo from 1st hit
+* Jail from 1st block";;HRM,HRM;Leroy-1,2,4;Front Palm Snap Kick;HRM;;File:t8-p2-leroy-1,2,4.mp4
 1+3+4;sp;;;;;;"* Reversal (partially restores remaining Heat time when successful during Heat)
 * Follow-up upon successful reversal with input 1 or 2 to Chain Punch: Branch
 * Parry state 20~100";ps20~100;;Leroy-1+3+4;Taunt;;;File:t8-p2-leroy-1+3+4.mp4
-2;h;10;i12;0;+9;;;;;Leroy-2;;r18;;
-2,1;h, m;10, 12;i12, i12~13;-7~-6;+4~+5;;Elbow;elb;;Leroy-2,1;;r10;;
+2;h;10;i12;+0;+9;;;;;Leroy-2;;r18;;
+2,1;h, m;10, 12;i12, i12~13;-7~-6;+4~+5;;"* Elbow
+* Jail from 1st block";elb;;Leroy-2,1;;r10;;
 2,1,2;h, m, h;10, 12, 17;i12, ,i20~21;-7~-6;+4~+5;;"Elbow
 * Follow-up after successful parry with input 1 or 2
 * Partially restores remaining Heat time when successful during Heat
@@ -122,8 +127,10 @@ df+3,1,1+2;m, h, m;14, 12, 25;i16, ,i20~21;-13;+34 (+13);;"* Balcony Break
 * Delayable";bbr;;Leroy-df+3,1,1+2;Poison Strike;;;File:t8-p2-leroy-df+3,1,1+2.mp4
 df+4;m;14;i13;-6;+6;;Transition to HRM;;HRM,HRM;Leroy-df+4;;HRM;;
 df+4,3;m, m;14, 14;i13, i20~21;-9;+7;+37d (+29);"* Knee
-* Combo from 1st hit CH
-* Delayable";kne;;Leroy-df+4,3;Snap Kick Knee;;;File:t8-p2-leroy-df+4,3.mp4
+* Combo from 1st hit CH with 7?F delay
+* Move can be delayed by 3?F
+* Input can be delayed by 7?F
+* Interrupt with i3 from 1st block";kne;;Leroy-df+4,3;Snap Kick Knee;;;File:t8-p2-leroy-df+4,3.mp4
 df+3+4;h;23;i18~19;-2;+70a(+54)~+71a(+55);;"* Tornado
 * chip damage on block
 * High crush 
@@ -174,9 +181,7 @@ b+3;h;27;i22~23;+9~+10;+16~+17c;;"* Balcony Break
 * Cancel into HRM with input b+3,3+4
 * chip damage on block";bbr hom chp;HRM,HRM;Leroy-b+3;Beheading Back Kick;HRM;;File:t8-p2-leroy-b+3.mp4
 b+4;m;16;i17~18;-9;+4;;Homing;hom;;Leroy-b+4;Zhuan Shen Jiao;;;File:t8-p2-leroy-b+4.mp4
-b+1+2;m;17;i12;-10;+2;+60;;;;Leroy-b+1+2;Outcast Arrow;;;File:t8-p2-leroy-b+1+2.mp4
-b+1+2;m;17;i12;-9;+35d (+27);+60cs;"* Balcony Break
-* Partially consumes remaining hit";bbr;;Leroy-H.b+1+2;Outcast Dark Deluge;;;File:t8-p2-leroy-b+1+2.mp4
+b+1+2;m;17;i12;-10;+2;+60a;* Crumple stun +14F after CH;;;Leroy-b+1+2;Outcast Arrow;r38;;File:t8-p2-leroy-b+1+2.mp4
 b+3+4;M,th;21,25;i18~19;-8;+0d;;"* Balcony Break
 * Shifts to throw on hit from the front";bbr;;Leroy-b+3+4;Earth Sunder Chain;;;File:t8-p2-leroy-b+3+4.mp4
 ub+2;m;17;i20;-10;+3;+33d (+25);"* Has punch parry effect

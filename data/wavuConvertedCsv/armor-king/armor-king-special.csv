@@ -182,7 +182,8 @@ b+2,1,2;m, m, h;10, 8, 20;i13, ,i25~26;-7;+19a (+10);;"* Balcony Break
 b+3;h;17;i16~18;-12;+66a (+50);;"* Balcony Break
 * Tornado";bbr trn;;Armor King-b+3;Dark Toll Kick;r33;;
 b+4;m;15;i15~18;-9;+2;;;;;Armor King-b+4;Toe Kick;r32;;
-b+4,1+2;m, t;15, 20;i15~18, ;;+0d;;Throw only comes out on front hit;;;Armor King-b+4,1+2;Toe Kick > Stunner;;;
+b+4,1+2;m, t;15, 20;i15~18, ;;+0d;;"* Throw only comes out on front hit
+* Input 1+2 during frames 2-18 of b+4";;;Armor King-b+4,1+2;Toe Kick > Stunner;;;
 b+1+2;m;0;i16~17;+0;+4;+15;;;;Armor King-b+1+2;Blindside;r27;;
 b+3+4;m;22;i20~21;-9;+12a (+3);;"* Homing
 * Balcony Break";hom bbr;;Armor King-b+3+4;Pendulum Kick;r37;;
@@ -248,10 +249,12 @@ f,n,d,df+1+2;h!;[5];i35~38;;+23g;;"*On hit, gives a special stun that makes thro
 *Comes out faster in heat
 *Cannot K.O";;;Armor King-f,n,d,df+1+2;Poison Mist;r29;;
 uf,n,4;m;20;i23~25;-13;+32a (+22);;* Low crush;js;;Armor King-uf,n,4;Delayed Rising Toe Kick;;;
-f,f,F+3;m;30;i23~25;+6;+22d;;"* Balcony Break
+f,f,F+3;m;30;i23~25;+6;+22c;;"* Balcony Break
 * 9 chip damage on block
+* Forces tech backroll on hit
 * Low crush";bbr js;;Armor King-f,f,F+3;Flying Brawler Kick;;;
-f,f,F+3+4;m;40;i28~34;+17g;+6d;;"* Balcony Break
+f,f,F+3+4;m;40;i28~34;+17g;+6c;;"* Balcony Break
+* Forces tech backroll on hit
 * Low crush";bbr js;FUFT;Armor King-f,f,F+3+4;Running Exploder;FUFT;;
 ws1;m;16;i15~16;-12;+31a (+21);;Elbow;elb;;Armor King-ws1;Snap Uppercut;;;
 ws2;m;17;i12;-9;+3;+27a;* On CH transition to True Dark Smash;;True;Armor King-ws2;Jugular Thrust;;;

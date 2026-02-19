@@ -71,8 +71,11 @@ f+1+2;m;16;i18;-15;+18a;;;;;Kuma-f+1+2;;;;
 f+1+2,1+2;m, M;16, 20;i18, i30~31;-14;+65a (+49);;"* Tornado
 * Combo from 1st hit
 * Grounded hit on off-axis hit against large body size characters?";trn;;Kuma-f+1+2,1+2;Bear Claw Cross;;;File:t8-p2-kuma-f+1+2,1+2.mp4
-f+3+4;L;20;i28~30;-23;+6a;;* High crush 6~;cs6~;FC;Kuma-f+3+4;Shape-Up Kick;r40? FC;;File:t8-p2-kuma-f+3+4.mp4
-f+3+4,1+2;L, M;20, 30 (24);i28~30, i50~i60;-16;-13a;;"24 damage from 1st hit with grounded scaling
+f+3+4;L;20;i28~30;-23;+6a;;"* Unparryable (bug?)
+* High crush 6~";cs6~;FC;Kuma-f+3+4;Shape-Up Kick;r40? FC;;File:t8-p2-kuma-f+3+4.mp4
+f+3+4,1+2;L, M;20, 30 (24);i28~30, i50~i60;-16;-13a;;"* Shoulder
+** Body slam (unparryable)
+* 24 damage from 1st hit with grounded scaling
 * High crush 0~";cs0~;;Kuma-f+3+4,1+2;Shape-Up Hip;r43?;;File:t8-p2-kuma-f+3+4,1+2.mp4
 df+1;m;6;i15~16;-6;+2;;;;;Kuma-df+1;;;;
 df+1,2;m, m;6, 9;i15~16, i22~23;-11;-2;;* Combo from 1st CH;;;Kuma-df+1,2;;;;
@@ -99,9 +102,11 @@ d+3;L;12;i20;-17;-6;;"* -6c on crouching hit
 d+4;l;10;i16;-15;-4;;"* -4c on crouching hit
 * High crush 4~";cs4~;FC;Kuma-d+4;Crouch Shin Kick;r34 FC;;
 d+1+2;M;23;i14~15;-15;+13d (+3);;"* Balcony Break
+* Shoulder
+** Body slam (unparryable)
 * 27 damage on clean hit";bbr;;Kuma-d+1+2;Hip Smash;;;File:t8-p2-kuma-d+1+2.mp4
 d+3+4;sp;;;;;;"* Transition to SIT
-* Transition to ROL with input f";;SIT,ROL;Kuma-d+3+4;Bear Sit;;;
+* Transition to ROL with input f";;SIT,ROL,SIT;Kuma-d+3+4;Bear Sit;SIT;;
 d+3+4;sp;;;;;;"* Alternative input: db+3+4
 * Transition to ROL with input SIT.F
 * Transition to California Roll with input SIT.B
@@ -114,14 +119,14 @@ db+1,2;h, M;11, 20;i14~15, i22~23;-13;+4;+13c;"* Spike
 * Hold 2 to power up, up to 2 charge levels
 * Transition to HBS with input D or 3+4";spk;HBS;Kuma-db+1,2;Double Wild Slap;;;
 db+1,2*;h, M;11, 20;i14~15, i33~34;-12;+13c;+42a;"* Spike
-* chip damage on block
-* Heat skips to Level 2 charge
-* Transition to HBS with input D or 3+4";spk chp;HBS;Kuma-db+1,2*;Double Wild Slap;;;
+* 8 chip damage on block
+* Heat skips to db+1,2** charge with i34~35 startup
+* Transition to HBS with D or 3+4";spk;HBS;Kuma-db+1,2*;Double Wild Slap;;;
 db+1,2**;h, M;11, 30;i14~15, i47~48;+3;+42a;;"* Spike
-* chip damage on block
-* Cannot absorb with power crush
-* Heat reduces charge length (consumes partial Heat time)
-* Transition to HBS with input D or 3+4";spk chp;HBS;Kuma-db+1,2**;Fresh Wild Slap;;;File:t8-p2-kuma-db+1,2ss.mp4
+* Reversal Break
+* 12 chip damage on block
+* Startup shortened during Heat: i34~35 startup (partially consumes Heat time)
+* Transition to HBS with D or 3+4";spk rbr;HBS;Kuma-db+1,2**;Fresh Wild Slap;;;File:t8-p2-kuma-db+1,2ss.mp4
 db+2;L;10;i18;-15;-1;;"* Transition to HBS with D or 3+4 (-17/-3)
 * High crush 6~51";cs6~51;HBS,FC;Kuma-db+2;Bear Lariat;FC;;File:t8-p2-kuma-db+2.mp4
 db+3;l;12;i18;-12;+1;;;;;Kuma-db+3;Bear Pump in Pedal;;;File:t8-p2-kuma-db+3.mp4
@@ -212,14 +217,6 @@ uf+4,3;m, m;20, 25;i29~30, i20~21;+7;+21a (+14);;"* Balcony Break
 1+2+3+4;;;;;;;;;;Kuma-1+2+3+4;Ki Charge;;;File:t8-p2-kuma-1+2+3+4.mp4
 b,f+2;h;26;i15~17;-5;+17a (+8);+62a (+42);"* Balcony Break
 * 10 chip damage on block";bbr;;Kuma-b,f+2;Anger Hook;;;File:t8-p2-kuma-b,f+2.mp4
-d,df,f+2;m;15;i17~18;-8;+3;;;;;Kuma-qcf+2;;;;
-d,df,f+2,1;m, m;15, 25;i17~18, i27;-10;+33a (+7);;"* Heat Engager
-
-* Heat Dash +36a (+26)
-
-* Balcony Break
-* Combos from 1st hit";he bbr;;Kuma-qcf+2,1;Grizzly Claws;;;File:t8-p2-kuma-qcf+2,1.mp4
-d,df,f+2,2;m, l;15, 22;i17~18, i33~34;-18;+40a;;* Chip damage on block;chp;;Kuma-qcf+2,2;Grizzly Claw Smash;;;File:t8-p2-kuma-qcf+2,2.mp4
 f,F+2;M;23;i19~21;-19;+45a (+35);;* High crush 8~18;cs8~18;;Kuma-f,F+2;Demon Uppercut;;;File:t8-p2-kuma-f,f+2.mp4
 f,F+1+2;M;30;i37~38;+8 HBS;+52a HBS;;"* 9 chip damage on block
 * Transition to HBS
@@ -227,6 +224,14 @@ f,F+1+2;M;30;i37~38;+8 HBS;+52a HBS;;"* 9 chip damage on block
 * Panda: Reduced vertical hitbox (does not hit as high)
 * Low crush 9~32
 * Floating state 33~35";js9~32 fs33~35;HBS,ROL,HBS;Kuma-f,F+1+2;Falling Bear;r32 HBS;;File:t8-p2-kuma-f,f+1+2.mp4
+qcf+2;m;15;i17~18;-8;+3;;;;;Kuma-qcf+2;;;;
+qcf+2,1;m, m;15, 25;i17~18, i27;-10;+33a (+7);;"* Heat Engager
+
+* Heat Dash +36a (+26)
+
+* Balcony Break
+* Combos from 1st hit";he bbr;;Kuma-qcf+2,1;Grizzly Claws;;;File:t8-p2-kuma-qcf+2,1.mp4
+qcf+2,2;m, l;15, 22;i17~18, i33~34;-18;+40a;;* Chip damage on block;chp;;Kuma-qcf+2,2;Grizzly Claw Smash;;;File:t8-p2-kuma-qcf+2,2.mp4
 f,f,F+3;m;30;i22~23;+6;+13a (+3);;"* Balcony Break
 * Chip damage on block
 * Low crush 3~25
@@ -298,9 +303,12 @@ FC.df+2,1,1+2,3,1+2,3+4,1+2,2,3,1;m, h, M, L, M, m, m, m, h, h;12, 12, 6, 5, 6, 
 * Interrupt with i33? from 9th block
 * Can SSL/SSR and SWL/SWR from 9th block";bbr;;Kuma-FC.df+2,1,1+2,3,1+2,3+4,1+2,2,3,1;10 Hit Combo;r37;;
 FDFA.1+2;l;10;i14~16;-12;+6;+6;"* Transition to HBS
-* Move is airborne, requires strong parry";;HBS;Kuma-FDFA.1+2;Bear Butterfly;;;
-FUFA.1+2;M;15;i17~19;-2 (-2);+6 (+6);+6 (+6);* Transition to HBS (Cannot cancel);;HBS;Kuma-FUFA.1+2;Bear Backstroke;;;
-FUFT.d+1+2;m;21;i29~31;+18~+20;+37a;+37a;* Transition to SIT (Cannot cancel);;SIT;Kuma-FUFT.d+1+2;Get Up Punch;;;
+* Move is airborne, requires strong parry
+* Reverse direction when performed in FDFT";;HBS,HBS;Kuma-FDFA.1+2;Bear Butterfly;HBS;;
+FUFA.1+2;M;15;i17~19;-2;+6;;"* Transition to HBS (Cannot cancel)
+* Reverse direction when performed in FUFT";;HBS,HBS;Kuma-FUFA.1+2;Bear Backstroke;HBS;;
+FUFT.d+1+2;m;21;i29~31;+18~+20;+37a;+37a;"* Transition to SIT (Cannot cancel)
+* Reverse direction when performed in FUFA";;SIT,SIT;Kuma-FUFT.d+1+2;Get Up Punch;SIT;;
 HBS.1;M;10;i12;-13;+5;+12;* Elbow;elb;;Kuma-HBS.1;;r32;;
 HBS.1,2;M, M;10, 23;i12, i24~25;-13;+6c;+13c;"* Combo from 1st hit with 20?F (charge) delay
 * Hold 2 to power up, up to 2 charge levels
@@ -332,10 +340,12 @@ HBS.b,b;sp;;;;;;"* Alternate input: SIT.B
 * Transition to r12 HBS with input D or 3+4 at frame 35";;HBS,FC;Kuma-HBS.b,b;Backward Roll;r40 FC;;File:t8-p2-kuma-hbs.b,b.mp4
 HBS.b+1+2;L;16;i26~29;-20c;+3;+7;"* Head
 * Transition to r40 HBS with input D or 3+4
+* Panda: Reduced attack range and vertical hitbox (does not hit as high)
 * High crush 1~67";cs1~67;HBS;Kuma-HBS.b+1+2;;r39;;
 HBS.b+1+2,1+2;L, L;16, 33;i26~29, i22~24;-29c;+8a;;"* Balcony Break
 * Head
 * Combo from 1st CH
+* Panda: Reduced attack range and vertical hitbox (does not hit as high)
 * High crush 1~59";bbr cs1~59;;Kuma-HBS.b+1+2,1+2;Break'n;r51;;File:t8-p2-kuma-hbs.b+1+2,1+2.mp4
 HBS.df+1;m;23;i25~27;-7;+20a (+11);;"* Homing
 * Balcony Break
@@ -364,12 +374,12 @@ OTG.d+1+4;l,ub(l);16 (11),48 (33);i55~110,i25~38;N/A;8 (0) / +14;;"* Cancel into
 * More frame advantage when hitting standing opponent";;;Kuma-OTG.d+1+4;Dance With Me;;;
 ROL.1;h;31;i15~16;+4;+35d (+27);;"* Balcony Break
 * Tornado
-* Power up during Heat (partially uses remaining Heat time)";bbr trn;;Kuma-ROL.1;Bear Shove;;;File:t8-p2-kuma-rol.1.mp4
+* Power up during Heat: +13 on block guard break (Uses 240F of remaining Heat time)";bbr trn;;Kuma-ROL.1;Bear Shove;;;File:t8-p2-kuma-rol.1.mp4
 ROL.2;m;21;i17~19;-17;+28a (+18);;;;;Kuma-ROL.2;Bear Backhand;;;File:t8-p2-kuma-rol.2.mp4
-ROL.3;l;20;i18~26;-18;+33a;;Recovers in FUFT;;;Kuma-ROL.3;Bear Slide;;;File:t8-p2-kuma-rol.3.mp4
-ROL.4;M;20;i26~30;+7;+26a;;Recovers in FUFT;;;Kuma-ROL.4;Bear Rolling Kick;;;File:t8-p2-kuma-rol.4.mp4
+ROL.3;l;20;i18~26;-18;+33a;;Recovers in FUFT;;FUFT;Kuma-ROL.3;Bear Slide;FUFT;;File:t8-p2-kuma-rol.3.mp4
+ROL.4;M;20;i26~30;+7;+26a;;Recovers in FUFT;;FUFT;Kuma-ROL.4;Bear Rolling Kick;FUFT;;File:t8-p2-kuma-rol.4.mp4
 ROL.1+2;SM;22;i10~40;-30;+45a;;"* Recovers in FUFT on hit
-* Recovers in off axis FUFT on block";;;Kuma-ROL.1+2;Giant Roll;;;File:t8-p2-kuma-rol.1+2.mp4
+* Recovers in off axis FUFT on block";;FUFT;Kuma-ROL.1+2;Giant Roll;FUFT;;File:t8-p2-kuma-rol.1+2.mp4
 SIT.1;l;15;i21~22;-12;+4;+9;;;FC;Kuma-SIT.1;;FC;;
 SIT.1,1;l, l;15, 13;i21~22, i25~26;-12;+6;;Combo from 1st CH;;FC;Kuma-SIT.1,1;Double Trout Sweep;FC;;File:t8-p2-kuma-sit.1,1.mp4
 SIT.2;m;18;i19~21;-12;+73a (+57);;* Tornado;trn;;Kuma-SIT.2;Trout Smash;;;File:t8-p2-kuma-sit.2.mp4
@@ -377,7 +387,8 @@ SIT.3+4;M;20;i25;-12 / -10 ROL;-4a / -2a ROL;;* Transition to ROL with input SIT
 SIT.f;sp;;N/A / i26~i31 Heat;+1~+6 / -6~-1 HBS;+7~+12 / 0~+5 HBS;;"* Alternative input: FC.3+4 or FDFA.f
 * Transition to ROL
 * Transition to HBS with input ROL.D or ROL.3+4
-* Becomes special mid attack during Heat (partially uses remaining Heat time)";;ROL,HBS;Kuma-SIT.f;Bear Roll;;;
+* Transition to FC with no input
+* Becomes special mid attack during Heat (Uses 120F of remaining Heat time)";;ROL,HBS,FC,ROL;Kuma-SIT.f;Bear Roll;ROL;;
 1+3;th(h);35;i12~14;-3;+1;;"* Throw break: 1 or 2
 * Opponent status on hit: FUFT";;;Kuma-1+3;Bear's Bite;;;File:t8-p2-kuma-1+3.mp4
 2+4;th(h);35;i12~14;-6;+1;;"* Throw break: 1 or 2
@@ -385,18 +396,20 @@ SIT.f;sp;;N/A / i26~i31 Heat;+1~+6 / -6~-1 HBS;+7~+12 / 0~+5 HBS;;"* Alternative
 * Side switch on hit";;;Kuma-2+4;Bear Hug;;;File:t8-p2-kuma-2+4.mp4
 Back throw;th(h);70;i12~14;;+1;;"* Throw break: none
 * Opponent status on hit: FUFA";;;Kuma-Back throw;Swing Swung;;;
-HBS.f+1+2;th(h);30;i26~27;;+1;;"* Removes Recoverable Health
+HBS.f+1+2;th(h);30;i26~27;;-2d;;"* Removes Recoverable Health
 * Spike
 * Throw break: none
-* Opponent status on hit: FUFA";spk;;Kuma-HBS.f+1+2;Bear Toss;;;File:t8-p2-kuma-hbs.f+1+2.mp4
+* Opponent status on hit: FUFA
+* Panda: Reduced attack range and vertical hitbox (does not hit as high)";spk;;Kuma-HBS.f+1+2;Bear Toss;;;File:t8-p2-kuma-hbs.f+1+2.mp4
 Left throw;th(h);50;i12~14;-3;+1;;"* Throw break: 1
 * Spike
 * Opponent status on hit: FUFT";spk;;Kuma-Left throw;Bear Slam;;;
 Right throw;th(h);40;i12~14;-3;+1;;"* Throw break: 2
 * Opponent status on hit: FUFT off axis";;;Kuma-Right throw;Choke Slam;;;
-hcb,f+1+2;th(h);50;i11;0;+5;;"* Throw break: 1+2
+hcb,f+1+2;th(h);50;i11;+0;+5;;"* Throw break: 1+2
+* 60 dmg if opponent hits the wall
 * Opponent status on hit: FUFA
-* Side switch on hit";;;Kuma-hcb,f+1+2;Rock'n Roll Circus;;;File:t8-p2-kuma-hcb,f+1+2.mp4
+* Side switch on throw break and hit";;;Kuma-hcb,f+1+2;Rock'n Roll Circus;;;File:t8-p2-kuma-hcb,f+1+2.mp4
 uf+1+2;th(h);35;i12~14;0;+26d (+7);;"* Throw break: 1+2
 * Balcony Break
 * Opponent status on hit: FUFT";bbr;;Kuma-uf+1+2;Headbutt;;;File:t8-p2-kuma-uf+1+2.mp4

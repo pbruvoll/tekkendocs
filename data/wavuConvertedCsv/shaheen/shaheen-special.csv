@@ -65,7 +65,7 @@ f+2,3;h, h;10, 23;i12, i18;-12;+21a (+16);;"* Tornado
 * Move can be delayed by 9F
 * Input can be delayed by 10F";trn;;Shaheen-f+2,3;Silent Sting;;;File:t8-p2-shaheen-f+2,3.mp4
 f+2,4;h, L;10, 16;i12, i22~23;-13;+2;+29a;"* Combo from 1st hit with 3F delay
-* Transition to -11,+0, +31a SNK with DF
+* Transition to -11, +4, +31a SNK with DF
 * Move can be delayed by 10F
 * Input can be delayed by 11F";;SNK;Shaheen-f+2,4;;;;
 f+2,4,4;h, L, h;10, 16, 21;i12, ,i26~27;-7;+10g;+14c;"* Strong Aerial Tailspin
@@ -77,7 +77,7 @@ f+3;m;17;i20;-5;+6;+13c;"* Good right sidestep tracking
 f+4;h;24;i15~16;+0;+13g;;"* Balcony Break
 * Homing
 * 7 chip damage on block";bbr hom;;Shaheen-f+4;Piercing Talon;;;File:t8-p2-shaheen-f+4.mp4
-f+3+4;M,M;20;i22~23;+3;+11c;;"* 6 chip damage on block
+f+3+4;M,M;20;i22~23;+3c;+11c;;"* 6 chip damage on block
 * Transitions to SNK
 * Floor Break";fbr;SNK;Shaheen-f+3+4;Skyline;SNK;;File:t8-p2-shaheen-f+3+4.mp4
 df+1;m;12;i13~14;-1;+5;;Tracks SSR/SWR completely;;;Shaheen-df+1;;r19;;
@@ -104,14 +104,15 @@ d+3;L;12;i16~17;-14;+0;;"* Transition to -10, +4 SNK with DF
 * High crush 6~48";cs6~48;SNK,FC;Shaheen-d+3;Silent Rigel;FC;;File:t8-p2-shaheen-d+3.mp4
 d+4;L;10;i19;-12;+1;;;;;Shaheen-d+4;Vicious Stomp;;;File:t8-p2-shaheen-d+4.mp4
 db+2;m;11;i14;-10;+1;;* Transition to SNK with input db+2,DF (-3/+8/+8);;SNK;Shaheen-db+2;;;;
-db+2,1;m, h;11, 24;i14, i20;-11;+41d (-17);;"* Balcony Break
+db+2,1;m, h;11, 24;i14, i20;-11;+15c;;"* Balcony Break
 * Heat Engager
 
 * Heat Dash +43d (+35)
 
 * Combo from 1st hit with 10?F delay
 * Move can be delayed by 8F
-* Input can be delayed by 10F";bbr he;;Shaheen-db+2,1;Rapid Strikes;;;File:t8-p2-shaheen-db+2,1.mp4
+* Input can be delayed by 10F
+* Forces tech backroll on hit";bbr he;;Shaheen-db+2,1;Rapid Strikes;;;File:t8-p2-shaheen-db+2,1.mp4
 db+3;L;12;i20~21;-17;-6;;;;;Shaheen-db+3;Snake's Bite;;;
 db+3,4;L, h;12, 20;i20~21, i18;-13;+68a (+52);;"* Tornado
 *Counter hit combo from 1st hit
@@ -123,8 +124,7 @@ b+1;m;20;i19~20;+0c;+6c;;"* Heat Engager
 
 * Heat Dash +67a (+50)
 
-* Transition to +0c, +6c FC with D
-* Launcher with heat dash";he;FC;Shaheen-b+1;Achernar;;;File:t8-p2-shaheen-b+1.mp4
+* Transition to +0c, +6c FC with D";he;FC;Shaheen-b+1;Achernar;;;File:t8-p2-shaheen-b+1.mp4
 b+1+3;sp;15 (15);;;;;"* Removes Recoverable Health
 * Alternate input: b+2+4
 * Punch parry
@@ -136,7 +136,8 @@ b+2;m(th);12,16;i14~15;-9;-2d;;"* Removes Recoverable Health
 b+3;m;17;i19;+1c;+3c;+14c;* 5 chip damage on block;;;Shaheen-b+3;Heel Strike;;;File:t8-p2-shaheen-b+3.mp4
 b+4;M;23;i17;-15;+4;+29a (+23);;;;Shaheen-b+4;Broken Mirage;;;File:t8-p2-shaheen-b+4.mp4
 b+3+4;h;25;i16;-9;+19a (+9);;"* Balcony Break
-* Power crush";bbr pc;;Shaheen-b+3+4;Elnath;;;File:t8-p2-shaheen-b+3+4.mp4
+* +0 frame advantage and 10 chip damage on block after absorbing an attack in power crush state
+* Power crush 7~15";bbr pc7~15;;Shaheen-b+3+4;Elnath;;;File:t8-p2-shaheen-b+3+4.mp4
 uf+1;m;25;i24~25;+1;+20d;;"* Balcony Break
 * Heat Engager
 
@@ -163,12 +164,12 @@ f,F+3;m;23;i17;-12;+63 (+48);;"* Tornado
 * Alternate input: f,f,F+3
 * Hit throw which side switches
 * Low crush 13";trn js13;;Shaheen-f,F+3;Hunting Falcon Dive;;;
-f,b+2;h;42;i14;-4;0;;"* Tornado
+f,b+2;h;42;i14;-4;+0d;;"* Tornado
 * Removes Recoverable Health
 * Transition to attack throw on standing front hit
 * Quick input properties during Heat
 * See also: f:b+2";trn;;Shaheen-f,b+2;Hornet;;;
-f:b+2;h;42;i13;-4;0;;"* Tornado
+f:b+2;h;42;i13;-4;+0d;;"* Tornado
 * Removes Recoverable Health
 * Transition to attack throw on standing front hit
 * Quick input properties during Heat
@@ -176,9 +177,11 @@ f:b+2;h;42;i13;-4;0;;"* Tornado
 * input must be less or equal to 6 frames 
 * (example : 2 frames of f, 3 frames of neutral, 1 frame of b, then b+2)";trn;;Shaheen-f:b+2;Hornet;;;
 uf,n,4;m;20;i23~25;-13;+32 (+22);;* Low crush;js;;Shaheen-uf,n,4;Delayed Rising Toe Kick;;;File:t8-p2-shaheen-uf,n,4.mp4
-f,f,F+2;m;30;i17~18;+5;+13d;;"* Balcony Break
+f,f,F+2;m;30;i17~18;+5;+13c;;"* Balcony Break
 * chip damage on block
-* during Heat, partially restores remaining Heat time";bbr chp;;Shaheen-f,f,F+2;Antares;;;File:t8-p2-shaheen-f,f,f+2.mp4
+* during Heat, partially restores remaining Heat time
+* Forces tech backroll on hit
+* Jab evasion";bbr chp;;Shaheen-f,f,F+2;Antares;;;File:t8-p2-shaheen-f,f,f+2.mp4
 ws1;m;17;i14;-2;+4;+14;;;;Shaheen-ws1;Albireo;;;File:t8-p2-shaheen-ws1.mp4
 ws2;m;21;i16;-17;+57;;;;;Shaheen-ws2;Hawk Edge;;;File:t8-p2-shaheen-ws2.mp4
 ws3;m;9;i13;-11;0;;* Transition to -7, +4 SNK with DF;;SNK;Shaheen-ws3;;;;
@@ -192,7 +195,7 @@ SS.1+2;m;23;i19~20;+3;+22g;+35a;"* Partially restore remaining Heat time on hit
 * 6 chip damage on block";;;Shaheen-SS.1+2;Haboob;;;
 FC.df,d,DF;sp;;;;;;* High crush;cs;;Shaheen-FC.df,d,DF;Slide Step;;;File:t8-p2-shaheen-fc.df,d,df.mp4
 FC.df,d,DF+3;L;17;i16~20;-23a;+7a;;"* Transitions to SNK on hit
-* Low crush";js;SNK;Shaheen-FC.df,d,DF+3;Sand Storm;SNK;;File:t8-p2-shaheen-fc.df,d,df+3.mp4
+* Low crush";js;FUFT;Shaheen-FC.df,d,DF+3;Sand Storm;FUFT;;File:t8-p2-shaheen-fc.df,d,df+3.mp4
 FC.df+2;m;21;i18~19;-9;+17a (+8);;"* Strong Aerial Tailspin
 * Balcony Break
 * Partially restore remaining Heat time on hit";bbr;;Shaheen-FC.df+2;Janbiya;;;File:t8-p2-shaheen-fc.df+2.mp4
