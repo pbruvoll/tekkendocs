@@ -1,6 +1,7 @@
 import cx from 'classix';
 import { useState } from 'react';
-import ReactPlayer from 'react-player';
+import FilePlayer from 'react-player/file';
+import ReactPlayer from 'react-player/youtube';
 import { useHydrated } from 'remix-utils/use-hydrated';
 import { internalMoveVideoSet } from '~/services/staticDataService';
 import { type Move } from '~/types/Move';
@@ -55,7 +56,7 @@ export const MoveVideo = ({
           className="absolute inset-0"
           onClick={() => setShowControls(true)}
         >
-          <ReactPlayer
+          <FilePlayer
             playing={playing}
             onPlay={() => setHasStarted(true)}
             controls={showControls}
@@ -64,7 +65,11 @@ export const MoveVideo = ({
             height="100%"
             muted
             onClickPreview={() => setPlaying(true)}
-            light={playing || hasStarted || preload ? undefined : true}
+            light={
+              playing || hasStarted || preload ? undefined : (
+                <div className="w-full h-full " />
+              )
+            }
             // playIcon={<div>play</div>}
             loop
             url={`https://tekkendocs.b-cdn.net/t8/videos/${charId}/${move.video.replace('File:', '')}`}
