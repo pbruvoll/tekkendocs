@@ -1,5 +1,6 @@
 import cx from 'classix';
 import { Link } from 'react-router';
+import { internalMoveVideoSet } from '~/services/staticDataService';
 import { type FrameDataListProps } from '~/types/FrameDataListProps';
 import { type MoveT8 } from '~/types/Move';
 import { getRecoveryFrames } from '~/utils/frameDataUtils';
@@ -36,6 +37,7 @@ export function SimpleMovesTable({
   sortSettings,
 }: SimpleMovesTableProps) {
   const showCharacter = forceShowCharacter || !charId;
+  console.log('sort key', sortSettings?.sortByKey);
   return (
     <table className={cx('relative w-full text-sm', className)}>
       <thead className="[&_tr]:border-b">
@@ -72,7 +74,6 @@ export function SimpleMovesTable({
       <tbody className="[&_tr:last-child]:border-0">
         {moves.map((move, index) => {
           const simpleBlock = simplifyFrameValue(move.block || '');
-          const blockValue = Number(simpleBlock);
           const simpleHit = simplifyFrameValue(move.hit || '');
           const simpleCh = simplifyFrameValue(move.counterHit || '');
           const computedCharId = charId || charIdFromMove(move as MoveT8);
@@ -94,7 +95,9 @@ export function SimpleMovesTable({
                   <Link style={{ textDecoration: 'none' }} to={moveUrl}>
                     {formatWordWithBreaks(move.command)}
                   </Link>
-                  {move.ytVideo && (
+                  {(move.ytVideo ||
+                    (move.video &&
+                      internalMoveVideoSet.has(computedCharId))) && (
                     <MovePreviewDialogButton move={move} url={moveUrl} />
                   )}
                 </span>

@@ -55,6 +55,7 @@ export const MoveVideo = ({
             onPlay={() => setHasStarted(true)}
             controls
             autoplay
+            playsinline
             width="100%"
             height="100%"
             muted
@@ -89,6 +90,7 @@ export const MoveVideo = ({
           <ReactPlayer
             playing={playing || (preload && !hasStarted)}
             controls
+            playsinline
             onPlay={() => setHasStarted(true)}
             width="100%"
             height="100%"
@@ -96,6 +98,7 @@ export const MoveVideo = ({
             config={{
               youtube: {
                 playerVars: {
+                  playsinline: 1,
                   start: move.ytVideo.start || undefined,
                   end: move.ytVideo.end || undefined,
                   rel: 0,
