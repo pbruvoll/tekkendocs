@@ -69,6 +69,7 @@ export const DynamicFrameDataList = ({
         charId={charId}
         moves={paginatedMoves}
         className={className}
+        sortSettings={sortSettings}
       />
       {paginatedMoves.length < sortedMoves.length && (
         <ContentContainer className="my-4">
