@@ -9,14 +9,24 @@ export type CommandProps = {
   compressedCommandMap: Record<string, Move>;
 };
 export const Command = ({
-  command,
+  command: commandProp,
   charUrl,
   compressedCommandMap,
 }: CommandProps) => {
+  let command = commandProp;
   const compressedCommand = compressCommand(command);
-  const move =
+  let move =
     compressedCommandMap[compressedCommand] ||
     compressedCommandMap[removeTransitionInput(compressedCommand)];
+  if (!move) {
+    // Get command and link if command is formatted with [command](link)
+    const markdownLinkRegex = /^\[([^\]]+)\]\(([^)]+)\)$/;
+    const match = commandProp.match(markdownLinkRegex);
+    if (match) {
+      command = match[1];
+      move = compressedCommandMap[compressCommand(match[2])];
+    }
+  }
   if (!move) {
     return <b>{command}</b>;
   }

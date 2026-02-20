@@ -1,6 +1,6 @@
 import { TwitterLogoIcon } from '@radix-ui/react-icons';
 import { Fragment } from 'react';
-import { FaTwitch, FaYoutube } from 'react-icons/fa';
+import { FaTiktok, FaTwitch, FaYoutube } from 'react-icons/fa';
 import { Link } from 'react-router';
 import metafyGradientIcon from '~/images/icons/metafy-gradient.svg';
 
@@ -57,6 +57,13 @@ const PersonLinkComponent = ({ name, url }: PersonLink) => {
               </Link>
             );
           }
+          if (url.includes('tiktok.com')) {
+            return (
+              <Link key="tiktok" to={url}>
+                <FaTiktok width="1em" height="1em" />
+              </Link>
+            );
+          }
           if (url.includes('metafy.gg')) {
             return (
               <Link key="metafy" to={`${url}?utm_source=tekkendocs`}>
@@ -64,7 +71,6 @@ const PersonLinkComponent = ({ name, url }: PersonLink) => {
               </Link>
             );
           }
-
           return null;
         })}
       </div>

@@ -108,7 +108,9 @@ export function MoveCardWithVideoList({
                 charId={computedCharId}
                 shouldPlay={virtualItem.index === firstInViewIndex}
                 shouldPreload={
-                  !firstRender && virtualItem.index === firstInViewIndex + 1
+                  !firstRender &&
+                  (virtualItem.index === firstInViewIndex + 1 ||
+                    virtualItem.index === firstInViewIndex - 1)
                 }
                 shouldLoadVideo={
                   !firstRender &&
