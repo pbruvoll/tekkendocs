@@ -24,12 +24,14 @@ export const MoveVideo = ({
   const isHydrated = useHydrated();
 
   const [hasStarted, setHasStarted] = useState(false);
+  const [showControls, setShowControls] = useState(false);
 
   const [playing, setPlaying] = useState(playingProp);
   const [originalPlaying, setOriginalPlaying] = useState(playingProp);
   if (playingProp !== originalPlaying) {
     setOriginalPlaying(playingProp);
     setPlaying(playingProp);
+    setShowControls(!playingProp);
   }
 
   const charId = isWavuMove(move) ? charIdFromMove(move) : undefined;
@@ -49,12 +51,11 @@ export const MoveVideo = ({
           </div>
         )}
         {/* Video player on top - once loaded it covers the loading indicator */}
-        <div className="absolute inset-0">
+        <div className="absolute inset-0" onClick={() => setShowControls(true)}>
           <ReactPlayer
             playing={playing}
             onPlay={() => setHasStarted(true)}
-            controls
-            autoplay
+            controls={showControls}
             playsinline
             width="100%"
             height="100%"
