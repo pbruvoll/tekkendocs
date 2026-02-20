@@ -105,13 +105,11 @@ export const MoveVideo = ({
             height="100%"
             muted
             config={{
-              youtube: {
-                playerVars: {
-                  playsinline: 1,
-                  start: move.ytVideo.start || undefined,
-                  end: move.ytVideo.end || undefined,
-                  rel: 0,
-                },
+              playerVars: {
+                playsinline: 1,
+                start: move.ytVideo.start || undefined,
+                end: move.ytVideo.end || undefined,
+                rel: 0,
               },
             }}
             loop
