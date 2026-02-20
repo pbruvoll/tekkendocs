@@ -112,7 +112,7 @@ export const MoveCardWithVideo = ({
 
             {/* Video on small screens - shown right after command */}
             {hasVideo && (
-              <div className="mb-4 aspect-video w-full lg:hidden">
+              <div className="mb-4 px-2 aspect-video w-full lg:hidden">
                 {shouldLoadVideo || isPlaying ? (
                   <MoveVideo
                     move={move}
