@@ -31,7 +31,6 @@ export const MoveVideo = ({
   if (playingProp !== originalPlaying) {
     setOriginalPlaying(playingProp);
     setPlaying(playingProp);
-    setShowControls(!playingProp);
   }
 
   const charId = isWavuMove(move) ? charIdFromMove(move) : undefined;
@@ -51,7 +50,11 @@ export const MoveVideo = ({
           </div>
         )}
         {/* Video player on top - once loaded it covers the loading indicator */}
-        <div className="absolute inset-0" onClick={() => setShowControls(true)}>
+        <button
+          type="button"
+          className="absolute inset-0"
+          onClick={() => setShowControls(true)}
+        >
           <ReactPlayer
             playing={playing}
             onPlay={() => setHasStarted(true)}
@@ -66,7 +69,7 @@ export const MoveVideo = ({
             loop
             url={`https://tekkendocs.b-cdn.net/t8/videos/${charId}/${move.video.replace('File:', '')}`}
           />
-        </div>
+        </button>
         {hideFrameData && (
           <div className="absolute bottom-0 right-[2%] z-10 aspect-square w-1/12 bg-black" />
         )}
