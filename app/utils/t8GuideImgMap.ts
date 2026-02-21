@@ -9,6 +9,7 @@ import devilJin from '~/images/t8/guides/devil-jin-1200.webp';
 import dragunov from '~/images/t8/guides/dragunov-1200.webp';
 import eddy from '~/images/t8/guides/eddy-1200.webp';
 import fahkumram from '~/images/t8/guides/fahkumram-1200.webp';
+import heihachi from '~/images/t8/guides/heihachi-1200.webp';
 import hwoarang from '~/images/t8/guides/hwoarang-1200.webp';
 import jin from '~/images/t8/guides/jin-1200.webp';
 import jun from '~/images/t8/guides/jun-1200.webp';
@@ -39,6 +40,7 @@ export const t8GuideImgMap: Record<string, string> = {
   dragunov,
   eddy,
   fahkumram,
+  heihachi,
   hwoarang,
   lars,
   jin,
