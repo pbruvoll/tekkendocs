@@ -7,6 +7,7 @@ import { SearchParamsState } from '~/utils/searchParameState';
 import { RangeSlider } from './RangeSlider';
 
 export type FrameDataFilterSectionProps = {
+  className?: string;
   filter: MoveFilter;
   stances: string[];
   states: string[];

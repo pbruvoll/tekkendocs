@@ -6,17 +6,19 @@ export type AnimatedCollapsibleProps = {
   title: string;
   children: ReactNode;
   defaultOpen?: boolean;
+  className?: string;
 };
 
 export const AnimatedCollapsible = ({
   title,
   children,
+  className,
   defaultOpen = false,
 }: AnimatedCollapsibleProps) => {
   const [isOpen, setIsOpen] = useState(defaultOpen);
 
   return (
-    <div>
+    <div className={className}>
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
