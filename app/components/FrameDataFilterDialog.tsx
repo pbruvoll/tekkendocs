@@ -8,6 +8,7 @@ import {
 type FrameDataFilterDialogProps = FrameDataFilterSectionProps;
 
 export const FrameDataFilterDialog = ({
+  className,
   filter,
   setFilterValue,
   removeFilterValue,
@@ -31,7 +32,7 @@ export const FrameDataFilterDialog = ({
   return (
     <Dialog.Root>
       <Dialog.Trigger>
-        <Button radius="large">
+        <Button radius="large" className={className}>
           <MixerHorizontalIcon width="16" height="16" /> Filter
           {filterCount ? ` (${filterCount})` : ''}
         </Button>

@@ -412,8 +412,8 @@ const StartPage = ({
             <span className="capitalize">{characterName}</span>'s frame data
           </CardDescription>
         </CardHeader>
-        <CardContent className="space-y-6">
-          <Button onClick={onStart} className="w-full text-lg" size="lg">
+        <CardContent>
+          <Button onClick={onStart} className="w-full text-lg mb-2" size="lg">
             Start Practice
           </Button>
 
@@ -427,7 +427,7 @@ const StartPage = ({
 
           <TaskProgress numCompleted={numCorrect} total={totalMoves} />
 
-          <div className="space-y-4 rounded-lg border border-border/50 bg-muted/30 p-4">
+          <div className="rounded-lg border border-border/50 bg-muted/30 p-4">
             <h4 className="font-medium">Current Progress</h4>
             <div className="grid grid-cols-2 gap-2 text-sm">
               <span className="text-muted-foreground">Unseen:</span>
@@ -445,48 +445,47 @@ const StartPage = ({
             </div>
           </div>
 
-          <AnimatedCollapsible title="Advanced Settings" defaultOpen>
-            <div className="space-y-4">
-              <div>
-                <FrameDataFilterDialog
-                  filter={filter}
-                  stances={stances}
-                  states={states}
-                  transitions={transitions}
-                  setFilterValue={setFilterValue}
-                  removeFilterValue={removeFilterValue}
-                  updateFilterValues={updateFilterValues}
-                  addFilterElement={addFilterElement}
-                  removeFilterElement={removeFilterElement}
-                />
-              </div>
+          <AnimatedCollapsible
+            title="Advanced Settings"
+            className="my-2"
+            defaultOpen
+          >
+            <FrameDataFilterDialog
+              filter={filter}
+              stances={stances}
+              states={states}
+              transitions={transitions}
+              setFilterValue={setFilterValue}
+              removeFilterValue={removeFilterValue}
+              updateFilterValues={updateFilterValues}
+              addFilterElement={addFilterElement}
+              removeFilterElement={removeFilterElement}
+            />
 
-              <div className="space-y-2">
-                <Label htmlFor={numMovesId} className="text-sm">
-                  Number of moves to practice (1 - {totalMoves})
-                </Label>
-                <Input
-                  type="string"
-                  id={numMovesId}
-                  value={numMovesToPractice}
-                  placeholder={totalMoves.toString()}
-                  onChange={handleNumMovesToPracticeChange}
-                />
-              </div>
+            <div className="space-y-2 mt-2">
+              <Label htmlFor={numMovesId} className="text-sm">
+                Number of moves to practice (1 - {totalMoves})
+              </Label>
+              <Input
+                type="string"
+                id={numMovesId}
+                value={numMovesToPractice}
+                placeholder={totalMoves.toString()}
+                onChange={handleNumMovesToPracticeChange}
+              />
+            </div>
 
-              <div className="space-y-2">
-                <Label htmlFor={startFromMoveId} className="text-sm">
-                  Start from move # (1 -{' '}
-                  {totalMoves - (numMovesToPractice || 0)})
-                </Label>
-                <Input
-                  type="string"
-                  id={startFromMoveId}
-                  placeholder="1"
-                  value={startFromMoveNum}
-                  onChange={handleStartFromMoveNumChange}
-                />
-              </div>
+            <div className="space-y-2">
+              <Label htmlFor={startFromMoveId} className="text-sm">
+                Start from move # (1 - {totalMoves - (numMovesToPractice || 0)})
+              </Label>
+              <Input
+                type="string"
+                id={startFromMoveId}
+                placeholder="1"
+                value={startFromMoveNum}
+                onChange={handleStartFromMoveNumChange}
+              />
             </div>
           </AnimatedCollapsible>
 
