@@ -265,7 +265,6 @@ export default function FlashCard() {
 
   return (
     <>
-      {' '}
       <ContentContainer enableTopPadding>
         <div className="mb-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
@@ -293,7 +292,7 @@ export default function FlashCard() {
         enableTopPadding
         className="flex justify-center"
       >
-        <div className="w-full max-w-96">
+        <div className="w-full max-w-96 px-2">
           <h1 className="sr-only">Flash cards</h1>
           {numViableMoves === 0 ? (
             <div>No moves available for {characterName}</div>
@@ -418,6 +417,14 @@ const StartPage = ({
             Start Practice
           </Button>
 
+          <AnimatedCollapsible title="How it works">
+            <p className="text-sm text-muted-foreground">
+              Guess a property of the move shown (e.g. frames on block), then
+              flip to check. "Wrong" cards appear more often. "Ignore" hides
+              cards permanently.
+            </p>
+          </AnimatedCollapsible>
+
           <TaskProgress numCompleted={numCorrect} total={totalMoves} />
 
           <div className="space-y-4 rounded-lg border border-border/50 bg-muted/30 p-4">
@@ -438,7 +445,7 @@ const StartPage = ({
             </div>
           </div>
 
-          <AnimatedCollapsible title="Advanced Settings">
+          <AnimatedCollapsible title="Advanced Settings" defaultOpen>
             <div className="space-y-4">
               <div>
                 <FrameDataFilterDialog
@@ -456,7 +463,7 @@ const StartPage = ({
 
               <div className="space-y-2">
                 <Label htmlFor={numMovesId} className="text-sm">
-                  Moves to practice (1 - {totalMoves})
+                  Number of moves to practice (1 - {totalMoves})
                 </Label>
                 <Input
                   type="string"
@@ -481,14 +488,6 @@ const StartPage = ({
                 />
               </div>
             </div>
-          </AnimatedCollapsible>
-
-          <AnimatedCollapsible title="How it works">
-            <p className="text-sm text-muted-foreground">
-              Guess a property of the move shown (e.g. frames on block), then
-              flip to check. "Wrong" cards appear more often. "Ignore" hides
-              cards permanently.
-            </p>
           </AnimatedCollapsible>
 
           <Button
