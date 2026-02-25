@@ -127,9 +127,15 @@ def _convert_json_movelist(move_list_json: list) -> List[Move]:
             alias = []
             id = _normalize_data(move["title"]["id"])
             name = html.unescape(_none_to_empty(move["title"]["name"]))
-            input = _normalize_data(
-                _get_all_parent_values_of("input", _normalize_data(move["title"]["parent"]), move_list_json)
-                + _normalize_data(move["title"]["input"]))
+            inputArray = _get_all_parent_values_of_array("input", _normalize_data(move["title"]["parent"]), move_list_json)
+            moveInput =  _normalize_data(move["title"]["input"])
+            inputArray.append(moveInput)
+            input = ""
+            if(id.startswith("Alisa")) :
+                input = ", ".join([item.lstrip(',') for item in inputArray])
+            else:
+                input = ",".join([item.lstrip(',') for item in inputArray if item])
+
             if "_" in input:
                 result = _create_alias(input)
                 input = result[-1]
