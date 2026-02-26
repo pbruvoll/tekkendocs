@@ -57,3 +57,47 @@ tekkendocs>python utils\uploadCsv.py -I data\wavuConvertedCsv -G T8
 ```
 tekkendocs>python utils\countMoves.py -I data\wavuConvertedCsv -G T8 -O app\data\character-move-count.json
 ```
+
+## How to convert videos recursively to a target resolution
+
+The script below scans the input folder recursively, mirrors folder structure into the output folder, and converts common video files.
+
+```
+tekkendocs>python utils\convertVideoResolution.py -I <inputFolder> -O <outputFolder> --width 480
+```
+
+- If only `--width` is specified, aspect ratio is preserved.
+- If both `--width` and `--height` are specified, exact dimensions are forced.
+- Default filename postfix is `-<width>` (example: `myVideo.mp4` -> `myVideo-480.mp4`).
+
+### Optional output format
+
+If `--format` is omitted, source format is preserved.
+
+```
+tekkendocs>python utils\convertVideoResolution.py -I C:\documents\tekkendocs\t8\videos\alisa -O C:\documents\tekkendocs\t8\videos\alisa-converted --width 480
+```
+
+Force output format:
+
+```
+tekkendocs>python utils\convertVideoResolution.py -I C:\documents\tekkendocs\t8\videos\alisa -O C:\documents\tekkendocs\t8\videos\alisa-converted --width 480 --format mp4
+```
+
+### GIF output with frame rate
+
+For GIF conversion, you can specify FPS:
+
+```
+tekkendocs>python utils\convertVideoResolution.py -I C:\documents\tekkendocs\t8\videos\alisa -O C:\documents\tekkendocs\t8\videos\alisa-converted --width 480 --format gif --fps 15
+```
+
+`--fps` is only valid when `--format gif` is used.
+
+### Overwrite existing output files
+
+By default, existing output files are skipped. To overwrite them:
+
+```
+tekkendocs>python utils\convertVideoResolution.py -I <inputFolder> -O <outputFolder> --width 480 --overwrite
+```

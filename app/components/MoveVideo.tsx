@@ -3,7 +3,7 @@ import { useState } from 'react';
 import FilePlayer from 'react-player/file';
 import ReactPlayer from 'react-player/youtube';
 import { useHydrated } from 'remix-utils/use-hydrated';
-import { internalMoveVideoSet } from '~/services/staticDataService';
+import { cdnUrl, internalMoveVideoSet } from '~/services/staticDataService';
 import { type Move } from '~/types/Move';
 import { charIdFromMove, isWavuMove } from '~/utils/moveUtils';
 
@@ -72,7 +72,7 @@ export const MoveVideo = ({
             }
             // playIcon={<div>play</div>}
             loop
-            url={`https://tekkendocs.b-cdn.net/t8/videos/${charId}/${move.video.replace('File:', '')}`}
+            url={`${cdnUrl}/t8/videos/${charId}/${move.video.replace('File:', '')}`}
           />
         </button>
         {hideFrameData && (
