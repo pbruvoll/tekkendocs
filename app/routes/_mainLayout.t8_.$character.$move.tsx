@@ -3,6 +3,7 @@ import { Link, type MetaFunction, useMatches, useParams } from 'react-router';
 import { ContentContainer } from '~/components/ContentContainer';
 import { MoveVideo } from '~/components/MoveVideo';
 import { SimpleMovesTable } from '~/components/SimpleMovesTable';
+import { cdnUrl } from '~/services/staticDataService';
 import { type Move } from '~/types/Move';
 import {
   getCharacterFrameData,
@@ -74,6 +75,13 @@ export const meta: MetaFunction = ({ params, matches }) => {
   ) {
     video = `/t8/moves/${characterId}/${move.video?.replace('File:', '')}`;
   }
+
+  if (characterId === 'reina' && move?.video) {
+    const base = move.video.replace('File:', '').replace('.mp4', '');
+    image = `${cdnUrl}/t8/videos/${characterId}/${base}-320.gif`;
+    video = `${cdnUrl}/t8/videos/${characterId}/${base}.mp4`;
+  }
+
   return [
     { title },
     { description },
@@ -81,11 +89,16 @@ export const meta: MetaFunction = ({ params, matches }) => {
     { property: 'description', content: description },
     { property: 'og:description', content: description },
     { property: 'og:image', content: image },
+    { property: 'og:image:width', content: '640' },
+    { property: 'og:image:height', content: '360' },
+    { name: 'twitter:card', content: 'summary_large_image' },
+    { name: 'twitter:title', content: title },
+    { name: 'twitter:description', content: description },
+    { name: 'twitter:image', content: image },
     ...(video
       ? [
           { property: 'og:video:url', content: video },
           { property: 'og:video:secure_url', content: video },
-          { property: 'og:video:type', content: 'video/mp4' },
           { property: 'og:video:width', content: '640' },
           { property: 'og:video:height', content: '360' },
         ]
