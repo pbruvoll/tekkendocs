@@ -3,7 +3,7 @@ import { Link, type MetaFunction, useMatches, useParams } from 'react-router';
 import { ContentContainer } from '~/components/ContentContainer';
 import { MoveVideo } from '~/components/MoveVideo';
 import { SimpleMovesTable } from '~/components/SimpleMovesTable';
-import { cdnUrl } from '~/services/staticDataService';
+import { cdnUrl, charVideoInfoT8 } from '~/services/staticDataService';
 import { type Move } from '~/types/Move';
 import {
   getCharacterFrameData,
@@ -69,17 +69,13 @@ export const meta: MetaFunction = ({ params, matches }) => {
     image = `/t8/moves/${characterId}/Paul_CS.2.gif`;
   }
   let video: string | undefined;
-  if (
-    (move?.video && move?.wavuId === 'Jun-1+2') ||
-    move?.wavuId === 'Jun-u+2'
-  ) {
-    video = `/t8/moves/${characterId}/${move.video?.replace('File:', '')}`;
-  }
-
-  if (characterId === 'reina' && move?.video) {
+  if (move?.video) {
     const base = move.video.replace('File:', '').replace('.mp4', '');
-    image = `${cdnUrl}/t8/videos/${characterId}/${base}-320.gif`;
-    video = `${cdnUrl}/t8/videos/${characterId}/${base}.mp4`;
+    const prefix = charVideoInfoT8[characterId]?.videoPostFix ?? '-426';
+    video = `${cdnUrl}/t8/videos/${characterId}/${base}${prefix}.mp4`;
+    if (charVideoInfoT8[characterId]?.gifs) {
+      image = `${cdnUrl}/t8/videos/${characterId}/${base}-320.gif`;
+    }
   }
 
   return [

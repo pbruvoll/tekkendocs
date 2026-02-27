@@ -213,6 +213,20 @@ export const internalMoveVideoSet = new Set([
   'azucena',
 ]);
 
+export const charVideoInfoT8: Record<string, { videoPostFix?: string;  gifs?: true }> = {
+  asuka: {
+    videoPostFix: '-640',
+  },
+  azucena : {},
+  jun : {
+    videoPostFix: ''
+  },
+  reina: {
+    videoPostFix: '',
+    gifs: true,
+  },
+}
+
 export const getTekken7Characters = (): CharacterInfo[] => {
   return characterInfoListT7;
 };

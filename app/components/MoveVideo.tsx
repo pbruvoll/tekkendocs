@@ -3,7 +3,7 @@ import { useState } from 'react';
 import FilePlayer from 'react-player/file';
 import ReactPlayer from 'react-player/youtube';
 import { useHydrated } from 'remix-utils/use-hydrated';
-import { cdnUrl, internalMoveVideoSet } from '~/services/staticDataService';
+import { cdnUrl, charVideoInfoT8 } from '~/services/staticDataService';
 import { type Move } from '~/types/Move';
 import { charIdFromMove, isWavuMove } from '~/utils/moveUtils';
 
@@ -36,12 +36,15 @@ export const MoveVideo = ({
 
   const charId = isWavuMove(move) ? charIdFromMove(move) : undefined;
 
-  if (move.video && charId && internalMoveVideoSet.has(charId) && isHydrated) {
-    const videoCharUrl =
-      charId === 'azucena' ? 'azucena-converted-426' : charId;
+  if (
+    move.video &&
+    charId &&
+    (charVideoInfoT8[charId] || !move.ytVideo) &&
+    isHydrated
+  ) {
     const videoBase =
       move.video.replace('File:', '').replace('.mp4', '') +
-      (charId === 'azucena' ? '-426' : charId === 'asuka' ? '-640' : '');
+      (charVideoInfoT8[charId]?.videoPostFix ?? '-426');
 
     return (
       <div className={cx('relative aspect-video', className)}>
@@ -78,7 +81,7 @@ export const MoveVideo = ({
             }
             // playIcon={<div>play</div>}
             loop
-            url={`${cdnUrl}/t8/videos/${videoCharUrl}/${videoBase}.mp4`}
+            url={`${cdnUrl}/t8/videos/${charId}/${videoBase}.mp4`}
           />
         </button>
         {hideFrameData && (
