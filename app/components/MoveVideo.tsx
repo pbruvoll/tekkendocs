@@ -132,20 +132,5 @@ export const MoveVideo = ({
     );
   }
 
-  if (move.video) {
-    return (
-      <div className={cx(className)}>
-        <iframe
-          className="aspect-video w-full"
-          title="Move Video"
-          src={`https://wavu.wiki/t/Special:Redirect/file/${move?.video}`}
-        />
-        <div className="text-xs text-muted-foreground">
-          Video from Wavu wiki
-        </div>
-      </div>
-    );
-  }
-
   return null;
 };

@@ -206,12 +206,6 @@ export const siteUrl = 'https://tekkendocs.com';
 
 export const cdnUrl = 'https://tekkendocs.b-cdn.net';
 
-export const internalMoveVideoSet = new Set([
-  'reina',
-  'jun',
-  'asuka',
-  'azucena',
-]);
 
 export const charVideoInfoT8: Record<string, { videoPostFix?: string;  gifs?: true }> = {
   asuka: {

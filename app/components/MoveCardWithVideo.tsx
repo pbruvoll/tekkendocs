@@ -4,14 +4,12 @@ import { useEffect, useEffectEvent, useRef, useState } from 'react';
 import { Link } from 'react-router';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
-import { internalMoveVideoSet } from '~/services/staticDataService';
 import { type Move } from '~/types/Move';
 import {
   getBlockFrameColorClasses,
   getHitFrameColorClasses,
   simplifyFrameValue,
 } from '~/utils/frameDataViewUtils';
-import { charIdFromMove, isWavuMove } from '~/utils/moveUtils';
 import { MovePropertyIconList } from './MovePropertyIconList';
 import { MovePropertyTagList } from './MovePropertyTagList';
 import { MoveVideo } from './MoveVideo';
@@ -62,11 +60,7 @@ export const MoveCardWithVideo = ({
   shouldLoadVideo: shouldLoadVideoProp,
   onInViewChange,
 }: MoveCardWithVideoProps) => {
-  const hasVideo =
-    Boolean(move.ytVideo) ||
-    (move.video &&
-      isWavuMove(move) &&
-      internalMoveVideoSet.has(charIdFromMove(move)));
+  const hasVideo = Boolean(move.ytVideo) || move.video;
 
   const cardRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(cardRef, {

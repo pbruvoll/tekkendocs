@@ -1,6 +1,5 @@
 import cx from 'classix';
 import { Link } from 'react-router';
-import { internalMoveVideoSet } from '~/services/staticDataService';
 import { type FrameDataListProps } from '~/types/FrameDataListProps';
 import { type MoveT8 } from '~/types/Move';
 import { getRecoveryFrames } from '~/utils/frameDataUtils';
@@ -95,9 +94,7 @@ export function SimpleMovesTable({
                   <Link style={{ textDecoration: 'none' }} to={moveUrl}>
                     {formatWordWithBreaks(move.command)}
                   </Link>
-                  {(move.ytVideo ||
-                    (move.video &&
-                      internalMoveVideoSet.has(computedCharId))) && (
+                  {(move.ytVideo || move.video) && (
                     <MovePreviewDialogButton move={move} url={moveUrl} />
                   )}
                 </span>
