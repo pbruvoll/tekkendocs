@@ -206,20 +206,22 @@ export const siteUrl = 'https://tekkendocs.com';
 
 export const cdnUrl = 'https://tekkendocs.b-cdn.net';
 
-
-export const charVideoInfoT8: Record<string, { videoPostFix?: string;  gifs?: true }> = {
+export const charVideoInfoT8: Record<
+  string,
+  { videoPostFix?: string; gifs?: true }
+> = {
   asuka: {
     videoPostFix: '-640',
   },
-  azucena : {},
-  jun : {
-    videoPostFix: ''
+  azucena: {},
+  jun: {
+    videoPostFix: '',
   },
   reina: {
     videoPostFix: '',
     gifs: true,
   },
-}
+};
 
 export const getTekken7Characters = (): CharacterInfo[] => {
   return characterInfoListT7;
