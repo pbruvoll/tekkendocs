@@ -37,6 +37,12 @@ export const MoveVideo = ({
   const charId = isWavuMove(move) ? charIdFromMove(move) : undefined;
 
   if (move.video && charId && internalMoveVideoSet.has(charId) && isHydrated) {
+    const videoCharUrl =
+      charId === 'azucena' ? 'azucena-converted-426' : charId;
+    const videoBase =
+      move.video.replace('File:', '').replace('.mp4', '') +
+      (charId === 'azucena' ? '-426' : charId === 'asuka' ? '-640' : '');
+
     return (
       <div className={cx('relative aspect-video', className)}>
         {/* Loading indicator behind the video - no z-index so video stays on top */}
@@ -72,7 +78,7 @@ export const MoveVideo = ({
             }
             // playIcon={<div>play</div>}
             loop
-            url={`${cdnUrl}/t8/videos/${charId}/${move.video.replace('File:', '')}`}
+            url={`${cdnUrl}/t8/videos/${videoCharUrl}/${videoBase}.mp4`}
           />
         </button>
         {hideFrameData && (
