@@ -113,6 +113,45 @@ def parse_args() -> argparse.Namespace:
         choices=["full", "diff"],
         help="palettegen stats mode. Defaults to diff for GIF when omitted"
     )
+    parser.add_argument(
+        "--video-crf",
+        type=int,
+        help="CRF quality for non-GIF H.264 output (lower is higher quality/larger files). Defaults to 25 for MP4 when bitrate mode is not used"
+    )
+    parser.add_argument(
+        "--video-preset",
+        type=str,
+        choices=[
+            "ultrafast", "superfast", "veryfast", "faster", "fast",
+            "medium", "slow", "slower", "veryslow"
+        ],
+        help="x264 preset for non-GIF H.264 output. Defaults to veryslow"
+    )
+    parser.add_argument(
+        "--video-fps",
+        type=float,
+        help="Output frame rate for non-GIF video output. Defaults to 60"
+    )
+    parser.add_argument(
+        "--video-bitrate",
+        type=str,
+        help="Target video bitrate for non-GIF H.264 output (e.g. 809k, 1.2M). Enables bitrate mode instead of CRF"
+    )
+    parser.add_argument(
+        "--video-maxrate",
+        type=str,
+        help="Max video bitrate for non-GIF H.264 output (e.g. 817k, 1.5M). Used with --video-bitrate; defaults to 817k"
+    )
+    parser.add_argument(
+        "--video-bufsize",
+        type=str,
+        help="Rate-control buffer size for non-GIF H.264 output (e.g. 1634k, 3M). Used with --video-bitrate; defaults to 1634k"
+    )
+    parser.add_argument(
+        "--no-audio",
+        action="store_true",
+        help="Disable audio track in non-GIF output videos"
+    )
     return parser.parse_args()
 
 
@@ -138,6 +177,9 @@ def validate_args(args: argparse.Namespace) -> tuple[Path, Path, str | None]:
     if args.fps is not None and args.fps <= 0:
         raise ValueError("--fps must be > 0 when provided")
 
+    if args.video_fps is not None and args.video_fps <= 0:
+        raise ValueError("--video-fps must be > 0 when provided")
+
     output_format = normalize_format(args.format)
     if output_format and output_format not in OUTPUT_FORMATS:
         allowed = ", ".join(sorted(OUTPUT_FORMATS))
@@ -154,11 +196,34 @@ def validate_args(args: argparse.Namespace) -> tuple[Path, Path, str | None]:
             raise ValueError("--gif-bayer-scale requires --format gif")
         if args.gif_palette_stats is not None:
             raise ValueError("--gif-palette-stats requires --format gif")
+
+        if args.video_crf is not None and not 0 <= args.video_crf <= 51:
+            raise ValueError("--video-crf must be between 0 and 51")
+
+        if args.video_crf is not None and args.video_bitrate is not None:
+            raise ValueError("Use either --video-crf or --video-bitrate, not both")
+        if args.video_crf is not None and (args.video_maxrate is not None or args.video_bufsize is not None):
+            raise ValueError("--video-maxrate/--video-bufsize cannot be used with --video-crf")
+        if args.video_bitrate is None and (args.video_maxrate is not None or args.video_bufsize is not None):
+            raise ValueError("--video-maxrate and --video-bufsize require --video-bitrate")
     else:
         if args.gif_colors is not None and not 2 <= args.gif_colors <= 256:
             raise ValueError("--gif-colors must be between 2 and 256")
         if args.gif_bayer_scale is not None and not 0 <= args.gif_bayer_scale <= 5:
             raise ValueError("--gif-bayer-scale must be between 0 and 5")
+
+        if args.video_crf is not None:
+            raise ValueError("--video-crf cannot be used with --format gif")
+        if args.video_preset is not None:
+            raise ValueError("--video-preset cannot be used with --format gif")
+        if args.video_bitrate is not None:
+            raise ValueError("--video-bitrate cannot be used with --format gif")
+        if args.video_maxrate is not None:
+            raise ValueError("--video-maxrate cannot be used with --format gif")
+        if args.video_bufsize is not None:
+            raise ValueError("--video-bufsize cannot be used with --format gif")
+        if args.video_fps is not None:
+            raise ValueError("--video-fps cannot be used with --format gif")
 
     if shutil.which("ffmpeg") is None:
         raise ValueError("ffmpeg was not found in PATH. Install ffmpeg and try again")
@@ -169,8 +234,8 @@ def validate_args(args: argparse.Namespace) -> tuple[Path, Path, str | None]:
 
 def make_scale_filter(width: int, height: int | None) -> str:
     if height is None:
-        return f"scale={width}:-2"
-    return f"scale={width}:{height}"
+        return f"scale=w='min(iw,{width})':h=-2"
+    return f"scale=w='min(iw,{width})':h='min(ih,{height})'"
 
 
 def build_output_path(
@@ -213,6 +278,17 @@ class GifOptions:
     palette_stats: str
 
 
+@dataclass(frozen=True)
+class VideoOptions:
+    use_x264_controls: bool
+    crf: int | None
+    preset: str
+    bitrate: str | None
+    maxrate: str | None
+    bufsize: str | None
+    fps: float
+
+
 def resolve_gif_options(args: argparse.Namespace) -> GifOptions:
     colors = args.gif_colors if args.gif_colors is not None else 32
     dither = args.gif_dither if args.gif_dither is not None else "bayer"
@@ -230,6 +306,57 @@ def resolve_gif_fps(args: argparse.Namespace) -> float:
     return args.fps if args.fps is not None else 15.0
 
 
+def resolve_video_options(args: argparse.Namespace, output_format: str) -> VideoOptions:
+    fps = args.video_fps if args.video_fps is not None else 60.0
+
+    if output_format != "mp4":
+        return VideoOptions(
+            use_x264_controls=False,
+            crf=None,
+            preset="slow",
+            bitrate=None,
+            maxrate=None,
+            bufsize=None,
+            fps=fps,
+        )
+
+    preset = args.video_preset if args.video_preset is not None else "veryslow"
+
+    if args.video_crf is not None:
+        return VideoOptions(
+            use_x264_controls=True,
+            crf=args.video_crf,
+            preset=preset,
+            bitrate=None,
+            maxrate=None,
+            bufsize=None,
+            fps=fps,
+        )
+
+    if args.video_bitrate is not None:
+        maxrate = args.video_maxrate if args.video_maxrate is not None else "817k"
+        bufsize = args.video_bufsize if args.video_bufsize is not None else "1634k"
+        return VideoOptions(
+            use_x264_controls=True,
+            crf=None,
+            preset=preset,
+            bitrate=args.video_bitrate,
+            maxrate=maxrate,
+            bufsize=bufsize,
+            fps=fps,
+        )
+
+    return VideoOptions(
+        use_x264_controls=True,
+        crf=25,
+        preset=preset,
+        bitrate=None,
+        maxrate=None,
+        bufsize=None,
+        fps=fps,
+    )
+
+
 def build_paletteuse_filter(options: GifOptions) -> str:
     paletteuse = f"paletteuse=dither={options.dither}"
     if options.dither == "bayer":
@@ -241,7 +368,10 @@ def convert_standard_video(
     src_file: Path,
     dest_file: Path,
     scale_filter: str,
+    output_format: str,
+    video_options: VideoOptions,
     overwrite: bool,
+    no_audio: bool,
 ) -> bool:
     command = [
         "ffmpeg",
@@ -253,8 +383,35 @@ def convert_standard_video(
         str(src_file),
         "-vf",
         scale_filter,
-        str(dest_file),
     ]
+
+    if output_format == "mp4" and video_options.use_x264_controls:
+        command.extend([
+            "-c:v",
+            "libx264",
+            "-preset",
+            video_options.preset,
+            "-pix_fmt",
+            "yuv420p",
+        ])
+
+        if video_options.crf is not None:
+            command.extend(["-crf", str(video_options.crf)])
+        else:
+            command.extend(["-b:v", str(video_options.bitrate)])
+            if video_options.maxrate:
+                command.extend(["-maxrate", str(video_options.maxrate)])
+            if video_options.bufsize:
+                command.extend(["-bufsize", str(video_options.bufsize)])
+
+        command.extend(["-movflags", "+faststart"])
+
+    if no_audio:
+        command.append("-an")
+
+    command.extend(["-r", str(video_options.fps)])
+
+    command.append(str(dest_file))
     return run_ffmpeg(command)
 
 
@@ -366,7 +523,16 @@ def main() -> None:
                     args.overwrite,
                 )
             else:
-                ok = convert_standard_video(source_file, output_file, scale_filter, args.overwrite)
+                video_options = resolve_video_options(args, output_format)
+                ok = convert_standard_video(
+                    source_file,
+                    output_file,
+                    scale_filter,
+                    output_format,
+                    video_options,
+                    args.overwrite,
+                    args.no_audio,
+                )
 
             if ok:
                 converted += 1

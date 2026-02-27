@@ -206,7 +206,12 @@ export const siteUrl = 'https://tekkendocs.com';
 
 export const cdnUrl = 'https://tekkendocs.b-cdn.net';
 
-export const internalMoveVideoSet = new Set(['reina', 'jun']);
+export const internalMoveVideoSet = new Set([
+  'reina',
+  'jun',
+  'asuka',
+  'azucena',
+]);
 
 export const getTekken7Characters = (): CharacterInfo[] => {
   return characterInfoListT7;
