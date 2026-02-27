@@ -183,7 +183,7 @@ b+1:1;m, t;14, 36;i18, ;;+0d;;"* Deal 5 (8) recoverable damage to self without H
 * Low crush 80~92
 * Floating state 93~95";js80~92 fs93~95;;Zafina-b+1:1;Cursed Claw;;;File:t8-p2-zafina-b+1c1+2.mp4
 b+1:ORB.1+2;m, t;14, 19,10,16;i18, ;;+0d;;"* Consumes ORB
-* Partially consumes remaining Heat time
+* Consumes 180F of remaining Heat time
 * Azazel's Power
 * Deals (5) 8 recoverable damage to Zafina without Heat
 * Deals 5 additional damage when Zafina's remaining health is 42 or lower
@@ -198,13 +198,16 @@ b+2;h;22;i22~23;-5;+14;;"* Homing
 * +23a on BT hit";hom;;Zafina-b+2;Brisingamen Backfist;r29;;File:t8-p2-zafina-b+2.mp4
 b+3;m;23;i24~26;-14;+12a;;"* Balcony Break
 * Spike
+* -9 frame advantage and 9 chip damage on block after absorbing an attack in power crush state
 * Power crush 7~23";bbr spk pc7~23;;Zafina-b+3;Ereshkigal Stomp;r36;;File:t8-p2-zafina-b+3.mp4
 b+3,ORB.1+2;m;13,8,(20)14;i24~26;-9;-14a (-15);;"* Balcony Break
 * Consumes ORB
-* Partially consumes remaining Heat time
-* Deals 3 additional damage when Zafina's remaining health is 42 or lower
+* Consumes 240F of remaining Heat time
+* Deals 3 additional damage when Zafina's remaining health is below 43
 * 8 chip damage on block
-** 13 chip damage on block when Zafina's remaining health is 42 or lower
+** 13 chip damage on block when Zafina's remaining health is below 43
+* -9 frame advantage and 17 chip damage on block after absorbing an attack in power crush state
+** 22 chip damage when Zafina's remaining health is below 43
 * Available only on hit or block
 * Power crush 7~23";bbr pc7~23;;Zafina-b+3,ORB.1+2;Anathematic Stomp;;;
 b+4;m;14;i22~23;-9;+4;;;;;Zafina-b+4;;r32;;
@@ -220,7 +223,7 @@ b+1+2;m;27;i19~20;-6;+12a (+3);;"* Balcony Break
 b+1+2,ORB.1+2;m;17,5,15;i19~20;+2;+10a (-16);;"* Balcony Break
 * Deals 12 recoverable damage to self without Heat
 * Consumes ORB
-* Partially consumes remaining Heat time
+* Consumes 240F of remaining Heat time
 * Azazel's Power
 * Deals 5 additional damage when Zafina's remaining health is 42 or lower
 * 8 chip damage on block
@@ -308,6 +311,7 @@ MNT.4,3;L, m;13, 23;i17~18, i27;-30;+32a (+22);;"* Tornado
 * Combo from 1st CH
 * Floating state 10~63";trn fs10~63;MNT;Zafina-MNT.4,3;Neti;r58 MNT;;File:Zafina MTN.4,3.mp4
 MNT.1+2;m;21;i20;-12;+18a;;"* Spike
+* -9 frame advantage and 8 chip damage on block after absorbing an attack in power crush state
 * Power crush 8~19";spk pc8~19;;Zafina-MNT.1+2;Scarecrow Strike;r42;;File:t8-p2-zafina-mnt.1+2.mp4
 MNT.2+3;;;;;;;;;MNT;Zafina-MNT.2+3;Paradox;r25 BT MNT;;File:t8-p2-zafina-mnt.2+3.mp4
 MNT.df+1;M;30;i20~21;+10;+11a;;"* Heat Engager
@@ -373,6 +377,7 @@ SCR.3,3;m, h;15, 20;i13, i16;+0;+25a (+15);;"* Balcony Break
 * Combo from 1st hit with 14f delay
 * Move can be delayed 9f";bbr;SCR;Zafina-SCR.3,3;Gizal;r25 SCR;;
 SCR.4;M;20;i15~16;-18;+58a (+42);;"* Tornado
+* -8 frame advantage and 8 chip damage on block after absorbing an attack in power crush state
 * Power crush 8~14";trn pc8~14;;Zafina-SCR.4;Spinning Sappara;r44;;File:t8-p2-zafina-scr.4.mp4
 SCR.1+2;m;20;i17~19;+6;+17a;;"* Spike
 * Enter TRT with D";spk;TRT;Zafina-SCR.1+2;Huwawa;r41;;File:t8-p2-zafina-scr.1+2.mp4
@@ -413,7 +418,8 @@ SCR.d+3+4;;;;;;;"* High crush 1~70
 TRT.1;L;13;i18;-11;+5;+15a;;;TRT;Zafina-TRT.1;Tarantula Shotel;r30 TRT;;File:t8-p2-zafina-trt.1.mp4
 TRT.2;M;24;i34~36;-13;+38a;;"* Tornado
 * Recover 4f faster on hit (t64 r28)
-* Power crush 8";trn pc8;;Zafina-TRT.2;Tarantula Cutlass;r32;;File:t8-p2-zafina-trt.2.mp4
+* -9 frame advantage and 9 chip damage on block after absorbing an attack in power crush state
+* Power crush 8~33";trn pc8~33;;Zafina-TRT.2;Tarantula Cutlass;r32;;File:t8-p2-zafina-trt.2.mp4
 TRT.3;m;16;i14~i15;-7;+5c;+19c;"* Spike
 * Floating state 1~49?";spk fs1~49?;TRT;Zafina-TRT.3;Deathstalker;r34 TRT;;File:t8-p2-zafina-trt.3.mp4
 TRT.4;m;10;i26;-22;-4;-4c;"* Transition to TRT with D

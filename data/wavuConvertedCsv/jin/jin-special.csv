@@ -14,26 +14,25 @@ H.db+1+2;M;0;i19~34;+4;+23g~+38g;;"* Strong Aerial Tailspin
 * Causes wall splat on hit
 * Opponent recovers crouching
 * Power crush 6~18";bbr pc6~18;DVS;Jin-H.db+1+2;Awakened Power Stance;r26;;
-H.f,F+1+2;m;20;i25~27;+5;+18g;;"* Balcony Break
-* Transitions to CD on hit or block
+H.f,F+1+2;m;20;i25~27;+5;+24g;;"* Balcony Break
+* Strong Aerial Tailspin
+* Transitions to DVS on hit or block
 * Cancel transition and recover Standing +18g, -1 with B
 * 6 chip damage on block
-* Low crush";bbr js;CD;Jin-H.f,F+1+2;Awakened Black Wing;CD;;
+* Low crush";bbr js;DVS;Jin-H.f,F+1+2;Awakened Black Wing;DVS;;
 H.2+3;m,h,m;57;i15~16;+3;+0d;;"* Heat Smash
 * Reversal Break
 * Balcony Break
 * Transition to attack throw after 1st hit
-* Transition to Breaking Step automatically on block
+* Transition to CD automatically on block
 * Transition to standing on block with B
 * 6 Chip damage on block
-* Jail from 1st attack
-* Ends Heat";hs rbr bbr;Breaking Step;Jin-H.2+3;Hellfire Trespass Slayer;r33;;
+* Jail from 1st attack";hs rbr bbr;CD;Jin-H.2+3;Hellfire Trespass Slayer;r33;;
 H.2+3,4;m,h,m;48;i15~16;+9;+32a (-4);;"* Heat Smash
 * Reversal Break
 * Balcony Break
 * 7 Chip damage on block
-* Jail from 1st attack
-* Ends Heat";hs rbr bbr;;Jin-H.2+3,4;Hellfire Darkside Slayer;r32;;
+* Jail from 1st attack";hs rbr bbr;;Jin-H.2+3,4;Hellfire Darkside Slayer;r32;;
 R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Removes Recoverable Health
 * Reversal Break
@@ -72,9 +71,10 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 2;h;9;i10;+0;+9;;;;;Jin-2;Right Jab;r19;;
 2,1;h, m;9, 9;i10, i16~17;-3;+6;;"* Jail from 1st attack with 2f delay
 * Same animation as df+1";;;Jin-2,1;Double Thrust;r20;;
-2,1,4;h, m, m;9, 9, 18;i10, ,i18~20;-10;+3;+19a;"* Balcony Break on CH
+2,1,4;h, m, m;9, 9, 18;i10, ,i18~20;-10;+3;+19c;"* Balcony Break on CH
 * Combo from 2nd CH with 8f delay
-* Input can be delayed 10f";;;Jin-2,1,4;Double Thrust > Roundhouse;r26;;File:t8-p2-jin-2,1,4.mp4
+* Input can be delayed 10f
+* Forces tech backroll on CH";;;Jin-2,1,4;Double Thrust > Roundhouse;r26;;File:t8-p2-jin-2,1,4.mp4
 2,1,4~4;h, m, l;9, 9, 20;i10, ,i20~21;-12;+16a;;Interrupt with i16 from 2nd block;;;Jin-2,1,4~4;Double Thrust > Low Trick Kick;r28;;File:t8-p2-jin-2,1,4t4.mp4
 2,4;h, h;9, 20;i10, i24~27;-13;+7;;"* Balcony Break
 * Strong Aerial Tailspin
@@ -175,7 +175,8 @@ b+1+3;;;;;;;"* Strong parry: parries all highs or mids except throws, unblockabl
 * Plus frames after parrying depend on the recovery of the parried move
 * Parry state 3~9";ps3~9;;Jin-b+1+3;Parry;r30;;
 b+2;m;12;i15~16;-11;+0;;;;;Jin-b+2;;r29;;
-b+2,1;m, m;12, 10;i15~16, i14~15;-9;+2;;"* Combo from 1st hit with 1f delay
+b+2,1;m, m;12, 10;i15~16, i14~15;-9;+2;;"* Jail from 1st block with ?F delay
+* Combo from 1st hit with 1f delay
 * Combo from 1st CH with 13f delay";;;Jin-b+2,1;Shun Masatsu;r27;;File:t8-p2-jin-b+2,1.mp4
 b+3;m;17;i16;-6;+5;;"* Knee
 * Enter ZEN -2 +9 r20 with F";kne;ZEN;Jin-b+3;Left Knee;r25;;
