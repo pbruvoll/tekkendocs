@@ -7,7 +7,6 @@ import { Table } from '@radix-ui/themes';
 import { useMemo } from 'react';
 import { Link, useLocation, useSearchParams } from 'react-router';
 import { orderByKey } from '~/constants/sortConstants';
-import { internalMoveVideoSet } from '~/services/staticDataService';
 import { type FrameDataListProps } from '~/types/FrameDataListProps';
 import { type Move, type MoveT8 } from '~/types/Move';
 import { type SortOrder } from '~/types/SortOrder';
@@ -100,9 +99,7 @@ export const FrameDataTable = ({
                   <Link style={{ textDecoration: 'none' }} to={moveUrl}>
                     {move.command}
                   </Link>
-                  {(move.ytVideo ||
-                    (move.video &&
-                      internalMoveVideoSet.has(computedCharId))) && (
+                  {(move.ytVideo || move.video) && (
                     <MovePreviewDialogButton move={move} url={moveUrl} />
                   )}
                 </span>
