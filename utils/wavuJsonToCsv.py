@@ -55,6 +55,22 @@ def getTransitions(move) :
         return ",".join(filtered)
     return ""
 
+def fillMissingVideoFromExtendedInput(move, moves):
+    if move.get("video"):
+        return
+
+    moveInput = move.get("input", "")
+    if not moveInput:
+        return
+
+    inputPrefix = moveInput + ","
+    for otherMove in moves:
+        otherVideo = otherMove.get("video")
+        otherInput = otherMove.get("input", "")
+        if otherVideo and otherInput.startswith(inputPrefix):
+            move["video"] = otherVideo
+            break
+
 def correctMove(move, charName) : 
     input = move["input"]
 
@@ -116,7 +132,8 @@ def convert(filePath, outDir):
     jsonData = json.load(f)
     f.close()
     csvContent = [list(map(lambda x: x["displayName"], columns))];
-    for move in jsonData : 
+    for move in jsonData :
+        fillMissingVideoFromExtendedInput(move, jsonData)
         correctMove(move, charName)
         csvContent.append(list(map(lambda x: move.get(x["wavuId"], ""), columns)));
     

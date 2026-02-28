@@ -5,11 +5,9 @@ import { MoveVideo } from '~/components/MoveVideo';
 import { SimpleMovesTable } from '~/components/SimpleMovesTable';
 import { cdnUrl, charVideoInfoT8 } from '~/services/staticDataService';
 import { type Move } from '~/types/Move';
-import {
-  getCharacterFrameData,
-  getCharacterFrameDataMoves,
-} from '~/utils/characterPageUtils';
+import { getCharacterFrameDataMoves } from '~/utils/characterPageUtils';
 import { getRecoveryFrames, getRelatedMoves } from '~/utils/frameDataUtils';
+import { simplifyFrameValue } from '~/utils/frameDataViewUtils';
 import { getCacheControlHeaders } from '~/utils/headerUtils';
 import { commandToUrlSegment } from '~/utils/moveUtils';
 
@@ -18,9 +16,8 @@ export const headers = () => getCacheControlHeaders({ seconds: 60 * 5 });
 export const meta: MetaFunction = ({ params, matches }) => {
   const character = params.character;
   const command = params.move;
-  const frameData = getCharacterFrameData(matches);
 
-  if (!frameData || !command || !character || !frameData.headers) {
+  if (!character || !command) {
     return [
       {
         title: 'TekkenDocs - Uknown character',
@@ -32,13 +29,15 @@ export const meta: MetaFunction = ({ params, matches }) => {
   }
   const characterId = character?.toLocaleLowerCase();
   const characterTitle = character[0].toUpperCase() + character.substring(1);
-  let title = `${command} - ${characterTitle} Tekken8 Frame Data | TekkenDocs`;
 
-  const data = findMoveRow(command, frameData.rows);
-  if (!data) {
+  const moves = getCharacterFrameDataMoves(matches);
+
+  const move: Move | undefined = moves ? findMove(command, moves) : undefined;
+
+  if (!move) {
     return [
       {
-        title,
+        title: `${command} - ${characterTitle} Tekken8 Frame Data | TekkenDocs`,
       },
       {
         description: `Frame data for ${params.move}.`,
@@ -46,30 +45,31 @@ export const meta: MetaFunction = ({ params, matches }) => {
     ];
   }
 
-  const { headers: dataHeaders, rows } = frameData;
-  const moveRow = findMoveRow(command, rows) || [];
+  const title = `${move.command} - ${characterTitle} Tekken8 Frame Data | TekkenDocs`;
 
-  const moves = getCharacterFrameDataMoves(matches);
-  const move: Move | undefined = moves ? findMove(command, moves) : undefined;
+  const description = !move
+    ? undefined
+    : [
+        `Startup: ${simplifyFrameValue(move.startup || '')}`,
+        `Level: ${move.hitLevel}`,
+        `Block: ${simplifyFrameValue(move.block || '')}`,
+        `Hit / Counter: ${simplifyFrameValue(move.hit || '') + (move?.counterHit && move.counterHit !== move.hit ? ` / ${simplifyFrameValue(move.counterHit || '')}` : '')}`,
+        `Damage: ${move.damage}`,
+        move.recovery ? `Recovery: ${move.recovery}` : '',
+        move.notes,
+      ]
+        .filter(Boolean)
+        .join('\n');
 
-  if (move) {
-    title = `${move.command} - ${characterTitle} Tekken8 Frame Data | TekkenDocs`;
-  }
-
-  const description = dataHeaders
-    .slice(0, 8)
-    .map((header, index) => `${header}:   ${moveRow[index] || ''}`)
-    .join('\n');
-
-  let image = move?.image?.startsWith('File:')
-    ? `https://wavu.wiki/t/Special:Redirect/file/${move?.image}`
+  let image = move.image?.startsWith('File:')
+    ? `https://wavu.wiki/t/Special:Redirect/file/${move.image}`
     : `/t8/avatars/${characterId}-512.png`;
 
-  if (move?.wavuId === 'Paul-CS.2') {
+  if (move.wavuId === 'Paul-CS.2') {
     image = `/t8/moves/${characterId}/Paul_CS.2.gif`;
   }
   let video: string | undefined;
-  if (move?.video) {
+  if (move.video) {
     const base = move.video.replace('File:', '').replace('.mp4', '');
     const prefix = charVideoInfoT8[characterId]?.videoPostFix ?? '-426';
     video = `${cdnUrl}/t8/videos/${characterId}/${base}${prefix}.mp4`;
@@ -105,13 +105,6 @@ export const meta: MetaFunction = ({ params, matches }) => {
       href: `https://tekkendocs.com/t8/${characterId}/${command}`,
     },
   ];
-};
-
-const findMoveRow = (
-  command: string,
-  rows: string[][],
-): string[] | undefined => {
-  return rows.find((row) => row[0] && commandToUrlSegment(row[0]) === command);
 };
 
 const findMove = (command: string, moves: Move[]): Move | undefined => {
