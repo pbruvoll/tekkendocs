@@ -210,6 +210,19 @@ export const charVideoInfoT8: Record<
   string,
   { videoPostFix?: string; gifs?: true }
 > = {
+  alisa: {},
+  bryan: {},
+  claudio: {},
+  clive: {},
+  eddy: {},
+  feng: {},
+  hwoarang: {},
+  heihachi: {},
+  'jack-8': {},
+  jin: {},
+  'devil-jin': {},
+  kazuya: {},
+  dragunov: {},
   asuka: {
     videoPostFix: '-640',
   },
