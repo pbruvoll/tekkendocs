@@ -1,10 +1,11 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Transitions;Wavu id;Name;Recovery;Image;Video
-2+3;m;12;i16;+1;+2c;;"* Heat Burst
-* 100% recoverable damage
-* Chip damage on block
-* Partially uses remaining Heat time
-* Input b,b to cancel the attack
-* Power crush";hb chp pc;;Dragunov-2+3;Heat Burst;H;;
+2+3;m;"[12;12]";i16;+1;+2c;;"* Heat Burst
+* Cancel to r45 with b,b on frame 42
+* 2 chip damage on block
+* 12 chip damage on hit
+* Only deals recoverable damage
+* Cannot cause a K.O.
+* Power crush 7~16";hb pc7~16;;Dragunov-2+3;Heat Burst;r30;;
 H.2+3;m,m,m;25,14,23;"i15~16,
          i30~32,i31~32";+6;+3d;;"* Heat Smash
 * Balcony Break
@@ -12,8 +13,9 @@ H.2+3;m,m,m;25,14,23;"i15~16,
 * 7 Chip damage on block
 * Throw on 1st hit - 50 damage";hs bbr;;Dragunov-H.2+3;Ultra Russian Sickle;;;
 H.2+3,db+1+2;m,m,m, t;25,14,23, 0;"i15~16,
-         i30~32,i31~32, i26";;-2d;;"* Heat Burst
-* Unbreakable on hit";hb;Tackle;Dragunov-H.2+3,db+1+2;Ultra Russian Sickle > Ambush Tackle;Tackle;;
+         i30~32,i31~32, i26";;-2d;;"* Unbreakable on hit
+* Shift to tackle on hit
+* Interrupt with i15 on 1st block";;;Dragunov-H.2+3,db+1+2;Ultra Russian Sickle > Ambush Tackle;r33;;
 R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Removes Recoverable Health
 * Reversal Break
@@ -92,10 +94,12 @@ f+2,4;h, m;16, 24;i19~20, i19~20;-7;+28a (+23);+31a (+25);"* Balcony Break
 * Combo from 1st CH with 10f delay
 * Input can be delayed 10f";bbr kne;;Dragunov-f+2,4;Stun Gun;r27;;File:t8-p2-dragunov-f+2,4.mp4
 f+3;m;11;i20;-6;+5;;Enter SNK +0 +11 r19 with DF;;SNK;Dragunov-f+3;;r25;;File:t8-p2-dragunov-f+3,3.mp4
-f+3,3;m, m;11, 14;i20, i17~20;-10;+1;;"* Spike
+f+3,3;m, m;11, 14;i20, i17~20;-10;+1d / +1c;;"* Spike
 * Combo from 1st CH
 * Side switch on hit 
-* +20 damage throw when hit from the front in close range";spk;;Dragunov-f+3,3;Step-in Mantis;r26;;File:t8-p2-dragunov-f+3,3.mp4
+* +20 damage throw when hit from the front in close range
+** Removes Recoverable Health
+* +1c on normal hit at long range";spk;;Dragunov-f+3,3;Step-in Mantis;r26;;File:t8-p2-dragunov-f+3,3.mp4
 f+3,1+2;m, m;11, 27;i20, i30~31;-3;+22a;;"* Heat Engager
 
 * Heat Dash +5, +67a (+50)
@@ -191,9 +195,8 @@ b+4,2;m, m;15, 10;i14, i21;-7;+4;;"* Spike
 * Combo from 1st CH with 5f delay
 * Enter FC r26 with D or DB
 * Enter SNK -6 +5 r25 with DF";spk;FC,SNK;Dragunov-b+4,2;;r26;;File:t8-p2-dragunov-b+4,2,1.mp4
-b+4,2,1;m, m, h;15, 10, 17;i14, ,i23~24;+1;+5;+14c;"* Combo from 2nd hit with 3f delay
-* Combo from 1st CH with 7f delay
-* Input can be delayed 10f delay";;;Dragunov-b+4,2,1;Tundra Strike > Ear Grab;r24;;File:t8-p2-dragunov-b+4,2,1.mp4
+b+4,2,1;m, m, h;15, 10, 17;i14, ,i23~24;+1;+5;+14c;"* Combo from 2nd hit with 7F delay
+* Move can be delayed by 10F";;;Dragunov-b+4,2,1;Tundra Strike > Ear Grab;r24;;File:t8-p2-dragunov-b+4,2,1.mp4
 b+4,2,1+2;m, m, t;15, 10, 17;i14, ,i40;-5;+3d;;"* Throw break 1+2
 ** Recovery in BT
 ** Unbreakable during Heat
@@ -275,7 +278,10 @@ f,f,F+2;m;22;i15~17;+4;+32d (-26);+44a;"* Balcony Break
 * Russian Assault
 * Russian Hook Special
 </div>";r40;;File:t8-p2-dragunov-f,f,f+2.mp4
-H.f,f,F+2,1+2;m, t;22, 0;i15~17, i40;;-2d;;Partially uses remaining Heat time;;Tackle;Dragunov-f,f,F+2,H.1+2;Russian Hook Special > Ambush Tackle;Tackle;;
+H.f,f,F+2,1+2;m, t;22, 0;i15~17, i40;;-2d;;"* Consumes 300F of remaining Heat time
+* Shift to tackle on hit
+* Interrupt with i24 from 1st block
+* High crush 24~40";cs24~40;;Dragunov-f,f,F+2,H.1+2;Russian Hook Special > Ambush Tackle;r33;;
 f,f,F+4;m,t;20,25;i20~21;-7;+1d;;"* Tornado
 ** on wall hit only (Death's Fragrance)
 * Knee
@@ -309,7 +315,10 @@ FC.df+1,4;L, m;8, 10;i16~17, i16~17;;+7;;"* Knee
 * Combo from 1st hit
 * Available only as combo from 1st hit
 * Input 4 on frames 16~19 to power up - 14 damage";kne;SNK;Dragunov-FC.df+1,4;Hail Slicer;r26 SNK;;File:t8-p2-dragunov-fc.df+1,4.mp4
-H.FC.df+1,1+2;L, t;8, 0;i16~17, i40;;-2d;;Partially uses remaining Heat time;;Tackle;Dragunov-FC.df+1,H.1+2;Hail Slicer > Ambush Tackle;Tackle;;File:t8-p2-dragunov-fc.df+1,h.1+2.mp4
+H.FC.df+1,1+2;L, t;8, 0;i16~17, i40;;-2d;;"* Consumes 300F of remaining Heat time
+* Shift to tackle on hit
+* Interrupt with i28 from 1st block
+* High crush 24~40";cs24~40;;Dragunov-FC.df+1,H.1+2;Hail Slicer > Ambush Tackle;r33;;File:t8-p2-dragunov-fc.df+1,h.1+2.mp4
 (During enemy wall stun).f,f,F+4;m,t;20,20,25,35;i20~21;;;;"* Tornado
 * Deals maximum 32 (20) damage due to scaling";trn;;Dragunov-(During enemy wall stun).f,f,F+4;Death's Fragrance;;;
 (Face down).1+2;;;;;;;* High crush 30~40;cs30~40;FC;Dragunov-(Face down).1+2;Living Dead;r40 FC;;File:Drag_FaceDown+1+2.mp4
@@ -318,23 +327,24 @@ FDFT.3;l,t;8,30;i19;-9;+0d;;"On close hit
 * High crush 1~47";cs1~47;FC;Dragunov-FDFT.3 (Close);Clipping Heel Hook;r28 FC;;
 OTG.db+3;L;24;i24;-11;+0;;"* Floor Break
 * +0a (-8) on grounded";fbr;;Dragunov-OTG.d+3+4;Six Feet Under;r30;;
-PGR.2;m;24;i16;-9;+19a (+2);;"* Balcony Break
-* Strong Aerial Tailspin";bbr;;Dragunov-PGR.2;Frozen Scythe;;;
-PGR.3;l;21;i18;-26;-1d;;"* Homing
+PGR.2;M;24;i16~17;-9;+19a (+2);;"* Balcony Break
+* Strong Aerial Tailspin";bbr;;Dragunov-PGR.2;Frozen Scythe;r30;;
+PGR.3;l;21;i18~19;-26;-1d;;"* Homing
 * Shift to Clipping Heel Hook on front hit only for 20 more damage
 * +3 on hit from the side or back
-* High crush";hom cs;FC;Dragunov-PGR.3;Frozen Heel Hook;FC;;
+* High crush 8~50";hom cs8~50;FC;Dragunov-PGR.3;Frozen Heel Hook;r31 FC;;
 PGR.1+2;m(t);;i26;-5;+3d;;"* Throw break: 1+2
 * Unbreakable in Heat
 * Partially consumes remaining Heat
 * Shift to Takedown (Tackle) on hit
-* High crush";cs;;Dragunov-PGR.1+2;Pigeon Roll > Ambush Tackle;;;
+* High crush 1~26";cs1~26;;Dragunov-PGR.1+2;Pigeon Roll > Ambush Tackle;r33;;
 SNK.1;h;20;i15~16;-8;+51a;;"* Balcony Break
 ** on airborne hit";bbr;;Dragunov-SNK.1;Cocked Hammer;r28;;File:t8-p2-dragunov-snk.1.mp4
 SNK.2;m;25;i18~19;-14;+36a (+26);;"* Tornado
 * Elbow";trn elb;;Dragunov-SNK.2;Stinger Elbow;r35;;File:t8-p2-dragunov-snk.2.mp4
-SNK.3;L,t;17,20;i17~18;-16;+0;+1d;"* Throw when CH from the front or on airborne hit
+SNK.3;L,t;17,20;i17~18;-16;+0;+1d/(+26a);"* Throw when CH from the front or on airborne hit in close range
 ** Called ""Needle Hold"" in-game
+* +26a on CH from distance
 * Floating state 10~42
 * High crush 12~";fs10~42 cs12~;FC;Dragunov-SNK.3;Slay Ride;r34 FC;;File:t8-p2-dragunov-snk.3.mp4
 SNK.4;m;22;i19~20;+7;+8c;;"* Heat Engager
@@ -343,9 +353,10 @@ SNK.4;m;22;i19~20;+7;+8c;;"* Heat Engager
 
 * Balcony Break
 * Spike
-* Chip damage on block";he bbr spk chp;FC;Dragunov-SNK.4;Ignition Switch;r30 FC;;File:t8-p2-dragunov-snk.4.mp4
+* 4 chip damage on block";he bbr spk;FC;Dragunov-SNK.4;Ignition Switch;r31 FC;;File:t8-p2-dragunov-snk.4.mp4
 SNK.3+4;m;20;i17~18;-13;+27g;;"* Knee
 * Absorb a hit to transition to Snap Knee Assault
+** +1d 45dmg total
 * -7 frame advantage and 8 chip damage on block after absorbing an attack in power crush state
 * Power crush 8~16";kne pc8~16;;Dragunov-SNK.3+4;Snap Knee;r27;;File:t8-p2-dragunov-snk.3+4.mp4
 WR.F+3;L,t;20,20;i17~18;-15;+1d;;"* Transition to attack throw on front standing hit
@@ -366,14 +377,12 @@ Tackle.1;t;35;;;+0d;;"* Throw break 1
 * Removes Recoverable Health";;;Dragunov-Tackle.1;Frost Bite;;;File:t8-p2-dragunov-tackle.1.mp4
 Tackle.2;t;40;;;+3d;;* Throw break 2;;;Dragunov-Tackle.2;Achilles' Hold;;;File:t8-p2-dragunov-tackle.2.mp4
 Tackle.1+2;t;45;;;+3d;;* Throw break 1+2;;;Dragunov-Tackle.1+2;Iron Curtain;;;File:t8-p2-dragunov-tackle.1+2.mp4
-db+3~1+2;t;30;i19~20;;+1d;;"* Heat Engager
-
-* Side switch
+db+3~1+2;t;35;i19~20;;+1d;;"* Side switch
 * Crouch throw
 * Cancel to FC with D, DB or DF
-* Can't Heat Dash
-* High crush";he cs;FC;Dragunov-db+3~1+2;Feint & Low Catch;;;File:t8-p2-dragunov-db+3~1+2.mp4
-d+1+3;t (m);35;i12~14;;+1d;;* Crouch throw;;;Dragunov-d+1+3;Cold Fate;;;File:t8-p2-dragunov-d+1+3.mp4
+* High crush 1~19";cs1~19;FC;Dragunov-db+3~1+2;Feint & Low Catch;;;File:t8-p2-dragunov-db+3~1+2.mp4
+d+1+3;t (m);35;i12~14;;+1d;;"* Side switch
+* Crouch throw";;;Dragunov-d+1+3;Cold Fate;;;File:t8-p2-dragunov-d+1+3.mp4
 f+1+4;t;40;i11;-2;+0d;;"* Throw break 1
 * Side switch on hit";;;Dragunov-f+1+4;Reverse Victor Clutch;;;File:t8-p2-dragunov-f+1+4.mp4
 f+2+3;t;40;i11;-2;-1d;;* Throw break 2;;;Dragunov-f+2+3;Victor Clutch;;;File:t8-p2-dragunov-f+2+3.mp4

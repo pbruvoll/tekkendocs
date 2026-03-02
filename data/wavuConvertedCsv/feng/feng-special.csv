@@ -10,18 +10,20 @@ H.3+4;M;23;i30~31;+12cg;+22d;;"* Spike
 * Consumes 300F of remaining Heat time
 * 4 chip damage on block
 * +38d on aerial hit
-* Creates an unblockable low shockwave along the ground that deals 5 recoverable damage and +7g on hit and forces the opponent to crouch. The shockwave comes out even if the kick itself whiffs, or is parried by certain parries like Jin's or Reina's. It does not come out when the first hit is blocked or absorbed by a Power Crush.";spk;BT;Feng-H.3+4;Jiaolong Sea Splitter;BT;;
+* Creates an unblockable low shockwave along the ground that deals 5 recoverable damage and +7g on hit and forces the opponent to crouch. The shockwave comes out even if the kick itself whiffs, or is parried by certain parries like Jin's or Reina's. It does not come out when the first hit is blocked or absorbed by a Power Crush.
+* Recovers 3F faster on hit (t67 r35 BT)";spk;BT;Feng-H.3+4;Jiaolong Sea Splitter;r38? BT;;
 H.b+1;h;20;i10~11;-8;+36a (+28);;"* Balcony Break
-* Consumes 210F of remaining Heat time";bbr;;Feng-H.b+1;Essence of Iron Palm;;;
+* Consumes 210F of remaining Heat time";bbr;;Feng-H.b+1;Essence of Iron Palm;r28;;
 H.f,F+1+2*;m;30;i39~40;+11;+22a (+12);;"* Balcony Break
 * Guard Break
 * Consumes 270F of remaining Heat time
-* 12 chip damage on block";bbr;;Feng-H.f,F+1+2*;Essence of Nian Zhang Mie Ba;;;
-H.2+3;m,t;20,35;i20~21;+12;+0;;"* Heat Smash
+* 12 chip damage on block";bbr;;Feng-H.f,F+1+2*;Essence of Nian Zhang Mie Ba;r33;;
+H.2+3;m,t;20,35;i20~21, i24~25;+12;+0;;"* Heat Smash
 * Balcony Break
 * 7 chip damage on block
+* 2nd hit 26dmg +30a (-6) on 1st whiff
 * Transition to STC on block
-* Transition to standing with B (+7)";hs bbr;STC;Feng-H.2+3;Yinglong Mountain Crusher;;;
+* Transition to standing with B (+7)";hs bbr;STC;Feng-H.2+3;Yinglong Mountain Crusher;r34;;
 R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Removes Recoverable Health
 * Reversal Break
@@ -31,307 +33,384 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Transition to attack throw on hit
 * Consumes Rage
 * Power crush 8~";rbr pc8~;;Feng-R.df+1+2;Enlighted Yellow Dragon Palm;r39;;
-1;h;5;i10;+1;+8;;;;;Feng-1;Left Jab;r19;;File:t8-p2-feng-1,1.mp4
-1,1;h, m;5, 21;i10, i25~26;-11;+2;+61a;* Move can be delayed;;;Feng-1,1;Jab Spear Fist;;;File:t8-p2-feng-1,1.mp4
-1,2;h, h;5, 9;i10, i10;-3;+8;;"* Jail from 1st block
-* Combo from 1st hit
-* Move can be delayed";;;Feng-1,2;Shun Lian Quan;;;File:t8-p2-feng-1,2.mp4
-1,2,2;h, h, h;5, 9, 12;i10, ,i17;-13;+3;;"* Combo from 1st hit
-* Transition to BT with B (-11/+5)";;BT;Feng-1,2,2;Firestorm;;;File:t8-p2-feng-1,2,2.mp4
-1,3;h, h;5, 19;i10, i16~17;-5;+8~+9;;* Combo from 1st hit;;;Feng-1,3;Jab Roundhouse Combo;;;File:t8-p2-feng-1,3.mp4
+1;h;5;i10;+1;+8;;Recovers 2f faster on hit or block (t27 r17);;;Feng-1;Jab;r19;;File:t8-p2-feng-1,1.mp4
+1,1;h, m;5, 21;i10, i25~26;-11;+2;+61a;"* Move can be delayed by 3F
+* Input can be delayed by 4F";;;Feng-1,1;Jab Spear Fist;r29;;File:t8-p2-feng-1,1.mp4
+1,2;h, h;5, 9;i10, i10;-3;+8;;"* Jail from 1st block with 4F delay
+* Combo from 1st hit with 4F delay
+* Move can be delayed with 4F delay";;;Feng-1,2;Shun Lian Quan;r22;;File:t8-p2-feng-1,2.mp4
+1,2,2;h, h, h;5, 9, 12;i10, ,i17;-13;+3;;"* Combo from 1st hit with 3F delay
+* Transition to BT with B (-11/+5)";;BT;Feng-1,2,2;Firestorm;r32;;File:t8-p2-feng-1,2,2.mp4
+1,3;h, h;5, 19;i10, i16~17;-5;+8~+9;;"* Combo from 1st hit with 4F delay
+* Move can be delayed by 1F
+* Input can be delayed by 4F";;;Feng-1,3;Jab Roundhouse Combo;r23;;File:t8-p2-feng-1,3.mp4
 1+3+4;;;;;;;;;;Feng-1+3+4;Taunt;;;File:t8-p2-feng-1+3+4.mp4
 2;h;8;i10;-3;+5;;;;;Feng-2;Right Jab;r22;;File:t8-p2-feng-2,4,1.mp4
 2,4;h, m;8, 15;i10, i17;-12;-1;;"* Jail from 1st attack with 2F delay
-* Combo from 1st hit with 8F delay
-* Move can be delayed by 8F";;;Feng-2,4;;;;File:t8-p2-feng-2,4,1.mp4
+* Combo from 1st hit with 8F delay";;;Feng-2,4;;r31;;File:t8-p2-feng-2,4,1.mp4
 2,4,1;h, m, m;8, 15, 25;i10, ,i24;-12;+24a (+14);;"Balcony Break
 * Combo from 2nd CH with 6F delay
 * Move can be delayed by 10F
 * Input can be delayed by 12F
 * Cancel to BT with B (-13/-2)
-* Low crush 12~19";bbr js12~19;BT;Feng-2,4,1;San Lian Heng;;;File:t8-p2-feng-2,4,1.mp4
-3;m;15;i16;-11;+0;;;;;Feng-3;;;;File:t8-p2-feng-3,3,4.mp4
-3,3;m, h;15, 10;i16, i17;-9;+2;;"* Combo from 1st hit
-* Jail from 1st attack
-* Move can be delayed";;;Feng-3,3;;;;File:t8-p2-feng-3,3,4.mp4
-3,3,4;m, h, l;15, 10, 23;i16, ,i25~26;-12;+7c;+17d;"* Combo from 2nd CH
-* Move can be delayed
-* Cancel to -13 -2 BT with B";;BT,BT;Feng-3,3,4;Peacock Sweep;BT;;File:t8-p2-feng-3,3,4.mp4
-3,1+2;m, m;15, 30;i16, i28~29;-12;+22d (+17);;"Balcony Break
-* Combo from 1st hit";bbr;;Feng-3,1+2;Peacock Strike;;;File:t8-p2-feng-3,1+2.mp4
-3,1+2*;m, m;15, 35;i16, i44~45;+7;+23d (+13d);;"Balcony Break
-* 14 Chip Damage on block
-* 16 Chip Damage on block in heat";bbr;;Feng-3,1+2*;Peacock Strike (Hold);;;
-3~4;m;27;i34~36;-5;+19d;;"* Cancel to -7~-2 -+19~+24 BT with B
-* Low crush 20~";js20~;BT;Feng-3~4;;;;File:t8-p2-feng-3~4,3.mp4
-3~4,3;m, l;27, 11;i34~36, i18~20;-26;+24a;;"* Aerial combo from 1st hit (+19d (+12))
-* High crush 6~";cs6~;FC;Feng-3~4,3;Leaping Whirlwind Combo;FC;;File:t8-p2-feng-3~4,3.mp4
-4;h;17;i11;-9;+2;+27g;;;;Feng-4;;;;
-4~3;M;25;i28~i34;-7;+1c;+16a~+22a;* Low crush 15~;js15~;;Feng-4~3;Headspring;;;File:t8-p2-feng-4~3.mp4
+* Low crush 12~19";bbr js12~19;BT;Feng-2,4,1;San Lian Heng;r32;;File:t8-p2-feng-2,4,1.mp4
+3;m;15;i16;-11;+0;;;;;Feng-3;;r30;;File:t8-p2-feng-3,3,4.mp4
+3,3;m, h;15, 10;i16, i17;-9;+2;;"* Jail from 1st block with 2F delay
+* Combo from 1st hit with 10F delay";;;Feng-3,3;;r28;;File:t8-p2-feng-3,3,4.mp4
+3,3,4;m, h, l;15, 10, 23;i16, ,i25~26;-12;+7c;+17a;"* Combo from 2nd CH with 5F delay
+* Cancel to r16 BT with B (-13/-2)
+* Move can be delayed by 10F
+* Input can be delayed by 11F";;BT,BT;Feng-3,3,4;Peacock Sweep;r30 BT;;File:t8-p2-feng-3,3,4.mp4
+3,1+2;m, m;15, 30;i16, i28~29;-12;+22a (+17);;"Balcony Break
+* Combo from 1st hit with 2F delay
+** Combo from 1st hit with up to 2F of charge (i30~31 startup)
+* Move can be delayed by 10F";bbr;;Feng-3,1+2;Peacock Strike;r32;;File:t8-p2-feng-3,1+2.mp4
+3,1+2*;m, m;15, 35;i16, i44~45;+7;+23a (+13);;"* Balcony Break
+* 14 chip damage on block";bbr;;Feng-3,1+2*;Peacock Strike (Hold);r32;;
+3~4;m;27;i34~36;-7c;+19a;;"* Transition to BT with B (-2c/+24a)
+* Low crush 20~34
+* Floating state 35~37";js20~34 fs35~37;BT;Feng-3~4;;r29;;File:t8-p2-feng-3~4,3.mp4
+3~4,3;m, l;27, 16 (11);i34~36, i18~20;-26;+24a;;"* Aerial combo from 1st hit (+19d (+12)) with 9F delay
+* Move cannot be delayed
+* Input can be delayed by 9F
+* High crush 6~52";cs6~52;FC;Feng-3~4,3;Leaping Whirlwind Combo;r32 FC;;File:t8-p2-feng-3~4,3.mp4
+4;h;17;i11;-9;+2;+27g;;;;Feng-4;;r28;;
+4~3;M;25;i28~i34;-7;+1c;+16a~+22a;"7 chip damage on block
+* Low crush 15~32
+* Floating state 33~35";js15~32 fs33~35;;Feng-4~3;Headspring;r28;;File:t8-p2-feng-4~3.mp4
 1+2;m;20;i21~22;-13;+8;;"* Wall Crush  +20g on hit
 
 
 * Elbow
 * Punch sabaki
 * +14 on successful parry
-* Parry state 5~9";wc elb ps5~9;;Feng-1+2;Iron Shield;;;File:t8-p2-feng-1+2.mp4
-f+2;m;10;i15;-8;+3;+10;;;;Feng-f+2;;;;File:t8-p2-feng-f+2,1,2.mp4
-f+2,1;m, m;10, 10;i15, i19;-8;+3;;"* Combo from 1st CH
-* Move can be delayed";;;Feng-f+2,1;;;;File:t8-p2-feng-f+2,1,2.mp4
-f+2,1,2;m, m, m;10, 10, 28;i15, ,i13~14;-19;+19d (+14);;"* Balcony Break
+* Parry state 5~9";wc elb ps5~9;;Feng-1+2;Iron Shield;31;;File:t8-p2-feng-1+2.mp4
+f+2;m;10;i15;-8;+3;+10g;;;;Feng-f+2;;r27;;File:t8-p2-feng-f+2,1,2.mp4
+f+2,1;m, m;10, 10;i15, i19;-8;+3;;"* Combo from 1st CH with 1F delay
+* Move can be delayed by 10F
+* Input can be delayed by 11F";;;Feng-f+2,1;;r27;;File:t8-p2-feng-f+2,1,2.mp4
+f+2,1,2;m, m, m;10, 10, 28;i15, ,i13~14;-19;+19a (+14);;"* Balcony Break
 * Shoulder
-* Combo from 2nd hit
-* Move can be delayed";bbr;;Feng-f+2,1,2;Boar's Tusk;;;File:t8-p2-feng-f+2,1,2.mp4
-f+3;m;10;i21;-3;+7;;;;;Feng-f+3;;;;File:t8-p2-feng-f+3,2.mp4
-f+3,2;m, h;10, 17;i21, i21~22;-3;+8;+43d (+35);"* Combo from 1st hit
-* Move can be delayed";;;Feng-f+3,2;Piercing Dragon;;;File:t8-p2-feng-f+3,2.mp4
-f+3,4;m, m;10, 15;i21, i23~24;-16;+33a (+23);;"* Combo from 1st hit
-* Tornado
-* Low crush 21";trn js21;;Feng-f+3,4;Climbing Dragon;;;File:t8-p2-feng-f+3,4.mp4
+* Combo from 2nd hit with 12F delay
+* Move can be delayed by 10F
+* Input can be delayed by 16F";bbr;;Feng-f+2,1,2;Boar's Tusk;r38;;File:t8-p2-feng-f+2,1,2.mp4
+f+3;m;10;i21;-3;+7;;;;;Feng-f+3;;r23;;File:t8-p2-feng-f+3,2.mp4
+f+3,2;m, h;10, 17;i21, i21~22;-3;+8;+43a (+35);* Combo from 1st hit with 7F delay;;;Feng-f+3,2;Piercing Dragon;r21;;File:t8-p2-feng-f+3,2.mp4
+f+3,4;m, m;10, 15;i21, i23~24;-16;+33a (+23);;"* Tornado
+* Combo from 1st hit
+* Low crush 21~43
+* Floating state 44~46";trn js21~43 fs44~46;;Feng-f+3,4;Climbing Dragon;r34;;File:t8-p2-feng-f+3,4.mp4
 f+4;h;19;i18~19;-9;+52a;;"* Good left sidestep tracking
-* Transition to -5 +56a BT with B";;BT;Feng-f+4;;;;File:t8-p2-feng-f+4,2.mp4
-f+4,2;h, m;19, 16;i18~19, i24~25;-14;+70a (+54);;"* Combo from 1st hit
-* Tornado";trn;;Feng-f+4,2;Tornado Open Palm;;;File:t8-p2-feng-f+4,2.mp4
-f+4,3;h, M;19, 21;i18~19, i22~24;-10;+26d (-9);;"Spike
-* Combo from 1st hit";spk;;Feng-f+4,3;Tornado Stomp;;;File:t8-p2-feng-f+4,3.mp4
-f+4,4;h, l;19, 11;i18~19, i33~33;-31;+27d;;"* Combo from 1st hit
-* High crush 10";cs10;;Feng-f+4,4;Tornado Sweep;;;File:t8-p2-feng-f+4,4.mp4
+* Transition to r22 BT with B (-5/+56a)";;BT;Feng-f+4;;r27;;File:t8-p2-feng-f+4,2.mp4
+f+4,2;h, m;19, 24 (16);i18~19, i24~25;-14;+31a (+16);;"* Tornado
+* Aerial combo from 1st hit (+70a (+54)) with 5F delay
+* Move cannot be delayed
+* Input can be delayed by 5F";trn;;Feng-f+4,2;Tornado Open Palm;r33;;File:t8-p2-feng-f+4,2.mp4
+f+4,3;h, M;19, 30 (21);i18~19, i22~24;-10;+25d;;"* Spike
+* Aerial combo from 1st hit (+26a (-9)) with 5F delay
+* Move cannot be delayed
+* Input can be delayed by 5F";spk;;Feng-f+4,3;Tornado Stomp;r27;;File:t8-p2-feng-f+4,3.mp4
+f+4,4;h, l;19, 16 (11);i18~19, i33~33;-31;+27a;;"* Aerial combo from 1st hit (+19a (+12)) with 5F delay
+* Move cannot be delayed
+* Input can be delayed by 5F
+* High crush 10~42";cs10~42;;Feng-f+4,4;Tornado Sweep;r30;;File:t8-p2-feng-f+4,4.mp4
 f+1+2;h;25;i19~20;-9;+13a (+4);;"* Balcony Break
 * Good left sidestep tracking
-* Power crush 7";bbr pc7;;Feng-f+1+2;Tiger's Claw;;;File:t8-p2-feng-f+1+2.mp4
+* +0 frame advantage and 10 chip damage on block after absorbing an attack in power crush state
+* Power crush 7~18";bbr pc7~18;;Feng-f+1+2;Tiger's Claw;r36;;File:t8-p2-feng-f+1+2.mp4
 f+3+4;;;;;;;"* Parries high and mid fist and feet moves (not elbows/knees/heads etc)
 * Transition to STC absorbing one hit 
 * Transitions to STC.P after absorbing two hits
-* Parry state 3~18";ps3~18;STC,STC;Feng-f+3+4;Shifting Clouds;r20 STC;;
-df+1;m;11;i14;0;+6;+36g;;;;Feng-df+1;Stunning Palm;;;File:t8-p2-feng-df+1.mp4
-df+2;m;15;i20~21;-8;;;;;;Feng-df+2;;;;File:t8-p2-feng-df+2,2.mp4
-df+2,2;m, m;15, 21;i20~21, i13~14;-6;+14a (+4);;Balcony Break;bbr;;Feng-df+2,2;God Palm;;;File:t8-p2-feng-df+2,2.mp4
+* Transition to r20 KNP with B (r25 autoblock)
+* Parry state 3~18";ps3~18;STC,KNP,STC;Feng-f+3+4;Shifting Clouds;r20 STC;;
+df+1;m;11;i14;+0;+6;+36g;;;;Feng-df+1;Stunning Palm;r19;;File:t8-p2-feng-df+1.mp4
+df+2;m;15;i20~21;-8;+4;;;;;Feng-df+2;;r27;;File:t8-p2-feng-df+2,2.mp4
+df+2,2;m, m;15, 21;i20~21, i13~14;-6;+14a (+4);;"* Balcony Break
+* Combo from 1st hit";bbr;;Feng-df+2,2;God Palm;r29;;File:t8-p2-feng-df+2,2.mp4
 df+3;M;17;i18~19;-9;+76a (+60);;"* Tornado
-* Can be accessed from a manual CD input with input qcf,df+3";trn;;Feng-df+3;Lift Kick;;;File:t8-p2-feng-df+3.mp4
-df+4;m;13;i15;-6;+5;;;;;Feng-df+4;;;;File:t8-p2-feng-df+4,2,1+2.mp4
-df+4,2;m, m;13, 13;i15, i20~21;-11;+1;;"* Combo from 1st hit
-* Move can be delayed";;;Feng-df+4,2;;;;File:t8-p2-feng-df+4,2,1+2.mp4
+* Can be accessed from a manual CD input with input qcf,df+3";trn;;Feng-df+3;Lift Kick;r27;;File:t8-p2-feng-df+3.mp4
+df+4;m;13;i15;-6;+5;;;;;Feng-df+4;;r25;;File:t8-p2-feng-df+4,2,1+2.mp4
+df+4,2;m, m;13, 13;i15, i20~21;-11;+1;+8;* Combo from 1st hit with 8F delay;;;Feng-df+4,2;;r30;;File:t8-p2-feng-df+4,2,1+2.mp4
 df+4,2,1+2;m, m, M;13, 13, 21;i15, ,i34~35;-19;+31a (+16);;"* Tornado
 * Shoulder
-* Move can be delayed";trn;;Feng-df+4,2,1+2;Pau Lau Stinger;;;File:t8-p2-feng-df+4,2,1+2.mp4
-df+4,3;m, h;13, 23;i15, i23~24;-4;+15g;+27d;"Balcony Break
-* Combo from 1st hit
-* Move can be delayed";bbr;;Feng-df+4,3;Twin Dragon;;;File:t8-p2-feng-df+4,3.mp4
-df+3+4;m;23;i23~27;-7;+22d;;Homing;hom;;Feng-df+3+4;Ruinous Halberd;;;File:t8-p2-feng-df+3+4.mp4
-d+2;l;16;i20~21;-12;-1;;* High crush 6~20;cs6~20;FC;Feng-d+2;Heavy Hammer;FC;;File:t8-p2-feng-d+2.mp4
-d+4;l;7;i14~15;-11;0;;;;;Feng-d+4;;;;File:t8-p2-feng-d+4,1+2.mp4
-d+4,1+2;l, m;7, 22;i14~15, i26;-10;+11d (+2);;"Balcony Break
-* Combo from 1st CH";bbr;;Feng-d+4,1+2;Parting Heavens;;;File:t8-p2-feng-d+4,1+2.mp4
-d+1+2;M;15;i20~21;-9;+8c;;;;;Feng-d+1+2;;;;File:t8-p2-feng-d+1+2,1.mp4
+* Combo from 2nd CH with 4F delay
+* Move can be delayed by 9F
+* Input can be delayed by 10F";trn;;Feng-df+4,2,1+2;Pau Lau Stinger;r39;;File:t8-p2-feng-df+4,2,1+2.mp4
+df+4,3;m, h;13, 23;i15, i23~24;-4;+15g;+27a;"* Balcony Break
+* Combo from 1st hit with 7F delay";bbr;;Feng-df+4,3;Twin Dragon;r27;;File:t8-p2-feng-df+4,3.mp4
+df+3+4;m;23;i23~27;-7;+21a;;* Homing;hom;;Feng-df+3+4;Ruinous Halberd;r28;;File:t8-p2-feng-df+3+4.mp4
+d+1;sl;5;i10;-5;+6;;"* Transition to Standing with f
+* +6c on crouching hit
+* High crush 4~34";cs4~34;FC;Feng-d+1;Crouch Jab;r24 FC;;
+d+2;L;16;i20~21;-12;-1;;"-1c on crouching hit
+* High crush 6~51";cs6~51;FC;Feng-d+2;Heavy Hammer;r30 FC;;File:t8-p2-feng-d+2.mp4
+d+3;L;10;i16;-17;-6;;"* -6c on crouching hit
+* High crush 4~52";cs4~52;FC;Feng-d+3;Crouch Spin Kick;r36 FC;;
+d+4;L;7;i14~15;-11;+0;;+0c on crouching hit;;;Feng-d+4;;r29;;File:t8-p2-feng-d+4,1+2.mp4
+d+4,1+2;L, m;7, 22;i14~15, i26;-10;+11a (+2);;"* Balcony Break
+* Combo from 1st CH with 4F delay
+* Move can be delayed by 5F
+* Input can be delayed by 6F";bbr;;Feng-d+4,1+2;Parting Heavens;r34;;File:t8-p2-feng-d+4,1+2.mp4
+d+1+2;M;15;i20~21;-9;+8c;;;;;Feng-d+1+2;;r27;;File:t8-p2-feng-d+1+2,1.mp4
 d+1+2,1;M, m;15, 20;i20~21, i22~23;-12;+18a (+11);;"* Tornado
-* Combo from 1st hit
-* Move can be delayed";trn;;Feng-d+1+2,1;Mad Windmill;;;File:t8-p2-feng-d+1+2,1.mp4
-db+1;m;15;i16;-12;+4;;"* Transition to -9 +7 KNP with B
-* Transition to -16 +0 STC with F";;KNP,STC;Feng-db+1;;;;File:t8-p2-feng-db+1,2,4,3+4.mp4
-db+1,2;m, m;15, 18;i16, i23~24;-11;+3;;"* Combo from 1st hit
-* Move can be delayed";;;Feng-db+1,2;Spear of Lu Bu;;;File:t8-p2-feng-db+1,2,4,3+4.mp4
+* Combo from 1st hit with 12F delay
+* Move can be delayed by 10F
+* Input can be delayed by 12F";trn;;Feng-d+1+2,1;Mad Windmill;;;File:t8-p2-feng-d+1+2,1.mp4
+d+3+4;l;6;i12;-15;-4;;"* -4c on crouching hit
+* High crush 4~46";cs4~46;FC;Feng-d+3+4;Crouch Shin Kick;r34 FC;;
+db+1;m;15;i16;-12;+4;;"* Transition to r28 KNP with B (-9/+7)
+** Cannot block i15 when going to KNP on block
+* Transition to r35 STC with F (-16/+0)";;KNP,STC;Feng-db+1;;r31;;File:t8-p2-feng-db+1,2,4,3+4.mp4
+db+1,2;m, m;15, 18;i16, i23~24;-11;+3;;"* Combo from 1st hit with 8F delay
+* Move can be delayed by 10F";;;Feng-db+1,2;Spear of Lu Bu;r31;;File:t8-p2-feng-db+1,2,4,3+4.mp4
 db+1,2,4;m, m, M;15, 18, 30;i16, ,i31;-7;-3a;;"* Floor Break
-* Combo from 2nd CH
-* Low crush";fbr js;FC;Feng-db+1,2,4;;FC;;File:t8-p2-feng-db+1,2,4,3+4.mp4
+* Combo from 2nd CH with 2F delay
+* Move cannot be delayed
+* Input can be delayed by 2F
+* Low crush 15~31
+* Floating state 32~34";fbr js15~31 fs32~34;FC;Feng-db+1,2,4;;r40 FC;;File:t8-p2-feng-db+1,2,4,3+4.mp4
 db+1,2,4,3+4;m, m, M, m;15, 18, 30, 20;i16, ,i39~42;-3~0;+31a (+21);;"* Balcony Break
 * Same attack as Spring Up (FUFT.b+3+4)
-* Low crush";bbr js;;Feng-db+1,2,4,3+4;Rampaging Lion;;;File:t8-p2-feng-db+1,2,4,3+4.mp4
+* Move can be delayed by 12F
+* Low crush 38~45
+* Floating state 46~48";bbr js38~45 fs46~48;;Feng-db+1,2,4,3+4;Rampaging Lion;r19;;File:t8-p2-feng-db+1,2,4,3+4.mp4
 db+1,4;m, h;15, 23;i16, i24~25;-2;+24a (+15);;"* Balcony Break
-* Combo from 1st hit
-* Move can be delayed";bbr;;Feng-db+1,4;Spinning Neck Strike;;;File:t8-p2-feng-db+1,4.mp4
-db+2;l;10;i20~21;-11;0;;* High crush 6;cs6;;Feng-db+2;;;;File:t8-p2-feng-db+2,2,2.mp4
-db+2,2;l, l;10, 10;i20~21, i28~30;-17;+20a;;"* Combo from 1st CH
-* Cancel move with B
-* High crush";cs;;Feng-db+2,2;;;;File:t8-p2-feng-db+2,2,2.mp4
-db+2,2,2;l, l, M;10, 10, 25;i20~21, ,i28~29;-8;+13d;;"* Spike
-* Combo from 2nd hit";spk;;Feng-db+2,2,2;Hellwinds;;;File:t8-p2-feng-db+2,2,2.mp4
-db+3;l;14;i17;-15;+4;;"* Transition to attack throw when CH from front
+* Combo from 1st hit with 7F delay
+* Move can be delayed by 8F
+* Input can be delayed by 10F";bbr;;Feng-db+1,4;Spinning Neck Strike;r25;;File:t8-p2-feng-db+1,4.mp4
+db+2;l;10;i20~21;-11;+0;;"+0c on crouching hit
+* High crush 6~30";cs6~30;;Feng-db+2;;r29;;File:t8-p2-feng-db+2,2,2.mp4
+db+2,2;l, l;10, 10;i20~21, i28~30;-17;+25a;;"* Combo from 1st CH
+* Cancel to r13 standing with B (-15/-4)
+* High crush 1~30";cs1~30;;Feng-db+2,2;;r34;;File:t8-p2-feng-db+2,2,2.mp4
+db+2,2,2;l, l, M;10, 10, 25;i20~21, ,i28~29;-8;+13a;;"* Spike
+* Aerial combo from 2nd hit (+28a (-7))";spk;;Feng-db+2,2,2;Hellwinds;r26;;File:t8-p2-feng-db+2,2,2.mp4
+db+3;l;14;i17;-15;+4c;+0d;"* Transition to attack throw when CH from front
 * Transition to BT on CH
 * Can be accessed from a manual CD input with input qcf,db+3
-* High crush 6~17";cs6~17;BT,FC;Feng-db+3;Piercing Arrow;FC;;File:t8-p2-feng-db+3.mp4
+* High crush 6~51";cs6~51;BT,FC;Feng-db+3;Piercing Arrow;r34 FC;;File:t8-p2-feng-db+3.mp4
 db+4;l;23;i31 (30~32);-26;+76a (+60);;"* Tornado on normal hit only
 * Homing
 * Transition to FC on hit
 * Instant tornado launcher
-* High crush 6~31";hom cs6~31;FC,FC;Feng-db+4;Mighty Sweep Kick;FC;;File:t8-p2-feng-db+4.mp4
-db+1+2;m;13;i21~22;-4;+4;;;;;Feng-db+1+2;;;;File:t8-p2-feng-db+1+2,2.mp4
-db+1+2,2;m, l;13, 10;i21~22, i29~30;-12;-1;;"* Combo from 1st CH
-* Move can be delayed
-* High crush 8";cs8;FC;Feng-db+1+2,2;Dragon Slayer;FC;;File:t8-p2-feng-db+1+2,2.mp4
-b+1;h;17;i10~11;-12;+1;+36d (+28);* Balcony Break on CH;;;Feng-b+1;Iron Palm;;;File:t8-p2-feng-b+1.mp4
-b+1+3;;25;;;;;"* Timed with opponent punch
-* Parry state 5~?";ps5~?;;Feng-b+1+3;Attack Reversal;;;
-b+2;m;13;i17;-11;+0c;;Floor Break;fbr;;Feng-b+2;;;;File:t8-p2-feng-b+2,3,4,2.mp4
-b+2,3;m, l;13, 6;i17, i22~24;-11;0;;"* Combo from 1st hit 
-* Move can be delayed";;;Feng-b+2,3;;;;File:t8-p2-feng-b+2,3,4,2.mp4
-b+2,3,4;m, l, m;13, 6, 13;i17, ,i24~25;-12;+19a (+12);;* Combo from 2nd CH;;;Feng-b+2,3,4;;;;File:t8-p2-feng-b+2,3,4,2.mp4
-b+2,3,4,2;m, l, m, M;13, 6, 13, 22;i17, ,i24~25;-6;+4;;"* Combo from 3rd hit
-* Spike";spk;;Feng-b+2,3,4,2;Hungry Tiger;;;File:t8-p2-feng-b+2,3,4,2.mp4
-b+3;m;21;i22~23;+4;+6;+10d;"* Knee
+* High crush 6~58";hom cs6~58;FC,FC;Feng-db+4;Mighty Sweep Kick;r26 FC;;File:t8-p2-feng-db+4.mp4
+db+1+2;m;13;i21~22;-4;+4;;Floor Break;fbr;;Feng-db+1+2;;r27;;File:t8-p2-feng-db+1+2,2.mp4
+db+1+2,2;m, l;13, 10;i21~22, i29~30;-12;+14g;;"* Combo from 1st CH with 4F delay
+* Move can be delayed by 10F
+* Input can be delayed by 12F
+* -1c on crouching hit
+* High crush 8~60";cs8~60;FC;Feng-db+1+2,2;Dragon Slayer;r30 FC;;File:t8-p2-feng-db+1+2,2.mp4
+b+1;h;17;i10~11;-12;+1;+36a (+28);* Balcony Break on CH;;;Feng-b+1;Iron Palm;r30;;File:t8-p2-feng-b+1.mp4
+b+1+3;;25;;;-3d;;"* Timed with opponent punch
+* Sideswitch on parry
+* Parry state 5~12";ps5~12;;Feng-b+1+3;Attack Reversal;;;
+b+2;m;13;i17;-11;+0c;;Floor Break;fbr;;Feng-b+2;;r30;;File:t8-p2-feng-b+2,3,4,2.mp4
+b+2,3;m, l;13, 6;i17, i22~24;-11;+0;+8c;"* Combo from 1st hit with 3F delay
+* Move can be delayed by 15F
+* Input can be delayed by 18F
+* +0c on crouching hit";;;Feng-b+2,3;;r28;;File:t8-p2-feng-b+2,3,4,2.mp4
+b+2,3,4;m, l, m;13, 6, 13;i17, ,i24~25;-12;+19a (+12);;* Combo from 2nd CH;;;Feng-b+2,3,4;;r30;;File:t8-p2-feng-b+2,3,4,2.mp4
+b+2,3,4,2;m, l, m, M;13, 6, 13, 22;i17, ,i24~25;-6c;+4c;;"* Spike
+* Aerial combo from 3rd hit (-6a~-9a) with 13F delay
+* Move can be delayed by 10F
+* Input can be delayed by 13F";spk;;Feng-b+2,3,4,2;Hungry Tiger;r35;;File:t8-p2-feng-b+2,3,4,2.mp4
+b+3;m;21;i22~23;+4;+6;+10a;"* Knee
 * 4 chip damage on block
-* 6 chip damage on block in heat
-* Transition to +6 +8 +12d CD on hit or block with df";kne;CD;Feng-b+3;Chin Breaker;;;File:t8-p2-feng-b+3.mp4
-b+3~4;;;;;;;* Transition to BT;;BT,BT;Feng-b+3~4;Zhuan Shen Huan Wu;BT;;File:t8-p2-feng-b+3~4.mp4
-b+4;m;10;i12~13;-10;+2;;;;;Feng-b+4;Fish Hook;;;File:t8-p2-feng-b+4.mp4
+* Transition to r25 CD on hit or block with df (+6/+8/+12d)
+** Transition to r1 FC with DF~db (+5/+7/+11d)";kne;CD,FC;Feng-b+3;Chin Breaker;r29;;File:t8-p2-feng-b+3.mp4
+b+3~4;;;;;;;* Transition to BT;;BT,BT;Feng-b+3~4;Zhuan Shen Huan Wu;r20 BT;;File:t8-p2-feng-b+3~4.mp4
+b+4;m;10;i12~13;-10;+2;;;;;Feng-b+4;Fish Hook;r29;;File:t8-p2-feng-b+4.mp4
 b+4,2;m, h;10, 19;i12~13, i22;-6;+3;+20cg;"* Balcony Break on CH
 * Combo from 1st hit with 7F delay
-* Transition to -1, +8, +25cg CD with df on hit or block";;CD;Feng-b+4,2;Lapping Waves;r30;;
-H.b+4,3+4;m, M;10, 23;i12~13, i31~32;+7cg;+22d;;"* Spike
+* Move can be delayed by 6F
+* Input can be delayed by 7F
+* Transition to CD with df on hit or block (-1/+8/+25cg)
+** Transition to r1 FC with DF~db (-2/+7/+24cg)";;CD,FC;Feng-b+4,2;Lapping Waves;r30;;
+H.b+4,3+4;m, M;10, 23;i12~13, i31~32;+7cg;+12d;;"* Balcony Break
+* Spike
 * Combo from 1st hit with ? 
 * 4 chip damage on block
 * Consumes 300F of remaining Heat time
 * +38d on aerial hit
 * Move can be delayed by ?
-* Input can be delayed by ?";spk;BT;Feng-b+4,H.3+4;Gulfing Sea Splitter;BT;;
+* Input can be delayed by ?";bbr spk;BT;Feng-b+4,H.3+4;Gulfing Sea Splitter;r39? BT;;
 b+1+2;m;31;i13~14;-19;+18a (+13);;"* Heat Engager
 
 * Heat Dash +5, +43d (+35)
 
 * Balcony Break
-* Shoulder";he bbr;;Feng-b+1+2;Iron Fortress;r38?;;File:t8-p2-feng-b+1+2.mp4
-b+3+4;;;;;;;"* Enter STC with f 
-* Take 15 Frames 
-* Autoblock 20 Frames";;STC,KNP;Feng-KNP;Deceptive Step;KNP;;
-ub+1;m;20;i25~26;-15;+10d (+1);+30d (+22);;;;Feng-ub+1;Falcon's Beak;;;File:t8-p2-feng-b,f+1.mp4
-ub+2;m,h;8,20;i16,15;-10;+10;;Second hit can be ducked;;;Feng-ub+2;Throat Gouge;;;File:t8-p2-feng-ub+2.mp4
+* Shoulder";he bbr;;Feng-b+1+2;Iron Fortress;r38;;File:t8-p2-feng-b+1+2.mp4
+b+3+4;;;;;;;"* i20 high/mid block
+* Transition to r39 STC with f (ps25~39)";;STC,KNP;Feng-KNP;Deceptive Step;r15 KNP;;
+ub+1;m;20;i25~26;-15;+10a (+1);+30a (+22);Balcony Break;bbr;;Feng-ub+1;Falcon's Beak;r34;;File:t8-p2-feng-b,f+1.mp4
+ub+2;m,h;8,20;i16,15;-10;+10;;Does not jail;;;Feng-ub+2;Throat Gouge;r33;;File:t8-p2-feng-ub+2.mp4
 ub+3;;;;-11~-10;+15a~+16a;;"* Strong Aerial Tailspin
-* Backwards momentum";;;Feng-ub+3;;;;
+* Backwards momentum";;;Feng-ub+3;;r37;;
 ub+4;;15;;;+19a (+9);+33a (+23);"* Balcony Break
 * No forward momentum";bbr;;Feng-ub+4;;;;
-ub+1+2;m!;70;i79~82;;+50g (+19);;;;;Feng-ub+1+2;Death Palm;;;File:t8-p2-feng-ub+1+2.mp4
-u+2;M;25;i38~40;+2;+10;;"Chip damage on block
-* Low crush 9";chp js9;;Feng-u+2;Leaping Hammer Fist;;;File:t8-p2-feng-u+2.mp4
-uf+1;m;12;i18~19;-5;+4;;"* +12 on crouching opponent
+ub+1+2;m!;70;i79~82;;+50a (+19);;;;;Feng-ub+1+2;Death Palm;r33;;File:t8-p2-feng-ub+1+2.mp4
+u+2;M;25;i38~40;+2c;+10;;"7 chip damage on block
+* Low crush 9~35
+* Floating state 36~38";js9~35 fs36~38;;Feng-u+2;Leaping Hammer Fist;r30;;File:t8-p2-feng-u+2.mp4
+uf+1;m;12;i18~19;-5;+4;;"* +12c on crouching opponent
 * No forward momentum with input u+1
-* Low crush 6";js6;;Feng-uf+1;Eagle Claw;;;File:t8-p2-feng-uf+1.mp4
-uf+2;m;18;i18;-10;+3;;;;;Feng-uf+2;Evading Palm Strike;;;File:t8-p2-feng-uf+2.mp4
-uf+3;m;16;i22~23;-7;+22d;;"* Strong Aerial Tailspin
+* Low crush 6~31
+* Floating state 32~34";js6~31 fs32~34;;Feng-uf+1;Eagle Claw;r25;;File:t8-p2-feng-uf+1.mp4
+uf+2;m;18;i18;-10;+3;+52a (+21);;;;Feng-uf+2;Evading Palm Strike;r34;;File:t8-p2-feng-uf+2.mp4
+uf+3;m;16;i22~23;-7;+22a;;"* Strong Aerial Tailspin
 * No forward momentum with input u+3
-* Low crush 9";js9;;Feng-uf+3;Side Swipe;;;File:t8-p2-feng-uf+3.mp4
-uf+4;m;13;i15~17;-13;+33a (+23);;* Low crush 9;js9;;Feng-uf+4;Soaring Eagle;;;File:t8-p2-feng-uf+4.mp4
-uf+3+4;M,h,h;10,10,7;i24,4,3;-14;+25a (+18);;"* High crush 6~24
-* Low crush 25";cs6~24 js25;;Feng-uf+3+4;;;;File:t8-p2-feng-uf+3+4,3.mp4
-uf+3+4,3;M,h,h, h;10,10,7, 11;i24,4,3, i17~18;-6;+70a (+54);;"* Balcony Break
+* Low crush 9~32
+* Floating state 33~35";js9~32 fs33~35;;Feng-uf+3;Side Swipe;r30;;File:t8-p2-feng-uf+3.mp4
+uf+4;m;13;i15~17;-13;+33a (+23);;"* Recovers 2F faster on hit (t46 r29)
+* Low crush 9~28
+* Floating state 29~31";js9~28 fs29~31;;Feng-uf+4;Soaring Eagle;r31;;File:t8-p2-feng-uf+4.mp4
+uf+3+4;M,h,h;10,10,7 (10);i24,i4~6,i3~4;-14;+25a (+18);;"* High crush 6~23
+* Floating state 33~34
+* Low crush 35~37
+* Floating state 38~39
+* Low crush 40~49
+* Floating state 50~52";cs6~23 fs33~34 js35~37 fs38~39 js40~49 fs50~52;;Feng-uf+3+4;;r28;;File:t8-p2-feng-uf+3+4,3.mp4
+uf+3+4,3;M,h,h, h;10,10,7 (10), 23 (11);i24,i4~6,i3~4, i17~18;-6;+14c;;"* Balcony Break
 * Tornado
-* Combo from 1st hit
-* causes 1st hit not to crush";bbr trn;;Feng-uf+3+4,3;Assassin's Bow;;;File:t8-p2-feng-uf+3+4,3.mp4
+* Aerial combo from 1st hit
+* Previous hit crouching state is canceled when 3 is input 
+** Previous hit is cs6~23 when extension is delayed by at least 21F
+* Input can be delayed by 37F
+* Move cannot be delayed
+* Forces tech backroll on normal hit
+* Floating state 1~2
+* Low crush 3~16
+* Floating state 17~19";bbr trn fs1~2 js3~16 fs17~19;;Feng-uf+3+4,3;Assassin's Bow;r33?;;File:t8-p2-feng-uf+3+4,3.mp4
 1+2+3+4;;;;;;;;;;Feng-1+2+3+4;Ki Charge;;;File:t8-p2-feng-1+2+3+4.mp4
 f,F+2;m;25;i18~19;-9;+16a (+7);;"* Heat Engager
 
 * Heat Dash +5, +36a (+26)
 
-* Balcony Break";he bbr;;Feng-f,F+2;Exploding Dagger;;;File:t8-p2-feng-f,f+2.mp4
+* Balcony Break";he bbr;;Feng-f,F+2;Exploding Dagger;r28;;File:t8-p2-feng-f,f+2.mp4
 f,F+3;M;33;i32~33;+8c;+8c;;"* 9 chip damage on block
-* 12 chip damage on block in heat
-* Transition to +8c +8c STC with f";;STC;Feng-f,F+3;Tremor Stomp;;;
-f,F+4;m;15;i19~20;-15;+30a (+20);;;;;Feng-f,F+4;;;;File:t8-p2-feng-f,f+4,3.mp4
-f,F+4,3;m, m;15, 21;i19~20, i20~21;-14;+32a (+25);;"* Move can be powered up by delaying input (25 damage)
-* Low crush 20";js20;;Feng-f,F+4,3;Spreading Wings;;;File:t8-p2-feng-f,f+4,3.mp4
-f,F+1+2;m;25;i24~25;-9;+16a;;"* Balcony Break
-* Hold 1+2 to power up and deal more chip damage on block";bbr;;Feng-f,F+1+2;Nian Zhang Mie Ba;;;File:t8-p2-feng-f,f+1+2.mp4
-f,F+1+2*;m;30;i39;+6;+22a (+12);;"* Balcony Break
-* Becomes  Essence of Nian Zhang Mie Ba in Heat";bbr;;Feng-f,F+1+2*;Nian Zhang Mie Ba (charged);;;
+* Transition to r28 STC with f (+8c/+8c)";;STC;Feng-f,F+3;Tremor Stomp;r28;;
+f,F+4;m;15;i19~20;-15;+30a (+20);;;;;Feng-f,F+4;;r33;;File:t8-p2-feng-f,f+4,3.mp4
+f,F+4,3;m, m;15, 21;i19~20, i20~21;-14;+32a (+22);;"* Combo from 1st hit with 11F delay
+* Move can be powered up by delaying input by at least 8F (25 damage and +34a (+24))
+* Recovers 1F faster on hit (t72 r31)
+* Low crush 20";js20;;Feng-f,F+4,3;Spreading Wings;r32;;File:t8-p2-feng-f,f+4,3.mp4
+f,F+1+2;m;25;i23~24;-9;+16a;;"* Balcony Break
+* Hold 1+2 to power up and deal chip damage on block";bbr;;Feng-f,F+1+2;Nian Zhang Mie Ba;r33;;File:t8-p2-feng-f,f+1+2.mp4
+f,F+1+2*;m;30;i39~40;+6;+22a (+12);;"* Balcony Break
+* 12 chip damage on block
+* Becomes Essence of Nian Zhang Mie Ba in Heat";bbr;;Feng-f,F+1+2*;Nian Zhang Mie Ba (charged);r33;;
 qcf;;;;;;;"* Minimum 3f needed to enter (one for each directional)
 * Transition to r6? hFC with alternate input D,df
 ** Cannot access stance moves
 ** Can access FC.df+4 with input D,df+4 (i27? effective startup)
 * Cancel to sidestep with U
-* Can access df+3 and db+3 from a manual qcf input";;for,hFC,sidestep;Feng-CD;Lingering Shadow;;;File:t8-p2-feng-qcf.mp4
+* Can access df+3 and db+3 from a manual qcf input";;for,hFC,sidestep,CD;Feng-CD;Lingering Shadow;r1 CD;;File:t8-p2-feng-qcf.mp4
 uf,n,4;m;20;i23~25;-13;+32a (+22);;* Low crush 9;js9;;Feng-uf,n,4;Delayed Rising Toe Kick;;;File:t8-p2-feng-uf,n,4.mp4
 f,f,F+3;m;30;i20~25;+6~+11g;+13d (+3);;"* Balcony Break
-* Chip damage on block
-* Low crush 5";bbr chp js5;;Feng-f,f,F+3;Severing Sword;;;File:t8-p2-feng-f,f,f+3.mp4
-ws1;m;13;i13;-3;+3;;;;;Feng-ws1;;;;File:t8-p2-feng-ws1,2,1.mp4
-ws1,2;m, m;13, 16;i13, i9;-12;-1;;* Jail from 1st attack;;;Feng-ws1,2;;;;File:t8-p2-feng-ws1,2,1.mp4
-ws1,2,1;m, m, m;13, 16, 20;i13, ,i17~18;-14;+12d (+3);+32d (+24);"* Balcony Break
-* Combo from 2nd CH
-* Move can be delayed";bbr;;Feng-ws1,2,1;Dancing Dragon;;;File:t8-p2-feng-ws1,2,1.mp4
+* 9 chip damage on block
+* Low crush 5~33
+* Floating state 34~36";bbr js5~33 fs34~36;;Feng-f,f,F+3;Severing Sword;r38;;File:t8-p2-feng-f,f,f+3.mp4
+ws1;m;13;i13;-3;+3;;;;;Feng-ws1;;r22;;File:t8-p2-feng-ws1,2,1.mp4
+ws1,2;m, m;13, 16;i13, i9;-12;-1;;"* Jail from 1st block with 6F delay
+* Combo from 1st hit with 6F delay
+* Move can be delayed by 4F
+* Input can be delayed by 6F";;;Feng-ws1,2;;r31;;File:t8-p2-feng-ws1,2,1.mp4
+ws1,2,1;m, m, m;13, 16, 20;i13, ,i17~18;-14;+12a (+3);+32a (+24);"* Balcony Break
+* Jail from 1st block with 2F delay
+* Combo from 2nd CH with 12F delay
+* Move can be delayed by 15F
+* Input can be delayed by 16F";bbr;;Feng-ws1,2,1;Dancing Dragon;r32;;File:t8-p2-feng-ws1,2,1.mp4
 ws1,3;m, h;13, 20;i13, i22~23;-6;+4c;;"* Heat Engager
 
 * Heat Dash +5, +43d (+35)
 
-* Combo from 1st hit
-* Move can be delayed
-* Unparryable by traditional kick parries (bug?)";he;;Feng-ws1,3;Dancing Scorpion Sting;;;File:t8-p2-feng-ws1,3.mp4
-ws2;m;17;i15~16;-7;+29g;+78a (+62);* Tornado (CH Only);;;Feng-ws2;Adamantine Uppercut;;;File:t8-p2-feng-ws2.mp4
-ws3;m;15;i15~16;-12;+33a (+23);;;;;Feng-ws3;Bow Kick;;;File:t8-p2-feng-ws3.mp4
-ws4;m;18;i11~12;-7;+7;+29g;;;;Feng-ws4;Rising Heel Kick;;;File:t8-p2-feng-ws4.mp4
+* Combo from 1st hit with 3F delay
+* Move can be delayed by 10F
+* Input can be delayed by 12F
+* Unparryable by traditional kick parries (bug?)";he;;Feng-ws1,3;Dancing Scorpion Sting;r33;;File:t8-p2-feng-ws1,3.mp4
+ws2;m;17;i15~16;-7;+29g;+78a (+62);* Tornado (CH Only);;;Feng-ws2;Adamantine Uppercut;r25;;File:t8-p2-feng-ws2.mp4
+ws3;m;15;i15~16;-12;+33a (+23);;;;;Feng-ws3;Bow Kick;r30;;File:t8-p2-feng-ws3.mp4
+ws4;m;18;i11~12;-7;+7;+29g;;;;Feng-ws4;Rising Heel Kick;r25;;File:t8-p2-feng-ws4.mp4
 ws1+2;m;20;i23~24;-9;+3;;"* Punch parry
-* Parry state 5~8";ps5~8;;Feng-ws1+2;Push Hands;;;File:t8-p2-feng-ws1+2.mp4
-SS.2;h;18;i15;+3;+9;+31d;"* Homing
-* Transition to BT";hom;BT,BT;Feng-SS.2;Hidden Intentions;BT;;File:t8-p2-feng-ss.2.mp4
-SS.4;l;19;i20~22;-31c;-3;+71a (+55);"* Has a clean hit effect (+71a (+55) on hit)
-* -3 on hit with no clean hit
-* High crush 10";cs10;;Feng-SS.4;Swift Sweep Kick;;;File:t8-p2-feng-ss.4.mp4
-SS.1+2;m;24;i22~23;+1~+2;+21d (+12);;"* Balcony Break
-* Chip damage on block";bbr chp;;Feng-SS.1+2;Enlightened Circle;;;File:t8-p2-feng-ss.1+2.mp4
-FC.df+1;l;19;i21~22;-13c;-2;+13g;* High crush 0~;cs0~;FC;Feng-FC.df+1;Silent Arrow;FC;;File:t8-p2-feng-fc.df+1.mp4
-FC.df+2;m;21;i18;-14;+55a;;* High crush 18~;cs18~;FC;Feng-FC.df+2;Monkey Strike;FC;;File:t8-p2-feng-fc.df+2.mp4
-FC.df+4;l;13;i19~20;-8c;+3b;;"* Can be input with D,df+4 (i27? effective startup)
-* Transition to BT";;BT,BT;Feng-FC.df+4;;BT;;File:t8-p2-feng-fc.df+4,1.mp4
-FC.df+4,1;l, h;13, 10;i19~20, i20~21;-2;+6;;* Combo from 1st attack;;;Feng-FC.df+4,1;Xuan Jiao Xiao Yan Shou;;;File:t8-p2-feng-fc.df+4,1.mp4
-(back to wall).b,b,ub;m;21;i39~41;+4c;+22;+22;* Low crush 5;js5;;Feng-(back to wall)b,b,ub;[[Wall_jump_attack|Wall Jump Attack]];;;
-BT.1;h;12;i12;-3;+14;;;;;Feng-BT.1;Backfist;;;File:t8-p2-feng-bt.1.mp4
+* +14 on successful parry
+* Parry state 5~8";ps5~8;;Feng-ws1+2;Push Hands;r28;;File:t8-p2-feng-ws1+2.mp4
+SS.2;h;18;i15;+3;+9;+31g;"* Homing
+* Transition to BT";hom;BT,BT;Feng-SS.2;Hidden Intentions;r24 BT;;File:t8-p2-feng-ss.2.mp4
+SS.4;l;19;i20~22;-31c;-3~-1;+71a (+55);"* Has a clean hit effect (+71a (+55) on hit)
+* -3~-1 on hit with no clean hit
+* High crush 10~31";cs10~31;;Feng-SS.4;Swift Sweep Kick;r31;;File:t8-p2-feng-ss.4.mp4
+SS.1+2;m;24;i22~23;+1~+2;+21a (+12);;"* Balcony Break
+* 7 chip damage on block";bbr;;Feng-SS.1+2;Enlightened Circle;r23;;File:t8-p2-feng-ss.1+2.mp4
+FC.df+1;l;19;i21~22;-13c;-2;+13g;"-2c on crouching opponent
+* High crush 1~53";cs1~53;FC;Feng-FC.df+1;Silent Arrow;r31 FC;;File:t8-p2-feng-fc.df+1.mp4
+FC.df+2;m;21;i18;-14;+55a;;* High crush 18~40;cs18~40;FC;Feng-FC.df+2;Monkey Strike;r34 FC;;File:t8-p2-feng-fc.df+2.mp4
+FC.df+4;l;13;i19~20;-8c;+3;;"* Can be input with D,df+4 (i27? effective startup)
+* Transition to BT
+* +3c on crouching opponent";;BT,BT;Feng-FC.df+4;;r26 BT;;File:t8-p2-feng-fc.df+4,1.mp4
+FC.df+4,1;l, h;13, 10;i19~20, i20~21;-2;+6;;"* Combo from 1st hit
+* -20 from 1st block";;;Feng-FC.df+4,1;Xuan Jiao Xiao Yan Shou;r20;;File:t8-p2-feng-fc.df+4,1.mp4
+(Back to wall).b,b,UB;m;21;i39~41;+4c~+6c;+22a;;"* Floating state 5~13
+* Low crush 14~33
+* Floating state 34~36";fs5~13 js14~33 fs34~36;;Feng-(back to wall)b,b,ub;Wall Jump Punch;r26;;
+BT.1;h;12;i12;-3;+14;;;;;Feng-BT.1;Backfist;r22;;File:t8-p2-feng-bt.1.mp4
 BT.2;m;20;i19~21;-9;+13a;;"* Heat Engager
 
-* Heat Dash +5, +67a (+50)";he;;Feng-BT.2;Slashing Tiger;r35;;File:t8-p2-feng-bt.2.mp4
-BT.3;M;33;i32~33;+8c;+8c;;"* Chip damage on block
-* Transition to STC with f";chp;STC;Feng-BT.3;Tremor Stomp;;;
-BT.1+2;m;20;i16~17;-3;+8;+41d (+33);"* Balcony Break (CH only)
-* Elbow";elb;;Feng-BT.1+2;Hustle Elbow;;;File:t8-p2-feng-bt.1+2.mp4
-BT.d+1;l;20;i20~21;-13c;+4;+16d;* High crush 15~;cs15~;FC;Feng-BT.d+1;Reverse Fractured Diamond;FC;;File:t8-p2-feng-bt.d+1.mp4
-BT.d+3;l;20;i18~20;-26c;-3;+70a (+54);"* Has clean hit effect
-* High crush 6~";cs6~;FC;Feng-BT.d+3;Reverse Mighty Sweep Kick;FC;;File:t8-p2-feng-bt.d+3.mp4
-CD.1;l;18;i18~19;-14;+0;+12g;"* Head
+* Heat Dash +5, +67a (+50)
+
+* Balcony Break
+*";he bbr;;Feng-BT.2;Slashing Tiger;r35;;File:t8-p2-feng-bt.2.mp4
+BT.3;M;33;i32~33;+8c;+8c;;"* 9 chip damage on block
+* Transition to STC with f (+8c/+8c)";;STC;Feng-BT.3;Tremor Stomp;r28;;
+BT.1+2;m;20;i16~17;-3;+8;+41a (+33);"* Balcony Break (CH only)
+* Elbow";elb;BT;Feng-BT.1+2;Hustle Elbow;r23 BT;;File:t8-p2-feng-bt.1+2.mp4
+BT.d+1;l;20;i20~21;-13c;+4;+16a;* High crush 15~52;cs15~52;FC;Feng-BT.d+1;Reverse Fractured Diamond;r31 FC;;File:t8-p2-feng-bt.d+1.mp4
+BT.d+3;L;20;i18~20;-26c;-4~-2;+70a (+54);"* Has clean hit effect (+70a (+54))
+* -4~-2 on normal hit
+* High crush 6~52";cs6~52;FC;Feng-BT.d+3;Reverse Mighty Sweep Kick;r32 FC;;File:t8-p2-feng-bt.d+3.mp4
+CD.1;L;18;i18~19;-14;+0;+12g;"* Head
 * Transition to FC with D
-* High crush 6";cs6;FC;Feng-CD.1;Landslide;;;File:t8-p2-feng-qcf1.mp4
-CD.2;m;25;i18~19;-14;+67a (+51);;* Tornado;trn;;Feng-CD.2;Mountain Crusher;;;File:t8-p2-feng-qcf2.mp4
-CD.1+2;m;25;i16~17;+0c;+7c;+13;Head;;;Feng-CD+1+2;Yan Wang's Wrath;;;File:t8-p2-feng-qcf1+2.mp4
+* High crush 6~19";cs6~19;FC;Feng-CD.1;Landslide;r32;;File:t8-p2-feng-qcf1.mp4
+CD.2;m;25;i18~19;-14;+67a (+51);;* Tornado;trn;;Feng-CD.2;Mountain Crusher;r36;;File:t8-p2-feng-qcf2.mp4
+CD.1+2;m;25;i16~17;+0c;+7c;+13;Head;;;Feng-CD+1+2;Yan Wang's Wrath;r30;;File:t8-p2-feng-qcf1+2.mp4
 FUFT.b+3+4;m;20;i30~33;-3~0;+28d (+18);;"*
 Balcony Break
 * Floating state 1~27
 * Low crush 28~";bbr fs1~27 js28~;;Feng-FUFT.b+3+4;Spring Up;;;
-KNP.1;l;20;i20~21;-13c;+4;+16d;* High crush 15;cs15;FC;Feng-KNP.1;Fractured Diamond;FC;;File:t8-p2-feng-knp.1.mp4
-KNP.2;h;20;i14;-9;+17;;"* Heat Engager
+KNP.1;l;20;i20~21;-13c;+4;+16a;* High crush 15~52;cs15~52;FC;Feng-KNP.1;Fractured Diamond;r31 FC;;File:t8-p2-feng-knp.1.mp4
+KNP.2;h;20;i14;-9;+22a (+12);;"* Heat Engager
 
 * Heat Dash +5, +36a (+26)
 
-* Balcony Break";he bbr;;Feng-KNP.2;Fei He Zhang;;;File:t8-p2-feng-knp.2.mp4
+* Balcony Break";he bbr;;Feng-KNP.2;Fei He Zhang;r34;;File:t8-p2-feng-knp.2.mp4
 KNP.3;m;20;i22~23;-14;+77a (+55);;"* Tornado
-* Low crush 15";trn js15;;Feng-KNP.3;Rising Swallow Kick;;;File:t8-p2-feng-knp.3.mp4
-KNP.4;l;10;i18;-31c;-4;;;;;Feng-KNP.4;;;;File:t8-p2-feng-knp.4,1+2.mp4
-KNP.4,1+2;l, h;10, 24;i18, i28;-6;+30a (+20);;"* Balcony Break
+* Low crush 15~30
+* Floating state 31~33";trn js15~30 fs31~33;;Feng-KNP.3;Rising Swallow Kick;r32;;File:t8-p2-feng-knp.3.mp4
+KNP.4;l;10;i18;-31c;-4;;;;;Feng-KNP.4;;r34;;File:t8-p2-feng-knp.4,1+2.mp4
+KNP.4,1+2;l, h;10, 35 (24);i18, i28;-6;+15a (+6);;"* Balcony Break
 * Shoulder
-* Combo from 1st attack";bbr;BT;Feng-KNP.4,1+2;Xuan Tui Strike;BT;;File:t8-p2-feng-knp.4,1+2.mp4
-KNP.3+4;M;30;i31~34;-7;-3d;;* Low crush 15;js15;FC;Feng-KNP.3+4;;FC;;File:t8-p2-feng-knp.3+4,3+4.mp4
+* Aerial combo from 1st hit (+30a (+20))";bbr;BT;Feng-KNP.4,1+2;Xuan Tui Strike;r29 BT;;File:t8-p2-feng-knp.4,1+2.mp4
+KNP.3+4;M;30;i31~34;-7;-3d;;* Low crush 15;js15;FC;Feng-KNP.3+4;;r40 FC;;File:t8-p2-feng-knp.3+4,3+4.mp4
 KNP.3+4,3+4;M, m;30, 20;i31~34, i39~42;-3~0;+31a (+21);;"* Balcony Break
 * Same attack as Spring Up (FUFT.b+3+4)
-* Low crush 38";bbr js38;;Feng-KNP.3+4,3+4;Leaping Lion;;;File:t8-p2-feng-knp.3+4,3+4.mp4
-OTG.d+3+4;l;19;i24~25;-13;-2 (-10);;;;;Feng-OTG.d+3+4;Thunder Stomp;;;
-STC.1;m;20;i20~21;-15;+30a;;"* Absorb an attack to power up and deal more chip damage on block
-* Power crush";pc;;Feng-STC.1;Bao Dan Po;;;File:t8-p2-feng-stc.1.mp4
-STC.2;h;18;i14~15;-3;+25g;;"* Transition to BT at +0 +28g with B
-* Transition to CD at +1 +29g on hit or block with DF";;BT,CD;Feng-STC.2;Driller Hook Backhand;;;File:t8-p2-feng-stc.2.mp4
+* Move can be delayed by 12F
+* Low crush 38";bbr js38;;Feng-KNP.3+4,3+4;Leaping Lion;r19;;File:t8-p2-feng-knp.3+4,3+4.mp4
+OTG.d+3+4;L;24 (19);i24~25;-13;-2;;-2d (-10) on grounded hit;;;Feng-OTG.d+3+4;Thunder Stomp;;;
+STC.1;m;20;i20~21;-15;+38a;;"* -9 frame advantage and 8 chip damage on block after absorbing an attack in power crush state
+* Power crush 8~19";pc8~19;;Feng-STC.1;Bao Dan Po;r36;;File:t8-p2-feng-stc.1.mp4
+STC.2;h;18;i14~15;-3;+25g;;"* Transition to BT with B (+0/+28g)
+* Transition to CD on hit or block with DF (+1/+29g)
+** Transition to r1 FC with DF~db (+0/+28g)";;BT,CD,FC;Feng-STC.2;Driller Hook Backhand;r29;;File:t8-p2-feng-stc.2.mp4
 STC.3;h;25;i22~23;+6;+23d;;"* Homing
 * Balcony Break
-* 7 chip damage on block
-* 9 chip damage on block in heat";hom bbr;BT;Feng-STC.3;Spiraling Tiger Kick;BT;;File:t8-p2-feng-stc.3.mp4
-STC.4;l;20;i20;-13;+3;+14;;;;Feng-STC.4;Jin Bu Zhen;;;File:t8-p2-feng-stc.4.mp4
-STC.1+2;m;20;i18;-9c;+17d;;;;;Feng-STC.1+2;Pummeling Fists;;;File:t8-p2-feng-stc.1+2.mp4
-STC.P;m;21;i18;;+53a;;"* Only occurs during STC after absorbing 2 hits
-* Parry state 3";ps3;;Feng-STC.P;Falcon Beak's Snare;;;
-hFC.1;sl;5;i10;-5;+6;;"* Transition to Standing with f
-* +6c on crouching hit
-* High crush 4~";cs4~;FC;Feng-d+1;Crouch Jab;r24 FC;;
-hFC.3;L;10;i16;-17;-6;;"* -6c on crouching hit
-* High crush 4~";cs4~;FC;Feng-d+3;Crouch Spin Kick;r36 FC;;
-hFC.4;l;6;i12;-15;-4;;"* -4c on crouching hit
-* High crush 4~";cs4~;FC;Feng-d+3+4;Crouch Shin Kick;r34 FC;;
-1+3;t;35;i12~14;-6;-4;;* Throw break 1 or 2;;;Feng-1+3;Neck Twister;;;File:t8-p2-feng-1+3.mp4
-2+4;t;35;i12~14;-3;0;;* Throw break 1 or 2;;;Feng-2+4;Serpent Slayer;;;File:t8-p2-feng-2+4.mp4
-BT.1+4;t;45;;-6;-4;;* Throw break 1+2;;;Feng-BT.1+4_2+3;Pao Lau Impaler;;;File:t8-p2-feng-bt.1+4_2+3.mp4
-Back Throw;t;50;;;-4;;* Cannot break throw;;;Feng-Back Throw;Violent Storm;;;
-Left Throw;t;40;;-3;-6;;* Throw break 1;;;Feng-Left Throw;Jaws of Death;;;
-Right Throw;t;40;;-3;-4;;* Throw break 2;;;Feng-Right Throw;Wandering Soul;;;
-uf+1+2;t;40;;-6;0;;"* Spike
-* Throw break 1+2";spk;;Feng-uf+1+2;Kunlun Avalanche;;;File:t8-p2-feng-uf+1+2.mp4
+* 7 chip damage on block";hom bbr;BT;Feng-STC.3;Spiraling Tiger Kick;r31 BT;;File:t8-p2-feng-stc.3.mp4
+STC.4;l;20;i20;-13;+3;+14;;;;Feng-STC.4;Jin Bu Zhen;r32;;File:t8-p2-feng-stc.4.mp4
+STC.1+2;m;20;i18;-9c;+17d;;;;;Feng-STC.1+2;Pummeling Fists;r37;;File:t8-p2-feng-stc.1+2.mp4
+STC.P;m;21;i18~19;-17;+53a;;* Only occurs during STC after absorbing 2 hits;;;Feng-STC.P;Falcon Beak's Snare;r36;;
+1+3;t;35;i12~14;-6;-4d;;* Throw break 1 or 2;;;Feng-1+3;Neck Twister;;;File:t8-p2-feng-1+3.mp4
+2+4;t;35;i12~14;-3;+0d;;* Throw break 1 or 2;;;Feng-2+4;Serpent Slayer;;;File:t8-p2-feng-2+4.mp4
+BT.1+4;t;45;i12~14;-6;-5d;;* Throw break 1+2;;;Feng-BT.1+4;Pao Lau Impaler;r31;;File:t8-p2-feng-bt.1+4_2+3.mp4
+Back Throw;t;50;;;-4d;;* Cannot break throw;;;Feng-Back Throw;Violent Storm;;;
+Left Throw;t;40;;-3;-6d;;* Throw break 1;;;Feng-Left Throw;Jaws of Death;;;
+Right Throw;t;40;;-3;-4d;;* Throw break 2;;;Feng-Right Throw;Wandering Soul;;;
+uf+1+2;t;40;;-6;+0d;;"* Floor Break
+* Throw break 1+2";fbr;;Feng-uf+1+2;Kunlun Avalanche;;;File:t8-p2-feng-uf+1+2.mp4
