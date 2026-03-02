@@ -230,6 +230,7 @@ export const charVideoInfoT8: Record<
   jun: {
     videoPostFix: '',
   },
+  paul: {},
   reina: {
     videoPostFix: '',
     gifs: true,
