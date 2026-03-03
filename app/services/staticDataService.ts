@@ -223,7 +223,7 @@ export const charVideoInfoT8: Record<
   'devil-jin': {},
   dragunov: {},
   kazuya: {},
-  king : {},
+  king: {},
   kuma: {},
   lars: {},
   law: {},
