@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { useSearchParams } from 'react-router';
+import { Link, useSearchParams } from 'react-router';
 import { type GameRouteId } from '~/types/GameRouteId';
 import { type Move } from '~/types/Move';
 import { type MoveFilter } from '~/types/MoveFilter';
@@ -22,6 +22,14 @@ export type DynamicFrameDataListProps = {
 
 const maxMovesToShow = 400;
 
+const getPageSearchParams = (searchParams: URLSearchParams, page: number) => {
+  const nextSearchParams = new URLSearchParams(searchParams);
+  nextSearchParams.set('page', String(page));
+  return `?${nextSearchParams.toString()}`;
+};
+
+const PAGE_KEY = 'page';
+
 export const DynamicFrameDataList = ({
   gameRouteId,
   charId,
@@ -31,6 +39,8 @@ export const DynamicFrameDataList = ({
   viewMode,
 }: DynamicFrameDataListProps) => {
   const [searchParams] = useSearchParams();
+  const currentPage = parseInt(searchParams.get(PAGE_KEY) || '1', 10);
+
   const sortSettings = useMemo(
     () => getSortSettings(searchParams),
     [searchParams],
@@ -44,12 +54,22 @@ export const DynamicFrameDataList = ({
     return sortMovesV2(filteredMoves, sortSettings);
   }, [filteredMoves, sortSettings]);
 
+  const totalPages = Math.max(
+    1,
+    Math.ceil(sortedMoves.length / maxMovesToShow),
+  );
+  const hasPrev = currentPage > 1;
+  const hasNext = currentPage < totalPages;
+
   const paginatedMoves = useMemo(() => {
     if (sortedMoves.length > maxMovesToShow) {
-      return sortedMoves.slice(0, maxMovesToShow);
+      return sortedMoves.slice(
+        (currentPage - 1) * maxMovesToShow,
+        currentPage * maxMovesToShow,
+      );
     }
     return sortedMoves;
-  }, [sortedMoves]);
+  }, [sortedMoves, currentPage]);
 
   const FrameDataList = useMemo(() => {
     switch (viewMode) {
@@ -71,11 +91,29 @@ export const DynamicFrameDataList = ({
         className={className}
         sortSettings={sortSettings}
       />
-      {paginatedMoves.length < sortedMoves.length && (
-        <ContentContainer className="my-4">
-          Showing {paginatedMoves.length} of {sortedMoves.length} moves
-        </ContentContainer>
-      )}
+      <ContentContainer className="my-4">
+        {hasPrev && (
+          <Link
+            className="mr-2 inline-flex h-7 w-7 items-center justify-center rounded border text-primary transition-colors hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            to={getPageSearchParams(searchParams, currentPage - 1)}
+          >
+            {'<'}
+          </Link>
+        )}
+        Showing{' '}
+        {currentPage > 1 ? `${(currentPage - 1) * maxMovesToShow + 1}-` : ''}
+        {sortedMoves.length > maxMovesToShow &&
+          `${Math.min(currentPage * maxMovesToShow, sortedMoves.length)} of `}
+        {`${sortedMoves.length} moves`}
+        {hasNext && (
+          <Link
+            className="ml-2 inline-flex h-7 w-7 items-center justify-center rounded border text-primary transition-colors hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            to={getPageSearchParams(searchParams, currentPage + 1)}
+          >
+            {'>'}
+          </Link>
+        )}
+      </ContentContainer>
     </>
   );
 };
