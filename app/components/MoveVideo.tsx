@@ -36,12 +36,7 @@ export const MoveVideo = ({
 
   const charId = isWavuMove(move) ? charIdFromMove(move) : undefined;
 
-  if (
-    move.video &&
-    charId &&
-    (charVideoInfoT8[charId] || !move.ytVideo) &&
-    isHydrated
-  ) {
+  if (move.video && charId && isHydrated) {
     const videoBase =
       move.video.replace('File:', '').replace('.mp4', '') +
       (charVideoInfoT8[charId]?.videoPostFix ?? '-426');
