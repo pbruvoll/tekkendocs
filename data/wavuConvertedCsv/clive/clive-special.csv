@@ -14,6 +14,7 @@ H.PHX.2+3;m;42;i15~16;+8;+0;;"* Heat Smash
 * Transition to throw on hit
 * Opponent recovers in FDFA state
 * Only deals recoverable damage
+* (32) damage balcony break on 1st whiff
 * 9 chip damage on block";hs fbr wpn;;Clive-H.PHX.2+3;Dancing Steel;r34;;
 H.u+1+2;M,m;18,21;i19~20,i20~21;-12;+3c;;"* Weapon 2nd hit
 * Consumes 150F of remaining Heat time
@@ -70,7 +71,8 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Increases ZAN gauge by 0.30 on hit
 * Increases ZAN gauge by 0.14 on block
 * Only deals recoverable damage
-* +11d on BT hit";spk wpn;;Clive-1,2;Finishing Steel;r33;;File:t8-p2-clive-1,2.mp4
+* +11d on BT hit
+* +14c on side hit; forces tech backroll";spk wpn;;Clive-1,2;Finishing Steel;r33;;File:t8-p2-clive-1,2.mp4
 1,f+2;h, h;5, 22;i10, i25~26;+1;+13g;;"* Balcony Break
 * Weapon
 * Combo from 1st CH
@@ -195,11 +197,12 @@ f+2,2,1+2;m, m, M;10, 7, 18;i15, ,i27~28;-13c;+9a;;"* Balcony Break
 * Only deals recoverable damage
 * Input can be delayed by 8F
 * Move cannot be delayed";bbr spk wpn;;Clive-f+2,2,1+2;Sanngetall;r40;;File:t8-p2-clive-f+2,2,1+2.mp4
-H.f+2,2,1;m, m, m;10, 7, 25;i15, ,i26~27;-9;+40d(-18d);;"* Balcony Break
+H.f+2,2,1;m, m, m;10, 7, 25;i15, ,i26~27;-9;+14c;;"* Balcony Break
 * Combo from 1st hit with 8F delay
 * Move cannot be delayed
 * Input can be delayed by 8F
 * Consumes 150F of remaining Heat time
+* Forces tech backroll on hit
 * 7 chip damage on block";bbr;;Clive-f+2,2,H.1;Lethal Ignition;r33?;;
 H.f+2,2,1*;m, m, m;10, 7, 30;i15, ,i42~43;+11;+52a;;"* Guard Break
 * Consumes 150F of remaining Heat time
@@ -362,13 +365,14 @@ f,F+2;m;21;i19~20;-7;+13a;+38a;"* Balcony Break
 f,F+1+2;m;22;i20;+3;+9c;;"* Spike
 * Weapon
 * 2 chip damage on block";spk wpn;;Clive-f,F+1+2;Staff of Judgment;r30;;File:Clive-ff1%2B2.mp4
-qcf+1;h;5;i20-31;-12~-10;+8d~+10d;;"* Balcony Break
+qcf+1;h;5;i20-31;-12~-10;+8c~+10c;;"* Balcony Break
 * Weapon
 * Hold to power up
 * 1 chip damage on block
 * Cancel to r15 PHX with 4 or F from frames 10-16
 * Transitions to unbreakable throw from i23-31 5,10 +3
-* Throw deals recoverable damage only";bbr wpn;PHX;Clive-qcf+1;Deadly Embrace;r34;;File:Clive-qcf+1.mp4
+* Throw deals recoverable damage only
+* Forces tech backroll on hit";bbr wpn;PHX;Clive-qcf+1;Deadly Embrace;r34;;File:Clive-qcf+1.mp4
 qcf+1*;h;10;i30-41;-5~-3;+16a~+18a (+6~+8);;"* Balcony Break
 * Weapon
 * 2 chip damage on block
@@ -397,7 +401,7 @@ ws3;m,m;20,15(20);i20~21 i28~41;-8;+21a (+11a);;"* Homing
 ws4;m;14;i11~12;-5;+6;;* Enter PHX -5 +6 r23 with F or 4 on hit or block;;PHX;Clive-ws4;Sabaton Smash;r23;;File:t8-p2-clive-ws4.mp4
 SS.2;M;12;i17~18;-9;-2;;"* Weapon
 * Side step takes 9f, effective startup i26";wpn;;Clive-SS.2;;r36;;File:t8-p2-clive-ss.2,1.mp4
-SS.2,1;M, m;12, 23;i17~18, i22~23;-15;+35d (-23d);;"* Heat Engager
+SS.2,1;M, m;12, 23;i17~18, i22~23;-15;+9c;;"* Heat Engager
 
 * Heat Dash +5, +45a (+35a)
 
@@ -406,7 +410,8 @@ SS.2,1;M, m;12, 23;i17~18, i22~23;-15;+35d (-23d);;"* Heat Engager
 * Input 1 during the 1st hit animation on frames 16~18 to add +3 damage
 * Combo from 1st hit with 11f delay
 * Input can be delayed 11f
-* Move can be delayed 10f";he bbr wpn;;Clive-SS.2,1;Slash Burst;r38;;File:t8-p2-clive-ss.2,1.mp4
+* Move can be delayed 10f
+* Force tech backroll on hit";he bbr wpn;;Clive-SS.2,1;Slash Burst;r38;;File:t8-p2-clive-ss.2,1.mp4
 SS.1+2;M;21;i25~26;+2;+49a;;"* Spike
 * Weapon
 * 6 Chip Damage on block
@@ -515,9 +520,10 @@ PHX.3+4;m;20;i28~29;+7;+18a (+8);;"* Homing
 * Floating state 40~42";hom bbr js18~39 fs40~42;;Clive-PHX.3+4;Bolt Boot;r37;;File:t8-p2-clive-phx.3+4.mp4
 WOL.1;sm;23;i18~27;-20~-11;+8~+17;;"* Weapon
 * Transition to r22? PHX on hit";wpn;PHX;Clive-WOL.1;Dia;r33;;File:t8-p2-clive-wol.1.mp4
-WOL.2;sm,t;30,70;i25~40;-38~-23;+14d (-44) / +0d;;"* Weapon
+WOL.2;sm,t;30,70;i25~40;-38~-23;-12c~+3c;;"* Weapon
 * Transition to attack throw on airborne hit
-* 56 damage in total with attack throw and scaling";wpn;;Clive-WOL.2;"<div class=""dotlist"">
+* 56 damage in total with attack throw and scaling
+* Forces tech backroll on hit";wpn;;Clive-WOL.2;"<div class=""dotlist"">
 
 * Impulse 
 * Follow Up Flare
