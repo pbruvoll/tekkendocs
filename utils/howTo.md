@@ -58,6 +58,29 @@ tekkendocs>python utils\uploadCsv.py -I data\wavuConvertedCsv -G T8
 tekkendocs>python utils\countMoves.py -I data\wavuConvertedCsv -G T8 -O app\data\character-move-count.json
 ```
 
+### How to download move videos from wavu.wiki
+
+Use `utils\downloadWavuVids.py` to download move videos for Tekken 8 characters from wavu.wiki.
+
+Download all characters:
+```
+tekkendocs>python utils\downloadWavuVids.py -O data\wavuVideos
+```
+
+Download a single character:
+```
+tekkendocs>python utils\downloadWavuVids.py -O data\wavuVideos --character Kazuya
+```
+
+Useful options:
+
+- `-O, --output` (required): Output folder where videos are saved.
+- `--character`: Download only one character (case-insensitive exact name).
+- `--offset`: Skip first N characters and continue from there.
+- `--delay`: Delay in seconds between requests (default `1.0`).
+
+The script creates one folder per character in the output directory and skips files that already exist.
+
 ## How to convert videos recursively to a target resolution
 
 The script below scans the input folder recursively, mirrors folder structure into the output folder, and converts common video files.

@@ -9,17 +9,17 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 H.EXD.1+3;h (th);;i18;;;;"*
 Homing
 * Unbreakable
-* Transitions to TFA";hom;;Steve-H.EXD.1+3;Two-Faced (TFA);r26;;
+* Transition to TFA";hom;TFA;Steve-H.EXD.1+3;Two-Faced (TFA);r26;;
 H.LNH.P;m,t;15;;;;;"* Parries high and mid punches and kicks?
 * Active after LNH is actionable 
-* Transitions to TFA after successful parry
-* Parry state 25~95?";ps25~95?;;Steve-H.LNH.P;Two-Faced;;;
-H.df+3+4;sp;;;;;;"* Transitions to r13 EXD
+* Transition to TFA after successful parry
+* Parry state 25~95?";ps25~95?;TFA;Steve-H.LNH.P;Two-Faced;;;
+H.df+3+4;sp;;;;;;"* Transition to r13 EXD
 * r25? EXD FC cancel?
 * Partially uses remaining heat time
 * Auto low parry effect
 * High crush 1~
-* Parry state 1~";cs1~ ps1~;;Steve-H.df+3+4;;;;
+* Parry state 1~";cs1~ ps1~;EXD;Steve-H.df+3+4;;;;
 H.2+3;m,th;10,4,2,3,3,3,25;i16;+8 LNH;+0;;"* Heat Smash
 * Floor Break
 * Spike
@@ -185,10 +185,10 @@ df+1,2~f+1+2,1;m, h,h, m;12, 8,12, 7;i13, ,i17~18;-19;-8;;* Combo from 2nd CH;;;
 df+1,2~f+1+2,1,1;m, h,h, m, m;12, 8,12, 7, 8;i13, ,i23~26;-25;-17;;* Combo from 3rd hit;;;Steve-df+1,2~f+1+2,1,1;4th hit;r;;
 df+1,2~f+1+2,1,1,2;m, h,h, m, m, m;12, 8,12, 7, 8, 8;i13, ,i22~23;;-8;;* Combo from 4th hit;;;Steve-df+1,2~f+1+2,1,1,2;5th hit;r;;
 df+1,2~f+1+2,1,1,2,1;m, h,h, m, m, m, h;12, 8,12, 7, 8, 8, 8;i13, ,i15~15;-9;+5;;;;;Steve-df+1,2~f+1+2,1,1,2,1;6th hit;r;;
-df+2;m;10;i16;-11;+6;+10c;"* Transition to r22? LWV with 3 (-7/+10/+14c)
+df+2;m;10;i16~17;-11;+6;+10c;"* Transition to r22? LWV with 3 (-7/+10/+14c)
 * Transition to r22? RWV with 4 (-7/+10/+14c)
 * Transition to r22? SWY with b+3_4 (-7/+10/+14c)
-* Transition to r18? DCK with f+3_4 (-2/+15g/+19c)
+* Transition to r18? DCK with f+3_4 (-3/+14g/+18c~+19c)
 ** r19? DCK FC cancel?";;LWV,RWV,SWY,DCK;Steve-df+2;Crescent Hook;r30;;File:t8-p2-steve-df+2.mp4
 d+1;l;12;i16;-13;-2;;* High crush 6~;cs6~;FC;Steve-d+1;Knee Blaster;r31 FC;;File:t8-p2-steve-d+1.mp4
 d+2;l;11;i17;-18;-5;;* High crush 6~;cs6~;;Steve-d+2;;;;File:t8-p2-steve-d+2,1,2.mp4
