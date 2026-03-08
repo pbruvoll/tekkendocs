@@ -79,9 +79,6 @@ export const MoveVideo = ({
             url={`${cdnUrl}/t8/videos/${charId}/${videoBase}.mp4`}
           />
         </button>
-        {hideFrameData && (
-          <div className="absolute bottom-0 right-[2%] z-10 aspect-square w-1/12 bg-black" />
-        )}
       </div>
     );
   }

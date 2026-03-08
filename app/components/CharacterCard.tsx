@@ -55,7 +55,7 @@ export const CharacterCard2 = ({
             </>
           ) : (
             <div className="overflow-hidden text-ellipsis whitespace-nowrap text-center capitalize text-primary max-xs:text-xs">
-              {name}
+              {name === 'mokujin' ? 'All Characters' : name}
             </div>
           )}
         </Inset>
