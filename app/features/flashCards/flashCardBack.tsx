@@ -55,7 +55,7 @@ export const FlashCardBack = ({ move, onAnswer }: FlashCardBackProps) => {
             ) : null}
           </div>
         </div>
-        <div className="flex min-h-36 items-center justify-center px-4 pb-2">
+        <div className="flex min-h-32 items-center justify-center px-4 pb-2">
           <ShowVideoButton move={move} className="w-full" />
         </div>
       </div>
