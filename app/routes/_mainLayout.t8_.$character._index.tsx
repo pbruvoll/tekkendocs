@@ -122,7 +122,7 @@ export default function Index() {
               alt={characterName}
             />
             <Heading as="h1" my="2" className="capitalize">
-              {characterName}
+              {characterName === 'mokujin' ? 'All Characters' : characterName}
             </Heading>
           </div>
           <a

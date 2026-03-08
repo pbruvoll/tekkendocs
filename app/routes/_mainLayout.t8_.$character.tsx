@@ -51,14 +51,16 @@ export const loader = async ({ params }: Route.LoaderArgs) => {
   let overrideNormalMoves: TableData | undefined;
 
   let overrideSheetData: CharacterPageData | undefined;
-  try {
-    overrideSheetData = await service.getCharacterData(
-      game,
-      characterId,
-      'overrideFrameData',
-    );
-  } catch (e) {
-    console.warn('overrideSheetData error', e);
+  if (characterId !== 'mokujin') {
+    try {
+      overrideSheetData = await service.getCharacterData(
+        game,
+        characterId,
+        'overrideFrameData',
+      );
+    } catch (e) {
+      console.warn('overrideSheetData error', e);
+    }
   }
 
   overrideNormalMoves = overrideSheetData?.tables.find(
