@@ -13,6 +13,7 @@ import {
 import { MovePropertyIconList } from './MovePropertyIconList';
 import { MovePropertyTagList } from './MovePropertyTagList';
 import { MoveVideo } from './MoveVideo';
+import { ShowNotes } from './ShowNotes';
 
 export type MoveCardWithVideoProps = {
   move: Move;
@@ -155,18 +156,10 @@ export const MoveCardWithVideo = ({
               <div className="flex justify-between mt-1">
                 <div className="pt-2 place-self-end">
                   {move.notes && (
-                    <button
-                      type="button"
-                      onClick={() => setShowNotes(!showNotes)}
-                      className="text-xs text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1"
-                    >
-                      {showNotes ? (
-                        <ChevronDown className="h-4 w-4" />
-                      ) : (
-                        <ChevronRight className="h-4 w-4" />
-                      )}
-                      <span>{showNotes ? 'Hide details' : 'View details'}</span>
-                    </button>
+                    <ShowNotes.Trigger
+                      showNotes={showNotes}
+                      setShowNotes={setShowNotes}
+                    />
                   )}
                 </div>
                 <div className="flex flex-col items-end gap-2">
@@ -174,22 +167,7 @@ export const MoveCardWithVideo = ({
                   <MovePropertyTagList move={move} />
                 </div>
               </div>
-              <AnimatePresence>
-                {showNotes && (
-                  <motion.p
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: 'auto', opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3, ease: 'easeInOut' }}
-                    style={{ overflow: 'hidden' }}
-                    className="mt-2 ml-1 text-sm"
-                  >
-                    {move.notes.split('\n').map((line, index) => (
-                      <div key={index}>{line}</div>
-                    ))}
-                  </motion.p>
-                )}
-              </AnimatePresence>
+              <ShowNotes.Details showNotes={showNotes} move={move} />
             </CardContent>
           </div>
 

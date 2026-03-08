@@ -1,6 +1,8 @@
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { MovePropertyIconList } from '~/components/MovePropertyIconList';
 import { MovePropertyTagList } from '~/components/MovePropertyTagList';
+import { ShowNotes } from '~/components/ShowNotes';
 import { type Move } from '~/types/Move';
 import { FlashCardAnswer, type FlashCardAnswerType } from './FlashCardAnswer';
 import { ShowVideoButton } from './showVideoButton';
@@ -11,6 +13,7 @@ export type FlashCardBackProps = {
 };
 
 export const FlashCardBack = ({ move, onAnswer }: FlashCardBackProps) => {
+  const [showNotes, setShowNotes] = useState(false);
   return (
     <div className="flex h-full flex-col bg-foreground/10">
       <div className="flex-1 overflow-y-auto">
@@ -40,6 +43,16 @@ export const FlashCardBack = ({ move, onAnswer }: FlashCardBackProps) => {
               <MovePropertyIconList move={move} />
               <MovePropertyTagList move={move} />
             </div>
+            {move.notes ? (
+              <>
+                <ShowNotes.Trigger
+                  showNotes={showNotes}
+                  setShowNotes={setShowNotes}
+                  className="self-start mt-1"
+                />
+                <ShowNotes.Details showNotes={showNotes} move={move} />
+              </>
+            ) : null}
           </div>
         </div>
         <div className="flex min-h-36 items-center justify-center px-4 pb-2">
