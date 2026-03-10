@@ -63,10 +63,7 @@ export const getFilterFromParams = (
     hitsGrounded: getSearchParamBoolean(searchParams, filterKey.HitsGrounded),
     video: getSearchParamBoolean(searchParams, filterKey.Video),
     noVideo: getSearchParamBoolean(searchParams, filterKey.NoVideo),
-    embeddedVideo: getSearchParamBoolean(
-      searchParams,
-      filterKey.EmbeddedVideo,
-    ),
+    embeddedVideo: getSearchParamBoolean(searchParams, filterKey.EmbeddedVideo),
     noEmbeddedVideo: getSearchParamBoolean(
       searchParams,
       filterKey.NoEmbeddedVideo,
