@@ -17,7 +17,7 @@ export const meta: MetaFunction = ({ data }) => {
   }
   const title = 'Tournament videos from Tekken';
   const description =
-    'A curated list of vidoes from the biggest Tekken tournaments';
+    'A curated list of videos from the biggest Tekken tournaments';
   return [
     { title },
     { description },

@@ -493,6 +493,8 @@ export const filterMoves = (moves: Move[], filter: MoveFilter | undefined) => {
     [filter.hitsGrounded, hitsGrounded],
     [filter.video, (move: Move) => !!(move.ytVideo || move.video)],
     [filter.noVideo, (move: Move) => !(move.ytVideo || move.video)],
+    [filter.embeddedVideo, (move: Move) => !!move.video],
+    [filter.noEmbeddedVideo, (move: Move) => !move.video],
     [filter.chip, isChip],
     [filter.removeRecoveryHealth, removesRecoverableHealth],
     [filter.recoverFullCrouch, recoverFullCrouch],

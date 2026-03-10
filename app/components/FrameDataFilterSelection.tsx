@@ -63,6 +63,8 @@ export const FrameDataFilterSelection = ({
     hitsGrounded,
     video,
     noVideo,
+    embeddedVideo,
+    noEmbeddedVideo,
     stance: stanceFilter,
     transition: transitionFilter,
     removeRecoveryHealth,
@@ -500,6 +502,30 @@ export const FrameDataFilterSelection = ({
             }}
           >
             No Video
+          </Button>
+          <Button
+            variant={embeddedVideo ? 'solid' : 'outline'}
+            onClick={() => {
+              if (embeddedVideo) {
+                removeFilterValue(filterKey.EmbeddedVideo);
+              } else {
+                setFilterValue(filterKey.EmbeddedVideo, '');
+              }
+            }}
+          >
+            Embedded Video
+          </Button>
+          <Button
+            variant={noEmbeddedVideo ? 'solid' : 'outline'}
+            onClick={() => {
+              if (noEmbeddedVideo) {
+                removeFilterValue(filterKey.NoEmbeddedVideo);
+              } else {
+                setFilterValue(filterKey.NoEmbeddedVideo, '');
+              }
+            }}
+          >
+            No Embedded Video
           </Button>
         </div>
       </section>
