@@ -1,6 +1,7 @@
 import { Filter } from 'lucide-react';
 import { useId, useMemo, useState } from 'react';
 import { useSearchParams } from 'react-router';
+import { set } from 'zod';
 import { Input } from '@/components/ui/input';
 import { orderByKey } from '~/constants/sortConstants';
 import { sortOptions } from '~/constants/sortOptions';
@@ -14,10 +15,17 @@ import {
   getSortByQueryParamValue,
   getSortSettings,
 } from '~/utils/sortingUtils';
-import { useUserSettings } from '~/utils/userSettings';
+import { type FrameDataViewMode, useUserSettings } from '~/utils/userSettings';
 import { ContentContainer } from './ContentContainer';
 import { DynamicFrameDataList } from './DynamicFrameDataList';
 import { FrameDataFilterDialog } from './FrameDataFilterDialog';
+
+const viewMode = 'viewMode';
+
+const isFrameDataViewMode = (
+  value: string | null,
+): value is FrameDataViewMode =>
+  value === 'default' || value === 'simple' || value === 'videoCards';
 
 export type FrameDataSectionProps = {
   gameRouteId: GameRouteId;
@@ -31,7 +39,14 @@ export const FrameDataSection = ({
 }: FrameDataSectionProps) => {
   const viewModeId = useId();
   const [searchParams, setSearchParams] = useSearchParams();
-  const { frameDataViewMode, setFrameDataViewMode } = useUserSettings();
+  const viewModeFromSearchParams = searchParams.get(viewMode);
+
+  const { frameDataViewMode: viewModeFromStore, setFrameDataViewMode } =
+    useUserSettings();
+  const frameDataViewMode = isFrameDataViewMode(viewModeFromSearchParams)
+    ? viewModeFromSearchParams
+    : viewModeFromStore;
+
   const sortSettings = getSortSettings(searchParams);
   const sortByQueryParamValue = sortSettings
     ? getSortByQueryParamValue(sortSettings)
@@ -126,12 +141,13 @@ export const FrameDataSection = ({
           aria-label="View mode"
           value={frameDataViewMode}
           onChange={(e) => {
-            setFrameDataViewMode(
-              (e.target.value || 'default') as
-                | 'default'
-                | 'simple'
-                | 'videoCards',
-            );
+            const newViewMode = (e.target.value ||
+              'default') as FrameDataViewMode;
+            setSearchParams((prev) => {
+              prev.set(viewMode, newViewMode);
+              return prev;
+            });
+            setFrameDataViewMode(newViewMode);
           }}
           className="rounded-lg border border-gray-300 bg-gray-50 p-2.5 py-1.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
         >
