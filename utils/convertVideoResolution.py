@@ -7,6 +7,8 @@ Usage examples:
     python utils\convertVideoResolution.py -I input -O output --width 480 --height 270
     python utils\convertVideoResolution.py -I input -O output --width 480 --format mp4
     python utils\convertVideoResolution.py -I input -O output --width 480 --format gif --fps 15
+    python utils\convertVideoResolution.py -I input -O output --width 480 --audio-bitrate 64k
+    python utils\convertVideoResolution.py -I input -O output --width 480 --prefix low-
 """
 
 import argparse
@@ -68,6 +70,12 @@ def parse_args() -> argparse.Namespace:
         "--height",
         type=int,
         help="Target height in pixels (if omitted, aspect ratio is preserved)"
+    )
+    parser.add_argument(
+        "--prefix",
+        type=str,
+        default="",
+        help="Optional prefix prepended to filename stem (default: none)"
     )
     parser.add_argument(
         "--postfix",
@@ -148,6 +156,11 @@ def parse_args() -> argparse.Namespace:
         help="Rate-control buffer size for non-GIF H.264 output (e.g. 1634k, 3M). Used with --video-bitrate; defaults to 1634k"
     )
     parser.add_argument(
+        "--audio-bitrate",
+        type=str,
+        help="Target audio bitrate for non-GIF output (e.g. 64k, 96k, 128k). Lower values reduce file size"
+    )
+    parser.add_argument(
         "--no-audio",
         action="store_true",
         help="Disable audio track in non-GIF output videos"
@@ -206,6 +219,12 @@ def validate_args(args: argparse.Namespace) -> tuple[Path, Path, str | None]:
             raise ValueError("--video-maxrate/--video-bufsize cannot be used with --video-crf")
         if args.video_bitrate is None and (args.video_maxrate is not None or args.video_bufsize is not None):
             raise ValueError("--video-maxrate and --video-bufsize require --video-bitrate")
+
+        if args.no_audio and args.audio_bitrate is not None:
+            raise ValueError("--audio-bitrate cannot be used with --no-audio")
+
+        if args.audio_bitrate is not None and not args.audio_bitrate.strip():
+            raise ValueError("--audio-bitrate must not be empty")
     else:
         if args.gif_colors is not None and not 2 <= args.gif_colors <= 256:
             raise ValueError("--gif-colors must be between 2 and 256")
@@ -224,6 +243,8 @@ def validate_args(args: argparse.Namespace) -> tuple[Path, Path, str | None]:
             raise ValueError("--video-bufsize cannot be used with --format gif")
         if args.video_fps is not None:
             raise ValueError("--video-fps cannot be used with --format gif")
+        if args.audio_bitrate is not None:
+            raise ValueError("--audio-bitrate cannot be used with --format gif")
 
     if shutil.which("ffmpeg") is None:
         raise ValueError("ffmpeg was not found in PATH. Install ffmpeg and try again")
@@ -242,6 +263,7 @@ def build_output_path(
     src_file: Path,
     input_root: Path,
     output_root: Path,
+    prefix: str,
     postfix: str,
     forced_format: str | None,
 ) -> Path:
@@ -251,7 +273,7 @@ def build_output_path(
 
     source_ext = src_file.suffix.lower().lstrip(".")
     output_ext = forced_format if forced_format else source_ext
-    return dest_dir / f"{src_file.stem}{postfix}.{output_ext}"
+    return dest_dir / f"{prefix}{src_file.stem}{postfix}.{output_ext}"
 
 
 def run_ffmpeg(command: list[str]) -> bool:
@@ -372,6 +394,7 @@ def convert_standard_video(
     video_options: VideoOptions,
     overwrite: bool,
     no_audio: bool,
+    audio_bitrate: str | None,
 ) -> bool:
     command = [
         "ffmpeg",
@@ -408,6 +431,8 @@ def convert_standard_video(
 
     if no_audio:
         command.append("-an")
+    elif audio_bitrate is not None:
+        command.extend(["-b:a", audio_bitrate])
 
     command.extend(["-r", str(video_options.fps)])
 
@@ -501,6 +526,7 @@ def main() -> None:
                 src_file=source_file,
                 input_root=input_root,
                 output_root=output_root,
+                prefix=args.prefix,
                 postfix=postfix,
                 forced_format=forced_format,
             )
@@ -532,6 +558,7 @@ def main() -> None:
                     video_options,
                     args.overwrite,
                     args.no_audio,
+                    args.audio_bitrate,
                 )
 
             if ok:

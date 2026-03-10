@@ -84,6 +84,11 @@ Force output format:
 tekkendocs>python utils\convertVideoResolution.py -I C:\documents\tekkendocs\t8\videos\alisa -O C:\documents\tekkendocs\t8\videos\alisa-converted --width 480 --format mp4
 ```
 
+Settings for creating vids for wavu, wen input folder contains files such as "1,1.mp4", "df+1,2.mp4"
+```
+C:\tekkendocs>python utils\convertVideoResolution.py -I "C:\Users\Videos\NVIDIA\Tekken 8" -O "C:\output" --width 640  --audio-bitrate 64k --postfix "" --prefix "t8-p2-fahkumram-"
+```
+
 ### GIF output with frame rate
 
 For GIF conversion, you can specify FPS:

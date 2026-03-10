@@ -7,6 +7,7 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * Cannot cause a K.O.
 * Power crush 7~16";hb pc7~16;;Azucena-2+3;Heat Burst;r30;;
 H.LIB.1,2,F;;;;+7;+54a (+34);;"* Strong Aerial Tailspin
+* Consumes 210F of remaining Heat time
 * 70% scaling on combo
 * Chip damage on block
 * Floating state 15~33";chp fs15~33;LIB;Azucena-H.LIB.1,2,F;Blend Tempestad > Nuevo Libertador;r38 LIB;;
@@ -20,16 +21,18 @@ H.LIB.P (Low);m;20;i16~18;-9;+58a (+42);;"* Tornado
 * is1
 * Floating state 2~48";trn is1 fs2~48;;Azucena-H.LIB.P (Low);One Drip Cielo Evitacion;r44;;
 H.LIB.d+3+4;M;27;i16~18;+4~+6;+58a (+42);;"* Tornado
-* Uses heat gauge
-* * Transition to FC with D
+* Consumes 210F of remaining Heat time
+* Transition to FC with D
 * Floating state 2~48";trn fs2~48;FC;Azucena-H.LIB.d+3+4;One Drip Cielo;r44;;
 H.b+1,1,2,F;;;;+7;+54a (+34);;"* Strong Aerial Tailspin
+* Consumes 210F of remaining Heat time
 * 70% scaling on combo
 * Chip damage on block
 * Floating state 15~33";chp fs15~33;LIB;Azucena-H.b+1,1,2,F;Double Blend Tempestad > Nuevo Libertador;r38 LIB;;
 H.b+2,F;;;;+7;+54a (+34);;"* Strong Aerial Tailspin
 * Homing
 * 70% scaling on combo
+* Consumes 150F of remaining Heat time
 * 7 Chip damage on block
 * Low crush 15~30
 * Floating state 31~33";hom js15~30 fs31~33;LIB;Azucena-H.b+2,F;Mil Nudillo > Nuevo Libertador;r38 LIB;;
@@ -410,14 +413,11 @@ LIB.d+4;L;14;i19~20;-31;-2;;;;;Azucena-LIB.d+4;;r31;;File:t8-p2-azucena-lib.d+4,
 LIB.d+4,4;L, h;14, 27;i19~20, i30~31;-7;+14a (+5);;"* Balcony Break
 * Combo from 1st hit";bbr;;Azucena-LIB.d+4,4;Blend Cortar;r34;;File:t8-p2-azucena-lib.d+4,4.mp4
 LIB.f,f;;;;;;;;;LIB;Azucena-LIB.f,f;Libertador (Varios);r24 LIB;;File:t8-p2-azucena-lib.f,f.mp4
-1+3;t;35;i12~14;-3;+0d;;* Throw break 1 or 2;;;Azucena-1+3;Amaru Head Squeeze;31;;File:t8-p2-azucena-1+3.mp4
+1+3;t;35;i12~14;-3;+0d;;* Throw break 1 or 2;;;Azucena-1+3;Amaru Head Squeeze;r31;;File:t8-p2-azucena-1+3.mp4
 2+4;t;35;i12~14;-3;+0d;;"* Throw break 1 or 2
 * Side switch on hit and break";;;Azucena-2+4;El Dorado Neck Snap;r31;;File:t8-p2-azucena-2+4.mp4
 Back throw;t;50;;;+0d;;"* Unbreakable
 * Side switch";;;Azucena-Back throw;Caffeine Abduction;;;
-FC.1+2;t;0;i32;-5;+3;;"* Throw break 1+2 in a 4f window, frames 1~4
-* Reverse tackle with 1+2 in a 2f window, frames 18~19
-* Works on standing and crouching opponent";;;Azucena-FC.1+2;Ultimate Tackle;r39;;File:t8-p2-azucena-fc.1+2.mp4
 Left throw;t;40;;-3;+0d;;* Throw break 1;;;Azucena-Left Throw;Urubamba Neck Lock;;;
 Right throw;t;40;;-3;-3d;;* Throw break 2;;;Azucena-Right Throw;Giratorio Sleeper Throw;;;
 Tackle.2,1,2,1;t;5,5,5,15;;;+0d;;"* Throw break 1 for right punches
@@ -432,5 +432,9 @@ d+1+3;t(m);35;i12~13;;+0d;;"* Heat Engager
 * Crouch throw
 * Unbreakable
 * Can't Heat Dash cancel";he;;Azucena-d+1+3;Smell the Coffee;r28;;File:t8-p2-azucena-d+1+3.mp4
+hFC.1+2;t;0;i32;-5;+3;;"* Throw break 1+2 in a 4f window, frames 1~4
+* Reverse tackle with 1+2 in a 2f window, frames 18~19
+* Works on standing and crouching opponent
+* Can be done from Crouch Level 1";;;Azucena-hFC.1+2;Ultimate Tackle;r39;;File:t8-p2-azucena-fc.1+2.mp4
 uf+1+2;t;40;i11;+0;-3d;;"* Throw break 1+2
 * side switch on hit";;;Azucena-uf+1+2;Inti Raymi Necklace;r28;;File:t8-p2-azucena-uf+1+2.mp4

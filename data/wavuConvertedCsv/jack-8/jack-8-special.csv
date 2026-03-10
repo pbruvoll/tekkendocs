@@ -181,7 +181,6 @@ d+4;l;10;i16;-15;-4;;"* Alternate input FC.d+4
 * High crush 4";cs4;FC;Jack-8-d+4;;rFC;;
 d+1+2;m;28;i27;-18;+42a (+32);;"*
 * High crush 6";cs6;;Jack-8-d+1+2;Double Axe;;;File:t8-p2-jack-8-d+1+2.mp4
-d+1+2;m;18;i28;+18g;+39d;;* Recovers in SIT, then stands up;;SIT;Jack-8-Grounded face up d+1+2;Get Up Punch;SIT;;
 d+3+4;;;;;;;* Transitions to SIT (Sit Down);;SIT;Jack-8-d+3+4;Sit Down;SIT;;
 db+1;l;13;i12;-12;+1;;*;;FC;Jack-8-db+1;;rFC;;File:t8-p2-jack-8-db+1,1,1,2.mp4
 db+1,1;l, l;13, 5;i12, i16;-12;-1;;* Combos from 1st hit;;FC;Jack-8-db+1,1;;rFC;;File:t8-p2-jack-8-db+1,1,1,2.mp4
@@ -358,32 +357,6 @@ ss2;h;20;i17;+9;+35d (+27);;"* Balcony Break
 * Transition to GMH with D
 ** (+9 oB, +35d (+27) oH)
 * Chip damage on block (6)";bbr chp;GMH;Jack-8-ss2;Piston Gun Snipe;;;File:t8-p2-jack-8-ss2.mp4
-FC.1;l;10;i19;-8;+3;;"*
-* High crush 1";cs1;FC;Jack-8-FC.1;;rFC;;File:t8-p2-jack-8-fc.1,1.mp4
-FC.1,1;l, l;10, 14;i19, i31;-12;+5;;"*
-* High crush";cs;FC;Jack-8-FC.1,1;Double Low Hammer;rFC;;File:t8-p2-jack-8-fc.1,1.mp4
-FC.1,2;l, m;10, 24;i19, i32;-11;+11a (+2);+43a (-4);* Balcony Break;bbr;FC;Jack-8-FC.1,2;Megaton Strike;rFC;;File:t8-p2-jack-8-fc.1,2.mp4
-FC.2;sl;8;i11;-4;+7;;"* Alternate input d+2
-* High crush 1";cs1;FC;Jack-8-FC.2;;rFC;;
-FC.2,1;sl, l;8, 6;i11, i24;-14;-3;;"* Alternate input d+2,1
-Combos from 1st hit
-First two hits of 10 hit combo";;FC;Jack-8-FC.2,1;;rFC;;
-FC.3;l;12;i20;-17;-6;;"* Alternate input d+3
-* High crush 1";cs1;FC;Jack-8-FC.3;;rFC;;
-FC.4;l;10;i16;-15;-4;;"* Alternate input d+4
-* High crush 1";cs1;FC;Jack-8-FC.4;;rFC;;
-FC.1+2;l;21;i24;-15;+13d;;"* Alternate input FC.db+1+2
-* High crush 1";cs1;FC;Jack-8-FC.1+2;;rFC;;File:t8-p2-jack-8-fc.1+2,1+2.mp4
-FC.1+2,1+2;l, m;21, 23;i24, i40;-18;+42a (+32);;* Combos from 1st hit;;;Jack-8-FC.1+2,1+2;Low Cross Combo;;;File:t8-p2-jack-8-fc.1+2,1+2.mp4
-FC.db+1;l;14;i14;-11;+3;;"*
-* High crush 1";cs1;FC;Jack-8-FC.db+1;;rFC;;File:t8-p2-jack-8-fc.db+1,1,1.mp4
-FC.db+1,1;l, m;14, 10;i14, i24;-6;+5;;"* Spike
-* High crush";spk cs;FC;Jack-8-FC.db+1,1;;rFC;;File:t8-p2-jack-8-fc.db+1,1,1.mp4
-FC.db+1,1,1;l, m, m;14, 10, 20;i14, ,i20;-14;+9a;;"* Balcony Break
-* Can be charged to power up";bbr;;Jack-8-FC.db+1,1,1;Pulverizer;;;File:t8-p2-jack-8-fc.db+1,1,1.mp4
-FC.db+1,1,1*;l, m, m;14, 10, 30;i14, ,i34~35;-6;+15a (+7);;"* Balcony Break
-* Gain GMC on hit or block
-* 12 chip damage on block";bbr;;Jack-8-FC.db+1,1,1*;Pulverizer (charged);;;
 FC.df+1;m;5;i23;-21;-11c;;*;;;Jack-8-FC.df+1;;;;File:t8-p2-jack-8-fc.df+1,2,1,1.mp4
 FC.df+1,2;m, m;5, 8;i23, i16;-21;-11c;;* Combos from 1st hit;;;Jack-8-FC.df+1,2;;;;File:t8-p2-jack-8-fc.df+1,2,1,1.mp4
 FC.df+1,2,1;m, m, m;5, 8, 11;i23, ,i16;-11;+16cs;;* Combos from 1st hit;;;Jack-8-FC.df+1,2,1;;;;File:t8-p2-jack-8-fc.df+1,2,1,1.mp4
@@ -429,6 +402,7 @@ FC.df+3+4,uf+1+2;m, m;28, 20;i21, i21~22;+5 GMH;+17c GMH;;"* Transition to GMH o
 * Move cannot be delayed
 * 4 chip damage on block
 * Low crush 15";js15;GMH,GMH;Jack-8-FC.df+3+4,uf+1+2;Make Some Noise;GMH;;
+FUFT.d+1+2;m;18;i28;+18g;+39d;;* Recovers in SIT, then stands up;;SIT;Jack-8-FUFT.d+1+2;Get Up Punch;SIT;;
 GMC.1;m;22;i22;-6;+73a (+57);;"* Strong Aerial Tailspin
 * Homing
 * Partially uses remaining Heat time
@@ -505,13 +479,41 @@ SIT.b;;;;;;;"*
 * Floating state";fs;;Jack-8-SIT.b;Backward Roll;;;File:t8-p2-jack-8-sit.b.mp4
 SIT.f;;;;;;;"*
 * Floating state";fs;;Jack-8-SIT.f;Forward Roll;;;File:t8-p2-jack-8-sit.f.mp4
+hFC.1;l;10;i19;-8;+3;;"* Can be done from Crouch Level 1
+* High crush 1";cs1;FC;Jack-8-hFC.1;;rFC;;File:t8-p2-jack-8-fc.1,1.mp4
+hFC.1,1;l, l;10, 14;i19, i31;-12;+5;;"*
+* High crush";cs;FC;Jack-8-hFC.1,1;Double Low Hammer;rFC;;File:t8-p2-jack-8-fc.1,1.mp4
+hFC.1,2;l, m;10, 24;i19, i32;-11;+11a (+2);+43a (-4);* Balcony Break;bbr;FC;Jack-8-hFC.1,2;Megaton Strike;rFC;;File:t8-p2-jack-8-fc.1,2.mp4
+hFC.2;sl;8;i11;-4;+7;;"* Alternate input d+2
+* High crush 1";cs1;FC;Jack-8-hFC.2;;rFC;;
+hFC.2,1;sl, l;8, 6;i11, i24;-14;-3;;"* Alternate input d+2,1
+Combos from 1st hit
+First two hits of 10 hit combo";;FC;Jack-8-hFC.2,1;;rFC;;
+hFC.3;l;12;i20;-17;-6;;"* Alternate input d+3
+* High crush 1";cs1;FC;Jack-8-hFC.3;;rFC;;
+hFC.4;l;10;i16;-15;-4;;"* Alternate input d+4
+* High crush 1";cs1;FC;Jack-8-hFC.4;;rFC;;
+hFC.1+2;l;21;i24;-15;+13d;;"* Alternate input FC.db+1+2
+* Can be done from Crouch Level 1
+* High crush 1";cs1;FC;Jack-8-hFC.1+2;;rFC;;File:t8-p2-jack-8-fc.1+2,1+2.mp4
+hFC.1+2,1+2;l, m;21, 23;i24, i40;-18;+42a (+32);;* Combos from 1st hit;;;Jack-8-hFC.1+2,1+2;Low Cross Combo;;;File:t8-p2-jack-8-fc.1+2,1+2.mp4
+hFC.db+1;l;14;i14;-11;+3;;"* Can be done from Crouch Level 1
+* High crush 1";cs1;FC;Jack-8-hFC.db+1;;rFC;;File:t8-p2-jack-8-fc.db+1,1,1.mp4
+hFC.db+1,1;l, m;14, 10;i14, i24;-6;+5;;"* Spike
+* High crush";spk cs;FC;Jack-8-hFC.db+1,1;;rFC;;File:t8-p2-jack-8-fc.db+1,1,1.mp4
+hFC.db+1,1,1;l, m, m;14, 10, 20;i14, ,i20;-14;+9a;;"* Balcony Break
+* Can be charged to power up";bbr;;Jack-8-hFC.db+1,1,1;Pulverizer;;;File:t8-p2-jack-8-fc.db+1,1,1.mp4
+hFC.db+1,1,1*;l, m, m;14, 10, 30;i14, ,i34~35;-6;+15a (+7);;"* Balcony Break
+* Gain GMC on hit or block
+* 12 chip damage on block";bbr;;Jack-8-hFC.db+1,1,1*;Pulverizer (charged);;;
 (During Enemy wall stun) 1+3;t;33;i12;!;+0d;;"* Wall throw (Unbreakable)
 * Alternate input 2+4 or uf+1+2";;;Jack-8-(During Enemy wall stun) 1+3;Twin Drivers;;;
 1+3;t;35;i12;+0;+1d;;"* Throw Break 1 or 2
-* Swaps positions on break";;BT;Jack-8-1+3;Rotary Catapult;BT;;File:t8-p2-jack-8-1+3.mp4
+* Swaps positions on break
+** Transition to BT on break";;BT;Jack-8-1+3;Rotary Catapult;r31;;File:t8-p2-jack-8-1+3.mp4
 2+4;t;35;i12;-6;-3d;;"* Throw Break 1 or 2
 * Swaps positions on break
-* Side Switch";;;Jack-8-2+4;Piston Gun Back Breaker;;;File:t8-p2-jack-8-2+4.mp4
+* Side Switch";;;Jack-8-2+4;Piston Gun Back Breaker;r31;;File:t8-p2-jack-8-2+4.mp4
 Back Throw 1+3;t;70;i12;!;+3d;;"* Unbreakable
 * Floor Break";fbr;;Jack-8-Back Throw 1+3;Spinal Crush;;;
 Back Throw 2+4;t;70;i12;!;+17d;;"* Balcony Break

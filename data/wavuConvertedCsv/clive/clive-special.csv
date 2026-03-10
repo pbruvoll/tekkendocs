@@ -15,21 +15,21 @@ H.PHX.2+3;m;42;i15~16;+8;+0;;"* Heat Smash
 * Opponent recovers in FDFA state
 * Only deals recoverable damage
 * (32) damage balcony break on 1st whiff
-* 9 chip damage on block";hs fbr wpn;;Clive-H.PHX.2+3;Dancing Steel;r34;;
+* 6 chip damage on block";hs fbr wpn;;Clive-H.PHX.2+3;Dancing Steel;r34;;
 H.u+1+2;M,m;18,21;i19~20,i20~21;-12;+3c;;"* Weapon 2nd hit
 * Consumes 150F of remaining Heat time
 * Transition to r15 PHX with F or 4 on hit or block (-1/+14c)
-* 13 chip damage on block";;PHX;Clive-H.u+1+2;;r36?;;
+* 7 chip damage on block";;PHX;Clive-H.u+1+2;;r36?;;
 H.u+1+2,1;M,m, m,m;18,21, 17,22;i19~20,i20~21, i25~26,i20~21;-8;+14a(+4a);;"* Balcony Break
 * Weapon 2nd hit
 * Move cannot be delayed
 * Input can be delayed by 25F
 * Interrupt with i3 from 2nd block
-* 14 chip damage on block
+* 7 chip damage on block
 * Same move as (df+1,H.1),1";bbr;;Clive-H.u+1+2,1;Blazing Rush;r41?;;
 H.u+1+2,2;M,m, h,h;18,21, 10,12;i19~20,i20~21, i23~24,i12~13;-9;+8;;"* Weapon 1st hit
 * Jail from 2nd normal hit
-* 7 chip damage on block
+* 4 chip damage on block
 * Transition to r15 PHX with F or 4 on hit or block (-3/+14)
 * Same move as (df+1,H.1),2";;PHX;Clive-H.u+1+2,2;;;;
 H.u+1+2,2,1;M,m, h,h, M,M;18,21, 10,12, 10,16;i19~20,i20~21, ,i20~21,i11~12;-8;+15a(-2a);;"* Tornado
@@ -38,7 +38,7 @@ H.u+1+2,2,1;M,m, h,h, M,M;18,21, 10,12, 10,16;i19~20,i20~21, ,i20~21,i11~12;-8;+
 * Combo from 4th hit with 17F delay
 * Move cannot be delayed
 * Input can be delayed by 17F
-* 9 chip damage on block
+* 5 chip damage on block
 * Same move as (df+1,H.1,2),1
 * Tornado launching steel pedal";trn bbr;;Clive-H.u+1+2,2,1;Blazing Eruption;;;
 H.2+3;m,t,m,m,m,m,m,m;55;i18;+8;-10;;"* Heat Smash
@@ -94,7 +94,7 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Weapon
 * Combo from 1st CH
 * Combo from 2nd CH with 10f? delay
-* Jail from 1st block with up to ?F delay
+* Jail from 1st block with 1F delay
 * Input 1 during the 2nd hit animation on frames 21~23 to add +3 damage";bbr wpn;;Clive-2,2,1;Assault Burst;r36;;File:t8-p2-clive-2,2,1.mp4
 2,2,2;h, m, M,m;11, 9, 15,20 (24);i12, ,i27~28 i31~32;-9;+21a (+4);;"* Tornado
 * Balcony Break
@@ -203,11 +203,12 @@ H.f+2,2,1;m, m, m;10, 7, 25;i15, ,i26~27;-9;+14c;;"* Balcony Break
 * Input can be delayed by 8F
 * Consumes 150F of remaining Heat time
 * Forces tech backroll on hit
-* 7 chip damage on block";bbr;;Clive-f+2,2,H.1;Lethal Ignition;r33?;;
+* 5 chip damage on block";bbr;;Clive-f+2,2,H.1;Lethal Ignition;r33?;;
 H.f+2,2,1*;m, m, m;10, 7, 30;i15, ,i42~43;+11;+52a;;"* Guard Break
 * Consumes 150F of remaining Heat time
 * Interrupt with i24? from 2nd block
-* Interrupt with i12 from 2nd hit";;;Clive-f+2,2,H.1*;Lethal Ignition (Hold);r33?;;
+* Interrupt with i12 from 2nd hit
+* 12 chip damage on block";;;Clive-f+2,2,H.1*;Lethal Ignition (Hold);r33?;;
 f+3;M;15;i20~21;-14;+37a;;"* Spike
 * 3 Chip Damage on block
 * Low crush 9~24
@@ -243,24 +244,24 @@ H.df+1,1;m, M,m;10, 13,15;i14~15, i22~23,i20~21;-12;+3c;;"* Weapon 2nd hit
 * Move is delayed by 2F
 * Consumes 150F of remaining Heat time
 * Transition to r15 PHX with F or 4 on hit or block (-1/+14c)
-* 9 chip damage on block";;PHX;Clive-df+1,H.1;;r36?;;
+* 5 chip damage on block";;PHX;Clive-df+1,H.1;;r36?;;
 H.df+1,1,1;m, M,m, m,m;10, 13,15, 17,22;i14~15, ,i25~26,i20~21;-8;+14a(+4a);;"* Balcony Break
 * Weapon 2nd hit
 * Move cannot be delayed
 * Input can be delayed by 25F
 * Interrupt with i3 from 3rd block
-* 14 chip damage on block";bbr;;Clive-df+1,H.1,1;Crimson Rush;r41?;;
+* 7 chip damage on block";bbr;;Clive-df+1,H.1,1;Crimson Rush;r41?;;
 H.df+1,1,2;m, M,m, h,h;10, 13,15, 10,12;i14~15, ,i23~24,i12~13;-9;+8;;"* Weapon 1st hit
 * Jail from 3rd normal hit
 * Transition to r15 PHX with F or 4 on hit or block (-3/+14)
-* 7 chip damage on block";;PHX;Clive-df+1,H.1,2;;;;
+* 4 chip damage on block";;PHX;Clive-df+1,H.1,2;;;;
 H.df+1,1,2,1;m, M,m, h,h, M,M;10, 13,15, 10,12, 10,16;i14~15, ,i20~21,i11~12;-8;+15a(-2a);;"* Tornado
 * Balcony Break
 * Weapon 2nd hit
 * Combo from 5th hit with 17F delay
 * Move cannot be delayed
 * Input can be delayed by 17F
-* 9 chip damage on block
+* 5 chip damage on block
 * Tornado launching steel pedal";trn bbr;;Clive-df+1,H.1,2,1;Crimson Eruption;;;
 df+2;m,m;5,10;i15~16 i26~27;-13;+30a (+20);;"* Weapon
 * 2nd hit available only on hit or block";wpn;;Clive-df+2;Wyrm Killer;r35;;File:t8-p2-clive-df+2.mp4
@@ -322,7 +323,7 @@ b+2;h;20;i20~21;-4;+9;;"* Strong Aerial Tailspin
 * +15a (+6) on BT hit
 * Effectively homing?";bbr wpn;PHX;Clive-b+2;Executioner;r34;;File:t8-p2-clive-b+2.mp4
 b+3;;;;;;;"* Strong parry effect: parries all highs or mids, except throws, unblockables and charge moves
-* Parry state 5~Parry state 13";ps5~ps13;;Clive-b+3;Precision Dodge;r40;;
+* Parry state 5~13";ps5~13;;Clive-b+3;Precision Dodge;r40;;
 b+3,P;;;;;;;"Earliest cancel to parry attacks r23
 * is1~16";is1~16;parry;Clive-b+3,P;;r50;;
 b+3,P,2;m;35;i20~21;+3;+16a (+6a);;"* Reversal Break
@@ -487,7 +488,7 @@ H.PHX.2,1+2;m, m;12, 32;i15, i23~24;+4;+25a(-1a);;"* Balcony Break
 * Weapon
 * Combo from 1st hit
 * Interrupt with i5 from 1st block
-* 9 chip damage on block
+* 6 chip damage on block
 * Consumes 150F of remaining Heat time";bbr wpn;;Clive-PHX.2,H.1+2;Twin Flames;;;
 PHX.3;L;8;i21;-26;-3c;;* Stagger on block;;;Clive-PHX.3;;r42;;File:t8-p2-clive-phx.3,2.mp4
 PHX.3,2;L, m,m;8, 18,20(36);i21, i30 i29~34;;+39a (+29);;"* Balcony Break
@@ -535,12 +536,12 @@ WOL.4;;;;;;;Actionable after 15f;;;Clive-WOL.4;Phoenix Shift;r15;;
 1+3;t;35;i12~14;-5;+0d;;"* Homing
 * Throw break 1 or 2
 * Can be done from FC
-* Opponent recovers in FUFA state";hom;;Clive-1+3;Fangs of Ruin;r25;;
+* Opponent recovers in FUFA state";hom;;Clive-1+3;Fangs of Ruin;r31;;
 2+4;t;35;i12~14;-5;+0d;;"* Homing
 * Throw break 1 or 2
 * Can be done from FC
 * Side switch on hit and on throw break
-* Opponent recovers in FUFT";hom;;Clive-2+4;Punisher;r25;;
+* Opponent recovers in FUFT";hom;;Clive-2+4;Punisher;r31;;
 Back Throw;t;50;;;+0d;;"* Unbreakable
 * Opponent recovers in FUFA";;;Clive-Back Throw;Judgment Bolt;;;
 Left Throw;t;40;i12~14;-3;+0d;;"* Throw break 1
