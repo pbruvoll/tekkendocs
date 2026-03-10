@@ -275,29 +275,40 @@ uf+3+4;l;27;i29;-24;+5;;"Alternate input DSS.uf+3+4
 ** b,B+2+3~1,3";;;Law-1+2+3+4~1,3;Blackout > Muggin';;;
 (While down, facing up) 1+2+3+4;;;;;;;;;;Law-(While down, facing up).1+2+3+4;Taunt;;;
 b,B+2+3;m!;60;i78;;+0d;;Can cancel and transition to DSS with b,b;;DSS;Law-b,B+2+3;Charge Power Punch;;;File:t8-p2-law-b,b+2+3.mp4
-f,F+2;m;12;i14;-6;+2;+7;;;;Law-f,F+2;Dragon's Poke;;;File:t8-p2-law-f,f+2,1,3.mp4
-f,F+2,1;m, h;12, 12;i14, i22;-4;+2;;Delayable;;;Law-f,F+2,1;;;;File:t8-p2-law-f,f+2,1,3.mp4
-f,F+2,1,3;m, h, m;12, 12, 23;i14, ,i28;-13;+11a;;"* Balcony Break
-* Combos off 2nd hit CH
-* Delayable";bbr;;Law-f,F+2,1,3;Dragon Strike Combo;;;File:t8-p2-law-f,f+2,1,3.mp4
-f,F+2,3;m, h;12, 20;i14, i16;-14;+11c;;"* Tornado
+f,F+2;m;12;i14~16;-6;+2;+7;;;;Law-f,F+2;Dragon's Poke;r26;;File:t8-p2-law-f,f+2,1,3.mp4
+f,F+2,1;m, h;12, 12;i14~16, i22~23;-4;+2;;"* Combo from 1st hit with 8F delay
+* Combo from 1st CH with 13F delay
+* Move can be delayed by 17F
+* Input can be delayed by 19F";;;Law-f,F+2,1;;r27;;File:t8-p2-law-f,f+2,1,3.mp4
+f,F+2,1,3;m, h, m;12, 12, 23;i14~16, ,i28~30;-13;+11a;;"* Balcony Break
+* Combo from 2nd hit CH with 1F delay
+* Move can be delayed by 17F
+* Input can be delayed by 18F";bbr;;Law-f,F+2,1,3;Dragon Strike Combo;r32;;File:t8-p2-law-f,f+2,1,3.mp4
+f,F+2,3;m, h;12, 20;i14~16, i16;-14;+11c;;"* Tornado
 * Balcony Break
-* Combos from 1st hit
-* Jails from 1st block with ?F delay
-* Delayable
-* Forces tech backroll on hit";trn bbr;;Law-f,F+2,3;Dragon Dagger;;;File:t8-p2-law-f,f+2,3.mp4
-f,F+2,f+1+2;m, m;12, 24;i14, i31;+4;+30a (+4);+54a;"* 4 chip damage on block
-* Transition to DSS with F (+6/+32a (+6)/+56a)";;DSS;Law-f,F+2,f+1+2;Dragon's Poke > Poison Arrow;;;File:t8-p2-law-f,f+2,f+1+2.mp4
-f,F+3;M;30;i23~26;0c;+7d;;"* Floor Break
+* Jail from 1st block with 6F delay
+* Combo from 1st hit with 13F delay
+* Move can be delayed by 11F
+* Input can be delayed by 13F
+* Forces tech backroll on hit";trn bbr;;Law-f,F+2,3;Dragon Dagger;r37;;File:t8-p2-law-f,f+2,3.mp4
+f,F+2,f+1+2;m, m;12, 24;i14~16, i31~32;+4;+30a (+4);+54a;"* Combo from 1st CH with 4F delay
+* Transition to DSS with F (+6/+32a (+6)/+56a)
+* 4 chip damage on block
+* Move can be delayed by 17F
+* Input can be delayed by 19F";;DSS;Law-f,F+2,f+1+2;Dragon's Poke > Poison Arrow;r35;;File:t8-p2-law-f,f+2,f+1+2.mp4
+f,F+3;M;30;i23~26;+0c;+7d;;"* Spike
 * 6 chip damage
-* Low crush";fbr js;;Law-f,F+3;Dragon Divide;;;
-f,F+4;m;17;i20;-9;+19cg;;"Balcony Break
-* Low crush";bbr js;;Law-f,F+4;Dragon's Leap Shot;;;File:t8-p2-law-f,f+4.mp4
+* Low crush 11~26
+* Floating state 27~29";spk js11~26 fs27~29;;Law-f,F+3;Dragon Divide;r30;;
+f,F+4;M;17;i20~21;-9;+19cg;;"Balcony Break
+* Low crush 23~36
+* Floating state 37~39";bbr js23~36 fs37~39;;Law-f,F+4;Dragon's Leap Shot;r30;;File:t8-p2-law-f,f+4.mp4
 uf,n,4;m;20;i19;-15;+30a (+20);;* Low crush;js;;Law-uf,n,4;Dragon's Rising Cannon;;;File:t8-p2-law-uf,n,4.mp4
 f,f,F+3;m;30;i20~28;+6;+9c;;"* Balcony Break
 * 6 chip damage on block
 * Forces tech backroll on hit
-* Low crush";bbr js;;Law-f,f,F+3;Running Side Kick;;;File:t8-p2-law-f,f,f+3.mp4
+* Low crush 3~29
+* Floating state 30~32";bbr js3~29 fs30~32;;Law-f,f,F+3;Running Side Kick;r31;;File:t8-p2-law-f,f,f+3.mp4
 ws1;m;10;i13;-7;-1;;"* Transition to DSS with F
 ** (-5 oB, +1 oH)";;DSS;Law-ws1;;;;File:t8-p2-law-ws1,2.mp4
 ws1,2;m, h;10, 25;i13, i16;-9;+14c;;"* Balcony Break

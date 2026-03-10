@@ -172,6 +172,7 @@ Floor Break
 * Low crush 21~32
 * Floating state 33~54";fbr elb js21~32 fs33~54;;King-d+2+3;Corporate Elbow;r43?;;File:t8-p2-king-d+2+3.mp4
 d+3+4;L;14;i16;-25;-9;;"* On CH, can access Stagger Kicks Flurry (d+3+4,4,4,4)
+* Can be done from Crouch Level 1
 * High crush 6~";cs6~;FC;King-d+3+4;;r44 FC;;File:t8-p2-king-d+3+4,4,4.mp4
 d+3+4,4;L, L;14, 7;i16, i29;-25;-9;;"* Combo from 1st hit on CH.
 * High crush 1~";cs1~;FC;King-d+3+4,4;;r FC;;File:t8-p2-king-d+3+4,4,4.mp4
@@ -356,8 +357,6 @@ FC.df+1;L;20;i32~34;-12;+73a(+57);;"* Can also be performed with f,n,d,DF+1/CD.1
 * Tornado on grounded hit.
 * High crush 1~";cs1~;FC;King-FC.df+1;Leg Breaker;r29 FC;;File:t8-p2-king-fc.df+1.mp4
 FC.df+2;m;21;i15;-14;+56a;;* Crumple on hit.;;;King-FC.df+2;Body Blow;r33;;File:t8-p2-king-fc.df+2.mp4
-FC.d+3;L;10;i18;-17;-6;;"* Can also be done by FC.db+3.
-* Get extra range by FC.df+3/CD.DF+3.";;FC;King-FC.d+3;;r FC;;
 BT.3;M;18;i13~14;-13;+9s;+50d;"* Tornado
 * Hits OTG. Forces standing on normal hit.
 * Crumple on CH for full combo.";trn;;King-BT.3;Blind Kick;;;File:t8-p2-king-bt.3.mp4
@@ -445,6 +444,7 @@ JGS.4;h;40/42/52;i17~18;+8/+15;+5a(-4)/+10a(+1);;"* Balcony Break
 JGS.df+4;m;30/36/45;i17~19;-16/+8;+5a(-4);;"Balcony Break
 * On block increases up to 2nd spin.
 * Damage increase up to 3rd spin.";bbr;;King-JGS.df+4;Jaguar Step > Mid Kick;;;File:t8-p2-king-jgs.df+4.mp4
+hFC.3;L;10;i18;-17;-6;;* Get extra range by FC.df+3/CD.DF+3.;;FC;King-hFC.3;;r FC;;
 (Behind 1 throw);t;60;(depends);;+0d;;"* Cannot throw break.
 * Any 1/1+2 break throw behind opponent's back, as well as RKO and chain throws.
 * Side switch. Opponent recovers in FDFL.";;;King-Behind.1+3;Half Boston Crab;;;
@@ -512,8 +512,6 @@ DHH.2,1,3,4;t;12,13 / 32;;-6;-7d(-40);;"* 2 throw break.
 * Opponent recovers in FUFT if fails to roll.";;;King-Air.d+1+3,2,1,3,4;Giant Swing (From DHH);;;
 DHH.1+2,1+2;t;15;;-6;-3d;;"* 1 throw break.
 * Opponent recovers in FDFT.";;;King-AIR.d+1+3,1+2,1+2;Flapjack (From DHH);;;
-FC.1+2;t(s);0;i26;-5;+3d;;"* 1+2 throw break (except from behind).
-* Catches standing and crouching opponent from all directions.";;;King-FC.1+2;Ultimate Tackle (UT);;;File:t8-p2-king-fc.1+2.mp4
 FC.db,d,db+1+2;t;45;i12;-6;+0d;;"Floor Break
 * 1+2 throw break.
 * Opponent recovers in FUFR.";fbr;;King-FC.db,d,db+1+2;Clothesline Press (Rock Bottom);r27;;File:t8-p2-king-fc.db,d,db+1+2.mp4
@@ -640,20 +638,26 @@ WALL.f,hcf+1;t(w);65(70);i10;;-5d;;"* Cannot throw break. Also converts from RKO
 WallBack.b,b,ub;t / m;45 / 21;i43~48 / i44~63;-8;+2 / +15;;"* Airborne from 5F, invincibility from 8 to 13F.
 * Unbreakable throw near wall, becomes air attack if throw not connected.
 * Side switch. Opponent recovers in FUFA.";;;King-WallBack.b,b,ub;Wall Jumping Attack;;;
-b+1+2(,f,F);t;0;i12~17;-3;+14g / -2;;"* Homing
+b+1+2(,f,F);t;0;i12~17;-3;+14g;;"* Homing
 * 1+2 throw break. Side switch.
 * Damage becomes 15 on wall splat.
-* Shifts to JGR, input f,F / b,B to cancel shift.";hom;;King-b+1+2;Throw Away;r20;;File:t8-p2-king-b+1+2.mp4
-b+1+2,1+2(,f,F);t;0;i12~17;;+11g / -6;;"* 1+2 throw break.
+* Transition to JGR
+** Can range from +22 to +47 (?) on wall hit depending on angle and distance to the wall
+* Cancel to standing with f,F or b,B (-2)
+** Can range from +6? to +31 (?) on wall hit depending on angle and distance to the wall";hom;JGR;King-b+1+2;Throw Away;r20;;File:t8-p2-king-b+1+2.mp4
+b+1+2,1+2(,f,F);t;0;i12~17;;+11g;;"* 1+2 throw break.
 * Damage becomes 15 on wall splat.
-* Shifts to JGR, input f,F / b,B to cancel shift.";;;King-b+1+2,1+2;Throw Away > Back Swing;;;File:t8-p2-king-b+1+2,1+2.mp4
+* Transition to JGR
+** Can range from +20 to +30(?) on wall hit depending on angle and distance to the wall
+* Cancel to standing with f,F or b,B (-6)
+** Can range from +15 to +25(?) on wall hit depending on angle and distance to the wall";;JGR;King-b+1+2,1+2;Throw Away > Back Swing;;;File:t8-p2-king-b+1+2,1+2.mp4
 db,n,f+2+4;t;53;i11;-2;-1d;;"Floor Break
 * 2 throw break
 * Input n,f+2+4 in 30 frames
 * Cannot be buffered from crouch
 * Cannot be executed during while standing
 * Opponent recovers in FUFA";fbr;;King-db,n,f+2+4;Tombstone Pile Driver;r28;;File:t8-p2-king-db,n,f+2+4.mp4
-db+2+3;t;40 (8+20+12);i12;-6;+1d / 0d;;"* 1+2 throw break.
+db+2+3;t;40 (8+20+12);i12;-6;+1d / +0d;;"* 1+2 throw break.
 * Opponent recovers in FUFT / FDFT.";;;King-db+2+3;Figure Four Leg Lock;r27;;
 df+1+3;t;19;i32;-2;+1d;;"* Homing
 * 1 throw break. Side Switch.
@@ -715,6 +719,9 @@ f,hcf+2;t;50(55);i12~14;-6;+1d;;"* Homing during heat
 * Partially restores remaining Heat time.
 * f,b,d,f are required inputs for normal throw
 * Opponent recovers in FUFL.";;;King-f,hcf+2;Tijuana Twister;r25;;File:t8-p2-king-f,hcf+2.mp4
+hFC.1+2;t(s);0;i26;-5;+3d;;"* 1+2 throw break (except from behind).
+* Catches standing and crouching opponent from all directions.
+* Can be done from Crouch Level 1";;;King-hFC.1+2;Ultimate Tackle (UT);;;File:t8-p2-king-fc.1+2.mp4
 qcb+1+2;t;50;i11;-6;-6d;;"* Floor Break
 * Homing during heat
 * 1+2 throw break

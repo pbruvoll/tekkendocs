@@ -109,32 +109,42 @@ f+1+2;m;20;i17~18;-13;+20a (+15);;"* Balcony Break
 f+2+3;m,m,m;10,10,15;i16~17 i24 i26~27;-7;+73a;;"* Weapon
 * Only once per match
 * chip damage on block";wpn chp;;Leroy-f+2+3;Master's Lesson;;;File:t8-p2-leroy-f+2+3.mp4
-df+1;m;10;i13~14;-6;+5;;;;;Leroy-df+1;;r21;;File:t8-p2-leroy-df+1,4.mp4
+df+1;m;10;i13~14;-6;+5;;;;;Leroy-df+1;;r24;;File:t8-p2-leroy-df+1,4.mp4
 df+1,4;m, m;10, 16;i13~14, i18;-9;+3;;"* Transition to HRM
-* Combo from 1st hit";;HRM,HRM;Leroy-df+1,4;Chopping Snap Kick;HRM;;File:t8-p2-leroy-df+1,4.mp4
-df+1,1+2;m, h;10, 9;i13~14, i14;-2;+4;;"* Power up during Heat (partially uses remaining Heat time)
-* Combo from 1st hit";;;Leroy-df+1,1+2;;;;File:t8-p2-leroy-df+1,1+2,2.mp4
-df+1,1+2,2;m, h, m;10, 9, 17;i13~14, ,i24;-10;+3;+33d (-25);"* Partially restores remaining Heat time when successful during Heat
-* Combos from 1st hit CH
-* Parry state 4~12";ps4~12;;Leroy-df+1,1+2,2;Admonishment Whirl;;;File:t8-p2-leroy-df+1,1+2,2.mp4
-df+2;m;7;i15~16;-6;+6;;;;;Leroy-df+2;;;;File:t8-p2-leroy-df+2,1+2.mp4
-df+2,1+2;m, h,m;7, 5,10;i15~16, i19 i11;-18;+33 (+23);;"* Combo from 1st hit
-* Jails";;;Leroy-df+2,1+2;Rising Dragons;;;File:t8-p2-leroy-df+2,1+2.mp4
-df+3;m;14;i16;-11;0;;;;;Leroy-df+3;;;;File:t8-p2-leroy-df+3,1,1+2.mp4
-df+3,1;m, h;14, 12;i16, i16~17;0;+6;;Combo from 1st hit;;;Leroy-df+3,1;;r19;;File:t8-p2-leroy-df+3,1,1+2.mp4
-df+3,1,1+2;m, h, m;14, 12, 25;i16, ,i20~21;-13;+34 (+13);;"* Balcony Break
-* Combo from 2nd hit CH
-* Delayable";bbr;;Leroy-df+3,1,1+2;Poison Strike;;;File:t8-p2-leroy-df+3,1,1+2.mp4
-df+4;m;14;i13;-6;+6;;Transition to HRM;;HRM,HRM;Leroy-df+4;;HRM;;File:t8-p2-leroy-df+4,3.mp4
+* Combo from 1st hit with 3F delay
+* Move can be delayed by 1F
+* Input can be delayed by 3F";;HRM,HRM;Leroy-df+1,4;Chopping Snap Kick;r29 HRM;;File:t8-p2-leroy-df+1,4.mp4
+df+1,1+2;m, h,h,h;10, 3,3,3;i13~14, i14,i6 (i7),i6 (i7);-2;+4;;"* Combo from 1st hit
+* Power up during Heat (Consumes 150F of remaining Heat time)
+** 12 damage on hit, and 6 chip damage on block
+** Restores 60F of remaining Heat time on hit";;;Leroy-df+1,1+2;;r21;;File:t8-p2-leroy-df+1,1+2,2.mp4
+df+1,1+2,2;m, h,h,h, m;10, 3,3,3, 17;i13~14, ,i24;-10;+3;+33a (+25);"* Combo from 1st or 4th CH with 1F delay
+* Restores 150F of remaining Heat time on successful parry during Heat
+* Move cannot be delayed
+* Input can be delayed with 1F
+* Parry state 4~12";ps4~12;;Leroy-df+1,1+2,2;Admonishment Whirl;r32;;File:t8-p2-leroy-df+1,1+2,2.mp4
+df+2;m;7;i15~16;-6;+6;;;;;Leroy-df+2;;r25;;File:t8-p2-leroy-df+2,1+2.mp4
+df+2,1+2;m, h,m;7, 5,10;i15~16, i19~20, i11~12;-18;+33a (+23);;"* Jail from 1st block
+* Combo from 1st hit";;;Leroy-df+2,1+2;Rising Dragons;r40;;File:t8-p2-leroy-df+2,1+2.mp4
+df+3;m;14;i16;-11;+0;;;;;Leroy-df+3;;r30;;File:t8-p2-leroy-df+3,1,1+2.mp4
+df+3,1;m, h;14, 12;i16, i16~17;+0;+6;;"* Combo from 1st hit
+* Leads to 10-hit string";;;Leroy-df+3,1;;r18;;File:t8-p2-leroy-df+3,1,1+2.mp4
+df+3,1,1+2;m, h, m;14, 12, 25;i16, ,i20~21;-13;+34d (+13);;"* Balcony Break
+* Combo from 2nd hit CH with 5F delay
+* Move can be delayed by 12F
+* Input can be delayed by 14F";bbr;;Leroy-df+3,1,1+2;Poison Strike;r36;;File:t8-p2-leroy-df+3,1,1+2.mp4
+df+4;m;14;i13;-6;+6;;Transition to HRM;;HRM,HRM;Leroy-df+4;;r26 HRM;;File:t8-p2-leroy-df+4,3.mp4
 df+4,3;m, m;14, 14;i13, i20~21;-9;+7;+37d (+29);"* Knee
-* Combo from 1st hit CH with 7?F delay
-* Move can be delayed by 3?F
-* Input can be delayed by 7?F
-* Interrupt with i3 from 1st block";kne;;Leroy-df+4,3;Snap Kick Knee;;;File:t8-p2-leroy-df+4,3.mp4
+* Combo from 1st hit CH with 7F delay
+* Move can be delayed by 3F
+* Input can be delayed by 7F
+* Interrupt with i3 from 1st block";kne;;Leroy-df+4,3;Snap Kick Knee;r27;;File:t8-p2-leroy-df+4,3.mp4
 df+3+4;h;23;i18~19;-2;+70a(+54)~+71a(+55);;"* Tornado
-* chip damage on block
-* High crush 
-* Low crush";trn chp cs js;;Leroy-df+3+4;Jawbreaker Bow Kick;;;File:t8-p2-leroy-df+3+4.mp4
+* 9 chip damage on block
+* Has jab evasion properties
+* Recovers 3F faster on hit (t52 r33)
+* Low crush 18~31
+* Floating state 32~34";trn js18~31 fs32~34;;Leroy-df+3+4;Jawbreaker Bow Kick;r36;;File:t8-p2-leroy-df+3+4.mp4
 d+1;sl;5;i10;-5;+6;;* High crush;cs;;Leroy-d+1;;;;File:t8-p2-leroy-d+1,2,4.mp4
 d+1,2;sl, m;5, 8;i10, i15~16;-10~-9;-1~0;;Combos from 1st hit CH;;;Leroy-d+1,2;;;;File:t8-p2-leroy-d+1,2,4.mp4
 d+1,2,4;sl, m, m;5, 8, 11;i10, ,i15;-9;+3;;"* Transition to HRM
@@ -152,19 +162,19 @@ db+1;m;12;i16~17;-9~-8;+1~+2;;;;;Leroy-db+1;;;;File:t8-p2-leroy-db+1,2.mp4
 db+1,2;m, M;12, 20;i16~17, i21~22;-12~-11;+17a(+0);;"* Tornado
 * Balcony Break
 * Combo from 1st hit";trn bbr;;Leroy-db+1,2;Shadow Ram Punch;;;File:t8-p2-leroy-db+1,2.mp4
-db+1,3;m, h;12, 17;i16~17, i18~19;0~+1;+8~+9;+31a;"* delayable
+db+1,3;m, h;12, 17;i16~17, i18~19;+0~+1;+8~+9;+31a;"* delayable
 * Combo from 1st hit";;;Leroy-db+1,3;Shadow Raccoon Swing;;;File:t8-p2-leroy-db+1,3.mp4
 db+1,1+2;m, m;12, 25;i16~17, i21~22;-10~-9;+23a (+18);+41a;"* Balcony Break
 * Combo from 1st hit CH";bbr;;Leroy-db+1,1+2;Shadow Double Fist Punch;;;File:t8-p2-leroy-db+1,1+2.mp4
 db+3;L;12;i20~21;-8~-7;+5~+6;+14c;"Transition to HRM
-* High crush";cs;HRM,HRM;Leroy-db+3;Amputation Kick;HRM;;File:t8-p2-leroy-db+3.mp4
-db+4;L;13;i17;-15;-4c;+36d;* High crush;cs;fc;Leroy-db+4;Fan Sweep;fc;;File:t8-p2-leroy-db+4.mp4
+* High crush 6~39";cs6~39;HRM,HRM;Leroy-db+3;Amputation Kick;HRM;;File:t8-p2-leroy-db+3.mp4
+db+4;L;13;i17;-15;-4c;+36d;* High crush 6~51;cs6~51;FC;Leroy-db+4;Fan Sweep;FC;;File:t8-p2-leroy-db+4.mp4
 db+1+2;m;25;i32~33;-11~-10;+36d (+15);;"* Heat Engager
 
 * Balcony Break
-* Sabaki (partially restores remaining Heat time when successful during Heat)
-* chip damage on block
-* Parry state 4~20";he bbr chp ps4~20;;Leroy-db+1+2;Tan Sau Shui Yue Tu;;;File:t8-p2-leroy-db+1+2.mp4
+* Punch and kick Sabaki (partially restores remaining Heat time when successful during Heat)
+* 7 chip damage on block
+* Parry state 4~20";he bbr ps4~20;;Leroy-db+1+2;Tan Sau Shui Yue Tu;;;File:t8-p2-leroy-db+1+2.mp4
 db+2+3;L,M;10,14 (9);i20~21 i15~16;-14;+67a (+51);;"* Weapon
 * Tornado
 * Only once per match
@@ -209,7 +219,6 @@ P:b+2;sp;;;;;;"* Alternate input: P:HRM.b+2
 * Parry (partially restores remaining Heat time when successful during Heat)";;;Leroy-P:b+2;Superior Twin Dragon Gate;;;
 P:b+2,1;m;40;i13;;+29a;;"* Alternate input: P:b+2,2
 * power up during Heat (partially uses remaining Heat time)";;;Leroy-P:b+2,1;Superior Chain Punch: Branch;;;
-d,df,f+2;h;20;i16~17;-6~-5;+29a (+22);;chip damage on block;chp;;Leroy-qcf+2;Chakra Elbow;;;File:t8-p2-leroy-qcf+2.mp4
 d,df,f+3+4,F;m!;80;i56~57;;-1~0d;;"* Reversal (partially restores remaining Heat time when successful during Heat)
 * Follow-up upon successful reversal with input 1 or 2 to Chain Punch: Branch
 * Parry state 20~60";ps20~60;;Leroy-qcf+3+4,F;Piercing Charge;;;File:t8-p2-leroy-qcf+3+4,f.mp4
@@ -223,10 +232,13 @@ f,F+4;m;16;i16~17;-4~-3;+9~+10g;;Transition to HRM;;HRM,HRM;Leroy-f,F+4;;HRM;;Fi
 f,F+4,2;m, m;16, 21;i16~17, i27~28;-14~-13;+34a (+19);+43a (-33);"* Tornado
 * Combos from 1st hit 
 * Has evasive properties";trn;;Leroy-f,F+4,2;Sacrum Severance;;;File:t8-p2-leroy-f,f+4,2.mp4
+qcf+2;h;20;i16~17;-6~-5;+29a (+22);;"* Elbow
+* 4 chip damage on block";elb;;Leroy-qcf+2;Chakra Elbow;;;File:t8-p2-leroy-qcf+2.mp4
 uf,n,4;m;20;i23~25;-13;+32a (+22);;* Low crush;js;;Leroy-uf,n,4;Delayed Rising Toe Kick;;;File:t8-p2-leroy-uf,n,4.mp4
-f,f,F+3;m;30;i24~27;+6~+9;+41d(-17)~+44(-11);;"* Balcony Break
-* chip damage on block
-* Low crush";bbr chp js;;Leroy-f,f,F+3;Dragon's Heel;;;File:t8-p2-leroy-f,f,f+3.mp4
+f,f,F+3;m;30;i24~27;+6~+9;+15c;;"* Balcony Break
+* 9 chip damage on block
+* Forces tech backroll on hit
+* Low crush";bbr js;;Leroy-f,f,F+3;Dragon's Heel;;;File:t8-p2-leroy-f,f,f+3.mp4
 ws1;m;14;i13~14;-7;+3;;Elbow;elb;;Leroy-ws1;;;;File:t8-p2-leroy-ws1,4.mp4
 ws1,4;m, m;14, 16;i13~14, i21;-9;+3;;"* Transition to HRM
 * Combos from 1st hit";;HRM,HRM;Leroy-ws1,4;Elbow Slash Snap Kick;HRM;;File:t8-p2-leroy-ws1,4.mp4

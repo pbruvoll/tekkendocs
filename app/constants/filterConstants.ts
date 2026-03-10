@@ -32,6 +32,8 @@ export const filterKey = {
   WallCrush: 'wc',
   Video: 'video',
   NoVideo: 'noVideo',
+  EmbeddedVideo: 'embeddedVideo',
+  NoEmbeddedVideo: 'noEmbeddedVideo',
   HitsGrounded: 'hitsGrounded',
   RemoveRecoveryHealth: 'removeRecoveryHealth',
   RecoverFullCrouch: 'recoverFullCrouch',

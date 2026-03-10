@@ -18,7 +18,7 @@ function escapeHtml(s: string) {
     .replace(/'/g, '&#039;');
 }
 
-const getMatchVidoeSets = async () => {
+const getMatchVideoSets = async () => {
   //copy paste from loader in _mainLayout.matchvideo for now
   const sheetDoc: SpreadSheetDocName = 'T7_MatchVideo';
   const { sheet } = await cachified({
@@ -74,8 +74,8 @@ const getMatchVidoeSets = async () => {
 };
 
 export const loader = async ({ request }: LoaderFunctionArgs) => {
-  const matchSets = await getMatchVidoeSets();
-  const matchVidoes: MatchVideo[] = matchSets.map((vSet) => {
+  const matchSets = await getMatchVideoSets();
+  const matchVideos: MatchVideo[] = matchSets.map((vSet) => {
     return {
       ...vSet.videos[0],
       name: `${vSet.setName} ${vSet.videos[0].name}`,
@@ -105,7 +105,7 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
           <link>https://tekkendocs.com</link>
         </image> 
         <ttl>60</ttl>
-        ${matchVidoes
+        ${matchVideos
           .map((matchVideo) =>
             `
             <item>
