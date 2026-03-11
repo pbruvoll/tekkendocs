@@ -220,6 +220,12 @@ def _get_tag(noteLine: str) :
             return "kne"
         case "elbow" :
             return "elb"
+        case "head" :
+            return "hed"
+        case "shoulder" :
+            return "shd"
+        case "hip" : 
+            return "hip"
         case "weapon" :
             return "wpn"
         case "tornado" :

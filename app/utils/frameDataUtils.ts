@@ -509,6 +509,9 @@ export const filterMoves = (moves: Move[], filter: MoveFilter | undefined) => {
     [filter.wallCrush, (move: Move) => hasTag('wc', move)],
     [filter.elbow, (move: Move) => hasTag('elb', move)],
     [filter.knee, (move: Move) => hasTag('kne', move)],
+    [filter.head, (move: Move) => hasTag('hed', move)],
+    [filter.shoulder, (move: Move) => hasTag('shd', move)],
+    [filter.hip, (move: Move) => hasTag('hip', move)],
     [filter.weapon, (move: Move) => hasTag('wpn', move)],
     [filter.floorBreak, (move: Move) => hasTag('fbr', move)],
   ] as const;
