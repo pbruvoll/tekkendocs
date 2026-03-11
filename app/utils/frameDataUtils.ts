@@ -736,7 +736,7 @@ export const getStance = (command: string): string | undefined => {
     return 'ws';
   }
   const splitted = command.split(/[ .]/);
-  return splitted.length > 1 ? splitted[0] : undefined;
+  return splitted.length > 1 && splitted[0] ? splitted[0] : undefined;
 };
 
 const baseMovements = new Set([
