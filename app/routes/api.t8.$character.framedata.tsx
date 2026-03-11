@@ -8,6 +8,8 @@ import { type SheetService } from '~/types/SheetService';
 import { frameDataTableToJson, getStances } from '~/utils/frameDataUtils';
 import { getCacheControlHeaders } from '~/utils/headerUtils';
 
+// FIXME: This loader / route is no longer in use. But computing the stances server side might be smart to
+// move to app\routes\_mainLayout.t8_.$character.tsx
 export const loader = async ({ params }: LoaderFunctionArgs) => {
   const characterId = params.character;
   if (!characterId) {
@@ -33,6 +35,7 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
 
   const normalMoves = tables.find((t) => t.name === 'frames_normal');
   const moves: Move[] = normalMoves ? frameDataTableToJson(normalMoves) : [];
+  console.log('moves', moves);
   const stances = Array.from(getStances(moves));
   const loaderData = {
     characterName,
