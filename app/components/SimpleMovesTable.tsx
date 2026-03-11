@@ -36,7 +36,6 @@ export function SimpleMovesTable({
   sortSettings,
 }: SimpleMovesTableProps) {
   const showCharacter = forceShowCharacter || !charId;
-  console.log('sort key', sortSettings?.sortByKey);
   return (
     <table className={cx('relative w-full text-sm', className)}>
       <thead className="[&_tr]:border-b">

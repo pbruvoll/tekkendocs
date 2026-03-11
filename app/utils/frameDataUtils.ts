@@ -736,7 +736,7 @@ export const getStance = (command: string): string | undefined => {
     return 'ws';
   }
   const splitted = command.split(/[ .]/);
-  return splitted.length > 1 ? splitted[0] : undefined;
+  return splitted.length > 1 && splitted[0] ? splitted[0] : undefined;
 };
 
 const baseMovements = new Set([
@@ -809,7 +809,11 @@ export const getMoveFilterTypes = (moves: Move[]): MoveFilterTypes => {
       }
     }
     const splittedStance = move.command.split('.', 2);
-    if (splittedStance.length > 1 && !splittedStance[0].includes(',')) {
+    if (
+      splittedStance.length > 1 &&
+      splittedStance[0] &&
+      !splittedStance[0].includes(',')
+    ) {
       allStances.add(splittedStance[0]);
       return;
     }
