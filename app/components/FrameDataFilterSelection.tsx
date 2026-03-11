@@ -55,6 +55,9 @@ export const FrameDataFilterSelection = ({
     lowCrush,
     elbow,
     knee,
+    head,
+    shoulder,
+    hip,
     weapon,
     floorBreak,
     powerCrush,
@@ -378,6 +381,9 @@ export const FrameDataFilterSelection = ({
               [filterKey.FloorBreak, floorBreak, 'Floor break'],
               [filterKey.Elbow, elbow, 'Elbow'],
               [filterKey.Knee, knee, 'Knee'],
+              [filterKey.Head, head, 'Head'],
+              [filterKey.Shoulder, shoulder, 'Shoulder'],
+              [filterKey.Hip, hip, 'Hip'],
               [filterKey.Weapon, weapon, 'Weapon'],
             ] as const
           ).map(([key, value, displayName]) => {

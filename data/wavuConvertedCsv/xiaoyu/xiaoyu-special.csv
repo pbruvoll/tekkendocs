@@ -75,7 +75,7 @@ f+3,1,1+2;M, m, m,M;14, 8, 6,20;i16~18, ,i16~18 i5~6;-12;+7c;;"* Spike
 f+4;h;23;i19;+1;+13;;"* Homing
 * Chip on block [4]";hom chp;;Xiaoyu-f+4;Swivel Kick;;;File:t8-p2-xiaoyu-f+4.mp4
 f+1+2;m;30;i12;-16;+15d (+10);;"* Balcony Break 
-* Shoulder";bbr;;Xiaoyu-f+1+2;Clouded Peak;;;File:t8-p2-xiaoyu-f+1+2.mp4
+* Shoulder";bbr shd;;Xiaoyu-f+1+2;Clouded Peak;;;File:t8-p2-xiaoyu-f+1+2.mp4
 f+3+4;;;;;;;"* Transition to AOP with D
 * Low crush 9~";js9~;AOP,FC;Xiaoyu-f+3+4;Forward Roll;FC;;File:t8-p2-xiaoyu-f+3+4,3+4.mp4
 f+3+4,3+4;m,m,m;8,8,14;i20~21 i4~5 i5~8;+8;+2d;;"*
@@ -92,7 +92,7 @@ df+2,1+2;m, m;15, 25;i14, i24~25;-14;+21a (+16);;"* Balcony Break
 * Shoulder
 * Combo from 1st hit with 7F delay
 * Move can be delayed by 6F
-* Input can be delayed by 9F";bbr;;Xiaoyu-df+2,1+2;Moon Scorched Feather Tackle;;;
+* Input can be delayed by 9F";bbr shd;;Xiaoyu-df+2,1+2;Moon Scorched Feather Tackle;;;
 df+3;L;23;i29~30;-23;+71a (+55);;"* Tornado
 * Instant Tornado
 * Homing
@@ -247,13 +247,15 @@ f,f,F+3;m;20;i23~30;+7;+29a (+19);;"* Balcony Break
 * Chip on block [9]
 * Alternate input wr3
 * Low crush 3~";bbr chp js3~;AOP,AOP;Xiaoyu-f,f,F+3;Diving Falcon;AOP;;File:t8-p2-xiaoyu-f,f,f+3.mp4
-ws1;m;8;i12~13;-7;+4;;;;;Xiaoyu-ws1;;;;File:t8-p2-xiaoyu-ws1,4.mp4
+ws1;m;8;i12~13;-7;+4;;;;;Xiaoyu-ws1;;r25;;File:t8-p2-xiaoyu-ws1,4.mp4
 ws1,4;m, m;8, 16;i12~13, i22~23;-10;+12g;;"* Balcony Break
-* Combo from 1st hit";bbr;BT;Xiaoyu-ws1,4;Whirlwind Cross Kick;BT;;File:t8-p2-xiaoyu-ws1,4.mp4
-ws2;m;17;i13~14;-3;+7;+38a (+28);* Transition to standing by holding down any direction (-5, +5, +36a (+26));;BT;Xiaoyu-ws2;Sunflower;BT;;File:t8-p2-xiaoyu-ws2.mp4
-ws2*;m;20;i22~23;-3;+38a (+28);;* Transition to standing by holding down any direction (-5, +36a (+26));;BT;Xiaoyu-ws2*;Jasmine Blossom;BT;;File:t8-p2-xiaoyu-ws2s.mp4
-ws3;m;22;i22~23;+3c;+6c;+51a;*;;;Xiaoyu-ws3;Rising Axe Kick;;;File:t8-p2-xiaoyu-ws3.mp4
-ws4;m;20;i11~13;-10;+20a (+13);;*;;;Xiaoyu-ws4;Skyscraper Kick;;;File:t8-p2-xiaoyu-ws4.mp4
+* Combo from 1st hit with 8F delay
+* Move can be delayed by 7F
+* Input can be delayed by 9F";bbr;BT;Xiaoyu-ws1,4;Whirlwind Cross Kick;r30 BT;;File:t8-p2-xiaoyu-ws1,4.mp4
+ws2;m;17;i13~14;-3;+7;+38a (+28);* Transition to r22 standing by holding down any direction (-4, +6, +37a (+27));;BT;Xiaoyu-ws2;Sunflower;r21 BT;;File:t8-p2-xiaoyu-ws2.mp4
+ws2*;m;20;i22~23;-3;+38a (+28);;* Transition to r22 standing by holding down any direction (-4, +37a (+27));;BT;Xiaoyu-ws2*;Jasmine Blossom;r21 BT;;File:t8-p2-xiaoyu-ws2s.mp4
+ws3;m;22;i22~23;+3c;+6c;+51a;*;;;Xiaoyu-ws3;Rising Axe Kick;r23;;File:t8-p2-xiaoyu-ws3.mp4
+ws4;m;20;i11~13;-10;+20a (+13);;*;;;Xiaoyu-ws4;Skyscraper Kick;r28;;File:t8-p2-xiaoyu-ws4.mp4
 ws1+2;m;12;i14~16;-9;+5;;;;;Xiaoyu-ws+1+2;;;;File:t8-p2-xiaoyu-f,f+1+2,1+2.mp4
 ws1+2,1+2;m, m;12, 20;i14~16, i19~20;-8;+7c;+43a;"* Spike
 * Combo from 1st hit with 8F delay
@@ -286,6 +288,11 @@ FC.df+4;L;13;i18~20;-7;+4;;"* Transition to AOP
 FC.df+4,4;L, L;13, 13;i18~20, i27~29;-6;+5;;"* Combo from 1st hit CH
 * Alternate input AOP.f+4,4
 * High crush 1~";cs1~;FC;Xiaoyu-FC.df+4,4;Flower Garden;FC;;
+(back to wall).b,b,UB;m;21;i35~38;+1;+34d;;"* Floating state 5~7
+* is8~24
+* Floating state 25~33
+* Low crush 34~37
+* Floating state 38~40";fs5~7 is8~24 fs25~33 js34~37 fs38~40;BT;Xiaoyu-(back to wall).b,b,UB;Wall Jump Backflip;r17 BT;;
 AOP.1;m;11;i18;-5;+6;;* Transition to HYP with B (-2, +9);;HYP,FC;Xiaoyu-AOP.1;;FC;;File:t8-p2-xiaoyu-aop.1,2.mp4
 AOP.1,2;m, h;11, 15;i18, i21;-3;+30g;;"* Combo from 1st hit with 8F delay
 * Move can be delayed by 11F
@@ -375,7 +382,7 @@ BT.b+1+2;m;25;i17~18;-14;+21a (+16);;"* Balcony Break
 * Shoulder
 * -9 on block if an attack is absorbed
 * 10 chip damage on block after absorbing an attack in power crush state
-* Power crush 6~16";bbr pc6~16;;Xiaoyu-BT.b+1+2;Scorched Feather Tackle;r34;;
+* Power crush 6~16";bbr shd pc6~16;;Xiaoyu-BT.b+1+2;Scorched Feather Tackle;r34;;
 BT.db+4;L;0;i15;+2;+2;+14;* Alternate input BT.df+4;;;Xiaoyu-BT.db+4;Reverse Knee Cracker;;;File:t8-p2-xiaoyu-bt.db+4.mp4
 BT.d+1+3;;;;;+51a (+35);;"* Low Parry from BT
 * Alternate input BT.d+2+4

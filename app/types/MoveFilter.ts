@@ -30,6 +30,9 @@ export type MoveFilter = {
   floorBreak?: boolean;
   elbow?: boolean;
   knee?: boolean;
+  head?: boolean;
+  shoulder?: boolean;
+  hip?: boolean;
   wallCrush?: boolean;
   hitsGrounded?: boolean;
   video?: boolean;
