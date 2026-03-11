@@ -809,7 +809,11 @@ export const getMoveFilterTypes = (moves: Move[]): MoveFilterTypes => {
       }
     }
     const splittedStance = move.command.split('.', 2);
-    if (splittedStance.length > 1 && splittedStance[0] && !splittedStance[0].includes(',')) {
+    if (
+      splittedStance.length > 1 &&
+      splittedStance[0] &&
+      !splittedStance[0].includes(',')
+    ) {
       allStances.add(splittedStance[0]);
       return;
     }
