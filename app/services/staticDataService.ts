@@ -208,7 +208,7 @@ export const cdnUrl = 'https://tekkendocs.b-cdn.net';
 
 export const charVideoInfoT8: Record<
   string,
-  { videoPostFix?: string; gifs?: true }
+  { videoPostFix?: string; gifs?: true; autoGenerateFileName?: boolean }
 > = {
   asuka: {
     videoPostFix: '-640',
@@ -219,6 +219,9 @@ export const charVideoInfoT8: Record<
   reina: {
     videoPostFix: '',
     gifs: true,
+  },
+  'miary-zo': {
+    autoGenerateFileName: true,
   },
 };
 

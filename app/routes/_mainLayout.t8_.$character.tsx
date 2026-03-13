@@ -1,12 +1,8 @@
-import {
-  data,
-  type LoaderFunctionArgs,
-  Outlet,
-  type ShouldRevalidateFunctionArgs,
-} from 'react-router';
+import { data, Outlet, type ShouldRevalidateFunctionArgs } from 'react-router';
 import { environment } from '~/constants/environment.server';
 import { SheetServiceMock } from '~/mock/SheetServiceMock';
 import { SheetServiceImpl } from '~/services/sheetServiceImpl.server';
+import { charVideoInfoT8 } from '~/services/staticDataService';
 import { type CharacterFrameDataPage } from '~/types/CharacterFrameDataPage';
 import { type CharacterPageData } from '~/types/CharacterPageData';
 import { type Game } from '~/types/Game';
@@ -75,6 +71,13 @@ export const loader = async ({ params }: Route.LoaderArgs) => {
   const moves: Move[] = normalMoves ? frameDataTableToJson(normalMoves) : [];
   if (overrideNormalMoves) {
     applyOverride(moves, overrideNormalMoves);
+  }
+  if (charVideoInfoT8[characterId]?.autoGenerateFileName) {
+    moves.forEach((move) => {
+      if (!move.video && move.wavuId) {
+        move.video = `/t8-p2-${characterId}-${move.wavuId.split('-').pop()?.replaceAll('*', 'x')}.mp4`;
+      }
+    });
   }
   const frameData: CharacterFrameDataPage = { ...sheetData, moves };
 
