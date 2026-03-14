@@ -283,17 +283,17 @@ export const rankGroups: RankGroup[] = [
       },
       {
         name: 'God of Destruction VI',
-        points: undefined,
+        points: 418034,
         image: godOfDestruction6,
       },
       {
         name: 'God of Destruction VII',
-        points: undefined,
+        points: 440035,
         image: godOfDestruction7,
       },
       {
         name: 'God of Destruction ∞',
-        points: undefined,
+        points: 462036,
         image: godOfDestructionInf,
       },
     ],
@@ -313,7 +313,7 @@ export const meta: MetaFunction = ({ matches }) => {
 const Ranks = () => {
   return (
     <ContentContainer enableBottomPadding enableTopPadding>
-      <h1 className="text-xl">Tekken 8 ranks</h1>
+      <h1 className="text-xl">Tekken 8 Ranks - Season 2</h1>
       {rankGroups.map((rg) => (
         <RankGroup key={rg.name} name={rg.name} ranks={rg.ranks} />
       ))}
