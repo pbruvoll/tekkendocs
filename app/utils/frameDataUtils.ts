@@ -1,6 +1,7 @@
 import invariant from 'tiny-invariant';
 import { StanceNormal } from '~/constants/filterConstants';
 import { MoveTags } from '~/constants/moveTags';
+import { newMovesT8s3 } from '~/services/staticDataService';
 import { type HitLevel } from '~/types/FilterTypes';
 import { type Move } from '~/types/Move';
 import { type MoveFilter } from '~/types/MoveFilter';
@@ -478,6 +479,15 @@ export const filterMoves = (moves: Move[], filter: MoveFilter | undefined) => {
       const moveHits = (move.hitLevel || '').split(',').length;
       return moveHits <= numHits;
     });
+  }
+
+  if (filter.moveList) {
+    const moveList = filter.moveList.toLowerCase();
+    if (moveList === 's3new') {
+      filterFuncs.push((move: Move) => {
+        return !!move.wavuId && newMovesT8s3.has(move.wavuId);
+      });
+    }
   }
 
   const propFilters = [
