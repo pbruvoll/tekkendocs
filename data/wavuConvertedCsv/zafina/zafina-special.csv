@@ -52,7 +52,7 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Combo from 2nd hit CH with 1f delay
 * Can pick up from the ground with db+3 for a juggle
 * Interrupt with i12 from 2nd block";;;Zafina-1+2,4,4;Manticore;r35;;File:t8-p2-zafina-1+2,4,4.mp4
-3+4;;;;;;;"* Cancel to r20 with db
+3+4;;;;;;;"* Cancel to r21 with db
 * Cancel to r28 with UB_U_UF
 * Stance sidestep with u_d
 * Backdash/dash with b_f";;SCR;Zafina-3+4;Scarecrow Stance;r20 SCR;;
@@ -63,9 +63,9 @@ f+2,3;m, h;17, 12;i19, i19;+0;+9;;"* Cancel SCR transition -9 +0 t68 r28 with B
 * Move can be delayed 15f";;SCR;Zafina-f+2,3;;r40 SCR;;File:t8-p2-zafina-f+2,3,4.mp4
 f+2,3,4;m, h, m;17, 12, 25;i19, ,i28~29;-18;+18a (+8);;"* Balcony Break
 * Combo from 2nd CH";bbr;;Zafina-f+2,3,4;Ettimu;r37;;File:t8-p2-zafina-f+2,3,4.mp4
-f+3;h;28;i17;+3;+14c;;"* Balcony Break
+f+3;h;28;i17;+3;+14;;"* Balcony Break
 * Good left sidestep tracking
-* Cancel SCR transition -1 +10c t? r? with B";bbr;SCR;Zafina-f+3;Scarecrow Side Kick;r31 SCR;;File:t8-p2-zafina-f+3.mp4
+* Cancel SCR transition -1 +10 t? r? with B";bbr;SCR;Zafina-f+3;Scarecrow Side Kick;r31 SCR;;File:t8-p2-zafina-f+3.mp4
 f+4;h;13;i14~15;-6;+22a;;;;;Zafina-f+4;Aqrabuamelu;r30;;File:t8-p2-zafina-f+4.mp4
 f+1+2;m,m;16,22;i19~20 i13~14;-9;+5a (-5);;"* Heat Engager
 
@@ -241,11 +241,12 @@ uf+1;h;19;i19;+4;+9;;;;;Zafina-uf+1;Lapis Dagger;r21;;File:t8-p2-zafina-uf+1.mp4
 uf+2;m;20;i36~37;-9;+60a;;"* Strong Aerial Tailspin
 * Homing
 * High crush 6~35";hom cs6~35;;Zafina-uf+2;Kur;r29;;
-uf+3;m;19;i22~23;-8;+17a;;"* Strong Aerial Tailspin
-* Balcony Break on airborne hit
+uf+3;m;19;i22~23;-8;+19a;;"* Strong Aerial Tailspin
+* Balcony Break
+* Transition to MNT -8 +19a with D
 * No forward movement when using input ub+3
 * Low crush 8~31
-* Floating state 32~34";js8~31 fs32~34;;Zafina-uf+3;Arali;r35;;
+* Floating state 32~34";bbr js8~31 fs32~34;MNT;Zafina-uf+3;Arali;r35;;
 uf+4;m;18;i17~18;-13;+29a (+19);;"* Recovers 2 frames faster on hit (t48 r30)
 * Low crush 9~30
 * Floating state 31~33";js9~30 fs31~33;;Zafina-uf+4;Rahab;r32;;File:t8-p2-zafina-uf+4.mp4
@@ -378,14 +379,15 @@ SCR.3,3;m, h;15, 20;i13, i16;+0;+25a (+15);;"* Balcony Break
 * Move can be delayed 9f";bbr;SCR;Zafina-SCR.3,3;Gizal;r25 SCR;;
 SCR.4;M;20;i15~16;-18;+58a (+42);;"* Tornado
 * -8 frame advantage and 8 chip damage on block after absorbing an attack in power crush state
-* Power crush 8~14";trn pc8~14;;Zafina-SCR.4;Spinning Sappara;r44;;File:t8-p2-zafina-scr.4.mp4
+* Power crush 7~14";trn pc7~14;;Zafina-SCR.4;Spinning Sappara;r44;;File:t8-p2-zafina-scr.4.mp4
 SCR.1+2;m;20;i17~19;+6;+17a;;"* Spike
 * Enter TRT with D";spk;TRT;Zafina-SCR.1+2;Huwawa;r41;;File:t8-p2-zafina-scr.1+2.mp4
 SCR.3+4;m,m;10,20;i18~19 i6~8;-12;+8g;;"* Strong Aerial Tailspin
 * Balcony Break
+* Transition to MNT -13 +7 with D
 * Jail from 1st attack
 * Low crush 6~22
-* Floating state 23~25";bbr js6~22 fs23~25;;Zafina-SCR.3+4;Kigal;r33;;
+* Floating state 23~25";bbr js6~22 fs23~25;MNT;Zafina-SCR.3+4;Kigal;r33;;
 SCR.b+1+2;L;20;i16;-18;+23g;;"* Weapon
 * Evasive (can go under some mids)
 * Deal 10 recoverable damage to self without Heat

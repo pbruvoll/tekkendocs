@@ -47,14 +47,14 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Consumes Rage
 * Power crush 8~";rbr pc8~;;Yoshimitsu-R.df+1+2;Trailokya Pilgrimage;r39 1SS;;
 1;h;5;i10;+1;+8;;Recovers 2f faster on hit or block (t27 r17);;;Yoshimitsu-1;Jab;r19;;File:t8-p2-yoshimitsu-1,1.mp4
-1,1;h, m;5, 19;i10, i23;-9;+4c;+6a;"* Floor Break
+1,1;h, m;5, 19;i10, i23;-9;+4c;;"* Floor Break
 * Weapon
 * Combo from 1st hit with 1f delay
 * Move can be delayed 3f
 * Interrupt with i4 from 1st block
 * 3 chip damage on block
 * Power up in NSS or Heat";fbr wpn;;Yoshimitsu-1,1;Naguri Kabuto Wari;r34 1SS;;File:t8-p2-yoshimitsu-1,1.mp4
-1,NSS.1;h, m;5, 22;i10, i23;-9;+16a;+52a;"* Floor Break
+1,NSS.1;h, m;5, 22;i10, i23;-9;+22a (+17);;"* Floor Break
 * Weapon
 * Combo from 1st hit with 1f delay
 * Input can be delayed 3f
@@ -67,7 +67,7 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Weapon
 * Combo from 1st CH with 1f delay
 * Move cannot be delayed
-* Cancel to r15 with b (-12/-6)
+* Cancel to -12 -6 r30 with B
 * Interrupt with i8 from 1st block
 * Replaced by a different move in NSS";bbr wpn;;Yoshimitsu-2,1;Seiken Douharai;r32;;File:t8-p2-yoshimitsu-2,1.mp4
 2,2;h, h;10, 18;i11, i24;-1;+15g;;"* Tornado
@@ -86,8 +86,9 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Combo from 1st hit
 * Jail from 2nd attack";bbr;NSS;Yoshimitsu-2,NSS.1;Karakuri Uzumaki;r30 NSS;;File:t8-p2-yoshimitsu-2,nss.1.mp4
 2,d+3;h, L;10, 11;i11, i22;-12;-1;;"* Combo from 1st hit with 2f delay
+* Input can be delayed 2f
 * Move cannot be delayed
-* High crush 12~";cs12~;FC;Yoshimitsu-2,d+3;PDK Combo;r31 FC;;File:t8-p2-yoshimitsu-2,d+3.mp4
+* High crush 10~";cs10~;FC;Yoshimitsu-2,d+3;PDK Combo;r31 FC;;File:t8-p2-yoshimitsu-2,d+3.mp4
 3;m;12;i15~16;-9;+5;;;;;Yoshimitsu-3;Enma;r29;;File:t8-p2-yoshimitsu-3,1.mp4
 3,1;m, h;12, 20;i15~16, i22~24;+7;+18g;;"* Heat Engager
 
@@ -394,7 +395,7 @@ b+1,1,db+3,3;h, h, l, l;8, 9, 7, 5;i17, ,i15~17;-19;-7;;"* Combo from 3rd CH
 * Enter IND r20 with d+3+4
 * Can be performed after one or three b+1
 * High crush 1~";cs1~;IND,FC;Yoshimitsu-b+1,1,db+3,3;;r38 FC;;
-b+2;m;12;i14~15;-9;+2;;Enter KIN r27 with n,1+2;;KIN;Yoshimitsu-b+2;;r27;;File:t8-p2-yoshimitsu-b+2,1.mp4
+b+2;m;12;i14~15;-9;+2;;Enter KIN r27 with 1+2;;KIN;Yoshimitsu-b+2;;r27;;File:t8-p2-yoshimitsu-b+2,1.mp4
 b+2,1;m, M;12, 20;i14~15, i27~28;-17;+28a (+18);;"* Weapon
 * Combo from 1st CH with 2f delay
 * Enter KIN r30 with 1+2
@@ -461,7 +462,7 @@ ub+1+2;M;25;i24~25;-8c;+27a (+17);;"* Balcony Break
 u+1;m;20;i24~25;-4;+5c;+50a;"* Floor Break
 * Weapon
 * Low crush 9~27
-* Floating state 28~30";fbr wpn js9~27 fs28~30;;Yoshimitsu-u+1;Helmet Strike;r24;;File:t8-p2-yoshimitsu-uf+1.mp4
+* Floating state 28~30";fbr wpn js9~27 fs28~30;;Yoshimitsu-u+1;Helmet Strike;r24;;File:t8-p2-yoshimitsu-u+1.mp4
 u+1+2;;;;;;;"* Cancel to r12 with db_d_df (js1~10)
 * Unavailable in NSS
 * Actionable after 15 frames, except when using DGF.2 which can be performed after 10 frames
@@ -472,17 +473,18 @@ u+3+4;M,M;10,12;i39~42 i3~6;+1c~+4c;+24a;;"* Floor Break
 * Yoshimitsu becomes invisible on frames 15~30 but can still be floated
 * Low crush 11~42
 * Floating state 43~45";fbr js11~42 fs43~45;;Yoshimitsu-u+3+4;Guillotine Crow Kick;r23;;File:t8-p2-yoshimitsu-u+3+4.mp4
-uf+1;m;10;i17;-10;+2c;;* Weapon;wpn;;Yoshimitsu-uf+1;;r33 1SS;;
-uf+1,1;m, M;10, 17;i17, i29~30;-9;+9c;;"* Floor Break
+uf+1;m;10;i17;-10;+2c;;"* Weapon
+* Good SSR tracking
+* Transition to KIN -3 +9 r26 with 1+2";wpn;KIN;Yoshimitsu-uf+1;;r33 1SS;;File:t8-p2-yoshimitsu-uf+1.mp4
+uf+1,1;m, M;10, 17;i17, i29~30;-10;+9c;;"* Floor Break
 * Weapon
 * Combo from 1st hit with 4f delay
 * Input can be delayed 4f
 * Move can be delayed 3f
 * Interrupt with i6 from 1st block
 * Transition to FLE on hit only
-* Good SSR tracking
-* Power up in NSS or Heat";fbr wpn;FLE;Yoshimitsu-uf+1,1;Kasane Kaishaku;r33 1SS;;
-uf+1,NSS.1;m, M;10, 22;i17, i29~30;-9;+9c;;"* Floor Break
+* Power up in NSS or Heat";fbr wpn;FLE;Yoshimitsu-uf+1,1;Kasane Kaishaku;r33 1SS;;File:t8-p2-yoshimitsu-uf+1,1.mp4
+uf+1,NSS.1;m, M;10, 22;i17, i29~30;-10;+9c;;"* Floor Break
 * Weapon
 * Combo from 1st hit with 4f delay
 * Input can be delayed 4f
@@ -708,7 +710,7 @@ FC.DF+1;l!;"[12;12]";i26;;+70a (+54);;"* Weapon
 * Sword Sweep
 * Samurai Cutter
 </div>";r44;;File:t8-p2-yoshimitsu-fc.df+1.mp4
-FC.d+1;sl;5;i10;-5;+6;;"* Transition to r25? with f
+FC.d+1;sl;5;i10;-5;+6;;"* Transition to r24 with f
 * Transition input can be delayed 16f
 * High crush 1~";cs1~;FC;Yoshimitsu-FC.d+1;;r24 FC;;
 FC.d+2;sl;8;i11;-4;+5;;* High crush 1~;cs1~;FC;Yoshimitsu-FC.d+2;;r23 FC;;
@@ -838,10 +840,6 @@ IND.1;M!;15;i53~55;;+0c~+2c;;"* Floor Break
 * Same animation as the ending of qcf+1
 * Low crush 30~52
 * Floating state 53~55";fbr wpn js30~52 fs53~55;;Yoshimitsu-IND.1;Indian Stance Storm;r28;;File:t8-p2-yoshimitsu-ind.1.mp4
-IND.1~u+1+2;;;;;;;"* Unavailable in NSS
-* 1f input window
-* u+1+2 must be pressed on the 1st frame of the IND spin animation
-* Low crush 1~";js1~;DGF;Yoshimitsu-IND.1~u+1+2;;r54 DGF;;
 IND.2;m;7;i39~43;-8~-5;+2~+6;;"* Leads to db+2 extensions
 * Greater forward momentum than a standing db+2";;FC;Yoshimitsu-IND.2;Indian Stance Stone Fists;r28 FC;;File:t8-p2-yoshimitsu-ind.2.mp4
 IND.3;m;15;i32~38;-31;-2a (-12);;"* Balcony Break
@@ -977,7 +975,7 @@ KIN.f+1+2;m;20;i24~25;+14c;+14c;+49a;"* Weapon
 * Transition to FLE on hit or block only
 * Power up in NSS or Heat
 * Low crush 8~";wpn js8~;FLE;Yoshimitsu-KIN.f+1+2;Oyashiro Kuzushi;r28 1SS;;
-KIN.u+1+2;;;;;;;"Can be counterhit
+KIN.u+1+2;;;;;;;"Can be counterhit on frames 1~19
 * Low crush 14~";js14~;DGF;Yoshimitsu-KIN.u+1+2;Kincho Manji Dragonfly;r34 DGF;;File:t8-p2-yoshimitsu-kin.u+1+2.mp4
 MED.1;;;;;;;;;;Yoshimitsu-MED.1;;;;
 MED.3;m,M;15,15;i17~28 i28~39;+2~+13;+43a;;"* Floor Break
@@ -1068,7 +1066,9 @@ NSS.d+1;M;24;i24~25;-9;+16a;+52a;"* Floor Break
 * Input can be held to transition to d+1*";fbr wpn;d+1*;Yoshimitsu-NSS.d+1;Quick Chop;r33 1SS;;
 NSS.d+1+2;;;;;;;"* High crush 7~
 * Floating state 7~";cs7~ fs7~;IND;Yoshimitsu-NSS.d+1+2;No Sword Stance > Indian Stance;r20 IND;;
-NSS.d+1+4;;;;;;;Yoshimitsu is invisible on frames 50~64, but can still be hit;;NSS;Yoshimitsu-NSS.d+1+4;Unfinished Business;r65 NSS;;File:t8-p2-yoshimitsu-nss.d+1+4.mp4
+NSS.d+1+4;;;;;;;"* Yoshimitsu is invisible on frames 50~64, but can still be hit
+* Transition to 1SS.IND with D
+* Transition to DGF with U";;1SS.IND,DGF,NSS;Yoshimitsu-NSS.d+1+4;Unfinished Business;r65 NSS;;File:t8-p2-yoshimitsu-nss.d+1+4.mp4
 NSS.f,n,d,df+1;m;19;i17~18;-17;+35a (+25a);;"* Weapon
 * Can be buffered
 * Enter KIN r30 with 1+2
@@ -1142,7 +1142,7 @@ hFC.df+4;L;18;i18~19;-26;+4c;+31a;"* Homing
 * Enter IND -26 +8c +35a r24 with d+3+4
 * Can be done from Crouch Level 1
 * High crush 1~";hom cs1~;IND,FC;Yoshimitsu-hFC.df+4;Knee Cap;r28 FC;;File:t8-p2-yoshimitsu-fc.df+4.mp4
-(Tackle reverse);t;25;;;;;"* Available only after reversing Ultimate Tackle with 1+2
+(Tackle reverse);t;25;;+0d;;;"* Available only after reversing Ultimate Tackle with 1+2
 * Unbreakable (even in NSS)";;;Yoshimitsu-(Tackle reverse);;;;
 1+3;t;35;i12~14;-3;+1d;;"* Homing
 * Throw break 1 or 2";hom;;Yoshimitsu-1+3;Oni Killer;r31;;File:t8-p2-yoshimitsu-1+3.mp4
@@ -1150,11 +1150,11 @@ hFC.df+4;L;18;i18~19;-26;+4c;+31a;"* Homing
 * Floor Break
 * Throw break 1 or 2
 * Side switch on hit";hom fbr;;Yoshimitsu-2+4;Sword Face Smash;r31;;File:t8-p2-yoshimitsu-2+4.mp4
-Back Throw;t;50;;;+1d;;"* Floor Break
-* Unbreakable";fbr;BT;Yoshimitsu-Back Throw;Tornado Drop;BT;;
-Left Throw;t;45;;-3;+0d;;"* Throw break 1
-* Side switch on hit";;;Yoshimitsu-Left Throw;Wheels of Hell;;;
-Right Throw;t;40;;-3;-3d;;Throw break 2;;;Yoshimitsu-Right Throw;Neck Breaker;;;
+Back throw;t;50;;;+1d;;"* Floor Break
+* Unbreakable";fbr;BT;Yoshimitsu-Back throw;Tornado Drop;BT;;
+Left throw;t;45;;-3;+0d;;"* Throw break 1
+* Side switch on hit";;;Yoshimitsu-Left throw;Wheels of Hell;;;
+Right throw;t;40;;-3;-3d;;Throw break 2;;;Yoshimitsu-Right throw;Neck Breaker;;;
 qcb,f+2;t;0;i15~16;;+0;;"* Unbreakable
 * Opponent recovers 26 health
 * Yoshimitsu loses 35 health";;;Yoshimitsu-qcb,f+2;Soul Possession;r23;;File:t8-p2-yoshimitsu-qcb,f+2.mp4

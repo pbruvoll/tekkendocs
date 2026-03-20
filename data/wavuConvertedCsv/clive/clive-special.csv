@@ -41,7 +41,7 @@ H.u+1+2,2,1;M,m, h,h, M,M;18,21, 10,12, 10,16;i19~20,i20~21, ,i20~21,i11~12;-8;+
 * 5 chip damage on block
 * Same move as (df+1,H.1,2),1
 * Tornado launching steel pedal";trn bbr;;Clive-H.u+1+2,2,1;Blazing Eruption;;;
-H.2+3;m,t,m,m,m,m,m,m;55;i18;+8;-10;;"* Heat Smash
+H.2+3;m,t,m,m,m,m,m,m;55;i18;+5;-10;;"* Heat Smash
 * Balcony Break
 * Transition to attack throw on 1st hit
 * 45 damage Balcony Break on 1st whiff
@@ -65,14 +65,14 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 1,1;h, h;5, 13;i10, i18~19;-3;+6;;"* Jail from 1st block
 * Combo from 1st hit
 * Enter PHX -3 +6 r23 with F or 4 on hit or block";;PHX;Clive-1,1;Double Blow;r23;;File:t8-p2-clive-1,1.mp4
-1,2;h, M;5, 20;i10, i21~22;-14;+22a (+17);;"* Spike
+1,2;h, M;5, 20;i10, i21~22;-14;+22a (+17);;"* Floor Break
 * Weapon
 * Combo from 1st hit with 2f delay
-* Increases ZAN gauge by 0.30 on hit
+* Increases ZAN gauge by 0.40 on hit
 * Increases ZAN gauge by 0.14 on block
 * Only deals recoverable damage
 * +11d on BT hit
-* +14c on side hit; forces tech backroll";spk wpn;;Clive-1,2;Finishing Steel;r33;;File:t8-p2-clive-1,2.mp4
+* +14c on side hit; forces tech backroll";fbr wpn;;Clive-1,2;Finishing Steel;r33;;File:t8-p2-clive-1,2.mp4
 1,f+2;h, h;5, 22;i10, i25~26;+1;+13g;;"* Balcony Break
 * Weapon
 * Combo from 1st CH
@@ -96,14 +96,15 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Combo from 2nd CH with 10f? delay
 * Jail from 1st block with 1F delay
 * Input 1 during the 2nd hit animation on frames 21~23 to add +3 damage";bbr wpn;;Clive-2,2,1;Assault Burst;r36;;File:t8-p2-clive-2,2,1.mp4
-2,2,2;h, m, M,m;11, 9, 15,20 (24);i12, ,i27~28 i31~32;-9;+21a (+4);;"* Tornado
+2,2,2;h, m, M,m;11, 9, 15,20 (24);i12, ,i27~28 i31~32;-11;+21a (+4);;"* Tornado
 * Balcony Break
 * Weapon
 * Power up in Heat (24 damage)
-* Input can be delayed 6f?
+* Input can be delayed 6f
+* Move cannot be delayed
 * Transition to PHX on hit only
 * Cancel PHX transition with B";trn bbr wpn;PHX;Clive-2,2,2;Gleipnir-Cutter;r35;;
-2,2,1+2;h, m, m,M;11, 9, 10,18;i12, ,i27~28 i23~24;-13c;+1a;;"* Balcony Break
+2,2,1+2;h, m, m,M;11, 9, 10,18;i12, ,i27 i23~24;-9c;+1a;;"* Balcony Break
 * Spike
 * Weapon
 * Increases ZAN gauge by 0.70 on hit (0.30 + 0.40)
@@ -111,9 +112,11 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Increases ZAN gauge by 0.40 on hit if only the final hit connects
 * Increases ZAN gauge by 0.14 on block if only the final hit connects
 * Only deals recoverable damage
-* -4d on BT hit
+* Hit vs BT -4d
+* Input can be delayed 8f
+* Move cannot be delayed
 * Low crush 41~54
-* Floating state 55~57";bbr spk wpn js41~54 fs55~57;;Clive-2,2,1+2;Gungnir Dance;r48;;File:t8-p2-clive-2,2,1+2.mp4
+* Floating state 55~57";bbr spk wpn js41~54 fs55~57;;Clive-2,2,1+2;Gungnir Dance;r44;;File:t8-p2-clive-2,2,1+2.mp4
 3;m;16;i16;-13;-2;;;;;Clive-3;;r32;;File:t8-p2-clive-3,2.mp4
 3,2;m, m,m;16, 15,15 (20);i16, i23~24 i29~41;-12~+0;+22a (+12);;"* Balcony Break
 * Weapon
@@ -151,9 +154,9 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Damage increases with ZAN gauge level:
 * ZAN1: 10
 * ZAN2: 45
-* ZAN3: 55
-* ZAN4: 65
-* ZAN5: 80";wpn;;Clive-1+4;"<div class=""dotlist"">
+* ZAN3: 48
+* ZAN4: 58
+* ZAN5: 75";wpn;;Clive-1+4;"<div class=""dotlist"">
 
 * Arm of Darkness (ZAN1)
 * Zantetsuken (ZAN2-4)
@@ -316,11 +319,11 @@ db+1+2,1;M,m, M;12,10, 20;i17~18 i23, i22~i23;-13;+24a (+9a);;"* Balcony Break (
 b+1;m;18;i17~18;-13;+10g;+57a;"* Homing
 * Balcony Break
 * Weapon";hom bbr wpn;;Clive-b+1;Blue Bolt;r32;;File:t8-p2-clive-b+1.mp4
-b+2;h;20;i20~21;-4;+9;;"* Strong Aerial Tailspin
+b+2;h;20;i20~21;-6;+9;;"* Strong Aerial Tailspin
 * Balcony Break
 * Weapon
-* Enter PHX +6 +23 r24 with F or 4 on block or hit
-* +15a (+6) on BT hit
+* Enter PHX +4 +23 r24 with F or 4 on block or hit
+* Hit vs BT +15a (+6)
 * Effectively homing?";bbr wpn;PHX;Clive-b+2;Executioner;r34;;File:t8-p2-clive-b+2.mp4
 b+3;;;;;;;"* Strong parry effect: parries all highs or mids, except throws, unblockables and charge moves
 * Parry state 5~13";ps5~13;;Clive-b+3;Precision Dodge;r40;;
@@ -352,15 +355,25 @@ b+1+2;m;25;i24~25;-14;+14a (+4a);;"* Balcony Break
 * Windup
 * Windup Counter
 </div>";r40;;File:t8-p2-clive-b+1+2.mp4
+uf+2;m,m,m;10,12,12;i20 i4 i3;-17;+14a (+7);;"* Chip damage on block
+* 24 damage in total with scaling
+* Low crush 20~45
+* Floating state 46~48";chp js20~45 fs46~48;;Clive-uf+2;;r37;;File:T8-p2-clive-uf+2.mp4
+uf+2,2;m,m,m, h;10,12,12, 30;i20 i4 i3, i16;+0;+24a (-14);;"* Balcony Break
+* Chip damage on block
+* 36 damage in total with scaling
+* Last hit available on hit or block only
+* Low crush 1~43
+* Floating state 44~46";bbr chp js1~43 fs44~46;;Clive-uf+2,2;Wicked Wheel;r44;;File:T8-p2-clive-uf+2,2.mp4
 1+2+3+4;;;;;;;"* Can't block for 5 seconds
 * CH state on your next attack for 5 seconds ''(Tekken 7 and prior games)''
 * 10% damage increase on the next attack for 5 seconds ''(Tekken 8 season 2 patch onward)''
 * Attacks taken will be CH for 5 seconds";;;Clive-1+2+3+4;Ki Charge;r55;;File:t8-p2-clive-1+2+3+4.mp4
-b,B+1+4;m!;40;i80~81;;+56a;;* Hitstop on frame 80 for 20f?;;;Clive-b,B+1+4;Pulverize;r57;;File:t8-p2-clive-b,b+1+4.mp4
+b,B+1+4;m!;40;i80~81;;+56a;;* Hitstop on frame 80 for 20f;;;Clive-b,B+1+4;Pulverize;r57;;File:t8-p2-clive-b,b+1+4.mp4
 f,F+2;m;21;i19~20;-7;+13a;+38a;"* Balcony Break
 * Spike
 * Weapon
-* Increases ZAN gauge by 0.40 on hit
+* Increases ZAN gauge by 0.50 on hit
 * Increases ZAN gauge by 0.14 on block
 * Only deals recoverable damage";bbr spk wpn;;Clive-f,F+2;Soul Cleave;r36;;File:t8-p2-clive-f,f+2.mp4
 f,F+1+2;m;22;i20;+3;+9c;;"* Spike
@@ -381,9 +394,9 @@ qcf+1*;h;10;i30-41;-5~-3;+16a~+18a (+6~+8);;"* Balcony Break
 * Transitions to unbreakable throw from i33-41 10,15 +3
 * Throw deals recoverable damage only";bbr wpn;PHX;Clive-qcf+1*;Deadly Embrace (hold);r34;;
 uf;;;;;;;* Low crush 9~43;js9~43;GAR;Clive-uf;Updraft;r17 GAR;;
-f,f,F+2;m;20;i24~26;+2;+31d (+10);;"* Balcony Break
+f,f,F+2;m;20;i24~26;-4;+31d (+10);;"* Balcony Break
 * Weapon
-* Enter PHX +14 +43d (+22) r26 with F or 4 on hit or block
+* Enter PHX +8 +43d (+22) r26 with F or 4 on hit or block
 * 4 Chip Damage on block";bbr wpn;PHX;Clive-f,f,F+2;Lunge;r38;;File:t8-p2-clive-f,f,f+2.mp4
 ws1;m;11;i13~14;-4;+3;+8;"* Elbow
 * Enter PHX -1 +6 +11 r23 with F or 4 on hit or block";elb;PHX;Clive-ws1;;r26;;File:t8-p2-clive-ws1,2.mp4
@@ -392,7 +405,7 @@ ws1,2;m, m;11, 19;i13~14, i26~27;-12;+9;+21a;"* Balcony Break
 * Combo from 1st hit with 3f delay
 * Combo from 1st CH with 8f delay
 * Input can be delayed 8f
-* Increases ZAN gauge by 0.40 on hit
+* Increases ZAN gauge by 0.50 on hit
 * Increases ZAN gauge by 0.14 on block";bbr wpn;;Clive-ws1,2;Wild Steel;r33;;File:t8-p2-clive-ws1,2.mp4
 ws2;m;15;i15~16;-14~-13;+53a;;* Weapon;wpn;;Clive-ws2;Echo Breaker;r35;;File:t8-p2-clive-ws2.mp4
 ws3;m,m;20,15(20);i20~21 i28~41;-8;+21a (+11a);;"* Homing
@@ -421,12 +434,11 @@ SS.1+2;M;21;i25~26;+2;+49a;;"* Spike
 FC.1;sl;5;i10;-5;+6;;"* Transition to Standing with f
 * +6c on crouching hit
 * High crush 4~";cs4~;FC;Clive-FC.1;Crouch Jab;r24 FC;;
-FC.df+2;L;18;i19~20;-12;+3c;;"* Weapon
+FC.df+2;L;18;i19~20;-13;+3c;;"* Weapon
 * High crush 1~20";wpn cs1~20;;Clive-FC.df+2;Swift Edge;r32;;File:t8-p2-clive-fc.df+2.mp4
-CH.f,F+1+2;m;50;i20;;+0d;;"* Spike
-* Weapon
+CH.f,F+1+2;m;50;i20;;+0d;;"* Weapon
 * Throw from front hit
-* Opponent recovers FUFA";spk wpn;;Clive-CH.f,F+1+2;Judgment Bolt;r181?;;
+* Opponent recovers FUFA";wpn;;Clive-CH.f,F+1+2;Judgment Bolt;r181?;;
 GAR.1;m;18;i15~17;-5~-3;+17a;;"* Balcony Break
 * Spike
 * 21 damage with delayed input
@@ -465,7 +477,7 @@ PHX.1;M,m,t;16,15,10;i21;-14;+0d;;"* Weapon
 * On 1st hit regain 5 additional recoverable health
 * +4d on side or BT hit
 * Power crush 7~20";wpn pc7~20;;Clive-PHX.1;Heatwave;r36;;File:t8-p2-clive-phx.1.mp4
-PHX.2;m;12;i15;-7;+4;+35d (+27);"* Balcony Break
+PHX.2;m;12;i15;-9;+4;+35d (+27);"* Balcony Break
 * Weapon
 * 3 chip damage on block";bbr wpn;;Clive-PHX.2;Shift Strike;r30;;File:t8-p2-clive-phx.2.mp4
 PHX.2,1;m, M;12, 23;i15, i25~26;-12;+24a (+9);;"* Tornado
@@ -495,10 +507,10 @@ PHX.3,2;L, m,m;8, 18,20(36);i21, i30 i29~34;;+39a (+29);;"* Balcony Break
 * Power up in Heat
 * Available only as combo from 1st hit
 * 30 (38 in heat) damage in total for the full string with scaling";bbr;;Clive-PHX.3,2;Vanagandr;;;File:t8-p2-clive-phx.3,2.mp4
-PHX.3,1+2;L, m,M;8, 10,18;i21, i27~28 i23~24;;+6d (-29);;"* Spike
+PHX.3,1+2;L, m,M;8, 12,20;i21, i27~28 i23~24;;+6d (-29);;"* Spike
 * Available only as combo from 1st hit
 * Increases ZAN gauge by 0.70 on hit (0.30 + 0.40)
-* Increases ZAN gauge by 0.24?? on block (? + ?)
+* Increases ZAN gauge by 0.24 on block (0.10 + 0.14)
 * 30 damage in total for the full string with scaling
 * Only deals recoverable damage
 * Low crush 41~54
@@ -542,13 +554,13 @@ WOL.4;;;;;;;Actionable after 15f;;;Clive-WOL.4;Phoenix Shift;r15;;
 * Can be done from FC
 * Side switch on hit and on throw break
 * Opponent recovers in FUFT";hom;;Clive-2+4;Punisher;r31;;
-Back Throw;t;50;;;+0d;;"* Unbreakable
-* Opponent recovers in FUFA";;;Clive-Back Throw;Judgment Bolt;;;
-Left Throw;t;40;i12~14;-3;+0d;;"* Throw break 1
-* Opponent recovers in FUFA";;;Clive-Left Throw;Fangs of Ruin;;;
-Right Throw;t;40;i12~14;-3;+0d;;"* Throw break 2
+Back throw;t;50;;;+0d;;"* Unbreakable
+* Opponent recovers in FUFA";;;Clive-Back throw;Judgment Bolt;;;
+Left throw;t;40;i12~14;-3;+0d;;"* Throw break 1
+* Opponent recovers in FUFA";;;Clive-Left throw;Fangs of Ruin;;;
+Right throw;t;40;i12~14;-3;+0d;;"* Throw break 2
 * Side switch on hit
-* Opponent recovers in FUFT";;;Clive-Right Throw;Punisher;;;
+* Opponent recovers in FUFT";;;Clive-Right throw;Punisher;;;
 uf+1+2;t;40;i12~14;-5;+0d;;"* Throw break 1+2
 * Can be done from FC
 * Opponent recovers in FDFA";;;Clive-uf+1+2;Gigaflare;r25;;File:t8-p2-clive-uf+1+2.mp4

@@ -6,17 +6,17 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * Only deals recoverable damage
 * Cannot cause a K.O.
 * Power crush 7~16";hb pc7~16;;Shaheen-2+3;Heat Burst;r30;;
-H.D*,u+2;h;35;i18~19;+13;+63a (+47);;"* Balcony Break
+H.D*,u+2;h;35;i17~18;+13;+63a (+47);;"* Balcony Break
 * Tornado
 * Guard break
 * Read more
 * Low crush";bbr trn js;;Shaheen-H.D*,u+2;Al-Ghul Master;;;
-H.f,F+1+2;m;15,25 (17);i16~17;+4c SNK;+27d (-8);;"* Floor Break
+H.f+1+2;m;15,25 (17);i16~17;+4c SNK;+27d (-8);;"* Floor Break
 * Spike
 * 32 damage with scaling from 1st hit
 * Transition to SNK on hit or block
 * Consumes 450F of remaining Heat time
-* Low crush 28~";fbr spk js28~;SNK;Shaheen-H.f,F+1+2;Rumh al-Dawla;;;
+* Low crush 28~";fbr spk js28~;SNK;Shaheen-H.f+1+2;Rumh al-Dawla;;;
 H.2+3;L,t;40;i20~21;-14;+24a (+14);;"* Balcony Break
 * Heat Smash
 * Transition to attack throw on 1st hit
@@ -59,6 +59,8 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 4,4;h, m;16, 25;i13, i24~25;-13;+20d;;"* Aerial combo from 1st CH
 * When combo from 1st CH: 
 Floor Break";fbr;;Shaheen-4,4;Hallux Kick > Ra'd;;;File:t8-p2-shaheen-4,4.mp4
+3+4;m;20;i18~20;-9;+19a (+2);;"* Tornado
+* Balcony Break";trn bbr;;Shaheen-3+4;Wheel Spin;;;
 f+2;h;10;i12;-8;-2;;;;;Shaheen-f+2;;;;File:t8-p2-shaheen-f+2,3.mp4
 f+2,3;h, h;10, 23;i12, i18;-12;+21a (+16);;"* Tornado
 * Combo from 1st hit with 7F delay
@@ -152,7 +154,7 @@ uf+3;m;22;i25~26;-7;+24;;"* Alternate input: ub+3 or u+3
 uf+4;m;13;i15~17;-13;+33 (+23);;"* Alternate input: ub+4 or u+4
 * Low crush 9";js9;;Shaheen-uf+4;Altair;;;
 1+2+3+4;sp;;;;;;;;;Shaheen-1+2+3+4;Ki Charge;;;File:t8-p2-shaheen-1+2+3+4.mp4
-D*,u+2;h;30;i18~19;+6;+30d;;"* Balcony Break
+D*,u+2;h;35;i17~18;+6;+30d;;"* Balcony Break
 * Tornado
 * Alternate input: SNK.D*,u+2
 * 12 chip damage on block
@@ -223,9 +225,9 @@ SNK.1+2;m;21;i19;+4c;+8c;;"* Heat Engager
 SNK.df+1;m;12;i15~16;-5;+6;;* Good left sidestep tracking;;;Shaheen-SNK.df+1;;;;File:t8-p2-shaheen-snk.df+1,2.mp4
 SNK.df+1,2;m, h;12, 40;i15~16, i20;-4;0;;"* Tornado
 * Removes Recoverable Health
-* Combo from 1st hit with 7F delay
-* Move can be delayed by 6F
-* Input can be delayed by 7F
+* Combo from 1st hit with 10F delay
+* Move can be delayed by 9F
+* Input can be delayed by 10F
 * Transition to attack throw on standing front hit";trn;;Shaheen-SNK.df+1,2;Flash Hornet;;;File:t8-p2-shaheen-snk.df+1,2.mp4
 SNK.df+1,3;m, m;12, 28;i15~16, i27~28;-13;+19a (+9);;"* Heat Engager
 
