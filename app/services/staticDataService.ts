@@ -256,6 +256,7 @@ export const newMovesT8s3: Set<string> = new Set([
   'Lee-ws1,4',
   'Lee-ws1:4',
   'Nina-fc.df+2',
+  'Panda-db+4,h.1',
   'Paul-f+3,2',
   'Raven-szn.3+4',
   'Reina-uns.2',
