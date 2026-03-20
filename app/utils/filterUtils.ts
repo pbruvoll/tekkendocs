@@ -4,6 +4,7 @@ import { type MoveFilter } from '~/types/MoveFilter';
 import {
   getSearchParamBoolean,
   getSearchParamNumber,
+  getSearchParamString,
   getSearchParamStringList,
 } from './urlUtils';
 
@@ -91,6 +92,7 @@ export const getFilterFromParams = (
       filterKey.ForcesCrouchOnHit,
     ),
     chip: getSearchParamBoolean(searchParams, filterKey.Chip),
+    moveList: getSearchParamString(searchParams, filterKey.MoveList),
   };
 };
 

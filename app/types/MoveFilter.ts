@@ -46,4 +46,5 @@ export type MoveFilter = {
   searchQuery?: string;
   stance?: string[];
   transition?: string[];
+  moveList?: string;
 };

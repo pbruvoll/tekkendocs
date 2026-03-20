@@ -43,6 +43,7 @@ export const filterKey = {
   ForcesCrouchOnBlock: 'forcesCrouchOnBlock',
   ForcesCrouchOnHit: 'forcesCrouchOnHit',
   CounterHit: 'counterHit',
+  MoveList: 'moveList',
 } as const;
 
 export const hitLevelValue = {
