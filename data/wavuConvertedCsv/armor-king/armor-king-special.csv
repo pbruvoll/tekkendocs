@@ -70,7 +70,7 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Transitions to throw on front grounded hit
 * Cannot throw break
 * Opponent is left FUFL";fbr;BT;Armor King-3+4*;Phenomenon Shadow DDT;r22 BT;;
-3+4,1;M, h;14, 17;i25~32, i14~15;-8;+8;;"* Combo from 1st hit
+3+4,1;M, h;14, 16;i25~32, i14~15;-8;+8;;"* Combo from 1st hit
 * Transition to BAD with F (-8/+8)";;BAD;Armor King-3+4,1;Dark Blast;r28;;
 3+4,2;M, M;14, 25;i25~32, i17~i34;-18d;-24a(-50);;"* Balcony Break
 * Elbow
@@ -94,13 +94,14 @@ f+2,1;m, h;12, 25;i15~16, i18~19;-9;+16a;;"* Heat Engager
 * Move can be delayed by 10F
 * Input can be delayed by 12F
 * Opponent recovers in FDFA";he bbr;;Armor King-f+2,1;Dark Elbow Hook;r33;;
-f+3;m;12;i15~16;-9;+7;;;;;Armor King-f+3;;;;
-f+3,2;m, m;12, 13;i15~16, i20~21;-11;+5;;"* Combo from 1st hit
+f+3;m;9;i15~16;-9;+7;;;;;Armor King-f+3;;;;
+f+3,2;m, m;9, 12;i15~16, i20~21;-11;+5;;"* Combo from 1st hit
 * Transition to CD with DF (+15, -1)";;CD;Armor King-f+3,2;;;;
-f+3,2,1;m, m, m;12, 13, 22;i15~16, ,i24~26;-13;+34d;+70a (+54);"* Tornado
-* Combo from 2nd CH";trn;;Armor King-f+3,2,1;Dark Tide;;;
+f+3,2,1;m, m, m;9, 12, 19;i15~16, ,i24~26;-13;+16g;+70a (+54);"* Tornado
+* Combo from 2nd CH
+* Opponent recovers crouching on hit";trn;;Armor King-f+3,2,1;Dark Tide;;;
 f+4;M;21;i23~25;+3c;+7c;+12c;;;;Armor King-f+4;Wind-Up Stomp;;;
-f+1+2;m;21;i22~23;-12;+22g;;"* Strong Aerial Tailspin
+f+1+2;m;22;i22~23;-12;+22g;;"* Strong Aerial Tailspin
 * Transition to BAD on hit only with F (+26g)
 * -6 frame advantage and 8 chip damage on block after absorbing an attack in power crush state
 * Power crush 7~21";pc7~21;BAD;Armor King-f+1+2;Wrecking Cyclone;r32;;
@@ -139,7 +140,7 @@ d+2+3;M;25;i30~35;-8;+0c;;"* Elbow
 * Spike";elb spk;;Armor King-d+2+3;Corporate Elbow;;;
 d+3+4;l;15;i17;-16c;-2;+0;"* Can be done from Crouch Level 1
 * High crush 6~";cs6~;;Armor King-d+3+4;;;;
-d+3+4,1;l, h;15, 12;i17, i20~21;-9;+15g;+27d;"* Balcony Break
+d+3+4,1;l, h;15, 13;i17, i20~21;-9;+15g;+27d;"* Balcony Break
 * Combo from 1st CH";bbr;;Armor King-d+3+4,1;Taurus Cutter Edge;;;
 d+3+4,3;l, m;15, 16;i17, i23~24;-15;+15a(-2);;"* Balcony Break
 * Tornado
@@ -164,6 +165,12 @@ db+4;L;20;i29~31;-17d;-3d;+27a;"* Opponent recovers FDFA
 * Armor King recovers in crouch on hit and FDFT on block
 * High crush 6~14
 * Low crush 16~";cs6~14 js16~;;Armor King-db+4;Low Drop Kick;r31?;;
+db+3+4;h;20;i20~21;-7;+18g;;"* Tornado
+* Balcony Break
+* Chip damage on block
+* Opponent recovers crouching
+* Hit vs BT +13a (+4)
+* High crush 6~19";trn bbr chp cs6~19;;Armor King-db+3+4;Shadow Force;r31;;t8-p2-armor-king-db+3+4.mp4
 b+1;h;12;i12~13;-7;+5;;;;;Armor King-b+1;Dark Jab;r29;;
 b+1,2;h, m;12, 20;i12~13, i20~21;-12;+8;+11;"* Combo from 1st hit with 12F delay
 * Transition to r30 BAD with F (-12/+8/+11)
@@ -216,7 +223,7 @@ f,F+2;m;20;i16~17;-6;+6;+44a;;;;Armor King-f,F+2;Hell-Shaker Punch;;;
 f,F+3;h;23;i17~19;+2;+15a (+6);;"* Balcony Break
 * Homing
 * 6 chip damage on block";bbr hom;;Armor King-f,F+3;Comeback Kick;;;
-f,F+4;m;25;i14;-8;+13c;;"* Heat Engager
+f,F+4;m;25;i14;-8;+13d;;"* Heat Engager
 
 * Heat Dash +36a (+26)
 
@@ -380,9 +387,9 @@ AIR.f,hcf+1;t(a);40(45);i10;!;+0d;;"* Floor Break
 * Partially restores remaining Heat time.
 * Opponent recovers in FDFA.
 * Side switch";fbr;;Armor King-AIR.f,hcf+1;Muscle Driver;;;
-BM,2,1,2,1;t;5,5,5,15;;+0;-6d;;"* Could be any 1/2 combination (e.g. 1,1,1,1 / 1,2,2,1)
+BM.2,1,2,1;t;5,5,5,15;;+0;-6d;;"* Could be any 1/2 combination (e.g. 1,1,1,1 / 1,2,2,1)
 * Throw break the 1st/4th hit by input the opposite to King's 1st/4th button.
-* Opponent recovers FDFT";;;Armor King-BM,2,1,2,1;Back Mount > Ultimate Punch;;;
+* Opponent recovers FDFT";;;Armor King-BM.2,1,2,1;Back Mount > Ultimate Punch;;;
 DMD.1;t;20 (25);;-3;+0d;;"* 1 break
 * Power up with input 2+4,1+2 
 * 40/45 total damage
@@ -424,16 +431,16 @@ DMD.1+2,2;t, t;10 (15), 25 (30);;+4;-3d;;"* 2 break
 * Side switch on break";;;Armor King-DMD.1+2,2;3-Count Pound;;;
 FDFA.db+1+3;th(g);40;i18~20;+0;+8d;;"* Throw break 1
 * Opponent recovers FUFT";;;Armor King-FDFA.db+1+3;Wake-Up Lariat;;;
-FDFL.db+1+3+1+3;th(g);0;i18~20;+8;-10d;;"* 1 or 2 throw break, depending on Armor King's input.
+FDFL.db+1+3;th(g);0;i18~20;+8;-10d;;"* 1 or 2 throw break, depending on Armor King's input.
 * Transitions to Back Mount (BM), which has the Ultimate Punch followup
-* Opponent recovers in FDFT.";;;Armor King-FDFL/FDFR.db+1+3;Back Mount (BM);;;
+* Opponent recovers in FDFT.";;;Armor King-FDFL.db+1+3;Back Mount;;;
 FDFT.db+1+3;th(g);35;i18~20;+0;+0d;;"* Throw break 1
 * Opponent recovers FUFT";;;Armor King-FDFT.db+1+3;Standing Ankle Hold;;;
 FUFA.db+1+3;th(g);35;i18~20;+0;35;;"* Balcony Break
 * Throw break 1
 * Opponent recovers FDFT";bbr;;Armor King-FUFA.db+1+3;Enzui Knee;;;
-FUFL.db+1+3b+1+3;th(g);0;i18~20;+0;+25d;;"* 1 or 2 throw break, depending on Armor King's input.
-* Opponent recovers in FDFL/FDFR.";;;Armor King-FUFL/FUFR.db+1+3;Turn Over;;;
+FUFL.db+1+3;th(g);0;i18~20;+0;+25d;;"* 1 or 2 throw break, depending on Armor King's input.
+* Opponent recovers in FDFL/FDFR.";;;Armor King-FUFR.db+1+3;Turn Over;;;
 FUFT.db+1+3;th(g);30;i18~20;+0;+20d;;"* Balcony Break
 * Throw break 1
 * Side swap

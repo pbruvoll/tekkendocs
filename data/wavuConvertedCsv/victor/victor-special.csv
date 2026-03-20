@@ -75,10 +75,10 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Weapon
 * Combo from 2nd CH
 * Deals 7 chip damage on block";bbr wpn;;Victor-4,3,2;Asterism of Benevolence;;;File:t8-p2-victor-4,3,2.mp4
-1+2;m;17;i15;-9;+2;+46a;* Weapon;wpn;;Victor-1+2;Eden;31;;
+1+2;m;17;i15;-9;+4;+46a;* Weapon;wpn;;Victor-1+2;Eden;31;;
 2+3+4;sp;;;;;;;;;Victor-2+3+4;Taunt;;;
-3+4;sp;;i30;;;;* Cancel to FC with db;;FC;Victor-3+4;Iai Stance;11;;
 3+4;sp;;i30;;;;* Cancel stance with db;;;Victor-3+4;Iai Stance;;;
+3+4;sp;;i30;;;;* Cancel to FC with db;;FC;Victor-3+4;Iai Stance;11;;
 f+2;h;10;i13~14;-11;+5;;;;;Victor-f+2;;30;;File:t8-p2-victor-f+2,2,1,1.mp4
 f+2,2;h, h;10, 10;i13~14, i11;-15;-4;;"* Weapon
 * Combo from 1st hit";wpn;;Victor-f+2,2;;;;File:t8-p2-victor-f+2,2,1,1.mp4
@@ -174,12 +174,20 @@ b+2;h;5;i10;-6;+5;+14;"* Deals recoverable damage only; cannot cause a K.O.";;;V
 b+3;m;15;i17;-9;+4;;;;;Victor-b+3;;31;;
 b+3,1;m, m;15, 25;i17, i25~26;-13;+21a (+16);;"* Combo from 1st hit with 7F delay
 * Balcony Break";bbr;;Victor-b+3,1;Caval;;;
-b+4;h;20;i18~19;-2;+13;;"* Homing
+b+4;h;20;i18~19;-2;+14;;"* Homing
 * Balcony Break";hom bbr;;Victor-b+4;Cordial Circuit;r29;;
 b+1+2;h;25;i19~20;-9;+16d;+16d;"* Balcony Break
 * 7 chip damage on block
 * Power crush 7~";bbr pc7~;;Victor-b+1+2;Failnaught;r31;;File:t8-p2-victor-b+1+2.mp4
 b+1+4;m;24;i26~27;-21;+37 (+6);;;;;Victor-b+1+4;Dun Stallion;49;;File:t8-p2-victor-b+1+4.mp4
+ub+2;m;17;i17~18;-5;+8;+32a;"* Weapon
+* Balcony Break
+* Can be charged
+* Transition to PRF -4 +9 with F";wpn bbr;PRF;Victor-ub+2;Fancy Cut;;;
+ub+2*;m;22;i28~29;+3;+32a;+66a (+50);"* Weapon
+* Balcony Break
+* Tornado on CH
+* Transition to PRF +4 +33a with F";wpn bbr;PRF;Victor-ub+2*;Fancy Cut (charged);;;
 u+1+2;m;32;i31~32;-20;+1a;;"* Weapon
 * Deals 11 chip damage on block
 * Victor teleports overhead on frame 10 and descends downward for the rest of the startup; evades some highs and mids but vulnerable on descent (lows, throws, etc. hit)
@@ -191,7 +199,7 @@ uf+1,1;m, m;9, 21;i13, i25~26;-14;+15gc;;"* Tornado
 * Combo from 1st hit with 8F delay
 * Opponent recovers crouching on hit
 * Transition to PRF (-10/+19gc) with F
-* Cancel to IAI (-10/+3) with D or 3+4";trn bbr;PRF,IAI;Victor-uf+1,1;Gringolet;;;File:t8-p2-victor-uf+1,1.mp4
+* Cancel to IAI (-9/+4) with D or 3+4";trn bbr;PRF,IAI;Victor-uf+1,1;Gringolet;;;File:t8-p2-victor-uf+1,1.mp4
 uf+2;m;15;i19~20;-9;+7;;* Homing;hom;;Victor-uf+2;Marquise Cut;33;;File:t8-p2-victor-uf+2.mp4
 uf+3;m;17;i18~19;-9;+3;+36d;* Low crush 7-15;js7-15;;Victor-uf+3;Peaceful Shoes;32;;File:t8-p2-victor-uf+3.mp4
 uf+4;m,sm;12,16;i15~17, i28~30;-19;+73a (+57a);;"* Tornado
@@ -226,7 +234,7 @@ FC.1+2;l,h;10,10;i16,i10~11;-23, -13;+0;;"*Not parryable (weapon low)
 *Transition to PRF (-17 / +6) with F";;PRF;Victor-FC.1+2;Shangri-La;42;;File:t8-p2-victor-fc.1+2.mp4
 CH.db+4;l,th;20,4;i20~21;;;+49a;;;;Victor-CH.db+4;Musk-Scented Natasha;;;
 CH.d+4;l,t;12,18;i16;;;+0;;;;Victor-CH.d+4;Guilty Mariko;;;
-IAI.1;m;9;i13~14;-12;+1;;;;IAI;Victor-IAI.1;;r34 IAI;;File:t8-p2-victor-iai.1,1.mp4
+IAI.1;m;9;i13~14;-9;+4;;;;IAI;Victor-IAI.1;;r34 IAI;;File:t8-p2-victor-iai.1,1.mp4
 IAI.1,1;m, m;9, 21;i13~14, i25~26;-14;+15g;;"* Tornado
 * Balcony Break
 * Combo from 1st hit with 9F delay
@@ -234,7 +242,7 @@ IAI.1,1;m, m;9, 21;i13~14, i25~26;-14;+15g;;"* Tornado
 * Input can be delayed by 11F
 * Opponent recovers crouching on hit
 * Transition to PRF with F (-10/+19gc)
-* Cancel to IAI with D or 3+4 (-11/+2)";trn bbr;PRF,IAI;Victor-IAI.1,1;Spumador;;;File:t8-p2-victor-iai.1,1.mp4
+* Cancel to IAI with D or 3+4 (-9/+4)";trn bbr;PRF,IAI;Victor-IAI.1,1;Spumador;;;File:t8-p2-victor-iai.1,1.mp4
 IAI.1,2;m, m;9, 15;i13~14, i22~24;-19;+25a (+10);+25a (+10);"* Combo from 1st hit
 * Hit Confirmable 11F
 * Deals 6 chip damage on block
@@ -256,7 +264,7 @@ IAI.2;m;23;i16~17;-9;+15 (+5);+26a;"* Balcony Break
 * FUFA knockdown on CH";bbr trn;;Victor-IAI.2;Almace;r52;;File:t8-p2-victor-iai.2.mp4
 IAI.3;m,th(m);13 (25);i17;-13;+25 (+10);;"* Knee
 * Power crush 8~16";kne pc8~16;;Victor-IAI.3;Sequence;r34;;File:t8-p2-victor-iai.3.mp4
-IAI.4;L;17;i18~19;-13;+3;+8;;;IAI;Victor-IAI.4;;r32 IAI;;File:t8-p2-victor-iai.4,2.mp4
+IAI.4;L;17;i18~19;-12;+4;+9;;;IAI;Victor-IAI.4;;r32 IAI;;File:t8-p2-victor-iai.4,2.mp4
 IAI.4,2;L, h;17, 20;i18~19, i26~27;-5;+26 (+0);+55a (+35a);"Strong Aerial Tailspin
 * Balcony Break
 * Combo from 1st CH
@@ -269,7 +277,7 @@ IAI.P.f;m;21;i16~17;;+60 (+44);;"* Balcony Break
 * Tornado";bbr trn;;Victor-IAI.P.f;Gwen;;;
 IAI.b;sp;;;;;;;;IAI;Victor-IAI.b;Move Backward;IAI;;File:t8-p2-victor-iai.b.mp4
 IAI.d;sp;;;;;;* High crush 1~30;cs1~30;IAI;Victor-IAI.d;Take a Bow;IAI;;File:t8-p2-victor-iai.d.mp4
-IAI.d+1;M;25;i18;-2;+24a (+9);;"* Heat Engager
+IAI.d+1;M;25;i18;0;+24a (+9);;"* Heat Engager
 
 * Heat Dash +5, +42a (+27a)
 
@@ -301,7 +309,7 @@ PRF.3;m;21;i15~17;-8;+41d (-17d) / HE;;"* Heat Engager
 * Knee
 * Low crush 11~23
 * Floating state 24~25";he bbr kne js11~23 fs24~25;;Victor-PRF.3;Flying Gentleman;r31;;File:t8-p2-victor-prf.3.mp4
-PRF.4;h;20;i18~19;-2;+13;;"* Homing
+PRF.4;h;20;i18~19;-2;+14;;"* Homing
 * Balcony Break";hom bbr;;Victor-PRF.4;Cordial Circuit;r29;;
 PRF.1+2;m;25;i25~27;+6;+14a;;"* Balcony Break
 * Deals 7 chip damage on block
