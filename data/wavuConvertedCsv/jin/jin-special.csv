@@ -14,9 +14,10 @@ H.db+1+2;M;0;i19~34;+4;+23g~+38g;;"* Strong Aerial Tailspin
 * Causes wall splat on hit
 * Opponent recovers crouching
 * Power crush 6~18";bbr pc6~18;DVS;Jin-H.db+1+2;Awakened Power Stance;r26;;
-H.f,F+1+2;m;20;i25~27;+5;+24g;;"* Balcony Break
+H.f,F+1+2;m;20;i21~23;+5;+24g;;"* Balcony Break
 * Strong Aerial Tailspin
 * Transitions to DVS on hit or block
+* Consumes 240f of Heat time
 * Cancel transition and recover Standing +18g, -1 with B
 * 6 chip damage on block
 * Low crush";bbr js;DVS;Jin-H.f,F+1+2;Awakened Black Wing;DVS;;
@@ -28,7 +29,7 @@ H.2+3;m,h,m;57;i15~16;+3;+0d;;"* Heat Smash
 * Transition to standing on block with B
 * 6 Chip damage on block
 * Jail from 1st attack";hs rbr bbr;CD;Jin-H.2+3;Hellfire Trespass Slayer;r33;;
-H.2+3,4;m,h,m;48;i15~16;+9;+32a (-4);;"* Heat Smash
+H.2+3,4;m,h,m;50;i15~16;+9;+32a (-4);;"* Heat Smash
 * Reversal Break
 * Balcony Break
 * 7 Chip damage on block
@@ -71,13 +72,12 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 2;h;9;i10;+0;+9;;;;;Jin-2;Right Jab;r19;;File:t8-p2-jin-2,1,4.mp4
 2,1;h, m;9, 9;i10, i16~17;-3;+6;;"* Jail from 1st attack with 2f delay
 * Same animation as df+1";;;Jin-2,1;Double Thrust;r20;;File:t8-p2-jin-2,1,4.mp4
-2,1,4;h, m, m;9, 9, 18;i10, ,i18~20;-10;+3;+19c;"* Balcony Break on CH
+2,1,4;h, m, m;9, 9, 18;i10, ,i18~20;-10;+3;+16a (+7);"* Balcony Break on CH
 * Combo from 2nd CH with 8f delay
 * Input can be delayed 10f
 * Forces tech backroll on CH";;;Jin-2,1,4;Double Thrust > Roundhouse;r26;;File:t8-p2-jin-2,1,4.mp4
 2,1,4~4;h, m, l;9, 9, 20;i10, ,i20~21;-12;+16a;;Interrupt with i16 from 2nd block;;;Jin-2,1,4~4;Double Thrust > Low Trick Kick;r28;;File:t8-p2-jin-2,1,4t4.mp4
 2,4;h, h;9, 20;i10, i24~27;-13;+7;;"* Balcony Break
-* Strong Aerial Tailspin
 * Combo from 1st hit with 2f delay
 * Enter ZEN -6, +14g r26 with F";bbr;ZEN;Jin-2,4;Switchblade;r29;;File:t8-p2-jin-2,4.mp4
 3;h;17;i14;-7;+4;;;;;Jin-3;;;;File:t8-p2-jin-3,1,4.mp4
@@ -131,6 +131,10 @@ df+2,4;m, m;12, 19;i16~17, i26~27;-12;+9;;"* Balcony Break
 * Strong Aerial Tailspin
 * Combo from 1st hit
 * Chip damage on block";bbr chp;;Jin-df+2,4;Fiendish Talon Rend;;;
+H.df+2,1+2;m, m;12, 25;i16~17, i24~25;+2;+30a (+4);;"* Balcony Break
+* Combos from 1st hit
+* Partially consumes remaining Heat time
+* 5 Chip damage on block";bbr;;Jin-df+2,H.1+2;Awakened Fiendish Claw;;;File:t8-p2-jin-df+2,h.1+2.mp4
 df+3;m;16;i12;-8;+3;;;;;Jin-df+3;Left Roundhouse;r27;;File:t8-p2-jin-df+3.mp4
 df+3~3;m;20;i23~i24;+6c;+13c;;"* Spike
 * Enter Breaking Step +2c +9c r27 with df";spk;Breaking Step;Jin-df+3~3;Brazilian Kick;r23;;File:t8-p2-jin-df+3t3.mp4
@@ -142,7 +146,7 @@ d+1;m,t;21,10;i21;-13;+0d;;"* Balcony break on airborne hit
 * Transition to attack throw on standing hit
 * -9 on block after absorbing an attack and 8 chip damage on block
 * Power crush 7~20";pc7~20;;Jin-d+1;Corpse Thrust > Black Wing Flash;r35;;File:t8-p2-jin-d+1.mp4
-d+2;L;22;i22~23;-14;+4c;;"* Balcony break on airborne hit
+d+2;L;22;i22~23;-14;+4c;+25d;"* Balcony break on airborne hit
 * High crush 8~55";cs8~55;FC;Jin-d+2;Scourge;r32 FC;;File:t8-p2-jin-d+2.mp4
 d+3;l;7;i15~16;-14;-3;;;;;Jin-d+3;;r32;;File:t8-p2-jin-d+3,4,3.mp4
 d+3,4;l, h;7, 10;i15~16, i20~21;-11;-3;;Combo from 1st CH;;;Jin-d+3,4;;r29;;File:t8-p2-jin-d+3,4,3.mp4
@@ -312,7 +316,7 @@ f,n,d,df+1;m;20;i16~i17;-13;+32a (+22);;"* Tornado
 * Turns into CD.df#1 while in heat";trn;;Jin-CD.df+1;Thrusting Uppercut;r31;;File:t8-p2-jin-cd.df+1.mp4
 f,n,d,df+2;h;20;i11~12;-10;+74a (+58);;"* Balcony Break
 * Turns into EWHF (CD.df#2) while in heat";bbr;;Jin-CD.df+2;Wind Hook Fist;r28;;File:t8-p2-jin-cd.df+2.mp4
-DVS.1;m;25;i20~22;-13;+72a (+56);;"* Tornado
+DVS.1;m;25;i20~22;-9;+72a (+56);;"* Tornado
 * 9 chip damage on block
 * Low crush 22~43
 * Floating state 44~46";trn js22~43 fs44~46;;Jin-DVS.1;Awakened Thunder God Fist;r30;;

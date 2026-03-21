@@ -256,7 +256,8 @@ Homing
 d+3,4,4;L, h, L;11, 10, 15;i16, ,i25;-15;-4;+0d;"* Combos from 3rd hit
 * Shift to attack throw Murderous Sweep on counterhit";;;Fahkumram-d+3,4,4;Left Low Kick > Twin Bolts;;;
 d+4;L;18;i14;-15;-4;+0d;* Shift to attack throw Murderous Sweep on counterhit;;;Fahkumram-d+4;Rumbling Thunder;;;
-d+4 (counterhit);l (t);41;i14;;+0d;;* Shifts to throw on front gounded CH;;;Fahkumram-CH d+4;Murderous Sweep;;;
+d+4 (counterhit);l (t);41;i14;;+0d;;"* Shifts to throw on front gounded CH
+* Grants GRF on hit";;;Fahkumram-CH d+4;Murderous Sweep;;;
 db+1;sl;5;i10;-5;+6;;;;;Fahkumram-db+1;;;;File:t8-p2-fahkumram-db+1
 db+2;m;16;i16;-10;+1;;* High evasion;;;Fahkumram-db+2;;;;File:t8-p2-fahkumram-db+2
 db+2,2;m, m;16, 16;i16, i25;-13;+1;;"* Elbow
@@ -307,6 +308,11 @@ uf+3;m;23;i14;-14;+9a (+0);;"* Heat Engager
 uf+4;m;22;i20;-16;+66a (+55);;"* Tornado
 * Balcony Break
 * Low crush";trn bbr js;;Fahkumram-uf+4;Tyrant Teep;;;
+uf+3+4;m,h;10,20;i18~19, i7~8;-11;+16a (-1);;"* Tornado
+* Balcony Break
+* Floating state 18~20
+* Low crush 21~39
+* Floating state 40~42";trn bbr fs18~20 js21~39 fs40~42;;Fahkumram-uf+3+4;Twin Knee Barrage;r33;;File:t8-p2-fahkumram-uf+3+4.mp4
 1+2+3+4;;;;;;;;;;Fahkumram-1+2+3+4;Ki Charge;;;
 b,f+4;h;25;i18;+6;+47cs;;"* Reversal Break
 * Good left sidestep tracking
@@ -314,7 +320,9 @@ b,f+4;h;25;i18;+6;+47cs;;"* Reversal Break
 f,F+3;L;20;i21;-14;+4;;;;;Fahkumram-f,F+3;Flash Channel;;;
 f,F+4;m;25;i22;-13;+33a;;"* Homing
 * Balcony Break";hom bbr;;Fahkumram-f,F+4;Stormbreaker;;;
-f,F+4~1;m;20;i21;-3c;+8c;;;;;Fahkumram-f,F+4~1;Barbaric Elbow;;;
+f,F+4~1;m;20;i21;-3c;+8c;+32d;"* Spike
+* On CH
+** Floor Break";spk fbr;;Fahkumram-f,F+4~1;Barbaric Elbow;;;
 f,F+4~3;L;15;i19;-23;-1c;;;;;Fahkumram-f,F+4~3;;;;
 f,F+4~3,2;L, m;15, 20;i19, i25;+0;+13d (-4);;"* Elbow
 * Powered up in GRF
@@ -392,6 +400,7 @@ RAM.3,4;m, h;20, 25;i21, i24;-9;+13a;;"* Balcony Break
 * 10 chip damage on block
 * Jails from 1st hit";bbr;;Fahkumram-RAM.3,4;Brahmastra;;;
 RAM.4;l;31;i21;-13;+11a;;* Balcony Break;bbr;;Fahkumram-RAM.4;Varunapasha;;;
+RAM.db;;;;;;;* Cancels RAM;;;Fahkumram-RAM.db;;;;
 GRF.f,F+4~3,2;L, m (t);15, 30;i19, i25;+0;+0d;;"* Balcony Break
 * Consumes GRF
 * Partially consumes remaining Heat Time
