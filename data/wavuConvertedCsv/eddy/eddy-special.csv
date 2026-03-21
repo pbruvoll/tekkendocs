@@ -6,7 +6,7 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * Only deals recoverable damage
 * Cannot cause a K.O.
 * Power crush 7~16";hb pc7~16;;Eddy-2+3;Heat Burst;r30;;
-H.3+4;m;20;i20~22;+9;+66a(+50);;"* Tornado
+H.3+4;m;20;i20~22;+5;+66a(+50);;"* Tornado
 * Transition to HSP
 * 6 chip damage on block
 * High crush 6~11?
@@ -264,7 +264,7 @@ ws3+4;M;20;i25~27;+5c;+14d;;"* Spike
 * Transition to RLX
 * 6 chip damage on block
 * Floating state 12~30";spk fs12~30;RLX,RLX;Eddy-ws3+4;Front Stinger;RLX;;File:t8-p2-eddy-ws3+4.mp4
-SS.3;m;17;i25~26;+0;+8;;"* Transition to RLX
+SS.3;m;17;i25~26;+0;+8;+15c;"* Transition to RLX
 * Cancel to RLX with D
 * High crush 6~54";cs6~54;RLX,RLX,RLX;Eddy-SS.3;Hot Plate Special;RLX;;File:t8-p2-eddy-ss.3.mp4
 SS.4;L,L;7,10;i21~22;-13c;+3c;;* High crush 6~31;cs6~31;;Eddy-SS.4;Troca Baixa;;;File:t8-p2-eddy-ss.4.mp4
@@ -324,20 +324,20 @@ HSP.n,d;;;;;;;"* Transition to RLX
 * High crush 6?~";fs1~10? cs6?~;RLX,RLX;Eddy-HSP.n,d;Bananeira > Negativa;r25 RLX;;File:t8-p2-eddy-hsp.n,d.mp4
 HSP.n,f;;;;;;;"* Transition to HSP
 * Floating state 1~";fs1~;HSP,HSP;Eddy-HSP.n,f;Bananeira > Move Forward;r28? HSP;;File:t8-p2-eddy-hsp.n,f.mp4
-MD1.HSP.3+4;L,m,m;6,6,18;i21~22;-13;+4c;;* Low crush 28?~;js28?~;;Eddy-MD1.HSP.3+4;Yansan Mandinga;;;
-MD1.HSP.b+4;m;25;i23~25;+7;+15d;;"* Spike
+MD1.HSP.3+4;L,m,m;6,6,18;i21~22;-14;+4c;;* Low crush 28?~;js28?~;;Eddy-MD1.HSP.3+4;Yansan Mandinga;;;
+MD1.HSP.b+4;m;23;i23~25;+5;+15d;;"* Spike
 * Transition to RLX with D
 * 7 chip damage on block
 * Low crush 9~";spk js9~;RLX;Eddy-MD1.HSP.b+4;Ogum Mandinga;;;
-MD2.HSP.3+4;L,m,m;16,4,15;i21~22;-13;+18a(-17);;"Floor Break
+MD2.HSP.3+4;L,m,m;16,6,24;i21~22;-14;+18a(-17);;"Floor Break
 * Low crush 28?~";fbr js28?~;;Eddy-MD2.HSP.3+4;Yansan Mandinga;;;
-MD2.HSP.b+4;m;25;i23~25;+7;+36a;;"* Spike
+MD2.HSP.b+4;m;23;i23~25;+5;+36a;;"* Spike
 * Transition to RLX with D
 * 7 chip damage on block
 * Low crush 9~";spk js9~;RLX;Eddy-MD2.HSP.b+4;Ogum Mandinga;;;
-RLX.1;L;11;i17;-11c;+0;;"* Transition to FC with D
+RLX.1;L;11;i14;-11c;+0;;"* Transition to FC with D
 * High crush 1~19";cs1~19;FC;Eddy-RLX.1;;;;File:t8-p2-eddy-rlx.1,3.mp4
-RLX.1,3;L, m;11, 17;i17, i25~26;-14;+5c;+42a;"* Transition to RLX
+RLX.1,3;L, m;11, 17;i14, i25~26;-14;+5c;+42a;"* Transition to RLX
 * Combo from 1st CH with 5F delay
 * Move can be delayed by 9F
 * Input can be delayed by 10F";;RLX,RLX;Eddy-RLX.1,3;Terra Gafanhoto;RLX;;File:t8-p2-eddy-rlx.1,3.mp4
@@ -354,13 +354,22 @@ RLX.3,3;L, h;12, 30;i16~17, i25~26;-13;+12a (+3) / +7a (+6);;"* Balcony Break
 * Mandinga level increases by 1 on hit
 ** Becomes -3a (-6) on 2nd hit when gaining Mandinga";bbr;;Eddy-RLX.3,3;Iemanjá;;;File:t8-p2-eddy-rlx.3,3.mp4
 RLX.4;m;14;i15~16;-8;+8;;* Transition to FC;;FC,FC;Eddy-RLX.4;;FC;;File:t8-p2-eddy-rlx.4,3.mp4
-RLX.4,3;m, m;14, 25;i15~16, i28~30;-13;+16a/HE;;"* Heat Engager
+RLX.4,3;m, m;14, 25;i15~16, i28~30;-13;+16a;;"* Heat Engager
+
+* Heat Dash +5, +67a (+50)
 
 * Balcony Break
-* Heat Dash +67a(+50) on hit
 * Combo from 1st hit with 9F delay
 * Move can be delayed by 8F
-* Low crush 16~?";he bbr js16~?;;Eddy-RLX.4,3;Chibata Ardente;;;File:t8-p2-eddy-rlx.4,3.mp4
+* Low crush 16~34
+* Floating state 35~37";he bbr js16~34 fs35~37;;Eddy-RLX.4,3;Chibata Ardente;;;File:t8-p2-eddy-rlx.4,3.mp4
+RLX.4,3+4;m, m;14, 27;i15~16, i34~36;-13;+22a (+12);;"* Balcony Break
+* Combo from 1st hit with 5F delay
+* Move can be delayed by 8F
+* Cancel to r23 HSP with F (-21/-5)
+* Floating state 1~20
+* Low crush 21~40
+* Floating state 41~43";bbr fs1~20 js21~40 fs41~43;HSP;Eddy-RLX.4,3+4;Chibata Avalanche;r31;;File:t8-p2-eddy-rlx.4,3+4.mp4
 RLX.1+2;m;25;i18~19;-8;+25a(+20);;"* Balcony Break
 * Head
 * 7 chip damage on block

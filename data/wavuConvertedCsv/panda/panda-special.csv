@@ -6,6 +6,12 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * Only deals recoverable damage
 * Cannot cause a K.O.
 * Power crush 7~16";hb pc7~16;;Panda-2+3;Heat Burst;r30;;
+H.db+4,1;l,m;20,14;i21~22, i27~28;-23;+17a (-18);;"* Floor Break
+* 2nd hit comes out on hit only
+* Combos from 1st hit
+* Partially consumes remaining Heat time
+* High crush 
+* Low crush";fbr cs js;;Panda-db+4,H.1;Spinning Panda Flight;;;File:t8-p2-kuma-db+4,h.1.mp4
 H.uf+3+4;m;21 (8);i16~17;+12g;+7a;;"* Alternate input: H.ROL.uf+3+4
 * Uses 180F of remaining heat time
 * Transition to SIT (cannot cancel)
@@ -51,14 +57,14 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 1+2;m;25;i13~14;-13;+18g;;"* Balcony Break
 * Heat Engager
 
-* Forces crouch on hit";bbr he;;Panda-1+2;Demon Bear Breath;;;File:t8-p2-panda-1+2.mp4
+* Forces crouch on hit";bbr he;;Panda-1+2;Demon Bear Breath;r31;;File:t8-p2-panda-1+2.mp4
+3+4;sp;;;;;;"* Alternate input: FDFA.3+4
+* Transition to HBS
+* High crush 4~";cs4~;HBS,HBS;Panda-3+4;Hunting;r15 HBS;;
 3+4;sp;;;;;;"* Alternate input: FDFA.3+4
 * Can low parry in HBS with HBS.F
 * Transition to HBS
 * Transition to standing with input ub or u or uf";;HBS;Panda-3+4;Hunting;;;
-3+4;sp;;;;;;"* Alternate input: FDFA.3+4
-* Transition to HBS
-* High crush 4~";cs4~;HBS,HBS;Panda-3+4;Hunting;r15 HBS;;
 f+2;h;11;i12;-13;+3;;;;;Panda-f+2;;;;File:t8-p2-panda-f+2,1.mp4
 f+2,1;h, h;11, 20;i12, i20;-5;+36a (+10);;"* Balcony Break
 * Combo from 1st hit with 9F delay
@@ -172,7 +178,7 @@ b+3+4;m;20;i22~23;-28;+61a;;"* Alternate input: ws3+4
 * Tornado";trn;;Panda-b+3+4;High Jinks;;;File:t8-p2-panda-b+3+4.mp4
 ub+1+2;l;25;i31~32;-17;+12a;;"* Cancel into HBS with input D or 3+4
 * Low crush";js;;Panda-ub+1+2;Bear Skip;;;File:t8-p2-panda-ub+1+2.mp4
-u+1+2;m;24;i18~23;-4 / -3 HBS;+3 / +4 HBS;;"* Transition to HBS with input D or 3+4
+u+1+2;m;24;i18~23;-8 / -7 HBS;+6 / +7 HBS;+8a / +9a;"* Transition to HBS with input D or 3+4
 * Low crush";js;HBS;Panda-u+1+2;Big Bear Attack;;;File:t8-p2-panda-u+1+2.mp4
 u+3+4;m;21;i34~39;+14cg;+20d;;"* Transition to SIT (cannot cancel)
 * Low crush";js;SIT;Panda-u+3+4;Pancake Press;;;File:t8-p2-panda-u+3+4.mp4
@@ -202,7 +208,7 @@ Tailspin
 d,df,f+2;m;15;i17~18;-8;+3;;;;;Panda-qcf+2;;;;File:t8-p2-panda-qcf+2,1.mp4
 d,df,f+2,1;m, m;15, 25;i17~18, i27;-10;+33a (+7) / HE;;"* Balcony Break
 * Heat Engager";bbr he;;Panda-qcf+2,1;Grizzly Claws;;;File:t8-p2-panda-qcf+2,1.mp4
-d,df,f+2,2;m, l;15, 22;i17~18, i33~34;-18;+40a;;* Chip damage on block;chp;;Panda-qcf+2,2;Grizzly Claw Smash;;;File:t8-p2-panda-qcf+2,2.mp4
+d,df,f+2,2;m, l;15, 22;i17~18, i33~34;-18;+21d;;* Chip damage on block;chp;;Panda-qcf+2,2;Grizzly Claw Smash;;;File:t8-p2-panda-qcf+2,2.mp4
 f,F+2;m;23;i19~21;-19;+45a (+35);;;;;Panda-f,F+2;Demon Uppercut;;;File:t8-p2-panda-f,f+2.mp4
 f,F+1+2;m;30;i37~38;+8 HBS / +5 ROL;52a HBS / +49a ROL;;"* Chip damage
 * Transition to HBS (cannot cancel into standing)
