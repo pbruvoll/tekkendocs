@@ -59,6 +59,8 @@ export const MoveCardWithVideo = ({
   shouldPlay,
   shouldPreload,
   shouldLoadVideo: shouldLoadVideoProp,
+  showCharacter,
+  charId,
   onInViewChange,
 }: MoveCardWithVideoProps) => {
   const hasVideo = Boolean(move.ytVideo) || move.video;
@@ -100,8 +102,15 @@ export const MoveCardWithVideo = ({
           {/* Info section */}
           <div className="flex flex-col lg:w-1/2">
             <CardHeader className="p-4 pl-6">
-              <CardTitle className="text-primary text-xl font-bold">
-                <Link to={moveUrl}>{move.command}</Link>
+              <CardTitle>
+                {showCharacter && charId && (
+                  <span className="mr-2 capitalize">
+                    {charId.replace('-', ' ')}
+                  </span>
+                )}
+                <Link className="text-primary text-xl font-bold" to={moveUrl}>
+                  {move.command}
+                </Link>
               </CardTitle>
             </CardHeader>
 
