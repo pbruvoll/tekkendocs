@@ -144,7 +144,7 @@ export const meta: MetaFunction<typeof loader> = ({
   const version = characterGuideAuthors.T8[characterId]?.version;
   const characterTitle =
     characterName[0].toUpperCase() + characterName.substring(1);
-  const title = `${characterTitle} Tekken 8 ${version === 'S2' ? 'Season 2 ' : ''}Guide ${author ? `by ${author}` : ''} | TekkenDocs`;
+  const title = `${characterTitle} Tekken 8 ${version === 'S3' ? 'Season 3 ' : 'Season 2 '}Guide ${author ? `by ${author}` : ''} | TekkenDocs`;
   const description = `An overview of the most important information for ${characterTitle} in Tekken 8. Quickly learn how to play the character by learning key moves, punishers, and combos.`;
 
   const imageUrl = `/t8/guides/${characterId}-1200.png`;
@@ -286,8 +286,8 @@ export default function Index() {
         <Nav navData={navData}></Nav>
       </ContentContainer>
       <h1 className="sr-only">
-        {characterId} {gameNameMap[game]} {version === 'S2' ? 'Season 2' : ''}{' '}
-        Guide
+        {characterId} {gameNameMap[game]}{' '}
+        {version === 'S3' ? 'Season 3' : 'Season 2'} Guide
       </h1>
       <img
         src={t8GuideImgSmallMap[characterId]}

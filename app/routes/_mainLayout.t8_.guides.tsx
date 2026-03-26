@@ -30,14 +30,15 @@ export default function () {
     <ContentContainer enableBottomPadding enableTopPadding>
       <h1 className="my-4 text-2xl">Tekken 8 Guides</h1>
       <section>
-        <h2 className="my-3 text-xl">Character Guides (Season 2)</h2>
+        <h2 className="my-3 text-xl">Character Guides (Season 2 / Season 3)</h2>
         <p className="mb-6">
           These character guides are written by high-level players and serve as
           comprehensive starting points for learning how to play with or against
           each character. Each guide includes an overview, strengths and
           weaknesses, top 10 moves, combos, punishers, frame traps, notable
           moves, defensive strategies, and more. All guides are up to date with
-          season 2.
+          season 2. Some are up to date with season 3, and they are marked with
+          an S3 badge.
         </p>
 
         <CharacterGrid
