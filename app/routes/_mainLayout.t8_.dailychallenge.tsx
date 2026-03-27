@@ -834,9 +834,6 @@ export default function DailyChallenge() {
               <p className="mb-4 mt-1 text-xl font-semibold">
                 Score: {score} / {questionsPerDay}
               </p>
-              <Button variant="outline" onClick={handleRetry} className="mb-4">
-                Retry (testing)
-              </Button>
               <div className="grid grid-cols-5 gap-2">
                 {sessionAnswers.map((answer, questionIndex) => {
                   const isCorrect = answer.isCorrect;
