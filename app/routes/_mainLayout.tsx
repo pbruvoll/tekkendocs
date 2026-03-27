@@ -1,13 +1,14 @@
-import { FaFacebook } from 'react-icons/fa';
 import {
   DiscordLogoIcon,
   GitHubLogoIcon,
   MagnifyingGlassIcon,
   TwitterLogoIcon,
 } from '@radix-ui/react-icons';
+import { FaFacebook } from 'react-icons/fa';
 import { Link, Outlet, type ShouldRevalidateFunction } from 'react-router';
 import { ContentContainer } from '~/components/ContentContainer';
 import { AppErrorBoundary } from '~/components/ErrorBoundary';
+import { ScrollToTopButton } from '~/components/ScrollToTopButton';
 import tekkenDocsLogoIcon from '~/images/logo/tekkendocs-logo-icon.svg';
 import {
   facebooklink,
@@ -20,19 +21,19 @@ import {
   GitHubIssueContactProvider,
 } from '~/utils/getInTouch';
 
-type MainLayoutTemplateProps = React.PropsWithChildren<{}>;
+type MainLayoutTemplateProps = React.PropsWithChildren;
 const MainLayoutTemplate = ({ children }: MainLayoutTemplateProps) => {
   const contactByGithub = new GitHubIssueContactProvider();
   const contactByDiscord = new DiscordContactProvider();
   return (
     <>
-      <header className="bg-(--accent-4) py-1">
+      <header className="sticky top-0 z-50 bg-(--accent-4) py-1">
         <ContentContainer>
           <div className="grid grid-cols-[1fr_auto_1fr] items-center justify-between py-1">
             <Link to="/">
               <img
                 src={tekkenDocsLogoIcon}
-                className="aspect-[0.76] h-[32px]"
+                className="aspect-[0.76] h-8"
                 alt="home"
               />
             </Link>
@@ -62,6 +63,7 @@ const MainLayoutTemplate = ({ children }: MainLayoutTemplateProps) => {
         </ContentContainer>
       </header>
       {children}
+      <ScrollToTopButton />
       <footer style={{ background: 'var(--accent-5' }}>
         <ContentContainer enableBottomPadding enableTopPadding>
           <ul className="flex flex-col gap-3">

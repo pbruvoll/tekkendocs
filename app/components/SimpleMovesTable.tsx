@@ -40,23 +40,23 @@ export function SimpleMovesTable({
     <table className={cx('relative w-full text-sm', className)}>
       <thead className="[&_tr]:border-b">
         <tr className="border-b transition-colors hover:bg-muted/50">
-          <th className="sticky top-0 z-10 h-12 bg-background px-2 text-left align-middle font-medium text-muted-foreground sm:px-4">
+          <th className="sticky top-header-height z-10 h-12 bg-background px-2 text-left align-middle font-medium text-muted-foreground sm:px-4">
             Cmd
           </th>
-          <th className="sticky top-0 z-10 h-12 bg-background px-2 text-left align-middle font-medium text-muted-foreground sm:px-4">
+          <th className="sticky top-header-height z-10 h-12 bg-background px-2 text-left align-middle font-medium text-muted-foreground sm:px-4">
             Hit Lvl
           </th>
-          <th className="sticky top-0 z-10 h-12 bg-background px-2 text-left align-middle font-medium text-muted-foreground sm:px-4">
+          <th className="sticky top-header-height z-10 h-12 bg-background px-2 text-left align-middle font-medium text-muted-foreground sm:px-4">
             Start
             <wbr />
             up
           </th>
-          <th className="sticky top-0 z-10 h-12 bg-background px-2 text-left align-middle font-medium text-muted-foreground sm:px-4">
+          <th className="sticky top-header-height z-10 h-12 bg-background px-2 text-left align-middle font-medium text-muted-foreground sm:px-4">
             Blo
             <wbr />
             ck
           </th>
-          <th className="sticky top-0 z-10 h-12 bg-background px-2 text-left align-middle font-medium text-muted-foreground sm:px-4">
+          <th className="sticky top-header-height z-10 h-12 bg-background px-2 text-left align-middle font-medium text-muted-foreground sm:px-4">
             {sortSettings?.sortByKey === 'recovery' ? (
               <>
                 Reco
