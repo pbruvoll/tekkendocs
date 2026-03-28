@@ -110,7 +110,7 @@ export const meta: MetaFunction = ({ matches }) => {
     matches,
     title: 'Tekken 8 Daily Challenge | TekkenDocs',
     description:
-      'Daily frame data quiz with 10 Mokujin moves. Guess the block frame category and keep your streak alive.',
+      'Daily frame data quiz with 10 moves. Guess the block frame and keep your streak alive.',
     image: { url: '/images/tekkendocs-og-image-v2.png' },
     url: '/t8/dailychallenge',
   });
@@ -355,7 +355,7 @@ export default function DailyChallenge() {
     return deterministicSample(
       eligibleMoves,
       questionsPerDay,
-      `daily-mokujin-${todayKey}`,
+      `all-${todayKey}`,
     );
   }, [eligibleMoves, todayKey]);
 
@@ -650,7 +650,7 @@ export default function DailyChallenge() {
         className="max-w-4xl"
       >
         <h1 className="mb-5 mt-2 text-center text-2xl font-semibold tracking-tight">
-          Tekken 8 Daily Challenge - {todayDisplayDate || todayKey}
+          Daily Challenge - {todayDisplayDate || todayKey}
         </h1>
         <Card className="mx-auto w-full max-w-2xl border-border/70 bg-linear-to-br from-background to-accent/20 shadow-sm">
           <CardHeader>
@@ -694,7 +694,7 @@ export default function DailyChallenge() {
       className="max-w-4xl"
     >
       <h1 className="mb-5 mt-2 text-center text-2xl font-semibold tracking-tight">
-        Tekken 8 Daily Challenge - {todayDisplayDate || todayKey}
+        Daily Challenge - {todayDisplayDate || todayKey}
       </h1>
 
       {!hasStarted && !showCompletedView && (
@@ -739,12 +739,14 @@ export default function DailyChallenge() {
         <div className="space-y-4">
           <Card className="mx-auto w-full max-w-2xl border-border/70 shadow-sm">
             <CardHeader>
-              <CardTitle>
-                Question {currentQuestionIndex + 1} / {questionsPerDay}
+              <CardTitle className="flex gap-2 flex-wrap justify-between items-center">
+                {currentQuestionLabel}
+                <p className="text-lg font-medium">
+                  Question {currentQuestionIndex + 1} / {questionsPerDay}
+                </p>
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="mb-4 text-lg font-medium">{currentQuestionLabel}</p>
               <MoveVideo
                 move={currentQuestion.move}
                 className="mb-4 overflow-hidden rounded-lg"
