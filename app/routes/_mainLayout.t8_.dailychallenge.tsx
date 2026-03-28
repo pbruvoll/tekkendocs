@@ -716,7 +716,8 @@ export default function DailyChallenge() {
           <CardContent>
             <p className="mb-4">
               Guess how many frames each move is on block. You will get 10
-              questions, and everyone gets the same set for today.
+              questions, and everyone gets the same set for today. Note that
+              some videos may show additional hits of the string.
             </p>
             <Button onClick={handleStart}>Start challenge</Button>
           </CardContent>
