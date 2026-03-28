@@ -12,6 +12,7 @@ export const useAppState = (): [
     },
     dailyChallenge: {
       dailyResultsByDate: {},
+      completedAnswersByDate: {},
       currentStreak: 0,
       lastCompletedDate: null,
       inProgress: null,
@@ -49,6 +50,8 @@ export const useAppState = (): [
           },
           dailyChallenge: {
             dailyResultsByDate: mergedDailyResultsByDate,
+            completedAnswersByDate:
+              stored.dailyChallenge.completedAnswersByDate || {},
             currentStreak: mergedCurrentStreak,
             lastCompletedDate: mergedLastCompletedDate,
             inProgress: stored.dailyChallenge.inProgress || null,
