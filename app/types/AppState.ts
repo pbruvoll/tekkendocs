@@ -35,6 +35,9 @@ export const appStateSchema = z.object({
       dailyResultsByDate: z
         .record(z.string(), dailyFrameChallengeResultSchema)
         .default({}),
+      completedAnswersByDate: z
+        .record(z.string(), z.array(dailyFrameChallengeAnswerSchema))
+        .default({}),
       currentStreak: z.number().int().nonnegative().default(0),
       lastCompletedDate: z.string().nullable().default(null),
       inProgress: z

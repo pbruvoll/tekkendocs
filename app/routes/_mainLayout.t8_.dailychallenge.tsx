@@ -19,7 +19,6 @@ import { charIdFromMove, isWavuMove } from '~/utils/moveUtils';
 import { generateMetaTags } from '~/utils/seoUtils';
 
 const questionsPerDay = 10;
-const feedbackDurationMs = 3600;
 
 type DailyMove = {
   id: string;
@@ -67,7 +66,7 @@ const answerOptions: AnswerOption[] = [
   { bucket: 'zeroToMinusNine', label: '0 to -9' },
   { bucket: 'minusTenToMinusEleven', label: '-10 to -11' },
   { bucket: 'minusTwelveToMinusFourteen', label: '-12 to -14' },
-  { bucket: 'minusFifteenOrLess', label: '-15 or less' },
+  { bucket: 'minusFifteenOrLess', label: '-15 or more' },
 ];
 
 const answerLabelByBucket = answerOptions.reduce<Record<AnswerBucket, string>>(
@@ -266,7 +265,6 @@ export default function DailyChallenge() {
   const [questionFeedback, setQuestionFeedback] =
     useState<QuestionFeedback | null>(null);
   const [isFeedbackVisible, setIsFeedbackVisible] = useState(false);
-  const feedbackTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const feedbackAnimationFrameRef = useRef<number | null>(null);
   const [pendingAdvance, setPendingAdvance] = useState<PendingAdvance | null>(
     null,
@@ -274,9 +272,6 @@ export default function DailyChallenge() {
 
   useEffect(() => {
     return () => {
-      if (feedbackTimeoutRef.current) {
-        clearTimeout(feedbackTimeoutRef.current);
-      }
       if (feedbackAnimationFrameRef.current !== null) {
         cancelAnimationFrame(feedbackAnimationFrameRef.current);
       }
@@ -398,7 +393,10 @@ export default function DailyChallenge() {
     });
   };
 
-  const saveResult = (finalScore: number) => {
+  const saveResult = (
+    finalScore: number,
+    completedAnswers: SessionAnswer[],
+  ) => {
     if (todayResult) {
       return;
     }
@@ -423,6 +421,10 @@ export default function DailyChallenge() {
           completedAt: Date.now(),
         },
       },
+      completedAnswersByDate: {
+        ...dailyChallengeState.completedAnswersByDate,
+        [todayKey]: completedAnswers,
+      },
       currentStreak: nextStreak,
       lastCompletedDate: todayKey,
       inProgress: null,
@@ -433,16 +435,11 @@ export default function DailyChallenge() {
     nextScore: number,
     nextAnswers: SessionAnswer[],
   ) => {
-    if (feedbackTimeoutRef.current) {
-      clearTimeout(feedbackTimeoutRef.current);
-      feedbackTimeoutRef.current = null;
-    }
-
     setQuestionFeedback(null);
     setPendingAdvance(null);
 
     if (currentQuestionIndex + 1 >= questionsPerDay) {
-      saveResult(nextScore);
+      saveResult(nextScore, nextAnswers);
       setHasStarted(false);
       setHasCompletedSession(true);
       return;
@@ -485,14 +482,6 @@ export default function DailyChallenge() {
       selectedLabel: answerLabelByBucket[selectedBucket],
       correctBlockValue: currentQuestion.move.block,
     });
-
-    if (feedbackTimeoutRef.current) {
-      clearTimeout(feedbackTimeoutRef.current);
-    }
-
-    feedbackTimeoutRef.current = setTimeout(() => {
-      advanceAfterFeedback(nextScore, nextAnswers);
-    }, feedbackDurationMs);
   };
 
   const handleContinueAfterFeedback = () => {
@@ -503,9 +492,6 @@ export default function DailyChallenge() {
   };
 
   const handleStart = () => {
-    if (feedbackTimeoutRef.current) {
-      clearTimeout(feedbackTimeoutRef.current);
-    }
     saveInProgress(todayKey, 0, 0, []);
     setCurrentQuestionIndex(0);
     setScore(0);
@@ -518,13 +504,12 @@ export default function DailyChallenge() {
   };
 
   const handleRetry = () => {
-    if (feedbackTimeoutRef.current) {
-      clearTimeout(feedbackTimeoutRef.current);
-      feedbackTimeoutRef.current = null;
-    }
-
     const nextResultsByDate = { ...dailyChallengeState.dailyResultsByDate };
     delete nextResultsByDate[todayKey];
+    const nextCompletedAnswersByDate = {
+      ...dailyChallengeState.completedAnswersByDate,
+    };
+    delete nextCompletedAnswersByDate[todayKey];
 
     let nextCurrentStreak = dailyChallengeState.currentStreak;
     let nextLastCompletedDate = dailyChallengeState.lastCompletedDate;
@@ -552,6 +537,7 @@ export default function DailyChallenge() {
       dailyChallenge: {
         ...appState.dailyChallenge,
         dailyResultsByDate: nextResultsByDate,
+        completedAnswersByDate: nextCompletedAnswersByDate,
         currentStreak: nextCurrentStreak,
         lastCompletedDate: nextLastCompletedDate,
         inProgress: {
@@ -640,7 +626,7 @@ export default function DailyChallenge() {
         enableTopPadding
         className="max-w-4xl"
       >
-        <h1 className="mb-5 mt-2 text-center text-3xl font-semibold tracking-tight">
+        <h1 className="mb-5 mt-2 text-center text-2xl font-semibold tracking-tight">
           Tekken 8 Daily Challenge - {todayDisplayDate || todayKey}
         </h1>
         <Card className="mx-auto w-full max-w-2xl border-border/70 bg-linear-to-br from-background to-accent/20 shadow-sm">
@@ -668,6 +654,14 @@ export default function DailyChallenge() {
   }
 
   const hasCompletedToday = Boolean(todayResult);
+  const showCompletedView =
+    hasCompletedSession || (hasCompletedToday && !hasStarted);
+  const completedAnswers = hasCompletedSession
+    ? sessionAnswers
+    : dailyChallengeState.completedAnswersByDate[todayKey] || [];
+  const completedScore = hasCompletedSession
+    ? score
+    : (todayResult?.score ?? 0);
 
   return (
     <ContentContainer
@@ -675,11 +669,11 @@ export default function DailyChallenge() {
       enableTopPadding
       className="max-w-4xl"
     >
-      <h1 className="mb-5 mt-2 text-center text-3xl font-semibold tracking-tight">
+      <h1 className="mb-5 mt-2 text-center text-2xl font-semibold tracking-tight">
         Tekken 8 Daily Challenge - {todayDisplayDate || todayKey}
       </h1>
 
-      {!hasStarted && !hasCompletedSession && (
+      {!hasStarted && !showCompletedView && (
         <Card className="mx-auto mb-4 w-full max-w-2xl border-border/70 bg-linear-to-br from-background to-accent/20 shadow-sm">
           <CardHeader>
             <CardTitle>
@@ -687,25 +681,6 @@ export default function DailyChallenge() {
               {currentStreakToShow !== 1 ? 's' : ''}
             </CardTitle>
           </CardHeader>
-        </Card>
-      )}
-
-      {hasCompletedToday && !hasCompletedSession && (
-        <Card className="mx-auto w-full max-w-2xl border-border/70 shadow-sm">
-          <CardHeader>
-            <CardTitle>Challenge already completed for today</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p>
-              You scored {todayResult?.score} / {todayResult?.totalQuestions}.
-            </p>
-            <p className="mt-2 text-sm text-muted-foreground">
-              Come back tomorrow for a new challenge.
-            </p>
-            <Button className="mt-4" variant="outline" onClick={handleRetry}>
-              Retry
-            </Button>
-          </CardContent>
         </Card>
       )}
 
@@ -756,57 +731,83 @@ export default function DailyChallenge() {
                 </span>{' '}
                 on block?
               </p>
-              {questionFeedback ? (
-                <div className="flex justify-center">
-                  <button
-                    type="button"
-                    onClick={handleContinueAfterFeedback}
-                    className={`w-full max-w-lg rounded-lg border px-4 py-3 text-left transition-all duration-300 ${
-                      questionFeedback.isCorrect
-                        ? 'border-foreground-success/40 bg-foreground-success/10'
-                        : 'border-foreground-destructive/40 bg-foreground-destructive/10'
-                    } ${
-                      isFeedbackVisible
-                        ? 'translate-y-0 opacity-100'
-                        : 'translate-y-2 opacity-0'
-                    }`}
-                  >
-                    <p
-                      className={`text-base font-semibold ${
+              <div className="min-h-44">
+                {questionFeedback ? (
+                  <div className="flex justify-center">
+                    <button
+                      type="button"
+                      onClick={handleContinueAfterFeedback}
+                      className={`w-full max-w-2xl rounded-2xl border px-4 py-4 text-left transition-all duration-300 sm:px-5 sm:py-5 ${
                         questionFeedback.isCorrect
-                          ? 'text-foreground-success'
-                          : 'text-foreground-destructive'
+                          ? 'border-foreground-success/35 bg-foreground-success/15'
+                          : 'border-foreground-destructive/35 bg-foreground-destructive/15'
+                      } ${
+                        isFeedbackVisible
+                          ? 'translate-y-0 opacity-100'
+                          : 'translate-y-2 opacity-0'
                       }`}
                     >
-                      {questionFeedback.isCorrect ? 'Correct!' : 'Not quite'}
-                    </p>
-                    {!questionFeedback.isCorrect && (
-                      <p className="mt-1 text-sm">
-                        You picked: {questionFeedback.selectedLabel}
-                      </p>
-                    )}
-                    <p className="mt-1 text-sm">
-                      Correct block frames: {questionFeedback.correctBlockValue}
-                    </p>
-                    <p className="mt-2 text-xs text-muted-foreground">
-                      Click to continue
-                    </p>
-                  </button>
-                </div>
-              ) : (
-                <div className="flex flex-wrap gap-2">
-                  {answerOptions.map((option) => (
-                    <Button
-                      key={option.bucket}
-                      variant="outline"
-                      onClick={() => handleAnswer(option.bucket)}
-                      className="min-w-33 justify-center rounded-full px-5"
-                    >
-                      {option.label}
-                    </Button>
-                  ))}
-                </div>
-              )}
+                      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                        <div className="flex items-start gap-3 sm:items-center">
+                          <div
+                            className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-background text-lg font-bold ${
+                              questionFeedback.isCorrect
+                                ? 'text-foreground-success'
+                                : 'text-foreground-destructive'
+                            }`}
+                          >
+                            {questionFeedback.isCorrect ? 'OK' : 'X'}
+                          </div>
+                          <div>
+                            <p
+                              className={`text-2xl font-extrabold tracking-tight ${
+                                questionFeedback.isCorrect
+                                  ? 'text-foreground-success'
+                                  : 'text-foreground-destructive'
+                              }`}
+                            >
+                              {questionFeedback.isCorrect
+                                ? 'Excellent!'
+                                : 'Not quite'}
+                            </p>
+                            {!questionFeedback.isCorrect && (
+                              <p className="mt-1 text-sm">
+                                You picked: {questionFeedback.selectedLabel}
+                              </p>
+                            )}
+                            <p className="mt-1 text-sm">
+                              Correct block frames:{' '}
+                              {questionFeedback.correctBlockValue}
+                            </p>
+                          </div>
+                        </div>
+                        <div
+                          className={`w-full rounded-xl px-6 py-3 text-center text-lg font-black tracking-wide text-background shadow-[inset_0_-4px_0_0_rgba(0,0,0,0.15)] sm:w-auto ${
+                            questionFeedback.isCorrect
+                              ? 'bg-foreground-success'
+                              : 'bg-foreground-destructive'
+                          }`}
+                        >
+                          CONTINUE
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                ) : (
+                  <div className="flex flex-wrap gap-2">
+                    {answerOptions.map((option) => (
+                      <Button
+                        key={option.bucket}
+                        variant="outline"
+                        onClick={() => handleAnswer(option.bucket)}
+                        className="min-w-33 justify-center rounded-full px-5"
+                      >
+                        {option.label}
+                      </Button>
+                    ))}
+                  </div>
+                )}
+              </div>
             </CardContent>
           </Card>
           <p className="text-center text-sm text-muted-foreground">
@@ -815,7 +816,7 @@ export default function DailyChallenge() {
         </div>
       )}
 
-      {hasCompletedSession && (
+      {showCompletedView && (
         <div className="space-y-4">
           <Card className="mx-auto w-full max-w-2xl border-border/70 bg-linear-to-br from-background to-accent/20 shadow-sm">
             <CardHeader>
@@ -832,10 +833,10 @@ export default function DailyChallenge() {
             </CardHeader>
             <CardContent>
               <p className="mb-4 mt-1 text-xl font-semibold">
-                Score: {score} / {questionsPerDay}
+                Score: {completedScore} / {questionsPerDay}
               </p>
               <div className="grid grid-cols-5 gap-2">
-                {sessionAnswers.map((answer, questionIndex) => {
+                {completedAnswers.map((answer, questionIndex) => {
                   const isCorrect = answer.isCorrect;
                   return (
                     <div
@@ -862,6 +863,16 @@ export default function DailyChallenge() {
                   );
                 })}
               </div>
+              <p className="mt-4 text-sm text-muted-foreground">
+                Current streak: {currentStreakToShow} day
+                {currentStreakToShow !== 1 ? 's' : ''}
+              </p>
+              <p className="mt-1 text-sm text-muted-foreground">
+                Come back tomorrow for a new challenge.
+              </p>
+              <Button className="mt-4" variant="outline" onClick={handleRetry}>
+                Retry
+              </Button>
             </CardContent>
           </Card>
 
@@ -871,7 +882,7 @@ export default function DailyChallenge() {
             </CardHeader>
             <CardContent>
               <div className="space-y-2">
-                {sessionAnswers.map((answer, index) => (
+                {completedAnswers.map((answer, index) => (
                   <div
                     key={`details-${answer.moveId}`}
                     className="rounded border p-3"
