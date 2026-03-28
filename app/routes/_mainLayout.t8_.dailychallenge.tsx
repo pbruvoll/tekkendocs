@@ -1,5 +1,10 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { data, type MetaFunction, useLoaderData } from 'react-router';
+import {
+  data,
+  type MetaFunction,
+  useLoaderData,
+  useSearchParams,
+} from 'react-router';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ContentContainer } from '~/components/ContentContainer';
@@ -20,6 +25,7 @@ import { generateMetaTags } from '~/utils/seoUtils';
 import { rankGroups } from './_mainLayout.t8_.ranks';
 
 const questionsPerDay = 10;
+const maxStoredDailyChallengeDays = 30;
 
 type DailyMove = {
   id: string;
@@ -179,10 +185,7 @@ const getPreviousDateKey = (dateKey: string): string => {
 };
 
 const calculateStreakEndingAt = (
-  dailyResultsByDate: Record<
-    string,
-    { score: number; totalQuestions: number; completedAt: number }
-  >,
+  dailyResultsByDate: Record<string, { score: number; totalQuestions: number }>,
   endDateKey: string,
 ): number => {
   let streak = 0;
@@ -272,7 +275,23 @@ const getRankImageForScore = (score: number): string => {
   return rankImageByScore[clampedScore] || '';
 };
 
+const keepMostRecentDays = <T,>(
+  byDate: Record<string, T>,
+  maxDays: number,
+): Record<string, T> => {
+  const dateKeys = Object.keys(byDate).sort();
+  if (dateKeys.length <= maxDays) {
+    return byDate;
+  }
+
+  const keepSet = new Set(dateKeys.slice(-maxDays));
+  return Object.fromEntries(
+    Object.entries(byDate).filter(([dateKey]) => keepSet.has(dateKey)),
+  );
+};
+
 export default function DailyChallenge() {
+  const showRetryButton = useSearchParams()[0].get('retry') !== null;
   const { moves } = useLoaderData<typeof loader>();
   const [appState, setAppState, isAppStateHydrated] = useAppState();
   const [todayKey] = useState<string>(() => formatLocalDateKey(new Date()));
@@ -435,18 +454,22 @@ export default function DailyChallenge() {
       nextStreak = previousStreak + 1;
     }
 
-    updateDailyChallengeState({
-      dailyResultsByDate: {
+    const nextResultsByDate = keepMostRecentDays(
+      {
         ...dailyChallengeState.dailyResultsByDate,
         [todayKey]: {
           score: finalScore,
           totalQuestions: questionsPerDay,
-          completedAt: Date.now(),
         },
       },
-      completedAnswersByDate: {
-        ...dailyChallengeState.completedAnswersByDate,
-        [todayKey]: completedAnswers,
+      maxStoredDailyChallengeDays,
+    );
+
+    updateDailyChallengeState({
+      dailyResultsByDate: nextResultsByDate,
+      currentCompletedAnswers: {
+        dateKey: todayKey,
+        answers: completedAnswers,
       },
       currentStreak: nextStreak,
       lastCompletedDate: todayKey,
@@ -529,10 +552,10 @@ export default function DailyChallenge() {
   const handleRetry = () => {
     const nextResultsByDate = { ...dailyChallengeState.dailyResultsByDate };
     delete nextResultsByDate[todayKey];
-    const nextCompletedAnswersByDate = {
-      ...dailyChallengeState.completedAnswersByDate,
-    };
-    delete nextCompletedAnswersByDate[todayKey];
+    const nextCurrentCompletedAnswers =
+      dailyChallengeState.currentCompletedAnswers?.dateKey === todayKey
+        ? null
+        : dailyChallengeState.currentCompletedAnswers;
 
     let nextCurrentStreak = dailyChallengeState.currentStreak;
     let nextLastCompletedDate = dailyChallengeState.lastCompletedDate;
@@ -560,7 +583,7 @@ export default function DailyChallenge() {
       dailyChallenge: {
         ...appState.dailyChallenge,
         dailyResultsByDate: nextResultsByDate,
-        completedAnswersByDate: nextCompletedAnswersByDate,
+        currentCompletedAnswers: nextCurrentCompletedAnswers,
         currentStreak: nextCurrentStreak,
         lastCompletedDate: nextLastCompletedDate,
         inProgress: {
@@ -681,7 +704,9 @@ export default function DailyChallenge() {
     hasCompletedSession || (hasCompletedToday && !hasStarted);
   const completedAnswers = hasCompletedSession
     ? sessionAnswers
-    : dailyChallengeState.completedAnswersByDate[todayKey] || [];
+    : dailyChallengeState.currentCompletedAnswers?.dateKey === todayKey
+      ? dailyChallengeState.currentCompletedAnswers.answers
+      : [];
   const completedScore = hasCompletedSession
     ? score
     : (todayResult?.score ?? 0);
@@ -906,9 +931,15 @@ export default function DailyChallenge() {
               <p className="mt-1 text-sm text-muted-foreground">
                 Come back tomorrow for a new challenge.
               </p>
-              <Button className="mt-4" variant="outline" onClick={handleRetry}>
-                Retry
-              </Button>
+              {showRetryButton && (
+                <Button
+                  className="mt-4"
+                  variant="outline"
+                  onClick={handleRetry}
+                >
+                  Retry
+                </Button>
+              )}
             </CardContent>
           </Card>
 

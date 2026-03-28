@@ -196,7 +196,7 @@ export const characterGuideAuthors: Record<
     steve: { author: 'Seagerr', version: 'S2' },
     victor: { author: 'Yung_P', version: 'S2' },
     yoshimitsu: { author: 'Trizzy the Rapper', version: 'S2' },
-    xiaoyu: { author: 'Kanda', version: 'S2' },
+    xiaoyu: { author: 'Kanda', version: 'S3' },
   },
   T7: {},
   TT2: {},

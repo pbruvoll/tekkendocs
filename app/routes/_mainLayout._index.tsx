@@ -1,5 +1,5 @@
 import { Badge, Heading } from '@radix-ui/themes';
-import { Link, type MetaFunction } from 'react-router';
+import { href, Link, type MetaFunction } from 'react-router';
 import { TextEffect } from '@/components/core/TextEffect';
 import { CharacterGrid } from '~/components/CharacterGrid';
 import { ContentContainer } from '~/components/ContentContainer';
@@ -65,6 +65,11 @@ export default function Index() {
         <Link to="/t8/guides" className="cursor-pointer">
           <Badge size="3" style={{ cursor: 'pointer' }} variant="outline">
             <span className="p-0.5 px-1">Character Guides</span>
+          </Badge>
+        </Link>
+        <Link to={href('/t8/dailychallenge')} className="cursor-pointer">
+          <Badge size="3" style={{ cursor: 'pointer' }} variant="outline">
+            <span className="p-0.5 px-1">Daily Challenge</span>
           </Badge>
         </Link>
         <Link to="/t8/stats" className="cursor-pointer">

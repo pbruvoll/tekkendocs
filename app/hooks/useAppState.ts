@@ -12,7 +12,7 @@ export const useAppState = (): [
     },
     dailyChallenge: {
       dailyResultsByDate: {},
-      completedAnswersByDate: {},
+      currentCompletedAnswers: null,
       currentStreak: 0,
       lastCompletedDate: null,
       inProgress: null,
@@ -26,34 +26,17 @@ export const useAppState = (): [
       try {
         const parsedState = JSON.parse(storedAppState);
         const stored = appStateSchema.parse(parsedState);
-        const legacyDailyChallenge =
-          parsedState?.reactChallenge?.dailyFrameChallenge;
-
-        const mergedDailyResultsByDate = {
-          ...(legacyDailyChallenge?.dailyResultsByDate || {}),
-          ...stored.dailyChallenge.dailyResultsByDate,
-        };
-
-        const mergedCurrentStreak =
-          stored.dailyChallenge.currentStreak ||
-          legacyDailyChallenge?.currentStreak ||
-          0;
-
-        const mergedLastCompletedDate =
-          stored.dailyChallenge.lastCompletedDate ||
-          legacyDailyChallenge?.lastCompletedDate ||
-          null;
 
         setAppState({
           reactChallenge: {
             completedLowBlocks: stored.reactChallenge.completedLowBlocks,
           },
           dailyChallenge: {
-            dailyResultsByDate: mergedDailyResultsByDate,
-            completedAnswersByDate:
-              stored.dailyChallenge.completedAnswersByDate || {},
-            currentStreak: mergedCurrentStreak,
-            lastCompletedDate: mergedLastCompletedDate,
+            dailyResultsByDate: stored.dailyChallenge.dailyResultsByDate,
+            currentCompletedAnswers:
+              stored.dailyChallenge.currentCompletedAnswers,
+            currentStreak: stored.dailyChallenge.currentStreak,
+            lastCompletedDate: stored.dailyChallenge.lastCompletedDate,
             inProgress: stored.dailyChallenge.inProgress || null,
           },
         });
