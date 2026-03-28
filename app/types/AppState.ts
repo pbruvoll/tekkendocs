@@ -3,7 +3,6 @@ import { z } from 'zod';
 const dailyFrameChallengeResultSchema = z.object({
   score: z.number().int().min(0),
   totalQuestions: z.number().int().positive(),
-  completedAt: z.number().int().nonnegative(),
 });
 
 const answerBucketSchema = z.enum([
@@ -35,9 +34,13 @@ export const appStateSchema = z.object({
       dailyResultsByDate: z
         .record(z.string(), dailyFrameChallengeResultSchema)
         .default({}),
-      completedAnswersByDate: z
-        .record(z.string(), z.array(dailyFrameChallengeAnswerSchema))
-        .default({}),
+      currentCompletedAnswers: z
+        .object({
+          dateKey: z.string(),
+          answers: z.array(dailyFrameChallengeAnswerSchema).default([]),
+        })
+        .nullable()
+        .default(null),
       currentStreak: z.number().int().nonnegative().default(0),
       lastCompletedDate: z.string().nullable().default(null),
       inProgress: z
