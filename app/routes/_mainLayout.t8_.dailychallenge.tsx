@@ -17,6 +17,7 @@ import { frameDataTableToJson } from '~/utils/frameDataUtils';
 import { getCacheControlHeaders } from '~/utils/headerUtils';
 import { charIdFromMove, isWavuMove } from '~/utils/moveUtils';
 import { generateMetaTags } from '~/utils/seoUtils';
+import { rankGroups } from './_mainLayout.t8_.ranks';
 
 const questionsPerDay = 10;
 
@@ -68,6 +69,23 @@ const answerOptions: AnswerOption[] = [
   { bucket: 'minusTwelveToMinusFourteen', label: '-12 to -14' },
   { bucket: 'minusFifteenOrLess', label: '-15 or more' },
 ];
+
+const allRanks = rankGroups.flatMap((group) => group.ranks);
+
+// Explicit score-to-image table for quick remapping.
+const rankImageByScore: Record<number, string> = {
+  0: allRanks[0]?.image || '',
+  1: allRanks[allRanks.length - 16]?.image || '',
+  2: allRanks[allRanks.length - 15]?.image || '',
+  3: allRanks[allRanks.length - 14]?.image || '',
+  4: allRanks[allRanks.length - 13]?.image || '',
+  5: allRanks[allRanks.length - 12]?.image || '',
+  6: allRanks[allRanks.length - 11]?.image || '',
+  7: allRanks[allRanks.length - 10]?.image || '',
+  8: allRanks[allRanks.length - 9]?.image || '',
+  9: allRanks[allRanks.length - 8]?.image || '',
+  10: allRanks[allRanks.length - 1]?.image || '',
+};
 
 const answerLabelByBucket = answerOptions.reduce<Record<AnswerBucket, string>>(
   (current, option) => {
@@ -247,6 +265,11 @@ const getMoveCharacterDisplayName = (move: Move): string => {
     characterInfoT8List.find((char) => char.id === charId)?.displayName ||
     charId
   );
+};
+
+const getRankImageForScore = (score: number): string => {
+  const clampedScore = Math.max(0, Math.min(score, questionsPerDay));
+  return rankImageByScore[clampedScore] || '';
 };
 
 export default function DailyChallenge() {
@@ -662,6 +685,7 @@ export default function DailyChallenge() {
   const completedScore = hasCompletedSession
     ? score
     : (todayResult?.score ?? 0);
+  const completedRankImage = getRankImageForScore(completedScore);
 
   return (
     <ContentContainer
@@ -832,9 +856,18 @@ export default function DailyChallenge() {
               </div>
             </CardHeader>
             <CardContent>
-              <p className="mb-4 mt-1 text-xl font-semibold">
-                Score: {completedScore} / {questionsPerDay}
-              </p>
+              <div className="mb-4 mt-1 flex items-center gap-3">
+                <p className="text-xl font-semibold">
+                  Score: {completedScore} / {questionsPerDay}
+                </p>
+                {completedRankImage && (
+                  <img
+                    src={completedRankImage}
+                    className="h-10 w-auto"
+                    alt={`Rank for score ${completedScore}`}
+                  />
+                )}
+              </div>
               <div className="grid grid-cols-5 gap-2">
                 {completedAnswers.map((answer, questionIndex) => {
                   const isCorrect = answer.isCorrect;
