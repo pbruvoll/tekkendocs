@@ -291,12 +291,13 @@ const keepMostRecentDays = <T,>(
 };
 
 export default function DailyChallenge() {
+  const now = new Date();
   const showRetryButton = useSearchParams()[0].get('retry') !== null;
   const { moves } = useLoaderData<typeof loader>();
   const [appState, setAppState, isAppStateHydrated] = useAppState();
-  const [todayKey] = useState<string>(() => formatLocalDateKey(new Date()));
+  const [todayKey] = useState<string>(() => formatLocalDateKey(now));
   const [todayDisplayDate] = useState<string>(() =>
-    formatLocalDisplayDate(new Date()),
+    formatLocalDisplayDate(now),
   );
 
   const [hasStarted, setHasStarted] = useState(false);
@@ -342,8 +343,13 @@ export default function DailyChallenge() {
 
   const eligibleMoves = useMemo(() => {
     const seenMoveIds = new Set<string>();
-    return moves.reduce<DailyMove[]>((current, move) => {
+    return moves.reduce<DailyMove[]>((current, move, currentIndex) => {
       if (!move.video) {
+        return current;
+      }
+
+      if (move.video === moves[currentIndex + 1]?.video) {
+        // dont use mvoes that has vidoes with fallback to full string vid
         return current;
       }
 
@@ -879,7 +885,10 @@ export default function DailyChallenge() {
                   alt="TekkenDocs"
                 />
                 <CardTitle>
-                  TekkenDocs Daily Challenge {todayDisplayDate || todayKey}
+                  TekkenDocs Daily Challenge {todayDisplayDate || todayKey}{' '}
+                  {new Date().getDate() === 29 && new Date().getMonth() === 2
+                    ? ' (v2)'
+                    : ''}
                 </CardTitle>
               </div>
             </CardHeader>
