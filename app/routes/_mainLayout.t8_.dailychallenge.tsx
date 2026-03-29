@@ -885,7 +885,10 @@ export default function DailyChallenge() {
                   alt="TekkenDocs"
                 />
                 <CardTitle>
-                  TekkenDocs Daily Challenge {todayDisplayDate || todayKey}
+                  TekkenDocs Daily Challenge {todayDisplayDate || todayKey}{' '}
+                  {new Date().getDate() === 29 && new Date().getMonth() === 2
+                    ? ' (v2)'
+                    : ''}
                 </CardTitle>
               </div>
             </CardHeader>
