@@ -102,7 +102,12 @@ export default function Index() {
 
       <CharacterGrid
         characterCards={characterInfoListT8.map(({ id, displayName }) => {
-          const imgSrc = t8AvatarBrandMap256[id];
+          //const imgSrc = t8AvatarBrandMap256[id];
+          const imgSrc =
+            'https://tekkendocs.b-cdn.net' +
+            '/t8/images/avatars/easter/' +
+            id +
+            '.jpg';
           return { name: displayName, imgSrc, url: `/t8/${id}` };
         })}
       />
