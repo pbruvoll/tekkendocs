@@ -262,9 +262,10 @@ db+1;sl;5;i10;-5;+6;;;;;Fahkumram-db+1;;;;File:t8-p2-fahkumram-db+1
 db+2;m;16;i16;-10;+1;;* High evasion;;;Fahkumram-db+2;;;;File:t8-p2-fahkumram-db+2
 db+2,2;m, m;16, 16;i16, i25;-13;+1;;"* Elbow
 * Combos from 1st hit";elb;;Fahkumram-db+2,2;Lightning Rod;;;File:t8-p2-fahkumram-db+2,2
-db+4;h;23;i20;-6;+35d;;"* Balcony Break
-* Strong Aerial Tailspin
-* High crush 6~19";bbr cs6~19;;Fahkumram-db+4;Haang Jora Khee;;;File:t8-p2-fahkumram-db+4
+db+4;h;23;i20~21;-6;+35d;;"* Strong Aerial Tailspin
+* Balcony Break
+* Recovers 1f slower on block
+* High crush 6~19";bbr cs6~19;;Fahkumram-db+4;Haang Jora Khee;r31;;File:t8-p2-fahkumram-db+4
 db+3+4;m;25;i30;-9;+15a;;* Balcony Break;bbr;;Fahkumram-db+3+4;Encroaching Storm;;;File:t8-p2-fahkumram-db+3+4
 b+1;m;20;i14;-13;+34d;;;;;Fahkumram-b+1;Surging Elbow;;;
 b+1+3;;;;;;;"* Parries high, mid and low kicks
@@ -308,11 +309,10 @@ uf+3;m;23;i14;-14;+9a (+0);;"* Heat Engager
 uf+4;m;22;i20;-16;+66a (+55);;"* Tornado
 * Balcony Break
 * Low crush";trn bbr js;;Fahkumram-uf+4;Tyrant Teep;;;
-uf+3+4;m,h;10,20;i18~19, i7~8;-11;+16a (-1);;"* Tornado
+uf+3+4;m,h;10,20;i18~19 i7~8;-11;+16a (-1);;"* Tornado
 * Balcony Break
-* Floating state 18~20
-* Low crush 21~39
-* Floating state 40~42";trn bbr fs18~20 js21~39 fs40~42;;Fahkumram-uf+3+4;Twin Knee Barrage;r33;;File:t8-p2-fahkumram-uf+3+4.mp4
+* Knee
+* Low crush 18~42";trn bbr kne js18~42;;Fahkumram-uf+3+4;Twin Knee Barrage;r33;;File:t8-p2-fahkumram-uf+3+4.mp4
 1+2+3+4;;;;;;;;;;Fahkumram-1+2+3+4;Ki Charge;;;
 b,f+4;h;25;i18;+6;+47cs;;"* Reversal Break
 * Good left sidestep tracking
@@ -320,16 +320,15 @@ b,f+4;h;25;i18;+6;+47cs;;"* Reversal Break
 f,F+3;L;20;i21;-14;+4;;;;;Fahkumram-f,F+3;Flash Channel;;;
 f,F+4;m;25;i22;-13;+33a;;"* Homing
 * Balcony Break";hom bbr;;Fahkumram-f,F+4;Stormbreaker;;;
-f,F+4~1;m;20;i21;-3c;+8c;+32d;"* Spike
-* On CH
-** Floor Break";spk fbr;;Fahkumram-f,F+4~1;Barbaric Elbow;;;
+f,F+4~1;m;20;i21;-3c;+8c;+32d;"* Spike (CH)
+* Floor Break";fbr;;Fahkumram-f,F+4~1;Barbaric Elbow;;;
 f,F+4~3;L;15;i19;-23;-1c;;;;;Fahkumram-f,F+4~3;;;;
 f,F+4~3,2;L, m;15, 20;i19, i25;+0;+13d (-4);;"* Elbow
 * Powered up in GRF
 * Combos from 1st hit CH
 * 6 chip damage on block";elb;;Fahkumram-f,F+4~3,2;Ramasura;;;
 f,F+1+2;m;22;i18;-14;+43a (+33);;* Grants GRF on hit;;;Fahkumram-f,F+1+2;Vicious Uppercut;;;
-uf,n,4;m;20;i23;-13;+32a (+22);;* Low crush;js;;Fahkumram-uf,n,4;Delayed Rising Toe kick;;;
+uf,n,4;m;20;i23;-13;+32a (+22);;* Low crush 9~;js9~;;Fahkumram-uf,n,4;Delayed Rising Toe kick;r30;;
 f,f,F+3;m;30;i19;+6;+15a (+5);;"* Knee
 * 9 chip damage on block
 * Low crush";kne js;;Fahkumram-f,f,F+3;Gale Force;;;

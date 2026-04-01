@@ -13,7 +13,7 @@ export type CharacterGridProps = {
 export const CharacterGrid = ({ characterCards, size }: CharacterGridProps) => {
   return (
     <InView
-      viewOptions={{ once: true, margin: '0px 0px -250px 0px' }}
+      viewOptions={{ once: true, margin: '0px 0px -100px 0px' }}
       variants={{
         hidden: {},
         visible: {
