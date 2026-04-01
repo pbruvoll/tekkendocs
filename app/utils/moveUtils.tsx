@@ -18,3 +18,12 @@ export const charIdFromMove = (move: MoveT8): string => {
   const index = move.wavuId.lastIndexOf('-');
   return move.wavuId.slice(0, index).replace(' ', '-').toLowerCase();
 };
+
+export const videoFileNameFromMove = (move: MoveT8): string => {
+  return move.wavuId
+    .toLowerCase()
+    .replace(/ /g, '-')
+    .replace(/\*/g, 'x')
+    .replace(/:/g, 'j')
+    .replace(/#/g, 'j');
+};

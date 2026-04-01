@@ -1,5 +1,5 @@
 import cx from 'classix';
-import { Link } from 'react-router';
+import { Link, useSearchParams } from 'react-router';
 import { type FrameDataListProps } from '~/types/FrameDataListProps';
 import { type MoveT8 } from '~/types/Move';
 import { getRecoveryFrames } from '~/utils/frameDataUtils';
@@ -8,7 +8,11 @@ import {
   getHitFrameColorClasses,
   simplifyFrameValue,
 } from '~/utils/frameDataViewUtils';
-import { charIdFromMove, commandToUrlSegmentEncoded } from '~/utils/moveUtils';
+import {
+  charIdFromMove,
+  commandToUrlSegmentEncoded,
+  videoFileNameFromMove,
+} from '~/utils/moveUtils';
 import { MovePreviewDialogButton } from './MovePreviewDialogButton';
 
 // Helper function to format command for line breaks at commas
@@ -36,6 +40,7 @@ export function SimpleMovesTable({
   sortSettings,
 }: SimpleMovesTableProps) {
   const showCharacter = forceShowCharacter || !charId;
+  const showVidoeFileName = useSearchParams()[0].get('videoName') !== null;
   return (
     <table className={cx('relative w-full text-sm', className)}>
       <thead className="[&_tr]:border-b">
@@ -57,7 +62,9 @@ export function SimpleMovesTable({
             ck
           </th>
           <th className="sticky top-header-height z-10 h-12 bg-background px-2 text-left align-middle font-medium text-muted-foreground sm:px-4">
-            {sortSettings?.sortByKey === 'recovery' ? (
+            {showVidoeFileName ? (
+              'Vid name'
+            ) : sortSettings?.sortByKey === 'recovery' ? (
               <>
                 Reco
                 <wbr />
@@ -113,7 +120,12 @@ export function SimpleMovesTable({
                 {simpleBlock}
               </td>
               <td className="wrap-break-word p-2 align-middle sm:p-4">
-                {sortSettings?.sortByKey === 'recovery' ? (
+                {showVidoeFileName ? (
+                  videoFileNameFromMove(move as MoveT8).replace(
+                    `${charId}-`,
+                    '',
+                  )
+                ) : sortSettings?.sortByKey === 'recovery' ? (
                   getRecoveryFrames(move)
                 ) : (
                   <>
