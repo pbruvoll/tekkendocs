@@ -22,6 +22,7 @@ import leo from '~/images/t8/guides/leo-600.webp';
 import leroy from '~/images/t8/guides/leroy-600.webp';
 import lidia from '~/images/t8/guides/lidia-600.webp';
 import lili from '~/images/t8/guides/lili-600.webp';
+import nina from '~/images/t8/guides/nina-600.webp';
 import panda from '~/images/t8/guides/panda-600.webp';
 import raven from '~/images/t8/guides/raven-600.webp';
 import steve from '~/images/t8/guides/steve-600.webp';
@@ -54,6 +55,7 @@ export const t8GuideImgSmallMap: Record<string, string> = {
   leroy,
   lidia,
   lili,
+  nina,
   panda,
   raven,
   steve,
