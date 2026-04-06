@@ -220,6 +220,9 @@ export const charVideoInfoT8: Record<
     videoPostFix: '',
     gifs: true,
   },
+  fahkumram: {
+    autoGenerateFileName: true,
+  },
   'miary-zo': {
     autoGenerateFileName: true,
   },

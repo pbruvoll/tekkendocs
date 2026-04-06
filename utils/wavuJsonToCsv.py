@@ -139,7 +139,7 @@ def convert(filePath, outDir):
     csvContent = [list(map(lambda x: x["displayName"], columns))];
     for move in jsonData :
         fillMissingVideoFromExtendedInput(move, jsonData)
-        if charName == "miary-zo" : 
+        if charName == "miary-zo" or charName == "fahkumram" : 
             generateVideoLink(move)
         correctMove(move, charName)
         csvContent.append(list(map(lambda x: move.get(x["wavuId"], ""), columns)));
