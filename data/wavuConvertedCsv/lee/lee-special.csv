@@ -8,12 +8,14 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * Power crush 7~16";hb pc7~16;;Lee-2+3;Heat Burst;r30;;
 H.df+3+4;m;35;i16~17;+2;+26a;+26a;"* Balcony Break
 * 7 chip damage on block
-* Partially consumes remaining Heat Time
-* Transition to +0, +26a MS with F";bbr;MS;Lee-H.df+3+4;Crimson Howl;;;
-H.d+1+2;m;30;i18;+4;+21a (+11);+21a (+11);"* Balcony Break
+* Consumes 300F of remaining Heat Time
+* Has good left sidestep tracking
+* Transition to +2, +26a MS with F";bbr;MS;Lee-H.df+3+4;Crimson Howl;;;
+H.d+1+2;m;30;i18;+4;+21a (+11);;"* Balcony Break
 * 6 chip damage on block
-* Partially consumes remaining Heat Time
-* Transition to +8, +21a (+11) HMS with 3+4";bbr;HMS;Lee-H.d+1+2;Phantom Rose;;;File:t8-p2-lee-d+3+4.mp4
+* Consumes 240F of remaining Heat Time
+* Has good sidestep right tracking
+* Transition to +6, +23a (+13) HMS with 3+4";bbr;HMS;Lee-H.d+1+2;Phantom Rose;;;File:t8-p2-lee-h.d+1+2.mp4
 H.2+3;l,t;40;i20;-14;+0d;;"* Heat Smash
 * Balcony Break";hs bbr;;Lee-H.2+3;Paradigm Breaker;;;
 R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
@@ -40,18 +42,24 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 1,2,4;h, h, m;5, 9, 10;i10, ,i18;-12;-1;+58a;"* Jail from 1st attack
 * Combo from 2nd hit
 * Transition to -14 -2 HMS with 3
-* Move can be input by pressing 4 during frames 1-9 of 1,2";;HMS;Lee-1,2,4;Left Right Mid Kick;;;File:t8-p2-lee-1,2,4.mp4
+* Consumes 60F of remaining Heat time without perfect input";;HMS;Lee-1,2,4;Left Right Mid Kick;;;File:t8-p2-lee-1,2,4.mp4
 1,2:4;h, h, m;5, 9, 12;i10, ,i18;-12;+5;+58a;"* Jail from 1st attack
 * Combo from 2nd hit with 1f delay
-* Move can be input by pressing 4 during frames 10-13 of 1,2
+* Input 4 during frames 10-13 of 1,2
+* Restores 90F of remaining Heat time on perfect input
+* Consumes 60F of remaining Heat time without perfect input
+* Move cannot be delayed
 * Transition to r44 -14 +3 HMS with 3";;HMS;Lee-1,2:4;Left Right Mid Kick;;;File:t8-p2-lee-1,2,4.mp4
 1,3;h, h;5, 5;i10, i16;-11;+0;;"* Combo from 1st hit with 4F delay
 * Move can be delayed by 4F";;;Lee-1,3;;;;
 1,3:3;h, h, m;5, 5, 4;i10, ,i9;-11;+0;;"* Input 3 during frames 13-16 of previous hit
-* Jail from 1st attack";;;Lee-1,3:3;;;;
+* Jail from 1st attack
+* Combo from 1st hit";;;Lee-1,3:3;;;;
 1,3:3:3;h, h, m, h;5, 5, 4, 14;i10, ,i21;-17;+14;;"* Combo from 1st hit
 * Input 3 during frames 8-9? of previous hit
 * Timestop on hit
+* Restores 90F of remaining Heat time on perfect input
+* Consumes 120F of remaining Heat time without perfect input
 * 5 chip damage";;;Lee-1,3:3:3;[[Acid Rain]];;;File:t8-p2-lee-1,3c3c3.mp4
 2;h;10;i10;+1;+7;;;;;Lee-2;Right Cross;;;File:t8-p2-lee-2,1,1.mp4
 2,1;h, h;10, 8;i10, i15;-5;+6;;"* Transition to -5, +6 HMS with 3+4
@@ -291,10 +299,12 @@ f,f,F+3,4;m, m;14, 26;i14, i20;+3;+19d;;"* Floor Break
 * Low crush";fbr js;HMS;Lee-f,f,F+3,4;Waxing Crescent;;;File:t8-p2-lee-f,f,f+3,4.mp4
 ws1;m;12;i13;-2;+8;;* Automatically transitions to HMS on hit or block;;HMS;Lee-ws1;;HMS;;File:t8-p2-lee-ws1,2.mp4
 ws1,2;m, h;12, 17;i13, i20;-7;+2;+7;*Transition to -3, +6, +12 MS with F;;MS;Lee-ws1,2;Wonderful Spin Blow;;;File:t8-p2-lee-ws1,2.mp4
-ws1,4;m, h;12, 20;i13, i20;-5;+4;;*Transition to -8, +1 HMS with 3;;HMS;Lee-ws1,4;Wonderful Combo;;;File:t8-p2-lee-ws1,4.mp4
+ws1,4;m, h;12, 20;i13, i20;-5;+4;;"* Transition to -8, +1 HMS with 3
+* Consumes 60F of remaining Heat time";;HMS;Lee-ws1,4;Wonderful Combo;;;File:t8-p2-lee-ws1,4.mp4
 ws1:4;m, h;12, 23;i13, i20;-5;+15g;;"* Balcony Break
-*Transition to -8, +12g HMS with 3
-* 9 chip damage on block";bbr;HMS;Lee-ws1:4;Wonderful Combo;;;File:t8-p2-lee-ws1,j4.mp4
+* Transition to -8, +12g HMS with 3
+* Restores 90F of remaining Heat time on perfect input
+* 9 chip damage on block";bbr;HMS;Lee-ws1:4;Wonderful Combo Cardinal;;;File:t8-p2-lee-ws1,j4.mp4
 ws2;m;12;i14;-8;+3;;*;;;Lee-ws2;;;;File:t8-p2-lee-ws2,3.mp4
 ws2,3;m, m;12, 24;i14, i20;-13;+32a (+22);;"* Tornado
 * Combos from 1st hit";trn;;Lee-ws2,3;Rocket Heel;;;File:t8-p2-lee-ws2,3.mp4
