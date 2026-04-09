@@ -353,7 +353,17 @@ export default function DailyChallenge() {
         return current;
       }
 
-      if (move.hitLevel?.trim().toLowerCase().startsWith(hitLevelValue.Throw)) {
+      const hitLevel = move.hitLevel?.trim().toLowerCase();
+      if (!hitLevel) {
+        return current;
+      }
+
+      if (hitLevel.startsWith(hitLevelValue.Throw)) {
+        return current;
+      }
+
+      if (hitLevel.startsWith('ub') || hitLevel.endsWith('!')) {
+        //unblocable
         return current;
       }
 
