@@ -49,6 +49,7 @@ export const getFilterFromParams = (
       searchParams,
       filterKey.DuckableString,
     ),
+    unblockable: getSearchParamBoolean(searchParams, filterKey.Unblockable),
     numHitsMin: getSearchParamNumber(searchParams, filterKey.NumHitsMin),
     numHitsMax: getSearchParamNumber(searchParams, filterKey.NumHitsMax),
     stance: getSearchParamStringList(searchParams, filterKey.Stance),

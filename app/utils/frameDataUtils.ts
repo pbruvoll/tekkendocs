@@ -206,6 +206,11 @@ export const isChip = (move: Move) => {
   return /chip/i.test(move.notes || '');
 };
 
+export const isUnblockable = (move: Move) => {
+  const hitLevel = move.hitLevel?.split(', ').pop()?.toLowerCase();
+  return !!hitLevel && (hitLevel.includes('!') || hitLevel.includes('ub'));
+};
+
 export const removesRecoverableHealth = (move: Move) => {
   return /Erases opponent/i.test(move.notes || '');
 };
@@ -345,6 +350,7 @@ export const filterRows = (
     [filter.tornado, isTornadoMove],
     [filter.jails, jails],
     [filter.chip, isChip],
+    [filter.unblockable, isUnblockable],
     [filter.removeRecoveryHealth, removesRecoverableHealth],
     [filter.recoverFullCrouch, recoverFullCrouch],
     [filter.forcesCrouchOnBlock, forcesCrouchOnBlock],
@@ -353,7 +359,14 @@ export const filterRows = (
   propFilters.forEach(([filterValue, filterFunc]) => {
     if (filterValue) {
       filterFuncs.push((row: string[]) => {
-        return filterFunc({ notes: row[7] } as Move);
+        return filterFunc({
+          hitLevel: row[1],
+          notes: row[7],
+          block: row[4],
+          hit: row[5],
+          counterHit: row[6],
+          recovery: row[8],
+        } as Move);
       });
     }
   });
@@ -506,6 +519,7 @@ export const filterMoves = (moves: Move[], filter: MoveFilter | undefined) => {
     [filter.embeddedVideo, (move: Move) => !!move.video],
     [filter.noEmbeddedVideo, (move: Move) => !move.video],
     [filter.chip, isChip],
+    [filter.unblockable, isUnblockable],
     [filter.removeRecoveryHealth, removesRecoverableHealth],
     [filter.recoverFullCrouch, recoverFullCrouch],
     [filter.forcesCrouchOnBlock, forcesCrouchOnBlock],

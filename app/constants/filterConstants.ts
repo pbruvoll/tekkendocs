@@ -18,6 +18,7 @@ export const filterKey = {
   NoJails: 'noJails',
   DuckableString: 'duckableString',
   Chip: 'chip',
+  Unblockable: 'unblockable',
   HighCrush: 'cs',
   LowCrush: 'js',
   PowerCrush: 'pc',
