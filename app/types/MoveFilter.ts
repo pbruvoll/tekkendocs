@@ -19,6 +19,7 @@ export type MoveFilter = {
   duckableString?: boolean;
   numHitsMin?: number;
   numHitsMax?: number;
+  unblockable?: boolean;
   highCrush?: boolean;
   lowCrush?: boolean;
   powerCrush?: boolean;
