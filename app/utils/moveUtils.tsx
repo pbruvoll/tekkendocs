@@ -14,7 +14,7 @@ export const isWavuMove = (move: Move): move is MoveT8 => {
   return 'wavuId' in move && move.wavuId !== undefined;
 };
 
-export const charIdFromMove = (move: MoveT8): string => {
+export const charIdFromMove = (move: Pick<MoveT8, 'wavuId'>): string => {
   const index = move.wavuId.lastIndexOf('-');
   return move.wavuId.slice(0, index).replace(' ', '-').toLowerCase();
 };

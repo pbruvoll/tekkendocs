@@ -14,6 +14,7 @@ import { type SortOrder } from '~/types/SortOrder';
 import { filterToDescription, getFilterFromParams } from '~/utils/filterUtils';
 import { filterMoves, sortMoves } from '~/utils/frameDataUtils';
 import { getCacheControlHeaders } from '~/utils/headerUtils';
+import { charIdFromMove } from '~/utils/moveUtils';
 import { generateMetaTags } from '~/utils/seoUtils';
 import { t8AvatarMap } from '~/utils/t8AvatarMap';
 
@@ -51,7 +52,9 @@ export const meta: MetaFunction = ({ params, matches, location }) => {
   const { characterName, moves } = frameData as CharacterFrameDataPage;
   const characterId = characterName.toLocaleLowerCase();
   const characterTitle =
-    characterName[0].toUpperCase() + characterName.substring(1);
+    characterId === 'mokujin'
+      ? 'All Characters'
+      : characterName[0].toUpperCase() + characterName.substring(1);
   const title = `${characterTitle} Tekken 8 Frame Data | TekkenDocs`;
 
   let rowsDescription: string = '';
@@ -88,8 +91,17 @@ export const meta: MetaFunction = ({ params, matches, location }) => {
     .concat(
       sortedMoves
         .slice(0, 9)
-        .map(({ command, hitLevel, damage, block, hit }) =>
-          [command, hitLevel, damage, block, hit].join(' | '),
+        .map(({ command, hitLevel, damage, block, hit, wavuId }) =>
+          [
+            ...(characterId === 'mokujin' && wavuId
+              ? [charIdFromMove({ wavuId })]
+              : []),
+            command,
+            hitLevel,
+            damage,
+            block,
+            hit,
+          ].join(' | '),
         ),
     )
     .filter(Boolean)
