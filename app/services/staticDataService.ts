@@ -209,7 +209,14 @@ export const cdnUrl = 'https://tekkendocs.b-cdn.net';
 
 export const charVideoInfoT8: Record<
   string,
-  { videoPostFix?: string; gifs?: true; autoGenerateFileName?: boolean }
+  {
+    videoPostFix?: string;
+    gifs?: true;
+    autoGenerateFileName?: boolean;
+    // use localVidoeFolder to load viodes based on a locally served folder (in /public).
+    // Primarly for testing that recorded vidoes are correct and have correct name. Should not be used in production
+    localVideoFolder?: string;
+  }
 > = {
   asuka: {
     videoPostFix: '-640',
