@@ -10,6 +10,8 @@ import { ContentContainer } from '~/components/ContentContainer';
 import { AppErrorBoundary } from '~/components/ErrorBoundary';
 import { ScrollToTopButton } from '~/components/ScrollToTopButton';
 import tekkenDocsLogoIcon from '~/images/logo/tekkendocs-logo-icon.svg';
+import tekkenDocsLogoLarge from '~/images/logo/tekkendocs-logo-large-v2.svg';
+import tekkenDocsLogoMedium from '~/images/logo/tekkendocs-logo-medium-v3.svg';
 import {
   facebooklink,
   githubLink,
@@ -29,17 +31,27 @@ const MainLayoutTemplate = ({ children }: MainLayoutTemplateProps) => {
     <>
       <header className="sticky top-0 z-50 bg-(--accent-4) py-1">
         <ContentContainer>
-          <div className="grid grid-cols-[1fr_auto_1fr] items-center justify-between py-1">
+          <div className="grid grid-cols-[auto_1fr] items-center justify-between py-1">
             <Link to="/">
-              <img
+              {/* <img
                 src={tekkenDocsLogoIcon}
                 className="aspect-[0.76] h-8"
                 alt="home"
+              /> */}
+              <img
+                src={tekkenDocsLogoMedium}
+                className="aspect-[5.885] h-8 xs:hidden"
+                alt="home"
+              />
+              <img
+                src={tekkenDocsLogoLarge}
+                className="hidden aspect-[10.10] h-8 xs:inline"
+                alt="home"
               />
             </Link>
-            <Link to="/" className="grow text-center text-2xl">
+            {/* <Link to="/" className="grow text-center text-2xl">
               TekkenDocs
-            </Link>
+            </Link> */}
             <div className="flex place-self-end">
               <Link title="Search" to="/t8/search" className="px-2">
                 <MagnifyingGlassIcon width="2em" height="2em" />
