@@ -74,9 +74,12 @@ export const MoveVideo = ({
                 <div className="w-full h-full " />
               )
             }
-            // playIcon={<div>play</div>}
             loop
-            url={`${cdnUrl}/t8/videos/${charId}/${videoBase}.mp4`}
+            url={
+              charVideoInfoT8[charId]?.localVideoFolder
+                ? move.video
+                : `${cdnUrl}/t8/videos/${charId}/${videoBase}.mp4`
+            }
           />
         </button>
       </div>
