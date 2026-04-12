@@ -33,7 +33,7 @@ export default function Index() {
   return (
     <ContentContainer enableBottomPadding enableTopPadding>
       <h1 className="sr-only mb-4 text-2xl font-bold">TekkenDocs</h1>
-      <img
+      {/* <img
         src={tekkenDocsLogoLarge}
         alt="TekkenDocs"
         width="567px"
@@ -43,7 +43,7 @@ export default function Index() {
           marginLeft: '-4px',
           marginTop: '1rem',
         }}
-      />
+      /> */}
       <TextEffect per="word" preset="fade" className="mb-4 mt-2">
         Frame data and learning resources for Tekken
       </TextEffect>
