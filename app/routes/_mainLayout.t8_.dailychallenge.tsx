@@ -225,20 +225,17 @@ const AnswerDetailsCard = ({
             </div>
 
             {move.notes ? (
-              <>
-                <div className="text-muted-foreground">Details</div>
-                <div className="flex flex-col items-start gap-1">
-                  <ShowNotes.Trigger
-                    showNotes={showNotes}
-                    setShowNotes={setShowNotes}
-                  />
-                  <ShowNotes.Details
-                    showNotes={showNotes}
-                    move={move}
-                    className="mt-0 ml-0"
-                  />
-                </div>
-              </>
+              <div className="col-span-2 flex flex-col items-start gap-1">
+                <ShowNotes.Trigger
+                  showNotes={showNotes}
+                  setShowNotes={setShowNotes}
+                />
+                <ShowNotes.Details
+                  showNotes={showNotes}
+                  move={move}
+                  className="mt-0 ml-0"
+                />
+              </div>
             ) : null}
           </div>
         </div>
