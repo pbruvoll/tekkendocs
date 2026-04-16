@@ -212,6 +212,8 @@ def _parse_notes(notes: str):
 def _get_tag(noteLine: str) : 
     cleanLine = noteLine.replace("*", "").strip().lower()
     match cleanLine :
+        case "rage art" :
+            return "ra"
         case "floor break":
             return "fbr"
         case "spike" :

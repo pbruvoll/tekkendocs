@@ -26,11 +26,24 @@ const tagsToIconImage: Partial<Record<MoveTag, string>> = {
 
 type MovePropertyIconListProps = {
   move: Move;
+  size?: 'small' | 'medium';
 };
 
-export const MovePropertyIconList = ({ move }: MovePropertyIconListProps) => {
+const iconSizeByVariant: Record<
+  NonNullable<MovePropertyIconListProps['size']>,
+  number
+> = {
+  small: 24,
+  medium: 40,
+};
+
+export const MovePropertyIconList = ({
+  move,
+  size = 'medium',
+}: MovePropertyIconListProps) => {
   const moveTags = move.tags || {};
   const tagKeys = Object.keys(moveTags) as MoveTag[];
+  const iconSize = iconSizeByVariant[size];
 
   return (
     <div className="flex gap-1">
@@ -40,7 +53,17 @@ export const MovePropertyIconList = ({ move }: MovePropertyIconListProps) => {
           return null;
         }
         const title = moveTagToDescription[tagKey] || tagKey;
-        return <img key={tagKey} src={iconImage} alt={title} title={title} />;
+        return (
+          <img
+            key={tagKey}
+            src={iconImage}
+            alt={title}
+            title={title}
+            width={iconSize}
+            height={iconSize}
+            className="shrink-0"
+          />
+        );
       })}
     </div>
   );
