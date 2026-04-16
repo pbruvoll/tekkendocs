@@ -1,10 +1,12 @@
 export const MoveTags = {
+  RageArt: 'ra',
   Chip: 'chp',
   Duckable: 'dck',
   Elbow: 'elb',
   FloorBreak: 'fbr',
   ForceCrouch: 'fcb',
   HeatEngager: 'he',
+  HeatBurst: 'hb',
   Homing: 'hom',
   HighCrush: 'cs',
   Knee: 'kne',

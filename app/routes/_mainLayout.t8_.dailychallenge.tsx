@@ -12,6 +12,7 @@ import { MoveVideo } from '~/components/MoveVideo';
 import { characterInfoT8List } from '~/constants/characterInfoListT8';
 import { environment } from '~/constants/environment.server';
 import { hitLevelValue } from '~/constants/filterConstants';
+import { MoveTags } from '~/constants/moveTags';
 import { useAppState } from '~/hooks/useAppState';
 import tekkenDocsLogoIcon from '~/images/logo/tekkendocs-logo-icon.svg';
 import { SheetServiceMock } from '~/mock/SheetServiceMock';
@@ -350,6 +351,13 @@ export default function DailyChallenge() {
 
       if (move.video === moves[currentIndex + 1]?.video) {
         // dont use mvoes that has vidoes with fallback to full string vid
+        return current;
+      }
+
+      if (
+        move.tags?.[MoveTags.RageArt] !== undefined ||
+        move.tags?.[MoveTags.HeatBurst] !== undefined
+      ) {
         return current;
       }
 
