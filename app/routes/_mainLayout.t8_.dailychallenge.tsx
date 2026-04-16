@@ -121,6 +121,10 @@ type LoaderData = {
   moves: Move[];
 };
 
+const hasVisibleProperties = (move: Move): boolean => {
+  return Object.keys(move.tags || {}).length > 0;
+};
+
 type AnswerDetailsCardProps = {
   answer: SessionAnswer;
   index: number;
@@ -137,9 +141,13 @@ const AnswerDetailsCard = ({
   const [showNotes, setShowNotes] = useState(false);
   const [showVideo, setShowVideo] = useState(false);
   const moveHasVideo = Boolean(move && (move.video || move.ytVideo));
+  const moveHasVisibleProperties = move ? hasVisibleProperties(move) : false;
 
   return (
-    <div className="rounded border p-3">
+    <div
+      id={`answer-details-${index + 1}`}
+      className="scroll-mt-24 rounded border p-3"
+    >
       <p className="font-medium">
         Q{index + 1}: {answer.characterName}:{' '}
         {answerMoveHref ? (
@@ -150,13 +158,25 @@ const AnswerDetailsCard = ({
           answer.command
         )}
       </p>
-      <p className="text-sm">Your answer: {answer.selectedLabel}</p>
-      <p className="text-sm">Correct answer: {answer.rawBlock}</p>
-      <p
-        className={`text-sm font-medium ${answer.isCorrect ? 'text-foreground-success' : 'text-foreground-destructive'}`}
-      >
-        {answer.isCorrect ? 'Correct' : 'Wrong'}
-      </p>
+      <div className="mt-2 flex flex-wrap items-start gap-2 text-sm">
+        <div className="rounded-md bg-muted/60 px-2 py-1">
+          <p className="text-[11px] text-muted-foreground">You picked</p>
+          <p className="font-medium">{answer.selectedLabel}</p>
+        </div>
+        <div className="rounded-md bg-muted/60 px-2 py-1">
+          <p className="text-[11px] text-muted-foreground">Correct</p>
+          <p className="font-medium">{answer.rawBlock}</p>
+        </div>
+        <div
+          className={`inline-flex min-h-11 items-center rounded-md px-2.5 py-1 font-medium ${
+            answer.isCorrect
+              ? 'bg-foreground-success/10 text-foreground-success'
+              : 'bg-foreground-destructive/10 text-foreground-destructive'
+          }`}
+        >
+          {answer.isCorrect ? 'Correct' : 'Wrong'}
+        </div>
+      </div>
 
       {move ? (
         <div className="mt-3 border-t border-border/80 pt-3">
@@ -219,11 +239,15 @@ const AnswerDetailsCard = ({
               <div className="text-muted-foreground">Level</div>
               <div className="font-medium">{move.hitLevel || '-'}</div>
 
-              <div className="text-muted-foreground">Properties</div>
-              <div className="flex flex-wrap items-center gap-1.5">
-                <MovePropertyIconList move={move} size="small" />
-                <MovePropertyTagList move={move} />
-              </div>
+              {moveHasVisibleProperties ? (
+                <>
+                  <div className="text-muted-foreground">Properties</div>
+                  <div className="flex flex-wrap items-center gap-1.5">
+                    <MovePropertyIconList move={move} size="small" />
+                    <MovePropertyTagList move={move} />
+                  </div>
+                </>
+              ) : null}
 
               {move.notes ? (
                 <div className="col-span-2 flex flex-col items-start gap-1">
@@ -1074,9 +1098,10 @@ export default function DailyChallenge() {
                 {completedAnswers.map((answer, questionIndex) => {
                   const isCorrect = answer.isCorrect;
                   return (
-                    <div
+                    <a
                       key={`summary-${answer.moveId}`}
-                      className={`rounded border p-2 text-center ${
+                      href={`#answer-details-${questionIndex + 1}`}
+                      className={`block rounded border p-2 text-center transition-colors hover:bg-accent/40 ${
                         isCorrect
                           ? 'border-foreground-success/40 bg-foreground-success/10'
                           : 'border-foreground-destructive/40 bg-foreground-destructive/10'
@@ -1094,7 +1119,7 @@ export default function DailyChallenge() {
                       >
                         {isCorrect ? 'OK' : 'X'}
                       </p>
-                    </div>
+                    </a>
                   );
                 })}
               </div>
