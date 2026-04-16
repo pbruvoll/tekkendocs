@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import {
   data,
+  Link,
   type MetaFunction,
   useLoaderData,
   useSearchParams,
@@ -21,7 +22,11 @@ import { type Move } from '~/types/Move';
 import { type SheetService } from '~/types/SheetService';
 import { frameDataTableToJson } from '~/utils/frameDataUtils';
 import { getCacheControlHeaders } from '~/utils/headerUtils';
-import { charIdFromMove, isWavuMove } from '~/utils/moveUtils';
+import {
+  charIdFromMove,
+  commandToUrlSegmentEncoded,
+  isWavuMove,
+} from '~/utils/moveUtils';
 import { generateMetaTags } from '~/utils/seoUtils';
 import { rankGroups } from './_mainLayout.t8_.ranks';
 
@@ -402,6 +407,10 @@ export default function DailyChallenge() {
     );
   }, [eligibleMoves, todayKey]);
 
+  const moveById = useMemo(() => {
+    return new Map(eligibleMoves.map(({ id, move }) => [id, move]));
+  }, [eligibleMoves]);
+
   const dailyChallengeState = appState.dailyChallenge;
   const todayResult = dailyChallengeState.dailyResultsByDate[todayKey];
 
@@ -736,6 +745,15 @@ export default function DailyChallenge() {
     : (todayResult?.score ?? 0);
   const completedRankImage = getRankImageForScore(completedScore);
 
+  const getAnswerMoveHref = (answer: SessionAnswer): string | null => {
+    const move = moveById.get(answer.moveId);
+    if (!move || !isWavuMove(move)) {
+      return null;
+    }
+
+    return `/t8/${charIdFromMove(move)}/${commandToUrlSegmentEncoded(move.command)}`;
+  };
+
   return (
     <ContentContainer
       enableBottomPadding
@@ -976,25 +994,38 @@ export default function DailyChallenge() {
             </CardHeader>
             <CardContent>
               <div className="space-y-2">
-                {completedAnswers.map((answer, index) => (
-                  <div
-                    key={`details-${answer.moveId}`}
-                    className="rounded border p-3"
-                  >
-                    <p className="font-medium">
-                      Q{index + 1}: {answer.characterName}: {answer.command}
-                    </p>
-                    <p className="text-sm">
-                      Your answer: {answer.selectedLabel}
-                    </p>
-                    <p className="text-sm">Correct answer: {answer.rawBlock}</p>
-                    <p
-                      className={`text-sm font-medium ${answer.isCorrect ? 'text-foreground-success' : 'text-foreground-destructive'}`}
+                {completedAnswers.map((answer, index) => {
+                  const answerMoveHref = getAnswerMoveHref(answer);
+
+                  return (
+                    <div
+                      key={`details-${answer.moveId}`}
+                      className="rounded border p-3"
                     >
-                      {answer.isCorrect ? 'Correct' : 'Wrong'}
-                    </p>
-                  </div>
-                ))}
+                      <p className="font-medium">
+                        Q{index + 1}: {answer.characterName}:{' '}
+                        {answerMoveHref ? (
+                          <Link className="text-primary" to={answerMoveHref}>
+                            {answer.command}
+                          </Link>
+                        ) : (
+                          answer.command
+                        )}
+                      </p>
+                      <p className="text-sm">
+                        Your answer: {answer.selectedLabel}
+                      </p>
+                      <p className="text-sm">
+                        Correct answer: {answer.rawBlock}
+                      </p>
+                      <p
+                        className={`text-sm font-medium ${answer.isCorrect ? 'text-foreground-success' : 'text-foreground-destructive'}`}
+                      >
+                        {answer.isCorrect ? 'Correct' : 'Wrong'}
+                      </p>
+                    </div>
+                  );
+                })}
               </div>
             </CardContent>
           </Card>
