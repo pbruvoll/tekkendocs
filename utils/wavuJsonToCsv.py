@@ -74,6 +74,8 @@ def fillMissingVideoFromExtendedInput(move, moves):
 def generateVideoLink(move) : 
     if move["video"] :
         return
+    if move["id"].startswith("Anna-df+3,2,1,2,4") and move["id"] != "Anna-df+3,2,1,2,4,1,2,2,3+4,2":
+        return
     move["video"] = "t8-p2-" + move["id"].replace(" ", "-").replace("*", "x").replace(":", "j").lower() + ".mp4"
 
 def correctMove(move, charName) : 
@@ -138,9 +140,10 @@ def convert(filePath, outDir):
     f.close()
     csvContent = [list(map(lambda x: x["displayName"], columns))];
     for move in jsonData :
+        if charName == "miary-zo" or charName == "fahkumram" or charName == "anna" : 
+            generateVideoLink(move)    
+    for move in jsonData :
         fillMissingVideoFromExtendedInput(move, jsonData)
-        if charName == "miary-zo" or charName == "fahkumram" : 
-            generateVideoLink(move)
         correctMove(move, charName)
         csvContent.append(list(map(lambda x: move.get(x["wavuId"], ""), columns)));
     
