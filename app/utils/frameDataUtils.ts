@@ -389,9 +389,12 @@ export const filterMoves = (moves: Move[], filter: MoveFilter | undefined) => {
     return moves;
   }
 
+  const filterFuncs: ((move: Move) => boolean)[] = [];
+
   if (filter.searchQuery) {
     const searchQuery = filter.searchQuery.toLowerCase();
-    return moves.filter((move) => {
+
+    filterFuncs.push((move: Move) => {
       return (
         cleanCommand(move.command).includes(cleanCommand(searchQuery)) ||
         (searchQuery.length >= 3 &&
@@ -404,7 +407,6 @@ export const filterMoves = (moves: Move[], filter: MoveFilter | undefined) => {
     });
   }
 
-  const filterFuncs: ((move: Move) => boolean)[] = [];
   if (filter.hitLevels?.length) {
     filterFuncs.push((move: Move) => {
       const lastHitLevel = move.hitLevel?.split(', ').pop()?.[0]?.toLowerCase();
