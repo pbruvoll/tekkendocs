@@ -395,16 +395,16 @@ export const filterMoves = (moves: Move[], filter: MoveFilter | undefined) => {
     const searchQuery = filter.searchQuery.toLowerCase();
 
     filterFuncs.push((move: Move) => {
-        return (
-          cleanCommand(move.command).includes(cleanCommand(searchQuery)) ||
-          (searchQuery.length >= 3 &&
-            !/\d/.test(searchQuery) &&
-            (move.hitLevel.toLowerCase().includes(searchQuery) ||
-              move.notes?.replace(/ /g, '').toLowerCase().includes(searchQuery) ||
-              move.name?.replace(/ /g, '').toLowerCase().includes(searchQuery) ||
-              move.tags?.[searchQuery] !== undefined))
-        );
-      });
+      return (
+        cleanCommand(move.command).includes(cleanCommand(searchQuery)) ||
+        (searchQuery.length >= 3 &&
+          !/\d/.test(searchQuery) &&
+          (move.hitLevel.toLowerCase().includes(searchQuery) ||
+            move.notes?.replace(/ /g, '').toLowerCase().includes(searchQuery) ||
+            move.name?.replace(/ /g, '').toLowerCase().includes(searchQuery) ||
+            move.tags?.[searchQuery] !== undefined))
+      );
+    });
   }
 
   if (filter.hitLevels?.length) {
