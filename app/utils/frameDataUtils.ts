@@ -389,22 +389,24 @@ export const filterMoves = (moves: Move[], filter: MoveFilter | undefined) => {
     return moves;
   }
 
+  const filterFuncs: ((move: Move) => boolean)[] = [];
+
   if (filter.searchQuery) {
     const searchQuery = filter.searchQuery.toLowerCase();
-    return moves.filter((move) => {
-      return (
-        cleanCommand(move.command).includes(cleanCommand(searchQuery)) ||
-        (searchQuery.length >= 3 &&
-          !/\d/.test(searchQuery) &&
-          (move.hitLevel.toLowerCase().includes(searchQuery) ||
-            move.notes?.replace(/ /g, '').toLowerCase().includes(searchQuery) ||
-            move.name?.replace(/ /g, '').toLowerCase().includes(searchQuery) ||
-            move.tags?.[searchQuery] !== undefined))
-      );
-    });
+
+    filterFuncs.push((move: Move) => {
+        return (
+          cleanCommand(move.command).includes(cleanCommand(searchQuery)) ||
+          (searchQuery.length >= 3 &&
+            !/\d/.test(searchQuery) &&
+            (move.hitLevel.toLowerCase().includes(searchQuery) ||
+              move.notes?.replace(/ /g, '').toLowerCase().includes(searchQuery) ||
+              move.name?.replace(/ /g, '').toLowerCase().includes(searchQuery) ||
+              move.tags?.[searchQuery] !== undefined))
+        );
+      });
   }
 
-  const filterFuncs: ((move: Move) => boolean)[] = [];
   if (filter.hitLevels?.length) {
     filterFuncs.push((move: Move) => {
       const lastHitLevel = move.hitLevel?.split(', ').pop()?.[0]?.toLowerCase();
