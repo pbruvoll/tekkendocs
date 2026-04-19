@@ -392,7 +392,7 @@ export const filterMoves = (moves: Move[], filter: MoveFilter | undefined) => {
   const filterFuncs: ((move: Move) => boolean)[] = [];
 
   if (filter.searchQuery) {
-    const searchQuery = filter.searchQuery.toLowerCase();
+    const searchQuery = filter.searchQuery.toLowerCase().replace(/ /g, '');
 
     filterFuncs.push((move: Move) => {
       return (

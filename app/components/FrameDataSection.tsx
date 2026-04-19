@@ -51,17 +51,19 @@ export const FrameDataSection = ({
     ? getSortByQueryParamValue(sortSettings)
     : '';
 
-  const [searchQuery, setSearchQuery] = useState<string>('');
+  const filterFromUrl: MoveFilter = useMemo(
+    () => getFilterFromParams(searchParams),
+    [searchParams],
+  );
 
-  const filter: MoveFilter = useMemo(() => {
-    const filterFromParams = getFilterFromParams(searchParams);
-    return {
-      ...filterFromParams,
-      searchQuery: searchQuery
-        ? searchQuery.toLowerCase().replace(/ /g, '')
-        : undefined,
-    };
-  }, [searchParams, searchQuery]);
+  const [searchQuery, setSearchQuery] = useState<string>(
+    filterFromUrl.searchQuery || '',
+  );
+
+  const filter = useMemo(
+    () => ({ ...filterFromUrl, searchQuery }),
+    [filterFromUrl, searchQuery],
+  );
 
   const moveTypes = useMemo(() => getMoveFilterTypes(moves), [moves]);
 

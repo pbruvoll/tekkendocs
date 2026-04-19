@@ -1,4 +1,5 @@
 export const filterKey = {
+  Query: 'q',
   HitLevel: 'hitLevel',
   StartupFrameMin: 'startupFrameMin',
   StartupFrameMax: 'startupFrameMax',
