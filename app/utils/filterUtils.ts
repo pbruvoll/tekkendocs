@@ -21,6 +21,7 @@ export const getFilterFromParams = (
   searchParams: URLSearchParams,
 ): MoveFilter => {
   return {
+    searchQuery: getSearchParamString(searchParams, filterKey.Query),
     hitLevels: getSearchParamStringList<HitLevel>(
       searchParams,
       filterKey.HitLevel,
