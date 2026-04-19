@@ -1,7 +1,6 @@
 import { Filter } from 'lucide-react';
 import { useId, useMemo, useState } from 'react';
 import { useSearchParams } from 'react-router';
-import { set } from 'zod';
 import { Input } from '@/components/ui/input';
 import { orderByKey } from '~/constants/sortConstants';
 import { sortOptions } from '~/constants/sortOptions';
@@ -52,9 +51,7 @@ export const FrameDataSection = ({
     ? getSortByQueryParamValue(sortSettings)
     : '';
 
-  const [searchQuery, setSearchQuery] = useState<string>(
-    searchParams.get('q') || '',
-  );
+  const [searchQuery, setSearchQuery] = useState<string>('');
 
   const filter: MoveFilter = useMemo(() => {
     const filterFromParams = getFilterFromParams(searchParams);
@@ -81,6 +78,7 @@ export const FrameDataSection = ({
           <Input
             onChange={(e) => handleOnChange(e)}
             placeholder="Search moves, ff2,1+2, power crush, etc."
+            defaultValue={searchQuery}
           ></Input>
         </div>
 
