@@ -51,13 +51,18 @@ export const FrameDataSection = ({
     ? getSortByQueryParamValue(sortSettings)
     : '';
 
-  const filter: MoveFilter = useMemo(
+  const filterFromUrl: MoveFilter = useMemo(
     () => getFilterFromParams(searchParams),
     [searchParams],
   );
 
   const [searchQuery, setSearchQuery] = useState<string>(
-    filter.searchQuery || '',
+    filterFromUrl.searchQuery || '',
+  );
+
+  const filter = useMemo(
+    () => ({ ...filterFromUrl, searchQuery }),
+    [filterFromUrl, searchQuery],
   );
 
   const moveTypes = useMemo(() => getMoveFilterTypes(moves), [moves]);
