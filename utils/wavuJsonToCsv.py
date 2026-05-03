@@ -140,7 +140,7 @@ def convert(filePath, outDir):
     f.close()
     csvContent = [list(map(lambda x: x["displayName"], columns))];
     for move in jsonData :
-        if charName == "miary-zo" or charName == "fahkumram" or charName == "anna" : 
+        if charName == "miary-zo" or charName == "fahkumram" or charName == "anna" or charName == "armor-king" : 
             generateVideoLink(move)    
     for move in jsonData :
         fillMissingVideoFromExtendedInput(move, jsonData)
