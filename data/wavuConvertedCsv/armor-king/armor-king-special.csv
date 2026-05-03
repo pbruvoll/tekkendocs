@@ -2,17 +2,17 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 2+3;m;"[12;12]";i16;+1;+2c;;"* Can also be done during BAD
 * Power crush 7~16";pc7~16;;Armor King-2+3;Heat Burst;r30;;
 H.f,n,d,df+1+2;h!;[10];i25~28;;+23g;;"* On hit, gives a special stun that makes throws unbreakable for the stun duration
-* Partially uses remaining Heat time
+* Consumes 600F of remaining Heat time
 * Only deals recoverable damage
 * Cannot K.O";;;Armor King-H.f,n,d,df+1+2;Malice Mist: Villain;r29;;
 H.ub+1;h;25;i24~25;+8;+60a;;"* Strong Aerial Tailspin
 * Homing
 * Transition to r26 BAD with F (+8/+61a)
-* Partially uses remaining Heat time
+* Consumes 150F of remaining Heat time
 * 7 chip damage on block";hom;BAD;Armor King-H.ub+1;Neck Hunter: Villain;r25;;
 H.ub+1+2*;M;28;i50~52;+8;+65a (+49);;"* Tornado
 * Can also be done during BAD
-* Partially uses remaining Heat time
+* Consumes 240F of remaining Heat time
 * 8 chip damage on block";trn;;Armor King-H.ub+1+2*;Mexican Uppercut: Villain;r37;;
 H.2+3;m,t;54;i17, i42~43;+9;+1d;;"* Heat Smash
 * Balcony Break
@@ -29,7 +29,7 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Restores recoverable health on hit
 * Transition to attack throw on hit
 * Consumes Rage
-* Power crush 8~";rbr pc8~;;Armor King-R.df+1+2;Dark Supernova;r39;;
+* Power crush 8~";ra rbr pc8~;;Armor King-R.df+1+2;Dark Supernova;r39;;
 1;h;5;i10;+1;+8;;Recovers 2f faster on hit or block (t27 r17);;;Armor King-1;Jab;r19;;
 1,2;h, h;5, 10;i10, i10;-3;+6;;"* Combo from 1st hit with 2F delay
 * Jail from 1st block with 2F delay";;;Armor King-1,2;One Two Punch;r22;;
@@ -159,7 +159,7 @@ db+2,4,2;m, h, m;12, 20, 24;i14, ,i30~31;-12;+32a (+6);;"* Balcony Break
 H.db+2,1;m, m;12, 25;i14, i26~27;+3;+17a (+8);;"* Balcony Break
 * Combo from 1st hit
 * Interrupt with i5 from 1st block
-* Partially uses remaining Heat time";bbr;;Armor King-db+2,H.1;Outbreak: Villain;r31;;
+* Consumes 240F of remaining Heat time";bbr;;Armor King-db+2,H.1;Outbreak: Villain;r31;;
 db+3;L;26;i22~24;-26;+6;+74a (+58);"* Homing
 * High crush 6~51";hom cs6~51;FC;Armor King-db+3;Foot Sweep;r27 FC;;
 db+4;L;20;i29~31;-17d;-3d;+27a;"* Opponent recovers FDFA
@@ -328,7 +328,7 @@ BAD.3;m;20;i20~21;-13;+11a(+2);+26d;"* Balcony Break
 H.BAD.3,2;m,M;15,25;i34~36;+5;+1a;;"* Balcony Break
 * Jail from 1st block
 * Opponent left FDFA
-* Partially uses remaining Heat time
+* Consumes 240F of remaining Heat time
 * 11 chip damage on block after absorbing an attack in power crush state";bbr;;Armor King-BAD.3,H.2;Blackguard Rush: Villain;r46;;
 BAD.4;L;23;i17~18;-13;+3c;+26a;;;;Armor King-BAD.4;Bandido Snatch;r31;;File:t8-p2-armor_king-bad.4.mp4
 BAD.1+2;m;22;i26~27;+5;+12c;+40a;"* Head
@@ -374,18 +374,18 @@ OTG.d+4,4,3+4;L, L, SM;18, 8, 20;i19~21, ,i30~32;-17;+0d;;"* Combos from 1st hit
 * Unbreakable throw extension
 * Opponent left FUFA";fbr;;Armor King-2+4,d+1+2;Jaguar Screwdriver;;;
 AIR.BAD.2+4;t(a);45;i14;!;+0d;;"* Cannot throw break
-* Partially restores remaining Heat time.
+* Restores 60F of remaining Heat time
 * Opponent recovers in FDFA.";;;Armor King-AIR.BAD.2+4;D Trigger;;;
 AIR.f,f,F+2+4;t(a);50(55);i10;!;+0d;;"* Floor Break
 * Cannot throw break.
 * Input n,f,F+2+4 within 6 frames after dash startup (f,n,f) to execute ""blue spark"" (+5 damage).
-* Partially restores remaining Heat time.
+* Restores 60F of remaining Heat time
 * Opponent recovers in FUFT.";fbr;;Armor King-AIR.f,f,F+2+4;Running Cross Driver;;;
 AIR.f,hcf+1;t(a);40(45);i10;!;+0d;;"* Floor Break
 * Cannot throw break.
 * Input all 6 directions of throw, press df for 1-3F, at most 1F of f followed by f+1 for blue spark (+5 damage).
 * AIR.BAD1+3: i14 startup. Cannot execute blue spark variant
-* Partially restores remaining Heat time.
+* Restores 60F of remaining Heat time
 * Opponent recovers in FDFA.
 * Side switch";fbr;;Armor King-AIR.f,hcf+1;Muscle Driver;;;
 BM.2,1,2,1;t;5,5,5,15;;+0;-6d;;"* Could be any 1/2 combination (e.g. 1,1,1,1 / 1,2,2,1)
@@ -441,7 +441,7 @@ FUFA.db+1+3;th(g);35;i18~20;+0;35;;"* Balcony Break
 * Throw break 1
 * Opponent recovers FDFT";bbr;;Armor King-FUFA.db+1+3;Enzui Knee;;;
 FUFL.db+1+3;th(g);0;i18~20;+0;+25d;;"* 1 or 2 throw break, depending on Armor King's input.
-* Opponent recovers in FDFL/FDFR.";;;Armor King-FUFR.db+1+3;Turn Over;;;
+* Opponent recovers in FDFL/FDFR.";;;Armor King-FUFL.db+1+3;Turn Over;;;
 FUFT.db+1+3;th(g);30;i18~20;+0;+20d;;"* Balcony Break
 * Throw break 1
 * Side swap
@@ -455,7 +455,7 @@ UT.2,1,2,1;t;5,5,5,15;;+0;+0d;;"* Could be any 1/2 combination (e.g. 1,1,1,1 / 1
 UT.1+2;t;25;;-9;+1d;;"* 1+2 throw break.
 * Can also input at 3rd hit of Ultimate Punch.
 * Opponent recovers in FUFR.";;;Armor King-UT.1+2;Armbar;;;
-WALL.1+3;t(w);65;i10;!;+0d;;"* Homing
+WALL.1+3;t(w);65?;i10;!;+0d;;"* Homing
 * Cannot throw break. 
 * Opponent recovers in FUFT.";hom;;Armor King-WALL.1+3;Black Rain of Hell;;;
 db,n,f+2+4;th(h);53;i11;-2;-3d;;"* Floor Break
@@ -473,7 +473,7 @@ d+1+3;th(m);35;i12~13;!;+0d;;"* Floor Break
 d+2+4;th(m);35;i12~13;!;+0d;;"* Heat Engager
 
 * Unable to Heat Dash
-* Partially restores remaining Heat Time
+* Restores 150F of remaining Heat Time
 * Unbreakable
 * Opponent recovers FUFA";he;;Armor King-d+2+4;Storm Maker;;;
 f,f,F+2+4;th(h);40 (45);i10;-5;+10d;;"* Balcony Break
@@ -483,7 +483,7 @@ f,f,F+2+4;th(h);40 (45);i10;-5;+10d;;"* Balcony Break
 * Opponent left FUFT
 * Armor King recovers FUFT
 * becomes Homing in heat
-* Partially restores remaining Heat Time";bbr;FUFT;Armor King-f,f,F+2+4;Brilliant Brawler Kick;FUFT;;
+* Restores 60F of remaining Heat time";bbr;FUFT;Armor King-f,f,F+2+4;Brilliant Brawler Kick;FUFT;;
 f,hcf+1;th(h);40(45)/70,5;i10;-7;-20d (-50);;"* Throw break 1
 * Perform tech ukemi to reduce 5 damage.
 * Side switch 
@@ -494,7 +494,7 @@ f,hcf+1;th(h);40(45)/70,5;i10;-7;-20d (-50);;"* Throw break 1
 * 18F throw break window on Bluespark
 * 7F throw break window on CH Bluespark
 * BAD.1+3: i14 startup. Cannot execute blue spark variant
-* Partially restores remaining Heat time.
+* Restores 150F of remaining Heat time
 * Opponent recovers in FDFT.";;;Armor King-f,hcf+1;Double Arm Swing;;;
 f,n,d,df+1+3;t;20;i12;-3;+0;;"* 1 or 2 break depending on Armor King's input
 ** 1 for CD1+3/1+4, 2 for CD2+4/2+3 
@@ -510,7 +510,7 @@ qcb+1+2;th(h);40(45);i11;-3;+0d;;"* Balcony Break
 * Throw break 1+2
 * Opponent left FUFA
 * becomes Homing in heat
-* Partially restores remaining Heat Time";bbr;;Armor King-qcb+1+2;Hades Drop;;;
+* Restores 90F of remaining Heat time";bbr;;Armor King-qcb+1+2;Hades Drop;;;
 uf+1+2;th(h);40;i12;-6;+0d;;"* Floor Break
 * Throw break 1+2
 * Opponent left FUFA";fbr;;Armor King-uf+1+2;Armor King Driver;;;

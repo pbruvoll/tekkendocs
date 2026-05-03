@@ -37,7 +37,7 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Restores recoverable health on hit
 * Transition to attack throw on hit
 * Consumes Rage
-* Power crush 8~";rbr pc8~;;Heihachi-R.df+1+2;Mishima Style Ultimate Technique - Tempest Dragon God Fist;r39;;
+* Power crush 8~";ra rbr pc8~;;Heihachi-R.df+1+2;Mishima Style Ultimate Technique - Tempest Dragon God Fist;r39;;
 1;h;5;i10;+1;+8;;Recovers 2f faster on hit or block (t27 r17);;;Heihachi-1;Jab;r19;;File:t8-p2-heihachi-1,1,2.mp4
 1,1;h, h;5, 6;i10, i10;-5;+6;;* Jail from 1st attack with 3f delay;;;Heihachi-1,1;;r24;;File:t8-p2-heihachi-1,1,2.mp4
 1,1,2;h, h, m;5, 6, 16;i10, ,i18;-17;+19a (+9);;"* Balcony Break
@@ -270,11 +270,11 @@ f,F+2;M;22;i19~21;-16;+37a (+27);;* Tornado;trn;;Heihachi-f,F+2;Demon God Fist;r
 f,F+3;m;21;i20~22;-3c;+56a;;* Spike;spk;;Heihachi-f,F+3;Left Splits Kick;r28;;File:t8-p2-heihachi-f,f+3.mp4
 f,F+1+2;m;22;i13;-8;+22a (+12);;"* Heat Engager
 
-* Heat Dash +5, +36a (+26)
+* Heat Dash +5, +43d (+35)
 
 * Balcony Break
-* Chip damage on block
-* Gain 1 Ultimate Count on Heat activation";he bbr chp;;Heihachi-f,F+1+2;Raoh Thrust;r34;;File:t8-p2-heihachi-f,f+1+2.mp4
+* 4 chip damage on block
+* Gain 1 Ultimate Count on Heat activation";he bbr;;Heihachi-f,F+1+2;Raoh Thrust;r34;;File:t8-p2-heihachi-f,f+1+2.mp4
 f,n,d,DF+3;L;24;i33~34;-23;+28a;;* Low crush 5~28;js5~28;;Heihachi-f,n,d,DF+3;Earth Scraper Kick;r41;;File:t8-p2-heihachi-f,n,d,df+3.mp4
 f,n,d,DF+4;L;15;i16~17;-23;+8c;+28a;;;;Heihachi-f,n,d,DF+4;;r32;;File:t8-p2-heihachi-f,n,d,df+4,4,4,1.mp4
 f,n,d,DF+4,4;L, L;15, 10;i16~17, i24;-10;+3c;+26a;* +26a if previous hit connects;;;Heihachi-f,n,d,DF+4,4;;r35;;File:t8-p2-heihachi-f,n,d,df+4,4,4,1.mp4
@@ -299,11 +299,7 @@ f,n,d,df,UF;;;;;;;"* Unable to act from frames 3~27
 * Floating state 22~24";js1~21 fs22~24;;Heihachi-f,n,d,df,UF;;r27;;
 f,n,d,df:1;M;33;i19~21;-11;+26a (+16);;"* 9 chip damage on block
 * Low crush 19~40
-* Floating state 41~43";js19~40 fs41~43;;Heihachi-f,n,d,df${justFrame}1;"<div class=""dotlist"">
-
-* Omen Thunder God Fist
-* Electric Thunder God Fist
-</div>";r36;;File:t8-p2-heihachi-f,n,d,dfh1.mp4
+* Floating state 41~43";js19~40 fs41~43;;Heihachi-f,n,d,df${justFrame}1;Electric Thunder God Fist;r36;;File:t8-p2-heihachi-f,n,d,dfh1.mp4
 f,n,d,df:2;h;23;i11~12;+5;+39a (+29);;"* Chip damage on block
 * Can be performed without the d input: f,n,df#2";chp;;Heihachi-f,n,d,df${justFrame}2;Electric Wind God Fist;r24;;File:t8-p2-heihachi-f,n,d,dfh2.mp4
 f,n,d,df+1;m;30;i19~21;-15;+30a (+20);;"* Becomes Electric/Omen Thunder God Fist (f,n,df#1) during Heat, partially uses remaining Heat Time
@@ -316,11 +312,7 @@ f,n,d,df+3;m;30;i27~28;+11g;+31a (+10);;"* Tornado
 * Low crush 5~28";trn bbr chp js5~28;;Heihachi-f,n,d,df+3;Bone Splinter Kick;r38;;File:t8-p2-heihachi-f,n,d,df+3.mp4
 f,n,df:1;M;38;i19~21;-11;+25a (+15);;"* 11 chip damage on block
 * Low crush 19~40
-* Floating state 41~43";js19~40 fs41~43;;Heihachi-f,n,df${justFrame}1;"<div class=""dotlist"">
-
-* Omen Thunder God Fist
-* Electric Thunder God Fist
-</div>";r36;;
+* Floating state 41~43";js19~40 fs41~43;;Heihachi-f,n,df${justFrame}1;Omen Thunder God Fist;r36;;
 qcf+2;m;30;i14~15;-17;+18a (+8);;"* Heat Engager
 
 * Heat Dash +5, +43d (+35)
@@ -431,7 +423,8 @@ H.FUJ.1+3;t;15;i18;;+8;;"* Homing
 * Throw is unbreakable";hom;RAI;Heihachi-H.FUJ.1+3;Firestarter;r42 RAI;;
 H.d+1+2,P;t;35;i11;;;;"* Parries high or mid punches or kicks
 * Regain health on a successful parry
-* Consumes 240F? of remaining heat tiem
+* Consumes 240F? of remaining heat time
+* Throws received are unbreakable
 * Parry state 19~40";ps19~40;;Heihachi-H.d+1+2,P;Charging Hard;;;
 Left throw;t;40;;;-3d;;* Throw break 1;;;Heihachi-Left throw;Guillotine Chop;;;
 RAI.1+3;t;30;i15~16;;+0d;;"* Unbreakable

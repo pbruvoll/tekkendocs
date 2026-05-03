@@ -6,7 +6,7 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * Only deals recoverable damage
 * Cannot cause a K.O.
 * Power crush 7~16";hb pc7~16;;Azucena-2+3;Heat Burst;r30;;
-H.LIB.1,2,F;;;;+7;+54a (+34);;"* Strong Aerial Tailspin
+H.LIB.1,2,F;;;;+7;+26a;;"* Strong Aerial Tailspin
 * Consumes 210F of remaining Heat time
 * 70% scaling on combo
 * Chip damage on block
@@ -20,16 +20,16 @@ H.LIB.P (Low);m;20;i16~18;-9;+58a (+42);;"* Tornado
 * Restores 5 recoverable health on successful parry
 * is1
 * Floating state 2~48";trn is1 fs2~48;;Azucena-H.LIB.P (Low);One Drip Cielo Evitacion;r44;;
-H.LIB.d+3+4;M;27;i16~18;+4~+6;+58a (+42);;"* Tornado
+H.LIB.d+3+4;M;27;i16~18;+4~+6;+22a;;"* Tornado
 * Consumes 210F of remaining Heat time
 * Transition to FC with D
 * Floating state 2~48";trn fs2~48;FC;Azucena-H.LIB.d+3+4;One Drip Cielo;r44;;
-H.b+1,1,2,F;;;;+7;+54a (+34);;"* Strong Aerial Tailspin
+H.b+1,1,2,F;;;;+7;+26a;;"* Strong Aerial Tailspin
 * Consumes 210F of remaining Heat time
 * 70% scaling on combo
 * Chip damage on block
 * Floating state 15~33";chp fs15~33;LIB;Azucena-H.b+1,1,2,F;Double Blend Tempestad > Nuevo Libertador;r38 LIB;;
-H.b+2,F;;;;+7;+54a (+34);;"* Strong Aerial Tailspin
+H.b+2,F;;;;+7;+26a;;"* Strong Aerial Tailspin
 * Homing
 * 70% scaling on combo
 * Consumes 150F of remaining Heat time
@@ -64,7 +64,7 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Restores recoverable health on hit
 * Transition to attack throw on hit
 * Consumes Rage
-* Power crush 8~";rbr pc8~;;Azucena-R.df+1+2;Alegría del Café;r39;;
+* Power crush 8~";ra rbr pc8~;;Azucena-R.df+1+2;Alegría del Café;r39;;
 1;h;5;i10;+1;+8;;Recovers 2f faster on hit or block (t27 r17);;;Azucena-1;Jab;r19;;File:t8-p2-azucena-1,1.mp4
 1,1;h, m;5, 15;i10, i24~25;-10;+8;+18a;"* Combo from 1st hit with 1f delay
 * Transition to LIB on standing hit only
@@ -127,7 +127,7 @@ f+3,4;m, m;15, 21;i17, i24~25;-11;+8;+52a;"* Combo from 1st hit with 6f delay
 f+4;m;16;i17~18;-8;+1;;Homing;hom;;Azucena-f+4;;r28;;File:t8-p2-azucena-f+4,4.mp4
 f+4,4;m, h;16, 21;i17~18, i24~25;-7;+19a (+10);;"* Heat Engager
 
-* Heat Dash +5, +62a (+42)
+* Heat Dash +5, +43d (+35)
 
 * Balcony Break
 * Combo from 1st hit
@@ -148,7 +148,7 @@ f+1+2;h;25;i16~17;-9;+23a (+18);;"* Balcony Break
 f+3+4;;;;;;;"* Completely evades all high/low attacks
 * Cancel to r20 with DB
 * Parry state 18~";ps18~;LIB;Azucena-f+3+4;Libertador;r24 LIB;;
-f+3+4*;;;;;;;"* Regenerates heat
+f+3+4*;;;;;;;"* Restores 120F, 150F and 240F of remaining Heat time
 * Heat meter won't disappear, even if it fully depletes
 * Parry state 1~";ps1~;LIB;Azucena-f+3+4*;Shuffle Jamboree;r50 LIB;;File:t8-p2-azucena-f+3+4s.mp4
 df+1;m;11;i13~14;-3;+8;;;;;Azucena-df+1;Mid Check;r21;;File:t8-p2-azucena-df+1,4,1.mp4
@@ -364,7 +364,7 @@ LIB.1,2;h, h;14, 20;i13, i24~25;-5;+17a (+8);;"* Balcony Break
 * Cancel to BT -15 -10 r18 with B";bbr;BT;Azucena-LIB.1,2;Blend Tempestad;r32;;File:t8-p2-azucena-lib.1,2.mp4
 LIB.2;m;22;i14~15;-8;+22g;;"* Heat Engager
 
-* Heat Dash +5, +36a (+26)
+* Heat Dash +5, +43d (+35)
 
 * Balcony Break";he bbr;;Azucena-LIB.2;Golpe Cappuccino;r28;;File:t8-p2-azucena-lib.2.mp4
 LIB.3;L;15;i16~17;-9;+2;;;;BT;Azucena-LIB.3;Acerbic Low Kick;r27 BT;;File:t8-p2-azucena-lib.3.mp4
@@ -396,7 +396,7 @@ LIB.3+4;h;25;i16~17;-2;+32a;;"* Strong Aerial Tailspin
 LIB.B;;;;;;;"Completely evades high or low attacks
 * Parry state 1~";ps1~;LIB;Azucena-LIB.B;Salida Castillo;r1 LIB;;File:t8-p2-azucena-lib.b.mp4
 LIB.F;;;;;;;"* Completely evades high or low attacks
-* Regenerates heat with each step
+* Restores 30F and 60F of remaining Heat time on first and second steps, then 30F and 90F on following steps
 * Parry state 1~";ps1~;LIB;Azucena-LIB.F;Azucena Admission;r1 LIB;;File:t8-p2-azucena-lib.f.mp4
 LIB.P (High);;0;;;;;"* Restores recoverable health
 * Frame advantage depends on the move that gets parried
@@ -408,7 +408,7 @@ LIB.P (Low);m,m;15,20;i7~8 i19~20;;+8;;"* Restores recoverable health
 * Low crush 8~19
 * Floating state 20~22";is1~6 fs7 js8~19 fs20~22;LIB;Azucena-LIB.P (Low);Flush Valve Gracia;r26 LIB;;
 LIB.U;;;;;;;"* Completely evades high or low attacks
-* Regenerates heat with each step
+* Restores 30F and 60F of remaining Heat time on first and second steps, then 30F and 90F on following steps
 * Parry state 1~";ps1~;LIB;Azucena-LIB.U_D;Milagros Show;r1 LIB;;File:t8-p2-azucena-lib.u_d.mp4
 LIB.b,b;;;;;;;* Can be canceled at r20 with b+1 or uf+1, performs the same attack as uf+1;;LIB;Azucena-LIB.b,b;Caer Back Funnel;r32 LIB;;File:t8-p2-azucena-lib.b,b.mp4
 LIB.d+3;m;25;i24~26;+2;+13a;+38a;"* Balcony Break

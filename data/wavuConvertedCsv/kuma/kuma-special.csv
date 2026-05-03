@@ -8,12 +8,12 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * Power crush 7~16";hb pc7~16;;Kuma-2+3;Heat Burst;r30;;
 H.df+2+3;sm;20;i15~16;0;+39 (+29);;"* Uses 180F of remaining heat time
 * H.f,n,d,df+2 to power up (23dmg)
-* High crush 6~12";cs6~12;;Kuma-H.df+2+3;Wind Bear Fist;;;
+* High crush 6~12";cs6~12;;Kuma-H.df+2+3;Wind Bear Fist;r24;;
 H.df+2+3*;sm;26;i25~26;+5;+45 (+35);;"* Reversal Break
 * Uses 180F of remaining heat time
 * 10 chip damage on block
 * H.f,n,d,df+2* to power up (30dmg; 12 chip damage on block)
-* High crush 6~22";rbr cs6~22;;Kuma-H.df+2+3*;Fresh Wind Bear Fist;;;
+* High crush 6~22";rbr cs6~22;;Kuma-H.df+2+3*;Fresh Wind Bear Fist;r24;;
 H.2+3;M,M;51;i13~15, i45;0;+33a (+23);;"* Heat Smash
 * Balcony Break
 * 10 chip damage
@@ -27,7 +27,7 @@ R.df+1+2;M,t;55+;i20;-18;+0d;;"* Rage Art
 * Restores recoverable health on hit
 * Transition to attack throw on hit
 * Consumes Rage
-* Power crush 8~";rbr pc8~;;Kuma-R.df+1+2;Type 38 Eradication Weapon: Aramaki;r39;;
+* Power crush 8~";ra rbr pc8~;;Kuma-R.df+1+2;Type 38 Eradication Weapon: Aramaki;r39;;
 1;h;5;i10;+1;+8;;Recovers 2f faster on hit or block (t27 r17);;;Kuma-1;Jab;r19;;File:t8-p2-kuma-1,1,1.mp4
 1,1;h, m;5, 8;i10, i22~23;-15;-4c;;"* Combo from 1st hit CH with 2F delay
 * Move can be delayed by 3F";;;Kuma-1,1;;;;File:t8-p2-kuma-1,1,1.mp4
@@ -49,6 +49,8 @@ R.df+1+2;M,t;55+;i20;-18;+0d;;"* Rage Art
 4;h;20;i14;-6;+5;+30a;* Balcony Break on CH;;;Kuma-4;;;;
 1+2;m;25;i13~14;-13;+18g;;"* Balcony Break
 * Heat Engager
+
+* Heat Dash +5, +43d (+35)
 
 * Forces crouch on hit";bbr he;;Kuma-1+2;Demon Bear Breath;r31;;File:t8-p2-kuma-1+2.mp4
 3+4;sp;;;;;;"* Alternate input: FDFA.3+4
@@ -169,12 +171,14 @@ b+2,2,1;m, m, m;12, 15, 25;i15, ,i35~39;-15;+25a (+15);;"* Tornado
 * Move can be delayed by 15F
 * Low crush 38~58
 * Floating state 59~61";trn js38~58 fs59~61;;Kuma-b+2,2,1;Salmon Massacre;r35;;File:t8-p2-kuma-b+2,2,1.mp4
-b+1+2;h,m;10,20;i18~19 i12~13;-8;+13d;;"* Balcony Break
-* Heat Engager
+b+1+2;h,m;10,20;i18~19 i12~13;-8;+13d;;"* Heat Engager
 
+* Heat Dash +5, +43d (+35)
+
+* Balcony Break
 * Homing
 * 12 chip damage
-* Transition to HBS r36 with input D or 3+4 (does not shift when using Heat Dash)";bbr he hom;HBS;Kuma-b+1+2;Bear X;r36;;File:t8-p2-kuma-b+1+2.mp4
+* Transition to HBS r36 with input D or 3+4 (does not shift when using Heat Dash)";he bbr hom;HBS;Kuma-b+1+2;Bear X;r36;;File:t8-p2-kuma-b+1+2.mp4
 b+1+4;m!;25;i60~62;;+16a/+21a HBS;;* Transition to HBS with input D or 3+4;;HBS;Kuma-b+1+4;Deadly Claw;;;File:t8-p2-kuma-b+1+4.mp4
 b+1+4,f,f;SM;40;i55~i130;-20~+55;+42a~+117a;;"* Projectile
 * Hold F to extend attack
@@ -231,7 +235,7 @@ f,F+1+2;M;30;i37~38;+8 HBS;+52a HBS;;"* 9 chip damage on block
 qcf+2;m;15;i17~18;-8;+3;;;;;Kuma-qcf+2;;;;File:t8-p2-kuma-qcf+2,1.mp4
 qcf+2,1;m, m;15, 25;i17~18, i27;-10;+33a (+7);;"* Heat Engager
 
-* Heat Dash +36a (+26)
+* Heat Dash +5, +36a (+26)
 
 * Balcony Break
 * Combos from 1st hit";he bbr;;Kuma-qcf+2,1;Grizzly Claws;;;File:t8-p2-kuma-qcf+2,1.mp4
@@ -242,6 +246,8 @@ f,f,F+3;m;30;i22~23;+6;+13a (+3);;"* Balcony Break
 * Floating state 26~28";bbr chp js3~25 fs26~28;;Kuma-f,f,F+3;Leaping Side Kick;;;File:t8-p2-kuma-f,f,f+3.mp4
 f,f,F+1+2;m;30;i20~24;+3;+9c;;"* Balcony Break
 * Heat Engager
+
+* Heat Dash +5, +36a (+26)
 
 * 9 chip damage on block
 * Transition to HBS with D or 3+4 (+3/+9c; does not shift when using Heat Dash)
@@ -329,7 +335,7 @@ HBS.1+2;M;24;i19~22;-15;+79a;;"* Tornado
 * High crush 1~18";trn cs1~18;;Kuma-HBS.1+2;Bear Fling;r33;;File:t8-p2-kuma-hbs.1+2.mp4
 HBS.3+4;M;21;i20~24;-14;+9a (-1);;"* Heat Engager
 
-* Heat Dash +43d (+35)
+* Heat Dash +5, +43d (+35)
 
 * Balcony Break
 * Panda: Decreased attack range and height hitbox (does not hit as deep)
@@ -372,6 +378,7 @@ OTG.d+1+4;l,ub(l);16 (11),48 (33);i55~110,i25~38;N/A;8 (0) / +14;;"* Cancel to B
 * More frame advantage when hitting standing opponent";;BT;Kuma-OTG.d+1+4;Dance With Me;;;
 ROL.1;h;31;i15~16;+4;+35d (+27);;"* Balcony Break
 * Tornado
+* Guard Break during Heat
 * Power up during Heat: +13 on block guard break (Uses 240F of remaining Heat time)";bbr trn;;Kuma-ROL.1;Bear Shove;;;File:t8-p2-kuma-rol.1.mp4
 ROL.2;m;21;i17~19;-17;+28a (+18);;;;;Kuma-ROL.2;Bear Backhand;;;File:t8-p2-kuma-rol.2.mp4
 ROL.3;l;20;i18~26;-18;+33a;;Recovers in FUFT;;FUFT;Kuma-ROL.3;Bear Slide;FUFT;;File:t8-p2-kuma-rol.3.mp4

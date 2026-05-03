@@ -11,11 +11,11 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * Floating state 12~20
 * Low crush 21~29
 * Floating state 30~32";hb pc7~62 On cancel: fs12~20 js21~29 fs30~32;;Yoshimitsu-2+3;Heat Burst;r30;;
-H.DGF.1;M;26;i30~31;+2;+46a;;"* Floor Break
+H.DGF.1;M;26;i30~31;+2;+30d;+46a;"* Floor Break
 * Weapon
 * 13 chip damage on block
 * Recovers 1 base health or 6 additional recoverable health on hit
-* Consumes 90F of remaining Heat time
+* Consumes 240F of remaining Heat time
 * Low crush 1~27";fbr wpn js1~27;;Yoshimitsu-H.DGF.1;Dragonfly Blade (Heat);r29;;
 H.DGF.f+1+2;h,h,h;10,10,20;i16~17 i11~12 i11~12;+4;+18a (+9);;"* Homing
 * Balcony Break
@@ -45,7 +45,7 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Restores recoverable health on hit
 * Transition to attack throw on hit
 * Consumes Rage
-* Power crush 8~";rbr pc8~;;Yoshimitsu-R.df+1+2;Trailokya Pilgrimage;r39 1SS;;
+* Power crush 8~";ra rbr pc8~;;Yoshimitsu-R.df+1+2;Trailokya Pilgrimage;r39 1SS;;
 1;h;5;i10;+1;+8;;Recovers 2f faster on hit or block (t27 r17);;;Yoshimitsu-1;Jab;r19;;File:t8-p2-yoshimitsu-1,1.mp4
 1,1;h, m;5, 19;i10, i23;-9;+4c;;"* Floor Break
 * Weapon
@@ -122,7 +122,7 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Recovers 1 base health when remaining recoverable health is 5 or less";bbr wpn;;Yoshimitsu-3,2,NSS.1+2;Enma's Soul Blade;r34 1SS;;File:t8-p2-yoshimitsu-3,2,nss.1+2.mp4
 3,NSS.1;m, h;12, 22;i15~16, i22~24;+7;+18g;;"* Heat Engager
 
-* Heat Dash +5g, +62a (+42)
+* Heat Dash +5, +62a (+42)
 
 * Balcony Break
 * Weapon
@@ -411,7 +411,7 @@ b+2,1;m, M;12, 20;i14~15, i27~28;-17;+28a (+18);;"* Weapon
 * Floating state 50~52";wpn js28~49 fs50~52;KIN;Yoshimitsu-b+2,1;Oma Gehosen;r41;;File:t8-p2-yoshimitsu-b+2,1.mp4
 b+2,2;m, h;12, 21;i14~15, i22~23;-9;+2a;;"* Heat Engager
 
-* Heat Dash +5, +36a (+26)
+* Heat Dash +5, +43d (+35)
 
 * Weapon
 * Combo from 1st with 1f delay
@@ -424,7 +424,7 @@ b+2,NSS.1;m, m;12, 17;i14~15, i27~28;-17;+28a (+18);;"* Enter KIN r30 with 1+2
 * Floating state 50~52";js28~49 fs50~52;KIN,NSS;Yoshimitsu-b+2,NSS.1;;r41 NSS;;
 b+2,NSS.2;m, h;12, 18;i14~15, i22~23;-9;+0;;"* Heat Engager
 
-* Heat Dash +5g, +36a (+26)
+* Heat Dash +5, +43d (+35)
 
 * Combo from 1st with 1f delay
 * Combo from 1st CH with 7f delay
@@ -756,7 +756,7 @@ DGF.3;L;18;i22~23;-13;+6c;+28a;"Airborne attack, can't be low parried
 * Low crush 1~18";js1~18;;Yoshimitsu-DGF.3;Dragonfly Sweep;r31;;File:t8-p2-yoshimitsu-dgf.3.mp4
 DGF.4;m;24;i18~20;-4;+14g;;"* Heat Engager
 
-* Heat Dash +5g, +62a (+42)
+* Heat Dash +5, +62a (+42)
 
 * Balcony Break
 * Low crush 1~19";he bbr js1~19;;Yoshimitsu-DGF.4;Dragonfly Twister;r27;;File:t8-p2-yoshimitsu-dgf.4.mp4
@@ -969,7 +969,7 @@ KIN.f+1*;M,M,M,M,M,M;6,6,6,6,6,10;i19~20 i6~7 i7~8 i6~7 i7~8 i7~8;-12;+29a (+14)
 * Powers in NSS or Heat";wpn;;Yoshimitsu-KIN.f+1*;Submission Chakram (Hold);r35 1SS;;
 KIN.f+2;h;25;i12~13;-1;+9a (+0);;"* Heat Engager
 
-* Heat Dash +5g, +34a (+27)
+* Heat Dash +5, +43d (+35)
 
 * Homing
 * Balcony Break
@@ -1084,7 +1084,7 @@ NSS.f,n,d,df+1;m;19;i17~18;-17;+35a (+25a);;"* Weapon
 * Floating state 40~42";wpn js17~39 fs40~42;KIN,NSS;Yoshimitsu-NSS.f,n,d,df+1;Moonlight;r41 NSS;;
 NSS.f+1+2;M;29;i20;-7;+29a (+3);;"* Heat Engager
 
-* Heat Dash +5g, +62a (+42)
+* Heat Dash +5, +62a (+42)
 
 * Balcony Break
 * Weapon
