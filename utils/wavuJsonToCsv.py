@@ -76,7 +76,7 @@ def generateVideoLink(move) :
         return
     if move["id"].startswith("Anna-df+3,2,1,2,4") and move["id"] != "Anna-df+3,2,1,2,4,1,2,2,3+4,2":
         return
-    move["video"] = "t8-p2-" + move["id"].replace(" ", "-").replace("*", "x").replace(":", "j").lower() + ".mp4"
+    move["video"] = "t8-p2-" + move["id"].replace(" ", "-").replace("*", "x").replace(":", "j").replace("(", "").replace(")", "").lower() + ".mp4"
 
 def correctMove(move, charName) : 
     input = move["input"]
@@ -140,7 +140,7 @@ def convert(filePath, outDir):
     f.close()
     csvContent = [list(map(lambda x: x["displayName"], columns))];
     for move in jsonData :
-        if charName == "miary-zo" or charName == "fahkumram" or charName == "anna" : 
+        if charName == "miary-zo" or charName == "fahkumram" or charName == "anna" or charName == "armor-king" : 
             generateVideoLink(move)    
     for move in jsonData :
         fillMissingVideoFromExtendedInput(move, jsonData)

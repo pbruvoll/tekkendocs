@@ -13,7 +13,7 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Restores recoverable health on hit
 * Transition to attack throw on hit
 * Consumes Rage
-* Power crush 8~";rbr pc8~;;Zafina-R.df+1+2;Semper Avarus Eget;r39;;
+* Power crush 8~";ra rbr pc8~;;Zafina-R.df+1+2;Semper Avarus Eget;r39;;
 1;h;5;i10;+1;+8;;Recovers 2f faster on hit or block (t27 r17);;;Zafina-1;Jab;r19;;File:t8-p2-zafina-1,2.mp4
 1,2;h, h;5, 9;i10, i12;-3;+8;;Jail from 1st attack;;;Zafina-1,2;Left Right Combo;r22;;File:t8-p2-zafina-1,2.mp4
 1,2,3;h, h, h;5, 9, 12;i10, ,i20;0;+9;;"* Combo from 2nd hit CH with 8f delay
@@ -82,7 +82,6 @@ f+1+2;m,m;16,22;i19~20 i13~14;-9;+5a (-5);;"* Heat Engager
 df+1;m;10;i13~14;-5;+7;;;;;Zafina-df+1;;r22;;File:t8-p2-zafina-df+1,2,1.mp4
 df+1,2;m, m;10, 16;i13~14, i15~16;-13;+3;;* Combo from 1st hit with 3f delay;;;Zafina-df+1,2;;r36;;File:t8-p2-zafina-df+1,2,1.mp4
 df+1,2,1;m, m, m;10, 16, 16;i13~14, ,i25;-12;+7;;"* Combo from 2nd hit CH with 12f delay
-* Interrupt with i1 from 2nd block
 * Transition to standing with B (-12/+4)";;SCR;Zafina-df+1,2,1;Bloody Saif - Execution;SCR;;File:t8-p2-zafina-df+1,2,1.mp4
 df+1,2,1+2;m, m, sm;10, 16, 10,10 (7),20 (10);i13~14, ,i37;-9;+17a (+16);;"* Balcony Break
 * Weapon
@@ -106,7 +105,7 @@ df+3,d+4;m, L;15, 15;i15~16, i25~26;-14;+1c;;"Combo from 1st hit
 df+4;m;14;i13;-13;+3;;;;;Zafina-df+4;;r32;;File:t8-p2-zafina-df+4,1.mp4
 df+4,1;m, m;14, 22;i13, i31;-9;+3a;;"* Heat Engager
 
-* Heat Dash +5, +43a (+35)
+* Heat Dash +5, +43d (+35)
 
 * Balcony Break
 * Spike
@@ -187,7 +186,7 @@ b+1:ORB.1+2;m, t;14, 19,10,16;i18, ;;+0d;;"* Consumes ORB
 * Consumes 180F of remaining Heat time
 * Azazel's Power
 * Deals (5) 8 recoverable damage to Zafina without Heat
-* Deals 5 additional damage when Zafina's remaining health is 42 or lower
+* Deals 5 additional damage when Zafina's remaining health is below 48
 * Available only from 1st front hit";;;Zafina-b+1:ORB.1+2;Anathematic Claw;;;
 b+1+3;;;;;+12d;;"* Zafina automatically retaliates on a successful parry
 * Deal 8 recoverable damage to self without Heat
@@ -204,11 +203,11 @@ b+3;m;23;i24~26;-14;+12a;;"* Balcony Break
 b+3,ORB.1+2;m;13,8,(20)14;i24~26;-9;-14a (-15);;"* Balcony Break
 * Consumes ORB
 * Consumes 240F of remaining Heat time
-* Deals 3 additional damage when Zafina's remaining health is below 43
+* Deals 3 additional damage when Zafina's remaining health is below 48
 * 8 chip damage on block
-** 13 chip damage on block when Zafina's remaining health is below 43
+** 13 chip damage on block when Zafina's remaining health is below 48
 * -9 frame advantage and 17 chip damage on block after absorbing an attack in power crush state
-** 22 chip damage when Zafina's remaining health is below 43
+** 22 chip damage when Zafina's remaining health is below 48
 * Available only on hit or block
 * Power crush 7~23";bbr pc7~23;;Zafina-b+3,ORB.1+2;Anathematic Stomp;;;
 b+4;m;14;i22~23;-9;+4;;;;;Zafina-b+4;;r32;;File:t8-p2-zafina-b+4,4.mp4
@@ -226,9 +225,9 @@ b+1+2,ORB.1+2;m;17,5,15;i19~20;+2;+10a (-16);;"* Balcony Break
 * Consumes ORB
 * Consumes 240F of remaining Heat time
 * Azazel's Power
-* Deals 5 additional damage when Zafina's remaining health is 42 or lower
+* Deals 5 additional damage when Zafina's remaining health is below 48
 * 8 chip damage on block
-** Deals 13 chip damage on block when Zafina's remaining health is 42 or lower
+** Deals 13 chip damage on block when Zafina's remaining health is below 48
 * Available only on hit or block";bbr;;Zafina-b+1+2,ORB.1+2;Anathematic Razer;;;
 ub+3;m;19;i22~23;-17;-6;;"* Balcony break on airborne hit
 * Low crush 8~31
@@ -348,12 +347,12 @@ MNT.uf+3;M;25;i26~28;-9c;+11d;;"* Spike
 * Low crush 7~23
 * Floating state 24~26
 * High crush 27~50";spk js7~23 fs24~26 cs27~50;MNT,FC;Zafina-MNT.uf+3;Enki;r37 FC;;
-ORB.SCR.df+3+4;L,m,m,sm;6,15,3,10;i19;-14;-13a (-14);;"* Transition to 3rd hit on 2nd hit
+ORB.SCR.df+3+4;L,m,m,sm;6,13,3,10;i19;-14;-13a (-14);;"* Transition to 3rd hit on 2nd hit
 * Consumes ORB
 * Consumes 450F of Heat time
-* Deals 5 additional damage when Zafina's remaining health is 42 or lower
+* Deals 4 additional damage when Zafina's remaining health is below 48
 * 4 chip damage on block
-** Deals 6 chip damage on block when Zafina's remaining health is 42 or lower
+** Deals 6 chip damage on block when Zafina's remaining health is below 48
 * High crush 6~";cs6~;3rd;Zafina-ORB.SCR.df+3+4;Anathematic Malice;;;File:Zafina SCR Heat Smash.mp4
 SCR.1;h;12;i10~11;-2;+9;;;;SCR;Zafina-SCR.1;;r20 SCR;;File:t8-p2-zafina-scr.1,4.mp4
 SCR.1,4;h, m;12, 18;i10~11, i22;-6;+7;+32a;"* Spike
@@ -362,7 +361,7 @@ SCR.1,4;h, m;12, 18;i10~11, i22;-6;+7;+32a;"* Spike
 SCR.2;m;17;i14;-7;+7;;;;SCR;Zafina-SCR.2;;r28 SCR;;File:t8-p2-zafina-scr.2,1.mp4
 SCR.2,1;m, m;17, 25;i14, i21;-6;+30a (+20);;"* Heat Engager
 
-* Heat Dash +5, +36a (+26)
+* Heat Dash +5, +43d (+35)
 
 * Balcony Break
 * Weapon
@@ -434,7 +433,7 @@ TRT.1+2;m,M;7,20;i19~20 i9~10;-12c;+14a;;"* Balcony Break on airborne hit
 * Floating state 25~27";hom js7~24 fs25~27;;Zafina-TRT.1+2;Tarantula Claw;r68;;File:t8-p2-zafina-trt.1+2.mp4
 TRT.df+1;M;30;i19~20;+6;+30a (+15);;"* Heat Engager
 
-* Heat Dash +5, +35a (+27)
+* Heat Dash +5, +43d (+35)
 
 * Balcony Break
 * Weapon

@@ -25,6 +25,8 @@ export const videoFileNameFromMove = (move: MoveT8): string => {
     .pop()
     ?.toLowerCase()
     .replace(/ /g, '-')
+    .replace(/\(/g, '')
+    .replace(/\)/g, '')
     .replace(/\*/g, 'x')
     .replace(/:/g, 'j')
     .replace(/#/g, 'j')}.mp4`;
