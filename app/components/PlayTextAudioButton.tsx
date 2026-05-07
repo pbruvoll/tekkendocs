@@ -1,7 +1,8 @@
 import cx from 'classix';
 import { Square, Volume2 } from 'lucide-react';
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { Button } from '@/components/ui/button';
+import { normalizeSpeechText } from '~/utils/speechUtils';
 
 type PlayTextAudioButtonProps = {
   text: string;
@@ -15,14 +16,7 @@ export const PlayTextAudioButton = ({
   const [isPlaying, setIsPlaying] = useState(false);
   const [isSupported, setIsSupported] = useState(false);
   const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
-  const normalizedText = useMemo(
-    () =>
-      text
-        .replace(/,(?=\S)/g, ', ')
-        .replace(/\s+/g, ' ')
-        .trim(),
-    [text],
-  );
+  const hasText = text.trim().length > 0;
 
   const stopSpeech = useCallback(() => {
     window.speechSynthesis.cancel();
@@ -31,7 +25,7 @@ export const PlayTextAudioButton = ({
   }, []);
 
   const handleClick = () => {
-    if (!isSupported || !normalizedText) {
+    if (!isSupported || !hasText) {
       return;
     }
 
@@ -41,6 +35,10 @@ export const PlayTextAudioButton = ({
     }
 
     window.speechSynthesis.cancel();
+    const normalizedText = normalizeSpeechText(text);
+    if (!normalizedText) {
+      return;
+    }
 
     const utterance = new SpeechSynthesisUtterance(normalizedText);
     utterance.lang = document.documentElement.lang || 'en-US';
@@ -79,7 +77,7 @@ export const PlayTextAudioButton = ({
       type="button"
       variant="outline"
       onClick={handleClick}
-      disabled={!isSupported || !normalizedText}
+      disabled={!isSupported || !hasText}
       className={cx(
         'h-7 w-7 rounded-full border-2 border-border p-0 text-muted-foreground',
         isPlaying
