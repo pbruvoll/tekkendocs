@@ -190,7 +190,7 @@ export const characterGuideAuthors: Record<
     law: { author: 'Landon D', version: 'S2' },
     lee: { author: 'Super Akouma', version: 'S2' },
     leroy: { author: 'SYRAXSLAYER', version: 'S2' },
-    lidia: { author: 'Leemishima', version: 'S2' },
+    lidia: { author: 'Leemishima', version: 'S3' },
     lili: { author: 'DewGlider', version: 'S2' },
     nina: { author: 'Lalo', version: 'S3' },
     raven: { author: 'JacobKaas', version: 'S3' },
