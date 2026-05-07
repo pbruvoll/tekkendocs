@@ -1,2 +1,2 @@
 export const normalizeSpeechText = (text: string) =>
-  text.replace(/(?<=\d)\s*,\s*(?=\d)/g, ' ')
+  text.replace(/(?<=\d)\s*,\s*(?=\d)/g, ' ');
