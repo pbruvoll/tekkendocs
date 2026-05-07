@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Commands } from '~/components/Commands';
 import { MoveVideo } from '~/components/MoveVideo';
+import { PlayTextAudioButton } from '~/components/PlayTextAudioButton';
 import { TextWithCommand } from '~/components/TextWithCommand';
 import { type Move } from '~/types/Move';
 import { compressCommand } from '~/utils/commandUtils';
@@ -26,6 +27,7 @@ export const KeyMoves = ({ moves, title }: KeyMovesProps) => {
         <section key={command} className="my-2 mb-4">
           <KeyMoveHeading
             command={command}
+            description={description}
             compressedCommandMap={compressedCommandMap}
             charUrl={charUrl}
           />
@@ -48,10 +50,12 @@ export const KeyMoves = ({ moves, title }: KeyMovesProps) => {
 
 const KeyMoveHeading = ({
   command,
+  description,
   compressedCommandMap,
   charUrl,
 }: {
   command: string;
+  description?: string;
   compressedCommandMap: Record<string, Move>;
   charUrl: string;
 }) => {
@@ -84,6 +88,9 @@ const KeyMoveHeading = ({
             showVideo={showVideo}
             setShowVideo={setShowVideo}
           />
+        )}
+        {description && (
+          <PlayTextAudioButton text={description} className="ml-auto" />
         )}
       </div>
       <AnimatePresence>
