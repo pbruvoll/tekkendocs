@@ -1,10 +1,9 @@
 import { AnimatePresence, motion } from 'motion/react';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import {
-  data,
   Link,
   type MetaFunction,
-  useLoaderData,
+  useRouteLoaderData,
   useSearchParams,
 } from 'react-router';
 import { Button } from '@/components/ui/button';
@@ -15,23 +14,18 @@ import { MovePropertyTagList } from '~/components/MovePropertyTagList';
 import { MoveVideo } from '~/components/MoveVideo';
 import { ShowNotes } from '~/components/ShowNotes';
 import { characterInfoT8List } from '~/constants/characterInfoListT8';
-import { environment } from '~/constants/environment.server';
 import { hitLevelValue } from '~/constants/filterConstants';
 import { MoveTags } from '~/constants/moveTags';
 import { useAppState } from '~/hooks/useAppState';
 import tekkenDocsLogoIcon from '~/images/logo/tekkendocs-logo-icon.svg';
-import { SheetServiceMock } from '~/mock/SheetServiceMock';
-import { SheetServiceImpl } from '~/services/sheetServiceImpl.server';
 import { type Move } from '~/types/Move';
-import { type SheetService } from '~/types/SheetService';
-import { frameDataTableToJson } from '~/utils/frameDataUtils';
-import { getCacheControlHeaders } from '~/utils/headerUtils';
 import {
   charIdFromMove,
   commandToUrlSegmentEncoded,
   isWavuMove,
 } from '~/utils/moveUtils';
 import { generateMetaTags } from '~/utils/seoUtils';
+import { type LoaderData } from './_mainLayout.t8_._allFrameData';
 import { rankGroups } from './_mainLayout.t8_.ranks';
 
 const questionsPerDay = 10;
@@ -116,10 +110,6 @@ const answerLabelByBucket = answerOptions.reduce<Record<AnswerBucket, string>>(
     minusFifteenOrLess: '',
   },
 );
-
-type LoaderData = {
-  moves: Move[];
-};
 
 const hasVisibleProperties = (move: Move): boolean => {
   return Object.keys(move.tags || {}).length > 0;
@@ -281,30 +271,6 @@ export const meta: MetaFunction = ({ matches }) => {
   });
 };
 
-export const loader = async () => {
-  const game = 'T8' as const;
-  const service: SheetService = environment.useMockData
-    ? new SheetServiceMock()
-    : new SheetServiceImpl();
-
-  const sheetData = await service.getCharacterData(
-    game,
-    'mokujin',
-    'frameData',
-  );
-  const normalMoves = sheetData.tables.find(
-    (table) => table.name === 'frames_normal',
-  );
-  const moves = normalMoves ? frameDataTableToJson(normalMoves) : [];
-
-  return data<LoaderData>(
-    { moves },
-    {
-      headers: getCacheControlHeaders({ seconds: 60 * 5 }),
-    },
-  );
-};
-
 const parseBlockValue = (block: string): number | null => {
   const direct = Number.parseInt(block, 10);
   if (!Number.isNaN(direct)) {
@@ -452,7 +418,9 @@ const keepMostRecentDays = <T,>(
 export default function DailyChallenge() {
   const now = new Date();
   const showRetryButton = useSearchParams()[0].get('retry') !== null;
-  const { moves } = useLoaderData<typeof loader>();
+  const { moves } = useRouteLoaderData<LoaderData>(
+    'routes/_mainLayout.t8_._allFrameData',
+  ) || { moves: [] };
   const [appState, setAppState, isAppStateHydrated] = useAppState();
   const [todayKey] = useState<string>(() => formatLocalDateKey(now));
   const [todayDisplayDate] = useState<string>(() =>
