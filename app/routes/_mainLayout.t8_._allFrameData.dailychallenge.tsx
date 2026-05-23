@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ContentContainer } from '~/components/ContentContainer';
 import { MoveVideo } from '~/components/MoveVideo';
+import { t8Ranks } from '~/constants/t8Ranks';
 import { AnswerDetailsCard } from '~/features/frameQuiz/components/AnswerDetailsCard';
 import { QuestionFeedbackCard } from '~/features/frameQuiz/components/QuestionFeedbackCard';
 import {
@@ -35,12 +36,11 @@ import {
 } from '~/utils/moveUtils';
 import { generateMetaTags } from '~/utils/seoUtils';
 import { type LoaderData } from './_mainLayout.t8_._allFrameData';
-import { rankGroups } from './_mainLayout.t8_.ranks';
 
 const questionsPerDay = 10;
 const maxStoredDailyChallengeDays = 30;
 
-const allRanks = rankGroups.flatMap((group) => group.ranks);
+const allRanks = t8Ranks;
 
 // Explicit score-to-image table for quick remapping.
 const rankImageByScore: Record<number, string> = {

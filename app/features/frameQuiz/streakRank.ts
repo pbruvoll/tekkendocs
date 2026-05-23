@@ -1,4 +1,4 @@
-import { rankGroups } from '~/routes/_mainLayout.t8_.ranks';
+import { t8Ranks } from '~/constants/t8Ranks';
 
 type FrameQuizRank = {
   image: string;
@@ -8,10 +8,10 @@ type FrameQuizRank = {
 const isNonEmptyArray = <T>(array: T[]): array is [T, ...T[]] =>
   array.length > 0;
 
-const allRanksRaw = rankGroups.flatMap((group) => group.ranks);
+const allRanksRaw = t8Ranks.map(({ image, name }) => ({ image, name }));
 
 if (!isNonEmptyArray(allRanksRaw)) {
-  throw new Error('Expected rankGroups to contain at least one rank.');
+  throw new Error('Expected t8Ranks to contain at least one rank.');
 }
 
 const allRanks: [FrameQuizRank, ...FrameQuizRank[]] = allRanksRaw;
