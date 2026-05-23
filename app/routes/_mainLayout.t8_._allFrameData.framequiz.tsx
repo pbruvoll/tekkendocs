@@ -40,7 +40,7 @@ export const meta: MetaFunction = ({ matches }) => {
     title: 'Tekken 8 Endless Frame Quiz | TekkenDocs',
     description:
       'Endless frame data quiz. Guess the block frame and see how many you can get right in a row!',
-    image: { url: '/images/tekkendocs-og-image-v2.png' },
+    image: { url: '/t8/pages/framequiz.png' },
     url: '/t8/framequiz',
   });
 };
