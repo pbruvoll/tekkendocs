@@ -3,11 +3,11 @@ import { Fragment } from 'react/jsx-runtime';
 import { Link, type MetaFunction } from 'react-router';
 import { ContentContainer } from '~/components/ContentContainer';
 import { TrophyProgress } from '~/components/TrophyProgress';
+import { t8Ranks } from '~/constants/t8Ranks';
 import { useAppState } from '~/hooks/useAppState';
 import { commandToUrlSegmentEncoded } from '~/utils/moveUtils';
 import { generateMetaTags } from '~/utils/seoUtils';
 import { t8AvatarMap } from '~/utils/t8AvatarMap';
-import { rankGroups } from './_mainLayout.t8_.ranks';
 
 type LowReactionMove = {
   characterId: string;
@@ -206,7 +206,7 @@ export default function () {
   const [appState, setAppState] = useAppState();
   const completedLowBlock = appState.reactChallenge.completedLowBlocks;
 
-  const ranks = rankGroups.flatMap((rg) => rg.ranks);
+  const ranks = t8Ranks;
 
   const numCompleted = lowReactionMoves.filter((m) => {
     const moveId = `${m.characterId}-${m.moveCommand}`;
