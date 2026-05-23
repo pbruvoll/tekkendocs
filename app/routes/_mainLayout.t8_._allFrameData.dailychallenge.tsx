@@ -1,7 +1,5 @@
-import { AnimatePresence, motion } from 'motion/react';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import {
-  Link,
   type MetaFunction,
   useRouteLoaderData,
   useSearchParams,
@@ -9,16 +7,27 @@ import {
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ContentContainer } from '~/components/ContentContainer';
-import { MovePropertyIconList } from '~/components/MovePropertyIconList';
-import { MovePropertyTagList } from '~/components/MovePropertyTagList';
 import { MoveVideo } from '~/components/MoveVideo';
-import { ShowNotes } from '~/components/ShowNotes';
-import { characterInfoT8List } from '~/constants/characterInfoListT8';
-import { hitLevelValue } from '~/constants/filterConstants';
-import { MoveTags } from '~/constants/moveTags';
+import { AnswerDetailsCard } from '~/features/frameQuiz/components/AnswerDetailsCard';
+import { QuestionFeedbackCard } from '~/features/frameQuiz/components/QuestionFeedbackCard';
+import {
+  answerLabelByBucket,
+  answerOptions,
+} from '~/features/frameQuiz/constants';
+import {
+  getAnswerBucket,
+  getEligibleQuizMoves,
+  getMoveCharacterDisplayName,
+} from '~/features/frameQuiz/moveSelection';
+import { deterministicSample } from '~/features/frameQuiz/random';
+import {
+  type AnswerBucket,
+  type PendingAdvance,
+  type QuestionFeedback,
+  type SessionAnswer,
+} from '~/features/frameQuiz/types';
 import { useAppState } from '~/hooks/useAppState';
 import tekkenDocsLogoIcon from '~/images/logo/tekkendocs-logo-icon.svg';
-import { type Move } from '~/types/Move';
 import {
   charIdFromMove,
   commandToUrlSegmentEncoded,
@@ -30,55 +39,6 @@ import { rankGroups } from './_mainLayout.t8_.ranks';
 
 const questionsPerDay = 10;
 const maxStoredDailyChallengeDays = 30;
-
-type DailyMove = {
-  id: string;
-  move: Move;
-  blockValue: number;
-};
-
-type AnswerBucket =
-  | 'plus'
-  | 'zeroToMinusNine'
-  | 'minusTenToMinusEleven'
-  | 'minusTwelveToMinusFourteen'
-  | 'minusFifteenOrLess';
-
-type AnswerOption = {
-  bucket: AnswerBucket;
-  label: string;
-};
-
-type SessionAnswer = {
-  moveId: string;
-  characterName: string;
-  command: string;
-  rawBlock: string;
-  selectedBucket: AnswerBucket;
-  correctBucket: AnswerBucket;
-  selectedLabel: string;
-  correctLabel: string;
-  isCorrect: boolean;
-};
-
-type QuestionFeedback = {
-  isCorrect: boolean;
-  selectedLabel: string;
-  correctBlockValue: string;
-};
-
-type PendingAdvance = {
-  score: number;
-  answers: SessionAnswer[];
-};
-
-const answerOptions: AnswerOption[] = [
-  { bucket: 'plus', label: '+1 or more' },
-  { bucket: 'zeroToMinusNine', label: '0 to -9' },
-  { bucket: 'minusTenToMinusEleven', label: '-10 to -11' },
-  { bucket: 'minusTwelveToMinusFourteen', label: '-12 to -14' },
-  { bucket: 'minusFifteenOrLess', label: '-15 or more' },
-];
 
 const allRanks = rankGroups.flatMap((group) => group.ranks);
 
@@ -97,169 +57,6 @@ const rankImageByScore: Record<number, string> = {
   10: allRanks[allRanks.length - 1]?.image || '',
 };
 
-const answerLabelByBucket = answerOptions.reduce<Record<AnswerBucket, string>>(
-  (current, option) => {
-    current[option.bucket] = option.label;
-    return current;
-  },
-  {
-    plus: '',
-    zeroToMinusNine: '',
-    minusTenToMinusEleven: '',
-    minusTwelveToMinusFourteen: '',
-    minusFifteenOrLess: '',
-  },
-);
-
-const hasVisibleProperties = (move: Move): boolean => {
-  return Object.keys(move.tags || {}).length > 0;
-};
-
-type AnswerDetailsCardProps = {
-  answer: SessionAnswer;
-  index: number;
-  move?: Move;
-  answerMoveHref: string | null;
-};
-
-const AnswerDetailsCard = ({
-  answer,
-  index,
-  move,
-  answerMoveHref,
-}: AnswerDetailsCardProps) => {
-  const [showNotes, setShowNotes] = useState(false);
-  const [showVideo, setShowVideo] = useState(false);
-  const moveHasVideo = Boolean(move && (move.video || move.ytVideo));
-  const moveHasVisibleProperties = move ? hasVisibleProperties(move) : false;
-
-  return (
-    <div
-      id={`answer-details-${index + 1}`}
-      className="scroll-mt-24 rounded border p-3"
-    >
-      <p className="font-medium">
-        Q{index + 1}: {answer.characterName}:{' '}
-        {answerMoveHref ? (
-          <Link className="text-primary" to={answerMoveHref}>
-            {answer.command}
-          </Link>
-        ) : (
-          answer.command
-        )}
-      </p>
-      <div className="mt-2 flex flex-wrap items-start gap-2 text-sm">
-        <div className="rounded-md bg-muted/60 px-2 py-1">
-          <p className="text-[11px] text-muted-foreground">You picked</p>
-          <p className="font-medium">{answer.selectedLabel}</p>
-        </div>
-        <div className="rounded-md bg-muted/60 px-2 py-1">
-          <p className="text-[11px] text-muted-foreground">Correct</p>
-          <p className="font-medium">{answer.rawBlock}</p>
-        </div>
-        <div
-          className={`inline-flex min-h-11 items-center rounded-md px-2.5 py-1 font-medium ${
-            answer.isCorrect
-              ? 'bg-foreground-success/10 text-foreground-success'
-              : 'bg-foreground-destructive/10 text-foreground-destructive'
-          }`}
-        >
-          {answer.isCorrect ? 'Correct' : 'Wrong'}
-        </div>
-      </div>
-
-      {move ? (
-        <div className="mt-3 border-t border-border/80 pt-3">
-          <div className="space-y-3">
-            {moveHasVideo ? (
-              <div>
-                <Button
-                  type="button"
-                  variant="outline"
-                  className={`h-6 rounded-full border-2 px-2.5 text-[11px] ${
-                    showVideo
-                      ? 'bg-accent text-accent-foreground hover:bg-accent'
-                      : 'text-muted-foreground'
-                  }`}
-                  onClick={() => setShowVideo((current) => !current)}
-                >
-                  {showVideo ? 'Hide video' : 'Show video'}
-                </Button>
-                <AnimatePresence>
-                  {showVideo ? (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: 'auto', opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3, ease: 'easeInOut' }}
-                      style={{ overflow: 'hidden' }}
-                    >
-                      <MoveVideo className="my-2 max-w-96" move={move} />
-                      <Button
-                        type="button"
-                        variant="outline"
-                        className="mb-1 h-6 rounded-full border-2 px-2.5 text-[11px] bg-accent text-accent-foreground hover:bg-accent"
-                        onClick={() => setShowVideo(false)}
-                      >
-                        Hide video
-                      </Button>
-                    </motion.div>
-                  ) : null}
-                </AnimatePresence>
-              </div>
-            ) : null}
-            <div className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-2 text-sm">
-              <div className="text-muted-foreground">Startup</div>
-              <div className="font-medium">{move.startup || '-'}</div>
-
-              <div className="text-muted-foreground">Damage</div>
-              <div className="font-medium">{move.damage || '-'}</div>
-
-              <div className="text-muted-foreground">Hit / C.Hit</div>
-              <div className="font-medium">
-                {move.hit || '-'}
-                {move.counterHit && move.counterHit !== move.hit && (
-                  <span className="font-normal text-muted-foreground">
-                    {' '}
-                    / {move.counterHit}
-                  </span>
-                )}
-              </div>
-
-              <div className="text-muted-foreground">Level</div>
-              <div className="font-medium">{move.hitLevel || '-'}</div>
-
-              {moveHasVisibleProperties ? (
-                <>
-                  <div className="text-muted-foreground">Properties</div>
-                  <div className="flex flex-wrap items-center gap-1.5">
-                    <MovePropertyIconList move={move} size="small" />
-                    <MovePropertyTagList move={move} />
-                  </div>
-                </>
-              ) : null}
-
-              {move.notes ? (
-                <div className="col-span-2 flex flex-col items-start gap-1">
-                  <ShowNotes.Trigger
-                    showNotes={showNotes}
-                    setShowNotes={setShowNotes}
-                  />
-                  <ShowNotes.Details
-                    showNotes={showNotes}
-                    move={move}
-                    className="mt-0 ml-0"
-                  />
-                </div>
-              ) : null}
-            </div>
-          </div>
-        </div>
-      ) : null}
-    </div>
-  );
-};
-
 export const meta: MetaFunction = ({ matches }) => {
   return generateMetaTags({
     matches,
@@ -269,20 +66,6 @@ export const meta: MetaFunction = ({ matches }) => {
     image: { url: '/images/tekkendocs-og-image-v2.png' },
     url: '/t8/dailychallenge',
   });
-};
-
-const parseBlockValue = (block: string): number | null => {
-  const direct = Number.parseInt(block, 10);
-  if (!Number.isNaN(direct)) {
-    return direct;
-  }
-
-  const simplified = (block.match(/i?[+-]?\d+/)?.[0] || '').replace(/^i/i, '');
-  const parsed = Number.parseInt(simplified, 10);
-  if (Number.isNaN(parsed)) {
-    return null;
-  }
-  return parsed;
 };
 
 const formatLocalDateKey = (date: Date): string => {
@@ -320,79 +103,6 @@ const calculateStreakEndingAt = (
     cursor = getPreviousDateKey(cursor);
   }
   return streak;
-};
-
-const createSeed = (seedValue: string): number => {
-  let hash = 2166136261;
-  for (let i = 0; i < seedValue.length; i++) {
-    hash ^= seedValue.charCodeAt(i);
-    hash = Math.imul(hash, 16777619);
-  }
-  return hash >>> 0;
-};
-
-const createRandom = (seedValue: string): (() => number) => {
-  let state = createSeed(seedValue);
-  return () => {
-    state += 0x6d2b79f5;
-    let value = state;
-    value = Math.imul(value ^ (value >>> 15), value | 1);
-    value ^= value + Math.imul(value ^ (value >>> 7), value | 61);
-    return ((value ^ (value >>> 14)) >>> 0) / 4294967296;
-  };
-};
-
-const deterministicSample = <T,>(
-  values: T[],
-  sampleCount: number,
-  seedValue: string,
-): T[] => {
-  if (sampleCount >= values.length) {
-    return [...values];
-  }
-
-  const random = createRandom(seedValue);
-  const shuffled = [...values];
-  for (let index = shuffled.length - 1; index > 0; index--) {
-    const randomIndex = Math.floor(random() * (index + 1));
-    const current = shuffled[index];
-    shuffled[index] = shuffled[randomIndex];
-    shuffled[randomIndex] = current;
-  }
-
-  return shuffled.slice(0, sampleCount);
-};
-
-const getAnswerBucket = (blockValue: number): AnswerBucket => {
-  if (blockValue >= 1) {
-    return 'plus';
-  }
-  if (blockValue >= -9) {
-    return 'zeroToMinusNine';
-  }
-  if (blockValue >= -11) {
-    return 'minusTenToMinusEleven';
-  }
-  if (blockValue >= -14) {
-    return 'minusTwelveToMinusFourteen';
-  }
-  return 'minusFifteenOrLess';
-};
-
-const getMoveId = (move: Move): string => {
-  return move.wavuId || `${move.moveNumber}-${move.command}`;
-};
-
-const getMoveCharacterDisplayName = (move: Move): string => {
-  if (!isWavuMove(move)) {
-    return 'Move';
-  }
-
-  const charId = charIdFromMove(move);
-  return (
-    characterInfoT8List.find((char) => char.id === charId)?.displayName ||
-    charId
-  );
 };
 
 const getRankImageForScore = (score: number): string => {
@@ -468,54 +178,7 @@ export default function DailyChallenge() {
     };
   }, [questionFeedback]);
 
-  const eligibleMoves = useMemo(() => {
-    const seenMoveIds = new Set<string>();
-    return moves.reduce<DailyMove[]>((current, move, currentIndex) => {
-      if (!move.video) {
-        return current;
-      }
-
-      if (move.video === moves[currentIndex + 1]?.video) {
-        // dont use mvoes that has vidoes with fallback to full string vid
-        return current;
-      }
-
-      if (
-        move.tags?.[MoveTags.RageArt] !== undefined ||
-        move.tags?.[MoveTags.HeatBurst] !== undefined
-      ) {
-        return current;
-      }
-
-      const hitLevel = move.hitLevel?.trim().toLowerCase();
-      if (!hitLevel) {
-        return current;
-      }
-
-      if (hitLevel.startsWith(hitLevelValue.Throw)) {
-        return current;
-      }
-
-      if (hitLevel.startsWith('ub') || hitLevel.endsWith('!')) {
-        //unblocable
-        return current;
-      }
-
-      const blockValue = parseBlockValue(move.block || '');
-      if (blockValue === null) {
-        return current;
-      }
-
-      const moveId = getMoveId(move);
-      if (seenMoveIds.has(moveId)) {
-        return current;
-      }
-      seenMoveIds.add(moveId);
-
-      current.push({ id: moveId, move, blockValue });
-      return current;
-    }, []);
-  }, [moves]);
+  const eligibleMoves = useMemo(() => getEligibleQuizMoves(moves), [moves]);
 
   const dailyMoves = useMemo(() => {
     if (!todayKey) {
@@ -948,66 +611,11 @@ export default function DailyChallenge() {
               </p>
               <div className="min-h-44">
                 {questionFeedback ? (
-                  <div className="flex justify-center">
-                    <button
-                      type="button"
-                      onClick={handleContinueAfterFeedback}
-                      className={`w-full max-w-2xl rounded-2xl border px-4 py-4 text-left transition-all duration-300 sm:px-5 sm:py-5 ${
-                        questionFeedback.isCorrect
-                          ? 'border-foreground-success/35 bg-foreground-success/15'
-                          : 'border-foreground-destructive/35 bg-foreground-destructive/15'
-                      } ${
-                        isFeedbackVisible
-                          ? 'translate-y-0 opacity-100'
-                          : 'translate-y-2 opacity-0'
-                      }`}
-                    >
-                      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-                        <div className="flex items-start gap-3 sm:items-center">
-                          <div
-                            className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-background text-lg font-bold ${
-                              questionFeedback.isCorrect
-                                ? 'text-foreground-success'
-                                : 'text-foreground-destructive'
-                            }`}
-                          >
-                            {questionFeedback.isCorrect ? 'OK' : 'X'}
-                          </div>
-                          <div>
-                            <p
-                              className={`text-2xl font-extrabold tracking-tight ${
-                                questionFeedback.isCorrect
-                                  ? 'text-foreground-success'
-                                  : 'text-foreground-destructive'
-                              }`}
-                            >
-                              {questionFeedback.isCorrect
-                                ? 'Excellent!'
-                                : 'Not quite'}
-                            </p>
-                            {!questionFeedback.isCorrect && (
-                              <p className="mt-1 text-sm">
-                                You picked: {questionFeedback.selectedLabel}
-                              </p>
-                            )}
-                            <p className="mt-1 text-sm">
-                              Correct block frames:{' '}
-                              {questionFeedback.correctBlockValue}
-                            </p>
-                          </div>
-                        </div>
-                        <div
-                          className={`w-full rounded-xl px-6 py-3 text-center text-lg font-black tracking-wide text-background shadow-[inset_0_-4px_0_0_rgba(0,0,0,0.15)] sm:w-auto ${
-                            questionFeedback.isCorrect
-                              ? 'bg-foreground-success'
-                              : 'bg-foreground-destructive'
-                          }`}
-                        >
-                          CONTINUE
-                        </div>
-                      </div>
-                    </button>
-                  </div>
+                  <QuestionFeedbackCard
+                    questionFeedback={questionFeedback}
+                    isFeedbackVisible={isFeedbackVisible}
+                    onContinue={handleContinueAfterFeedback}
+                  />
                 ) : (
                   <div className="flex flex-wrap gap-2">
                     {answerOptions.map((option) => (
