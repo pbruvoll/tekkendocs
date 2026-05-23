@@ -1,0 +1,1 @@
+This folde contains code related to frame data quizes. Currently this means code common to the daily challenge ane the endless frame quiz page
