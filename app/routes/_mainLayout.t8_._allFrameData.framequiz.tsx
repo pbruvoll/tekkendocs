@@ -194,8 +194,8 @@ export default function FrameQuiz() {
           <CardContent>
             <p className="mb-4">
               Guess how many frames each move is on block. This mode is endless
-              and keeps going until you stop. A move will not repeat if it was
-              shown in the last 20 questions.
+              and keeps going until you stop. See how many you can get right in
+              a row and try to climb the ranks!
             </p>
             <Button onClick={handleStart}>Start quiz</Button>
           </CardContent>
