@@ -20,7 +20,7 @@ export const createRandom = (seedValue: string): (() => number) => {
   };
 };
 
-export const deterministicSample = <T,>(
+export const deterministicSample = <T>(
   values: T[],
   sampleCount: number,
   seedValue: string,

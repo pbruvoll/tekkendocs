@@ -1,4 +1,7 @@
-import { type AnswerBucket, type AnswerOption } from '~/features/frameQuiz/types';
+import {
+  type AnswerBucket,
+  type AnswerOption,
+} from '~/features/frameQuiz/types';
 
 export const answerOptions: AnswerOption[] = [
   { bucket: 'plus', label: '+1 or more' },
@@ -8,17 +11,18 @@ export const answerOptions: AnswerOption[] = [
   { bucket: 'minusFifteenOrLess', label: '-15 or more' },
 ];
 
-export const answerLabelByBucket =
-  answerOptions.reduce<Record<AnswerBucket, string>>(
-    (current, option) => {
-      current[option.bucket] = option.label;
-      return current;
-    },
-    {
-      plus: '',
-      zeroToMinusNine: '',
-      minusTenToMinusEleven: '',
-      minusTwelveToMinusFourteen: '',
-      minusFifteenOrLess: '',
-    },
-  );
+export const answerLabelByBucket = answerOptions.reduce<
+  Record<AnswerBucket, string>
+>(
+  (current, option) => {
+    current[option.bucket] = option.label;
+    return current;
+  },
+  {
+    plus: '',
+    zeroToMinusNine: '',
+    minusTenToMinusEleven: '',
+    minusTwelveToMinusFourteen: '',
+    minusFifteenOrLess: '',
+  },
+);
