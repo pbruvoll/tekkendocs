@@ -137,6 +137,11 @@ export default function FrameQuiz() {
       setPersistedStats(sanitizePersistedFrameQuizStats(parsed));
     } catch {
       setPersistedStats(defaultPersistedFrameQuizStats);
+      try {
+        localStorage.removeItem(FRAME_QUIZ_STATS_STORAGE_KEY);
+      } catch {
+        // Ignore storage failures while recovering from corrupt data.
+      }
     } finally {
       setHasLoadedPersistedStats(true);
     }
@@ -321,7 +326,11 @@ export default function FrameQuiz() {
 
   const handleResetPersistedStats = () => {
     setPersistedStats(defaultPersistedFrameQuizStats);
-    localStorage.removeItem(FRAME_QUIZ_STATS_STORAGE_KEY);
+    try {
+      localStorage.removeItem(FRAME_QUIZ_STATS_STORAGE_KEY);
+    } catch {
+      // Ignore storage failures and keep UI state reset.
+    }
   };
 
   if (eligibleMoves.length === 0) {
