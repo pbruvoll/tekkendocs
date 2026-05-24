@@ -238,7 +238,10 @@ export default function FrameQuiz() {
     );
 
     setPersistedStats((current) => {
-      const nextRecentAnswerResults = [...current.recentAnswerResults, isCorrect];
+      const nextRecentAnswerResults = [
+        ...current.recentAnswerResults,
+        isCorrect,
+      ];
       const trimmedRecentAnswerResults =
         nextRecentAnswerResults.length <= RECENT_ANSWER_WINDOW
           ? nextRecentAnswerResults
@@ -431,21 +434,26 @@ export default function FrameQuiz() {
                 <p className="text-xs uppercase tracking-wide text-muted-foreground">
                   Current session
                 </p>
-                <p className="text-sm">Accuracy: {currentSessionAccuracyText}</p>
+                <p className="text-sm">
+                  Accuracy: {currentSessionAccuracyText}
+                </p>
               </div>
               <div>
                 <p className="text-xs uppercase tracking-wide text-muted-foreground">
                   Last 200 questions
                 </p>
                 <p className="text-sm">
-                  Correct: {recentCorrectCount}/{recentAnswerCount} ({recentAccuracyPercent}%)
+                  Correct: {recentCorrectCount}/{recentAnswerCount} (
+                  {recentAccuracyPercent}%)
                 </p>
               </div>
               <div>
                 <p className="text-xs uppercase tracking-wide text-muted-foreground">
                   Questions answered total
                 </p>
-                <p className="text-sm">{persistedStats.lifetimeAnsweredCount}</p>
+                <p className="text-sm">
+                  {persistedStats.lifetimeAnsweredCount}
+                </p>
               </div>
               <div className="flex items-center justify-between gap-3 sm:justify-start">
                 <div>
