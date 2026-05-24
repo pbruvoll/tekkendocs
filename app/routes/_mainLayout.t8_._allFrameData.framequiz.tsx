@@ -1,7 +1,9 @@
+import { motion, useReducedMotion } from 'motion/react';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { type MetaFunction, useRouteLoaderData } from 'react-router';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { AnimatedNumber } from '~/components/AnimatedNumber';
 import { ContentContainer } from '~/components/ContentContainer';
 import { MoveVideo } from '~/components/MoveVideo';
 import { QuestionFeedbackCard } from '~/features/frameQuiz/components/QuestionFeedbackCard';
@@ -61,6 +63,9 @@ export default function FrameQuiz() {
     useState<QuestionFeedback | null>(null);
   const [isFeedbackVisible, setIsFeedbackVisible] = useState(false);
   const feedbackAnimationFrameRef = useRef<number | null>(null);
+  const previousRankImageRef = useRef<string | null>(null);
+  const [rankAnimationKey, setRankAnimationKey] = useState(0);
+  const shouldReduceMotion = useReducedMotion();
   const [pendingAdvance, setPendingAdvance] = useState<PendingAdvance | null>(
     null,
   );
@@ -103,6 +108,21 @@ export default function FrameQuiz() {
   const accuracyPercent =
     totalAnswered === 0 ? 0 : Math.round((score / totalAnswered) * 100);
   const accuracyText = `${accuracyPercent}% - ${score}/${totalAnswered}`;
+
+  useEffect(() => {
+    const previousRankImage = previousRankImageRef.current;
+    const currentRankImage = currentStreakRank.image;
+
+    if (
+      previousRankImage !== null &&
+      currentRankImage !== previousRankImage &&
+      !shouldReduceMotion
+    ) {
+      setRankAnimationKey((current) => current + 1);
+    }
+
+    previousRankImageRef.current = currentRankImage;
+  }, [currentStreakRank.image, shouldReduceMotion]);
 
   const handleStart = () => {
     const firstQuestion = pickRandomQuizMoveExcludingRecent(eligibleMoves, []);
@@ -234,14 +254,38 @@ export default function FrameQuiz() {
                 </CardTitle>
                 <div className="flex shrink-0 flex-wrap items-center justify-end gap-2">
                   <p className="text-lg font-medium whitespace-nowrap">
-                    Streak {displayedStreak}
+                    Streak{' '}
+                    <AnimatedNumber
+                      value={displayedStreak}
+                      className="inline-block tabular-nums"
+                      duration={0.26}
+                      animateOnDecrease={false}
+                    />
                   </p>
                   {currentStreakRank.image && (
-                    <img
-                      src={currentStreakRank.image}
-                      className="h-12 w-auto"
-                      alt={`${currentStreakRank.name} rank for streak ${displayedStreak}`}
-                    />
+                    <motion.div
+                      key={rankAnimationKey}
+                      initial={
+                        shouldReduceMotion ? undefined : { scale: 1, y: 0 }
+                      }
+                      animate={
+                        shouldReduceMotion
+                          ? undefined
+                          : { scale: [1, 1.2, 1], y: [0, -1, 0] }
+                      }
+                      transition={
+                        shouldReduceMotion
+                          ? undefined
+                          : { duration: 0.5, ease: 'easeOut' }
+                      }
+                      className="inline-flex"
+                    >
+                      <img
+                        src={currentStreakRank.image}
+                        className="h-12 w-auto"
+                        alt={`${currentStreakRank.name} rank for streak ${displayedStreak}`}
+                      />
+                    </motion.div>
                   )}
                 </div>
               </div>
