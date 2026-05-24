@@ -165,7 +165,6 @@ export default function FrameQuiz() {
   const currentStreakRank = getFrameQuizRankForStreak(displayedStreak);
   const currentSessionAccuracyPercent =
     totalAnswered === 0 ? 0 : Math.round((score / totalAnswered) * 100);
-  const currentSessionAccuracyText = `${currentSessionAccuracyPercent}% - ${score}/${totalAnswered}`;
   const recentCorrectCount = persistedStats.recentAnswerResults.reduce(
     (count, isCorrect) => count + (isCorrect ? 1 : 0),
     0,
@@ -175,6 +174,16 @@ export default function FrameQuiz() {
     recentAnswerCount === 0
       ? 0
       : Math.round((recentCorrectCount / recentAnswerCount) * 100);
+  const recentAccuracyBarWidth = Math.max(
+    0,
+    Math.min(100, recentAccuracyPercent),
+  );
+  const recentAccuracyBarColorClass =
+    recentAccuracyPercent >= 80
+      ? 'bg-emerald-500/80'
+      : recentAccuracyPercent > 65
+        ? 'bg-orange-500/80'
+        : 'bg-red-500/80';
   const personalBestRank = getFrameQuizRankForStreak(
     persistedStats.personalBestStreak,
   );
@@ -429,48 +438,70 @@ export default function FrameQuiz() {
             </CardContent>
           </Card>
           <Card className="mx-auto w-full max-w-2xl border-border/70 shadow-sm">
-            <CardContent className="grid gap-3 py-4 sm:grid-cols-2">
-              <div>
-                <p className="text-xs uppercase tracking-wide text-muted-foreground">
-                  Current session
-                </p>
-                <p className="text-sm">
-                  Accuracy: {currentSessionAccuracyText}
-                </p>
-              </div>
-              <div>
-                <p className="text-xs uppercase tracking-wide text-muted-foreground">
-                  Last 200 questions
-                </p>
-                <p className="text-sm">
-                  Correct: {recentCorrectCount}/{recentAnswerCount} (
-                  {recentAccuracyPercent}%)
-                </p>
-              </div>
-              <div>
-                <p className="text-xs uppercase tracking-wide text-muted-foreground">
-                  Questions answered total
-                </p>
-                <p className="text-sm">
-                  {persistedStats.lifetimeAnsweredCount}
-                </p>
-              </div>
-              <div className="flex items-center justify-between gap-3 sm:justify-start">
-                <div>
+            <CardHeader className="pb-2">
+              <CardTitle className="text-base">Quiz performance</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3 pt-2">
+              <div className="grid gap-3 sm:grid-cols-2">
+                <div className="rounded-lg border border-border/60 bg-muted/25 p-3">
+                  <p className="text-xs uppercase tracking-wide text-muted-foreground">
+                    Current session
+                  </p>
+                  <p className="mt-1 text-lg font-semibold tabular-nums">
+                    {currentSessionAccuracyPercent}%
+                  </p>
+                  <p className="text-xs text-muted-foreground">
+                    Accuracy {score}/{totalAnswered}
+                  </p>
+                </div>
+
+                <div className="rounded-lg border border-border/60 bg-muted/25 p-3">
+                  <p className="text-xs uppercase tracking-wide text-muted-foreground">
+                    Last 200 questions
+                  </p>
+                  <p className="mt-1 text-lg font-semibold tabular-nums">
+                    {recentAccuracyPercent}%
+                  </p>
+                  <p className="text-xs text-muted-foreground">
+                    Correct {recentCorrectCount}/{recentAnswerCount}
+                  </p>
+                  <div className="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-muted">
+                    <div
+                      className={`h-full rounded-full transition-[width] duration-300 ${recentAccuracyBarColorClass}`}
+                      style={{ width: `${recentAccuracyBarWidth}%` }}
+                    />
+                  </div>
+                </div>
+
+                <div className="rounded-lg border border-border/60 bg-muted/25 p-3">
+                  <p className="text-xs uppercase tracking-wide text-muted-foreground">
+                    Questions answered total
+                  </p>
+                  <p className="mt-1 text-lg font-semibold tabular-nums">
+                    {persistedStats.lifetimeAnsweredCount}
+                  </p>
+                </div>
+
+                <div className="rounded-lg border border-border/60 bg-muted/25 p-3">
                   <p className="text-xs uppercase tracking-wide text-muted-foreground">
                     Personal best streak
                   </p>
-                  <p className="text-sm">{persistedStats.personalBestStreak}</p>
+                  <div className="mt-1 flex items-center justify-between gap-3">
+                    <p className="text-lg font-semibold tabular-nums">
+                      {persistedStats.personalBestStreak}
+                    </p>
+                    {personalBestRank.image && (
+                      <img
+                        src={personalBestRank.image}
+                        className="h-11 w-auto"
+                        alt={`${personalBestRank.name} rank for personal best streak ${persistedStats.personalBestStreak}`}
+                      />
+                    )}
+                  </div>
                 </div>
-                {personalBestRank.image && (
-                  <img
-                    src={personalBestRank.image}
-                    className="h-12 w-auto"
-                    alt={`${personalBestRank.name} rank for personal best streak ${persistedStats.personalBestStreak}`}
-                  />
-                )}
               </div>
-              <div className="sm:col-span-2">
+
+              <div className="border-t border-border/60 pt-2">
                 <Button
                   type="button"
                   variant="ghost"
