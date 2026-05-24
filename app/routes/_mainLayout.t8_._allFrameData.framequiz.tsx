@@ -1,7 +1,9 @@
+import { motion, useReducedMotion } from 'motion/react';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { type MetaFunction, useRouteLoaderData } from 'react-router';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { AnimatedNumber } from '~/components/AnimatedNumber';
 import { ContentContainer } from '~/components/ContentContainer';
 import { MoveVideo } from '~/components/MoveVideo';
 import { QuestionFeedbackCard } from '~/features/frameQuiz/components/QuestionFeedbackCard';
@@ -28,10 +30,51 @@ import { generateMetaTags } from '~/utils/seoUtils';
 import { type LoaderData } from './_mainLayout.t8_._allFrameData';
 
 const RECENT_QUESTION_WINDOW = 20;
+const RECENT_ANSWER_WINDOW = 200;
+const FRAME_QUIZ_STATS_STORAGE_KEY = 't8FrameQuizStatsV1';
+
+type PersistedFrameQuizStats = {
+  personalBestStreak: number;
+  lifetimeAnsweredCount: number;
+  recentAnswerResults: boolean[];
+};
 
 type PendingAdvance = {
   nextQuestion: QuizMove | null;
   recentQuestionIds: string[];
+};
+
+const defaultPersistedFrameQuizStats: PersistedFrameQuizStats = {
+  personalBestStreak: 0,
+  lifetimeAnsweredCount: 0,
+  recentAnswerResults: [],
+};
+
+const sanitizePersistedFrameQuizStats = (
+  value: unknown,
+): PersistedFrameQuizStats => {
+  if (!value || typeof value !== 'object') {
+    return defaultPersistedFrameQuizStats;
+  }
+
+  const candidate = value as Partial<PersistedFrameQuizStats>;
+  const personalBestStreak = Number.isFinite(candidate.personalBestStreak)
+    ? Math.max(0, Math.floor(candidate.personalBestStreak ?? 0))
+    : 0;
+  const lifetimeAnsweredCount = Number.isFinite(candidate.lifetimeAnsweredCount)
+    ? Math.max(0, Math.floor(candidate.lifetimeAnsweredCount ?? 0))
+    : 0;
+  const recentAnswerResults = Array.isArray(candidate.recentAnswerResults)
+    ? candidate.recentAnswerResults
+        .filter((answer): answer is boolean => typeof answer === 'boolean')
+        .slice(-RECENT_ANSWER_WINDOW)
+    : [];
+
+  return {
+    personalBestStreak,
+    lifetimeAnsweredCount,
+    recentAnswerResults,
+  };
 };
 
 export const meta: MetaFunction = ({ matches }) => {
@@ -54,15 +97,23 @@ export default function FrameQuiz() {
   const [score, setScore] = useState(0);
   const [totalAnswered, setTotalAnswered] = useState(0);
   const [consecutiveCorrectStreak, setConsecutiveCorrectStreak] = useState(0);
+  const [displayedStreak, setDisplayedStreak] = useState(0);
   const [recentQuestionIds, setRecentQuestionIds] = useState<string[]>([]);
   const [currentQuestion, setCurrentQuestion] = useState<QuizMove | null>(null);
   const [questionFeedback, setQuestionFeedback] =
     useState<QuestionFeedback | null>(null);
   const [isFeedbackVisible, setIsFeedbackVisible] = useState(false);
   const feedbackAnimationFrameRef = useRef<number | null>(null);
+  const previousRankImageRef = useRef<string | null>(null);
+  const [rankAnimationKey, setRankAnimationKey] = useState(0);
+  const shouldReduceMotion = useReducedMotion();
   const [pendingAdvance, setPendingAdvance] = useState<PendingAdvance | null>(
     null,
   );
+  const [persistedStats, setPersistedStats] = useState<PersistedFrameQuizStats>(
+    defaultPersistedFrameQuizStats,
+  );
+  const [hasLoadedPersistedStats, setHasLoadedPersistedStats] = useState(false);
 
   const eligibleMoves = useMemo(() => getEligibleQuizMoves(moves), [moves]);
 
@@ -73,6 +124,53 @@ export default function FrameQuiz() {
       }
     };
   }, []);
+
+  useEffect(() => {
+    try {
+      const stored = localStorage.getItem(FRAME_QUIZ_STATS_STORAGE_KEY);
+      if (!stored) {
+        setHasLoadedPersistedStats(true);
+        return;
+      }
+
+      const parsed = JSON.parse(stored);
+      setPersistedStats(sanitizePersistedFrameQuizStats(parsed));
+    } catch {
+      setPersistedStats(defaultPersistedFrameQuizStats);
+      try {
+        localStorage.removeItem(FRAME_QUIZ_STATS_STORAGE_KEY);
+      } catch {
+        // Ignore storage failures while recovering from corrupt data.
+      }
+    } finally {
+      setHasLoadedPersistedStats(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!hasLoadedPersistedStats) {
+      return;
+    }
+
+    try {
+      const isDefaultStats =
+        persistedStats.personalBestStreak === 0 &&
+        persistedStats.lifetimeAnsweredCount === 0 &&
+        persistedStats.recentAnswerResults.length === 0;
+
+      if (isDefaultStats) {
+        localStorage.removeItem(FRAME_QUIZ_STATS_STORAGE_KEY);
+        return;
+      }
+
+      localStorage.setItem(
+        FRAME_QUIZ_STATS_STORAGE_KEY,
+        JSON.stringify(persistedStats),
+      );
+    } catch {
+      // Ignore storage write failures (e.g. quota exceeded/private mode).
+    }
+  }, [persistedStats, hasLoadedPersistedStats]);
 
   useEffect(() => {
     if (!questionFeedback) {
@@ -98,16 +196,53 @@ export default function FrameQuiz() {
     ? getMoveCharacterDisplayName(currentQuestion.move)
     : '';
   const currentCommand = currentQuestion?.move.command ?? '';
-  const currentStreakRank = getFrameQuizRankForStreak(consecutiveCorrectStreak);
-  const accuracyPercent =
+  const currentStreakRank = getFrameQuizRankForStreak(displayedStreak);
+  const currentSessionAccuracyPercent =
     totalAnswered === 0 ? 0 : Math.round((score / totalAnswered) * 100);
-  const accuracyText = `${accuracyPercent}% - ${score}/${totalAnswered}`;
+  const recentCorrectCount = persistedStats.recentAnswerResults.reduce(
+    (count, isCorrect) => count + (isCorrect ? 1 : 0),
+    0,
+  );
+  const recentAnswerCount = persistedStats.recentAnswerResults.length;
+  const recentAccuracyPercent =
+    recentAnswerCount === 0
+      ? 0
+      : Math.round((recentCorrectCount / recentAnswerCount) * 100);
+  const recentAccuracyBarWidth = Math.max(
+    0,
+    Math.min(100, recentAccuracyPercent),
+  );
+  const recentAccuracyBarColorClass =
+    recentAccuracyPercent >= 80
+      ? 'bg-emerald-500/80'
+      : recentAccuracyPercent > 65
+        ? 'bg-orange-500/80'
+        : 'bg-red-500/80';
+  const personalBestRank = getFrameQuizRankForStreak(
+    persistedStats.personalBestStreak,
+  );
+
+  useEffect(() => {
+    const previousRankImage = previousRankImageRef.current;
+    const currentRankImage = currentStreakRank.image;
+
+    if (
+      previousRankImage !== null &&
+      currentRankImage !== previousRankImage &&
+      !shouldReduceMotion
+    ) {
+      setRankAnimationKey((current) => current + 1);
+    }
+
+    previousRankImageRef.current = currentRankImage;
+  }, [currentStreakRank.image, shouldReduceMotion]);
 
   const handleStart = () => {
     const firstQuestion = pickRandomQuizMoveExcludingRecent(eligibleMoves, []);
     setScore(0);
     setTotalAnswered(0);
     setConsecutiveCorrectStreak(0);
+    setDisplayedStreak(0);
     setRecentQuestionIds([]);
     setQuestionFeedback(null);
     setIsFeedbackVisible(false);
@@ -141,6 +276,30 @@ export default function FrameQuiz() {
     setScore(nextScore);
     setTotalAnswered(nextTotalAnswered);
     setConsecutiveCorrectStreak(nextConsecutiveCorrectStreak);
+    setDisplayedStreak(
+      isCorrect ? nextConsecutiveCorrectStreak : consecutiveCorrectStreak,
+    );
+
+    setPersistedStats((current) => {
+      const nextRecentAnswerResults = [
+        ...current.recentAnswerResults,
+        isCorrect,
+      ];
+      const trimmedRecentAnswerResults =
+        nextRecentAnswerResults.length <= RECENT_ANSWER_WINDOW
+          ? nextRecentAnswerResults
+          : nextRecentAnswerResults.slice(-RECENT_ANSWER_WINDOW);
+      const nextStats: PersistedFrameQuizStats = {
+        personalBestStreak: Math.max(
+          current.personalBestStreak,
+          nextConsecutiveCorrectStreak,
+        ),
+        lifetimeAnsweredCount: current.lifetimeAnsweredCount + 1,
+        recentAnswerResults: trimmedRecentAnswerResults,
+      };
+
+      return nextStats;
+    });
 
     setPendingAdvance({
       nextQuestion,
@@ -161,7 +320,17 @@ export default function FrameQuiz() {
     setRecentQuestionIds(pendingAdvance.recentQuestionIds);
     setCurrentQuestion(pendingAdvance.nextQuestion);
     setQuestionFeedback(null);
+    setDisplayedStreak(consecutiveCorrectStreak);
     setPendingAdvance(null);
+  };
+
+  const handleResetPersistedStats = () => {
+    setPersistedStats(defaultPersistedFrameQuizStats);
+    try {
+      localStorage.removeItem(FRAME_QUIZ_STATS_STORAGE_KEY);
+    } catch {
+      // Ignore storage failures and keep UI state reset.
+    }
   };
 
   if (eligibleMoves.length === 0) {
@@ -228,14 +397,38 @@ export default function FrameQuiz() {
                 </CardTitle>
                 <div className="flex shrink-0 flex-wrap items-center justify-end gap-2">
                   <p className="text-lg font-medium whitespace-nowrap">
-                    Streak {consecutiveCorrectStreak}
+                    Streak{' '}
+                    <AnimatedNumber
+                      value={displayedStreak}
+                      className="inline-block tabular-nums"
+                      duration={0.26}
+                      animateOnDecrease={false}
+                    />
                   </p>
                   {currentStreakRank.image && (
-                    <img
-                      src={currentStreakRank.image}
-                      className="h-12 w-auto"
-                      alt={`${currentStreakRank.name} rank for streak ${consecutiveCorrectStreak}`}
-                    />
+                    <motion.div
+                      key={rankAnimationKey}
+                      initial={
+                        shouldReduceMotion ? undefined : { scale: 1, y: 0 }
+                      }
+                      animate={
+                        shouldReduceMotion
+                          ? undefined
+                          : { scale: [1, 1.2, 1], y: [0, -1, 0] }
+                      }
+                      transition={
+                        shouldReduceMotion
+                          ? undefined
+                          : { duration: 0.5, ease: 'easeOut' }
+                      }
+                      className="inline-flex"
+                    >
+                      <img
+                        src={currentStreakRank.image}
+                        className="h-12 w-auto"
+                        alt={`${currentStreakRank.name} rank for streak ${displayedStreak}`}
+                      />
+                    </motion.div>
                   )}
                 </div>
               </div>
@@ -277,9 +470,83 @@ export default function FrameQuiz() {
               </div>
             </CardContent>
           </Card>
-          <p className="text-center text-sm text-muted-foreground">
-            Accuracy: {accuracyText}
-          </p>
+          <Card className="mx-auto w-full max-w-2xl border-border/70 shadow-sm">
+            <CardHeader className="pb-2">
+              <CardTitle className="text-base">Quiz performance</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3 pt-2">
+              <div className="grid gap-3 sm:grid-cols-2">
+                <div className="rounded-lg border border-border/60 bg-muted/25 p-3">
+                  <p className="text-xs uppercase tracking-wide text-muted-foreground">
+                    Current session
+                  </p>
+                  <p className="mt-1 text-lg font-semibold tabular-nums">
+                    {currentSessionAccuracyPercent}%
+                  </p>
+                  <p className="text-xs text-muted-foreground">
+                    Accuracy {score}/{totalAnswered}
+                  </p>
+                </div>
+
+                <div className="rounded-lg border border-border/60 bg-muted/25 p-3">
+                  <p className="text-xs uppercase tracking-wide text-muted-foreground">
+                    Last 200 questions
+                  </p>
+                  <p className="mt-1 text-lg font-semibold tabular-nums">
+                    {recentAccuracyPercent}%
+                  </p>
+                  <p className="text-xs text-muted-foreground">
+                    Correct {recentCorrectCount}/{recentAnswerCount}
+                  </p>
+                  <div className="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-muted">
+                    <div
+                      className={`h-full rounded-full transition-[width] duration-300 ${recentAccuracyBarColorClass}`}
+                      style={{ width: `${recentAccuracyBarWidth}%` }}
+                    />
+                  </div>
+                </div>
+
+                <div className="rounded-lg border border-border/60 bg-muted/25 p-3">
+                  <p className="text-xs uppercase tracking-wide text-muted-foreground">
+                    Questions answered total
+                  </p>
+                  <p className="mt-1 text-lg font-semibold tabular-nums">
+                    {persistedStats.lifetimeAnsweredCount}
+                  </p>
+                </div>
+
+                <div className="rounded-lg border border-border/60 bg-muted/25 p-3">
+                  <p className="text-xs uppercase tracking-wide text-muted-foreground">
+                    Personal best streak
+                  </p>
+                  <div className="mt-1 flex items-center justify-between gap-3">
+                    <p className="text-lg font-semibold tabular-nums">
+                      {persistedStats.personalBestStreak}
+                    </p>
+                    {personalBestRank.image && (
+                      <img
+                        src={personalBestRank.image}
+                        className="h-11 w-auto"
+                        alt={`${personalBestRank.name} rank for personal best streak ${persistedStats.personalBestStreak}`}
+                      />
+                    )}
+                  </div>
+                </div>
+              </div>
+
+              <div className="border-t border-border/60 pt-2">
+                <Button
+                  type="button"
+                  variant="ghost"
+                  size="sm"
+                  onClick={handleResetPersistedStats}
+                  className="h-auto px-0 text-xs text-muted-foreground hover:text-foreground"
+                >
+                  Reset saved stats
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       )}
     </ContentContainer>
