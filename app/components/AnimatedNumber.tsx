@@ -34,7 +34,8 @@ export const AnimatedNumber = ({
   animateOnDecrease = true,
   formatter,
 }: AnimatedNumberProps) => {
-  const roundedValue = roundTo(value, decimals);
+  const safeDecimals = clampDecimals(decimals);
+  const roundedValue = roundTo(value, safeDecimals);
   const [displayValue, setDisplayValue] = useState<number>(roundedValue);
   const [animationKey, setAnimationKey] = useState(0);
   const [direction, setDirection] = useState<1 | -1>(1);
@@ -44,10 +45,10 @@ export const AnimatedNumber = ({
 
   const numberFormatter = useMemo(() => {
     return new Intl.NumberFormat(locale, {
-      minimumFractionDigits: decimals,
-      maximumFractionDigits: decimals,
+      minimumFractionDigits: safeDecimals,
+      maximumFractionDigits: safeDecimals,
     });
-  }, [decimals, locale]);
+  }, [safeDecimals, locale]);
 
   useEffect(() => {
     const from = previousValueRef.current;
@@ -59,10 +60,15 @@ export const AnimatedNumber = ({
     if (!hasMountedRef.current) {
       hasMountedRef.current = true;
       previousValueRef.current = to;
-      if (!animateOnMount) {
+      if (!animateOnMount || !canAnimate) {
         setDisplayValue(to);
         return;
       }
+
+      setDirection(1);
+      setDisplayValue(to);
+      setAnimationKey((current) => current + 1);
+      return;
     }
 
     if (!canAnimate) {

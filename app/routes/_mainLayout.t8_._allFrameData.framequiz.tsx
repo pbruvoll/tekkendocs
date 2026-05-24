@@ -113,6 +113,7 @@ export default function FrameQuiz() {
   const [persistedStats, setPersistedStats] = useState<PersistedFrameQuizStats>(
     defaultPersistedFrameQuizStats,
   );
+  const [hasLoadedPersistedStats, setHasLoadedPersistedStats] = useState(false);
 
   const eligibleMoves = useMemo(() => getEligibleQuizMoves(moves), [moves]);
 
@@ -128,6 +129,7 @@ export default function FrameQuiz() {
     try {
       const stored = localStorage.getItem(FRAME_QUIZ_STATS_STORAGE_KEY);
       if (!stored) {
+        setHasLoadedPersistedStats(true);
         return;
       }
 
@@ -135,8 +137,35 @@ export default function FrameQuiz() {
       setPersistedStats(sanitizePersistedFrameQuizStats(parsed));
     } catch {
       setPersistedStats(defaultPersistedFrameQuizStats);
+    } finally {
+      setHasLoadedPersistedStats(true);
     }
   }, []);
+
+  useEffect(() => {
+    if (!hasLoadedPersistedStats) {
+      return;
+    }
+
+    try {
+      const isDefaultStats =
+        persistedStats.personalBestStreak === 0 &&
+        persistedStats.lifetimeAnsweredCount === 0 &&
+        persistedStats.recentAnswerResults.length === 0;
+
+      if (isDefaultStats) {
+        localStorage.removeItem(FRAME_QUIZ_STATS_STORAGE_KEY);
+        return;
+      }
+
+      localStorage.setItem(
+        FRAME_QUIZ_STATS_STORAGE_KEY,
+        JSON.stringify(persistedStats),
+      );
+    } catch {
+      // Ignore storage write failures (e.g. quota exceeded/private mode).
+    }
+  }, [persistedStats, hasLoadedPersistedStats]);
 
   useEffect(() => {
     if (!questionFeedback) {
@@ -263,11 +292,6 @@ export default function FrameQuiz() {
         lifetimeAnsweredCount: current.lifetimeAnsweredCount + 1,
         recentAnswerResults: trimmedRecentAnswerResults,
       };
-
-      localStorage.setItem(
-        FRAME_QUIZ_STATS_STORAGE_KEY,
-        JSON.stringify(nextStats),
-      );
 
       return nextStats;
     });
