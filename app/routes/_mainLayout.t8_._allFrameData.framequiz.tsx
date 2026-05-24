@@ -54,6 +54,7 @@ export default function FrameQuiz() {
   const [score, setScore] = useState(0);
   const [totalAnswered, setTotalAnswered] = useState(0);
   const [consecutiveCorrectStreak, setConsecutiveCorrectStreak] = useState(0);
+  const [displayedStreak, setDisplayedStreak] = useState(0);
   const [recentQuestionIds, setRecentQuestionIds] = useState<string[]>([]);
   const [currentQuestion, setCurrentQuestion] = useState<QuizMove | null>(null);
   const [questionFeedback, setQuestionFeedback] =
@@ -98,7 +99,7 @@ export default function FrameQuiz() {
     ? getMoveCharacterDisplayName(currentQuestion.move)
     : '';
   const currentCommand = currentQuestion?.move.command ?? '';
-  const currentStreakRank = getFrameQuizRankForStreak(consecutiveCorrectStreak);
+  const currentStreakRank = getFrameQuizRankForStreak(displayedStreak);
   const accuracyPercent =
     totalAnswered === 0 ? 0 : Math.round((score / totalAnswered) * 100);
   const accuracyText = `${accuracyPercent}% - ${score}/${totalAnswered}`;
@@ -108,6 +109,7 @@ export default function FrameQuiz() {
     setScore(0);
     setTotalAnswered(0);
     setConsecutiveCorrectStreak(0);
+    setDisplayedStreak(0);
     setRecentQuestionIds([]);
     setQuestionFeedback(null);
     setIsFeedbackVisible(false);
@@ -141,6 +143,9 @@ export default function FrameQuiz() {
     setScore(nextScore);
     setTotalAnswered(nextTotalAnswered);
     setConsecutiveCorrectStreak(nextConsecutiveCorrectStreak);
+    setDisplayedStreak(
+      isCorrect ? nextConsecutiveCorrectStreak : consecutiveCorrectStreak,
+    );
 
     setPendingAdvance({
       nextQuestion,
@@ -161,6 +166,7 @@ export default function FrameQuiz() {
     setRecentQuestionIds(pendingAdvance.recentQuestionIds);
     setCurrentQuestion(pendingAdvance.nextQuestion);
     setQuestionFeedback(null);
+    setDisplayedStreak(consecutiveCorrectStreak);
     setPendingAdvance(null);
   };
 
@@ -228,13 +234,13 @@ export default function FrameQuiz() {
                 </CardTitle>
                 <div className="flex shrink-0 flex-wrap items-center justify-end gap-2">
                   <p className="text-lg font-medium whitespace-nowrap">
-                    Streak {consecutiveCorrectStreak}
+                    Streak {displayedStreak}
                   </p>
                   {currentStreakRank.image && (
                     <img
                       src={currentStreakRank.image}
                       className="h-12 w-auto"
-                      alt={`${currentStreakRank.name} rank for streak ${consecutiveCorrectStreak}`}
+                      alt={`${currentStreakRank.name} rank for streak ${displayedStreak}`}
                     />
                   )}
                 </div>
