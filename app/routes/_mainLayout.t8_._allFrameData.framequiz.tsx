@@ -30,10 +30,51 @@ import { generateMetaTags } from '~/utils/seoUtils';
 import { type LoaderData } from './_mainLayout.t8_._allFrameData';
 
 const RECENT_QUESTION_WINDOW = 20;
+const RECENT_ANSWER_WINDOW = 200;
+const FRAME_QUIZ_STATS_STORAGE_KEY = 't8FrameQuizStatsV1';
+
+type PersistedFrameQuizStats = {
+  personalBestStreak: number;
+  lifetimeAnsweredCount: number;
+  recentAnswerResults: boolean[];
+};
 
 type PendingAdvance = {
   nextQuestion: QuizMove | null;
   recentQuestionIds: string[];
+};
+
+const defaultPersistedFrameQuizStats: PersistedFrameQuizStats = {
+  personalBestStreak: 0,
+  lifetimeAnsweredCount: 0,
+  recentAnswerResults: [],
+};
+
+const sanitizePersistedFrameQuizStats = (
+  value: unknown,
+): PersistedFrameQuizStats => {
+  if (!value || typeof value !== 'object') {
+    return defaultPersistedFrameQuizStats;
+  }
+
+  const candidate = value as Partial<PersistedFrameQuizStats>;
+  const personalBestStreak = Number.isFinite(candidate.personalBestStreak)
+    ? Math.max(0, Math.floor(candidate.personalBestStreak ?? 0))
+    : 0;
+  const lifetimeAnsweredCount = Number.isFinite(candidate.lifetimeAnsweredCount)
+    ? Math.max(0, Math.floor(candidate.lifetimeAnsweredCount ?? 0))
+    : 0;
+  const recentAnswerResults = Array.isArray(candidate.recentAnswerResults)
+    ? candidate.recentAnswerResults
+        .filter((answer): answer is boolean => typeof answer === 'boolean')
+        .slice(-RECENT_ANSWER_WINDOW)
+    : [];
+
+  return {
+    personalBestStreak,
+    lifetimeAnsweredCount,
+    recentAnswerResults,
+  };
 };
 
 export const meta: MetaFunction = ({ matches }) => {
@@ -69,6 +110,9 @@ export default function FrameQuiz() {
   const [pendingAdvance, setPendingAdvance] = useState<PendingAdvance | null>(
     null,
   );
+  const [persistedStats, setPersistedStats] = useState<PersistedFrameQuizStats>(
+    defaultPersistedFrameQuizStats,
+  );
 
   const eligibleMoves = useMemo(() => getEligibleQuizMoves(moves), [moves]);
 
@@ -78,6 +122,20 @@ export default function FrameQuiz() {
         cancelAnimationFrame(feedbackAnimationFrameRef.current);
       }
     };
+  }, []);
+
+  useEffect(() => {
+    try {
+      const stored = localStorage.getItem(FRAME_QUIZ_STATS_STORAGE_KEY);
+      if (!stored) {
+        return;
+      }
+
+      const parsed = JSON.parse(stored);
+      setPersistedStats(sanitizePersistedFrameQuizStats(parsed));
+    } catch {
+      setPersistedStats(defaultPersistedFrameQuizStats);
+    }
   }, []);
 
   useEffect(() => {
@@ -105,9 +163,21 @@ export default function FrameQuiz() {
     : '';
   const currentCommand = currentQuestion?.move.command ?? '';
   const currentStreakRank = getFrameQuizRankForStreak(displayedStreak);
-  const accuracyPercent =
+  const currentSessionAccuracyPercent =
     totalAnswered === 0 ? 0 : Math.round((score / totalAnswered) * 100);
-  const accuracyText = `${accuracyPercent}% - ${score}/${totalAnswered}`;
+  const currentSessionAccuracyText = `${currentSessionAccuracyPercent}% - ${score}/${totalAnswered}`;
+  const recentCorrectCount = persistedStats.recentAnswerResults.reduce(
+    (count, isCorrect) => count + (isCorrect ? 1 : 0),
+    0,
+  );
+  const recentAnswerCount = persistedStats.recentAnswerResults.length;
+  const recentAccuracyPercent =
+    recentAnswerCount === 0
+      ? 0
+      : Math.round((recentCorrectCount / recentAnswerCount) * 100);
+  const personalBestRank = getFrameQuizRankForStreak(
+    persistedStats.personalBestStreak,
+  );
 
   useEffect(() => {
     const previousRankImage = previousRankImageRef.current;
@@ -167,6 +237,29 @@ export default function FrameQuiz() {
       isCorrect ? nextConsecutiveCorrectStreak : consecutiveCorrectStreak,
     );
 
+    setPersistedStats((current) => {
+      const nextRecentAnswerResults = [...current.recentAnswerResults, isCorrect];
+      const trimmedRecentAnswerResults =
+        nextRecentAnswerResults.length <= RECENT_ANSWER_WINDOW
+          ? nextRecentAnswerResults
+          : nextRecentAnswerResults.slice(-RECENT_ANSWER_WINDOW);
+      const nextStats: PersistedFrameQuizStats = {
+        personalBestStreak: Math.max(
+          current.personalBestStreak,
+          nextConsecutiveCorrectStreak,
+        ),
+        lifetimeAnsweredCount: current.lifetimeAnsweredCount + 1,
+        recentAnswerResults: trimmedRecentAnswerResults,
+      };
+
+      localStorage.setItem(
+        FRAME_QUIZ_STATS_STORAGE_KEY,
+        JSON.stringify(nextStats),
+      );
+
+      return nextStats;
+    });
+
     setPendingAdvance({
       nextQuestion,
       recentQuestionIds: nextRecentQuestionIds,
@@ -188,6 +281,11 @@ export default function FrameQuiz() {
     setQuestionFeedback(null);
     setDisplayedStreak(consecutiveCorrectStreak);
     setPendingAdvance(null);
+  };
+
+  const handleResetPersistedStats = () => {
+    setPersistedStats(defaultPersistedFrameQuizStats);
+    localStorage.removeItem(FRAME_QUIZ_STATS_STORAGE_KEY);
   };
 
   if (eligibleMoves.length === 0) {
@@ -327,9 +425,56 @@ export default function FrameQuiz() {
               </div>
             </CardContent>
           </Card>
-          <p className="text-center text-sm text-muted-foreground">
-            Accuracy: {accuracyText}
-          </p>
+          <Card className="mx-auto w-full max-w-2xl border-border/70 shadow-sm">
+            <CardContent className="grid gap-3 py-4 sm:grid-cols-2">
+              <div>
+                <p className="text-xs uppercase tracking-wide text-muted-foreground">
+                  Current session
+                </p>
+                <p className="text-sm">Accuracy: {currentSessionAccuracyText}</p>
+              </div>
+              <div>
+                <p className="text-xs uppercase tracking-wide text-muted-foreground">
+                  Last 200 questions
+                </p>
+                <p className="text-sm">
+                  Correct: {recentCorrectCount}/{recentAnswerCount} ({recentAccuracyPercent}%)
+                </p>
+              </div>
+              <div>
+                <p className="text-xs uppercase tracking-wide text-muted-foreground">
+                  Questions answered total
+                </p>
+                <p className="text-sm">{persistedStats.lifetimeAnsweredCount}</p>
+              </div>
+              <div className="flex items-center justify-between gap-3 sm:justify-start">
+                <div>
+                  <p className="text-xs uppercase tracking-wide text-muted-foreground">
+                    Personal best streak
+                  </p>
+                  <p className="text-sm">{persistedStats.personalBestStreak}</p>
+                </div>
+                {personalBestRank.image && (
+                  <img
+                    src={personalBestRank.image}
+                    className="h-12 w-auto"
+                    alt={`${personalBestRank.name} rank for personal best streak ${persistedStats.personalBestStreak}`}
+                  />
+                )}
+              </div>
+              <div className="sm:col-span-2">
+                <Button
+                  type="button"
+                  variant="ghost"
+                  size="sm"
+                  onClick={handleResetPersistedStats}
+                  className="h-auto px-0 text-xs text-muted-foreground hover:text-foreground"
+                >
+                  Reset saved stats
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       )}
     </ContentContainer>
