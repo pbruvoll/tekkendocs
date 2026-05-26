@@ -34,7 +34,6 @@ H.2+3;M,m,m,m;51;i18~19;+4;-3d;;"* Heat Smash
 * Transition to attack throw after 1st hit
 * 9 chip damage on block
 * Jail from 1st attack
-* Ends Heat
 * Low crush 68~89
 * Floating state 90~92";hs rbr bbr js68~89 fs90~92;DGF;Yoshimitsu-H.2+3;Divine Sword Kagekiyo;r36 1SS;;
 R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
@@ -61,7 +60,8 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Interrupt with i4 from 1st block
 * 8 chip damage on block
 * Recovers 1 base health or 6 additional recoverable health on hit 
-* Recovers 1 base health when remaining recoverable health is 5 or less";fbr wpn;;Yoshimitsu-1,NSS.1;;r34 1SS;;
+* Recovers 1 base health when remaining recoverable health is 5 or less
+* 1,H.1: Consumes 90F of remaining Heat time";fbr wpn;;Yoshimitsu-1,NSS.1;;r34 1SS;;
 2;h;10;i11;-1;+5;+8;;;;Yoshimitsu-2;Right Jab;r20;;File:t8-p2-yoshimitsu-2,1.mp4
 2,1;h, m;10, 23;i11, i26~27;-9;+12a;;"* Balcony Break
 * Weapon
@@ -119,7 +119,8 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * 10 chip damage on block
 * Clean hit 35 damage
 * Recovers 1 base health or 6 additional recoverable health on hit 
-* Recovers 1 base health when remaining recoverable health is 5 or less";bbr wpn;;Yoshimitsu-3,2,NSS.1+2;Enma's Soul Blade;r34 1SS;;File:t8-p2-yoshimitsu-3,2,nss.1+2.mp4
+* Recovers 1 base health when remaining recoverable health is 5 or less
+* 3,2,H.1+2: Consumes 180F of remaining Heat time";bbr wpn;;Yoshimitsu-3,2,NSS.1+2;Enma's Soul Blade;r34 1SS;;File:t8-p2-yoshimitsu-3,2,nss.1+2.mp4
 3,NSS.1;m, h;12, 22;i15~16, i22~24;+7;+18g;;"* Heat Engager
 
 * Heat Dash +5, +62a (+42)
@@ -132,6 +133,7 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Recovers 1 base health when remaining recoverable health is 5 or less
 * Does not transition to DGF during Heat Dash
 * Recovers in 1SS
+* 3,H.1: Consumes 90F of remaining Heat time
 * Low crush 26~";he bbr wpn js26~;DGF,DGF;Yoshimitsu-3,NSS.1;;r23 DGF;;
 3~4;m,m;6,22;i17~18 i28~29;-6;+3;;"* Jail from 1st attack
 * Enter DGF +5 +14 r18 with 1SS.U
@@ -177,7 +179,7 @@ f+2,1;h, M;18, 21;i17~18, i26~27;-12;+17a (+10);;"* Tornado
 * Weapon
 * Combo from 1st CH +66a (+50)";trn wpn;;Yoshimitsu-f+2,1;Manji Backfist Shredder;r32;;File:t8-p2-yoshimitsu-f+2,1.mp4
 f+2,NSS.1;h, m;18, 21;i17~18, i26~27;-12;+17a (+10);;"* Tornado
-* Combo from 1st CH";trn;NSS;Yoshimitsu-f+2,NSS.1;Manji Backfist Swipe;r32 NSS;;
+* Airborne combo from 1st CH (+66a (+50))";trn;NSS;Yoshimitsu-f+2,NSS.1;Manji Backfist Swipe;r32 NSS;;
 f+2,db+2;h, m;18, 8;i17~18, i15;-5;+6;;"* Input can be delayed 2f
 * Move cannot be delayed
 * Leads to db+2 extensions";;FC;Yoshimitsu-f+2,db+2;Backfist > Stone Fist;r24 FC;;File:t8-p2-yoshimitsu-f+2,db+2.mp4
@@ -241,7 +243,8 @@ df+3,NSS.1;m, M;10, 24;i17~18, i23~24;-9;+16a;+52a;"* Floor Break
 * Recovers 1 base health or 6 additional recoverable health on hit 
 * Recovers 1 base health when remaining recoverable health is 5 or less
 * 9 chip damage on block
-* Input can be held to transition to d+1*";fbr wpn;d+1*;Yoshimitsu-df+3,NSS.1;Wood Chopper;r33 1SS;;
+* Input can be held to transition to d+1*
+* df+3,H.1: Consumes 90F of remaining Heat time";fbr wpn;d+1*;Yoshimitsu-df+3,NSS.1;Wood Chopper;r33 1SS;;
 df+4;m;15;i12;-7;+4;;;;;Yoshimitsu-df+4;Side Kick;r26;;
 df+1+4;M;20;i20~21;-17;+35a (+25);;"* Weapon
 * Can be performed in FC
@@ -481,8 +484,9 @@ u+3+4;M,M;10,12;i39~42 i3~6;+1c~+4c;+24a;;"* Floor Break
 * Low crush 11~42
 * Floating state 43~45";fbr js11~42 fs43~45;;Yoshimitsu-u+3+4;Guillotine Crow Kick;r23;;File:t8-p2-yoshimitsu-u+3+4.mp4
 uf+1;m;10;i17;-10;+2c;;"* Weapon
-* Good SSR tracking
-* Transition to KIN -3 +9 r26 with 1+2";wpn;KIN;Yoshimitsu-uf+1;;r33 1SS;;File:t8-p2-yoshimitsu-uf+1.mp4
+* Good right sidestep tracking
+* Transition to KIN -3 +9 r26 with 1+2
+* H.uf+1: Consumes 90F of remaining Heat time";wpn;KIN;Yoshimitsu-uf+1;;r33 1SS;;File:t8-p2-yoshimitsu-uf+1.mp4
 uf+1,1;m, M;10, 17;i17, i29~30;-10;+9c;;"* Floor Break
 * Weapon
 * Combo from 1st hit with 4f delay
@@ -499,8 +503,7 @@ uf+1,NSS.1;m, M;10, 22;i17, i29~30;-10;+9c;;"* Floor Break
 * Interrupt with i6 from 1st block
 * Transition to FLE on hit only
 * Good sidestep right tracking
-* Restores 3 additional recoverable health on hit
-* Partially uses remaining Heat time";fbr wpn;FLE;Yoshimitsu-uf+1,NSS.1;Double Decapitation;r33 1SS;;
+* Restores 3 additional recoverable health on hit";fbr wpn;FLE;Yoshimitsu-uf+1,NSS.1;Double Decapitation;r33 1SS;;
 uf+1+3;M!;40;i113~114;;+30a;;"* Floor Break
 * Weapon
 * Cancel to r64 DGF with 1+2 on frame 34
@@ -743,8 +746,7 @@ BT.d+1;L;20;i17~18;-13;+3;+38a;"Weapon
 DGF.1;M;22;i30~31;-2c;+10a;+46a;"* Floor Break
 * Weapon
 * 11 chip damage on block
-* Power up in Heat 
-* Partially uses remaining Heat time
+* Power up in Heat
 * Low crush 1~27";fbr wpn js1~27;;Yoshimitsu-DGF.1;Dragonfly Blade;r29;;File:t8-p2-yoshimitsu-dgf.1.mp4
 DGF.2;h;15;i16~18;+4;+13s;;* Low crush 1~;js1~;DGF;Yoshimitsu-DGF.2;Dragonfly Fist;r15 DGF;;File:t8-p2-yoshimitsu-dgf.2,4.mp4
 DGF.2,4;h, M;15, 22;i16~18, i26~28;-14;+15a (+8);;"* Tornado
@@ -885,7 +887,8 @@ IND.u+1+2;;;;;;;"Unavailable in NSS
 * Low crush 1~";js1~;DGF;Yoshimitsu-IND.u+1+2;Indian Stance Manji Dragonfly;r25 DGF;;File:t8-p2-yoshimitsu-ind.u+1+2.mp4
 KIN.1;m;10;i17;-12;-1;;"* Floor Break
 * Weapon
-* Deals 2 chip damage in NSS";fbr wpn;;Yoshimitsu-KIN.1;;r31 1SS;;File:t8-p2-yoshimitsu-kin.1,1.mp4
+* 2 chip damage on block in NSS
+* H.KIN.1: Consumes 90F of remaining Heat time";fbr wpn;;Yoshimitsu-KIN.1;;r31 1SS;;File:t8-p2-yoshimitsu-kin.1,1.mp4
 KIN.1,1;m, m,m;10, 5,15;i17, i23~24 i14~15;-9;+7c;;"* Floor Break
 * Weapon
 * Combo from 1st hit with 2f delay
@@ -917,7 +920,8 @@ KIN.2,NSS.1+2;m, M;15, 30;i21~22, i32~34;-3;+15a;;"* Balcony Break
 * Recovers 5 base health or 10? additional recoverable health on hit 
 * Recovers 1 base health on hit when remaining recoverable health is 7 to 12
 * Recovers 5 additional total health on hit when remaining recoverable health is 6 or less (recoverable + base -> 5)
-* +15d on backturned hit";bbr fbr wpn;;Yoshimitsu-KIN.2,NSS.1+2;;r49 1SS;;
+* +15d on backturned hit
+* KIN.2,H.1+2: Consumes 90F of remaining Heat time";bbr fbr wpn;;Yoshimitsu-KIN.2,NSS.1+2;;r49 1SS;;
 KIN.2,NSS.1+2*;m, M;15, 30;i21~22, i47~49;+11;+69a (+49);;"* Balcony Break
 * Floor Break
 * Weapon
@@ -925,9 +929,9 @@ KIN.2,NSS.1+2*;m, M;15, 30;i21~22, i47~49;+11;+69a (+49);;"* Balcony Break
 * 12 chip damage on block
 * Recovers 1 base health or 6 additional recoverable health on hit 
 * Recovers 1 base health when remaining recoverable health is 5 or less
-* Consumes 210F of Heat
 * +26d (+26) on airborne hit
-* +40a on backturned hit";bbr fbr wpn;;Yoshimitsu-KIN.2,NSS.1+2*;;r49 1SS;;
+* +40a on backturned hit
+* KIN.2,H.1+2*: Consumes 210F of remaining Heat time";bbr fbr wpn;;Yoshimitsu-KIN.2,NSS.1+2*;;r49 1SS;;
 KIN.3;L;17;i25~32;-16~-9;+13a;+25a;"* Low crush 10~20
 * Floating state 21~23
 * High crush 24~";js10~20 fs21~23 cs24~;FC;Yoshimitsu-KIN.3;Shibakari;r28 FC;;File:t8-p2-yoshimitsu-kin.3.mp4
@@ -1004,13 +1008,14 @@ MED.n;;;;;;;"* May be canceled into another MED move
 ** +1 health (1st pulse)
 ** +2 health (2nd pulse)
 ** +3 health (3rd onward)";;MED;Yoshimitsu-MED.n;Heal Pulse;r30 MED;;
-NSS.1+2+3;h;25;i22~40;-18~+0;+26d (-32);;Balcony Break;bbr;IND;Yoshimitsu-NSS.1+2+3;Spirit Spinner;r30 IND;;
+NSS.1+2+3;h;25;i22~40;-18~+0;+26d (-32);+16~+34;Balcony Break;bbr;IND;Yoshimitsu-NSS.1+2+3;Spirit Spinner;r30 IND;;
 NSS.1+4;m;20;i8~11;-20;+14 +64a;;"* Strong Aerial Tailspin
 * Weapon
 * Knockdown against BT opponent, +19a (+9)
 * 4 chip damage on block
 * Recovers 1 base health or 6 additional recoverable health on hit
-* Can be done from Crouch Level 1";wpn;;Yoshimitsu-NSS.1+4;Soul Stealer;r36 1SS;;
+* Can be done from Crouch Level 1
+* H.1+4: Consumes 300F of remaining Heat time";wpn;;Yoshimitsu-NSS.1+4;Soul Stealer;r36 1SS;;
 NSS.BT.d+1;l;15;;;;;Yoshimitsu remains in NSS;;;Yoshimitsu-NSS.BT.d+1;;;;
 NSS.FC.DF+1;l;12;i25~26;-16;+27a;;* High crush 1~34;cs1~34;NSS;Yoshimitsu-NSS.FC.DF+1;;r34 NSS;;File:t8-p2-yoshimitsu-nss.fc.df+1,2.mp4
 NSS.FC.DF+1,2;l, L;12, 20;i25~26, i25~26;-14;+14;;"* Floor Break
@@ -1027,26 +1032,29 @@ NSS.KIN.1+4;m;20;i12~15;-20;+14 +64a;;"* Strong Aerial Tailspin
 * Knockdown against BT opponent, +19a (+9)
 * 4 chip damage on block
 * Recovers 1 base health or 6 additional recoverable health on hit
-* Can be done from Crouch Level 1";wpn;;Yoshimitsu-NSS.KIN.1+4;;r36 1SS;;
+* Can be done from Crouch Level 1
+* H.1+4: Consumes 300F of remaining Heat time";wpn;;Yoshimitsu-NSS.KIN.1+4;;r36 1SS;;
 NSS.KIN.d+1;L;17;i23~24;-13;+3;+38a;"Cancel to r34 FC with DB on frame 16
 * High crush 22~";cs22~;FC,FC;Yoshimitsu-NSS.KIN.d+1;;r31 FC;;
 NSS.KIN.f+1;M,M,M;6,6,12;i19~20 i6~7 i7~8;-5;+18a (+11);;"* Weapon
 * Combos from any hit
 * 8 chip damage on block
 * Recovers 1 base health or 6 additional recoverable health on hit 
-* Recovers 1 base health when remaining recoverable health is 5 or less";wpn;;Yoshimitsu-NSS.KIN.f+1;;r31 1SS;;
+* Recovers 1 base health when remaining recoverable health is 5 or less
+* H.KIN.f+1: Consumes 90F of remaining Heat time";wpn;;Yoshimitsu-NSS.KIN.f+1;;r31 1SS;;
 NSS.KIN.f+1*;M,M,M,M,M,M;6,6,6,6,6,12;i19~20 i6~7 i7~8 i6~7 i7~8 i7~8;-9;+29a (+14);;"* Weapon
 * Combos from any hit
 * 14 chip damage on block
 * Recovers 5 base health or 10 additional recoverable health on hit
 * Recovers 1 base health on hit when remaining recoverable health is 10-15
 * Recovers 2/3/4 base health on hit when remaining recoverable health is 9-8/7-6/5-4
-* Recovers 5 base health on hit when remaining recoverable health is 3 or less";wpn;;Yoshimitsu-NSS.KIN.f+1*;;r35 1SS;;
+* Recovers 5 base health on hit when remaining recoverable health is 3 or less 
+* H.KIN.f+1*: Consumes 90F of remaining Heat time";wpn;;Yoshimitsu-NSS.KIN.f+1*;;r35 1SS;;
 NSS.KIN.f+1+2;m;20;i24~25;+14c;+14c;+49a;"* Weapon
 * Transition to FLE on hit or block only
 * Recovers 1 base health or 6 additional recoverable health on hit 
 * Recovers 1 base health when remaining recoverable health is 5 or less
-* Partially uses remaining Heat time
+* H.KIN.f+1+2: Consumes 90F of remaining Heat time
 * Low crush 8~";wpn js8~;FLE;Yoshimitsu-NSS.KIN.f+1+2;God Slayer;r28 1SS;;
 NSS.b,B+1+4;m!;40;i65~70;;-3a (-12);+29a (-18);Balcony Break;bbr;NSS;Yoshimitsu-NSS.b,B+1+4;Thunder Palm Strike;r42 NSS;;
 NSS.b,B+1+4,B;m;20;,i22~25;-20;+14 +64a;;"* Strong Aerial Tailspin
@@ -1054,9 +1062,11 @@ NSS.b,B+1+4,B;m;20;,i22~25;-20;+14 +64a;;"* Strong Aerial Tailspin
 * Knockdown against BT opponent, +19a (+9)
 * 4 chip damage on block
 * Recovers 1 base health or 6 additional recoverable health on hit
-* Can be done from Crouch Level 1";wpn;;Yoshimitsu-NSS.b,B+1+4,B;Thunder Palm Strike Feint to Soul Stealer;r36 1SS;;
+* Can be done from Crouch Level 1
+* H.1+4: Consumes 300F of remaining Heat time";wpn;;Yoshimitsu-NSS.b,B+1+4,B;Thunder Palm Strike Feint to Soul Stealer;r36 1SS;;
 NSS.b+1+2;;;;;;;* High crush 8~50;cs8~50;;Yoshimitsu-NSS.b+1+2;Battou Kakugo;r35 1SS;;File:t8-p2-yoshimitsu-nss.b+1+2.mp4
-NSS.db+1;sl;5;i10;-5;+6;;"* Transition to r24 with f
+NSS.db+1;sl;5;i10;-5;+6;;"* Transition to Standing with f
+* +6c on crouching hit
 * High crush 4~";cs4~;FC;Yoshimitsu-NSS.db+1;Manji Shagapan;r24 FC;;File:t8-p2-yoshimitsu-nss.db+1.mp4
 NSS.df+1+4;m;19;i20~21;-17;+35a (+25);;"* Enter KIN r37 with 1+2
 * Can be buffered
@@ -1070,7 +1080,8 @@ NSS.d+1;M;24;i24~25;-9;+16a;+52a;"* Floor Break
 * Recovers 1 base health or 6 additional recoverable health on hit 
 * Recovers 1 base health when remaining recoverable health is 5 or less
 * 9 chip damage on block
-* Input can be held to transition to d+1*";fbr wpn;d+1*;Yoshimitsu-NSS.d+1;Quick Chop;r33 1SS;;
+* Input can be held to transition to d+1*
+* H.d+1: Consumes 90F of remaining Heat time";fbr wpn;d+1*;Yoshimitsu-NSS.d+1;Quick Chop;r33 1SS;;
 NSS.d+1+2;;;;;;;"* High crush 7~
 * Floating state 7~";cs7~ fs7~;IND;Yoshimitsu-NSS.d+1+2;No Sword Stance > Indian Stance;r20 IND;;
 NSS.d+1+4;;;;;;;"* Yoshimitsu is invisible on frames 50~64, but can still be hit
@@ -1092,7 +1103,7 @@ NSS.f+1+2;M;29;i20;-7;+29a (+3);;"* Heat Engager
 * Recovers 1 base health or 6 additional recoverable health on hit 
 * Recovers 1 base health when remaining recoverable health is 5 or less
 * Extended range
-* Consumes 270F of heat timer during heat
+* H.f+1+2: Consumes 270F of heat timer during heat
 * Steel pedal";he bbr wpn;;Yoshimitsu-NSS.f+1+2;Nine-Headed Dragon;r37 1SS;;
 NSS.f+3+4;m;20;i21~25;-13~-9;+20a (+11);;"* Balcony Break
 * Head
@@ -1123,7 +1134,8 @@ NSS.ub+1+2;M;30;i24~25;-8c;+16a (+6);;"* Balcony Break
 * Clean hit 39 damage
 * Recovers 1 base health or 6 additional recoverable health on hit 
 * Recovers 1 base health when remaining recoverable health is 5 or less
-* -12c if blocked at tip range";bbr wpn;;Yoshimitsu-NSS.ub+1+2;Soul Blade Yoshimitsu;r38 1SS;;File:t8-p2-yoshimitsu-nss.ub+1+2.mp4
+* -12c if blocked at tip range
+* H.ub+1+2: Consumes 180F of remaining Heat time";bbr wpn;;Yoshimitsu-NSS.ub+1+2;Soul Blade Yoshimitsu;r38 1SS;;File:t8-p2-yoshimitsu-nss.ub+1+2.mp4
 NSS.uf+1+3;;;;;;;"* Low crush 9~35
 * Floating state 36~38";js9~35 fs36~38;FC;Yoshimitsu-NSS.uf+1+3;Safe Heron Jump;r41 FC;;File:t8-p2-yoshimitsu-nss.uf+1+3.mp4
 NSS.u+1;m;24;i25~26;-4;+5c;+15a;"Floor Break

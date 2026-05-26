@@ -199,24 +199,31 @@ f,n,DF;sp;;;;;;"* Cannot be buffered
 * Connect to Wind God Step
 * Cost: 2F";;;Kazuya-f,n,DF;Mist Step to Wind God Step;;;
 f,n,d,DF;sp;;;;;;"* Cannot be buffered
-* Cost 3F";;;Kazuya-f,n,d,DF;Wind God Step;;;File:t8-p2-kazuya-f,n,d,df.mp4
-f,n,d,DF+4;L;15;i16;-23;-3c;+20a;;;;Kazuya-f,n,d,DF+4;Spinning Demon;;;File:t8-p2-kazuya-f,n,d,df+4,1.mp4
-f,n,d,DF+4,1;L, m;15, 23;i16, i26;-16;+17a(+10;;"* Balcony Break
-* Combo from first hit";bbr;;Kazuya-f,n,d,DF+4,1;Spinning Demon > Left Hook;;;File:t8-p2-kazuya-f,n,d,df+4,1.mp4
-f,n,d,DF+4,4;L, h;15, 25;i16, i30;-9;+10a (+9);;"* Balcony Break
-* Combo from first hit
-* Low crush";bbr js;;Kazuya-f,n,d,DF+4,4;Illusive Demon;;;File:t8-p2-kazuya-f,n,d,df+4,4.mp4
-f,n,d,df:2;h;23;i11;+5;+39a(+29);;"* 5 chip damage on block 
-* Actual startup i14 (i13 if done from Mist Step)";;;Kazuya-f,n,d,df${justFrame}2;Electric Wind God Fist;25;;File:t8-p2-kazuya-f,n,d,dfh2.mp4
-f,n,d,df+1;m;23;i20;-16;+29a(+19);;"* Tornado
-* Meaty 1F in actuality";trn;;Kazuya-f,n,d,df+1;Thunder God Fist;;;File:t8-p2-kazuya-f,n,d,df+1.mp4
-f,n,d,df+2;h;20;i11;-10;+39a(+29);;Becomes Electric Wind God Fist during Heat (Consumes 60F? of remaining Heat Time);;;Kazuya-f,n,d,df+2;Wind God Fist;29;;File:t8-p2-kazuya-f,n,d,df+2.mp4
+* Stance moves can be buffered out of heat engager or heat dash
+* Recovers in FC at frame 20
+* Cancel to sidestep with u
+* Cancel to block with b from frames 1 to 6
+* Cancel to t1~t3 hFC with b from frames 7 to 9";;sidestep,hFC,CD;Kazuya-f,n,d,DF;Wind God Step;r1 CD;;File:t8-p2-kazuya-f,n,d,df.mp4
+f,n,d,DF+4;L;15;i16;-23;-3c;+20a;;;;Kazuya-f,n,d,DF+4;Spinning Demon;r41;;File:t8-p2-kazuya-f,n,d,df+4,1.mp4
+f,n,d,DF+4,1;L, m;15, 24 (16);i16, i26;-16;+16a (+7) / +17a (+10);;"* Balcony Break
+* Airborne combo from first hit (+17a (+10))";bbr;;Kazuya-f,n,d,DF+4,1;Spinning Demon > Left Hook;r34;;File:t8-p2-kazuya-f,n,d,df+4,1.mp4
+f,n,d,DF+4,4;L, h;15, 27 (18);i16, i30~31;-9;+17a (+8) / +10a (+9);;"* Balcony Break
+* Airborne combo from first hit (+10a (+9))
+* Low crush 21~46
+* Floating state 47~49";bbr js21~46 fs47~49;;Kazuya-f,n,d,DF+4,4;Illusive Demon;r32;;File:t8-p2-kazuya-f,n,d,df+4,4.mp4
+f,n,d,df:2;h;23;i11~12;+5;+39a (+29);;"* 5 chip damage on block 
+* Actual startup i14 (i13 if done from Mist Step)";;;Kazuya-f,n,d,df${justFrame}2;Electric Wind God Fist;r24;;File:t8-p2-kazuya-f,n,d,dfh2.mp4
+f,n,d,df+1;m;23;i20~22;-16;+29a (+19);;"* Tornado
+* Low crush 20~41
+* Floating state 42~44";trn js20~41 fs42~44;;Kazuya-f,n,d,df+1;Thunder God Fist;r33;;File:t8-p2-kazuya-f,n,d,df+1.mp4
+f,n,d,df+2;h;20;i11~12;-10;+39a (+29);;Becomes Electric Wind God Fist during Heat (Consumes 60F of remaining Heat Time);;;Kazuya-f,n,d,df+2;Wind God Fist;r28;;File:t8-p2-kazuya-f,n,d,df+2.mp4
 f,n,d,df+3;h;30;i18~27;-9;+12a (+2);;"* Balcony Break
 * 12 chip damage on block
-* Low crush 9~";bbr js9~;;Kazuya-f,n,d,df+3;Hell Lancer;;;File:t8-p2-kazuya-f,n,d,df+3.mp4
-f,n,d,df+1+2;m;33;i24;+5;+25a(+15);;"* Tornado
+* Low crush 9~31
+* Floating state 32~34";bbr js9~31 fs32~34;;Kazuya-f,n,d,df+3;Hell Lancer;r28;;File:t8-p2-kazuya-f,n,d,df+3.mp4
+f,n,d,df+1+2;m;33;i24;+5;+25a (+15);;"* Tornado
 * Balcony Break
-* 9 chip damage on block";trn bbr;;Kazuya-f,n,d,df+1+2;Parricide Fist;;;File:t8-p2-kazuya-f,n,d,df+1+2.mp4
+* 9 chip damage on block";trn bbr;;Kazuya-f,n,d,df+1+2;Parricide Fist;r30;;File:t8-p2-kazuya-f,n,d,df+1+2.mp4
 uf,n,4;m;20;i23;-13;+32a(+22);;* Low crush 9~;js9~;;Kazuya-uf,n,4;Delayed Rising Toe Kick;;;File:t8-p2-kazuya-uf,n,4.mp4
 f,f,F+3;m;30;i22~25;+6;+13a(+3);;"* Balcony Break
 * 9 chip damage on block
@@ -283,11 +290,13 @@ DVK.f,F+2;m,th;20,20;i16;-9;+0d;;"* Transition to throw on hit
 * Increased tracking to left sidesteps during Heat
 * Throw can be canceled with B
 * 6 chip damage on block";;;Kazuya-DVK.f,F+2;Chaos Inferno;;;File:t8-p2-kazuya-dvk.f,f+2.mp4
-DVK.f,n,d,df+1;m,th;23,15;i20;-16;-5d;;"* Floor Break
+DVK.f,n,d,df+1;m,th;23,15;i20~22;-16;-5d;;"* Floor Break
 * Consumes 120F of remaining Heat time on throw hit
 * Recover 30F of remaining Heat time on throw hit
 * Throw can be canceled with B
-* Opponent recovers FDFA";fbr;;Kazuya-DVK.f,n,d,df+1;Damnation;;;File:t8-p2-kazuya-dvk.f,n,d,df+1.mp4
+* Opponent recovers FDFA
+* Low crush 20~41
+* Floating state 42~44";fbr js20~41 fs42~44;;Kazuya-DVK.f,n,d,df+1;Damnation;;;File:t8-p2-kazuya-dvk.f,n,d,df+1.mp4
 DVK.f,n,d,df+3;h,t;30,20;i18~27,i20~30;-2~+8;+0d;;"* Consumes 180F of remaining Heat time
 * Extension available only on hit or block
 * Extension can be canceled with b
@@ -301,13 +310,13 @@ DVK.u+1+2;h!;27;i18~35;;;;"* Hits airborne opponents only
 OTG.d+3+4;L;25;i23;-12;-1;;;;;Kazuya-OTG.d+3+4;Oni Stomp;;;
 f,(even numbers frames).n;sp;;;;;;Sidesteps right;;;Kazuya-f,(even numbers frames).n;Mist Step (Right Side);;;
 f,(odd numbers frames).n;sp;;;;;;Sidesteps left;;;Kazuya-f,(odd numbers frames).n;Mist Step (Left Side);;;
-DVK.f,n,d,DF+4,1,1;L, m, m,th;15, 23, 17,15;i16, ,i24~26;-19;-5d;;"* Floor Break
+DVK.f,n,d,DF+4,1,1;L, m, m,th;15, 24 (16), 17,15;i16, ,i24~26;-19;-5d;;"* Floor Break
 * Consumes 600F of remaining Heat time on throw hit
 * Combo from 1st hit with 9F delay
 * Move can be delayed by 7F
 * Input can be delayed by 9F
 * Low crush 24~";fbr js24~;;Kazuya-f,n,d,DF+4,1,DVK.1;Abyss Damnation;r36?;;File:t8-p2-kazuya-f,n,d,df+4,1,dvk.1.mp4
-DVK.f,n,d,DF+4,1,1,B;L, m, m;15, 23, 17;i16, ,i24~26;-19;+26a (+16);;* Low crush 24~;js24~;;Kazuya-f,n,d,DF+4,1,DVK.1,B;Spinning Demon to Left Hook > Thunder God Fist;r36?;;File:t8-p2-kazuya-f,n,d,df+4,1,dvk.1.mp4
+DVK.f,n,d,DF+4,1,1,B;L, m, m;15, 24 (16), 17;i16, ,i24~26;-19;+26a (+16);;* Low crush 24~;js24~;;Kazuya-f,n,d,DF+4,1,DVK.1,B;Spinning Demon to Left Hook > Thunder God Fist;r36?;;File:t8-p2-kazuya-f,n,d,df+4,1,dvk.1.mp4
 hFC.1;sl;5;i10;-5;+6;;"* Transition to Standing with f
 * +6c on crouching hit
 * High crush 1~";cs1~;FC;Kazuya-FC.1;Crouch Jab;r24 FC;;

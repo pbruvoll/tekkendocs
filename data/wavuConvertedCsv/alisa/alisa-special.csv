@@ -93,7 +93,7 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 1+2+3;;;;;;;Can transition to DES with held input 1+2;;DES;Alisa-1+2+3;Taunt 1;r60;;File:t8-p2-alisa-1+2+3.mp4
 1+2+4;;;;;;;;;;Alisa-1+2+4;Taunt 2;r80;;File:t8-p2-alisa-1+2+4.mp4
 f+2;m;12;i17~18;-4;+7;;* Enter DES with 1+2;;DES;Alisa-f+2;;r22;;File:t8-p2-alisa-f+2,1.mp4
-f+2,1;m, m;12, 20;i17~18, i24~25;-12;+14c;;"* Heat Engager
+f+2,1;m, m;12, 20;i17~18, i24~25;-12;+14g;;"* Heat Engager
 
 * Heat Dash +5, +62a (+42)
 
@@ -102,6 +102,7 @@ f+2,1;m, m;12, 20;i17~18, i24~25;-12;+14c;;"* Heat Engager
 * Combo from 1st hit
 * 6 chip damage on block
 * 10 chip damage on block in heat
+* Opponent recovers crouching on hit
 * Does not transition to DES when using Heat Dash";he bbr wpn;DES,DES;Alisa-f+2,1;Dual Session;r36 DES;;File:t8-p2-alisa-f+2,1.mp4
 f+2,3;m, h;12, 8;i17~18, i22;-8;+4;;"* Balcony Break (airborne)
 * Combo from 1st CH with 1f delay
@@ -162,7 +163,7 @@ d+2,4;M, M;8, 20;i24~26, i18~21;-9;+28a (+13a);;"* Combo from 1st hit
 * Enter DES with 1+2
 * Low crush 21~43
 * Floating state 44~46";js21~43 fs44~46;DES;Alisa-d+2,4;Deadlock;r34;;File:t8-p2-alisa-d+2,4.mp4
-d+3;L;17;i23~32;-10~-1;+8c~+17c;+32a;"BKP transition is -18~-10
+d+3;L;17;i23~32;-10~-1;+8c~+17c;+32a;"FC recovery transition is -19~-10/-1c~+8c
 * Low crush 9~23
 * Floating state 24~26";js9~23 fs24~26;BKP;Alisa-d+3;Quick Slider;r21 BKP;;File:t8-p2-alisa-d+3.mp4
 d+4;L;12;i17~18;-12;-1;+8g;;;;Alisa-d+4;;r30;;File:t8-p2-alisa-d+4,1+2.mp4
@@ -374,6 +375,7 @@ f,f,F+3,4;m, m;15, 20;i18~19, i20~22;-7;+31a (+5);;"* Balcony Break
 * Low crush 3~50
 * Floating state 51~53";bbr js3~50 fs51~53;;Alisa-f,f,F+3,4;Linear Dropkick;r33;;File:t8-p2-alisa-f,f,f+3,4.mp4
 f,f,F+1+2;M;24;i18~36;-3;-17a (-26);;"* Balcony Break
+* Punishable with toekick on hit
 * Low crush 5~36
 * Floating state 37~67";bbr js5~36 fs37~67;;Alisa-f,f,F+1+2;Thruster Double Punch;r44;;
 ws1;M;12;i13~14;-12;-1;;* Elbow;elb;;Alisa-ws1;;r30;;File:t8-p2-alisa-ws1,2,3.mp4
@@ -412,7 +414,7 @@ BKP.1;h;21;i11~13;+4~+6;+27a (+1);;"* Strong Aerial Tailspin
 * 9 chip damage on block
 * Transition to SBT at +6/+29 (+3) with 3 or 4
 * Transition to DBT at +6/+29 (+3) with f+3 or f+4";bbr;SBT,DBT;Alisa-BKP.1;Recovery Hook;r37;;File:t8-p2-alisa-bkp.1.mp4
-BKP.2;h;34;i11~33;-9~+13;+21 (+6);;"* Tornado
+BKP.2;h;34;i11~33;-9~+13;+21a (+6);;"* Tornado
 * 6 chip damage on block";trn;;Alisa-BKP.2;Rapid Rocket Punch;r22;;File:t8-p2-alisa-bkp.2.mp4
 BKP.3;m;30;i24~27;-9;+72a;;"Balcony Break
 * Low crush 15~40
@@ -421,7 +423,7 @@ BKP.4;m;30;i18~23;-9~-4;+31a (+21);;"* Tornado
 * Knee
 * Low crush 17~52
 * Floating state 53~55";trn kne js17~52 fs53~55;;Alisa-BKP.4;Uplink Knee;r54;;File:t8-p2-alisa-bkp.4.mp4
-BKP.1+2;h!;20,3;i34~71;;+58;;* Weapon;wpn;;Alisa-BKP.1+2;Rocket Punch;r20;;File:t8-p2-alisa-bkp.1+2.mp4
+BKP.1+2;h!;20,3;i34~71;;+58a;;* Weapon;wpn;;Alisa-BKP.1+2;Rocket Punch;r20;;File:t8-p2-alisa-bkp.1+2.mp4
 BT.4;m;20;i16~17;-3;+19a (+2);;"* Balcony Break
 * High crush 5~12";bbr cs5~12;;Alisa-BT.4;Goody Two Shoes;;;File:t8-p2-alisa-bt.4.mp4
 CLK(Two spins).3;m;22;i13~14;+0;+63a (+43);;"* Balcony Break
@@ -542,7 +544,7 @@ DES.d+3;;;;;;;"* DES.d+3_4 goes to foreground, DES.u+3_4 goes to background
 * Transition to r20 DBT with 3_4
 * Low crush 5~22
 * Floating state 23~25";js5~22 fs23~25;DBT,DES;Alisa-DES.d+3;Evasive Action;r25 DES;;File:t8-p2-alisa-des.d+3.mp4
-DES.d+3,1;m;25;,i20~21;-13;+14c;;"* Balcony Break
+DES.d+3,1;m;25;,i20~21;-13~-12;+14c;;"* Balcony Break
 * Weapon
 * 7 chip damage on block
 * 12 chip damage on block in heat";bbr wpn;DES;Alisa-DES.d+3,1;Evasive Slash;r35 DES;;File:t8-p2-alisa-des.d+3,1.mp4
@@ -561,7 +563,7 @@ DES.f+2,1;m,m, m,m;9, 9;i15 i1~1, i23 i1~1;-12;-3c;;"* Weapon
 * 2 chip damage on block
 * 3 chip damage on block in heat
 * During heat: Transition to r20 DBT at -6/+3 with 3_4; partially uses remaining heat time";wpn;DBT,DES;Alisa-DES.f+2,1;;r33 DES;;File:t8-p2-alisa-des.f+2,1,2.mp4
-DES.f+2,1,2;m,m, m,m, m,m;9, 9, 23;i15 i1~1, ,i23~24 i4~5;-13;+30d;;"* Heat Engager
+DES.f+2,1,2;m,m, m,m, m,m;9, 9, 23;i15 i1~1, ,i23~24 i4~5;-13;+30a;;"* Heat Engager
 
 * Heat Dash +5, +62a (+42)
 
@@ -615,7 +617,7 @@ SBT.1,2,1;m, m, m;12, 13, 7;i13~14, ,i20~21;-12;-20;-12;"* Combo from 2nd CH
 * Less safe on hit than on block without CH
 * Low crush 26~102
 * Floating state 103~105";js26~102 fs103~105;;Alisa-SBT.1,2,1;;r41;;File:t8-p2-alisa-sbt.1,2,1,3+4.mp4
-SBT.1,2,1,3+4;m, m, m, m,m;12, 13, 7, 33;i13~14, ,i18;-18;+4 (-13);;"* Balcony Break
+SBT.1,2,1,3+4;m, m, m, m,m;12, 13, 7, 33;i13~14, ,i18;-18;+4a (-13);;"* Balcony Break
 * Combo from 3rd hit
 * Combo from 2nd CH
 * Transition to DES with input SBT.1,2,1,3+4,1+2
