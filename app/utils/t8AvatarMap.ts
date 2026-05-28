@@ -40,6 +40,8 @@ import king from '~/images/t8/avatars/king-128.webp';
 import kingBrand from '~/images/t8/avatars/king-brand-128.webp';
 import kuma from '~/images/t8/avatars/kuma-128.webp';
 import kumaBrand from '~/images/t8/avatars/kuma-brand-128.webp';
+import kunimitsu from '~/images/t8/avatars/kunimitsu-128.webp';
+import kunimitsuBrand from '~/images/t8/avatars/kunimitsu-brand-128.webp';
 import lars from '~/images/t8/avatars/lars-128.webp';
 import larsBrand from '~/images/t8/avatars/lars-brand-128.webp';
 import law from '~/images/t8/avatars/law-128.webp';
@@ -103,6 +105,7 @@ export const t8AvatarMap: Record<string, string> = {
   kazuya,
   king,
   kuma,
+  kunimitsu,
   lars,
   law,
   lee,
@@ -147,6 +150,7 @@ export const t8AvatarBrandMap: Record<string, string> = {
   kazuya: kazuyaBrand,
   king: kingBrand,
   kuma: kumaBrand,
+  kunimitsu: kunimitsuBrand,
   lars: larsBrand,
   law: lawBrand,
   lee: leeBrand,

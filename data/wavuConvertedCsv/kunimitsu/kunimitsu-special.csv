@@ -1,0 +1,247 @@
+Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Transitions;Wavu id;Name;Recovery;Image;Video
+2+3;m;"[12;12]";i16;+1;+2c;;"* Heat Burst
+* Cancel to r45 with b,b on frame 42
+* 2 chip damage on block
+* 12 chip damage on hit
+* Only deals recoverable damage
+* Cannot cause a K.O.
+* Power crush 7~16";hb pc7~16;;Kunimitsu-2+3;Heat Burst;r30;;
+1;h;5;i10;+1;+8;;Recovers 2f faster on hit or block (t27 r17);;;Kunimitsu-1;Jab;r19;;
+1,1;h, m;5, 12;i10, i21;-5;+6;;"* Combo from 1st hit with 2f delay
+* Move can be delayed 2f
+* Interrupt with i2 from 1st block
+* Enter KAT -7 +4 r26 with 1+2";;KAT;Kunimitsu-1,1;Memai Tsuki;r24;;
+1,1,1;h, m, m;5, 12, 18;i10, ,i21~22;-11;+15a (-2);;"* Tornado
+* Balcony Break
+* Weapon
+* Combo from 2nd CH with 9f delay
+* Input can be delayed 9f
+* Move cannot be delayed
+* Available on hit or block only
+* Interrupt with i10 from 2nd block
+* Low crush 5~15
+* Floating state 16~18";trn bbr wpn js5~15 fs16~18;;Kunimitsu-1,1,1;Memai Tsuki > Ryu Enko;r34;;
+1,1,2;h, m, m;5, 12, 24;i10, ,i19~20;-9;+14a (+5);+46a (-1);"* Balcony Break
+* Weapon
+* Combo from 2nd CH with 9f delay
+* Input can be delayed 9f
+* Move cannot be delayed
+* Available on hit or block only
+* Interrupt with i8 from 2nd block";bbr wpn;;Kunimitsu-1,1,2;Memai Tsuki > Dark Clutch;r30;;
+1,1,4;h, m, m;5, 12, 23;i10, ,i26~27;+3;+5a;;"* Spike
+* Input can be delayed 9f
+* Move cannot be delayed
+* Available on hit or block only
+* Interrupt with i15 from 2nd block
+* Chip damage on block
+* Low crush 5~29
+* Floating state 30~32";spk chp js5~29 fs30~32;;Kunimitsu-1,1,4;Memai Tsuki > Pouncing Strike;r34;;
+1,2;h, h;5, 8;i10, i12;-3;+7;;"* Jail from 1st attack with 2f delay
+* Move can be delayed 2f";;;Kunimitsu-1,2;Multi-palm Strike;r20;;
+1,2,2;h, h, h;5, 8, 10;i10, ,i20~21;-12;+5;;"* Balcony Break (airborne)
+* Weapon
+* Combo from 1st hit
+* Transition to BT with B";wpn;BT;Kunimitsu-1,2,2;Spinning Slash;r30;;
+1,2,4;h, h, m;5, 8, 20;i10, ,i23~24;-14;+12d;;"* Balcony Break
+* Combo from 1st CH
+* Hit vs BT +9d
+* Low crush 12~32
+* Floating state 33~35";bbr js12~32 fs33~35;;Kunimitsu-1,2,4;Flash Kick Combination;r35;;
+2;h;12;i12;-5;+1;;* Weapon;wpn;;Kunimitsu-2;;r24;;
+2,2;h, m;12, 14;i12, i12~13;-6;+5;;"* Weapon
+* Combo from 1st hit with 5f delay
+* Input can be delayed 5f
+* Move cannot be delayed";wpn;;Kunimitsu-2,2;Lotus Blade;r26;;
+2,2,2;h, m, h;12, 14, 16;i12, ,i18~19;-9;+2;;"* Weapon
+* Combo from 2nd CH with 4f delay
+* Input can be delayed 4f
+* Move is delayed 7f
+* Enter SET -4 +7 r27 with F";wpn;SET;Kunimitsu-2,2,2;Shrouded Lotus Blade;r32;;
+2,2,2,2;h, m, h, h;12, 14, 16, 16;i12, ,i15~16;-6;+3;;"* Balcony Break (airborne)
+* Weapon
+* Combo from 3rd hit with 5f delay
+* Combo from 2nd CH
+* Input can be delayed 5f
+* Move cannot be delayed";wpn;;Kunimitsu-2,2,2,2;;r31;;
+2,2,2,2,2;h, m, h, h, M;12, 14, 16, 16, 18;i12, ,i19~20;-12;+19a (+2);+33a (+23);"* Tornado
+* Weapon
+* Input can be delayed 7f
+* Move cannot be delayed
+* Low crush 21~35
+* Floating state 36~38";trn wpn js21~35 fs36~38;;Kunimitsu-2,2,2,2,2;Shadow Lotus Blade;r30;;
+3;h;17;i16~17;-7;+7;;"* Homing
+* Balcony Break (airborne)";hom;;Kunimitsu-3;Crescent Kick;r32;;
+3,4;h, h;17, 21;i16~17, i25~27;-5;+20a;+46a;"* Balcony Break (airborne)
+* Combo from 1st hit with 10f delay
+* Input can be delayed 10f
+* Move cannot be delayed";;;Kunimitsu-3,4;Getsurin Renkyaku;r31;;
+4;h;15;i12~13;-9;-3;;;;;Kunimitsu-4;;r32;;
+4,2;h, h;15, 13;i12~13, i19~20;+3;+6;;"* Balcony Break (airborne)
+* Weapon
+* Jail from 1st attack with 1f delay
+* Input can be delayed 1f
+* Move cannot be delayed
+* Low crush 15~25
+* Floating state 26~28";wpn js15~25 fs26~28;;Kunimitsu-4,2;Kagenade Slash;r28;;
+1+2;;;;;;;"* Actionable after 17f
+* Transition to r22 BT with B
+* Transition to r14 SET with F";;BT,SET,KAT;Kunimitsu-1+2;Katon;r17 KAT;;
+3+4;h;18;i21~22;-1;+21a (+12);;"* Strong Aerial Tailspin
+* Balcony Break
+* Low crush 11~30
+* Floating state 31~33";bbr js11~30 fs31~33;;Kunimitsu-3+4;Growling Jewel;r28;;
+f+2;h;12;i13;-9;+2;;;;;Kunimitsu-f+2;;r28;;
+f+2,3;h, h;12, 20;i13, i16~18;-6;+20a (+11);;"* Combo from 1st hit with 8f delay
+* Input can be delayed 8f
+* Move can be delayed 3f";;;Kunimitsu-f+2,3;Phoenix Tail;r28;;
+f+3;;;;;;;"* Transition to r16 FC with D
+* Cancel to r25 with B (can block mids or highs on frame 12~)";;FC,SET;Kunimitsu-f+3;Setsunagake;r10 SET;;
+f+4;m;12;i15;-5;-1;+7;"* Knee
+* Enter SET +3 +7 +15 r19 with F";kne;SET;Kunimitsu-f+4;Kusabiyuki;r27;;
+f+1+2;m;23;i17~18;-6;+9a (+0);+7;"* Heat Engager
+
+* Heat Dash +5, +45a (+35)
+
+* Balcony Break
+* Weapon
+* Chip damage on block";he bbr wpn chp;;Kunimitsu-f+1+2;Gozuryu;r35;;
+f+3+4;m,h;10,13;i15 i13;-5;+23a (+6);;"* Balcony Break
+* BT transition is -11
+* Low crush 19~24
+* Floating state 25~27";bbr js19~24 fs25~27;BT;Kunimitsu-f+3+4;Whirling Snapdragon;r27 BT;;
+df+1;m;10;i13~14;-2;+5;;;;;Kunimitsu-df+1;;r20;;
+df+1,2;m, m;10, 12;i13~14, i18~19;-10;+1;;"* Weapon
+* Combo from 1st CH with 7f delay
+* Input can be delayed 9f
+* Move can be delayed 8f
+* Trade with i1 from 1st block";wpn;;Kunimitsu-df+1,2;;r30;;
+df+1,2,2;m, m, M;10, 12, 20;i13~14, ,i22~23;-14c;+8a;;"* Balcony Break
+* Spike
+* Combo from 2nd hit with 1f delay
+* Input can be delayed 1f
+* Move cannot be delayed
+* Combo from 1st CH
+* Chip damage on block";bbr spk chp;;Kunimitsu-df+1,2,2;Unmuzan > Oboro Engetsu;r41;;
+df+1,3;m, h;10, 20;i13~14, i21;-9;+5;+44a (+34);"* Tornado
+* Combo from 1st Ch with 4f delay
+* Input can be delayed 9f
+* Move can be delayed 8f";trn;;Kunimitsu-df+1,3;Muten Cannon;r30;;
+df+2;M;13;i15~16;-14;+30a (+20);;"* Weapon
+* Can launch crouching opponent";wpn;;Kunimitsu-df+2;Rising Moon Slash;r29;;
+df+3;m;14;i17~18;-6;+2;+4;;;;Kunimitsu-df+3;;r27;;
+df+3,2;m, L;14, 20;i17~18, i28~29;-15;+1c;;"* Balcony Break (airborne)
+* Weapon
+* Combo from 1st hit
+* Cancel to FC -13 -5 -3 r34 with D
+* Interrupt with i6 from 1st block
+* High crush 22~35";wpn cs22~35;FC;Kunimitsu-df+3,2;Ice Cleaver;r33;;
+df+4;m;13;i12;-9;+2;;;;;Kunimitsu-df+4;;r28;;
+df+3+4;m,m;8,12;i17~18 i7~9;-2;+5;;"* Floor Break
+* Can hit grounded when off-axis
+* Floating state 10~24";fbr fs10~24;BT;Kunimitsu-df+3+4;Falling Hail;r22 BT;;
+d+1;m;23;i19;+3;+6;+13c;* Spike;spk;FC;Kunimitsu-d+1;Sakumaishi;r31 FC;;
+d+2;m;11;i16;-9;+2c;;"* Floor Break
+* Weapon
+* Does not floor break if string is continued";fbr wpn;;Kunimitsu-d+2;;r28;;
+d+2,1;m, m;11, 7;i16, i16~17;-12;-1;;"* Combo from 1st CH with 2f delay
+* Input can be delayed 2f
+* Move cannot be delayed";;;Kunimitsu-d+2,1;;r30;;
+d+2,1,2;m, m, m;11, 7, 7;i16, ,i11~12;-12;+4;;"* Weapon
+* Combo from 2nd hit with 1f delay
+* Input can be delayed 1f
+* Move cannot be delayed";wpn;;Kunimitsu-d+2,1,2;;r32;;
+d+2,1,2,1+2;m, m, m, m;11, 7, 7, 20;i16, ,i23~24;-13;+7a;;"* Hitstop 20f on hit
+* Combo from 3rd CH";;;Kunimitsu-d+2,1,2,1+2;Amamikanameishi;r33;;
+d+3;L;11;i16~17;-14;-3;;;;;Kunimitsu-d+3;;r32;;
+d+3,4;L, h;11, 12;i16~17, i21~22;-9;+0;;"* Combo from 1st CH with 7f delay
+* Input can be delayed 7f
+* Move can be delayed 6f";;;Kunimitsu-d+3,4;;r29;;
+d+3,4,1;L, h, sm,t;11, 12, 10,28;i16~17, ,i26~37;-13;-4d;;"* Weapon
+* Combo from 2nd hit with 1f delay
+* Combo from 1st CH
+* Input can be delayed 1f
+* Move cannot be delayed
+* Recovers 12f faster on block
+* Transitions to attack throw automatically on hit
+* 15 scaled damage on attack throw";wpn;;Kunimitsu-d+3,4,1;Rinbu Kick > Savage Kunai Throw;r38;;
+d+3,4,1,F;L, h, sm,t, sm,t;11, 12, 10,28, 10,28;i16~17, ,i26~37;-13;-4d;;"* Weapon
+* Combo from 2nd hit with 1f delay
+* Combo from 1st CH
+* Input can be delayed 1f
+* Move cannot be delayed
+* Recovers 12f faster on block
+* Transitions to attack throw automatically on hit
+* 15 scaled damage on attack throw
+* Side switch on hit";wpn;;Kunimitsu-d+3,4,1,F;Rinbu Kick > Piercing Kunai Throw;r38;;
+d+1+2;L;17;i20;-14;+0;+15g;"Weapon
+* High crush 6~";wpn cs6~;FC;Kunimitsu-d+1+2;Seneizan;r33 FC;;
+d+3+4;M;22;i20~23;-13;+12a (-5);;"* Balcony Break
+* Weapon
+* On successful attack absorption:
+** Reversal Break
+** -9 on block
+** Chip damage on block
+** Two additional mid hits (i9~12 i7~10)
+** 28 damage in total
+* Power crush 7~19";bbr wpn rbr chp pc7~19;;Kunimitsu-d+3+4;Blazing Fire Lilies;r34;;
+db+2;M;10;i16~17;-6;+7;;* Weapon;wpn;FC;Kunimitsu-db+2;;r27 FC;;
+db+3;l;8;i18;-15;-14;;* High crush 6~;cs6~;FC;Kunimitsu-db+3;;r43 FC;;
+db+3,3;l, l;8, 7;i18, i15~17;-19;-7;;"* Jail from 1st attack
+* High crush 1~";cs1~;FC;Kunimitsu-db+3,3;;r35 FC;;
+db+3,3,3;l, l, l;8, 7, 7;i18, ,i15~17;-19;-7;;"* Jail from 1st block
+* Combo from 2nd CH
+* Interrupt with i13 from 2nd block
+* High crush 1~";cs1~;FC;Kunimitsu-db+3,3,3;;r35 FC;;
+db+3,3,3,3;l, l, l, l;8, 7, 7, 5;i18, ,i15~17;-19;-7;;"* Jail from 1st block
+* Combo from 3rd CH
+* High crush 1~";cs1~;FC;Kunimitsu-db+3,3,3,3;;r35 FC;;
+db+3,3,3,3,3;l, l, l, l, l;8, 7, 7, 5, 5;i18, ,i15~17;-19;-7;;"* Jail from 1st block
+* Combo from 4th CH
+* High crush 1~";cs1~;FC;Kunimitsu-db+3,3,3,3,3;;r35 FC;;
+db+3,3,3,3,3,3;l, l, l, l, l, l;8, 7, 7, 5, 5, 5;i18, ,i15~17;-47;-35;;"* Jail from 1st block
+* Combo from 5th CH
+* High crush 1~";cs1~;FUFT;Kunimitsu-db+3,3,3,3,3,3;Manji Spin Low Kicks;r63 FUFT;;
+db+3,3,3,3,3,4;l, l, l, l, l, m;8, 7, 7, 5, 5, 15;i18, ,i12~13;-8;+23a (+13);;"* Balcony Break
+* Same animation as ws4
+* Can be performed following any number of db+3 lows except the first and last";bbr;;Kunimitsu-db+3,3,3,3,3,4;Manji Spin Low Kicks Front Kick;r26;;
+db+4;L;13;i17;-12;+0;+8;;;;Kunimitsu-db+4;;r30;;
+b+1+3;m!;25;i19~20;;+3a;;"* Spike
+* Parry mid and high punches and kicks
+* Parry state 5~12";spk ps5~12;;Kunimitsu-b+1+3;Secret Flower;r30;;
+,4;m;15;,i24~25;-9;+2;;"* Balcony Break (airborne)
+* Combo from 1st hit with 7f delay
+* Input can be delayed 7f
+* Move can be delayed 6f
+* Interrupt with i3 from 1st block";;;Kunimitsu-db+2,4;;r27;;
+,4,2;m, M;15, 23;,i24~25, i35;-8c;+15a;;"* Weapon
+* Input can be delayed 1f
+* Move cannot be delayed
+* Interrupt with i17 from 2nd block";wpn;FC;Kunimitsu-db+2,4,2;Kousa Renbu;r35 FC;;
+BT.3+4;m!;25;i19~20;;+3a;;"* Spike
+* Parry mid and high punches and kicks
+* Parry state 5~18";spk ps5~18;BT;Kunimitsu-BT.3+4;Secret Flower Ura;r22 BT;;
+1+3;t;35;i12~14;+0;+0d;;"* Floor Break
+* Throw break: 1 or 2
+* Opponent recovers in FUFL.";fbr;;Kunimitsu-1+3;Tamaki;r31;;
+2+4;t;35;i12~14;+0;-3d;;"* Floor Break
+* Throw break: 1 or 2
+* Side switch
+* Opponent recovers in FDFA.";fbr;;Kunimitsu-2+4;Mizore;r31;;
+BT.1+4;t;45;i12~14;+0;-5d;;"* Throw break: 1+2
+* Opponent recovers in FDFA";;;Kunimitsu-BT.1+4;Skybound Falling Sakura;r31;;
+Back Throw;t;50;;;+0d;;"* Unbreakable
+* Opponent recovers FDFT";;;Kunimitsu-Back Throw;Yamikazan;;;
+Left Throw;t;40;;-3;-2d;;"* Throw break: 1
+* Opponent recovers FUFA";;;Kunimitsu-Left Throw;Avalanche;;;
+Right Throw;t;40;;-3;+0d;;"* Throw break: 2
+* Randomly side switches
+* Opponent recovers FDFT or FDFR on side switch";;;Kunimitsu-Right Throw;Tornado;;;
+f+1+4;t;38;i11;-3 BT;+0d;;"* Throw break: 1
+* Side switch
+* Kunimitsu and the opponent recover in BT on break
+* Opponent recovers in FUFA
+* SET.1+4: i15 (t43 r28)";;;Kunimitsu-f+1+4;Manji Rana;r28;;
+uf+1+2;t;40;i12;+0;+0d;;"* Throw break: 1+2
+* Side switch
+* Opponent recovers in FDFT
+* SET.1+4: i16 (t44 r28)";;;Kunimitsu-uf+1+2;Manji Cartwheel;r27;;
