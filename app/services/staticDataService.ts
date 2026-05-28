@@ -76,7 +76,7 @@ const charsT8: string[] = [
   'kazuya',
   'king',
   'kuma',
-  'kunimitsu', 
+  'kunimitsu',
   'lars',
   'law',
   'lee',
