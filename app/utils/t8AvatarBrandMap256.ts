@@ -19,6 +19,7 @@ import jun from '~/images/t8/avatars/jun-brand-256.webp';
 import kazuya from '~/images/t8/avatars/kazuya-brand-256.webp';
 import king from '~/images/t8/avatars/king-brand-256.webp';
 import kuma from '~/images/t8/avatars/kuma-brand-256.webp';
+import kunimitsu from '~/images/t8/avatars/kunimitsu-brand-256.webp';
 import lars from '~/images/t8/avatars/lars-brand-256.webp';
 import law from '~/images/t8/avatars/law-brand-256.webp';
 import lee from '~/images/t8/avatars/lee-brand-256.webp';
@@ -62,6 +63,7 @@ export const t8AvatarBrandMap256: Record<string, string> = {
   kazuya,
   king,
   kuma,
+  kunimitsu,
   lars,
   law,
   lee,
