@@ -56,8 +56,8 @@ export const FrameDataSection = ({
     [searchParams],
   );
 
-  const [searchQuery, setSearchQuery] = useState<string>(
-    filterFromUrl.searchQuery || '',
+  const [searchQuery, setSearchQuery] = useState<string | undefined>(
+    filterFromUrl.searchQuery || undefined,
   );
 
   const filter = useMemo(
@@ -69,7 +69,7 @@ export const FrameDataSection = ({
 
   const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const searchValue = event.target.value;
-    setSearchQuery(searchValue);
+    setSearchQuery(searchValue || undefined);
   };
 
   return (

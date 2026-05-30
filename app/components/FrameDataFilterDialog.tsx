@@ -20,7 +20,7 @@ export const FrameDataFilterDialog = ({
   transitions,
 }: FrameDataFilterDialogProps) => {
   const filterCount = Object.entries(filter).filter(([, value]) => {
-    if (value === undefined) {
+    if (value === undefined || value === '') {
       return false;
     }
     if (Array.isArray(value)) {
