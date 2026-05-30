@@ -6,17 +6,15 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * Only deals recoverable damage
 * Cannot cause a K.O.
 * Power crush 7~16";hb pc7~16;;Azucena-2+3;Heat Burst;r30;;
-H.LIB.1,2,F;;;;+7;+26a;;"* Strong Aerial Tailspin
+H.LIB.1,2,F;;;;+4;+26a;;"* Strong Aerial Tailspin
 * Consumes 210F of remaining Heat time
 * 70% scaling on combo
 * Chip damage on block
 * Floating state 15~33";chp fs15~33;LIB;Azucena-H.LIB.1,2,F;Blend Tempestad > Nuevo Libertador;r38 LIB;;
-H.LIB.P (High);m;25;i17~18;-8;+32a;;"* Restores 120F of remaining heat time on successful parry
-* Restores 5 recoverable health on successful parry
+H.LIB.P (High);m;25;i17~18;-8;+32a;;"* Restores 5 recoverable health on successful parry
 * Opponent recovers FUFA
 * is1~17";is1~17;;Azucena-H.LIB.P (High);Puño de Fuego Evitacion;r35;;
 H.LIB.P (Low);m;20;i16~18;-9;+58a (+42);;"* Tornado
-* Restores 120F of remaining heat time on successful parry
 * Restores 5 recoverable health on successful parry
 * is1
 * Floating state 2~48";trn is1 fs2~48;;Azucena-H.LIB.P (Low);One Drip Cielo Evitacion;r44;;
@@ -24,15 +22,15 @@ H.LIB.d+3+4;M;27;i16~18;+4~+6;+22a;;"* Tornado
 * Consumes 210F of remaining Heat time
 * Transition to FC with D
 * Floating state 2~48";trn fs2~48;FC;Azucena-H.LIB.d+3+4;One Drip Cielo;r44;;
-H.b+1,1,2,F;;;;+7;+26a;;"* Strong Aerial Tailspin
+H.b+1,1,2,F;;;;+4;+26a;;"* Strong Aerial Tailspin
 * Consumes 210F of remaining Heat time
 * 70% scaling on combo
 * Chip damage on block
 * Floating state 15~33";chp fs15~33;LIB;Azucena-H.b+1,1,2,F;Double Blend Tempestad > Nuevo Libertador;r38 LIB;;
-H.b+2,F;;;;+7;+26a;;"* Strong Aerial Tailspin
+H.b+2,F;;;;+4;+26a;;"* Strong Aerial Tailspin
 * Homing
 * 70% scaling on combo
-* Consumes 150F of remaining Heat time
+* Consumes 210f of remaining Heat time
 * 7 Chip damage on block
 * Low crush 15~30
 * Floating state 31~33";hom js15~30 fs31~33;LIB;Azucena-H.b+2,F;Mil Nudillo > Nuevo Libertador;r38 LIB;;
@@ -396,7 +394,6 @@ LIB.3+4;h;25;i16~17;-2;+32a;;"* Strong Aerial Tailspin
 LIB.B;;;;;;;"Completely evades high or low attacks
 * Parry state 1~";ps1~;LIB;Azucena-LIB.B;Salida Castillo;r1 LIB;;File:t8-p2-azucena-lib.b.mp4
 LIB.F;;;;;;;"* Completely evades high or low attacks
-* Restores 30F and 60F of remaining Heat time on first and second steps, then 30F and 90F on following steps
 * Parry state 1~";ps1~;LIB;Azucena-LIB.F;Azucena Admission;r1 LIB;;File:t8-p2-azucena-lib.f.mp4
 LIB.P (High);;0;;;;;"* Restores recoverable health
 * Frame advantage depends on the move that gets parried
@@ -408,7 +405,6 @@ LIB.P (Low);m,m;15,20;i7~8 i19~20;;+8;;"* Restores recoverable health
 * Low crush 8~19
 * Floating state 20~22";is1~6 fs7 js8~19 fs20~22;LIB;Azucena-LIB.P (Low);Flush Valve Gracia;r26 LIB;;
 LIB.U;;;;;;;"* Completely evades high or low attacks
-* Restores 30F and 60F of remaining Heat time on first and second steps, then 30F and 90F on following steps
 * Parry state 1~";ps1~;LIB;Azucena-LIB.U_D;Milagros Show;r1 LIB;;File:t8-p2-azucena-lib.u_d.mp4
 LIB.b,b;;;;;;;* Can be canceled at r20 with b+1 or uf+1, performs the same attack as uf+1;;LIB;Azucena-LIB.b,b;Caer Back Funnel;r45 LIB;;File:t8-p2-azucena-lib.b,b.mp4
 LIB.d+3;m;25;i24~26;+2;+13a;+38a;"* Balcony Break

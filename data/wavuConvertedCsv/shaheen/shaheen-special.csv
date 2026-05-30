@@ -9,6 +9,7 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 H.D*,u+2;h;35;i17~18;+13;+63a (+47);;"* Balcony Break
 * Tornado
 * Guard break
+* Consumes 450F of remaining Heat Time
 * Read more
 * Low crush";bbr trn js;;Shaheen-H.D*,u+2;Al-Ghul Master;;;t8-p2-shaheen-h.dx,u+2.mp4
 H.f+1+2;m;15,25 (17);i16~17;+4c SNK;+27d (-8);;"* Floor Break
@@ -99,8 +100,7 @@ df+4,3;m, h;13, 23;i14, i23~24;-4;+23a (+14);;"* Balcony Break
 * Combo from 1st hit";bbr;;Shaheen-df+4,3;Al-Fard al-Shuja;;;File:t8-p2-shaheen-df+4,3.mp4
 df+3+4;sp;;;;;;"* Transitions to SNK
 * Transition to r1? FC with SNK.DB";;FC,SNK;Shaheen-df+3+4;Stealth Step;r15 SNK;;t8-p2-shaheen-df+3+4.mp4
-d+1;L;16;i20~21;-13;+4;+28g;"* Partially restores remaining Heat time on hit
-* High crush 6~52";cs6~52;FC;Shaheen-d+1;Hermit Needle;r31 FC;;t8-p2-shaheen-d+1.mp4
+d+1;L;16;i20~21;-13;+4;+28g;* High crush 6~52;cs6~52;FC;Shaheen-d+1;Hermit Needle;r31 FC;;t8-p2-shaheen-d+1.mp4
 d+2;m;15;i18~19;-6;+8;;* Jab evasion;;;Shaheen-d+2;Gut Impact;;;File:t8-p2-shaheen-d+2.mp4
 d+3;L;12;i16~17;-14;+0;;"* Transition to -10, +4 SNK with DF
 * High crush 6~48";cs6~48;SNK,FC;Shaheen-d+3;Silent Rigel;FC;;File:t8-p2-shaheen-d+3.mp4
@@ -146,7 +146,6 @@ uf+1;m;25;i24~25;+1;+20d;;"* Balcony Break
 * Heat Dash +67a (+50)
 
 * 10 chip damage on block
-* during Heat, partially restore remaining Heat time
 * Cancel to FC with input uf+1,D
 * Low crush 9";bbr he js9;FC;Shaheen-uf+1;Vega;;;File:t8-p2-shaheen-uf+1.mp4
 uf+3;m;22;i25~26;-7;+24;;"* Alternate input: ub+3 or u+3
@@ -175,13 +174,11 @@ f:b+2;h;42;i13;-4;+0d;;"* Tornado
 * Removes Recoverable Health
 * Transition to attack throw on standing front hit
 * Quick input properties during Heat
-* Partially restores remaining Heat time on hit
 * input must be less or equal to 6 frames 
 * (example : 2 frames of f, 3 frames of neutral, 1 frame of b, then b+2)";trn;;Shaheen-f:b+2;Hornet;;;t8-p2-shaheen-fjb+2.mp4
 uf,n,4;m;20;i23~25;-13;+32 (+22);;* Low crush;js;;Shaheen-uf,n,4;Delayed Rising Toe Kick;;;File:t8-p2-shaheen-uf,n,4.mp4
 f,f,F+2;m;30;i17~18;+5;+13c;;"* Balcony Break
 * chip damage on block
-* during Heat, partially restores remaining Heat time
 * Forces tech backroll on hit
 * Jab evasion";bbr chp;;Shaheen-f,f,F+2;Antares;;;File:t8-p2-shaheen-f,f,f+2.mp4
 ws1;m;17;i14;-2;+4;+14;;;;Shaheen-ws1;Albireo;;;File:t8-p2-shaheen-ws1.mp4
@@ -192,15 +189,13 @@ ws3,3;m, m;9, 25;i13, i17;-13;+11a (+2);+43a (-4);"* Tornado
 ws4;m;16;i11~12;-6;+5;;;;;Shaheen-ws4;Jaw Smash;;;File:t8-p2-shaheen-ws4.mp4
 SS.2;L;14;i20;-12;+1c;;"* Sidestep takes 9f; effective startup i29
 * High crush 15~";cs15~;FC;Shaheen-SS.2;Nisif Kamar;FC;;File:t8-p2-shaheen-ss.2.mp4
-SS.1+2;m;23;i19~20;+3;+22g;+35a;"* Partially restore remaining Heat time on hit
-* Sidestep takes 9f; effective startup i28
+SS.1+2;m;23;i19~20;+3;+22g;+35a;"* Sidestep takes 9f; effective startup i28
 * 6 chip damage on block";;;Shaheen-SS.1+2;Haboob;;;t8-p2-shaheen-ss.1+2.mp4
 FC.df,d,DF;sp;;;;;;* High crush;cs;;Shaheen-FC.df,d,DF;Slide Step;;;File:t8-p2-shaheen-fc.df,d,df.mp4
 FC.df,d,DF+3;L;17;i16~20;-23a;+7a;;"* Transitions to SNK on hit
 * Low crush";js;FUFT;Shaheen-FC.df,d,DF+3;Sand Storm;FUFT;;File:t8-p2-shaheen-fc.df,d,df+3.mp4
 FC.df+2;m;21;i18~19;-9;+17a (+8);;"* Strong Aerial Tailspin
-* Balcony Break
-* Partially restore remaining Heat time on hit";bbr;;Shaheen-FC.df+2;Janbiya;;;File:t8-p2-shaheen-fc.df+2.mp4
+* Balcony Break";bbr;;Shaheen-FC.df+2;Janbiya;;;File:t8-p2-shaheen-fc.df+2.mp4
 FC.df+4;L;16;i16~17;-14;+1;;* Transition to -11, +4 SNK with DF;;SNK;Shaheen-FC.df+4;;;;t8-p2-shaheen-fc.df+4.mp4
 FC.df+4,1;L, h;16, 20;i16~17, i26;-2;+24a (+15);;"* Balcony Break
 * Combo from 1st CH";bbr;;Shaheen-FC.df+4,1;Serpens;;;File:t8-p2-shaheen-fc.df+4,1.mp4

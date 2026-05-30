@@ -5,11 +5,12 @@ H.f,n,d,df+1+2;h!;[10];i25~28;;+23g;;"* On hit, gives a special stun that makes 
 * Consumes 600F of remaining Heat time
 * Only deals recoverable damage
 * Cannot K.O";;;Armor King-H.f,n,d,df+1+2;Malice Mist: Villain;r29;;t8-p2-armor-king-h.f,n,d,df+1+2.mp4
-H.ub+1;h;25;i24~25;+8;+60a;;"* Strong Aerial Tailspin
+H.ub+1;h;25;i24~25;+5;+74a (+58);;"* Strong Aerial Tailspin
 * Homing
-* Transition to r26 BAD with F (+8/+61a)
+* Balcony Break
+* Transition to r26 BAD with F (+5/+75a(+59))
 * Consumes 150F of remaining Heat time
-* 7 chip damage on block";hom;BAD;Armor King-H.ub+1;Neck Hunter: Villain;r25;;t8-p2-armor-king-h.ub+1.mp4
+* 7 chip damage on block";hom bbr;BAD;Armor King-H.ub+1;Neck Hunter: Villain;r25;;t8-p2-armor-king-h.ub+1.mp4
 H.ub+1+2*;M;28;i50~52;+8;+65a (+49);;"* Tornado
 * Can also be done during BAD
 * Consumes 240F of remaining Heat time
@@ -325,7 +326,7 @@ BAD.3;m;20;i20~21;-13;+11a(+2);+26d;"* Balcony Break
 ** 8 chip damage on block
 ** -9 on block
 * Power crush 7~19";bbr rbr pc7~19;;Armor King-BAD.3;Blackguard Gut Rench;r33;;File:t8-p2-armor_king-bad.3.mp4
-H.BAD.3,2;m,M;15,25;i34~36;+5;+1a;;"* Balcony Break
+H.BAD.3,2;m,M;15,25;i34~36;-9;+1a;;"* Balcony Break
 * Jail from 1st block
 * Opponent left FDFA
 * Consumes 240F of remaining Heat time
@@ -374,18 +375,15 @@ OTG.d+4,4,3+4;L, L, SM;18, 8, 20;i19~21, ,i30~32;-17;+0d;;"* Combos from 1st hit
 * Unbreakable throw extension
 * Opponent left FUFA";fbr;;Armor King-2+4,d+1+2;Jaguar Screwdriver;;;t8-p2-armor-king-2+4,d+1+2.mp4
 AIR.BAD.2+4;t(a);45;i14;!;+0d;;"* Cannot throw break
-* Restores 60F of remaining Heat time
 * Opponent recovers in FDFA.";;;Armor King-AIR.BAD.2+4;D Trigger;;;t8-p2-armor-king-air.bad.2+4.mp4
 AIR.f,f,F+2+4;t(a);50(55);i10;!;+0d;;"* Floor Break
 * Cannot throw break.
 * Input n,f,F+2+4 within 6 frames after dash startup (f,n,f) to execute ""blue spark"" (+5 damage).
-* Restores 60F of remaining Heat time
 * Opponent recovers in FUFT.";fbr;;Armor King-AIR.f,f,F+2+4;Running Cross Driver;;;t8-p2-armor-king-air.f,f,f+2+4.mp4
 AIR.f,hcf+1;t(a);40(45);i10;!;+0d;;"* Floor Break
 * Cannot throw break.
 * Input all 6 directions of throw, press df for 1-3F, at most 1F of f followed by f+1 for blue spark (+5 damage).
 * AIR.BAD1+3: i14 startup. Cannot execute blue spark variant
-* Restores 60F of remaining Heat time
 * Opponent recovers in FDFA.
 * Side switch";fbr;;Armor King-AIR.f,hcf+1;Muscle Driver;;;t8-p2-armor-king-air.f,hcf+1.mp4
 BM.2,1,2,1;t;5,5,5,15;;+0;-6d;;"* Could be any 1/2 combination (e.g. 1,1,1,1 / 1,2,2,1)
@@ -473,7 +471,6 @@ d+1+3;th(m);35;i12~13;!;+0d;;"* Floor Break
 d+2+4;th(m);35;i12~13;!;+0d;;"* Heat Engager
 
 * Unable to Heat Dash
-* Restores 150F of remaining Heat Time
 * Unbreakable
 * Opponent recovers FUFA";he;;Armor King-d+2+4;Storm Maker;;;t8-p2-armor-king-d+2+4.mp4
 f,f,F+2+4;th(h);40 (45);i10;-5;+10d;;"* Balcony Break
@@ -482,8 +479,7 @@ f,f,F+2+4;th(h);40 (45);i10;-5;+10d;;"* Balcony Break
 * i13 startup for Bluespark throw with buffered input
 * Opponent left FUFT
 * Armor King recovers FUFT
-* becomes Homing in heat
-* Restores 60F of remaining Heat time";bbr;FUFT;Armor King-f,f,F+2+4;Brilliant Brawler Kick;FUFT;;t8-p2-armor-king-f,f,f+2+4.mp4
+* becomes Homing in heat";bbr;FUFT;Armor King-f,f,F+2+4;Brilliant Brawler Kick;FUFT;;t8-p2-armor-king-f,f,f+2+4.mp4
 f,hcf+1;th(h);40(45)/70,5;i10;-7;-20d (-50);;"* Throw break 1
 * Perform tech ukemi to reduce 5 damage.
 * Side switch 
@@ -494,7 +490,6 @@ f,hcf+1;th(h);40(45)/70,5;i10;-7;-20d (-50);;"* Throw break 1
 * 18F throw break window on Bluespark
 * 7F throw break window on CH Bluespark
 * BAD.1+3: i14 startup. Cannot execute blue spark variant
-* Restores 150F of remaining Heat time
 * Opponent recovers in FDFT.";;;Armor King-f,hcf+1;Double Arm Swing;;;t8-p2-armor-king-f,hcf+1.mp4
 f,n,d,df+1+3;t;20;i12;-3;+0;;"* 1 or 2 break depending on Armor King's input
 ** 1 for CD1+3/1+4, 2 for CD2+4/2+3 
@@ -509,8 +504,7 @@ qcb+1+2;th(h);40(45);i11;-3;+0d;;"* Balcony Break
 * Opponent takes 4 additional damage when they hit a wall
 * Throw break 1+2
 * Opponent left FUFA
-* becomes Homing in heat
-* Restores 90F of remaining Heat time";bbr;;Armor King-qcb+1+2;Hades Drop;;;t8-p2-armor-king-qcb+1+2.mp4
+* becomes Homing in heat";bbr;;Armor King-qcb+1+2;Hades Drop;;;t8-p2-armor-king-qcb+1+2.mp4
 uf+1+2;th(h);40;i12;-6;+0d;;"* Floor Break
 * Throw break 1+2
 * Opponent left FUFA";fbr;;Armor King-uf+1+2;Armor King Driver;;;t8-p2-armor-king-uf+1+2.mp4

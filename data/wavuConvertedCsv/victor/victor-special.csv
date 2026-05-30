@@ -6,12 +6,12 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * Only deals recoverable damage
 * Cannot cause a K.O.
 * Power crush 7~16";hb pc7~16;;Victor-2+3;Heat Burst;r30;;
-H.IAI.d+2;M,SM;45;i23~24;+8;+20 (+2);;"* Weapon
+H.IAI.d+2;M,SM;45;i23~24;+5;+20 (+2);;"* Weapon
 * Projectile
 * Transition to IAI
 * 10 chip damage on block
 * Consumes 210F of remaining Heat time";wpn;IAI,IAI;Victor-H.IAI.d+2;Longinus;IAI;;
-H.db+1+2;m;30;i28~29;+9;+6a (-4);;"* Weapon
+H.db+1+2;m;30;i28~29;+6;+6a (-4);;"* Weapon
 * Transitions to IAI
 * Consumes 270F of remaining Heat time";wpn;IAI;Victor-H.db+1+2;Monsieur Samurai;r49 IAI;;
 H.u+1+2;m;46;i31~32;-4;+0a (-1);;"* Balcony Break
@@ -126,8 +126,7 @@ f+1+2;m;30;i24~25;+3;+1a;;"* Balcony Break
 * Heat Dash +5, +67a (+50)
 
 * Weapon
-* 9 chip damage on block
-* Restores 60F of remaining Heat time on hit";bbr he wpn;;Victor-f+1+2;Durandal;51;;File:t8-p2-victor-f+1+2.mp4
+* 9 chip damage on block";bbr he wpn;;Victor-f+1+2;Durandal;51;;File:t8-p2-victor-f+1+2.mp4
 df+1;m;10;i13~14;-2;+4;;;;;Victor-df+1;;21;;File:t8-p2-victor-df+1,1.mp4
 df+1,1;m, h,h;10, 7,7;i13~14, i20;-4;+7;;"* Weapon
 * Combo from 1st hit";wpn;;Victor-df+1,1;Trilliant Cut;;;File:t8-p2-victor-df+1,1.mp4
@@ -272,13 +271,11 @@ IAI.1,2;m, m;9, 15;i13~14, i22~24;-19;+25a (+10);+25a (+10);"* Weapon
 * Combo from 1st hit
 * Hit Confirmable 11F
 * 6 chip damage on block
-* Restores 60F of remaining Heat time on hit
 * Low crush";wpn js;;Victor-IAI.1,2;;;;File:t8-p2-victor-iai.1,2,2.mp4
 IAI.1,2,2;m, m, m;9, 15, 16;i13~14, ,i23~24;-18c;+8a (-27);+8a (-27);"* Spike
 * Weapon
 * Combo from 1st hit
 * 9 chip damage on block
-* Restores 60F of remaining Heat time on hit
 * is?
 * Low crush ?";spk wpn is? js?;;Victor-IAI.1,2,2;Clarent;;;File:t8-p2-victor-iai.1,2,2.mp4
 IAI.1,1+2;m, h;9, 23;i13~14, i20~21;+3;+20a (-6);+21a;"* Homing
@@ -287,33 +284,27 @@ IAI.1,1+2;m, h;9, 23;i13~14, i20~21;+3;+20a (-6);+21a;"* Homing
 * Deals 9 chip damage on block
 * Hit confirmable 11F
 * Opponent is FUFA on CH
-* Restores 60F of remaining Heat time on hit
 * Low crush";hom wpn js;;Victor-IAI.1,1+2;Chastiefol;;;File:t8-p2-victor-iai.1,1+2.mp4
 IAI.2;m;23;i16~17;-9;+15 (+5);+26a;"* Balcony Break
 * Tornado
 * Weapon
 * 9 chip damage on block
-* FUFA knockdown on CH
-* Restores 60F of remaining Heat time on hit";bbr trn wpn;;Victor-IAI.2;Almace;r52;;File:t8-p2-victor-iai.2.mp4
+* FUFA knockdown on CH";bbr trn wpn;;Victor-IAI.2;Almace;r52;;File:t8-p2-victor-iai.2.mp4
 IAI.3;m,th(m);13 (25);i17;-13;+25 (+10);;"* Knee
-* Restores 60F of remaining Heat time on hit
 * Power crush 8~16";kne pc8~16;;Victor-IAI.3;Sequence;r34;;File:t8-p2-victor-iai.3.mp4
 IAI.4;L;17;i18~19;-12;+4;+9;;;IAI;Victor-IAI.4;;r32 IAI;;File:t8-p2-victor-iai.4,2.mp4
 IAI.4,2;L, h;17, 20;i18~19, i26~27;-5;+26 (+0);+55a (+35a);"* Strong Aerial Tailspin
 * Balcony Break
 * Weapon
 * Combo from 1st CH
-* 8 chip damage on block
-* Restores 60F of remaining Heat time on hit";bbr wpn;;Victor-IAI.4,2;Murgleys;;;File:t8-p2-victor-iai.4,2.mp4
+* 8 chip damage on block";bbr wpn;;Victor-IAI.4,2;Murgleys;;;File:t8-p2-victor-iai.4,2.mp4
 IAI.1+2;h;30;i20~21;+3;+20 (-6);+21a;"* Homing
 * Weapon
 * 12 chip damage on block
 * Opponent is FUFA on CH
-* Restores 60F of remaining Heat time on hit
 * Low crush 10";hom wpn js10;;Victor-IAI.1+2;Hauteclaire;66;;File:t8-p2-victor-iai.1+2.mp4
 IAI.P.f;m;21;i16~17;;+60a (+44);;"* Balcony Break
-* Tornado
-* Restores 60F of remaining Heat time on successful parry";bbr trn;;Victor-IAI.P.f;Gwen;;;
+* Tornado";bbr trn;;Victor-IAI.P.f;Gwen;;;
 IAI.b;sp;;;;;;;;IAI;Victor-IAI.b;Move Backward;IAI;;File:t8-p2-victor-iai.b.mp4
 IAI.d;sp;;;;;;* High crush 1~30;cs1~30;IAI;Victor-IAI.d;Take a Bow;IAI;;File:t8-p2-victor-iai.d.mp4
 IAI.d+1;M;25;i18;0;+24a (+9);;"* Heat Engager
@@ -328,8 +319,7 @@ IAI.d+2;M,SM;31;i23~24;+4;+0 (-7);;"* Weapon
 * Transition to IAI
 * Deals 6 chip damage on block";wpn;IAI,IAI;Victor-IAI.d+2;Rhongomyniad;r68 IAI;;File:t8-p2-victor-iai.d+2.mp4
 IAI.d+1+2;l,l;10,20;i20~21,i14~15;-29;-3;;"* Weapon
-* Unparryable (weapon low,low)
-* Restores 60F of remaining Heat time on hit";wpn;;Victor-IAI.d+1+2;Espee Aventureuse;58;;File:t8-p2-victor-iai.d+1+2.mp4
+* Unparryable (weapon low,low)";wpn;;Victor-IAI.d+1+2;Espee Aventureuse;58;;File:t8-p2-victor-iai.d+1+2.mp4
 IAI.f;sp;;;;;;"* Parries low attacks
 * Parry state 3?~11?
 * High crush 4~17";ps3?~11? cs4~17;IAI;Victor-IAI.f;Move Forward;IAI;;File:t8-p2-victor-iai.f.mp4
