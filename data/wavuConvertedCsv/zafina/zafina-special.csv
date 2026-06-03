@@ -189,11 +189,11 @@ b+1:ORB.1+2;m, t;14, 19,10,16;i18, ;;+0d;;"* Consumes ORB
 * Deals (5) 8 recoverable damage to Zafina without Heat
 * Deals 5 additional damage when Zafina's remaining health is below 48
 * Available only from 1st front hit";;;Zafina-b+1:ORB.1+2;Anathematic Claw;;;
-b+1+3;;;;;+12d;;"* Zafina automatically retaliates on a successful parry
+b+1+3;m,m;5,23;i30~34, i29~30;+2;+12d;;"* Zafina automatically retaliates on successful power crush
 * Deal 8 recoverable damage to self without Heat
-* Parry state 6~29";ps6~29;;Zafina-b+1+3;Revenge Hand;r75;;
-b+1+3,P;m,m;5,23;,i30~34 i29~30;+2;+12d;;"* 17 chip damage on block
-* Gain ORB on hit";;;Zafina-b+1+3,P;;;;
+* +2 and 11 chip damage on block after attack absorption
+* Gain ORB on hit
+* Power crush 6~29";pc6~29;;Zafina-b+1+3;Revenge Hand;r75;;
 b+2;h;22;i22~23;-5;+14;;"* Homing
 * Balcony Break on airborne hit
 * +23a on BT hit";hom;;Zafina-b+2;Brisingamen Backfist;r29;;File:t8-p2-zafina-b+2.mp4
