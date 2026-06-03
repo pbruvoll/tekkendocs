@@ -1,5 +1,6 @@
 import { MixerHorizontalIcon } from '@radix-ui/react-icons';
 import { Button, Dialog } from '@radix-ui/themes';
+import { filterKey } from '~/constants/filterConstants';
 import {
   type FrameDataFilterSectionProps,
   FrameDataFilterSelection,
@@ -40,23 +41,37 @@ export const FrameDataFilterDialog = ({
 
       <Dialog.Content style={{ maxWidth: 450 }} className="relative">
         <Dialog.Title>Filter</Dialog.Title>
-        <Dialog.Description size="3" mb="4">
-          Filter the displayed moves
-        </Dialog.Description>
+        <div className="-mx-4 max-md:no-scrollbar max-h-[70vh] overflow-y-auto px-4">
+          <Dialog.Description size="3" mb="4">
+            Filter the displayed moves
+          </Dialog.Description>
 
-        <FrameDataFilterSelection
-          filter={filter}
-          stances={stances}
-          states={states}
-          transitions={transitions}
-          setFilterValue={setFilterValue}
-          removeFilterValue={removeFilterValue}
-          updateFilterValues={updateFilterValues}
-          addFilterElement={addFilterElement}
-          removeFilterElement={removeFilterElement}
-        />
+          <FrameDataFilterSelection
+            filter={filter}
+            stances={stances}
+            states={states}
+            transitions={transitions}
+            setFilterValue={setFilterValue}
+            removeFilterValue={removeFilterValue}
+            updateFilterValues={updateFilterValues}
+            addFilterElement={addFilterElement}
+            removeFilterElement={removeFilterElement}
+          />
+        </div>
 
         <div className="mt-8 flex justify-end gap-3">
+          <Button
+            variant="soft"
+            color="gray"
+            onClick={() =>
+              updateFilterValues({
+                set: [],
+                remove: Object.values(filterKey),
+              })
+            }
+          >
+            Reset filters
+          </Button>
           <Dialog.Close>
             <Button>Close</Button>
           </Dialog.Close>

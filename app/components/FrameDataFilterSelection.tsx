@@ -29,6 +29,7 @@ export const FrameDataFilterSelection = ({
   stances,
   states,
   transitions,
+  className,
 }: FrameDataFilterSectionProps) => {
   const {
     hitLevels,
@@ -78,7 +79,7 @@ export const FrameDataFilterSelection = ({
     counterHit,
   } = filter;
   return (
-    <Flex direction="column" gap="5">
+    <Flex direction="column" gap="5" className={className}>
       <section className="flex flex-col gap-3">
         <Text as="div" size="3" mb="1" weight="bold">
           Hit level
