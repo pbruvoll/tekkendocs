@@ -1,24 +1,24 @@
-Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Transitions;Wavu id;Name;Recovery;Image;Video
+Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Transitions;Name;Recovery;Image;Video;Wavu id;Character id
 2+3;m;"[12;12]";i16;+1;+2c;;"* Heat Burst
 * Cancel to r45 with b,b on frame 42
 * 2 chip damage on block
 * 12 chip damage on hit
 * Only deals recoverable damage
 * Cannot cause a K.O.
-* Power crush 7~16";hb pc7~16;;Kuma-2+3;Heat Burst;r30;;
+* Power crush 7~16";hb pc7~16;;Heat Burst;r30;;;Kuma-2+3;kuma
 H.df+2+3;sm;20;i15~16;0;+39 (+29);;"* Uses 180F of remaining heat time
 * H.f,n,d,df+2 to power up (23dmg)
-* High crush 6~12";cs6~12;;Kuma-H.df+2+3;Wind Bear Fist;r24;;
+* High crush 6~12";cs6~12;;Wind Bear Fist;r24;;;Kuma-H.df+2+3;kuma
 H.df+2+3*;sm;26;i25~26;+5;+45 (+35);;"* Reversal Break
 * Uses 180F of remaining heat time
 * 10 chip damage on block
 * H.f,n,d,df+2* to power up (30dmg; 12 chip damage on block)
-* High crush 6~22";rbr cs6~22;;Kuma-H.df+2+3*;Fresh Wind Bear Fist;r24;;
+* High crush 6~22";rbr cs6~22;;Fresh Wind Bear Fist;r24;;;Kuma-H.df+2+3*;kuma
 H.2+3;M,M;51;i13~15, i45;0;+33a (+23);;"* Heat Smash
 * Balcony Break
 * 10 chip damage
 * Transition to attack throw on 1st hit
-* +20a (+10) 45dmg on 2nd hit if 1st hit misses";hs bbr;;Kuma-H.2+3;Salmon Fishing Cast;r35?;;
+* +20a (+10) 45dmg on 2nd hit if 1st hit misses";hs bbr;;Salmon Fishing Cast;r35?;;;Kuma-H.2+3;kuma
 R.df+1+2;M,t;55+;i20;-18;+0d;;"* Rage Art
 * Removes Recoverable Health
 * Reversal Break
@@ -27,150 +27,150 @@ R.df+1+2;M,t;55+;i20;-18;+0d;;"* Rage Art
 * Restores recoverable health on hit
 * Transition to attack throw on hit
 * Consumes Rage
-* Power crush 8~";ra rbr pc8~;;Kuma-R.df+1+2;Type 38 Eradication Weapon: Aramaki;r39;;
-1;h;5;i10;+1;+8;;Recovers 2f faster on hit or block (t27 r17);;;Kuma-1;Jab;r19;;File:t8-p2-kuma-1,1,1.mp4
+* Power crush 8~";ra rbr pc8~;;Type 38 Eradication Weapon: Aramaki;r39;;;Kuma-R.df+1+2;kuma
+1;h;5;i10;+1;+8;;Recovers 2f faster on hit or block (t27 r17);;;Jab;r19;;File:t8-p2-kuma-1,1,1.mp4;Kuma-1;kuma
 1,1;h, m;5, 8;i10, i22~23;-15;-4c;;"* Combo from 1st hit CH with 2F delay
-* Move can be delayed by 3F";;;Kuma-1,1;;;;File:t8-p2-kuma-1,1,1.mp4
+* Move can be delayed by 3F";;;;;;File:t8-p2-kuma-1,1,1.mp4;Kuma-1,1;kuma
 1,1,1;h, m, m;5, 8, 14;i10, ,i22~23;-16;+69a (+23);;"* Tornado
 * Combo from 2nd hit
-* Combo from 1st CH";trn;;Kuma-1,1,1;G-Clef Cannon;;;File:t8-p2-kuma-1,1,1.mp4
+* Combo from 1st CH";trn;;G-Clef Cannon;;;File:t8-p2-kuma-1,1,1.mp4;Kuma-1,1,1;kuma
 1,2;h, h;5, 25;i10, i22~24;-5;+11 (+2);;"* Balcony Break
 * Jail from 1st hit
 * Combo from 1st CH with 3F delay
-* 10 chip damage on block";bbr;;Kuma-1,2;Angry Lumberjack;;;File:t8-p2-kuma-1,2.mp4
-1+3+4;sp;;;;;;;;;Kuma-1+3+4;You're Welcome;;;File:t8-p2-kuma-1+3+4.mp4
-2;h;10;i10;-1;+6;;;;;Kuma-2;;;;File:t8-p2-kuma-2,1,2.mp4
+* 10 chip damage on block";bbr;;Angry Lumberjack;;;File:t8-p2-kuma-1,2.mp4;Kuma-1,2;kuma
+1+3+4;sp;;;;;;;;;You're Welcome;;;File:t8-p2-kuma-1+3+4.mp4;Kuma-1+3+4;kuma
+2;h;10;i10;-1;+6;;;;;;;;File:t8-p2-kuma-2,1,2.mp4;Kuma-2;kuma
 2,1;h, m;10, 11;i10, i16;-3;+2;;"* Combo from 1st hit with 2F delay
 * +2c on crouching hit
-* Panda: Reduced vertical hitbox (does not hit as high)";;;Kuma-2,1;;;;File:t8-p2-kuma-2,1,2.mp4
-2,1,2;h, m, m;10, 11, 22;i10, ,i33~34;-14;+31a (+21);;;;FC;Kuma-2,1,2;Bear Combo Middle;FC;;File:t8-p2-kuma-2,1,2.mp4
-2,1,3;h, m, l;10, 11, 13;i10, ,i18;-13;-2;;* Combo from 2nd CH;;;Kuma-2,1,3;Bear Combo Low;;;File:t8-p2-kuma-2,1,3.mp4
-3;h;25;i18;-5;+21a (+11);;* Balcony Break;bbr;;Kuma-3;;;;
-4;h;20;i14;-6;+5;+30a;* Balcony Break on CH;;;Kuma-4;;;;
+* Panda: Reduced vertical hitbox (does not hit as high)";;;;;;File:t8-p2-kuma-2,1,2.mp4;Kuma-2,1;kuma
+2,1,2;h, m, m;10, 11, 22;i10, ,i33~34;-14;+31a (+21);;;;FC;Bear Combo Middle;FC;;File:t8-p2-kuma-2,1,2.mp4;Kuma-2,1,2;kuma
+2,1,3;h, m, l;10, 11, 13;i10, ,i18;-13;-2;;* Combo from 2nd CH;;;Bear Combo Low;;;File:t8-p2-kuma-2,1,3.mp4;Kuma-2,1,3;kuma
+3;h;25;i18;-5;+21a (+11);;* Balcony Break;bbr;;;;;;Kuma-3;kuma
+4;h;20;i14;-6;+5;+30a;* Balcony Break on CH;;;;;;;Kuma-4;kuma
 1+2;m;25;i13~14;-13;+18g;;"* Balcony Break
 * Heat Engager
 
 * Heat Dash +5, +43d (+35)
 
-* Forces crouch on hit";bbr he;;Kuma-1+2;Demon Bear Breath;r31;;File:t8-p2-kuma-1+2.mp4
+* Forces crouch on hit";bbr he;;Demon Bear Breath;r31;;File:t8-p2-kuma-1+2.mp4;Kuma-1+2;kuma
 3+4;sp;;;;;;"* Alternate input: FDFA.3+4
 * Can low parry in HBS with F
 * Transition to HBS
 * Transition to r10 FC with input ub_u_uf
 * Transition to r15 FC with DB
 * Remains in stance indefinitely
-* Can move in stance with F or B";;HBS,FC,FC,HBS;Kuma-3+4;Hunting;r15 HBS;;
+* Can move in stance with F or B";;HBS,FC,FC,HBS;Hunting;r15 HBS;;;Kuma-3+4;kuma
 3+4;sp;;;;;;"* Alternate input: FDFA.3+4
 * Transition to HBS
-* High crush 4~";cs4~;HBS,HBS;Kuma-3+4;Hunting;r15 HBS;;
-f+2;h;11;i12;-13;+3;;;;;Kuma-f+2;;;;File:t8-p2-kuma-f+2,1.mp4
+* High crush 4~";cs4~;HBS,HBS;Hunting;r15 HBS;;;Kuma-3+4;kuma
+f+2;h;11;i12;-13;+3;;;;;;;;File:t8-p2-kuma-f+2,1.mp4;Kuma-f+2;kuma
 f+2,1;h, h;11, 20;i12, i20;-5;+36a (+10);;"* Balcony Break
 * Combo from 1st hit with 9F delay
-* Move can be delayed by 13F";bbr;;Kuma-f+2,1;Wild Lumberjack;;;File:t8-p2-kuma-f+2,1.mp4
-f+3;h;30;i20;-5;+21a (+11);;* Balcony Break;bbr;;Kuma-f+3;;;;
-f+4;h;22;i15;-6;+5;+30a;* Balcony Break on CH;;;Kuma-f+4;;;;
-f+1+2;m;16;i18;-15;+18a;;;;;Kuma-f+1+2;;;;File:t8-p2-kuma-f+1+2,1+2.mp4
+* Move can be delayed by 13F";bbr;;Wild Lumberjack;;;File:t8-p2-kuma-f+2,1.mp4;Kuma-f+2,1;kuma
+f+3;h;30;i20;-5;+21a (+11);;* Balcony Break;bbr;;;;;;Kuma-f+3;kuma
+f+4;h;22;i15;-6;+5;+30a;* Balcony Break on CH;;;;;;;Kuma-f+4;kuma
+f+1+2;m;16;i18;-15;+18a;;;;;;;;File:t8-p2-kuma-f+1+2,1+2.mp4;Kuma-f+1+2;kuma
 f+1+2,1+2;m, M;16, 20;i18, i30~31;-14;+65a (+49);;"* Tornado
 * Combo from 1st hit
-* Grounded hit on off-axis hit against large body size characters?";trn;;Kuma-f+1+2,1+2;Bear Claw Cross;;;File:t8-p2-kuma-f+1+2,1+2.mp4
+* Grounded hit on off-axis hit against large body size characters?";trn;;Bear Claw Cross;;;File:t8-p2-kuma-f+1+2,1+2.mp4;Kuma-f+1+2,1+2;kuma
 f+3+4;L;20;i28~30;-23;+6a;;"* Unparryable (bug?)
-* High crush 6~";cs6~;FC;Kuma-f+3+4;Shape-Up Kick;r40? FC;;File:t8-p2-kuma-f+3+4.mp4
+* High crush 6~";cs6~;FC;Shape-Up Kick;r40? FC;;File:t8-p2-kuma-f+3+4.mp4;Kuma-f+3+4;kuma
 f+3+4,1+2;L, M;20, 30 (24);i28~30, i50~i60;-16;-13a;;"* Shoulder
 ** Body slam (unparryable)
 * 24 damage from 1st hit with grounded scaling
-* High crush 0~";shd cs0~;;Kuma-f+3+4,1+2;Shape-Up Hip;r43?;;File:t8-p2-kuma-f+3+4,1+2.mp4
-df+1;m;6;i15~16;-6;+2;;;;;Kuma-df+1;;;;File:t8-p2-kuma-df+1,2,1+2.mp4
-df+1,2;m, m;6, 9;i15~16, i22~23;-11;-2;;* Combo from 1st CH;;;Kuma-df+1,2;;;;File:t8-p2-kuma-df+1,2,1+2.mp4
+* High crush 0~";shd cs0~;;Shape-Up Hip;r43?;;File:t8-p2-kuma-f+3+4,1+2.mp4;Kuma-f+3+4,1+2;kuma
+df+1;m;6;i15~16;-6;+2;;;;;;;;File:t8-p2-kuma-df+1,2,1+2.mp4;Kuma-df+1;kuma
+df+1,2;m, m;6, 9;i15~16, i22~23;-11;-2;;* Combo from 1st CH;;;;;;File:t8-p2-kuma-df+1,2,1+2.mp4;Kuma-df+1,2;kuma
 df+1,2,1+2;m, m, M;6, 9, 20;i15~16, ,i25~26;-14c;+17d;;"* Combo from 2nd hit with 9F delay
 * Combo from 1st CH
 * Move can be delayed by 8F
-* Input can be delayed by 10F";;;Kuma-df+1,2,1+2;Grizzly Rampage;;;File:t8-p2-kuma-df+1,2,1+2.mp4
-df+2;m;10;i15~16;-9;+2;;;;;Kuma-df+2;;;;File:t8-p2-kuma-df+2,1.mp4
+* Input can be delayed by 10F";;;Grizzly Rampage;;;File:t8-p2-kuma-df+1,2,1+2.mp4;Kuma-df+1,2,1+2;kuma
+df+2;m;10;i15~16;-9;+2;;;;;;;;File:t8-p2-kuma-df+2,1.mp4;Kuma-df+2;kuma
 df+2,1;m, m;10, 12;i15~16, i20~21;-16;+35a (+25);;"* Combo from 1st hit with 4F delay
 * Input can be delayed by 4F
-* Move cannot be delayed";;;Kuma-df+2,1;Kuma Musou;;;File:t8-p2-kuma-df+2,1.mp4
-df+3;m;13;i16;-9;+2;;* +2c on crouching hit;;;Kuma-df+3;;;;File:t8-p2-kuma-df+3,2.mp4
+* Move cannot be delayed";;;Kuma Musou;;;File:t8-p2-kuma-df+2,1.mp4;Kuma-df+2,1;kuma
+df+3;m;13;i16;-9;+2;;* +2c on crouching hit;;;;;;File:t8-p2-kuma-df+3,2.mp4;Kuma-df+3;kuma
 df+3,2;m, h;13, 24;i16, i27~28;-5;+22a;;"* Balcony Break on airborne hit
 * Combo from 1st hit
-* 9 chip damage on block";;;Kuma-df+3,2;Honey Trap;;;File:t8-p2-kuma-df+3,2.mp4
-df+4;m;15;i12;-4;+7;;;;;Kuma-df+4;;;;
+* 9 chip damage on block";;;Honey Trap;;;File:t8-p2-kuma-df+3,2.mp4;Kuma-df+3,2;kuma
+df+4;m;15;i12;-4;+7;;;;;;;;;Kuma-df+4;kuma
 d+1;sl;5;i10;-5;+6;;"* Transition to Standing with f
 * +6c on crouching hit
-* High crush 4~";cs4~;FC;Kuma-d+1;Crouch Jab;r24 FC;;
+* High crush 4~";cs4~;FC;Crouch Jab;r24 FC;;;Kuma-d+1;kuma
 d+2;sl;8;i11;-4;+7;;"* +7c on crouching hit
-* High crush 4~";cs4~;FC;Kuma-d+2;Crouch Straight;r23 FC;;
+* High crush 4~";cs4~;FC;Crouch Straight;r23 FC;;;Kuma-d+2;kuma
 d+3;L;12;i20;-17;-6;;"* -6c on crouching hit
-* High crush 4~";cs4~;FC;Kuma-d+3;Crouch Spin Kick;r36 FC;;
+* High crush 4~";cs4~;FC;Crouch Spin Kick;r36 FC;;;Kuma-d+3;kuma
 d+4;l;10;i16;-15;-4;;"* -4c on crouching hit
-* High crush 4~";cs4~;FC;Kuma-d+4;Crouch Shin Kick;r34 FC;;
+* High crush 4~";cs4~;FC;Crouch Shin Kick;r34 FC;;;Kuma-d+4;kuma
 d+1+2;M;23;i14~15;-15;+13d (+3);;"* Balcony Break
 * Shoulder
 ** Body slam (unparryable)
-* 27 damage on clean hit";bbr shd;;Kuma-d+1+2;Hip Smash;;;File:t8-p2-kuma-d+1+2.mp4
+* 27 damage on clean hit";bbr shd;;Hip Smash;;;File:t8-p2-kuma-d+1+2.mp4;Kuma-d+1+2;kuma
 d+3+4;sp;;;;;;"* Transition to SIT
-* Transition to ROL with input f";;SIT,ROL,SIT;Kuma-d+3+4;Bear Sit;SIT;;
+* Transition to ROL with input f";;SIT,ROL,SIT;Bear Sit;SIT;;;Kuma-d+3+4;kuma
 d+3+4;sp;;;;;;"* Alternative input: db+3+4
 * Transition to ROL with input SIT.F
 * Transition to California Roll with input SIT.B
 * Low crush 6~12
 * Floating state 13~15
-* High crush 16~67";js6~12 fs13~15 cs16~67;ROL,California Roll,SIT;Kuma-d+3+4;Bear Sit;r15 SIT;;
-db+1;h;11;i14~15;-10;+4;+9;;;;Kuma-db+1;;;;File:t8-p2-kuma-db+1,2ss.mp4
+* High crush 16~67";js6~12 fs13~15 cs16~67;ROL,California Roll,SIT;Bear Sit;r15 SIT;;;Kuma-d+3+4;kuma
+db+1;h;11;i14~15;-10;+4;+9;;;;;;;File:t8-p2-kuma-db+1,2ss.mp4;Kuma-db+1;kuma
 db+1,2;h, M;11, 20;i14~15, i22~23;-13;+4;+13c;"* Spike
 * Combo from 1st hit
 * Hold 2 to power up, up to 2 charge levels
-* Transition to HBS with input D or 3+4";spk;HBS;Kuma-db+1,2;Double Wild Slap;;;
+* Transition to HBS with input D or 3+4";spk;HBS;Double Wild Slap;;;;Kuma-db+1,2;kuma
 db+1,2*;h, M;11, 20;i14~15, i33~34;-12;+13c;+42a;"* Spike
 * 8 chip damage on block
 * Heat skips to db+1,2** charge with i34~35 startup
-* Transition to HBS with D or 3+4";spk;HBS;Kuma-db+1,2*;Double Wild Slap;;;
+* Transition to HBS with D or 3+4";spk;HBS;Double Wild Slap;;;;Kuma-db+1,2*;kuma
 db+1,2**;h, M;11, 30;i14~15, i47~48;+3;+42a;;"* Spike
 * Reversal Break
 * 12 chip damage on block
 * Startup shortened during Heat: i34~35 startup (partially consumes Heat time)
-* Transition to HBS with D or 3+4";spk rbr;HBS;Kuma-db+1,2**;Fresh Wild Slap;;;File:t8-p2-kuma-db+1,2ss.mp4
+* Transition to HBS with D or 3+4";spk rbr;HBS;Fresh Wild Slap;;;File:t8-p2-kuma-db+1,2ss.mp4;Kuma-db+1,2**;kuma
 db+2;L;10;i18;-15;-1;;"* Transition to HBS with D or 3+4 (-17/-3)
-* High crush 6~51";cs6~51;HBS,FC;Kuma-db+2;Bear Lariat;FC;;File:t8-p2-kuma-db+2.mp4
-db+3;l;12;i18;-12;+1;;;;;Kuma-db+3;Bear Pump in Pedal;;;File:t8-p2-kuma-db+3.mp4
+* High crush 6~51";cs6~51;HBS,FC;Bear Lariat;FC;;File:t8-p2-kuma-db+2.mp4;Kuma-db+2;kuma
+db+3;l;12;i18;-12;+1;;;;;Bear Pump in Pedal;;;File:t8-p2-kuma-db+3.mp4;Kuma-db+3;kuma
 db+4;l;20;i21~22;-23;+6;+74a (+38);"* Tornado
 * Panda: Very slight decrease in vertical hitbox height (does not hit as high)
-* High crush 6~51";trn cs6~51;FC;Kuma-db+4;Spinning Kuma;FC;;File:t8-p2-kuma-db+4.mp4
+* High crush 6~51";trn cs6~51;FC;Spinning Kuma;FC;;File:t8-p2-kuma-db+4.mp4;Kuma-db+4;kuma
 H.db+4,1;l, m;20, 14;i21~22, i28~31;;+10a (+3);;"* On hit only
 * Combos from 1st hit
 * Partially consumes remaining Heat time
-* Low crush";js;;Kuma-db+4,H.1;Spinning Kuma Uppercut;;;File:t8-p2-kuma-db+4,h.1.mp4
-db+1+2;m,m;4,4;i14~15;-9;+2~3;;;;;Kuma-db+1+2;;;;File:t8-p2-kuma-db+1+2,1+2,2.mp4
-db+1+2,1+2;m,m, m,m;4,4, 4,4;i14~15, i15~16;-11;0;;;;;Kuma-db+1+2,1+2;;;;File:t8-p2-kuma-db+1+2,1+2,2.mp4
-db+1+2,1+2,2;m,m, m,m, m;4,4, 4,4, 18;i14~15, ,i20~21;-15;+22a (+12);;;;;Kuma-db+1+2,1+2,2;Drum Roll;;;File:t8-p2-kuma-db+1+2,1+2,2.mp4
+* Low crush";js;;Spinning Kuma Uppercut;;;File:t8-p2-kuma-db+4,h.1.mp4;Kuma-db+4,H.1;kuma
+db+1+2;m,m;4,4;i14~15;-9;+2~3;;;;;;;;File:t8-p2-kuma-db+1+2,1+2,2.mp4;Kuma-db+1+2;kuma
+db+1+2,1+2;m,m, m,m;4,4, 4,4;i14~15, i15~16;-11;0;;;;;;;;File:t8-p2-kuma-db+1+2,1+2,2.mp4;Kuma-db+1+2,1+2;kuma
+db+1+2,1+2,2;m,m, m,m, m;4,4, 4,4, 18;i14~15, ,i20~21;-15;+22a (+12);;;;;Drum Roll;;;File:t8-p2-kuma-db+1+2,1+2,2.mp4;Kuma-db+1+2,1+2,2;kuma
 db+2+3;l;30;i32~34;-12;+39a;;"* Balcony Break on airborne hit
-* Hold 2+3 to power up, up to 2 charge levels and deal more chip damage on block";;;Kuma-db+2+3;Salmon Hunter;;;
+* Hold 2+3 to power up, up to 2 charge levels and deal more chip damage on block";;;Salmon Hunter;;;;Kuma-db+2+3;kuma
 db+2+3*;l;40;i45~47;-12;+39a;;"* Balcony Break on airborne hit
-* chip damage on block";chp;;Kuma-db+2+3*;Salmon Hunter;;;
+* chip damage on block";chp;;Salmon Hunter;;;;Kuma-db+2+3*;kuma
 db+2+3**;l;60;i60~62;-4;+43a;;"* Balcony Break on airborne hit
-* chip damage on block";chp;;Kuma-db+2+3**;Fresh Salmon Hunter;;;File:t8-p2-kuma-db+2+3ss.mp4
+* chip damage on block";chp;;Fresh Salmon Hunter;;;File:t8-p2-kuma-db+2+3ss.mp4;Kuma-db+2+3**;kuma
 b+1;M;24;i22~23;-13;+13a;;"* Balcony Break
 * Transition to -13 HBS with input D or 3+4
 * 9 chip damage on block
 * 12 chip damage on block after absorbing an attack in power crush state
 * -3 on block after absorbing an attack in power crush state
-* Power crush 7~21";bbr pc7~21;HBS;Kuma-b+1;Bear Slash;;;File:t8-p2-kuma-b+1.mp4
-b+2;m;12;i15;-9;+2;;;;;Kuma-b+2;;r28;;File:t8-p2-kuma-b+2,1,1+2.mp4
+* Power crush 7~21";bbr pc7~21;HBS;Bear Slash;;;File:t8-p2-kuma-b+1.mp4;Kuma-b+1;kuma
+b+2;m;12;i15;-9;+2;;;;;;r28;;File:t8-p2-kuma-b+2,1,1+2.mp4;Kuma-b+2;kuma
 b+2,1;m, h;12, 14;i15, i23;-3;+8;;"* Transition to HBS with input D or 3+4 (-4/+7)
 * Transition to ROL with input F (-14/-3)
 ** Adds i28~31 SM projectile 5dmg attack during Heat (Consumes 120F of remaining Heat time)
 *** +14~+17 or -6~-3 HBS or +1~+4 FC on block 
-*** +20~+23 or +0~+3 HBS or +7~+10 FC on hit";;HBS,ROL;Kuma-b+2,1;;r22;;File:t8-p2-kuma-b+2,1,1+2.mp4
+*** +20~+23 or +0~+3 HBS or +7~+10 FC on hit";;HBS,ROL;;r22;;File:t8-p2-kuma-b+2,1,1+2.mp4;Kuma-b+2,1;kuma
 b+2,1,1+2;m, h, m;12, 14, 20;i15, ,i26;-11;+15a (+6);;"* Balcony Break
 * Combo from 2nd CH with 4F delay
 * Move can be delayed by 10F
-* Panda: Shorter vertical hitbox (does not hit as high)";bbr;;Kuma-b+2,1,1+2;Howling Bear;r30;;File:t8-p2-kuma-b+2,1,1+2.mp4
+* Panda: Shorter vertical hitbox (does not hit as high)";bbr;;Howling Bear;r30;;File:t8-p2-kuma-b+2,1,1+2.mp4;Kuma-b+2,1,1+2;kuma
 b+2,2;m, m;12, 15;i15, i25;-10;+6;;"* Combo from 1st CH with 5F delay
-* Move can be delayed by 13F";;;Kuma-b+2,2;;r30;;File:t8-p2-kuma-b+2,2,1.mp4
+* Move can be delayed by 13F";;;;r30;;File:t8-p2-kuma-b+2,2,1.mp4;Kuma-b+2,2;kuma
 b+2,2,1;m, m, m;12, 15, 25;i15, ,i35~39;-15;+25a (+15);;"* Tornado
 * Combo from 2nd CH with 1F delay
 * Move can be delayed by 15F
 * Low crush 38~58
-* Floating state 59~61";trn js38~58 fs59~61;;Kuma-b+2,2,1;Salmon Massacre;r35;;File:t8-p2-kuma-b+2,2,1.mp4
+* Floating state 59~61";trn js38~58 fs59~61;;Salmon Massacre;r35;;File:t8-p2-kuma-b+2,2,1.mp4;Kuma-b+2,2,1;kuma
 b+1+2;h,m;10,20;i18~19 i12~13;-8;+13d;;"* Heat Engager
 
 * Heat Dash +5, +43d (+35)
@@ -178,72 +178,72 @@ b+1+2;h,m;10,20;i18~19 i12~13;-8;+13d;;"* Heat Engager
 * Balcony Break
 * Homing
 * 12 chip damage
-* Transition to HBS r36 with input D or 3+4 (does not shift when using Heat Dash)";he bbr hom;HBS;Kuma-b+1+2;Bear X;r36;;File:t8-p2-kuma-b+1+2.mp4
-b+1+4;m!;25;i60~62;;+16a/+21a HBS;;* Transition to HBS with input D or 3+4;;HBS;Kuma-b+1+4;Deadly Claw;;;File:t8-p2-kuma-b+1+4.mp4
+* Transition to HBS r36 with input D or 3+4 (does not shift when using Heat Dash)";he bbr hom;HBS;Bear X;r36;;File:t8-p2-kuma-b+1+2.mp4;Kuma-b+1+2;kuma
+b+1+4;m!;25;i60~62;;+16a/+21a HBS;;* Transition to HBS with input D or 3+4;;HBS;Deadly Claw;;;File:t8-p2-kuma-b+1+4.mp4;Kuma-b+1+4;kuma
 b+1+4,f,f;SM;40;i55~i130;-20~+55;+42a~+117a;;"* Projectile
 * Hold F to extend attack
 * Recovers in FUFT on hit or block
 * If attack is extended to where you roll past the opponent, recovers in FUFA
-* Floating state 55~147?";fs55~147?;;Kuma-b+1+4,f,f;Rolling Bear;;;File:t8-p2-kuma-b+1,f,f.mp4
+* Floating state 55~147?";fs55~147?;;Rolling Bear;;;File:t8-p2-kuma-b+1,f,f.mp4;Kuma-b+1+4,f,f;kuma
 b+3+4;m;20;i22~23;-28;+61a;;"* Alternate input: ws3+4
-* Tornado";trn;;Kuma-b+3+4;High Jinks;;;File:t8-p2-kuma-b+3+4.mp4
+* Tornado";trn;;High Jinks;;;File:t8-p2-kuma-b+3+4.mp4;Kuma-b+3+4;kuma
 ub+1+2;l;25;i31~32;-17;+12a;;"* Cancel to r22 HBS with D or 3+4 at frame 21
 * Low crush 6~27
-* Floating state 28~30";js6~27 fs28~30;HBS;Kuma-ub+1+2;Bear Skip;;;File:t8-p2-kuma-ub+1+2.mp4
+* Floating state 28~30";js6~27 fs28~30;HBS;Bear Skip;;;File:t8-p2-kuma-ub+1+2.mp4;Kuma-ub+1+2;kuma
 u+1+2;m;24;i18~23;-8f;+6;+8a;"* Transition to HBS with D or 3+4 (-7/+7/+9a)
 * Low crush 17~33
-* Floating state 34~36";js17~33 fs34~36;HBS;Kuma-u+1+2;Big Bear Attack;;;File:t8-p2-kuma-u+1+2.mp4
+* Floating state 34~36";js17~33 fs34~36;HBS;Big Bear Attack;;;File:t8-p2-kuma-u+1+2.mp4;Kuma-u+1+2;kuma
 u+3+4;m;21;i34~39;+10;+20;;"* Transition to SIT (cannot cancel)
 * Low crush 8~36
 * Floating state 37~39
-* High crush 51~";js8~36 fs37~39 cs51~;SIT,SIT;Kuma-u+3+4;Pancake Press;r11? SIT;;File:t8-p2-kuma-u+3+4.mp4
+* High crush 51~";js8~36 fs37~39 cs51~;SIT,SIT;Pancake Press;r11? SIT;;File:t8-p2-kuma-u+3+4.mp4;Kuma-u+3+4;kuma
 uf+1;m;20;i26~28;-6;+22a;;"* Alternate input: ub+1 or u+1
 * 8 chip damage on block
 * Low crush 9~30
-* Low crush 31~33";js9~30 js31~33;FC;Kuma-uf+1;Hornet Sweep;r29 FC;;File:t8-p2-kuma-uf+1.mp4
+* Low crush 31~33";js9~30 js31~33;FC;Hornet Sweep;r29 FC;;File:t8-p2-kuma-uf+1.mp4;Kuma-uf+1;kuma
 uf+2;m;20;i28~30;-6;+30a;+65a (+45);"* Balcony Break
 * Homing
 * Strong Aerial Tailspin
-* Alternate input: ub+2 or u+2";bbr hom;;Kuma-uf+2;Ultra Kuma;r32;;File:t8-p2-kuma-uf+2.mp4
+* Alternate input: ub+2 or u+2";bbr hom;;Ultra Kuma;r32;;File:t8-p2-kuma-uf+2.mp4;Kuma-uf+2;kuma
 uf+3;m;13;i16~17;-13;+30a (+20);;"* Panda: Very slightly increased vertical hitbox height (hits higher)
 * Low crush 9~32
-* Floating state 33~35";js9~32 fs33~35;;Kuma-uf+3;;;;File:t8-p2-kuma-uf+3,4,1+2.mp4
+* Floating state 33~35";js9~32 fs33~35;;;;;File:t8-p2-kuma-uf+3,4,1+2.mp4;Kuma-uf+3;kuma
 uf+3,4;m, m;13, 13;i16~17, i10~12;-11;+30a (+20) / +21a (+14);;"* Less frame advantage occurs after Combo from last hit
 * Panda: Very slightly increased vertical hitbox height on frames 11~12 (hits lower)
 * Low crush 1~17
-* Floating state 18~20";js1~17 fs18~20;;Kuma-uf+3,4;;;;File:t8-p2-kuma-uf+3,4,1+2.mp4
+* Floating state 18~20";js1~17 fs18~20;;;;;File:t8-p2-kuma-uf+3,4,1+2.mp4;Kuma-uf+3,4;kuma
 uf+3,4,1+2;m, m, M;13, 13, 22;i16~17, ,i18~19;-15;+16a / -2a;;"* Spike
 * Transition to HBS with input D or 3+4
-* Less frame advantage occurs after Combo from last hit";spk;HBS;Kuma-uf+3,4,1+2;Bear Double Hop Kick Combo;;;File:t8-p2-kuma-uf+3,4,1+2.mp4
+* Less frame advantage occurs after Combo from last hit";spk;HBS;Bear Double Hop Kick Combo;;;File:t8-p2-kuma-uf+3,4,1+2.mp4;Kuma-uf+3,4,1+2;kuma
 uf+4;m;20;i29~30;-6;-10a (-20);;"* Balcony Break
 * Low crush 9~30
-* Floating state 31~33";bbr js9~30 fs31~33;;Kuma-uf+4;;;;File:t8-p2-kuma-uf+4,3.mp4
+* Floating state 31~33";bbr js9~30 fs31~33;;;;;File:t8-p2-kuma-uf+4,3.mp4;Kuma-uf+4;kuma
 uf+4,3;m, m;20, 25;i29~30, i20~21;+7;+21a (+14);;"* Balcony Break
 * Only connects on hit or block
 * Recovers in FUFT
-* Low crush";bbr js;;Kuma-uf+4,3;Kuma Hell Axle;;;File:t8-p2-kuma-uf+4,3.mp4
-1+2+3+4;;;;;;;;;;Kuma-1+2+3+4;Ki Charge;;;File:t8-p2-kuma-1+2+3+4.mp4
+* Low crush";bbr js;;Kuma Hell Axle;;;File:t8-p2-kuma-uf+4,3.mp4;Kuma-uf+4,3;kuma
+1+2+3+4;;;;;;;;;;Ki Charge;;;File:t8-p2-kuma-1+2+3+4.mp4;Kuma-1+2+3+4;kuma
 b,f+2;h;26;i15~17;-5;+17a (+8);+62a (+42);"* Balcony Break
-* 10 chip damage on block";bbr;;Kuma-b,f+2;Anger Hook;;;File:t8-p2-kuma-b,f+2.mp4
-f,F+2;M;23;i19~21;-19;+45a (+35);;* High crush 8~18;cs8~18;;Kuma-f,F+2;Demon Uppercut;;;File:t8-p2-kuma-f,f+2.mp4
+* 10 chip damage on block";bbr;;Anger Hook;;;File:t8-p2-kuma-b,f+2.mp4;Kuma-b,f+2;kuma
+f,F+2;M;23;i19~21;-19;+45a (+35);;* High crush 8~18;cs8~18;;Demon Uppercut;;;File:t8-p2-kuma-f,f+2.mp4;Kuma-f,F+2;kuma
 f,F+1+2;M;30;i37~38;+8 HBS;+52a HBS;;"* 9 chip damage on block
 * Transition to HBS
 * Transition to ROL with input F (+5/+49a)
 * Panda: Reduced vertical hitbox (does not hit as high)
 * Low crush 9~32
-* Floating state 33~35";js9~32 fs33~35;HBS,ROL,HBS;Kuma-f,F+1+2;Falling Bear;r32 HBS;;File:t8-p2-kuma-f,f+1+2.mp4
-qcf+2;m;15;i17~18;-8;+3;;;;;Kuma-qcf+2;;;;File:t8-p2-kuma-qcf+2,1.mp4
+* Floating state 33~35";js9~32 fs33~35;HBS,ROL,HBS;Falling Bear;r32 HBS;;File:t8-p2-kuma-f,f+1+2.mp4;Kuma-f,F+1+2;kuma
+qcf+2;m;15;i17~18;-8;+3;;;;;;;;File:t8-p2-kuma-qcf+2,1.mp4;Kuma-qcf+2;kuma
 qcf+2,1;m, m;15, 25;i17~18, i27;-10;+33a (+7);;"* Heat Engager
 
 * Heat Dash +5, +36a (+26)
 
 * Balcony Break
-* Combos from 1st hit";he bbr;;Kuma-qcf+2,1;Grizzly Claws;;;File:t8-p2-kuma-qcf+2,1.mp4
-qcf+2,2;m, l;15, 22;i17~18, i33~34;-18;+21d;;* Chip damage on block;chp;;Kuma-qcf+2,2;Grizzly Claw Smash;;;File:t8-p2-kuma-qcf+2,2.mp4
+* Combos from 1st hit";he bbr;;Grizzly Claws;;;File:t8-p2-kuma-qcf+2,1.mp4;Kuma-qcf+2,1;kuma
+qcf+2,2;m, l;15, 22;i17~18, i33~34;-18;+21d;;* Chip damage on block;chp;;Grizzly Claw Smash;;;File:t8-p2-kuma-qcf+2,2.mp4;Kuma-qcf+2,2;kuma
 f,f,F+3;m;30;i22~23;+6;+13a (+3);;"* Balcony Break
 * Chip damage on block
 * Low crush 3~25
-* Floating state 26~28";bbr chp js3~25 fs26~28;;Kuma-f,f,F+3;Leaping Side Kick;;;File:t8-p2-kuma-f,f,f+3.mp4
+* Floating state 26~28";bbr chp js3~25 fs26~28;;Leaping Side Kick;;;File:t8-p2-kuma-f,f,f+3.mp4;Kuma-f,f,F+3;kuma
 f,f,F+1+2;m;30;i20~24;+3;+9c;;"* Balcony Break
 * Heat Engager
 
@@ -254,8 +254,8 @@ f,f,F+1+2;m;30;i20~24;+3;+9c;;"* Balcony Break
 * Forces tech backroll on hit
 * Panda: shorter attack hitbox range, reduced vertical height (does not hit as deep or high)
 * Low crush 21~35
-* Floating state 36~38";bbr he js21~35 fs36~38;HBS;Kuma-f,f,F+1+2;Rabid Bear;r35;;File:t8-p2-kuma-f,f,f+1+2.mp4
-ws1;m;13;i13~15;-11;+2;+7;;;;Kuma-ws1;;;;File:t8-p2-kuma-ws1,2ss.mp4
+* Floating state 36~38";bbr he js21~35 fs36~38;HBS;Rabid Bear;r35;;File:t8-p2-kuma-f,f,f+1+2.mp4;Kuma-f,f,F+1+2;kuma
+ws1;m;13;i13~15;-11;+2;+7;;;;;;;File:t8-p2-kuma-ws1,2ss.mp4;Kuma-ws1;kuma
 ws1,2;m, m;13, 20;i13~15, i18~19;-13;+6 (+20g);+18cg;"* Combo from 1st hit
 * Hold 2 to power up, up to 2 charge levels
 * Transition to HBS with input D or 3+4
@@ -263,166 +263,166 @@ ws1,2;m, m;13, 20;i13~15, i18~19;-13;+6 (+20g);+18cg;"* Combo from 1st hit
 * Wall Crush  +20g on hit
 
 
-* Balcony Break on CH";trn wc;HBS;Kuma-ws1,2;Killing Claws;;;
+* Balcony Break on CH";trn wc;HBS;Killing Claws;;;;Kuma-ws1,2;kuma
 ws1,2*;m, m;13, 28;i13~15, i33;-12;+18cg;+31a (-2);"* Combo from 1st CH
 * Heat skips to Level 2 charge
 * Transition to HBS with input D or 3+4 (-12/+18cg/+34a (-2))
 * Balcony Break
-* Tornado";bbr trn;HBS;Kuma-ws1,2*;Killing Claws;;;
+* Tornado";bbr trn;HBS;Killing Claws;;;;Kuma-ws1,2*;kuma
 ws1,2**;m, m;13, 38;i13~15, i44;+3;+27a (-9);;"* Transition to HBS with input D or 3+4
 * Balcony Break
 * Tornado
 * Reversal Break
 * chip damage on block
-* Heat reduces charge length (consumes partial Heat time)";bbr trn rbr chp;HBS;Kuma-ws1,2**;Fresh Killing Claws;;;File:t8-p2-kuma-ws1,2ss.mp4
-ws2;m;20;i15~16;-12;+29a (+19);;;;;Kuma-ws2;Mad Angler;;;File:t8-p2-kuma-ws2.mp4
+* Heat reduces charge length (consumes partial Heat time)";bbr trn rbr chp;HBS;Fresh Killing Claws;;;File:t8-p2-kuma-ws1,2ss.mp4;Kuma-ws1,2**;kuma
+ws2;m;20;i15~16;-12;+29a (+19);;;;;Mad Angler;;;File:t8-p2-kuma-ws2.mp4;Kuma-ws2;kuma
 ws3;m;21;i18~20;-9;+17 (+8);;"* Balcony Break
-* Homing";bbr hom;;Kuma-ws3;Spinning Bear Kick;;;File:t8-p2-kuma-ws3.mp4
-ws4;m;20;i11~12;-6;+5;;;;;Kuma-ws4;Paw Smash;;;File:t8-p2-kuma-ws4.mp4
+* Homing";bbr hom;;Spinning Bear Kick;;;File:t8-p2-kuma-ws3.mp4;Kuma-ws3;kuma
+ws4;m;20;i11~12;-6;+5;;;;;Paw Smash;;;File:t8-p2-kuma-ws4.mp4;Kuma-ws4;kuma
 SS.1+2;m;23;i22~23;-3;+6c;;"* 9 chip damage
-* Transition to +12 +3 HBS with D";;HBS;Kuma-SS.1+2;Salmon Swipe;;;File:t8-p2-kuma-ss.1+2.mp4
-FC.df+2;m;12;i18~19;-13;-2;;*;;;Kuma-FC.df+2;1st hit;r;;
+* Transition to +12 +3 HBS with D";;HBS;Salmon Swipe;;;File:t8-p2-kuma-ss.1+2.mp4;Kuma-SS.1+2;kuma
+FC.df+2;m;12;i18~19;-13;-2;;*;;;1st hit;r;;;Kuma-FC.df+2;kuma
 FC.df+2,1;m, h;12, 12;i18~19, i18~20;-10~-8;+1~+3;;"* Combo from 1st hit
-* Jail from 1st block";;;Kuma-FC.df+2,1;2nd hit;r27;;
-FC.df+2,1,1+2;m, h, M;12, 12, 6;i18~19, ,i22~23;-17;-6;;* Interrupt with i6 from 2nd block;;;Kuma-FC.df+2,1,1+2;3rd hit;;;
-FC.df+2,1,1+2,3;m, h, M, L;12, 12, 6, 5;i18~19, ,i32~33;-18;-7;;* Interrupt with i15 from 3rd block;;;Kuma-FC.df+2,1,1+2,3;4th hit;;;
+* Jail from 1st block";;;2nd hit;r27;;;Kuma-FC.df+2,1;kuma
+FC.df+2,1,1+2;m, h, M;12, 12, 6;i18~19, ,i22~23;-17;-6;;* Interrupt with i6 from 2nd block;;;3rd hit;;;;Kuma-FC.df+2,1,1+2;kuma
+FC.df+2,1,1+2,3;m, h, M, L;12, 12, 6, 5;i18~19, ,i32~33;-18;-7;;* Interrupt with i15 from 3rd block;;;4th hit;;;;Kuma-FC.df+2,1,1+2,3;kuma
 FC.df+2,1,1+2,3,1+2;m, h, M, L, M;12, 12, 6, 5, 6;i18~19, ,i26~27;-19;-8;;"* Interrupt with i10 from 4th block
-* Can SSR hit from 4th block";;;Kuma-FC.df+2,1,1+2,3,1+2;5th hit;;;
+* Can SSR hit from 4th block";;;5th hit;;;;Kuma-FC.df+2,1,1+2,3,1+2;kuma
 FC.df+2,1,1+2,3,1+2,3+4;m, h, M, L, M, m;12, 12, 6, 5, 6, 6;i18~19, ,i25~26;-12;-1;;"* Interrupt with i8 from 5th block
 * Can SSL/SSR and SWL/SWR from 5th block
 * Low crush 15~27
 * Floating state ?
-* High crush 28~";js15~27 fs? cs28~;HBS;Kuma-FC.df+2,1,1+2,3,1+2,3+4;6th hit;HBS;;
+* High crush 28~";js15~27 fs? cs28~;HBS;6th hit;HBS;;;Kuma-FC.df+2,1,1+2,3,1+2,3+4;kuma
 FC.df+2,1,1+2,3,1+2,3+4,1+2;m, h, M, L, M, m, m;12, 12, 6, 5, 6, 6, 7;i18~19, ,i55;-49;-38;;"* Interrupt float with i40? from 6th block
 * Can SSL/SSR and SWL/SWR from 6th block
-* Floating state 1~122";fs1~122;FUFT;Kuma-FC.df+2,1,1+2,3,1+2,3+4,1+2;7th hit;FUFT;;
+* Floating state 1~122";fs1~122;FUFT;7th hit;FUFT;;;Kuma-FC.df+2,1,1+2,3,1+2,3+4,1+2;kuma
 FC.df+2,1,1+2,3,1+2,3+4,1+2,2;m, h, M, L, M, m, m, m;12, 12, 6, 5, 6, 6, 7, 6;i18~19, ,i20~22;-17;-6;;"* Interrupt with i21? from 7th block
-* Can SSL/SSR and SWL/SWR from 7th block";;;Kuma-FC.df+2,1,1+2,3,1+2,3+4,1+2,2;8th hit;;;
+* Can SSL/SSR and SWL/SWR from 7th block";;;8th hit;;;;Kuma-FC.df+2,1,1+2,3,1+2,3+4,1+2,2;kuma
 FC.df+2,1,1+2,3,1+2,3+4,1+2,2,3;m, h, M, L, M, m, m, m, h;12, 12, 6, 5, 6, 6, 7, 6, 21;i18~19, ,i26;-21;+34a (+24);;"* Combo from 8th hit
 * Interrupt with i8 from 8th block
-* Can SSL/SSR and SWL/SWR from 8th block";;;Kuma-FC.df+2,1,1+2,3,1+2,3+4,1+2,2,3;9th hit;r40;;
+* Can SSL/SSR and SWL/SWR from 8th block";;;9th hit;r40;;;Kuma-FC.df+2,1,1+2,3,1+2,3+4,1+2,2,3;kuma
 FC.df+2,1,1+2,3,1+2,3+4,1+2,2,3,1;m, h, M, L, M, m, m, m, h, h;12, 12, 6, 5, 6, 6, 7, 6, 21, 35 (24);i18~19, ,i47;+11;+10c;;"* Balcony Break
 * Aerial combo (+14a (+7)) from 8th or 9th hit
 * Forces tech backroll on hit
 * Interrupt with i33? from 9th block
-* Can SSL/SSR and SWL/SWR from 9th block";bbr;;Kuma-FC.df+2,1,1+2,3,1+2,3+4,1+2,2,3,1;10 Hit Combo;r37;;
+* Can SSL/SSR and SWL/SWR from 9th block";bbr;;10 Hit Combo;r37;;;Kuma-FC.df+2,1,1+2,3,1+2,3+4,1+2,2,3,1;kuma
 FDFA.1+2;l;10;i14~16;-12;+6;+6;"* Transition to HBS
 * Move is airborne, requires strong parry
-* Reverse direction when performed in FDFT";;HBS,HBS;Kuma-FDFA.1+2;Bear Butterfly;HBS;;
+* Reverse direction when performed in FDFT";;HBS,HBS;Bear Butterfly;HBS;;;Kuma-FDFA.1+2;kuma
 FUFA.1+2;M;15;i17~19;-2;+6;;"* Transition to HBS (Cannot cancel)
-* Reverse direction when performed in FUFT";;HBS,HBS;Kuma-FUFA.1+2;Bear Backstroke;HBS;;
+* Reverse direction when performed in FUFT";;HBS,HBS;Bear Backstroke;HBS;;;Kuma-FUFA.1+2;kuma
 FUFT.d+1+2;m;21;i29~31;+18~+20;+37a;+37a;"* Transition to SIT (Cannot cancel)
-* Reverse direction when performed in FUFA";;SIT,SIT;Kuma-FUFT.d+1+2;Get Up Punch;SIT;;
-HBS.1;M;10;i12;-13;+5;+12;* Elbow;elb;;Kuma-HBS.1;;r32;;File:t8-p2-kuma-hbs.1,2ss.mp4
+* Reverse direction when performed in FUFA";;SIT,SIT;Get Up Punch;SIT;;;Kuma-FUFT.d+1+2;kuma
+HBS.1;M;10;i12;-13;+5;+12;* Elbow;elb;;;r32;;File:t8-p2-kuma-hbs.1,2ss.mp4;Kuma-HBS.1;kuma
 HBS.1,2;M, M;10, 23;i12, i24~25;-13;+6c;+13c;"* Combo from 1st hit with 20?F (charge) delay
 * Hold 2 to power up, up to 2 charge levels
-* Move can be delayed by 10F by holding 2";;FC;Kuma-HBS.1,2;Honeycomb Spike;r35 FC;;
+* Move can be delayed by 10F by holding 2";;FC;Honeycomb Spike;r35 FC;;;Kuma-HBS.1,2;kuma
 HBS.1,2*;M, M;10, 23;i12, i33~34;-12;+13c;+49a;"* Combo from 1st CH with 30?F (charge) delay
 * Move can be delayed by 9?F by holding 2
 * Becomes HBS.1,2** during heat
 * Consumes 240F? of remaining Heat time
-* 9 chip damage on block";;FC;Kuma-HBS.1,2*;Honeycomb Spike;r35 FC;;
+* 9 chip damage on block";;FC;Honeycomb Spike;r35 FC;;;Kuma-HBS.1,2*;kuma
 HBS.1,2**;M, M;10, 30;i12, i44~45;+3;+49a;;"* Reversal Break
 * Replaces HBS.1,2*: i33~34 startup during Heat (t83? r36?)
-* 12 chip damage on block";rbr;FC;Kuma-HBS.1,2**;Fresh Honeycomb Spike;r36 FC;;File:t8-p2-kuma-hbs.1,2ss.mp4
+* 12 chip damage on block";rbr;FC;Fresh Honeycomb Spike;r36 FC;;File:t8-p2-kuma-hbs.1,2ss.mp4;Kuma-HBS.1,2**;kuma
 HBS.2;L;16;i21~24;-15;+21g;;"* Transition to HBS
-* High crush 1~";cs1~;HBS,HBS;Kuma-HBS.2;Bear Claw;r29 HBS;;File:t8-p2-kuma-hbs.2.mp4
+* High crush 1~";cs1~;HBS,HBS;Bear Claw;r29 HBS;;File:t8-p2-kuma-hbs.2.mp4;Kuma-HBS.2;kuma
 HBS.3;sp;;;;;;"* Transition to FUFA
 * Alternative input: HBS.4 (HBS.3 is into background, HBS.4 is into foreground)
-* Floating state 1~36";fs1~36;FUFA,FUFA;Kuma-HBS.3;Hunting to Roll Over;r36? FUFA;;File:t8-p2-kuma-hbs.3.mp4
+* Floating state 1~36";fs1~36;FUFA,FUFA;Hunting to Roll Over;r36? FUFA;;File:t8-p2-kuma-hbs.3.mp4;Kuma-HBS.3;kuma
 HBS.1+2;M;24;i19~22;-15;+79a;;"* Tornado
 * 27dmg upon opponent landing
-* High crush 1~18";trn cs1~18;;Kuma-HBS.1+2;Bear Fling;r33;;File:t8-p2-kuma-hbs.1+2.mp4
+* High crush 1~18";trn cs1~18;;Bear Fling;r33;;File:t8-p2-kuma-hbs.1+2.mp4;Kuma-HBS.1+2;kuma
 HBS.3+4;M;21;i20~24;-14;+9a (-1);;"* Heat Engager
 
 * Heat Dash +5, +43d (+35)
 
 * Balcony Break
 * Panda: Decreased attack range and height hitbox (does not hit as deep)
-* Power crush 7~19";he bbr pc7~19;;Kuma-HBS.3+4;Bear Tackle;r43;;File:t8-p2-kuma-hbs.3+4.mp4
+* Power crush 7~19";he bbr pc7~19;;Bear Tackle;r43;;File:t8-p2-kuma-hbs.3+4.mp4;Kuma-HBS.3+4;kuma
 HBS.b,b;sp;;;;;;"* Alternate input: SIT.B
-* Transition to r12 HBS with input D or 3+4 at frame 35";;HBS,FC;Kuma-HBS.b,b;Backward Roll;r40 FC;;File:t8-p2-kuma-hbs.b,b.mp4
+* Transition to r12 HBS with input D or 3+4 at frame 35";;HBS,FC;Backward Roll;r40 FC;;File:t8-p2-kuma-hbs.b,b.mp4;Kuma-HBS.b,b;kuma
 HBS.b+1+2;L;16;i26~29;-20c;+3;+7;"* Head
 * Transition to r40 HBS with input D or 3+4
 * Panda: Reduced attack range and vertical hitbox (does not hit as high)
-* High crush 1~67";hed cs1~67;HBS;Kuma-HBS.b+1+2;;r39;;File:t8-p2-kuma-hbs.b+1+2,1+2.mp4
+* High crush 1~67";hed cs1~67;HBS;;r39;;File:t8-p2-kuma-hbs.b+1+2,1+2.mp4;Kuma-HBS.b+1+2;kuma
 HBS.b+1+2,1+2;L, L;16, 33;i26~29, i22~24;-29c;+8a;;"* Balcony Break
 * Head
 * Combo from 1st CH
 * Panda: Reduced attack range and vertical hitbox (does not hit as high)
-* High crush 1~59";bbr hed cs1~59;;Kuma-HBS.b+1+2,1+2;Break'n;r51;;File:t8-p2-kuma-hbs.b+1+2,1+2.mp4
+* High crush 1~59";bbr hed cs1~59;;Break'n;r51;;File:t8-p2-kuma-hbs.b+1+2,1+2.mp4;Kuma-HBS.b+1+2,1+2;kuma
 HBS.df+1;m;23;i25~27;-7;+20a (+11);;"* Homing
 * Balcony Break
 * Strong Aerial Tailspin
-* 9 chip damage";hom bbr;;Kuma-HBS.df+1;Hornet Buster;r28;;
-HBS.df+2;m;20;i15~16;-17;+35a (+25);;* Tornado;trn;;Kuma-HBS.df+2;Big Tree;r34;;File:t8-p2-kuma-hbs.df+2.mp4
+* 9 chip damage";hom bbr;;Hornet Buster;r28;;;Kuma-HBS.df+1;kuma
+HBS.df+2;m;20;i15~16;-17;+35a (+25);;* Tornado;trn;;Big Tree;r34;;File:t8-p2-kuma-hbs.df+2.mp4;Kuma-HBS.df+2;kuma
 HBS.d+1+2;m;22;i16~20;-3;+4;+76a (+60);"* Tornado
 * Transition to HBS
 * Tornado on CH only
 * t44? r24? on hit
-* Panda: Increased vertical attack hitbox height. Decreased attack range and height hitbox on frames 18-20 (does not hit as deep or high)";trn;HBS,HBS;Kuma-HBS.d+1+2;Frolicking Bear;r26? HBS;;File:t8-p2-kuma-hbs.d+1+2.mp4
-HBS.d+3+4;sp;;;;;;* Transition to FDFA;;FDFA,FDFA;Kuma-HBS.d+3+4;Hunting to Play Dead;r30? FDFA;;File:t8-p2-kuma-hbs.d+3+4.mp4
+* Panda: Increased vertical attack hitbox height. Decreased attack range and height hitbox on frames 18-20 (does not hit as deep or high)";trn;HBS,HBS;Frolicking Bear;r26? HBS;;File:t8-p2-kuma-hbs.d+1+2.mp4;Kuma-HBS.d+1+2;kuma
+HBS.d+3+4;sp;;;;;;* Transition to FDFA;;FDFA,FDFA;Hunting to Play Dead;r30? FDFA;;File:t8-p2-kuma-hbs.d+3+4.mp4;Kuma-HBS.d+3+4;kuma
 HBS.f,f;sp;;i26~i31;+14~+19;+20~+25;;"* Transition to ROL
 ** Can transition to r20? HBS with D or 3+4
 ** Can transition to r13? FC
 * Becomes SM projectile 5dmg attack during Heat (Consumes 120F of remaining Heat time)
 ** +14~+19 or -6~-1 HBS or +1~+6 FC on block 
-** +20~+25 or +0~+5 HBS or +7~+12 FC on hit";;ROL,HBS,FC,ROL;Kuma-HBS.f,f;Bear Roll;r31 ROL;;
+** +20~+25 or +0~+5 HBS or +7~+12 FC on hit";;ROL,HBS,FC,ROL;Bear Roll;r31 ROL;;;Kuma-HBS.f,f;kuma
 HBS.f+3+4;L;25;i16~22;-11;+37a (+28);+69a (+22);"* Balcony Break
 * Transition to SIT during attack active frames
 * Unparryable?
 * Very short hitbox reach
 * Low crush 9~21
-* Floating state 22~";bbr js9~21 fs22~;SIT,SIT;Kuma-HBS.f+3+4;Hunting Hip Smash;r15? SIT;;File:t8-p2-kuma-hbs.f+3+4.mp4
+* Floating state 22~";bbr js9~21 fs22~;SIT,SIT;Hunting Hip Smash;r15? SIT;;File:t8-p2-kuma-hbs.f+3+4.mp4;Kuma-HBS.f+3+4;kuma
 OTG.d+1+4;l,ub(l);16 (11),48 (33);i55~110,i25~38;N/A;8 (0) / +14;;"* Cancel to BT with input OTG.d+1+4,3+4
-* More frame advantage when hitting standing opponent";;BT;Kuma-OTG.d+1+4;Dance With Me;;;
+* More frame advantage when hitting standing opponent";;BT;Dance With Me;;;;Kuma-OTG.d+1+4;kuma
 ROL.1;h;31;i15~16;+4;+35d (+27);;"* Balcony Break
 * Tornado
 * Guard Break during Heat
-* Power up during Heat: +13 on block guard break (Uses 240F of remaining Heat time)";bbr trn;;Kuma-ROL.1;Bear Shove;;;File:t8-p2-kuma-rol.1.mp4
-ROL.2;m;21;i17~19;-17;+28a (+18);;;;;Kuma-ROL.2;Bear Backhand;;;File:t8-p2-kuma-rol.2.mp4
-ROL.3;l;20;i18~26;-18;+33a;;Recovers in FUFT;;FUFT;Kuma-ROL.3;Bear Slide;FUFT;;File:t8-p2-kuma-rol.3.mp4
-ROL.4;M;20;i26~30;+7;+26a;;Recovers in FUFT;;FUFT;Kuma-ROL.4;Bear Rolling Kick;FUFT;;File:t8-p2-kuma-rol.4.mp4
+* Power up during Heat: +13 on block guard break (Uses 240F of remaining Heat time)";bbr trn;;Bear Shove;;;File:t8-p2-kuma-rol.1.mp4;Kuma-ROL.1;kuma
+ROL.2;m;21;i17~19;-17;+28a (+18);;;;;Bear Backhand;;;File:t8-p2-kuma-rol.2.mp4;Kuma-ROL.2;kuma
+ROL.3;l;20;i18~26;-18;+33a;;Recovers in FUFT;;FUFT;Bear Slide;FUFT;;File:t8-p2-kuma-rol.3.mp4;Kuma-ROL.3;kuma
+ROL.4;M;20;i26~30;+7;+26a;;Recovers in FUFT;;FUFT;Bear Rolling Kick;FUFT;;File:t8-p2-kuma-rol.4.mp4;Kuma-ROL.4;kuma
 ROL.1+2;SM;22;i10~40;-30;+45a;;"* Recovers in FUFT on hit
-* Recovers in off axis FUFT on block";;FUFT;Kuma-ROL.1+2;Giant Roll;FUFT;;File:t8-p2-kuma-rol.1+2.mp4
-SIT.1;l;15;i21~22;-12;+4;+9;;;FC;Kuma-SIT.1;;FC;;File:t8-p2-kuma-sit.1,1.mp4
-SIT.1,1;l, l;15, 13;i21~22, i25~26;-12;+6;;Combo from 1st CH;;FC;Kuma-SIT.1,1;Double Trout Sweep;FC;;File:t8-p2-kuma-sit.1,1.mp4
-SIT.2;m;18;i19~21;-12;+73a (+57);;* Tornado;trn;;Kuma-SIT.2;Trout Smash;;;File:t8-p2-kuma-sit.2.mp4
-SIT.3+4;M;20;i25;-12 / -10 ROL;-4a / -2a ROL;;* Transition to ROL with input SIT.F;;ROL;Kuma-SIT.3+4;Rebound;;;File:t8-p2-kuma-sit.3+4.mp4
+* Recovers in off axis FUFT on block";;FUFT;Giant Roll;FUFT;;File:t8-p2-kuma-rol.1+2.mp4;Kuma-ROL.1+2;kuma
+SIT.1;l;15;i21~22;-12;+4;+9;;;FC;;FC;;File:t8-p2-kuma-sit.1,1.mp4;Kuma-SIT.1;kuma
+SIT.1,1;l, l;15, 13;i21~22, i25~26;-12;+6;;Combo from 1st CH;;FC;Double Trout Sweep;FC;;File:t8-p2-kuma-sit.1,1.mp4;Kuma-SIT.1,1;kuma
+SIT.2;m;18;i19~21;-12;+73a (+57);;* Tornado;trn;;Trout Smash;;;File:t8-p2-kuma-sit.2.mp4;Kuma-SIT.2;kuma
+SIT.3+4;M;20;i25;-12 / -10 ROL;-4a / -2a ROL;;* Transition to ROL with input SIT.F;;ROL;Rebound;;;File:t8-p2-kuma-sit.3+4.mp4;Kuma-SIT.3+4;kuma
 SIT.f;sp;;N/A / i26~i31 Heat;+1~+6 / -6~-1 HBS;+7~+12 / 0~+5 HBS;;"* Alternative input: FC.3+4 or FDFA.f
 * Transition to ROL
 * Transition to HBS with input ROL.D or ROL.3+4
 * Transition to FC with no input
-* Becomes special mid attack during Heat (Uses 120F of remaining Heat time)";;ROL,HBS,FC,ROL;Kuma-SIT.f;Bear Roll;ROL;;
+* Becomes special mid attack during Heat (Uses 120F of remaining Heat time)";;ROL,HBS,FC,ROL;Bear Roll;ROL;;;Kuma-SIT.f;kuma
 hFC.1;L;12;i19~21;-8;+2c;;"* Can be done from Crouch Level 1
-* High crush 0~46";cs0~46;FC;Kuma-hFC.1;Watch Your Feet;FC;;File:t8-p2-kuma-fc.1.mp4
+* High crush 0~46";cs0~46;FC;Watch Your Feet;FC;;File:t8-p2-kuma-fc.1.mp4;Kuma-hFC.1;kuma
 hFC.1+2;sp;;i26~i31;+1~+6;+7~+12;;"* Transition to ROL
 * Becomes SM projectile 5dmg attack during Heat (Consumes 120F of remaining Heat time)
 ** +14~+19 or -6~-1 HBS or +1~+6 FC on block
 ** +20~+25 or +0~+5 HBS or +7~+12 FC on hit
 * Can be done from Crouch Level 1
-* Floating state 1~31";fs1~31;ROL,ROL;Kuma-hFC.1+2;Bear Roll;r31 ROL;;
+* Floating state 1~31";fs1~31;ROL,ROL;Bear Roll;r31 ROL;;;Kuma-hFC.1+2;kuma
 1+3;th(h);35;i12~14;-3;+1;;"* Throw break: 1 or 2
-* Opponent status on hit: FUFT";;;Kuma-1+3;Bear's Bite;;;File:t8-p2-kuma-1+3.mp4
+* Opponent status on hit: FUFT";;;Bear's Bite;;;File:t8-p2-kuma-1+3.mp4;Kuma-1+3;kuma
 2+4;th(h);35;i12~14;-6;+1;;"* Throw break: 1 or 2
 * Opponent status on hit: FUFT
-* Side switch on hit";;;Kuma-2+4;Bear Hug;;;File:t8-p2-kuma-2+4.mp4
+* Side switch on hit";;;Bear Hug;;;File:t8-p2-kuma-2+4.mp4;Kuma-2+4;kuma
 Back throw;th(h);70;i12~14;;+1;;"* Throw break: none
-* Opponent status on hit: FUFA";;;Kuma-Back throw;Swing Swung;;;
+* Opponent status on hit: FUFA";;;Swing Swung;;;;Kuma-Back throw;kuma
 HBS.f+1+2;th(h);30;i26~27;;-2d;;"* Removes Recoverable Health
 * Spike
 * Throw break: none
 * Opponent status on hit: FUFA
-* Panda: Reduced attack range and vertical hitbox (does not hit as high)";spk;;Kuma-HBS.f+1+2;Bear Toss;;;File:t8-p2-kuma-hbs.f+1+2.mp4
+* Panda: Reduced attack range and vertical hitbox (does not hit as high)";spk;;Bear Toss;;;File:t8-p2-kuma-hbs.f+1+2.mp4;Kuma-HBS.f+1+2;kuma
 Left throw;th(h);50;i12~14;-3;+1;;"* Throw break: 1
 * Spike
-* Opponent status on hit: FUFT";spk;;Kuma-Left throw;Bear Slam;;;
+* Opponent status on hit: FUFT";spk;;Bear Slam;;;;Kuma-Left throw;kuma
 Right throw;th(h);40;i12~14;-3;+1;;"* Throw break: 2
-* Opponent status on hit: FUFT off axis";;;Kuma-Right throw;Choke Slam;;;
+* Opponent status on hit: FUFT off axis";;;Choke Slam;;;;Kuma-Right throw;kuma
 hcb,f+1+2;th(h);50;i11;+0;+5;;"* Throw break: 1+2
 * 60 dmg if opponent hits the wall
 * Opponent status on hit: FUFA
-* Side switch on throw break and hit";;;Kuma-hcb,f+1+2;Rock'n Roll Circus;;;File:t8-p2-kuma-hcb,f+1+2.mp4
+* Side switch on throw break and hit";;;Rock'n Roll Circus;;;File:t8-p2-kuma-hcb,f+1+2.mp4;Kuma-hcb,f+1+2;kuma
 uf+1+2;th(h);35;i12~14;0;+26d (+7);;"* Throw break: 1+2
 * Balcony Break
-* Opponent status on hit: FUFT";bbr;;Kuma-uf+1+2;Headbutt;;;File:t8-p2-kuma-uf+1+2.mp4
+* Opponent status on hit: FUFT";bbr;;Headbutt;;;File:t8-p2-kuma-uf+1+2.mp4;Kuma-uf+1+2;kuma

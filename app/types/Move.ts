@@ -16,6 +16,7 @@ export type Move = {
   image?: string;
   video?: string;
   recovery?: string;
+  characterId?: string;
 };
 
-export type MoveT8 = Move & { wavuId: string };
+export type MoveT8 = Move & { wavuId: string; characterId: string };

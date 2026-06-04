@@ -45,6 +45,7 @@ export const frameDataTableToJson = (normalFrameData: TableData): Move[] => {
   const wavuIdIndex = lowerCaseHeaders.indexOf('wavu id');
   const nameIndex = lowerCaseHeaders.indexOf('name');
   const recoveryIndex = lowerCaseHeaders.indexOf('recovery');
+  const characterIdIndex = lowerCaseHeaders.indexOf('character id');
 
   // check optional columns
   if (tagsIndex >= 0) {
@@ -72,6 +73,7 @@ export const frameDataTableToJson = (normalFrameData: TableData): Move[] => {
       image: row[imageIndex],
       video: row[videoIndex],
       recovery: row[recoveryIndex],
+      characterId: characterIdIndex >= 0 ? row[characterIdIndex] : undefined,
     };
   });
 };
