@@ -48,4 +48,5 @@ export type MoveFilter = {
   stance?: string[];
   transition?: string[];
   moveList?: string;
+  character?: string[];
 };
