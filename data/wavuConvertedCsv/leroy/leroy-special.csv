@@ -1,15 +1,21 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Transitions;Wavu id;Name;Recovery;Image;Video
-2+3;m;12 (12);i16;+1;+2c;;"* Heat Burst
-* Power crush";hb pc;;Leroy-2+3;Heat Burst;;;
+2+3;m;"[12;12]";i16;+1;+2c;;"* Heat Burst
+* Cancel to r45 with b,b on frame 42
+* 2 chip damage on block
+* 12 chip damage on hit
+* Only deals recoverable damage
+* Cannot cause a K.O.
+* Power crush 7~16";hb pc7~16;;Leroy-2+3;Heat Burst;r30;;
 H.b+1+2;;20;;-9;+35a (+27);;"* Balcony Break
 * Consumes 210F of remaining Heat time
 * Crumple stun +14F after CH";bbr;;Leroy-H.b+1+2;Outcast Dark Deluge;;;
-H.2+3;m;50 (25);i15;+6;+0;;"* Heat Smash
+H.2+3;m;50 (25);i15, i25, i4, i4, i4, i3, i5, i10~11;+6;+0 / +5;;"* Heat Smash
 * Balcony Break
 * Alternate input: H.HRM.2+3
 * Also possible after Twin Dragon Gate is successful
 * Transition to HRM on block
-* 12 chip damage";hs bbr;HRM;Leroy-H.2+3;Twin Dragon Thunderclap;;;
+* Transition to attack throw on 1st hit
+* 12 chip damage";hs bbr;HRM,HRM;Leroy-H.2+3;Twin Dragon Thunderclap;r28 HRM;;
 R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Removes Recoverable Health
 * Reversal Break
@@ -20,14 +26,14 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Consumes Rage
 * Power crush 8~";ra rbr pc8~;;Leroy-R.df+1+2;Dark Dragon Commandment;r39;;
 1;h;5;i10;+1;+8;;Recovers 2f faster on hit or block (t27 r17);;;Leroy-1;Jab;r19;;File:t8-p2-leroy-1,1,1+2,1.mp4
-1,1;h, m;5, 7;i10, i18~19;-9~-8;+2~+3;;"* Combo from 1st hit CH
-* Slightly delayable 
-* Jails unless delayed";;;Leroy-1,1;;r25;;File:t8-p2-leroy-1,1,1+2,1.mp4
+1,1;h, m;5, 7;i10, i18~19;-9~-8;+2~+3;;"* Jail from 1st block with no delay
+* Combo from 1st CH with 3F delay";;;Leroy-1,1;;r25;;File:t8-p2-leroy-1,1,1+2,1.mp4
 1,1,1+2;h, m, h;5, 7, 12;i10, ,i19~20;-9~-8;-2~-1;;"* Power up during Heat (partially uses remaining Heat time)
 * Combo from 2nd hit";;;Leroy-1,1,1+2;;r30;;File:t8-p2-leroy-1,1,1+2,1.mp4
 1,1,1+2,1;h, m, h, m;5, 7, 12, 15;i10, ,i23~24;-16~-15;+20a(+15)~+21a(+17);;Combo from 3rd hit;;;Leroy-1,1,1+2,1;Chain Punch: Sheath;r65;;File:t8-p2-leroy-1,1,1+2,1.mp4
 1,2;h, h;5, 9;i10, i12;-3;+7;;Jails;;;Leroy-1,2;Front Palm;r23;;File:t8-p2-leroy-1,2.mp4
-1,2,1;h, h, h;5, 9, 17;i10, ,i27~28;-6~-5;+8~+9;;"* Follow-up after successful parry with input 1 or 2
+1,2,1;h, h, h;5, 9, 17;i10, ,i27~28;-6~-5;+8~+9;;"* Strong Attack Reversal
+* Follow-up after successful parry with input 1 or 2
 * Delayable
 * Combo from 2nd hit CH
 * Parry state 10~24";ps10~24;;Leroy-1,2,1;Front Palm Pulsing Fist;;;File:t8-p2-leroy-1,2,1.mp4
@@ -37,13 +43,14 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 1,2,4;h, h, m;5, 9, 11;i10, ,i16;-9;+3;;"* Transition to HRM
 * Combo from 1st hit
 * Jail from 1st block";;HRM,HRM;Leroy-1,2,4;Front Palm Snap Kick;HRM;;File:t8-p2-leroy-1,2,4.mp4
-1+3+4;sp;;;;;;"* Reversal
+1+3+4;sp;;;;;;"* Strong Attack Reversal
 * Follow-up upon successful reversal with input 1 or 2 to Chain Punch: Branch
 * Parry state 20~100";ps20~100;;Leroy-1+3+4;Taunt;;;File:t8-p2-leroy-1+3+4.mp4
 2;h;10;i12;+0;+9;;;;;Leroy-2;;r18;;File:t8-p2-leroy-2,1,2,1.mp4
 2,1;h, m;10, 12;i12, i12~13;-7~-6;+4~+5;;"* Elbow
 * Jail from 1st block";elb;;Leroy-2,1;;r10;;File:t8-p2-leroy-2,1,2,1.mp4
 2,1,2;h, m, h;10, 12, 17;i12, ,i20~21;-7~-6;+4~+5;;"Elbow
+* Strong Attack Reversal
 * Follow-up after successful parry with input 1 or 2
 * Delayable
 * Combo from 2nd hit CH
@@ -73,40 +80,56 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Combo from 1st hit
 * Delayable
 * jails";he bbr elb;;Leroy-1+2,1+2,1;Chain Punch: Stem;;;File:t8-p2-leroy-1+2,1+2,1.mp4
-1+4;L;16;i100~279;-26;+24;;Power up during Heat (partially uses remaining Heat time);;;Leroy-1+4;Go Sugar;;;File:t8-p2-leroy-1+4.mp4
+1+4;L;16;i100~279;-26~+153;+24~+203;;"* 1 chip damage on block
+* Power up during Heat (Consumes 150F? of remaining Heat time)
+** +70a~249a on hit";;;Leroy-1+4;Go Sugar;;;File:t8-p2-leroy-1+4.mp4
 3+4;sp;;;;;;"* Auto low parry starting of frame 3
 * Transition to n with HRM.3+4
 * Parry state 3";ps3;HRM;Leroy-3+4;Hermit;HRM;;
-3+4;sp;;;;;;"* Auto low parry
+3+4;sp;;;;;;"* Auto Strong Attack low parry
 * Stays indefinitely in stance
 * Transition to r16 standing with HRM.3+4
 ** Recovers in standing guard after 6F?
 * Parry state 3~";ps3~;;Leroy-3+4;Hermit;r17;;
-f+2;h;15;i14~16;-9~-7;+2~+4;;Elbow;elb;;Leroy-f+2;;;;File:t8-p2-leroy-f+2,3,4.mp4
-f+2,3;h, m;15, 15;i14~16, i18;-10;+2;;Combo from 1st hit;;;Leroy-f+2,3;;;;File:t8-p2-leroy-f+2,3,4.mp4
+f+2;h;15;i14~16;-9~-7;+2~+4;;"* Elbow
+* Has good left sidestep tracking";elb;;Leroy-f+2;;r26;;File:t8-p2-leroy-f+2,3,4.mp4
+f+2,3;h, m;15, 15;i14~16, i18;-10;+2;;"* Combo from 1st hit with 10F delay
+* Interrupt with i1 from 1st block
+* Move can be delayed by 10F
+* Input can be delayed by 11F";;;Leroy-f+2,3;;r30;;File:t8-p2-leroy-f+2,3,4.mp4
 f+2,3,4;h, m, m;15, 15, 20;i14~16, ,i21~22;-9;+8;+14;"* Knee
 * Transition to HRM
-* Combo from 2nd hit CH";kne;HRM;Leroy-f+2,3,4;Lone Dragon Storm;;;File:t8-p2-leroy-f+2,3,4.mp4
+* Combo from 2nd CH with 11F delay
+* Interrupt with i5 from 1st block
+* Move can be delayed by 10F
+* Input can be delayed by 15F";kne;HRM,HRM;Leroy-f+2,3,4;Lone Dragon Storm;r29 HRM;;File:t8-p2-leroy-f+2,3,4.mp4
 f+3;m;14;i14~15;-7~-6;+7~+8;;"* Knee
-Alternative input: ws3";kne;;Leroy-f+3;;;;File:t8-p2-leroy-f+3,1+2,4.mp4
-f+3,1+2;m, h;14, 15;i14~15, ;-8;-6;;"* jail from 1st hit
-* Power up during Heat
+* Alternative input: ws3";kne;;Leroy-f+3;;r25;;File:t8-p2-leroy-f+3,1+2,4.mp4
+f+3,1+2;m, h,h,h;14, 5,5,5;i14~15, i13,i9,i7;-8;-6;;"* Jail from 1st block with 1F delay
+* Combo from 1st CH with 1F delay
+* Power up during Heat (18dmg, 12 chip damage)
 * Consumes 120F of remaining Heat Time
-* Combo from 1st hit CH";;;Leroy-f+3,1+2;;;;File:t8-p2-leroy-f+3,1+2,4.mp4
-f+3,1+2,4;m, h, m;14, 15, 20;i14~15, i20~21;-16~-15;+13a (+6);;"* Tornado
-* Natural combo from 2nd hit";trn;;Leroy-f+3,1+2,4;Strike of the Five Precepts;;;File:t8-p2-leroy-f+3,1+2,4.mp4
-f+4;m;14;i16~17;-9~-8;+4;;;;;Leroy-f+4;;;;File:t8-p2-leroy-f+4,4.mp4
+* Move cannot be delayed
+* Input can be delayed by 1F";;;Leroy-f+3,1+2;;r31;;File:t8-p2-leroy-f+3,1+2,4.mp4
+f+3,1+2,4;m, h,h,h, m;14, 5,5,5, 20;i14~15, ,i20~21;-16~-15;+13a (+6);;"* Tornado
+* Jail from 1st block with 1F delay
+* Combo from 1st CH or 2nd hit with 1F delay
+* Move cannot be delayed
+* Input can be delayed by 1F";trn;;Leroy-f+3,1+2,4;Strike of the Five Precepts;r36;;File:t8-p2-leroy-f+3,1+2,4.mp4
+f+4;m;14;i16~17;-9~-8;+4;;;;;Leroy-f+4;;r30;;File:t8-p2-leroy-f+4,4.mp4
 f+4,4;m, h;14, 24;i16~17, i28~30;-6;+20a (+11);;"* Heat Engager
 
 * Heat Dash +5, +62a (+42)
 
 * Balcony Break
-* Combo from 1st hit
-* Slighly delayable
-* Low crush";he bbr js;;Leroy-f+4,4;Lao Weng Xuan Feng Jiao;;;File:t8-p2-leroy-f+4,4.mp4
+* Combo from 1st hit with 6F delay
+* Interrupt with i6 from 1st block
+* Low crush 17~29
+* Floating state 30~32";he bbr js17~29 fs30~32;;Leroy-f+4,4;Lao Weng Xuan Feng Jiao;r28;;File:t8-p2-leroy-f+4,4.mp4
 f+1+2;m;20;i17~18;-13;+20a (+15);;"* Balcony Break
 * Elbow
-* Power crush";bbr elb pc;;Leroy-f+1+2;Dragon Elbow Crash;;;File:t8-p2-leroy-f+1+2.mp4
+* -9 and 8 chip damage on block after absorption
+* Power crush 7~16";bbr elb pc7~16;;Leroy-f+1+2;Dragon Elbow Crash;r35;;File:t8-p2-leroy-f+1+2.mp4
 f+2+3;m,m,m;10,10,15;i16~17 i24 i26~27;-7;+73a;;"* Weapon
 * Only once per match
 * chip damage on block";wpn chp;;Leroy-f+2+3;Master's Lesson;;;File:t8-p2-leroy-f+2+3.mp4
@@ -207,7 +230,7 @@ b+3+4;M,th;21,25;i18~19;-8;+7;;"* Balcony Break
 ub+2;m;17;i20;-10;+3;+33d (+25);"* Has punch parry effect
 * +33d (+25) on successful parry
 * Parry state 4~12";ps4~12;;Leroy-ub+2;Enter the Dragon;;;File:t8-p2-leroy-ub+2.mp4
-uf+1;h;17;i16~17;-9;+5;;"* Reversal
+uf+1;h;17;i16~17;-9;+5;;"* Strong Attack Reversal
 * Follow-up upon successful reversal with input 1 or 2
 * Parry state 6~13";ps6~13;;Leroy-uf+1;Pulsing Fist;;;File:t8-p2-leroy-uf+1.mp4
 uf+2;m;25;i24~25;+1;+10a (+1);;"* Balcony Break
@@ -235,7 +258,7 @@ P:b+2;sp;;;;;;"* Alternate input: P:HRM.b+2
 P:b+2,1;m;40;i13,i;-10;+29a;;"* Elbow (last two hits)
 * Alternate input: P:b+2,2
 * Power up during Heat (recovers heat)";;;Leroy-P:b+2,1;Superior Chain Punch: Branch;;;
-d,df,f+3+4,F;m!;80;i56~57;;-1~0d;;"* Reversal
+d,df,f+3+4,F;m!;80;i56~57;;-1~0d;;"* Strong Attack Reversal
 * Follow-up upon successful reversal with input 1 or 2 to Chain Punch: Branch
 * Parry state 20~60";ps20~60;;Leroy-qcf+3+4,F;Piercing Charge;;;File:t8-p2-leroy-qcf+3+4,f.mp4
 f,F+2;m;8;i14~15;-11~-10;0~+1;;;;;Leroy-f,F+2;;;;File:t8-p2-leroy-f,f+2,2.mp4
