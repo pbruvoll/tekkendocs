@@ -1,11 +1,11 @@
-Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Transitions;Wavu id;Name;Recovery;Image;Video
+Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Transitions;Name;Recovery;Image;Video;Wavu id;Character id
 2+3;m;"[12;12]";i16;+1;+2c;;"* Heat Burst
 * Cancel to r45 with b,b on frame 42
 * 2 chip damage on block
 * 12 chip damage on hit
 * Only deals recoverable damage
 * Cannot cause a K.O.
-* Power crush 7~16";hb pc7~16;;Alisa-2+3;Heat Burst;r30;;
+* Power crush 7~16";hb pc7~16;;Heat Burst;r30;;;Alisa-2+3;alisa
 H.d+1+2;;;;;;;"* Cancel to r30 with db
 * Consumes 60F of remaining Heat time
 * 75% damage reduction when absorbing attacks
@@ -13,15 +13,15 @@ H.d+1+2;;;;;;;"* Cancel to r30 with db
 * No hitstop during attack absorption
 * Automatic standing guard from frames 1 to 5
 * Can standing or crouching guard starting at frame 31
-* Power crush 6~30?";pc6~30?;DES;Alisa-H.d+1+2;Emergency Destructive Form;r42? DES;;
+* Power crush 6~30?";pc6~30?;DES;Emergency Destructive Form;r42? DES;;;Alisa-H.d+1+2;alisa
 H.f+1+4;;;;;;;"* Consumes 150F of remaining Heat time
 * Low crush 18~40
-* Floating state 41~43";js18~40 fs41~43;DBT;Alisa-H.f+1+4;Emergency Dual Boot;r17 DBT;;
+* Floating state 41~43";js18~40 fs41~43;DBT;Emergency Dual Boot;r17 DBT;;;Alisa-H.f+1+4;alisa
 H.2+3;m;50 (28);i20~21;+8;-15d;;"* Heat Smash
 * Transition to DES with 1+2 (+8)
 * Transition to SBT with 3_4 (+10)
 * Transition to DBT with f+3_f+4 (+10)
-* 8 chip damage on block";hs;DES,SBT,DBT;Alisa-H.2+3;Quick-fix Protocol;r45;;
+* 8 chip damage on block";hs;DES,SBT,DBT;Quick-fix Protocol;r45;;;Alisa-H.2+3;alisa
 R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Removes Recoverable Health
 * Reversal Break
@@ -30,38 +30,38 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Restores recoverable health on hit
 * Transition to attack throw on hit
 * Consumes Rage
-* Power crush 8~";ra rbr pc8~;;Alisa-R.df+1+2;Radiant Pegasus Bomb;r39;;
-1;h;5;i10;+1;+8;;Recovers 2f faster on hit or block (t27 r17);;;Alisa-1;Jab;r19;;File:t8-p2-alisa-1,1.mp4
+* Power crush 8~";ra rbr pc8~;;Radiant Pegasus Bomb;r39;;;Alisa-R.df+1+2;alisa
+1;h;5;i10;+1;+8;;Recovers 2f faster on hit or block (t27 r17);;;Jab;r19;;File:t8-p2-alisa-1,1.mp4;Alisa-1;alisa
 1,1;h, h;5, 18;i10, i21;-3;+5;+14d;"* Combo from 1st hit with 4f delay
 * Input can be delayed 8f
-* Enter DES with 1+2";;DES;Alisa-1,1;Stop Bit;r26;;File:t8-p2-alisa-1,1.mp4
-1,2;h, h;5, 10;i10, i12;-3;+8;;Jail from 1st attack with 4f delay;;;Alisa-1,2;Typing Combo;r22;;File:t8-p2-alisa-1,2.mp4
+* Enter DES with 1+2";;DES;Stop Bit;r26;;File:t8-p2-alisa-1,1.mp4;Alisa-1,1;alisa
+1,2;h, h;5, 10;i10, i12;-3;+8;;Jail from 1st attack with 4f delay;;;Typing Combo;r22;;File:t8-p2-alisa-1,2.mp4;Alisa-1,2;alisa
 1,2,2;h, h, h;5, 10, 20;i10, ,i20~35;-9~+6;+21a (+6);;"* Tornado
 * Balcony Break (airborne)
 * Weapon
 * Combo from 2nd CH with 1f delay
-* 6 chip damage on block";trn wpn;;Alisa-1,2,2;Liftoff Combo;r29;;File:t8-p2-alisa-1,2,2.mp4
+* 6 chip damage on block";trn wpn;;Liftoff Combo;r29;;File:t8-p2-alisa-1,2,2.mp4;Alisa-1,2,2;alisa
 1,2,d+2;h, h, l;5, 10, 17;i10, ,i27~28;-11;+2;+33a;"* Combo from 2nd CH
 * Input can be delayed 8f
-* Move can be delayed 7f";;;Alisa-1,2,d+2;Coil Punch Combo;r29;;File:t8-p2-alisa-1,2,d+2.mp4
+* Move can be delayed 7f";;;Coil Punch Combo;r29;;File:t8-p2-alisa-1,2,d+2.mp4;Alisa-1,2,d+2;alisa
 1,2,d+2*;h, h, l;5, 10, 22;i10, ,i36~37;-10;+34a;;"* Input can be delayed 8f
-* Move can be delayed 7f";;;Alisa-1,2,d+2*;Coil Punch Combo (Hold);r28;;
-2;h;10;i12;-6;+5;;;;;Alisa-2;;r25;;File:t8-p2-alisa-2,2.mp4
+* Move can be delayed 7f";;;Coil Punch Combo (Hold);r28;;;Alisa-1,2,d+2*;alisa
+2;h;10;i12;-6;+5;;;;;;r25;;File:t8-p2-alisa-2,2.mp4;Alisa-2;alisa
 2,2;h, h;10, 22;i12, i18~33;-13~+2;+15a (+5);;"* Balcony Break
 * Combo from 1st hit
-* 2nd hit available on hit or block only";bbr;;Alisa-2,2;Troubleshooting;r25;;File:t8-p2-alisa-2,2.mp4
+* 2nd hit available on hit or block only";bbr;;Troubleshooting;r25;;File:t8-p2-alisa-2,2.mp4;Alisa-2,2;alisa
 2,3;h, m;10, 8;i12, i22~23;-10;+1;;"* Knee
-* Combo from 1st CH with 2f delay";kne;;Alisa-2,3;;r28;;File:t8-p2-alisa-2,3,3.mp4
+* Combo from 1st CH with 2f delay";kne;;;r28;;File:t8-p2-alisa-2,3,3.mp4;Alisa-2,3;alisa
 2,3,3;h, m, m;10, 8, 25;i12, ,i20~22;-11;+16a (-7);+61a (+41);"* Strong Aerial Tailspin
 * Balcony Break
 * Combo from 2nd hit with 9f delay
 * Input can be delayed 12f
 * Move can be delayed 11f
 * Low crush 13~41
-* Floating state 42~44";bbr js13~41 fs42~44;;Alisa-2,3,3;Down Time;r32;;File:t8-p2-alisa-2,3,3.mp4
+* Floating state 42~44";bbr js13~41 fs42~44;;Down Time;r32;;File:t8-p2-alisa-2,3,3.mp4;Alisa-2,3,3;alisa
 2,3,4;h, m, L;10, 8, 20;i12, ,i42~45;-13;+13d;;"* Low crush 24~39
-* Floating state 40~42";js24~39 fs40~42;;Alisa-2,3,4;Down Link;r32;;File:t8-p2-alisa-2,3,4.mp4
-3;m;10;i13~14;-12~-11;-1~+0;;;;;Alisa-3;;r30;;File:t8-p2-alisa-3,2.mp4
+* Floating state 40~42";js24~39 fs40~42;;Down Link;r32;;File:t8-p2-alisa-2,3,4.mp4;Alisa-2,3,4;alisa
+3;m;10;i13~14;-12~-11;-1~+0;;;;;;r30;;File:t8-p2-alisa-3,2.mp4;Alisa-3;alisa
 3,2;m, h;10, 20;i13~14, i26~27;-2;+20a (+11);;"* Heat Engager
 
 * Heat Dash +5, +43d (+35)
@@ -72,15 +72,15 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Combo from 1st hit
 * 6 chip damage on block
 * 10 chip damage on block in Heat
-* Does not transition to DES when using Heat Dash";he hom bbr wpn;DES,DES;Alisa-3,2;Quick Trim;r29 DES;;File:t8-p2-alisa-3,2.mp4
+* Does not transition to DES when using Heat Dash";he hom bbr wpn;DES,DES;Quick Trim;r29 DES;;File:t8-p2-alisa-3,2.mp4;Alisa-3,2;alisa
 3,f+2;m, m;10, 20;i13~14, i24~28 i1~4 i1~4 i1~4 i1;-12;+5;;"* Weapon
 * Combo from 1st hit
 * 2 chip damage on block
-* 6 chip damage on block in Heat";wpn;DES;Alisa-3,f+2;Quick Access;r31 DES;;File:t8-p2-alisa-3,f+2.mp4
+* 6 chip damage on block in Heat";wpn;DES;Quick Access;r31 DES;;File:t8-p2-alisa-3,f+2.mp4;Alisa-3,f+2;alisa
 4;h;24;i13~14;-5;+14g;+38a;"* Homing
 * Balcony Break
 * Enter DES with 1+2
-* Hit vs BT +21a (+12)";hom bbr;DES;Alisa-4;Accelerator;r28;;File:t8-p2-alisa-3.mp4
+* Hit vs BT +21a (+12)";hom bbr;DES;Accelerator;r28;;File:t8-p2-alisa-3.mp4;Alisa-4;alisa
 1+2;m;22;i19~20;-4;+15d;;"* Heat Engager
 
 * Heat Dash +5, +67a (+50)
@@ -89,10 +89,10 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Spike
 * Head
 * 6 chip damage on block
-* Hit vs BT +10d";he bbr spk hed;;Alisa-1+2;Uninstall;r34;;File:t8-p2-alisa-1+2.mp4
-1+2+3;;;;;;;Can transition to DES with held input 1+2;;DES;Alisa-1+2+3;Taunt 1;r60;;File:t8-p2-alisa-1+2+3.mp4
-1+2+4;;;;;;;;;;Alisa-1+2+4;Taunt 2;r80;;File:t8-p2-alisa-1+2+4.mp4
-f+2;m;12;i17~18;-4;+7;;* Enter DES with 1+2;;DES;Alisa-f+2;;r22;;File:t8-p2-alisa-f+2,1.mp4
+* Hit vs BT +10d";he bbr spk hed;;Uninstall;r34;;File:t8-p2-alisa-1+2.mp4;Alisa-1+2;alisa
+1+2+3;;;;;;;Can transition to DES with held input 1+2;;DES;Taunt 1;r60;;File:t8-p2-alisa-1+2+3.mp4;Alisa-1+2+3;alisa
+1+2+4;;;;;;;;;;Taunt 2;r80;;File:t8-p2-alisa-1+2+4.mp4;Alisa-1+2+4;alisa
+f+2;m;12;i17~18;-4;+7;;* Enter DES with 1+2;;DES;;r22;;File:t8-p2-alisa-f+2,1.mp4;Alisa-f+2;alisa
 f+2,1;m, m;12, 20;i17~18, i24~25;-12;+14g;;"* Heat Engager
 
 * Heat Dash +5, +62a (+42)
@@ -103,196 +103,196 @@ f+2,1;m, m;12, 20;i17~18, i24~25;-12;+14g;;"* Heat Engager
 * 6 chip damage on block
 * 10 chip damage on block in heat
 * Opponent recovers crouching on hit
-* Does not transition to DES when using Heat Dash";he bbr wpn;DES,DES;Alisa-f+2,1;Dual Session;r36 DES;;File:t8-p2-alisa-f+2,1.mp4
+* Does not transition to DES when using Heat Dash";he bbr wpn;DES,DES;Dual Session;r36 DES;;File:t8-p2-alisa-f+2,1.mp4;Alisa-f+2,1;alisa
 f+2,3;m, h;12, 8;i17~18, i22;-8;+4;;"* Balcony Break (airborne)
 * Combo from 1st CH with 1f delay
 * Move cannot be delayed
 * Transition to r40 DES with 1+2
 * Low crush 17~38
-* Floating state 39~41";js17~38 fs39~41;DES;Alisa-f+2,3;;r36;;File:t8-p2-alisa-f+2,3,3.mp4
+* Floating state 39~41";js17~38 fs39~41;DES;;r36;;File:t8-p2-alisa-f+2,3,3.mp4;Alisa-f+2,3;alisa
 f+2,3,3;m, h, m;12, 8, 22;i17~18, ,i35~36;-10;+12a (-3);;"* Balcony Break
-* Combo from 2nd hit";bbr;;Alisa-f+2,3,3;Triple Session;r31;;File:t8-p2-alisa-f+2,3,3.mp4
-f+3;h;10;i14~15;-14;-3;;;;;Alisa-f+3;;r32;;File:t8-p2-alisa-f+3,2.mp4
+* Combo from 2nd hit";bbr;;Triple Session;r31;;File:t8-p2-alisa-f+2,3,3.mp4;Alisa-f+2,3,3;alisa
+f+3;h;10;i14~15;-14;-3;;;;;;r32;;File:t8-p2-alisa-f+3,2.mp4;Alisa-f+3;alisa
 f+3,2;h, h;10, 20;i14~15, i24~26;-4;+39d (+31);;"* Balcony Break
 * Weapon
 * Combo from 1st hit
 * 6 chip damage on block
-* 10 chip damage on block in Heat";bbr wpn;DES;Alisa-f+3,2;Lost Access;r25 DES;;File:t8-p2-alisa-f+3,2.mp4
+* 10 chip damage on block in Heat";bbr wpn;DES;Lost Access;r25 DES;;File:t8-p2-alisa-f+3,2.mp4;Alisa-f+3,2;alisa
 f+3,1+2;h, m;10, 25;i14~15, i24~25;-13;+8;;"* Balcony Break
 * Weapon
 * Combo from 1st hit
 * 7 chip damage on block
 * 12 chip damage on block in heat
-* Hit vs BT +15a (+6)";bbr wpn;DES;Alisa-f+3,1+2;Automatic Transmission;r34 DES;;File:t8-p2-alisa-f+3,1+2.mp4
+* Hit vs BT +15a (+6)";bbr wpn;DES;Automatic Transmission;r34 DES;;File:t8-p2-alisa-f+3,1+2.mp4;Alisa-f+3,1+2;alisa
 f+4;m;14;i16;-9;+1;;"* Homing
-* Enter DES with 1+2";hom;DES;Alisa-f+4;;r31;;File:t8-p2-alisa-f+4,1,4.mp4
+* Enter DES with 1+2";hom;DES;;r31;;File:t8-p2-alisa-f+4,1,4.mp4;Alisa-f+4;alisa
 f+4,1;m, h;14, 14;i16, i25~26;-9;+15d (+7);;"* Balcony Break
 * Head
-* Combo from 1st hit";bbr hed;;Alisa-f+4,1;;r49;;File:t8-p2-alisa-f+4,1,4.mp4
+* Combo from 1st hit";bbr hed;;;r49;;File:t8-p2-alisa-f+4,1,4.mp4;Alisa-f+4,1;alisa
 f+4,1,4;m, h, m;14, 14, 24 (19);i16, ,i27~65;-12~+26g;+1a;;"* Aerial combo from 2nd hit
 * i25-26 bounce, i25-26 travel, 
 (---)/i35(27-65) travel then explosion , 
--3(-11) and -1(-9) for explosion then hit, respectively";;;Alisa-f+4,1,4;Logic Bomb;r1;;File:t8-p2-alisa-f+4,1,4.mp4
+-3(-11) and -1(-9) for explosion then hit, respectively";;;Logic Bomb;r1;;File:t8-p2-alisa-f+4,1,4.mp4;Alisa-f+4,1,4;alisa
 f+1+2;m;25;i14~15;-12;+14g;;"* Balcony Break
 * Enter SBT -16 +10g r25 with 3_4
 * Enter DBT -16 +10g r25 with f+3_f+4
-* Opponent recovers crouching";bbr;SBT,DBT;Alisa-f+1+2;Overflow;r35;;File:t8-p2-alisa-f+1+2.mp4
+* Opponent recovers crouching";bbr;SBT,DBT;Overflow;r35;;File:t8-p2-alisa-f+1+2.mp4;Alisa-f+1+2;alisa
 f+3+4;;;;;;;"* Low crush 26~54
-* Floating state 55~57";js26~54 fs55~57;SBT;Alisa-f+3+4;Boot;r25 SBT;;
-df+1;m;10;i13;-6;+5;+8;* +5c on hit against crouching opponent;;;Alisa-df+1;;r25;;File:t8-p2-alisa-df+1,1,2.mp4
+* Floating state 55~57";js26~54 fs55~57;SBT;Boot;r25 SBT;;;Alisa-f+3+4;alisa
+df+1;m;10;i13;-6;+5;+8;* +5c on hit against crouching opponent;;;;r25;;File:t8-p2-alisa-df+1,1,2.mp4;Alisa-df+1;alisa
 df+1,1;m, h;10, 20;i13, i30~31;+1;+8;;"* Balcony Break (airborne)
 * Combo from 1st CH with 2f delay
-* Move cannot be delayed";;;Alisa-df+1,1;;r19;;File:t8-p2-alisa-df+1,1,2.mp4
+* Move cannot be delayed";;;;r19;;File:t8-p2-alisa-df+1,1,2.mp4;Alisa-df+1,1;alisa
 df+1,1,2;m, h, h;10, 20, 28;i13, ,i22~25;+6;+8;;"* Weapon
 * Combo from 2nd hit
 * 2 chip damage on block
-* 8 chip damage on block in heat";wpn;DES;Alisa-df+1,1,2;Cyclone Mixer;r22 DES;;File:t8-p2-alisa-df+1,1,2.mp4
+* 8 chip damage on block in heat";wpn;DES;Cyclone Mixer;r22 DES;;File:t8-p2-alisa-df+1,1,2.mp4;Alisa-df+1,1,2;alisa
 df+1,4;m, m;10, 17;i13, i26~27;-11;+3c;+13c;"* Floor Break
 * Combo from 1st CH
-* Transition to DES with 1+2";fbr;DES;Alisa-df+1,4;Cyclone Hacker;r30;;File:t8-p2-alisa-df+1,4.mp4
+* Transition to DES with 1+2";fbr;DES;Cyclone Hacker;r30;;File:t8-p2-alisa-df+1,4.mp4;Alisa-df+1,4;alisa
 df+2;m;16;i16~17;-9;+32a (+22);;"* +7 on hit against crouching opponent
-* Does not launch crouching opponent except on CH";;;Alisa-df+2;Pickup;r27;;File:t8-p2-alisa-df+2.mp4
-df+3;m;14;i16;-9;+1;;;;;Alisa-df+3;;r31;;File:t8-p2-alisa-df+3,3.mp4
+* Does not launch crouching opponent except on CH";;;Pickup;r27;;File:t8-p2-alisa-df+2.mp4;Alisa-df+2;alisa
+df+3;m;14;i16;-9;+1;;;;;;r31;;File:t8-p2-alisa-df+3,3.mp4;Alisa-df+3;alisa
 df+3,3;m, L;14, 17;i16, i23~24;-12;+1;+14d;"* Floor Break
 * Combo from 1st hit with 9f delay
 * Input can be delayed 16f
-* Move can be delayed 12f";fbr;;Alisa-df+3,3;Double Socket;r30;;File:t8-p2-alisa-df+3,3.mp4
-df+4;m;13;i12;-7;+4;;+4c on hit against crouching opponent;;;Alisa-df+4;;r26;;
-d+2;M;8;i24~26;-14;+2c;;Floor Break;fbr;;Alisa-d+2;;r31;;File:t8-p2-alisa-d+2,4.mp4
+* Move can be delayed 12f";fbr;;Double Socket;r30;;File:t8-p2-alisa-df+3,3.mp4;Alisa-df+3,3;alisa
+df+4;m;13;i12;-7;+4;;+4c on hit against crouching opponent;;;;r26;;;Alisa-df+4;alisa
+d+2;M;8;i24~26;-14;+2c;;Floor Break;fbr;;;r31;;File:t8-p2-alisa-d+2,4.mp4;Alisa-d+2;alisa
 d+2,4;M, M;8, 20;i24~26, i18~21;-9;+28a (+13a);;"* Combo from 1st hit
 * Enter DES with 1+2
 * Low crush 21~43
-* Floating state 44~46";js21~43 fs44~46;DES;Alisa-d+2,4;Deadlock;r34;;File:t8-p2-alisa-d+2,4.mp4
+* Floating state 44~46";js21~43 fs44~46;DES;Deadlock;r34;;File:t8-p2-alisa-d+2,4.mp4;Alisa-d+2,4;alisa
 d+3;L;17;i23~32;-10~-1;+8c~+17c;+32a;"FC recovery transition is -19~-10/-1c~+8c
 * Low crush 9~23
-* Floating state 24~26";js9~23 fs24~26;BKP;Alisa-d+3;Quick Slider;r21 BKP;;File:t8-p2-alisa-d+3.mp4
-d+4;L;12;i17~18;-12;-1;+8g;;;;Alisa-d+4;;r30;;File:t8-p2-alisa-d+4,1+2.mp4
+* Floating state 24~26";js9~23 fs24~26;BKP;Quick Slider;r21 BKP;;File:t8-p2-alisa-d+3.mp4;Alisa-d+3;alisa
+d+4;L;12;i17~18;-12;-1;+8g;;;;;r30;;File:t8-p2-alisa-d+4,1+2.mp4;Alisa-d+4;alisa
 d+4,1+2;L, h;12, 20;i17~18, i20~21;+0;+11a (+2);;"* Balcony Break
 * Head
 * Jail from 1st attack
-* Combo from 1st CH";bbr hed;;Alisa-d+4,1+2;Optimizer;r38;;File:t8-p2-alisa-d+4,1+2.mp4
+* Combo from 1st CH";bbr hed;;Optimizer;r38;;File:t8-p2-alisa-d+4,1+2.mp4;Alisa-d+4,1+2;alisa
 d+1+2;;;;;;;"* Transition to r30 with db or d+1+2
-* Transition to DBT with DES.f+3_f+4";;DBT,DES;Alisa-d+1+2;Destructive Form;r47 DES;;
+* Transition to DBT with DES.f+3_f+4";;DBT,DES;Destructive Form;r47 DES;;;Alisa-d+1+2;alisa
 d+3+4;L;20;i27~i28;-37;+67a (+51);;"* Homing
 * Instant Tornado
 * Stagger on block
 * Enter DES with 1+2
 * High crush 20~40
-* Floating state 5~55";hom cs20~40 fs5~55;DES;Alisa-d+3+4;Harpoon Sweep;r36;;File:t8-p2-alisa-d+3+4.mp4
+* Floating state 5~55";hom cs20~40 fs5~55;DES;Harpoon Sweep;r36;;File:t8-p2-alisa-d+3+4.mp4;Alisa-d+3+4;alisa
 db+1;;;;;;;"* Transition to FC with D
 * Can perform WS moves after 24 frames
-* High crush 4~15";cs4~15;FC,BKP;Alisa-db+1;Backup;r15 BKP;;
+* High crush 4~15";cs4~15;FC,BKP;Backup;r15 BKP;;;Alisa-db+1;alisa
 db+1;;;;;;;"* Transition to r9? FC with D or after d+3 BKP transition
 * Can perform WS moves after 24 frames
-* High crush 4~15";cs4~15;FC,BKP;Alisa-db+1;Backup;r15 BKP;;
-db+2;m;10;i18~19;-18;-5;;;;;Alisa-db+2;;r36;;File:t8-p2-alisa-db+2,2.mp4
+* High crush 4~15";cs4~15;FC,BKP;Backup;r15 BKP;;;Alisa-db+1;alisa
+db+2;m;10;i18~19;-18;-5;;;;;;r36;;File:t8-p2-alisa-db+2,2.mp4;Alisa-db+2;alisa
 db+2,2;m, m;10, 10;i18~19, i19~20;-9;+5;;"* Combo from 1st hit with 12f delay
 * Input can be delayed 15f
 * Move can be delayed 14f
-* Enter DES with 1+2";;DES;Alisa-db+2,2;Daisy Chain;r36;;File:t8-p2-alisa-db+2,2.mp4
-db+3;L;11;i16;-13;-2;+3;* High crush 4~;cs4~;FC;Alisa-db+3;Deep Link;r32 FC;;File:t8-p2-alisa-db+3.mp4
-db+4;L;17;i20~21;-14;+2c;+12g;* High crush 6~;cs6~;FC;Alisa-db+4;Deep Web;r32 FC;;File:t8-p2-alisa-db+4.mp4
-b+1;m;15;i15~16;-5;+8;;* High crush 12~;cs12~;FC;Alisa-b+1;;r28 FC;;File:t8-p2-alisa-b+1,1+2.mp4
+* Enter DES with 1+2";;DES;Daisy Chain;r36;;File:t8-p2-alisa-db+2,2.mp4;Alisa-db+2,2;alisa
+db+3;L;11;i16;-13;-2;+3;* High crush 4~;cs4~;FC;Deep Link;r32 FC;;File:t8-p2-alisa-db+3.mp4;Alisa-db+3;alisa
+db+4;L;17;i20~21;-14;+2c;+12g;* High crush 6~;cs6~;FC;Deep Web;r32 FC;;File:t8-p2-alisa-db+4.mp4;Alisa-db+4;alisa
+b+1;m;15;i15~16;-5;+8;;* High crush 12~;cs12~;FC;;r28 FC;;File:t8-p2-alisa-b+1,1+2.mp4;Alisa-b+1;alisa
 b+1,1+2;m, SL,m;15, 1,30;i15~16, i25~40 i26~28;-16;+71a;;"* Tornado
 * Head
 * Input can be delayed 13f
-* 2nd hit combos into 3rd on CH only";trn hed;;Alisa-b+1,1+2;Gadget Found;r42;;File:t8-p2-alisa-b+1,1+2.mp4
+* 2nd hit combos into 3rd on CH only";trn hed;;Gadget Found;r42;;File:t8-p2-alisa-b+1,1+2.mp4;Alisa-b+1,1+2;alisa
 b+1+3;;;;;;;"* Parries all highs
-* Parry state 3~15";ps3~15;;Alisa-b+1+3;Model Change;r45;;
+* Parry state 3~15";ps3~15;;Model Change;r45;;;Alisa-b+1+3;alisa
 b+1+3,P;m!;25;i20~21;;-5a (-14);+27a (-20);"* Balcony Break
 * Interrupt with i2 or i19 mid extension after parry
-* High crush 1~39";bbr cs1~39;;Alisa-b+1+3,P;;r49;;
-b+2;m;12;i18;-9;+1;;;;;Alisa-b+2;;r31;;File:t8-p2-alisa-b+2,1.mp4
+* High crush 1~39";bbr cs1~39;;;r49;;;Alisa-b+1+3,P;alisa
+b+2;m;12;i18;-9;+1;;;;;;r31;;File:t8-p2-alisa-b+2,1.mp4;Alisa-b+2;alisa
 b+2,1;m, m;12, 17;i18, i25~26;-13;+3c;+17a;"* Spike
 * Combo from 1st hit with 7f delay
-* Move can be delayed 12f";spk;;Alisa-b+2,1;Trance Hammer;r31;;File:t8-p2-alisa-b+2,1.mp4
+* Move can be delayed 12f";spk;;Trance Hammer;r31;;File:t8-p2-alisa-b+2,1.mp4;Alisa-b+2,1;alisa
 b+2,3;m, m;12, 22;i18, i23~24;-15;+9a (-8);;"* Tornado
 * Balcony Break
 * Combo from 1st hit with 9f delay
 * Move can be delayed 12f
 * Low crush 21~60
-* Floating state 61~63";trn bbr js21~60 fs61~63;;Alisa-b+2,3;Trance Generator;r40;;File:t8-p2-alisa-b+2,3.mp4
+* Floating state 61~63";trn bbr js21~60 fs61~63;;Trance Generator;r40;;File:t8-p2-alisa-b+2,3.mp4;Alisa-b+2,3;alisa
 b+2,4;m, h;12, 20;i18, i16~17;-7;+12g;+36a;"* Balcony Break
 * Enter DES with 1+2
-* Combo from 1st hit with 12f delay";bbr;DES;Alisa-b+2,4;Trance Accelerator Kick;r30;;File:t8-p2-alisa-b+2,4.mp4
+* Combo from 1st hit with 12f delay";bbr;DES;Trance Accelerator Kick;r30;;File:t8-p2-alisa-b+2,4.mp4;Alisa-b+2,4;alisa
 b+3;m;22;i20~22;-8;+5a (-4);;"* Homing
-* Balcony Break";hom bbr;;Alisa-b+3;Spinning Top;r38;;File:t8-p2-alisa-b+3.mp4
-b+4;m;17;i15~16;-13;-4;+54a;Knee;kne;;Alisa-b+4;;r35;;File:t8-p2-alisa-b+4,3.mp4
+* Balcony Break";hom bbr;;Spinning Top;r38;;File:t8-p2-alisa-b+3.mp4;Alisa-b+3;alisa
+b+4;m;17;i15~16;-13;-4;+54a;Knee;kne;;;r35;;File:t8-p2-alisa-b+4,3.mp4;Alisa-b+4;alisa
 b+4,3;m, m;17, 20;i15~16, i29~30;-11;+6c;+10a;"* Spike
 * Combo from 1st hit
 * Enter DES with 1+2
 * Low crush 17~24
-* Floating state 25~27";spk js17~24 fs25~27;DES;Alisa-b+4,3;Double Threading;r29;;File:t8-p2-alisa-b+4,3.mp4
+* Floating state 25~27";spk js17~24 fs25~27;DES;Double Threading;r29;;File:t8-p2-alisa-b+4,3.mp4;Alisa-b+4,3;alisa
 b+4,4;m, M;17, 17;i15~16, i25~27;-37;+9a (-1);;"* Tornado
 * Combo from 1st hit
 * Transition to SBT -19 +27a (+17) with input 3_4
 * Transition to DBT -19 +27a (+17) with input f+3_f+4
 * Low crush 25~62
-* Floating state 63~65";trn js25~62 fs63~65;SBT,DBT;Alisa-b+4,4;Double Override;r63;;File:t8-p2-alisa-b+4,4.mp4
+* Floating state 63~65";trn js25~62 fs63~65;SBT,DBT;Double Override;r63;;File:t8-p2-alisa-b+4,4.mp4;Alisa-b+4,4;alisa
 b+1+2;m;25;i19~20;-13;+8;;"* Balcony Break
 * Weapon
 * 7 chip damage on block
 * 12 chip damage on block in Heat
 * 10 chip damage and -9 block advantage on attack absorption
 ** 12 chip damage in Heat
-* Power crush 7~18";bbr wpn pc7~18;DES;Alisa-b+1+2;Transmission;r34 DES;;File:t8-p2-alisa-b+1+2.mp4
+* Power crush 7~18";bbr wpn pc7~18;DES;Transmission;r34 DES;;File:t8-p2-alisa-b+1+2.mp4;Alisa-b+1+2;alisa
 b+3+4;m;22;i18~19;-17;+32a (+22);;"* Tornado
 * Low crush 5~34
-* Floating state 35~52";trn js5~34 fs35~52;;Alisa-b+3+4;;r41;;File:t8-p2-alisa-b+3+4,3+4.mp4
+* Floating state 35~52";trn js5~34 fs35~52;;;r41;;File:t8-p2-alisa-b+3+4,3+4.mp4;Alisa-b+3+4;alisa
 b+3+4,3+4;m, M;22, 37 (25);i18~19, i56~61;+5c~+10c;+59a;;"* Spike
 * Aerial combo from 1st hit
 * Low crush 1~58
-* Floating state 59~61";spk js1~58 fs59~61;;Alisa-b+3+4,3+4;Dynamic Range;r23;;File:t8-p2-alisa-b+3+4,3+4.mp4
+* Floating state 59~61";spk js1~58 fs59~61;;Dynamic Range;r23;;File:t8-p2-alisa-b+3+4,3+4.mp4;Alisa-b+3+4,3+4;alisa
 ub+1;m,M;9,9;i19 i1~2;-7;+8c;+33d;"* Floor Break
 * Weapon
-* 2 chip damage on block";fbr wpn;DES;Alisa-ub+1;Shortcut;r26 DES;;File:t8-p2-alisa-ub+1.mp4
+* 2 chip damage on block";fbr wpn;DES;Shortcut;r26 DES;;File:t8-p2-alisa-ub+1.mp4;Alisa-ub+1;alisa
 ub+2;h;23;i16~20;-9;+12c;;"* Balcony Break
 * 9 chip damage on block, +0 block advantage on attack absorption
 * Forces tech backroll on hit
 * Power crush 7~15
-* Floating state 20~30";bbr pc7~15 fs20~30;;Alisa-ub+2;Overload;r32;;File:t8-p2-alisa-ub+2.mp4
+* Floating state 20~30";bbr pc7~15 fs20~30;;Overload;r32;;File:t8-p2-alisa-ub+2.mp4;Alisa-ub+2;alisa
 ub+4;m;10;i18;-9;+7;;"* Low crush 9~31
-* Floating state 32~34";js9~31 fs32~34;;Alisa-ub+4;1st Hit;r27;;File:t8-p2-alisa-ub+4,1,1,2,1,1,3+4,3,2,2.mp4
+* Floating state 32~34";js9~31 fs32~34;;1st Hit;r27;;File:t8-p2-alisa-ub+4,1,1,2,1,1,3+4,3,2,2.mp4;Alisa-ub+4;alisa
 ub+4,1;m, m;10, 12;i18, i25~27;-21;-8;;"Combo from 1st CH
-* High crush 24~";cs24~;FC;Alisa-ub+4,1;2nd Hit;r38 FC;;File:t8-p2-alisa-ub+4,1,1,2,1,1,3+4,3,2,2.mp4
+* High crush 24~";cs24~;FC;2nd Hit;r38 FC;;File:t8-p2-alisa-ub+4,1,1,2,1,1,3+4,3,2,2.mp4;Alisa-ub+4,1;alisa
 ub+4,1,1;m, m, m;10, 12, 9;i18, ,i21;-20;-9;;"* Elbow
 * Combo from 2nd hit
-* Combo from 1st CH";elb;;Alisa-ub+4,1,1;3rd Hit;r39;;File:t8-p2-alisa-ub+4,1,1,2,1,1,3+4,3,2,2.mp4
+* Combo from 1st CH";elb;;3rd Hit;r39;;File:t8-p2-alisa-ub+4,1,1,2,1,1,3+4,3,2,2.mp4;Alisa-ub+4,1,1;alisa
 ub+4,1,1,2;m, m, m, h;10, 12, 9, 5;i18, ,i24~25;-10;+1;;"* Combo from 3rd hit
-* Combo from 1st CH";;;Alisa-ub+4,1,1,2;4th Hit;r28;;File:t8-p2-alisa-ub+4,1,1,2,1,1,3+4,3,2,2.mp4
-ub+4,1,1,2,1;m, m, m, h, h;10, 12, 9, 5, 5;i18, ,i35~36;-9;+7;;* Balcony Break (airborne);;;Alisa-ub+4,1,1,2,1;5th Hit;r27;;File:t8-p2-alisa-ub+4,1,1,2,1,1,3+4,3,2,2.mp4
+* Combo from 1st CH";;;4th Hit;r28;;File:t8-p2-alisa-ub+4,1,1,2,1,1,3+4,3,2,2.mp4;Alisa-ub+4,1,1,2;alisa
+ub+4,1,1,2,1;m, m, m, h, h;10, 12, 9, 5, 5;i18, ,i35~36;-9;+7;;* Balcony Break (airborne);;;5th Hit;r27;;File:t8-p2-alisa-ub+4,1,1,2,1,1,3+4,3,2,2.mp4;Alisa-ub+4,1,1,2,1;alisa
 ub+4,1,1,2,1,1;m, m, m, h, h, m,M,M;10, 12, 9, 5, 5, 3,3,3;i18, ,i32~33 i1~2 i1~2;-14;-3;;"* Spike
 * Weapon
 * Combo from 5th hit
 * 1 chip damage on block
-* 3 chip damage on block in heat";spk wpn;DES;Alisa-ub+4,1,1,2,1,1;6th Hit;r32 DES;;File:t8-p2-alisa-ub+4,1,1,2,1,1,3+4,3,2,2.mp4
+* 3 chip damage on block in heat";spk wpn;DES;6th Hit;r32 DES;;File:t8-p2-alisa-ub+4,1,1,2,1,1,3+4,3,2,2.mp4;Alisa-ub+4,1,1,2,1,1;alisa
 ub+4,1,1,2,1,1,3+4;m, m, m, h, h, m,M,M, L;10, 12, 9, 5, 5, 3,3,3, 7;i18, ,i27~28;-29;+15a;;"*
-* Floating state 5~50";fs5~50;;Alisa-ub+4,1,1,2,1,1,3+4;7th Hit;r47;;File:t8-p2-alisa-ub+4,1,1,2,1,1,3+4,3,2,2.mp4
+* Floating state 5~50";fs5~50;;7th Hit;r47;;File:t8-p2-alisa-ub+4,1,1,2,1,1,3+4,3,2,2.mp4;Alisa-ub+4,1,1,2,1,1,3+4;alisa
 ub+4,1,1,2,1,1,3+4,3;m, m, m, h, h, m,M,M, L, m;10, 12, 9, 5, 5, 3,3,3, 7, 15;i18, ,i20~21;-65;-40;;"* Combo from 7th hit
-* Low crush 9~";js9~;;Alisa-ub+4,1,1,2,1,1,3+4,3;8th Hit;r42;;File:t8-p2-alisa-ub+4,1,1,2,1,1,3+4,3,2,2.mp4
+* Low crush 9~";js9~;;8th Hit;r42;;File:t8-p2-alisa-ub+4,1,1,2,1,1,3+4,3,2,2.mp4;Alisa-ub+4,1,1,2,1,1,3+4,3;alisa
 ub+4,1,1,2,1,1,3+4,3,2;m, m, m, h, h, m,M,M, L, m, M;10, 12, 9, 5, 5, 3,3,3, 7, 15, 20;i18, ,i17~22;-30;-38a (-45);;"* Combo from 8th hit
 * Available only as combo from previous hit
-* Low crush 1~";js1~;;Alisa-ub+4,1,1,2,1,1,3+4,3,2;9th Hit;r44;;File:t8-p2-alisa-ub+4,1,1,2,1,1,3+4,3,2,2.mp4
+* Low crush 1~";js1~;;9th Hit;r44;;File:t8-p2-alisa-ub+4,1,1,2,1,1,3+4,3,2,2.mp4;Alisa-ub+4,1,1,2,1,1,3+4,3,2;alisa
 ub+4,1,1,2,1,1,3+4,3,2,2;m, m, m, h, h, m,M,M, L, m, M, M,M,h,h;10, 12, 9, 5, 5, 3,3,3, 7, 15, 20, 2,2,2,20;i18, ,i13~16 1~5 i1~6 i1~8;-23;+3a (-15);;"* Weapon
 * Combo from 9th hit
 * Last chainsaw hit rarely connects because of its high hitbox, -17 if blocked
 * 1 chip damage on block
 * 3 chip damage on block in heat
-* Low crush 16~";wpn js16~;DES;Alisa-ub+4,1,1,2,1,1,3+4,3,2,2;10 Hit Combo;r50 DES;;File:t8-p2-alisa-ub+4,1,1,2,1,1,3+4,3,2,2.mp4
+* Low crush 16~";wpn js16~;DES;10 Hit Combo;r50 DES;;File:t8-p2-alisa-ub+4,1,1,2,1,1,3+4,3,2,2.mp4;Alisa-ub+4,1,1,2,1,1,3+4,3,2,2;alisa
 ub+3+4;M;25;i37~39;+2c~+4c;+25a;;"Spike
-* Low crush 5~39";spk js5~39;;Alisa-ub+3+4;;r23;;File:t8-p2-alisa-ub+3+4,1+2.mp4
+* Low crush 5~39";spk js5~39;;;r23;;File:t8-p2-alisa-ub+3+4,1+2.mp4;Alisa-ub+3+4;alisa
 ub+3+4,1+2;M, m;25, 20;i37~39, i26~27;-14;+32a (+22);;"Head
 * Low crush 48~67
-* Floating state 68~70";hed js48~67 fs68~70;;Alisa-ub+3+4,1+2;Docking Bay;r37;;File:t8-p2-alisa-ub+3+4,1+2.mp4
+* Floating state 68~70";hed js48~67 fs68~70;;Docking Bay;r37;;File:t8-p2-alisa-ub+3+4,1+2.mp4;Alisa-ub+3+4,1+2;alisa
 u+1+2;m;21;i33~34;-5;+56a;;"* Spike
 * Low crush 7~33
-* Floating state 34~36";spk js7~33 fs34~36;;Alisa-u+1+2;Gigabyte Hammer;r29;;File:t8-p2-alisa-u+1+2.mp4
+* Floating state 34~36";spk js7~33 fs34~36;;Gigabyte Hammer;r29;;File:t8-p2-alisa-u+1+2.mp4;Alisa-u+1+2;alisa
 uf+1;m,m,m;19,19,20;i19~20 i25 i17;-13;+68a (+52);;"* Tornado
 * Transition to SBT on hit with 3_4
 * Transition to DBT on hit with f+3_f+4
 * 2nd and 3rd hit available only as combo from 1st hit
 * Low crush 20~40
-* Floating state 41~43";trn js20~40 fs41~43;SBT,DBT;Alisa-uf+1;Brute Force Attack;r37;;File:t8-p2-alisa-uf+1.mp4
+* Floating state 41~43";trn js20~40 fs41~43;SBT,DBT;Brute Force Attack;r37;;File:t8-p2-alisa-uf+1.mp4;Alisa-uf+1;alisa
 uf+2;h;22;i16~17;-2;+20a (+11);;"* Heat Engager
 
 * Heat Dash +5, +43d (+35)
@@ -301,7 +301,7 @@ uf+2;h;22;i16~17;-2;+20a (+11);;"* Heat Engager
 * Balcony Break
 * Weapon
 * 6 chip damage on block
-* 11 chip damage on block in heat";he hom bbr wpn;DES;Alisa-uf+2;Image Cutter;r29 DES;;File:t8-p2-alisa-uf+2.mp4
+* 11 chip damage on block in heat";he hom bbr wpn;DES;Image Cutter;r29 DES;;File:t8-p2-alisa-uf+2.mp4;Alisa-uf+2;alisa
 uf+3;m;15;i17~18;-52;-25;;"* Transition to SBT with input 3_4
 * Transition to DBT with input f+3_f+4
 * on
@@ -311,7 +311,7 @@ uf+3;m;15;i17~18;-52;-25;;"* Transition to SBT with input 3_4
 * oh
 * hit/block:
 * Low crush 9~61
-* Floating state 62~64";on whiff: js9~31 fs32~34 oh hit/block: js9~61 fs62~64;SBT,DBT;Alisa-uf+3;;r32;;File:t8-p2-alisa-uf+3,2.mp4
+* Floating state 62~64";on whiff: js9~31 fs32~34 oh hit/block: js9~61 fs62~64;SBT,DBT;;r32;;File:t8-p2-alisa-uf+3,2.mp4;Alisa-uf+3;alisa
 uf+3,2;m, m;15, 30;i17~18, i17~22;-14;+6c;;"* Balcony Break
 * Spike
 * Combo from 1st hit
@@ -319,151 +319,151 @@ uf+3,2;m, m;15, 30;i17~18, i17~22;-14;+6c;;"* Balcony Break
 * Forces tech backroll on hit
 * Low crush 9~58
 * Floating state 59~75
-* High crush 76~85";bbr spk js9~58 fs59~75 cs76~85;;Alisa-uf+3,2;Cradle Star;r37;;File:t8-p2-alisa-uf+3,2.mp4
+* High crush 76~85";bbr spk js9~58 fs59~75 cs76~85;;Cradle Star;r37;;File:t8-p2-alisa-uf+3,2.mp4;Alisa-uf+3,2;alisa
 uf+4;m;8;i15~16;-15;-4;;"* Low crush 9~37
-* Floating state 38~40";js9~37 fs38~40;;Alisa-uf+4;;r33;;File:t8-p2-alisa-uf+4,4.mp4
+* Floating state 38~40";js9~37 fs38~40;;;r33;;File:t8-p2-alisa-uf+4,4.mp4;Alisa-uf+4;alisa
 uf+4,4;m, M;8, 8;i15~16, i24~26;-13;+45a (+37);;"* Spike
 * Combo from 1st hit with 2f delay
 * Low crush 9~41
-* Floating state 42~44";spk js9~41 fs42~44;;Alisa-uf+4,4;Inbound Kick;r34;;File:t8-p2-alisa-uf+4,4.mp4
+* Floating state 42~44";spk js9~41 fs42~44;;Inbound Kick;r34;;File:t8-p2-alisa-uf+4,4.mp4;Alisa-uf+4,4;alisa
 uf+3+4;M;20;i38~40;+0~+3;+9;;"Spike
-* Low crush 9~41";spk js9~41;;Alisa-uf+3+4;Downstream;r33;;File:t8-p2-alisa-uf+3+4.mp4
+* Low crush 9~41";spk js9~41;;Downstream;r33;;File:t8-p2-alisa-uf+3+4.mp4;Alisa-uf+3+4;alisa
 1+2+3+4;;;;;;;"* Cannot block for 5 seconds
 * CH state for 5 seconds
 * Transition to DES with 1+2
 * Low crush 11~49
-* Floating state 50~52";js11~49 fs50~52;DES;Alisa-1+2+3+4;Ki Charge;r60;;File:t8-p2-alisa-1+2+3+4.mp4
+* Floating state 50~52";js11~49 fs50~52;DES;Ki Charge;r60;;File:t8-p2-alisa-1+2+3+4.mp4;Alisa-1+2+3+4;alisa
 b,B+1+4;h!;50;i63~84;;+37a (-18);;"* Balcony Break
 * Weapon
 * Low crush 12~79
-* Floating state 80~82";bbr wpn js12~79 fs80~82;;Alisa-b,B+1+4;Double Rocket Punch;r16;;File:t8-p2-alisa-b,b+1+4.mp4
+* Floating state 80~82";bbr wpn js12~79 fs80~82;;Double Rocket Punch;r16;;File:t8-p2-alisa-b,b+1+4.mp4;Alisa-b,B+1+4;alisa
 b,B+2+3;m!;50;i75~76;;+44;;"* Balcony Break
-* Head";bbr hed;;Alisa-b,B+2+3;Hang-Up;r102;;File:t8-p2-alisa-b+2+3.mp4
-f,F+2;m;18;i16~17;-18;+5a;;* Balcony Break;bbr;;Alisa-f,F+2;;r39;;File:t8-p2-alisa-f,f+2,3.mp4
+* Head";bbr hed;;Hang-Up;r102;;File:t8-p2-alisa-b+2+3.mp4;Alisa-b,B+2+3;alisa
+f,F+2;m;18;i16~17;-18;+5a;;* Balcony Break;bbr;;;r39;;File:t8-p2-alisa-f,f+2,3.mp4;Alisa-f,F+2;alisa
 f,F+2,3;m, m;18, 25;i16~17, i22~24;-13;+28a (+2);;"* Balcony Break
 * Combo from 1st hit with ~7~8?F delay (character-dependent)
 * Input can be delayed 14F
-* Move can be delayed 8F";bbr;;Alisa-f,F+2,3;Jumper Switch;r36;;File:t8-p2-alisa-f,f+2,3.mp4
+* Move can be delayed 8F";bbr;;Jumper Switch;r36;;File:t8-p2-alisa-f,f+2,3.mp4;Alisa-f,F+2,3;alisa
 f,F+3;m;12;i18~19;-14;-6;;"* Low crush 15~41
-* Floating state 42~44";js15~41 fs42~44;;Alisa-f,F+3;;r35;;File:t8-p2-alisa-f,f+3,4,4.mp4
+* Floating state 42~44";js15~41 fs42~44;;;r35;;File:t8-p2-alisa-f,f+3,4,4.mp4;Alisa-f,F+3;alisa
 f,F+3,4;m, h;12, 15;i18~19, i19~20;-10;+20a (+11);;"* Balcony Break
 * Combo from 1st hit
 * Jail from 1st block
 * Enter DES with 1+2
 * Low crush 15~48
-* Floating state 49~51";bbr js15~48 fs49~51;DES;Alisa-f,F+3,4;;r29;;File:t8-p2-alisa-f,f+3,4,4.mp4
+* Floating state 49~51";bbr js15~48 fs49~51;DES;;r29;;File:t8-p2-alisa-f,f+3,4,4.mp4;Alisa-f,F+3,4;alisa
 f,F+3,4,4;m, h, m;12, 15, 25;i18~19, ,i27~29;-10;+20a;;"* Balcony Break
 * Combo from 2nd hit
-* Enter DES with 1+2";bbr;DES;Alisa-f,F+3,4,4;Cutover;r31;;File:t8-p2-alisa-f,f+3,4,4.mp4
+* Enter DES with 1+2";bbr;DES;Cutover;r31;;File:t8-p2-alisa-f,f+3,4,4.mp4;Alisa-f,F+3,4,4;alisa
 f,F+4;m,m;14,22;i22~29 i34~39;-9~-2;+9a (+0);;"* Balcony Break
 * Knee
 * Transition to attack throw on front hit only
 * +8a (-1) on BT hit
-* Just frame input: Input 1 during frames 16-19? to add 5 more dmg";bbr kne;;Alisa-f,F+4;Sandbox;r30;;File:t8-p2-alisa-f,f+4.mp4
-f,F+1+2;m,m;5,10;i17~18 i12~13;-9;+4;+13;13 extra damage on CH, 28 in total;;;Alisa-f,F+1+2;Worm Virus;r27;;File:t8-p2-alisa-f,f+1+2.mp4
+* Just frame input: Input 1 during frames 16-19? to add 5 more dmg";bbr kne;;Sandbox;r30;;File:t8-p2-alisa-f,f+4.mp4;Alisa-f,F+4;alisa
+f,F+1+2;m,m;5,10;i17~18 i12~13;-9;+4;+13;13 extra damage on CH, 28 in total;;;Worm Virus;r27;;File:t8-p2-alisa-f,f+1+2.mp4;Alisa-f,F+1+2;alisa
 f,f,F+2;h;30;i13~15;+5~+7;+28a (+20);;"* Balcony Break
 * 9 chip damage on block
 * Enter DES with 1+2
 * Low crush 3~27
-* Floating state 28~30";bbr js3~27 fs28~30;DES;Alisa-f,f,F+2;Linear Punch;r34;;File:t8-p2-alisa-f,f,f+2.mp4
+* Floating state 28~30";bbr js3~27 fs28~30;DES;Linear Punch;r34;;File:t8-p2-alisa-f,f,f+2.mp4;Alisa-f,f,F+2;alisa
 f,f,F+3;m;15;i18~19;-4;+6;;"* Balcony Break (airborne)
 * Low crush 3~30
-* Floating state 31~33";js3~30 fs31~33;;Alisa-f,f,F+3;;r33;;File:t8-p2-alisa-f,f,f+3,4.mp4
+* Floating state 31~33";js3~30 fs31~33;;;r33;;File:t8-p2-alisa-f,f,f+3,4.mp4;Alisa-f,f,F+3;alisa
 f,f,F+3,4;m, m;15, 20;i18~19, i20~22;-7;+31a (+5);;"* Balcony Break
 * Combo from 1st hit
 * Jail from 1st block
 * Low crush 3~50
-* Floating state 51~53";bbr js3~50 fs51~53;;Alisa-f,f,F+3,4;Linear Dropkick;r33;;File:t8-p2-alisa-f,f,f+3,4.mp4
+* Floating state 51~53";bbr js3~50 fs51~53;;Linear Dropkick;r33;;File:t8-p2-alisa-f,f,f+3,4.mp4;Alisa-f,f,F+3,4;alisa
 f,f,F+1+2;M;24;i18~36;-3;-17a (-26);;"* Balcony Break
 * Punishable with toekick on hit
 * Low crush 5~36
-* Floating state 37~67";bbr js5~36 fs37~67;;Alisa-f,f,F+1+2;Thruster Double Punch;r44;;
-ws1;M;12;i13~14;-12;-1;;* Elbow;elb;;Alisa-ws1;;r30;;File:t8-p2-alisa-ws1,2,3.mp4
+* Floating state 37~67";bbr js5~36 fs37~67;;Thruster Double Punch;r44;;;Alisa-f,f,F+1+2;alisa
+ws1;M;12;i13~14;-12;-1;;* Elbow;elb;;;r30;;File:t8-p2-alisa-ws1,2,3.mp4;Alisa-ws1;alisa
 ws1,2;M, h;12, 12;i13~14, i24~25;-5;+6;;"* Combo from 1st hit
-* Enter DES with 1+2";;DES;Alisa-ws1,2;;r23;;File:t8-p2-alisa-ws1,2,3.mp4
+* Enter DES with 1+2";;DES;;r23;;File:t8-p2-alisa-ws1,2,3.mp4;Alisa-ws1,2;alisa
 ws1,2,3;M, h, m;12, 12, 23;i13~14, ,i25~26;-10;+33a (+23);;"* Combo from 2nd CH with 5f delay
 * Input can be delayed 10f
-* Enter DES with 1+2";;DES;Alisa-ws1,2,3;Spear Fishing;r31;;File:t8-p2-alisa-ws1,2,3.mp4
+* Enter DES with 1+2";;DES;Spear Fishing;r31;;File:t8-p2-alisa-ws1,2,3.mp4;Alisa-ws1,2,3;alisa
 ws2;m;24;i17~18;-13;+33a (+23);;"* Tornado
 * Transition to SBT 3_4
-* Transition to DBT f+3_f+4";trn;SBT,DBT;Alisa-ws2;Digital Lift;r40;;File:t8-p2-alisa-ws2.mp4
+* Transition to DBT f+3_f+4";trn;SBT,DBT;Digital Lift;r40;;File:t8-p2-alisa-ws2.mp4;Alisa-ws2;alisa
 ws3;m;18;i19~20;+4;+15;;"* Cancel with B
-* Actionable after 15 frames";;FC;Alisa-ws3;Clockwork (CLK);r35 FC;;File:t8-p2-alisa-ws3.mp4
-ws4;m;15;i11~12;-5;+6;;;;;Alisa-ws4;Key Smash;r23;;File:t8-p2-alisa-ws4.mp4
+* Actionable after 15 frames";;FC;Clockwork (CLK);r35 FC;;File:t8-p2-alisa-ws3.mp4;Alisa-ws3;alisa
+ws4;m;15;i11~12;-5;+6;;;;;Key Smash;r23;;File:t8-p2-alisa-ws4.mp4;Alisa-ws4;alisa
 ws1+2;m;20;i20~21;-8;+21;;"* Homing
-* Hold input to power up";hom;;Alisa-ws1+2;Cute But Deadly;r31;;File:t8-p2-alisa-ws1+2.mp4
+* Hold input to power up";hom;;Cute But Deadly;r31;;File:t8-p2-alisa-ws1+2.mp4;Alisa-ws1+2;alisa
 ws1+2*;m;24;i28~29;-4;+21;;"* Homing
-* Hold input to power up";hom;;Alisa-ws1+2*;;r31;;
+* Hold input to power up";hom;;;r31;;;Alisa-ws1+2*;alisa
 ws1+2**;m;28;i39~40;+0;+33a;;"* Homing
-* 11 chip damage on block";hom;;Alisa-ws1+2**;Cute But Deadly (Hold);r27;;
-SS.4;L;16;i24~25;-12;+2;;* High crush 6~35;cs6~35;;Alisa-SS.4;;r30;;File:t8-p2-alisa-ss.4,1+2.mp4
+* 11 chip damage on block";hom;;Cute But Deadly (Hold);r27;;;Alisa-ws1+2**;alisa
+SS.4;L;16;i24~25;-12;+2;;* High crush 6~35;cs6~35;;;r30;;File:t8-p2-alisa-ss.4,1+2.mp4;Alisa-SS.4;alisa
 SS.4,1+2;L, h,h,h,m;16, 5,5,5,5;i24~25, i18~19 i3~5 i5~7 i4~5;-10;+8;;"* Spike
 * Combo from 1st CH
 * Low crush 15~34
-* Floating state 35~37";spk js15~34 fs35~37;;Alisa-SS.4,1+2;Happy Propeller;r28;;File:t8-p2-alisa-ss.4,1+2.mp4
+* Floating state 35~37";spk js15~34 fs35~37;;Happy Propeller;r28;;File:t8-p2-alisa-ss.4,1+2.mp4;Alisa-SS.4,1+2;alisa
 FC.d+1;sl;5;i10;-5;+6;;"Transition to standing with f
-* High crush 1~";cs1~;FC;Alisa-FC.d+1;;r24 FC;;
-FC.d+2;sl;8;i11;-4;+7;;* High crush 1~;cs1~;FC;Alisa-FC.d+2;;r23 FC;;
-FC.d+3;L;10;i16;-17;-6;;* High crush 1~;cs1~;FC;Alisa-FC.d+3;;r36 FC;;
-FC.d+4;l;6;i12;-15;-4;;* High crush 1~;cs1~;FC;Alisa-FC.d+4;;r34 FC;;
+* High crush 1~";cs1~;FC;;r24 FC;;;Alisa-FC.d+1;alisa
+FC.d+2;sl;8;i11;-4;+7;;* High crush 1~;cs1~;FC;;r23 FC;;;Alisa-FC.d+2;alisa
+FC.d+3;L;10;i16;-17;-6;;* High crush 1~;cs1~;FC;;r36 FC;;;Alisa-FC.d+3;alisa
+FC.d+4;l;6;i12;-15;-4;;* High crush 1~;cs1~;FC;;r34 FC;;;Alisa-FC.d+4;alisa
 (Back to wall).b,b,UB;;;;;;;"* is8~13
 * Low crush 14~57
-* Floating state 58~60";is8~13 js14~57 fs58~60;;Alisa-(Back to wall).b,b,UB;[[Wall Jump Attack]];r75;;
+* Floating state 58~60";is8~13 js14~57 fs58~60;;[[Wall Jump Attack]];r75;;;Alisa-(Back to wall).b,b,UB;alisa
 BKP.1;h;21;i11~13;+4~+6;+27a (+1);;"* Strong Aerial Tailspin
 * Balcony Break
 * 9 chip damage on block
 * Transition to SBT at +6/+29 (+3) with 3 or 4
-* Transition to DBT at +6/+29 (+3) with f+3 or f+4";bbr;SBT,DBT;Alisa-BKP.1;Recovery Hook;r37;;File:t8-p2-alisa-bkp.1.mp4
+* Transition to DBT at +6/+29 (+3) with f+3 or f+4";bbr;SBT,DBT;Recovery Hook;r37;;File:t8-p2-alisa-bkp.1.mp4;Alisa-BKP.1;alisa
 BKP.2;h;34;i11~33;-9~+13;+21a (+6);;"* Tornado
-* 6 chip damage on block";trn;;Alisa-BKP.2;Rapid Rocket Punch;r22;;File:t8-p2-alisa-bkp.2.mp4
+* 6 chip damage on block";trn;;Rapid Rocket Punch;r22;;File:t8-p2-alisa-bkp.2.mp4;Alisa-BKP.2;alisa
 BKP.3;m;30;i24~27;-9;+72a;;"Balcony Break
 * Low crush 15~40
-* Floating state 41~43";bbr js15~40 fs41~43;;Alisa-BKP.3;Meteor Kick;r34;;File:t8-p2-alisa-bkp.3.mp4
+* Floating state 41~43";bbr js15~40 fs41~43;;Meteor Kick;r34;;File:t8-p2-alisa-bkp.3.mp4;Alisa-BKP.3;alisa
 BKP.4;m;30;i18~23;-9~-4;+31a (+21);;"* Tornado
 * Knee
 * Low crush 17~52
-* Floating state 53~55";trn kne js17~52 fs53~55;;Alisa-BKP.4;Uplink Knee;r54;;File:t8-p2-alisa-bkp.4.mp4
-BKP.1+2;h!;20,3;i34~71;;+58a;;* Weapon;wpn;;Alisa-BKP.1+2;Rocket Punch;r20;;File:t8-p2-alisa-bkp.1+2.mp4
+* Floating state 53~55";trn kne js17~52 fs53~55;;Uplink Knee;r54;;File:t8-p2-alisa-bkp.4.mp4;Alisa-BKP.4;alisa
+BKP.1+2;h!;20,3;i34~71;;+58a;;* Weapon;wpn;;Rocket Punch;r20;;File:t8-p2-alisa-bkp.1+2.mp4;Alisa-BKP.1+2;alisa
 BT.4;m;20;i16~17;-3;+19a (+2);;"* Balcony Break
-* High crush 5~12";bbr cs5~12;;Alisa-BT.4;Goody Two Shoes;;;File:t8-p2-alisa-bt.4.mp4
+* High crush 5~12";bbr cs5~12;;Goody Two Shoes;;;File:t8-p2-alisa-bt.4.mp4;Alisa-BT.4;alisa
 CLK(Two spins).3;m;22;i13~14;+0;+63a (+43);;"* Balcony Break
 * Effective startup time is i32~33?
-* 8 chip damage on block";bbr;;Alisa-CLK(Two spins).3;;r31;;
+* 8 chip damage on block";bbr;;;r31;;;Alisa-CLK(Two spins).3;alisa
 CLK.3;m;20;i13~14;-9;+12g;;"* Strong Aerial Tailspin
 * Balcony Break
 * Combo from 1st hit
 * Power up after 2 or more spins (i19?)
-* Interrupt with i8 from 1st block";bbr;;Alisa-CLK.3;Clockwork Spring Middle;r30;;File:t8-p2-alisa-clk.3.mp4
-CLK.B;m;18;i19~20;-12;-1;;* Cancel with B;;;Alisa-ws3,B;Clockwork Cancel;r35;;
+* Interrupt with i8 from 1st block";bbr;;Clockwork Spring Middle;r30;;File:t8-p2-alisa-clk.3.mp4;Alisa-CLK.3;alisa
+CLK.B;m;18;i19~20;-12;-1;;* Cancel with B;;;Clockwork Cancel;r35;;;Alisa-ws3,B;alisa
 CLK.d+3;L;20;i30~31;-12;+73a (+57);;"* 8 chip damage on block
-* High crush 9~";cs9~;FC;Alisa-CLK.d+3;Clockwork Spring Low;r30 FC;;File:t8-p2-alisa-clk.d+3.mp4
+* High crush 9~";cs9~;FC;Clockwork Spring Low;r30 FC;;File:t8-p2-alisa-clk.d+3.mp4;Alisa-CLK.d+3;alisa
 DBT.1;h,h,h,h,h,h;30;i24~28 i1~6 i1~6 i1~6 i1~6 i1~2;+9;+11g;;"* Weapon
 * Jail from 1st attack
 * 3 chip damage on block
 * 12 chip damage on block in heat
 * Low crush 17~34
-* Floating state 35~37";wpn js17~34 fs35~37;DES;Alisa-DBT.1;Thruster Left;r18 DES;;File:t8-p2-alisa-dbt.1.mp4
+* Floating state 35~37";wpn js17~34 fs35~37;DES;Thruster Left;r18 DES;;File:t8-p2-alisa-dbt.1.mp4;Alisa-DBT.1;alisa
 DBT.2;M,M,h,h,h;25;i16~18 i1~5 i1~5 i1~5 i1~1;-14;+32a (+14);;"* Weapon
 * Jail from 1st attack
 * 2 chip damage on block
 * 4 chip damage on block in heat
 * Low crush 17~66
-* Floating state 67~69";wpn js17~66 fs67~69;DES;Alisa-DBT.2;Thruster Right;r44 DES;;File:t8-p2-alisa-dbt.2,1.mp4
+* Floating state 67~69";wpn js17~66 fs67~69;DES;Thruster Right;r44 DES;;File:t8-p2-alisa-dbt.2,1.mp4;Alisa-DBT.2;alisa
 DBT.2,1;M,M,h,h,h, h;25, 45;i16~18 i1~5 i1~5 i1~5 i1~1, i26~28;-11c;+14a;;"-28 on whiff.
 * Balcony Break
 * Spike
 * 13 chip damage on block
 * 18 chip damage on block in heat
 * Low crush 17~100
-* Floating state 101~103";bbr spk js17~100 fs101~103;DES;Alisa-DBT.2,1;Thruster Right - Burst;r35 DES;;File:t8-p2-alisa-dbt.2,1.mp4
+* Floating state 101~103";bbr spk js17~100 fs101~103;DES;Thruster Right - Burst;r35 DES;;File:t8-p2-alisa-dbt.2,1.mp4;Alisa-DBT.2,1;alisa
 DBT.3;L;17;i16~20, i1~5;-14;+4c~+8c;+28a;"* Frame advantage +8c~+12c on shallow hit, +32 on CH
 * Listed states are on hit only
 * Low crush 26~34
 * High crush 35~
-* Floating state 34~38";js26~34 cs35~ fs34~38;FC;Alisa-DBT.3;Eject Slider;r25 FC;;
+* Floating state 34~38";js26~34 cs35~ fs34~38;FC;Eject Slider;r25 FC;;;Alisa-DBT.3;alisa
 DBT.4;M;22,5;i17~19;-27;+68a;;"Steel pedal
 * Low crush 17~62
-* Floating state 63~65";js17~62 fs63~65;;Alisa-DBT.4;Upstream;r50;;
+* Floating state 63~65";js17~62 fs63~65;;Upstream;r50;;;Alisa-DBT.4;alisa
 DBT.1+2;m,m,M,M;5,5,5,20;i12~15 i1~4 i1~5 i1~6;+0;+21a (+0);;"* Balcony Break
 * Spike
 * Weapon
@@ -471,98 +471,98 @@ DBT.1+2;m,m,M,M;5,5,5,20;i12~15 i1~4 i1~5 i1~6;+0;+21a (+0);;"* Balcony Break
 * 6 chip damage on block
 * 9 chip damage on block in heat
 * Low crush 17~66
-* Floating state 67~69";bbr spk wpn js17~66 fs67~69;DES;Alisa-DBT.1+2;Thruster Drill;r45 DES;;File:t8-p2-alisa-dbt.1+2.mp4
+* Floating state 67~69";bbr spk wpn js17~66 fs67~69;DES;Thruster Drill;r45 DES;;File:t8-p2-alisa-dbt.1+2.mp4;Alisa-DBT.1+2;alisa
 DBT.f+1;M,t;49;i19~21;-9;+0d;;"* Weapon
 * Transition to attack throw on front standing or airborne hit
 * 14 damage +3c vs BT opponent
 * 4 chip damage on block
 * 7 chip damage on block in heat
 * Low crush 17~32
-* Floating state 33~35";wpn js17~32 fs33~35;;Alisa-DBT.f+1;Heartbeat Disabler;r31;;File:t8-p2-alisa-dbt.f+1.mp4
+* Floating state 33~35";wpn js17~32 fs33~35;;Heartbeat Disabler;r31;;File:t8-p2-alisa-dbt.f+1.mp4;Alisa-DBT.f+1;alisa
 DBT.f+2;L;13;i19~20;-12;+6c;;"* Weapon
 * 3 chip damage on block
-* 5 chip damage on block in heat";wpn;DES;Alisa-DBT.f+2;Boot Up;r30 DES;;File:t8-p2-alisa-dbt.f+2,2.mp4
+* 5 chip damage on block in heat";wpn;DES;Boot Up;r30 DES;;File:t8-p2-alisa-dbt.f+2,2.mp4;Alisa-DBT.f+2;alisa
 DBT.f+2,2;L, m;13, 25 (17);i19~20, i35~37;-33;-6a (-13);;"* Balcony Break
 * Weapon
 * Combo from 1st hit
 * 7 chip damage on block
 * 10 chip damage on block in heat
 * Low crush 35~67
-* Floating state 68~70";bbr wpn js35~67 fs68~70;;Alisa-DBT.f+2,2;Shut Down;r53;;File:t8-p2-alisa-dbt.f+2,2.mp4
+* Floating state 68~70";bbr wpn js35~67 fs68~70;;Shut Down;r53;;File:t8-p2-alisa-dbt.f+2,2.mp4;Alisa-DBT.f+2,2;alisa
 DBT.f+1+2;m,m,m,m,m;28;i17-18, i8~9, i8~9, i8~9, i8~9;+4;+25a (-1);;"* Balcony Break
 * Weapon
 * 8 chip damage on block
-* Low crush 1";bbr wpn js1;DES;Alisa-DBT.f+1+2;Hello World;DES;;
+* Low crush 1";bbr wpn js1;DES;Hello World;DES;;;Alisa-DBT.f+1+2;alisa
 DES.1;m,m,h,h,h,m;35;i13~18 i1~5 i1~7 i1~5 i1~4 i16~17;-9;+17a;;"* Weapon
 * 3 chip damage on block
 * 7 chip damage on block in heat
-* Final hit available only on hit";wpn;DES;Alisa-DES.1;Shredder;r32 DES;;File:t8-p2-alisa-des.1.mp4
+* Final hit available only on hit";wpn;DES;Shredder;r32 DES;;File:t8-p2-alisa-des.1.mp4;Alisa-DES.1;alisa
 DES.2;M,M,m;5,5,5;i20~21 i1~2 i1~2;-8;+37a (+27);;"* Weapon
 * Jab evasion
 * 2 chip damage on block
-* 8 chip damage on block in heat";wpn;DES;Alisa-DES.2;Shredding Uppercut;r32 DES;;File:t8-p2-alisa-des.2.mp4
+* 8 chip damage on block in heat";wpn;DES;Shredding Uppercut;r32 DES;;File:t8-p2-alisa-des.2.mp4;Alisa-DES.2;alisa
 DES.2,1;M,M,m, h!;5,5,5, 20;i20~21 i1~2 i1~2, i28~56;;+85a (+69);;"* Tornado
 * Weapon
-* Available only as a combo from 1st hit";trn wpn;;Alisa-DES.2,1;Shredding Sky Punch;r6;;File:t8-p2-alisa-des.2,1.mp4
-DES.3;;;;;;;;;DES;Alisa-DES.3;Idling;r1 DES;;File:t8-p2-alisa-des.3.mp4
+* Available only as a combo from 1st hit";trn wpn;;Shredding Sky Punch;r6;;File:t8-p2-alisa-des.2,1.mp4;Alisa-DES.2,1;alisa
+DES.3;;;;;;;;;DES;Idling;r1 DES;;File:t8-p2-alisa-des.3.mp4;Alisa-DES.3;alisa
 DES.1+2;h,h,h;7,7,20;i16~18 i5~7 i9~11;+4;+15g;;"* Homing
 * Balcony Break
 * Weapon
 * 6 chip damage on block
 * 12 chip damage on block in heat
-* Jails";hom bbr wpn;DES;Alisa-DES.1+2;Death Marionette;r26 DES;;File:t8-p2-alisa-des.1+2.mp4
+* Jails";hom bbr wpn;DES;Death Marionette;r26 DES;;File:t8-p2-alisa-des.1+2.mp4;Alisa-DES.1+2;alisa
 DES.BT.1;m,m,m,m,m,m;4,4,4,4,4,4;i19~22 i1~3 i1~3 i1~3 i1~3 i1~3;-9;+25a;;"* Weapon
 * Combo from any hit
 * 1 chip damage on block
-* 11 chip damage on block in heat";wpn;DES;Alisa-DES.BT.1;Hertz Blade - Flare;r29 DES;;File:t8-p2-alisa-des.bt.1.mp4
-DES.b,b;;;;;;;;;DES;Alisa-DES.b,b;Move Back;r1 DES;;File:t8-p2-alisa-des.b,b.mp4
+* 11 chip damage on block in heat";wpn;DES;Hertz Blade - Flare;r29 DES;;File:t8-p2-alisa-des.bt.1.mp4;Alisa-DES.BT.1;alisa
+DES.b,b;;;;;;;;;DES;Move Back;r1 DES;;File:t8-p2-alisa-des.b,b.mp4;Alisa-DES.b,b;alisa
 DES.b+2;m;17;i18~20;-12;+0;+18a;"* Weapon
 * 5 chip damage on block
-* 6 chip damage on block in heat";wpn;;Alisa-DES.b+2;;r35;;File:t8-p2-alisa-des.b+2,1.mp4
+* 6 chip damage on block in heat";wpn;;;r35;;File:t8-p2-alisa-des.b+2,1.mp4;Alisa-DES.b+2;alisa
 DES.b+2,1;m, m,SL,SL,SL,SL;17, 8,5,5,5,5;i18~20, i20~21 i1~6 i1~5 i1~5 i1~3;-3c;+5;;"* Spike
 * Weapon
 * Combo from 1st hit with 17F delay
 * Move can be delayed by 10F
 * Input can be delayed by 23F
 * 3 chip damage on block
-* 7 chip damage on block in heat";spk wpn;DES;Alisa-DES.b+2,1;Hertz Blade - Tomahawk;r20 DES;;File:t8-p2-alisa-des.b+2,1.mp4
+* 7 chip damage on block in heat";spk wpn;DES;Hertz Blade - Tomahawk;r20 DES;;File:t8-p2-alisa-des.b+2,1.mp4;Alisa-DES.b+2,1;alisa
 DES.b+3;;;;;;;"* Low crush 7~33
-* Floating state 34~36";js7~33 fs34~36;DES;Alisa-DES.b+3;Retro Rockets;r41 DES;;File:t8-p2-alisa-des.b+3.mp4
+* Floating state 34~36";js7~33 fs34~36;DES;Retro Rockets;r41 DES;;File:t8-p2-alisa-des.b+3.mp4;Alisa-DES.b+3;alisa
 DES.d+1;L,L,L,L,L;17;i20~24 i1~5 i1~5 i1~5 i1~3;-13;+4;;"* Weapon
 * Combo from any hit
 * 1 chip damage on block
 * 6 chip damage on block in heat
-* High crush 4~48";wpn cs4~48;DES;Alisa-DES.d+1;Hertz Blade - Scud;r32 DES;;File:t8-p2-alisa-des.d+1.mp4
+* High crush 4~48";wpn cs4~48;DES;Hertz Blade - Scud;r32 DES;;File:t8-p2-alisa-des.d+1.mp4;Alisa-DES.d+1;alisa
 DES.d+2;L,L,L;3,3,17;i22~23;-14;+0c;;"* Homing
 * Weapon
 * Combo from any hit
 * Transition to DBT (-22/+4) with 3_4
 * 5 chip damage on block
 * 7 chip damage on block in heat
-* High crush 22~91";hom wpn cs22~91;DBT;Alisa-DES.d+2;Clock Boosting;r32;;File:t8-p2-alisa-des.d+2.mp4
+* High crush 22~91";hom wpn cs22~91;DBT;Clock Boosting;r32;;File:t8-p2-alisa-des.d+2.mp4;Alisa-DES.d+2;alisa
 DES.d+3;;;;;;;"* DES.d+3_4 goes to foreground, DES.u+3_4 goes to background
 * Transition to r20 DBT with 3_4
 * Low crush 5~22
-* Floating state 23~25";js5~22 fs23~25;DBT,DES;Alisa-DES.d+3;Evasive Action;r25 DES;;File:t8-p2-alisa-des.d+3.mp4
+* Floating state 23~25";js5~22 fs23~25;DBT,DES;Evasive Action;r25 DES;;File:t8-p2-alisa-des.d+3.mp4;Alisa-DES.d+3;alisa
 DES.d+3,1;m;25;,i20~21;-13~-12;+14c;;"* Balcony Break
 * Weapon
 * 7 chip damage on block
-* 12 chip damage on block in heat";bbr wpn;DES;Alisa-DES.d+3,1;Evasive Slash;r35 DES;;File:t8-p2-alisa-des.d+3,1.mp4
-DES.f,f;;;;;;;;;DES;Alisa-DES.f,f;Move Forward;r1 DES;;File:t8-p2-alisa-des.f,f.mp4
+* 12 chip damage on block in heat";bbr wpn;DES;Evasive Slash;r35 DES;;File:t8-p2-alisa-des.d+3,1.mp4;Alisa-DES.d+3,1;alisa
+DES.f,f;;;;;;;;;DES;Move Forward;r1 DES;;File:t8-p2-alisa-des.f,f.mp4;Alisa-DES.f,f;alisa
 DES.f+1;h;21;i11~13 i1~3 i1~3 i1~3 i1~3 i1~3 i1~1;+3;+9;;"* Weapon
 * 1 chip damage on block
-* 7 chip damage on block in heat";wpn;DES;Alisa-DES.f+1;Hertz Blade;r21 DES;;File:t8-p2-alisa-des.f+1.mp4
+* 7 chip damage on block in heat";wpn;DES;Hertz Blade;r21 DES;;File:t8-p2-alisa-des.f+1.mp4;Alisa-DES.f+1;alisa
 DES.f+2;m,m;9;i15 i1~1;-9;+0c;;"* Weapon
 * Timestop on hit?
 * 2 chip damage on block
-* 3 chip damage on block in heat";wpn;DES;Alisa-DES.f+2;;r30 DES;;File:t8-p2-alisa-des.f+2,1,2.mp4
+* 3 chip damage on block in heat";wpn;DES;;r30 DES;;File:t8-p2-alisa-des.f+2,1,2.mp4;Alisa-DES.f+2;alisa
 DES.f+2,1;m,m, m,m;9, 9;i15 i1~1, i23 i1~1;-12;-3c;;"* Weapon
 * Combo from 1st hit with 1?F delay
 * Move cannot be delayed
 * Timestop on hit?
 * 2 chip damage on block
 * 3 chip damage on block in heat
-* During heat: Transition to r20 DBT at -6/+3 with 3_4; partially uses remaining heat time";wpn;DBT,DES;Alisa-DES.f+2,1;;r33 DES;;File:t8-p2-alisa-des.f+2,1,2.mp4
+* During heat: Transition to r20 DBT at -6/+3 with 3_4; partially uses remaining heat time";wpn;DBT,DES;;r33 DES;;File:t8-p2-alisa-des.f+2,1,2.mp4;Alisa-DES.f+2,1;alisa
 DES.f+2,1,2;m,m, m,m, m,m;9, 9, 23;i15 i1~1, ,i23~24 i4~5;-13;+30a;;"* Heat Engager
 
 * Heat Dash +5, +62a (+42)
@@ -571,108 +571,108 @@ DES.f+2,1,2;m,m, m,m, m,m;9, 9, 23;i15 i1~1, ,i23~24 i4~5;-13;+30a;;"* Heat Enga
 * Combo from 1st or 2nd CH with 3?F delay
 * Move cannot be delayed
 * 6 chip damage on block
-* 7 chip damage on block in heat";he wpn;;Alisa-DES.f+2,1,2;Gigahertz Storm;r42;;File:t8-p2-alisa-des.f+2,1,2.mp4
+* 7 chip damage on block in heat";he wpn;;Gigahertz Storm;r42;;File:t8-p2-alisa-des.f+2,1,2.mp4;Alisa-DES.f+2,1,2;alisa
 DES.f+3;;;;;;;"* Cancel to r33 with DBT.b
 * Transition to r50 SS with DBT.u_d
 * Low crush 18~40
-* Floating state 41~43";js18~40 fs41~43;SS,DBT;Alisa-DES.f+3;Dual Boot;r17 DBT;;
+* Floating state 41~43";js18~40 fs41~43;SS,DBT;Dual Boot;r17 DBT;;;Alisa-DES.f+3;alisa
 DES.f+3;;;;;;;"* Cancel to r33 standing block with DBT.B
 * Transition to Evasive Action with input DBT.U_D
 * Low crush 18~40
-* Floating state 41~43";js18~40 fs41~43;DBT;Alisa-DES.f+3;Dual Boot;r17 DBT;;
+* Floating state 41~43";js18~40 fs41~43;DBT;Dual Boot;r17 DBT;;;Alisa-DES.f+3;alisa
 DES.f+1+2;m,m,m,m,m,m,m,m;29;i23~27 i1~5 i1~4 i1~4 i1~5 i1~5 i1~4 i1~1;+1;+33a;;"* Weapon
 * Combo from any hit
 * Transition to DBT (+4/+36a) with 3_4
 * 5 chip damage on block
-* 8 chip damage on block in heat";wpn;DBT,DES;Alisa-DES.f+1+2;;r20 DES;;File:t8-p2-alisa-des.f+1+2,1+2.mp4
+* 8 chip damage on block in heat";wpn;DBT,DES;;r20 DES;;File:t8-p2-alisa-des.f+1+2,1+2.mp4;Alisa-DES.f+1+2;alisa
 DES.f+1+2,1+2;m,m,m,m,m,m,m,m, m;29, 20;i23~27 i1~5 i1~4 i1~4 i1~5 i1~5 i1~4 i1~1, i20~26;-53;+41a;;"* Weapon
 * 6 chip damage on block
-* 10 chip damage on block in heat";wpn;DES;Alisa-DES.f+1+2,1+2;Hertz Blade - Diablo;r68 DES;;File:t8-p2-alisa-des.f+1+2,1+2.mp4
+* 10 chip damage on block in heat";wpn;DES;Hertz Blade - Diablo;r68 DES;;File:t8-p2-alisa-des.f+1+2,1+2.mp4;Alisa-DES.f+1+2,1+2;alisa
 DES.uf+2;h,h,h,h,h;5,5,5,5,5;i10~14 i1~5 i1~5 i1~5 i1~1;;+35a (+28);;"* Weapon
-* Only hits airborne opponents";wpn;DES;Alisa-DES.uf+2;Hertz Blade - Aegis;r16 DES;;File:t8-p2-alisa-des.uf+2.mp4
+* Only hits airborne opponents";wpn;DES;Hertz Blade - Aegis;r16 DES;;File:t8-p2-alisa-des.uf+2.mp4;Alisa-DES.uf+2;alisa
 DES.uf+1+2;m,M,M;27;i29~31 i1~3 i1~2;-9c;+23a;;"* Spike
 * Weapon
 * 2 chip damage on block
 * 6 chip damage on block in heat
 * Cancel to standing with DES.1+2
 * Low crush 5~25
-* Floating state 26~28";spk wpn js5~25 fs26~28;DES;Alisa-DES.uf+1+2;Spindle Slash;r39 DES;;File:t8-p2-alisa-des.uf+1+2.mp4
+* Floating state 26~28";spk wpn js5~25 fs26~28;DES;Spindle Slash;r39 DES;;File:t8-p2-alisa-des.uf+1+2.mp4;Alisa-DES.uf+1+2;alisa
 FUFT.1+2;;;;;;;"* Floating state 1~5
 * Low crush 6~40
-* Floating state 41~43";fs1~5 js6~40 fs41~43;;Alisa-FUFT.1+2;Reboot;r55;;
+* Floating state 41~43";fs1~5 js6~40 fs41~43;;Reboot;r55;;;Alisa-FUFT.1+2;alisa
 FUFT.1+2,3;m;35;i22~23;-10;+60a;;"* Balcony Break
 * Floating state 1~5
 * Low crush 6~54
-* Floating state 55~57";bbr fs1~5 js6~54 fs55~57;;Alisa-FUFT.1+2,3;Reboot Meteor Kick;r47;;
+* Floating state 55~57";bbr fs1~5 js6~54 fs55~57;;Reboot Meteor Kick;r47;;;Alisa-FUFT.1+2,3;alisa
 OTG.db+1+2;L;25;i25~27;-14;+4a;;"* Spike
-* Weapon";spk wpn;;Alisa-OTG.db+1+2;Ground Rocket Punch;r34;;
+* Weapon";spk wpn;;Ground Rocket Punch;r34;;;Alisa-OTG.db+1+2;alisa
 SBT.1;m;12;i13~14;-15;+0;;"* Low crush 26~46
-* Floating state 47~49";js26~46 fs47~49;;Alisa-SBT.1;;r36;;File:t8-p2-alisa-sbt.1,2,1,3+4.mp4
+* Floating state 47~49";js26~46 fs47~49;;;r36;;File:t8-p2-alisa-sbt.1,2,1,3+4.mp4;Alisa-SBT.1;alisa
 SBT.1,2;m, m;12, 13;i13~14, i18~19;-9;+2;+7c;"* Spike
 * Combo from 1st hit with 1f delay
 * Rest of the string is natural on CH
 * Low crush 26~64
-* Floating state 65~67";spk js26~64 fs65~67;;Alisa-SBT.1,2;;27;;File:t8-p2-alisa-sbt.1,2,1,3+4.mp4
+* Floating state 65~67";spk js26~64 fs65~67;;;27;;File:t8-p2-alisa-sbt.1,2,1,3+4.mp4;Alisa-SBT.1,2;alisa
 SBT.1,2,1;m, m, m;12, 13, 7;i13~14, ,i20~21;-12;-20;-12;"* Combo from 2nd CH
 * Less safe on hit than on block without CH
 * Low crush 26~102
-* Floating state 103~105";js26~102 fs103~105;;Alisa-SBT.1,2,1;;r41;;File:t8-p2-alisa-sbt.1,2,1,3+4.mp4
+* Floating state 103~105";js26~102 fs103~105;;;r41;;File:t8-p2-alisa-sbt.1,2,1,3+4.mp4;Alisa-SBT.1,2,1;alisa
 SBT.1,2,1,3+4;m, m, m, m,m;12, 13, 7, 33;i13~14, ,i18;-18;+4a (-13);;"* Balcony Break
 * Combo from 3rd hit
 * Combo from 2nd CH
 * Transition to DES with input SBT.1,2,1,3+4,1+2
 * Low crush 26~150
-* Floating state 151~153";bbr js26~150 fs151~153;DES;Alisa-SBT.1,2,1,3+4;Hard Reset;r43;;File:t8-p2-alisa-sbt.1,2,1,3+4.mp4
+* Floating state 151~153";bbr js26~150 fs151~153;DES;Hard Reset;r43;;File:t8-p2-alisa-sbt.1,2,1,3+4.mp4;Alisa-SBT.1,2,1,3+4;alisa
 SBT.2;m;25;i16~27;-8;+6a (-4);;"* Balcony Break
 * Elbow
 * Transition to DES with SBT.1+2
 * Hitstop 20f on hit
 * Low crush 26~63
-* Floating state 64~66";bbr elb js26~63 fs64~66;DES;Alisa-SBT.2;Linear Elbow;r38;;File:t8-p2-alisa-sbt.2.mp4
+* Floating state 64~66";bbr elb js26~63 fs64~66;DES;Linear Elbow;r38;;File:t8-p2-alisa-sbt.2.mp4;Alisa-SBT.2;alisa
 SBT.3;L;17;i16~20, i1~5;-14;+4c~+8c;+28a;"* Frame advantage +8c~+12c on shallow hit, +32 on CH
 * Listed states are on hit only
 * Low crush 26~34
 * High crush 35~
-* Floating state 34~38";js26~34 cs35~ fs34~38;FC;Alisa-SBT.3;Eject Slider;r25 FC;;
+* Floating state 34~38";js26~34 cs35~ fs34~38;FC;Eject Slider;r25 FC;;;Alisa-SBT.3;alisa
 SBT.4;M;22,5;i17~19;-27;+68a;;"Steel pedal
 * Low crush 26~71
-* Floating state 72~74";js26~71 fs72~74;;Alisa-SBT.4;Upstream;r50;;
+* Floating state 72~74";js26~71 fs72~74;;Upstream;r50;;;Alisa-SBT.4;alisa
 SBT.1+2;h!;20;i27~28;;+8;;"* Balcony Break
 * Weapon
-* Low crush 26~53";bbr wpn js26~53;DES;Alisa-SBT.1+2;Wire Clipper;r34 DES;;File:t8-p2-alisa-sbt.1+2.mp4
+* Low crush 26~53";bbr wpn js26~53;DES;Wire Clipper;r34 DES;;File:t8-p2-alisa-sbt.1+2.mp4;Alisa-SBT.1+2;alisa
 SBT.D;;;;;;;"* Transition to r32 BKP with B (Backswing)
-* High crush 34~";cs34~;BKP,BKP;Alisa-SBT.D;Abort;r21 BKP;;File:t8-p2-alisa-sbt.d.mp4
+* High crush 34~";cs34~;BKP,BKP;Abort;r21 BKP;;File:t8-p2-alisa-sbt.d.mp4;Alisa-SBT.D;alisa
 H.f,F+2,1+2;m, m,m,m,m,m;18, 28;i16~17, i22-23;+3;+25a (-1);;"* Balcony Break
 * Weapon
 * Combo from 1st hit
 * 7 chip damage on block
 * Consumes 210F of remaining Heat time
-* Low crush 15~";bbr wpn js15~;DES;Alisa-f,F+2,H.1+2;Emergency Hello World;DES;;
+* Low crush 15~";bbr wpn js15~;DES;Emergency Hello World;DES;;;Alisa-f,F+2,H.1+2;alisa
 hFC.1+2;L,L;10,16;i21~23, i6~8;-11c;+5c;;"* Enter DES with n,1+2
 * Can be done from Crouch Level 1
-* High crush 1~55";cs1~55;DES;Alisa-hFC.1+2;Sad Hound;r28;;File:t8-p2-alisa-fc.1+2.mp4
+* High crush 1~55";cs1~55;DES;Sad Hound;r28;;File:t8-p2-alisa-fc.1+2.mp4;Alisa-hFC.1+2;alisa
 1+3;t;35;i12~14;-7;+0d;;"* Homing
 * Throw break: 1 or 2
 * Opponent recovery on hit: FDFT
-* Side switch on break";hom;;Alisa-1+3;Trigger Shuffle;r31;;File:t8-p2-alisa-1+3.mp4
+* Side switch on break";hom;;Trigger Shuffle;r31;;File:t8-p2-alisa-1+3.mp4;Alisa-1+3;alisa
 2+4;t;35;i12~14;-5;+0d;;"* Homing
 * Floor Break
 * Throw break: 1 or 2
 * Opponent recovery on hit: FDFT
 * Side switch
-* Transition to DES with 1+2";hom fbr;DES;Alisa-2+4;Back Door;r31;;File:t8-p2-alisa-2+4.mp4
+* Transition to DES with 1+2";hom fbr;DES;Back Door;r31;;File:t8-p2-alisa-2+4.mp4;Alisa-2+4;alisa
 Back throw;t;55;;;+0d;;"* Floor Break
 * Throw break: none
 * Opponent recovery on hit: FDFA
-* Side switch";fbr;;Alisa-Back throw;Random Typing;;;
+* Side switch";fbr;;Random Typing;;;;Alisa-Back throw;alisa
 FC.db+1+2;t;45;i11;-4;-4;;"* Throw break: 1+2
 * Opponent recovery on hit: FUFA
-* Side switch";;;Alisa-FC.db+1+2;Double Bull Shoot;r28;;File:t8-p2-alisa-fc.db+1+2.mp4
+* Side switch";;;Double Bull Shoot;r28;;File:t8-p2-alisa-fc.db+1+2.mp4;Alisa-FC.db+1+2;alisa
 Left throw;t;40;;-3;-5d;;"* Throw break: 1
 * Opponent recovery on hit: FDFA
-* Can side switch on hit";;;Alisa-Left throw;Compression;;;
+* Can side switch on hit";;;Compression;;;;Alisa-Left throw;alisa
 Right throw;t;40;;-3;+0d;;"* Floor Break
 * Throw break: 2
-* Opponent recovery on hit: FUFA perpendicular to Alisa";fbr;;Alisa-Right throw;Hat Trick;;;
+* Opponent recovery on hit: FUFA perpendicular to Alisa";fbr;;Hat Trick;;;;Alisa-Right throw;alisa
 uf+1+2;t;40;i12~13;-4;+3;;"* Throw break: 1+2
-* Opponent recovery on hit: FUFT";;;Alisa-uf+1+2;Spam Bomb;r37;;File:t8-p2-alisa-uf+1+2.mp4
+* Opponent recovery on hit: FUFT";;;Spam Bomb;r37;;File:t8-p2-alisa-uf+1+2.mp4;Alisa-uf+1+2;alisa

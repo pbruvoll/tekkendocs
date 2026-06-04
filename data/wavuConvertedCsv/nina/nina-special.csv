@@ -1,4 +1,4 @@
-Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Transitions;Wavu id;Name;Recovery;Image;Video
+Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Transitions;Name;Recovery;Image;Video;Wavu id;Character id
 H.b+1+2;m,m,h,h,h,h;5,20,2,2,3,3;i16, i8~10, i28, i35, i42, i49;0;+33a (+7);;"* Balcony Break
 * Weapon
 * Removes Recoverable Health
@@ -8,15 +8,15 @@ H.b+1+2;m,m,h,h,h,h;5,20,2,2,3,3;i16, i8~10, i28, i35, i42, i49;0;+33a (+7);;"* 
 * Transition to FC on hit
 * Jails
 * Consumes 240F of remaining Heat time
-* 15 chip damage on block";bbr wpn;FC;Nina-H.b+1+2;Shockwave Palm > Kiss Shot Penetrator;r32;;
+* 15 chip damage on block";bbr wpn;FC;Shockwave Palm > Kiss Shot Penetrator;r32;;;Nina-H.b+1+2;nina
 H.2+3;m,h,h,h,h,m;20,30;i16 i28 i35 i42 i49 i90~91;+5~+6;-2d;;"* Heat Smash
 * Spike
 * Transition to attack throw on hit
 * Enter CD r30 with F on block (+7)
 * 10 chip damage on block
-* Jails";hs spk;CD;Nina-H.2+3;Bullet Assassination (Close);r32;;
+* Jails";hs spk;CD;Bullet Assassination (Close);r32;;;Nina-H.2+3;nina
 H.2+3;m,h,h,h,h;20,9,12,9,12;i16 i28 i35 i42 i49;+14;+43a (+10);;"* Heat Smash
-* Jails";hs;FC;Nina-H.2+3;Bullet Assassination (Far);r32 FC;;
+* Jails";hs;FC;Bullet Assassination (Far);r32 FC;;;Nina-H.2+3;nina
 R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Removes Recoverable Health
 * Reversal Break
@@ -25,12 +25,12 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Restores recoverable health on hit
 * Transition to attack throw on hit
 * Consumes Rage
-* Power crush 8~";ra rbr pc8~;;Nina-R.df+1+2;Death by Degrees;r39;;
-1;h;5;i10;+1;+8;;Recovers 2f faster on hit or block (t27 r17);;;Nina-1;Jab;r19;;File:t8-p2-nina-1,2.mp4
+* Power crush 8~";ra rbr pc8~;;Death by Degrees;r39;;;Nina-R.df+1+2;nina
+1;h;5;i10;+1;+8;;Recovers 2f faster on hit or block (t27 r17);;;Jab;r19;;File:t8-p2-nina-1,2.mp4;Nina-1;nina
 1,2;h, h;5, 10;i10, i10;-3;+8;;"* Jail from 1st attack with 8f delay
-* Enter SS +0 +11 t15 r9 with D_U";;SS;Nina-1,2;Left Right Combo;r22;;File:t8-p2-nina-1,2.mp4
+* Enter SS +0 +11 t15 r9 with D_U";;SS;Left Right Combo;r22;;File:t8-p2-nina-1,2.mp4;Nina-1,2;nina
 1,2,1;h, h, h;5, 10, 17;i10, ,i26~27;-3;+2;;"* Combo from 2nd CH with 4f delay
-* Input can be delayed 6f";;;Nina-1,2,1;;r32;;File:t8-p2-nina-1,2,1,1+2.mp4
+* Input can be delayed 6f";;;;r32;;File:t8-p2-nina-1,2,1,1+2.mp4;Nina-1,2,1;nina
 1,2,1,1+2;h, h, h, h,h,h;5, 10, 17, 6,6,6;i10, ,i25 i32 i39;-9;+8c;;"* Balcony Break
 * Weapon
 * Jail from 3rd attack
@@ -39,7 +39,7 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Power up in Heat
 * Forces tech backroll on hit
 * Move cannot be delayed
-* Input can be delayed by 4F";bbr wpn;;Nina-1,2,1,1+2;Biting Kiss Shot;r40;;File:t8-p2-nina-1,2,1,1+2.mp4
+* Input can be delayed by 4F";bbr wpn;;Biting Kiss Shot;r40;;File:t8-p2-nina-1,2,1,1+2.mp4;Nina-1,2,1,1+2;nina
 H.1,2,1,1+2;h, h, h, h,h,h,h,h;5, 10, 17, 6,6,6,[5],[5];i10, ,i25,i6,i6,i5,i5;-2;+29a (+3);;"* Balcony Break
 * Weapon
 * Jail from 3rd attack
@@ -47,80 +47,80 @@ H.1,2,1,1+2;h, h, h, h,h,h,h,h;5, 10, 17, 6,6,6,[5],[5];i10, ,i25,i6,i6,i5,i5;-2
 * 13 chip damage on block
 * Consumes 180F of remaining Heat time
 * Move cannot be delayed
-* Input can be delayed by 4F";bbr wpn;;Nina-1,2,1,H.1+2;Biting Kiss Shot;r37;;
+* Input can be delayed by 4F";bbr wpn;;Biting Kiss Shot;r37;;;Nina-1,2,1,H.1+2;nina
 1,2,4;h, h, h;5, 10, 22;i10, ,i22;-6;+20a (+11);+49a;"* Balcony Break
 * Combo from 2nd CH with 8f delay
-* Input can be delayed 10f";bbr;;Nina-1,2,4;Bermuda Triangle;r30;;File:t8-p2-nina-1,2,4.mp4
+* Input can be delayed 10f";bbr;;Bermuda Triangle;r30;;File:t8-p2-nina-1,2,4.mp4;Nina-1,2,4;nina
 1,2,1+2;h, h, m;5, 10, 22;i10, ,i23;-14;+17a (+8);+36d (+28);"* Balcony Break
 * Combo from 2nd CH with 7f delay
 * Input can be delayed 10f
 * Interrupt with i3 from 2nd block
-* Recovers 6F faster on hit (r28 t71)";bbr;;Nina-1,2,1+2;Double Explosion;r34;;File:t8-p2-nina-1,2,1+2.mp4
+* Recovers 6F faster on hit (r28 t71)";bbr;;Double Explosion;r34;;File:t8-p2-nina-1,2,1+2.mp4;Nina-1,2,1+2;nina
 1,4;h, h;5, 17;i10, i17~18;-4;+1;+50a;"* Combo from 1st hit
-* Move can be delayed 2f";;;Nina-1,4;PK Combo;r28;;File:t8-p2-nina-1,4,1.mp4
+* Move can be delayed 2f";;;PK Combo;r28;;File:t8-p2-nina-1,4,1.mp4;Nina-1,4;nina
 1,4,1;h, h, m;5, 17, 21;i10, ,i25~26;-11;+15g;+67a (+47a);"* Balcony Break
-* Interrupt with i1 from 2nd block";bbr;;Nina-1,4,1;PK Combo > Assassin's Blade;r27;;File:t8-p2-nina-1,4,1.mp4
-2;h;10;i10;+1;+7;;;;;Nina-2;Right Jab;r18;;File:t8-p2-nina-2,3.mp4
+* Interrupt with i1 from 2nd block";bbr;;PK Combo > Assassin's Blade;r27;;File:t8-p2-nina-1,4,1.mp4;Nina-1,4,1;nina
+2;h;10;i10;+1;+7;;;;;Right Jab;r18;;File:t8-p2-nina-2,3.mp4;Nina-2;nina
 2,3;h, m;10, 15;i10, i18;-13;+0d;;"* Knee
 * Combo from 1st CH with 7f delay
 * Input can be delayed 12f
 * Transition to Triple Slaps throw automatically on standing front hit
-* Throw is unbreakable, rest of the chain throw is breakable";kne;;Nina-2,3;Right Jab > Spider Knee;r33;;File:t8-p2-nina-2,3.mp4
-3;h;14;i14;-16;-5;;;;;Nina-3;;r35;;File:t8-p2-nina-3,2.mp4
+* Throw is unbreakable, rest of the chain throw is breakable";kne;;Right Jab > Spider Knee;r33;;File:t8-p2-nina-2,3.mp4;Nina-2,3;nina
+3;h;14;i14;-16;-5;;;;;;r35;;File:t8-p2-nina-3,2.mp4;Nina-3;nina
 3,2;h, m;14, 22;i14, i19;-9;+36a;;"* Balcony Break
 * Side roll takes 34 frames, effective startup i53
 * Chip damage on block
-* Cancel to r38 FC with D";bbr chp;FC;Nina-3,2;Left High Kick > Spiral Explosion;r31;;File:t8-p2-nina-3,2.mp4
-3,3;h, h;14, 4;i14, i17;-14;-3;;Jail from 1st attack;;;Nina-3,3;;r33;;File:t8-p2-nina-3,3,3,4.mp4
-3,3,3;h, h, h;14, 4, 6;i14, ,i17;-14;-3;;Jail from 1st attack;;;Nina-3,3,3;;r33;;File:t8-p2-nina-3,3,3,4.mp4
+* Cancel to r38 FC with D";bbr chp;FC;Left High Kick > Spiral Explosion;r31;;File:t8-p2-nina-3,2.mp4;Nina-3,2;nina
+3,3;h, h;14, 4;i14, i17;-14;-3;;Jail from 1st attack;;;;r33;;File:t8-p2-nina-3,3,3,4.mp4;Nina-3,3;nina
+3,3,3;h, h, h;14, 4, 6;i14, ,i17;-14;-3;;Jail from 1st attack;;;;r33;;File:t8-p2-nina-3,3,3,4.mp4;Nina-3,3,3;nina
 3,3,3,4;h, h, h, h;14, 4, 6, 20;i14, ,i24;-6;+20a (+11);;"* Balcony Break
 * Combo from 3rd CH with 6f delay
-* Input can be delayed 10f";bbr;;Nina-3,3,3,4;Flash Kicks;r30;;File:t8-p2-nina-3,3,3,4.mp4
+* Input can be delayed 10f";bbr;;Flash Kicks;r30;;File:t8-p2-nina-3,3,3,4.mp4;Nina-3,3,3,4;nina
 3,4;h, h;14, 20;i14, i22;-6;+20a (+11);;"* Balcony Break
 * Combo from 1st hit with 8f delay
-* Input can be delayed 10f";bbr;;Nina-3,4;Head Ringer;r30;;File:t8-p2-nina-3,4.mp4
-4;h;15;i11;-9;+7;+7s;;;;Nina-4;High Kick;r28;;File:t8-p2-nina-4,2.mp4
+* Input can be delayed 10f";bbr;;Head Ringer;r30;;File:t8-p2-nina-3,4.mp4;Nina-3,4;nina
+4;h;15;i11;-9;+7;+7s;;;;High Kick;r28;;File:t8-p2-nina-4,2.mp4;Nina-4;nina
 4,2;h, m;15, 22;i11, i19;-9;+3;+37a;"* Balcony Break
 * Side roll takes 35 frames, effective startup i54
 * Chip damage on block
-* Cancel to r38 FC with D";bbr chp;FC;Nina-4,2;Right High Kick > Spiral Explosion;r31;;File:t8-p2-nina-4,2.mp4
-4,3;h, m;15, 20;i11, i29~30;-2c;+5c;+21a;Spike;spk;;Nina-4,3;Easy Prey Kick Combo;r27;;File:t8-p2-nina-4,3.mp4
+* Cancel to r38 FC with D";bbr chp;FC;Right High Kick > Spiral Explosion;r31;;File:t8-p2-nina-4,2.mp4;Nina-4,2;nina
+4,3;h, m;15, 20;i11, i29~30;-2c;+5c;+21a;Spike;spk;;Easy Prey Kick Combo;r27;;File:t8-p2-nina-4,3.mp4;Nina-4,3;nina
 4,4;h, h;15, 21;i11, i28~39;-7;+4;;"* Balcony break on airborne hit
 * Combo from 1st CH
 * Low crush 21~34
-* Floating state 35~37";js21~34 fs35~37;;Nina-4,4;;r31;;File:t8-p2-nina-4,4,4.mp4
+* Floating state 35~37";js21~34 fs35~37;;;r31;;File:t8-p2-nina-4,4,4.mp4;Nina-4,4;nina
 4,4,4;h, h, L;15, 21, 20;i11, ,i30~31;-12;+4c;+46a;"* Balcony break on airborne hit
 * Combo from 2nd CH
-* High crush 16~55";cs16~55;;Nina-4,4,4;High Kick > Deadly Hunter;r30;;File:t8-p2-nina-4,4,4.mp4
+* High crush 16~55";cs16~55;;High Kick > Deadly Hunter;r30;;File:t8-p2-nina-4,4,4.mp4;Nina-4,4,4;nina
 4,4,3+4;h, h, M,M;15, 21, 8,21;i11, ,i35~39 i43~49;-6~+0;+20a;;"* Spike
 * Combo from 2nd CH
 * Low crush 29~36
-* Floating state 37~42";spk js29~36 fs37~42;;Nina-4,4,3+4;High Kick > Deadly Assault;r24;;File:t8-p2-nina-4,4,3+4.mp4
-1+2;m;19;i16~17;-3;+8;;Homing;hom;;Nina-1+2;Ray Hands;r24;;File:t8-p2-nina-1+2.mp4
+* Floating state 37~42";spk js29~36 fs37~42;;High Kick > Deadly Assault;r24;;File:t8-p2-nina-4,4,3+4.mp4;Nina-4,4,3+4;nina
+1+2;m;19;i16~17;-3;+8;;Homing;hom;;Ray Hands;r24;;File:t8-p2-nina-1+2.mp4;Nina-1+2;nina
 1+4;m,m;4,20;i15~16 i13~14;-5;+4c;+6c;"* Spike
 * Transition to CD with F
-* Second hit is +7c on CH if the first hit whiffs";spk;CD;Nina-1+4;Ivory Cutter;r28;;File:t8-p2-nina-1+4.mp4
+* Second hit is +7c on CH if the first hit whiffs";spk;CD;Ivory Cutter;r28;;File:t8-p2-nina-1+4.mp4;Nina-1+4;nina
 3+4;m;20;i18~19;-10;+11g;;"* Balcony Break
 * Homing
-* Enter CD -6 +15g t34 r15 with F";bbr hom;CD;Nina-3+4;Fatal Blow;r31;;File:t8-p2-nina-3+4.mp4
-f+2;h;12;i13;-3;+8;;;;;Nina-f+2;;r22;;File:t8-p2-nina-f+2,1,3.mp4
-f+2,1;h, m;12, 12;i13, i19~20;-13;-6s;;* Combo from 1st CH with 9f delay;;;Nina-f+2,1;;r35;;File:t8-p2-nina-f+2,1,3.mp4
+* Enter CD -6 +15g t34 r15 with F";bbr hom;CD;Fatal Blow;r31;;File:t8-p2-nina-3+4.mp4;Nina-3+4;nina
+f+2;h;12;i13;-3;+8;;;;;;r22;;File:t8-p2-nina-f+2,1,3.mp4;Nina-f+2;nina
+f+2,1;h, m;12, 12;i13, i19~20;-13;-6s;;* Combo from 1st CH with 9f delay;;;;r35;;File:t8-p2-nina-f+2,1,3.mp4;Nina-f+2,1;nina
 f+2,1,3;h, m, M;12, 12, 20;i13, ,i27~29;-15~-13;+27a;;"* Tornado
 * Aerial combo from 1st CH with 2f delay (+63a (+47))
 * Input can be delayed 19f
 * Move can be delayed 18f
 * Low crush 26~40
-* Floating state 41~43";trn js26~40 fs41~43;;Nina-f+2,1,3;Swallowtail;r39;;File:t8-p2-nina-f+2,1,3.mp4
+* Floating state 41~43";trn js26~40 fs41~43;;Swallowtail;r39;;File:t8-p2-nina-f+2,1,3.mp4;Nina-f+2,1,3;nina
 f+2,1,4;h, m, h;12, 12, 22;i13, ,i25~27;-3~-1;+23a (+14);+40a;"* Balcony Break
 * Aerial combo from 1st CH with 4f delay (+24a (+17))
 * Input can be delayed 19f
-* Move can be delayed 18f";bbr;;Nina-f+2,1,4;Mimosa Combo;r25;;File:t8-p2-nina-f+2,1,4.mp4
+* Move can be delayed 18f";bbr;;Mimosa Combo;r25;;File:t8-p2-nina-f+2,1,4.mp4;Nina-f+2,1,4;nina
 f+3;h,h;10,20;i14~15 i10~11;+3~+4;+24a (+15);+54a;"* Balcony Break
 * Does not jail
-* 2nd hit is homing";bbr;;Nina-f+3;Siren's Kiss;r25;;File:t8-p2-nina-f+3.mp4
+* 2nd hit is homing";bbr;;Siren's Kiss;r25;;File:t8-p2-nina-f+3.mp4;Nina-f+3;nina
 f+4;m;15;i21~22;-5;+5;;"* Enter SS +2 +12 with D_U
 * Low crush 12~21
-* Floating state 22~24";js12~21 fs22~24;SS;Nina-f+4;;r28;;File:t8-p2-nina-f+4,2.mp4
+* Floating state 22~24";js12~21 fs22~24;SS;;r28;;File:t8-p2-nina-f+4,2.mp4;Nina-f+4;nina
 f+4,2;m, h;15, 22;i21~22, i18;-9;+13c;;"* Heat Engager
 
 * Heat Dash +5, +36a (+26)
@@ -129,12 +129,12 @@ f+4,2;m, h;15, 22;i21~22, i18;-9;+13c;;"* Heat Engager
 * Combo from 1st hit with 14f delay
 * Input can be delayed 15f
 * Move can be delayed 9f
-* Forces tech backroll on hit";he bbr;;Nina-f+4,2;Aconite;r35;;File:t8-p2-nina-f+4,2.mp4
+* Forces tech backroll on hit";he bbr;;Aconite;r35;;File:t8-p2-nina-f+4,2.mp4;Nina-f+4,2;nina
 f+1+2;m;24;i17;-14;+11a (+2);;"* Balcony Break
 * Frame advantage is -8 if an attack is absorbed
 * Deals chip damage if an attack is absorbed
-* Power crush 7~16";bbr pc7~16;;Nina-f+1+2;Blonde Bomb;r34;;File:t8-p2-nina-f+1+2.mp4
-f+3+4;m;12;i14;-6;+1;+6;Knee;kne;;Nina-f+3+4;;;;File:T8-nina-f+3+4,1.mp4
+* Power crush 7~16";bbr pc7~16;;Blonde Bomb;r34;;File:t8-p2-nina-f+1+2.mp4;Nina-f+1+2;nina
+f+3+4;m;12;i14;-6;+1;+6;Knee;kne;;;;;File:T8-nina-f+3+4,1.mp4;Nina-f+3+4;nina
 f+3+4,1;m, m;12, 22;i14, i27;-14;+10a (+1);;"* Heat Engager
 
 * Heat Dash +5, +43d (+35)
@@ -143,7 +143,7 @@ f+3+4,1;m, m;12, 22;i14, i27;-14;+10a (+1);;"* Heat Engager
 * Combo from 1st hit with 4F delay
 * Move can be delayed by 3F
 * Input can be delayed by 4F
-* Interrupt with i4 from 1st block";he bbr;;Nina-f+3+4,1;Impact Palm Bomb;;;File:T8-nina-f+3+4,1.mp4
+* Interrupt with i4 from 1st block";he bbr;;Impact Palm Bomb;;;File:T8-nina-f+3+4,1.mp4;Nina-f+3+4,1;nina
 f+3+4,2;m, sm,sm;12, 12,12;i14, i30, i5;-9;+8c;;"* Balcony Break
 * Combo from 1st CH with 5F delay
 * Available only as combo from 1st hit
@@ -151,21 +151,21 @@ f+3+4,2;m, sm,sm;12, 12,12;i14, i30, i5;-9;+8c;;"* Balcony Break
 * Forces tech backroll on hit
 * Move can be delayed by 4F
 * Input can be delayed by 5F
-* Interrupt with i7 from 1st block";bbr;;Nina-f+3+4,2;Quick Kiss Shot;;;
+* Interrupt with i7 from 1st block";bbr;;Quick Kiss Shot;;;;Nina-f+3+4,2;nina
 H.f+3+4,2;m, sm,sm,sm,sm;12, 12,12,5,5;i14, i30, i5, i6, i6;-6;+19a (+9);;"* Balcony Break
 * Combo from 1st CH with 5F delay
 * Available only from 1st hit or block
 * 12 chip damage on block
 * Consumes 180F of remaining Heat time
 * Move can be delayed by 4F
-* Input can be delayed by 5F";bbr;;Nina-f+3+4,H.2;Quick Kiss Shot;r37;;
-df+1;m;10;i13~14;-1;+5;;;;;Nina-df+1;Uppercut;r19;;File:t8-p2-nina-df+1,2.mp4
+* Input can be delayed by 5F";bbr;;Quick Kiss Shot;r37;;;Nina-f+3+4,H.2;nina
+df+1;m;10;i13~14;-1;+5;;;;;Uppercut;r19;;File:t8-p2-nina-df+1,2.mp4;Nina-df+1;nina
 df+1,2;m, h;10, 10;i13~14, i16;-5;+2;;"* Jail from 1st attack with 1f delay
 * Enter SS -1 +6 +13 with D_U
 * Enter CD +0 +7 +14 with F
-* Links to 1 jab extensions";;SS,CD,1 jab extensions;Nina-df+1,2;Uppercut > Jab;r21;;File:t8-p2-nina-df+1,2.mp4
+* Links to 1 jab extensions";;SS,CD,1 jab extensions;Uppercut > Jab;r21;;File:t8-p2-nina-df+1,2.mp4;Nina-df+1,2;nina
 df+1,2,1;m, h, h;10, 10, 17;i13~14, ,i26~27;-3;+2;;"* Move cannot be delayed
-* Interrupt with i7 from 2nd block";;;Nina-df+1,2,1;;r32;;
+* Interrupt with i7 from 2nd block";;;;r32;;;Nina-df+1,2,1;nina
 df+1,2,1,1+2;m, h, h, h,h,h;10, 10, 17, 6,6,6;i13~14, ,i25 i32 i39;-9;+8c;;"* Balcony Break
 * Weapon
 * Jail from 3rd attack
@@ -174,7 +174,7 @@ df+1,2,1,1+2;m, h, h, h,h,h;10, 10, 17, 6,6,6;i13~14, ,i25 i32 i39;-9;+8c;;"* Ba
 * Power up in Heat
 * Forces tech backroll on hit
 * Move cannot be delayed
-* Input can be delayed by 4F";bbr wpn;;Nina-df+1,2,1,1+2;Biting Kiss Shot;r40;;
+* Input can be delayed by 4F";bbr wpn;;Biting Kiss Shot;r40;;;Nina-df+1,2,1,1+2;nina
 H.df+1,2,1,1+2;m, h, h, h,h,h,h,h;10, 10, 17, 6,6,6,[5],[5];i13~14, ,i25,i6,i6,i5,i5;-2;+29a (+3);;"* Balcony Break
 * Weapon
 * Jail from 3rd attack
@@ -182,120 +182,120 @@ H.df+1,2,1,1+2;m, h, h, h,h,h,h,h;10, 10, 17, 6,6,6,[5],[5];i13~14, ,i25,i6,i6,i
 * 13 chip damage on block
 * Consumes 180F of remaining Heat time
 * Move cannot be delayed
-* Input can be delayed by 4F";bbr wpn;;Nina-df+1,2,1,H.1+2;Biting Kiss Shot;r37;;
+* Input can be delayed by 4F";bbr wpn;;Biting Kiss Shot;r37;;;Nina-df+1,2,1,H.1+2;nina
 df+1,2,4;m, h, h;10, 10, 22;i13~14, ,i22;-6;+20a (+11);+49a;"* Balcony Break
 * Move can be delayed by 10F
-* Interrupt with i3 from 2nd block";bbr;;Nina-df+1,2,4;Bermuda Triangle;r30;;
+* Interrupt with i3 from 2nd block";bbr;;Bermuda Triangle;r30;;;Nina-df+1,2,4;nina
 df+1,2,1+2;m, h, m;10, 10, 22;i13~14, ,i23;-14;+17a (+8);+36d (+28);"* Balcony Break
 * Move can be delayed by 10F
 * Interrupt with i4 from 2nd block
-* Recovers 6F faster on hit (r28 t81)";bbr;;Nina-df+1,2,1+2;Double Explosion;r34;;
+* Recovers 6F faster on hit (r28 t81)";bbr;;Double Explosion;r34;;;Nina-df+1,2,1+2;nina
 df+2;m;12;i15~16;-7;+34a (+24);;"* +4s on hit against crouching opponent
-* Does not launch crouching opponent";;;Nina-df+2;Silent Uppercut;r25;;File:t8-p2-nina-df+2.mp4
-df+3;m;13;i14;-11;+0;+1;;;;Nina-df+3;;r29;;File:t8-p2-nina-df+3,1,2.mp4
+* Does not launch crouching opponent";;;Silent Uppercut;r25;;File:t8-p2-nina-df+2.mp4;Nina-df+2;nina
+df+3;m;13;i14;-11;+0;+1;;;;;r29;;File:t8-p2-nina-df+3,1,2.mp4;Nina-df+3;nina
 df+3,1;m, h;13, 10;i14, i30;-8;+3;;"* Combo from 1st CH
 * Input can be delayed 10f
-* Cancel to SS -19 -8 -7 with D_U";;SS;Nina-df+3,1;;r27;;File:t8-p2-nina-df+3,1,2.mp4
+* Cancel to SS -19 -8 -7 with D_U";;SS;;r27;;File:t8-p2-nina-df+3,1,2.mp4;Nina-df+3,1;nina
 df+3,1,2;m, h, M;13, 10, 20;i14, ,i25~27;-12c;+16a;+16a;"* Balcony Break
 * Spike
 * Combo from 2nd hit
 * Combo from 1st CH
 * Opponent is FDFA on NH
-* Opponent is FUFT on CH, can combo";bbr spk;;Nina-df+3,1,2;Dead Drop Combo;r35;;File:t8-p2-nina-df+3,1,2.mp4
+* Opponent is FUFT on CH, can combo";bbr spk;;Dead Drop Combo;r35;;File:t8-p2-nina-df+3,1,2.mp4;Nina-df+3,1,2;nina
 df+3,2;m, h;13, 12;i14, i19;+1;+5;+12;"* Combo from 1st hit with 10f delay
 * Enter SS 0 +4 +11 with D or U
 * Enter CD -1 +3 +10 t29 r10 with F
-* Enter SWA +8 +12 +19 with B";;SS,CD,SWA;Nina-df+3,2;;r18;;File:t8-p2-nina-df+3,2,1,4.mp4
+* Enter SWA +8 +12 +19 with B";;SS,CD,SWA;;r18;;File:t8-p2-nina-df+3,2,1,4.mp4;Nina-df+3,2;nina
 df+3,2,1;m, h, h;13, 12, 6;i14, ,i16;-3;+4;;"* Combo from 2nd CH with 9f delay
-* Jail from 2nd block with 3f delay";;;Nina-df+3,2,1;;r21;;File:t8-p2-nina-df+3,2,1,4.mp4
+* Jail from 2nd block with 3f delay";;;;r21;;File:t8-p2-nina-df+3,2,1,4.mp4;Nina-df+3,2,1;nina
 df+3,2,1,2;m, h, h, h;13, 12, 6, 6;i14, ,i16;;+1;;"* Combo from 3th CH with ?f delay
 * Input can be delayed ?f
-* Interrupt with i? from 3th block";;;Nina-df+3,2,1,2;;;;
+* Interrupt with i? from 3th block";;;;;;;Nina-df+3,2,1,2;nina
 df+3,2,1,2,1+2;m, h, h, h, m;13, 12, 6, 6, 22;i14, ,i23;-14;+17a (+8);+36d (+28);"* Balcony Break
 * Combo from 4th CH with ?f delay
 * Input can be delayed 10f
-* Interrupt with i? from 4th block";bbr;;Nina-df+3,2,1,2,1+2;;r34;;
+* Interrupt with i? from 4th block";bbr;;;r34;;;Nina-df+3,2,1,2,1+2;nina
 df+3,2,1,4;m, h, h, L;13, 12, 6, 12;i14, ,i23;-13;-2;;"Combo from 3rd CH with 2f delay
-* High crush 10~";cs10~;FC;Nina-df+3,2,1,4;Creeping Snake;r32 FC;;File:t8-p2-nina-df+3,2,1,4.mp4
+* High crush 10~";cs10~;FC;Creeping Snake;r32 FC;;File:t8-p2-nina-df+3,2,1,4.mp4;Nina-df+3,2,1,4;nina
 df+3,2,3;m, h, m;13, 12, 21;i14, ,i19~20;-17;+36a (+26);;"* Tornado
-* Combo from 2nd CH with 10f delay";trn;;Nina-df+3,2,3;Creeping Snake > Geyser Cannon;r37;;File:t8-p2-nina-df+3,2,3.mp4
+* Combo from 2nd CH with 10f delay";trn;;Creeping Snake > Geyser Cannon;r37;;File:t8-p2-nina-df+3,2,3.mp4;Nina-df+3,2,3;nina
 df+3,2,4;m, h, h;13, 12, 22;i14, ,i22;-6;+20a (+11);+49a;"* Balcony Break
-* Combo from 2nd CH with 8f delay";bbr;;Nina-df+3,2,4;Creeping Snake > Right High Kick;r30;;File:t8-p2-nina-df+3,2,4.mp4
+* Combo from 2nd CH with 8f delay";bbr;;Creeping Snake > Right High Kick;r30;;File:t8-p2-nina-df+3,2,4.mp4;Nina-df+3,2,4;nina
 df+3,3;m, m;13, 14;i14, i28;-10;+2c;;"* Spike
 * Combo from 1st hit with 1f delay
-* Input can be delayed 10f";spk;;Nina-df+3,3;Bisection Combo;r34;;File:t8-p2-nina-df+3,3.mp4
-df+4;m;15;i12;-4;+7;;;;;Nina-df+4;;r23;;
+* Input can be delayed 10f";spk;;Bisection Combo;r34;;File:t8-p2-nina-df+3,3.mp4;Nina-df+3,3;nina
+df+4;m;15;i12;-4;+7;;;;;;r23;;;Nina-df+4;nina
 df+3+4;;;i31~35;;;;"* i20~24 startup with input d,DF+4
-* High crush 4~";cs4~;FC;Nina-df+3+4;;r45 FC;;
+* High crush 4~";cs4~;FC;;r45 FC;;;Nina-df+3+4;nina
 d+1;sl;5;i10;-5;+5;;"* Transition to r24? with f
-* High crush 4~";cs4~;FC;Nina-d+1;Low Jab;r24 FC;;File:t8-p2-nina-d+1,4.mp4
-d+1,4;sl, m;5, 10;i10, i16~17;-11;+0;;* Combo from 1st CH;;;Nina-d+1,4;Low Jab > Mid Kick;r29;;File:t8-p2-nina-d+1,4.mp4
+* High crush 4~";cs4~;FC;Low Jab;r24 FC;;File:t8-p2-nina-d+1,4.mp4;Nina-d+1;nina
+d+1,4;sl, m;5, 10;i10, i16~17;-11;+0;;* Combo from 1st CH;;;Low Jab > Mid Kick;r29;;File:t8-p2-nina-d+1,4.mp4;Nina-d+1,4;nina
 d+2;L;13;i20;-12;+0;+5;"* Transition to -8, +2, +7 CD with F
-* High crush 6~";cs6~;CD,FC;Nina-d+2;;r31 FC;;File:t8-p2-nina-d+2,2.mp4
+* High crush 6~";cs6~;CD,FC;;r31 FC;;File:t8-p2-nina-d+2,2.mp4;Nina-d+2;nina
 d+2,2;L, M;13, 20;i20, i28~29;-12;+17a (+0);+71a (+55);"* Tornado
 * Balcony Break
-* Combo from 1st CH";trn bbr;;Nina-d+2,2;Vertical Slitter;r32;;File:t8-p2-nina-d+2,2.mp4
-d+3;L;10;i16;-17;-6;;* High crush 4~;cs4~;FC;Nina-d+3;Left Spin Low Kick;36 FC;;File:t8-p2-nina-d+3,2.mp4
-d+3,2;L, m;10, 18;i16, i25~27;-11~-9;+12~+14;;* Combo from 1st CH;;;Nina-d+3,2;Left Spin Low Kick > Right Upper;r30;;File:t8-p2-nina-d+3,2.mp4
-d+3,4;L, h;10, 14;i16, i20;-8;+1;;* Combo from 1st CH;;;Nina-d+3,4;;r31;;File:t8-p2-nina-d+3,4,3.mp4
+* Combo from 1st CH";trn bbr;;Vertical Slitter;r32;;File:t8-p2-nina-d+2,2.mp4;Nina-d+2,2;nina
+d+3;L;10;i16;-17;-6;;* High crush 4~;cs4~;FC;Left Spin Low Kick;36 FC;;File:t8-p2-nina-d+3,2.mp4;Nina-d+3;nina
+d+3,2;L, m;10, 18;i16, i25~27;-11~-9;+12~+14;;* Combo from 1st CH;;;Left Spin Low Kick > Right Upper;r30;;File:t8-p2-nina-d+3,2.mp4;Nina-d+3,2;nina
+d+3,4;L, h;10, 14;i16, i20;-8;+1;;* Combo from 1st CH;;;;r31;;File:t8-p2-nina-d+3,4,3.mp4;Nina-d+3,4;nina
 d+3,4,3;L, h, m;10, 14, 20;i16, ,i29~30;-7;+22a;;"* Balcony Break
 * Spike
 * Combo from 2nd hit
 * Combo from 1st CH
-* Interrupt with i5 from 2nd block";bbr spk;;Nina-d+3,4,3;Easy Prey;r27;;File:t8-p2-nina-d+3,4,3.mp4
-d+4;l;6;i12;-15;-4;;* High crush 4~;cs4~;FC;Nina-d+4;Right Low Kick;r34 FC;;File:t8-p2-nina-d+4,1.mp4
+* Interrupt with i5 from 2nd block";bbr spk;;Easy Prey;r27;;File:t8-p2-nina-d+3,4,3.mp4;Nina-d+3,4,3;nina
+d+4;l;6;i12;-15;-4;;* High crush 4~;cs4~;FC;Right Low Kick;r34 FC;;File:t8-p2-nina-d+4,1.mp4;Nina-d+4;nina
 d+4,1;l, h;6, 10;i12, i24;+0;+6;+11;"* Combo from 1st CH with 6f delay
 * Input can be delayed 9f
 * Cancel to SS with D_U (-13/-2)
-** Cannot block up to i21 on block?";;SS;Nina-d+4,1;Right Low Kick > Back Spin Chop;r19;;File:t8-p2-nina-d+4,1.mp4
+** Cannot block up to i21 on block?";;SS;Right Low Kick > Back Spin Chop;r19;;File:t8-p2-nina-d+4,1.mp4;Nina-d+4,1;nina
 db+2;m;20;i24~25;-5;+8;+61a;"* Strong Aerial Tailspin
 * Homing
-* Crumple stun +11F on CH";hom;;Nina-db+2;Right Backhand Body Blow;r31;;File:t8-p2-nina-db+2.mp4
-db+3;L;17;i20;-13;+4c;+13a;;;;Nina-db+3;Stiletto Heel;r32;;File:t8-p2-nina-db+3.mp4
-db+4;L;5;i16~17;-9a;+2;;* High crush 6~16;cs6~16;FDFT;Nina-db+4;Slicer;r27 FDFT;;File:t8-p2-nina-db+4,3.mp4
+* Crumple stun +11F on CH";hom;;Right Backhand Body Blow;r31;;File:t8-p2-nina-db+2.mp4;Nina-db+2;nina
+db+3;L;17;i20;-13;+4c;+13a;;;;Stiletto Heel;r32;;File:t8-p2-nina-db+3.mp4;Nina-db+3;nina
+db+4;L;5;i16~17;-9a;+2;;* High crush 6~16;cs6~16;FDFT;Slicer;r27 FDFT;;File:t8-p2-nina-db+4,3.mp4;Nina-db+4;nina
 db+4,3;L, m;5, 21;i16~17, i27~28;-13;+71a (+55);;"* Tornado
-* Combo from 1st CH with 1f delay";trn;;Nina-db+4,3;Geyser Cannon Combo;r33;;File:t8-p2-nina-db+4,3.mp4
+* Combo from 1st CH with 1f delay";trn;;Geyser Cannon Combo;r33;;File:t8-p2-nina-db+4,3.mp4;Nina-db+4,3;nina
 db+1+2;h,m;5,22;i11 i18;-14;+10a (+1);;"* Heat Engager
 
 * Heat Dash +5, +43d (+35)
 
 * Balcony Break
-* Jail from 1st attack";he bbr;;Nina-db+1+2;Reverberation Palm Bomb;r34;;File:t8-p2-nina-db+1+2.mp4
-db+3+4;m;21;i18~19;-17;+36a (+26);;* Tornado;trn;;Nina-db+3+4;Geyser Cannon;r37;;File:t8-p2-nina-db+3+4.mp4
-b+1;h;10;i12~13;-7;+4;;;;;Nina-b+1;Throat Slasher;r25;;File:t8-p2-nina-b+1,4.mp4
+* Jail from 1st attack";he bbr;;Reverberation Palm Bomb;r34;;File:t8-p2-nina-db+1+2.mp4;Nina-db+1+2;nina
+db+3+4;m;21;i18~19;-17;+36a (+26);;* Tornado;trn;;Geyser Cannon;r37;;File:t8-p2-nina-db+3+4.mp4;Nina-db+3+4;nina
+b+1;h;10;i12~13;-7;+4;;;;;Throat Slasher;r25;;File:t8-p2-nina-b+1,4.mp4;Nina-b+1;nina
 b+1,4;h, M;10, 22;i12~13, i28~29;-12;+7;+71a (+55);"* Tornado
 * Combo from 1st hit with 1f delay
-* Can hit grounded when off-axis";trn;;Nina-b+1,4;Throat Slasher > Glass Jaw;r32;;File:t8-p2-nina-b+1,4.mp4
+* Can hit grounded when off-axis";trn;;Throat Slasher > Glass Jaw;r32;;File:t8-p2-nina-b+1,4.mp4;Nina-b+1,4;nina
 b+1+3;;;;-6;;;"* Damage is 25 + 50% of the opponent's attack
 * Parries mid or high punches or kicks
-* Parry state 5~12";ps5~12;;Nina-b+1+3_b+2+4;Attack Reversal;r35;;File:t8-p2-nina-b+1+3_b+2+4.mp4
+* Parry state 5~12";ps5~12;;Attack Reversal;r35;;File:t8-p2-nina-b+1+3_b+2+4.mp4;Nina-b+1+3_b+2+4;nina
 b+2;h;12;i12;-14;-3;;"* Homing
-* Female characters can slap back with 2 on hit";hom;;Nina-b+2;;r33;;File:t8-p2-nina-b+2,2,2.mp4
+* Female characters can slap back with 2 on hit";hom;;;r33;;File:t8-p2-nina-b+2,2,2.mp4;Nina-b+2;nina
 b+2,2;h, h;12, 12;i12, i14~15;-6;+5;;"* Combo from 1st hit with 1?f delay
 * Jail from 1st block with 1?f delay
-* Move can be delayed 1?f";;;Nina-b+2,2;;r24;;File:t8-p2-nina-b+2,2,2.mp4
+* Move can be delayed 1?f";;;;r24;;File:t8-p2-nina-b+2,2,2.mp4;Nina-b+2,2;nina
 b+2,2,2;h, h, h;12, 12, 20;i12, ,i25~26;-9;+9g;+14c;"* Balcony Break
 * Combo from 1st CH
 * Combo from 2nd CH with 5f delay
 * Cancel to SS -25 -14 with D_U
 * If Nina uses a SS attack after the cancel, interrupt with i22 on block, i11 on hit 
-* Input can be delayed 13f";bbr;SS;Nina-b+2,2,2;Backhand Combo;r33;;File:t8-p2-nina-b+2,2,2.mp4
-b+3;m;10;i18;-6;+6c;;Spike;spk;;Nina-b+3;;r30;;File:t8-p2-nina-b+3,4.mp4
+* Input can be delayed 13f";bbr;SS;Backhand Combo;r33;;File:t8-p2-nina-b+2,2,2.mp4;Nina-b+2,2,2;nina
+b+3;m;10;i18;-6;+6c;;Spike;spk;;;r30;;File:t8-p2-nina-b+3,4.mp4;Nina-b+3;nina
 b+3,4;m, h;10, 17;i18, i20~21;-8;+14c;+45a;"* Combo from 1st hit with 16f delay
 * Move can be delayed by 10F
-* Input can be delayed by 17F";;;Nina-b+3,4;Stinger Heel Kick Combo;r33;;File:t8-p2-nina-b+3,4.mp4
-b+4;h;15;i14;-9;+9;+15;;;;Nina-b+4;Spear Kick;r28;;File:t8-p2-nina-b+4.mp4
+* Input can be delayed by 17F";;;Stinger Heel Kick Combo;r33;;File:t8-p2-nina-b+3,4.mp4;Nina-b+3,4;nina
+b+4;h;15;i14;-9;+9;+15;;;;Spear Kick;r28;;File:t8-p2-nina-b+4.mp4;Nina-b+4;nina
 b+1+2;m,m;5,20;i16 i8~10;-4;+5a;;"* Removes Recoverable Health
 * Balcony break on airborne hit
 * Combo from 1st hit only if the second hit connects on i8
 * 2nd hit available only as combo from 1st
 * If the second hit connects on i9~10, frame advantage on hit will be -16
-* Powered up in heat";;;Nina-b+1+2;Shockwave Palm;r32;;File:t8-p2-nina-b+1+2.mp4
-b+1+4;m,m;4,14;i15 i13~14;-15;+34a (+24);;Tornado;trn;;Nina-b+1+4;Reverse Ivory Cutter;r35;;File:t8-p2-nina-b+1+4.mp4
-b+3+4;h;16;i14~15;-5;+6;;* Has good left sidestep tracking;;;Nina-b+3+4;Out of Sight;r33;;File:t8-p2-nina-b+3+4,3.mp4
+* Powered up in heat";;;Shockwave Palm;r32;;File:t8-p2-nina-b+1+2.mp4;Nina-b+1+2;nina
+b+1+4;m,m;4,14;i15 i13~14;-15;+34a (+24);;Tornado;trn;;Reverse Ivory Cutter;r35;;File:t8-p2-nina-b+1+4.mp4;Nina-b+1+4;nina
+b+3+4;h;16;i14~15;-5;+6;;* Has good left sidestep tracking;;;Out of Sight;r33;;File:t8-p2-nina-b+3+4,3.mp4;Nina-b+3+4;nina
 b+3+4,3;h, M;16, 20;i14~15, i28~29;-15~-14;+27a;;"Tornado
 * Low crush 31~43
-* Floating state 44~46";trn js31~43 fs44~46;;Nina-b+3+4,3;Out of Sight > Assassin Somersault Kick;r40;;File:t8-p2-nina-b+3+4,3.mp4
+* Floating state 44~46";trn js31~43 fs44~46;;Out of Sight > Assassin Somersault Kick;r40;;File:t8-p2-nina-b+3+4,3.mp4;Nina-b+3+4,3;nina
 b+3+4,1+2;h, h,h,h;16, 6,6,6;i14~15, i28 i5 i5;-5;+8c;;"* Balcony Break
 * Weapon
 * Combo from 1st hit with 8F delay
@@ -303,7 +303,7 @@ b+3+4,1+2;h, h,h,h;16, 6,6,6;i14~15, i28 i5 i5;-5;+8c;;"* Balcony Break
 * Powered up in heat
 * Move can be delayed by 7F
 * Input can be delayed by 8F
-* Forces tech backroll on hit";bbr wpn;;Nina-b+3+4,1+2;Out of Sight > Kiss Shot;r40;;File:t8-p2-nina-b+3+4,1+2.mp4
+* Forces tech backroll on hit";bbr wpn;;Out of Sight > Kiss Shot;r40;;File:t8-p2-nina-b+3+4,1+2.mp4;Nina-b+3+4,1+2;nina
 H.b+3+4,1+2;h, h,h,h,h,h;16, 6,6,6,[5],[5];i14~15, i28, i5, i5, i6, i6;-2;+29a (+3);;"* Balcony Break
 * Weapon
 * Combo from 1st hit with 8F delay
@@ -311,100 +311,100 @@ H.b+3+4,1+2;h, h,h,h,h,h;16, 6,6,6,[5],[5];i14~15, i28, i5, i5, i6, i6;-2;+29a (
 * 13 chip damage on block
 * Consumes 180F of remaining Heat time
 * Move can be delayed by 7F
-* Input can be delayed by 8F";bbr wpn;;Nina-b+3+4,H.1+2;Out of Sight > Kiss Shot;r37;;
-ub+1;m;15;i20~21;-16;+20a;;* Sidesteps to the left;;;Nina-ub+1;Left Backhand Body Blow;r35;;File:t8-p2-nina-ub+1.mp4
+* Input can be delayed by 8F";bbr wpn;;Out of Sight > Kiss Shot;r37;;;Nina-b+3+4,H.1+2;nina
+ub+1;m;15;i20~21;-16;+20a;;* Sidesteps to the left;;;Left Backhand Body Blow;r35;;File:t8-p2-nina-ub+1.mp4;Nina-ub+1;nina
 ub+3;m;15;i14;-15;-4;;"* Low crush 6~26
-* Floating state 27~29";js6~26 fs27~29;;Nina-ub+3;;r34;;
+* Floating state 27~29";js6~26 fs27~29;;;r34;;;Nina-ub+3;nina
 u+3;m;20;i14;-15;+16a (+6);;"Balcony Break
 * Low crush 6~26
-* Floating state 27~29";bbr js6~26 fs27~29;;Nina-u+3;;r34;;
+* Floating state 27~29";bbr js6~26 fs27~29;;;r34;;;Nina-u+3;nina
 u+4;M;21;i23~28;+0c~+5c;+5g~+10g;+22a;"* Spike
 * Opponent recovers crouching on hit
 * Low crush 7~30
-* Floating state 31~33";spk js7~30 fs31~33;;Nina-u+4;Leaping Axe Kick;r23;;File:t8-p2-nina-u+4.mp4
+* Floating state 31~33";spk js7~30 fs31~33;;Leaping Axe Kick;r23;;File:t8-p2-nina-u+4.mp4;Nina-u+4;nina
 uf+1;m;20;i26;-5;+26a;;"Spike
-* Low crush 10~26";spk js10~26;FC;Nina-uf+1;Skull Splitter;r24 FC;;File:t8-p2-nina-uf+1.mp4
-uf+2;m;10;i18;-10;+1;;;;;Nina-uf+2;;r29;;File:t8-p2-nina-uf+2,1.mp4
+* Low crush 10~26";spk js10~26;FC;Skull Splitter;r24 FC;;File:t8-p2-nina-uf+1.mp4;Nina-uf+1;nina
+uf+2;m;10;i18;-10;+1;;;;;;r29;;File:t8-p2-nina-uf+2,1.mp4;Nina-uf+2;nina
 uf+2,1;m, m;10, 10;i18, i21;-13;+49a (+40);;"* Spike
 * Combo from 1st hit with 9f delay
-* Move can be delayed 7f";spk;;Nina-uf+2,1;Binding Whip;r32;;File:t8-p2-nina-uf+2,1.mp4
+* Move can be delayed 7f";spk;;Binding Whip;r32;;File:t8-p2-nina-uf+2,1.mp4;Nina-uf+2,1;nina
 uf+3;m;20;i14;-10;+21a (+11);;"Balcony Break
 * Low crush 6~26
-* Floating state 27~29";bbr js6~26 fs27~29;;Nina-uf+3;Catapult Kick;r29;;File:t8-p2-nina-uf+3.mp4
+* Floating state 27~29";bbr js6~26 fs27~29;;Catapult Kick;r29;;File:t8-p2-nina-uf+3.mp4;Nina-uf+3;nina
 uf+4;h;23;i18;-9;-1;;"* Low crush 9~30
-* Floating state 31~33";js9~30 fs31~33;;Nina-uf+4;;r26;;File:t8-p2-nina-uf+4,3,4.mp4
+* Floating state 31~33";js9~30 fs31~33;;;r26;;File:t8-p2-nina-uf+4,3,4.mp4;Nina-uf+4;nina
 uf+4,3;h, L;23, 10;i18, i18;-19;-8;;"Combo from 1st CH
-* High crush 35~64";cs35~64;;Nina-uf+4,3;;r38;;File:t8-p2-nina-uf+4,3,4.mp4
+* High crush 35~64";cs35~64;;;r38;;File:t8-p2-nina-uf+4,3,4.mp4;Nina-uf+4,3;nina
 uf+4,3,4;h, L, h;23, 10, 14;i18, ,i20;-6;+5;;"* Combo from 2nd hit
-* Enter SS -5 +6 with D_U";;SS;Nina-uf+4,3,4;Can Opener;r25;;File:t8-p2-nina-uf+4,3,4.mp4
+* Enter SS -5 +6 with D_U";;SS;Can Opener;r25;;File:t8-p2-nina-uf+4,3,4.mp4;Nina-uf+4,3,4;nina
 uf+3+4;m,t;20,13;i23~30;-23a~-16a;+2d;;"* Balcony break on meaty hit
 * +9a (-1) on meaty hit
 * Transition to Heel Hold (HHD) chain throw on hit if the move connects on i23, otherwise knockdown 
 * Throw is unbreakable, rest of the chain throw is breakable
 * Low crush 3~34
-* Floating state 35~";js3~34 fs35~;FUFT;Nina-uf+3+4;Running Jump Kick;r35 FUFT;;File:t8-p2-nina-uf+3+4.mp4
+* Floating state 35~";js3~34 fs35~;FUFT;Running Jump Kick;r35 FUFT;;File:t8-p2-nina-uf+3+4.mp4;Nina-uf+3+4;nina
 1+2+3+4;;;;;;;"* Can't block for 5 seconds
 * CH state on your next attack for 5 seconds ''(Tekken 7 and prior games)''
 * 10% damage increase on the next attack for 5 seconds ''(Tekken 8 season 2 patch onward)''
-* Attacks taken will be CH for 5 seconds";;;Nina-1+2+3+4;Ki Charge;r55;;File:t8-p2-nina-1+2+3+4.mp4
-BT+1;h;15;i8;-8;+3;;Links to 1 jab extensions;;1 jab extensions;Nina-BT+1;Twist Jab;r27;;File:t8-p2-nina-bt+1.mp4
-b,B+2+3;m!;50;i65;;+25a;;Cancel to r25 with b,b;;;Nina-b,B+2+3;"<div class=""dotlist"">
+* Attacks taken will be CH for 5 seconds";;;Ki Charge;r55;;File:t8-p2-nina-1+2+3+4.mp4;Nina-1+2+3+4;nina
+BT+1;h;15;i8;-8;+3;;Links to 1 jab extensions;;1 jab extensions;Twist Jab;r27;;File:t8-p2-nina-bt+1.mp4;Nina-BT+1;nina
+b,B+2+3;m!;50;i65;;+25a;;Cancel to r25 with b,b;;;"<div class=""dotlist"">
 
 * Hunting Swan
 * Power Charge
-</div>";r30;;File:t8-p2-nina-b+2+3.mp4
+</div>";r30;;File:t8-p2-nina-b+2+3.mp4;Nina-b,B+2+3;nina
 d,DF+4;L;20;i20~24;-37;+14a;+55a (+39);"Faster version of df+3+4
-* High crush 1~";cs1~;FC;Nina-d,DF+4;Wipe the Floor;r53 FC;;File:t8-p2-nina-d,df+4.mp4
-db,qcf,n,DB+2+3;;;;;;;;;;Nina-db,qcf,n,DB+2+3;;;;
+* High crush 1~";cs1~;FC;Wipe the Floor;r53 FC;;File:t8-p2-nina-d,df+4.mp4;Nina-d,DF+4;nina
+db,qcf,n,DB+2+3;;;;;;;;;;;;;;Nina-db,qcf,n,DB+2+3;nina
 f,F+2;h;20;i14;-4;+32a (+24);;"* Balcony Break
 * Cannot be buffered
 * Transition to +6, +42d CD with F
-* 4 chip damage on block";bbr;CD;Nina-f,F+2;Sunset Strike;r35;;File:t8-p2-nina-f,f+2.mp4
-f,F+3;M;24;i15;-14;+8;+52a;Cannot be buffered;;;Nina-f,F+3;Bad Habit;r34;;File:t8-p2-nina-f,f+3.mp4
+* 4 chip damage on block";bbr;CD;Sunset Strike;r35;;File:t8-p2-nina-f,f+2.mp4;Nina-f,F+2;nina
+f,F+3;M;24;i15;-14;+8;+52a;Cannot be buffered;;;Bad Habit;r34;;File:t8-p2-nina-f,f+3.mp4;Nina-f,F+3;nina
 f,F+4;M;20;i28~32;-10~-6;+9g~+13g;+21a;"* Spike
 * Tech roll to r32 FC on frames 29~34
 * 5 recoverable self-damage on whiff without tech roll
 * Clean hit on block +16g~+20g, 30 damage
 * Opponent recovers crouching
 * Cannot be buffered
-* Low crush 4~";spk js4~;FUFT;Nina-f,F+4;Kneel Kick;r25 FUFT;;File:t8-p2-nina-f,f+4.mp4
+* Low crush 4~";spk js4~;FUFT;Kneel Kick;r25 FUFT;;File:t8-p2-nina-f,f+4.mp4;Nina-f,F+4;nina
 f,F+1+2;M;26;i23~24;-5;+12a (+3);;"* Balcony Break
 * Chip damage on block
-* Cannot be buffered";bbr chp;;Nina-f,F+1+2;Bombshell Blast;r32;;File:t8-p2-nina-f,f+1+2.mp4
+* Cannot be buffered";bbr chp;;Bombshell Blast;r32;;File:t8-p2-nina-f,f+1+2.mp4;Nina-f,F+1+2;nina
 f,F+1+2*;M;32;i33~34;+8g;+19a (+9);;"* Balcony Break
 * Chip damage on block
-* Cannot be buffered";bbr chp;;Nina-f,F+1+2*;Bombshell Blast;r35;;
+* Cannot be buffered";bbr chp;;Bombshell Blast;r35;;;Nina-f,F+1+2*;nina
 qcb;;;;;;;"* Cancel to SS with u
 * Buffer to r10 SS with d
 * Recovers in FC for 5 frames (21~25)
-* High crush 1~20";cs1~20;SS,SWA;Nina-qcb;Sway;r1? SWA;;File:t8-p2-nina-qcb.mp4
+* High crush 1~20";cs1~20;SS,SWA;Sway;r1? SWA;;File:t8-p2-nina-qcb.mp4;Nina-qcb;nina
 qcf;;;;;;;"* Perform WS moves with qcf,n
 * Transition to r6? hFC with alternate input d,DF
 ** Cannot access stance moves
-* High crush 1~20";cs1~20;hFC,CD;Nina-qcf;"<div class=""dotlist"">
+* High crush 1~20";cs1~20;hFC,CD;"<div class=""dotlist"">
 
 * Crouch Dash
 * Ducking Step
-</div>";r1? CD;;File:t8-p2-nina-qcf.mp4
+</div>";r1? CD;;File:t8-p2-nina-qcf.mp4;Nina-qcf;nina
 uf,n,D+3;L;15;i43;-17;-6;;"* Low crush 9~30
 * Floating state 31~33
-* High crush 34~53";js9~30 fs31~33 cs34~53;;Nina-uf,n,D+3;;r36;;File:t8-p2-nina-d+3,2.mp4
-uf,n,D+3,2;L, m;15, 18;i43, i25~27;-11~-9;+12~+14;;* Combo from 1st CH;;;Nina-uf,n,D+3,2;Hopping Low Kick to Right Uppercut;r30;;File:t8-p2-nina-d+3,2.mp4
-uf,n,D+3,4;L, h;15, 14;i43, i20;-8;+1;;* Combo from 1st CH;;;Nina-uf,n,D+3,4;;r31;;File:t8-p2-nina-d+3,4,3.mp4
+* High crush 34~53";js9~30 fs31~33 cs34~53;;;r36;;File:t8-p2-nina-d+3,2.mp4;Nina-uf,n,D+3;nina
+uf,n,D+3,2;L, m;15, 18;i43, i25~27;-11~-9;+12~+14;;* Combo from 1st CH;;;Hopping Low Kick to Right Uppercut;r30;;File:t8-p2-nina-d+3,2.mp4;Nina-uf,n,D+3,2;nina
+uf,n,D+3,4;L, h;15, 14;i43, i20;-8;+1;;* Combo from 1st CH;;;;r31;;File:t8-p2-nina-d+3,4,3.mp4;Nina-uf,n,D+3,4;nina
 uf,n,D+3,4,3;L, h, m;15, 14, 20;i43, ,i29~30;-7;+22a;;"* Balcony Break
 * Spike
 * Combo from 2nd hit
 * Combo from 1st CH
-* Interrupt with i5 from 2nd block";bbr spk;;Nina-uf,n,D+3,4,3;Hopping Low Kick to Easy Prey;r27;;File:t8-p2-nina-d+3,4,3.mp4
+* Interrupt with i5 from 2nd block";bbr spk;;Hopping Low Kick to Easy Prey;r27;;File:t8-p2-nina-d+3,4,3.mp4;Nina-uf,n,D+3,4,3;nina
 f,f,F+3;m;10;i20~21;-8;+1;;"* Low crush 4~18
-* Floating state 19~21";js4~18 fs19~21;;Nina-f,f,F+3;;r31;;File:t8-p2-nina-f,f,f+3,3.mp4
+* Floating state 19~21";js4~18 fs19~21;;;r31;;File:t8-p2-nina-f,f,f+3,3.mp4;Nina-f,f,F+3;nina
 f,f,F+3,3;m, M;10, 20;i20~21, i32~35;-4~-1;+17a;;"* Spike
 * Combo from 1st hit
 * Chip damage on block
 * Low crush 19~34
-* Floating state 35~37";spk chp js19~34 fs35~37;;Nina-f,f,F+3,3;Electric Ray;r30;;File:t8-p2-nina-f,f,f+3,3.mp4
+* Floating state 35~37";spk chp js19~34 fs35~37;;Electric Ray;r30;;File:t8-p2-nina-f,f,f+3,3.mp4;Nina-f,f,F+3,3;nina
 f,f,F+3,4;m, m;10, 21;i20~21, i24~25;-13;+34a (+19);;"* Tornado
-* Combo from 1st hit";trn;;Nina-f,f,F+3,4;Stingray;r30;;File:t8-p2-nina-f,f,f+3,4.mp4
+* Combo from 1st hit";trn;;Stingray;r30;;File:t8-p2-nina-f,f,f+3,4.mp4;Nina-f,f,F+3,4;nina
 f,f,F+1+2;m;30;i20~21;+4;+12a (+3);;"* Heat Engager
 
 * Heat Dash +5, +36a (+26)
@@ -413,200 +413,200 @@ f,f,F+1+2;m;30;i20~21;+4;+12a (+3);;"* Heat Engager
 * CDf+1+2: i22~23
 * 9 chip damage on block
 * Low crush 5~14
-* Floating state 15~17";he bbr js5~14 fs15~17;;Nina-f,f,F+1+2;Spiral Bombshell Blast;r32;;File:t8-p2-nina-f,f,f+1+2.mp4
-ws1;m;17;i13~14;-6;+5;;;;;Nina-ws1;;r24;;File:t8-p2-nina-ws1,4.mp4
+* Floating state 15~17";he bbr js5~14 fs15~17;;Spiral Bombshell Blast;r32;;File:t8-p2-nina-f,f,f+1+2.mp4;Nina-f,f,F+1+2;nina
+ws1;m;17;i13~14;-6;+5;;;;;;r24;;File:t8-p2-nina-ws1,4.mp4;Nina-ws1;nina
 ws1,4;m, m;17, 20;i13~14, i34~35;-3c;+21d;;"* Spike
 * Move can be delayed 3f
-* Cancel to SS with D_U (-13/-2)";spk;SS;Nina-ws1,4;Diving Hornet;r32;;File:t8-p2-nina-ws1,4.mp4
+* Cancel to SS with D_U (-13/-2)";spk;SS;Diving Hornet;r32;;File:t8-p2-nina-ws1,4.mp4;Nina-ws1,4;nina
 ws1,1+2;m, h,h,h;17, 6,6,6;i13~14, i25 i5 i5;-9;+8c;;"* Balcony Break
 * Weapon
 * Jail from 2nd block
 * Combo from 1st hit
 * 12 chip damage on block
 * Powered up in heat
-* Forces tech backroll on hit";bbr wpn;;Nina-ws1,1+2;Fluttering Kiss Shot;r40;;File:t8-p2-nina-ws1,1+2.mp4
+* Forces tech backroll on hit";bbr wpn;;Fluttering Kiss Shot;r40;;File:t8-p2-nina-ws1,1+2.mp4;Nina-ws1,1+2;nina
 H.ws1,1+2;m, h,h,h,h,h;17, 6,6,6,[5],[5];i13~14, i25, i5, i6, i6, i6;-2;+29a (+3);;"* Balcony Break
 * Weapon
 * Combo from 1st hit
 * Jails from 2nd hit
 * 13 chip damage on block
-* Consumes 180F of remaining Heat time";bbr wpn;;Nina-ws1,H.1+2;Fluttering Kiss Shot;r37;;
-ws2;m;15;i15~16;-13;+28a (+18);;;;;Nina-ws2;Palm Uppercut;r31;;File:t8-p2-nina-ws2.mp4
+* Consumes 180F of remaining Heat time";bbr wpn;;Fluttering Kiss Shot;r37;;;Nina-ws1,H.1+2;nina
+ws2;m;15;i15~16;-13;+28a (+18);;;;;Palm Uppercut;r31;;File:t8-p2-nina-ws2.mp4;Nina-ws2;nina
 ws3;m,t;15;i13;-13;+0d;;"* Knee
 * Transition to Triple Slaps chain throw automatically on standing front hit
-* Throw is unbreakable, rest of the chain throw is breakable";kne;;Nina-ws3;Spider Knee;r33;;File:t8-p2-nina-ws3.mp4
-ws4;m;15;i11~12;-4;+7;;;;;Nina-ws4;Toe Smash;r22;;File:t8-p2-nina-ws4,2.mp4
+* Throw is unbreakable, rest of the chain throw is breakable";kne;;Spider Knee;r33;;File:t8-p2-nina-ws3.mp4;Nina-ws3;nina
+ws4;m;15;i11~12;-4;+7;;;;;Toe Smash;r22;;File:t8-p2-nina-ws4,2.mp4;Nina-ws4;nina
 ws4,2;m, m;15, 22;i11~12, i19;-9;+36a;;"* Balcony Break
 * Side roll takes 34 frames, effective startup i53
 * Chip damage on block
-* Cancel to r38 FC with D";bbr chp;FC;Nina-ws4,2;Toe Smash > Spiral Explosion;r31;;File:t8-p2-nina-ws4,2.mp4
+* Cancel to r38 FC with D";bbr chp;FC;Toe Smash > Spiral Explosion;r31;;File:t8-p2-nina-ws4,2.mp4;Nina-ws4,2;nina
 ws4,3;m, h;15, 24;i11~12, i25;-10;+14a (+5);;"* Balcony Break
-* Combo from 1st CH";bbr;;Nina-ws4,3;Flashing Escape;r36;;File:t8-p2-nina-ws4,3,1+2.mp4
+* Combo from 1st CH";bbr;;Flashing Escape;r36;;File:t8-p2-nina-ws4,3,1+2.mp4;Nina-ws4,3;nina
 ws4,3,1+2;m, h, h,h,h;15, 24, 6 (4),6 (3),6 (2);i11~12, ,i28 i5 i5;-9;+8c;;"* Balcony Break
 * Jail from 3rd block
 * Aerial combo from 2nd hit (+24a (-9))
 * 12 chip damage on block
 * Powered up in heat
-* Forces tech backroll on hit";bbr;;Nina-ws4,3,1+2;Haematopus Kiss Shot;r40;;File:t8-p2-nina-ws4,3,1+2.mp4
+* Forces tech backroll on hit";bbr;;Haematopus Kiss Shot;r40;;File:t8-p2-nina-ws4,3,1+2.mp4;Nina-ws4,3,1+2;nina
 H.ws4,3,1+2;m, h, h,h,h,h,h;15, 24, 6 (4),6 (3),6 (2),[5] ([1]),[5] ([1]);i11~12, ,i28, i5, i5, i6, i6;-2;+29a (+3);;"* Balcony Break
 * Weapon
 * Aerial combo from 2nd hit (+13a (+12))
 * Jails from 3rd hit
 * 13 chip damage on block
-* Consumes 180F of remaining Heat time";bbr wpn;;Nina-ws4,3,H.1+2;Haematopus Kiss Shot;r37;;
-ws3+4;m;21;i18~19;-17;+36a (+26);;* Tornado;trn;;Nina-ws3+4;Geyser Cannon;r37;;
+* Consumes 180F of remaining Heat time";bbr wpn;;Haematopus Kiss Shot;r37;;;Nina-ws4,3,H.1+2;nina
+ws3+4;m;21;i18~19;-17;+36a (+26);;* Tornado;trn;;Geyser Cannon;r37;;;Nina-ws3+4;nina
 SS.1;m;15;i14~15;-10;+3;;"* Enter CD +10g +23g with F
-* Enter SWA +10g +23g with B";;CD,SWA;Nina-SS.1;Snakeshot;r26;;File:t8-p2-nina-ss.1.mp4
-SS.1,2;m, m;15, 15;i14~15, i16~18;-3;+3;;;;;Nina-SS.1,2;Double Shot;r20;;File:t8-p2-nina-ss.1,2.mp4
-SS.2;m;15;i13~14;-14;+33a (+23);;;;;Nina-SS.2;Lift Shot;r32;;File:t8-p2-nina-ss.2.mp4
+* Enter SWA +10g +23g with B";;CD,SWA;Snakeshot;r26;;File:t8-p2-nina-ss.1.mp4;Nina-SS.1;nina
+SS.1,2;m, m;15, 15;i14~15, i16~18;-3;+3;;;;;Double Shot;r20;;File:t8-p2-nina-ss.1,2.mp4;Nina-SS.1,2;nina
+SS.2;m;15;i13~14;-14;+33a (+23);;;;;Lift Shot;r32;;File:t8-p2-nina-ss.2.mp4;Nina-SS.2;nina
 SS.4;L;14;i20;-14;+6c;;"Sidestep adds minimum 9f, effective startup i29
-* High crush 6~39";cs6~39;;Nina-SS.4;Heel Slicer;r33;;File:t8-p2-nina-ss.4,2.mp4
+* High crush 6~39";cs6~39;;Heel Slicer;r33;;File:t8-p2-nina-ss.4,2.mp4;Nina-SS.4;nina
 SS.4,2;L, h;14, 22;i20, i22;-7;+11c;;"* Tornado
 * Balcony Break
 * Combo from 1st CH
-* Chip damage on block";trn bbr chp;;Nina-SS.4,2;Tranquilizer;r37;;File:t8-p2-nina-ss.4,2.mp4
+* Chip damage on block";trn bbr chp;;Tranquilizer;r37;;File:t8-p2-nina-ss.4,2.mp4;Nina-SS.4,2;nina
 SS.1+2;m;22;i19;-8;+3;+37a;"* Balcony Break
 * Sidestep adds minimum 9f, effective startup i28
-* Chip damage on block";bbr chp;;Nina-SS.1+2;Spiral Explosion;r31;;File:t8-p2-nina-ss.1+2.mp4
+* Chip damage on block";bbr chp;;Spiral Explosion;r31;;File:t8-p2-nina-ss.1+2.mp4;Nina-SS.1+2;nina
 SS.1+2,1+2;m, sm,sm;22, 8,8;i19, i30,i5;-9;+16a (+16);;"* Balcony Break
 * Weapon
 * Only occurs on 1st hit hit or block
 * Combos from 1st hit
 * Jails from 1st hit
-* 6 Chip damage on block";bbr wpn;;Nina-SS.1+2,1+2;Spiral Kiss Shot;;;
+* 6 Chip damage on block";bbr wpn;;Spiral Kiss Shot;;;;Nina-SS.1+2,1+2;nina
 H.SS.1+2,1+2;m, sm,sm,sm,sm;22, 8,8,[5],[5];i19, i30,i5,i6,i6;-2;+29a (+3);;"* Balcony Break
 * Weapon
 * Combo from 1st hit
 * Jails from 1st block
 * 10 chip damage on block
-* Consumes 180F of remaining Heat time";bbr wpn;;Nina-SS.1+2,H.1+2;Spiral Kiss Shot;r37;;
-FC.df+2;m;30;i14;-11;-4d;;Removes Recoverable Health;;;Nina-FC.df+2;Sadistic Cupid;;;File:t8-p2-nina-fc.df+2.mp4
+* Consumes 180F of remaining Heat time";bbr wpn;;Spiral Kiss Shot;r37;;;Nina-SS.1+2,H.1+2;nina
+FC.df+2;m;30;i14;-11;-4d;;Removes Recoverable Health;;;Sadistic Cupid;;;File:t8-p2-nina-fc.df+2.mp4;Nina-FC.df+2;nina
 (back to wall).b,b,UB;m;21;i35~38;+1;+34d;;"* Floating state 5~7
 * is8~24
 * Floating state 25~33
 * Low crush 34~37
-* Floating state 38~40";fs5~7 is8~24 fs25~33 js34~37 fs38~40;BT;Nina-(back to wall).b,b,UB;Wall Jump Backflip;r17 BT;;
+* Floating state 38~40";fs5~7 is8~24 fs25~33 js34~37 fs38~40;BT;Wall Jump Backflip;r17 BT;;;Nina-(back to wall).b,b,UB;nina
 qcf+1;h;21;i14~16;+1~+3;+3~+5;+47a (+37);"* 5 chip damage on block,
-* bufferable";;;Nina-CD.1;Hellbringer;r26;;File:t8-p2-nina-cd.1.mp4
+* bufferable";;;Hellbringer;r26;;File:t8-p2-nina-cd.1.mp4;Nina-CD.1;nina
 qcf+2;M;25;i16~17;-8;+32a (+17);;"* Heat Engager
 
 * Heat Dash +5, +42a (+27)
 
-* Balcony Break";he bbr;;Nina-CD.2;Shut Up;r32;;File:t8-p2-nina-cd.2.mp4
-qcf+3;L;17;i19~28;-20~-11;+0c~+9c;+21a;* High crush 10~49;cs10~49;;Nina-CD.3;Sideslip;r30;;File:t8-p2-nina-cd.3.mp4
-qcf+4;m;15;i14;-8;+6s;;Knee;kne;;Nina-CD.4;;r36;;File:t8-p2-nina-cd.4,3,1+2.mp4
+* Balcony Break";he bbr;;Shut Up;r32;;File:t8-p2-nina-cd.2.mp4;Nina-CD.2;nina
+qcf+3;L;17;i19~28;-20~-11;+0c~+9c;+21a;* High crush 10~49;cs10~49;;Sideslip;r30;;File:t8-p2-nina-cd.3.mp4;Nina-CD.3;nina
+qcf+4;m;15;i14;-8;+6s;;Knee;kne;;;r36;;File:t8-p2-nina-cd.4,3,1+2.mp4;Nina-CD.4;nina
 qcf+4,3;m, h;15, 23;i14, i25;-10;+14a (+5);;"* Balcony Break
 * Combo from 1st hit with 4f delay
-* Move can be delayed 3f";bbr;;Nina-CD.4,3;;r36;;File:t8-p2-nina-cd.4,3,1+2.mp4
+* Move can be delayed 3f";bbr;;;r36;;File:t8-p2-nina-cd.4,3,1+2.mp4;Nina-CD.4,3;nina
 qcf+4,3,1+2;m, h, h,h,h;15, 23, 6,6,6;i14, ,i28,i5,i5;-9;+8c;;"* Balcony Break
 * Weapon
 * Aerial combo from 1st hit (+24a (-9))
 * Jail from 3rd attack
 * 12 chip damage on block
 * Powered up in heat
-* Forces tech backroll on hit";bbr wpn;;Nina-CD.4,3,1+2;Lapwing Kiss Shot;r40;;File:t8-p2-nina-cd.4,3,1+2.mp4
+* Forces tech backroll on hit";bbr wpn;;Lapwing Kiss Shot;r40;;File:t8-p2-nina-cd.4,3,1+2.mp4;Nina-CD.4,3,1+2;nina
 H.qcf+4,3,1+2;m, h, h,h,h,h,h;15, 23, 6 (4),6 (3),6 (2),[5] ([1]),[5] ([1]);i14, ,i28, i5, i5, i6, i6;-2;+29a (+3);;"* Balcony Break
 * Weapon
 * Aerial combo from 2nd hit (+13a (+12))
 * Jails from 3rd hit
 * 13 chip damage on block
-* Consumes 180F of remaining Heat time";bbr wpn;;Nina-H.CD.4,3,1+2;Lapwing Kiss Shot;r37;;
+* Consumes 180F of remaining Heat time";bbr wpn;;Lapwing Kiss Shot;r37;;;Nina-H.CD.4,3,1+2;nina
 qcf+2+3;h!;"[10;10]";i24~38;;+36g~+50g;;"* Opponent can recover in crouch on hit with D
-* High crush 1~37";cs1~37;;Nina-CD.2+3;Evil Mist;r0;;File:t8-p2-nina-cd.2+3.mp4
-OTG.d+3+4;L;30;i17~18;-17;-7d;;Spike;spk;;Nina-OTG.d+3+4;Twisted Mind;r35?;;
-qcb+4;M;20;i19~20;-12;+68a (+52);;* Tornado;trn;;Nina-SWA.b+4;Ice Pick;r35;;File:t8-p2-nina-swa.b+4.mp4
+* High crush 1~37";cs1~37;;Evil Mist;r0;;File:t8-p2-nina-cd.2+3.mp4;Nina-CD.2+3;nina
+OTG.d+3+4;L;30;i17~18;-17;-7d;;Spike;spk;;Twisted Mind;r35?;;;Nina-OTG.d+3+4;nina
+qcb+4;M;20;i19~20;-12;+68a (+52);;* Tornado;trn;;Ice Pick;r35;;File:t8-p2-nina-swa.b+4.mp4;Nina-SWA.b+4;nina
 hFC.1;sl;5;i10;-5;+6;;"* Transition to Standing with f
 * +6c on crouching hit
-* High crush 1~";cs1~;FC;Nina-hFC.1;Crouch Jab;r24 FC;;
-hFC.1,4;sl, m;5, 10;i10, i16~17;-11;+0;;Combo from 1st CH;;;Nina-FC.1,4;;r29;;
+* High crush 1~";cs1~;FC;Crouch Jab;r24 FC;;;Nina-hFC.1;nina
+hFC.1,4;sl, m;5, 10;i10, i16~17;-11;+0;;Combo from 1st CH;;;;r29;;;Nina-FC.1,4;nina
 hFC.2;sl;8;i11;-4;+7;;"* +7c on crouching hit
-* High crush 1~";cs1~;FC;Nina-hFC.2;Crouch Straight;r23 FC;;
+* High crush 1~";cs1~;FC;Crouch Straight;r23 FC;;;Nina-hFC.2;nina
 hFC.3;L;10;i16;-17;-6;;"* -6c on crouching hit
-* High crush 1~";cs1~;FC;Nina-hFC.3;Crouch Spin Kick;r36 FC;;
+* High crush 1~";cs1~;FC;Crouch Spin Kick;r36 FC;;;Nina-hFC.3;nina
 hFC.4;l;6;i12;-15;-4;;"* -4c on crouching hit
-* High crush 1~";cs1~;FC;Nina-hFC.4;Crouch Shin Kick;r34 FC;;
+* High crush 1~";cs1~;FC;Crouch Shin Kick;r34 FC;;;Nina-hFC.4;nina
 1+3;t;35;i12~14;-6;-2;;"* Throw break 1 or 2
-* Opponent recovers FUFA";;;Nina-1+3;Arm Grab Flip;r31;;File:t8-p2-nina-1+3.mp4
+* Opponent recovers FUFA";;;Arm Grab Flip;r31;;File:t8-p2-nina-1+3.mp4;Nina-1+3;nina
 2+4;t;35;i12~14;+0;+0d;;"* Throw break 1 or 2
 * Side switch
-* Nina recovers BT";;;Nina-2+4;Over the Back Toss;r31;;File:t8-p2-nina-2+4.mp4
+* Nina recovers BT";;;Over the Back Toss;r31;;File:t8-p2-nina-2+4.mp4;Nina-2+4;nina
 2+4,2;t;25;;+0;-5d;;"* Unbreakable
-* Side switch";;;Nina-2+4,2;Shoulder Through Buster (STB);;;File:t8-p2-nina-2+4,2.mp4
+* Side switch";;;Shoulder Through Buster (STB);;;File:t8-p2-nina-2+4,2.mp4;Nina-2+4,2;nina
 ABK.1;t;15;;-3;+0d;;"* Removes Recoverable Health
 * Throw break 1
-* Powered up input: ABK.3,1,1+2";;;Nina-ABK.1;Double Arm Break;;;
+* Powered up input: ABK.3,1,1+2";;;Double Arm Break;;;;Nina-ABK.1;nina
 ABK.1;t;15;;-3;+0d;;"*
 Removes Recoverable Health
 * Throw break 1
-* Powered up input: ABK.3,1,1+2";;;Nina-ABK.1;Double Arm Break;;;
+* Powered up input: ABK.3,1,1+2";;;Double Arm Break;;;;Nina-ABK.1;nina
 ABK.2;t;15;;-3;+3d;;"* Removes Recoverable Health
 * Throw break 2
-* Powered up input: ABK.1,2,3,4,1+2";;;Nina-ABK.2;Falling Arm Break;;;
+* Powered up input: ABK.1,2,3,4,1+2";;;Falling Arm Break;;;;Nina-ABK.2;nina
 ABK.2;t;15;;-3;+3d;;"* Removes Recoverable Health
 * Throw break 2
-* Powered up input: ABK.2,1,3,4,1+2";;;Nina-ABK.2;Falling Arm Break;;;
+* Powered up input: ABK.2,1,3,4,1+2";;;Falling Arm Break;;;;Nina-ABK.2;nina
 BHS.1;t;8;;-3;+3d;;"* Throw break 1
 * Powered up input: BHS.1,3,1
-* Alternate input: BTR.1";;;Nina-BHS.1;Arm Break (ABK);;;
+* Alternate input: BTR.1";;;Arm Break (ABK);;;;Nina-BHS.1;nina
 BHS.2;t;9,6;;-3;+0d;;"* Throw break 2
 * Powered up input: BHS.2,3,4,2
-* Listed in previous games as Triple Slaps";;;Nina-BHS.2;Stomach Lock (TSS);;;File:t8-p2-nina-bhs.2.mp4
+* Listed in previous games as Triple Slaps";;;Stomach Lock (TSS);;;File:t8-p2-nina-bhs.2.mp4;Nina-BHS.2;nina
 BHS.1+2;t;10,10;;-3;+3d;;"* Removes Recoverable Health
 * Throw break 1+2
 * Can side switch on hit
-* Powered up input: BHS.3,4,3,1+2";;;Nina-BHS.1+2;Seoi Gyaku Juji-gatame;;;File:t8-p2-nina-bhs.1+2.mp4
+* Powered up input: BHS.3,4,3,1+2";;;Seoi Gyaku Juji-gatame;;;File:t8-p2-nina-bhs.1+2.mp4;Nina-BHS.1+2;nina
 BTR.1;t;13;;-3;+4d;;"* Throw break 1
-* Powered up input: BTR.1,3,1";;;Nina-BTR.1;Arm Break (ABK);;;
+* Powered up input: BTR.1,3,1";;;Arm Break (ABK);;;;Nina-BTR.1;nina
 BTR.2;t;10;;-3;+3d;;"* Throw break 2
-* Powered up input: BTR.2,1,1+2";;;Nina-BTR.2;Twisted Nightmare (NTM);;;File:t8-p2-nina-btr.2.mp4
+* Powered up input: BTR.2,1,1+2";;;Twisted Nightmare (NTM);;;File:t8-p2-nina-btr.2.mp4;Nina-BTR.2;nina
 Back throw;t;60;;;+3d;;"* Removes Recoverable Health
 * Unbreakable
-* Can side switch on hit";;;Nina-Back throw;Leaping Triangle Hold;;;
+* Can side switch on hit";;;Leaping Triangle Hold;;;;Nina-Back throw;nina
 CHD.1;t;25;;+0d;+3d;;"* Removes Recoverable Health
 * Throw break 1
-* Powered up input: CHD.3,4,1+2";;;Nina-CHD.1;Commando Arm Lock;;;File:t8-p2-nina-chd.1.mp4
+* Powered up input: CHD.3,4,1+2";;;Commando Arm Lock;;;File:t8-p2-nina-chd.1.mp4;Nina-CHD.1;nina
 CHD.2;t;8;;+0d;+7;;"* Throw break 2
-* Powered up input: CHD.4,2,1+2";;;Nina-CHD.2;Heel Hold (HHD);;;File:t8-p2-nina-chd.2.mp4
+* Powered up input: CHD.4,2,1+2";;;Heel Hold (HHD);;;File:t8-p2-nina-chd.2.mp4;Nina-CHD.2;nina
 HHD.1;t;20;;-9;+3;;"* Removes Recoverable Health
 * Throw break 1
 * Powered up input: HHD.3,4,2+4
-* Alternate name: Double Snap";;;Nina-HHD.1;Kneebar;;;
+* Alternate name: Double Snap";;;Kneebar;;;;Nina-HHD.1;nina
 HHD.2;t;25;;-9;+0d;;"* Removes Recoverable Health
 * Throw break 2
-* Powered up input: HHD.1,3,2+4,1+2";;;Nina-HHD.2;Double Heel Hold;;;File:t8-p2-nina-hhd.2.mp4
+* Powered up input: HHD.1,3,2+4,1+2";;;Double Heel Hold;;;File:t8-p2-nina-hhd.2.mp4;Nina-HHD.2;nina
 Left throw;t;40;;-3;+1d;;"* Removes Recoverable Health
 * Throw break 1
-* Can side switch on hit";;;Nina-Left throw;Kneebar;;;
+* Can side switch on hit";;;Kneebar;;;;Nina-Left throw;nina
 NTM.1;t;15;;-3;+3d;;"* Removes Recoverable Health
 * Throw break 1
-* Powered up input: NTM.1,1,2,1+2";;;Nina-NTM.1;Neck Crusher;;;
+* Powered up input: NTM.1,1,2,1+2";;;Neck Crusher;;;;Nina-NTM.1;nina
 NTM.2;t;25;;-3;+3d;;"* Removes Recoverable Health
 * Throw break 2
-* Powered up input: NTM.1,2,4,3,1+3";;;Nina-NTM.2;Leg Stretch Arm Lock;;;
-Right throw;t;38;;-3;+1d;;Throw break 2;;;Nina-Right throw;Hammer Throw;;;
+* Powered up input: NTM.1,2,4,3,1+3";;;Leg Stretch Arm Lock;;;;Nina-NTM.2;nina
+Right throw;t;38;;-3;+1d;;Throw break 2;;;Hammer Throw;;;;Nina-Right throw;nina
 STB.2;t;30;;+0;-6d;;"* Removes Recoverable Health
 * Unbreakable
 * Side switch
-* Powered up input: STB.2,1,3";;;Nina-STB.2;Shoulder Through Arm Breaker;;;File:t8-p2-nina-stb.2.mp4
+* Powered up input: STB.2,1,3";;;Shoulder Through Arm Breaker;;;File:t8-p2-nina-stb.2.mp4;Nina-STB.2;nina
 TSS.1;t;15;;-3;+0d;;"* Removes Recoverable Health
 * Throw break 1
-* Powered up input: TSS.1,1,2,1+2";;;Nina-TSS.1;Neck Crusher;;;
+* Powered up input: TSS.1,1,2,1+2";;;Neck Crusher;;;;Nina-TSS.1;nina
 TSS.2;t;20;;;+3d;;"* Removes Recoverable Health
 * Throw break 2
-* Powered up input: TSS.1,2,4,3,1+3";;;Nina-TSS.2;Leg Stretch Arm Lock;;;
+* Powered up input: TSS.1,2,4,3,1+3";;;Leg Stretch Arm Lock;;;;Nina-TSS.2;nina
 df,df+1;t;43;i12;-6;-2d;;"* Floor Break
-* Throw break 1+2";fbr;;Nina-df,df+1;Elbow Smash;r27;;File:t8-p2-nina-df,df+1.mp4
-df+1+3;t;37;i11;-2;+1d;;Throw break 1;;;Nina-df+1+3;Elbow > Arm Grab Flip;r28;;File:t8-p2-nina-df+1+3.mp4
+* Throw break 1+2";fbr;;Elbow Smash;r27;;File:t8-p2-nina-df,df+1.mp4;Nina-df,df+1;nina
+df+1+3;t;37;i11;-2;+1d;;Throw break 1;;;Elbow > Arm Grab Flip;r28;;File:t8-p2-nina-df+1+3.mp4;Nina-df+1+3;nina
 df+2+4;t;37;i11;-2;+1d;;"* Removes Recoverable Health
 * Throw break 2
-* Side switch on hit";;;Nina-df+2+4;Reverse Neck Breaker;r28;;File:t8-p2-nina-df+2+4.mp4
+* Side switch on hit";;;Reverse Neck Breaker;r28;;File:t8-p2-nina-df+2+4.mp4;Nina-df+2+4;nina
 f+1+3;t;15;i13;-2;+1d;;"* Throw break 1
-* Alternate input: qcf+1+3";;;Nina-f+1+3;Crab Hold (CHD);r28;;File:t8-p2-nina-f+1+3.mp4
+* Alternate input: qcf+1+3";;;Crab Hold (CHD);r28;;File:t8-p2-nina-f+1+3.mp4;Nina-f+1+3;nina
 f+2+4;t;15;i13;-2;+0;;"* Throw break 2
-* Alternate input: qcf+2+4";;;Nina-f+2+4;Backhand Slap (BHS);r28;;File:t8-p2-nina-f+2+4.mp4
+* Alternate input: qcf+2+4";;;Backhand Slap (BHS);r28;;File:t8-p2-nina-f+2+4.mp4;Nina-f+2+4;nina
 qcb,B+1+3;t;15;i12;;+6c;;"* Unbreakable
-* qcb,B+2+4";;;Nina-qcb,B+1+3;Betrayer (BTR);r27;;File:t8-p2-nina-qcb,b+1+3.mp4
-uf+1+2;t;30,10;i12;+0;+29a (-32);;;;;Nina-uf+1+2;Jumping Flip;r28;;File:t8-p2-nina-uf+1+2.mp4
+* qcb,B+2+4";;;Betrayer (BTR);r27;;File:t8-p2-nina-qcb,b+1+3.mp4;Nina-qcb,B+1+3;nina
+uf+1+2;t;30,10;i12;+0;+29a (-32);;;;;Jumping Flip;r28;;File:t8-p2-nina-uf+1+2.mp4;Nina-uf+1+2;nina
 uf+3+4;t;18;i23;-23a~-16a;+9a (-1);;"* Transitions to throw on front hit
 * Throw break 2
-* Low crush 3~";js3~;FUFT;Nina-uf+3+4;Leaping Heel Hold (HHD);r35 FUFT;;
+* Low crush 3~";js3~;FUFT;Leaping Heel Hold (HHD);r35 FUFT;;;Nina-uf+3+4;nina

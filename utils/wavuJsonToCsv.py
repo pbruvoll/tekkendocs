@@ -21,11 +21,11 @@ columns = [
     {"wavuId": "notes", "displayName": "Notes"},
     {"wavuId": "tags", "displayName": "Tags"},
     {"wavuId": "transitions", "displayName": "Transitions"}, # this value is created by this converter and not present in Wavu
-    {"wavuId": "id", "displayName": "Wavu id"},
     {"wavuId": "name", "displayName": "Name"},
     {"wavuId": "recovery", "displayName": "Recovery"},
     {"wavuId": "image", "displayName": "Image"},
     {"wavuId": "video", "displayName": "Video"},
+    {"wavuId": "id", "displayName": "Wavu id"},
 ]
 
 # 2,STB.4 -> STB.4,2
@@ -138,14 +138,14 @@ def convert(filePath, outDir):
     f = open(filePath, "r", encoding='utf-8')
     jsonData = json.load(f)
     f.close()
-    csvContent = [list(map(lambda x: x["displayName"], columns))];
+    csvContent = [list(map(lambda x: x["displayName"], columns)) + ["Character id"]];
     for move in jsonData :
         if charName == "miary-zo" or charName == "fahkumram" or charName == "anna" or charName == "armor-king" or charName == "shaheen" or charName == "kunimitsu": 
             generateVideoLink(move)    
     for move in jsonData :
         fillMissingVideoFromExtendedInput(move, jsonData)
         correctMove(move, charName)
-        csvContent.append(list(map(lambda x: move.get(x["wavuId"], ""), columns)));
+        csvContent.append(list(map(lambda x: move.get(x["wavuId"], ""), columns)) + [charName]);
     
     outputFilePath = os.path.join(charOutDir, charName + "-special.csv")
     outputFile = open(outputFilePath, "w", newline="", encoding='utf-8')
