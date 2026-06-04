@@ -94,6 +94,7 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Enter SET -4 +7 r27 with F";wpn;SET;Kunimitsu-2,2,2;Shrouded Lotus Blade;r32;;t8-p2-kunimitsu-2,2,2.mp4
 2,2,2,2;h, m, h, h;12, 14, 16, 16;i12, ,i15~16;-6;+3;;"* Balcony Break (airborne)
 * Weapon
+* Jail from 3rd block with ?F delay
 * Combo from 3rd hit with 5f delay
 * Combo from 2nd CH
 * Input can be delayed 5f
@@ -135,13 +136,13 @@ f+3;;;;;;;"* Transition to r16 FC with D
 * Cancel to r25 with B (can block mids or highs on frame 12~)";;FC,SET;Kunimitsu-f+3;Setsunagake;r10 SET;;t8-p2-kunimitsu-f+3.mp4
 f+4;m;12;i15;-5;-1;+7;"* Knee
 * Enter SET +3 +7 +15 r19 with F";kne;SET;Kunimitsu-f+4;Kusabiyuki;r27;;t8-p2-kunimitsu-f+4.mp4
-f+1+2;m;23;i17~18;-6;+9a (+0);+7;"* Heat Engager
+f+1+2;m;23;i17~18;-6;+9a (+0);;"* Heat Engager
 
 * Heat Dash +5, +45a (+35)
 
 * Balcony Break
 * Weapon
-* Chip damage on block";he bbr wpn chp;;Kunimitsu-f+1+2;Gozuryu;r35;;t8-p2-kunimitsu-f+1+2.mp4
+* 4 chip damage on block";he bbr wpn;;Kunimitsu-f+1+2;Gozuryu;r35;;t8-p2-kunimitsu-f+1+2.mp4
 f+3+4;m,h;10,13;i15 i13;-5;+23a (+6);;"* Balcony Break
 * BT transition is -11
 * Low crush 19~24
@@ -333,31 +334,6 @@ uf+3+4;;;;;;;"* Actionable after 18f
 * CH state on your next attack for 5 seconds ''(Tekken 7 and prior games)''
 * 10% damage increase on the next attack for 5 seconds ''(Tekken 8 season 2 patch onward)''
 * Attacks taken will be CH for 5 seconds";;;Kunimitsu-1+2+3+4;Ki Charge;r55;;t8-p2-kunimitsu-1+2+3+4.mp4
-d,df,f+1;sm,t;10,28;i15~26;-13;-4d;;"* Weapon
-* Bufferable
-* Block advantage is always -13
-* Transitions to attack throw on hit
-* 25 total scaled damage";wpn;;Kunimitsu-d,df,f+1;Savage Kunai Throw;r49;;t8-p2-kunimitsu-d,df,f+1.mp4
-d,df,f+1,F;sm,t;10,28;i15~26;-13;-4d;;"* Weapon
-* Bufferable
-* Block advantage is always -13
-* Transitions to attack throw on hit
-* 25 total scaled damage
-* Available on hit only
-* Side switch on hit";wpn;;Kunimitsu-d,df,f+1,F;Piercing Kunai Throw;r49;;t8-p2-kunimitsu-d,df,f+1,f.mp4
-d,df,f+2;M;24;i13~14;-12c;+8a;;"* Balcony Break
-* Spike
-* Weapon
-* Bufferable
-* Chip damage on block
-* Hit vs BT +3d";bbr spk wpn chp;;Kunimitsu-d,df,f+2;Oboro Engetsu;r41;;t8-p2-kunimitsu-d,df,f+2.mp4
-d,df,f+1+2;m;25;i20~21;-9;+6a;;"* Tornado
-* Balcony Break
-* Weapon
-* Bufferable
-* Chip damage on block
-* Low crush 21~38
-* Floating state 39~41";trn bbr wpn chp js21~38 fs39~41;;Kunimitsu-d,df,f+1+2;Ensa Sogetsu;r38;;t8-p2-kunimitsu-d,df,f+1+2.mp4
 f,F+2;M;18;i19~20;-12;+19a (+2);+33a (+22);"* Tornado
 * Balcony Break
 * Weapon
@@ -366,20 +342,46 @@ f,F+2;M;18;i19~20;-12;+19a (+2);+33a (+22);"* Tornado
 f,F+4;m;11;i9~11;-17~-15;-1~+1;;"Knee
 * Low crush 9~25
 * Floating state 26~28";kne js9~25 fs26~28;;Kunimitsu-f,F+4;;r34;;t8-p2-kunimitsu-f,f+4.mp4
-f,F+4,2;m, h;11, 23;i9~11, i13~14;-17~-16;+10d;;"* Balcony Break
+f,F+4,2;m, h;11, 23;i9~11, i13~14;-17~-16;+10c;;"* Balcony Break
 * Spike
 * Weapon
 * Jail from 1st attack with 1f delay
 * Forces tech backroll on hit
 * Low crush 1~15
 * Floating state 16~18";bbr spk wpn js1~15 fs16~18;;Kunimitsu-f,F+4,2;Raging Blizzard;r37;;t8-p2-kunimitsu-f,f+4,2.mp4
-f,n,d,df+2;M,h;15,21;i14~15 i25~26;-17~-16;+73a (+57);;"* Tornado
+f,d,df+2;M,h;15,21;i14~15 i25~26;-17~-16;+73a (+57);;"* Tornado
 * Weapon
 * 2nd hit available only as combo from 1st hit
 * Bufferable
 * 29 total scaled damage
+* 3 chip damage on block
 * Low crush 16~36
-* Floating state 37~39";trn wpn js16~36 fs37~39;;Kunimitsu-f,n,d,df+2;Tensho Kaisen;r39;;t8-p2-kunimitsu-f,n,d,df+2.mp4
+* Floating state 37~39";trn wpn js16~36 fs37~39;;Kunimitsu-f,d,df+2;Tensho Kaisen;r39;;t8-p2-kunimitsu-f,d,df+2.mp4
+qcf+1;sm,t;10,28;i15~26;-13;-4d;;"* Weapon
+* Bufferable
+* Block advantage is always -13
+* Transitions to attack throw on hit
+* 25 total scaled damage";wpn;;Kunimitsu-qcf+1;Savage Kunai Throw;r49;;t8-p2-kunimitsu-qcf+1.mp4
+qcf+1,F;sm,t;10,28;i15~26;-13;-4d;;"* Weapon
+* Bufferable
+* Block advantage is always -13
+* Transitions to attack throw on hit
+* 25 total scaled damage
+* Available on hit only
+* Side switch on hit";wpn;;Kunimitsu-qcf+1,F;Piercing Kunai Throw;r49;;t8-p2-kunimitsu-qcf+1,f.mp4
+qcf+2;M;24;i13~14;-12c;+8a;;"* Balcony Break
+* Spike
+* Weapon
+* Bufferable
+* 2 chip damage on block
+* Hit vs BT +3d";bbr spk wpn;;Kunimitsu-qcf+2;Oboro Engetsu;r41;;t8-p2-kunimitsu-qcf+2.mp4
+qcf+1+2;m;25;i20~21;-9;+6a;;"* Tornado
+* Balcony Break
+* Weapon
+* Bufferable
+* 5 chip damage on block
+* Low crush 21~38
+* Floating state 39~41";trn bbr wpn js21~38 fs39~41;;Kunimitsu-qcf+1+2;Ensa Sogetsu;r38;;t8-p2-kunimitsu-qcf+1+2.mp4
 uf,n,3;m;25;i31;-29;+2a (-8);;"* Balcony Break
 * Low crush";bbr js;;Kunimitsu-uf,n,3;;;;t8-p2-kunimitsu-uf,n,3.mp4
 uf,n,4;m;15;i24;-14;+17a (+7);;"* Balcony Break
@@ -387,10 +389,10 @@ uf,n,4;m;15;i24;-14;+17a (+7);;"* Balcony Break
 f,f,F+2;h,t;20,20;i15~17;+6;+0d;;"* Balcony Break (airborne)
 * Weapon
 * Transitions to attack throw on front standing hit
-* Chip damage on block
+* 4 chip damage on block
 * Side switch on hit
 * Hit vs Side +15a
-* Hit vs BT +15a (+6)";wpn chp;;Kunimitsu-f,f,F+2;Sword Smash;r32;;t8-p2-kunimitsu-f,f,f+2.mp4
+* Hit vs BT +15a (+6)";wpn;;Kunimitsu-f,f,F+2;Sword Smash;r32;;t8-p2-kunimitsu-f,f,f+2.mp4
 f,f,F+3;m;30;i23~27;+3~+7;+18c;;"* Balcony Break
 * Hit vs BT +15d
 * Forces tech backroll on hit
@@ -468,7 +470,7 @@ BT.1,3;h, m;10, 12;i11, i22~23;-5;+2;+11;"* Knee
 * Input can be delayed 8f
 * Move can be delayed 4f
 * Transition to SET -1 +6 +15 r19 with F";kne;SET;Kunimitsu-BT.1,3;Aratama Kick;r23;;t8-p2-kunimitsu-bt.1,3.mp4
-BT.1,4;h, h;10, 20;i11, i21;+3;+15d;;"* Heat Engager
+BT.1,4;h, h;10, 20;i11, i21;+3;+15c;;"* Heat Engager
 
 * Heat Dash +5, +43d (+35)
 
@@ -512,7 +514,7 @@ BT.f+1+2;m;21;i16~17;-13;+54a;;"* Tornado
 CH.SET.2;m,t;20,10;i12;;;+55a (+48);"* Weapon
 * Attack Throw
 * Instant tornado";wpn;;Kunimitsu-CH.SET.2;Souenzan;r65;;t8-p2-kunimitsu-ch.set.2.mp4
-KAT.1;h;12;i11;-7;+4;;;;;Kunimitsu-KAT.1;;r28;;t8-p2-kunimitsu-kat.1.mp4
+KAT.1;h;12;i11;-7;+4;;* Has good left sidestep tracking;;;Kunimitsu-KAT.1;;r28;;t8-p2-kunimitsu-kat.1.mp4
 KAT.1,2;h, m;12, 20;i11, i21;-9;+9g;;"* Heat Engager
 
 * Heat Dash +5, +43d (+35)
@@ -520,6 +522,7 @@ KAT.1,2;h, m;12, 20;i11, i21;-9;+9g;;"* Heat Engager
 * Balcony Break
 * Weapon
 * Combo from 1st hit with 11f delay
+* Interrupt from 1st block with i3
 * Input can be delayed 11f
 * Move can be delayed 7f
 * Cancel into FC -14 -3 r31 with D on frame 12 (cs7~)";he bbr wpn;;Kunimitsu-KAT.1,2;Severing Snow;r34;;t8-p2-kunimitsu-kat.1,2.mp4
