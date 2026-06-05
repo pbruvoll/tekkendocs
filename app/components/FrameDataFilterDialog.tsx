@@ -1,6 +1,7 @@
 import { MixerHorizontalIcon } from '@radix-ui/react-icons';
 import { Button, Dialog } from '@radix-ui/themes';
 import { filterKey } from '~/constants/filterConstants';
+import { isFilterValueActive } from '~/utils/filterUtils';
 import {
   type FrameDataFilterSectionProps,
   FrameDataFilterSelection,
@@ -20,15 +21,7 @@ export const FrameDataFilterDialog = ({
   states,
   transitions,
 }: FrameDataFilterDialogProps) => {
-  const filterCount = Object.entries(filter).filter(([, value]) => {
-    if (value === undefined || value === '') {
-      return false;
-    }
-    if (Array.isArray(value)) {
-      return value.length > 0;
-    }
-    return true;
-  }).length;
+  const filterCount = Object.values(filter).filter(isFilterValueActive).length;
 
   return (
     <Dialog.Root>
