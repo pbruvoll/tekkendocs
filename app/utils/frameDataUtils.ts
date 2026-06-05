@@ -418,7 +418,9 @@ export const filterMoves = (moves: Move[], filter: MoveFilter | undefined) => {
 
   if (filter.character?.length) {
     filterFuncs.push((move: Move) => {
-      return !!(move.characterId && filter.character?.includes(move.characterId));
+      return !!(
+        move.characterId && filter.character?.includes(move.characterId)
+      );
     });
   }
 

@@ -17,7 +17,9 @@ export const cleanCommand = (move: string): string => {
     .toLowerCase();
 };
 
-export const isFilterValueActive = (value: MoveFilter[keyof MoveFilter]): boolean => {
+export const isFilterValueActive = (
+  value: MoveFilter[keyof MoveFilter],
+): boolean => {
   if (value === undefined || value === '') return false;
   if (Array.isArray(value)) return value.length > 0;
   return true;
