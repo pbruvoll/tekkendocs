@@ -128,7 +128,12 @@ export default function FrameQuiz() {
     [searchParams],
   );
 
-  const persistToStorage = !Object.values(moveFilter).some(isFilterValueActive);
+  const hasActiveFilter = useMemo(
+    () => Object.values(moveFilter).some(isFilterValueActive),
+    [moveFilter],
+  );
+
+  const persistToStorage = !hasActiveFilter;
 
   const quizContextLabel = useMemo((): string | null => {
     const { character, ...otherFilters } = moveFilter;
@@ -153,8 +158,11 @@ export default function FrameQuiz() {
   }, [moveFilter]);
 
   const eligibleMoves = useMemo(
-    () => getEligibleQuizMoves(filterMoves(moves, moveFilter)),
-    [moves, moveFilter],
+    () =>
+      getEligibleQuizMoves(
+        hasActiveFilter ? filterMoves(moves, moveFilter) : moves,
+      ),
+    [moves, moveFilter, hasActiveFilter],
   );
 
   useEffect(() => {
