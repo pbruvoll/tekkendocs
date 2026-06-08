@@ -25,6 +25,8 @@ import lili from '~/images/t8/guides/lili-600.webp';
 import nina from '~/images/t8/guides/nina-600.webp';
 import panda from '~/images/t8/guides/panda-600.webp';
 import raven from '~/images/t8/guides/raven-600.webp';
+import reina from '~/images/t8/guides/reina-600.webp';
+import shaheen from '~/images/t8/guides/shaheen-600.webp';
 import steve from '~/images/t8/guides/steve-600.webp';
 import victor from '~/images/t8/guides/victor-600.webp';
 import xiaoyu from '~/images/t8/guides/xiaoyu-600.webp';
@@ -58,6 +60,8 @@ export const t8GuideImgSmallMap: Record<string, string> = {
   nina,
   panda,
   raven,
+  reina,
+  shaheen,
   steve,
   victor,
   xiaoyu,
