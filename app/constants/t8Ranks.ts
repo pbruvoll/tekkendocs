@@ -44,7 +44,7 @@ export type T8Rank = {
   points: number | undefined;
 };
 
-export const t8Ranks: T8Rank[] = [
+export const t8Ranks = [
   { group: 'Silver', name: 'Beginner', points: 0, image: beginner },
   { group: 'Silver', name: '1st Dan', points: 4000, image: firstDan },
   { group: 'Silver', name: '2nd Dan', points: 8000, image: secondDan },
@@ -168,4 +168,4 @@ export const t8Ranks: T8Rank[] = [
     points: 430000,
     image: godOfDestructionInf,
   },
-];
+] as const satisfies T8Rank[];

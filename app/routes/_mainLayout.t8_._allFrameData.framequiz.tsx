@@ -23,7 +23,7 @@ import {
 } from '~/features/frameQuiz/moveSelection';
 import {
   appendRecentQuestionId,
-  pickRandomQuizMoveExcludingRecent,
+  takeQuestionFromBag,
 } from '~/features/frameQuiz/random';
 import { getFrameQuizRankForStreak } from '~/features/frameQuiz/streakRank';
 import {
@@ -49,6 +49,8 @@ type PersistedFrameQuizStats = {
 type PendingAdvance = {
   nextQuestion: QuizMove | null;
   recentQuestionIds: string[];
+  questionBag: QuizMove[];
+  questionBagCursor: number;
 };
 
 const defaultPersistedFrameQuizStats: PersistedFrameQuizStats = {
@@ -106,6 +108,8 @@ export default function FrameQuiz() {
   const [consecutiveCorrectStreak, setConsecutiveCorrectStreak] = useState(0);
   const [displayedStreak, setDisplayedStreak] = useState(0);
   const [recentQuestionIds, setRecentQuestionIds] = useState<string[]>([]);
+  const [questionBag, setQuestionBag] = useState<QuizMove[]>([]);
+  const [questionBagCursor, setQuestionBagCursor] = useState(0);
   const [currentQuestion, setCurrentQuestion] = useState<QuizMove | null>(null);
   const [questionFeedback, setQuestionFeedback] =
     useState<QuestionFeedback | null>(null);
@@ -291,12 +295,18 @@ export default function FrameQuiz() {
   }, [currentStreakRank.image, shouldReduceMotion]);
 
   const handleStart = () => {
-    const firstQuestion = pickRandomQuizMoveExcludingRecent(eligibleMoves, []);
+    const {
+      question: firstQuestion,
+      questionBag: nextQuestionBag,
+      questionBagCursor: nextQuestionBagCursor,
+    } = takeQuestionFromBag([], 0, eligibleMoves, []);
     setScore(0);
     setTotalAnswered(0);
     setConsecutiveCorrectStreak(0);
     setDisplayedStreak(0);
     setRecentQuestionIds([]);
+    setQuestionBag(nextQuestionBag);
+    setQuestionBagCursor(nextQuestionBagCursor);
     setQuestionFeedback(null);
     setIsFeedbackVisible(false);
     setPendingAdvance(null);
@@ -325,7 +335,15 @@ export default function FrameQuiz() {
       currentQuestion.id,
       recentWindowSize,
     );
-    const nextQuestion = pickRandomQuizMoveExcludingRecent(
+    const sourceQuestionBag = isCorrect ? questionBag : [];
+    const sourceQuestionBagCursor = isCorrect ? questionBagCursor : 0;
+    const {
+      question: nextQuestion,
+      questionBag: nextQuestionBag,
+      questionBagCursor: nextQuestionBagCursor,
+    } = takeQuestionFromBag(
+      sourceQuestionBag,
+      sourceQuestionBagCursor,
       eligibleMoves,
       nextRecentQuestionIds,
     );
@@ -361,6 +379,8 @@ export default function FrameQuiz() {
     setPendingAdvance({
       nextQuestion,
       recentQuestionIds: nextRecentQuestionIds,
+      questionBag: nextQuestionBag,
+      questionBagCursor: nextQuestionBagCursor,
     });
     setQuestionFeedback({
       isCorrect,
@@ -376,6 +396,8 @@ export default function FrameQuiz() {
 
     setRecentQuestionIds(pendingAdvance.recentQuestionIds);
     setCurrentQuestion(pendingAdvance.nextQuestion);
+    setQuestionBag(pendingAdvance.questionBag);
+    setQuestionBagCursor(pendingAdvance.questionBagCursor);
     setQuestionFeedback(null);
     setDisplayedStreak(consecutiveCorrectStreak);
     setPendingAdvance(null);

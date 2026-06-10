@@ -53,7 +53,6 @@ export const hasVisibleProperties = (move: Move): boolean => {
 };
 
 export const getEligibleQuizMoves = (moves: Move[]): QuizMove[] => {
-  const seenMoveIds = new Set<string>();
   return moves.reduce<QuizMove[]>((current, move, currentIndex) => {
     if (!move.video) {
       return current;
@@ -90,10 +89,6 @@ export const getEligibleQuizMoves = (moves: Move[]): QuizMove[] => {
     }
 
     const moveId = getMoveId(move);
-    if (seenMoveIds.has(moveId)) {
-      return current;
-    }
-    seenMoveIds.add(moveId);
 
     current.push({ id: moveId, move, blockValue });
     return current;
