@@ -49,6 +49,58 @@ export const appendRecentQuestionId = (
   return [...recentQuestionIds, questionId].slice(-maxRecentCount);
 };
 
+const shuffleQuizMoves = (moves: QuizMove[]): QuizMove[] => {
+  const shuffled = [...moves];
+  for (let index = shuffled.length - 1; index > 0; index--) {
+    const randomIndex = Math.floor(Math.random() * (index + 1));
+    const current = shuffled[index];
+    shuffled[index] = shuffled[randomIndex];
+    shuffled[randomIndex] = current;
+  }
+
+  return shuffled;
+};
+
+export const createQuestionBagExcludingRecent = (
+  moves: QuizMove[],
+  recentQuestionIds: string[],
+): QuizMove[] => {
+  if (!moves.length) {
+    return [];
+  }
+
+  const excludedIds = new Set(recentQuestionIds);
+  const candidateMoves = moves.filter((move) => !excludedIds.has(move.id));
+  const pool = candidateMoves.length > 0 ? candidateMoves : moves;
+  return shuffleQuizMoves(pool);
+};
+
+type TakeQuestionFromBagResult = {
+  question: QuizMove | null;
+  remainingQuestionBag: QuizMove[];
+};
+
+export const takeQuestionFromBag = (
+  currentQuestionBag: QuizMove[],
+  moves: QuizMove[],
+  recentQuestionIds: string[],
+): TakeQuestionFromBagResult => {
+  const sourceBag =
+    currentQuestionBag.length > 0
+      ? currentQuestionBag
+      : createQuestionBagExcludingRecent(moves, recentQuestionIds);
+
+  if (!sourceBag.length) {
+    return { question: null, remainingQuestionBag: [] };
+  }
+
+  const [question, ...remainingQuestionBag] = sourceBag;
+  return {
+    question: question || null,
+    remainingQuestionBag,
+  };
+};
+
 export const pickRandomQuizMoveExcludingRecent = (
   moves: QuizMove[],
   recentQuestionIds: string[],
