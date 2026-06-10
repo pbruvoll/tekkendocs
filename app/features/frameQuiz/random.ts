@@ -77,27 +77,37 @@ export const createQuestionBagExcludingRecent = (
 
 type TakeQuestionFromBagResult = {
   question: QuizMove | null;
-  remainingQuestionBag: QuizMove[];
+  questionBag: QuizMove[];
+  questionBagCursor: number;
 };
 
 export const takeQuestionFromBag = (
   currentQuestionBag: QuizMove[],
+  currentQuestionBagCursor: number,
   moves: QuizMove[],
   recentQuestionIds: string[],
 ): TakeQuestionFromBagResult => {
-  const sourceBag =
-    currentQuestionBag.length > 0
-      ? currentQuestionBag
-      : createQuestionBagExcludingRecent(moves, recentQuestionIds);
+  let questionBag = currentQuestionBag;
+  let questionBagCursor = currentQuestionBagCursor;
 
-  if (!sourceBag.length) {
-    return { question: null, remainingQuestionBag: [] };
+  if (questionBagCursor >= questionBag.length) {
+    questionBag = createQuestionBagExcludingRecent(moves, recentQuestionIds);
+    questionBagCursor = 0;
   }
 
-  const [question, ...remainingQuestionBag] = sourceBag;
+  const question = questionBag[questionBagCursor] || null;
+  if (!question) {
+    return {
+      question: null,
+      questionBag: [],
+      questionBagCursor: 0,
+    };
+  }
+
   return {
-    question: question || null,
-    remainingQuestionBag,
+    question,
+    questionBag,
+    questionBagCursor: questionBagCursor + 1,
   };
 };
 
