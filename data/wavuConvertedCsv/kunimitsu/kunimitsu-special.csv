@@ -77,32 +77,35 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Combo from 1st hit
 * Transition to BT with B";wpn;BT;Spinning Slash;r30;;t8-p2-kunimitsu-1,2,2.mp4;Kunimitsu-1,2,2;kunimitsu
 1,2,4;h, h, m;5, 8, 20;i10, ,i23~24;-14;+12d;;"* Balcony Break
-* Combo from 1st CH
+* Combo from 1st CH with 3F delay
 * Hit vs BT +9d
 * Low crush 12~32
 * Floating state 33~35";bbr js12~32 fs33~35;;Flash Kick Combination;r35;;t8-p2-kunimitsu-1,2,4.mp4;Kunimitsu-1,2,4;kunimitsu
 1+3+4;;;;;;;;;;Taunt 1;r110;;t8-p2-kunimitsu-1+3+4.mp4;Kunimitsu-1+3+4;kunimitsu
 2;h;12;i12;-5;+1;;* Weapon;wpn;;;r24;;t8-p2-kunimitsu-2.mp4;Kunimitsu-2;kunimitsu
 2,2;h, m;12, 14;i12, i12~13;-6;+5;;"* Weapon
+* Jail from 1st block with 5f delay
 * Combo from 1st hit with 5f delay
+* Transition to KAT -6 +5 r26 with 1+2
 * Input can be delayed 5f
-* Move cannot be delayed";wpn;;Lotus Blade;r26;;t8-p2-kunimitsu-2,2.mp4;Kunimitsu-2,2;kunimitsu
+* Move cannot be delayed";wpn;KAT;Lotus Blade;r26;;t8-p2-kunimitsu-2,2.mp4;Kunimitsu-2,2;kunimitsu
 2,2,2;h, m, h;12, 14, 16;i12, ,i18~19;-9;+2;;"* Weapon
 * Combo from 2nd CH with 4f delay
+* Interrupt with i4 from 2nd block
+* Enter SET -4 +7 r27 with F
 * Input can be delayed 4f
 * Move is delayed 7f
-* Enter SET -4 +7 r27 with F";wpn;SET;Shrouded Lotus Blade;r32;;t8-p2-kunimitsu-2,2,2.mp4;Kunimitsu-2,2,2;kunimitsu
+* Move cannot be delayed";wpn;SET;Shrouded Lotus Blade;r32;;t8-p2-kunimitsu-2,2,2.mp4;Kunimitsu-2,2,2;kunimitsu
 2,2,2,2;h, m, h, h;12, 14, 16, 16;i12, ,i15~16;-6;+3;;"* Balcony Break (airborne)
 * Weapon
-* Jail from 3rd block with ?F delay
-* Combo from 3rd hit with 5f delay
-* Combo from 2nd CH
+* Jail from 3rd block with 5F delay
+* Combo from 2nd CH or 3rd hit with 5f delay
 * Input can be delayed 5f
 * Move cannot be delayed";wpn;;;r31;;t8-p2-kunimitsu-2,2,2,2.mp4;Kunimitsu-2,2,2,2;kunimitsu
 2,2,2,2,2;h, m, h, h, M;12, 14, 16, 16, 18;i12, ,i19~20;-12;+19a (+2);+33a (+23);"* Tornado
 * Weapon
-* Input can be delayed 7f
 * Move cannot be delayed
+* Input can be delayed 7f
 * Low crush 21~35
 * Floating state 36~38";trn wpn js21~35 fs36~38;;Shadow Lotus Blade;r30;;t8-p2-kunimitsu-2,2,2,2,2.mp4;Kunimitsu-2,2,2,2,2;kunimitsu
 3;h;17;i16~17;-7;+7;;"* Homing
@@ -116,6 +119,7 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Weapon
 * Transition to BT
 * Jail from 1st attack with 1f delay
+* Combo from 1st hit with ? delay
 * Input can be delayed 1f
 * Move cannot be delayed
 * Low crush 15~25
@@ -254,7 +258,7 @@ db+3,3,3,3,3,4;l, l, l, l, l, m;8, 7, 7, 5, 5, 15;i18, ,i12~13;-8;+23a (+13);;"*
 * Same animation as ws4
 * Can be performed following any number of db+3 lows except the first and last";bbr;;Manji Spin Low Kicks Front Kick;r26;;t8-p2-kunimitsu-db+3,3,3,3,3,4.mp4;Kunimitsu-db+3,3,3,3,3,4;kunimitsu
 db+4;L;13;i17;-12;+0;+8;;;;Yamashiro Kuzushi;r30;;t8-p2-kunimitsu-db+4.mp4;Kunimitsu-db+4;kunimitsu
-b+1;h;8;i17;+1;+7;+12;;;;;r18;;t8-p2-kunimitsu-b+1.mp4;Kunimitsu-b+1;kunimitsu
+b+1;h;8;i17;+1;+7;+12;Can continue into db+3 up to 3 times (at 13,15,16f respectively) after up to 3 b+1 hits.;;;;r18;;t8-p2-kunimitsu-b+1.mp4;Kunimitsu-b+1;kunimitsu
 b+1,1;h, h;8, 9;i17, i12;+5;+6;+11;* Combo from 1st hit;;;;r14;;t8-p2-kunimitsu-b+1,1.mp4;Kunimitsu-b+1,1;kunimitsu
 b+1,1,1;h, h, h;8, 9, 10;i17, ,i12;+5;+6;+11;"* Combo from 1st hit
 * Combo from 2nd hit";;;;r14;;t8-p2-kunimitsu-b+1,1,1.mp4;Kunimitsu-b+1,1,1;kunimitsu
@@ -435,8 +439,11 @@ SS.4;l;16;i20~22;-37;+4c;;"* Clean Hit +13d
 * 17 total scaled damage
 * Low crush 9~40
 * Floating state 41~43";bbr js9~40 fs41~43;;Hiryu Falling Sakura;;;t8-p2-kunimitsu-airborne.ub+3+4.mp4;Kunimitsu-(Airborne).ub+3+4;kunimitsu
-(Back to wall).b,b,UB;m;21;i37~38;-3c;+15a;;"* Weapon
-* Low crush";wpn js;;[[Wall Jump Attack]];;;t8-p2-kunimitsu-back-to-wall.b,b,ub.mp4;Kunimitsu-(Back to wall).b,b,UB;kunimitsu
+(Back to wall).b,b,UB;M;21;i37~38;-3c;+15a;;"* Floor Break
+* Weapon
+* Floating state 5~13
+* Low crush 14~31
+* Floating state 32~34";fbr wpn fs5~13 js14~31 fs32~34;;[[Wall Jump Attack]];r34;;t8-p2-kunimitsu-back-to-wall.b,b,ub.mp4;Kunimitsu-(Back to wall).b,b,UB;kunimitsu
 BT.1;h;10;i11;-8;+8;;* Elbow;elb;BT;;r27 BT;;t8-p2-kunimitsu-bt.1.mp4;Kunimitsu-BT.1;kunimitsu
 BT.1,2;h, m;10, 14;i11, i21~22;-8;+3;;"* Weapon
 * Combo from 1st hit with 8f delay
@@ -630,8 +637,7 @@ SET.uf+4;m,t;8,16;i13~14;-14;+0d;;"* Floor Break
 * Low crush 11~32
 * Floating state 33~35";fbr js11~32 fs33~35;;Chakra Drop;r41;;t8-p2-kunimitsu-set.uf+4.mp4;Kunimitsu-SET.uf+4;kunimitsu
 SET.uf+1+2;;;i16;;;;;;;;r28;;t8-p2-kunimitsu-set.uf+1+2.mp4;Kunimitsu-SET.uf+1+2;kunimitsu
-hFC.1;sl;5;i10;-5;+6;;"* Transition to Standing with f
-* +6c on crouching hit
+hFC.1;sl;5;i10;-5;+6;;"* Transition to r24 with f
 * High crush 1~";cs1~;FC;Crouch Jab;r24 FC;;t8-p2-kunimitsu-hfc.1.mp4;Kunimitsu-hFC.1;kunimitsu
 hFC.2;sl;8;i11;-4;+7;;* High crush 1~;cs1~;FC;;r23 FC;;t8-p2-kunimitsu-hfc.2.mp4;Kunimitsu-hFC.2;kunimitsu
 hFC.3;L;10;i16;-17;-6;;* High crush 1~;cs1~;FC;;r36 FC;;t8-p2-kunimitsu-hfc.3.mp4;Kunimitsu-hFC.3;kunimitsu
