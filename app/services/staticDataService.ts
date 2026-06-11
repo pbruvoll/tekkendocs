@@ -195,6 +195,7 @@ export const characterGuideAuthors: Record<
     lili: { author: 'DewGlider', version: 'S3' },
     nina: { author: 'Lalo', version: 'S3' },
     raven: { author: 'JacobKaas', version: 'S3' },
+    shaheen: { author: 'Alihandal', version: 'S3' },
     steve: { author: 'Seagerr', version: 'S2' },
     victor: { author: 'Yung_P', version: 'S3' },
     yoshimitsu: { author: 'Trizzy the Rapper', version: 'S3' },
