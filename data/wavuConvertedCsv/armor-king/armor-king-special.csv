@@ -13,7 +13,9 @@ H.f,n,d,df+1+2;h!;[10];i25~28;;+23g;;"* On hit, gives a special stun that makes 
 H.ub+1;h;25;i24~25;+5;+74a (+58);;"* Strong Aerial Tailspin
 * Homing
 * Balcony Break
+* Instant Tornado
 * Transition to r26 BAD with F (+5/+75a(+59))
+** Cancel 2nd active frame
 * Consumes 150F of remaining Heat time
 * 7 chip damage on block";hom bbr;BAD;Neck Hunter: Villain;r25;;t8-p2-armor-king-h.ub+1.mp4;Armor King-H.ub+1;armor-king
 H.ub+1+2*;M;28;i50~52;+8;+65a (+49);;"* Tornado
@@ -26,7 +28,7 @@ H.2+3;m,t;54;i17, i42~43;+9;+1d;;"* Heat Smash
 * Transition to attack throw on hit
 * 2nd hit 16dmg and +13a (-4) on hit after 1st whiff 
 * Opponent left FUFT after attack throw
-* 5 chip damage on block";hs bbr;;Infierno Jaguar;r36?;;t8-p2-armor-king-h.2+3.mp4;Armor King-H.2+3;armor-king
+* 5 chip damage on block";hs bbr;;Infierno Jaguar;r36;;t8-p2-armor-king-h.2+3.mp4;Armor King-H.2+3;armor-king
 R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Removes Recoverable Health
 * Reversal Break
@@ -133,22 +135,34 @@ df+3+4;SM,t;15,30;i28~35;-12~-18?;+17d/-7~0;;"* Throw only when opponent standin
 * Cannot throw break.
 * Recovers in BT/FUFT on throw success/failed.
 * Low crush 13~";js13~;BT,FUFT;Frankensteiner;r BT/FUFT;;t8-p2-armor-king-df+3+4.mp4;Armor King-df+3+4;armor-king
-d+1;sl;5;i10;-5;+6;;* High crush 4~;cs4~;FC;;FC;;t8-p2-armor-king-d+1.mp4;Armor King-d+1;armor-king
+d+1;sl;5;i10;-5;+6;;"* Transition to r24 with f
+* +6c on crouching hit
+* High crush 4~34";cs4~34;FC;Crouch Jab;r24 FC;;t8-p2-armor-king-d+1.mp4;Armor King-d+1;armor-king
 d+1,4;sl, m;5, 13;i10, i15;-10;+6;;"* Knee
-* Combo from 1st CH
-* Jail from 1st block";kne;;Knee Lift Combination;;;t8-p2-armor-king-d+1,4.mp4;Armor King-d+1,4;armor-king
-d+2;m;17;i17~18;-5;+5;+13;;;FC;;FC;;t8-p2-armor-king-d+2.mp4;Armor King-d+2;armor-king
-d+2,4;m, m;17, 13;i17~18, i22~23;-14;-3;;;;;;;;t8-p2-armor-king-d+2,4.mp4;Armor King-d+2,4;armor-king
-d+2,4,3;m, m, m;17, 13, 20;i17~18, ,i35~40;-11c;+7d;;"* Combo from 2nd CH
-* Opponent recovers FUFT";;FC;Blackjack Combination;FC;;t8-p2-armor-king-d+2,4,3.mp4;Armor King-d+2,4,3;armor-king
-d+3;L;14;i17;-12;+2;+9;;;;Stomp;;;t8-p2-armor-king-d+3.mp4;Armor King-d+3;armor-king
-d+4;l;6;i14;-15c;-4;;;;FC;;FC;;t8-p2-armor-king-d+4.mp4;Armor King-d+4;armor-king
+* Jail from 1st block
+* Combo from 1st CH";kne;;Knee Lift Combination;;;t8-p2-armor-king-d+1,4.mp4;Armor King-d+1,4;armor-king
+d+2;m;17;i17~18;-5;+5c;+13;;;FC;;r27 FC;;t8-p2-armor-king-d+2.mp4;Armor King-d+2;armor-king
+d+2,4;m, m;17, 13;i17~18, i22~23;-14;-3;;"* Interrupt with i1
+* Move is delayed 2F
+* Move cannot be delayed";;;;;;t8-p2-armor-king-d+2,4.mp4;Armor King-d+2,4;armor-king
+d+2,4,3;m, m, m;17, 13, 20;i17~18, ,i35~40;-11c;+7d;;"* Combo from 2nd hit
+* Interrupt with i10
+* Opponent recovers FUFT
+* Low crush 26~37
+* Floating state 38~40";js26~37 fs38~40;FC;Blackjack Combination;FC;;t8-p2-armor-king-d+2,4,3.mp4;Armor King-d+2,4,3;armor-king
+d+3;L;14;i17;-12;+2;+9;;;;Stomp;r31;;t8-p2-armor-king-d+3.mp4;Armor King-d+3;armor-king
+d+4;l;6;i14;-15;-4;;"* -4c on crouching hit
+* High crush 4~48";cs4~48;FC;Crouch Shin Kick;r34 FC;;t8-p2-armor-king-d+4.mp4;Armor King-d+4;armor-king
 d+2+3;M;25;i30~35;-8;+0c;;"* Elbow
 * Spike";elb spk;;Corporate Elbow;;;t8-p2-armor-king-d+2+3.mp4;Armor King-d+2+3;armor-king
-d+3+4;l;15;i17;-16c;-2;+0;"* Can be done from Crouch Level 1
-* High crush 6~";cs6~;;;;;t8-p2-armor-king-d+3+4.mp4;Armor King-d+3+4;armor-king
+d+3+4;l;15;i17;-16;-2;+0;"* Can be done from Crouch Level 1
+* Recovers 3F faster on hit (r32 t49)
+* High crush 6~52";cs6~52;;;r35;;t8-p2-armor-king-d+3+4.mp4;Armor King-d+3+4;armor-king
 d+3+4,1;l, h;15, 13;i17, i20~21;-9;+15g;+27d;"* Balcony Break
-* Combo from 1st CH";bbr;;Taurus Cutter Edge;;;t8-p2-armor-king-d+3+4,1.mp4;Armor King-d+3+4,1;armor-king
+* Combo from 1st CH with 8F delay
+* Interrupt with i8
+* Move cannot be delayed
+* Input can be delayed by 8F";bbr;;Taurus Cutter Edge;r27;;t8-p2-armor-king-d+3+4,1.mp4;Armor King-d+3+4,1;armor-king
 d+3+4,3;l, m;15, 16;i17, i23~24;-15;+15a(-2);;"* Balcony Break
 * Tornado
 * Combo from 1st CH

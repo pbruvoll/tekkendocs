@@ -150,7 +150,7 @@ df+4;m;23;i22~24;-6~-4;+19a;;"* Homing
 * Balcony Break (airborne)";hom;;Wolf's Tail;r32;;File:t8-p2-bryan-df+4.mp4;Bryan-df+4;bryan
 d+2;m;17;i14~15;-2;+8c;;"* Spike
 * Elbow
-* Transition to FC with D (-2/+8c)";spk elb;FC;;r28;;File:t8-p2-bryan-d+2,3.mp4;Bryan-d+2;bryan
+* Transition to FC with D";spk elb;FC;;r28;;File:t8-p2-bryan-d+2,3.mp4;Bryan-d+2;bryan
 d+2,3;m, m;17, 21;i14~15, i22;-10;+16a (-1);+32a (+18);"* Balcony Break
 * Knee
 * Combo from 1st CH with 10f delay
@@ -223,8 +223,10 @@ b+3,4,1,2,1,4,2,1,4;m, m, m, m, h, h, h, h, m;12, 18, 5, 7, 3, 8, 5, 5, 10;;;;;;
 b+3,4,1,2,1,4,2,1,4,2;m, m, m, m, h, h, h, h, m, h;12, 18, 5, 7, 3, 8, 5, 5, 10, 20;;;;;;;;10 Hit Combo;r;;File:t8-p2-bryan-b+3,4,1,2,1,4,2,1,4,2.mp4;Bryan-b+3,4,1,2,1,4,2,1,4,2;bryan
 b+3,1+2;m, m;12, 25;,i22;-6;+4c;+26d;"* Floor Break
 * Combo from 1st CH with 8f delay
-* Input can be delayed 12
-* Move can be delayed 10";fbr;;Front Kick > Double Hammer;r34;;File:t8-p2-bryan-b+3,1+2.mp4;Bryan-b+3,1+2;bryan
+* Interrupt with i4 from 1st block
+* Transition to FC with d
+* Input can be delayed 12f
+* Move can be delayed 10f";fbr;FC;Front Kick > Double Hammer;r34;;File:t8-p2-bryan-b+3,1+2.mp4;Bryan-b+3,1+2;bryan
 b+4;m;18;i16;-10;+15;;"* Knee
 * Hit vs BT +9a";kne;;Knee Break;r29;;File:t8-p2-bryan-b+4.mp4;Bryan-b+4;bryan
 b+1+4;m;26;i28;-9;+7c;;Spike;spk;;Gravity Blow;r36;;File:t8-p2-bryan-b+1+4.mp4;Bryan-b+1+4;bryan
@@ -406,14 +408,15 @@ SNE.f,F+1+2,P;h, m;30, 20;i13, i13~14;0;+25a (+20);;"* Balcony Break
 * Consumes SNE
 * Initial attack absorbing animating takes 9 frames (pc1~9), effective startup is i22~23
 * Power crush 1~14";bbr chp pc1~14;;Immortal Payback;r30;;;Bryan-SNE.f,F+1+2,P;bryan
-qcb+1;h;22;i13~14;+5;+36a (+28);+72a (+56);"* Tornado
+qcb+1;h;22;i13~14;+5;+19cg;+72a (+56);"* Tornado
 * Balcony Break
-* Chip damage 6 (30%) on block";trn bbr chp;;Cannonball Straight;r28;;File:t8-p2-bryan-swa.1.mp4;Bryan-SWA.1;bryan
+* 6 chip damage on block
+* Forces tech back roll on hit";trn bbr;;Cannonball Straight;r28;;File:t8-p2-bryan-swa.1.mp4;Bryan-SWA.1;bryan
 qcb+2;m;16;i15~16;-9;+6;;;;;Smash;r30;;File:t8-p2-bryan-swa.2,4.mp4;Bryan-SWA.2;bryan
-qcb+2,4;m, h;16, 25;i15~16, i22~25;-9;+15a;;"* Balcony Break (airborne)
+qcb+2,4;m, h;16, 25;i15~16, i22~25;-9c;+15a;;"* Balcony Break (airborne)
 * Combo from 1st hit with 10f delay
 * Move can be delayed 7f
-* Chip damage on block";chp;;Smash and Mach Kick;r32;;File:t8-p2-bryan-swa.2,4.mp4;Bryan-SWA.2,4;bryan
+* 7 chip damage on block";;;Smash and Mach Kick;r32;;File:t8-p2-bryan-swa.2,4.mp4;Bryan-SWA.2,4;bryan
 qcb+3;l;23;i19~20;-13;+5;+26a;Balcony Break (airborne);;;Hatchet Kick;r31;;File:t8-p2-bryan-swa.3.mp4;Bryan-SWA.3;bryan
 qcb+4;M;23;i17~18;-12;+31a (+21);;;;;"<div class=""dotlist"">
 

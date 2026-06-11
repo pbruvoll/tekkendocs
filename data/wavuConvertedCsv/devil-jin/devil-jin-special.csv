@@ -139,19 +139,15 @@ d+1;m;25;i18~19;-14;+20a (+10);;"* Balcony Break
 * Reversal Break and -9 on block if an attack is absorbed
 * 10 chip damage on block after absorbing an attack in power crush state
 * Power crush 7~17";bbr pc7~17;;Corpse Thrust;r35;;File:t8-p2-devil jin-d+1.mp4;Devil Jin-d+1;devil-jin
-d+2;sl;8;i11;-4;+7;;"* +7c on crouching hit
-* High crush 4~";cs4~;FC;Crouch Straight;r23 FC;;;Devil Jin-d+2;devil-jin
+d+2;sl;8;i11;-4;+7;;* High crush 4~;cs4~;FC;Crouch Straight;r23 FC;;;Devil Jin-d+2;devil-jin
 d+3;L;12;i18~19;-12;-1;+7c;* Pseudo homing;;;Broken Plate;r30;;File:t8-p2-devil jin-d+3.mp4;Devil Jin-d+3;devil-jin
-d+4;l;6;i12;-15;-4;;"* -4c on crouching hit
-* High crush 4~";cs4~;FC;Crouch Shin Kick;r34 FC;;;Devil Jin-d+4;devil-jin
+d+4;l;6;i12;-15;-4;;* High crush 4~;cs4~;FC;Crouch Shin Kick;r34 FC;;;Devil Jin-d+4;devil-jin
 d+3+4;m,m;5,20;i15-16 i15-16;-15;+30a (+20);;* Low crush 16~30;js16~30;;Double Lift Kicks;r33;;File:t8-p2-devil jin-d+3+4.mp4;Devil Jin-d+3+4;devil-jin
-db+1;sl;5;i10;-5;+6;;"* Transition to Standing with f
-* +6c on crouching hit
+db+1;sl;5;i10;-5;+6;;"* Transition to r24 with f
 * High crush 4~";cs4~;FC;Crouch Jab;r24 FC;;;Devil Jin-db+1;devil-jin
 db+2;L;15;i21~22;-13;+3c;+26a;"* 4 chip damage on block
 * High crush 6~";cs6~;FC;Malicious Mace;r31 FC;;File:t8-p2-devil jin-db+2.mp4;Devil Jin-db+2;devil-jin
-db+3;L;10;i16;-17;-6;;"* -6c on crouching hit
-* High crush 4~";cs4~;FC;Crouch Spin Kick;r36 FC;;;Devil Jin-db+3;devil-jin
+db+3;L;10;i16;-17;-6;;* High crush 4~;cs4~;FC;Crouch Spin Kick;r36 FC;;;Devil Jin-db+3;devil-jin
 db+1+2;m;15;i23~38;-9;+4;;"* Cancel to r27 MCR with F (js27~)
 * Balcony Break on air hit";;MCR;Demon's Spear;r31;;File:t8-p2-devil jin-db+1+2.mp4;Devil Jin-db+1+2;devil-jin
 db+1+2*;m;25;i39~60;+5g;+7;+37d (+29);"* Balcony Break on CH or air hit
@@ -261,31 +257,37 @@ b,f+2;m;12;i15~17;-9;-1;;"* Input bufferable
 * -1c on hit against crouching opponents
 * Pseudo-homing";;;;r29;;File:t8-p2-devil jin-b,f+2,1,2.mp4;Devil Jin-b,f+2;devil-jin
 b,f+2,1;m, m;12, 12;i15~17, i14~15;-10;+1;;"* Elbow
-* Combo from 1st hit with 15f delay
-* Jail from 1st attack with no delay
-* Move can be delayed 7f";elb;;;r28;;File:t8-p2-devil jin-b,f+2,1,2.mp4;Devil Jin-b,f+2,1;devil-jin
+* Combo from 1st hit with 13f delay
+* Jail from 1st attack with 6f delay
+* Move can be delayed by 7f
+* Input can be delayed by 13f";elb;;;r28;;File:t8-p2-devil jin-b,f+2,1,2.mp4;Devil Jin-b,f+2,1;devil-jin
 b,f+2,1,2;m, m, m;12, 12, 24;i15~17, ,i22~23;-8;+15a (+6);+45a (+0);"* Balcony Break
-* Combo on 2nd CH with 8f delay
+* Combo on 2nd CH with 7f delay
+* Interrupt with i8 from 1st block
 * Input can be delayed 20f
 * Move can be delayed 15f
 * 7 chip damage on block";bbr;;Laser Cannon;r29;;File:t8-p2-devil jin-b,f+2,1,2.mp4;Devil Jin-b,f+2,1,2;devil-jin
-b,f+2,1,4;m, m, M;12, 12, 21;i15~17, ,i26~29;-8c;+14a;;"Floor Break
+b,f+2,1,4;m, m, M;12, 12, 21;i15~17, ,i26~29;-8c;+14a;;"* Floor Break
+* Interrupt with i13 from 1st block
+* Move can be delayed by 14f
+* Input can be delayed by 20f
 * Low crush 12~20
 * Floating state 21~23";fbr js12~20 fs21~23;;Laser Crush;r34;;File:t8-p2-devil jin-b,f+2,1,4.mp4;Devil Jin-b,f+2,1,4;devil-jin
 b,f+2,1,df+2;m, m, m;12, 12, 20;i15~17, ,i18~19;-13;+25a (+8);;"* Tornado
 * Balcony Break on grounded hit only
 * Combo on 2nd CH with 11f delay
+* Interrupt with i5 from 1st block
 * Input can be delayed 20f
-* Input can be delayed 14f
+* Move can be delayed 14f
 * Opponent recovers FDFA on hit";trn;;Laser Scraper;r31;;File:t8-p2-devil jin-b,f+2,1,df+2.mp4;Devil Jin-b,f+2,1,df+2;devil-jin
 b,f+2,3;m, h;12, 21;i15~17, i19~20;-5;+16g;;"* Balcony Break
-* Combo from 1st hit with 8F delay
+* Combo from 1st hit with 6F delay
 * Interrupt with i4 from 1st block
 * Opponent recovers crouching on hit
-* Transition to MCR with F on hit with F (+14)
+* Transition to MCR r35 with F on hit (+14)
 ** -11 on an empty MCR transition
 * Move cannot be delayed
-* Input can be delayed by 8F";bbr;MCR;Laser Slice;r33;;File:t8-p2-devil jin-b,f+2,3.mp4;Devil Jin-b,f+2,3;devil-jin
+* Input can be delayed by 6F";bbr;MCR;Laser Slice;r33;;File:t8-p2-devil jin-b,f+2,3.mp4;Devil Jin-b,f+2,3;devil-jin
 b,f+1+2;m;6,6,6,6,6,6;i25 i6 i6 i6 i6 i6;-17;+31a (-2);;"* Weapon
 * Projectile (unparryable)
 * 17 damage on hit with scaling
@@ -293,8 +295,10 @@ b,f+1+2;m;6,6,6,6,6,6;i25 i6 i6 i6 i6 i6;-17;+31a (-2);;"* Weapon
 * Low crush 24~80
 * Floating state 81~83";wpn js24~80 fs81~83;;;r44;;File:t8-p2-devil jin-b,f+1+2,2.mp4;Devil Jin-b,f+1+2;devil-jin
 b,f+1+2,2;m, M;6,6,6,6,6,6, 30 (9);i25 i6 i6 i6 i6 i6, i28~31;-31;-14a (-23);;"* Balcony break on standing hit only
-* Combo from 1st hit
+* Combo from 1st hit with 7F delay
 * 9 damage with scaling from 1st
+* Move cannot be delayed
+* Input can be delayed by 7F
 * Low crush 28~69
 * Floating state 70~72";js28~69 fs70~72;;Gates of Hades;r56;;File:t8-p2-devil jin-b,f+1+2,2.mp4;Devil Jin-b,f+1+2,2;devil-jin
 f,F+2;m;24;i15~16;-8;+15a (+6);;"* Heat Engager
@@ -304,7 +308,6 @@ f,F+2;m;24;i15~16;-8;+15a (+6);;"* Heat Engager
 * Balcony Break
 * i18 startup when unbuffered, and i16 startup when buffered
 * 7 chip damage on block
-* 9 chip damage on heat dash
 * Active frame 1 range: 2.73";he bbr;;Demon's Paw;r29;;File:t8-p2-devil jin-f,f+2.mp4;Devil Jin-f,F+2;devil-jin
 f,F+4;m;22;i20~21;-6;+16g;+55a;"* Balcony Break on normal hit
 * i23 startup when unbuffered, and i21 startup when buffered
