@@ -18,6 +18,7 @@ import { MovePreviewDialogButton } from './MovePreviewDialogButton';
 // Helper function to format command for line breaks at commas
 const formatWordWithBreaks = (command: string) => {
   return command.split(',').map((part, index, array) => (
+    // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
     <span key={index} className="inline-block">
       {part}
       {index < array.length - 1 && (
@@ -35,6 +36,8 @@ export function SimpleMovesTable({
   gameRouteId,
   charId,
   moves,
+  disableLinks = false,
+  stickyHeader = true,
   forceShowCharacter,
   className,
   sortSettings,
@@ -45,23 +48,48 @@ export function SimpleMovesTable({
     <table className={cx('relative w-full text-sm', className)}>
       <thead className="[&_tr]:border-b">
         <tr className="border-b transition-colors hover:bg-muted/50">
-          <th className="sticky top-header-height z-10 h-12 bg-background px-2 text-left align-middle font-medium text-muted-foreground sm:px-4">
+          <th
+            className={cx(
+              'h-12 bg-background px-2 text-left align-middle font-medium text-muted-foreground sm:px-4',
+              stickyHeader && 'sticky top-header-height z-10',
+            )}
+          >
             Cmd
           </th>
-          <th className="sticky top-header-height z-10 h-12 bg-background px-2 text-left align-middle font-medium text-muted-foreground sm:px-4">
+          <th
+            className={cx(
+              'h-12 bg-background px-2 text-left align-middle font-medium text-muted-foreground sm:px-4',
+              stickyHeader && 'sticky top-header-height z-10',
+            )}
+          >
             Hit Lvl
           </th>
-          <th className="sticky top-header-height z-10 h-12 bg-background px-2 text-left align-middle font-medium text-muted-foreground sm:px-4">
+          <th
+            className={cx(
+              'h-12 bg-background px-2 text-left align-middle font-medium text-muted-foreground sm:px-4',
+              stickyHeader && 'sticky top-header-height z-10',
+            )}
+          >
             Start
             <wbr />
             up
           </th>
-          <th className="sticky top-header-height z-10 h-12 bg-background px-2 text-left align-middle font-medium text-muted-foreground sm:px-4">
+          <th
+            className={cx(
+              'h-12 bg-background px-2 text-left align-middle font-medium text-muted-foreground sm:px-4',
+              stickyHeader && 'sticky top-header-height z-10',
+            )}
+          >
             Blo
             <wbr />
             ck
           </th>
-          <th className="sticky top-header-height z-10 h-12 bg-background px-2 text-left align-middle font-medium text-muted-foreground sm:px-4">
+          <th
+            className={cx(
+              'h-12 bg-background px-2 text-left align-middle font-medium text-muted-foreground sm:px-4',
+              stickyHeader && 'sticky top-header-height z-10',
+            )}
+          >
             {showVidoeFileName ? (
               'Vid name'
             ) : sortSettings?.sortByKey === 'recovery' ? (
@@ -81,8 +109,10 @@ export function SimpleMovesTable({
           const simpleBlock = simplifyFrameValue(move.block || '');
           const simpleHit = simplifyFrameValue(move.hit || '');
           const simpleCh = simplifyFrameValue(move.counterHit || '');
+          const hasVideo = Boolean(move.ytVideo || move.video);
           const computedCharId = charId || charIdFromMove(move as MoveT8);
           const moveUrl = `/${gameRouteId}/${computedCharId}/${commandToUrlSegmentEncoded(move.command)}`;
+          const commandContent = formatWordWithBreaks(move.command);
           return (
             <tr
               key={move.moveNumber}
@@ -97,11 +127,25 @@ export function SimpleMovesTable({
                       {computedCharId}{' '}
                     </span>
                   )}
-                  <Link style={{ textDecoration: 'none' }} to={moveUrl}>
-                    {formatWordWithBreaks(move.command)}
-                  </Link>
-                  {(move.ytVideo || move.video) && (
-                    <MovePreviewDialogButton move={move} url={moveUrl} />
+                  {disableLinks ? (
+                    hasVideo ? (
+                      <MovePreviewDialogButton
+                        move={move}
+                        url={moveUrl}
+                        prefixText={move.command}
+                      />
+                    ) : (
+                      <span className="text-foreground">{commandContent}</span>
+                    )
+                  ) : (
+                    <>
+                      <Link style={{ textDecoration: 'none' }} to={moveUrl}>
+                        {commandContent}
+                      </Link>
+                      {hasVideo && (
+                        <MovePreviewDialogButton move={move} url={moveUrl} />
+                      )}
+                    </>
                   )}
                 </span>
               </td>

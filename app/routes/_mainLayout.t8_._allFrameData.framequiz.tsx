@@ -517,7 +517,7 @@ export default function FrameQuiz() {
                 </div>
               </div>
             </CardHeader>
-            <CardContent>
+            <CardContent className="pb-2">
               <MoveVideo
                 move={currentQuestion.move}
                 className="mb-4 overflow-hidden rounded-lg"
@@ -536,6 +536,8 @@ export default function FrameQuiz() {
                     questionFeedback={questionFeedback}
                     isFeedbackVisible={isFeedbackVisible}
                     onContinue={handleContinueAfterFeedback}
+                    move={currentQuestion.move}
+                    sourceMoves={moves}
                   />
                 ) : (
                   <div className="flex flex-wrap gap-2">
