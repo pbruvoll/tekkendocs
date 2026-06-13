@@ -29,13 +29,14 @@ export function MovePreviewDialogButton({
       <DialogTrigger asChild>
         <button
           type="button"
+          aria-label="Open video"
           className="inline-flex items-center gap-1 whitespace-nowrap"
         >
           {prefixText && <span>{prefixText}</span>}
           <VideoIcon className="w-4" />
         </button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-106.25 dark">
+      <DialogContent className="sm:max-w-[425px] dark">
         <DialogHeader>
           <DialogTitle>
             <Link className="text-primary" to={url}>
@@ -44,7 +45,7 @@ export function MovePreviewDialogButton({
           </DialogTitle>
           {move.name && <DialogDescription>{move.name}</DialogDescription>}
         </DialogHeader>
-        <div className="mt-4 max-w-150">
+        <div className="mt-4  max-w-[600px]">
           <MoveVideo move={move} />
         </div>
         <DialogFooter>

@@ -85,7 +85,7 @@ export const MoveDetailsPanel = ({
               gameRouteId="t8"
               disableLinks
               stickyHeader={false}
-              className="min-w-xl"
+              className="min-w-[600px]"
             />
           </div>
         </div>

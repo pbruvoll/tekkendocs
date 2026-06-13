@@ -18,7 +18,7 @@ import { MovePreviewDialogButton } from './MovePreviewDialogButton';
 // Helper function to format command for line breaks at commas
 const formatWordWithBreaks = (command: string) => {
   return command.split(',').map((part, index, array) => (
-    // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+    // biome-ignore lint/suspicious/noArrayIndexKey: Static list
     <span key={index} className="inline-block">
       {part}
       {index < array.length - 1 && (
