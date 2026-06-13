@@ -2,31 +2,15 @@ import { useState } from 'react';
 import { MovePropertyIconList } from '~/components/MovePropertyIconList';
 import { MovePropertyTagList } from '~/components/MovePropertyTagList';
 import { ShowNotes } from '~/components/ShowNotes';
-import { SimpleMovesTable } from '~/components/SimpleMovesTable';
 import { type Move } from '~/types/Move';
-import { getRecoveryFrames, getRelatedMoves } from '~/utils/frameDataUtils';
+import { getRecoveryFrames } from '~/utils/frameDataUtils';
 
 type MoveDetailsPanelProps = {
   move: Move;
-  sourceMoves: Move[];
 };
 
-export const MoveDetailsPanel = ({
-  move,
-  sourceMoves,
-}: MoveDetailsPanelProps) => {
+export const MoveDetailsPanel = ({ move }: MoveDetailsPanelProps) => {
   const [showNotes, setShowNotes] = useState(false);
-
-  const relatedMoves = move.characterId
-    ? getRelatedMoves(
-        move,
-        sourceMoves.filter(
-          (candidate) => candidate.characterId === move.characterId,
-        ),
-      )
-    : [];
-
-  const relatedMovesCharId = move.characterId;
 
   return (
     <div className="mt-3 rounded-xl border border-border/70 bg-background/70 p-3 sm:p-4">
@@ -72,24 +56,6 @@ export const MoveDetailsPanel = ({
           </div>
         ) : null}
       </div>
-
-      {relatedMoves.length > 0 && (
-        <div className="mt-5 border-t border-border/70 pt-2">
-          <h3 className="mb-4 text-base font-semibold leading-none">
-            Related moves
-          </h3>
-          <div className="overflow-x-auto">
-            <SimpleMovesTable
-              moves={relatedMoves}
-              charId={relatedMovesCharId}
-              gameRouteId="t8"
-              disableLinks
-              stickyHeader={false}
-              className="min-w-[600px]"
-            />
-          </div>
-        </div>
-      )}
     </div>
   );
 };

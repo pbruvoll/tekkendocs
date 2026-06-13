@@ -5,7 +5,6 @@ export type FrameDataListProps = {
   gameRouteId: string;
   charId?: string;
   moves: Move[];
-  disableLinks?: boolean;
   stickyHeader?: boolean;
   forceShowCharacter?: boolean;
   className?: string;

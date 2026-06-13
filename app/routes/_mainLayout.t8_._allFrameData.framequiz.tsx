@@ -2,6 +2,7 @@ import { motion, useReducedMotion } from 'motion/react';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import {
   type MetaFunction,
+  useBlocker,
   useRouteLoaderData,
   useSearchParams,
 } from 'react-router';
@@ -39,6 +40,7 @@ import { type LoaderData } from './_mainLayout.t8_._allFrameData';
 const RECENT_QUESTION_WINDOW = 20;
 const RECENT_ANSWER_WINDOW = 200;
 const FRAME_QUIZ_STATS_STORAGE_KEY = 't8FrameQuizStatsV1';
+const MOVE_PAGE_PATHNAME_PATTERN = /^\/t8\/[^/]+\/[^/]+$/;
 
 type PersistedFrameQuizStats = {
   personalBestStreak: number;
@@ -169,6 +171,18 @@ export default function FrameQuiz() {
     [moves, moveFilter, hasActiveFilter],
   );
 
+  const movePageBlocker = useBlocker(({ currentLocation, nextLocation }) => {
+    if (!hasStarted) {
+      return false;
+    }
+
+    if (nextLocation.pathname === currentLocation.pathname) {
+      return false;
+    }
+
+    return MOVE_PAGE_PATHNAME_PATTERN.test(nextLocation.pathname);
+  });
+
   useEffect(() => {
     return () => {
       if (feedbackAnimationFrameRef.current !== null) {
@@ -248,6 +262,23 @@ export default function FrameQuiz() {
       }
     };
   }, [questionFeedback]);
+
+  useEffect(() => {
+    if (movePageBlocker.state !== 'blocked') {
+      return;
+    }
+
+    const shouldProceed = window.confirm(
+      'You are in an active frame quiz. Leave this page and open the move page?',
+    );
+
+    if (shouldProceed) {
+      movePageBlocker.proceed();
+      return;
+    }
+
+    movePageBlocker.reset();
+  }, [movePageBlocker.state, movePageBlocker.proceed, movePageBlocker.reset]);
 
   const currentCharacterName = currentQuestion
     ? getMoveCharacterDisplayName(currentQuestion.move)

@@ -36,7 +36,6 @@ export function SimpleMovesTable({
   gameRouteId,
   charId,
   moves,
-  disableLinks = false,
   stickyHeader = true,
   forceShowCharacter,
   className,
@@ -127,25 +126,11 @@ export function SimpleMovesTable({
                       {computedCharId}{' '}
                     </span>
                   )}
-                  {disableLinks ? (
-                    hasVideo ? (
-                      <MovePreviewDialogButton
-                        move={move}
-                        url={moveUrl}
-                        prefixText={move.command}
-                      />
-                    ) : (
-                      <span className="text-foreground">{commandContent}</span>
-                    )
-                  ) : (
-                    <>
-                      <Link style={{ textDecoration: 'none' }} to={moveUrl}>
-                        {commandContent}
-                      </Link>
-                      {hasVideo && (
-                        <MovePreviewDialogButton move={move} url={moveUrl} />
-                      )}
-                    </>
+                  <Link style={{ textDecoration: 'none' }} to={moveUrl}>
+                    {commandContent}
+                  </Link>
+                  {hasVideo && (
+                    <MovePreviewDialogButton move={move} url={moveUrl} />
                   )}
                 </span>
               </td>

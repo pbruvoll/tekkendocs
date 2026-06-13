@@ -1,6 +1,8 @@
 import { AnimatePresence, motion } from 'motion/react';
 import { useState } from 'react';
+import { SimpleMovesTable } from '~/components/SimpleMovesTable';
 import { type Move } from '~/types/Move';
+import { getRelatedMoves } from '~/utils/frameDataUtils';
 import { MoveDetailsPanel } from './MoveDetailsPanel';
 
 type MoveDetailsToggleProps = {
@@ -13,6 +15,14 @@ export const MoveDetailsToggle = ({
   sourceMoves,
 }: MoveDetailsToggleProps) => {
   const [showDetails, setShowDetails] = useState(false);
+  const relatedMoves = move.characterId
+    ? getRelatedMoves(
+        move,
+        sourceMoves.filter(
+          (candidate) => candidate.characterId === move.characterId,
+        ),
+      )
+    : [];
 
   return (
     <div className="mt-3">
@@ -33,8 +43,22 @@ export const MoveDetailsToggle = ({
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.25, ease: 'easeInOut' }}
             style={{ overflow: 'hidden' }}
+            className="space-y-5"
           >
-            <MoveDetailsPanel move={move} sourceMoves={sourceMoves} />
+            <MoveDetailsPanel move={move} />
+            {relatedMoves.length > 0 && (
+              <div>
+                <h3 className="mb-3 text-base font-semibold leading-none">
+                  Related moves
+                </h3>
+                <SimpleMovesTable
+                  moves={relatedMoves}
+                  charId={move.characterId}
+                  gameRouteId="t8"
+                  stickyHeader={false}
+                />
+              </div>
+            )}
           </motion.div>
         ) : null}
       </AnimatePresence>

@@ -17,13 +17,8 @@ import { MoveVideo } from './MoveVideo';
 export type MovePreviewDialogProps = {
   move: Move;
   url: string;
-  prefixText?: string;
 };
-export function MovePreviewDialogButton({
-  move,
-  url,
-  prefixText,
-}: MovePreviewDialogProps) {
+export function MovePreviewDialogButton({ move, url }: MovePreviewDialogProps) {
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -32,11 +27,10 @@ export function MovePreviewDialogButton({
           aria-label="Open video"
           className="inline-flex items-center gap-1 whitespace-nowrap"
         >
-          {prefixText && <span>{prefixText}</span>}
           <VideoIcon className="w-4" />
         </button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[425px] dark">
+      <DialogContent className="sm:max-w-106.25 dark">
         <DialogHeader>
           <DialogTitle>
             <Link className="text-primary" to={url}>
@@ -45,7 +39,7 @@ export function MovePreviewDialogButton({
           </DialogTitle>
           {move.name && <DialogDescription>{move.name}</DialogDescription>}
         </DialogHeader>
-        <div className="mt-4  max-w-[600px]">
+        <div className="mt-4 max-w-150">
           <MoveVideo move={move} />
         </div>
         <DialogFooter>
