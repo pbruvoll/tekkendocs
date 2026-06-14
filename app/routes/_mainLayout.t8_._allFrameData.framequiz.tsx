@@ -40,7 +40,6 @@ import { type LoaderData } from './_mainLayout.t8_._allFrameData';
 const RECENT_QUESTION_WINDOW = 20;
 const RECENT_ANSWER_WINDOW = 200;
 const FRAME_QUIZ_STATS_STORAGE_KEY = 't8FrameQuizStatsV1';
-const MOVE_PAGE_PATHNAME_PATTERN = /^\/t8\/[^/]+\/[^/]+$/;
 
 type PersistedFrameQuizStats = {
   personalBestStreak: number;
@@ -171,16 +170,8 @@ export default function FrameQuiz() {
     [moves, moveFilter, hasActiveFilter],
   );
 
-  const movePageBlocker = useBlocker(({ currentLocation, nextLocation }) => {
-    if (!hasStarted) {
-      return false;
-    }
-
-    if (nextLocation.pathname === currentLocation.pathname) {
-      return false;
-    }
-
-    return MOVE_PAGE_PATHNAME_PATTERN.test(nextLocation.pathname);
+  const movePageBlocker = useBlocker(({ nextLocation }) => {
+    return hasStarted && nextLocation.pathname !== '/';
   });
 
   useEffect(() => {
