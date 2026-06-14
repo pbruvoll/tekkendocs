@@ -260,7 +260,7 @@ export default function FrameQuiz() {
     }
 
     const shouldProceed = window.confirm(
-      'You are in an active frame quiz. Leave this page and open the move page?',
+      'You are in an active quiz. Do you want to leave the quiz?',
     );
 
     if (shouldProceed) {
