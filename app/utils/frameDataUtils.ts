@@ -1,6 +1,6 @@
 import invariant from 'tiny-invariant';
 import { StanceNormal } from '~/constants/filterConstants';
-import { MoveTags } from '~/constants/moveTags';
+import { type MoveTag, MoveTags } from '~/constants/moveTags';
 import { newMovesT8s3 } from '~/services/staticDataService';
 import { type HitLevel } from '~/types/FilterTypes';
 import { type Move } from '~/types/Move';
@@ -242,7 +242,7 @@ export const isCounterHitMove = (move: Move) => {
   return false;
 };
 
-export const hasTag = (tag: string, move: Move) => {
+export const hasTag = (tag: MoveTag, move: Move) => {
   return move.tags?.[tag] !== undefined;
 };
 
@@ -520,7 +520,7 @@ export const filterMoves = (moves: Move[], filter: MoveFilter | undefined) => {
     [filter.reversalBreak, isReversalBreak],
     [filter.heatSmash, (move: Move) => hasTag('hs', move)],
     [filter.heatEngager, isHeatEngager],
-    [filter.homing, isHomingMove],
+    [filter.homing, (move: Move) => hasTag(MoveTags.Homing, move)],
     [filter.tornado, isTornadoMove],
     [filter.jails, jails],
     [filter.noJails, noJails],

@@ -6,6 +6,7 @@ export const MoveTags = {
   FloorBreak: 'fbr',
   ForceCrouch: 'fcb',
   HeatEngager: 'he',
+  HeatSmash: 'hs',
   HeatBurst: 'hb',
   Homing: 'hom',
   HighCrush: 'cs',
