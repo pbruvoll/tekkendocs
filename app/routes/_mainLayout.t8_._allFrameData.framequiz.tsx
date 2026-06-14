@@ -2,6 +2,7 @@ import { motion, useReducedMotion } from 'motion/react';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import {
   type MetaFunction,
+  useBlocker,
   useRouteLoaderData,
   useSearchParams,
 } from 'react-router';
@@ -169,6 +170,10 @@ export default function FrameQuiz() {
     [moves, moveFilter, hasActiveFilter],
   );
 
+  const movePageBlocker = useBlocker(({ nextLocation }) => {
+    return hasStarted && nextLocation.pathname !== '/';
+  });
+
   useEffect(() => {
     return () => {
       if (feedbackAnimationFrameRef.current !== null) {
@@ -248,6 +253,23 @@ export default function FrameQuiz() {
       }
     };
   }, [questionFeedback]);
+
+  useEffect(() => {
+    if (movePageBlocker.state !== 'blocked') {
+      return;
+    }
+
+    const shouldProceed = window.confirm(
+      'You are in an active quiz. Do you want to leave the quiz?',
+    );
+
+    if (shouldProceed) {
+      movePageBlocker.proceed();
+      return;
+    }
+
+    movePageBlocker.reset();
+  }, [movePageBlocker.state, movePageBlocker.proceed, movePageBlocker.reset]);
 
   const currentCharacterName = currentQuestion
     ? getMoveCharacterDisplayName(currentQuestion.move)
@@ -517,7 +539,7 @@ export default function FrameQuiz() {
                 </div>
               </div>
             </CardHeader>
-            <CardContent>
+            <CardContent className="pb-2">
               <MoveVideo
                 move={currentQuestion.move}
                 className="mb-4 overflow-hidden rounded-lg"
@@ -536,6 +558,8 @@ export default function FrameQuiz() {
                     questionFeedback={questionFeedback}
                     isFeedbackVisible={isFeedbackVisible}
                     onContinue={handleContinueAfterFeedback}
+                    move={currentQuestion.move}
+                    sourceMoves={moves}
                   />
                 ) : (
                   <div className="flex flex-wrap gap-2">

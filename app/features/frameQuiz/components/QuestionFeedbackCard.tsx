@@ -1,18 +1,24 @@
 import { type QuestionFeedback } from '~/features/frameQuiz/types';
+import { type Move } from '~/types/Move';
+import { MoveDetailsToggle } from './MoveDetailsToggle';
 
 type QuestionFeedbackCardProps = {
   questionFeedback: QuestionFeedback;
   isFeedbackVisible: boolean;
   onContinue: () => void;
+  move?: Move;
+  sourceMoves?: Move[];
 };
 
 export const QuestionFeedbackCard = ({
   questionFeedback,
   isFeedbackVisible,
   onContinue,
+  move,
+  sourceMoves,
 }: QuestionFeedbackCardProps) => {
   return (
-    <div className="flex justify-center">
+    <div className="flex flex-col justify-center">
       <button
         type="button"
         onClick={onContinue}
@@ -68,6 +74,9 @@ export const QuestionFeedbackCard = ({
           </div>
         </div>
       </button>
+      {move && sourceMoves ? (
+        <MoveDetailsToggle move={move} sourceMoves={sourceMoves} />
+      ) : null}
     </div>
   );
 };
