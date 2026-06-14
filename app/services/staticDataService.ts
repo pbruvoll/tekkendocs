@@ -173,7 +173,7 @@ export const characterGuideAuthors: Record<
   T8: {
     'armor-king': { author: 'ArmorKingTV21', version: 'S2' },
     alisa: { author: 'Nick RM', version: 'S3' },
-    asuka: { author: 'Fergus', version: 'S2' },
+    asuka: { author: 'Fergus', version: 'S3' },
     anna: { author: 'Joi', version: 'S3' },
     azucena: { author: 'Koenji', version: 'S2' },
     bryan: { author: 'Ty', version: 'S2' },
