@@ -1,14 +1,18 @@
 import {
   CodeIcon,
   ColorWheelIcon,
+  GitHubLogoIcon,
   ImageIcon,
   Pencil1Icon,
   ReaderIcon,
   TableIcon,
   VideoIcon,
 } from '@radix-ui/react-icons';
+import { data, useLoaderData } from 'react-router';
 import { ContentContainer } from '~/components/ContentContainer';
 import { PersonLinkList } from '~/components/PersonLinkList';
+import { getRepoContributors } from '~/services/githubService.server';
+import { getCacheControlHeaders } from '~/utils/headerUtils';
 import { t8AvatarMap } from '~/utils/t8AvatarMap';
 
 type VideoRecorder = {
@@ -24,6 +28,19 @@ const videoRecordersT8: VideoRecorder[] = [
     url: 'https://x.com/tekkendocs',
   },
 ];
+
+export const loader = async () => {
+  let contributors: Awaited<ReturnType<typeof getRepoContributors>> = [];
+  try {
+    contributors = await getRepoContributors();
+  } catch (error) {
+    console.error('Failed to load GitHub contributors', error);
+  }
+  return data(
+    { contributors },
+    { headers: getCacheControlHeaders({ seconds: 60 * 60 * 24 }) },
+  );
+};
 
 const linkClass = 'text-primary underline underline-offset-2';
 
@@ -221,6 +238,7 @@ const CharacterChip = ({ name }: { name: string }) => {
 };
 
 export default function Credits() {
+  const { contributors } = useLoaderData<typeof loader>();
   return (
     <ContentContainer
       className="animate-in fade-in duration-700"
@@ -291,6 +309,46 @@ export default function Credits() {
           </CreditCard>
         ))}
       </div>
+
+      {contributors.length > 0 && (
+        <>
+          <SectionHeading icon={<GitHubLogoIcon />}>
+            Code contributors
+          </SectionHeading>
+          <p className="mb-4 max-w-2xl text-sm text-muted-foreground">
+            Everyone who has contributed code to the{' '}
+            <a
+              className={linkClass}
+              href="https://github.com/pbruvoll/tekkendocs"
+            >
+              open source repository
+            </a>
+            .
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {contributors.map((contributor) => (
+              <a
+                key={contributor.login}
+                href={contributor.htmlUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                title={`${contributor.contributions} contribution${
+                  contributor.contributions === 1 ? '' : 's'
+                }`}
+                className="inline-flex items-center gap-1.5 rounded-full border border-border bg-muted/40 py-1 pl-1 pr-3 text-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/40 hover:bg-muted"
+              >
+                <img
+                  src={contributor.avatarUrl}
+                  alt=""
+                  loading="lazy"
+                  className="size-6 rounded-full object-cover ring-1 ring-border"
+                />
+                {contributor.login}
+              </a>
+            ))}
+          </div>
+        </>
+      )}
     </ContentContainer>
   );
 }
