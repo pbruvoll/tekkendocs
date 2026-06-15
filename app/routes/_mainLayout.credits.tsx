@@ -30,6 +30,11 @@ export default function Credits() {
       </p>
       <h3>Main programmer</h3>
       <p>MadCow</p>
+      <h3>Designer</h3>
+      <p>
+        <a href="https://x.com/9SkytorRush0">SkytorRush</a>: Logo, character
+        avatars and images for guides
+      </p>
       <h3>Icons</h3>
       <p>
         Icons for move properties and images for ranks are from{' '}
@@ -47,9 +52,7 @@ export default function Credits() {
                   recorder.name
                 )}
                 {': '}
-                {recorder.characters
-                  .map((c) => c.charAt(0).toUpperCase() + c.slice(1))
-                  .join(', ')}
+                {recorder.characters.join(', ')}
               </li>
             ))}
           </ul>
