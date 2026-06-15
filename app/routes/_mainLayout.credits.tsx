@@ -1,5 +1,19 @@
 import { ContentContainer } from '~/components/ContentContainer';
 
+type VideoRecorder = {
+  name: string;
+  url?: string;
+  characters: string[];
+};
+
+const videoRecordersT8: VideoRecorder[] = [
+  {
+    name: 'MadCow',
+    characters: ['Anna', 'Armor King', 'Fahkumram'],
+    url: 'https://x.com/tekkendocs',
+  },
+];
+
 export default function Credits() {
   return (
     <ContentContainer
@@ -21,6 +35,26 @@ export default function Credits() {
         Icons for move properties and images for ranks are from{' '}
         <a href="https://tekkenwarehouse.com">tekkenwarehouse.com</a>.
       </p>
+      {videoRecordersT8.length > 0 && (
+        <>
+          <h3>Video recordings</h3>
+          <ul>
+            {videoRecordersT8.map((recorder) => (
+              <li key={recorder.name}>
+                {recorder.url ? (
+                  <a href={recorder.url}>{recorder.name}</a>
+                ) : (
+                  recorder.name
+                )}
+                {': '}
+                {recorder.characters
+                  .map((c) => c.charAt(0).toUpperCase() + c.slice(1))
+                  .join(', ')}
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
       <hr />
       <h2>Tekken 7</h2>
       <h3>Framedata source</h3>
