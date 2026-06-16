@@ -1,4 +1,3 @@
-import { motion, useReducedMotion } from 'motion/react';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import {
   type MetaFunction,
@@ -8,19 +7,18 @@ import {
 } from 'react-router';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { AnimatedNumber } from '~/components/AnimatedNumber';
 import { ContentContainer } from '~/components/ContentContainer';
-import { MoveVideo } from '~/components/MoveVideo';
 import { characterInfoT8List } from '~/constants/characterInfoListT8';
-import { QuestionFeedbackCard } from '~/features/frameQuiz/components/QuestionFeedbackCard';
 import {
-  answerLabelByBucket,
-  answerOptions,
-} from '~/features/frameQuiz/constants';
+  type QuizModifier,
+  QuizModifierControls,
+  type QuizModifiers,
+} from '~/features/frameQuiz/components/QuizModifierControls';
+import { QuizQuestionCard } from '~/features/frameQuiz/components/QuizQuestionCard';
+import { answerLabelByBucket } from '~/features/frameQuiz/constants';
 import {
   getAnswerBucket,
   getEligibleQuizMoves,
-  getMoveCharacterDisplayName,
 } from '~/features/frameQuiz/moveSelection';
 import {
   appendRecentQuestionId,
@@ -87,10 +85,22 @@ const sanitizePersistedFrameQuizStats = (
   };
 };
 
-export const meta: MetaFunction = ({ matches }) => {
+export const meta: MetaFunction = ({ matches, location }) => {
+  const searchParams = new URLSearchParams(location.search);
+  const moveFilter = getFilterFromParams(searchParams);
+  const character = moveFilter.character;
+  const singleCharacterName =
+    character?.length === 1
+      ? (characterInfoT8List.find((c) => c.id === character[0])?.displayName ??
+        character[0])
+      : null;
+  const title = singleCharacterName
+    ? `${singleCharacterName} Endless Frame Quiz | TekkenDocs`
+    : 'Tekken 8 Endless Frame Quiz | TekkenDocs';
+
   return generateMetaTags({
     matches,
-    title: 'Tekken 8 Endless Frame Quiz | TekkenDocs',
+    title,
     description:
       'Endless frame data quiz. Guess the block frame and see how many you can get right in a row!',
     image: { url: '/t8/pages/framequiz.png' },
@@ -116,9 +126,6 @@ export default function FrameQuiz() {
     useState<QuestionFeedback | null>(null);
   const [isFeedbackVisible, setIsFeedbackVisible] = useState(false);
   const feedbackAnimationFrameRef = useRef<number | null>(null);
-  const previousRankImageRef = useRef<string | null>(null);
-  const [rankAnimationKey, setRankAnimationKey] = useState(0);
-  const shouldReduceMotion = useReducedMotion();
   const [pendingAdvance, setPendingAdvance] = useState<PendingAdvance | null>(
     null,
   );
@@ -126,8 +133,13 @@ export default function FrameQuiz() {
     defaultPersistedFrameQuizStats,
   );
   const [hasLoadedPersistedStats, setHasLoadedPersistedStats] = useState(false);
+  const [activeModifiers, setActiveModifiers] = useState<QuizModifiers>({
+    hideCommand: false,
+    hideVideo: false,
+  });
 
-  const [searchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
+
   const moveFilter = useMemo(
     () => getFilterFromParams(searchParams),
     [searchParams],
@@ -139,6 +151,14 @@ export default function FrameQuiz() {
   );
 
   const persistToStorage = !hasActiveFilter;
+
+  const pendingModifiers = useMemo(
+    (): QuizModifiers => ({
+      hideCommand: searchParams.has('hideCommand'),
+      hideVideo: searchParams.has('hideVideo'),
+    }),
+    [searchParams],
+  );
 
   const quizContextLabel = useMemo((): string | null => {
     const { character, ...otherFilters } = moveFilter;
@@ -271,50 +291,23 @@ export default function FrameQuiz() {
     movePageBlocker.reset();
   }, [movePageBlocker.state, movePageBlocker.proceed, movePageBlocker.reset]);
 
-  const currentCharacterName = currentQuestion
-    ? getMoveCharacterDisplayName(currentQuestion.move)
-    : '';
-  const currentCommand = currentQuestion?.move.command ?? '';
-  const currentStreakRank = getFrameQuizRankForStreak(displayedStreak);
-  const currentSessionAccuracyPercent =
-    totalAnswered === 0 ? 0 : Math.round((score / totalAnswered) * 100);
-  const recentCorrectCount = persistedStats.recentAnswerResults.reduce(
-    (count, isCorrect) => count + (isCorrect ? 1 : 0),
-    0,
-  );
-  const recentAnswerCount = persistedStats.recentAnswerResults.length;
-  const recentAccuracyPercent =
-    recentAnswerCount === 0
-      ? 0
-      : Math.round((recentCorrectCount / recentAnswerCount) * 100);
-  const recentAccuracyBarWidth = Math.max(
-    0,
-    Math.min(100, recentAccuracyPercent),
-  );
-  const recentAccuracyBarColorClass =
-    recentAccuracyPercent >= 80
-      ? 'bg-emerald-500/80'
-      : recentAccuracyPercent > 65
-        ? 'bg-orange-500/80'
-        : 'bg-red-500/80';
-  const personalBestRank = getFrameQuizRankForStreak(
-    persistedStats.personalBestStreak,
-  );
-
-  useEffect(() => {
-    const previousRankImage = previousRankImageRef.current;
-    const currentRankImage = currentStreakRank.image;
-
-    if (
-      previousRankImage !== null &&
-      currentRankImage !== previousRankImage &&
-      !shouldReduceMotion
-    ) {
-      setRankAnimationKey((current) => current + 1);
-    }
-
-    previousRankImageRef.current = currentRankImage;
-  }, [currentStreakRank.image, shouldReduceMotion]);
+  const handleToggleModifier = (modifier: QuizModifier) => {
+    setSearchParams(
+      (prev) => {
+        const next = new URLSearchParams(prev);
+        if (next.has(modifier)) {
+          next.delete(modifier);
+        } else {
+          const other: QuizModifier =
+            modifier === 'hideCommand' ? 'hideVideo' : 'hideCommand';
+          next.delete(other);
+          next.set(modifier, '');
+        }
+        return next;
+      },
+      { replace: true },
+    );
+  };
 
   const handleStart = () => {
     const {
@@ -333,6 +326,7 @@ export default function FrameQuiz() {
     setIsFeedbackVisible(false);
     setPendingAdvance(null);
     setCurrentQuestion(firstQuestion);
+    setActiveModifiers(pendingModifiers);
     setHasStarted(true);
   };
 
@@ -386,7 +380,7 @@ export default function FrameQuiz() {
         nextRecentAnswerResults.length <= RECENT_ANSWER_WINDOW
           ? nextRecentAnswerResults
           : nextRecentAnswerResults.slice(-RECENT_ANSWER_WINDOW);
-      const nextStats: PersistedFrameQuizStats = {
+      return {
         personalBestStreak: Math.max(
           current.personalBestStreak,
           nextConsecutiveCorrectStreak,
@@ -394,8 +388,6 @@ export default function FrameQuiz() {
         lifetimeAnsweredCount: current.lifetimeAnsweredCount + 1,
         recentAnswerResults: trimmedRecentAnswerResults,
       };
-
-      return nextStats;
     });
 
     setPendingAdvance({
@@ -433,6 +425,31 @@ export default function FrameQuiz() {
       // Ignore storage failures and keep UI state reset.
     }
   };
+
+  const currentSessionAccuracyPercent =
+    totalAnswered === 0 ? 0 : Math.round((score / totalAnswered) * 100);
+  const recentCorrectCount = persistedStats.recentAnswerResults.reduce(
+    (count, isCorrect) => count + (isCorrect ? 1 : 0),
+    0,
+  );
+  const recentAnswerCount = persistedStats.recentAnswerResults.length;
+  const recentAccuracyPercent =
+    recentAnswerCount === 0
+      ? 0
+      : Math.round((recentCorrectCount / recentAnswerCount) * 100);
+  const recentAccuracyBarWidth = Math.max(
+    0,
+    Math.min(100, recentAccuracyPercent),
+  );
+  const recentAccuracyBarColorClass =
+    recentAccuracyPercent >= 80
+      ? 'bg-emerald-500/80'
+      : recentAccuracyPercent > 65
+        ? 'bg-orange-500/80'
+        : 'bg-red-500/80';
+  const personalBestRank = getFrameQuizRankForStreak(
+    persistedStats.personalBestStreak,
+  );
 
   if (eligibleMoves.length === 0) {
     return (
@@ -473,6 +490,10 @@ export default function FrameQuiz() {
               a row and try to climb the ranks!
             </p>
             <Button onClick={handleStart}>Start quiz</Button>
+            <QuizModifierControls
+              modifiers={pendingModifiers}
+              onToggle={handleToggleModifier}
+            />
           </CardContent>
         </Card>
       )}
@@ -490,94 +511,16 @@ export default function FrameQuiz() {
 
       {hasStarted && currentQuestion && (
         <div className="space-y-4">
-          <Card className="mx-auto w-full max-w-2xl border-border/70 shadow-sm">
-            <CardHeader>
-              <div className="flex flex-wrap items-center justify-between gap-3">
-                <CardTitle className="min-w-0 flex-1">
-                  <span className="inline-flex min-w-0 flex-wrap gap-x-1 gap-y-1">
-                    <span className="whitespace-nowrap">
-                      {currentCharacterName}:
-                    </span>
-                    <span className="wrap-break-word">{currentCommand}</span>
-                  </span>
-                </CardTitle>
-                <div className="flex shrink-0 flex-wrap items-center justify-end gap-2">
-                  <p className="text-lg font-medium whitespace-nowrap">
-                    Streak{' '}
-                    <AnimatedNumber
-                      value={displayedStreak}
-                      className="inline-block tabular-nums"
-                      duration={0.26}
-                      animateOnDecrease={false}
-                    />
-                  </p>
-                  {currentStreakRank.image && (
-                    <motion.div
-                      key={rankAnimationKey}
-                      initial={
-                        shouldReduceMotion ? undefined : { scale: 1, y: 0 }
-                      }
-                      animate={
-                        shouldReduceMotion
-                          ? undefined
-                          : { scale: [1, 1.2, 1], y: [0, -1, 0] }
-                      }
-                      transition={
-                        shouldReduceMotion
-                          ? undefined
-                          : { duration: 0.5, ease: 'easeOut' }
-                      }
-                      className="inline-flex"
-                    >
-                      <img
-                        src={currentStreakRank.image}
-                        className="h-12 w-auto"
-                        alt={`${currentStreakRank.name} rank for streak ${displayedStreak}`}
-                      />
-                    </motion.div>
-                  )}
-                </div>
-              </div>
-            </CardHeader>
-            <CardContent className="pb-2">
-              <MoveVideo
-                move={currentQuestion.move}
-                className="mb-4 overflow-hidden rounded-lg"
-              />
-              <p className="mb-4">
-                How many frames is{' '}
-                <span className="font-bold">
-                  {currentQuestion.move.command}
-                </span>{' '}
-                on block?
-              </p>
-
-              <div className="min-h-44">
-                {questionFeedback ? (
-                  <QuestionFeedbackCard
-                    questionFeedback={questionFeedback}
-                    isFeedbackVisible={isFeedbackVisible}
-                    onContinue={handleContinueAfterFeedback}
-                    move={currentQuestion.move}
-                    sourceMoves={moves}
-                  />
-                ) : (
-                  <div className="flex flex-wrap gap-2">
-                    {answerOptions.map((option) => (
-                      <Button
-                        key={option.bucket}
-                        variant="outline"
-                        onClick={() => handleAnswer(option.bucket)}
-                        className="min-w-33 justify-center rounded-full px-5"
-                      >
-                        {option.label}
-                      </Button>
-                    ))}
-                  </div>
-                )}
-              </div>
-            </CardContent>
-          </Card>
+          <QuizQuestionCard
+            question={currentQuestion}
+            modifiers={activeModifiers}
+            questionFeedback={questionFeedback}
+            isFeedbackVisible={isFeedbackVisible}
+            displayedStreak={displayedStreak}
+            sourceMoves={moves}
+            onAnswer={handleAnswer}
+            onContinue={handleContinueAfterFeedback}
+          />
           <Card className="mx-auto w-full max-w-2xl border-border/70 shadow-sm">
             <CardHeader className="pb-2">
               <CardTitle className="text-base">Quiz performance</CardTitle>
