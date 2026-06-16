@@ -56,21 +56,7 @@ type CreditEntry = {
 
 const t8Credits: CreditEntry[] = [
   {
-    title: 'Frame data source',
-    icon: <TableIcon />,
-    content: (
-      <>
-        Frame data for Tekken 8 is imported from{' '}
-        <a className={linkClass} href="https://wavu.wiki/">
-          wavu.wiki
-        </a>
-        . A big thanks to everyone who has contributed to frame data and videos
-        there
-      </>
-    ),
-  },
-  {
-    title: 'Main programmer',
+    title: 'Main programmer and creator',
     icon: <CodeIcon />,
     content: 'MadCow',
   },
@@ -84,6 +70,20 @@ const t8Credits: CreditEntry[] = [
         />
         Logo, character avatars and images for guides
       </span>
+    ),
+  },
+  {
+    title: 'Frame data source',
+    icon: <TableIcon />,
+    content: (
+      <>
+        Frame data for Tekken 8 is imported from{' '}
+        <a className={linkClass} href="https://wavu.wiki/">
+          wavu.wiki
+        </a>
+        . A big thanks to everyone who has contributed to frame data and videos
+        there, including Poolsys, DuckmanTheThird, Soup and 6 weetbix
+      </>
     ),
   },
 ];
