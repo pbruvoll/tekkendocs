@@ -8,7 +8,7 @@ import {
   TableIcon,
   VideoIcon,
 } from '@radix-ui/react-icons';
-import { data, useLoaderData } from 'react-router';
+import { data, href, Link, useLoaderData } from 'react-router';
 import { ContentContainer } from '~/components/ContentContainer';
 import { PersonLinkList } from '~/components/PersonLinkList';
 import { getRepoContributors } from '~/services/githubService.server';
@@ -26,6 +26,10 @@ const videoRecordersT8: VideoRecorder[] = [
     name: 'MadCow',
     characters: ['Anna', 'Armor King', 'Fahkumram'],
     url: 'https://x.com/tekkendocs',
+  },
+  {
+    name: 'Byce',
+    characters: ['Kunimitsu', 'Miary Zo', 'Shaheen'],
   },
 ];
 
@@ -185,12 +189,6 @@ const SectionHeading = ({ icon, children }: SectionHeadingProps) => (
   </div>
 );
 
-// Subtle vertical accent stripe shown on the left edge of every card. It stays
-// faintly visible at rest and brightens when the parent `group` is hovered.
-const CardAccent = () => (
-  <span className="absolute inset-y-0 left-0 w-1 bg-linear-to-b from-primary/60 to-primary/10 opacity-60 transition-opacity duration-200 group-hover:opacity-100" />
-);
-
 type CreditCardProps = React.PropsWithChildren<{
   title: string;
   icon: React.ReactNode;
@@ -199,9 +197,8 @@ type CreditCardProps = React.PropsWithChildren<{
 
 const CreditCard = ({ title, icon, className, children }: CreditCardProps) => (
   <div
-    className={`group relative overflow-hidden rounded-lg border border-border bg-card p-4 pl-5 text-card-foreground transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md ${className ?? ''}`}
+    className={`paper-card group px-5 py-5 text-card-foreground drop-shadow-lg transition-all duration-200 hover:-translate-y-1 hover:drop-shadow-2xl ${className ?? ''}`}
   >
-    <CardAccent />
     <div className="mb-1.5 flex items-center gap-2">
       <span className="flex size-7 shrink-0 items-center justify-center rounded-md bg-primary/10 text-primary transition-colors duration-200 group-hover:bg-primary/20">
         {icon}
@@ -214,13 +211,14 @@ const CreditCard = ({ title, icon, className, children }: CreditCardProps) => (
   </div>
 );
 
-const characterAvatarKey = (displayName: string) =>
-  displayName.toLowerCase().replaceAll(' ', '-');
-
 const CharacterChip = ({ name }: { name: string }) => {
-  const avatar = t8AvatarMap[characterAvatarKey(name)];
+  const characterId = name.toLowerCase().replaceAll(' ', '-');
+  const avatar = t8AvatarMap[characterId];
   return (
-    <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-muted/40 py-1 pl-1 pr-3 text-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/40 hover:bg-muted">
+    <Link
+      to={`${href(`/t8/:character`, { character: characterId })}?viewMode=videoCards`}
+      className="inline-flex items-center gap-1.5 rounded-full border border-border bg-muted/40 py-1 pl-1 pr-3 text-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/40 hover:bg-muted"
+    >
       {avatar ? (
         <img
           src={avatar}
@@ -233,7 +231,7 @@ const CharacterChip = ({ name }: { name: string }) => {
         </span>
       )}
       {name}
-    </span>
+    </Link>
   );
 };
 
@@ -253,7 +251,7 @@ export default function Credits() {
       </p>
 
       <GameHeading>Tekken 8</GameHeading>
-      <div className="grid gap-4">
+      <div className="grid gap-6">
         {t8Credits.map((credit) => (
           <CreditCard
             key={credit.title}
@@ -268,13 +266,12 @@ export default function Credits() {
       {videoRecordersT8.length > 0 && (
         <>
           <SectionHeading icon={<VideoIcon />}>Video recordings</SectionHeading>
-          <div className="grid gap-4">
+          <div className="grid gap-6">
             {videoRecordersT8.map((recorder) => (
               <div
                 key={recorder.name}
-                className="group relative overflow-hidden rounded-lg border border-border bg-card p-4 pl-5 text-card-foreground transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
+                className="paper-card group px-5 py-5 text-card-foreground drop-shadow-lg transition-all duration-200 hover:-translate-y-1 hover:drop-shadow-2xl"
               >
-                <CardAccent />
                 <div className="mb-3 font-semibold">
                   <PersonLinkList
                     persons={[{ name: recorder.name, url: recorder.url }]}
@@ -291,23 +288,10 @@ export default function Credits() {
         </>
       )}
 
-      <div className="mt-4 grid gap-4">
+      <div className="mt-6 grid gap-6">
         <CreditCard title={iconsCredit.title} icon={iconsCredit.icon}>
           {iconsCredit.content}
         </CreditCard>
-      </div>
-
-      <GameHeading>Tekken 7</GameHeading>
-      <div className="grid gap-4">
-        {t7Credits.map((credit) => (
-          <CreditCard
-            key={credit.title}
-            title={credit.title}
-            icon={credit.icon}
-          >
-            {credit.content}
-          </CreditCard>
-        ))}
       </div>
 
       {contributors.length > 0 && (
@@ -349,6 +333,19 @@ export default function Credits() {
           </div>
         </>
       )}
+
+      <GameHeading>Tekken 7</GameHeading>
+      <div className="grid gap-6">
+        {t7Credits.map((credit) => (
+          <CreditCard
+            key={credit.title}
+            title={credit.title}
+            icon={credit.icon}
+          >
+            {credit.content}
+          </CreditCard>
+        ))}
+      </div>
     </ContentContainer>
   );
 }

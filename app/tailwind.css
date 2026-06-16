@@ -39,6 +39,7 @@
   --foreground-success: oklch(0.45 0.18 145); /* Extended the original theme */
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.13 0.028 261.692);
+  --paper: oklch(0.97 0.012 85);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.13 0.028 261.692);
   --primary: oklch(0.67 0.16 58);
@@ -80,6 +81,7 @@
   --foreground-success: oklch(0.72 0.17 145); /* Extended the original theme */
   --card: oklch(0.21 0.034 264.665);
   --card-foreground: oklch(0.985 0.002 247.839);
+  --paper: oklch(0.265 0.03 264.665);
   --popover: oklch(0.21 0.034 264.665);
   --popover-foreground: oklch(0.985 0.002 247.839);
   --primary: oklch(
@@ -169,5 +171,35 @@
   }
   html {
     @apply font-sans;
+  }
+}
+
+@layer components {
+  /*
+   * A sheet of paper "cut out with scissors": the top and bottom edges are a
+   * pinking-shears zigzag created from two triangular mask bands unioned with a
+   * solid center band. A drop-shadow filter follows the jagged silhouette so it
+   * reads like a physical sheet lifted off the page. --tooth controls the width
+   * of each zigzag tooth; the 9px bands must be matched by enough vertical
+   * padding on the element so content never lands in the teeth.
+   */
+  .paper-card {
+    --tooth: 16px;
+    --tooth-height: 9px;
+    background-color: var(--paper);
+    -webkit-mask:
+      conic-gradient(from -45deg at bottom, #0000, #000 1deg 89deg, #0000 90deg)
+      0 100% / var(--tooth) var(--tooth-height) repeat-x,
+      conic-gradient(from 135deg at top, #0000, #000 1deg 89deg, #0000 90deg) 0
+      0 / var(--tooth) var(--tooth-height) repeat-x,
+      linear-gradient(#000 0 0) 0 50% / 100%
+      calc(100% - 2 * var(--tooth-height)) no-repeat;
+    mask:
+      conic-gradient(from -45deg at bottom, #0000, #000 1deg 89deg, #0000 90deg)
+      0 100% / var(--tooth) var(--tooth-height) repeat-x,
+      conic-gradient(from 135deg at top, #0000, #000 1deg 89deg, #0000 90deg) 0
+      0 / var(--tooth) var(--tooth-height) repeat-x,
+      linear-gradient(#000 0 0) 0 50% / 100%
+      calc(100% - 2 * var(--tooth-height)) no-repeat;
   }
 }
