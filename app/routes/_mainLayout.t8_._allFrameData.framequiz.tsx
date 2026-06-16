@@ -85,10 +85,22 @@ const sanitizePersistedFrameQuizStats = (
   };
 };
 
-export const meta: MetaFunction = ({ matches }) => {
+export const meta: MetaFunction = ({ matches, location }) => {
+  const searchParams = new URLSearchParams(location.search);
+  const moveFilter = getFilterFromParams(searchParams);
+  const character = moveFilter.character;
+  const singleCharacterName =
+    character?.length === 1
+      ? (characterInfoT8List.find((c) => c.id === character[0])?.displayName ??
+        character[0])
+      : null;
+  const title = singleCharacterName
+    ? `${singleCharacterName} Endless Frame Quiz | TekkenDocs`
+    : 'Tekken 8 Endless Frame Quiz | TekkenDocs';
+
   return generateMetaTags({
     matches,
-    title: 'Tekken 8 Endless Frame Quiz | TekkenDocs',
+    title,
     description:
       'Endless frame data quiz. Guess the block frame and see how many you can get right in a row!',
     image: { url: '/t8/pages/framequiz.png' },
