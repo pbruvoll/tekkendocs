@@ -86,7 +86,7 @@ const t8Credits: CreditEntry[] = [
           wavu.wiki
         </a>
         . A big thanks to everyone who has contributed to frame data and videos
-        there, including Poolsys, DuckmanTheThird, Soup and 6 weetbix
+        there, including DuckmanTheThird, Soup, 6 weetbix and DVJinsane
       </>
     ),
   },
@@ -269,7 +269,9 @@ export default function Credits() {
 
       {videoRecordersT8.length > 0 && (
         <>
-          <SectionHeading icon={<VideoIcon />}>Video recordings</SectionHeading>
+          <SectionHeading icon={<VideoIcon />}>
+            Video recordings - Full sets
+          </SectionHeading>
           <div className="grid gap-6">
             {videoRecordersT8.map((recorder) => (
               <div
