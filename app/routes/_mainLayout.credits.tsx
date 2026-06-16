@@ -58,7 +58,11 @@ const t8Credits: CreditEntry[] = [
   {
     title: 'Main programmer and creator',
     icon: <CodeIcon />,
-    content: 'MadCow',
+    content: (
+      <PersonLinkList
+        persons={[{ name: 'MadCow', url: 'https://x.com/tekkendocs' }]}
+      />
+    ),
   },
   {
     title: 'Designer',
@@ -288,7 +292,8 @@ export default function Credits() {
         </>
       )}
 
-      <div className="mt-6 grid gap-6">
+      <SectionHeading icon={<ImageIcon />}>Other</SectionHeading>
+      <div className="grid gap-6">
         <CreditCard title={iconsCredit.title} icon={iconsCredit.icon}>
           {iconsCredit.content}
         </CreditCard>
