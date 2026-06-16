@@ -292,7 +292,7 @@ export default function Credits() {
         </>
       )}
 
-      <SectionHeading icon={<ImageIcon />}>Other</SectionHeading>
+      <SectionHeading icon={iconsCredit.icon}>Other</SectionHeading>
       <div className="grid gap-6">
         <CreditCard title={iconsCredit.title} icon={iconsCredit.icon}>
           {iconsCredit.content}
