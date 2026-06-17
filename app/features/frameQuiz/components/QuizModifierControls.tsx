@@ -23,8 +23,8 @@ export const QuizModifierControls = ({
   const hideVideoId = `${id}-hide-video`;
 
   return (
-    <div className="mt-6 space-y-3 border-t border-border/60 pt-4">
-      <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+    <div className="mt-6 border-t border-border/60 pt-4">
+      <p className="text-xs font-semibold uppercase tracking-wide mb-3 text-muted-foreground">
         Modifiers
       </p>
       <div className="space-y-3">

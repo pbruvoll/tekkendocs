@@ -1,4 +1,4 @@
-import { data, Outlet } from 'react-router';
+import { data, Outlet, type ShouldRevalidateFunction } from 'react-router';
 import { environment } from '~/constants/environment.server';
 import { SheetServiceMock } from '~/mock/SheetServiceMock';
 import { SheetServiceImpl } from '~/services/sheetServiceImpl.server';
@@ -35,6 +35,8 @@ export const loader = async () => {
     },
   );
 };
+
+export const shouldRevalidate: ShouldRevalidateFunction = () => false;
 
 export default function AllFrameData() {
   return <Outlet />;
