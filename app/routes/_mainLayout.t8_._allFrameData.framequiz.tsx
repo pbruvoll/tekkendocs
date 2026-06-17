@@ -9,6 +9,8 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ContentContainer } from '~/components/ContentContainer';
 import { characterInfoT8List } from '~/constants/characterInfoListT8';
+import { filterKey } from '~/constants/filterConstants';
+import { QuizCharacterFilter } from '~/features/frameQuiz/components/QuizCharacterFilter';
 import {
   type QuizModifier,
   QuizModifierControls,
@@ -137,7 +139,6 @@ export default function FrameQuiz() {
     hideCommand: false,
     hideVideo: false,
   });
-
   const [searchParams, setSearchParams] = useSearchParams();
 
   const moveFilter = useMemo(
@@ -290,6 +291,22 @@ export default function FrameQuiz() {
 
     movePageBlocker.reset();
   }, [movePageBlocker.state, movePageBlocker.proceed, movePageBlocker.reset]);
+
+  const selectedCharacters = moveFilter.character ?? [];
+
+  const handleCharacterSelectionChange = (characters: string[]) => {
+    setSearchParams(
+      (prev) => {
+        const next = new URLSearchParams(prev);
+        next.delete(filterKey.Character);
+        characters.forEach((id) => {
+          next.append(filterKey.Character, id);
+        });
+        return next;
+      },
+      { replace: true, preventScrollReset: true },
+    );
+  };
 
   const handleToggleModifier = (modifier: QuizModifier) => {
     setSearchParams(
@@ -480,10 +497,10 @@ export default function FrameQuiz() {
 
       {!hasStarted && (
         <Card className="mx-auto w-full max-w-2xl border-border/70 shadow-sm">
-          <CardHeader>
+          <CardHeader className="p-3 sm:p-6">
             <CardTitle>Endless frame quiz</CardTitle>
           </CardHeader>
-          <CardContent>
+          <CardContent className="p-3 pt-0 sm:p-6 sm:pt-0">
             <p className="mb-4">
               Guess how many frames each move is on block. This mode is endless
               and keeps going until you stop. See how many you can get right in
@@ -494,6 +511,12 @@ export default function FrameQuiz() {
               modifiers={pendingModifiers}
               onToggle={handleToggleModifier}
             />
+            {searchParams.has('preview') && (
+              <QuizCharacterFilter
+                selectedCharacters={selectedCharacters}
+                onSelectionChange={handleCharacterSelectionChange}
+              />
+            )}
           </CardContent>
         </Card>
       )}
