@@ -89,7 +89,8 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 1+2;m;17;i15;-9;+4;+46a;* Weapon;wpn;;Eden;31;;;Victor-1+2;victor
 2+3+4;sp;;;;;;;;;Taunt;;;;Victor-2+3+4;victor
 3+4;sp;;i30;;;;* Cancel stance with db;;;Iai Stance;;;;Victor-3+4;victor
-3+4;sp;;i30;;;;* Cancel to FC with db;;FC;Iai Stance;11;;;Victor-3+4;victor
+3+4;sp;;i30;;;;"* Cancel to FC r20 with db
+** i11 stand guard";;FC;Iai Stance;11;;;Victor-3+4;victor
 f+2;h;10;i13~14;-11;+5;;;;;;30;;File:t8-p2-victor-f+2,2,1,1.mp4;Victor-f+2;victor
 f+2,2;h, h;10, 10;i13~14, i11;-15;-4;;"* Weapon
 * Combo from 1st hit";wpn;;;;;File:t8-p2-victor-f+2,2,1,1.mp4;Victor-f+2,2;victor
@@ -177,23 +178,27 @@ db+3;h;20;i19~20;-11;+67a (+51a);;"* Tornado
 * High crush 6";trn bbr cs6;;Polite Greetings;33;;File:t8-p2-victor-db+3.mp4;Victor-db+3;victor
 db+4;l;17;i20~21;-26;+4c;+49a;* High crush 6;cs6;FC;Welcome Sweep;32 FC;;File:t8-p2-victor-db+4.mp4;Victor-db+4;victor
 b+1;m;11;i14;-13;-3;;"* Weapon
-* Transition to PRF with F (-5/+5)";wpn;PRF;;33;;File:t8-p2-victor-b+1,2.mp4;Victor-b+1;victor
-b+1,2;m, h,th;11, 16(15);i14, i20;-8;+0;;"* Side switch after attack throw connects
-* Hit Confirmable on counter hit
-* Combo from 1st CH";;;Vanity Love;;;File:t8-p2-victor-b+1,2.mp4;Victor-b+1,2;victor
+* Transition to PRF r25 with F (-5/+5) with 9F delay";wpn;PRF;;r33;;File:t8-p2-victor-b+1,2.mp4;Victor-b+1;victor
+b+1,2;m, h,th;11, 16(15);i14, i20;-8;+0;;"* Combo from 1st CH with 10F delay
+* Move can be delayed by 9F
+* Input can be delayed by 10F
+* Side switch after attack throw connects";;;Vanity Love;r29;;File:t8-p2-victor-b+1,2.mp4;Victor-b+1,2;victor
 b+2;h;5;i10;-6;+5;+14;"* Weapon
 * Deals recoverable damage only; cannot cause a K.O.";wpn;;Strobing Memories;r27;;File:t8-p2-victor-b+2.mp4;Victor-b+2;victor
-b+3;m;15;i17;-9;+4;;;;;;31;;;Victor-b+3;victor
+b+3;m;15;i17;-9;+4;;;;;;r31;;;Victor-b+3;victor
 b+3,1;m, m;15, 25;i17, i25~26;-13;+21a (+16);;"* Balcony Break
 * Weapon
-* Combo from 1st hit with 7F delay";bbr wpn;;Caval;;;;Victor-b+3,1;victor
+* Combo from 1st hit with 7F delay";bbr wpn;;Caval;r33;;;Victor-b+3,1;victor
 b+4;h;20;i18~19;-2;+14;;"* Homing
-* Balcony Break";hom bbr;;Cordial Circuit;r29;;;Victor-b+4;victor
-b+1+2;h;25;i19~20;-9;+16d;+16d;"* Balcony Break
+* Balcony Break
+* 6 chip damage on block";hom bbr;;Cordial Circuit;r29;;;Victor-b+4;victor
+b+1+2;h;25;i19~20;-9;+16cg;;"* Balcony Break
 * Weapon
+* Forces tech back roll on hit
 * 7 chip damage on block
+* +0 and 10 chip damage on block after attack absorption
 * Power crush 7~18";bbr wpn pc7~18;;Failnaught;r31;;File:t8-p2-victor-b+1+2.mp4;Victor-b+1+2;victor
-b+1+4;m;24;i26~27;-21;+37 (+6);;* Weapon;wpn;;Dun Stallion;49;;File:t8-p2-victor-b+1+4.mp4;Victor-b+1+4;victor
+b+1+4;m;24;i26~27;-21;+37 (+6);;* Weapon;wpn;;Dun Stallion;48;;File:t8-p2-victor-b+1+4.mp4;Victor-b+1+4;victor
 ub+2;m;17;i17~18;-5;+8;+32a;"* Weapon
 * Balcony Break
 * Can be charged
@@ -225,7 +230,8 @@ uf+4;m,sm;12,16;i15~17, i28~30;-19;+73a (+57a);;"* Tornado
 b,B+2+3;ub(m);50;i65~66;;+2a (-8);;* Balcony Break;bbr;;Montjoie Takemikazuchi;;;File:t8-p2-victor-b,b+2+3.mp4;Victor-b,B+2+3;victor
 f,F+2;m;24;i18~20;-16;+33a (+23a);;"* Tornado
 * Weapon
-* 7 chip damage on block";trn wpn;;Carnwennan;37;;File:t8-p2-victor-f,f+2.mp4;Victor-f,F+2;victor
+* 7 chip damage on block
+* Jab evasion from frame 6 to 17?";trn wpn;;Carnwennan;r35;;File:t8-p2-victor-f,f+2.mp4;Victor-f,F+2;victor
 qcf+2;h;16;i22;-3;+4;;"* Strong Aerial Tailspin
 * Wall Crush +12g on hit
 
@@ -235,14 +241,15 @@ qcf+2;h;16;i22;-3;+4;;"* Strong Aerial Tailspin
 * Transition to IAI
 * Deals 6 chip damage on block";wc wpn;IAI,IAI;Amour Shaft;r36 IAI;;File:t8-p2-victor-qcf+2.mp4;Victor-qcf+2;victor
 ub,b;sp;;;;;;;;;Le Blanc;;;File:t8-p2-victor-ub,b.mp4;Victor-ub,b;victor
-f,f,F+2;m;21;i18~19;+2;+34d (-24d);+61a (+45a);"* Balcony Break
+f,f,F+2;m;21;i18~19;+2;+8cg;+61a (+45a);"* Balcony Break
 * Weapon
-* Deals 6 chip damage on block
-* Transition to IAI with d or 3+4 at +5 / +37d (-21d) / +64a (+48a)";bbr wpn;IAI;Asterism of Virtue;40;;File:t8-p2-victor-f,f,f+2.mp4;Victor-f,f,F+2;victor
-f,f,F+1+2;L,L;10,14;i18, i14~15;-14;+4 IAI;+15g;"* Weapon
-* Transition to r18 IAI at +4 on hit
+* Transition to IAI r36 with d or 3+4 (+5/+11cg/+64a (+48a))
+* Forces tech back roll on hit
+* 6 chip damage on block";bbr wpn;IAI;Asterism of Virtue;r39;;File:t8-p2-victor-f,f,f+2.mp4;Victor-f,f,F+2;victor
+f,f,F+1+2;L,L;10,14;i18, i14~15;-14;+4 IAI;+15g IAI;"* Weapon
+* Transition to IAI r29 on hit (+4/+15g)
 * Unparryable (weapon low)
-* High crush 15~";wpn cs15~;IAI;Tear Drop Cut;r32;;;Victor-f,f,F+1+2;victor
+* High crush 15~50";wpn cs15~50;IAI;Tear Drop Cut;r32;;;Victor-f,f,F+1+2;victor
 ws1;m;20;i15~16;-16;+53a;;* Weapon;wpn;;Oval Cut;36;;File:t8-p2-victor-ws1.mp4;Victor-ws1;victor
 ws2;m;15;i14~15;-8;+6;+35a (+25);* Weapon;wpn;;Baguette Cut;29;;File:t8-p2-victor-ws2.mp4;Victor-ws2;victor
 ws3;h;16;i14~15;-14;+6;;;;;;35;;File:t8-p2-victor-ws3,2.mp4;Victor-ws3;victor
@@ -347,7 +354,8 @@ PRF.3;m;21;i15~17;-8;+15c;;"* Heat Engager
 * Low crush 11~23
 * Floating state 24~25";he bbr kne js11~23 fs24~25;;Flying Gentleman;r31;;File:t8-p2-victor-prf.3.mp4;Victor-PRF.3;victor
 PRF.4;h;20;i18~19;-2;+14;;"* Homing
-* Balcony Break";hom bbr;;Cordial Circuit;r29;;;Victor-PRF.4;victor
+* Balcony Break
+* 6 chip damage on block";hom bbr;;Cordial Circuit;r29;;;Victor-PRF.4;victor
 PRF.1+2;m;25;i25~27;+6;+14a;;"* Balcony Break
 * Weapon
 * 7 chip damage on block
@@ -361,10 +369,12 @@ hFC.1+2;l,h;10,10;i16,i10~11;-23, -13;+0;;"* Weapon
 * Not parryable (weapon low and weapon high)
 * Can be done from Crouch Level 1
 * Transition to PRF (-17 / +6) with F";wpn;PRF;Shangri-La;42;;File:t8-p2-victor-fc.1+2.mp4;Victor-hFC.1+2;victor
-1+3;t;35;i12~14;-3;-2;;"* Throw break: 1 or 2
-* Opponent recovery on hit: FDFT";;;One Night Miracle;r31;;;Victor-1+3;victor
-2+4;t;35;i12~14;-3;-4;;"* Throw break: 1 or 2
-* Opponent recovery on hit: opp. side FDFT off-axis to the right";;;Je Te Veux;r31;;;Victor-2+4;victor
+1+3;t;35;i12~14;-3;-2;;"* Homing
+* Throw break: 1 or 2
+* Opponent recovery on hit: FDFT";hom;;One Night Miracle;r31;;;Victor-1+3;victor
+2+4;t;35;i12~14;-3;-4;;"* Homing
+* Throw break: 1 or 2
+* Opponent recovery on hit: opp. side FDFT off-axis to the right";hom;;Je Te Veux;r31;;;Victor-2+4;victor
 Back throw;t;50;i12~14;;-3;;"* Throw break: none
 * Opponent recovery on hit: FUFA";;;Farewell in Taj Mahal;;;;Victor-Back throw;victor
 Left throw;t;40;i12~14;-3;-2;;"* Throw break: 1
