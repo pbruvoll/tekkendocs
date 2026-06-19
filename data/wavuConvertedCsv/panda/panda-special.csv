@@ -55,28 +55,33 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 
 * Forces crouch on hit";bbr he;;Demon Bear Breath;r31;;File:t8-p2-panda-1+2.mp4;Panda-1+2;panda
 3+4;sp;;;;;;"* Alternate input: FDFA.3+4
+* Can low parry in HBS with F
 * Transition to HBS
-* High crush 4~";cs4~;HBS,HBS;Hunting;r15 HBS;;;Panda-3+4;panda
+* Transition to r10 FC with input ub_u_uf
+* Transition to r15 FC with DB
+* Remains in stance indefinitely
+* Can move in stance with F or B";;HBS,FC,FC,HBS;Hunting;r15 HBS;;;Panda-3+4;panda
 3+4;sp;;;;;;"* Alternate input: FDFA.3+4
 * Can low parry in HBS with HBS.F
 * Transition to HBS
 * Transition to standing with input ub or u or uf";;HBS;Hunting;;;;Panda-3+4;panda
-f+2;h;11;i12;-13;+3;;;;;;;;File:t8-p2-panda-f+2,1.mp4;Panda-f+2;panda
+f+2;h;11;i12;-13;+3;;;;;;r32;;File:t8-p2-panda-f+2,1.mp4;Panda-f+2;panda
 f+2,1;h, h;11, 20;i12, i20;-5;+36a (+10);;"* Balcony Break
 * Combo from 1st hit with 9F delay
-* Move can be delayed by 13F";bbr;;Wild Lumberjack;;;File:t8-p2-panda-f+2,1.mp4;Panda-f+2,1;panda
-f+3;h;30;i20;-5;+21a (+11);;* Balcony Break;bbr;;;;;;Panda-f+3;panda
-f+4;h;22;i15;-6;+5;+30a;* Balcony Break on CH;;;;;;;Panda-f+4;panda
-f+1+2;m;16;i18;-15;+18a;;;;;;;;File:t8-p2-panda-f+1+2,1+2.mp4;Panda-f+1+2;panda
+* Move can be delayed by 13F";bbr;;Wild Lumberjack;r30;;File:t8-p2-panda-f+2,1.mp4;Panda-f+2,1;panda
+f+3;h;30;i20;-5;+21a (+11);;* Balcony Break;bbr;;;r29;;;Panda-f+3;panda
+f+4;h;22;i15;-6;+5;+30a;* Balcony Break on CH;;;;r25;;;Panda-f+4;panda
+f+1+2;m;16;i18;-15;+18a;;Pseudo-homing?;;;;r38;;File:t8-p2-panda-f+1+2,1+2.mp4;Panda-f+1+2;panda
 f+1+2,1+2;m, M;16, 20;i18, i30~31;-14;+65a (+49);;"* Tornado
-* Combo from 1st hit
-* Grounded hit on off-axis hit against large body size characters?";trn;;Bear Claw Cross;;;File:t8-p2-panda-f+1+2,1+2.mp4;Panda-f+1+2,1+2;panda
+* Combo from 1st hit with 2F delay
+* Interrupt with i8 from 1st block
+* Grounded hit on off-axis hit against large body size characters?";trn;;Bear Claw Cross;r37;;File:t8-p2-panda-f+1+2,1+2.mp4;Panda-f+1+2,1+2;panda
 f+3+4;L;20;i28~30;-23;+6a;;"* Unparryable (bug?)
-* High crush 6~";cs6~;FC;Shape-Up Kick;r40? FC;;File:t8-p2-panda-f+3+4.mp4;Panda-f+3+4;panda
-f+3+4,1+2;L, M;20, 30 (24);i28~30, i50~i60;-16;-13a;;"* Shoulder
-** Body slam (unparryable)
+* High crush 6~70";cs6~70;FC;Shape-Up Kick;r40 FC;;File:t8-p2-panda-f+3+4.mp4;Panda-f+3+4;panda
+f+3+4,1+2;L, M;20, 30 (24);i28~30, i50~i60;-16;-13a;;"* Hip
+* Interrupt with i31 from 1st block
 * 24 damage from 1st hit with grounded scaling
-* High crush 0~";shd cs0~;;Shape-Up Hip;r43?;;File:t8-p2-panda-f+3+4,1+2.mp4;Panda-f+3+4,1+2;panda
+* High crush 0~75";hip cs0~75;;Shape-Up Hip;r43;;File:t8-p2-panda-f+3+4,1+2.mp4;Panda-f+3+4,1+2;panda
 df+1;m;6;i15~16;-6;+2;;;;;;;;File:t8-p2-panda-df+1,2,1+2.mp4;Panda-df+1;panda
 df+1,2;m, m;6, 9;i15~16, i22~23;-11;-2;;* Combo from 1st CH;;;;;;File:t8-p2-panda-df+1,2,1+2.mp4;Panda-df+1,2;panda
 df+1,2,1+2;m, m, M;6, 9, 20;i15~16, ,i25~26;-14c;+17d;;"* Combo from 2nd hit with 9F delay
@@ -92,7 +97,7 @@ df+3,2;m, h;13, 24;i16, i27~28;-5;+22a;;"* Balcony Break on airborne hit
 * Combo from 1st hit
 * 9 chip damage on block";;;Honey Trap;;;File:t8-p2-panda-df+3,2.mp4;Panda-df+3,2;panda
 df+4;m;15;i12;-4;+7;;;;;;;;;Panda-df+4;panda
-d+1;sl;5;i10;-5;+6;;"* Transition to Standing with f
+d+1;sl;5;i10;-5;+6;;"* Transition to r24 with f
 * +6c on crouching hit
 * High crush 4~";cs4~;FC;Crouch Jab;r24 FC;;;Panda-d+1;panda
 d+2;sl;8;i11;-4;+7;;"* +7c on crouching hit
@@ -102,9 +107,8 @@ d+3;L;12;i20;-17;-6;;"* -6c on crouching hit
 d+4;l;10;i16;-15;-4;;"* -4c on crouching hit
 * High crush 4~";cs4~;FC;Crouch Shin Kick;r34 FC;;;Panda-d+4;panda
 d+1+2;M;23;i14~15;-15;+13d (+3);;"* Balcony Break
-* Shoulder
-** Body slam (unparryable)
-* 27 damage on clean hit";bbr shd;;Hip Smash;;;File:t8-p2-panda-d+1+2.mp4;Panda-d+1+2;panda
+* Hip
+* 27 damage on clean hit";bbr hip;;Hip Smash;;;File:t8-p2-panda-d+1+2.mp4;Panda-d+1+2;panda
 d+3+4;sp;;;;;;"* Alternative input: db+3+4
 * Transition to ROL with input SIT.F
 * Transition to California Roll with input SIT.B
@@ -317,28 +321,32 @@ hFC.1+2;sp;;i26~i31;+1~+6;+7~+12;;"* Transition to ROL
 ** +20~+25 or +0~+5 HBS or +7~+12 FC on hit
 * Can be done from Crouch Level 1
 * Floating state 1~31";fs1~31;ROL,ROL;Bear Roll;r31 ROL;;;Panda-hFC.1+2;panda
-1+3;th(h);35;i12~14;-3;+1;;"* Throw break: 1 or 2
-* Opponent status on hit: FUFT";;;Bear's Bite;;;File:t8-p2-panda-1+3.mp4;Panda-1+3;panda
-2+4;th(h);35;i12~14;-6;+1;;"* Throw break: 1 or 2
+1+3;th(h);35;i12~14;-3;+1;;"* Homing
+* Throw break: 1 or 2
+* Opponent status on hit: FUFT";hom;;Bear's Bite;;;File:t8-p2-panda-1+3.mp4;Panda-1+3;panda
+2+4;th(h);35;i12~14;-6;+1;;"* Homing
+* Throw break: 1 or 2
 * Opponent status on hit: FUFT
-* Side switch on hit";;;Bear Hug;;;File:t8-p2-panda-2+4.mp4;Panda-2+4;panda
+* Side switch on hit";hom;;Bear Hug;;;File:t8-p2-panda-2+4.mp4;Panda-2+4;panda
 Back throw;th(h);70;i12~14;;+1;;"* Throw break: none
 * Opponent status on hit: FUFA";;;Swing Swung;;;;Panda-Back throw;panda
 H.db+1+3;t;10;i15;;+12;;"* Alternate input: H.db+2+4
 * Unbreakable
 * Uses 300F of remaining heat time";;;So Shoe Me (Panda Style);;;;Panda-H.db+1+3;panda
-HBS.f+1+2;th(h);30;i26~27;;+1;;"* Removes Recoverable Health
+HBS.f+1+2;th(h);30;i26~27;;-2d;;"* Removes Recoverable Health
 * Spike
 * Throw break: none
-* Opponent status on hit: FUFA";spk;;Bear Toss;;;File:t8-p2-kuma-hbs.f+1+2.mp4;Panda-HBS.f+1+2;panda
+* Opponent status on hit: FUFA
+* Panda: Reduced attack range and vertical hitbox (does not hit as high)";spk;;Bear Toss;;;File:t8-p2-kuma-hbs.f+1+2.mp4;Panda-HBS.f+1+2;panda
 Left throw;th(h);50;i12~14;-3;+1;;"* Throw break: 1
 * Spike
 * Opponent status on hit: FUFT";spk;;Bear Slam;;;;Panda-Left throw;panda
 Right throw;th(h);40;i12~14;-3;+1;;"* Throw break: 2
 * Opponent status on hit: FUFT off axis";;;Choke Slam;;;;Panda-Right throw;panda
-f,df,d,db,b,f+1+2;th(h);50;i11;0;+5;;"* Throw break: 1+2
+hcb,f+1+2;th(h);50;i11;+0;+5;;"* Throw break: 1+2
+* 60 dmg if opponent hits the wall
 * Opponent status on hit: FUFA
-* Side switch on hit";;;Rock'n Roll Circus;;;File:t8-p2-panda-hcb,f+1+2.mp4;Panda-hcb,f+1+2;panda
+* Side switch on throw break and hit";;;Rock'n Roll Circus;;;File:t8-p2-panda-hcb,f+1+2.mp4;Panda-hcb,f+1+2;panda
 uf+1+2;th(h);35;i12~14;0;+26d (+7);;"* Throw break: 1+2
 * Balcony Break
 * Opponent status on hit: FUFT";bbr;;Headbutt;;;File:t8-p2-panda-uf+1+2.mp4;Panda-uf+1+2;panda
