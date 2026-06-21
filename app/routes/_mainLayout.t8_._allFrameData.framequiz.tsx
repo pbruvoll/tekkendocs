@@ -16,6 +16,7 @@ import {
   QuizModifierControls,
   type QuizModifiers,
 } from '~/features/frameQuiz/components/QuizModifierControls';
+import { MoveFilterDialog } from '~/components/MoveFilterDialog';
 import { QuizQuestionCard } from '~/features/frameQuiz/components/QuizQuestionCard';
 import { answerLabelByBucket } from '~/features/frameQuiz/constants';
 import {
@@ -182,6 +183,11 @@ export default function FrameQuiz() {
     if (singleCharacterName) return singleCharacterName;
     return 'Custom filter';
   }, [moveFilter]);
+
+  const characterFilteredMoves = useMemo(() => {
+    if (!isFilterValueActive(moveFilter.character)) return moves;
+    return filterMoves(moves, { character: moveFilter.character });
+  }, [moves, moveFilter.character]);
 
   const eligibleMoves = useMemo(
     () =>
@@ -506,16 +512,30 @@ export default function FrameQuiz() {
               and keeps going until you stop. See how many you can get right in
               a row and try to climb the ranks!
             </p>
-            <Button onClick={handleStart}>Start quiz</Button>
+            <Button className="mb-4" onClick={handleStart}>
+              Start quiz
+            </Button>
             <QuizModifierControls
               modifiers={pendingModifiers}
               onToggle={handleToggleModifier}
             />
             {searchParams.has('preview') && (
-              <QuizCharacterFilter
-                selectedCharacters={selectedCharacters}
-                onSelectionChange={handleCharacterSelectionChange}
-              />
+              <>
+                <QuizCharacterFilter
+                  selectedCharacters={selectedCharacters}
+                  onSelectionChange={handleCharacterSelectionChange}
+                />
+                <div className="mt-6 border-t border-border/60 pt-4">
+                  <p className="mb-3 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                    Filters
+                  </p>
+                  <MoveFilterDialog
+                    triggerVariant="soft"
+                    moveFilter={moveFilter}
+                    moves={characterFilteredMoves}
+                  />
+                </div>
+              </>
             )}
           </CardContent>
         </Card>

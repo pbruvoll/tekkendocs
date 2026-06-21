@@ -1,6 +1,12 @@
+import { type NavigateOptions } from 'react-router';
 import { type SearchParamsChanges } from '~/types/SearchParamsChanges';
 
-type SetSearchParams = (fn: (prev: URLSearchParams) => URLSearchParams) => void;
+type SetSearchParams = (
+  fn: (prev: URLSearchParams) => URLSearchParams,
+  opts?: NavigateOptions,
+) => void;
+
+const noScrollReset: NavigateOptions = { preventScrollReset: true };
 
 export const setFilterValue = (
   setSearchParams: SetSearchParams,
@@ -11,7 +17,7 @@ export const setFilterValue = (
     const newSearchParams = new URLSearchParams(prev);
     newSearchParams.set(key, value);
     return newSearchParams;
-  });
+  }, noScrollReset);
 };
 
 export const removeFilterValue = (
@@ -21,7 +27,7 @@ export const removeFilterValue = (
   setSearchParams((prev) => {
     prev.delete(key);
     return prev;
-  });
+  }, noScrollReset);
 };
 
 export const updateFilterValues = (
@@ -37,7 +43,7 @@ export const updateFilterValues = (
       newSearchParams.delete(key);
     });
     return newSearchParams;
-  });
+  }, noScrollReset);
 };
 
 export const addFilterElement = (
@@ -48,7 +54,7 @@ export const addFilterElement = (
   setSearchParams((prev) => {
     prev.append(key, element);
     return prev;
-  });
+  }, noScrollReset);
 };
 
 export const removeFilterElement = (
@@ -59,5 +65,5 @@ export const removeFilterElement = (
   setSearchParams((prev) => {
     prev.delete(key, element);
     return prev;
-  });
+  }, noScrollReset);
 };

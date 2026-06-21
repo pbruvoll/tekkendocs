@@ -7,7 +7,15 @@ import {
   FrameDataFilterSelection,
 } from './FrameDataFilterSelection';
 
-type FrameDataFilterDialogProps = FrameDataFilterSectionProps;
+type FrameDataFilterDialogProps = FrameDataFilterSectionProps & {
+  triggerVariant?:
+    | 'classic'
+    | 'solid'
+    | 'soft'
+    | 'surface'
+    | 'outline'
+    | 'ghost';
+};
 
 export const FrameDataFilterDialog = ({
   className,
@@ -20,15 +28,18 @@ export const FrameDataFilterDialog = ({
   stances,
   states,
   transitions,
+  triggerVariant,
 }: FrameDataFilterDialogProps) => {
-  const filterCount = Object.values(filter).filter(isFilterValueActive).length;
+  const filterDialogCount = Object.entries(filter)
+    .filter(([key]) => key !== filterKey.Character && key !== filterKey.Query)
+    .filter(([, value]) => isFilterValueActive(value)).length;
 
   return (
     <Dialog.Root>
       <Dialog.Trigger>
-        <Button radius="large" className={className}>
+        <Button radius="large" className={className} variant={triggerVariant}>
           <MixerHorizontalIcon width="16" height="16" /> Filter
-          {filterCount ? ` (${filterCount})` : ''}
+          {filterDialogCount ? ` (${filterDialogCount})` : ''}
         </Button>
       </Dialog.Trigger>
 
