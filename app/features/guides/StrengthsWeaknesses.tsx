@@ -16,8 +16,8 @@ const Core = ({ section, type }: CoreProps) => {
         size="4"
         className={cx(
           type === 'strengths'
-            ? 'border-l-4 border-success bg-success/10 text-foreground-success'
-            : 'border-l-4 border-destructive bg-destructive/10 text-foreground-destructive',
+            ? 'border-l-4 border-success bg-success/20 text-foreground-success'
+            : 'border-l-4 border-destructive bg-destructive/20 text-foreground-destructive',
           'p-2',
         )}
       >
