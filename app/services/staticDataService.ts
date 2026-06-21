@@ -193,6 +193,7 @@ export const characterGuideAuthors: Record<
     leroy: { author: 'SYRAXSLAYER', version: 'S2' },
     lidia: { author: 'Leemishima', version: 'S3' },
     lili: { author: 'DewGlider', version: 'S3' },
+    'miary-zo': { author: 'Koenji', version: 'S3' },
     nina: { author: 'Lalo', version: 'S3' },
     raven: { author: 'JacobKaas', version: 'S3' },
     shaheen: { author: 'Alihandal', version: 'S3' },
