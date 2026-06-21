@@ -14,7 +14,7 @@ export const WallCombos = ({ wallCombos }: WallCombosProps) => {
   return (
     <section
       className="my-6 mb-10"
-      id={'Combo Enders'.toLowerCase().replace(/ /g, '-')}
+      id={'Wall Combos'.toLowerCase().replace(/ /g, '-')}
     >
       <GuideSectionHeading title="Wall Combos" />
       <div className="flex gap-2 md:gap-4 lg:gap-8">

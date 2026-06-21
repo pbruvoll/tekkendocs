@@ -15,8 +15,10 @@ const Core = ({ section, type }: CoreProps) => {
         as="h2"
         size="4"
         className={cx(
-          type === 'strengths' ? 'bg-[#005500]' : 'bg-[#440000]',
-          'p-2 text-white',
+          type === 'strengths'
+            ? 'border-l-4 border-success bg-success/10 text-foreground-success'
+            : 'border-l-4 border-destructive bg-destructive/10 text-foreground-destructive',
+          'p-2',
         )}
       >
         {type === 'strengths' ? 'Strengths' : 'Weaknesses'}
