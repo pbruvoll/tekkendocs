@@ -30,14 +30,16 @@ export const FrameDataFilterDialog = ({
   transitions,
   triggerVariant,
 }: FrameDataFilterDialogProps) => {
-  const filterCount = Object.values(filter).filter(isFilterValueActive).length;
+  const filterDialogCount = Object.entries(filter)
+    .filter(([key]) => key !== filterKey.Character && key !== filterKey.Query)
+    .filter(([, value]) => isFilterValueActive(value)).length;
 
   return (
     <Dialog.Root>
       <Dialog.Trigger>
         <Button radius="large" className={className} variant={triggerVariant}>
           <MixerHorizontalIcon width="16" height="16" /> Filter
-          {filterCount ? ` (${filterCount})` : ''}
+          {filterDialogCount ? ` (${filterDialogCount})` : ''}
         </Button>
       </Dialog.Trigger>
 
