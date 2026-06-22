@@ -5,7 +5,7 @@ const MOVE_RANGE_LENGTHS = [20, 50];
 export type MoveRange = { start: number; end: number };
 
 function generateRanges(total: number, rangeSize: number): MoveRange[] {
-  if (total <= rangeSize) return [];
+  if (total <= rangeSize) return [{ start: 1, end: total }];
   const ranges: MoveRange[] = [];
   let start = 1;
   while (start <= total) {
@@ -19,7 +19,7 @@ function generateRanges(total: number, rangeSize: number): MoveRange[] {
       ranges[ranges.length - 1].end = last.end;
     }
   }
-  return ranges.length >= 2 ? ranges : [];
+  return ranges;
 }
 
 type QuizRangeSelectionProps = {
@@ -36,9 +36,24 @@ export const QuizRangeSelection = ({
   const rows = MOVE_RANGE_LENGTHS.map((rangeSize) => ({
     rangeSize,
     ranges: generateRanges(eligibleMoveCount, rangeSize),
-  })).filter(({ ranges }) => ranges.length >= 2);
+  })).filter(({ ranges }) => ranges.length >= 1);
 
-  if (rows.length === 0) return null;
+  if (eligibleMoveCount === 0) return null;
+
+  const renderButton = (r: MoveRange) => {
+    const isSelected =
+      selectedRange?.start === r.start && selectedRange?.end === r.end;
+    return (
+      <Button
+        key={r.start}
+        size="sm"
+        variant={isSelected ? 'default' : 'outline'}
+        onClick={() => onRangeChange(isSelected ? null : r)}
+      >
+        {r.start}–{r.end}
+      </Button>
+    );
+  };
 
   return (
     <div className="mt-6 border-t border-border/60 pt-4">
@@ -53,21 +68,7 @@ export const QuizRangeSelection = ({
               Sets of {rangeSize}
             </p>
             <div className="flex flex-wrap gap-2">
-              {ranges.map((r) => {
-                const isSelected =
-                  selectedRange?.start === r.start &&
-                  selectedRange?.end === r.end;
-                return (
-                  <Button
-                    key={r.start}
-                    size="sm"
-                    variant={isSelected ? 'default' : 'outline'}
-                    onClick={() => onRangeChange(isSelected ? null : r)}
-                  >
-                    {r.start}–{r.end}
-                  </Button>
-                );
-              })}
+              {ranges.map((r) => renderButton(r))}
             </div>
           </div>
         ))}
