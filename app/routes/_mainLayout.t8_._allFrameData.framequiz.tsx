@@ -210,7 +210,10 @@ export default function FrameQuiz() {
 
   const rangedEligibleMoves = useMemo(() => {
     if (!selectedMoveRange) return eligibleMoves;
-    return eligibleMoves.slice(selectedMoveRange.start - 1, selectedMoveRange.end);
+    return eligibleMoves.slice(
+      selectedMoveRange.start - 1,
+      selectedMoveRange.end,
+    );
   }, [eligibleMoves, selectedMoveRange]);
 
   const handleRangeChange = (range: MoveRange | null) => {
