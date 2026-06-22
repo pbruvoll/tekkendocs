@@ -201,6 +201,10 @@ export default function FrameQuiz() {
     [moves, moveFilter, hasActiveFilter],
   );
 
+  const [prevEligibleMovesLength, setPrevEligibleMovesLength] = useState(
+    eligibleMoves.length,
+  );
+
   const selectedMoveRange = useMemo((): MoveRange | null => {
     const startMove = Number(searchParams.get('startMove'));
     const numMoves = Number(searchParams.get('numMoves'));
@@ -334,6 +338,8 @@ export default function FrameQuiz() {
   }, [movePageBlocker.state, movePageBlocker.proceed, movePageBlocker.reset]);
 
   useEffect(() => {
+    if (prevEligibleMovesLength === eligibleMoves.length) return;
+    setPrevEligibleMovesLength(eligibleMoves.length);
     setSearchParams(
       (prev) => {
         const next = new URLSearchParams(prev);
@@ -343,7 +349,7 @@ export default function FrameQuiz() {
       },
       { replace: true, preventScrollReset: true },
     );
-  }, [eligibleMoves.length]);
+  }, [eligibleMoves.length, prevEligibleMovesLength, setSearchParams]);
 
   const selectedCharacters = moveFilter.character ?? [];
 
