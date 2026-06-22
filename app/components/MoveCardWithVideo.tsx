@@ -1,5 +1,4 @@
-import { ChevronDown, ChevronRight } from 'lucide-react';
-import { AnimatePresence, motion, useInView } from 'motion/react';
+import { useInView } from 'motion/react';
 import { useEffect, useEffectEvent, useRef, useState } from 'react';
 import { Link } from 'react-router';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';

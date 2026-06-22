@@ -17,6 +17,10 @@ import {
   type QuizModifiers,
 } from '~/features/frameQuiz/components/QuizModifierControls';
 import { MoveFilterDialog } from '~/components/MoveFilterDialog';
+import {
+  type MoveRange,
+  QuizRangeSelection,
+} from '~/features/frameQuiz/components/QuizRangeSelection';
 import { QuizQuestionCard } from '~/features/frameQuiz/components/QuizQuestionCard';
 import { answerLabelByBucket } from '~/features/frameQuiz/constants';
 import {
@@ -197,6 +201,41 @@ export default function FrameQuiz() {
     [moves, moveFilter, hasActiveFilter],
   );
 
+  const [prevEligibleMovesLength, setPrevEligibleMovesLength] = useState(
+    eligibleMoves.length,
+  );
+
+  const selectedMoveRange = useMemo((): MoveRange | null => {
+    const startMove = Number(searchParams.get('startMove'));
+    const numMoves = Number(searchParams.get('numMoves'));
+    if (!startMove || !numMoves) return null;
+    return { start: startMove, end: startMove + numMoves - 1 };
+  }, [searchParams]);
+
+  const rangedEligibleMoves = useMemo(() => {
+    if (!selectedMoveRange) return eligibleMoves;
+    return eligibleMoves.slice(
+      selectedMoveRange.start - 1,
+      selectedMoveRange.end,
+    );
+  }, [eligibleMoves, selectedMoveRange]);
+
+  const handleRangeChange = (range: MoveRange | null) => {
+    setSearchParams(
+      (prev) => {
+        const next = new URLSearchParams(prev);
+        next.delete('startMove');
+        next.delete('numMoves');
+        if (range) {
+          next.set('startMove', String(range.start));
+          next.set('numMoves', String(range.end - range.start + 1));
+        }
+        return next;
+      },
+      { replace: true, preventScrollReset: true },
+    );
+  };
+
   const movePageBlocker = useBlocker(({ nextLocation }) => {
     return hasStarted && nextLocation.pathname !== '/';
   });
@@ -298,6 +337,20 @@ export default function FrameQuiz() {
     movePageBlocker.reset();
   }, [movePageBlocker.state, movePageBlocker.proceed, movePageBlocker.reset]);
 
+  useEffect(() => {
+    if (prevEligibleMovesLength === eligibleMoves.length) return;
+    setPrevEligibleMovesLength(eligibleMoves.length);
+    setSearchParams(
+      (prev) => {
+        const next = new URLSearchParams(prev);
+        next.delete('startMove');
+        next.delete('numMoves');
+        return next;
+      },
+      { replace: true, preventScrollReset: true },
+    );
+  }, [eligibleMoves.length, prevEligibleMovesLength, setSearchParams]);
+
   const selectedCharacters = moveFilter.character ?? [];
 
   const handleCharacterSelectionChange = (characters: string[]) => {
@@ -337,7 +390,7 @@ export default function FrameQuiz() {
       question: firstQuestion,
       questionBag: nextQuestionBag,
       questionBagCursor: nextQuestionBagCursor,
-    } = takeQuestionFromBag([], 0, eligibleMoves, []);
+    } = takeQuestionFromBag([], 0, rangedEligibleMoves, []);
     setScore(0);
     setTotalAnswered(0);
     setConsecutiveCorrectStreak(0);
@@ -367,7 +420,7 @@ export default function FrameQuiz() {
       : 0;
     const recentWindowSize = Math.max(
       1,
-      Math.min(RECENT_QUESTION_WINDOW, eligibleMoves.length - 1),
+      Math.min(RECENT_QUESTION_WINDOW, rangedEligibleMoves.length - 1),
     );
     const nextRecentQuestionIds = appendRecentQuestionId(
       recentQuestionIds,
@@ -383,7 +436,7 @@ export default function FrameQuiz() {
     } = takeQuestionFromBag(
       sourceQuestionBag,
       sourceQuestionBagCursor,
-      eligibleMoves,
+      rangedEligibleMoves,
       nextRecentQuestionIds,
     );
 
@@ -525,6 +578,13 @@ export default function FrameQuiz() {
                   selectedCharacters={selectedCharacters}
                   onSelectionChange={handleCharacterSelectionChange}
                 />
+                {selectedCharacters.length === 1 && (
+                  <QuizRangeSelection
+                    eligibleMoveCount={eligibleMoves.length}
+                    selectedRange={selectedMoveRange}
+                    onRangeChange={handleRangeChange}
+                  />
+                )}
                 <div className="mt-6 border-t border-border/60 pt-4">
                   <p className="mb-3 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
                     Filters
