@@ -131,8 +131,13 @@ export default function FrameQuiz() {
   });
   const [searchParams, setSearchParams] = useSearchParams();
   const navigate = useNavigate();
-  const hasStarted = searchParams.has('started');
-  const startedOnMount = useRef(hasStarted);
+  // A `started` param present on mount is a stale reload of an in-progress
+  // quiz (React state is gone). Treat it as "not started" so we render the
+  // start screen directly instead of flashing the loading card, and strip the
+  // param below. The ref is cleared once consumed so a later "Start quiz"
+  // (which re-adds the param) still registers as started.
+  const startedOnMount = useRef(searchParams.has('started'));
+  const hasStarted = searchParams.has('started') && !startedOnMount.current;
 
   const moveFilter = useMemo(
     () => getFilterFromParams(searchParams),
@@ -261,6 +266,7 @@ export default function FrameQuiz() {
 
   useEffect(() => {
     if (startedOnMount.current) {
+      startedOnMount.current = false;
       setSearchParams(
         (prev) => {
           const next = new URLSearchParams(prev);
@@ -427,7 +433,7 @@ export default function FrameQuiz() {
       quizStatsStore.write(
         computeNextStats(storedStats, isCorrect, nextConsecutiveCorrectStreak),
       );
-    } else {
+    } else if (!singleCharacterId) {
       setSessionStats((current) =>
         computeNextStats(current, isCorrect, nextConsecutiveCorrectStreak),
       );
