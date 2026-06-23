@@ -538,6 +538,10 @@ export default function FrameQuiz() {
               and keeps going until you stop. See how many you can get right in
               a row and try to climb the ranks!
             </p>
+            <p className="mb-4 text-sm text-muted-foreground">
+              Want to focus on a specific character, a subset of moves, or apply
+              a custom filter? Use the options below before starting.
+            </p>
             <Button className="mb-4" onClick={handleStart}>
               Start quiz
             </Button>
