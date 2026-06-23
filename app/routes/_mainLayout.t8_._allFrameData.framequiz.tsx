@@ -8,6 +8,7 @@ import {
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ContentContainer } from '~/components/ContentContainer';
+import { MoveFilterDialog } from '~/components/MoveFilterDialog';
 import { characterInfoT8List } from '~/constants/characterInfoListT8';
 import { filterKey } from '~/constants/filterConstants';
 import { QuizCharacterFilter } from '~/features/frameQuiz/components/QuizCharacterFilter';
@@ -16,12 +17,11 @@ import {
   QuizModifierControls,
   type QuizModifiers,
 } from '~/features/frameQuiz/components/QuizModifierControls';
-import { MoveFilterDialog } from '~/components/MoveFilterDialog';
+import { QuizQuestionCard } from '~/features/frameQuiz/components/QuizQuestionCard';
 import {
   type MoveRange,
   QuizRangeSelection,
 } from '~/features/frameQuiz/components/QuizRangeSelection';
-import { QuizQuestionCard } from '~/features/frameQuiz/components/QuizQuestionCard';
 import { answerLabelByBucket } from '~/features/frameQuiz/constants';
 import {
   getAnswerBucket,
@@ -587,7 +587,7 @@ export default function FrameQuiz() {
                 )}
                 <div className="mt-6 border-t border-border/60 pt-4">
                   <p className="mb-3 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                    Filters
+                    Custom Filters
                   </p>
                   <MoveFilterDialog
                     triggerVariant="soft"
@@ -595,6 +595,9 @@ export default function FrameQuiz() {
                     moves={characterFilteredMoves}
                   />
                 </div>
+                <Button className="mt-6" onClick={handleStart}>
+                  Start quiz
+                </Button>
               </>
             )}
           </CardContent>
