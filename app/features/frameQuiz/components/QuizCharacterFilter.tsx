@@ -3,17 +3,20 @@ import { useId, useState } from 'react';
 import { Label } from '@/components/ui/label';
 import { Switch } from '@/components/ui/switch';
 import { characterInfoT8List } from '~/constants/characterInfoListT8';
-import garyuRank from '~/images/t8/ranks/ganryu.png';
 import { t8AvatarBrandMap } from '~/utils/t8AvatarMap';
 
 type QuizCharacterFilterProps = {
   selectedCharacters: string[];
   onSelectionChange: (characters: string[]) => void;
+  characterRankImages?: Record<string, string>;
+  charStatsLoaded?: boolean;
 };
 
 export const QuizCharacterFilter = ({
   selectedCharacters,
   onSelectionChange,
+  characterRankImages,
+  charStatsLoaded,
 }: QuizCharacterFilterProps) => {
   const id = useId();
   const multiSelectId = `${id}-multi-select`;
@@ -86,9 +89,12 @@ export const QuizCharacterFilter = ({
                   {displayName}
                 </span>
                 <img
-                  src={garyuRank}
-                  alt="Garyu rank"
-                  className="mt-0.5 h-7 w-auto"
+                  src={characterRankImages?.[characterId]}
+                  alt="Rank badge"
+                  className={cx(
+                    'mt-0.5 h-7 w-auto transition-opacity',
+                    !charStatsLoaded && 'opacity-0',
+                  )}
                 />
               </button>
             </li>

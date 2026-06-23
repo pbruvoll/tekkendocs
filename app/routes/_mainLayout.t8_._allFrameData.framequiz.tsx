@@ -28,6 +28,16 @@ import {
   getEligibleQuizMoves,
 } from '~/features/frameQuiz/moveSelection';
 import {
+  computeNextStats,
+  defaultPersistedFrameQuizStats,
+  loadCharQuizStats,
+  type PersistedCharFrameQuizData,
+  type PersistedFrameQuizStats,
+  sanitizePersistedFrameQuizStats,
+  saveCharQuizStats,
+  updateCharData,
+} from '~/features/frameQuiz/quizStats';
+import {
   appendRecentQuestionId,
   takeQuestionFromBag,
 } from '~/features/frameQuiz/random';
@@ -43,53 +53,14 @@ import { generateMetaTags } from '~/utils/seoUtils';
 import { type LoaderData } from './_mainLayout.t8_._allFrameData';
 
 const RECENT_QUESTION_WINDOW = 20;
-const RECENT_ANSWER_WINDOW = 200;
 const FRAME_QUIZ_STATS_STORAGE_KEY = 't8FrameQuizStatsV1';
-
-type PersistedFrameQuizStats = {
-  personalBestStreak: number;
-  lifetimeAnsweredCount: number;
-  recentAnswerResults: boolean[];
-};
+const FRAME_QUIZ_CHAR_STATS_STORAGE_KEY = 't8FrameQuizStatsByCharsV1';
 
 type PendingAdvance = {
   nextQuestion: QuizMove | null;
   recentQuestionIds: string[];
   questionBag: QuizMove[];
   questionBagCursor: number;
-};
-
-const defaultPersistedFrameQuizStats: PersistedFrameQuizStats = {
-  personalBestStreak: 0,
-  lifetimeAnsweredCount: 0,
-  recentAnswerResults: [],
-};
-
-const sanitizePersistedFrameQuizStats = (
-  value: unknown,
-): PersistedFrameQuizStats => {
-  if (!value || typeof value !== 'object') {
-    return defaultPersistedFrameQuizStats;
-  }
-
-  const candidate = value as Partial<PersistedFrameQuizStats>;
-  const personalBestStreak = Number.isFinite(candidate.personalBestStreak)
-    ? Math.max(0, Math.floor(candidate.personalBestStreak ?? 0))
-    : 0;
-  const lifetimeAnsweredCount = Number.isFinite(candidate.lifetimeAnsweredCount)
-    ? Math.max(0, Math.floor(candidate.lifetimeAnsweredCount ?? 0))
-    : 0;
-  const recentAnswerResults = Array.isArray(candidate.recentAnswerResults)
-    ? candidate.recentAnswerResults
-        .filter((answer): answer is boolean => typeof answer === 'boolean')
-        .slice(-RECENT_ANSWER_WINDOW)
-    : [];
-
-  return {
-    personalBestStreak,
-    lifetimeAnsweredCount,
-    recentAnswerResults,
-  };
 };
 
 export const meta: MetaFunction = ({ matches, location }) => {
@@ -140,6 +111,9 @@ export default function FrameQuiz() {
     defaultPersistedFrameQuizStats,
   );
   const [hasLoadedPersistedStats, setHasLoadedPersistedStats] = useState(false);
+  const [persistedCharStats, setPersistedCharStats] =
+    useState<PersistedCharFrameQuizData>({});
+  const [hasLoadedCharStats, setHasLoadedCharStats] = useState(false);
   const [activeModifiers, setActiveModifiers] = useState<QuizModifiers>({
     hideCommand: false,
     hideVideo: false,
@@ -220,6 +194,13 @@ export default function FrameQuiz() {
     );
   }, [eligibleMoves, selectedMoveRange]);
 
+  const singleCharacterId = useMemo(() => {
+    const { character, ...otherFilters } = moveFilter;
+    const hasOtherFilters =
+      Object.values(otherFilters).some(isFilterValueActive) || !!selectedMoveRange;
+    return character?.length === 1 && !hasOtherFilters ? character[0] : null;
+  }, [moveFilter, selectedMoveRange]);
+
   const handleRangeChange = (range: MoveRange | null) => {
     setSearchParams(
       (prev) => {
@@ -299,6 +280,11 @@ export default function FrameQuiz() {
       // Ignore storage write failures (e.g. quota exceeded/private mode).
     }
   }, [persistedStats, hasLoadedPersistedStats, persistToStorage]);
+
+  useEffect(() => {
+    setPersistedCharStats(loadCharQuizStats(FRAME_QUIZ_CHAR_STATS_STORAGE_KEY));
+    setHasLoadedCharStats(true);
+  }, []);
 
   useEffect(() => {
     if (!questionFeedback) {
@@ -447,24 +433,20 @@ export default function FrameQuiz() {
       isCorrect ? nextConsecutiveCorrectStreak : consecutiveCorrectStreak,
     );
 
-    setPersistedStats((current) => {
-      const nextRecentAnswerResults = [
-        ...current.recentAnswerResults,
+    setPersistedStats((current) =>
+      computeNextStats(current, isCorrect, nextConsecutiveCorrectStreak),
+    );
+
+    if (singleCharacterId) {
+      const nextCharData = updateCharData(
+        persistedCharStats,
+        singleCharacterId,
         isCorrect,
-      ];
-      const trimmedRecentAnswerResults =
-        nextRecentAnswerResults.length <= RECENT_ANSWER_WINDOW
-          ? nextRecentAnswerResults
-          : nextRecentAnswerResults.slice(-RECENT_ANSWER_WINDOW);
-      return {
-        personalBestStreak: Math.max(
-          current.personalBestStreak,
-          nextConsecutiveCorrectStreak,
-        ),
-        lifetimeAnsweredCount: current.lifetimeAnsweredCount + 1,
-        recentAnswerResults: trimmedRecentAnswerResults,
-      };
-    });
+        nextConsecutiveCorrectStreak,
+      );
+      setPersistedCharStats(nextCharData);
+      saveCharQuizStats(FRAME_QUIZ_CHAR_STATS_STORAGE_KEY, nextCharData);
+    }
 
     setPendingAdvance({
       nextQuestion,
@@ -527,6 +509,16 @@ export default function FrameQuiz() {
     persistedStats.personalBestStreak,
   );
 
+  const characterRankImages = useMemo(() => {
+    const result: Record<string, string> = {};
+    for (const { id: charId } of characterInfoT8List) {
+      const streak =
+        persistedCharStats.normal?.[charId]?.personalBestStreak ?? 0;
+      result[charId] = getFrameQuizRankForStreak(streak).image;
+    }
+    return result;
+  }, [persistedCharStats]);
+
   if (eligibleMoves.length === 0) {
     return (
       <ContentContainer enableBottomPadding enableTopPadding>
@@ -577,6 +569,8 @@ export default function FrameQuiz() {
                 <QuizCharacterFilter
                   selectedCharacters={selectedCharacters}
                   onSelectionChange={handleCharacterSelectionChange}
+                  characterRankImages={characterRankImages}
+                  charStatsLoaded={hasLoadedCharStats}
                 />
                 {selectedCharacters.length === 1 && (
                   <QuizRangeSelection
