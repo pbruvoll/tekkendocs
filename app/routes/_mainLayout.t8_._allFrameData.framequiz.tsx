@@ -149,8 +149,6 @@ export default function FrameQuiz() {
     [moveFilter],
   );
 
-  const persistToStorage = !hasActiveFilter;
-
   const pendingModifiers = useMemo(
     (): QuizModifiers => ({
       hideCommand: searchParams.has('hideCommand'),
@@ -220,6 +218,11 @@ export default function FrameQuiz() {
       !!selectedMoveRange;
     return character?.length === 1 && !hasOtherFilters ? character[0] : null;
   }, [moveFilter, selectedMoveRange]);
+
+  // Persist stats whenever there is no filter (global stats) or exactly one
+  // character is selected (per-character stats). Any other filter combination
+  // is session-only. The store/key is then chosen by `singleCharacterId`.
+  const persistToStorage = !hasActiveFilter || !!singleCharacterId;
 
   const singleCharacterName = singleCharacterId
     ? (characterInfoT8List.find((c) => c.id === singleCharacterId)
@@ -430,23 +433,27 @@ export default function FrameQuiz() {
     );
 
     if (persistToStorage) {
-      quizStatsStore.write(
-        computeNextStats(storedStats, isCorrect, nextConsecutiveCorrectStreak),
-      );
-    } else if (!singleCharacterId) {
+      if (singleCharacterId) {
+        charQuizStatsStore.write(
+          updateCharData(
+            persistedCharStats,
+            singleCharacterId,
+            isCorrect,
+            nextConsecutiveCorrectStreak,
+          ),
+        );
+      } else {
+        quizStatsStore.write(
+          computeNextStats(
+            storedStats,
+            isCorrect,
+            nextConsecutiveCorrectStreak,
+          ),
+        );
+      }
+    } else {
       setSessionStats((current) =>
         computeNextStats(current, isCorrect, nextConsecutiveCorrectStreak),
-      );
-    }
-
-    if (singleCharacterId) {
-      charQuizStatsStore.write(
-        updateCharData(
-          persistedCharStats,
-          singleCharacterId,
-          isCorrect,
-          nextConsecutiveCorrectStreak,
-        ),
       );
     }
 
@@ -703,7 +710,7 @@ export default function FrameQuiz() {
                 </div>
               </div>
 
-              {(persistToStorage || singleCharacterId) && (
+              {persistToStorage && (
                 <div className="border-t border-border/60 pt-2">
                   <Button
                     type="button"
