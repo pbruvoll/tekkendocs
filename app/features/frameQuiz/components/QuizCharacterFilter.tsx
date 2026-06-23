@@ -1,5 +1,6 @@
 import cx from 'classix';
 import { useId, useState } from 'react';
+import { useHydrated } from 'remix-utils/use-hydrated';
 import { Label } from '@/components/ui/label';
 import { Switch } from '@/components/ui/switch';
 import { characterInfoT8List } from '~/constants/characterInfoListT8';
@@ -9,18 +10,20 @@ type QuizCharacterFilterProps = {
   selectedCharacters: string[];
   onSelectionChange: (characters: string[]) => void;
   characterRankImages?: Record<string, string>;
-  charStatsLoaded?: boolean;
 };
 
 export const QuizCharacterFilter = ({
   selectedCharacters,
   onSelectionChange,
   characterRankImages,
-  charStatsLoaded,
 }: QuizCharacterFilterProps) => {
   const id = useId();
   const multiSelectId = `${id}-multi-select`;
   const [multiSelect, setMultiSelect] = useState(false);
+  // Rank images come from localStorage, which is only available after
+  // hydration. Keep badges hidden until then so they don't flash the
+  // default (lowest) rank before the real value is known.
+  const isHydrated = useHydrated();
 
   const handleCharacterClick = (characterId: string) => {
     if (multiSelect) {
@@ -97,7 +100,7 @@ export const QuizCharacterFilter = ({
                   alt="Rank badge"
                   className={cx(
                     'mt-0.5 h-7 w-auto transition-opacity',
-                    !charStatsLoaded && 'opacity-0',
+                    !isHydrated && 'opacity-0',
                   )}
                 />
               </button>

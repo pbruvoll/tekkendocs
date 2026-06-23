@@ -46,7 +46,7 @@ export const sanitizePersistedCharFrameQuizStats = (
 ): PersistedCharFrameQuizData => {
   if (!value || typeof value !== 'object') return {};
   const candidate = value as Record<string, unknown>;
-  const normalData = candidate['normal'];
+  const normalData = candidate.normal;
   if (!normalData || typeof normalData !== 'object') return {};
   const normal: Record<string, PersistedFrameQuizStats> = {};
   for (const [charId, charStats] of Object.entries(
@@ -95,6 +95,15 @@ export const updateCharData = (
     ),
   },
 });
+
+export const clearCharData = (
+  current: PersistedCharFrameQuizData,
+  charId: string,
+): PersistedCharFrameQuizData => {
+  if (!current.normal?.[charId]) return current;
+  const { [charId]: _removed, ...rest } = current.normal;
+  return { ...current, normal: rest };
+};
 
 type LocalStorageStore<T> = {
   subscribe: (listener: () => void) => () => void;

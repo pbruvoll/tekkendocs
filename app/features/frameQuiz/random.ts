@@ -110,18 +110,3 @@ export const takeQuestionFromBag = (
     questionBagCursor: questionBagCursor + 1,
   };
 };
-
-export const pickRandomQuizMoveExcludingRecent = (
-  moves: QuizMove[],
-  recentQuestionIds: string[],
-): QuizMove | null => {
-  if (!moves.length) {
-    return null;
-  }
-
-  const excludedIds = new Set(recentQuestionIds);
-  const candidateMoves = moves.filter((move) => !excludedIds.has(move.id));
-  const pool = candidateMoves.length > 0 ? candidateMoves : moves;
-  const randomIndex = Math.floor(Math.random() * pool.length);
-  return pool[randomIndex] || null;
-};

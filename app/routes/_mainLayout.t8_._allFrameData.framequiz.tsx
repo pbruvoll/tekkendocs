@@ -1,5 +1,11 @@
 import { ArrowLeft } from 'lucide-react';
-import { useEffect, useMemo, useRef, useState, useSyncExternalStore } from 'react';
+import {
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+  useSyncExternalStore,
+} from 'react';
 import {
   type MetaFunction,
   useBlocker,
@@ -31,10 +37,12 @@ import {
 } from '~/features/frameQuiz/moveSelection';
 import {
   charQuizStatsStore,
+  clearCharData,
   computeNextStats,
   defaultPersistedFrameQuizStats,
   type PersistedFrameQuizStats,
   quizStatsStore,
+  RECENT_ANSWER_WINDOW,
   updateCharData,
 } from '~/features/frameQuiz/quizStats';
 import {
@@ -137,7 +145,6 @@ export default function FrameQuiz() {
   );
 
   const persistToStorage = !hasActiveFilter;
-  const persistedStats = persistToStorage ? storedStats : sessionStats;
 
   const pendingModifiers = useMemo(
     (): QuizModifiers => ({
@@ -204,9 +211,25 @@ export default function FrameQuiz() {
   const singleCharacterId = useMemo(() => {
     const { character, ...otherFilters } = moveFilter;
     const hasOtherFilters =
-      Object.values(otherFilters).some(isFilterValueActive) || !!selectedMoveRange;
+      Object.values(otherFilters).some(isFilterValueActive) ||
+      !!selectedMoveRange;
     return character?.length === 1 && !hasOtherFilters ? character[0] : null;
   }, [moveFilter, selectedMoveRange]);
+
+  const singleCharacterName = singleCharacterId
+    ? (characterInfoT8List.find((c) => c.id === singleCharacterId)
+        ?.displayName ?? singleCharacterId)
+    : null;
+
+  // When practicing a single character, surface that character's persisted
+  // stats. Otherwise use the global persisted stats, or session-only stats
+  // when a non-character filter is active.
+  const persistedStats = singleCharacterId
+    ? (persistedCharStats.normal?.[singleCharacterId] ??
+      defaultPersistedFrameQuizStats)
+    : persistToStorage
+      ? storedStats
+      : sessionStats;
 
   const handleRangeChange = (range: MoveRange | null) => {
     setSearchParams(
@@ -248,7 +271,6 @@ export default function FrameQuiz() {
       );
     }
   }, [setSearchParams]);
-
 
   useEffect(() => {
     if (!questionFeedback) {
@@ -450,6 +472,12 @@ export default function FrameQuiz() {
   };
 
   const handleResetPersistedStats = () => {
+    if (singleCharacterId) {
+      charQuizStatsStore.write(
+        clearCharData(persistedCharStats, singleCharacterId),
+      );
+      return;
+    }
     quizStatsStore.clear();
   };
 
@@ -471,7 +499,7 @@ export default function FrameQuiz() {
   const recentAccuracyBarColorClass =
     recentAccuracyPercent >= 80
       ? 'bg-emerald-500/80'
-      : recentAccuracyPercent > 65
+      : recentAccuracyPercent >= 65
         ? 'bg-orange-500/80'
         : 'bg-red-500/80';
   const personalBestRank = getFrameQuizRankForStreak(
@@ -555,7 +583,6 @@ export default function FrameQuiz() {
                   selectedCharacters={selectedCharacters}
                   onSelectionChange={handleCharacterSelectionChange}
                   characterRankImages={characterRankImages}
-                  charStatsLoaded={true}
                 />
                 {selectedCharacters.length === 1 && (
                   <QuizRangeSelection
@@ -626,7 +653,7 @@ export default function FrameQuiz() {
 
                 <div className="rounded-lg border border-border/60 bg-muted/25 p-3">
                   <p className="text-xs uppercase tracking-wide text-muted-foreground">
-                    Last 200 questions
+                    Last {RECENT_ANSWER_WINDOW} questions
                   </p>
                   <p className="mt-1 text-lg font-semibold tabular-nums">
                     {recentAccuracyPercent}%
@@ -670,7 +697,7 @@ export default function FrameQuiz() {
                 </div>
               </div>
 
-              {persistToStorage && (
+              {(persistToStorage || singleCharacterId) && (
                 <div className="border-t border-border/60 pt-2">
                   <Button
                     type="button"
@@ -679,7 +706,9 @@ export default function FrameQuiz() {
                     onClick={handleResetPersistedStats}
                     className="h-auto px-0 text-xs text-muted-foreground hover:text-foreground"
                   >
-                    Reset saved stats
+                    {singleCharacterName
+                      ? `Reset ${singleCharacterName} stats`
+                      : 'Reset saved stats'}
                   </Button>
                 </div>
               )}
