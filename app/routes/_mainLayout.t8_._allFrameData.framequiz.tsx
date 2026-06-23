@@ -1,5 +1,5 @@
 import { ArrowLeft } from 'lucide-react';
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState, useSyncExternalStore } from 'react';
 import {
   type MetaFunction,
   useBlocker,
@@ -30,13 +30,11 @@ import {
   getEligibleQuizMoves,
 } from '~/features/frameQuiz/moveSelection';
 import {
+  charQuizStatsStore,
   computeNextStats,
   defaultPersistedFrameQuizStats,
-  loadCharQuizStats,
-  type PersistedCharFrameQuizData,
   type PersistedFrameQuizStats,
-  sanitizePersistedFrameQuizStats,
-  saveCharQuizStats,
+  quizStatsStore,
   updateCharData,
 } from '~/features/frameQuiz/quizStats';
 import {
@@ -55,8 +53,6 @@ import { generateMetaTags } from '~/utils/seoUtils';
 import { type LoaderData } from './_mainLayout.t8_._allFrameData';
 
 const RECENT_QUESTION_WINDOW = 20;
-const FRAME_QUIZ_STATS_STORAGE_KEY = 't8FrameQuizStatsV1';
-const FRAME_QUIZ_CHAR_STATS_STORAGE_KEY = 't8FrameQuizStatsByCharsV1';
 
 type PendingAdvance = {
   nextQuestion: QuizMove | null;
@@ -108,13 +104,19 @@ export default function FrameQuiz() {
   const [pendingAdvance, setPendingAdvance] = useState<PendingAdvance | null>(
     null,
   );
-  const [persistedStats, setPersistedStats] = useState<PersistedFrameQuizStats>(
+  const storedStats = useSyncExternalStore(
+    quizStatsStore.subscribe,
+    quizStatsStore.getSnapshot,
+    quizStatsStore.getServerSnapshot,
+  );
+  const [sessionStats, setSessionStats] = useState<PersistedFrameQuizStats>(
     defaultPersistedFrameQuizStats,
   );
-  const [hasLoadedPersistedStats, setHasLoadedPersistedStats] = useState(false);
-  const [persistedCharStats, setPersistedCharStats] =
-    useState<PersistedCharFrameQuizData>({});
-  const [hasLoadedCharStats, setHasLoadedCharStats] = useState(false);
+  const persistedCharStats = useSyncExternalStore(
+    charQuizStatsStore.subscribe,
+    charQuizStatsStore.getSnapshot,
+    charQuizStatsStore.getServerSnapshot,
+  );
   const [activeModifiers, setActiveModifiers] = useState<QuizModifiers>({
     hideCommand: false,
     hideVideo: false,
@@ -122,6 +124,7 @@ export default function FrameQuiz() {
   const [searchParams, setSearchParams] = useSearchParams();
   const navigate = useNavigate();
   const hasStarted = searchParams.has('started');
+  const startedOnMount = useRef(hasStarted);
 
   const moveFilter = useMemo(
     () => getFilterFromParams(searchParams),
@@ -134,6 +137,7 @@ export default function FrameQuiz() {
   );
 
   const persistToStorage = !hasActiveFilter;
+  const persistedStats = persistToStorage ? storedStats : sessionStats;
 
   const pendingModifiers = useMemo(
     (): QuizModifiers => ({
@@ -233,61 +237,18 @@ export default function FrameQuiz() {
   }, []);
 
   useEffect(() => {
-    if (!persistToStorage) {
-      setHasLoadedPersistedStats(true);
-      return;
-    }
-
-    try {
-      const stored = localStorage.getItem(FRAME_QUIZ_STATS_STORAGE_KEY);
-      if (!stored) {
-        setHasLoadedPersistedStats(true);
-        return;
-      }
-
-      const parsed = JSON.parse(stored);
-      setPersistedStats(sanitizePersistedFrameQuizStats(parsed));
-    } catch {
-      setPersistedStats(defaultPersistedFrameQuizStats);
-      try {
-        localStorage.removeItem(FRAME_QUIZ_STATS_STORAGE_KEY);
-      } catch {
-        // Ignore storage failures while recovering from corrupt data.
-      }
-    } finally {
-      setHasLoadedPersistedStats(true);
-    }
-  }, [persistToStorage]);
-
-  useEffect(() => {
-    if (!hasLoadedPersistedStats || !persistToStorage) {
-      return;
-    }
-
-    try {
-      const isDefaultStats =
-        persistedStats.personalBestStreak === 0 &&
-        persistedStats.lifetimeAnsweredCount === 0 &&
-        persistedStats.recentAnswerResults.length === 0;
-
-      if (isDefaultStats) {
-        localStorage.removeItem(FRAME_QUIZ_STATS_STORAGE_KEY);
-        return;
-      }
-
-      localStorage.setItem(
-        FRAME_QUIZ_STATS_STORAGE_KEY,
-        JSON.stringify(persistedStats),
+    if (startedOnMount.current) {
+      setSearchParams(
+        (prev) => {
+          const next = new URLSearchParams(prev);
+          next.delete('started');
+          return next;
+        },
+        { replace: true, preventScrollReset: true },
       );
-    } catch {
-      // Ignore storage write failures (e.g. quota exceeded/private mode).
     }
-  }, [persistedStats, hasLoadedPersistedStats, persistToStorage]);
+  }, [setSearchParams]);
 
-  useEffect(() => {
-    setPersistedCharStats(loadCharQuizStats(FRAME_QUIZ_CHAR_STATS_STORAGE_KEY));
-    setHasLoadedCharStats(true);
-  }, []);
 
   useEffect(() => {
     if (!questionFeedback) {
@@ -440,19 +401,25 @@ export default function FrameQuiz() {
       isCorrect ? nextConsecutiveCorrectStreak : consecutiveCorrectStreak,
     );
 
-    setPersistedStats((current) =>
-      computeNextStats(current, isCorrect, nextConsecutiveCorrectStreak),
-    );
+    if (persistToStorage) {
+      quizStatsStore.write(
+        computeNextStats(storedStats, isCorrect, nextConsecutiveCorrectStreak),
+      );
+    } else {
+      setSessionStats((current) =>
+        computeNextStats(current, isCorrect, nextConsecutiveCorrectStreak),
+      );
+    }
 
     if (singleCharacterId) {
-      const nextCharData = updateCharData(
-        persistedCharStats,
-        singleCharacterId,
-        isCorrect,
-        nextConsecutiveCorrectStreak,
+      charQuizStatsStore.write(
+        updateCharData(
+          persistedCharStats,
+          singleCharacterId,
+          isCorrect,
+          nextConsecutiveCorrectStreak,
+        ),
       );
-      setPersistedCharStats(nextCharData);
-      saveCharQuizStats(FRAME_QUIZ_CHAR_STATS_STORAGE_KEY, nextCharData);
     }
 
     setPendingAdvance({
@@ -483,12 +450,7 @@ export default function FrameQuiz() {
   };
 
   const handleResetPersistedStats = () => {
-    setPersistedStats(defaultPersistedFrameQuizStats);
-    try {
-      localStorage.removeItem(FRAME_QUIZ_STATS_STORAGE_KEY);
-    } catch {
-      // Ignore storage failures and keep UI state reset.
-    }
+    quizStatsStore.clear();
   };
 
   const currentSessionAccuracyPercent =
@@ -589,7 +551,7 @@ export default function FrameQuiz() {
                   selectedCharacters={selectedCharacters}
                   onSelectionChange={handleCharacterSelectionChange}
                   characterRankImages={characterRankImages}
-                  charStatsLoaded={hasLoadedCharStats}
+                  charStatsLoaded={true}
                 />
                 {selectedCharacters.length === 1 && (
                   <QuizRangeSelection

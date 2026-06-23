@@ -96,23 +96,86 @@ export const updateCharData = (
   },
 });
 
-export const loadCharQuizStats = (key: string): PersistedCharFrameQuizData => {
-  try {
-    const stored = localStorage.getItem(key);
-    if (!stored) return {};
-    return sanitizePersistedCharFrameQuizStats(JSON.parse(stored));
-  } catch {
-    return {};
-  }
+type LocalStorageStore<T> = {
+  subscribe: (listener: () => void) => () => void;
+  getSnapshot: () => T;
+  getServerSnapshot: () => T;
+  write: (value: T) => void;
+  clear: () => void;
 };
 
-export const saveCharQuizStats = (
+function createLocalStorageStore<T>(
   key: string,
-  data: PersistedCharFrameQuizData,
-): void => {
-  try {
-    localStorage.setItem(key, JSON.stringify(data));
-  } catch {
-    // Ignore storage write failures (e.g. quota exceeded/private mode).
+  defaultValue: T,
+  parse: (raw: unknown) => T,
+): LocalStorageStore<T> {
+  const listeners = new Set<() => void>();
+
+  function emit() {
+    for (const l of listeners) l();
   }
-};
+
+  let cachedRaw: string | null = null;
+  let cachedValue: T = defaultValue;
+
+  function getSnapshot(): T {
+    try {
+      const stored = localStorage.getItem(key);
+      if (!stored) {
+        cachedRaw = null;
+        cachedValue = defaultValue;
+        return defaultValue;
+      }
+      if (stored === cachedRaw) return cachedValue;
+      cachedRaw = stored;
+      cachedValue = parse(JSON.parse(stored));
+      return cachedValue;
+    } catch {
+      return defaultValue;
+    }
+  }
+
+  return {
+    subscribe(listener) {
+      listeners.add(listener);
+      const handleStorage = (e: StorageEvent) => {
+        if (e.key === key) emit();
+      };
+      window.addEventListener('storage', handleStorage);
+      return () => {
+        listeners.delete(listener);
+        window.removeEventListener('storage', handleStorage);
+      };
+    },
+    getSnapshot,
+    getServerSnapshot: () => defaultValue,
+    write(value) {
+      try {
+        localStorage.setItem(key, JSON.stringify(value));
+      } catch {
+        // Ignore storage write failures (e.g. quota exceeded/private mode).
+      }
+      emit();
+    },
+    clear() {
+      try {
+        localStorage.removeItem(key);
+      } catch {
+        // Ignore storage failures.
+      }
+      emit();
+    },
+  };
+}
+
+export const quizStatsStore = createLocalStorageStore(
+  't8FrameQuizStatsV1',
+  defaultPersistedFrameQuizStats,
+  sanitizePersistedFrameQuizStats,
+);
+
+export const charQuizStatsStore = createLocalStorageStore(
+  't8FrameQuizStatsByCharsV1',
+  {} as PersistedCharFrameQuizData,
+  sanitizePersistedCharFrameQuizStats,
+);
