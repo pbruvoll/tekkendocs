@@ -20,6 +20,19 @@ export const createRandom = (seedValue: string): (() => number) => {
   };
 };
 
+// Fisher-Yates shuffle of a copy of `values`. Pass a seeded `random` for
+// deterministic output; defaults to Math.random.
+const shuffle = <T>(values: T[], random: () => number = Math.random): T[] => {
+  const shuffled = [...values];
+  for (let index = shuffled.length - 1; index > 0; index--) {
+    const randomIndex = Math.floor(random() * (index + 1));
+    const current = shuffled[index];
+    shuffled[index] = shuffled[randomIndex];
+    shuffled[randomIndex] = current;
+  }
+  return shuffled;
+};
+
 export const deterministicSample = <T>(
   values: T[],
   sampleCount: number,
@@ -29,16 +42,7 @@ export const deterministicSample = <T>(
     return [...values];
   }
 
-  const random = createRandom(seedValue);
-  const shuffled = [...values];
-  for (let index = shuffled.length - 1; index > 0; index--) {
-    const randomIndex = Math.floor(random() * (index + 1));
-    const current = shuffled[index];
-    shuffled[index] = shuffled[randomIndex];
-    shuffled[randomIndex] = current;
-  }
-
-  return shuffled.slice(0, sampleCount);
+  return shuffle(values, createRandom(seedValue)).slice(0, sampleCount);
 };
 
 export const appendRecentQuestionId = (
@@ -47,18 +51,6 @@ export const appendRecentQuestionId = (
   maxRecentCount: number,
 ): string[] => {
   return [...recentQuestionIds, questionId].slice(-maxRecentCount);
-};
-
-const shuffleQuizMoves = (moves: QuizMove[]): QuizMove[] => {
-  const shuffled = [...moves];
-  for (let index = shuffled.length - 1; index > 0; index--) {
-    const randomIndex = Math.floor(Math.random() * (index + 1));
-    const current = shuffled[index];
-    shuffled[index] = shuffled[randomIndex];
-    shuffled[randomIndex] = current;
-  }
-
-  return shuffled;
 };
 
 export const createQuestionBagExcludingRecent = (
@@ -72,7 +64,7 @@ export const createQuestionBagExcludingRecent = (
   const excludedIds = new Set(recentQuestionIds);
   const candidateMoves = moves.filter((move) => !excludedIds.has(move.id));
   const pool = candidateMoves.length > 0 ? candidateMoves : moves;
-  return shuffleQuizMoves(pool);
+  return shuffle(pool);
 };
 
 type TakeQuestionFromBagResult = {
@@ -109,19 +101,4 @@ export const takeQuestionFromBag = (
     questionBag,
     questionBagCursor: questionBagCursor + 1,
   };
-};
-
-export const pickRandomQuizMoveExcludingRecent = (
-  moves: QuizMove[],
-  recentQuestionIds: string[],
-): QuizMove | null => {
-  if (!moves.length) {
-    return null;
-  }
-
-  const excludedIds = new Set(recentQuestionIds);
-  const candidateMoves = moves.filter((move) => !excludedIds.has(move.id));
-  const pool = candidateMoves.length > 0 ? candidateMoves : moves;
-  const randomIndex = Math.floor(Math.random() * pool.length);
-  return pool[randomIndex] || null;
 };

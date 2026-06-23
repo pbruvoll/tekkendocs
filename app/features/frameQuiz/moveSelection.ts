@@ -20,16 +20,15 @@ export const getMoveId = (move: Move): string => {
   return move.wavuId || `${move.moveNumber}-${move.command}`;
 };
 
+export const getCharacterDisplayName = (charId: string): string =>
+  characterInfoT8List.find((char) => char.id === charId)?.displayName ?? charId;
+
 export const getMoveCharacterDisplayName = (move: Move): string => {
   if (!isWavuMove(move)) {
     return 'Move';
   }
 
-  const charId = charIdFromMove(move);
-  return (
-    characterInfoT8List.find((char) => char.id === charId)?.displayName ||
-    charId
-  );
+  return getCharacterDisplayName(charIdFromMove(move));
 };
 
 export const getAnswerBucket = (blockValue: number): AnswerBucket => {

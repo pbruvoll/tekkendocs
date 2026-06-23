@@ -1,13 +1,22 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { ArrowLeft } from 'lucide-react';
+import {
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+  useSyncExternalStore,
+} from 'react';
 import {
   type MetaFunction,
   useBlocker,
+  useNavigate,
   useRouteLoaderData,
   useSearchParams,
 } from 'react-router';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ContentContainer } from '~/components/ContentContainer';
+import { MoveFilterDialog } from '~/components/MoveFilterDialog';
 import { characterInfoT8List } from '~/constants/characterInfoListT8';
 import { filterKey } from '~/constants/filterConstants';
 import { QuizCharacterFilter } from '~/features/frameQuiz/components/QuizCharacterFilter';
@@ -16,17 +25,27 @@ import {
   QuizModifierControls,
   type QuizModifiers,
 } from '~/features/frameQuiz/components/QuizModifierControls';
-import { MoveFilterDialog } from '~/components/MoveFilterDialog';
+import { QuizQuestionCard } from '~/features/frameQuiz/components/QuizQuestionCard';
 import {
   type MoveRange,
   QuizRangeSelection,
 } from '~/features/frameQuiz/components/QuizRangeSelection';
-import { QuizQuestionCard } from '~/features/frameQuiz/components/QuizQuestionCard';
 import { answerLabelByBucket } from '~/features/frameQuiz/constants';
 import {
   getAnswerBucket,
+  getCharacterDisplayName,
   getEligibleQuizMoves,
 } from '~/features/frameQuiz/moveSelection';
+import {
+  charQuizStatsStore,
+  clearCharData,
+  computeNextStats,
+  defaultPersistedFrameQuizStats,
+  type PersistedFrameQuizStats,
+  quizStatsStore,
+  RECENT_ANSWER_WINDOW,
+  updateCharData,
+} from '~/features/frameQuiz/quizStats';
 import {
   appendRecentQuestionId,
   takeQuestionFromBag,
@@ -43,14 +62,6 @@ import { generateMetaTags } from '~/utils/seoUtils';
 import { type LoaderData } from './_mainLayout.t8_._allFrameData';
 
 const RECENT_QUESTION_WINDOW = 20;
-const RECENT_ANSWER_WINDOW = 200;
-const FRAME_QUIZ_STATS_STORAGE_KEY = 't8FrameQuizStatsV1';
-
-type PersistedFrameQuizStats = {
-  personalBestStreak: number;
-  lifetimeAnsweredCount: number;
-  recentAnswerResults: boolean[];
-};
 
 type PendingAdvance = {
   nextQuestion: QuizMove | null;
@@ -59,48 +70,12 @@ type PendingAdvance = {
   questionBagCursor: number;
 };
 
-const defaultPersistedFrameQuizStats: PersistedFrameQuizStats = {
-  personalBestStreak: 0,
-  lifetimeAnsweredCount: 0,
-  recentAnswerResults: [],
-};
-
-const sanitizePersistedFrameQuizStats = (
-  value: unknown,
-): PersistedFrameQuizStats => {
-  if (!value || typeof value !== 'object') {
-    return defaultPersistedFrameQuizStats;
-  }
-
-  const candidate = value as Partial<PersistedFrameQuizStats>;
-  const personalBestStreak = Number.isFinite(candidate.personalBestStreak)
-    ? Math.max(0, Math.floor(candidate.personalBestStreak ?? 0))
-    : 0;
-  const lifetimeAnsweredCount = Number.isFinite(candidate.lifetimeAnsweredCount)
-    ? Math.max(0, Math.floor(candidate.lifetimeAnsweredCount ?? 0))
-    : 0;
-  const recentAnswerResults = Array.isArray(candidate.recentAnswerResults)
-    ? candidate.recentAnswerResults
-        .filter((answer): answer is boolean => typeof answer === 'boolean')
-        .slice(-RECENT_ANSWER_WINDOW)
-    : [];
-
-  return {
-    personalBestStreak,
-    lifetimeAnsweredCount,
-    recentAnswerResults,
-  };
-};
-
 export const meta: MetaFunction = ({ matches, location }) => {
   const searchParams = new URLSearchParams(location.search);
   const moveFilter = getFilterFromParams(searchParams);
   const character = moveFilter.character;
   const singleCharacterName =
-    character?.length === 1
-      ? (characterInfoT8List.find((c) => c.id === character[0])?.displayName ??
-        character[0])
-      : null;
+    character?.length === 1 ? getCharacterDisplayName(character[0]) : null;
   const title = singleCharacterName
     ? `${singleCharacterName} Endless Frame Quiz | TekkenDocs`
     : 'Tekken 8 Endless Frame Quiz | TekkenDocs';
@@ -120,7 +95,6 @@ export default function FrameQuiz() {
     'routes/_mainLayout.t8_._allFrameData',
   ) || { moves: [] };
 
-  const [hasStarted, setHasStarted] = useState(false);
   const [score, setScore] = useState(0);
   const [totalAnswered, setTotalAnswered] = useState(0);
   const [consecutiveCorrectStreak, setConsecutiveCorrectStreak] = useState(0);
@@ -136,15 +110,32 @@ export default function FrameQuiz() {
   const [pendingAdvance, setPendingAdvance] = useState<PendingAdvance | null>(
     null,
   );
-  const [persistedStats, setPersistedStats] = useState<PersistedFrameQuizStats>(
+  const storedStats = useSyncExternalStore(
+    quizStatsStore.subscribe,
+    quizStatsStore.getSnapshot,
+    quizStatsStore.getServerSnapshot,
+  );
+  const [sessionStats, setSessionStats] = useState<PersistedFrameQuizStats>(
     defaultPersistedFrameQuizStats,
   );
-  const [hasLoadedPersistedStats, setHasLoadedPersistedStats] = useState(false);
+  const persistedCharStats = useSyncExternalStore(
+    charQuizStatsStore.subscribe,
+    charQuizStatsStore.getSnapshot,
+    charQuizStatsStore.getServerSnapshot,
+  );
   const [activeModifiers, setActiveModifiers] = useState<QuizModifiers>({
     hideCommand: false,
     hideVideo: false,
   });
   const [searchParams, setSearchParams] = useSearchParams();
+  const navigate = useNavigate();
+  // A `started` param present on mount is a stale reload of an in-progress
+  // quiz (React state is gone). Treat it as "not started" so we render the
+  // start screen directly instead of flashing the loading card, and strip the
+  // param below. The ref is cleared once consumed so a later "Start quiz"
+  // (which re-adds the param) still registers as started.
+  const startedOnMount = useRef(searchParams.has('started'));
+  const hasStarted = searchParams.has('started') && !startedOnMount.current;
 
   const moveFilter = useMemo(
     () => getFilterFromParams(searchParams),
@@ -155,8 +146,6 @@ export default function FrameQuiz() {
     () => Object.values(moveFilter).some(isFilterValueActive),
     [moveFilter],
   );
-
-  const persistToStorage = !hasActiveFilter;
 
   const pendingModifiers = useMemo(
     (): QuizModifiers => ({
@@ -177,10 +166,7 @@ export default function FrameQuiz() {
     }
 
     const singleCharacterName =
-      character?.length === 1
-        ? (characterInfoT8List.find((c) => c.id === character[0])
-            ?.displayName ?? character[0])
-        : null;
+      character?.length === 1 ? getCharacterDisplayName(character[0]) : null;
 
     if (singleCharacterName && hasOtherFilters)
       return `${singleCharacterName} - Custom filter`;
@@ -220,6 +206,33 @@ export default function FrameQuiz() {
     );
   }, [eligibleMoves, selectedMoveRange]);
 
+  const singleCharacterId = useMemo(() => {
+    const { character, ...otherFilters } = moveFilter;
+    const hasOtherFilters =
+      Object.values(otherFilters).some(isFilterValueActive) ||
+      !!selectedMoveRange;
+    return character?.length === 1 && !hasOtherFilters ? character[0] : null;
+  }, [moveFilter, selectedMoveRange]);
+
+  // Persist stats whenever there is no filter (global stats) or exactly one
+  // character is selected (per-character stats). Any other filter combination
+  // is session-only. The store/key is then chosen by `singleCharacterId`.
+  const persistToStorage = !hasActiveFilter || !!singleCharacterId;
+
+  const singleCharacterName = singleCharacterId
+    ? getCharacterDisplayName(singleCharacterId)
+    : null;
+
+  // When practicing a single character, surface that character's persisted
+  // stats. Otherwise use the global persisted stats, or session-only stats
+  // when a non-character filter is active.
+  const persistedStats = singleCharacterId
+    ? (persistedCharStats.normal?.[singleCharacterId] ??
+      defaultPersistedFrameQuizStats)
+    : persistToStorage
+      ? storedStats
+      : sessionStats;
+
   const handleRangeChange = (range: MoveRange | null) => {
     setSearchParams(
       (prev) => {
@@ -236,8 +249,8 @@ export default function FrameQuiz() {
     );
   };
 
-  const movePageBlocker = useBlocker(({ nextLocation }) => {
-    return hasStarted && nextLocation.pathname !== '/';
+  const movePageBlocker = useBlocker(({ currentLocation, nextLocation }) => {
+    return hasStarted && nextLocation.pathname !== currentLocation.pathname;
   });
 
   useEffect(() => {
@@ -249,56 +262,18 @@ export default function FrameQuiz() {
   }, []);
 
   useEffect(() => {
-    if (!persistToStorage) {
-      setHasLoadedPersistedStats(true);
-      return;
-    }
-
-    try {
-      const stored = localStorage.getItem(FRAME_QUIZ_STATS_STORAGE_KEY);
-      if (!stored) {
-        setHasLoadedPersistedStats(true);
-        return;
-      }
-
-      const parsed = JSON.parse(stored);
-      setPersistedStats(sanitizePersistedFrameQuizStats(parsed));
-    } catch {
-      setPersistedStats(defaultPersistedFrameQuizStats);
-      try {
-        localStorage.removeItem(FRAME_QUIZ_STATS_STORAGE_KEY);
-      } catch {
-        // Ignore storage failures while recovering from corrupt data.
-      }
-    } finally {
-      setHasLoadedPersistedStats(true);
-    }
-  }, [persistToStorage]);
-
-  useEffect(() => {
-    if (!hasLoadedPersistedStats || !persistToStorage) {
-      return;
-    }
-
-    try {
-      const isDefaultStats =
-        persistedStats.personalBestStreak === 0 &&
-        persistedStats.lifetimeAnsweredCount === 0 &&
-        persistedStats.recentAnswerResults.length === 0;
-
-      if (isDefaultStats) {
-        localStorage.removeItem(FRAME_QUIZ_STATS_STORAGE_KEY);
-        return;
-      }
-
-      localStorage.setItem(
-        FRAME_QUIZ_STATS_STORAGE_KEY,
-        JSON.stringify(persistedStats),
+    if (startedOnMount.current) {
+      startedOnMount.current = false;
+      setSearchParams(
+        (prev) => {
+          const next = new URLSearchParams(prev);
+          next.delete('started');
+          return next;
+        },
+        { replace: true, preventScrollReset: true },
       );
-    } catch {
-      // Ignore storage write failures (e.g. quota exceeded/private mode).
     }
-  }, [persistedStats, hasLoadedPersistedStats, persistToStorage]);
+  }, [setSearchParams]);
 
   useEffect(() => {
     if (!questionFeedback) {
@@ -403,7 +378,12 @@ export default function FrameQuiz() {
     setPendingAdvance(null);
     setCurrentQuestion(firstQuestion);
     setActiveModifiers(pendingModifiers);
-    setHasStarted(true);
+    setSessionStats(defaultPersistedFrameQuizStats);
+    setSearchParams((prev) => {
+      const next = new URLSearchParams(prev);
+      next.set('started', '');
+      return next;
+    });
   };
 
   const handleAnswer = (selectedBucket: AnswerBucket) => {
@@ -447,24 +427,30 @@ export default function FrameQuiz() {
       isCorrect ? nextConsecutiveCorrectStreak : consecutiveCorrectStreak,
     );
 
-    setPersistedStats((current) => {
-      const nextRecentAnswerResults = [
-        ...current.recentAnswerResults,
-        isCorrect,
-      ];
-      const trimmedRecentAnswerResults =
-        nextRecentAnswerResults.length <= RECENT_ANSWER_WINDOW
-          ? nextRecentAnswerResults
-          : nextRecentAnswerResults.slice(-RECENT_ANSWER_WINDOW);
-      return {
-        personalBestStreak: Math.max(
-          current.personalBestStreak,
-          nextConsecutiveCorrectStreak,
-        ),
-        lifetimeAnsweredCount: current.lifetimeAnsweredCount + 1,
-        recentAnswerResults: trimmedRecentAnswerResults,
-      };
-    });
+    if (persistToStorage) {
+      if (singleCharacterId) {
+        charQuizStatsStore.write(
+          updateCharData(
+            persistedCharStats,
+            singleCharacterId,
+            isCorrect,
+            nextConsecutiveCorrectStreak,
+          ),
+        );
+      } else {
+        quizStatsStore.write(
+          computeNextStats(
+            storedStats,
+            isCorrect,
+            nextConsecutiveCorrectStreak,
+          ),
+        );
+      }
+    } else {
+      setSessionStats((current) =>
+        computeNextStats(current, isCorrect, nextConsecutiveCorrectStreak),
+      );
+    }
 
     setPendingAdvance({
       nextQuestion,
@@ -494,12 +480,13 @@ export default function FrameQuiz() {
   };
 
   const handleResetPersistedStats = () => {
-    setPersistedStats(defaultPersistedFrameQuizStats);
-    try {
-      localStorage.removeItem(FRAME_QUIZ_STATS_STORAGE_KEY);
-    } catch {
-      // Ignore storage failures and keep UI state reset.
+    if (singleCharacterId) {
+      charQuizStatsStore.write(
+        clearCharData(persistedCharStats, singleCharacterId),
+      );
+      return;
     }
+    quizStatsStore.clear();
   };
 
   const currentSessionAccuracyPercent =
@@ -513,19 +500,26 @@ export default function FrameQuiz() {
     recentAnswerCount === 0
       ? 0
       : Math.round((recentCorrectCount / recentAnswerCount) * 100);
-  const recentAccuracyBarWidth = Math.max(
-    0,
-    Math.min(100, recentAccuracyPercent),
-  );
+  const recentAccuracyBarWidth = recentAccuracyPercent;
   const recentAccuracyBarColorClass =
     recentAccuracyPercent >= 80
       ? 'bg-emerald-500/80'
-      : recentAccuracyPercent > 65
+      : recentAccuracyPercent >= 65
         ? 'bg-orange-500/80'
         : 'bg-red-500/80';
   const personalBestRank = getFrameQuizRankForStreak(
     persistedStats.personalBestStreak,
   );
+
+  const characterRankImages = useMemo(() => {
+    const result: Record<string, string> = {};
+    for (const { id: charId } of characterInfoT8List) {
+      const streak =
+        persistedCharStats.normal?.[charId]?.personalBestStreak ?? 0;
+      result[charId] = getFrameQuizRankForStreak(streak).image;
+    }
+    return result;
+  }, [persistedCharStats]);
 
   if (eligibleMoves.length === 0) {
     return (
@@ -545,9 +539,21 @@ export default function FrameQuiz() {
       enableTopPadding
       className="max-w-4xl"
     >
-      <h1 className="mb-2 mt-2 text-center text-2xl font-semibold tracking-tight">
-        Endless Frame Quiz
-      </h1>
+      <div className="relative mb-2 mt-2 flex items-center justify-center">
+        {hasStarted && (
+          <Button
+            variant="ghost"
+            size="icon"
+            className="absolute left-0 text-primary"
+            onClick={() => navigate(-1)}
+          >
+            <ArrowLeft className="h-5 w-5" />
+          </Button>
+        )}
+        <h1 className="text-center text-2xl font-semibold tracking-tight">
+          Endless Frame Quiz
+        </h1>
+      </div>
       {quizContextLabel && (
         <p className="mb-2 text-center text-sm text-muted-foreground">
           {quizContextLabel}
@@ -565,6 +571,10 @@ export default function FrameQuiz() {
               and keeps going until you stop. See how many you can get right in
               a row and try to climb the ranks!
             </p>
+            <p className="mb-4 text-sm text-muted-foreground">
+              Want to focus on a specific character, a subset of moves, or apply
+              a custom filter? Use the options below before starting.
+            </p>
             <Button className="mb-4" onClick={handleStart}>
               Start quiz
             </Button>
@@ -577,6 +587,7 @@ export default function FrameQuiz() {
                 <QuizCharacterFilter
                   selectedCharacters={selectedCharacters}
                   onSelectionChange={handleCharacterSelectionChange}
+                  characterRankImages={characterRankImages}
                 />
                 {selectedCharacters.length === 1 && (
                   <QuizRangeSelection
@@ -587,7 +598,7 @@ export default function FrameQuiz() {
                 )}
                 <div className="mt-6 border-t border-border/60 pt-4">
                   <p className="mb-3 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                    Filters
+                    Custom Filters
                   </p>
                   <MoveFilterDialog
                     triggerVariant="soft"
@@ -595,6 +606,9 @@ export default function FrameQuiz() {
                     moves={characterFilteredMoves}
                   />
                 </div>
+                <Button className="mt-6" onClick={handleStart}>
+                  Start quiz
+                </Button>
               </>
             )}
           </CardContent>
@@ -644,7 +658,7 @@ export default function FrameQuiz() {
 
                 <div className="rounded-lg border border-border/60 bg-muted/25 p-3">
                   <p className="text-xs uppercase tracking-wide text-muted-foreground">
-                    Last 200 questions
+                    Last {RECENT_ANSWER_WINDOW} questions
                   </p>
                   <p className="mt-1 text-lg font-semibold tabular-nums">
                     {recentAccuracyPercent}%
@@ -697,7 +711,9 @@ export default function FrameQuiz() {
                     onClick={handleResetPersistedStats}
                     className="h-auto px-0 text-xs text-muted-foreground hover:text-foreground"
                   >
-                    Reset saved stats
+                    {singleCharacterName
+                      ? `Reset ${singleCharacterName} stats`
+                      : 'Reset saved stats'}
                   </Button>
                 </div>
               )}

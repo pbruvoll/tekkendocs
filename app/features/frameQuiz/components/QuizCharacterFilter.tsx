@@ -1,23 +1,29 @@
 import cx from 'classix';
 import { useId, useState } from 'react';
+import { useHydrated } from 'remix-utils/use-hydrated';
 import { Label } from '@/components/ui/label';
 import { Switch } from '@/components/ui/switch';
 import { characterInfoT8List } from '~/constants/characterInfoListT8';
-import garyuRank from '~/images/t8/ranks/ganryu.png';
 import { t8AvatarBrandMap } from '~/utils/t8AvatarMap';
 
 type QuizCharacterFilterProps = {
   selectedCharacters: string[];
   onSelectionChange: (characters: string[]) => void;
+  characterRankImages?: Record<string, string>;
 };
 
 export const QuizCharacterFilter = ({
   selectedCharacters,
   onSelectionChange,
+  characterRankImages,
 }: QuizCharacterFilterProps) => {
   const id = useId();
   const multiSelectId = `${id}-multi-select`;
   const [multiSelect, setMultiSelect] = useState(false);
+  // Rank images come from localStorage, which is only available after
+  // hydration. Keep badges hidden until then so they don't flash the
+  // default (lowest) rank before the real value is known.
+  const isHydrated = useHydrated();
 
   const handleCharacterClick = (characterId: string) => {
     if (multiSelect) {
@@ -42,8 +48,12 @@ export const QuizCharacterFilter = ({
 
   return (
     <div className="mt-6 border-t border-border/60 pt-4">
-      <p className="mb-3 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+      <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
         Characters
+      </p>
+      <p className="mb-3 text-xs text-muted-foreground">
+        Character ranks are only tracked when you select a single character with
+        no other filters or move range applied.
       </p>
       <div className="mb-4 flex items-center gap-3">
         <Switch
@@ -86,9 +96,12 @@ export const QuizCharacterFilter = ({
                   {displayName}
                 </span>
                 <img
-                  src={garyuRank}
-                  alt="Garyu rank"
-                  className="mt-0.5 h-7 w-auto"
+                  src={characterRankImages?.[characterId]}
+                  alt="Rank badge"
+                  className={cx(
+                    'mt-0.5 h-7 w-auto transition-opacity',
+                    !isHydrated && 'opacity-0',
+                  )}
                 />
               </button>
             </li>
