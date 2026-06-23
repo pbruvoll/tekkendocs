@@ -1,7 +1,9 @@
+import { ArrowLeft } from 'lucide-react';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import {
   type MetaFunction,
   useBlocker,
+  useNavigate,
   useRouteLoaderData,
   useSearchParams,
 } from 'react-router';
@@ -91,7 +93,6 @@ export default function FrameQuiz() {
     'routes/_mainLayout.t8_._allFrameData',
   ) || { moves: [] };
 
-  const [hasStarted, setHasStarted] = useState(false);
   const [score, setScore] = useState(0);
   const [totalAnswered, setTotalAnswered] = useState(0);
   const [consecutiveCorrectStreak, setConsecutiveCorrectStreak] = useState(0);
@@ -119,6 +120,8 @@ export default function FrameQuiz() {
     hideVideo: false,
   });
   const [searchParams, setSearchParams] = useSearchParams();
+  const navigate = useNavigate();
+  const hasStarted = searchParams.has('started');
 
   const moveFilter = useMemo(
     () => getFilterFromParams(searchParams),
@@ -217,8 +220,8 @@ export default function FrameQuiz() {
     );
   };
 
-  const movePageBlocker = useBlocker(({ nextLocation }) => {
-    return hasStarted && nextLocation.pathname !== '/';
+  const movePageBlocker = useBlocker(({ currentLocation, nextLocation }) => {
+    return hasStarted && nextLocation.pathname !== currentLocation.pathname;
   });
 
   useEffect(() => {
@@ -389,7 +392,11 @@ export default function FrameQuiz() {
     setPendingAdvance(null);
     setCurrentQuestion(firstQuestion);
     setActiveModifiers(pendingModifiers);
-    setHasStarted(true);
+    setSearchParams((prev) => {
+      const next = new URLSearchParams(prev);
+      next.set('started', '');
+      return next;
+    });
   };
 
   const handleAnswer = (selectedBucket: AnswerBucket) => {
@@ -537,9 +544,21 @@ export default function FrameQuiz() {
       enableTopPadding
       className="max-w-4xl"
     >
-      <h1 className="mb-2 mt-2 text-center text-2xl font-semibold tracking-tight">
-        Endless Frame Quiz
-      </h1>
+      <div className="relative mb-2 mt-2 flex items-center justify-center">
+        {hasStarted && (
+          <Button
+            variant="ghost"
+            size="icon"
+            className="absolute left-0 text-primary"
+            onClick={() => navigate(-1)}
+          >
+            <ArrowLeft className="h-5 w-5" />
+          </Button>
+        )}
+        <h1 className="text-center text-2xl font-semibold tracking-tight">
+          Endless Frame Quiz
+        </h1>
+      </div>
       {quizContextLabel && (
         <p className="mb-2 text-center text-sm text-muted-foreground">
           {quizContextLabel}
