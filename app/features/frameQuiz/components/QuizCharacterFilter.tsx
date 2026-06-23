@@ -45,8 +45,12 @@ export const QuizCharacterFilter = ({
 
   return (
     <div className="mt-6 border-t border-border/60 pt-4">
-      <p className="mb-3 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+      <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
         Characters
+      </p>
+      <p className="mb-3 text-xs text-muted-foreground">
+        Character ranks are only tracked when you select a single character with
+        no other filters or move range applied.
       </p>
       <div className="mb-4 flex items-center gap-3">
         <Switch
