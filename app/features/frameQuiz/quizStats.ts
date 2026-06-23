@@ -64,10 +64,9 @@ export const computeNextStats = (
   isCorrect: boolean,
   nextConsecutiveStreak: number,
 ): PersistedFrameQuizStats => {
-  const recentAnswerResults = [
-    ...current.recentAnswerResults,
-    isCorrect,
-  ].slice(-RECENT_ANSWER_WINDOW);
+  const recentAnswerResults = [...current.recentAnswerResults, isCorrect].slice(
+    -RECENT_ANSWER_WINDOW,
+  );
   return {
     personalBestStreak: Math.max(
       current.personalBestStreak,
