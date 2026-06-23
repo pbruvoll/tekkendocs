@@ -64,18 +64,17 @@ export const computeNextStats = (
   isCorrect: boolean,
   nextConsecutiveStreak: number,
 ): PersistedFrameQuizStats => {
-  const nextRecentAnswerResults = [...current.recentAnswerResults, isCorrect];
-  const trimmedRecentAnswerResults =
-    nextRecentAnswerResults.length <= RECENT_ANSWER_WINDOW
-      ? nextRecentAnswerResults
-      : nextRecentAnswerResults.slice(-RECENT_ANSWER_WINDOW);
+  const recentAnswerResults = [
+    ...current.recentAnswerResults,
+    isCorrect,
+  ].slice(-RECENT_ANSWER_WINDOW);
   return {
     personalBestStreak: Math.max(
       current.personalBestStreak,
       nextConsecutiveStreak,
     ),
     lifetimeAnsweredCount: current.lifetimeAnsweredCount + 1,
-    recentAnswerResults: trimmedRecentAnswerResults,
+    recentAnswerResults,
   };
 };
 

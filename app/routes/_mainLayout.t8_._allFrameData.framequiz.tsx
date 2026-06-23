@@ -33,6 +33,7 @@ import {
 import { answerLabelByBucket } from '~/features/frameQuiz/constants';
 import {
   getAnswerBucket,
+  getCharacterDisplayName,
   getEligibleQuizMoves,
 } from '~/features/frameQuiz/moveSelection';
 import {
@@ -74,10 +75,7 @@ export const meta: MetaFunction = ({ matches, location }) => {
   const moveFilter = getFilterFromParams(searchParams);
   const character = moveFilter.character;
   const singleCharacterName =
-    character?.length === 1
-      ? (characterInfoT8List.find((c) => c.id === character[0])?.displayName ??
-        character[0])
-      : null;
+    character?.length === 1 ? getCharacterDisplayName(character[0]) : null;
   const title = singleCharacterName
     ? `${singleCharacterName} Endless Frame Quiz | TekkenDocs`
     : 'Tekken 8 Endless Frame Quiz | TekkenDocs';
@@ -168,10 +166,7 @@ export default function FrameQuiz() {
     }
 
     const singleCharacterName =
-      character?.length === 1
-        ? (characterInfoT8List.find((c) => c.id === character[0])
-            ?.displayName ?? character[0])
-        : null;
+      character?.length === 1 ? getCharacterDisplayName(character[0]) : null;
 
     if (singleCharacterName && hasOtherFilters)
       return `${singleCharacterName} - Custom filter`;
@@ -225,8 +220,7 @@ export default function FrameQuiz() {
   const persistToStorage = !hasActiveFilter || !!singleCharacterId;
 
   const singleCharacterName = singleCharacterId
-    ? (characterInfoT8List.find((c) => c.id === singleCharacterId)
-        ?.displayName ?? singleCharacterId)
+    ? getCharacterDisplayName(singleCharacterId)
     : null;
 
   // When practicing a single character, surface that character's persisted
@@ -384,6 +378,7 @@ export default function FrameQuiz() {
     setPendingAdvance(null);
     setCurrentQuestion(firstQuestion);
     setActiveModifiers(pendingModifiers);
+    setSessionStats(defaultPersistedFrameQuizStats);
     setSearchParams((prev) => {
       const next = new URLSearchParams(prev);
       next.set('started', '');
@@ -505,10 +500,7 @@ export default function FrameQuiz() {
     recentAnswerCount === 0
       ? 0
       : Math.round((recentCorrectCount / recentAnswerCount) * 100);
-  const recentAccuracyBarWidth = Math.max(
-    0,
-    Math.min(100, recentAccuracyPercent),
-  );
+  const recentAccuracyBarWidth = recentAccuracyPercent;
   const recentAccuracyBarColorClass =
     recentAccuracyPercent >= 80
       ? 'bg-emerald-500/80'
