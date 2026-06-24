@@ -356,7 +356,7 @@ export default function FrameQuiz() {
         }
         return next;
       },
-      { replace: true },
+      { replace: true, preventScrollReset: true },
     );
   };
 
