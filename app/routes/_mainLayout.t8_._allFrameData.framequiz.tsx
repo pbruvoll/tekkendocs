@@ -582,35 +582,31 @@ export default function FrameQuiz() {
               modifiers={pendingModifiers}
               onToggle={handleToggleModifier}
             />
-            {searchParams.has('preview') && (
-              <>
-                <QuizCharacterFilter
-                  selectedCharacters={selectedCharacters}
-                  onSelectionChange={handleCharacterSelectionChange}
-                  characterRankImages={characterRankImages}
-                />
-                {selectedCharacters.length === 1 && (
-                  <QuizRangeSelection
-                    eligibleMoveCount={eligibleMoves.length}
-                    selectedRange={selectedMoveRange}
-                    onRangeChange={handleRangeChange}
-                  />
-                )}
-                <div className="mt-6 border-t border-border/60 pt-4">
-                  <p className="mb-3 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                    Custom Filters
-                  </p>
-                  <MoveFilterDialog
-                    triggerVariant="soft"
-                    moveFilter={moveFilter}
-                    moves={characterFilteredMoves}
-                  />
-                </div>
-                <Button className="mt-6" onClick={handleStart}>
-                  Start quiz
-                </Button>
-              </>
+            <QuizCharacterFilter
+              selectedCharacters={selectedCharacters}
+              onSelectionChange={handleCharacterSelectionChange}
+              characterRankImages={characterRankImages}
+            />
+            {selectedCharacters.length === 1 && (
+              <QuizRangeSelection
+                eligibleMoveCount={eligibleMoves.length}
+                selectedRange={selectedMoveRange}
+                onRangeChange={handleRangeChange}
+              />
             )}
+            <div className="mt-6 border-t border-border/60 pt-4">
+              <p className="mb-3 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                Custom Filters
+              </p>
+              <MoveFilterDialog
+                triggerVariant="soft"
+                moveFilter={moveFilter}
+                moves={characterFilteredMoves}
+              />
+            </div>
+            <Button className="mt-6" onClick={handleStart}>
+              Start quiz
+            </Button>
           </CardContent>
         </Card>
       )}
