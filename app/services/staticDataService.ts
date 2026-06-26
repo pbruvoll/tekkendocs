@@ -182,7 +182,7 @@ export const characterGuideAuthors: Record<
     dragunov: { author: 'Fear of Silence', version: 'S2' },
     eddy: { author: 'Ace', version: 'S3' },
     fahkumram: { author: 'Leemishima', version: 'S3' },
-    hwoarang: { author: 'Kicking Macine', version: 'S2' },
+    hwoarang: { author: 'Kicking Macine', version: 'S3' },
     heihachi: { author: 'Trunkiez', version: 'S2' },
     jin: { author: 'Bok Dibi', version: 'S2' },
     jun: { author: 'Pagani', version: 'S2' },
