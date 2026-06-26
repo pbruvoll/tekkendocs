@@ -8,13 +8,19 @@ import { MoveDetailsPanel } from './MoveDetailsPanel';
 type MoveDetailsToggleProps = {
   move: Move;
   sourceMoves: Move[];
+  /**
+   * When true, the details are shown immediately (starting expanded) and the
+   * toggle button is hidden.
+   */
+  autoShow?: boolean;
 };
 
 export const MoveDetailsToggle = ({
   move,
   sourceMoves,
+  autoShow = false,
 }: MoveDetailsToggleProps) => {
-  const [showDetails, setShowDetails] = useState(false);
+  const [showDetails, setShowDetails] = useState(autoShow);
   const relatedMoves = move.characterId
     ? getRelatedMoves(
         move,
@@ -26,14 +32,16 @@ export const MoveDetailsToggle = ({
 
   return (
     <div className="mt-3">
-      <button
-        type="button"
-        className="rounded-full border border-border/70 px-3 py-1 text-xs font-medium hover:bg-accent/30"
-        aria-expanded={showDetails}
-        onClick={() => setShowDetails((current) => !current)}
-      >
-        {showDetails ? 'Hide move details' : 'Show move details'}
-      </button>
+      {!autoShow && (
+        <button
+          type="button"
+          className="rounded-full border border-border/70 px-3 py-1 text-xs font-medium hover:bg-accent/30"
+          aria-expanded={showDetails}
+          onClick={() => setShowDetails((current) => !current)}
+        >
+          {showDetails ? 'Hide move details' : 'Show move details'}
+        </button>
+      )}
 
       <AnimatePresence initial={false}>
         {showDetails ? (
@@ -45,7 +53,7 @@ export const MoveDetailsToggle = ({
             style={{ overflow: 'hidden' }}
             className="space-y-5"
           >
-            <MoveDetailsPanel move={move} />
+            <MoveDetailsPanel move={move} autoShowNotes={autoShow} />
             {relatedMoves.length > 0 && (
               <div>
                 <h3 className="mb-3 text-base font-semibold leading-none">

@@ -7,10 +7,15 @@ import { getRecoveryFrames } from '~/utils/frameDataUtils';
 
 type MoveDetailsPanelProps = {
   move: Move;
+  /** When true, the notes section starts expanded. */
+  autoShowNotes?: boolean;
 };
 
-export const MoveDetailsPanel = ({ move }: MoveDetailsPanelProps) => {
-  const [showNotes, setShowNotes] = useState(false);
+export const MoveDetailsPanel = ({
+  move,
+  autoShowNotes = false,
+}: MoveDetailsPanelProps) => {
+  const [showNotes, setShowNotes] = useState(autoShowNotes);
 
   return (
     <div className="mt-3 rounded-xl border border-border/70 bg-background/70 p-3 sm:p-4">
