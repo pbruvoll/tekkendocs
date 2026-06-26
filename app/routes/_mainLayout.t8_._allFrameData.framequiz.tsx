@@ -25,6 +25,11 @@ import {
   QuizModifierControls,
   type QuizModifiers,
 } from '~/features/frameQuiz/components/QuizModifierControls';
+import {
+  type QuizOption,
+  QuizOptions,
+  type QuizOptionValues,
+} from '~/features/frameQuiz/components/QuizOptions';
 import { QuizQuestionCard } from '~/features/frameQuiz/components/QuizQuestionCard';
 import {
   type MoveRange,
@@ -127,6 +132,9 @@ export default function FrameQuiz() {
     hideCommand: false,
     hideVideo: false,
   });
+  const [activeOptions, setActiveOptions] = useState<QuizOptionValues>({
+    autoShowDetails: false,
+  });
   const [searchParams, setSearchParams] = useSearchParams();
   const navigate = useNavigate();
   // A `started` param present on mount is a stale reload of an in-progress
@@ -151,6 +159,13 @@ export default function FrameQuiz() {
     (): QuizModifiers => ({
       hideCommand: searchParams.has('hideCommand'),
       hideVideo: searchParams.has('hideVideo'),
+    }),
+    [searchParams],
+  );
+
+  const pendingOptions = useMemo(
+    (): QuizOptionValues => ({
+      autoShowDetails: searchParams.has('autoShowDetails'),
     }),
     [searchParams],
   );
@@ -360,6 +375,21 @@ export default function FrameQuiz() {
     );
   };
 
+  const handleToggleOption = (option: QuizOption) => {
+    setSearchParams(
+      (prev) => {
+        const next = new URLSearchParams(prev);
+        if (next.has(option)) {
+          next.delete(option);
+        } else {
+          next.set(option, '');
+        }
+        return next;
+      },
+      { replace: true, preventScrollReset: true },
+    );
+  };
+
   const handleStart = () => {
     const {
       question: firstQuestion,
@@ -378,6 +408,7 @@ export default function FrameQuiz() {
     setPendingAdvance(null);
     setCurrentQuestion(firstQuestion);
     setActiveModifiers(pendingModifiers);
+    setActiveOptions(pendingOptions);
     setSessionStats(defaultPersistedFrameQuizStats);
     setSearchParams((prev) => {
       const next = new URLSearchParams(prev);
@@ -604,6 +635,10 @@ export default function FrameQuiz() {
                 moves={characterFilteredMoves}
               />
             </div>
+            <QuizOptions
+              options={pendingOptions}
+              onToggle={handleToggleOption}
+            />
             <Button className="mt-6" onClick={handleStart}>
               Start quiz
             </Button>
@@ -631,6 +666,7 @@ export default function FrameQuiz() {
             isFeedbackVisible={isFeedbackVisible}
             displayedStreak={displayedStreak}
             sourceMoves={moves}
+            autoShowDetails={activeOptions.autoShowDetails}
             onAnswer={handleAnswer}
             onContinue={handleContinueAfterFeedback}
           />

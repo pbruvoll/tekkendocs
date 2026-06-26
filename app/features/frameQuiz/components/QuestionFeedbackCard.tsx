@@ -8,6 +8,7 @@ type QuestionFeedbackCardProps = {
   onContinue: () => void;
   move?: Move;
   sourceMoves?: Move[];
+  autoShowDetails?: boolean;
 };
 
 export const QuestionFeedbackCard = ({
@@ -16,6 +17,7 @@ export const QuestionFeedbackCard = ({
   onContinue,
   move,
   sourceMoves,
+  autoShowDetails = false,
 }: QuestionFeedbackCardProps) => {
   return (
     <div className="flex flex-col justify-center">
@@ -75,7 +77,11 @@ export const QuestionFeedbackCard = ({
         </div>
       </button>
       {move && sourceMoves ? (
-        <MoveDetailsToggle move={move} sourceMoves={sourceMoves} />
+        <MoveDetailsToggle
+          move={move}
+          sourceMoves={sourceMoves}
+          autoShow={autoShowDetails}
+        />
       ) : null}
     </div>
   );

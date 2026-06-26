@@ -24,6 +24,7 @@ type QuizQuestionCardProps = {
   isFeedbackVisible: boolean;
   displayedStreak: number;
   sourceMoves: Move[];
+  autoShowDetails: boolean;
   onAnswer: (bucket: AnswerBucket) => void;
   onContinue: () => void;
 };
@@ -35,6 +36,7 @@ export const QuizQuestionCard = ({
   isFeedbackVisible,
   displayedStreak,
   sourceMoves,
+  autoShowDetails,
   onAnswer,
   onContinue,
 }: QuizQuestionCardProps) => {
@@ -143,6 +145,7 @@ export const QuizQuestionCard = ({
               onContinue={onContinue}
               move={question.move}
               sourceMoves={sourceMoves}
+              autoShowDetails={autoShowDetails}
             />
           ) : (
             <div className="flex flex-wrap gap-2">
