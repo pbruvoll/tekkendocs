@@ -7,9 +7,10 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * Cannot cause a K.O.
 * Power crush 7~16";hb pc7~16;;Heat Burst;r30;;;Devil Jin-2+3;devil-jin
 H.MCR.1+2;h!,t;12,27;i20;;+0d;;"* Transition to attack throw on standing or airborne hit
-* Consumes 300F of the heat timer
+* Consumes 600F of the heat timer
 * Low crush 1~12";js1~12;;Inner Purgatory;r35;;;Devil Jin-H.MCR.1+2;devil-jin
 H.2+3;m,h,t;20,22,10;i18~28;+11 MCR;+5d;;"* Heat Smash
+* Balcony Break
 * Jail from 1st attack
 * Transition to attack throw on hit
 * Transition to MCR on block only
@@ -18,7 +19,7 @@ H.2+3;m,h,t;20,22,10;i18~28;+11 MCR;+5d;;"* Heat Smash
 * 5 chip damage on block
 * +48? (+8?) on wall hit
 * Low crush 15~52
-* Floating state 53~55";hs js15~52 fs53~55;MCR,MCR;Vindictive Helix;r37;;;Devil Jin-H.2+3;devil-jin
+* Floating state 53~55";hs bbr js15~52 fs53~55;MCR,MCR;Vindictive Helix;r37;;;Devil Jin-H.2+3;devil-jin
 R.df+1+2;m,t;10-15,3-5,42-60;i20;-18;+0d;;"* Rage Art
 * Removes Recoverable Health
 * Reversal Break
@@ -71,14 +72,15 @@ R.df+1+2;m,t;10-15,3-5,42-60;i20;-18;+0d;;"* Rage Art
 * Parryable by traditional kick parries
 * Low crush 14~23
 * Floating state 24~26";fbr js14~23 fs24~26;;Wheel of Pain;r33;;File:t8-p2-devil jin-4~3.mp4;Devil Jin-4~3;devil-jin
-H.4~3,1+2;M, SM;21, 15;i29-32, i24~35;+2;+4c~+15c;;"* Tornado
+H.4~3,1+2;M, SM;21, 15;i29-32, i24~35;+2~+13;+4c~+15c;;"* Tornado
 * Weapon
+* Balcony Break
 * Projectile (unparryable)
 * Forces backroll on hit
 * +58a (+42) from previous hit
 * Jail from 1st block
 * 3 chip damage on block
-* Consumes 220F of remaining heat time";trn wpn;;Wheel of Pain > Annihilation Beam;r33;;;Devil Jin-4~3,1+2;devil-jin
+* Consumes 210F of remaining heat time";trn wpn bbr;;Wheel of Pain > Annihilation Beam;r33;;;Devil Jin-4~3,1+2;devil-jin
 1+2;m,m;12,25;i17 i25~26;-12;+7;;"* Homing
 * Balcony Break
 * Interrupt with i1 from 1st block
@@ -247,12 +249,13 @@ H.uf+3+4,1+2;m,m, t;8,20, 20;i16~17 i13~14, i25~50;-15;+0d;;"* Weapon
 * Available only on hit or block
 * Unavailable on whiff
 * Jail from 1st block
-* Transition to attack throw on hit
-* Combo from 1st hit with 15F delay
+* Shift to r96 attack throw on front-facing hit
+* Combo from 1st hit with 13F delay
 * Move cannot be delayed
-* Input can be delayed by 15F
-* Consumes 250F of remaining heat time
-* Low crush";wpn js;;Hisou > Annihilation Beam;;;;Devil Jin-uf+3+4,1+2;devil-jin
+* Input can be delayed by 13F
+* Consumes 240F of remaining heat time
+* Low crush 0~67
+* Floating state 68~70";wpn js0~67 fs68~70;;Hisou > Annihilation Beam;r36;;;Devil Jin-uf+3+4,1+2;devil-jin
 1+2+3+4;;;;;;;"* CH state for 5 seconds
 * Can't block for 5 seconds
 * Low crush 6~47
@@ -385,11 +388,12 @@ ws1,2;m, m;12, 15;i13~14, i22;-11;+6;+10;"* Transition to MCR with F on hit or C
 ** -11/-8 on an empty MCR transition
 * Combos from 1st hit with 8F delay
 * Combos from 1st CH with 11F delay
-* Interrupt with i4 from 1st block (trade with i5)
+* Interrupt with i4 from 1st block
 * Input can be delayed 11F
 * Move can be delayed 9F";;MCR;Solo Piston > Bloody Glaive;r26;;;Devil Jin-ws1,2;devil-jin
 ws1,4;m, h;12, 21;i13~14, i24~25;-5;+17a (+8);;"* Balcony Break
 * Combo from 1st hit with 4f delay
+* Interrupt with i6 from 1st block
 * Input can be delayed 4f
 * Move can be delayed 3f";bbr;;Twin Revival;r32;;File:t8-p2-devil-jin-ws1,4.mp4;Devil Jin-ws1,4;devil-jin
 ws2;m;20;i14~15;-12~-11;+72a (+56);;"* Tornado
@@ -427,9 +431,10 @@ FLY.3;M;30;i15~22;-15~-8;+8c~+15c;;"* Balcony Break
 FLY.4;M;10;i20~21;-29;-20s;;"* Low crush 1~50
 * Floating state 51~53";js1~50 fs51~53;;;r49;;;Devil Jin-FLY.4;devil-jin
 FLY.4,1;M, h;10, 20;i20~21, i40~41;+1;+71a (+51);;"* Strong Aerial Tailspin
+* Balcony Break
 * Interrupt with i19 from 1st block
 * +40a (+33) on neutral guard hit from 1st hit
-* Low crush 1~";js1~;;Forsaken Soul;r23;;;Devil Jin-FLY.4,1;devil-jin
+* Low crush 1~";bbr js1~;;Forsaken Soul;r23;;;Devil Jin-FLY.4,1;devil-jin
 FLY.4,2;M, m;10, 20 (14);i20~21, i22~23;-27;+15a (+5)/ +52a (+7);;"* Airborne combo from 1st hit (+52a (+7))
 * Interrupt with i1 from 1st block";;;;r47;;;Devil Jin-FLY.4,2;devil-jin
 FLY.4,2,1;M, m, m;10, 20 (14), 20 (14/10);i20~21, ,i22~24;-16;+29a (+19a) / +16a (+9);;"* Airborne combo from 1st hit with 24F delay (+16a (+9))
@@ -479,17 +484,17 @@ MCR.2,2;m, M;12, 20;i15~16, i24-26;-14c;+2a;;"* Heat Engager
 * Low crush 1~17
 * Floating state 18~20";he fbr js1~17 fs18~20;;Dark Arachnid Twister;r36;;File:t8-p2-devil jin-mcr.2,2.mp4;Devil Jin-MCR.2,2;devil-jin
 MCR.3;SM;26;i23;-7;+70a (+54);;"* Tornado
-* Balcony Break
 * 7 chip damage on block
 * Projectile (unparryable)
 * Low crush 1~19
-* Floating state 20~22";trn bbr js1~19 fs20~22;;Venomous Torment;r34;;File:t8-p2-devil jin-mcr.3.mp4;Devil Jin-MCR.3;devil-jin
+* Floating state 20~22";trn js1~19 fs20~22;;Venomous Torment;r34;;File:t8-p2-devil jin-mcr.3.mp4;Devil Jin-MCR.3;devil-jin
 MCR.4;M;10;i20~21;-29;-20s;;"* Low crush 1~50
 * Floating state 51~53";js1~50 fs51~53;;;r49;;;Devil Jin-MCR.4;devil-jin
 MCR.4,1;M, h;10, 20;i20~21, i40~41;+1;+71a (+51);;"* Strong Aerial Tailspin
+* Balcony Break
 * Interrupt with i19 from 1st block
 * +40a (+33) on neutral guard hit from 1st hit
-* Low crush 1~";js1~;;Forsaken Soul;r23;;;Devil Jin-MCR.4,1;devil-jin
+* Low crush 1~";bbr js1~;;Forsaken Soul;r23;;;Devil Jin-MCR.4,1;devil-jin
 MCR.4,2;M, m;10, 20 (14);i20~21, i22~23;-27;+15a (+5)/ +52a (+7);;"* Airborne combo from 1st hit (+52a (+7))
 * Interrupt with i1 from 1st block";;;;r47;;;Devil Jin-MCR.4,2;devil-jin
 MCR.4,2,1;M, m, m;10, 20 (14), 20 (14/10);i20~21, ,i22~24;-16;+29a (+19a) / +16a (+9);;"* Airborne combo from 1st hit with 24F delay (+16a (+9))
@@ -515,7 +520,7 @@ OTG.d+1+2;L;25;i23~31;-16~-8;+5a~+13a;;"* Weapon
 * Balcony break on CH
 * Typically connects grounded on frames i25~26 of startup at -14~-13/+12a~+13a(+0a~+1a)
 * Can be done from Crouch Level 1";wpn;;Hellfire Incinerator;r27;;;Devil Jin-OTG.d+1+2;devil-jin
-H.b,f+2,1,4,1+2;m, m, M, SM;12, 12, 21, 15;i15~17, ,i24~35;+2;+4c~+15c;;"* Balcony Break
+H.b,f+2,1,4,1+2;m, m, M, SM;12, 12, 21, 15;i15~17, ,i24~35;+2~+13;+4c~+15c;;"* Balcony Break
 * Tornado
 * Weapon
 * Projectile (unparryable)
@@ -523,20 +528,20 @@ H.b,f+2,1,4,1+2;m, m, M, SM;12, 12, 21, 15;i15~17, ,i24~35;+2;+4c~+15c;;"* Balco
 * +59a(+43) from previous hit
 * Jail from 3rd block
 * 3 chip damage on block
-* Consumes 220F of remaining heat time";bbr trn wpn;;Laser Crush > Annihilation Beam;r33;;;Devil Jin-b,f+2,1,4,1+2;devil-jin
+* Consumes 210F of remaining heat time";bbr trn wpn;;Laser Crush > Annihilation Beam;r33;;;Devil Jin-b,f+2,1,4,1+2;devil-jin
 H.f,n,d,DF+4,3;L, SM;7, 26 (18);i16, i31;;+72a (+56a);;"* Tornado
 * Available only on hit
 * 18 damage with combo scaling from 1st
-* Consumes 300F of remaining Heat timer on hit or block or whiff
+* Consumes 600F of remaining Heat timer on hit or block or whiff
 * Low crush 15~27
 * Floating state 28~30";trn js15~27 fs28~30;;Spinning Demon Leviathan;r34;;;Devil Jin-f,n,d,DF+4,H.3;devil-jin
-H.f,n,d,df+1+2,1+2;m, SM;25, 20;i26~27, i25~36;+2;+4c~+15c;;"* Tornado
+H.f,n,d,df+1+2,1+2;m, SM;25, 20;i26~27, i25~36;+2~+13;+4c~+15c;;"* Tornado
 * Weapon
 * Projectile (unparryable)
 * Forces backroll on hit
 * +60a(+44) from previous hit
 * 4 chip damage on block
-* Consumes 220F of remaining heat time
+* Consumes 600F of remaining heat time
 * No pushback on 1st CH";trn wpn;;Spiral of Madness > Annihilation Beam;r33;;;Devil Jin-f,n,d,df+1+2,1+2;devil-jin
 1+3;t;35;i12~14;+0;+2d;;"* Homing
 * Throw break: 1 or 2

@@ -6,7 +6,7 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * Only deals recoverable damage
 * Cannot cause a K.O.
 * Power crush 7~16";hb pc7~16;;Heat Burst;r30;;;Victor-2+3;victor
-H.IAI.d+2;M,SM;45;i23~24;+5;+20 (+2);;"* Weapon
+H.IAI.d+2;M,M,M,SM,SM;45;i23~24, i6, i4, i3, i4;+5;+20 (+2);;"* Weapon
 * Projectile
 * Transition to IAI
 * 10 chip damage on block
@@ -151,24 +151,26 @@ df+4,2;m, h;15, 16;i13~14, i22;-3;+4;;"* Strong Aerial Tailspin
 * Transitions to IAI (cannot cancel)";wc wpn;IAI;Selfish Miranda;IAI;;File:t8-p2-victor-df+4,2.mp4;Victor-df+4,2;victor
 df+3+4;m;28;i14~15;-17;+16 (+11);;"* Balcony Break
 * Shoulder";bbr shd;;Llamrei;39;;File:t8-p2-victor-df+3+4.mp4;Victor-df+3+4;victor
-d+1;l;7;i16;-17;-6;;"* Weapon
-* Cannot be parried (weapon low)";wpn;FC;;36 FC;;File:t8-p2-victor-d+1,1.mp4;Victor-d+1;victor
-d+1,1;l, h;7, 15;i16, i18;-7;+6;;"* Weapon
+d+1;L;7;i16;-17;-6;;"* Weapon
+* Cannot be parried (weapon low)
+* High crush 6~52";wpn cs6~52;FC;;r36 FC;;File:t8-p2-victor-d+1,1.mp4;Victor-d+1;victor
+d+1,1;L, h;7, 15;i16, i18;-7;+6;;"* Weapon
 * Combo from 1st CH
-* -26 on 1st block";wpn;;Concave Cut;;;File:t8-p2-victor-d+1,1.mp4;Victor-d+1,1;victor
-d+2;m;21;i18;+0;+4;;"* Heat Engager
+* Jail on 1st hit
+* -26 on 1st block";wpn;;Concave Cut;r26;;File:t8-p2-victor-d+1,1.mp4;Victor-d+1,1;victor
+d+2;m;21;i18;+0;+4c;;"* Heat Engager
 
 * Heat Dash +5, +67a (+50)
 
 * Weapon
-* 6 chip damage on block";he wpn;;Llawfrodedd;34;;File:t8-p2-victor-d+2.mp4;Victor-d+2;victor
-d+3;l;11;i18~19;-13;-2;;;;;Good Manners;32;;File:t8-p2-victor-d+3.mp4;Victor-d+3;victor
-d+4;l;10;i16;-13;-2;+0 (th);;;;Fine Salute;33;;File:t8-p2-victor-d+4.mp4;Victor-d+4;victor
-d+1+2;sm;21;i19~21;-9;+17 (+10);+35a;"* Tornado
+* 6 chip damage on block";he wpn;;Llawfrodedd;r34;;File:t8-p2-victor-d+2.mp4;Victor-d+2;victor
+d+3;L;11;i18~19;-13;-2;;;;;Good Manners;r31;;File:t8-p2-victor-d+3.mp4;Victor-d+3;victor
+d+4;L;10;i16;-13;-2;+0d;* Perform Guilty Mariko on counter hit;;;Fine Salute;r32;;File:t8-p2-victor-d+4.mp4;Victor-d+4;victor
+d+1+2;SM;21;i19~21;-9;+17a (+10);+35a;"* Tornado
 * Weapon
 * Projectile
-* Deals 6 chip damage on block";trn wpn;;Iridescence of Prowess;33;;File:t8-p2-victor-d+1+2.mp4;Victor-d+1+2;victor
-db+1;m;9;i14~15;-9;-2;;* Weapon;wpn;;;32;;File:t8-p2-victor-db+1,1.mp4;Victor-db+1;victor
+* 6 chip damage on block";trn wpn;;Iridescence of Prowess;r31;;File:t8-p2-victor-d+1+2.mp4;Victor-d+1+2;victor
+db+1;m;9;i14~15;-9;-2;;* Weapon;wpn;;;r31;;File:t8-p2-victor-db+1,1.mp4;Victor-db+1;victor
 db+1,1;m, m;9, 9;i14~15, i21~22;-7;+2;;"* Weapon
 * Transition to PRF with F (-5/+4)
 * Combo from 1st hit";wpn;PRF;Emerald Cut;;;File:t8-p2-victor-db+1,1.mp4;Victor-db+1,1;victor
@@ -198,7 +200,8 @@ b+1+2;h;25;i19~20;-9;+16cg;;"* Balcony Break
 * 7 chip damage on block
 * +0 and 10 chip damage on block after attack absorption
 * Power crush 7~18";bbr wpn pc7~18;;Failnaught;r31;;File:t8-p2-victor-b+1+2.mp4;Victor-b+1+2;victor
-b+1+4;m;24;i26~27;-21;+37 (+6);;* Weapon;wpn;;Dun Stallion;48;;File:t8-p2-victor-b+1+4.mp4;Victor-b+1+4;victor
+b+1+4;m;24;i26~27;-21;+37a (+6);;"* Weapon
+* ~i5-6 backsway";wpn;;Dun Stallion;r48;;File:t8-p2-victor-b+1+4.mp4;Victor-b+1+4;victor
 ub+2;m;17;i17~18;-5;+8;+32a;"* Weapon
 * Balcony Break
 * Can be charged
@@ -207,7 +210,7 @@ ub+2*;m;22;i28~29;+3;+32a;+66a (+50);"* Weapon
 * Balcony Break
 * Tornado on CH
 * Transition to PRF +4 +33a with F";wpn bbr;PRF;Fancy Cut (charged);;;File:t8-p2-victor-ub+2x.mp4;Victor-ub+2*;victor
-u+1+2;m;32;i31~32;-20;+1a;;"* Weapon
+u+1+2;m;32;i31~32;-20c;+1a;;"* Weapon
 * Deals 11 chip damage on block
 * Victor teleports overhead on frame 10 and descends downward for the rest of the startup; evades some highs and mids but vulnerable on descent (lows, throws, etc. hit)
 * is10~?
@@ -263,7 +266,7 @@ ws1+2;m,m;10,12;i13~14,i9~10;-8;+8;;"* Weapon
 * Transition to PRF (-8/+8) with F";wpn;PRF;Pearly Gates;37;;File:t8-p2-victor-ws1+2.mp4;Victor-ws1+2;victor
 SS.1+2;m;25;i18~19;-9;+15 (+5);;* Balcony Break;bbr;;Dandy Blow;40;;File:t8-p2-victor-ss.1+2.mp4;Victor-SS.1+2;victor
 CH.db+4;l,th;20,4;i20~21;;;+49a;;;;Musk-Scented Natasha;;;;Victor-CH.db+4;victor
-CH.d+4;l,t;12,18;i16;;;+0;;;;Guilty Mariko;;;;Victor-CH.d+4;victor
+CH.d+4;L,t;12,18;i16;;;+0d;;;;Guilty Mariko;r122;;;Victor-CH.d+4;victor
 IAI.1;m;9;i13~14;-9;+4;;* Weapon;wpn;IAI;;r34 IAI;;File:t8-p2-victor-iai.1,1.mp4;Victor-IAI.1;victor
 IAI.1,1;m, m;9, 21;i13~14, i25~26;-14;+15g;;"* Tornado
 * Balcony Break
@@ -321,7 +324,7 @@ IAI.d+1;M;25;i18;0;+24a (+9);;"* Heat Engager
 * Balcony Break
 * Weapon
 * 7 chip damage on block";he bbr wpn;;Passelande;r40;;;Victor-IAI.d+1;victor
-IAI.d+2;M,SM;31;i23~24;+4;+0 (-7);;"* Weapon
+IAI.d+2;M,M,SM;31;i23~24, i6, i7;+4;+0 (-7);;"* Weapon
 * Projectile
 * Transition to IAI
 * Deals 6 chip damage on block";wpn;IAI,IAI;Rhongomyniad;r68 IAI;;File:t8-p2-victor-iai.d+2.mp4;Victor-IAI.d+2;victor

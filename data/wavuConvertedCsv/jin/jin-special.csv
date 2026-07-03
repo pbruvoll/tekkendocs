@@ -8,31 +8,36 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * Power crush 7~16";hb pc7~16;;Heat Burst;r30;;;Jin-2+3;jin
 H.db+1+2;M;0;i19~34;+4;+23g~+38g;;"* Strong Aerial Tailspin
 * Balcony Break
-* Transition to DVS r10 on hit or block
+* Weapon?
+* Transition to DVS r34 on hit or block
+** Stance moves can be delayed by 9F
+** Transition to r44 FC with no input
 * Unparryable by traditional parries, Asuka, Nina, etc
-* Partially uses remaining Heat time
-* Causes wall splat on hit
+* Consumes 300F of remaining Heat time
 * Opponent recovers crouching
-* Power crush 6~18";bbr pc6~18;DVS;Awakened Power Stance;r26;;;Jin-H.db+1+2;jin
-H.f,F+1+2;m;20;i21~23;+5;+24g;;"* Balcony Break
+* Power crush 6~18";bbr pc6~18;DVS,FC;Awakened Power Stance;r26;;;Jin-H.db+1+2;jin
+H.f,F+1+2;m;20;i21~23;+5;+24cg;;"* Balcony Break
 * Strong Aerial Tailspin
-* Transitions to DVS on hit or block
+* Transition to DVS r32 on hit or block
+** Stance moves can be delayed by 9F
+** Transition to r42 FC with no input
 * Consumes 240f of Heat time
-* Cancel transition and recover Standing +18g, -1 with B
-* 6 chip damage on block
-* Low crush";bbr js;DVS;Awakened Black Wing;DVS;;;Jin-H.f,F+1+2;jin
+* Cancel transition and recover Standing with B (-1/+18cg)
+* 4 chip damage on block
+* Low crush 11~48
+* Floating state 49~51";bbr js11~48 fs49~51;DVS,FC;Awakened Black Wing;r38;;;Jin-H.f,F+1+2;jin
 H.2+3;m,h,m;57;i15~16;+3;+0d;;"* Heat Smash
 * Reversal Break
 * Balcony Break
 * Transition to attack throw after 1st hit
 * Transition to CD automatically on block
 * Transition to standing on block with B
-* 6 Chip damage on block
+* 6 chip damage on block
 * Jail from 1st attack";hs rbr bbr;CD;Hellfire Trespass Slayer;r33;;;Jin-H.2+3;jin
 H.2+3,4;m,h,m;50;i15~16;+9;+32a (-4);;"* Heat Smash
 * Reversal Break
 * Balcony Break
-* 7 Chip damage on block
+* 7 chip damage on block
 * Jail from 1st attack";hs rbr bbr;;Hellfire Darkside Slayer;r32;;;Jin-H.2+3,4;jin
 R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Removes Recoverable Health
@@ -129,12 +134,16 @@ df+2;m;12;i16~17;-9;+6;;"* Balcony Break
 * Chip damage on block";bbr chp;Breaking Step;Fiendish Rend;r30;;File:t8-p2-jin-df+2.mp4;Jin-df+2;jin
 df+2,4;m, m;12, 19;i16~17, i26~27;-12;+9;;"* Balcony Break
 * Strong Aerial Tailspin
-* Combo from 1st hit
-* Chip damage on block";bbr chp;;Fiendish Talon Rend;;;;Jin-df+2,4;jin
+* Combo from 1st hit with 1F delay
+* Move cannot be delayed
+* Input can be delayed by 1F
+* 3 chip damage on block
+* Low crush 17~39
+* Floating state 40~42";bbr js17~39 fs40~42;;Fiendish Talon Rend;r33;;;Jin-df+2,4;jin
 H.df+2,1+2;m, m;12, 25;i16~17, i24~25;+2;+30a (+4);;"* Balcony Break
-* Combos from 1st hit
-* Partially consumes remaining Heat time
-* 5 Chip damage on block";bbr;;Awakened Fiendish Claw;;;File:t8-p2-jin-df+2,h.1+2.mp4;Jin-df+2,H.1+2;jin
+* Combo from 1st hit
+* Consumes 240F of remaining Heat time
+* 5 chip damage on block";bbr;;Awakened Fiendish Claw;r35;;File:t8-p2-jin-df+2,h.1+2.mp4;Jin-df+2,H.1+2;jin
 df+3;m;16;i12;-8;+3;;;;;Left Roundhouse;r27;;File:t8-p2-jin-df+3.mp4;Jin-df+3;jin
 df+3~3;m;20;i23~i24;+6c;+13c;;"* Spike
 * Enter Breaking Step +2c +9c r27 with df";spk;Breaking Step;Brazilian Kick;r23;;File:t8-p2-jin-df+3t3.mp4;Jin-df+3~3;jin
@@ -159,7 +168,7 @@ d+4;L;11;i16~17;-12;-1;;"Flips over on grounded hit
 * High crush 6~31";cs6~31;;Right Sweep;r30;;File:t8-p2-jin-d+4.mp4;Jin-d+4;jin
 d+3+4;m,m;5,15;i15 i10~12;-19;+32a (+22);;"* Low crush 16~31
 * Floating state 32~34";js16~31 fs32~34;;Double Lift Kick;r36;;File:t8-p2-jin-d+3+4.mp4;Jin-d+3+4;jin
-db+1;sl;5;i10;-5;+6;;"* Transition to Standing with f
+db+1;sl;5;i10;-5;+6;;"* Transition to r24 with f
 * +6c on crouching hit
 * High crush 4~";cs4~;FC;Crouch Jab;r24 FC;;;Jin-db+1;jin
 db+2;m;12;i16;-10;-4;;;;;;r34;;File:t8-p2-jin-db+2,2,3.mp4;Jin-db+2;jin
@@ -316,18 +325,19 @@ f,n,d,df+1;m;20;i16~i17;-13;+32a (+22);;"* Tornado
 f,n,d,df+2;h;20;i11~12;-10;+74a (+58);;"* Balcony Break
 * Turns into EWHF (CD.df#2) while in heat";bbr;;Wind Hook Fist;r28;;File:t8-p2-jin-cd.df+2.mp4;Jin-CD.df+2;jin
 DVS.1;m;25;i20~22;-9;+72a (+56);;"* Tornado
-* 9 chip damage on block
+* Jab evasion
+* 7 chip damage on block
 * Low crush 22~43
 * Floating state 44~46";trn js22~43 fs44~46;;Awakened Thunder God Fist;r30;;;Jin-DVS.1;jin
-DVS.2;sm;23;i11~12;+4;+38a (+28);;* 8 chip damage on block;;;Awakened Wind God Fist;r24;;;Jin-DVS.2;jin
+DVS.2;sm;23;i11~12;+4;+38a (+28);;* 6 chip damage on block;;;Awakened Wind God Fist;r24;;;Jin-DVS.2;jin
 DVS.3;M;25;i26~28;+2c;+22a;;"* Spike
-* 9 chip damage on block
+* 7 chip damage on block
 * Low crush 5~25
 * Floating state 26~28";spk js5~25 fs26~28;;Awakened Demon's Hoof;r26;;;Jin-DVS.3;jin
 DVS.4;L;10;i16;-12;-2c;;* 3 chip damage on block;;;;r39;;;Jin-DVS.4;jin
 DVS.4,4;L, m;10, 25;i16, i25~26;-14;+3c;;"* Spike
-* 6 chip damage on block";spk;;Awakened Spinning Demon;r34;;;Jin-DVS.4,4;jin
-DVS.DF+3;L;24;i33~34;-23;-2a;;"* 8 chip damage on block
+* 5 chip damage on block";spk;;Awakened Spinning Demon;r34;;;Jin-DVS.4,4;jin
+DVS.DF+3;L;24;i33~34;-23;-2a;;"* 7 chip damage on block
 * Low crush 5~25
 * Floating state 26~28";js5~25 fs26~28;;Awakened Demon's Tail;r41;;;Jin-DVS.DF+3;jin
 OTG.d+1+2;L;24;i19~20;-13;-2 (-10);;* Spike;spk;;Black Out;r31;;;Jin-OTG.d+1+2;jin
