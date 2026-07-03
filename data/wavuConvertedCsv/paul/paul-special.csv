@@ -151,14 +151,22 @@ f+2;h,t;12,22;i13;-5;+9;;"* Heat Engager +9
 * Heat Dash +5, +43d (+35)
 
 * Transition to throw on front hit
-* Transition to +7 DPD on hit with DF
-* +32a without throw transition";;DPD;Phoenix Hook, Tiger Claw;r23;;File:Paul-f2.mp4;Paul-f+2;paul
-f+3;h;11;i16~17;-14;0;;* Homing;hom;;;r31;;File:Paul-f3.mp4;Paul-f+3;paul
-f+3,1;h, m;11, 21;i16~17, i17;-13;+12d (+3);;"* Balcony Break
+* Transition to +7 DPD r27 on hit with DF at frame 93
+* +32a without throw transition";;DPD;Phoenix Hook, Tiger Claw;r24;;File:Paul-f2.mp4;Paul-f+2;paul
+f+3;h;11;i16~17;-14;+0;;* Homing;hom;;;r34;;File:Paul-f3.mp4;Paul-f+3;paul
+f+3,1;h, m;11, 21;i16~17, i17;-13;+12a (+3);;"* Balcony Break
 * Elbow
-* Combo from 1st hit";bbr elb;;Lion's Tempest;r40;;File:Paul-f3,1.mp4;Paul-f+3,1;paul
-f+3,2;h, h;11, 24;i16~17, i18~19;-7;+17a (+8);;"* Balcony Break
-* Combo from 1st hit";bbr;;Lion's Claw;;;File:t8-p2-paul-f+3,2.mp4;Paul-f+3,2;paul
+* Combo from 1st hit
+* Interrupt with i1
+* Move is delayed by 5F
+* Move cannot be delayed
+* Input cannot be delayed";bbr elb;;Lion's Tempest;r33;;File:Paul-f3,1.mp4;Paul-f+3,1;paul
+f+3,2;h, h;11, 24;i16~17, i18~19;-7;+17a (+8);+32a (+24);"* Balcony Break
+* Combo from 1st hit
+* Interrupt with i2
+* Move is delayed by 5F
+* Move cannot be delayed
+* Input cannot be delayed";bbr;;Lion's Claw;r32;;File:t8-p2-paul-f+3,2.mp4;Paul-f+3,2;paul
 f+4;m;24;i22;-5;+6;;"* Heat Engager
 
 * Heat Dash +5, +43d (+35)
@@ -178,10 +186,11 @@ f+1+2*;m;26;i29~30;+7c;+20d FDFA;+55a;"* Balcony Break
 * Requires 24f charge
 * f+1+2 from 0~23f charge
 * Transition to +4c, +17d DPD with DF";bbr chp;DPD;Hammer of the Gods (Hold);r29;;File:Paul-f1p2-lvl2.mp4;Paul-f+1+2*;paul
-f+1+4;m;25;i21~23;-14;+41d (-17);;"* Balcony Break
+f+1+4;m;25;i21~23;-14;+15cg;;"* Balcony Break
 * Shoulder
-* Sharp leftward movement on startup";bbr shd;;Shoulder Tackle;r36;;File:Paul-f1p4.mp4;Paul-f+1+4;paul
-f+3+4;sp;;;;;;* Transitions to CS;;CS;Cormorant Step;CS;;;Paul-f+3+4;paul
+* Sharp leftward movement w/ i5? startup
+* Forces tech back roll on hit";bbr shd;;Shoulder Tackle;r37;;File:Paul-f1p4.mp4;Paul-f+1+4;paul
+f+3+4;sp;;;;;;* Transitions to CS r15;;CS;Cormorant Step;r15 CS;;;Paul-f+3+4;paul
 df+1;m;11;i14;-2;+4;;* Transition to r15 SWA +3 +9 from 2~14f, 16f with b;;SWA;;r20;;File:Paul-df1.mp4;Paul-df+1;paul
 df+1,1;m, h;11, 9;i14, i20~21;-5;+5;+8;"* Combo from 1st hit with 4f delay
 * Move can be delayed 10f
@@ -265,7 +274,8 @@ d+4,2:1+2;L, m, m;9, 23, 30;i15, ,i26~27;-17;+3d (-6);+35a (-12);"* Balcony Brea
 * Perfect input window 21~22f after 2 input
 * Perfect input increases damage, wall carry";bbr;;Demolition Man (Perfect Input);r41;;File:Paul-d4,2,1p2 jf.mp4;Paul-d+4,2:1+2;paul
 d+1+2;m;28;i12~13;-18;+16d (+11);+24d (+16);"* Balcony Break
-* Shoulder";bbr shd;;Shoulder Smash;r39;;File:Paul-d1p2.mp4;Paul-d+1+2;paul
+* Shoulder
+* i5~i9? high evasion";bbr shd;;Shoulder Smash;r39;;File:Paul-d1p2.mp4;Paul-d+1+2;paul
 db+1;sl;5;i10;-5;+6;;"* Transition to r24 standing with f
 * High crush";cs;FC;Dickjab;r24 FC;;File:Paul-db1.mp4;Paul-db+1;paul
 db+2;M;21;i19~20;-11;+14d (-3) FDFA;+28a (+18);"* Tornado
@@ -313,7 +323,8 @@ b+3+4;sp;;;;;;"* Transitions to SWA
 * SWA.1+2 can be performed immediately (i17~18 effective startup)";;SWA;Sway;r15 SWA;;;Paul-b+3+4;paul
 ub+2;m;22;i18;-5;+14d;;"* Balcony Break
 * +21d (+14) on airborne opponent
-* Can be charged to power up";bbr;;Wrecking Ball;r31;;File:Paul-ub2.mp4;Paul-ub+2;paul
+* Can be charged to power up
+* Has good left sidestep tracking";bbr;;Wrecking Ball;r31;;File:Paul-ub2.mp4;Paul-ub+2;paul
 ub+2*;m;30;i27;+1;+17a;;"* Homing
 * Balcony Break
 * 9 chip damage";hom bbr;;Wrecking Ball (charged);;;;Paul-ub+2*;paul
@@ -476,9 +487,9 @@ DPD.df+3+4;m,M;32,10;i18~23,i51~61;-49d;-9d (-24);;"* Effective minimum startup 
 * 63~92";js16~35 fs36~62 FDFA 63~92;FDFA;Incomplete Somersault;r31 FDFA;;File:Paul-dpd3p4.mp4;Paul-DPD.df+3+4;paul
 OTG.d+2;L;16;i18;-12c;-1d (-9);;"* Spike
 * +4 on hit against standing opponent";spk;;Down Strike;r31;;File:Paul-otgd2.mp4;Paul-OTG.d+2;paul
-qcb+1;M;24;i21~22;+0c;+27d FDFA;+53a;"* Spike
-* Spikes even on a standing or crouching opponent
-* Chip damage (7)";spk chp;;God Hammer Punch;r32;;File:Paul-qcb1.mp4;Paul-SWA.1;paul
+qcb+1;M;24;i21~22;+0c;+27d FDFA;+53a;"* Floor Break
+* Floor Breaks even on a standing or crouching opponent
+* Chip damage (7)";fbr chp;;God Hammer Punch;r32;;File:Paul-qcb1.mp4;Paul-SWA.1;paul
 qcb+2;m;27;i15;-9;+39d (-19);;"* Heat Engager
 
 * Heat Dash +5, +36a (+26)
