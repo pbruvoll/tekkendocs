@@ -1,7 +1,8 @@
-import { Filter } from 'lucide-react';
-import { useId, useMemo, useState } from 'react';
+import { Filter, X } from 'lucide-react';
+import { useEffect, useId, useMemo, useRef, useState } from 'react';
 import { useSearchParams } from 'react-router';
 import { Input } from '@/components/ui/input';
+import { filterKey } from '~/constants/filterConstants';
 import { orderByKey } from '~/constants/sortConstants';
 import { sortOptions } from '~/constants/sortOptions';
 import { type GameRouteId } from '~/types/GameRouteId';
@@ -56,32 +57,65 @@ export const FrameDataSection = ({
     [searchParams],
   );
 
-  const [searchQuery, setSearchQuery] = useState<string | undefined>(
-    filterFromUrl.searchQuery || undefined,
+  const [searchQuery, setSearchQuery] = useState(
+    filterFromUrl.searchQuery || '',
   );
 
   const filter = useMemo(
-    () => ({ ...filterFromUrl, searchQuery }),
+    () => ({ ...filterFromUrl, searchQuery: searchQuery || undefined }),
     [filterFromUrl, searchQuery],
   );
 
-  const moveTypes = useMemo(() => getMoveFilterTypes(moves), [moves]);
+  const searchDebounceRef = useRef<ReturnType<typeof setTimeout> | undefined>(
+    undefined,
+  );
 
-  const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const searchValue = event.target.value;
-    setSearchQuery(searchValue || undefined);
+  const handleSearchChange = (value: string) => {
+    setSearchQuery(value);
+    clearTimeout(searchDebounceRef.current);
+    searchDebounceRef.current = setTimeout(() => {
+      setSearchParams(
+        (prev) => {
+          const newSearchParams = new URLSearchParams(prev);
+          if (value) {
+            newSearchParams.set(filterKey.Query, value);
+          } else {
+            newSearchParams.delete(filterKey.Query);
+          }
+          return newSearchParams;
+        },
+        { replace: true, preventScrollReset: true },
+      );
+    }, 300);
   };
+
+  useEffect(() => () => clearTimeout(searchDebounceRef.current), []);
+
+  const moveTypes = useMemo(() => getMoveFilterTypes(moves), [moves]);
 
   return (
     <>
       <ContentContainer className="flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between">
         <div className="flex w-full items-center gap-2 mt-1 sm:w-auto">
           <Filter className="shrink-0" />
-          <Input
-            onChange={(e) => handleOnChange(e)}
-            placeholder="Search moves, ff2,1+2, power crush, etc."
-            defaultValue={searchQuery}
-          ></Input>
+          <div className="relative w-full">
+            <Input
+              onChange={(e) => handleSearchChange(e.target.value)}
+              placeholder="Search moves, ff2,1+2, power crush, etc."
+              value={searchQuery}
+              className="pr-8"
+            />
+            {searchQuery && (
+              <button
+                type="button"
+                aria-label="Clear search"
+                onClick={() => handleSearchChange('')}
+                className="absolute right-2 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
+              >
+                <X size={16} />
+              </button>
+            )}
+          </div>
         </div>
 
         <div className="flex flex-wrap items-center gap-2 sm:gap-4">
