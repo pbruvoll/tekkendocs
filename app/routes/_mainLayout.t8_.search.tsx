@@ -1,10 +1,5 @@
 import { useDeferredValue, useEffect, useMemo } from 'react';
-import {
-  Link,
-  type MetaFunction,
-  useFetcher,
-  useNavigate,
-} from 'react-router';
+import { Link, type MetaFunction, useFetcher, useNavigate } from 'react-router';
 import { Input } from '@/components/ui/input';
 import { ContentContainer } from '~/components/ContentContainer';
 import { SimpleMovesTable } from '~/components/SimpleMovesTable';
