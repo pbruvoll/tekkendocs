@@ -14,7 +14,7 @@ export type UseSearchParamStateOptions = {
  */
 export const useSearchParamState = (
   key: string,
-  { debounceMs = 300 }: UseSearchParamStateOptions = {},
+  { debounceMs = 200 }: UseSearchParamStateOptions = {},
 ): [value: string, setValue: (value: string) => void] => {
   const [searchParams, setSearchParams] = useSearchParams();
   const paramValue = searchParams.get(key) ?? '';
