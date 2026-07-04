@@ -1,10 +1,11 @@
 import { Filter, X } from 'lucide-react';
-import { useEffect, useId, useMemo, useRef, useState } from 'react';
+import { useDeferredValue, useId, useMemo } from 'react';
 import { useSearchParams } from 'react-router';
 import { Input } from '@/components/ui/input';
 import { filterKey } from '~/constants/filterConstants';
 import { orderByKey } from '~/constants/sortConstants';
 import { sortOptions } from '~/constants/sortOptions';
+import { useSearchParamState } from '~/hooks/useSearchParamState';
 import { type GameRouteId } from '~/types/GameRouteId';
 import { type Move } from '~/types/Move';
 import { type MoveFilter } from '~/types/MoveFilter';
@@ -57,39 +58,15 @@ export const FrameDataSection = ({
     [searchParams],
   );
 
-  const [searchQuery, setSearchQuery] = useState(
-    filterFromUrl.searchQuery || '',
-  );
+  const [searchQuery, setSearchQuery] = useSearchParamState(filterKey.Query);
 
   const filter = useMemo(
     () => ({ ...filterFromUrl, searchQuery: searchQuery || undefined }),
     [filterFromUrl, searchQuery],
   );
 
-  const searchDebounceRef = useRef<ReturnType<typeof setTimeout> | undefined>(
-    undefined,
-  );
-
-  const handleSearchChange = (value: string) => {
-    setSearchQuery(value);
-    clearTimeout(searchDebounceRef.current);
-    searchDebounceRef.current = setTimeout(() => {
-      setSearchParams(
-        (prev) => {
-          const newSearchParams = new URLSearchParams(prev);
-          if (value) {
-            newSearchParams.set(filterKey.Query, value);
-          } else {
-            newSearchParams.delete(filterKey.Query);
-          }
-          return newSearchParams;
-        },
-        { replace: true, preventScrollReset: true },
-      );
-    }, 300);
-  };
-
-  useEffect(() => () => clearTimeout(searchDebounceRef.current), []);
+  // Lets React keep the input responsive while filtering the move list lags behind
+  const deferredFilter = useDeferredValue(filter);
 
   const moveTypes = useMemo(() => getMoveFilterTypes(moves), [moves]);
 
@@ -100,7 +77,7 @@ export const FrameDataSection = ({
           <Filter className="shrink-0" />
           <div className="relative w-full">
             <Input
-              onChange={(e) => handleSearchChange(e.target.value)}
+              onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search moves, ff2,1+2, power crush, etc."
               value={searchQuery}
               className="pr-8"
@@ -109,7 +86,7 @@ export const FrameDataSection = ({
               <button
                 type="button"
                 aria-label="Clear search"
-                onClick={() => handleSearchChange('')}
+                onClick={() => setSearchQuery('')}
                 className="absolute right-2 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
               >
                 <X size={16} />
@@ -197,7 +174,7 @@ export const FrameDataSection = ({
         className="mt-3"
         gameRouteId={gameRouteId}
         moves={moves}
-        filter={filter}
+        filter={deferredFilter}
         charId={charId}
         viewMode={frameDataViewMode}
       />

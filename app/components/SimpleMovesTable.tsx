@@ -1,4 +1,5 @@
 import cx from 'classix';
+import { memo } from 'react';
 import { Link, useSearchParams } from 'react-router';
 import { type FrameDataListProps } from '~/types/FrameDataListProps';
 import { type MoveT8 } from '~/types/Move';
@@ -32,7 +33,9 @@ const formatWordWithBreaks = (command: string) => {
 
 type SimpleMovesTableProps = FrameDataListProps;
 
-export function SimpleMovesTable({
+// Memoized so callers can pass a filter derived via useDeferredValue and have
+// the urgent keystroke render skip re-rendering the table
+export const SimpleMovesTable = memo(function SimpleMovesTable({
   gameRouteId,
   charId,
   moves,
@@ -177,4 +180,4 @@ export function SimpleMovesTable({
       </tbody>
     </table>
   );
-}
+});
