@@ -155,7 +155,7 @@ b+2,2;m, L;13, 15;i15~16, i21~23;-7;+4;+22a;"* Transition to BT
 * Combo from 1st hit with 9F delay
 * Move can be delayed by 6F
 * Input can be delayed by 11F";;BT,BT;Seven Star Fist;BT;;File:t8-p2-xiaoyu-b+2,2.mp4;Xiaoyu-b+2,2;xiaoyu
-b+3;h;22;i18~19;+3;+8c;+32d;"* Heel
+b+3;h;22;i18~19;+3;+8c;+32d;"* Unparryable by standard kick parries (bug? backturned heel?)
 * 6 chip damage on block
 * Transition to BT";;BT,BT;Peacock Kick;BT;;File:t8-p2-xiaoyu-b+3.mp4;Xiaoyu-b+3;xiaoyu
 b+4;m;10;i13~14;-9;+0;;*;;;;;;File:t8-p2-xiaoyu-b+4,1.mp4;Xiaoyu-b+4;xiaoyu
@@ -226,7 +226,7 @@ f,F+2,1;m, m;12, 20;i15, i27~28;-12;+16a (+7);;"* Balcony Break
 * Combo from 1st hit with 2F delay
 * Move can be delayed by 12F
 * Cancel to BT with B (-19,-8)";bbr;BT;Fortune;;;File:t8-p2-xiaoyu-f,f+2,1.mp4;Xiaoyu-f,F+2,1;xiaoyu
-f,F+3;m;12;i14~15;-5;+6;+12;*;;BT;Raccoon Swing;BT;;File:t8-p2-xiaoyu-f,f+3.mp4;Xiaoyu-f,F+3;xiaoyu
+f,F+3;M;12;i14~15;-5;+6;+12;*;;BT;Raccoon Swing;BT;;File:t8-p2-xiaoyu-f,f+3.mp4;Xiaoyu-f,F+3;xiaoyu
 f,F+4;h;20;i20~23;+9;+13g c;+58a (+38);"* Strong Aerial Tailspin
 * Balcony Break
 * Transition to HYP on hit or block
@@ -242,11 +242,12 @@ f,F+3+4;M;23;i37~45;-3;+39a;;"* Spike
 * Low crush 9~";spk chp js9~;;Front Layout;;;File:t8-p2-xiaoyu-f,f+3+4.mp4;Xiaoyu-f,F+3+4;xiaoyu
 uf,n,4;m;20;i23~24;-18;+27a (+17);;"*
 * Low crush 9~";js9~;;Delayed Rising Toe Kick;;;File:t8-p2-xiaoyu-uf,n,4.mp4;Xiaoyu-uf,n,4;xiaoyu
-f,f,F+3;m;20;i23~30;+7;+29a (+19);;"* Balcony Break
+f,f,F+3;m;20;i23~30;+7g~+14g;+29a (+19);;"* Balcony Break
 * Transition to AOP
 * Chip on block [9]
 * Alternate input wr3
-* Low crush 3~";bbr chp js3~;AOP,AOP;Diving Falcon;AOP;;File:t8-p2-xiaoyu-f,f,f+3.mp4;Xiaoyu-f,f,F+3;xiaoyu
+* Low crush 3~31
+* Floating state 32~34";bbr chp js3~31 fs32~34;AOP,AOP;Diving Falcon;r14 AOP;;File:t8-p2-xiaoyu-f,f,f+3.mp4;Xiaoyu-f,f,F+3;xiaoyu
 ws1;m;8;i12~13;-7;+4;;;;;;r25;;File:t8-p2-xiaoyu-ws1,4.mp4;Xiaoyu-ws1;xiaoyu
 ws1,4;m, m;8, 16;i12~13, i22~23;-10;+12g;;"* Balcony Break
 * Combo from 1st hit with 8F delay
@@ -262,7 +263,7 @@ ws1+2,1+2;m, m;12, 20;i14~16, i19~20;-8;+7c;+43a;"* Spike
 * Jail from 1st block with no delay
 * Move can be delayed by 14F
 * Input can be delayed by 16F";spk;;X Marks the Spot;;;File:t8-p2-xiaoyu-f,f+1+2,1+2.mp4;Xiaoyu-ws+1+2,1+2;xiaoyu
-SS.4;l;19;i18;-13;-2;+29a;"*
+SS.4;L;19;i18;-13;-2;+29a;"*
 * High crush 6~";cs6~;FC;Street Sweeper;FC;;File:t8-p2-xiaoyu-ss4.mp4;Xiaoyu-ss4;xiaoyu
 FC.df+2;L;8;i19;-8;+3;;"* Transition to FC BT with DF_D_DB
 * High crush 1~27";cs1~27;FC,BT;;BT;;File:t8-p2-xiaoyu-fc.df+2,1.mp4;Xiaoyu-FC.df+2;xiaoyu
@@ -301,7 +302,7 @@ AOP.2,1;m, m;10, 20;i13, i21;-12;+13a (+4);;"* Heat Engager
 ** (-14, -3)";he;BT;Phoenix Double Palm;;;File:t8-p2-xiaoyu-aop.2,1.mp4;Xiaoyu-AOP.2,1;xiaoyu
 AOP.3;L;19;i25;-16;+0;+27a;"*
 * High crush";cs;;Piercing Spear Kick;;;File:t8-p2-xiaoyu-aop.3.mp4;Xiaoyu-AOP.3;xiaoyu
-AOP.4;m;14;i12;-3;+8;;*;;;Rising Front Kick;;;File:t8-p2-xiaoyu-aop.4.mp4;Xiaoyu-AOP.4;xiaoyu
+AOP.4;m;14;i12;-3;+8;;* Inconsistent grounded hit (more consistent on side hit);;;Rising Front Kick;;;File:t8-p2-xiaoyu-aop.4.mp4;Xiaoyu-AOP.4;xiaoyu
 AOP.1+2;m;25;i19;-1;+19a (+10);+64a;"* Tornado
 * Balcony Break";trn bbr;;Phoenix Cannon;;;File:t8-p2-xiaoyu-aop.1+2.mp4;Xiaoyu-AOP.1+2;xiaoyu
 AOP.3+4;L;22;i23;-33;+1d;;* Transition to FUFT on block;;FUFT,FC;Sliding Firecracker;FC;;File:t8-p2-xiaoyu-aop.3+4.mp4;Xiaoyu-AOP.3+4;xiaoyu
@@ -447,7 +448,7 @@ hFC.3,2;L, h;11, 6;i15~17, i18;+0;+7;;* Combo from 1st hit CH;;BT;;BT;;File:t8-p
 hFC.3,2,1;L, h, h;11, 6, 6;i15~17, ,i14;-1;+6;+10g;"* Transition to HYP with B (-2, +5)
 * Combo from 2nd hit
 * Jail from 2nd block";;HYP;;;;File:t8-p2-xiaoyu-fc.3,2,1,4.mp4;Xiaoyu-hFC.3,2,1;xiaoyu
-hFC.3,2,1,4;L, h, h, m;11, 6, 6, 12;i15~17, ,i18~20;-18;+33a (+23);;"* Combo from 3rd hit CH with 11F delay
+hFC.3,2,1,4;L, h, h, M;11, 6, 6, 12;i15~17, ,i18~20;-18;+33a (+23);;"* Combo from 3rd hit CH with 11F delay
 * Jail from 3rd block with no delay
 * Move can be delayed by 14F";;;Fire Dancer;;;File:t8-p2-xiaoyu-fc.3,2,1,4.mp4;Xiaoyu-hFC.3,2,1,4;xiaoyu
 hFC.4;l;6;i12;-15;-4;;"*
