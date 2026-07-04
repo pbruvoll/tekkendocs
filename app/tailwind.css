@@ -166,6 +166,13 @@
   * {
     @apply border-border outline-ring/50;
   }
+  /*
+   * The site header is sticky, so scrolled-to anchor targets need an offset to
+   * avoid landing underneath it. The extra 2rem is breathing room.
+   */
+  [id] {
+    scroll-margin-top: calc(var(--header-height) + 2rem);
+  }
   body {
     @apply font-sans bg-background text-foreground;
   }
