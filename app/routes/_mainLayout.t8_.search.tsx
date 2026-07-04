@@ -1,14 +1,15 @@
-import { useEffect, useMemo } from 'react';
+import { useDeferredValue, useEffect, useMemo } from 'react';
 import {
   Link,
   type MetaFunction,
   useFetcher,
   useNavigate,
-  useSearchParams,
 } from 'react-router';
 import { Input } from '@/components/ui/input';
 import { ContentContainer } from '~/components/ContentContainer';
 import { SimpleMovesTable } from '~/components/SimpleMovesTable';
+import { filterKey } from '~/constants/filterConstants';
+import { useSearchParamState } from '~/hooks/useSearchParamState';
 import { getTekken8Characters } from '~/services/staticDataService';
 import { type CharacterFrameDataPage } from '~/types/CharacterFrameDataPage';
 import { type GameRouteId } from '~/types/GameRouteId';
@@ -34,8 +35,10 @@ const maxMovesToShow = 400;
 const gameRouteId: GameRouteId = 't8';
 
 export default function () {
-  const [searchParams, setSearchParams] = useSearchParams();
-  const searchQuery = searchParams.get('q') || '';
+  const [searchInput, setSearchInput] = useSearchParamState(filterKey.Query);
+  // Derive the results from a deferred value so typing stays responsive
+  // while filtering and rendering the move table lags behind
+  const searchQuery = useDeferredValue(searchInput);
 
   const [characterQuery, moveQuery] = useMemo(() => {
     if (!searchQuery) {
@@ -149,12 +152,7 @@ export default function () {
   }, [selectedCharId, state, load, data?.characterName]);
 
   const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const searchValue = event.target.value;
-    if (searchValue) {
-      setSearchParams({ q: searchValue }, { replace: true });
-    } else {
-      setSearchParams({});
-    }
+    setSearchInput(event.target.value);
   };
 
   const handleOnKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
@@ -176,7 +174,7 @@ export default function () {
       <h1 className="pb-2 text-2xl">Search</h1>
       <p className="py-2">Enter a character, followed by a command</p>
       <Input
-        value={searchQuery}
+        value={searchInput}
         onChange={(e) => handleOnChange(e)}
         onKeyDown={handleOnKeyDown}
         placeholder="drag fff2"

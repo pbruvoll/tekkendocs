@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { memo, useMemo } from 'react';
 import { Link, useSearchParams } from 'react-router';
 import { type GameRouteId } from '~/types/GameRouteId';
 import { type Move } from '~/types/Move';
@@ -30,14 +30,16 @@ const getPageSearchParams = (searchParams: URLSearchParams, page: number) => {
 
 const PAGE_KEY = 'page';
 
-export const DynamicFrameDataList = ({
+// Memoized so the urgent keystroke render in FrameDataSection can skip the
+// move list entirely while useDeferredValue holds the previous filter
+export const DynamicFrameDataList = memo(function DynamicFrameDataList({
   gameRouteId,
   charId,
   moves,
   className,
   filter,
   viewMode,
-}: DynamicFrameDataListProps) => {
+}: DynamicFrameDataListProps) {
   const [searchParams] = useSearchParams();
   const currentPage = parseInt(searchParams.get(PAGE_KEY) || '1', 10);
 
@@ -116,4 +118,4 @@ export const DynamicFrameDataList = ({
       </ContentContainer>
     </>
   );
-};
+});
