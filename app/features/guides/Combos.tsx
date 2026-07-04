@@ -1,8 +1,8 @@
 import { Commands } from '~/components/Commands';
+import { ComboSequence } from './ComboSequence';
 import { useGuideContext } from './GuideContext';
 import { type Combo } from './GuideData';
 import { GuideSectionHeading } from './GuideSectionHeading';
-import { formatCombo } from './guideUtils';
 
 type CombosProps = {
   combos: Combo[];
@@ -11,22 +11,31 @@ type CombosProps = {
 export const Combos = ({ combos, title }: CombosProps) => {
   const { charUrl, compressedCommandMap } = useGuideContext();
   return (
-    <section className="my-6 mb-10" id={title.toLowerCase().replace(/ /g, '-')}>
+    <section className="my-10" id={title.toLowerCase().replace(/ /g, '-')}>
       <GuideSectionHeading title={title} />
-      {combos.map(({ combo, starter }) => (
-        <section key={starter} className="my-2 mb-4">
-          <Commands
-            charUrl={charUrl}
-            compressedCommandMap={compressedCommandMap}
-            command={starter}
-          />
-          {combo.split(' | ').map((comboItem, index) => (
-            <div className="ml-4 mt-1" key={index}>
-              {formatCombo(comboItem)}
+      <div className="grid gap-3">
+        {combos.map(({ combo, starter }) => (
+          <article
+            key={starter}
+            className="rounded-xl border border-border bg-card/50 p-4"
+          >
+            <h3 className="mb-2 font-semibold">
+              <Commands
+                charUrl={charUrl}
+                compressedCommandMap={compressedCommandMap}
+                command={starter}
+              />
+            </h3>
+            <div className="grid gap-2">
+              {combo.split(' | ').map((comboItem, index) => (
+                <div key={`${comboItem}-${index}`}>
+                  <ComboSequence combo={comboItem} />
+                </div>
+              ))}
             </div>
-          ))}
-        </section>
-      ))}
+          </article>
+        ))}
+      </div>
     </section>
   );
 };

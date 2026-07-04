@@ -22,6 +22,7 @@ import { ExternalResources } from '~/features/guides/ExternalResources';
 import { FrameTraps } from '~/features/guides/FrameTraps';
 import { GuideContext } from '~/features/guides/GuideContext';
 import { GuideNav } from '~/features/guides/GuideNav';
+import { GuideToc } from '~/features/guides/GuideToc';
 import { tablesToGuideData } from '~/features/guides/guideUtils.server';
 import { HeatSystem } from '~/features/guides/HeatSystem';
 import { Installments } from '~/features/guides/Installments';
@@ -265,13 +266,16 @@ export default function Index() {
         <div className="mb-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <img
-              className="aspect-square w-12"
+              className="aspect-square w-12 rounded-lg"
               src={t8AvatarMap[characterId]}
               alt={characterId}
             />
             <Text size="6" my="2" className="font-bold capitalize">
               {characterId}
             </Text>
+            <span className="rounded-full border border-primary/40 bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary">
+              {version === 'S2' ? 'Season 2' : 'Season 3'}
+            </span>
           </div>
           <a
             className="flex items-center gap-2 text-primary"
@@ -289,78 +293,105 @@ export default function Index() {
         {characterId} {gameNameMap[game]}{' '}
         {version === 'S3' ? 'Season 3' : 'Season 2'} Guide
       </h1>
-      <img
-        src={t8GuideImgSmallMap[characterId]}
-        className="m-2 mx-auto aspect-[1.77] w-full max-w-4xl md:hidden"
-        alt=""
-      ></img>
-      <img
-        src={t8GuideImgMap[characterId]}
-        className="m-2 mx-auto aspect-[1.77] w-full max-w-4xl max-md:hidden"
-        alt=""
-      ></img>
+      <div className="px-2 sm:px-4">
+        <img
+          src={t8GuideImgSmallMap[characterId]}
+          className="mx-auto my-2 aspect-[1.77] w-full max-w-4xl rounded-xl ring-1 ring-border md:hidden"
+          alt=""
+        ></img>
+        <img
+          src={t8GuideImgMap[characterId]}
+          className="mx-auto my-2 aspect-[1.77] w-full max-w-4xl rounded-xl ring-1 ring-border max-md:hidden"
+          alt=""
+        ></img>
+      </div>
       <ContentContainer enableBottomPadding>
-        {!!authors?.length && (
-          <div className="mt-4">
-            <Authors authors={authors} />
-          </div>
-        )}
-        {!!contributors?.length && (
-          <div className="mt-2">
-            <div>
-              <span>Contributors : </span>
-              <PersonLinkList persons={contributors} />
-            </div>
-          </div>
-        )}
+        <div className="mt-4 flex flex-wrap items-center gap-x-2 gap-y-1">
+          {!!authors?.length && <Authors authors={authors} />}
+          {!!contributors?.length && (
+            <>
+              {!!authors?.length && (
+                <span
+                  aria-hidden
+                  className="hidden text-muted-foreground sm:inline"
+                >
+                  ·
+                </span>
+              )}
+              <div>
+                <span>Contributors : </span>
+                <PersonLinkList persons={contributors} />
+              </div>
+            </>
+          )}
+        </div>
         {about && <About about={about} />}
-        <GuideNav guideData={guideData}></GuideNav>
-        {!!aboutAuthor?.length && <AboutAuthor sections={aboutAuthor} />}
-        {introduction?.length && <Introduction sections={introduction} />}
-        {(strengths?.length || weaknesses?.length) && (
-          <StrengthsWeaknesses strengths={strengths} weaknesses={weaknesses} />
-        )}
-        {heatSystem?.length && <HeatSystem heatSystem={heatSystem} />}
-        {installments?.length && <Installments installments={installments} />}
-        {top10Moves?.length && (
-          <KeyMoves moves={top10Moves} title="Top 10 Moves" />
-        )}
-        {(standingPunishers?.length ||
-          crouchingPunishers?.length ||
-          whiffPunishers?.length) && (
-          <Punishers
-            standing={standingPunishers}
-            crouching={crouchingPunishers}
-            whiff={whiffPunishers}
-          />
-        )}
-        {combos?.length && <Combos combos={combos} title="Combos" />}
-        {combosBeginner?.length && (
-          <Combos combos={combosBeginner} title="Beginner Combos" />
-        )}
-        {comboEnders?.length && <ComboEnders comboEnders={comboEnders} />}
-        {wallCombos?.length && <WallCombos wallCombos={wallCombos} />}
-        {smallCombos?.length && (
-          <Combos combos={smallCombos} title="Small Combos" />
-        )}
-        {notableMoves?.length && (
-          <KeyMoves moves={notableMoves} title="Notable Moves" />
-        )}
-        {stances?.length && <Stances stances={stances} />}
-        {panicMoves?.length && (
-          <KeyMoves moves={panicMoves} title="Panic Moves" />
-        )}
-        {frameTraps?.length && <FrameTraps frameTraps={frameTraps} />}
-        {knowledgeChecks?.length && (
-          <KeyMoves moves={knowledgeChecks} title="Knowledge Checks" />
-        )}
-        {defensiveTips?.length && <DefensiveTips tips={defensiveTips} />}
-        {defensiveMoves?.length && (
-          <KeyMoves moves={defensiveMoves} title="Defensive Move Handling" />
-        )}
-        {externalResources?.length && (
-          <ExternalResources externalResources={externalResources} />
-        )}
+        <div className="xl:hidden">
+          <GuideNav guideData={guideData}></GuideNav>
+        </div>
+        <div className="xl:grid xl:grid-cols-[minmax(0,1fr)_13rem] xl:gap-10">
+          <div className="min-w-0">
+            {!!aboutAuthor?.length && <AboutAuthor sections={aboutAuthor} />}
+            {!!introduction?.length && <Introduction sections={introduction} />}
+            {!!(strengths?.length || weaknesses?.length) && (
+              <StrengthsWeaknesses
+                strengths={strengths}
+                weaknesses={weaknesses}
+              />
+            )}
+            {!!heatSystem?.length && <HeatSystem heatSystem={heatSystem} />}
+            {!!installments?.length && (
+              <Installments installments={installments} />
+            )}
+            {!!top10Moves?.length && (
+              <KeyMoves moves={top10Moves} title="Top 10 Moves" />
+            )}
+            {!!(
+              standingPunishers?.length ||
+              crouchingPunishers?.length ||
+              whiffPunishers?.length
+            ) && (
+              <Punishers
+                standing={standingPunishers}
+                crouching={crouchingPunishers}
+                whiff={whiffPunishers}
+              />
+            )}
+            {!!combos?.length && <Combos combos={combos} title="Combos" />}
+            {!!combosBeginner?.length && (
+              <Combos combos={combosBeginner} title="Beginner Combos" />
+            )}
+            {!!comboEnders?.length && <ComboEnders comboEnders={comboEnders} />}
+            {!!wallCombos?.length && <WallCombos wallCombos={wallCombos} />}
+            {!!smallCombos?.length && (
+              <Combos combos={smallCombos} title="Small Combos" />
+            )}
+            {!!notableMoves?.length && (
+              <KeyMoves moves={notableMoves} title="Notable Moves" />
+            )}
+            {!!stances?.length && <Stances stances={stances} />}
+            {!!panicMoves?.length && (
+              <KeyMoves moves={panicMoves} title="Panic Moves" />
+            )}
+            {!!frameTraps?.length && <FrameTraps frameTraps={frameTraps} />}
+            {!!knowledgeChecks?.length && (
+              <KeyMoves moves={knowledgeChecks} title="Knowledge Checks" />
+            )}
+            {!!defensiveTips?.length && <DefensiveTips tips={defensiveTips} />}
+            {!!defensiveMoves?.length && (
+              <KeyMoves
+                moves={defensiveMoves}
+                title="Defensive Move Handling"
+              />
+            )}
+            {!!externalResources?.length && (
+              <ExternalResources externalResources={externalResources} />
+            )}
+          </div>
+          <aside className="hidden xl:block">
+            <GuideToc guideData={guideData} />
+          </aside>
+        </div>
       </ContentContainer>
     </GuideContext>
   );

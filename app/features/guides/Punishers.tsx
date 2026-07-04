@@ -1,4 +1,5 @@
 import { Commands } from '~/components/Commands';
+import { GuideCardColumn } from './GuideCardColumn';
 import { useGuideContext } from './GuideContext';
 import { type Punisher, type WhiffPunisher } from './GuideData';
 import { GuideSectionHeading } from './GuideSectionHeading';
@@ -10,9 +11,9 @@ type PunishersProps = {
 };
 export const Punishers = ({ standing, crouching, whiff }: PunishersProps) => {
   return (
-    <section id="punishers">
+    <section id="punishers" className="my-10">
       <GuideSectionHeading title="Punishers" />
-      <div className="flex gap-2 md:gap-4 lg:gap-8">
+      <div className="grid items-start gap-4 md:grid-cols-2 lg:grid-cols-3">
         {standing && <PunisherList title="Standing" punishers={standing} />}
         {crouching && <PunisherList title="Crouching" punishers={crouching} />}
         {whiff && <PunisherList title="Whiff punishers" punishers={whiff} />}
@@ -30,19 +31,29 @@ const PunisherList = ({
 }) => {
   const { charUrl, compressedCommandMap } = useGuideContext();
   return (
-    <section className="grow">
-      <div className="mb-2 bg-muted text-center">{title}</div>
+    <GuideCardColumn title={title}>
       {punishers?.map(({ startup, command, description }, index) => (
-        <div key={index} className="mb-2">
-          {startup ? `${startup}f ` : ''}
-          <Commands
-            command={command}
-            charUrl={charUrl}
-            compressedCommandMap={compressedCommandMap}
-          />{' '}
-          {description ? `(${description})` : ''}
-        </div>
+        <li key={`${command}-${index}`} className="flex items-baseline gap-2">
+          {startup && (
+            <span className="shrink-0 rounded-md bg-muted px-1.5 py-0.5 text-xs font-medium tabular-nums text-muted-foreground">
+              {startup}
+            </span>
+          )}
+          <span>
+            <Commands
+              command={command}
+              charUrl={charUrl}
+              compressedCommandMap={compressedCommandMap}
+            />
+            {description && (
+              <span className="text-sm text-muted-foreground">
+                {' '}
+                {description}
+              </span>
+            )}
+          </span>
+        </li>
       ))}
-    </section>
+    </GuideCardColumn>
   );
 };
