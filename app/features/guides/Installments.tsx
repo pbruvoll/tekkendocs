@@ -10,7 +10,7 @@ type InstallmentsProps = {
 export const Installments = ({ installments }: InstallmentsProps) => {
   const { charUrl, compressedCommandMap } = useGuideContext();
   return (
-    <section className="my-6 mb-10" id="installments">
+    <section className="my-10" id="installments">
       <GuideSectionHeading title="Installments" />
       {installments.map(({ name, description }) => (
         <section key={name} className="my-4">

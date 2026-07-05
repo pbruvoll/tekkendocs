@@ -1,5 +1,4 @@
 import { Heading } from '@radix-ui/themes';
-import { cx } from 'class-variance-authority';
 import { Commands } from '~/components/Commands';
 import { TextWithCommand } from '~/components/TextWithCommand';
 import { useGuideContext } from './GuideContext';
@@ -10,39 +9,93 @@ import { MoveSummary } from './MoveSummary';
 type StancesProps = {
   stances: Stance[];
 };
+
+/** Groups the flat stance list into one group per stance, with its moves below it */
+const groupStances = (stances: Stance[]) => {
+  const groups: { stance?: Stance; moves: Stance[] }[] = [];
+  for (const entry of stances) {
+    if (entry.type === 'stance' || !groups.length) {
+      groups.push(
+        entry.type === 'stance'
+          ? { stance: entry, moves: [] }
+          : { moves: [entry] },
+      );
+    } else {
+      groups[groups.length - 1].moves.push(entry);
+    }
+  }
+  return groups;
+};
+
 export const Stances = ({ stances }: StancesProps) => {
   const { charUrl, compressedCommandMap } = useGuideContext();
+  const groups = groupStances(stances);
   return (
-    <section className="my-6 mb-10" id="stances">
+    <section className="my-10" id="stances">
       <GuideSectionHeading title="Stances" />
-      {stances.map(({ type, command, description }, index) => (
-        <section
-          key={command}
-          className={cx(
-            'my-2 mb-4',
-            type === 'stance' && index > 0 ? 'mt-10' : 'mt-2',
-          )}
-        >
-          <Heading as="h3" mb="1" size="3">
-            <Commands
-              charUrl={charUrl}
-              compressedCommandMap={compressedCommandMap}
-              command={command}
-            />
-          </Heading>
-          {description && (
-            <TextWithCommand
-              text={description}
-              charUrl={charUrl}
-              compressedCommandMap={compressedCommandMap}
-            />
-          )}
-          <MoveSummary
-            command={command}
-            compressedCommandMap={compressedCommandMap}
-          />
-        </section>
-      ))}
+      <div className="grid gap-4">
+        {groups.map(({ stance, moves }, index) => (
+          <article
+            key={stance?.command ?? `group-${index}`}
+            className="rounded-xl border border-border bg-card/50 p-4"
+          >
+            {stance && (
+              <div>
+                <Heading as="h3" size="4">
+                  <Commands
+                    charUrl={charUrl}
+                    compressedCommandMap={compressedCommandMap}
+                    command={stance.command}
+                  />
+                </Heading>
+                {stance.description && (
+                  <div className="mt-2 leading-relaxed">
+                    <TextWithCommand
+                      text={stance.description}
+                      charUrl={charUrl}
+                      compressedCommandMap={compressedCommandMap}
+                    />
+                  </div>
+                )}
+                <MoveSummary
+                  className="mt-2"
+                  command={stance.command}
+                  compressedCommandMap={compressedCommandMap}
+                />
+              </div>
+            )}
+            {!!moves.length && (
+              <div className="mt-4 grid gap-4 border-l-2 border-border pl-4">
+                {moves.map(({ command, description }) => (
+                  <div key={command}>
+                    <Heading as="h4" size="3">
+                      <Commands
+                        charUrl={charUrl}
+                        compressedCommandMap={compressedCommandMap}
+                        command={command}
+                      />
+                    </Heading>
+                    {description && (
+                      <div className="mt-1 leading-relaxed">
+                        <TextWithCommand
+                          text={description}
+                          charUrl={charUrl}
+                          compressedCommandMap={compressedCommandMap}
+                        />
+                      </div>
+                    )}
+                    <MoveSummary
+                      className="mt-1.5"
+                      command={command}
+                      compressedCommandMap={compressedCommandMap}
+                    />
+                  </div>
+                ))}
+              </div>
+            )}
+          </article>
+        ))}
+      </div>
     </section>
   );
 };

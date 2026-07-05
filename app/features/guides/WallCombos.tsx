@@ -1,8 +1,9 @@
 import { Command } from '~/components/Command';
+import { ComboSequence } from './ComboSequence';
+import { GuideCardColumn } from './GuideCardColumn';
 import { useGuideContext } from './GuideContext';
 import { type WallCombo } from './GuideData';
 import { GuideSectionHeading } from './GuideSectionHeading';
-import { formatCombo } from './guideUtils';
 
 type WallCombosProps = {
   wallCombos: WallCombo[];
@@ -13,11 +14,11 @@ export const WallCombos = ({ wallCombos }: WallCombosProps) => {
 
   return (
     <section
-      className="my-6 mb-10"
+      className="my-10"
       id={'Wall Combos'.toLowerCase().replace(/ /g, '-')}
     >
       <GuideSectionHeading title="Wall Combos" />
-      <div className="flex gap-2 md:gap-4 lg:gap-8">
+      <div className="grid items-start gap-4 md:grid-cols-2">
         {!!normal.length && <EnderList title="Normal" enders={normal} />}
         {!!tornado.length && (
           <EnderList title="With tornado" enders={tornado} />
@@ -36,12 +37,11 @@ const EnderList = ({
 }) => {
   const { charUrl, compressedCommandMap } = useGuideContext();
   return (
-    <section className="grow">
-      <div className="mb-2 bg-muted text-center">{title}</div>
+    <GuideCardColumn title={title}>
       {enders?.map(({ combo }, index) => (
-        <div key={index} className="mb-2">
+        <li key={`${combo}-${index}`}>
           {combo.includes('>') ? (
-            formatCombo(combo)
+            <ComboSequence combo={combo} />
           ) : (
             <Command
               command={combo}
@@ -49,8 +49,8 @@ const EnderList = ({
               compressedCommandMap={compressedCommandMap}
             />
           )}
-        </div>
+        </li>
       ))}
-    </section>
+    </GuideCardColumn>
   );
 };

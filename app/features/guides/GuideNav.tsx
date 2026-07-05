@@ -1,28 +1,14 @@
 import { Link } from 'react-router';
 import { type GuideData } from './GuideData';
+import { getGuideNavItems } from './guideUtils';
 
 type GuideNavProps = {
   guideData: Partial<GuideData>;
 };
 
+/** Chip based section navigation, used on screens without room for the sidebar */
 export const GuideNav = ({ guideData }: GuideNavProps) => {
-  const navItems = [
-    !!guideData.introduction && 'Introduction',
-    !!guideData.strengths && 'Strengths',
-    !!guideData.weaknesses && 'Weaknesses',
-    !!guideData.heatSystem && 'Heat System',
-    !!guideData.installments && 'Installments',
-    !!guideData.keyMoves && 'Top 10 Moves',
-    !!guideData.standingPunishers && 'Punishers',
-    !!guideData.combos && 'Combos',
-    !!guideData.keyMoves && guideData.keyMoves.length > 10 && 'Notable Moves',
-    !!guideData.stances && 'Stances',
-    !!guideData.panicMoves && 'Panic Moves',
-    !!guideData.frameTraps && 'Frame Traps',
-    !!guideData.knowledgeChecks && 'Knowledge Checks',
-    !!(guideData.defensiveTips || guideData.defensiveMoves) && 'Defensive Tips',
-    !!guideData.externalResources && 'External Resources',
-  ].filter(Boolean) as string[];
+  const navItems = getGuideNavItems(guideData);
 
   if (!navItems.length) return null;
 
@@ -32,10 +18,10 @@ export const GuideNav = ({ guideData }: GuideNavProps) => {
         In this guide
       </p>
       <div className="flex flex-wrap gap-1">
-        {navItems.map((name) => (
+        {navItems.map(({ name, id }) => (
           <Link
-            key={name}
-            to={`#${name.toLowerCase().replace(/ /g, '-')}`}
+            key={id}
+            to={`#${id}`}
             className="rounded-r-full border border-border border-l-2 border-l-primary bg-muted/50 py-px pl-1.5 pr-2 text-xs text-primary transition-colors hover:bg-muted"
           >
             {name}

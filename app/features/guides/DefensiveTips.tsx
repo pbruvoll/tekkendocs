@@ -10,21 +10,27 @@ type DefensiveTipsProps = {
 export const DefensiveTips = ({ tips }: DefensiveTipsProps) => {
   const { charUrl, compressedCommandMap } = useGuideContext();
   return (
-    <section className="my-6 mb-10" id="defensive-tips">
+    <section className="my-10" id="defensive-tips">
       <GuideSectionHeading title="Defensive tips" />
-      {tips.map(({ title, description }) => (
-        <section key={title} className="my-2 mb-4">
-          <Heading as="h3" mb="1" size="3">
-            {title}
-          </Heading>
-
-          <TextWithCommand
-            text={description}
-            charUrl={charUrl}
-            compressedCommandMap={compressedCommandMap}
-          />
-        </section>
-      ))}
+      <div className="grid gap-3">
+        {tips.map(({ title, description }) => (
+          <section
+            key={title}
+            className="rounded-xl border border-border bg-card/50 p-4"
+          >
+            <Heading as="h3" mb="1" size="3">
+              {title}
+            </Heading>
+            <div className="leading-relaxed">
+              <TextWithCommand
+                text={description}
+                charUrl={charUrl}
+                compressedCommandMap={compressedCommandMap}
+              />
+            </div>
+          </section>
+        ))}
+      </div>
     </section>
   );
 };
