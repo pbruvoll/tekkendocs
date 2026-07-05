@@ -196,6 +196,7 @@ export const characterGuideAuthors: Record<
     'miary-zo': { author: 'Koenji', version: 'S3' },
     nina: { author: 'Lalo', version: 'S3' },
     raven: { author: 'JacobKaas', version: 'S3' },
+    reina: { author: 'Heavenly', version: 'S3' },
     shaheen: { author: 'Alihandal', version: 'S3' },
     steve: { author: 'Seagerr', version: 'S2' },
     victor: { author: 'Yung_P', version: 'S3' },
