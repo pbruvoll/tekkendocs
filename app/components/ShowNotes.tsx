@@ -1,5 +1,5 @@
 import { cx } from 'class-variance-authority';
-import { ChevronDown, ChevronRight, ChevronUp } from 'lucide-react';
+import { ChevronDown, ChevronUp } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';
 import { type Move } from '~/types/Move';
 

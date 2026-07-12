@@ -4,7 +4,6 @@ import { TextEffect } from '@/components/core/TextEffect';
 import { CharacterGrid } from '~/components/CharacterGrid';
 import { ContentContainer } from '~/components/ContentContainer';
 import { ExternalResources } from '~/components/ExternalResources';
-import tekkenDocsLogoLarge from '~/images/logo/tekkendocs-logo-large-v2.svg';
 import {
   getTekken7Characters,
   getTekken8Characters,

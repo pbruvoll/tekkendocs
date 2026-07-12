@@ -104,7 +104,7 @@ const FilePlayer = ({
     setShowControlsUrl(url);
 
     const video = videoRef.current;
-    if (!video || !video.paused) {
+    if (!video?.paused) {
       return;
     }
 

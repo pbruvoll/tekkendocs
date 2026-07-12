@@ -106,7 +106,7 @@ export default function TournamentVideos() {
           <a
             className="flex items-center gap-2 text-primary"
             target="_blank"
-            href={editUrl}
+            href={editUrl} rel="noopener"
           >
             <Pencil1Icon />
             Edit
