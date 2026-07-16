@@ -4,6 +4,7 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
+    "prepare": "npx lefthook install",
     "build": "react-router build",
     "build:sitemap": "remix-sitemap",
     "check": "biome check",
@@ -65,6 +66,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "2.5.3",
+    "lefthook": "^1.7.18",
     "@react-router/dev": "7.11.0",
     "@tailwindcss/postcss": "^4.1.18",
     "@tailwindcss/typography": "^0.5.10",
