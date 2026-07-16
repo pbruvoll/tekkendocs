@@ -49,13 +49,13 @@ const tableHandlers: Partial<
   },
   key_moves: (rows, guideData) => {
     guideData.keyMoves = rows.map((row) => ({
-      command: row[0],
+      command: row[0] ?? '',
       description: row[1],
     }));
   },
   panic_moves: (rows, guideData) => {
     guideData.panicMoves = rows.map((row) => ({
-      command: row[0],
+      command: row[0] ?? '',
       description: row[1],
     }));
   },
@@ -70,21 +70,21 @@ const tableHandlers: Partial<
   },
   punishers_standing: (rows, guideData) => {
     guideData.standingPunishers = rows.map((row) => ({
-      startup: row[0],
-      command: row[1],
+      startup: row[0] ?? '',
+      command: row[1] ?? '',
       description: row[2],
     }));
   },
   punishers_crouching: (rows, guideData) => {
     guideData.crouchingPunishers = rows.map((row) => ({
-      startup: row[0],
-      command: row[1],
+      startup: row[0] ?? '',
+      command: row[1] ?? '',
       description: row[2],
     }));
   },
   punishers_whiff: (rows, guideData) => {
     guideData.whiffPunishers = rows.map((row) => ({
-      command: row[0],
+      command: row[0] ?? '',
       description: row[1],
     }));
   },
@@ -93,38 +93,38 @@ const tableHandlers: Partial<
   },
   combos_normal: (rows, guideData) => {
     guideData.combos = rows.map((row) => ({
-      starter: row[0],
-      combo: row[1],
+      starter: row[0] ?? '',
+      combo: row[1] ?? '',
     }));
   },
   combos_beginner: (rows, guideData) => {
     guideData.combosBeginner = rows.map((row) => ({
-      starter: row[0],
-      combo: row[1],
+      starter: row[0] ?? '',
+      combo: row[1] ?? '',
     }));
   },
   combos_ender: (rows, guideData) => {
     guideData.comboEnders = rows.map((row) => ({
-      type: row[0] as ComboEnderType,
-      combo: row[1],
+      type: (row[0] ?? '') as ComboEnderType,
+      combo: row[1] ?? '',
     }));
   },
   combos_wall: (rows, guideData) => {
     guideData.wallCombos = rows.map((row) => ({
-      type: row[0] as WallComboType,
-      combo: row[1],
+      type: (row[0] ?? '') as WallComboType,
+      combo: row[1] ?? '',
     }));
   },
   combos_small: (rows, guideData) => {
     guideData.smallCombos = rows.map((row) => ({
-      starter: row[0],
-      combo: row[1],
+      starter: row[0] ?? '',
+      combo: row[1] ?? '',
     }));
   },
   frame_traps: (rows, guideData) => {
     guideData.frameTraps = rows.map((row) => ({
-      starter: row[0],
-      trap: row[1],
+      starter: row[0] ?? '',
+      trap: row[1] ?? '',
     }));
   },
   knowledge_checks: (rows, guideData) => {
