@@ -92,7 +92,8 @@ export default function Index() {
           <a
             className="flex items-center gap-2 text-primary"
             target="_blank"
-            href={editUrl} rel="noopener"
+            href={editUrl}
+            rel="noopener"
           >
             <Pencil1Icon />
             Edit
