@@ -101,7 +101,7 @@ export default function () {
           `^${w.replace(/\?/g, '.*')}${searchQuery.endsWith(' ') ? '' : '.*'}$`,
         );
         filteredByCommand = data.moves.filter((move) => re.test(move.command));
-      } else if (!!cleanMoveQuery && searchQuery.endsWith(' ')) {
+      } else if (cleanMoveQuery && searchQuery.endsWith(' ')) {
         filteredByCommand = data.moves.filter(
           (move) => cleanCommand(move.command) === cleanMoveQuery,
         );

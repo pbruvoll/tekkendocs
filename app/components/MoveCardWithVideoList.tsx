@@ -1,6 +1,6 @@
 import { useWindowVirtualizer } from '@tanstack/react-virtual';
 import cx from 'classix';
-import { use, useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { type FrameDataListProps } from '~/types/FrameDataListProps';
 import { type MoveT8 } from '~/types/Move';
 import { charIdFromMove, commandToUrlSegmentEncoded } from '~/utils/moveUtils';

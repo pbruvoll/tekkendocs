@@ -31,9 +31,9 @@ export const AppErrorBoundary = () => {
   }
 };
 
-type ErrorDataProps = { data: any };
+type ErrorDataProps = { data: unknown };
 const ErrorData = ({ data }: ErrorDataProps) => {
-  if (typeof data === 'object' && 'title' in data) {
+  if (data && typeof data === 'object' && 'title' in data) {
     const serverError = data as ServerError;
     return (
       <div>

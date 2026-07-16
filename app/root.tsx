@@ -50,8 +50,12 @@ export const shouldRevalidate: ShouldRevalidateFunction = () => {
 
 export const ErrorBoundary = () => {
   const error = useRouteError();
-  //captureRemixErrorBoundaryError(error)
-  return <div>Something went wrong</div>;
+  return (
+    <div>
+      <h1>Something went wrong</h1>
+      {error instanceof Error && <p>{error.message}</p>}
+    </div>
+  );
 };
 
 export default function App() {
