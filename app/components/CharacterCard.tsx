@@ -21,8 +21,8 @@ export const CharacterCard2 = ({
   author,
 }: CharacterCard2Props) => {
   return (
-    <Link to={url} className="cursor-pointer">
-      <Card className="group transform transition duration-500 hover:scale-110 hover:border-b-gray-700 hover:shadow-sm">
+    <Link to={url} className="block h-full cursor-pointer">
+      <Card className="group h-full transform transition duration-500 hover:scale-110 hover:border-b-gray-700 hover:shadow-sm">
         <Inset clip="padding-box" className="relative" side="top" pb="current">
           <img
             src={imgUrl}
@@ -49,7 +49,7 @@ export const CharacterCard2 = ({
               <div className="overflow-hidden text-ellipsis whitespace-nowrap text-center max-xs:text-xs">
                 <span className="capitalize">{name}</span> by
               </div>
-              <div className="overflow-hidden text-ellipsis whitespace-nowrap text-center capitalize text-primary max-xs:text-xs">
+              <div className="overflow-hidden text-center capitalize text-primary max-xs:text-xs">
                 {author}
               </div>
             </>
