@@ -52,7 +52,7 @@ export const CharacterGrid = ({ characterCards, size }: CharacterGridProps) => {
                 key={index}
                 className="mb-4"
               >
-                <li className="cursor-pointer" key={name}>
+                <li className="h-full cursor-pointer" key={name}>
                   <CharacterCard2
                     imgUrl={imgSrc}
                     size={size}
