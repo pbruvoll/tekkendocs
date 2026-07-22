@@ -63,36 +63,66 @@ export default function () {
       moveCommand: 'df+3',
       mixupCommand: 'b+1+4',
       startup: 29,
+      completed: {
+        name: 'Beauty Is Devotion',
+        sosial: 'https://x.com/Beautyidevotion',
+        video: 'https://www.youtube.com/watch?v=2Aa8Kh7stmU',
+      },
     },
     {
       characterId: 'asuka',
       moveCommand: 'df+3+4',
       mixupCommand: 'f+3+4',
       startup: 28,
+      completed: {
+        name: 'Beauty Is Devotion',
+        sosial: 'https://x.com/Beautyidevotion',
+        video: 'https://www.youtube.com/watch?v=QOgwvSTVz8s',
+      },
     },
     {
       characterId: 'dragunov',
       moveCommand: 'db+3',
       mixupCommand: 'b+3+4',
       startup: 27,
+      completed: {
+        name: 'Beauty Is Devotion',
+        sosial: 'https://x.com/Beautyidevotion',
+        video: 'https://www.youtube.com/watch?v=J94BIKiLRZQ',
+      },
     },
     {
       characterId: 'raven',
       moveCommand: 'db+3',
       mixupCommand: 'b+3',
       startup: 28,
+      completed: {
+        name: 'Beauty Is Devotion',
+        sosial: 'https://x.com/Beautyidevotion',
+        video: 'https://www.youtube.com/watch?v=Q315ns8Byc0',
+      },
     },
     {
       characterId: 'eddy',
       moveCommand: 'db+3',
       mixupCommand: 'uf+3,3',
       startup: 28,
+      completed: {
+        name: 'Beauty Is Devotion',
+        sosial: 'https://x.com/Beautyidevotion',
+        video: 'https://www.youtube.com/watch?v=3sugMPBeDI8',
+      },
     },
     {
       characterId: 'law',
       moveCommand: 'db+4',
       mixupCommand: 'f+3+4',
       startup: 26,
+      completed: {
+        name: 'Beauty Is Devotion',
+        sosial: 'https://x.com/Beautyidevotion',
+        video: 'https://www.youtube.com/watch?v=et-qcuZSMcY',
+      },
     },
     {
       characterId: 'steve',
