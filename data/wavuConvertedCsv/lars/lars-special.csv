@@ -6,34 +6,35 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * Only deals recoverable damage
 * Cannot cause a K.O.
 * Power crush 7~16";hb pc7~16;;Heat Burst;r30;;;Lars-2+3;lars
-H.DEN.3+4;L,SM;11,10;i22~23, i9;-14;+21d;;"* 2 chip damage on block
-* 2nd hit only occurs on 1st hit
-* Recovers ?F faster on hit
+H.DEN.3+4;L,SM;11,5;i22~23, i9;-14?;+21d;;"* Available only on 1st hit
 * Transition to r19 SEN with input F (-7/+34d)
-* Consumes 300F of remaining heat time";;SEN;Stack Up Insurgence;r25;;;Lars-H.DEN.3+4;lars
-H.LEN.1;L,t;20,15;i16~17;-12c;+5d;;"* Consumes 300F of remaining Heat time
-* 6 chip damage on block
-* Side switch on hit throw
+* Consumes 600F of remaining heat time";;SEN;Stack Up Insurgence;r26;;;Lars-H.DEN.3+4;lars
+H.LEN.1;L,t;20,10;i16~17;-12c;+5d;;"* Consumes 600F of remaining Heat time
+* Side switch and recover standing on hit throw
 * Opponent is left FUFA
-* High crush 1~50";cs1~50;FC;Blue Jet;FC;;File:t8-p2-lars-h.len.1.mp4;Lars-H.LEN.1;lars
-H.LEN.2;m;20;i16~17;-9;+65a (+49);;"* Tornado
+* High crush 1~50";cs1~50;FC;Blue Jet;r33 FC;;File:t8-p2-lars-h.len.1.mp4;Lars-H.LEN.1;lars
+H.LEN.2;m;25;i16~17;-9;+29d;;"* Tornado
 * Elbow
 * Consumes 240F of remaining Heat time
-* 9 chip damage on block
+* 10 chip damage on block
 * High crush 1~15
-* Low crush 16~34";trn elb cs1~15 js16~34;;Rising Force (Heat);;;;Lars-H.LEN.2;lars
+* Low crush 16~34";trn elb cs1~15 js16~34;;Rising Force (Heat);r38;;;Lars-H.LEN.2;lars
 H.SS.2;m,SM;20,10;i16~17, i8;+6c;+27d;;"* 6 chip damage on block
 * Consumes 270F of remaining heat time";;;Shockwave Insurgence;r27;;;Lars-H.SS.2;lars
 H.f+3+4;sm;5;i18~24;+5;+10;;"* Transition to SEN
-* Uses 300F of remaining heat time
-* Only deals recoverable damage";;SEN,SEN;Rebellion;r16 SEN;;;Lars-H.f+3+4;lars
-H.2+3;m,M;55;i18~19, i38~41;+12c;+0 / +81a;;"* Heat Smash
-* Spike
-* Transition to 30dmg attack throw on 1st hit (+0)
-* +81a 25dmg 2nd hit on 1st block or whiff
-* Transition to r30 DEN on block or whiff (+12c/+81a)
-* Transition to r37 standing on block (+10c/+79a) or whiff with input B
-* 7 chip damage on block";hs spk;DEN,DEN;Thunderbird Descent;r30 DEN;;;Lars-H.2+3;lars
+* Consumes 300F of remaining heat time
+* Only deals recoverable damage
+* High crush 33~43";cs33~43;SEN,SEN;Rebellion;r19 SEN;;;Lars-H.f+3+4;lars
+H.2+3;m,M;55;i18~19, i38~41;+12c;+0d / +81a;;"* Heat Smash
+* Floor Break
+* Transition to 30dmg attack throw on 1st hit
+* 2nd hit +81a 25dmg on 1st block or whiff
+* Transition to r35 DEN (+12c/+81a)
+* Transition to r37 standing with B (+10c/+79a)
+* 7 chip damage on block
+* Opponent recovers FDFA
+* Low crush 18~60
+* Floating state 61~63";hs fbr js18~60 fs61~63;DEN,DEN;Thunderbird Descent;r35 DEN;;;Lars-H.2+3;lars
 R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Removes Recoverable Health
 * Reversal Break
@@ -155,11 +156,10 @@ db+1+2;m;12;i26;-13;+8;;"* Transition to DEN with input D (-6/+11)
 * Backsway";;DEN;Inductance;;;File:t8-p2-lars-db+1+2.mp4;Lars-db+1+2;lars
 b+1;m;17;i15~17;-9;+4;+14a (+5);"* Homing
 * Balcony Break on CH";hom;;Chevron Slash;r29;;File:t8-p2-lars-b+1.mp4;Lars-b+1;lars
-b+2;m;12;i15;-7;+4;;;;;;;;File:t8-p2-lars-b+2,1.mp4;Lars-b+2;lars
+b+2;m;12;i15;-7;+4;;Has good left sidestep tracking;;;;;;File:t8-p2-lars-b+2,1.mp4;Lars-b+2;lars
 b+2,1;m, m;12, 17;i15, i15;-10;+4;+32a;"* Combo from 1st hit with 15F delay
 * Move can be delayed by 10F
-* Input can be delayed by 15F 
-* Has good left sidestep tracking";;;Gilbert Smash;r31;;File:t8-p2-lars-b+2,1.mp4;Lars-b+2,1;lars
+* Input can be delayed by 15F";;;Gilbert Smash;r31;;File:t8-p2-lars-b+2,1.mp4;Lars-b+2,1;lars
 b+2,3;m, h;12, 21;i15, i18;-8;+38d (-20);;"* Balcony Break
 * Tornado
 * Combo from 1st hit with 5F delay
@@ -315,7 +315,7 @@ SEN.3+4;m,m;6,16 (23);i13~14,i18~19;+0c;+22d (-13);;"* Floor Break
 * Floating state 36~38";fbr js7~35 fs36~38;;Lightning Axle;r32;;File:t8-p2-lars-sen.3+4.mp4;Lars-SEN.3+4;lars
 SEN.B;sp;;;;;;* Transition to DEN (backwards movement);;DEN,DEN;Dynamic Entry;r30 DEN;;;Lars-SEN.B;lars
 SEN.D;sp;;;;;;"* Transition to LEN
-* Transition to r1 FC with no input
+* Transition to r1 FC with no input and can perform WS moves with f+1_2_3_4
 * High crush 24~27?";cs24~27?;LEN,FC,LEN;Limited Entry;r28 LEN;;File:t8-p2-lars-sen.d.mp4;Lars-SEN.D;lars
 hFC.1+2;l,l;9,15;i18,i14~i15;-12;+1c;;"* Transition to LEN on hit with input n,D (+3c) 
 * Can be done from Crouch Level 1
