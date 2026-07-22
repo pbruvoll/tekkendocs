@@ -12,19 +12,20 @@ H.WRA.d+3+4;l,m,m,m;12,8,3,12;i18~19;-17;+0;;"* Spike
 * Jails if any hit is blocked
 * Transitions to attack throw on 1st hit for a total of 35 dmg
 * +4a (-5) if any hit after the 1st connects
-* Consumes 300F of remaining Heat time";spk fbr;;Divine Wrath of Annihilation;r44;File:Reina-H.WRA.2+3.jpg;File:Reina-H.WRA.2+3.mp4;Reina-H.WRA.d+3+4;reina
+* Consumes 600F of remaining Heat time";spk fbr;;Divine Wrath of Annihilation;r44;File:Reina-H.WRA.2+3.jpg;File:Reina-H.WRA.2+3.mp4;Reina-H.WRA.d+3+4;reina
 H.d+1+2;;;;;;;"* Automatically parries limb-based, non-airborne mids and highs
 * Deals 40 damage on successful parry
 * +1d on successful parry
+* Consumes 240F of remaining Heat time
 * Throws received are unbreakable
 * Parry state 20~60";ps20~60;;Charging Hard;;;File:Reina-H.d+1+2.mp4;Reina-H.WRA;reina
-H.2+3;m,m;20,25;i21;+8;+0d;;"* Heat Smash
+H.2+3;m,m;20,35;i21;+8;+0d;;"* Heat Smash
 * Balcony Break
 * Alternate inputs: H.R1, H.WRA.2+3, H.WRA.R1
 * Jails from 1st block
 * Transitions to attack throw on 1st hit for a total of 50 dmg
 * Transitions to r53 WRA on 2nd block, whiff or hit
-* +19d WRA if only second hit connects (25 dmg)
+* +19a WRA if only second hit connects (25 dmg)
 * 7 chip damage on block";hs bbr;WRA;Divine Dominance of Annihilation;r80 WRA;File:Reina-H.2+3.jpg;File:Reina-H.2+3.mp4;Reina-H.2+3;reina
 R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Removes Recoverable Health
@@ -100,7 +101,10 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Combo from 1st hit";trn;;Senjo-zuki;r32;;File:Reina-3,2.mp4;Reina-3,2;reina
 3,4;h, m;12, 20;i18~19, i20;-14;+50 (+19);+54a;Combo from 1st hit;;;Senjo-manji;r36;;File:Reina-3,4.mp4;Reina-3,4;reina
 H.3,4,4;h, m, m;12, 20, 28;i18~19, ,i27;-8;+23a (+3);;"* Balcony Break
-* Combo from 2nd hit";bbr;;Senjomanji Lethal Fury;r42;File:Reina-3,4,H.4.jpg;File:Reina-3,4,H.4.mp4;Reina-3,4,H.4;reina
+* Combo from 1st hit
+* Jail from 2nd block
+* Consumes 240F of remaining Heat time
+* 11 chip damage on block";bbr;;Senjomanji Lethal Fury;r42;File:Reina-3,4,H.4.jpg;File:Reina-3,4,H.4.mp4;Reina-3,4,H.4;reina
 4;h;20;i13~14;-8;+11g;+35a;"* Balcony Break
 * Opponent is FUFA on CH";bbr;;Nobility Hunter;r31;;File:Reina-4.mp4;Reina-4;reina
 1+2;m;25;i12~13;-10~-9;+24a (+14);;;;;Demon Breath;r31;;File:Reina-1+2.mp4;Reina-1+2;reina
@@ -112,7 +116,8 @@ H.3,4,4;h, m, m;12, 20, 28;i18~19, ,i27;-8;+23a (+3);;"* Balcony Break
 * Low crush 9~26";spk js9~26;FC;;r27 FC;;File:Reina-3+4.mp4;Reina-3+4;reina
 3+4,4;m,m, m;5,10, 20;i18 i26, i16;-14;+50 (+19);+54a;Combo from 1st hit with 4f delay;;;Aerial Manji-geri;r36;;File:Reina-3+4,4.mp4;Reina-3+4,4;reina
 H.3+4,4,4;m,m, m, m;5,10, 20, 28;i18 i26, ,i27;-8;+23a (+3);;"* Balcony Break
-* Combo from 2nd hit";bbr;;Aerial Manji Lethal Fury;r42;File:Reina-3+4,4,H.4.jpg;File:Reina-3+4,4,H.4.mp4;Reina-3+4,4,H.4;reina
+* Combo from 2nd hit
+* Consumes 240F of remaining Heat time";bbr;;Aerial Manji Lethal Fury;r42;File:Reina-3+4,4,H.4.jpg;File:Reina-3+4,4,H.4.mp4;Reina-3+4,4,H.4;reina
 f+2;h;8;i13;-9;-3;;* Transition to r16 UNS (+0/+6) with u_d;;UNS;;r28;File:Reina-f+2.png;File:Reina-f+2.mp4;Reina-f+2;reina
 f+2,3;h, m;8, 16;i13, i18~19;-9;+2;+6;"* Jails from 1st hit without delay
 * Combo from 1st hit with 6F delay
@@ -135,7 +140,8 @@ f+3+4*;m;30;i67;+10;+52a;;"* Guard Break
 * 9 chip damage in heat
 * High crush 6~57";cs6~57;FC;Ouhen Fubi Manji-geri;r38;;File:Reina-f+3+4_hold.mp4;Reina-f+3+4*;reina
 H.f+3+4*,4;m, m;30, 28;i67, i27;-8;+23a (+3);;"* Balcony Break
-* Combo from 1st block 
+* Combo from 1st block
+* Airborne combo from 1st hit
 * does 19 damage if 1st connect on block or hit";bbr;;;r42;;File:Reina-f+3+4_hold,H.4_block.mp4;Reina-f+3+4*,H.4;reina
 H.f+3+4,4;m, m;25, 28;i43, i27;-8;+23a (+3);;"* Balcony Break
 * Combo from 1st hit";bbr;;Ouhen Manji Lethal Fury;r42;File:Reina-f+3+4,H.4.jpg;File:Reina-f+3+4,H.4.mp4;Reina-f+3+4,H.4;reina
@@ -175,9 +181,9 @@ d+2;m;17;i15;+0c;+3c;+33d;"* Spike
 H.d+2,1+2;m, m;17, 28;i15, i12~13;+5 UNS;+33a (+7);;"* Balcony Break
 * Jail from 1st block
 * Combo from 1st hit
-* Transition to r20 +7 UNS on block
+* Transition to UNS r34 on block (+5)
 * 5 chip damage on block
-* Consumes 300?F of remaining Heat time";bbr;UNS;Demon's Lethal Fury;r31;;;Reina-d+2,H.1+2;reina
+* Consumes 300F of remaining Heat time";bbr;UNS;Demon's Lethal Fury;r31;;;Reina-d+2,H.1+2;reina
 d+3;sp;;;;;;"* Transition to UNS (Kou, d)
 * Transition to UNS (Gou) r20 with b+3
 * Transition to UNS (Kou) r18 with u+3

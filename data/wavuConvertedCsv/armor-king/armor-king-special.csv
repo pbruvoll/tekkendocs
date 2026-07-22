@@ -44,21 +44,22 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 1,2,1;h, h, m;5, 10, 14;i10, ,i24~25;-5;+1;+11;"* Combo from 2nd CH with 3F delay
 * Interrupt with i4 from 2nd block
 * Move can be delayed by 10F
-* Transition to r25 BAD with F (-19/-11)";;BAD;Left Right Uppercut;r23;;t8-p2-armor-king-1,2,1.mp4;Armor King-1,2,1;armor-king
+* Cancel to r38 BAD with F (-19/-11) at frame 13";;BAD;Left Right Uppercut;r23;;t8-p2-armor-king-1,2,1.mp4;Armor King-1,2,1;armor-king
 1+3+4;h!;25?;i37~44;;+12g?;;* Extremely high hitbox;;;;;;t8-p2-armor-king-1+3+4.mp4;Armor King-1+3+4;armor-king
 2;h;10;i10;+1;+7;;;;;;r18;;t8-p2-armor-king-2.mp4;Armor King-2;armor-king
-2,1;h, m;10, 15;i10, i23;-3;+7;;"* Combo from 1st hit
+2,1;h, m;10, 15;i10, i23~24;-3;+7;;"* Combo from 1st hit
 * Interrupt with i3 from 1st block
-* t43 r19? on hit";;;Right Jab > Uppercut;r21?;;t8-p2-armor-king-2,1.mp4;Armor King-2,1;armor-king
+* t53 r19 on hit";;;Right Jab > Uppercut;r21;;t8-p2-armor-king-2,1.mp4;Armor King-2,1;armor-king
 3;h;17;i15~16;-4;+3;;* Has good right sidestep tracking;;;;r31;;t8-p2-armor-king-3.mp4;Armor King-3;armor-king
-3,4;h, m;17, 15;i15~16, i27~29;-9;+3;;"* Combo from 1st hit with 6F delay
+3,4;h, m;17, 15;i15~16, i27~29;-9;+3;;"* Combo from 1st hit with 7F delay
 * Move can be delayed by 7F
-* Input can be delayed by 9F";;;;r30;;t8-p2-armor-king-3,4.mp4;Armor King-3,4;armor-king
+* Input can be delayed by 8F";;;;r30;;t8-p2-armor-king-3,4.mp4;Armor King-3,4;armor-king
 3,4,1;h, m, m;17, 15, 28;i15~16, ,i21~22;-13;+15a(+6);;"* Balcony Break
 * Shoulder
 * Combo from 2nd CH with 14F delay
 * Move can be delayed by 13F
 * Input can be delayed by 16F
+* Interrupt with i1?
 * i17 r17 cancel with B (-14/-2)";bbr shd;;Dark Stampede;r33;;t8-p2-armor-king-3,4,1.mp4;Armor King-3,4,1;armor-king
 4;h;17;i13;-5;+6;+6s;;;;;r24;;t8-p2-armor-king-4.mp4;Armor King-4;armor-king
 4,3;h, h;17, 18;i13, i25~26;+0;+9;+27d;"* Balcony Break on 2nd CH
@@ -405,6 +406,9 @@ AIR.f,hcf+1;t(a);40(45);i10;!;+0d;;"* Floor Break
 * AIR.BAD1+3: i14 startup. Cannot execute blue spark variant
 * Opponent recovers in FDFA.
 * Side switch";fbr;;Muscle Driver;;;t8-p2-armor-king-air.f,hcf+1.mp4;Armor King-AIR.f,hcf+1;armor-king
+BAD.2+4;th(h);45;i14~15;+0;+0d;;"* Homing during Heat
+* Throw break 2
+* Opponent recovers in FDFT.";;;Gloriously Disgraceful Kick;r27;;t8-p2-armor-king-bad.2+4.mp4;Armor King-BAD.2+4;armor-king
 BM.2,1,2,1;t;5,5,5,15;;+0;-6d;;"* Could be any 1/2 combination (e.g. 1,1,1,1 / 1,2,2,1)
 * Throw break the 1st/4th hit by input the opposite to King's 1st/4th button.
 * Opponent recovers FDFT";;;Back Mount > Ultimate Punch;;;t8-p2-armor-king-bm.2,1,2,1.mp4;Armor King-BM.2,1,2,1;armor-king
@@ -493,35 +497,37 @@ d+2+4;th(m);35;i12~13;!;+0d;;"* Heat Engager
 * Unbreakable
 * Opponent recovers FUFA";he;;Storm Maker;;;t8-p2-armor-king-d+2+4.mp4;Armor King-d+2+4;armor-king
 f,f,F+2+4;th(h);40 (45);i10;-5;+10d;;"* Balcony Break
+* Homing during heat
 * Throw break 1+2
 * Input n,f,F+2+4 within 6 frames after dash startup (f,n,f) to execute ""blue spark"" (+5 damage).
 * i13 startup for Bluespark throw with buffered input
 * Opponent left FUFT
-* Armor King recovers FUFT
-* becomes Homing in heat";bbr;FUFT;Brilliant Brawler Kick;FUFT;;t8-p2-armor-king-f,f,f+2+4.mp4;Armor King-f,f,F+2+4;armor-king
-f,hcf+1;th(h);40(45)/70,5;i10;-7;-20d (-50);;"* Throw break 1
+* Armor King recovers FUF";bbr;FUFT;Brilliant Brawler Kick;FUFT;;t8-p2-armor-king-f,f,f+2+4.mp4;Armor King-f,f,F+2+4;armor-king
+f,hcf+1;th(h);40(45)/70,5;i10;-7;-20d (-50);;"* Homing during Heat
+* Throw break 1
 * Perform tech ukemi to reduce 5 damage.
 * Side switch 
 * 70 damage on wall splat regardless of input.
 * Input all directions, df for 1-3F, f for 0-1F, and f+1 to execute bluespark.
 * f,b,d,f are required inputs for normal throw
 * i11 startup for Bluespark throw with buffered input
-* BAD.1+3: i14 startup. Cannot execute blue spark variant
+* BAD.1+3: i14 startup (t43). Cannot execute blue spark variant
 * Opponent recovers in FDFT.";;;Double Arm Swing;;;t8-p2-armor-king-f,hcf+1.mp4;Armor King-f,hcf+1;armor-king
 f,n,d,df+1+3;t;20;i12;-3;+0;;"* 1 or 2 break depending on Armor King's input
 ** 1 for CD1+3/1+4, 2 for CD2+4/2+3 
 * Transition to DMD
+* i20 fastest possible startup in neutral (f,n,d,df,df+1+3_2+4)
 * Opponent recovers FDFT
 * Side switch on hit or break";;DMD;Cobra Clutch (DMD);r27;;t8-p2-armor-king-f,n,d,df+1+3.mp4;Armor King-f,n,d,df+1+3;armor-king
 hFC.1+2;t(s);0;i26;-5;+3d;;"* 1+2 throw break (except from behind).
 * Catches standing and crouching opponent from all directions.
 * Can be done from Crouch Level 1";;;Ultimate Tackle (UT);;;t8-p2-armor-king-hfc.1+2.mp4;Armor King-hFC.1+2;armor-king
 qcb+1+2;th(h);40(45);i11;-3;+0d;;"* Balcony Break
+* Homing during heat
 * Opponent takes 5 additional damage when they hit the ground
 * Opponent takes 4 additional damage when they hit a wall
 * Throw break 1+2
-* Opponent left FUFA
-* becomes Homing in heat";bbr;;Hades Drop;;;t8-p2-armor-king-qcb+1+2.mp4;Armor King-qcb+1+2;armor-king
+* Opponent left FUFA";bbr;;Hades Drop;;;t8-p2-armor-king-qcb+1+2.mp4;Armor King-qcb+1+2;armor-king
 uf+1+2;th(h);40;i12;-6;+0d;;"* Floor Break
 * Throw break 1+2
 * Opponent left FUFA";fbr;;Armor King Driver;;;t8-p2-armor-king-uf+1+2.mp4;Armor King-uf+1+2;armor-king

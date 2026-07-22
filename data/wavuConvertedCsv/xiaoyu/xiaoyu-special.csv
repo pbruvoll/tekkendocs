@@ -282,24 +282,27 @@ FC.df+4,4;L, L;13, 13;i18~20, i27~29;-6;+5;;"* Combo from 1st hit CH
 * Floating state 25~33
 * Low crush 34~37
 * Floating state 38~40";fs5~7 is8~24 fs25~33 js34~37 fs38~40;BT;Wall Jump Backflip;r17 BT;;;Xiaoyu-(back to wall).b,b,UB;xiaoyu
-AOP.1;m;11;i18;-5;+6;;* Transition to HYP with B (-2, +9);;HYP,FC;;FC;;File:t8-p2-xiaoyu-aop.1,2.mp4;Xiaoyu-AOP.1;xiaoyu
-AOP.1,2;m, h;11, 15;i18, i21;-3;+30g;;"* Combo from 1st hit with 8F delay
+AOP.1;m;11;i18;-5;+6;;* Transition to HYP r21 with B (-2/+9);;HYP,FC;;r24 FC;;File:t8-p2-xiaoyu-aop.1,2.mp4;Xiaoyu-AOP.1;xiaoyu
+AOP.1,2;m, h;11, 15;i18, i21~22;-3;+30g;;"* Combo from 1st hit with 9F delay
+* Interrupt with i2
 * Move can be delayed by 11F
-* Input can be delayed by 12F";;BT;Double Serving;BT;;File:t8-p2-xiaoyu-aop.1,2.mp4;Xiaoyu-AOP.1,2;xiaoyu
+* Input can be delayed by 12F";;BT;Double Serving;r24 BT;;File:t8-p2-xiaoyu-aop.1,2.mp4;Xiaoyu-AOP.1,2;xiaoyu
 AOP.1,4;m, M;11, 20;i18, i25;-9;+15d (-2);;"* Tornado
 * Balcony Break
-* Combo from 1st hit with 4F delay
+* Combo from 1st hit with 5F delay
+* Interrupt with i6
 * Move can be delayed by 11F
-* Input can be delayed by 12F";trn bbr;BT;Twin Mandarin Blows;BT;;File:t8-p2-xiaoyu-aop.1,4.mp4;Xiaoyu-AOP.1,4;xiaoyu
-AOP.2;m;10;i13;-11;+0;;*;;;;;;File:t8-p2-xiaoyu-aop.2,1.mp4;Xiaoyu-AOP.2;xiaoyu
-AOP.2,1;m, m;10, 20;i13, i21;-12;+13a (+4);;"* Heat Engager
+* Input can be delayed by 12F";trn bbr;BT;Twin Mandarin Blows;r33 BT;;File:t8-p2-xiaoyu-aop.1,4.mp4;Xiaoyu-AOP.1,4;xiaoyu
+AOP.2;m;10;i13~14;-11;+0;;*;;;;;;File:t8-p2-xiaoyu-aop.2,1.mp4;Xiaoyu-AOP.2;xiaoyu
+AOP.2,1;m, m;10, 20;i13~14, i21;-12;+13a (+4);;"* Heat Engager
 
 * Heat Dash +5, +43d (+35)
 
+* Balcony Break
 * Combo from 1st hit with 7F delay
 * Move can be delayed by 12F
 * Cancel to BT with B
-** (-14, -3)";he;BT;Phoenix Double Palm;;;File:t8-p2-xiaoyu-aop.2,1.mp4;Xiaoyu-AOP.2,1;xiaoyu
+** (-14, -3)";he bbr;BT;Phoenix Double Palm;;;File:t8-p2-xiaoyu-aop.2,1.mp4;Xiaoyu-AOP.2,1;xiaoyu
 AOP.3;L;19;i25;-16;+0;+27a;"*
 * High crush";cs;;Piercing Spear Kick;;;File:t8-p2-xiaoyu-aop.3.mp4;Xiaoyu-AOP.3;xiaoyu
 AOP.4;m;14;i12;-3;+8;;* Inconsistent grounded hit (more consistent on side hit);;;Rising Front Kick;;;File:t8-p2-xiaoyu-aop.4.mp4;Xiaoyu-AOP.4;xiaoyu
@@ -463,24 +466,26 @@ AOP.1+3;t;35;i12;-6;+1d;;"* Actual startup: i32
 * AOP.2+4: Xiaoyu rolls to her right and throws (Throw break 2)
 * Cancel to r40 FC with D
 * High crush 1~30";cs1~30;FC;Feng Huang Zhuan Wu;;;File:t8-p2-xiaoyu-aop.1+3.mp4;Xiaoyu-AOP.1+3;xiaoyu
-BT.f+1+3;t;35;i31;-6;+1d;;"* Homing
+BT.f+1+3;t;35;i31~33;-6;+1d;;"* Homing
 * Throw Break 1
 * Alternate input BT.f+2+4 (Throw Break 2)
-* Cancel to FC with D
-* Low crush";hom js;FC;Bei Shen Zhuan Wu;;;File:t8-p2-xiaoyu-bt.f+1+3.mp4;Xiaoyu-BT.f+1+3;xiaoyu
-BT.f+2+3;t;20;i31~33;-2;+20cs;;"* Homing
+* Cancel to r40 FC with D
+* Low crush 1~23
+* Floating state 24~26";hom js1~23 fs24~26;FC;Bei Shen Zhuan Wu;r41;;File:t8-p2-xiaoyu-bt.f+1+3.mp4;Xiaoyu-BT.f+1+3;xiaoyu
+BT.f+2+3;t;20;i31~33;-2;+20a;;"* Homing
 * Balcony Break
 * Throw Break 1+2
 * 16 additional damage on wall splat
-* Cancel to FC with D
-* Low crush 1~";hom bbr js1~;FC;Wang's Waning Moon (BT);;;;Xiaoyu-BT.f+2+3;xiaoyu
+* Cancel to r40 FC with D
+* Low crush 1~23
+* Floating state 24~26";hom bbr js1~23 fs24~26;FC;Wang's Waning Moon (BT);;;;Xiaoyu-BT.f+2+3;xiaoyu
 Back Throw;t;50;i12;;+0d;;* Unbreakable;;;Crank up;;;;Xiaoyu-Back Throw;xiaoyu
 Left Throw;t;45;i12;-3;+0d;;* Throw break 1;;;Arm Flip;;;;Xiaoyu-Left Throw;xiaoyu
 Right Throw;t;45;i12;-3;+0d;;* Throw break 2;;;Dump the Bucket;;;;Xiaoyu-Right Throw;xiaoyu
 df+2+4;t;38;i12;-2;+0d;;"* Throw Break 2
 * Floor Break
 * Side Swap";fbr;;Dragon Fall;;;File:t8-p2-xiaoyu-df+2+4.mp4;Xiaoyu-df+2+4;xiaoyu
-f+2+3;t;20;i14;-2;+20cs;;"* Balcony Break
+f+2+3;t;20;i14;-2;+20a;;"* Balcony Break
 * Throw Break 1+2
 * 16 additional damage on wall splat
 * Side Swap";bbr;;Wang's Waning Moon;;;;Xiaoyu-f+2+3;xiaoyu

@@ -106,10 +106,12 @@ f+3,1;m, m;12, 17;i14, i22;-12;+4;;"* Heat Engager
 * Heat Dash +5, +43d (+35)
 
 * Combo from 1st hit with 8F delay
+* Interrupt with 3F from 1st block
 * Move can be delayed by 7F
 * Input can be delayed by 8F
 * Balcony break on airborne hit";he;;Tanden Nidan-uchi;r31;;File:t8-p2-jin-f+3,1.mp4;Jin-f+3,1;jin
 f+3,3;m, h;12, 14;i14, i20;-8;+8;;"* Combo from 1st hit with 8F delay
+* Interrupt with 1F from 1st block
 * Move can be delayed by 7F
 * Input can be delayed by 8F
 * Enter ZEN -7 +9 r26 with F
@@ -118,7 +120,7 @@ f+4;m;21;i16-17;-8;+4;+42a;"* Enter ZEN -1 +11 +49a r26 with F
 * Balcony break on airborne hit";;ZEN;Front Thrust Kick;r32;;File:t8-p2-jin-f+4.mp4;Jin-f+4;jin
 f+1+2;h,h;14,24;i14 i9~10;-6;+21a (+11);;"* Balcony Break
 * Jail from 1st attack
-* Chip damage on block";bbr chp;;Double Chamber Punch;r33;;File:t8-p2-jin-f+1+2.mp4;Jin-f+1+2;jin
+* 7 chip damage on block";bbr;;Double Chamber Punch;r33;;File:t8-p2-jin-f+1+2.mp4;Jin-f+1+2;jin
 f+3+4;;;;;;;"* Enter Breaking Step r20 with DF
 * Steps forward
 * Actionable after 10f
@@ -324,7 +326,7 @@ f,n,d,df+1;m;20;i16~i17;-13;+32a (+22);;"* Tornado
 * Jab evasion";trn;;Thrusting Uppercut;r31;;File:t8-p2-jin-cd.df+1.mp4;Jin-CD.df+1;jin
 f,n,d,df+2;h;20;i11~12;-10;+74a (+58);;"* Balcony Break
 * Turns into EWHF (CD.df#2) while in heat";bbr;;Wind Hook Fist;r28;;File:t8-p2-jin-cd.df+2.mp4;Jin-CD.df+2;jin
-DVS.1;m;25;i20~22;-9;+72a (+56);;"* Tornado
+DVS.1;m;25;i20~22;-9;+36d;;"* Tornado
 * Jab evasion
 * 7 chip damage on block
 * Low crush 22~43
@@ -348,41 +350,44 @@ ZEN.1,2;m, m;14, 21;i16~i17, i23~24;-14;+32a (+6);;"* Heat Engager
 
 * Balcony Break
 * Combo from 1st hit with 6f delay
+* Interrupt from 1st block with i5
 * Input can be delayed 12f
 * Move can be delayed 11f
 * Cancel to Breaking Step -11 -12 r40 with DF on frame 20";he bbr;Breaking Step;Brimstone Bite;r32;;File:t8-p2-jin-zen.1,2.mp4;Jin-ZEN.1,2;jin
 ZEN.1,3;m, h,t;14, 14,14;i16~i17, i24~25;-9;+0d;;"* Combo from 1st hit
+* Interrupt with i6 from 1st block
+* Whiffs vs SSR from 1st block
 * Transition to attack throw on standing or airborne hit
 * +33a (+18) on side hit
 * +18a (+11) and balcony break on BT hit";;;Kazama Style Leg Strike Flurry;r31;;File:t8-p2-jin-zen.1,3.mp4;Jin-ZEN.1,3;jin
-ZEN.2;h;20;i21~i22;-5;+17a (+8);;"* Homing
+ZEN.2;h;20;i18~i19;-5;+17a (+8);;"* Homing
 * Balcony Break
 * Strong Aerial Tailspin
-* Chip damage on block
-* +0 on block after absorbing an attack
-* Power crush 6~20";hom bbr chp pc6~20;;Fiendish Claw;r32;;File:t8-p2-jin-zen.2.mp4;Jin-ZEN.2;jin
+* 6 chip damage on block
+* +0 on block and 8 chip damage after absorbing an attack
+* Power crush 6~20";hom bbr pc6~20;;Fiendish Claw;r32;;File:t8-p2-jin-zen.2.mp4;Jin-ZEN.2;jin
 ZEN.3;m;20;i17~i18;-9;+10g;+22a;"* Homing
 * Balcony Break
 * +17a (+8) on BT hit";hom bbr;;Halberd Heel;r32;;File:t8-p2-jin-zen.3.mp4;Jin-ZEN.3;jin
 ZEN.4;M;25;i27~i33;+2~+8;+17d~+23d;;"* Spike
-* Chip damage on block
+* 7 chip damage on block
 * Low crush 7~33
-* Floating state 34~36";spk chp js7~33 fs34~36;;Corpse Crusher;r31;;File:t8-p2-jin-zen.4.mp4;Jin-ZEN.4;jin
-ZEN.1+2;l,t;10,20;i21, i61;-14;+4 (+8w);;"* Wall Crush +8 on hit
+* Floating state 34~36";spk js7~33 fs34~36;;Corpse Crusher;r31;;File:t8-p2-jin-zen.4.mp4;Jin-ZEN.4;jin
+ZEN.1+2;L,t;10,20;i21, i61;-14;+4;;"* Wall Crush +8 on hit
 
 
 * Transition to attack throw on standing hit from the front
 * Transition to +5 CD with DF after throw
-* High crush 10~";wc cs10~;CD,FC;Low Chop > Karmic Epicenter;r33 FC;;File:t8-p2-jin-zen.1+2.mp4;Jin-ZEN.1+2;jin
+* High crush 8~21";wc cs8~21;CD,FC;Low Chop > Karmic Epicenter;r33 FC;;File:t8-p2-jin-zen.1+2.mp4;Jin-ZEN.1+2;jin
 ZEN.3+4;h;25;i21~27;+9g~+15g;+19a (+9);;"* Balcony Break
 * Enter Breaking Step +8 +18a (+8) r32 with DF on frame 40
-* Chip damage on block
+* 10 chip damage on block
 * Low crush 10~32
-* Floating state 33~35";bbr chp js10~32 fs33~35;Breaking Step;Black Wing Bolt;r31;;File:t8-p2-jin-zen.3+4.mp4;Jin-ZEN.3+4;jin
+* Floating state 33~35";bbr js10~32 fs33~35;Breaking Step;Black Wing Bolt;r31;;File:t8-p2-jin-zen.3+4.mp4;Jin-ZEN.3+4;jin
 ZEN.u+1;m;20;i14~i16;-16;+31a (+21);;"* Tornado
-* Chip damage on block
+* 6 chip damage on block
 * Low crush 8~43
-* Floating state 44~46";trn chp js8~43 fs44~46;;Black Wing Rondo;r37;;File:t8-p2-jin-zen.u+1.mp4;Jin-ZEN.u+1;jin
+* Floating state 44~46";trn js8~43 fs44~46;;Black Wing Rondo;r37;;File:t8-p2-jin-zen.u+1.mp4;Jin-ZEN.u+1;jin
 1+3;t;35;i12~i14;+0;+2d;;"* Homing
 * Throw break 1 or 2
 * Jin recovers BT on break";hom;;Double Face Kick;r31;;File:t8-p2-jin-1+3.mp4;Jin-1+3;jin

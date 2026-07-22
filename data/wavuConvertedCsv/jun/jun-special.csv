@@ -48,7 +48,6 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Restores 2 health on hit
 * Gain 6 Kazama Essence on normal hit and 5 on airborne hit";hom;IZU;Spear Step > Izumo Strike;r39 IZU;;File:t8-p2-jun-1,2,2.mp4;Jun-1,2,2;jun
 1,2,4;h, h, m;5, 8, 16;i10, ,i27~28;-12;+5;+15a (+6);"* Balcony Break (airborne)
-* Combo from 2nd CH with 3f delay
 * Input can be delayed 9f";;;Spear Step > Spin Kick;r34;;File:t8-p2-jun-1,2,4.mp4;Jun-1,2,4;jun
 1,3;h, L;5, 12;i10, i23;-12;+2;+6c;* Combo from 1st CH with 2f delay;;;Suiren Leg Scythe;r31;;File:t8-p2-jun-1,3.mp4;Jun-1,3;jun
 2;h;7;i12;-4;+7;;;;;Right Jab;r23;;File:t8-p2-jun-2,1,4,1.mp4;Jun-2;jun
@@ -142,6 +141,7 @@ f+2+3;h;21;i28~29;+0;+25a;;"* Balcony Break (airborne)
 * Crumple stun launcher (+51a) on parry effect
 * Parry state 4~15";ps4~15;;Wheel Kick;r27;;File:t8-p2-jun-f+2+3.mp4;Jun-f+2+3;jun
 f+3+4;;;;;;;"* Cancel to r34 FC with D on frame 16
+* Stance moves can be delayed by 24F
 * Parries low punches or kicks
 * Parries throws
 * Parry state 1~40";ps1~40;FC,GEN;Genjitsu;r16 GEN;;File:Jun-108.mp4;Jun-f+3+4;jun
@@ -248,6 +248,7 @@ b+4,2;m, M;14, 17;i13~14, i22~23;-13;+12g;+28a (+18);Combo from 1st hit with 8f 
 b+1+2;;;;;;;"* Enter SS r16 with u_d
 * r30 when blocking after SS
 * Cancel to r15 with DB
+* Stays in stance indefinitely
 * Restores 3 recoverable health and gain Kazama Essence with each pulse";;SS,MIA;Miare;r10 MIA;;File:Jun-113.mp4;Jun-b+1+2;jun
 b+3+4;m;25;i22~23;-12;+9a (+0);;"* Balcony Break
 * -8 on block after absorbing an attack
@@ -255,7 +256,8 @@ b+3+4;m;25;i22~23;-12;+9a (+0);;"* Balcony Break
 ub+1+2;m!;50;i57~58;;+6a;;Balcony Break;bbr;;Shinki;r37;;File:t8-p2-jun-b+2+3.mp4;Jun-ub+1+2;jun
 u+2;h;17;i23~24;+4;+11;+20c;"* Homing
 * Restores 2 health and 2 recoverable on hit
-* Gain 6 Kazama Essence on normal hit and 5 on airborne hit";hom;IZU;Izumo Strike;r16 IZU;;File:Jun-69.mp4;Jun-u+2;jun
+* Gain 6 Kazama Essence on normal hit and 5 on airborne hit
+* Stance moves can be delayed by 15F";hom;IZU;Izumo Strike;r16 IZU;;File:Jun-69.mp4;Jun-u+2;jun
 u+4;m;21;i22~23;-3~-2;+22a;;"* Balcony Break (airborne)
 * Low crush 8~28
 * Floating state 29~31";js8~28 fs29~31;;Chikura;r30;;File:t8-p2-jun-u+4.mp4;Jun-u+4;jun
@@ -293,41 +295,47 @@ uf+3+4;m,M;5,21;i20~23 i2~6;-8~-4;+18a;;"* Spike
 UB,b;;;;;;;"Can perform wr3 with input 3
 * Low crush 10~41
 * Floating state 42~44";js10~41 fs42~44;;Back Handspring;;;;Jun-UB,b;jun
-f,F+2;m;16;i16~17;-12;+3;;"* Enter GEN +1 +16g r18 wiith F
-* Enter MIA +1 +16g r18 wiith B
-* Stance transitions can be delayed by up to 10F (+1~-9/+16g~+6g)";;GEN,MIA;;r31;;File:t8-p2-jun-f,f+2,2.mp4;Jun-f,F+2;jun
+f,F+2;m;16;i16~17;-12;+3;;"* Transition to GEN +1 +16g r18 with F on frame 21 with 10F delay
+* Transition to MIA +1 +16g r18 with B on frame 21 with 10F delay";;GEN,MIA;;r31;;File:t8-p2-jun-f,f+2,2.mp4;Jun-f,F+2;jun
 f,F+2,2;m, m;16, 22;i16~17, i21;-13;+8a;+53a;"* Tornado
 * Balcony Break
 * Elbow
 * Combo from 1st hit with 8f delay
+* Interrupt with i1
 * +7F crumple stun on CH";trn bbr elb;;Suiei Ura Saika;r37;;File:t8-p2-jun-f,f+2,2.mp4;Jun-f,F+2,2;jun
 f,F+2,3;m, h;16, 22;i16~17, i20~21;-8~-7;+29a (+14);;Combo from 1st hit with 8f delay;;;Suiei Kagetsu;r35;;File:t8-p2-jun-f,f+2,3.mp4;Jun-f,F+2,3;jun
 f,F+3;m;23;i18~19;-9;+2;;"* Homing
 * Balcony Break (airborne)";hom;;;r32;;File:t8-p2-jun-f,f+3,3+4.mp4;Jun-f,F+3;jun
-f,F+3,3+4;m, m,m;23, 12,15;i18~19, i35~36 i41~42;+3;+14a;;"* Spike
+f,F+3,3+4;m, m,m;23, 12,15;i18~19, i35~36 i5~6;+3;+14a;;"* Spike
 * 7 chip damage on block
 * Interrupt with i11 from 1st block
+* Interrupt with i5 from 1st hit
+* Whiffs vs SSR from 1st block
 * +14d on BT hit
 * Floating state 25~39";spk fs25~39;;Yukimiguruma;r25;;File:t8-p2-jun-f,f+3,3+4.mp4;Jun-f,F+3,3+4;jun
 f,F+1+2;m;32;i22;+6;+23a (+13);;"* Balcony Break
-* 6 chip damage on block
 * Transition to +9, +26a (+16) GEN with F
 * Transition to +9, +26a (+16) MIA with B
+* 20?f hitstop on hit
+* 6 chip damage on block
 * Deals 6 damage to self (4 recoverable)
 * Non-limb attack, unparryable by Asuka, Nina, etc
 * Gain 8 Kazama Essence on normal hit and 6 on block or airborne hit";bbr;GEN,MIA;Tokkei - Misogi;r32;;File:t8-p2-jun-f,f+1+2.mp4;Jun-f,F+1+2;jun
 f,f,F+3;m;28;i24~28;+3~+7;+14a (+5);+46d (-1);"* Balcony Break
 * 8 chip damage on block
 * Low crush 3~30
-* Low crush 31~33";bbr js3~30 js31~33;;Ame-no-Uzume;r27;;File:t8-p2-jun-f,f,f+3.mp4;Jun-f,f,F+3;jun
+* Floating state 31~33";bbr js3~30 fs31~33;;Ame-no-Uzume;r27;;File:t8-p2-jun-f,f,f+3.mp4;Jun-f,f,F+3;jun
 ws1;h;14;i12~13;-6;+5;;;;;;r24;;File:t8-p2-jun-ws1,1,1.mp4;Jun-ws1;jun
 ws1,1;h, h;14, 7;i12~13, i15~16;-9;+2;;"* Elbow
-* Combo from 1st hit
+* Combo from 1st hit with 4F delay
 * Enter GEN +0 +11g r18 with F
-* Enter MIA +0 +11g r18 with B";elb;GEN,MIA;;r27;;File:t8-p2-jun-ws1,1,1.mp4;Jun-ws1,1;jun
+* Enter MIA +0 +11g r18 with B
+* Move cannot be delayed
+* Input can be delayed by 4F";elb;GEN,MIA;;r27;;File:t8-p2-jun-ws1,1,1.mp4;Jun-ws1,1;jun
 ws1,1,1;h, h, m;14, 7, 20;i12~13, ,i25;-13;+13a (+4);;"* Balcony Break
 * Combo from 2nd CH with 4f delay
-* Input can be delayed 14f";bbr;;Tenkan Saika Shikei;r32;;File:t8-p2-jun-ws1,1,1.mp4;Jun-ws1,1,1;jun
+* Interrupt with i6
+* Move can be delayed by 14f";bbr;;Tenkan Saika Shikei;r32;;File:t8-p2-jun-ws1,1,1.mp4;Jun-ws1,1,1;jun
 ws1,1,2;h, h, M;14, 7, 22;i12~13, ,i23;-9;+30a (+15);+69a (+53);"* Tornado
 * Combo from 2nd CH with 6f delay
 * Input can be delayed 14f
@@ -374,13 +382,12 @@ SS.1+2;h,h,m;7,9,18;i16 i17 i15~16;-4;+7c;;"* Homing
 * Spike
 * Jail from 1st attack
 * Combo from 1st or 2nd hit";hom spk;FC;Sankouchou;r25 FC;;File:t8-p2-jun-ss.1+2.mp4;Jun-SS.1+2;jun
-FC.df+1;sl,m;6,30;i10 i25~26;-19;+26a (+11);;"* Deals 18 damage to self (12 recoverable)
+FC.df+1;sl,m;6,30;i10, i25~26;-19;+26a (+11);;"* Deals 18 damage to self (12 recoverable)
 * 2nd hit available only on hit or block
 * Recovery listed is for the 1st hit, t74 both hits
 * Gain 10 Kazama Essence on normal hit and 7 on block or airborne hit
-* High crush 1~";cs1~;FC;Divine Exile - Earth;r34 FC;;File:t8-p2-jun-fc.df+1.mp4;Jun-FC.df+1;jun
-FC.df+2;L;12;i16~17;-11;+0;+14;"Only i14 or faster attacks guaranteed on CH
-* High crush 1~";cs1~;FC;Grace;r29 FC;;File:Jun-94.mp4;Jun-FC.df+2;jun
+* High crush 1~44";cs1~44;FC;Divine Exile - Earth;r34 FC;;File:t8-p2-jun-fc.df+1.mp4;Jun-FC.df+1;jun
+FC.df+2;L;12;i16~17;-11;+0;+14;* High crush 1~46;cs1~46;FC;Grace;r29 FC;;File:Jun-94.mp4;Jun-FC.df+2;jun
 FC.df+3;L;12;i21;-19;+0c;;"* Clean hit +10a, 15 damage
 * Opponent recovers FDFA on CL
 * High crush 1~47";cs1~47;;Kanamegaeshi;r38;;File:t8-p2-jun-fc.df+3.mp4;Jun-FC.df+3;jun
@@ -474,6 +481,7 @@ MIA.1+2;m;17;i20~21;+4;+11g;;"* Homing
 * Gain 6 Kazama Essence on normal hit and 5 on block or airborne hit
 * High crush 8~21";hom cs8~21;IZU;Yakumodachi;IZU;;;Jun-MIA.1+2;jun
 MIA.F;;;;;;;"* Cancel to r34 FC with D on frame 16
+* Stance moves can be delayed by 24F
 * Parries low punches or kicks
 * Parries throws
 * Parry state 1~40";ps1~40;FC,GEN;Genjitsu;r16 GEN;;File:Jun-117.mp4;Jun-MIA.F;jun
@@ -482,6 +490,8 @@ hFC.3+4;m,m;10,10;i21~22 i23~24;-6;+5c;;"* Transition to r24 FC with D
 * Low crush 5~19
 * Floating state 20~22";js5~19 fs20~22;FC;;r24;;File:t8-p2-jun-fc.3+4,3.mp4;Jun-hFC.3+4;jun
 hFC.3+4,3;m,m, m,m;10,10, 10,10;i21~22 i23~24, i31~32 i40~41;+0~+1;+15a;;"* Transition to r24 FC with D
+* Interrupt with i11 from 1st block
+* Whiffs vs SS from 1st block
 * Low crush ~21~31
 * Floating state 32~40";js~21~31 fs32~40;FC;Twin Cloud Kicks;r24;;File:t8-p2-jun-fc.3+4,3.mp4;Jun-hFC.3+4,3;jun
 1+3;t;35;i12~14;+0;+0d;;"* Homing

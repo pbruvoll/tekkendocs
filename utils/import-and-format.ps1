@@ -12,5 +12,5 @@ if ($LASTEXITCODE -ne 0) {
     Read-Host "Press Enter to close"
     exit $LASTEXITCODE
 }
-yarn format-windows
+yarn format
 Read-Host "Press Enter to close"
