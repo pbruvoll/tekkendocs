@@ -38,9 +38,12 @@ export const meta: MetaFunction = () => [
 export type LoaderData = {
   url: string;
 };
-export const loader = async ({ request }: LoaderFunctionArgs) => {
+export const loader = async ({ url }: LoaderFunctionArgs) => {
+  // Use the normalized `url` arg (not `request.url`), which with
+  // `v8_passThroughRequests` strips React Router's `.data` suffix so the
+  // SEO tags built from this in seoUtils get the real page URL.
   return data({
-    url: request.url,
+    url: url.href,
   });
 };
 

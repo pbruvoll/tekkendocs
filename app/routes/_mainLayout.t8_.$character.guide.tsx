@@ -60,8 +60,7 @@ export const headers: HeadersFunction = ({ loaderHeaders }) => {
   return loaderHeaders || getCacheControlHeaders({ seconds: 60 * 5 });
 };
 
-export const loader = async ({ params, request }: LoaderFunctionArgs) => {
-  const url = new URL(request.url);
+export const loader = async ({ params, url }: LoaderFunctionArgs) => {
   const isPreview = url.searchParams.get('preview') !== null;
 
   const character = params.character;
