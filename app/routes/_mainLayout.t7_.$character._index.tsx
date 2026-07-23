@@ -28,7 +28,7 @@ export const headers: HeadersFunction = (args) => ({
 export const meta: MetaFunction = ({ params, matches }) => {
   const frameData = matches.find(
     (m) => (m.handle as RouteHandle)?.type === 'frameData',
-  )?.data;
+  )?.loaderData;
   if (!frameData) {
     return [
       {
@@ -65,7 +65,7 @@ export default function Index() {
   const matches = useMatches();
   const frameData = matches.find(
     (m) => (m.handle as RouteHandle)?.type === 'frameData',
-  )?.data;
+  )?.loaderData;
 
   const [searchQuery, setSearchQuery] = useState<string>('');
 

@@ -119,13 +119,13 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 };
 
 export const meta: MetaFunction<typeof loader> = ({
-  data: loaderData,
+  loaderData,
   params,
   matches,
 }) => {
   const frameData = matches.find(
     (m) => (m.handle as RouteHandle)?.type === 'frameData',
-  )?.data;
+  )?.loaderData;
   if (!frameData) {
     return [
       {

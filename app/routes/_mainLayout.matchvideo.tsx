@@ -10,10 +10,11 @@ import { cachified } from '~/utils/cache.server';
 import { getCacheControlHeaders } from '~/utils/headerUtils';
 import { sheetToSections } from '~/utils/sheetUtils.server';
 
-export const meta: MetaFunction = ({ data }) => {
+export const meta: MetaFunction = ({ loaderData }) => {
   let image = 'https://i.ytimg.com/vi/dQ5hje6Fnfw/maxresdefault.jpg';
-  if (data) {
-    image = (data as LoaderData).matchVideoSets[0].videos[0].thumbnail || image;
+  if (loaderData) {
+    image =
+      (loaderData as LoaderData).matchVideoSets[0].videos[0].thumbnail || image;
   }
   const title = 'Tournament videos from Tekken';
   const description =

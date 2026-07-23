@@ -2,7 +2,7 @@ import { type MetaFunction } from 'react-router';
 import { type LoaderData as RootLoaderData } from '~/root';
 
 type GenerateMetaTagsOptions = {
-  matches: { id: string; data?: unknown }[];
+  matches: { id: string; loaderData?: unknown }[];
   title?: string;
   image?: {
     url: string;
@@ -18,7 +18,7 @@ export const generateMetaTags = ({
   matches,
 }: GenerateMetaTagsOptions): ReturnType<MetaFunction> => {
   const match = matches.find((m) => m.id === 'root');
-  const rootData = match?.data as RootLoaderData;
+  const rootData = match?.loaderData as RootLoaderData;
   const url = new URL(rootData.url);
   const origin = url.origin;
   const title =

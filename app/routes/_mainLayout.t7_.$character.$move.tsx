@@ -82,10 +82,10 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
 
 export const headers = () => getCacheControlHeaders({ seconds: 60 * 5 });
 
-export const meta: MetaFunction<typeof loader> = ({ data, params }) => {
+export const meta: MetaFunction<typeof loader> = ({ loaderData, params }) => {
   const character = params.character;
   const move = params.move;
-  if (!data || !character) {
+  if (!loaderData || !character) {
     return [
       {
         title: 'TekkenDocs - Uknown character',
@@ -97,7 +97,7 @@ export const meta: MetaFunction<typeof loader> = ({ data, params }) => {
   }
 
   const { dataHeaders, moveRow }: { dataHeaders: string[]; moveRow: string[] } =
-    data;
+    loaderData;
 
   const characterId = character?.toLocaleLowerCase();
   const characterTitle = character[0].toUpperCase() + character.substring(1);
