@@ -202,12 +202,25 @@ def _parse_notes(notes: str):
     short_notes = []
     for line in lines :
         tag = _get_tag(line)
-        if tag : 
+        if tag :
             tags.append(tag)
         else:
             short_notes.append(line)
+        # unlike _get_tag, keep the "Whiffs vs ..." line in the notes since it
+        # carries extra context (e.g. "from 1st block")
+        steppable_tag = _get_steppable_tag(line)
+        if steppable_tag :
+            tags.append(steppable_tag)
 
     return ("\n".join(short_notes), " ".join(tags))
+
+
+def _get_steppable_tag(noteLine: str) :
+    cleanLine = noteLine.replace("*", "").strip().lower()
+    match = re.match(r'whiffs vs (ssr|ssl|swr|swl|ss)\b', cleanLine)
+    if match :
+        return "stp:" + match.group(1).upper()
+    return None
 
 def _get_tag(noteLine: str) : 
     cleanLine = noteLine.replace("*", "").strip().lower()

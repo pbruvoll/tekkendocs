@@ -25,6 +25,7 @@ export type MoveFilter = {
   powerCrush?: boolean;
   parry?: boolean;
   spike?: boolean;
+  steppable?: boolean;
   removeRecoveryHealth?: boolean;
   recoverFullCrouch?: boolean;
   weapon?: boolean;

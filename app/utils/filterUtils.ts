@@ -83,6 +83,7 @@ export const getFilterFromParams = (
       filterKey.NoEmbeddedVideo,
     ),
     spike: getSearchParamBoolean(searchParams, filterKey.Spike),
+    steppable: getSearchParamBoolean(searchParams, filterKey.Steppable),
     transition: getSearchParamStringList(searchParams, filterKey.Transition),
     counterHit: getSearchParamBoolean(searchParams, filterKey.CounterHit),
     recoverFullCrouch: getSearchParamBoolean(
