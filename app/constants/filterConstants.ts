@@ -25,6 +25,7 @@ export const filterKey = {
   PowerCrush: 'pc',
   Parry: 'ps',
   Spike: 'spk',
+  Steppable: 'stp',
   FloorBreak: 'fbr',
   Knee: 'kne',
   Elbow: 'elb',

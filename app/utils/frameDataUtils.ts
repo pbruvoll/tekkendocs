@@ -199,6 +199,10 @@ export const isDuckableString = (move: Move) => {
   return noJails(move) && (lastHitLevel as HitLevel) === 'h';
 };
 
+export const isSteppableString = (move: Move) => {
+  return move.tags?.[MoveTags.Steppable] !== undefined;
+};
+
 export const hitsGrounded = (move: Move) => {
   const lastHitLevel = move.hitLevel?.split(',').pop();
   return !!lastHitLevel && lastHitLevel === lastHitLevel.toUpperCase();
@@ -542,6 +546,7 @@ export const filterMoves = (moves: Move[], filter: MoveFilter | undefined) => {
     [filter.lowCrush, (move: Move) => hasTag('js', move)],
     [filter.parry, (move: Move) => hasTag('ps', move)],
     [filter.spike, (move: Move) => hasTag('spk', move)],
+    [filter.steppable, isSteppableString],
     [filter.wallCrush, (move: Move) => hasTag('wc', move)],
     [filter.elbow, (move: Move) => hasTag('elb', move)],
     [filter.knee, (move: Move) => hasTag('kne', move)],

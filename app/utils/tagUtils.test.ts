@@ -6,4 +6,8 @@ test('tagUtils', () => {
     js: '9~11',
     cs: '11',
   });
+  expect(tagStringToRecord('spk stp:SSR')).toEqual({
+    spk: '',
+    stp: 'SSR',
+  });
 });

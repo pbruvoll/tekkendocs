@@ -53,6 +53,7 @@ export const FrameDataFilterSelection = ({
     unblockable,
     chip,
     spike,
+    steppable,
     highCrush,
     lowCrush,
     elbow,
@@ -360,6 +361,7 @@ export const FrameDataFilterSelection = ({
               [filterKey.Jails, jails, 'Jails'],
               [filterKey.NoJails, noJails, 'Doesnt jail'],
               [filterKey.DuckableString, duckableString, 'Duckable string'],
+              [filterKey.Steppable, steppable, 'Steppable string'],
               [filterKey.HitsGrounded, hitsGrounded, 'Hits grounded'],
               [filterKey.Chip, chip, 'Chip'],
               [

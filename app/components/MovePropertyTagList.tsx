@@ -1,7 +1,7 @@
 import { type MoveTag, MoveTags } from '~/constants/moveTags';
 
 import { type Move } from '~/types/Move';
-import { isDuckableString } from '~/utils/frameDataUtils';
+import { isDuckableString, isSteppableString } from '~/utils/frameDataUtils';
 
 const tagsToName: Partial<Record<MoveTag, string>> = {
   [MoveTags.HighCrush]: 'High Crush',
@@ -39,6 +39,12 @@ export const MovePropertyTagList = ({ move }: MovePropertyTagListProps) => {
         return <TagComp key={tagKey} name={name} />;
       })}
       {isDuckableString(move) && <TagComp key="duckable" name="Duckable" />}
+      {isSteppableString(move) && (
+        <TagComp
+          key="steppable"
+          name={`Steppable ${moveTags[MoveTags.Steppable] === 'SS' ? '' : moveTags[MoveTags.Steppable]}`}
+        />
+      )}
     </div>
   );
 };
