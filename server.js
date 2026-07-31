@@ -44,7 +44,7 @@ app.use(express.static('build/client', { maxAge: '1h' }));
 app.use(morgan('tiny'));
 
 // handle SSR requests
-app.all('*', remixHandler);
+app.all('/{*splat}', remixHandler);
 
 const port = process.env.PORT || 3000;
 app.listen(port, () =>
