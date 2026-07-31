@@ -63,10 +63,10 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
   );
 };
 
-export const meta: MetaFunction = ({ data, params, matches }) => {
+export const meta: MetaFunction = ({ params, matches }) => {
   const frameData = matches.find(
     (m) => (m.handle as RouteHandle)?.type === 'frameData',
-  )?.data;
+  )?.loaderData;
   if (!frameData) {
     return [
       {

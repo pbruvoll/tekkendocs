@@ -7,7 +7,7 @@ export const useFrameData = (): CharacterFrameDataPage => {
   const matches = useMatches();
   const frameData = matches.find(
     (m) => (m.handle as RouteHandle)?.type === 'frameData',
-  )?.data;
+  )?.loaderData;
   if (!frameData) {
     throw 'Could not read frame data for current route';
   }
