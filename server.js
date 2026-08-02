@@ -1,52 +1,48 @@
 import './instrumentation.server.mjs';
-import { createRequestHandler } from '@react-router/express';
 import compression from 'compression';
 import express from 'express';
 import morgan from 'morgan';
 
-const viteDevServer =
-  process.env.NODE_ENV === 'production'
-    ? undefined
-    : await import('vite').then((vite) =>
-        vite.createServer({
-          server: { middlewareMode: true },
-        }),
-      );
-
-const remixHandler = createRequestHandler({
-  build: viteDevServer
-    ? () => viteDevServer.ssrLoadModule('virtual:react-router/server-build')
-    : await import('./build/server/index.js'),
-});
+// Short-circuit the type-checking of the built output.
+const BUILD_PATH = './build/server/index.js';
+const DEVELOPMENT = process.env.NODE_ENV === 'development';
+const PORT = Number.parseInt(process.env.PORT || '3000', 10);
 
 const app = express();
 
 app.use(compression());
-
-// http://expressjs.com/en/advanced/best-practice-security.html#at-a-minimum-disable-x-powered-by-header
 app.disable('x-powered-by');
 
-// handle asset requests
-if (viteDevServer) {
+if (DEVELOPMENT) {
+  console.log('Starting development server');
+  const viteDevServer = await import('vite').then((vite) =>
+    vite.createServer({
+      server: { middlewareMode: true },
+    }),
+  );
   app.use(viteDevServer.middlewares);
+  app.use(async (req, res, next) => {
+    try {
+      const source = await viteDevServer.ssrLoadModule('./server/app.ts');
+      return await source.app(req, res, next);
+    } catch (error) {
+      if (typeof error === 'object' && error instanceof Error) {
+        viteDevServer.ssrFixStacktrace(error);
+      }
+      next(error);
+    }
+  });
 } else {
-  // Vite fingerprints its assets so we can cache forever.
+  console.log('Starting production server');
   app.use(
     '/assets',
     express.static('build/client/assets', { immutable: true, maxAge: '1y' }),
   );
+  app.use(morgan('tiny'));
+  app.use(express.static('build/client', { maxAge: '1h' }));
+  app.use(await import(BUILD_PATH).then((mod) => mod.app));
 }
 
-// Everything else (like favicon.ico) is cached for an hour. You may want to be
-// more aggressive with this caching.
-app.use(express.static('build/client', { maxAge: '1h' }));
-
-app.use(morgan('tiny'));
-
-// handle SSR requests
-app.all('*', remixHandler);
-
-const port = process.env.PORT || 3000;
-app.listen(port, () =>
-  console.log(`Express server listening at http://localhost:${port}`),
-);
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
+});
