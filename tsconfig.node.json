@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.json",
+  "include": ["server.js", "instrumentation.server.mjs", "vite.config.ts"],
+  "compilerOptions": {
+    "composite": true,
+    "strict": true,
+    "allowJs": true,
+    "types": ["node"],
+    "lib": ["ES2022"],
+    "target": "ES2022",
+    "module": "ES2022",
+    "moduleResolution": "bundler"
+  }
+}
