@@ -4,6 +4,7 @@ import { TextEffect } from '@/components/core/TextEffect';
 import { CharacterGrid } from '~/components/CharacterGrid';
 import { ContentContainer } from '~/components/ContentContainer';
 import { ExternalResources } from '~/components/ExternalResources';
+import { MainFeatureCards } from '~/components/MainFeatureCards';
 import {
   getTekken7Characters,
   getTekken8Characters,
@@ -50,28 +51,7 @@ export default function Index() {
       <Heading as="h2" mt="5" mb="4" size="5">
         Main features
       </Heading>
-      <div className="flex flex-wrap gap-3">
-        <Link to={href('/t8/framedata')} className="cursor-pointer">
-          <Badge size="3" style={{ cursor: 'pointer' }} variant="outline">
-            <span className="p-0.5 px-1">Frame data</span>
-          </Badge>
-        </Link>
-        <Link to={href('/t8/guides')} className="cursor-pointer">
-          <Badge size="3" style={{ cursor: 'pointer' }} variant="outline">
-            <span className="p-0.5 px-1">Character Guides</span>
-          </Badge>
-        </Link>
-        <Link to={href('/t8/dailychallenge')} className="cursor-pointer">
-          <Badge size="3" style={{ cursor: 'pointer' }} variant="outline">
-            <span className="p-0.5 px-1">Daily Challenge</span>
-          </Badge>
-        </Link>
-        <Link to={href('/t8/framequiz')} className="cursor-pointer">
-          <Badge size="3" style={{ cursor: 'pointer' }} variant="outline">
-            <span className="p-0.5 px-1">Frame Quiz</span>
-          </Badge>
-        </Link>
-      </div>
+      <MainFeatureCards />
 
       <Heading as="h2" mt="7" mb="4" size="5">
         <Link to={href('/t8')}>
