@@ -64,7 +64,7 @@ export const meta: MetaFunction = ({ params, matches, location }) => {
   const filteredMoves = filterMoves(moves, filter);
 
   // same sorting as the table itself, so that keys which are not a Move
-  // property, such as interruptable, are described correctly
+  // property, such as interruptible, are described correctly
   const sortSettings = getSortSettings(searchParams);
   const sortedMoves = sortMovesV2(filteredMoves, sortSettings);
 

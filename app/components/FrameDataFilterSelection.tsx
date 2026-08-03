@@ -41,8 +41,8 @@ export const FrameDataFilterSelection = ({
     hitFrameMax,
     numHitsMin,
     numHitsMax,
-    interruptableMin,
-    interruptableMax,
+    interruptibleMin,
+    interruptibleMax,
     balconyBreak,
     reversalBreak,
     heatSmash,
@@ -82,10 +82,10 @@ export const FrameDataFilterSelection = ({
     counterHit,
   } = filter;
 
-  // the button only covers the "interruptable by i6 or slower" case, so a max
+  // the button only covers the "interruptible by i6 or slower" case, so a max
   // coming from the url means the filter is no longer the one the button sets
-  const interruptableActive =
-    interruptableMin === 6 && interruptableMax === undefined;
+  const interruptibleActive =
+    interruptibleMin === 6 && interruptibleMax === undefined;
 
   const renderPropertyButton = ([key, value, displayName]: readonly [
     string,
@@ -395,19 +395,19 @@ export const FrameDataFilterSelection = ({
             ] as const
           ).map(renderPropertyButton)}
           <Button
-            variant={interruptableActive ? 'solid' : 'outline'}
+            variant={interruptibleActive ? 'solid' : 'outline'}
             onClick={() => {
               const searchParamsState = new SearchParamsState();
-              searchParamsState.remove(filterKey.InterruptableMax);
-              if (interruptableActive) {
-                searchParamsState.remove(filterKey.InterruptableMin);
+              searchParamsState.remove(filterKey.InterruptibleMax);
+              if (interruptibleActive) {
+                searchParamsState.remove(filterKey.InterruptibleMin);
               } else {
-                searchParamsState.set(filterKey.InterruptableMin, '6');
+                searchParamsState.set(filterKey.InterruptibleMin, '6');
               }
               updateFilterValues(searchParamsState.getChanges());
             }}
           >
-            Interruptable string
+            Interruptible string
           </Button>
           {(
             [
