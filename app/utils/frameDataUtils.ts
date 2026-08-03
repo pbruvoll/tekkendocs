@@ -655,56 +655,6 @@ export const sortRows = (
   return rows;
 };
 
-export const sortMoves = (
-  moves: Move[],
-  orderByProp: keyof Move | undefined,
-  sortDirection: SortOrder,
-) => {
-  if (!orderByProp) {
-    return moves;
-  }
-  const asc = sortDirection === 'asc';
-  switch (orderByProp) {
-    case 'command': {
-      return sortMovesByString(moves, (move: Move) => move.command, asc);
-    }
-    case 'hitLevel': {
-      return sortMovesByString(
-        moves,
-        (move: Move) => move.hitLevel.split(', ').pop() || '',
-        asc,
-      );
-    }
-    case 'damage': {
-      return sortMovesByNumber(
-        moves,
-        (move: Move) => move.damage.split(',').pop() || '',
-        asc,
-      );
-    }
-    case 'startup': {
-      return sortMovesByNumber(moves, (move: Move) => move.startup, asc);
-    }
-    case 'block': {
-      return sortMovesByNumber(moves, (move: Move) => move.block, asc);
-    }
-    case 'hit': {
-      return sortMovesByNumber(moves, (move: Move) => move.hit, asc);
-    }
-    case 'counterHit': {
-      return sortMovesByNumber(moves, (move: Move) => move.counterHit, asc);
-    }
-    case `notes`: {
-      return sortMovesByNumber(
-        moves,
-        (move: Move) => move.tags?.js || move.tags?.cs || move.tags?.pc || '',
-        asc,
-      );
-    }
-  }
-  return moves;
-};
-
 export const sortMovesV2 = (
   moves: Move[],
   sortSettings: SortSettings | undefined,
@@ -747,6 +697,13 @@ export const sortMovesV2 = (
       return sortMovesByNumber(
         moves,
         (move: Move) => getRecoveryFrames(move) || '',
+        asc,
+      );
+    }
+    case 'interruptable': {
+      return sortMovesByNumber(
+        moves,
+        (move: Move) => move.tags?.[MoveTags.Interruptable] || '',
         asc,
       );
     }

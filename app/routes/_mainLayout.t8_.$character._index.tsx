@@ -4,18 +4,16 @@ import { type HeadersFunction, type MetaFunction } from 'react-router';
 import { ContentContainer } from '~/components/ContentContainer';
 import { FrameDataSection } from '~/components/FrameDataSection';
 import Nav, { type NavLinkInfo } from '~/components/Nav';
-import { orderByKey } from '~/constants/sortConstants';
 import { useFrameData } from '~/hooks/useFrameData';
 import { characterGuideAuthors } from '~/services/staticDataService';
 import { type CharacterFrameDataPage } from '~/types/CharacterFrameDataPage';
-import { type Move } from '~/types/Move';
 import { type RouteHandle } from '~/types/RouteHandle';
-import { type SortOrder } from '~/types/SortOrder';
 import { filterToDescription, getFilterFromParams } from '~/utils/filterUtils';
-import { filterMoves, sortMoves } from '~/utils/frameDataUtils';
+import { filterMoves, sortMovesV2 } from '~/utils/frameDataUtils';
 import { getCacheControlHeaders } from '~/utils/headerUtils';
 import { charIdFromMove } from '~/utils/moveUtils';
 import { generateMetaTags } from '~/utils/seoUtils';
+import { getSortSettings } from '~/utils/sortingUtils';
 import { t8AvatarMap } from '~/utils/t8AvatarMap';
 
 const navData: NavLinkInfo[] = [
@@ -61,24 +59,17 @@ export const meta: MetaFunction = ({ params, matches, location }) => {
   // the the actual filtered and sorted frame data
   const searchParams = new URLSearchParams(location.search);
 
-  const orderByParamValue = searchParams.get(orderByKey) || '';
-  const [orderByColumnName, orderDirectionName] = orderByParamValue.split('_');
-
-  const sortDirection: SortOrder =
-    orderDirectionName === 'asc' ? 'asc' : 'desc';
-
   const filter = getFilterFromParams(searchParams);
 
   const filteredMoves = filterMoves(moves, filter);
 
-  const sortedMoves = sortMoves(
-    filteredMoves,
-    orderByColumnName as keyof Move,
-    sortDirection,
-  );
+  // same sorting as the table itself, so that keys which are not a Move
+  // property, such as interruptable, are described correctly
+  const sortSettings = getSortSettings(searchParams);
+  const sortedMoves = sortMovesV2(filteredMoves, sortSettings);
 
-  const orderDesription = orderDirectionName
-    ? `order by ${orderByColumnName} ${orderDirectionName}`
+  const orderDesription = sortSettings
+    ? `order by ${sortSettings.sortByKey} ${sortSettings.sortDirection}`
     : '';
 
   const filterStr = filterToDescription(filter);
