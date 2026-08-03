@@ -109,6 +109,11 @@ export default function Index() {
             <span className="p-0.5 px-1">Getting started with Tekken</span>
           </Badge>
         </Link>
+        <Link to={href('/t8/movecompare')} className="cursor-pointer">
+          <Badge size="3" style={{ cursor: 'pointer' }} variant="outline">
+            <span className="p-0.5 px-1">Move comparison</span>
+          </Badge>
+        </Link>
         <Link to={href('/t8/stats')} className="cursor-pointer">
           <Badge size="3" style={{ cursor: 'pointer' }} variant="outline">
             <span className="p-0.5 px-1">Stats</span>
