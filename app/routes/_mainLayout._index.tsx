@@ -51,7 +51,7 @@ export default function Index() {
         Main features
       </Heading>
       <div className="flex flex-wrap gap-3">
-        <Link to={href('/t8')} className="cursor-pointer">
+        <Link to={href('/t8/framedata')} className="cursor-pointer">
           <Badge size="3" style={{ cursor: 'pointer' }} variant="outline">
             <span className="p-0.5 px-1">Frame data</span>
           </Badge>
