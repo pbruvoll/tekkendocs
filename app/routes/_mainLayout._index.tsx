@@ -4,6 +4,7 @@ import { TextEffect } from '@/components/core/TextEffect';
 import { CharacterGrid } from '~/components/CharacterGrid';
 import { ContentContainer } from '~/components/ContentContainer';
 import { ExternalResources } from '~/components/ExternalResources';
+import { MainFeatureCards } from '~/components/MainFeatureCards';
 import {
   getTekken7Characters,
   getTekken8Characters,
@@ -48,58 +49,12 @@ export default function Index() {
       </TextEffect>
 
       <Heading as="h2" mt="5" mb="4" size="5">
-        Resources
+        Main features
       </Heading>
-      <div className="flex flex-wrap gap-3">
-        {/* <Link to="/matchvideo" className="cursor-pointer">
-          <Badge size="3" style={{ cursor: 'pointer' }} variant="outline">
-            Match videos
-          </Badge>
-        </Link> */}
-        <Link to="/t8/getting-started" className="cursor-pointer">
-          <Badge size="3" style={{ cursor: 'pointer' }} variant="outline">
-            <span className="p-0.5 px-1">Getting started with Tekken</span>
-          </Badge>
-        </Link>
-        <Link to="/t8/guides" className="cursor-pointer">
-          <Badge size="3" style={{ cursor: 'pointer' }} variant="outline">
-            <span className="p-0.5 px-1">Character Guides</span>
-          </Badge>
-        </Link>
-        <Link to={href('/t8/dailychallenge')} className="cursor-pointer">
-          <Badge size="3" style={{ cursor: 'pointer' }} variant="outline">
-            <span className="p-0.5 px-1">Daily Challenge</span>
-          </Badge>
-        </Link>
-        <Link to={href('/t8/framequiz')} className="cursor-pointer">
-          <Badge size="3" style={{ cursor: 'pointer' }} variant="outline">
-            <span className="p-0.5 px-1">Frame Quiz</span>
-          </Badge>
-        </Link>
-        <Link to="/t8/stats" className="cursor-pointer">
-          <Badge size="3" style={{ cursor: 'pointer' }} variant="outline">
-            <span className="p-0.5 px-1">Stats</span>
-          </Badge>
-        </Link>
-        <Link to="/t8/ranks" className="cursor-pointer">
-          <Badge size="3" style={{ cursor: 'pointer' }} variant="outline">
-            <span className="p-0.5 px-1">Ranks</span>
-          </Badge>
-        </Link>
-        <Link to="/t8/challenge" className="cursor-pointer">
-          <Badge size="3" style={{ cursor: 'pointer' }} variant="outline">
-            <span className="p-0.5 px-1">Challenges</span>
-          </Badge>
-        </Link>
-        <Link to="/t8/flashcard" className="cursor-pointer">
-          <Badge size="3" style={{ cursor: 'pointer' }} variant="outline">
-            <span className="p-0.5 px-1">Flash cards</span>
-          </Badge>
-        </Link>
-      </div>
+      <MainFeatureCards />
 
       <Heading as="h2" mt="7" mb="4" size="5">
-        <Link to="t8">
+        <Link to={href('/t8')}>
           <span className="sr-only">Tekken 8 </span>Characters
         </Link>
       </Heading>
@@ -112,9 +67,54 @@ export default function Index() {
           //   '/t8/images/avatars/easter/' +
           //   id +
           //   '.jpg';
-          return { name: displayName, imgSrc, url: `/t8/${id}` };
+          return {
+            name: displayName,
+            imgSrc,
+            url: href('/t8/:character', { character: id }),
+          };
         })}
       />
+
+      <Heading as="h2" mt="5" mb="4" size="5">
+        Other features
+      </Heading>
+      <div className="flex flex-wrap gap-3">
+        {/* <Link to="/matchvideo" className="cursor-pointer">
+          <Badge size="3" style={{ cursor: 'pointer' }} variant="outline">
+            Match videos
+          </Badge>
+        </Link> */}
+        <Link to={href('/t8/getting-started')} className="cursor-pointer">
+          <Badge size="3" style={{ cursor: 'pointer' }} variant="outline">
+            <span className="p-0.5 px-1">Getting started with Tekken</span>
+          </Badge>
+        </Link>
+        <Link to={href('/t8/movecompare')} className="cursor-pointer">
+          <Badge size="3" style={{ cursor: 'pointer' }} variant="outline">
+            <span className="p-0.5 px-1">Move comparison</span>
+          </Badge>
+        </Link>
+        <Link to={href('/t8/stats')} className="cursor-pointer">
+          <Badge size="3" style={{ cursor: 'pointer' }} variant="outline">
+            <span className="p-0.5 px-1">Stats</span>
+          </Badge>
+        </Link>
+        <Link to={href('/t8/ranks')} className="cursor-pointer">
+          <Badge size="3" style={{ cursor: 'pointer' }} variant="outline">
+            <span className="p-0.5 px-1">Ranks</span>
+          </Badge>
+        </Link>
+        <Link to={href('/t8/challenge')} className="cursor-pointer">
+          <Badge size="3" style={{ cursor: 'pointer' }} variant="outline">
+            <span className="p-0.5 px-1">Challenges</span>
+          </Badge>
+        </Link>
+        <Link to={href('/t8/flashcard')} className="cursor-pointer">
+          <Badge size="3" style={{ cursor: 'pointer' }} variant="outline">
+            <span className="p-0.5 px-1">Flash cards</span>
+          </Badge>
+        </Link>
+      </div>
 
       <Heading as="h2" mt="7" mb="4" size="5" id="externalResources">
         External Resources
@@ -122,21 +122,28 @@ export default function Index() {
       <ExternalResources />
 
       <Heading as="h2" mt="7" mb="4" size="5">
-        <Link to="t7">Tekken 7</Link>
+        <Link to={href('/t7')}>Tekken 7</Link>
       </Heading>
 
       <CharacterGrid
         characterCards={characterInfoListT7.map(({ id, displayName }) => {
           const imgSrc = t7AvatarMap[id];
-          return { name: displayName, imgSrc, url: `/t7/${id}` };
+          return {
+            name: displayName,
+            imgSrc,
+            url: href('/t7/:character', { character: id }),
+          };
         })}
       />
 
       <Heading as="h2" mt="7" mb="4" size="5">
-        <Link to="tag2">Tekken Tag 2</Link>
+        <Link to={href('/tag2')}>Tekken Tag 2</Link>
       </Heading>
 
-      <Link to="tag2" className="text-primary underline underline-offset-2">
+      <Link
+        to={href('/tag2')}
+        className="text-primary underline underline-offset-2"
+      >
         Go to character select
       </Link>
     </ContentContainer>
