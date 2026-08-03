@@ -26,7 +26,7 @@ H.u+1+2,1;M,m, m,m;18,21, 17,22;i19~20,i20~21, i25~26,i20~21;-12;+14a(+4a);;"* B
 * Input can be delayed by 25F
 * Interrupt with i3 from 2nd block
 * 7 chip damage on block
-* Same move as (df+1,H.1),1";bbr;;Blazing Rush;r41?;;;Clive-H.u+1+2,1;clive
+* Same move as (df+1,H.1),1";bbr intr:3;;Blazing Rush;r41?;;;Clive-H.u+1+2,1;clive
 H.u+1+2,2;M,m, h,h;18,21, 10,12;i19~20,i20~21, i23~24,i12~13;-9;+8;;"* Weapon 1st hit
 * Jail from 2nd normal hit
 * 4 chip damage on block
@@ -126,7 +126,7 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * 3rd hit available only on hit or block
 * Interrupt with i4 from 1st block
 * +23a (+13) on BT hit
-* Power up in Heat (15,20dmg)";bbr wpn;;Fine Hound;r53;;File:t8-p2-clive-3,2.mp4;Clive-3,2;clive
+* Power up in Heat (15,20dmg)";bbr wpn intr:4;;Fine Hound;r53;;File:t8-p2-clive-3,2.mp4;Clive-3,2;clive
 3,3;m, M;16, 20;i16, i30~32;-18~-16;+12a (-5);+36a (+26);"* Tornado
 * Balcony Break
 * Input can be delayed 1f
@@ -188,7 +188,7 @@ f+2,2,2;m, m, M;10, 7, 20;i15, ,i27~28;-13;+9a;;"* Heat Engager
 * Combo from 2nd hit
 * Interrupt with i8 from 2nd block
 * Input can be delayed by 8F
-* Move cannot be delayed";he bbr spk wpn;;Burning Chain;r40;;File:t8-p2-clive-f+2,2,2.mp4;Clive-f+2,2,2;clive
+* Move cannot be delayed";he bbr spk wpn intr:8;;Burning Chain;r40;;File:t8-p2-clive-f+2,2,2.mp4;Clive-f+2,2,2;clive
 f+2,2,1+2;m, m, M;10, 7, 18;i15, ,i27~28;-13c;+9a;;"* Balcony Break
 * Spike
 * Weapon
@@ -199,19 +199,20 @@ f+2,2,1+2;m, m, M;10, 7, 18;i15, ,i27~28;-13c;+9a;;"* Balcony Break
 * Increases ZAN gauge by 0.30 on block
 * Only deals recoverable damage
 * Input can be delayed by 8F
-* Move cannot be delayed";bbr spk wpn;;Sanngetall;r40;;File:t8-p2-clive-f+2,2,1+2.mp4;Clive-f+2,2,1+2;clive
+* Move cannot be delayed";bbr spk wpn intr:8;;Sanngetall;r40;;File:t8-p2-clive-f+2,2,1+2.mp4;Clive-f+2,2,1+2;clive
 H.f+2,2,1;m, m, m;10, 7, 25;i15, ,i26~27;-9;+14c;;"* Balcony Break
 * Combo from 1st hit with 8F delay
+* Interrupt with i7
 * Move cannot be delayed
 * Input can be delayed by 8F
 * Consumes 150F of remaining Heat time
 * Forces tech backroll on hit
-* 5 chip damage on block";bbr;;Lethal Ignition;r33?;;;Clive-f+2,2,H.1;clive
+* 5 chip damage on block";bbr intr:7;;Lethal Ignition;r33?;;;Clive-f+2,2,H.1;clive
 H.f+2,2,1*;m, m, m;10, 7, 30;i15, ,i42~43;+11;+52a;;"* Guard Break
 * Consumes 150F of remaining Heat time
-* Interrupt with i24? from 2nd block
+* Interrupt with i23 from 2nd block
 * Interrupt with i12 from 2nd hit
-* 12 chip damage on block";;;Lethal Ignition (Hold);r33?;;;Clive-f+2,2,H.1*;clive
+* 12 chip damage on block";intr:23;;Lethal Ignition (Hold);r33?;;;Clive-f+2,2,H.1*;clive
 f+3;M;15;i20~21;-14;+37a;;"* Spike
 * 3 Chip Damage on block
 * Low crush 9~24
@@ -245,23 +246,26 @@ H.df+1,1;m, M,m;10, 13,15;i14~15, i22~23,i20~21;-12;+3c;;"* Weapon 2nd hit
 * Input can be delayed by 1F
 * Move cannot be delayed by 2F
 * Move is delayed by 2F
+* Interrupt with i4
 * Consumes 150F of remaining Heat time
 * Transition to r15 PHX with F or 4 on hit or block (-1/+14c)
-* 5 chip damage on block";;PHX;;r36?;;;Clive-df+1,H.1;clive
+* 5 chip damage on block";intr:4;PHX;;r36?;;;Clive-df+1,H.1;clive
 H.df+1,1,1;m, M,m, m,m;10, 13,15, 17,22;i14~15, ,i25~26,i20~21;-12;+14a(+4a);;"* Balcony Break
 * Weapon 2nd hit
 * Move cannot be delayed
 * Input can be delayed by 25F
 * Interrupt with i3 from 3rd block
-* 7 chip damage on block";bbr;;Crimson Rush;r41?;;;Clive-df+1,H.1,1;clive
+* 7 chip damage on block";bbr intr:3;;Crimson Rush;r41?;;;Clive-df+1,H.1,1;clive
 H.df+1,1,2;m, M,m, h,h;10, 13,15, 10,12;i14~15, ,i23~24,i12~13;-9;+8;;"* Weapon 1st hit
 * Jail from 3rd normal hit
+* Interrupt with i1
 * Transition to r15 PHX with F or 4 on hit or block (-3/+14)
-* 4 chip damage on block";;PHX;;;;;Clive-df+1,H.1,2;clive
+* 4 chip damage on block";intr:1;PHX;;;;;Clive-df+1,H.1,2;clive
 H.df+1,1,2,1;m, M,m, h,h, M,M;10, 13,15, 10,12, 10,16;i14~15, ,i20~21,i11~12;-12;+15a(-2a);;"* Tornado
 * Balcony Break
 * Weapon 2nd hit
 * Combo from 5th hit with 17F delay
+* Move cannot be interrupted
 * Move cannot be delayed
 * Input can be delayed by 17F
 * 5 chip damage on block
@@ -431,7 +435,7 @@ SS.1+2;M;21;i25~26;+2;+49a;;"* Spike
 * 6 Chip Damage on block
 * Transition to FC with D
 * Side step takes 9f, effective startup i34~35";spk wpn;FC;Stone Smite;r36;;File:t8-p2-clive-ss.1+2.mp4;Clive-SS.1+2;clive
-FC.1;sl;5;i10;-5;+6;;"* Transition to Standing with f
+FC.1;sl;5;i10;-5;+6;;"* Transition to r24 with f
 * +6c on crouching hit
 * High crush 4~";cs4~;FC;Crouch Jab;r24 FC;;;Clive-FC.1;clive
 FC.df+2;L;18;i19~20;-13;+3c;;"* Weapon
@@ -501,7 +505,7 @@ H.PHX.2,1+2;m, m;12, 32;i15, i23~24;+4;+25a(-1a);;"* Balcony Break
 * Combo from 1st hit
 * Interrupt with i5 from 1st block
 * 6 chip damage on block
-* Consumes 150F of remaining Heat time";bbr wpn;;Twin Flames;;;;Clive-PHX.2,H.1+2;clive
+* Consumes 150F of remaining Heat time";bbr wpn intr:5;;Twin Flames;;;;Clive-PHX.2,H.1+2;clive
 PHX.3;L;8;i21;-26;-3c;;* Stagger on block;;;;r42;;File:t8-p2-clive-phx.3,2.mp4;Clive-PHX.3;clive
 PHX.3,2;L, m,m;8, 18,20(36);i21, i30 i29~34;;+39a (+29);;"* Balcony Break
 * Power up in Heat

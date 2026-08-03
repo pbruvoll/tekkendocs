@@ -100,7 +100,8 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Combo from 2nd CH with 5F delay
 * Move can be delayed by 10F";bbr;;Left Kicks > Backlash;r23;;File:t8-p2-hwoarang-3,3,f+4.mp4;Hwoarang-3,3,f+4;hwoarang
 3~4;m,m;11,21;i22,i7;-3;+26a (+16);;"* Balcony Break
-* Input 4 the following frame after 3 to power up
+* Input 4 on frames 1 to 5
+* Input 4 on frame 1 to power up
 ** 37dmg, +1 oB, +42a (+16) oH
 * Low crush 16~";bbr js16~;;Flying Eagle;;;;Hwoarang-3~4;hwoarang
 4;h;14;i11~12;-6;+5;;;;;;r24;;File:t8-p2-hwoarang-4,3.mp4;Hwoarang-4;hwoarang
@@ -205,7 +206,7 @@ b+4;h;17;i13~14;-10;+1;+50a;* Transition to RFF;;RFF,RFF;Nose Bleeder;r28 RFF;;;
 ub+4;m;18;i17~20;-8;+10;;"* Opponent recovers non-guarding on hit (situational guaranteed follow-up)
 * Also possible during RFF
 * Low crush 5~17";js5~17;;Fade-Away Kick;;;File:t8-p2-hwoarang-ub+4.mp4;Hwoarang-ub+4;hwoarang
-u+2;h;18;i13~15;-9;+15;;"* Balcony Break
+u+2;h;18;i13~15;-9;+15g;;"* Balcony Break
 * Homing
 * Also possible during RFF
 * Sidesteps to the left
@@ -330,16 +331,16 @@ LFS.2;m;15;i16;-2;+9;;"* Transition to RFF
 LFS.2,2;m, h;15, 7;i16, i20;+0;+4;+9;Combo from 1st hit;;RFF;2nd Hit;r19 RFF;;;Hwoarang-LFS.2,2;hwoarang
 LFS.2,2,3;m, h, h;15, 7, 10;i16, ,i14~17;-6~-3;-3~+0;;"* Combo from 2nd hit (1st active frame only)
 * Combo from 2nd CH
-* Interrupt from 2nd block with i3";;BT;3rd Hit;r32 BT;;;Hwoarang-LFS.2,2,3;hwoarang
+* Interrupt from 2nd block with i3";intr:3;BT;3rd Hit;r32 BT;;;Hwoarang-LFS.2,2,3;hwoarang
 LFS.2,2,3,4;m, h, h, L;15, 7, 10, 7;i16, ,i22;-14;-3;;;;;4th Hit;;;;Hwoarang-LFS.2,2,3,4;hwoarang
-LFS.2,2,3,4,3;m, h, h, L, m;15, 7, 10, 7, 7;i16, ,i31;-9;-9;;* Interrupt from 4th block with i13;;;5th Hit;;;;Hwoarang-LFS.2,2,3,4,3;hwoarang
+LFS.2,2,3,4,3;m, h, h, L, m;15, 7, 10, 7, 7;i16, ,i31;-9;-9;;* Interrupt from 4th block with i13;intr:13;;5th Hit;;;;Hwoarang-LFS.2,2,3,4,3;hwoarang
 LFS.2,2,3,4,3,4;m, h, h, L, m, m;15, 7, 10, 7, 7, 8;i16, ,i22~24;-21;-10;;* Combo from 5th hit;;;6th Hit;;;;Hwoarang-LFS.2,2,3,4,3,4;hwoarang
 LFS.2,2,3,4,3,4,4;m, h, h, L, m, m, l;15, 7, 10, 7, 7, 8, 7;i16, ,i19;-27;-16;;"* Interrupt from 6th block with i18
-* Can be sidestepped";;FC;7th Hit;FC;;;Hwoarang-LFS.2,2,3,4,3,4,4;hwoarang
-LFS.2,2,3,4,3,4,4,4;m, h, h, L, m, m, l, h;15, 7, 10, 7, 7, 8, 7, 10;i16, ,i23;-28;+23a (+13);;* Interrupt from 7th block with i3;;;8th Hit;r47?;;;Hwoarang-LFS.2,2,3,4,3,4,4,4;hwoarang
+* Can be sidestepped";intr:18;FC;7th Hit;FC;;;Hwoarang-LFS.2,2,3,4,3,4,4;hwoarang
+LFS.2,2,3,4,3,4,4,4;m, h, h, L, m, m, l, h;15, 7, 10, 7, 7, 8, 7, 10;i16, ,i23;-28;+23a (+13);;* Interrupt from 7th block with i3;intr:3;;8th Hit;r47?;;;Hwoarang-LFS.2,2,3,4,3,4,4,4;hwoarang
 LFS.2,2,3,4,3,4,4,4,4;m, h, h, L, m, m, l, h, m;15, 7, 10, 7, 7, 8, 7, 10, 21 (14);i16, ,i22;-18;-16;;"* Airborne combo from 8th hit
 * Interrupt from 8th block with i33
-* Can be sidestepped";;;9th Hit;;;;Hwoarang-LFS.2,2,3,4,3,4,4,4,4;hwoarang
+* Can be sidestepped";intr:33;;9th Hit;;;;Hwoarang-LFS.2,2,3,4,3,4,4,4,4;hwoarang
 LFS.2,2,3,4,3,4,4,4,4,3;m, h, h, L, m, m, l, h, m, h;15, 7, 10, 7, 7, 8, 7, 10, 21 (14), 42 (21);i16, ,i16~19;+3;+4a (-6);;"* Balcony Break
 * Airborne combo from 8th hit
 * Combo from 9th hit
@@ -362,10 +363,11 @@ LFS.4;h;24;i14~16;+4;+27a (+18);;"* Balcony Break
 * Transition to RFS
 * Low crush 8~27
 * Floating state 28~30";bbr js8~27 fs28~30;RFS,RFS;Right Step Kick;r21? RFS;;File:t8-p2-hwoarang-lfs.4.mp4;Hwoarang-LFS.4;hwoarang
-LFS.4~3;h,h;17,26;i15~16, i8~9;+6;+24a (+14);;"* Balcony Break
+LFS.4~3;h,h;17,26;i15~16 (i20~21), i8~9;+6;+24a (+14);;"* Balcony Break
 * 7 chip damage on block
 * Jail from 1st block
-* Input 4 the following frame after 3 to power up
+* i20 actual startup: cancel takes 5f
+* Input 4 on frame 1 to power up
 ** 45dmg on hit, 8 chip damage on block
 * Low crush 12~";bbr js12~;;Lightning Halberd;r30?;;File:t8-p2-hwoarang-lfs.4~3.mp4;Hwoarang-LFS.4~3;hwoarang
 LFS.1+2;m;13;i15~16;-10;+4c;;*;;;;;;File:t8-p2-hwoarang-lfs.1+2.mp4;Hwoarang-LFS.1+2;hwoarang
@@ -473,6 +475,7 @@ RFF.3~4;h;27;i27~30;+4~+7;+46a~+49;;"* Strong Aerial Tailspin
 * Homing
 * Balcony Break
 * Clean hit, 35dmg
+* Input 4 on frames 1~4
 * 10 chip damage on block
 * Power crush 8~26";hom bbr pc8~26;;Backlash;r18;;File:t8-p2-hwoarang-rff.3~4.mp4;Hwoarang-RFF.3~4;hwoarang
 RFF.4;h;9;i12;-8;+3;;"* Remains in RFF
@@ -543,7 +546,8 @@ RFS.3~4;m,m;11,21;i16,i7;-3;+26 (+16);;"* Balcony Break
 * Jail from 1st block
 * Increased chip damage scaling on block during heat
 ** 9 chip damage on block in heat
-* Input 4 the following frame after 3 to power up
+* Input 4 on frames 1 to 7
+* Input 4 on frame 1 to power up
 ** 37dmg on hit, +1 on block
 ** 14 chip damage on block in heat
 * Low crush 16~";bbr js16~;;Flying Eagle;;;;Hwoarang-RFS.3~4;hwoarang

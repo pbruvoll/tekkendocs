@@ -73,13 +73,13 @@ f+1+2;m;16;i18;-15;+18a;;Pseudo-homing?;;;;r38;;File:t8-p2-kuma-f+1+2,1+2.mp4;Ku
 f+1+2,1+2;m, M;16, 20;i18, i30~31;-14;+65a (+49);;"* Tornado
 * Combo from 1st hit with 2F delay
 * Interrupt with i8 from 1st block
-* Grounded hit on off-axis hit against large body size characters?";trn;;Bear Claw Cross;r37;;File:t8-p2-kuma-f+1+2,1+2.mp4;Kuma-f+1+2,1+2;kuma
+* Grounded hit on off-axis hit against large body size characters?";trn intr:8;;Bear Claw Cross;r37;;File:t8-p2-kuma-f+1+2,1+2.mp4;Kuma-f+1+2,1+2;kuma
 f+3+4;L;20;i28~30;-23;+6a;;"* Unparryable (bug?)
 * High crush 6~70";cs6~70;FC;Shape-Up Kick;r40 FC;;File:t8-p2-kuma-f+3+4.mp4;Kuma-f+3+4;kuma
 f+3+4,1+2;L, M;20, 30 (24);i28~30, i50~i60;-16;-13a;;"* Hip
 * Interrupt with i31 from 1st block
 * 24 damage from 1st hit with grounded scaling
-* High crush 0~75";hip cs0~75;;Shape-Up Hip;r43;;File:t8-p2-kuma-f+3+4,1+2.mp4;Kuma-f+3+4,1+2;kuma
+* High crush 0~75";hip intr:31 cs0~75;;Shape-Up Hip;r43;;File:t8-p2-kuma-f+3+4,1+2.mp4;Kuma-f+3+4,1+2;kuma
 df+1;m;6;i15~16;-6;+2;;;;;;;;File:t8-p2-kuma-df+1,2,1+2.mp4;Kuma-df+1;kuma
 df+1,2;m, m;6, 9;i15~16, i22~23;-11;-2;;* Combo from 1st CH;;;;;;File:t8-p2-kuma-df+1,2,1+2.mp4;Kuma-df+1,2;kuma
 df+1,2,1+2;m, m, M;6, 9, 20;i15~16, ,i25~26;-14c;+17d;;"* Combo from 2nd hit with 9F delay
@@ -147,6 +147,7 @@ db+2+3;L;30;i32~34;-12;+39a;;"* Balcony Break on airborne hit
 db+2+3*;L;40;i45~47;-12;+39a;;"* Balcony Break on airborne hit
 * 12 chip damage on block";;;Salmon Hunter;;;;Kuma-db+2+3*;kuma
 db+2+3**;L;60;i60~62;-4;+43a;;"* Balcony Break on airborne hit
+* Unparryable
 * 18 chip damage on block";;;Fresh Salmon Hunter;;;File:t8-p2-kuma-db+2+3ss.mp4;Kuma-db+2+3**;kuma
 b+1;M;24;i22~23;-13;+13a;;"* Balcony Break
 * Transition to -13 HBS with input D or 3+4
@@ -176,6 +177,7 @@ b+1+2;h,m;10,20;i18~19 i12~13;-8;+13d;;"* Heat Engager
 * Heat Dash +5, +43d (+35)
 
 * Balcony Break
+* Floor Break on airborne hit
 * Homing
 * Strong Aerial Tailspin 1st hit only
 * 12 chip damage
@@ -239,10 +241,10 @@ qcf+2,1;m, m;15, 25;i17~18, i27;-10;+33a (+7);;"* Heat Engager
 
 * Balcony Break
 * Combo from 1st hit with 5F delay
-* Interrupt with i5";he bbr;;Grizzly Claws;r32;;File:t8-p2-kuma-qcf+2,1.mp4;Kuma-qcf+2,1;kuma
+* Interrupt with i5";he bbr intr:5;;Grizzly Claws;r32;;File:t8-p2-kuma-qcf+2,1.mp4;Kuma-qcf+2,1;kuma
 qcf+2,2;m, L;15, 22;i17~18, i33~34;-18c;+21d;;"* Interrupt with i11
 * Move can be delayed by 5F
-* 6 chip damage on block";;;Grizzly Claw Smash;r36;;File:t8-p2-kuma-qcf+2,2.mp4;Kuma-qcf+2,2;kuma
+* 6 chip damage on block";intr:11;;Grizzly Claw Smash;r36;;File:t8-p2-kuma-qcf+2,2.mp4;Kuma-qcf+2,2;kuma
 f,f,F+3;m;30;i22~23;+6;+13a (+3);;"* Balcony Break
 * 9 chip damage on block
 * Low crush 3~25
@@ -287,28 +289,28 @@ SS.1+2;m;23;i22~23;-3;+6c;;"* 9 chip damage
 FC.df+2;m;12;i18~19;-13;-2;;*;;;1st hit;r;;;Kuma-FC.df+2;kuma
 FC.df+2,1;m, h;12, 12;i18~19, i18~20;-10~-8;+1~+3;;"* Combo from 1st hit
 * Jail from 1st block";;;2nd hit;r27;;;Kuma-FC.df+2,1;kuma
-FC.df+2,1,1+2;m, h, M;12, 12, 6;i18~19, ,i22~23;-17;-6;;* Interrupt with i6 from 2nd block;;;3rd hit;;;;Kuma-FC.df+2,1,1+2;kuma
-FC.df+2,1,1+2,3;m, h, M, L;12, 12, 6, 5;i18~19, ,i32~33;-18;-7;;* Interrupt with i15 from 3rd block;;;4th hit;;;;Kuma-FC.df+2,1,1+2,3;kuma
+FC.df+2,1,1+2;m, h, M;12, 12, 6;i18~19, ,i22~23;-17;-6;;* Interrupt with i6 from 2nd block;intr:6;;3rd hit;;;;Kuma-FC.df+2,1,1+2;kuma
+FC.df+2,1,1+2,3;m, h, M, L;12, 12, 6, 5;i18~19, ,i32~33;-18;-7;;* Interrupt with i15 from 3rd block;intr:15;;4th hit;;;;Kuma-FC.df+2,1,1+2,3;kuma
 FC.df+2,1,1+2,3,1+2;m, h, M, L, M;12, 12, 6, 5, 6;i18~19, ,i26~27;-19;-8;;"* Interrupt with i10 from 4th block
-* Can SSR hit from 4th block";;;5th hit;;;;Kuma-FC.df+2,1,1+2,3,1+2;kuma
+* Can SSR hit from 4th block";intr:10;;5th hit;;;;Kuma-FC.df+2,1,1+2,3,1+2;kuma
 FC.df+2,1,1+2,3,1+2,3+4;m, h, M, L, M, m;12, 12, 6, 5, 6, 6;i18~19, ,i25~26;-12;-1;;"* Interrupt with i8 from 5th block
 * Can SSL/SSR and SWL/SWR from 5th block
 * Low crush 15~27
 * Floating state ?
-* High crush 28~";js15~27 fs? cs28~;HBS;6th hit;HBS;;;Kuma-FC.df+2,1,1+2,3,1+2,3+4;kuma
+* High crush 28~";intr:8 js15~27 fs? cs28~;HBS;6th hit;HBS;;;Kuma-FC.df+2,1,1+2,3,1+2,3+4;kuma
 FC.df+2,1,1+2,3,1+2,3+4,1+2;m, h, M, L, M, m, m;12, 12, 6, 5, 6, 6, 7;i18~19, ,i55;-49;-38;;"* Interrupt float with i40? from 6th block
 * Can SSL/SSR and SWL/SWR from 6th block
-* Floating state 1~122";fs1~122;FUFT;7th hit;FUFT;;;Kuma-FC.df+2,1,1+2,3,1+2,3+4,1+2;kuma
+* Floating state 1~122";intr:40 fs1~122;FUFT;7th hit;FUFT;;;Kuma-FC.df+2,1,1+2,3,1+2,3+4,1+2;kuma
 FC.df+2,1,1+2,3,1+2,3+4,1+2,2;m, h, M, L, M, m, m, m;12, 12, 6, 5, 6, 6, 7, 6;i18~19, ,i20~22;-17;-6;;"* Interrupt with i21? from 7th block
-* Can SSL/SSR and SWL/SWR from 7th block";;;8th hit;;;;Kuma-FC.df+2,1,1+2,3,1+2,3+4,1+2,2;kuma
+* Can SSL/SSR and SWL/SWR from 7th block";intr:21;;8th hit;;;;Kuma-FC.df+2,1,1+2,3,1+2,3+4,1+2,2;kuma
 FC.df+2,1,1+2,3,1+2,3+4,1+2,2,3;m, h, M, L, M, m, m, m, h;12, 12, 6, 5, 6, 6, 7, 6, 21;i18~19, ,i26;-21;+34a (+24);;"* Combo from 8th hit
 * Interrupt with i8 from 8th block
-* Can SSL/SSR and SWL/SWR from 8th block";;;9th hit;r40;;;Kuma-FC.df+2,1,1+2,3,1+2,3+4,1+2,2,3;kuma
+* Can SSL/SSR and SWL/SWR from 8th block";intr:8;;9th hit;r40;;;Kuma-FC.df+2,1,1+2,3,1+2,3+4,1+2,2,3;kuma
 FC.df+2,1,1+2,3,1+2,3+4,1+2,2,3,1;m, h, M, L, M, m, m, m, h, h;12, 12, 6, 5, 6, 6, 7, 6, 21, 35 (24);i18~19, ,i47;+11;+10c;;"* Balcony Break
 * Aerial combo (+14a (+7)) from 8th or 9th hit
 * Forces tech backroll on hit
 * Interrupt with i33? from 9th block
-* Can SSL/SSR and SWL/SWR from 9th block";bbr;;10 Hit Combo;r37;;;Kuma-FC.df+2,1,1+2,3,1+2,3+4,1+2,2,3,1;kuma
+* Can SSL/SSR and SWL/SWR from 9th block";bbr intr:33;;10 Hit Combo;r37;;;Kuma-FC.df+2,1,1+2,3,1+2,3+4,1+2,2,3,1;kuma
 FDFA.1+2;l;10;i14~16;-12;+6;+6;"* Transition to HBS
 * Move is airborne, requires strong parry
 * Reverse direction when performed in FDFT";;HBS,HBS;Bear Butterfly;HBS;;;Kuma-FDFA.1+2;kuma

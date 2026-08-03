@@ -53,7 +53,7 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 3;h;17;i15~16;-9;+2;;;;;Left Kick;r27;;;King-3;king
 3,2;h, m;17, 18;i15~16, i20~21;-9;+5c;;"* Elbow
 * Move can be delayed 10f
-* Interrupt with i1 from 1st block";elb;;;r28;;;King-3,2;king
+* Interrupt with i1 from 1st block";elb intr:1;;;r28;;;King-3,2;king
 3,2,2;h, m, m;17, 18, 24;i15~16, ,i23~24;-13;+17g;;"* Balcony Break
 * Spike
 * Elbow
@@ -63,7 +63,7 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Move can be delayed 11f
 * Forces tech backroll on hit
 * Opponent recovers crouching
-* Interrupt with i3 from 2nd block";bbr spk elb;JGR;Stampede Crush;r35;;;King-3,2,2;king
+* Interrupt with i3 from 2nd block";bbr spk elb intr:3;JGR;Stampede Crush;r35;;;King-3,2,2;king
 3,2,2*;h, m, m;17, 18, 30;i15~16, ,i34~35;+9c;+25a (+15);;"* Balcony Break
 * Spike
 * Elbow
@@ -71,7 +71,7 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Cancel JGR transition +4c +20a (+10) r35 with B
 * Move can be delayed 11f
 * 12 chip damage on block
-* Interrupt with i14 from 2nd block";bbr spk elb;JGR;Stampede Crush (Hold);r35;;;King-3,2,2*;king
+* Interrupt with i14 from 2nd block";bbr spk elb intr:14;JGR;Stampede Crush (Hold);r35;;;King-3,2,2*;king
 4;h;20;i13;-5;+6;+31d;Balcony Break (CH);;;Right Kick;r24;;;King-4;king
 1+2;m;17;i18;-11;-2;+0;* Elbow;elb;BT;;r28 BT;;File:t8-p2-king-1+2,1.mp4;King-1+2;king
 1+2,1;m, m;17, 21;i18, i22;-13;+12a (+3);;"* Balcony Break
@@ -79,13 +79,13 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Input can be delayed 1f
 * Move cannot be delayed
 * Interrupt with i5 from 1st block
-* Cancel to -18 -9 -7 r35 with B on frame 19";bbr;;Head Spinner;r33;;File:t8-p2-king-1+2,1.mp4;King-1+2,1;king
+* Cancel to -18 -9 -7 r35 with B on frame 19";bbr intr:5;;Head Spinner;r33;;File:t8-p2-king-1+2,1.mp4;King-1+2,1;king
 1+2,3;m, h;17, 25;i18, i24~25;-3;+12a (+3);;"* Tornado
 * Balcony Break
 * Combo from 1st hit with 2f delay
 * Combo from 1st CH with 3f delay
 * Move can be delayed 3f
-* Interrupt with i5 from 1st block";trn bbr;;Brutal Sting;r37;;File:t8-p2-king-1+2,3.mp4;King-1+2,3;king
+* Interrupt with i5 from 1st block";trn bbr intr:5;;Brutal Sting;r37;;File:t8-p2-king-1+2,3.mp4;King-1+2,3;king
 3+4;;;;;;;"* Hold to continue spinning and power up strikes, but King doesn't change direction.
 * King gets dizzy and falls after 6th spin: r102 FUFT fs?.
 * 2nd spin onward: r32 JGS
@@ -98,12 +98,14 @@ f+2,1;m, h;12, 25;i15~16, i15~16;-9;+16a;;"* Heat Engager
 
 * Balcony Break
 * Combo from 1st hit with 3f delay
+* Interrupt with i1? (or i0?)
 * Move can be delayed 10f
 * Input can be delayed 11f
-* Hit vs BT +11d";he bbr;;Elbow Impact;r33;;File:t8-p2-king-f+2,1.mp4;King-f+2,1;king
+* Hit vs BT +11d";he bbr intr:1;;Elbow Impact;r33;;File:t8-p2-king-f+2,1.mp4;King-f+2,1;king
 f+2,d+1;m, m;12, 15;i15~16, i22;-13c;+2c;;"* Floor Break
+* Interrupt with i4
 * Move can be delayed 10f
-* Input can be delayed 11f";fbr;;;r38;;File:t8-p2-king-f+2,d+1,2.mp4;King-f+2,d+1;king
+* Input can be delayed 11f";fbr intr:4;;;r38;;File:t8-p2-king-f+2,d+1,2.mp4;King-f+2,d+1;king
 f+2,d+1,2;m, m, m;12, 15, 16;i15~16, ,i22~23;-15;+27a (+17);;"* Combo from 2nd hit with 13f delay
 * Move can be delayed 10f
 * Input can be delayed 13f

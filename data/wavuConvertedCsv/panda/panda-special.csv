@@ -55,12 +55,8 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 
 * Forces crouch on hit";bbr he;;Demon Bear Breath;r31;;File:t8-p2-panda-1+2.mp4;Panda-1+2;panda
 3+4;sp;;;;;;"* Alternate input: FDFA.3+4
-* Can low parry in HBS with F
 * Transition to HBS
-* Transition to r10 FC with input ub_u_uf
-* Transition to r15 FC with DB
-* Remains in stance indefinitely
-* Can move in stance with F or B";;HBS,FC,FC,HBS;Hunting;r15 HBS;;;Panda-3+4;panda
+* High crush 4~";cs4~;HBS,HBS;Hunting;r15 HBS;;;Panda-3+4;panda
 3+4;sp;;;;;;"* Alternate input: FDFA.3+4
 * Can low parry in HBS with HBS.F
 * Transition to HBS
@@ -75,13 +71,13 @@ f+1+2;m;16;i18;-15;+18a;;Pseudo-homing?;;;;r38;;File:t8-p2-panda-f+1+2,1+2.mp4;P
 f+1+2,1+2;m, M;16, 20;i18, i30~31;-14;+65a (+49);;"* Tornado
 * Combo from 1st hit with 2F delay
 * Interrupt with i8 from 1st block
-* Grounded hit on off-axis hit against large body size characters?";trn;;Bear Claw Cross;r37;;File:t8-p2-panda-f+1+2,1+2.mp4;Panda-f+1+2,1+2;panda
+* Grounded hit on off-axis hit against large body size characters?";trn intr:8;;Bear Claw Cross;r37;;File:t8-p2-panda-f+1+2,1+2.mp4;Panda-f+1+2,1+2;panda
 f+3+4;L;20;i28~30;-23;+6a;;"* Unparryable (bug?)
 * High crush 6~70";cs6~70;FC;Shape-Up Kick;r40 FC;;File:t8-p2-panda-f+3+4.mp4;Panda-f+3+4;panda
 f+3+4,1+2;L, M;20, 30 (24);i28~30, i50~i60;-16;-13a;;"* Hip
 * Interrupt with i31 from 1st block
 * 24 damage from 1st hit with grounded scaling
-* High crush 0~75";hip cs0~75;;Shape-Up Hip;r43;;File:t8-p2-panda-f+3+4,1+2.mp4;Panda-f+3+4,1+2;panda
+* High crush 0~75";hip intr:31 cs0~75;;Shape-Up Hip;r43;;File:t8-p2-panda-f+3+4,1+2.mp4;Panda-f+3+4,1+2;panda
 df+1;m;6;i15~16;-6;+2;;;;;;;;File:t8-p2-panda-df+1,2,1+2.mp4;Panda-df+1;panda
 df+1,2;m, m;6, 9;i15~16, i22~23;-11;-2;;* Combo from 1st CH;;;;;;File:t8-p2-panda-df+1,2,1+2.mp4;Panda-df+1,2;panda
 df+1,2,1+2;m, m, M;6, 9, 20;i15~16, ,i25~26;-14c;+17d;;"* Combo from 2nd hit with 9F delay
@@ -168,13 +164,16 @@ b+2,2,1;m, m, m;12, 15, 25;i15, ,i35~39;-15;+25a (+15);;"* Tornado
 * Does not Tornado on wall hit
 * Combos from 2nd hit CH
 * Low crush";trn js;;Salmon Massacre;;;File:t8-p2-panda-b+2,2,1.mp4;Panda-b+2,2,1;panda
-b+1+2;h,m;10,20;i18~19 i12~13;-8;+13d / HE;;"* Balcony Break
-* Floor Break
-* Heat Engager
+b+1+2;h,m;10,20;i18~19 i12~13;-8;+13d;;"* Heat Engager
 
+* Heat Dash +5, +43d (+35)
+
+* Balcony Break
+* Floor Break on airborne hit
 * Homing
-* chip damage
-* Transition to HBS with input D or 3+4 (does not shift when using Heat Dash)";bbr fbr he hom chp;HBS;Bear X;;;File:t8-p2-panda-b+1+2.mp4;Panda-b+1+2;panda
+* Strong Aerial Tailspin 1st hit only
+* 12 chip damage
+* Transition to HBS r36 with input D or 3+4 (does not shift when using Heat Dash)";he bbr hom;HBS;Bear X;r36;;File:t8-p2-panda-b+1+2.mp4;Panda-b+1+2;panda
 b+1+4;ub(m);25;i60~62;;+16a/+21a HBS;;* Transition to HBS with input D or 3+4;;HBS;Deadly Claw;;;File:t8-p2-panda-b+1+4.mp4;Panda-b+1+4;panda
 b+1+4,f,f;sm;40;i55~i130;-20~+55;+42a~+117a;;"* Hold F to extend attack
 * Recovers in FUFT on hit or block

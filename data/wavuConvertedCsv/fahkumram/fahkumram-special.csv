@@ -1,11 +1,12 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Transitions;Name;Recovery;Image;Video;Wavu id;Character id
-H.2+3;m,m (t);50;i16;+7;+0d;;"* Heat Smash
+H.2+3;m,m (t);50;i16~17;+7;+0d;;"* Heat Smash
 * Balcony Break
 * Transition to Attack Throw on hit
+* 55dmg on wall hit
 * 2nd hit damage 25
 * +27a (+1) If only last hit connects on standing opponent
 * 5 chip damage on block
-* Low crush 15~25";hs bbr js15~25;;Hanuman Impact;r45;;File:t8-p2-fahkumram-H.2+3.mp4;Fahkumram-H.2+3;fahkumram
+* Low crush 15~43";hs bbr js15~43;;Hanuman Impact;r37;;File:t8-p2-fahkumram-H.2+3.mp4;Fahkumram-H.2+3;fahkumram
 R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Removes Recoverable Health
 * Reversal Break
@@ -22,18 +23,21 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Input can be delayed by 2F
 * Move cannot be delayed
 * +10a on BT hit
-* Interrupt with i3 from 1st block";fbr elb;;Jab > Elbow Scythe;r29;;File:t8-p2-fahkumram-1,1.mp4;Fahkumram-1,1;fahkumram
+* Interrupt with i3 from 1st block";fbr elb intr:3;;Jab > Elbow Scythe;r29;;File:t8-p2-fahkumram-1,1.mp4;Fahkumram-1,1;fahkumram
 1,2;h, h;5, 8;i10, i10;-3;+5;;"* Jail from 1st block with 2f delay
 * Combo from 1st hit with 2F delay";;;Left Right Combo;r21;;File:t8-p2-fahkumram-1,2.mp4;Fahkumram-1,2;fahkumram
-1,2,1;h, h, m;5, 8, 15;i10, ,i17~18;-10;+3;;* Input can be delayed 12f;;;;r28;;File:t8-p2-fahkumram-1,2,1.mp4;Fahkumram-1,2,1;fahkumram
+1,2,1;h, h, m;5, 8, 15;i10, ,i17~18;-10;+3;;"* Move cannot be interrupted
+* Move can be delayed by 10F
+* Input can be delayed by 12F";;;;r28;;File:t8-p2-fahkumram-1,2,1.mp4;Fahkumram-1,2,1;fahkumram
 1,2,1,4;h, h, m, m;5, 8, 15, 23;i10, ,i21~22;-14;+13a (+4);;"* Balcony Break
 * Knee
 * Combo from 3rd hit with 10f delay
 * Interrupt with i4 from 1st block
 * Input can be delayed 12f
-* Move can be delayed 10f";bbr kne;;Ban Chiang Combination;r34;;File:t8-p2-fahkumram-1,2,1,4.mp4;Fahkumram-1,2,1,4;fahkumram
+* Move can be delayed 10f";bbr kne intr:4;;Ban Chiang Combination;r34;;File:t8-p2-fahkumram-1,2,1,4.mp4;Fahkumram-1,2,1,4;fahkumram
 1,2,4;h, h, h;5, 8, 10;i10, ,i17;-9;+6;;"* Input can be delayed 2f
-* Move cannot be delayed";;;;r27;;File:t8-p2-fahkumram-1,2,4.mp4;Fahkumram-1,2,4;fahkumram
+* Move cannot be delayed
+* Move cannot be interrupted";;;;r27;;File:t8-p2-fahkumram-1,2,4.mp4;Fahkumram-1,2,4;fahkumram
 1,2,4,3;h, h, h, h;5, 8, 10, 14;i10, ,i19~20;-7;+6;+29a;"* Balcony Break (airborne)
 * Combo from 3rd hit";;;Left Right Combo > Thunderstorm;r25;;File:t8-p2-fahkumram-1,2,4,3.mp4;Fahkumram-1,2,4,3;fahkumram
 1,2,4,3~4;h, h, h, m;5, 8, 10, 20;i10, ,i21~22;-5;+9;+44a;"* Knee
@@ -42,7 +46,7 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Interrupt with i17 from 3rd block
 * Interrupt with i5 from 3rd hit
 * Move can be delayed by 2F
-* Recovers 2f slower on hit or block";kne;;Left Right Combo > Erupting Knee Convergence;r23;;File:t8-p2-fahkumram-1,2,4,3~4.mp4;Fahkumram-1,2,4,3~4;fahkumram
+* Recovers 2f slower on hit or block";kne intr:17;;Left Right Combo > Erupting Knee Convergence;r23;;File:t8-p2-fahkumram-1,2,4,3~4.mp4;Fahkumram-1,2,4,3~4;fahkumram
 1,2,4,3~4*;h, h, h, m;5, 8, 10, 25;i10, ,i36~37;+9;+73a (+57);;"* Knee
 * Unparryable
 * Instant Tornado on hit
@@ -54,14 +58,14 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 ** Interrupt with i33? mid/low from 3rd block
 ** Interrupt with i21? mid/low from 3rd hit
 * Move can be delayed by 2F
-* Power up in Heat or GRF";kne chp;FC;Left Right Combo > Charged Erupting Knee;r30;;File:t8-p2-fahkumram-1,2,4,3~4x.mp4;Fahkumram-1,2,4,3~4*;fahkumram
+* Power up in Heat or GRF";kne chp intr:32;FC;Left Right Combo > Charged Erupting Knee;r30;;File:t8-p2-fahkumram-1,2,4,3~4x.mp4;Fahkumram-1,2,4,3~4*;fahkumram
 1,2,4,3~4*~B;h, h, h, m;5, 8, 10, 25;i10, ,i22;-7;+6;;"* Homing
 * Balcony Break
 * Effective startup i53
 * Interrupt with i34 from 3rd block
 * Interrupt with i22 from 3rd hit
 * Input B during frames 16-24 of Eruption Maw (charged)
-* Move can be delayed by 8F from Eruption Maw (charged)";hom bbr;;Eruption Maw;r37;;File:t8-p2-fahkumram-1,2,4,3~4x~B.mp4;Fahkumram-1,2,4,3~4*~B;fahkumram
+* Move can be delayed by 8F from Eruption Maw (charged)";hom bbr intr:34;;Eruption Maw;r37;;File:t8-p2-fahkumram-1,2,4,3~4x~B.mp4;Fahkumram-1,2,4,3~4*~B;fahkumram
 1,2,4,4;h, h, h, L;5, 8, 10, 15;i10, ,i25;-15;-4;+0d;"* Combos from 3rd hit
 * Shift to attack throw Murderous Sweep and gain GRF on CH";;;Left Right Combo > Twin Bolts;;;File:t8-p2-fahkumram-1,2,4,4.mp4;Fahkumram-1,2,4,4;fahkumram
 1,4;h, h;5, 17;i10, i17;-8;+8;;* Combos from 1st hit;;;Jab > High Kick;r26;;File:t8-p2-fahkumram-1,4.mp4;Fahkumram-1,4;fahkumram
@@ -98,7 +102,7 @@ Balcony Break
 * Combo from 1st CH with no delay
 * Move cannot be delayed
 * Input can be delayed by 15F
-* Can be charged";trn;;Tornado Kick Convergence;r28;;File:t8-p2-fahkumram-3,4~3.mp4;Fahkumram-3,4~3;fahkumram
+* Can be charged";trn intr:16;;Tornado Kick Convergence;r28;;File:t8-p2-fahkumram-3,4~3.mp4;Fahkumram-3,4~3;fahkumram
 3,4~3*;m, m;11, 23;i13, i36;+9;+70a (+54);;"* Tornado
 * Balcony Break
 * Effective startup i52
@@ -108,14 +112,14 @@ Balcony Break
 ** Interrupt with i39? from 1st block
 ** Interrupt with i28? from 1st attack
 * 9 chip damage on block
-* Powered up with GRF";trn bbr;FC;Tornado Kick Convergence (charged);r31;;File:t8-p2-fahkumram-3,4~3x.mp4;Fahkumram-3,4~3*;fahkumram
+* Powered up with GRF";trn bbr intr:34;FC;Tornado Kick Convergence (charged);r31;;File:t8-p2-fahkumram-3,4~3x.mp4;Fahkumram-3,4~3*;fahkumram
 3,4~3*~B;m, m;11, 25;i13, i22;-7;+9;;"* Homing
 * Balcony Break
 * Effective startup i54
 * Interrupt with i36 from 3rd block
 * Interrupt with i25 from 3rd hit
 * Input B during frames 16-24 of Tornado Maw (charged)
-* Move can be delayed by 8F from Tornado Maw (charged)";hom bbr;;Tornado Maw;r33;;File:t8-p2-fahkumram-3,4~3x~B.mp4;Fahkumram-3,4~3*~B;fahkumram
+* Move can be delayed by 8F from Tornado Maw (charged)";hom bbr intr:36;;Tornado Maw;r33;;File:t8-p2-fahkumram-3,4~3x~B.mp4;Fahkumram-3,4~3*~B;fahkumram
 3,4~4;m, h;11, 20;i13, i16;+3;+13g;+30a;"* Homing
 * Balcony Break
 * Strong Aerial Tailspin
@@ -127,7 +131,7 @@ Balcony Break
 * Just frame input 3,4:4; effective startup i32
 ** 24 damage, 7 chip damage, slightly different juggle properties
 ** Input 4 during frames 14~16 of 3,4
-** Interrupt with i14 from 1st block or i3? from 1st hit";hom bbr;;Ayutthaya Night Thunder;r29;;File:t8-p2-fahkumram-3,4~4.mp4;Fahkumram-3,4~4;fahkumram
+** Interrupt with i14 from 1st block or i3? from 1st hit";hom bbr intr:11;;Ayutthaya Night Thunder;r29;;File:t8-p2-fahkumram-3,4~4.mp4;Fahkumram-3,4~4;fahkumram
 4;h;10;i12;-12;+3;;* r27 on hit;;;;r30;;File:t8-p2-fahkumram-4.mp4;Fahkumram-4;fahkumram
 4,3;h, h;10, 14;i12, i19;-7;+6;+29a;* Combos from 1st hit;;;Thunderstorm;r25;;File:t8-p2-fahkumram-4,3.mp4;Fahkumram-4,3;fahkumram
 4,3~4;h, m;10, 20;i12, i21;-5;+9;+44a;"* Knee
@@ -200,7 +204,7 @@ df+1,2;m, M;12, 20;i15, i27;-13;+12d;;"* Floor Break
 * Combos from 1st hit
 * Grants GRF on hit
 * Interrupt with i7 from 1st block
-* Low crush";fbr elb js;;Aiyara Combination: Mid;;;t8-p2-fahkumram-df+1,2.mp4;Fahkumram-df+1,2;fahkumram
+* Low crush";fbr elb intr:7 js;;Aiyara Combination: Mid;;;t8-p2-fahkumram-df+1,2.mp4;Fahkumram-df+1,2;fahkumram
 df+1,4;m, h;12, 23;i15, i25;-5;+20a (+11);;"* Heat Engager
 
 * Heat Dash +62a (+42)
@@ -212,7 +216,7 @@ df+1,4~3;m, m;12, 20;i15, i18;-7;+9;+37d (+29);"* Tornado
 * Combos from 1st CH
 * Can be charged
 * Interrupt with i18 from 1st block
-* Interrupt with i9 from 1st hit";trn;;Aiyara Combination > Tornado Kick Convergence;;;t8-p2-fahkumram-df+1,4~3.mp4;Fahkumram-df+1,4~3;fahkumram
+* Interrupt with i9 from 1st hit";trn intr:18;;Aiyara Combination > Tornado Kick Convergence;;;t8-p2-fahkumram-df+1,4~3.mp4;Fahkumram-df+1,4~3;fahkumram
 df+1,4~3*;m, m;12, 23;i15, i36;+9;+70a (+54);;"* Tornado
 * Balcony Break
 * 9 chip damage on block
@@ -220,12 +224,12 @@ df+1,4~3*;m, m;12, 23;i15, i36;+9;+70a (+54);;"* Tornado
 * Cancel to FC with F
 ** Interrupt with i41? from 1st block or i32? from 1st hit
 * Interrupt with i36 from 1st block
-* Interrupt with i27 from 1st hit";trn bbr;FC;Aiyara Combination > Tornado Kick Convergence (charged);;;t8-p2-fahkumram-df+1,4~3x.mp4;Fahkumram-df+1,4~3*;fahkumram
+* Interrupt with i27 from 1st hit";trn bbr intr:36;FC;Aiyara Combination > Tornado Kick Convergence (charged);;;t8-p2-fahkumram-df+1,4~3x.mp4;Fahkumram-df+1,4~3*;fahkumram
 df+1,4~3*~B;m, m;12, 25;i15, i22;-7;+9;;"*
 Homing
 * Balcony Break
 * Interrupt with i38 from 1st block
-* Interrupt with i29 from 1st hit";hom bbr;;Tornado Maw;;;t8-p2-fahkumram-df+1,4~3x~b.mp4;Fahkumram-df+1,4~3*~B;fahkumram
+* Interrupt with i29 from 1st hit";hom bbr intr:38;;Tornado Maw;;;t8-p2-fahkumram-df+1,4~3x~b.mp4;Fahkumram-df+1,4~3*~B;fahkumram
 df+1,4~4;m, h;12, 20;i15, i16;+3;+13g;+30a;"* Homing
 * Balcony Break
 * Strong Aerial Tailspin
@@ -235,7 +239,7 @@ df+1,4~4;m, h;12, 20;i15, i16;+3;+13g;+30a;"* Homing
 ** 24 damage, 7 chip damage, slightly different juggle properties
 ** Interrupt with i16 from 1st block or i7 from 1st hit
 * Interrupt with i13 from 1st block
-* Interrupt with i4 from 1st hit";hom bbr;;Aiyara Night Thunder;;;t8-p2-fahkumram-df+1,4~4.mp4;Fahkumram-df+1,4~4;fahkumram
+* Interrupt with i4 from 1st hit";hom bbr intr:13;;Aiyara Night Thunder;;;t8-p2-fahkumram-df+1,4~4.mp4;Fahkumram-df+1,4~4;fahkumram
 df+2;m;10;i15;-7;+4;;;;;;;;t8-p2-fahkumram-df+2.mp4;Fahkumram-df+2;fahkumram
 df+2,1;m, m;10, 22;i15, i24;-13;+13d;;"* Balcony Break
 * Floor Break

@@ -52,7 +52,7 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Move can be delayed 3f
 * Interrupt with i4 from 1st block
 * 3 chip damage on block
-* Power up in NSS or Heat";fbr wpn;;Naguri Kabuto Wari;r34 1SS;;File:t8-p2-yoshimitsu-1,1.mp4;Yoshimitsu-1,1;yoshimitsu
+* Power up in NSS or Heat";fbr wpn intr:4;;Naguri Kabuto Wari;r34 1SS;;File:t8-p2-yoshimitsu-1,1.mp4;Yoshimitsu-1,1;yoshimitsu
 1,NSS.1;h, m;5, 22;i10, i23;-9;+22a (+17);;"* Floor Break
 * Weapon
 * Combo from 1st hit with 1f delay
@@ -61,7 +61,7 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * 8 chip damage on block
 * Recovers 1 base health or 6 additional recoverable health on hit 
 * Recovers 1 base health when remaining recoverable health is 5 or less
-* 1,H.1: Consumes 90F of remaining Heat time";fbr wpn;;;r34 1SS;;;Yoshimitsu-1,NSS.1;yoshimitsu
+* 1,H.1: Consumes 90F of remaining Heat time";fbr wpn intr:4;;;r34 1SS;;;Yoshimitsu-1,NSS.1;yoshimitsu
 2;h;10;i11;-1;+5;+8;;;;Right Jab;r20;;File:t8-p2-yoshimitsu-2,1.mp4;Yoshimitsu-2;yoshimitsu
 2,1;h, m;10, 23;i11, i26~27;-9;+12a;;"* Balcony Break
 * Weapon
@@ -69,7 +69,7 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Move cannot be delayed
 * Cancel to -12 -6 r30 with B
 * Interrupt with i8 from 1st block
-* Replaced by a different move in NSS";bbr wpn;;Seiken Douharai;r32;;File:t8-p2-yoshimitsu-2,1.mp4;Yoshimitsu-2,1;yoshimitsu
+* Replaced by a different move in NSS";bbr wpn intr:8;;Seiken Douharai;r32;;File:t8-p2-yoshimitsu-2,1.mp4;Yoshimitsu-2,1;yoshimitsu
 2,2;h, h;10, 18;i11, i24;-1;+15g;;"* Tornado
 * Balcony Break (airborne)
 * Combo from 1st hit with 1f delay
@@ -78,7 +78,7 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Transitions to NSS on hit or block only
 * Recovers 2f faster on hit or block
 * Interrupt with i5 from 1st block
-* Hit vs BT +20a (+11)";trn;KIN;Mushibami;r27;;File:t8-p2-yoshimitsu-2,2.mp4;Yoshimitsu-2,2;yoshimitsu
+* Hit vs BT +20a (+11)";trn intr:5;KIN;Mushibami;r27;;File:t8-p2-yoshimitsu-2,2.mp4;Yoshimitsu-2,2;yoshimitsu
 2,3;h, h;10, 24;i11, i26~27;-10;+16a (+7);;"* Balcony Break
 * Combo from 1st CH with 2f delay
 * Move can be delayed 5f";bbr;;PK Combo;r33;;File:t8-p2-yoshimitsu-2,3.mp4;Yoshimitsu-2,3;yoshimitsu
@@ -97,12 +97,13 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Balcony Break
 * Weapon
 * Combo from 1st hit
+* Interrupt with i1
 * 4 chip damage on block
 * Does not transition to DGF during Heat activation or Heat Dash
 * Power up in NSS or Heat
 * Recovers in 1SS
-* Low crush 26~";he bbr wpn js26~;DGF,DGF;Enma's Flame;r23 DGF;;File:t8-p2-yoshimitsu-3,1.mp4;Yoshimitsu-3,1;yoshimitsu
-3,2;m, m;12, 12;i15~16, i22;-12;+1;;Interrupt with i1 from 1st block;;;;r31;;File:t8-p2-yoshimitsu-3,2,1+2.mp4;Yoshimitsu-3,2;yoshimitsu
+* Low crush 26~";he bbr wpn intr:1 js26~;DGF,DGF;Enma's Flame;r23 DGF;;File:t8-p2-yoshimitsu-3,1.mp4;Yoshimitsu-3,1;yoshimitsu
+3,2;m, m;12, 12;i15~16, i22;-12;+1;;Interrupt with i1 from 1st block;intr:1;;;r31;;File:t8-p2-yoshimitsu-3,2,1+2.mp4;Yoshimitsu-3,2;yoshimitsu
 3,2,1+2;m, m, M;12, 12, 26;i15~16, ,i26~27;-14c;+20a (+10);;"* Balcony Break
 * Weapon
 * Combo from 2nd hit with 4f delay
@@ -110,7 +111,7 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Move can be delayed 9f
 * Interrupt with i7 from 2nd block
 * 5 chip damage on block
-* Power up in NSS or Heat";bbr wpn;;Enma's Cleansing Sword;r34 1SS;;File:t8-p2-yoshimitsu-3,2,1+2.mp4;Yoshimitsu-3,2,1+2;yoshimitsu
+* Power up in NSS or Heat";bbr wpn intr:7;;Enma's Cleansing Sword;r34 1SS;;File:t8-p2-yoshimitsu-3,2,1+2.mp4;Yoshimitsu-3,2,1+2;yoshimitsu
 3,2,NSS.1+2;m, m, M;12, 12, 27;i15~16, ,i26~27;-14c;+20a (+10);;"* Balcony Break
 * Weapon
 * Combo from 2nd hit with 4f delay
@@ -189,7 +190,7 @@ f+3,4;h, m;24, 20;i16~17, i23~24;-6;+37a (+23);;"* Knee
 * 2nd hit delayed 18f
 * Interrupt with i17 from 1st block
 * Low crush 22~29
-* Floating state 30~32";kne js22~29 fs30~32;BT;Zig Zag;r28 BT;;File:t8-p2-yoshimitsu-f+3,4.mp4;Yoshimitsu-f+3,4;yoshimitsu
+* Floating state 30~32";kne intr:17 js22~29 fs30~32;BT;Zig Zag;r28 BT;;File:t8-p2-yoshimitsu-f+3,4.mp4;Yoshimitsu-f+3,4;yoshimitsu
 f+4;m;20;i18;-13;+21a (+11);;"* Balcony Break
 * -9 on block after absorbing an attack
 * 8 chip damage on attack absorption
@@ -433,7 +434,8 @@ b+2,NSS.2;m, h;12, 18;i14~15, i22~23;-9;+0;;"* Heat Engager
 * Combo from 1st CH with 7f delay
 * Input can be delayed 14f";he;NSS;;r34 NSS;;;Yoshimitsu-b+2,NSS.2;yoshimitsu
 b+3;;;;;;;"* 8 self-damage
-* Can be performed from backturn (reverse direction)";;;;r31;;File:t8-p2-yoshimitsu-b+3,3,3,3,3,3.mp4;Yoshimitsu-b+3;yoshimitsu
+* Can be performed from backturn (reverse direction)
+* i4 startup";;;;r31;;File:t8-p2-yoshimitsu-b+3,3,3,3,3,3.mp4;Yoshimitsu-b+3;yoshimitsu
 b+3,3;;;;;;;"* 10 self-damage
 * 18 self-damage in total";;;;r25;;File:t8-p2-yoshimitsu-b+3,3,3,3,3,3.mp4;Yoshimitsu-b+3,3;yoshimitsu
 b+3,3,3;;;;;;;"* 5 self-damage
@@ -494,7 +496,7 @@ uf+1,1;m, M;10, 17;i17, i29~30;-10;+9c;;"* Floor Break
 * Move can be delayed 3f
 * Interrupt with i6 from 1st block
 * Transition to FLE on hit only
-* Power up in NSS or Heat";fbr wpn;FLE;Kasane Kaishaku;r33 1SS;;File:t8-p2-yoshimitsu-uf+1,1.mp4;Yoshimitsu-uf+1,1;yoshimitsu
+* Power up in NSS or Heat";fbr wpn intr:6;FLE;Kasane Kaishaku;r33 1SS;;File:t8-p2-yoshimitsu-uf+1,1.mp4;Yoshimitsu-uf+1,1;yoshimitsu
 uf+1,NSS.1;m, M;10, 22;i17, i29~30;-10;+9c;;"* Floor Break
 * Weapon
 * Combo from 1st hit with 4f delay
@@ -503,7 +505,7 @@ uf+1,NSS.1;m, M;10, 22;i17, i29~30;-10;+9c;;"* Floor Break
 * Interrupt with i6 from 1st block
 * Transition to FLE on hit only
 * Good sidestep right tracking
-* Restores 3 additional recoverable health on hit";fbr wpn;FLE;Double Decapitation;r33 1SS;;;Yoshimitsu-uf+1,NSS.1;yoshimitsu
+* Restores 3 additional recoverable health on hit";fbr wpn intr:6;FLE;Double Decapitation;r33 1SS;;;Yoshimitsu-uf+1,NSS.1;yoshimitsu
 uf+1+3;M!;40;i113~114;;+30a;;"* Floor Break
 * Weapon
 * Cancel to r64 DGF with 1+2 on frame 34
@@ -1021,7 +1023,7 @@ NSS.FC.DF+1;l;12;i25~26;-16;+27a;;* High crush 1~34;cs1~34;NSS;;r34 NSS;;File:t8
 NSS.FC.DF+1,2;l, L;12, 20;i25~26, i25~26;-14;+14;;"* Floor Break
 * Combo from 1st hit
 * Interrupt with i7 from 1st block
-* High crush 1~45";fbr cs1~45;NSS;Agonbaku;r32 NSS;;File:t8-p2-yoshimitsu-nss.fc.df+1,2.mp4;Yoshimitsu-NSS.FC.DF+1,2;yoshimitsu
+* High crush 1~45";fbr intr:7 cs1~45;NSS;Agonbaku;r32 NSS;;File:t8-p2-yoshimitsu-nss.fc.df+1,2.mp4;Yoshimitsu-NSS.FC.DF+1,2;yoshimitsu
 NSS.FC.df+3;L;12;i20~21;-26;+67a (+51);;* High crush 1~;cs1~;FC;Spinning Cleave;r36 FC;;File:t8-p2-yoshimitsu-nss.fc.df+3.mp4;Yoshimitsu-NSS.FC.df+3;yoshimitsu
 NSS.IND.1;M;15;i48~51;-8c;+5a;;"* Floor Break
 * Same animation as the ending of NSS.qcf+1

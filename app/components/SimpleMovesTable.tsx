@@ -3,7 +3,10 @@ import { memo } from 'react';
 import { Link, useSearchParams } from 'react-router';
 import { type FrameDataListProps } from '~/types/FrameDataListProps';
 import { type MoveT8 } from '~/types/Move';
-import { getRecoveryFrames } from '~/utils/frameDataUtils';
+import {
+  getInterruptableFrames,
+  getRecoveryFrames,
+} from '~/utils/frameDataUtils';
 import {
   getBlockFrameColorClasses,
   getHitFrameColorClasses,
@@ -100,6 +103,12 @@ export const SimpleMovesTable = memo(function SimpleMovesTable({
                 <wbr />
                 very
               </>
+            ) : sortSettings?.sortByKey === 'interruptable' ? (
+              <>
+                Inter
+                <wbr />
+                rupt
+              </>
             ) : (
               'Hit / CH'
             )}
@@ -112,6 +121,7 @@ export const SimpleMovesTable = memo(function SimpleMovesTable({
           const simpleHit = simplifyFrameValue(move.hit || '');
           const simpleCh = simplifyFrameValue(move.counterHit || '');
           const hasVideo = Boolean(move.ytVideo || move.video);
+          const interruptableFrames = getInterruptableFrames(move);
           const computedCharId = charId || charIdFromMove(move as MoveT8);
           const moveUrl = `/${gameRouteId}/${computedCharId}/${commandToUrlSegmentEncoded(move.command)}`;
           const commandContent = formatWordWithBreaks(move.command);
@@ -159,6 +169,8 @@ export const SimpleMovesTable = memo(function SimpleMovesTable({
                   )
                 ) : sortSettings?.sortByKey === 'recovery' ? (
                   getRecoveryFrames(move)
+                ) : sortSettings?.sortByKey === 'interruptable' ? (
+                  interruptableFrames !== undefined && `i${interruptableFrames}`
                 ) : (
                   <>
                     <span className={getHitFrameColorClasses(simpleHit)}>

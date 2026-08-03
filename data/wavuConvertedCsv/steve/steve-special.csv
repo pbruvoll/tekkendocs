@@ -6,21 +6,21 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * Only deals recoverable damage
 * Cannot cause a K.O.
 * Power crush 7~16";hb pc7~16;;Heat Burst;r30;;;Steve-2+3;steve
-H.EXD.1+3;h (th);;i18;;;;"*
-Homing
+H.EXD.1+3;h (th);;i18~19;;;;"* Homing
 * Unbreakable
-* Transition to TFA";hom;TFA;Two-Faced (TFA);r26;;;Steve-H.EXD.1+3;steve
+* Transition to TFA
+* Can buffer TFA.1 or TFA.2 throw breaks from frames 20-35 of TFA recovery";hom;TFA;Two-Faced (TFA);r26;;;Steve-H.EXD.1+3;steve
 H.LNH.P;m,t;15;;;;;"* Parries high and mid punches and kicks?
 * Active after LNH is actionable 
 * Transition to TFA after successful parry
 * Throws received are unbreakable
 * Parry state 25~95?";ps25~95?;TFA;Two-Faced;;;;Steve-H.LNH.P;steve
 H.df+3+4;sp;;;;;;"* Transition to r13 EXD
-* r25? EXD FC cancel?
-* Partially uses remaining heat time
+* Transition to r25 FC with db
+* Consumes 150F of remaining heat time
 * Auto low parry effect
-* High crush 1~
-* Parry state 1~";cs1~ ps1~;EXD;;;;;Steve-H.df+3+4;steve
+* High crush 1~19
+* Parry state 1~14";cs1~19 ps1~14;EXD,FC,EXD;;r13 EXD;;;Steve-H.df+3+4;steve
 H.2+3;m,th;10,4,2,3,3,3,25;i16;+8 LNH;+0;;"* Heat Smash
 * Floor Break
 * Spike
@@ -245,10 +245,10 @@ b+3;sp;;;;;;"* Transition to SWY
 * High crush 1~25";cs1~25;SWY,LWV,RWV,DCK,SWY;Swaying;r10 SWY;;;Steve-b+3_4;steve
 b+1+2;m,h;8,20;i16,i12;-8;+19d;;* Balcony Break;bbr;;Fox Fury;r29;;;Steve-b+1+2;steve
 H.b+1+2,1+2;m,h,m,h,m;8,4,3,3,20;i16,i12,i12,i12,i19;-4;+36a (+10);;"* Balcony Break
-* Jails from 1st hit
-* Transition to FLK (+3/+43a(+17)) with B
-* 8 chip damage on block
-* Partially uses remaining heat time";bbr;FLK;Five Fox Fury;;;;Steve-b+1+2,H.1+2;steve
+* Jails from 1st block
+* Combo from 1st hit
+* Transition to FLK r22 with B (+3/+43a (+17))
+* Consumes 300F of remaining heat time";bbr;FLK;Five Fox Fury;r29;;;Steve-b+1+2,H.1+2;steve
 b+3+4;sp;;;;;;"* Transition to FLK
 * Actionable for 64F
 * Auto i5? high and mid neutral block high and mid?
@@ -502,7 +502,7 @@ PAB.d+2;l;25;i28~29;-12;+7;+32a;"* Cancel into FC with DB
 PAB.f+2;m;18;i18~19;-13;+31a (+16);;;;PAB;;PAB;;File:t8-p2-steve-pab.f+2,1.mp4;Steve-PAB.f+2;steve
 PAB.f+2,1;m, m;18, 24;i18~19, i34~35;+1;+24a (+14);;"* Balcony Break
 * Combo from 1st hit
-* Interruptible by i16 or faster moves";bbr;;Straight Punch Combination;;;File:t8-p2-steve-pab.f+2,1.mp4;Steve-PAB.f+2,1;steve
+* Interruptable by i16 or faster moves";bbr intr:16;;Straight Punch Combination;;;File:t8-p2-steve-pab.f+2,1.mp4;Steve-PAB.f+2,1;steve
 PAB.f+1+2;h,h;12,23;i12, i15~16;-5;+24a (+15);;* Balcony Break;bbr;;Nimrod Combination;;;File:t8-p2-steve-pab.f+1+2.mp4;Steve-PAB.f+1+2;steve
 PAB.uf+2;m;23;i17~19;-15;+34a (+24);;"* Tornado
 * Low crush 9~";trn js9~;;Dreadnought Uppercut;r34;;File:t8-p2-steve-pab.uf+2.mp4;Steve-PAB.uf+2;steve
@@ -551,9 +551,16 @@ SWY.1+2~b;th;;i10~15;-2;+1 / +13~23?wc;;"* 3 damage on wall crush
 * Throw break 1+2
 * 14F? throw break window for NH and CH SWY.1+2";;;;;;;Steve-SWY.1+2~b_u_d;steve
 TFA.1;th;15;;+0;+14;;"* Press 1 for throw break
-* Partially uses remaining heat time";;;Dominion Rush;;;File:t8-p2-steve-h.exdthrow.1.mp4;Steve-H.EXDThrow.1;steve
-TFA.2;th;50;;+0;+0d;;"* Press 2 for throw break
-* Partially uses remaining heat time";;;Debutante Ball;;;File:t8-p2-steve-h.exdthrow.2.mp4;Steve-H.EXDThrow.2;steve
+* 15F throw break window
+* 10F throw break window on CH
+* Consumes 240F of remaining heat time on successful throw
+* Consumes 120F of Heat time on break";;;Dominion Rush;;;File:t8-p2-steve-h.exdthrow.1.mp4;Steve-H.EXDThrow.1;steve
+TFA.2;th;50 (60);;+0;+0d;;"* Press 2 for throw break
+* 15F throw break window
+* 1F throw break window on CH (bug)
+* Consumes 480F of remaining heat time on successful throw
+* Consumes 240F of Heat time on break
+* 60 damage on wall splat";;;Debutante Ball;;;File:t8-p2-steve-h.exdthrow.2.mp4;Steve-H.EXDThrow.2;steve
 qcb+2+4;t;40;i12~14;-2;+0d;;"* 2 Throw break
 * Opponent left FUFA";;;Spinning Elbow Drop;r25;;File:t8-p2-steve-qcb+2+4.mp4;Steve-qcb+2+4;steve
 uf+1+2;t;40;i12~13;+0;+0d;;"* 1+2 Throw break

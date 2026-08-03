@@ -61,6 +61,14 @@ export const getFilterFromParams = (
     unblockable: getSearchParamBoolean(searchParams, filterKey.Unblockable),
     numHitsMin: getSearchParamNumber(searchParams, filterKey.NumHitsMin),
     numHitsMax: getSearchParamNumber(searchParams, filterKey.NumHitsMax),
+    interruptableMin: getSearchParamNumber(
+      searchParams,
+      filterKey.InterruptableMin,
+    ),
+    interruptableMax: getSearchParamNumber(
+      searchParams,
+      filterKey.InterruptableMax,
+    ),
     stance: getSearchParamStringList(searchParams, filterKey.Stance),
     highCrush: getSearchParamBoolean(searchParams, filterKey.HighCrush),
     lowCrush: getSearchParamBoolean(searchParams, filterKey.LowCrush),

@@ -9,6 +9,8 @@ export const filterKey = {
   HitFrameMax: 'hitFrameMax',
   NumHitsMin: 'numHitsMin',
   NumHitsMax: 'numHitsMax',
+  InterruptableMin: 'interruptableMin',
+  InterruptableMax: 'interruptableMax',
   HeatSmash: 'heatSmash',
   HeatEngager: 'heatEngager',
   Homing: 'homing',
