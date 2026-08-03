@@ -83,16 +83,16 @@ export const sortOptions: {
     }),
   },
   {
-    displayName: 'Interruptable (low - high)',
+    displayName: 'Interruptible (low - high)',
     value: getSortByQueryParamValue({
-      sortByKey: 'interruptable',
+      sortByKey: 'interruptible',
       sortDirection: 'desc',
     }),
   },
   {
-    displayName: 'Interruptable (high - low)',
+    displayName: 'Interruptible (high - low)',
     value: getSortByQueryParamValue({
-      sortByKey: 'interruptable',
+      sortByKey: 'interruptible',
       sortDirection: 'asc',
     }),
   },

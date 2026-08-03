@@ -203,8 +203,8 @@ export const isSteppableString = (move: Move) => {
   return move.tags?.[MoveTags.Steppable] !== undefined;
 };
 
-export const getInterruptableFrames = (move: Move): number | undefined => {
-  const frames = move.tags?.[MoveTags.Interruptable];
+export const getInterruptibleFrames = (move: Move): number | undefined => {
+  const frames = move.tags?.[MoveTags.Interruptible];
   if (!frames) {
     return undefined;
   }
@@ -481,24 +481,24 @@ export const filterMoves = (moves: Move[], filter: MoveFilter | undefined) => {
     });
   }
 
-  if (filter.interruptableMin !== undefined) {
-    const interruptableMin = filter.interruptableMin;
+  if (filter.interruptibleMin !== undefined) {
+    const interruptibleMin = filter.interruptibleMin;
     filterFuncs.push((move: Move) => {
-      const interruptableFrames = getInterruptableFrames(move);
+      const interruptibleFrames = getInterruptibleFrames(move);
       return (
-        interruptableFrames !== undefined &&
-        interruptableFrames >= interruptableMin
+        interruptibleFrames !== undefined &&
+        interruptibleFrames >= interruptibleMin
       );
     });
   }
 
-  if (filter.interruptableMax !== undefined) {
-    const interruptableMax = filter.interruptableMax;
+  if (filter.interruptibleMax !== undefined) {
+    const interruptibleMax = filter.interruptibleMax;
     filterFuncs.push((move: Move) => {
-      const interruptableFrames = getInterruptableFrames(move);
+      const interruptibleFrames = getInterruptibleFrames(move);
       return (
-        interruptableFrames !== undefined &&
-        interruptableFrames <= interruptableMax
+        interruptibleFrames !== undefined &&
+        interruptibleFrames <= interruptibleMax
       );
     });
   }
@@ -700,10 +700,10 @@ export const sortMovesV2 = (
         asc,
       );
     }
-    case 'interruptable': {
+    case 'interruptible': {
       return sortMovesByNumber(
         moves,
-        (move: Move) => move.tags?.[MoveTags.Interruptable] || '',
+        (move: Move) => move.tags?.[MoveTags.Interruptible] || '',
         asc,
       );
     }
