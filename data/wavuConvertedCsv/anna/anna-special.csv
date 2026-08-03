@@ -30,17 +30,23 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Input can be delayed 10f";;;Left Right Left;r25;;t8-p2-anna-1,2,1.mp4;Anna-1,2,1;anna
 1,2,1,2;h, h, h, m;5, 8, 4, 24;i10, ,i23~72;-14~+35;+21a (+11);;"* Weapon
 * Combo from 3rd CH
-* Chip damage on block";wpn chp;;Roasted with Love;r13;;t8-p2-anna-1,2,1,2.mp4;Anna-1,2,1,2;anna
+* Interrupt with i1
+* 4 chip damage on block";wpn intr:1;;Roasted with Love;r13;;t8-p2-anna-1,2,1,2.mp4;Anna-1,2,1,2;anna
 1,2,1,4;h, h, h, h;5, 8, 4, 18;i10, ,i20~21;+4;+32a (+22);;"* Tornado
 * Chip damage on block
+* String jails vs hits (string duckable)
 * Floating state 20~39";trn chp fs20~39;;Frost Combination;r37;;t8-p2-anna-1,2,1,4.mp4;Anna-1,2,1,4;anna
 H.1,2,1,2;h, h, h, m,m,m;5, 8, 4, 5,5,24;i10, ,i23~72 i36~85 i54~103;-2~+47g;+23a (-3);;"* Weapon
 * Combo from 3rd CH
 * Jails from 4th hit
 * Consumes 300F of remaining Heat time";wpn;;Roasted with Eternal Love;r24;;t8-p2-anna-1,2,1,h.2.mp4;Anna-1,2,1,H.2;anna
-1,2,2;h, h, M;5, 8, 20;i10, ,i26~27;-8;+12;+76a (+60);* Transition to HAM on hit automatically;;HAM;Left Right Stinger;r31;;t8-p2-anna-1,2,2.mp4;Anna-1,2,2;anna
+1,2,2;h, h, M;5, 8, 20;i10, ,i26~27;-8;+12;+76a (+60);"* Transition to HAM on hit automatically
+* Interrupt with i11
+* Whiffs vs SSR from 1st block";stp:SSR intr:11;HAM;Left Right Stinger;r31;;t8-p2-anna-1,2,2.mp4;Anna-1,2,2;anna
 1,2,4;h, h, h;5, 8, 22;i10, ,i22;-6;+20a (+11);+49a;"* Balcony Break
-* Combo from 2nd CH";bbr;;Bermuda Triangle;r30;;t8-p2-anna-1,2,4.mp4;Anna-1,2,4;anna
+* Combo from 2nd CH with 8F delay
+* Interrupt with i2
+* Move can be delayed by 10F";bbr intr:2;;Bermuda Triangle;r30;;t8-p2-anna-1,2,4.mp4;Anna-1,2,4;anna
 1,2,uf+1+2;h, h, h;5, 8, 13;i10, ,i21~65;-14~+10;+33a (+18);;"* Weapon
 * Combo from 2nd CH with 9f delay
 * Input can be delayed 10f
@@ -50,31 +56,37 @@ H.1,2,1,2;h, h, h, m,m,m;5, 8, 4, 5,5,24;i10, ,i23~72 i36~85 i54~103;-2~+47g;+23
 1,4;h, L;5, 12;i10, i22~23;-13;-2;;"* Combo from 1st hit
 * High crush 10~";cs10~;FC;Reverse PDK Combo;r32 FC;;t8-p2-anna-1,4.mp4;Anna-1,4;anna
 2;h;10;i10;-3;+3;;* Enter HAM +1 +7 with F;;HAM;;r22;;t8-p2-anna-2.mp4;Anna-2;anna
-2,2;h, M;10, 20;i10, i26~27;-8;+12;+76a (+60);"* Combo from 1st CH
-* High evasion
+2,2;h, M;10, 20;i10, i26~27;-8;+12;+76a (+60);"* High evasion
 * Interrupt with i11 from 1st block
+* Whiffs vs SSR from 1st block
 * Input can be delayed 5f
-* Transition to HAM on hit automatically";;HAM;Quick Stinger;r31;;t8-p2-anna-2,2.mp4;Anna-2,2;anna
-2,3;h, m;10, 14;i10, i19~20;-3;+8;+12;"* Jail from 1st attack
-* Combo from 1st hit with ?f delay
-* Input can be delayed 2f";;CJM;Straight Face Wash;r20 CJM;;t8-p2-anna-2,3.mp4;Anna-2,3;anna
+* Transition to HAM on hit automatically";stp:SSR intr:11;HAM;Quick Stinger;r31;;t8-p2-anna-2,2.mp4;Anna-2,2;anna
+2,3;h, m;10, 14;i10, i19~20;-3;+8;+12;"* Jail from 1st block with no delay
+* Combo from 1st hit with 2f delay
+* Move can be delayed 2f";;CJM;Straight Face Wash;r20 CJM;;t8-p2-anna-2,3.mp4;Anna-2,3;anna
 2,4;h, h;10, 22;i10, i22;-6;+20a (+11);+49a;"* Balcony Break
-* Combo from 1st CH with 9f delay
-* Input can be delayed 10f";bbr;;Jab Roundhouse;;;t8-p2-anna-2,4.mp4;Anna-2,4;anna
+* Interrupt with i2
+* Move can be delayed 10f";bbr intr:2;;Jab Roundhouse;;;t8-p2-anna-2,4.mp4;Anna-2,4;anna
 2,uf+1+2;h, h;10, 13;i10, i21~65;-14~+10;+33a (+18);;"* Weapon
 * Input can be delayed 10f
 * Move can be delayed 5f
-* Chip damage on block
-* Recovers 7f slower on block";wpn chp;;Quick Fried Love;r8;;File:t8-p2-anna-2,uf+1+2.mp4;Anna-2,uf+1+2;anna
-3;m;17;i14~16;-6;+3;;* Knee;kne;CJM;;r25 CJM;;t8-p2-anna-3.mp4;Anna-3;anna
+* 2 chip damage on block
+* Recovers 7f slower on block";wpn;;Quick Fried Love;r8;;File:t8-p2-anna-2,uf+1+2.mp4;Anna-2,uf+1+2;anna
+3;m;17;i14~16;-6;+3;;"* Knee
+* Floating state 14~16
+* Low crush 17~27
+* Floating state 28~30";kne fs14~16 js17~27 fs28~30;CJM;;r25 CJM;;t8-p2-anna-3.mp4;Anna-3;anna
 3,2;m, m;17, 20;i14~16, i20;-11c;+4c;;"* Spike
 * Combo from 1st hit";spk;FC;Serval Cleaver;r38 FC;;t8-p2-anna-3,2.mp4;Anna-3,2;anna
 4;h;15;i11;-9;+7;+7s;;;;Right High Kick;r23;;t8-p2-anna-4.mp4;Anna-4;anna
-4,2;h, h;15, 12;i11, i25~26;-8;-4;;* Combo from 1st CH;;;;r33;;t8-p2-anna-4,2.mp4;Anna-4,2;anna
+4,2;h, h;15, 12;i11, i25~26;-8;-4;;"* Combo from 1st CH
+* Interrupt with i5
+* Whiffs vs SSR from 1st block";stp:SSR intr:5;;;r33;;t8-p2-anna-4,2.mp4;Anna-4,2;anna
 4,2,1+2;h, h, m;15, 12, 21;i11, ,i27;-15;+8a (-1);+28d (+20);"* Tornado
 * Balcony Break
 * Combo from 2nd hit
-* Combo from 1st CH";trn bbr;;Blonde Bomb Blitz;r37;;t8-p2-anna-4,2,1+2.mp4;Anna-4,2,1+2;anna
+* Airborne combo from 1st CH
+* Interrupt with i1";trn bbr intr:1;;Blonde Bomb Blitz;r37;;t8-p2-anna-4,2,1+2.mp4;Anna-4,2,1+2;anna
 1+2;m;"[5;5]";i16~18;+1;+9;+14;"* Homing
 * Enter TOM +3 +8 with F on hit only
 * 100% recoverable damage";hom;TOM;Open Sesame;r27;;t8-p2-anna-1+2.mp4;Anna-1+2;anna
@@ -83,7 +95,8 @@ H.1,2,1,2;h, h, h, m,m,m;5, 8, 4, 5,5,24;i10, ,i23~72 i36~85 i54~103;-2~+47g;+23
 * Heat Dash +5, +43d (+35)
 
 * Balcony Break
-* Hip";he bbr hip;;Aphrodite's Scorn;r35;;t8-p2-anna-3+4.mp4;Anna-3+4;anna
+* Hip
+* CJM.3+4: i13 t49";he bbr hip;;Aphrodite's Scorn;r35;;t8-p2-anna-3+4.mp4;Anna-3+4;anna
 f+2;h;14;i14;-2;+4;;* Elbow;elb;;Poison Sting;r26;;t8-p2-anna-f+2.mp4;Anna-f+2;anna
 f+2,3;h, h;14, 20;i14, i19~20;-7;+12g;;"* Balcony Break
 * Combo from 1st hit with 3f? delay
@@ -117,7 +130,7 @@ df+3,1;m, h;13, 10;i14, i30;-3;+7;;"* Combo from 1st CH
 * Interrupt with i11 from 1st block
 * Cancel to CJM -15 -4 -3 r33 with B on frame 14
 * Cancel to SS -10 +1 +2 r37 with U_D on frame 28
-** r43 when blocking after SS";;CJM,SS;Leg Slicer;r22;;t8-p2-anna-df+3,1.mp4;Anna-df+3,1;anna
+** r43 when blocking after SS";intr:11;CJM,SS;Leg Slicer;r22;;t8-p2-anna-df+3,1.mp4;Anna-df+3,1;anna
 df+3,1,1;m, h, M;13, 10, 25;i14, ,i30~42;-11~+1;+9a (-1);;"* Balcony Break
 * Weapon
 * Fragile debuff on hit or block, opponent receives chip damage from any attack, removed when land a hit on you
@@ -125,7 +138,7 @@ df+3,1,1;m, h, M;13, 10, 25;i14, ,i30~42;-11~+1;+9a (-1);;"* Balcony Break
 * Interrupt with i12 from 2nd block
 * 5 Chip damage on block
 * Low crush 21~50
-* Floating state 51~53";bbr wpn js21~50 fs51~53;;Twisting Fascinator;r37;;t8-p2-anna-df+3,1,1.mp4;Anna-df+3,1,1;anna
+* Floating state 51~53";bbr wpn intr:12 js21~50 fs51~53;;Twisting Fascinator;r37;;t8-p2-anna-df+3,1,1.mp4;Anna-df+3,1,1;anna
 df+3,1,2;m, h, M;13, 10, 35;i14, ,i30~42;-11~+1;+3d;;"* Balcony Break
 * Weapon
 * Fragile debuff on hit or block, opponent receives chip damage from any attack, removed when land a hit on you
@@ -133,7 +146,7 @@ df+3,1,2;m, h, M;13, 10, 35;i14, ,i30~42;-11~+1;+3d;;"* Balcony Break
 * Interrupt with i12 from 2nd block
 * 7 Chip damage on block
 * Low crush 21~50
-* Floating state 51~53";bbr wpn js21~50 fs51~53;;Twisting Penetrator;r37;;t8-p2-anna-df+3,1,2.mp4;Anna-df+3,1,2;anna
+* Floating state 51~53";bbr wpn intr:12 js21~50 fs51~53;;Twisting Penetrator;r37;;t8-p2-anna-df+3,1,2.mp4;Anna-df+3,1,2;anna
 df+3,1,4;m, h, h;13, 10, 20;i14, ,i15~16;-3;+4;;"* Combo from 1st CH
 * Combo from 2nd hit with 10f delay
 * Input can be delayed 10f
@@ -247,7 +260,8 @@ b+1+2;m;21;i20~21;-13;+20a (+15);;"* Balcony Break
 * Power crush 7~19";bbr pc7~19;;Weeping Slap;r35;;t8-p2-anna-b+1+2.mp4;Anna-b+1+2;anna
 ub+1+2;m!;50;i60;;+46a (+15);;;;;Bloody Scissors;r39;;t8-p2-anna-ub+1+2.mp4;Anna-ub+1+2;anna
 uf+1;h;6;i13;-4;+7;;;;;;r23;;t8-p2-anna-uf+1.mp4;Anna-uf+1;anna
-uf+1,3;h, m;6, 17;i13, i15;-16;+7;+51a;"* Combo from 1st CH with 12f delay
+uf+1,3;h, m;6, 17;i13, i15;-16;+7;+51a;"* Jail from 1st block with 4F delay
+* Combo from 1st CH with 12f delay
 * Input can be delayed 12f
 * Move can be delayed 11f";;;Fatal Attack Combo;r35;;t8-p2-anna-uf+1,3.mp4;Anna-uf+1,3;anna
 uf+1,3,3+4;h, m, m,m;6, 17, 6,10;i13, ,i32~34 i11~12;-4;+78a (+62);;"* Tornado
@@ -255,9 +269,11 @@ uf+1,3,3+4;h, m, m,m;6, 17, 6,10;i13, ,i32~34 i11~12;-4;+78a (+62);;"* Tornado
 * Knee
 * Combo from 2nd hit with 5f delay
 * Combo from 1st CH
+* Interrupt with i12 from 1st block
+* Whiffs vs SSR from 1st block
 * +27a (+18) if only the last hit connects
 * Instant Tornado on hit
-* Low crush 34~46";trn bbr kne js34~46;;Hail Storm;r22;;t8-p2-anna-uf+1,3,3+4.mp4;Anna-uf+1,3,3+4;anna
+* Low crush 34~46";trn bbr kne stp:SSR intr:12 js34~46;;Hail Storm;r22;;t8-p2-anna-uf+1,3,3+4.mp4;Anna-uf+1,3,3+4;anna
 uf+2;M;18;i20~21;-8;+12s;+72a (+56);"* Transition to r27 HAM on hit automatically
 * Instant Tornado on CH";;HAM;Bane Stinger;r31;;t8-p2-anna-uf+2.mp4;Anna-uf+2;anna
 uf+3;m;22;i23~24;+0;+27d;;"* Balcony Break
@@ -410,24 +426,27 @@ CJM.1+2;M;23;i17~18;+2c;+8c;+23d;"* Spike
 CJM.P;m;20;i15~16;-14;+29a (+19);;"* Tornado
 * Tornado launch on hit
 * is1~";trn is1~;;Stryx;r34;;t8-p2-anna-cjm.p.mp4;Anna-CJM.P;anna
-CJM.df;;;;;;;"* High crush 5~
-* Floating state 8~35";cs5~ fs8~35;FC;Forward Roll (ROLL);r40 FC;;t8-p2-anna-cjm.df.mp4;Anna-CJM.df;anna
+CJM.df;;;;;;;"{{Plainlist
+* Transition to r40 FC with no input
+}}
+* High crush 5~
+* Floating state 8~35";cs5~ fs8~35;FC,ROLL;Forward Roll (ROLL);r20 ROLL;;t8-p2-anna-cjm.df.mp4;Anna-CJM.df;anna
 CJM.d+3;L;8;i15;-11;+0;;*;;FC;;r30 FC;;t8-p2-anna-cjm.d+3.mp4;Anna-CJM.d+3;anna
 CJM.d+3,3;L, h;8, 20;i15, i21;-7;+7;;"* Combo from 1st hit
 * -31 from 1st block";;;Dendrobates Azureus;r31;;t8-p2-anna-cjm.d+3,3.mp4;Anna-CJM.d+3,3;anna
 CJM.f+3;;;;;;;"* Transition to r10 FC with db
 * Transition to r16 CJM with b+3";;FC,CJM;Hammer Chance;r13;;t8-p2-anna-cjm.f+3.mp4;Anna-CJM.f+3;anna
-CJM.uf+1;M;25;i19~29;-11~+1;+9a (-1);;"* Balcony Break
-* Chip damage on block
+CJM.uf+1;M;25;i19~31;-11~+1;+9a (-1);;"* Balcony Break
+* 5 chip damage on block
 * Unpunishable on block due to pushback
 * Fragile debuff on hit or block, opponent receives chip damage from any attack, removed when land a hit on you
 * Low crush 9~37
-* Floating state 38~40";bbr chp js9~37 fs38~40;;Flying Fascinator;r37;;t8-p2-anna-cjm.uf+1.mp4;Anna-CJM.uf+1;anna
-CJM.uf+2;M;35;i19~29;-11~+1;+3a;;"* Balcony Break
-* Chip damage on block
+* Floating state 38~40";bbr js9~37 fs38~40;;Flying Fascinator;r37;;t8-p2-anna-cjm.uf+1.mp4;Anna-CJM.uf+1;anna
+CJM.uf+2;M;35;i19~31;-11~+1;+3a;;"* Balcony Break
+* 7 chip damage on block
 * Unpunishable on block due to pushback
 * Low crush 9~37
-* Floating state 38~40";bbr chp js9~37 fs38~40;;Flying Penetrator;r37;;t8-p2-anna-cjm.uf+2.mp4;Anna-CJM.uf+2;anna
+* Floating state 38~40";bbr js9~37 fs38~40;;Flying Penetrator;r37;;t8-p2-anna-cjm.uf+2.mp4;Anna-CJM.uf+2;anna
 CJM.uf+3;m;22;i23~24;+0;+27d;;"* Balcony Break
 * Low crush 9~30
 * Floating state 31~33";bbr js9~30 fs31~33;;Sudden Storm;r27;;t8-p2-anna-cjm.uf+3.mp4;Anna-CJM.uf+3;anna
@@ -472,14 +491,15 @@ HAM.1+2;M;30;i24~25;+2c;+17a (+7);;"* Balcony Break
 * 9 chip damage on block in heat (30%)";bbr spk wpn;FC;Dullahan Smash;r38 FC;;t8-p2-anna-ham.1+2.mp4;Anna-HAM.1+2;anna
 HAM.b+3;;;;;;;;;;;;;t8-p2-anna-ham.b+3.mp4;Anna-HAM.b+3;anna
 OTG.d+3+4;L;30;i17~18;-17;-7d;;* Spike;spk;;Heel Grind;r35;;t8-p2-anna-otg.d+3+4.mp4;Anna-OTG.d+3+4;anna
-ROLL.3;m;27;i10~11;-9;+32d (+24);;"* Balcony Break
-* High crush 1~";bbr cs1~;FC;Rolling Stone;r32 FC;;t8-p2-anna-roll.3.mp4;Anna-ROLL.3;anna
-ROLL.4;h;21;i20;+7;+32a (+22);+57a;"* Tornado
-* Chip damage on block
+ROLL.3;m;27;i10~11 (i30~31);-9;+32d (+24);;"* Balcony Break
+* Roll adds minimum 20f, effective startup i30~31
+* High crush 1~43";bbr cs1~43;FC;Rolling Stone;r32 FC;;t8-p2-anna-roll.3.mp4;Anna-ROLL.3;anna
+ROLL.4;h;21;i20 (i40);+7;+32a (+22);;"* Tornado
+* 6 chip damage on block
 * Roll adds minimum 20f, effective startup i40
 * High crush 39~69
 * Low crush 20~35
-* Floating state 36~38";trn chp cs39~69 js20~35 fs36~38;;Falling Frost;r38;;t8-p2-anna-roll.4.mp4;Anna-ROLL.4;anna
+* Floating state 36~38";trn cs39~69 js20~35 fs36~38;;Falling Frost;r38;;t8-p2-anna-roll.4.mp4;Anna-ROLL.4;anna
 TOM.1;m;20;i8~57;+4~+53;+20a (-6);;"* Balcony Break
 * Weapon
 * Fragile debuff on hit or block, opponent receives chip damage from any attack, removed when Anna is damaged

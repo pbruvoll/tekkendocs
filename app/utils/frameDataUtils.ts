@@ -203,6 +203,15 @@ export const isSteppableString = (move: Move) => {
   return move.tags?.[MoveTags.Steppable] !== undefined;
 };
 
+export const getInterruptableFrames = (move: Move): number | undefined => {
+  const frames = move.tags?.[MoveTags.Interruptable];
+  if (!frames) {
+    return undefined;
+  }
+  const framesNumber = parseInt(frames, 10);
+  return Number.isNaN(framesNumber) ? undefined : framesNumber;
+};
+
 export const hitsGrounded = (move: Move) => {
   const lastHitLevel = move.hitLevel?.split(',').pop();
   return !!lastHitLevel && lastHitLevel === lastHitLevel.toUpperCase();
@@ -469,6 +478,28 @@ export const filterMoves = (moves: Move[], filter: MoveFilter | undefined) => {
         return false;
       }
       return parseInt(blockFrameStr, 10) >= blockFrameMin;
+    });
+  }
+
+  if (filter.interruptableMin !== undefined) {
+    const interruptableMin = filter.interruptableMin;
+    filterFuncs.push((move: Move) => {
+      const interruptableFrames = getInterruptableFrames(move);
+      return (
+        interruptableFrames !== undefined &&
+        interruptableFrames >= interruptableMin
+      );
+    });
+  }
+
+  if (filter.interruptableMax !== undefined) {
+    const interruptableMax = filter.interruptableMax;
+    filterFuncs.push((move: Move) => {
+      const interruptableFrames = getInterruptableFrames(move);
+      return (
+        interruptableFrames !== undefined &&
+        interruptableFrames <= interruptableMax
+      );
     });
   }
 

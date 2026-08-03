@@ -41,6 +41,8 @@ export const FrameDataFilterSelection = ({
     hitFrameMax,
     numHitsMin,
     numHitsMax,
+    interruptableMin,
+    interruptableMax,
     balconyBreak,
     reversalBreak,
     heatSmash,
@@ -79,6 +81,34 @@ export const FrameDataFilterSelection = ({
     recoverFullCrouch,
     counterHit,
   } = filter;
+
+  // the button only covers the "interruptable by i6 or slower" case, so a max
+  // coming from the url means the filter is no longer the one the button sets
+  const interruptableActive =
+    interruptableMin === 6 && interruptableMax === undefined;
+
+  const renderPropertyButton = ([key, value, displayName]: readonly [
+    string,
+    boolean | undefined,
+    string,
+  ]) => {
+    return (
+      <Button
+        key={key}
+        variant={value ? 'solid' : 'outline'}
+        onClick={() => {
+          if (value) {
+            removeFilterValue(key);
+          } else {
+            setFilterValue(key, '');
+          }
+        }}
+      >
+        {displayName}
+      </Button>
+    );
+  };
+
   return (
     <Flex direction="column" gap="5" className={className}>
       <section className="flex flex-col gap-3">
@@ -362,6 +392,25 @@ export const FrameDataFilterSelection = ({
               [filterKey.NoJails, noJails, 'Doesnt jail'],
               [filterKey.DuckableString, duckableString, 'Duckable string'],
               [filterKey.Steppable, steppable, 'Steppable string'],
+            ] as const
+          ).map(renderPropertyButton)}
+          <Button
+            variant={interruptableActive ? 'solid' : 'outline'}
+            onClick={() => {
+              const searchParamsState = new SearchParamsState();
+              searchParamsState.remove(filterKey.InterruptableMax);
+              if (interruptableActive) {
+                searchParamsState.remove(filterKey.InterruptableMin);
+              } else {
+                searchParamsState.set(filterKey.InterruptableMin, '6');
+              }
+              updateFilterValues(searchParamsState.getChanges());
+            }}
+          >
+            Interruptable string
+          </Button>
+          {(
+            [
               [filterKey.HitsGrounded, hitsGrounded, 'Hits grounded'],
               [filterKey.Chip, chip, 'Chip'],
               [
@@ -391,23 +440,7 @@ export const FrameDataFilterSelection = ({
               [filterKey.Hip, hip, 'Hip'],
               [filterKey.Weapon, weapon, 'Weapon'],
             ] as const
-          ).map(([key, value, displayName]) => {
-            return (
-              <Button
-                key={key}
-                variant={value ? 'solid' : 'outline'}
-                onClick={() => {
-                  if (value) {
-                    removeFilterValue(key);
-                  } else {
-                    setFilterValue(key, '');
-                  }
-                }}
-              >
-                {displayName}
-              </Button>
-            );
-          })}
+          ).map(renderPropertyButton)}
         </div>
       </section>
       <section className="flex flex-col gap-3">

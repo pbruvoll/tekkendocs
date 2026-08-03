@@ -28,23 +28,23 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 1;h;5;i10;-2;+9;;;;;Jab;r21;;File:t8-p2-asuka-1,1.mp4;Asuka-1;asuka
 1,1;h, m;5, 15;i10, i24;-7;+4;;"* Combo from 1st CH with 3f delay
 * Links to f+1 extensions
-* Interrupt with i4 from 1st block";;f+1 extensions;Whiplash;r26;;File:t8-p2-asuka-1,1.mp4;Asuka-1,1;asuka
+* Interrupt with i4 from 1st block";intr:4;f+1 extensions;Whiplash;r26;;File:t8-p2-asuka-1,1.mp4;Asuka-1,1;asuka
 1,1,3;h, m, m;5, 15, 17;i10, ,i21~22;-5;+6;+14c;"* Combo from 2nd CH with 9f delay
 * Input can be delayed 10f";;;;r23;;;Asuka-1,1,3;asuka
-1,2;h, m;5, 9;i10, i22~23;-8;+6;;"* Combo from 1st hit
+1,2;h, m;5, 8;i10, i22~23;-8;+6;;"* Combo from 1st hit
 * Combo from 1st CH with 3f delay";;;Jab Uppercut;r26;;File:t8-p2-asuka-1,2,3.mp4;Asuka-1,2;asuka
-1,2,3;h, m, m;5, 9, 24;i10, ,i31~33;-2;+29a (+20);;"* Balcony Break
+1,2,3;h, m, m;5, 8, 24;i10, ,i31~33;-2;+29a (+20);;"* Balcony Break
 * Strong Aerial Tailspin
 * Chip damage on block
 * Cancel to r18 with B
 * Interrupt with i15 from 2nd block
-* Last input can be held to power up";bbr chp;;Jab Uppercut > Spinning Heel Drop;r19;;File:t8-p2-asuka-1,2,3.mp4;Asuka-1,2,3;asuka
-1,2,3*;h, m, m;5, 9, 26;i10, ,i52~53;+6;+28a (+19);;"* Balcony Break
+* Last input can be held to power up";bbr chp intr:15;;Jab Uppercut > Spinning Heel Drop;r19;;File:t8-p2-asuka-1,2,3.mp4;Asuka-1,2,3;asuka
+1,2,3*;h, m, m;5, 8, 26;i10, ,i52~53;+6;+28a (+19);;"* Balcony Break
 * Strong Aerial Tailspin
 * Chip damage on block
 * Cancel to r15 with B
-* Interrupt with i36 from 2nd block";bbr chp;;Jab Uppercut > Spinning Heel Drop (Hold);r21;;;Asuka-1,2,3*;asuka
-1,2,4;h, m, m;5, 9, 18;i10, ,i18~19;-12;+18a (-1);;"* Balcony Break
+* Interrupt with i36 from 2nd block";bbr chp intr:36;;Jab Uppercut > Spinning Heel Drop (Hold);r21;;;Asuka-1,2,3*;asuka
+1,2,4;h, m, m;5, 8, 18;i10, ,i18~19;-12;+18a (-1);;"* Balcony Break
 * Combo from 1st CH or 2nd CH with 1f delay
 * Move cannot be delayed
 * Input can be delayed by 1F";bbr;;Jab Uppercut > Front Kick;r31;;File:t8-p2-asuka-1,2,4.mp4;Asuka-1,2,4;asuka
@@ -56,12 +56,12 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 2,1,2;h, h, m;9, 10, 16;i12, ,i26~27;-10;+16a (-1);;"* Tornado
 * Balcony Break
 * Combo from 2nd CH with 1f delay
-* Interrupt with i8 from 2nd block";trn bbr;;Basho Cutter;r33;;File:t8-p2-asuka-2,1,2.mp4;Asuka-2,1,2;asuka
+* Interrupt with i8 from 2nd block";trn bbr intr:8;;Basho Cutter;r33;;File:t8-p2-asuka-2,1,2.mp4;Asuka-2,1,2;asuka
 2,1,d+1+2;h, h, m;9, 10, 23;i12, ,i28~30;-9;+3c;+38a;"* Spike
 * Combo from 2nd CH with 1f delay
 * Cancel to r20 with B
 * Cancel to FC with D
-* Interrupt with i10 from 2nd block";spk;FC;Basho Oroshi;r35;;File:t8-p2-asuka-2,1,d+1+2.mp4;Asuka-2,1,d+1+2;asuka
+* Interrupt with i10 from 2nd block";spk intr:10;FC;Basho Oroshi;r35;;File:t8-p2-asuka-2,1,d+1+2.mp4;Asuka-2,1,d+1+2;asuka
 2,3;h, m;9, 20;i12, i22~23;-17;+11a (-6);;"* Balcony Break
 * Combo from 1st hit with 1f delay
 * Low crush 18~41
@@ -86,7 +86,7 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Cancel to r18 with B
 * Interrupt with i18 from 2nd block
 * Last input can be held to power up
-* Link to attack from Spinning Heel Drop (f+3)";bbr chp;;White Heron Spinning Heel Drop;r19;;File:t8-p2-asuka-1+4,3.mp4;Asuka-1+4,3;asuka
+* Link to attack from Spinning Heel Drop (f+3)";bbr chp intr:18;;White Heron Spinning Heel Drop;r19;;File:t8-p2-asuka-1+4,3.mp4;Asuka-1+4,3;asuka
 3+4;m,M;10,21;i23~24 i6~8;-6;+25a;;"* Floor Break
 * Cancel to FC with D
 * r44 on grounded hit
@@ -100,7 +100,7 @@ f+1,4;m, L;17, 26;i20, i25~27;-26;+24a;;"* Homing
 * Input can be delayed 15f
 * Interrupt with i11 from 1st block
 * Cancel to FC -24 -13 r43? with DB
-* High crush 6~";hom cs6~;FC,FC;Whiplash Sacred Blade;32 FC;;File:t8-p2-asuka-f+1,4.mp4;Asuka-f+1,4;asuka
+* High crush 6~";hom intr:11 cs6~;FC,FC;Whiplash Sacred Blade;32 FC;;File:t8-p2-asuka-f+1,4.mp4;Asuka-f+1,4;asuka
 f+2;M;20;i17~18;-18;+33a (+23);;"* Cancel to r26 FC with D
 * Gain NWG on hit with 1
 * Hit advantage becomes +26a (+16) on NWG gain";;FC;Demon Slayer;r36;;File:t8-p2-asuka-f+2.mp4;Asuka-f+2;asuka
@@ -220,7 +220,7 @@ b+3;m;15;i16~17;-19;+22a (+12);;"* Low crush 10~37
 * Floating state 38~40";js10~37 fs38~40;;Dragon Wheel Kick;r37;;File:t8-p2-asuka-b+3.mp4;Asuka-b+3;asuka
 b+3,2;m, M;15, 20;i16~17, i17~18;-20;+33a (+23);;"* Cancel to r11 with D
 * Gain NWG on hit with 1
-* Interrupt with i23 on 1st block";;;Dragon Wheel Kick Demon Slayer;r38;;File:Asuka_b+3,2.mp4;Asuka-b+3,2;asuka
+* Interrupt with i23 on 1st block";intr:23;;Dragon Wheel Kick Demon Slayer;r38;;File:Asuka_b+3,2.mp4;Asuka-b+3,2;asuka
 b+3,4;m, L;15, 14;i16~17, i20~22;-11;+0;+3;"* Links to db+4 extensions
 * Transition to r22 FC with D
 * High crush 1~";cs1~;db+4 extensions,FC;Dragon Wheel Leg Cutter;r28;;File:t8-p2-asuka-b+3,4.mp4;Asuka-b+3,4;asuka

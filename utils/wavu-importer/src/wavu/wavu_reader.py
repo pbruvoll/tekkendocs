@@ -200,6 +200,7 @@ def _parse_notes(notes: str):
     lines = notes.split("\n")
     tags = []
     short_notes = []
+    interrupt_frames = []
     for line in lines :
         tag = _get_tag(line)
         if tag :
@@ -211,6 +212,14 @@ def _parse_notes(notes: str):
         steppable_tag = _get_steppable_tag(line)
         if steppable_tag :
             tags.append(steppable_tag)
+        frames = _get_interrupt_frames(line)
+        if frames is not None :
+            interrupt_frames.append(frames)
+
+    if interrupt_frames :
+        # a move can have one interrupt note per part of the string. Keep the
+        # slowest one, since that is usually value when blocking the move
+        tags.append("intr:" + str(max(interrupt_frames)))
 
     return ("\n".join(short_notes), " ".join(tags))
 
@@ -222,7 +231,27 @@ def _get_steppable_tag(noteLine: str) :
         return "stp:" + match.group(1).upper()
     return None
 
-def _get_tag(noteLine: str) : 
+
+def _get_interrupt_frames(noteLine: str) :
+    """Reads a line like "* Interrupt with i6 from 1st block" and returns 6"""
+    if noteLine.strip().startswith("**") :
+        # a ** sub bullet belongs to a cancel or a variation of the move above it,
+        # so its frames say nothing about the move itself
+        return None
+
+    cleanLine = noteLine.replace("*", "").strip().lower()
+    if not re.match(r'interrupt(?:able|ible)?\b', cleanLine) :
+        return None
+
+    # "i6", but also "3F" in the few notes which are written that way
+    match = re.search(r'\bi(\d+)', cleanLine) or re.search(r'\b(\d+)f\b', cleanLine)
+    if not match :
+        # notes such as "Interrupt with i? from 4th block" have no known value
+        return None
+    return int(match.group(1))
+
+
+def _get_tag(noteLine: str) :
     cleanLine = noteLine.replace("*", "").strip().lower()
     match cleanLine :
         case "rage art" :

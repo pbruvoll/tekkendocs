@@ -36,7 +36,7 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Move can be delayed 16f
 * Cancel into 1,4,2,1 with f+1
 * Cancel into 1,4,2,4 with f+4
-* Interrupt with i8 from 3rd block";;;;r26;;File:t8-p2-bryan-1,4,2,1,2.mp4;Bryan-1,4,2;bryan
+* Interrupt with i8 from 3rd block";intr:8;;;r26;;File:t8-p2-bryan-1,4,2,1,2.mp4;Bryan-1,4,2;bryan
 1,4,2,1;h, h, h, h;5, 14, 18, 16;i10, ,i19;+0;+55a;;"* Enter SLS +7 +62a r13 with f
 * Cancel to r9 SS with u_d
 * Input can be delayed 8f
@@ -90,7 +90,7 @@ SNE.3+4,2;m, m;20, 20;i18, i14~15;-9;+25a (+20);;"* Balcony Break
 * Consumes SNE
 * Chip damage on block (8)
 * Interrupt with i5 from 1st block
-* Unparryable by traditional parries, Asuka, Nina, etc";bbr chp;;Neo Soul Eraser;r30;;File:t8-p2-bryan-3+4,sne.2.mp4;Bryan-3+4,SNE.2;bryan
+* Unparryable by traditional parries, Asuka, Nina, etc";bbr chp intr:5;;Neo Soul Eraser;r30;;File:t8-p2-bryan-3+4,sne.2.mp4;Bryan-3+4,SNE.2;bryan
 SNE.3+4,2*;m, M;20, 30;i18, i55~56;+9g~+10g;+66a (+50);;"* Tornado
 * Reversal Break
 * Balcony Break
@@ -137,11 +137,8 @@ DF+1,1,1,1;m, m, m, m;8, 2, 2, 2;i15, ,i10;-10;-4;;"* Jail from 1st block with 8
 * Move can be delayed by 25F";;;Vulcan Cannon;r29;;File:t8-p2-bryan-df+1,1,1,1.mp4;Bryan-DF+1,1,1,1;bryan
 DF+1,2;m, m;8, 20;i15, i23;-15;+1;+14a (+5);"* Balcony Break (airborne)
 * Combo from 1st hit
-* Alternate inputs:
-** DF+1,1,2
-** DF+1,1,1,2
-** DF+1,1,1,1,2
-* Interrupt with i3 from 1st block";;;Double Body Blow;r36;;File:t8-p2-bryan-df+1,2.mp4;Bryan-DF+1,2;bryan
+
+* Interrupt with i3 from 1st block";intr:3;;Double Body Blow;r36;;File:t8-p2-bryan-df+1,2.mp4;Bryan-DF+1,2;bryan
 df+2;m;12;i13;-6;+5;;Elbow;elb;;;r25;;File:t8-p2-bryan-df+2,1.mp4;Bryan-df+2;bryan
 df+2,1;m, h;12, 11;i13, i16;-4;+5;;"* Combo from 1st hit
 * Enter SWA -1 +8 r15 with b";;SWA;Blackout Combo;r22;;File:t8-p2-bryan-df+2,1.mp4;Bryan-df+2,1;bryan
@@ -206,29 +203,29 @@ b+2,4;h, m;18, 21;i17, i30-31;-5;+40a (+14);;"* Strong Aerial Tailspin
 * Balcony Break
 * Low crush 16~31
 * Floating state 32~34";bbr js16~31 fs32~34;;Wolf Call;r25;;File:t8-p2-bryan-b+2,4.mp4;Bryan-b+2,4;bryan
-b+3;m;12;;;;;;;;1st Hit;r;;File:t8-p2-bryan-b+3,2,1,2.mp4;Bryan-b+3;bryan
 b+3;m;12;i19;-7;+4;;Enter SLS +1 +12g +12 r18 with f;;SLS;;r26;;File:t8-p2-bryan-b+3,2,1,2.mp4;Bryan-b+3;bryan
-b+3,2;m, h;12, 12;,i16;-4;+7;;Combo from 1st CH;;;;r23;;File:t8-p2-bryan-b+3,2,1,2.mp4;Bryan-b+3,2;bryan
-b+3,2,1;m, h, m;12, 12, 10;,i16, i20;-9;+2;;"* Combo from 2nd hit
+b+3;m;12;;;;;;;;1st Hit;r;;File:t8-p2-bryan-b+3,2,1,2.mp4;Bryan-b+3;bryan
+b+3,2;m, h;12, 12;i19, i16;-4;+7;;Combo from 1st CH;;;;r23;;File:t8-p2-bryan-b+3,2,1,2.mp4;Bryan-b+3,2;bryan
+b+3,2,1;m, h, m;12, 12, 10;i19, ,i20;-9;+2;;"* Combo from 2nd hit
 * Combo from 1st CH";;;;r28;;File:t8-p2-bryan-b+3,2,1,2.mp4;Bryan-b+3,2,1;bryan
-b+3,2,1,2;m, h, m, m;12, 12, 10, 14;,i16, ,i19;-10;+19a (+10);;"* Balcony Break
+b+3,2,1,2;m, h, m, m;12, 12, 10, 14;i19, ,i19;-10;+19a (+10);;"* Balcony Break
 * Combo from 2nd CH";bbr;;Front Kick > Rush;r31;;File:t8-p2-bryan-b+3,2,1,2.mp4;Bryan-b+3,2,1,2;bryan
-b+3,2,1,4;m, h, m, L;12, 12, 10, 12;,i16, ,i22;-11;+0;;* Combo from 2nd CH;;;Run for Cover;r30;;File:t8-p2-bryan-b+3,2,1,4.mp4;Bryan-b+3,2,1,4;bryan
-b+3,4;m, m;12, 18;;;;;;;;2nd Hit;r;;File:t8-p2-bryan-b+3,4,1,2,1,4,2,1,4,2.mp4;Bryan-b+3,4;bryan
-b+3,4,1;m, m, m;12, 18, 5;;;;;;;;3rd Hit;r;;File:t8-p2-bryan-b+3,4,1,2,1,4,2,1,4,2.mp4;Bryan-b+3,4,1;bryan
-b+3,4,1,2;m, m, m, m;12, 18, 5, 7;;;;;;;;4th Hit;r;;File:t8-p2-bryan-b+3,4,1,2,1,4,2,1,4,2.mp4;Bryan-b+3,4,1,2;bryan
-b+3,4,1,2,1;m, m, m, m, h;12, 18, 5, 7, 3;;;;;;;;5th Hit;r;;File:t8-p2-bryan-b+3,4,1,2,1,4,2,1,4,2.mp4;Bryan-b+3,4,1,2,1;bryan
-b+3,4,1,2,1,4;m, m, m, m, h, h;12, 18, 5, 7, 3, 8;;;;;;;;6th Hit;r;;File:t8-p2-bryan-b+3,4,1,2,1,4,2,1,4,2.mp4;Bryan-b+3,4,1,2,1,4;bryan
-b+3,4,1,2,1,4,2;m, m, m, m, h, h, h;12, 18, 5, 7, 3, 8, 5;;;;;;;;7th Hit;r;;File:t8-p2-bryan-b+3,4,1,2,1,4,2,1,4,2.mp4;Bryan-b+3,4,1,2,1,4,2;bryan
-b+3,4,1,2,1,4,2,1;m, m, m, m, h, h, h, h;12, 18, 5, 7, 3, 8, 5, 5;;;;;;;;8th Hit;r;;File:t8-p2-bryan-b+3,4,1,2,1,4,2,1,4,2.mp4;Bryan-b+3,4,1,2,1,4,2,1;bryan
-b+3,4,1,2,1,4,2,1,4;m, m, m, m, h, h, h, h, m;12, 18, 5, 7, 3, 8, 5, 5, 10;;;;;;;;9th Hit;r;;File:t8-p2-bryan-b+3,4,1,2,1,4,2,1,4,2.mp4;Bryan-b+3,4,1,2,1,4,2,1,4;bryan
-b+3,4,1,2,1,4,2,1,4,2;m, m, m, m, h, h, h, h, m, h;12, 18, 5, 7, 3, 8, 5, 5, 10, 20;;;;;;;;10 Hit Combo;r;;File:t8-p2-bryan-b+3,4,1,2,1,4,2,1,4,2.mp4;Bryan-b+3,4,1,2,1,4,2,1,4,2;bryan
-b+3,1+2;m, m;12, 25;,i22;-6;+4c;+26d;"* Floor Break
+b+3,2,1,4;m, h, m, L;12, 12, 10, 12;i19, ,i22;-11;+0;;* Combo from 2nd CH;;;Run for Cover;r30;;File:t8-p2-bryan-b+3,2,1,4.mp4;Bryan-b+3,2,1,4;bryan
+b+3,4;m, m;12, 18;i19, ;;;;;;;2nd Hit;r;;File:t8-p2-bryan-b+3,4,1,2,1,4,2,1,4,2.mp4;Bryan-b+3,4;bryan
+b+3,4,1;m, m, m;12, 18, 5;i19, ;;;;;;;3rd Hit;r;;File:t8-p2-bryan-b+3,4,1,2,1,4,2,1,4,2.mp4;Bryan-b+3,4,1;bryan
+b+3,4,1,2;m, m, m, m;12, 18, 5, 7;i19, ;;;;;;;4th Hit;r;;File:t8-p2-bryan-b+3,4,1,2,1,4,2,1,4,2.mp4;Bryan-b+3,4,1,2;bryan
+b+3,4,1,2,1;m, m, m, m, h;12, 18, 5, 7, 3;i19, ;;;;;;;5th Hit;r;;File:t8-p2-bryan-b+3,4,1,2,1,4,2,1,4,2.mp4;Bryan-b+3,4,1,2,1;bryan
+b+3,4,1,2,1,4;m, m, m, m, h, h;12, 18, 5, 7, 3, 8;i19, ;;;;;;;6th Hit;r;;File:t8-p2-bryan-b+3,4,1,2,1,4,2,1,4,2.mp4;Bryan-b+3,4,1,2,1,4;bryan
+b+3,4,1,2,1,4,2;m, m, m, m, h, h, h;12, 18, 5, 7, 3, 8, 5;i19, ;;;;;;;7th Hit;r;;File:t8-p2-bryan-b+3,4,1,2,1,4,2,1,4,2.mp4;Bryan-b+3,4,1,2,1,4,2;bryan
+b+3,4,1,2,1,4,2,1;m, m, m, m, h, h, h, h;12, 18, 5, 7, 3, 8, 5, 5;i19, ;;;;;;;8th Hit;r;;File:t8-p2-bryan-b+3,4,1,2,1,4,2,1,4,2.mp4;Bryan-b+3,4,1,2,1,4,2,1;bryan
+b+3,4,1,2,1,4,2,1,4;m, m, m, m, h, h, h, h, m;12, 18, 5, 7, 3, 8, 5, 5, 10;i19, ;;;;;;;9th Hit;r;;File:t8-p2-bryan-b+3,4,1,2,1,4,2,1,4,2.mp4;Bryan-b+3,4,1,2,1,4,2,1,4;bryan
+b+3,4,1,2,1,4,2,1,4,2;m, m, m, m, h, h, h, h, m, h;12, 18, 5, 7, 3, 8, 5, 5, 10, 20;i19, ;;;;;;;10 Hit Combo;r;;File:t8-p2-bryan-b+3,4,1,2,1,4,2,1,4,2.mp4;Bryan-b+3,4,1,2,1,4,2,1,4,2;bryan
+b+3,1+2;m, m;12, 25;i19, i22;-6;+4c;+26d;"* Floor Break
 * Combo from 1st CH with 8f delay
 * Interrupt with i4 from 1st block
 * Transition to FC with d
 * Input can be delayed 12f
-* Move can be delayed 10f";fbr;FC;Front Kick > Double Hammer;r34;;File:t8-p2-bryan-b+3,1+2.mp4;Bryan-b+3,1+2;bryan
+* Move can be delayed 10f";fbr intr:4;FC;Front Kick > Double Hammer;r34;;File:t8-p2-bryan-b+3,1+2.mp4;Bryan-b+3,1+2;bryan
 b+4;m;18;i16;-10;+15;;"* Knee
 * Hit vs BT +9a";kne;;Knee Break;r29;;File:t8-p2-bryan-b+4.mp4;Bryan-b+4;bryan
 b+1+4;m;26;i28;-9;+7c;;Spike;spk;;Gravity Blow;r36;;File:t8-p2-bryan-b+1+4.mp4;Bryan-b+1+4;bryan
@@ -338,11 +335,11 @@ ws2;m,t;10,20;i19;-10;+50a;;"* Transition to r90 attack throw on front/side stan
 ws3;m;17;i12;-10;+4;+33a (+27);* Knee;kne;;High Knee Kick;r26;;File:t8-p2-bryan-ws3.mp4;Bryan-ws3;bryan
 ws3,4;m, m;17, 21;i12, i28;-10;+4;+29g;"* Knee
 * Input can be delayed 10f
-* Interrupt with i8 from 1st block";kne;;Double High Knee Kick;r26;;File:t8-p2-bryan-ws3,4.mp4;Bryan-ws3,4;bryan
+* Interrupt with i8 from 1st block";kne intr:8;;Double High Knee Kick;r26;;File:t8-p2-bryan-ws3,4.mp4;Bryan-ws3,4;bryan
 ws4;m;16;i11~12;-6;+5;;;;;Toe Smash;r24;;File:t8-p2-bryan-ws4.mp4;Bryan-ws4;bryan
 SS.1;h;23;i17~18;-5;+15c;;Balcony Break (airborne);;;Hellraiser;r29;;File:t8-p2-bryan-ss.1.mp4;Bryan-SS.1;bryan
 SS.2;M;15;i17~18;-9;+5;;;;;;r29;;File:t8-p2-bryan-ss.2,1.mp4;Bryan-SS.2;bryan
-SS.2,1;M, h;15, 20;i17~18, i21~22;-9;+43d (-15);;"* Heat Engager
+SS.2,1;M, h;15, 20;i17~18, i21~22;-9;+17cg;;"* Heat Engager
 
 * Heat Dash +5, +62a (+42)
 
@@ -351,7 +348,8 @@ SS.2,1;M, h;15, 20;i17~18, i21~22;-9;+43d (-15);;"* Heat Engager
 * Combo from 1st hit with 8f delay
 * Input can be delayed 11f
 * Move can be delayed 10f
-* Cancel to r35 with B (-15/-1)";he bbr elb;;Snake Fang;r30;;File:t8-p2-bryan-ss.2,1.mp4;Bryan-SS.2,1;bryan
+* Cancel to r35 with B (-15/-1)
+* Forces tech back roll on hit";he bbr elb;;Snake Fang;r30;;File:t8-p2-bryan-ss.2,1.mp4;Bryan-SS.2,1;bryan
 FC.df+2;m;12;i13;-9;+4;;Elbow;elb;;;r30;;File:t8-p2-bryan-fc.df+2,1.mp4;Bryan-FC.df+2;bryan
 FC.df+2,1;m, h;12, 25;i13, i22~23;-8;+34a (+8);;"* Balcony Break
 * Combo from 1st hit with 7f delay

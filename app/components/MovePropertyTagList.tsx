@@ -1,7 +1,11 @@
 import { type MoveTag, MoveTags } from '~/constants/moveTags';
 
 import { type Move } from '~/types/Move';
-import { isDuckableString, isSteppableString } from '~/utils/frameDataUtils';
+import {
+  getInterruptableFrames,
+  isDuckableString,
+  isSteppableString,
+} from '~/utils/frameDataUtils';
 
 const tagsToName: Partial<Record<MoveTag, string>> = {
   [MoveTags.HighCrush]: 'High Crush',
@@ -27,6 +31,7 @@ type MovePropertyTagListProps = {
 export const MovePropertyTagList = ({ move }: MovePropertyTagListProps) => {
   const moveTags = move.tags || {};
   const tagKeys = Object.keys(moveTags) as MoveTag[];
+  const interruptableFrames = getInterruptableFrames(move);
 
   return (
     <div className="flex flex-wrap gap-1">
@@ -43,6 +48,12 @@ export const MovePropertyTagList = ({ move }: MovePropertyTagListProps) => {
         <TagComp
           key="steppable"
           name={`Steppable ${moveTags[MoveTags.Steppable] === 'SS' ? '' : moveTags[MoveTags.Steppable]}`}
+        />
+      )}
+      {interruptableFrames !== undefined && (
+        <TagComp
+          key="interruptable"
+          name={`Interruptable i${interruptableFrames}`}
         />
       )}
     </div>
