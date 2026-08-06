@@ -13,6 +13,7 @@ import heihachi from '~/images/t8/guides/heihachi-600.webp';
 import hwoarang from '~/images/t8/guides/hwoarang-600.webp';
 import jin from '~/images/t8/guides/jin-600.webp';
 import jun from '~/images/t8/guides/jun-600.webp';
+import kazuya from '~/images/t8/guides/kazuya-600.webp';
 import king from '~/images/t8/guides/king-600.webp';
 import kuma from '~/images/t8/guides/kuma-600.webp';
 import lars from '~/images/t8/guides/lars-600.webp';
@@ -49,6 +50,7 @@ export const t8GuideImgSmallMap: Record<string, string> = {
   hwoarang,
   jin,
   jun,
+  kazuya,
   king,
   kuma,
   lars,
