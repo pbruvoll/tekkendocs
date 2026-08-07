@@ -1,5 +1,5 @@
-import { Heading } from '@radix-ui/themes';
 import cx from 'classix';
+import { CircleCheck, CircleMinus } from 'lucide-react';
 import { TextWithCommand } from '~/components/TextWithCommand';
 import { useGuideContext } from './GuideContext';
 
@@ -9,28 +9,46 @@ type CoreProps = {
 };
 const Core = ({ section, type }: CoreProps) => {
   const { charUrl, compressedCommandMap } = useGuideContext();
+  const isStrengths = type === 'strengths';
+  const Icon = isStrengths ? CircleCheck : CircleMinus;
   return (
-    <section className="mb-4" id={type}>
-      <Heading
-        as="h2"
-        size="4"
+    <section
+      id={type}
+      className={cx(
+        'overflow-hidden rounded-xl border',
+        isStrengths ? 'border-success/40' : 'border-destructive/40',
+      )}
+    >
+      <h2
         className={cx(
-          type === 'strengths'
-            ? 'border-l-4 border-success bg-success/20 text-foreground-success'
-            : 'border-l-4 border-destructive bg-destructive/20 text-foreground-destructive',
-          'p-2',
+          'flex items-center gap-2 px-4 py-2.5 text-lg font-bold',
+          isStrengths
+            ? 'bg-success/15 text-foreground-success'
+            : 'bg-destructive/15 text-foreground-destructive',
         )}
       >
-        {type === 'strengths' ? 'Strengths' : 'Weaknesses'}
-      </Heading>
-      <ul className="mt-2">
-        {section.map((section, index) => (
-          <li key={index} className="ms-4 list-outside list-disc p-1">
-            <TextWithCommand
-              text={section}
-              charUrl={charUrl}
-              compressedCommandMap={compressedCommandMap}
+        <Icon aria-hidden className="size-5 shrink-0" />
+        {isStrengths ? 'Strengths' : 'Weaknesses'}
+      </h2>
+      <ul className="space-y-2.5 p-4">
+        {section.map((text, index) => (
+          <li key={`${text.slice(0, 40)}-${index}`} className="flex gap-2.5">
+            <Icon
+              aria-hidden
+              className={cx(
+                'mt-1 size-4 shrink-0',
+                isStrengths
+                  ? 'text-foreground-success'
+                  : 'text-foreground-destructive',
+              )}
             />
+            <span className="leading-relaxed">
+              <TextWithCommand
+                text={text}
+                charUrl={charUrl}
+                compressedCommandMap={compressedCommandMap}
+              />
+            </span>
           </li>
         ))}
       </ul>
@@ -48,9 +66,9 @@ export const StrengthsWeaknesses = ({
   weaknesses,
 }: StrengthsWeaknessesProps) => {
   return (
-    <section className="grid-cols-2 gap-2 md:grid">
-      {strengths?.length && <Core section={strengths} type="strengths" />}
-      {weaknesses?.length && <Core section={weaknesses} type="weaknesses" />}
+    <section className="my-10 grid items-start gap-4 md:grid-cols-2">
+      {!!strengths?.length && <Core section={strengths} type="strengths" />}
+      {!!weaknesses?.length && <Core section={weaknesses} type="weaknesses" />}
     </section>
   );
 };
