@@ -161,16 +161,15 @@ export const MoveCardWithVideo = ({
                 </span>
               </div>
 
-              <div className="flex justify-between mt-1">
-                <div className="pt-2 place-self-end">
-                  {move.notes && (
-                    <ShowNotes.Trigger
-                      showNotes={showNotes}
-                      setShowNotes={setShowNotes}
-                    />
-                  )}
-                </div>
-                <div className="flex flex-col items-end gap-2">
+              <div className="flex items-start justify-between gap-4 mt-1">
+                {move.notes && (
+                  <ShowNotes.Trigger
+                    showNotes={showNotes}
+                    setShowNotes={setShowNotes}
+                    className="shrink-0 py-0.5"
+                  />
+                )}
+                <div className="ml-auto flex flex-col items-end gap-2">
                   <MovePropertyIconList move={move} />
                   <MovePropertyTagList move={move} />
                 </div>

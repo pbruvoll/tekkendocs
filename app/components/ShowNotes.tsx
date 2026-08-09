@@ -48,7 +48,7 @@ const ShowNotesTrigger = ({
       type="button"
       onClick={() => setShowNotes(!showNotes)}
       className={cx(
-        `text-xs text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1`,
+        `text-xs text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1 whitespace-nowrap`,
         className,
       )}
     >

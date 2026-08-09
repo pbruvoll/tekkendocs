@@ -46,8 +46,12 @@ const mainFeatures: MainFeature[] = [
 export const MainFeatureCards = () => {
   return (
     <ul className="grid grid-cols-2 gap-2 xs:gap-3 lg:grid-cols-4">
-      {mainFeatures.map(({ name, description, url, icon: Icon }) => (
-        <li key={name} className="h-full">
+      {mainFeatures.map(({ name, description, url, icon: Icon }, index) => (
+        <li
+          key={name}
+          className="h-full translate-y-0 opacity-100 transition-[opacity,translate] duration-500 ease-out motion-reduce:transition-none starting:translate-y-3 starting:opacity-0"
+          style={{ transitionDelay: `${index * 75}ms` }}
+        >
           <Link to={url} className="group block h-full">
             <div className="relative flex h-full flex-col gap-2 overflow-hidden rounded-lg border border-border bg-card p-3 transition duration-300 xs:p-4 hover:-translate-y-1 hover:border-primary hover:shadow-lg">
               <div className="flex items-center gap-2.5">

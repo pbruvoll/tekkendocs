@@ -23,7 +23,12 @@ export const CharacterCard2 = ({
   return (
     <Link to={url} className="block h-full cursor-pointer">
       <Card className="group h-full transform transition duration-500 hover:scale-110 hover:border-b-gray-700 hover:shadow-sm">
-        <Inset clip="padding-box" className="relative" side="top" pb="current">
+        <Inset
+          clip="padding-box"
+          className="relative"
+          side="top"
+          pb={size === 'large' ? 'current' : '0'}
+        >
           <img
             src={imgUrl}
             alt={name}
@@ -31,7 +36,7 @@ export const CharacterCard2 = ({
               'h-full w-full rounded',
               size === 'large'
                 ? 'aspect-[1.55] object-cover object-[80%_50%]'
-                : 'object-contain',
+                : 'mb-1 object-contain',
             )}
           />
           {badge && (

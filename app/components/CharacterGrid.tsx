@@ -25,10 +25,10 @@ export const CharacterGrid = ({ characterCards, size }: CharacterGridProps) => {
     >
       <ul
         className={cx(
-          'grid gap-x-1 gap-y-1',
+          'grid',
           size === 'large'
-            ? 'grid-cols-3 gap-x-2 gap-y-2 xs:grid-cols-4 xs:gap-x-3 xs:gap-y-4 sm:grid-cols-5 md:grid-cols-6'
-            : 'grid-cols-4 xs:grid-cols-5 xs:gap-x-2 xs:gap-y-3 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-9',
+            ? 'grid-cols-3 gap-x-2 gap-y-3 xs:grid-cols-4 xs:gap-x-3 xs:gap-y-4 sm:grid-cols-5 md:grid-cols-6'
+            : 'grid-cols-4 gap-x-1 gap-y-3 xs:grid-cols-5 xs:gap-x-2 xs:gap-y-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-9',
         )}
       >
         {characterCards.map(
@@ -50,7 +50,6 @@ export const CharacterGrid = ({ characterCards, size }: CharacterGridProps) => {
                   },
                 }}
                 key={index}
-                className="mb-4"
               >
                 <li className="h-full cursor-pointer" key={name}>
                   <CharacterCard2

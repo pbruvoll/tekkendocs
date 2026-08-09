@@ -36,7 +36,7 @@ export const GuideNav = ({ guideData }: GuideNavProps) => {
           <Link
             key={name}
             to={`#${name.toLowerCase().replace(/ /g, '-')}`}
-            className="rounded-r-full border border-border border-l-2 border-l-primary bg-muted/50 py-px pl-1.5 pr-2 text-xs text-primary transition-colors hover:bg-muted"
+            className="rounded-r-full border border-border border-l-2 border-l-primary bg-muted/50 py-px pl-1.5 pr-2 text-sm text-primary transition-colors hover:bg-muted"
           >
             {name}
           </Link>

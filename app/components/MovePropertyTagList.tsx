@@ -21,7 +21,9 @@ const tagsToName: Partial<Record<MoveTag, string>> = {
 };
 
 const TagComp = ({ name }: { name: string }) => (
-  <span className="rounded bg-muted px-1.5 py-0.5 text-xs">{name}</span>
+  <span className="rounded-md border border-muted-foreground/50 bg-muted/40 px-1.5 py-0.5 text-xs">
+    {name}
+  </span>
 );
 
 type MovePropertyTagListProps = {
