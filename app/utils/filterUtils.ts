@@ -34,6 +34,10 @@ export const getFilterFromParams = (
       searchParams,
       filterKey.HitLevel,
     ),
+    prevHitLevels: getSearchParamStringList<HitLevel>(
+      searchParams,
+      filterKey.PrevHitLevel,
+    ),
     startupFrameMin: getSearchParamNumber(
       searchParams,
       filterKey.StartupFrameMin,

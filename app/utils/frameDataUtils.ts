@@ -275,6 +275,15 @@ export const filterRows = (
     });
   }
 
+  if (filter.prevHitLevels?.length) {
+    filterFuncs.push((row: string[]) => {
+      const hitLevelParts = row[1]?.split(', ');
+      const prevHitLevel =
+        hitLevelParts?.[hitLevelParts.length - 2]?.[0]?.toLowerCase();
+      return !!filter.prevHitLevels?.includes(prevHitLevel as HitLevel);
+    });
+  }
+
   if (filter.startupFrameMax !== undefined) {
     const startupFrameMax = filter.startupFrameMax;
     filterFuncs.push((row: string[]) => {
@@ -426,6 +435,15 @@ export const filterMoves = (moves: Move[], filter: MoveFilter | undefined) => {
     filterFuncs.push((move: Move) => {
       const lastHitLevel = move.hitLevel?.split(', ').pop()?.[0]?.toLowerCase();
       return !!filter.hitLevels?.includes(lastHitLevel as HitLevel);
+    });
+  }
+
+  if (filter.prevHitLevels?.length) {
+    filterFuncs.push((move: Move) => {
+      const hitLevelParts = move.hitLevel?.split(', ');
+      const prevHitLevel =
+        hitLevelParts?.[hitLevelParts.length - 2]?.[0]?.toLowerCase();
+      return !!filter.prevHitLevels?.includes(prevHitLevel as HitLevel);
     });
   }
 
