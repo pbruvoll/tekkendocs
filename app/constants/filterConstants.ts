@@ -1,6 +1,7 @@
 export const filterKey = {
   Query: 'q',
   HitLevel: 'hitLevel',
+  PrevHitLevel: 'prevHitLevel',
   StartupFrameMin: 'startupFrameMin',
   StartupFrameMax: 'startupFrameMax',
   BlockFrameMin: 'blockFrameMin',
