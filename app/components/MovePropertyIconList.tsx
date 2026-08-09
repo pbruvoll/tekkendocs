@@ -45,26 +45,30 @@ export const MovePropertyIconList = ({
   const tagKeys = Object.keys(moveTags) as MoveTag[];
   const iconSize = iconSizeByVariant[size];
 
-  return (
-    <div className="flex gap-1">
-      {tagKeys.map((tagKey) => {
-        const iconImage = tagsToIconImage[tagKey];
-        if (!iconImage) {
-          return null;
-        }
-        const title = moveTagToDescription[tagKey] || tagKey;
-        return (
-          <img
-            key={tagKey}
-            src={iconImage}
-            alt={title}
-            title={title}
-            width={iconSize}
-            height={iconSize}
-            className="shrink-0"
-          />
-        );
-      })}
-    </div>
-  );
+  const propertyIcons = tagKeys
+    .map((tagKey) => {
+      const iconImage = tagsToIconImage[tagKey];
+      if (!iconImage) {
+        return null;
+      }
+      const title = moveTagToDescription[tagKey] || tagKey;
+      return (
+        <img
+          key={tagKey}
+          src={iconImage}
+          alt={title}
+          title={title}
+          width={iconSize}
+          height={iconSize}
+          className="shrink-0"
+        />
+      );
+    })
+    .filter(Boolean);
+
+  if (propertyIcons.length === 0) {
+    return null;
+  }
+
+  return <div className="flex gap-1">{propertyIcons}</div>;
 };
