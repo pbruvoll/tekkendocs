@@ -162,12 +162,14 @@ H.f+3+4,2;m, sm,sm,sm,sm;12, 12,12,5,5;i14, i30, i5, i6, i6;-6;+19a (+9);;"* Bal
 * Move can be delayed by 4F
 * Input can be delayed by 5F";bbr;;Quick Kiss Shot;r37;;;Nina-f+3+4,H.2;nina
 df+1;m;10;i13~14;-1;+5;;;;;Uppercut;r19;;File:t8-p2-nina-df+1,2.mp4;Nina-df+1;nina
-df+1,2;m, h;10, 10;i13~14, i16;-5;+2;;"* Jail from 1st attack with 1f delay
+df+1,2;m, h;10, 10;i13~14, i16;-5;+2;;"* Jail from 1st block
+* Combo from 1st hit
 * Enter SS -1 +6 +13 with D_U
 * Enter CD +0 +7 +14 with F
 * Links to 1 jab extensions";;SS,CD,1 jab extensions;Uppercut > Jab;r21;;File:t8-p2-nina-df+1,2.mp4;Nina-df+1,2;nina
-df+1,2,1;m, h, h;10, 10, 17;i13~14, ,i26~27;-3;+2;;"* Move cannot be delayed
-* Interrupt with i7 from 2nd block";intr:7;;;r32;;;Nina-df+1,2,1;nina
+df+1,2,1;m, h, h;10, 10, 17;i13~14, ,i26~27;-3;+2;;"* Interrupt with i7 from 1st block
+* Whiffs vs SSL from 1st block
+* Move cannot be delayed";stp:SSL intr:7;;;r32;;;Nina-df+1,2,1;nina
 df+1,2,1,1+2;m, h, h, h,h,h;10, 10, 17, 6,6,6;i13~14, ,i25 i32 i39;-9;+8c;;"* Balcony Break
 * Weapon
 * Jail from 3rd attack
@@ -196,36 +198,49 @@ df+2;m;12;i15~16;-7;+34a (+24);;"* +4s on hit against crouching opponent
 * Does not launch crouching opponent";;;Silent Uppercut;r25;;File:t8-p2-nina-df+2.mp4;Nina-df+2;nina
 df+3;m;13;i14;-11;+0;+1;;;;;r29;;File:t8-p2-nina-df+3,1,2.mp4;Nina-df+3;nina
 df+3,1;m, h;13, 10;i14, i30;-8;+3;;"* Combo from 1st CH
-* Input can be delayed 10f
-* Cancel to SS -19 -8 -7 with D_U";;SS;;r27;;File:t8-p2-nina-df+3,1,2.mp4;Nina-df+3,1;nina
-df+3,1,2;m, h, M;13, 10, 20;i14, ,i25~27;-12c;+16a;+16a;"* Balcony Break
+* Interrupt with i11 from 1st block
+* Whiffs vs SSR, SWR from 1st block
+** Must delay SSR or perform SSR to delayed SWR
+* Move can be delayed by 10f
+* Cancel to SS -19 -8 -7 with D_U";stp:SSR intr:11;SS;;r27;;File:t8-p2-nina-df+3,1,2.mp4;Nina-df+3,1;nina
+df+3,1,2;m, h, M;13, 10, 20;i14, ,i25~27;-12c;+16d;+16a;"* Balcony Break
 * Spike
-* Combo from 2nd hit
-* Combo from 1st CH
+* Combo from 1st CH or 2nd hit
+* Interrupt with i5 from 2nd block
 * Opponent is FDFA on NH
-* Opponent is FUFT on CH, can combo";bbr spk;;Dead Drop Combo;r35;;File:t8-p2-nina-df+3,1,2.mp4;Nina-df+3,1,2;nina
+* Opponent is FUFT on CH, can combo";bbr spk intr:5;;Dead Drop Combo;r35;;File:t8-p2-nina-df+3,1,2.mp4;Nina-df+3,1,2;nina
 df+3,2;m, h;13, 12;i14, i19;+1;+5;+12;"* Combo from 1st hit with 10f delay
+* Move cannot be interrupted
 * Enter SS 0 +4 +11 with D or U
 * Enter CD -1 +3 +10 t29 r10 with F
 * Enter SWA +8 +12 +19 with B";;SS,CD,SWA;;r18;;File:t8-p2-nina-df+3,2,1,4.mp4;Nina-df+3,2;nina
 df+3,2,1;m, h, h;13, 12, 6;i14, ,i16;-3;+4;;"* Combo from 2nd CH with 9f delay
-* Jail from 2nd block with 3f delay";;;;r21;;File:t8-p2-nina-df+3,2,1,4.mp4;Nina-df+3,2,1;nina
-df+3,2,1,2;m, h, h, h;13, 12, 6, 6;i14, ,i16;;+1;;"* Combo from 3th CH with ?f delay
-* Input can be delayed ?f
-* Interrupt with i? from 3th block";;;;;;;Nina-df+3,2,1,2;nina
+* Jail from 2nd block with 3f delay
+* Links to 10-hit combo";;combo;;r21;;File:t8-p2-nina-df+3,2,1,4.mp4;Nina-df+3,2,1;nina
+df+3,2,1,2;m, h, h, h;13, 12, 6, 6;i14, ,i16;;+1;;"* Jail from 3rd block with 2f delay
+* Combo from 3th CH with 9f delay
+* Move can be delayed by 11f";;;;;;;Nina-df+3,2,1,2;nina
 df+3,2,1,2,1+2;m, h, h, h, m;13, 12, 6, 6, 22;i14, ,i23;-14;+17a (+8);+36d (+28);"* Balcony Break
-* Combo from 4th CH with ?f delay
-* Input can be delayed 10f
-* Interrupt with i? from 4th block";bbr;;;r34;;;Nina-df+3,2,1,2,1+2;nina
-df+3,2,1,4;m, h, h, L;13, 12, 6, 12;i14, ,i23;-13;-2;;"Combo from 3rd CH with 2f delay
-* High crush 10~";cs10~;FC;Creeping Snake;r32 FC;;File:t8-p2-nina-df+3,2,1,4.mp4;Nina-df+3,2,1,4;nina
+* Combo from 4th CH with 7f delay
+* Interrupt with i3 from 4th block
+* Move can be delayed 10f";bbr intr:3;;;r34;;;Nina-df+3,2,1,2,1+2;nina
+df+3,2,1,4;m, h, h, L;13, 12, 6, 12;i14, ,i23;-13;-2;;"* Combo from 3rd CH with 2f delay
+* Interrupt with i4 from 3rd block
+* -2c vs crouching opponents
+* Move can be delayed by 11f
+* High crush 10~55";intr:4 cs10~55;FC;Creeping Snake;r32 FC;;File:t8-p2-nina-df+3,2,1,4.mp4;Nina-df+3,2,1,4;nina
 df+3,2,3;m, h, m;13, 12, 21;i14, ,i19~20;-17;+36a (+26);;"* Tornado
-* Combo from 2nd CH with 10f delay";trn;;Creeping Snake > Geyser Cannon;r37;;File:t8-p2-nina-df+3,2,3.mp4;Nina-df+3,2,3;nina
+* Combo from 2nd CH with 10f delay
+* Interrupt with i8 from 2nd block";trn intr:8;;Creeping Snake > Geyser Cannon;r37;;File:t8-p2-nina-df+3,2,3.mp4;Nina-df+3,2,3;nina
 df+3,2,4;m, h, h;13, 12, 22;i14, ,i22;-6;+20a (+11);+49a;"* Balcony Break
-* Combo from 2nd CH with 8f delay";bbr;;Creeping Snake > Right High Kick;r30;;File:t8-p2-nina-df+3,2,4.mp4;Nina-df+3,2,4;nina
+* Combo from 2nd CH with 8f delay
+* Interrupt with i2 from 2nd block
+* Move can be delayed by 9f";bbr intr:2;;Creeping Snake > Right High Kick;r30;;File:t8-p2-nina-df+3,2,4.mp4;Nina-df+3,2,4;nina
 df+3,3;m, m;13, 14;i14, i28;-10;+2c;;"* Spike
-* Combo from 1st hit with 1f delay
-* Input can be delayed 10f";spk;;Bisection Combo;r34;;File:t8-p2-nina-df+3,3.mp4;Nina-df+3,3;nina
+* Combo from 1st hit with 2f delay
+* Interrupt with i9 from 1st block
+* Whiffs vs SSR and SW from 1st block
+* Move can be delayed 10f";spk stp:SSR intr:9;;Bisection Combo;r34;;File:t8-p2-nina-df+3,3.mp4;Nina-df+3,3;nina
 df+4;m;15;i12;-4;+7;;;;;;r23;;;Nina-df+4;nina
 df+3+4;;;i31~35;;;;"* i20~24 startup with input d,DF+4
 * High crush 4~";cs4~;FC;;r45 FC;;;Nina-df+3+4;nina

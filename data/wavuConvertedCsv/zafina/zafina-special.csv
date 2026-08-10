@@ -2,7 +2,7 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 H.2+3;h,sm;51;i12~13 i47~53 i1~7 i1~7 i1~6 i1~2;+3;+0d;;"* Heat Smash
 * Reversal Break
 * Balcony Break
-* Jail from 1st attack
+* Jail from 1st block
 * 10 chip damage on block
 * Transition to attack throw on hit";hs rbr bbr;;Curse of Azazel;;;File:Zafina Heat Smash.mp4;Zafina-H.2+3;zafina
 R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
@@ -15,10 +15,12 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Consumes Rage
 * Power crush 8~";ra rbr pc8~;;Semper Avarus Eget;r39;;;Zafina-R.df+1+2;zafina
 1;h;5;i10;+1;+8;;Recovers 2f faster on hit or block (t27 r17);;;Jab;r19;;File:t8-p2-zafina-1,2.mp4;Zafina-1;zafina
-1,2;h, h;5, 9;i10, i12;-3;+8;;Jail from 1st attack;;;Left Right Combo;r22;;File:t8-p2-zafina-1,2.mp4;Zafina-1,2;zafina
+1,2;h, h;5, 9;i10, i12;-3;+8;;"* Jail from 1st block with 3F delay
+* Combo from 1st hit with 3F delay";;;Left Right Combo;r22;;File:t8-p2-zafina-1,2.mp4;Zafina-1,2;zafina
 1,2,3;h, h, h;5, 9, 12;i10, ,i20;0;+9;;"* Combo from 2nd hit CH with 8f delay
+* Interrupt with i1
 * Move can be delayed 7f
-* Cancel SCR transition -9 +0 t71 r28 with B";;SCR;Left Right Scarecrow;r42 SCR;;File:t8-p2-zafina-1,2,3.mp4;Zafina-1,2,3;zafina
+* Cancel SCR transition -9 +0 t71 r28 with B";intr:1;SCR;Left Right Scarecrow;r42 SCR;;File:t8-p2-zafina-1,2,3.mp4;Zafina-1,2,3;zafina
 1,3;h, h;5, 14;i10, i17~18;-2;+7;;"* Combo from 1st hit with 3f delay
 * Jail from 1st attack with 1f delay
 * Move can be delayed 2f
@@ -27,13 +29,13 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Combo from 1st hit with 3f delay
 * Move can be delayed 1f";trn;TRT;Ecdysis;r25 TRT;;File:t8-p2-zafina-1,4.mp4;Zafina-1,4;zafina
 2;h;8;i10;-7;-1;;;;;;r26;;File:t8-p2-zafina-2,1,3.mp4;Zafina-2;zafina
-2,1;h, m;8, 9;i10, i23~25;-6c;+2;;"* Spike
+2,1;h, m;8, 9;i10, i23~25;-6c;+2c;;"* Spike
 * Combo from 1st hit CH with 3f delay
 * Move can be delayed 1f";spk;;;r31;;File:t8-p2-zafina-2,1,3.mp4;Zafina-2,1;zafina
 2,1,3;h, m, L;8, 9, 11;i10, ,i32;-17;+4d;;"* Combo from 2nd hit CH with 1f delay
 * Input can be delayed 11f
 * Move can be delayed 10f
-* Cancel 3rd hit to MNT -17 -9 r25 with D
+* Cancel 3rd hit to MNT -17 -9c r25 with D
 * Floating state 6~31
 * High crush 32~69";fs6~31 cs32~69;MNT;Kapara;r36 MNT;;File:t8-p2-zafina-2,1,3.mp4;Zafina-2,1,3;zafina
 2,2;h, m;8, 12;i10, i19-20;-9;+2;+7;"* Combo from 1st hit CH with 6f delay
@@ -271,6 +273,9 @@ f,F+3+4;m,m;10,21;i21 i8~12;-11;+15a (+6);;"* Balcony Break
 * Enter MNT -12 +14a (+5) with D
 * Low crush 6~23
 * Floating state 24~26";bbr js6~23 fs24~26;MNT;Gallu;r31;;;Zafina-f,f+3+4;zafina
+ub,b;sp;;;;;;"* Transition to r55 MNT with 3+4 (js9~25, cs31~55) at frame 25
+* Low crush 9~40
+* Floating state 41~43";js9~40 fs41~43;MNT;Back Handspring;r49;;;Zafina-ub,b;zafina
 f,f,F+3;m;30;i23~26;+7;+19a (+9);;"* Balcony Break
 * Cancel SCR transition +3 +15a (+5) t58 r32 with B
 * 9 chip damage on block
@@ -284,7 +289,7 @@ f,f,F+1+2;h;20;i20~21;+6;+32a;;"* Strong Aerial Tailspin
 * Floating state 40~";hom bbr js20~39 fs40~;TRT;Tiamat;34 TRT;;File:t8-p2-zafina-f,f,f+1+2.mp4;Zafina-f,f,F+1+2;zafina
 ws1;m;8;i15~16;-10;+1;;High evasion during move startup;;;;r28;;File:t8-p2-zafina-ws1,2.mp4;Zafina-ws1;zafina
 ws1,2;m, m;8, 8;i15~16, i20~21;-13;+36a (+26);;"* Combo from 1st hit with 9f delay
-* Can always interupt with i10 from 1st block
+* Interupt with i10 from 1st block
 * Delay does not change the timing of the attack";;;Alraune;r23;;File:t8-p2-zafina-ws1,2.mp4;Zafina-ws1,2;zafina
 ws2;m;20;i18~19;-14;+28a (+18);;"* Tornado
 * Enter MNT -40 +2a (-8) r60 with D";trn;MNT;Rising Claw;r41;;File:t8-p2-zafina-ws2.mp4;Zafina-ws2;zafina

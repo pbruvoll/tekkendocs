@@ -202,9 +202,11 @@ db+4,1+2;L, m;7, 20;i16, i15;-12;+39d (-19);;"* Balcony Break
 * Combo from 1st CH even with delay
 * Can be delayed
 * CH-confirmable from 1st CH";bbr;;Un Oshi-kuzushi;r34;;File:Reina-db+4,1+2.mp4;Reina-db+4,1+2;reina
-b+1;h;14;i18;-4;+6;;;;;;r23;;File:Reina-b+1.mp4;Reina-b+1;reina
-b+1,1;h, m;14, 15;i18, i22;-10;-4;;"* Combo from 1st hit without delay
-* Can be delayed";;;;r28;;File:Reina-b+1,1.mp4;Reina-b+1,1;reina
+b+1;h;14;i18;-4;+6;;;;;;r24;;File:Reina-b+1.mp4;Reina-b+1;reina
+b+1,1;h, m;14, 15;i18, i22;-10;-4;;"* Combo from 1st hit with 8F delay
+* Interrupt with i3 from 1st block
+* Move can be delayed by 10F
+* Input can be delayed by 12F";intr:3;;;r29;;File:Reina-b+1,1.mp4;Reina-b+1,1;reina
 b+1,1,3;h, m, m;14, 15, 13;i18, ,i15~17;-10;+3;;"* Transition to SEN r18 with F (+0/+13)
 * Cannot block up to i14 on empty transition on block
 * Combo from 2nd CH
@@ -213,8 +215,8 @@ b+1,1,3,3;h, m, m, m;14, 15, 13, 20;i18, ,i32;-16;+48 (+17);+53a;;;;Hen-in 4 Hit
 b+1+3;;;;;;;"* Parry mids and highs
 * Converts incoming damage to recoverable health
 * Transitions to WRA on successful parry with +(recv - 17) where recv is the recovery of the parried move
-* Parry state 3~8";ps3~8;;Tatenashi;;;File:Reina-b+1+3.mp4;Reina-b+1+3;reina
-b+2;m;14;i16~17;-9;+3;;Homing;hom;;Sin Smiter;r29;;File:Reina-b+2.mp4;Reina-b+2;reina
+* Parry state 3~8";ps3~8;;Tatenashi;r27;;File:Reina-b+1+3.mp4;Reina-b+1+3;reina
+b+2;m;14;i16~17;-9;+3;;Homing;hom;;Sin Smiter;r30;;File:Reina-b+2.mp4;Reina-b+2;reina
 b+3;;;;;;;"* Transition to UNS (Gen)
 * Transition to UNS (Kou) r18 with u+3_d+3
 * Transition to SEN r14 with f+3
@@ -222,12 +224,12 @@ b+3;;;;;;;"* Transition to UNS (Gen)
 ** Execute EWGF or EWGK by inputting 2 or 3 respectively exactly one frame after DF
 * See also Unsoku Cancel";;UNS,UNS,SEN,WGS,UNS;Unsoku Gen;r20 UNS;;File:Reina-b+3.mp4;Reina-b+3;reina
 b+4;h;20;i18;-8;+35a;+71a (+55);"* Tornado
-* High crush 6~17";trn cs6~17;;Ebi-geri;r32;;File:Reina-b+4.mp4;Reina-b+4;reina
-b+1+2;m;20;i18;-13;+14g;;"* Balcony Break
+* High crush 6~17";trn cs6~17;;Ebi-geri;r33;;File:Reina-b+4.mp4;Reina-b+4;reina
+b+1+2;m;20;i18;-13;+14cg;;"* Balcony Break
 * -8 frame advantage and 8 chip damage on block after absorbing an attack in power crush state
-* Power crush 7~17";bbr pc7~17;;Kugai Dachi;r35;;File:Reina-b+1+2.mp4;Reina-b+1+2;reina
+* Power crush 7~17";bbr pc7~17;;Kugai Dachi;r36;;File:Reina-b+1+2.mp4;Reina-b+1+2;reina
 b+1+4;ub(m);50;i64;;+20d (-1);;"* Balcony Break
-* Can cancel with input b,b";bbr;;Clairvoyant Fatal Violet;;;File:Reina-b+1+4.mp4;Reina-b+1+4;reina
+* Cancel to r40 with b,b at frame 40";bbr;;Clairvoyant Fatal Violet;r50;;File:Reina-b+1+4.mp4;Reina-b+1+4;reina
 ub+4;m;13;i17~18;-13;+16a (-1);;"* Tornado
 * Balcony Break
 * Low crush 9~";trn bbr js9~;;Silver Gleam;r32;;File:Reina-uf+4.mp4;Reina-ub+4;reina
