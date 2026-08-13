@@ -104,7 +104,9 @@ f+2,2,1,1;h, h, m, m;10, 10, 12, 25;i13~14, ,i20~21;-15;+20 (+15);;"* Balcony Br
 f+2,2,2;h, h, h,m,m;10, 10, 7,5,20;i13~14, ,i14,i12~13,i7~8;-13;+20a;;"* Balcony Break
 * Weapon
 * Combo from 2nd CH";bbr wpn;;Radiant Cut;;;File:t8-p2-victor-f+2,2,2.mp4;Victor-f+2,2,2;victor
-f+3;sp;;i20;;;;"* Cancel to r20 cs5~ FC with df
+f+3;sp;;;;;;"* Cannot block in stance
+* Cancel to r20 cs5~ FC with df
+** Block 2F faster with FC cancel
 * Punch parry only
 * +15~+20 PRF on successful parry
 * Can perform Heat Burst and Heat Smash from stance
@@ -128,29 +130,35 @@ f+1+2;m;30;i24~25;+3;+1a;;"* Balcony Break
 
 * Weapon
 * 9 chip damage on block";bbr he wpn;;Durandal;51;;File:t8-p2-victor-f+1+2.mp4;Victor-f+1+2;victor
-df+1;m;10;i13~14;-2;+4;;;;;;21;;File:t8-p2-victor-df+1,1.mp4;Victor-df+1;victor
-df+1,1;m, h,h;10, 7,7;i13~14, i20;-4;+7;;"* Weapon
-* Combo from 1st hit";wpn;;Trilliant Cut;;;File:t8-p2-victor-df+1,1.mp4;Victor-df+1,1;victor
-df+2;m;14;i15~16;-14;+31a (+21);;* Weapon;wpn;;Arcadia;r35;;File:t8-p2-victor-df+2.mp4;Victor-df+2;victor
-df+3;m;10;i16;-9;+2;;;;;;28;;File:t8-p2-victor-df+3,4,2.mp4;Victor-df+3;victor
+df+1;m;10;i13~14;-2;+4;;;;;;r20;;File:t8-p2-victor-df+1,1.mp4;Victor-df+1;victor
+df+1,1;m, h,h;10, 7,7;i13~14, i20, i14;-4;+7;;"* Weapon
+* Combo from 1st hit
+* Interrupt with i1 from 1st block";wpn intr:1;;Trilliant Cut;r23;;File:t8-p2-victor-df+1,1.mp4;Victor-df+1,1;victor
+df+2;m;14;i15~16;-14;+31a (+21);;"* Weapon
+* Recovers 3f faster on hit (t48 r32)";wpn;;Arcadia;r35;;File:t8-p2-victor-df+2.mp4;Victor-df+2;victor
+df+3;m;10;i16;-9;+2;;;;;;r28;;File:t8-p2-victor-df+3,4,2.mp4;Victor-df+3;victor
 df+3,4;m, m;10, 14;i16, i21;-9;+2;;"* Knee
-* Combo from 1st CH";kne;;;;;File:t8-p2-victor-df+3,4,2.mp4;Victor-df+3,4;victor
+* Combo from 1st CH
+* Interrupt with i1";kne intr:1;;;r28;;File:t8-p2-victor-df+3,4,2.mp4;Victor-df+3,4;victor
 df+3,4,2;m, m, sm;10, 14, 23;i16, ,i32~34;-9;+17a (+10);+35a;"* Tornado
 * Weapon
 * Projectile
-* Deals 6 chip damage on block";trn wpn;;Iridescence of Loyalty;;;File:t8-p2-victor-df+3,4,2.mp4;Victor-df+3,4,2;victor
-df+4;m;15;i13~14;-9;+5;;* Knee;kne;;;30;;File:t8-p2-victor-df+4,2.mp4;Victor-df+4;victor
+* Interrupt with i12 from 2nd block
+* 6 chip damage on block";trn wpn intr:12;;Iridescence of Loyalty;r31;;File:t8-p2-victor-df+3,4,2.mp4;Victor-df+3,4,2;victor
+df+4;m;15;i13~14;-9;+5;;* Knee;kne;;;r29;;File:t8-p2-victor-df+4,2.mp4;Victor-df+4;victor
 df+4,2;m, h;15, 16;i13~14, i22;-3;+4;;"* Strong Aerial Tailspin
-* Wall Crush +12g on hit
+* Wall Crush +12cg on hit, 3 chip damage on block
 
 
 * Weapon
 * Projectile
 * Combo from 1st hit
-* Deals 6 chip damage on blocked gunshot
-* Transitions to IAI (cannot cancel)";wc wpn;IAI;Selfish Miranda;IAI;;File:t8-p2-victor-df+4,2.mp4;Victor-df+4,2;victor
-df+3+4;m;28;i14~15;-17;+16 (+11);;"* Balcony Break
-* Shoulder";bbr shd;;Llamrei;39;;File:t8-p2-victor-df+3+4.mp4;Victor-df+3+4;victor
+* 6 chip damage on block
+* Interrupt with i1
+* Available on hit or block only
+* Transitions to IAI r36 (cannot cancel)";wc wpn intr:1;IAI;Selfish Miranda;r36 IAI;;File:t8-p2-victor-df+4,2.mp4;Victor-df+4,2;victor
+df+3+4;m;28;i14~15;-17;+16a (+11);;"* Balcony Break
+* Shoulder";bbr shd;;Llamrei;r38;;File:t8-p2-victor-df+3+4.mp4;Victor-df+3+4;victor
 d+1;L;7;i16;-17;-6;;"* Weapon
 * Cannot be parried (weapon low)
 * High crush 6~52";wpn cs6~52;FC;;r36 FC;;File:t8-p2-victor-d+1,1.mp4;Victor-d+1;victor
@@ -182,6 +190,7 @@ db+4;l;17;i20~21;-26;+4c;+49a;* High crush 6;cs6;FC;Welcome Sweep;32 FC;;File:t8
 b+1;m;11;i14;-13;-3;;"* Weapon
 * Transition to PRF r25 with F (-5/+5) with 9F delay";wpn;PRF;;r33;;File:t8-p2-victor-b+1,2.mp4;Victor-b+1;victor
 b+1,2;m, h,th;11, 16(15);i14, i20;-8;+0;;"* Combo from 1st CH with 10F delay
+* Move cannot be interrupted
 * Move can be delayed by 9F
 * Input can be delayed by 10F
 * Side switch after attack throw connects";;;Vanity Love;r29;;File:t8-p2-victor-b+1,2.mp4;Victor-b+1,2;victor
@@ -190,7 +199,8 @@ b+2;h;5;i10;-6;+5;+14;"* Weapon
 b+3;m;15;i17;-9;+4;;;;;;r31;;;Victor-b+3;victor
 b+3,1;m, m;15, 25;i17, i25~26;-13;+21a (+16);;"* Balcony Break
 * Weapon
-* Combo from 1st hit with 7F delay";bbr wpn;;Caval;r33;;;Victor-b+3,1;victor
+* Combo from 1st hit with 7F delay
+* Interrupt with i2 from 1st block";bbr wpn intr:2;;Caval;r33;;;Victor-b+3,1;victor
 b+4;h;20;i18~19;-2;+14;;"* Homing
 * Balcony Break
 * 6 chip damage on block";hom bbr;;Cordial Circuit;r29;;;Victor-b+4;victor

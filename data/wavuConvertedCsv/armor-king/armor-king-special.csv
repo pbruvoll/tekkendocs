@@ -168,31 +168,37 @@ d+3+4,3;l, m;15, 16;i17, i23~24;-15;+15a(-2);;"* Balcony Break
 * Tornado
 * Combo from 1st CH
 * Opponent recovers FDFA";bbr trn;;Taurus Cutter Trap;;;t8-p2-armor-king-d+3+4,3.mp4;Armor King-d+3+4,3;armor-king
-db+2;m;12;i14;-11;+0;;;;;;r30;;t8-p2-armor-king-db+2.mp4;Armor King-db+2;armor-king
-db+2,3;m, m;12, 24;i14, i26~27;-12;+11a(+2);;"* Balcony Break
-* Combo from 1st hit";bbr;;Killer PK Combo;r33;;t8-p2-armor-king-db+2,3.mp4;Armor King-db+2,3;armor-king
+db+2;m;12;i14;-11;+0;;Increased opponent blockstun (r19 -> r21) when performing db+2,H.1;;;;r30;;t8-p2-armor-king-db+2.mp4;Armor King-db+2;armor-king
+db+2,3;m, m;12, 22;i14, i26~27;-12;+11a (+2);;"* Balcony Break
+* Combo from 1st hit
+* Interrupt with i6 from 1st block
+* Whiffs vs SSL and SWL from 1st block (inconsistent, character & range dependent)";bbr stp:SSL intr:6;;Killer PK Combo;r33;;t8-p2-armor-king-db+2,3.mp4;Armor King-db+2,3;armor-king
 db+2,4;m, h;12, 20;i14, i20~21;-5;+7;;"* Balcony Break on airborne hit
-* Combo from 1st hit";;;;r29;;t8-p2-armor-king-db+2,4.mp4;Armor King-db+2,4;armor-king
+* Combo from 1st hit
+* Move cannot be interrupted (can be parried by Raven b+1+3)";;;;r29;;t8-p2-armor-king-db+2,4.mp4;Armor King-db+2,4;armor-king
 db+2,4,2;m, h, m;12, 20, 24;i14, ,i30~31;-12;+32a (+6);;"* Balcony Break
 * Combo from 2nd CH with 5F delay
+* Interrupt with i5 from 2nd block
 * Move can be delayed by 4F
-* Input can be delayed by 5F";bbr;;Dark Flood;r32;;t8-p2-armor-king-db+2,4,2.mp4;Armor King-db+2,4,2;armor-king
+* Input can be delayed by 5F";bbr intr:5;;Dark Flood;r32;;t8-p2-armor-king-db+2,4,2.mp4;Armor King-db+2,4,2;armor-king
 H.db+2,1;m, m;12, 25;i14, i26~27;+3;+17a (+8);;"* Balcony Break
 * Combo from 1st hit
 * Interrupt with i5 from 1st block
 * Consumes 240F of remaining Heat time";bbr intr:5;;Outbreak: Villain;r31;;t8-p2-armor-king-db+2,h.1.mp4;Armor King-db+2,H.1;armor-king
 db+3;L;26;i22~24;-26;+6;+74a (+58);"* Homing
 * High crush 6~51";hom cs6~51;FC;Foot Sweep;r27 FC;;t8-p2-armor-king-db+3.mp4;Armor King-db+3;armor-king
-db+4;L;20;i29~31;-17d;-3d;+27a;"* Opponent recovers FDFA
-* Armor King recovers in crouch on hit and FDFT on block
+db+4;L;20;i29~31;-17 FDFT;-3d;+27a;"* Opponent recovers FDFA
+* Transitions to FDFT
+* Transitions to r41 FC on hit (t71 r41 fs30~34, cs35~71)
 * High crush 6~14
-* Low crush 16~";cs6~14 js16~;;Low Drop Kick;r31?;;t8-p2-armor-king-db+4.mp4;Armor King-db+4;armor-king
-db+3+4;h;20;i20~21;-7;+18g;;"* Tornado
+* Low crush 16~29
+* Floating state 30~65";cs6~14 js16~29 fs30~65;FDFT;Low Drop Kick;r31 FDFT;;t8-p2-armor-king-db+4.mp4;Armor King-db+4;armor-king
+db+3+4;h;20;i20~21;-7;+18cg;;"* Tornado
 * Balcony Break
-* Chip damage on block
+* 4 chip damage on block
 * Opponent recovers crouching
 * Hit vs BT +13a (+4)
-* High crush 6~19";trn bbr chp cs6~19;;Shadow Force;r31;;File:t8-p2-armor-king-db+3+4.mp4;Armor King-db+3+4;armor-king
+* High crush 6~19";trn bbr cs6~19;;Shadow Force;r31;;File:t8-p2-armor-king-db+3+4.mp4;Armor King-db+3+4;armor-king
 b+1;h;12;i12~13;-7;+5;;;;;Dark Jab;r29;;t8-p2-armor-king-b+1.mp4;Armor King-b+1;armor-king
 b+1,2;h, m;12, 20;i12~13, i20~21;-12;+8;+11;"* Combo from 1st hit with 12F delay
 * Transition to r30 BAD with F (-12/+8/+11)
