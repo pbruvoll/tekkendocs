@@ -74,9 +74,6 @@ const MainLayoutTemplate = ({ children }: MainLayoutTemplateProps) => {
           </div>
         </ContentContainer>
       </header>
-      {/* Fill the viewport minus the sticky header above, so the footer always
-          starts below the fold and does not jump around when the page content
-          changes height. */}
       <main className="min-h-[calc(100dvh-var(--header-height))]">
         {children}
       </main>
