@@ -29,8 +29,8 @@ const MainLayoutTemplate = ({ children }: MainLayoutTemplateProps) => {
   const contactByDiscord = new DiscordContactProvider();
   return (
     <>
-      <header className="sticky top-0 z-50 bg-(--accent-4) py-1">
-        <ContentContainer>
+      <header className="sticky top-0 z-50 flex min-h-header-height items-center bg-(--accent-4) py-1">
+        <ContentContainer className="w-full">
           <div className="grid grid-cols-[auto_1fr] items-center justify-between py-1">
             <Link to="/">
               {/* <img
@@ -74,7 +74,9 @@ const MainLayoutTemplate = ({ children }: MainLayoutTemplateProps) => {
           </div>
         </ContentContainer>
       </header>
-      {children}
+      <main className="min-h-[calc(100dvh-var(--header-height))]">
+        {children}
+      </main>
       <ScrollToTopButton />
       <footer style={{ background: 'var(--accent-5' }}>
         <ContentContainer enableBottomPadding enableTopPadding>
