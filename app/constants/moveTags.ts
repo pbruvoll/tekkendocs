@@ -29,7 +29,7 @@ export const MoveTags = {
 export type MoveTag = (typeof MoveTags)[keyof typeof MoveTags];
 
 export const moveTagToDescription: Partial<Record<MoveTag, string>> = {
-  [MoveTags.Chip]: 'Causes chip damage',
+  [MoveTags.Chip]: 'Causes chip damage on block',
   [MoveTags.FloorBreak]: 'Breaks the floor on hit',
   [MoveTags.HeatEngager]: 'Engages Heat mode on hit',
   [MoveTags.Homing]: 'Homing attack',

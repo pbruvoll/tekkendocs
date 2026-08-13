@@ -201,11 +201,13 @@ def _parse_notes(notes: str):
     tags = []
     short_notes = []
     interrupt_frames = []
+    chip_damages = []
     for line in lines :
         tag = _get_tag(line)
+        chip_damage = _get_chip_damage(line)
         if tag :
             tags.append(tag)
-        else:
+        elif not _is_pure_chip_line(line) :
             short_notes.append(line)
         # unlike _get_tag, keep the "Whiffs vs ..." line in the notes since it
         # carries extra context (e.g. "from 1st block")
@@ -215,11 +217,20 @@ def _parse_notes(notes: str):
         frames = _get_interrupt_frames(line)
         if frames is not None :
             interrupt_frames.append(frames)
+        if chip_damage is not None :
+            chip_damages.append(chip_damage)
 
     if interrupt_frames :
         # a move can have one interrupt note per part of the string. Keep the
         # slowest one, since that is usually value when blocking the move
         tags.append("intr:" + str(max(interrupt_frames)))
+
+    if chip_damages :
+        known = [damage for damage in chip_damages if damage >= 0]
+        # keep the lowest value, since that is the one in normal state. The
+        # heat and "after absorbing an attack in power crush state" variants
+        # are always higher
+        tags.append("chp:" + str(min(known)) if known else "chp")
 
     return ("\n".join(short_notes), " ".join(tags))
 
@@ -249,6 +260,62 @@ def _get_interrupt_frames(noteLine: str) :
         # notes such as "Interrupt with i? from 4th block" have no known value
         return None
     return int(match.group(1))
+
+
+# "6 chip damage on block", but also "Deals chip damage" and "Chip on block [9]"
+chip_pattern = re.compile(r'(?:deals\s+)?(?:(\d+)\s+)?chip(?:\s+damage)?\b(.*)')
+# what may follow the chip damage without saying anything the chp tag misses.
+# The amount is sometimes given in brackets, before or after the "on block"
+chip_rest_pattern = re.compile(r'(?:\s+(?:on\s+block|[(\[](\d+)[)\]]))*\.?')
+
+
+def _match_chip_line(noteLine: str) :
+    if noteLine.strip().startswith("**") :
+        # a ** sub bullet belongs to a cancel or a variation of the move above it,
+        # so its chip damage says nothing about the move itself
+        return None
+
+    # only lines starting with the chip damage itself are matched, so that
+    # conditional notes such as "-9 frame advantage and 8 chip damage on block
+    # after absorbing an attack in power crush state" are left alone
+    return chip_pattern.match(noteLine.replace("*", "").strip().lower())
+
+
+def _get_chip_damage(noteLine: str) :
+    """Reads a line like "* 6 chip damage on block" and returns 6.
+    Returns -1 when the line tells about chip damage without giving an amount,
+    and None when the line is not about chip damage on block"""
+    match = _match_chip_line(noteLine)
+    if not match :
+        return None
+
+    (amount, rest) = match.groups()
+    if "on hit" in rest and "on block" not in rest :
+        return None
+
+    # chip damage which requires absorbing an attack in power crush state says
+    # nothing about what the move does normally. Only the part before a comma is
+    # checked, since a note like "9 chip damage on block, +0 block advantage on
+    # attack absorption" does tell the normal chip damage
+    if "absorb" in rest.split(",")[0] :
+        return None
+
+    if amount :
+        return int(amount)
+
+    # "Chip damage on block (7)" and "Chip on block [9]"
+    rest_match = chip_rest_pattern.fullmatch(rest)
+    if rest_match and rest_match.group(1) :
+        return int(rest_match.group(1))
+
+    return -1
+
+
+def _is_pure_chip_line(noteLine: str) :
+    """True for lines which say nothing but the chip damage on block, since the
+    chp tag then carries all the information of the line"""
+    match = _match_chip_line(noteLine)
+    return bool(match) and bool(chip_rest_pattern.fullmatch(match.group(2)))
 
 
 def _get_tag(noteLine: str) :
@@ -290,8 +357,6 @@ def _get_tag(noteLine: str) :
     
     if cleanLine.startswith("wall crush") :
         return "wc"
-    if cleanLine.startswith("chip") :
-        return "chp"
 
 
     return None

@@ -5,12 +5,12 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * 12 chip damage on hit
 * Only deals recoverable damage
 * Cannot cause a K.O.
-* Power crush 7~16";hb pc7~16;;Heat Burst;r30;;;Jack-8-2+3;jack-8
+* Power crush 7~16";hb chp:2 pc7~16;;Heat Burst;r30;;;Jack-8-2+3;jack-8
 H.f+3+4;m;30;i22~23;+0;+9c;;"* Head
 * Transition to GMH with D
 ** (+8 oB, +17c oH)
 * Partially uses remaining heat time
-* 6 chip damage on block";hed;GMH;Hyper Merkabah Headbutt;;;;Jack-8-H.f+3+4;jack-8
+* 6 chip damage on block";hed chp:6;GMH;Hyper Merkabah Headbutt;;;;Jack-8-H.f+3+4;jack-8
 H.uf+3;L;[16];i19;-12;+8c;;"* Spike
 * Only deals recoverable damage
 * Cannot K.O.
@@ -19,10 +19,10 @@ H.uf+3;L;[16];i19;-12;+8c;;"* Spike
 * 3 chip damage on block
 * Unparryable
 * u+3/ub+3: less forward movement
-* Low crush 9";spk js9;;Hyper Terrapulser;;;;Jack-8-H.uf+3;jack-8
+* Low crush 9";spk chp:3 js9;;Hyper Terrapulser;;;;Jack-8-H.uf+3;jack-8
 H.2+3;h,m,t;50;i10;-9;-2d (-12);;"* Heat Smash
 * Balcony Break
-* 10 chip damage on block";hs bbr;;Meteor Raid;;;;Jack-8-H.2+3;jack-8
+* 10 chip damage on block";hs bbr chp:10;;Meteor Raid;;;;Jack-8-H.2+3;jack-8
 R.df+1+2;M,t;55+;i20;-18;+0d;;"* Rage Art
 * Removes Recoverable Health
 * Reversal Break
@@ -48,7 +48,7 @@ R.df+1+2;M,t;55+;i20;-18;+0d;;"* Rage Art
 * Jail from 1st block";elb;;;;File:Jack-8-21.jpg;File:Jack-8-21.mp4;Jack-8-2,1;jack-8
 2,1,2;h, m, m;10, 12, 20;i11, ,i33;-12;+29a (+19);;;;FC;Jab Elbow Smash;r FC;File:Jack-8-212.jpg;File:t8-p2-jack-8-2,1,2.mp4;Jack-8-2,1,2;jack-8
 2,1,1+2;h, m, h,h,h,h,h;10, 12, 10,6,6,6,20;i11, ,i33~36, i8~14, i3~6, i7~13, i5~6;-4;+13d;;"* Jails from 3rd block
-* Chip damage on block (10)";chp;;Piston Gun Fusillade;r26?;File:Jack-8-211+2.jpg;File:t8-p2-jack-8-2,1,1+2.mp4;Jack-8-2,1,1+2;jack-8
+* Chip damage on block (10)";chp:10;;Piston Gun Fusillade;r26?;File:Jack-8-211+2.jpg;File:t8-p2-jack-8-2,1,1+2.mp4;Jack-8-2,1,1+2;jack-8
 2,1,uf;h, m;10, 12;i11, ,;+1;+6;;"* Recover in crouch 
 * Move can be delayed by 4F
 * Input can be delayed by 14F
@@ -61,7 +61,7 @@ R.df+1+2;M,t;55+;i20;-18;+0d;;"* Rage Art
 * Input can be delayed by 14F
 * Move cannot be delayed
 * 4 chip damage on block
-* Low crush 12";intr:13 js12;GMH;Make Some Noise;;;;Jack-8-2,1,uf+1+2;jack-8
+* Low crush 12";intr:13 chp:4 js12;GMH;Make Some Noise;;;;Jack-8-2,1,uf+1+2;jack-8
 2,3;h, m;10, 18;i11, i19;-13;+5;+30d (+22);"* Knee
 * Balcony Break on airborne hit or CH
 * Combo from 1st hit
@@ -86,7 +86,7 @@ R.df+1+2;M,t;55+;i20;-18;+0d;;"* Rage Art
 * Unblockable";bbr;;Gigaton Punch (2/3/4/5 spins);;File:Jack-8-five.jpg;File:Jack-8-five.mp4;Jack-8-1+4*,1;jack-8
 1+4,1;m;25;i22~, i17(43~);+21g;+7a (-2);+39d (-8);"* Balcony Break
 * Alternate input hcf,1 to power up
-* Chip damage on block (7)";bbr chp;;Gigaton Punch;;File:Jack-8-hcf1.jpg;File:Jack-8-hcf1.mp4;Jack-8-1+4,1;jack-8
+* Chip damage on block (7)";bbr chp:7;;Gigaton Punch;;File:Jack-8-hcf1.jpg;File:Jack-8-hcf1.mp4;Jack-8-1+4,1;jack-8
 1+4,df+1;M;21;i22~, i20~23;-17;+52a (+42);;"* Tornado
 * Non just frame version of 1+4:df+1
 * Alternate input hcf,df+1 to power up";trn;;Windup Uppercut;;File:Jack-8-hcfdf1.jpg;File:t8-p2-jack-8-1+4,df+1.mp4;Jack-8-1+4,df+1;jack-8
@@ -110,7 +110,7 @@ f+1,2,2*;m, h, m;13, 12, 40;i14, ,i61;-10;+13d (-13);;"* Balcony Break
 
 
 * Gain GMC on hit or block
-* 16 chip damage on block";bbr wc;;Piston Gun Blaster (charged);;;;Jack-8-f+1,2,2*;jack-8
+* 16 chip damage on block";bbr wc chp:16;;Piston Gun Blaster (charged);;;;Jack-8-f+1,2,2*;jack-8
 f+2;h;22;i10;-12;+5;+32a (+24);;;;Pinpoint Assault;r33;File:Jack-8-f2.jpg;File:t8-p2-jack-8-f+2.mp4;Jack-8-f+2;jack-8
 f+4;h;20;i17;-4;+7;+32a (+22);* Balcony Break on CH;;;;;File:Jack-8-4.jpg;File:Jack-8-4.mp4;Jack-8-f+4;jack-8
 f+4~1;h;80;i65;!;+5;;Unblockable;;;Dark Greeting;;File:Jack-8-f4-1.jpg;File:t8-p2-jack-8-f+4~1.mp4;Jack-8-f+4~1;jack-8
@@ -119,7 +119,7 @@ f+4~1,2;M;30;i15 (66~);+8;+0d;;"* Elbow
 f+1+2;m,m;12,20;i27 pc7;-12;+32d (+6);;"* Balcony Break
 * Chip damage on block when absorbing an attack (12)
 *
-* Power crush 7";bbr chp pc7;;Rolling Death Crusher;;File:Jack-8-f1+2.jpg;File:t8-p2-jack-8-f+1+2.mp4;Jack-8-f+1+2;jack-8
+* Power crush 7";bbr pc7;;Rolling Death Crusher;;File:Jack-8-f1+2.jpg;File:t8-p2-jack-8-f+1+2.mp4;Jack-8-f+1+2;jack-8
 f+3+4;m;24;i22;-11;+9c;;"* Head
 * Transition to GMH with D
 ** (-3 oB, +15c oH)";hed;GMH;Merkabah Headbutt;;File:Jack-8-f3+4.jpg;File:t8-p2-jack-8-f+3+4.mp4;Jack-8-f+3+4;jack-8
@@ -189,7 +189,7 @@ db+1,1,1,2;l, l, l, m;13, 5, 5, 21;i12, ,i19;-11;+43a (-4);;* Balcony Break;bbr;
 db+2;l;24;i22;-18;+3c;+33d;"* Can be charged to power up
 * High crush 6";cs6;;Power Shovel;;;File:t8-p2-jack-8-db+2.mp4;Jack-8-db+2;jack-8
 db+2*;l;30;i35~36;-33;+17d;;"* Gain GMC on hit or block
-* 9 chip damage on block";;;Power Shovel (charged);;;;Jack-8-db+2*;jack-8
+* 9 chip damage on block";chp:9;;Power Shovel (charged);;;;Jack-8-db+2*;jack-8
 db+3;l;15;i21;-20;-9;;*;;;Cossack Kick;;;File:t8-p2-jack-8-db+3,1+2.mp4;Jack-8-db+3;jack-8
 db+3, ... 1+2;l, h;15, 21;i21, i34;+14g;+17c;;"* Balcony Break
 * Forces tech backroll on hit";bbr;;Cossack Smash;;;File:t8-p2-jack-8-db+3,1+2.mp4;Jack-8-db+3,1+2;jack-8
@@ -227,7 +227,7 @@ b+2*;m;40;i35;-2;+17a (+9);;"* Heat Engager
 
 * Gain GMC on hit or block
 * 16 chip damage on block 
-* Gain GMC on Heat activation";he bbr wc;;Piston Gun Assault (charged);r47;;;Jack-8-b+2*;jack-8
+* Gain GMC on Heat activation";he bbr wc chp:16;;Piston Gun Assault (charged);r47;;;Jack-8-b+2*;jack-8
 b+3;m;14;i16;-9;+2;;*;;;;r27;;File:t8-p2-jack-8-b+3,2,2.mp4;Jack-8-b+3;jack-8
 b+3,2;m, h;14, 13;i16, i22;-4;+1;;"* Combo from 1st hit
 * Interrupt with i3 from 1st block
@@ -242,7 +242,7 @@ b+3,2,2*;m, h, m;14, 13, 40;i16, ,i67;-7;+13d (+5);;"* Balcony Break
 
 * Gain GMC on hit or block
 * Interrupt with i47? from 2nd block
-* 16 chip damage on block";bbr wc intr:47;;Mad Dozer (charged);r48;;;Jack-8-b+3,2,2*;jack-8
+* 16 chip damage on block";bbr wc intr:47 chp:16;;Mad Dozer (charged);r48;;;Jack-8-b+3,2,2*;jack-8
 b+4;m;16;i13;-13;-2;-2s;* Knee;kne;;;r32;;File:t8-p2-jack-8-b+4,4.mp4;Jack-8-b+4;jack-8
 b+4,4;m, M;16, 21;i13, i30;-4c;+3d;;"* Combo from 1st CH
 * When comboing from 1st CH: 
@@ -260,7 +260,7 @@ Head";hed;FC;Mimesis Rusty Nail;FC;;File:t8-p2-jack-8-b+3+4.mp4;Jack-8-b+3+4;jac
 ub+1+2;h;30;i20 pc7;-9;+23d;;"* Balcony Break
 * Homing
 * Chip damage on block when absorbing an attack (12)
-* Power crush 7";bbr hom chp pc7;;Barrel Jacket Hammer;;;File:t8-p2-jack-8-ub+1+2.mp4;Jack-8-ub+1+2;jack-8
+* Power crush 7";bbr hom pc7;;Barrel Jacket Hammer;;;File:t8-p2-jack-8-ub+1+2.mp4;Jack-8-ub+1+2;jack-8
 u+4;m;25;i25;-16;+15a (+5);;"* Balcony Break
 * Alternate input ub+4, uf+4
 * Low crush";bbr js;;;;;;Jack-8-u+4;jack-8
@@ -299,7 +299,7 @@ HCF;;;i22~;;;;"* Alternate input 1+4
 * Can be looped together in 360 motions for up to 5 spins";;;;;;;Jack-8-hcf;jack-8
 HCF,1;m;30;i22~, i17(43~);+21g;+7a (-2);+39d (-8);"* Balcony Break
 * Alternate input 1+4,1
-* Chip damage on block (9)";bbr chp;;Gigaton Punch;;;;Jack-8-hcf,1;jack-8
+* Chip damage on block (9)";bbr chp:9;;Gigaton Punch;;;;Jack-8-hcf,1;jack-8
 HCF,df+1;M;25;i22~, i20~23;-17;+52a (+42);;"* Tornado
 * Non blue spark version, for a just frame version search ""EMGF""
 * Alternate input 1+4,df+1";trn;;Windup Uppercut;;;;Jack-8-hcf,df+1;jack-8
@@ -318,11 +318,11 @@ f,F+2;m;23;i18;-16;+53a (+43);;"* Strong Aerial Tailspin?
 * Can be charged to power up";;;Rocket Uppercut;;;File:t8-p2-jack-8-f,f+2.mp4;Jack-8-f,F+2;jack-8
 f,F+2*;m;35;34;-15;+61a;;"* Tornado
 * Gain GMC on hit or block
-* 14 chip damage on block";trn;;Rocket Uppercut (charged);;;;Jack-8-f,F+2*;jack-8
+* 14 chip damage on block";trn chp:14;;Rocket Uppercut (charged);;;;Jack-8-f,F+2*;jack-8
 f,F+3;M;22;i26;+4;+9c;+22a;* Transition to FC with D;;FC;Granite Stomping;;;;Jack-8-f,F+3;jack-8
 f,F+4;m;32;i16;-10;+15d (+5);;"* Tornado 
 * Balcony Break
-* Chip damage on block (12)";trn bbr chp;;Rocket Kick;;;File:t8-p2-jack-8-f,f+4.mp4;Jack-8-f,F+4;jack-8
+* Chip damage on block (12)";trn bbr chp:12;;Rocket Kick;;;File:t8-p2-jack-8-f,f+4.mp4;Jack-8-f,F+4;jack-8
 f,F+1+2;m;20;i15;-15;+22cs;;"*
 Homing";hom;;;;;File:t8-p2-jack-8-f,f+1+2,2.mp4;Jack-8-f,F+1+2;jack-8
 f,F+1+2,2;m, m;20, 24;i15, i32;-9;+11a (+2);;"*
@@ -337,17 +337,17 @@ uf,n,2;m;28;i32;-1c;+10c;;"*
 f,f,F+2;m;25;i22;+6;+10;;"* Chip damage on block (7)
 * Guarantees i10 moves on hit
 * Unparryable (running attack)
-* Alternate input wr2";chp;;Cemaho Chop;;;File:t8-p2-jack-8-f,f,f+2.mp4;Jack-8-f,f,F+2;jack-8
+* Alternate input wr2";chp:7;;Cemaho Chop;;;File:t8-p2-jack-8-f,f,f+2.mp4;Jack-8-f,f,F+2;jack-8
 f,f,F+1+2;m;34;i20~23;+4;+7a (-2);;"* Balcony Break
 * Shoulder
 * Chip damage on block (10)
-* Alternate input wr1+2";bbr shd chp;;Mimesis Charging Tackle;;;File:t8-p2-jack-8-f,f,f+1+2.mp4;Jack-8-f,f,F+1+2;jack-8
+* Alternate input wr1+2";bbr shd chp:10;;Mimesis Charging Tackle;;;File:t8-p2-jack-8-f,f,f+1+2.mp4;Jack-8-f,f,F+1+2;jack-8
 ws1;m;14;i15;-13;+34a (+24);;*;;;Killing Uppercut;;;File:t8-p2-jack-8-ws1.mp4;Jack-8-ws1;jack-8
 ws2;m;10;i14;-7;+4;;* Elbow;elb;;;;;File:t8-p2-jack-8-ws2,4.mp4;Jack-8-ws2;jack-8
 ws2,1;m, m;10, 17;i14, i15;-14c;+3d;+49a;* Combos from 1st hit;;;V-Twin;;;;Jack-8-ws2,1;jack-8
 ws2,4;m, h;10, 26;i14, i16;+4;+21a (+11);;"* Balcony Break
 * Combos from 1st hit
-* Chip damage on block (7)";bbr chp;;V-Deathblow;;;File:t8-p2-jack-8-ws2,4.mp4;Jack-8-ws2,4;jack-8
+* Chip damage on block (7)";bbr chp:7;;V-Deathblow;;;File:t8-p2-jack-8-ws2,4.mp4;Jack-8-ws2,4;jack-8
 ws4;m;20;i11;-6;+5;;*;;;Toe Smash;;;File:t8-p2-jack-8-ws4.mp4;Jack-8-ws4;jack-8
 ws1+2;m;14;i20;-15;+26a (+16);;*;;;;;;File:t8-p2-jack-8-ws1+2,1+2,1+2.mp4;Jack-8-ws1+2;jack-8
 ws1+2,1+2;m, m;14, 12;i20, i17;-15;+15d;;"* Floor Break
@@ -358,7 +358,7 @@ ss1;M;23;i32;+6c;+59a;;;;;Discharger;;;File:t8-p2-jack-8-ss1.mp4;Jack-8-ss1;jack
 ss2;h;20;i17;+9;+35d (+27);;"* Balcony Break
 * Transition to GMH with D
 ** (+9 oB, +35d (+27) oH)
-* Chip damage on block (6)";bbr chp;GMH;Piston Gun Snipe;;;File:t8-p2-jack-8-ss2.mp4;Jack-8-ss2;jack-8
+* Chip damage on block (6)";bbr chp:6;GMH;Piston Gun Snipe;;;File:t8-p2-jack-8-ss2.mp4;Jack-8-ss2;jack-8
 FC.df+1;m;5;i23;-21;-11c;;*;;;;;;File:t8-p2-jack-8-fc.df+1,2,1,1.mp4;Jack-8-FC.df+1;jack-8
 FC.df+1,2;m, m;5, 8;i23, i16;-21;-11c;;* Combos from 1st hit;;;;;;File:t8-p2-jack-8-fc.df+1,2,1,1.mp4;Jack-8-FC.df+1,2;jack-8
 FC.df+1,2,1;m, m, m;5, 8, 11;i23, ,i16;-11;+16cs;;* Combos from 1st hit;;;;;;File:t8-p2-jack-8-fc.df+1,2,1,1.mp4;Jack-8-FC.df+1,2,1;jack-8
@@ -384,7 +384,7 @@ FC.df+3+4*;m;32;i30~35;-4;+21d (+13d);;"* Balcony Break
 * Reversal Break
 * Shoulder
 * Gain GMC on hit or block
-* 9 chip damage on block";bbr rbr shd;;Atomic Shoulder Tackle (charged);;;;Jack-8-FC.df+3+4*;jack-8
+* 9 chip damage on block";bbr rbr shd chp:9;;Atomic Shoulder Tackle (charged);;;;Jack-8-FC.df+3+4*;jack-8
 FC.df+3+4*,uf;m;32;i30~35, ;+4;+29d (+21d);;"* Recover in crouch
 * Can cancel into Make Some Noise by pressing 1+2 (uf,n,1+2)
 * Low crush 15";js15;FC;Flying Fortress;rFC;;;Jack-8-FC.df+3+4*,uf;jack-8
@@ -394,7 +394,7 @@ FC.df+3+4*,uf+1+2;m, m;32, 20;i30~35, i21~22;+5 GMH;+17c GMH;;"* Transition to G
 * Input can be delayed by 14F
 * Move cannot be delayed
 * 4 chip damage on block
-* Low crush 15";intr:10 js15;GMH,GMH;Make Some Noise;GMH;;;Jack-8-FC.df+3+4*,uf+1+2;jack-8
+* Low crush 15";intr:10 chp:4 js15;GMH,GMH;Make Some Noise;GMH;;;Jack-8-FC.df+3+4*,uf+1+2;jack-8
 FC.df+3+4,uf;m;28;i21, ;-1;+14g;;"* Recover in crouch
 * Can cancel into Make Some Noise by pressing 1+2 (uf,n,1+2)
 * Low crush 15";js15;FC;Flying Fortress;rFC;;;Jack-8-FC.df+3+4,uf;jack-8
@@ -403,19 +403,19 @@ FC.df+3+4,uf+1+2;m, m;28, 20;i21, i21~22;+5 GMH;+17c GMH;;"* Transition to GMH o
 * Input can be delayed by 14F
 * Move cannot be delayed
 * 4 chip damage on block
-* Low crush 15";intr:15 js15;GMH,GMH;Make Some Noise;GMH;;;Jack-8-FC.df+3+4,uf+1+2;jack-8
+* Low crush 15";intr:15 chp:4 js15;GMH,GMH;Make Some Noise;GMH;;;Jack-8-FC.df+3+4,uf+1+2;jack-8
 FUFT.d+1+2;m;18;i28;+18g;+39d;;* Recovers in SIT, then stands up;;SIT;Get Up Punch;SIT;;;Jack-8-FUFT.d+1+2;jack-8
 GMC.1;m;22;i22;-6;+73a (+57);;"* Strong Aerial Tailspin
 * Homing
 * Partially uses remaining Heat time
-* Chip damage on block (4)";hom chp;;Jaguar Hook - Gamma;;;File:t8-p2-jack-8-gmc.1.mp4;Jack-8-GMC.1;jack-8
+* Chip damage on block (4)";hom chp:4;;Jaguar Hook - Gamma;;;File:t8-p2-jack-8-gmc.1.mp4;Jack-8-GMC.1;jack-8
 GMC.2;h;42;i20 pc1;+11;+31a (+5);;"* Tornado
 * Guard Break
 * Reversal Break
 * Balcony Break
 * Partially uses remaining Heat time
 * 4 chip damage on block
-* Power crush 1";trn rbr bbr pc1;;Exaton Blast - Gamma;r34;;File:t8-p2-jack-8-gmc.2.mp4;Jack-8-GMC.2;jack-8
+* Power crush 1";trn rbr bbr chp:4 pc1;;Exaton Blast - Gamma;r34;;File:t8-p2-jack-8-gmc.2.mp4;Jack-8-GMC.2;jack-8
 GMC.3+4;sm;24;i20 pc6;-9;+14c;;"* Heat Engager
 
 * Heat Dash +5, +36a(+26)
@@ -426,7 +426,7 @@ GMC.3+4;sm;24;i20 pc6;-9;+14c;;"* Heat Engager
 * 7 chip damage on block
 * Gain GMC on Heat activation
 * Forces backroll on hit
-* Power crush 6";he bbr pc6;;Particle Barrier - Gamma;;;;Jack-8-GMC.3+4;jack-8
+* Power crush 6";he bbr chp:7 pc6;;Particle Barrier - Gamma;;;;Jack-8-GMC.3+4;jack-8
 GMH.1;m;20;i22;-9;+25d;;"* Homing
 * Balcony Break";hom bbr;;Juggernaut Hook;;;File:t8-p2-jack-8-gmh.1.mp4;Jack-8-GMH.1;jack-8
 GMH.2;h;40;i20;+11g;+21d (+11);;"* Balcony Break
@@ -440,7 +440,7 @@ GMH.4;h;30;i14~18;+4;+21d (+11);;"* Heat Engager
 
 * Balcony Break
 * 9 chip damage on block
-* Gain GMC on Heat activation";he bbr;;Full Metal Deathblow;r30;;File:t8-p2-jack-8-gmh.4.mp4;Jack-8-GMH.4;jack-8
+* Gain GMC on Heat activation";he bbr chp:9;;Full Metal Deathblow;r30;;File:t8-p2-jack-8-gmh.4.mp4;Jack-8-GMH.4;jack-8
 GMH.3+4;SM;20;i20 pc6;-13;+14c;;"* Heat Engager
 
 * Heat Dash +5, +43d (+35)
@@ -462,7 +462,7 @@ GMH.uf;;;js12;;;;"* Recover in crouch
 GMH.uf+1+2;m;20;i21~22;+5 GMH;+17c GMH;;"* Transition to GMH on hit or block
 * Input can be delayed by 14F
 * 4 chip damage on block
-* Low crush 15";js15;GMH,GMH;Make Some Noise;GMH;;;Jack-8-GMH.uf+1+2;jack-8
+* Low crush 15";chp:4 js15;GMH,GMH;Make Some Noise;GMH;;;Jack-8-GMH.uf+1+2;jack-8
 SIT.1;l;10;i19;-48;-37;;"*
 * Floating state";fs;;;;;File:t8-p2-jack-8-sit.1,2,1,2.mp4;Jack-8-SIT.1;jack-8
 SIT.1,2;l, l;10, 10;i19, i15;-47;-36;;"* Combos from 1st hit
@@ -508,7 +508,7 @@ hFC.db+1,1,1;l, m, m;14, 10, 20;i14, ,i20;-14;+9a;;"* Balcony Break
 * Can be charged to power up";bbr;;Pulverizer;;;File:t8-p2-jack-8-fc.db+1,1,1.mp4;Jack-8-hFC.db+1,1,1;jack-8
 hFC.db+1,1,1*;l, m, m;14, 10, 30;i14, ,i34~35;-6;+15a (+7);;"* Balcony Break
 * Gain GMC on hit or block
-* 12 chip damage on block";bbr;;Pulverizer (charged);;;;Jack-8-hFC.db+1,1,1*;jack-8
+* 12 chip damage on block";bbr chp:12;;Pulverizer (charged);;;;Jack-8-hFC.db+1,1,1*;jack-8
 (During Enemy wall stun) 1+3;t;33;i12;!;+0d;;"* Wall throw (Unbreakable)
 * Alternate input 2+4 or uf+1+2";;;Twin Drivers;;;;Jack-8-(During Enemy wall stun) 1+3;jack-8
 1+3;t;35;i12;+0;+1d;;"* Homing

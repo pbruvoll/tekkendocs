@@ -5,23 +5,32 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * 12 chip damage on hit
 * Only deals recoverable damage
 * Cannot cause a K.O.
-* Power crush 7~16";hb pc7~16;;Heat Burst;r30;;t8-p2-shaheen-2+3.mp4;Shaheen-2+3;shaheen
-H.D*,u+2;h;35;i17~18;+13;+63a (+47);;"* Balcony Break
+* Power crush 7~16";hb chp:2 pc7~16;;Heat Burst;r30;;t8-p2-shaheen-2+3.mp4;Shaheen-2+3;shaheen
+H.D*,u+2;;;;+13;+63a (+47);;"* Balcony Break
 * Tornado
 * Guard break
+* i57~58 effective startup when unbuffered (Charge takes 40f)
 * Consumes 450F of remaining Heat Time
-* Read more
-* Low crush";bbr trn js;;Al-Ghul Master;;;t8-p2-shaheen-h.dx,u+2.mp4;Shaheen-H.D*,u+2;shaheen
-H.f+1+2;m;15,25 (17);i16~17;+4c SNK;+27d (-8);;"* Floor Break
+* Read more";bbr trn;;Al-Ghul Master;;;t8-p2-shaheen-h.dx,u+2.mp4;Shaheen-H.D*,u+2;shaheen
+H.f+1+2;m,m;15,25 (17);i16~17;+4c SNK;+27d (-8);;"* Floor Break
 * Spike
 * 32 damage with scaling from 1st hit
-* Transition to SNK on hit or block
+* +21a from 2nd hit
+** Balcony Break from 2nd hit only
+* Transition to SNK r27 on hit or block
 * Consumes 450F of remaining Heat time
-* Low crush 28~";fbr spk js28~;SNK;Rumh al-Dawla;;;t8-p2-shaheen-h.f+1+2.mp4;Shaheen-H.f+1+2;shaheen
+* Opponent recovers in FDFA
+* Low crush 28~48
+* Floating state 49~51";fbr spk js28~48 fs49~51;SNK;Rumh al-Dawla;r30;;t8-p2-shaheen-h.f+1+2.mp4;Shaheen-H.f+1+2;shaheen
 H.2+3;L,t;40;i20~21;-14;+24a (+14);;"* Balcony Break
 * Heat Smash
 * Transition to attack throw on 1st hit
-* 8 chip damage on block";bbr hs;;Rumh al-Muzaffar;;;t8-p2-shaheen-h.2+3.mp4;Shaheen-H.2+3;shaheen
+* 52dmg and +13a (+3) from 2nd hit
+* 8 chip damage on block
+* Low crush 9~15
+* Floating state 16~18
+* Low crush 41~85
+* Floating state 86~88";bbr hs chp:8 js9~15 fs16~18 js41~85 fs86~88;;Rumh al-Muzaffar;r41;;t8-p2-shaheen-h.2+3.mp4;Shaheen-H.2+3;shaheen
 R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Removes Recoverable Health
 * Reversal Break
@@ -79,10 +88,10 @@ f+3;m;17;i20;-5;+6;+13c;"* Good right sidestep tracking
 * Low crush 13~";js13~;SNK;Crescent Moon;r29;;File:t8-p2-shaheen-f+3.mp4;Shaheen-f+3;shaheen
 f+4;h;24;i15~16;+0;+13g;;"* Balcony Break
 * Homing
-* 7 chip damage on block";bbr hom;;Piercing Talon;;;File:t8-p2-shaheen-f+4.mp4;Shaheen-f+4;shaheen
+* 7 chip damage on block";bbr hom chp:7;;Piercing Talon;;;File:t8-p2-shaheen-f+4.mp4;Shaheen-f+4;shaheen
 f+3+4;M,M;20;i22~23;+3c;+11c;;"* 6 chip damage on block
 * Transitions to SNK
-* Floor Break";fbr;SNK;Skyline;SNK;;File:t8-p2-shaheen-f+3+4.mp4;Shaheen-f+3+4;shaheen
+* Floor Break";fbr chp:6;SNK;Skyline;SNK;;File:t8-p2-shaheen-f+3+4.mp4;Shaheen-f+3+4;shaheen
 df+1;m;12;i13~14;-1;+5;;Tracks SSR/SWR completely;;;;r19;;t8-p2-shaheen-df+1.mp4;Shaheen-df+1;shaheen
 df+2;m;13;i15~16;-7;+34a (+24);;"* Only launches standing opponents 
 * +4s on hit against crouching opponents
@@ -140,7 +149,7 @@ b+1+3;sp;15 (15);;;;;"* Removes Recoverable Health
 * Parry state 5~12";ps5~12;;Silent Death Trap;;;t8-p2-shaheen-b+1+3.mp4;Shaheen-b+1+3;shaheen
 b+2;m(th);12,16;i14~15;-9;-2d;;"* Removes Recoverable Health
 * Transition to attack throw on standing front hit";;;Dust Storm;;;File:t8-p2-shaheen-b+2.mp4;Shaheen-b+2;shaheen
-b+3;m;17;i19;+1c;+3c;+14c;* 5 chip damage on block;;;Heel Strike;;;File:t8-p2-shaheen-b+3.mp4;Shaheen-b+3;shaheen
+b+3;m;17;i19;+1c;+3c;+14c;* 5 chip damage on block;chp:5;;Heel Strike;;;File:t8-p2-shaheen-b+3.mp4;Shaheen-b+3;shaheen
 b+4;M;23;i17;-15;+4;+29a (+23);;;;Broken Mirage;;;File:t8-p2-shaheen-b+4.mp4;Shaheen-b+4;shaheen
 b+3+4;h;25;i16;-9;+19a (+9);;"* Balcony Break
 * +0 frame advantage and 10 chip damage on block after absorbing an attack in power crush state
@@ -152,7 +161,7 @@ uf+1;m;25;i24~25;+1;+20d;;"* Balcony Break
 
 * 10 chip damage on block
 * Cancel to FC with input uf+1,D
-* Low crush 9";bbr he js9;FC;Vega;;;File:t8-p2-shaheen-uf+1.mp4;Shaheen-uf+1;shaheen
+* Low crush 9";bbr he chp:10 js9;FC;Vega;;;File:t8-p2-shaheen-uf+1.mp4;Shaheen-uf+1;shaheen
 uf+3;m;22;i25~26;-7;+24;;"* Alternate input: ub+3 or u+3
 * Low crush 9";js9;;Crescent Cleaver;;;File:t8-p2-shaheen-uf+3.mp4;Shaheen-uf+3;shaheen
 uf+4;m;13;i15~17;-13;+33 (+23);;"* Alternate input: ub+4 or u+4
@@ -165,7 +174,7 @@ D*,u+2;h;35;i17~18;+6;+30d;;"* Balcony Break
 * FUFA knockdown on hit
 * Powered up during Heat
 * Read more
-* Low crush 18~";bbr trn js18~;;Al-Ghul;;;File:t8-p2-shaheen-ds,u+2.mp4;Shaheen-D*,u+2;shaheen
+* Low crush 18~";bbr trn chp:12 js18~;;Al-Ghul;;;File:t8-p2-shaheen-ds,u+2.mp4;Shaheen-D*,u+2;shaheen
 f,F+3;m;23;i17;-12;+63 (+48);;"* Tornado
 * Alternate input: f,f,F+3
 * Hit throw which side switches
@@ -195,7 +204,7 @@ ws4;m;16;i11~12;-6;+5;;;;;Jaw Smash;;;File:t8-p2-shaheen-ws4.mp4;Shaheen-ws4;sha
 SS.2;L;14;i20;-12;+1c;;"* Sidestep takes 9f; effective startup i29
 * High crush 15~";cs15~;FC;Nisif Kamar;FC;;File:t8-p2-shaheen-ss.2.mp4;Shaheen-SS.2;shaheen
 SS.1+2;m;23;i19~20;+3;+22g;+35a;"* Sidestep takes 9f; effective startup i28
-* 6 chip damage on block";;;Haboob;;;t8-p2-shaheen-ss.1+2.mp4;Shaheen-SS.1+2;shaheen
+* 6 chip damage on block";chp:6;;Haboob;;;t8-p2-shaheen-ss.1+2.mp4;Shaheen-SS.1+2;shaheen
 FC.df,d,DF;sp;;;;;;* High crush;cs;;Slide Step;;;File:t8-p2-shaheen-fc.df,d,df.mp4;Shaheen-FC.df,d,DF;shaheen
 FC.df,d,DF+3;L;17;i16~20;-23a;+7a;;"* Transitions to SNK on hit
 * Low crush";js;FUFT;Sand Storm;FUFT;;File:t8-p2-shaheen-fc.df,d,df+3.mp4;Shaheen-FC.df,d,DF+3;shaheen
@@ -222,7 +231,7 @@ SNK.1+2;m;21;i19;+4c;+8c;;"* Heat Engager
 * Heat Dash +67a (+50)
 
 * Floor Break
-* 6 chip damage on block";he fbr;FC;Al-Sayf;FC;;File:t8-p2-shaheen-snk.1+2.mp4;Shaheen-SNK.1+2;shaheen
+* 6 chip damage on block";he fbr chp:6;FC;Al-Sayf;FC;;File:t8-p2-shaheen-snk.1+2.mp4;Shaheen-SNK.1+2;shaheen
 SNK.df+1;m;12;i15~16;-5;+6;;* Good left sidestep tracking;;;;;;t8-p2-shaheen-snk.df+1.mp4;Shaheen-SNK.df+1;shaheen
 SNK.df+1,2;m, h;12, 40;i15~16, i20;-4;0;;"* Tornado
 * Removes Recoverable Health

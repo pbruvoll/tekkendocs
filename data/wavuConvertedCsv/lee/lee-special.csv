@@ -5,17 +5,17 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * 12 chip damage on hit
 * Only deals recoverable damage
 * Cannot cause a K.O.
-* Power crush 7~16";hb pc7~16;;Heat Burst;r30;;;Lee-2+3;lee
+* Power crush 7~16";hb chp:2 pc7~16;;Heat Burst;r30;;;Lee-2+3;lee
 H.df+3+4;m;35;i16~17;+2;+26a;+26a;"* Balcony Break
 * 7 chip damage on block
 * Consumes 300F of remaining Heat Time
 * Has good left sidestep tracking
-* Transition to +2, +26a MS with F";bbr;MS;Crimson Howl;;;;Lee-H.df+3+4;lee
+* Transition to +2, +26a MS with F";bbr chp:7;MS;Crimson Howl;;;;Lee-H.df+3+4;lee
 H.d+1+2;m;25;i18;+4;+21a (+11);;"* Balcony Break
 * 6 chip damage on block
 * Consumes 240F of remaining Heat Time
 * Has good right sidestep tracking
-* Transition to +6, +23a (+13) HMS with 3+4";bbr;HMS;Phantom Rose;;;File:t8-p2-lee-h.d+1+2.mp4;Lee-H.d+1+2;lee
+* Transition to +6, +23a (+13) HMS with 3+4";bbr chp:6;HMS;Phantom Rose;;;File:t8-p2-lee-h.d+1+2.mp4;Lee-H.d+1+2;lee
 H.2+3;l,t;40;i20;-14;+0d;;"* Heat Smash
 * Balcony Break";hs bbr;;Paradigm Breaker;;;;Lee-H.2+3;lee
 R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
@@ -58,7 +58,7 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Input 3 during frames 8-9? of previous hit
 * Timestop on hit
 * Consumes 240F of remaining Heat time without perfect input
-* 5 chip damage";;;[[Acid Rain]];;;File:t8-p2-lee-1,3c3c3.mp4;Lee-1,3:3:3;lee
+* 5 chip damage";chp:5;;[[Acid Rain]];;;File:t8-p2-lee-1,3c3c3.mp4;Lee-1,3:3:3;lee
 2;h;10;i10;+1;+7;;;;;Right Cross;;;File:t8-p2-lee-2,1,1.mp4;Lee-2;lee
 2,1;h, h;10, 8;i10, i15;-5;+6;;"* Transition to -5, +6 HMS with 3+4
 * Combos from 1st hit";;HMS;;;;File:t8-p2-lee-2,1,1.mp4;Lee-2,1;lee
@@ -96,7 +96,7 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Combo from 2nd hit with 1f-5f delay only
 * Frame advantage on 1st CH: +29a (+22)
 * 4 Chip Damage on block
-* 5 Chip Damage on block in heat";he bbr;;Machinegun Kicks Cardinal;;;File:t8-p2-lee-4,4c4.mp4;Lee-4,4:4;lee
+* 5 Chip Damage on block in heat";he bbr chp:4;;Machinegun Kicks Cardinal;;;File:t8-p2-lee-4,4c4.mp4;Lee-4,4:4;lee
 4,u+3;h, m;14, 23;i11, i33;-1;+48d;js;* Transition to -9, +40 MS with F;;MS;Lee Somersault;;;File:t8-p2-lee-4,u+3.mp4;Lee-4,u+3;lee
 1+2;m;20;i21;-1;+3;+26a;"* Homing
 * Floor Break
@@ -131,7 +131,7 @@ f+3,3,3,3,3:4;m, m, h, h, h, h;6, 3, 3, 3, 3, 26;i15, ,i23;-9;+69a (+53);;"* Tor
 * Partially consumes remaining Heat Time
 * Combos from 1st hit
 * 4 can be input after the 2nd hit on-wards
-* Low crush";trn js;;Acid Storm Cardinal;;;File:t8-p2-lee-f+3,3,3,3,3c4.mp4;Lee-f+3,3,3,3,3:4;lee
+* Low crush";trn chp:10 js;;Acid Storm Cardinal;;;File:t8-p2-lee-f+3,3,3,3,3c4.mp4;Lee-f+3,3,3,3,3:4;lee
 f+4;h;13;i11;-7;+4;;;;;;;;File:t8-p2-lee-f+4,1.mp4;Lee-f+4;lee
 f+4,1;h, h;13, 24;i11, i24;-5;+20a (+3);;"* Tornado
 * Balcony Break
@@ -142,7 +142,7 @@ f+4,3;h, m;13, 18;i11, i21;-8;+6c;+63a;"* Transition to -4, +7c, +64a HMS with 4
 f+4:1;h, h;13, 27;i11, i24;+5;+20a (+3);;"* Tornado
 * Balcony Break
 * 10 chip damage
-* Combos on 1st hit CH";trn bbr;;Deadly Revolution Cardinal;;;File:t8-p2-lee-f+4c1.mp4;Lee-f+4:1;lee
+* Combos on 1st hit CH";trn bbr chp:10;;Deadly Revolution Cardinal;;;File:t8-p2-lee-f+4c1.mp4;Lee-f+4:1;lee
 f+1+2;h,h;12,20;i13;-13;+18a (+9);;Balcony Break;bbr;;Aggressive One-Two;;;File:t8-p2-lee-f+1+2.mp4;Lee-f+1+2;lee
 f+3+4;M,M;10,20;i30;+4c;+8c;;"Floor Break 9 chip damage
 * Low crush";js;FC;Feather Landing;FC;;File:t8-p2-lee-f+3+4.mp4;Lee-f+3+4;lee
@@ -212,7 +212,7 @@ b+1:1+2;h,h;12,25;i14,i21;-6;+39d (-19);;"* Balcony Break
 * Combos from 1st hit
 * 10 chip damage
 * Perfect Input not required during Heat
-* Partially consumes remaining Heat Time";bbr;;Double Fang Cardinal;;;File:t8-p2-lee-b+1c1+2.mp4;Lee-b+1:1+2;lee
+* Partially consumes remaining Heat Time";bbr chp:10;;Double Fang Cardinal;;;File:t8-p2-lee-b+1c1+2.mp4;Lee-b+1:1+2;lee
 b+1+3;;;;;+14BT;;"* High and Mid parry
 * Puts you behind opponent
 * Alternate input b+2+4, HMS.b+1+3, HMS.b+2+4
@@ -253,16 +253,16 @@ uf+4;m;14;i15;-13;+31a (+21);;"* Knee
 uf+3+4;h;30;i22;+5;+28d (+20);;"* Balcony Break
 * Transition to +8, +31d (+23) HMS with 3+4
 * 9 chip damage
-* Low crush";bbr js;HMS;Silver Bullet;;;File:t8-p2-lee-uf+3+4.mp4;Lee-uf+3+4;lee
+* Low crush";bbr chp:9 js;HMS;Silver Bullet;;;File:t8-p2-lee-uf+3+4.mp4;Lee-uf+3+4;lee
 1+2+3+4;;;;;;;;;;Ki Charge;;;File:t8-p2-lee-1+2+3+4.mp4;Lee-1+2+3+4;lee
 b,B+4;h;23;i19;+2;+25a;;"* Strong Aerial Tailspin
 * Homing
 * Transition to +5, +28a HMS with 3
-* 6 chip damage";hom;HMS;Lee Cutter;;;File:t8-p2-lee-b,b+4.mp4;Lee-b,B+4;lee
+* 6 chip damage";hom chp:6;HMS;Lee Cutter;;;File:t8-p2-lee-b,b+4.mp4;Lee-b,B+4;lee
 f,F+2;h;23;i15;+2;+18gc;+69a (+53);"* Tornado
 * Balcony Break
 * Transition to +5, +21gc, +72a (+56) MS with F
-* 6 chip damage";trn bbr;MS;Jostle Wolf;;;File:t8-p2-lee-f,f+2.mp4;Lee-f,F+2;lee
+* 6 chip damage";trn bbr chp:6;MS;Jostle Wolf;;;File:t8-p2-lee-f,f+2.mp4;Lee-f,F+2;lee
 f,F+3;m;23;i14~15;-9;+21d (+11);;"* Heat Engager
 
 * Heat Dash +5, +36a (+26)
@@ -280,7 +280,7 @@ f:F+2;h;26;i15;+2;+18gc;+69a (+53);"* Tornado
 * Transition to +5, +21gc, +72a (+56) MS with F
 * 11 chip damage
 Perfect Input not required during Heat
-Partially consumes remaining Heat Time";trn bbr;MS;Jostle Wolf Cardinal;;;File:t8-p2-lee-fcf+2.mp4;Lee-f:F+2;lee
+Partially consumes remaining Heat Time";trn bbr chp:11;MS;Jostle Wolf Cardinal;;;File:t8-p2-lee-fcf+2.mp4;Lee-f:F+2;lee
 qcf+4;M;24;i22;-17;+50a (+40);;* Tornado;trn;;Blazing Kick;;;File:t8-p2-lee-d,db+4.mp4;Lee-qcf+4;lee
 ub,b;;;;;;;"* Automatically transitions to HMS
 * Low crush";js;HMS;Back Handspring > Hitman;HMS;;File:t8-p2-lee-ub,b.mp4;Lee-ub,b;lee
@@ -293,7 +293,7 @@ f,f,F+3,4;m, m;14, 26;i14, i20;+3;+19d;;"* Floor Break
 * Combos from 1st hit
 * 7 chip damage
 * Balcony break on 2nd hit only
-* Low crush";fbr js;HMS;Waxing Crescent;;;File:t8-p2-lee-f,f,f+3,4.mp4;Lee-f,f,F+3,4;lee
+* Low crush";fbr chp:7 js;HMS;Waxing Crescent;;;File:t8-p2-lee-f,f,f+3,4.mp4;Lee-f,f,F+3,4;lee
 ws1;m;12;i13~14;-2;+7;;* Transition to HMS;;HMS,HMS;;r20 HMS;;File:t8-p2-lee-ws1,2.mp4;Lee-ws1;lee
 ws1,2;m, h;12, 17;i13~14, i20;-7;+2;+7;"* Combo from 1st hit with 7F delay
 * Transition to MS r22 cs10~23 with F (-3/+6/+11)
@@ -307,7 +307,7 @@ ws1:4;m, h;12, 23;i13~14, i20;-5;+15g;;"* Balcony Break
 * Transition to -8, +12g HMS with 3
 * Input 4 during frames 12-14
 * Move cannot be delayed
-* 9 chip damage on block";bbr;HMS;Wonderful Combo Cardinal;;;File:t8-p2-lee-ws1,j4.mp4;Lee-ws1:4;lee
+* 9 chip damage on block";bbr chp:9;HMS;Wonderful Combo Cardinal;;;File:t8-p2-lee-ws1,j4.mp4;Lee-ws1:4;lee
 ws2;m;12;i14;-8;+3;;*;;;;;;File:t8-p2-lee-ws2,3.mp4;Lee-ws2;lee
 ws2,3;m, m;12, 24;i14, i20;-13;+32a (+22);;"* Tornado
 * Combos from 1st hit";trn;;Rocket Heel;;;File:t8-p2-lee-ws2,3.mp4;Lee-ws2,3;lee
@@ -379,14 +379,14 @@ HMS.3;h,t;21,20;i18;-3;+0d;;"* Strong Aerial Tailspin
 * Homing
 * Shifts to throw on hit from the front
 * 6 chip damage
-* Power crush 8~";hom pc8~;;Scatter Kick;;;File:t8-p2-lee-hms.3.mp4;Lee-HMS.3;lee
+* Power crush 8~";hom chp:6 pc8~;;Scatter Kick;;;File:t8-p2-lee-hms.3.mp4;Lee-HMS.3;lee
 HMS.4;l;20;i22;-13;+4c;+72a (+56);"* Instant Tornado on CH
 * High crush 6~";cs6~;FC;Shin Slicer;FC;;File:t8-p2-lee-hms.4.mp4;Lee-HMS.4;lee
 HMS.1+2;m,m;10,15;i15;-5;+6;;* Transition to HMS -3 +8 with 3+4;;HMS,HMS;Poison Touch;HMS;;File:t8-p2-lee-hms.1+2.mp4;Lee-HMS.1+2;lee
 HMS.u+3;m;32;i20~22;-9;+23d (+13);;"* Balcony Break
 * Transition to -9, +23d (+13) FC with D
 * 7 chip damage
-* Low crush 9~";bbr js9~;FC;Silver Slash;;;File:t8-p2-lee-hms.u+3.mp4;Lee-HMS.u+3;lee
+* Low crush 9~";bbr chp:7 js9~;FC;Silver Slash;;;File:t8-p2-lee-hms.u+3.mp4;Lee-HMS.u+3;lee
 HMS.u+4;M;20;i26~29;+5c;+8c;;"*
 * Low crush 16~";js16~;;Silver Circle;;;File:t8-p2-lee-hms.u+4.mp4;Lee-HMS.u+4;lee
 MS.3;m;10;i15;-12;-1;;"*

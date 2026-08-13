@@ -1,6 +1,7 @@
 import { expect, test } from 'vitest';
 import { type Move } from '~/types/Move';
-import { getRelatedMoves } from './frameDataUtils';
+import { type SortSettings } from '~/types/SortSettings';
+import { getChipDamage, getRelatedMoves, sortMovesV2 } from './frameDataUtils';
 
 test('getRelatedMoves with more that one hit', () => {
   const move: Pick<Move, 'command'> = {
@@ -56,6 +57,46 @@ test('getRelatedMoves with double direction input', () => {
     commands.map((c) => ({ command: c }) as Move),
   );
   expect(relatedMoves.map((m) => m.command)).toEqual(['f,f+2,1']);
+});
+
+test('getChipDamage', () => {
+  expect(getChipDamage({ tags: { chp: '9' } } as unknown as Move)).toBe(9);
+  expect(getChipDamage({ tags: { chp: '' } } as unknown as Move)).toBe(
+    undefined,
+  );
+  expect(getChipDamage({ tags: { trn: '' } } as unknown as Move)).toBe(
+    undefined,
+  );
+  expect(getChipDamage({} as Move)).toBe(undefined);
+});
+
+test('sortMovesV2 by chip', () => {
+  const moves = [
+    { command: 'no chip' },
+    { command: 'chip 6', tags: { chp: '6' } },
+    { command: 'chip unknown', tags: { chp: '' } },
+    { command: 'chip 12', tags: { chp: '12' } },
+  ] as unknown as Move[];
+
+  const sortByChip = (sortDirection: SortSettings['sortDirection']) =>
+    sortMovesV2(moves, { sortByKey: 'chip', sortDirection }).map(
+      (m) => m.command,
+    );
+
+  // in both directions the moves with a known amount come first, then the moves
+  // which chip without a known amount, and last the moves without chip damage
+  expect(sortByChip('asc')).toEqual([
+    'chip 12',
+    'chip 6',
+    'chip unknown',
+    'no chip',
+  ]);
+  expect(sortByChip('desc')).toEqual([
+    'chip 6',
+    'chip 12',
+    'chip unknown',
+    'no chip',
+  ]);
 });
 
 test('getRelatedMoves with heat and hold', () => {

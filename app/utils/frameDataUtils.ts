@@ -212,13 +212,22 @@ export const getInterruptibleFrames = (move: Move): number | undefined => {
   return Number.isNaN(framesNumber) ? undefined : framesNumber;
 };
 
+export const getChipDamage = (move: Move): number | undefined => {
+  const chipDamage = move.tags?.[MoveTags.Chip];
+  if (!chipDamage) {
+    return undefined;
+  }
+  const chipDamageNumber = parseInt(chipDamage, 10);
+  return Number.isNaN(chipDamageNumber) ? undefined : chipDamageNumber;
+};
+
 export const hitsGrounded = (move: Move) => {
   const lastHitLevel = move.hitLevel?.split(',').pop();
   return !!lastHitLevel && lastHitLevel === lastHitLevel.toUpperCase();
 };
 
 export const isChip = (move: Move) => {
-  return /chip/i.test(move.notes || '');
+  return hasTag(MoveTags.Chip, move);
 };
 
 export const isUnblockable = (move: Move) => {
@@ -722,6 +731,24 @@ export const sortMovesV2 = (
       return sortMovesByNumber(
         moves,
         (move: Move) => move.tags?.[MoveTags.Interruptible] || '',
+        asc,
+      );
+    }
+    case 'chip': {
+      // moves with the chip tag but no amount sort after the moves with a known
+      // amount, and moves without chip damage sort last. Which sentinel is the
+      // "last" one depends on the direction the numbers are compared in
+      const unknownAmount = asc ? '-1' : '1000';
+      const noChipDamage = asc ? '-2' : '1001';
+      return sortMovesByNumber(
+        moves,
+        (move: Move) => {
+          const chipDamage = move.tags?.[MoveTags.Chip];
+          if (chipDamage === undefined) {
+            return noChipDamage;
+          }
+          return chipDamage || unknownAmount;
+        },
         asc,
       );
     }

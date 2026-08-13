@@ -6,13 +6,13 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * 12 chip damage on hit
 * Only deals recoverable damage
 * Cannot cause a K.O.
-* Power crush 7~16";hb pc7~16;;Heat Burst;r30;;;Lili-2+3;lili
+* Power crush 7~16";hb chp:2 pc7~16;;Heat Burst;r30;;;Lili-2+3;lili
 H.BT.2+3;l,M,M,M;15,5,5,20;i16 i27~28 i6~8 i20~22;-8;+23a (+5);;"* Heat Smash
 * Homing
 * Balcony Break
 * 5 chip damage
 * High crush 4~?
-* Low crush 25~?";hs hom bbr cs4~? js25~?;BT;Rosa Giganteia Mezzo Forte;BT;;;Lili-H.BT.2+3;lili
+* Low crush 25~?";hs hom bbr chp:5 cs4~? js25~?;BT;Rosa Giganteia Mezzo Forte;BT;;;Lili-H.BT.2+3;lili
 H.RAB.2;m;24;i20;-9;+39d (-19);;"* Heat Engager
 
 * Heat Dash +5, +36a (+26)
@@ -34,12 +34,12 @@ H.b+3*;;;;;;;"* Actionable after 48f
 H.f,F+3+4;m;36;i19~25;+5;+20~26a (-6~+0);;"* Balcony Break
 * 16 chip damage on block
 * Partially consumes remaining Heat time
-* Low crush";bbr js;;Piercing Thorn (Heat);;;;Lili-H.f,F+3+4;lili
+* Low crush";bbr chp:16 js;;Piercing Thorn (Heat);;;;Lili-H.f,F+3+4;lili
 H.2+3;m,t;55;i16;+7;+0d;;"* Heat Smash
 * Balcony Break
 * H.RAB.2+3: i21 actual startup
 * Transition to +14g DEW with F on block 
-* 6 chip damage on block";hs bbr;DEW;Le Rosier Millénaire Mezzo Forte;;;;Lili-H.2+3;lili
+* 6 chip damage on block";hs bbr chp:6;DEW;Le Rosier Millénaire Mezzo Forte;;;;Lili-H.2+3;lili
 R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Removes Recoverable Health
 * Reversal Break
@@ -69,14 +69,14 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Powers up in Heat
 * Chip on block [6]
 * Low crush 22~42
-* Floating state 43~45";bbr chp js22~42 fs43~45;;Left Right Piercing Thorn;r42;;File:t8-p2-lili-1,2,4.mp4;Lili-1,2,4;lili
+* Floating state 43~45";bbr chp:6 js22~42 fs43~45;;Left Right Piercing Thorn;r42;;File:t8-p2-lili-1,2,4.mp4;Lili-1,2,4;lili
 H.1,2,4;h, h, m;5, 12, 30;i10, ,i29~34;+5~+10;+18~23a (-8~-3);;"* Balcony Break
 * 13 chip damage on block
 * Input can be delayed 4?f
 * Move can be delayed 3?f
 * Partially consumes remaining Heat time
 * Low crush 21?~41?
-* Floating state 42?~44?";bbr js21?~41? fs42?~44?;;Left Right Piercing Thorn (Heat);r42?;;;Lili-1,2,H.4;lili
+* Floating state 42?~44?";bbr chp:13 js21?~41? fs42?~44?;;Left Right Piercing Thorn (Heat);r42?;;;Lili-1,2,H.4;lili
 2;h;8;i10;+0;+8;;;;;;r19;;File:t8-p2-lili-2,3.mp4;Lili-2;lili
 2,3;h, L;8, 13;i10, i26;-13;-2;+6c;"* Combo from 1st hit
 * High crush 10~45";cs10~45;;Sunrise Sunset;r32;;File:t8-p2-lili-2,3.mp4;Lili-2,3;lili
@@ -112,7 +112,7 @@ H.1,2,4;h, h, m;5, 12, 30;i10, ,i29~34;+5~+10;+18~23a (-8~-3);;"* Balcony Break
 * Jail from 1st attack
 * Chip damage on block [8]
 * Low crush 22~36
-* Floating state 37~39";he hom bbr chp js22~36 fs37~39;;Black Swan;r29;;File:t8-p2-lili-3+4.mp4;Lili-3+4;lili
+* Floating state 37~39";he hom bbr chp:8 js22~36 fs37~39;;Black Swan;r29;;File:t8-p2-lili-3+4.mp4;Lili-3+4;lili
 H.3+4,3+4;h,h,m,M;10,10,15,20;i23~24 i14~15 i36~38 i9~11;+7;+20d(-15);;"* Homing
 * Floor Break 
 * Partially consumes remaining Heat time
@@ -272,7 +272,7 @@ u+1+2*;m;30;i18~19;+12g;+17a (+8);;"* Strong Aerial Tailspin
 * Homing
 * Balcony Break
 * Move is delayed 33f, effective startup i51~52
-* 9 chip damage on block";hom bbr;;Lashing Iris (Two Spins);r32;;;Lili-u+1+2*;lili
+* 9 chip damage on block";hom bbr chp:9;;Lashing Iris (Two Spins);r32;;;Lili-u+1+2*;lili
 u+1+2**;m!;50;i18~19;;+16a (+7);;"* Strong Aerial Tailspin
 * Homing
 * Balcony Break
@@ -328,7 +328,7 @@ f,F+3+4;m;30;i19~25;-2~+4;+4a (-5);;"* Balcony Break
 * Powers up in Heat
 * Chip damage on block [9]
 * Low crush 11~31
-* Floating state 32~34";bbr chp js11~31 fs32~34;;Piercing Thorn;r39;;File:t8-p2-lili-f,f+3+4.mp4;Lili-f,F+3+4;lili
+* Floating state 32~34";bbr chp:9 js11~31 fs32~34;;Piercing Thorn;r39;;File:t8-p2-lili-f,f+3+4.mp4;Lili-f,F+3+4;lili
 qcf;;;;;;;"* Minimum 3f needed to enter (one for each directional, d can be buffered)
 * Stance moves available for 25 frames
 * Transition to r6? hFC with alternate input d,DF
@@ -340,10 +340,10 @@ uf,n,4;m;20;i23~25;-13~-11;+32a (+22);;"* Low crush 9~30
 f,f,F+3;m;30;i23~30;+3~+10;+20a (+10);;"* Balcony Break
 * Chip damage on block [9]
 * Low crush 3~27
-* Floating state 28~30";bbr chp js3~27 fs28~30;;Sabre Slash;r23;;File:t8-p2-lili-f,f,f+3.mp4;Lili-f,f,F+3;lili
+* Floating state 28~30";bbr chp:9 js3~27 fs28~30;;Sabre Slash;r23;;File:t8-p2-lili-f,f,f+3.mp4;Lili-f,f,F+3;lili
 f,f,F+1+2;h,h;9,16;i13~14 i7~8;+4;+33d;;"* Strong Aerial Tailspin
 * Balcony Break
-* Chip damage on block [4]";bbr chp;;Zephyranthes;r33;;;Lili-f,f,F+1+2;lili
+* Chip damage on block [4]";bbr chp:4;;Zephyranthes;r33;;;Lili-f,f,F+1+2;lili
 ws1;m;10;i13~14;-11;+0;;;;;;r29;;File:t8-p2-lili-ws1,2,4.mp4;Lili-ws1;lili
 ws1,2;m, h;10, 16;i13~14, i22~23;-3;+8;;"* Combo from 1st hit with 1f delay
 * Interrupt with i4
@@ -382,7 +382,7 @@ FC.2;sl;8;i11;-4;+7;;* High crush 1~;cs1~;FC;;r23 FC;;;Lili-FC.2;lili
 FC.3;L;10;i16;-17;-6;;* High crush 1~;cs1~;FC;;r36 FC;;;Lili-FC.3;lili
 FC.4;l;6;i12;-15;-4;;* High crush 1~;cs1~;FC;;r34 FC;;;Lili-FC.4;lili
 FC.df+1;m;24;i14~15;-6;+19a (+2);+34d (+26);"* Balcony Break
-* 4 chip damage on block";bbr;;Slashing Vine;r30;;File:t8-p2-lili-fc.df+1.mp4;Lili-FC.df+1;lili
+* 4 chip damage on block";bbr chp:4;;Slashing Vine;r30;;File:t8-p2-lili-fc.df+1.mp4;Lili-FC.df+1;lili
 FC.df+3;L;19;i19-28;-18~-9;-2~+7;+26a;"* Can be done from Crouch Level 1
 * High crush 10~47";cs10~47;;Horizon Slide;r28;;File:t8-p2-lili-fc.df+3.mp4;Lili-FC.df+3;lili
 FC.df+4;m;18;i20~21;-4;+4;+64;"* Can be done from Crouch Level 1
@@ -432,7 +432,7 @@ BT.3+4;M;24;i29~32;+2~+5;+7c~+10c;;"* Spike
 * Chip on block [9]
 * Evasive, can jump over some mids
 * Low crush 5~31
-* Floating state 32~34";spk chp js5~31 fs32~34;BT;Twist Backflip;r25 BT;;File:t8-p2-lili-bt.3+4.mp4;Lili-BT.3+4;lili
+* Floating state 32~34";spk chp:9 js5~31 fs32~34;BT;Twist Backflip;r25 BT;;File:t8-p2-lili-bt.3+4.mp4;Lili-BT.3+4;lili
 BT.b+3;;;;;;;"* Actionable after 20f
 * Stance duration 40f, cannot input moves on frame 26~
 * Stance moves can be buffered
@@ -458,12 +458,12 @@ DEW.1,4;m, m;12, 26;i15~16, i25~31;-9;+2a (-7);;"* Balcony Break
 * Chip damage on block [7]
 * Power up in Heat
 * Low crush 19~39
-* Floating state 40~42";bbr chp js19~39 fs40~42;;Rose Piercing Thorn;r41;;File:t8-p2-lili-dew.1,4.mp4;Lili-DEW.1,4;lili
+* Floating state 40~42";bbr chp:7 js19~39 fs40~42;;Rose Piercing Thorn;r41;;File:t8-p2-lili-dew.1,4.mp4;Lili-DEW.1,4;lili
 H.DEW.1,4;m, m;12, 30;i15~16, i25~31;+5;+20~26a (-6~+0);;"* Balcony Break
 * Combos from 1st hit CH
 * 16 chip damage on block 
 * Partially consumes remaining Heat time
-* Low crush 17~";bbr js17~;;Rose Piercing Thorn (Heat);;;;Lili-DEW.1,H.4;lili
+* Low crush 17~";bbr chp:16 js17~;;Rose Piercing Thorn (Heat);;;;Lili-DEW.1,H.4;lili
 DEW.2;m;13;i14;-9;+0;;* Homing;hom;;;r31;;File:t8-p2-lili-dew.2,1.mp4;Lili-DEW.2;lili
 DEW.2,1;m, m;13, 20;i14, i22~23;-13;+17d;;"* Heat Engager
 
@@ -503,7 +503,7 @@ RAB.4;m;24;i23~29;-2~+4;+4a (-5);;"* Balcony Break
 * Chip damage on block [9]
 * Powered up during Heat
 * Low crush 15~36
-* Floating state 37~39";bbr chp js15~36 fs37~39;;Rabbit Piercing Thorn;r39;;File:t8-p2-lili-b+3,4.mp4;Lili-RAB.4;lili
+* Floating state 37~39";bbr chp:9 js15~36 fs37~39;;Rabbit Piercing Thorn;r39;;File:t8-p2-lili-b+3,4.mp4;Lili-RAB.4;lili
 (Wall Splat).1+3;t;39;;;+0d;;"* Unbreakable
 * Wall throw";;;Larkspur;;;;Lili-(Wall Splat).1+3;lili
 1+3;t;35;i12~14;-3;+0d;;"* Homing

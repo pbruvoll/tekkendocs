@@ -5,13 +5,13 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * 12 chip damage on hit
 * Only deals recoverable damage
 * Cannot cause a K.O.
-* Power crush 7~16";hb pc7~16;;Heat Burst;r30;;;Leo-2+3;leo
+* Power crush 7~16";hb chp:2 pc7~16;;Heat Burst;r30;;;Leo-2+3;leo
 H.2+3;m,m,h;14,13,23 (50);i16~17;+8~+9;+0d;;"* Heat Smash
 * Balcony Break
 * Transition to attack throw on 1st hit
 * +8a(-1) on hit on first whiff
 * Enter CD +16g with df on block
-* 7 chip damage on block";hs bbr;CD;Ultimate Feng Huo Lun Kick;;;;Leo-H.2+3;leo
+* 7 chip damage on block";hs bbr chp:7;CD;Ultimate Feng Huo Lun Kick;;;;Leo-H.2+3;leo
 R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Removes Recoverable Health
 * Reversal Break
@@ -70,7 +70,7 @@ LTG.f+2,4,3;h, h, M;14, 16, 20;i14~16, ,i32~35;-3c~?;+16d;;"* Balcony Break
 * Transition to BOK with D (0c~?/+19d~+22d 
 * 8 chip damage on block
 * Consumes 240F of heat timer during heat
-* Low crush 16~";bbr spk js16~;BOK;Jue Zhao Heng Da Bai Tui;;;File:t8-p2-leo-f+2,4,ltg.3.mp4;Leo-f+2,4,LTG.3;leo
+* Low crush 16~";bbr spk chp:8 js16~;BOK;Jue Zhao Heng Da Bai Tui;;;File:t8-p2-leo-f+2,4,ltg.3.mp4;Leo-f+2,4,LTG.3;leo
 f+3;h;23;i20~21;0~+1;+4;+27a;* Enter BOK +2 +6 +29a with d;;BOK;Bai Tui;;;File:t8-p2-leo-f+3.mp4;Leo-f+3;leo
 f+4;m;14;i17~18;+9~+10;+15g;+19;"* Knee
 * Stance moves may be delayed by 11F
@@ -81,7 +81,7 @@ f+2+3;h;21;i20~21;-9~-8;+11a (+2);;"* Balcony Break
 * Sidesteps to the right";bbr;;Xiang Chui;r33;;File:t8-p2-leo-f+2+3.mp4;Leo-f+2+3;leo
 f+3+4;h;24;i17~18;0~-1;+8;+71a (+55);"* Tornado
 * Balcony Break
-* 7 chip damage on block";trn bbr;;Yellow Crane;;;File:t8-p2-leo-f+3+4.mp4;Leo-f+3+4;leo
+* 7 chip damage on block";trn bbr chp:7;;Yellow Crane;;;File:t8-p2-leo-f+3+4.mp4;Leo-f+3+4;leo
 df+1;m;13;i13~14;-1~0;+7;;;;;Quick Upper;;;File:t8-p2-leo-df+1,2.mp4;Leo-df+1;leo
 df+1,2;m, h;13, 20;i13~14, i18;-6;+9d;+34d (+26);"*
 Tornado
@@ -98,7 +98,7 @@ df+2+3;L;20;i21~22;-12~-11;+5;+21d;* High crush 6~;cs6~;FC;Gui Xi;FC;;;Leo-df+2+
 d+1;m;18;i18~19;-2~-1;+5;+13;"* Spike
 * Enter FC with d";spk;FC;Fu Hu;;;;Leo-d+1;leo
 d+2;m;23;i21;+4c;+9c;+56a;"* Spike
-* 4 chip damage on block";spk;;Pi Zhong;;;File:t8-p2-leo-d+2.mp4;Leo-d+2;leo
+* 4 chip damage on block";spk chp:4;;Pi Zhong;;;File:t8-p2-leo-d+2.mp4;Leo-d+2;leo
 d+3;l;10;i16;-17;-6;;* High crush 4~;cs4~;;Crouch Spin Kick;;;;Leo-d+3;leo
 d+4;L;13;i16~17;-11~-10;+0;;;;;Sao Tang Ti;;;File:t8-p2-leo-d+4,2.mp4;Leo-d+4;leo
 d+4,2;L, h;13, 23;i16~17, i26~27;-5~-4;-7d;+3d;"* Combo from 1st CH
@@ -127,7 +127,7 @@ LTG.db+4,1,1+2;L, m, m;11, 27, 20;i20~22, ,i15~16;-15~-14;+6a (-3);;"* Balcony B
 * Combo from 1st hit
 ** +27a (+17)
 * 8 chip damage on block
-* Partially consumes remaining heat time during heat";bbr shd;;Jue Zhao Qian Sao Lei Wang Quan;;;File:t8-p2-leo-db+4,1,ltg.1+2.mp4;Leo-db+4,1,LTG.1+2;leo
+* Partially consumes remaining heat time during heat";bbr shd chp:8;;Jue Zhao Qian Sao Lei Wang Quan;;;File:t8-p2-leo-db+4,1,ltg.1+2.mp4;Leo-db+4,1,LTG.1+2;leo
 db+1+2;m;17;i21~23;-9~-7;+7;;* Enter BOK -12 +4 with d;;BOK;;;;File:t8-p2-leo-db+1+2,1.mp4;Leo-db+1+2;leo
 db+1+2,1;m, m;17, 20;i21~23, i17~18;-12~-11;+22a (+17);;"* Balcony Break
 * Combo from 1st hit with delay";bbr;;Ba Wang Zhe Jiang;;;File:t8-p2-leo-db+1+2,1.mp4;Leo-db+1+2,1;leo
@@ -168,7 +168,7 @@ LTG.b+3,1,2;m, m, m;12, 13, 17 (25);i14~15, ,i17;-12;+25a (+15);;"* Balcony Brea
 * +10a on 2nd whiff and 3rd hit
 * 42 damage from 1st hit with scaling
 * 10 chip damage on block
-* Consumes 210F of heat timer during heat";bbr;;Jue Zhao Ying Mian Tui;;;File:t8-p2-leo-b+3,1,ltg.2.mp4;Leo-b+3,1,LTG.2;leo
+* Consumes 210F of heat timer during heat";bbr chp:10;;Jue Zhao Ying Mian Tui;;;File:t8-p2-leo-b+3,1,ltg.2.mp4;Leo-b+3,1,LTG.2;leo
 b+4;m;13;i18;-8;+5;;;;;;;;File:t8-p2-leo-b+4,1.mp4;Leo-b+4;leo
 b+4,1;m, m;13, 20;i18, i30~31;-12~-11;+15a (+6);;"* Balcony Break
 * Shoulder
@@ -183,7 +183,7 @@ b+1+2,1+2;m, m;15, 13;i17~18, i21~22;-14~-13;-3;+7;"* Shoulder
 b+1+2,1+2,2;m, m, m;15, 13, 25 (30);i17~18, ,i20~21;-13~-12;+17d (+12);;"* Combo from 2nd CH
 * Power up with motion input d,df,f+2
 * 12 chip damage on block with motion input
-* Deals 25 damage without motion input";;;Jin Gang Hua Shan Tuo Tian Zhang;;;File:t8-p2-leo-b+1+2,1+2,d,df,f+2.mp4;Leo-b+1+2,1+2,2;leo
+* Deals 25 damage without motion input";chp:12;;Jin Gang Hua Shan Tuo Tian Zhang;;;File:t8-p2-leo-b+1+2,1+2,d,df,f+2.mp4;Leo-b+1+2,1+2,2;leo
 b+1+4;h,l;6,12;i19~21;-12~-10;+3;+14;;;;Cuo Zhang;;;File:t8-p2-leo-b+1+4.mp4;Leo-b+1+4;leo
 b+2+3;m;21;i30~31;-8~-7;+23g;+28a;"* Parries high and mid punches
 * Hit after parry is the same as on CH
@@ -229,7 +229,7 @@ d,df,f;;;;;;;"* Cancel to SS with U?
 ** Cannot access stance moves";;SS,hFC;Jin Bu;;;;Leo-d,df,f;leo
 f,F+2;m;25;i14~15;-9~-8;+8a;;"* Balcony Break
 * Gain LTG -9a on hit with 1+2
-* 5 chip damage on block";bbr;;Shang Bu Zhuang Quan;;;File:t8-p2-leo-f,f+2.mp4;Leo-f,F+2;leo
+* 5 chip damage on block";bbr chp:5;;Shang Bu Zhuang Quan;;;File:t8-p2-leo-f,f+2.mp4;Leo-f,F+2;leo
 f,F+3;M;20;i26~29;-7c~-4c;+3d;;"* Enter BOK +0 +10d with d
 * Low crush 9~";js9~;BOK;Tiao Shan Fu Ren;;;File:t8-p2-leo-f,f+3.mp4;Leo-f,F+3;leo
 f,F+4;m;12;i19;-13;+28a (+18);;* Low crush 17;js17;;;;;File:t8-p2-leo-f,f+4,3,4.mp4;Leo-f,F+4;leo
@@ -245,7 +245,7 @@ f,f,F+3;m;30;i23~26;+6g~+11g;+17a (+7);;"* Balcony Break
 * 9 chip damage on block
 * Alternate input wr3
 * Transition to BOK with D (+6/+17a (+7))
-* Low crush 3~";bbr js3~;BOK;Tiao Shan Jiang Jiao;r34;;File:t8-p2-leo-f,f,f+3.mp4;Leo-f,f,F+3;leo
+* Low crush 3~";bbr chp:9 js3~;BOK;Tiao Shan Jiang Jiao;r34;;File:t8-p2-leo-f,f,f+3.mp4;Leo-f,f,F+3;leo
 ws1;m;13;i14~15;-8~-7;+4;;;;;;;;File:t8-p2-leo-ws1,4,1.mp4;Leo-ws1;leo
 ws1,4;m, L;13, 12;i14~15, i19~20;-12~-11;-1;;Combo from 1st CH;;;;;;File:t8-p2-leo-ws1,4,1.mp4;Leo-ws1,4;leo
 ws1,4,1;m, L, m;13, 12, 24;i14~15, ,i22;-14;+12a (+3);+44a (-3);"* Balcony Break
@@ -282,7 +282,7 @@ BOK.2;M;23;i19~20;-9~-8;+41a (+31);;* High crush 0~17;cs0~17;;Fan Lan Chui;;;Fil
 BOK.3;h;30;i21;+5;+15d;;"* Homing
 * Balcony Break
 * 9 chip damage on block
-* Low crush 10~";hom bbr js10~;;Startled Crane;;;File:t8-p2-leo-bok.3.mp4;Leo-BOK.3;leo
+* Low crush 10~";hom bbr chp:9 js10~;;Startled Crane;;;File:t8-p2-leo-bok.3.mp4;Leo-BOK.3;leo
 BOK.4;m;14;i20;+9;+15g;+19;"* Knee
 * Same move as f+4";kne;KNK;Jin Ji Du Li;KNK;;;Leo-BOK.4;leo
 BOK.1+2;M;22;i20~21;-12~-11;+15d;;"* Heat Engager
@@ -315,7 +315,7 @@ qcf+2,4;m, h;14, 26;i17, i25~28;-4~-1;+10d (+0);;"* Balcony Break
 * Move can be delayed by 4F
 * Input can be delayed by 8F
 * 7 chip damage on block
-* Low crush 13~";bbr stp:SS intr:9 js13~;;Lightning Skypiercer;;;File:t8-p2-leo-cd.2,4.mp4;Leo-CD.2,4;leo
+* Low crush 13~";bbr stp:SS intr:9 chp:7 js13~;;Lightning Skypiercer;;;File:t8-p2-leo-cd.2,4.mp4;Leo-CD.2,4;leo
 qcf+3+4;m,m;6,20;i18~20 i22~24;-6~-4;+13g;;"* Homing
 * Balcony Break
 * Low crush 17~";hom bbr js17~;;Swallow Step;;;File:t8-p2-leo-cd.3+4.mp4;Leo-CD.3+4;leo
@@ -334,7 +334,7 @@ KNK.1,4;h, h;12, 20;i18, i22~24;+4;+32a (+6);;"* Strong Aerial Tailspin
 * Transition to r18 BOK with D (+8/+32a (+6))
 * 4 chip damage on block
 * Move can be delayed by 10F
-* Input can be delayed by 12F";bbr;BOK;Bai She Luan Tui;;;File:t8-p2-leo-knk.1,4.mp4;Leo-KNK.1,4;leo
+* Input can be delayed by 12F";bbr chp:4;BOK;Bai She Luan Tui;;;File:t8-p2-leo-knk.1,4.mp4;Leo-KNK.1,4;leo
 KNK.2;h;20;i13~14;-4;+22a (+13);+58a;* Balcony Break;bbr;;Heng Quan;;;File:t8-p2-leo-knk.2.mp4;Leo-KNK.2;leo
 KNK.3;m;13;i20;-13;+28a (+18);;* Low crush 13~;js13~;;Yi Qi Jiao;;;File:t8-p2-leo-knk.3,4.mp4;Leo-KNK.3;leo
 KNK.3,4;m, m;13, 18;i20, i15;-12;+80a;;"Tornado
@@ -350,7 +350,7 @@ KNK.1+2;M;20;i22~24;-6;+21cg;+41a (+31);"* Tornado
 * Balcony Break
 ** On non-CH grounded connect
 * Opponent recovers crouching
-* 6 chip damage on block";trn bbr;;Upper Rising Fist;;;File:t8-p2-leo-knk.1+2.mp4;Leo-KNK.1+2;leo
+* 6 chip damage on block";trn bbr chp:6;;Upper Rising Fist;;;File:t8-p2-leo-knk.1+2.mp4;Leo-KNK.1+2;leo
 KNK.3+4;L;24;i24;-26;+19d;;* High crush 8~;cs8~;;Tree Feller;;;File:t8-p2-leo-knk.3+4.mp4;Leo-KNK.3+4;leo
 KNK.DF;;;;;;;;;CD;Jin Bu;r12 CD;;;Leo-KNK.DF;leo
 OTG.d+3+4;L;22;i21~22;-13~-12;+3;;"* Spike
