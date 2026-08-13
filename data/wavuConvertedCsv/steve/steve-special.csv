@@ -5,7 +5,7 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * 12 chip damage on hit
 * Only deals recoverable damage
 * Cannot cause a K.O.
-* Power crush 7~16";hb pc7~16;;Heat Burst;r30;;;Steve-2+3;steve
+* Power crush 7~16";hb chp:2 pc7~16;;Heat Burst;r30;;;Steve-2+3;steve
 H.EXD.1+3;h (th);;i18~19;;;;"* Homing
 * Unbreakable
 * Transition to TFA
@@ -26,7 +26,7 @@ H.2+3;m,th;10,4,2,3,3,3,25;i16;+8 LNH;+0;;"* Heat Smash
 * Spike
 * Can cancel transition to LNH on block with B at -9
 * 7 chip damage on block
-* Alternate input: H.FLK.2+3 or H.PAB.2+3";hs fbr spk;LNH;Bretwalda;;;;Steve-H.2+3;steve
+* Alternate input: H.FLK.2+3 or H.PAB.2+3";hs fbr spk chp:7;LNH;Bretwalda;;;;Steve-H.2+3;steve
 R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Removes Recoverable Health
 * Reversal Break
@@ -261,7 +261,7 @@ ub+2;h;17;i17;+5;+14c;;"* Strong Aerial Tailspin
 * Homing
 * 5 chip damage on block
 * Transition into LNH
-* Transition to r30 standing with b (+1/+10c)";hom;LNH;Bounty Hunter;r30? LNH;;File:t8-p2-steve-ub+2.mp4;Steve-ub+2;steve
+* Transition to r30 standing with b (+1/+10c)";hom chp:5;LNH;Bounty Hunter;r30? LNH;;File:t8-p2-steve-ub+2.mp4;Steve-ub+2;steve
 ub+2~1;m;17;i30~31;-8;+4;+63a;;;;Swindler;;;;Steve-ub+2~1;steve
 ub+3;sp;;;;;;"* Transition to LNH
 * Actionable for 120F
@@ -303,7 +303,7 @@ Heat Dash (+5, +67a (+50))
 * Balcony Break
 * Spike
 * 9 chip damage on block
-* Low crush 9~";he bbr spk js9~;;Eraser;r36?;;File:t8-p2-steve-f,f,f+2.mp4;Steve-f,f,F+2;steve
+* Low crush 9~";he bbr spk chp:9 js9~;;Eraser;r36?;;File:t8-p2-steve-f,f,f+2.mp4;Steve-f,f,F+2;steve
 WS.1;m;12;i11~12;-3;+3;+8;;;;;;;File:t8-p2-steve-ws.1,1.mp4;Steve-WS.1;steve
 WS.1,1;m, h;12, 7;i11~12, i15;-3;+3;;"* Combo from 1st hit
 * Combo from 1st CH with 11F delay
@@ -351,7 +351,7 @@ DCK.1+2,1+2,1+2,1+2;m,m, m,m, m,m, m,m;3,3, 3,3, 2,2, 2,12;i16, i7, ,i7, i9;-12;
 * Jail from 1st block?";;;Gatling Gun;;;File:t8-p2-steve-dck.1+2,1+2,1+2,1+2.mp4;Steve-DCK.1+2,1+2,1+2,1+2;steve
 DCK.f+2;h;21;i15~16;+5;+14c;+55a;"* Strong Aerial Tailspin
 * Transition to standing (+1/+10c/+51a) with B
-* 6 chip damage on block";;LNH;Punisher;LNH;;File:t8-p2-steve-dck.f+2.mp4;Steve-DCK.f+2;steve
+* 6 chip damage on block";chp:6;LNH;Punisher;LNH;;File:t8-p2-steve-dck.f+2.mp4;Steve-DCK.f+2;steve
 DCK.f+2~1;m;17;i28~29;-8;+4;+63a;;;;Swindler;;;;Steve-DCK.f+2~1;steve
 DCK.f+3;sp;;;;;;"* Transition to EXD
 * Actionable for 19F
@@ -363,11 +363,11 @@ DCK.f+3;sp;;;;;;"* Transition to EXD
 * Transition is t38 r18 cs1~18 and actionable for 14F.
 * Can immediately transition into r15 SWY with 14F delay?
 * Can immediately transition into r1 DCK with 14F delay?";;EXD,EXD;Ducking In;r6 EXD;;File:t8-p2-steve-dck.f+3_4.mp4;Steve-DCK.f+3_4;steve
-EXD.1;m;21;i19;-7;+44d (+36);+41a (+31);* 8 chip damage on block;;;Power Fox Hunt;;;File:t8-p2-steve-exd.1.mp4;Steve-EXD.1;steve
-EXD.2;m;21;i19;-14;+61a (+51);;* 6 chip damage on block;;;Power Skyscraper;;;File:t8-p2-steve-exd.2.mp4;Steve-EXD.2;steve
+EXD.1;m;21;i19;-7;+44d (+36);+41a (+31);* 8 chip damage on block;chp:8;;Power Fox Hunt;;;File:t8-p2-steve-exd.1.mp4;Steve-EXD.1;steve
+EXD.2;m;21;i19;-14;+61a (+51);;* 6 chip damage on block;chp:6;;Power Skyscraper;;;File:t8-p2-steve-exd.2.mp4;Steve-EXD.2;steve
 EXD.f+2;h;28;i15~16;+5;+56a;;"* Strong Aerial Tailspin
 * Transition to standing (+1/+52a) with B
-* 11 chip damage on block";;LNH;Power Punisher;LNH;;File:t8-p2-steve-exd.f+2.mp4;Steve-EXD.f+2;steve
+* 11 chip damage on block";chp:11;LNH;Power Punisher;LNH;;File:t8-p2-steve-exd.f+2.mp4;Steve-EXD.f+2;steve
 EXD.f+2~1;m;17;i28~29;-8;+4;+63a;;;;Swindler;;;;Steve-EXD.f+2~1;steve
 FLK.1;h;14;i12;-4;+7;;"* Transition to r18? FLK with b (-1/+10/+10)
 * Transition to r1? ALB with 3+4 with 2?F delay (+17g/+28g/+28) 
@@ -408,7 +408,7 @@ FLK.1,f+1;h, m;14, 17;i12, i15;-5;+0c;+10d;"* Spike
 * Jail from 1st block with 3F delay
 * Move can be delayed by 14F";spk;;Tempest Combo;;;File:t8-p2-steve-flk.1,f+1.mp4;Steve-FLK.1,f+1;steve
 FLK.2;m;21;i18~19;-5c;+7d;+42a;"* Spike
-* 6 chip damage on block";spk;;Fly Swatter;;;File:t8-p2-steve-flk.2.mp4;Steve-FLK.2;steve
+* 6 chip damage on block";spk chp:6;;Fly Swatter;;;File:t8-p2-steve-flk.2.mp4;Steve-FLK.2;steve
 FLK.b+2;h;21;i14~15;-9;+35d (+27);;"* Tornado
 * Balcony Break
 * +0 frame advantage and 8 chip damage on block after absorbing an attack in power crush state
@@ -426,7 +426,7 @@ LNH.2;m;22;i16-17;-13;+61a (+51);;* Tornado;trn;;Bloodhound;;;File:t8-p2-steve-l
 LNH.1+2;h;24;i18-19;+12;+51a (+31);;"* Guard Break
 * Reversal Break
 * Balcony Break
-* 9 chip damage on block";rbr bbr;;Swingfire Advance;r42?;;File:t8-p2-steve-lnh.1+2.mp4;Steve-LNH.1+2;steve
+* 9 chip damage on block";rbr bbr chp:9;;Swingfire Advance;r42?;;File:t8-p2-steve-lnh.1+2.mp4;Steve-LNH.1+2;steve
 LWV.1;m;14;i14;-10;+1;;* Input b to r18? FLK (-3/+8/+8);;;;;;File:t8-p2-steve-lwv.1,1.mp4;Steve-LWV.1;steve
 LWV.1,1;m, m;14, 22;i14, i24~26;-13;+28a (+19);;"* Strong Aerial Tailspin
 * Balcony Break
@@ -465,7 +465,7 @@ PAB.2;h;19;i14;+5;+14c;;"* Homing
 * Punch parry
 ** +0d and 25 damage on a successful parry
 * 5 chip damage on block
-* Parry state 7?-13";hom ps7?-13;LNH;Spite Hook;LNH;;File:t8-p2-steve-pab.2.mp4;Steve-PAB.2;steve
+* Parry state 7?-13";hom chp:5 ps7?-13;LNH;Spite Hook;LNH;;File:t8-p2-steve-pab.2.mp4;Steve-PAB.2;steve
 PAB.2~1;m;17;i27~28;-8;+4;+63a;;;;Swindler;;;;Steve-PAB.2~1;steve
 PAB.b+1;m;15;i17~18;-19;-6;;;;;;;;File:t8-p2-steve-pab.b+1,1,2,1.mp4;Steve-PAB.b+1;steve
 PAB.b+1,1;m, h;15, 10;i17~18, i18~19;-7;-1;;"* Combo from 1st hit with 11F delay
@@ -518,7 +518,7 @@ RWV.1,2~1;m, m;13, 17;i14~16, i30~31;-8;+4;+63a;* Input 1 at frame 17 of RWV.1,2
 RWV.2;m;22;i14;-13;+10a (+1);+31a (+5);"*
 Balcony Break";bbr;;Gut Drill;;;File:t8-p2-steve-rwv.2.mp4;Steve-RWV.2;steve
 SWY.1;m;26;i16~17;-1c~+0c;+14c~+15c;;"* Can be +15c at farther ranges
-* 10 chip damage on block";;;Billy Club;;;File:t8-p2-steve-swy.1.mp4;Steve-SWY.1;steve
+* 10 chip damage on block";chp:10;;Billy Club;;;File:t8-p2-steve-swy.1.mp4;Steve-SWY.1;steve
 SWY.2;m;30;i17~18;-18;+36a;;* High crush 1~;cs1~;;Snake Charmer;;;File:t8-p2-steve-swy.2.mp4;Steve-SWY.2;steve
 1+3;t;35;i12~14;-6;+0d;;"* Homing
 * Throw break 1 or 2

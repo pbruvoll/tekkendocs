@@ -1,3 +1,8 @@
 import { type Move } from './Move';
 
-export type SortByKey = keyof Move | 'highCrush' | 'lowCrush' | 'interruptible';
+export type SortByKey =
+  | keyof Move
+  | 'highCrush'
+  | 'lowCrush'
+  | 'interruptible'
+  | 'chip';

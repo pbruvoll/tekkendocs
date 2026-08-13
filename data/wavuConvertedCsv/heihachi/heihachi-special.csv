@@ -5,7 +5,7 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * 12 chip damage on hit
 * Only deals recoverable damage
 * Cannot cause a K.O.
-* Power crush 7~16";hb pc7~16;;Heat Burst;r30;;;Heihachi-2+3;heihachi
+* Power crush 7~16";hb chp:2 pc7~16;;Heat Burst;r30;;;Heihachi-2+3;heihachi
 H.b,b,n,3+4;;;;;;;"* Consumes all of the remaining Heat time
 * Tremendous backwards travel";;;Shadow Step;r30;;;Heihachi-H.b,b,n,3+4;heihachi
 H.db+1+2;SM;25;i30;+0;+0a (-17);;"* Tornado
@@ -14,21 +14,21 @@ H.db+1+2;SM;25;i30;+0;+0a (-17);;"* Tornado
 * 11 chip damage on block
 * 12 chip damage on block after absorbing an attack in power crush state
 * Consumes 300F of remaining Heat time
-* Power crush 7~29";trn rbr bbr pc7~29;;Thunderous Battering Ram;r50;;;Heihachi-H.db+1+2;heihachi
+* Power crush 7~29";trn rbr bbr chp:11 pc7~29;;Thunderous Battering Ram;r50;;;Heihachi-H.db+1+2;heihachi
 H.2+3;m,m;50;i15;+10;+0d;;"* Heat Smash
 * Reversal Break
 * Floor Break
 * 15 chip damage on block
 * Transition to attack throw on hit
 * Transition to RAI on block only
-* Cancel RAI transition with B, +6 on block instead";hs rbr fbr;RAI;Enraged Tettsui Otoshi;r36;;;Heihachi-H.2+3;heihachi
+* Cancel RAI transition with B, +6 on block instead";hs rbr fbr chp:15;RAI;Enraged Tettsui Otoshi;r36;;;Heihachi-H.2+3;heihachi
 H.2+3,F;m;50;i15;+10;-2d;;"* Heat Smash
 * Reversal Break
 * Balcony Break
 * 15 chip damage on block
 * Transition to attack throw on hit
 * Transition to RAI on block only
-* Cancel RAI transition with B, +6 on block instead";hs rbr bbr;RAI;Eight Thunder Kami Slayer;r36;;;Heihachi-H.2+3,F;heihachi
+* Cancel RAI transition with B, +6 on block instead";hs rbr bbr chp:15;RAI;Eight Thunder Kami Slayer;r36;;;Heihachi-H.2+3,F;heihachi
 R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Removes Recoverable Health
 * Reversal Break
@@ -46,7 +46,7 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Applies additional combo scaling on wall splat";bbr;;Flash Punch Combo;r37;;File:t8-p2-heihachi-1,1,2.mp4;Heihachi-1,1,2;heihachi
 WAR.1,1,2;h, h, m;5, 6, 20;i10, ,i18;-17;+28a (+2);;"* Balcony Break
 * Combo from 1st hit with 12f delay
-* 6 chip damage on block";bbr;;Ultimate Flash Punch Combo;r37;;File:t8-p2-heihachi-1,1,war.2.mp4;Heihachi-1,1,WAR.2;heihachi
+* 6 chip damage on block";bbr chp:6;;Ultimate Flash Punch Combo;r37;;File:t8-p2-heihachi-1,1,war.2.mp4;Heihachi-1,1,WAR.2;heihachi
 1,2;h, h;5, 8;i10, i10;-3;+8;;"* Combo from 1st hit with 4f delay
 * Move can be delayed 3f";;;One Two Strike;r22;;File:t8-p2-heihachi-1,2.mp4;Heihachi-1,2;heihachi
 1,2,2;h, h, h;5, 8, 12;i10, ,i17;-12;+4;;"* Combo from 1st hit
@@ -63,7 +63,7 @@ WAR.1,1,2;h, h, m;5, 6, 20;i10, ,i18;-17;+28a (+2);;"* Balcony Break
 1,2,4*;h, h, h;5, 8, 27;i10, ,i31~32;+6;+67a (+51);;"* Tornado
 * Balcony Break
 * Tornado on standing hit
-* 8 chip damage on block";trn bbr;;Wailing Demon Otoko Geri (charged);;;;Heihachi-1,2,4*;heihachi
+* 8 chip damage on block";trn bbr chp:8;;Wailing Demon Otoko Geri (charged);;;;Heihachi-1,2,4*;heihachi
 1,b+2;h, m;5, 17;i10, i22;-2;+8;;"* Combo from 1st CH with 3f delay
 * Input can be delayed 10f
 * Move can be delayed 7f
@@ -76,14 +76,14 @@ WAR.1,1,2;h, h, m;5, 6, 20;i10, ,i18;-17;+28a (+2);;"* Balcony Break
 1,b+2,4;h, m, m;5, 17, 30;i10, ,i39;+5;+30a (+9);;"* Balcony Break
 * 12 chip damage on block
 * 13 chip damage on block in heat
-* Low crush 17~39";bbr js17~39;;Demon Lair;r41;;File:t8-p2-heihachi-1,b+2,4.mp4;Heihachi-1,b+2,4;heihachi
+* Low crush 17~39";bbr chp:12 js17~39;;Demon Lair;r41;;File:t8-p2-heihachi-1,b+2,4.mp4;Heihachi-1,b+2,4;heihachi
 WAR.1,b+2,2;h, m, m;5, 17, 22;i10, ,i25~26;-13c;+23a (+13);;"* Reversal Break
 * Balcony Break
 * Head
 * Combo from 2nd hit
 * 6 chip damage on block
 * Erases opponent's recoverable health on hit
-* +42d on airborne hit, opponent can tech roll after";rbr bbr hed;;Ultimate Demon Basara;r36;;File:t8-p2-heihachi-1,b+2,2.mp4;Heihachi-1,b+2,2;heihachi
+* +42d on airborne hit, opponent can tech roll after";rbr bbr hed chp:6;;Ultimate Demon Basara;r36;;File:t8-p2-heihachi-1,b+2,2.mp4;Heihachi-1,b+2,2;heihachi
 2;h;10;i11;+0;+9;;;;;;r19;;File:t8-p2-heihachi-2,2.mp4;Heihachi-2;heihachi
 2,2;h, m;10, 13;i11, i22;-8;+3c;;"* Spike
 * Combo from 1st hit with 2f delay";spk;;Dogenkotsu;r33;;File:t8-p2-heihachi-2,2.mp4;Heihachi-2,2;heihachi
@@ -96,7 +96,7 @@ WAR.1,b+2,2;h, m, m;5, 17, 22;i10, ,i25~26;-13c;+23a (+13);;"* Reversal Break
 4*;h;27;i24~25;+6;+67a (+51);;"* Tornado
 * Balcony Break
 * Tornado on standing hit
-* 8 chip damage on block";trn bbr;;Otoko Geri (charged);;;;Heihachi-4*;heihachi
+* 8 chip damage on block";trn bbr chp:8;;Otoko Geri (charged);;;;Heihachi-4*;heihachi
 4~3;M;25;i35~37;-11a;+21a;;"* Spike
 * Low crush 10~37
 * Floating state 38~";spk js10~37 fs38~;FUFT;Demon Scissors;r28 FUFT;;File:t8-p2-heihachi-4~3.mp4;Heihachi-4~3;heihachi
@@ -137,7 +137,7 @@ df+1,2*;m, m;10, 28;i13~14, i38~39;+1;+32a (+11);;"* Reversal Break
 * Interrupt with i9 from 1st hit
 * Whiffs vs SS and SW from 1st block
 * Whiffs vs SSR and SWR from 1st hit
-* Recover an additional 3 health on hit or block";rbr bbr stp:SS stp:SSR intr:21;;True Muso Tekken;r37;;File:t8-p2-heihachi-df+1,2s.mp4;Heihachi-df+1,2*;heihachi
+* Recover an additional 3 health on hit or block";rbr bbr stp:SS stp:SSR intr:21 chp:11;;True Muso Tekken;r37;;File:t8-p2-heihachi-df+1,2s.mp4;Heihachi-df+1,2*;heihachi
 df+1:2*;m, m;10, 23;i13~14, i28~29;-9;+19a (+14);;"* Tornado
 * Reversal Break
 * Combo from 1st hit
@@ -146,12 +146,12 @@ df+1:2*;m, m;10, 23;i13~14, i28~29;-9;+19a (+14);;"* Tornado
 * Restores 3 additional recoverable health on hit or block
 * Restores 9 additional recoverable health on hit or block with perfect frame input
 * 23 damage upon releasing input within the 5f window (frames 1822)
-* 28 damage on a perfect input release exactly on frame 17 (gold spark)";trn rbr;;Zenith Muso Tekken;r36;;File:t8-p2-heihachi-df+1c2s.mp4;Heihachi-df+1:2*;heihachi
+* 28 damage on a perfect input release exactly on frame 17 (gold spark)";trn rbr chp:9;;Zenith Muso Tekken;r36;;File:t8-p2-heihachi-df+1c2s.mp4;Heihachi-df+1:2*;heihachi
 df+2;m;8;i13~14;-7;+4;;;;;;r25;;File:t8-p2-heihachi-df+2,1.mp4;Heihachi-df+2;heihachi
 df+2,1;m, m;8, 20;i13~14, i20~21;-17;+12a (+5);;* Combo from 1st hit;;;Reverse Muso Renken;r38;;File:t8-p2-heihachi-df+2,1.mp4;Heihachi-df+2,1;heihachi
 WAR.df+2,1;m, m;8, 20;i13~14, i20~21;-17;+66a (+50);;"* Tornado
 * Combo from 1st hit
-* 6 chip damage on block";trn;;Ultimate Muso Renken;r37;;File:t8-p2-heihachi-df+2,war.1.mp4;Heihachi-df+2,WAR.1;heihachi
+* 6 chip damage on block";trn chp:6;;Ultimate Muso Renken;r37;;File:t8-p2-heihachi-df+2,war.1.mp4;Heihachi-df+2,WAR.1;heihachi
 df+3;m;10;i15~16;-6;+5;;* Knee;kne;;;r24;;File:t8-p2-heihachi-df+3,1+2,1.mp4;Heihachi-df+3;heihachi
 df+3,1+2;m, h,m,m;10, 3,3,3;i15~16, i14 i9 i8;-15;-4;;* Jail from 1st attack;;;;r39;;File:t8-p2-heihachi-df+3,1+2,1.mp4;Heihachi-df+3,1+2;heihachi
 df+3,1+2,1;m, h,m,m, m;10, 3,3,3, 25;i15~16, ,i22~23;-15;+20a (+15);;"* Balcony break on airborne hit
@@ -173,7 +173,7 @@ H.d+3,2;M, SM;25, 25;i22~23, i30;+0;-10a (-20);;"* Tornado
 * Reversal Break
 * Combo from 1st hit
 * 12 Chip damage on block
-* Consumes 300f of remaining Heat time";trn rbr;;Rending Battering Ram;r50;;;Heihachi-d+3,H.2;heihachi
+* Consumes 300f of remaining Heat time";trn rbr chp:12;;Rending Battering Ram;r50;;;Heihachi-d+3,H.2;heihachi
 d+1+2;;;;;;;* Actionable after 30f;;FUJ;"<div class=""dotlist"">
 
 * Fujin
@@ -205,11 +205,11 @@ H.b+3,3,2;h, M, SM;14, 25, 25;i14~15, ,i30;+0;+0a (-17);;"* Tornado
 * Combo from 1st hit
 * Jails from 2nd hit
 * 11 Chip damage on block
-* Consumes 300f of remaining heat tiem";trn rbr;;Hooking Battering Ram;;;;Heihachi-b+3,3,H.2;heihachi
+* Consumes 300f of remaining heat tiem";trn rbr chp:11;;Hooking Battering Ram;;;;Heihachi-b+3,3,H.2;heihachi
 b+4;m;23;i18~19;-8;+30a (+4);+53a;"* Balcony Break
 * 6 chip damage on block
 * Has good left sidestep tracking
-* Recovers 11F faster on hit or block (t54 r35)";bbr;;Indra's Kick;r46;;File:t8-p2-heihachi-b+4.mp4;Heihachi-b+4;heihachi
+* Recovers 11F faster on hit or block (t54 r35)";bbr chp:6;;Indra's Kick;r46;;File:t8-p2-heihachi-b+4.mp4;Heihachi-b+4;heihachi
 b+1+2;m;20;i42;-11;+23a (+13);;"* Heat Engager
 
 * Heat Dash +5, +43d (+35)
@@ -231,7 +231,7 @@ ub+1+2*;m;27;i29;+4;+28d;;* Floor Break;fbr;;Genkotsu Crusher (charged);;;File:t
 uf+1;m;25;i24~25;-13;+14a (+5);;"* Balcony Break
 * -8 on block after absorbing an attack
 * Chip damage on block after absorbing an attack
-* Power crush 7~23";bbr chp pc7~23;;Demon's Wings;r35;;File:t8-p2-heihachi-uf+1.mp4;Heihachi-uf+1;heihachi
+* Power crush 7~23";bbr pc7~23;;Demon's Wings;r35;;File:t8-p2-heihachi-uf+1.mp4;Heihachi-uf+1;heihachi
 uf+2;m;16;i19;-9;+4;;;;;;r33;;File:t8-p2-heihachi-uf+2,1.mp4;Heihachi-uf+2;heihachi
 uf+2,1;m, m;16, 20;i19, i27~28;-11;+21a (+11);;"* Heat Engager
 
@@ -277,7 +277,7 @@ f,F+1+2;m;22;i13;-8;+22a (+12);;"* Heat Engager
 
 * Balcony Break
 * 4 chip damage on block
-* Gain 1 Ultimate Count on Heat activation";he bbr;;Raoh Thrust;r34;;File:t8-p2-heihachi-f,f+1+2.mp4;Heihachi-f,F+1+2;heihachi
+* Gain 1 Ultimate Count on Heat activation";he bbr chp:4;;Raoh Thrust;r34;;File:t8-p2-heihachi-f,f+1+2.mp4;Heihachi-f,F+1+2;heihachi
 f,n,d,DF+3;L;24;i33~34;-23;+28a;;* Low crush 5~28;js5~28;;Earth Scraper Kick;r41;;File:t8-p2-heihachi-f,n,d,dfx+3.mp4;Heihachi-f,n,d,DF+3;heihachi
 f,n,d,DF+4;L;15;i16~17;-23;+8c;+28a;;;;;r32;;File:t8-p2-heihachi-f,n,d,df+4,4,4,1.mp4;Heihachi-f,n,d,DF+4;heihachi
 f,n,d,DF+4,4;L, L;15, 10;i16~17, i24;-10;+3c;+26a;* +26a if previous hit connects;;;;r35;;File:t8-p2-heihachi-f,n,d,df+4,4,4,1.mp4;Heihachi-f,n,d,DF+4,4;heihachi
@@ -288,7 +288,7 @@ f,n,d,DF+4,4,4,3;L, L, L, h;15, 10, 8, 30;i16~17, ,i25~28;+9;+45a;;"* Balcony Br
 * 10 chip damage on block
 * Can be performed after any number of f,n,d,DF+4 lows
 ** Not duckable from the 2nd and 3rd lows
-* Low crush 17~";bbr js17~;;Spinning Demon Bell-Ringer;r38;;File:t8-p2-heihachi-f,n,d,df+4,4,4,3.mp4;Heihachi-f,n,d,DF+4,4,4,3;heihachi
+* Low crush 17~";bbr chp:10 js17~;;Spinning Demon Bell-Ringer;r38;;File:t8-p2-heihachi-f,n,d,df+4,4,4,3.mp4;Heihachi-f,n,d,DF+4,4,4,3;heihachi
 f,n,d,DF+4,4,4,n+4;L, L, L, m;15, 10, 8, 10;i16~17, ,i24~25;-3;+8;;* Can be performed after any number of f,n,d,DF+4 lows;;;;r21;;File:t8-p2-heihachi-f,n,d,df+4,4,4,n,4,4.mp4;Heihachi-f,n,d,DF+4,4,4,n+4;heihachi
 f,n,d,DF+4,4,4,n+4,4;L, L, L, m, m;15, 10, 8, 10, 20;i16~17, ,i15;-15;+0c;;"* Spike
 * Combo from 4th hit with 11?F delay
@@ -303,7 +303,7 @@ f,n,d,df,UF;;;;;;;"* Unable to act from frames 3~27
 * Floating state 22~24";js1~21 fs22~24;;;r27;;;Heihachi-f,n,d,df,UF;heihachi
 f,n,d,df:1;M;33;i19~21;-11;+26a (+16);;"* 9 chip damage on block
 * Low crush 19~40
-* Floating state 41~43";js19~40 fs41~43;;Electric Thunder God Fist;r36;;File:t8-p2-heihachi-f,n,d,dfh1.mp4;Heihachi-f,n,d,df${justFrame}1;heihachi
+* Floating state 41~43";chp:9 js19~40 fs41~43;;Electric Thunder God Fist;r36;;File:t8-p2-heihachi-f,n,d,dfh1.mp4;Heihachi-f,n,d,df${justFrame}1;heihachi
 f,n,d,df:2;h;23;i11~12;+5;+39a (+29);;"* Chip damage on block
 * Can be performed without the d input: f,n,df#2";chp;;Electric Wind God Fist;r24;;File:t8-p2-heihachi-f,n,d,dfh2.mp4;Heihachi-f,n,d,df${justFrame}2;heihachi
 f,n,d,df+1;m;30;i19~21;-15;+30a (+20);;"* Becomes Electric/Omen Thunder God Fist (f,n,df#1) during Heat, partially uses remaining Heat Time
@@ -316,7 +316,7 @@ f,n,d,df+3;m;30;i27~28;+11g;+31a (+10);;"* Tornado
 * Low crush 5~28";trn bbr chp js5~28;;Bone Splinter Kick;r38;;File:t8-p2-heihachi-f,n,d,df+3.mp4;Heihachi-f,n,d,df+3;heihachi
 f,n,df:1;M;38;i19~21;-11;+25a (+15);;"* 11 chip damage on block
 * Low crush 19~40
-* Floating state 41~43";js19~40 fs41~43;;Omen Thunder God Fist;r36;;;Heihachi-f,n,df${justFrame}1;heihachi
+* Floating state 41~43";chp:11 js19~40 fs41~43;;Omen Thunder God Fist;r36;;;Heihachi-f,n,df${justFrame}1;heihachi
 qcf+2;m;30;i14~15;-17;+18a (+8);;"* Heat Engager
 
 * Heat Dash +5, +43d (+35)
@@ -327,11 +327,11 @@ qcf+2;m;30;i14~15;-17;+18a (+8);;"* Heat Engager
 f,f,F+3;m;30;i22~25;+6;+13a (+3);;"* Balcony Break
 * 9 Chip damage on block
 * Low crush 3~25
-* Floating state 26~28";bbr js3~25 fs26~28;;Leaping Side Kick;r34;;File:t8-p2-heihachi-f,f,f+3.mp4;Heihachi-f,f,F+3;heihachi
+* Floating state 26~28";bbr chp:9 js3~25 fs26~28;;Leaping Side Kick;r34;;File:t8-p2-heihachi-f,f,f+3.mp4;Heihachi-f,f,F+3;heihachi
 f,f,F+1+2;h;20;i15;+3;+6d;;"* Spike
 * Transition to r32 +6 +9d RAI with F 
 * 4 Chip damage on block
-* Low crush 3~23";spk js3~23;RAI;Roaring Stonehead;r46;;;Heihachi-f,f,F+1+2;heihachi
+* Low crush 3~23";spk chp:4 js3~23;RAI;Roaring Stonehead;r46;;;Heihachi-f,f,F+1+2;heihachi
 ws1;m;17;i13~14;-14;+35d (+27);;* Balcony Break;bbr;;Quick Iron Fist;r29;;File:t8-p2-heihachi-ws1.mp4;Heihachi-ws1;heihachi
 ws2;m;20;i18;-8;+8;+14c;"* Balcony break on airborne hit
 * 8F evasion?
@@ -378,13 +378,13 @@ FUJ.3,4;m, m;17, 20;i28~29, i20~21;+4;+30a (+23);;"* Strong Aerial Tailspin
 * Jail from 1st block
 * 8 chip damage on block
 * Unavailable on whiff
-* Low crush 1~";bbr js1~;;Wind God Hell Axle;r34;;File:t8-p2-heihachi-fuj.3,4.mp4;Heihachi-FUJ.3,4;heihachi
+* Low crush 1~";bbr chp:8 js1~;;Wind God Hell Axle;r34;;File:t8-p2-heihachi-fuj.3,4.mp4;Heihachi-FUJ.3,4;heihachi
 FUJ.4;L;20;i18~19;-14;-4;+12g;* Spike;spk;;Wind God Geta Stomp;r32;;File:t8-p2-heihachi-fuj.4.mp4;Heihachi-FUJ.4;heihachi
 FUJ.1+2;m;25;i18~19;-13;+6a (-3);;"* Homing
 * Balcony Break
 * -7 on block after absorbing an attack
 * Chip damage on block after absorbing an attack
-* Power crush 7~17";hom bbr chp pc7~17;;Tengu's Wings;r38;;File:t8-p2-heihachi-fuj.1+2.mp4;Heihachi-FUJ.1+2;heihachi
+* Power crush 7~17";hom bbr pc7~17;;Tengu's Wings;r38;;File:t8-p2-heihachi-fuj.1+2.mp4;Heihachi-FUJ.1+2;heihachi
 FUJ.DF;;;;;;;"* Transition to r4 CD after 4 frames in FUJ (r8?)
 * Low parry on frames 1?~14?
 * Doesn't require a just frame input for Electric or Omen Thunder God Fist
@@ -402,30 +402,30 @@ RAI.3;M;30;i22~23;-7;+3a;;"* Spike
 * Chip damage on block";spk chp;;Jichinsai;r36;;;Heihachi-RAI.3;heihachi
 RAI.4;L;15;i19~20;-23;+8c;+28a;* Links to f,n,d,DF+4 extensions;;fndDF+4 extensions;Raijin Spinning Demon;r32;;;Heihachi-RAI.4;heihachi
 WAR.1+2;m;31;i12;-10;+32a (+24);;"* Balcony Break
-* 9 chip damage on block";bbr;;Ultimate Demon Breath;r32;;File:t8-p2-heihachi-war.1+2.mp4;Heihachi-WAR.1+2;heihachi
+* 9 chip damage on block";bbr chp:9;;Ultimate Demon Breath;r32;;File:t8-p2-heihachi-war.1+2.mp4;Heihachi-WAR.1+2;heihachi
 WAR.FUJ.2;m;24;i15~16;-3;+75a (+59);;"* Tornado
 * Reversal Break
 * 10 chip damage on block
-* High crush 6~14";trn rbr cs6~14;;Ultimate Hidden Wind God Fist;r32;;File:t8-p2-heihachi-war.fuj.2.mp4;Heihachi-WAR.FUJ.2;heihachi
+* High crush 6~14";trn rbr chp:10 cs6~14;;Ultimate Hidden Wind God Fist;r32;;File:t8-p2-heihachi-war.fuj.2.mp4;Heihachi-WAR.FUJ.2;heihachi
 WAR.RAI.1;M;38;i17~19;-8~-6;+12a (+2);;"* Reversal Break
 * 11 chip damage on block
 * High crush 6~14
 * Low crush 17~39
-* Floating state 40~42";rbr cs6~14 js17~39 fs40~42;;Ultimate Hidden Thunder God Fist;r49;;File:t8-p2-heihachi-war.rai.1.mp4;Heihachi-WAR.RAI.1;heihachi
+* Floating state 40~42";rbr chp:11 cs6~14 js17~39 fs40~42;;Ultimate Hidden Thunder God Fist;r49;;File:t8-p2-heihachi-war.rai.1.mp4;Heihachi-WAR.RAI.1;heihachi
 WAR.f,F+2;M;22;i19~21;-16;+37a (+27);;"* Tornado
 * Extended range and hitbox
-* 8 chip damage on block";trn;;Ultimate Demon God Fist;r33;;File:t8-p2-heihachi-war.f,f+2.mp4;Heihachi-WAR.f,F+2;heihachi
+* 8 chip damage on block";trn chp:8;;Ultimate Demon God Fist;r33;;File:t8-p2-heihachi-war.f,f+2.mp4;Heihachi-WAR.f,F+2;heihachi
 WAR.f,F+3;m;25;i20~22;+1c;+56a;;"* Spike
-* 7 chip damage on block";spk;;Ultimate Splits Kick;r28;;File:t8-p2-heihachi-war.f,f+3.mp4;Heihachi-WAR.f,F+3;heihachi
+* 7 chip damage on block";spk chp:7;;Ultimate Splits Kick;r28;;File:t8-p2-heihachi-war.f,f+3.mp4;Heihachi-WAR.f,F+3;heihachi
 WAR.f,f,F+1+2;h;20;i15~16;+6;+6d;;"* Removes Recoverable Health
 * Spike
 * Transition to +9 +9d RAI with F 
 * 8 chip damage on block
 * Low crush 3~23
-* Floating state 24~26";spk js3~23 fs24~26;RAI;Ultimate Roaring Stonehead;r46;;;Heihachi-WAR.f,f,F+1+2;heihachi
+* Floating state 24~26";spk chp:8 js3~23 fs24~26;RAI;Ultimate Roaring Stonehead;r46;;;Heihachi-WAR.f,f,F+1+2;heihachi
 WAR.f,n,d,DF+4;L;15;i16~17;-14;+8c;+28a;"* No stagger on block
 * Links to f,n,d,DF+4 extensions
-* 4 chip damage on block";;fndDF+4 extensions;Ultimate Spinning Demon;r32;;File:t8-p2-heihachi-war.f,n,d,df+4.mp4;Heihachi-WAR.f,n,d,DF+4;heihachi
+* 4 chip damage on block";chp:4;fndDF+4 extensions;Ultimate Spinning Demon;r32;;File:t8-p2-heihachi-war.f,n,d,df+4.mp4;Heihachi-WAR.f,n,d,DF+4;heihachi
 1+3;t;35;i12~14;-3;-1d;;"* Homing
 * Throw break 1 or 2";hom;;Neck Breaker;r31;;File:t8-p2-heihachi-1+3.mp4;Heihachi-1+3;heihachi
 2+4;t;35;i12~14;+0;+0d;;"* Floor Break

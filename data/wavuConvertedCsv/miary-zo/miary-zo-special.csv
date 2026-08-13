@@ -5,7 +5,7 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * 12 chip damage on hit
 * Only deals recoverable damage
 * Cannot cause a K.O.
-* Power crush 7~16";hb pc7~16;;Heat Burst;r30;;t8-p2-miary-zo-2+3.mp4;Miary Zo-2+3;miary-zo
+* Power crush 7~16";hb chp:2 pc7~16;;Heat Burst;r30;;t8-p2-miary-zo-2+3.mp4;Miary Zo-2+3;miary-zo
 H.b+3+4;;;;;;;"* Transition to WAL
 * d+3+4 foreground jump, u+3+4 background jump (r60 js9~34 fs35~37)
 * Partially consumes remaining Heat Time";;WAL,WAL;Zanahary Mihira;WAL;;t8-p2-miary-zo-h.b+3+4.mp4;Miary Zo-H.b+3+4;miary-zo
@@ -14,7 +14,7 @@ H.2+3;m,th;52;i17~18;+6;-5d;;"* Heat Smash
 * Transition to BAO +6 r24 automatically on block only
 Cancel BAO transition -13 -6 +23a (+13) r36 with B
 * 6 chip damage on block
-* Low crush";hs fbr js;BAO;Fitahin-d Ratovantany;;;t8-p2-miary-zo-h.2+3.mp4;Miary Zo-H.2+3;miary-zo
+* Low crush";hs fbr chp:6 js;BAO;Fitahin-d Ratovantany;;;t8-p2-miary-zo-h.2+3.mp4;Miary Zo-H.2+3;miary-zo
 R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Removes Recoverable Health
 * Reversal Break
@@ -78,7 +78,7 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Move can be delayed 5f
 * 4 chip damage on block
 * Low crush 14~31
-* Floating state 32~34";he bbr js14~31 fs32~34;;Basy Lelafo;r30;;t8-p2-miary-zo-3,2.mp4;Miary Zo-3,2;miary-zo
+* Floating state 32~34";he bbr chp:4 js14~31 fs32~34;;Basy Lelafo;r30;;t8-p2-miary-zo-3,2.mp4;Miary Zo-3,2;miary-zo
 4;h;12;i12;-12;-2;;;;;;r38;;t8-p2-miary-zo-4.mp4;Miary Zo-4;miary-zo
 4,4;h, h;12, 20;i12, i29~30;-13;+6;;"* Jail from 1st attack
 * Transition to BAO +6 r26 automatically on hit only
@@ -118,7 +118,7 @@ f+4,2;m, m;12, 20;i18, i31;-9;+16a (+7);;"* Balcony Break
 * Interrupt with i7 from 1st block
 * f+4,d+2 to push opponenet to foreground
 * f+4,u+2 to push opponenet to background
-* Power up in Heat";bbr wpn chp intr:7;;Fombafomban'ny Menarana;r33;;t8-p2-miary-zo-f+4,2.mp4;Miary Zo-f+4,2;miary-zo
+* Power up in Heat";bbr wpn intr:7 chp;;Fombafomban'ny Menarana;r33;;t8-p2-miary-zo-f+4,2.mp4;Miary Zo-f+4,2;miary-zo
 f+4,4;m, h;12, 15;i18, i26;-5;+9;;"* Combo from 1st hit with 1f delay
 * Input can be delayed 1f
 * Move cannot be delayed
@@ -136,7 +136,7 @@ H.f+4,2;m, m;12, 25;i18, i31;+2;+16a (+7);;"* Balcony Break
 * 7 chip damage on block
 * Partially consumes remaining Heat Time
 * f+4,H.d+2 to push opponenet to foreground
-* f+4,H.u+2 to push opponenet to background";bbr wpn;;Fombafomban'ny Zanahary;;;t8-p2-miary-zo-f+4,h.2.mp4;Miary Zo-f+4,H.2;miary-zo
+* f+4,H.u+2 to push opponenet to background";bbr wpn chp:7;;Fombafomban'ny Zanahary;;;t8-p2-miary-zo-f+4,h.2.mp4;Miary Zo-f+4,H.2;miary-zo
 f+1+2;m,m;3,3;,i14~15 i8~9;-10;-4;;;;;Claw Rain;r28;;t8-p2-miary-zo-f+1+2.mp4;Miary Zo-f+1+2;miary-zo
 f+1+2,1+2;m,m, m,m,m;3,3, 3,2,2;,i14~15 i8~9, i14~15 i7~8 i7~8;-13;+3;;* Jail from 1st attack;;;Lightning Claws;r31;;t8-p2-miary-zo-f+1+2,1+2.mp4;Miary Zo-f+1+2,1+2;miary-zo
 f+1+2,1+2,3+4;m,m, m,m,m, m,m;3,3, 3,2,2, 5,12;,i14~15 i8~9, ,i16~17 i6~7;-22;+6a (-11);;"* Balcony Break
@@ -265,7 +265,7 @@ H.u+3,2;m, m;17, 27;i17~18, i30~32;-9;+65a (+49);;"* Tornado
 * Available only on hit or block
 * 5 chip damage on block
 * Partially consumes remaining Heat Time
-* Low crush";trn wpn js;;Hazavan'i Zanahary;;;t8-p2-miary-zo-u+3,h.2.mp4;Miary Zo-u+3,H.2;miary-zo
+* Low crush";trn wpn chp:5 js;;Hazavan'i Zanahary;;;t8-p2-miary-zo-u+3,h.2.mp4;Miary Zo-u+3,H.2;miary-zo
 u+4;m;17;i16~17;-13;+6;+35a (+25);"* Knee
 * Transition to BAO +6 r24 automatically on hit only
 * Cancel BAO transition -13 -6 +23a (+13) r36 with B
@@ -292,7 +292,7 @@ H.uf+3,2;h,h,m, m;6,6,12, 22;i18~19 i9~10 i9~10, i24~25;+4;+17a (+7);;"* Balcony
 * Weapon
 * Combos from 1st hit
 * 4 chip damage on block
-* Partially consumes remaining Heat Time";bbr wpn;;Lanitry Zanahary;;;t8-p2-miary-zo-uf+3,h.2.mp4;Miary Zo-uf+3,H.2;miary-zo
+* Partially consumes remaining Heat Time";bbr wpn chp:4;;Lanitry Zanahary;;;t8-p2-miary-zo-uf+3,h.2.mp4;Miary Zo-uf+3,H.2;miary-zo
 uf+4;m;10;i15~16;-15;-7s;;"* Low crush 9~31
 * Floating state 32~34";js9~31 fs32~34;;;r36;;t8-p2-miary-zo-uf+4.mp4;Miary Zo-uf+4;miary-zo
 uf+4,4;m, m;10, 23;i15~16, i24~25;-13;+67a (+51);;"* Tornado
@@ -353,7 +353,7 @@ ws4;m;15;i11~12;-4;+7;;;;;Toe Smash;r22;;t8-p2-miary-zo-ws4.mp4;Miary Zo-ws4;mia
 SS.2;m;22;i20;+1;+3;+59a;"* Balcony Break (airborne)
 * Enter MOR +4 +6 r32 with F
 * 4 chip damage on block
-* Sidestep takes 9f, effective startup i29";;MOR;Antsy Afo;r34;;t8-p2-miary-zo-ss.2.mp4;Miary Zo-SS.2;miary-zo
+* Sidestep takes 9f, effective startup i29";chp:4;MOR;Antsy Afo;r34;;t8-p2-miary-zo-ss.2.mp4;Miary Zo-SS.2;miary-zo
 FC.df+4;L;16;i18~19;-26;+4c;;"* Clean hit +9a, 4 extra damage
 * Stagger on block
 * High crush 1~44";cs1~44;;Mpiady Mierona;r35;;t8-p2-miary-zo-fc.df+4.mp4;Miary Zo-FC.df+4;miary-zo
@@ -366,7 +366,7 @@ BAO.1,4;h, m,m;12, 5,20;i13~14, i25~26 i7~8;-5;+24d;;"* Balcony Break
 * Move cannot be delayed
 * 6 chip damage on block
 * Low crush 1~31
-* Floating state 32~34";bbr fbr intr:1 js1~31 fs32~34;;Hiran'ny Vonikazo;r25;;t8-p2-miary-zo-bao.1,4.mp4;Miary Zo-BAO.1,4;miary-zo
+* Floating state 32~34";bbr fbr intr:1 chp:6 js1~31 fs32~34;;Hiran'ny Vonikazo;r25;;t8-p2-miary-zo-bao.1,4.mp4;Miary Zo-BAO.1,4;miary-zo
 BAO.2;M;24;i23~25;-18;+33a (+23);;"* Tornado
 * Weapon
 * Steel pedal
@@ -402,7 +402,7 @@ MOR.1,2;m, h,h,h;14, 5,8,12;i13, i21~23 i4~5 i5~6;-3;+24cg;;"* Heat Engager
 * Move cannot be interrupted
 * Input can be delayed 10f
 * Move can be delayed 7f
-* 4 chip damage on block";he bbr wpn;;Bibilava Fotsy;r23;;t8-p2-miary-zo-mor.1,2.mp4;Miary Zo-MOR.1,2;miary-zo
+* 4 chip damage on block";he bbr wpn chp:4;;Bibilava Fotsy;r23;;t8-p2-miary-zo-mor.1,2.mp4;Miary Zo-MOR.1,2;miary-zo
 MOR.1,4;m, m;14, 20;i13, i22~23;-13;+6;+35a (+25);"* Knee
 * Combo from 1st hit with 10f delay
 * Interrupt with i1
@@ -452,7 +452,7 @@ H.f,F+2,2;m, m;14, 33;i15~16, i22~23;-1;+40a (+14);;"* Balcony Break
 * Combos from 1st hit
 * Available only on hit or block
 * 7 chip damage on block
-* Partially consumes remaining Heat Time";bbr wpn;;Rano Masini'i Zanahary;;;t8-p2-miary-zo-f,f+2,h.2.mp4;Miary Zo-f,F+2,H.2;miary-zo
+* Partially consumes remaining Heat Time";bbr wpn chp:7;;Rano Masini'i Zanahary;;;t8-p2-miary-zo-f,f+2,h.2.mp4;Miary Zo-f,F+2,H.2;miary-zo
 1+3;t;35;i12~14;-9;-5d;;"* Floor Break
 * Homing
 * Throw break 1 or 2

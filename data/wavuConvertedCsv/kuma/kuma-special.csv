@@ -5,7 +5,7 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * 12 chip damage on hit
 * Only deals recoverable damage
 * Cannot cause a K.O.
-* Power crush 7~16";hb pc7~16;;Heat Burst;r30;;;Kuma-2+3;kuma
+* Power crush 7~16";hb chp:2 pc7~16;;Heat Burst;r30;;;Kuma-2+3;kuma
 H.df+2+3;sm;20;i15~16;0;+39 (+29);;"* Uses 180F of remaining heat time
 * H.f,n,d,df+2 to power up (23dmg)
 * High crush 6~12";cs6~12;;Wind Bear Fist;r24;;;Kuma-H.df+2+3;kuma
@@ -13,12 +13,12 @@ H.df+2+3*;sm;26;i25~26;+5;+45 (+35);;"* Reversal Break
 * Uses 180F of remaining heat time
 * 10 chip damage on block
 * H.f,n,d,df+2* to power up (30dmg; 12 chip damage on block)
-* High crush 6~22";rbr cs6~22;;Fresh Wind Bear Fist;r24;;;Kuma-H.df+2+3*;kuma
+* High crush 6~22";rbr chp:10 cs6~22;;Fresh Wind Bear Fist;r24;;;Kuma-H.df+2+3*;kuma
 H.2+3;M,M;51;i13~15, i45;0;+33a (+23);;"* Heat Smash
 * Balcony Break
 * 10 chip damage
 * Transition to attack throw on 1st hit
-* +20a (+10) 45dmg on 2nd hit if 1st hit misses";hs bbr;;Salmon Fishing Cast;r35?;;;Kuma-H.2+3;kuma
+* +20a (+10) 45dmg on 2nd hit if 1st hit misses";hs bbr chp:10;;Salmon Fishing Cast;r35?;;;Kuma-H.2+3;kuma
 R.df+1+2;M,t;55+;i20;-18;+0d;;"* Rage Art
 * Removes Recoverable Health
 * Reversal Break
@@ -37,7 +37,7 @@ R.df+1+2;M,t;55+;i20;-18;+0d;;"* Rage Art
 1,2;h, h;5, 25;i10, i22~24;-5;+11 (+2);;"* Balcony Break
 * Jail from 1st hit
 * Combo from 1st CH with 3F delay
-* 10 chip damage on block";bbr;;Angry Lumberjack;;;File:t8-p2-kuma-1,2.mp4;Kuma-1,2;kuma
+* 10 chip damage on block";bbr chp:10;;Angry Lumberjack;;;File:t8-p2-kuma-1,2.mp4;Kuma-1,2;kuma
 1+3+4;sp;;;;;;;;;You're Welcome;;;File:t8-p2-kuma-1+3+4.mp4;Kuma-1+3+4;kuma
 2;h;10;i10;-1;+6;;;;;;;;File:t8-p2-kuma-2,1,2.mp4;Kuma-2;kuma
 2,1;h, m;10, 11;i10, i16;-3;+2;;"* Combo from 1st hit with 2F delay
@@ -93,7 +93,7 @@ df+2,1;m, m;10, 12;i15~16, i20~21;-16;+35a (+25);;"* Combo from 1st hit with 4F 
 df+3;m;13;i16;-9;+2;;* +2c on crouching hit;;;;;;File:t8-p2-kuma-df+3,2.mp4;Kuma-df+3;kuma
 df+3,2;m, h;13, 24;i16, i27~28;-5;+22a;;"* Balcony Break on airborne hit
 * Combo from 1st hit
-* 9 chip damage on block";;;Honey Trap;;;File:t8-p2-kuma-df+3,2.mp4;Kuma-df+3,2;kuma
+* 9 chip damage on block";chp:9;;Honey Trap;;;File:t8-p2-kuma-df+3,2.mp4;Kuma-df+3,2;kuma
 df+4;m;15;i12;-4;+7;;;;;;;;;Kuma-df+4;kuma
 d+1;sl;5;i10;-5;+6;;"* Transition to r24 with f
 * +6c on crouching hit
@@ -123,12 +123,12 @@ db+1,2;h, M;11, 20;i14~15, i22~23;-13;+4;+13c;"* Spike
 db+1,2*;h, M;11, 20;i14~15, i33~34;-12;+13c;+42a;"* Spike
 * 8 chip damage on block
 * Heat skips to db+1,2** charge with i34~35 startup
-* Transition to HBS with D or 3+4";spk;HBS;Double Wild Slap;;;;Kuma-db+1,2*;kuma
+* Transition to HBS with D or 3+4";spk chp:8;HBS;Double Wild Slap;;;;Kuma-db+1,2*;kuma
 db+1,2**;h, M;11, 30;i14~15, i47~48;+3;+42a;;"* Spike
 * Reversal Break
 * 12 chip damage on block
 * Startup shortened during Heat: i34~35 startup (partially consumes Heat time)
-* Transition to HBS with D or 3+4";spk rbr;HBS;Fresh Wild Slap;;;File:t8-p2-kuma-db+1,2ss.mp4;Kuma-db+1,2**;kuma
+* Transition to HBS with D or 3+4";spk rbr chp:12;HBS;Fresh Wild Slap;;;File:t8-p2-kuma-db+1,2ss.mp4;Kuma-db+1,2**;kuma
 db+2;L;10;i18;-15;-1;;"* Transition to HBS with D or 3+4 (-17/-3)
 * High crush 6~51";cs6~51;HBS,FC;Bear Lariat;FC;;File:t8-p2-kuma-db+2.mp4;Kuma-db+2;kuma
 db+3;l;12;i18;-12;+1;;;;;Bear Pump in Pedal;;;File:t8-p2-kuma-db+3.mp4;Kuma-db+3;kuma
@@ -145,16 +145,16 @@ db+1+2,1+2,2;m,m, m,m, m;4,4, 4,4, 18;i14~15, ,i20~21;-15;+22a (+12);;;;;Drum Ro
 db+2+3;L;30;i32~34;-12;+39a;;"* Balcony Break on airborne hit
 * Hold 2+3 to power up, up to 2 charge levels and deal chip damage on block";;;Salmon Hunter;;;;Kuma-db+2+3;kuma
 db+2+3*;L;40;i45~47;-12;+39a;;"* Balcony Break on airborne hit
-* 12 chip damage on block";;;Salmon Hunter;;;;Kuma-db+2+3*;kuma
+* 12 chip damage on block";chp:12;;Salmon Hunter;;;;Kuma-db+2+3*;kuma
 db+2+3**;L;60;i60~62;-4;+43a;;"* Balcony Break on airborne hit
 * Unparryable
-* 18 chip damage on block";;;Fresh Salmon Hunter;;;File:t8-p2-kuma-db+2+3ss.mp4;Kuma-db+2+3**;kuma
+* 18 chip damage on block";chp:18;;Fresh Salmon Hunter;;;File:t8-p2-kuma-db+2+3ss.mp4;Kuma-db+2+3**;kuma
 b+1;M;24;i22~23;-13;+13a;;"* Balcony Break
 * Transition to -13 HBS with input D or 3+4
 * 9 chip damage on block
 * 12 chip damage on block after absorbing an attack in power crush state
 * -3 on block after absorbing an attack in power crush state
-* Power crush 7~21";bbr pc7~21;HBS;Bear Slash;;;File:t8-p2-kuma-b+1.mp4;Kuma-b+1;kuma
+* Power crush 7~21";bbr chp:9 pc7~21;HBS;Bear Slash;;;File:t8-p2-kuma-b+1.mp4;Kuma-b+1;kuma
 b+2;m;12;i15;-9;+2;;;;;;r28;;File:t8-p2-kuma-b+2,1,1+2.mp4;Kuma-b+2;kuma
 b+2,1;m, h;12, 14;i15, i23;-3;+8;;"* Transition to HBS with input D or 3+4 (-4/+7)
 * Transition to ROL with input F (-14/-3)
@@ -181,7 +181,7 @@ b+1+2;h,m;10,20;i18~19 i12~13;-8;+13d;;"* Heat Engager
 * Homing
 * Strong Aerial Tailspin 1st hit only
 * 12 chip damage
-* Transition to HBS r36 with input D or 3+4 (does not shift when using Heat Dash)";he bbr hom;HBS;Bear X;r36;;File:t8-p2-kuma-b+1+2.mp4;Kuma-b+1+2;kuma
+* Transition to HBS r36 with input D or 3+4 (does not shift when using Heat Dash)";he bbr hom chp:12;HBS;Bear X;r36;;File:t8-p2-kuma-b+1+2.mp4;Kuma-b+1+2;kuma
 b+1+4;m!;25;i60~62;;+16a/+21a HBS;;* Transition to HBS with input D or 3+4;;HBS;Deadly Claw;;;File:t8-p2-kuma-b+1+4.mp4;Kuma-b+1+4;kuma
 b+1+4,f,f;SM;40;i55~i130;-20~+55;+42a~+117a;;"* Projectile
 * Hold F to extend attack
@@ -203,7 +203,7 @@ u+3+4;m;21;i34~39;+10;+20;;"* Transition to SIT (cannot cancel)
 uf+1;m;20;i26~28;-6;+22a;;"* Alternate input: ub+1 or u+1
 * 8 chip damage on block
 * Low crush 9~30
-* Low crush 31~33";js9~30 js31~33;FC;Hornet Sweep;r29 FC;;File:t8-p2-kuma-uf+1.mp4;Kuma-uf+1;kuma
+* Low crush 31~33";chp:8 js9~30 js31~33;FC;Hornet Sweep;r29 FC;;File:t8-p2-kuma-uf+1.mp4;Kuma-uf+1;kuma
 uf+2;m;20;i28~30;-6;+30a;+65a (+45);"* Balcony Break
 * Homing
 * Strong Aerial Tailspin
@@ -227,13 +227,13 @@ uf+4,3;m, m;20, 25;i29~30, i20~21;+7;+21a (+14);;"* Balcony Break
 * Low crush";bbr js;;Kuma Hell Axle;;;File:t8-p2-kuma-uf+4,3.mp4;Kuma-uf+4,3;kuma
 1+2+3+4;;;;;;;;;;Ki Charge;;;File:t8-p2-kuma-1+2+3+4.mp4;Kuma-1+2+3+4;kuma
 b,f+2;h;26;i15~17;-5;+17a (+8);+62a (+42);"* Balcony Break
-* 10 chip damage on block";bbr;;Anger Hook;r31;;File:t8-p2-kuma-b,f+2.mp4;Kuma-b,f+2;kuma
+* 10 chip damage on block";bbr chp:10;;Anger Hook;r31;;File:t8-p2-kuma-b,f+2.mp4;Kuma-b,f+2;kuma
 f,F+2;M;23;i19~21;-19;+45a (+35);;* High crush 8~18;cs8~18;;Demon Uppercut;r43;;File:t8-p2-kuma-f,f+2.mp4;Kuma-f,F+2;kuma
 f,F+1+2;M;30;i37~38;+8 HBS;+52a HBS;;"* 9 chip damage on block
 * Transition to HBS
 * Transition to ROL r35 fs39~ with F (+5/+49a)
 * Panda: Reduced vertical hitbox (does not hit as high)
-* Low crush 9~35";js9~35;HBS,ROL,HBS;Falling Bear;r32 HBS;;File:t8-p2-kuma-f,f+1+2.mp4;Kuma-f,F+1+2;kuma
+* Low crush 9~35";chp:9 js9~35;HBS,ROL,HBS;Falling Bear;r32 HBS;;File:t8-p2-kuma-f,f+1+2.mp4;Kuma-f,F+1+2;kuma
 qcf+2;m;15;i17~18;-8;+3;;;;;;r29;;File:t8-p2-kuma-qcf+2,1.mp4;Kuma-qcf+2;kuma
 qcf+2,1;m, m;15, 25;i17~18, i27;-10;+33a (+7);;"* Heat Engager
 
@@ -244,11 +244,11 @@ qcf+2,1;m, m;15, 25;i17~18, i27;-10;+33a (+7);;"* Heat Engager
 * Interrupt with i5";he bbr intr:5;;Grizzly Claws;r32;;File:t8-p2-kuma-qcf+2,1.mp4;Kuma-qcf+2,1;kuma
 qcf+2,2;m, L;15, 22;i17~18, i33~34;-18c;+21d;;"* Interrupt with i11
 * Move can be delayed by 5F
-* 6 chip damage on block";intr:11;;Grizzly Claw Smash;r36;;File:t8-p2-kuma-qcf+2,2.mp4;Kuma-qcf+2,2;kuma
+* 6 chip damage on block";intr:11 chp:6;;Grizzly Claw Smash;r36;;File:t8-p2-kuma-qcf+2,2.mp4;Kuma-qcf+2,2;kuma
 f,f,F+3;m;30;i22~23;+6;+13a (+3);;"* Balcony Break
 * 9 chip damage on block
 * Low crush 3~25
-* Floating state 26~28";bbr js3~25 fs26~28;;Leaping Side Kick;r36;;File:t8-p2-kuma-f,f,f+3.mp4;Kuma-f,f,F+3;kuma
+* Floating state 26~28";bbr chp:9 js3~25 fs26~28;;Leaping Side Kick;r36;;File:t8-p2-kuma-f,f,f+3.mp4;Kuma-f,f,F+3;kuma
 f,f,F+1+2;m;30;i20~24;+3;+9c;;"* Balcony Break
 * Heat Engager
 
@@ -259,7 +259,7 @@ f,f,F+1+2;m;30;i20~24;+3;+9c;;"* Balcony Break
 * Forces tech backroll on hit
 * Panda: shorter attack hitbox range, reduced vertical height (does not hit as deep or high)
 * Low crush 21~35
-* Floating state 36~38";bbr he js21~35 fs36~38;HBS;Rabid Bear;r35;;File:t8-p2-kuma-f,f,f+1+2.mp4;Kuma-f,f,F+1+2;kuma
+* Floating state 36~38";bbr he chp:9 js21~35 fs36~38;HBS;Rabid Bear;r35;;File:t8-p2-kuma-f,f,f+1+2.mp4;Kuma-f,f,F+1+2;kuma
 ws1;m;13;i13~15;-11;+2;+7;;;;;;;File:t8-p2-kuma-ws1,2ss.mp4;Kuma-ws1;kuma
 ws1,2;m, m;13, 20;i13~15, i18~19;-13;+6 (+20g);+18cg;"* Combo from 1st hit
 * Hold 2 to power up, up to 2 charge levels
@@ -285,7 +285,7 @@ ws3;m;21;i18~20;-9;+17 (+8);;"* Balcony Break
 * Homing";bbr hom;;Spinning Bear Kick;;;File:t8-p2-kuma-ws3.mp4;Kuma-ws3;kuma
 ws4;m;20;i11~12;-6;+5;;;;;Paw Smash;;;File:t8-p2-kuma-ws4.mp4;Kuma-ws4;kuma
 SS.1+2;m;23;i22~23;-3;+6c;;"* 9 chip damage
-* Transition to +12 +3 HBS with D";;HBS;Salmon Swipe;;;File:t8-p2-kuma-ss.1+2.mp4;Kuma-SS.1+2;kuma
+* Transition to +12 +3 HBS with D";chp:9;HBS;Salmon Swipe;;;File:t8-p2-kuma-ss.1+2.mp4;Kuma-SS.1+2;kuma
 FC.df+2;m;12;i18~19;-13;-2;;*;;;1st hit;r;;;Kuma-FC.df+2;kuma
 FC.df+2,1;m, h;12, 12;i18~19, i18~20;-10~-8;+1~+3;;"* Combo from 1st hit
 * Jail from 1st block";;;2nd hit;r27;;;Kuma-FC.df+2,1;kuma
@@ -326,10 +326,10 @@ HBS.1,2*;M, M;10, 23;i12, i33~34;-12;+13c;+49a;"* Combo from 1st CH with 30?F (c
 * Move can be delayed by 9?F by holding 2
 * Becomes HBS.1,2** during heat
 * Consumes 240F? of remaining Heat time
-* 9 chip damage on block";;FC;Honeycomb Spike;r35 FC;;;Kuma-HBS.1,2*;kuma
+* 9 chip damage on block";chp:9;FC;Honeycomb Spike;r35 FC;;;Kuma-HBS.1,2*;kuma
 HBS.1,2**;M, M;10, 30;i12, i44~45;+3;+49a;;"* Reversal Break
 * Replaces HBS.1,2*: i33~34 startup during Heat (t83? r36?)
-* 12 chip damage on block";rbr;FC;Fresh Honeycomb Spike;r36 FC;;File:t8-p2-kuma-hbs.1,2ss.mp4;Kuma-HBS.1,2**;kuma
+* 12 chip damage on block";rbr chp:12;FC;Fresh Honeycomb Spike;r36 FC;;File:t8-p2-kuma-hbs.1,2ss.mp4;Kuma-HBS.1,2**;kuma
 HBS.2;L;16;i21~24;-15;+21g;;"* Transition to HBS
 * High crush 1~";cs1~;HBS,HBS;Bear Claw;r29 HBS;;File:t8-p2-kuma-hbs.2.mp4;Kuma-HBS.2;kuma
 HBS.3;sp;;;;;;"* Transition to FUFA
@@ -359,7 +359,7 @@ HBS.b+1+2,1+2;L, L;16, 33;i26~29, i22~24;-29c;+8a;;"* Balcony Break
 HBS.df+1;m;23;i25~27;-7;+20a (+11);;"* Homing
 * Balcony Break
 * Strong Aerial Tailspin
-* 9 chip damage";hom bbr;;Hornet Buster;r28;;;Kuma-HBS.df+1;kuma
+* 9 chip damage";hom bbr chp:9;;Hornet Buster;r28;;;Kuma-HBS.df+1;kuma
 HBS.df+2;m;20;i15~16;-17;+35a (+25);;* Tornado;trn;;Big Tree;r34;;File:t8-p2-kuma-hbs.df+2.mp4;Kuma-HBS.df+2;kuma
 HBS.d+1+2;m;22;i16~20;-3;+4;+76a (+60);"* Tornado
 * Transition to HBS

@@ -1,11 +1,14 @@
 import cx from 'classix';
 import { memo } from 'react';
 import { Link, useSearchParams } from 'react-router';
+import { MoveTags } from '~/constants/moveTags';
 import { type FrameDataListProps } from '~/types/FrameDataListProps';
 import { type MoveT8 } from '~/types/Move';
 import {
+  getChipDamage,
   getInterruptibleFrames,
   getRecoveryFrames,
+  hasTag,
 } from '~/utils/frameDataUtils';
 import {
   getBlockFrameColorClasses,
@@ -109,6 +112,8 @@ export const SimpleMovesTable = memo(function SimpleMovesTable({
                 <wbr />
                 rupt
               </>
+            ) : sortSettings?.sortByKey === 'chip' ? (
+              'Chip'
             ) : (
               'Hit / CH'
             )}
@@ -122,6 +127,8 @@ export const SimpleMovesTable = memo(function SimpleMovesTable({
           const simpleCh = simplifyFrameValue(move.counterHit || '');
           const hasVideo = Boolean(move.ytVideo || move.video);
           const interruptibleFrames = getInterruptibleFrames(move);
+          const chipDamage = getChipDamage(move);
+          const hasChipTag = hasTag(MoveTags.Chip, move);
           const computedCharId = charId || charIdFromMove(move as MoveT8);
           const moveUrl = `/${gameRouteId}/${computedCharId}/${commandToUrlSegmentEncoded(move.command)}`;
           const commandContent = formatWordWithBreaks(move.command);
@@ -171,6 +178,8 @@ export const SimpleMovesTable = memo(function SimpleMovesTable({
                   getRecoveryFrames(move)
                 ) : sortSettings?.sortByKey === 'interruptible' ? (
                   interruptibleFrames !== undefined && `i${interruptibleFrames}`
+                ) : sortSettings?.sortByKey === 'chip' ? (
+                  (chipDamage ?? (hasChipTag ? '?' : ''))
                 ) : (
                   <>
                     <span className={getHitFrameColorClasses(simpleHit)}>

@@ -5,7 +5,7 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * 12 chip damage on hit
 * Only deals recoverable damage
 * Cannot cause a K.O.
-* Power crush 7~16";hb pc7~16;;Heat Burst;r30;;;Law-2+3;law
+* Power crush 7~16";hb chp:2 pc7~16;;Heat Burst;r30;;;Law-2+3;law
 H.1+2;;;;-8~-7;+30a;+66a (+50);"* Tornado
 * Weapon
 * Consumes 240F remaining Heat Time on block or whiff
@@ -14,11 +14,11 @@ H.uf+2;h;21;i19~20;+4;+21d;;"* Weapon
 * Strong Aerial Tailspin
 * Balcony Break
 * Consumes 120F of remaining Heat Time
-* 4 chip damage on block";wpn bbr;;Gale Claw;r33;;;Law-H.uf+2;law
+* 4 chip damage on block";wpn bbr chp:4;;Gale Claw;r33;;;Law-H.uf+2;law
 H.2+3;m,t;24,4,5,5,5,7 (50);i14;+11g;+5;;"* Heat Smash
 * Balcony Break
 * Transitions to DSS on block
-* 8 chip damage on block";hs bbr;;Heavenly Dragon;;;;Law-H.2+3;law
+* 8 chip damage on block";hs bbr chp:8;;Heavenly Dragon;;;;Law-H.2+3;law
 R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Removes Recoverable Health
 * Reversal Break
@@ -95,7 +95,7 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * 5 chip damage on block
 * Forces tech backroll on hit
 * Alternate input DSS.3+4,4
-* Low crush 22~";bbr js22~;;Wild Dragon's Flight;;;File:t8-p2-law-3+4,4.mp4;Law-3+4,4;law
+* Low crush 22~";bbr chp:5 js22~;;Wild Dragon's Flight;;;File:t8-p2-law-3+4,4.mp4;Law-3+4,4;law
 f+2;h;10;i12;+0;+6;;"* Can route into:
 ** Rave War Combo (f+2,2,2), or
 ** Blazing Fist Combo (f+2,2,1+2)
@@ -103,7 +103,7 @@ f+2;h;10;i12;+0;+6;;"* Can route into:
 f+2~1;m;24;i19~20;+4;+30a (+4);+54a;"* Balcony Break
 * 4 chip damage on block
 * Transition to DSS with F (+6/+32a (+6)/+56a)
-* Alternate input DSS.f+2~1";bbr;DSS;Poison Arrow;;;;Law-f+2~1;law
+* Alternate input DSS.f+2~1";bbr chp:4;DSS;Poison Arrow;;;;Law-f+2~1;law
 f+3;m;12;i18;-10;+1;;;;;;;;File:t8-p2-law-f+3,1.mp4;Law-f+3;law
 f+3,1;m, m;12, 15;i18, i20;-2;+8;;"* Transition to DSS with F
 ** (+3 oB, +13g)";;DSS;Plunging Knock;;;File:t8-p2-law-f+3,1.mp4;Law-f+3,1;law
@@ -132,7 +132,7 @@ H.df+1,2;m, h;10, 27;i13, i20~21;-5;+16a (+7);;"* Weapon
 * Interrupt with i2
 * Consumes 120F of remaining Heat Time
 * Move cannot be delayed
-* 5 chip damage on block";wpn bbr intr:2;;Blast Claw;r33;;;Law-df+1,H.2;law
+* 5 chip damage on block";wpn bbr intr:2 chp:5;;Blast Claw;r33;;;Law-df+1,H.2;law
 df+2;m;12;i15~16;-7;+34a (+24);;+4s on crouching normal hit;;;Dragon Raise;r25;;File:t8-p2-law-df+2.mp4;Law-df+2;law
 df+3;m;23;i21;-13;+52a (+21);;* High crush 6~55;cs6~55;FC;Dragon Lance;r34 FC;;File:t8-p2-law-df+3.mp4;Law-df+3;law
 df+4;m;15;i13;-8;+3;;;;;Right Middle Kick;r27;;File:t8-p2-law-df+4,3.mp4;Law-df+4;law
@@ -259,7 +259,7 @@ uf+1,3;h, l;10, 10;i12, i19;-13;-1;;"* Combos from 1st hit
 uf+2;h;21;i19~20;-1;+9;+21d;"* Weapon
 * Strong Aerial Tailspin
 * Balcony Break
-* 4 chip damage on block";wpn bbr;;Gale Claw;r33;;File:t8-p2-law-uf+2.mp4;Law-uf+2;law
+* 4 chip damage on block";wpn bbr chp:4;;Gale Claw;r33;;File:t8-p2-law-uf+2.mp4;Law-uf+2;law
 uf+3;m;20;i18;-8;+16c;;"* Heat Engager
 
 * Heat Dash +5, +36d (+26)
@@ -273,7 +273,7 @@ uf+3+4;l;27;i29;-24;+5;;"Alternate input DSS.uf+3+4
 1+2+3+4;;;;;;;;;;Ki Charge;;;File:t8-p2-law-1+2+3+4.mp4;Law-1+2+3+4;law
 1+2+3+4;;;;;;;;;;Ki Charge (Hold);;;File:t8-p2-law-dss.2.mp4;Law-1+2+3+4,1+2*;law
 1+2+3+4,2;h;22;i14;+1;+15a;+50a;"* Balcony Break
-* 6 chip damage on block";bbr;;Cloud Gates;;;File:t8-p2-law-dss.2.mp4;Law-1+2+3+4,1+2*,2;law
+* 6 chip damage on block";bbr chp:6;;Cloud Gates;;;File:t8-p2-law-dss.2.mp4;Law-1+2+3+4,1+2*,2;law
 1+2+3+4~1;h;10;i12;-5;+6;;"* Alternate input:
 ** uf+1
 ** b,B+2+3~1,3";;;Blackout;;;;Law-1+2+3+4~1;law
@@ -303,11 +303,11 @@ f,F+2,f+1+2;m, m;12, 24;i14~16, i31~32;+4;+30a (+4);+54a;"* Combo from 1st CH wi
 * Transition to DSS with F (+6/+32a (+6)/+56a)
 * 4 chip damage on block
 * Move can be delayed by 17F
-* Input can be delayed by 19F";;DSS;Dragon's Poke > Poison Arrow;r35;;File:t8-p2-law-f,f+2,f+1+2.mp4;Law-f,F+2,f+1+2;law
+* Input can be delayed by 19F";chp:4;DSS;Dragon's Poke > Poison Arrow;r35;;File:t8-p2-law-f,f+2,f+1+2.mp4;Law-f,F+2,f+1+2;law
 f,F+3;M;30;i23~26;+0c;+7d;;"* Spike
 * 6 chip damage
 * Low crush 11~26
-* Floating state 27~29";spk js11~26 fs27~29;;Dragon Divide;r30;;File:t8-p2-law-f,f+3.mp4;Law-f,F+3;law
+* Floating state 27~29";spk chp:6 js11~26 fs27~29;;Dragon Divide;r30;;File:t8-p2-law-f,f+3.mp4;Law-f,F+3;law
 f,F+4;M;17;i20~21;-9;+19cg;;"Balcony Break
 * Low crush 23~36
 * Floating state 37~39";bbr js23~36 fs37~39;;Dragon's Leap Shot;r30;;File:t8-p2-law-f,f+4.mp4;Law-f,F+4;law
@@ -316,7 +316,7 @@ f,f,F+3;m;30;i20~28;+6;+9c;;"* Balcony Break
 * 6 chip damage on block
 * Forces tech backroll on hit
 * Low crush 3~29
-* Floating state 30~32";bbr js3~29 fs30~32;;Running Side Kick;r31;;File:t8-p2-law-f,f,f+3.mp4;Law-f,f,F+3;law
+* Floating state 30~32";bbr chp:6 js3~29 fs30~32;;Running Side Kick;r31;;File:t8-p2-law-f,f,f+3.mp4;Law-f,f,F+3;law
 ws1;m;10;i13;-7;-1;;"* Transition to DSS with F
 ** (-5 oB, +1 oH)";;DSS;;;;File:t8-p2-law-ws1,2.mp4;Law-ws1;law
 ws1,2;m, h;10, 25;i13, i16;-9;+14c;;"* Balcony Break
@@ -331,7 +331,7 @@ ws4,3;m, m;14, 23;i11, i27;-14;+68a (+52);;"* Tornado
 ws3+4;m;30;i14;-21;+0a (-17);;"Balcony Break
 * Low crush";bbr js;;Catapult Kick;;;File:t8-p2-law-ws3+4.mp4;Law-ws3+4;law
 ss2;m;23;i18;+0;+16d (+6);;"* Balcony Break
-* 4 chip damage on block";bbr;;Spinning Dragon Blow;;;File:t8-p2-law-ss2.mp4;Law-ss2;law
+* 4 chip damage on block";bbr chp:4;;Spinning Dragon Blow;;;File:t8-p2-law-ss2.mp4;Law-ss2;law
 ss3;l;17;i18;-13;+7;+16c;* Transition to DSS on hit;;DSS;Low Crush;;;File:t8-p2-law-ss3.mp4;Law-ss3;law
 ss3+4;m,h;9,10;i15;-12;+63a (+43);;"Balcony Break
 * Low crush";bbr js;;Double Dragon;;;File:t8-p2-law-ss3+4.mp4;Law-ss3+4;law
@@ -360,12 +360,12 @@ BT.d+4;l;17;i23;-13;+6c;+26d;;;;Reverse Low;;;File:t8-p2-law-bt.d+4.mp4;Law-BT.d
 BT.d+3+4;M;25;i26;-15;+0;;"* Transition to FUFA with D
 ** (-2 oB, +13d oH)";;FUFA,BT;Frogman;BT;;File:t8-p2-law-bt.d+3+4.mp4;Law-BT.d+3+4;law
 DSS.1;h;14;i12;+3;+7;+17c;"* 4 chip damage on block
-* Transition to DSS";;DSS,DSS;Dragon Knuckle;r36? DSS;;File:t8-p2-law-dss.1.mp4;Law-DSS.1;law
+* Transition to DSS";chp:4;DSS,DSS;Dragon Knuckle;r36? DSS;;File:t8-p2-law-dss.1.mp4;Law-DSS.1;law
 DSS.2;h;20;i14;+1;+15a;+50a;"* Balcony Break
-* 6 chip damage on block";bbr;;Cloud Gates;;;File:t8-p2-law-dss.2.mp4;Law-DSS.2;law
+* 6 chip damage on block";bbr chp:6;;Cloud Gates;;;File:t8-p2-law-dss.2.mp4;Law-DSS.2;law
 DSS.3;h;25;i19;+3;+40a;;"* Homing
 * Balcony Break
-* 5 Chip damage on block";hom bbr;;Dragon Charge Spin Kick;;;File:t8-p2-law-dss.3.mp4;Law-DSS.3;law
+* 5 Chip damage on block";hom bbr chp:5;;Dragon Charge Spin Kick;;;File:t8-p2-law-dss.3.mp4;Law-DSS.3;law
 DSS.4;l;21;i21;-13;+6c;+38a;;;;Dragon Charge Kick;;;File:t8-p2-law-dss.4.mp4;Law-DSS.4;law
 DSS.f+1;m;20 (24);i14;-11;+12c;;"* Heat Engager
 
@@ -375,7 +375,7 @@ DSS.f+1;m;20 (24);i14;-11;+12c;;"* Heat Engager
 * 4 chip damage on block
 * 7 chip damage on block (Just Frame)
 * Forces tech backroll on hit
-* While transitioning to DSS from other moves, it is possible to input DSS.f+1 on frame 1 or 2 of DSS (ex; 4,3~F:DSS.f+1) for 4 more damage on hit, 3 more chip damage on block, and startup becomes i13~14 with increased pushback on block";he bbr;;Dragon Roar;;;File:t8-p2-law-dss.f+1.mp4;Law-DSS.f+1;law
+* While transitioning to DSS from other moves, it is possible to input DSS.f+1 on frame 1 or 2 of DSS (ex; 4,3~F:DSS.f+1) for 4 more damage on hit, 3 more chip damage on block, and startup becomes i13~14 with increased pushback on block";he bbr chp:4;;Dragon Roar;;;File:t8-p2-law-dss.f+1.mp4;Law-DSS.f+1;law
 DSS.f+3;m;27 (32);i20;-9;+22d (+12);;"* Heat Engager
 
 * Heat Dash +5, +36a (+26)
@@ -383,12 +383,12 @@ DSS.f+3;m;27 (32);i20;-9;+22d (+12);;"* Heat Engager
 * Balcony Break
 * 8 chip damage on block
 * 9 chip damage on block (Just Frame)
-* While transitioning to DSS from other moves, it is possible to input DSS.f+3 on frame 1 or 2 of DSS (ex; 4,3~F:DSS.f+3) for 5 more damage with increased pushback on block";he bbr;;Dragon Cannon;;;;Law-DSS.f+3;law
+* While transitioning to DSS from other moves, it is possible to input DSS.f+3 on frame 1 or 2 of DSS (ex; 4,3~F:DSS.f+3) for 5 more damage with increased pushback on block";he bbr chp:8;;Dragon Cannon;;;;Law-DSS.f+3;law
 DSS.f+4;h;36 (40);i19;+7;+5c;;"* Balcony Break
 * 7 chip damage on block
 * 12 chip damage on block (Just Frame)
 * Forces tech backroll on hit
-* While transitioning to DSS from other moves, it is possible to input DSS.f+4 on frame 1 or 2 of DSS (ex; 4,3~F:DSS.f+4) for 4 more damage.";bbr;;Dragon's Flight;;;File:t8-p2-law-dss.f+4.mp4;Law-DSS.f+4;law
+* While transitioning to DSS from other moves, it is possible to input DSS.f+4 on frame 1 or 2 of DSS (ex; 4,3~F:DSS.f+4) for 4 more damage.";bbr chp:7;;Dragon's Flight;;;File:t8-p2-law-dss.f+4.mp4;Law-DSS.f+4;law
 hFC.1;sl;5;i10;-5;+6;;* High crush 4~;cs4~;FC;Crouch Jab;FC;;;Law-hFC.1;law
 hFC.2;sl;8;i11;-4;+7;;"Alternate input d+2
 * High crush 4~";cs4~;FC;Body Blow;FC;;;Law-hFC.2;law

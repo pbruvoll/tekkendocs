@@ -5,7 +5,7 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * 12 chip damage on hit
 * Only deals recoverable damage
 * Cannot cause a K.O.
-* Power crush 7~16";hb pc7~16;;Heat Burst;r30;;;Jin-2+3;jin
+* Power crush 7~16";hb chp:2 pc7~16;;Heat Burst;r30;;;Jin-2+3;jin
 H.db+1+2;M;0;i19~34;+4;+23g~+38g;;"* Strong Aerial Tailspin
 * Balcony Break
 * Weapon?
@@ -25,7 +25,7 @@ H.f,F+1+2;m;20;i21~23;+5;+24cg;;"* Balcony Break
 * Cancel transition and recover Standing with B (-1/+18cg)
 * 4 chip damage on block
 * Low crush 11~48
-* Floating state 49~51";bbr js11~48 fs49~51;DVS,FC;Awakened Black Wing;r38;;;Jin-H.f,F+1+2;jin
+* Floating state 49~51";bbr chp:4 js11~48 fs49~51;DVS,FC;Awakened Black Wing;r38;;;Jin-H.f,F+1+2;jin
 H.2+3;m,h,m;57;i15~16;+3;+0d;;"* Heat Smash
 * Reversal Break
 * Balcony Break
@@ -33,12 +33,12 @@ H.2+3;m,h,m;57;i15~16;+3;+0d;;"* Heat Smash
 * Transition to CD automatically on block
 * Transition to standing on block with B
 * 6 chip damage on block
-* Jail from 1st attack";hs rbr bbr;CD;Hellfire Trespass Slayer;r33;;;Jin-H.2+3;jin
+* Jail from 1st attack";hs rbr bbr chp:6;CD;Hellfire Trespass Slayer;r33;;;Jin-H.2+3;jin
 H.2+3,4;m,h,m;50;i15~16;+9;+32a (-4);;"* Heat Smash
 * Reversal Break
 * Balcony Break
 * 7 chip damage on block
-* Jail from 1st attack";hs rbr bbr;;Hellfire Darkside Slayer;r32;;;Jin-H.2+3,4;jin
+* Jail from 1st attack";hs rbr bbr chp:7;;Hellfire Darkside Slayer;r32;;;Jin-H.2+3,4;jin
 R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Removes Recoverable Health
 * Reversal Break
@@ -121,7 +121,7 @@ f+4;m;21;i16-17;-8;+4;+42a;"* Enter ZEN -1 +11 +49a r26 with F
 * Balcony break on airborne hit";;ZEN;Front Thrust Kick;r32;;File:t8-p2-jin-f+4.mp4;Jin-f+4;jin
 f+1+2;h,h;14,24;i14 i9~10;-6;+21a (+11);;"* Balcony Break
 * Jail from 1st attack
-* 7 chip damage on block";bbr;;Double Chamber Punch;r33;;File:t8-p2-jin-f+1+2.mp4;Jin-f+1+2;jin
+* 7 chip damage on block";bbr chp:7;;Double Chamber Punch;r33;;File:t8-p2-jin-f+1+2.mp4;Jin-f+1+2;jin
 f+3+4;;;;;;;"* Enter Breaking Step r20 with DF
 * Steps forward
 * Actionable after 10f
@@ -142,11 +142,11 @@ df+2,4;m, m;12, 19;i16~17, i26~27;-12;+9;;"* Balcony Break
 * Input can be delayed by 1F
 * 3 chip damage on block
 * Low crush 17~39
-* Floating state 40~42";bbr js17~39 fs40~42;;Fiendish Talon Rend;r33;;;Jin-df+2,4;jin
+* Floating state 40~42";bbr chp:3 js17~39 fs40~42;;Fiendish Talon Rend;r33;;;Jin-df+2,4;jin
 H.df+2,1+2;m, m;12, 25;i16~17, i24~25;+2;+30a (+4);;"* Balcony Break
 * Combo from 1st hit
 * Consumes 240F of remaining Heat time
-* 5 chip damage on block";bbr;;Awakened Fiendish Claw;r35;;File:t8-p2-jin-df+2,h.1+2.mp4;Jin-df+2,H.1+2;jin
+* 5 chip damage on block";bbr chp:5;;Awakened Fiendish Claw;r35;;File:t8-p2-jin-df+2,h.1+2.mp4;Jin-df+2,H.1+2;jin
 df+3;m;16;i12;-8;+3;;;;;Left Roundhouse;r27;;File:t8-p2-jin-df+3.mp4;Jin-df+3;jin
 df+3~3;m;20;i23~i24;+6c;+13c;;"* Spike
 * Enter Breaking Step +2c +9c r27 with df";spk;Breaking Step;Brazilian Kick;r23;;File:t8-p2-jin-df+3t3.mp4;Jin-df+3~3;jin
@@ -258,7 +258,7 @@ f,F+2;m;22;i14~15;-8;+15a (+6);;"* Heat Engager
 
 * Balcony Break
 * Cannot be buffered
-* 6 chip damage on block";he bbr;;Demon's Paw;r29;;File:t8-p2-jin-f,f+2.mp4;Jin-f,F+2;jin
+* 6 chip damage on block";he bbr chp:6;;Demon's Paw;r29;;File:t8-p2-jin-f,f+2.mp4;Jin-f,F+2;jin
 f,F+3;m;20;i23~i25;-4;+24a;;"* Spike
 * Cannot be buffered";spk;;Left Axe Kick;r24;;File:t8-p2-jin-f,f+3.mp4;Jin-f,F+3;jin
 f,F+3,1;m, h;20, 5;i23~i25, i15;+1;+7;;* Links to 1 jab extensions (e.g. f,F+3,1,2,4);;1 jab extensions;Left Axe Kick > Left Jab;r18;;File:t8-p2-jin-f,f+3,1.mp4;Jin-f,F+3,1;jin
@@ -281,7 +281,7 @@ f,f,F+3;m;30;i22~i23;+6;+13a~+14a (+3~+4);;"* Balcony Break
 * Transition to +6 +13a ZEN with F
 * 9 Chip damage on block
 * Low crush 3~25
-* Floating state 26~28";bbr js3~25 fs26~28;ZEN;Leaping Side Kick;r36;;File:t8-p2-jin-f,f,f+3.mp4;Jin-f,f,F+3;jin
+* Floating state 26~28";bbr chp:9 js3~25 fs26~28;ZEN;Leaping Side Kick;r36;;File:t8-p2-jin-f,f,f+3.mp4;Jin-f,f,F+3;jin
 ws1;m;7;i13~i14;-6;+5;;;;;;r24;;File:t8-p2-jin-ws1,2.mp4;Jin-ws1;jin
 ws1,2;m, m;7, 19;i13~i14, i19~20;-8;+3c;;"* Spike
 * Combo from 1st hit with 1f delay
@@ -318,10 +318,10 @@ f,n,d,DF+4,2;l, M;12, 28;i20~i21, i31~i32;-16;+21a;;"* Balcony Break
 * Floating state 29~31";bbr spk chp js8~28 fs29~31;;Depraved Savagery;r28;;File:t8-p2-jin-cd.df+4,2.mp4;Jin-CD.DF+4,2;jin
 f,n,d,df:1;M;22;i16~i17;-13;+36a (+26);;"* Tornado
 * 4 chip damage on block
-* Jab evasion";trn;;Electric Thrusting Uppercut;r31;;File:t8-p2-jin-cd.dfh1.mp4;Jin-CD.df${justFrame}1;jin
+* Jab evasion";trn chp:4;;Electric Thrusting Uppercut;r31;;File:t8-p2-jin-cd.dfh1.mp4;Jin-CD.df${justFrame}1;jin
 f,n,d,df:2;h;25;i11~i12;+5~+6;+76a (+60);;"* Balcony Break
 * Recovers 3f faster on hit or block (t36 r24)
-* 5 chip damage on block";bbr;;Electric Wind Hook Fist;r27;;File:t8-p2-jin-cd.dfh2.mp4;Jin-CD.df${justFrame}2;jin
+* 5 chip damage on block";bbr chp:5;;Electric Wind Hook Fist;r27;;File:t8-p2-jin-cd.dfh2.mp4;Jin-CD.df${justFrame}2;jin
 f,n,d,df+1;m;20;i16~i17;-13;+32a (+22);;"* Tornado
 * Turns into CD.df#1 while in heat
 * Jab evasion";trn;;Thrusting Uppercut;r31;;File:t8-p2-jin-cd.df+1.mp4;Jin-CD.df+1;jin
@@ -331,18 +331,18 @@ DVS.1;m;25;i20~22;-9;+36d;;"* Tornado
 * Jab evasion
 * 7 chip damage on block
 * Low crush 22~43
-* Floating state 44~46";trn js22~43 fs44~46;;Awakened Thunder God Fist;r30;;;Jin-DVS.1;jin
-DVS.2;sm;23;i11~12;+4;+38a (+28);;* 6 chip damage on block;;;Awakened Wind God Fist;r24;;;Jin-DVS.2;jin
+* Floating state 44~46";trn chp:7 js22~43 fs44~46;;Awakened Thunder God Fist;r30;;;Jin-DVS.1;jin
+DVS.2;sm;23;i11~12;+4;+38a (+28);;* 6 chip damage on block;chp:6;;Awakened Wind God Fist;r24;;;Jin-DVS.2;jin
 DVS.3;M;25;i26~28;+2c;+22a;;"* Spike
 * 7 chip damage on block
 * Low crush 5~25
-* Floating state 26~28";spk js5~25 fs26~28;;Awakened Demon's Hoof;r26;;;Jin-DVS.3;jin
-DVS.4;L;10;i16;-12;-2c;;* 3 chip damage on block;;;;r39;;;Jin-DVS.4;jin
+* Floating state 26~28";spk chp:7 js5~25 fs26~28;;Awakened Demon's Hoof;r26;;;Jin-DVS.3;jin
+DVS.4;L;10;i16;-12;-2c;;* 3 chip damage on block;chp:3;;;r39;;;Jin-DVS.4;jin
 DVS.4,4;L, m;10, 25;i16, i25~26;-14;+3c;;"* Spike
-* 5 chip damage on block";spk;;Awakened Spinning Demon;r34;;;Jin-DVS.4,4;jin
+* 5 chip damage on block";spk chp:5;;Awakened Spinning Demon;r34;;;Jin-DVS.4,4;jin
 DVS.DF+3;L;24;i33~34;-23;-2a;;"* 7 chip damage on block
 * Low crush 5~25
-* Floating state 26~28";js5~25 fs26~28;;Awakened Demon's Tail;r41;;;Jin-DVS.DF+3;jin
+* Floating state 26~28";chp:7 js5~25 fs26~28;;Awakened Demon's Tail;r41;;;Jin-DVS.DF+3;jin
 OTG.d+1+2;L;24;i19~20;-13;-2 (-10);;* Spike;spk;;Black Out;r31;;;Jin-OTG.d+1+2;jin
 ZEN.1;m;14;i16~i17;-3;+8;;;;;;r21;;File:t8-p2-jin-zen.1,2.mp4;Jin-ZEN.1;jin
 ZEN.1,2;m, m;14, 21;i16~i17, i23~24;-14;+32a (+6);;"* Heat Engager
@@ -366,14 +366,14 @@ ZEN.2;h;20;i18~i19;-5;+17a (+8);;"* Homing
 * Strong Aerial Tailspin
 * 6 chip damage on block
 * +0 on block and 8 chip damage after absorbing an attack
-* Power crush 6~20";hom bbr pc6~20;;Fiendish Claw;r32;;File:t8-p2-jin-zen.2.mp4;Jin-ZEN.2;jin
+* Power crush 6~20";hom bbr chp:6 pc6~20;;Fiendish Claw;r32;;File:t8-p2-jin-zen.2.mp4;Jin-ZEN.2;jin
 ZEN.3;m;20;i17~i18;-9;+10g;+22a;"* Homing
 * Balcony Break
 * +17a (+8) on BT hit";hom bbr;;Halberd Heel;r32;;File:t8-p2-jin-zen.3.mp4;Jin-ZEN.3;jin
 ZEN.4;M;25;i27~i33;+2~+8;+17d~+23d;;"* Spike
 * 7 chip damage on block
 * Low crush 7~33
-* Floating state 34~36";spk js7~33 fs34~36;;Corpse Crusher;r31;;File:t8-p2-jin-zen.4.mp4;Jin-ZEN.4;jin
+* Floating state 34~36";spk chp:7 js7~33 fs34~36;;Corpse Crusher;r31;;File:t8-p2-jin-zen.4.mp4;Jin-ZEN.4;jin
 ZEN.1+2;L,t;10,20;i21, i61;-14;+4;;"* Wall Crush +8 on hit
 
 
@@ -384,11 +384,11 @@ ZEN.3+4;h;25;i21~27;+9g~+15g;+19a (+9);;"* Balcony Break
 * Enter Breaking Step +8 +18a (+8) r32 with DF on frame 40
 * 10 chip damage on block
 * Low crush 10~32
-* Floating state 33~35";bbr js10~32 fs33~35;Breaking Step;Black Wing Bolt;r31;;File:t8-p2-jin-zen.3+4.mp4;Jin-ZEN.3+4;jin
+* Floating state 33~35";bbr chp:10 js10~32 fs33~35;Breaking Step;Black Wing Bolt;r31;;File:t8-p2-jin-zen.3+4.mp4;Jin-ZEN.3+4;jin
 ZEN.u+1;m;20;i14~i16;-16;+31a (+21);;"* Tornado
 * 6 chip damage on block
 * Low crush 8~43
-* Floating state 44~46";trn js8~43 fs44~46;;Black Wing Rondo;r37;;File:t8-p2-jin-zen.u+1.mp4;Jin-ZEN.u+1;jin
+* Floating state 44~46";trn chp:6 js8~43 fs44~46;;Black Wing Rondo;r37;;File:t8-p2-jin-zen.u+1.mp4;Jin-ZEN.u+1;jin
 1+3;t;35;i12~i14;+0;+2d;;"* Homing
 * Throw break 1 or 2
 * Jin recovers BT on break";hom;;Double Face Kick;r31;;File:t8-p2-jin-1+3.mp4;Jin-1+3;jin

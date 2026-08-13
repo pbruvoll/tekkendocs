@@ -96,4 +96,18 @@ export const sortOptions: {
       sortDirection: 'asc',
     }),
   },
+  {
+    displayName: 'Chip damage (high - low)',
+    value: getSortByQueryParamValue({
+      sortByKey: 'chip',
+      sortDirection: 'asc',
+    }),
+  },
+  {
+    displayName: 'Chip damage (low - high)',
+    value: getSortByQueryParamValue({
+      sortByKey: 'chip',
+      sortDirection: 'desc',
+    }),
+  },
 ];
