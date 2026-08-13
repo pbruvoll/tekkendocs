@@ -262,11 +262,15 @@ def _get_interrupt_frames(noteLine: str) :
     return int(match.group(1))
 
 
-# "6 chip damage on block", but also "Deals chip damage" and "Chip on block [9]"
-chip_pattern = re.compile(r'(?:deals\s+)?(?:(\d+)\s+)?chip(?:\s+damage)?\b(.*)')
+# "6 chip damage on block" and "Deals chip damage", but also amounts followed by
+# a parenthesis such as "Deals 8 (DA:11) chip damage on block"
+chip_pattern = re.compile(r'(?:deals\s+)?(?:(\d+)\s+(?:\([^)]*\)\s+)?)?chip(?:\s+damage)?\b(.*)')
 # what may follow the chip damage without saying anything the chp tag misses.
-# The amount is sometimes given in brackets, before or after the "on block"
-chip_rest_pattern = re.compile(r'(?:\s+(?:on\s+block|[(\[](\d+)[)\]]))*\.?')
+# The amount is sometimes given after the words instead of before them, either
+# plain as in "Chip damage 2 (22%) on block", or in brackets as in
+# "Chip damage on block (7)" and "Chip on block [9]"
+chip_rest_pattern = re.compile(
+    r'(?:\s+(?:on\s+block|(?P<amount>\d+)(?:\s+\(\d+%\))?|[(\[](?P<bracketed>\d+)[)\]]))*\.?')
 
 
 def _match_chip_line(noteLine: str) :
@@ -293,20 +297,26 @@ def _get_chip_damage(noteLine: str) :
     if "on hit" in rest and "on block" not in rest :
         return None
 
-    # chip damage which requires absorbing an attack in power crush state says
-    # nothing about what the move does normally. Only the part before a comma is
-    # checked, since a note like "9 chip damage on block, +0 block advantage on
-    # attack absorption" does tell the normal chip damage
-    if "absorb" in rest.split(",")[0] :
+    # chip damage which requires absorbing an attack in power crush state, or
+    # which only happens in heat, says nothing about what the move does
+    # normally. Only the part before a comma is checked, since a note like
+    # "9 chip damage on block, +0 block advantage on attack absorption" does
+    # tell the normal chip damage
+    condition = rest.split(",")[0]
+    # "absor" covers both "absorbing/absorbed" and the noun "absorption"
+    if "absor" in condition or "heat" in condition :
         return None
 
     if amount :
         return int(amount)
 
-    # "Chip damage on block (7)" and "Chip on block [9]"
+    # "Chip damage 2 (22%) on block", "Chip damage on block (7)" and
+    # "Chip on block [9]"
     rest_match = chip_rest_pattern.fullmatch(rest)
-    if rest_match and rest_match.group(1) :
-        return int(rest_match.group(1))
+    if rest_match :
+        amount_after = rest_match.group("amount") or rest_match.group("bracketed")
+        if amount_after :
+            return int(amount_after)
 
     return -1
 
