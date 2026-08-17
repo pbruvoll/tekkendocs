@@ -8,7 +8,9 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ContentContainer } from '~/components/ContentContainer';
 import { MoveVideo } from '~/components/MoveVideo';
-import { t8Ranks } from '~/constants/t8Ranks';
+import { AnswerSummaryTile } from '~/features/dailyChallengeResult/components/AnswerSummaryTile';
+import { ShareResultActions } from '~/features/dailyChallengeResult/components/ShareResultActions';
+import { getRankForScore } from '~/features/dailyChallengeResult/scoreRank';
 import { AnswerDetailsCard } from '~/features/frameQuiz/components/AnswerDetailsCard';
 import { QuestionFeedbackCard } from '~/features/frameQuiz/components/QuestionFeedbackCard';
 import {
@@ -39,23 +41,6 @@ import { type LoaderData } from './_mainLayout.t8_._allFrameData';
 
 const questionsPerDay = 10;
 const maxStoredDailyChallengeDays = 30;
-
-const allRanks = t8Ranks;
-
-// Explicit score-to-image table for quick remapping.
-const rankImageByScore: Record<number, string> = {
-  0: allRanks[0]?.image || '',
-  1: allRanks[allRanks.length - 16]?.image || '',
-  2: allRanks[allRanks.length - 15]?.image || '',
-  3: allRanks[allRanks.length - 14]?.image || '',
-  4: allRanks[allRanks.length - 13]?.image || '',
-  5: allRanks[allRanks.length - 12]?.image || '',
-  6: allRanks[allRanks.length - 11]?.image || '',
-  7: allRanks[allRanks.length - 10]?.image || '',
-  8: allRanks[allRanks.length - 9]?.image || '',
-  9: allRanks[allRanks.length - 8]?.image || '',
-  10: allRanks[allRanks.length - 1]?.image || '',
-};
 
 export const meta: MetaFunction = ({ matches }) => {
   return generateMetaTags({
@@ -103,11 +88,6 @@ const calculateStreakEndingAt = (
     cursor = getPreviousDateKey(cursor);
   }
   return streak;
-};
-
-const getRankImageForScore = (score: number): string => {
-  const clampedScore = Math.max(0, Math.min(score, questionsPerDay));
-  return rankImageByScore[clampedScore] || '';
 };
 
 const keepMostRecentDays = <T,>(
@@ -527,7 +507,8 @@ export default function DailyChallenge() {
   const completedScore = hasCompletedSession
     ? score
     : (todayResult?.score ?? 0);
-  const completedRankImage = getRankImageForScore(completedScore);
+  const completedRankImage =
+    getRankForScore(completedScore, questionsPerDay)?.image ?? '';
 
   const getAnswerMoveHref = (answer: SessionAnswer): string | null => {
     const move = moveById.get(answer.moveId);
@@ -671,33 +652,13 @@ export default function DailyChallenge() {
                 )}
               </div>
               <div className="grid grid-cols-5 gap-2">
-                {completedAnswers.map((answer, questionIndex) => {
-                  const isCorrect = answer.isCorrect;
-                  return (
-                    <a
-                      key={`summary-${answer.moveId}`}
-                      href={`#answer-details-${questionIndex + 1}`}
-                      className={`block rounded border p-2 text-center transition-colors hover:bg-accent/40 ${
-                        isCorrect
-                          ? 'border-foreground-success/40 bg-foreground-success/10'
-                          : 'border-foreground-destructive/40 bg-foreground-destructive/10'
-                      }`}
-                    >
-                      <p className="text-xs text-muted-foreground">
-                        Q{questionIndex + 1}
-                      </p>
-                      <p
-                        className={`text-sm font-semibold ${
-                          isCorrect
-                            ? 'text-foreground-success'
-                            : 'text-foreground-destructive'
-                        }`}
-                      >
-                        {isCorrect ? 'OK' : 'X'}
-                      </p>
-                    </a>
-                  );
-                })}
+                {completedAnswers.map((answer, questionIndex) => (
+                  <AnswerSummaryTile
+                    key={`summary-${answer.moveId}`}
+                    answer={answer}
+                    index={questionIndex}
+                  />
+                ))}
               </div>
               <p className="mt-4 text-sm text-muted-foreground">
                 Current streak: {currentStreakToShow} day
@@ -706,6 +667,16 @@ export default function DailyChallenge() {
               <p className="mt-1 text-sm text-muted-foreground">
                 Come back tomorrow for a new challenge.
               </p>
+              {completedAnswers.length > 0 && (
+                <ShareResultActions
+                  className="mt-4"
+                  displayDate={todayDisplayDate || todayKey}
+                  score={completedScore}
+                  totalQuestions={questionsPerDay}
+                  streak={currentStreakToShow}
+                  answers={completedAnswers}
+                />
+              )}
               {showRetryButton && (
                 <Button
                   className="mt-4"
