@@ -27,25 +27,29 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Power crush 8~";ra rbr pc8~;;White Angel of Death;r39;;;Dragunov-R.df+1+2;dragunov
 1;h;5;i10;+1;+8;;"* Recovers 2f faster on hit or block (t27 r17) 
 * Increased tracking and different animation when 1,3 is input";;;Jab;r19;;File:t8-p2-dragunov-1,1,3.mp4;Dragunov-1;dragunov
-1,1;h, h;5, 8;i10, i20;-4;+7;;Combo from 1st hit;;;;r23;;File:t8-p2-dragunov-1,1,3.mp4;Dragunov-1,1;dragunov
+1,1;h, h;5, 8;i10, i20;-4;+7;;"* Combo from 1st hit
+* Interrupt with i1 from 1st block";intr:1;;;r23;;File:t8-p2-dragunov-1,1,3.mp4;Dragunov-1,1;dragunov
 1,1,3;h, h, m;5, 8, 22;i10, ,i25~26;-9;+15a (+6);+36a (+0);"* Balcony Break
 * Combo from 2nd CH with 5f delay
-* Input can be 10f delayed";bbr;;Eye Gouge > Hilt;r29;;File:t8-p2-dragunov-1,1,3.mp4;Dragunov-1,1,3;dragunov
+* Interrupt with i5 from 1st block
+* Input can be 10f delayed";bbr intr:5;;Eye Gouge > Hilt;r29;;File:t8-p2-dragunov-1,1,3.mp4;Dragunov-1,1,3;dragunov
 1,2;h, m;5, 8;i10, i18;-9;+2;;"* Jail from 1st attack
 * Combo from 1st hit";;;;r28;;File:t8-p2-dragunov-1,2,1.mp4;Dragunov-1,2;dragunov
-1,2,1;h, m, m;5, 8, 20;i10, ,i19~20;-14;+15g;;"* Heat Engager
+1,2,1;h, m, m;5, 8, 20;i10, ,i19~20;-14;+15cg;;"* Heat Engager
 
 * Heat Dash +5, +43d (+35)
 
 * Balcony Break
 * Combo from 1st or 2nd CH
+* Jail from 1st block
 * Opponent recovers Crouching";he bbr;;Salvo;r34;;File:t8-p2-dragunov-1,2,1.mp4;Dragunov-1,2,1;dragunov
 1,3;h, h;5, 14;i10, i16~17;-7;+1;+9;"* Jail from 1st attack
 * Combo from 1st hit";;;;r25;;File:t8-p2-dragunov-1,3,2.mp4;Dragunov-1,3;dragunov
 1,3,1;h, h, h;5, 14, 10;i10, ,i27~28;-3;+8;;"* Combo from 2nd CH
 * Links to 10-hit strings";;;;;;;Dragunov-1,3,1;dragunov
 1,3,2;h, h, m;5, 14, 20;i10, ,i22~23;-13;+41a;;"* Spike
-* Combo from 2nd CH";spk;;Hammer and Sickle;r21;;File:t8-p2-dragunov-1,3,2.mp4;Dragunov-1,3,2;dragunov
+* Combo from 2nd CH
+* Interrupt with i4 from 1st block";spk intr:4;;Hammer and Sickle;r21;;File:t8-p2-dragunov-1,3,2.mp4;Dragunov-1,3,2;dragunov
 1,3,2~1+2;h, h, t;5, 14, 40;i10, ,i29~32;+5;-2d;;"* Homing
 * Input 1+2 at frame 21 of 1,3,2
 * i50 effective startup
@@ -59,32 +63,42 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Enter SNK -1 +10 r20 with DF
 * Enter -3, -14 PGR with 3+4 (or d+3+4)";;SNK,PGR;;r22;;File:t8-p2-dragunov-2,1,3.mp4;Dragunov-2,1;dragunov
 2,1,3;h, h, h;10, 10, 24;i10, ,i18~19;-9;+40d (-18);;"* Balcony Break
+* Interrupt with i2 from 1st block
 * Input can be delayed 14f
-* Move can be delayed 10f";bbr;;One Two Scud Kick;r33;;File:t8-p2-dragunov-2,1,3.mp4;Dragunov-2,1,3;dragunov
+* Move can be delayed 10f";bbr intr:2;;One Two Scud Kick;r33;;File:t8-p2-dragunov-2,1,3.mp4;Dragunov-2,1,3;dragunov
 2,1,4;h, h, L;10, 10, 14;i10, ,i23;-12;+3c;;"* Floor Break
-* Trades with i8 from 2nd block";fbr;;One Two Mine Kick;r31;;File:t8-p2-dragunov-2,1,4.mp4;Dragunov-2,1,4;dragunov
+* Interrupt with i7 from 2nd block";fbr intr:7;;One Two Mine Kick;r31;;File:t8-p2-dragunov-2,1,4.mp4;Dragunov-2,1,4;dragunov
 3;m;10;i15~16;-9;+2;;;;;;r27;;File:t8-p2-dragunov-3,1,2.mp4;Dragunov-3;dragunov
 3,1;m, h;10, 8;i15~16, i21~22;-2;+7;;"* Combo from 1st hit
-* Enter SNK -3 +6 r23 with DF";;SNK;;r22;;File:t8-p2-dragunov-3,1,2.mp4;Dragunov-3,1;dragunov
+* Interrupt with i3 from 1st block
+* Enter SNK -3 +6 r23 with DF";intr:3;SNK;;r22;;File:t8-p2-dragunov-3,1,2.mp4;Dragunov-3,1;dragunov
 3,1,2;m, h, m;10, 8, 24;i15~16, ,i19~21;-12;+12a (+3);;"* Balcony Break
+* Jail from 2nd block with ?F delay
 * Combo from 2nd CH with 10f delay
 * Input can be delayed 11f
 * Move can be delayed 10f";bbr;;Disconnector Combo Middle;r36;;File:t8-p2-dragunov-3,1,2.mp4;Dragunov-3,1,2;dragunov
 3,1,4;m, h, h;10, 8, 24;i15~16, ,i22~23;-9;+42d (-16);;"* Balcony Break
 * Combo from 2nd CH with 7f delay
+* Interrupt with i2 from 2nd block
 * Input can be delayed 11f
-* Move can be delayed 10f";bbr;;Disconnector Combo High;r31;;File:t8-p2-dragunov-3,1,4.mp4;Dragunov-3,1,4;dragunov
+* Move can be delayed 10f";bbr intr:2;;Disconnector Combo High;r31;;File:t8-p2-dragunov-3,1,4.mp4;Dragunov-3,1,4;dragunov
 4;h;10;i12;-9;-1;+2;;;;;r28;;File:t8-p2-dragunov-4,1.mp4;Dragunov-4;dragunov
 4,1;h, h;10, 17;i12, i17~18;-4;+8;;"* Balcony Break (airborne)
 * Combo from 1st hit
+* Jails attack inputs from 1st block (movement bufferable)
+* Duckable
 * Recovers 3f faster on hit or block";;;Karnov Hook;r27;;File:t8-p2-dragunov-4,1.mp4;Dragunov-4,1;dragunov
 4,3;h, m;10, 18;i12, i23~24;-12;+14c;;"* Spike
-* Combo from 1st CH";spk;;Karnov Kick;r33;;File:t8-p2-dragunov-4,3.mp4;Dragunov-4,3;dragunov
+* Combo from 1st CH
+* Interrupt with i4 from 1st block";spk intr:4;;Karnov Kick;r33;;File:t8-p2-dragunov-4,3.mp4;Dragunov-4,3;dragunov
 4,4;h, m;10, 23;i12, i35~36;+5;+29a (+20);+46a;"* Balcony Break
-* Chip damage on block
-* Interrupt with i16 from 1st block
+* 6 chip damage on block
+* Interrupt with i15 from 1st block
+* Interrupt with i8 from 1st hit
+* Whiffs vs SS, SW from 1st block
+* Whiffs vs SSR, SWR from 1st hit
 * Low crush 22~42
-* Floating state 43~45";bbr intr:16 chp js22~42 fs43~45;FC;Karnov Avalanche;r20 FC;;File:t8-p2-dragunov-4,4.mp4;Dragunov-4,4;dragunov
+* Floating state 43~45";bbr stp:SS stp:SSR intr:15 chp:6 js22~42 fs43~45;FC;Karnov Avalanche;r20 FC;;File:t8-p2-dragunov-4,4.mp4;Dragunov-4,4;dragunov
 1+2;m;25;i21~22;-14;+19a;;"* Balcony Break
 * Spike
 * -9 frame advantage and 10 chip damage on block after absorbing an attack in power crush state
@@ -95,14 +109,16 @@ f+2;h;16;i19~20;-8;+3;+8;Elbow;elb;;;r26;;File:t8-p2-dragunov-f+2,4.mp4;Dragunov
 f+2,4;h, m;16, 24;i19~20, i19~20;-7;+28a (+23);+31a (+25);"* Balcony Break
 * Knee
 * Combo from 1st CH with 10f delay
+* Move cannot be interruptable
 * Input can be delayed 10f";bbr kne;;Stun Gun;r27;;File:t8-p2-dragunov-f+2,4.mp4;Dragunov-f+2,4;dragunov
 f+3;m;11;i20;-6;+5;;Enter SNK +0 +11 r19 with DF;;SNK;;r25;;File:t8-p2-dragunov-f+3,3.mp4;Dragunov-f+3;dragunov
 f+3,3;m, m;11, 14;i20, i17~20;-10;+1d / +1c;;"* Floor Break
 * Combo from 1st CH
+* Interrupt with i4 from 1st block
 * Side switch on hit 
 * +20 damage throw when hit from the front in close range
 ** Removes Recoverable Health
-* +1c on normal hit at long range";fbr;;Step-in Mantis;r26;;File:t8-p2-dragunov-f+3,3.mp4;Dragunov-f+3,3;dragunov
+* +1c on normal hit at long range";fbr intr:4;;Step-in Mantis;r26;;File:t8-p2-dragunov-f+3,3.mp4;Dragunov-f+3,3;dragunov
 f+3,1+2;m, m;11, 27;i20, i30~31;-3;+22a;;"* Heat Engager
 
 * Heat Dash +5, +67a (+50)
@@ -110,20 +126,23 @@ f+3,1+2;m, m;11, 27;i20, i30~31;-3;+22a;;"* Heat Engager
 * Balcony Break
 * Spike
 * Combo from 1st hit
-* Chip damage on block
-* Interruptable by i10 from 1st block";he bbr spk intr:10 chp;;Crushing Blizzard;r27;;File:t8-p2-dragunov-f+3,1+2.mp4;Dragunov-f+3,1+2;dragunov
+* 8 chip damage on block
+* Interrupt with i10 from 1st block";he bbr spk intr:10 chp:8;;Crushing Blizzard;r27;;File:t8-p2-dragunov-f+3,1+2.mp4;Dragunov-f+3,1+2;dragunov
 f+4;h;16;i14~15;-7;+8;;Knee;kne;;;r28;;File:t8-p2-dragunov-f+4,3.mp4;Dragunov-f+4;dragunov
 f+4,3;h, h;16, 22;i14~15, i30~32;-9;+20a;;"* Tornado
 * Balcony Break
 * Combo from 1st hit with 3f delay
-* Interruptable by i14 from 1st block";trn bbr intr:14;;Falcon Combination;r28;;File:t8-p2-dragunov-f+4,3.mp4;Dragunov-f+4,3;dragunov
+* Interrupt with i14 from 1st block
+* Whiffs vs SS, SW from 1st block";trn bbr stp:SS intr:14;;Falcon Combination;r28;;File:t8-p2-dragunov-f+4,3.mp4;Dragunov-f+4,3;dragunov
 f+4,4;h, h;16, 11;i14~15, i20~21;-11;+0;+22a (+15);"* Balcony Break
 ** Only on CH
-* Combo from 1st hit with 5f delay";bbr;;;r29;;File:t8-p2-dragunov-f+4,4,3.mp4;Dragunov-f+4,4;dragunov
+* Combo from 1st hit with 5f delay
+* Interrupt with i4 from 1st block";bbr intr:4;;;r29;;File:t8-p2-dragunov-f+4,4,3.mp4;Dragunov-f+4,4;dragunov
 f+4,4,3;h, h, h;16, 11, 17;i14~15, ,i22~23;-5;+21a (+12);;"* Balcony Break
 * Interrupt with i6 from 2nd block";bbr intr:6;;Cougar Combination;r28;;File:t8-p2-dragunov-f+4,4,3.mp4;Dragunov-f+4,4,3;dragunov
 f+4,d+4;h, L;16, 12;i14~15, i25;-12;+3c;;"* Floor Break
-* Combo from 1st hit with 5f delay";fbr;;Orca Combination;r31;;File:t8-p2-dragunov-f+4,d+4.mp4;Dragunov-f+4,d+4;dragunov
+* Combo from 1st hit with 5f delay
+* Interrupt with i6 from 1st block";fbr intr:6;;Orca Combination;r31;;File:t8-p2-dragunov-f+4,d+4.mp4;Dragunov-f+4,d+4;dragunov
 f+1+2;h;27;i16~17;-9;+35d;;"* Balcony Break
 * Elbow";bbr elb;;Scabbard;r31;;File:t8-p2-dragunov-f+1+2.mp4;Dragunov-f+1+2;dragunov
 f+3+4;h;25;i25~26;-13;+41a;;"* Tech-rollable on frames 34~38
@@ -133,7 +152,8 @@ f+3+4;h;25;i25~26;-13;+41a;;"* Tech-rollable on frames 34~38
 df+1;m;13;i13;-2;+7;;Enter -2, -11 PGR with 3+4 (or d+3+4);;PGR;;r23;;File:t8-p2-dragunov-df+1,4.mp4;Dragunov-df+1;dragunov
 df+1,4;m, h;13, 23;i13, i22~23;-7;+22a (+13);+58a;"* Balcony Break
 * Combo from 1st CH with 8f delay
-* Input can be delayed 12f";bbr;;Switchblade Ripper;r27;;File:t8-p2-dragunov-df+1,4.mp4;Dragunov-df+1,4;dragunov
+* Interrupt with i2 from 1st block
+* Input can be delayed 12f";bbr intr:2;;Switchblade Ripper;r27;;File:t8-p2-dragunov-df+1,4.mp4;Dragunov-df+1,4;dragunov
 df+2;m;14;i15~16;-12;+28a (+18);;Launches crouching opponent;;;Scimitar;r31;;File:t8-p2-dragunov-df+2.mp4;Dragunov-df+2;dragunov
 df+3;m;16;i17~20;-6~-3;+5c~+8c;;"* Floor Break
 * +20 damage throw when hit from the front in close range
@@ -146,20 +166,27 @@ d+1;m;18;i18~19;+1c;+8c;+13d;"* Floor Break
 * Elbow";fbr elb;;Bunker-buster Elbow;r26;;File:t8-p2-dragunov-d+1.mp4;Dragunov-d+1;dragunov
 d+2;L;14;i18~19;-13;-1c;+13g;* High crush 6~;cs6~;FC;Razer;r31 FC;;File:t8-p2-dragunov-d+2.mp4;Dragunov-d+2;dragunov
 d+3;L;13;i17~18;-14;-3;+1c;;;;;r32;;File:t8-p2-dragunov-d+3,2,1+2.mp4;Dragunov-d+3;dragunov
-d+3,2;L, h;13, 18;i17~18, i24~25;-8;+6;;Combo from 1st CH;;;;r28;;File:t8-p2-dragunov-d+3,2,1+2.mp4;Dragunov-d+3,2;dragunov
+d+3,2;L, h;13, 18;i17~18, i24~25;-8;+6;;"* Combo from 1st CH
+* Interrupt with i5 from 1st block";intr:5;;;r28;;File:t8-p2-dragunov-d+3,2,1+2.mp4;Dragunov-d+3,2;dragunov
 d+3,2,1+2;L, h, m;13, 18, 24;i17~18, ,i35~36;-2c;+20a;;"* Balcony Break
 * Spike
-* Chip damage on block
-* Interruptable by i14 from 2nd block";bbr spk intr:14 chp;;Avalanche Hammer Rush;r29;;File:t8-p2-dragunov-d+3,2,1+2.mp4;Dragunov-d+3,2,1+2;dragunov
+* 7 chip damage on block
+* Interrupt with i14 from 2nd block";bbr spk intr:14 chp:7;;Avalanche Hammer Rush;r29;;File:t8-p2-dragunov-d+3,2,1+2.mp4;Dragunov-d+3,2,1+2;dragunov
 d+3,4;L, m;13, 18;i17~18, i28;-11;+5;+23g;"* Floor Break
-* Combo from 1st CH";fbr;;Detached Kick;r32;;File:t8-p2-dragunov-d+3,4.mp4;Dragunov-d+3,4;dragunov
+* Combo from 1st CH
+* Interrupt with i9 from 1st block
+* Whiffs vs SSR, SW from 1st block";fbr stp:SSR intr:9;;Detached Kick;r32;;File:t8-p2-dragunov-d+3,4.mp4;Dragunov-d+3,4;dragunov
 d+4;L;12;i15~16;-15;-9;-4;;;;;r33;;File:t8-p2-dragunov-d+4,1,3.mp4;Dragunov-d+4;dragunov
-d+4,1;L, h;12, 8;i15~16, i14~15;-11;+5;;Combo from 1st CH with 1f delay;;;;r29;;File:t8-p2-dragunov-d+4,1,3.mp4;Dragunov-d+4,1;dragunov
+d+4,1;L, h;12, 8;i15~16, i14~15;-11;+5;;"* Combo from 1st CH with 1f delay
+* -27 from 1st block";;;;r29;;File:t8-p2-dragunov-d+4,1,3.mp4;Dragunov-d+4,1;dragunov
 d+4,1,3;L, h, h;12, 8, 21;i15~16, ,i15~16;-16;+9a (+0);;"* Balcony Break
-* Combo from 2nd hit
-* Combo from 1st CH";bbr;;Separator;r40;;File:t8-p2-dragunov-d+4,1,3.mp4;Dragunov-d+4,1,3;dragunov
+* Combo from 1st CH or 2nd hit
+* Jails from 2nd block
+* Interrupt with i12 from 1st block
+* Whiffs vs SS, SW from 1st block";bbr stp:SS intr:12;;Separator;r40;;File:t8-p2-dragunov-d+4,1,3.mp4;Dragunov-d+4,1,3;dragunov
 d+4,4;L, h;12, 23;i15~16, i22~23;-14;+16a (+6);;"* Balcony Break
-* Combo from 1st CH";bbr;;Stiletto;r38;;File:t8-p2-dragunov-d+4,4.mp4;Dragunov-d+4,4;dragunov
+* Combo from 1st CH
+* Interrupt with i3 from 1st block";bbr intr:3;;Stiletto;r38;;File:t8-p2-dragunov-d+4,4.mp4;Dragunov-d+4,4;dragunov
 d+1+2;;40;;;+5d;;"* Parries lows except weapons
 * Can side switch on a successful parry
 * 100% recoverable damage
@@ -167,7 +194,7 @@ d+1+2;;40;;;+5d;;"* Parries lows except weapons
 * High crush 1~25";ps5~15 cs1~25;FC;Pit Fall;r25 FC;;;Dragunov-d+1+2;dragunov
 db+2;m;12;i14~15;-7;+4;;;;;;r25;;File:t8-p2-dragunov-db+2,1,2.mp4;Dragunov-db+2;dragunov
 db+2,1;m, m;12, 10;i14~15, i20~21;-10;+1;+3;"* Combo from 1st hit with 9f delay
-* Interrupt with i1
+* Interrupt with i1 from 1st block
 * Input can be delayed 11f";intr:1;;;r28;;File:t8-p2-dragunov-db+2,1,2.mp4;Dragunov-db+2,1;dragunov
 db+2,1,2;m, m, m;12, 10, 20;i14~15, ,i25;-14;+29a (+23);;"* Combo from 2nd CH with 6f delay
 * Interrupt with i6
@@ -180,7 +207,7 @@ b+1;m;14;i17;-10;+1;;;;;;r29;;File:t8-p2-dragunov-b+1,2.mp4;Dragunov-b+1;draguno
 b+1,2;m, m;14, 18;i17, i25~26;-12;+18cg;;"* Tornado
 * Balcony Break
 * Combo from 1st hit with 1f delay
-* Interrupt with i6
+* Interrupt with i6 from 1st block
 * Whiffs vs SSR, SWR from 1st block
 * Opponent recovers crouching";trn bbr stp:SSR intr:6;;Pommel Fling;r31;;File:t8-p2-dragunov-b+1,2.mp4;Dragunov-b+1,2;dragunov
 b+1+3;;25;;;-5d;;"* Parries mid and high punches and kicks
@@ -190,11 +217,11 @@ b+1+3;;25;;;-5d;;"* Parries mid and high punches and kicks
 * Parry state 5~12";ps5~12;;Red Alert;r35;;;Dragunov-b+1+3;dragunov
 b+2;m;14;i15;-3;+8;;;;FC;;r22 FC;;File:t8-p2-dragunov-b+2,1,3.mp4;Dragunov-b+2;dragunov
 b+2,1;m, h;14, 11;i15, i17~19;-5;+6;;"* Combo from 1st hit with 3F delay
-* Can be parried by Raven b+1+3
+* Move cannot be interrupted
 * Move cannot be delayed
 * Input can be delayed by 3F";;;;r22;;File:t8-p2-dragunov-b+2,1,3.mp4;Dragunov-b+2,1;dragunov
 b+2,1,3;m, h, l;14, 11, 17;i15, ,i29~31;-26;-2c;+1d;"* Clean hit +4
-* Interrupt with i11
+* Interrupt with i11 from 1st block
 * Shift to Clipping Heel Hook on close range CH
 * High crush 15~50";intr:11 cs15~50;;Eye Gouge > Stingray;r35;;File:t8-p2-dragunov-b+2,1,3.mp4;Dragunov-b+2,1,3;dragunov
 b+3;h;17;i14~15;-9;+11g;;"* Homing
@@ -210,22 +237,25 @@ b+4,2;m, m;15, 10;i14, i21;-7;+4;;"* Floor Break
 * Enter FC r26 with D or DB
 * Enter SNK -6 +5 r25 with DF";fbr intr:1;FC,SNK;;r26;;File:t8-p2-dragunov-b+4,2,1.mp4;Dragunov-b+4,2;dragunov
 b+4,2,1;m, m, h;15, 10, 17;i14, ,i23~24;+1;+5;+14c;"* Combo from 1st CH or 2nd hit with 7F delay
-* Interrupt with i3
+* Interrupt with i3 from 1st block
 * Move can be delayed by 10F";intr:3;;Tundra Strike > Ear Grab;r24;;File:t8-p2-dragunov-b+4,2,1.mp4;Dragunov-b+4,2,1;dragunov
 b+4,2,1+2;m, m, t;15, 10;i14, ,i40;-5 BT;+3d;;"* Throw break 1+2
 ** Recovery in BT
 ** Unbreakable during Heat
 ** Consumes 300F of remaining Heat time
-* Interrupt with i21 from 1st block
-* Whiffs vs SSL, SWL, SWR from 1st block
-* High crush 24~40";stp:SSL intr:21 cs24~40;;Tundra Strike > Ambush Tackle;r33;;File:t8-p2-dragunov-b+4,2,1+2.mp4;Dragunov-b+4,2,1+2;dragunov
+* Interrupt with i21 from 2nd block
+* Interrupt with i9 from 2nd hit
+* Whiffs vs SSL, SW from 2nd block
+* Whiffs vs SSL, SWL from 2nd hit
+* High crush 24~40";stp:SSL stp:SSL intr:21 cs24~40;;Tundra Strike > Ambush Tackle;r33;;File:t8-p2-dragunov-b+4,2,1+2.mp4;Dragunov-b+4,2,1+2;dragunov
 b+4,3;m, h;15, 16;i14, i17~18;-9;+21a (+12);;"* Heat Engager
 
 * Heat Dash +5, +43d (+35)
 
 * Balcony Break
 * Combo from 1st hit with 1f delay
-* Move cannot be interrupted";he bbr;;Tundra Slash;r28;;File:t8-p2-dragunov-b+4,3.mp4;Dragunov-b+4,3;dragunov
+* Jails attack inputs (movement bufferable)
+* Duckable";he bbr;;Tundra Slash;r28;;File:t8-p2-dragunov-b+4,3.mp4;Dragunov-b+4,3;dragunov
 b+1+2;m;26;i22~23;+6;+13c;;Floor Break;fbr;;Blizzard Hammer;r27;;File:t8-p2-dragunov-b+1+2.mp4;Dragunov-b+1+2;dragunov
 b+3+4;h;22;i28~29;-2;+1d;;"* Balcony Break (airborne)
 * Transitions to throw on block front hit
@@ -326,18 +356,24 @@ SS.2,3;m, h,t;16, 20,20;i20~21, i18;-9;+1d;;"* Throw when hit from the front
 * Side switch on front hit
 * +5 on side or BT hit
 * Combo from 1st hit with 12F delay
+* Interrupt with i1 from 1st block
 * Move can be delayed by 15F
-* Input can be delayed by 18F";;;Integral Slicer Clutch;r30;;File:t8-p2-dragunov-ss.2,3.mp4;Dragunov-SS.2,3;dragunov
+* Input can be delayed by 18F";intr:1;;Integral Slicer Clutch;r30;;File:t8-p2-dragunov-ss.2,3.mp4;Dragunov-SS.2,3;dragunov
 SS.2,1+2;m, m,m;16, 8,12;i20~21, i27~29 i8~9;-4;+2c;;"* Combo from 1st hit with 1F delay
+* Interrupt with i8 from 1st block
 * Move cannot be delayed
-* Input can be delayed by 1F";;;;r22;;File:t8-p2-dragunov-ss.2,1+2,4.mp4;Dragunov-SS.2,1+2;dragunov
-SS.2,1+2,4;m, m,m, h;16, 8,12, 28;i20~21, ,i26~27;-10;+45a;;* Move can be delayed by 15F;;;Integral Blitz;r33;;File:t8-p2-dragunov-ss.2,1+2,4.mp4;Dragunov-SS.2,1+2,4;dragunov
+* Input can be delayed by 1F";intr:8;;;r22;;File:t8-p2-dragunov-ss.2,1+2,4.mp4;Dragunov-SS.2,1+2;dragunov
+SS.2,1+2,4;m, m,m, h;16, 8,12, 28;i20~21, ,i26~27;-10;+45a;;"* Move can be delayed by 15F
+* Interrupt with i6 from 3rd block
+* Whiffs vs SSR, SWR from 3rd block";stp:SSR intr:6;;Integral Blitz;r33;;File:t8-p2-dragunov-ss.2,1+2,4.mp4;Dragunov-SS.2,1+2,4;dragunov
 SS.2,1+2,1+2;m, m,m, m (t);16, 8,12;i20~21, ,i40;-5;+3d;;"* Throw break: 1+2
 * Transition to BT on throw break
 * Shift to tackle on hit
 * Interrupt with i22 from 3rd block
+* Whiffs vs SSL, SW from 3rd block
+* Whiffs vs SSL, SWL from 3rd hit
 * Unbreakable and -2d on hit in heat (Consumes 300F of remaining Heat time)
-* High crush 24~40";intr:22 cs24~40;BT;Integral Blitz > Ambush Tackle;r33;;;Dragunov-SS.2,1+2,1+2;dragunov
+* High crush 24~40";stp:SSL stp:SSL intr:22 cs24~40;BT;Integral Blitz > Ambush Tackle;r33;;;Dragunov-SS.2,1+2,1+2;dragunov
 FC.df+1;L;8;i16~17;-13;-4;;;;;;r33;;File:t8-p2-dragunov-fc.df+1,4.mp4;Dragunov-FC.df+1;dragunov
 FC.df+1,4;L, m;8, 10;i16~17, i16~17;;+7;;"* Knee
 * Combo from 1st hit

@@ -1,9 +1,11 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Transitions;Name;Recovery;Image;Video;Wavu id;Character id
-H.2+3;m,m,t;20,20,35;i16;+9;-1d;;"* Heat Smash
+H.2+3;m,m,t;20,20,35;i16, i18~19;+9;-1d;;"* Heat Smash
 * Reversal Break
 * Spike
-* Transition to attack throw on hit
-* Low crush 9~";hs rbr spk js9~;;Notorious Monster;r34;;;Bryan-H.2+3;bryan
+* Transition to attack throw on 1st or 2nd hit (55dmg total)
+* 5 chip damage on block
+* Low crush 9~36
+* Floating state 37~39";hs rbr spk chp:5 js9~36 fs37~39;;Notorious Monster;r34;;;Bryan-H.2+3;bryan
 R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Removes Recoverable Health
 * Reversal Break
@@ -14,9 +16,11 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Consumes Rage
 * Power crush 8~";ra rbr pc8~;;Total Vandalization;r39;;;Bryan-R.df+1+2;bryan
 1;h;5;i10;+1;+8;;Recovers 2f faster on hit or block (t27 r17);;;Jab;r19;;File:t8-p2-bryan-1,2.mp4;Bryan-1;bryan
-1,2;h, h;5, 8;i10, i12;-3;+8;+9;Jail from 1st attack;;;Left Right Combo;r21;;File:t8-p2-bryan-1,2.mp4;Bryan-1,2;bryan
+1,2;h, h;5, 8;i10, i12;-3;+8;+9;"* Jail from 1st block
+* Combo from 1st hit";;;Left Right Combo;r21;;File:t8-p2-bryan-1,2.mp4;Bryan-1,2;bryan
 1,2,1;h, h, m;5, 8, 18;i10, ,i19;-6;+6;+65a;"* Combo from 1st CH with no delay
 * Combo from 2nd CH with 10F delay
+* 4F timestop on CH
 * Move cannot be interrupted
 * Move can be delayed by 10F";;;One Two Body Blow;r25;;File:t8-p2-bryan-1,2,1.mp4;Bryan-1,2,1;bryan
 1,2,3;h, h, L;5, 8, 15;i10, ,i24;-12;+2;+14a;"* Combo from 1st CH with no delay
@@ -85,8 +89,10 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 4,3,f+4;h, m, h;15, 12, 18;i12, ,i24~25;-5;+6;+31a (+21);Combo from 2nd CH;;;Triple Spin Kick;r30;;File:t8-p2-bryan-4,3,f+4.mp4;Bryan-4,3,f+4;bryan
 1+2;m;15;i17~18;-7;+6;;Homing;hom;;;r27;;File:t8-p2-bryan-1+2,1.mp4;Bryan-1+2;bryan
 1+2,1;m, h;15, 15;i17~18, i23~24;-1;+6;;"* Combo from 1st hit
-* Enter SWA +0 +7 r15 with b";;SWA;Snake Bite;r22;;File:t8-p2-bryan-1+2,1.mp4;Bryan-1+2,1;bryan
-1+2,2;m, m;15, 20;i17~18, i26~27;-14;+51d (+20);;* Combo from 1st hit with delay;;;Snake Pit;r34;;File:t8-p2-bryan-1+2,2.mp4;Bryan-1+2,2;bryan
+* Interrupt with i3 from 1st block
+* Enter SWA +0 +7 r15 with b";intr:3;SWA;Snake Bite;r22;;File:t8-p2-bryan-1+2,1.mp4;Bryan-1+2,1;bryan
+1+2,2;m, m;15, 20;i17~18, i26~27;-14;+51d (+20);;"* Combo from 1st hit with delay
+* Interrupt with i6 from 1st block";intr:6;;Snake Pit;r34;;File:t8-p2-bryan-1+2,2.mp4;Bryan-1+2,2;bryan
 3+4;m;20;i18;-13;+8;+59a;Balcony Break (airborne);;;Middle Side Kick;r32;;File:t8-p2-bryan-3+4.mp4;Bryan-3+4;bryan
 SNE.3+4,2;m, m;20, 20;i18, i14~15;-9;+25a (+20);;"* Balcony Break
 * Combo from 1st hit
@@ -144,8 +150,10 @@ DF+1,2;m, m;8, 20;i15, i23;-15;+1;+14a (+5);"* Balcony Break (airborne)
 * Interrupt with i3 from 1st block";intr:3;;Double Body Blow;r36;;File:t8-p2-bryan-df+1,2.mp4;Bryan-DF+1,2;bryan
 df+2;m;12;i13;-6;+5;;Elbow;elb;;;r25;;File:t8-p2-bryan-df+2,1.mp4;Bryan-df+2;bryan
 df+2,1;m, h;12, 11;i13, i16;-4;+5;;"* Combo from 1st hit
+* Move cannot be interrupted
 * Enter SWA -1 +8 r15 with b";;SWA;Blackout Combo;r22;;File:t8-p2-bryan-df+2,1.mp4;Bryan-df+2,1;bryan
-df+2,3;m, m;12, 20;i13, i23;-13;+8;+59a;Combo from 1st CH;;;Blackout Trap;r32;;File:t8-p2-bryan-df+2,3.mp4;Bryan-df+2,3;bryan
+df+2,3;m, m;12, 20;i13, i23;-13;+8;+59a;"* Combo from 1st CH
+* Interrupt with i3 from 1st block";intr:3;;Blackout Trap;r32;;File:t8-p2-bryan-df+2,3.mp4;Bryan-df+2,3;bryan
 df+3;L;20;i29~30;-26;+70a (+54);;"* Homing
 * High crush 6~";hom cs6~;;Snake Edge;r33;;File:t8-p2-bryan-df+3.mp4;Bryan-df+3;bryan
 df+4;m;23;i22~24;-6~-4;+19a;;"* Homing
@@ -418,10 +426,12 @@ qcb+1;h;22;i13~14;+5;+19cg;+72a (+56);"* Tornado
 qcb+2;m;16;i15~16;-9;+6;;;;;Smash;r30;;File:t8-p2-bryan-swa.2,4.mp4;Bryan-SWA.2;bryan
 qcb+2,4;m, h;16, 25;i15~16, i22~25;-9c;+15a;;"* Balcony Break (airborne)
 * Combo from 1st hit with 10f delay
+* Interrupt with i3 from 1st block
+* Move is delayed 3f
 * Move can be delayed 7f
-* 7 chip damage on block";chp:7;;Smash and Mach Kick;r32;;File:t8-p2-bryan-swa.2,4.mp4;Bryan-SWA.2,4;bryan
-qcb+3;l;23;i19~20;-13;+5;+26a;Balcony Break (airborne);;;Hatchet Kick;r31;;File:t8-p2-bryan-swa.3.mp4;Bryan-SWA.3;bryan
-qcb+4;M;23;i17~18;-12;+31a (+21);;;;;"<div class=""dotlist"">
+* 7 chip damage on block";intr:3 chp:7;;Smash and Mach Kick;r32;;File:t8-p2-bryan-swa.2,4.mp4;Bryan-SWA.2,4;bryan
+qcb+3;l;23;i19~20;-13;+5;+25a;Balcony Break (airborne);;;Hatchet Kick;r31;;File:t8-p2-bryan-swa.3.mp4;Bryan-SWA.3;bryan
+qcb+4;M;23;i17~18;-12;+31a (+21);;* Recovers 2f faster on hit (t48 r30);;;"<div class=""dotlist"">
 
 * Soccer Kick
 * Kickoff

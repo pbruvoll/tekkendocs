@@ -240,18 +240,23 @@ uf+4;m;13;i15~17;-13;+33a (+23a);;"* Low crush 9~20
 * Attacks taken will be CH for 5 seconds";;;Ki Charge;r55;;File:t8-p2-jin-1+2+3+4.mp4;Jin-1+2+3+4;jin
 b,f+2;m;15;i15~i16;-7;+4;;* Has good left sidestep tracking;;;;r25;;File:t8-p2-jin-b,f+2,1,2.mp4;Jin-b,f+2;jin
 b,f+2,1;m, h;15, 14;i15~i16, i21;-5;+6;+9;"* Combo from 1st hit with 8f delay
-* Input can be delayed 12f";;;;r24;;File:t8-p2-jin-b,f+2,1,2.mp4;Jin-b,f+2,1;jin
+* Interrupt with i2 from 1st block
+* Input can be delayed 12f";intr:2;;;r24;;File:t8-p2-jin-b,f+2,1,2.mp4;Jin-b,f+2,1;jin
 b,f+2,1,2;m, h, m;15, 14, 20;i15~i16, ,i19~20;-5;+18a (+9);+50a (+3);"* Balcony Break
 * Combo from 2nd CH with 15f
+* Interrupt with i4 from 1st block
 * Input can be delayed 16f
-* Move can be delayed 10f";bbr;;Evil Intent;r26;;File:t8-p2-jin-b,f+2,1,2.mp4;Jin-b,f+2,1,2;jin
+* Move can be delayed 10f";bbr intr:4;;Evil Intent;r26;;File:t8-p2-jin-b,f+2,1,2.mp4;Jin-b,f+2,1,2;jin
 b,f+2,1,df+2;m, h, M;15, 14, 22;i15~i16, ,i28~29;-14;+37a (+27);;"* Tornado
 * Combo from 2nd CH
+* Interrupt with i13 from 2nd block
+* Whiffs vs SSR, SWL from 2nd block
 * Input can be delayed 16f
-* Move can be delayed 10f";trn;;Geyser;r36;;File:t8-p2-jin-b,f+2,1,df+2.mp4;Jin-b,f+2,1,df+2;jin
+* Move can be delayed 10f";trn stp:SSR intr:13;;Geyser;r36;;File:t8-p2-jin-b,f+2,1,df+2.mp4;Jin-b,f+2,1,df+2;jin
 b,f+2,3;m, m;15, 17;i15~i16, i25;-9;+6;+59a;"* Combo from 1st hit with 4f delay
+* Interrupt with i6 from 1st block
 * Input can be delayed 9f
-* Enter ZEN +2 +17g +71a r20 with F";;ZEN;Keito;r31;;File:t8-p2-jin-b,f+2,3.mp4;Jin-b,f+2,3;jin
+* Enter ZEN +2 +17g +71a r20 with F";intr:6;ZEN;Keito;r31;;File:t8-p2-jin-b,f+2,3.mp4;Jin-b,f+2,3;jin
 f,F+2;m;22;i14~15;-8;+15a (+6);;"* Heat Engager
 
 * Heat Dash +36a (+26), +5
@@ -261,7 +266,9 @@ f,F+2;m;22;i14~15;-8;+15a (+6);;"* Heat Engager
 * 6 chip damage on block";he bbr chp:6;;Demon's Paw;r29;;File:t8-p2-jin-f,f+2.mp4;Jin-f,F+2;jin
 f,F+3;m;20;i23~i25;-4;+24a;;"* Spike
 * Cannot be buffered";spk;;Left Axe Kick;r24;;File:t8-p2-jin-f,f+3.mp4;Jin-f,F+3;jin
-f,F+3,1;m, h;20, 5;i23~i25, i15;+1;+7;;* Links to 1 jab extensions (e.g. f,F+3,1,2,4);;1 jab extensions;Left Axe Kick > Left Jab;r18;;File:t8-p2-jin-f,f+3,1.mp4;Jin-f,F+3,1;jin
+f,F+3,1;m, h;20, 5;i23~i25, i15;+1;+7;;"* Links to 1 jab extensions (e.g. f,F+3,1,2,4)
+* Jails attack inputs (crouch assist bufferable)
+* Duckable";;1 jab extensions;Left Axe Kick > Left Jab;r18;;File:t8-p2-jin-f,f+3,1.mp4;Jin-f,F+3,1;jin
 f,F+4;m;32;i17~i18;-7;+22a (+12);;Balcony Break;bbr;;Battery Sidekick;r32;;File:t8-p2-jin-f,f+4.mp4;Jin-f,F+4;jin
 f,n,d,df;;;;;;;"* Cannot be buffered
 * Stance moves can be buffered out of heat dash

@@ -313,13 +313,15 @@ f,F+3,2;m, M;14, 20;i15, i28~29;-7;+20d;;"* Heat Engager
 * Spike
 * Weapon
 * Combo from 1st hit with 5f delay
-* 6 chip damage on block";he bbr spk wpn chp:6;;Gancanagh's Pipe;r29;;t8-p2-anna-f,f+3,2.mp4;Anna-f,F+3,2;anna
+* Interrupt with i6 from 1st block
+* 6 chip damage on block";he bbr spk wpn intr:6 chp:6;;Gancanagh's Pipe;r29;;t8-p2-anna-f,f+3,2.mp4;Anna-f,F+3,2;anna
 f,F+3,3;m, L;14, 14;i15, i25;-14;+4c;+14;"* Combo from 1st hit with 5f delay
-* High crush 25~";cs25~;FC;Mouse Trouble;r33 FC;;t8-p2-anna-f,f+3,3.mp4;Anna-f,F+3,3;anna
+* Interrupt with i3 from 1st block
+* High crush 25~58";intr:3 cs25~58;FC;Mouse Trouble;r33 FC;;t8-p2-anna-f,f+3,3.mp4;Anna-f,F+3,3;anna
 f,F+4;M;20;i31~34;+5;+19a;;"* Spike
 * Enter CJM +6 +20a r28 with B
-* Chip damage on block
-* Low crush 16~31";spk chp js16~31;CJM,FC;Falling Heel;r28 FC;;t8-p2-anna-f,f+4.mp4;Anna-f,F+4;anna
+* 4 chip damage on block
+* Low crush 16~31";spk chp:4 js16~31;CJM,FC;Falling Heel;r28 FC;;t8-p2-anna-f,f+4.mp4;Anna-f,F+4;anna
 f,F+1+2;m;25;i18~20;-9;+19a (+14);;"* Balcony Break
 * 5 chip damage on block";bbr chp:5;;Sosho Zanha;r35;;t8-p2-anna-f,f+1+2.mp4;Anna-f,F+1+2;anna
 f,F+1+2*;m;30;i27~29;+5~+7;+33a (+12);;"* Balcony Break
@@ -335,6 +337,7 @@ qcf+2;m;10;i16;-12;+3;;"* Elbow
 qcf+2,1;m, m;10, 16;i16, i22~24;-16;+67a (+51);;"* Tornado
 * Elbow
 * Combo from 1st hit with 8f delay
+* Move cannot be interrupted
 * Input can be delayed 8f
 * Move can be delayed 7f
 * Can be buffered
@@ -345,24 +348,26 @@ f,f,F+2;m;10;i15~16;-8;+1;;;;;;r35;;t8-p2-anna-f,f,f+2.mp4;Anna-f,f,F+2;anna
 f,f,F+2,4;m, m;10, 28;i15~16, i28~30;-13;+9a (+0);;"* Balcony Break
 * Knee
 * Combo from 1st hit
+* Trade with i1?
 * Low crush 27~45
 * Floating state 46~48";bbr kne js27~45 fs46~48;;Double Meteor Alter;r33;;t8-p2-anna-f,f,f+2,4.mp4;Anna-f,f,F+2,4;anna
 f,f,F+3;L;12;i16~20;-20;-2c;;"*
 * High crush 9~";cs9~;FC;;r35 FC;;t8-p2-anna-f,f,f+3.mp4;Anna-f,f,F+3;anna
 f,f,F+3,2;L, SL;12, 24;i16~20, i28~77;-16~+33g;+19a (+9);;"* Weapon
 * Combo from 1st CH
-* Chip damage on block
-* Power up in Heat";wpn chp;FC;Grilled with Love;r27 FC;;t8-p2-anna-f,f,f+3,2.mp4;Anna-f,f,F+3,2;anna
+* Interrupt with i12 from 1st block
+* 4 chip damage on block
+* Power up in Heat";wpn intr:12 chp:4;FC;Grilled with Love;r27 FC;;t8-p2-anna-f,f,f+3,2.mp4;Anna-f,f,F+3,2;anna
 H.f,f,F+3,2;L, SL,SL,SL;12, 5,5,24;i16~20, i28~77 i41~90 i60~109;-5~+44g;+21a (-5);;"* Weapon
 * Combo from 1st CH
 * Jails from 2nd hit
 * Chip damage on block
 * Consumes 300F of remaining Heat time";wpn chp;FC;Grilled with Eternal Love;r40 FC;;t8-p2-anna-f,f,f+3,h.2.mp4;Anna-f,f,F+3,H.2;anna
 f,f,F+4;m;28;i19~20;+3;+19a (+9);;"* Balcony Break
-* Chip damage on block
+* 8 chip damage on block
 * Hitstop 20f on hit
 * Low crush 14~29
-* Floating state 30~32";bbr chp js14~29 fs30~32;;Imploding Star;r35;;t8-p2-anna-f,f,f+4.mp4;Anna-f,f,F+4;anna
+* Floating state 30~32";bbr chp:8 js14~29 fs30~32;;Imploding Star;r35;;t8-p2-anna-f,f,f+4.mp4;Anna-f,f,F+4;anna
 ws1;m;10;i13~14;-8;+5;;;;;;r26;;t8-p2-anna-ws1.mp4;Anna-ws1;anna
 ws1,2;m, M;10, 17;i13~14, i18~19;-13;+9g;;"* Strong Aerial Tailspin
 * Transition to r30 TOM on hit automatically
