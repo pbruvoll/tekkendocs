@@ -151,8 +151,10 @@ f+4;m;14;i16;-9;+1;;"* Homing
 * Enter DES with 1+2";hom;DES;;r31;;File:t8-p2-alisa-f+4,1,4.mp4;Alisa-f+4;alisa
 f+4,1;m, h;14, 14;i16, i25~26;-9;+15d (+7);;"* Balcony Break
 * Head
-* Combo from 1st hit";bbr hed;;;r49;;File:t8-p2-alisa-f+4,1,4.mp4;Alisa-f+4,1;alisa
+* Combo from 1st hit
+* Interrupt with i2 from 1st block";bbr hed intr:2;;;r49;;File:t8-p2-alisa-f+4,1,4.mp4;Alisa-f+4,1;alisa
 f+4,1,4;m, h, m;14, 14, 24 (19);i16, ,i27~65;-12~+26g;+1a;;"* Aerial combo from 2nd hit
+* Move cannot be interrupted
 * i25-26 bounce, i25-26 travel, 
 (---)/i35(27-65) travel then explosion , 
 -3(-11) and -1(-9) for explosion then hit, respectively";;;Logic Bomb;r1;;File:t8-p2-alisa-f+4,1,4.mp4;Alisa-f+4,1,4;alisa
@@ -180,8 +182,9 @@ df+2;m;16;i16~17;-9;+32a (+22);;"* +7 on hit against crouching opponent
 df+3;m;14;i16;-9;+1;;;;;;r31;;File:t8-p2-alisa-df+3,3.mp4;Alisa-df+3;alisa
 df+3,3;m, L;14, 17;i16, i23~24;-12;+1;+14d;"* Floor Break
 * Combo from 1st hit with 9f delay
+* Interrupt with i4 from 1st block
 * Input can be delayed 16f
-* Move can be delayed 12f";fbr;;Double Socket;r30;;File:t8-p2-alisa-df+3,3.mp4;Alisa-df+3,3;alisa
+* Move can be delayed 12f";fbr intr:4;;Double Socket;r30;;File:t8-p2-alisa-df+3,3.mp4;Alisa-df+3,3;alisa
 df+4;m;13;i12;-7;+4;;+4c on hit against crouching opponent;;;;r26;;;Alisa-df+4;alisa
 d+2;M;8;i24~26;-14;+2c;;Floor Break;fbr;;;r31;;File:t8-p2-alisa-d+2,4.mp4;Alisa-d+2;alisa
 d+2,4;M, M;8, 20;i24~26, i18~21;-9;+28a (+13a);;"* Combo from 1st hit
