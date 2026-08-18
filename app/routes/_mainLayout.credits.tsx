@@ -10,6 +10,7 @@ import {
 } from '@radix-ui/react-icons';
 import { data, href, Link, useLoaderData } from 'react-router';
 import { ContentContainer } from '~/components/ContentContainer';
+import { PaperCard } from '~/components/PaperCard';
 import { PersonLinkList } from '~/components/PersonLinkList';
 import { getRepoContributors } from '~/services/githubService.server';
 import { getCacheControlHeaders } from '~/utils/headerUtils';
@@ -200,9 +201,7 @@ type CreditCardProps = React.PropsWithChildren<{
 }>;
 
 const CreditCard = ({ title, icon, className, children }: CreditCardProps) => (
-  <div
-    className={`paper-card group px-5 py-5 text-card-foreground drop-shadow-lg transition-all duration-200 hover:-translate-y-1 hover:drop-shadow-2xl ${className ?? ''}`}
-  >
+  <PaperCard className={className}>
     <div className="mb-1.5 flex items-center gap-2">
       <span className="flex size-7 shrink-0 items-center justify-center rounded-md bg-primary/10 text-primary transition-colors duration-200 group-hover:bg-primary/20">
         {icon}
@@ -212,7 +211,7 @@ const CreditCard = ({ title, icon, className, children }: CreditCardProps) => (
       </h3>
     </div>
     <div className="leading-relaxed">{children}</div>
-  </div>
+  </PaperCard>
 );
 
 const CharacterChip = ({ name }: { name: string }) => {
@@ -274,10 +273,7 @@ export default function Credits() {
           </SectionHeading>
           <div className="grid gap-6">
             {videoRecordersT8.map((recorder) => (
-              <div
-                key={recorder.name}
-                className="paper-card group px-5 py-5 text-card-foreground drop-shadow-lg transition-all duration-200 hover:-translate-y-1 hover:drop-shadow-2xl"
-              >
+              <PaperCard key={recorder.name}>
                 <div className="mb-3 font-semibold">
                   <PersonLinkList
                     persons={[{ name: recorder.name, url: recorder.url }]}
@@ -288,7 +284,7 @@ export default function Credits() {
                     <CharacterChip key={character} name={character} />
                   ))}
                 </div>
-              </div>
+              </PaperCard>
             ))}
           </div>
         </>

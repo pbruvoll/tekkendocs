@@ -7,6 +7,7 @@ type GenerateMetaTagsOptions = {
   image?: {
     url: string;
   };
+  /** Path of the page, relative to the origin. Defaults to the requested path. */
   url?: string;
   description: string;
 };
@@ -15,6 +16,7 @@ export const generateMetaTags = ({
   title: titleOption,
   description: descriptionOption,
   image,
+  url: urlOption,
   matches,
 }: GenerateMetaTagsOptions): ReturnType<MetaFunction> => {
   const match = matches.find((m) => m.id === 'root');
@@ -50,10 +52,10 @@ export const generateMetaTags = ({
     { property: 'twitter:image', content: imageUrl },
   ];
 
-  if (url) {
-    tags.push({ property: 'og:url', content: url.origin + url.pathname });
-    tags.push({ property: 'twitter:url', content: url.origin + url.pathname });
-  }
+  const pageUrl = origin + (urlOption || url.pathname);
+
+  tags.push({ property: 'og:url', content: pageUrl });
+  tags.push({ property: 'twitter:url', content: pageUrl });
 
   return tags;
 };
