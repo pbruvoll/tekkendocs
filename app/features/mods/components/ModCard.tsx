@@ -1,10 +1,11 @@
 import { ExternalLinkIcon } from '@radix-ui/react-icons';
+import { PaperCard } from '~/components/PaperCard';
 import { type Mod } from '~/features/mods/mods';
 
 type ModCardProps = { mod: Mod };
 
 export const ModCard = ({ mod }: ModCardProps) => (
-  <div className="paper-card group flex flex-col px-5 py-5 text-card-foreground drop-shadow-lg transition-all duration-200 hover:-translate-y-1 hover:drop-shadow-2xl">
+  <PaperCard className="flex flex-col">
     <div className="mb-4 aspect-video w-full overflow-hidden rounded-md border border-border">
       <img
         src={mod.imageUrl}
@@ -31,5 +32,5 @@ export const ModCard = ({ mod }: ModCardProps) => (
         </a>
       ))}
     </div>
-  </div>
+  </PaperCard>
 );

@@ -12,6 +12,7 @@ export const meta: MetaFunction = ({ matches }) =>
     title: 'Useful Tekken 8 mods | TekkenDocs',
     description:
       'A list of useful community mods for Tekken 8, including practice mode tools and performance mods',
+    image: { url: `/t8/pages/mods.png` },
     url: `/t8/mods`,
   });
 

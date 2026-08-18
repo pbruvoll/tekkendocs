@@ -25,7 +25,7 @@ export const SuggestModNote = () => {
         href={contactByDiscord.buildContactUrl('invite')}
         target="_blank"
         rel="noopener noreferrer"
-        title="Invite to Tekkendocs Discord server"
+        title="Invite to TekkenDocs Discord server"
       >
         Discord <DiscordLogoIcon aria-hidden />
       </a>

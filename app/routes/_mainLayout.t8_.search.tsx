@@ -22,7 +22,7 @@ export const meta: MetaFunction = ({ matches }) => {
     title,
     description,
     image: { url: '/images/tekkendocs-og-image-v2.png' },
-    url: `/t8/challenge`,
+    url: `/t8/search`,
   });
 };
 
