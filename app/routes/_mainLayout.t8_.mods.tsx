@@ -2,6 +2,7 @@ import { type MetaFunction } from 'react-router';
 import { ContentContainer } from '~/components/ContentContainer';
 import { ModList } from '~/features/mods/components/ModList';
 import { ModsDisclaimer } from '~/features/mods/components/ModsDisclaimer';
+import { SuggestModNote } from '~/features/mods/components/SuggestModNote';
 import { getCacheControlHeaders } from '~/utils/headerUtils';
 import { generateMetaTags } from '~/utils/seoUtils';
 
@@ -27,6 +28,9 @@ export default function Mods() {
       <ModsDisclaimer />
       <div className="mt-6">
         <ModList />
+      </div>
+      <div className="mt-8">
+        <SuggestModNote />
       </div>
     </ContentContainer>
   );
