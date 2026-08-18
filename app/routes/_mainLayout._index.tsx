@@ -114,6 +114,11 @@ export default function Index() {
             <span className="p-0.5 px-1">Flash cards</span>
           </Badge>
         </Link>
+        <Link to={href('/t8/mods')} className="cursor-pointer">
+          <Badge size="3" style={{ cursor: 'pointer' }} variant="outline">
+            <span className="p-0.5 px-1">Useful mods</span>
+          </Badge>
+        </Link>
       </div>
 
       <Heading as="h2" mt="7" mb="4" size="5" id="externalResources">
