@@ -42,7 +42,7 @@ def _is_command_in_alias(command: str, item: dict) -> bool:
 
 
 def get_move(input: str, character_movelist: dict):
-    result = [entry for entry in character_movelist if _simplify_input(entry["input"]) == _simplify_input(input)]
+    result = [entry for entry in character_movelist if _simplify_input(entry.get("input", "")) == _simplify_input(input)]
     if result:
         result[0]['input'] = result[0]['input'].replace("\\", "")
         return result[0]
@@ -64,7 +64,7 @@ def get_by_move_type(move_type: str, move_list: dict) -> list:
     """Gets a list of moves that match move_type from local_json
     returns a list of move Commands if finds match(es), else empty list"""
     move_type = _correct_move_type(move_type.lower()).lower()
-    moves = list(filter(lambda x: (move_type in x["notes"].lower()), move_list))
+    moves = list(filter(lambda x: (move_type in x.get("notes", "").lower()), move_list))
 
     if moves:
         result = []
@@ -111,7 +111,7 @@ def _get_close_matches_indexes(word, possibilities, n=3, cutoff=0.6):
 def get_similar_moves(input: str, move_list: dict) -> list[str]:
     command_list = []
     for entry in move_list:
-        command_list.append(entry["input"])
+        command_list.append(entry.get("input", ""))
 
     moves_indexes = _get_close_matches_indexes(_simplify_input(input), map(_simplify_input, command_list), 5, 0.7)
 

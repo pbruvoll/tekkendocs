@@ -2,10 +2,8 @@ import json, requests, re, html
 
 from typing import List
 from mediawiki import MediaWiki
-from src.module.character import Move
 from src.resources import const
 from bs4 import BeautifulSoup
-from src.module.td_const import MoveCategory, SORT_ORDER
 import html
 
 wavuwiki = MediaWiki(url=const.WAVU_API_URL)
@@ -22,7 +20,7 @@ def _upper_first_letter(input: str) -> str:
         return input
 
 
-def get_wavu_character_movelist(character_name: str) -> List[Move]:
+def get_wavu_character_movelist(character_name: str) -> List[dict]:
     params = {
         "action": "cargoquery",
         "tables": "Move",
@@ -41,46 +39,7 @@ def get_wavu_character_movelist(character_name: str) -> List[Move]:
     content = json.loads(response.content)
     # print(content["cargoquery"][149])
     move_list_json = content["cargoquery"]
-    move_list = _convert_json_movelist(move_list_json)
-    sorted_move_list = _sort_json_movelist(move_list)
-    return sorted_move_list
-
-
-def get_move(move_id: str, move_list: List[Move]) -> Move:
-    result = [move for move in move_list if move.id == move_id]
-    return result[0]
-
-
-def _get_all_parent_values_of(field: str, move_id: str, move_list_json: list) -> str:
-    complete_input = ""
-    if move_id:
-        for move in move_list_json:
-            if move["title"]["id"] == move_id:
-                if move["title"]["parent"]:
-                    original_move = move["title"]["parent"]
-                    if "_" in original_move:
-                        original_move = original_move.split("_")[0]
-                    complete_input += _get_all_parent_values_of(field, original_move, move_list_json)
-                return complete_input + _normalize_data(move["title"][field])
-    else:
-        return ""
-    
-def _get_all_parent_values_of_array(field: str, move_id: str, move_list_json: list) -> list[str]:
-    complete_input = []
-    if move_id:
-        for move in move_list_json:
-            if move["title"]["id"] == move_id:
-                if move["title"]["parent"]:
-                    original_move = move["title"]["parent"]
-                    if "_" in original_move:
-                        original_move = original_move.split("_")[0]
-                    complete_input += _get_all_parent_values_of_array(field, original_move, move_list_json)
-                normalized = _normalize_data(move["title"][field])
-                if normalized :
-                    complete_input.append(normalized)
-                return complete_input
-    else:
-        return []    
+    return _convert_json_movelist(move_list_json)
 
 
 def _normalize_data(data):
@@ -89,30 +48,11 @@ def _normalize_data(data):
         return re.sub(r'[^\x00-\x7F]+', '', data).replace('&amp;#58;', ':')
     else:
         return ""
-    
+
+
 def _none_to_empty(data):
     return '' if data is None else data
 
-
-# last entry is always the input
-def _create_alias(input: str) -> List[str]:
-    parts = input.split("_")
-    input = parts[0]
-    aliases = parts[1:]
-    result = []
-    for entry in aliases:
-        num_characters = len(entry)
-        x = len(input) - num_characters
-        if x < 0:
-            x = 0
-        original_input = input[0:x]
-        alias = original_input + entry
-        if len(alias) > len(input):
-            input = input + entry[len(input):]
-
-        result.append(alias)
-    result.append(input)
-    return result
 
 def _empty_value_if_none(value):
     if not value:
@@ -120,264 +60,67 @@ def _empty_value_if_none(value):
     else:
         return value
 
-def _convert_json_movelist(move_list_json: list) -> List[Move]:
+
+def _normalize_crush(data: str) -> str:
+    crush = html.unescape(html.unescape(_normalize_data(data)))
+    crush = BeautifulSoup(crush, features="lxml").get_text()
+
+    # remove new lines and *. Replace "," with space
+    crush = crush.replace("\n", "").replace("*", "").replace(",", " ")
+    # split on spaces, but dont keep empty entries
+    return " ".join([part for part in crush.split(" ") if part])
+
+
+def _normalize_notes(data: str) -> str:
+    notes = html.unescape(_normalize_data(data))
+    notes = BeautifulSoup(notes, features="lxml").get_text()
+    return notes.replace("* \n", "* ").strip()
+
+
+def _normalize_alt(data: str) -> str:
+    return BeautifulSoup(_normalize_data(data), features="lxml").get_text()
+
+
+# wavu has no value for the field, so there is no reason to store one
+def _without_empty_values(move: dict) -> dict:
+    return {field: value for field, value in move.items() if value}
+
+
+# The values are stored as they are given by wavu, meaning that a move only
+# holds its own values and points to the move it continues through "parent".
+# Joining a move with its parent, and everything else which interprets the data,
+# is done by utils/wavuParsing.py
+def _convert_json_movelist(move_list_json: list) -> List[dict]:
     move_list = []
     for move in move_list_json:
         if move["title"]["ns"] == "0":
-            alias = []
-            id = _normalize_data(move["title"]["id"])
-            name = html.unescape(_none_to_empty(move["title"]["name"]))
-            input = _normalize_data(
-                _get_all_parent_values_of("input", _normalize_data(move["title"]["parent"]), move_list_json)
-                + _normalize_data(move["title"]["input"]))
-            if "_" in input:
-                result = _create_alias(input)
-                input = result[-1]
-                alias = result[0:(len(result) - 1)]
-
-            input = input.replace("#", ":")
-
-            targetArray = _get_all_parent_values_of_array("target", _normalize_data(move["title"]["parent"]),
-                                          move_list_json)
-            moveTarget = _normalize_data(move["title"]["target"])
-            if moveTarget :
-                targetArray.append(moveTarget)
-
-            target = ", ".join([item.lstrip(',') for item in targetArray])
-            
-            damageArray =  _get_all_parent_values_of_array("damage", _normalize_data(move["title"]["parent"]),
-                                          move_list_json)
-            moveDamage = _normalize_data(move["title"]["damage"])
-            if moveDamage :
-                damageArray.append(moveDamage)
-
-            damage = ", ".join([item.lstrip(',') for item in damageArray])
-
-            startupArray = _get_all_parent_values_of_array("startup", _normalize_data(move["title"]["parent"]), move_list_json)
-
-            on_block = _remove_html_tags(_normalize_data(move["title"]["block"]))
-            on_hit = _remove_html_tags(_normalize_data(_normalize_hit_ch_input(move["title"]["hit"])))
-            on_ch = _remove_html_tags(_normalize_data(_normalize_hit_ch_input(move["title"]["ch"])))
-            startup = _normalize_data(move["title"]["startup"])
-            recovery = _normalize_data(move["title"]["recv"])
-            crush = html.unescape(html.unescape(_normalize_data(move["title"]["crush"])))
-            crush = BeautifulSoup(crush, features="lxml").get_text()
-            image = _normalize_data(move["title"]["image"])
-            video = _normalize_data(move["title"]["video"])
-            alt = _normalize_data(move["title"]["alt"])
-            alt = BeautifulSoup(alt, features="lxml").get_text()
-            num = _normalize_data(move["title"]["num"])
-
-            # remove new lines and *. Replace "," with space
-            crush = crush.replace("\n", "").replace("*", "").replace(",", " ")
-            # split on spaces, but dont keep empty entries
-            crushList = [part for part in crush.split(" ") if part]
-            crush = " ".join(crushList)
-
-            # remove new lines and *. Replace "," with space
-            crush = crush.replace("\n", "").replace("*", "").replace(",", " ")
-            # split on spaces, but dont keep empty entries
-            crushList = [part for part in crush.split(" ") if part]
-            crush = " ".join(crushList)
-
-            if(len(startupArray) > 0) :
-                startup = startupArray[0] +  ", " + ("," if len(startupArray) > 1 else "") + (startup[1:] if startup.startswith(",") else startup)
-
-            notes = html.unescape(_normalize_data(move["title"]["notes"]))
-            notes = BeautifulSoup(notes, features="lxml").get_text()
-            notes = notes.replace("* \n", "* ").strip()
-            (short_notes, tags) = _parse_notes(notes)
-            tags = " ".join(item for item in [tags, crush] if item)
-            if(crush) :
-                notes = "\n".join([notes, _crush_to_note(crushList)])
-
-            notes = notes.strip()
-            move = Move(id, name, input, target, damage, on_block, on_hit, on_ch, startup, recovery, crush, notes, short_notes, "", tags, image, video, alias, alt, num)
-            move_list.append(move)
+            title = move["title"]
+            move_list.append(_without_empty_values({
+                "id": _normalize_data(title["id"]),
+                "parent": _normalize_data(title["parent"]),
+                "name": html.unescape(_none_to_empty(title["name"])),
+                "input": _normalize_data(title["input"]).replace("#", ":"),
+                "alias": _normalize_data(title["alias"]),
+                "alt": _normalize_alt(title["alt"]),
+                "num": _normalize_data(title["num"]),
+                "image": _normalize_data(title["image"]),
+                "video": _normalize_data(title["video"]),
+                "target": _normalize_data(title["target"]),
+                "damage": _normalize_data(title["damage"]),
+                "reach": _normalize_data(title["reach"]),
+                "tracksLeft": _normalize_data(title["tracksLeft"]),
+                "tracksRight": _normalize_data(title["tracksRight"]),
+                "startup": _normalize_data(title["startup"]),
+                "recv": _normalize_data(title["recv"]),
+                "tot": _normalize_data(title["tot"]),
+                "crush": _normalize_crush(title["crush"]),
+                "block": _remove_html_tags(_normalize_data(title["block"])),
+                "hit": _remove_html_tags(_normalize_data(_normalize_hit_ch_input(title["hit"]))),
+                "ch": _remove_html_tags(_normalize_data(_normalize_hit_ch_input(title["ch"]))),
+                "notes": _normalize_notes(title["notes"]),
+            }))
     return move_list
 
-def _parse_notes(notes: str):
-    lines = notes.split("\n")
-    tags = []
-    short_notes = []
-    interrupt_frames = []
-    chip_damages = []
-    for line in lines :
-        tag = _get_tag(line)
-        chip_damage = _get_chip_damage(line)
-        if tag :
-            tags.append(tag)
-        elif not _is_pure_chip_line(line) :
-            short_notes.append(line)
-        # unlike _get_tag, keep the "Whiffs vs ..." line in the notes since it
-        # carries extra context (e.g. "from 1st block")
-        steppable_tag = _get_steppable_tag(line)
-        if steppable_tag :
-            tags.append(steppable_tag)
-        frames = _get_interrupt_frames(line)
-        if frames is not None :
-            interrupt_frames.append(frames)
-        if chip_damage is not None :
-            chip_damages.append(chip_damage)
-
-    if interrupt_frames :
-        # a move can have one interrupt note per part of the string. Keep the
-        # slowest one, since that is usually value when blocking the move
-        tags.append("intr:" + str(max(interrupt_frames)))
-
-    if chip_damages :
-        known = [damage for damage in chip_damages if damage >= 0]
-        # keep the lowest value, since that is the one in normal state. The
-        # heat and "after absorbing an attack in power crush state" variants
-        # are always higher
-        tags.append("chp:" + str(min(known)) if known else "chp")
-
-    return ("\n".join(short_notes), " ".join(tags))
-
-
-def _get_steppable_tag(noteLine: str) :
-    cleanLine = noteLine.replace("*", "").strip().lower()
-    match = re.match(r'whiffs vs (ssr|ssl|swr|swl|ss)\b', cleanLine)
-    if match :
-        return "stp:" + match.group(1).upper()
-    return None
-
-
-def _get_interrupt_frames(noteLine: str) :
-    """Reads a line like "* Interrupt with i6 from 1st block" and returns 6"""
-    if noteLine.strip().startswith("**") :
-        # a ** sub bullet belongs to a cancel or a variation of the move above it,
-        # so its frames say nothing about the move itself
-        return None
-
-    cleanLine = noteLine.replace("*", "").strip().lower()
-    if not re.match(r'interrupt(?:able|ible)?\b', cleanLine) :
-        return None
-
-    # "i6", but also "3F" in the few notes which are written that way
-    match = re.search(r'\bi(\d+)', cleanLine) or re.search(r'\b(\d+)f\b', cleanLine)
-    if not match :
-        # notes such as "Interrupt with i? from 4th block" have no known value
-        return None
-    return int(match.group(1))
-
-
-# "6 chip damage on block" and "Deals chip damage", but also amounts followed by
-# a parenthesis such as "Deals 8 (DA:11) chip damage on block"
-chip_pattern = re.compile(r'(?:deals\s+)?(?:(\d+)\s+(?:\([^)]*\)\s+)?)?chip(?:\s+damage)?\b(.*)')
-# what may follow the chip damage without saying anything the chp tag misses.
-# The amount is sometimes given after the words instead of before them, either
-# plain as in "Chip damage 2 (22%) on block", or in brackets as in
-# "Chip damage on block (7)" and "Chip on block [9]"
-chip_rest_pattern = re.compile(
-    r'(?:\s+(?:on\s+block|(?P<amount>\d+)(?:\s+\(\d+%\))?|[(\[](?P<bracketed>\d+)[)\]]))*\.?')
-
-
-def _match_chip_line(noteLine: str) :
-    if noteLine.strip().startswith("**") :
-        # a ** sub bullet belongs to a cancel or a variation of the move above it,
-        # so its chip damage says nothing about the move itself
-        return None
-
-    # only lines starting with the chip damage itself are matched, so that
-    # conditional notes such as "-9 frame advantage and 8 chip damage on block
-    # after absorbing an attack in power crush state" are left alone
-    return chip_pattern.match(noteLine.replace("*", "").strip().lower())
-
-
-def _get_chip_damage(noteLine: str) :
-    """Reads a line like "* 6 chip damage on block" and returns 6.
-    Returns -1 when the line tells about chip damage without giving an amount,
-    and None when the line is not about chip damage on block"""
-    match = _match_chip_line(noteLine)
-    if not match :
-        return None
-
-    (amount, rest) = match.groups()
-    if "on hit" in rest and "on block" not in rest :
-        return None
-
-    # chip damage which requires absorbing an attack in power crush state, or
-    # which only happens in heat, says nothing about what the move does
-    # normally. Only the part before a comma is checked, since a note like
-    # "9 chip damage on block, +0 block advantage on attack absorption" does
-    # tell the normal chip damage
-    condition = rest.split(",")[0]
-    # "absor" covers both "absorbing/absorbed" and the noun "absorption"
-    if "absor" in condition or "heat" in condition :
-        return None
-
-    if amount :
-        return int(amount)
-
-    # "Chip damage 2 (22%) on block", "Chip damage on block (7)" and
-    # "Chip on block [9]"
-    rest_match = chip_rest_pattern.fullmatch(rest)
-    if rest_match :
-        amount_after = rest_match.group("amount") or rest_match.group("bracketed")
-        if amount_after :
-            return int(amount_after)
-
-    return -1
-
-
-def _is_pure_chip_line(noteLine: str) :
-    """True for lines which say nothing but the chip damage on block, since the
-    chp tag then carries all the information of the line"""
-    match = _match_chip_line(noteLine)
-    return bool(match) and bool(chip_rest_pattern.fullmatch(match.group(2)))
-
-
-def _get_tag(noteLine: str) :
-    cleanLine = noteLine.replace("*", "").strip().lower()
-    match cleanLine :
-        case "rage art" :
-            return "ra"
-        case "floor break":
-            return "fbr"
-        case "spike" :
-            return "spk"
-        case "knee" :
-            return "kne"
-        case "elbow" :
-            return "elb"
-        case "head" :
-            return "hed"
-        case "shoulder" :
-            return "shd"
-        case "hip" : 
-            return "hip"
-        case "weapon" :
-            return "wpn"
-        case "tornado" :
-            return "trn"
-        case "homing" :
-            return "hom"
-        case "heat smash" :
-            return "hs"
-        case "heat burst" :
-            return "hb"
-        case "heat engager" :
-            return "he"
-        case "balcony break" :
-            return "bbr"
-        case "reversal break":
-            return "rbr"
-        
-    
-    if cleanLine.startswith("wall crush") :
-        return "wc"
-
-
-    return None
-
-
-def _crush_to_note(crushList: list) : 
-    return "* " + "\n* ".join(crushList).replace("ps", "Parry state ").replace("pc", "Power crush ").replace("js", "Low crush ").replace("cs", "High crush ").replace("fs", "Floating state ")
-
-def _sort_json_movelist(move_list: List[Move]) :
-    # a trick to generate a string for sorting frames. + is replaced by _ just to make "+" sort after ","
-    return sorted(move_list, key=lambda x: f'{SORT_ORDER[_get_move_category(x)]:05d}' + x.input.replace("1+2", "5").replace("1+4", "6").replace("2+3", "7").replace("3+4", "8").replace("+", "|"))
 
 def _remove_html_tags(data: str) -> str:
     "Process HTML content in JSON response to remove tags and unescape characters"
@@ -391,58 +134,6 @@ def _remove_html_tags(data: str) -> str:
     result = result.strip()
     return result
 
-def _get_move_category(move: Move) -> MoveCategory:
-    if(move.target.startswith("t")) :
-        return MoveCategory.THROW
-    
-    command = move.input.lower();
-    splitted = command.split(",");
-    first = splitted[0]
-    if(first.startswith("h.2+3")) :
-        return MoveCategory.HEAT_SMASH
-    if(first == "2+3") :
-        return MoveCategory.HEAT_BURST
-    if(first.startswith("h.")) : 
-        return MoveCategory.HEAT_MOVE
-    if(first.startswith("r.")) :
-        return MoveCategory.RAGE_ART
-    if(first.startswith("1+2+3+4")) :
-        return MoveCategory.KI_CHARGE
-    if(first[:1].isdigit()) : 
-        return MoveCategory.NEUTRAL
-    if(first.startswith("f+")) :
-        return MoveCategory.FORWARD
-    if(first.startswith("df+")) :
-        return MoveCategory.DOWN_FORWARD
-    if(first.startswith("d+")) :
-        return MoveCategory.DOWN
-    if(first.startswith("db+")) :
-        return MoveCategory.DOWN_BACK
-    if(first.startswith("b+")) :
-        return MoveCategory.BACK
-    if(first.startswith("db+")) :
-        return MoveCategory.DOWN_BACK
-    if(first.startswith("b+")) :
-        return MoveCategory.BACK
-    if(first.startswith("ub+")) :
-        return MoveCategory.UP_BACK
-    if(first.startswith("u+")) :
-        return MoveCategory.UP
-    if(first.startswith("uf+")) :
-        return MoveCategory.UP_FORWARD
-    if(first.startswith("ws")) :
-        return MoveCategory.WHILE_RISING
-    if(first.startswith("ss")) :
-        return MoveCategory.SIDESTEP
-    if(first.startswith("fc")) :
-        return MoveCategory.FULL_CROUCH
-    if(command.startswith("f,f,f")) :
-        return MoveCategory.RUNNING
-    if(command.find(".") > -1) :
-        return MoveCategory.STANCE
-
-
-    return MoveCategory.OTHER
 
 def _normalize_hit_ch_input(entry: str) -> str:
     entry = _empty_value_if_none(entry)

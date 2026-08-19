@@ -34,6 +34,9 @@ tekkendocs\utils\wavu-importer>python src/main.py
 
 this will download the data as json to tekkendocs\utils\wavu-importer\src\json_movelist
 
+The script only downloads and cleans up the html. The json files use the field names of wavu, and
+each move holds only its own values plus a `parent` pointing at the move it continues.
+
 ### How to convert the frame data from wavu.wiki
 
 To convert the json files to csv files on tekkendocs format, run the following command
@@ -43,6 +46,10 @@ tekkendocs>python utils\wavuJsonToCsv.py -I utils\wavu-importer\src\json_movelis
 ```
 
 This will store the data as csv in the folder tekkendocs\data\wavuConverterCsv
+
+This is also where the data is interpreted. utils\wavuJsonToCsv.py uses utils\wavuParsing.py to join
+each move with its parent chain, to derive values which do not exist in wavu (such as tags) and to
+sort the moves.
 
 ### How to upload the data to tekkendocs
 
