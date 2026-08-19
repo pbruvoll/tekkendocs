@@ -5,9 +5,7 @@ from typing import List, Optional
 sys.path.append('./')
 
 from src.wavu import wavu_importer
-from src.module import json_movelist_reader
 from src.module import character
-from src.resources import const
 
 sys.path.insert(0, (os.path.dirname(os.path.dirname(__file__))))
 
