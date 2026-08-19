@@ -1,12 +1,9 @@
 import json, requests, re, html
 
 from typing import List
-from mediawiki import MediaWiki
 from src.resources import const
 from bs4 import BeautifulSoup
-import html
 
-wavuwiki = MediaWiki(url=const.WAVU_API_URL)
 session = requests.Session()
 
 
@@ -37,9 +34,7 @@ def get_wavu_character_movelist(character_name: str) -> List[dict]:
 
     response = session.get(const.WAVU_API_URL, params=params)
     content = json.loads(response.content)
-    # print(content["cargoquery"][149])
-    move_list_json = content["cargoquery"]
-    return _convert_json_movelist(move_list_json)
+    return _convert_json_movelist(content["cargoquery"])
 
 
 def _normalize_data(data):

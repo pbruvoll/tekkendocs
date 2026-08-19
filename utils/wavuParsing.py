@@ -331,10 +331,6 @@ def get_move_category(move: dict) -> MoveCategory:
         return MoveCategory.DOWN_BACK
     if(first.startswith("b+")) :
         return MoveCategory.BACK
-    if(first.startswith("db+")) :
-        return MoveCategory.DOWN_BACK
-    if(first.startswith("b+")) :
-        return MoveCategory.BACK
     if(first.startswith("ub+")) :
         return MoveCategory.UP_BACK
     if(first.startswith("u+")) :

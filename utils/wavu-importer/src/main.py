@@ -1,5 +1,5 @@
 import argparse
-import json, datetime, logging, os, sys
+import json, os, sys
 from typing import List, Optional
 
 sys.path.append('./')
@@ -7,16 +7,8 @@ sys.path.append('./')
 from src.wavu import wavu_importer
 from src.module import character
 
-sys.path.insert(0, (os.path.dirname(os.path.dirname(__file__))))
-
-logger = logging.getLogger(__name__)
-logger.setLevel(logging.WARNING)
-
 base_path = os.path.dirname(__file__)
 CHARACTER_LIST_PATH = os.path.abspath(os.path.join(base_path, "resources", "character_list.json"))
-
-
-character_list = []
 
 
 def normalize_character_name(name: str) -> str:
@@ -58,7 +50,5 @@ parser.add_argument(
 )
 args = parser.parse_args()
 
-character_list = create_json_movelists(CHARACTER_LIST_PATH, args.character)
+create_json_movelists(CHARACTER_LIST_PATH, args.character)
 print("Character jsons are successfully created")
-
-
