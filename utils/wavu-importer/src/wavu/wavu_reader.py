@@ -72,10 +72,6 @@ def _normalize_notes(data: str) -> str:
     return notes.replace("* \n", "* ").strip()
 
 
-def _normalize_alt(data: str) -> str:
-    return BeautifulSoup(_normalize_data(data), features="lxml").get_text()
-
-
 # wavu has no value for the field, so there is no reason to store one
 def _without_empty_values(move: dict) -> dict:
     return {field: value for field, value in move.items() if value}
@@ -95,8 +91,9 @@ def _convert_json_movelist(move_list_json: list) -> List[dict]:
                 "parent": _normalize_data(title["parent"]),
                 "name": html.unescape(_none_to_empty(title["name"])),
                 "input": _normalize_data(title["input"]).replace("#", ":"),
-                "alias": _normalize_data(title["alias"]),
-                "alt": _normalize_alt(title["alt"]),
+                # both are lists of alternate commands wrapped in html
+                "alias": _remove_html_tags(_normalize_data(title["alias"])),
+                "alt": _remove_html_tags(_normalize_data(title["alt"])),
                 "num": _normalize_data(title["num"]),
                 "image": _normalize_data(title["image"]),
                 "video": _normalize_data(title["video"]),
