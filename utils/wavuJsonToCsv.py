@@ -4,6 +4,7 @@ import os
 import json
 import csv
 import re
+import wavuParsing
 csvSep = ";"
 
 allTrans = {}
@@ -15,14 +16,14 @@ columns = [
     {"wavuId": "target", "displayName": "Hit level"},
     {"wavuId": "damage", "displayName": "Damage"},
     {"wavuId": "startup", "displayName": "Start up frame"},
-    {"wavuId": "on_block", "displayName": "Block frame"},
-    {"wavuId": "on_hit", "displayName": "Hit frame"},
-    {"wavuId": "on_ch", "displayName": "Counter hit frame"},
+    {"wavuId": "block", "displayName": "Block frame"},
+    {"wavuId": "hit", "displayName": "Hit frame"},
+    {"wavuId": "ch", "displayName": "Counter hit frame"},
     {"wavuId": "notes", "displayName": "Notes"},
-    {"wavuId": "tags", "displayName": "Tags"},
+    {"wavuId": "tags", "displayName": "Tags"}, # this value is created by wavuParsing and not present in Wavu
     {"wavuId": "transitions", "displayName": "Transitions"}, # this value is created by this converter and not present in Wavu
     {"wavuId": "name", "displayName": "Name"},
-    {"wavuId": "recovery", "displayName": "Recovery"},
+    {"wavuId": "recv", "displayName": "Recovery"},
     {"wavuId": "image", "displayName": "Image"},
     {"wavuId": "video", "displayName": "Video"},
     {"wavuId": "id", "displayName": "Wavu id"},
@@ -43,7 +44,7 @@ def getTransitions(move) :
     notes = re.sub(r'r\d+\??', '', move["notes"])
     matches = re.findall(r'(?:enter|cancel to|links to|transition to)\s+((?:(?:r\d|t\d|\d\d|cs|\+|-|\()[^\s]*\s+)*)?(\S*(\s\S*\s?(?:extensions|roll|step|tackle))?)', notes, re.IGNORECASE)
     filtered = [match[1] for match in matches if match[1].lower() not in transToIgnore]
-    recoveryValue = move["recovery"].split(" ")[-1]
+    recoveryValue = move.get("recv", "").split(" ")[-1]
     if recoveryValue :
         splitted = recoveryValue.split("/")
         for recovery in splitted :
@@ -71,8 +72,8 @@ def fillMissingVideoFromExtendedInput(move, moves):
             move["video"] = otherVideo
             break
 
-def generateVideoLink(move) : 
-    if move["video"] :
+def generateVideoLink(move) :
+    if move.get("video") :
         return
     if move["id"].startswith("Anna-df+3,2,1,2,4") and move["id"] != "Anna-df+3,2,1,2,4,1,2,2,3+4,2":
         return
@@ -115,7 +116,7 @@ def correctMove(move, charName) :
     move["notes"] = re.sub(notesCleanPattern, r'\1', move["notes"])
 
     # currently needed for moves like Paul H.b+2,1*
-    move["on_block"] = re.sub(notesCleanPattern, r'\1', move["on_block"])
+    move["block"] = re.sub(notesCleanPattern, r'\1', move.get("block", ""))
 
     move["transitions"] = getTransitions(move)
     if move["transitions"].find("ws") > -1 : 
@@ -138,12 +139,15 @@ def convert(filePath, outDir):
     f = open(filePath, "r", encoding='utf-8')
     jsonData = json.load(f)
     f.close()
+    # the json only holds the raw values of each move, so join them with their
+    # parents and derive tags and notes before converting
+    moves = wavuParsing.parse_movelist(jsonData)
     csvContent = [list(map(lambda x: x["displayName"], columns)) + ["Character id"]];
-    for move in jsonData :
-        if charName == "miary-zo" or charName == "fahkumram" or charName == "anna" or charName == "armor-king" or charName == "shaheen" or charName == "kunimitsu": 
-            generateVideoLink(move)    
-    for move in jsonData :
-        fillMissingVideoFromExtendedInput(move, jsonData)
+    for move in moves :
+        if charName == "miary-zo" or charName == "fahkumram" or charName == "anna" or charName == "armor-king" or charName == "shaheen" or charName == "kunimitsu":
+            generateVideoLink(move)
+    for move in moves :
+        fillMissingVideoFromExtendedInput(move, moves)
         correctMove(move, charName)
         csvContent.append(list(map(lambda x: move.get(x["wavuId"], ""), columns)) + [charName]);
     
