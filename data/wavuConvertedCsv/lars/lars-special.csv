@@ -112,32 +112,36 @@ f+4,1,2,1;m, m, m, m;12, 8, 8, 20;i17, ,i24~25;-14;+19 (+9);;"* Balcony Break
 f+1+2;m;20;i15~16;-13;+28;;;;;Ark Blast;;;File:t8-p2-lars-f+1+2.mp4;Lars-f+1+2;lars
 f+1+4;m;28;i13~14;-18;+18a (+8);;"* Balcony Break
 * Shoulder";bbr shd;;Power Slug;;;File:t8-p2-lars-f+1+4.mp4;Lars-f+1+4;lars
-df+1;m;12;i13;-3;+5;;;;;;r20;;;Lars-df+1;lars
+df+1;m;12;i13;-3;+5;;Recovers 2F faster on hit (t33 r20);;;;r22;;;Lars-df+1;lars
 df+1,1;m, h;12, 12;i13, i21;-6;+6;;"* Combo from 1st hit with 1F delay
 * Interrupt with i2 from 1st block
-* Input can be delayed by 1F
-* Transition to r19? DEN with D (-2/+10)";intr:2;DEN;;r29;;;Lars-df+1,1;lars
-df+1,1,3;m, h, m;12, 12, 25;i13, ,i25~26;-12;+15c;;"* Balcony Break
-* Combo from 2nd CH with 9F delay
+* Transition to DEN r25 with D (-2/+10)
+* Move cannot be delayed
+* Input can be delayed by 1F";intr:2;DEN;;r29;;;Lars-df+1,1;lars
+df+1,1,3;m, h, m;12, 12, 25;i13, ,i25~26;-12;+15cg;;"* Balcony Break
+* Combo from 2nd CH with 10F delay
 * Interrupt with i5 from 1st block
 * Move can be delayed by 10F
 * Input can be delayed by 14F
-* Forces tech backroll on hit";bbr intr:5;;Lightning Barrage;r30;;;Lars-df+1,1,3;lars
+* Forces tech back roll on hit";bbr intr:5;;Lightning Barrage;r30;;;Lars-df+1,1,3;lars
 df+1,3;m, m;12, 20;i13, i24;-12;+13a (+4);;"* Balcony Break
 * Combo from 1st CH with 1F delay
 * Interrupt with i5 from 1st block
+* Move cannot be delayed
 * Input can be delayed by 1F";bbr intr:5;;Lightning Spark;r32;;;Lars-df+1,3;lars
 df+2;m;15;i14;-3;+9;+13c;"* Elbow
 * Transition to SEN
-* Transition to standing with B (-11/+1/+5c)";elb;SEN,SEN;Flash Bullet;SEN;;File:t8-p2-lars-df+2.mp4;Lars-df+2;lars
-df+3;m;15;i16;-11;+8;;* Transition to DEN with input D (-4/+15);;DEN;;;;File:t8-p2-lars-df+3,3.mp4;Lars-df+3;lars
+* Transition to standing r34 with B (-11/+1/+5c)";elb;SEN,SEN;Flash Bullet;r26 SEN;;File:t8-p2-lars-df+2.mp4;Lars-df+2;lars
+df+3;m;15;i16;-11;+8;;"* Transition to DEN with D (-4/+15)
+** Only +11 guaranteed on hit";;DEN;;r23;;File:t8-p2-lars-df+3,3.mp4;Lars-df+3;lars
 df+3,3;m, m;15, 24 (16);i16, i25~26;-15;+29a (+14a);;"* Combo from 1st hit with 2F delay
 * 16 damage with scaling from 1st hit
 * Interrupt with i4 from 1st block
 * Input can be delayed by 2F
 * Move cannot be delayed
-* Low crush 23~";intr:4 js23~;;Outpost Blitz;;;File:t8-p2-lars-df+3,3.mp4;Lars-df+3,3;lars
-df+4;m;16;i15~16;-8;+2;;;;;;;;;Lars-df4;lars
+* Low crush 23~50
+* Floating state 51~53";intr:4 js23~50 fs51~53;;Outpost Blitz;r35;;File:t8-p2-lars-df+3,3.mp4;Lars-df+3,3;lars
+df+4;m;16;i15~16;-8;+2;;;;;;r29;;;Lars-df+4;lars
 d+2;m;17;i18~19;+0c;+8c;+30d;"* Spike
 * Elbow
 * Transition to FC with input D";spk elb;FC;Tactical Sword;;;File:t8-p2-lars-d+2.mp4;Lars-d+2;lars

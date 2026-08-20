@@ -215,26 +215,31 @@ f+3+4;m;22;i22;-14;+19a (+14);;"* Knee
 * -9 frame advantage and 8 chip damage on block after absorbing an attack in power crush state
 * Grants GRF on hit
 * Power crush 7~21";kne pc7~21;;Deadly Knee;;;t8-p2-fahkumram-f+3+4.mp4;Fahkumram-f+3+4;fahkumram
-df+1;m;12;i15;-3;+6;;;;;;;;t8-p2-fahkumram-df+1.mp4;Fahkumram-df+1;fahkumram
-df+1,2;m, M;12, 20;i15, i27;-13;+12d;;"* Floor Break
+df+1;m;12;i15~16;-3;+6;;;;;;r24;;t8-p2-fahkumram-df+1.mp4;Fahkumram-df+1;fahkumram
+df+1,2;m, M;12, 20;i15~16, i27~28;-13;+12d;;"* Floor Break
 * Elbow
-* Combos from 1st hit
+* Combo from 1st hit with 3F delay
 * Grants GRF on hit
 * Interrupt with i7 from 1st block
-* Low crush";fbr elb intr:7 js;;Aiyara Combination: Mid;;;t8-p2-fahkumram-df+1,2.mp4;Fahkumram-df+1,2;fahkumram
-df+1,4;m, h;12, 23;i15, i25;-5;+20a (+11);;"* Heat Engager
+* Move can be delayed by 2F
+* Input can be delayed by 4F
+* Low crush 12~27";fbr elb intr:7 js12~27;;Aiyara Combination: Mid;r36;;t8-p2-fahkumram-df+1,2.mp4;Fahkumram-df+1,2;fahkumram
+df+1,4;m, h;12, 23;i15~16, i25~26;-5;+20a (+11);;"* Heat Engager
 
 * Heat Dash +62a (+42)
 
 * Knee
-* Combo from 1st hit with";he kne;;Aiyara Combination: High;r29;;t8-p2-fahkumram-df+1,4.mp4;Fahkumram-df+1,4;fahkumram
-df+1,4~3;m, m;12, 20;i15, i18;-7;+9;+37d (+29);"* Tornado
-* Wallbreak on CH
-* Combos from 1st CH
-* Can be charged
+* Combo from 1st hit with 4F delay
+* Interrupt with i3 from 1st block
+* 4 chip damage on block";he kne intr:3 chp:4;;Aiyara Combination: High;r29;;t8-p2-fahkumram-df+1,4.mp4;Fahkumram-df+1,4;fahkumram
+df+1,4~3;m, m;12, 20;i15~16, i18;-7;+9;+37a (+29);"* Tornado
+* Balcony Break on CH
+* Can be charged with up to 24F (up to i29) without performing charged version
+* Can input 3 on frame 22 of df1,4
+* i40 actual startup (cancel takes 22f)
 * Interrupt with i18 from 1st block
-* Interrupt with i9 from 1st hit";trn intr:18;;Aiyara Combination > Tornado Kick Convergence;;;t8-p2-fahkumram-df+1,4~3.mp4;Fahkumram-df+1,4~3;fahkumram
-df+1,4~3*;m, m;12, 23;i15, i36;+9;+70a (+54);;"* Tornado
+* Interrupt with i9 from 1st hit";trn intr:18;;Aiyara Combination > Tornado Kick Convergence;r28;;t8-p2-fahkumram-df+1,4~3.mp4;Fahkumram-df+1,4~3;fahkumram
+df+1,4~3*;m, m;12, 23;i15~16, i36;+9;+70a (+54);;"* Tornado
 * Balcony Break
 * 9 chip damage on block
 * Powered up with GRF
@@ -242,12 +247,12 @@ df+1,4~3*;m, m;12, 23;i15, i36;+9;+70a (+54);;"* Tornado
 ** Interrupt with i41? from 1st block or i32? from 1st hit
 * Interrupt with i36 from 1st block
 * Interrupt with i27 from 1st hit";trn bbr intr:36 chp:9;FC;Aiyara Combination > Tornado Kick Convergence (charged);;;t8-p2-fahkumram-df+1,4~3x.mp4;Fahkumram-df+1,4~3*;fahkumram
-df+1,4~3*~B;m, m;12, 25;i15, i22;-7;+9;;"*
+df+1,4~3*~B;m, m;12, 25;i15~16, i22;-7;+9;;"*
 Homing
 * Balcony Break
 * Interrupt with i38 from 1st block
 * Interrupt with i29 from 1st hit";hom bbr intr:38;;Tornado Maw;;;t8-p2-fahkumram-df+1,4~3x~b.mp4;Fahkumram-df+1,4~3*~B;fahkumram
-df+1,4~4;m, h;12, 20;i15, i16;+3;+13g;+30a;"* Homing
+df+1,4~4;m, h;12, 20;i15~16, i16;+3;+13g;+30a;"* Homing
 * Balcony Break
 * Strong Aerial Tailspin
 * 6 chip damage on block
