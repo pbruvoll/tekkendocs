@@ -371,6 +371,11 @@ def parse_move(move: dict, moves_by_id: dict) -> dict:
     # the aliases derived from the input replace the alias field of wavu, which we do not use
     parsed["alias"] = alias
 
+    # a move can have several names, given by the importer as a "*" prefixed list
+    name = move.get("name", "")
+    if name.startswith("*") :
+        parsed["name"] = " / ".join([part.strip() for part in name.split("*") if part.strip()])
+
     targetValues = get_parent_values("target", parent, moves_by_id)
     if move.get("target") :
         targetValues.append(move["target"])

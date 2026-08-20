@@ -66,6 +66,18 @@ def _normalize_crush(data: str) -> str:
     return " ".join([part for part in crush.split(" ") if part])
 
 
+# Some names are html lists holding several alternate names for the same move.
+# Only the markup is removed, leaving a "*" prefixed list like for alt.
+# Non-ascii characters are kept, since names contain accented letters.
+def _normalize_name(data: str) -> str:
+    name = html.unescape(_none_to_empty(data))
+    if "<" not in name:
+        return name
+
+    name = BeautifulSoup(name, features="lxml").get_text()
+    return re.sub(r"(\n)+", "\n", name).strip()
+
+
 def _normalize_notes(data: str) -> str:
     notes = html.unescape(_normalize_data(data))
     notes = BeautifulSoup(notes, features="lxml").get_text()
@@ -89,7 +101,7 @@ def _convert_json_movelist(move_list_json: list) -> List[dict]:
             move_list.append(_without_empty_values({
                 "id": _normalize_data(title["id"]),
                 "parent": _normalize_data(title["parent"]),
-                "name": html.unescape(_none_to_empty(title["name"])),
+                "name": _normalize_name(title["name"]),
                 "input": _normalize_data(title["input"]).replace("#", ":"),
                 # both are lists of alternate commands wrapped in html
                 "alias": _remove_html_tags(_normalize_data(title["alias"])),
