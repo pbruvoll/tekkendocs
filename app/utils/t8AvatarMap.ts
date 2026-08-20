@@ -8,6 +8,8 @@ import asuka from '~/images/t8/avatars/asuka-128.webp';
 import asukaBrand from '~/images/t8/avatars/asuka-brand-128.webp';
 import azucena from '~/images/t8/avatars/azucena-128.webp';
 import azucenaBrand from '~/images/t8/avatars/azucena-brand-128.webp';
+import bob from '~/images/t8/avatars/bob-128.webp';
+import bobBrand from '~/images/t8/avatars/bob-brand-128.webp';
 import bryan from '~/images/t8/avatars/bryan-128.webp';
 import bryanBrand from '~/images/t8/avatars/bryan-brand-128.webp';
 import claudio from '~/images/t8/avatars/claudio-128.webp';
@@ -91,6 +93,7 @@ export const t8AvatarMap: Record<string, string> = {
   azucena,
   claudio,
   clive,
+  bob,
   bryan,
   'devil-jin': devilJin,
   dragunov,
@@ -136,6 +139,7 @@ export const t8AvatarBrandMap: Record<string, string> = {
   azucena: azucenaBrand,
   claudio: claudioBrand,
   clive: cliveBrand,
+  bob: bobBrand,
   bryan: bryanBrand,
   'devil-jin': devilJinBrand,
   dragunov: dragunovBrand,

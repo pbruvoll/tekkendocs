@@ -3,6 +3,7 @@ import anna from '~/images/t8/avatars/anna-brand-256.webp';
 import armorKing from '~/images/t8/avatars/armor-king-brand-256.webp';
 import asuka from '~/images/t8/avatars/asuka-brand-256.webp';
 import azucena from '~/images/t8/avatars/azucena-brand-256.webp';
+import bob from '~/images/t8/avatars/bob-brand-256.webp';
 import bryan from '~/images/t8/avatars/bryan-brand-256.webp';
 import claudio from '~/images/t8/avatars/claudio-brand-256.webp';
 import clive from '~/images/t8/avatars/clive-brand-256.webp';
@@ -49,6 +50,7 @@ export const t8AvatarBrandMap256: Record<string, string> = {
   azucena,
   claudio,
   clive,
+  bob,
   bryan,
   'devil-jin': devilJin,
   dragunov,
