@@ -845,21 +845,25 @@
     "hit": "+6",
     "id": "Fahkumram-df+1",
     "input": "df+1",
-    "startup": "i15",
-    "target": "m"
+    "recv": "r24",
+    "startup": "i15~16",
+    "target": "m",
+    "tot": "40"
   },
   {
     "block": "-13",
-    "crush": "js",
+    "crush": "js12~27",
     "damage": ",20",
     "hit": "+12d",
     "id": "Fahkumram-df+1,2",
     "input": ",2",
     "name": "Aiyara Combination: Mid",
-    "notes": "* Floor Break\n* Elbow\n* Combos from 1st hit\n* Grants GRF on hit\n* Interrupt with i7 from 1st block",
+    "notes": "* Floor Break\n* Elbow\n* Combo from 1st hit with 3F delay\n* Grants GRF on hit\n* Interrupt with i7 from 1st block\n* Move can be delayed by 2F\n* Input can be delayed by 4F",
     "parent": "Fahkumram-df+1",
-    "startup": "i27",
-    "target": ",M"
+    "recv": "r36",
+    "startup": "i27~28",
+    "target": ",M",
+    "tot": "82"
   },
   {
     "block": "-5",
@@ -868,24 +872,27 @@
     "id": "Fahkumram-df+1,4",
     "input": ",4",
     "name": "Aiyara Combination: High",
-    "notes": "* Heat Engager\n\n* Heat Dash +62a (+42)\n\n* Knee\n* Combo from 1st hit with",
+    "notes": "* Heat Engager\n\n* Heat Dash +62a (+42)\n\n* Knee\n* Combo from 1st hit with 4F delay\n* Interrupt with i3 from 1st block\n* 4 chip damage on block",
     "parent": "Fahkumram-df+1",
     "recv": "r29",
-    "startup": "i25",
-    "target": ",h"
+    "startup": "i25~26",
+    "target": ",h",
+    "tot": "71"
   },
   {
     "block": "-7",
-    "ch": "+37d (+29)",
+    "ch": "+37a (+29)",
     "damage": ",20",
     "hit": "+9",
     "id": "Fahkumram-df+1,4~3",
     "input": ",4~3",
     "name": "Aiyara Combination > Tornado Kick Convergence",
-    "notes": "* Tornado\n* Wallbreak on CH\n* Combos from 1st CH\n* Can be charged\n* Interrupt with i18 from 1st block\n* Interrupt with i9 from 1st hit",
+    "notes": "* Tornado\n* Balcony Break on CH\n* Can be charged with up to 24F (up to i29) without performing charged version\n* Can input 3 on frame 22 of df1,4\n* i40 actual startup (cancel takes 22f)\n* Interrupt with i18 from 1st block\n* Interrupt with i9 from 1st hit",
     "parent": "Fahkumram-df+1",
+    "recv": "r28",
     "startup": "i18",
-    "target": ",m"
+    "target": ",m",
+    "tot": "84"
   },
   {
     "block": "+9",

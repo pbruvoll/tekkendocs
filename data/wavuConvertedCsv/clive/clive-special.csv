@@ -212,7 +212,9 @@ H.f+2,2,1*;m, m, m;10, 7, 30;i15, ,i42~43;+11;+52a;;"* Guard Break
 * Consumes 150F of remaining Heat time
 * Interrupt with i23 from 2nd block
 * Interrupt with i12 from 2nd hit
-* 12 chip damage on block";intr:23 chp:12;;Lethal Ignition (Hold);r33?;;;Clive-f+2,2,H.1*;clive
+* Whiffs vs SSL, SW from 2nd block
+* Whiffs vs SSR, SWR from 2nd hit
+* 12 chip damage on block";stp:SSL stp:SSR intr:23 chp:12;;Lethal Ignition (Hold);r33?;;;Clive-f+2,2,H.1*;clive
 f+3;M;15;i20~21;-14;+37a;;"* Spike
 * 3 chip damage on block
 * Low crush 9~24
@@ -247,7 +249,7 @@ H.df+1,1;m, M,m;10, 13,15;i14~15, i22~23,i20~21;-12;+3c;;"* Weapon 2nd hit
 * Input can be delayed by 1F
 * Move cannot be delayed by 2F
 * Move is delayed by 2F
-* Interrupt with i4
+* Interrupt with i4 from 1st block
 * Consumes 150F of remaining Heat time
 * Transition to r15 PHX with F or 4 on hit or block (-1/+14c)
 * 5 chip damage on block";intr:4 chp:5;PHX;;r36?;;;Clive-df+1,H.1;clive
