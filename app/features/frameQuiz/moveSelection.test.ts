@@ -1,6 +1,10 @@
 import { describe, expect, test } from 'vitest';
 import { type Move } from '~/types/Move';
-import { getEligibleQuizMoves, isThrowHitLevel } from './moveSelection';
+import {
+  getEligibleQuizMoves,
+  isGroundedRecoveryState,
+  isThrowHitLevel,
+} from './moveSelection';
 
 const createMove = (move: Partial<Move>): Move => ({
   moveNumber: 1,
@@ -45,6 +49,20 @@ test('isThrowHitLevel', () => {
   expect(isThrowHitLevel('sm')).toBe(false); // Clive-WOL.1
 });
 
+test('isGroundedRecoveryState', () => {
+  expect(isGroundedRecoveryState('FUFT')).toBe(true); // Armor King-uf+3+4
+  expect(isGroundedRecoveryState('FUFA')).toBe(true); // Armor King-3+4,2
+  expect(isGroundedRecoveryState('FDFT')).toBe(true); // Armor King-db+4
+  expect(isGroundedRecoveryState('FDFA')).toBe(true); // Armor King-BAD.db+1+2
+  expect(isGroundedRecoveryState('FDFL')).toBe(true); // Armor King-3+4,1+2
+  expect(isGroundedRecoveryState('(FUFT)')).toBe(true); // King-f,F+3+4
+
+  expect(isGroundedRecoveryState('FC')).toBe(false); // Alisa-d+2
+  expect(isGroundedRecoveryState('BT FC')).toBe(false); // Xiaoyu-BT.d+3
+  expect(isGroundedRecoveryState('DES')).toBe(false); // Alisa-1,1,1+2
+  expect(isGroundedRecoveryState('')).toBe(false);
+});
+
 describe('getEligibleQuizMoves', () => {
   const kingPalmStrikeHeadJammer = createMove({
     // King-1,2,2+4
@@ -71,6 +89,16 @@ describe('getEligibleQuizMoves', () => {
     video: 'File:t8-p2-bryan-ws2.mp4',
   });
 
+  const armorKingArmageddonDrop = createMove({
+    // Armor King-uf+3+4, recovers face up feet towards
+    command: 'uf+3+4',
+    hitLevel: 'm',
+    block: '-7',
+    recoveryState: 'FUFT',
+    wavuId: 'Armor King-uf+3+4',
+    video: 'File:t8-p2-armor-king-uf+3+4.mp4',
+  });
+
   test('filters out strings ending in a throw', () => {
     expect(
       getEligibleQuizMoves([kingPalmStrikeHeadJammer, kingOneTwo]).map(
@@ -83,5 +111,13 @@ describe('getEligibleQuizMoves', () => {
     expect(
       getEligibleQuizMoves([bryanFishermansSlam]).map(({ id }) => id),
     ).toEqual(['Bryan-ws2']);
+  });
+
+  test('filters out moves that recover on the ground', () => {
+    expect(
+      getEligibleQuizMoves([armorKingArmageddonDrop, kingOneTwo]).map(
+        ({ id }) => id,
+      ),
+    ).toEqual(['King-1,2']);
   });
 });

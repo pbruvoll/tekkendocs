@@ -60,6 +60,16 @@ export const isThrowHitLevel = (hitLevel: string): boolean => {
     );
 };
 
+// Face up/down + feet towards/away/left. Moves recovering on the ground are
+// punished on wakeup rather than by the listed block frames, so they do not
+// belong in the quiz.
+const groundedRecoveryStates = ['FUFT', 'FUFA', 'FUFL', 'FDFT', 'FDFA', 'FDFL'];
+
+export const isGroundedRecoveryState = (recoveryState: string): boolean => {
+  const upperCased = recoveryState.toUpperCase();
+  return groundedRecoveryStates.some((state) => upperCased.includes(state));
+};
+
 export const hasVisibleProperties = (move: Move): boolean => {
   return Object.keys(move.tags || {}).length > 0;
 };
@@ -92,6 +102,10 @@ export const getEligibleQuizMoves = (moves: Move[]): QuizMove[] => {
     }
 
     if (hitLevel.startsWith('ub') || hitLevel.endsWith('!')) {
+      return current;
+    }
+
+    if (isGroundedRecoveryState(move.recoveryState || '')) {
       return current;
     }
 
