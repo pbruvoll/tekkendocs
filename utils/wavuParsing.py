@@ -357,6 +357,33 @@ def sort_moves(move_list: List[dict]) -> List[dict] :
     return sorted(move_list, key=lambda x: f'{SORT_ORDER[get_move_category(x)]:05d}' + x["input"].replace("1+2", "5").replace("1+4", "6").replace("2+3", "7").replace("3+4", "8").replace("+", "|"))
 
 
+# a recovery frame count, with or without wavu's "r" prefix: r24, 24, r24?, r31/33.
+# the alternative after the "/" is a bug in wavu and is left out
+recovery_frames_pattern = re.compile(r'^r?(\d+\??)(?:/\d+\??)*$')
+
+
+def parse_recovery(recv: str):
+    """Splits the recv field of wavu into the number of recovery frames and the
+    state the move recovers in, such as "r24 FC" -> ("24", "FC").
+    A move may recover in several states, as in "r24? BT JGS" -> ("24?", "BT JGS"),
+    and either half may be missing, as in "DES" -> ("", "DES") and "r" -> ("", "")"""
+    frames = ""
+    states = []
+    for token in recv.split() :
+        match = recovery_frames_pattern.match(token)
+        if match :
+            # a second frame count, such as the 89 of "r33 89", is a bug in wavu
+            if not frames :
+                frames = match.group(1)
+            continue
+        if token == "r" :
+            # tells that the move recovers, without saying in how many frames
+            continue
+        states.append(token.rstrip("?"))
+
+    return (frames, " ".join(states))
+
+
 def parse_move(move: dict, moves_by_id: dict) -> dict:
     parsed = dict(move)
     parent = move.get("parent", "")
@@ -395,6 +422,10 @@ def parse_move(move: dict, moves_by_id: dict) -> dict:
     # the importer normalizes crush to a space separated list, such as "js9~13 pc7~16"
     crush = move.get("crush", "")
     crushList = [part for part in crush.split(" ") if part]
+
+    (recovery_frames, recovery_state) = parse_recovery(move.get("recv", ""))
+    parsed["recovery_frames"] = recovery_frames
+    parsed["recovery_state"] = recovery_state
 
     notes = move.get("notes", "")
     (short_notes, tags) = parse_notes(notes)

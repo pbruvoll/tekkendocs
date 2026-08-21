@@ -1,5 +1,4 @@
 import { type Move } from '~/types/Move';
-import { getRecoveryFrames } from '~/utils/frameDataUtils';
 
 export const parseStartupFrames = (startup: string): number | null => {
   const match = startup.match(/i?(\d+)/i);
@@ -18,10 +17,9 @@ export const parseDamageTotal = (damage: string): number | null => {
 };
 
 export const parseRecoveryValue = (move: Move): number | null => {
-  const recovery = getRecoveryFrames(move);
-  if (!recovery) {
+  if (!move.recovery) {
     return null;
   }
-  const parsed = Number.parseInt(recovery, 10);
+  const parsed = Number.parseInt(move.recovery, 10);
   return Number.isNaN(parsed) ? null : parsed;
 };

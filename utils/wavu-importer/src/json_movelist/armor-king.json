@@ -392,10 +392,10 @@
     "id": "Armor King-b+1,2",
     "input": ",2",
     "name": "Dark Jab > Hell Stab",
-    "notes": "* Combo from 1st hit with 12F delay\n* Transition to r30 BAD with F (-12/+8/+11)\n* Move can be delayed by 10F\n* Input can be delayed by 12F",
+    "notes": "* Combo from 1st hit with 11F delay\n* Jail from 1st block with 2F delay\n* Transition to r30 BAD with F (-12/+8/+11)\n* Move can be delayed by 10F\n* Input can be delayed by 11F",
     "num": "52",
     "parent": "Armor King-b+1",
-    "recv": "30",
+    "recv": "r30",
     "startup": ",i20~21",
     "target": ",m",
     "tot": "65"
@@ -439,7 +439,7 @@
     "hit": "-1",
     "id": "Armor King-b+2,1",
     "input": ",1",
-    "notes": "* Combo from 1st hit with 12F delay\n* Input can be delayed 12F",
+    "notes": "* Combo from 1st hit\n* Move cannot be interrupted\n* Move is delayed 2f\n* Move cannot be delayed\n* Input cannot be delayed",
     "parent": "Armor King-b+2",
     "recv": "r31",
     "startup": ",i18",
@@ -453,13 +453,13 @@
     "id": "Armor King-b+2,1,2",
     "input": ",2",
     "name": "Knife Edge Combo",
-    "notes": "* Balcony Break\n* Combo from 1st or 2nd CH with 5F delay\n* Move can be delayed by 20F",
+    "notes": "* Balcony Break\n* Combo from 1st or 2nd CH with 5F delay\n* Interrupt with i5 from 2nd block\n* Move can be delayed by 20F",
     "num": "53",
     "parent": "Armor King-b+2,1",
     "recv": "r30",
     "startup": ",i25~26",
     "target": ",h",
-    "tot": "89?"
+    "tot": "89"
   },
   {
     "block": "-12",
@@ -498,7 +498,7 @@
     "name": "Toe Kick",
     "num": "55",
     "recv": "r32",
-    "startup": "i15~18",
+    "startup": "i15~16",
     "target": "m",
     "tot": "48"
   },
@@ -508,11 +508,11 @@
     "id": "Armor King-b+4,1+2",
     "input": ",1+2",
     "name": "Toe Kick > Stunner",
-    "notes": "* Throw only comes out on front hit\n* Input 1+2 during frames 2-18 of b+4",
+    "notes": "* Throw only comes out on front hit\n* Input 1+2 during frames 1-17 of b+4",
     "num": "56",
     "parent": "Armor King-b+4",
     "target": ",t",
-    "tot": "115?"
+    "tot": "121"
   },
   {
     "block": "!",
@@ -557,7 +557,7 @@
     "id": "Armor King-BAD.1+2",
     "input": "BAD.1+2",
     "name": "Brigand Stomping Headbutt",
-    "notes": "* Head\n* 6 chip damage on block",
+    "notes": "* Head\n* 4f timestop on CH\n* 6 chip damage on block",
     "num": "111",
     "recv": "r34",
     "startup": "i26~27",
@@ -572,7 +572,7 @@
     "id": "Armor King-BAD.1,2",
     "input": ",2",
     "name": "Ruffian Double Smash",
-    "notes": "* Heat Engager\n\n* Heat Dash +5, +43d (+35)\n\n* Balcony Break \n* Combo from 1st hit with 6F delay\n* Interrupt from 1st block with i5\n* Input can be delayed by 6F\n* Move can be delayed by 1F",
+    "notes": "* Heat Engager\n\n* Heat Dash +5, +43d (+35)\n\n* Balcony Break \n* Combo from 1st hit with 6F delay\n* Interrupt with i5 from 1st block\n* 20f timestop on hit\n* Input can be delayed by 6F\n* Move can be delayed by 1F",
     "num": "105",
     "parent": "Armor King-BAD.1",
     "recv": "r36",
@@ -588,7 +588,7 @@
     "id": "Armor King-BAD.1,4",
     "input": ",4",
     "name": "Ruffian Raid",
-    "notes": "* Combo from 1st hit with 6F delay\n* Interrupt from 1st block with i3\n* Input can be delayed by 6F\n* Move can be delayed by 1F\n* Recovers in BT",
+    "notes": "* Transition to BT\n* Combo from 1st hit with 6F delay\n* Interrupt with i3 from 1st block\n* Input can be delayed by 6F\n* Move can be delayed by 1F",
     "num": "106",
     "parent": "Armor King-BAD.1",
     "recv": "r32 BT",
@@ -611,11 +611,11 @@
   {
     "block": "-7",
     "damage": ",24",
-    "hit": "+18g",
+    "hit": "+18cg",
     "id": "Armor King-BAD.2,3",
     "input": ",3",
     "name": "Thug Force",
-    "notes": "* Balcony Break\n* Tornado \n* Combo from 1st hit with 8F delay\n* Interrupt with i6 from 1st block\n* Input can be delayed by 9F\n* Move can be delayed by 5F\n* Forces crouching on hit",
+    "notes": "* Balcony Break\n* Tornado \n* Combo from 1st hit with 7F delay\n* Interrupt with i6 from 1st block\n* Input can be delayed by 8F\n* Move can be delayed by 5F\n* Forces crouching on hit",
     "num": "107",
     "parent": "Armor King-BAD.2",
     "recv": "r31",
@@ -644,7 +644,7 @@
     "id": "Armor King-BAD.2,4",
     "input": ",4",
     "name": "S.C.S",
-    "notes": "* Combo from 1st hit with 9F delay\n* Interrupt with i2 from 1st block\n* Input can be delayed by 9F\n* Move can be delayed by 5F\n* Transitions to attack throw on front hit only \n* Opponent left FUFT",
+    "notes": "* Combo from 1st hit with 8F delay\n* Interrupt with i2 from 1st block\n* Input can be delayed by 8F\n* Move can be delayed by 5F\n* Transitions to attack throw on front hit only \n* Opponent left FUFT",
     "num": "108",
     "parent": "Armor King-BAD.2",
     "recv": "r32",
@@ -655,10 +655,9 @@
   },
   {
     "block": "-13",
-    "ch": "+26d",
     "crush": "pc7~19",
     "damage": "20",
-    "hit": "+11a(+2)",
+    "hit": "+11a (+2)",
     "id": "Armor King-BAD.3",
     "input": "BAD.3",
     "name": "Blackguard Gut Rench",
@@ -701,15 +700,15 @@
   },
   {
     "block": "-18c",
-    "crush": "js14~34",
+    "crush": "js14~34 fs35~60",
     "damage": "18,15",
     "hit": "+0d",
     "id": "Armor King-BAD.db+1+2",
     "input": "BAD.db+1+2",
     "name": "Shadow Press",
-    "notes": "* Transition into hit grab on grounded, airborne, and backturn hit\n* AK is left FDFA on whiff/block\n* Opponent is left FUFT on hit",
+    "notes": "* Shift to attack throw on grounded, airborne, and backturn hit\n* Recovers standing r66 on hit\n* Opponent is left FUFT on hit",
     "num": "112",
-    "recv": "r43? FDFA",
+    "recv": "r43 FDFA",
     "startup": "i14~17",
     "target": "m,t",
     "tot": "60",
@@ -783,7 +782,7 @@
     "alt": "CH ws2,f,d,df+2",
     "block": "+1",
     "damage": "20,22 (15) / 25 (17)",
-    "hit": "+35a(+28)",
+    "hit": "+35a (+28)",
     "id": "Armor King-CH.ws2,2",
     "input": "CH.ws2,2",
     "name": "True Dark Smash",
@@ -1119,8 +1118,11 @@
     "hit": "+7",
     "id": "Armor King-df+1",
     "input": "df+1",
+    "notes": "* Recovers 1F faster on hit (t33 r19)\n* Jab evasion?",
+    "recv": "r20",
     "startup": "i13~14",
-    "target": "m"
+    "target": "m",
+    "tot": "34"
   },
   {
     "block": "-6",
@@ -1130,10 +1132,12 @@
     "id": "Armor King-df+1,2",
     "input": ",2",
     "name": "Bastard Rush",
-    "notes": "* Tornado\n* Combo on 1st CH\n* Combo can be delayed 9F on CH",
+    "notes": "* Tornado\n* Combo on 1st CH with 8F delay\n* 4f timestop on CH\n* Interrupt with i1 from 1st block\n* Move can be delayed 8F\n* Input can be delayed 9F",
     "parent": "Armor King-df+1",
+    "recv": "r26",
     "startup": ",i18~19",
-    "target": ",h"
+    "target": ",h",
+    "tot": "60"
   },
   {
     "block": "-12",
@@ -1143,8 +1147,11 @@
     "id": "Armor King-df+2",
     "input": "df+2",
     "name": "Concussion Hook",
+    "notes": "Jab evasion?",
+    "recv": "r30",
     "startup": "i15~16",
-    "target": "m"
+    "target": "m",
+    "tot": "46"
   },
   {
     "block": "+0",
@@ -1154,10 +1161,12 @@
     "id": "Armor King-df+2,1",
     "input": ",1",
     "name": "Double Concussion",
-    "notes": "* Combo from 1st hit\n* Transition to BAD with F (+8, +0)\n* No KND on 1st CH",
+    "notes": "* Combo from 1st hit\n* Transition to BAD r25 with F (+0/+8/+11)\n* Interrupt with i1 from 1st block\n* Move is delayed 5f\n* Move cannot be delayed\n* Input cannot be delayed\n* No KND on 1st CH\n* Links to 10-hit strings",
     "parent": "Armor King-df+2",
+    "recv": "r25",
     "startup": ",i15~16",
-    "target": ",h"
+    "target": ",h",
+    "tot": "62"
   },
   {
     "block": "-3",
@@ -1178,22 +1187,25 @@
     "id": "Armor King-df+3",
     "input": "df+3",
     "name": "Dark Knee Lift",
-    "notes": "Knee",
+    "notes": "* Knee\n* 4f timestop on CH",
+    "recv": "r29",
     "startup": "i17~18",
-    "target": "m"
+    "target": "m",
+    "tot": "47"
   },
   {
-    "block": "-12~-18?",
-    "crush": "js13~",
+    "block": "-11~-18?",
+    "crush": "js13~37 fs38~40",
     "damage": "15,30",
-    "hit": "+17d/-7~0",
+    "hit": "+17d/-7c~0c",
     "id": "Armor King-df+3+4",
     "input": "df+3+4",
     "name": "Frankensteiner",
-    "notes": "* Throw only when opponent standing close.\n* Cannot throw break.\n* Recovers in BT/FUFT on throw success/failed.",
-    "recv": "r BT/FUFT",
+    "notes": "* Throw only when opponent standing close.\n* Cannot throw break.\n* Transition to BT r129? after attack throw",
+    "recv": "r30 FUFT",
     "startup": "i28~35",
-    "target": "SM,t"
+    "target": "SM,t",
+    "tot": "65"
   },
   {
     "block": "-4",
@@ -1201,8 +1213,10 @@
     "hit": "+7",
     "id": "Armor King-df+4",
     "input": "df+4",
+    "recv": "r23",
     "startup": "i12",
-    "target": "m"
+    "target": "m",
+    "tot": "35"
   },
   {
     "alt": "* DMD.2+4,1+2",
@@ -1389,7 +1403,7 @@
     "id": "Armor King-f+3+4",
     "input": "f+3+4",
     "name": "Bad Jaguar",
-    "notes": "* Parries mid and high punches\n* Cannot block in stance\n* Transition to BAD",
+    "notes": "* Transition to BAD\n* Parries mid and high punches\n* Cannot block in stance\n* Stance moves can be delayed by 25f",
     "num": "104",
     "recv": "r25 BAD",
     "target": "sp",
@@ -1424,63 +1438,17 @@
     "tot": "55"
   },
   {
-    "alt": "* d+1\n* db+1\n* FC.db+1\n* FC.df+1",
-    "block": "-5",
-    "crush": "cs4~",
-    "damage": "5",
-    "hit": "+6",
-    "id": "Armor King-FC.1",
-    "input": "FC.1",
-    "recv": "FC",
-    "startup": "i10",
-    "target": "sl"
-  },
-  {
-    "alt": "* FC.db+2",
-    "block": "-4",
-    "crush": "cs",
-    "damage": "8",
-    "hit": "+7",
-    "id": "Armor King-FC.2",
-    "input": "FC.2",
-    "recv": "FC",
-    "startup": "i11",
-    "target": "sl"
-  },
-  {
-    "alt": "* FC.db+3\n* FC.df+3",
-    "block": "-16",
-    "crush": "cs",
-    "damage": "12",
-    "hit": "-2",
-    "id": "Armor King-FC.3",
-    "input": "FC.3",
-    "recv": "FC",
-    "startup": "i18",
-    "target": "l"
-  },
-  {
-    "alt": "* d+4\n* FC.db+4",
-    "block": "-15",
-    "crush": "cs",
-    "damage": "6",
-    "hit": "-4",
-    "id": "Armor King-FC.4",
-    "input": "FC.4",
-    "recv": "FC",
-    "startup": "i14",
-    "target": "sl"
-  },
-  {
     "block": "+1",
     "damage": "23",
     "hit": "+52a",
     "id": "Armor King-FC.df+2",
     "input": "FC.df+2",
     "name": "Backhand Chop",
-    "notes": "* 6 chip damage on block",
+    "notes": "* 6 chip damage on block\n* 20f timestop on hit",
+    "recv": "r26",
     "startup": "i24~25",
-    "target": "m"
+    "target": "m",
+    "tot": "51"
   },
   {
     "block": "+0",
@@ -1565,7 +1533,7 @@
     "name": "Brawler Kick",
     "notes": "* Heat Engager\n\n* Heat Dash +36a (+26)\n\n* Balcony Break\n* Forces tech back roll on hit",
     "recv": "r35",
-    "startup": "i14~16",
+    "startup": "i14",
     "target": "m",
     "tot": "49"
   },
@@ -1622,7 +1590,7 @@
     "name": "Underhanded",
     "notes": "* Transition to BAD r29 on hit with F (+8/+13)",
     "recv": "r32",
-    "startup": "i19~20",
+    "startup": "i19",
     "target": "L",
     "tot": "51"
   },
@@ -1644,7 +1612,7 @@
     "id": "Armor King-f,n,d,df",
     "input": "f,n,d,df",
     "name": "Beast Step",
-    "notes": "* Cannot be buffered\n* Stance moves can be buffered out of heat dash\n* Recovers in FC at frame 20\n* Cancel to SS with u\n* Cancel to standing block with b",
+    "notes": "* Cannot be buffered\n* Stance moves can be buffered out of heat dash\n* Recovers in FC at frame 20\n* Cancel to SS with u\n* Cancel to standing block with b from frames 1 to 9",
     "num": "117",
     "recv": "r1",
     "tot": "20"
@@ -1656,7 +1624,7 @@
     "id": "Armor King-f,n,d,df+1",
     "input": "f,n,d,df+1",
     "name": "Shadow Lariat",
-    "notes": "* 6 chip damage on block\n* Opponent left FDFA on hit",
+    "notes": "* 6 chip damage on block\n* 20f timestop on hit\n* Recovers 8F faster on hit (t38 r22)\n* Opponent left FDFA on hit",
     "num": "118",
     "recv": "r30",
     "startup": "i15~16",
@@ -1688,9 +1656,9 @@
     "name": "Cobra Clutch (DMD)",
     "notes": "* 1 or 2 break depending on Armor King's input\n** 1 for CD1+3/1+4, 2 for CD2+4/2+3 \n* Transition to DMD\n* i20 fastest possible startup in neutral (f,n,d,df,1+3_2+4)\n** df and 1+3_2+4 cannot be input on the same frame\n* Opponent recovers FDFT\n* Side switch on hit or break",
     "recv": "r27",
-    "startup": "i12",
+    "startup": "i12 (i17)",
     "target": "t",
-    "tot": "39"
+    "tot": "39 (t46)"
   },
   {
     "alias": "Dark Upper",
@@ -1701,12 +1669,12 @@
     "id": "Armor King-f,n,d,df+2",
     "input": "f,n,d,df+2",
     "name": "Dark Smash",
-    "notes": "* Can also be performed with f,n,df#2 (i13+)\n* t39? r27? on hit",
+    "notes": "* Can also be performed with f,n,df#2 (i13+)\n* t39 r27 on hit",
     "num": "119",
-    "recv": "r28?",
+    "recv": "r28",
     "startup": "i11~12 (i14+)",
     "target": "h",
-    "tot": "40?"
+    "tot": "40"
   },
   {
     "damage": "30",
@@ -1714,7 +1682,7 @@
     "id": "Armor King-f,n,d,DF+3",
     "input": "f,n,d,DF+3",
     "name": "Dark Inferno",
-    "notes": "*\nBalcony Break\n*Hold B to cancel at frame 19 into r23 standing",
+    "notes": "* Balcony Break\n* Cancel to r41 standing with B at frame 19\n* 20f timestop on hit",
     "num": "120",
     "recv": "r28",
     "startup": "i35~37",
@@ -1723,7 +1691,7 @@
   },
   {
     "block": "-9",
-    "crush": "js11~27",
+    "crush": "js11~27 fs28~30",
     "damage": "22",
     "hit": "+28a (+20)",
     "id": "Armor King-f,n,d,DF+4",
@@ -1798,6 +1766,21 @@
     "tot": "79"
   },
   {
+    "alt": "* d+1\n* db+1",
+    "block": "-5",
+    "crush": "cs1~",
+    "damage": "5",
+    "hit": "+6",
+    "id": "Armor King-hFC.1",
+    "input": "hFC.1",
+    "name": "Crouch Jab",
+    "notes": "* Transition to r24 with f\n* +6c on crouching hit",
+    "recv": "r24 FC",
+    "startup": "i10",
+    "target": "sl",
+    "tot": "34"
+  },
+  {
     "alt": "* CD.d+1+2\n* FC.1+2",
     "block": "-5",
     "damage": "0",
@@ -1808,6 +1791,49 @@
     "notes": "* 1+2 throw break (except from behind).\n* Catches standing and crouching opponent from all directions.\n* Can be done from [[Crouch#Half_crouch|Crouch Level 1]]",
     "startup": "i26",
     "target": "t(s)"
+  },
+  {
+    "block": "-4",
+    "crush": "cs1~",
+    "damage": "8",
+    "hit": "+7",
+    "id": "Armor King-hFC.2",
+    "input": "hFC.2",
+    "name": "Crouch Straight",
+    "notes": "* +7c on crouching hit",
+    "recv": "r23 FC",
+    "startup": "i11",
+    "target": "sl",
+    "tot": "34"
+  },
+  {
+    "block": "-16",
+    "crush": "cs1~",
+    "damage": "12",
+    "hit": "-2",
+    "id": "Armor King-hFC.3",
+    "input": "hFC.3",
+    "name": "Crouch Spin Kick",
+    "notes": "-2c on crouching hit",
+    "recv": "r32 FC",
+    "startup": "i18",
+    "target": "L",
+    "tot": "50"
+  },
+  {
+    "alt": "d+4",
+    "block": "-15",
+    "crush": "cs1~",
+    "damage": "6",
+    "hit": "-4",
+    "id": "Armor King-hFC.4",
+    "input": "hFC.4",
+    "name": "Crouch Shin Kick",
+    "notes": "* -4c on crouching hit",
+    "recv": "r34 FC",
+    "startup": "i14",
+    "target": "l",
+    "tot": "48"
   },
   {
     "alt": "H.BAD.f+1+2",

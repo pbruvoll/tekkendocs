@@ -23,7 +23,8 @@ columns = [
     {"wavuId": "tags", "displayName": "Tags"}, # this value is created by wavuParsing and not present in Wavu
     {"wavuId": "transitions", "displayName": "Transitions"}, # this value is created by this converter and not present in Wavu
     {"wavuId": "name", "displayName": "Name"},
-    {"wavuId": "recv", "displayName": "Recovery"},
+    {"wavuId": "recovery_frames", "displayName": "Recovery"}, # split out of the recv field of wavu by wavuParsing
+    {"wavuId": "recovery_state", "displayName": "Recovery state"}, # split out of the recv field of wavu by wavuParsing
     {"wavuId": "image", "displayName": "Image"},
     {"wavuId": "video", "displayName": "Video"},
     {"wavuId": "id", "displayName": "Wavu id"},
@@ -44,12 +45,9 @@ def getTransitions(move) :
     notes = re.sub(r'r\d+\??', '', move["notes"])
     matches = re.findall(r'(?:enter|cancel to|links to|transition to)\s+((?:(?:r\d|t\d|\d\d|cs|\+|-|\()[^\s]*\s+)*)?(\S*(\s\S*\s?(?:extensions|roll|step|tackle))?)', notes, re.IGNORECASE)
     filtered = [match[1] for match in matches if match[1].lower() not in transToIgnore]
-    recoveryValue = move.get("recv", "").split(" ")[-1]
-    if recoveryValue :
-        splitted = recoveryValue.split("/")
-        for recovery in splitted :
-            if not re.match(r'^[rs]\??$', recovery) and not re.match(r'^[irt]?\d', recovery) and not re.match(r'^js?\d?', recovery) and not re.match(r'^a?s', recovery) and not recovery == "ws" and not recovery == "HEAT" and not recovery == "H" :
-                filtered.append("FC" if recovery == "rFC" or recovery == "hFC" else recovery)
+    # a move recovering in a state transitions into it. recovery_state holds the
+    # state alone, such as "FC", and the states apart when there are several, as "BT JGS"
+    filtered.extend(move.get("recovery_state", "").split())
     if len(filtered) > 0 :
         filtered = [re.sub(r'[(),]', '', s) for s in filtered]
         allTrans.update({element: "1" for element in filtered})

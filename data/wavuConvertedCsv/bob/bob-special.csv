@@ -1,4 +1,12 @@
-Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Transitions;Name;Recovery;Image;Video;Wavu id;Character id
+Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Transitions;Name;Recovery;Recovery state;Image;Video;Wavu id;Character id
+H.df+3+4;l;20;i21;-13;+7;;"* Shift to BAL on hit
+* Partially consumes remaining Heat Time
+* High crush";cs;BAL;Breaking Villain à la Carte;;BAL;;;Bob-H.df+3+4;bob
+H.2+3;m,t;50;i16~17;+;+0d;;"* Heat Smash
+* Reversal Break
+* Balcony Break
+* Transition to attack throw on hit
+* Just frame input (H.2+3:3:4) for 10 more damage";hs rbr bbr;;Prix Fixe Justice Beat;;;;;Bob-H.2+3;bob
 R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Removes Recoverable Health
 * Reversal Break
@@ -7,33 +15,286 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Restores recoverable health on hit
 * Transition to attack throw on hit
 * Consumes Rage
-* Power crush 8~";ra rbr pc8~;;Ultimate Full-Course;r39;;;Bob-R.df+1+2;bob
-1;h;5;i10;+1;+8;;*;;;;;;;Bob-1;bob
+* Power crush 8~";ra rbr pc8~;;Ultimate Full-Course;39;;;;Bob-R.df+1+2;bob
+1;h;5;i10;+1;+8;;*;;;;;;;;Bob-1;bob
 1,1;h, h;5, 7;i10, i17;-3;+5;;"* Combos from 1st hit
-* Jails from 1st hit";;;;;;;Bob-1,1;bob
+* Jails from 1st hit";;;;;;;;Bob-1,1;bob
 1,1,2;h, h, h;5, 7, 12;i10, ,i19;-12;+3;;"* Combos from 1st hit
-* Jails from 1st hit";;;Straight Rondel;;;;Bob-1,1,2;bob
+* Jails from 1st hit";;;Straight Rondel;;;;;Bob-1,1,2;bob
 1,2;h, h;5, 10;i10, i13;-3;+7;;"* Combos from 1st hit
-* Jails from 1st hit";;;One Two Punch;;;;Bob-1,2;bob
+* Jails from 1st hit";;;One Two Punch;;;;;Bob-1,2;bob
 1,2,2;h, h, m;5, 10, 20;i10, ,i20~21;-14;+5;;"* Heat Engager
 
 * Heat Dash +5, +43d (+35)
 
 * Balcony Break
-* Combo from 1st hit CH";he bbr;;Appetizer Break;;;;Bob-1,2,2;bob
+* Combo from 1st hit CH";he bbr;;Appetizer Break;;;;;Bob-1,2,2;bob
 1,4;h, h;5, 15;i10, i16;-6;+5;;"* Combos from 1st hit
-* Jails from 1st hit";;;Course Sarat;;;;Bob-1,4;bob
-1,d+4;h, l;5, 13;i10, i22;-12;-1;;* Combos from 1st hit;;;Course Achuto;;;;Bob-1,d+4;bob
-2;h;;i10;0;+6;;*;;;;;;;Bob-2;bob
-2,1;h, m;10;i10, i23~25;-7;0;+3;* Combos from 1st hit;;;;;;;Bob-2,1;bob
+* Jails from 1st hit";;;Course Sarat;;;;;Bob-1,4;bob
+1,d+4;h, l;5, 13;i10, i22;-12;-1;;* Combos from 1st hit;;;Course Achuto;;;;;Bob-1,d+4;bob
+2;h;;i10;0;+6;;*;;;;;;;;Bob-2;bob
+2,1;h, m;10;i10, i23~25;-7;0;+3;* Combos from 1st hit;;;;;;;;Bob-2,1;bob
 2,1,3;h, m, m;10, 20;i10, ,i27~28;-10;+11d;;"* Combos from 2nd hit CH
-* Low crush";js;;Barista Swirl;;;;Bob-2,1,3;bob
-3;m;14;i15~16;-6;+5;;*;;;;;;;Bob-3;bob
-3,1;m, h;14, 11;i15~16, i19;-3;+8;;* Combos from 1st hit;;;;;;;Bob-3,1;bob
-3,1,1;m, h, m;14, 11, 20;i15~16, ,i19;-13;+6;+23a;* Combos from 2nd hit CH;;;Gaufrettes Cutter;;;;Bob-3,1,1;bob
+* Low crush";js;;Barista Swirl;;;;;Bob-2,1,3;bob
+3;m;14;i15~16;-6;+5;;*;;;;;;;;Bob-3;bob
+3,1;m, h;14, 11;i15~16, i19;-3;+8;;* Combos from 1st hit;;;;;;;;Bob-3,1;bob
+3,1,1;m, h, m;14, 11, 20;i15~16, ,i19;-13;+6;+23a;* Combos from 2nd hit CH;;;Gaufrettes Cutter;;;;;Bob-3,1,1;bob
 3,2;m, h;14, 20;i15~16, i22~23;+1;+19cg;+70a (+54);"* Balcony Break
 * Tornado
 * Combos from 1st hit
 * Delayable
-* Instant Tornado on CH";bbr trn;;Gaufrettes Punch;;;;Bob-3,2;bob
-3,3;m, m;14, 18;i15~16, i25~26;-13;+4a (-5);;* Balcony Break;bbr;;Croque-Madame;;;;Bob-3,3;bob
+* Instant Tornado on CH";bbr trn;;Gaufrettes Punch;;;;;Bob-3,2;bob
+3,3;m, m;14, 18;i15~16, i25~26;-13;+4a (-5);;* Balcony Break;bbr;;Croque-Madame;;;;;Bob-3,3;bob
+4;h;15;i13;-9;+4;+9;*;;;;;;;;Bob-4;bob
+4,3;h, h;15, 15;i13, i19~20;-9;+6;;* Combos from 1st hit;;;;;;;;Bob-4,3;bob
+4,3,4;h, h, m;15, 15, 20;i13, ,i28~33;-10;+4c;;"* Combos from 2nd hit CH
+* Low crush";js;;Hopping Monsieur;;;;;Bob-4,3,4;bob
+4,4;h, m;15, 22;i13, i32~37;+2c;+5d;;"* Spike
+* Combos from 1st hit CH
+* Low crush";spk js;;Hopping Macaron;;;;;Bob-4,4;bob
+1+2;m;18;i19~20;-13;+0c;;* Transition to +1, +14c BAL with F;;BAL;;;;;;Bob-1+2;bob
+1+2,1+2;m, m;18, 20;i19~20, i18~19;-15;+11a (-6);+26a (+18);"* Balcony Break
+* Combos from 1st hit
+* Delayable";bbr;;Black Poele;;;;;Bob-1+2,1+2;bob
+3+4;m,m;28;i25;-9;+1;;"*
+* Low crush";js;;;;;;;Bob-3+4;bob
+3+4,4;m,m, m;28, 14;i25, i28~29;-14;+16d;;"* Spike
+* Low crush";spk js;;;;;;;Bob-3+4,4;bob
+3+4,4,2;m,m, m, m;28, 14, 25;i25, ,i19~20;-14;+1a (-16);;"* Balcony Break
+* Combos from 2nd hit";bbr;;Supermax Parade;;;;;Bob-3+4,4,2;bob
+f+2;h;10;i12;-7;+3;;*;;;;;;;;Bob-f+2;bob
+f+2,3;h, m;10, 22;i12, i14~15;-15;+12a (+3);;"* Combos from 1st hit
+* Jails from 1st hit";;;Circle Whopper;;;;;Bob-f+2,3;bob
+f+2,H+1+2;h, m,m;10, 10,10;i12, i19i17;;;;"* Combos from 1st hit
+* Partially consumes remaining Heat Time
+* Low crush";js;;;;;;;Bob-f+2,H.1+2;bob
+f+2,H+1+2,1;h, m,m, 1;10, 10,10, 14;i12, ,i25~30;;+15d (-20);;"* Floor Break
+* Combos from 1st hit
+* Low crush";fbr js;;Federal Whopper à la Carte;;;;;Bob-f+2,H.1+2,1;bob
+f+3;m;18;i21~24;-2;+3c;+9c;*;;;;;;;;Bob-f+3;bob
+f+3,4;m, m;18, 23;i21~24, i28~29;+3;10a (+1);+55cs;"* Balcony Break
+* Combos from 1st hit CH";bbr;;Mergeuz Kick Combo;;;;;Bob-f+3,4;bob
+f+4;h;20;i16~17;-6;+19a;+3d;"* Homing
+* Shift to throw on CH from the front";hom;;Spinning Linguine;;;;;Bob-f+4;bob
+f+1+2;m;23;i16~17;-14;+12a (+3);;"* Balcony Break
+* Powercrush
+* Power crush";bbr pc;;Giga Jacker;;;;;Bob-f+1+2;bob
+f+3+4;;;;;;;"* Transition to BAL
+* High crush";cs;BAL;Spinner Ball;;;;;Bob-f+3+4;bob
+df+1;m;13;i14;-2;+5;;*;;;;;;;;Bob-df+1;bob
+df+1,2;m, m;13, 15;i14, i19;-10;+6;;"* Elbow
+* Combos from 1st hit
+* Jails from 1st hit";elb;;Escalope Elbow;;;;;Bob-df+1,2;bob
+df+1,d+1;m, m;13, 20;i14, i26~27;-13c;+6c;+13c;"* Elbow
+* Combos from 1st hit CH
+* Low crush";elb js;;Escalope Pound;;;;;Bob-df+1,d+1;bob
+df+2;m;14;i15~16;-8;+3;+33a (+23);*;;;Slash Darne;;;;;Bob-df+2;bob
+df+3;m;19;i19~20;-9;+19a (+2);+73a (+57);"* Balcony Break
+* Tornado
+* Instant Tornado on CH";bbr trn;;Shrimp Turnover;;;;;Bob-df+3;bob
+df+4;h;12;i13~14;-6;+5;;*;;;;;;;;Bob-df+4;bob
+df+4,3;h, h;12, 23;i13~14, i20~21;-8;+4;;"* Combos from 1st hit
+* Transition to +12g, +0 BAL with F";;BAL;Plain Ring;;;;;Bob-df+4,3;bob
+df+4,4;h, m;12, 24;i13~14, i25~26;;;;"* Heat Engager
+
+* Heat Dash +5, +43d (+35)
+
+* Balcony Break
+* Knee
+* Combo from 1st hit
+* Low crush";he bbr kne js;;Spicy Ring;;;;;Bob-df+4,4;bob
+d+1;m;18;i18~19;-8;+7c;+12d;*;;;Coupe Chop;;;;;Bob-d+1;bob
+d+2;m;12;i15;-9;+2;;*;;;;;;;;Bob-d+2;bob
+d+2,1;m, m;12, 11;i15, i14~15;-11;+0;;"* Combos from 1st hit
+* Jails from 1st hit";;;;;;;;Bob-d+2,1;bob
+d+2,1,2;m, m, m;12, 11, 18;i15, ,i22~24;-12;-1;;* Delayable;;;;;;;;Bob-d+2,1,2;bob
+d+2,1,2,2;m, m, m, m;12, 11, 18, 21;i15, ,i29;-15;+15a (+5);;"* Balcony Break
+* Combos from 3rd hit";bbr;;Combination Mince;;;;;Bob-d+2,1,2,2;bob
+d+2,3;m, m;12, 21;i15, i41;-2;+9;+67cs;* Knee;kne;;Combination Ble;;;;;Bob-d+2,3;bob
+d+2,4;m, m;12, 21;i15, i17;-13;+14a (+7);;"* Balcony Break
+* Combos from 1st hit
+* Jails from 1st hit
+* Low crush";bbr js;;Combination Baldo;;;;;Bob-d+2,4;bob
+d+3;l;12;i19~20;i18;-7;;"*
+* High crush";cs;;;;;;;Bob-d+3;bob
+d+3,4;l, h;12, 15;i19~20, i25~26;-8;+10g;;"* Balcony Break
+* Combos from 1st hit CH";bbr;;Panini Sweep;;;;;Bob-d+3,4;bob
+d+4;l;11;i16;-12;-1;;*;;;;;;;;Bob-d+4;bob
+d+4,3;l, h;11, 12;i16, i23~24;-7;-2;;* Combos from 1st hit CH;;;;;;;;Bob-d+4,3;bob
+d+4,3,4;l, h, m;11, 12, 15;i16, ,i25~26;-15;+8a (-1);;"Balcony Break
+Combos from 2nd hit CH";bbr;;Tornado Mixer;;;;;Bob-d+4,3,4;bob
+d+1+2;h,h;6,6;i14;-9;+2;;*;;;;;;;;Bob-d+1+2;bob
+d+1+2,2;h,h, m;6,6, 6;i14, i10~11;-8;+3;;"Combos from 1st hit
+Jails from 1st hit";;;;;;;;Bob-d+1+2,2;bob
+d+1+2,2,1;h,h, m, h;6,6, 6, 20;i14, ,i7~8;-16;+12a;;"Combos from 1st hit
+Jails from 1st hit
+Transition to -1d Ki Charge with U on hit";;Ki;Apicius Special;;;;;Bob-d+1+2,2,1;bob
+d+3+4;m;12,14;i15~16;-12;+21a (+14);;"*
+* High crush";cs;;Duck Flip;;;;;Bob-d+3+4;bob
+db+1;sl;5;i10;-5;+6;;"* Transition to r24 with f
+* +6c on crouching hit
+* High crush 4~";cs4~;FC;Crouch Jab;24;FC;;;Bob-db+1;bob
+db+2;m;17;i14;-8;+6;;*;;;Bite Uppercut;;;;;Bob-db+2;bob
+db+3;l;17;i20;-12;+2;+14g;*;;;Liaison Spike;;;;;Bob-db+3;bob
+db+4;l;15;i24~25;i12;-1;;"*
+* High crush";cs;;;;;;;Bob-db+4;bob
+db+4,4;l, m;15, 14;i24~25, i25~27;-12;-2;;"* Combos from 1st hit CH
+* Low crush";js;;;;;;;Bob-db+4,4;bob
+db+4,4,3;l, m, h;15, 14, 12;i24~25, ,i12;-9;+3;;* Combos from 2nd hit CH;;;;;;;;Bob-db+4,4,3;bob
+db+4,4,3,3;l, m, h, m;15, 14, 12, 18;i24~25, ,i35~38;-12;+29d;;* Combos from 3rd hit CH;;;Contorno Farce;;;;;Bob-db+4,4,3,3;bob
+db+1+2;m;16;i17~18;-13;+33a (+23);;"*
+* High crush";cs;;Abats Snipe;;;;;Bob-db+1+2;bob
+db+3+4;l;10;i19;-31;+6;;*;;;;;;;;Bob-db+3+4;bob
+db+3+4,4;l, l;10, 18;i19, i9;-28;+8c;+1d;* Combos from 1st hit;;;Huile Slip;;;;;Bob-db+3+4,4;bob
+b+1;m;15;i18~19;-8;+5c;;* Elbow;elb;;;;;;;Bob-b+1;bob
+b+1,2;m, m;15, 16;i18~19, i23~24;-8;+7;;* Combos from 1st hit;;;Ravenous;;;;;Bob-b+1,2;bob
+b+2;m;12;i13~14;-5;+6;;*;;;;;;;;Bob-b+2;bob
+b+2,1;m, m;12, 23;i13~14, i23;-13;+7;;"* Elbow
+* Combos from 1st hit
+* Transition to +12g BAL with F on hit";elb;BAL;Combination Salty;;;;;Bob-b+2,1;bob
+b+2,2;m, h;12, 12;i13~14, i18;-3;+8;;* Combos from 1st hit;;;;;;;;Bob-b+2,2;bob
+b+2,2,4;m, h, m;12, 12, 13;i13~14, ,i22;-13;+3;;"* Knee
+* Combos from 2nd hit CH
+* Delayable";kne;;;;;;;Bob-b+2,2,4;bob
+b+2,2,4,4;m, h, m, h;12, 12, 13, 20;i13~14, ,i23~24;-7;+18a (+9);;"* Balcony Break
+* Combos from 3rd hit";bbr;;Combination Bitter;;;;;Bob-b+2,2,4,4;bob
+b+3;m;20;i17~18;-15;+12a (+3);+27a (+21);*;;;Whopping Kick;;;;;Bob-b+3;bob
+b+3;m;20;i22~23;+3;+7;+9c;"* Transition to +12g, +7, +16c BAL with F
+* Low crush";js;BAL;Pepperoni Fall;;;;;Bob-u+3;bob
+b+4;m;13;i15;-11;+4;+9;* Knee;kne;;;;;;;Bob-b+4;bob
+b+4,3;m, m,h;13, 36;i15, i32,i15~16;-9;+17a (+0);;"* Balcony Break
+* Tornado
+* Combos from 1st hit CH
+* Transition to +25a (+8), +1 BAL with F
+* Just frame input to power up (4 more damage)
+* Low crush";bbr trn js;BAL;Combination Zesty;;;;;Bob-b+4,3;bob
+b+4,4;m, h;13, 20;i15, i23;-3;+18a (+9);;"* Balcony Break
+* Combos from 1st hit
+* 4 chip damage on block";bbr chp:4;;Combination Bittersweet;;;;;Bob-b+4,4;bob
+b+1+2;m;20;i17~18;-9;+8c;;* Head;hed;;;;;;;Bob-b+1+2;bob
+b+1+2,1;m, m;20, 10;i17~18, i30;-11;+0;;"* Combos from 1st hit CH
+* Delayable";;;;;;;;Bob-b+1+2,1;bob
+b+1+2,1,2;m, m, h;20, 10, 20;i17~18, ,i12;-16;+8a (-1);;"* Balcony Break
+* Combos from 2nd hit
+* Delayable
+* Jails from 2nd hit if no delay";bbr;;Three Star Combo;;;;;Bob-b+1+2,1,2;bob
+b+3+4;m;26;i18~20;-7;+18a (+8);;"*
+* 5 chip damage on block
+* Low crush";chp:5 js;;Onigiri Bomber;;;;;Bob-b+3+4;bob
+ub+1;m;25;i26;-15;+15a (+6);;* Balcony Break;bbr;;Hot Cross Bun;;;;;Bob-ub+1;bob
+ub+4;;;;;;;"* Transition to BAL with F
+* Low crush";js;BAL;;;;;;Bob-ub+4;bob
+ub+4,1;m;25;i11~13;-9;+11a (+2);;"* Balcony Break
+* Low crush";bbr js;;Hatching Punch;;;;;Bob-ub+4,1;bob
+ub+3+4;m,m;12;i18,i10;-9;+18a (+11);;*;;;;;;;;Bob-ub+3+4;bob
+ub+3+4,4;m,m, m;12, 16;i18,i10, i29~31;-11;+21a (+14);;"* Balcony Break
+* Combos from 1st hit
+* Low crush";bbr js;;Runner Flip;;;;;Bob-ub+3+4,4;bob
+u+1+2;m;15;i16~18;-11;-3;;"* Head
+* Transition to +8, +0 BAL with F
+* Low crush";hed js;BAL;;;;;;Bob-u+1+2;bob
+u+1+2,4;m, h;15, 20;i16~18, i18~19;-8;-2d;;"* Tornado
+* Combos from 1st hit
+* Low crush";trn js;;Cracker Rigatoni;;;;;Bob-u+1+2,4;bob
+u+1+2,1+2;m, m;15, 25;i16~18, i18~22;-17;+8a (-1);;"* Balcony Break
+* Combos from 1st hit
+* Delayable";bbr;;Cracker Jacker;;;;;Bob-u+1+2,1+2;bob
+u+3+4;m;20;i24~28;+1;+6c;;"* 4 chip damage on block
+* High crush";chp:4 cs;fc;Strainer;;fc;;;Bob-u+3+4;bob
+uf+1;m;10;i16;-9;+3;;*;;;;;;;;Bob-uf+1;bob
+uf+1,2;m, m;10, 16;i16, i20~21;-9;+8;;* Combos from 1st hit;;;Double Pound;;;;;Bob-uf+1,2;bob
+H.uf+1,2,2;m, m, m;10, 16, 24;i16, ,i31;;+23a (+13);;"* Balcony Break
+* Combos from 1st hit
+* Partially consumes remaining Heat Time";bbr;;Verdict Pound à la Carte;;;;;Bob-uf+1,2,H.2;bob
+uf+3;m;20;i20;-13;+33a (+23);;"*
+* Low crush";js;;Flying Jambon;;;;;Bob-uf+3;bob
+uf+4;m;20;i26~28;-4;+22a;;"*
+* Low crush";js;;Langouste Tail;;;;;Bob-uf+4;bob
+uf+3+4;l,h;10,12;i21;-25,-15;-4;;"*
+* Low crush";js;;;;;;;Bob-uf+3+4;bob
+uf+3+4,4;l,h, h;10,12, 20;i21, i18;-4;+22a (+18);;"* Balcony Break
+* Combos from 1st hit";bbr;;Rolling Kebab;;;;;Bob-uf+3+4,4;bob
+,2;h;21;i24~25;+;;;"* Heat Engager
+
+* Heat Dash +5, 
+
+* Balcony Break";he bbr;;Lyonnaise Pressure;;;;;Bob-BAL.1,2;bob
+b,B+1+4;m!;60;i72~74;;+7d;;"* Unblockable
+* Cancel with DB
+* Low crush";js;;Grater Langouste;;;;;Bob-b,B+1+4;bob
+b,B+1+4,2;m;25;?;-11;+11a;;* Balcony Break;bbr;;Grater Langouste Feint Knuckle;;;;;Bob-b,B+1+4,2;bob
+b,B+2+3;m!;25;i48~5-;!;+13d;;"* Strong Aerial Tailspin
+* Unblockable
+* Low crush";js;;Quick Langouste;;;;;Bob-b,B+2+3;bob
+f,F+2;m;21;i14;-8;+14d;;"* Heat Engager
+
+* Heat Dash +5, +36a (+26)
+
+* Balcony Break";he bbr;;Zip Cutter;;;;;Bob-f,F+2;bob
+f,F+3;m;18;i18~19;-6;+32a;;"* Balcony Break
+* Strong Aerial Tailspin
+* Transition to +2, +40d CD with DF
+* Low crush";bbr js;CD;Jumbo Pancake;;;;;Bob-f,F+3;bob
+f,F+4;m;12;i22~23;-9;+2;;"* Homing
+* Low crush";hom js;;;;;;;Bob-f,F+4;bob
+f,F+4,4;m, m;12, 20;i22~23, i14~16;i12;+11a (+2);;"* Balcony Break
+* Combos from 1st hit
+* On 1st hit hit or block only
+* Low crush";bbr js;;Double Chapati;;;;;Bob-f,F+4,4;bob
+f,n,d,df;;;;;;;* Cannot be buffered;;;United Step;;;;;Bob-f,n,d,df;bob
+f,n,d,df+1;h;21;i13~14;-4;+78a (+62);;"* Balcony Break
+* Instant Tornado on hit
+* Actual startup i16 (i15 at the fastest)
+* 4 chip damage on block";bbr chp:4;;Langue Washer;;;;;Bob-f,n,d,df+1;bob
+uf,n,4;m;20;i23~25;-13;+32a (+22);;"*
+* Low crush";js;;Delayed Rising Toe Kick;;;;;Bob-uf,n,4;bob
+f,f,F+3;m;30;i20~24;+6;+10a (+0);;"* Balcony Break
+* Low crush";bbr js;;Perfect Slash;;;;;Bob-f,f,F+3;bob
+f,f,F+3+4;m;27;i26~33;+0;+2d;;"* Balcony Break
+* 5 chip damage on block
+* Low crush";bbr chp:5 js;;Supersize Missile;;;;;Bob-f,f,F+3+4;bob
+ws1;m;11;i13~15;-11;+0;;* Elbow;elb;;;;;;;Bob-ws1;bob
+ws1,2;m, h;11, 23;i13~15, i24~25;-5;+8a (-1);;"* Heat Engager
+
+* Heat Dash +5, +43d (+35)
+
+* Balcony Break
+* Combos from 1st hit
+* 4 chip damage on block
+* Low crush";he bbr chp:4 js;;Slash Butcher;;;;;Bob-ws1,2;bob
+ws1,3;m, m;11, 25;i13~15, i25~26;-13;+11a (+2);;"* Balcony Break
+* Combos from 1st hit";bbr;;Hot Guimauve;;;;;Bob-ws1,3;bob
+ws2;m;10;i14;-7;+4;;*;;;;;;;;Bob-ws2;bob
+ws2,1;m, m;10, 10;i14, i28~31;-20;+33a (+23);;"* Tornado
+* Combos from 1st hit";trn;;Spinach Upper;;;;;Bob-ws2,1;bob
+ws2,2;m, m;10, 20;i14, i23;-13c;+5c;+17d;"* Combos from 1st hit
+* Delayable";;;Spinach Hammer;;;;;Bob-ws2,2;bob
+ws3;h;17;i17~18;-8;+17a (+8);;"* Balcony Break
+* Homing";bbr hom;;;;;;;Bob-ws3;bob
+ws3,3+4;h, m;17, 28;i17~18, i33~41;-4c;+17d;;"* Floor Break
+* Combos from 1st hit
+* Low crush";fbr js;;Brioche Star;;;;;Bob-ws3,3+4;bob
+ws4;m;16;i11~12;-6;+5;;*;;;Toe Smash;;;;;Bob-ws4;bob
+ws1+2;m;20;i15~17;-8;+17a (+10);+31a (+21);*;;;Rising Matzo;;;;;Bob-ws1+2;bob
+SS.1+2;m;24;i15~16;-5c;+13a;;* Balcony Break;bbr;;Banh mi Strike;;;;;Bob-SS.1+2;bob
+FC.df+2;m;14;i14;-8;+3;;*;;;;;;;;Bob-FC.df+2;bob
+FC.df+2,1;m, m;14, 12;i14, i21;-7;+4;;* Combos from 1st hit;;;;;;;;Bob-FC.df+2,1;bob
+FC.df+2,1,1+2;m, m, m;14, 12, 25;i14, ,i26;-13;+11a (+2);;"* Balcony Break
+* Combos from 2nd hit CH
+* Delayable";bbr;;Polpo Swing;;;;;Bob-FC.df+2,1,1+2;bob
+FC.df+4;l;14;i19;-12;+3;+29d;"*
+* High crush";cs;;Gourmand Swing;;;;;Bob-FC.df+4;bob
+H.,4;m;11,14;i24~25;+;+0d;;"* Floor Break
+* Transition to attack throw on front hit
+* Combos from 1st hit
+* Partially consumes remaining Heat Time";fbr;;Lyonnaise Lockdown à la Carte;;;;;Bob-BAL.1,H.4;bob
+BT.d+2;m;17;i15~16;-9;+14a (+5);+59cs;* Balcony Break;bbr;;Plague Pick;;;;;Bob-BT.d+2;bob
+hFC.1;sl;5;i10;-5;+6;;"* Transition to r24 with f
+* +6c on crouching hit
+* High crush 1~";cs1~;FC;Crouch Jab;24;FC;;;Bob-hFC.1;bob
+hFC.2;sl;8;i11;-4;+7;;"* +7c on crouching hit
+* High crush 1~";cs1~;FC;Crouch Straight;23;FC;;;Bob-hFC.2;bob
+hFC.3;L;12;i16;-16;-6;;"-2c on crouching hit
+* High crush 1~";cs1~;FC;Crouch Spin Kick;32;FC;;;Bob-hFC.3;bob
+hFC.4;l;6;i12;-15;-4;;"* -4c on crouching hit
+* High crush 1~";cs1~;FC;Crouch Shin Kick;34;FC;;;Bob-hFC.4;bob

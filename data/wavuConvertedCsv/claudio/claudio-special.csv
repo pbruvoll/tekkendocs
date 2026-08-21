@@ -1,17 +1,17 @@
-Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Transitions;Name;Recovery;Image;Video;Wavu id;Character id
+Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Transitions;Name;Recovery;Recovery state;Image;Video;Wavu id;Character id
 2+3;m;"[12;12]";i16;+1;+2c;;"* Heat Burst
 * Cancel to r45 with b,b on frame 42
 * 2 chip damage on block
 * 12 chip damage on hit
 * Only deals recoverable damage
 * Cannot cause a K.O.
-* Power crush 7~16";hb chp:2 pc7~16;;Heat Burst;r30;;;Claudio-2+3;claudio
+* Power crush 7~16";hb chp:2 pc7~16;;Heat Burst;30;;;;Claudio-2+3;claudio
 H.2+3;L,M;40;i18~19;-14;+11d;;"* Heat Smash
 * Reversal Break
 * Balcony Break
 * Transition to attack throw on hit
 * Chip damage on block
-* Pseudo homing low?";hs rbr bbr chp;;Stella Cadente;r44;;;Claudio-H.2+3;claudio
+* Pseudo homing low?";hs rbr bbr chp;;Stella Cadente;44;;;;Claudio-H.2+3;claudio
 R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Removes Recoverable Health
 * Reversal Break
@@ -20,18 +20,18 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Restores recoverable health on hit
 * Transition to attack throw on hit
 * Consumes Rage
-* Power crush 8~";ra rbr pc8~;;La Luce Di Sirio;r39;;;Claudio-R.df+1+2;claudio
-1;h;5;i10;+1;+8;;Recovers 2f faster on hit or block (t27 r17);;;Jab;r19;;File:t8-p2-claudio-1,2.mp4;Claudio-1;claudio
+* Power crush 8~";ra rbr pc8~;;La Luce Di Sirio;39;;;;Claudio-R.df+1+2;claudio
+1;h;5;i10;+1;+8;;Recovers 2f faster on hit or block (t27 r17);;;Jab;19;;;File:t8-p2-claudio-1,2.mp4;Claudio-1;claudio
 1,2;h, h;5, 12;i10, i13~14;-3;+8;;"* Jail from 1st attack with 5f delay
 * Input can be delayed 5f
-* Move can be delayed 4f";;;Scattered Ashes;r20;;File:t8-p2-claudio-1,2.mp4;Claudio-1,2;claudio
+* Move can be delayed 4f";;;Scattered Ashes;20;;;File:t8-p2-claudio-1,2.mp4;Claudio-1,2;claudio
 1,3;h, l;5, 11;i10, i22;-12;-1;;"* Combo from 1st CH with 3f delay
 * Interrupt with i4 from 1st block
 * Input can be delayed 5f
-* Move can be delayed 4f";intr:4;;Absolve;r31;;File:t8-p2-claudio-1,3.mp4;Claudio-1,3;claudio
-2;h;10;i12;-3;+3;;;;;Right Jab;r22;;File:t8-p2-claudio-2,1,2.mp4;Claudio-2;claudio
+* Move can be delayed 4f";intr:4;;Absolve;31;;;File:t8-p2-claudio-1,3.mp4;Claudio-1,3;claudio
+2;h;10;i12;-3;+3;;;;;Right Jab;22;;;File:t8-p2-claudio-2,1,2.mp4;Claudio-2;claudio
 2,1;h, m;10, 13;i12, i20;-6;+5;;"* Combo from 1st hit with 2f delay
-* Interrupt with i2 from 1st block";intr:2;;;r25;;File:t8-p2-claudio-2,1,2.mp4;Claudio-2,1;claudio
+* Interrupt with i2 from 1st block";intr:2;;;25;;;File:t8-p2-claudio-2,1,2.mp4;Claudio-2,1;claudio
 2,1,2;h, m, m;10, 13, 25;i12, ,i16~18;-13;+12a (+3);;"* Heat Engager
 
 * Heat Dash +5, +62a (+42)
@@ -43,8 +43,8 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Input can be delayed 15f
 * Move can be delayed 10f
 * Transition to r65 STB on hit without STB
-* -10a (-1) upon STB gain on an airborne hit";he bbr intr:1;STB;Circle of Judgment;r36;;File:t8-p2-claudio-2,1,2.mp4;Claudio-2,1,2;claudio
-3;m;14;i14;-10;+1;;* Tracks sidestep right and sidewalk right completely?;;;;r28;;File:t8-p2-claudio-3,2.mp4;Claudio-3;claudio
+* -10a (-1) upon STB gain on an airborne hit";he bbr intr:1;STB;Circle of Judgment;36;;;File:t8-p2-claudio-2,1,2.mp4;Claudio-2,1,2;claudio
+3;m;14;i14;-10;+1;;* Tracks sidestep right and sidewalk right completely?;;;;28;;;File:t8-p2-claudio-3,2.mp4;Claudio-3;claudio
 3,2;m, h;14, 22;i14, i22~23;-6;+25a (+16);;"* Heat Engager
 
 * Heat Dash +5, +43d (+35)
@@ -52,61 +52,62 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Balcony Break
 * Transition to r55 STB on hit without STB
 * -6a (-13) upon STB gain on an airborne hit
-* Interrupt with i5 from 1st block";he bbr intr:5;STB;Requiescat;r24;;File:t8-p2-claudio-3,2.mp4;Claudio-3,2;claudio
-4;h;13;i12;-11;+5;+9s;* Pseudo homing to sidestep left and sidewalk left?;;;High Kick;r30;;File:t8-p2-claudio-4,3.mp4;Claudio-4;claudio
+* Interrupt with i5 from 1st block";he bbr intr:5;STB;Requiescat;24;;;File:t8-p2-claudio-3,2.mp4;Claudio-3,2;claudio
+4;h;13;i12;-11;+5;+9s;* Pseudo homing to sidestep left and sidewalk left?;;;High Kick;30;;;File:t8-p2-claudio-4,3.mp4;Claudio-4;claudio
 4,3;h, h;13, 14;i12, i25~26;+1;+15g;;"* Homing
 * Balcony Break
 * Combo from 1st hit with 1f delay
 * +22a (+15) if the 1st hit counterhits
 * Interrupt with i6 from 1st block
-* Low crush 17~30";hom bbr intr:6 js17~30;;Battle Scars;r27;;File:t8-p2-claudio-4,3.mp4;Claudio-4,3;claudio
+* Low crush 17~30";hom bbr intr:6 js17~30;;Battle Scars;27;;;File:t8-p2-claudio-4,3.mp4;Claudio-4,3;claudio
 STB.4,2;h, sm;13, 32;i12, i28-36;-19~-11;+27a (+1);;"* Tornado
 * Balcony Break
 * Weapon
 * Combo from 1st hit with 1f delay
 * 6 chip damage on block
 * Consumes STB
-* Consumes 240F of remaining Heat time";trn bbr wpn chp:6;;Aurora Pactum;r33;;File:t8-p2-claudio-4,stb.2.mp4;Claudio-4,STB.2;claudio
-1+2;m;20;i17;-14;+2c;;Floor Break;fbr;;Crimson Delta Edge;r38;;File:t8-p2-claudio-1+2.mp4;Claudio-1+2;claudio
+* Consumes 240F of remaining Heat time";trn bbr wpn chp:6;;Aurora Pactum;33;;;File:t8-p2-claudio-4,stb.2.mp4;Claudio-4,STB.2;claudio
+1+2;m;20;i17;-14;+2c;;Floor Break;fbr;;Crimson Delta Edge;38;;;File:t8-p2-claudio-1+2.mp4;Claudio-1+2;claudio
 1+2,1+2;m, t;20, 10;i17, i17;;+0;;"* Combo from 1st hit
 * Only comes out on standing hit
 * Doesn't work at tip range
 * Doesn't work in the side or back
-* Not a timed input";;;;r48;;;Claudio-1+2,1+2;claudio
+* Not a timed input";;;;48;;;;Claudio-1+2,1+2;claudio
 1+2,1+2,2;m, t, t;20, 10, 18;i17, ,i17;;-5d or +0d;;"* Combo from 1st hit
 * Gain STB on hit
 * -5d vs FUFT when gaining STB
 * +0d vs FUFA if already STB
 * Deals 20 damage with input b,f+2
-* Not a timed input";;;Crimson Delta Edge to Starburst;r101 STB or r76;;;Claudio-1+2,1+2,2;claudio
+* Not a timed input
+* Transition to r101 STB on hit without STB";;STB;Crimson Delta Edge to Starburst;76;;;;Claudio-1+2,1+2,2;claudio
 3+4;M;28;i24~26;-11c;+4a;;"* Floor Break
 * Low crush 13~22
-* Floating state 23~25";fbr js13~22 fs23~25;FC;Rolling Strike;r34 FC;;File:t8-p2-claudio-3+4.mp4;Claudio-3+4;claudio
-f+2;h;9;i12;+0;+6;;* Homing to sidestep left and sidewalk left?;;;;r19;;File:t8-p2-claudio-f+2,1,1+2.mp4;Claudio-f+2;claudio
+* Floating state 23~25";fbr js13~22 fs23~25;FC;Rolling Strike;34;FC;;File:t8-p2-claudio-3+4.mp4;Claudio-3+4;claudio
+f+2;h;9;i12;+0;+6;;* Homing to sidestep left and sidewalk left?;;;;19;;;File:t8-p2-claudio-f+2,1,1+2.mp4;Claudio-f+2;claudio
 f+2,1;h, m;9, 12;i12, i15~16;-10;+6c;;"* Floor Break
 * Combo from 1st hit
-* Jail from 1st block with ?F delay";fbr;;;r33;;File:t8-p2-claudio-f+2,1,1+2.mp4;Claudio-f+2,1;claudio
+* Jail from 1st block with ?F delay";fbr;;;33;;;File:t8-p2-claudio-f+2,1,1+2.mp4;Claudio-f+2,1;claudio
 f+2,1,1+2;h, m, m;9, 12, 25;i12, ,i21~22;-18;+7a (-2);;"* Balcony Break
 * Shoulder
 * Combo from 1st CH with 16F delay
 * Move cannot be interrupted
 * Input can be delayed 16F
-* Move can be delayed 12F";bbr shd;;Trinity of Pain;r37;;File:t8-p2-claudio-f+2,1,1+2.mp4;Claudio-f+2,1,1+2;claudio
+* Move can be delayed 12F";bbr shd;;Trinity of Pain;37;;;File:t8-p2-claudio-f+2,1,1+2.mp4;Claudio-f+2,1,1+2;claudio
 f+2,2;h, m;9, 20;i12, i14;-26;+18a (-13);;"* Balcony break on airborne hit
 * Combo from 1st hit
 * Jail from 1st block with ?F delay
 * Transition to r67 STB on hit without STB
-* Tremendous backstep on block";;STB;Deadly Sin;r46;;File:t8-p2-claudio-f+2,2.mp4;Claudio-f+2,2;claudio
+* Tremendous backstep on block";;STB;Deadly Sin;46;;;File:t8-p2-claudio-f+2,2.mp4;Claudio-f+2,2;claudio
 f+3;h;18;i18;+1;+15g;+14;"* Homing
 * Balcony Break
 * +22a (+13) on BT hit
-* Low crush 9~24";hom bbr js9~24;;Sacred Edge;r28;;File:t8-p2-claudio-f+3.mp4;Claudio-f+3;claudio
-f+4;m;23;i22~23;+4c;+4c;+28d;;;;Into the Abyss;r25;;File:t8-p2-claudio-f+4.mp4;Claudio-f+4;claudio
-f+1+2;m;8;i16;-18;-7;;;;;Cross Arm Strike;r37;;File:t8-p2-claudio-f+1+2,1+2.mp4;Claudio-f+1+2;claudio
+* Low crush 9~24";hom bbr js9~24;;Sacred Edge;28;;;File:t8-p2-claudio-f+3.mp4;Claudio-f+3;claudio
+f+4;m;23;i22~23;+4c;+4c;+28d;;;;Into the Abyss;25;;;File:t8-p2-claudio-f+4.mp4;Claudio-f+4;claudio
+f+1+2;m;8;i16;-18;-7;;;;;Cross Arm Strike;37;;;File:t8-p2-claudio-f+1+2,1+2.mp4;Claudio-f+1+2;claudio
 f+1+2,1+2;m, m;8, 16;i16, i18;-14;+4a;;"* Combo from 1st hit with 11f delay
 * Jail from 1st block with no delay
 * Input can be delayed 11f
-* Move can be delayed 10f";;;Cross Arm Impact;r36;;File:t8-p2-claudio-f+1+2,1+2.mp4;Claudio-f+1+2,1+2;claudio
+* Move can be delayed 10f";;;Cross Arm Impact;36;;;File:t8-p2-claudio-f+1+2,1+2.mp4;Claudio-f+1+2,1+2;claudio
 STB.f+1+2,1+2;m, m;8, 16;i16, i18;-9;+64a;;"* Balcony Break
 * Jail from 1st attack with 1f delay
 * Combo from 1st hit with 11f delay
@@ -114,84 +115,84 @@ STB.f+1+2,1+2;m, m;8, 16;i16, i18;-9;+64a;;"* Balcony Break
 * Move can be delayed 10f
 * 3 chip damage on block
 * Consumes STB
-* Consumes 600F of remaining Heat time";bbr chp:3;;Cross Arm Impact Burst;r36;;File:t8-p2-claudio-f+1+2,stb.1+2.mp4;Claudio-f+1+2,STB.1+2;claudio
+* Consumes 600F of remaining Heat time";bbr chp:3;;Cross Arm Impact Burst;36;;;File:t8-p2-claudio-f+1+2,stb.1+2.mp4;Claudio-f+1+2,STB.1+2;claudio
 f+3+4;h;18;i17~18;-4;+19a;;"* Balcony Break (airborne)
 * 3 chip damage on block
-* Has good right sidestep tracking";chp:3;;Above the Storm;r35;;File:t8-p2-claudio-f+3+4.mp4;Claudio-f+3+4;claudio
-df+1;m;10;i15;-4;+7;;* Cannot be sidestepped or sidewalked right?;;;Quick Upper;r22;;File:t8-p2-claudio-df+1,2.mp4;Claudio-df+1;claudio
+* Has good right sidestep tracking";chp:3;;Above the Storm;35;;;File:t8-p2-claudio-f+3+4.mp4;Claudio-f+3+4;claudio
+df+1;m;10;i15;-4;+7;;* Cannot be sidestepped or sidewalked right?;;;Quick Upper;22;;;File:t8-p2-claudio-df+1,2.mp4;Claudio-df+1;claudio
 df+1,2;m, m;10, 15;i15, i23~24;-15;+31a (+21);;"* Combo from 1st hit with 1f delay
-* Interrupt with i4 from 1st block";intr:4;;Sky's Arc;r33;;File:t8-p2-claudio-df+1,2.mp4;Claudio-df+1,2;claudio
+* Interrupt with i4 from 1st block";intr:4;;Sky's Arc;33;;;File:t8-p2-claudio-df+1,2.mp4;Claudio-df+1,2;claudio
 df+2;m;19;i14;-13;+5;+57a;"* Gain STB on counterhit
-* Completely homing to SSL/SWL?";;;Chaos Fist;r32;;File:t8-p2-claudio-df+2.mp4;Claudio-df+2;claudio
-df+3;m;12;i14;-7;+6;;* Completely homing to SSR/SWR?;;;;r46;;File:t8-p2-claudio-df+3,1.mp4;Claudio-df+3;claudio
+* Completely homing to SSL/SWL?";;;Chaos Fist;32;;;File:t8-p2-claudio-df+2.mp4;Claudio-df+2;claudio
+df+3;m;12;i14;-7;+6;;* Completely homing to SSR/SWR?;;;;46;;;File:t8-p2-claudio-df+3,1.mp4;Claudio-df+3;claudio
 df+3,1;m, m;12, 18;i14, i17~19;-14;+29a (+14);;"* Tornado
 * Combo from 1st hit with 14f delay
 * Interrupt with i3 from 1st block
 * Input can be delayed 14f
-* Move can be delayed 8f";trn intr:3;;Dispel Magic;r34;;File:t8-p2-claudio-df+3,1.mp4;Claudio-df+3,1;claudio
+* Move can be delayed 8f";trn intr:3;;Dispel Magic;34;;;File:t8-p2-claudio-df+3,1.mp4;Claudio-df+3,1;claudio
 df+3,2;m, h;12, 10;i14, i15;-1;+5;;"* Combo from 1st hit with 14f delay
 * Move cannot be interrupted
 * Input can be delayed 14f
-* Move can be delayed 9f";;;Dispel Force;r20;;File:t8-p2-claudio-df+3,2.mp4;Claudio-df+3,2;claudio
-df+4;m;14;i13;-8;+3;;;;;Front Kick;r27;;;Claudio-df+4;claudio
-d+1;m;14;i17~18;-8;+2;;;;;Axion;r27;;File:t8-p2-claudio-d+1,2.mp4;Claudio-d+1;claudio
+* Move can be delayed 9f";;;Dispel Force;20;;;File:t8-p2-claudio-df+3,2.mp4;Claudio-df+3,2;claudio
+df+4;m;14;i13;-8;+3;;;;;Front Kick;27;;;;Claudio-df+4;claudio
+d+1;m;14;i17~18;-8;+2;;;;;Axion;27;;;File:t8-p2-claudio-d+1,2.mp4;Claudio-d+1;claudio
 d+1,2;m, m;14, 15;i17~18, i28~29;-9;+4;;"* Tornado
 * Combo from 1st CH
 * Interrupt with i8 from 1st block
-* Whiffs vs SSL, SWL from 1st block";trn stp:SSL intr:8;;Mystic Ray;r36;;File:t8-p2-claudio-d+1,2.mp4;Claudio-d+1,2;claudio
+* Whiffs vs SSL, SWL from 1st block";trn stp:SSL intr:8;;Mystic Ray;36;;;File:t8-p2-claudio-d+1,2.mp4;Claudio-d+1,2;claudio
 STB.d+1,2;m, M;14, 23;i17~18, i28;+6;+28a (+13);;"* Tornado
 * Combo from 1st hit
 * 4 chip damage on block
 * Interrupt with i8 from 1st block
 * Whiffs vs SSL, SWL from 1st block
 * Consumes STB
-* Consumes 240F of remaining Heat time";trn stp:SSL intr:8 chp:4;;Mystic Ray Burst;r36;;File:t8-p2-claudio-d+1,stb.2.mp4;Claudio-d+1,STB.2;claudio
-d+2;L;6;i20;-11;+0;;* High crush 6~;cs6~;FC;;r30 FC;;File:t8-p2-claudio-d+2,2.mp4;Claudio-d+2;claudio
+* Consumes 240F of remaining Heat time";trn stp:SSL intr:8 chp:4;;Mystic Ray Burst;36;;;File:t8-p2-claudio-d+1,stb.2.mp4;Claudio-d+1,STB.2;claudio
+d+2;L;6;i20;-11;+0;;* High crush 6~;cs6~;FC;;30;FC;;File:t8-p2-claudio-d+2,2.mp4;Claudio-d+2;claudio
 d+2,2;L, L;6, 8;i20, i16~17;-13;-1;;"* Jail from 1st block
 * Combo from 1st hit
-* High crush 1~";cs1~;FC;Gravity Hole;r32 FC;;File:t8-p2-claudio-d+2,2.mp4;Claudio-d+2,2;claudio
+* High crush 1~";cs1~;FC;Gravity Hole;32;FC;;File:t8-p2-claudio-d+2,2.mp4;Claudio-d+2,2;claudio
 d+3;L;10;i16;-17;-6;;"* -6c on crouching hit
-* High crush 4~";cs4~;FC;Crouch Spin Kick;r36 FC;;;Claudio-d+3;claudio
+* High crush 4~";cs4~;FC;Crouch Spin Kick;36;FC;;;Claudio-d+3;claudio
 d+4;l;6;i12;-15;-4;;"* -4c on crouching hit
-* High crush 4~";cs4~;FC;Crouch Shin Kick;r34 FC;;;Claudio-d+4;claudio
+* High crush 4~";cs4~;FC;Crouch Shin Kick;34;FC;;;Claudio-d+4;claudio
 d+1+2;m;28;i13~14;-18;+7a (-2);;"* Balcony Break
-* Shoulder";bbr shd;;Superbia;r37;;File:t8-p2-claudio-d+1+2.mp4;Claudio-d+1+2;claudio
+* Shoulder";bbr shd;;Superbia;37;;;File:t8-p2-claudio-d+1+2.mp4;Claudio-d+1+2;claudio
 db+1;sl;5;i10;-5;+6;;"* Transition to r24 with f
 * +6c on crouching hit
-* High crush 4~";cs4~;FC;Crouch Jab;r24 FC;;;Claudio-db+1;claudio
+* High crush 4~";cs4~;FC;Crouch Jab;24;FC;;;Claudio-db+1;claudio
 db+2;sl;8;i11;-4;+7;;"* +7c on crouching hit
-* High crush 4~";cs4~;FC;Crouch Straight;r23 FC;;File:t8-p2-claudio-db+2,1.mp4;Claudio-db+2;claudio
+* High crush 4~";cs4~;FC;Crouch Straight;23;FC;;File:t8-p2-claudio-db+2,1.mp4;Claudio-db+2;claudio
 db+2,1;sl, m;8, 12;i11, i18;-9;+3;;"* Combo from 1st CH
 * Move cannot be interrupted
-* High crush 1~";cs1~;FC;Twin Claws;r32 FC;;File:t8-p2-claudio-db+2,1.mp4;Claudio-db+2,1;claudio
-db+3;L;17;i21~22;-15~-14;+3c;+13c;* High crush 6~;cs6~;FC;Acedia;r33 FC;;File:t8-p2-claudio-db+3.mp4;Claudio-db+3;claudio
-db+4;L;7;i15;-13;-2;;* Pseudo homing to SSL/SWL side?;;;;r32;;File:t8-p2-claudio-db+4,3.mp4;Claudio-db+4;claudio
+* High crush 1~";cs1~;FC;Twin Claws;32;FC;;File:t8-p2-claudio-db+2,1.mp4;Claudio-db+2,1;claudio
+db+3;L;17;i21~22;-15~-14;+3c;+13c;* High crush 6~;cs6~;FC;Acedia;33;FC;;File:t8-p2-claudio-db+3.mp4;Claudio-db+3;claudio
+db+4;L;7;i15;-13;-2;;* Pseudo homing to SSL/SWL side?;;;;32;;;File:t8-p2-claudio-db+4,3.mp4;Claudio-db+4;claudio
 db+4,3;L, h;7, 10;i15, i18;-11;+0;;"* Combo from 1st hit with 1f delay
-* -30 from 1st block";;;Lagrange Needle;r30;;File:t8-p2-claudio-db+4,3.mp4;Claudio-db+4,3;claudio
+* -30 from 1st block";;;Lagrange Needle;30;;;File:t8-p2-claudio-db+4,3.mp4;Claudio-db+4,3;claudio
 db+1+2;M;20;i17~18;-12;+8a (-9);+62a (+46);"* Tornado
 * Balcony Break
 * High crush 6~16
 * Low crush 20~32
-* Floating state 33~35";trn bbr cs6~16 js20~32 fs33~35;;Blue Moon;r41;;File:t8-p2-claudio-db+1+2.mp4;Claudio-db+1+2;claudio
+* Floating state 33~35";trn bbr cs6~16 js20~32 fs33~35;;Blue Moon;41;;;File:t8-p2-claudio-db+1+2.mp4;Claudio-db+1+2;claudio
 b+1;m;17;i18~19;-8;+9a;;"* Homing
-* Balcony Break";hom bbr;;Vanishing Storm;r35;;File:t8-p2-claudio-b+1.mp4;Claudio-b+1;claudio
+* Balcony Break";hom bbr;;Vanishing Storm;35;;;File:t8-p2-claudio-b+1.mp4;Claudio-b+1;claudio
 b+2;h;25;i14;-9;+9a;;"* Tornado
-* Pseudo homing?";trn;;Spinning Skies;r30;;File:t8-p2-claudio-b+2.mp4;Claudio-b+2;claudio
+* Pseudo homing?";trn;;Spinning Skies;30;;;File:t8-p2-claudio-b+2.mp4;Claudio-b+2;claudio
 b+3;m;14;i13;-4;+7;;"* Knee
-* Completely homing to SSL/SSR/SWR?";kne;;Burning Core;r23;;File:t8-p2-claudio-b+3,n,3.mp4;Claudio-b+3;claudio
+* Completely homing to SSL/SSR/SWR?";kne;;Burning Core;23;;;File:t8-p2-claudio-b+3,n,3.mp4;Claudio-b+3;claudio
 b+3,n,3;m, m;14, 21;i13, i24~25;-12;+9c;+14;"* Spike
 * Combo from 1st CH with 6f delay
 * Interrupt with i5 from 1st block
 * Input can be delayed 9f
-* Move can be delayed 8f";spk intr:5;;Crescent Heel;r28;;File:t8-p2-claudio-b+3,n,3.mp4;Claudio-b+3,n,3;claudio
-b+4;m;10;i17;-14;-3;;* Increased tracking when b4,2 is input with delayed buffer?;;;;r33;;File:t8-p2-claudio-b+4,1.mp4;Claudio-b+4;claudio
+* Move can be delayed 8f";spk intr:5;;Crescent Heel;28;;;File:t8-p2-claudio-b+3,n,3.mp4;Claudio-b+3,n,3;claudio
+b+4;m;10;i17;-14;-3;;* Increased tracking when b4,2 is input with delayed buffer?;;;;33;;;File:t8-p2-claudio-b+4,1.mp4;Claudio-b+4;claudio
 b+4,1;m, h;10, 18;i17, i20~21;+1;+4;;"* Tornado
 * Balcony break on airborne hit
 * Combo from 1st hit with no delay
 * Combo from 1st CH with 10f delay
 * Move cannot be interrupted
 * Input can be delayed 12F
-* 5 chip damage on block";trn chp:5;;Shining Wind;r28;;File:t8-p2-claudio-b+4,1.mp4;Claudio-b+4,1;claudio
+* 5 chip damage on block";trn chp:5;;Shining Wind;28;;;File:t8-p2-claudio-b+4,1.mp4;Claudio-b+4,1;claudio
 b+4,2;m, m;10, 20;i17, i20;-11;+29a (+3);;"* Heat Engager
 
 * Heat Dash +5, +36a (+26)
@@ -201,17 +202,17 @@ b+4,2;m, m;10, 20;i17, i20;-11;+29a (+3);;"* Heat Engager
 * Combo from 1st CH with 10f delay
 * Trade with i1 from 1st block?
 * Input can be delayed 12F
-* Transition to r45 STB on hit without STB and Heat";he bbr;STB;Shining Ray;r36;;File:t8-p2-claudio-b+4,2.mp4;Claudio-b+4,2;claudio
+* Transition to r45 STB on hit without STB and Heat";he bbr;STB;Shining Ray;36;;;File:t8-p2-claudio-b+4,2.mp4;Claudio-b+4,2;claudio
 b+4,3;m, h;10, 14;i17, i22~23;-12;-4;+1;"* Homing
 * Combo from 1st hit with no delay
 * Combo from 1st CH with 8f delay
 * Interrupt with i2 from 1st block
-* Input can be delayed 12F";hom intr:2;;Axial Ray;r33;;File:t8-p2-claudio-b+4,3,2.mp4;Claudio-b+4,3;claudio
+* Input can be delayed 12F";hom intr:2;;Axial Ray;33;;;File:t8-p2-claudio-b+4,3,2.mp4;Claudio-b+4,3;claudio
 b+4,3,2;m, h, M;10, 14, 20;i17, ,i31~32;-13;+16a;;"* Balcony Break
 * Spike
 * Combo from 2nd CH
 * Interrupt with i5 from 2nd block
-* Low crush 1~31";bbr spk intr:5 js1~31;;Avaritia;r33;;File:t8-p2-claudio-b+4,3,2.mp4;Claudio-b+4,3,2;claudio
+* Low crush 1~31";bbr spk intr:5 js1~31;;Avaritia;33;;;File:t8-p2-claudio-b+4,3,2.mp4;Claudio-b+4,3,2;claudio
 STB.b+4,3,2;m, h, M;10, 14, 38;i17, ,i31~32;-1c;43a (+33);;"* Balcony Break
 * Spike
 * Combo from 2nd CH
@@ -219,25 +220,25 @@ STB.b+4,3,2;m, h, M;10, 14, 38;i17, ,i31~32;-1c;43a (+33);;"* Balcony Break
 * 7 chip damage on block
 * Consumes STB
 * Consumes 240F of remaining Heat time
-* Low crush 1~31";bbr spk intr:5 chp:7 js1~31;;Avaritia Burst;r33;;File:t8-p2-claudio-b+4,3,stb.2.mp4;Claudio-b+4,3,STB.2;claudio
+* Low crush 1~31";bbr spk intr:5 chp:7 js1~31;;Avaritia Burst;33;;;File:t8-p2-claudio-b+4,3,stb.2.mp4;Claudio-b+4,3,STB.2;claudio
 b+4,4;m, m;10, 16;i17, i28~29;-13;+30a (+20);;"* Tornado
 * Combo from 1st CH with 2f delay
 * Input can be delayed 12F
 * Interrupt with i8 from 1st block
 * Whiffs vs SS, SW from 1st block
 * Low crush 22~37
-* Floating state 38~40";trn stp:SS intr:8 js22~37 fs38~40;;Lunar Ray;r33;;File:t8-p2-claudio-b+4,4.mp4;Claudio-b+4,4;claudio
+* Floating state 38~40";trn stp:SS intr:8 js22~37 fs38~40;;Lunar Ray;33;;;File:t8-p2-claudio-b+4,4.mp4;Claudio-b+4,4;claudio
 b+1+2;m;25;i22;-13;+15a;;"* Balcony Break
 * Spike
 * -9 frame advantage and 10 chip damage on block after absorbing an attack in power crush state
-* Power crush 7~21";bbr spk pc7~21;;Judgment Claw;r34;;File:t8-p2-claudio-b+1+2.mp4;Claudio-b+1+2;claudio
+* Power crush 7~21";bbr spk pc7~21;;Judgment Claw;34;;;File:t8-p2-claudio-b+1+2.mp4;Claudio-b+1+2;claudio
 b+3+4;m;24;i29~30;-15;+9a (+0);;"* Homing
 * Balcony Break
 * Backswing blow
-* Max distance from opponent when performed from tip range: 3.07-3.09 (frames 10-13?)";hom bbr;;Eternal Moon;r35;;File:t8-p2-claudio-b+3+4.mp4;Claudio-b+3+4;claudio
+* Max distance from opponent when performed from tip range: 3.07-3.09 (frames 10-13?)";hom bbr;;Eternal Moon;35;;;File:t8-p2-claudio-b+3+4.mp4;Claudio-b+3+4;claudio
 ub+2;m;20;i17~18;-7;+20d;;"* Balcony Break
 * Gain STB on hit
-* Frame advantage +4d on STB gain";bbr;;Orbit Slice;r34;;File:T8-p2-claudio-ub+2.mp4;Claudio-ub+2;claudio
+* Frame advantage +4d on STB gain";bbr;;Orbit Slice;34;;;File:T8-p2-claudio-ub+2.mp4;Claudio-ub+2;claudio
 uf+2;m;21;i21;+4c;+20a;;"* Heat Engager
 
 * Heat Dash +5, +67a (+50)
@@ -247,61 +248,61 @@ uf+2;m;21;i21;+4c;+20a;;"* Heat Engager
 * Transition to r49 STB on hit without STB and Heat
 * Transition to FC r30 with D
 * 4 chip damage on block
-* Low crush 9~22";he bbr spk chp:4 js9~22;STB,FC;Meteor Storm;r29;;File:t8-p2-claudio-u+2.mp4;Claudio-uf+2;claudio
+* Low crush 9~22";he bbr spk chp:4 js9~22;STB,FC;Meteor Storm;29;;;File:t8-p2-claudio-u+2.mp4;Claudio-uf+2;claudio
 uf+3;m;22;i23~25;-6;+23d;;"* Floor Break
 * 20 damage with input ub+3
 * 21 damage with input u+3
 * Linear move?
 * No tracking to SSL/SWL side?
 * Low crush 9~26
-* Floating state 27~29";fbr js9~26 fs27~29;;Ground Slash Nova;r29;;File:t8-p2-claudio-uf+3.mp4;Claudio-uf+3;claudio
+* Floating state 27~29";fbr js9~26 fs27~29;;Ground Slash Nova;29;;;File:t8-p2-claudio-uf+3.mp4;Claudio-uf+3;claudio
 uf+4;m;13;i15~17;-13;+33a (+23);;"* Low crush 9~30
-* Floating state 31~33";js9~30 fs31~33;;Sky Slash Nova;r29;;File:t8-p2-claudio-uf+4.mp4;Claudio-uf+4;claudio
+* Floating state 31~33";js9~30 fs31~33;;Sky Slash Nova;29;;;File:t8-p2-claudio-uf+4.mp4;Claudio-uf+4;claudio
 uf+3+4;m,m;10,12;i17,i13~14;-11;+9;;"* First hit can be parried
-* Low crush 18~35";js18~35;;Pollux;r30;;File:t8-p2-claudio-uf+3+4.mp4;Claudio-uf+3+4;claudio
+* Low crush 18~35";js18~35;;Pollux;30;;;File:t8-p2-claudio-uf+3+4.mp4;Claudio-uf+3+4;claudio
 uf+3+4,2;m,m, m;10,12, 14;i17,i13~14, i20;-12;+30a (+4);;"* Balcony Break
 * Gain STB on hit
 * Combos from 1st hit
-* Interrupt with i1 from 1st block";bbr intr:1;;Orion's Belt;;;;Claudio-uf+3+4,2;claudio
+* Interrupt with i1 from 1st block";bbr intr:1;;Orion's Belt;;;;;Claudio-uf+3+4,2;claudio
 1+2+3+4;;;;;;;"* Can't block for 5 seconds
 * CH state on your next attack for 5 seconds ''(Tekken 7 and prior games)''
 * 10% damage increase on the next attack for 5 seconds ''(Tekken 8 season 2 patch onward)''
-* Attacks taken will be CH for 5 seconds";;;Ki Charge;r55;;File:t8-p2-claudio-1+2+3+4.mp4;Claudio-1+2+3+4;claudio
-b,B+2+3;m!;60;i72;;+15a (-11);;Balcony Break;bbr;;Big Bang;r50;;File:t8-p2-claudio-b+2+3.mp4;Claudio-b,B+2+3;claudio
+* Attacks taken will be CH for 5 seconds";;;Ki Charge;55;;;File:t8-p2-claudio-1+2+3+4.mp4;Claudio-1+2+3+4;claudio
+b,B+2+3;m!;60;i72;;+15a (-11);;Balcony Break;bbr;;Big Bang;50;;;File:t8-p2-claudio-b+2+3.mp4;Claudio-b,B+2+3;claudio
 f,F+2;m;14;i14~16;-18;-7;;"* Elbow
-* i15 fastest startup when buffered during blockstun. i17 fastest startup when unbuffered";elb;;;r35;;File:t8-p2-claudio-f,f+2,2.mp4;Claudio-f,F+2;claudio
+* i15 fastest startup when buffered during blockstun. i17 fastest startup when unbuffered";elb;;;35;;;File:t8-p2-claudio-f,f+2,2.mp4;Claudio-f,F+2;claudio
 f,F+2,2;m, h;14, 20;i14~16, i14~15;-2c;+6c;;"* Spike
 * Combo from 1st hit with 13f delay
 * Interrupt with i2 from 1st block
 * Input can be delayed 13f
-* Move can be delayed 6f";spk intr:2;;Dual Guns;r31;;File:t8-p2-claudio-f,f+2,2.mp4;Claudio-f,F+2,2;claudio
+* Move can be delayed 6f";spk intr:2;;Dual Guns;31;;;File:t8-p2-claudio-f,f+2,2.mp4;Claudio-f,F+2,2;claudio
 f,F+2,1+2;m, m;14, 14,20;i14~16, i14~16;-13;+10a (+1);;"* Balcony Break
 * Combo from 1st hit with 10f delay
 * Interrupt with i3 from 1st block
 * Input can be delayed 13f
 * Move can be delayed 10f
 * Transition to r57 STB on hit without STB
-* Frame advantage -14a (-23) on STB gain";bbr intr:3;STB;Bringer of Justice;r34;;File:t8-p2-claudio-f,f+2,1+2.mp4;Claudio-f,F+2,1+2;claudio
-f,F+3;m;8;i15~16;-8;-1;;;;;;;;;Claudio-f,F+3;claudio
+* Frame advantage -14a (-23) on STB gain";bbr intr:3;STB;Bringer of Justice;34;;;File:t8-p2-claudio-f,f+2,1+2.mp4;Claudio-f,F+2,1+2;claudio
+f,F+3;m;8;i15~16;-8;-1;;;;;;;;;;Claudio-f,F+3;claudio
 f,F+3,2;m, m;8, 4,13;i15~16, i20~21,i16~17;-13;+22a (+17);;"* Tornado
 * 2 chip damage on block
 * Can be charged
 * Has roughly 5 levels of charge
 * Combos from 1st hit if uncharged
-* Jail from 1st block with ?F of charge";trn chp:2;;Purgatorio;;;;Claudio-f,F+3,2;claudio
+* Jail from 1st block with ?F of charge";trn chp:2;;Purgatorio;;;;;Claudio-f,F+3,2;claudio
 f,F+3,2*;m, m;8, 4,20;i15~16, i20~21,i39~40;+0;+14cg;;"* Tornado
 * Balcony Break
 * 6 chip damage on block
 * Gain STB on hit or block
 * Interrupt with i16 from 1st block
 * Whiffs vs SS, SW (SSR preferred with shorter charge inputs)
-* Forces tech back roll on hit";trn bbr stp:SS intr:16 chp:6;;Purgatorio (full charge);;;;Claudio-f,F+3,2*;claudio
+* Forces tech back roll on hit";trn bbr stp:SS intr:16 chp:6;;Purgatorio (full charge);;;;;Claudio-f,F+3,2*;claudio
 f,F+4;m;20;i15~17;-1~+1;+6~+8;+13~+15;"* Knee
 * i16 startup when buffering f,n. i18 fastest startup when unbuffered
 * Low crush 11~28
-* Floating state 29~31";kne js11~28 fs29~31;;Invidia;r27;;File:t8-p2-claudio-f,f+4.mp4;Claudio-f,F+4;claudio
+* Floating state 29~31";kne js11~28 fs29~31;;Invidia;27;;;File:t8-p2-claudio-f,f+4.mp4;Claudio-f,F+4;claudio
 uf,n,4;m;20;i23~i25;-13;+32a (+22a);;"* Low crush 9~30
-* Floating state 31~33";js9~30 fs31~33;;Delayed Rising Toe Kick;r30;;File:t8-p2-claudio-uf,n,4.mp4;Claudio-uf,n,4;claudio
+* Floating state 31~33";js9~30 fs31~33;;Delayed Rising Toe Kick;30;;;File:t8-p2-claudio-uf,n,4.mp4;Claudio-uf,n,4;claudio
 f,f,F+2;h;40;i13~16;+6;+24a (+19);;"* Heat Engager
 
 * Heat Dash +5, +36a (+26)
@@ -312,51 +313,51 @@ f,f,F+2;h;40;i13~16;+6;+24a (+19);;"* Heat Engager
 * 8 chip damage on block
 * Cannot be buffered
 * Low crush 3~26
-* Floating state 27~29";he bbr chp:8 js3~26 fs27~29;STB;Ira;r28;;File:t8-p2-claudio-f,f,f+2.mp4;Claudio-f,f,F+2;claudio
-ws1;m;12;i12~13;-4;+7;;;;;;r22;;File:t8-p2-claudio-ws1,1.mp4;Claudio-ws1;claudio
+* Floating state 27~29";he bbr chp:8 js3~26 fs27~29;STB;Ira;28;;;File:t8-p2-claudio-f,f,f+2.mp4;Claudio-f,f,F+2;claudio
+ws1;m;12;i12~13;-4;+7;;;;;;22;;;File:t8-p2-claudio-ws1,1.mp4;Claudio-ws1;claudio
 ws1,1;m, h;12, 15;i12~13, i20;-7;+19g c;;"* Balcony Break
 * Transition to STB on hit without STB
 ** Frame advantage +44g on STB gain
 * Combo from 1st hit with 1f delay
-* Interrupt with i1 from 1st block";bbr intr:1;STB;Noble Step;r31;;File:t8-p2-claudio-ws1,1.mp4;Claudio-ws1,1;claudio
+* Interrupt with i1 from 1st block";bbr intr:1;STB;Noble Step;31;;;File:t8-p2-claudio-ws1,1.mp4;Claudio-ws1,1;claudio
 ws1,2;m, M;12, 12;i12~13, i28~29;-9;+4;;"* Tornado
 * Combo from 1st hit with 1f delay
 * Interrupt with i9 from 1st block
-* Whiffs vs SSL, SWL from 1st block";trn stp:SSL intr:9;;Malefic Draw;r36;;File:t8-p2-claudio-ws1,2.mp4;Claudio-ws1,2;claudio
+* Whiffs vs SSL, SWL from 1st block";trn stp:SSL intr:9;;Malefic Draw;36;;;File:t8-p2-claudio-ws1,2.mp4;Claudio-ws1,2;claudio
 STB.ws1,2;m, M;12, 23;i12~13, i28~29;+6;+28a (+13);;"* Tornado
 * Combo from 1st hit with 1f delay
 * Interrupt with i9 from 1st block
 * Whiffs vs SSL, SWL from 1st block
 * 4 chip damage on block
 * Consumes STB
-* Consumes 240F of remaining Heat time";trn stp:SSL intr:9 chp:4;;Malefic Draw Burst;r36;;File:t8-p2-claudio-ws1,stb.2.mp4;Claudio-ws1,STB.2;claudio
+* Consumes 240F of remaining Heat time";trn stp:SSL intr:9 chp:4;;Malefic Draw Burst;36;;;File:t8-p2-claudio-ws1,stb.2.mp4;Claudio-ws1,STB.2;claudio
 ws2;m;20;i15~16;-14;+26a (+16);;"* Transition to r39 STB on hit without STB
-* Frame advantage +24a (+14) on STB gain";;STB;Sylvia;r37;;File:t8-p2-claudio-ws2.mp4;Claudio-ws2;claudio
-ws3;m;20;i16;-12;+11a (+2);;Balcony Break;bbr;;Piercing Wind;r34;;File:t8-p2-claudio-ws3.mp4;Claudio-ws3;claudio
-ws4;m;18;i11~12;-6;+5;;;;;Holy Smash;r24;;File:t8-p2-claudio-ws4.mp4;Claudio-ws4;claudio
+* Frame advantage +24a (+14) on STB gain";;STB;Sylvia;37;;;File:t8-p2-claudio-ws2.mp4;Claudio-ws2;claudio
+ws3;m;20;i16;-12;+11a (+2);;Balcony Break;bbr;;Piercing Wind;34;;;File:t8-p2-claudio-ws3.mp4;Claudio-ws3;claudio
+ws4;m;18;i11~12;-6;+5;;;;;Holy Smash;24;;;File:t8-p2-claudio-ws4.mp4;Claudio-ws4;claudio
 SS.4;L;20;i20~21;-12;+6c;;"* Side step takes 9f, effective startup i29
 * Tracking and range notes:
 * Assuming i29 startup with 9f left sidestep
 * SSL4 range: 2.45
 * SSR4 range: 2.39
-* Pseudo homing low?";;;Luxuria;r30;;File:t8-p2-claudio-ss.4.mp4;Claudio-SS.4;claudio
+* Pseudo homing low?";;;Luxuria;30;;;File:t8-p2-claudio-ss.4.mp4;Claudio-SS.4;claudio
 (back to wall).b,b,ub;m;21;i36~38;+0c;+8a;;"* Floating state 5~13
 * Low crush 14~32
-* Floating state 33~35";fs5~13 js14~32 fs33~35;;[[Wall Jump Attack]];r30;;;Claudio-(back to wall).b,b,ub;claudio
+* Floating state 33~35";fs5~13 js14~32 fs33~35;;[[Wall Jump Attack]];30;;;;Claudio-(back to wall).b,b,ub;claudio
 STB.db+1+2;M;25;i17~18;-9;+62a (+46);;"* Tornado
 * 5 chip damage on block
 * Consumes STB
 * Consumes 240F of remaining Heat time
 * High crush 6~16
 * Low crush 20~32
-* Floating state 33~35";trn chp:5 cs6~16 js20~32 fs33~35;;Blue Moon Burst;r41;;File:t8-p2-claudio-stb.db+1+2.mp4;Claudio-STB.db+1+2;claudio
+* Floating state 33~35";trn chp:5 cs6~16 js20~32 fs33~35;;Blue Moon Burst;41;;;File:t8-p2-claudio-stb.db+1+2.mp4;Claudio-STB.db+1+2;claudio
 STB.f,f,F+1+2;h;45;i13~16;+8g~+11g;+28a (+18);;"* Balcony Break
 * 22 chip damage on block
 * Consumes STB
 * Consumes 300F of remaining Heat time
 * Assuming i19 startup from buffered manual input (temporary tracking score result)
 * Low crush 3~26
-* Floating state 27~29";bbr chp:22 js3~26 fs27~29;;Anima;r46;;File:t8-p2-claudio-stb.f,f,f+1+2.mp4;Claudio-STB.f,f,F+1+2;claudio
+* Floating state 27~29";bbr chp:22 js3~26 fs27~29;;Anima;46;;;File:t8-p2-claudio-stb.f,f,f+1+2.mp4;Claudio-STB.f,f,F+1+2;claudio
 STB.f,F+3,2;m, m,m;8, 4,20;i15~16, i20,i16;-9;+22a (+17);;"* Tornado
 * Balcony Break on airborne hit only
 * Can be charged
@@ -365,7 +366,7 @@ STB.f,F+3,2;m, m,m;8, 4,20;i15~16, i20,i16;-9;+22a (+17);;"* Tornado
 * Consumes STB
 * Consumes 240F of remaining Heat time
 * Combo from 1st if uncharged
-* Jail from 1st block with ?F of charge time";trn chp:6;;Purgatorio Burst;;;;Claudio-f,F+3,STB.2;claudio
+* Jail from 1st block with ?F of charge time";trn chp:6;;Purgatorio Burst;;;;;Claudio-f,F+3,STB.2;claudio
 STB.f,F+3,2*;m, m,m;8, 4,25;i15~16, i20,i39~40;+12;+67a (+51);;"* Tornado
 * Balcony Break
 * Guard Break
@@ -374,22 +375,22 @@ STB.f,F+3,2*;m, m,m;8, 4,25;i15~16, i20,i39~40;+12;+67a (+51);;"* Tornado
 * Consumes STB
 * Consumes 240F of remaining Heat time
 * Interrupt with i16 from 1st block
-* Whiffs vs SS, SW from 1st block (SSR preferred on shorter charge durations)";trn bbr stp:SS intr:16 chp:7;;Purgatorio Burst (full charge);;;;Claudio-f,F+3,STB.2*;claudio
+* Whiffs vs SS, SW from 1st block (SSR preferred on shorter charge durations)";trn bbr stp:SS intr:16 chp:7;;Purgatorio Burst (full charge);;;;;Claudio-f,F+3,STB.2*;claudio
 1+3;t;35;i12~14;-3;+1d;;"* Homing
-* Throw Break 1 or 2";hom;;Punishment;r31;;File:t8-p2-claudio-1+3.mp4;Claudio-1+3;claudio
+* Throw Break 1 or 2";hom;;Punishment;31;;;File:t8-p2-claudio-1+3.mp4;Claudio-1+3;claudio
 2+4;t;35;i12~14;-6;+0d;;"* Homing
 * Throw break 1 or 2
 * Side switch on hit
-* Both players transition to FUFA on hit";hom;FUFA;Roche Limit;r31;;File:t8-p2-claudio-2+4.mp4;Claudio-2+4;claudio
+* Both players transition to FUFA on hit";hom;FUFA;Roche Limit;31;;;File:t8-p2-claudio-2+4.mp4;Claudio-2+4;claudio
 Back throw;t;50;;;+0d;;"* Unbreakable
 * Can side switch on hit
-* Opponent recovers in FDFT";;;Sudden Shadow;;;;Claudio-Back throw;claudio
+* Opponent recovers in FDFT";;;Sudden Shadow;;;;;Claudio-Back throw;claudio
 Left throw;t;40;;-3;+1d;;"* Break: 1
-* Opponent recovers in off-axis FUFT";;;Avalaunche Throw;;;;Claudio-Left Throw;claudio
+* Opponent recovers in off-axis FUFT";;;Avalaunche Throw;;;;;Claudio-Left Throw;claudio
 Right throw;t;40;;-3;+1d;;"* Throw break 2
 * Can side switch on hit
-* Opponent recovers in FUFT";;FC;Prayer into the Void;FC;;;Claudio-Right Throw;claudio
+* Opponent recovers in FUFT";;FC;Prayer into the Void;;FC;;;Claudio-Right Throw;claudio
 uf+1+2;t;40;i12;-6;+1d;;"* Throw break 1+2
 * Side switch on hit
 * Can be buffered
-* Opponent recovers in FUFA";;;Gula;r27;;File:t8-p2-claudio-uf+1+2.mp4;Claudio-uf+1+2;claudio
+* Opponent recovers in FUFA";;;Gula;27;;;File:t8-p2-claudio-uf+1+2.mp4;Claudio-uf+1+2;claudio

@@ -1,44 +1,44 @@
-Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Transitions;Name;Recovery;Image;Video;Wavu id;Character id
+Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Transitions;Name;Recovery;Recovery state;Image;Video;Wavu id;Character id
 2+3;m;"[12;12]";i16;+1;+2c;;"* Heat Burst
 * Cancel to r45 with b,b on frame 42
 * 2 chip damage on block
 * 12 chip damage on hit
 * Only deals recoverable damage
 * Cannot cause a K.O.
-* Power crush 7~16";hb chp:2 pc7~16;;Heat Burst;r30;;;Azucena-2+3;azucena
+* Power crush 7~16";hb chp:2 pc7~16;;Heat Burst;30;;;;Azucena-2+3;azucena
 H.LIB.1,2,F;;;;+4;+26a;;"* Strong Aerial Tailspin
 * Consumes 210F of remaining Heat time
 * 70% scaling on combo
 * 6 chip damage on block
-* Floating state 15~33";chp:6 fs15~33;LIB;Blend Tempestad > Nuevo Libertador;r38 LIB;;;Azucena-H.LIB.1,2,F;azucena
+* Floating state 15~33";chp:6 fs15~33;LIB;Blend Tempestad > Nuevo Libertador;38;LIB;;;Azucena-H.LIB.1,2,F;azucena
 H.LIB.P (High);m;25;i17~18;-8;+32a;;"* Restores 5 recoverable health on successful parry
 * Opponent recovers FUFA
-* is1~17";is1~17;;Puño de Fuego Evitacion;r35;;File:t8-p2-azucena-h.lib.p-high.mp4;Azucena-H.LIB.P (High);azucena
+* is1~17";is1~17;;Puño de Fuego Evitacion;35;;;File:t8-p2-azucena-h.lib.p-high.mp4;Azucena-H.LIB.P (High);azucena
 H.LIB.P (Low);m;20;i16~18;-9;+58a (+42);;"* Tornado
 * Restores 5 recoverable health on successful parry
 * is1
-* Floating state 2~48";trn is1 fs2~48;;One Drip Cielo Evitacion;r44;;File:t8-p2-azucena-h.lib.p-low.mp4;Azucena-H.LIB.P (Low);azucena
+* Floating state 2~48";trn is1 fs2~48;;One Drip Cielo Evitacion;44;;;File:t8-p2-azucena-h.lib.p-low.mp4;Azucena-H.LIB.P (Low);azucena
 H.LIB.d+3+4;M;27;i16~18;+4~+6;+22a;;"* Tornado
 * Consumes 210F of remaining Heat time
 * Transition to FC with D
-* Floating state 2~48";trn fs2~48;FC;One Drip Cielo;r44;;;Azucena-H.LIB.d+3+4;azucena
+* Floating state 2~48";trn fs2~48;FC;One Drip Cielo;44;;;;Azucena-H.LIB.d+3+4;azucena
 H.b+1,1,2,F;;;;+4;+26a;;"* Strong Aerial Tailspin
 * Consumes 210F of remaining Heat time
 * 70% scaling on combo
 * 6 chip damage on block
-* Floating state 15~33";chp:6 fs15~33;LIB;Double Blend Tempestad > Nuevo Libertador;r38 LIB;;;Azucena-H.b+1,1,2,F;azucena
+* Floating state 15~33";chp:6 fs15~33;LIB;Double Blend Tempestad > Nuevo Libertador;38;LIB;;;Azucena-H.b+1,1,2,F;azucena
 H.b+2,F;;;;+4;+26a;;"* Strong Aerial Tailspin
 * Homing
 * 70% scaling on combo
 * Consumes 210f of remaining Heat time
 * 7 Chip damage on block
 * Low crush 15~30
-* Floating state 31~33";hom chp:7 js15~30 fs31~33;LIB;Mil Nudillo > Nuevo Libertador;r38 LIB;;;Azucena-H.b+2,F;azucena
+* Floating state 31~33";hom chp:7 js15~30 fs31~33;LIB;Mil Nudillo > Nuevo Libertador;38;LIB;;;Azucena-H.b+2,F;azucena
 H.f+3+4;;;;;;;"* Parries all high or low attacks
 * Consumes 120F of remaining Heat time
 * Cancel to r20 with DB
 * High crush 4~20
-* Parry state 17~";cs4~20 ps17~;LIB;Libertador Revolución;r24 LIB;;;Azucena-H.f+3+4;azucena
+* Parry state 17~";cs4~20 ps17~;LIB;Libertador Revolución;24;LIB;;;Azucena-H.f+3+4;azucena
 H.2+3;m,m,t;15,9,29;i15~16;+6;+0a;;"* Heat Smash
 * Reversal Break
 * Balcony Break
@@ -52,8 +52,8 @@ H.2+3;m,m,t;15,9,29;i15~16;+6;+0a;;"* Heat Smash
 * Hit level becomes m,h,m on block/whiff
 * Spike on the last hit if the first two whiff
 * Low crush 18~57
-* Floating state 58~60";hs rbr bbr chp:7 js18~57 fs58~60;LIB;Azucena Speciality;r81;;File:t8-p2-azucena-h.2+3.mp4;Azucena-H.2+3;azucena
-H.2+3+4;h!;0;i45;;+35a;;;;;Coffee Break;r51;;File:t8-p2-azucena-h.2+3+4.mp4;Azucena-H.2+3+4;azucena
+* Floating state 58~60";hs rbr bbr chp:7 js18~57 fs58~60;LIB;Azucena Speciality;81;;;File:t8-p2-azucena-h.2+3.mp4;Azucena-H.2+3;azucena
+H.2+3+4;h!;0;i45;;+35a;;;;;Coffee Break;51;;;File:t8-p2-azucena-h.2+3+4.mp4;Azucena-H.2+3+4;azucena
 R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Removes Recoverable Health
 * Reversal Break
@@ -62,32 +62,32 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Restores recoverable health on hit
 * Transition to attack throw on hit
 * Consumes Rage
-* Power crush 8~";ra rbr pc8~;;Alegría del Café;r39;;;Azucena-R.df+1+2;azucena
-1;h;5;i10;+1;+8;;Recovers 2f faster on hit or block (t27 r17);;;Jab;r19;;File:t8-p2-azucena-1,1.mp4;Azucena-1;azucena
+* Power crush 8~";ra rbr pc8~;;Alegría del Café;39;;;;Azucena-R.df+1+2;azucena
+1;h;5;i10;+1;+8;;Recovers 2f faster on hit or block (t27 r17);;;Jab;19;;;File:t8-p2-azucena-1,1.mp4;Azucena-1;azucena
 1,1;h, m;5, 15;i10, i24~25;-10;+8;+18a;"* Combo from 1st hit with 1f delay
 * Transition to LIB on standing hit only
 * Interrupt with i5
-* Move can be delayed 8f";intr:5;LIB;High Mountain Combo;r28;;File:t8-p2-azucena-1,1.mp4;Azucena-1,1;azucena
+* Move can be delayed 8f";intr:5;LIB;High Mountain Combo;28;;;File:t8-p2-azucena-1,1.mp4;Azucena-1,1;azucena
 1,2;h, h;5, 23;i10, i20~21;-14;+8;;"* Balcony Break
 * Combo from 1st hit with 4f delay
 * Interrupt with i1
-* Transition to BT with B";bbr intr:1;BT;High Roast Combo;r34;;File:t8-p2-azucena-1,2.mp4;Azucena-1,2;azucena
-1+3+4;;;;;;;;;;Taunt;r55;;File:t8-p2-azucena-1+3+4.mp4;Azucena-1+3+4;azucena
+* Transition to BT with B";bbr intr:1;BT;High Roast Combo;34;;;File:t8-p2-azucena-1,2.mp4;Azucena-1,2;azucena
+1+3+4;;;;;;;;;;Taunt;55;;;File:t8-p2-azucena-1+3+4.mp4;Azucena-1+3+4;azucena
 1+3+4*;;;;;;;"* Regenerates heat
-* Heat meter won't disappear, even if it fully depletes";;;Shuffle Recital;r60;;File:t8-p2-azucena-1+3+4s.mp4;Azucena-1+3+4*;azucena
-2;h;9;i10;+0;+9;;;;;Right Jab;r19;;File:t8-p2-azucena-2,1,2.mp4;Azucena-2;azucena
+* Heat meter won't disappear, even if it fully depletes";;;Shuffle Recital;60;;;File:t8-p2-azucena-1+3+4s.mp4;Azucena-1+3+4*;azucena
+2;h;9;i10;+0;+9;;;;;Right Jab;19;;;File:t8-p2-azucena-2,1,2.mp4;Azucena-2;azucena
 2,1;h, m;9, 11;i10, i17~18;-7;+3;;"* Combo from 1st hit with 4f delay
-* Jail from 1st attack with 2f delay";;;;r26;;File:t8-p2-azucena-2,1,2.mp4;Azucena-2,1;azucena
+* Jail from 1st attack with 2f delay";;;;26;;;File:t8-p2-azucena-2,1,2.mp4;Azucena-2,1;azucena
 2,1,2;h, m, h;9, 11, 21;i10, ,i24~25;-5;+20a (+3);;"* Tornado
 * Balcony Break
 * Combo from 2nd CH with 5f delay
 * Interrupt with i4
-* Move can be delayed 10f";trn bbr intr:4;;Andes Mountain Uppercut Combo;r29;;File:t8-p2-azucena-2,1,2.mp4;Azucena-2,1,2;azucena
-3;m;13;i14;-7;+4;;;;;Left Kick;r26;;File:t8-p2-azucena-3,2.mp4;Azucena-3;azucena
+* Move can be delayed 10f";trn bbr intr:4;;Andes Mountain Uppercut Combo;29;;;File:t8-p2-azucena-2,1,2.mp4;Azucena-2,1,2;azucena
+3;m;13;i14;-7;+4;;;;;Left Kick;26;;;File:t8-p2-azucena-3,2.mp4;Azucena-3;azucena
 3,2;m, m;13, 20;i14, i23~24;-12;+23g;+13c;"* Combo from 1st hit with 7f delay
 * Interrupt with i3
 * Move can be delayed 10f
-* Opponent recovers crouching on hit";intr:3;;Groovy Strike;r31;;File:t8-p2-azucena-3,2.mp4;Azucena-3,2;azucena
+* Opponent recovers crouching on hit";intr:3;;Groovy Strike;31;;;File:t8-p2-azucena-3,2.mp4;Azucena-3,2;azucena
 3,2~F;m;13;i14, ;-18;-7;;"Listed parry state is at earliest cancel
 * Parry state 36~
 * on
@@ -97,7 +97,7 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * block
 * Parry state 6~
 * on
-* hit";ps36~ on whiff ps17~ on block ps6~ on hit;LIB;;r23 LIB;;File:Azucena-3,2~F.mp4;Azucena-3,2~F;azucena
+* hit";ps36~ on whiff ps17~ on block ps6~ on hit;LIB;;23;LIB;;File:Azucena-3,2~F.mp4;Azucena-3,2~F;azucena
 3,3;m, h;13, 23;i14, i24~25;-1;+17cg;;"* Heat Engager
 
 * Heat Dash +5, +43d (+35)
@@ -105,36 +105,36 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Balcony Break
 * Combo from 1st hit with 6f delay
 * Interrupt with i4
-* Forces tech back roll on hit";he bbr intr:4;;Groovy Punalada;r30;;File:t8-p2-azucena-3,3.mp4;Azucena-3,3;azucena
-4;h;15;i12~13;-8;+3;+8;* Has good left sidestep tracking;;BT;Right Kick;r26 BT;;File:t8-p2-azucena-4,1.mp4;Azucena-4;azucena
+* Forces tech back roll on hit";he bbr intr:4;;Groovy Punalada;30;;;File:t8-p2-azucena-3,3.mp4;Azucena-3,3;azucena
+4;h;15;i12~13;-8;+3;+8;* Has good left sidestep tracking;;BT;Right Kick;26;BT;;File:t8-p2-azucena-4,1.mp4;Azucena-4;azucena
 4,1;h, h;15, 14;i12~13, i21~22;-2;+4;+6~+7;"* Combo from 1st hit
 * Interrupt with i2
-* Unparryable by traditional punch parries (bug?)";intr:2;BT;Guapuño;r20 BT;;File:t8-p2-azucena-4,1.mp4;Azucena-4,1;azucena
+* Unparryable by traditional punch parries (bug?)";intr:2;BT;Guapuño;20;BT;;File:t8-p2-azucena-4,1.mp4;Azucena-4,1;azucena
 4,3;h, M;15, 20;i12~13, i26~27;-11;+37a;;"* Balcony Break
 * Combo from 1st CH with 8f delay
 * Interrupt with i7
-* Move can be delayed 12f";bbr intr:7;;Delfin Patadas;r30;;File:t8-p2-azucena-4,3.mp4;Azucena-4,3;azucena
+* Move can be delayed 12f";bbr intr:7;;Delfin Patadas;30;;;File:t8-p2-azucena-4,3.mp4;Azucena-4,3;azucena
 1+2;h;17;i15;-8;+13g;+56a;"Balcony Break
-* High crush 8~15";bbr cs8~15;;Boomerang Scythe;r30;;File:t8-p2-azucena-1+2.mp4;Azucena-1+2;azucena
-2+3+4;h!;0;i45;;-1;;;;;Coffee Break;r51;;File:t8-p2-azucena-2+3+4.mp4;Azucena-2+3+4;azucena
-f+2;h;14;i17~18;-10;+1;;;;;;r28;;File:t8-p2-azucena-f+2,1,4.mp4;Azucena-f+2;azucena
+* High crush 8~15";bbr cs8~15;;Boomerang Scythe;30;;;File:t8-p2-azucena-1+2.mp4;Azucena-1+2;azucena
+2+3+4;h!;0;i45;;-1;;;;;Coffee Break;51;;;File:t8-p2-azucena-2+3+4.mp4;Azucena-2+3+4;azucena
+f+2;h;14;i17~18;-10;+1;;;;;;28;;;File:t8-p2-azucena-f+2,1,4.mp4;Azucena-f+2;azucena
 f+2,1;h, m;14, 17;i17~18, i22~23;-10;+5;;"* Combo from 1st hit with 7f delay
 * Interrupt with i3
-* Move can be delayed 8f";intr:3;;;r29;;File:t8-p2-azucena-f+2,1,4.mp4;Azucena-f+2,1;azucena
+* Move can be delayed 8f";intr:3;;;29;;;File:t8-p2-azucena-f+2,1,4.mp4;Azucena-f+2,1;azucena
 f+2,1,4;h, m, m;14, 17, 23;i17~18, ,i24~25;-14;+19a (+9);;"* Balcony Break
 * Combo from 2nd CH with 10f delay
 * Interrupt with i4
 * Low crush 18~38
-* Floating state 39~41";bbr intr:4 js18~38 fs39~41;;Danza Del Cóndor;r35;;File:t8-p2-azucena-f+2,1,4.mp4;Azucena-f+2,1,4;azucena
-f+3;m;15;i17;-4;+5;;* Has good right sidestep tracking;;LIB;;r25 LIB;;File:t8-p2-azucena-f+3,2.mp4;Azucena-f+3;azucena
+* Floating state 39~41";bbr intr:4 js18~38 fs39~41;;Danza Del Cóndor;35;;;File:t8-p2-azucena-f+2,1,4.mp4;Azucena-f+2,1,4;azucena
+f+3;m;15;i17;-4;+5;;* Has good right sidestep tracking;;LIB;;25;LIB;;File:t8-p2-azucena-f+3,2.mp4;Azucena-f+3;azucena
 f+3,2;m, h;15, 20;i17, i22~23;-4;+22a;;"* Balcony Break
 * Combo from 1st hit with 8f delay
-* Move cannot be interrupted";bbr;;Sumatra Back Knuckle;r32;;File:t8-p2-azucena-f+3,2.mp4;Azucena-f+3,2;azucena
+* Move cannot be interrupted";bbr;;Sumatra Back Knuckle;32;;;File:t8-p2-azucena-f+3,2.mp4;Azucena-f+3,2;azucena
 f+3,4;m, m;15, 21;i17, i24~25;-11;+8;+52a;"* Combo from 1st hit with 6f delay
 * Interrupt with i3
 * Input can be delayed for 8f
-* Move can be delayed for 7f";intr:3;;Sumatra Patadas;r33;;File:t8-p2-azucena-f+3,4.mp4;Azucena-f+3,4;azucena
-f+4;m;16;i17~18;-8;+1;;Homing;hom;;;r28;;File:t8-p2-azucena-f+4,4.mp4;Azucena-f+4;azucena
+* Move can be delayed for 7f";intr:3;;Sumatra Patadas;33;;;File:t8-p2-azucena-f+3,4.mp4;Azucena-f+3,4;azucena
+f+4;m;16;i17~18;-8;+1;;Homing;hom;;;28;;;File:t8-p2-azucena-f+4,4.mp4;Azucena-f+4;azucena
 f+4,4;m, h;16, 21;i17~18, i24~25;-7;+19a (+10);;"* Heat Engager
 
 * Heat Dash +5, +43d (+35)
@@ -144,162 +144,162 @@ f+4,4;m, h;16, 21;i17~18, i24~25;-7;+19a (+10);;"* Heat Engager
 * Interrupt with i3
 * Cancel 2nd hit into BT -19 -10 r39 with B at frame 19
 * Low crush 15~23
-* Floating state 24~26";he bbr intr:3 js15~23 fs24~26;;Tifón Patear;r30;;File:t8-p2-azucena-f+4,4.mp4;Azucena-f+4,4;azucena
+* Floating state 24~26";he bbr intr:3 js15~23 fs24~26;;Tifón Patear;30;;;File:t8-p2-azucena-f+4,4.mp4;Azucena-f+4,4;azucena
 f+4,4~2;m, h;16, 23;i17~18, i23~24;+1;+52a;;"* 6 chip damage on block
 * Input can be delayed by 18F
 * Move cannot be delayed
-* Interrupt with i21 from 1st block";intr:21 chp:6;;Tifón Trueno;r26;;File:t8-p2-azucena-f+4,4~2.mp4;Azucena-f+4,4~2;azucena
+* Interrupt with i21 from 1st block";intr:21 chp:6;;Tifón Trueno;26;;;File:t8-p2-azucena-f+4,4~2.mp4;Azucena-f+4,4~2;azucena
 f+4,4~3;m, m;16, 24;i17~18, i21~22;-9~-8;+15a (+6);+70a (+54);"* Balcony Break
 * Tornado on CH
 * Interrupt with i19 from 1st block
 * Input can be delayed by 18F
 * Move cannot be delayed
 * Low crush 1~6
-* Floating state 7~9";bbr intr:19 js1~6 fs7~9;;Tifón Cañón;r29;;File:t8-p2-azucena-f+4,4~3.mp4;Azucena-f+4,4~3;azucena
+* Floating state 7~9";bbr intr:19 js1~6 fs7~9;;Tifón Cañón;29;;;File:t8-p2-azucena-f+4,4~3.mp4;Azucena-f+4,4~3;azucena
 f+1+2;h;25;i16~17;-9;+23a (+18);;"* Balcony Break
 * +0 frame advantage and 10 chip damage on block after absorbing an attack in power crush state
-* Power crush 7~15";bbr pc7~15;;Aero Press Pegar;r32;;File:t8-p2-azucena-f+1+2.mp4;Azucena-f+1+2;azucena
+* Power crush 7~15";bbr pc7~15;;Aero Press Pegar;32;;;File:t8-p2-azucena-f+1+2.mp4;Azucena-f+1+2;azucena
 f+3+4;;;;;;;"* Completely evades all high/low attacks
 * Cancel to r20 with DB
-* Parry state 18~";ps18~;LIB;Libertador;r28 LIB;;File:t8-p2-azucena-f+3+4.mp4;Azucena-f+3+4;azucena
+* Parry state 18~";ps18~;LIB;Libertador;28;LIB;;File:t8-p2-azucena-f+3+4.mp4;Azucena-f+3+4;azucena
 f+3+4*;;;;;;;"* Restores 120F, 150F and 240F of remaining Heat time
 * Heat meter won't disappear, even if it fully depletes
-* Parry state 1~";ps1~;LIB;Shuffle Jamboree;r50 LIB;;File:t8-p2-azucena-f+3+4s.mp4;Azucena-f+3+4*;azucena
-df+1;m;11;i13~14;-3;+8;;;;;Mid Check;r21;;File:t8-p2-azucena-df+1,4,1.mp4;Azucena-df+1;azucena
+* Parry state 1~";ps1~;LIB;Shuffle Jamboree;50;LIB;;File:t8-p2-azucena-f+3+4s.mp4;Azucena-f+3+4*;azucena
+df+1;m;11;i13~14;-3;+8;;;;;Mid Check;21;;;File:t8-p2-azucena-df+1,4,1.mp4;Azucena-df+1;azucena
 df+1,4;m, h;11, 13;i13~14, i17~18;-7;+4;;"* Jail from 1st block
 * Combo from 1st hit
-* Enter BT -5 +6 r23 with B";;BT;;r25;;File:t8-p2-azucena-df+1,4,1.mp4;Azucena-df+1,4;azucena
+* Enter BT -5 +6 r23 with B";;BT;;25;;;File:t8-p2-azucena-df+1,4,1.mp4;Azucena-df+1,4;azucena
 df+1,4,1;m, h, h;11, 13, 20;i13~14, ,i22~23;-5;+18cg;+56a;"* Balcony Break
 * Combo from 2nd CH with 7f delay
 * Move can be delayed 8f delay
 * Interrupt with i3
 * Enter LIB -17 -6 r20 with F
-* Forces tech back roll on hit";bbr intr:3;LIB;Grande Combo;r30;;File:t8-p2-azucena-df+1,4,1.mp4;Azucena-df+1,4,1;azucena
+* Forces tech back roll on hit";bbr intr:3;LIB;Grande Combo;30;;;File:t8-p2-azucena-df+1,4,1.mp4;Azucena-df+1,4,1;azucena
 df+1,4,1~2;m, h, M;11, 13, 23;i13~14, ,i18~19;-10;+12c;;"* Spike
-* Interrupt with i14";spk intr:14;;Full Body Grande Combo;r30;;File:t8-p2-azucena-df+1,4,1~2.mp4;Azucena-df+1,4,1~2;azucena
-df+2;m;12;i15~16;-13;+28a (+18);;Launches crouching opponent;;;Mount Rainier;r31;;File:t8-p2-azucena-df+2.mp4;Azucena-df+2;azucena
-df+3;m;17;i17~18;-5;+5;+59a;Knee;kne;;Rodilla Shot;r29;;File:t8-p2-azucena-df+3.mp4;Azucena-df+3;azucena
-df+4;m;15;i16~17;-7;+2;;;;;;r27;;File:t8-p2-azucena-df+4,1.mp4;Azucena-df+4;azucena
+* Interrupt with i14";spk intr:14;;Full Body Grande Combo;30;;;File:t8-p2-azucena-df+1,4,1~2.mp4;Azucena-df+1,4,1~2;azucena
+df+2;m;12;i15~16;-13;+28a (+18);;Launches crouching opponent;;;Mount Rainier;31;;;File:t8-p2-azucena-df+2.mp4;Azucena-df+2;azucena
+df+3;m;17;i17~18;-5;+5;+59a;Knee;kne;;Rodilla Shot;29;;;File:t8-p2-azucena-df+3.mp4;Azucena-df+3;azucena
+df+4;m;15;i16~17;-7;+2;;;;;;27;;;File:t8-p2-azucena-df+4,1.mp4;Azucena-df+4;azucena
 df+4,1;m, h;15, 23;i16~17, i23~24;-5;+20a (+3);;"* Tornado
 * Balcony Break
 * Combo from 1st hit with 6f delay
-* Move can be delayed 10f";trn bbr;;Blue Mountain Combo;r29;;File:t8-p2-azucena-df+4,1.mp4;Azucena-df+4,1;azucena
+* Move can be delayed 10f";trn bbr;;Blue Mountain Combo;29;;;File:t8-p2-azucena-df+4,1.mp4;Azucena-df+4,1;azucena
 d+1;m;20;i20~21;+4;+7c;+44a;"* Spike
-* Elbow";spk elb;FC;Hand Drip Hammer;r30 FC;;File:t8-p2-azucena-d+1.mp4;Azucena-d+1;azucena
-d+2;m;15;i17~18;-9;+5;;;;;;r29;;File:t8-p2-azucena-d+2,3.mp4;Azucena-d+2;azucena
+* Elbow";spk elb;FC;Hand Drip Hammer;30;FC;;File:t8-p2-azucena-d+1.mp4;Azucena-d+1;azucena
+d+2;m;15;i17~18;-9;+5;;;;;;29;;;File:t8-p2-azucena-d+2,3.mp4;Azucena-d+2;azucena
 d+2,3;m, h;15, 20;i17~18, i24~25;+1;+16g;;"* Strong Aerial Tailspin
 * Balcony Break
-* Combo from 1st hit with 7f delay";bbr;LIB;La Niña Kick Combo;r26 LIB;;File:t8-p2-azucena-d+2,3.mp4;Azucena-d+2,3;azucena
-d+3;L;10;i15;-14;-3;;;;;;r33;;File:t8-p2-azucena-d+3,3,4.mp4;Azucena-d+3;azucena
+* Combo from 1st hit with 7f delay";bbr;LIB;La Niña Kick Combo;26;LIB;;File:t8-p2-azucena-d+2,3.mp4;Azucena-d+2,3;azucena
+d+3;L;10;i15;-14;-3;;;;;;33;;;File:t8-p2-azucena-d+3,3,4.mp4;Azucena-d+3;azucena
 d+3,3;L, m;10, 14;i15, i23;-13;+1;;"* Combo from 1st CH with 7f delay
 * Move can be delayed 10f
-* Interrupt with i3";intr:3;;;r34;;File:t8-p2-azucena-d+3,3,4.mp4;Azucena-d+3,3;azucena
+* Interrupt with i3";intr:3;;;34;;;File:t8-p2-azucena-d+3,3,4.mp4;Azucena-d+3,3;azucena
 d+3,3,4;L, m, m;10, 14, 21;i15, ,i25~26;-14;+15a (-2);;"* Tornado
 * Balcony Break
-* Combo from 2nd CH with 10f delay";trn bbr;;Passionate Kick Combo;r34;;File:t8-p2-azucena-d+3,3,4.mp4;Azucena-d+3,3,4;azucena
-d+4;L;13;i15~16;-13;-2;;;;;;r31;;File:t8-p2-azucena-d+4,1.mp4;Azucena-d+4;azucena
+* Combo from 2nd CH with 10f delay";trn bbr;;Passionate Kick Combo;34;;;File:t8-p2-azucena-d+3,3,4.mp4;Azucena-d+3,3,4;azucena
+d+4;L;13;i15~16;-13;-2;;;;;;31;;;File:t8-p2-azucena-d+4,1.mp4;Azucena-d+4;azucena
 d+4,1;L, h;13, 5;i15~16, i27~28;-1;+3;;"* Combo from 1st CH with 2f delay
 * Move can be delayed 10f
 * Interrupt with i8
-* Cancel to LIB -20 -9 r38 with F at frame 20";intr:8;LIB;Roast Knuckle Combo;r21;;File:t8-p2-azucena-d+4,1.mp4;Azucena-d+4,1;azucena
+* Cancel to LIB -20 -9 r38 with F at frame 20";intr:8;LIB;Roast Knuckle Combo;21;;;File:t8-p2-azucena-d+4,1.mp4;Azucena-d+4,1;azucena
 d+4,1~2;L, m;13, 20;i15~16, i17~18;-8;+20a (+11);+59a;"* Strong Aerial Tailspin
-* Balcony Break";bbr;;Full City Roast Knuckle Combo;r29;;File:t8-p2-azucena-d+4,1~2.mp4;Azucena-d+4,1~2;azucena
+* Balcony Break";bbr;;Full City Roast Knuckle Combo;29;;;File:t8-p2-azucena-d+4,1~2.mp4;Azucena-d+4,1~2;azucena
 d+1+2;l;"[21;21]";i25~26;-4;+0d;;"* Transition to throw on front standing hit only
 * 18 damage to Azucena when hitting crouching opponent (block)
 * Damage on hit and block is recoverable health
 * Cannot KO Azucena when blocked
 * r41 FC on whiff
 * High crush 8~
-* Floating state 25~";cs8~ fs25~;LIB;UFO Roll;r41 LIB;;File:t8-p2-azucena-d+1+2.mp4;Azucena-d+1+2;azucena
+* Floating state 25~";cs8~ fs25~;LIB;UFO Roll;41;LIB;;File:t8-p2-azucena-d+1+2.mp4;Azucena-d+1+2;azucena
 db+1;sl;5;i10;-5;+6;;"Can recover standing with F
-* High crush 4~";cs4~;FC;Crouch Jab;r24 FC;;;Azucena-db+1;azucena
-db+2;sl;8;i11;-4;+7;;* High crush 4~;cs4~;FC;Crouch Straight;r23 FC;;;Azucena-db+2;azucena
-db+3;L;14;i16~17;-7;+4;;;;BT;;r25 BT;;File:t8-p2-azucena-db+3.mp4;Azucena-db+3;azucena
+* High crush 4~";cs4~;FC;Crouch Jab;24;FC;;;Azucena-db+1;azucena
+db+2;sl;8;i11;-4;+7;;* High crush 4~;cs4~;FC;Crouch Straight;23;FC;;;Azucena-db+2;azucena
+db+3;L;14;i16~17;-7;+4;;;;BT;;25;BT;;File:t8-p2-azucena-db+3.mp4;Azucena-db+3;azucena
 db+3,4;L, h;14, 20;i16~17, i24~25;-13;+66a (+50);;"* Tornado
 * Balcony Break
 * Jails from first hit
-* Combo from 1st CH";trn bbr;;Borrasca Kick Combo;r34;;File:t8-p2-azucena-db+3,4.mp4;Azucena-db+3,4;azucena
-db+4;L;13;i19;-14;-3;+12g;* High crush 6~20;cs6~20;;Bitter Low Kick;r33;;File:t8-p2-azucena-db+4.mp4;Azucena-db+4;azucena
+* Combo from 1st CH";trn bbr;;Borrasca Kick Combo;34;;;File:t8-p2-azucena-db+3,4.mp4;Azucena-db+3,4;azucena
+db+4;L;13;i19;-14;-3;+12g;* High crush 6~20;cs6~20;;Bitter Low Kick;33;;;File:t8-p2-azucena-db+4.mp4;Azucena-db+4;azucena
 db+1+2;M;23;i20~21;-21;+33a (+23);;"Steel pedal
-* High crush 6~21";cs6~21;;Kilimanjaro Uppercut;r40;;File:t8-p2-azucena-db+1+2.mp4;Azucena-db+1+2;azucena
+* High crush 6~21";cs6~21;;Kilimanjaro Uppercut;40;;;File:t8-p2-azucena-db+1+2.mp4;Azucena-db+1+2;azucena
 db+3+4;m;30;i26~30;-16~-12;+15a (+5);;"* Balcony Break
 * Backswing blow
 * Low crush 20~35
-* Floating state 36~38";bbr js20~35 fs36~38;;El Cóndor Pasa;r36;;File:t8-p2-azucena-db+3+4.mp4;Azucena-db+3+4;azucena
-b+1;h;10;i14~15;-3;+3;;;;;;r26;;File:t8-p2-azucena-b+1,1,2.mp4;Azucena-b+1;azucena
+* Floating state 36~38";bbr js20~35 fs36~38;;El Cóndor Pasa;36;;;File:t8-p2-azucena-db+3+4.mp4;Azucena-db+3+4;azucena
+b+1;h;10;i14~15;-3;+3;;;;;;26;;;File:t8-p2-azucena-b+1,1,2.mp4;Azucena-b+1;azucena
 b+1,1;h, h;10, 14;i14~15, i23;-8;+3;;"* Combo from 1st CH hit with 6f delay
 * Only jails on block with 1f delay
-* 4 chip damage on block";chp:4;LIB;;r27 LIB;;File:t8-p2-azucena-b+1,1,2.mp4;Azucena-b+1,1;azucena
+* 4 chip damage on block";chp:4;LIB;;27;LIB;;File:t8-p2-azucena-b+1,1,2.mp4;Azucena-b+1,1;azucena
 b+1,1,2;h, h, h;10, 14, 20;i14~15, ,i24~25;-5;+17a (+8);;"* Balcony Break
 * Combo from 1st CH
 * Combo from 2nd CH with 6f delay
 * Input can be delayed 9f
 * Move can be delayed 7f
 * 6 chip damage on block
-* Cancel to BT -21 -10 r18 with B";bbr chp:6;BT;Double Blend Tempestad;r32;;File:t8-p2-azucena-b+1,1,2.mp4;Azucena-b+1,1,2;azucena
+* Cancel to BT -21 -10 r18 with B";bbr chp:6;BT;Double Blend Tempestad;32;;;File:t8-p2-azucena-b+1,1,2.mp4;Azucena-b+1,1,2;azucena
 b+2;h;21;i18~19;+2;+22a (+13);;"* Balcony Break
 * Homing
-* 6 chip damage on block";bbr hom chp:6;;Mil Nudillo;r27;;File:t8-p2-azucena-b+2.mp4;Azucena-b+2;azucena
+* 6 chip damage on block";bbr hom chp:6;;Mil Nudillo;27;;;File:t8-p2-azucena-b+2.mp4;Azucena-b+2;azucena
 b+3;m;21;i19;+2c;+8c;;"* Heat Engager
 
 * Heat Dash +5, +67a (+50)
 
 * Spike
-* 6 chip damage on block";he spk chp:6;;Tacón Plunger;r30;;File:t8-p2-azucena-b+3.mp4;Azucena-b+3;azucena
-b+4;m;10;i15~16;-9;+2;;Knee;kne;;;r27;;File:t8-p2-azucena-b+4,3,4,3.mp4;Azucena-b+4;azucena
+* 6 chip damage on block";he spk chp:6;;Tacón Plunger;30;;;File:t8-p2-azucena-b+3.mp4;Azucena-b+3;azucena
+b+4;m;10;i15~16;-9;+2;;Knee;kne;;;27;;;File:t8-p2-azucena-b+4,3,4,3.mp4;Azucena-b+4;azucena
 b+4,3;m, m;10, 10;i15~16, i23~24;-10;+4;;"* Knee
-* Combo from 1st hit with 6f delay";kne;;;r30;;File:t8-p2-azucena-b+4,3,4,3.mp4;Azucena-b+4,3;azucena
+* Combo from 1st hit with 6f delay";kne;;;30;;;File:t8-p2-azucena-b+4,3,4,3.mp4;Azucena-b+4,3;azucena
 b+4,3,4;m, m, m;10, 10, 16;i15~16, ,i23~24;-10;-2;;"* Knee
-* Combo from 2nd CH with 10f delay";kne;;;r31;;File:t8-p2-azucena-b+4,3,4,3.mp4;Azucena-b+4,3,4;azucena
+* Combo from 2nd CH with 10f delay";kne;;;31;;;File:t8-p2-azucena-b+4,3,4,3.mp4;Azucena-b+4,3,4;azucena
 b+4,3,4,3;m, m, m, h;10, 10, 16, 23;i15~16, ,i27~28;-7;+39d (-19);;"* Balcony Break
 * Combo from 2nd CH with 6f delay
 * Combo from 3rd hit with 2f delay
-* Move can be delayed 6f";bbr;;Seattle Skipper;r34;;File:t8-p2-azucena-b+4,3,4,3.mp4;Azucena-b+4,3,4,3;azucena
+* Move can be delayed 6f";bbr;;Seattle Skipper;34;;;File:t8-p2-azucena-b+4,3,4,3.mp4;Azucena-b+4,3,4,3;azucena
 b+3+4;;;;;;;"* Low crush 6~19
-* Floating state 20~22";js6~19 fs20~22;BT;Hopping Turn;r25 BT;;File:t8-p2-azucena-b+3+4.mp4;Azucena-b+3+4;azucena
-b+3+4*;;;;;;;Regenerates heat;;BT;Shuffle Carnival;r55 BT;;File:t8-p2-azucena-b+3+4s.mp4;Azucena-b+3+4*;azucena
+* Floating state 20~22";js6~19 fs20~22;BT;Hopping Turn;25;BT;;File:t8-p2-azucena-b+3+4.mp4;Azucena-b+3+4;azucena
+b+3+4*;;;;;;;Regenerates heat;;BT;Shuffle Carnival;55;BT;;File:t8-p2-azucena-b+3+4s.mp4;Azucena-b+3+4*;azucena
 uf+1;h;18;i18~19;-9;+7 +15w;;"* Wall Crush +15g on hit
 
 
 * Balcony break on airborne hit
 * Punch Sabaki, parries high or mid punches
-* Parry state 3~10";wc ps3~10;;Eye Opener;r32;;File:t8-p2-azucena-uf+1.mp4;Azucena-uf+1;azucena
-uf+1,P;h, t;18, 25;i18~19, ;;-4d;;Opponent recovers FUFA;;;Close Encounter;;;File:t8-p2-azucena-uf+1,p.mp4;Azucena-uf+1,P;azucena
+* Parry state 3~10";wc ps3~10;;Eye Opener;32;;;File:t8-p2-azucena-uf+1.mp4;Azucena-uf+1;azucena
+uf+1,P;h, t;18, 25;i18~19, ;;-4d;;Opponent recovers FUFA;;;Close Encounter;;;;File:t8-p2-azucena-uf+1,p.mp4;Azucena-uf+1,P;azucena
 uf+2;h;20;i17~18;-5;+14c;;"* Strong Aerial Tailspin
 * Guaranteed 14f or faster follow-up mid on hit
 * 70% scaling on combo
-* Sidesteps to the right";;;Rhythmic Hook;r32;;File:t8-p2-azucena-uf+2.mp4;Azucena-uf+2;azucena
+* Sidesteps to the right";;;Rhythmic Hook;32;;;File:t8-p2-azucena-uf+2.mp4;Azucena-uf+2;azucena
 uf+3;h;20;i21~22;-16a;+36a;;"* Low crush 10~30
-* Floating state 31~65";js10~30 fs31~65;FUFT;;r43 FUFT;;File:t8-p2-azucena-uf+3,4.mp4;Azucena-uf+3;azucena
+* Floating state 31~65";js10~30 fs31~65;FUFT;;43;FUFT;;File:t8-p2-azucena-uf+3,4.mp4;Azucena-uf+3;azucena
 uf+3,4;h, m;20, 17;i21~22, i20~21;-14;+15a (+6);+55a;"* Strong Aerial Tailspin
 * Balcony Break
-* Combo from 1st hit with 11f delay";bbr;;Daylight Disk;r34;;File:t8-p2-azucena-uf+3,4.mp4;Azucena-uf+3,4;azucena
+* Combo from 1st hit with 11f delay";bbr;;Daylight Disk;34;;;File:t8-p2-azucena-uf+3,4.mp4;Azucena-uf+3,4;azucena
 uf+4;M;22;i24~26;-8;+21a;;"* Spike
 *20 damage when u+4 or ub+4 input is used
-* Low crush 9~26";spk js9~26;;Tacones Drip;r27;;File:t8-p2-azucena-uf+4.mp4;Azucena-uf+4;azucena
+* Low crush 9~26";spk js9~26;;Tacones Drip;27;;;File:t8-p2-azucena-uf+4.mp4;Azucena-uf+4;azucena
 uf+3+4;m,M;10,18;i21~22, i10~12;+4~+6;+8c;;"* Spike
 * Transition to BT r33 with B
 * 8 chip damage on block
 * Low crush 16~36
-* Floating state 37~39";spk chp:8 js16~36 fs37~39;BT,LIB;Ortiz Molino;r33 LIB;;File:t8-p2-azucena-f,f+3+4.mp4;Azucena-uf+3+4;azucena
+* Floating state 37~39";spk chp:8 js16~36 fs37~39;BT,LIB;Ortiz Molino;33;LIB;;File:t8-p2-azucena-f,f+3+4.mp4;Azucena-uf+3+4;azucena
 1+2+3+4;;;;;;;"* Can't block for 5 seconds
 * CH state on your next attack for 5 seconds ''(Tekken 7 and prior games)''
 * 10% damage increase on the next attack for 5 seconds ''(Tekken 8 season 2 patch onward)''
-* Attacks taken will be CH for 5 seconds";;;Ki Charge;r72;;File:t8-p2-azucena-1+2+3+4.mp4;Azucena-1+2+3+4;azucena
-1+2+3+4,3+4;m!;54;i75;;-8a;;Base damage is 45;;;Black Ivory Talon;r57;;File:t8-p2-azucena-1+2+3+4,3+4.mp4;Azucena-1+2+3+4,3+4;azucena
+* Attacks taken will be CH for 5 seconds";;;Ki Charge;72;;;File:t8-p2-azucena-1+2+3+4.mp4;Azucena-1+2+3+4;azucena
+1+2+3+4,3+4;m!;54;i75;;-8a;;Base damage is 45;;;Black Ivory Talon;57;;;File:t8-p2-azucena-1+2+3+4,3+4.mp4;Azucena-1+2+3+4,3+4;azucena
 UB,b;sp;;;;;;"Transition to r28 LIB with F (js17~36, fs37~39, cs47~63)
 * Low crush 17~36
-* Floating state 37~39";js17~36 fs37~39;LIB;Volterador;r54;;File:t8-p2-azucena-ub,b.mp4;Azucena-UB,b;azucena
+* Floating state 37~39";js17~36 fs37~39;LIB;Volterador;54;;;File:t8-p2-azucena-ub,b.mp4;Azucena-UB,b;azucena
 f,F+3;M;20;i15~17;-14~-12;+35a (+25);;"Tornado
 * Low crush 17~37
-* Floating state 38~40";trn js17~37 fs38~40;;Luna Llena;r37;;File:t8-p2-azucena-f,f+3.mp4;Azucena-f,F+3;azucena
+* Floating state 38~40";trn js17~37 fs38~40;;Luna Llena;37;;;File:t8-p2-azucena-f,f+3.mp4;Azucena-f,F+3;azucena
 f,F+4;M;25;i25~27;+0c~+2c;+13c~+15c;;"* Spike
 * Guaranteed 13f or faster mid on hit
 * 70% scaling on combo
-* 7 chip damage on block";spk chp:7;;Demitasse Molino;r26;;File:t8-p2-azucena-f,f+4.mp4;Azucena-f,F+4;azucena
+* 7 chip damage on block";spk chp:7;;Demitasse Molino;26;;;File:t8-p2-azucena-f,f+4.mp4;Azucena-f,F+4;azucena
 f,f,F+3;m;10;i15~16;-14;-9;;"Knee
 * Low crush 9~36
-* Floating state 37~39";kne js9~36 fs37~39;;;r38;;File:t8-p2-azucena-f,f,f+3,2.mp4;Azucena-f,f,F+3;azucena
+* Floating state 37~39";kne js9~36 fs37~39;;;38;;;File:t8-p2-azucena-f,f,f+3,2.mp4;Azucena-f,f,F+3;azucena
 f,f,F+3,2;m, h;10, 20;i15~16, i10~12;+2;+25a (-1);;"* Balcony Break
 * Elbow
 * Jail from 1st attack
@@ -307,150 +307,150 @@ f,f,F+3,2;m, h;10, 20;i15~16, i10~12;+2;+25a (-1);;"* Balcony Break
 * Available only as combo from 1st hit
 * Enter LIB +3 +28a (+2) r35 with F on frame 22
 * Low crush 1~24
-* Floating state 25~27";bbr elb chp:8 js1~24 fs25~27;LIB;Espresso Agresión;r38;;File:t8-p2-azucena-f,f,f+3,2.mp4;Azucena-f,f,F+3,2;azucena
-ws1;m;17;i13~14;-8;+6;+32a (+26);Only hits grounded up-close and off-axis;;;Gold Mountain Fist;r26;;File:t8-p2-azucena-ws1.mp4;Azucena-ws1;azucena
-ws2;m;14;i15~16;-13;+32a (+22);;;;;Rainbow Mountain Swing;r31;;File:t8-p2-azucena-ws2.mp4;Azucena-ws2;azucena
+* Floating state 25~27";bbr elb chp:8 js1~24 fs25~27;LIB;Espresso Agresión;38;;;File:t8-p2-azucena-f,f,f+3,2.mp4;Azucena-f,f,F+3,2;azucena
+ws1;m;17;i13~14;-8;+6;+32a (+26);Only hits grounded up-close and off-axis;;;Gold Mountain Fist;26;;;File:t8-p2-azucena-ws1.mp4;Azucena-ws1;azucena
+ws2;m;14;i15~16;-13;+32a (+22);;;;;Rainbow Mountain Swing;31;;;File:t8-p2-azucena-ws2.mp4;Azucena-ws2;azucena
 ws3;m;23;i20~21;+4;+16cg;;"* Balcony Break
 * 6 chip damage on block
-* Opponent recovers crouching";bbr chp:6;LIB;Viento Fuerte;r33 LIB;;File:t8-p2-azucena-ws3.mp4;Azucena-ws3;azucena
-ws4;m;13;i11~12;-6;+5;;;;;;r24;;File:t8-p2-azucena-ws4,1,3.mp4;Azucena-ws4;azucena
+* Opponent recovers crouching";bbr chp:6;LIB;Viento Fuerte;33;LIB;;File:t8-p2-azucena-ws3.mp4;Azucena-ws3;azucena
+ws4;m;13;i11~12;-6;+5;;;;;;24;;;File:t8-p2-azucena-ws4,1,3.mp4;Azucena-ws4;azucena
 ws4,1;m, h;13, 10;i11~12, i21~22;-2;+6;;"* Combo from 1st hit with 6f delay
-* Enter LIB +0 +8 r21 with F";;LIB;;r23;;File:t8-p2-azucena-ws4,1,3.mp4;Azucena-ws4,1;azucena
+* Enter LIB +0 +8 r21 with F";;LIB;;23;;;File:t8-p2-azucena-ws4,1,3.mp4;Azucena-ws4,1;azucena
 ws4,1,3;m, h, m;13, 10, 28;i11~12, ,i22~23;-13;+10a (+1);+27a;"* Balcony Break
 * Combo from 2nd CH with 7f delay
 * Move can be delayed 10f
-* Cancel to BT -16 -8 r20 with B";bbr;BT;Combo de Cantuta;r39;;File:t8-p2-azucena-ws4,1,3.mp4;Azucena-ws4,1,3;azucena
+* Cancel to BT -16 -8 r20 with B";bbr;BT;Combo de Cantuta;39;;;File:t8-p2-azucena-ws4,1,3.mp4;Azucena-ws4,1,3;azucena
 SS.4;L;18;i20;-13;+0;+13g;"Sidestep adds 9f, effective startup i29
-* High crush 6~";cs6~;FC;Mowing Kick;r32 FC;;File:t8-p2-azucena-ss.4.mp4;Azucena-SS.4;azucena
-FC.df+3;L;17;i18~19;-13;+3c;+13c;* High crush 1~;cs1~;FC;Cosecha Látigo;r31 FC;;File:t8-p2-azucena-fc.df+3.mp4;Azucena-FC.df+3;azucena
+* High crush 6~";cs6~;FC;Mowing Kick;32;FC;;File:t8-p2-azucena-ss.4.mp4;Azucena-SS.4;azucena
+FC.df+3;L;17;i18~19;-13;+3c;+13c;* High crush 1~;cs1~;FC;Cosecha Látigo;31;FC;;File:t8-p2-azucena-fc.df+3.mp4;Azucena-FC.df+3;azucena
 FC.df+4;L;23;i17~18;-15;+5;+24d;"* Transition to r33 LIB on hit only
-* High crush 1~";cs1~;LIB,FC;Etching Blade;r33 FC;;File:t8-p2-azucena-fc.df+4.mp4;Azucena-FC.df+4;azucena
+* High crush 1~";cs1~;LIB,FC;Etching Blade;33;FC;;File:t8-p2-azucena-fc.df+4.mp4;Azucena-FC.df+4;azucena
 FC.d+1;sl;5;i10;-5;+6;;"Can recover standing with F
-* High crush 1~";cs1~;;Crouch Jab;r24;;File:t8-p2-azucena-fc.d+1.mp4;Azucena-FC.d+1;azucena
-FC.d+2;sl;8;i11;-4;+7;;* High crush 1~;cs1~;;Crouch Straight;r23;;File:t8-p2-azucena-fc.d+2.mp4;Azucena-FC.d+2;azucena
-FC.d+3;L;10;i16;-17;-6;;* High crush 1~;cs1~;FC;Crouch Spin Kick;r36 FC;;File:t8-p2-azucena-fc.d+3.mp4;Azucena-FC.d+3;azucena
-FC.d+4;l;6;i12;-15;-4;;* High crush 1~;cs1~;FC;Crouch Shin Kick;r34 FC;;File:t8-p2-azucena-fc.d+4.mp4;Azucena-FC.d+4;azucena
+* High crush 1~";cs1~;;Crouch Jab;24;;;File:t8-p2-azucena-fc.d+1.mp4;Azucena-FC.d+1;azucena
+FC.d+2;sl;8;i11;-4;+7;;* High crush 1~;cs1~;;Crouch Straight;23;;;File:t8-p2-azucena-fc.d+2.mp4;Azucena-FC.d+2;azucena
+FC.d+3;L;10;i16;-17;-6;;* High crush 1~;cs1~;FC;Crouch Spin Kick;36;FC;;File:t8-p2-azucena-fc.d+3.mp4;Azucena-FC.d+3;azucena
+FC.d+4;l;6;i12;-15;-4;;* High crush 1~;cs1~;FC;Crouch Shin Kick;34;FC;;File:t8-p2-azucena-fc.d+4.mp4;Azucena-FC.d+4;azucena
 (Back to wall).b,b,UB;m;25;i27~33;+1~+7;+7a (-3);;"Balcony Break
 * Floating state 5~13
 * Low crush 14~26
-* Floating state 27~54";bbr fs5~13 js14~26 fs27~54;;[[Wall Jump Attack]];r43;;File:t8-p2-azucena-back-to-wall.b,b,ub.mp4;Azucena-(Back to wall).b,b,UB;azucena
-BT.1;h;9;i10~11;+2;+6;+8;;;BT;;r18 BT;;File:t8-p2-azucena-bt.1,2.mp4;Azucena-BT.1;azucena
+* Floating state 27~54";bbr fs5~13 js14~26 fs27~54;;[[Wall Jump Attack]];43;;;File:t8-p2-azucena-back-to-wall.b,b,ub.mp4;Azucena-(Back to wall).b,b,UB;azucena
+BT.1;h;9;i10~11;+2;+6;+8;;;BT;;18;BT;;File:t8-p2-azucena-bt.1,2.mp4;Azucena-BT.1;azucena
 BT.1,2;h, h;9, 23;i10~11, i22~23;-1;+19a (+10);;"* Balcony Break
 * Combo from 1st hit with 2f delay
 * Combo from 1st CH with 4f delay
 * Move can be delayed 10f
 * 6 chip damage on block 
-* Cancel to LIB -19 -13 r37 with F at frame 17";bbr chp:6;LIB;Mocha Attaque Matari;r30;;File:t8-p2-azucena-bt.1,2.mp4;Azucena-BT.1,2;azucena
+* Cancel to LIB -19 -13 r37 with F at frame 17";bbr chp:6;LIB;Mocha Attaque Matari;30;;;File:t8-p2-azucena-bt.1,2.mp4;Azucena-BT.1,2;azucena
 BT.1,4;h, m;9, 21;i10~11, i24~25;-11;+8;+53a;"* Combo from 1st hit
 * Combo from 1st CH with 2f delay
 * Move can be delayed 10f
-* Will not combo if the kick impacts on i25";;;Mocha Attaque Sidamo;r33;;File:t8-p2-azucena-bt.1,4.mp4;Azucena-BT.1,4;azucena
-BT.2;m;15;i17~18;-8;+3;;Transition to attack throw on front standing hit by inputting 2 on frames 10~16;;;;r31;;;Azucena-BT.2;azucena
-BT.2:2;m, t;15, 23;i17~18, ;;+0d;;Transition to attack throw on front standing hit by inputting 2 on frames 10~16;;;Qhapaq Ñan;;;File:t8-p2-azucena-bt.2,2.mp4;Azucena-BT.2,2;azucena
+* Will not combo if the kick impacts on i25";;;Mocha Attaque Sidamo;33;;;File:t8-p2-azucena-bt.1,4.mp4;Azucena-BT.1,4;azucena
+BT.2;m;15;i17~18;-8;+3;;Transition to attack throw on front standing hit by inputting 2 on frames 10~16;;;;31;;;;Azucena-BT.2;azucena
+BT.2:2;m, t;15, 23;i17~18, ;;+0d;;Transition to attack throw on front standing hit by inputting 2 on frames 10~16;;;Qhapaq Ñan;;;;File:t8-p2-azucena-bt.2,2.mp4;Azucena-BT.2,2;azucena
 BT.3;L;23;i19~20;-13;+4 LIB;+14c;"* Strong Aerial Tailspin
 * Balcony break on airborne hit
-* Transition to LIB on hit";;LIB;Calf Reaper;r32;;File:t8-p2-azucena-bt.3.mp4;Azucena-BT.3;azucena
-BT.4;m;15;i15~16;-3;+6;;;;BT;;r23 BT;;File:t8-p2-azucena-bt.4,3.mp4;Azucena-BT.4;azucena
+* Transition to LIB on hit";;LIB;Calf Reaper;32;;;File:t8-p2-azucena-bt.3.mp4;Azucena-BT.3;azucena
+BT.4;m;15;i15~16;-3;+6;;;;BT;;23;BT;;File:t8-p2-azucena-bt.4,3.mp4;Azucena-BT.4;azucena
 BT.4,3;m, m;15, 21;i15~16, i23~24;-14;+16a (-1);+70a (+54);"* Tornado
 * Balcony Break
 * Combo from 1st hit with 6f delay
 * Move can be delayed 10f
-* Only hits grounded when up-close and off-axis";trn bbr;;Upbeat Patadas;r33;;File:t8-p2-azucena-bt.4,3.mp4;Azucena-BT.4,3;azucena
-BT.1+2;m;17;i14~15;-11;+3;+58a;;;;Golpe Affogato;r31;;File:t8-p2-azucena-bt.1+2.mp4;Azucena-BT.1+2;azucena
+* Only hits grounded when up-close and off-axis";trn bbr;;Upbeat Patadas;33;;;File:t8-p2-azucena-bt.4,3.mp4;Azucena-BT.4,3;azucena
+BT.1+2;m;17;i14~15;-11;+3;+58a;;;;Golpe Affogato;31;;;File:t8-p2-azucena-bt.1+2.mp4;Azucena-BT.1+2;azucena
 BT.3+4;M;23;i27~29;-5c~-3c;+20a;;"* Spike
 * 6 chip damage on block
 * Evasive, can evade mids and some highs
-* Low crush 9~29";spk chp:6 js9~29;BT;Foo Fighter;r28 BT;;File:t8-p2-azucena-bt.3+4.mp4;Azucena-BT.3+4;azucena
-BT.b+3;;;;;;;;;BT;Shuffle Walk;r33 BT;;File:t8-p2-azucena-bt.b+3.mp4;Azucena-BT.b+3;azucena
+* Low crush 9~29";spk chp:6 js9~29;BT;Foo Fighter;28;BT;;File:t8-p2-azucena-bt.3+4.mp4;Azucena-BT.3+4;azucena
+BT.b+3;;;;;;;;;BT;Shuffle Walk;33;BT;;File:t8-p2-azucena-bt.b+3.mp4;Azucena-BT.b+3;azucena
 BT.b+1+2;;;;;;;"Parries all mids
-* Parry state 2~8";ps2~8;;Runaway;r55;;File:t8-p2-azucena-bt.b+1+2.mp4;Azucena-BT.b+1+2;azucena
-BT.b+3+4;;;;;;;* High crush 6~20;cs6~20;BT;Hide Turn;r33 BT;;File:t8-p2-azucena-bt.b+3+4.mp4;Azucena-BT.b+3+4;azucena
+* Parry state 2~8";ps2~8;;Runaway;55;;;File:t8-p2-azucena-bt.b+1+2.mp4;Azucena-BT.b+1+2;azucena
+BT.b+3+4;;;;;;;* High crush 6~20;cs6~20;BT;Hide Turn;33;BT;;File:t8-p2-azucena-bt.b+3+4.mp4;Azucena-BT.b+3+4;azucena
 BT.f+3+4;;;;;;;"* Low crush 6~21
-* Floating state 22~24";js6~21 fs22~24;LIB;Libertador (Regreso);r33 LIB;;File:t8-p2-azucena-bt.f+3+4.mp4;Azucena-BT.f+3+4;azucena
-LIB.1;h;14;i13;+3;+8;;* 4 chip damage on block;chp:4;LIB;;r22 LIB;;File:t8-p2-azucena-lib.1,2.mp4;Azucena-LIB.1;azucena
+* Floating state 22~24";js6~21 fs22~24;LIB;Libertador (Regreso);33;LIB;;File:t8-p2-azucena-bt.f+3+4.mp4;Azucena-BT.f+3+4;azucena
+LIB.1;h;14;i13;+3;+8;;* 4 chip damage on block;chp:4;LIB;;22;LIB;;File:t8-p2-azucena-lib.1,2.mp4;Azucena-LIB.1;azucena
 LIB.1,2;h, h;14, 20;i13, i24~25;-5;+17a (+8);;"* Balcony Break
 * Combo from 1st hit with 6f delay
 * Input can be delayed 9f
 * Move can be delayed 7f
 * 6 chip damage on block
-* Cancel to BT -15 -10 r40 with B at frame 20";bbr chp:6;BT;Blend Tempestad;r32;;File:t8-p2-azucena-lib.1,2.mp4;Azucena-LIB.1,2;azucena
+* Cancel to BT -15 -10 r40 with B at frame 20";bbr chp:6;BT;Blend Tempestad;32;;;File:t8-p2-azucena-lib.1,2.mp4;Azucena-LIB.1,2;azucena
 LIB.2;m;22;i14~15;-8;+21~22cg;;"* Heat Engager
 
 * Heat Dash +5, +43d (+35)
 
-* Balcony Break";he bbr;;Golpe Cappuccino;r28;;File:t8-p2-azucena-lib.2.mp4;Azucena-LIB.2;azucena
-LIB.3;L;15;i16~17;-9;+2;;;;BT;Acerbic Low Kick;r27 BT;;File:t8-p2-azucena-lib.3.mp4;Azucena-LIB.3;azucena
+* Balcony Break";he bbr;;Golpe Cappuccino;28;;;File:t8-p2-azucena-lib.2.mp4;Azucena-LIB.2;azucena
+LIB.3;L;15;i16~17;-9;+2;;;;BT;Acerbic Low Kick;27;BT;;File:t8-p2-azucena-lib.3.mp4;Azucena-LIB.3;azucena
 LIB.3,1;L, m;15, 20;i16~17, i22~23;-10;+21d;;"* Spike
 * Combo from 1st CH with 7f delay
 * Move can be delayed 8f
-* On block only regular i10 punishers are guaranteed, even though she is backturned";spk;BT;Blend Reganar;r32 BT;;File:t8-p2-azucena-lib.3,1.mp4;Azucena-LIB.3,1;azucena
-LIB.4;m;14;i15~16;-3;+10;+10a;;;LIB;;r24 LIB;;File:t8-p2-azucena-lib.4,1,2.mp4;Azucena-LIB.4;azucena
+* On block only regular i10 punishers are guaranteed, even though she is backturned";spk;BT;Blend Reganar;32;BT;;File:t8-p2-azucena-lib.3,1.mp4;Azucena-LIB.3,1;azucena
+LIB.4;m;14;i15~16;-3;+10;+10a;;;LIB;;24;LIB;;File:t8-p2-azucena-lib.4,1,2.mp4;Azucena-LIB.4;azucena
 LIB.4,1;m, h;14, 10;i15~16, i23~24;-1;+5;+10;"* Combo from 1st hit with 9f delay
-* Launches from first counter hit";;;;r19;;File:t8-p2-azucena-lib.4,1,2.mp4;Azucena-LIB.4,1;azucena
+* Launches from first counter hit";;;;19;;;File:t8-p2-azucena-lib.4,1,2.mp4;Azucena-LIB.4,1;azucena
 LIB.4,1,2;m, h, m;14, 10, 23;i15~16, ,i28~29;-10;+67a (+51);;"* Tornado
 * Balcony Break
 * Combo from 2nd CH with 1f delay
-* Move can be delayed 10f";trn bbr;;Blend Asaltar;r33;;File:t8-p2-azucena-lib.4,1,2.mp4;Azucena-LIB.4,1,2;azucena
+* Move can be delayed 10f";trn bbr;;Blend Asaltar;33;;;File:t8-p2-azucena-lib.4,1,2.mp4;Azucena-LIB.4,1,2;azucena
 LIB.4,2;m, M;14, 21;i15~16, i25~26;-13;+16a;;"* Balcony Break
 * Spike
 * Combo from 1st hit with 5f delay
-* Will not wall splat when the first hit is a counter hit due to float state";bbr spk;;Blend Martillo;r33;;File:t8-p2-azucena-lib.4,2.mp4;Azucena-LIB.4,2;azucena
+* Will not wall splat when the first hit is a counter hit due to float state";bbr spk;;Blend Martillo;33;;;File:t8-p2-azucena-lib.4,2.mp4;Azucena-LIB.4,2;azucena
 LIB.1+2;M;23;i18~19;-14;+38a (+28);;"* Tornado
 * Cancel to r20 BT with B
 * Low crush 20~30
-* Floating state 31~33";trn js20~30 fs31~33;BT;Rana Barista;r35;;File:t8-p2-azucena-lib.1+2.mp4;Azucena-LIB.1+2;azucena
+* Floating state 31~33";trn js20~30 fs31~33;BT;Rana Barista;35;;;File:t8-p2-azucena-lib.1+2.mp4;Azucena-LIB.1+2;azucena
 LIB.3+4;h;25;i16~17;-2;+32a;;"* Strong Aerial Tailspin
 * Homing
 * Balcony Break
 * 7 chip damage on block
 * +3 frame advantage and 10 chip damage on block after absorbing an attack in power crush state
-* Power crush 7~15";hom bbr chp:7 pc7~15;;El Niño High Kick;r31;;File:t8-p2-azucena-lib.3+4.mp4;Azucena-LIB.3+4;azucena
+* Power crush 7~15";hom bbr chp:7 pc7~15;;El Niño High Kick;31;;;File:t8-p2-azucena-lib.3+4.mp4;Azucena-LIB.3+4;azucena
 LIB.B;;;;;;;"Completely evades high or low attacks
-* Parry state 1~";ps1~;LIB;Salida Castillo;r1 LIB;;File:t8-p2-azucena-lib.b.mp4;Azucena-LIB.B;azucena
+* Parry state 1~";ps1~;LIB;Salida Castillo;1;LIB;;File:t8-p2-azucena-lib.b.mp4;Azucena-LIB.B;azucena
 LIB.F;;;;;;;"* Completely evades high or low attacks
-* Parry state 1~";ps1~;LIB;Azucena Admission;r1 LIB;;File:t8-p2-azucena-lib.f.mp4;Azucena-LIB.F;azucena
+* Parry state 1~";ps1~;LIB;Azucena Admission;1;LIB;;File:t8-p2-azucena-lib.f.mp4;Azucena-LIB.F;azucena
 LIB.P (High);;0;;;;;"* Restores recoverable health
 * Frame advantage depends on the move that gets parried
-* is1~16";is1~16;LIB;Crema Petalo;r22 LIB;;File:t8-p2-azucena-lib.p-high.mp4;Azucena-LIB.P (High);azucena
+* is1~16";is1~16;LIB;Crema Petalo;22;LIB;;File:t8-p2-azucena-lib.p-high.mp4;Azucena-LIB.P (High);azucena
 LIB.P (Low);m,m;15,20;i7~8 i19~20;;+8;;"* Restores recoverable health
 * Will cause a juggle on lows with float properties
 * is1~6
 * Floating state 7
 * Low crush 8~19
-* Floating state 20~22";is1~6 fs7 js8~19 fs20~22;LIB;Flush Valve Gracia;r26 LIB;;File:t8-p2-azucena-lib.p-low.mp4;Azucena-LIB.P (Low);azucena
+* Floating state 20~22";is1~6 fs7 js8~19 fs20~22;LIB;Flush Valve Gracia;26;LIB;;File:t8-p2-azucena-lib.p-low.mp4;Azucena-LIB.P (Low);azucena
 LIB.U;;;;;;;"* Completely evades high or low attacks
-* Parry state 1~";ps1~;LIB;Milagros Show;r1 LIB;;File:t8-p2-azucena-lib.u_d.mp4;Azucena-LIB.U_D;azucena
-LIB.b,b;;;;;;;* Can be canceled at r20 with b+1 or uf+1, performs the same attack as uf+1;;LIB;Caer Back Funnel;r45 LIB;;File:t8-p2-azucena-lib.b,b.mp4;Azucena-LIB.b,b;azucena
+* Parry state 1~";ps1~;LIB;Milagros Show;1;LIB;;File:t8-p2-azucena-lib.u_d.mp4;Azucena-LIB.U_D;azucena
+LIB.b,b;;;;;;;* Can be canceled at r20 with b+1 or uf+1, performs the same attack as uf+1;;LIB;Caer Back Funnel;45;LIB;;File:t8-p2-azucena-lib.b,b.mp4;Azucena-LIB.b,b;azucena
 LIB.d+3;m;25;i24~26;+2;+13a;+38a;"* Balcony Break
 * Floor Break on airborne hit
-* High crush 6~";bbr cs6~;FC;Pedalada Tron;r35 FC;;;Azucena-LIB.d+3;azucena
-LIB.d+4;L;14;i19~20;-31;-2;;;;;;r31;;File:t8-p2-azucena-lib.d+4,4.mp4;Azucena-LIB.d+4;azucena
+* High crush 6~";bbr cs6~;FC;Pedalada Tron;35;FC;;;Azucena-LIB.d+3;azucena
+LIB.d+4;L;14;i19~20;-31;-2;;;;;;31;;;File:t8-p2-azucena-lib.d+4,4.mp4;Azucena-LIB.d+4;azucena
 LIB.d+4,4;L, h;14, 27;i19~20, i30~31;-7;+14a (+5);;"* Balcony Break
-* Combo from 1st hit";bbr;;Blend Cortar;r34;;File:t8-p2-azucena-lib.d+4,4.mp4;Azucena-LIB.d+4,4;azucena
-LIB.f,f;;;;;;;;;LIB;Libertador (Varios);r28 LIB;;File:t8-p2-azucena-lib.f,f.mp4;Azucena-LIB.f,f;azucena
+* Combo from 1st hit";bbr;;Blend Cortar;34;;;File:t8-p2-azucena-lib.d+4,4.mp4;Azucena-LIB.d+4,4;azucena
+LIB.f,f;;;;;;;;;LIB;Libertador (Varios);28;LIB;;File:t8-p2-azucena-lib.f,f.mp4;Azucena-LIB.f,f;azucena
 1+3;t;35;i12~14;-3;+0d;;"* Homing
-* Throw break 1 or 2";hom;;Amaru Head Squeeze;r31;;File:t8-p2-azucena-1+3.mp4;Azucena-1+3;azucena
+* Throw break 1 or 2";hom;;Amaru Head Squeeze;31;;;File:t8-p2-azucena-1+3.mp4;Azucena-1+3;azucena
 2+4;t;35;i12~14;-3;+0d;;"* Homing
 * Throw break 1 or 2
-* Side switch on hit and break";hom;;El Dorado Neck Snap;r31;;File:t8-p2-azucena-2+4.mp4;Azucena-2+4;azucena
+* Side switch on hit and break";hom;;El Dorado Neck Snap;31;;;File:t8-p2-azucena-2+4.mp4;Azucena-2+4;azucena
 Back throw;t;50;;;+0d;;"* Unbreakable
-* Side switch";;;Caffeine Abduction;;;File:t8-p2-azucena-back-throw.mp4;Azucena-Back throw;azucena
-Left throw;t;40;;-3;+0d;;* Throw break 1;;;Urubamba Neck Lock;;;File:t8-p2-azucena-left-throw.mp4;Azucena-Left Throw;azucena
-Right throw;t;40;;-3;-3d;;* Throw break 2;;;Giratorio Sleeper Throw;;;File:t8-p2-azucena-right-throw.mp4;Azucena-Right Throw;azucena
+* Side switch";;;Caffeine Abduction;;;;File:t8-p2-azucena-back-throw.mp4;Azucena-Back throw;azucena
+Left throw;t;40;;-3;+0d;;* Throw break 1;;;Urubamba Neck Lock;;;;File:t8-p2-azucena-left-throw.mp4;Azucena-Left Throw;azucena
+Right throw;t;40;;-3;-3d;;* Throw break 2;;;Giratorio Sleeper Throw;;;;File:t8-p2-azucena-right-throw.mp4;Azucena-Right Throw;azucena
 Tackle.2,1,2,1;t;5,5,5,15;;;+0d;;"* Throw break 1 for right punches
 * Throw break 2 for left punches
 * Only 1st and 4th hits can be blocked
 * Inputs are reversed for tackle from behind
-* Can cancel the last punch to Arm Breaker with 1+2";;;Ultimate Punch;;;File:t8-p2-azucena-tackle.2,1,2,1.mp4;Azucena-Tackle.2,1,2,1;azucena
-Tackle.1+2;t;25;;-9;+1d;;* Throw break 1+2;;;Arm Breaker;;;File:t8-p2-azucena-tackle.1+2.mp4;Azucena-Tackle.1+2;azucena
+* Can cancel the last punch to Arm Breaker with 1+2";;;Ultimate Punch;;;;File:t8-p2-azucena-tackle.2,1,2,1.mp4;Azucena-Tackle.2,1,2,1;azucena
+Tackle.1+2;t;25;;-9;+1d;;* Throw break 1+2;;;Arm Breaker;;;;File:t8-p2-azucena-tackle.1+2.mp4;Azucena-Tackle.1+2;azucena
 d+1+3;t(m);35;i12~13;;+0d;;"* Heat Engager
 
 * Crouch throw
 * Unbreakable
-* Can't Heat Dash cancel";he;;Smell the Coffee;r28;;File:t8-p2-azucena-d+1+3.mp4;Azucena-d+1+3;azucena
+* Can't Heat Dash cancel";he;;Smell the Coffee;28;;;File:t8-p2-azucena-d+1+3.mp4;Azucena-d+1+3;azucena
 hFC.1+2;t;0;i32;-5;+3;;"* Throw break 1+2 in a 6f window, frames 1~6
 * Reverse tackle with 1+2 in a 17f window, frames 7~23, then 1+2 in a 2f window, frames 24~25
 * Works on standing and crouching opponent
-* Can be done from Crouch Level 1";;;Ultimate Tackle;r33;;File:t8-p2-azucena-fc.1+2.mp4;Azucena-hFC.1+2;azucena
+* Can be done from Crouch Level 1";;;Ultimate Tackle;33;;;File:t8-p2-azucena-fc.1+2.mp4;Azucena-hFC.1+2;azucena
 uf+1+2;t;40;i11;+0;-3d;;"* Throw break 1+2
-* side switch on hit";;;Inti Raymi Necklace;r28;;File:t8-p2-azucena-uf+1+2.mp4;Azucena-uf+1+2;azucena
+* side switch on hit";;;Inti Raymi Necklace;28;;;File:t8-p2-azucena-uf+1+2.mp4;Azucena-uf+1+2;azucena

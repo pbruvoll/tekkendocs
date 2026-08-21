@@ -1,11 +1,11 @@
-Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Transitions;Name;Recovery;Image;Video;Wavu id;Character id
+Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Transitions;Name;Recovery;Recovery state;Image;Video;Wavu id;Character id
 2+3;m;"[12;12]";i16;+1;+2c;;"* Heat Burst
 * Cancel to r45 with b,b on frame 42
 * 2 chip damage on block
 * 12 chip damage on hit
 * Only deals recoverable damage
 * Cannot cause a K.O.
-* Power crush 7~16";hb chp:2 pc7~16;;Heat Burst;r30;;;Jin-2+3;jin
+* Power crush 7~16";hb chp:2 pc7~16;;Heat Burst;30;;;;Jin-2+3;jin
 H.db+1+2;M;0;i19~34;+4;+23g~+38g;;"* Strong Aerial Tailspin
 * Balcony Break
 * Weapon?
@@ -15,7 +15,7 @@ H.db+1+2;M;0;i19~34;+4;+23g~+38g;;"* Strong Aerial Tailspin
 * Unparryable by traditional parries, Asuka, Nina, etc
 * Consumes 300F of remaining Heat time
 * Opponent recovers crouching
-* Power crush 6~18";bbr pc6~18;DVS,FC;Awakened Power Stance;r26;;;Jin-H.db+1+2;jin
+* Power crush 6~18";bbr pc6~18;DVS,FC;Awakened Power Stance;26;;;;Jin-H.db+1+2;jin
 H.f,F+1+2;m;20;i21~23;+5;+24cg;;"* Balcony Break
 * Strong Aerial Tailspin
 * Transition to DVS r32 on hit or block
@@ -25,7 +25,7 @@ H.f,F+1+2;m;20;i21~23;+5;+24cg;;"* Balcony Break
 * Cancel transition and recover Standing with B (-1/+18cg)
 * 4 chip damage on block
 * Low crush 11~48
-* Floating state 49~51";bbr chp:4 js11~48 fs49~51;DVS,FC;Awakened Black Wing;r38;;;Jin-H.f,F+1+2;jin
+* Floating state 49~51";bbr chp:4 js11~48 fs49~51;DVS,FC;Awakened Black Wing;38;;;;Jin-H.f,F+1+2;jin
 H.2+3;m,h,m;57;i15~16;+3;+0d;;"* Heat Smash
 * Reversal Break
 * Balcony Break
@@ -33,12 +33,12 @@ H.2+3;m,h,m;57;i15~16;+3;+0d;;"* Heat Smash
 * Transition to CD automatically on block
 * Transition to standing on block with B
 * 6 chip damage on block
-* Jail from 1st attack";hs rbr bbr chp:6;CD;Hellfire Trespass Slayer;r33;;;Jin-H.2+3;jin
+* Jail from 1st attack";hs rbr bbr chp:6;CD;Hellfire Trespass Slayer;33;;;;Jin-H.2+3;jin
 H.2+3,4;m,h,m;50;i15~16;+9;+32a (-4);;"* Heat Smash
 * Reversal Break
 * Balcony Break
 * 7 chip damage on block
-* Jail from 1st attack";hs rbr bbr chp:7;;Hellfire Darkside Slayer;r32;;;Jin-H.2+3,4;jin
+* Jail from 1st attack";hs rbr bbr chp:7;;Hellfire Darkside Slayer;32;;;;Jin-H.2+3,4;jin
 R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Removes Recoverable Health
 * Reversal Break
@@ -47,57 +47,61 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Restores recoverable health on hit
 * Transition to attack throw on hit
 * Consumes Rage
-* Power crush 8~";ra rbr pc8~;;Polar Demon Gouge;r39;;;Jin-R.df+1+2;jin
-1;h;5;i10;+1;+8;;Recovers 2f faster on hit or block (t27 r17);;;Jab;r19;;File:t8-p2-jin-1,2.mp4;Jin-1;jin
-1,2;h, h;5, 12;i10, i10;-3;+6;;Jail from 1st attack with 4f delay;;;Left Right Combo;r21;;File:t8-p2-jin-1,2.mp4;Jin-1,2;jin
+* Power crush 8~";ra rbr pc8~;;Polar Demon Gouge;39;;;;Jin-R.df+1+2;jin
+1;h;5;i10;+1;+8;;Recovers 2f faster on hit or block (t27 r17);;;Jab;19;;;File:t8-p2-jin-1,2.mp4;Jin-1;jin
+1,2;h, h;5, 12;i10, i10;-3;+6;;Jail from 1st attack with 4f delay;;;Left Right Combo;21;;;File:t8-p2-jin-1,2.mp4;Jin-1,2;jin
 1,2,1;h, h, m;5, 12, 20;i10, ,i20~22;-16;+31a (+21);;"* Tornado
 * Combo from 2nd CH with 7f delay
+* Interrupt with i6 from 1st block
 * Input can be delayed 9f
 * Move can be delayed 4f
 * Chip damage on block
 * Low crush 20~49
-* Floating state 50~52";trn chp js20~49 fs50~52;;Left Right > Black Wing Rondo;r37;;File:t8-p2-jin-1,2,1.mp4;Jin-1,2,1;jin
+* Floating state 50~52";trn intr:6 chp js20~49 fs50~52;;Left Right > Black Wing Rondo;37;;;File:t8-p2-jin-1,2,1.mp4;Jin-1,2,1;jin
 1,2,3;h, h, m;5, 12, 20;i10, ,i24~26;+0;+31d;;"* Spike
-* Interrupt with i10 from 2nd block
+* Interrupt with i10 from 1st block
+* Whiffs vs SSR and SWR from 1st block
 * Input can be delayed 9f
-* Move can be delayed 4f";spk intr:10;;Left Right > Axe Kick;r21;;File:t8-p2-jin-1,2,3.mp4;Jin-1,2,3;jin
+* Move can be delayed 4f";spk stp:SSR intr:10;;Left Right > Axe Kick;21;;;File:t8-p2-jin-1,2,3.mp4;Jin-1,2,3;jin
 1,2,4;h, h, h;5, 12, 26;i10, ,i20~22;-4;+23a (+14);;"* Balcony Break
 * Combo from 3rd hit with 7f delay
+* Interrupt with i6 from 1st block
 * Input can be delayed 9f
-* Move can be delayed 4f";bbr;;Left Right > Spinning Hook Kick;r25;;File:t8-p2-jin-1,2,4.mp4;Jin-1,2,4;jin
+* Move can be delayed 4f";bbr intr:6;;Left Right > Spinning Hook Kick;25;;;File:t8-p2-jin-1,2,4.mp4;Jin-1,2,4;jin
 1,3;h, L;5, 9;i10, i16~17;-12;-1;;"* Combo from 1st hit with 4f delay
-* Grounded hit can be inconsistent";;;Left Jab > Single Low;r30;;File:t8-p2-jin-1,3,4.mp4;Jin-1,3;jin
+* Grounded hit can be inconsistent";;;Left Jab > Single Low;30;;;File:t8-p2-jin-1,3,4.mp4;Jin-1,3;jin
 1,3,4;h, L, l;5, 9, 17;i10, ,i23;-13;+3;+29a;"* Combo from 2nd CH with 7f delay
 * Cannot low parry on 2nd hit
-* Input can be delayed 12f";;;Left Jab > Double Low;r32;;File:t8-p2-jin-1,3,4.mp4;Jin-1,3,4;jin
-1+3+4;;;;;;;;;;State of Zanshin / Mental Alertness;r46;;File:t8-p2-jin-1+3+4.mp4;Jin-1+3+4;jin
-2;h;9;i10;+0;+9;;;;;Right Jab;r19;;File:t8-p2-jin-2,1,4.mp4;Jin-2;jin
+* Input can be delayed 12f";;;Left Jab > Double Low;32;;;File:t8-p2-jin-1,3,4.mp4;Jin-1,3,4;jin
+1+3+4;;;;;;;;;;State of Zanshin / Mental Alertness;46;;;File:t8-p2-jin-1+3+4.mp4;Jin-1+3+4;jin
+2;h;9;i10;+0;+9;;;;;Right Jab;19;;;File:t8-p2-jin-2,1,4.mp4;Jin-2;jin
 2,1;h, m;9, 9;i10, i16~17;-3;+6;;"* Jail from 1st attack with 2f delay
-* Same animation as df+1";;;Double Thrust;r20;;File:t8-p2-jin-2,1,4.mp4;Jin-2,1;jin
+* Same animation as df+1";;;Double Thrust;20;;;File:t8-p2-jin-2,1,4.mp4;Jin-2,1;jin
 2,1,4;h, m, m;9, 9, 18;i10, ,i18~20;-10;+3;+16a (+7);"* Balcony Break on CH
 * Combo from 2nd CH with 8f delay
 * Input can be delayed 10f
-* Forces tech backroll on CH";;;Double Thrust > Roundhouse;r26;;File:t8-p2-jin-2,1,4.mp4;Jin-2,1,4;jin
-2,1,4~4;h, m, l;9, 9, 20;i10, ,i20~21;-12;+16a;;Interrupt with i16 from 2nd block;intr:16;;Double Thrust > Low Trick Kick;r28;;File:t8-p2-jin-2,1,4t4.mp4;Jin-2,1,4~4;jin
+* Forces tech backroll on CH";;;Double Thrust > Roundhouse;26;;;File:t8-p2-jin-2,1,4.mp4;Jin-2,1,4;jin
+2,1,4~4;h, m, l;9, 9, 20;i10, ,i20~21;-12;+16a;;Interrupt with i16 from 2nd block;intr:16;;Double Thrust > Low Trick Kick;28;;;File:t8-p2-jin-2,1,4t4.mp4;Jin-2,1,4~4;jin
 2,4;h, h;9, 20;i10, i24~27;-13;+7;;"* Balcony Break
 * Combo from 1st hit with 2f delay
-* Enter ZEN -6, +14g r26 with F";bbr;ZEN;Switchblade;r29;;File:t8-p2-jin-2,4.mp4;Jin-2,4;jin
-3;h;17;i14;-7;+4;;;;;;;;File:t8-p2-jin-3,1,4.mp4;Jin-3;jin
+* Interrupt with i4 from 1st block
+* Enter ZEN -6, +14g r26 with F";bbr intr:4;ZEN;Switchblade;29;;;File:t8-p2-jin-2,4.mp4;Jin-2,4;jin
+3;h;17;i14;-7;+4;;;;;;;;;File:t8-p2-jin-3,1,4.mp4;Jin-3;jin
 3,1;h, h;17, 7;i14, i20;-1;+7;;"* Combo from 1st hit
-* Enter ZEN +4 +12 r15 with F";;ZEN;;r20;;File:t8-p2-jin-3,1,4.mp4;Jin-3,1;jin
+* Enter ZEN +4 +12 r15 with F";;ZEN;;20;;;File:t8-p2-jin-3,1,4.mp4;Jin-3,1;jin
 3,1,4;h, h, l;17, 7, 18;i14, ,i18;-13;+3;+29a;"* Combo from 2nd CH with 9f delay
 * Input can be delayed 14f
-* Move can be delayed 12f";;;Kishin Rekko;r32;;File:t8-p2-jin-3,1,4.mp4;Jin-3,1,4;jin
+* Move can be delayed 12f";;;Kishin Rekko;32;;;File:t8-p2-jin-3,1,4.mp4;Jin-3,1,4;jin
 4;h;15;i13~14;-9;+10g;+13c;"* Homing
-* Balcony Break";hom bbr;;High Right Roundhouse;r32;;File:t8-p2-jin-4.mp4;Jin-4;jin
+* Balcony Break";hom bbr;;High Right Roundhouse;32;;;File:t8-p2-jin-4.mp4;Jin-4;jin
 4~3;M;27;i24~34;-11~-2;+2a~+12a;;"* Spike
 * Low crush 12~31
-* Floating state 32~";spk js12~31 fs32~;FUFT;Spinning Flare Kick;r28 FUFT;;File:t8-p2-jin-4t3.mp4;Jin-4~3;jin
+* Floating state 32~";spk js12~31 fs32~;FUFT;Spinning Flare Kick;28;FUFT;;File:t8-p2-jin-4t3.mp4;Jin-4~3;jin
 1+2;m,m,m;4,4,16;i13 i8 i12;-14;+12a (+3);;"* Balcony Break
 * Heat Engager
 
-* Heat Dash +5, +43d (+35)";bbr he;;Median Line Destruction;r33;;File:t8-p2-jin-1+2.mp4;Jin-1+2;jin
-f+3;m;12;i14;-16;-5;;;;;Left Sidekick;r35;;File:t8-p2-jin-f+3,1.mp4;Jin-f+3;jin
+* Heat Dash +5, +43d (+35)";bbr he;;Median Line Destruction;33;;;File:t8-p2-jin-1+2.mp4;Jin-1+2;jin
+f+3;m;12;i14;-16;-5;;;;;Left Sidekick;35;;;File:t8-p2-jin-f+3,1.mp4;Jin-f+3;jin
 f+3,1;m, m;12, 17;i14, i22;-12;+4;;"* Heat Engager
 
 * Heat Dash +5, +43d (+35)
@@ -106,31 +110,31 @@ f+3,1;m, m;12, 17;i14, i22;-12;+4;;"* Heat Engager
 * Interrupt with i3 from 1st block
 * Move can be delayed by 7F
 * Input can be delayed by 8F
-* Balcony break on airborne hit";he intr:3;;Tanden Nidan-uchi;r31;;File:t8-p2-jin-f+3,1.mp4;Jin-f+3,1;jin
+* Balcony break on airborne hit";he intr:3;;Tanden Nidan-uchi;31;;;File:t8-p2-jin-f+3,1.mp4;Jin-f+3,1;jin
 f+3,3;m, h;12, 14;i14, i20;-8;+8;;"* Combo from 1st hit with 8F delay
 * Interrupt with i1 from 1st block
 * Move can be delayed by 7F
 * Input can be delayed by 8F
 * Enter ZEN -7 +9 r26 with F
-* Transition to Special Move backdash with B";intr:1;ZEN,Special;Left Sidekick > Stinger;r27;;File:t8-p2-jin-f+3,3.mp4;Jin-f+3,3;jin
+* Transition to Special Move backdash with B";intr:1;ZEN,Special;Left Sidekick > Stinger;27;;;File:t8-p2-jin-f+3,3.mp4;Jin-f+3,3;jin
 f+4;m;21;i16-17;-8;+4;+42a;"* Enter ZEN -1 +11 +49a r26 with F
-* Balcony break on airborne hit";;ZEN;Front Thrust Kick;r32;;File:t8-p2-jin-f+4.mp4;Jin-f+4;jin
+* Balcony break on airborne hit";;ZEN;Front Thrust Kick;32;;;File:t8-p2-jin-f+4.mp4;Jin-f+4;jin
 f+1+2;h,h;14,24;i14 i9~10;-6;+21a (+11);;"* Balcony Break
 * Jail from 1st attack
-* 7 chip damage on block";bbr chp:7;;Double Chamber Punch;r33;;File:t8-p2-jin-f+1+2.mp4;Jin-f+1+2;jin
+* 7 chip damage on block";bbr chp:7;;Double Chamber Punch;33;;;File:t8-p2-jin-f+1+2.mp4;Jin-f+1+2;jin
 f+3+4;;;;;;;"* Enter Breaking Step r20 with DF
 * Steps forward
 * Actionable after 10f
-* High crush 10~39";cs10~39;Breaking Step,ZEN;Zenshin;r10 ZEN;;File:t8-p2-jin-f+3+4.mp4;Jin-f+3+4;jin
-df+1;m;10;i13~14;-3;+4;+6;;;;Mid Left Punch;r20;;File:t8-p2-jin-df+1,4.mp4;Jin-df+1;jin
+* High crush 10~39";cs10~39;Breaking Step,ZEN;Zenshin;10;ZEN;;File:t8-p2-jin-f+3+4.mp4;Jin-f+3+4;jin
+df+1;m;10;i13~14;-3;+4;+6;;;;Mid Left Punch;20;;;File:t8-p2-jin-df+1,4.mp4;Jin-df+1;jin
 df+1,4;m, h;10, 18;i13~14, i18~21;-9;+10g;+17a (+8);"* Balcony Break
 * Combo from 1st hit with 6f delay
 * Input can be delayed 10f
-* Move can be delayed 9f";bbr;;Mid Left Punch > High Roundhouse Kick;r30;;File:t8-p2-jin-df+1,4.mp4;Jin-df+1,4;jin
-df+1,4~4;m, m;10, 24;i13~14, i20;-12;+10a (+1);;* Balcony Break;bbr;;Mid Left Punch > Mid Sidekick;r35;;File:t8-p2-jin-df+1,4t4.mp4;Jin-df+1,4~4;jin
+* Move can be delayed 9f";bbr;;Mid Left Punch > High Roundhouse Kick;30;;;File:t8-p2-jin-df+1,4.mp4;Jin-df+1,4;jin
+df+1,4~4;m, m;10, 24;i13~14, i20;-12;+10a (+1);;* Balcony Break;bbr;;Mid Left Punch > Mid Sidekick;35;;;File:t8-p2-jin-df+1,4t4.mp4;Jin-df+1,4~4;jin
 df+2;m;12;i16~17;-9;+6;;"* Balcony Break
 * Enter Breaking Step -2 +13g r23 with df
-* Chip damage on block";bbr chp;Breaking Step;Fiendish Rend;r30;;File:t8-p2-jin-df+2.mp4;Jin-df+2;jin
+* Chip damage on block";bbr chp;Breaking Step;Fiendish Rend;30;;;File:t8-p2-jin-df+2.mp4;Jin-df+2;jin
 df+2,4;m, m;12, 19;i16~17, i26~27;-12;+9;;"* Balcony Break
 * Strong Aerial Tailspin
 * Combo from 1st hit with 1F delay
@@ -138,204 +142,204 @@ df+2,4;m, m;12, 19;i16~17, i26~27;-12;+9;;"* Balcony Break
 * Input can be delayed by 1F
 * 3 chip damage on block
 * Low crush 17~39
-* Floating state 40~42";bbr chp:3 js17~39 fs40~42;;Fiendish Talon Rend;r33;;;Jin-df+2,4;jin
+* Floating state 40~42";bbr chp:3 js17~39 fs40~42;;Fiendish Talon Rend;33;;;;Jin-df+2,4;jin
 H.df+2,1+2;m, m;12, 25;i16~17, i24~25;+2;+30a (+4);;"* Balcony Break
 * Combo from 1st hit
 * Consumes 240F of remaining Heat time
-* 5 chip damage on block";bbr chp:5;;Awakened Fiendish Claw;r35;;File:t8-p2-jin-df+2,h.1+2.mp4;Jin-df+2,H.1+2;jin
-df+3;m;16;i12;-8;+3;;;;;Left Roundhouse;r27;;File:t8-p2-jin-df+3.mp4;Jin-df+3;jin
+* 5 chip damage on block";bbr chp:5;;Awakened Fiendish Claw;35;;;File:t8-p2-jin-df+2,h.1+2.mp4;Jin-df+2,H.1+2;jin
+df+3;m;16;i12;-8;+3;;;;;Left Roundhouse;27;;;File:t8-p2-jin-df+3.mp4;Jin-df+3;jin
 df+3~3;m;20;i23~i24;+6c;+13c;;"* Spike
-* Enter Breaking Step +2c +9c r27 with df";spk;Breaking Step;Brazilian Kick;r23;;File:t8-p2-jin-df+3t3.mp4;Jin-df+3~3;jin
+* Enter Breaking Step +2c +9c r27 with df";spk;Breaking Step;Brazilian Kick;23;;;File:t8-p2-jin-df+3t3.mp4;Jin-df+3~3;jin
 df+4;m;22;i20~i21;+0;+8c;;"* Spike
 * Heat Engager
 
-* Heat Dash +67a (+50), +5";spk he;;Right Spinning Axe Kick;r21;;File:t8-p2-jin-df+4.mp4;Jin-df+4;jin
+* Heat Dash +67a (+50), +5";spk he;;Right Spinning Axe Kick;21;;;File:t8-p2-jin-df+4.mp4;Jin-df+4;jin
 d+1;m,t;21,10;i21;-13;+0d;;"* Balcony break on airborne hit
 * Transition to attack throw on standing hit
 * -9 on block after absorbing an attack and 8 chip damage on block
-* Power crush 7~20";pc7~20;;Corpse Thrust > Black Wing Flash;r35;;File:t8-p2-jin-d+1.mp4;Jin-d+1;jin
+* Power crush 7~20";pc7~20;;Corpse Thrust > Black Wing Flash;35;;;File:t8-p2-jin-d+1.mp4;Jin-d+1;jin
 d+2;L;22;i22~23;-14;+4c;+25d;"* Balcony break on airborne hit
-* High crush 8~55";cs8~55;FC;Scourge;r32 FC;;File:t8-p2-jin-d+2.mp4;Jin-d+2;jin
-d+3;l;7;i15~16;-14;-3;;;;;;r32;;File:t8-p2-jin-d+3,4,3.mp4;Jin-d+3;jin
-d+3,4;l, h;7, 10;i15~16, i20~21;-11;-3;;Combo from 1st CH;;;;r29;;File:t8-p2-jin-d+3,4,3.mp4;Jin-d+3,4;jin
+* High crush 8~55";cs8~55;FC;Scourge;32;FC;;File:t8-p2-jin-d+2.mp4;Jin-d+2;jin
+d+3;l;7;i15~16;-14;-3;;;;;;32;;;File:t8-p2-jin-d+3,4,3.mp4;Jin-d+3;jin
+d+3,4;l, h;7, 10;i15~16, i20~21;-11;-3;;Combo from 1st CH;;;;29;;;File:t8-p2-jin-d+3,4,3.mp4;Jin-d+3,4;jin
 d+3,4,3;l, h, m;7, 10, 21;i15~16, ,i24~25;-12;+31d (+23);;"* Tornado
 * Balcony Break
 * Combo from 2nd CH with 2f delay
-* Input can be delayed 10f";trn bbr;;Kazama Style Three-Quarter Kick;r33;;File:t8-p2-jin-d+3,4,3.mp4;Jin-d+3,4,3;jin
-d+3,4~4;l, m;7, 24;i15~16, i20;-12;+10a (+1);;* Balcony Break;bbr;;Knee Popper > Mid Sidekick;r35;;File:t8-p2-jin-d+3,4t4.mp4;Jin-d+3,4~4;jin
+* Input can be delayed 10f";trn bbr;;Kazama Style Three-Quarter Kick;33;;;File:t8-p2-jin-d+3,4,3.mp4;Jin-d+3,4,3;jin
+d+3,4~4;l, m;7, 24;i15~16, i20;-12;+10a (+1);;* Balcony Break;bbr;;Knee Popper > Mid Sidekick;35;;;File:t8-p2-jin-d+3,4t4.mp4;Jin-d+3,4~4;jin
 d+4;L;11;i16~17;-12;-1;;"Flips over on grounded hit
-* High crush 6~31";cs6~31;;Right Sweep;r30;;File:t8-p2-jin-d+4.mp4;Jin-d+4;jin
+* High crush 6~31";cs6~31;;Right Sweep;30;;;File:t8-p2-jin-d+4.mp4;Jin-d+4;jin
 d+3+4;m,m;5,15;i15 i10~12;-19;+32a (+22);;"* Low crush 16~31
-* Floating state 32~34";js16~31 fs32~34;;Double Lift Kick;r36;;File:t8-p2-jin-d+3+4.mp4;Jin-d+3+4;jin
+* Floating state 32~34";js16~31 fs32~34;;Double Lift Kick;36;;;File:t8-p2-jin-d+3+4.mp4;Jin-d+3+4;jin
 db+1;sl;5;i10;-5;+6;;"* Transition to r24 with f
 * +6c on crouching hit
-* High crush 4~";cs4~;FC;Crouch Jab;r24 FC;;;Jin-db+1;jin
-db+2;m;12;i16;-10;-4;;;;;;r34;;File:t8-p2-jin-db+2,2,3.mp4;Jin-db+2;jin
-db+2,2;m, h;12, 11;i16, i8;-12;-7;+43a;Jail from 1st attack;;;;r37;;File:t8-p2-jin-db+2,2,3.mp4;Jin-db+2,2;jin
-db+2,2,3;m, h, m;12, 11, 21;i16, ,i35~i36;-9;+20a;;* Balcony break on airborne hit;;;Savage Sword;r27;;File:t8-p2-jin-db+2,2,3.mp4;Jin-db+2,2,3;jin
-db+2,3;m, M;12, 23;i16, i27~i29;-8;+7a;;* Spike;spk;;Punch > Cascade Kick;r31;;File:t8-p2-jin-db+2,3.mp4;Jin-db+2,3;jin
+* High crush 4~";cs4~;FC;Crouch Jab;24;FC;;;Jin-db+1;jin
+db+2;m;12;i16;-10;-4;;;;;;34;;;File:t8-p2-jin-db+2,2,3.mp4;Jin-db+2;jin
+db+2,2;m, h;12, 11;i16, i8;-12;-7;+43a;Jail from 1st attack;;;;37;;;File:t8-p2-jin-db+2,2,3.mp4;Jin-db+2,2;jin
+db+2,2,3;m, h, m;12, 11, 21;i16, ,i35~i36;-9;+20a;;* Balcony break on airborne hit;;;Savage Sword;27;;;File:t8-p2-jin-db+2,2,3.mp4;Jin-db+2,2,3;jin
+db+2,3;m, M;12, 23;i16, i27~i29;-8;+7a;;* Spike;spk;;Punch > Cascade Kick;31;;;File:t8-p2-jin-db+2,3.mp4;Jin-db+2,3;jin
 db+3;h;28;i19~i21;-10~-8;+17a;;"Balcony break on airborne hit
-* High crush 4~21";cs4~21;;Left Spinning Back Kick;r35;;File:t8-p2-jin-db+3.mp4;Jin-db+3;jin
-db+4;l;18;i20~21;-13;+3;+13g;;;;Right Low Roundhouse;r31;;File:t8-p2-jin-db+4.mp4;Jin-db+4;jin
+* High crush 4~21";cs4~21;;Left Spinning Back Kick;35;;;File:t8-p2-jin-db+3.mp4;Jin-db+3;jin
+db+4;l;18;i20~21;-13;+3;+13g;;;;Right Low Roundhouse;31;;;File:t8-p2-jin-db+4.mp4;Jin-db+4;jin
 db+1+2;M;0;i19~34;-11~+4;+17g~+32g;;"* Balcony Break
 * +4a (-5) on BT hit
 * Unparryable by traditional parries, Asuka, Nina, etc
 * Opponent recovers crouching
-* Power up in Heat";bbr;;Power Stance;r26;;File:t8-p2-jin-db+1+2.mp4;Jin-db+1+2;jin
-b+1;h;11;i12;-9;+2;;;;;;r28;;File:t8-p2-jin-b+1,2.mp4;Jin-b+1;jin
+* Power up in Heat";bbr;;Power Stance;26;;;File:t8-p2-jin-db+1+2.mp4;Jin-db+1+2;jin
+b+1;h;11;i12;-9;+2;;;;;;28;;;File:t8-p2-jin-b+1,2.mp4;Jin-b+1;jin
 b+1,2;h, h;11, 20;i12, i22~24;-10;+32a (+17);;"* Tornado
-* Combo from 1st hit with 8f delay";trn;;Shun Maten;r31;;File:t8-p2-jin-b+1,2.mp4;Jin-b+1,2;jin
+* Combo from 1st hit with 8f delay";trn;;Shun Maten;31;;;File:t8-p2-jin-b+1,2.mp4;Jin-b+1,2;jin
 b+1+3;;;;;;;"* Strong parry: parries all highs or mids except throws, unblockables and charge moves
 * r14 after parrying
 * Plus frames after parrying depend on the recovery of the parried move
-* Parry state 3~9";ps3~9;;Parry;r30;;;Jin-b+1+3;jin
-b+2;m;12;i15~16;-11;+0;;;;;;r29;;File:t8-p2-jin-b+2,1.mp4;Jin-b+2;jin
+* Parry state 3~9";ps3~9;;Parry;30;;;;Jin-b+1+3;jin
+b+2;m;12;i15~16;-11;+0;;;;;;29;;;File:t8-p2-jin-b+2,1.mp4;Jin-b+2;jin
 b+2,1;m, m;12, 10;i15~16, i14~15;-9;+2;;"* Jail from 1st block with 5F delay
 * Combo from 1st hit with 1F delay
-* Combo from 1st CH with 13f delay";;;Shun Masatsu;r27;;File:t8-p2-jin-b+2,1.mp4;Jin-b+2,1;jin
+* Combo from 1st CH with 13f delay";;;Shun Masatsu;27;;;File:t8-p2-jin-b+2,1.mp4;Jin-b+2,1;jin
 b+3;m;17;i16;-6;+5;;"* Knee
-* Enter ZEN -2 +9 r20 with F";kne;ZEN;Left Knee;r25;;File:t8-p2-jin-b+3,2.mp4;Jin-b+3;jin
+* Enter ZEN -2 +9 r20 with F";kne;ZEN;Left Knee;25;;;File:t8-p2-jin-b+3,2.mp4;Jin-b+3;jin
 b+3,2;m, m;17, 20;i16, i19~20;-9;+9g +21w;;"* Wall Crush +21g on hit
 
 
 * Combo from 1st CH with 9F delay
-* Balcony break on airborne hit";wc;;Left Knee > Right Thrust;r30;;File:t8-p2-jin-b+3,2.mp4;Jin-b+3,2;jin
-b+4;m;21;i17~18;-7;+15a;;Balcony Break;bbr;;Spinning Sidekick;r29;;File:t8-p2-jin-b+4.mp4;Jin-b+4;jin
+* Balcony break on airborne hit";wc;;Left Knee > Right Thrust;30;;;File:t8-p2-jin-b+3,2.mp4;Jin-b+3,2;jin
+b+4;m;21;i17~18;-7;+15a;;Balcony Break;bbr;;Spinning Sidekick;29;;;File:t8-p2-jin-b+4.mp4;Jin-b+4;jin
 b+1+2;m;20;i23~24;-12;+6;;"Punch sabaki: balcony break and +34d (+26) on hit
-* Parry state 3~10";ps3~10;;Suigetsu Strike;r30;;File:t8-p2-jin-b+1+2.mp4;Jin-b+1+2;jin
+* Parry state 3~10";ps3~10;;Suigetsu Strike;30;;;File:t8-p2-jin-b+1+2.mp4;Jin-b+1+2;jin
 b+3+4;;;;;;;"* Can perform all attacks from ZEN Stance
 * Enter Breaking Step with DF
 * Cancel on any frame with f
 * Transition to dash with f
 * Steps backward
 * Actionable after 5f
-* High crush 6~39";cs6~39;Breaking Step,ZEN;Zanshin / Crouching Demon Stance (CDS) / Mental Alertness (2);r5 ZEN;;;Jin-b+3+4;jin
+* High crush 6~39";cs6~39;Breaking Step,ZEN;Zanshin / Crouching Demon Stance (CDS) / Mental Alertness (2);5;ZEN;;;Jin-b+3+4;jin
 ub+4;m;15;i15~17;-13;+19a (+9);+33a (+23a);"Balcony Break
 * Low crush 9~20
-* Floating state 21~23";bbr js9~20 fs21~23;;;r29;;;Jin-ub+4;jin
+* Floating state 21~23";bbr js9~20 fs21~23;;;29;;;;Jin-ub+4;jin
 ub+1+2;m!;50;i75~i76;;+9a (+0);;"* Balcony Break
-* Cancel to r50 with b,b";bbr;;Avenger / Konshin Seikenzuki;r34;;File:t8-p2-jin-ub+1+2.mp4;Jin-ub+1+2;jin
+* Cancel to r50 with b,b";bbr;;Avenger / Konshin Seikenzuki;34;;;File:t8-p2-jin-ub+1+2.mp4;Jin-ub+1+2;jin
 uf+2;m;18;i15~i16;-10~-9;+6~+7;+19a (+10);"* Balcony break on CH
-* Evasive, can avoid some attacks due to built-in sidestep";;;Evading Middle Strike;r25;;File:t8-p2-jin-uf+2.mp4;Jin-uf+2;jin
+* Evasive, can avoid some attacks due to built-in sidestep";;;Evading Middle Strike;25;;;File:t8-p2-jin-uf+2.mp4;Jin-uf+2;jin
 uf+3;m;17;i22~23;-9;+6;+59a;"* Low crush 9~23
-* Floating state 24~26";js9~23 fs24~26;;Left Spinning Jump Kick;r30;;File:t8-p2-jin-uf+3.mp4;Jin-uf+3;jin
+* Floating state 24~26";js9~23 fs24~26;;Left Spinning Jump Kick;30;;;File:t8-p2-jin-uf+3.mp4;Jin-uf+3;jin
 uf+4;m;13;i15~17;-13;+33a (+23a);;"* Low crush 9~20
-* Floating state 21~23";js9~20 fs21~23;;Front Jump Kick;r29;;File:t8-p2-jin-uf+4.mp4;Jin-uf+4;jin
+* Floating state 21~23";js9~20 fs21~23;;Front Jump Kick;29;;;File:t8-p2-jin-uf+4.mp4;Jin-uf+4;jin
 1+2+3+4;;;;;;;"* Can't block for 5 seconds
 * CH state on your next attack for 5 seconds ''(Tekken 7 and prior games)''
 * 10% damage increase on the next attack for 5 seconds ''(Tekken 8 season 2 patch onward)''
-* Attacks taken will be CH for 5 seconds";;;Ki Charge;r55;;File:t8-p2-jin-1+2+3+4.mp4;Jin-1+2+3+4;jin
-b,f+2;m;15;i15~i16;-7;+4;;* Has good left sidestep tracking;;;;r25;;File:t8-p2-jin-b,f+2,1,2.mp4;Jin-b,f+2;jin
+* Attacks taken will be CH for 5 seconds";;;Ki Charge;55;;;File:t8-p2-jin-1+2+3+4.mp4;Jin-1+2+3+4;jin
+b,f+2;m;15;i15~i16;-7;+4;;* Has good left sidestep tracking;;;;25;;;File:t8-p2-jin-b,f+2,1,2.mp4;Jin-b,f+2;jin
 b,f+2,1;m, h;15, 14;i15~i16, i21;-5;+6;+9;"* Combo from 1st hit with 8f delay
 * Interrupt with i2 from 1st block
-* Input can be delayed 12f";intr:2;;;r24;;File:t8-p2-jin-b,f+2,1,2.mp4;Jin-b,f+2,1;jin
+* Input can be delayed 12f";intr:2;;;24;;;File:t8-p2-jin-b,f+2,1,2.mp4;Jin-b,f+2,1;jin
 b,f+2,1,2;m, h, m;15, 14, 20;i15~i16, ,i19~20;-5;+18a (+9);+50a (+3);"* Balcony Break
 * Combo from 2nd CH with 15f
 * Interrupt with i4 from 1st block
 * Input can be delayed 16f
-* Move can be delayed 10f";bbr intr:4;;Evil Intent;r26;;File:t8-p2-jin-b,f+2,1,2.mp4;Jin-b,f+2,1,2;jin
+* Move can be delayed 10f";bbr intr:4;;Evil Intent;26;;;File:t8-p2-jin-b,f+2,1,2.mp4;Jin-b,f+2,1,2;jin
 b,f+2,1,df+2;m, h, M;15, 14, 22;i15~i16, ,i28~29;-14;+37a (+27);;"* Tornado
 * Combo from 2nd CH
 * Interrupt with i13 from 2nd block
 * Whiffs vs SSR, SWL from 2nd block
 * Input can be delayed 16f
-* Move can be delayed 10f";trn stp:SSR intr:13;;Geyser;r36;;File:t8-p2-jin-b,f+2,1,df+2.mp4;Jin-b,f+2,1,df+2;jin
+* Move can be delayed 10f";trn stp:SSR intr:13;;Geyser;36;;;File:t8-p2-jin-b,f+2,1,df+2.mp4;Jin-b,f+2,1,df+2;jin
 b,f+2,3;m, m;15, 17;i15~i16, i25;-9;+6;+59a;"* Combo from 1st hit with 4f delay
 * Interrupt with i6 from 1st block
 * Input can be delayed 9f
-* Enter ZEN +2 +17g +71a r20 with F";intr:6;ZEN;Keito;r31;;File:t8-p2-jin-b,f+2,3.mp4;Jin-b,f+2,3;jin
+* Enter ZEN +2 +17g +71a r20 with F";intr:6;ZEN;Keito;31;;;File:t8-p2-jin-b,f+2,3.mp4;Jin-b,f+2,3;jin
 f,F+2;m;22;i14~15;-8;+15a (+6);;"* Heat Engager
 
 * Heat Dash +36a (+26), +5
 
 * Balcony Break
 * Cannot be buffered
-* 6 chip damage on block";he bbr chp:6;;Demon's Paw;r29;;File:t8-p2-jin-f,f+2.mp4;Jin-f,F+2;jin
+* 6 chip damage on block";he bbr chp:6;;Demon's Paw;29;;;File:t8-p2-jin-f,f+2.mp4;Jin-f,F+2;jin
 f,F+3;m;20;i23~i25;-4;+24a;;"* Spike
-* Cannot be buffered";spk;;Left Axe Kick;r24;;File:t8-p2-jin-f,f+3.mp4;Jin-f,F+3;jin
+* Cannot be buffered";spk;;Left Axe Kick;24;;;File:t8-p2-jin-f,f+3.mp4;Jin-f,F+3;jin
 f,F+3,1;m, h;20, 5;i23~i25, i15;+1;+7;;"* Links to 1 jab extensions (e.g. f,F+3,1,2,4)
 * Jails attack inputs (crouch assist bufferable)
-* Duckable";;1 jab extensions;Left Axe Kick > Left Jab;r18;;File:t8-p2-jin-f,f+3,1.mp4;Jin-f,F+3,1;jin
-f,F+4;m;32;i17~i18;-7;+22a (+12);;Balcony Break;bbr;;Battery Sidekick;r32;;File:t8-p2-jin-f,f+4.mp4;Jin-f,F+4;jin
+* Duckable";;1 jab extensions;Left Axe Kick > Left Jab;18;;;File:t8-p2-jin-f,f+3,1.mp4;Jin-f,F+3,1;jin
+f,F+4;m;32;i17~i18;-7;+22a (+12);;Balcony Break;bbr;;Battery Sidekick;32;;;File:t8-p2-jin-f,f+4.mp4;Jin-f,F+4;jin
 f,n,d,df;;;;;;;"* Cannot be buffered
 * Stance moves can be buffered out of heat dash
 * Cancel to sidestep with u
-* Cancel to block with b";;sidestep;Crouch Dash / Breaking Step;r3?;;File:t8-p2-jin-f,n,d,df.mp4;Jin-f,n,d,df;jin
+* Cancel to block with b";;sidestep;Crouch Dash / Breaking Step;3?;;;File:t8-p2-jin-f,n,d,df.mp4;Jin-f,n,d,df;jin
 f,n,d,df,UF;;;;;;;"* Can access wr3 by inputting 3 on frames 1~2
 * Can access uf1+2 by inputting 1+2 on frames 1~2
 * Unable to act from frames 3~26
 * Low crush 1~20
-* Floating state 21~23";js1~20 fs21~23;;;r26;;;Jin-f,n,d,df,UF;jin
+* Floating state 21~23";js1~20 fs21~23;;;26;;;;Jin-f,n,d,df,UF;jin
 uf,n,4;m;20;i23~i25;-13;+32a (+22a);;"* Low crush 9~30
-* Floating state 31~33";js9~30 fs31~33;;Delayed Rising Toe Kick;r30;;File:t8-p2-jin-uf,n,4.mp4;Jin-uf,n,4;jin
+* Floating state 31~33";js9~30 fs31~33;;Delayed Rising Toe Kick;30;;;File:t8-p2-jin-uf,n,4.mp4;Jin-uf,n,4;jin
 f,f,F+3;m;30;i22~i23;+6;+13a~+14a (+3~+4);;"* Balcony Break
 * Transition to +6 +13a ZEN with F
 * 9 Chip damage on block
 * Low crush 3~25
-* Floating state 26~28";bbr chp:9 js3~25 fs26~28;ZEN;Leaping Side Kick;r36;;File:t8-p2-jin-f,f,f+3.mp4;Jin-f,f,F+3;jin
-ws1;m;7;i13~i14;-6;+5;;;;;;r24;;File:t8-p2-jin-ws1,2.mp4;Jin-ws1;jin
+* Floating state 26~28";bbr chp:9 js3~25 fs26~28;ZEN;Leaping Side Kick;36;;;File:t8-p2-jin-f,f,f+3.mp4;Jin-f,f,F+3;jin
+ws1;m;7;i13~i14;-6;+5;;;;;;24;;;File:t8-p2-jin-ws1,2.mp4;Jin-ws1;jin
 ws1,2;m, m;7, 19;i13~i14, i19~20;-8;+3c;;"* Spike
 * Combo from 1st hit with 1f delay
 * Combo from 1st CH with 10f delay
 * Input can be delayed 13f
-* Enter ZEN -9 +2c r27 with F";spk;ZEN;Twin Lancer;r26;;File:t8-p2-jin-ws1,2.mp4;Jin-ws1,2;jin
+* Enter ZEN -9 +2c r27 with F";spk;ZEN;Twin Lancer;26;;;File:t8-p2-jin-ws1,2.mp4;Jin-ws1,2;jin
 ws1,3;m, h;7, 8;i13~i14, i14;-6;+4;;"* Jail from 1st attack
-* Transition to r25 backdash with B";;;;r26;;File:t8-p2-jin-ws1,3,2,1,4,2.mp4;Jin-ws1,3;jin
+* Transition to r25 backdash with B";;;;26;;;File:t8-p2-jin-ws1,3,2,1,4,2.mp4;Jin-ws1,3;jin
 ws1,3,2;m, h, m;7, 8, 4;i13~i14, ,i18;-11;-6;;"* Combo from 1st hit
-* Jail from 1st block";;;;;;File:t8-p2-jin-ws1,3,2,1,4,2.mp4;Jin-ws1,3,2;jin
+* Jail from 1st block";;;;;;;File:t8-p2-jin-ws1,3,2,1,4,2.mp4;Jin-ws1,3,2;jin
 ws1,3,2,1;m, h, m, m;7, 8, 4, 3;i13~i14, ,i10;-11;+3;;"* Combo from 1st hit
-* Jail from 1st block";;;;;;File:t8-p2-jin-ws1,3,2,1,4,2.mp4;Jin-ws1,3,2,1;jin
-ws1,3,2,1,4;m, h, m, m, l;7, 8, 4, 3, 5;i13~i14, ,i20~21;-31;+8;;Combo from 1st hit;;;;;;File:t8-p2-jin-ws1,3,2,1,4,2.mp4;Jin-ws1,3,2,1,4;jin
+* Jail from 1st block";;;;;;;File:t8-p2-jin-ws1,3,2,1,4,2.mp4;Jin-ws1,3,2,1;jin
+ws1,3,2,1,4;m, h, m, m, l;7, 8, 4, 3, 5;i13~i14, ,i20~21;-31;+8;;Combo from 1st hit;;;;;;;File:t8-p2-jin-ws1,3,2,1,4,2.mp4;Jin-ws1,3,2,1,4;jin
 ws1,3,2,1,4,2;m, h, m, m, l, M;7, 8, 4, 3, 5, 10;i13~i14, ,i31~32;-16;-8;;"* Combo from 1st hit
 * Spike
 * Low crush 8~28
-* Floating state 29~31";spk js8~28 fs29~31;;Kazama Style 6 Hit Combo Redux;;;File:t8-p2-jin-ws1,3,2,1,4,2.mp4;Jin-ws1,3,2,1,4,2;jin
+* Floating state 29~31";spk js8~28 fs29~31;;Kazama Style 6 Hit Combo Redux;;;;File:t8-p2-jin-ws1,3,2,1,4,2.mp4;Jin-ws1,3,2,1,4,2;jin
 ws1,3~3;m, m;7, 20;i13~i14, i23~i24;+6;+13c;;"* Spike
 * Enter Breaking Step +2 +9c with DF
-* +16a on BT hit";spk;Breaking Step;Solar Plexus Strike > Brazilian Kick;r23;;File:t8-p2-jin-ws1,3t3.mp4;Jin-ws1,3~3;jin
-ws2;m;14;i14~15;-12;+39a (+29);;;;;Crouching Uppercut;r20;;File:t8-p2-jin-ws2.mp4;Jin-ws2;jin
+* +16a on BT hit";spk;Breaking Step;Solar Plexus Strike > Brazilian Kick;23;;;File:t8-p2-jin-ws1,3t3.mp4;Jin-ws1,3~3;jin
+ws2;m;14;i14~15;-12;+39a (+29);;;;;Crouching Uppercut;20;;;File:t8-p2-jin-ws2.mp4;Jin-ws2;jin
 ws3;m;20;i16~18;-9;+10g;+22a;"* Homing
-* Balcony Break";hom bbr;;Bamboo Splitter;r31;;File:t8-p2-jin-ws3.mp4;Jin-ws3;jin
-ws4;m;13;i11~12;-3;+8;;;;;;r21;;File:t8-p2-jin-ws4,4.mp4;Jin-ws4;jin
-ws4,4;m, h;13, 15;i11~12, i19~20;-7;+4;;* Combo from 1st hit with 1f delay;;;Double Cross Kicks;r30;;File:t8-p2-jin-ws4,4.mp4;Jin-ws4,4;jin
+* Balcony Break";hom bbr;;Bamboo Splitter;31;;;File:t8-p2-jin-ws3.mp4;Jin-ws3;jin
+ws4;m;13;i11~12;-3;+8;;;;;;21;;;File:t8-p2-jin-ws4,4.mp4;Jin-ws4;jin
+ws4,4;m, h;13, 15;i11~12, i19~20;-7;+4;;* Combo from 1st hit with 1f delay;;;Double Cross Kicks;30;;;File:t8-p2-jin-ws4,4.mp4;Jin-ws4,4;jin
 FC.df+4;L;20;i21~i22;-26;+2c;+69a (+53);"Transition to +12cg ZEN with F on hit
-* High crush 1~57";cs1~57;ZEN;Right Sweep (2);r31;;File:t8-p2-jin-fc.df+4.mp4;Jin-FC.df+4;jin
-f,n,d,DF+4;l;12;i20~i21;-31;+8c;;;;;;r28;;File:t8-p2-jin-cd.df+4,2.mp4;Jin-CD.DF+4;jin
+* High crush 1~57";cs1~57;ZEN;Right Sweep (2);31;;;File:t8-p2-jin-fc.df+4.mp4;Jin-FC.df+4;jin
+f,n,d,DF+4;l;12;i20~i21;-31;+8c;;;;;;28;;;File:t8-p2-jin-cd.df+4,2.mp4;Jin-CD.DF+4;jin
 f,n,d,DF+4,2;l, M;12, 28;i20~i21, i31~i32;-16;+21a;;"* Balcony Break
 * Spike
 * Combo from 1st hit
 * Chip damage on block
 * Low crush 8~28
-* Floating state 29~31";bbr spk chp js8~28 fs29~31;;Depraved Savagery;r28;;File:t8-p2-jin-cd.df+4,2.mp4;Jin-CD.DF+4,2;jin
+* Floating state 29~31";bbr spk chp js8~28 fs29~31;;Depraved Savagery;28;;;File:t8-p2-jin-cd.df+4,2.mp4;Jin-CD.DF+4,2;jin
 f,n,d,df:1;M;22;i16~i17;-13;+36a (+26);;"* Tornado
 * 4 chip damage on block
-* Jab evasion";trn chp:4;;Electric Thrusting Uppercut;r31;;File:t8-p2-jin-cd.dfh1.mp4;Jin-CD.df${justFrame}1;jin
+* Jab evasion";trn chp:4;;Electric Thrusting Uppercut;31;;;File:t8-p2-jin-cd.dfh1.mp4;Jin-CD.df${justFrame}1;jin
 f,n,d,df:2;h;25;i11~i12;+5~+6;+76a (+60);;"* Balcony Break
 * Recovers 3f faster on hit or block (t36 r24)
-* 5 chip damage on block";bbr chp:5;;Electric Wind Hook Fist;r27;;File:t8-p2-jin-cd.dfh2.mp4;Jin-CD.df${justFrame}2;jin
+* 5 chip damage on block";bbr chp:5;;Electric Wind Hook Fist;27;;;File:t8-p2-jin-cd.dfh2.mp4;Jin-CD.df${justFrame}2;jin
 f,n,d,df+1;m;20;i16~i17;-13;+32a (+22);;"* Tornado
 * Turns into CD.df#1 while in heat
-* Jab evasion";trn;;Thrusting Uppercut;r31;;File:t8-p2-jin-cd.df+1.mp4;Jin-CD.df+1;jin
+* Jab evasion";trn;;Thrusting Uppercut;31;;;File:t8-p2-jin-cd.df+1.mp4;Jin-CD.df+1;jin
 f,n,d,df+2;h;20;i11~12;-10;+74a (+58);;"* Balcony Break
-* Turns into EWHF (CD.df#2) while in heat";bbr;;Wind Hook Fist;r28;;File:t8-p2-jin-cd.df+2.mp4;Jin-CD.df+2;jin
+* Turns into EWHF (CD.df#2) while in heat";bbr;;Wind Hook Fist;28;;;File:t8-p2-jin-cd.df+2.mp4;Jin-CD.df+2;jin
 DVS.1;m;25;i20~22;-9;+36d;;"* Tornado
 * Jab evasion
 * 7 chip damage on block
 * Low crush 22~43
-* Floating state 44~46";trn chp:7 js22~43 fs44~46;;Awakened Thunder God Fist;r30;;;Jin-DVS.1;jin
-DVS.2;sm;23;i11~12;+4;+38a (+28);;* 6 chip damage on block;chp:6;;Awakened Wind God Fist;r24;;;Jin-DVS.2;jin
+* Floating state 44~46";trn chp:7 js22~43 fs44~46;;Awakened Thunder God Fist;30;;;;Jin-DVS.1;jin
+DVS.2;sm;23;i11~12;+4;+38a (+28);;* 6 chip damage on block;chp:6;;Awakened Wind God Fist;24;;;;Jin-DVS.2;jin
 DVS.3;M;25;i26~28;+2c;+22a;;"* Spike
 * 7 chip damage on block
 * Low crush 5~25
-* Floating state 26~28";spk chp:7 js5~25 fs26~28;;Awakened Demon's Hoof;r26;;;Jin-DVS.3;jin
-DVS.4;L;10;i16;-12;-2c;;* 3 chip damage on block;chp:3;;;r39;;;Jin-DVS.4;jin
+* Floating state 26~28";spk chp:7 js5~25 fs26~28;;Awakened Demon's Hoof;26;;;;Jin-DVS.3;jin
+DVS.4;L;10;i16;-12;-2c;;* 3 chip damage on block;chp:3;;;39;;;;Jin-DVS.4;jin
 DVS.4,4;L, m;10, 25;i16, i25~26;-14;+3c;;"* Spike
-* 5 chip damage on block";spk chp:5;;Awakened Spinning Demon;r34;;;Jin-DVS.4,4;jin
+* 5 chip damage on block";spk chp:5;;Awakened Spinning Demon;34;;;;Jin-DVS.4,4;jin
 DVS.DF+3;L;24;i33~34;-23;-2a;;"* 7 chip damage on block
 * Low crush 5~25
-* Floating state 26~28";chp:7 js5~25 fs26~28;;Awakened Demon's Tail;r41;;;Jin-DVS.DF+3;jin
-OTG.d+1+2;L;24;i19~20;-13;-2 (-10);;* Spike;spk;;Black Out;r31;;;Jin-OTG.d+1+2;jin
-ZEN.1;m;14;i16~i17;-3;+8;;;;;;r21;;File:t8-p2-jin-zen.1,2.mp4;Jin-ZEN.1;jin
+* Floating state 26~28";chp:7 js5~25 fs26~28;;Awakened Demon's Tail;41;;;;Jin-DVS.DF+3;jin
+OTG.d+1+2;L;24;i19~20;-13;-2 (-10);;* Spike;spk;;Black Out;31;;;;Jin-OTG.d+1+2;jin
+ZEN.1;m;14;i16~i17;-3;+8;;;;;;21;;;File:t8-p2-jin-zen.1,2.mp4;Jin-ZEN.1;jin
 ZEN.1,2;m, m;14, 21;i16~i17, i23~24;-14;+32a (+6);;"* Heat Engager
 
 * Heat Dash +?, +5
@@ -345,54 +349,54 @@ ZEN.1,2;m, m;14, 21;i16~i17, i23~24;-14;+32a (+6);;"* Heat Engager
 * Interrupt from 1st block with i5
 * Input can be delayed 12f
 * Move can be delayed 11f
-* Cancel to Breaking Step -11 -12 r40 with DF on frame 20";he bbr intr:5;Breaking Step;Brimstone Bite;r32;;File:t8-p2-jin-zen.1,2.mp4;Jin-ZEN.1,2;jin
+* Cancel to Breaking Step -11 -12 r40 with DF on frame 20";he bbr intr:5;Breaking Step;Brimstone Bite;32;;;File:t8-p2-jin-zen.1,2.mp4;Jin-ZEN.1,2;jin
 ZEN.1,3;m, h,t;14, 14,14;i16~i17, i24~25;-9;+0d;;"* Combo from 1st hit
 * Interrupt with i6 from 1st block
 * Whiffs vs SSR from 1st block
 * Transition to attack throw on standing or airborne hit
 * +33a (+18) on side hit
-* +18a (+11) and balcony break on BT hit";stp:SSR intr:6;;Kazama Style Leg Strike Flurry;r31;;File:t8-p2-jin-zen.1,3.mp4;Jin-ZEN.1,3;jin
+* +18a (+11) and balcony break on BT hit";stp:SSR intr:6;;Kazama Style Leg Strike Flurry;31;;;File:t8-p2-jin-zen.1,3.mp4;Jin-ZEN.1,3;jin
 ZEN.2;h;20;i18~i19;-5;+17a (+8);;"* Homing
 * Balcony Break
 * Strong Aerial Tailspin
 * 6 chip damage on block
 * +0 on block and 8 chip damage after absorbing an attack
-* Power crush 6~20";hom bbr chp:6 pc6~20;;Fiendish Claw;r32;;File:t8-p2-jin-zen.2.mp4;Jin-ZEN.2;jin
+* Power crush 6~20";hom bbr chp:6 pc6~20;;Fiendish Claw;32;;;File:t8-p2-jin-zen.2.mp4;Jin-ZEN.2;jin
 ZEN.3;m;20;i17~i18;-9;+10g;+22a;"* Homing
 * Balcony Break
-* +17a (+8) on BT hit";hom bbr;;Halberd Heel;r32;;File:t8-p2-jin-zen.3.mp4;Jin-ZEN.3;jin
+* +17a (+8) on BT hit";hom bbr;;Halberd Heel;32;;;File:t8-p2-jin-zen.3.mp4;Jin-ZEN.3;jin
 ZEN.4;M;25;i27~i33;+2~+8;+17d~+23d;;"* Spike
 * 7 chip damage on block
 * Low crush 7~33
-* Floating state 34~36";spk chp:7 js7~33 fs34~36;;Corpse Crusher;r31;;File:t8-p2-jin-zen.4.mp4;Jin-ZEN.4;jin
+* Floating state 34~36";spk chp:7 js7~33 fs34~36;;Corpse Crusher;31;;;File:t8-p2-jin-zen.4.mp4;Jin-ZEN.4;jin
 ZEN.1+2;L,t;10,20;i21, i61;-14;+4;;"* Wall Crush +8 on hit
 
 
 * Transition to attack throw on standing hit from the front
 * Transition to +5 CD with DF after throw
-* High crush 8~21";wc cs8~21;CD,FC;Low Chop > Karmic Epicenter;r33 FC;;File:t8-p2-jin-zen.1+2.mp4;Jin-ZEN.1+2;jin
+* High crush 8~21";wc cs8~21;CD,FC;Low Chop > Karmic Epicenter;33;FC;;File:t8-p2-jin-zen.1+2.mp4;Jin-ZEN.1+2;jin
 ZEN.3+4;h;25;i21~27;+9g~+15g;+19a (+9);;"* Balcony Break
 * Enter Breaking Step +8 +18a (+8) r32 with DF on frame 40
 * 10 chip damage on block
 * Low crush 10~32
-* Floating state 33~35";bbr chp:10 js10~32 fs33~35;Breaking Step;Black Wing Bolt;r31;;File:t8-p2-jin-zen.3+4.mp4;Jin-ZEN.3+4;jin
+* Floating state 33~35";bbr chp:10 js10~32 fs33~35;Breaking Step;Black Wing Bolt;31;;;File:t8-p2-jin-zen.3+4.mp4;Jin-ZEN.3+4;jin
 ZEN.u+1;m;20;i14~i16;-16;+31a (+21);;"* Tornado
 * 6 chip damage on block
 * Low crush 8~43
-* Floating state 44~46";trn chp:6 js8~43 fs44~46;;Black Wing Rondo;r37;;File:t8-p2-jin-zen.u+1.mp4;Jin-ZEN.u+1;jin
+* Floating state 44~46";trn chp:6 js8~43 fs44~46;;Black Wing Rondo;37;;;File:t8-p2-jin-zen.u+1.mp4;Jin-ZEN.u+1;jin
 1+3;t;35;i12~i14;+0;+2d;;"* Homing
 * Throw break 1 or 2
-* Jin recovers BT on break";hom;;Double Face Kick;r31;;File:t8-p2-jin-1+3.mp4;Jin-1+3;jin
+* Jin recovers BT on break";hom;;Double Face Kick;31;;;File:t8-p2-jin-1+3.mp4;Jin-1+3;jin
 2+4;t;35;i12~i14;-3;+0d;;"* Homing
 * Throw break 1 or 2
-* Side switch on hit";hom;;Over the Shoulder Reverse;r31;;File:t8-p2-jin-2+4.mp4;Jin-2+4;jin
+* Side switch on hit";hom;;Over the Shoulder Reverse;31;;;File:t8-p2-jin-2+4.mp4;Jin-2+4;jin
 Back throw;t;50;;;+1d;;"* Unbreakable
-* Side switch on hit";;;Pivoting Hip Throw;;;;Jin-Back throw;jin
-Left throw;t;43;;-3;+0;;Throw break 1;;;Shoulder Flip;;;;Jin-Left throw;jin
+* Side switch on hit";;;Pivoting Hip Throw;;;;;Jin-Back throw;jin
+Left throw;t;43;;-3;+0;;Throw break 1;;;Shoulder Flip;;;;;Jin-Left throw;jin
 Right throw;t;40;;-3;+0d;;"* Throw break 2
-* Side switch on hit";;;Over the Limit;;;;Jin-Right throw;jin
-df+2+4;t;40;i12;-2;-4d;;* Throw break 2;;;Shun Ren Dan;r27;;File:t8-p2-jin-df+2+3.mp4;Jin-df+2+4;jin
+* Side switch on hit";;;Over the Limit;;;;;Jin-Right throw;jin
+df+2+4;t;40;i12;-2;-4d;;* Throw break 2;;;Shun Ren Dan;27;;;File:t8-p2-jin-df+2+3.mp4;Jin-df+2+4;jin
 qcb+1+3;t;40;i12;-2;0;;"* Throw break 1
-* Opponent recovers FUFA";;;Complicated Wire;r27;;File:t8-p2-jin-qcb+1+3.mp4;Jin-qcb+1+3;jin
+* Opponent recovers FUFA";;;Complicated Wire;27;;;File:t8-p2-jin-qcb+1+3.mp4;Jin-qcb+1+3;jin
 uf+1+2;t;40;i12;+0;+0d;;"* Floor Break
-* Throw break 1+2";fbr;;Tidal Wave;r27;;File:t8-p2-jin-uf+1+2.mp4;Jin-uf+1+2;jin
+* Throw break 1+2";fbr;;Tidal Wave;27;;;File:t8-p2-jin-uf+1+2.mp4;Jin-uf+1+2;jin

@@ -1,23 +1,23 @@
-Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Transitions;Name;Recovery;Image;Video;Wavu id;Character id
+Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Transitions;Name;Recovery;Recovery state;Image;Video;Wavu id;Character id
 2+3;m;"[12;12]";i16;+1;+2c;;"* Heat Burst
 * Cancel to r45 with b,b on frame 42
 * 2 chip damage on block
 * 12 chip damage on hit
 * Only deals recoverable damage
 * Cannot cause a K.O.
-* Power crush 7~16";hb chp:2 pc7~16;;Heat Burst;r30;;;Lee-2+3;lee
+* Power crush 7~16";hb chp:2 pc7~16;;Heat Burst;30;;;;Lee-2+3;lee
 H.df+3+4;m;35;i16~17;+2;+26a;+26a;"* Balcony Break
 * 7 chip damage on block
 * Consumes 300F of remaining Heat Time
 * Has good left sidestep tracking
-* Transition to +2, +26a MS with F";bbr chp:7;MS;Crimson Howl;;;;Lee-H.df+3+4;lee
+* Transition to +2, +26a MS with F";bbr chp:7;MS;Crimson Howl;;;;;Lee-H.df+3+4;lee
 H.d+1+2;m;25;i18;+4;+21a (+11);;"* Balcony Break
 * 6 chip damage on block
 * Consumes 240F of remaining Heat Time
 * Has good right sidestep tracking
-* Transition to +6, +23a (+13) HMS with 3+4";bbr chp:6;HMS;Phantom Rose;;;File:t8-p2-lee-h.d+1+2.mp4;Lee-H.d+1+2;lee
+* Transition to +6, +23a (+13) HMS with 3+4";bbr chp:6;HMS;Phantom Rose;;;;File:t8-p2-lee-h.d+1+2.mp4;Lee-H.d+1+2;lee
 H.2+3;l,t;40;i20;-14;+0d;;"* Heat Smash
-* Balcony Break";hs bbr;;Paradigm Breaker;;;;Lee-H.2+3;lee
+* Balcony Break";hs bbr;;Paradigm Breaker;;;;;Lee-H.2+3;lee
 R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Removes Recoverable Health
 * Reversal Break
@@ -26,71 +26,71 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Restores recoverable health on hit
 * Transition to attack throw on hit
 * Consumes Rage
-* Power crush 8~";ra rbr pc8~;;The Marvelous Rose;r39;;;Lee-R.df+1+2;lee
-1;h;5;i10;+1;+8;;Recovers 2f faster on hit or block (t27 r17);;;Jab;r19;;File:t8-p2-lee-1,2.mp4;Lee-1;lee
+* Power crush 8~";ra rbr pc8~;;The Marvelous Rose;39;;;;Lee-R.df+1+2;lee
+1;h;5;i10;+1;+8;;Recovers 2f faster on hit or block (t27 r17);;;Jab;19;;;File:t8-p2-lee-1,2.mp4;Lee-1;lee
 1,2;h, h;5, 9;i10, i12;-3;+7;;"* Transition to -2 +8 r21 MS with F 
 * Jail from 1st block with 4F delay
-* Combo from 1st hit with 4F delay";;MS;Left Right Combo;r22;;File:t8-p2-lee-1,2.mp4;Lee-1,2;lee
+* Combo from 1st hit with 4F delay";;MS;Left Right Combo;22;;;File:t8-p2-lee-1,2.mp4;Lee-1,2;lee
 1,2,2;h, h, m;5, 9, 14;i10, ,i20~21;-13;-2;;"* Combo from 2nd CH with 7F delay
 * Interrupt with i2 from 1st block
 * Move can be delayed 5F
-* Input can be delayed 7F";intr:2;;;r31;;File:t8-p2-lee-1,2,2,3.mp4;Lee-1,2,2;lee
+* Input can be delayed 7F";intr:2;;;31;;;File:t8-p2-lee-1,2,2,3.mp4;Lee-1,2,2;lee
 1,2,2,3;h, h, m, h;5, 9, 14, 23;i10, ,i21~23;-3;+17a (+8);;"* Balcony Break
 * Combo from 2nd CH or 3rd hit with 8F delay
 * Transition to -9, +11a (+2a) r37 HMS with 4
 * Interrupt with i6 from 3rd block
 * Whiffs vs SSR, SWR from 3rd block
 * Move can be delayed 13F
-* Input can be delayed 17F";bbr stp:SSR intr:6;HMS;Left Right Combo > Revolution Zwei;r31;;File:t8-p2-lee-1,2,2,3.mp4;Lee-1,2,2,3;lee
+* Input can be delayed 17F";bbr stp:SSR intr:6;HMS;Left Right Combo > Revolution Zwei;31;;;File:t8-p2-lee-1,2,2,3.mp4;Lee-1,2,2,3;lee
 1,2,4;h, h, m;5, 9, 10;i10, ,i18;-12;-1;+58a;"* Jail from 1st block
 * Combo from 2nd hit
 * Transition to -14 -2 r33 HMS with 3
-* Consumes 60F of remaining Heat time without perfect input";;HMS;Left Right Mid Kick;r31;;File:t8-p2-lee-1,2,4.mp4;Lee-1,2,4;lee
+* Consumes 60F of remaining Heat time without perfect input";;HMS;Left Right Mid Kick;31;;;File:t8-p2-lee-1,2,4.mp4;Lee-1,2,4;lee
 1,2:4;h, h, m;5, 9, 12;i10, ,i18;-12;+5;+58a;"* Jail from 1st attack
 * Combo from 2nd hit with 1f delay
 * Input 4 during frames 10-13 of 1,2
 * Consumes 60F of remaining Heat time without perfect input
 * Move cannot be delayed
-* Transition to -14 +3 r33 HMS with 3";;HMS;Left Right Mid Kick;r31;;File:t8-p2-lee-1,2,4.mp4;Lee-1,2:4;lee
+* Transition to -14 +3 r33 HMS with 3";;HMS;Left Right Mid Kick;31;;;File:t8-p2-lee-1,2,4.mp4;Lee-1,2:4;lee
 1,3;h, h;5, 5;i10, i16;-11;+0;;"* Jail from 1st block with 2F delay
 * Combo from 1st hit with 4F delay
-* Move can be delayed by 4F";;;;;;;Lee-1,3;lee
+* Move can be delayed by 4F";;;;;;;;Lee-1,3;lee
 1,3:3;h, h, m;5, 5, 4;i10, ,i9;-11;+0;;"* Input 3 during frames 13-16 of previous hit
 * Jail from 1st attack
-* Combo from 1st hit";;;;;;;Lee-1,3:3;lee
+* Combo from 1st hit";;;;;;;;Lee-1,3:3;lee
 1,3:3:3;h, h, m, h;5, 5, 4, 14;i10, ,i21;-17;+14;;"* Combo from 1st hit
 * Input 3 during frames 8-9? of previous hit
 * Timestop on hit
 * Consumes 240F of remaining Heat time without perfect input
-* 5 chip damage";chp:5;;[[Acid Rain]];;;File:t8-p2-lee-1,3c3c3.mp4;Lee-1,3:3:3;lee
-2;h;10;i10;+1;+7;;;;;Right Cross;;;File:t8-p2-lee-2,1,1.mp4;Lee-2;lee
+* 5 chip damage";chp:5;;[[Acid Rain]];;;;File:t8-p2-lee-1,3c3c3.mp4;Lee-1,3:3:3;lee
+2;h;10;i10;+1;+7;;;;;Right Cross;;;;File:t8-p2-lee-2,1,1.mp4;Lee-2;lee
 2,1;h, h;10, 8;i10, i15;-5;+6;;"* Transition to -5, +6 HMS with 3+4
-* Combos from 1st hit";;HMS;;;;File:t8-p2-lee-2,1,1.mp4;Lee-2,1;lee
-2,1,1;h, h, m;10, 8, 18;i10, ,i20;-12;+3;+26a;*;;FC;Combination Drei;FC;;File:t8-p2-lee-2,1,1.mp4;Lee-2,1,1;lee
-2,1,3;h, h, h;10, 8, 20;i10, ,i24;-4;+20a (+11);+65a (+45);* Balcony Break;bbr;;Combination Fünf;;;File:t8-p2-lee-2,1,3.mp4;Lee-2,1,3;lee
-2,1,4;h, h, l;10, 8, 18;i10, ,i25;-15;+1;+11;*;;;Combination Vier;;;File:t8-p2-lee-2,1,4.mp4;Lee-2,1,4;lee
-2,2;h, m;10, 14;i10, i20;-13;-2;;* Combos from 1st hit CH;;;;;;File:t8-p2-lee-2,2,3.mp4;Lee-2,2;lee
+* Combos from 1st hit";;HMS;;;;;File:t8-p2-lee-2,1,1.mp4;Lee-2,1;lee
+2,1,1;h, h, m;10, 8, 18;i10, ,i20;-12;+3;+26a;*;;FC;Combination Drei;;FC;;File:t8-p2-lee-2,1,1.mp4;Lee-2,1,1;lee
+2,1,3;h, h, h;10, 8, 20;i10, ,i24;-4;+20a (+11);+65a (+45);* Balcony Break;bbr;;Combination Fünf;;;;File:t8-p2-lee-2,1,3.mp4;Lee-2,1,3;lee
+2,1,4;h, h, l;10, 8, 18;i10, ,i25;-15;+1;+11;*;;;Combination Vier;;;;File:t8-p2-lee-2,1,4.mp4;Lee-2,1,4;lee
+2,2;h, m;10, 14;i10, i20;-13;-2;;* Combos from 1st hit CH;;;;;;;File:t8-p2-lee-2,2,3.mp4;Lee-2,2;lee
 2,2,3;h, m, h;10, 14, 23;i10, ,i21;-3;+17a (+8);;"* Balcony Break
 * Transition to -9, +11a (+2) HMS with 4
-* Combos from 1st hit CH";bbr;HMS;Right Cross > Revolution Zwei;;;File:t8-p2-lee-2,2,3.mp4;Lee-2,2,3;lee
-3;m;16;i14;-8;+7;;* Transition to -8, +7 HMS with 4;;HMS;;;;File:t8-p2-lee-3,3.mp4;Lee-3;lee
-3,3;m, h;16, 18;i14, i17;-10;+1;;* Combos from 1st hit;;;Mist Wolf Combination;;;File:t8-p2-lee-3,3.mp4;Lee-3,3;lee
-3~3;h;18;i30?;-9;+2;;*;;;Mist Trap;;;;Lee-3~3;lee
+* Combos from 1st hit CH";bbr;HMS;Right Cross > Revolution Zwei;;;;File:t8-p2-lee-2,2,3.mp4;Lee-2,2,3;lee
+3;m;16;i14;-8;+7;;* Transition to -8, +7 HMS with 4;;HMS;;;;;File:t8-p2-lee-3,3.mp4;Lee-3;lee
+3,3;m, h;16, 18;i14, i17;-10;+1;;* Combos from 1st hit;;;Mist Wolf Combination;;;;File:t8-p2-lee-3,3.mp4;Lee-3,3;lee
+3~3;h;18;i30?;-9;+2;;*;;;Mist Trap;;;;;Lee-3~3;lee
 3~3:4;h, t;18, 20;i30?, ;!;+0d;;"* Unbreakable
 * Input 4 on frame 31? from previous hit 
 * Perfect Input not required during Heat
-* Partially consumes remaining Heat Time";;;Mist Trap Throw;;;File:t8-p2-lee-3t3c4.mp4;Lee-3~3:4;lee
-4;h;14;i11;-9;+2;+2s;;;;Magic Four;;;File:t8-p2-lee-4,3,3.mp4;Lee-4;lee
-4,3;h, h;14, 14;i11, i18;-14;-3;+2;Combos from 1st hit;;;;;;File:t8-p2-lee-4,3,3.mp4;Lee-4,3;lee
+* Partially consumes remaining Heat Time";;;Mist Trap Throw;;;;File:t8-p2-lee-3t3c4.mp4;Lee-3~3:4;lee
+4;h;14;i11;-9;+2;+2s;;;;Magic Four;;;;File:t8-p2-lee-4,3,3.mp4;Lee-4;lee
+4,3;h, h;14, 14;i11, i18;-14;-3;+2;Combos from 1st hit;;;;;;;File:t8-p2-lee-4,3,3.mp4;Lee-4,3;lee
 4,3,3;h, h, m;14, 14, ;i11, ,i19;-13;+8d;;"* Floor Break
-* Combos from 2nd hit CH";fbr;;Spinning Hammer Kick;;;File:t8-p2-lee-4,3,3.mp4;Lee-4,3,3;lee
+* Combos from 2nd hit CH";fbr;;Spinning Hammer Kick;;;;File:t8-p2-lee-4,3,3.mp4;Lee-4,3,3;lee
 4,3,4;h, h, m;14, 14, ;i11, ,i30;-9;+42d;;"* Tornado
-* Low crush";trn js;;Spin Kick Somersault Combo;;;File:t8-p2-lee-4,3,4.mp4;Lee-4,3,4;lee
+* Low crush";trn js;;Spin Kick Somersault Combo;;;;File:t8-p2-lee-4,3,4.mp4;Lee-4,3,4;lee
 4,4;h, h;14, 5;i11, i10;-13;-2;;"* Jail from 1st attack
-* Combo from 1st CH +20a (+13)";;;;;;File:t8-p2-lee-4,4,4.mp4;Lee-4,4;lee
+* Combo from 1st CH +20a (+13)";;;;;;;File:t8-p2-lee-4,4,4.mp4;Lee-4,4;lee
 4,4,4;h, h, h;14, 5, 5;i11, ,i10;-13;-2;;"* Jail from 1st attack
 * Combo from 2nd hit with no delay
-* Frame advantage on 1st CH: +25a (+18)";;;Machinegun Kicks;;;File:t8-p2-lee-4,4,4.mp4;Lee-4,4,4;lee
+* Frame advantage on 1st CH: +25a (+18)";;;Machinegun Kicks;;;;File:t8-p2-lee-4,4,4.mp4;Lee-4,4,4;lee
 4,4:4;h, h, h;14, 5, 12;i11, ,i20~21;-9;+15a (+6);;"* Heat Engager
 
 * Heat Dash +5, +43d (+35)
@@ -100,34 +100,34 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Combo from 2nd hit with 1f-5f delay only
 * Frame advantage on 1st CH: +29a (+22)
 * 4 Chip Damage on block
-* 5 Chip Damage on block in heat";he bbr chp:4;;Machinegun Kicks Cardinal;;;File:t8-p2-lee-4,4c4.mp4;Lee-4,4:4;lee
-4,u+3;h, m;14, 23;i11, i33;-1;+48d;js;* Transition to -9, +40 MS with F;;MS;Lee Somersault;;;File:t8-p2-lee-4,u+3.mp4;Lee-4,u+3;lee
+* 5 Chip Damage on block in heat";he bbr chp:4;;Machinegun Kicks Cardinal;;;;File:t8-p2-lee-4,4c4.mp4;Lee-4,4:4;lee
+4,u+3;h, m;14, 23;i11, i33;-1;+48d;js;* Transition to -9, +40 MS with F;;MS;Lee Somersault;;;;File:t8-p2-lee-4,u+3.mp4;Lee-4,u+3;lee
 1+2;m;20;i21;-1;+3;+26a;"* Homing
 * Floor Break
-* Transition to +2, +6, +29a HMS with 3+4";hom fbr;HMS,FC;Pirouette Punch;FC;;File:t8-p2-lee-1+2.mp4;Lee-1+2;lee
+* Transition to +2, +6, +29a HMS with 3+4";hom fbr;HMS,FC;Pirouette Punch;;FC;;File:t8-p2-lee-1+2.mp4;Lee-1+2;lee
 2+3+4;;;;;;;"* Has a hidden Perfect Input by inputting 2 on the 51~53 frames.
-* Perfect Input is a Just Frame even in Heat";;;Taunt;;;;Lee-2+3+4;lee
+* Perfect Input is a Just Frame even in Heat";;;Taunt;;;;;Lee-2+3+4;lee
 3+4;;;;;;;"* Transitions to HMS
 * Transition to r7? FC with d_db_df (8F cost?)
 ** Transition to r1? FC when transitioning from HMS move transitions? (1F cost?)
-* Transition to r7? MS with f,n";;FC,FC,MS;Hitman;;;;Lee-3+4;lee
-f+2;m;12;i14;-9;+2;;;;;;;;File:t8-p2-lee-f+2,1.mp4;Lee-f+2;lee
+* Transition to r7? MS with f,n";;FC,FC,MS;Hitman;;;;;Lee-3+4;lee
+f+2;m;12;i14;-9;+2;;;;;;;;;File:t8-p2-lee-f+2,1.mp4;Lee-f+2;lee
 f+2,1;m, h;12, 22;i14, i19;-10;+16c;;"* Balcony Break
 * Combos from 1st hit
 * Delayable
 * Forces tech back roll on hit
 * Move can be delayed by
-* Input can be delayed by +1";bbr;;Double Signal;;;File:t8-p2-lee-f+2,1.mp4;Lee-f+2,1;lee
-f+3;m;6;i15;-18;-7;;;;;;;;File:t8-p2-lee-f+3,3,3,3,3,4.mp4;Lee-f+3;lee
-f+3,3;m, m;6, 3;i15, i8;-18;-7;;Combos from 1st hit;;;;;;File:t8-p2-lee-f+3,3,3,3,3,4.mp4;Lee-f+3,3;lee
-f+3,3,3;m, m, h;6, 3, 3;i15, ,i8;-18;-7;;Combos from 1st hit;;;;;;File:t8-p2-lee-f+3,3,3,3,3,4.mp4;Lee-f+3,3,3;lee
-f+3,3,3,3;m, m, h, h;6, 3, 3, 3;i15, ,i8;-18;-7;;Combos from 1st hit;;;;;;File:t8-p2-lee-f+3,3,3,3,3,4.mp4;Lee-f+3,3,3,3;lee
-f+3,3,3,3,3;m, m, h, h, h;6, 3, 3, 3, 3;i15, ,i8;-18;+13a (+3);;Combos from 1st hit;;;;;;File:t8-p2-lee-f+3,3,3,3,3,4.mp4;Lee-f+3,3,3,3,3;lee
+* Input can be delayed by +1";bbr;;Double Signal;;;;File:t8-p2-lee-f+2,1.mp4;Lee-f+2,1;lee
+f+3;m;6;i15;-18;-7;;;;;;;;;File:t8-p2-lee-f+3,3,3,3,3,4.mp4;Lee-f+3;lee
+f+3,3;m, m;6, 3;i15, i8;-18;-7;;Combos from 1st hit;;;;;;;File:t8-p2-lee-f+3,3,3,3,3,4.mp4;Lee-f+3,3;lee
+f+3,3,3;m, m, h;6, 3, 3;i15, ,i8;-18;-7;;Combos from 1st hit;;;;;;;File:t8-p2-lee-f+3,3,3,3,3,4.mp4;Lee-f+3,3,3;lee
+f+3,3,3,3;m, m, h, h;6, 3, 3, 3;i15, ,i8;-18;-7;;Combos from 1st hit;;;;;;;File:t8-p2-lee-f+3,3,3,3,3,4.mp4;Lee-f+3,3,3,3;lee
+f+3,3,3,3,3;m, m, h, h, h;6, 3, 3, 3, 3;i15, ,i8;-18;+13a (+3);;Combos from 1st hit;;;;;;;File:t8-p2-lee-f+3,3,3,3,3,4.mp4;Lee-f+3,3,3,3,3;lee
 f+3,3,3,3,3,4;m, m, h, h, h, h;6, 3, 3, 3, 3, 25;i15, ,i23;-9;+69a (+53);;"* Tornado
 * If only last hit connects +28a (+13)
 * Combos from 1st hit
 * 4 can be input after the 2nd hit on-wards
-* Low crush";trn js;;Acid Storm;;;File:t8-p2-lee-f+3,3,3,3,3,4.mp4;Lee-f+3,3,3,3,3,4;lee
+* Low crush";trn js;;Acid Storm;;;;File:t8-p2-lee-f+3,3,3,3,3,4.mp4;Lee-f+3,3,3,3,3,4;lee
 f+3,3,3,3,3:4;m, m, h, h, h, h;6, 3, 3, 3, 3, 26;i15, ,i23;-9;+69a (+53);;"* Tornado
 * 10 chip damage
 * Perfect Input not required during Heat
@@ -135,33 +135,33 @@ f+3,3,3,3,3:4;m, m, h, h, h, h;6, 3, 3, 3, 3, 26;i15, ,i23;-9;+69a (+53);;"* Tor
 * Partially consumes remaining Heat Time
 * Combos from 1st hit
 * 4 can be input after the 2nd hit on-wards
-* Low crush";trn chp:10 js;;Acid Storm Cardinal;;;File:t8-p2-lee-f+3,3,3,3,3c4.mp4;Lee-f+3,3,3,3,3:4;lee
-f+4;h;13;i11;-7;+4;;;;;;;;File:t8-p2-lee-f+4,1.mp4;Lee-f+4;lee
+* Low crush";trn chp:10 js;;Acid Storm Cardinal;;;;File:t8-p2-lee-f+3,3,3,3,3c4.mp4;Lee-f+3,3,3,3,3:4;lee
+f+4;h;13;i11;-7;+4;;;;;;;;;File:t8-p2-lee-f+4,1.mp4;Lee-f+4;lee
 f+4,1;h, h;13, 24;i11, i24;-5;+20a (+3);;"* Tornado
 * Balcony Break
-* Combos on 1st hit CH";trn bbr;;Deadly Revolution;;;File:t8-p2-lee-f+4,1.mp4;Lee-f+4,1;lee
+* Combos on 1st hit CH";trn bbr;;Deadly Revolution;;;;File:t8-p2-lee-f+4,1.mp4;Lee-f+4,1;lee
 f+4,3;h, m;13, 18;i11, i21;-8;+6c;+63a;"* Transition to -4, +7c, +64a HMS with 4
 * Combos on 1st hit CH
-* Delayable";;HMS;Deadly Arc;;;File:t8-p2-lee-f+4,3.mp4;Lee-f+4,3;lee
+* Delayable";;HMS;Deadly Arc;;;;File:t8-p2-lee-f+4,3.mp4;Lee-f+4,3;lee
 f+4:1;h, h;13, 27;i11, i24;+5;+20a (+3);;"* Tornado
 * Balcony Break
 * 10 chip damage
-* Combos on 1st hit CH";trn bbr chp:10;;Deadly Revolution Cardinal;;;File:t8-p2-lee-f+4c1.mp4;Lee-f+4:1;lee
-f+1+2;h,h;12,20;i13;-13;+18a (+9);;Balcony Break;bbr;;Aggressive One-Two;;;File:t8-p2-lee-f+1+2.mp4;Lee-f+1+2;lee
+* Combos on 1st hit CH";trn bbr chp:10;;Deadly Revolution Cardinal;;;;File:t8-p2-lee-f+4c1.mp4;Lee-f+4:1;lee
+f+1+2;h,h;12,20;i13;-13;+18a (+9);;Balcony Break;bbr;;Aggressive One-Two;;;;File:t8-p2-lee-f+1+2.mp4;Lee-f+1+2;lee
 f+3+4;M,M;10,20;i30;+4c;+8c;;"Floor Break 9 chip damage
-* Low crush";js;FC;Feather Landing;FC;;File:t8-p2-lee-f+3+4.mp4;Lee-f+3+4;lee
-df+1;m;10;i13;-1;+5;;;;;;;;;Lee-df+1;lee
+* Low crush";js;FC;Feather Landing;;FC;;File:t8-p2-lee-f+3+4.mp4;Lee-f+3+4;lee
+df+1;m;10;i13;-1;+5;;;;;;;;;;Lee-df+1;lee
 df+1,2;m, h;10, 5;i13, i20;-10;+1;;"* Combo from 1st hit with 2F delay
-* Move cannot be delayed";;;2nd Hit;r29;;;Lee-df+1,2;lee
-df+1,2,2;m, h, h;10, 5, 6;i13, ,i22;-18;-7;;* Combo from 1st hit;;;3rd Hit;r37;;;Lee-df+1,2,2;lee
-df+1,2,2,1;m, h, h, h;10, 5, 6, 5;i13, ,i13;-10;+1;;* Combo from 3rd CH;;;4th Hit;r29;;;Lee-df+1,2,2,1;lee
-df+1,2,2,1,3;m, h, h, h, h;10, 5, 6, 5, 7;i13, ,i22~23;-26~-25;-15~-14;;* Combo from 4th hit;;;5th Hit;r44;;;Lee-df+1,2,2,1,3;lee
-df+1,2,2,1,3,3;m, h, h, h, h, L;10, 5, 6, 5, 7, 6;i13, ,i24;-25;-14;;* Combo from 5th CH;;;6th Hit;;;;Lee-df+1,2,2,1,3,3;lee
-df+2;m;12;i15;-7;+34a (+24);;* +4s on crouching normal hit;;;Silver Uppercut;;;File:t8-p2-lee-df+2.mp4;Lee-df+2;lee
-df+3;m;13;i14~15;-8;+3;;;;;;;;File:t8-p2-lee-df+3,2,3.mp4;Lee-df+3;lee
+* Move cannot be delayed";;;2nd Hit;29;;;;Lee-df+1,2;lee
+df+1,2,2;m, h, h;10, 5, 6;i13, ,i22;-18;-7;;* Combo from 1st hit;;;3rd Hit;37;;;;Lee-df+1,2,2;lee
+df+1,2,2,1;m, h, h, h;10, 5, 6, 5;i13, ,i13;-10;+1;;* Combo from 3rd CH;;;4th Hit;29;;;;Lee-df+1,2,2,1;lee
+df+1,2,2,1,3;m, h, h, h, h;10, 5, 6, 5, 7;i13, ,i22~23;-26~-25;-15~-14;;* Combo from 4th hit;;;5th Hit;44;;;;Lee-df+1,2,2,1,3;lee
+df+1,2,2,1,3,3;m, h, h, h, h, L;10, 5, 6, 5, 7, 6;i13, ,i24;-25;-14;;* Combo from 5th CH;;;6th Hit;;;;;Lee-df+1,2,2,1,3,3;lee
+df+2;m;12;i15;-7;+34a (+24);;* +4s on crouching normal hit;;;Silver Uppercut;;;;File:t8-p2-lee-df+2.mp4;Lee-df+2;lee
+df+3;m;13;i14~15;-8;+3;;;;;;;;;File:t8-p2-lee-df+3,2,3.mp4;Lee-df+3;lee
 df+3,2;m, h;13, 13;i14~15, i19;-10;+5;;"* Combo from 1st hit with 5F delay
 * Move can be delayed by 4F
-* Input can be delayed by 5F";;;;;;File:t8-p2-lee-df+3,2,3.mp4;Lee-df+3,2;lee
+* Input can be delayed by 5F";;;;;;;File:t8-p2-lee-df+3,2,3.mp4;Lee-df+3,2;lee
 df+3,2,3;m, h, m;13, 13, 20;i14~15, ,i22;-14;+13c g;;"* Heat Engager
 
 * Heat Dash +5, +43d (+35)
@@ -169,184 +169,184 @@ df+3,2,3;m, h, m;13, 13, 20;i14~15, ,i22;-14;+13c g;;"* Heat Engager
 * Balcony Break
 * Combo from 1st or 2nd CH with 7F delay
 * Move can be delayed by 10F
-* Input can be delayed by 11F";he bbr;;Mercury Drive;;;File:t8-p2-lee-df+3,2,3.mp4;Lee-df+3,2,3;lee
-df+4;m;14;i13-14;-9;+5;;Transition to -9, +5 HMS with 3;;HMS;;;;File:t8-p2-lee-df+4,4.mp4;Lee-df+4;lee
+* Input can be delayed by 11F";he bbr;;Mercury Drive;;;;File:t8-p2-lee-df+3,2,3.mp4;Lee-df+3,2,3;lee
+df+4;m;14;i13-14;-9;+5;;Transition to -9, +5 HMS with 3;;HMS;;;;;File:t8-p2-lee-df+4,4.mp4;Lee-df+4;lee
 df+4,4;m, h;14, 22;i13-14, i22-23;-9;+10g;;"* Heat Engager
 
 * Heat Dash +5, +43d (+35)
 
-* Combo from 1st hit with 7F delay";he;;Fabulous Whip;;;File:t8-p2-lee-df+4,4.mp4;Lee-df+4,4;lee
-D+4;l;7;i12;-13;-14;-2;;;;;;;File:t8-p2-lee-d+4,4,4,4.mp4;Lee-D+4;lee
-D+4,4;l, l;7, 8;i12, i20;-15;-16;-4;Combos from 1st hit CH;;;;;;File:t8-p2-lee-d+4,4,4,4.mp4;Lee-D+4,4;lee
-D+4,4,4;l, l, l;7, 8, 5;i12, ,i20;-15;-16;-4;Combos from 2nd hit CH;;;;;;File:t8-p2-lee-d+4,4,4,4.mp4;Lee-D+4,4,4;lee
+* Combo from 1st hit with 7F delay";he;;Fabulous Whip;;;;File:t8-p2-lee-df+4,4.mp4;Lee-df+4,4;lee
+D+4;l;7;i12;-13;-14;-2;;;;;;;;File:t8-p2-lee-d+4,4,4,4.mp4;Lee-D+4;lee
+D+4,4;l, l;7, 8;i12, i20;-15;-16;-4;Combos from 1st hit CH;;;;;;;File:t8-p2-lee-d+4,4,4,4.mp4;Lee-D+4,4;lee
+D+4,4,4;l, l, l;7, 8, 5;i12, ,i20;-15;-16;-4;Combos from 2nd hit CH;;;;;;;File:t8-p2-lee-d+4,4,4,4.mp4;Lee-D+4,4,4;lee
 D+4,4,4,4;l, l, l, m;7, 8, 5, 21;i12, ,i24;-20;+11a (+2);;"* Balcony Break
 * Transition to -11, +20a (+11) HMS with 3
-* Combos from 3rd hit CH";bbr;HMS;Laser Edge Kick Combo;;;File:t8-p2-lee-d+4,4,4,4.mp4;Lee-D+4,4,4,4;lee
-d+2;m;17;i18;-6;+8;+13;* Jab evasion;;;Gut Polisher;;;File:t8-p2-lee-d+2.mp4;Lee-d+2;lee
+* Combos from 3rd hit CH";bbr;HMS;Laser Edge Kick Combo;;;;File:t8-p2-lee-d+4,4,4,4.mp4;Lee-D+4,4,4,4;lee
+d+2;m;17;i18;-6;+8;+13;* Jab evasion;;;Gut Polisher;;;;File:t8-p2-lee-d+2.mp4;Lee-d+2;lee
 d+3;l;17;i16;-15;-1;+17a;"Transition to -15, -1, +17a HMS with 4
-* High crush 6~";cs6~;HMS,FC;Silver Low;FC;;File:t8-p2-lee-d+3.mp4;Lee-d+3;lee
-d+4;l;7;i12;-13;-14;-2;;;;Shin;;;File:t8-p2-lee-d+4,n,4.mp4;Lee-d+4;lee
+* High crush 6~";cs6~;HMS,FC;Silver Low;;FC;;File:t8-p2-lee-d+3.mp4;Lee-d+3;lee
+d+4;l;7;i12;-13;-14;-2;;;;Shin;;;;File:t8-p2-lee-d+4,n,4.mp4;Lee-d+4;lee
 d+4,n,4;l, h;7, 16;i12, i23;-9;+2;+27a (+17);"* Links to attacks from 4 (4,4:4, 4,3,4, etc.)
-* Combos from 1st hit CH";;;Shin > Head Kick;;;File:t8-p2-lee-d+4,n,4.mp4;Lee-d+4,n,4;lee
+* Combos from 1st hit CH";;;Shin > Head Kick;;;;File:t8-p2-lee-d+4,n,4.mp4;Lee-d+4,n,4;lee
 db+1;sl;5;i10;-5;+6;;"* Transition to r24 with f
 * +6c on crouching hit
-* High crush 4~";cs4~;FC;Crouch Jab;r24 FC;;;Lee-db+1;lee
+* High crush 4~";cs4~;FC;Crouch Jab;24;FC;;;Lee-db+1;lee
 db+2;sl;8;i11;-4;+7;;"Alternate input FC.2
-* High crush";cs;;;;;;Lee-db+2;lee
-db+3;L;12;i20;-12;-1;;;;;Bump Kick;;;File:t8-p2-lee-db+3.mp4;Lee-db+3;lee
+* High crush";cs;;;;;;;Lee-db+2;lee
+db+3;L;12;i20;-12;-1;;;;;Bump Kick;;;;File:t8-p2-lee-db+3.mp4;Lee-db+3;lee
 db+4;l;6;i12;-15;-4;;"Alternate input FC.4
-* High crush";cs;;;;;;Lee-db+4;lee
-db+3+4;L;19;i21;-13;+4;+38a;;;;Grass Snake;;;File:t8-p2-lee-db+3+4.mp4;Lee-db+3+4;lee
-b+1;h;9;i14;-0;+6;;;;;;;;File:t8-p2-lee-b+1,1,2.mp4;Lee-b+1;lee
+* High crush";cs;;;;;;;Lee-db+4;lee
+db+3+4;L;19;i21;-13;+4;+38a;;;;Grass Snake;;;;File:t8-p2-lee-db+3+4.mp4;Lee-db+3+4;lee
+b+1;h;9;i14;-0;+6;;;;;;;;;File:t8-p2-lee-b+1,1,2.mp4;Lee-b+1;lee
 b+1,1;h, m;9, 6;i14, i20;-5;+6;;"* Transition to -1, +10g HMS with 3+4
 * Cancel and transition to -5, +1 MS with F
-* +6c on crouching hit";;HMS,MS;;;;File:t8-p2-lee-b+1,1,2.mp4;Lee-b+1,1;lee
-b+1,1,2;h, m, h;9, 6, 18;i14, ,i20;-11;+1;;* Combos from 1st hit;;;Triple Fang;;;File:t8-p2-lee-b+1,1,2.mp4;Lee-b+1,1,2;lee
+* +6c on crouching hit";;HMS,MS;;;;;File:t8-p2-lee-b+1,1,2.mp4;Lee-b+1,1;lee
+b+1,1,2;h, m, h;9, 6, 18;i14, ,i20;-11;+1;;* Combos from 1st hit;;;Triple Fang;;;;File:t8-p2-lee-b+1,1,2.mp4;Lee-b+1,1,2;lee
 b+1:1;h,m;12,6;i14,i20;-5;+6;;"* Transition to -1, +10g HMS with 3+4
 * Cancel and transition to -5, +1 MS with F
 * +6c on crouching hit
 * Perfect Input not required during Heat
 * Does not partially consume remaining Heat Time
-* Heat Time is only consumed after the 2 followup";;HMS,MS;;;;File:t8-p2-lee-b+1,1c2.mp4;Lee-b+1:1;lee
+* Heat Time is only consumed after the 2 followup";;HMS,MS;;;;;File:t8-p2-lee-b+1,1c2.mp4;Lee-b+1:1;lee
 b+1:1,2;h,m, h;12,6, 23;i14,i20, i20~21;-6;+39d (-19);;"* Balcony Break
 * Combos from 1st hit
 * Perfect Input not required during Heat
-* Partially consumes remaining Heat Time";bbr;;Triple Fang Cardinal;;;File:t8-p2-lee-b+1,1c2.mp4;Lee-b+1:1,2;lee
+* Partially consumes remaining Heat Time";bbr;;Triple Fang Cardinal;;;;File:t8-p2-lee-b+1,1c2.mp4;Lee-b+1:1,2;lee
 b+1:1+2;h,h;12,25;i14,i21;-6;+39d (-19);;"* Balcony Break
 * Combos from 1st hit
 * 10 chip damage
 * Perfect Input not required during Heat
-* Partially consumes remaining Heat Time";bbr chp:10;;Double Fang Cardinal;;;File:t8-p2-lee-b+1c1+2.mp4;Lee-b+1:1+2;lee
+* Partially consumes remaining Heat Time";bbr chp:10;;Double Fang Cardinal;;;;File:t8-p2-lee-b+1c1+2.mp4;Lee-b+1:1+2;lee
 b+1+3;;;;;+14BT;;"* High and Mid parry
 * Puts you behind opponent
 * Alternate input b+2+4, HMS.b+1+3, HMS.b+2+4
-* Parry state 5?";ps5?;;Mist Illusion;;;;Lee-b+1+3;lee
+* Parry state 5?";ps5?;;Mist Illusion;;;;;Lee-b+1+3;lee
 b+1+3,4;m;35;i20;;+22a (+13);;"* Balcony Break
 * Only available upon successful parry
-* Guaranteed hit";bbr;;Illusion Edge;;;;Lee-b+1+3,4;lee
-b+2;h;9;i14;-5;+1;;* Transition to -1, +5 MS with F;;MS;Rear Cross Punch;;;File:t8-p2-lee-b+2.mp4;Lee-b+2;lee
+* Guaranteed hit";bbr;;Illusion Edge;;;;;Lee-b+1+3,4;lee
+b+2;h;9;i14;-5;+1;;* Transition to -1, +5 MS with F;;MS;Rear Cross Punch;;;;File:t8-p2-lee-b+2.mp4;Lee-b+2;lee
 b+2,4;h, h;9, 16;i14, i27;-9;+6;;"* Balcony Break
-* Automatically transitions to HMS on hit or block";bbr;HMS;;HMS;;File:t8-p2-lee-b+2,4,3.mp4;Lee-b+2,4;lee
+* Automatically transitions to HMS on hit or block";bbr;HMS;;;HMS;;File:t8-p2-lee-b+2,4,3.mp4;Lee-b+2,4;lee
 b+2,4,3;h, h, h;9, 16, 21;i14, ,i27;-0;+22a (+13);+51a;"* Strong Aerial Tailspin
 * Balcony Break
 * Transition to -5, +17a MS with F
-* Low crush";bbr js;MS;Super High Combination;;;File:t8-p2-lee-b+2,4,3.mp4;Lee-b+2,4,3;lee
-b+3;l;9;i15;-14;-3;;;;;;;;File:t8-p2-lee-b+3,3.mp4;Lee-b+3;lee
+* Low crush";bbr js;MS;Super High Combination;;;;File:t8-p2-lee-b+2,4,3.mp4;Lee-b+2,4,3;lee
+b+3;l;9;i15;-14;-3;;;;;;;;;File:t8-p2-lee-b+3,3.mp4;Lee-b+3;lee
 b+3,3;l, h;9, 12;i15, i19;-12;-1;;"* Transition to -7, +4 MS with F
-* Combos from 1st hit";;MS;Stinging Rush;;;File:t8-p2-lee-b+3,3.mp4;Lee-b+3,3;lee
+* Combos from 1st hit";;MS;Stinging Rush;;;;File:t8-p2-lee-b+3,3.mp4;Lee-b+3,3;lee
 b+4;m;20;i20;-3;+7c;+64a;"* Floor Break
 * Spike
 * Transition to -2, +8c, +65a HMS with 3
-* +18d on crouching opponent";fbr spk;HMS;Silver Heel;;;File:t8-p2-lee-b+4.mp4;Lee-b+4;lee
+* +18d on crouching opponent";fbr spk;HMS;Silver Heel;;;;File:t8-p2-lee-b+4.mp4;Lee-b+4;lee
 b+3+4;h;23;i20;-9;+15a (+6);;"* Balcony Break
-* Power crush";bbr pc;;Silver Revolution;;;File:t8-p2-lee-b+3+4.mp4;Lee-b+3+4;lee
+* Power crush";bbr pc;;Silver Revolution;;;;File:t8-p2-lee-b+3+4.mp4;Lee-b+3+4;lee
 ub+3;M;20;i18;-13;+20a (+13);+74a (+58);"* Tornado
-* Low crush";trn js;;Wheel of Fate;;;File:t8-p2-lee-ub+3.mp4;Lee-ub+3;lee
+* Low crush";trn js;;Wheel of Fate;;;;File:t8-p2-lee-ub+3.mp4;Lee-ub+3;lee
 ub+3+4;h!;60;i60;;+9a (+0);;"* Balcony Break 
 * Unblockable
-* Cancel and transition to HMS with 3+4";bbr;HMS;Silver Cyclone;;;File:t8-p2-lee-d+3+4.mp4;Lee-ub+3+4;lee
+* Cancel and transition to HMS with 3+4";bbr;HMS;Silver Cyclone;;;;File:t8-p2-lee-d+3+4.mp4;Lee-ub+3+4;lee
 u+3;;;;;;;"* Transition to FC with D
 * Transition to HMS with 3+4
-* Low crush";js;FC,HMS;Fake;;;;Lee-u+3;lee
-uf+3;m;12;i25;-9;+2;;* Low crush;js;;;;;File:t8-p2-lee-uf+3,1.mp4;Lee-uf+3;lee
-uf+3,1;m, m;12, 18;i25, i21;-12;+3;+26a;Combos from 1st hit;;FC;Brilliant Rosé;FC;;File:t8-p2-lee-uf+3,1.mp4;Lee-uf+3,1;lee
-uf+3,4;m, h;12, 23;i25, i25;-3;+25a;;Combos from 1st hit;;;Double Mazurek;;;File:t8-p2-lee-uf+3,4.mp4;Lee-uf+3,4;lee
+* Low crush";js;FC,HMS;Fake;;;;;Lee-u+3;lee
+uf+3;m;12;i25;-9;+2;;* Low crush;js;;;;;;File:t8-p2-lee-uf+3,1.mp4;Lee-uf+3;lee
+uf+3,1;m, m;12, 18;i25, i21;-12;+3;+26a;Combos from 1st hit;;FC;Brilliant Rosé;;FC;;File:t8-p2-lee-uf+3,1.mp4;Lee-uf+3,1;lee
+uf+3,4;m, h;12, 23;i25, i25;-3;+25a;;Combos from 1st hit;;;Double Mazurek;;;;File:t8-p2-lee-uf+3,4.mp4;Lee-uf+3,4;lee
 uf+4;m;14;i15;-13;+31a (+21);;"* Knee
 * Alternate input ub+4, u+4
-* Low crush";kne js;;Silver Arrow;;;File:t8-p2-lee-uf+4.mp4;Lee-uf+4;lee
+* Low crush";kne js;;Silver Arrow;;;;File:t8-p2-lee-uf+4.mp4;Lee-uf+4;lee
 uf+3+4;h;30;i22;+5;+28d (+20);;"* Balcony Break
 * Transition to +8, +31d (+23) HMS with 3+4
 * 9 chip damage
-* Low crush";bbr chp:9 js;HMS;Silver Bullet;;;File:t8-p2-lee-uf+3+4.mp4;Lee-uf+3+4;lee
-1+2+3+4;;;;;;;;;;Ki Charge;;;File:t8-p2-lee-1+2+3+4.mp4;Lee-1+2+3+4;lee
+* Low crush";bbr chp:9 js;HMS;Silver Bullet;;;;File:t8-p2-lee-uf+3+4.mp4;Lee-uf+3+4;lee
+1+2+3+4;;;;;;;;;;Ki Charge;;;;File:t8-p2-lee-1+2+3+4.mp4;Lee-1+2+3+4;lee
 b,B+4;h;23;i19;+2;+25a;;"* Strong Aerial Tailspin
 * Homing
 * Transition to +5, +28a HMS with 3
-* 6 chip damage";hom chp:6;HMS;Lee Cutter;;;File:t8-p2-lee-b,b+4.mp4;Lee-b,B+4;lee
+* 6 chip damage";hom chp:6;HMS;Lee Cutter;;;;File:t8-p2-lee-b,b+4.mp4;Lee-b,B+4;lee
 f,F+2;h;23;i15;+2;+18gc;+69a (+53);"* Tornado
 * Balcony Break
 * Transition to +5, +21gc, +72a (+56) MS with F
-* 6 chip damage";trn bbr chp:6;MS;Jostle Wolf;;;File:t8-p2-lee-f,f+2.mp4;Lee-f,F+2;lee
+* 6 chip damage";trn bbr chp:6;MS;Jostle Wolf;;;;File:t8-p2-lee-f,f+2.mp4;Lee-f,F+2;lee
 f,F+3;m;23;i14~15;-9;+21d (+11);;"* Heat Engager
 
 * Heat Dash +5, +36a (+26)
 
 * Balcony Break
-* Slight low profile";he bbr;;Pulse Blast;;;File:t8-p2-lee-f,f+3.mp4;Lee-f,F+3;lee
+* Slight low profile";he bbr;;Pulse Blast;;;;File:t8-p2-lee-f,f+3.mp4;Lee-f,F+3;lee
 f,F+4;h;22;i16;-5;+29a;;"*
-* High crush 5~";cs5~;;Deadly Edge;;;File:t8-p2-lee-f,f+4.mp4;Lee-f,F+4;lee
+* High crush 5~";cs5~;;Deadly Edge;;;;File:t8-p2-lee-f,f+4.mp4;Lee-f,F+4;lee
 f,n;;;;;;;"* Transitions to MS
 * Alternate input HMS.f,n
 * Can perform standing actions except for 3 and 3+4?
-* High crush";cs;;Mist Step;;;File:t8-p2-lee-f,n.mp4;Lee-f,n;lee
+* High crush";cs;;Mist Step;;;;File:t8-p2-lee-f,n.mp4;Lee-f,n;lee
 f:F+2;h;26;i15;+2;+18gc;+69a (+53);"* Tornado
 * Balcony Break
 * Transition to +5, +21gc, +72a (+56) MS with F
 * 11 chip damage
 Perfect Input not required during Heat
-Partially consumes remaining Heat Time";trn bbr chp:11;MS;Jostle Wolf Cardinal;;;File:t8-p2-lee-fcf+2.mp4;Lee-f:F+2;lee
-qcf+4;M;24;i22;-17;+50a (+40);;* Tornado;trn;;Blazing Kick;;;File:t8-p2-lee-d,db+4.mp4;Lee-qcf+4;lee
+Partially consumes remaining Heat Time";trn bbr chp:11;MS;Jostle Wolf Cardinal;;;;File:t8-p2-lee-fcf+2.mp4;Lee-f:F+2;lee
+qcf+4;M;24;i22;-17;+50a (+40);;* Tornado;trn;;Blazing Kick;;;;File:t8-p2-lee-d,db+4.mp4;Lee-qcf+4;lee
 ub,b;;;;;;;"* Automatically transitions to HMS
-* Low crush";js;HMS;Back Handspring > Hitman;HMS;;File:t8-p2-lee-ub,b.mp4;Lee-ub,b;lee
-uf,n,4;m;20;i23;-13;+32a (+22);;* Low crush;js;;Delayed Rising Toe Kick;;;File:t8-p2-lee-uf,n,4.mp4;Lee-uf,n,4;lee
+* Low crush";js;HMS;Back Handspring > Hitman;;HMS;;File:t8-p2-lee-ub,b.mp4;Lee-ub,b;lee
+uf,n,4;m;20;i23;-13;+32a (+22);;* Low crush;js;;Delayed Rising Toe Kick;;;;File:t8-p2-lee-uf,n,4.mp4;Lee-uf,n,4;lee
 f,f,F+3;m;14;i14;-9;+16a (+9);;"* Knee
 * Alternate input wr3
-* Low crush";kne js;;;;;File:t8-p2-lee-f,f,f+3,4.mp4;Lee-f,f,F+3;lee
+* Low crush";kne js;;;;;;File:t8-p2-lee-f,f,f+3,4.mp4;Lee-f,f,F+3;lee
 f,f,F+3,4;m, m;14, 26;i14, i20;+3;+19d;;"* Floor Break
 * Transition to +6, +29d (-6) HMS with 3
 * Combos from 1st hit
 * 7 chip damage
 * Balcony break on 2nd hit only
-* Low crush";fbr chp:7 js;HMS;Waxing Crescent;;;File:t8-p2-lee-f,f,f+3,4.mp4;Lee-f,f,F+3,4;lee
-ws1;m;12;i13~14;-2;+7;;* Transition to HMS;;HMS,HMS;;r20 HMS;;File:t8-p2-lee-ws1,2.mp4;Lee-ws1;lee
+* Low crush";fbr chp:7 js;HMS;Waxing Crescent;;;;File:t8-p2-lee-f,f,f+3,4.mp4;Lee-f,f,F+3,4;lee
+ws1;m;12;i13~14;-2;+7;;* Transition to HMS;;HMS,HMS;;20;HMS;;File:t8-p2-lee-ws1,2.mp4;Lee-ws1;lee
 ws1,2;m, h;12, 17;i13~14, i20;-7;+2;+7;"* Combo from 1st hit with 7F delay
 * Transition to MS r22 cs10~23 with F (-3/+6/+11)
-* Move can be delayed by 10F";;MS;Wonderful Spin Blow;r26;;File:t8-p2-lee-ws1,2.mp4;Lee-ws1,2;lee
+* Move can be delayed by 10F";;MS;Wonderful Spin Blow;26;;;File:t8-p2-lee-ws1,2.mp4;Lee-ws1,2;lee
 ws1,4;m, h;12, 20;i13~14, i20;-5;+4;;"* Combo from 1st hit
 * Transition to HMS with 3 (-8/+1)
 * Move cannot be delayed
-* Consumes 60F of remaining Heat time";;HMS;Wonderful Combo;r28;;File:t8-p2-lee-ws1,4.mp4;Lee-ws1,4;lee
+* Consumes 60F of remaining Heat time";;HMS;Wonderful Combo;28;;;File:t8-p2-lee-ws1,4.mp4;Lee-ws1,4;lee
 ws1:4;m, h;12, 23;i13~14, i20;-5;+15g;;"* Balcony Break
 * Combo from 1st hit
 * Transition to -8, +12g HMS with 3
 * Input 4 during frames 12-14
 * Move cannot be delayed
-* 9 chip damage on block";bbr chp:9;HMS;Wonderful Combo Cardinal;;;File:t8-p2-lee-ws1,j4.mp4;Lee-ws1:4;lee
-ws2;m;12;i14;-8;+3;;*;;;;;;File:t8-p2-lee-ws2,3.mp4;Lee-ws2;lee
+* 9 chip damage on block";bbr chp:9;HMS;Wonderful Combo Cardinal;;;;File:t8-p2-lee-ws1,j4.mp4;Lee-ws1:4;lee
+ws2;m;12;i14;-8;+3;;*;;;;;;;File:t8-p2-lee-ws2,3.mp4;Lee-ws2;lee
 ws2,3;m, m;12, 24;i14, i20;-13;+32a (+22);;"* Tornado
-* Combos from 1st hit";trn;;Rocket Heel;;;File:t8-p2-lee-ws2,3.mp4;Lee-ws2,3;lee
+* Combos from 1st hit";trn;;Rocket Heel;;;;File:t8-p2-lee-ws2,3.mp4;Lee-ws2,3;lee
 ws2,4;m, h;12, 23;i14, i27;-2;+13g;+37a;"* Strong Aerial Tailspin
 * Balcony Break
-* Combos from 1st hit";bbr;;Twister Heel;;;File:t8-p2-lee-ws2,4.mp4;Lee-ws2,4;lee
-ws3;M;16;i10;-21;-10;;*;;;;;;File:t8-p2-lee-ws3,3,df+3,3.mp4;Lee-ws3;lee
+* Combos from 1st hit";bbr;;Twister Heel;;;;File:t8-p2-lee-ws2,4.mp4;Lee-ws2,4;lee
+ws3;M;16;i10;-21;-10;;*;;;;;;;File:t8-p2-lee-ws3,3,df+3,3.mp4;Lee-ws3;lee
 ws3,3;M, m;16, 11;i10, i15;-15;-4c;;"* Transition to -15, -4 HMS with 4
-* Combos from 1st hit";;HMS;;;;File:t8-p2-lee-ws3,3,df+3,3.mp4;Lee-ws3,3;lee
-ws3,3,DF+3;M, m, m;16, 11, 10;i10, ,i26;-19;-8;;* Combos from 2nd hit CH;;;;;;File:t8-p2-lee-ws3,3,df+3,3.mp4;Lee-ws3,3,DF+3;lee
+* Combos from 1st hit";;HMS;;;;;File:t8-p2-lee-ws3,3,df+3,3.mp4;Lee-ws3,3;lee
+ws3,3,DF+3;M, m, m;16, 11, 10;i10, ,i26;-19;-8;;* Combos from 2nd hit CH;;;;;;;File:t8-p2-lee-ws3,3,df+3,3.mp4;Lee-ws3,3,DF+3;lee
 ws3,3,DF+3,3 ...;M, m, m, h;16, 11, 10, 10;i10, ,i26;-16;-8;;"* DF+3,3 can be repeated infinately
 * Can shift to Infinite Kick Chain: Low with D+3 after the 4th, 6th, and 8th high attacks
-* Combos from 3rd hit";;;Infinite Kick Chain: Middle;;;File:t8-p2-lee-ws3,3,df+3,3.mp4;Lee-ws3,3,DF+3,3;lee
-ws3,3,D+3;M, m, l;16, 11, 8;i10, ,i26;-19;-8;;* Combos from 2nd hit CH;;;;;;File:t8-p2-lee-ws3,3,d+3,3.mp4;Lee-ws3,3,D+3;lee
+* Combos from 3rd hit";;;Infinite Kick Chain: Middle;;;;File:t8-p2-lee-ws3,3,df+3,3.mp4;Lee-ws3,3,DF+3,3;lee
+ws3,3,D+3;M, m, l;16, 11, 8;i10, ,i26;-19;-8;;* Combos from 2nd hit CH;;;;;;;File:t8-p2-lee-ws3,3,d+3,3.mp4;Lee-ws3,3,D+3;lee
 ws3,3,D+3,3 ...;M, m, l, h;16, 11, 8, 10;i10, ,i24;-16;-5;;"* D+3,3 can be repeated infinitely
 * Can shift to Infinite Kick Chain: Middle with n,3 after the 4th, 6th, and 8th high attacks
-* Combos from 3rd hit";;;Infinite Kick Chain: Low;;;File:t8-p2-lee-ws3,3,d+3,3.mp4;Lee-ws3,3,D+3,3;lee
-ws4;m;16;i11;-6;+5;;* Transition to -9, +2 HMS with 3;;HMS;Toe Smash;;;File:t8-p2-lee-ws4.mp4;Lee-ws4;lee
+* Combos from 3rd hit";;;Infinite Kick Chain: Low;;;;File:t8-p2-lee-ws3,3,d+3,3.mp4;Lee-ws3,3,D+3,3;lee
+ws4;m;16;i11;-6;+5;;* Transition to -9, +2 HMS with 3;;HMS;Toe Smash;;;;File:t8-p2-lee-ws4.mp4;Lee-ws4;lee
 FC.1;sl;5;i10;-5;+6;;"* Alternate input d+1, db+1
-* High crush";cs;;;;;;Lee-FC.1;lee
+* High crush";cs;;;;;;;Lee-FC.1;lee
 FC.2;sl;5;i11;-4;+7;;"* Alternate input db+2
-* High crush";cs;;;;;;Lee-FC.2;lee
+* High crush";cs;;;;;;;Lee-FC.2;lee
 FC.3;l;10;i13;-17;-6;;"*
-* High crush";cs;;;;;;Lee-FC.3;lee
+* High crush";cs;;;;;;;Lee-FC.3;lee
 FC.4;l;6;i12;-15;-4;;"* Alternate input db+4
-* High crush";cs;;;;;;Lee-FC.4;lee
+* High crush";cs;;;;;;;Lee-FC.4;lee
 FC.UF+4;m;25;i18~28;-17;+28a (+18);;"* Transition to -17, +28a (+18) HMS with 3
 * Alternate input FC.UB+4, FC.U+4
-* Low crush";js;HMS,FC;Catapult Kick;FC;;File:t8-p2-lee-fc.uf+4.mp4;Lee-FC.UF+4;lee
+* Low crush";js;HMS,FC;Catapult Kick;;FC;;File:t8-p2-lee-fc.uf+4.mp4;Lee-FC.UF+4;lee
 FC.UF+3+4;m,M;30;i46~49;-4;+18a (+8);;"* Balcony Break
 * Can hit cross-up
 * Alternate input FC.UB+3+4, FC.U+3+4
-* Low crush";bbr js;FUFT;Catapult Drop;FUFT;;File:t8-p2-lee-fc.uf+3+4.mp4;Lee-FC.UF+3+4;lee
+* Low crush";bbr js;FUFT;Catapult Drop;;FUFT;;File:t8-p2-lee-fc.uf+3+4.mp4;Lee-FC.UF+3+4;lee
 FC.df,d,DF;;;;;;;"*
-* High crush";cs;FC;Slide Step;FC;;File:t8-p2-lee-fc.df,d,df.mp4;Lee-FC.df,d,DF;lee
+* High crush";cs;FC;Slide Step;;FC;;File:t8-p2-lee-fc.df,d,df.mp4;Lee-FC.df,d,DF;lee
 FC.df,d,DF:3;l;26;i18~24;-15~-9;+5c;+5d;"* * Frame advantage on block depends on spacing.: Ranges from -15 up close, to -9 at tip range.
 * Perfect Input not required during Heat
 * Perfect input when DF and 3 are input during the same frame
@@ -354,60 +354,60 @@ FC.df,d,DF:3;l;26;i18~24;-15~-9;+5c;+5d;"* * Frame advantage on block depends on
 * Is not bufferable from full crouch (regular version gets buffered instead)
 *  Transition to HMS -15 +5c with 4
 * High crush 
-* Low crush";cs js;HMS,FC;Friction Spear Cardinal;FC;;File:t8-p2-lee-fc.df,d,dfh3.mp4;Lee-FC.df,d,DF${justFrame}3;lee
+* Low crush";cs js;HMS,FC;Friction Spear Cardinal;;FC;;File:t8-p2-lee-fc.df,d,dfh3.mp4;Lee-FC.df,d,DF${justFrame}3;lee
 FC.df,d,DF+3;l;20;i18~24;-15~-9;+5c;+5d;"* * Frame advantage on block depends on spacing: Ranges from -15 up close, to -9 at tip range.
 * Bufferable from full crouch
 *  Transition to HMS -15 +5c with 4
 * High crush 
-* Low crush";cs js;HMS,FC;Friction Spear;FC;;;Lee-FC.df,d,DF+3;lee
+* Low crush";cs js;HMS,FC;Friction Spear;;FC;;;Lee-FC.df,d,DF+3;lee
 FC.df+4;l;17;i16~17;-14;+3c;+25d;"* Transition to HMS with 3 (-14/+3c/+25d)
-* High crush";cs;HMS,FC;Silver Tail;FC;;File:t8-p2-lee-fc.df+4.mp4;Lee-FC.df+4;lee
+* High crush";cs;HMS,FC;Silver Tail;;FC;;File:t8-p2-lee-fc.df+4.mp4;Lee-FC.df+4;lee
 (back to wall).b,b,UB;m;21;i35~38;+1;+34d;;"* Floating state 5~7
 * is8~24
 * Floating state 25~33
 * Low crush 34~37
-* Floating state 38~40";fs5~7 is8~24 fs25~33 js34~37 fs38~40;BT;Wall Jump Backflip;r17 BT;;;Lee-(back to wall).b,b,UB;lee
+* Floating state 38~40";fs5~7 is8~24 fs25~33 js34~37 fs38~40;BT;Wall Jump Backflip;17;BT;;;Lee-(back to wall).b,b,UB;lee
 HMS.1;h;7;i12;+2;+9;;"* Cancel and transition MS with F
-* Cancel into Scatter Kick (HMS.3) with input HMS.1~3";;HMS;Freaker Jab;HMS;;File:t8-p2-lee-hms.1.mp4;Lee-HMS.1;lee
+* Cancel into Scatter Kick (HMS.3) with input HMS.1~3";;HMS;Freaker Jab;;HMS;;File:t8-p2-lee-hms.1.mp4;Lee-HMS.1;lee
 HMS.1,1;h, h;7, 7;i12, i14;-2;+8;;"* Cancel and transition to +1, +8 MS with F
-* Combos from 1st hit";;MS,HMS;;HMS;;File:t8-p2-lee-hms.1,1,1.mp4;Lee-HMS.1,1;lee
+* Combos from 1st hit";;MS,HMS;;;HMS;;File:t8-p2-lee-hms.1,1,1.mp4;Lee-HMS.1,1;lee
 HMS.1,1,1;h, h, h;7, 7, 20;i12, ,i20;-7;+44d (-14);;"* Heat Engager
 
 * Heat Dash +5, +43d (+35)
 
 * Balcony Break
-* Combo from 1st hit";he bbr;;Amazing Swipe;;;File:t8-p2-lee-hms.1,1,1.mp4;Lee-HMS.1,1,1;lee
-HMS.1,4;h, m;7, 17;i12, i15;-8;+4;+57a;* Transition to -8, +4, +58a HMS with 3;;HMS;Excellent Combo;;;File:t8-p2-lee-hms.1,4.mp4;Lee-HMS.1,4;lee
-HMS.2;m;23;i19;-13;+39a (+29);;* Tornado;trn;;Scatter Blow;;;File:t8-p2-lee-hms.2.mp4;Lee-HMS.2;lee
+* Combo from 1st hit";he bbr;;Amazing Swipe;;;;File:t8-p2-lee-hms.1,1,1.mp4;Lee-HMS.1,1,1;lee
+HMS.1,4;h, m;7, 17;i12, i15;-8;+4;+57a;* Transition to -8, +4, +58a HMS with 3;;HMS;Excellent Combo;;;;File:t8-p2-lee-hms.1,4.mp4;Lee-HMS.1,4;lee
+HMS.2;m;23;i19;-13;+39a (+29);;* Tornado;trn;;Scatter Blow;;;;File:t8-p2-lee-hms.2.mp4;Lee-HMS.2;lee
 HMS.3;h,t;21,20;i18;-3;+0d;;"* Strong Aerial Tailspin
 * Homing
 * Shifts to throw on hit from the front
 * 6 chip damage
-* Power crush 8~";hom chp:6 pc8~;;Scatter Kick;;;File:t8-p2-lee-hms.3.mp4;Lee-HMS.3;lee
+* Power crush 8~";hom chp:6 pc8~;;Scatter Kick;;;;File:t8-p2-lee-hms.3.mp4;Lee-HMS.3;lee
 HMS.4;l;20;i22;-13;+4c;+72a (+56);"* Instant Tornado on CH
-* High crush 6~";cs6~;FC;Shin Slicer;FC;;File:t8-p2-lee-hms.4.mp4;Lee-HMS.4;lee
-HMS.1+2;m,m;10,15;i15;-5;+6;;* Transition to HMS -3 +8 with 3+4;;HMS,HMS;Poison Touch;HMS;;File:t8-p2-lee-hms.1+2.mp4;Lee-HMS.1+2;lee
+* High crush 6~";cs6~;FC;Shin Slicer;;FC;;File:t8-p2-lee-hms.4.mp4;Lee-HMS.4;lee
+HMS.1+2;m,m;10,15;i15;-5;+6;;* Transition to HMS -3 +8 with 3+4;;HMS,HMS;Poison Touch;;HMS;;File:t8-p2-lee-hms.1+2.mp4;Lee-HMS.1+2;lee
 HMS.u+3;m;32;i20~22;-9;+23d (+13);;"* Balcony Break
 * Transition to -9, +23d (+13) FC with D
 * 7 chip damage
-* Low crush 9~";bbr chp:7 js9~;FC;Silver Slash;;;File:t8-p2-lee-hms.u+3.mp4;Lee-HMS.u+3;lee
+* Low crush 9~";bbr chp:7 js9~;FC;Silver Slash;;;;File:t8-p2-lee-hms.u+3.mp4;Lee-HMS.u+3;lee
 HMS.u+4;M;20;i26~29;+5c;+8c;;"*
-* Low crush 16~";js16~;;Silver Circle;;;File:t8-p2-lee-hms.u+4.mp4;Lee-HMS.u+4;lee
+* Low crush 16~";js16~;;Silver Circle;;;;File:t8-p2-lee-hms.u+4.mp4;Lee-HMS.u+4;lee
 MS.3;m;10;i15;-12;-1;;"*
-* Low crush";js;;;;;File:t8-p2-lee-ms.3,4.mp4;Lee-MS.3;lee
-MS.3,4;m, m;10, 10;i15, i15;-13;+32a (+22);;*;;;Inverted Axle;;;File:t8-p2-lee-ms.3,4.mp4;Lee-MS.3,4;lee
+* Low crush";js;;;;;;File:t8-p2-lee-ms.3,4.mp4;Lee-MS.3;lee
+MS.3,4;m, m;10, 10;i15, i15;-13;+32a (+22);;*;;;Inverted Axle;;;;File:t8-p2-lee-ms.3,4.mp4;Lee-MS.3,4;lee
 MS.3+4;l;20;i25~31;-15~-9;+5c;+5d;"* High crush 
-* Low crush";cs js;FC;Friction Spear;FC;;;Lee-MS.3+4;lee
-MS.b,n;;;;;;;*;;FC;Sway;hFC;;File:t8-p2-lee-ms.b,n,4.mp4;Lee-MS.b,n;lee
+* Low crush";cs js;FC;Friction Spear;;FC;;;Lee-MS.3+4;lee
+MS.b,n;;;;;;;*;;hFC;Sway;;hFC;;File:t8-p2-lee-ms.b,n,4.mp4;Lee-MS.b,n;lee
 MS.b,n,4;l;20;i21;-13;+3;+12;"*
-* High crush";cs;;Axe Sweep;;;File:t8-p2-lee-ms.b,n,4.mp4;Lee-MS.b,n,4;lee
+* High crush";cs;;Axe Sweep;;;;File:t8-p2-lee-ms.b,n,4.mp4;Lee-MS.b,n,4;lee
 1+3;t;35;i12~14;-3;-2d;;"* Homing
-* Throw break 1 or 2";hom;;Forearm Drop;r31;;File:t8-p2-lee-1+3.mp4;Lee-1+3;lee
+* Throw break 1 or 2";hom;;Forearm Drop;31;;;File:t8-p2-lee-1+3.mp4;Lee-1+3;lee
 2+4;t;35;i12~14;-6;-2d;;"* Homing
 * Throw break 1 or 2
-* Side swap";hom;;Axle Throw;r31;;File:t8-p2-lee-2+4.mp4;Lee-2+4;lee
-Back Throw;t;50;i12~14;!;-5d;;Unbreakable;;BT;Face Crusher;BT;;;Lee-Back Throw;lee
-Left Throw;t;40;i12~14;-3;-3d;;Throw break 1;;;Lee Harassment;;;;Lee-Left throw;lee
-Right Throw;t;40;i12~14;-3;+0d;;Floor Break Throw break 2;;;Lee Stunner;;;;Lee-Right throw;lee
+* Side swap";hom;;Axle Throw;31;;;File:t8-p2-lee-2+4.mp4;Lee-2+4;lee
+Back Throw;t;50;i12~14;!;-5d;;Unbreakable;;BT;Face Crusher;;BT;;;Lee-Back Throw;lee
+Left Throw;t;40;i12~14;-3;-3d;;Throw break 1;;;Lee Harassment;;;;;Lee-Left throw;lee
+Right Throw;t;40;i12~14;-3;+0d;;Floor Break Throw break 2;;;Lee Stunner;;;;;Lee-Right throw;lee
 uf+1+2;t;20;i12~14;-3;+23d;;"* Throw break 1+2
-* Alternate input HMS.uf+1+2";;;Knee Drive;;;File:t8-p2-lee-uf+1+2.mp4;Lee-uf+1+2;lee
+* Alternate input HMS.uf+1+2";;;Knee Drive;;;;File:t8-p2-lee-uf+1+2.mp4;Lee-uf+1+2;lee
