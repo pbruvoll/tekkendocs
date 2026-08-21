@@ -1,7 +1,12 @@
 import { expect, test } from 'vitest';
 import { type Move } from '~/types/Move';
 import { type SortSettings } from '~/types/SortSettings';
-import { getChipDamage, getRelatedMoves, sortMovesV2 } from './frameDataUtils';
+import {
+  getChipDamage,
+  getRelatedMoves,
+  recoverFullCrouch,
+  sortMovesV2,
+} from './frameDataUtils';
 
 test('getRelatedMoves with more that one hit', () => {
   const move: Pick<Move, 'command'> = {
@@ -109,4 +114,17 @@ test('getRelatedMoves with heat and hold', () => {
     commands.map((c) => ({ command: c }) as Move),
   );
   expect(relatedMoves.map((m) => m.command)).toEqual(['f,f+2*', 'H.f,f+2']);
+});
+
+test('recoverFullCrouch', () => {
+  const recovers = (move: Partial<Move>) =>
+    recoverFullCrouch({ notes: '', ...move } as Move);
+
+  expect(recovers({ recoveryState: 'FC' })).toBe(true);
+  expect(recovers({ recoveryState: 'BT FC' })).toBe(true);
+  expect(recovers({ recoveryState: 'FDFT' })).toBe(false);
+  // FUFT must not match the way a substring check on the raw value would
+  expect(recovers({ recoveryState: 'BT/FUFT' })).toBe(false);
+  expect(recovers({ notes: 'Transition to FC with d' })).toBe(true);
+  expect(recovers({})).toBe(false);
 });

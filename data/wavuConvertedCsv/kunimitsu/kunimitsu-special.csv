@@ -1,16 +1,16 @@
-Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Transitions;Name;Recovery;Image;Video;Wavu id;Character id
+Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Transitions;Name;Recovery;Recovery state;Image;Video;Wavu id;Character id
 2+3;m;"[12;12]";i16;+1;+2c;;"* Heat Burst
 * Cancel to r45 with b,b on frame 42
 * 2 chip damage on block
 * 12 chip damage on hit
 * Only deals recoverable damage
 * Cannot cause a K.O.
-* Power crush 7~16";hb chp:2 pc7~16;;Heat Burst;r30;;t8-p2-kunimitsu-2+3.mp4;Kunimitsu-2+3;kunimitsu
+* Power crush 7~16";hb chp:2 pc7~16;;Heat Burst;30;;;t8-p2-kunimitsu-2+3.mp4;Kunimitsu-2+3;kunimitsu
 H.KAT.d+1+2;L,m,m;8,8,14;i20~21 i19~20 i7~8;-14;+23a (+5);;"* Weapon
 * Consumes 600F of remaining Heat Time
 * 6 chip damage on block
 * is1~4
-* High crush 5~22";wpn chp:6 is1~4 cs5~22;;Flame Dance: Waning Moon;r43;;t8-p2-kunimitsu-h.kat.d+1+2.mp4;Kunimitsu-H.KAT.d+1+2;kunimitsu
+* High crush 5~22";wpn chp:6 is1~4 cs5~22;;Flame Dance: Waning Moon;43;;;t8-p2-kunimitsu-h.kat.d+1+2.mp4;Kunimitsu-H.KAT.d+1+2;kunimitsu
 H.db+1+2;M,M;10,15;i18~19,i18;-9;+59a (+43);;"* Tornado
 * Weapon
 * Instant Tornado on normal hit
@@ -18,13 +18,13 @@ H.db+1+2;M,M;10,15;i18~19,i18;-9;+59a (+43);;"* Tornado
 * 5 chip damage on block
 * Steel pedal
 * Low crush 41~65
-* Floating state 66~68";trn wpn chp:5 js41~65 fs66~68;;Flame Dance: Waxing Moon;r45;;t8-p2-kunimitsu-h.db+1+2.mp4;Kunimitsu-H.db+1+2;kunimitsu
+* Floating state 66~68";trn wpn chp:5 js41~65 fs66~68;;Flame Dance: Waxing Moon;45;;;t8-p2-kunimitsu-h.db+1+2.mp4;Kunimitsu-H.db+1+2;kunimitsu
 H.u+1+2;m,m,m;8,10,20;i16 i9 i20;+5;+25a (+1);;"* Balcony Break
 * Weapon
 * Consumes 240F of remaining Heat Time
 * 7 chip damage on block
 * Low crush 21~30
-* Floating state 31~33";bbr wpn chp:7 js21~30 fs31~33;BT;Flame Dance: Izayoi Moon;r40 BT;;t8-p2-kunimitsu-h.u+1+2.mp4;Kunimitsu-H.u+1+2;kunimitsu
+* Floating state 31~33";bbr wpn chp:7 js21~30 fs31~33;BT;Flame Dance: Izayoi Moon;40;BT;;t8-p2-kunimitsu-h.u+1+2.mp4;Kunimitsu-H.u+1+2;kunimitsu
 H.2+3;m,t;50;i14~15;+3;-5d;;"* Heat Smash
 * Reversal Break
 * Balcony Break
@@ -32,7 +32,7 @@ H.2+3;m,t;50;i14~15;+3;-5d;;"* Heat Smash
 * 10 chip damage on block
 * High evasion at frame 6?
 * Low crush 20~44
-* Floating state 45~47";hs rbr bbr chp:10 js20~44 fs45~47;;Flame Riot: Lunar Mirror;r38;;t8-p2-kunimitsu-h.2+3.mp4;Kunimitsu-H.2+3;kunimitsu
+* Floating state 45~47";hs rbr bbr chp:10 js20~44 fs45~47;;Flame Riot: Lunar Mirror;38;;;t8-p2-kunimitsu-h.2+3.mp4;Kunimitsu-H.2+3;kunimitsu
 R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Removes Recoverable Health
 * Reversal Break
@@ -41,12 +41,12 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Restores recoverable health on hit
 * Transition to attack throw on hit
 * Consumes Rage
-* Power crush 8~";ra rbr pc8~;;Nine-Tailed Razing Lily;r39;;t8-p2-kunimitsu-r.df+1+2.mp4;Kunimitsu-R.df+1+2;kunimitsu
-1;h;5;i10;+1;+8;;Recovers 2f faster on hit or block (t27 r17);;;Jab;r19;;t8-p2-kunimitsu-1.mp4;Kunimitsu-1;kunimitsu
+* Power crush 8~";ra rbr pc8~;;Nine-Tailed Razing Lily;39;;;t8-p2-kunimitsu-r.df+1+2.mp4;Kunimitsu-R.df+1+2;kunimitsu
+1;h;5;i10;+1;+8;;Recovers 2f faster on hit or block (t27 r17);;;Jab;19;;;t8-p2-kunimitsu-1.mp4;Kunimitsu-1;kunimitsu
 1,1;h, m;5, 12;i10, i21;-5;+6;;"* Combo from 1st hit with 2f delay
 * Interrupt with i2 from 1st block
 * Move can be delayed 2f
-* Enter KAT -7 +4 r26 with 1+2";intr:2;KAT;Memai Tsuki;r24;;t8-p2-kunimitsu-1,1.mp4;Kunimitsu-1,1;kunimitsu
+* Enter KAT -7 +4 r26 with 1+2";intr:2;KAT;Memai Tsuki;24;;;t8-p2-kunimitsu-1,1.mp4;Kunimitsu-1,1;kunimitsu
 1,1,1;h, m, M;5, 12, 18;i10, ,i21~22;-11;+15a (-2);;"* Tornado
 * Balcony Break
 * Weapon
@@ -56,7 +56,7 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Move cannot be delayed
 * Available on hit or block only
 * Low crush 5~15
-* Floating state 16~18";trn bbr wpn intr:10 js5~15 fs16~18;;Memai Tsuki > Ryu Enko;r34;;t8-p2-kunimitsu-1,1,1.mp4;Kunimitsu-1,1,1;kunimitsu
+* Floating state 16~18";trn bbr wpn intr:10 js5~15 fs16~18;;Memai Tsuki > Ryu Enko;34;;;t8-p2-kunimitsu-1,1,1.mp4;Kunimitsu-1,1,1;kunimitsu
 1,1,2;h, m, m;5, 12, 24;i10, ,i19~20;-9;+14a (+5);+46a (-1);"* Balcony Break
 * Weapon
 * Combo from 2nd CH with 9f delay
@@ -64,7 +64,7 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Interrupt with i8 from 2nd block
 * Whiffs vs SSR, SWR from 2nd block
 * Input can be delayed 9f
-* Move cannot be delayed";bbr wpn stp:SSR intr:8;;Memai Tsuki > Dark Clutch;r30;;t8-p2-kunimitsu-1,1,2.mp4;Kunimitsu-1,1,2;kunimitsu
+* Move cannot be delayed";bbr wpn stp:SSR intr:8;;Memai Tsuki > Dark Clutch;30;;;t8-p2-kunimitsu-1,1,2.mp4;Kunimitsu-1,1,2;kunimitsu
 1,1,4;h, m, m;5, 12, 23;i10, ,i26~27;+3;+5a;;"* Spike
 * Interrupt with i15 from 2nd block
 * Whiffs vs SS, SW from 2nd block
@@ -73,57 +73,57 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Available on hit or block only
 * 4 chip damage on block
 * Low crush 5~29
-* Floating state 30~32";spk stp:SS intr:15 chp:4 js5~29 fs30~32;;Memai Tsuki > Pouncing Strike;r34;;t8-p2-kunimitsu-1,1,4.mp4;Kunimitsu-1,1,4;kunimitsu
+* Floating state 30~32";spk stp:SS intr:15 chp:4 js5~29 fs30~32;;Memai Tsuki > Pouncing Strike;34;;;t8-p2-kunimitsu-1,1,4.mp4;Kunimitsu-1,1,4;kunimitsu
 1,2;h, h;5, 8;i10, i12;-3;+7;;"* Jail from 1st attack with 2f delay
-* Move can be delayed 2f";;;Multi-palm Strike;r20;;t8-p2-kunimitsu-1,2.mp4;Kunimitsu-1,2;kunimitsu
+* Move can be delayed 2f";;;Multi-palm Strike;20;;;t8-p2-kunimitsu-1,2.mp4;Kunimitsu-1,2;kunimitsu
 1,2,2;h, h, h;5, 8, 10;i10, ,i20~21;-12;+5;;"* Balcony Break (airborne)
 * Weapon
 * Combo from 1st hit
 * Move cannot be interrupted
-* Transition to BT with B";wpn;BT;Spinning Slash;r30;;t8-p2-kunimitsu-1,2,2.mp4;Kunimitsu-1,2,2;kunimitsu
+* Transition to BT with B";wpn;BT;Spinning Slash;30;;;t8-p2-kunimitsu-1,2,2.mp4;Kunimitsu-1,2,2;kunimitsu
 1,2,4;h, h, m;5, 8, 20;i10, ,i23~24;-14;+12d;;"* Balcony Break
 * Combo from 1st CH with 3F delay
 * Interrupt with i3 from 1st block
 * Hit vs BT +9d
 * Low crush 12~32
-* Floating state 33~35";bbr intr:3 js12~32 fs33~35;;Flash Kick Combination;r35;;t8-p2-kunimitsu-1,2,4.mp4;Kunimitsu-1,2,4;kunimitsu
-1+3+4;;;;;;;;;;Taunt 1;r110;;t8-p2-kunimitsu-1+3+4.mp4;Kunimitsu-1+3+4;kunimitsu
-2;h;12;i12;-5;+1;;* Weapon;wpn;;;r24;;t8-p2-kunimitsu-2.mp4;Kunimitsu-2;kunimitsu
+* Floating state 33~35";bbr intr:3 js12~32 fs33~35;;Flash Kick Combination;35;;;t8-p2-kunimitsu-1,2,4.mp4;Kunimitsu-1,2,4;kunimitsu
+1+3+4;;;;;;;;;;Taunt 1;110;;;t8-p2-kunimitsu-1+3+4.mp4;Kunimitsu-1+3+4;kunimitsu
+2;h;12;i12;-5;+1;;* Weapon;wpn;;;24;;;t8-p2-kunimitsu-2.mp4;Kunimitsu-2;kunimitsu
 2,2;h, m;12, 14;i12, i12~13;-6;+5;;"* Weapon
 * Jail from 1st block with 5f delay
 * Combo from 1st hit with 5f delay
 * Transition to KAT -6 +5 r26 with 1+2
 * Input can be delayed 5f
-* Move cannot be delayed";wpn;KAT;Lotus Blade;r26;;t8-p2-kunimitsu-2,2.mp4;Kunimitsu-2,2;kunimitsu
+* Move cannot be delayed";wpn;KAT;Lotus Blade;26;;;t8-p2-kunimitsu-2,2.mp4;Kunimitsu-2,2;kunimitsu
 2,2,2;h, m, h;12, 14, 16;i12, ,i18~19;-9;+2;;"* Weapon
 * Combo from 2nd CH with 4f delay
 * Interrupt with i4 from 2nd block
 * Enter SET -4 +7 r27 with F
 * Input can be delayed 4f
 * Move is delayed 7f
-* Move cannot be delayed";wpn intr:4;SET;Shrouded Lotus Blade;r32;;t8-p2-kunimitsu-2,2,2.mp4;Kunimitsu-2,2,2;kunimitsu
+* Move cannot be delayed";wpn intr:4;SET;Shrouded Lotus Blade;32;;;t8-p2-kunimitsu-2,2,2.mp4;Kunimitsu-2,2,2;kunimitsu
 2,2,2,2;h, m, h, h;12, 14, 16, 16;i12, ,i15~16;-6;+3;;"* Balcony Break (airborne)
 * Weapon
 * Jail from 3rd block with 5F delay
 * Combo from 2nd CH or 3rd hit with 5f delay
 * Input can be delayed 5f
-* Move cannot be delayed";wpn;;;r31;;t8-p2-kunimitsu-2,2,2,2.mp4;Kunimitsu-2,2,2,2;kunimitsu
+* Move cannot be delayed";wpn;;;31;;;t8-p2-kunimitsu-2,2,2,2.mp4;Kunimitsu-2,2,2,2;kunimitsu
 2,2,2,2,2;h, m, h, h, M;12, 14, 16, 16, 18;i12, ,i19~20;-12;+19a (+2);+33a (+23);"* Tornado
 * Weapon
 * Move cannot be interrupted
 * Move cannot be delayed
 * Input can be delayed 7f
 * Low crush 21~35
-* Floating state 36~38";trn wpn js21~35 fs36~38;;Shadow Lotus Blade;r30;;t8-p2-kunimitsu-2,2,2,2,2.mp4;Kunimitsu-2,2,2,2,2;kunimitsu
+* Floating state 36~38";trn wpn js21~35 fs36~38;;Shadow Lotus Blade;30;;;t8-p2-kunimitsu-2,2,2,2,2.mp4;Kunimitsu-2,2,2,2,2;kunimitsu
 3;h;17;i16~17;-7;+7;;"* Homing
-* Balcony Break (airborne)";hom;;Crescent Kick;r32;;t8-p2-kunimitsu-3.mp4;Kunimitsu-3;kunimitsu
+* Balcony Break (airborne)";hom;;Crescent Kick;32;;;t8-p2-kunimitsu-3.mp4;Kunimitsu-3;kunimitsu
 3,4;h, h;17, 21;i16~17, i25~27;-5;+20a;+46a;"* Balcony Break (airborne)
 * Combo from 1st hit with 10f delay
 * Interrupt with i9 from 1st block
 * Whiffs vs SSR, SWR from 1st block
 * Input can be delayed 10f
-* Move cannot be delayed";stp:SSR intr:9;;Getsurin Renkyaku;r31;;t8-p2-kunimitsu-3,4.mp4;Kunimitsu-3,4;kunimitsu
-4;h;15;i12~13;-9;-3;;;;;;r32;;t8-p2-kunimitsu-4.mp4;Kunimitsu-4;kunimitsu
+* Move cannot be delayed";stp:SSR intr:9;;Getsurin Renkyaku;31;;;t8-p2-kunimitsu-3,4.mp4;Kunimitsu-3,4;kunimitsu
+4;h;15;i12~13;-9;-3;;;;;;32;;;t8-p2-kunimitsu-4.mp4;Kunimitsu-4;kunimitsu
 4,2;h, h;15, 13;i12~13, i19~20;-3;+6;;"* Balcony Break (airborne)
 * Weapon
 * Transition to BT
@@ -132,85 +132,85 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Input can be delayed 1f
 * Move cannot be delayed
 * Low crush 15~25
-* Floating state 26~28";wpn js15~25 fs26~28;BT,BT;Kagenade Slash;r28 BT;;t8-p2-kunimitsu-4,2.mp4;Kunimitsu-4,2;kunimitsu
+* Floating state 26~28";wpn js15~25 fs26~28;BT,BT;Kagenade Slash;28;BT;;t8-p2-kunimitsu-4,2.mp4;Kunimitsu-4,2;kunimitsu
 1+2;;;;;;;"* Actionable after 17f
 * Stance moves can be delayed by 18F
 * Transition to r22 BT with B
-* Transition to r14 SET with F";;BT,SET,KAT;Katon;r17 KAT;;t8-p2-kunimitsu-1+2.mp4;Kunimitsu-1+2;kunimitsu
-2+3+4;;;;;;;;;;Taunt 2;r100;;t8-p2-kunimitsu-2+3+4.mp4;Kunimitsu-2+3+4;kunimitsu
+* Transition to r14 SET with F";;BT,SET,KAT;Katon;17;KAT;;t8-p2-kunimitsu-1+2.mp4;Kunimitsu-1+2;kunimitsu
+2+3+4;;;;;;;;;;Taunt 2;100;;;t8-p2-kunimitsu-2+3+4.mp4;Kunimitsu-2+3+4;kunimitsu
 3+4;h;18;i21~22;-1;+21a (+12);;"* Strong Aerial Tailspin
 * Balcony Break
 * Low crush 11~30
-* Floating state 31~33";bbr js11~30 fs31~33;;Growling Jewel;r28;;t8-p2-kunimitsu-3+4.mp4;Kunimitsu-3+4;kunimitsu
-f+2;h;12;i13;-9;+2;;;;;;r28;;t8-p2-kunimitsu-f+2.mp4;Kunimitsu-f+2;kunimitsu
+* Floating state 31~33";bbr js11~30 fs31~33;;Growling Jewel;28;;;t8-p2-kunimitsu-3+4.mp4;Kunimitsu-3+4;kunimitsu
+f+2;h;12;i13;-9;+2;;;;;;28;;;t8-p2-kunimitsu-f+2.mp4;Kunimitsu-f+2;kunimitsu
 f+2,3;h, h;12, 20;i13, i16~18;-6;+20a (+11);;"* Combo from 1st hit with 8f delay
 * Input can be delayed 8f
-* Move can be delayed 3f";;;Phoenix Tail;r28;;t8-p2-kunimitsu-f+2,3.mp4;Kunimitsu-f+2,3;kunimitsu
+* Move can be delayed 3f";;;Phoenix Tail;28;;;t8-p2-kunimitsu-f+2,3.mp4;Kunimitsu-f+2,3;kunimitsu
 f+3;;;;;;;"* Transition to r16 FC with D
-* Cancel to r25 with B (can block mids or highs on frame 12~)";;FC,SET;Setsunagake;r10 SET;;t8-p2-kunimitsu-f+3.mp4;Kunimitsu-f+3;kunimitsu
+* Cancel to r25 with B (can block mids or highs on frame 12~)";;FC,SET;Setsunagake;10;SET;;t8-p2-kunimitsu-f+3.mp4;Kunimitsu-f+3;kunimitsu
 f+4;m;12;i15;-5;-1;+7;"* Knee
-* Enter SET +3 +7 +15 r19 with F";kne;SET;Kusabiyuki;r27;;t8-p2-kunimitsu-f+4.mp4;Kunimitsu-f+4;kunimitsu
+* Enter SET +3 +7 +15 r19 with F";kne;SET;Kusabiyuki;27;;;t8-p2-kunimitsu-f+4.mp4;Kunimitsu-f+4;kunimitsu
 f+1+2;m;23;i17~18;-6;+9a (+0);;"* Heat Engager
 
 * Heat Dash +5, +45a (+35)
 
 * Balcony Break
 * Weapon
-* 4 chip damage on block";he bbr wpn chp:4;;Gozuryu;r35;;t8-p2-kunimitsu-f+1+2.mp4;Kunimitsu-f+1+2;kunimitsu
+* 4 chip damage on block";he bbr wpn chp:4;;Gozuryu;35;;;t8-p2-kunimitsu-f+1+2.mp4;Kunimitsu-f+1+2;kunimitsu
 f+3+4;m,h;10,13;i15 i13;-5;+23a (+6);;"* Balcony Break
 * BT transition is -11
 * Low crush 19~24
-* Floating state 25~27";bbr js19~24 fs25~27;BT;Whirling Snapdragon;r27 BT;;t8-p2-kunimitsu-f+3+4.mp4;Kunimitsu-f+3+4;kunimitsu
-df+1;m;10;i13~14;-2;+5;;;;;;r20;;t8-p2-kunimitsu-df+1.mp4;Kunimitsu-df+1;kunimitsu
+* Floating state 25~27";bbr js19~24 fs25~27;BT;Whirling Snapdragon;27;BT;;t8-p2-kunimitsu-f+3+4.mp4;Kunimitsu-f+3+4;kunimitsu
+df+1;m;10;i13~14;-2;+5;;;;;;20;;;t8-p2-kunimitsu-df+1.mp4;Kunimitsu-df+1;kunimitsu
 df+1,2;m, m;10, 12;i13~14, i18~19;-10;+1;;"* Weapon
 * Combo from 1st CH with 7f delay
 * Input can be delayed 9f
 * Move can be delayed 8f
-* Trade with i1 from 1st block";wpn;;;r30;;t8-p2-kunimitsu-df+1,2.mp4;Kunimitsu-df+1,2;kunimitsu
+* Trade with i1 from 1st block";wpn;;;30;;;t8-p2-kunimitsu-df+1,2.mp4;Kunimitsu-df+1,2;kunimitsu
 df+1,2,2;m, m, M;10, 12, 20;i13~14, ,i22~23;-14c;+8a;;"* Balcony Break
 * Spike
 * Combo from 2nd hit with 1f delay
 * Input can be delayed 1f
 * Move cannot be delayed
 * Combo from 1st CH
-* Chip damage on block";bbr spk chp;;Unmuzan > Oboro Engetsu;r41;;t8-p2-kunimitsu-df+1,2,2.mp4;Kunimitsu-df+1,2,2;kunimitsu
+* Chip damage on block";bbr spk chp;;Unmuzan > Oboro Engetsu;41;;;t8-p2-kunimitsu-df+1,2,2.mp4;Kunimitsu-df+1,2,2;kunimitsu
 df+1,3;m, h;10, 20;i13~14, i21;-9;+5;+44a (+34);"* Tornado
 * Combo from 1st Ch with 4f delay
 * Input can be delayed 9f
-* Move can be delayed 8f";trn;;Muten Cannon;r30;;t8-p2-kunimitsu-df+1,3.mp4;Kunimitsu-df+1,3;kunimitsu
+* Move can be delayed 8f";trn;;Muten Cannon;30;;;t8-p2-kunimitsu-df+1,3.mp4;Kunimitsu-df+1,3;kunimitsu
 df+2;M;13;i15~16;-14;+30a (+20);;"* Weapon
 * Can launch crouching opponent
-* Recovers 5f faster on hit";wpn;;Rising Moon Slash;r34;;t8-p2-kunimitsu-df+2.mp4;Kunimitsu-df+2;kunimitsu
-df+3;m;14;i17~18;-6;+2;+4;;;;;r27;;t8-p2-kunimitsu-df+3.mp4;Kunimitsu-df+3;kunimitsu
+* Recovers 5f faster on hit";wpn;;Rising Moon Slash;34;;;t8-p2-kunimitsu-df+2.mp4;Kunimitsu-df+2;kunimitsu
+df+3;m;14;i17~18;-6;+2;+4;;;;;27;;;t8-p2-kunimitsu-df+3.mp4;Kunimitsu-df+3;kunimitsu
 df+3,2;m, L;14, 20;i17~18, i28~29;-15;+1c;;"* Balcony Break (airborne)
 * Weapon
 * Combo from 1st CH
 * Cancel to FC -13 -5 -3 r34 with D
 * Interrupt with i6 from 1st block
-* High crush 22~35";wpn intr:6 cs22~35;FC;Ice Cleaver;r33;;t8-p2-kunimitsu-df+3,2.mp4;Kunimitsu-df+3,2;kunimitsu
-df+4;m;13;i12;-9;+2;;;;;;r28;;t8-p2-kunimitsu-df+4.mp4;Kunimitsu-df+4;kunimitsu
+* High crush 22~35";wpn intr:6 cs22~35;FC;Ice Cleaver;33;;;t8-p2-kunimitsu-df+3,2.mp4;Kunimitsu-df+3,2;kunimitsu
+df+4;m;13;i12;-9;+2;;;;;;28;;;t8-p2-kunimitsu-df+4.mp4;Kunimitsu-df+4;kunimitsu
 df+3+4;m,m;8,12;i17~18 i7~9;-2;+5;;"* Floor Break
 * Transition to BT
 * Can hit grounded when off-axis
 * High evasion at frame 5?
-* Floating state 10~24";fbr fs10~24;BT,BT;Falling Hail;r22 BT;;t8-p2-kunimitsu-df+3+4.mp4;Kunimitsu-df+3+4;kunimitsu
-d+1;m;23;i19;+3;+6;+13c;* Spike;spk;FC;Sakumaishi;r31 FC;;t8-p2-kunimitsu-d+1.mp4;Kunimitsu-d+1;kunimitsu
+* Floating state 10~24";fbr fs10~24;BT,BT;Falling Hail;22;BT;;t8-p2-kunimitsu-df+3+4.mp4;Kunimitsu-df+3+4;kunimitsu
+d+1;m;23;i19;+3;+6;+13c;* Spike;spk;FC;Sakumaishi;31;FC;;t8-p2-kunimitsu-d+1.mp4;Kunimitsu-d+1;kunimitsu
 d+2;m;11;i16;-9;+2c;;"* Floor Break
 * Weapon
-* Does not floor break if string is continued";fbr wpn;;;r28;;t8-p2-kunimitsu-d+2.mp4;Kunimitsu-d+2;kunimitsu
+* Does not floor break if string is continued";fbr wpn;;;28;;;t8-p2-kunimitsu-d+2.mp4;Kunimitsu-d+2;kunimitsu
 d+2,1;m, m;11, 7;i16, i16~17;-12;-1;;"* Combo from 1st CH with 2f delay
 * Input can be delayed 2f
-* Move cannot be delayed";;;;r30;;t8-p2-kunimitsu-d+2,1.mp4;Kunimitsu-d+2,1;kunimitsu
+* Move cannot be delayed";;;;30;;;t8-p2-kunimitsu-d+2,1.mp4;Kunimitsu-d+2,1;kunimitsu
 d+2,1,2;m, m, m;11, 7, 7;i16, ,i11~12;-12;+4;;"* Weapon
 * Combo from 2nd hit with 1f delay
 * Input can be delayed 1f
-* Move cannot be delayed";wpn;;;r32;;t8-p2-kunimitsu-d+2,1,2.mp4;Kunimitsu-d+2,1,2;kunimitsu
+* Move cannot be delayed";wpn;;;32;;;t8-p2-kunimitsu-d+2,1,2.mp4;Kunimitsu-d+2,1,2;kunimitsu
 d+2,1,2,1+2;m, m, m, m;11, 7, 7, 20;i16, ,i23~24;-13;+7a;;"* Hitstop 20f on hit
-* Combo from 3rd CH";;;Amamikanameishi;r33;;t8-p2-kunimitsu-d+2,1,2,1+2.mp4;Kunimitsu-d+2,1,2,1+2;kunimitsu
-d+3;L;11;i16~17;-14;-3;;;;;;r32;;t8-p2-kunimitsu-d+3.mp4;Kunimitsu-d+3;kunimitsu
+* Combo from 3rd CH";;;Amamikanameishi;33;;;t8-p2-kunimitsu-d+2,1,2,1+2.mp4;Kunimitsu-d+2,1,2,1+2;kunimitsu
+d+3;L;11;i16~17;-14;-3;;;;;;32;;;t8-p2-kunimitsu-d+3.mp4;Kunimitsu-d+3;kunimitsu
 d+3,4;L, h;11, 12;i16~17, i21~22;-9;+0;;"* Combo from 1st CH with 7f delay
 * Input can be delayed 7f
-* Move can be delayed 6f";;;;r29;;t8-p2-kunimitsu-d+3,4.mp4;Kunimitsu-d+3,4;kunimitsu
+* Move can be delayed 6f";;;;29;;;t8-p2-kunimitsu-d+3,4.mp4;Kunimitsu-d+3,4;kunimitsu
 d+3,4,1;L, h, sm,t;11, 12, 10,28;i16~17, ,i26~37;-13;-4d;;"* Weapon
 * Combo from 2nd hit with 1f delay
 * Combo from 1st CH
@@ -218,7 +218,7 @@ d+3,4,1;L, h, sm,t;11, 12, 10,28;i16~17, ,i26~37;-13;-4d;;"* Weapon
 * Move cannot be delayed
 * Recovers 12f faster on block
 * Transitions to attack throw automatically on hit
-* 15 scaled damage on attack throw";wpn;;Rinbu Kick > Savage Kunai Throw;r38;;t8-p2-kunimitsu-d+3,4,1.mp4;Kunimitsu-d+3,4,1;kunimitsu
+* 15 scaled damage on attack throw";wpn;;Rinbu Kick > Savage Kunai Throw;38;;;t8-p2-kunimitsu-d+3,4,1.mp4;Kunimitsu-d+3,4,1;kunimitsu
 d+3,4,1,F;L, h, sm,t, sm,t;11, 12, 10,28, 10,28;i16~17, ,i26~37;-13;-4d;;"* Weapon
 * Combo from 2nd hit with 1f delay
 * Combo from 1st CH
@@ -227,9 +227,9 @@ d+3,4,1,F;L, h, sm,t, sm,t;11, 12, 10,28, 10,28;i16~17, ,i26~37;-13;-4d;;"* Weap
 * Recovers 12f faster on block
 * Transitions to attack throw automatically on hit
 * 15 scaled damage on attack throw
-* Side switch on hit";wpn;;Rinbu Kick > Piercing Kunai Throw;r38;;t8-p2-kunimitsu-d+3,4,1,f.mp4;Kunimitsu-d+3,4,1,F;kunimitsu
+* Side switch on hit";wpn;;Rinbu Kick > Piercing Kunai Throw;38;;;t8-p2-kunimitsu-d+3,4,1,f.mp4;Kunimitsu-d+3,4,1,F;kunimitsu
 d+1+2;L;17;i20;-14;+0;+15g;"Weapon
-* High crush 6~";wpn cs6~;FC;Seneizan;r33 FC;;t8-p2-kunimitsu-d+1+2.mp4;Kunimitsu-d+1+2;kunimitsu
+* High crush 6~";wpn cs6~;FC;Seneizan;33;FC;;t8-p2-kunimitsu-d+1+2.mp4;Kunimitsu-d+1+2;kunimitsu
 d+3+4;M;22;i20~23;-13;+12a (-5);;"* Balcony Break
 * Weapon
 * On successful attack absorption shift to Wrathful Bloom:
@@ -238,132 +238,132 @@ d+3+4;M;22;i20~23;-13;+12a (-5);;"* Balcony Break
 ** 8 chip damage on block
 ** Two additional mid hits (i9~12 i7~10)
 ** 28 damage in total
-* Power crush 7~19";bbr wpn rbr pc7~19;;Blazing Fire Lilies;r34;;t8-p2-kunimitsu-d+3+4.mp4;Kunimitsu-d+3+4;kunimitsu
-db+2;M;10;i16~17;-6;+7;;* Weapon;wpn;FC;;r27 FC;;t8-p2-kunimitsu-db+2.mp4;Kunimitsu-db+2;kunimitsu
+* Power crush 7~19";bbr wpn rbr pc7~19;;Blazing Fire Lilies;34;;;t8-p2-kunimitsu-d+3+4.mp4;Kunimitsu-d+3+4;kunimitsu
+db+2;M;10;i16~17;-6;+7;;* Weapon;wpn;FC;;27;FC;;t8-p2-kunimitsu-db+2.mp4;Kunimitsu-db+2;kunimitsu
 db+2,4;M, m;10, 15;i16~17, i24~25;-9;+2;;"* Balcony Break (airborne)
 * Combo from 1st hit with 7f delay
 * Input can be delayed 7f
 * Move can be delayed 6f
-* Interrupt with i3 from 1st block";intr:3;;;r27;;t8-p2-kunimitsu-db+2,4.mp4;Kunimitsu-db+2,4;kunimitsu
+* Interrupt with i3 from 1st block";intr:3;;;27;;;t8-p2-kunimitsu-db+2,4.mp4;Kunimitsu-db+2,4;kunimitsu
 db+2,4,2;M, m, M;10, 15, 23;i16~17, ,i35;-8c;+15a;;"* Weapon
 * Input can be delayed 1f
 * Move cannot be delayed
-* Interrupt with i17 from 2nd block";wpn intr:17;FC;Kousa Renbu;r35 FC;;t8-p2-kunimitsu-db+2,4,2.mp4;Kunimitsu-db+2,4,2;kunimitsu
-db+3;l;8;i18;-15;-14;;* High crush 6~;cs6~;FC;;r43 FC;;t8-p2-kunimitsu-db+3.mp4;Kunimitsu-db+3;kunimitsu
+* Interrupt with i17 from 2nd block";wpn intr:17;FC;Kousa Renbu;35;FC;;t8-p2-kunimitsu-db+2,4,2.mp4;Kunimitsu-db+2,4,2;kunimitsu
+db+3;l;8;i18;-15;-14;;* High crush 6~;cs6~;FC;;43;FC;;t8-p2-kunimitsu-db+3.mp4;Kunimitsu-db+3;kunimitsu
 db+3,3;l, l;8, 7;i18, i15~17;-19;-7;;"* Jail from 1st attack
-* High crush 1~";cs1~;FC;;r35 FC;;t8-p2-kunimitsu-db+3,3.mp4;Kunimitsu-db+3,3;kunimitsu
+* High crush 1~";cs1~;FC;;35;FC;;t8-p2-kunimitsu-db+3,3.mp4;Kunimitsu-db+3,3;kunimitsu
 db+3,3,3;l, l, l;8, 7, 7;i18, ,i15~17;-19;-7;;"* Jail from 1st block
 * Combo from 2nd CH
 * Interrupt with i13 from 2nd block
-* High crush 1~";intr:13 cs1~;FC;;r35 FC;;t8-p2-kunimitsu-db+3,3,3.mp4;Kunimitsu-db+3,3,3;kunimitsu
+* High crush 1~";intr:13 cs1~;FC;;35;FC;;t8-p2-kunimitsu-db+3,3,3.mp4;Kunimitsu-db+3,3,3;kunimitsu
 db+3,3,3,3;l, l, l, l;8, 7, 7, 5;i18, ,i15~17;-19;-7;;"* Jail from 1st block
 * Combo from 3rd CH
-* High crush 1~";cs1~;FC;;r35 FC;;t8-p2-kunimitsu-db+3,3,3,3.mp4;Kunimitsu-db+3,3,3,3;kunimitsu
+* High crush 1~";cs1~;FC;;35;FC;;t8-p2-kunimitsu-db+3,3,3,3.mp4;Kunimitsu-db+3,3,3,3;kunimitsu
 db+3,3,3,3,3;l, l, l, l, l;8, 7, 7, 5, 5;i18, ,i15~17;-19;-7;;"* Jail from 1st block
 * Combo from 4th CH
-* High crush 1~";cs1~;FC;;r35 FC;;t8-p2-kunimitsu-db+3,3,3,3,3.mp4;Kunimitsu-db+3,3,3,3,3;kunimitsu
+* High crush 1~";cs1~;FC;;35;FC;;t8-p2-kunimitsu-db+3,3,3,3,3.mp4;Kunimitsu-db+3,3,3,3,3;kunimitsu
 db+3,3,3,3,3,3;l, l, l, l, l, l;8, 7, 7, 5, 5, 5;i18, ,i15~17;-47;-35;;"* Jail from 1st block
 * Combo from 5th CH
-* High crush 1~";cs1~;FUFT;Manji Spin Low Kicks;r63 FUFT;;t8-p2-kunimitsu-db+3,3,3,3,3,3.mp4;Kunimitsu-db+3,3,3,3,3,3;kunimitsu
+* High crush 1~";cs1~;FUFT;Manji Spin Low Kicks;63;FUFT;;t8-p2-kunimitsu-db+3,3,3,3,3,3.mp4;Kunimitsu-db+3,3,3,3,3,3;kunimitsu
 db+3,3,3,3,3,4;l, l, l, l, l, m;8, 7, 7, 5, 5, 15;i18, ,i12~13;-8;+23a (+13);;"* Balcony Break
 * Same animation as ws4
-* Can be performed following any number of db+3 lows except the first and last";bbr;;Manji Spin Low Kicks Front Kick;r26;;t8-p2-kunimitsu-db+3,3,3,3,3,4.mp4;Kunimitsu-db+3,3,3,3,3,4;kunimitsu
-db+4;L;13;i17;-12;+0;+8;;;;Yamashiro Kuzushi;r30;;t8-p2-kunimitsu-db+4.mp4;Kunimitsu-db+4;kunimitsu
-b+1;h;8;i17;+1;+7;+12;Can continue into db+3 up to 3 times (at 13,15,16f respectively) after up to 3 b+1 hits.;;;;r18;;t8-p2-kunimitsu-b+1.mp4;Kunimitsu-b+1;kunimitsu
-b+1,1;h, h;8, 9;i17, i12;+5;+6;+11;* Combo from 1st hit;;;;r14;;t8-p2-kunimitsu-b+1,1.mp4;Kunimitsu-b+1,1;kunimitsu
+* Can be performed following any number of db+3 lows except the first and last";bbr;;Manji Spin Low Kicks Front Kick;26;;;t8-p2-kunimitsu-db+3,3,3,3,3,4.mp4;Kunimitsu-db+3,3,3,3,3,4;kunimitsu
+db+4;L;13;i17;-12;+0;+8;;;;Yamashiro Kuzushi;30;;;t8-p2-kunimitsu-db+4.mp4;Kunimitsu-db+4;kunimitsu
+b+1;h;8;i17;+1;+7;+12;Can continue into db+3 up to 3 times (at 13,15,16f respectively) after up to 3 b+1 hits.;;;;18;;;t8-p2-kunimitsu-b+1.mp4;Kunimitsu-b+1;kunimitsu
+b+1,1;h, h;8, 9;i17, i12;+5;+6;+11;* Combo from 1st hit;;;;14;;;t8-p2-kunimitsu-b+1,1.mp4;Kunimitsu-b+1,1;kunimitsu
 b+1,1,1;h, h, h;8, 9, 10;i17, ,i12;+5;+6;+11;"* Combo from 1st hit
-* Combo from 2nd hit";;;;r14;;t8-p2-kunimitsu-b+1,1,1.mp4;Kunimitsu-b+1,1,1;kunimitsu
-b+1,1,1,1;h, h, h, h;8, 9, 10, 12;i17, ,i12;+5;+6;+11;* Combo from 3rd CH;;;;r14;;t8-p2-kunimitsu-b+1,1,1,1.mp4;Kunimitsu-b+1,1,1,1;kunimitsu
+* Combo from 2nd hit";;;;14;;;t8-p2-kunimitsu-b+1,1,1.mp4;Kunimitsu-b+1,1,1;kunimitsu
+b+1,1,1,1;h, h, h, h;8, 9, 10, 12;i17, ,i12;+5;+6;+11;* Combo from 3rd CH;;;;14;;;t8-p2-kunimitsu-b+1,1,1,1.mp4;Kunimitsu-b+1,1,1,1;kunimitsu
 b+1,1,1,1,1;h, h, h, h, h;8, 9, 10, 12, 14;i17, ,i12;+5;+6;+11;"* Combo from 4th hit
-* Combo from 3rd CH";;;;r14;;t8-p2-kunimitsu-b+1,1,1,1,1.mp4;Kunimitsu-b+1,1,1,1,1;kunimitsu
+* Combo from 3rd CH";;;;14;;;t8-p2-kunimitsu-b+1,1,1,1,1.mp4;Kunimitsu-b+1,1,1,1,1;kunimitsu
 b+1,1,1,1,1,1;h, h, h, h, h, h;8, 9, 10, 12, 14, 16;i17, ,i12;-72;-71;-66;"* Combo from 4th hit
-* Combo from 3rd CH";;FUFT;Slap U Silly;r80 FUFT;;t8-p2-kunimitsu-b+1,1,1,1,1,1.mp4;Kunimitsu-b+1,1,1,1,1,1;kunimitsu
+* Combo from 3rd CH";;FUFT;Slap U Silly;80;FUFT;;t8-p2-kunimitsu-b+1,1,1,1,1,1.mp4;Kunimitsu-b+1,1,1,1,1,1;kunimitsu
 b+1+3;m!;25;i19~20;;+3a;;"* Spike
 * Parry mid and high punches and kicks
-* Parry state 5~12";spk ps5~12;;Secret Flower;r30;;t8-p2-kunimitsu-b+1+3.mp4;Kunimitsu-b+1+3;kunimitsu
+* Parry state 5~12";spk ps5~12;;Secret Flower;30;;;t8-p2-kunimitsu-b+1+3.mp4;Kunimitsu-b+1+3;kunimitsu
 b+2;m;17;i17~18;-9;+5;+57;"* Balcony Break (airborne)
-* Weapon";wpn;;Hakkouen;r31;;t8-p2-kunimitsu-b+2.mp4;Kunimitsu-b+2;kunimitsu
+* Weapon";wpn;;Hakkouen;31;;;t8-p2-kunimitsu-b+2.mp4;Kunimitsu-b+2;kunimitsu
 b+3;M;10;i21~24;-10~-7;+1c~+4c;;"Floor Break
-* Floating state 10~26";fbr fs10~26;;;r26;;t8-p2-kunimitsu-b+3.mp4;Kunimitsu-b+3;kunimitsu
+* Floating state 10~26";fbr fs10~26;;;26;;;t8-p2-kunimitsu-b+3.mp4;Kunimitsu-b+3;kunimitsu
 b+3,4;M, M;10, 23;i21~24, i17~18;-20;+9a (+2);;"* Combo from 1st hit
 * Move is delayed 1f
 * Steel pedal
-* Floating state 15~45";fs15~45;;Kodama Flip;r40;;t8-p2-kunimitsu-b+3,4.mp4;Kunimitsu-b+3,4;kunimitsu
+* Floating state 15~45";fs15~45;;Kodama Flip;40;;;t8-p2-kunimitsu-b+3,4.mp4;Kunimitsu-b+3,4;kunimitsu
 b+4;M;15;i18~19;-8;+6;;"* Low crush 17~30
-* Floating state 31~33";js17~30 fs31~33;BT;Tenrou;r28 BT;;t8-p2-kunimitsu-b+4.mp4;Kunimitsu-b+4;kunimitsu
+* Floating state 31~33";js17~30 fs31~33;BT;Tenrou;28;BT;;t8-p2-kunimitsu-b+4.mp4;Kunimitsu-b+4;kunimitsu
 b+4,3;M, M;15, 20;i18~19, i17~18;-16;+25a (+10);+34a (+24);"* Tornado
 * Combo from 1st hit with 8f delay
 * Input can be delayed 8f
 * Move cannot be delayed
 * Steel pedal
-* Floating state 20~34";trn fs20~34;;Uratenrou;r39;;t8-p2-kunimitsu-b+4,3.mp4;Kunimitsu-b+4,3;kunimitsu
+* Floating state 20~34";trn fs20~34;;Uratenrou;39;;;t8-p2-kunimitsu-b+4,3.mp4;Kunimitsu-b+4,3;kunimitsu
 b+1+2;m,t;13,25;i15~16;-7;-3a;;"* Balcony Break (airborne)
 * Transitions to attack throw on grounded hit automatically
 * Does not transition on BT hit
-* Hit vs BT +9";;;Burning Petals;r29;;t8-p2-kunimitsu-b+1+2.mp4;Kunimitsu-b+1+2;kunimitsu
-b+3+4;;;;;;;Actionable after 20f;;BT;Disengage;r20 BT;;t8-p2-kunimitsu-b+3+4.mp4;Kunimitsu-b+3+4;kunimitsu
+* Hit vs BT +9";;;Burning Petals;29;;;t8-p2-kunimitsu-b+1+2.mp4;Kunimitsu-b+1+2;kunimitsu
+b+3+4;;;;;;;Actionable after 20f;;BT;Disengage;20;BT;;t8-p2-kunimitsu-b+3+4.mp4;Kunimitsu-b+3+4;kunimitsu
 ub+2;m!;21;i51;;+10a;;"* Floor Break
 * Weapon
 * Hitstop 20f on hit
-* Low crush 27~50";fbr wpn js27~50;;Tenton;r39;;t8-p2-kunimitsu-ub+2.mp4;Kunimitsu-ub+2;kunimitsu
+* Low crush 27~50";fbr wpn js27~50;;Tenton;39;;;t8-p2-kunimitsu-ub+2.mp4;Kunimitsu-ub+2;kunimitsu
 ub+3;;;;;;;"Evasive
 * Low crush 6~17
-* Floating state 18~20";js6~17 fs18~20;;Nigemizu;r45;;t8-p2-kunimitsu-ub+3.mp4;Kunimitsu-ub+3;kunimitsu
+* Floating state 18~20";js6~17 fs18~20;;Nigemizu;45;;;t8-p2-kunimitsu-ub+3.mp4;Kunimitsu-ub+3;kunimitsu
 ub+3+4;m,t;15,7,13;i19;-17;+31a (+26);;"* Tornado
 * Transitions to attack throw on front hit
 * Does not transition on BT hit
 * Hit vs BT +36a (+26)
 * Low crush 9~40
-* Floating state 41~43";trn js9~40 fs41~43;;Hiryu Scorching Blossoms;r38;;t8-p2-kunimitsu-ub+3+4.mp4;Kunimitsu-ub+3+4;kunimitsu
+* Floating state 41~43";trn js9~40 fs41~43;;Hiryu Scorching Blossoms;38;;;t8-p2-kunimitsu-ub+3+4.mp4;Kunimitsu-ub+3+4;kunimitsu
 u+2;L;25;i35~36;-16;+6;+25a;"* Weapon
 * Cancel to r47 FC with D
 * Low crush 10~27
-* Floating state 28~30";wpn js10~27 fs28~30;FC,FC;Kurama Itto;r34 FC;;t8-p2-kunimitsu-u+2.mp4;Kunimitsu-u+2;kunimitsu
+* Floating state 28~30";wpn js10~27 fs28~30;FC,FC;Kurama Itto;34;FC;;t8-p2-kunimitsu-u+2.mp4;Kunimitsu-u+2;kunimitsu
 u+3+4;M,M;10,12;i39~42 i4~6;+1c;+24a;;"* Spike
 * Kunimitsu is invisible on frames 12~29, but can still be hit
 * Low crush 12~42
-* Floating state 43~45";spk js12~42 fs43~45;;Guillotine Crow Kick;r24;;t8-p2-kunimitsu-u+3+4.mp4;Kunimitsu-u+3+4;kunimitsu
+* Floating state 43~45";spk js12~42 fs43~45;;Guillotine Crow Kick;24;;;t8-p2-kunimitsu-u+3+4.mp4;Kunimitsu-u+3+4;kunimitsu
 uf+1;h,t;22,20;i16~27;;+31a (+26);;"* Tornado
 * Weapon
 * Only hits airborne opponents
 * Transitions to attack throw on airborne hit
 * Does not transition on BT hit or after Tornado
 * Hit vs BT or after Tornado +15a (+8)
-* 25 total scaled damage";trn wpn;;Cloud Scorching Blossoms;r23;;t8-p2-kunimitsu-uf+1.mp4;Kunimitsu-uf+1;kunimitsu
+* 25 total scaled damage";trn wpn;;Cloud Scorching Blossoms;23;;;t8-p2-kunimitsu-uf+1.mp4;Kunimitsu-uf+1;kunimitsu
 uf+2;M,M;9,20;i17~18 i22~24;-14~-12;+11a;;"* Floor Break
 * Weapon
 * Low crush 23~34
-* Floating state 35~37";fbr wpn js23~34 fs35~37;;Ashura Blade;r37;;t8-p2-kunimitsu-uf+2.mp4;Kunimitsu-uf+2;kunimitsu
+* Floating state 35~37";fbr wpn js23~34 fs35~37;;Ashura Blade;37;;;t8-p2-kunimitsu-uf+2.mp4;Kunimitsu-uf+2;kunimitsu
 uf+3;m,m;13,20;i15~16 i13~14;-13~-12;+25a (+18);;"* Knee
 * 2nd hit available on hit or block only
 * 27 total scaled damage
 * Low crush 9~32
-* Floating state 33~35";kne js9~32 fs33~35;;Double Rising Knee;r32;;t8-p2-kunimitsu-uf+3.mp4;Kunimitsu-uf+3;kunimitsu
+* Floating state 33~35";kne js9~32 fs33~35;;Double Rising Knee;32;;;t8-p2-kunimitsu-uf+3.mp4;Kunimitsu-uf+3;kunimitsu
 uf+4;m;22;i24~25;-8;+20a;;"Balcony Break (airborne)
-* Low crush 9~26";js9~26;;Crescent Moon Kick;r32;;t8-p2-kunimitsu-uf+4.mp4;Kunimitsu-uf+4;kunimitsu
+* Low crush 9~26";js9~26;;Crescent Moon Kick;32;;;t8-p2-kunimitsu-uf+4.mp4;Kunimitsu-uf+4;kunimitsu
 uf+3+4;;;;;;;"* Actionable after 18f
 * Transition to FC on frame 40~
 * Low crush 8~30
-* Floating state 31~33";js8~30 fs31~33;FC,MUS;Musasabi (MUS);r18 MUS;;t8-p2-kunimitsu-uf+3+4.mp4;Kunimitsu-uf+3+4;kunimitsu
+* Floating state 31~33";js8~30 fs31~33;FC,MUS;Musasabi (MUS);18;MUS;;t8-p2-kunimitsu-uf+3+4.mp4;Kunimitsu-uf+3+4;kunimitsu
 1+2+3+4;;;;;;;"* Can't block for 5 seconds
 * CH state on your next attack for 5 seconds ''(Tekken 7 and prior games)''
 * 10% damage increase on the next attack for 5 seconds ''(Tekken 8 season 2 patch onward)''
-* Attacks taken will be CH for 5 seconds";;;Ki Charge;r55;;t8-p2-kunimitsu-1+2+3+4.mp4;Kunimitsu-1+2+3+4;kunimitsu
+* Attacks taken will be CH for 5 seconds";;;Ki Charge;55;;;t8-p2-kunimitsu-1+2+3+4.mp4;Kunimitsu-1+2+3+4;kunimitsu
 f,F+2;M;18;i19~20;-12;+19a (+2);+33a (+22);"* Tornado
 * Balcony Break
 * Weapon
 * Low crush 21~35
-* Floating state 36~38";trn bbr wpn js21~35 fs36~38;;Climbing Shadow;r30;;t8-p2-kunimitsu-f,f+2.mp4;Kunimitsu-f,F+2;kunimitsu
+* Floating state 36~38";trn bbr wpn js21~35 fs36~38;;Climbing Shadow;30;;;t8-p2-kunimitsu-f,f+2.mp4;Kunimitsu-f,F+2;kunimitsu
 f,F+4;m;11;i9~11;-17~-15;-1~+1;;"Knee
 * Low crush 9~25
-* Floating state 26~28";kne js9~25 fs26~28;;;r34;;t8-p2-kunimitsu-f,f+4.mp4;Kunimitsu-f,F+4;kunimitsu
+* Floating state 26~28";kne js9~25 fs26~28;;;34;;;t8-p2-kunimitsu-f,f+4.mp4;Kunimitsu-f,F+4;kunimitsu
 f,F+4,2;m, h;11, 23;i9~11, i13~14;-17~-16;+10c;;"* Balcony Break
 * Spike
 * Weapon
 * Jail from 1st attack with 1f delay
 * Forces tech backroll on hit
 * Low crush 1~15
-* Floating state 16~18";bbr spk wpn js1~15 fs16~18;;Raging Blizzard;r37;;t8-p2-kunimitsu-f,f+4,2.mp4;Kunimitsu-f,F+4,2;kunimitsu
+* Floating state 16~18";bbr spk wpn js1~15 fs16~18;;Raging Blizzard;37;;;t8-p2-kunimitsu-f,f+4,2.mp4;Kunimitsu-f,F+4,2;kunimitsu
 f,d,df+2;M,h;15,21;i14~15 i25~26;-17~-16;+73a (+57);;"* Tornado
 * Weapon
 * 2nd hit available only as combo from 1st hit
@@ -371,54 +371,54 @@ f,d,df+2;M,h;15,21;i14~15 i25~26;-17~-16;+73a (+57);;"* Tornado
 * 29 total scaled damage
 * 3 chip damage on block
 * Low crush 16~36
-* Floating state 37~39";trn wpn chp:3 js16~36 fs37~39;;Tensho Kaisen;r39;;t8-p2-kunimitsu-f,d,df+2.mp4;Kunimitsu-f,d,df+2;kunimitsu
+* Floating state 37~39";trn wpn chp:3 js16~36 fs37~39;;Tensho Kaisen;39;;;t8-p2-kunimitsu-f,d,df+2.mp4;Kunimitsu-f,d,df+2;kunimitsu
 qcf+1;sm,t;10,28;i15~26;-13;-4d;;"* Weapon
 * Bufferable
 * Block advantage is always -13
 * Transitions to attack throw on hit
-* 25 total scaled damage";wpn;;Savage Kunai Throw;r49;;t8-p2-kunimitsu-qcf+1.mp4;Kunimitsu-qcf+1;kunimitsu
+* 25 total scaled damage";wpn;;Savage Kunai Throw;49;;;t8-p2-kunimitsu-qcf+1.mp4;Kunimitsu-qcf+1;kunimitsu
 qcf+1,F;sm,t;10,28;i15~26;-13;-4d;;"* Weapon
 * Bufferable
 * Block advantage is always -13
 * Transitions to attack throw on hit
 * 25 total scaled damage
 * Available on hit only
-* Side switch on hit";wpn;;Piercing Kunai Throw;r49;;t8-p2-kunimitsu-qcf+1,f.mp4;Kunimitsu-qcf+1,F;kunimitsu
+* Side switch on hit";wpn;;Piercing Kunai Throw;49;;;t8-p2-kunimitsu-qcf+1,f.mp4;Kunimitsu-qcf+1,F;kunimitsu
 qcf+2;M;24;i13~14;-12c;+8a;;"* Balcony Break
 * Spike
 * Weapon
 * Bufferable
 * 2 chip damage on block
-* Hit vs BT +3d";bbr spk wpn chp:2;;Oboro Engetsu;r41;;t8-p2-kunimitsu-qcf+2.mp4;Kunimitsu-qcf+2;kunimitsu
+* Hit vs BT +3d";bbr spk wpn chp:2;;Oboro Engetsu;41;;;t8-p2-kunimitsu-qcf+2.mp4;Kunimitsu-qcf+2;kunimitsu
 qcf+1+2;m;25;i20~21;-9;+6a;;"* Tornado
 * Balcony Break
 * Weapon
 * Bufferable
 * 5 chip damage on block
 * Low crush 21~38
-* Floating state 39~41";trn bbr wpn chp:5 js21~38 fs39~41;;Ensa Sogetsu;r38;;t8-p2-kunimitsu-qcf+1+2.mp4;Kunimitsu-qcf+1+2;kunimitsu
+* Floating state 39~41";trn bbr wpn chp:5 js21~38 fs39~41;;Ensa Sogetsu;38;;;t8-p2-kunimitsu-qcf+1+2.mp4;Kunimitsu-qcf+1+2;kunimitsu
 uf,n,3;m;25;i31;-29;+2a (-8);;"* Balcony Break
-* Low crush";bbr js;;;;;t8-p2-kunimitsu-uf,n,3.mp4;Kunimitsu-uf,n,3;kunimitsu
+* Low crush";bbr js;;;;;;t8-p2-kunimitsu-uf,n,3.mp4;Kunimitsu-uf,n,3;kunimitsu
 uf,n,4;m;15;i24;-14;+17a (+7);;"* Balcony Break
-* Low crush";bbr js;;;;;t8-p2-kunimitsu-uf,n,4.mp4;Kunimitsu-uf,n,4;kunimitsu
+* Low crush";bbr js;;;;;;t8-p2-kunimitsu-uf,n,4.mp4;Kunimitsu-uf,n,4;kunimitsu
 f,f,F+2;h,t;20,20;i15~17;+6;+0d;;"* Balcony Break (airborne)
 * Weapon
 * Transitions to attack throw on front standing hit
 * 4 chip damage on block
 * Side switch on hit
 * Hit vs Side +15a
-* Hit vs BT +15a (+6)";wpn chp:4;;Sword Smash;r32;;t8-p2-kunimitsu-f,f,f+2.mp4;Kunimitsu-f,f,F+2;kunimitsu
+* Hit vs BT +15a (+6)";wpn chp:4;;Sword Smash;32;;;t8-p2-kunimitsu-f,f,f+2.mp4;Kunimitsu-f,f,F+2;kunimitsu
 f,f,F+3;m;30;i23~27;+3~+7;+18c;;"* Balcony Break
 * Hit vs BT +15d
 * Forces tech backroll on hit
-* Low crush 3~29";bbr js3~29;;Kuga;r26;;t8-p2-kunimitsu-f,f,f+3.mp4;Kunimitsu-f,f,F+3;kunimitsu
-ws1;m;11;i12;-7;+4;;;;;;r26;;t8-p2-kunimitsu-ws1.mp4;Kunimitsu-ws1;kunimitsu
+* Low crush 3~29";bbr js3~29;;Kuga;26;;;t8-p2-kunimitsu-f,f,f+3.mp4;Kunimitsu-f,f,F+3;kunimitsu
+ws1;m;11;i12;-7;+4;;;;;;26;;;t8-p2-kunimitsu-ws1.mp4;Kunimitsu-ws1;kunimitsu
 ws1,1;m, m;11, 15;i12, i15;-12;+8c;+13d;"* Floor Break
 * Combo from 1st hit with 10f delay
 * Combo from 1st CH with 15f delay
 * Input can be delayed 15f
-* Move can be delayed 8f";fbr;;Shigure;r31;;t8-p2-kunimitsu-ws1,1.mp4;Kunimitsu-ws1,1;kunimitsu
-ws2;m;14;i13~14;-9;+1;;* Weapon;wpn;;;r30;;t8-p2-kunimitsu-ws2.mp4;Kunimitsu-ws2;kunimitsu
+* Move can be delayed 8f";fbr;;Shigure;31;;;t8-p2-kunimitsu-ws1,1.mp4;Kunimitsu-ws1,1;kunimitsu
+ws2;m;14;i13~14;-9;+1;;* Weapon;wpn;;;30;;;t8-p2-kunimitsu-ws2.mp4;Kunimitsu-ws2;kunimitsu
 ws2,1;m, m;14, 20;i13~14, i20;-13;+18a (+9);;"* Heat Engager
 
 * Heat Dash +5, +43d (+35)
@@ -427,41 +427,41 @@ ws2,1;m, m;14, 20;i13~14, i20;-13;+18a (+9);;"* Heat Engager
 * Weapon
 * Combo from 1st hit with 9f delay
 * Input can be delayed 9f
-* Move can be delayed 6f";he bbr wpn;;Kaisen Ryujin;r32;;t8-p2-kunimitsu-ws2,1.mp4;Kunimitsu-ws2,1;kunimitsu
+* Move can be delayed 6f";he bbr wpn;;Kaisen Ryujin;32;;;t8-p2-kunimitsu-ws2,1.mp4;Kunimitsu-ws2,1;kunimitsu
 ws3;m;16;i15~16;-13;+32a (+22);;"* Low crush 9~25
-* Floating state 26~28";js9~25 fs26~28;;Kaede;r31;;t8-p2-kunimitsu-ws3.mp4;Kunimitsu-ws3;kunimitsu
-ws4;m;15;i11~12;-6;+5;;;;;Fox Toe Smash;r24;;t8-p2-kunimitsu-ws4.mp4;Kunimitsu-ws4;kunimitsu
+* Floating state 26~28";js9~25 fs26~28;;Kaede;31;;;t8-p2-kunimitsu-ws3.mp4;Kunimitsu-ws3;kunimitsu
+ws4;m;15;i11~12;-6;+5;;;;;Fox Toe Smash;24;;;t8-p2-kunimitsu-ws4.mp4;Kunimitsu-ws4;kunimitsu
 SS.2;m;13;i17~18;-5;+6;+11;"* Floor Break
 * Weapon
-* Sidestep adds 9f, effective startup i26~27";fbr wpn;BT;;r24 BT;;t8-p2-kunimitsu-ss.2.mp4;Kunimitsu-SS.2;kunimitsu
+* Sidestep adds 9f, effective startup i26~27";fbr wpn;BT;;24;BT;;t8-p2-kunimitsu-ss.2.mp4;Kunimitsu-SS.2;kunimitsu
 SS.2,1+2;m, M,M;13, 10,20;i17~18, i22~23 i9~10;-12;+5c;;"* Floor Break
 * Weapon
 * Combo from 1st hit CH
 * Sidestep adds 9f, effective startup i31~32
-* Move is delayed 1f";fbr wpn;;Spiral Sunder;r30;;t8-p2-kunimitsu-ss.2,1+2.mp4;Kunimitsu-SS.2,1+2;kunimitsu
+* Move is delayed 1f";fbr wpn;;Spiral Sunder;30;;;t8-p2-kunimitsu-ss.2,1+2.mp4;Kunimitsu-SS.2,1+2;kunimitsu
 SS.4;l;16;i20~22;-37;+4c;;"* Clean Hit +13d
 * Clean Hit damage 20
 * Sidestep adds 9f, effective startup i29~31
 * Stagger on block
-* High crush 6~";cs6~;FC;Will-O-the-Wisp;r30 FC;;t8-p2-kunimitsu-ss.4.mp4;Kunimitsu-SS.4;kunimitsu
+* High crush 6~";cs6~;FC;Will-O-the-Wisp;30;FC;;t8-p2-kunimitsu-ss.4.mp4;Kunimitsu-SS.4;kunimitsu
 (Airborne).ub+3+4;m,t;15,15;i19;-17;-5d;;"* Balcony Break
 * Transitions to attack throw on front airborne hit
 * Does not transition on BT hit
 * Hit vs BT +36a (+26)
 * 17 total scaled damage
 * Low crush 9~40
-* Floating state 41~43";bbr js9~40 fs41~43;;Hiryu Falling Sakura;;;t8-p2-kunimitsu-airborne.ub+3+4.mp4;Kunimitsu-(Airborne).ub+3+4;kunimitsu
+* Floating state 41~43";bbr js9~40 fs41~43;;Hiryu Falling Sakura;;;;t8-p2-kunimitsu-airborne.ub+3+4.mp4;Kunimitsu-(Airborne).ub+3+4;kunimitsu
 (Back to wall).b,b,UB;M;21;i37~38;-3c;+15a;;"* Floor Break
 * Weapon
 * Floating state 5~13
 * Low crush 14~31
-* Floating state 32~34";fbr wpn fs5~13 js14~31 fs32~34;;[[Wall Jump Attack]];r34;;t8-p2-kunimitsu-back-to-wall.b,b,ub.mp4;Kunimitsu-(Back to wall).b,b,UB;kunimitsu
-BT.1;h;10;i11;-8;+8;;* Elbow;elb;BT;;r27 BT;;t8-p2-kunimitsu-bt.1.mp4;Kunimitsu-BT.1;kunimitsu
+* Floating state 32~34";fbr wpn fs5~13 js14~31 fs32~34;;[[Wall Jump Attack]];34;;;t8-p2-kunimitsu-back-to-wall.b,b,ub.mp4;Kunimitsu-(Back to wall).b,b,UB;kunimitsu
+BT.1;h;10;i11;-8;+8;;* Elbow;elb;BT;;27;BT;;t8-p2-kunimitsu-bt.1.mp4;Kunimitsu-BT.1;kunimitsu
 BT.1,2;h, m;10, 14;i11, i21~22;-8;+3;;"* Weapon
 * Combo from 1st hit with 8f delay
 * Input can be delayed 8f
 * Move can be delayed 4f
-* Transition to KAT -8 +3 r28 with 1+2";wpn;KAT;Aratama Slash;r28;;t8-p2-kunimitsu-bt.1,2.mp4;Kunimitsu-BT.1,2;kunimitsu
+* Transition to KAT -8 +3 r28 with 1+2";wpn;KAT;Aratama Slash;28;;;t8-p2-kunimitsu-bt.1,2.mp4;Kunimitsu-BT.1,2;kunimitsu
 BT.1,2,1;h, m, M;10, 14, 18;i11, ,i21~22;-11;+15a (-2);;"* Tornado
 * Balcony Break
 * Weapon
@@ -470,25 +470,25 @@ BT.1,2,1;h, m, M;10, 14, 18;i11, ,i21~22;-11;+15a (-2);;"* Tornado
 * Input can be delayed 10f
 * Move cannot be delayed
 * Low crush 5~15
-* Floating state 16~18";trn bbr wpn js5~15 fs16~18;;Aratama Slash > Ryu Enko;r34;;t8-p2-kunimitsu-bt.1,2,1.mp4;Kunimitsu-BT.1,2,1;kunimitsu
+* Floating state 16~18";trn bbr wpn js5~15 fs16~18;;Aratama Slash > Ryu Enko;34;;;t8-p2-kunimitsu-bt.1,2,1.mp4;Kunimitsu-BT.1,2,1;kunimitsu
 BT.1,2,2;h, m, m;10, 14, 24;i11, ,i19~20;-9;+14a (+5);+46a (-1);"* Balcony Break
 * Weapon
 * Available on hit or block only
 * Combo from 2nd hit CH with 10f delay
 * Input can be delayed 10f
-* Move cannot be delayed";bbr wpn;;Aratama Slash > Dark Clutch;r30;;t8-p2-kunimitsu-bt.1,2,2.mp4;Kunimitsu-BT.1,2,2;kunimitsu
+* Move cannot be delayed";bbr wpn;;Aratama Slash > Dark Clutch;30;;;t8-p2-kunimitsu-bt.1,2,2.mp4;Kunimitsu-BT.1,2,2;kunimitsu
 BT.1,2,4;h, m, m;10, 14, 23;i11, ,i26~27;+3;+5d;;"* Spike
 * Available on hit or block only
 * Input can be delayed 10f
 * Move cannot be delayed
 * 4 chip damage on block
 * Low crush 5~29
-* Floating state 30~32";spk chp:4 js5~29 fs30~32;;Aratama Slash > Pouncing Strike;r34;;t8-p2-kunimitsu-bt.1,2,4.mp4;Kunimitsu-BT.1,2,4;kunimitsu
+* Floating state 30~32";spk chp:4 js5~29 fs30~32;;Aratama Slash > Pouncing Strike;34;;;t8-p2-kunimitsu-bt.1,2,4.mp4;Kunimitsu-BT.1,2,4;kunimitsu
 BT.1,3;h, m;10, 12;i11, i22~23;-5;+2;+11;"* Knee
 * Combo from 1st hit with 8f delay
 * Input can be delayed 8f
 * Move can be delayed 4f
-* Transition to SET -1 +6 +15 r19 with F";kne;SET;Aratama Kick;r23;;t8-p2-kunimitsu-bt.1,3.mp4;Kunimitsu-BT.1,3;kunimitsu
+* Transition to SET -1 +6 +15 r19 with F";kne;SET;Aratama Kick;23;;;t8-p2-kunimitsu-bt.1,3.mp4;Kunimitsu-BT.1,3;kunimitsu
 BT.1,4;h, h;10, 20;i11, i21;+3;+15c;;"* Heat Engager
 
 * Heat Dash +5, +43d (+35)
@@ -498,42 +498,42 @@ BT.1,4;h, h;10, 20;i11, i21;+3;+15c;;"* Heat Engager
 * Input can be delayed 8f
 * Move can be delayed 4f
 * Forces tech backroll on hit
-* 4 chip damage on block";he bbr chp:4;;Aratama Crusher;r33;;t8-p2-kunimitsu-bt.1,4.mp4;Kunimitsu-BT.1,4;kunimitsu
+* 4 chip damage on block";he bbr chp:4;;Aratama Crusher;33;;;t8-p2-kunimitsu-bt.1,4.mp4;Kunimitsu-BT.1,4;kunimitsu
 BT.2;h,t;10,20;i19~20;-7;-4d;;"* Balcony Break (airborne)
 * Weapon
 * Transitions to attack throw on front standing hit
 * Hit vs BT/Side +5
 * Chip damage and +0 block advantage on successful attack absorption
-* Power crush 7~18";wpn pc7~18;;Cross Strike;r29;;t8-p2-kunimitsu-bt.2.mp4;Kunimitsu-BT.2;kunimitsu
+* Power crush 7~18";wpn pc7~18;;Cross Strike;29;;;t8-p2-kunimitsu-bt.2.mp4;Kunimitsu-BT.2;kunimitsu
 BT.3;m;20;i24~26;-3;+11d;;"* Floor Break
 * Low crush 6~29
-* Floating state 30~32";fbr js6~29 fs30~32;BT;Tobitengu;r27 BT;;t8-p2-kunimitsu-bt.3.mp4;Kunimitsu-BT.3;kunimitsu
+* Floating state 30~32";fbr js6~29 fs30~32;BT;Tobitengu;27;BT;;t8-p2-kunimitsu-bt.3.mp4;Kunimitsu-BT.3;kunimitsu
 BT.4;h;20;i16~17;+6;+35d;;"* Strong Aerial Tailspin
 * Homing
 * Balcony Break
 * Transition to SET +6 +35d r31 with F
 * 6 chip damage on block
 * Low crush 6~16
-* Floating state 17~19";hom bbr chp:6 js6~16 fs17~19;SET;Graceful Tail Whip;r31;;t8-p2-kunimitsu-bt.4.mp4;Kunimitsu-BT.4;kunimitsu
+* Floating state 17~19";hom bbr chp:6 js6~16 fs17~19;SET;Graceful Tail Whip;31;;;t8-p2-kunimitsu-bt.4.mp4;Kunimitsu-BT.4;kunimitsu
 BT.1+2;m,m;10,15;i14 i10~11;-2;+7;;"* Balcony Break (airborne)
-* Weapon";wpn;;Lycoris Radiata;r22;;t8-p2-kunimitsu-bt.1+2.mp4;Kunimitsu-BT.1+2;kunimitsu
+* Weapon";wpn;;Lycoris Radiata;22;;;t8-p2-kunimitsu-bt.1+2.mp4;Kunimitsu-BT.1+2;kunimitsu
 BT.3+4;m!;25;i19~20;;+3a;;"* Spike
 * Parry mid and high punches and kicks
-* Parry state 5~18";spk ps5~18;BT;Secret Flower Ura;r22 BT;;t8-p2-kunimitsu-bt.3+4.mp4;Kunimitsu-BT.3+4;kunimitsu
+* Parry state 5~18";spk ps5~18;BT;Secret Flower Ura;22;BT;;t8-p2-kunimitsu-bt.3+4.mp4;Kunimitsu-BT.3+4;kunimitsu
 BT.d+2;L;20;i17~18;-13;+4;+8d;"* Floor Break
 * Weapon
 * Transition to FC with D
-* High crush 6~18";fbr wpn cs6~18;FC;Sinking Thrust;r31;;t8-p2-kunimitsu-bt.d+2.mp4;Kunimitsu-BT.d+2;kunimitsu
+* High crush 6~18";fbr wpn cs6~18;FC;Sinking Thrust;31;;;t8-p2-kunimitsu-bt.d+2.mp4;Kunimitsu-BT.d+2;kunimitsu
 BT.d+4;L,L;10,18;i20~21 i26~27;-14;+5c;;"* Jail from 1st attack
-* High crush 4~";cs4~;FC;Araremaki;r32 FC;;t8-p2-kunimitsu-bt.d+4.mp4;Kunimitsu-BT.d+4;kunimitsu
+* High crush 4~";cs4~;FC;Araremaki;32;FC;;t8-p2-kunimitsu-bt.d+4.mp4;Kunimitsu-BT.d+4;kunimitsu
 BT.f+1+2;m;21;i16~17;-13;+54a;;"* Tornado
 * Balcony Break (airborne)
 * Weapon
-* Hit vs BT +9a (+0)";trn wpn;;Shadow Strike;r35;;t8-p2-kunimitsu-bt.f+1+2.mp4;Kunimitsu-BT.f+1+2;kunimitsu
+* Hit vs BT +9a (+0)";trn wpn;;Shadow Strike;35;;;t8-p2-kunimitsu-bt.f+1+2.mp4;Kunimitsu-BT.f+1+2;kunimitsu
 CH.SET.2;m,t;20,10;i12;;;+55a (+48);"* Weapon
 * Attack Throw
-* Instant tornado";wpn;;Souenzan;r65;;t8-p2-kunimitsu-ch.set.2.mp4;Kunimitsu-CH.SET.2;kunimitsu
-KAT.1;h;12;i11;-7;+4;;* Has good left sidestep tracking;;;;r28;;t8-p2-kunimitsu-kat.1.mp4;Kunimitsu-KAT.1;kunimitsu
+* Instant tornado";wpn;;Souenzan;65;;;t8-p2-kunimitsu-ch.set.2.mp4;Kunimitsu-CH.SET.2;kunimitsu
+KAT.1;h;12;i11;-7;+4;;* Has good left sidestep tracking;;;;28;;;t8-p2-kunimitsu-kat.1.mp4;Kunimitsu-KAT.1;kunimitsu
 KAT.1,2;h, m;12, 20;i11, i21;-9;+9g;;"* Heat Engager
 
 * Heat Dash +5, +43d (+35)
@@ -544,18 +544,18 @@ KAT.1,2;h, m;12, 20;i11, i21;-9;+9g;;"* Heat Engager
 * Interrupt with i3 from 1st block
 * Input can be delayed 11f
 * Move can be delayed 7f
-* Cancel to FC -14 -3 r31 with D on frame 12 (cs7~)";he bbr wpn intr:3;FC;Severing Snow;r34;;t8-p2-kunimitsu-kat.1,2.mp4;Kunimitsu-KAT.1,2;kunimitsu
+* Cancel to FC -14 -3 r31 with D on frame 12 (cs7~)";he bbr wpn intr:3;FC;Severing Snow;34;;;t8-p2-kunimitsu-kat.1,2.mp4;Kunimitsu-KAT.1,2;kunimitsu
 KAT.2;m;21;i23~24;+5;+20d;+80a (+60);"* Spike
 * Weapon
 * Transition to FC with D
 * is1~6
 * Low crush 7~24
-* Floating state 25~27";spk wpn is1~6 js7~24 fs25~27;FC;Veil of Night;r33;;t8-p2-kunimitsu-kat.2.mp4;Kunimitsu-KAT.2;kunimitsu
+* Floating state 25~27";spk wpn is1~6 js7~24 fs25~27;FC;Veil of Night;33;;;t8-p2-kunimitsu-kat.2.mp4;Kunimitsu-KAT.2;kunimitsu
 KAT.3;M;8;i18~25;-12~-5;+2c~+9c;;"* Floor Break
 * Evasive, can go over mids and some highs
 * is1~4
 * Floating state 1~4
-* Low crush 5~26";fbr is1~4 fs1~4 js5~26;;;r23;;t8-p2-kunimitsu-kat.3.mp4;Kunimitsu-KAT.3;kunimitsu
+* Low crush 5~26";fbr is1~4 fs1~4 js5~26;;;23;;;t8-p2-kunimitsu-kat.3.mp4;Kunimitsu-KAT.3;kunimitsu
 KAT.3,2;M, M;8, 8;i18~25, i20~22;-16;+34a (+24);;"* Weapon
 * Combo from 1st hit with 3f delay
 * Interrupt with i9 from 1st block
@@ -564,38 +564,38 @@ KAT.3,2;M, M;8, 8;i18~25, i20~22;-16;+34a (+24);;"* Weapon
 * Move cannot be delayed
 * Steel pedal
 * Low crush 21~38
-* Floating state 39~41";wpn stp:SSR intr:9 js21~38 fs39~41;;Leaping Moon Blade;r38;;t8-p2-kunimitsu-kat.3,2.mp4;Kunimitsu-KAT.3,2;kunimitsu
+* Floating state 39~41";wpn stp:SSR intr:9 js21~38 fs39~41;;Leaping Moon Blade;38;;;t8-p2-kunimitsu-kat.3,2.mp4;Kunimitsu-KAT.3,2;kunimitsu
 KAT.4;L;16;i22~28;-16~-10;-2~+4;;"* is1~4
 * Floating state 1~4
 * Low crush 5~18
-* Floating state 19~21";is1~4 fs1~4 js5~18 fs19~21;;;r29;;t8-p2-kunimitsu-kat.4.mp4;Kunimitsu-KAT.4;kunimitsu
+* Floating state 19~21";is1~4 fs1~4 js5~18 fs19~21;;;29;;;t8-p2-kunimitsu-kat.4.mp4;Kunimitsu-KAT.4;kunimitsu
 KAT.4,2;L, h;16, 23;i22~28, i23~24;-9;+15a (+6);;"* Strong Aerial Tailspin
 * Balcony Break
 * Weapon
 * Combo from 1st CH with 2f delay
 * Input can be delayed 2f
-* Move cannot be delayed";bbr wpn;;Moonlight Assassin;r34;;t8-p2-kunimitsu-kat.4,2.mp4;Kunimitsu-KAT.4,2;kunimitsu
-KAT.1+2;h!;20;i24~36;;+0d~+12d;;;;;Fire Blossom Breath;r28;;t8-p2-kunimitsu-kat.1+2.mp4;Kunimitsu-KAT.1+2;kunimitsu
+* Move cannot be delayed";bbr wpn;;Moonlight Assassin;34;;;t8-p2-kunimitsu-kat.4,2.mp4;Kunimitsu-KAT.4,2;kunimitsu
+KAT.1+2;h!;20;i24~36;;+0d~+12d;;;;;Fire Blossom Breath;28;;;t8-p2-kunimitsu-kat.1+2.mp4;Kunimitsu-KAT.1+2;kunimitsu
 KAT.U;;;;;;;"* Kunimitsu teleports upwards and lands in place
 * Floating state 1~4
-* Low crush 5~19";fs1~4 js5~19;;Cumulonimbi;r36;;t8-p2-kunimitsu-kat.u.mp4;Kunimitsu-KAT.U;kunimitsu
+* Low crush 5~19";fs1~4 js5~19;;Cumulonimbi;36;;;t8-p2-kunimitsu-kat.u.mp4;Kunimitsu-KAT.U;kunimitsu
 MUS.2;L;25;i25;-18;+21d;+39a;"Weapon
-* High crush 11~43";wpn cs11~43;;Sasabi Barai;r37;;t8-p2-kunimitsu-mus.2.mp4;Kunimitsu-MUS.2;kunimitsu
+* High crush 11~43";wpn cs11~43;;Sasabi Barai;37;;;t8-p2-kunimitsu-mus.2.mp4;Kunimitsu-MUS.2;kunimitsu
 MUS.4;m;30;i13~15;-14;-8a;;"* Floor Break
 * Massive pushback, difficult to punish without walls
 * Low crush 1~28
-* Floating state 29~31";fbr js1~28 fs29~31;;Sasabi Kujiki;r40;;t8-p2-kunimitsu-mus.4.mp4;Kunimitsu-MUS.4;kunimitsu
+* Floating state 29~31";fbr js1~28 fs29~31;;Sasabi Kujiki;40;;;t8-p2-kunimitsu-mus.4.mp4;Kunimitsu-MUS.4;kunimitsu
 MUS.3+4;;;;;;;"* Initial uf+3+4 jump takes 35f
 * Evasive jump, can side switch
 * Low crush 10~42
-* Floating state 43~45";js10~42 fs43~45;FC;Sasabi Tobikage;r65 FC;;t8-p2-kunimitsu-mus.3+4.mp4;Kunimitsu-MUS.3+4;kunimitsu
-SET.1;h;8;i10~11;-1;+8;;* Elbow;elb;;;r21;;t8-p2-kunimitsu-set.1.mp4;Kunimitsu-SET.1;kunimitsu
+* Floating state 43~45";js10~42 fs43~45;FC;Sasabi Tobikage;65;FC;;t8-p2-kunimitsu-mus.3+4.mp4;Kunimitsu-MUS.3+4;kunimitsu
+SET.1;h;8;i10~11;-1;+8;;* Elbow;elb;;;21;;;t8-p2-kunimitsu-set.1.mp4;Kunimitsu-SET.1;kunimitsu
 SET.1,2;h, h;8, 13;i10~11, i17~18;-6;+8;;"* Weapon
 * Combo from 1st hit with 12f delay
 * Jail from 1st attack with 3f delay
 * Input can be delayed 12f
 * Move can be delayed 10f
-* Transition to BT with B";wpn;BT;Gekka Renzan;r26;;t8-p2-kunimitsu-set.1,2.mp4;Kunimitsu-SET.1,2;kunimitsu
+* Transition to BT with B";wpn;BT;Gekka Renzan;26;;;t8-p2-kunimitsu-set.1,2.mp4;Kunimitsu-SET.1,2;kunimitsu
 SET.1,2,1;h, h, M;8, 13, 18;i10~11, ,i21~22;-11;+15a (-2);;"* Tornado
 * Balcony Break
 * Weapon
@@ -605,20 +605,20 @@ SET.1,2,1;h, h, M;8, 13, 18;i10~11, ,i21~22;-11;+15a (-2);;"* Tornado
 * Available on hit or block only
 * Interrupt with i10 from 2nd block
 * Low crush 5~15
-* Floating state 16~18";trn bbr wpn intr:10 js5~15 fs16~18;;Gekka Renzan > Ryu Enko;r34;;t8-p2-kunimitsu-set.1,2,1.mp4;Kunimitsu-SET.1,2,1;kunimitsu
+* Floating state 16~18";trn bbr wpn intr:10 js5~15 fs16~18;;Gekka Renzan > Ryu Enko;34;;;t8-p2-kunimitsu-set.1,2,1.mp4;Kunimitsu-SET.1,2,1;kunimitsu
 SET.1,2,2;h, h, m;8, 13, 24;i10~11, ,i19~20;-9;+14a (+5);+46a (-1);"* Balcony Break
 * Weapon
 * Combo from 2nd CH with 10f delay
 * Input can be delayed 10f
 * Move cannot be delayed
 * Available on hit or block only
-* Interrupt with i8 from 2nd block";bbr wpn intr:8;;Gekka Renzan > Dark Clutch;r30;;t8-p2-kunimitsu-set.1,2,2.mp4;Kunimitsu-SET.1,2,2;kunimitsu
+* Interrupt with i8 from 2nd block";bbr wpn intr:8;;Gekka Renzan > Dark Clutch;30;;;t8-p2-kunimitsu-set.1,2,2.mp4;Kunimitsu-SET.1,2,2;kunimitsu
 SET.1,2,3;h, h, M;8, 13, 23;i10~11, ,i33~34;-4;+25d;;"* Floor Break
 * Combo from 2nd CH
 * Interrupt with i12 from 2nd block
 * Available on hit or block only
 * Low crush 14~33
-* Floating state 34~36";fbr intr:12 js14~33 fs34~36;;Gekka Renzan > Moon Light Dance;r28;;t8-p2-kunimitsu-set.1,2,3.mp4;Kunimitsu-SET.1,2,3;kunimitsu
+* Floating state 34~36";fbr intr:12 js14~33 fs34~36;;Gekka Renzan > Moon Light Dance;28;;;t8-p2-kunimitsu-set.1,2,3.mp4;Kunimitsu-SET.1,2,3;kunimitsu
 SET.1,2,4;h, h, m;8, 13, 23;i10~11, ,i26~27;+3;+5a;;"* Spike
 * Input can be delayed 10f
 * Move cannot be delayed
@@ -626,67 +626,67 @@ SET.1,2,4;h, h, m;8, 13, 23;i10~11, ,i26~27;+3;+5a;;"* Spike
 * Interrupt with i15 from 2nd block
 * 4 chip damage on block
 * Low crush 5~29
-* Floating state 30~32";spk intr:15 chp:4 js5~29 fs30~32;;Gekka Renzan > Pouncing Strike;r34;;t8-p2-kunimitsu-set.1,2,4.mp4;Kunimitsu-SET.1,2,4;kunimitsu
+* Floating state 30~32";spk intr:15 chp:4 js5~29 fs30~32;;Gekka Renzan > Pouncing Strike;34;;;t8-p2-kunimitsu-set.1,2,4.mp4;Kunimitsu-SET.1,2,4;kunimitsu
 SET.2;m;17;i12;-9;+8;+55a (+48);"* Balcony Break (airborne)
 * Weapon
 * Shifts to Attack Throw ""Souenzan"" on CH from the front on standing opponent
-* Instant Tornado on CH";wpn;;Kasumi Slash;r31;;t8-p2-kunimitsu-set.2.mp4;Kunimitsu-SET.2;kunimitsu
-SET.3;L;17;i18~23;-16~-11;+0c~+5c;+25a;* High crush 6~;cs6~;FC;Frost Slide;r30 FC;;t8-p2-kunimitsu-set.3.mp4;Kunimitsu-SET.3;kunimitsu
-SET.4;M;13;i18~19;-8;+6;;Hits grounded but can miss when too close vs small bodies;;BT;;r28 BT;;t8-p2-kunimitsu-set.4.mp4;Kunimitsu-SET.4;kunimitsu
+* Instant Tornado on CH";wpn;;Kasumi Slash;31;;;t8-p2-kunimitsu-set.2.mp4;Kunimitsu-SET.2;kunimitsu
+SET.3;L;17;i18~23;-16~-11;+0c~+5c;+25a;* High crush 6~;cs6~;FC;Frost Slide;30;FC;;t8-p2-kunimitsu-set.3.mp4;Kunimitsu-SET.3;kunimitsu
+SET.4;M;13;i18~19;-8;+6;;Hits grounded but can miss when too close vs small bodies;;BT;;28;BT;;t8-p2-kunimitsu-set.4.mp4;Kunimitsu-SET.4;kunimitsu
 SET.4,3;M, m;13, 21;i18~19, i22;-13;+5a;;"* Spike
 * Combo from 1st hit with 9f delay
 * Input can be delayed 9f
 * Move can be delayed 5f
 * Interrupt with i5 from 1st block
 * Low crush 5~17
-* Floating state 18~20";spk intr:5 js5~17 fs18~20;;Into the Dark;r35;;t8-p2-kunimitsu-set.4,3.mp4;Kunimitsu-SET.4,3;kunimitsu
+* Floating state 18~20";spk intr:5 js5~17 fs18~20;;Into the Dark;35;;;t8-p2-kunimitsu-set.4,3.mp4;Kunimitsu-SET.4,3;kunimitsu
 SET.1+2;m,m;8,18;i15 i18;-5;+22a (+12);;"* Heat Engager
 
 * Heat Dash +5, +45a (+35)
 
 * Balcony Break
-* Weapon";he bbr wpn;;Twin Crescent Slash;r33;;t8-p2-kunimitsu-set.1+2.mp4;Kunimitsu-SET.1+2;kunimitsu
-SET.1+4;;;i15;;;;;;;;r28;;t8-p2-kunimitsu-set.1+4.mp4;Kunimitsu-SET.1+4;kunimitsu
-SET.B;;;;;;;* Cancels to standing block (blocks at frame 12);;;Sliding Sweep;r25;;t8-p2-kunimitsu-set.b.mp4;Kunimitsu-SET.B;kunimitsu
+* Weapon";he bbr wpn;;Twin Crescent Slash;33;;;t8-p2-kunimitsu-set.1+2.mp4;Kunimitsu-SET.1+2;kunimitsu
+SET.1+4;;;i15;;;;;;;;28;;;t8-p2-kunimitsu-set.1+4.mp4;Kunimitsu-SET.1+4;kunimitsu
+SET.B;;;;;;;* Cancels to standing block (blocks at frame 12);;;Sliding Sweep;25;;;t8-p2-kunimitsu-set.b.mp4;Kunimitsu-SET.B;kunimitsu
 SET.uf+4;m,t;8,16;i13~14;-14;+0d;;"* Floor Break
 * Shift to Attack Throw when hit from the front
 * Hit vs BT/Side +8a (+1)
 * Low crush 11~32
-* Floating state 33~35";fbr js11~32 fs33~35;;Chakra Drop;r41;;t8-p2-kunimitsu-set.uf+4.mp4;Kunimitsu-SET.uf+4;kunimitsu
-SET.uf+1+2;;;i16;;;;;;;;r28;;t8-p2-kunimitsu-set.uf+1+2.mp4;Kunimitsu-SET.uf+1+2;kunimitsu
+* Floating state 33~35";fbr js11~32 fs33~35;;Chakra Drop;41;;;t8-p2-kunimitsu-set.uf+4.mp4;Kunimitsu-SET.uf+4;kunimitsu
+SET.uf+1+2;;;i16;;;;;;;;28;;;t8-p2-kunimitsu-set.uf+1+2.mp4;Kunimitsu-SET.uf+1+2;kunimitsu
 hFC.1;sl;5;i10;-5;+6;;"* Transition to r24 with f
 * +6c on crouching hit
-* High crush 1~";cs1~;FC;Crouch Jab;r24 FC;;t8-p2-kunimitsu-hfc.1.mp4;Kunimitsu-hFC.1;kunimitsu
-hFC.2;sl;8;i11;-4;+7;;* High crush 1~;cs1~;FC;;r23 FC;;t8-p2-kunimitsu-hfc.2.mp4;Kunimitsu-hFC.2;kunimitsu
-hFC.3;L;10;i16;-17;-6;;* High crush 1~;cs1~;FC;;r36 FC;;t8-p2-kunimitsu-hfc.3.mp4;Kunimitsu-hFC.3;kunimitsu
-hFC.4;l;6;i12;-15;-4;;* High crush 1~;cs1~;FC;;r34 FC;;t8-p2-kunimitsu-hfc.4.mp4;Kunimitsu-hFC.4;kunimitsu
+* High crush 1~";cs1~;FC;Crouch Jab;24;FC;;t8-p2-kunimitsu-hfc.1.mp4;Kunimitsu-hFC.1;kunimitsu
+hFC.2;sl;8;i11;-4;+7;;* High crush 1~;cs1~;FC;;23;FC;;t8-p2-kunimitsu-hfc.2.mp4;Kunimitsu-hFC.2;kunimitsu
+hFC.3;L;10;i16;-17;-6;;* High crush 1~;cs1~;FC;;36;FC;;t8-p2-kunimitsu-hfc.3.mp4;Kunimitsu-hFC.3;kunimitsu
+hFC.4;l;6;i12;-15;-4;;* High crush 1~;cs1~;FC;;34;FC;;t8-p2-kunimitsu-hfc.4.mp4;Kunimitsu-hFC.4;kunimitsu
 hFC.1+2;l,sm;8,15;i18 i15;-12;+5 BT;;"* Weapon
 * Can hit grounded when off-axis
 * Transition to BT on hit
-* High crush 1~24";wpn cs1~24;BT;Yakouga;r31;;t8-p2-kunimitsu-hfc.1+2.mp4;Kunimitsu-hFC.1+2;kunimitsu
+* High crush 1~24";wpn cs1~24;BT;Yakouga;31;;;t8-p2-kunimitsu-hfc.1+2.mp4;Kunimitsu-hFC.1+2;kunimitsu
 1+3;t;35;i12~14;+0;+0d;;"* Homing
 * Throw break: 1 or 2
-* Opponent recovers in FUFL.";hom;;Tamaki;r31;;t8-p2-kunimitsu-1+3.mp4;Kunimitsu-1+3;kunimitsu
+* Opponent recovers in FUFL.";hom;;Tamaki;31;;;t8-p2-kunimitsu-1+3.mp4;Kunimitsu-1+3;kunimitsu
 2+4;t;35;i12~14;+0;-3d;;"* Floor Break
 * Homing
 * Throw break: 1 or 2
 * Side switch
-* Opponent recovers in FDFA.";fbr hom;;Mizore;r31;;t8-p2-kunimitsu-2+4.mp4;Kunimitsu-2+4;kunimitsu
+* Opponent recovers in FDFA.";fbr hom;;Mizore;31;;;t8-p2-kunimitsu-2+4.mp4;Kunimitsu-2+4;kunimitsu
 BT.1+4;t;45;i12~14;+0;-5d;;"* Throw break: 1+2
-* Opponent recovers in FDFA";;;Skybound Falling Sakura;r31;;t8-p2-kunimitsu-bt.1+4.mp4;Kunimitsu-BT.1+4;kunimitsu
+* Opponent recovers in FDFA";;;Skybound Falling Sakura;31;;;t8-p2-kunimitsu-bt.1+4.mp4;Kunimitsu-BT.1+4;kunimitsu
 Back Throw;t;50;;;+0d;;"* Unbreakable
-* Opponent recovers FDFT";;;Yamikazan;;;t8-p2-kunimitsu-back-throw.mp4;Kunimitsu-Back Throw;kunimitsu
+* Opponent recovers FDFT";;;Yamikazan;;;;t8-p2-kunimitsu-back-throw.mp4;Kunimitsu-Back Throw;kunimitsu
 Left Throw;t;40;;-3;-2d;;"* Throw break: 1
-* Opponent recovers FUFA";;;Avalanche;;;t8-p2-kunimitsu-left-throw.mp4;Kunimitsu-Left Throw;kunimitsu
+* Opponent recovers FUFA";;;Avalanche;;;;t8-p2-kunimitsu-left-throw.mp4;Kunimitsu-Left Throw;kunimitsu
 Right Throw;t;40;;-3;+0d;;"* Throw break: 2
 * Randomly side switches
-* Opponent recovers FDFT or FDFR on side switch";;;Tornado;;;t8-p2-kunimitsu-right-throw.mp4;Kunimitsu-Right Throw;kunimitsu
+* Opponent recovers FDFT or FDFR on side switch";;;Tornado;;;;t8-p2-kunimitsu-right-throw.mp4;Kunimitsu-Right Throw;kunimitsu
 f+1+4;t;38;i11;-3 BT;+0d;;"* Throw break: 1
 * Side switch
 * Kunimitsu and the opponent recover in BT on break
 * Opponent recovers in FUFA
-* SET.1+4: i15 (t43 r28)";;;Manji Rana;r28;;t8-p2-kunimitsu-f+1+4.mp4;Kunimitsu-f+1+4;kunimitsu
+* SET.1+4: i15 (t43 r28)";;;Manji Rana;28;;;t8-p2-kunimitsu-f+1+4.mp4;Kunimitsu-f+1+4;kunimitsu
 uf+1+2;t;40;i12;+0;+0d;;"* Throw break: 1+2
 * Side switch
 * Opponent recovers in FDFT
-* SET.uf+1+2: i16 (t44 r28)";;;Manji Cartwheel;r27;;t8-p2-kunimitsu-uf+1+2.mp4;Kunimitsu-uf+1+2;kunimitsu
+* SET.uf+1+2: i16 (t44 r28)";;;Manji Cartwheel;27;;;t8-p2-kunimitsu-uf+1+2.mp4;Kunimitsu-uf+1+2;kunimitsu

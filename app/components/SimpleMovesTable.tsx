@@ -7,7 +7,6 @@ import { type MoveT8 } from '~/types/Move';
 import {
   getChipDamage,
   getInterruptibleFrames,
-  getRecoveryFrames,
   hasTag,
 } from '~/utils/frameDataUtils';
 import {
@@ -175,7 +174,7 @@ export const SimpleMovesTable = memo(function SimpleMovesTable({
                     '',
                   )
                 ) : sortSettings?.sortByKey === 'recovery' ? (
-                  getRecoveryFrames(move)
+                  move.recovery
                 ) : sortSettings?.sortByKey === 'interruptible' ? (
                   interruptibleFrames !== undefined && `i${interruptibleFrames}`
                 ) : sortSettings?.sortByKey === 'chip' ? (

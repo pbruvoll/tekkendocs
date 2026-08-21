@@ -12,7 +12,6 @@ import {
   parseBlockValue,
 } from '~/features/frameQuiz/moveSelection';
 import { type Move } from '~/types/Move';
-import { getRecoveryFrames } from '~/utils/frameDataUtils';
 import { commandToUrlSegmentEncoded } from '~/utils/moveUtils';
 import { t8AvatarBrandMap } from '~/utils/t8AvatarMap';
 import {
@@ -71,7 +70,7 @@ const compareRows: CompareRowSpec[] = [
   },
   {
     label: 'Recovery',
-    getValue: (move) => getRecoveryFrames(move),
+    getValue: (move) => move.recovery,
     getNumericValue: parseRecoveryValue,
     higherIsBetter: false,
     formatDiff: (diff) => `${diff}f shorter`,

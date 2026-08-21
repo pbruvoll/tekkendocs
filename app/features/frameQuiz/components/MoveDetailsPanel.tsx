@@ -3,7 +3,6 @@ import { MovePropertyIconList } from '~/components/MovePropertyIconList';
 import { MovePropertyTagList } from '~/components/MovePropertyTagList';
 import { ShowNotes } from '~/components/ShowNotes';
 import { type Move } from '~/types/Move';
-import { getRecoveryFrames } from '~/utils/frameDataUtils';
 
 type MoveDetailsPanelProps = {
   move: Move;
@@ -39,7 +38,7 @@ export const MoveDetailsPanel = ({
         <div className="font-medium">{move.counterHit || '-'}</div>
 
         <div className="text-muted-foreground">Recovery frames</div>
-        <div className="font-medium">{getRecoveryFrames(move) ?? 'N/A'}</div>
+        <div className="font-medium">{move.recovery || 'N/A'}</div>
 
         <div className="text-muted-foreground">Properties</div>
         <div className="flex flex-wrap items-center gap-1.5">

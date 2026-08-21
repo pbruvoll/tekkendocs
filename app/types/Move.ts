@@ -16,6 +16,7 @@ export type Move = {
   image?: string;
   video?: string;
   recovery?: string;
+  recoveryState?: string;
   characterId?: string;
 };
 

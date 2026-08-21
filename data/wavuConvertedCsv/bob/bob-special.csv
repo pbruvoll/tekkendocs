@@ -1,4 +1,4 @@
-Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Transitions;Name;Recovery;Image;Video;Wavu id;Character id
+Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Transitions;Name;Recovery;Recovery state;Image;Video;Wavu id;Character id
 R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Removes Recoverable Health
 * Reversal Break
@@ -7,33 +7,33 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Restores recoverable health on hit
 * Transition to attack throw on hit
 * Consumes Rage
-* Power crush 8~";ra rbr pc8~;;Ultimate Full-Course;r39;;;Bob-R.df+1+2;bob
-1;h;5;i10;+1;+8;;*;;;;;;;Bob-1;bob
+* Power crush 8~";ra rbr pc8~;;Ultimate Full-Course;39;;;;Bob-R.df+1+2;bob
+1;h;5;i10;+1;+8;;*;;;;;;;;Bob-1;bob
 1,1;h, h;5, 7;i10, i17;-3;+5;;"* Combos from 1st hit
-* Jails from 1st hit";;;;;;;Bob-1,1;bob
+* Jails from 1st hit";;;;;;;;Bob-1,1;bob
 1,1,2;h, h, h;5, 7, 12;i10, ,i19;-12;+3;;"* Combos from 1st hit
-* Jails from 1st hit";;;Straight Rondel;;;;Bob-1,1,2;bob
+* Jails from 1st hit";;;Straight Rondel;;;;;Bob-1,1,2;bob
 1,2;h, h;5, 10;i10, i13;-3;+7;;"* Combos from 1st hit
-* Jails from 1st hit";;;One Two Punch;;;;Bob-1,2;bob
+* Jails from 1st hit";;;One Two Punch;;;;;Bob-1,2;bob
 1,2,2;h, h, m;5, 10, 20;i10, ,i20~21;-14;+5;;"* Heat Engager
 
 * Heat Dash +5, +43d (+35)
 
 * Balcony Break
-* Combo from 1st hit CH";he bbr;;Appetizer Break;;;;Bob-1,2,2;bob
+* Combo from 1st hit CH";he bbr;;Appetizer Break;;;;;Bob-1,2,2;bob
 1,4;h, h;5, 15;i10, i16;-6;+5;;"* Combos from 1st hit
-* Jails from 1st hit";;;Course Sarat;;;;Bob-1,4;bob
-1,d+4;h, l;5, 13;i10, i22;-12;-1;;* Combos from 1st hit;;;Course Achuto;;;;Bob-1,d+4;bob
-2;h;;i10;0;+6;;*;;;;;;;Bob-2;bob
-2,1;h, m;10;i10, i23~25;-7;0;+3;* Combos from 1st hit;;;;;;;Bob-2,1;bob
+* Jails from 1st hit";;;Course Sarat;;;;;Bob-1,4;bob
+1,d+4;h, l;5, 13;i10, i22;-12;-1;;* Combos from 1st hit;;;Course Achuto;;;;;Bob-1,d+4;bob
+2;h;;i10;0;+6;;*;;;;;;;;Bob-2;bob
+2,1;h, m;10;i10, i23~25;-7;0;+3;* Combos from 1st hit;;;;;;;;Bob-2,1;bob
 2,1,3;h, m, m;10, 20;i10, ,i27~28;-10;+11d;;"* Combos from 2nd hit CH
-* Low crush";js;;Barista Swirl;;;;Bob-2,1,3;bob
-3;m;14;i15~16;-6;+5;;*;;;;;;;Bob-3;bob
-3,1;m, h;14, 11;i15~16, i19;-3;+8;;* Combos from 1st hit;;;;;;;Bob-3,1;bob
-3,1,1;m, h, m;14, 11, 20;i15~16, ,i19;-13;+6;+23a;* Combos from 2nd hit CH;;;Gaufrettes Cutter;;;;Bob-3,1,1;bob
+* Low crush";js;;Barista Swirl;;;;;Bob-2,1,3;bob
+3;m;14;i15~16;-6;+5;;*;;;;;;;;Bob-3;bob
+3,1;m, h;14, 11;i15~16, i19;-3;+8;;* Combos from 1st hit;;;;;;;;Bob-3,1;bob
+3,1,1;m, h, m;14, 11, 20;i15~16, ,i19;-13;+6;+23a;* Combos from 2nd hit CH;;;Gaufrettes Cutter;;;;;Bob-3,1,1;bob
 3,2;m, h;14, 20;i15~16, i22~23;+1;+19cg;+70a (+54);"* Balcony Break
 * Tornado
 * Combos from 1st hit
 * Delayable
-* Instant Tornado on CH";bbr trn;;Gaufrettes Punch;;;;Bob-3,2;bob
-3,3;m, m;14, 18;i15~16, i25~26;-13;+4a (-5);;* Balcony Break;bbr;;Croque-Madame;;;;Bob-3,3;bob
+* Instant Tornado on CH";bbr trn;;Gaufrettes Punch;;;;;Bob-3,2;bob
+3,3;m, m;14, 18;i15~16, i25~26;-13;+4a (-5);;* Balcony Break;bbr;;Croque-Madame;;;;;Bob-3,3;bob

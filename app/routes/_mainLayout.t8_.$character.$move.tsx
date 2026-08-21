@@ -6,7 +6,7 @@ import { SimpleMovesTable } from '~/components/SimpleMovesTable';
 import { cdnUrl, charVideoInfoT8 } from '~/services/staticDataService';
 import { type Move } from '~/types/Move';
 import { getCharacterFrameDataMoves } from '~/utils/characterPageUtils';
-import { getRecoveryFrames, getRelatedMoves } from '~/utils/frameDataUtils';
+import { getRelatedMoves } from '~/utils/frameDataUtils';
 import { simplifyFrameValue } from '~/utils/frameDataViewUtils';
 import { getCacheControlHeaders } from '~/utils/headerUtils';
 import { commandToUrlSegment } from '~/utils/moveUtils';
@@ -55,7 +55,15 @@ export const meta: MetaFunction = ({ params, matches }) => {
         `Block: ${simplifyFrameValue(move.block || '')}`,
         `Hit / Counter: ${simplifyFrameValue(move.hit || '') + (move?.counterHit && move.counterHit !== move.hit ? ` / ${simplifyFrameValue(move.counterHit || '')}` : '')}`,
         `Damage: ${move.damage}`,
-        move.recovery ? `Recovery: ${move.recovery}` : '',
+        move.recovery || move.recoveryState
+          ? // the f goes before a trailing ?, so that "24?" reads "24f?"
+            `Recovery: ${[
+              move.recovery?.replace(/^\d+/, '$&f'),
+              move.recoveryState,
+            ]
+              .filter(Boolean)
+              .join(' in ')}`
+          : '',
         move.notes,
       ]
         .filter(Boolean)
@@ -174,7 +182,11 @@ export default function MoveRoute() {
           </Table.Row>
           <Table.Row>
             <Table.RowHeaderCell>Recovery frames</Table.RowHeaderCell>
-            <Table.Cell>{getRecoveryFrames(move) ?? 'N/A'}</Table.Cell>
+            <Table.Cell>{move.recovery || 'N/A'}</Table.Cell>
+          </Table.Row>
+          <Table.Row>
+            <Table.RowHeaderCell>Recovery state</Table.RowHeaderCell>
+            <Table.Cell>{move.recoveryState || 'N/A'}</Table.Cell>
           </Table.Row>
           <Table.Row>
             <Table.RowHeaderCell>Notes</Table.RowHeaderCell>

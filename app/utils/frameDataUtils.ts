@@ -45,6 +45,7 @@ export const frameDataTableToJson = (normalFrameData: TableData): Move[] => {
   const wavuIdIndex = lowerCaseHeaders.indexOf('wavu id');
   const nameIndex = lowerCaseHeaders.indexOf('name');
   const recoveryIndex = lowerCaseHeaders.indexOf('recovery');
+  const recoveryStateIndex = lowerCaseHeaders.indexOf('recovery state');
   const characterIdIndex = lowerCaseHeaders.indexOf('character id');
 
   // check optional columns
@@ -73,6 +74,7 @@ export const frameDataTableToJson = (normalFrameData: TableData): Move[] => {
       image: row[imageIndex],
       video: row[videoIndex],
       recovery: row[recoveryIndex],
+      recoveryState: row[recoveryStateIndex],
       characterId: characterIdIndex >= 0 ? row[characterIdIndex] : undefined,
     };
   });
@@ -241,7 +243,7 @@ export const removesRecoverableHealth = (move: Move) => {
 
 export const recoverFullCrouch = (move: Move) => {
   return (
-    move.recovery?.includes('FC') ||
+    move.recoveryState?.split(' ').includes('FC') ||
     move.notes
       .toLowerCase()
       .split('\n')
@@ -721,11 +723,7 @@ export const sortMovesV2 = (
       return sortMovesByNumber(moves, (move: Move) => move.counterHit, asc);
     }
     case 'recovery': {
-      return sortMovesByNumber(
-        moves,
-        (move: Move) => getRecoveryFrames(move) || '',
-        asc,
-      );
+      return sortMovesByNumber(moves, (move: Move) => move.recovery || '', asc);
     }
     case 'interruptible': {
       return sortMovesByNumber(
@@ -912,14 +910,6 @@ export const getMoveFilterTypes = (moves: Move[]): MoveFilterTypes => {
     states,
     transitions: Array.from(allTransitions),
   };
-};
-
-export const getRecoveryFrames = (move: Move): string | undefined => {
-  if (!move.recovery) return undefined;
-
-  // match string like "t22 r18" or "r18? t22"
-  const match = move.recovery.match(/(?:^|\s)r(\d\S*)(?=\s|$)/i);
-  return match?.[1];
 };
 
 export const splitMoveCommand = (command: string): string[] => {
