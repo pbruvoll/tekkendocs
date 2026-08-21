@@ -144,26 +144,38 @@ f+1+2;m;22;i22~23;-12;+22g;;"* Strong Aerial Tailspin
 * Power crush 7~21";pc7~21;BAD;Wrecking Cyclone;32;;;t8-p2-armor-king-f+1+2.mp4;Armor King-f+1+2;armor-king
 f+1+4;m;28;i13~15;-19;+17a (+12);;"* Balcony Break
 * Shoulder";bbr shd;;Shoulder Impact;37;;;t8-p2-armor-king-f+1+4.mp4;Armor King-f+1+4;armor-king
-f+3+4;sp;;;;;;"* Parries mid and high punches
+f+3+4;sp;;;;;;"* Transition to BAD
+* Parries mid and high punches
 * Cannot block in stance
-* Transition to BAD
+* Stance moves can be delayed by 25f
 * Parry state 5-12?";ps5-12?;BAD,BAD;Bad Jaguar;25;BAD;;File:t8-p2-armor_king-f+3+4.mp4;Armor King-f+3+4;armor-king
 f+3+4,P;h!;[5];i25~34;;+23g;;"* On successful parry, gives a special stun that makes throws unbreakable for the stun duration
 * Cannot K.O";;;Unforgiven;23;;;t8-p2-armor-king-f+3+4,p.mp4;Armor King-f+3+4,P;armor-king
-df+1;m;12;i13~14;-3;+7;;;;;;;;;t8-p2-armor-king-df+1.mp4;Armor King-df+1;armor-king
+df+1;m;12;i13~14;-3;+7;;"* Recovers 1F faster on hit (t33 r19)
+* Jab evasion?";;;;20;;;t8-p2-armor-king-df+1.mp4;Armor King-df+1;armor-king
 df+1,2;m, h;12, 19;i13~14, i18~19;-6;+8;+12c;"* Tornado
-* Combo on 1st CH
-* Combo can be delayed 9F on CH";trn;;Bastard Rush;;;;t8-p2-armor-king-df+1,2.mp4;Armor King-df+1,2;armor-king
-df+2;m;21;i15~16;-12;+4;+22a;;;;Concussion Hook;;;;t8-p2-armor-king-df+2.mp4;Armor King-df+2;armor-king
+* Combo on 1st CH with 8F delay
+* 4f timestop on CH
+* Interrupt with i1 from 1st block
+* Move can be delayed 8F
+* Input can be delayed 9F";trn intr:1;;Bastard Rush;26;;;t8-p2-armor-king-df+1,2.mp4;Armor King-df+1,2;armor-king
+df+2;m;21;i15~16;-12;+4;+22a;Jab evasion?;;;Concussion Hook;30;;;t8-p2-armor-king-df+2.mp4;Armor King-df+2;armor-king
 df+2,1;m, h;21, 8;i15~16, i15~16;+0;+8;+11;"* Combo from 1st hit
-* Transition to BAD with F (+8, +0)
-* No KND on 1st CH";;BAD;Double Concussion;;;;t8-p2-armor-king-df+2,1.mp4;Armor King-df+2,1;armor-king
-df+3;m;17;i17~18;-5;+5;+49a;Knee;kne;;Dark Knee Lift;;;;t8-p2-armor-king-df+3.mp4;Armor King-df+3;armor-king
-df+4;m;15;i12;-4;+7;;;;;;;;;t8-p2-armor-king-df+4.mp4;Armor King-df+4;armor-king
-df+3+4;SM,t;15,30;i28~35;-12~-18?;+17d/-7~0;;"* Throw only when opponent standing close.
+* Transition to BAD r25 with F (+0/+8/+11)
+* Interrupt with i1 from 1st block
+* Move is delayed 5f
+* Move cannot be delayed
+* Input cannot be delayed
+* No KND on 1st CH
+* Links to 10-hit strings";intr:1;BAD;Double Concussion;25;;;t8-p2-armor-king-df+2,1.mp4;Armor King-df+2,1;armor-king
+df+3;m;17;i17~18;-5;+5;+49a;"* Knee
+* 4f timestop on CH";kne;;Dark Knee Lift;29;;;t8-p2-armor-king-df+3.mp4;Armor King-df+3;armor-king
+df+4;m;15;i12;-4;+7;;;;;;23;;;t8-p2-armor-king-df+4.mp4;Armor King-df+4;armor-king
+df+3+4;SM,t;15,30;i28~35;-11~-18?;+17d/-7c~0c;;"* Throw only when opponent standing close.
 * Cannot throw break.
-* Recovers in BT/FUFT on throw success/failed.
-* Low crush 13~";js13~;BT/FUFT;Frankensteiner;;BT/FUFT;;t8-p2-armor-king-df+3+4.mp4;Armor King-df+3+4;armor-king
+* Transition to BT r129? after attack throw
+* Low crush 13~37
+* Floating state 38~40";js13~37 fs38~40;BT,FUFT;Frankensteiner;30;FUFT;;t8-p2-armor-king-df+3+4.mp4;Armor King-df+3+4;armor-king
 d+1;sl;5;i10;-5;+6;;"* Transition to r24 with f
 * +6c on crouching hit
 * High crush 4~34";cs4~34;FC;Crouch Jab;24;FC;;t8-p2-armor-king-d+1.mp4;Armor King-d+1;armor-king
@@ -234,10 +246,11 @@ db+3+4;h;20;i20~21;-7;+18cg;;"* Tornado
 * Hit vs BT +13a (+4)
 * High crush 6~19";trn bbr chp:4 cs6~19;;Shadow Force;31;;;File:t8-p2-armor-king-db+3+4.mp4;Armor King-db+3+4;armor-king
 b+1;h;12;i12~13;-7;+5;;;;;Dark Jab;29;;;t8-p2-armor-king-b+1.mp4;Armor King-b+1;armor-king
-b+1,2;h, m;12, 20;i12~13, i20~21;-12;+8;+11;"* Combo from 1st hit with 12F delay
+b+1,2;h, m;12, 20;i12~13, i20~21;-12;+8;+11;"* Combo from 1st hit with 11F delay
+* Jail from 1st block with 2F delay
 * Transition to r30 BAD with F (-12/+8/+11)
 * Move can be delayed by 10F
-* Input can be delayed by 12F";;BAD;Dark Jab > Hell Stab;30;;;t8-p2-armor-king-b+1,2.mp4;Armor King-b+1,2;armor-king
+* Input can be delayed by 11F";;BAD;Dark Jab > Hell Stab;30;;;t8-p2-armor-king-b+1,2.mp4;Armor King-b+1,2;armor-king
 b+1+3;;25;;;+0d;;"* Reverses High or Mid punches only
 * Opponent recovers FUFA when parrying a left punch
 * Opponent recovers FDFL when parrying a right punch
@@ -245,16 +258,20 @@ b+1+3;;25;;;+0d;;"* Reverses High or Mid punches only
 * Parry state 5~12";ps5~12;;Catch;;;;t8-p2-armor-king-b+1+3.mp4;Armor King-b+1+3;armor-king
 b+1+3,2;m;17;i17;-9;+3;+27a;* On CH transition to True Dark Smash;;True;Jugular Thrust Trap;;;;t8-p2-armor-king-b+1+3,2.mp4;Armor King-b+1+3,2;armor-king
 b+2;m;10;i13;-11;+0c;;;;;;30;;;t8-p2-armor-king-b+2.mp4;Armor King-b+2;armor-king
-b+2,1;m, m;10, 8;i13, i18;-12;-1;;"* Combo from 1st hit with 12F delay
-* Input can be delayed 12F";;;;31;;;t8-p2-armor-king-b+2,1.mp4;Armor King-b+2,1;armor-king
+b+2,1;m, m;10, 8;i13, i18;-12;-1;;"* Combo from 1st hit
+* Move cannot be interrupted
+* Move is delayed 2f
+* Move cannot be delayed
+* Input cannot be delayed";;;;31;;;t8-p2-armor-king-b+2,1.mp4;Armor King-b+2,1;armor-king
 b+2,1,2;m, m, h;10, 8, 20;i13, ,i25~26;-7;+19a (+10);;"* Balcony Break
 * Combo from 1st or 2nd CH with 5F delay
-* Move can be delayed by 20F";bbr;;Knife Edge Combo;30;;;t8-p2-armor-king-b+2,1,2.mp4;Armor King-b+2,1,2;armor-king
+* Interrupt with i5 from 2nd block
+* Move can be delayed by 20F";bbr intr:5;;Knife Edge Combo;30;;;t8-p2-armor-king-b+2,1,2.mp4;Armor King-b+2,1,2;armor-king
 b+3;h;17;i16~18;-12;+66a (+50);;"* Balcony Break
 * Tornado";bbr trn;;Dark Toll Kick;33;;;t8-p2-armor-king-b+3.mp4;Armor King-b+3;armor-king
-b+4;m;15;i15~18;-9;+2;;;;;Toe Kick;32;;;t8-p2-armor-king-b+4.mp4;Armor King-b+4;armor-king
-b+4,1+2;m, t;15, 20;i15~18, ;;+0d;;"* Throw only comes out on front hit
-* Input 1+2 during frames 2-18 of b+4";;;Toe Kick > Stunner;;;;t8-p2-armor-king-b+4,1+2.mp4;Armor King-b+4,1+2;armor-king
+b+4;m;15;i15~16;-9;+2;;;;;Toe Kick;32;;;t8-p2-armor-king-b+4.mp4;Armor King-b+4;armor-king
+b+4,1+2;m, t;15, 20;i15~16, ;;+0d;;"* Throw only comes out on front hit
+* Input 1+2 during frames 1-17 of b+4";;;Toe Kick > Stunner;;;;t8-p2-armor-king-b+4,1+2.mp4;Armor King-b+4,1+2;armor-king
 b+1+2;m;0;i16~17;+0;+4;+15;;;;Blindside;27;;;t8-p2-armor-king-b+1+2.mp4;Armor King-b+1+2;armor-king
 b+3+4;m;22;i20~21;-9;+12a (+3);;"* Homing
 * Balcony Break";hom bbr;;Pendulum Kick;37;;;t8-p2-armor-king-b+3+4.mp4;Armor King-b+3+4;armor-king
@@ -309,7 +326,7 @@ f,F+2;m;20;i16~17;-6;+6;+44a;;;;Hell-Shaker Punch;29;;;t8-p2-armor-king-f,f+2.mp
 f,F+3;h;23;i17~19;+2;+15a (+6);;"* Balcony Break
 * Homing
 * 6 chip damage on block";bbr hom chp:6;;Comeback Kick;33;;;t8-p2-armor-king-f,f+3.mp4;Armor King-f,F+3;armor-king
-f,F+4;m;25;i14~16;-8;+13cg;;"* Heat Engager
+f,F+4;m;25;i14;-8;+13cg;;"* Heat Engager
 
 * Heat Dash +36a (+26)
 
@@ -320,24 +337,27 @@ f,F+3+4;h;35;i23~24;-10;+10cg;;"* Balcony Break
 * 10 chip damage on block
 * Low crush 14~39
 * Floating state 40~60";bbr chp:10 js14~39 fs40~60;FDFT;Drop Kick;36;FDFT;;t8-p2-armor-king-f,f+3+4.mp4;Armor King-f,F+3+4;armor-king
-f,f,n,2;L;20;i19~20;-13;+5;+10;"* Transition to BAD r29 on hit with F (+8/+13)
+f,f,n,2;L;20;i19;-13;+5;+10;"* Transition to BAD r29 on hit with F (+8/+13)
 * High crush 8~37";cs8~37;BAD;Underhanded;32;;;t8-p2-armor-king-f,f,n,2.mp4;Armor King-f,f,n,2;armor-king
-f,n,d,DF+3;h!;30;i35~37;;+19a (+10);;"*
-Balcony Break
-*Hold B to cancel at frame 19 into r23 standing";bbr;;Dark Inferno;28;;;t8-p2-armor-king-f,n,d,df+3.mp4;Armor King-f,n,d,DF+3;armor-king
+f,n,d,DF+3;h!;30;i35~37;;+19a (+10);;"* Balcony Break
+* Cancel to r41 standing with B at frame 19
+* 20f timestop on hit";bbr;;Dark Inferno;28;;;t8-p2-armor-king-f,n,d,df+3.mp4;Armor King-f,n,d,DF+3;armor-king
 f,n,d,DF+4;m;22;i16~18;-9;+28a (+20);;"* Balcony Break
 * Tornado
 * Knee
-* Low crush 11~27";bbr trn kne js11~27;;Knee Vault;35;;;t8-p2-armor-king-f,n,d,df+4.mp4;Armor King-f,n,d,DF+4;armor-king
+* Low crush 11~27
+* Floating state 28~30";bbr trn kne js11~27 fs28~30;;Knee Vault;35;;;t8-p2-armor-king-f,n,d,df+4.mp4;Armor King-f,n,d,DF+4;armor-king
 f,n,d,df;;;;;;;"* Cannot be buffered
 * Stance moves can be buffered out of heat dash
 * Recovers in FC at frame 20
 * Cancel to SS with u
-* Cancel to standing block with b";;SS;Beast Step;1;;;t8-p2-armor-king-f,n,d,df.mp4;Armor King-f,n,d,df;armor-king
+* Cancel to standing block with b from frames 1 to 9";;SS;Beast Step;1;;;t8-p2-armor-king-f,n,d,df.mp4;Armor King-f,n,d,df;armor-king
 f,n,d,df+1;h;20;i15~16;+5;+16a;;"* 6 chip damage on block
+* 20f timestop on hit
+* Recovers 8F faster on hit (t38 r22)
 * Opponent left FDFA on hit";chp:6;;Shadow Lariat;30;;;t8-p2-armor-king-f,n,d,df+1.mp4;Armor King-f,n,d,df+1;armor-king
 f,n,d,df+2;h;20;i11~12 (i14+);-10;+36a (+26);;"* Can also be performed with f,n,df#2 (i13+)
-* t39? r27? on hit";;;Dark Smash;28?;;;t8-p2-armor-king-f,n,d,df+2.mp4;Armor King-f,n,d,df+2;armor-king
+* t39 r27 on hit";;;Dark Smash;28;;;t8-p2-armor-king-f,n,d,df+2.mp4;Armor King-f,n,d,df+2;armor-king
 f,n,d,df+1+2;h!;[5];i35~38;;+23g;;"*On hit, gives a special stun that makes throws unbreakable for the stun duration
 *Comes out faster in heat
 *Cannot K.O";;;Poison Mist;29;;;t8-p2-armor-king-f,n,d,df+1+2.mp4;Armor King-f,n,d,df+1+2;armor-king
@@ -374,11 +394,8 @@ SS.2;L;17;i19~20;-12;+3;+6c;"* BT.d+2: cs4~50
 SS.4;m;22;i19~20;-8;+13a;+58a;"* Balcony Break
 * +13a (+4) on side or backturned hit
 * 5f timestop on CH";bbr;;Buzz Saw Kick;31;;;t8-p2-armor-king-ss.4.mp4;Armor King-SS.4;armor-king
-FC.1;sl;5;i10;-5;+6;;* High crush 4~;cs4~;FC;;;FC;;t8-p2-armor-king-fc.1.mp4;Armor King-FC.1;armor-king
-FC.2;sl;8;i11;-4;+7;;* High crush;cs;FC;;;FC;;t8-p2-armor-king-fc.2.mp4;Armor King-FC.2;armor-king
-FC.3;l;12;i18;-16;-2;;* High crush;cs;FC;;;FC;;t8-p2-armor-king-fc.3.mp4;Armor King-FC.3;armor-king
-FC.4;sl;6;i14;-15;-4;;* High crush;cs;FC;;;FC;;t8-p2-armor-king-fc.4.mp4;Armor King-FC.4;armor-king
-FC.df+2;m;23;i24~25;+1;+52a;;* 6 chip damage on block;chp:6;;Backhand Chop;;;;t8-p2-armor-king-fc.df+2.mp4;Armor King-FC.df+2;armor-king
+FC.df+2;m;23;i24~25;+1;+52a;;"* 6 chip damage on block
+* 20f timestop on hit";chp:6;;Backhand Chop;26;;;t8-p2-armor-king-fc.df+2.mp4;Armor King-FC.df+2;armor-king
 (Back to wall).b,b,UB;h!,t;40;i40~45;;+0d;;"* Floor Break
 * Transition to attack throw on hit
 * Opponent recovers FUFR?
@@ -393,29 +410,30 @@ BAD.1,2;h, m;13, 24;i11, i24~25;-12;+18a (+13);;"* Heat Engager
 
 * Balcony Break 
 * Combo from 1st hit with 6F delay
-* Interrupt from 1st block with i5
+* Interrupt with i5 from 1st block
+* 20f timestop on hit
 * Input can be delayed by 6F
 * Move can be delayed by 1F";he bbr intr:5;;Ruffian Double Smash;36;;;File:t8-p2-armor_king-bad.1,2.mp4;Armor King-BAD.1,2;armor-king
-BAD.1,4;h, h;13, 22;i11, i22~23;+4~+5;+11g~+12g;;"* Combo from 1st hit with 6F delay
-* Interrupt from 1st block with i3
+BAD.1,4;h, h;13, 22;i11, i22~23;+4~+5;+11g~+12g;;"* Transition to BT
+* Combo from 1st hit with 6F delay
+* Interrupt with i3 from 1st block
 * Input can be delayed by 6F
-* Move can be delayed by 1F
-* Recovers in BT";intr:3;BT;Ruffian Raid;32;BT;;File:t8-p2-armor_king-bad.1,4.mp4;Armor King-BAD.1,4;armor-king
+* Move can be delayed by 1F";intr:3;BT,BT;Ruffian Raid;32;BT;;File:t8-p2-armor_king-bad.1,4.mp4;Armor King-BAD.1,4;armor-king
 BAD.2;m;12;i15~16;-7;+4;;;;;;25;;;t8-p2-armor-king-bad.2.mp4;Armor King-BAD.2;armor-king
-BAD.2,3;m, h;12, 24;i15~16, i22~23;-7;+18g;;"* Balcony Break
+BAD.2,3;m, h;12, 24;i15~16, i22~23;-7;+18cg;;"* Balcony Break
 * Tornado 
-* Combo from 1st hit with 8F delay
+* Combo from 1st hit with 7F delay
 * Interrupt with i6 from 1st block
-* Input can be delayed by 9F
+* Input can be delayed by 8F
 * Move can be delayed by 5F
 * Forces crouching on hit";bbr trn intr:6;;Thug Force;31;;;File:t8-p2-armor_king-bad.2,3.mp4;Armor King-BAD.2,3;armor-king
-BAD.2,4;m, m,t;12, 15,20;i15~16, i18~19;-12;+0d;;"* Combo from 1st hit with 9F delay
+BAD.2,4;m, m,t;12, 15,20;i15~16, i18~19;-12;+0d;;"* Combo from 1st hit with 8F delay
 * Interrupt with i2 from 1st block
-* Input can be delayed by 9F
+* Input can be delayed by 8F
 * Move can be delayed by 5F
 * Transitions to attack throw on front hit only 
 * Opponent left FUFT";intr:2;;S.C.S;32;;;File:t8-p2-armor_king-bad.2,4.mp4;Armor King-BAD.2,4;armor-king
-BAD.3;m;20;i20~21;-13;+11a(+2);+26d;"* Balcony Break
+BAD.3;m;20;i20~21;-13;+11a (+2);;"* Balcony Break
 * Has good right sidestep tracking
 * Power up if an attack is absorbed
 ** Reversal Break
@@ -429,18 +447,20 @@ H.BAD.3,2;m,M;15,25;i34~36;-9;+1a;;"* Balcony Break
 * 11 chip damage on block after absorbing an attack in power crush state";bbr;;Blackguard Rush: Villain;46;;;t8-p2-armor-king-bad.3,h.2.mp4;Armor King-BAD.3,H.2;armor-king
 BAD.4;L;23;i17~18;-13;+3c;+26a;;;;Bandido Snatch;31;;;File:t8-p2-armor_king-bad.4.mp4;Armor King-BAD.4;armor-king
 BAD.1+2;m;22;i26~27;+5;+12c;+40a;"* Head
+* 4f timestop on CH
 * 6 chip damage on block";hed chp:6;;Brigand Stomping Headbutt;34;;;File:t8-p2-armor_king-bad.1+2.mp4;Armor King-BAD.1+2;armor-king
-BAD.db+1+2;m,t;18,15;i14~17;-18c;+0d;;"* Transition into hit grab on grounded, airborne, and backturn hit
-* AK is left FDFA on whiff/block
+BAD.db+1+2;m,t;18,15;i14~17;-18c;+0d;;"* Shift to attack throw on grounded, airborne, and backturn hit
+* Recovers standing r66 on hit
 * Opponent is left FUFT on hit
-* Low crush 14~34";js14~34;FDFA;Shadow Press;43?;FDFA;;File:t8-p2-armor_king-bad.db+1+2.mp4;Armor King-BAD.db+1+2;armor-king
+* Low crush 14~34
+* Floating state 35~60";js14~34 fs35~60;FDFA;Shadow Press;43;FDFA;;File:t8-p2-armor_king-bad.db+1+2.mp4;Armor King-BAD.db+1+2;armor-king
 BT.3;M;20;i13~14;-14;+49a;;"* Tornado
 * Unparryable by traditional kick parries (bug?)";trn;;Blind Kick;37;;;t8-p2-armor-king-bt.3.mp4;Armor King-BT.3;armor-king
 BT.4;m;20;i18;-10;+11a (+2);;* Balcony Break;bbr;;Turn Sobat;34;;;t8-p2-armor-king-bt.4.mp4;Armor King-BT.4;armor-king
 BT.1+4;M!;20;i41~47;;+0d;;"* Armor King recovers FDFR on close hit on frames 41~42 (t91 r49 fs43~91), and FUFT on far hit (frames 43 to 47) or whiff
 * Low crush 12~42
 * Floating state 43~47";js12~42 fs43~47;;Moonsault Drop;26;;;t8-p2-armor-king-bt.1+4.mp4;Armor King-BT.1+4;armor-king
-CH.ws2,2;m,m;20,22 (15) / 25 (17);i12, i11~12;+1;+35a(+28);;"* Power up with input f,d,df+2 in a 20f sequence
+CH.ws2,2;m,m;20,22 (15) / 25 (17);i12, i11~12;+1;+35a (+28);;"* Power up with input f,d,df+2 in a 20f sequence
 * Can input during frames 25-74";;;True Dark Smash;23;;;t8-p2-armor-king-ch.ws2,2.mp4;Armor King-CH.ws2,2;armor-king
 FUFT.b+3+4;m;25;i16~28;-25;+4a(-6);;"Balcony Break
 * Faster than normal spring kick and knocks down.";bbr;BT;Whirling Spring Kick;;BT;;t8-p2-armor-king-fuft.b+3+4.mp4;Armor King-FUFT.b+3+4;armor-king
@@ -454,6 +474,15 @@ OTG.d+4,4,4;L, L, L;18, 8, 6;i19~21, ,i18~21;-16;-8d;;"* Floor Break
 OTG.d+4,4,3+4;L, L, SM;18, 8, 20;i19~21, ,i30~32;-17;+0d;;"* Combos from 1st hit on grounded opponent
 * +5 on hit when opponent is standing
 * Low crush 13~32";js13~32;;Crazy Torment;;;;t8-p2-armor-king-otg.d+4,4,3+4.mp4;Armor King-OTG.d+4,4,3+4;armor-king
+hFC.1;sl;5;i10;-5;+6;;"* Transition to r24 with f
+* +6c on crouching hit
+* High crush 1~";cs1~;FC;Crouch Jab;24;FC;;t8-p2-armor-king-hfc.1.mp4;Armor King-hFC.1;armor-king
+hFC.2;sl;8;i11;-4;+7;;"* +7c on crouching hit
+* High crush 1~";cs1~;FC;Crouch Straight;23;FC;;t8-p2-armor-king-hfc.2.mp4;Armor King-hFC.2;armor-king
+hFC.3;L;12;i18;-16;-2;;"-2c on crouching hit
+* High crush 1~";cs1~;FC;Crouch Spin Kick;32;FC;;t8-p2-armor-king-hfc.3.mp4;Armor King-hFC.3;armor-king
+hFC.4;l;6;i14;-15;-4;;"* -4c on crouching hit
+* High crush 1~";cs1~;FC;Crouch Shin Kick;34;FC;;t8-p2-armor-king-hfc.4.mp4;Armor King-hFC.4;armor-king
 (Back Throw);th(h);60;i12~14;!;-4d;;"* Unbreakable throw
 * Opponent left FUFA";;;Quick Reverse DDT;;;;t8-p2-armor-king-back-throw.mp4;Armor King-Back Throw;armor-king
 (Left Side Throw);th(h);40;;-3;+0d;;"* Balcony Break
@@ -592,7 +621,7 @@ f,hcf+1;th(h);40(45)/70,5;i10;-7;-20d (-50);;"* Homing during Heat
 * i11 startup for Bluespark throw with buffered input
 * BAD.1+3: i14 startup (t43). Cannot execute blue spark variant
 * Opponent recovers in FDFT.";;;Double Arm Swing;;;;t8-p2-armor-king-f,hcf+1.mp4;Armor King-f,hcf+1;armor-king
-f,n,d,df+1+3;t;20;i12;-3;+0;;"* 1 or 2 break depending on Armor King's input
+f,n,d,df+1+3;t;20;i12 (i17);-3;+0;;"* 1 or 2 break depending on Armor King's input
 ** 1 for CD1+3/1+4, 2 for CD2+4/2+3 
 * Transition to DMD
 * i20 fastest possible startup in neutral (f,n,d,df,1+3_2+4)

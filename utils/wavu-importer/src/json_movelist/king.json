@@ -167,11 +167,11 @@
     "id": "King-1+3",
     "input": "1+3",
     "name": "Winding Nut",
-    "notes": "* Homing\n* 1 or 2 throw break.\n* Input f+1+3 to increase throw range, but its startup is 3 frames slower.\n* Opponent recovers in FUFA.\n* Side switch on successful throw break",
-    "recv": "r31/33",
-    "startup": "i12~15",
+    "notes": "* Homing\n* 1 or 2 throw break.\n* Input f+1+3 to increase throw range, but its startup is 3 frames slower.\n* f+1+3: i15~17, t50 r33\n* Opponent recovers in FUFA.\n* Side switch on successful throw break",
+    "recv": "r31",
+    "startup": "i12~14",
     "target": "t",
-    "tot": "45/t50"
+    "tot": "45"
   },
   {
     "block": "+1",
@@ -223,11 +223,11 @@
     "id": "King-2+4",
     "input": "2+4",
     "name": "Suplex",
-    "notes": "* Homing\n* 1 or 2 throw break.\n* Input f+2+4 to increase throw range, but its startup is 3 frames slower.\n* Side switch. Opponent recovers in FUFA.",
-    "recv": "r31/33",
-    "startup": "i12~15 / i15~17",
+    "notes": "* Homing\n* 1 or 2 throw break.\n* Input f+2+4 to increase throw range, but its startup is 3 frames slower.\n* f+2+4: i15~17, t50 r33\n* Side switch. Opponent recovers in FUFA.",
+    "recv": "r31",
+    "startup": "i12~14",
     "target": "t",
-    "tot": "45/50"
+    "tot": "45"
   },
   {
     "block": "-9",
@@ -778,16 +778,17 @@
   {
     "block": "-14",
     "ch": "+28d",
-    "crush": "js11~",
+    "crush": "js11~25 fs26~55",
     "damage": "20",
     "hit": "-2d",
     "id": "King-BT.d+4",
     "input": "BT.d+4",
     "name": "Low Drop Kick (BT)",
-    "notes": "* Recovers in FDFT on block and whiff.\n* Also can be done in backturn crouching.",
-    "recv": "r FC/FDFT",
+    "notes": "* Transitions to FC r40 on hit\n* Also can be done in backturn crouching.",
+    "recv": "r31 FDFT",
     "startup": "i22~24",
-    "target": "l"
+    "target": "l",
+    "tot": "55"
   },
   {
     "block": "-2",

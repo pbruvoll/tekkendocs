@@ -7,7 +7,7 @@ import { cdnUrl, charVideoInfoT8 } from '~/services/staticDataService';
 import { type Move } from '~/types/Move';
 import { getCharacterFrameDataMoves } from '~/utils/characterPageUtils';
 import { getRelatedMoves } from '~/utils/frameDataUtils';
-import { simplifyFrameValue } from '~/utils/frameDataViewUtils';
+import { formatRecovery, simplifyFrameValue } from '~/utils/frameDataViewUtils';
 import { getCacheControlHeaders } from '~/utils/headerUtils';
 import { commandToUrlSegment } from '~/utils/moveUtils';
 
@@ -56,13 +56,7 @@ export const meta: MetaFunction = ({ params, matches }) => {
         `Hit / Counter: ${simplifyFrameValue(move.hit || '') + (move?.counterHit && move.counterHit !== move.hit ? ` / ${simplifyFrameValue(move.counterHit || '')}` : '')}`,
         `Damage: ${move.damage}`,
         move.recovery || move.recoveryState
-          ? // the f goes before a trailing ?, so that "24?" reads "24f?"
-            `Recovery: ${[
-              move.recovery?.replace(/^\d+/, '$&f'),
-              move.recoveryState,
-            ]
-              .filter(Boolean)
-              .join(' in ')}`
+          ? `Recovery: ${formatRecovery(move)}`
           : '',
         move.notes,
       ]

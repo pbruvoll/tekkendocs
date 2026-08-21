@@ -196,7 +196,8 @@ df+1,1;m, h;11, 9;i14, i20~21;-5;+5;+8;"* Combo from 1st hit with 4f delay
 * Move can be delayed 10f
 * Input can be delayed 10f";;;;28;;;File:Paul-df1,1.mp4;Paul-df+1,1;paul
 df+1,1,2;m, h, m;11, 9, 22;i14, ,i22~23;-9;+32a (+24);;"* Balcony Break
-* Combo from 2nd CH";bbr;;Lion's Roar;31;;;File:Paul-df1,1,2.mp4;Paul-df+1,1,2;paul
+* Combo from 2nd CH
+* Interrupt with i3 from 2nd block";bbr intr:3;;Lion's Roar;31;;;File:Paul-df1,1,2.mp4;Paul-df+1,1,2;paul
 df+1~b;m;11;i14, ;+3;+9;;"* Sidestep u can be buffered from 16f
 * SWA attacks can be buffered from 24f
 * Transition to cs1~ r9 -1 -12 DPD from 32f with df";;DPD,SWA;;15;SWA;;File:Paul-df1~b.mp4;Paul-df+1~b;paul
@@ -321,28 +322,30 @@ b+1+2;h;28;i24;-9;+21d (+16);;"* Balcony Break
 * Power crush 7~23";bbr pc7~23;;Hassou Strike;25;;;File:Paul-b1p2.mp4;Paul-b+1+2;paul
 b+3+4;sp;;;;;;"* Transitions to SWA
 * SWA.1+2 can be performed immediately (i17~18 effective startup)";;SWA;Sway;15;SWA;;;Paul-b+3+4;paul
-ub+2;m;22;i18;-5;+14d;;"* Balcony Break
+ub+2;m;22;i18;-5;+16d;;"* Balcony Break
 * +21d (+14) on airborne opponent
 * Can be charged to power up
-* Has good left sidestep tracking";bbr;;Wrecking Ball;31;;;File:Paul-ub2.mp4;Paul-ub+2;paul
+* Has good left sidestep tracking";bbr;;Wrecking Ball;29;;;File:Paul-ub2.mp4;Paul-ub+2;paul
 ub+2*;m;30;i27;+1;+17a;;"* Homing
 * Balcony Break
-* 9 chip damage";hom bbr chp:9;;Wrecking Ball (charged);;;;;Paul-ub+2*;paul
+* 9 chip damage";hom bbr chp:9;;Wrecking Ball (charged);27;;;;Paul-ub+2*;paul
 uf+1;h;26;i28~31;-6;+24a (+14);;"* Balcony Break
 * Elbow
 * High Evasion
-* .73 backward movement over first 14f";bbr elb;;Burning Spear;29;;;File:Paul-bf1.mp4;Paul-uf+1;paul
-uf+2;h;26;i22~23;+5;+17d FDFA;;"* Heat Engager
+* .73 backward movement over first 14f
+* High crush 6~27";bbr elb cs6~27;;Burning Spear;29;;;File:Paul-bf1.mp4;Paul-uf+1;paul
+uf+2;h;26;i22~23;+5;+17a;;"* Heat Engager
 
 * Heat Dash +5, +67a (+50)
 
 * Balcony Break
 * Chip damage (6)
-* Transition to +2, +14d DPD with DF
+* Transition to +2, +14a r35 DPD with DF (cs25~58)
 * Low crush 9~24";he bbr chp:6 js9~24;DPD;Moonfall;31;;;File:Paul_uf+2.mp4;Paul-uf+2;paul
 uf+3;m;15;i15~16;-16;+25a (+15);;"* Low crush 8~29
 * Floating state 30~32";js8~29 fs30~32;;;33;;;File:Paul-uf3.mp4;Paul-uf+3;paul
-uf+3,4;m, m;15, 10;i15~16, i13~14;-13;+32a (+22);;"* Combo from 1st hit +28a (+21)
+uf+3,4;m, m;15, 10;i15~16, i13~14;-13;+32a (+22);;"* Jail from 1st block
+* Combo from 1st hit +28a (+21)
 * Low crush 8~29
 * Floating state 30~32";js8~29 fs30~32;;Shredder;32;;;File:Paul-uf3,4.mp4;Paul-uf+3,4;paul
 uf+4;m;13;i15~17;-13;+33a (+23);;"* Low crush 8~29
@@ -384,29 +387,45 @@ f,F+2,1;m, m;14, 20;i15~17, i26;-12;+14a;;"* Balcony Break
 * Cancel to -21 -11 standing r40 with B at frame 20
 * Alternate input FC.df+2,1";bbr stp:SWR intr:8;;Juggernaut;30;;;File:Paul-ff2,1.mp4;Paul-f,F+2,1;paul
 f,F+2,2;m, L;14, 21;i15~17, i36~38;-19c;+27a;;"* Cancel to -28 -18 FC with B
+* Interrupt with i18 from 1st block
+* Whiffs vs SSL, SW from 1st block
 * Alternate input FC.df+2,2
-* High crush 33~83";cs33~83;FC;Bulldozer;36;;;File:Paul_f,F+2,2.mp4;Paul-f,F+2,2;paul
+* High crush 33~83";stp:SSL intr:18 cs33~83;FC;Bulldozer;36;;;File:Paul_f,F+2,2.mp4;Paul-f,F+2,2;paul
 f,F+2:1;m, h;14, 24;i15~17, i15;-1;+37d (+11);;"* Balcony Break
 * Chip damage (7)
 * Combo from 1st hit
-* Input 1 on frames to 19
+* Input 1 on frames 14 to 19
 * Jails attack inputs from 1st block (movement buffering prioritized)
 * Duckable
 * Alternate input FC.df+2:1";bbr chp:7;;Phoenix Bone Breaker;27;;;File:Paul-ff2,1 jf.mp4;Paul-f,F+2:1;paul
 f,F+3;m;17;i15~16;-17;+24a (+14);;"* Low crush 10~31
 * Floating state 32~34";js10~31 fs32~34;;;35;;;File:Paul-ff3.mp4;Paul-f,F+3;paul
-f,F+3,4;m, m;17, 10;i15~16, i13~14;-16;+30a (+20);;"* Combo from 1st hit +27a (+10)
+f,F+3,4;m, m;17, 10;i15~16, i13~14;-16;+30a (+20);;"* Airborne combo from 1st hit with 2F delay +27a (+10)
+* Jail from 1st block with 2F delay
+* Move cannot be delayed
+* Input can be delayed by 2F
 * Low crush 10~24
 * Floating state 25~27";js10~24 fs25~27;;;34;;;File:paul-ff3,4 v2.mp4;Paul-f,F+3,4;paul
 f,F+3,4,4;m, m, h;17, 10, 25;i15~16, ,i23~25;-5;+62a (+42);;"* Balcony Break
+* Interrupt with i11 from 1st block
+* Whiffs vs SSR, SWR (inconsistent?)
+* Move cannot be delayed
+* Input can be delayed by 6F
 * Low crush 10~24
-* Floating state 25~27";bbr js10~24 fs25~27;;Double Hop Kick High;32;;;File:Paul-ff3,4,4.mp4;Paul-f,F+3,4,4;paul
-f,F+3,4,d+4;m, m, L;17, 10, 15;i15~16, ,i27~28;-17c;-6;;"* Low crush 10~24
+* Floating state 25~27";bbr stp:SSR intr:11 js10~24 fs25~27;;Double Hop Kick High;32;;;File:Paul-ff3,4,4.mp4;Paul-f,F+3,4,4;paul
+f,F+3,4,d+4;m, m, L;17, 10, 15;i15~16, ,i27~28;-17c;-6;;"* Interrupt with i15 from 1st block
+* Whiffs vs SWL from 1st block
+* Move cannot be delayed
+* Input can be delayed by 6F
+* Low crush 10~24
 * Floating state 25~27
-* High crush 58~101";js10~24 fs25~27 cs58~101;;Double Hop Kick Low;35;;;File:Paul-ff3,4,d4.mp4;Paul-f,F+3,4,d+4;paul
+* High crush 58~101";stp:SWL intr:15 js10~24 fs25~27 cs58~101;;Double Hop Kick Low;35;;;File:Paul-ff3,4,d4.mp4;Paul-f,F+3,4,d+4;paul
 f,F+3,4,f+4;m, m, m;17, 10, 18;i15~16, ,i27~29;-14;+12d (+3);;"* Balcony Break
+* Interrupt with i15 from 1st block
+* Move cannot be delayed
+* Input can be delayed by 6F
 * Low crush 10~24
-* Floating state 25~27";bbr js10~24 fs25~27;;Triple Kick Combo;32;;;File:Paul-ff3,4,f4.mp4;Paul-f,F+3,4,f+4;paul
+* Floating state 25~27";bbr intr:15 js10~24 fs25~27;;Triple Kick Combo;32;;;File:Paul-ff3,4,f4.mp4;Paul-f,F+3,4,f+4;paul
 f,F+4;M;20;i27~34;+2;+18a;;"* Chip damage (8)
 * Low crush 14~31
 * Floating state 32~34";chp:8 js14~31 fs32~34;FC;Neutron Bomb;25;FC;;File:Paul-ff4.mp4;Paul-f,F+4;paul
@@ -428,7 +447,7 @@ ws1,2~b;m, m;16, 17;i15~16, ,;+1;+14g;+15;"* Sidestep u can be buffered from 44f
 * Transition to cs1~ r9 -10 +4 +5 DPD from 60f with df";;DPD,SWA;;19;SWA;;File:Paul-ws1,2~b.mp4;Paul-ws1,2~b;paul
 ws2;m;20;i15~16;-14;+27a (+17);;;;;Thunder Palm;36;;;File:Paul-ws2.mp4;Paul-ws2;paul
 ws3;M;16;i13~14;-8;+6;;* Knee;kne;;;26;;;File:Paul-ws3.mp4;Paul-ws3;paul
-ws3,2;M, h;16, 21;i13~14, i21~22;-9;+17d (+8);+46a;"* Balcony Break
+ws3,2;M, h;16, 21;i13~14, i21~22;-7;+17d (+8);+46a;"* Balcony Break
 * Move can be delayed 12f
 * Input can be delayed 12f
 * Combo from 1st hit with 12f delay";bbr;;Shioh;32;;;File:Paul-ws3,2.mp4;Paul-ws3,2;paul
