@@ -17,10 +17,9 @@ export const parseDamageTotal = (damage: string): number | null => {
 };
 
 export const parseRecoveryValue = (move: Move): number | null => {
-  const recovery = move.recovery;
-  if (!recovery) {
+  if (!move.recovery) {
     return null;
   }
-  const parsed = Number.parseInt(recovery, 10);
+  const parsed = Number.parseInt(move.recovery, 10);
   return Number.isNaN(parsed) ? null : parsed;
 };

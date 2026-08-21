@@ -74,7 +74,8 @@ export const frameDataTableToJson = (normalFrameData: TableData): Move[] => {
       image: row[imageIndex],
       video: row[videoIndex],
       recovery: row[recoveryIndex],
-      recoveryState: row[recoveryStateIndex],
+      recoveryState:
+        recoveryStateIndex >= 0 ? row[recoveryStateIndex] : undefined,
       characterId: characterIdIndex >= 0 ? row[characterIdIndex] : undefined,
     };
   });

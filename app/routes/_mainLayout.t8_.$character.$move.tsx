@@ -47,6 +47,8 @@ export const meta: MetaFunction = ({ params, matches }) => {
 
   const title = `${move.command} - ${characterTitle} Tekken8 Frame Data | TekkenDocs`;
 
+  const recovery = formatRecovery(move);
+
   const description = !move
     ? undefined
     : [
@@ -55,9 +57,7 @@ export const meta: MetaFunction = ({ params, matches }) => {
         `Block: ${simplifyFrameValue(move.block || '')}`,
         `Hit / Counter: ${simplifyFrameValue(move.hit || '') + (move?.counterHit && move.counterHit !== move.hit ? ` / ${simplifyFrameValue(move.counterHit || '')}` : '')}`,
         `Damage: ${move.damage}`,
-        move.recovery || move.recoveryState
-          ? `Recovery: ${formatRecovery(move)}`
-          : '',
+        recovery && `Recovery: ${recovery}`,
         move.notes,
       ]
         .filter(Boolean)
