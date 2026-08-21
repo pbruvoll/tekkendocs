@@ -47,6 +47,19 @@ export const getAnswerBucket = (blockValue: number): AnswerBucket => {
   return 'minusFifteenOrLess';
 };
 
+export const isThrowHitLevel = (hitLevel: string): boolean => {
+  // Hit levels separate the inputs of a string with `, ` and the hits of a
+  // single input with `,`. A move is a throw when one of its inputs is one,
+  // e.g. King's `1,2,2+4` (`h, h, t`). Attack throws like Bryan's `ws2`
+  // (`m,t`) are blockable attacks that only become a throw on hit, so their
+  // block frames are still worth quizzing.
+  return hitLevel
+    .split(', ')
+    .some((input) =>
+      input.trim().toLowerCase().startsWith(hitLevelValue.Throw),
+    );
+};
+
 export const hasVisibleProperties = (move: Move): boolean => {
   return Object.keys(move.tags || {}).length > 0;
 };
@@ -74,7 +87,7 @@ export const getEligibleQuizMoves = (moves: Move[]): QuizMove[] => {
       return current;
     }
 
-    if (hitLevel.startsWith(hitLevelValue.Throw)) {
+    if (isThrowHitLevel(hitLevel)) {
       return current;
     }
 
