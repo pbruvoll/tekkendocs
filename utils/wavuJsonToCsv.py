@@ -142,7 +142,7 @@ def convert(filePath, outDir):
     moves = wavuParsing.parse_movelist(jsonData)
     csvContent = [list(map(lambda x: x["displayName"], columns)) + ["Character id"]];
     for move in moves :
-        if charName == "miary-zo" or charName == "fahkumram" or charName == "anna" or charName == "armor-king" or charName == "shaheen" or charName == "kunimitsu":
+        if charName == "miary-zo" or charName == "fahkumram" or charName == "anna" or charName == "armor-king" or charName == "shaheen" or charName == "kunimitsu" or charName == "bob":
             generateVideoLink(move)
     for move in moves :
         fillMissingVideoFromExtendedInput(move, moves)
