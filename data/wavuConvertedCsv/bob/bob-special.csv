@@ -1,12 +1,13 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Transitions;Name;Recovery;Recovery state;Image;Video;Wavu id;Character id
-H.df+3+4;l;20;i21;-13;+7;;"* Shift to BAL on hit
-* Partially consumes remaining Heat Time
-* High crush";cs;BAL;Breaking Villain à la Carte;;BAL;;;Bob-H.df+3+4;bob
-H.2+3;m,t;50;i16~17;+;+0d;;"* Heat Smash
+H.df+3+4;L;20;i21;-13;+7;+75a (+59);"* Transition to BAL r29 on hit
+* Consumes 300F of remaining Heat Time";;BAL;Breaking Villain à la Carte;32;;;;Bob-H.df+3+4;bob
+H.2+3;m,t;14,20 (50);i16~17, i29;+6;+0d;;"* Heat Smash
 * Reversal Break
 * Balcony Break
-* Transition to attack throw on hit
-* Just frame input (H.2+3:3:4) for 10 more damage";hs rbr bbr;;Prix Fixe Justice Beat;;;;;Bob-H.2+3;bob
+* Transition to attack throw on hit (50dmg)
+* +10a (-7) on 2nd hit
+* Just frame input (H.2+3:3:4) for 5-10 total damage
+** Input 3 during frames 53~55, input 4 during frames 94~96";hs rbr bbr;;Prix Fixe Justice Beat;39;;;;Bob-H.2+3;bob
 R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Removes Recoverable Health
 * Reversal Break
@@ -16,7 +17,7 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Transition to attack throw on hit
 * Consumes Rage
 * Power crush 8~";ra rbr pc8~;;Ultimate Full-Course;39;;;;Bob-R.df+1+2;bob
-1;h;5;i10;+1;+8;;*;;;;;;;;Bob-1;bob
+1;h;5;i10;+1;+8;;Recovers 2f faster on hit or block (t27 r17);;;Jab;19;;;;Bob-1;bob
 1,1;h, h;5, 7;i10, i17;-3;+5;;"* Combos from 1st hit
 * Jails from 1st hit";;;;;;;;Bob-1,1;bob
 1,1,2;h, h, h;5, 7, 12;i10, ,i19;-12;+3;;"* Combos from 1st hit
@@ -34,8 +35,8 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 1,d+4;h, l;5, 13;i10, i22;-12;-1;;* Combos from 1st hit;;;Course Achuto;;;;;Bob-1,d+4;bob
 2;h;;i10;0;+6;;*;;;;;;;;Bob-2;bob
 2,1;h, m;10;i10, i23~25;-7;0;+3;* Combos from 1st hit;;;;;;;;Bob-2,1;bob
-2,1,3;h, m, m;10, 20;i10, ,i27~28;-10;+11d;;"* Combos from 2nd hit CH
-* Low crush";js;;Barista Swirl;;;;;Bob-2,1,3;bob
+2,1,4;h, m, m;10, 20;i10, ,i27~28;-10;+11d;;"* Combos from 2nd hit CH
+* Low crush";js;;Barista Swirl;;;;;Bob-2,1,4;bob
 3;m;14;i15~16;-6;+5;;*;;;;;;;;Bob-3;bob
 3,1;m, h;14, 11;i15~16, i19;-3;+8;;* Combos from 1st hit;;;;;;;;Bob-3,1;bob
 3,1,1;m, h, m;14, 11, 20;i15~16, ,i19;-13;+6;+23a;* Combos from 2nd hit CH;;;Gaufrettes Cutter;;;;;Bob-3,1,1;bob
@@ -65,12 +66,21 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 f+2;h;10;i12;-7;+3;;*;;;;;;;;Bob-f+2;bob
 f+2,3;h, m;10, 22;i12, i14~15;-15;+12a (+3);;"* Combos from 1st hit
 * Jails from 1st hit";;;Circle Whopper;;;;;Bob-f+2,3;bob
-f+2,H+1+2;h, m,m;10, 10,10;i12, i19i17;;;;"* Combos from 1st hit
-* Partially consumes remaining Heat Time
-* Low crush";js;;;;;;;Bob-f+2,H.1+2;bob
-f+2,H+1+2,1;h, m,m, 1;10, 10,10, 14;i12, ,i25~30;;+15d (-20);;"* Floor Break
-* Combos from 1st hit
-* Low crush";fbr js;;Federal Whopper à la Carte;;;;;Bob-f+2,H.1+2,1;bob
+f+2,H+1+2;h, m,m;10, 10,10;i12, i19, i17;-9;+13a (+6);;"* Combo from 1st hit with 5F delay
+* Jail from 1st block with 1F delay
+* Consumes 270F of remaining Heat Time
+* Move can be delayed by 4F
+* Input can be delayed by 5F
+* Low crush 40~51
+* Floating state 52~54";js40~51 fs52~54;;;37;;;;Bob-f+2,H.1+2;bob
+f+2,H+1+2,1;h, m,m, M;10, 10,10, 20 (14);i12, ,i25~30;;+15d (-20);;"* Floor Break
+* Combo from 1st hit
+* Jail from 3rd block
+* 14dmg with scaling from prev hit
+* 20F timestop on hit
+* +13d from 4th hit (impossible?)
+* Low crush 2~29
+* Floating state 30~32";fbr js2~29 fs30~32;;Federal Whopper à la Carte;35;;;;Bob-f+2,H.1+2,1;bob
 f+3;m;18;i21~24;-2;+3c;+9c;*;;;;;;;;Bob-f+3;bob
 f+3,4;m, m;18, 23;i21~24, i28~29;+3;10a (+1);+55cs;"* Balcony Break
 * Combos from 1st hit CH";bbr;;Mergeuz Kick Combo;;;;;Bob-f+3,4;bob
@@ -148,6 +158,9 @@ db+3+4;l;10;i19;-31;+6;;*;;;;;;;;Bob-db+3+4;bob
 db+3+4,4;l, l;10, 18;i19, i9;-28;+8c;+1d;* Combos from 1st hit;;;Huile Slip;;;;;Bob-db+3+4,4;bob
 b+1;m;15;i18~19;-8;+5c;;* Elbow;elb;;;;;;;Bob-b+1;bob
 b+1,2;m, m;15, 16;i18~19, i23~24;-8;+7;;* Combos from 1st hit;;;Ravenous;;;;;Bob-b+1,2;bob
+b+1+3;;;;;;;"* Parries high and mid punches
+* On successful parry, shift to Steak and Fries (FC.db+1+2)
+* Parry state";ps;;Perfect Body;;;;;Bob-b+1+3;bob
 b+2;m;12;i13~14;-5;+6;;*;;;;;;;;Bob-b+2;bob
 b+2,1;m, m;12, 23;i13~14, i23;-13;+7;;"* Elbow
 * Combos from 1st hit
@@ -203,9 +216,13 @@ u+3+4;m;20;i24~28;+1;+6c;;"* 4 chip damage on block
 * High crush";chp:4 cs;fc;Strainer;;fc;;;Bob-u+3+4;bob
 uf+1;m;10;i16;-9;+3;;*;;;;;;;;Bob-uf+1;bob
 uf+1,2;m, m;10, 16;i16, i20~21;-9;+8;;* Combos from 1st hit;;;Double Pound;;;;;Bob-uf+1,2;bob
-H.uf+1,2,2;m, m, m;10, 16, 24;i16, ,i31;;+23a (+13);;"* Balcony Break
-* Combos from 1st hit
-* Partially consumes remaining Heat Time";bbr;;Verdict Pound à la Carte;;;;;Bob-uf+1,2,H.2;bob
+H.uf+1,2,2;m, m, m;10, 16, 24;i16, ,i31;+5;+23a (+13);;"* Balcony Break
+* Combo from 1st hit
+* Interrupt with i8 from 2nd block
+* Whiffs vs SSL, SWL from 2nd block
+* Consumes 300F of remaining Heat Time
+* 20F timestop on hit
+* Input cannot be delayed";bbr stp:SSL intr:8;;Verdict Pound à la Carte;32;;;;Bob-uf+1,2,H.2;bob
 uf+3;m;20;i20;-13;+33a (+23);;"*
 * Low crush";js;;Flying Jambon;;;;;Bob-uf+3;bob
 uf+4;m;20;i26~28;-4;+22a;;"*
@@ -214,11 +231,6 @@ uf+3+4;l,h;10,12;i21;-25,-15;-4;;"*
 * Low crush";js;;;;;;;Bob-uf+3+4;bob
 uf+3+4,4;l,h, h;10,12, 20;i21, i18;-4;+22a (+18);;"* Balcony Break
 * Combos from 1st hit";bbr;;Rolling Kebab;;;;;Bob-uf+3+4,4;bob
-,2;h;21;i24~25;+;;;"* Heat Engager
-
-* Heat Dash +5, 
-
-* Balcony Break";he bbr;;Lyonnaise Pressure;;;;;Bob-BAL.1,2;bob
 b,B+1+4;m!;60;i72~74;;+7d;;"* Unblockable
 * Cancel with DB
 * Low crush";js;;Grater Langouste;;;;;Bob-b,B+1+4;bob
@@ -241,11 +253,34 @@ f,F+4,4;m, m;12, 20;i22~23, i14~16;i12;+11a (+2);;"* Balcony Break
 * Combos from 1st hit
 * On 1st hit hit or block only
 * Low crush";bbr js;;Double Chapati;;;;;Bob-f,F+4,4;bob
+f,n,d,DF+4;l;16;i18;-28;-1;;* Actual startup i21;;;;;;;;Bob-f,n,d,DF+4;bob
+f,n,d,DF+4,1+2;l, m;16, 25;i18, i25;-17;+7a (+6);;"* Balcony Break
+* Combos from 1st hit";bbr;;Cutting Coppa;;;;;Bob-f,n,d,DF+4,1+2;bob
 f,n,d,df;;;;;;;* Cannot be buffered;;;United Step;;;;;Bob-f,n,d,df;bob
 f,n,d,df+1;h;21;i13~14;-4;+78a (+62);;"* Balcony Break
 * Instant Tornado on hit
-* Actual startup i16 (i15 at the fastest)
+* Actual startup i16 (i15 if done with f,n,df#1 input)
 * 4 chip damage on block";bbr chp:4;;Langue Washer;;;;;Bob-f,n,d,df+1;bob
+f,n,d,df+2;m;24;i16~17;-23;+76a;;"* Tornado
+* Actual startup i19
+* Low crush";trn js;;Spiral Rocky;;;;;Bob-f,n,d,df+2;bob
+f,n,d,df+3;m;16;i16;-10;-5;;"* Knee
+* Actual startup i19
+* Low crush";kne js;;;;;;;Bob-f,n,d,df+3;bob
+f,n,d,df+3,2;m, h;16, 27;i16, i23~24;+3;+24d (-11);;"* Floor Break
+* Combos from 1st hit
+* Transition to +3, +25d FC with D
+* 5 chip damage on block
+* Low crush";fbr chp:5 js;FC;Gambero Knee Rush;;;;;Bob-f,n,d,df+3,2;bob
+f,n,d,df+3,4;m, m;16, 30;i16, i26;-11c;+16a (+6);;"* Balcony Break
+* Combos from 1st hit
+* Low crush";bbr js;;Gambero Spin Heel;;;;;Bob-f,n,d,df+3,4;bob
+f,n,d,df+1+2;m;20;i15;-10;+24a (+10);;"* Balcony Break
+* Actual startup i18
+* Can be charged to power up";bbr;;Granchi Canon;;;;;Bob-f,n,d,df+1+2;bob
+f,n,d,df+1+2*;m;20;i28;+4;+39a;;"* Balcony Break
+* Actual startup i31
+* 6 chip damage on block";bbr chp:6;;Granchi Canon (charged);;;;;Bob-f,n,d,df+1+2*;bob
 uf,n,4;m;20;i23~25;-13;+32a (+22);;"*
 * Low crush";js;;Delayed Rising Toe Kick;;;;;Bob-uf,n,4;bob
 f,f,F+3;m;30;i20~24;+6;+10a (+0);;"* Balcony Break
@@ -284,10 +319,33 @@ FC.df+2,1,1+2;m, m, m;14, 12, 25;i14, ,i26;-13;+11a (+2);;"* Balcony Break
 * Delayable";bbr;;Polpo Swing;;;;;Bob-FC.df+2,1,1+2;bob
 FC.df+4;l;14;i19;-12;+3;+29d;"*
 * High crush";cs;;Gourmand Swing;;;;;Bob-FC.df+4;bob
-H.,4;m;11,14;i24~25;+;+0d;;"* Floor Break
-* Transition to attack throw on front hit
-* Combos from 1st hit
-* Partially consumes remaining Heat Time";fbr;;Lyonnaise Lockdown à la Carte;;;;;Bob-BAL.1,H.4;bob
+BAL.1;m;16;i15~17;-5;+5;;*;;;;;;;;Bob-BAL.1;bob
+BAL.1,2;m, h;16, 21;i15~17, i24~25;+1;+28a (+18);;"* Heat Engager
+
+* Heat Dash +43d (+35)
+
+* Balcony Break
+* Combo from 1st hit with 8F delay
+* Move cannot be interrupted (crouch assist bufferable)";he bbr;;Lyonnaise Pressure;26;;;;Bob-BAL.1,2;bob
+H.BAL.1,4;m, m,m (t);16, 11,20 (14);i15~17, i24~25;+4;+0d;;"* Floor Break
+* Balcony Break +17a from 3rd hit
+* Shift to attack throw r86 on front hit
+* Combo from 1st hit with 8F delay
+* 25dmg with scaling from 2nd hit
+* Move cannot be interrupted
+* +22a (-13) on back hit 
+* Consumes 240F of remaining Heat Time
+* Low crush 23~58
+* Floating state 59~73";fbr js23~58 fs59~73;;Lyonnaise Lockdown à la Carte;27;;;;Bob-BAL.1,H.4;bob
+BAL.2;m;21;i23~24;-8;+12g;;"* Balcony Break
+* Homing";bbr hom;;Galette Slicer;;;;;Bob-BAL.2;bob
+BAL.3;m;25;i24~25;+4;+17a (+0);;"* Balcony Break
+* Tornado
+* Low crush";bbr trn js;;Roulette Cutter;;;;;Bob-BAL.3;bob
+BAL.4;l;14;i23~26;-24;+27d;+25a;"*
+* High crush";cs;;Stealing Home;;;;;Bob-BAL.4;bob
+BAL.3+4;m;28;i29~33;i13c;+13d;;"* Floor Break
+* Low crush";fbr js;;Perfect Press;;;;;Bob-BAL3+4;bob
 BT.d+2;m;17;i15~16;-9;+14a (+5);+59cs;* Balcony Break;bbr;;Plague Pick;;;;;Bob-BT.d+2;bob
 hFC.1;sl;5;i10;-5;+6;;"* Transition to r24 with f
 * +6c on crouching hit
@@ -298,3 +356,21 @@ hFC.3;L;12;i16;-16;-6;;"-2c on crouching hit
 * High crush 1~";cs1~;FC;Crouch Spin Kick;32;FC;;;Bob-hFC.3;bob
 hFC.4;l;6;i12;-15;-4;;"* -4c on crouching hit
 * High crush 1~";cs1~;FC;Crouch Shin Kick;34;FC;;;Bob-hFC.4;bob
+1+3;t;35;i12~14;-3;+0d;;"* Homing
+* Throw break 1 or 2
+* Opponent recovers FDFT";hom;;Quarter Deck;;;;;Bob-1+3;bob
+2+4;t;35;i12~14;-3;+0d;;"* Floor Break
+* Throw break 1 or 2
+* Swaps sides on successful throw";fbr;;Cooler Shaker;;;;;Bob-2+4;bob
+Back Throw;t;50;;;+0d;;"* Unbreakable
+* Opponent recovers FDFA";;;Deglacer Throw;;;;;Bob-Back Throw;bob
+Left Throw;t;40;;-3;+0d;;"* Throw break: 1
+* Opponent recovers FDFA";;;Corkscrew;;;;;Bob-Left Throw;bob
+Left Throw;t;40;;-3;+0d;;"* Throw break: 1
+* Opponent recovers FUFT";;;Eye Opener;;;;;Bob-Right Throw;bob
+db+1+2;t;35;;-3;+5;;* Throw break: 1+2;;;Steak and Fries;;;;;Bob-FC.db+1+2;bob
+db+1+2:3;t;45;;-3;+26a;;"* Balcony Break
+* Throw break: 1+2";bbr;;Steak and Fries;;;;;Bob-FC.db+1+2:3;bob
+uf+1+2;t;40;;-3;+0d;;"* Throw break: 1+2
+* Opponent recovers FDFA
+* Swaps sides on throw break";;;Shatter the Cask;;;;;Bob-uf+1+2;bob
