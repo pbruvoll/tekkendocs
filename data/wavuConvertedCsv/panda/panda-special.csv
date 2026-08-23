@@ -9,7 +9,7 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 H.uf+3+4;m;21 (8);i16~17;+12g;+7a;;"* Alternate input: H.ROL.uf+3+4
 * Uses 240F of remaining heat time
 * Transition to SIT (cannot cancel)
-* Low crush 9?";js9?;SIT,SIT;Panda Shooting Star;;SIT;;;Panda-H.uf+3+4;panda
+* Low crush 9?";js9?;SIT;Panda Shooting Star;;SIT;;;Panda-H.uf+3+4;panda
 H.2+3;m;50;i15~16;+9;-3d;;"* Heat Smash
 * Floor Break
 * Balcony Break
@@ -56,7 +56,7 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Forces crouch on hit";bbr he;;Demon Bear Breath;31;;;File:t8-p2-panda-1+2.mp4;Panda-1+2;panda
 3+4;sp;;;;;;"* Alternate input: FDFA.3+4
 * Transition to HBS
-* High crush 4~";cs4~;HBS,HBS;Hunting;15;HBS;;;Panda-3+4;panda
+* High crush 4~";cs4~;HBS;Hunting;15;HBS;;;Panda-3+4;panda
 3+4;sp;;;;;;"* Alternate input: FDFA.3+4
 * Can low parry in HBS with HBS.F
 * Transition to HBS
@@ -262,7 +262,7 @@ HBS.1,2**;m, m;10, 30;i12~13, i44~45;+3;+49a;;"* chip damage on block
 * Cannot absorb with power crush
 * Heat reduces charge length (consumes partial Heat time)";chp;;Fresh Honeycomb Spike;;;;File:t8-p2-panda-hbs.1,2ss.mp4;Panda-HBS.1,2**;panda
 HBS.2;L;16;i21~24;-15;+21g;;"* Transition to HBS
-* High crush 1~";cs1~;HBS,HBS;Bear Claw;29;HBS;;File:t8-p2-panda-hbs.2.mp4;Panda-HBS.2;panda
+* High crush 1~";cs1~;HBS;Bear Claw;29;HBS;;File:t8-p2-panda-hbs.2.mp4;Panda-HBS.2;panda
 HBS.3;sp;;;;;;"* Transition to FUFA
 * Alternative input: HBS.4 (HBS.3 is into background, HBS.4 is into foreground)";;FUFA;Hunting to Roll Over;;;;File:t8-p2-panda-hbs.3.mp4;Panda-HBS.3;panda
 HBS.1+2;m;24;i19~22;-15;+79a;;* Tornado;trn;;Bear Fling;;;;File:t8-p2-panda-hbs.1+2.mp4;Panda-HBS.1+2;panda
@@ -287,7 +287,7 @@ HBS.d+1+2;m;22;i16~20;-3;+4;+76a (+60);"* Tornado
 * Transition to HBS
 * Tornado on CH only
 * t44? r24? on hit
-* Panda: Increased vertical attack hitbox height. Decreased attack range and height hitbox on frames 18-20 (does not hit as deep or high)";trn;HBS,HBS;Frolicking Bear;26?;HBS;;File:t8-p2-panda-hbs.d+1+2.mp4;Panda-HBS.d+1+2;panda
+* Panda: Increased vertical attack hitbox height. Decreased attack range and height hitbox on frames 18-20 (does not hit as deep or high)";trn;HBS;Frolicking Bear;26?;HBS;;File:t8-p2-panda-hbs.d+1+2.mp4;Panda-HBS.d+1+2;panda
 HBS.d+3+4;sp;;;;;;* Transition to FDFA;;FDFA;Hunting to Play Dead;;;;File:t8-p2-panda-hbs.d+3+4.mp4;Panda-HBS.d+3+4;panda
 HBS.f,f;sp;;N/A / i26~i31 Heat;+1~+6 / -6~-1 HBS;+7~+12 / 0~+5 HBS;;"* Transition to ROL
 * Becomes Special Mid attack during Heat (partially uses remaining Heat time)";;ROL;Bear Roll;;;;;Panda-HBS.f,f;panda
@@ -319,7 +319,7 @@ hFC.1+2;sp;;i26~i31;+1~+6;+7~+12;;"* Transition to ROL
 ** +14~+19 or -6~-1 HBS or +1~+6 FC on block
 ** +20~+25 or +0~+5 HBS or +7~+12 FC on hit
 * Can be done from Crouch Level 1
-* Floating state 1~31";fs1~31;ROL,ROL;Bear Roll;31;ROL;;;Panda-hFC.1+2;panda
+* Floating state 1~31";fs1~31;ROL;Bear Roll;31;ROL;;;Panda-hFC.1+2;panda
 1+3;th(h);35;i12~14;-3;+1;;"* Homing
 * Throw break: 1 or 2
 * Opponent status on hit: FUFT";hom;;Bear's Bite;;;;File:t8-p2-panda-1+3.mp4;Panda-1+3;panda

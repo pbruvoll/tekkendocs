@@ -44,15 +44,20 @@ transToIgnore = ("with", "attack", "attacks", "standing", "throw", "block", "sec
 def getTransitions(move) :
     notes = re.sub(r'r\d+\??', '', move["notes"])
     matches = re.findall(r'(?:enter|cancel to|links to|transition to)\s+((?:(?:r\d|t\d|\d\d|cs|\+|-|\()[^\s]*\s+)*)?(\S*(\s\S*\s?(?:extensions|roll|step|tackle))?)', notes, re.IGNORECASE)
-    filtered = [match[1] for match in matches if match[1].lower() not in transToIgnore]
-    # a move recovering in a state transitions into it. recovery_state holds the
-    # state alone, such as "FC", and the states apart when there are several, as "BT JGS"
-    filtered.extend(move.get("recovery_state", "").split())
-    if len(filtered) > 0 :
-        filtered = [re.sub(r'[(),]', '', s) for s in filtered]
-        allTrans.update({element: "1" for element in filtered})
-        return ",".join(filtered)
-    return ""
+    # destinations come from two overlapping sources: the notes, which name one per way
+    # of reaching it ("Transition to RLX" and "Cancel to RLX with D" are both RLX), and
+    # recovery_state, since a move recovering in a state ends up in it. the notes often
+    # name the state a move recovers in as well, so they are keyed by name to hold each
+    # destination once, in the order it is first named. recovery_state holds the state
+    # alone, such as "FC", and the states apart when there are several, as "BT JGS"
+    mentions = [match[1] for match in matches] + move.get("recovery_state", "").split()
+    destinations = {}
+    for mention in mentions :
+        destination = re.sub(r'[(),]', '', mention)
+        if destination and destination.lower() not in transToIgnore :
+            destinations[destination] = None
+    allTrans.update({element: "1" for element in destinations})
+    return ",".join(destinations)
 
 def fillMissingVideoFromExtendedInput(move, moves):
     if move.get("video"):
@@ -155,26 +160,28 @@ def convert(filePath, outDir):
     csvWriter.writerows(csvContent);
     
 #inputDir is expected to contain one folder per character with multiple files (one for special moves, one for throws etc)
-# initiate the parser
-parser = argparse.ArgumentParser(description = 'This is a program to convert frames in json to  custom csv format')
-parser.add_argument("-I", "--inputDir", required=True, help="Directory to look for files to convert")
-parser.add_argument("-O", "--outputDir", required=True, help="Directory to store converted files")
-args = parser.parse_args()
+# guarded so that the functions above can be imported by test_wavuJsonToCsv
+if __name__ == "__main__" :
+    # initiate the parser
+    parser = argparse.ArgumentParser(description = 'This is a program to convert frames in json to  custom csv format')
+    parser.add_argument("-I", "--inputDir", required=True, help="Directory to look for files to convert")
+    parser.add_argument("-O", "--outputDir", required=True, help="Directory to store converted files")
+    args = parser.parse_args()
 
-inputDir = args.inputDir
-outputDir = args.outputDir
+    inputDir = args.inputDir
+    outputDir = args.outputDir
 
-os.makedirs(outputDir, exist_ok = True)
+    os.makedirs(outputDir, exist_ok = True)
 
-for csvFile in os.listdir(inputDir) :
-    filePath = os.path.join(inputDir, csvFile)
-    print("converting ", filePath)
-    # if not "zafi" in filePath :
-    #      continue
-    convert(filePath, outputDir)
+    for csvFile in os.listdir(inputDir) :
+        filePath = os.path.join(inputDir, csvFile)
+        print("converting ", filePath)
+        # if not "zafi" in filePath :
+        #      continue
+        convert(filePath, outputDir)
 
-print("Transitions collected:")
-for key, value in allTrans.items() :
-    print (key)
+    print("Transitions collected:")
+    for key, value in allTrans.items() :
+        print (key)
 
 
