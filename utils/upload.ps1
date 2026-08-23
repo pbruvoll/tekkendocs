@@ -5,4 +5,3 @@ if ($LASTEXITCODE -ne 0) {
     Read-Host "Press Enter to close"
     exit $LASTEXITCODE
 }
-Read-Host "Press Enter to close"

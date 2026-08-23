@@ -13,4 +13,8 @@ if ($LASTEXITCODE -ne 0) {
     exit $LASTEXITCODE
 }
 yarn format
-Read-Host "Press Enter to close"
+if ($LASTEXITCODE -ne 0) {
+    Write-Host "Format failed with exit code $LASTEXITCODE" -ForegroundColor Red
+    Read-Host "Press Enter to close"
+    exit $LASTEXITCODE
+}

@@ -1,5 +1,6 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Transitions;Name;Recovery;Recovery state;Image;Video;Wavu id;Character id
 H.df+3+4;L;20;i21;-13;+7;+75a (+59);"* Transition to BAL r29 on hit
+** Cannot block i16 moves
 * Consumes 300F of remaining Heat Time";;BAL;Breaking Villain à la Carte;32;;;t8-p2-bob-h.df+3+4.mp4;Bob-H.df+3+4;bob
 H.2+3;m,t;14,20 (50);i16~17, i29;+6;+0d;;"* Heat Smash
 * Reversal Break
@@ -42,17 +43,19 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 2,1;h, m;8, 10;i10, i23~25;-7;+0;+3;"* Combo from 1st hit with 2F delay
 * Interrupt with i3 from 1st block
 * Move can be delayed by 7F";intr:3;;;25;;;t8-p2-bob-2,1.mp4;Bob-2,1;bob
-2,1,4;h, m, m;8, 10, 20;i10, ,i27~28;-10;+11a;;"* Combo from 2nd CH
+2,1,4;h, m, m;8, 10, 20;i10, ,i27~28;-10;+11a;;"* Spike
+* Combo from 2nd CH
 * Interrupt with i8 from 2nd block
 * Whiffs vs SSR, SWR from 2nd block
-* Floating state 17~37";stp:SSR intr:8 fs17~37;;Barista Swirl;28;;;t8-p2-bob-2,1,4.mp4;Bob-2,1,4;bob
+* Floating state 17~37";spk stp:SSR intr:8 fs17~37;;Barista Swirl;28;;;t8-p2-bob-2,1,4.mp4;Bob-2,1,4;bob
 3;m;14;i15~16;-6;+5;;*;;;;24;;;t8-p2-bob-3.mp4;Bob-3;bob
 3,1;m, h;14, 11;i15~16, i19;-3;+8;;"* Combo from 1st hit
 * Move cannot be interrupted";;;;22;;;t8-p2-bob-3,1.mp4;Bob-3,1;bob
-3,1,1;m, h, m;14, 11, 20;i15~16, ,i19;-13;+6;+23a;"* Combo from 2nd CH with 10F delay
+3,1,1;m, h, m;14, 11, 20;i15~16, ,i19;-13;+6;+23a;"* Spike
+* Combo from 2nd CH with 10F delay
 * Move cannot be interrupted
 * Move can be delayed by 9F
-* Input can be delayed by 10F";;;Gaufrettes Cutter;34;;;t8-p2-bob-3,1,1.mp4;Bob-3,1,1;bob
+* Input can be delayed by 10F";spk;;Gaufrettes Cutter;34;;;t8-p2-bob-3,1,1.mp4;Bob-3,1,1;bob
 3,2;m, h;14, 20;i15~16, i22~23;+1;+19cg;+70a (+54);"* Balcony Break
 * Tornado
 * Combo from 1st hit with no delay
@@ -69,16 +72,18 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Interrupt with i1 from 1st block
 * Move cannot be delayed
 * Input can be delayed by 2F";intr:1;;;30;;;t8-p2-bob-4,3.mp4;Bob-4,3;bob
-4,3,4;h, h, M;15, 15, 20;i13, ,i28~33;-10;+4c;+3d;"* Combo from 2nd CH with 6F delay
+4,3,4;h, h, M;15, 15, 20;i13, ,i28~33;-10;+4c;+3d;"* Spike
+* Combo from 2nd CH with 6F delay
 * Airborne combo from 1st CH (-7d)
 * Interrupt with i6 from 1st block
-* Low crush 18~35";intr:6 js18~35;;Hopping Monsieur;32;;;t8-p2-bob-4,3,4.mp4;Bob-4,3,4;bob
+* Low crush 18~35";spk intr:6 js18~35;;Hopping Monsieur;32;;;t8-p2-bob-4,3,4.mp4;Bob-4,3,4;bob
 4,4;h, M;15, 22;i13, i32~37;+2c;+5d;;"* Spike
 * Airborne combo from 1st CH with 2F delay (-7d)
 * Interrupt with i14 from 1st block
 * Whiffs vs SS, SW from 1st bolck
 * Low crush 19~37";spk stp:SS intr:14 js19~37;;Hopping Macaron;30;;;t8-p2-bob-4,4.mp4;Bob-4,4;bob
-1+2;m;18;i19~20;-13;+0c;;* Transition to BAL r23 with F on hit or block (+1/+14c);;BAL;;37;;;t8-p2-bob-1+2.mp4;Bob-1+2;bob
+1+2;m;18;i19~20;-13;+0c;;"* Spike
+* Transition to BAL r23 with F on hit or block (+1/+14c)";spk;BAL;;37;;;t8-p2-bob-1+2.mp4;Bob-1+2;bob
 1+2,1+2;m, m;18, 20;i19~20, i18~19;-15;+11a (-6);+26a (+18);"* Balcony Break
 * Combo from 1st hit with 5F delay
 * Move cannot be interrupted
@@ -95,10 +100,15 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Floating state 31~33";spk stp:SS intr:8 js9~30 fs31~33;;;37;;;t8-p2-bob-3+4,4.mp4;Bob-3+4,4;bob
 3+4,4,2;M,M, m, m;14, 14, 14, 25;i25, i8, ,i19~20;-14;+1a (-16);;"* Balcony Break
 * Spike combo from 2nd hit (-4a (-16))
+* Move cannot be interrupted
 * 20f timestop on hit";bbr;;Supermax Parade;47;;;t8-p2-bob-3+4,4,2.mp4;Bob-3+4,4,2;bob
-f+2;h;10;i12;-7;+3;;*;;;;;;;t8-p2-bob-f+2.mp4;Bob-f+2;bob
-f+2,3;h, m;10, 22;i12, i14~15;-15;+12a (+3);;"* Combos from 1st hit
-* Jails from 1st hit";;;Circle Whopper;;;;t8-p2-bob-f+2,3.mp4;Bob-f+2,3;bob
+f+2;h;10;i12;-7;+3;;*;;;;27;;;t8-p2-bob-f+2.mp4;Bob-f+2;bob
+f+2,3;h, M;10, 22;i12, i14~15;-15;+12a (+3);;"* Balcony Break
+* Jails from 1st block with 6F delay
+* Combo from 1st hit with 10F delay
+* Move can be delayed by 5F
+* Input can be delayed by 10F
+* Recovers 3F faster on hit (t64 r32)";bbr;;Circle Whopper;35;;;t8-p2-bob-f+2,3.mp4;Bob-f+2,3;bob
 f+2,H+1+2;h, m,m;10, 10,10;i12, i19, i17;-9;+13a (+6);;"* Combo from 1st hit with 5F delay
 * Jail from 1st block with 1F delay
 * Consumes 270F of remaining Heat Time
@@ -106,7 +116,7 @@ f+2,H+1+2;h, m,m;10, 10,10;i12, i19, i17;-9;+13a (+6);;"* Combo from 1st hit wit
 * Input can be delayed by 5F
 * Low crush 40~51
 * Floating state 52~54";js40~51 fs52~54;;;37;;;t8-p2-bob-f+2,h.1+2.mp4;Bob-f+2,H.1+2;bob
-f+2,H+1+2,1;h, m,m, M;10, 10,10, 20 (14);i12, ,i25~30;;+15d (-20);;"* Floor Break
+f+2,H+1+2,1;h, m,m, M;10, 10,10, 20 (14);i12, ,i25~30;-12;+15d (-20);;"* Floor Break
 * Combo from 1st hit
 * Jail from 3rd block
 * 14dmg with scaling from prev hit
@@ -114,16 +124,28 @@ f+2,H+1+2,1;h, m,m, M;10, 10,10, 20 (14);i12, ,i25~30;;+15d (-20);;"* Floor Brea
 * +13d from 4th hit (impossible?)
 * Low crush 2~29
 * Floating state 30~32";fbr js2~29 fs30~32;;Federal Whopper à la Carte;35;;;t8-p2-bob-f+2,h.1+2,1.mp4;Bob-f+2,H.1+2,1;bob
-f+3;m;18;i21~24;-2;+3c;+9c;*;;;;;;;t8-p2-bob-f+3.mp4;Bob-f+3;bob
+f+3;m;18;i21~24;-2;+3c;+9c;*;;;;25;;;t8-p2-bob-f+3.mp4;Bob-f+3;bob
 f+3,4;m, m;18, 23;i21~24, i28~29;+3;10a (+1);+55cs;"* Balcony Break
-* Combos from 1st hit CH";bbr;;Mergeuz Kick Combo;;;;t8-p2-bob-f+3,4.mp4;Bob-f+3,4;bob
+* Combo from 1st CH with 6F delay
+* Interrupt with i11 from 1st block
+* Interrupt with i5 from 1st hit
+* Whiffs vs SS, SW from 1st block
+* Whiffs vs SSR from 1st hit
+* 4f timestop on CH
+* Move cannot be delayed
+* Input can be delayed by 6F";bbr stp:SS stp:SSR intr:11;;Mergeuz Kick Combo;34;;;t8-p2-bob-f+3,4.mp4;Bob-f+3,4;bob
 f+4;h;20;i16~17;-6;+19a;+3d;"* Homing
-* Shift to throw on CH from the front";hom;;Spinning Linguine;;;;t8-p2-bob-f+4.mp4;Bob-f+4;bob
+* Shift to throw on CH from the front";hom;;Spinning Linguine;33;;;t8-p2-bob-f+4.mp4;Bob-f+4;bob
 f+1+2;m;23;i16~17;-14;+12a (+3);;"* Balcony Break
-* Powercrush
-* Power crush";bbr pc;;Giga Jacker;;;;t8-p2-bob-f+1+2.mp4;Bob-f+1+2;bob
-f+3+4;;;;;;;"* Transition to BAL
-* High crush";cs;BAL;Spinner Ball;;;;t8-p2-bob-f+3+4.mp4;Bob-f+3+4;bob
+* Body slam
+* 9 chip damage and -9 on block after attack absorption
+* Recovers 1F faster on hit (t49 r32)
+* Power crush 7~15";bbr pc7~15;;Giga Jacker;33;;;t8-p2-bob-f+1+2.mp4;Bob-f+1+2;bob
+f+3+4;sp;;;;;;"* Transition to BAL
+* Transition to FC r48 with no input
+* Stance moves can be delayed by 18F
+* Cannot block in stance
+* High crush 8~48";cs8~48;BAL,FC,BAL;Spinner Ball;25;BAL;;t8-p2-bob-f+3+4.mp4;Bob-f+3+4;bob
 df+1;m;13;i14;-2;+5;;*;;;;;;;t8-p2-bob-df+1.mp4;Bob-df+1;bob
 df+1,2;m, m;13, 15;i14, i19;-10;+6;;"* Elbow
 * Combos from 1st hit
@@ -138,7 +160,7 @@ df+3;m;19;i19~20;-9;+19a (+2);+73a (+57);"* Balcony Break
 df+4;h;12;i13~14;-6;+5;;*;;;;;;;t8-p2-bob-df+4.mp4;Bob-df+4;bob
 df+4,3;h, h;12, 23;i13~14, i20~21;-8;+4;;"* Combos from 1st hit
 * Transition to +12g, +0 BAL with F";;BAL;Plain Ring;;;;t8-p2-bob-df+4,3.mp4;Bob-df+4,3;bob
-df+4,4;h, m;12, 24;i13~14, i25~26;;;;"* Heat Engager
+df+4,4;h, m;12, 24;i13~14, i25~26;-13;;;"* Heat Engager
 
 * Heat Dash +5, +43d (+35)
 
@@ -158,7 +180,7 @@ d+2,4;m, m;12, 21;i15, i17;-13;+14a (+7);;"* Balcony Break
 * Combos from 1st hit
 * Jails from 1st hit
 * Low crush";bbr js;;Combination Baldo;;;;t8-p2-bob-d+2,4.mp4;Bob-d+2,4;bob
-d+3;l;12;i19~20;i18;-7;;"*
+d+3;l;12;i19~20;-18;-7;;"*
 * High crush";cs;;;;;;t8-p2-bob-d+3.mp4;Bob-d+3;bob
 d+3,4;l, h;12, 15;i19~20, i25~26;-8;+10g;;"* Balcony Break
 * Combos from 1st hit CH";bbr;;Panini Sweep;;;;t8-p2-bob-d+3,4.mp4;Bob-d+3,4;bob
@@ -179,7 +201,7 @@ db+1;sl;5;i10;-5;+6;;"* Transition to r24 with f
 * High crush 4~";cs4~;FC;Crouch Jab;24;FC;;t8-p2-bob-db+1.mp4;Bob-db+1;bob
 db+2;m;17;i14;-8;+6;;*;;;Bite Uppercut;;;;t8-p2-bob-db+2.mp4;Bob-db+2;bob
 db+3;l;17;i20;-12;+2;+14g;*;;;Liaison Spike;;;;t8-p2-bob-db+3.mp4;Bob-db+3;bob
-db+4;l;15;i24~25;i12;-1;;"*
+db+4;l;15;i24~25;-12;-1;;"*
 * High crush";cs;;;;;;t8-p2-bob-db+4.mp4;Bob-db+4;bob
 db+4,4;l, m;15, 14;i24~25, i25~27;-12;-2;;"* Combos from 1st hit CH
 * Low crush";js;;;;;;t8-p2-bob-db+4,4.mp4;Bob-db+4,4;bob
@@ -205,8 +227,6 @@ b+2,2,4;m, h, m;12, 12, 13;i13~14, ,i22;-13;+3;;"* Knee
 b+2,2,4,4;m, h, m, h;12, 12, 13, 20;i13~14, ,i23~24;-7;+18a (+9);;"* Balcony Break
 * Combos from 3rd hit";bbr;;Combination Bitter;;;;t8-p2-bob-b+2,2,4,4.mp4;Bob-b+2,2,4,4;bob
 b+3;m;20;i17~18;-15;+12a (+3);+27a (+21);*;;;Whopping Kick;;;;t8-p2-bob-b+3.mp4;Bob-b+3;bob
-b+3;m;20;i22~23;+3;+7;+9c;"* Transition to +12g, +7, +16c BAL with F
-* Low crush";js;BAL;Pepperoni Fall;;;;t8-p2-bob-u+3.mp4;Bob-u+3;bob
 b+4;m;13;i15;-11;+4;+9;* Knee;kne;;;;;;t8-p2-bob-b+4.mp4;Bob-b+4;bob
 b+4,3;m, m,h;13, 36;i15, i32,i15~16;-9;+17a (+0);;"* Balcony Break
 * Tornado
@@ -236,6 +256,8 @@ ub+3+4;m,m;12;i18,i10;-9;+18a (+11);;*;;;;;;;t8-p2-bob-ub+3+4.mp4;Bob-ub+3+4;bob
 ub+3+4,4;m,m, m;12, 16;i18,i10, i29~31;-11;+21a (+14);;"* Balcony Break
 * Combos from 1st hit
 * Low crush";bbr js;;Runner Flip;;;;t8-p2-bob-ub+3+4,4.mp4;Bob-ub+3+4,4;bob
+u+3;m;20;i22~23;+3;+7;+9c;"* Transition to +12g, +7, +16c BAL with F
+* Low crush";js;BAL;Pepperoni Fall;;;;t8-p2-bob-u+3.mp4;Bob-u+3;bob
 u+1+2;m;15;i16~18;-11;-3;;"* Head
 * Transition to +8, +0 BAL with F
 * Low crush";hed js;BAL;;;;;t8-p2-bob-u+1+2.mp4;Bob-u+1+2;bob
@@ -263,29 +285,41 @@ uf+4;m;20;i26~28;-4;+22a;;"*
 uf+3+4;l,h;10,12;i21;-25,-15;-4;;"*
 * Low crush";js;;;;;;t8-p2-bob-uf+3+4.mp4;Bob-uf+3+4;bob
 uf+3+4,4;l,h, h;10,12, 20;i21, i18;-4;+22a (+18);;"* Balcony Break
+* Strong Aerial Tailspin
 * Combos from 1st hit";bbr;;Rolling Kebab;;;;t8-p2-bob-uf+3+4,4.mp4;Bob-uf+3+4,4;bob
-b,B+1+4;m!;60;i72~74;;+7d;;"* Unblockable
-* Cancel with DB
-* Low crush";js;;Grater Langouste;;;;t8-p2-bob-b,b+1+4.mp4;Bob-b,B+1+4;bob
-b,B+1+4,2;m;25;?;-11;+11a;;* Balcony Break;bbr;;Grater Langouste Feint Knuckle;;;;t8-p2-bob-b,b+1+4,2.mp4;Bob-b,B+1+4,2;bob
-b,B+2+3;m!;25;i48~5-;!;+13d;;"* Strong Aerial Tailspin
-* Unblockable
-* Low crush";js;;Quick Langouste;;;;t8-p2-bob-b,b+2+3.mp4;Bob-b,B+2+3;bob
-f,F+2;m;21;i14;-8;+14d;;"* Heat Engager
+b,B+1+4;m!;60;i72~74;;+7d;;"* Spike
+* 20f timestop on hit
+* Cancel to r47 FC with DB at frame 42
+* Low crush 51~69
+* Floating state 70~72";spk js51~69 fs70~72;FC;Grater Langouste;31;;;t8-p2-bob-b,b+1+4.mp4;Bob-b,B+1+4;bob
+b,B+1+4,2;m;25;i15~16 (i57~58);-11;+11a;;"* Balcony Break
+* Spike
+* i57~58 actual startup
+* Input 2 at frame 42";bbr spk;;Grater Langouste Feint Knuckle;38;;;t8-p2-bob-b,b+1+4,2.mp4;Bob-b,B+1+4,2;bob
+b,B+2+3;h!;25;i48~50;;+13d;;"* Strong Aerial Tailspin
+* Low crush 20~47
+* Floating state 48~50";js20~47 fs48~50;;Quick Langouste;37;;;t8-p2-bob-b,b+2+3.mp4;Bob-b,B+2+3;bob
+f,F+2;m;21;i14;-8;+14a;;"* Heat Engager
 
 * Heat Dash +5, +36a (+26)
 
-* Balcony Break";he bbr;;Zip Cutter;;;;t8-p2-bob-f,f+2.mp4;Bob-f,F+2;bob
-f,F+3;m;18;i18~19;-6;+32a;;"* Balcony Break
+* Balcony Break";he bbr;;Zip Cutter;36;;;t8-p2-bob-f,f+2.mp4;Bob-f,F+2;bob
+f,F+3;h;18;i18~19;-6;+32a;;"* Balcony Break
 * Strong Aerial Tailspin
-* Transition to +2, +40d CD with DF
-* Low crush";bbr js;CD;Jumbo Pancake;;;;t8-p2-bob-f,f+3.mp4;Bob-f,F+3;bob
+* Transition to CD r26 with DF (+2/+40a)
+* Has good left sidestep tracking
+* Low crush 11~27
+* Floating state 28~30";bbr js11~27 fs28~30;CD;Jumbo Pancake;34;;;t8-p2-bob-f,f+3.mp4;Bob-f,F+3;bob
 f,F+4;m;12;i22~23;-9;+2;;"* Homing
-* Low crush";hom js;;;;;;t8-p2-bob-f,f+4.mp4;Bob-f,F+4;bob
-f,F+4,4;m, m;12, 20;i22~23, i14~16;i12;+11a (+2);;"* Balcony Break
-* Combos from 1st hit
-* On 1st hit hit or block only
-* Low crush";bbr js;;Double Chapati;;;;t8-p2-bob-f,f+4,4.mp4;Bob-f,F+4,4;bob
+* +2c on crouching hit
+* Low crush 14~26
+* Floating state 27~29";hom js14~26 fs27~29;;;27;;;t8-p2-bob-f,f+4.mp4;Bob-f,F+4;bob
+f,F+4,4;m, m;12, 20;i22~23, i14~16;-12;+11a (+2);;"* Balcony Break
+* Combo from 1st hit
+* Available on hit or block only
+* Input cannot be delayed
+* Low crush 1~27
+* Floating state 28~30";bbr js1~27 fs28~30;;Double Chapati;37;;;t8-p2-bob-f,f+4,4.mp4;Bob-f,F+4,4;bob
 f,n,d,DF+4;l;16;i18;-28;-1;;* Actual startup i21;;;;;;;t8-p2-bob-f,n,d,df+4.mp4;Bob-f,n,d,DF+4;bob
 f,n,d,DF+4,1+2;l, m;16, 25;i18, i25;-17;+7a (+6);;"* Balcony Break
 * Combos from 1st hit";bbr;;Cutting Coppa;;;;t8-p2-bob-f,n,d,df+4,1+2.mp4;Bob-f,n,d,DF+4,1+2;bob
@@ -317,10 +351,14 @@ f,n,d,df+1+2*;m;20;i28;+4;+39a;;"* Balcony Break
 uf,n,4;m;20;i23~25;-13;+32a (+22);;"*
 * Low crush";js;;Delayed Rising Toe Kick;;;;t8-p2-bob-uf,n,4.mp4;Bob-uf,n,4;bob
 f,f,F+3;m;30;i20~24;+6;+10a (+0);;"* Balcony Break
-* Low crush";bbr js;;Perfect Slash;;;;t8-p2-bob-f,f,f+3.mp4;Bob-f,f,F+3;bob
-f,f,F+3+4;m;27;i26~33;+0;+2d;;"* Balcony Break
+* 9 chip damage on block
+* Low crush 3~25
+* Floating state 26~28";bbr chp:9 js3~25 fs26~28;;Perfect Slash;36;;;t8-p2-bob-f,f,f+3.mp4;Bob-f,f,F+3;bob
+f,f,F+3+4;M;27;i26~33;+0;+2cg;;"* Balcony Break
+* Forces tech back roll on hit
 * 5 chip damage on block
-* Low crush";bbr chp:5 js;;Supersize Missile;;;;t8-p2-bob-f,f,f+3+4.mp4;Bob-f,f,F+3+4;bob
+* Low crush 15~35
+* Floating state 36~38";bbr chp:5 js15~35 fs36~38;;Supersize Missile;39;;;t8-p2-bob-f,f,f+3+4.mp4;Bob-f,f,F+3+4;bob
 ws1;m;11;i13~15;-11;+0;;* Elbow;elb;;;;;;t8-p2-bob-ws1.mp4;Bob-ws1;bob
 ws1,2;m, h;11, 23;i13~15, i24~25;-5;+8a (-1);;"* Heat Engager
 
@@ -371,13 +409,14 @@ H.BAL.1,4;m, m,m (t);16, 11,20 (14);i15~17, i24~25;+4;+0d;;"* Floor Break
 * Low crush 23~58
 * Floating state 59~73";fbr js23~58 fs59~73;;Lyonnaise Lockdown à la Carte;27;;;t8-p2-bob-bal.1,h.4.mp4;Bob-BAL.1,H.4;bob
 BAL.2;m;21;i23~24;-8;+12g;;"* Balcony Break
-* Homing";bbr hom;;Galette Slicer;;;;t8-p2-bob-bal.2.mp4;Bob-BAL.2;bob
+* Homing
+* Strong Aerial Tailspin";bbr hom;;Galette Slicer;;;;t8-p2-bob-bal.2.mp4;Bob-BAL.2;bob
 BAL.3;m;25;i24~25;+4;+17a (+0);;"* Balcony Break
 * Tornado
 * Low crush";bbr trn js;;Roulette Cutter;;;;t8-p2-bob-bal.3.mp4;Bob-BAL.3;bob
 BAL.4;l;14;i23~26;-24;+27d;+25a;"*
 * High crush";cs;;Stealing Home;;;;t8-p2-bob-bal.4.mp4;Bob-BAL.4;bob
-BAL.3+4;m;28;i29~33;i13c;+13d;;"* Floor Break
+BAL.3+4;m;28;i29~33;-13c;+13d;;"* Floor Break
 * Low crush";fbr js;;Perfect Press;;;;t8-p2-bob-bal.3+4.mp4;Bob-BAL.3+4;bob
 BT.d+2;m;17;i15~16;-9;+14a (+5);+59cs;* Balcony Break;bbr;;Plague Pick;;;;t8-p2-bob-bt.d+2.mp4;Bob-BT.d+2;bob
 hFC.1;sl;5;i10;-5;+6;;"* Transition to r24 with f
