@@ -13,10 +13,19 @@ function Nav({ navData }: NavProps) {
 
   // The row scrolls horizontally when it overflows on small screens, so the
   // active link can start off-screen when landing directly on a deep link.
+  // scrollIntoView is not an option here: on a hash deep link the browser has
+  // already scrolled the page down past the nav, so it would also scroll the
+  // page back up to reveal the nav. Move the scroll container itself instead,
+  // which leaves the vertical scroll position untouched.
   useEffect(() => {
-    navRef.current
-      ?.querySelector('[aria-current="page"]')
-      ?.scrollIntoView({ inline: 'center', block: 'nearest' });
+    const nav = navRef.current;
+    const activeLink = nav?.querySelector('[aria-current="page"]');
+    if (!nav || !activeLink) return;
+
+    const navRect = nav.getBoundingClientRect();
+    const linkRect = activeLink.getBoundingClientRect();
+    nav.scrollLeft +=
+      linkRect.left - navRect.left - (navRect.width - linkRect.width) / 2;
   }, []);
 
   return (
