@@ -5,8 +5,8 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import ewgf from '~/images/t8/externalResources/ewgf.webp';
-import naGuide from '~/images/t8/externalResources/naguide.webp';
 import sidestepChart from '~/images/t8/externalResources/sidestep-chart.webp';
+import tekkenGuess from '~/images/t8/externalResources/tekken-guess.svg';
 import tekkenLibrary from '~/images/t8/externalResources/tekken-library.webp';
 import tournamentFinder from '~/images/t8/externalResources/tournament-finder.webp';
 import wavuWank from '~/images/t8/externalResources/wavu-wank.webp';
@@ -42,11 +42,10 @@ const data: ExternalResourceLink[] = [
       'A database with all online ranked games and a precise rating system inspired by chess',
   },
   {
-    name: 'NaGuide',
-    url: 'https://www.naguide.com/tekken-8-cheat-sheets-for-all-characters/',
-    imageUrl: naGuide,
-    description:
-      'A website with a collection of visual cheat sheets for characters',
+    name: 'Tekken Guess',
+    url: 'https://tekkenguess.com/',
+    imageUrl: tekkenGuess,
+    description: 'Various quizzes like guess the rank, move or stage music',
   },
   {
     name: 'Sidestep chart',
