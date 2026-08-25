@@ -38,14 +38,14 @@ export const mods: Mod[] = [
     ],
   },
   {
-    name: 'Potato Stages v2',
+    name: 'Great, Another Potato Mod',
     description:
-      'Strips visual clutter out of the stages, giving simplified low detail versions of 13 arenas. Useful for better performance and fewer distractions.',
+      'Strips the stages down to just the floor and the walls, DLC stages included. Useful for better performance and fewer distractions. It ships as one pack, so it applies to every supported stage at once rather than letting you pick and choose.',
     imageUrl: potatoStages,
     links: [
       {
         label: 'Download',
-        url: 'https://tekkenmods.com/mod/3242/tekken-8-potato-stages-v2',
+        url: 'https://tekkenmods.com/mod/4452/great-another-potato-mod',
       },
     ],
   },
