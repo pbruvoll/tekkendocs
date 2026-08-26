@@ -183,6 +183,10 @@ export default function MoveRoute() {
             <Table.Cell>{move.recoveryState || 'N/A'}</Table.Cell>
           </Table.Row>
           <Table.Row>
+            <Table.RowHeaderCell>Total frames</Table.RowHeaderCell>
+            <Table.Cell>{move.totalFrames || 'N/A'}</Table.Cell>
+          </Table.Row>
+          <Table.Row>
             <Table.RowHeaderCell>Notes</Table.RowHeaderCell>
             <Table.Cell>
               {move.notes?.split('\n').map((line, index) => (

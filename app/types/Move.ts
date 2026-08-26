@@ -17,6 +17,7 @@ export type Move = {
   video?: string;
   recovery?: string;
   recoveryState?: string;
+  totalFrames?: string;
   characterId?: string;
 };
 
