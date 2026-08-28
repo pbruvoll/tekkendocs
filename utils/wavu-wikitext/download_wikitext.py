@@ -105,7 +105,10 @@ for character in characters:
     if character not in wikitext_by_character:
         continue
     output_file_path = os.path.join(OUTPUT_DIR, to_file_name(character))
-    # newline="" keeps the "\n" line endings wavu uses, also on windows
-    with open(output_file_path, "w", encoding="utf-8", newline="") as output_file:
-        output_file.write(wikitext_by_character[character])
+    # wavu gives "\n", which python turns into the line ending of
+    # the system. The wiki normalizes the line endings when a page is saved,
+    # so the files can still be pasted back into wavu
+    wikitext = wikitext_by_character[character].replace("\r\n", "\n")
+    with open(output_file_path, "w", encoding="utf-8") as output_file:
+        output_file.write(wikitext)
     print("  " + character + " -> " + output_file_path)
