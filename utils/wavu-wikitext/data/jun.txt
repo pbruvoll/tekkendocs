@@ -1,0 +1,3593 @@
+{{Navbox Jun}}
+{{Navbox movelist}}
+
+== Kazama Essence (Install) ==
+{| class="wikitable"
+| {{MoveDataIcon|color=blue|Kazama Essence is accumulated by landing certain moves on hit or block
+}}
+|}
+{| class="wikitable sortable mw-collapsible mw-collapsed wikitable"
+|+ style="white-space: nowrap" | Moves that grant Kazama Essence on hit or block
+|-
+! Move !! Essence Gained On Hit !! Essence Gained On Block & Airborne Hit
+|-
+|2+3||5||5 (& on whiff)
+|-
+|H.2+3, d+1+2, f,F+1+2, GEN.3,2, MIA.1||8||6
+|-
+| 2,1,4,1, df+2,1+2, uf+1, FC.df+1 || 10 || 7
+|-
+|f+2,1+2, MIA.2 ||6 (16 w/ Heat activation) ||5
+|-
+|f+1+2, b+2,1,2, b+3,2, uf+2, ws1,1,2, IZU.2, MIA.1+2||6||5
+|-
+|GEN.1,H.1+2||5||5
+|}
+{| class="wikitable sortable mw-collapsible mw-collapsed wikitable"
+|+ style="white-space: nowrap" | Moves that grant Kazama Essence on hit only
+|-
+! Move !! Essence Gained !! Essence Gained On Airborne Hit
+|-
+| 1,1, 3,1, f+1, 1,2,2, f+3,2, u+2, SS.2, IZU.1,1, IZU.f+1+2  || 6 || 5
+|-
+| 3+4 || 6 || 6
+|-
+| db+1,1,1+2 || 10 || 7
+|-
+| uf+4,3|| 5 || 5
+|-
+|IZU.4,1||20||20 on airborne hit
+|-
+|IZU.1+3/2+4||8||n/a
+|-
+| GEN.2 || 8 || 8
+|-
+| f+3+4 GEN Parry|| 20 || n/a
+|-
+|Heat Engager activation||10 || n/a 
+|}
+{| class="wikitable"
+| {{MoveDataIcon|color=blue|At 100 Essence, Jun gains Divine Aura and the following Kazama's Power moves are empowered: d1+2 / IZU.4,1 / MIA.2
+
+Essence level persists between rounds.
+}}
+|}
+
+== Heat ==
+
+{| class="wikitable"
+| {{MoveDataIcon|color=blue|Allows the use of Kazama's Power (health reducing move) at a 50% reduced health cost (f+2,1+2 / df+2,1+2 / d+1+2etc.)}}
+|-
+| {{MoveDataIcon|color=blue|Allows the use of the powered up version of Inner Peace (H.f+1+2) with built-in parry}}
+|}
+
+{{MoveDataHeader}}
+{{MoveInherit|Generic-2+3
+|id=Jun-2+3
+|alt=IZU.2+3
+|notes={{Plainlist|
+* {{HeatBurst}}
+* Cancel to r45 with b,b on frame 42
+* 2 chip damage on block
+* 12 chip damage on hit
+* Only deals recoverable damage
+* Cannot cause a K.O.
+* Gain 5 Kazama Essence on Heat Burst activation
+}}
+}}
+{{Move
+|id=Jun-H.2+3
+|parent=
+|input=H.2+3
+|alt=H.IZU.2+3
+|name=Yomotsu Ooyumi
+|target=m,m
+|damage=20,30
+|startup=i13 i32~75
+|block=-6~+37g
+|hit=+21a~+64a (-5~+38)
+|ch=
+|crush=
+|recv=r1
+|tot=76
+|range=
+|tracksLeft=
+|tracksRight=
+|notes={{Plainlist|
+* {{HeatSmash}}
+* {{BB}}
+* Restores 32 recoverable on hit (16 on block)
+* 10 chip damage on block
+* Gain 8 Kazama Essence on normal hit and 6 on block or airborne hit
+}}
+}}
+{{MoveQuery|Jun-H.GEN.1,1+2}}
+{{Move
+|id=Jun-H.f+1+2,P
+|parent=
+|input=H.f+1+2,P
+|name=
+|target=h
+|damage=0
+|startup=i12
+|block=
+|hit=+40g
+|ch=
+|crush=ps5~
+|recv=r30 MIA
+|tot=42
+|range=
+|tracksLeft=
+|tracksRight=
+|notes={{Plainlist|
+* Sabaki, parries mid or high punches or kicks
+* Consumes 240F of remaining Heat time}}
+}}
+{{MoveQuery|Jun-1+2}}
+{{MoveQuery|Jun-f+2,1+2}}
+{{MoveQuery|Jun-IZU.3}}
+{{MoveQuery|Jun-MIA.2}}
+{{MoveQuery|Jun-SS.4}}
+
+== n == 
+{{MoveDataHeader}}
+{{MoveInherit|Generic-1
+|id=Jun-1
+}}
+{{Move
+|id=Jun-1,1
+|num=15
+|parent=Jun-1
+|input=,1
+|name=Suikei > Izumo Smash
+|target=,m
+|damage=,15
+|startup=,i25
+|block=-1
+|hit=+8
+|ch=[[Jun combos#Mini-combos|+13]]
+|crush=
+|recv=r20 IZU
+|tot=56
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-1,1.mp4
+|notes={{Plainlist|
+* Move can be delayed by 1f
+* Input can be delayed by 2f
+* Interrupt with i7
+* Transition to standing with B (t64 r28) 
+* Restores 2 health and 2 recoverable on hit
+* Gain 6 Kazama Essence on normal hit and 5 on airborne hit
+}}
+}}
+{{Move
+|id=Jun-1,2
+|num=16
+|parent=Jun-1
+|input=,2
+|name=Spear Step
+|target=,h
+|damage=,8
+|startup=,i16
+|block=-3
+|hit=+6
+|ch=
+|crush=
+|recv=r24
+|tot=52
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-1,2.mp4
+|notes={{Plainlist|
+* Jail from 1st attack with 2f delay
+* Combo from 1st hit with 2f delay
+* Transition to r16 SS with u_d (+1/-13, +10g/-4?)
+** r16 when attacking in SS stance
+** r30? when exiting SS stance
+}}
+}}
+{{Move
+|id=Jun-1,2,2
+|num=17
+|parent=Jun-1,2
+|input=,2
+|name=Spear Step > Izumo Strike
+|target=,h
+|damage=,12
+|startup=,i16~17
+|block=+4
+|hit=+11
+|ch=+20c
+|crush=
+|recv=r39 IZU
+|tot=88
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-1,2,2.mp4
+|notes={{Plainlist|
+* {{Homing}}
+* Combo from 2nd hit with 9F delay
+* Move cannot be interrupted (Jails attack inputs with 1F delay)
+* Opponent can buffer FC actions on 2nd block
+* Restores 2 health on hit
+* Gain 6 Kazama Essence on normal hit and 5 on airborne hit}}
+}}
+{{Move
+|id=Jun-1,2,4
+|num=18
+|parent=Jun-1,2
+|input=,4
+|name=Spear Step > Spin Kick
+|target=,m
+|damage=,16
+|startup=,i27~28
+|block=-12
+|hit=+5
+|ch=+15a (+6)
+|crush=
+|recv=r34
+|tot=90
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-1,2,4.mp4
+|notes={{Plainlist|
+* {{MoveDataIcon|color=green|1=Balcony Break (airborne)}}
+* {{WallCrush|+17g on hit and 3 chip damage}}
+* Not a true combo on 2nd hit or CH (bug? breaks neutral guard)
+* Interrupt with i5
+* Input can be delayed 9f}}
+}}
+{{Move
+|id=Jun-1,3
+|num=19
+|parent=Jun-1
+|input=,3
+|name=Suiren Leg Scythe
+|target=,L
+|damage=,12
+|startup=,i23
+|block=-12
+|hit=+2
+|ch=+6c
+|crush=
+|recv=r31
+|tot=65
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-1,3.mp4
+|notes={{Plainlist|
+* Combo from 1st CH with 2f delay
+* Interrupt with i5 from 1st block}}
+}}
+{{Move
+|id=Jun-2
+|parent=
+|input=2
+|name=Right Jab
+|target=h
+|damage=7
+|startup=i12
+|block=-4
+|hit=+7
+|ch=
+|crush=
+|recv=r23
+|tot=35
+|range=
+|tracksLeft=
+|tracksRight=
+|notes=
+}}
+{{Move
+|id=Jun-2,1
+|parent=Jun-2
+|input=,1
+|name=
+|target=,m
+|damage=,9
+|startup=,i21
+|block=-6
+|hit=+7
+|ch=
+|crush=
+|recv=r25
+|tot=58
+|range=
+|tracksLeft=
+|tracksRight=
+|notes={{Plainlist|
+* {{Elbow}}
+* Combo from 1st hit with 9f delay
+* Interrupt with i1
+* Input can be delayed 10f}}
+}}
+{{Move
+|id=Jun-2,1,4
+|parent=Jun-2,1
+|input=,4
+|name=
+|target=,m
+|damage=,12
+|startup=,i10
+|block=-12
+|hit=-1
+|ch=
+|crush=
+|recv=r31
+|tot=74
+|range=
+|tracksLeft=
+|tracksRight=
+|notes={{Plainlist|
+* {{Knee}}
+* Jail from 2nd block
+* Combo from 1st hit}}
+}}
+{{Move
+|id=Jun-2,1,4,1
+|num=20
+|parent=Jun-2,1,4
+|input=,1
+|name=Byakuren Tsukinuki
+|target=,m
+|damage=,30
+|startup=,i30
+|block=-9
+|hit=+10a (+1)
+|ch=+42a (-5)
+|crush=
+|recv=r34
+|tot=107
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-2,1,4,1.mp4
+|notes={{Plainlist|
+* {{BB}}
+* {{Weapon}} (Projectile)
+* Combo from 3rd CH
+* Move can be delayed 10f
+* Interrupt with i10
+* Whiffs vs SWL from 1st block
+* 9 chip damage on block
+* Deals 6 damage to self (4 recoverable)
+* Unparryable by traditional parries, Asuka, Nina, etc
+* Gain 10 Kazama Essence on normal hit and 7 on block or airborne hit}}
+}}
+{{Move
+|id=Jun-2,1,4,3
+|num=21
+|parent=Jun-2,1,4
+|input=,3
+|name=Byakuren Tamasudare
+|target=,h
+|damage=,21
+|startup=,i25
+|block=-9
+|hit=+13a (+4)
+|ch=
+|crush=
+|recv=r37
+|tot=105
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-2,1,4,3.mp4
+|notes={{Plainlist|
+* {{BB}}
+* Combo from 3rd CH with 5F delay
+* Interrupt with i5
+* Input can be delayed 10f}}
+}}
+{{Move
+|id=Jun-2,1,1+2
+|num=22
+|parent=Jun-2,1
+|input=,1+2
+|name=Byakuren Misogi
+|target=,h
+|damage=,21
+|startup=,i22
+|block=+2
+|hit=+22cg
+|ch=
+|crush=
+|recv=r26
+|tot=85
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-2,1,1+2.mp4
+|notes={{Plainlist|
+* {{BB}}
+* {{Elbow}}
+* Combo from 2nd CH with 9f delay
+* Interrupt with i6 from 2nd block
+* Forces tech backroll on hit}}
+}}
+{{Move
+|id=Jun-3
+|parent=
+|input=3
+|name=Shion
+|target=m
+|damage=14
+|startup=i14~15
+|block=-10
+|hit=+2
+|ch=
+|crush=
+|recv=r31
+|tot=46
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:Jun-23.mp4
+|notes={{BB}}
+}}
+{{Move
+|id=Jun-3,1
+|parent=Jun-3
+|input=,1
+|name=Shion Kannagi
+|target=,h
+|damage=,20
+|startup=i14~15
+|block=-4
+|hit=+22cg
+|ch=
+|crush=
+|recv=r29
+|tot=71
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-3,1.mp4
+|notes={{Plainlist|
+* {{Tornado}}
+* {{BB}}
+* Combo from 1st hit with 9F delay
+* Interrupt with i4
+* Forces tech back roll on hit
+* Move can be delayed by 6F
+* Input can be delayed by 9F
+* Gain 6 Kazama essence on normal hit and 5  on airborne hit
+}}
+}}
+{{Move
+|id=Jun-4
+|parent=
+|input=4
+|name=Magic Four
+|target=h
+|damage=17
+|startup=i12
+|block=-9
+|hit=+7
+|ch=+32d
+|crush=
+|recv=r28
+|tot=40
+|range=
+|tracksLeft=
+|tracksRight=
+|notes=
+}}
+{{Move
+|id=Jun-1+2
+|num=24
+|parent=
+|input=1+2
+|name=Shunkei
+|target=m
+|damage=26
+|startup=i13
+|block=-12
+|hit=+28a
+|ch=
+|crush=
+|recv=r34
+|tot=47
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-1+2.mp4
+|notes={{Plainlist|
+* {{BB}}
+* {{HeatEngager}}
+* {{HeatDash|+5, +43d (+35)}}
+* Gain 10 Kazama Essence on Heat activation
+}}
+}}
+{{Move
+|id=Jun-3+4
+|num=25
+|parent=
+|input=3+4
+|name=Ryuuntsui - Misogi
+|target=m,M,M
+|damage=6,18,20
+|startup=i23~24 i30~31 i16
+|block=-6
+|hit=+26a (+8)
+|ch=
+|crush=js5~33 fs34~36
+|recv=r24
+|tot=55
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-3+4.mp4
+|notes={{Plainlist|
+* {{Spike}}
+* 3rd hit available only as combo from 2nd hit
+* Transition to r22 FC with D on whiff or block
+* Deals 12 damage to self (8 recoverable)
+* Gain 12 Kazama Essence on normal hit and 6 on airborne hit}}
+}}
+{{Move
+|id=Jun-1+4
+|parent=
+|input=1+4
+|name=
+|target=SL,h
+|damage=5,8
+|startup=i14 i17
+|block=-3
+|hit=-3
+|ch=+4
+|crush=
+|recv=r21
+|tot=52
+|range=
+|tracksLeft=
+|tracksRight=
+|notes={{Plainlist|
+* Jail from 1st attack
+* CH advantage listed is for the 2nd hit}}
+}}
+{{Move
+|id=Jun-1+4,2
+|parent=Jun-1+4
+|input=,2
+|name=
+|target=,h
+|damage=,10
+|startup=,i19
+|block=-2
+|hit=+9
+|ch=
+|crush=
+|recv=r21
+|tot=71
+|range=
+|tracksLeft=
+|tracksRight=
+|notes=Combo from 2nd CH
+}}
+{{Move
+|id=Jun-1+4,2,4
+|num=26
+|parent=Jun-1+4,2
+|input=,4
+|name=White Heron Dance
+|target=,m
+|damage=,23
+|startup=,i24
+|block=-15
+|hit=+11a (+2)
+|ch=
+|crush=
+|recv=r34
+|tot=108
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-1+4,2,4.mp4
+|notes=Combo from 3rd CH
+}}
+{{Move
+|id=Jun-1+4,2,d+4
+|num=27
+|parent=Jun-1+4,2
+|input=,d+4
+|name=White Heron Lower Dance
+|target=,L
+|damage=,15
+|startup=,i24~25
+|block=-23~-22
+|hit=+27a
+|ch=
+|crush=,cs10~38
+|recv=r30
+|tot=105
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-1+4,2,d+4.mp4
+|notes=Combo from 3rd CH
+}}
+{{Move
+|id=Jun-1+4,3
+|parent=Jun-1+4
+|input=,3
+|name=
+|target=,m
+|damage=,15
+|startup=,i24~25
+|block=-11~-10
+|hit=+1~+2
+|ch=
+|crush=
+|recv=r29
+|tot=85
+|range=
+|tracksLeft=
+|tracksRight=
+|notes=Combo from 2nd CH
+}}
+{{Move
+|id=Jun-1+4,3,1
+|num=28
+|parent=Jun-1+4,3
+|input=,1
+|name=White Heron Sun Palm
+|target=,m
+|damage=,20
+|startup=,i33~34
+|block=-13~-12
+|hit=+17a (+10)
+|ch=
+|crush=
+|recv=r32
+|tot=120
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-1+4,3,1.mp4
+|notes=
+}}
+{{Move
+|id=Jun-1+4,3,4
+|num=29
+|parent=Jun-1+4,3
+|input=,4
+|name=White Heron Moon Kick
+|target=,L
+|damage=,17
+|startup=,i25~26
+|block=-13~-12
+|hit=+4c~+5c
+|ch=+26a
+|crush=
+|recv=r31
+|tot=111
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-1+4,3,4.mp4
+|notes=Combo from 3rd CH
+}}
+
+== f ==
+{{MoveDataHeader}}
+{{Move
+|id=Jun-f+1
+|num=30
+|parent=
+|input=f+1
+|name=Izumo Smash
+|target=m
+|damage=15
+|startup=i20
+|block=+0
+|hit=+9
+|ch=+14
+|crush=
+|recv=r19 IZU
+|tot=39
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-f+1.mp4
+|notes={{Plainlist|
+* Restores 2 health and 2 recoverable on hit
+* Recover to standing with B (t48 r28) 
+* Gain 6 Kazama Essence on normal hit and 5 on airborne hit
+}}
+}}
+{{Move
+|id=Jun-f+2
+|num=31
+|parent=
+|input=f+2
+|name=Demon Slayer
+|target=M
+|damage=20
+|startup=i17~18
+|block=-18
+|hit=+33a (+23)
+|ch=
+|crush=
+|recv=r36
+|tot=54
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-f+2.mp4
+|notes={{Plainlist|
+* Cancel to r26 FC with D
+* Increased tracking when f2,1+2's input is buffered late
+}}
+}}
+{{Move
+|id=Jun-f+2,1+2
+|num=32
+|parent=Jun-f+2
+|input=,1+2
+|name=Ame-no-Habakiri
+|target=,M
+|damage=,20
+|startup=i29~32
+|block=-9
+|hit=+32a (+17)
+|ch=
+|crush=
+|recv=r30
+|tot=80
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-f+2,1+2.mp4
+|notes={{Plainlist|
+* {{HeatEngager}}
+* {{HeatDash|+5, +42a (+27)}}
+* {{BB}}
+* Jail from 1st attack
+* Chip damage (8) on block
+* Deals 18 damage to self (12 recoverable)
+* Available only on hit or block
+* Gain 16 Kazama Essence on Heat activation
+* Gain 6 Kazama Essence on normal hit and 5 on block or airborne hit}}
+}}
+{{Move
+|id=Jun-f+3
+|parent=
+|input=f+3
+|name=
+|target=m
+|damage=13
+|startup=i16
+|block=-9
+|hit=+7
+|ch=
+|crush=
+|recv=r28
+|tot=44
+|range=
+|tracksLeft=
+|tracksRight=
+|notes={{Plainlist|
+* Enter SS -16 +14g r21 with u_d
+* r21 when attacking after SS
+* r35 when blocking after SS
+}}
+}}
+{{Move
+|id=Jun-f+3,2
+|num=33
+|parent=Jun-f+3
+|input=,2
+|name=Kanbashira > Izumo Strike
+|target=,h
+|damage=,17
+|startup=,i20~21
+|block=+4
+|hit=+11
+|ch=+20c
+|crush=
+|recv=r39 IZU
+|tot=81
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-f+3,2.mp4
+|notes={{Plainlist|
+* {{Homing}}
+* Combo from 1st hit with 10F delay
+* Move can be delayed by 5F
+* Input can be delayed by 10F
+* Interrupt with i5
+* Restores 2 health on hit
+* Gain 6 Kazama Essence on normal hit and 5 on airborne hit}}
+}}
+{{Move
+|id=Jun-f+3,4
+|num=34
+|parent=Jun-f+3
+|input=,4
+|name=Double Kanbashira
+|target=,M
+|damage=,22
+|startup=,i20~22
+|block=-13~-11
+|hit=+28a (+13)
+|ch=
+|crush=
+|recv=r35
+|tot=78
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-f+3,4.mp4
+|notes={{Plainlist|
+* {{Tornado}}
+* Combo from 1st hit with 10F delay
+* Interrupt with i5
+* Move can be delayed by 5F
+* Input can be delayed by 10F}}
+}}
+{{Move
+|id=Jun-f+4
+|num=35
+|parent=
+|input=f+4
+|name=Getsukankyaku
+|target=h
+|damage=21
+|startup=i19~21
+|block=+3~+5
+|hit=+13~+15
+|ch=
+|crush=
+|recv=r23
+|tot=44
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-f+4.mp4
+|notes={{Plainlist|
+* {{MoveDataIcon|color=green|1=Balcony Break (airborne)}}
+* {{Homing}}
+}}
+}}
+{{Move
+|id=Jun-f+1+2
+|num=36
+|parent=
+|input=f+1+2
+|name=Inner Peace
+|target=h
+|damage=(5)
+|startup=i12
+|block=+2
+|hit=+26g
+|ch=+23
+|crush=
+|recv=r24
+|tot=36
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-f+1+2.mp4
+|notes={{Plainlist|
+* {{MoveDataIcon|color=green|1=Balcony Break (airborne)}}
+* Transition to r20 MIA on hit only
+* Deals 5 recoverable damage
+* Cannot cause a K.O.
+* Deals 6 damage to self (4 recoverable)
+* Power up in Heat (ps5~12)
+* Unparryable
+* Gain 6 Kazama Essence on normal hit and 5 on block or airborne hit}}
+}}
+{{Move
+|id=Jun-f+2+3
+|num=38
+|parent=
+|input=f+2+3
+|name=Wheel Kick
+|target=h
+|damage=21
+|startup=i28~29
+|block=+0
+|hit=+25a
+|ch=
+|crush=ps4~15
+|recv=r27
+|tot=56
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-f+2+3.mp4
+|notes={{Plainlist|
+* {{MoveDataIcon|color=green|1=Balcony Break (airborne)}}
+* Punch sabaki
+* Crumple stun launcher (+51a) on parry effect}}
+}}
+
+== df ==
+{{MoveDataHeader}}
+{{Move
+|id=Jun-df+1
+|parent=
+|input=df+1
+|name=Mid Check
+|target=m
+|damage=10
+|startup=i13~14
+|block=-3
+|hit=+8
+|ch=
+|crush=
+|recv=r21
+|tot=35
+|range=
+|tracksLeft=
+|tracksRight=
+|notes=
+}}
+{{Move
+|id=Jun-df+1,1
+|num=39
+|parent=Jun-df+1
+|input=,1
+|name=Habotan
+|target=,m
+|damage=,17
+|startup=,i24~25
+|block=-11
+|hit=+5
+|ch=+13g
+|crush=
+|recv=r29
+|tot=68
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-df+1,1.mp4
+|notes={{Plainlist|
+* Combo from 1st hit
+* Interrupt with i5 from 1st block
+}}
+}}
+{{Move
+|id=Jun-df+1,2
+|num=40
+|parent=Jun-df+1
+|input=,2
+|name=Aya Stitch
+|target=,h
+|damage=,12
+|startup=,i22~23
+|block=-4
+|hit=+6
+|ch=+11
+|crush=
+|recv=r23
+|tot=61
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-df+1,2.mp4
+|notes={{Plainlist|
+* Combo from 1st hit
+* Interrupt with i4 from 1st block
+}}
+}}
+{{Move
+|id=Jun-df+2
+|num=41
+|parent=
+|input=df+2
+|name=Mizuho
+|target=m
+|damage=14
+|startup=i16~17
+|block=-12
+|hit=+29a (+19)
+|ch=
+|crush=
+|recv=r30
+|tot=47
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-df+2.mp4
+|notes={{Plainlist|
+* Launches crouching opponent
+* Increased tracking when f2,1+2's input is buffered late
+}}
+}}
+{{Move
+|id=Jun-df+2,1+2
+|num=42
+|parent=Jun-df+2
+|input=,1+2
+|name=Ame-no-Murakumo
+|target=,M
+|damage=,12
+|startup=i25~26
+|block=-9
+|hit=+38a (+28)
+|ch=
+|crush=
+|recv=r31
+|tot=74
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-df+2,1+2.mp4
+|notes={{Plainlist|
+* Combo from 1st hit
+* Chip damage (4) on block
+* First hit does 8dmg, 20dmg total 
+* Deals 24 damage to self (16 recoverable)
+* Available only on hit or block
+* Gain 10 Kazama Essence on normal hit and 7 on block or airborne hit}}
+}}
+{{Move
+|id=Jun-df+3
+|num=43
+|parent=
+|input=df+3
+|name=Kazakiri
+|target=m
+|damage=22
+|startup=i17
+|block=-8
+|hit=+19a (+10)
+|ch=
+|crush=
+|recv=r31
+|tot=48
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-df+3.mp4
+|notes={{Plainlist|
+* {{Homing}}
+* {{BB}}}}
+}}
+{{Move
+|id=Jun-df+4
+|num=44
+|parent=
+|input=df+4
+|name=Katabami
+|target=m
+|damage=22
+|startup=i15
+|block=-14
+|hit=+48a (+17)
+|ch=+52a
+|crush=
+|recv=r38
+|tot=53
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-df+4.mp4
+|notes={{Plainlist|
+* {{Tornado}}
+* {{MoveDataIcon|color=green|1=Balcony Break (airborne)}}
+* Crumple stun launcher (+52a) on CH}}
+}}
+{{Move
+|id=Jun-df+3+4
+|parent=
+|input=df+3+4
+|name=
+|target=m
+|damage=17
+|startup=i24~25
+|block=-11
+|hit=+1
+|ch=
+|crush=
+|recv=r31
+|tot=56
+|range=
+|tracksLeft=
+|tracksRight=
+|notes=
+}}
+{{Move
+|id=Jun-df+3+4,1
+|num=45
+|parent=Jun-df+3+4
+|input=,1
+|name=Heavenly Sun Palm
+|target=,m
+|damage=,20
+|startup=,i33~34
+|block=-13
+|hit=+17a (+10)
+|ch=
+|crush=
+|recv=r32
+|tot=91
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-df+3+4,1.mp4
+|notes=
+}}
+{{Move
+|id=Jun-df+3+4,4
+|num=46
+|parent=Jun-df+3+4
+|input=,4
+|name=Heavenly Moon Kick
+|target=,L
+|damage=,17
+|startup=,i25~26
+|block=-13
+|hit=+4c
+|ch=+26a
+|crush=
+|recv=r31
+|tot=82
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-df+3+4,4.mp4
+|notes=Combo from 1st CH
+}}
+
+== d ==
+{{MoveDataHeader}}
+{{Move
+|id=Jun-d+2
+|num=47
+|parent=
+|input=d+2
+|name=Narumi
+|target=m
+|damage=18
+|startup=i20~21
+|block=-4c
+|hit=+9c
+|ch=+18a
+|crush=
+|recv=r30 FC
+|tot=51
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-d+2.mp4
+|notes={{Spike}}
+}}
+{{Move
+|id=Jun-d+4
+|parent=
+|input=d+4
+|name=
+|target=L
+|damage=10
+|startup=i15
+|block=-12
+|hit=-1
+|ch=
+|crush=
+|recv=r31
+|tot=46
+|range=
+|tracksLeft=
+|tracksRight=
+|notes=
+}}
+{{Move
+|id=Jun-d+4,4
+|num=48
+|parent=Jun-d+4
+|input=,4
+|name=Suminagashi
+|target=,h
+|damage=,20
+|startup=,i25~26
+|block=-9
+|hit=+13a (+4)
+|ch=
+|crush=
+|recv=r36
+|tot=78
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-d+4,4.mp4
+|notes={{Plainlist|
+* {{BB}}
+* Combo from 1st CH}}
+}}
+{{Move
+|id=Jun-d+1+2
+|num=49
+|parent=
+|input=d+1+2
+|name=Kamudo-no-Tsurugi
+|target=M
+|damage=28
+|startup=i26
+|block=-9
+|hit=+72a (+56)
+|ch=
+|crush=cs8~24
+|recv=r32
+|tot=58
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-d+1+2.mp4
+|notes={{Plainlist|
+* {{Tornado}}
+* Chip damage (11) on block
+* Divine Aura: 12 chip damage on block
+* Divine Aura: +4 damage on hit (32)
+* Deals 12 damage to self (8 recoverable)
+* Unparryable (projectile)
+* Gain 8 Kazama Essence on normal hit and 6 on block or airborne hit
+}}
+}}
+{{Move
+|id=Jun-d+3+4
+|num=50
+|parent=
+|input=d+3+4
+|name=Double Lift Kicks
+|alias=Can Cans
+|target=l,h
+|damage=5,15
+|startup=i14 i24~27
+|block=-25
+|hit=+30a (+20)
+|ch=
+|crush=js5~27 fs28~30
+|recv=r31
+|tot=58
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-d+3+4.mp4
+|notes={{Plainlist| 
+* Combo from 1st CH
+* Jail from 1st attack
+* -6 only if 2nd hit is blocked
+}}
+}}
+
+== db == 
+{{MoveDataHeader}}
+{{Move
+|id=Jun-db+1
+|parent=
+|input=db+1
+|name=
+|target=m
+|damage=7
+|startup=i15~16
+|block=-8
+|hit=+1
+|ch=
+|crush=
+|recv=r28
+|tot=44
+|range=
+|tracksLeft=
+|tracksRight=
+|notes=
+}}
+{{Move
+|id=Jun-db+1,1
+|parent=Jun-db+1
+|input=,1
+|name=
+|target=,m
+|damage=,8
+|startup=,i21
+|block=-11
+|hit=+0
+|ch=
+|crush=
+|recv=r30
+|tot=66
+|range=
+|tracksLeft=
+|tracksRight=
+|notes=Combo from 1st hit
+}}
+{{Move
+|id=Jun-db+1,1,1+2
+|num=51
+|parent=Jun-db+1,1
+|input=,1+2
+|name=Hourai's Dance
+|target=,m,m,m
+|damage=,5,5,20
+|startup=,i17 i26 i49
+|block=-15
+|hit=+21a (+11)
+|ch=
+|crush=
+|recv=r34
+|tot=121
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-db+1,1,1+2.mp4
+|notes={{Plainlist|
+* {{BB}}
+* Combo from any hit
+* Restores 4 health and 4 recoverable
+* Unparryable
+* Gain 10 Kazama Essence on normal hit and 7 on airborne hit}}
+}}
+{{Move
+|id=Jun-db+2
+|num=52
+|parent=
+|input=db+2
+|name=Ayame
+|target=L
+|damage=17
+|startup=i23~24
+|block=-12
+|hit=+2
+|ch=+14g
+|crush=cs15~54
+|recv=r30 FC
+|tot=54
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-db+2.mp4
+|notes=
+}}
+{{Move
+|id=Jun-db+3
+|num=53
+|parent=
+|input=db+3
+|name=Leg Scythe
+|target=L
+|damage=14
+|startup=i18
+|block=-12
+|hit=+2
+|ch=+6c
+|crush=
+|recv=r31
+|tot=49
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-db+3.mp4
+|notes=
+}}
+{{Move
+|id=Jun-db+4
+|parent=
+|input=db+4
+|name=
+|target=L
+|damage=14
+|startup=i22~24
+|block=-11~-9
+|hit=+0~+2
+|ch=+3~+5
+|crush=cs6~41
+|recv=r28
+|tot=52
+|range=
+|tracksLeft=
+|tracksRight=
+|notes=Transition to r28 FC with D
+}}
+{{Move
+|id=Jun-db+4,4
+|parent=Jun-db+4
+|input=,4
+|name=
+|target=,L
+|damage=,15
+|startup=,i31~33
+|block=-7~-5
+|hit=+4~+6
+|ch=+35a
+|crush=,cs1~49
+|recv=r24
+|tot=80
+|range=
+|tracksLeft=
+|tracksRight=
+|notes={{Plainlist|
+* Combo from 1st CH
+* Transition to r28 FC with D}}
+}}
+{{Move
+|id=Jun-db+4,4,4
+|num=54
+|parent=Jun-db+4,4
+|input=,4
+|name=Kariashi
+|target=,L
+|damage=,16
+|startup=,i31~33
+|block=-7~-5
+|hit=+4~+6
+|ch=+35a
+|crush=,cs1~49
+|recv=r24
+|tot=112
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-db+4,4,4.mp4
+|notes={{Plainlist|
+* Transition to r28 FC with D}}
+}}
+{{Move
+|id=Jun-db+4,1+4
+|num=55
+|parent=Jun-db+4
+|input=,1+4
+|name=Kariashi Hakuro
+|target=,sl,h
+|damage=,5,8
+|startup=,i22 i17
+|block=-3
+|hit=-3
+|ch=+4
+|crush=
+|recv=r21
+|tot=92
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-db+4,1+4.mp4
+|notes={{Plainlist|
+* Combo from 1st hit
+* Links to 1+4 extensions
+* Alternate inputs:
+** db+4,4,1+2
+** db+4,4,4,1+2
+* CH advantage listed is for the last hit}}
+}}
+
+== b ==
+{{MoveDataHeader}}
+{{Move
+|id=Jun-b+1
+|parent=
+|input=b+1
+|name=Violet
+|target=L
+|damage=19
+|startup=i29~30
+|block=-10~-9
+|hit=+6~+7
+|ch=+0d
+|crush=cs6~58
+|recv=r28 FC
+|tot=58
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:Jun-56.mp4
+|notes={{Plainlist|
+* Cancel to r39 FC with D on frame 25
+* Transition to attack throw on CH, +22 damage, total 44
+* Opponent recovers FDFA on CH}}
+}}
+{{Move
+|id=Jun-b+2
+|parent=
+|input=b+2
+|name=
+|target=m
+|damage=10
+|startup=i14~15
+|block=-9
+|hit=+2
+|ch=
+|crush=
+|recv=r29
+|tot=44
+|range=
+|tracksLeft=
+|tracksRight=
+|notes=
+}}
+{{Move
+|id=Jun-b+2,1
+|parent=Jun-b+2
+|input=,1
+|name=
+|target=,h
+|damage=,7
+|startup=,i15~16
+|block=-9
+|hit=+2
+|ch=
+|crush=
+|recv=r27
+|tot=68
+|range=
+|tracksLeft=
+|tracksRight=
+|notes={{Plainlist|
+* {{Elbow}}
+* Combo from 1st hit with 15f delay
+* Enter GEN +0 +11g r18 with F
+* Enter MIA +0 +11g r18 with B
+* Move can be delayed by 5F
+* Input can be delayed by 15F}}
+}}
+{{Move
+|id=Jun-b+2,1,1
+|num=58
+|parent=Jun-b+2,1
+|input=,1
+|name=Ryuen Saika Shikei
+|target=,m
+|damage=,20
+|startup=,i25
+|block=-13
+|hit=+13a (+4)
+|ch=
+|crush=
+|recv=r32
+|tot=98
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-b+2,1,1.mp4
+|notes={{Plainlist|
+* {{BB}}
+* Combo from 2nd CH with 4f delay
+* Input can be delayed 14f}}
+}}
+{{Move
+|id=Jun-b+2,1,2
+|num=59
+|parent=Jun-b+2,1
+|input=,2
+|name=Ryuen Saika Renken
+|target=,M
+|damage=,22
+|startup=,i23
+|block=-9
+|hit=+30a (+15)
+|ch=+69a (+53)
+|crush=
+|recv=r35
+|tot=99
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-b+2,1,2.mp4
+|notes={{Plainlist|
+* {{Tornado}}
+* Combo from 2nd CH with 6f delay
+* Input can be delayed 14f
+* Chip damage (9) on block
+* Deals 12 damage to self (8 recoverable)
+* Unparryable
+* Gain 6 Kazama Essence on normal hit and 5 on block or airborne hit}}
+}}
+{{Move
+|id=Jun-b+2,1,4
+|num=60
+|parent=Jun-b+2,1
+|input=,4
+|name=Ryuen Saika Renshuu
+|target=,h
+|damage=,24
+|startup=,i23~25
+|block=-8~-7
+|hit=+16c
+|ch=
+|crush=
+|recv=r30
+|tot=96
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-b+2,1,4.mp4
+|notes={{Plainlist|
+* {{BB}}
+* Combo from 2nd CH with 6f delay
+* Input can be delayed 14f
+* Forces tech backroll on hit}}
+}}
+{{Move
+|id=Jun-b+2,2
+|num=61
+|parent=Jun-b+2
+|input=,2
+|name=Ryuen Magushi
+|target=,m
+|damage=,10
+|startup=,i16~17
+|block=-9
+|hit=+3
+|ch=
+|crush=
+|recv=r27
+|tot=44
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-b+2,2.mp4
+|notes=Combo from 1st hit with 5f? delay
+}}
+{{Move
+|id=Jun-b+3
+|num=62
+|parent=
+|input=b+3
+|alias=Backflip
+|name=Dragon Wheel Kick
+|target=m
+|damage=20
+|startup=i16~17
+|block=-19~-18
+|hit=+22a (+12)
+|ch=
+|crush=js10~37 fs38~40
+|recv=r37
+|tot=54
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-b+3.mp4
+|notes=
+}}
+{{Move
+|id=Jun-b+3,2
+|num=63
+|parent=Jun-b+3
+|input=,2
+|name=Ryuusha Renken
+|target=,M
+|damage=,22
+|startup=,i20
+|block=-9
+|hit=+30a (+15)
+|ch=+69a (+53)
+|crush=
+|recv=r35
+|tot=97
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-b+3,2.mp4
+|notes={{Plainlist|
+* {{Tornado}}
+* Combo from 1st hit
+* Chip damage (8) on block
+* Deals 12 damage to self (8 recoverable)
+* Unparryable
+* Gain 6 Kazama Essence on normal hit and 5 on block or airborne hit}}
+}}
+{{Move
+|id=Jun-b+3,4
+|num=64
+|parent=Jun-b+3
+|input=,4
+|name=Dragon Wheel Leg Cutter
+|target=,L
+|damage=,14
+|startup=,i20~22
+|block=-11
+|hit=+0~+2
+|ch=+3
+|crush=,cs1~42
+|recv=r28
+|tot=92
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-b+3,4.mp4
+|notes={{Plainlist|
+* Combo from 1st hit
+* Links to db+4 extensions
+* Transition in r28 FC with D}}
+}}
+{{Move
+|id=Jun-b+4
+|parent=
+|input=b+4
+|name=
+|target=m
+|damage=14
+|startup=i13~14
+|block=-7
+|hit=+5
+|ch=
+|crush=
+|recv=r28
+|tot=42
+|range=
+|tracksLeft=
+|tracksRight=
+|notes={{Knee}}
+}}
+{{Move
+|id=Jun-b+4,2
+|num=65
+|parent=Jun-b+4
+|input=,2
+|name=Shirabyoushi
+|target=,M
+|damage=,17
+|startup=,i22~23
+|block=-13
+|hit=+12g
+|ch=+28a (+18)
+|crush=
+|recv=r31
+|tot=68
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-b+4,2.mp4
+|notes=Combo from 1st hit with 8f delay
+}}
+{{Move
+|id=Jun-b+3+4
+|num=67
+|parent=
+|input=b+3+4
+|name=Omoikane
+|target=m
+|damage=25
+|startup=i22~23
+|block=-12
+|hit=+9a (+0)
+|ch=
+|crush=pc7~27
+|recv=r35
+|tot=64
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-b+3+4.mp4
+|notes={{Plainlist|
+* {{BB}}
+* -8 on block after absorbing an attack}}
+}}
+
+== u ==
+{{MoveDataHeader}}
+{{MoveQuery|Jun-u+2}}
+{{Move
+|id=Jun-u+4
+|num=70
+|parent=
+|input=u+4
+|alt=ub+4
+|name=Chikura
+|target=m
+|damage=21
+|startup=i22~23
+|block=-3~-2
+|hit=+22a
+|ch=
+|crush=js8~28 fs29~31
+|recv=r30
+|tot=53
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-u+4.mp4
+|notes={{Plainlist|
+* {{MoveDataIcon|color=green|1=Balcony Break (airborne)}}
+}}
+}}
+{{Move
+|id=Jun-uf+1
+|num=71
+|parent=
+|input=uf+1
+|name=Divine Exile - Heaven
+|target=h,h
+|damage=6,30
+|startup=i10 i26
+|block=-14
+|hit=+12a (+3)
+|ch=
+|crush=
+|recv=r34
+|tot=44
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-uf+1.mp4
+|notes={{Plainlist|
+* {{BB}}
+* Jail from 1st attack
+* Deals 12 damage to self (8 recoverable)
+* 2nd hit available only on hit or block
+* Recovery listed is for the 1st hit
+* Gain 10 Kazama Essence on normal hit and 7 on block or airborne hit}}
+}}
+{{Move
+|id=Jun-uf+2
+|num=72
+|parent=
+|input=uf+2
+|name=Totsuka-no-Tsurugi
+|target=M
+|damage=24
+|startup=i19
+|block=-9
+|hit=+30a (+15)
+|ch=+69a (+53)
+|crush=cs6~16
+|recv=r35
+|tot=54
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-uf+2.mp4
+|notes={{Plainlist|
+* {{Tornado}}
+* 9 chip damage on block
+* Deals 12 damage to self (8 recoverable)
+* Unparryable
+* Gain 6 Kazama Essence on normal hit and 5 on block or airborne hit}}
+}}
+{{Move
+|id=Jun-uf+3
+|parent=
+|input=uf+3
+|alt={{dotlist|
+* ub+3
+* u+3}}
+|name=Iwato
+|target=m
+|damage=17
+|startup=i20~21
+|block=-6
+|hit=+5
+|ch=+30a
+|crush=js11~27 fs28~30
+|recv=r24
+|tot=45
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:Jun-73.mp4
+|notes={{MoveDataIcon|color=green|1=Balcony Break (airborne)}}
+}}
+{{Move
+|id=Jun-uf+4
+|parent=
+|input=uf+4
+|name=
+|target=m
+|damage=10
+|startup=i16~18
+|block=-20
+|hit=-9
+|ch=
+|crush=js10~40 fs41~43
+|recv=r42
+|tot=60
+|range=
+|tracksLeft=
+|tracksRight=
+|notes=
+}}
+{{Move
+|id=Jun-uf+4,3
+|num=74
+|parent=Jun-uf+4
+|input=,3
+|name=Housenka - Misogi
+|target=,m,M
+|damage=,8,20
+|startup=,i29 i18
+|block=-12
+|hit=+84a (+68)
+|ch=
+|crush=,js1~20 fs21~23
+|recv=r31
+|tot=80
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-uf+4,3.mp4
+|notes={{Plainlist|
+* {{Tornado}}
+* Combo from 1st hit
+* Transition to MIA on hit only
+* 3rd hit available only as combo from 2nd hit
+* 3rd hit deals 12 damage to self (8 recoverable)
+* Gain 5 Kazama Essence on normal hit or airborne hit}}
+}}
+{{Move
+|id=Jun-ub+1+2
+|num=68
+|parent=
+|input=ub+1+2
+|name=Shinki
+|target=m!
+|damage=50
+|startup=i57~58
+|block=
+|hit=+6a
+|ch=
+|crush=
+|recv=r37
+|tot=95
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-b+2+3.mp4
+|notes={{BB}}
+}}
+{{Move
+|id=Jun-uf+3+4
+|num=75
+|parent=
+|input=uf+3+4
+|alt={{Dotlist|
+* ub+3+4
+* u+3+4}}
+|name=Saiuntsui
+|target=m,M
+|damage=5,21
+|startup=i20~23 i2~6
+|block=-8~-4
+|hit=+18a
+|ch=
+|crush=js9~30
+|recv=r28 FC
+|tot=58
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-uf+3+4.mp4
+|notes={{Plainlist|
+* {{Spike}}
+}}
+}}
+
+== Motion Input ==
+{{MoveDataHeader}}
+{{Move
+|id=Jun-f,F+2
+|parent=
+|input=f,F+2
+|name=
+|target=m
+|damage=16
+|startup=i16~17
+|block=-12
+|hit=+3
+|ch=
+|crush=
+|recv=r31
+|tot=48
+|range=
+|tracksLeft=
+|tracksRight=
+|notes={{Plainlist|
+* Transition to GEN +1 +16g r18 with F on frame 21 with 10F delay
+* Transition to MIA +1 +16g r18 with B on frame 21 with 10F delay
+}}
+}}
+{{Move
+|id=Jun-f,F+2,2
+|num=76
+|parent=Jun-f,F+2
+|input=,2
+|name=Suiei Ura Saika
+|target=,m
+|damage=,22
+|startup=,i21
+|block=-13
+|hit=+8a
+|ch=+53a
+|crush=
+|recv=r37
+|tot=75
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-f,f+2,2.mp4
+|notes={{Plainlist|
+* {{Tornado}}
+* {{BB}}
+* {{Elbow}}
+* Combo from 1st hit with 8f delay
+* Interrupt with i1
+* +7F crumple stun on CH
+}}
+}}
+{{Move
+|id=Jun-f,F+2,3
+|num=77
+|parent=Jun-f,F+2
+|input=,3
+|name=Suiei Kagetsu
+|target=,h
+|damage=,22
+|startup=,i20~21
+|block=-8~-7
+|hit=+29a (+14)
+|ch=
+|crush=
+|recv=r35
+|tot=73
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-f,f+2,3.mp4
+|notes=Combo from 1st hit with 8f delay
+}}
+{{Move
+|id=Jun-f,F+3
+|parent=
+|input=f,F+3
+|name=
+|target=m
+|damage=23
+|startup=i18~19
+|block=-9
+|hit=+2
+|ch=
+|crush=
+|recv=r32
+|tot=51
+|range=
+|tracksLeft=
+|tracksRight=
+|notes={{Plainlist|
+* {{Homing}}
+* {{MoveDataIcon|color=green|1=Balcony Break (airborne)}}
+}}
+}}
+{{Move
+|id=Jun-f,F+3,3+4
+|num=78
+|parent=Jun-f,F+3
+|input=,3+4
+|name=Yukimiguruma
+|target=,m,m
+|damage=,12,15
+|startup=,i35~36 i5~6
+|block=+3
+|hit=+14a
+|ch=
+|crush=,fs25~39
+|recv=r25
+|tot=86
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-f,f+3,3+4.mp4
+|notes={{Plainlist|
+* {{Spike}}
+* 7 chip damage on block
+* Interrupt with i11 from 1st block
+* Interrupt with i5 from 1st hit
+* Whiffs vs SSR from 1st block
+* +14d on BT hit}}
+}}
+{{Move
+|id=Jun-f,F+1+2
+|num=79
+|parent=
+|input=f,F+1+2
+|name=Tokkei - Misogi
+|target=m
+|damage=32
+|startup=i22
+|block=+6
+|hit=+23a (+13)
+|ch=
+|crush=
+|recv=r32
+|tot=54
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-f,f+1+2.mp4
+|notes={{Plainlist|
+* {{BB}}
+* Transition to +9, +26a (+16) GEN with F
+* Transition to +9, +26a (+16) MIA with B
+* 20?f hitstop on hit
+* 6 chip damage on block
+* Deals 6 damage to self (4 recoverable)
+* Non-limb attack, unparryable by Asuka, Nina, etc
+* Gain 8 Kazama Essence on normal hit and 6 on block or airborne hit
+}}
+}}
+{{Move
+|id=Jun-f,f,F+3
+|num=80
+|parent=
+|input=f,f,F+3
+|alt=ub,b+3
+|alias=wr3
+|name=Ame-no-Uzume
+|target=m
+|damage=28
+|startup=i24~28
+|block=+3~+7
+|hit=+14a (+5)
+|ch=+46d (-1)
+|crush=js3~30 fs31~33
+|recv=r27
+|tot=55
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-f,f,f+3.mp4
+|notes={{Plainlist|
+* {{BB}}
+* 8 chip damage on block
+}}
+}}
+
+== Crouch ==
+{{MoveDataHeader}}
+{{Move
+|id=Jun-hFC.3+4
+|parent=
+|input=hFC.3+4
+|alt=FC.3+4
+|name=
+|target=m,m
+|damage=10,10
+|startup=i21~22 i23~24
+|block=-6
+|hit=+5c
+|ch=
+|crush=js5~19 fs20~22
+|recv=r24
+|tot=48
+|range=
+|tracksLeft=
+|tracksRight=
+|notes={{Plainlist|
+* Transition to r24 FC with D
+* Can be done from [[Crouch#Half_crouch|Crouch Level 1]]}}
+}}
+{{Move
+|id=Jun-hFC.3+4,3
+|num=92
+|parent=Jun-hFC.3+4
+|input=,3
+|alt=FC.3+4,3
+|name=Twin Cloud Kicks
+|target=,m,m
+|damage=,10,10
+|startup=,i31~32 i40~41
+|block=+0~+1
+|hit=+15a
+|ch=
+|crush=,js~21~31 fs32~40
+|recv=r24
+|tot=97
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-fc.3+4,3.mp4
+|notes={{Plainlist|
+* Transition to r24 FC with D
+* Interrupt with i11 from 1st block
+* Whiffs vs SS from 1st block}}
+}}
+{{Move
+|id=Jun-FC.df+1
+|num=93
+|parent=
+|input=FC.df+1
+|name=Divine Exile - Earth
+|target=sl,m
+|damage=6,30
+|startup=i10, i25~26
+|block=-19
+|hit=+26a (+11)
+|ch=
+|crush=cs1~44
+|recv=r34 FC
+|tot=44
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-fc.df+1.mp4
+|notes={{Plainlist|
+* Deals 18 damage to self (12 recoverable)
+* 2nd hit available only on hit or block
+* Recovery listed is for the 1st hit, t74 both hits
+* Gain 10 Kazama Essence on normal hit and 7 on block or airborne hit}}
+}}
+{{Move
+|id=Jun-FC.df+2
+|parent=
+|input=FC.df+2
+|name=Grace
+|target=L
+|damage=12
+|startup=i16~17
+|block=-11
+|hit=+0
+|ch=+14
+|crush=cs1~46
+|recv=r29 FC
+|tot=46
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:Jun-94.mp4
+|notes=
+}}
+{{Move
+|id=Jun-FC.df+3
+|num=95
+|parent=
+|input=FC.df+3
+|alt=FC.df+3+4
+|name=Kanamegaeshi
+|target=L
+|damage=12
+|startup=i21
+|block=-19
+|hit=+0c
+|ch=
+|crush=cs1~47
+|recv=r38
+|tot=59
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-fc.df+3.mp4
+|notes={{Plainlist|
+* Clean hit +10a, 15 damage
+* Opponent recovers FDFA on CL}}
+}}
+
+== WS ==
+{{MoveDataHeader}}
+{{Move
+|id=Jun-ws1
+|parent=
+|input=ws1
+|name=
+|target=h
+|damage=14
+|startup=i12~13
+|block=-6
+|hit=+5
+|ch=
+|crush=
+|recv=r24
+|tot=37
+|range=
+|tracksLeft=
+|tracksRight=
+|notes=
+}}
+{{Move
+|id=Jun-ws1,1
+|parent=Jun-ws1
+|input=,1
+|name=
+|target=,h
+|damage=,7
+|startup=,i15~16
+|block=-9
+|hit=+2
+|ch=
+|crush=
+|recv=r27
+|tot=60
+|range=
+|tracksLeft=
+|tracksRight=
+|notes={{Plainlist|
+* {{Elbow}}
+* Combo from 1st hit with 4F delay
+* Enter GEN +0 +11g r18 with F
+* Enter MIA +0 +11g r18 with B
+* Move cannot be delayed
+* Input can be delayed by 4F
+}}
+}}
+{{Move
+|id=Jun-ws1,1,1
+|num=82
+|parent=Jun-ws1,1
+|input=,1
+|name=Tenkan Saika Shikei
+|target=,m
+|damage=,20
+|startup=,i25
+|block=-13
+|hit=+13a (+4)
+|ch=
+|crush=
+|recv=r32
+|tot=90
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-ws1,1,1.mp4
+|notes={{Plainlist|
+* {{BB}}
+* Combo from 2nd CH with 4f delay
+* Interrupt with i6
+* Move can be delayed by 14f}}
+}}
+{{Move
+|id=Jun-ws1,1,2
+|num=83
+|parent=Jun-ws1,1
+|input=,2
+|name=Tenkan Saika Renken
+|target=,M
+|damage=,22
+|startup=,i23
+|block=-9
+|hit=+30a (+15)
+|ch=+69a (+53)
+|crush=
+|recv=r35
+|tot=91
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-ws1,1,2.mp4
+|notes={{Plainlist|
+* {{Tornado}}
+* Combo from 2nd CH with 6f delay
+* Input can be delayed 14f
+* Chip damage on block
+* Deals recoverable self-damage when not in Heat
+* Unparryable
+* Gain 6 Kazama Essence on normal hit and 5 on block or airborne hit}}
+}}
+{{Move
+|id=Jun-ws1,1,4
+|num=84
+|parent=Jun-ws1,1
+|input=,4
+|name=Tenkan Saika Renshuu
+|target=,h
+|damage=,24
+|startup=,i23~25
+|block=-8
+|hit=+16c
+|ch=
+|crush=
+|recv=r30
+|tot=88
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-ws1,1,4.mp4
+|notes={{Plainlist|
+* {{BB}}
+* Combo from 2nd CH with 6f delay
+* Input can be delayed 14f
+* +13d on BT hit
+* Forces tech backroll on hit}}
+}}
+{{Move
+|id=Jun-ws1,4
+|parent=Jun-ws1
+|input=,4
+|name=
+|target=,m
+|damage=,16
+|startup=,i22~23
+|block=-11
+|hit=+0c
+|ch=
+|crush=
+|recv=r29
+|tot=67
+|range=
+|tracksLeft=
+|tracksRight=
+|notes={{Plainlist|
+* {{Spike}}
+* Combo from 1st hit with 5f delay
+* Input can be delayed 10f
+* Move can be delayed 8f}}
+}}
+{{Move
+|id=Jun-ws1,4,2
+|num=85
+|parent=Jun-ws1,4
+|input=,2
+|name=Tomoezakura
+|target=,L
+|damage=,17
+|startup=,i23~24
+|block=-16
+|hit=+0c
+|ch=+13a
+|crush=,cs17~
+|recv=r34 FC
+|tot=97
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-ws1,4,2.mp4
+|notes={{Plainlist|
+* {{Spike}}
+* Combo from 2nd CH}}
+}}
+{{Move
+|id=Jun-ws1,4,1+2
+|num=86
+|parent=Jun-ws1,4
+|input=,1+2
+|name=Tomoefuji
+|target=,m
+|damage=,28
+|startup=,i25~26
+|block=-20
+|hit=+16a (+11)
+|ch=
+|crush=
+|recv=r39
+|tot=104
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-ws1,4,1+2.mp4
+|notes={{Plainlist|
+* {{BB}}
+* {{Elbow}}
+* Combo from 2nd CH}}
+}}
+{{Move
+|id=Jun-ws2
+|parent=
+|input=ws2
+|name=
+|target=m
+|damage=12
+|startup=i13~14
+|block=-8
+|hit=+5
+|ch=+32a
+|crush=
+|recv=r26
+|tot=40
+|range=
+|tracksLeft=
+|tracksRight=
+|notes=Hits grounded up-close only
+}}
+{{Move
+|id=Jun-ws2,1
+|num=87
+|parent=Jun-ws2
+|input=,1
+|name=Hyakkaou
+|target=,m
+|damage=,20
+|startup=,i22~23
+|block=-12
+|hit=+19a (10)
+|ch=
+|crush=
+|recv=r30
+|tot=67
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-ws2,1.mp4
+|notes={{Plainlist|
+* {{BB}}
+* Combo from 1st hit}}
+}}
+{{Move
+|id=Jun-ws3
+|parent=
+|input=ws3
+|name=Gioh
+|target=M
+|damage=16
+|startup=i14~15
+|block=-13
+|hit=+25a (+5)
+|ch=
+|crush=js17~33 fs34~36
+|recv=r38
+|tot=53
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:Jun-88.mp4
+|notes=
+}}
+{{Move
+|id=Jun-ws4
+|num=89
+|parent=
+|input=ws4
+|name=Ichikaku
+|target=m
+|damage=21
+|startup=i11~12
+|block=-12
+|hit=+18a (+11)
+|ch=
+|crush=
+|recv=r31
+|tot=43
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-ws4.mp4
+|notes=
+}}
+{{Move
+|id=Jun-ws1+2
+|num=90
+|parent=
+|input=ws1+2
+|name=Sudare Nagashi
+|target=m
+|damage=20
+|startup=i21
+|block=-2
+|hit=+5
+|ch=+14 +63a
+|crush=
+|recv=r27
+|tot=48
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-ws1+2.mp4
+|notes={{Plainlist|
+* {{Elbow}}
+* Cancel to r39 FC with D on frame 20
+}}
+}}
+{{Move
+|id=Jun-ws3+4
+|num=91
+|parent=
+|input=ws3+4
+|name=Flowing Moon Scent
+|target=m
+|damage=23
+|startup=i18~19
+|block=-21
+|hit=+38a (+28)
+|ch=
+|crush=fs15~36
+|recv=r39
+|tot=58
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-ws3+4.mp4
+|notes={{Tornado}}
+}}
+
+== SS ==
+{{MoveDataHeader}}
+{{Move
+|id=Jun-SS.2
+|num=97
+|parent=
+|input=SS.2
+|name=Kasanegasumi
+|target=m
+|damage=27
+|startup=i16
+|block=-9
+|hit=+14a (+5)
+|ch=+34d (+26)
+|crush=
+|recv=r31
+|tot=47
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-ss.2.mp4
+|notes={{Plainlist|
+* {{BB}}
+* {{Tornado}}
+* Restores 3 health and 3 recoverable on hit
+* Gain 6 Kazama Essence on normal hit and 5 on airborne hit
+}}
+}}
+{{Move
+|id=Jun-SS.4
+|num=98
+|parent=
+|input=SS.4
+|name=Kagura
+|target=m
+|damage=20
+|startup=i18~20
+|block=+6
+|hit=+8c
+|ch=
+|crush=
+|recv=r27
+|tot=47
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-ss.4.mp4
+|notes={{Plainlist|
+* {{HeatEngager}}
+* {{HeatDash|+5, +67a (+50)}}
+* {{Spike}}
+* Gain 10 Kazama Essence on Heat activation
+}}
+}}
+{{Move
+|id=Jun-SS.1+2
+|num=99
+|parent=
+|input=SS.1+2
+|name=Sankouchou
+|target=h,h,m
+|damage=7,9,18
+|startup=i16 i17 i15~16
+|block=-4
+|hit=+7c
+|ch=
+|crush=
+|recv=r25 FC
+|tot=76
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-ss.1+2.mp4
+|notes={{Plainlist|
+* {{Homing}}
+* {{Spike}}
+* Jail from 1st attack
+* Combo from 1st or 2nd hit
+}}
+}}
+
+== IZU (''Izumo'') ==
+{{MoveDataHeader}}
+{{Move
+|id=Jun-u+2
+|parent=
+|input=u+2
+|alt=ub+2
+|name=Izumo Strike
+|target=h
+|damage=17
+|startup=i23~24
+|block=+4
+|hit=+11
+|ch=+20c
+|crush=
+|recv=r16 IZU
+|tot=40
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:Jun-69.mp4
+|notes={{Plainlist|
+* {{Homing}}
+* Restores 2 health and 2 recoverable on hit
+* Gain 6 Kazama Essence on normal hit and 5 on airborne hit
+* Stance moves can be delayed by 15F
+}}
+}}
+{{Move
+|id=Jun-IZU.1
+|parent=
+|input=IZU.1
+|name=
+|target=h
+|damage=7
+|startup=i13~14
+|block=-7
+|hit=+4
+|ch=
+|crush=
+|recv=r25
+|tot=39
+|range=
+|tracksLeft=
+|tracksRight=
+|notes={{Plainlist |
+Enter GEN -6, +5 r18 with F
+Enter MIA -6, +5 r18 with B}}
+}}
+{{Move
+|id=Jun-IZU.1,1
+|num=101
+|parent=Jun-IZU.1
+|input=,1
+|name=Haraede Kannagi
+|target=,h
+|damage=,26
+|startup=,i23~24
+|block=-4
+|hit=+22d
+|ch=
+|crush=
+|recv=r25
+|tot=63
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-izu.1,1.mp4
+|notes={{Plainlist|
+* {{BB}}
+* {{Tornado}}
+* Combo from 1st hit with 6f delay
+* Restores 1 health on hit
+* Restores 1 additional recoverable on hit
+* Non-limb attack, unparryable by Asuka, Nina, etc
+* Gain 6 Kazama Essence on normal hit and 5 on airborne hit}}
+}}
+{{Move
+|id=Jun-IZU.1,2
+|num=102
+|parent=Jun-IZU.1
+|input=,2
+|name=Haraede Musubi
+|target=,m
+|damage=,20
+|startup=,i24
+|block=-13
+|hit=+6a
+|ch=+15a
+|crush=
+|recv=r34
+|tot=72
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-izu.1,2.mp4
+|notes={{Plainlist|
+* {{Spike}}
+* Combo from 1st hit with 5f delay
+* Input can be delayed 6f}}
+}}
+{{Move
+|id=Jun-IZU.2
+|num=103
+|parent=
+|input=IZU.2
+|name=Setsurinbu - Misogi
+|target=M
+|damage=24
+|startup=i23~25
+|block=-13~-11
+|hit=+34a (+24)
+|ch=
+|crush=cs6~20
+|recv=r34
+|tot=59
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-izu.2.mp4
+|notes={{Plainlist|
+* {{Tornado}}
+* Chip damage (9) on block
+* Deals 12 damage to self (8 recoverable)
+* Unparryable
+* Gain 6 Kazama Essence on normal hit and 5 on block or airborne hit}}
+}}
+{{Move
+|id=Jun-IZU.3
+|num=104
+|parent=
+|input=IZU.3
+|name=Zuiun Renkyaku
+|target=m,h
+|damage=10,16
+|startup=i16~15 i14~15
+|block=-6
+|hit=+12a (+3)
+|ch=
+|crush=js20~53 fs54~56
+|recv=r32
+|tot=71
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-izu.3.mp4
+|notes={{Plainlist|
+* {{HeatEngager}}
+* {{HeatDash|+5, +36a (+26)}}
+* {{BB}}
+* Jail from 1st attack
+* Gain 10 Kazama Essence on Heat activation}}
+}}
+{{Move
+|id=Jun-IZU.4
+|parent=
+|input=IZU.4
+|name=
+|target=L
+|damage=10
+|startup=i19
+|block=-37
+|hit=-1c
+|ch=+23a
+|crush=cs13~
+|recv=r37 FC
+|tot=59
+|range=
+|tracksLeft=
+|tracksRight=
+|notes=
+}}
+{{Move
+|id=Jun-IZU.4,1
+|num=105
+|parent=Jun-IZU.4
+|input=,1
+|name=Wakeikazuchi - Misogi
+|target=,M
+|damage=,21
+|startup=,i19~20
+|block=-14~-13
+|hit=+14a (+3)
+|ch=
+|crush=,js22~38 fs39~41
+|recv=r37
+|tot=82
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-izu.4,1.mp4
+|notes={{Plainlist|
+* {{BB}}
+* 2nd hit only available as combo from 1st hit
+* DA: +9 damage on hit (30)
+* Deals 18 damage to self (12 recoverable)
+* Unparryable
+* Gain 20 Kazama Essence on normal or airborne hit
+}}
+}}
+{{Move
+|id=Jun-IZU.1+2
+|num=106
+|parent=
+|input=IZU.1+2
+|name=Mihikarioroshi
+|target=M
+|damage=24
+|startup=i21~22
+|block=-12
+|hit=+19a
+|ch=
+|crush=pc8~20
+|recv=r30
+|tot=52
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-izu.1+2.mp4
+|notes={{Plainlist|
+* {{BB}}
+* {{Spike}}
+* Frame advantage is -6c if an attack is absorbed}}
+}}
+{{ MoveInherit|Jun-IZU.1+3}}
+{{Move
+|id=Jun-IZU.f+1+2
+|num=107
+|parent=
+|input=IZU.f+1+2
+|name=Dianthus Garden
+|target=m
+|damage=21
+|startup=i16~17
+|block=-6
+|hit=+5
+|ch=+25
+|crush=
+|recv=r32
+|tot=49
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-izu.f+1+2.mp4
+|notes={{Plainlist|
+* {{Homing}}
+* {{MoveDataIcon|color=green|1=Balcony Break (airborne)}}
+* Only i15 or faster attacks guaranteed on CH
+* Jab evasion
+* Gain 6 Kazama Essence on normal hit and 5 on airborne hit
+}}
+}}
+
+== GEN (''Genjitsu'') ==
+{{MoveDataHeader}}
+{{Move
+|id=Jun-f+3+4
+|parent=
+|input=f+3+4
+|name=Genjitsu
+|target=
+|damage=
+|startup=
+|block=
+|hit=
+|ch=
+|crush=ps1~40
+|recv=r16 GEN
+|tot=55
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:Jun-108.mp4
+|notes={{Plainlist|
+* Cancel to r34 FC with D on frame 16
+* Stance moves can be delayed by 24F
+* Parries low punches or kicks
+* Parries throws}}
+}}
+{{Move
+|id=Jun-GEN.1
+|num=109
+|parent=
+|input=GEN.1
+|name=Rurikoukai
+|target=L
+|damage=22
+|startup=i20~21
+|block=-12
+|hit=+3c
+|ch=+26a
+|crush=cs11~
+|recv=r31 FC
+|tot=52
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-gen.1.mp4
+|notes={{Plainlist|
+* Has good left sidestep tracking
+}}
+}}
+{{Move
+|id=Jun-GEN.2
+|num=110
+|parent=
+|input=GEN.2
+|name=Kazama Style Spirit
+|target=m,t
+|damage=16,32
+|startup=i16~17
+|block=-13~-12
+|hit=+0d
+|ch=
+|crush=pc8~15
+|recv=r34
+|tot=51
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-gen.2.mp4
+|notes={{Plainlist|
+* Transition to attack throw on front standing or airborne hit 
+* Deals 12 damage to self (8 recoverable)
+* Frame advantage is -9 if an attack is absorbed
+* Chip damage on block if an attack is absorbed
+* +10a (+1) and Balcony Break on BT hit
+* Gain 8 Kazama Essence on normal hit or airborne hit
+}}
+}}
+{{Move
+|id=Jun-GEN.3
+|parent=
+|input=GEN.3
+|name=
+|target=M
+|damage=14
+|startup=i17~20
+|block=-4c~-1c
+|hit=+4c~+7c
+|ch=
+|crush=
+|recv=r28
+|tot=48
+|range=
+|tracksLeft=
+|tracksRight=
+|notes={{Spike}}
+}}
+{{Move
+|id=Jun-GEN.3,2
+|num=111
+|parent=Jun-GEN.3
+|input=,2
+|name=Getsuun Renken
+|target=,M
+|damage=,16
+|startup=,i24
+|block=-9
+|hit=+33a (+18)
+|ch=
+|crush=
+|recv=r32
+|tot=76
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-gen.3,2.mp4
+|notes={{Plainlist|
+* Combo from 1st hit with 8f delay
+* Input can be delayed 10f
+* Deals 12 damage to self (8 recoverable)
+* Unparryable
+* Gain 8 Kazama Essence on normal hit and 6 on block or airborne hit}}
+}}
+{{Move
+|id=Jun-GEN.4
+|num=112
+|parent=
+|input=GEN.4
+|name=Nichiun
+|target=h
+|damage=24
+|startup=i26~28
+|block=+4~+6
+|hit=+26a (+17)
+|ch=
+|crush=js16~33 fs34~36
+|recv=r22
+|tot=50
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-gen.4.mp4
+|notes={{Plainlist|
+* {{Homing}}
+* {{BB}}
+}}
+}}
+
+{{Move
+|id=Jun-Gen.P (Low)
+|parent=
+|input=GEN.P (Low)
+|name=Amaterasu
+|target=t
+|damage=20
+|startup=
+|block=
+|hit=+0d
+|ch=
+|crush=
+|recv=
+|tot=199
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:Jun-128.mp4
+|notes={{Plainlist|
+* Restores 14 health and 14 recoverable
+* Opponent recovers FDFA
+* Gain 20 Kazama Essence
+}}
+}}
+{{Move
+|id=Jun-GEN.P (Throw)
+|parent=
+|input=GEN.P (Throw)
+|name=Throw Reversal
+|target=t
+|damage=40
+|startup=
+|block=
+|hit=+0d
+|ch=
+|crush=
+|recv=
+|tot=124
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:Jun-130.mp4
+|notes={{Plainlist|
+* Restores 8 health and 8 recoverable
+* Opponent recovers FUFA (sideways)
+* Gain 20 Kazama Essence
+}}
+}}
+{{Move
+|id=Jun-H.GEN.1,1+2
+|parent=
+|input=H.GEN.1,1+2
+|name=Yomotsu Mihashira
+|target=L,M
+|damage=14,35
+|startup=i20~21 i26~41
+|block=-14
+|hit=+25a (+7)
+|ch=
+|crush=cs11~21
+|recv=r25
+|tot=87
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-h.gen.1,1+2.mp4
+|notes={{Plainlist|
+* {{ReversalBreak}}
+* {{BB}}
+* Jail from 1st attack
+* Has good left sidestep tracking
+* Restores 6 recoverable (3 on block)
+* Chip damage (2,7) on block
+* Consumes 450f of heat timer
+* Gain 5 Kazama Essence on normal hit, airborne hit or block}}
+}}
+
+== MIA (''Miare'') ==
+{{MoveDataHeader}}
+{{Move
+|id=Jun-b+1+2
+|parent=
+|input=b+1+2
+|name=Miare
+|target=
+|damage=
+|startup=
+|block=
+|hit=
+|ch=
+|crush=
+|recv=r10 MIA
+|tot=100
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:Jun-113.mp4
+|notes={{Plainlist|
+* Enter SS r16 with u_d
+* r30 when blocking after SS
+* Cancel to r15 with DB
+* Stays in stance indefinitely
+* Restores 3 recoverable health and gain Kazama Essence with each pulse
+}}
+}}
+{{Move
+|id=Jun-MIA.1
+|num=114
+|parent=
+|input=MIA.1
+|name=Ame-no-Sakahoko
+|target=M
+|damage=30
+|startup=i24~25
+|block=-9
+|hit=+72a (+56)
+|ch=
+|crush=
+|recv=r31
+|tot=56
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-mia.1.mp4
+|notes={{Plainlist|
+* {{Tornado}}
+* 12 Chip damage on block
+* Deals 9 damage to self (8 recoverable)
+* Unparryable
+* Gain 8 Kazama Essence on normal hit and 6 on block or airborne hit}}
+}}
+{{Move
+|id=Jun-MIA.2
+|num=115
+|parent=
+|input=MIA.2
+|name=Ame-no-Nuboko
+|target=sm
+|damage=28
+|startup=i16
+|block=-20
+|hit=+26a (+0)
+|ch=
+|crush=
+|recv=r40
+|tot=56
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-mia.2.mp4
+|notes={{Plainlist|
+* {{HeatEngager}}
+* {{HeatDash|+5, +43d (+35)}}
+* {{BB}}
+* DA: Range increases to 4.0
+* Deals 8 (DA:11) chip damage on block
+* Deals 6 damage to self (4 recoverable)
+* Unparryable
+* Gain 16 Kazama Essence on Heat activation
+* Gain 6 Kazama Essence on normal hit and 5 on block or airborne hit}}
+}}
+<!--
+{{MoveInherit|Jun-u+2
+|id=Jun-MIA.1+2
+|input=MIA.1+2
+|target=m
+|damage=17
+|startup=20
+|ch=+11
+|alt=
+|video=File:Jun-116.mp4
+}}
+-->
+{{Move
+|id=Jun-MIA.1+2
+|parent=
+|input=MIA.1+2
+|name=Yakumodachi
+|target=m
+|damage=17
+|startup=i20~21
+|block=+4
+|hit=+11g
+|ch=
+|crush=cs8~21
+|recv=IZU
+|tot=
+|range=
+|tracksLeft=
+|tracksRight=
+|video=
+|notes={{Plainlist|
+* {{Homing}}
+* {{SAT}}
+* {{BB}} on airborne hit
+* Transitions to IZU on hit or block
+* Gain 6 Kazama Essence on normal hit and 5 on block or airborne hit}}
+}}
+{{MoveInherit|Jun-f+3+4
+|id=Jun-MIA.F
+|input=MIA.F
+|video=File:Jun-117.mp4
+}}
+
+== Others ==
+{{MoveDataHeader}}
+{{MoveInherit|Generic-R.df+1+2
+|id=Jun-R.df+1+2
+|name=Amatsu Izanami
+}}
+{{MoveInherit|Generic-1+2+3+4
+|id=Jun-1+2+3+4
+|num=81
+|recv=r55
+|video=File:t8-p2-jun-1+2+3+4.mp4
+}}
+{{Move
+|id=Jun-b+1+3
+|parent=
+|input=b+1+3
+|alt=b+2+4
+|name=Attack Reversal
+|target=
+|damage=
+|startup=
+|block=
+|hit=
+|ch=
+|crush=ps5~12
+|recv=
+|tot=45
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:Jun-127.mp4
+|notes={{Plainlist|
+* Parries mid or high punches or kicks}}
+}}
+{{Move
+|id=Jun-b+1+3,P
+|parent=Jun-b+1+3
+|input=,P
+|alt=b+2+4,P
+|name=
+|target=t
+|damage=25
+|startup=
+|block=
+|hit=-4d
+|ch=
+|crush=
+|recv=
+|tot=131
+|range=
+|tracksLeft=
+|tracksRight=
+|notes={{Plainlist|
+* Opponent recovers FDFT}}
+}}
+{{Move
+|id=Jun-UB,b
+|parent=
+|input=ub,b
+|alt=
+|name=Back Handspring
+|target=sp
+|damage=
+|startup=
+|block=
+|hit=
+|ch=
+|crush=js9~40, fs41~43
+|recv=r49
+|tot=
+|range=
+|tracksLeft=
+|tracksRight=
+|notes={{Plainlist|
+|notes=Can perform wr3 with input 3 (i68~72 effective startup)
+}}
+}}
+{{MoveInherit|Generic-(Back to wall).b,b,UB(1)
+|id=Jun-(Back to wall).b,b,UB
+|input=(Back to wall).b,b,UB
+|name=[[Wall Jump Attack]]
+|notes=
+}}
+
+== Throws ==
+{{MoveDataHeader}}
+{{Move
+|id=Jun-1+3
+|num=118
+|parent=
+|input=1+3
+|name=Shiho Nage
+|target=t
+|damage=35
+|startup=i12~14
+|block=+0
+|hit=+0d
+|ch=
+|crush=
+|recv=r31
+|tot=45
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-1+3.mp4
+|notes={{Plainlist|
+* {{Homing}}
+* Throw break 1 or 2}}
+}}
+{{Move
+|id=Jun-2+4
+|num=119
+|parent=
+|input=2+4
+|name=Katanuki
+|target=t
+|damage=35
+|startup=i12~14
+|block=
+|hit=+0d
+|ch=
+|crush=
+|recv=r31
+|tot=45
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-2+4.mp4
+|notes={{Plainlist|
+* {{Homing}}
+* Throw break 1 or 2
+* Side switch on hit}}
+}}
+{{Move
+|id=Jun-Left throw
+|num=120
+|parent=
+|input=Left throw
+|name=Cloud Taste
+|target=t
+|damage=40
+|startup=
+|block=-3
+|hit=+0d
+|ch=
+|crush=
+|recv=
+|tot=
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:Jun-120.mp4
+|notes={{Plainlist|
+* Throw break 1
+}}
+}}
+{{Move
+|id=Jun-Right throw
+|num=121
+|parent=
+|input=Right throw
+|name=Wind Wheel
+|target=t
+|damage=40
+|startup=
+|block=-3
+|hit=+0d
+|ch=
+|crush=
+|recv=
+|tot=
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:Jun-121.mp4
+|notes={{Plainlist|
+* Throw break 2
+* Side switch on hit}}
+}}
+{{Move
+|id=Jun-Back throw
+|num=122
+|parent=
+|input=Back throw
+|name=Twisted Limbs
+|target=t
+|damage=50
+|startup=
+|block=
+|hit=+7d
+|ch=
+|crush=
+|recv=
+|tot=
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:Jun-122.mp4
+|notes={{Plainlist|
+* Unbreakable
+* Side switch}}
+}}
+{{Move
+|id=Jun-df+2+3
+|num=123
+|parent=
+|input=df+2+3
+|name=White Mountain
+|target=t
+|damage=40
+|startup=i12
+|block=-6
+|hit=-6d
+|ch=
+|crush=
+|recv=r27
+|tot=39
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-df+2+3.mp4
+|notes={{Plainlist|
+* Throw break 2
+* {{FB}}}}
+}}
+{{Move
+|id=Jun-uf+1+2
+|parent=
+|input=uf+1+2
+|name=Riai
+|target=t
+|damage=40
+|startup=i12
+|block=-6
+|hit=+0d
+|ch=
+|crush=
+|recv=r27
+|tot=39
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:Jun-124.mp4
+|notes=Throw break 1+2
+}}
+{{Move
+|id=Jun-FC.db+1+2
+|num=125
+|parent=
+|input=FC.db+1+2
+|name=Falling Rain
+|target=t
+|damage=15,15,15
+|startup=i14~15
+|block=-6
+|hit=+56a (+28)
+|ch=
+|crush=
+|recv=r26
+|tot=41
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-fc.db+1+2.mp4
+|notes={{Plainlist|
+* Throw break 1+2
+* Opponent can tech roll to reduce the landing damage}}
+}}
+{{Move
+|id=Jun-IZU.1+3
+|num=126
+|parent=
+|input=IZU.1+3
+|alt=IZU.2+4
+|name=Tsukuyomi
+|target=t
+|damage=35
+|startup=i14
+|block=-6
+|hit=+0d
+|ch=
+|crush=
+|recv=r25
+|tot=39
+|range=
+|tracksLeft=
+|tracksRight=
+|video=File:t8-p2-jun-izu.1+4.mp4
+|notes={{Plainlist|
+* Throw break 1+2
+* Restores 8 life and 12 recoverable
+* Gain 8 Kazama Essence on hit
+}}
+}}
+
+== 10 Strings ==
+
+{| class="wikitable" style="text-align: center"
+|-
+| colspan="7" class="wikitable-heading" | 10 Hit Combo
+|-
+! Input !! Hit level !! Damage !! Startup !! Block !! Hit !! Combo
+|-
+| ws1 || h || 14 || i12~13 || -6~-5 || +5~+6 || 
+|-
+| 1 || h || 7 || ,i15~16 || -9~-8 || +2 || Hit
+|-
+| 1+4 || SL,h || 5,8 || ,i14 i17 || -12 || -1 || CH,
+|-
+| 2 || h || 6 || ,i19 || -12 || -1 || Hit
+|-
+| 1 || m || 6 || ,i21~22 || -18~17 || -2~-1 || CH
+|-
+| 2 || h || 7 || ,i23~24 || -16~-15 || -11~-10 || CH
+|-
+| 4 || L || 10 || ,i21~22 || -37~-36 || -1~+0 || 
+|-
+| 4 || m || 13 || ,i16~18 || -25~-24 || +1a (+0) || Hit
+|-
+| 3 || m || 20 || ,i28~30 || -13~-12 || +8a || Hit
+|}
+
+== External links ==
