@@ -169,7 +169,7 @@ df+3+4;SM,t;30,15;i28~35;-12d~-18d;+18d;;"* Floor Break
 * Can perform a special downed animation when hitting the ground with D
 * Low crush 13~37
 * Floating state 38~40";fbr js13~37 fs38~40;FUFT;Frankensteiner;30;FUFT;;File:t8-p2-king-df+3+4.mp4;King-df+3+4;king
-d+1;sl;5;i10;-5;+6;;"* Transition to r24 with f
+d+1;sl;5;i10;-5;+6;;"* Transition to standing r24 with f
 * High crush 4~";cs4~;FC;;24;FC;;File:t8-p2-king-d+1,2.mp4;King-d+1;king
 d+1,2;sl, m;5, 13;i10, i15~17;-11;+5;;"* Jail from 1st block
 * Combo from 1st CH";;;Jab > Uppercut;28;;;File:t8-p2-king-d+1,2.mp4;King-d+1,2;king
@@ -297,8 +297,6 @@ uf+3+4;m;23;i22~23;-12;+25g;;"* Tornado
 * Power crush 7~21";trn pc7~21;;Sole Crusher;32;;;File:t8-p2-king-uf+3+4.mp4;King-uf+3+4;king
 1+2+3+4;;;;;;;"* Takes some time to charge and can cancel into anything.
 * After charged next hit by either side becomes counter hit.";;;Ki Charge;;;;File:t8-p2-king-1+2+3+4.mp4;King-1+2+3+4;king
-DF;r(l);0;;;+51a(+35);;"* Generic low parry.
-* Tornado affect on success.";;;Low Parry;;;;File:t8-p2-king-df.mp4;King-DF;king
 f,F+1;m;21;i20~21;-5;+14g;+38d;"* Homing
 * Balcony Break";hom bbr;;Jaguar Hook;28;;;File:t8-p2-king-f,f,1.mp4;King-f,F+1;king
 f,F+2;m;21;i31~32;+7;+12c;;"* Elbow
@@ -468,6 +466,10 @@ hFC.3;L;10;i18;-17;-6;;* Get extra range by FC.df+3/CD.DF+3.;;FC;;;FC;;;King-hFC
 (Right side throw);t;42;(depends);-3;+21d;;"* 2 throw break.
 * Any throw on standing opponent's right side.
 * Opponent recovers in FUFT.";;;Knee Crusher;;;;;King-RightSide.2+4;king
+(back to wall).b,b,UB;t / m;45 / 21;i43~48 / i44~63;-8;+2 / +15;;"* Unbreakable throw near wall, becomes air attack if throw not connected.
+* Side switch on attack throw. King recovers in FUFL. Opponent recovers in FUFA.
+* Floating state 5~62
+* is8~13";fs5~62 is8~13;FDFT;[[Wall jump attack]];26;FDFT;;;King-(back to wall).b,b,UB;king
 1+3;t;35;i12~14;-6;+0d;;"* Homing
 * 1 or 2 throw break.
 * Input f+1+3 to increase throw range, but its startup is 3 frames slower.
@@ -645,9 +647,6 @@ WALL.f,hcf+1;t(w);65(70);i10;;-5d;;"* Cannot throw break. Also converts from RKO
 * (f,hcf+1_2): Input all 6 directions of throw, press df for 1-3F, at most 1F of f followed by f+1 or f+2 for blue spark (+5 damage).
 * (f,f,F+2+4): Input n,f,F+2+4 within 6 frames after dash startup (f,n,f) to execute ""blue spark"" (+5 damage).
 * Opponent recovers in FUFR.";;;Shining Torpedo;;;;;King-WALL.f,hcf+1;king
-WallBack.b,b,ub;t / m;45 / 21;i43~48 / i44~63;-8;+2 / +15;;"* Airborne from 5F, invincibility from 8 to 13F.
-* Unbreakable throw near wall, becomes air attack if throw not connected.
-* Side switch. Opponent recovers in FUFA.";;;Wall Jumping Attack;;;;;King-WallBack.b,b,ub;king
 b+1+2;t;0;i12~17;-3;+14g;;"* Homing
 * 1+2 throw break. Side switch.
 * Damage becomes 15 on wall splat.

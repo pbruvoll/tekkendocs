@@ -901,14 +901,17 @@
   {
     "alt": "H.PRF.2+3",
     "block": "-14",
-    "damage": "39",
-    "hit": "th",
+    "crush": "js36~56 fs57~59",
+    "damage": "39,(25)",
+    "hit": "+5d",
     "id": "Victor-H.2+3",
     "input": "H.2+3",
     "name": "Élimination Samouraï",
-    "notes": "* Heat Smash\n* Balcony Break\n* Alternate input: H.R1\n* 8 chip damage on block",
-    "startup": "i20",
-    "target": "l,m"
+    "notes": "* Heat Smash\n* Balcony Break\n* Shift to attack throw on 1st hit (39dmg)\n* +7a (-3) from 2nd hit\n* Alternate input: H.R1\n* 8 chip damage on block",
+    "recv": "r47",
+    "startup": "i20, i39~40",
+    "target": "L,M",
+    "tot": "108"
   },
   {
     "block": "+6",
@@ -917,10 +920,11 @@
     "id": "Victor-H.db+1+2",
     "input": "H.db+1+2",
     "name": "Monsieur Samurai",
-    "notes": "* Weapon\n* Transitions to IAI\n* Consumes 270F of remaining Heat time",
-    "recv": "r49 IAI",
+    "notes": "* Weapon\n* Transition to IAI\n* 9 chip damage on block\n* Consumes 270F of remaining Heat time",
+    "recv": "r48 IAI",
     "startup": "i28~29",
-    "target": "m"
+    "target": "m",
+    "tot": "77"
   },
   {
     "alt": "FC.1+2",
@@ -945,14 +949,15 @@
     "input": "H.IAI.d+2",
     "name": "Longinus",
     "notes": "* Weapon\n* Projectile\n* Transition to IAI\n* 10 chip damage on block\n* Consumes 210F of remaining Heat time",
-    "recv": "IAI",
+    "recv": "r46 IAI",
     "startup": "i23~24, i6, i4, i3, i4",
-    "target": "M,M,M,SM,SM"
+    "target": "M,M,M,SM,SM",
+    "tot": "91"
   },
   {
     "alt": "H.ub+1+2",
     "block": "-4",
-    "crush": "is10~? js?~",
+    "crush": "js10~26 fs27~29",
     "damage": "46",
     "hit": "+0a (-1)",
     "id": "Victor-H.u+1+2",
@@ -960,8 +965,10 @@
     "name": "Excalibur",
     "notes": "* Balcony Break\n* Weapon\n* Victor teleports overhead on frame 10 and descends downward for the rest of the startup; evades some highs and mids but vulnerable on descent (lows, throws, etc. hit)\n* 15 chip damage on block\n* Consumes 450F of remaining Heat time",
     "num": "56",
+    "recv": "r42",
     "startup": "i31~32",
-    "target": "m",
+    "target": "M",
+    "tot": "80",
     "video": "File:t8-p2-victor-h.u+1+2.mp4"
   },
   {
@@ -1189,7 +1196,6 @@
     "target": "m"
   },
   {
-    "crush": "is1-4",
     "id": "Victor-IAI.u",
     "input": "IAI.u",
     "name": "Prydwen",
@@ -1416,17 +1422,18 @@
   {
     "alt": "ub+1+2",
     "block": "-20c",
-    "crush": "is10~? js?~",
+    "crush": "js10~26 fs27~29",
     "damage": "32",
     "hit": "+1a",
     "id": "Victor-u+1+2",
     "input": "u+1+2",
     "name": "Caliburnus",
-    "notes": "* Weapon\n* Deals 11 chip damage on block\n* Victor teleports overhead on frame 10 and descends downward for the rest of the startup; evades some highs and mids but vulnerable on descent (lows, throws, etc. hit)",
+    "notes": "* Weapon\n* 9 chip damage on block\n* Victor teleports overhead on frame 10 and descends downward for the rest of the startup; evades some highs and mids but vulnerable on descent (lows, throws, etc. hit)",
     "num": "55",
-    "recv": "49",
+    "recv": "48",
     "startup": "i31~32",
-    "target": "m",
+    "target": "M",
+    "tot": "80",
     "video": "File:t8-p2-victor-u+1+2.mp4"
   },
   {

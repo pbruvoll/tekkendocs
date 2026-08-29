@@ -46,7 +46,7 @@
     "hit": "+0c",
     "id": "Bob-1+2",
     "input": "1+2",
-    "notes": "* Spike\n* Transition to BAL r23 with F on hit or block (+1/+14c)",
+    "notes": "* Spike\n* Transition to BAL r23 with F on hit or block (+1/+14c)\n**  FC r46 transition with no input (cannot block i22 moves after transition on block)",
     "recv": "r37",
     "startup": "i19~20",
     "target": "m",
@@ -99,6 +99,21 @@
     "tot": "82"
   },
   {
+    "id": "Bob-1+2+3+4",
+    "input": "1+2+3+4",
+    "name": "Ki Charge",
+    "notes": "* Can't block for 5 seconds\n* CH state on your next attack for 5 seconds ''(Tekken 7 and prior games)''\n* 10% damage increase on the next attack for 5 seconds ''(Tekken 8 season 2 patch onward)''\n* Attacks taken will be CH for 5 seconds",
+    "recv": "r55"
+  },
+  {
+    "crush": "js55~82 fs83~85",
+    "id": "Bob-1+2+3+4*",
+    "input": "1+2+3+4",
+    "name": "Ki Charge",
+    "notes": "* Can't block for 5 seconds\n* CH state on your next attack for 5 seconds ''(Tekken 7 and prior games)''\n* 10% damage increase on the next attack for 5 seconds ''(Tekken 8 season 2 patch onward)''\n* Attacks taken will be CH for 5 seconds",
+    "recv": "r105 FC"
+  },
+  {
     "block": "-3",
     "damage": "35",
     "hit": "+0d",
@@ -107,8 +122,10 @@
     "name": "Quarter Deck",
     "notes": "* Homing\n* Throw break 1 or 2\n* Opponent recovers FDFT",
     "num": "120",
+    "recv": "r31",
     "startup": "i12~14",
-    "target": "t"
+    "target": "t",
+    "tot": "45"
   },
   {
     "block": "-6",
@@ -170,7 +187,7 @@
     "block": "-10",
     "crush": "fs17~37",
     "damage": ",20",
-    "hit": "+11a",
+    "hit": "+11d",
     "id": "Bob-2,1,4",
     "input": ",4",
     "name": "Barista Swirl",
@@ -191,8 +208,10 @@
     "name": "Cooler Shaker",
     "notes": "* Floor Break\n* Throw break 1 or 2\n* Swaps sides on successful throw",
     "num": "121",
+    "recv": "r31",
     "startup": "i12~14",
-    "target": "t"
+    "target": "t",
+    "tot": "45"
   },
   {
     "block": "-6",
@@ -359,7 +378,7 @@
     "id": "Bob-4,4",
     "input": ",4",
     "name": "Hopping Macaron",
-    "notes": "* Spike\n* Airborne combo from 1st CH with 2F delay (-7d)\n* Interrupt with i14 from 1st block\n* Whiffs vs SS, SW from 1st bolck",
+    "notes": "* Spike\n* Airborne combo from 1st CH with 2F delay (-7d)\n* Interrupt with i14 from 1st block\n* Whiffs vs SS, SW from 1st block",
     "num": "29",
     "parent": "Bob-4",
     "recv": "r30",
@@ -373,9 +392,11 @@
     "hit": "+5c",
     "id": "Bob-b+1",
     "input": "b+1",
-    "notes": "* Elbow",
+    "notes": "* Elbow\n* Spike",
+    "recv": "r35",
     "startup": "i18~19",
-    "target": "m"
+    "target": "m",
+    "tot": "54"
   },
   {
     "block": "-9",
@@ -383,9 +404,11 @@
     "hit": "+8c",
     "id": "Bob-b+1+2",
     "input": "b+1+2",
-    "notes": "* Head",
+    "notes": "* Spike\n* Head",
+    "recv": "r32",
     "startup": "i17~18",
-    "target": "m"
+    "target": "m",
+    "tot": "50"
   },
   {
     "block": "-8",
@@ -394,11 +417,13 @@
     "id": "Bob-b+1,2",
     "input": ",2",
     "name": "Ravenous",
-    "notes": "* Combos from 1st hit",
+    "notes": "* Combo from 1st hit\n* Jails attack inputs from 1st block (cannot CH)",
     "num": "56",
     "parent": "Bob-b+1",
+    "recv": "r27",
     "startup": "i23~24",
-    "target": ",m"
+    "target": ",m",
+    "tot": "70"
   },
   {
     "block": "-11",
@@ -406,10 +431,12 @@
     "hit": "+0",
     "id": "Bob-b+1+2,1",
     "input": ",1",
-    "notes": "* Combos from 1st hit CH\n* Delayable",
+    "notes": "* Combo from 1st CH with 8F delay\n* Interrupt with i5 from 1st block\n* Move can be delayed by 9F",
     "parent": "Bob-b+1+2",
+    "recv": "r32",
     "startup": "i30",
-    "target": ",m"
+    "target": ",m",
+    "tot": "79"
   },
   {
     "block": "-16",
@@ -418,20 +445,28 @@
     "id": "Bob-b+1+2,1,2",
     "input": ",2",
     "name": "Three Star Combo",
-    "notes": "* Balcony Break\n* Combos from 2nd hit\n* Delayable\n* Jails from 2nd hit if no delay",
+    "notes": "* Balcony Break\n* Jail from 2nd block with 9F delay\n* Combo from 1st CH or 2nd hit with 20F delay\n* 20F timestop on hit\n* Move can be delayed by 12F\n* Input can be delayed by 20F",
     "num": "62",
     "parent": "Bob-b+1+2,1",
+    "recv": "r41",
     "startup": "i12",
-    "target": ",h"
+    "target": ",h",
+    "tot": "108"
   },
   {
     "alt": "b+2+4",
-    "crush": "ps",
+    "crush": "ps5~12",
+    "damage": "(10),20 (25)",
+    "hit": "+5g / +26a (+0)",
     "id": "Bob-b+1+3",
     "input": "b+1+3",
     "name": "Perfect Body",
-    "notes": "* Parries high and mid punches\n* On successful parry, shift to Steak and Fries (FC.db+1+2)",
-    "num": "128"
+    "notes": "* Balcony Break (Perfect)\n* Parries high and mid punches\n* On successful parry, shift to Steak and Fries (FC.db+1+2)\n** Input 3 during frames 26 to 29 of 2nd hit",
+    "num": "128",
+    "recv": "r33",
+    "startup": "i41?, i30",
+    "target": "sp",
+    "tot": "45"
   },
   {
     "block": "-5",
@@ -440,8 +475,10 @@
     "id": "Bob-b+2",
     "input": "b+2",
     "notes": "*",
+    "recv": "r23",
     "startup": "i13~14",
-    "target": "m"
+    "target": "m",
+    "tot": "37"
   },
   {
     "block": "-13",
@@ -450,11 +487,13 @@
     "id": "Bob-b+2,1",
     "input": ",1",
     "name": "Combination Salty",
-    "notes": "* Elbow\n* Combos from 1st hit\n* Transition to +12g BAL with F on hit",
+    "notes": "* Elbow\n* Spike\n* Combo from 1st hit with 1F delay\n* Transition to BAL r27 with F on hit (+12g)\n** FC r50 transition with no input (Cannot block i11 moves)\n* Interrupt with i5 from 1st block\n* Move cannot be delayed\n* Input can be delayed by 1F",
     "num": "57",
     "parent": "Bob-b+2",
+    "recv": "r32",
     "startup": "i23",
-    "target": ",m"
+    "target": ",m",
+    "tot": "70"
   },
   {
     "block": "-3",
@@ -462,10 +501,12 @@
     "hit": "+8",
     "id": "Bob-b+2,2",
     "input": ",2",
-    "notes": "* Combos from 1st hit",
+    "notes": "* Combo from 1st hit with 4F delay\n* Move cannot be interrupted\n* Move can be delayed by 3F\n* Input can be delayed by 4F",
     "parent": "Bob-b+2",
+    "recv": "r22",
     "startup": "i18",
-    "target": ",h"
+    "target": ",h",
+    "tot": "55"
   },
   {
     "block": "-13",
@@ -473,10 +514,12 @@
     "hit": "+3",
     "id": "Bob-b+2,2,4",
     "input": ",4",
-    "notes": "* Knee\n* Combos from 2nd hit CH\n* Delayable",
+    "notes": "* Knee\n* Combos from 2nd CH with 8F delay\n* Interrupt with i2 from 2nd block\n* Move can be delayed by 10F",
     "parent": "Bob-b+2,2",
+    "recv": "r32",
     "startup": "i22",
-    "target": ",m"
+    "target": ",m",
+    "tot": "87"
   },
   {
     "block": "-7",
@@ -485,11 +528,13 @@
     "id": "Bob-b+2,2,4,4",
     "input": ",4",
     "name": "Combination Bitter",
-    "notes": "* Balcony Break\n* Combos from 3rd hit",
+    "notes": "* Balcony Break\n* Combo from 2nd CH or 3rd hit with 3F delay\n* Interrupt with i3 from 3rd block",
     "num": "58",
     "parent": "Bob-b+2,2,4",
+    "recv": "r31",
     "startup": "i23~24",
-    "target": ",h"
+    "target": ",h",
+    "tot": "110"
   },
   {
     "block": "-15",
@@ -499,23 +544,27 @@
     "id": "Bob-b+3",
     "input": "b+3",
     "name": "Whopping Kick",
-    "notes": "*",
+    "notes": "* Recovers 3F faster on hit (t50 r32)",
     "num": "59",
+    "recv": "r35",
     "startup": "i17~18",
-    "target": "m"
+    "target": "M",
+    "tot": "53"
   },
   {
     "block": "-7",
-    "crush": "js",
+    "crush": "js10~22 fs23~25",
     "damage": "26",
     "hit": "+18a (+8)",
     "id": "Bob-b+3+4",
     "input": "b+3+4",
     "name": "Onigiri Bomber",
-    "notes": "*\n* 5 chip damage on block",
+    "notes": "* Balcony Break\n* Hip\n* 20F timestop on hit\n* 5 chip damage on block",
     "num": "63",
+    "recv": "r35",
     "startup": "i18~20",
-    "target": "m"
+    "target": "m",
+    "tot": "55"
   },
   {
     "block": "-11",
@@ -525,23 +574,27 @@
     "id": "Bob-b+4",
     "input": "b+4",
     "notes": "* Knee",
+    "recv": "r30",
     "startup": "i15",
-    "target": "m"
+    "target": "m",
+    "tot": "45"
   },
   {
     "alt": "b+4,3:3",
     "block": "-9",
-    "crush": "js",
-    "damage": ",36",
+    "crush": "js27~52 fs53~55",
+    "damage": ",16,20 (24)",
     "hit": "+17a (+0)",
     "id": "Bob-b+4,3",
     "input": ",3",
     "name": "Combination Zesty",
-    "notes": "* Balcony Break\n* Tornado\n* Combos from 1st hit CH\n* Transition to +25a (+8), +1 BAL with F\n* Just frame input to power up (4 more damage)",
+    "notes": "* Balcony Break\n* Tornado\n* Combo from 1st CH\n* Interrupt with i12 from 1st block\n* Whiffs vs SSR, SWR from 1st block\n* Transition to BAL r24 with F (-1/+25a (+8))\n** FC r47 transition with no input (Cannot block i24 moves on block transition)\n* Input 3 during frames 30~33 to power up (+4 damage)",
     "num": "61",
     "parent": "Bob-b+4",
-    "startup": "i32,i15~16",
-    "target": ",m,h"
+    "recv": "r32",
+    "startup": "i32~33,i15~16",
+    "target": ",m,h",
+    "tot": "96"
   },
   {
     "block": "-3",
@@ -550,21 +603,36 @@
     "id": "Bob-b+4,4",
     "input": ",4",
     "name": "Combination Bittersweet",
-    "notes": "* Balcony Break\n* Combos from 1st hit\n* 4 chip damage on block",
+    "notes": "* Balcony Break\n* Combo from 1st hit\n* Interrupt with i3 from 1st block\n* 4 chip damage on block",
     "num": "60",
     "parent": "Bob-b+4",
+    "recv": "r32",
     "startup": "i23",
-    "target": ",h"
+    "target": ",h",
+    "tot": "70"
   },
   {
-    "damage": "50",
+    "damage": "50 (60)",
     "hit": "+0d",
     "id": "Bob-Back Throw",
     "input": "Back Throw",
     "name": "Deglacer Throw",
-    "notes": "* Unbreakable\n* Opponent recovers FDFA",
+    "notes": "* Unbreakable\n* Can fully wall splat (60 damage)\n* Opponent recovers FDFA",
     "num": "124",
     "target": "t"
+  },
+  {
+    "block": "+1",
+    "crush": "fs5~7 is8~24 fs25~33 js34~37 fs38~40",
+    "damage": "21",
+    "hit": "+34d",
+    "id": "Bob-(back to wall).b,b,UB",
+    "input": "(back to wall).b,b,UB",
+    "name": "Wall Jump Backflip",
+    "recv": "r17 BT",
+    "startup": "i35~38",
+    "target": "m",
+    "tot": "55"
   },
   {
     "block": "-5",
@@ -573,8 +641,10 @@
     "id": "Bob-BAL.1",
     "input": "BAL.1",
     "notes": "*",
+    "recv": "r28",
     "startup": "i15~17",
-    "target": "m"
+    "target": "m",
+    "tot": "45"
   },
   {
     "block": "+1",
@@ -616,12 +686,14 @@
     "name": "Galette Slicer",
     "notes": "* Balcony Break\n* Homing\n* Strong Aerial Tailspin",
     "num": "107",
+    "recv": "r30 FC",
     "startup": "i23~24",
-    "target": "m"
+    "target": "m",
+    "tot": "54"
   },
   {
     "block": "+4",
-    "crush": "js",
+    "crush": "js21~25 fs26~43",
     "damage": "25",
     "hit": "+17a (+0)",
     "id": "Bob-BAL.3",
@@ -629,35 +701,41 @@
     "name": "Roulette Cutter",
     "notes": "* Balcony Break\n* Tornado",
     "num": "108",
+    "recv": "r32",
     "startup": "i24~25",
-    "target": "m"
+    "target": "m",
+    "tot": "57"
   },
   {
     "block": "-13c",
-    "crush": "js",
+    "crush": "fs1~16 js17~29 fs30~32",
     "damage": "28",
     "hit": "+13d",
     "id": "Bob-BAL.3+4",
     "input": "BAL.3+4",
     "name": "Perfect Press",
-    "notes": "* Floor Break",
+    "notes": "* Floor Break\n* Hip",
     "num": "110",
+    "recv": "r43",
     "startup": "i29~33",
-    "target": "m"
+    "target": "M",
+    "tot": "76"
   },
   {
     "block": "-24",
     "ch": "+25a",
-    "crush": "cs",
+    "crush": "cs1~55",
     "damage": "14",
     "hit": "+27d",
     "id": "Bob-BAL.4",
     "input": "BAL.4",
     "name": "Stealing Home",
-    "notes": "*",
+    "notes": "* Transition to FC r32 on CH\n* Side switch on CH\n* 4f timestop on CH",
     "num": "109",
+    "recv": "r40",
     "startup": "i23~26",
-    "target": "l"
+    "target": "L",
+    "tot": "66"
   },
   {
     "crush": "js51~69 fs70~72",
@@ -703,16 +781,18 @@
   },
   {
     "block": "-9",
-    "ch": "+59cs",
+    "ch": "+59a",
     "damage": "17",
     "hit": "+14a (+5)",
     "id": "Bob-BT.d+2",
     "input": "BT.d+2",
     "name": "Plague Pick",
-    "notes": "* Balcony Break",
+    "notes": "* Balcony Break\n* 4f timestop on CH\n* Crumple stun +13F on CH",
     "num": "97",
+    "recv": "r30",
     "startup": "i15~16",
-    "target": "m"
+    "target": "m",
+    "tot": "46"
   },
   {
     "block": "-8",
@@ -722,10 +802,12 @@
     "id": "Bob-d+1",
     "input": "d+1",
     "name": "Coupe Chop",
-    "notes": "*",
+    "notes": "* Spike\n* Recovers 4F faster on hit or block (t46 r27)",
     "num": "43",
+    "recv": "r31 FC",
     "startup": "i18~19",
-    "target": "m"
+    "target": "M",
+    "tot": "50"
   },
   {
     "block": "-9",
@@ -734,8 +816,10 @@
     "id": "Bob-d+1+2",
     "input": "d+1+2",
     "notes": "*",
-    "startup": "i14",
-    "target": "h,h"
+    "recv": "r28",
+    "startup": "i14, i11",
+    "target": "h,h",
+    "tot": "53"
   },
   {
     "block": "-8",
@@ -743,10 +827,12 @@
     "hit": "+3",
     "id": "Bob-d+1+2,2",
     "input": ",2",
-    "notes": "Combos from 1st hit\nJails from 1st hit",
+    "notes": "* Jail from 1st block\n* Combo from 1st hit",
     "parent": "Bob-d+1+2",
+    "recv": "r26",
     "startup": "i10~11",
-    "target": ",m"
+    "target": ",m",
+    "tot": "62"
   },
   {
     "block": "-16",
@@ -755,11 +841,13 @@
     "id": "Bob-d+1+2,2,1",
     "input": ",1",
     "name": "Apicius Special",
-    "notes": "Combos from 1st hit\nJails from 1st hit\nTransition to -1d Ki Charge with U on hit",
+    "notes": "* Jail from 1st block\n* Combo from 4th hit with 9F delay\n* Transition to Ki Charge r53 with U on hit (-1d)\n* Move cannot be delayed\n* Input can be delayed by 9F",
     "num": "49",
     "parent": "Bob-d+1+2,2",
+    "recv": "r40",
     "startup": "i7~8",
-    "target": ",h"
+    "target": ",h",
+    "tot": "93"
   },
   {
     "block": "-9",
@@ -768,8 +856,10 @@
     "id": "Bob-d+2",
     "input": "d+2",
     "notes": "*",
+    "recv": "r28",
     "startup": "i15",
-    "target": "m"
+    "target": "m",
+    "tot": "43"
   },
   {
     "block": "-11",
@@ -777,21 +867,25 @@
     "hit": "+0",
     "id": "Bob-d+2,1",
     "input": ",1",
-    "notes": "* Combos from 1st hit\n* Jails from 1st hit",
+    "notes": "* Jail from 1st block with 2F delay\n* Combo from 1st hit with 2F delay\n* Move can be delayed by 1F\n* Input can be delayed by 2F",
     "parent": "Bob-d+2",
+    "recv": "r29",
     "startup": "i14~15",
-    "target": ",m"
+    "target": ",m",
+    "tot": "60"
   },
   {
     "block": "-12",
-    "damage": "18",
+    "damage": ",18",
     "hit": "-1",
     "id": "Bob-d+2,1,2",
     "input": ",2",
-    "notes": "* Delayable",
+    "notes": "* Interrupt with i3 from 1st block\n* Move can be delayed by 10F",
     "parent": "Bob-d+2,1",
+    "recv": "r34",
     "startup": "i22~24",
-    "target": ",m"
+    "target": ",m",
+    "tot": "89"
   },
   {
     "block": "-15",
@@ -800,63 +894,73 @@
     "id": "Bob-d+2,1,2,2",
     "input": ",2",
     "name": "Combination Mince",
-    "notes": "* Balcony Break\n* Combos from 3rd hit",
+    "notes": "* Balcony Break\n* Combo from 3rd hit with 4F delay\n* Interrupt with i6 from 3rd block\n* Whiffs vs SSL, SWL from 3rd block\n* 20f timestop on hit\n* Move can be delayed by 10F",
     "num": "44",
     "parent": "Bob-d+2,1,2",
+    "recv": "r40",
     "startup": "i29",
-    "target": ",m"
+    "target": ",m",
+    "tot": "124"
   },
   {
     "block": "-2",
-    "ch": "+67cs",
+    "ch": "+67a",
     "damage": ",21",
     "hit": "+9",
     "id": "Bob-d+2,3",
     "input": ",3",
     "name": "Combination Ble",
-    "notes": "* Knee",
+    "notes": "* Knee\n* Interrupt with i21 from 1st block\n* Interrupt with i10 from 1st hit\n* Whiffs vs SS, SW from 1st block\n* 4f timestop on CH\n* Crumple stun on CH\n* Move can be delayed by 2F",
     "num": "45",
     "parent": "Bob-d+2",
+    "recv": "r23",
     "startup": "i41",
-    "target": ",m"
+    "target": ",m",
+    "tot": "79"
   },
   {
     "block": "-13",
-    "crush": "js",
+    "crush": "js19~32 fs33~35",
     "damage": ",21",
     "hit": "+14a (+7)",
     "id": "Bob-d+2,4",
     "input": ",4",
     "name": "Combination Baldo",
-    "notes": "* Balcony Break\n* Combos from 1st hit\n* Jails from 1st hit",
+    "notes": "* Balcony Break\n* Jail from 1st block with 2F delay\n* Combo from 1st hit with 2F delay",
     "num": "46",
     "parent": "Bob-d+2",
+    "recv": "r36",
     "startup": "i17",
-    "target": ",m"
+    "target": ",m",
+    "tot": "68"
   },
   {
     "block": "-18",
-    "crush": "cs",
+    "crush": "cs6~56",
     "damage": "12",
     "hit": "-7",
     "id": "Bob-d+3",
     "input": "d+3",
-    "notes": "*",
+    "notes": "* -7c on crouching hit",
+    "recv": "r36 FC",
     "startup": "i19~20",
-    "target": "l"
+    "target": "L",
+    "tot": "56"
   },
   {
     "block": "-12",
-    "crush": "cs",
+    "crush": "fs20~34",
     "damage": "12,14",
     "hit": "+21a (+14)",
     "id": "Bob-d+3+4",
     "input": "d+3+4",
     "name": "Duck Flip",
-    "notes": "*",
+    "notes": "* Slight jab evasion especially at range (frames 6 to 9?)\n* +3~+5 on second hit",
     "num": "50",
-    "startup": "i15~16",
-    "target": "m"
+    "recv": "r35",
+    "startup": "i15~16 i5~7",
+    "target": "M,m",
+    "tot": "61"
   },
   {
     "block": "-8",
@@ -865,9 +969,10 @@
     "id": "Bob-d+3,4",
     "input": ",4",
     "name": "Panini Sweep",
-    "notes": "* Balcony Break\n* Combos from 1st hit CH",
+    "notes": "* Balcony Break\n* Combo from 1st CH with 4F delay",
     "num": "47",
     "parent": "Bob-d+3",
+    "recv": "r32",
     "startup": "i25~26",
     "target": ",h"
   },
@@ -877,9 +982,11 @@
     "hit": "-1",
     "id": "Bob-d+4",
     "input": "d+4",
-    "notes": "*",
+    "notes": "* -1c on crouching hit",
+    "recv": "r31",
     "startup": "i16",
-    "target": "l"
+    "target": "l",
+    "tot": "47"
   },
   {
     "block": "-7",
@@ -887,10 +994,12 @@
     "hit": "-2",
     "id": "Bob-d+4,3",
     "input": ",3",
-    "notes": "* Combos from 1st hit CH",
+    "notes": "* Combo from 1st CH\n* Interrupt with i3 from 1st block",
     "parent": "Bob-d+4",
+    "recv": "r31",
     "startup": "i23~24",
-    "target": ",h"
+    "target": ",h",
+    "tot": "71"
   },
   {
     "block": "-15",
@@ -899,11 +1008,13 @@
     "id": "Bob-d+4,3,4",
     "input": ",4",
     "name": "Tornado Mixer",
-    "notes": "Balcony Break\nCombos from 2nd hit CH",
+    "notes": "* Balcony Break\n* Combo from 1st CH or 2nd hit\n* Move cannot be interrupted",
     "num": "48",
     "parent": "Bob-d+4,3",
+    "recv": "r36",
     "startup": "i25~26",
-    "target": ",m"
+    "target": ",m",
+    "tot": "102"
   },
   {
     "alt": "hFC.1",
@@ -914,7 +1025,7 @@
     "id": "Bob-db+1",
     "input": "db+1",
     "name": "Crouch Jab",
-    "notes": "* Transition to r24 with f\n* +6c on crouching hit",
+    "notes": "* Transition to standing r24 with f\n* +6c on crouching hit",
     "recv": "r24 FC",
     "startup": "i10",
     "target": "sl",
@@ -922,16 +1033,17 @@
   },
   {
     "block": "-13",
-    "crush": "cs",
     "damage": "16",
     "hit": "+33a (+23)",
     "id": "Bob-db+1+2",
     "input": "db+1+2",
     "name": "Abats Snipe",
-    "notes": "*",
+    "notes": "* Strong jab evasion (frames 5 to 13?)",
     "num": "54",
+    "recv": "r36",
     "startup": "i17~18",
-    "target": "m"
+    "target": "m",
+    "tot": "54"
   },
   {
     "block": "-8",
@@ -940,10 +1052,12 @@
     "id": "Bob-db+2",
     "input": "db+2",
     "name": "Bite Uppercut",
-    "notes": "*",
+    "notes": "* Slight jab evasion especially with pushback or after certain hit reactions (stomach stuns? frames 3 to 7?)",
     "num": "51",
+    "recv": "r29",
     "startup": "i14",
-    "target": "m"
+    "target": "m",
+    "tot": "43"
   },
   {
     "block": "-12",
@@ -955,8 +1069,10 @@
     "name": "Liaison Spike",
     "notes": "*",
     "num": "52",
+    "recv": "r31",
     "startup": "i20",
-    "target": "l"
+    "target": "L",
+    "tot": "51"
   },
   {
     "block": "-31",
@@ -964,46 +1080,54 @@
     "hit": "+6",
     "id": "Bob-db+3+4",
     "input": "db+3+4",
-    "notes": "*",
+    "notes": "* Stagger low",
+    "recv": "r46",
     "startup": "i19",
-    "target": "l"
+    "target": "L",
+    "tot": "65"
   },
   {
     "block": "-28",
     "ch": "+1d",
     "damage": ",18",
-    "hit": "+8c",
+    "hit": "+8c / -9c",
     "id": "Bob-db+3+4,4",
     "input": ",4",
     "name": "Huile Slip",
-    "notes": "* Combos from 1st hit",
+    "notes": "* Spike\n* Combo from 1st hit\n* -9c if only the second hit connects",
     "num": "55",
     "parent": "Bob-db+3+4",
+    "recv": "r47",
     "startup": "i9",
-    "target": ",l"
+    "target": ",l",
+    "tot": "88"
   },
   {
     "block": "-12",
-    "crush": "cs",
+    "crush": "cs6~38",
     "damage": "15",
     "hit": "-1",
     "id": "Bob-db+4",
     "input": "db+4",
-    "notes": "*",
+    "notes": "* -1c on crouching hit",
+    "recv": "r30",
     "startup": "i24~25",
-    "target": "l"
+    "target": "L",
+    "tot": "55"
   },
   {
     "block": "-12",
-    "crush": "js",
+    "crush": "js14~28 fs29~31",
     "damage": ",14",
     "hit": "-2",
     "id": "Bob-db+4,4",
     "input": ",4",
-    "notes": "* Combos from 1st hit CH",
+    "notes": "* Spike\n* Combo from 1st CH\n* Interrupt with i6 from 1st block\n* Whiffs vs SSR, SWR from 1st block",
     "parent": "Bob-db+4",
+    "recv": "r30",
     "startup": "i25~27",
-    "target": ",m"
+    "target": ",m",
+    "tot": "82"
   },
   {
     "block": "-9",
@@ -1011,10 +1135,12 @@
     "hit": "+3",
     "id": "Bob-db+4,4,3",
     "input": ",3",
-    "notes": "* Combos from 2nd hit CH",
+    "notes": "* Jails from 2nd block\n* Combo from 2nd CH with 6F delay\n* Duckable\n* Move cannot be delayed\n* Input can be delayed by 6F",
     "parent": "Bob-db+4,4",
+    "recv": "r33",
     "startup": "i12",
-    "target": ",h"
+    "target": ",h",
+    "tot": "103"
   },
   {
     "block": "-12",
@@ -1023,11 +1149,13 @@
     "id": "Bob-db+4,4,3,3",
     "input": ",3",
     "name": "Contorno Farce",
-    "notes": "* Combos from 3rd hit CH",
+    "notes": "* Spike\n* Combo from 3rd CH\n* Interrupt with i10 from 3rd block",
     "num": "53",
     "parent": "Bob-db+4,4,3",
+    "recv": "r28",
     "startup": "i35~38",
-    "target": ",m"
+    "target": ",M",
+    "tot": "136"
   },
   {
     "block": "-2",
@@ -1036,8 +1164,10 @@
     "id": "Bob-df+1",
     "input": "df+1",
     "notes": "*",
+    "recv": "r22",
     "startup": "i14",
-    "target": "m"
+    "target": "m",
+    "tot": "36"
   },
   {
     "block": "-10",
@@ -1046,39 +1176,45 @@
     "id": "Bob-df+1,2",
     "input": ",2",
     "name": "Escalope Elbow",
-    "notes": "* Elbow\n* Combos from 1st hit\n* Jails from 1st hit",
+    "notes": "* Elbow\n* Jail from 1st block with 1F delay\n* Combo from 1st hit with 3F delay\n* Combo from 1st CH with 8F delay\n* Move can be delayed by 10F\n* Input can be delayed by 11F",
     "num": "37",
     "parent": "Bob-df+1",
+    "recv": "r31",
     "startup": "i19",
-    "target": ",m"
+    "target": ",m",
+    "tot": "65"
   },
   {
     "block": "-13c",
     "ch": "+13c",
-    "crush": "js",
-    "damage": "20",
+    "crush": "js19~29 fs30~32",
+    "damage": ",20",
     "hit": "+6c",
     "id": "Bob-df+1,d+1",
     "input": ",d+1",
     "name": "Escalope Pound",
-    "notes": "* Elbow\n* Combos from 1st hit CH",
+    "notes": "* Elbow\n* Spike\n* Combo from 1st CH with 1F delay\n* Interrupt with i6 from 1st block\n* Recovers 4F faster on hit (t72 r32)\n* Move can be delayed by 7F\n* Input can be delayed by 8F",
     "num": "38",
     "parent": "Bob-df+1",
+    "recv": "r36 FC",
     "startup": "i26~27",
-    "target": ",m"
+    "target": ",M",
+    "tot": "78"
   },
   {
     "block": "-8",
     "ch": "+33a (+23)",
     "damage": "14",
-    "hit": "+3",
+    "hit": "+3s",
     "id": "Bob-df+2",
     "input": "df+2",
     "name": "Slash Darne",
-    "notes": "*",
+    "notes": "* Slight jab evasion (frames 8 to 10?)",
     "num": "39",
+    "recv": "r26",
     "startup": "i15~16",
-    "target": "m"
+    "target": "m",
+    "tot": "42"
   },
   {
     "block": "-9",
@@ -1088,10 +1224,12 @@
     "id": "Bob-df+3",
     "input": "df+3",
     "name": "Shrimp Turnover",
-    "notes": "* Balcony Break\n* Tornado\n* Instant Tornado on CH",
+    "notes": "* Balcony Break\n* Tornado\n* Instant Tornado on CH\n* Recovers 2F faster on hit (t50 r30)",
     "num": "40",
+    "recv": "r32",
     "startup": "i19~20",
-    "target": "m"
+    "target": "m",
+    "tot": "52"
   },
   {
     "block": "-6",
@@ -1100,8 +1238,10 @@
     "id": "Bob-df+4",
     "input": "df+4",
     "notes": "*",
+    "recv": "r24",
     "startup": "i13~14",
-    "target": "h"
+    "target": "h",
+    "tot": "38"
   },
   {
     "block": "-8",
@@ -1110,24 +1250,29 @@
     "id": "Bob-df+4,3",
     "input": ",3",
     "name": "Plain Ring",
-    "notes": "* Combos from 1st hit\n* Transition to +12g, +0 BAL with F",
+    "notes": "* Combo from 1st hit with 3F delay\n* Interrupt with i2 from 1st block\n* Transition to BAL r20 with F (+12g/+0)\n** FC r37 transition with no input (Cannot block i17 moves when transitioning on block)\n* Move can be delayed by 2F\n* Input can be delayed by 3F",
     "num": "41",
     "parent": "Bob-df+4",
+    "recv": "r28",
     "startup": "i20~21",
-    "target": ",h"
+    "target": ",h",
+    "tot": "64"
   },
   {
     "block": "-13",
-    "crush": "js",
+    "crush": "fs24~34",
     "damage": ",24",
+    "hit": "+11a (+2)",
     "id": "Bob-df+4,4",
     "input": ",4",
     "name": "Spicy Ring",
-    "notes": "* Heat Engager\n\n* Heat Dash +5, +43d (+35)\n\n* Balcony Break\n* Knee\n* Combo from 1st hit",
+    "notes": "* Heat Engager\n\n* Heat Dash +43d (+35)\n\n* Balcony Break\n* Knee\n* Combo from 1st hit with 3F delay\n* Interrupt with i7 from 1st block\n* Whiffs vs SSR from 1st block (inconsistent; more consistent when using sidestep stance moves)\n* Move can be delayed by 2F\n* Input can be delayed by 3F",
     "num": "42",
     "parent": "Bob-df+4",
+    "recv": "r33",
     "startup": "i25~26",
-    "target": ",m"
+    "target": ",m",
+    "tot": "74"
   },
   {
     "alt": "BAL.1+2",
@@ -1178,7 +1323,7 @@
     "damage": ",10,10",
     "hit": "+13a (+6)",
     "id": "Bob-f+2,H.1+2",
-    "input": ",H+1+2",
+    "input": ",H.1+2",
     "notes": "* Combo from 1st hit with 5F delay\n* Jail from 1st block with 1F delay\n* Consumes 270F of remaining Heat Time\n* Move can be delayed by 4F\n* Input can be delayed by 5F",
     "parent": "Bob-f+2",
     "recv": "r37",
@@ -1209,7 +1354,7 @@
     "hit": "+3c",
     "id": "Bob-f+3",
     "input": "f+3",
-    "notes": "*",
+    "notes": "* Spike",
     "recv": "r25",
     "startup": "i21~24",
     "target": "m",
@@ -1229,7 +1374,7 @@
     "block": "+3",
     "ch": "+55cs",
     "damage": ",23",
-    "hit": "10a (+1)",
+    "hit": "+10a (+1)",
     "id": "Bob-f+3,4",
     "input": ",4",
     "name": "Mergeuz Kick Combo",
@@ -1244,12 +1389,12 @@
   {
     "block": "-6",
     "ch": "+3d",
-    "damage": "20",
+    "damage": "20 (38)",
     "hit": "+19a",
     "id": "Bob-f+4",
     "input": "f+4",
     "name": "Spinning Linguine",
-    "notes": "* Homing\n* Shift to throw on CH from the front",
+    "notes": "* Homing\n* Shift to 14dmg throw on CH from the front",
     "num": "34",
     "recv": "r33",
     "startup": "i16~17",
@@ -1260,25 +1405,31 @@
     "alt": "BAL.uf+1+2",
     "block": "-3",
     "damage": "35",
-    "hit": "+5",
+    "hit": "+5g",
     "id": "Bob-FC.db+1+2",
     "input": "FC.db+1+2",
     "name": "Steak and Fries",
     "notes": "* Throw break: 1+2",
     "num": "126",
-    "target": "t"
+    "recv": "r27",
+    "startup": "i12,i30",
+    "target": "t",
+    "tot": "39"
   },
   {
-    "alt": "BAL.uf+1+2",
+    "alt": "BAL.uf+1+2:3",
     "block": "-3",
     "damage": "45",
-    "hit": "+26a",
+    "hit": "+26a (+0)",
     "id": "Bob-FC.db+1+2:3",
     "input": "FC.db+1+2:3",
-    "name": "Steak and Fries",
-    "notes": "* Balcony Break\n* Throw break: 1+2",
+    "name": "Steak and Fries (Perfect)",
+    "notes": "* Balcony Break\n* Throw break: 1+2\n* Input 3 during frames 26 to 29 of 2nd hit",
     "num": "127",
-    "target": "t"
+    "recv": "r27",
+    "startup": "i12,i30",
+    "target": "t",
+    "tot": "39"
   },
   {
     "block": "-8",
@@ -1286,9 +1437,11 @@
     "hit": "+3",
     "id": "Bob-FC.df+2",
     "input": "FC.df+2",
-    "notes": "*",
+    "notes": "* +3c on crouching hit",
+    "recv": "r27",
     "startup": "i14",
-    "target": "m"
+    "target": "m",
+    "tot": "41"
   },
   {
     "block": "-7",
@@ -1296,10 +1449,12 @@
     "hit": "+4",
     "id": "Bob-FC.df+2,1",
     "input": ",1",
-    "notes": "* Combos from 1st hit",
+    "notes": "* Combo from 1st hit\n* Interrupt with i1 from 1st block\n* +4c on crouching hit",
     "parent": "Bob-FC.df+2",
+    "recv": "r26",
     "startup": "i21",
-    "target": ",m"
+    "target": ",m",
+    "tot": "61"
   },
   {
     "block": "-13",
@@ -1308,16 +1463,18 @@
     "id": "Bob-FC.df+2,1,1+2",
     "input": ",1+2",
     "name": "Polpo Swing",
-    "notes": "* Balcony Break\n* Combos from 2nd hit CH\n* Delayable",
+    "notes": "* Balcony Break\n* Combo from 2nd CH with 4F delay\n* Interrupt with i6 from 1st block\n* Move can be delayed by 9F",
     "num": "94",
     "parent": "Bob-FC.df+2,1",
+    "recv": "r34",
     "startup": "i26",
-    "target": ",m"
+    "target": ",m",
+    "tot": "95"
   },
   {
     "block": "-12",
     "ch": "+29d",
-    "crush": "cs",
+    "crush": "cs1~26",
     "damage": "14",
     "hit": "+3",
     "id": "Bob-FC.df+4",
@@ -1325,8 +1482,10 @@
     "name": "Gourmand Swing",
     "notes": "*",
     "num": "95",
+    "recv": "r31",
     "startup": "i19",
-    "target": "l"
+    "target": "L",
+    "tot": "50"
   },
   {
     "block": "-8",
@@ -1417,12 +1576,14 @@
     "tot": "72"
   },
   {
-    "alias": "CD or wave dash",
+    "alias": "CD",
     "id": "Bob-f,n,d,df",
     "input": "f,n,d,df",
     "name": "United Step",
-    "notes": "* Cannot be buffered",
-    "num": "98"
+    "notes": "* Cannot be buffered\n* Stance moves can be buffered out of heat dash\n* Recovers in FC at frame 20\n* Cancel to SS with u\n* Cancel to standing block with b from frames 1 to 9",
+    "num": "98",
+    "recv": "r1",
+    "tot": "20"
   },
   {
     "alt": "f,n,df#1",
@@ -1432,85 +1593,99 @@
     "id": "Bob-f,n,d,df+1",
     "input": "f,n,d,df+1",
     "name": "Langue Washer",
-    "notes": "* Balcony Break\n* Instant Tornado on hit\n* Actual startup i16 (i15 if done with f,n,df#1 input)\n* 4 chip damage on block",
+    "notes": "* Balcony Break\n* Instant Tornado on hit\n* Can also be performed with f,n,df#1 (i15+)\n* 4 chip damage on block\n* Recovers 2F faster on hit or block (t36 r22)",
     "num": "99",
-    "startup": "i13~14",
-    "target": "h"
+    "recv": "r24",
+    "startup": "i13~14 (i16+)",
+    "target": "h",
+    "tot": "38"
   },
   {
     "block": "-10",
     "damage": "20",
-    "hit": "+24a (+10)",
+    "hit": "+24a (+14)",
     "id": "Bob-f,n,d,df+1+2",
     "input": "f,n,d,df+1+2",
     "name": "Granchi Canon",
-    "notes": "* Balcony Break\n* Actual startup i18\n* Can be charged to power up",
+    "notes": "* Balcony Break\n* Can be charged to power up\n* i28 latest uncharged startup with max charge delay",
     "num": "104",
+    "recv": "r32",
     "startup": "i15",
-    "target": "m"
+    "target": "m",
+    "tot": "47"
   },
   {
     "block": "+4",
-    "damage": "20",
+    "damage": "33",
     "hit": "+39a",
     "id": "Bob-f,n,d,df+1+2*",
     "input": "f,n,d,df+1+2*",
     "name": "Granchi Canon (charged)",
-    "notes": "* Balcony Break\n* Actual startup i31\n* 6 chip damage on block",
+    "notes": "* Balcony Break\n* Charge for 23-28F\n* 6 chip damage on block",
+    "recv": "r32",
     "startup": "i28",
-    "target": "m"
+    "target": "m",
+    "tot": "60"
   },
   {
     "block": "-23",
-    "crush": "js",
+    "crush": "js17~39 fs40~42",
     "damage": "24",
     "hit": "+76a",
     "id": "Bob-f,n,d,df+2",
     "input": "f,n,d,df+2",
     "name": "Spiral Rocky",
-    "notes": "* Tornado\n* Actual startup i19",
+    "notes": "* Tornado\n* Parryable\n* Recovers 5F faster on hit (t60 r43)",
     "num": "100",
+    "recv": "r48",
     "startup": "i16~17",
-    "target": "m"
+    "target": "M",
+    "tot": "65"
   },
   {
     "block": "-10",
-    "crush": "js",
+    "crush": "js14~27 fs28~30",
     "damage": "16",
-    "hit": "-5",
+    "hit": "-5s",
     "id": "Bob-f,n,d,df+3",
     "input": "f,n,d,df+3",
-    "notes": "* Knee\n* Actual startup i19",
-    "startup": "i16",
-    "target": "m"
+    "notes": "* Knee",
+    "recv": "r34",
+    "startup": "i16~17",
+    "target": "m",
+    "tot": "51"
   },
   {
     "block": "+3",
-    "crush": "js",
-    "damage": ",27",
-    "hit": "+24d (-11)",
+    "crush": "js1~33 fs34~36",
+    "damage": ",27 (18)",
+    "hit": "+19a / +24a (-11)",
     "id": "Bob-f,n,d,df+3,2",
     "input": ",2",
     "name": "Gambero Knee Rush",
-    "notes": "* Floor Break\n* Combos from 1st hit\n* Transition to +3, +25d FC with D\n* 5 chip damage on block",
+    "notes": "* Balcony Break\n* Spike (airborne)\n* Airborne combo from 1st hit (+24d (-11))\n* Jails attack inputs from 1st block (crouch assist bufferable)\n* Transition to FC r30 with D (+3/+19a/+25a (-10))\n* Duckable\n* 5 chip damage on block",
     "num": "101",
     "parent": "Bob-f,n,d,df+3",
+    "recv": "r30",
     "startup": "i23~24",
-    "target": ",h"
+    "target": ",h",
+    "tot": "71"
   },
   {
     "block": "-11c",
-    "crush": "js",
-    "damage": ",30",
-    "hit": "+16a (+6)",
+    "crush": "js1~25 fs26~28",
+    "damage": ",30 (21)",
+    "hit": "+16a (+6) / +21a (+11)",
     "id": "Bob-f,n,d,df+3,4",
     "input": ",4",
     "name": "Gambero Spin Heel",
-    "notes": "* Balcony Break\n* Combos from 1st hit",
+    "notes": "* Balcony Break\n* Combo from 1st hit\n* Interrupt with i1 from 1st block\n* 20f timestop on hit",
     "num": "102",
     "parent": "Bob-f,n,d,df+3",
+    "recv": "r39",
     "startup": "i26",
-    "target": ",m"
+    "target": ",M",
+    "tot": "82"
   },
   {
     "block": "-28",
@@ -1518,22 +1693,26 @@
     "hit": "-1",
     "id": "Bob-f,n,d,DF+4",
     "input": "f,n,d,DF+4",
-    "notes": "* Actual startup i21",
-    "startup": "i18",
-    "target": "l"
+    "notes": "* Stagger low",
+    "recv": "r35 FC",
+    "startup": "i18~19",
+    "target": "L",
+    "tot": "54"
   },
   {
     "block": "-17",
-    "damage": ",25",
-    "hit": "+7a (+6)",
+    "damage": ",25 (17)",
+    "hit": "+7a (+6) / +2d",
     "id": "Bob-f,n,d,DF+4,1+2",
     "input": ",1+2",
     "name": "Cutting Coppa",
-    "notes": "* Balcony Break\n* Combos from 1st hit",
+    "notes": "* Balcony Break\n* Airborne combo from 1st hit (+7a (+6))",
     "num": "103",
     "parent": "Bob-f,n,d,DF+4",
+    "recv": "r38",
     "startup": "i25",
-    "target": ",m"
+    "target": ",m",
+    "tot": "82"
   },
   {
     "block": "+6",
@@ -1557,7 +1736,7 @@
     "id": "Bob-H.df+3+4",
     "input": "H.df+3+4",
     "name": "Breaking Villain à la Carte",
-    "notes": "* Transition to BAL r29 on hit\n** Cannot block i16 moves\n* Consumes 300F of remaining Heat Time",
+    "notes": "* Transition to BAL r29 on hit\n**  FC r52 transition with no input (Cannot block i16 moves)\n* Consumes 300F of remaining Heat Time",
     "num": "13",
     "recv": "r32",
     "startup": "i21",
@@ -1573,7 +1752,7 @@
     "id": "Bob-hFC.1",
     "input": "hFC.1",
     "name": "Crouch Jab",
-    "notes": "* Transition to r24 with f\n* +6c on crouching hit",
+    "notes": "* Transition to standing r24 with f\n* +6c on crouching hit",
     "recv": "r24 FC",
     "startup": "i10",
     "target": "sl",
@@ -1623,12 +1802,12 @@
   },
   {
     "block": "-3",
-    "damage": "40",
+    "damage": "40 (45)",
     "hit": "+0d",
     "id": "Bob-Left Throw",
     "input": "Left Throw",
     "name": "Corkscrew",
-    "notes": "* Throw break: 1\n* Opponent recovers FDFA",
+    "notes": "* Throw break: 1\n* Can fully wall splat (45 damage)\n* Opponent recovers FDFA",
     "num": "122",
     "target": "t"
   },
@@ -1660,26 +1839,30 @@
   {
     "block": "-5c",
     "damage": "24",
-    "hit": "+13a",
+    "hit": "+13cg",
     "id": "Bob-SS.1+2",
     "input": "SS.1+2",
     "name": "Banh mi Strike",
-    "notes": "* Balcony Break",
+    "notes": "* Balcony Break\n* i24~25 effective startup (sidestep takes 9f)\n* Forces tech back roll on hit",
     "num": "96",
+    "recv": "r34",
     "startup": "i15~16",
-    "target": "m"
+    "target": "m",
+    "tot": "50"
   },
   {
     "alt": "ub+1+2",
     "block": "-11",
-    "crush": "js",
+    "crush": "js13~24 fs25~27",
     "damage": "15",
     "hit": "-3",
     "id": "Bob-u+1+2",
     "input": "u+1+2",
-    "notes": "* Head\n* Transition to +8, +0 BAL with F",
+    "notes": "* Head\n* Slight jab evasion?\n* Transition to BAL r23 on hit or block with F (+0/+8)\n* FC r46 transition with no input (Cannot block i23 and i15 moves on block or hit transitions respectively)",
+    "recv": "r34",
     "startup": "i16~18",
-    "target": "m"
+    "target": "m",
+    "tot": "52"
   },
   {
     "block": "-17",
@@ -1688,54 +1871,61 @@
     "id": "Bob-u+1+2,1+2",
     "input": ",1+2",
     "name": "Cracker Jacker",
-    "notes": "* Balcony Break\n* Combos from 1st hit\n* Delayable",
+    "notes": "* Balcony Break\n* Body slam\n* Combo from 1st hit with 13F delay\n* Interrupt with i7 from 1st block\n* Move can be delayed by 14F\n* Input can be delayed by 27F",
     "num": "69",
     "parent": "Bob-u+1+2",
+    "recv": "r33",
     "startup": "i18~22",
-    "target": ",m"
+    "target": ",m",
+    "tot": "86"
   },
   {
     "block": "-8",
-    "crush": "js",
+    "crush": "js10~27 fs28~30",
     "damage": ",20",
     "hit": "-2d",
     "id": "Bob-u+1+2,4",
     "input": ",4",
     "name": "Cracker Rigatoni",
-    "notes": "* Tornado\n* Combos from 1st hit",
+    "notes": "* Tornado\n* Combo from 1st hit with 13F delay\n* Interrupt with i7 from 1st block\n* Move cannot be delayed\n* Input can be delayed by 13F",
     "num": "68",
     "parent": "Bob-u+1+2",
+    "recv": "r40",
     "startup": "i18~19",
-    "target": ",h"
+    "target": ",h",
+    "tot": "90"
   },
   {
     "alt": "ub+3",
     "block": "+3",
     "ch": "+9c",
-    "crush": "js",
+    "crush": "js9~20",
     "damage": "20",
     "hit": "+7",
     "id": "Bob-u+3",
     "input": "u+3",
     "name": "Pepperoni Fall",
-    "notes": "* Transition to +12g, +7, +16c BAL with F",
+    "notes": "* Spike\n* Transition to BAL r23 with F (+7/+12g/[[Bob_combos#Mini-combos|+16c]])\n** FC r49 transition with no input (Cannot block i16 and i11 moves after block and hit transitions respectively)",
     "num": "67",
+    "recv": "r26",
     "startup": "i22~23",
-    "target": "m"
+    "target": "M",
+    "tot": "49"
   },
   {
     "block": "+1",
-    "crush": "cs",
+    "crush": "js12~29",
     "damage": "20",
     "hit": "+6c",
     "id": "Bob-u+3+4",
     "input": "u+3+4",
     "name": "Strainer",
-    "notes": "* 4 chip damage on block",
+    "notes": "* Spike\n* 4 chip damage on block",
     "num": "70",
-    "recv": "fc",
+    "recv": "r30 FC",
     "startup": "i24~28",
-    "target": "m"
+    "target": "M",
+    "tot": "58"
   },
   {
     "block": "-15",
@@ -1744,54 +1934,63 @@
     "id": "Bob-ub+1",
     "input": "ub+1",
     "name": "Hot Cross Bun",
-    "notes": "* Balcony Break",
+    "notes": "* Balcony Break\n* Backswing blow\n* Recovers 6F faster on hit (t56 r30)",
     "num": "64",
+    "recv": "r36",
     "startup": "i26",
-    "target": "m"
+    "target": "m",
+    "tot": "62"
   },
   {
     "block": "-9",
-    "damage": "12",
+    "damage": "6,6",
     "hit": "+18a (+11)",
     "id": "Bob-ub+3+4",
     "input": "ub+3+4",
-    "notes": "*",
-    "startup": "i18,i10",
-    "target": "m,m"
+    "notes": "* Slight jab evasion especially from crouching (frames 3 to 12?)",
+    "recv": "r32",
+    "startup": "i18, i10",
+    "target": "m,m",
+    "tot": "60"
   },
   {
     "block": "-11",
-    "crush": "js",
-    "damage": ",16",
-    "hit": "+21a (+14)",
+    "crush": "js17~31",
+    "damage": ",23 (16)",
+    "hit": "+20a (+11)/+21a (+14)",
     "id": "Bob-ub+3+4,4",
     "input": ",4",
     "name": "Runner Flip",
-    "notes": "* Balcony Break\n* Combos from 1st hit",
+    "notes": "* Balcony Break\n* Airborne combo from 1st hit (+21a (+14))\n* Interrupt with i6 from 1st block",
     "num": "66",
     "parent": "Bob-ub+3+4",
+    "recv": "r28",
     "startup": "i29~31",
-    "target": ",m"
+    "target": ",m",
+    "tot": "88"
   },
   {
-    "crush": "js",
+    "crush": "js9~33 fs34~36",
     "id": "Bob-ub+4",
     "input": "ub+4",
-    "notes": "* Transition to BAL with F"
+    "notes": "* Transition to BAL r51 with F at frame 38",
+    "tot": "58"
   },
   {
     "block": "-9",
-    "crush": "js",
+    "crush": "js1~27 fs28~30",
     "damage": "25",
     "hit": "+11a (+2)",
     "id": "Bob-ub+4,1",
     "input": ",1",
     "name": "Hatching Punch",
-    "notes": "* Balcony Break",
+    "notes": "* Balcony Break\n* i28~30 effective startup (ub+4 takes 17 frames)\n* 20f timestop on hit",
     "num": "65",
     "parent": "Bob-ub+4",
-    "startup": "i11~13",
-    "target": "m"
+    "recv": "r31 FC",
+    "startup": "i11~13 (i28~30)",
+    "target": "m",
+    "tot": "61"
   },
   {
     "alt": "u+1",
@@ -1800,20 +1999,25 @@
     "hit": "+3",
     "id": "Bob-uf+1",
     "input": "uf+1",
-    "notes": "*",
+    "notes": "* Has good right sidestep tracking",
+    "recv": "r28",
     "startup": "i16",
-    "target": "m"
+    "target": "m",
+    "tot": "44"
   },
   {
     "block": "-3",
-    "damage": "40",
+    "damage": "40 (45)",
     "hit": "+0d",
     "id": "Bob-uf+1+2",
     "input": "uf+1+2",
     "name": "Shatter the Cask",
-    "notes": "* Throw break: 1+2\n* Opponent recovers FDFA\n* Swaps sides on throw break",
+    "notes": "* Throw break: 1+2\n* Opponent recovers FDFA\n* 45 damage on wall splat\n* Swaps sides on throw break",
     "num": "125",
-    "target": "t"
+    "recv": "r27",
+    "startup": "i12",
+    "target": "t",
+    "tot": "39"
   },
   {
     "block": "-9",
@@ -1822,11 +2026,13 @@
     "id": "Bob-uf+1,2",
     "input": ",2",
     "name": "Double Pound",
-    "notes": "* Combos from 1st hit",
+    "notes": "* Combo from 1st hit with 6F delay\n* Interrupt with i1 from 1st block\n* Move can be delayed by 5F\n* Input can be delayed by 6F",
     "num": "71",
     "parent": "Bob-uf+1",
+    "recv": "r32",
     "startup": "i20~21",
-    "target": ",m"
+    "target": ",m",
+    "tot": "70"
   },
   {
     "block": "+5",
@@ -1845,67 +2051,79 @@
   },
   {
     "block": "-13",
-    "crush": "js",
+    "crush": "js9~26 fs27~29",
     "damage": "20",
     "hit": "+33a (+23)",
     "id": "Bob-uf+3",
     "input": "uf+3",
     "name": "Flying Jambon",
-    "notes": "*",
+    "notes": "* Recovers 2F faster on hit (t51 r31)",
     "num": "72",
+    "recv": "r33",
     "startup": "i20",
-    "target": "m"
+    "target": "m",
+    "tot": "53"
   },
   {
     "block": "-25,-15",
-    "crush": "js",
+    "crush": "js24~30 fs31~33",
     "damage": "10,12",
     "hit": "-4",
     "id": "Bob-uf+3+4",
     "input": "uf+3+4",
     "notes": "*",
-    "startup": "i21",
-    "target": "l,h"
+    "recv": "r34",
+    "startup": "i21, i10",
+    "target": "L,h",
+    "tot": "65"
   },
   {
     "block": "-4",
+    "crush": "js1~17 fs18~20",
     "damage": ",20",
-    "hit": "+22a (+18)",
+    "hit": "+22a (+13)",
     "id": "Bob-uf+3+4,4",
     "input": ",4",
     "name": "Rolling Kebab",
-    "notes": "* Balcony Break\n* Strong Aerial Tailspin\n* Combos from 1st hit",
+    "notes": "* Balcony Break\n* Strong Aerial Tailspin\n* Combo from 2nd CH\n* Jails attack inputs from 2nd block\n* Move cannot be interrupted from 1st hit\n* Duckable",
     "num": "74",
     "parent": "Bob-uf+3+4",
+    "recv": "r28",
     "startup": "i18",
-    "target": ",h"
+    "target": ",h",
+    "tot": "77"
   },
   {
     "alt": "u+4",
     "block": "-4",
-    "crush": "js",
+    "crush": "js9~28 fs29~31",
     "damage": "20",
     "hit": "+22a",
     "id": "Bob-uf+4",
     "input": "uf+4",
     "name": "Langouste Tail",
-    "notes": "*",
+    "notes": "* Spike\n*",
     "num": "73",
+    "recv": "r26",
     "startup": "i26~28",
-    "target": "m"
+    "target": "m",
+    "tot": "54"
   },
   {
+    "alias": "Delayed Hopkick",
     "block": "-13",
-    "crush": "js",
+    "crush": "js9~30 fs31~33",
     "damage": "20",
-    "hit": "+32a (+22)",
+    "hit": "+32a (+22a)",
     "id": "Bob-uf,n,4",
     "input": "uf,n,4",
     "name": "Delayed Rising Toe Kick",
     "notes": "*",
     "num": "75",
-    "startup": "i23~25",
-    "target": "m"
+    "recv": "r30",
+    "startup": "i23~i25",
+    "target": "m",
+    "tot": "55"
   },
   {
     "block": "-11",
@@ -1914,8 +2132,10 @@
     "id": "Bob-ws1",
     "input": "ws1",
     "notes": "* Elbow",
+    "recv": "r30",
     "startup": "i13~15",
-    "target": "m"
+    "target": "m",
+    "tot": "45"
   },
   {
     "block": "-8",
@@ -1927,22 +2147,26 @@
     "name": "Rising Matzo",
     "notes": "*",
     "num": "93",
+    "recv": "r31",
     "startup": "i15~17",
-    "target": "m"
+    "target": "m",
+    "tot": "48"
   },
   {
     "block": "-5",
-    "crush": "js",
+    "crush": "js23~37 fs38~40",
     "damage": ",23",
     "hit": "+8a (-1)",
     "id": "Bob-ws1,2",
     "input": ",2",
     "name": "Slash Butcher",
-    "notes": "* Heat Engager\n\n* Heat Dash +5, +43d (+35)\n\n* Balcony Break\n* Combos from 1st hit\n* 4 chip damage on block",
+    "notes": "* Heat Engager\n\n* Heat Dash +43d (+35)\n\n* Balcony Break\n* Elbow\n* Combo from 1st hit with 6F delay\n* Interrupt with i4 from 1st block\n* 20f timestop on hit\n* 4 chip damage on block",
     "num": "87",
     "parent": "Bob-ws1",
+    "recv": "r35",
     "startup": "i24~25",
-    "target": ",h"
+    "target": ",h",
+    "tot": "75"
   },
   {
     "block": "-13",
@@ -1951,11 +2175,13 @@
     "id": "Bob-ws1,3",
     "input": ",3",
     "name": "Hot Guimauve",
-    "notes": "* Balcony Break\n* Combos from 1st hit",
+    "notes": "* Balcony Break\n* Hip\n* Combo from 1st hit\n* Interrupt with i5 from 1st block",
     "num": "88",
     "parent": "Bob-ws1",
+    "recv": "r33",
     "startup": "i25~26",
-    "target": ",m"
+    "target": ",M",
+    "tot": "74"
   },
   {
     "block": "-7",
@@ -1964,8 +2190,10 @@
     "id": "Bob-ws2",
     "input": "ws2",
     "notes": "*",
+    "recv": "r26",
     "startup": "i14",
-    "target": "m"
+    "target": "m",
+    "tot": "40"
   },
   {
     "block": "-20",
@@ -1974,11 +2202,13 @@
     "id": "Bob-ws2,1",
     "input": ",1",
     "name": "Spinach Upper",
-    "notes": "* Tornado\n* Combos from 1st hit",
+    "notes": "* Tornado\n* Combo from 1st hit with 2F delay\n* Interrupt with i8 from 1st block\n* Whiffs vs SSL, SWL from 1st block",
     "num": "89",
     "parent": "Bob-ws2",
+    "recv": "r38",
     "startup": "i28~31",
-    "target": ",m"
+    "target": ",m",
+    "tot": "83"
   },
   {
     "block": "-13c",
@@ -1988,35 +2218,41 @@
     "id": "Bob-ws2,2",
     "input": ",2",
     "name": "Spinach Hammer",
-    "notes": "* Combos from 1st hit\n* Delayable",
+    "notes": "* Combo from 1st hit with 7F delay\n* Interrupt with i7 from 1st block\n* Move can be delayed by 10F\n* Input can be delayed by 14F",
     "num": "90",
     "parent": "Bob-ws2",
+    "recv": "r37",
     "startup": "i23",
-    "target": ",m"
+    "target": ",m",
+    "tot": "78"
   },
   {
-    "block": "-8",
+    "block": "-8~-7",
     "damage": "17",
     "hit": "+17a (+8)",
     "id": "Bob-ws3",
     "input": "ws3",
     "notes": "* Balcony Break\n* Homing",
+    "recv": "r32",
     "startup": "i17~18",
-    "target": "h"
+    "target": "h",
+    "tot": "50"
   },
   {
     "block": "-4c",
-    "crush": "js",
-    "damage": ",28",
+    "crush": "js15~37 fs38~40",
+    "damage": ",28 (19)",
     "hit": "+17d",
     "id": "Bob-ws3,3+4",
     "input": ",3+4",
     "name": "Brioche Star",
-    "notes": "* Floor Break\n* Combos from 1st hit",
+    "notes": "* Spike\n* Airborne combo from 1st hit (-8d)\n* Interrupt with i8 from 1st block",
     "num": "91",
     "parent": "Bob-ws3",
+    "recv": "r29 FC",
     "startup": "i33~41",
-    "target": ",m"
+    "target": ",M",
+    "tot": "88"
   },
   {
     "alt": "CD.4",
@@ -2028,7 +2264,9 @@
     "name": "Toe Smash",
     "notes": "*",
     "num": "92",
+    "recv": "r24",
     "startup": "i11~12",
-    "target": "m"
+    "target": "m",
+    "tot": "36"
   }
 ]

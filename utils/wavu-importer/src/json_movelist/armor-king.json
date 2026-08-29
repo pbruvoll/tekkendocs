@@ -101,13 +101,15 @@
     "tot": "45"
   },
   {
-    "damage": "25?",
+    "damage": "25",
     "hit": "+12g?",
     "id": "Armor King-1+3+4",
     "input": "1+3+4",
     "notes": "* Extremely high hitbox",
+    "recv": "r11",
     "startup": "i37~44",
-    "target": "h!"
+    "target": "h!",
+    "tot": "55"
   },
   {
     "block": "+1",
@@ -321,7 +323,6 @@
     "tot": "53"
   },
   {
-    "block": "!",
     "damage": "45",
     "hit": "+0d",
     "id": "Armor King-AIR.BAD.2+4",
@@ -334,7 +335,6 @@
   },
   {
     "alias": "Shining Wizard",
-    "block": "!",
     "damage": "50(55)",
     "hit": "+0d",
     "id": "Armor King-AIR.f,f,F+2+4",
@@ -347,7 +347,6 @@
   },
   {
     "alt": "AIR.BAD.1+3",
-    "block": "!",
     "damage": "40(45)",
     "hit": "+0d",
     "id": "Armor King-AIR.f,hcf+1",
@@ -408,9 +407,11 @@
     "id": "Armor King-b+1+3",
     "input": "b+1+3",
     "name": "Catch",
-    "notes": "* Reverses High or Mid punches only\n* Opponent recovers FUFA when parrying a left punch\n* Opponent recovers FDFL when parrying a right punch\n* Has a followup on whiff only"
+    "notes": "* Reverses High or Mid punches only\n* Opponent recovers FUFA when parrying a left punch\n* Opponent recovers FDFL when parrying a right punch\n* Has a followup on whiff only",
+    "tot": "44"
   },
   {
+    "alt": "b+2+4,2",
     "block": "-9",
     "ch": "+27a",
     "damage": "17",
@@ -418,9 +419,11 @@
     "id": "Armor King-b+1+3,2",
     "input": "b+1+3,2",
     "name": "Jugular Thrust Trap",
-    "notes": "* On CH transition to True Dark Smash",
-    "startup": "i17",
-    "target": "m"
+    "notes": "* i38 effective startup (b+1+3 takes 21 frames)\n* On CH transition to True Dark Smash",
+    "recv": "r34",
+    "startup": "i17 (i38)",
+    "target": "m",
+    "tot": "62"
   },
   {
     "block": "-11",
@@ -526,17 +529,17 @@
     "target": "th(h)"
   },
   {
-    "crush": "is9?~24? fs25?~34? js35?~39? fs40?~47?",
+    "crush": "is8~24 fs24~33 js34~39 fs40~47",
     "damage": "40",
     "hit": "+0d",
     "id": "Armor King-(Back to wall).b,b,UB",
     "input": "(Back to wall).b,b,UB",
     "name": "[[Wall Jump Attack]]",
-    "notes": "* Floor Break\n* Transition to attack throw on hit\n* Opponent recovers FUFR?",
-    "recv": "r24?",
+    "notes": "* Floor Break\n* Shift to attack throw on hit\n* Opponent recovers FUFR?",
+    "recv": "r24 BT",
     "startup": "i40~45",
     "target": "h!,t",
-    "tot": "69?"
+    "tot": "69"
   },
   {
     "block": "+1",
@@ -734,7 +737,7 @@
     "id": "Armor King-BM.2,1,2,1",
     "input": "BM.2,1,2,1",
     "name": "Back Mount > Ultimate Punch",
-    "notes": "* Could be any 1/2 combination (e.g. 1,1,1,1 / 1,2,2,1)\n* Throw break the 1st/4th hit by input the opposite to King's 1st/4th button.\n* Opponent recovers FDFT",
+    "notes": "* Could be any 1/2 combination (e.g. 1,1,1,1 / 1,2,2,1)\n* Throw break the 1st/4th hit by input the opposite to King's 1st/4th button.\n* Opponent recovers FDFT\n* AK recovers FUFA on throw break",
     "target": "t"
   },
   {
@@ -809,15 +812,16 @@
   },
   {
     "alt": "* db+1+3\n* FC.d+1+3\n* FC.db+1+3",
-    "block": "!",
     "damage": "35",
     "hit": "+0d",
     "id": "Armor King-d+1+3",
     "input": "d+1+3",
     "name": "Demon Bomb",
     "notes": "* Floor Break\n* Unbreakable\n* Opponent recovers FUFA",
+    "recv": "r24",
     "startup": "i12~13",
-    "target": "th(m)"
+    "target": "th(m)",
+    "tot": "37"
   },
   {
     "block": "-10",
@@ -861,15 +865,16 @@
   },
   {
     "alt": "* db+2+4\n* FC.d+2+4\n* FC.db+2+4",
-    "block": "!",
     "damage": "35",
     "hit": "+0d",
     "id": "Armor King-d+2+4",
     "input": "d+2+4",
     "name": "Storm Maker",
     "notes": "* Heat Engager\n\n* Unable to Heat Dash\n* Unbreakable\n* Opponent recovers FUFA",
+    "recv": "r24",
     "startup": "i12~13",
-    "target": "th(m)"
+    "target": "th(m)",
+    "tot": "37"
   },
   {
     "block": "-14",
@@ -979,10 +984,11 @@
     "id": "Armor King-db+1+2",
     "input": "db+1+2",
     "name": "DDT",
-    "notes": "* Throw break 1+2\n* Opponent left FUFA\n* Armor King recovers FUFA",
-    "recv": "FUFA",
+    "notes": "* Throw break 1+2\n* Side switch on hit\n* Opponent left FUFA\n* Armor King recovers FUFA on hit",
+    "recv": "r28",
     "startup": "i11",
-    "target": "th(h)"
+    "target": "th(h)",
+    "tot": "39"
   },
   {
     "block": "-11",
@@ -1109,8 +1115,10 @@
     "input": "db,n,f+2+4",
     "name": "Tombstone Piledriver",
     "notes": "* Floor Break\n* Throw break 2\n* Opponent left FUFA",
+    "recv": "r28",
     "startup": "i11",
-    "target": "th(h)"
+    "target": "th(h)",
+    "tot": "39"
   },
   {
     "block": "-3",
@@ -1176,8 +1184,10 @@
     "input": "df+2+3",
     "name": "Driving Headbutt",
     "notes": "* Floor Break\n* Throw break 2\n* Opponent left FUFT",
+    "recv": "r27",
     "startup": "i12",
-    "target": "th(h)"
+    "target": "th(h)",
+    "tot": "39"
   },
   {
     "block": "-5",
@@ -1458,11 +1468,13 @@
     "input": "FDFA.db+1+3",
     "name": "Wake-Up Lariat",
     "notes": "* Throw break 1\n* Opponent recovers FUFT",
+    "recv": "r39",
     "startup": "i18~20",
-    "target": "th(g)"
+    "target": "th(g)",
+    "tot": "59"
   },
   {
-    "alt": "FDFR.db+1+3",
+    "alt": "* FDFR.db+1+3\n* FDFL.db+2+4\n* FDFR.db+2+4",
     "block": "+8",
     "damage": "0",
     "hit": "-10d",
@@ -1470,8 +1482,10 @@
     "input": "FDFL.db+1+3",
     "name": "Back Mount",
     "notes": "* 1 or 2 throw break, depending on Armor King's input.\n* Transitions to Back Mount (BM), which has the Ultimate Punch followup\n* Opponent recovers in FDFT.",
+    "recv": "r39",
     "startup": "i18~20",
-    "target": "th(g)"
+    "target": "th(g)",
+    "tot": "59"
   },
   {
     "block": "+0",
@@ -1481,8 +1495,10 @@
     "input": "FDFT.db+1+3",
     "name": "Standing Ankle Hold",
     "notes": "* Throw break 1\n* Opponent recovers FUFT",
+    "recv": "r39",
     "startup": "i18~20",
-    "target": "th(g)"
+    "target": "th(g)",
+    "tot": "59"
   },
   {
     "block": "-6",
@@ -1546,10 +1562,11 @@
     "id": "Armor King-f,f,F+2+4",
     "input": "f,f,F+2+4",
     "name": "Brilliant Brawler Kick",
-    "notes": "* Balcony Break\n* Homing during heat\n* Throw break 1+2\n* Input n,f,F+2+4 within 6 frames after dash startup (f,n,f) to execute \"blue spark\" (+5 damage).\n* i13 startup for Bluespark throw with buffered input\n* Opponent left FUFT\n* Armor King recovers FUF",
-    "recv": "FUFT",
+    "notes": "* Balcony Break\n* Homing during heat\n* Throw break 1+2\n* Input n,f,F+2+4 within 6 frames after dash startup (f,n,f) to execute \"blue spark\" (+5 damage).\n* i13 startup for Bluespark throw with buffered input\n* Opponent left FUFT\n* Armor King recovers FUFT on hit",
+    "recv": "r29",
     "startup": "i10",
-    "target": "th(h)"
+    "target": "th(h)",
+    "tot": "39"
   },
   {
     "block": "+6",
@@ -1604,8 +1621,10 @@
     "input": "f,hcf+1",
     "name": "Double Arm Swing",
     "notes": "* Homing during Heat\n* Throw break 1\n* Perform tech ukemi to reduce 5 damage.\n* Side switch \n* 70 damage on wall splat regardless of input.\n* Input all directions, df for 1-3F, f for 0-1F, and f+1 to execute bluespark.\n* f,b,d,f are required inputs for normal throw\n* i11 startup for Bluespark throw with buffered input\n* BAD.1+3: i14 startup (t43). Cannot execute blue spark variant\n* Opponent recovers in FDFT.",
+    "recv": "r29",
     "startup": "i10",
-    "target": "th(h)"
+    "target": "th(h)",
+    "tot": "39"
   },
   {
     "alias": "CD",
@@ -1658,7 +1677,7 @@
     "recv": "r27",
     "startup": "i12 (i17)",
     "target": "t",
-    "tot": "39 (t46)"
+    "tot": "46"
   },
   {
     "alias": "Dark Upper",
@@ -1669,7 +1688,7 @@
     "id": "Armor King-f,n,d,df+2",
     "input": "f,n,d,df+2",
     "name": "Dark Smash",
-    "notes": "* Can also be performed with f,n,df#2 (i13+)\n* t39 r27 on hit",
+    "notes": "* Can also be performed with f,n,df#2 (i13+)\n* Recovers 1F faster on hit(t39 r27)",
     "num": "119",
     "recv": "r28",
     "startup": "i11~12 (i14+)",
@@ -1707,16 +1726,18 @@
   {
     "block": "+0",
     "damage": "35",
-    "hit": "35",
+    "hit": "-19d",
     "id": "Armor King-FUFA.db+1+3",
     "input": "FUFA.db+1+3",
     "name": "Enzui Knee",
-    "notes": "* Balcony Break\n* Throw break 1\n* Opponent recovers FDFT",
+    "notes": "* Balcony Break\n* Can wall splat\n* Throw break 1\n* Opponent recovers FDFT",
+    "recv": "r39",
     "startup": "i18~20",
-    "target": "th(g)"
+    "target": "th(g)",
+    "tot": "59"
   },
   {
-    "alt": "FUFR.db+1+3",
+    "alt": "* FUFR.db+1+3\n* FUFL.db+2+4\n* FUFR.db+2+4",
     "block": "+0",
     "damage": "0",
     "hit": "+25d",
@@ -1724,20 +1745,24 @@
     "input": "FUFL.db+1+3",
     "name": "Turn Over",
     "notes": "* 1 or 2 throw break, depending on Armor King's input.\n* Opponent recovers in FDFL/FDFR.",
+    "recv": "r39",
     "startup": "i18~20",
-    "target": "th(g)"
+    "target": "th(g)",
+    "tot": "59"
   },
   {
     "block": "-25",
+    "crush": "fs1~11 js12~34 fs35~45",
     "damage": "25",
-    "hit": "+4a(-6)",
+    "hit": "+4a (-6)",
     "id": "Armor King-FUFT.b+3+4",
     "input": "FUFT.b+3+4",
     "name": "Whirling Spring Kick",
-    "notes": "Balcony Break\n* Faster than normal spring kick and knocks down.",
-    "recv": "BT",
+    "notes": "* Balcony Break\n* Faster than normal spring kick and knocks down.",
+    "recv": "r34 BT",
     "startup": "i16~28",
-    "target": "m"
+    "target": "m",
+    "tot": "62"
   },
   {
     "block": "+0",
@@ -1746,9 +1771,11 @@
     "id": "Armor King-FUFT.db+1+3",
     "input": "FUFT.db+1+3",
     "name": "Seesaw Whip",
-    "notes": "* Balcony Break\n* Throw break 1\n* Side swap\n* Opponent recovers FDFT",
+    "notes": "* Balcony Break\n* Throw break 1\n* Side swap\n* Can wall splat\n* Opponent recovers FDFT",
+    "recv": "r39",
     "startup": "i18~20",
-    "target": "th(g)"
+    "target": "th(g)",
+    "tot": "59"
   },
   {
     "alt": "H.BAD.2+3",
@@ -1894,23 +1921,27 @@
     "hit": "-5d (-13)",
     "id": "Armor King-OTG.d+4",
     "input": "OTG.d+4",
-    "notes": "* -5 on hit when opponent is standing",
+    "notes": "* -5 on hit when opponent is standing\n* -5c on crouching hit",
+    "recv": "r33",
     "startup": "i19~21",
-    "target": "L"
+    "target": "L",
+    "tot": "54"
   },
   {
     "block": "-16",
-    "damage": ",8",
+    "damage": ",8 (5)",
     "hit": "-8d",
     "id": "Armor King-OTG.d+4,4",
     "input": ",4",
-    "notes": "* Floor Break\n* Combos from 1st hit on grounded opponent\n* -5 on hit when opponent is standing",
+    "notes": "* Floor Break\n* Scaled combo from 1st hit on grounded opponent\n* -5 on hit when opponent is standing\n* -5c on crouching hit",
     "parent": "Armor King-OTG.d+4",
+    "recv": "r33",
     "startup": "i18~21",
-    "target": ",L"
+    "target": ",L",
+    "tot": "74"
   },
   {
-    "block": "-17",
+    "block": "-17c",
     "crush": "js13~32",
     "damage": ",20",
     "hit": "+0d",
@@ -1919,31 +1950,37 @@
     "name": "Crazy Torment",
     "notes": "* Combos from 1st hit on grounded opponent\n* +5 on hit when opponent is standing",
     "parent": "Armor King-OTG.d+4,4",
+    "recv": "r43",
     "startup": "i30~32",
-    "target": ",SM"
+    "target": ",SM",
+    "tot": "116"
   },
   {
     "block": "-16",
-    "damage": ",6",
+    "damage": ",6 (3)",
     "hit": "-8d",
     "id": "Armor King-OTG.d+4,4,4",
     "input": ",4",
     "name": "Crazy Stomp",
-    "notes": "* Floor Break\n* Combos from 1st hit on grounded opponent\n* -5 on hit when opponent is standing",
+    "notes": "* Floor Break (Airborne)\n* Scaled combo from 1st hit on grounded opponent\n* -5 on hit when opponent is standing",
     "parent": "Armor King-OTG.d+4,4",
+    "recv": "r32",
     "startup": "i18~21",
-    "target": ",L"
+    "target": ",L",
+    "tot": "84"
   },
   {
     "block": "+0",
     "damage": "0",
-    "hit": "+12",
+    "hit": "+12 / +9",
     "id": "Armor King-OTG.db+2+4",
     "input": "OTG.db+2+4",
     "name": "Stand Up",
     "notes": "* Throw break 2\n* Opponent recovers standing (+12)\n* Opponent can be FUFT,FUFA,FDFT,FDFA\n* If opponent was FUFA or FDFA, opponent recovers BT (+9)",
+    "recv": "r39",
     "startup": "i18~20",
-    "target": "th(g)"
+    "target": "th(g)",
+    "tot": "59"
   },
   {
     "block": "-3",
@@ -1953,8 +1990,10 @@
     "input": "qcb+1+2",
     "name": "Hades Drop",
     "notes": "* Balcony Break\n* Homing during heat\n* Opponent takes 5 additional damage when they hit the ground\n* Opponent takes 4 additional damage when they hit a wall\n* Throw break 1+2\n* Opponent left FUFA",
+    "recv": "r28",
     "startup": "i11",
-    "target": "th(h)"
+    "target": "th(h)",
+    "tot": "39"
   },
   {
     "block": "-18",
@@ -2108,8 +2147,10 @@
     "input": "uf+1+2",
     "name": "Armor King Driver",
     "notes": "* Floor Break\n* Throw break 1+2\n* Opponent left FUFA",
+    "recv": "r27",
     "startup": "i12",
-    "target": "th(h)"
+    "target": "th(h)",
+    "tot": "39"
   },
   {
     "alt": "* ub+2\n* u+2",
@@ -2218,7 +2259,6 @@
   },
   {
     "alt": "WALL.2+4",
-    "block": "!",
     "damage": "65?",
     "hit": "+0d",
     "id": "Armor King-WALL.1+3",
