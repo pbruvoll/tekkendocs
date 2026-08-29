@@ -9,14 +9,14 @@ H.b+1+2;m,m,h,h,h,h;5,20,2,2,3,3;i16, i8~10, i28, i35, i42, i49;0;+33a (+7);;"* 
 * Jails
 * Consumes 240F of remaining Heat time
 * 15 chip damage on block";bbr wpn chp:15;FC;Shockwave Palm > Kiss Shot Penetrator;32;;;;Nina-H.b+1+2;nina
-H.2+3;m,h,h,h,h;20,9,12,9,12;i16 i28 i35 i42 i49;+14;+43a (+10);;"* Heat Smash
-* Jails";hs;FC;Bullet Assassination (Far);32;FC;;;Nina-H.2+3;nina
 H.2+3;m,h,h,h,h,m;20,30;i16 i28 i35 i42 i49 i90~91;+5~+6;-2d;;"* Heat Smash
 * Spike
 * Transition to attack throw on hit
 * Enter CD r30 with F on block (+7)
 * 10 chip damage on block
 * Jails";hs spk chp:10;CD;Bullet Assassination (Close);32;;;;Nina-H.2+3;nina
+H.2+3;m,h,h,h,h;20,9,12,9,12;i16 i28 i35 i42 i49;+14;+43a (+10);;"* Heat Smash
+* Jails";hs;FC;Bullet Assassination (Far);32;FC;;;Nina-H.2+3;nina
 R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Removes Recoverable Health
 * Reversal Break
@@ -264,7 +264,7 @@ df+3,3;m, m;13, 14;i14, i28;-10;+2c;;"* Spike
 df+4;m;15;i12;-4;+7;;;;;;23;;;;Nina-df+4;nina
 df+3+4;;;i31~35;;;;"* i20~24 startup with input d,DF+4
 * High crush 4~";cs4~;FC;;45;FC;;;Nina-df+3+4;nina
-d+1;sl;5;i10;-5;+5;;"* Transition to r24? with f
+d+1;sl;5;i10;-5;+5;;"* Transition to standing r24 with f
 * High crush 4~";cs4~;FC;Low Jab;24;FC;;File:t8-p2-nina-d+1,4.mp4;Nina-d+1;nina
 d+1,4;sl, m;5, 10;i10, i16~17;-11;+0;;"* Combo from 1st CH
 * Jail from 1st block with ?F delay";;;Low Jab > Mid Kick;29;;;File:t8-p2-nina-d+1,4.mp4;Nina-d+1,4;nina
@@ -580,7 +580,7 @@ qcf+2+3;h!;"[10;10]";i24~38;;+36g~+50g;;"* Opponent can recover in crouch on hit
 * High crush 1~37";cs1~37;;Evil Mist;0;;;File:t8-p2-nina-cd.2+3.mp4;Nina-CD.2+3;nina
 OTG.d+3+4;L;30;i17~18;-17;-7d;;Spike;spk;;Twisted Mind;35?;;;;Nina-OTG.d+3+4;nina
 qcb+4;M;20;i19~20;-12;+68a (+52);;* Tornado;trn;;Ice Pick;35;;;File:t8-p2-nina-swa.b+4.mp4;Nina-SWA.b+4;nina
-hFC.1;sl;5;i10;-5;+6;;"* Transition to r24 with f
+hFC.1;sl;5;i10;-5;+6;;"* Transition to standing r24 with f
 * +6c on crouching hit
 * High crush 1~";cs1~;FC;Crouch Jab;24;FC;;;Nina-hFC.1;nina
 hFC.1,4;sl, m;5, 10;i10, i16~17;-11;+0;;Combo from 1st CH;;;;29;;;;Nina-hFC.1,4;nina
@@ -599,11 +599,11 @@ hFC.4;l;6;i12;-15;-4;;"* -4c on crouching hit
 * Nina recovers BT";hom;;Over the Back Toss;31;;;File:t8-p2-nina-2+4.mp4;Nina-2+4;nina
 2+4,2;t;25;;+0;-5d;;"* Unbreakable
 * Side switch";;;Shoulder Through Buster (STB);;;;File:t8-p2-nina-2+4,2.mp4;Nina-2+4,2;nina
-ABK.1;t;15;;-3;+0d;;"*
-Removes Recoverable Health
+ABK.1;t;15;;-3;+0d;;"* Removes Recoverable Health
 * Throw break 1
 * Powered up input: ABK.3,1,1+2";;;Double Arm Break;;;;;Nina-ABK.1;nina
-ABK.1;t;15;;-3;+0d;;"* Removes Recoverable Health
+ABK.1;t;15;;-3;+0d;;"*
+Removes Recoverable Health
 * Throw break 1
 * Powered up input: ABK.3,1,1+2";;;Double Arm Break;;;;;Nina-ABK.1;nina
 ABK.2;t;15;;-3;+3d;;"* Removes Recoverable Health
