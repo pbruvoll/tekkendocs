@@ -1235,7 +1235,7 @@
 |video=
 |notes={{Plainlist|
 * {{Spike}}
-* Recovers 4F faster on hit (t46 r27)
+* Recovers 4F faster on hit or block (t46 r27)
 }}
 }}
 {{Move
@@ -3750,6 +3750,21 @@
 * Hip
 }}
 }}
+{{MoveInherit|Bob-f+1+2
+|input=BAL.1+2
+|alt=f+1+2
+}}
+{{MoveInherit|Bob-FC.db+1+2
+|input=BAL.uf+1+2
+|alt=FC.db+1+2
+|startup=i21, i30
+|recv=r27
+|tot=48
+}}
+{{MoveInherit|Bob-FC.db+1+2:3
+|input=BAL.uf+1+2:3
+|alt=FC.db+1+2:3
+}}
 
 == Others ==
 
@@ -3758,6 +3773,43 @@
 |id=Bob-R.df+1+2
 |name=Ultimate Full-Course
 |num=18
+}}
+{{MoveInherit|Generic-1+2+3+4
+|id=Bob-1+2+3+4
+|recv=r55
+}}
+{{MoveInherit|Generic-1+2+3+4
+|id=Bob-1+2+3+4*
+|crush=js55~82, fs83~85
+|recv=r105 FC
+}}
+{{Move
+|id=Bob-b+1+3
+|num=128
+|parent=
+|input=b+1+3
+|alt=b+2+4
+|alias=
+|name=Perfect Body
+|target=sp
+|damage=(10),20 (25)
+|startup=i41?, i30
+|block=
+|hit=+5g / +26a (+0)
+|ch=
+|crush=ps5~12
+|recv=r33
+|tot=45
+|range=
+|tracksLeft=
+|tracksRight=
+|video=
+|notes={{Plainlist|
+* {{BB}} (Perfect)
+* Parries high and mid punches
+* On successful parry, shift to Steak and Fries (FC.db+1+2)
+** Input 3 during frames 26 to 29 of 2nd hit
+}}
 }}
 {{Move
 |id=Bob-SS.1+2
@@ -3770,17 +3822,19 @@
 |damage=24
 |startup=i15~16
 |block=-5c
-|hit=+13a
+|hit=+13cg
 |ch=
 |crush=
-|recv=
-|tot=
+|recv=r34
+|tot=50
 |range=
 |tracksLeft=
 |tracksRight=
 |video=
 |notes={{Plainlist|
 * {{BB}}
+* i24~25 effective startup (sidestep takes 9f)
+* Forces tech back roll on hit
 }}
 }}
 {{Move
@@ -3795,17 +3849,23 @@
 |startup=i15~16
 |block=-9
 |hit=+14a (+5)
-|ch=+59cs
+|ch=+59a
 |crush=
-|recv=
-|tot=
+|recv=r30
+|tot=46
 |range=
 |tracksLeft=
 |tracksRight=
 |video=
 |notes={{Plainlist|
 * {{BB}}
+* 4f timestop on CH
+* Crumple stun +13F on CH
 }}
+}}
+{{MoveInherit|Generic-(back to wall).b,b,UB(3)
+|id=Bob-(back to wall).b,b,UB
+|notes=
 }}
 
 == Throws ==
@@ -3825,8 +3885,8 @@
 |hit=+0d
 |ch=
 |crush=
-|recv=
-|tot=
+|recv=r31
+|tot=45
 |range=
 |tracksLeft=
 |tracksRight=
@@ -3851,8 +3911,8 @@
 |hit=+0d
 |ch=
 |crush=
-|recv=
-|tot=
+|recv=r31
+|tot=45
 |range=
 |tracksLeft=
 |tracksRight=
@@ -3869,11 +3929,12 @@
 |num=122
 |input=Left Throw
 |target=t
-|damage=40
+|damage=40 (45)
 |block=-3
 |hit=+0d
 |notes={{Plainlist|
 * Throw break: 1
+* Can fully wall splat (45 damage)
 * Opponent recovers FDFA
 }}
 }}
@@ -3897,11 +3958,12 @@
 |num=124
 |input=Back Throw
 |target=t
-|damage=50
+|damage=50 (60)
 |block=
 |hit=+0d
 |notes={{Plainlist|
 * Unbreakable
+* Can fully wall splat (60 damage)
 * Opponent recovers FDFA
 }}
 }}
@@ -3911,12 +3973,16 @@
 |num=125
 |input=uf+1+2
 |target=t
-|damage=40
+|startup=i12
+|damage=40 (45)
 |block=-3
 |hit=+0d
+|recv=r27
+|tot=39
 |notes={{Plainlist|
 * Throw break: 1+2
 * Opponent recovers FDFA
+* 45 damage on wall splat
 * Swaps sides on throw break
 }}
 }}
@@ -3927,52 +3993,28 @@
 |input=FC.db+1+2
 |alt=BAL.uf+1+2
 |target=t
+|startup=i12,i30
 |damage=35
 |block=-3
-|hit=+5
+|hit=+5g
+|recv=r27
+|tot=39
 |notes={{Plainlist|
 * Throw break: 1+2
 }}
 }}
-{{Move
+{{MoveInherit|Bob-FC.db+1+2
 |id=Bob-FC.db+1+2:3
-|name=Steak and Fries
+|name=Steak and Fries (Perfect)
 |num=127
 |input=FC.db+1+2:3
-|alt=BAL.uf+1+2
-|target=t
+|alt=BAL.uf+1+2:3
 |damage=45
-|block=-3
-|hit=+26a
+|hit=+26a (+0)
 |notes={{Plainlist|
 * {{BB}}
 * Throw break: 1+2
-}}
-}}
-{{Move
-|id=Bob-b+1+3
-|num=128
-|parent=
-|input=b+1+3
-|alt=b+2+4
-|alias=
-|name=Perfect Body
-|target=
-|damage=
-|startup=
-|block=
-|hit=
-|ch=
-|crush=ps
-|recv=
-|tot=
-|range=
-|tracksLeft=
-|tracksRight=
-|video=
-|notes={{Plainlist|
-* Parries high and mid punches
-* On successful parry, shift to Steak and Fries (FC.db+1+2)
+* Input 3 during frames 26 to 29 of 2nd hit
 }}
 }}
 
