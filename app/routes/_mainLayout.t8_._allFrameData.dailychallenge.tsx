@@ -48,7 +48,7 @@ export const meta: MetaFunction = ({ matches }) => {
     title: 'Tekken 8 Daily Challenge | TekkenDocs',
     description:
       'Daily frame data quiz with 10 moves. Guess the block frame and keep your streak alive.',
-    image: { url: '/images/tekkendocs-og-image-v2.png' },
+    image: { url: '/t8/pages/dailychallenge.png' },
     url: '/t8/dailychallenge',
   });
 };
