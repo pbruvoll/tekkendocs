@@ -11,6 +11,7 @@ import eddy from '~/images/t8/guides/eddy-1200.webp';
 import fahkumram from '~/images/t8/guides/fahkumram-1200.webp';
 import heihachi from '~/images/t8/guides/heihachi-1200.webp';
 import hwoarang from '~/images/t8/guides/hwoarang-1200.webp';
+import jack8 from '~/images/t8/guides/jack-8-1200.webp';
 import jin from '~/images/t8/guides/jin-1200.webp';
 import jun from '~/images/t8/guides/jun-1200.webp';
 import kazuya from '~/images/t8/guides/kazuya-1200.webp';
