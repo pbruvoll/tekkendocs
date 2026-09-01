@@ -50,6 +50,7 @@ export const t8GuideImgMap: Record<string, string> = {
   heihachi,
   hwoarang,
   lars,
+  'jack-8': jack8,
   jin,
   jun,
   kazuya,
