@@ -26,6 +26,7 @@ export const tableIdToDisplayName: Record<TableId, string> = {
   resources_external: 'External resources',
   credits: '', // custom rendering
   introduction: 'Introduction',
+  gameplan: 'Game Plan',
   strengths: 'Strengths',
   weaknesses: 'Weaknesses',
   heat_system: 'Heat system',

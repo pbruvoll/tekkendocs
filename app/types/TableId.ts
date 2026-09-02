@@ -13,6 +13,7 @@ export type TableId =
   | 'installments'
   | 'panic_moves'
   | 'introduction'
+  | 'gameplan'
   | 'strengths'
   | 'weaknesses'
   | 'punishers_standing'

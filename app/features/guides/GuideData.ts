@@ -80,6 +80,7 @@ export type GuideData = {
   crouchingPunishers: Punisher[];
   whiffPunishers: WhiffPunisher[];
   heatSystem: string[];
+  gamePlan: string[];
   combos: Combo[];
   combosBeginner: Combo[];
   comboEnders: ComboEnder[];
