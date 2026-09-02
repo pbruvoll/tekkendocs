@@ -83,6 +83,20 @@ export const sortOptions: {
     }),
   },
   {
+    displayName: 'Total frames (low - high)',
+    value: getSortByQueryParamValue({
+      sortByKey: 'totalFrames',
+      sortDirection: 'desc',
+    }),
+  },
+  {
+    displayName: 'Total frames (high - low)',
+    value: getSortByQueryParamValue({
+      sortByKey: 'totalFrames',
+      sortDirection: 'asc',
+    }),
+  },
+  {
     displayName: 'Interruptible (low - high)',
     value: getSortByQueryParamValue({
       sortByKey: 'interruptible',

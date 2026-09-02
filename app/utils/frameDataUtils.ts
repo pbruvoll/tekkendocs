@@ -46,6 +46,7 @@ export const frameDataTableToJson = (normalFrameData: TableData): Move[] => {
   const nameIndex = lowerCaseHeaders.indexOf('name');
   const recoveryIndex = lowerCaseHeaders.indexOf('recovery');
   const recoveryStateIndex = lowerCaseHeaders.indexOf('recovery state');
+  const totalFramesIndex = lowerCaseHeaders.indexOf('total frames');
   const characterIdIndex = lowerCaseHeaders.indexOf('character id');
 
   // check optional columns
@@ -76,6 +77,8 @@ export const frameDataTableToJson = (normalFrameData: TableData): Move[] => {
       recovery: row[recoveryIndex],
       recoveryState:
         recoveryStateIndex >= 0 ? row[recoveryStateIndex] : undefined,
+      totalFrames:
+        totalFramesIndex >= 0 ? row[totalFramesIndex] : undefined,
       characterId: characterIdIndex >= 0 ? row[characterIdIndex] : undefined,
     };
   });
@@ -725,6 +728,13 @@ export const sortMovesV2 = (
     }
     case 'recovery': {
       return sortMovesByNumber(moves, (move: Move) => move.recovery || '', asc);
+    }
+    case 'totalFrames': {
+      return sortMovesByNumber(
+        moves,
+        (move: Move) => move.totalFrames || '',
+        asc,
+      );
     }
     case 'interruptible': {
       return sortMovesByNumber(
