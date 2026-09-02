@@ -24,6 +24,7 @@ export const hasHeaderMap: Record<TableId, boolean> = {
   resources_external: true,
   credits: true,
   introduction: true,
+  gameplan: true,
   strengths: true,
   weaknesses: true,
   frame_traps: true,

@@ -20,6 +20,7 @@ import { Combos } from '~/features/guides/Combos';
 import { DefensiveTips } from '~/features/guides/DefensiveTips';
 import { ExternalResources } from '~/features/guides/ExternalResources';
 import { FrameTraps } from '~/features/guides/FrameTraps';
+import { GamePlan } from '~/features/guides/GamePlan';
 import { GuideContext } from '~/features/guides/GuideContext';
 import { GuideNav } from '~/features/guides/GuideNav';
 import { tablesToGuideData } from '~/features/guides/guideUtils.server';
@@ -226,6 +227,7 @@ export default function Index() {
     keyMoves,
     panicMoves,
     heatSystem,
+    gamePlan,
     introduction,
     strengths,
     weaknesses,
@@ -320,6 +322,7 @@ export default function Index() {
           <StrengthsWeaknesses strengths={strengths} weaknesses={weaknesses} />
         )}
         {heatSystem?.length && <HeatSystem heatSystem={heatSystem} />}
+        {!!gamePlan?.length && <GamePlan sections={gamePlan} />}
         {installments?.length && <Installments installments={installments} />}
         {top10Moves?.length && (
           <KeyMoves moves={top10Moves} title="Top 10 Moves" />
