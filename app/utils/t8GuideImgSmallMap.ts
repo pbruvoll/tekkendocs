@@ -5,6 +5,7 @@ import asuka from '~/images/t8/guides/asuka-600.webp';
 import azucena from '~/images/t8/guides/azucena-600.webp';
 import bryan from '~/images/t8/guides/bryan-600.webp';
 import claudio from '~/images/t8/guides/claudio-600.webp';
+import clive from '~/images/t8/guides/clive-600.webp';
 import devilJin from '~/images/t8/guides/devil-jin-600.webp';
 import dragunov from '~/images/t8/guides/dragunov-600.webp';
 import eddy from '~/images/t8/guides/eddy-600.webp';
@@ -17,6 +18,7 @@ import jun from '~/images/t8/guides/jun-600.webp';
 import kazuya from '~/images/t8/guides/kazuya-600.webp';
 import king from '~/images/t8/guides/king-600.webp';
 import kuma from '~/images/t8/guides/kuma-600.webp';
+import kunimitsu from '~/images/t8/guides/kunimitsu-600.webp';
 import lars from '~/images/t8/guides/lars-600.webp';
 import law from '~/images/t8/guides/law-600.webp';
 import lee from '~/images/t8/guides/lee-600.webp';
@@ -27,6 +29,7 @@ import lili from '~/images/t8/guides/lili-600.webp';
 import miaryZo from '~/images/t8/guides/miary-zo-600.webp';
 import nina from '~/images/t8/guides/nina-600.webp';
 import panda from '~/images/t8/guides/panda-600.webp';
+import paul from '~/images/t8/guides/paul-600.webp';
 import raven from '~/images/t8/guides/raven-600.webp';
 import reina from '~/images/t8/guides/reina-600.webp';
 import shaheen from '~/images/t8/guides/shaheen-600.webp';
@@ -43,6 +46,7 @@ export const t8GuideImgSmallMap: Record<string, string> = {
   asuka,
   bryan,
   claudio,
+  clive,
   'devil-jin': devilJin,
   dragunov,
   eddy,
@@ -55,6 +59,7 @@ export const t8GuideImgSmallMap: Record<string, string> = {
   kazuya,
   king,
   kuma,
+  kunimitsu,
   lars,
   law,
   lee,
@@ -65,6 +70,7 @@ export const t8GuideImgSmallMap: Record<string, string> = {
   'miary-zo': miaryZo,
   nina,
   panda,
+  paul,
   raven,
   reina,
   shaheen,
