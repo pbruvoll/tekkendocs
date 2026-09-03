@@ -185,6 +185,7 @@ export const characterGuideAuthors: Record<
     fahkumram: { author: 'Leemishima', version: 'S3' },
     hwoarang: { author: 'Kicking Macine', version: 'S3' },
     heihachi: { author: 'Trunkiez', version: 'S2' },
+    'jack-8': { author: 'Fisherboat', version: 'S3' },
     jin: { author: 'Bok Dibi', version: 'S2' },
     jun: { author: 'Pagani', version: 'S2' },
     kazuya: { author: 'Ishan', version: 'S3' },
