@@ -22,6 +22,8 @@ export const GuideNav = ({ guideData }: GuideNavProps) => {
     !!guideData.frameTraps && 'Frame Traps',
     !!guideData.knowledgeChecks && 'Knowledge Checks',
     !!(guideData.defensiveTips || guideData.defensiveMoves) && 'Defensive Tips',
+    !!(guideData.goodMatchups?.length || guideData.badMatchups?.length) &&
+      'Matchups',
     !!guideData.externalResources && 'External Resources',
   ].filter(Boolean) as string[];
 

@@ -28,6 +28,7 @@ import { HeatSystem } from '~/features/guides/HeatSystem';
 import { Installments } from '~/features/guides/Installments';
 import { Introduction } from '~/features/guides/Introduction';
 import { KeyMoves } from '~/features/guides/KeyMoves';
+import { Matchups } from '~/features/guides/Matchups';
 import { Punishers } from '~/features/guides/Punishers';
 import { Stances } from '~/features/guides/Stances';
 import { StrengthsWeaknesses } from '~/features/guides/StrengthsWeaknesses';
@@ -243,6 +244,8 @@ export default function Index() {
     knowledgeChecks,
     defensiveTips,
     defensiveMoves,
+    goodMatchups,
+    badMatchups,
     stances,
     installments,
     aboutAuthor,
@@ -359,6 +362,9 @@ export default function Index() {
         {defensiveTips?.length && <DefensiveTips tips={defensiveTips} />}
         {defensiveMoves?.length && (
           <KeyMoves moves={defensiveMoves} title="Defensive Move Handling" />
+        )}
+        {!!(goodMatchups?.length || badMatchups?.length) && (
+          <Matchups good={goodMatchups} bad={badMatchups} />
         )}
         {externalResources?.length && (
           <ExternalResources externalResources={externalResources} />

@@ -31,6 +31,8 @@ export const hasHeaderMap: Record<TableId, boolean> = {
   knowledge_checks: true,
   defense_tips: true,
   defense_moves: true,
+  matchups_good: true,
+  matchups_bad: true,
   heat_system: true,
   stances: true,
   installments: true,

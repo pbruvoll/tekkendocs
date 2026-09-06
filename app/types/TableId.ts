@@ -31,6 +31,8 @@ export type TableId =
   | 'knowledge_checks'
   | 'defense_tips'
   | 'defense_moves'
+  | 'matchups_good'
+  | 'matchups_bad'
   | 'credits'
   | 'about_author'
   | 'about';

@@ -252,6 +252,122 @@ export const recoverFullCrouch = (move: Move) => {
   );
 };
 
+// matches a transition verb that actually names a destination. The `enters?` branch
+// requires a following word so "Minimum 3f needed to enter (one for each directional)"
+// is not treated as a transition, and the last branch picks up the lines about
+// backing out of one ("Cancel HAM transition -13 +1 with B")
+const transitionVerbRegex =
+  /(?:transitions?|cancels?)\s+(?:to|into)\b|\benters?\s+(?![([])\S|\bcancels?\s+(?:\w+\s+){0,3}?transitions?\b/i;
+
+// "Does not transition to DES when using Heat Dash" describes a transition the move
+// does not have. Checked after cleaning, so the caveat in "Transition to SIT (Cannot
+// cancel)" is already gone by the time it is applied
+const negatedTransitionRegex =
+  /\b(?:does not|doesn't|do not|don't|won't|will not|cannot|can't|no longer)\s+(?:\w+\s+){0,2}?(?:transitions?|cancels?|enters?)\b/i;
+
+// groups can be nested ("(-12/+41d (-17)/+42a)"), so the innermost one is handled
+// first and the ones that are kept are parked behind a placeholder to keep the loop
+// from looking at them again. Notes never contain braces of their own
+const parenthesesRegex = /(\s*)\(([^()]*)\)/g;
+const placeholderRegex = /\{\{(\d+)\}\}/g;
+
+// "(-13/-2)" and "(js17~36, fs37~39)" are frame data and are kept, while
+// "(steps left)" and "(does not shift when using Heat Dash)" are prose and are not.
+// Frame data always has a number in it and never a word longer than a state prefix
+const isFrameData = (text: string) =>
+  /\d/.test(text) && !/[A-Za-z]{3,}/.test(text);
+
+// neither "with no input" nor "with 14F delay" says anything about the transition
+const noInputRegex = /\s*\bwith no input\b/gi;
+const inputDelayRegex = /\s*\bwith \d+\??[fF] delay\??/gi;
+
+// "with input F" -> "with F", "with alternate input d,DF" -> "with d,DF"
+const inputWordRegex = /\bwith (?:held |alternate )?input\b/gi;
+
+// the frame window a transition is available in: "on frame 17", "on any frame",
+// "from frames 1 to 9", "after 20F". The clause runs until the next "with", an
+// "on hit"/"on block" condition, a kept group, a comma or the end of the line
+const frameTimingRegex =
+  /\s*\b(?:on|at|from|after|in|within|earliest\s+on|delayable\s+up\s+to)\s+(?:any\s+|the\s+)?(?:frames?\b|\d+\??[~-]?\d*\??\s*(?:frames?\b|[fF]\b)).*?(?=\s+with\b|\s+on\s+(?:hit|block)\b|\s*,|\s*\{\{|\s*$)/gi;
+
+// "r24", "r22?", "t41~49", "t1~t3", "r?" — recovery and total frame markers, guarded
+// so they cannot bite into a command or a frame value like "i23"
+const frameMarkerRegex =
+  /(?<![A-Za-z0-9])[rt](?:\d+\??(?:~[rt]?\d+\??)?|\?)(?![A-Za-z0-9])/g;
+
+// in "Cancel to r25 with b,b" the recovery frames are the destination — the move
+// just recovers. The "to" goes with them, rather than being left dangling. There can
+// be a run of markers ("to t63 r41 with F"), and the lookahead keeps the "to" of
+// "Cancel to r34 FC with DB", where a real destination follows the markers
+const bareRecoveryDestinationRegex =
+  /\s*\b(?:to|into)(?:\s+[rt](?:\d+\??(?:~[rt]?\d+\??)?|\?))+(?=\s*(?:$|,|\{\{|\b(?:with|on|at|from|earliest|automatically)\b))/gi;
+
+// every transition either happens by itself or on an input, so saying so adds nothing
+const automaticallyRegex = /\s*\bautomatically\b/gi;
+
+const tidy = (text: string) =>
+  text
+    .replace(/\s{2,}/g, ' ')
+    .replace(/ ,/g, ',')
+    .trim()
+    .replace(/^[,;/]+|[,.;/]+$/g, '')
+    .trim();
+
+const cleanTransitionNote = (note: string): string => {
+  // park the parenthesised frame data, drop the parenthesised prose
+  const frameDataGroups: string[] = [];
+  let parked = note;
+  let previous = '';
+  while (parked !== previous) {
+    previous = parked;
+    parked = parked.replace(parenthesesRegex, (_, spacing, text) => {
+      const group = tidy(text.replace(frameMarkerRegex, ''));
+      if (!group || !isFrameData(group)) {
+        return '';
+      }
+      frameDataGroups.push(`(${group})`);
+      return `${spacing}{{${frameDataGroups.length - 1}}}`;
+    });
+  }
+
+  let cleaned = parked
+    .replace(noInputRegex, '')
+    .replace(inputDelayRegex, '')
+    .replace(inputWordRegex, 'with')
+    .replace(automaticallyRegex, '')
+    .replace(frameTimingRegex, '')
+    .replace(bareRecoveryDestinationRegex, '')
+    .replace(frameMarkerRegex, '');
+
+  // a kept group can hold a placeholder of its own, so unpark until none are left
+  while (cleaned.includes('{{')) {
+    cleaned = cleaned.replace(
+      placeholderRegex,
+      (_, index) => frameDataGroups[Number(index)],
+    );
+  }
+  // dropping a leading "Automatically" leaves the sentence starting lower case
+  return tidy(cleaned).replace(/^[a-z]/, (letter) => letter.toUpperCase());
+};
+
+/** the notes lines describing what the move transitions into, lightly cleaned */
+export const getTransitionNotes = (move: Move): string[] => {
+  return (move.notes || '')
+    .split('\n')
+    .map((line) =>
+      line
+        .replace(/\r/g, '')
+        .trim()
+        .replace(/^\**\s*/, '')
+        .trim(),
+    )
+    .filter(
+      (line) => line && !line.includes('[[') && transitionVerbRegex.test(line),
+    )
+    .map(cleanTransitionNote)
+    .filter((note) => note && !negatedTransitionRegex.test(note));
+};
+
 export const forcesCrouchOnBlock = (move: Move) => {
   return /\dc/i.test(move.block || '');
 };

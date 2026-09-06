@@ -67,6 +67,13 @@ export type DefensiveTip = {
   description: string;
 };
 
+export type Matchup = {
+  /** The characters this matchup entry is about. A single entry can cover
+   * several characters, e.g. "Kuma | Panda" in the sheet. */
+  characters: string[];
+  description: string;
+};
+
 export type GuideData = {
   externalResources: ExternalResource[];
   authors: Author[];
@@ -90,6 +97,8 @@ export type GuideData = {
   knowledgeChecks: KeyMove[];
   defensiveTips: DefensiveTip[];
   defensiveMoves: KeyMove[];
+  goodMatchups: Matchup[];
+  badMatchups: Matchup[];
   stances: Stance[];
   installments: Installment[];
   aboutAuthor: string[];
