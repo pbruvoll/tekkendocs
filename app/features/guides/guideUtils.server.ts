@@ -4,6 +4,7 @@ import { type SheetSection } from '~/utils/sheetUtils.server';
 import {
   type ComboEnderType,
   type GuideData,
+  type Matchup,
   type WallComboType,
 } from './GuideData';
 
@@ -148,6 +149,12 @@ const tableHandlers: Partial<
       description: row[1],
     }));
   },
+  matchups_good: (rows, guideData) => {
+    guideData.goodMatchups = rows.map(rowToMatchup);
+  },
+  matchups_bad: (rows, guideData) => {
+    guideData.badMatchups = rows.map(rowToMatchup);
+  },
   stances: (rows, guideData) => {
     guideData.stances = rows.map((row) => ({
       type: row[0] as 'stance' | 'command',
@@ -168,3 +175,12 @@ const tableHandlers: Partial<
     guideData.about = Object.fromEntries(rows);
   },
 };
+
+/** A matchup row names one or more characters, e.g. "Kuma | Panda" */
+const rowToMatchup = (row: string[]): Matchup => ({
+  characters: (row[0] ?? '')
+    .split('|')
+    .map((character) => character.trim())
+    .filter(Boolean),
+  description: row[1] ?? '',
+});
