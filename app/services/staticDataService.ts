@@ -179,6 +179,7 @@ export const characterGuideAuthors: Record<
     azucena: { author: 'Koenji', version: 'S3' },
     bryan: { author: 'Ty', version: 'S2' },
     claudio: { author: 'Tetsu', version: 'S2' },
+    clive: { author: 'Kwstakis', version: 'S3' },
     'devil-jin': { author: 'Vermilion', version: 'S2' },
     dragunov: { author: 'Fear of Silence', version: 'S2' },
     eddy: { author: 'Ace', version: 'S3' },
