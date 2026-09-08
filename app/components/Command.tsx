@@ -25,6 +25,19 @@ export const Command = ({
     if (match) {
       command = match[1];
       move = compressedCommandMap[compressCommand(match[2])];
+      if (!move && match[2]?.startsWith('https')) {
+        // A little work around to support external links in guides
+        return (
+          <a
+            className="text-primary"
+            href={match[2]}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {command}
+          </a>
+        );
+      }
     }
   }
   if (!move) {
