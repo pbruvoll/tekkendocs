@@ -25,6 +25,7 @@ columns = [
     {"wavuId": "name", "displayName": "Name"},
     {"wavuId": "recovery_frames", "displayName": "Recovery"}, # split out of the recv field of wavu by wavuParsing
     {"wavuId": "recovery_state", "displayName": "Recovery state"}, # split out of the recv field of wavu by wavuParsing
+    {"wavuId": "tot", "displayName": "Total frames"},
     {"wavuId": "image", "displayName": "Image"},
     {"wavuId": "video", "displayName": "Video"},
     {"wavuId": "id", "displayName": "Wavu id"},
