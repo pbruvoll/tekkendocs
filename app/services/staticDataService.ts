@@ -191,6 +191,7 @@ export const characterGuideAuthors: Record<
     jun: { author: 'Pagani', version: 'S2' },
     kazuya: { author: 'Ishan', version: 'S3' },
     kuma: { author: 'Nino', version: 'S2' },
+    kunimitsu : { author: 'Koenji', version: 'S3' },
     lars: { author: 'KayDash', version: 'S2' },
     law: { author: 'Landon D', version: 'S2' },
     lee: { author: 'Super Akouma', version: 'S2' },
