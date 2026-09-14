@@ -18,7 +18,7 @@
     "id": "Raven-1+2",
     "input": "1+2",
     "name": "Crusader",
-    "notes": "* Heat Engager\n\n* Heat Dash +5, +43d (+35)",
+    "notes": "* Heat Engager\n\n* Heat Dash +43d (+35)",
     "recv": "r33",
     "startup": "i14",
     "target": "m",
@@ -237,7 +237,7 @@
   },
   {
     "block": "-39~-36",
-    "crush": "js13~41 fs42~44",
+    "crush": "is8~30 js13~41 fs42~44",
     "hit": "-8",
     "id": "Raven-3~4,F",
     "input": ",F",
@@ -406,12 +406,12 @@
     "hit": "+6",
     "id": "Raven-b+2,2",
     "input": ",2",
-    "notes": "* Elbow\n* Combo from 1st hit with 7F delay\n* Interrupt with i4\n* Input can be delayed 13f",
+    "notes": "* Elbow\n* Combo from 1st hit with 6F delay\n* -16 on whiff after 1st hit\n* Interrupt with i4\n* Input can be delayed 13f",
     "parent": "Raven-b+2",
     "recv": "r22 BT",
     "startup": ",i22",
     "target": ",m",
-    "tot": "60"
+    "tot": "61"
   },
   {
     "block": "-30~-29",
@@ -421,13 +421,13 @@
     "id": "Raven-b+2,2,1+2",
     "input": ",1+2",
     "name": "Deadly Talon",
-    "notes": "* Combo from 2nd CH\n* Interrupt with i6",
+    "notes": "* Combo from 2nd CH\n* Interrupt with i6 from 1st block\n* Move is delayed 6F\n* Move cannot be delayed\n* Input cannot be delayed",
     "num": "45",
     "parent": "Raven-b+2,2",
     "recv": "r48",
     "startup": ",i20~21",
     "target": ",L",
-    "tot": "69",
+    "tot": "114",
     "video": "File:t8-p2-raven-b+2,2,1+2.mp4"
   },
   {
@@ -438,13 +438,13 @@
     "id": "Raven-b+2,2,3",
     "input": ",3",
     "name": "Unicorn's Tail",
-    "notes": "* Balcony Break\n* Combo from 2nd CH\n* Interrupt with i1\n* Grounded hit can be inconsistent",
+    "notes": "* Balcony Break\n* Combo from 2nd CH\n* Interrupt with i1 from 2nd block\n* Grounded hit can be inconsistent",
     "num": "44",
     "parent": "Raven-b+2,2",
     "recv": "r37",
     "startup": "i21~22",
     "target": ",M",
-    "tot": "59",
+    "tot": "98",
     "video": "File:t8-p2-raven-b+2,2,3.mp4"
   },
   {
@@ -454,12 +454,12 @@
     "id": "Raven-b+2,4",
     "input": ",4",
     "name": "Missing Worm",
-    "notes": "* Combo from 1st hit with 5F delay\n* Interrupt with i6\n* Input can be delayed 13f",
+    "notes": "* Combo from 1st hit with 4F delay\n* -22 on whiff after 1st hit\n* Interrupt with i6 from 1st block\n* Whiffs vs SS, SWL from 1st block\n* Input can be delayed 13f",
     "parent": "Raven-b+2",
     "recv": "r25",
     "startup": ",i24~25",
     "target": ",h",
-    "tot": "50"
+    "tot": "67"
   },
   {
     "block": "-13",
@@ -479,16 +479,18 @@
   },
   {
     "block": "-3~-1",
-    "damage": ",21,30",
+    "crush": "js44~57 fs58~60",
+    "damage": ",21,(30)",
     "hit": "+24a (+9)",
     "id": "Raven-b+2,4,H.2",
     "input": ",H.2",
     "name": "Missing Worm > Phantom Halberd",
-    "notes": "* Tornado\n* Combo from 2nd CH\n* Available only on hit or block",
+    "notes": "* Tornado\n* Combo from 2nd CH with 9F delay\n* Interrupt with i5 from 2nd block\n* Available only on hit or block\n* 2nd hit only available on block (jailing)\n* 20F timestop on hit\n* t106 r39 on hit\n* Consumes 240F of remaining Heat time on block\n* 10 chip damage on block\n* Move can be delayed by 4F\n* Input can be delayed by 9F",
     "parent": "Raven-b+2,4",
-    "recv": "r",
-    "startup": "i19~20, i39~-41",
-    "target": ",sm,sm"
+    "recv": "r27",
+    "startup": "i19~20, i39~41",
+    "target": ",sm,sm",
+    "tot": "115"
   },
   {
     "block": "+4~+6",
@@ -980,7 +982,7 @@
     "notes": "* Balcony Break\n* Transitions to throw on hit only\n* Opponent recovers BT on hit",
     "num": "86",
     "recv": "r32",
-    "startup": "I16",
+    "startup": "i16",
     "target": "m",
     "tot": "48",
     "video": "File:t8-p2-raven-bt.f+1.mp4"
@@ -1058,6 +1060,19 @@
     "target": ",sm",
     "tot": "104?",
     "video": "File:t8-p2-raven-bt.f+2,4,2.mp4"
+  },
+  {
+    "block": "-3~-1",
+    "damage": ",21,30",
+    "hit": "+24a (+9)",
+    "id": "Raven-BT.f+2,4,H.2",
+    "input": ",H.2",
+    "name": "Cold Worm > Phantom Halberd",
+    "notes": "* Tornado\n* Combo from 2nd CH\n* Available only on hit or block",
+    "parent": "Raven-BT.f+2,4",
+    "recv": "r",
+    "startup": "i19~20 i39~41",
+    "target": ",sm,sm"
   },
   {
     "block": "-5~-4",
@@ -1272,16 +1287,18 @@
   },
   {
     "block": "-3~+5",
-    "damage": ",24,30",
+    "crush": "js48~61 fs62~64",
+    "damage": ",24,(30)",
     "hit": "+2a (-7)",
     "id": "Raven-db+2,1,H.1",
     "input": ",H.1",
     "name": "Assassin's Sting > Phantom Javelin",
-    "notes": "* Balcony Break\n* Combo from 2nd CH\n* Available only on hit or block",
+    "notes": "* Balcony Break\n* Combo from 2nd CH with 9F delay\n* Available only on hit or block\n* 2nd hit only available on block (jailing)\n* Interrupt with i3 from 2nd block\n* 20F timestop on hit\n* t102 r41 on hit\n* Consumes 240F of remaining Heat time on block\n* 10 chip damage on block\n* Move can be delayed by 5F\n* Input can be delayed by 9F",
     "parent": "Raven-db+2,1",
-    "recv": "r",
+    "recv": "r25",
     "startup": "i18~19, i39~47",
-    "target": ",sm,sm"
+    "target": ",sm,sm",
+    "tot": "114"
   },
   {
     "block": "-12~-11",
@@ -1362,16 +1379,18 @@
   },
   {
     "block": "-3~-2",
-    "damage": ",25,30",
-    "hit": "+6c",
+    "crush": "js51~54 fs55~57",
+    "damage": ",25,(30)",
+    "hit": "+6cg",
     "id": "Raven-df+1,H.4",
     "input": ",H.4",
     "name": "Body Blow > Phantom Mace",
-    "notes": "* Balcony Break\n* Spike\n* Combo from 1st hit\n* Available only on hit or block\n* Forces tech backroll on hit",
+    "notes": "* Balcony Break\n* Spike\n* Combo from 1st hit with 5F delay\n* Interrupt with i1 from 1st block\n* Available only on hit or block\n* 2nd hit only available on block (jailing)\n* 20F timestop on hit\n* t78 r32 on hit\n* 11 chip damage on block\n* Consumes 240F of remaining Heat time on block\n* Forces tech backroll on hit\n* Move can be delayed by 1F\n* Input can be delayed by 5F",
     "parent": "Raven-df+1",
-    "recv": "r",
+    "recv": "r30",
     "startup": "i18~27, i44~45",
-    "target": ",sm,sm"
+    "target": ",sm,sm",
+    "tot": "94"
   },
   {
     "block": "-13~-11",
@@ -1651,7 +1670,7 @@
     "id": "Raven-FC.df+3+4",
     "input": "FC.df+3+4",
     "name": "Tornado Destruction",
-    "notes": "* Spike\n* Transition to r20 SZN on hit only\n* Second hit available on hit only\n** Airborne spike on 1st and 2nd hit\n* Recovers heat on hit",
+    "notes": "* Spike\n* Transition to r20 SZN on hit only\n* Second hit available on hit only\n** Airborne spike on 1st and 2nd hit",
     "num": "76",
     "recv": "r46",
     "startup": "i18~20 i34~36",
@@ -1742,16 +1761,18 @@
   {
     "alias": "WR3,H.4",
     "block": "+7~+8",
+    "crush": "js1~10 fs11~13",
     "damage": ",20",
     "hit": "+72a (+56)",
     "id": "Raven-f,f,F+3,H.4",
     "input": ",H.4",
     "name": "Typhon Fang Phantom",
-    "notes": "* Tornado\n* Partially uses remaining Heat time\n* Available only on hit or block\n* 6 chip damage on block",
+    "notes": "* Tornado\n* Instant Tornado on hit\n* Consumes 600F of remaining Heat time\n* Available only on hit or block\n* 20f timestop on hit\n* 6 chip damage on block",
     "parent": "Raven-f,f,F+3",
-    "recv": "r74 BT",
-    "startup": "i43~44",
-    "target": ",sm"
+    "recv": "r30 BT",
+    "startup": "i19~20",
+    "target": ",sm",
+    "tot": "74"
   },
   {
     "alt": "H.SZN.2+3",
@@ -1766,19 +1787,6 @@
     "startup": "i18~20",
     "target": "m,t",
     "tot": "63"
-  },
-  {
-    "block": "-3~-1",
-    "damage": ",21,30",
-    "hit": "+24a (+9)",
-    "id": "Raven-H.BT.f+2,4,2",
-    "input": ",H.2",
-    "name": "Cold Worm > Phantom Halberd",
-    "notes": "* Tornado\n* Combo from 2nd CH\n* Available only on hit or block",
-    "parent": "Raven-BT.f+2,4",
-    "recv": "r",
-    "startup": "i19~20 i39~41",
-    "target": ",sm,sm"
   },
   {
     "block": "-3",
@@ -1848,15 +1856,15 @@
   },
   {
     "block": "-3~-1",
-    "damage": ",21,30",
+    "damage": ",21,(30)",
     "hit": "+24a (+9)",
     "id": "Raven-qcf+1,H.2",
     "input": ",H.2",
     "name": "Fatal Elbow > Phantom Halberd",
-    "notes": "* Tornado\n* Combo from 1st hit\n* Available only on hit or block",
+    "notes": "* Tornado\n* Combo from 1st hit\n* Available only on hit or block\n* Consumes 240F of remaining Heat time on block",
     "parent": "Raven-qcf+1",
     "recv": "r",
-    "startup": ",19~20, 39~41",
+    "startup": "i19~20, i39~41",
     "target": ",sm,sm"
   },
   {
@@ -1898,7 +1906,7 @@
     "id": "Raven-qcf+3",
     "input": "qcf+3",
     "name": "Poison Needle > Nightmare",
-    "notes": "* Spike\n* Transitions to attack throw on front hit only, otherwise launch +33a (+23)\n* Recovers heat on hit",
+    "notes": "* Spike\n* Transitions to attack throw on front hit only, otherwise launch +33a (+23)",
     "num": "104",
     "recv": "r30",
     "startup": "i16~17",
@@ -2012,7 +2020,7 @@
     "id": "Raven-SZN.2",
     "input": "SZN.2",
     "name": "Dual Thanatos",
-    "notes": "* Heat Engager\n\n* Heat Dash +36a (+26) on hit, +5 on block\n\n* Balcony Break\n* Transition to second hit on hit\n* Recovers heat on normal hit",
+    "notes": "* Heat Engager\n\n* Heat Dash +36a (+26) on hit\n\n* Balcony Break\n* Transition to second hit on hit",
     "num": "109",
     "recv": "r30",
     "startup": "i18, i23~24",
@@ -2072,7 +2080,7 @@
     "notes": "* Tornado\n* Combo from 1st hit\n* Available only on hit or block",
     "parent": "Raven-SZN.3",
     "recv": "r",
-    "startup": "i19~20 i39~-41",
+    "startup": "i19~20 i39~41",
     "target": ",sm,sm"
   },
   {
@@ -2443,16 +2451,18 @@
   },
   {
     "block": "-3~-1",
-    "damage": ",21 (14),30",
+    "crush": "js44~57 fs58~60",
+    "damage": ",21 (14),(30)",
     "hit": "+65a (+49)",
     "id": "Raven-ws3,H.2",
     "input": ",H.2",
     "name": "Trident Kick > Phantom Halberd",
-    "notes": "* Tornado\n* Combo from 1st hit\n* Available only on hit or block",
+    "notes": "* Tornado\n* Airborne combo from 1st hit\n* Available only on hit or block\n* 2nd hit only available on block (jailing)\n* Interrupt with i1 from 1st block\n* t80 r39 on hit\n* Consumes 600F of remaining Heat time on block\n* 10 chip damage on block\n* Move is delayed by 4F\n* Input cannot be delayed",
     "parent": "Raven-ws3",
-    "recv": "r",
+    "recv": "r27",
     "startup": "i19~20, i39~41",
-    "target": ",sm,sm"
+    "target": ",sm,sm",
+    "tot": "89"
   },
   {
     "block": "-7~-6",

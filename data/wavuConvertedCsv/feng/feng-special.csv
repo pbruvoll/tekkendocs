@@ -150,7 +150,7 @@ df+4,2,1+2;m, m, M;13, 13, 21;i15, ,i34~35;-19;+31a (+16);;"* Tornado
 df+4,3;m, h;13, 23;i15, i23~24;-4;+15g;+27a;"* Balcony Break
 * Combo from 1st hit with 7F delay";bbr;;Twin Dragon;27;;;File:t8-p2-feng-df+4,3.mp4;Feng-df+4,3;feng
 df+3+4;m;23;i23~27;-7;+21a;;* Homing;hom;;Ruinous Halberd;28;;;File:t8-p2-feng-df+3+4.mp4;Feng-df+3+4;feng
-d+1;sl;5;i10;-5;+6;;"* Transition to r24 with f
+d+1;sl;5;i10;-5;+6;;"* Transition to standing r24 with f
 * +6c on crouching hit
 * High crush 4~34";cs4~34;FC;Crouch Jab;24;FC;;;Feng-d+1;feng
 d+2;L;16;i20~21;-12;-1;;"-1c on crouching hit
@@ -244,8 +244,10 @@ H.b+4,3+4;m, M;10, 20;i12~13, i31~32;+7cg;+12d;;"* Balcony Break
 * 4 chip damage on block
 * Consumes 300F of remaining Heat time
 * +38d on aerial hit
+* Interrupt with i11 from 1st block
+* Whiffs vs SSL from 1st block (Inconsistent; depends on character/body type)
 * Move can be delayed by 6F
-* Input can be delayed by 7F";bbr spk chp:4;BT;Gulfing Sea Splitter;39?;BT;;;Feng-b+4,H.3+4;feng
+* Input can be delayed by 7F";bbr spk stp:SSL intr:11 chp:4;BT;Gulfing Sea Splitter;39?;BT;;;Feng-b+4,H.3+4;feng
 b+1+2;m;31;i13~14;-19;+18a (+13);;"* Heat Engager
 
 * Heat Dash +5, +43d (+35)
@@ -363,8 +365,9 @@ FC.df+4;l;13;i19~20;-8c;+3;;"* Can be input with D,df+4 (i27? effective startup)
 FC.df+4,1;l, h;13, 10;i19~20, i20~21;-2;+6;;"* Combo from 1st hit
 * -20 from 1st block";;;Xuan Jiao Xiao Yan Shou;20;;;File:t8-p2-feng-fc.df+4,1.mp4;Feng-FC.df+4,1;feng
 (Back to wall).b,b,UB;m;21;i39~41;+4c~+6c;+22a;;"* Floating state 5~13
-* Low crush 14~33
-* Floating state 34~36";fs5~13 js14~33 fs34~36;;Wall Jump Punch;26;;;;Feng-(back to wall)b,b,ub;feng
+* is8~13
+* Low crush 14~46
+* Floating state 47~49";fs5~13 is8~13 js14~46 fs47~49;;Wall Jump Punch;26;;;;Feng-(back to wall)b,b,ub;feng
 BT.1;h;12;i12;-3;+14;;;;;Backfist;22;;;File:t8-p2-feng-bt.1.mp4;Feng-BT.1;feng
 BT.2;m;20;i19~21;-9;+13a;;"* Heat Engager
 
