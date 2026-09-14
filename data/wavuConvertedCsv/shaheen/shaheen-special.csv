@@ -42,47 +42,60 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Power crush 8~";ra rbr pc8~;;Najm Alshamal;39;;;t8-p2-shaheen-r.df+1+2.mp4;Shaheen-R.df+1+2;shaheen
 1;h;5;i10;+1;+8;;;;;;;;;t8-p2-shaheen-1.mp4;Shaheen-1;shaheen
 1,2;h, h;5, 9;i10, i12;-3;+8;;;;;Spica;;;;t8-p2-shaheen-1,2.mp4;Shaheen-1,2;shaheen
-1,2,2;h, h, m;5, 9, 17;i10, ,i20~21;-11;+3;+58a;"* Combo from 1st CH with 10F delay
-* Combo from 2nd CH with 10F delay
+1,2,2;h, h, m;5, 9, 17;i10, ,i20~21;-11;+3;+58a;"* Combo from 1st CH or 2nd CH with 10F delay
+* Interrupt with i2 from 1st block
 * Move can be delayed by 10F
 * Input can be delayed by 12F
-* Cancel to SNK (-13/-2) with DF";;SNK;Spica Gut Punch;;;;File:t8-p2-shaheen-1,2,2.mp4;Shaheen-1,2,2;shaheen
+* Cancel to SNK (-13/-2) with DF";intr:2;SNK;Spica Gut Punch;;;;File:t8-p2-shaheen-1,2,2.mp4;Shaheen-1,2,2;shaheen
 1,2,3;h, h, h;5, 9, 18;i10, ,i20;-8;+3;;"* Transition to -1, +10 SNK with DF
 * Combo from 1st CH with 7F delay
+* Interrupt with i2 from 1st block
 * Move can be delayed by 5F
-* Input can be delayed by 7F";;SNK;Spica Blinding Sands;;;;File:t8-p2-shaheen-1,2,3.mp4;Shaheen-1,2,3;shaheen
+* Input can be delayed by 7F";intr:2;SNK;Spica Blinding Sands;;;;File:t8-p2-shaheen-1,2,3.mp4;Shaheen-1,2,3;shaheen
 1,2,4;h, h, m;5, 9, 20;i10, ,i24~26;-13;+33a (+18);;"* Tornado
 * Combo from 1st or 2nd CH with 2F delay
+* Interrupt with i6 from 1st block
 * Move cannot be delayed
-* Input can be delayed by 2F";trn;;Spica Wheel Spin;;;;File:t8-p2-shaheen-1,2,4.mp4;Shaheen-1,2,4;shaheen
+* Input can be delayed by 2F";trn intr:6;;Spica Wheel Spin;;;;File:t8-p2-shaheen-1,2,4.mp4;Shaheen-1,2,4;shaheen
 2;h;10;i10;+0;+6;;;;;;;;;t8-p2-shaheen-2.mp4;Shaheen-2;shaheen
 2,1;h, m;10, 7;i10, i17~18;-4;+2;;* Combo from 1st hit;;;Cut In;;;;File:t8-p2-shaheen-2,1.mp4;Shaheen-2,1;shaheen
 2,3;h, h;10, 13;i10, i20;-8;+3;;"* Transition to -1, +10 SNK with DF
 * Combo from 1st hit with 2F delay
+* Interrupt with i2 from 1st block
 * Move cannot be delayed
-* Input can be delayed by 2F";;SNK;Porrima Blinding Sands;;;;File:t8-p2-shaheen-2,3.mp4;Shaheen-2,3;shaheen
+* Input can be delayed by 2F";intr:2;SNK;Porrima Blinding Sands;;;;File:t8-p2-shaheen-2,3.mp4;Shaheen-2,3;shaheen
 3;h;18;i14;-8;+3;;* Transition to -1, +10 SNK with DF;;SNK;Blinding Sands;;;;File:t8-p2-shaheen-3.mp4;Shaheen-3;shaheen
 4;h;16;i13;-10;+1;+1s;;;;Hallux Kick;;;;t8-p2-shaheen-4.mp4;Shaheen-4;shaheen
 4,1;h, h;16, 14;i13, i18;-5;+5;;"* +31a (+24) from 1st CH
-* Combo from 1st hit";;;Hallux Kick > Algenib;;;;File:t8-p2-shaheen-4,1.mp4;Shaheen-4,1;shaheen
-4,3;h, h;16, 21;i13, i31;-1;+26a (+17);+71a (51);* Balcony Break;bbr;;Hallux Kick > High Slashing Kick;;;;File:t8-p2-shaheen-4,3.mp4;Shaheen-4,3;shaheen
+* Combo from 1st hit
+* Jails attack inputs from 1st block (crouch assist bufferable)
+* Duckable";;;Hallux Kick > Algenib;;;;File:t8-p2-shaheen-4,1.mp4;Shaheen-4,1;shaheen
+4,3;h, h;16, 21;i13, i31;-1;+26a (+17);+71a (51);"* Balcony Break
+* Crouch assist bufferable
+* Interrupt with i11 from 1st block
+* Whiffs vs SSR from 1st block";bbr stp:SSR intr:11;;Hallux Kick > High Slashing Kick;;;;File:t8-p2-shaheen-4,3.mp4;Shaheen-4,3;shaheen
 4,4;h, m;16, 25;i13, i24~25;-13;+20d;;"* Aerial combo from 1st CH
 * When combo from 1st CH: 
-Floor Break";fbr;;Hallux Kick > Ra'd;;;;File:t8-p2-shaheen-4,4.mp4;Shaheen-4,4;shaheen
+Floor Break
+* Interrupt with i4 from 1st block";fbr intr:4;;Hallux Kick > Ra'd;;;;File:t8-p2-shaheen-4,4.mp4;Shaheen-4,4;shaheen
 3+4;m;20;i18~20;-9;+19a (+2);;"* Tornado
 * Balcony Break";trn bbr;;Wheel Spin;;;;File:t8-p2-shaheen-3+4.mp4;Shaheen-3+4;shaheen
 f+2;h;10;i12;-8;-2;;;;;;;;;t8-p2-shaheen-f+2.mp4;Shaheen-f+2;shaheen
 f+2,3;h, h;10, 23;i12, i18;-12;+21a (+16);;"* Tornado
+* Jail from 1st block with ?F delay
 * Combo from 1st hit with 7F delay
 * Move can be delayed by 9F
 * Input can be delayed by 10F";trn;;Silent Sting;;;;File:t8-p2-shaheen-f+2,3.mp4;Shaheen-f+2,3;shaheen
 f+2,4;h, L;10, 16;i12, i22~23;-13;+2;+29a;"* Combo from 1st hit with 3F delay
+* Interrupt with i3 from 1st block
 * Transition to -11, +4, +31a SNK with DF
 * Move can be delayed by 10F
-* Input can be delayed by 11F";;SNK;;;;;t8-p2-shaheen-f+2,4.mp4;Shaheen-f+2,4;shaheen
+* Input can be delayed by 11F";intr:3;SNK;;;;;t8-p2-shaheen-f+2,4.mp4;Shaheen-f+2,4;shaheen
 f+2,4,4;h, L, h;10, 16, 21;i12, ,i26~27;-7;+10g;+14c;"* Strong Aerial Tailspin
 * Balcony Break
-* Aerial combo from 2nd CH";bbr;;Silent Flow;;;;File:t8-p2-shaheen-f+2,4,4.mp4;Shaheen-f+2,4,4;shaheen
+* Aerial combo from 2nd CH
+* Interrupt with i7 from 2nd block
+* Whiffs vs SSR, SWR from 2nd block";bbr stp:SSR intr:7;;Silent Flow;;;;File:t8-p2-shaheen-f+2,4,4.mp4;Shaheen-f+2,4,4;shaheen
 f+3;m;17;i20;-5;+6;+13c;"* Good right sidestep tracking
 * Transition to SNK (-3/+8/+15c) with DF
 * Low crush 13~";js13~;SNK;Crescent Moon;29;;;File:t8-p2-shaheen-f+3.mp4;Shaheen-f+3;shaheen
@@ -99,14 +112,17 @@ df+2;m;13;i15~16;-7;+34a (+24);;"* Only launches standing opponents
 df+3;m;20;i17;-13;+21d;;* Homing;hom;;Whirlwind Kick;34;;;File:t8-p2-shaheen-df+3.mp4;Shaheen-df+3;shaheen
 df+4;m;13;i14;-7;+0;;;;;;;;;t8-p2-shaheen-df+4.mp4;Shaheen-df+4;shaheen
 df+4,1;m, m;13, 10;i14, i22~23;-9;+2;;"* Transition to -2, +9 SNK with DF
-* Combo from 1st hit";;SNK;;;;;t8-p2-shaheen-df+4,1.mp4;Shaheen-df+4,1;shaheen
+* Combo from 1st hit
+* Jail from 1st block with ?F delay";;SNK;;;;;t8-p2-shaheen-df+4,1.mp4;Shaheen-df+4,1;shaheen
 df+4,1,3;m, m, m;13, 10, 28;i14, ,i27~28;-13;+19a (+9);;"* Balcony Break
 * Combo from 2nd CH with 3F delay
+* Interrupt with i8 from 1st block
 * Move can be delayed by 10F
 * Input can be delayed by 11F
-* Low crush";bbr js;;Al-Faras;;;;File:t8-p2-shaheen-df+4,1,3.mp4;Shaheen-df+4,1,3;shaheen
+* Low crush";bbr intr:8 js;;Al-Faras;;;;File:t8-p2-shaheen-df+4,1,3.mp4;Shaheen-df+4,1,3;shaheen
 df+4,3;m, h;13, 23;i14, i23~24;-4;+23a (+14);;"* Balcony Break
-* Combo from 1st hit";bbr;;Al-Fard al-Shuja;;;;File:t8-p2-shaheen-df+4,3.mp4;Shaheen-df+4,3;shaheen
+* Combo from 1st hit
+* Move cannot be interrupted";bbr;;Al-Fard al-Shuja;;;;File:t8-p2-shaheen-df+4,3.mp4;Shaheen-df+4,3;shaheen
 df+3+4;sp;;;;;;"* Transitions to SNK
 * Transition to r1? FC with SNK.DB";;FC,SNK;Stealth Step;15;SNK;;t8-p2-shaheen-df+3+4.mp4;Shaheen-df+3+4;shaheen
 d+1;L;16;i20~21;-13;+4;+28g;* High crush 6~52;cs6~52;FC;Hermit Needle;31;FC;;t8-p2-shaheen-d+1.mp4;Shaheen-d+1;shaheen
@@ -116,7 +132,7 @@ d+3;L;12;i16~17;-14;+0;;"* Transition to -10, +4 SNK with DF
 d+4;L;10;i19;-12;+1;;;;;Vicious Stomp;;;;File:t8-p2-shaheen-d+4.mp4;Shaheen-d+4;shaheen
 d+3+4;l;6;i12;-15;-4;;"* -4c on crouching hit
 * High crush 4~";cs4~;FC;Crouch Shin Kick;34;FC;;t8-p2-shaheen-d+3+4.mp4;Shaheen-d+3+4;shaheen
-db+1;sl;5;i10;-5;+6;;"* Transition to r24 with f
+db+1;sl;5;i10;-5;+6;;"* Transition to standing r24 with f
 * +6c on crouching hit
 * High crush 4~";cs4~;FC;Crouch Jab;24;FC;;t8-p2-shaheen-db+1.mp4;Shaheen-db+1;shaheen
 db+2;m;11;i14;-10;+1;;* Transition to SNK with input db+2,DF (-3/+8/+8);;SNK;;;;;t8-p2-shaheen-db+2.mp4;Shaheen-db+2;shaheen
@@ -126,12 +142,14 @@ db+2,1;m, h;11, 24;i14, i20;-11;+15c;;"* Balcony Break
 * Heat Dash +43d (+35)
 
 * Combo from 1st hit with 10?F delay
+* Interrupt with i2 from 1st block
 * Move can be delayed by 8F
 * Input can be delayed by 10F
-* Forces tech backroll on hit";bbr he;;Rapid Strikes;;;;File:t8-p2-shaheen-db+2,1.mp4;Shaheen-db+2,1;shaheen
+* Forces tech backroll on hit";bbr he intr:2;;Rapid Strikes;;;;File:t8-p2-shaheen-db+2,1.mp4;Shaheen-db+2,1;shaheen
 db+3;L;12;i20~21;-17;-6;;;;;Snake's Bite;;;;t8-p2-shaheen-db+3.mp4;Shaheen-db+3;shaheen
 db+3,4;L, h;12, 20;i20~21, i18;-13;+68a (+52);;"* Tornado
-*Counter hit combo from 1st hit
+* Counter hit combo from 1st hit
+* -36? from 1st block
 * High crush";trn cs;;Snake's Bite > Rising Scimitar;;;;File:t8-p2-shaheen-db+3,4.mp4;Shaheen-db+3,4;shaheen
 db+4;h;23;i20;-13;+28 (+18);;"* Tornado
 * High crush 6";trn cs6;;Rising Scimitar;;;;File:t8-p2-shaheen-db+4.mp4;Shaheen-db+4;shaheen
@@ -199,7 +217,8 @@ ws1;m;17;i14;-2;+4;+14;;;;Albireo;;;;File:t8-p2-shaheen-ws1.mp4;Shaheen-ws1;shah
 ws2;m;21;i16;-17;+57;;;;;Hawk Edge;;;;File:t8-p2-shaheen-ws2.mp4;Shaheen-ws2;shaheen
 ws3;m;9;i13;-11;0;;* Transition to -7, +4 SNK with DF;;SNK;;;;;t8-p2-shaheen-ws3.mp4;Shaheen-ws3;shaheen
 ws3,3;m, m;9, 25;i13, i17;-13;+11a (+2);+43a (-4);"* Tornado
-* Balcony Break";trn bbr;;Double Scorpion;;;;File:t8-p2-shaheen-ws3,3.mp4;Shaheen-ws3,3;shaheen
+* Balcony Break
+* Jail from 1st block with ?F delay";trn bbr;;Double Scorpion;;;;File:t8-p2-shaheen-ws3,3.mp4;Shaheen-ws3,3;shaheen
 ws4;m;16;i11~12;-6;+5;;;;;Jaw Smash;;;;File:t8-p2-shaheen-ws4.mp4;Shaheen-ws4;shaheen
 SS.2;L;14;i20;-12;+1c;;"* Sidestep takes 9f; effective startup i29
 * High crush 15~";cs15~;FC;Nisif Kamar;;FC;;File:t8-p2-shaheen-ss.2.mp4;Shaheen-SS.2;shaheen
@@ -213,7 +232,9 @@ FC.df+2;m;21;i18~19;-9;+17a (+8);;"* Strong Aerial Tailspin
 FC.df+4;L;16;i16~17;-14;+1;;"* Transition to -11, +4 SNK with DF
 ** -12 with perfect SNK cancel";;SNK;;;;;t8-p2-shaheen-fc.df+4.mp4;Shaheen-FC.df+4;shaheen
 FC.df+4,1;L, h;16, 20;i16~17, i26;-2;+24a (+15);;"* Balcony Break
-* Combo from 1st CH";bbr;;Serpens;;;;File:t8-p2-shaheen-fc.df+4,1.mp4;Shaheen-FC.df+4,1;shaheen
+* Combo from 1st CH
+* Interrupt with i7 from 1st block
+* Whiffs vs SSR, SWR from 1st block";bbr stp:SSR intr:7;;Serpens;;;;File:t8-p2-shaheen-fc.df+4,1.mp4;Shaheen-FC.df+4,1;shaheen
 (back to wall).b,b,UB;m;21;i35~38;+1;+34d;;"* Floating state 5~7
 * is8~24
 * Floating state 25~33
@@ -236,18 +257,20 @@ SNK.df+1;m;12;i15~16;-5;+6;;* Good left sidestep tracking;;;;;;;t8-p2-shaheen-sn
 SNK.df+1,2;m, h;12, 40;i15~16, i20;-4;0;;"* Tornado
 * Removes Recoverable Health
 * Combo from 1st hit with 10F delay
+* Interrupt with i1 from 1st block
 * Move can be delayed by 9F
 * Input can be delayed by 10F
-* Transition to attack throw on standing front hit";trn;;Flash Hornet;;;;File:t8-p2-shaheen-snk.df+1,2.mp4;Shaheen-SNK.df+1,2;shaheen
+* Transition to attack throw on standing front hit";trn intr:1;;Flash Hornet;;;;File:t8-p2-shaheen-snk.df+1,2.mp4;Shaheen-SNK.df+1,2;shaheen
 SNK.df+1,3;m, m;12, 28;i15~16, i27~28;-13;+19a (+9);;"* Heat Engager
 
 * Heat Dash  +43d (+35)
 
 * Balcony Break
 * Combo from 1st hit with 1F delay
+* Interrupt with i8 from 1st block
 * Move can be delayed by 6F
 * Input can be delayed by 7F
-* Low crush";he bbr js;;Flash Deneb;;;;File:t8-p2-shaheen-snk.df+1,3.mp4;Shaheen-SNK.df+1,3;shaheen
+* Low crush";he bbr intr:8 js;;Flash Deneb;;;;File:t8-p2-shaheen-snk.df+1,3.mp4;Shaheen-SNK.df+1,3;shaheen
 1+3;th(h);35;i12~14;-3;+0d;;"* Homing
 * Throw escape: 1 or 2
 * Opponent status on hit: FUFA";hom;;Desert Fang;;;;File:t8-p2-shaheen-1+3.mp4;Shaheen-1+3;shaheen

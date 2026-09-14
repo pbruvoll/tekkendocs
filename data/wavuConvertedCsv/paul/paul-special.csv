@@ -91,15 +91,18 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Jail from 1st hit
 * Cancel to 10 strings";;;;43;;;File:Paul-1,2,3.mp4;Paul-1,2,3;paul
 1,4;h, L;5, 8;i10, i23;-11c;+1;;"* Combo from 1st CH
-* High crush 14~";cs14~;FC;Reverse PDK Combo;30;FC;;File:Paul-1,4.mp4;Paul-1,4;paul
+* Interrupt with i4 from 1st block
+* High crush 14~";intr:4 cs14~;FC;Reverse PDK Combo;30;FC;;File:Paul-1,4.mp4;Paul-1,4;paul
 2;h;8;i10;+0;+6;;;;;Right Jab;19;;;File:Paul-2.mp4;Paul-2;paul
 2,3;h, h;8, 14;i10, i19;-2;+8;;"* Knee
-* Combo from 1st hit";kne;;Goodnight;;;;File:Paul-2,3Goodnight.mp4;Paul-2,3;paul
+* Combo from 1st hit with 6F delay
+* Move cannot be interrupted";kne;;Goodnight;;;;File:Paul-2,3Goodnight.mp4;Paul-2,3;paul
 3;m;14;i15~16;-7;+4;;;;;Left Kick;24;;;File:Paul-3.mp4;Paul-3;paul
 3,2;m, h;14, 17;i15~16, i23;-3;+7;+50a;"* Move can be delayed 4f
-* Input can be delayed 6f
-* Combo from 1st hit with 6f delay
-* Transition to t60 r19 SWA +4 +14g +57a at 43f with b";;SWA;Piston Fire;26;;;File:Paul-3,2.mp4;Paul-3,2;paul
+* Input can be delayed 5f
+* Combo from 1st hit with 5f delay
+* Interrupt with i5 from 1st block
+* Transition to t60 r19 SWA +4 +14g +57a at 43f with b";intr:5;SWA;Piston Fire;26;;;File:Paul-3,2.mp4;Paul-3,2;paul
 3,2~b;m, h;14, 17;i15~16, ,;+4;+14g;+57a;"* Sidestep u can be buffered from 45f
 * SWA attacks can be buffered from 54f
 * Transition to cs1~ r9 -13 +4 +47a DPD from 61f with df";;DPD,SWA;;19;SWA;;File:Paul-3,2~b.mp4;Paul-3,2~b;paul
@@ -157,19 +160,19 @@ f+3;h;11;i16~17;-14;+0;;* Homing;hom;;;34;;;File:Paul-f3.mp4;Paul-f+3;paul
 f+3,1;h, m;11, 21;i16~17, i17;-13;+12a (+3);;"* Balcony Break
 * Elbow
 * Combo from 1st hit
-* Interrupt with i1
+* Interrupt with i1 from 1st block
 * Move is delayed by 5F
 * Move cannot be delayed
 * Input cannot be delayed";bbr elb intr:1;;Lion's Tempest;33;;;File:Paul-f3,1.mp4;Paul-f+3,1;paul
 f+3,2;h, h;11, 24;i16~17, i18~19;-7;+17a (+8);+32a (+24);"* Balcony Break
 * Combo from 1st hit
-* Interrupt with i2
+* Interrupt with i2 from 1st block
 * Move is delayed by 5F
 * Move cannot be delayed
 * Input cannot be delayed";bbr intr:2;;Lion's Claw;32;;;File:t8-p2-paul-f+3,2.mp4;Paul-f+3,2;paul
 f+4;m;24;i22;-5;+6;;"* Heat Engager
 
-* Heat Dash +5, +43d (+35)
+* Heat Dash +43d (+35)
 
 * Homing
 * Low crush 9~22";he hom js9~22;;Stone Lion;32;;;File:Paul-f4.mp4;Paul-f+4;paul
@@ -190,11 +193,12 @@ f+1+4;m;25;i21~23;-14;+15cg;;"* Balcony Break
 * Shoulder
 * Sharp leftward movement w/ i5? startup
 * Forces tech back roll on hit";bbr shd;;Shoulder Tackle;37;;;File:Paul-f1p4.mp4;Paul-f+1+4;paul
-f+3+4;sp;;;;;;* Transitions to CS r15;;CS;Cormorant Step;15;CS;;;Paul-f+3+4;paul
+f+3+4;sp;;;;;;* Transition to CS;;CS;Cormorant Step;15;CS;;;Paul-f+3+4;paul
 df+1;m;11;i14;-2;+4;;* Transition to r15 SWA +3 +9 from 2~14f, 16f with b;;SWA;;20;;;File:Paul-df1.mp4;Paul-df+1;paul
 df+1,1;m, h;11, 9;i14, i20~21;-5;+5;+8;"* Combo from 1st hit with 4f delay
+* Interrupt with i1 from 1st block
 * Move can be delayed 10f
-* Input can be delayed 10f";;;;28;;;File:Paul-df1,1.mp4;Paul-df+1,1;paul
+* Input can be delayed 11f";intr:1;;;28;;;File:Paul-df1,1.mp4;Paul-df+1,1;paul
 df+1,1,2;m, h, m;11, 9, 22;i14, ,i22~23;-9;+32a (+24);;"* Balcony Break
 * Combo from 2nd CH
 * Interrupt with i3 from 2nd block";bbr intr:3;;Lion's Roar;31;;;File:Paul-df1,1,2.mp4;Paul-df+1,1,2;paul
@@ -204,11 +208,13 @@ df+1~b;m;11;i14, ;+3;+9;;"* Sidestep u can be buffered from 16f
 df+2;m;13;i15~16;-8;+33a (+23);;"* High evasion
 * +4s on crouching normal hit";;;Kurenai;25;;;File:Paul-df2.mp4;Paul-df+2;paul
 df+3;m;14;i16;-9;+2;;;;;;28;;;File:Paul-df3.mp4;Paul-df+3;paul
-df+3,4;m, m;14, 17;i16, i21~22;-10;+6;+59a;"* Move can be delayed 14f
-* Input can be delayed 14f
-* Combo from 1st hit with 10f delay";;;Phoenix Wings;28;;;File:Paul-df3,4.mp4;Paul-df+3,4;paul
+df+3,4;m, m;14, 17;i16, i21~22;-10;+6;+59a;"* Move can be delayed 10f
+* Input can be delayed 13f
+* Combo from 1st hit with 9f delay
+* Interrupt with i4 from 1st block
+* Whiffs vs SSR from 1st block";stp:SSR intr:4;;Phoenix Wings;28;;;File:Paul-df3,4.mp4;Paul-df+3,4;paul
 df+4;m;17;i17~18;-2;+8;+14;* Knee;kne;;Tiger Claw;28;;;File:Paul-df4.mp4;Paul-df+4;paul
-df+3+4;sp;;;;;;* Transitions to DPD;;DPD;Deep Dive;;DPD;;;Paul-df+3+4;paul
+df+3+4;sp;;;;;;* Transition to DPD;;DPD;Deep Dive;20;DPD;;;Paul-df+3+4;paul
 d+1;m;16;i14~15;-9;+2;+3c;"* Spike 
 * Transition to r27 FC with d";spk;FC;Hammer Punch;27;;;File:Paul-d1.mp4;Paul-d+1;paul
 d+1,2;m, m;16, 26;i14~15, i29;-17;+20d (+10);;"* Balcony Break
@@ -217,20 +223,28 @@ d+1,2;m, m;16, 26;i14~15, i29;-17;+20d (+10);;"* Balcony Break
 * Charge begins on frame 16
 * Requires 0~26f charge
 * Delayed startup from 1~26f charge
-* Combo from 1st CH with 0~6f charge
-* d+1,2* at 27f charge";bbr;;Phoenix Smasher;35;;;File:Paul-d1,2.mp4;Paul-d+1,2;paul
+* Combo from 1st CH with 0~6f charge (i30)
+* d+1,2* at 27f charge
+* Interrupt with i10 from 1st block";bbr intr:10;;Phoenix Smasher;35;;;File:Paul-d1,2.mp4;Paul-d+1,2;paul
 d+1,2*;m, m;16, 39;i14~15, i43;+9;+20d (+10);;"* Balcony Break
 * H.d+1,2* with Heat
 * Chip damage (11)
 * Charge begins on frame 16
 * Requires 27f charge
-* d+1,2 from 0~26f charge";bbr chp:11;;Phoenix Smasher (Hold);36;;;File:paul-d1,2 lvl2 v2.mp4;Paul-d+1,2*;paul
-d+1,4;m, L;16, 15;i14~15, i19;-31c;-17;+14a FUFA;"* Move can be delayed 5f
+* d+1,2 from 0~26f charge
+* Interrupt with i24 from 1st block
+* Interrupt with i13 from 1st hit
+* Interrupt with i9 from 1st CH
+* Whiffs vs SS, SW from 1st block
+* Whiffs vs SSR, SWR from 1st hit or CH";bbr stp:SS stp:SSR intr:24 chp:11;;Phoenix Smasher (Hold);36;;;File:paul-d1,2 lvl2 v2.mp4;Paul-d+1,2*;paul
+d+1,4;m, L;16, 15;i14~15, i19;-31c;-17;+14a FUFA;"* Move cannot be delayed
 * Input can be delayed 5f
-* Combo from 1st CH with 5f delay";;;;47;;;File:paul-d1,4 v2.mp4;Paul-d+1,4;paul
-d+1,4,2;m, L, m;16, 15, 21;i14~15, ,i21;-14;+3d (-6);+35a (-12);"* Balcony Break
+* Combo from 1st CH with 5f delay
+* Interrupt with i6 from 1st block
+* Stagger low";intr:6;;;47;;;File:paul-d1,4 v2.mp4;Paul-d+1,4;paul
+d+1,4,2;m, L, m;16, 15, 21 (14);i14~15, ,i21;-14;+3d (-6);+35a (-12);"* Balcony Break
 * Elbow
-* Combo from 2nd CH +11d (+4)";bbr elb;;Hang Over;42;;;File:Paul-d1,4.mp4;Paul-d+1,4,2;paul
+* Airborne combo from 2nd CH +11d (+4)";bbr elb;;Hang Over;42;;;File:Paul-d1,4.mp4;Paul-d+1,4,2;paul
 H.d+1,2;m, m;16, 32;i14~15, i29;-13;+29d (-7) FDFA;;"* Balcony Break
 * Reversal Break
 * Consumes Heat
@@ -239,7 +253,9 @@ H.d+1,2;m, m;16, 32;i14~15, i29;-13;+29d (-7) FDFA;;"* Balcony Break
 * Requires 0~26f charge
 * Delayed startup from 1~26f charge
 * Combo from 1st CH with 0~6f charge
-* H.d+1,2* at 27f charge";bbr rbr;;Phoenix Smasher;37;;;File:Paul-d1,h2.mp4;Paul-H.d+1,2;paul
+* Interrupt with i10 from 1st block
+* Whiffs vs SSR, SWR from 1st block
+* H.d+1,2* at 27f charge";bbr rbr stp:SSR intr:10;;Phoenix Smasher;37;;;File:Paul-d1,h2.mp4;Paul-H.d+1,2;paul
 H.d+1,2*;m, m;16, 45;i14~15, i43;+12;+30d (-6) FDFA;;"* Balcony Break
 * Guard Break
 * Reversal Break
@@ -247,7 +263,12 @@ H.d+1,2*;m, m;16, 45;i14~15, i43;+12;+30d (-6) FDFA;;"* Balcony Break
 * Chip damage (13)
 * Charge begins on frame 16
 * Requires 27f charge
-* H.d+1,2 from 0~26f charge";bbr rbr chp:13;;Phoenix Smasher (Hold);50;;;File:Paul-d1,h2 lvl2.mp4;Paul-H.d+1,2*;paul
+* Interrupt with i24 from 1st block
+* Interrupt with i13 from 1st hit
+* Interrupt with i9 from 1st CH
+* Whiffs vs SS, SW from 1st block
+* Whiffs vs SSR, SWR from 1st hit or CH
+* H.d+1,2 from 0~26f charge";bbr rbr stp:SS stp:SSR intr:24 chp:13;;Phoenix Smasher (Hold);50;;;File:Paul-d1,h2 lvl2.mp4;Paul-H.d+1,2*;paul
 d+2;sl;8;i11;-4;+7;;"* cs1~ from 6f d/db/df input hold
 * OTG.d+2 when opponent is downed
 * High crush";cs;FC;;23;FC;;File:Paul-d2.mp4;Paul-d+2;paul
@@ -265,7 +286,8 @@ d+4,2,1+2;L, m, m;9, 23, 26;i15, ,i26~27;-17;+3d (-6);+35a (-12);"* Balcony Brea
 * Combo from 1st CL with 4f delay +13d (+6)
 * Combo from 1st CH with 4f delay +13d (+6)
 * Combo from 2nd hit with 4f delay +13d (+6)
-* Perfect input window 21~22f after 2 input";bbr;;Demolition Man;42;;;File:Paul_d+4,2,1+2.mp4;Paul-d+4,2,1+2;paul
+* Perfect input window 21~22f after 2 input
+* Move cannot be interrupted";bbr;;Demolition Man;42;;;File:Paul_d+4,2,1+2.mp4;Paul-d+4,2,1+2;paul
 d+4,2:1+2;L, m, m;9, 23, 30;i15, ,i26~27;-17;+3d (-6);+35a (-12);"* Balcony Break
 * Move can be delayed 1f
 * Input can be delayed 1f
@@ -273,10 +295,10 @@ d+4,2:1+2;L, m, m;9, 23, 30;i15, ,i26~27;-17;+3d (-6);+35a (-12);"* Balcony Brea
 * Combo from 1st CH with 1f delay +13d (+6)
 * Combo from 2nd hit with 1f delay +13d (+6)
 * Perfect input window 21~22f after 2 input
-* Perfect input increases damage, wall carry";bbr;;Demolition Man (Perfect Input);41;;;File:Paul-d4,2,1p2 jf.mp4;Paul-d+4,2:1+2;paul
+* Perfect input increases damage, wall carry
+* Move cannot be interrupted";bbr;;Demolition Man (Perfect Input);41;;;File:Paul-d4,2,1p2 jf.mp4;Paul-d+4,2:1+2;paul
 d+1+2;m;28;i12~13;-18;+16d (+11);+24d (+16);"* Balcony Break
-* Shoulder
-* i5~i9? high evasion";bbr shd;;Shoulder Smash;39;;;File:Paul-d1p2.mp4;Paul-d+1+2;paul
+* Shoulder";bbr shd;;Shoulder Smash;39;;;File:Paul-d1p2.mp4;Paul-d+1+2;paul
 db+1;sl;5;i10;-5;+6;;"* Transition to r24 standing with f
 * High crush";cs;FC;Dickjab;24;FC;;File:Paul-db1.mp4;Paul-db+1;paul
 db+2;M;21;i19~20;-11;+14d (-3) FDFA;+28a (+18);"* Tornado
@@ -285,7 +307,7 @@ db+3;L;12;i15~i17;-18c;-4;;"* -4c on crouching hit
 * High crush";cs;FC;;22;FC;;File:Paul-db3.mp4;Paul-db+3;paul
 db+4;L;6;i12;-15c;-4;;* High crush;cs;FC;;32;FC;;File:Paul-db4.mp4;Paul-db+4;paul
 db+1+2;M;21;i20~21;-14;+30a (+22);;"* Shoulder
-* Chip damage (11) if attack is absorbed
+* -9 block advantage and 8 chip damage on block after attack absorption
 * Power crush 7~19";shd pc7~19;;Chain Breaker;24;;;File:Paul-db1p2.mp4;Paul-db+1+2;paul
 b+1;h;10;i12~13;-9;+2;;;;;;25;;;File:Paul-b1.mp4;Paul-b+1;paul
 b+1,2;h, m;10, 21;i12~13, i20~21;-14;+16d (-1) FDFA;;"* Tornado
@@ -314,7 +336,10 @@ H.b+2,1*;m, m;22, 35;i18, i60~61;+12;+56a;;"* Balcony Break
 * Chip damage (13)
 * Charge begins on frame 18
 * Requires 42f charge
-* b+2,1 from 0~41f charge";bbr chp:13;;Crushing Wind (Hold);30;;;File:Paul-b2,hb1 lvl2.mp4;Paul-H.b+2,1*;paul
+* Interrupt with i29 WS from 1st block
+* Interrupt with i20 WS from 1st hit
+* Whiffs vs SSR, SW from 1st block or hit
+* b+2,1 from 0~41f charge";bbr stp:SSR intr:29 chp:13;;Crushing Wind (Hold);30;;;File:Paul-b2,hb1 lvl2.mp4;Paul-H.b+2,1*;paul
 b+3;h;16;i14~15;-6;+31a (+25);;* Knee;kne;;Lights Out;27;;;File:Paul-b3.mp4;Paul-b+3;paul
 b+4;L;14;i20~21;-12c;+4;+17g;;;;Leg Sweep;26;;;File:Paul-b4.mp4;Paul-b+4;paul
 b+1+2;h;28;i24;-9;+21d (+16);;"* Balcony Break

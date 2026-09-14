@@ -57,7 +57,7 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Move can be delayed 7f";intr:17;;Coil Punch Combo (Hold);28;;;;Alisa-1,2,d+2*;alisa
 2;h;10;i12;-6;+5;;;;;;25;;;File:t8-p2-alisa-2,2.mp4;Alisa-2;alisa
 2,2;h, h;10, 22;i12, i18~33;-13~+2;+15a (+5);;"* Balcony Break
-* Jail from 1st block with 1F delay
+* Jails attack inputs from 1st block with 1F delay
 * Combo from 1st hit with 2f delay
 * Duckable
 * 2nd hit available on hit or block only";bbr;;Troubleshooting;25;;;File:t8-p2-alisa-2,2.mp4;Alisa-2,2;alisa
@@ -206,11 +206,11 @@ d+3+4;L;20;i27~i28;-37;+67a (+51);;"* Homing
 * Enter DES with 1+2
 * High crush 20~40
 * Floating state 5~55";hom cs20~40 fs5~55;DES;Harpoon Sweep;36;;;File:t8-p2-alisa-d+3+4.mp4;Alisa-d+3+4;alisa
-db+1;;;;;;;"* Backsway
-* Transition to FC with D
+db+1;;;;;;;"* Transition to r9? FC with D or after d+3 BKP transition
 * Can perform WS moves after 24 frames
 * High crush 4~15";cs4~15;FC,BKP;Backup;15;BKP;;;Alisa-db+1;alisa
-db+1;;;;;;;"* Transition to r9? FC with D or after d+3 BKP transition
+db+1;;;;;;;"* Backsway
+* Transition to FC with D
 * Can perform WS moves after 24 frames
 * High crush 4~15";cs4~15;FC,BKP;Backup;15;BKP;;;Alisa-db+1;alisa
 db+2;m;10;i18~19;-18;-5;;;;;;36;;;File:t8-p2-alisa-db+2,2.mp4;Alisa-db+2;alisa
@@ -483,9 +483,10 @@ DBT.2;M,M,h,h,h;25;i16~18 i1~5 i1~5 i1~5 i1~1;-14;+32a (+14);;"* Weapon
 * 4 chip damage on block in heat
 * Low crush 17~66
 * Floating state 67~69";wpn chp:2 js17~66 fs67~69;DES;Thruster Right;44;DES;;File:t8-p2-alisa-dbt.2,1.mp4;Alisa-DBT.2;alisa
-DBT.2,1;M,M,h,h,h, h;25, 45;i16~18 i1~5 i1~5 i1~5 i1~1, i26~28;-11c;+14a;;"-28 on whiff.
-* Balcony Break
+DBT.2,1;M,M,h,h,h, h;25, 45;i16~18 i1~5 i1~5 i1~5 i1~1, i26~28;-12c~-10c;+14a;;"* Balcony Break
 * Spike
+* -28 on whiff
+* -11c on block on average
 * 13 chip damage on block
 * 18 chip damage on block in heat
 * Low crush 17~100
@@ -608,14 +609,14 @@ DES.f+2,1,2;m,m, m,m, m,m;9, 9, 23;i15 i1~1, ,i23~24 i4~5;-13;+30a;;"* Heat Enga
 * Move cannot be delayed
 * 6 chip damage on block
 * 7 chip damage on block in heat";he wpn chp:6;;Gigahertz Storm;42;;;File:t8-p2-alisa-des.f+2,1,2.mp4;Alisa-DES.f+2,1,2;alisa
-DES.f+3;;;;;;;"* Cancel to r33 standing block with DBT.B
-* Transition to Evasive Action with input DBT.U_D
-* Low crush 18~40
-* Floating state 41~43";js18~40 fs41~43;DBT;Dual Boot;17;DBT;;;Alisa-DES.f+3;alisa
 DES.f+3;;;;;;;"* Cancel to r33 with DBT.b
 * Transition to r50 SS with DBT.u_d
 * Low crush 18~40
 * Floating state 41~43";js18~40 fs41~43;SS,DBT;Dual Boot;17;DBT;;;Alisa-DES.f+3;alisa
+DES.f+3;;;;;;;"* Cancel to r33 standing block with DBT.B
+* Transition to Evasive Action with input DBT.U_D
+* Low crush 18~40
+* Floating state 41~43";js18~40 fs41~43;DBT;Dual Boot;17;DBT;;;Alisa-DES.f+3;alisa
 DES.f+1+2;m,m,m,m,m,m,m,m;29;i23~27 i1~5 i1~4 i1~4 i1~5 i1~5 i1~4 i1~1;+1;+33a;;"* Weapon
 * Combo from any hit
 * Transition to DBT (+4/+36a) with 3_4

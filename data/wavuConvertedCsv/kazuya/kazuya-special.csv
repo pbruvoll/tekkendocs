@@ -60,49 +60,56 @@ DVK.1,1,2,F;h, h, m, t;5, 6, 14, 8;i10, ,i30?,i5,i5,i5?;;+5d BT;;"* Consumes 120
 * Interrupt with i4 from 1st block";intr:4;;Double Back Fist;29;;;File:t8-p2-kazuya-2,2.mp4;Kazuya-2,2;kazuya
 3;h;12;i14;-8;+4;;;;;Face Kick;26;;;File:t8-p2-kazuya-3,1,4.mp4;Kazuya-3;kazuya
 3,1;h, h;12, 10;i14, i19;-1;+7;;"* Combo from 1st hit
+* Move cannot be interrupted
 * Transition to CD r16?~r25? with df (+2 +10)
 ** CD recovery depends on input
 ** r24 forward dash with df,n,f,n,f
+** r17: cd3, cd1+2
+** r19: cd1 (i22~24), ws3 (i23~25)
+** r25: cd2 (i19~20), cd4 (i24), ws4 (i19~20)
 ** Cannot buffer attack inputs or sidewalks during forward dash transition";;CD;Face Kick to Jab;20;;;File:t8-p2-kazuya-3,1,4.mp4;Kazuya-3,1;kazuya
 3,1,4;h, h, m;12, 10, 17;i14, ,i21~22;-6;+8;+40d (+32);"* Knee
+* Balcony Break on CH
 * Combo from 2nd CH with 6f delay
-* Move can be delayed 14f";kne;;Agony Spear;23;;;File:t8-p2-kazuya-3,1,4.mp4;Kazuya-3,1,4;kazuya
-4;h;18;i12;-9;+2;+27d;Balcony Break (CH);;;Roundhouse;28;;;File:t8-p2-kazuya-4.mp4;Kazuya-4;kazuya
-4~3;m,M;18,17;i31~33 i2~4;-11a;-1a;;"* Floor Break
+* Interrupt with i1 from 2nd block
+* Move can be delayed 14f";kne intr:1;;Agony Spear;23;;;File:t8-p2-kazuya-3,1,4.mp4;Kazuya-3,1,4;kazuya
+4;h;18;i12;-9;+2;+27a;Balcony Break (CH);;;Roundhouse;28;;;File:t8-p2-kazuya-4.mp4;Kazuya-4;kazuya
+4~3;m,M;18,25 (17);i31~33 i2~4;-11a;-1a;;"* Floor Break
+* Airborne combo from 1st hit
 * +21a on hit if the 1st hit whiffs
 * Low crush 10~37
 * Floating state 38~40";fbr js10~37 fs38~40;FUFT;Demon Scissors;28;FUFT;;File:t8-p2-kazuya-4t3.mp4;Kazuya-4~3;kazuya
-1+2;m,m;5,20;i12 i15;-13;+13a;;Balcony Break;bbr;;Acute Pain;32;;;File:t8-p2-kazuya-1+2.mp4;Kazuya-1+2;kazuya
-f+2;m;23;i20;-12;+13a(+4);;"* Tornado
+1+2;m,m;5,20;i12, i15;-13;+13a;;Balcony Break;bbr;;Acute Pain;32;;;File:t8-p2-kazuya-1+2.mp4;Kazuya-1+2;kazuya
+f+2;m;23;i20;-12;+13a (+4);;"* Tornado
 * Balcony Break
-* Reversal break and -8 on block if an attack is absorbed
-* 9 chip damage on block after absorbing an attack in power crush state
-* Power crush 7~19";trn bbr pc7~19;;Soul Thrust;;;;File:t8-p2-kazuya-f+2.mp4;Kazuya-f+2;kazuya
-f+3;m;22;i17;-13;+5;+54a(+23);Balcony Break on air hit;;;Oni Front Kick;;;;File:t8-p2-kazuya-f+3.mp4;Kazuya-f+3;kazuya
-f+4;m;20;i19~20;+4c;+7c;+31d;Spike;spk;;Right Splits Kick;;;;File:t8-p2-kazuya-f+4.mp4;Kazuya-f+4;kazuya
-f+1+2;m;20;i25;-9;+11a(+2);;"* Balcony Break
+* -8 block advantage and 9 chip damage on block after attack absorption
+* Power crush 7~19";trn bbr pc7~19;;Soul Thrust;32;;;File:t8-p2-kazuya-f+2.mp4;Kazuya-f+2;kazuya
+f+3;m;22;i17~18;-13;+5;+54a (+23);Balcony Break on air hit;;;Oni Front Kick;31;;;File:t8-p2-kazuya-f+3.mp4;Kazuya-f+3;kazuya
+f+4;m;20;i19~20;+4c;+7c;+31d;Spike;spk;;Right Splits Kick;22;;;File:t8-p2-kazuya-f+4.mp4;Kazuya-f+4;kazuya
+f+1+2;m;20;i25;-9;+11a (+2);;"* Balcony Break
 * Parries high and mid punches
 * 25 damage, +38d (+17) on successful parry
-* Parry state 3?~10?";bbr ps3?~10?;;Glorious Demon God Fist;;;;File:t8-p2-kazuya-f+1+2.mp4;Kazuya-f+1+2;kazuya
+* Parry state 3~10";bbr ps3~10;;Glorious Demon God Fist;33;;;File:t8-p2-kazuya-f+1+2.mp4;Kazuya-f+1+2;kazuya
 df+1;m;11;i15~16;-7;+9;;;;;Entrails Smash;25;;;File:t8-p2-kazuya-df+1,2.mp4;Kazuya-df+1;kazuya
 df+1,2;m, h;11, 20;i15~16, i18;+0c;+9c;;"* Heat Engager
 
-* Heat Dash +67a (+50a) on hit, +5 on block
+* Heat Dash +67a (+50a)
 
 * Combo from 1st hit with 4F delay
-* Interrupt with i3
+* Interrupt with i3 from 1st block
 * Move cannot be delayed
 * Input can be delayed by 4F
 * 6 chip damage on block";he intr:3 chp:6;;Slaughter Hook;27;;;File:t8-p2-kazuya-df+1,2.mp4;Kazuya-df+1,2;kazuya
 df+1,4;m, h;11, 20;i15~16, i16~17;-11;+42a;;"* Balcony Break
 * Combo from 1st hit with 4F delay
-* Interrupt with i1
+* Interrupt with i1 from 1st block
 * Move cannot be delayed
-* Input can be delayed by 4F";bbr intr:1;;Slaughter High Kick;30;;;File:t8-p2-kazuya-df+1,4.mp4;Kazuya-df+1,4;kazuya
-df+1,df+2;m, m;11, 22;i15~16, i22~23;-8;+18cg;+32a (+22);"* Tornado
+* Input can be delayed by 4F
+* Recovers 6F faster on hit (t61 r24)";bbr intr:1;;Slaughter High Kick;30;;;File:t8-p2-kazuya-df+1,4.mp4;Kazuya-df+1,4;kazuya
+df+1,df+2;m, m;11, 20;i15~16, i22~23;-8;+18cg;+32a (+22);"* Tornado
 * Balcony Break
 * Combo from 1st CH with 4F delay
-* Interrupt with i5
+* Interrupt with i5 from 1st block
 * Move can be delayed by 2F
 * Input can be delayed by 4F";trn bbr intr:5;;Slaughter Uppercut;31;;;File:t8-p2-kazuya-df+1,df+2.mp4;Kazuya-df+1,df+2;kazuya
 df+2;m;22;i14;-12;+5;+59a;"* Homing
@@ -290,7 +297,7 @@ BT.d+1;sl;15;i10;-5;+6;;* High crush 1~;cs1~;FC;;24;FC;;;Kazuya-BT.d+1;kazuya
 BT.d+3;l;6;i12;-15;-4;;* High crush 1~;cs1~;FC;;34;FC;;;Kazuya-BT.d+3;kazuya
 BT.u+3;m;18;i9;-12;+19a (+9);;"* Low crush 9~24
 * Floating state 25~27";js9~24 fs25~27;;;31;;;;Kazuya-BT.u+3;kazuya
-DVK.1+4;M;27;i21~31;-9;+3a;;"* Tornado
+DVK.1+4;SM;27;i21~31;-9;+3a;;"* Tornado
 * Reversal Break
 * Balcony Breakif an attack is absorbed
 * Consumes 450F of remaining Heat time
@@ -346,7 +353,7 @@ DVK.f,n,d,DF+4,1,1;L, m, m,th;15, 24 (16), 17,15;i16, ,i24~26;-19;-5d;;"* Floor 
 * Input can be delayed by 9F
 * Low crush 24~";fbr js24~;;Abyss Damnation;36?;;;File:t8-p2-kazuya-f,n,d,df+4,1,dvk.1.mp4;Kazuya-f,n,d,DF+4,1,DVK.1;kazuya
 DVK.f,n,d,DF+4,1,1,B;L, m, m;15, 24 (16), 17;i16, ,i24~26;-19;+26a (+16);;* Low crush 24~;js24~;;Spinning Demon to Left Hook > Thunder God Fist;36?;;;File:t8-p2-kazuya-f,n,d,df+4,1,dvk.1.mp4;Kazuya-f,n,d,DF+4,1,DVK.1,B;kazuya
-hFC.1;sl;5;i10;-5;+6;;"* Transition to r24 with f
+hFC.1;sl;5;i10;-5;+6;;"* Transition to standing r24 with f
 * +6c on crouching hit
 * High crush 1~";cs1~;FC;Crouch Jab;24;FC;;;Kazuya-FC.1;kazuya
 hFC.2;sl;8;i11;-4;+7;;"* +7c on crouching hit

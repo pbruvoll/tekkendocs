@@ -48,8 +48,9 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Forces tech backroll on hit";bbr intr:8;BT;Valkyrie Lance Combo;33;;;File:t8-p2-raven-3,3,4.mp4;Raven-3,3,4;raven
 3~4;m,M;10,16;i25~26 i31~36;-9~-4;+19a;;Spike;spk;BT;Chariot;26;BT;;File:t8-p2-raven-3t4.mp4;Raven-3~4;raven
 3~4,F;m,M;10,16;i25~26 i31~36, ;-39~-36;-8;;"Will phase through opponent up-close
+* is8~30
 * Low crush 13~41
-* Floating state 42~44";js13~41 fs42~44;;Chariot to Blind Roll;55;;;;Raven-3~4,F;raven
+* Floating state 42~44";is8~30 js13~41 fs42~44;;Chariot to Blind Roll;55;;;;Raven-3~4,F;raven
 4;h;16;i12~13;-7~-6;+3~+4;;;;;High Kick;26;;;File:t8-p2-raven-4,1.mp4;Raven-4;raven
 4,1;h, h;16, 13;i12~13, i19~20;-3~-2;+7~+8;;"* Combo from 1st hit
 * Jail from 1st block";;BT;Brocken Connect;24;BT;;File:t8-p2-raven-4,1.mp4;Raven-4,1;raven
@@ -67,7 +68,7 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Can be delayed";bbr intr:14;;Hydra Bite Mid;29;;;File:t8-p2-raven-4t3,4.mp4;Raven-4~3,4;raven
 1+2;m;20;i14;-9;+15a;;"* Heat Engager
 
-* Heat Dash +5, +43d (+35)";he;;Crusader;33;;;;Raven-1+2;raven
+* Heat Dash +43d (+35)";he;;Crusader;33;;;;Raven-1+2;raven
 3+4;;;;;;;"* Transition to CD (Shadow Sprint) with F
 * Alternate input: d+3+4 or hFC.3+4";;CD,SZN;Soulzone;20;SZN;;;Raven-3+4;raven
 f+2;m;10;i15~16;-12~-11;-1~+0;;;;;;30;;;File:t8-p2-raven-f+2,3.mp4;Raven-f+2;raven
@@ -97,11 +98,21 @@ df+1,4;m, sm;13, 25;i14~15, i18~27;-13;+6c;;"* Balcony Break
 * Interrupt with i1
 * Available only on hit or block
 * Forces tech backroll on hit";bbr spk wpn intr:1;;Body Blow > Phantom Mace;32?;;;File:t8-p2-raven-df+1,4.mp4;Raven-df+1,4;raven
-H.df+1,4;m, sm,sm;13, 25,30;i14~15, i18~27, i44~45;-3~-2;+6c;;"* Balcony Break
+H.df+1,4;m, sm,sm;13, 25,(30);i14~15, i18~27, i44~45;-3~-2;+6cg;;"* Balcony Break
 * Spike
-* Combo from 1st hit
+* Combo from 1st hit with 5F delay
+* Interrupt with i1 from 1st block
 * Available only on hit or block
-* Forces tech backroll on hit";bbr spk;;Body Blow > Phantom Mace;;;;;Raven-df+1,H.4;raven
+* 2nd hit only available on block (jailing)
+* 20F timestop on hit
+* t78 r32 on hit
+* 11 chip damage on block
+* Consumes 240F of remaining Heat time on block
+* Forces tech backroll on hit
+* Move can be delayed by 1F
+* Input can be delayed by 5F
+* Low crush 51~54
+* Floating state 55~57";bbr spk intr:1 chp:11 js51~54 fs55~57;;Body Blow > Phantom Mace;30;;;;Raven-df+1,H.4;raven
 df+2;m;15;i16~18;-13~-11;+30a (+20);;"* Elbow?
 * Launches crouching opponents
 * Unparryable by standard parries (bug?)";;BT;Uppercut;28;BT;;File:t8-p2-raven-df+2,3.mp4;Raven-df+2;raven
@@ -132,9 +143,19 @@ db+2,1,1;m, h, sm;13, 15, 24;i13~14, ,i18~19;-13;+2a (-7);;"* Balcony Break
 * Combo from 2nd CH
 * Interrupt with i3
 * Available only on hit or block";bbr wpn intr:3;;Assassin's Sting > Phantom Javelin;40?;;;File:t8-p2-raven-db+2,1,1.mp4;Raven-db+2,1,1;raven
-H.db+2,1,1;m, h, sm,sm;13, 15, 24,30;i13~14, ,i18~19, i39~47;-3~+5;+2a (-7);;"* Balcony Break
-* Combo from 2nd CH
-* Available only on hit or block";bbr;;Assassin's Sting > Phantom Javelin;;;;;Raven-db+2,1,H.1;raven
+H.db+2,1,1;m, h, sm,sm;13, 15, 24,(30);i13~14, ,i18~19, i39~47;-3~+5;+2a (-7);;"* Balcony Break
+* Combo from 2nd CH with 9F delay
+* Available only on hit or block
+* 2nd hit only available on block (jailing)
+* Interrupt with i3 from 2nd block
+* 20F timestop on hit
+* t102 r41 on hit
+* Consumes 240F of remaining Heat time on block
+* 10 chip damage on block
+* Move can be delayed by 5F
+* Input can be delayed by 9F
+* Low crush 48~61
+* Floating state 62~64";bbr intr:3 chp:10 js48~61 fs62~64;;Assassin's Sting > Phantom Javelin;25;;;;Raven-db+2,1,H.1;raven
 db+3;L;19;i28~29;-12~-11;+5~+6;+39d;"Cannot be low parried (bug?)
 * Low crush 8~24
 * Floating state 25~27
@@ -153,28 +174,44 @@ b+1+3,P;;;;;-31;;"* Deals recoverable self-damage on a successful parry
 * High crush 33~";js1~32 cs33~;FC;Utsusemi Escape;50;FC;;;Raven-b+1+3,P;raven
 b+2;h;12;i15~17;-14~-12;-3~-1;;;;;;31;;;File:t8-p2-raven-b+2,2,3.mp4;Raven-b+2;raven
 b+2,2;h, m;12, 17;i15~17, i22;-3;+6;+8;"* Elbow
-* Combo from 1st hit with 7F delay
+* Combo from 1st hit with 6F delay
+* -16 on whiff after 1st hit
 * Interrupt with i4
 * Input can be delayed 13f";elb intr:4;BT;;22;BT;;File:t8-p2-raven-b+2,2,3.mp4;Raven-b+2,2;raven
 b+2,2,3;h, m, M;12, 17, 20;i15~17, ,i21~22;-19~-18;+12a (-5);+26a (+16);"* Balcony Break
 * Combo from 2nd CH
-* Interrupt with i1
+* Interrupt with i1 from 2nd block
 * Grounded hit can be inconsistent";bbr intr:1;;Unicorn's Tail;37;;;File:t8-p2-raven-b+2,2,3.mp4;Raven-b+2,2,3;raven
 b+2,2,1+2;h, m, L;12, 17, 20;i15~17, ,i20~21;-30~-29;+3d;;"* Combo from 2nd CH
-* Interrupt with i6
+* Interrupt with i6 from 1st block
+* Move is delayed 6F
+* Move cannot be delayed
+* Input cannot be delayed
 * High crush 18~29";intr:6 cs18~29;;Deadly Talon;48;;;File:t8-p2-raven-b+2,2,1+2.mp4;Raven-b+2,2,1+2;raven
-b+2,4;h, h;12, 13;i15~17, i24~25;-7~-6;+4~+5;;"* Combo from 1st hit with 5F delay
-* Interrupt with i6
-* Input can be delayed 13f";intr:6;;Missing Worm;25;;;File:t8-p2-raven-b+2,4,2.mp4;Raven-b+2,4;raven
+b+2,4;h, h;12, 13;i15~17, i24~25;-7~-6;+4~+5;;"* Combo from 1st hit with 4F delay
+* -22 on whiff after 1st hit
+* Interrupt with i6 from 1st block
+* Whiffs vs SS, SWL from 1st block
+* Input can be delayed 13f";stp:SS intr:6;;Missing Worm;25;;;File:t8-p2-raven-b+2,4,2.mp4;Raven-b+2,4;raven
 b+2,4,2;h, h, sm;12, 13, 21;i15~17, ,i19~20;-13;+24a (+9);;"* Tornado
 * Weapon
 * Projectile
 * Combo from 2nd CH
 * Interrupt with i5
 * Available only on hit or block";trn wpn intr:5;;Missing Worm > Phantom Halberd;40?;;;File:t8-p2-raven-b+2,4,2.mp4;Raven-b+2,4,2;raven
-H.b+2,4,2;h, h, sm,sm;12, 13, 21,30;i15~17, ,i19~20, i39~-41;-3~-1;+24a (+9);;"* Tornado
-* Combo from 2nd CH
-* Available only on hit or block";trn;;Missing Worm > Phantom Halberd;;;;;Raven-b+2,4,H.2;raven
+H.b+2,4,2;h, h, sm,sm;12, 13, 21,(30);i15~17, ,i19~20, i39~41;-3~-1;+24a (+9);;"* Tornado
+* Combo from 2nd CH with 9F delay
+* Interrupt with i5 from 2nd block
+* Available only on hit or block
+* 2nd hit only available on block (jailing)
+* 20F timestop on hit
+* t106 r39 on hit
+* Consumes 240F of remaining Heat time on block
+* 10 chip damage on block
+* Move can be delayed by 4F
+* Input can be delayed by 9F
+* Low crush 44~57
+* Floating state 58~60";trn intr:5 chp:10 js44~57 fs58~60;;Missing Worm > Phantom Halberd;27;;;;Raven-b+2,4,H.2;raven
 b+3;M;23;i27~29;+4~+6;+15a;;"* Spike
 * 4 chip damage on block";spk chp:4;;Hades Heel;23;;;File:t8-p2-raven-b+3.mp4;Raven-b+3;raven
 b+4;m;13;i14~15;-9~-8;-1~+0;;Knee;kne;;;30;;;File:t8-p2-raven-b+4,4.mp4;Raven-b+4;raven
@@ -276,8 +313,7 @@ qcf+2~1;m;25;i20~21;-9~-8;+24a (+14);;"* Balcony Break
 * 7 chip damage on block
 * Actual startup is i40~41";bbr chp:7;;Laevateinn;30;;;File:t8-p2-raven-qcf+2t1.mp4;Raven-qcf+2~1;raven
 qcf+3;h,t;16,14;i16~17;-7~-6;-4d;;"* Spike
-* Transitions to attack throw on front hit only, otherwise launch +33a (+23)
-* Recovers heat on hit";spk;;Poison Needle > Nightmare;30;;;File:t8-p2-raven-qcf+3.mp4;Raven-qcf+3;raven
+* Transitions to attack throw on front hit only, otherwise launch +33a (+23)";spk;;Poison Needle > Nightmare;30;;;File:t8-p2-raven-qcf+3.mp4;Raven-qcf+3;raven
 qcf+4;M;15;i18~20;-14~-12;+32a (+22);;"Tornado
 * Floating state 20~32";trn fs20~32;BT;Black Hole;30;BT;;File:t8-p2-raven-qcf+4.mp4;Raven-qcf+4;raven
 qcf+1+2;m,m;10,20;i24 i35;0;+11a (+2);;* Balcony Break;bbr;FC;Hellhound;33;FC;;File:t8-p2-raven-qcf+1+2.mp4;Raven-qcf+1+2;raven
@@ -287,10 +323,14 @@ f,f,F+3;m;20;i22~24;+4~+6;+6a;;"* Floor Break
 * 6 chip damage on block
 * Low crush 14~34
 * Floating state 35~37";fbr chp:6 js14~34 fs35~37;BT;Typhon Fang;42;BT;;File:t8-p2-raven-f,f,f+3.mp4;Raven-f,f,F+3;raven
-H.f,f,F+3,4;m, sm;20, 20;i22~24, i43~44;+7~+8;+72a (+56);;"* Tornado
-* Partially uses remaining Heat time
+H.f,f,F+3,4;m, sm;20, 20;i22~24, i19~20;+7~+8;+72a (+56);;"* Tornado
+* Instant Tornado on hit
+* Consumes 600F of remaining Heat time
 * Available only on hit or block
-* 6 chip damage on block";trn chp:6;BT;Typhon Fang Phantom;74;BT;;;Raven-f,f,F+3,H.4;raven
+* 20f timestop on hit
+* 6 chip damage on block
+* Low crush 1~10
+* Floating state 11~13";trn chp:6 js1~10 fs11~13;BT;Typhon Fang Phantom;30;BT;;;Raven-f,f,F+3,H.4;raven
 ws1;m;14;i14~15;-14~-13;+35a (+25);;;;;Rising Uppercut;24;;;File:t8-p2-raven-ws1.mp4;Raven-ws1;raven
 ws2;m;17;i13~14;-8~-7;+8~+9;+37a (+27);Elbow;elb;;Jackknife Elbow;28;;;File:t8-p2-raven-ws2.mp4;Raven-ws2;raven
 ws3;m;18;i16~17;-8~-7;+0s;;;;;Trident Kick;29;;;File:t8-p2-raven-ws3,2.mp4;Raven-ws3;raven
@@ -301,9 +341,18 @@ ws3,2;m, sm;18, 21 (14);i16~17, i19~20;-13;+65a (+49);;"* Tornado
 * Interrupt with i1
 * 14 damage with scaling from 1st
 * Available only on hit or block";trn wpn intr:1;;Trident Kick > Phantom Halberd;40?;;;File:t8-p2-raven-ws3,2.mp4;Raven-ws3,2;raven
-H.ws3,2;m, sm,sm;18, 21 (14),30;i16~17, i19~20, i39~41;-3~-1;+65a (+49);;"* Tornado
-* Combo from 1st hit
-* Available only on hit or block";trn;;Trident Kick > Phantom Halberd;;;;;Raven-ws3,H.2;raven
+H.ws3,2;m, sm,sm;18, 21 (14),(30);i16~17, i19~20, i39~41;-3~-1;+65a (+49);;"* Tornado
+* Airborne combo from 1st hit
+* Available only on hit or block
+* 2nd hit only available on block (jailing)
+* Interrupt with i1 from 1st block
+* t80 r39 on hit
+* Consumes 600F of remaining Heat time on block
+* 10 chip damage on block
+* Move is delayed by 4F
+* Input cannot be delayed
+* Low crush 44~57
+* Floating state 58~60";trn intr:1 chp:10 js44~57 fs58~60;;Trident Kick > Phantom Halberd;27;;;;Raven-ws3,H.2;raven
 ws4;m;18;i11~12;-7~-6;+7~+8;;;;;Shadow Snap Kick;25;;;;Raven-ws4;raven
 ws3+4;m;20;i16~18;-12;+7~+9;;"* Heat Engager
 
@@ -325,7 +374,6 @@ FC.df+3+4;L,sm;17,25;i18~20 i34~36;-23~-21;-5a;;"* Spike
 * Transition to r20 SZN on hit only
 * Second hit available on hit only
 ** Airborne spike on 1st and 2nd hit
-* Recovers heat on hit
 * High crush 1~17";spk cs1~17;SZN;Tornado Destruction;46;;;File:t8-p2-raven-fc.df+3+4.mp4;Raven-FC.df+3+4;raven
 (Back to wall).b,b,UB;m;21;i40~43;+6~+9;+28a (+19);;"Balcony Break
 * is8~13
@@ -419,7 +467,7 @@ BT.f,f,f;;;;;;;"* Will phase through opponent up-close
 * While vanished, Raven has no hurtbox
 * Low crush 12?~41
 * Floating state 42~44";js12?~41 fs42~44;;Blind Roll;52;;;File:t8-p2-raven-bt.f,f,f.mp4;Raven-BT.f,f,f;raven
-BT.f+1;m;18;I16;-8;+6;;"* Balcony Break
+BT.f+1;m;18;i16;-8;+6;;"* Balcony Break
 * Transitions to throw on hit only
 * Opponent recovers BT on hit";bbr;;Soul Steal;32;;;File:t8-p2-raven-bt.f+1.mp4;Raven-BT.f+1;raven
 BT.f+2;m;13;i17~18;-5~-4;+6~+7;;;;;;23;;;File:t8-p2-raven-bt.f+2,3.mp4;Raven-BT.f+2;raven
@@ -438,7 +486,7 @@ BT.f+2,4,2;m, h, sm;13, 17, 21;i17~18, ,i19~20;-13;+24a (+9);;"* Tornado
 * Available only on hit or block";trn wpn intr:5;;Cold Worm > Phantom Halberd;40?;;;File:t8-p2-raven-bt.f+2,4,2.mp4;Raven-BT.f+2,4,2;raven
 H.BT.f+2,4,2;m, h, sm,sm;13, 17, 21,30;i17~18, ,i19~20 i39~41;-3~-1;+24a (+9);;"* Tornado
 * Combo from 2nd CH
-* Available only on hit or block";trn;;Cold Worm > Phantom Halberd;;;;;Raven-H.BT.f+2,4,2;raven
+* Available only on hit or block";trn;;Cold Worm > Phantom Halberd;;;;;Raven-BT.f+2,4,H.2;raven
 BT.f+3;m;17;i13~14;-5~-4;+6;+14;"* Knee
 * Transition to r45 BT at -8/+3/+11 with input B";kne;BT;Demon Knee;41;;;File:t8-p2-raven-bt.f+3.mp4;Raven-BT.f+3;raven
 BT.f+4;L;13;i16;-9;+4;;;;BT;Kama Kick;28;BT;;File:t8-p2-raven-bt.f+4,1.mp4;Raven-BT.f+4;raven
@@ -469,11 +517,10 @@ H.SZN.1,4;h, sm,sm;12, 25,30;i14~15, i18~27, i44~45;-3~-2;+6c;;"* Balcony Break
 * Forces tech backroll on hit";bbr spk;;Swift Blade > Phantom Mace;;;;;Raven-SZN.1,H.4;raven
 SZN.2;m,sm;20,10;i18, i23~24;-9;+7a (-2);;"* Heat Engager
 
-* Heat Dash +36a (+26) on hit, +5 on block
+* Heat Dash +36a (+26) on hit
 
 * Balcony Break
-* Transition to second hit on hit
-* Recovers heat on normal hit";he bbr;;Dual Thanatos;30;;;File:t8-p2-raven-szn.2.mp4;Raven-SZN.2;raven
+* Transition to second hit on hit";he bbr;;Dual Thanatos;30;;;File:t8-p2-raven-szn.2.mp4;Raven-SZN.2;raven
 SZN.3;m;16;i16~17;-1;+5~+6;;"* Transition to BT (-1/+5) with B
 * Transition to FC (-1/+5) with D
 * Low crush 9~17";js9~17;BT,FC;Radius Flail;;;;File:t8-p2-raven-szn.3,2.mp4;Raven-SZN.3;raven
@@ -481,7 +528,7 @@ SZN.3,2;m, sm;16, 21;i16~17, i19~20;-13;+24a (+9);;"* Tornado
 * Combo from 1st hit
 * Available only on hit or block
 * Power up during Heat";trn;;Radius Flail > Phantom Halberd;40?;;;File:t8-p2-raven-szn.3,2.mp4;Raven-SZN.3,2;raven
-H.SZN.3,2;m, sm,sm;16, 21,30;i16~17, i19~20 i39~-41;-3~-1;+24a (+9);;"* Tornado
+H.SZN.3,2;m, sm,sm;16, 21,30;i16~17, i19~20 i39~41;-3~-1;+24a (+9);;"* Tornado
 * Combo from 1st hit
 * Available only on hit or block";trn;;Radius Flail > Phantom Halberd;;;;;Raven-SZN.3,H.2;raven
 SZN.4;L;21;i17~24;-14~-7;+4~+11g;+13a~+20a;* High crush 6~;cs6~;FC;Cocytus Glide;28;FC;;File:t8-p2-raven-szn.4.mp4;Raven-SZN.4;raven
@@ -499,9 +546,10 @@ SZN.D;;;;;;;"* Low crush 1~17
 SZN.F;;;;;;;;;CD;Shadow Sprint;13?;CD;;;Raven-SZN.F;raven
 SZN.U;;;;;;;"* Low crush 1~17
 * Floating state 15~17";js1~17 fs15~17;;Blind Fall;25;;;File:t8-p2-raven-szn.u.mp4;Raven-SZN.U;raven
-H.qcf+1,2;m, sm,sm;15, 21,30;i16, 19~20, 39~41;-3~-1;+24a (+9);;"* Tornado
+H.qcf+1,2;m, sm,sm;15, 21,(30);i16, i19~20, i39~41;-3~-1;+24a (+9);;"* Tornado
 * Combo from 1st hit
-* Available only on hit or block";trn;;Fatal Elbow > Phantom Halberd;;;;;Raven-qcf+1,H.2;raven
+* Available only on hit or block
+* Consumes 240F of remaining Heat time on block";trn;;Fatal Elbow > Phantom Halberd;;;;;Raven-qcf+1,H.2;raven
 1+3;t;35;i12~14;-6;+0d;;"* Homing
 * Throw break 1 or 2";hom;;Grave Digger;31;;;File:t8-p2-raven-1+3.mp4;Raven-1+3;raven
 2+4;t;35;i12~14;-3;+0d;;"* Homing

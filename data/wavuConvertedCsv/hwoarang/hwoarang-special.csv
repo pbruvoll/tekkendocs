@@ -6,34 +6,15 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * Only deals recoverable damage
 * Cannot cause a K.O.
 * Power crush 7~16";hb chp:2 pc7~16;;Heat Burst;30;;;;Hwoarang-2+3;hwoarang
-H.RFS.d+4;L;15;i20~21;-23;+7c;;"* Transition to RFF
-* Partially uses remaining Heat time
-** RFS.d+4,3,4 airborne combo guaranteed on normal hit
-* Increased chip damage scaling on block during heat
-** 4 chip damage on block in heat";;RFF;;32;RFF;;File:t8-p2-hwoarang-rfs.d+4,3,4.mp4;Hwoarang-H.RFS.d+4;hwoarang
-H.RFS.d+4,3;L, h;15, 12 (8);i20~21, i25;-9;-1 / +20a (+13);;"* Combo from 1st hit
-* Airborne combo from 1st hit in heat
-** 8 dmg, +20a (+13) on hit 
-** 23 total dmg from 1st hit
-* Increased chip damage scaling on block during heat
-** 3 chip damage on block in heat";;;;31;;;File:t8-p2-hwoarang-rfs.d+4,3,4.mp4;Hwoarang-H.RFS.d+4,3;hwoarang
-H.RFS.d+4,3,4;L, h, h;15, 12 (8), 30 (15);i20~21, ,i27~28;-9;+28a (+2) / +10a (+9);;"* Balcony Break
-* Combo from 2nd hit
-* Airborne combo from 1st hit
-** +10a (+9) on hit
-** 15 dmg, 38 total dmg from 1st hit 
-* Increased chip damage scaling on block during heat
-** 9 chip damage on block in heat
-* Low crush 22~";bbr js22~;;Predator Bardiche;36;;;File:t8-p2-hwoarang-rfs.d+4,3,4.mp4;Hwoarang-H.RFS.d+4,3,4;hwoarang
 H.RFS.f+4;h,h;8,10;i8, i10;+0;+5;;"* Jail from 1st block
 * Remains in RFS
-* 2 chip damage on block";chp:2;RFS;;19?;RFS;;;Hwoarang-H.RFS.f+4;hwoarang
-H.RFS.f+4,4;h,h, h;8,10, 9;i8, i10, i23;-6;+75a (+59);;"* Tornado
+* 2 chip damage on block";chp:2;RFS;;19;RFS;;;Hwoarang-H.RFS.f+4;hwoarang
+H.RFS.f+4,4;h,h, h;8,10, 9;i8, i10, i23;-6;+39a;;"* Tornado
 * Combo from 1st or 2nd hit
 * Transition to RFF
-* Partially uses remaining Heat time
-* Increased chip damage scaling on block during heat
-** 2 chip damage on block";trn;RFF;Right Viper Combo > Right Sword;29?;RFF;;;Hwoarang-H.RFS.f+4,4;hwoarang
+* Consumes 300F of remaining Heat time
+* Interrupt with i3 from 1st block
+* 2 chip damage on block";trn intr:3 chp:2;RFF;Right Viper Combo > Right Sword;29;RFF;;;Hwoarang-H.RFS.f+4,4;hwoarang
 H.2+3;m,(t),m,h;13,(14,24), 12,25;i17~18, i18~19, i29;+11;+13d / +35d (+14);;"* Heat Smash
 * Balcony Break
 * Jails
@@ -120,13 +101,13 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Input can be delayed by 1F
 * Move cannot be delayed
 * Low crush 19~";js19~;RFF,RFS;;27?;RFF;;File:t8-p2-hwoarang-4,4,4,4.mp4;Hwoarang-4,4,4;hwoarang
-4,4,4,4;h, h, h, h;14, 13, 17, 20;i11~12, ,i31~32;+0;+10c;;"* Balcony Break
+4,4,4,4;h, h, h, h;14, 13, 17, 20;i11~12, ,i31~32;+0;+10cg;;"* Balcony Break
 * Tornado
-* Combo from 3rd hit with 4F delay
-* Input can be delayed by 4F
+* Combo from 3rd hit with 3F delay
+* Input can be delayed by 3F
 * Move cannot be delayed
 * 6 chip damage on block
-* Forces backroll on hit (opponent recovers crouching)
+* Forces tech back roll on hit
 * Alternate input:(RFS.u+4),4
 * Low crush 20~";bbr trn chp:6 js20~;;Right Kicks > Raptor Combo;37;;;File:t8-p2-hwoarang-4,4,4,4.mp4;Hwoarang-4,4,4,4;hwoarang
 1+2;;;;;;;* Transition to BT;;BT;Disrespect;7;BT;;;Hwoarang-1+2;hwoarang
@@ -172,7 +153,7 @@ df+3+4;m,h,m;7,4,17;i13,i14,i24~25;-14;+4c;;"* Heat Engager
 * Jails
 * 5 chip damage on block
 * Also possible during RFF";he chp:5;;Ignition Barrage;35;;;File:t8-p2-hwoarang-df+3+4.mp4;Hwoarang-df+3+4;hwoarang
-d+1;sl;5;i10;-5;+6;;"* Transition to r24 with f
+d+1;sl;5;i10;-5;+6;;"* Transition to standing r24 with f
 * +6c on crouching hit
 * High crush 4~";cs4~;FC;Crouch Jab;24;FC;;;Hwoarang-d+1;hwoarang
 d+2;sl;8;i11;-4;+7;;"* +7c on crouching hit
@@ -194,7 +175,8 @@ db+3;L;12;i19;-13;-1;+17g;"* Also possible during RFF
 db+4;L;14;i16;-12;-8;-1;"* Transition to r20 RFS with F (-1/+3/+10)
 * Also possible during RFF";;RFS;;31;;;File:t8-p2-hwoarang-db+4,4.mp4;Hwoarang-db+4;hwoarang
 db+4,4;L, h;14, 21;i16, i17~19;-1~+1;+24a~+26a;;* Combo from 1st CH;;;Ankle Biter > Crescent Kick;27;;;File:t8-p2-hwoarang-db+4,4.mp4;Hwoarang-db+4,4;hwoarang
-b+1;m;15;i15;-15;-1;;* Sidesteps to the right;;;Stealth Needle;36;;;;Hwoarang-b+1;hwoarang
+b+1;m;15;i15;-15;-1;;"* Spike
+* Sidesteps to the right";spk;;Stealth Needle;36;;;;Hwoarang-b+1;hwoarang
 b+1+3;;;;;+9;;"* Parries high and mid punches. Pressing 4 on successful parry gives Shotgun Shuffle
 * Parry state 5~12?";ps5~12?;;Parry;;;;;Hwoarang-b+1+3;hwoarang
 b+1+3,P.4;m,h,h;10,8,10;i15,i8,i9;;+17a (+8);;"* Balcony Break
@@ -533,102 +515,129 @@ RFF.f+3;h;21;i14~17;+12~+15;+23~+26;;"* Transition to LFS
 RFF.f+4;;;;;;;* Transition to RFS;;RFS;Right Flamingo Feint;18;RFS;;;Hwoarang-RFF.f+4;hwoarang
 RFF.f+4~4;M;20;i18~20;-13;+41a (+31);;"* Tornado
 * Remains in RFF";trn;RFF;Plasma Blade;;RFF;;;Hwoarang-RFF.f+4~4;hwoarang
-RFS.1;m;15;i16;-2;+9;;* Links to 10-hit string;;string;Left Punch;21?;;;File:t8-p2-hwoarang-rfs.1.mp4;Hwoarang-RFS.1;hwoarang
+RFS.1;m;15;i16;-2;+9;;* Links to 10-hit string;;string;Left Punch;21;;;File:t8-p2-hwoarang-rfs.1.mp4;Hwoarang-RFS.1;hwoarang
 RFS.2;h;6;i13;+5;+7;;"* Transition to RFF
-* Links to RFF.2 extensions";;RFF,RFF.2 extensions;Right Flamingo > Back Hand;14?;RFF;;File:t8-p2-hwoarang-rfs.2.mp4;Hwoarang-RFS.2;hwoarang
+* Links to RFF.2 extensions";;RFF,RFF.2 extensions;Right Flamingo > Back Hand;14;RFF;;File:t8-p2-hwoarang-rfs.2.mp4;Hwoarang-RFS.2;hwoarang
 RFS.3;h;24;i14~16;+4;+27a (+18);;"* Balcony Break
 * Transition to LFS
 * Sidesteps to the left
-* Increased chip damage scaling on block during heat
-** 7 chip damage on block in heat
-* Low crush 8~";bbr js8~;LFS;Left Step Kick;21?;LFS;;File:t8-p2-hwoarang-rfs.3.mp4;Hwoarang-RFS.3;hwoarang
-RFS.3~4;m,m;11,21;i16,i7;-3;+26 (+16);;"* Balcony Break
+* 7 chip damage on block in heat
+* Low crush 8~26
+* Floating state 27~29";bbr js8~26 fs27~29;LFS;Left Step Kick;21;LFS;;File:t8-p2-hwoarang-rfs.3.mp4;Hwoarang-RFS.3;hwoarang
+RFS.3~4;m,m;11,21;i16,i7;-3;+42a (+16);;"* Balcony Break
 * Jail from 1st block
-* Increased chip damage scaling on block during heat
-** 9 chip damage on block in heat
+* 9 chip damage on block in heat
 * Input 4 on frames 1 to 7
 * Input 4 on frame 1 to power up
 ** 37dmg on hit, +1 on block
 ** 14 chip damage on block in heat
-* Low crush 16~";bbr js16~;;Flying Eagle;;;;;Hwoarang-RFS.3~4;hwoarang
+* +26a (+16) on 2nd hit
+* Low crush 10~26
+* Floating state 27~29";bbr js10~26 fs27~29;;Flying Eagle;24;;;;Hwoarang-RFS.3~4;hwoarang
 RFS.4;m;17;i14;-9;+3;;"* Transition to RFF
-* Increased chip damage scaling on block during heat
-** 5 chip damage on block in heat";;RFF;Right Kick;;RFF;;File:t8-p2-hwoarang-rfs.4.mp4;Hwoarang-RFS.4;hwoarang
+* 5 chip damage on block in heat";;RFF;Right Kick;32;RFF;;File:t8-p2-hwoarang-rfs.4.mp4;Hwoarang-RFS.4;hwoarang
 RFS.4,3;m, m;17, 21;i14, i23~24;+4;+25a (+16);;"* Tornado
 * Balcony Break
 * Transition to LFS
-* Combo from 1st CH
+* Combo from 1st CH with 1F delay
 * Combo from 1st hit during heat
-* Increased chip damage scaling on block during heat
-** 4 chip damage on block in heat";trn bbr;LFS;Double Phalanx;18?;LFS;;;Hwoarang-RFS.4,3;hwoarang
-RFS.3+4;;;;;;;* Transition to LFS;;LFS;Flamingo Switch > Left Flamingo;15;LFS;;;Hwoarang-RFS.3+4;hwoarang
+** Does not combo when 3 is input on frame 14 or 15 (bug)
+* Move cannot be interrupted
+* Move cannot be delayed
+* Input can be delayed by 1F
+* 4 chip damage on block in heat
+* Consumes 180F of remaining Heat time";trn bbr;LFS;Double Phalanx;18?;LFS;;;Hwoarang-RFS.4,3;hwoarang
+RFS.3+4;;;;;;;"* Transition to LFS
+* r24 LFS when canceling to movement in LFS";;LFS;Flamingo Switch > Left Flamingo;15;LFS;;;Hwoarang-RFS.3+4;hwoarang
 RFS.b+3;m;21;i16~17;-9;+7;;"* Heat Engager
 
-* Heat Dash +5, +42a (+27)
+* Heat Dash +42a (+27)
 
-* Increased chip damage scaling on block during heat
-** 6 chip damage on block in heat";he;;Left Heel Lance;31;;;File:t8-p2-hwoarang-rfs.b+3.mp4;Hwoarang-RFS.b+3;hwoarang
+* 6 chip damage on block in heat
+* Recovers 6F faster on hit (t42 r25)";he;;Left Heel Lance;31;;;File:t8-p2-hwoarang-rfs.b+3.mp4;Hwoarang-RFS.b+3;hwoarang
 RFS.b+4;m;23;i20~22;-12;+14g;;"* Balcony Break
-* Power up if an attack is absorbed
-** Reversal Break
-** 9 chip damage on block
-** -8 on block
-* Increased chip damage scaling on block during heat
-** 6 chip damage on block in heat
-** 9 chip damage on block after absorbing an attack
-* Power crush 8~19";bbr rbr pc8~19;;Right Thunderbolt;27;;;File:t8-p2-hwoarang-rfs.b+4.mp4;Hwoarang-RFS.b+4;hwoarang
-RFS.df+4;m;17;i17~19;+1;+8c;+26a;"* Increased chip damage scaling on block during heat
-** 4 chip damage on block in heat";;;Snap Kick;22?;;;File:t8-p2-hwoarang-rfs.df+4.mp4;Hwoarang-RFS.df+4;hwoarang
+* -8 block advantage and 9 chip damage on block after attack absorption
+* 6 chip damage on block in heat
+* Recovers 5F slower on block (t54 r32)
+* Power crush 8~19";bbr pc8~19;;Right Thunderbolt;27;;;File:t8-p2-hwoarang-rfs.b+4.mp4;Hwoarang-RFS.b+4;hwoarang
+RFS.df+4;m;17;i17~19;+1;+8c;+26a;* 4 chip damage on block in heat;;;Snap Kick;22;;;File:t8-p2-hwoarang-rfs.df+4.mp4;Hwoarang-RFS.df+4;hwoarang
 RFS.d+3;L;13;i15;-13;-5;+2;"* Transition to RFF
-* Increased chip damage scaling on block during heat
-** 3 chip damage on block in heat
+* 3 chip damage on block in heat
 * cs10~19 crush state when canceled into followup
-* High crush 10~25";cs10~25;RFF;;32?;RFF;;File:t8-p2-hwoarang-rfs.d+3,3.mp4;Hwoarang-RFS.d+3;hwoarang
+* High crush 10~25";cs10~25;RFF;;32;RFF;;File:t8-p2-hwoarang-rfs.d+3,3.mp4;Hwoarang-RFS.d+3;hwoarang
 RFS.d+3,3;L, h;13, 28;i15, i25~27;-2;+34a (+8);;"* Balcony Break
 * Combo from 1st CH with 4F delay
+* Opponent can buffer crouch assist on 1st normal hit (Input moves with df_d_db inputs)
+* Interrupt with i9 from 1st block
+* Whiffs vs SSR from 1st block
 * Move cannot be delayed
 * Input can be delayed by 4F
 * 11 chip damage on block
-* Increased chip damage scaling on block during heat
-** 14 chip damage on block in heat";bbr chp:11;;Teaser;30;;;File:t8-p2-hwoarang-rfs.d+3,3.mp4;Hwoarang-RFS.d+3,3;hwoarang
-RFS.d+4;L;15;i20~21;-23;+7c;;* Transition to RFF;;RFF;;32;RFF;;File:t8-p2-hwoarang-rfs.d+4,3,4.mp4;Hwoarang-RFS.d+4;hwoarang
+* 14 chip damage on block in heat";bbr stp:SSR intr:9 chp:11;;Teaser;30;;;File:t8-p2-hwoarang-rfs.d+3,3.mp4;Hwoarang-RFS.d+3,3;hwoarang
+RFS.d+4;L;15;i20~21;-23;+7c;;"* Transition to RFF
+* Stagger low
+* 4 chip damage on block during Heat";;RFF;;32;RFF;;File:t8-p2-hwoarang-rfs.d+4,3,4.mp4;Hwoarang-RFS.d+4;hwoarang
 RFS.d+4,3;L, h;15, 12 (8);i20~21, i25;-9;-1 / +20a (+13);;"* Combo from 1st hit
-* Airborne combo from 1st CH
-** 8 dmg, +20a (+13) on hit 
-** 26 total dmg from 1st CH";;;;31;;;File:t8-p2-hwoarang-rfs.d+4,3,4.mp4;Hwoarang-RFS.d+4,3;hwoarang
+* Airborne combo from 1st CH or 1st normal hit during Heat (+20a (+13))
+* 3 chip damage on block during Heat";;;;31;;;File:t8-p2-hwoarang-rfs.d+4,3,4.mp4;Hwoarang-RFS.d+4,3;hwoarang
 RFS.d+4,3,4;L, h, h;15, 12 (8), 20 (10);i20~21, ,i27~28;-9;+28a (+2) / +10a (+9);;"* Balcony Break
-* Power up in Heat: 30dmg and increased chip damage on block
 * Combo from 2nd CH
-* Airborne combo from 1st CH
-** +10a (+9) on hit
-** 10 dmg, 36 total dmg from 1st CH
-* Low crush 22~";bbr js22~;;Predator Bardiche;36;;;File:t8-p2-hwoarang-rfs.d+4,3,4.mp4;Hwoarang-RFS.d+4,3,4;hwoarang
+* Airborne combo from 1st CH (+10a (+9))
+* Interrupt with i4 from 2nd block
+* Power up in Heat: 25dmg and 7 chip damage on block
+* Low crush 22~34
+* Floating state 35~37";bbr intr:4 js22~34 fs35~37;;Predator Bardiche;36;;;File:t8-p2-hwoarang-rfs.d+4,3,4.mp4;Hwoarang-RFS.d+4,3,4;hwoarang
+H.RFS.d+4,3;L, h;15, 12 (8);i20~21, i25;-9;-1 / +20a (+13);;"* Consumes 600F of remaining Heat time
+* Airborne combo from 1st hit in heat (+20a (+13))
+* 3 chip damage on block in heat";;;;31;;;File:t8-p2-hwoarang-rfs.d+4,3,4.mp4;Hwoarang-RFS.d+4,H.3;hwoarang
+H.RFS.d+4,3,4;L, h, h;15, 12 (8), 25 (12);i20~21, ,i27~28;-9;+28a (+2) / +10a (+9);;"* Balcony Break
+* Combo from 2nd hit
+* Airborne combo from 1st hit (+10a (+9))
+* 9 chip damage on block in heat
+* Low crush 22~34
+* Floating state 35~37";bbr js22~34 fs35~37;;Predator Bardiche;36;;;File:t8-p2-hwoarang-rfs.d+4,3,4.mp4;Hwoarang-RFS.d+4,H.3,4;hwoarang
+H.RFS.d+4,3,4;L, h, h;15, 12 (8), 25 (12);i20~21, ,i27~28;-9;+28a (+2) / +10a (+9);;"* Balcony Break
+* Combo from 2nd hit
+* Airborne combo from 1st hit (+10a (+9))
+* Interrupt with i4 from 2nd block
+* 9 chip damage on block in heat
+* Low crush 22~34
+* Floating state 35~37";bbr intr:4 js22~34 fs35~37;;Predator Bardiche;36;;;File:t8-p2-hwoarang-rfs.d+4,3,4.mp4;Hwoarang-RFS.d+4,H.3,4;hwoarang
 RFS.f+3;m;18;i20~21;-10;+5;+15a (+6);"* Homing
-* Increased chip damage scaling on block during heat
-** 5 chip damage on block in heat";hom;;Screw Kick;;;;File:t8-p2-hwoarang-rfs.f+3.mp4;Hwoarang-RFS.f+3;hwoarang
+* 5 chip damage on block in heat";hom;;Screw Kick;29;;;File:t8-p2-hwoarang-rfs.f+3.mp4;Hwoarang-RFS.f+3;hwoarang
 RFS.f+4;h,h;8,8;i8, i10;+0;+2;+5;"* Jail from 1st block
 * +6 on 2nd CH
 * Remains in RFS
-* Power up during Heat";;RFS;;19?;RFS;;;Hwoarang-RFS.f+4;hwoarang
+* Power up during Heat (Loses CH launch property)
+* t40 r22 when canceling to movement in RFS";;RFS;;19;RFS;;;Hwoarang-RFS.f+4;hwoarang
 RFS.f+4,4;h,h, h;8,8, 9;i8, i10, i23;-6;+75a (+59);;"* Tornado
 * Combo from 1st or 2nd CH
-* Transition to RFF";trn;RFF;Right Viper Combo > Right Sword;29?;RFF;;;Hwoarang-RFS.f+4,4;hwoarang
-RFS.uf+3;M;22;i24~27;-7;+19d;;"* Increased chip damage scaling on block during heat
-** 6 chip damage on block in heat
-* Low crush 9~";js9~;;Flamingo Hunting Heel;32;;;File:t8-p2-hwoarang-rfs.uf+3.mp4;Hwoarang-RFS.uf+3;hwoarang
+* +39a on hit during heat
+* Interrupt with i3 from 1st block
+* Transition to RFF
+* 2 chip damage on block during Heat";trn intr:3;RFF;Right Viper Combo > Right Sword;29;RFF;;;Hwoarang-RFS.f+4,4;hwoarang
+RFS.uf+3;M;22;i24~27;-7;+19d;;"* 6 chip damage on block in heat
+* Low crush 9~25";js9~25;;Flamingo Hunting Heel;32;;;File:t8-p2-hwoarang-rfs.uf+3.mp4;Hwoarang-RFS.uf+3;hwoarang
 RFS.uf+4;m;20;i17~18;-13;+30a (+20);;"* Tornado
 * Transition to RFF
-* Increased chip damage scaling on block during heat
-** 6 chip damage on block in heat
-* Low crush 11~33";trn js11~33;RFF;Air Blade;33?;RFF;;File:t8-p2-hwoarang-rfs.uf+4.mp4;Hwoarang-RFS.uf+4;hwoarang
+* 6 chip damage on block in heat
+* Low crush 11~33
+* Floating state 34~36";trn js11~33 fs34~36;RFF;Air Blade;33;RFF;;File:t8-p2-hwoarang-rfs.uf+4.mp4;Hwoarang-RFS.uf+4;hwoarang
 RFS.u+4;h;17;i25~26;-2;+8;;"* Homing
 * Transition to RFF
 * Link to LFF.(4,4,4),4 extension
-** Combo from 1st hit with 4F input delay
-** Extension cannot be delayed
-* Increased chip damage scaling on block during heat
-** 5 chip damage on block in heat
-* Low crush 19~";hom js19~;RFF;Raptor Claw;27;RFF;;File:t8-p2-hwoarang-rfs.u+4.mp4;Hwoarang-RFS.u+4;hwoarang
+* 5 chip damage on block in heat
+* Low crush 19~23
+* Floating state 24~26";hom js19~23 fs24~26;RFF;Raptor Claw;27;RFF;;File:t8-p2-hwoarang-rfs.u+4.mp4;Hwoarang-RFS.u+4;hwoarang
+RFS.u+4,4;h, h;17, 20;i25~26, i31~32;+0;+10cg;;"* Balcony Break
+* Tornado
+* Combo from 3rd hit with 3F delay
+* Input can be delayed by 3F
+* Move cannot be delayed
+* 6 chip damage on block
+* Forces tech back roll on hit
+* Alternate input:(RFS.u+4),4
+* Low crush 20~";bbr trn chp:6 js20~;;Right Kicks > Raptor Combo;37;;;File:t8-p2-hwoarang-4,4,4,4.mp4;Hwoarang-RFS.u+4,4;hwoarang
 hFC.3;L;10;i16;-17;-6;;"* -6c on crouching hit
 * High crush 1~";cs1~;FC;Crouch Spin Kick;36;FC;;;Hwoarang-hFC.3;hwoarang
 hFC.4;l;6;i12;-15;-4;;"* -4c on crouching hit
