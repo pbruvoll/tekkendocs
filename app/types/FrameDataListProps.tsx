@@ -9,4 +9,6 @@ export type FrameDataListProps = {
   forceShowCharacter?: boolean;
   className?: string;
   sortSettings?: SortSettings;
+  isFavorite?: (key: string) => boolean;
+  onToggleFavorite?: (key: string) => void;
 };

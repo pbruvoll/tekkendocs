@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import { filterKey } from '~/constants/filterConstants';
 import { orderByKey } from '~/constants/sortConstants';
 import { sortOptions } from '~/constants/sortOptions';
+import { useFavorites } from '~/hooks/useFavorites';
 import { useSearchParamState } from '~/hooks/useSearchParamState';
 import { type GameRouteId } from '~/types/GameRouteId';
 import { type Move } from '~/types/Move';
@@ -69,6 +70,8 @@ export const FrameDataSection = ({
   const deferredFilter = useDeferredValue(filter);
 
   const moveTypes = useMemo(() => getMoveFilterTypes(moves), [moves]);
+
+  const { favorites, toggleFavorite, isFavorite } = useFavorites();
 
   return (
     <>
@@ -177,6 +180,9 @@ export const FrameDataSection = ({
         filter={deferredFilter}
         charId={charId}
         viewMode={frameDataViewMode}
+        favorites={favorites}
+        isFavorite={isFavorite}
+        onToggleFavorite={toggleFavorite}
       />
     </>
   );
