@@ -117,6 +117,7 @@ export const getFilterFromParams = (
     chip: getSearchParamBoolean(searchParams, filterKey.Chip),
     moveList: getSearchParamString(searchParams, filterKey.MoveList),
     character: getSearchParamStringList(searchParams, filterKey.Character),
+    favorite: getSearchParamBoolean(searchParams, filterKey.Favorite),
   };
 };
 

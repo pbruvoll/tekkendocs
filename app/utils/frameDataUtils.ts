@@ -536,7 +536,11 @@ export const filterRows = (
   });
 };
 
-export const filterMoves = (moves: Move[], filter: MoveFilter | undefined) => {
+export const filterMoves = (
+  moves: Move[],
+  filter: MoveFilter | undefined,
+  favorites?: Record<string, boolean>,
+) => {
   if (!filter) {
     return moves;
   }
@@ -556,6 +560,14 @@ export const filterMoves = (moves: Move[], filter: MoveFilter | undefined) => {
             move.name?.replace(/ /g, '').toLowerCase().includes(searchQuery) ||
             move.tags?.[searchQuery] !== undefined))
       );
+    });
+  }
+
+  if (filter.favorite && favorites) {
+    filterFuncs.push((move: Move) => {
+      if (!move.characterId) return false;
+      const favKey = `${move.characterId}:${move.command}`;
+      return favorites[favKey] === true;
     });
   }
 

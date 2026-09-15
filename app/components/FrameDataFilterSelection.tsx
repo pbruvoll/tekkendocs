@@ -80,6 +80,7 @@ export const FrameDataFilterSelection = ({
     forcesCrouchOnHit,
     recoverFullCrouch,
     counterHit,
+    favorite,
   } = filter;
 
   // the button only covers the "interruptible by i6 or slower" case, so a max
@@ -111,6 +112,25 @@ export const FrameDataFilterSelection = ({
 
   return (
     <Flex direction="column" gap="5" className={className}>
+      <section className="flex flex-col gap-3">
+        <Text as="div" size="3" mb="1" weight="bold">
+          Favorites
+        </Text>
+        <div className="flex flex-wrap gap-3">
+          <Button
+            variant={favorite ? 'solid' : 'outline'}
+            onClick={() => {
+              if (favorite) {
+                removeFilterValue(filterKey.Favorite);
+              } else {
+                setFilterValue(filterKey.Favorite, '');
+              }
+            }}
+          >
+            Favorites only
+          </Button>
+        </div>
+      </section>
       <section className="flex flex-col gap-3">
         <Text as="div" size="3" mb="1" weight="bold">
           Hit level

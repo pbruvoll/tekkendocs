@@ -61,6 +61,7 @@ import {
   type QuestionFeedback,
   type QuizMove,
 } from '~/features/frameQuiz/types';
+import { useFavorites } from '~/hooks/useFavorites';
 import { getFilterFromParams, isFilterValueActive } from '~/utils/filterUtils';
 import { filterMoves } from '~/utils/frameDataUtils';
 import { generateMetaTags } from '~/utils/seoUtils';
@@ -99,6 +100,8 @@ export default function FrameQuiz() {
   const { moves } = useRouteLoaderData<LoaderData>(
     'routes/_mainLayout.t8_._allFrameData',
   ) || { moves: [] };
+
+  const { favorites } = useFavorites();
 
   const [score, setScore] = useState(0);
   const [totalAnswered, setTotalAnswered] = useState(0);
@@ -191,15 +194,15 @@ export default function FrameQuiz() {
 
   const characterFilteredMoves = useMemo(() => {
     if (!isFilterValueActive(moveFilter.character)) return moves;
-    return filterMoves(moves, { character: moveFilter.character });
-  }, [moves, moveFilter.character]);
+    return filterMoves(moves, { character: moveFilter.character }, favorites);
+  }, [moves, moveFilter.character, favorites]);
 
   const eligibleMoves = useMemo(
     () =>
       getEligibleQuizMoves(
-        hasActiveFilter ? filterMoves(moves, moveFilter) : moves,
+        hasActiveFilter ? filterMoves(moves, moveFilter, favorites) : moves,
       ),
-    [moves, moveFilter, hasActiveFilter],
+    [moves, moveFilter, hasActiveFilter, favorites],
   );
 
   const [prevEligibleMovesLength, setPrevEligibleMovesLength] = useState(
