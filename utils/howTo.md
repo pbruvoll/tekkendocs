@@ -113,3 +113,18 @@ By default, existing output files are skipped. To overwrite them:
 ```
 tekkendocs>python utils\convertVideoResolution.py -I <inputFolder> -O <outputFolder> --width 426 --overwrite
 ```
+
+## How to download the character guides to local csv
+
+Double click `scripts/download-guides.bat`.
+
+It downloads every `<character-id>-guide` sheet from the T8 spreadsheet and stores it as
+`data/guides/<character-id>/<character-id>-guide.csv`. Only the three first columns are
+downloaded, since the rest of the sheet is static helper content which the site never reads.
+
+Sheets such as `template-guide` and `dragunov-example-guide` are skipped, as the character id
+is checked against `app/constants/characterInfoListT8.ts`.
+
+Unlike `downloadCsv.py`, this script does not need a `credentials.json`. It authenticates with
+the same google service account as the server, read from `GOOGLE_SHEETS_CLIENT_EMAIL` and
+`GOOGLE_SHEETS_PRIVATE_KEY` in `.env`.
