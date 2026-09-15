@@ -41,6 +41,9 @@ export const MoveDetailsPanel = ({
         <div className="text-muted-foreground">Recovery</div>
         <div className="font-medium">{formatRecovery(move) || 'N/A'}</div>
 
+        <div className="text-muted-foreground">Total frames</div>
+        <div className="font-medium">{move.totalFrames || 'N/A'}</div>
+
         <div className="text-muted-foreground">Properties</div>
         <div className="flex flex-wrap items-center gap-1.5">
           <MovePropertyIconList move={move} size="small" />
