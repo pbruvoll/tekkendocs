@@ -1,5 +1,5 @@
-import { Heart } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { Heart } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 type HeartButtonProps = {
   isFavorite: boolean;
@@ -23,18 +23,18 @@ export const HeartButton = ({
         onToggle();
       }}
       className={cn(
-        "rounded-full p-1 transition-colors hover:bg-background/80",
+        'rounded-full p-1 transition-colors hover:bg-background/80',
         className,
       )}
-      aria-label={isFavorite ? "Remove from favorites" : "Add to favorites"}
+      aria-label={isFavorite ? 'Remove from favorites' : 'Add to favorites'}
     >
       <Heart
         size={size}
         className={cn(
-          "transition-colors cursor-pointer",
+          'transition-colors cursor-pointer',
           isFavorite
-            ? "fill-primary/90 hover:fill-primary text-primary"
-            : "fill-none text-muted-foreground hover:text-primary",
+            ? 'fill-primary/90 hover:fill-primary text-primary'
+            : 'fill-none text-muted-foreground hover:text-primary',
         )}
       />
     </button>
