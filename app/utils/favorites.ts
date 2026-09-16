@@ -19,5 +19,9 @@ export const readFavoritesFromStorage = (): FavoriteMoves => {
 
 export const writeFavoritesToStorage = (favorites: FavoriteMoves) => {
   if (typeof window === 'undefined') return;
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(favorites));
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(favorites));
+  } catch {
+    // ignore write errors
+  }
 };

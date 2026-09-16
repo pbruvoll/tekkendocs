@@ -71,7 +71,9 @@ export const loader = async ({ params }: Route.LoaderArgs) => {
   const normalMoves = tables.find((t) => t.name === 'frames_normal');
   const moves: Move[] = normalMoves ? frameDataTableToJson(normalMoves) : [];
   moves.forEach((move) => {
-    move.characterId = characterId;
+    if (!move.characterId) {
+      move.characterId = characterId;
+    }
   });
   if (overrideNormalMoves) {
     applyOverride(moves, overrideNormalMoves);

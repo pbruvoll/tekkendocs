@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 import {
   type FavoriteMoves,
@@ -7,13 +7,16 @@ import {
 } from '~/utils/favorites';
 
 export function useFavorites() {
-  const [favorites, setFavorites] = useState<FavoriteMoves>(() => {
-    if (typeof window === 'undefined') {
-      return {};
-    }
+  const [favorites, setFavorites] = useState<FavoriteMoves>({});
 
-    return readFavoritesFromStorage();
-  });
+  useEffect(() => {
+    setFavorites(readFavoritesFromStorage());
+  }, []);
+
+  const isFavorite = useCallback(
+    (key: string) => Boolean(favorites[key]),
+    [favorites],
+  );
 
   const toggleFavorite = useCallback((key: string) => {
     setFavorites((prev) => {
@@ -31,14 +34,9 @@ export function useFavorites() {
     });
   }, []);
 
-  const isFavorite = useCallback(
-    (key: string) => Boolean(favorites[key]),
-    [favorites],
-  );
-
   return {
     favorites,
-    toggleFavorite,
     isFavorite,
+    toggleFavorite,
   };
 }

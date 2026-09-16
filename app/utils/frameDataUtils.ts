@@ -563,11 +563,11 @@ export const filterMoves = (
     });
   }
 
-  if (filter.favorite && favorites) {
+  if (filter.favorite) {
     filterFuncs.push((move: Move) => {
       if (!move.characterId) return false;
       const favKey = `${move.characterId}:${move.command}`;
-      return favorites[favKey] === true;
+      return favorites?.[favKey] === true;
     });
   }
 
