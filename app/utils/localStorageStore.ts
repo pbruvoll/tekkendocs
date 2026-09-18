@@ -7,8 +7,9 @@ export type LocalStorageStore<T> = {
 };
 
 /**
- * A localStorage-backed store for useSyncExternalStore. Snapshots are cached by
- * raw string, so getSnapshot returns a stable reference until the value changes.
+ * A localStorage-backed store for useSyncExternalStore. The parsed value is
+ * kept in memory and only re-read when it can actually have changed, so
+ * getSnapshot stays cheap and returns a stable reference between changes.
  */
 export function createLocalStorageStore<T>(
   key: string,
@@ -22,42 +23,56 @@ export function createLocalStorageStore<T>(
     for (const l of listeners) l();
   }
 
-  let cachedRaw: string | null = null;
   let cachedValue: T = defaultValue;
+  let hasCachedValue = false;
+
+  function setCachedValue(value: T) {
+    cachedValue = value;
+    hasCachedValue = true;
+  }
 
   function getSnapshot(): T {
+    if (hasCachedValue) return cachedValue;
+
     try {
       const stored = localStorage.getItem(key);
-      if (!stored) {
-        cachedRaw = null;
-        cachedValue = defaultValue;
-        return defaultValue;
-      }
-      if (stored === cachedRaw) return cachedValue;
-
-      // Only cache once parsing succeeded, so a throw can't leave cachedRaw
-      // pointing at the previous value and make later snapshots inconsistent
-      const parsed = parse(JSON.parse(stored));
-      cachedRaw = stored;
-      cachedValue = parsed;
-      return cachedValue;
+      setCachedValue(stored ? parse(JSON.parse(stored)) : defaultValue);
     } catch {
-      cachedRaw = null;
-      cachedValue = defaultValue;
-      return defaultValue;
+      // Unreadable or malformed storage: fall back to the default. Cached so a
+      // throwing parse doesn't re-run on every snapshot.
+      setCachedValue(defaultValue);
     }
+
+    return cachedValue;
   }
+
+  // One storage listener per store rather than one per subscriber: a cross-tab
+  // write only needs to invalidate the cache once, however many are mounted.
+  let handleStorage: ((e: StorageEvent) => void) | null = null;
 
   return {
     subscribe(listener) {
       listeners.add(listener);
-      const handleStorage = (e: StorageEvent) => {
-        if (e.key === key) emit();
-      };
-      window.addEventListener('storage', handleStorage);
+
+      if (!handleStorage) {
+        // Storage events went unobserved while nothing was subscribed, so the
+        // cache may be stale as of right now.
+        hasCachedValue = false;
+
+        handleStorage = (e: StorageEvent) => {
+          if (e.key !== key) return;
+          hasCachedValue = false;
+          emit();
+        };
+        window.addEventListener('storage', handleStorage);
+      }
+
       return () => {
         listeners.delete(listener);
-        window.removeEventListener('storage', handleStorage);
+        if (listeners.size === 0 && handleStorage) {
+          window.removeEventListener('storage', handleStorage);
+          handleStorage = null;
+        }
       };
     },
     getSnapshot,
@@ -68,6 +83,7 @@ export function createLocalStorageStore<T>(
       } catch {
         // Ignore storage write failures (e.g. quota exceeded/private mode).
       }
+      setCachedValue(value);
       emit();
     },
     clear() {
@@ -76,6 +92,7 @@ export function createLocalStorageStore<T>(
       } catch {
         // Ignore storage failures.
       }
+      setCachedValue(defaultValue);
       emit();
     },
   };

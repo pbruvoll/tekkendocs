@@ -8,7 +8,7 @@ import { HeartButton } from '~/components/HeartButton';
 import { MoveVideo } from '~/components/MoveVideo';
 import { PlayTextAudioButton } from '~/components/PlayTextAudioButton';
 import { TextWithCommand } from '~/components/TextWithCommand';
-import { useFavorites } from '~/hooks/useFavorites';
+import { useIsFavorite } from '~/hooks/useFavorites';
 import { type Move, type MoveT8 } from '~/types/Move';
 import { compressCommand } from '~/utils/commandUtils';
 import { useGuideContext } from './GuideContext';
@@ -62,23 +62,26 @@ const KeyMoveHeading = ({
   charUrl: string;
 }) => {
   const [showVideo, setShowVideo] = useState(false);
-  const { isFavorite, toggleFavorite } = useFavorites();
 
   const splitCommand = command.split(' | ');
 
-  // find last youtube video
+  // find last youtube video, and last move that can be favorited (favorites
+  // are keyed on wavuId, so a move without one cant be favorited)
   let moveWithVideo: Move | undefined;
+  let favoriteMove: MoveT8 | undefined;
   for (let i = splitCommand.length - 1; i >= 0; i--) {
     const move = compressedCommandMap[compressCommand(splitCommand[i])];
-    if (move?.ytVideo || move?.video) {
+    if (!move) continue;
+    if (!moveWithVideo && (move.ytVideo || move.video)) {
       moveWithVideo = move;
-      break;
     }
+    if (!favoriteMove && move.wavuId) {
+      favoriteMove = move as MoveT8;
+    }
+    if (moveWithVideo && favoriteMove) break;
   }
 
-  // favorites are keyed on wavuId, so a move without one cant be favorited
-  const firstMove = compressedCommandMap[compressCommand(splitCommand[0])];
-  const favoriteMove = firstMove?.wavuId ? (firstMove as MoveT8) : undefined;
+  const { isFavorite, toggleFavorite } = useIsFavorite(favoriteMove);
 
   return (
     <div>
@@ -99,8 +102,8 @@ const KeyMoveHeading = ({
         <div className="ml-auto flex items-center gap-1">
           {favoriteMove && (
             <HeartButton
-              isFavorite={isFavorite(favoriteMove)}
-              onToggle={() => toggleFavorite(favoriteMove)}
+              isFavorite={isFavorite}
+              onToggle={toggleFavorite}
               size={15}
             />
           )}
