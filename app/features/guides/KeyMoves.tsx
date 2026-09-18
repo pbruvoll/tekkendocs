@@ -4,10 +4,12 @@ import { AnimatePresence, motion } from 'motion/react';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Commands } from '~/components/Commands';
+import { HeartButton } from '~/components/HeartButton';
 import { MoveVideo } from '~/components/MoveVideo';
 import { PlayTextAudioButton } from '~/components/PlayTextAudioButton';
 import { TextWithCommand } from '~/components/TextWithCommand';
-import { type Move } from '~/types/Move';
+import { useFavorites } from '~/hooks/useFavorites';
+import { type Move, type MoveT8 } from '~/types/Move';
 import { compressCommand } from '~/utils/commandUtils';
 import { useGuideContext } from './GuideContext';
 import { type KeyMove } from './GuideData';
@@ -60,6 +62,7 @@ const KeyMoveHeading = ({
   charUrl: string;
 }) => {
   const [showVideo, setShowVideo] = useState(false);
+  const { isFavorite, toggleFavorite } = useFavorites();
 
   const splitCommand = command.split(' | ');
 
@@ -72,6 +75,10 @@ const KeyMoveHeading = ({
       break;
     }
   }
+
+  // favorites are keyed on wavuId, so a move without one cant be favorited
+  const firstMove = compressedCommandMap[compressCommand(splitCommand[0])];
+  const favoriteMove = firstMove?.wavuId ? (firstMove as MoveT8) : undefined;
 
   return (
     <div>
@@ -89,9 +96,16 @@ const KeyMoveHeading = ({
             setShowVideo={setShowVideo}
           />
         )}
-        {description && (
-          <PlayTextAudioButton text={description} className="ml-auto" />
-        )}
+        <div className="ml-auto flex items-center gap-1">
+          {favoriteMove && (
+            <HeartButton
+              isFavorite={isFavorite(favoriteMove)}
+              onToggle={() => toggleFavorite(favoriteMove)}
+              size={15}
+            />
+          )}
+          {description && <PlayTextAudioButton text={description} />}
+        </div>
       </div>
       <AnimatePresence>
         {showVideo && moveWithVideo && (
