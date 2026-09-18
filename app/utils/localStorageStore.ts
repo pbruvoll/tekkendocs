@@ -38,8 +38,8 @@ export function createLocalStorageStore<T>(
       const stored = localStorage.getItem(key);
       setCachedValue(stored ? parse(JSON.parse(stored)) : defaultValue);
     } catch {
-      // Unreadable or malformed storage. The default is cached too, so a
-      // throwing parse doesn't re-run on every snapshot.
+      // Unreadable or malformed storage; cache the default so a throwing parse
+      // doesn't re-run on every snapshot.
       setCachedValue(defaultValue);
     }
 

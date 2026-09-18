@@ -8,7 +8,7 @@ import { HeartButton } from '~/components/HeartButton';
 import { MoveVideo } from '~/components/MoveVideo';
 import { PlayTextAudioButton } from '~/components/PlayTextAudioButton';
 import { TextWithCommand } from '~/components/TextWithCommand';
-import { useIsFavorite } from '~/hooks/useFavorites';
+import { useAreFavorites } from '~/hooks/useFavorites';
 import { type Move, type MoveT8 } from '~/types/Move';
 import { compressCommand } from '~/utils/commandUtils';
 import { useGuideContext } from './GuideContext';
@@ -65,23 +65,20 @@ const KeyMoveHeading = ({
 
   const splitCommand = command.split(' | ');
 
-  // walk backwards for the last move with a video, and the last that can be
-  // favorited (favorites are keyed on wavuId)
+  // backwards, for the last move with a video; the heart favorites every move
+  // in the heading, so collect them all
   let moveWithVideo: Move | undefined;
-  let favoriteMove: MoveT8 | undefined;
+  const moves: MoveT8[] = [];
   for (let i = splitCommand.length - 1; i >= 0; i--) {
     const move = compressedCommandMap[compressCommand(splitCommand[i])];
     if (!move) continue;
     if (!moveWithVideo && (move.ytVideo || move.video)) {
       moveWithVideo = move;
     }
-    if (!favoriteMove && move.wavuId) {
-      favoriteMove = move as MoveT8;
-    }
-    if (moveWithVideo && favoriteMove) break;
+    moves.push(move as MoveT8);
   }
 
-  const { isFavorite, toggleFavorite } = useIsFavorite(favoriteMove);
+  const { isFavorite, toggleFavorite } = useAreFavorites(moves);
 
   return (
     <div>
@@ -100,7 +97,7 @@ const KeyMoveHeading = ({
           />
         )}
         <div className="ml-auto flex items-center gap-1">
-          {favoriteMove && (
+          {moves.length > 0 && (
             <HeartButton
               isFavorite={isFavorite}
               onToggle={toggleFavorite}
