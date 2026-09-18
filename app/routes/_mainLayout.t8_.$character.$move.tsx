@@ -1,17 +1,18 @@
 import { Heading, Table, Text } from '@radix-ui/themes';
-import { Link, type MetaFunction, useMatches, useParams } from 'react-router';
+import { Link, type MetaFunction, useMatches } from 'react-router';
 import { ContentContainer } from '~/components/ContentContainer';
 import { HeartButton } from '~/components/HeartButton';
 import { MoveVideo } from '~/components/MoveVideo';
 import { SimpleMovesTable } from '~/components/SimpleMovesTable';
-import { useFavorites } from '~/hooks/useFavorites';
+import { useIsFavorite } from '~/hooks/useFavorites';
 import { cdnUrl, charVideoInfoT8 } from '~/services/staticDataService';
-import { type Move } from '~/types/Move';
+import { type Move, type MoveT8 } from '~/types/Move';
 import { getCharacterFrameDataMoves } from '~/utils/characterPageUtils';
 import { getRelatedMoves } from '~/utils/frameDataUtils';
 import { formatRecovery, simplifyFrameValue } from '~/utils/frameDataViewUtils';
 import { getCacheControlHeaders } from '~/utils/headerUtils';
 import { commandToUrlSegment } from '~/utils/moveUtils';
+import { type Route } from './+types/_mainLayout.t8_.$character.$move';
 
 export const headers = () => getCacheControlHeaders({ seconds: 60 * 5 });
 
@@ -115,46 +116,44 @@ const findMove = (command: string, moves: Move[]): Move | undefined => {
   return moves.find((move) => commandToUrlSegment(move.command) === command);
 };
 
-export default function MoveRoute() {
-  const params = useParams();
-  const command = params.move;
-  const characterName = params.character;
-  const { toggleFavorite, isFavorite } = useFavorites();
+export default function MoveRoute({ params }: Route.ComponentProps) {
+  const { character: characterName, move: command } = params;
 
   const matches = useMatches();
   const moves = getCharacterFrameDataMoves(matches);
-  if (!characterName || !command || !moves || moves.length === 0) {
-    return <div>Missing character, move, frame data or headers</div>;
-  }
+  // resolved before the early returns, so the hook below stays unconditional
+  const move = moves
+    ? (findMove(command, moves) as MoveT8 | undefined)
+    : undefined;
+  const { isFavorite, toggleFavorite } = useIsFavorite(move);
 
-  const move: Move | undefined = moves ? findMove(command, moves) : undefined;
+  if (!moves || moves.length === 0) {
+    return <div>Missing frame data</div>;
+  }
   if (!move) {
     return <div>Not able to find frame data for the move {command}</div>;
   }
 
   const relatedMoves = getRelatedMoves(move, moves);
-  const favKey = `${characterName}:${move.command}`;
 
   return (
     <ContentContainer enableTopPadding enableBottomPadding>
       <Text size="7" mr="6" as="span" className="sr-only">
         Tekken 8
       </Text>
-      <Heading
-        mt="2"
-        mb="4"
-        as="h1"
-        className="flex flex-wrap items-center gap-2"
-      >
-        <Link to={`/${characterName}`} className="capitalize text-primary">
-          {characterName}
-        </Link>
-        {move.command}
-        {move.name ? ` - ${move.name}` : ''}
+      <Heading mt="2" mb="4" as="h1" className="flex items-start gap-2">
+        <span className="flex flex-wrap items-center gap-2">
+          <Link to={`/${characterName}`} className="capitalize text-primary">
+            {characterName}
+          </Link>
+          {move.command}
+          {move.name ? ` - ${move.name}` : ''}
+        </span>
         <HeartButton
-          isFavorite={isFavorite(favKey)}
-          onToggle={() => toggleFavorite(favKey)}
-          size={28}
+          isFavorite={isFavorite}
+          onToggle={toggleFavorite}
+          size={18}
+          className="ml-auto shrink-0"
         />
       </Heading>
       <div className="mt-4 max-w-[600px]">
