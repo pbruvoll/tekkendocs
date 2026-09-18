@@ -9,7 +9,7 @@ export type LocalStorageStore<T> = {
 /**
  * A localStorage-backed store for useSyncExternalStore. The parsed value is
  * cached in memory, so getSnapshot is cheap and returns a stable reference
- * until the value changes.
+ * until the stored string actually changes.
  */
 export function createLocalStorageStore<T>(
   key: string,
@@ -24,47 +24,65 @@ export function createLocalStorageStore<T>(
   }
 
   let cachedValue: T = defaultValue;
+  // the string cachedValue was parsed from, so an unchanged store is recognised
+  // without parsing it into a new value
+  let cachedRaw: string | null = null;
   let hasCachedValue = false;
 
-  function setCachedValue(value: T) {
+  function setCachedValue(value: T, raw: string | null) {
     cachedValue = value;
+    cachedRaw = raw;
     hasCachedValue = true;
   }
 
-  function getSnapshot(): T {
-    if (hasCachedValue) return cachedValue;
-
+  function syncWithStorage() {
+    let raw: string | null = null;
     try {
-      const stored = localStorage.getItem(key);
-      setCachedValue(stored ? parse(JSON.parse(stored)) : defaultValue);
+      raw = localStorage.getItem(key);
     } catch {
-      // Unreadable or malformed storage; cache the default so a throwing parse
-      // doesn't re-run on every snapshot.
-      setCachedValue(defaultValue);
+      // Storage unreadable, e.g. blocked in an embedded context: treat as empty
     }
 
-    return cachedValue;
+    if (hasCachedValue && raw === cachedRaw) return;
+
+    try {
+      setCachedValue(raw ? parse(JSON.parse(raw)) : defaultValue, raw);
+    } catch {
+      // Malformed storage; cache the default so a throwing parse doesn't re-run
+      // on every snapshot
+      setCachedValue(defaultValue, raw);
+    }
   }
 
   // One storage listener per store, not per subscriber: a cross-tab write only
-  // has to invalidate the cache once.
+  // has to reach the cache once.
   let handleStorage: ((e: StorageEvent) => void) | null = null;
+
+  function getSnapshot(): T {
+    // While a listener is attached, storage events keep the cache current.
+    // Without one, another tab may have changed the value since it was cached.
+    if (!hasCachedValue || !handleStorage) syncWithStorage();
+
+    return cachedValue;
+  }
 
   return {
     subscribe(listener) {
       listeners.add(listener);
 
       if (!handleStorage) {
-        // Nothing was listening for storage events, so another tab may have
-        // changed the value unnoticed.
-        hasCachedValue = false;
-
         handleStorage = (e: StorageEvent) => {
           if (e.key !== key) return;
-          hasCachedValue = false;
-          emit();
+
+          const previous = cachedValue;
+          syncWithStorage();
+          if (cachedValue !== previous) emit();
         };
         window.addEventListener('storage', handleStorage);
+
+        // A write between the last snapshot and this listener would go unseen,
+        // so check once; the value is replaced only if the string changed
+        syncWithStorage();
       }
 
       return () => {
@@ -78,12 +96,15 @@ export function createLocalStorageStore<T>(
     getSnapshot,
     getServerSnapshot: () => defaultValue,
     write(value) {
+      const raw = JSON.stringify(serialize(value));
+
       try {
-        localStorage.setItem(key, JSON.stringify(serialize(value)));
+        localStorage.setItem(key, raw);
       } catch {
         // Ignore storage write failures (e.g. quota exceeded/private mode).
       }
-      setCachedValue(value);
+
+      setCachedValue(value, raw);
       emit();
     },
     clear() {
@@ -92,7 +113,8 @@ export function createLocalStorageStore<T>(
       } catch {
         // Ignore storage failures.
       }
-      setCachedValue(defaultValue);
+
+      setCachedValue(defaultValue, null);
       emit();
     },
   };

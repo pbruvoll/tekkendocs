@@ -2,13 +2,14 @@ import { describe, expect, it } from 'vitest';
 import { type MoveT8 } from '~/types/Move';
 import { getFavoriteKeys, toggleFavoriteKeys } from './favorites';
 
-const move = (wavuId?: string) => ({ wavuId }) as MoveT8;
+const move = (wavuId: string) => ({ wavuId }) as MoveT8;
 
 describe('getFavoriteKeys', () => {
-  it('keeps the wavuId of every move that has one', () => {
-    expect(
-      getFavoriteKeys([move('Jin-1'), move(undefined), move('Jin-2')]),
-    ).toEqual(['Jin-1', 'Jin-2']);
+  it('keys moves on their wavuId', () => {
+    expect(getFavoriteKeys([move('Jin-1'), move('Jin-2')])).toEqual([
+      'Jin-1',
+      'Jin-2',
+    ]);
   });
 });
 

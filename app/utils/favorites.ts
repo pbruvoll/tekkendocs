@@ -21,9 +21,7 @@ export const favoritesStore = createLocalStorageStore<FavoriteMoves>(
 
 export const getFavoriteKey = (move: MoveT8) => move.wavuId;
 
-/** Moves without a wavuId have no key, so they can't be favorited. */
-export const getFavoriteKeys = (moves: MoveT8[]) =>
-  moves.map(getFavoriteKey).filter((key): key is string => Boolean(key));
+export const getFavoriteKeys = (moves: MoveT8[]) => moves.map(getFavoriteKey);
 
 /** Adds every key, or removes them all if they are already favorites. */
 export const toggleFavoriteKeys = (
