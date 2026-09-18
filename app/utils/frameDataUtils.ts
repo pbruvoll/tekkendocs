@@ -565,9 +565,8 @@ export const filterMoves = (
 
   if (filter.favorite) {
     filterFuncs.push((move: Move) => {
-      if (!move.characterId) return false;
-      const favKey = `${move.characterId}:${move.command}`;
-      return favorites?.[favKey] === true;
+      if (!move.wavuId) return false;
+      return favorites?.[move.wavuId] === true;
     });
   }
 

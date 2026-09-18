@@ -1,3 +1,5 @@
+import { type MoveT8 } from '~/types/Move';
+
 const STORAGE_KEY = 't8FavoriteMoves';
 
 export type FavoriteMoves = Record<string, boolean>;
@@ -25,3 +27,5 @@ export const writeFavoritesToStorage = (favorites: FavoriteMoves) => {
     // ignore write errors
   }
 };
+
+export const getFavoriteKey = (move: MoveT8) => move.wavuId;

@@ -6,7 +6,7 @@ import { MoveVideo } from '~/components/MoveVideo';
 import { SimpleMovesTable } from '~/components/SimpleMovesTable';
 import { useFavorites } from '~/hooks/useFavorites';
 import { cdnUrl, charVideoInfoT8 } from '~/services/staticDataService';
-import { type Move } from '~/types/Move';
+import { type Move, type MoveT8 } from '~/types/Move';
 import { getCharacterFrameDataMoves } from '~/utils/characterPageUtils';
 import { getRelatedMoves } from '~/utils/frameDataUtils';
 import { formatRecovery, simplifyFrameValue } from '~/utils/frameDataViewUtils';
@@ -127,13 +127,14 @@ export default function MoveRoute() {
     return <div>Missing character, move, frame data or headers</div>;
   }
 
-  const move: Move | undefined = moves ? findMove(command, moves) : undefined;
+  const move = moves
+    ? (findMove(command, moves) as MoveT8 | undefined)
+    : undefined;
   if (!move) {
     return <div>Not able to find frame data for the move {command}</div>;
   }
 
   const relatedMoves = getRelatedMoves(move, moves);
-  const favKey = `${characterName}:${move.command}`;
 
   return (
     <ContentContainer enableTopPadding enableBottomPadding>
@@ -152,8 +153,8 @@ export default function MoveRoute() {
         {move.command}
         {move.name ? ` - ${move.name}` : ''}
         <HeartButton
-          isFavorite={isFavorite(favKey)}
-          onToggle={() => toggleFavorite(favKey)}
+          isFavorite={isFavorite(move)}
+          onToggle={() => toggleFavorite(move)}
           size={28}
         />
       </Heading>

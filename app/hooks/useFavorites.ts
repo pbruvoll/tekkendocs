@@ -1,7 +1,9 @@
 import { useCallback, useEffect, useState } from 'react';
 
+import { type MoveT8 } from '~/types/Move';
 import {
   type FavoriteMoves,
+  getFavoriteKey,
   readFavoritesFromStorage,
   writeFavoritesToStorage,
 } from '~/utils/favorites';
@@ -14,11 +16,14 @@ export function useFavorites() {
   }, []);
 
   const isFavorite = useCallback(
-    (key: string) => Boolean(favorites[key]),
+    (move: MoveT8) => Boolean(favorites[getFavoriteKey(move)]),
     [favorites],
   );
 
-  const toggleFavorite = useCallback((key: string) => {
+  const toggleFavorite = useCallback((move: MoveT8) => {
+    const key = getFavoriteKey(move);
+    if (!key) return;
+
     setFavorites((prev) => {
       const next = { ...prev };
 
