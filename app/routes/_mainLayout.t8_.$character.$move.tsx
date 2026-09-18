@@ -141,21 +141,19 @@ export default function MoveRoute() {
       <Text size="7" mr="6" as="span" className="sr-only">
         Tekken 8
       </Text>
-      <Heading
-        mt="2"
-        mb="4"
-        as="h1"
-        className="flex flex-wrap items-center gap-2"
-      >
-        <Link to={`/${characterName}`} className="capitalize text-primary">
-          {characterName}
-        </Link>
-        {move.command}
-        {move.name ? ` - ${move.name}` : ''}
+      <Heading mt="2" mb="4" as="h1" className="flex items-start gap-2">
+        <span className="flex flex-wrap items-center gap-2">
+          <Link to={`/${characterName}`} className="capitalize text-primary">
+            {characterName}
+          </Link>
+          {move.command}
+          {move.name ? ` - ${move.name}` : ''}
+        </span>
         <HeartButton
           isFavorite={isFavorite(move)}
           onToggle={() => toggleFavorite(move)}
-          size={28}
+          size={18}
+          className="ml-auto shrink-0"
         />
       </Heading>
       <div className="mt-4 max-w-[600px]">

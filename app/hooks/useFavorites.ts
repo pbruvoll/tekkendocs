@@ -1,19 +1,18 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useSyncExternalStore } from 'react';
 
 import { type MoveT8 } from '~/types/Move';
 import {
-  type FavoriteMoves,
+  favoritesStore,
   getFavoriteKey,
-  readFavoritesFromStorage,
-  writeFavoritesToStorage,
+  toggleFavoriteKey,
 } from '~/utils/favorites';
 
 export function useFavorites() {
-  const [favorites, setFavorites] = useState<FavoriteMoves>(() => new Set());
-
-  useEffect(() => {
-    setFavorites(readFavoritesFromStorage());
-  }, []);
+  const favorites = useSyncExternalStore(
+    favoritesStore.subscribe,
+    favoritesStore.getSnapshot,
+    favoritesStore.getServerSnapshot,
+  );
 
   const isFavorite = useCallback(
     (move: MoveT8) => favorites.has(getFavoriteKey(move)),
@@ -24,17 +23,7 @@ export function useFavorites() {
     const key = getFavoriteKey(move);
     if (!key) return;
 
-    setFavorites((prev) => {
-      const next = new Set(prev);
-
-      if (!next.delete(key)) {
-        next.add(key);
-      }
-
-      writeFavoritesToStorage(next);
-
-      return next;
-    });
+    favoritesStore.write(toggleFavoriteKey(favoritesStore.getSnapshot(), key));
   }, []);
 
   return {
