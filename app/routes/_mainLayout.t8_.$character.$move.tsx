@@ -1,8 +1,10 @@
 import { Heading, Table, Text } from '@radix-ui/themes';
 import { Link, type MetaFunction, useMatches, useParams } from 'react-router';
 import { ContentContainer } from '~/components/ContentContainer';
+import { HeartButton } from '~/components/HeartButton';
 import { MoveVideo } from '~/components/MoveVideo';
 import { SimpleMovesTable } from '~/components/SimpleMovesTable';
+import { useFavorites } from '~/hooks/useFavorites';
 import { cdnUrl, charVideoInfoT8 } from '~/services/staticDataService';
 import { type Move } from '~/types/Move';
 import { getCharacterFrameDataMoves } from '~/utils/characterPageUtils';
@@ -117,6 +119,7 @@ export default function MoveRoute() {
   const params = useParams();
   const command = params.move;
   const characterName = params.character;
+  const { toggleFavorite, isFavorite } = useFavorites();
 
   const matches = useMatches();
   const moves = getCharacterFrameDataMoves(matches);
@@ -130,18 +133,29 @@ export default function MoveRoute() {
   }
 
   const relatedMoves = getRelatedMoves(move, moves);
+  const favKey = `${characterName}:${move.command}`;
 
   return (
     <ContentContainer enableTopPadding enableBottomPadding>
       <Text size="7" mr="6" as="span" className="sr-only">
         Tekken 8
       </Text>
-      <Heading mt="2" mb="4" as="h1" className="flex flex-wrap gap-2">
+      <Heading
+        mt="2"
+        mb="4"
+        as="h1"
+        className="flex flex-wrap items-center gap-2"
+      >
         <Link to={`/${characterName}`} className="capitalize text-primary">
           {characterName}
         </Link>
         {move.command}
         {move.name ? ` - ${move.name}` : ''}
+        <HeartButton
+          isFavorite={isFavorite(favKey)}
+          onToggle={() => toggleFavorite(favKey)}
+          size={28}
+        />
       </Heading>
       <div className="mt-4 max-w-[600px]">
         <MoveVideo move={move} />

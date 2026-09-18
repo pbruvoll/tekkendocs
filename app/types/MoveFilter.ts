@@ -53,4 +53,5 @@ export type MoveFilter = {
   transition?: string[];
   moveList?: string;
   character?: string[];
+  favorite?: boolean;
 };

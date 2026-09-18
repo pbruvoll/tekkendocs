@@ -27,6 +27,7 @@ import { FlipCard } from '~/features/flashCards/FlipCard';
 import { FlashCardBack } from '~/features/flashCards/flashCardBack';
 import { FlashCardFront } from '~/features/flashCards/flashCardFront';
 import { useFlashCardAppState } from '~/features/flashCards/useFlashCardAppState';
+import { useFavorites } from '~/hooks/useFavorites';
 import { useFrameData } from '~/hooks/useFrameData';
 import { characterGuideAuthors } from '~/services/staticDataService';
 import { type CharacterFrameData } from '~/types/CharacterFrameData';
@@ -83,6 +84,8 @@ export const meta: MetaFunction = ({ params, matches }) => {
 export default function FlashCard() {
   const [moveToShow, setMoveToShow] = useState<Move | undefined>();
   const { characterName, moves } = useFrameData();
+  const { favorites } = useFavorites();
+
   const showCharName = characterName === 'mokujin';
   const allViableMoves = useMemo(
     () => moves.filter((move) => Boolean(move.block)),
@@ -102,8 +105,8 @@ export default function FlashCard() {
   );
 
   const viableMoves = useMemo(
-    () => filterMoves(allViableMoves, moveFilter),
-    [allViableMoves, moveFilter],
+    () => filterMoves(allViableMoves, moveFilter, favorites),
+    [allViableMoves, moveFilter, favorites],
   );
   const numViableMoves = viableMoves.length;
 

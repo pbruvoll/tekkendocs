@@ -18,6 +18,9 @@ export type DynamicFrameDataListProps = {
   filter?: MoveFilter;
   className?: string;
   viewMode: FrameDataViewMode;
+  favorites?: Record<string, boolean>;
+  isFavorite?: (key: string) => boolean;
+  onToggleFavorite?: (key: string) => void;
 };
 
 const maxMovesToShow = 400;
@@ -39,6 +42,9 @@ export const DynamicFrameDataList = memo(function DynamicFrameDataList({
   className,
   filter,
   viewMode,
+  favorites,
+  isFavorite,
+  onToggleFavorite,
 }: DynamicFrameDataListProps) {
   const [searchParams] = useSearchParams();
   const currentPage = parseInt(searchParams.get(PAGE_KEY) || '1', 10);
@@ -49,8 +55,8 @@ export const DynamicFrameDataList = memo(function DynamicFrameDataList({
   );
 
   const filteredMoves = useMemo(() => {
-    return filterMoves(moves, filter);
-  }, [filter, moves]);
+    return filterMoves(moves, filter, favorites);
+  }, [filter, moves, favorites]);
 
   const sortedMoves = useMemo(() => {
     return sortMovesV2(filteredMoves, sortSettings);
@@ -92,6 +98,8 @@ export const DynamicFrameDataList = memo(function DynamicFrameDataList({
         moves={paginatedMoves}
         className={className}
         sortSettings={sortSettings}
+        isFavorite={isFavorite}
+        onToggleFavorite={onToggleFavorite}
       />
       <ContentContainer className="my-4">
         {hasPrev && (

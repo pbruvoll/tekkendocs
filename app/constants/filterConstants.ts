@@ -51,6 +51,7 @@ export const filterKey = {
   CounterHit: 'counterHit',
   MoveList: 'moveList',
   Character: 'character',
+  Favorite: 'favorite',
 } as const;
 
 export const hitLevelValue = {

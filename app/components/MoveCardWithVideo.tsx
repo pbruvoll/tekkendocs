@@ -9,6 +9,7 @@ import {
   getHitFrameColorClasses,
   simplifyFrameValue,
 } from '~/utils/frameDataViewUtils';
+import { HeartButton } from './HeartButton';
 import { MovePropertyIconList } from './MovePropertyIconList';
 import { MovePropertyTagList } from './MovePropertyTagList';
 import { MoveVideo } from './MoveVideo';
@@ -25,6 +26,8 @@ export type MoveCardWithVideoProps = {
   shouldPreload?: boolean;
   /** Callback when this card's in-view status changes */
   onInViewChange?: (inView: boolean) => void;
+  isFavorite?: boolean;
+  onToggleFavorite?: () => void;
 };
 
 const FrameHeading = ({ title }: { title: string }) => (
@@ -61,6 +64,8 @@ export const MoveCardWithVideo = ({
   showCharacter,
   charId,
   onInViewChange,
+  isFavorite,
+  onToggleFavorite,
 }: MoveCardWithVideoProps) => {
   const hasVideo = Boolean(move.ytVideo) || move.video;
 
@@ -100,7 +105,7 @@ export const MoveCardWithVideo = ({
         <div className="lg:flex">
           {/* Info section */}
           <div className="flex flex-col lg:w-1/2">
-            <CardHeader className="p-4 pl-6">
+            <CardHeader className="flex flex-row items-center justify-between p-4 pl-6">
               <CardTitle>
                 {showCharacter && charId && (
                   <span className="mr-2 capitalize">
@@ -111,6 +116,12 @@ export const MoveCardWithVideo = ({
                   {move.command}
                 </Link>
               </CardTitle>
+              {onToggleFavorite && (
+                <HeartButton
+                  isFavorite={isFavorite ?? false}
+                  onToggle={onToggleFavorite}
+                />
+              )}
             </CardHeader>
 
             {/* Video on small screens - shown right after command */}
