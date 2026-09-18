@@ -65,8 +65,8 @@ const KeyMoveHeading = ({
 
   const splitCommand = command.split(' | ');
 
-  // find last youtube video, and last move that can be favorited (favorites
-  // are keyed on wavuId, so a move without one cant be favorited)
+  // walk backwards for the last move with a video, and the last that can be
+  // favorited (favorites are keyed on wavuId)
   let moveWithVideo: Move | undefined;
   let favoriteMove: MoveT8 | undefined;
   for (let i = splitCommand.length - 1; i >= 0; i--) {

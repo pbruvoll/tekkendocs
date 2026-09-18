@@ -15,9 +15,9 @@ const toggleFavoriteMove = (move: MoveT8) => {
 };
 
 /**
- * Subscribes to the whole favorites set. Use this when you need every favorite
- * at once, such as filtering a move list; prefer useIsFavorite for a heart on a
- * single move, so one toggle doesn't re-render all of them.
+ * Subscribes to the whole favorites set, for when they are all needed at once,
+ * such as filtering a move list. For a single move's heart use useIsFavorite
+ * instead, so one toggle doesn't re-render all of them.
  */
 export function useFavorites() {
   const favorites = useSyncExternalStore(
@@ -39,10 +39,9 @@ export function useFavorites() {
 }
 
 /**
- * Subscribes to one move's favorite state. The snapshot is a boolean, so a
- * component only re-renders when that move is toggled, not when any other is.
- * Accepts undefined for moves that can't be favorited, since hooks can't be
- * called conditionally.
+ * Subscribes to one move's favorite state. The snapshot is a boolean, so the
+ * component re-renders only when that move is toggled. Takes undefined for
+ * moves that can't be favorited, since hooks can't be called conditionally.
  */
 export function useIsFavorite(move: MoveT8 | undefined) {
   const key = move ? getFavoriteKey(move) : undefined;

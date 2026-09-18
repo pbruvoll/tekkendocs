@@ -8,8 +8,8 @@ export type LocalStorageStore<T> = {
 
 /**
  * A localStorage-backed store for useSyncExternalStore. The parsed value is
- * kept in memory and only re-read when it can actually have changed, so
- * getSnapshot stays cheap and returns a stable reference between changes.
+ * cached in memory, so getSnapshot is cheap and returns a stable reference
+ * until the value changes.
  */
 export function createLocalStorageStore<T>(
   key: string,
@@ -38,7 +38,7 @@ export function createLocalStorageStore<T>(
       const stored = localStorage.getItem(key);
       setCachedValue(stored ? parse(JSON.parse(stored)) : defaultValue);
     } catch {
-      // Unreadable or malformed storage: fall back to the default. Cached so a
+      // Unreadable or malformed storage. The default is cached too, so a
       // throwing parse doesn't re-run on every snapshot.
       setCachedValue(defaultValue);
     }
@@ -46,8 +46,8 @@ export function createLocalStorageStore<T>(
     return cachedValue;
   }
 
-  // One storage listener per store rather than one per subscriber: a cross-tab
-  // write only needs to invalidate the cache once, however many are mounted.
+  // One storage listener per store, not per subscriber: a cross-tab write only
+  // has to invalidate the cache once.
   let handleStorage: ((e: StorageEvent) => void) | null = null;
 
   return {
@@ -55,8 +55,8 @@ export function createLocalStorageStore<T>(
       listeners.add(listener);
 
       if (!handleStorage) {
-        // Storage events went unobserved while nothing was subscribed, so the
-        // cache may be stale as of right now.
+        // Nothing was listening for storage events, so another tab may have
+        // changed the value unnoticed.
         hasCachedValue = false;
 
         handleStorage = (e: StorageEvent) => {
