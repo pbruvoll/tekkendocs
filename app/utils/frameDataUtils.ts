@@ -8,6 +8,7 @@ import { type MoveFilter } from '~/types/MoveFilter';
 import { type SortOrder } from '~/types/SortOrder';
 import { type SortSettings } from '~/types/SortSettings';
 import { type TableData } from '~/types/TableData';
+import { type FavoriteMoves } from './favorites';
 import { cleanCommand } from './filterUtils';
 import {
   sortMovesByNumber,
@@ -539,7 +540,7 @@ export const filterRows = (
 export const filterMoves = (
   moves: Move[],
   filter: MoveFilter | undefined,
-  favorites?: Record<string, boolean>,
+  favorites?: FavoriteMoves,
 ) => {
   if (!filter) {
     return moves;
@@ -566,7 +567,7 @@ export const filterMoves = (
   if (filter.favorite) {
     filterFuncs.push((move: Move) => {
       if (!move.wavuId) return false;
-      return favorites?.[move.wavuId] === true;
+      return favorites?.has(move.wavuId) === true;
     });
   }
 

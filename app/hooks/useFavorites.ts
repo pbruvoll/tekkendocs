@@ -9,14 +9,14 @@ import {
 } from '~/utils/favorites';
 
 export function useFavorites() {
-  const [favorites, setFavorites] = useState<FavoriteMoves>({});
+  const [favorites, setFavorites] = useState<FavoriteMoves>(() => new Set());
 
   useEffect(() => {
     setFavorites(readFavoritesFromStorage());
   }, []);
 
   const isFavorite = useCallback(
-    (move: MoveT8) => Boolean(favorites[getFavoriteKey(move)]),
+    (move: MoveT8) => favorites.has(getFavoriteKey(move)),
     [favorites],
   );
 
@@ -25,12 +25,10 @@ export function useFavorites() {
     if (!key) return;
 
     setFavorites((prev) => {
-      const next = { ...prev };
+      const next = new Set(prev);
 
-      if (next[key]) {
-        delete next[key];
-      } else {
-        next[key] = true;
+      if (!next.delete(key)) {
+        next.add(key);
       }
 
       writeFavoritesToStorage(next);
