@@ -5,7 +5,7 @@ import { Input } from '@/components/ui/input';
 import { filterKey } from '~/constants/filterConstants';
 import { orderByKey } from '~/constants/sortConstants';
 import { sortOptions } from '~/constants/sortOptions';
-import { useFavorites } from '~/hooks/useFavorites';
+import { useFavorites } from '~/features/favorites/useFavorites';
 import { useSearchParamState } from '~/hooks/useSearchParamState';
 import { type GameRouteId } from '~/types/GameRouteId';
 import { type Move } from '~/types/Move';

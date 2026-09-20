@@ -83,11 +83,10 @@ export function MoveCardWithVideoList({
         }}
       >
         {virtualItems.map((virtualItem) => {
-          const move = moves[virtualItem.index];
-          const computedCharId = charId || charIdFromMove(move as MoveT8);
+          const move = moves[virtualItem.index] as MoveT8;
+          const computedCharId = charId || charIdFromMove(move);
           const urlSegment = commandToUrlSegmentEncoded(move.command);
           const moveUrl = `/${gameRouteId}/${computedCharId}/${urlSegment}`;
-          const favKey = `${computedCharId}:${move.command}`;
 
           return (
             <div
@@ -122,9 +121,9 @@ export function MoveCardWithVideoList({
                 onInViewChange={(inView) =>
                   handleInViewChange(virtualItem.index, inView)
                 }
-                isFavorite={isFavorite?.(favKey) ?? false}
+                isFavorite={isFavorite?.(move) ?? false}
                 onToggleFavorite={
-                  onToggleFavorite ? () => onToggleFavorite(favKey) : undefined
+                  onToggleFavorite ? () => onToggleFavorite(move) : undefined
                 }
               />
             </div>

@@ -1,7 +1,8 @@
 import { memo, useMemo } from 'react';
 import { Link, useSearchParams } from 'react-router';
+import { type FavoriteMoves } from '~/types/FavoriteMoves';
 import { type GameRouteId } from '~/types/GameRouteId';
-import { type Move } from '~/types/Move';
+import { type Move, type MoveT8 } from '~/types/Move';
 import { type MoveFilter } from '~/types/MoveFilter';
 import { filterMoves, sortMovesV2 } from '~/utils/frameDataUtils';
 import { getSortSettings } from '~/utils/sortingUtils';
@@ -18,9 +19,9 @@ export type DynamicFrameDataListProps = {
   filter?: MoveFilter;
   className?: string;
   viewMode: FrameDataViewMode;
-  favorites?: Record<string, boolean>;
-  isFavorite?: (key: string) => boolean;
-  onToggleFavorite?: (key: string) => void;
+  favorites?: FavoriteMoves;
+  isFavorite?: (move: MoveT8) => boolean;
+  onToggleFavorite?: (move: MoveT8) => void;
 };
 
 const maxMovesToShow = 400;

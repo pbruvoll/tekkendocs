@@ -2,6 +2,7 @@ import invariant from 'tiny-invariant';
 import { StanceNormal } from '~/constants/filterConstants';
 import { type MoveTag, MoveTags } from '~/constants/moveTags';
 import { newMovesT8s3 } from '~/services/staticDataService';
+import { type FavoriteMoves } from '~/types/FavoriteMoves';
 import { type HitLevel } from '~/types/FilterTypes';
 import { type Move } from '~/types/Move';
 import { type MoveFilter } from '~/types/MoveFilter';
@@ -539,7 +540,7 @@ export const filterRows = (
 export const filterMoves = (
   moves: Move[],
   filter: MoveFilter | undefined,
-  favorites?: Record<string, boolean>,
+  favorites?: FavoriteMoves,
 ) => {
   if (!filter) {
     return moves;
@@ -565,9 +566,8 @@ export const filterMoves = (
 
   if (filter.favorite) {
     filterFuncs.push((move: Move) => {
-      if (!move.characterId) return false;
-      const favKey = `${move.characterId}:${move.command}`;
-      return favorites?.[favKey] === true;
+      if (!move.wavuId) return false;
+      return favorites?.has(move.wavuId) === true;
     });
   }
 
