@@ -8,8 +8,8 @@ const createStore = () =>
     Array.isArray(raw) ? (raw as string[]) : [],
   );
 
-const storageEvent = () =>
-  window.dispatchEvent(new StorageEvent('storage', { key: KEY }));
+const storageEvent = (key: string | null = KEY) =>
+  window.dispatchEvent(new StorageEvent('storage', { key }));
 
 beforeEach(() => {
   localStorage.clear();
@@ -83,6 +83,19 @@ describe('createLocalStorageStore', () => {
     storageEvent();
 
     expect(listener).not.toHaveBeenCalled();
+  });
+
+  it('updates after storage is cleared in another tab', () => {
+    localStorage.setItem(KEY, JSON.stringify(['a']));
+    const store = createStore();
+    const listener = vi.fn();
+    store.subscribe(listener);
+
+    localStorage.clear();
+    storageEvent(null);
+
+    expect(store.getSnapshot()).toEqual([]);
+    expect(listener).toHaveBeenCalledTimes(1);
   });
 
   it('picks up a change made while nothing was subscribed', () => {

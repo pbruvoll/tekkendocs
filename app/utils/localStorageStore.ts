@@ -72,7 +72,7 @@ export function createLocalStorageStore<T>(
 
       if (!handleStorage) {
         handleStorage = (e: StorageEvent) => {
-          if (e.key !== key) return;
+          if (e.key !== key && e.key !== null) return;
 
           const previous = cachedValue;
           syncWithStorage();
