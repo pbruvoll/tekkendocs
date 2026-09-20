@@ -1,9 +1,8 @@
+import { type FavoriteMoves } from '~/types/FavoriteMoves';
 import { type MoveT8 } from '~/types/Move';
-import { createLocalStorageStore } from './localStorageStore';
+import { createLocalStorageStore } from '~/utils/localStorageStore';
 
 const STORAGE_KEY = 't8FavoriteMoves';
-
-export type FavoriteMoves = ReadonlySet<string>;
 
 const noFavorites: FavoriteMoves = new Set();
 

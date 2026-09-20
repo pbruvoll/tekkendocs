@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { type MoveT8 } from '~/types/Move';
-import { getFavoriteKeys, toggleFavoriteKeys } from './favorites';
+import { getFavoriteKeys, toggleFavoriteKeys } from './favoritesStore';
 
 const move = (wavuId: string) => ({ wavuId }) as MoveT8;
 

@@ -1,12 +1,11 @@
 import { useCallback, useSyncExternalStore } from 'react';
-
-import { type MoveT8 } from '~/types/Move';
 import {
   favoritesStore,
   getFavoriteKey,
   getFavoriteKeys,
   toggleFavoriteKeys,
-} from '~/utils/favorites';
+} from '~/features/favorites/favoritesStore';
+import { type MoveT8 } from '~/types/Move';
 
 const toggleFavoriteKeysInStore = (keys: string[]) => {
   if (!keys.length) return;

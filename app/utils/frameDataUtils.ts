@@ -2,13 +2,13 @@ import invariant from 'tiny-invariant';
 import { StanceNormal } from '~/constants/filterConstants';
 import { type MoveTag, MoveTags } from '~/constants/moveTags';
 import { newMovesT8s3 } from '~/services/staticDataService';
+import { type FavoriteMoves } from '~/types/FavoriteMoves';
 import { type HitLevel } from '~/types/FilterTypes';
 import { type Move } from '~/types/Move';
 import { type MoveFilter } from '~/types/MoveFilter';
 import { type SortOrder } from '~/types/SortOrder';
 import { type SortSettings } from '~/types/SortSettings';
 import { type TableData } from '~/types/TableData';
-import { type FavoriteMoves } from './favorites';
 import { cleanCommand } from './filterUtils';
 import {
   sortMovesByNumber,

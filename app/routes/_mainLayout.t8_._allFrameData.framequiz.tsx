@@ -19,6 +19,7 @@ import { ContentContainer } from '~/components/ContentContainer';
 import { MoveFilterDialog } from '~/components/MoveFilterDialog';
 import { characterInfoT8List } from '~/constants/characterInfoListT8';
 import { filterKey } from '~/constants/filterConstants';
+import { useFavorites } from '~/features/favorites/useFavorites';
 import { QuizCharacterFilter } from '~/features/frameQuiz/components/QuizCharacterFilter';
 import {
   type QuizModifier,
@@ -61,7 +62,6 @@ import {
   type QuestionFeedback,
   type QuizMove,
 } from '~/features/frameQuiz/types';
-import { useFavorites } from '~/hooks/useFavorites';
 import { getFilterFromParams, isFilterValueActive } from '~/utils/filterUtils';
 import { filterMoves } from '~/utils/frameDataUtils';
 import { generateMetaTags } from '~/utils/seoUtils';

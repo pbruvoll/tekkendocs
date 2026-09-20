@@ -1,9 +1,9 @@
 import { memo, useMemo } from 'react';
 import { Link, useSearchParams } from 'react-router';
+import { type FavoriteMoves } from '~/types/FavoriteMoves';
 import { type GameRouteId } from '~/types/GameRouteId';
 import { type Move, type MoveT8 } from '~/types/Move';
 import { type MoveFilter } from '~/types/MoveFilter';
-import { type FavoriteMoves } from '~/utils/favorites';
 import { filterMoves, sortMovesV2 } from '~/utils/frameDataUtils';
 import { getSortSettings } from '~/utils/sortingUtils';
 import { type FrameDataViewMode } from '~/utils/userSettings';

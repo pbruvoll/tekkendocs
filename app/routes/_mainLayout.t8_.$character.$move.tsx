@@ -1,10 +1,10 @@
 import { Heading, Table, Text } from '@radix-ui/themes';
 import { Link, type MetaFunction, useMatches } from 'react-router';
 import { ContentContainer } from '~/components/ContentContainer';
-import { HeartButton } from '~/components/HeartButton';
 import { MoveVideo } from '~/components/MoveVideo';
 import { SimpleMovesTable } from '~/components/SimpleMovesTable';
-import { useIsFavorite } from '~/hooks/useFavorites';
+import { HeartButton } from '~/features/favorites/HeartButton';
+import { useIsFavorite } from '~/features/favorites/useFavorites';
 import { cdnUrl, charVideoInfoT8 } from '~/services/staticDataService';
 import { type Move, type MoveT8 } from '~/types/Move';
 import { getCharacterFrameDataMoves } from '~/utils/characterPageUtils';

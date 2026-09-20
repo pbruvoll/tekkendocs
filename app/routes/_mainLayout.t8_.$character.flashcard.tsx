@@ -17,6 +17,7 @@ import { ContentContainer } from '~/components/ContentContainer';
 import { FrameDataFilterDialog } from '~/components/FrameDataFilterDialog';
 import Nav, { type NavLinkInfo } from '~/components/Nav';
 import { TaskProgress } from '~/components/TaskProgress';
+import { useFavorites } from '~/features/favorites/useFavorites';
 import { AnimatedCollapsible } from '~/features/flashCards/AnimatedCollapsible';
 import {
   FlashCardAnswer,
@@ -27,7 +28,6 @@ import { FlipCard } from '~/features/flashCards/FlipCard';
 import { FlashCardBack } from '~/features/flashCards/flashCardBack';
 import { FlashCardFront } from '~/features/flashCards/flashCardFront';
 import { useFlashCardAppState } from '~/features/flashCards/useFlashCardAppState';
-import { useFavorites } from '~/hooks/useFavorites';
 import { useFrameData } from '~/hooks/useFrameData';
 import { characterGuideAuthors } from '~/services/staticDataService';
 import { type CharacterFrameData } from '~/types/CharacterFrameData';
