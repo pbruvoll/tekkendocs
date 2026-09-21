@@ -6,13 +6,15 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * Only deals recoverable damage
 * Cannot cause a K.O.
 * Power crush 7~16";hb chp:2 pc7~16;;Heat Burst;30;;;t8-p2-anna-2+3.mp4;Anna-2+3;anna
-H.2+3;m;50;i13~14;-5;+0d;;"* Heat Smash
+H.2+3;m;23, 10 (50);i13~14, i22~23;-5;+0d;;"* Heat Smash
 * Reversal Break
 * Balcony Break
-* Fragile debuff on hit or block, opponent receives chip damage from any attack, removed when land a hit on you
-* Transition to attack throw on hit
+* Transition to attack throw on hit (50 damage)
+* Fragile debuff on hit, opponent receives chip damage from any attack, removed when land a hit on you
 * Jails
-* High crush 6~27";hs rbr bbr cs6~27;;From Éire with Love;32;;;t8-p2-anna-h.2+3.mp4;Anna-H.2+3;anna
+* +17a (+0) on 2nd hit
+* 6 chip damage on block
+* High crush 6~27";hs rbr bbr chp:6 cs6~27;;From Éire with Love;32;;;t8-p2-anna-h.2+3.mp4;Anna-H.2+3;anna
 R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Removes Recoverable Health
 * Reversal Break
@@ -36,10 +38,12 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Chip damage on block
 * String jails vs hits (string duckable)
 * Floating state 20~39";trn chp fs20~39;;Frost Combination;37;;;t8-p2-anna-1,2,1,4.mp4;Anna-1,2,1,4;anna
-H.1,2,1,2;h, h, h, m,m,m;5, 8, 4, 5,5,24;i10, ,i23~72 i36~85 i54~103;-2~+47g;+23a (-3);;"* Weapon
+H.1,2,1,2;h, h, h, m,m,m;5, 8, 4, 5,5,24;i10, ,i23~72 i36~85 i54~103;-2~+47g;+9a (+4);;"* Weapon
 * Combo from 3rd CH
-* Jails from 4th hit
-* Consumes 300F of remaining Heat time";wpn;;Roasted with Eternal Love;24;;;t8-p2-anna-1,2,1,h.2.mp4;Anna-1,2,1,H.2;anna
+* Interrupt with i1 from 3rd block
+* Jails from 4th block
+* Consumes 300F of remaining Heat time
+* +13a (+8) on average?";wpn intr:1;;Roasted with Eternal Love;24;;;t8-p2-anna-1,2,1,h.2.mp4;Anna-1,2,1,H.2;anna
 1,2,2;h, h, M;5, 8, 20;i10, ,i26~27;-8;+12;+76a (+60);"* Transition to HAM on hit automatically
 * Interrupt with i11
 * Whiffs vs SSR from 1st block";stp:SSR intr:11;HAM;Left Right Stinger;31;;;t8-p2-anna-1,2,2.mp4;Anna-1,2,2;anna
@@ -114,13 +118,11 @@ df+1,2;m, h;10, 10;i13~14, i16;-5;+2;;"* Combo from 1st hit
 * Transition to HAM +0 +7 with F";;HAM;Uppercut Jab;23;;;t8-p2-anna-df+1,2.mp4;Anna-df+1,2;anna
 df+1,2,3;m, h, m;10, 10, 20;i13~14, ,i24~25;-12;+19a (+2);;"* Tornado
 * Balcony Break
-* Combo from 2nd CH with 8F edlay
 * Move can be delayed by 10F
 * Cancel to CJM -17 -10 -3 r35 with B on frame 20
 * Low crush 17~26
 * Floating state 27~29";trn bbr js17~26 fs27~29;CJM;Uppercut Jab > Radiant Arch;30;;;t8-p2-anna-df+1,2,3.mp4;Anna-df+1,2,3;anna
 df+1,2,4;m, h, h;10, 10, 22;i13~14, ,i17~20;-5;+20a (+11);;"* Balcony Break
-* Combo from 2nd CH with 10f delay
 * Input can be delayed 10f
 * Move can be delayed 8f";bbr;;Uppercut Jab > Cutting Crescent;27;;;t8-p2-anna-df+1,2,4.mp4;Anna-df+1,2,4;anna
 df+2;m;12;,i15~16;-12;+32a (+22);;* Launches crouching opponent;;;Step-in Uppercut;32;;;t8-p2-anna-df+2.mp4;Anna-df+2;anna

@@ -6,17 +6,22 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * Only deals recoverable damage
 * Cannot cause a K.O.
 * Power crush 7~16";hb chp:2 pc7~16;;Heat Burst;30;;;;Xiaoyu-2+3;xiaoyu
-H.BT.2+3;m,m,m,m;51;i15~16;+9;+20g;;"* Heat Smash
+H.BT.2+3;m,m,m,m;7,7,7,30;i15~16, i7~8, i9~10, i23~27;+9;+20g;;"* Heat Smash
 * Spike
 * Transition to HYP 2nd step
-* Transition to standing with F (+3, +5)
-* Chip on block [7]";hs spk chp:7;HYP 2nd step,HYP;Innumerable Moons;;HYP;;;Xiaoyu-H.BT.2+3;xiaoyu
-H.2+3;m,m,m,M;50;i15~16;+9;+0d;;"* Heat Smash
-* Balcony Break
-* Transition to standing with F (+5 oB)
-* Transition to attack throw on hit
+* Transition to standing with F (+3/+5)
 * Chip on block [7]
-* Low crush 9~";hs bbr chp:7 js9~;BT;Divine Shooting Star;;BT;;;Xiaoyu-H.2+3;xiaoyu
+* Low crush 53~76
+* Floating state 77~79";hs spk chp:7 js53~76 fs77~79;HYP 2nd step,HYP;Innumerable Moons;33;HYP;;;Xiaoyu-H.BT.2+3;xiaoyu
+H.2+3;m,m,m,M;8,10,12,20 (50);i15~16, i9~10, i7~8, i15~17;+9;+0d;;"* Heat Smash
+* Balcony Break
+* Shift to attack throw on 1st hit (50 damage)
+* +9a (-8) BT or +5a (-12) standing from 2nd hit
+* Transition to standing r42 with F_B_U_D (+5 oB)
+* 7 chip damage on block
+* Low crush 9~40
+* Floating state 41~43
+* Floating state 69~99";hs bbr chp:7 js9~40 fs41~43 fs69~99;BT;Divine Shooting Star;38;BT;;;Xiaoyu-H.2+3;xiaoyu
 R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Removes Recoverable Health
 * Reversal Break

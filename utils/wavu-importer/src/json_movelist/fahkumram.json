@@ -792,14 +792,18 @@
     "target": "L"
   },
   {
-    "alt": "crouch jab",
     "block": "-5",
+    "crush": "cs1~",
     "damage": "5",
     "hit": "+6",
     "id": "Fahkumram-db+1",
     "input": "db+1",
+    "name": "Crouch Jab",
+    "notes": "* Transition to standing r24 with f\n* +6c on crouching hit",
+    "recv": "r24 FC",
     "startup": "i10",
     "target": "sl",
+    "tot": "34",
     "video": "File:t8-p2-fahkumram-db+1"
   },
   {
@@ -808,9 +812,11 @@
     "hit": "+1",
     "id": "Fahkumram-db+2",
     "input": "db+2",
-    "notes": "* High evasion",
-    "startup": "i16",
+    "notes": "* High evasion (frames 9 to 13?)\n* +1c on crouching hit",
+    "recv": "r28",
+    "startup": "i16~17",
     "target": "m",
+    "tot": "45",
     "video": "File:t8-p2-fahkumram-db+2"
   },
   {
@@ -1261,7 +1267,7 @@
     "id": "Fahkumram-f,F+1+2",
     "input": "f,F+1+2",
     "name": "Vicious Uppercut",
-    "notes": "* Grants GRF on hit\n* Recovers 4F faster on hit (t49 r30)",
+    "notes": "* Grants GRF on hit\n* Jab evasion (frames 7 to 9?)\n* Recovers 4F faster on hit (t49 r30)",
     "recv": "r34",
     "startup": "i18~19",
     "target": "m",

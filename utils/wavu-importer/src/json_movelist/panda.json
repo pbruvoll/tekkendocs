@@ -40,11 +40,11 @@
   {
     "block": "-13",
     "damage": "25",
-    "hit": "+18g",
+    "hit": "+18cg",
     "id": "Panda-1+2",
     "input": "1+2",
     "name": "Demon Bear Breath",
-    "notes": "* Balcony Break\n* Heat Engager\n\n* Heat Dash +5, +43d (+35)\n\n* Forces crouch on hit",
+    "notes": "* Balcony Break\n* Heat Engager\n\n* Heat Dash +43d (+35)\n\n* Forces crouch on hit",
     "num": "21",
     "recv": "r31",
     "startup": "i13~14",
@@ -181,19 +181,12 @@
     "target": "h"
   },
   {
-    "crush": "cs4~",
+    "alt": "* hFC.3+4\n* FC.3+4\n* FDFA.3+4",
     "id": "Panda-3+4",
     "input": "3+4",
     "name": "Hunting",
-    "notes": "* Alternate input: FDFA.3+4\n* Transition to HBS",
+    "notes": "* Alternate input: FDFA.3+4\n* Can low parry in HBS with F\n* Transition to HBS\n* Transition to r10 FC with input ub_u_uf\n* Transition to r15 FC with DB\n* Remains in stance indefinitely\n* Can move in stance with F or B",
     "recv": "r15 HBS",
-    "target": "sp"
-  },
-  {
-    "id": "Panda-3+4",
-    "input": "3+4",
-    "name": "Hunting",
-    "notes": "* Alternate input: FDFA.3+4\n* Can low parry in HBS with HBS.F\n* Transition to HBS\n* Transition to standing with input ub or u or uf",
     "target": "sp"
   },
   {
@@ -367,7 +360,7 @@
     "id": "Panda-d+1",
     "input": "d+1",
     "name": "Crouch Jab",
-    "notes": "* Transition to r24 with f\n* +6c on crouching hit",
+    "notes": "* Transition to standing r24 with f at frame 25\n* +6c on crouching hit",
     "recv": "r24 FC",
     "startup": "i10",
     "target": "sl",
