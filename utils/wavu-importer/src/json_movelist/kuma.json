@@ -40,11 +40,11 @@
   {
     "block": "-13",
     "damage": "25",
-    "hit": "+18g",
+    "hit": "+18cg",
     "id": "Kuma-1+2",
     "input": "1+2",
     "name": "Demon Bear Breath",
-    "notes": "* Balcony Break\n* Heat Engager\n\n* Heat Dash +5, +43d (+35)\n\n* Forces crouch on hit",
+    "notes": "* Balcony Break\n* Heat Engager\n\n* Heat Dash +43d (+35)\n\n* Forces crouch on hit",
     "num": "21",
     "recv": "r31",
     "startup": "i13~14",
@@ -186,15 +186,6 @@
     "input": "3+4",
     "name": "Hunting",
     "notes": "* Alternate input: FDFA.3+4\n* Can low parry in HBS with F\n* Transition to HBS\n* Transition to r10 FC with input ub_u_uf\n* Transition to r15 FC with DB\n* Remains in stance indefinitely\n* Can move in stance with F or B",
-    "recv": "r15 HBS",
-    "target": "sp"
-  },
-  {
-    "crush": "cs4~",
-    "id": "Kuma-3+4",
-    "input": "3+4",
-    "name": "Hunting",
-    "notes": "* Alternate input: FDFA.3+4\n* Transition to HBS",
     "recv": "r15 HBS",
     "target": "sp"
   },
@@ -382,7 +373,7 @@
     "id": "Kuma-d+1",
     "input": "d+1",
     "name": "Crouch Jab",
-    "notes": "* Transition to r24 with f\n* +6c on crouching hit",
+    "notes": "* Transition to standing r24 with f at frame 25\n* +6c on crouching hit",
     "recv": "r24 FC",
     "startup": "i10",
     "target": "sl",
@@ -432,20 +423,20 @@
     "tot": "56"
   },
   {
-    "id": "Kuma-d+3+4",
-    "input": "d+3+4",
-    "name": "Bear Sit",
-    "notes": "* Transition to SIT\n* Transition to ROL with input f",
-    "recv": "SIT",
-    "target": "sp"
-  },
-  {
     "crush": "js6~12 fs13~15 cs16~67",
     "id": "Kuma-d+3+4",
     "input": "d+3+4",
     "name": "Bear Sit",
     "notes": "* Alternative input: db+3+4\n* Transition to ROL with input SIT.F\n* Transition to California Roll with input SIT.B",
     "recv": "r15 SIT",
+    "target": "sp"
+  },
+  {
+    "id": "Kuma-d+3+4",
+    "input": "d+3+4",
+    "name": "Bear Sit",
+    "notes": "* Transition to SIT\n* Transition to ROL with input f",
+    "recv": "SIT",
     "target": "sp"
   },
   {
