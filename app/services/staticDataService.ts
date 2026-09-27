@@ -201,6 +201,7 @@ export const characterGuideAuthors: Record<
     lili: { author: 'DewGlider', version: 'S3' },
     'miary-zo': { author: 'Koenji', version: 'S3' },
     nina: { author: 'Lalo', version: 'S3' },
+    paul: { author: 'Romanjelly', version: 'S3' },
     raven: { author: 'JacobKaas', version: 'S3' },
     reina: { author: 'Heavenly', version: 'S3' },
     shaheen: { author: 'Alihandal', version: 'S3' },
