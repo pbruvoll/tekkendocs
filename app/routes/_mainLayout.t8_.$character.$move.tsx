@@ -7,6 +7,7 @@ import { HeartButton } from '~/features/favorites/HeartButton';
 import { useIsFavorite } from '~/features/favorites/useFavorites';
 import { cdnUrl, charVideoInfoT8 } from '~/services/staticDataService';
 import { type Move, type MoveT8 } from '~/types/Move';
+import { type RouteHandle } from '~/types/RouteHandle';
 import { getCharacterFrameDataMoves } from '~/utils/characterPageUtils';
 import { getRelatedMoves } from '~/utils/frameDataUtils';
 import { formatRecovery, simplifyFrameValue } from '~/utils/frameDataViewUtils';
@@ -112,6 +113,10 @@ export const meta: MetaFunction = ({ params, matches }) => {
   ];
 };
 
+export const handle: RouteHandle = {
+  hideCharacterHeader: true,
+};
+
 const findMove = (command: string, moves: Move[]): Move | undefined => {
   return moves.find((move) => commandToUrlSegment(move.command) === command);
 };
@@ -143,7 +148,7 @@ export default function MoveRoute({ params }: Route.ComponentProps) {
       </Text>
       <Heading mt="2" mb="4" as="h1" className="flex items-start gap-2">
         <span className="flex flex-wrap items-center gap-2">
-          <Link to={`/${characterName}`} className="capitalize text-primary">
+          <Link to={`/t8/${characterName}`} className="capitalize text-primary">
             {characterName}
           </Link>
           {move.command}

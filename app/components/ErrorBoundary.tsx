@@ -1,5 +1,5 @@
 import { isRouteErrorResponse, useRouteError } from 'react-router';
-import { type ServerError } from '~/types/ServerError';
+import { type ServerErrorData } from '~/types/ServerError';
 
 export const AppErrorBoundary = () => {
   const error = useRouteError();
@@ -34,21 +34,21 @@ export const AppErrorBoundary = () => {
 type ErrorDataProps = { data: unknown };
 const ErrorData = ({ data }: ErrorDataProps) => {
   if (data && typeof data === 'object' && 'title' in data) {
-    const serverError = data as ServerError;
+    const serverError = data as ServerErrorData;
     return (
       <div>
         <h2>{serverError.title}</h2>
         {serverError.detail && <p>{serverError.detail}</p>}
-        {!!serverError.exception && (
-          <p>exception : {JSON.stringify(serverError.exception)}</p>
-        )}
+        {!!serverError.exception && <p>exception : {serverError.exception}</p>}
         {!!serverError.upstreamErrorResponse && (
-          <p>exception : {JSON.stringify(serverError.upstreamErrorResponse)}</p>
+          <p>
+            upstream error : {JSON.stringify(serverError.upstreamErrorResponse)}
+          </p>
         )}
       </div>
     );
   } else if (typeof data === 'string') {
     return data;
   }
-  return <p>JSON.stringify(data)</p>;
+  return <p>{JSON.stringify(data)}</p>;
 };

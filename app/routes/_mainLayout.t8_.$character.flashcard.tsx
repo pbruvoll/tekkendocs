@@ -1,4 +1,3 @@
-import { Heading } from '@radix-ui/themes';
 import { type ChangeEvent, useId, useMemo, useState } from 'react';
 import { type MetaFunction, useSearchParams } from 'react-router';
 import invariant from 'tiny-invariant';
@@ -15,8 +14,8 @@ import { Label } from '@/components/ui/label';
 import { Switch } from '@/components/ui/switch';
 import { ContentContainer } from '~/components/ContentContainer';
 import { FrameDataFilterDialog } from '~/components/FrameDataFilterDialog';
-import Nav, { type NavLinkInfo } from '~/components/Nav';
 import { TaskProgress } from '~/components/TaskProgress';
+import { getCharacterDisplayName } from '~/features/characterPage/characterDisplayName';
 import { useFavorites } from '~/features/favorites/useFavorites';
 import { AnimatedCollapsible } from '~/features/flashCards/AnimatedCollapsible';
 import {
@@ -29,7 +28,6 @@ import { FlashCardBack } from '~/features/flashCards/flashCardBack';
 import { FlashCardFront } from '~/features/flashCards/flashCardFront';
 import { useFlashCardAppState } from '~/features/flashCards/useFlashCardAppState';
 import { useFrameData } from '~/hooks/useFrameData';
-import { characterGuideAuthors } from '~/services/staticDataService';
 import { type CharacterFrameData } from '~/types/CharacterFrameData';
 import { type Move } from '~/types/Move';
 import { type MoveFilter } from '~/types/MoveFilter';
@@ -40,14 +38,6 @@ import { filterMoves, getMoveFilterTypes } from '~/utils/frameDataUtils';
 import { getCacheControlHeaders } from '~/utils/headerUtils';
 import * as filterUtils from '~/utils/searchParamsFilterUtils';
 import { generateMetaTags } from '~/utils/seoUtils';
-import { t8AvatarMap } from '~/utils/t8AvatarMap';
-
-const navData: NavLinkInfo[] = [
-  { link: '../', displayName: 'Frame data' },
-  { link: '../meta', displayName: 'Cheat sheet' },
-  { link: '../antistrat', displayName: 'Anti strats' },
-  { link: '', displayName: 'Flash card' },
-];
 
 export const headers = () => getCacheControlHeaders({ seconds: 60 * 5 });
 
@@ -267,93 +257,71 @@ export default function FlashCard() {
   };
 
   return (
-    <>
-      <ContentContainer enableTopPadding>
-        <div className="mb-3 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <img
-              className="aspect-square w-12"
-              src={t8AvatarMap[characterName]}
-              alt={characterName}
-            />
-            <Heading as="h1" my="2" className="capitalize">
-              {characterName === 'mokujin' ? 'All Characters' : characterName}
-            </Heading>
-          </div>
-        </div>
-
-        <Nav
-          navData={
-            characterGuideAuthors.T8[characterName]
-              ? [...navData, { displayName: 'Guide', link: '../guide' }]
-              : navData
-          }
-        ></Nav>
-      </ContentContainer>
-      <ContentContainer
-        enableBottomPadding
-        enableTopPadding
-        className="flex justify-center"
-      >
-        <div className="w-full max-w-96 px-2">
-          <h1 className="sr-only">Flash cards</h1>
-          {numViableMoves === 0 ? (
-            <div>No moves available for {characterName}</div>
-          ) : !moveToShow ? (
-            <StartPage
-              characterName={characterName}
-              onStart={() => findAndSetMoveToShow()}
-              numUnseen={unseenMoves.length}
-              numCorrect={charFlashCardState.correct.length}
-              numWrong={charFlashCardState.wrong.length}
-              numIngnored={charFlashCardState.ignored.length}
-              numMovesToPractice={numMovesToPractice}
-              startFromMoveNum={startFromMoveNumber}
-              handleStartFromMoveNumChange={handleStartFromMoveNumChange}
-              handleNumMovesToPracticeChange={handleNumMovesToPracticeChange}
-              filter={moveFilter}
-              setFilterValue={(key, value) =>
-                filterUtils.setFilterValue(setSearchParams, key, value)
-              }
-              removeFilterValue={(key) =>
-                filterUtils.removeFilterValue(setSearchParams, key)
-              }
-              updateFilterValues={(changes) =>
-                filterUtils.updateFilterValues(setSearchParams, changes)
-              }
-              addFilterElement={(key, element) =>
-                filterUtils.addFilterElement(setSearchParams, key, element)
-              }
-              removeFilterElement={(key, element) =>
-                filterUtils.removeFilterElement(setSearchParams, key, element)
-              }
-              stances={moveFilterTypes.stances}
-              states={moveFilterTypes.states}
-              transitions={moveFilterTypes.transitions}
-              onResetState={() =>
-                setFlashCardAppState({
-                  ...flashCardAppState,
-                  [characterName]: {
-                    [FlashCardAnswer.Correct]: [],
-                    [FlashCardAnswer.Wrong]: [],
-                    [FlashCardAnswer.Ignored]: [],
-                  },
-                })
-              }
-            />
-          ) : (
-            <FlashCardGame
-              moveToShow={moveToShow}
-              onAnswer={handleAnswer}
-              numUnseen={unseenMoves.length}
-              numCorrect={charFlashCardState.correct.length}
-              numWrong={charFlashCardState.wrong.length}
-              showCharName={showCharName}
-            />
-          )}
-        </div>
-      </ContentContainer>
-    </>
+    <ContentContainer
+      enableBottomPadding
+      enableTopPadding
+      className="flex justify-center"
+    >
+      <div className="w-full max-w-96 px-2">
+        <h1 className="sr-only capitalize">
+          {getCharacterDisplayName(characterName)} Tekken 8 Flash Cards
+        </h1>
+        {numViableMoves === 0 ? (
+          <div>No moves available for {characterName}</div>
+        ) : !moveToShow ? (
+          <StartPage
+            characterName={characterName}
+            onStart={() => findAndSetMoveToShow()}
+            numUnseen={unseenMoves.length}
+            numCorrect={charFlashCardState.correct.length}
+            numWrong={charFlashCardState.wrong.length}
+            numIngnored={charFlashCardState.ignored.length}
+            numMovesToPractice={numMovesToPractice}
+            startFromMoveNum={startFromMoveNumber}
+            handleStartFromMoveNumChange={handleStartFromMoveNumChange}
+            handleNumMovesToPracticeChange={handleNumMovesToPracticeChange}
+            filter={moveFilter}
+            setFilterValue={(key, value) =>
+              filterUtils.setFilterValue(setSearchParams, key, value)
+            }
+            removeFilterValue={(key) =>
+              filterUtils.removeFilterValue(setSearchParams, key)
+            }
+            updateFilterValues={(changes) =>
+              filterUtils.updateFilterValues(setSearchParams, changes)
+            }
+            addFilterElement={(key, element) =>
+              filterUtils.addFilterElement(setSearchParams, key, element)
+            }
+            removeFilterElement={(key, element) =>
+              filterUtils.removeFilterElement(setSearchParams, key, element)
+            }
+            stances={moveFilterTypes.stances}
+            states={moveFilterTypes.states}
+            transitions={moveFilterTypes.transitions}
+            onResetState={() =>
+              setFlashCardAppState({
+                ...flashCardAppState,
+                [characterName]: {
+                  [FlashCardAnswer.Correct]: [],
+                  [FlashCardAnswer.Wrong]: [],
+                  [FlashCardAnswer.Ignored]: [],
+                },
+              })
+            }
+          />
+        ) : (
+          <FlashCardGame
+            moveToShow={moveToShow}
+            onAnswer={handleAnswer}
+            numUnseen={unseenMoves.length}
+            numCorrect={charFlashCardState.correct.length}
+            numWrong={charFlashCardState.wrong.length}
+            showCharName={showCharName}
+          />
+        )}
+      </div>
+    </ContentContainer>
   );
 }
 
@@ -409,7 +377,9 @@ const StartPage = ({
     <div className="flex flex-col items-center">
       <Card className="w-full max-w-96">
         <CardHeader className="text-center">
-          <CardTitle className="text-2xl">Flash Cards</CardTitle>
+          <CardTitle as="h2" className="text-2xl">
+            Flash Cards
+          </CardTitle>
           <CardDescription>
             Test your knowledge of{' '}
             <span className="capitalize">{characterName}</span>'s frame data
