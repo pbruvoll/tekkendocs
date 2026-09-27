@@ -1,11 +1,8 @@
-import { Pencil1Icon } from '@radix-ui/react-icons';
-import { Heading } from '@radix-ui/themes';
 import { type HeadersFunction, type MetaFunction } from 'react-router';
 import { ContentContainer } from '~/components/ContentContainer';
 import { FrameDataSection } from '~/components/FrameDataSection';
-import Nav, { type NavLinkInfo } from '~/components/Nav';
+import { getCharacterDisplayName } from '~/features/characterPage/characterDisplayName';
 import { useFrameData } from '~/hooks/useFrameData';
-import { characterGuideAuthors } from '~/services/staticDataService';
 import { type CharacterFrameDataPage } from '~/types/CharacterFrameDataPage';
 import { type RouteHandle } from '~/types/RouteHandle';
 import { filterToDescription, getFilterFromParams } from '~/utils/filterUtils';
@@ -14,14 +11,6 @@ import { getCacheControlHeaders } from '~/utils/headerUtils';
 import { charIdFromMove } from '~/utils/moveUtils';
 import { generateMetaTags } from '~/utils/seoUtils';
 import { getSortSettings } from '~/utils/sortingUtils';
-import { t8AvatarMap } from '~/utils/t8AvatarMap';
-
-const navData: NavLinkInfo[] = [
-  { link: '', displayName: 'Frame data' },
-  { link: 'meta', displayName: 'Cheat Sheet' },
-  { link: 'antistrat', displayName: 'Anti strats' },
-  { link: 'flashcard', displayName: 'Flash card' },
-];
 
 export const headers: HeadersFunction = (args) => ({
   ...getCacheControlHeaders({ seconds: 60 * 5 }),
@@ -110,58 +99,28 @@ export const meta: MetaFunction = ({ params, matches, location }) => {
 };
 
 export default function Index() {
-  const { tables, editUrl, characterName, moves } = useFrameData();
+  const { tables, characterName, moves } = useFrameData();
   if (moves.length === 0) {
     return <div>Invalid or no data</div>;
   }
   return (
-    <>
-      <ContentContainer enableTopPadding>
-        <div className="mb-3 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <img
-              className="aspect-square w-12"
-              src={t8AvatarMap[characterName]}
-              alt={characterName}
+    <ContentContainer disableXPadding>
+      <h1 className="sr-only capitalize">
+        {getCharacterDisplayName(characterName)} Tekken 8 Frame Data
+      </h1>
+      {tables.map((table) => {
+        if (table.headers && table.name === 'frames_normal') {
+          return (
+            <FrameDataSection
+              key={table.name}
+              gameRouteId="t8"
+              charId={characterName === 'mokujin' ? undefined : characterName}
+              moves={moves}
             />
-            <Heading as="h1" my="2" className="capitalize">
-              {characterName === 'mokujin' ? 'All Characters' : characterName}
-            </Heading>
-          </div>
-          <a
-            className="flex items-center gap-2 text-primary"
-            target="_blank"
-            rel="noopener"
-            href={editUrl}
-          >
-            <Pencil1Icon />
-            Edit
-          </a>
-        </div>
-
-        <Nav
-          navData={
-            characterGuideAuthors.T8[characterName]
-              ? [...navData, { displayName: 'Guide', link: 'guide' }]
-              : navData
-          }
-        ></Nav>
-      </ContentContainer>
-      <ContentContainer disableXPadding>
-        {tables.map((table) => {
-          if (table.headers && table.name === 'frames_normal') {
-            return (
-              <FrameDataSection
-                key={table.name}
-                gameRouteId="t8"
-                charId={characterName === 'mokujin' ? undefined : characterName}
-                moves={moves}
-              />
-            );
-          }
-          return <div key={table.name}>Unknown table name {table.name}</div>;
-        })}
-      </ContentContainer>
-    </>
+          );
+        }
+        return <div key={table.name}>Unknown table name {table.name}</div>;
+      })}
+    </ContentContainer>
   );
 }

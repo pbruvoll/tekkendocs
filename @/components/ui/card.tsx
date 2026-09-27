@@ -29,10 +29,14 @@ const CardHeader = React.forwardRef<
 CardHeader.displayName = 'CardHeader';
 
 const CardTitle = React.forwardRef<
-  HTMLParagraphElement,
-  React.HTMLAttributes<HTMLHeadingElement>
->(({ className, ...props }, ref) => (
-  <h3
+  HTMLHeadingElement,
+  React.HTMLAttributes<HTMLHeadingElement> & {
+    /** the heading level, so a card title can fit the outline of the page it
+        sits on without losing the shared styling */
+    as?: 'h2' | 'h3' | 'h4';
+  }
+>(({ className, as: Comp = 'h3', ...props }, ref) => (
+  <Comp
     ref={ref}
     className={cn(
       'text-xl font-semibold leading-none tracking-tight',

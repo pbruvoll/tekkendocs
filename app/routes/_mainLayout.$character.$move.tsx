@@ -1,5 +1,6 @@
 export {
   default,
+  handle,
   headers,
   meta,
 } from '~/routes/_mainLayout.t8_.$character.$move';

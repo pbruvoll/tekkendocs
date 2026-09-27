@@ -1,5 +1,3 @@
-import { Pencil1Icon } from '@radix-ui/react-icons';
-import { Text } from '@radix-ui/themes';
 import { useMemo } from 'react';
 import {
   data,
@@ -12,7 +10,6 @@ import invariant from 'tiny-invariant';
 import { About } from '~/components/About';
 import { Authors } from '~/components/Authors';
 import { ContentContainer } from '~/components/ContentContainer';
-import Nav, { type NavLinkInfo } from '~/components/Nav';
 import { PersonLinkList } from '~/components/PersonLinkList';
 import { AboutAuthor } from '~/features/guides/AboutAuthor';
 import { ComboEnders } from '~/features/guides/ComboEnders';
@@ -46,17 +43,8 @@ import { gameNameMap } from '~/utils/gameNameMap';
 import { getCacheControlHeaders } from '~/utils/headerUtils';
 import { generateMetaTags } from '~/utils/seoUtils';
 import { sheetToSections } from '~/utils/sheetUtils.server';
-import { t8AvatarMap } from '~/utils/t8AvatarMap';
 import { t8GuideImgMap } from '~/utils/t8GuideImgMap';
 import { t8GuideImgSmallMap } from '~/utils/t8GuideImgSmallMap';
-
-const navData: NavLinkInfo[] = [
-  { link: '../', displayName: 'Frame data' },
-  { link: '../meta', displayName: 'Cheat sheet' },
-  { link: '../antistrat', displayName: 'Anti strats' },
-  { link: '../flashcard', displayName: 'Flash card' },
-  { link: '', displayName: 'Guide' },
-];
 
 export const headers: HeadersFunction = ({ loaderHeaders }) => {
   return loaderHeaders || getCacheControlHeaders({ seconds: 60 * 5 });
@@ -207,7 +195,6 @@ export const meta: MetaFunction<typeof loader> = ({
 export default function Index() {
   const {
     characterName: characterId,
-    editUrl,
     guideData,
     game,
   } = useLoaderData<typeof loader>();
@@ -265,30 +252,6 @@ export default function Index() {
         charUrl: `/${gameId}/${characterId}`,
       }}
     >
-      <ContentContainer enableTopPadding>
-        <div className="mb-3 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <img
-              className="aspect-square w-12"
-              src={t8AvatarMap[characterId]}
-              alt={characterId}
-            />
-            <Text size="6" my="2" className="font-bold capitalize">
-              {characterId}
-            </Text>
-          </div>
-          <a
-            className="flex items-center gap-2 text-primary"
-            target="blank"
-            href={editUrl}
-          >
-            <Pencil1Icon />
-            Edit
-          </a>
-        </div>
-
-        <Nav navData={navData}></Nav>
-      </ContentContainer>
       <h1 className="sr-only">
         {characterId} {gameNameMap[game]}{' '}
         {version === 'S3' ? 'Season 3' : 'Season 2'} Guide

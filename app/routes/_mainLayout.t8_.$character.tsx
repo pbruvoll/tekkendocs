@@ -1,5 +1,11 @@
-import { data, Outlet, type ShouldRevalidateFunctionArgs } from 'react-router';
+import {
+  data,
+  Outlet,
+  type ShouldRevalidateFunctionArgs,
+  useMatches,
+} from 'react-router';
 import { environment } from '~/constants/environment.server';
+import { CharacterPageHeader } from '~/features/characterPage/CharacterPageHeader';
 import { SheetServiceMock } from '~/mock/SheetServiceMock';
 import { SheetServiceImpl } from '~/services/sheetServiceImpl.server';
 import { charVideoInfoT8 } from '~/services/staticDataService';
@@ -7,6 +13,7 @@ import { type CharacterFrameDataPage } from '~/types/CharacterFrameDataPage';
 import { type CharacterPageData } from '~/types/CharacterPageData';
 import { type Game } from '~/types/Game';
 import { type Move } from '~/types/Move';
+import { type RouteHandle } from '~/types/RouteHandle';
 import { type SheetService } from '~/types/SheetService';
 import { type TableData } from '~/types/TableData';
 import { applyOverride, frameDataTableToJson } from '~/utils/frameDataUtils';
@@ -99,10 +106,30 @@ export const loader = async ({ params }: Route.LoaderArgs) => {
   });
 };
 
-export const handle = {
+export const handle: RouteHandle = {
   type: 'frameData',
 };
 
-export default function Index() {
-  return <Outlet />;
+export default function Index({ loaderData }: Route.ComponentProps) {
+  const matches = useMatches();
+  const leafMatch = matches[matches.length - 1];
+  if ((leafMatch?.handle as RouteHandle)?.hideCharacterHeader) {
+    return <Outlet />;
+  }
+
+  // The sub pages each edit a different sheet, so prefer the edit url of the
+  // active page and fall back to the frame data one.
+  const editUrl =
+    (leafMatch?.loaderData as { editUrl?: string } | undefined)?.editUrl ??
+    loaderData.editUrl;
+
+  return (
+    <>
+      <CharacterPageHeader
+        characterName={loaderData.characterName}
+        editUrl={editUrl}
+      />
+      <Outlet />
+    </>
+  );
 }

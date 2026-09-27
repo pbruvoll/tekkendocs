@@ -1,4 +1,3 @@
-import { Pencil1Icon } from '@radix-ui/react-icons';
 import { Heading, Link as RadixLink, Table } from '@radix-ui/themes';
 import { useMemo } from 'react';
 import {
@@ -13,15 +12,14 @@ import { Authors } from '~/components/Authors';
 import { Command } from '~/components/Command';
 import { ContentContainer } from '~/components/ContentContainer';
 import { AppErrorBoundary } from '~/components/ErrorBoundary';
-import Nav, { type NavLinkInfo } from '~/components/Nav';
 import { PersonLinkList } from '~/components/PersonLinkList';
 import { ResourcesTable } from '~/components/ResourcesTable';
 import { TextWithCommand } from '~/components/TextWithCommand';
 import { hasHeaderMap } from '~/constants/hasHeaderMap';
 import { tableIdToDisplayName } from '~/constants/tableIdToDisplayName';
+import { getCharacterDisplayName } from '~/features/characterPage/characterDisplayName';
 import { useFrameData } from '~/hooks/useFrameData';
 import { getSheet } from '~/services/googleSheetService.server';
-import { characterGuideAuthors } from '~/services/staticDataService';
 import { type CharacterFrameData } from '~/types/CharacterFrameData';
 import { type Game } from '~/types/Game';
 import { type Move } from '~/types/Move';
@@ -44,14 +42,6 @@ import {
   sheetSectionToTable,
   sheetToSections,
 } from '~/utils/sheetUtils.server';
-import { t8AvatarMap } from '~/utils/t8AvatarMap';
-
-const navData: NavLinkInfo[] = [
-  { link: '../', displayName: 'Frame data' },
-  { link: '', displayName: 'Cheat sheet' },
-  { link: '../antistrat', displayName: 'Anti strats' },
-  { link: '../flashcard', displayName: 'Flash card' },
-];
 
 export const headers = () => getCacheControlHeaders({ seconds: 60 * 5 });
 
@@ -136,11 +126,7 @@ export const meta: MetaFunction = ({ params, matches }) => {
 };
 
 export default function Index() {
-  const {
-    characterName,
-    editUrl,
-    tables: metaTables,
-  } = useLoaderData<typeof loader>();
+  const { characterName, tables: metaTables } = useLoaderData<typeof loader>();
   const { moves: frameData } = useFrameData();
   const compressedCommandMap = useMemo(() => {
     return frameData.reduce<Record<string, Move>>((prev, current) => {
@@ -213,130 +199,100 @@ export default function Index() {
     return <div>Invalid or no data</div>;
   }
   return (
-    <>
-      <ContentContainer enableTopPadding>
-        <div className="mb-3 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <img
-              className="aspect-square w-12"
-              src={t8AvatarMap[characterName]}
-              alt={characterName}
-            />
-            <Heading as="h1" my="2" className="capitalize">
-              {characterName}
-            </Heading>
-          </div>
-          <a
-            className="flex items-center gap-2 text-primary"
-            target="_blank"
-            rel="noopener"
-            href={editUrl}
-          >
-            <Pencil1Icon />
-            Edit
-          </a>
+    <ContentContainer enableBottomPadding>
+      <h1 className="sr-only capitalize">
+        {getCharacterDisplayName(characterName)} Tekken 8 Cheat Sheet
+      </h1>
+      {!!authors?.length && (
+        <div className="flex justify-end">
+          <Authors authors={authors} />
         </div>
-
-        <Nav
-          navData={
-            characterGuideAuthors.T8[characterName]
-              ? [...navData, { displayName: 'Guide', link: '../guide' }]
-              : navData
-          }
-        ></Nav>
-      </ContentContainer>
-      <ContentContainer enableBottomPadding>
-        {!!authors?.length && (
-          <div className="flex justify-end">
-            <Authors authors={authors} />
-          </div>
-        )}
-        {tables.map((table) => {
-          const columnNums = (table.headers || table.rows[0]).map(
-            (_, index) => index,
-          );
-          if (table.name === 'resources_external') {
-            return (
-              <ResourcesTable
-                key={table.name}
-                rows={table.rows}
-                headers={table.headers as string[]}
-              />
-            );
-          }
+      )}
+      {tables.map((table) => {
+        const columnNums = (table.headers || table.rows[0]).map(
+          (_, index) => index,
+        );
+        if (table.name === 'resources_external') {
           return (
-            <section key={table.name} className="mt-8">
-              <Heading as="h2" mb="4" size="4">
-                {tableIdToDisplayName[table.name]}
-              </Heading>
-              <Table.Root variant="surface" style={{ width: '100%' }}>
-                {table.headers && (
-                  <Table.Header>
-                    <Table.Row>
-                      {table.headers.map((h) => (
-                        <Table.ColumnHeaderCell key={h}>
-                          {h}
-                        </Table.ColumnHeaderCell>
-                      ))}
-                    </Table.Row>
-                  </Table.Header>
-                )}
-                <Table.Body>
-                  {table.rows.map((row, _i) => {
-                    return (
-                      <Table.Row key={row[0]}>
-                        {columnNums.map((j) => {
-                          const cell = row[j] || '';
-                          if (
-                            table.headers &&
-                            (table.headers[j] === 'Command' ||
-                              table.headers[j] === 'Secondary' ||
-                              table.headers[j] === 'Starter')
-                          ) {
-                            //this is a command, so make it link
-                            return (
-                              <Table.Cell key={j}>
-                                <RadixLink asChild>
-                                  <Command
-                                    charUrl={`/t8/${characterName}`}
-                                    compressedCommandMap={compressedCommandMap}
-                                    command={cell}
-                                  />
-                                </RadixLink>
-                              </Table.Cell>
-                            );
-                          }
-                          if (table.name === 'key_moves') {
-                            return (
-                              <Table.Cell key={j}>
-                                <TextWithCommand
+            <ResourcesTable
+              key={table.name}
+              rows={table.rows}
+              headers={table.headers as string[]}
+            />
+          );
+        }
+        return (
+          <section key={table.name} className="mt-8">
+            <Heading as="h2" mb="4" size="4">
+              {tableIdToDisplayName[table.name]}
+            </Heading>
+            <Table.Root variant="surface" style={{ width: '100%' }}>
+              {table.headers && (
+                <Table.Header>
+                  <Table.Row>
+                    {table.headers.map((h) => (
+                      <Table.ColumnHeaderCell key={h}>
+                        {h}
+                      </Table.ColumnHeaderCell>
+                    ))}
+                  </Table.Row>
+                </Table.Header>
+              )}
+              <Table.Body>
+                {table.rows.map((row, _i) => {
+                  return (
+                    <Table.Row key={row[0]}>
+                      {columnNums.map((j) => {
+                        const cell = row[j] || '';
+                        if (
+                          table.headers &&
+                          (table.headers[j] === 'Command' ||
+                            table.headers[j] === 'Secondary' ||
+                            table.headers[j] === 'Starter')
+                        ) {
+                          //this is a command, so make it link
+                          return (
+                            <Table.Cell key={j}>
+                              <RadixLink asChild>
+                                <Command
                                   charUrl={`/t8/${characterName}`}
                                   compressedCommandMap={compressedCommandMap}
-                                  text={cell}
+                                  command={cell}
                                 />
-                              </Table.Cell>
-                            );
-                          }
-                          return <Table.Cell key={j}>{cell}</Table.Cell>;
-                        })}
-                      </Table.Row>
-                    );
-                  })}
-                </Table.Body>
-              </Table.Root>
-            </section>
-          );
-        })}
-        {!!contributors?.length && (
-          <div className="mb-3 mt-3 flex justify-end">
-            <div>
-              <span>Contributors : </span>
-              <PersonLinkList persons={contributors} />
-            </div>
+                              </RadixLink>
+                            </Table.Cell>
+                          );
+                        }
+                        if (table.name === 'key_moves') {
+                          return (
+                            <Table.Cell key={j}>
+                              <TextWithCommand
+                                charUrl={`/t8/${characterName}`}
+                                compressedCommandMap={compressedCommandMap}
+                                text={cell}
+                              />
+                            </Table.Cell>
+                          );
+                        }
+                        return <Table.Cell key={j}>{cell}</Table.Cell>;
+                      })}
+                    </Table.Row>
+                  );
+                })}
+              </Table.Body>
+            </Table.Root>
+          </section>
+        );
+      })}
+      {!!contributors?.length && (
+        <div className="mb-3 mt-3 flex justify-end">
+          <div>
+            <span>Contributors : </span>
+            <PersonLinkList persons={contributors} />
           </div>
-        )}
-      </ContentContainer>
-    </>
+        </div>
+      )}
+    </ContentContainer>
   );
 }
 
