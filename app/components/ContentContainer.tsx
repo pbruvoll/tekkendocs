@@ -6,6 +6,8 @@ export type ContentContainerProps = React.PropsWithChildren<{
   enableTopPadding?: boolean;
   enableBottomPadding?: boolean;
   className?: string;
+  /** Set when the content is in another language than the rest of the page */
+  lang?: string;
 }>;
 
 export const ContentContainer = ({
@@ -14,10 +16,12 @@ export const ContentContainer = ({
   enableBottomPadding,
   disableMaxWidth,
   className,
+  lang,
   children,
 }: ContentContainerProps) => {
   return (
     <div
+      lang={lang}
       className={cx(
         !disableXMargin && 'px-2 sm:px-4',
         enableTopPadding && 'pt-2 sm:pt-4',

@@ -11,6 +11,11 @@ import { About } from '~/components/About';
 import { Authors } from '~/components/Authors';
 import { ContentContainer } from '~/components/ContentContainer';
 import { PersonLinkList } from '~/components/PersonLinkList';
+import {
+  guideLanguageParam,
+  parseGuideLanguage,
+} from '~/features/guideLanguage/guideLanguage';
+import { getGuideSource } from '~/features/guideLanguage/guideSource.server';
 import { AboutAuthor } from '~/features/guides/AboutAuthor';
 import { ComboEnders } from '~/features/guides/ComboEnders';
 import { Combos } from '~/features/guides/Combos';
@@ -31,7 +36,6 @@ import { Stances } from '~/features/guides/Stances';
 import { StrengthsWeaknesses } from '~/features/guides/StrengthsWeaknesses';
 import { WallCombos } from '~/features/guides/WallCombos';
 import { useFrameData } from '~/hooks/useFrameData';
-import { getSheet } from '~/services/googleSheetService.server';
 import { characterGuideAuthors } from '~/services/staticDataService';
 import { type CharacterFrameData } from '~/types/CharacterFrameData';
 import { type Game } from '~/types/Game';
@@ -70,19 +74,24 @@ export const loader = async ({ params, url }: LoaderFunctionArgs) => {
 
   const game: Game = 'T8';
 
-  const sheetName = `${character}-guide`;
-  const key = `${sheetName}|_|${game}`;
+  const requestedLanguage = parseGuideLanguage(
+    url.searchParams.get(guideLanguageParam),
+  );
+  const key = `${character}-guide|_|${game}|_|${requestedLanguage}`;
 
   const getFreshValue = async () => {
-    const sheet = await getSheet(sheetName, game);
-    const { editUrl, rows } = sheet;
+    const { editUrl, language, rows } = await getGuideSource(
+      game,
+      character,
+      requestedLanguage,
+    );
     const sheetSections = sheetToSections(rows);
     const guideData = tablesToGuideData(sheetSections);
 
-    return { guideData, editUrl };
+    return { editUrl, guideData, language };
   };
 
-  const { guideData, editUrl } = isPreview
+  const { guideData, editUrl, language } = isPreview
     ? await getFreshValue()
     : await cachified({
         key,
@@ -98,7 +107,7 @@ export const loader = async ({ params, url }: LoaderFunctionArgs) => {
   }
 
   return data(
-    { characterName: character, editUrl, guideData, game },
+    { characterName: character, editUrl, guideData, game, language },
     {
       headers: {
         ...getCacheControlHeaders({ seconds: isPreview ? 5 : 60 * 5 }),
@@ -189,6 +198,12 @@ export const meta: MetaFunction<typeof loader> = ({
     {
       'script:ld+json': jsonLd,
     },
+    {
+      // translations (?lang=xx) are not indexed separately yet
+      tagName: 'link',
+      rel: 'canonical',
+      href: `https://tekkendocs.com/t8/${characterId}/guide`,
+    },
   ];
 };
 
@@ -197,6 +212,7 @@ export default function Index() {
     characterName: characterId,
     guideData,
     game,
+    language,
   } = useLoaderData<typeof loader>();
   const { moves: frameData } = useFrameData();
   const gameId = game.toLowerCase();
@@ -266,7 +282,7 @@ export default function Index() {
         className="m-2 mx-auto aspect-[1.77] w-full max-w-4xl max-md:hidden"
         alt=""
       ></img>
-      <ContentContainer enableBottomPadding>
+      <ContentContainer enableBottomPadding lang={language}>
         {!!authors?.length && (
           <div className="mt-4">
             <Authors authors={authors} />
