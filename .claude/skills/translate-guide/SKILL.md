@@ -24,9 +24,11 @@ Translate `data/guides/<char>/<char>-guide.csv` into `data/guides/<char>/<char>-
 7. Run the parser smoke test below, then report.
 
 If the language is new to the site, also add it to `guideLanguages` in
-`app/features/guideLanguage/guideLanguage.ts` and add its disclaimer text to
-`app/features/guideLanguage/GuideTranslationNotice.tsx` (the `Record` type forces this). A
-right-to-left language also goes in `rtlGuideLanguages` in `guideLanguage.ts`.
+`app/features/guideLanguage/guideLanguage.ts`, and translate the page's static texts (meta title and
+description, section headings, labels, the machine-translation disclaimer) in a new
+`app/features/guideLanguage/texts/<lang>.ts`, registered in `guideTexts` in `texts/guideTexts.ts`
+(the `Record` type forces this). Use the same glossary terms as the csv. A right-to-left language
+also goes in `rtlGuideLanguages` in `guideLanguage.ts`.
 
 </what-to-do>
 

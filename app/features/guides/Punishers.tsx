@@ -9,13 +9,23 @@ type PunishersProps = {
   whiff?: WhiffPunisher[];
 };
 export const Punishers = ({ standing, crouching, whiff }: PunishersProps) => {
+  const { texts } = useGuideContext();
   return (
     <section id="punishers">
-      <GuideSectionHeading title="Punishers" />
+      <GuideSectionHeading section="punishers" />
       <div className="flex gap-2 md:gap-4 lg:gap-8">
-        {standing && <PunisherList title="Standing" punishers={standing} />}
-        {crouching && <PunisherList title="Crouching" punishers={crouching} />}
-        {whiff && <PunisherList title="Whiff punishers" punishers={whiff} />}
+        {standing && (
+          <PunisherList title={texts.standingPunishers} punishers={standing} />
+        )}
+        {crouching && (
+          <PunisherList
+            title={texts.crouchingPunishers}
+            punishers={crouching}
+          />
+        )}
+        {whiff && (
+          <PunisherList title={texts.whiffPunishers} punishers={whiff} />
+        )}
       </div>
     </section>
   );

@@ -18,6 +18,7 @@ import {
   parseGuideLanguage,
 } from '~/features/guideLanguage/guideLanguage';
 import { getGuideSource } from '~/features/guideLanguage/guideSource.server';
+import { guideTexts } from '~/features/guideLanguage/texts/guideTexts';
 import { AboutAuthor } from '~/features/guides/AboutAuthor';
 import { ComboEnders } from '~/features/guides/ComboEnders';
 import { Combos } from '~/features/guides/Combos';
@@ -45,7 +46,6 @@ import { type Move } from '~/types/Move';
 import { type RouteHandle } from '~/types/RouteHandle';
 import { cachified } from '~/utils/cache.server';
 import { compressCommand } from '~/utils/commandUtils';
-import { gameNameMap } from '~/utils/gameNameMap';
 import { getCacheControlHeaders } from '~/utils/headerUtils';
 import { generateMetaTags } from '~/utils/seoUtils';
 import { sheetToSections } from '~/utils/sheetUtils.server';
@@ -144,14 +144,21 @@ export const meta: MetaFunction<typeof loader> = ({
   const version = characterGuideAuthors.T8[characterId]?.version;
   const characterTitle =
     characterName[0].toUpperCase() + characterName.substring(1);
-  const title = `${characterTitle} Tekken 8 ${version === 'S2' ? 'Season 2 ' : 'Season 3 '}Guide ${author ? `by ${author}` : ''} | TekkenDocs`;
-  const description = `An overview of the most important information for ${characterTitle} in Tekken 8. Quickly learn how to play the character by learning key moves, punishers, and combos.`;
+  const language = loaderData?.language ?? 'en';
+  const texts = guideTexts[language];
+  const title = texts.metaTitle({
+    character: characterTitle,
+    season: version === 'S2' ? 2 : 3,
+    author,
+  });
+  const description = texts.metaDescription({ character: characterTitle });
 
   const imageUrl = `/t8/guides/${characterId}-1200.png`;
 
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Article',
+    inLanguage: language,
     headline: title,
     description: description,
     image: imageUrl,
@@ -262,17 +269,21 @@ export default function Index() {
   };
 
   const version = characterGuideAuthors.T8[characterId]?.version;
+  const texts = guideTexts[language];
 
   return (
     <GuideContext
       value={{
         compressedCommandMap,
         charUrl: `/${gameId}/${characterId}`,
+        texts,
       }}
     >
       <h1 className="sr-only">
-        {characterId} {gameNameMap[game]}{' '}
-        {version === 'S3' ? 'Season 3' : 'Season 2'} Guide
+        {texts.pageHeading({
+          character: characterId,
+          season: version === 'S3' ? 3 : 2,
+        })}
       </h1>
       <img
         src={t8GuideImgSmallMap[characterId]}
@@ -289,21 +300,29 @@ export default function Index() {
         lang={language}
         dir={getGuideLanguageDir(language)}
       >
-        <GuideTranslationNotice language={language} />
+        <GuideTranslationNotice />
         {!!authors?.length && (
           <div className="mt-4">
-            <Authors authors={authors} />
+            <Authors authors={authors} label={texts.writtenBy} />
           </div>
         )}
         {!!contributors?.length && (
           <div className="mt-2">
             <div>
-              <span>Contributors : </span>
-              <PersonLinkList persons={contributors} />
+              {texts.contributors}: <PersonLinkList persons={contributors} />
             </div>
           </div>
         )}
-        {about && <About about={about} />}
+        {about && (
+          <About
+            about={about}
+            labels={{
+              lastUpdated: texts.lastUpdated,
+              gameVersion: texts.gameVersion,
+              locale: language,
+            }}
+          />
+        )}
         <GuideNav guideData={guideData}></GuideNav>
         {!!aboutAuthor?.length && <AboutAuthor sections={aboutAuthor} />}
         {introduction?.length && <Introduction sections={introduction} />}
@@ -314,7 +333,7 @@ export default function Index() {
         {!!gamePlan?.length && <GamePlan sections={gamePlan} />}
         {installments?.length && <Installments installments={installments} />}
         {top10Moves?.length && (
-          <KeyMoves moves={top10Moves} title="Top 10 Moves" />
+          <KeyMoves moves={top10Moves} section="topMoves" />
         )}
         {(standingPunishers?.length ||
           crouchingPunishers?.length ||
@@ -325,29 +344,29 @@ export default function Index() {
             whiff={whiffPunishers}
           />
         )}
-        {combos?.length && <Combos combos={combos} title="Combos" />}
+        {combos?.length && <Combos combos={combos} section="combos" />}
         {combosBeginner?.length && (
-          <Combos combos={combosBeginner} title="Beginner Combos" />
+          <Combos combos={combosBeginner} section="beginnerCombos" />
         )}
         {comboEnders?.length && <ComboEnders comboEnders={comboEnders} />}
         {wallCombos?.length && <WallCombos wallCombos={wallCombos} />}
         {smallCombos?.length && (
-          <Combos combos={smallCombos} title="Small Combos" />
+          <Combos combos={smallCombos} section="smallCombos" />
         )}
         {notableMoves?.length && (
-          <KeyMoves moves={notableMoves} title="Notable Moves" />
+          <KeyMoves moves={notableMoves} section="notableMoves" />
         )}
         {stances?.length && <Stances stances={stances} />}
         {panicMoves?.length && (
-          <KeyMoves moves={panicMoves} title="Panic Moves" />
+          <KeyMoves moves={panicMoves} section="panicMoves" />
         )}
         {frameTraps?.length && <FrameTraps frameTraps={frameTraps} />}
         {knowledgeChecks?.length && (
-          <KeyMoves moves={knowledgeChecks} title="Knowledge Checks" />
+          <KeyMoves moves={knowledgeChecks} section="knowledgeChecks" />
         )}
         {defensiveTips?.length && <DefensiveTips tips={defensiveTips} />}
         {defensiveMoves?.length && (
-          <KeyMoves moves={defensiveMoves} title="Defensive Move Handling" />
+          <KeyMoves moves={defensiveMoves} section="defensiveMoveHandling" />
         )}
         {!!(goodMatchups?.length || badMatchups?.length) && (
           <Matchups good={goodMatchups} bad={badMatchups} />

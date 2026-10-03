@@ -1,4 +1,5 @@
 import { Command } from '~/components/Command';
+import { getGuideSectionId } from '~/features/guideLanguage/texts/guideTexts';
 import { useGuideContext } from './GuideContext';
 import { type ComboEnder } from './GuideData';
 import { GuideSectionHeading } from './GuideSectionHeading';
@@ -11,20 +12,20 @@ export const ComboEnders = ({ comboEnders }: ComboEndersProps) => {
   const carry = comboEnders.filter((c) => c.type === 'carry');
   const floorBreak = comboEnders.filter((c) => c.type === 'floor_break');
   const wallBreak = comboEnders.filter((c) => c.type === 'wall_break');
+  const { texts } = useGuideContext();
 
   return (
-    <section
-      className="my-6 mb-10"
-      id={'Combo Enders'.toLowerCase().replace(/ /g, '-')}
-    >
-      <GuideSectionHeading title="Combo Enders" />
+    <section className="my-6 mb-10" id={getGuideSectionId('comboEnders')}>
+      <GuideSectionHeading section="comboEnders" />
       <div className="flex gap-2 md:gap-4 lg:gap-8">
-        {!!carry.length && <EnderList title="Carry" enders={carry} />}
+        {!!carry.length && (
+          <EnderList title={texts.carryEnders} enders={carry} />
+        )}
         {!!floorBreak.length && (
-          <EnderList title="Floor break" enders={floorBreak} />
+          <EnderList title={texts.floorBreakEnders} enders={floorBreak} />
         )}
         {!!wallBreak.length && (
-          <EnderList title="Wall break" enders={wallBreak} />
+          <EnderList title={texts.wallBreakEnders} enders={wallBreak} />
         )}
       </div>
     </section>

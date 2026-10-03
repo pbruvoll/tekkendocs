@@ -57,7 +57,7 @@ type MatchupListProps = {
   type: 'good' | 'bad';
 };
 const MatchupList = ({ matchups, type }: MatchupListProps) => {
-  const { charUrl, compressedCommandMap } = useGuideContext();
+  const { charUrl, compressedCommandMap, texts } = useGuideContext();
   // charUrl is "/<game>/<character>", the character links need just the game
   const gameUrl = charUrl.slice(0, charUrl.lastIndexOf('/'));
   return (
@@ -67,12 +67,12 @@ const MatchupList = ({ matchups, type }: MatchupListProps) => {
         size="4"
         className={cx(
           type === 'good'
-            ? 'border-l-4 border-success bg-success/20 text-foreground-success'
-            : 'border-l-4 border-destructive bg-destructive/20 text-foreground-destructive',
+            ? 'border-s-4 border-success bg-success/20 text-foreground-success'
+            : 'border-s-4 border-destructive bg-destructive/20 text-foreground-destructive',
           'p-2',
         )}
       >
-        {type === 'good' ? 'Good matchups' : 'Bad matchups'}
+        {type === 'good' ? texts.goodMatchups : texts.badMatchups}
       </Heading>
       {matchups.map(({ characters, description }) => (
         <section key={characters.join('|')} className="my-4">
@@ -97,7 +97,7 @@ type MatchupsProps = {
 export const Matchups = ({ good, bad }: MatchupsProps) => {
   return (
     <section className="my-6 mb-10" id="matchups">
-      <GuideSectionHeading title="Matchups" />
+      <GuideSectionHeading section="matchups" />
       <div className="grid-cols-2 gap-6 md:grid">
         {!!good?.length && <MatchupList matchups={good} type="good" />}
         {!!bad?.length && <MatchupList matchups={bad} type="bad" />}

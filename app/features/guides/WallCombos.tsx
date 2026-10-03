@@ -1,4 +1,5 @@
 import { Command } from '~/components/Command';
+import { getGuideSectionId } from '~/features/guideLanguage/texts/guideTexts';
 import { useGuideContext } from './GuideContext';
 import { type WallCombo } from './GuideData';
 import { GuideSectionHeading } from './GuideSectionHeading';
@@ -10,17 +11,17 @@ type WallCombosProps = {
 export const WallCombos = ({ wallCombos }: WallCombosProps) => {
   const normal = wallCombos.filter((c) => c.type === 'normal');
   const tornado = wallCombos.filter((c) => c.type === 'tornado');
+  const { texts } = useGuideContext();
 
   return (
-    <section
-      className="my-6 mb-10"
-      id={'Wall Combos'.toLowerCase().replace(/ /g, '-')}
-    >
-      <GuideSectionHeading title="Wall Combos" />
+    <section className="my-6 mb-10" id={getGuideSectionId('wallCombos')}>
+      <GuideSectionHeading section="wallCombos" />
       <div className="flex gap-2 md:gap-4 lg:gap-8">
-        {!!normal.length && <EnderList title="Normal" enders={normal} />}
+        {!!normal.length && (
+          <EnderList title={texts.normalWallCombos} enders={normal} />
+        )}
         {!!tornado.length && (
-          <EnderList title="With tornado" enders={tornado} />
+          <EnderList title={texts.tornadoWallCombos} enders={tornado} />
         )}
       </div>
     </section>

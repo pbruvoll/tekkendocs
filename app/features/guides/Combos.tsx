@@ -1,4 +1,8 @@
 import { Commands } from '~/components/Commands';
+import {
+  type GuideSectionKey,
+  getGuideSectionId,
+} from '~/features/guideLanguage/texts/guideTexts';
 import { useGuideContext } from './GuideContext';
 import { type Combo } from './GuideData';
 import { GuideSectionHeading } from './GuideSectionHeading';
@@ -6,13 +10,13 @@ import { formatCombo } from './guideUtils';
 
 type CombosProps = {
   combos: Combo[];
-  title: string;
+  section: GuideSectionKey;
 };
-export const Combos = ({ combos, title }: CombosProps) => {
+export const Combos = ({ combos, section }: CombosProps) => {
   const { charUrl, compressedCommandMap } = useGuideContext();
   return (
-    <section className="my-6 mb-10" id={title.toLowerCase().replace(/ /g, '-')}>
-      <GuideSectionHeading title={title} />
+    <section className="my-6 mb-10" id={getGuideSectionId(section)}>
+      <GuideSectionHeading section={section} />
       {combos.map(({ combo, starter }) => (
         <section key={starter} className="my-2 mb-4">
           <Commands

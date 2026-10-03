@@ -9,6 +9,10 @@ import { PlayTextAudioButton } from '~/components/PlayTextAudioButton';
 import { TextWithCommand } from '~/components/TextWithCommand';
 import { HeartButton } from '~/features/favorites/HeartButton';
 import { useAreFavorites } from '~/features/favorites/useFavorites';
+import {
+  type GuideSectionKey,
+  getGuideSectionId,
+} from '~/features/guideLanguage/texts/guideTexts';
 import { type Move, type MoveT8 } from '~/types/Move';
 import { compressCommand } from '~/utils/commandUtils';
 import { useGuideContext } from './GuideContext';
@@ -18,13 +22,13 @@ import { MoveSummary } from './MoveSummary';
 
 type KeyMovesProps = {
   moves: KeyMove[];
-  title: string;
+  section: GuideSectionKey;
 };
-export const KeyMoves = ({ moves, title }: KeyMovesProps) => {
+export const KeyMoves = ({ moves, section }: KeyMovesProps) => {
   const { charUrl, compressedCommandMap } = useGuideContext();
   return (
-    <section className="my-6 mb-10" id={title.toLowerCase().replace(/ /g, '-')}>
-      <GuideSectionHeading title={title} />
+    <section className="my-6 mb-10" id={getGuideSectionId(section)}>
+      <GuideSectionHeading section={section} />
       {moves.map(({ command, description }) => (
         <section key={command} className="my-2 mb-4">
           <KeyMoveHeading
@@ -62,6 +66,7 @@ const KeyMoveHeading = ({
   charUrl: string;
 }) => {
   const [showVideo, setShowVideo] = useState(false);
+  const { texts } = useGuideContext();
 
   const splitCommand = command.split(' | ');
 
@@ -104,7 +109,9 @@ const KeyMoveHeading = ({
               size={15}
             />
           )}
-          {description && <PlayTextAudioButton text={description} />}
+          {description && (
+            <PlayTextAudioButton text={description} labels={texts.audio} />
+          )}
         </div>
       </div>
       <AnimatePresence>
@@ -138,6 +145,7 @@ const ToogleVideoButton = ({
   setShowVideo: (show: boolean) => void;
   className?: string;
 }) => {
+  const { texts } = useGuideContext();
   return (
     <Button
       type="button"
@@ -151,7 +159,7 @@ const ToogleVideoButton = ({
       )}
       onClick={() => setShowVideo(!showVideo)}
     >
-      {showVideo ? 'Hide video' : 'Show video'}
+      {showVideo ? texts.hideVideo : texts.showVideo}
     </Button>
   );
 };

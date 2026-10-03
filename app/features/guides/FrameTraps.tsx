@@ -10,7 +10,7 @@ export const FrameTraps = ({ frameTraps }: FrameTrapsProps) => {
   const { charUrl, compressedCommandMap } = useGuideContext();
   return (
     <section className="my-6 mb-10" id="frame-traps">
-      <GuideSectionHeading title="Frame Traps" />
+      <GuideSectionHeading section="frameTraps" />
       {frameTraps.map(({ starter, trap }) => (
         <section key={starter} className="my-2 mb-4">
           <Commands

@@ -8,7 +8,7 @@ type CoreProps = {
   type: 'strengths' | 'weaknesses';
 };
 const Core = ({ section, type }: CoreProps) => {
-  const { charUrl, compressedCommandMap } = useGuideContext();
+  const { charUrl, compressedCommandMap, texts } = useGuideContext();
   return (
     <section className="mb-4" id={type}>
       <Heading
@@ -16,12 +16,12 @@ const Core = ({ section, type }: CoreProps) => {
         size="4"
         className={cx(
           type === 'strengths'
-            ? 'border-l-4 border-success bg-success/20 text-foreground-success'
-            : 'border-l-4 border-destructive bg-destructive/20 text-foreground-destructive',
+            ? 'border-s-4 border-success bg-success/20 text-foreground-success'
+            : 'border-s-4 border-destructive bg-destructive/20 text-foreground-destructive',
           'p-2',
         )}
       >
-        {type === 'strengths' ? 'Strengths' : 'Weaknesses'}
+        {texts.sections[type]}
       </Heading>
       <ul className="mt-2">
         {section.map((section, index) => (

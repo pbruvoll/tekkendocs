@@ -2,12 +2,14 @@ import { type PersonLink, PersonLinkList } from './PersonLinkList';
 
 type AuthorsProps = {
   authors: PersonLink[];
+  /** Text before the authors, for pages in another language */
+  label?: string;
 };
-export const Authors = ({ authors }: AuthorsProps) => {
+export const Authors = ({ authors, label = 'Written by' }: AuthorsProps) => {
   return (
     <div>
-      <span>Written by </span>
-      <PersonLinkList persons={authors} />
+      {/* plain text, so it sets the line's direction in rtl guides */}
+      {label} <PersonLinkList persons={authors} />
     </div>
   );
 };

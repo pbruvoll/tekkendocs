@@ -1,4 +1,9 @@
 import { Link } from 'react-router';
+import {
+  type GuideSectionKey,
+  getGuideSectionId,
+} from '~/features/guideLanguage/texts/guideTexts';
+import { useGuideContext } from './GuideContext';
 import { type GuideData } from './GuideData';
 
 type GuideNavProps = {
@@ -6,42 +11,43 @@ type GuideNavProps = {
 };
 
 export const GuideNav = ({ guideData }: GuideNavProps) => {
+  const { texts } = useGuideContext();
   const navItems = [
-    !!guideData.introduction && 'Introduction',
-    !!guideData.strengths && 'Strengths',
-    !!guideData.weaknesses && 'Weaknesses',
-    !!guideData.heatSystem && 'Heat System',
-    !!guideData.gamePlan?.length && 'Game Plan',
-    !!guideData.installments && 'Installments',
-    !!guideData.keyMoves && 'Top 10 Moves',
-    !!guideData.standingPunishers && 'Punishers',
-    !!guideData.combos && 'Combos',
-    !!guideData.keyMoves && guideData.keyMoves.length > 10 && 'Notable Moves',
-    !!guideData.stances && 'Stances',
-    !!guideData.panicMoves && 'Panic Moves',
-    !!guideData.frameTraps && 'Frame Traps',
-    !!guideData.knowledgeChecks && 'Knowledge Checks',
-    !!(guideData.defensiveTips || guideData.defensiveMoves) && 'Defensive Tips',
+    !!guideData.introduction && 'introduction',
+    !!guideData.strengths && 'strengths',
+    !!guideData.weaknesses && 'weaknesses',
+    !!guideData.heatSystem && 'heatSystem',
+    !!guideData.gamePlan?.length && 'gamePlan',
+    !!guideData.installments && 'installments',
+    !!guideData.keyMoves && 'topMoves',
+    !!guideData.standingPunishers && 'punishers',
+    !!guideData.combos && 'combos',
+    !!guideData.keyMoves && guideData.keyMoves.length > 10 && 'notableMoves',
+    !!guideData.stances && 'stances',
+    !!guideData.panicMoves && 'panicMoves',
+    !!guideData.frameTraps && 'frameTraps',
+    !!guideData.knowledgeChecks && 'knowledgeChecks',
+    !!(guideData.defensiveTips || guideData.defensiveMoves) && 'defensiveTips',
     !!(guideData.goodMatchups?.length || guideData.badMatchups?.length) &&
-      'Matchups',
-    !!guideData.externalResources && 'External Resources',
-  ].filter(Boolean) as string[];
+      'matchups',
+    !!guideData.externalResources && 'externalResources',
+  ].filter(Boolean) as GuideSectionKey[];
 
   if (!navItems.length) return null;
 
   return (
     <nav className="mt-4">
       <p className="mb-1.5 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
-        In this guide
+        {texts.inThisGuide}
       </p>
       <div className="flex flex-wrap gap-1">
-        {navItems.map((name) => (
+        {navItems.map((section) => (
           <Link
-            key={name}
-            to={`#${name.toLowerCase().replace(/ /g, '-')}`}
-            className="rounded-r-full border border-border border-l-2 border-l-primary bg-muted/50 py-px pl-1.5 pr-2 text-sm text-primary transition-colors hover:bg-muted"
+            key={section}
+            to={`#${getGuideSectionId(section)}`}
+            className="rounded-e-full border border-border border-s-2 border-s-primary bg-muted/50 py-px ps-1.5 pe-2 text-sm text-primary transition-colors hover:bg-muted"
           >
-            {name}
+            {texts.sections[section]}
           </Link>
         ))}
       </div>

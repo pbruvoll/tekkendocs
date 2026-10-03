@@ -14,7 +14,7 @@ export const Stances = ({ stances }: StancesProps) => {
   const { charUrl, compressedCommandMap } = useGuideContext();
   return (
     <section className="my-6 mb-10" id="stances">
-      <GuideSectionHeading title="Stances" />
+      <GuideSectionHeading section="stances" />
       {stances.map(({ type, command, description }, index) => (
         <section
           key={command}

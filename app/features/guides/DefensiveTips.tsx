@@ -11,7 +11,7 @@ export const DefensiveTips = ({ tips }: DefensiveTipsProps) => {
   const { charUrl, compressedCommandMap } = useGuideContext();
   return (
     <section className="my-6 mb-10" id="defensive-tips">
-      <GuideSectionHeading title="Defensive tips" />
+      <GuideSectionHeading section="defensiveTips" />
       {tips.map(({ title, description }) => (
         <section key={title} className="my-2 mb-4">
           <Heading as="h3" mb="1" size="3">
