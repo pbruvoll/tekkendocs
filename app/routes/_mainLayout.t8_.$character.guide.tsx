@@ -11,7 +11,9 @@ import { About } from '~/components/About';
 import { Authors } from '~/components/Authors';
 import { ContentContainer } from '~/components/ContentContainer';
 import { PersonLinkList } from '~/components/PersonLinkList';
+import { GuideTranslationNotice } from '~/features/guideLanguage/GuideTranslationNotice';
 import {
+  getGuideLanguageDir,
   guideLanguageParam,
   parseGuideLanguage,
 } from '~/features/guideLanguage/guideLanguage';
@@ -282,7 +284,12 @@ export default function Index() {
         className="m-2 mx-auto aspect-[1.77] w-full max-w-4xl max-md:hidden"
         alt=""
       ></img>
-      <ContentContainer enableBottomPadding lang={language}>
+      <ContentContainer
+        enableBottomPadding
+        lang={language}
+        dir={getGuideLanguageDir(language)}
+      >
+        <GuideTranslationNotice language={language} />
         {!!authors?.length && (
           <div className="mt-4">
             <Authors authors={authors} />

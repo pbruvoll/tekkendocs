@@ -1,4 +1,4 @@
-export const guideLanguages = ['en', 'ko'] as const;
+export const guideLanguages = ['en', 'ko', 'ja', 'es', 'ur'] as const;
 
 export type GuideLanguage = (typeof guideLanguages)[number];
 
@@ -13,3 +13,9 @@ export const parseGuideLanguage = (value: string | null): GuideLanguage => {
     ? (language as GuideLanguage)
     : defaultGuideLanguage;
 };
+
+const rtlGuideLanguages: readonly GuideLanguage[] = ['ur'];
+
+/** Text direction of a guide language. Undefined means the page default (ltr) */
+export const getGuideLanguageDir = (language: GuideLanguage) =>
+  rtlGuideLanguages.includes(language) ? 'rtl' : undefined;
