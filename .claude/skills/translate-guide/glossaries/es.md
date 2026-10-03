@@ -28,7 +28,8 @@ Rage Art).
 | punish | castigo / castigar | "castigar whiffs" for whiff punish |
 | plus / minus frames | ventaja / desventaja de frames | "queda en -3", "+6 al bloqueo" |
 | on block / on hit | al bloqueo / al golpear | |
-| guaranteed | garantizado | |
+| guaranteed | garantizado | with *estar*: "está garantizado", never "es garantizado" |
+| down jab (d+1, db+1) | jab agachado | not "jab bajo", which reads as a low-hitting jab |
 | throw / grab | agarre | crouch throw → agarre agachado |
 | tackle | tacleada / taclear | LatAm; Spain says placaje |
 | crouch / full crouch | agachado | "desde agachado" |
@@ -48,6 +49,13 @@ Rage Art).
 ## Character names
 
 Same as English (Dragunov, Hwoarang, Bryan, Zafina, Lili, Kuma/Panda).
+
+## Paul
+
+Keep the move and stance names in English: Deathfist, Demolition Man (demoman), Hammer of the Gods,
+shredder, hatchet kick, sway / backsway, backsway cancel, Deep Dive, guard break, fuzzy duck, tech
+roll, oki, frame tight, keep-out. Translated: "range 2/3" → rango 2/3, "litmus test" → prueba de
+fuego, side-switching throws → agarres que cambian de lado.
 
 ## Register
 

@@ -72,6 +72,10 @@ parsed into frame-data links, so they must stay verbatim. Do not replace `"1,2,1
 Quoted English words like `"electric"` or `"Knowledge check"` are also links/bold text: keep them.
 Unquoted notation in prose (e.g. `F+3, 1+2`) is plain text; keep it verbatim too.
 
+Guides refer to other characters' moves and stances by abbreviation (`AOP` is Ling Xiaoyu's Art of
+Phoenix, `Hwo df+4` is Hwoarang's). Never guess the owner when adding context in a translation:
+check, or keep just the abbreviation as the source does.
+
 ## Row shape quirks
 
 Some rows genuinely have fewer columns than their section's header (e.g. Dragunov's
@@ -89,6 +93,10 @@ Notation (`df+1,4`, `SNK 2 T!`) therefore stays left-to-right. Two things to do 
   displays `-13` as `13-`. Notation columns are untouched.
 - Prefer transliterating loanwords into the script over Latin words, so prose is not broken up by
   left-to-right runs. Keep Latin only for notation and abbreviations like `SNK`, `KND`, `i10`.
+- Start every cell with a word in the script, never with unquoted notation or a Latin name: a
+  paragraph whose first letter is Latin is laid out left-to-right. Write `پال کا مرکزی مڈ پوک Df1`,
+  not `Df1 پال کا…`, and `ویڈیو، از Mwkan7`, not `Mwkan7 کی ویڈیو`. Quoted commands and markdown
+  links don't count, they are isolated. The `build` command reports these.
 
 Check the result in a browser (`?lang=<lang>&preview=true`), especially the punishers and stances.
 

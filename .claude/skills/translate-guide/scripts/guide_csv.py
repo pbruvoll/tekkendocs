@@ -47,6 +47,8 @@ PROSE_COLUMNS = {
 }
 
 QUOTED = re.compile(r'".*?"')  # same split as app/components/TextWithCommand.tsx
+RTL_LANGUAGES = {'ur'}  # rtlGuideLanguages in app/features/guideLanguage/guideLanguage.ts
+LINK_URL = re.compile(r'\]\(([^)]+)\)')  # [label](url) in app/components/TextWithLinks.tsx, labels may be translated
 
 
 def load(path):
@@ -58,6 +60,14 @@ def dump(rows):
     buf = io.StringIO(newline='')
     csv.writer(buf, delimiter=SEP).writerows(rows)
     return buf.getvalue().encode('utf-8')
+
+
+def starts_with_latin(text):
+    """True when the first letter outside quoted commands and markdown links is latin.
+    Each guide paragraph takes the direction of its first letter (unicode-bidi: plaintext)."""
+    text = re.sub(r'\[[^\]]*\]\([^)]*\)', '', QUOTED.sub('', text))
+    first = re.search(r'[^\W\d_]', text)
+    return bool(first and first.group().isascii())
 
 
 def prose_cells(rows):
@@ -116,6 +126,11 @@ def cmd_build(char, lang, translations_path):
         if a != b:
             errors.append(f'quoted commands differ in ({rec}, {col}): '
                           f'lost {dict(a - b)}, added {dict(b - a)}')
+        if lang in RTL_LANGUAGES and starts_with_latin(cell):
+            errors.append(f'({rec}, {col}) starts with a latin word, so the paragraph renders left-to-right: '
+                          f'reword it to start with a word in the script, e.g. {cell[:30]!r}')
+        if collections.Counter(LINK_URL.findall(src)) != collections.Counter(LINK_URL.findall(cell)):
+            errors.append(f'markdown link urls differ in ({rec}, {col})')
 
     target = GUIDES / char / f'{char}-guide-{lang}.csv'
     target.write_bytes(dump(out))

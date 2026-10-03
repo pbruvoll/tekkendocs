@@ -46,6 +46,7 @@ Keep in Latin only notation and abbreviations: `SNK`, `PGN`, `KND`, `SSL`, `i10`
 | wall splat | وال اسپلیٹ | |
 | knockdown | گرانا (KND) | |
 | throw / tackle | تھرو / ٹیکل | |
+| throw out (a move) | بلا جھجک استعمال کرنا | not پھینکنا, which means throwing an object |
 | sabaki / parry / reversal | سباکی / پیری / ریورسل | |
 | pushback | پش بیک | |
 | hitbox | ہٹ باکس | |
@@ -80,6 +81,21 @@ Keep in Latin only notation and abbreviations: `SNK`, `PGN`, `KND`, `SSL`, `i10`
 | Kuma / Panda | کوما/پانڈا |
 | Pigeon Roll | پیجن رول |
 | Sneak (SNK) | سنیک (SNK) |
+
+## Paul
+
+| English | Urdu |
+| --- | --- |
+| Deathfist | ڈیتھ فسٹ |
+| Demolition Man | ڈیمولیشن مین |
+| sway / backsway / backsway cancel | سوے / بیک سوے / بیک سوے کینسل |
+| Deep Dive | ڈیپ ڈائیو |
+| guard break | گارڈ بریک |
+| fuzzy duck | فزی ڈک |
+| tech roll | ٹیک رول |
+| oki | اوکی |
+| range 2/3 | رینج 2 یا 3 |
+| Lidia / Steve / Clive / Anna / Mishimas | لیڈیا / اسٹیو / کلائیو / اینا / مشیما کریکٹرز |
 
 ## Register
 
