@@ -40,7 +40,8 @@ const PunisherList = ({
             charUrl={charUrl}
             compressedCommandMap={compressedCommandMap}
           />{' '}
-          {description ? `(${description})` : ''}
+          {/* own element, so a translated rtl description keeps its direction */}
+          {description ? <span>({description})</span> : ''}
         </div>
       ))}
     </section>
