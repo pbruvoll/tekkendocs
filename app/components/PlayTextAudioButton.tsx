@@ -4,14 +4,29 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { normalizeSpeechText } from '~/utils/speechUtils';
 
+type PlayTextAudioButtonLabels = {
+  play: string;
+  stop: string;
+  notSupported: string;
+};
+
+const defaultLabels: PlayTextAudioButtonLabels = {
+  play: 'Play audio',
+  stop: 'Stop audio playback',
+  notSupported: 'Audio playback is not supported',
+};
+
 type PlayTextAudioButtonProps = {
   text: string;
   className?: string;
+  /** Accessible labels, for pages in another language */
+  labels?: PlayTextAudioButtonLabels;
 };
 
 export const PlayTextAudioButton = ({
   text,
   className,
+  labels = defaultLabels,
 }: PlayTextAudioButtonProps) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isSupported, setIsSupported] = useState(false);
@@ -24,7 +39,7 @@ export const PlayTextAudioButton = ({
     setIsPlaying(false);
   }, []);
 
-  const handleClick = () => {
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     if (!isSupported || !hasText) {
       return;
     }
@@ -41,7 +56,9 @@ export const PlayTextAudioButton = ({
     }
 
     const utterance = new SpeechSynthesisUtterance(normalizedText);
-    utterance.lang = document.documentElement.lang || 'en-US';
+    // the nearest lang, so a translated guide is read with a voice for its language
+    utterance.lang =
+      event.currentTarget.closest('[lang]')?.getAttribute('lang') || 'en-US';
     utterance.onstart = () => {
       setIsPlaying(true);
     };
@@ -87,10 +104,10 @@ export const PlayTextAudioButton = ({
       )}
       aria-label={
         isPlaying
-          ? 'Stop audio playback'
+          ? labels.stop
           : isSupported
-            ? 'Play audio'
-            : 'Audio playback is not supported'
+            ? labels.play
+            : labels.notSupported
       }
     >
       {isPlaying ? (

@@ -9,7 +9,7 @@ export const Introduction = ({ sections }: IntroductionProps) => {
   const { charUrl, compressedCommandMap } = useGuideContext();
   return (
     <section id="introduction" className="my-6 mb-10">
-      <GuideSectionHeading title="Introduction" />
+      <GuideSectionHeading section="introduction" />
       {sections.map((section, index) => (
         <p key={index} className="my-2 mb-4">
           <TextWithCommand

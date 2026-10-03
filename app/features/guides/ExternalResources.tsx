@@ -8,7 +8,7 @@ export const ExternalResources = ({
 }) => {
   return (
     <section className="my-4 mb-8" id="external-resources">
-      <GuideSectionHeading title="External Resources" />
+      <GuideSectionHeading section="externalResources" />
 
       <ul>
         {externalResources.map((resource) => (

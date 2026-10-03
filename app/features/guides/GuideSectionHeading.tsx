@@ -1,15 +1,18 @@
 import { Heading } from '@radix-ui/themes';
+import { type GuideSectionKey } from '~/features/guideLanguage/texts/guideTexts';
+import { useGuideContext } from './GuideContext';
 
 type GuideSectionHeadingProps = {
-  title: string;
+  section: GuideSectionKey;
 };
-export const GuideSectionHeading = ({ title }: GuideSectionHeadingProps) => {
+export const GuideSectionHeading = ({ section }: GuideSectionHeadingProps) => {
+  const { texts } = useGuideContext();
   return (
     <>
-      <Heading as="h2" size="5" className="border-l-4 border-primary pl-3">
-        {title}
+      <Heading as="h2" size="5" className="border-s-4 border-primary ps-3">
+        {texts.sections[section]}
       </Heading>
-      <div className="mb-4 mt-2 h-px bg-linear-to-r from-primary/40 to-transparent" />
+      <div className="mb-4 mt-2 h-px bg-linear-to-r rtl:bg-linear-to-l from-primary/40 to-transparent" />
     </>
   );
 };

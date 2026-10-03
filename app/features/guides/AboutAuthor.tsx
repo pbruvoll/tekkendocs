@@ -7,7 +7,7 @@ type AboutAuthorProps = {
 export const AboutAuthor = ({ sections }: AboutAuthorProps) => {
   return (
     <section id="about-the-author" className="my-6 mb-10">
-      <GuideSectionHeading title="About the Author" />
+      <GuideSectionHeading section="aboutTheAuthor" />
       {sections.map((section, index) => (
         <p key={index} className="my-2 mb-4">
           <TextWithLinks text={section} />
