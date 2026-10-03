@@ -1,4 +1,4 @@
-export const guideLanguages = ['en', 'ko', 'ja', 'es', 'ur'] as const;
+export const guideLanguages = ['en', 'ko', 'ja', 'es', 'ur', 'ru'] as const;
 
 export type GuideLanguage = (typeof guideLanguages)[number];
 
