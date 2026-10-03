@@ -82,7 +82,27 @@ Use the Korean names Korean players use, not a transliteration of the English sp
 | Bryan | 브라이언 |
 | Zafina | 자피나 |
 | Lili | 릴리 |
-| Kuma / Panda | 쿠마 / 판다 |
+| Kuma / Panda | 쿠마 / 판다 ("Bear" in a guide means these two) |
+| Xiaoyu | 샤오유 (AOP is her stance, not Zafina's) |
+
+## Paul
+
+| English | Korean | Note |
+| --- | --- | --- |
+| Deathfist (qcf+2) | 붕권 | community and frame-data sites |
+| sway / backsway (qcb) | 스웨이 | "backsway cancel" → 스웨이 캔슬 |
+| Deep Dive | 딥 다이브 | community; the official name may be 이중 잠복 (unverified) |
+| df+1 | 왼어퍼 | community nickname; keep the notation in the text |
+| Demolition Man (d+4,2,1+2) | 데몰리션 맨 | transliteration, no Korean source found |
+| guard break | 가드 브레이크 | |
+| fuzzy guard / fuzzy duck | 퍼지 가드 | |
+| tech roll | 낙법 | |
+| oki (pressure on a downed opponent) | 다운 압박 | |
+| Hammer of the Gods, Shredder | (describe the move) | no Korean name found, don't invent one |
+
+Sources: [나무위키 — 폴 피닉스/기술](https://namu.wiki/w/%ED%8F%B4%20%ED%94%BC%EB%8B%89%EC%8A%A4/%EA%B8%B0%EC%88%A0),
+[철권8 마이너 갤러리 — 폴 왼어퍼 스웨이](https://m.dcinside.com/board/tk8/583144),
+[철권8 프레임표 — paul](https://tekken8.movelist.xyz/paul)
 
 ## Register
 

@@ -84,12 +84,21 @@ def fetchGuideRows(gSheet, titles):
     return rowsByTitle
 
 
+def toCrlf(cell):
+    """Line breaks inside a cell come from sheets as LF. The rows end with CRLF,
+    so use CRLF inside cells too. Then the file matches what git checks out with
+    core.autocrlf=true, and an unchanged sheet gives an unchanged file."""
+    return re.sub(r"\r?\n", "\r\n", cell)
+
+
 def writeGuide(characterId, rows):
     dirPath = os.path.join(outputRoot, characterId)
     os.makedirs(dirPath, exist_ok=True)
     filePath = os.path.join(dirPath, characterId + GUIDE_SUFFIX + ".csv")
     with open(filePath, "w", newline="", encoding="utf-8") as file:
-        csv.writer(file, delimiter=CSV_SEP).writerows(rows)
+        csv.writer(file, delimiter=CSV_SEP).writerows(
+            [[toCrlf(cell) for cell in row] for row in rows]
+        )
 
 
 characterIds = loadCharacterIds()

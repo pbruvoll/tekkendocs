@@ -89,7 +89,29 @@ record where it came from.
 | Kuma / Panda | クマ・パンダ |
 | Dragunov Sneak (SNK) | スニーク |
 | Dragunov Pigeon Roll (PGN) | ローリング |
+| Xiaoyu | シャオユウ |
 | Xiaoyu AOP | 鳳凰の構え |
+
+## Paul
+
+| English | Japanese | Note |
+| --- | --- | --- |
+| Deathfist (qcf+2) | 崩拳 | confirmed on the 鉄拳8 wiki |
+| sway / backsway (qcb) | スウェー | "backsway cancel" → スウェーキャンセル; generic term, the official stance name is unverified |
+| Deep Dive | ディープダイブ | katakana of the English name; the official name may be 二重潜り (unverified) |
+| Demolition Man (d+4,2,1+2) | デモリッションマン | transliteration, unverified |
+| guard break | ガードブレイク | |
+| fuzzy guard / fuzzy duck | ファジーガード | |
+| tech roll | 受け身 | |
+| oki | 起き攻め | |
+| range 2/3 | レンジ2〜3 | |
+| litmus test (reading the opponent) | リトマス試験紙 | |
+| Hammer of the Gods, Shredder | (describe the move) | no Japanese name confirmed, don't invent one |
+| Lidia / Steve / Clive / Anna | リディア / スティーブ / クライヴ / アンナ | |
+| Mishimas | 三島キャラ | |
+
+Sources: [鉄拳8 初心者向け攻略wiki — 崩拳](https://seesaawiki.jp/tekken8kouryaku/d/%CA%F8%B7%FD),
+[tettk.com — ポール攻略](https://tettk.com/%E3%80%90%E9%89%84%E6%8B%B38%E3%80%91%E3%83%9D%E3%83%BC%E3%83%AB%E3%81%AE%E4%B8%BB%E8%A6%81%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E3%83%BB%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AA%E3%83%BC/)
 
 ## Register
 
