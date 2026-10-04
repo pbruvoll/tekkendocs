@@ -5,7 +5,7 @@ import {
   getFavoriteKeys,
   toggleFavoriteKeys,
 } from '~/features/favorites/favoritesStore';
-import { type MoveT8 } from '~/types/Move';
+import { type Move } from '~/types/Move';
 
 const toggleFavoriteKeysInStore = (keys: string[]) => {
   if (!keys.length) return;
@@ -13,7 +13,7 @@ const toggleFavoriteKeysInStore = (keys: string[]) => {
   favoritesStore.write(toggleFavoriteKeys(favoritesStore.getSnapshot(), keys));
 };
 
-const toggleFavoriteMove = (move: MoveT8) =>
+const toggleFavoriteMove = (move: Move) =>
   toggleFavoriteKeysInStore(getFavoriteKeys([move]));
 
 /**
@@ -29,7 +29,7 @@ export function useFavorites() {
   );
 
   const isFavorite = useCallback(
-    (move: MoveT8) => favorites.has(getFavoriteKey(move)),
+    (move: Move) => favorites.has(getFavoriteKey(move)),
     [favorites],
   );
 
@@ -47,7 +47,7 @@ export function useFavorites() {
  * changes. An empty group is allowed, since hooks can't be called
  * conditionally.
  */
-export function useAreFavorites(moves: MoveT8[]) {
+export function useAreFavorites(moves: Move[]) {
   const keys = getFavoriteKeys(moves);
 
   const isFavorite = useSyncExternalStore(
@@ -68,6 +68,6 @@ export function useAreFavorites(moves: MoveT8[]) {
  * Subscribes to one move's favorite state. Takes undefined for a move that
  * isn't known yet, since hooks can't be called conditionally.
  */
-export function useIsFavorite(move: MoveT8 | undefined) {
+export function useIsFavorite(move: Move | undefined) {
   return useAreFavorites(move ? [move] : []);
 }

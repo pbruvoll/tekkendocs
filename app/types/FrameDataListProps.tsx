@@ -1,4 +1,4 @@
-import { type Move, type MoveT8 } from './Move';
+import { type Move } from './Move';
 import { type SortSettings } from './SortSettings';
 
 export type FrameDataListProps = {
@@ -9,6 +9,6 @@ export type FrameDataListProps = {
   forceShowCharacter?: boolean;
   className?: string;
   sortSettings?: SortSettings;
-  isFavorite?: (move: MoveT8) => boolean;
-  onToggleFavorite?: (move: MoveT8) => void;
+  isFavorite?: (move: Move) => boolean;
+  onToggleFavorite?: (move: Move) => void;
 };

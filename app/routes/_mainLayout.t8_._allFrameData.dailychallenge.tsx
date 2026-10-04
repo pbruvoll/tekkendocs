@@ -31,11 +31,7 @@ import {
 } from '~/features/frameQuiz/types';
 import { useAppState } from '~/hooks/useAppState';
 import tekkenDocsLogoIcon from '~/images/logo/tekkendocs-logo-icon.svg';
-import {
-  charIdFromMove,
-  commandToUrlSegmentEncoded,
-  isWavuMove,
-} from '~/utils/moveUtils';
+import { charIdFromMove, commandToUrlSegmentEncoded } from '~/utils/moveUtils';
 import { generateMetaTags } from '~/utils/seoUtils';
 import { type LoaderData } from './_mainLayout.t8_._allFrameData';
 
@@ -512,7 +508,7 @@ export default function DailyChallenge() {
 
   const getAnswerMoveHref = (answer: SessionAnswer): string | null => {
     const move = moveById.get(answer.moveId);
-    if (!move || !isWavuMove(move)) {
+    if (!move) {
       return null;
     }
 

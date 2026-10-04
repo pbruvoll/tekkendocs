@@ -5,10 +5,7 @@ import {
   useSearchParams,
 } from 'react-router';
 import { ContentContainer } from '~/components/ContentContainer';
-import {
-  getCharacterDisplayName,
-  getMoveId,
-} from '~/features/frameQuiz/moveSelection';
+import { getCharacterDisplayName } from '~/features/frameQuiz/moveSelection';
 import { MoveComparison } from '~/features/moveCompare/MoveComparison';
 import { MovePicker } from '~/features/moveCompare/MovePicker';
 import { charIdFromMove } from '~/utils/moveUtils';
@@ -57,7 +54,7 @@ export default function MoveCompare() {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const moveById = useMemo(
-    () => new Map(moves.map((move) => [getMoveId(move), move])),
+    () => new Map(moves.map((move) => [move.id, move])),
     [moves],
   );
 

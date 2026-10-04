@@ -8,7 +8,7 @@ import { useMemo } from 'react';
 import { Link, useLocation, useSearchParams } from 'react-router';
 import { orderByKey } from '~/constants/sortConstants';
 import { type FrameDataListProps } from '~/types/FrameDataListProps';
-import { type Move, type MoveT8 } from '~/types/Move';
+import { type Move } from '~/types/Move';
 import { type SortOrder } from '~/types/SortOrder';
 import { charIdFromMove, commandToUrlSegmentEncoded } from '~/utils/moveUtils';
 import { getSortSettings } from '~/utils/sortingUtils';
@@ -89,7 +89,7 @@ export const FrameDataTable = ({
       </Table.Header>
       <Table.Body>
         {moves.map((move) => {
-          const computedCharId = charId || charIdFromMove(move as MoveT8);
+          const computedCharId = charId || charIdFromMove(move);
           const moveUrl = `/${gameRouteId}/${computedCharId}/${commandToUrlSegmentEncoded(move.command)}`;
           return (
             <Table.Row key={move.moveNumber}>

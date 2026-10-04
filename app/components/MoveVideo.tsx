@@ -5,7 +5,7 @@ import ReactPlayer from 'react-player/youtube';
 import { useHydrated } from 'remix-utils/use-hydrated';
 import { cdnUrl, charVideoInfoT8 } from '~/services/staticDataService';
 import { type Move } from '~/types/Move';
-import { charIdFromMove, isWavuMove } from '~/utils/moveUtils';
+import { charIdFromMove } from '~/utils/moveUtils';
 
 export type MoveVideoProps = {
   move: Move;
@@ -34,7 +34,7 @@ export const MoveVideo = ({
     setPlaying(playingProp);
   }
 
-  const charId = isWavuMove(move) ? charIdFromMove(move) : undefined;
+  const charId = charIdFromMove(move);
 
   if (move.video && charId && isHydrated) {
     const videoBase =

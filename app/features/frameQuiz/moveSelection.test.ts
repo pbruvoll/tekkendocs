@@ -7,6 +7,8 @@ import {
 } from './moveSelection';
 
 const createMove = (move: Partial<Move>): Move => ({
+  id: 'King-1',
+  characterId: 'king',
   moveNumber: 1,
   command: '1',
   hitLevel: 'h',

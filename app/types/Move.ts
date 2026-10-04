@@ -1,4 +1,6 @@
 export type Move = {
+  id: string;
+  characterId: string;
   moveNumber: number;
   command: string;
   name?: string;
@@ -11,13 +13,9 @@ export type Move = {
   notes: string;
   tags?: Record<string, string>;
   transitions?: string[];
-  id?: string;
   ytVideo?: { id: string; start?: string; end?: string };
   image?: string;
   video?: string;
   recovery?: string;
   recoveryState?: string;
-  characterId?: string;
 };
-
-export type MoveT8 = Move & { id: string; characterId: string };

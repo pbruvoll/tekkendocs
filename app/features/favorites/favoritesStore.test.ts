@@ -1,8 +1,8 @@
 import { describe, expect, it } from 'vitest';
-import { type MoveT8 } from '~/types/Move';
+import { type Move } from '~/types/Move';
 import { getFavoriteKeys, toggleFavoriteKeys } from './favoritesStore';
 
-const move = (id: string) => ({ id }) as MoveT8;
+const move = (id: string) => ({ id }) as Move;
 
 describe('getFavoriteKeys', () => {
   it('keys moves on their id', () => {

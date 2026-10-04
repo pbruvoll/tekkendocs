@@ -26,7 +26,7 @@ export const loader = async () => {
   const normalMoves = sheetData.tables.find(
     (table) => table.name === 'frames_normal',
   );
-  const moves = normalMoves ? frameDataTableToJson(normalMoves) : [];
+  const moves = normalMoves ? frameDataTableToJson(normalMoves, 'mokujin') : [];
 
   return data<LoaderData>(
     { moves },

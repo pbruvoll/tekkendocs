@@ -6,6 +6,7 @@ import { type Move } from '~/types/Move';
 import { type Throw } from '~/types/Throw';
 import { cachified } from '~/utils/cache.server';
 import { getCacheControlHeaders } from '~/utils/headerUtils';
+import { createMoveId } from '~/utils/moveUtils';
 import {
   sheetSectionToTable,
   sheetToSections,
@@ -54,6 +55,8 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
   }
 
   const framesNormal = framesNormalTable.rows.map<Move>((row, index) => ({
+    id: createMoveId(character, row[0]),
+    characterId: character,
     moveNumber: index + 1,
     command: row[0],
     hitLevel: row[1],
