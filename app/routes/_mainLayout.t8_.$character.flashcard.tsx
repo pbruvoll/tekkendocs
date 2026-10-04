@@ -133,16 +133,16 @@ export default function FlashCard() {
       .filter(
         (m) =>
           !charFlashCardState.correct.includes(
-            showCharName ? m.wavuId! : m.command,
+            showCharName ? m.id! : m.command,
           ) &&
           !charFlashCardState.wrong.includes(
-            showCharName ? m.wavuId! : m.command,
+            showCharName ? m.id! : m.command,
           ) &&
           !charFlashCardState.ignored.includes(
-            showCharName ? m.wavuId! : m.command,
+            showCharName ? m.id! : m.command,
           ),
       )
-      .map((m) => (showCharName ? m.wavuId : m.command));
+      .map((m) => (showCharName ? m.id : m.command));
   }, [
     charFlashCardState.correct,
     charFlashCardState.ignored,
@@ -166,17 +166,17 @@ export default function FlashCard() {
     return {
       [FlashCardAnswer.Correct]: charFlashCardState.correct.filter((c) =>
         viableMovesSubSet.some((m) =>
-          showCharName ? m.wavuId === c : m.command === c,
+          showCharName ? m.id === c : m.command === c,
         ),
       ),
       [FlashCardAnswer.Wrong]: charFlashCardState.wrong.filter((c) =>
         viableMovesSubSet.some((m) =>
-          showCharName ? m.wavuId === c : m.command === c,
+          showCharName ? m.id === c : m.command === c,
         ),
       ),
       [FlashCardAnswer.Ignored]: charFlashCardState.ignored.filter((c) =>
         viableMovesSubSet.some((m) =>
-          showCharName ? m.wavuId === c : m.command === c,
+          showCharName ? m.id === c : m.command === c,
         ),
       ),
     };
@@ -191,7 +191,7 @@ export default function FlashCard() {
   const unseenMovesSubSet = useMemo(() => {
     return unseenMoves.filter((c) =>
       viableMovesSubSet.some((m) =>
-        showCharName ? m.wavuId === c : m.command === c,
+        showCharName ? m.id === c : m.command === c,
       ),
     );
   }, [showCharName, unseenMoves, viableMovesSubSet]);
@@ -215,7 +215,7 @@ export default function FlashCard() {
     }
     setMoveToShow(
       viableMovesSubSet.find((m) =>
-        showCharName ? m.wavuId === command : m.command === command,
+        showCharName ? m.id === command : m.command === command,
       ),
     );
   };
@@ -224,29 +224,29 @@ export default function FlashCard() {
     invariant(moveToShow);
     const newCharFlashCardState = {
       [FlashCardAnswer.Correct]: charFlashCardState.correct.filter((c) =>
-        showCharName ? c !== moveToShow.wavuId : c !== moveToShow.command,
+        showCharName ? c !== moveToShow.id : c !== moveToShow.command,
       ),
       [FlashCardAnswer.Wrong]: charFlashCardState.wrong.filter((c) =>
-        showCharName ? c !== moveToShow.wavuId : c !== moveToShow.command,
+        showCharName ? c !== moveToShow.id : c !== moveToShow.command,
       ),
       [FlashCardAnswer.Ignored]: charFlashCardState.ignored.filter((c) =>
-        showCharName ? c !== moveToShow.wavuId : c !== moveToShow.command,
+        showCharName ? c !== moveToShow.id : c !== moveToShow.command,
       ),
     };
     if (answer === 'correct') {
       newCharFlashCardState.correct = [
         ...newCharFlashCardState.correct,
-        showCharName ? moveToShow.wavuId! : moveToShow.command,
+        showCharName ? moveToShow.id! : moveToShow.command,
       ];
     } else if (answer === 'ignored') {
       newCharFlashCardState.ignored = [
         ...newCharFlashCardState.ignored,
-        showCharName ? moveToShow.wavuId! : moveToShow.command,
+        showCharName ? moveToShow.id! : moveToShow.command,
       ];
     } else if (answer === 'wrong') {
       newCharFlashCardState.wrong = [
         ...newCharFlashCardState.wrong,
-        showCharName ? moveToShow.wavuId! : moveToShow.command,
+        showCharName ? moveToShow.id! : moveToShow.command,
       ];
     }
     setFlashCardAppState({

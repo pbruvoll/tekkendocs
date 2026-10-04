@@ -17,7 +17,7 @@ export const parseBlockValue = (block: string): number | null => {
 };
 
 export const getMoveId = (move: Move): string => {
-  return move.wavuId || `${move.moveNumber}-${move.command}`;
+  return move.id || `${move.moveNumber}-${move.command}`;
 };
 
 export const getCharacterDisplayName = (charId: string): string =>

@@ -27,7 +27,7 @@ const moveIdToLabel = (moveId: string | null): string | null => {
   if (separatorIndex <= 0) {
     return null;
   }
-  const charId = charIdFromMove({ wavuId: moveId });
+  const charId = charIdFromMove({ id: moveId });
   return `${getCharacterDisplayName(charId)} ${moveId.slice(separatorIndex + 1)}`;
 };
 

@@ -71,10 +71,10 @@ export const meta: MetaFunction = ({ params, matches, location }) => {
     .concat(
       sortedMoves
         .slice(0, 9)
-        .map(({ command, hitLevel, damage, block, hit, wavuId }) =>
+        .map(({ command, hitLevel, damage, block, hit, id }) =>
           [
-            ...(characterId === 'mokujin' && wavuId
-              ? [charIdFromMove({ wavuId })]
+            ...(characterId === 'mokujin' && id
+              ? [charIdFromMove({ id })]
               : []),
             command,
             hitLevel,

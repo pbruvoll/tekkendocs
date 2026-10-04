@@ -67,7 +67,7 @@ export const frameDataTableToJson = (normalFrameData: TableData): Move[] => {
       hit: row[hitIndex],
       counterHit: row[counterHitIndex],
       notes: row[notesIndex],
-      wavuId: row[wavuIdIndex],
+      id: row[wavuIdIndex],
       tags: row[tagsIndex] ? tagStringToRecord(row[tagsIndex]) : undefined,
       transitions: row[transitionIndex]
         ? row[transitionIndex].split(',')
@@ -130,7 +130,7 @@ export const applyOverride = (
   moves.forEach((move, index) => {
     const override =
       overrideRecordByCommand[move.command] ||
-      overrideRecordByWavuId[move.wavuId || ''];
+      overrideRecordByWavuId[move.id || ''];
     if (override) {
       if (override.ytVideo) {
         move.ytVideo = override.ytVideo;
@@ -566,8 +566,8 @@ export const filterMoves = (
 
   if (filter.favorite) {
     filterFuncs.push((move: Move) => {
-      if (!move.wavuId) return false;
-      return favorites?.has(move.wavuId) === true;
+      if (!move.id) return false;
+      return favorites?.has(move.id) === true;
     });
   }
 
@@ -703,7 +703,7 @@ export const filterMoves = (
     const moveList = filter.moveList.toLowerCase();
     if (moveList === 's3new') {
       filterFuncs.push((move: Move) => {
-        return !!move.wavuId && newMovesT8s3.has(move.wavuId);
+        return !!move.id && newMovesT8s3.has(move.id);
       });
     }
   }
