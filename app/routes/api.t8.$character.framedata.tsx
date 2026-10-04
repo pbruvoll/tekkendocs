@@ -32,7 +32,9 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
   const { tables, characterName, editUrl } = sheetData;
 
   const normalMoves = tables.find((t) => t.name === 'frames_normal');
-  const moves: Move[] = normalMoves ? frameDataTableToJson(normalMoves) : [];
+  const moves: Move[] = normalMoves
+    ? frameDataTableToJson(normalMoves, characterId)
+    : [];
   const stances = Array.from(getStances(moves));
   const loaderData = {
     characterName,

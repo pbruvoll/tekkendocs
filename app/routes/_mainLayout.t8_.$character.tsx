@@ -18,7 +18,7 @@ import { type SheetService } from '~/types/SheetService';
 import { type TableData } from '~/types/TableData';
 import { applyOverride, frameDataTableToJson } from '~/utils/frameDataUtils';
 import { getCacheControlHeaders } from '~/utils/headerUtils';
-import { isWavuMove, videoFileNameFromMove } from '~/utils/moveUtils';
+import { videoFileNameFromMove } from '~/utils/moveUtils';
 import { type Route } from './+types/_mainLayout.t8_.$character';
 
 export function shouldRevalidate({
@@ -76,27 +76,22 @@ export const loader = async ({ params }: Route.LoaderArgs) => {
   const { tables } = sheetData;
 
   const normalMoves = tables.find((t) => t.name === 'frames_normal');
-  const moves: Move[] = normalMoves ? frameDataTableToJson(normalMoves) : [];
-  moves.forEach((move) => {
-    if (!move.characterId) {
-      move.characterId = characterId;
-    }
-  });
+  const moves: Move[] = normalMoves
+    ? frameDataTableToJson(normalMoves, characterId)
+    : [];
   if (overrideNormalMoves) {
     applyOverride(moves, overrideNormalMoves);
   }
   if (charVideoInfoT8[characterId]?.autoGenerateFileName) {
     moves.forEach((move) => {
-      if (!move.video && isWavuMove(move)) {
+      if (!move.video) {
         move.video = `/t8-p2-${characterId}-${videoFileNameFromMove(move)}.mp4`;
       }
     });
   }
   if (charVideoInfoT8[characterId]?.localVideoFolder) {
     moves.forEach((move) => {
-      if (isWavuMove(move)) {
-        move.video = `${charVideoInfoT8[characterId].localVideoFolder}/${videoFileNameFromMove(move)}`;
-      }
+      move.video = `${charVideoInfoT8[characterId].localVideoFolder}/${videoFileNameFromMove(move)}`;
     });
   }
   const frameData: CharacterFrameDataPage = { ...sheetData, moves };

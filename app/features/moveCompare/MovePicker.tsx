@@ -3,10 +3,7 @@ import { useDeferredValue, useMemo, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { characterInfoT8List } from '~/constants/characterInfoListT8';
-import {
-  getCharacterDisplayName,
-  getMoveId,
-} from '~/features/frameQuiz/moveSelection';
+import { getCharacterDisplayName } from '~/features/frameQuiz/moveSelection';
 import { type Move } from '~/types/Move';
 import { cleanCommand } from '~/utils/filterUtils';
 import { t8AvatarBrandMap } from '~/utils/t8AvatarMap';
@@ -172,12 +169,12 @@ export const MovePicker = ({
             <>
               <ul>
                 {matchingMoves.slice(0, maxResults).map((move) => (
-                  <li key={getMoveId(move)}>
+                  <li key={move.id}>
                     <button
                       type="button"
                       className="block w-full rounded-md p-2 text-left font-medium hover:bg-accent/40"
                       onClick={() => {
-                        onSelect(getMoveId(move));
+                        onSelect(move.id);
                         setSearchInput('');
                       }}
                     >

@@ -10,6 +10,7 @@ import { type SortOrder } from '~/types/SortOrder';
 import { type SortSettings } from '~/types/SortSettings';
 import { type TableData } from '~/types/TableData';
 import { cleanCommand } from './filterUtils';
+import { createMoveId } from './moveUtils';
 import {
   sortMovesByNumber,
   sortMovesByString,
@@ -18,7 +19,10 @@ import {
 } from './sortingUtils';
 import { tagStringToRecord } from './tagUtils';
 
-export const frameDataTableToJson = (normalFrameData: TableData): Move[] => {
+export const frameDataTableToJson = (
+  normalFrameData: TableData,
+  characterId: string,
+): Move[] => {
   invariant(normalFrameData.headers);
   const lowerCaseHeaders = normalFrameData.headers.map((h) => h.toLowerCase());
   const commandIndex = lowerCaseHeaders.indexOf('command');
@@ -56,7 +60,11 @@ export const frameDataTableToJson = (normalFrameData: TableData): Move[] => {
   }
 
   return normalFrameData.rows.map((row, index) => {
+    const moveCharacterId =
+      (characterIdIndex >= 0 && row[characterIdIndex]) || characterId;
     return {
+      id: row[wavuIdIndex] || createMoveId(moveCharacterId, row[commandIndex]),
+      characterId: moveCharacterId,
       moveNumber: index + 1,
       command: row[commandIndex],
       name: row[nameIndex],
@@ -67,7 +75,6 @@ export const frameDataTableToJson = (normalFrameData: TableData): Move[] => {
       hit: row[hitIndex],
       counterHit: row[counterHitIndex],
       notes: row[notesIndex],
-      id: row[wavuIdIndex],
       tags: row[tagsIndex] ? tagStringToRecord(row[tagsIndex]) : undefined,
       transitions: row[transitionIndex]
         ? row[transitionIndex].split(',')
@@ -77,7 +84,6 @@ export const frameDataTableToJson = (normalFrameData: TableData): Move[] => {
       recovery: row[recoveryIndex],
       recoveryState:
         recoveryStateIndex >= 0 ? row[recoveryStateIndex] : undefined,
-      characterId: characterIdIndex >= 0 ? row[characterIdIndex] : undefined,
     };
   });
 };

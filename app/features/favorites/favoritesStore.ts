@@ -1,5 +1,5 @@
 import { type FavoriteMoves } from '~/types/FavoriteMoves';
-import { type MoveT8 } from '~/types/Move';
+import { type Move } from '~/types/Move';
 import { createLocalStorageStore } from '~/utils/localStorageStore';
 
 const STORAGE_KEY = 't8FavoriteMoves';
@@ -18,9 +18,9 @@ export const favoritesStore = createLocalStorageStore<FavoriteMoves>(
   (favorites) => Array.from(favorites),
 );
 
-export const getFavoriteKey = (move: MoveT8) => move.id;
+export const getFavoriteKey = (move: Move) => move.id;
 
-export const getFavoriteKeys = (moves: MoveT8[]) => moves.map(getFavoriteKey);
+export const getFavoriteKeys = (moves: Move[]) => moves.map(getFavoriteKey);
 
 /** Adds every key, or removes them all if they are already favorites. */
 export const toggleFavoriteKeys = (

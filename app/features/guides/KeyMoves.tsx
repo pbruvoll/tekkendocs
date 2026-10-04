@@ -13,7 +13,7 @@ import {
   type GuideSectionKey,
   getGuideSectionId,
 } from '~/features/guideLanguage/texts/guideTexts';
-import { type Move, type MoveT8 } from '~/types/Move';
+import { type Move } from '~/types/Move';
 import { compressCommand } from '~/utils/commandUtils';
 import { useGuideContext } from './GuideContext';
 import { type KeyMove } from './GuideData';
@@ -73,14 +73,14 @@ const KeyMoveHeading = ({
   // backwards, for the last move with a video; the heart favorites every move
   // in the heading, so collect them all
   let moveWithVideo: Move | undefined;
-  const moves: MoveT8[] = [];
+  const moves: Move[] = [];
   for (let i = splitCommand.length - 1; i >= 0; i--) {
     const move = compressedCommandMap[compressCommand(splitCommand[i])];
     if (!move) continue;
     if (!moveWithVideo && (move.ytVideo || move.video)) {
       moveWithVideo = move;
     }
-    moves.push(move as MoveT8);
+    moves.push(move);
   }
 
   const { isFavorite, toggleFavorite } = useAreFavorites(moves);

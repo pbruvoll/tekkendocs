@@ -2,7 +2,6 @@ import { useWindowVirtualizer } from '@tanstack/react-virtual';
 import cx from 'classix';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { type FrameDataListProps } from '~/types/FrameDataListProps';
-import { type MoveT8 } from '~/types/Move';
 import { charIdFromMove, commandToUrlSegmentEncoded } from '~/utils/moveUtils';
 import { ContentContainer } from './ContentContainer';
 import { MoveCardWithVideo } from './MoveCardWithVideo';
@@ -83,7 +82,7 @@ export function MoveCardWithVideoList({
         }}
       >
         {virtualItems.map((virtualItem) => {
-          const move = moves[virtualItem.index] as MoveT8;
+          const move = moves[virtualItem.index];
           const computedCharId = charId || charIdFromMove(move);
           const urlSegment = commandToUrlSegmentEncoded(move.command);
           const moveUrl = `/${gameRouteId}/${computedCharId}/${urlSegment}`;

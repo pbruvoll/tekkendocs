@@ -3,7 +3,6 @@ import { memo } from 'react';
 import { Link, useSearchParams } from 'react-router';
 import { MoveTags } from '~/constants/moveTags';
 import { type FrameDataListProps } from '~/types/FrameDataListProps';
-import { type MoveT8 } from '~/types/Move';
 import {
   getChipDamage,
   getInterruptibleFrames,
@@ -128,7 +127,7 @@ export const SimpleMovesTable = memo(function SimpleMovesTable({
           const interruptibleFrames = getInterruptibleFrames(move);
           const chipDamage = getChipDamage(move);
           const hasChipTag = hasTag(MoveTags.Chip, move);
-          const computedCharId = charId || charIdFromMove(move as MoveT8);
+          const computedCharId = charId || charIdFromMove(move);
           const moveUrl = `/${gameRouteId}/${computedCharId}/${commandToUrlSegmentEncoded(move.command)}`;
           const commandContent = formatWordWithBreaks(move.command);
           return (
@@ -169,10 +168,7 @@ export const SimpleMovesTable = memo(function SimpleMovesTable({
               </td>
               <td className="wrap-break-word p-2 align-middle sm:p-4">
                 {showVidoeFileName ? (
-                  videoFileNameFromMove(move as MoveT8).replace(
-                    `${charId}-`,
-                    '',
-                  )
+                  videoFileNameFromMove(move).replace(`${charId}-`, '')
                 ) : sortSettings?.sortByKey === 'recovery' ? (
                   move.recovery
                 ) : sortSettings?.sortByKey === 'interruptible' ? (

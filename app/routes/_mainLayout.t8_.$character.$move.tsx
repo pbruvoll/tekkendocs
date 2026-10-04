@@ -6,7 +6,7 @@ import { SimpleMovesTable } from '~/components/SimpleMovesTable';
 import { HeartButton } from '~/features/favorites/HeartButton';
 import { useIsFavorite } from '~/features/favorites/useFavorites';
 import { cdnUrl, charVideoInfoT8 } from '~/services/staticDataService';
-import { type Move, type MoveT8 } from '~/types/Move';
+import { type Move } from '~/types/Move';
 import { type RouteHandle } from '~/types/RouteHandle';
 import { getCharacterFrameDataMoves } from '~/utils/characterPageUtils';
 import { getRelatedMoves } from '~/utils/frameDataUtils';
@@ -127,9 +127,7 @@ export default function MoveRoute({ params }: Route.ComponentProps) {
   const matches = useMatches();
   const moves = getCharacterFrameDataMoves(matches);
   // resolved before the early returns, so the hook below stays unconditional
-  const move = moves
-    ? (findMove(command, moves) as MoveT8 | undefined)
-    : undefined;
+  const move = moves ? findMove(command, moves) : undefined;
   const { isFavorite, toggleFavorite } = useIsFavorite(move);
 
   if (!moves || moves.length === 0) {
