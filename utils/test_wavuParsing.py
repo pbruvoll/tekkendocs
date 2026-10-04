@@ -7,7 +7,7 @@ Run them from the root of the project with
 
 import unittest
 
-from wavuParsing import parse_recovery
+from wavuParsing import parse_notes, parse_recovery
 
 
 # every recv value below is taken from a move in
@@ -51,3 +51,41 @@ class ParseRecoveryTest(unittest.TestCase) :
         for (recv, expected) in recovery_cases :
             with self.subTest(recv=recv) :
                 self.assertEqual(parse_recovery(recv), expected)
+
+
+# every note below is taken from a move in utils/wavu-importer/src/json_movelist,
+# given by the id in the comment
+duckable_cases = [
+    ("* Duckable", True),                                       # Nina, jails from 1st block
+    ("* Duckable on block", True),                              # Steve-FLK.1,1
+    ("* Duckable on normal hit", True),                         # King
+    ("* Duckable on 1st block", True),                          # Kazuya
+    ("* Duckable from 2nd block (by normal bodies)", True),     # Feng
+    ("* Can be ducked on hit", True),                           # Lidia
+    ("* String jails vs hits (string duckable)", True),         # Anna
+    ("** Not duckable from the 2nd and 3rd lows", False),       # Heihachi
+    ("* Not duckable", False),
+    ("* -19 if entire string is ducked", False),                # Asuka
+    ("Unbreakable (avoid by ducking)", False),                  # Dragunov throw
+    ("* Duck high while moving forward.", False),               # King
+]
+
+
+class ParseNotesDuckableTest(unittest.TestCase) :
+
+    def test_tags_duckable_strings(self) :
+        for (note, expected) in duckable_cases :
+            with self.subTest(note=note) :
+                (_, tags) = parse_notes(note)
+                self.assertEqual("dck" in tags.split(" "), expected)
+
+    def test_drops_plain_duckable_line_from_notes(self) :
+        (notes, tags) = parse_notes("* Jail from 1st block\n* Duckable")
+        self.assertEqual(notes, "* Jail from 1st block")
+        self.assertEqual(tags, "dck")
+
+    def test_keeps_duckable_line_with_context_in_notes(self) :
+        notes = "* Jail from 1st block with ?F delay\n* Duckable on block"
+        (short_notes, tags) = parse_notes(notes)
+        self.assertEqual(short_notes, notes)
+        self.assertEqual(tags, "dck")

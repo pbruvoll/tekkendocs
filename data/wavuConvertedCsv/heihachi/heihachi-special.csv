@@ -39,44 +39,67 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Consumes Rage
 * Power crush 8~";ra rbr pc8~;;Mishima Style Ultimate Technique - Tempest Dragon God Fist;39;;;;Heihachi-R.df+1+2;heihachi
 1;h;5;i10;+1;+8;;Recovers 2f faster on hit or block (t27 r17);;;Jab;19;;;File:t8-p2-heihachi-1,1,2.mp4;Heihachi-1;heihachi
-1,1;h, h;5, 6;i10, i10;-5;+6;;* Jail from 1st attack with 3f delay;;;;24;;;File:t8-p2-heihachi-1,1,2.mp4;Heihachi-1,1;heihachi
+1,1;h, h;5, 6;i10, i10;-5;+6;;"* Jail from 1st block with 3f delay
+* Combo from 1st hit with 3F delay";;;;24;;;File:t8-p2-heihachi-1,1,2.mp4;Heihachi-1,1;heihachi
 1,1,2;h, h, m;5, 6, 16;i10, ,i18;-17;+19a (+9);;"* Balcony Break
+* Jail from 1st block with 1F delay
 * Combo from 1st hit with 12f delay
 * Clean wall splat when near the wall
-* Applies additional combo scaling on wall splat";bbr;;Flash Punch Combo;37;;;File:t8-p2-heihachi-1,1,2.mp4;Heihachi-1,1,2;heihachi
+* Applies 70% combo scaling on wall splat";bbr;;Flash Punch Combo;37;;;File:t8-p2-heihachi-1,1,2.mp4;Heihachi-1,1,2;heihachi
 WAR.1,1,2;h, h, m;5, 6, 20;i10, ,i18;-17;+28a (+2);;"* Balcony Break
 * Combo from 1st hit with 12f delay
 * 6 chip damage on block";bbr chp:6;;Ultimate Flash Punch Combo;37;;;File:t8-p2-heihachi-1,1,war.2.mp4;Heihachi-1,1,WAR.2;heihachi
 1,2;h, h;5, 8;i10, i10;-3;+8;;"* Combo from 1st hit with 4f delay
-* Move can be delayed 3f";;;One Two Strike;22;;;File:t8-p2-heihachi-1,2.mp4;Heihachi-1,2;heihachi
-1,2,2;h, h, h;5, 8, 12;i10, ,i17;-12;+4;;"* Combo from 1st hit
-* Enter FUJ -9 +4 r30 with D on frame 22";;FUJ;Back Fist Combo;33;;;File:t8-p2-heihachi-1,2,2.mp4;Heihachi-1,2,2;heihachi
+* Move can be delayed 3f
+* Input can be delayed by 4F";;;One Two Strike;22;;;File:t8-p2-heihachi-1,2.mp4;Heihachi-1,2;heihachi
+1,2,2;h, h, h;5, 8, 12;i10, ,i17;-12;+4;;"* Jail from 1st block with 2F delay
+* Combo from 1st hit with 2F delay
+* Enter FUJ -9 +4 r30 with D on frame 22
+* Move cannot be delayed
+* Input can be delayed by 2F";;FUJ;Back Fist Combo;33;;;File:t8-p2-heihachi-1,2,2.mp4;Heihachi-1,2,2;heihachi
 1,2,2~1;h, h, m;5, 8, 20;i10, ,i13;-11;+6;;"* Combo from 2nd CH
-* Cancel to SS -5 -16 with D_U";;SS;;30;;;File:t8-p2-heihachi-1,2,2~1,1+2.mp4;Heihachi-1,2,2~1;heihachi
+* Input 1 at frame 13 (effective startup i26)
+* Interrupt with i8 from 1st block
+* Whiffs vs SSL, SWL from 1st block
+* Cancel to SS -5 -16 with D_U";stp:SSL intr:8;SS;;30;;;File:t8-p2-heihachi-1,2,2~1,1+2.mp4;Heihachi-1,2,2~1;heihachi
 1,2,2~1,1+2;h, h, m, m;5, 8, 20, 24;i10, ,i26;-13;+11a (+2);;"* Balcony Break
-* Combo from 3rd hit
-* Combo from 2nd CH";bbr;;Demon Executioner Volley;34;;;File:t8-p2-heihachi-1,2,2~1,1+2.mp4;Heihachi-1,2,2~1,1+2;heihachi
-1,2,4;h, h, h;5, 8, 21;i10, ,i22~23;-9;+16g;+52a;"* Tornado
-* Combo from 2nd CH with 2f delay
-* Opponent recovers crouching
-* Can be charged";trn;;Wailing Demon Otoko Geri;33;;;File:t8-p2-heihachi-1,2,4.mp4;Heihachi-1,2,4;heihachi
+* Combo from 2nd CH or 3rd hit with 10F delay
+* Interrupt with i8 from 3rd block
+* Move can be delayed by 12F
+* Input can be delayed by 14F";bbr intr:8;;Demon Executioner Volley;34;;;File:t8-p2-heihachi-1,2,2~1,1+2.mp4;Heihachi-1,2,2~1,1+2;heihachi
+1,2,4;h, h, h;5, 8, 21;i10, ,i22~23;-9;+16cg;+52a;"* Balcony Break
+* Tornado
+* Combo from 2nd CH with 2f delay or 8F charge delay (i30~31)
+* Interrupt with i2 from 2nd block
+* Can be charged with up to 27F (i31~32)
+* Move can be delayed by 1F
+* Input can be delayed by 2F";bbr trn intr:2;;Wailing Demon Otoko Geri;33;;;File:t8-p2-heihachi-1,2,4.mp4;Heihachi-1,2,4;heihachi
 1,2,4*;h, h, h;5, 8, 27;i10, ,i31~32;+6;+67a (+51);;"* Tornado
 * Balcony Break
-* Tornado on standing hit
-* 8 chip damage on block";trn bbr chp:8;;Wailing Demon Otoko Geri (charged);;;;;Heihachi-1,2,4*;heihachi
+* Instant Tornado
+* 28F minimum charge
+* Interrupt with i11 from 1st block
+* Move cannot be interrupted from 1st hit (crouch assist bufferable)
+* Realign properties from 1st block or hit
+* 8 chip damage on block";trn bbr intr:11 chp:8;;Wailing Demon Otoko Geri (charged);33;;;;Heihachi-1,2,4*;heihachi
 1,b+2;h, m;5, 17;i10, i22;-2;+8;;"* Combo from 1st CH with 3f delay
+* Interrupt with i6 from 1st block
+* Can be powercrushed by i22 or faster power crushes
 * Input can be delayed 10f
 * Move can be delayed 7f
-* Enter FUJ r30 with D";;FUJ;;30;;;File:t8-p2-heihachi-1,b+2,1.mp4;Heihachi-1,b+2;heihachi
+* Enter FUJ r30 with D at frame 25";intr:6;FUJ;;30;;;File:t8-p2-heihachi-1,b+2,1.mp4;Heihachi-1,b+2;heihachi
 1,b+2,1;h, m, m;5, 17, 20;i10, ,i35~39;-15;+30a (+20);;"* Combo from 2nd CH
-* Low crush 38~61";js38~61;;Demon Massacre;30;;;File:t8-p2-heihachi-1,b+2,1.mp4;Heihachi-1,b+2,1;heihachi
+* Interrupt with i6 from 2nd block
+* Low crush 38~61";intr:6 js38~61;;Demon Massacre;30;;;File:t8-p2-heihachi-1,b+2,1.mp4;Heihachi-1,b+2,1;heihachi
 1,b+2,2;h, m, m;5, 17, 17;i10, ,i25~26;-13c;+6c;;"* Spike
 * Head
-* Combo from 2nd hit";spk hed;;Demon Basara;36;;;File:t8-p2-heihachi-1,b+2,2.mp4;Heihachi-1,b+2,2;heihachi
+* Jail from 2nd block
+* Combo from 1st CH or 2nd hit";spk hed;;Demon Basara;36;;;File:t8-p2-heihachi-1,b+2,2.mp4;Heihachi-1,b+2,2;heihachi
 1,b+2,4;h, m, m;5, 17, 30;i10, ,i39;+5;+30a (+9);;"* Balcony Break
+* Interrupt with i10 from 2nd block
+* May whiff vs delayed SWL (SSL -> late SWL, inconsistent)
 * 12 chip damage on block
-* 13 chip damage on block in heat
-* Low crush 17~39";bbr chp:12 js17~39;;Demon Lair;41;;;File:t8-p2-heihachi-1,b+2,4.mp4;Heihachi-1,b+2,4;heihachi
+* Low crush 17~39";bbr intr:10 chp:12 js17~39;;Demon Lair;41;;;File:t8-p2-heihachi-1,b+2,4.mp4;Heihachi-1,b+2,4;heihachi
 WAR.1,b+2,2;h, m, m;5, 17, 22;i10, ,i25~26;-13c;+23a (+13);;"* Reversal Break
 * Balcony Break
 * Head
@@ -86,17 +109,20 @@ WAR.1,b+2,2;h, m, m;5, 17, 22;i10, ,i25~26;-13c;+23a (+13);;"* Reversal Break
 * +42d on airborne hit, opponent can tech roll after";rbr bbr hed chp:6;;Ultimate Demon Basara;36;;;File:t8-p2-heihachi-1,b+2,2.mp4;Heihachi-1,b+2,WAR.2;heihachi
 2;h;10;i11;+0;+9;;;;;;19;;;File:t8-p2-heihachi-2,2.mp4;Heihachi-2;heihachi
 2,2;h, m;10, 13;i11, i22;-8;+3c;;"* Spike
-* Combo from 1st hit with 2f delay";spk;;Dogenkotsu;33;;;File:t8-p2-heihachi-2,2.mp4;Heihachi-2,2;heihachi
+* Combo from 1st hit with 2f delay
+* Interrupt with i2 from 1st block";spk intr:2;;Dogenkotsu;33;;;File:t8-p2-heihachi-2,2.mp4;Heihachi-2,2;heihachi
 3;m;10;i15;-4;+1;;;;;;29;;;File:t8-p2-heihachi-3,2.mp4;Heihachi-3;heihachi
-3,2;m, m;10, 10;i15, i22~23;-13;-2;;"* Combo from 1st hit with 1f delay
+3,2;m, m;10, 10;i15, i22~23;-13;-2;;"* Jail from 1st block
+* Combo from 1st hit
 * Enter FUJ -2 +9 r25 with D";;FUJ;Byakko Gekishin;31;;;File:t8-p2-heihachi-3,2.mp4;Heihachi-3,2;heihachi
-4;h;21;i15~16;-9;+16g;+52a;"* Tornado
+4;h;21;i15~16;-9;+16cg;+52a;"* Tornado
 * Balcony Break
-* Opponent recovers crouching on hit";trn bbr;;Otoko Geri;33;;;File:t8-p2-heihachi-4.mp4;Heihachi-4;heihachi
+* Can be charged with up to 20F (i24~25)";trn bbr;;Otoko Geri;33;;;File:t8-p2-heihachi-4.mp4;Heihachi-4;heihachi
 4*;h;27;i24~25;+6;+67a (+51);;"* Tornado
 * Balcony Break
+* 21F minimum charge
 * Tornado on standing hit
-* 8 chip damage on block";trn bbr chp:8;;Otoko Geri (charged);;;;;Heihachi-4*;heihachi
+* 8 chip damage on block";trn bbr chp:8;;Otoko Geri (charged);33;;;;Heihachi-4*;heihachi
 4~3;M;25;i35~37;-11a;+21a;;"* Spike
 * Low crush 10~37
 * Floating state 38~";spk js10~37 fs38~;FUFT;Demon Scissors;28;FUFT;;File:t8-p2-heihachi-4~3.mp4;Heihachi-4~3;heihachi

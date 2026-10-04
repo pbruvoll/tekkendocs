@@ -140,6 +140,9 @@ def parse_notes(notes: str):
         steppable_tag = get_steppable_tag(line)
         if steppable_tag :
             tags.append(steppable_tag)
+        duckable_tag = get_duckable_tag(line)
+        if duckable_tag and duckable_tag not in tags :
+            tags.append(duckable_tag)
         frames = get_interrupt_frames(line)
         if frames is not None :
             interrupt_frames.append(frames)
@@ -166,6 +169,21 @@ def get_steppable_tag(noteLine: str) :
     match = re.match(r'whiffs vs (ssr|ssl|swr|swl|ss)\b', cleanLine)
     if match :
         return "stp:" + match.group(1).upper()
+    return None
+
+
+def get_duckable_tag(noteLine: str) :
+    """Reads lines like "* Duckable", "* Duckable on block", "* Can be ducked on hit"
+    and "* String jails vs hits (string duckable)". A plain "Duckable" line is
+    also matched by get_tag, which drops it from the notes, while the lines
+    with extra context such as "on block" are kept in the notes"""
+    cleanLine = noteLine.lower()
+    if "not duckable" in cleanLine :
+        return None
+    # "is ducked" and "avoid by ducking" are left out, since they only tell
+    # what happens when the move is ducked
+    if "duckable" in cleanLine or "can be ducked" in cleanLine :
+        return "dck"
     return None
 
 
@@ -289,6 +307,8 @@ def get_tag(noteLine: str) :
             return "bbr"
         case "reversal break":
             return "rbr"
+        case "duckable" :
+            return "dck"
 
 
     if cleanLine.startswith("wall crush") :
