@@ -5,6 +5,7 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import ewgf from '~/images/t8/externalResources/ewgf.webp';
+import replayDatabase from '~/images/t8/externalResources/replay-database.webp';
 import sidestepChart from '~/images/t8/externalResources/sidestep-chart.webp';
 import tekkenGuess from '~/images/t8/externalResources/tekken-guess.svg';
 import tekkenLibrary from '~/images/t8/externalResources/tekken-library.webp';
@@ -59,6 +60,13 @@ const data: ExternalResourceLink[] = [
     imageUrl: ewgf,
     description:
       'Stats for rank distribution, character win rate, leaderboards, player profiles etc.',
+  },
+  {
+    name: 'Replay Database',
+    url: 'https://replaydatabase.com/tekken/',
+    imageUrl: replayDatabase,
+    description:
+      'Competitive Tekken 8 replays, filterable by character, matchup, player and patch',
   },
   {
     name: 'Tournament Finder',

@@ -55,4 +55,6 @@ export const ko: GuideTexts = {
   tornadoWallCombos: '토네이도 포함',
   goodMatchups: '유리한 상성',
   badMatchups: '불리한 상성',
+  replayDatabaseLink: ({ character }) =>
+    `Replay Database의 ${character} 고수 리플레이`,
 };

@@ -56,4 +56,6 @@ export const es: GuideTexts = {
   tornadoWallCombos: 'Con tornado',
   goodMatchups: 'Enfrentamientos favorables',
   badMatchups: 'Enfrentamientos desfavorables',
+  replayDatabaseLink: ({ character }) =>
+    `Repeticiones de alto nivel de ${character} en Replay Database`,
 };

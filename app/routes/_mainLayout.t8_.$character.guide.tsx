@@ -372,7 +372,10 @@ export default function Index() {
           <Matchups good={goodMatchups} bad={badMatchups} />
         )}
         {externalResources?.length && (
-          <ExternalResources externalResources={externalResources} />
+          <ExternalResources
+            externalResources={externalResources}
+            characterId={characterId}
+          />
         )}
       </ContentContainer>
     </GuideContext>
