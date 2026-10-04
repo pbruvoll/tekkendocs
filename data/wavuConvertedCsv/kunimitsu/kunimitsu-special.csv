@@ -196,42 +196,40 @@ df+3+4;m,m;8,12;i17~18 i7~9;-2;+5;;"* Floor Break
 * Can hit grounded when off-axis
 * High evasion at frame 5?
 * Floating state 10~24";fbr fs10~24;BT;Falling Hail;22;BT;;t8-p2-kunimitsu-df+3+4.mp4;Kunimitsu-df+3+4;kunimitsu
-d+1;m;23;i19;+3;+6;+13c;* Spike;spk;FC;Sakumaishi;31;FC;;t8-p2-kunimitsu-d+1.mp4;Kunimitsu-d+1;kunimitsu
+d+1;m;23;i19;+3c;+6c;+13c;* Spike;spk;FC;Sakumaishi;31;FC;;t8-p2-kunimitsu-d+1.mp4;Kunimitsu-d+1;kunimitsu
 d+2;m;11;i16;-9;+2c;;"* Floor Break
 * Weapon
 * Does not floor break if string is continued";fbr wpn;;;28;;;t8-p2-kunimitsu-d+2.mp4;Kunimitsu-d+2;kunimitsu
-d+2,1;m, m;11, 7;i16, i16~17;-12;-1;;"* Combo from 1st CH with 2f delay
-* Input can be delayed 2f
-* Move cannot be delayed";;;;30;;;t8-p2-kunimitsu-d+2,1.mp4;Kunimitsu-d+2,1;kunimitsu
+d+2,1;m, m;11, 7;i16, i16~17;-12;-1;;"* Jail from 1st block
+* Combo from 1st CH
+* Input cannot be delayed";;;;30;;;t8-p2-kunimitsu-d+2,1.mp4;Kunimitsu-d+2,1;kunimitsu
 d+2,1,2;m, m, m;11, 7, 7;i16, ,i11~12;-12;+4;;"* Weapon
+* Jail from 1st block with 1f delay
 * Combo from 2nd hit with 1f delay
 * Input can be delayed 1f
 * Move cannot be delayed";wpn;;;32;;;t8-p2-kunimitsu-d+2,1,2.mp4;Kunimitsu-d+2,1,2;kunimitsu
-d+2,1,2,1+2;m, m, m, m;11, 7, 7, 20;i16, ,i23~24;-13;+7a;;"* Hitstop 20f on hit
-* Combo from 3rd CH";;;Amamikanameishi;33;;;t8-p2-kunimitsu-d+2,1,2,1+2.mp4;Kunimitsu-d+2,1,2,1+2;kunimitsu
-d+3;L;11;i16~17;-14;-3;;;;;;32;;;t8-p2-kunimitsu-d+3.mp4;Kunimitsu-d+3;kunimitsu
+d+2,1,2,1+2;m, m, m, m;11, 7, 7, 20;i16, ,i23~24;-13;+7a;;"* Balcony Break
+* Jail from 1st block
+* Combo from 3rd CH
+* Hitstop 20f on hit";bbr;;Amamikanameishi;33;;;t8-p2-kunimitsu-d+2,1,2,1+2.mp4;Kunimitsu-d+2,1,2,1+2;kunimitsu
+d+3;L;11;i16~17;-14;-3;;-3c on crouching hit;;;;32;;;t8-p2-kunimitsu-d+3.mp4;Kunimitsu-d+3;kunimitsu
 d+3,4;L, h;11, 12;i16~17, i21~22;-9;+0;;"* Combo from 1st CH with 7f delay
+* Interrupt with i3 from 1st block
 * Input can be delayed 7f
-* Move can be delayed 6f";;;;29;;;t8-p2-kunimitsu-d+3,4.mp4;Kunimitsu-d+3,4;kunimitsu
+* Move can be delayed 6f";intr:3;;;29;;;t8-p2-kunimitsu-d+3,4.mp4;Kunimitsu-d+3,4;kunimitsu
 d+3,4,1;L, h, sm,t;11, 12, 10,28;i16~17, ,i26~37;-13;-4d;;"* Weapon
 * Combo from 2nd hit with 1f delay
 * Combo from 1st CH
+* Interrupt with i6 from 2nd block
 * Input can be delayed 1f
 * Move cannot be delayed
-* Recovers 12f faster on block
-* Transitions to attack throw automatically on hit
-* 15 scaled damage on attack throw";wpn;;Rinbu Kick > Savage Kunai Throw;38;;;t8-p2-kunimitsu-d+3,4,1.mp4;Kunimitsu-d+3,4,1;kunimitsu
-d+3,4,1,F;L, h, sm,t, sm,t;11, 12, 10,28, 10,28;i16~17, ,i26~37;-13;-4d;;"* Weapon
-* Combo from 2nd hit with 1f delay
-* Combo from 1st CH
-* Input can be delayed 1f
-* Move cannot be delayed
-* Recovers 12f faster on block
+* Recovers 11f faster on block (t115 r38)
 * Transitions to attack throw automatically on hit
 * 15 scaled damage on attack throw
-* Side switch on hit";wpn;;Rinbu Kick > Piercing Kunai Throw;38;;;t8-p2-kunimitsu-d+3,4,1,f.mp4;Kunimitsu-d+3,4,1,F;kunimitsu
-d+1+2;L;17;i20;-14;+0;+15g;"Weapon
-* High crush 6~";wpn cs6~;FC;Seneizan;33;FC;;t8-p2-kunimitsu-d+1+2.mp4;Kunimitsu-d+1+2;kunimitsu
+* Shift to Piercing Kunai Throw with F (Side switch on hit)";wpn intr:6;;Rinbu Kick > Savage Kunai Throw;49;;;t8-p2-kunimitsu-d+3,4,1.mp4;Kunimitsu-d+3,4,1;kunimitsu
+d+1+2;L;17;i20;-14;+0;+15g;"* Weapon
+* Recovers 3f faster on hit (t50 r30)
+* High crush 6~50";wpn cs6~50;FC;Seneizan;33;FC;;t8-p2-kunimitsu-d+1+2.mp4;Kunimitsu-d+1+2;kunimitsu
 d+3+4;M;22;i20~23;-13;+12a (-5);;"* Balcony Break
 * Weapon
 * On successful attack absorption shift to Wrathful Bloom:
@@ -673,7 +671,7 @@ SET.uf+4;m,t;8,16;i13~14;-14;+0d;;"* Floor Break
 * Low crush 11~32
 * Floating state 33~35";fbr js11~32 fs33~35;;Chakra Drop;41;;;t8-p2-kunimitsu-set.uf+4.mp4;Kunimitsu-SET.uf+4;kunimitsu
 SET.uf+1+2;;;i16;;;;;;;;28;;;t8-p2-kunimitsu-set.uf+1+2.mp4;Kunimitsu-SET.uf+1+2;kunimitsu
-hFC.1;sl;5;i10;-5;+6;;"* Transition to standing r24 with f
+hFC.1;sl;5;i10;-5;+6;;"* Transition to standing r24 with f at frame 25
 * +6c on crouching hit
 * High crush 1~";cs1~;FC;Crouch Jab;24;FC;;t8-p2-kunimitsu-hfc.1.mp4;Kunimitsu-hFC.1;kunimitsu
 hFC.2;sl;8;i11;-4;+7;;* High crush 1~;cs1~;FC;;23;FC;;t8-p2-kunimitsu-hfc.2.mp4;Kunimitsu-hFC.2;kunimitsu

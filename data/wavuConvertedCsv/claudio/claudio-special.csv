@@ -6,12 +6,13 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * Only deals recoverable damage
 * Cannot cause a K.O.
 * Power crush 7~16";hb chp:2 pc7~16;;Heat Burst;30;;;;Claudio-2+3;claudio
-H.2+3;L,M;40;i18~19;-14;+11d;;"* Heat Smash
+H.2+3;L,M;12,10 (40/45);i18~19, i32~33;-14;+11d;;"* Heat Smash
 * Reversal Break
 * Balcony Break
-* Transition to attack throw on hit
-* Chip damage on block
-* Pseudo homing low?";hs rbr bbr chp;;Stella Cadente;44;;;;Claudio-H.2+3;claudio
+* Transition to attack throw on 1st or 2nd hit (40dmg or 36dmg)
+* 5 damage on wall splat (45dmg total)
+* 8 chip damage on block
+* Pseudo homing low?";hs rbr bbr chp:8;;Stella Cadente;44;;;;Claudio-H.2+3;claudio
 R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Removes Recoverable Health
 * Reversal Break
@@ -44,8 +45,8 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Move can be delayed 10f
 * Transition to r65 STB on hit without STB
 * -10a (-1) upon STB gain on an airborne hit";he bbr intr:1;STB;Circle of Judgment;36;;;File:t8-p2-claudio-2,1,2.mp4;Claudio-2,1,2;claudio
-3;m;14;i14;-10;+1;;* Tracks sidestep right and sidewalk right completely?;;;;28;;;File:t8-p2-claudio-3,2.mp4;Claudio-3;claudio
-3,2;m, h;14, 22;i14, i22~23;-6;+25a (+16);;"* Heat Engager
+3;m;14;i14~15;-10;+1;;* Tracks sidestep right and sidewalk right completely?;;;;28;;;File:t8-p2-claudio-3,2.mp4;Claudio-3;claudio
+3,2;m, h;14, 22;i14~15, i22~23;-6;+25a (+16);;"* Heat Engager
 
 * Heat Dash +5, +43d (+35)
 
@@ -119,8 +120,8 @@ STB.f+1+2,1+2;m, m;8, 16;i16, i18;-9;+64a;;"* Balcony Break
 f+3+4;h;18;i17~18;-4;+19a;;"* Balcony Break (airborne)
 * 3 chip damage on block
 * Has good right sidestep tracking";chp:3;;Above the Storm;35;;;File:t8-p2-claudio-f+3+4.mp4;Claudio-f+3+4;claudio
-df+1;m;10;i15;-4;+7;;* Cannot be sidestepped or sidewalked right?;;;Quick Upper;22;;;File:t8-p2-claudio-df+1,2.mp4;Claudio-df+1;claudio
-df+1,2;m, m;10, 15;i15, i23~24;-15;+31a (+21);;"* Combo from 1st hit with 1f delay
+df+1;m;10;i15~16;-4;+7;;* Cannot be sidestepped or sidewalked right?;;;Quick Upper;22;;;File:t8-p2-claudio-df+1,2.mp4;Claudio-df+1;claudio
+df+1,2;m, m;10, 15;i15~16, i23~24;-15;+31a (+21);;"* Combo from 1st hit with 1f delay
 * Interrupt with i4 from 1st block";intr:4;;Sky's Arc;33;;;File:t8-p2-claudio-df+1,2.mp4;Claudio-df+1,2;claudio
 df+2;m;19;i14;-13;+5;+57a;"* Gain STB on counterhit
 * Completely homing to SSL/SWL?";;;Chaos Fist;32;;;File:t8-p2-claudio-df+2.mp4;Claudio-df+2;claudio
@@ -157,7 +158,7 @@ d+4;l;6;i12;-15;-4;;"* -4c on crouching hit
 * High crush 4~";cs4~;FC;Crouch Shin Kick;34;FC;;;Claudio-d+4;claudio
 d+1+2;m;28;i13~14;-18;+7a (-2);;"* Balcony Break
 * Shoulder";bbr shd;;Superbia;37;;;File:t8-p2-claudio-d+1+2.mp4;Claudio-d+1+2;claudio
-db+1;sl;5;i10;-5;+6;;"* Transition to r24 with f
+db+1;sl;5;i10;-5;+6;;"* Transition to standing r24 with f at frame 25
 * +6c on crouching hit
 * High crush 4~";cs4~;FC;Crouch Jab;24;FC;;;Claudio-db+1;claudio
 db+2;sl;8;i11;-4;+7;;"* +7c on crouching hit
@@ -176,7 +177,7 @@ db+1+2;M;20;i17~18;-12;+8a (-9);+62a (+46);"* Tornado
 * Floating state 33~35";trn bbr cs6~16 js20~32 fs33~35;;Blue Moon;41;;;File:t8-p2-claudio-db+1+2.mp4;Claudio-db+1+2;claudio
 b+1;m;17;i18~19;-8;+9a;;"* Homing
 * Balcony Break";hom bbr;;Vanishing Storm;35;;;File:t8-p2-claudio-b+1.mp4;Claudio-b+1;claudio
-b+2;h;25;i14;-9;+9a;;"* Tornado
+b+2;h;25;i14~15;-9;+9a;;"* Tornado
 * Pseudo homing?";trn;;Spinning Skies;30;;;File:t8-p2-claudio-b+2.mp4;Claudio-b+2;claudio
 b+3;m;14;i13;-4;+7;;"* Knee
 * Completely homing to SSL/SSR/SWR?";kne;;Burning Core;23;;;File:t8-p2-claudio-b+3,n,3.mp4;Claudio-b+3;claudio
@@ -237,8 +238,8 @@ b+3+4;m;24;i29~30;-15;+9a (+0);;"* Homing
 * Backswing blow
 * Max distance from opponent when performed from tip range: 3.07-3.09 (frames 10-13?)";hom bbr;;Eternal Moon;35;;;File:t8-p2-claudio-b+3+4.mp4;Claudio-b+3+4;claudio
 ub+2;m;20;i17~18;-7;+20d;;"* Balcony Break
-* Gain STB on hit
-* Frame advantage +4d on STB gain";bbr;;Orbit Slice;34;;;File:T8-p2-claudio-ub+2.mp4;Claudio-ub+2;claudio
+* Gain STB on hit (+4d r49) 
+* 20f timestop on hit";bbr;;Orbit Slice;34;;;File:T8-p2-claudio-ub+2.mp4;Claudio-ub+2;claudio
 uf+2;m;21;i21;+4c;+20a;;"* Heat Engager
 
 * Heat Dash +5, +67a (+50)
@@ -248,7 +249,7 @@ uf+2;m;21;i21;+4c;+20a;;"* Heat Engager
 * Transition to r49 STB on hit without STB and Heat
 * Transition to FC r30 with D
 * 4 chip damage on block
-* Low crush 9~22";he bbr spk chp:4 js9~22;STB,FC;Meteor Storm;29;;;File:t8-p2-claudio-u+2.mp4;Claudio-uf+2;claudio
+* Low crush 9~22";he bbr spk chp:4 js9~22;STB,FC;Meteor Storm;30;;;File:t8-p2-claudio-u+2.mp4;Claudio-uf+2;claudio
 uf+3;m;22;i23~25;-6;+23d;;"* Floor Break
 * 20 damage with input ub+3
 * 21 damage with input u+3
@@ -258,12 +259,13 @@ uf+3;m;22;i23~25;-6;+23d;;"* Floor Break
 * Floating state 27~29";fbr js9~26 fs27~29;;Ground Slash Nova;29;;;File:t8-p2-claudio-uf+3.mp4;Claudio-uf+3;claudio
 uf+4;m;13;i15~17;-13;+33a (+23);;"* Low crush 9~30
 * Floating state 31~33";js9~30 fs31~33;;Sky Slash Nova;29;;;File:t8-p2-claudio-uf+4.mp4;Claudio-uf+4;claudio
-uf+3+4;m,m;10,12;i17,i13~14;-11;+9;;"* First hit can be parried
+uf+3+4;m,m;10,12;i17,i10~11;-11;+9;;"* First hit can be parried
 * Low crush 18~35";js18~35;;Pollux;30;;;File:t8-p2-claudio-uf+3+4.mp4;Claudio-uf+3+4;claudio
-uf+3+4,2;m,m, m;10,12, 14;i17,i13~14, i20;-12;+30a (+4);;"* Balcony Break
-* Gain STB on hit
-* Combos from 1st hit
-* Interrupt with i1 from 1st block";bbr intr:1;;Orion's Belt;;;;;Claudio-uf+3+4,2;claudio
+uf+3+4,2;m,m, m;10,12, 14;i17,i10~11, i20;-12;+30a (+4);;"* Balcony Break
+* Gain STB on hit (+21a (-5) r50)
+* Combo from 1st hit
+* 20f timestop on hit
+* Interrupt with i1 from 1st block";bbr intr:1;;Orion's Belt;35;;;;Claudio-uf+3+4,2;claudio
 1+2+3+4;;;;;;;"* Can't block for 5 seconds
 * CH state on your next attack for 5 seconds ''(Tekken 7 and prior games)''
 * 10% damage increase on the next attack for 5 seconds ''(Tekken 8 season 2 patch onward)''

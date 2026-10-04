@@ -28,13 +28,25 @@ H.1+2**;m;55;i65;+10g;+63a;;"* Reversal Break
 * Cancel HAE transition with B
 * Partially uses remaining Heat time
 * Hold for 55 frames";rbr bbr;HAE;Heian Shodan Seikenzuki: Digress > Heaven and Earth;35;;;;Lidia-H.1+2**;lidia
-H.CAT.U;;;;;;;"* Increases Heaven and Earth level
+H.CAT.U;;;;;;;"* Stance moves can be delayed by 14F
 * Parries all highs or mids
 * Transition to +12g? HAE on successful parry
+* Entering HAE increases Heaven and Earth level (carries over into next round)
+* Partially uses remaining Heat time
+* Heat consumption is reduced the higher the level
+** Level 1: Consumes 900F of remaining Heat time
+** Level 2: Consumes 300F of remaining Heat time
+** Level 3: Consumes 210?F of remaining Heat time
 * Parry state 5~39";ps5~39;HAE;Cat Stance > Heaven and Earth;25;HAE;;File:t8-p2-lidia-h.cat.u.mp4;Lidia-H.CAT.U;lidia
-H.HRS.U;;;;;;;"* Increases Heaven and Earth level
+H.HRS.U;;;;;;;"* Stance moves can be delayed by 14F
 * Parries all highs or mids
 * Transition to +12g? HAE on successful parry
+* Entering HAE increases Heaven and Earth level (carries over into next round)
+* Partially uses remaining Heat time
+* Heat consumption is reduced the higher the level
+** Level 1: Consumes 900F of remaining Heat time
+** Level 2: Consumes 300F of remaining Heat time
+** Level 3: Consumes 210?F of remaining Heat time
 * Parry state 5~39";ps5~39;HAE;Horse Stance > Heaven and Earth;25;HAE;;File:t8-p2-lidia-h.hrs.u.mp4;Lidia-H.HRS.U;lidia
 H.WLF.1;m;24;i22;+6g;+38a (+30);;"* Balcony Break
 * Tornado
@@ -46,9 +58,15 @@ H.WLF.1*;m;34;i36;+10g;+66;;"* Tornado
 * Transition to HAE on hit or block only
 * Cancel HAE transition with B
 * Balcony break on airborne hit";trn;HAE;Bassai-zuki (Hold) > Heaven and Earth;34;;;;Lidia-H.WLF.1*;lidia
-H.WLF.U;;;;;;;"* Increases Heaven and Earth level
+H.WLF.U;;;;;;;"* Stance moves can be delayed by 14F
 * Parries all highs or mids
 * Transition to +12g? HAE on successful parry
+* Entering HAE increases Heaven and Earth level (carries over into next round)
+* Partially uses remaining Heat time
+* Heat consumption is reduced the higher the level
+** Level 1: Consumes 900F of remaining Heat time
+** Level 2: Consumes 300F of remaining Heat time
+** Level 3: Consumes 210?F of remaining Heat time
 * Parry state 5~39";ps5~39;HAE;Stalking Wolf Stance > Heaven and Earth;25;HAE;;File:t8-p2-lidia-h.wlf.u.mp4;Lidia-H.WLF.U;lidia
 H.f,F+2;m;22;i13;+5;+17;;"* Reversal Break
 * Transition to HRS on hit or block only
@@ -404,8 +422,7 @@ CAT.1+2;m;25;i16;-1;+27g;+37 (+29);"* Tornado
 * Transition to WLF on hit or block only";trn;WLF;Gojushiho;29;;;File:t8-p2-lidia-cat.1+2.mp4;Lidia-CAT.1+2;lidia
 CAT.F;;;;;;;"* Actionable after 20f
 * Stance moves can be delayed by 16F";;WLF;Cat Stance > Stalking Wolf Stance;20;WLF;;File:t8-p2-lidia-cat.f.mp4;Lidia-CAT.F;lidia
-CAT.b;;;;;;;"* After recovery, limited to blocking for 13 frames
-* Takes 8f to cancel into block";;;Cat Stance > Cancel;15;;;File:t8-p2-lidia-cat.b,b.mp4;Lidia-CAT.b;lidia
+CAT.b;;;;;;;After recovery, limited to blocking for 7 frames;;;Cat Stance > Cancel;15;;;File:t8-p2-lidia-cat.b,b.mp4;Lidia-CAT.b;lidia
 CAT.b,B;;;;;;;"* Low crush 11~25
 * Floating state 26~28";js11~25 fs26~28;;Cat Stance > Vacuity;32;;;File:t8-p2-lidia-cat.b,b.mp4;Lidia-CAT.b,B;lidia
 HAE.1;m;21/23;i18~19;-11;+80a (+60);;"* Spike
@@ -422,6 +439,7 @@ HAE.2;m,m;10,20/24/28;i13, i20~21;+2;+14a;;"* Balcony Break
 * 2nd hit available on hit or block only";bbr;;Heaven's Sword: Wreath Puncture;34;;;File:t8-p2-lidia-hae.2.mp4;Lidia-HAE.2;lidia
 HAE.1+2;h!;35/38/41;i16;;+0a;;"* Tornado
 * Power up based on Heaven and Earth level";trn;;Heaven's Cannon: Crushing Defamation;39;;;File:t8-p2-lidia-hae.1+2.mp4;Lidia-HAE.1+2;lidia
+HAE.b;;;;;;;After recovery, limited to blocking for 7 frames;;;Heaven and Earth > Cancel;15;;;;Lidia-HAE.b;lidia
 HRS.1;h;22;i17~18;+1;+16g;;"* Balcony Break
 * Homing
 * Transition to WLF on hit or block
@@ -454,7 +472,7 @@ HRS.1+2;L;17;i20~21;-18;-1c;+67a (+51);"* Powered up based on Heaven and Earth L
 HRS.3+4;h;28;i20~21;+6;+32d;;"* Homing
 * Transitions to WLF";hom;WLF;Higekiri;;WLF;;;Lidia-HRS.3+4;lidia
 HRS.F;;;;;;;"* Actionable after 20f
-* Stance moves can be delayed by 16F";;WLF;Horse Stance > Stalking Wolf Stance;20;WLF;;File:t8-p2-lidia-hrs.f.mp4;Lidia-HRS.F;lidia
+* Stance moves can be delayed by 16F";;WLF;Stalking Wolf Stance;20;WLF;;File:t8-p2-lidia-hrs.f.mp4;Lidia-HRS.F;lidia
 HRS.b;;;;;;;"* After recovery, limited to blocking for 13 frames
 * Takes 8f to cancel into block";;;Horse Stance > Cancel;21;;;File:t8-p2-lidia-hrs.b,b.mp4;Lidia-HRS.b;lidia
 HRS.b,B;;;;;;;"* Low crush 11~25
@@ -488,8 +506,7 @@ WLF.4;L,M;10,20;i20,i23~25;-14c;+5c;;"* Floor Break
 **HAE lvl.2 34 damage
 **HAE lvl.3 38 damage
 *** lvl.3 +2d on hit";fbr;;Serpent Incision;35;;;File:t8-p2-lidia-wlf.4.mp4;Lidia-WLF.4;lidia
-WLF.b;;;;;;;"* After recovery, limited to blocking for 13 frames
-* Takes 8f to cancel into block";;;Stalking Wolf Stance > Cancel;15;;;File:t8-p2-lidia-wlf.b,b.mp4;Lidia-WLF.b;lidia
+WLF.b;;;;;;;After recovery, limited to blocking for 7 frames;;;Stalking Wolf Stance > Cancel;15;;;File:t8-p2-lidia-wlf.b,b.mp4;Lidia-WLF.b;lidia
 WLF.b,B;;;;;;;"* Low crush 11~25
 * Floating state 26~28";js11~25 fs26~28;;Stalking Wolf Stance > Vacuity;32;;;File:t8-p2-lidia-wlf.b,b.mp4;Lidia-WLF.b,B;lidia
 hFC.1;sl;5;i10;-5;+6;;"* Transition to r25? with f
