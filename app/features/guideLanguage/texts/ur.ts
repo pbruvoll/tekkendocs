@@ -56,4 +56,6 @@ export const ur: GuideTexts = {
   tornadoWallCombos: 'ٹورنیڈو کے ساتھ',
   goodMatchups: 'اچھے میچ اپس',
   badMatchups: 'مشکل میچ اپس',
+  replayDatabaseLink: ({ character }) =>
+    `Replay Database سے ${character} کے اعلیٰ سطح کے ری پلے`,
 };

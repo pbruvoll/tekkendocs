@@ -66,6 +66,8 @@ export type GuideTexts = {
   tornadoWallCombos: string;
   goodMatchups: string;
   badMatchups: string;
+  /** Link text for the character's replays on replaydatabase.com */
+  replayDatabaseLink: (params: { character: string }) => string;
 };
 
 export const guideTexts: Record<GuideLanguage, GuideTexts> = {

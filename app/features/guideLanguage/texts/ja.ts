@@ -56,4 +56,6 @@ export const ja: GuideTexts = {
   tornadoWallCombos: 'トルネードあり',
   goodMatchups: '有利な相性',
   badMatchups: '不利な相性',
+  replayDatabaseLink: ({ character }) =>
+    `Replay Databaseの${character}ハイレベルリプレイ`,
 };

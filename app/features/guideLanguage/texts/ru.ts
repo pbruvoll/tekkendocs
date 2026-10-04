@@ -56,4 +56,6 @@ export const ru: GuideTexts = {
   tornadoWallCombos: 'С торнадо',
   goodMatchups: 'Выгодные матчапы',
   badMatchups: 'Тяжёлые матчапы',
+  replayDatabaseLink: ({ character }) =>
+    `Реплеи высокого уровня за ${character} с Replay Database`,
 };
