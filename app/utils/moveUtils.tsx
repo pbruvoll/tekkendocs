@@ -11,16 +11,16 @@ export const commandToUrlSegmentEncoded = (command: string): string => {
 };
 
 export const isWavuMove = (move: Move): move is MoveT8 => {
-  return 'wavuId' in move && move.wavuId !== undefined;
+  return 'id' in move && move.id !== undefined;
 };
 
-export const charIdFromMove = (move: Pick<MoveT8, 'wavuId'>): string => {
-  const index = move.wavuId.lastIndexOf('-');
-  return move.wavuId.slice(0, index).replace(' ', '-').toLowerCase();
+export const charIdFromMove = (move: Pick<MoveT8, 'id'>): string => {
+  const index = move.id.lastIndexOf('-');
+  return move.id.slice(0, index).replace(' ', '-').toLowerCase();
 };
 
 export const videoFileNameFromMove = (move: MoveT8): string => {
-  return `${move.wavuId
+  return `${move.id
     .split('-')
     .pop()
     ?.toLowerCase()

@@ -11,7 +11,7 @@ export type Move = {
   notes: string;
   tags?: Record<string, string>;
   transitions?: string[];
-  wavuId?: string;
+  id?: string;
   ytVideo?: { id: string; start?: string; end?: string };
   image?: string;
   video?: string;
@@ -20,4 +20,4 @@ export type Move = {
   characterId?: string;
 };
 
-export type MoveT8 = Move & { wavuId: string; characterId: string };
+export type MoveT8 = Move & { id: string; characterId: string };

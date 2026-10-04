@@ -90,7 +90,7 @@ export function MoveCardWithVideoList({
 
           return (
             <div
-              key={move.wavuId || `${computedCharId}-${move.command}`}
+              key={move.id || `${computedCharId}-${move.command}`}
               ref={virtualizer.measureElement}
               data-index={virtualItem.index}
               style={{

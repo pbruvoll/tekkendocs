@@ -2,10 +2,10 @@ import { describe, expect, it } from 'vitest';
 import { type MoveT8 } from '~/types/Move';
 import { getFavoriteKeys, toggleFavoriteKeys } from './favoritesStore';
 
-const move = (wavuId: string) => ({ wavuId }) as MoveT8;
+const move = (id: string) => ({ id }) as MoveT8;
 
 describe('getFavoriteKeys', () => {
-  it('keys moves on their wavuId', () => {
+  it('keys moves on their id', () => {
     expect(getFavoriteKeys([move('Jin-1'), move('Jin-2')])).toEqual([
       'Jin-1',
       'Jin-2',

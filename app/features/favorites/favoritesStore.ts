@@ -18,7 +18,7 @@ export const favoritesStore = createLocalStorageStore<FavoriteMoves>(
   (favorites) => Array.from(favorites),
 );
 
-export const getFavoriteKey = (move: MoveT8) => move.wavuId;
+export const getFavoriteKey = (move: MoveT8) => move.id;
 
 export const getFavoriteKeys = (moves: MoveT8[]) => moves.map(getFavoriteKey);
 

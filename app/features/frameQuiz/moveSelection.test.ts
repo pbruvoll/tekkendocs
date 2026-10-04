@@ -69,7 +69,7 @@ describe('getEligibleQuizMoves', () => {
     command: '1,2,2+4',
     hitLevel: 'h, h, t',
     block: '-6',
-    wavuId: 'King-1,2,2+4',
+    id: 'King-1,2,2+4',
     video: 'File:t8-p2-king-1,2,2+4.mp4',
   });
   const kingOneTwo = createMove({
@@ -77,7 +77,7 @@ describe('getEligibleQuizMoves', () => {
     command: '1,2',
     hitLevel: 'h, h',
     block: '-3',
-    wavuId: 'King-1,2',
+    id: 'King-1,2',
     video: 'File:t8-p2-king-1,2.mp4',
   });
   const bryanFishermansSlam = createMove({
@@ -85,7 +85,7 @@ describe('getEligibleQuizMoves', () => {
     command: 'ws2',
     hitLevel: 'm,t',
     block: '-10',
-    wavuId: 'Bryan-ws2',
+    id: 'Bryan-ws2',
     video: 'File:t8-p2-bryan-ws2.mp4',
   });
 
@@ -95,7 +95,7 @@ describe('getEligibleQuizMoves', () => {
     hitLevel: 'm',
     block: '-7',
     recoveryState: 'FUFT',
-    wavuId: 'Armor King-uf+3+4',
+    id: 'Armor King-uf+3+4',
     video: 'File:t8-p2-armor-king-uf+3+4.mp4',
   });
 

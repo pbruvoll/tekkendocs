@@ -71,7 +71,7 @@ export const meta: MetaFunction = ({ params, matches }) => {
     ? `https://wavu.wiki/t/Special:Redirect/file/${move.image}`
     : `/t8/avatars/${characterId}-512.png`;
 
-  if (move.wavuId === 'Paul-CS.2') {
+  if (move.id === 'Paul-CS.2') {
     image = `/t8/moves/${characterId}/Paul_CS.2.gif`;
   }
   let video: string | undefined;
