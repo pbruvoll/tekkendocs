@@ -1,6 +1,10 @@
 import invariant from 'tiny-invariant';
 import { StanceNormal } from '~/constants/filterConstants';
 import { type MoveTag, MoveTags } from '~/constants/moveTags';
+import {
+  canDuckHighAfterLowHit,
+  isLowHit,
+} from '~/features/duckableString/lowHighString';
 import { newMovesT8s3 } from '~/services/staticDataService';
 import { type FavoriteMoves } from '~/types/FavoriteMoves';
 import { type HitLevel } from '~/types/FilterTypes';
@@ -205,8 +209,12 @@ export const isDuckableString = (move: Move) => {
   if (move.tags?.[MoveTags.Duckable] !== undefined) {
     return true;
   }
-  const lastHitLevel = move.hitLevel?.split(', ').pop()?.[0]?.toLowerCase();
-  return noJails(move) && (lastHitLevel as HitLevel) === 'h';
+  const hits = move.hitLevel?.split(', ') ?? [];
+  return (
+    hits.at(-1)?.[0]?.toLowerCase() === 'h' &&
+    noJails(move) &&
+    (!isLowHit(hits.at(-2)) || canDuckHighAfterLowHit(move))
+  );
 };
 
 export const isSteppableString = (move: Move) => {

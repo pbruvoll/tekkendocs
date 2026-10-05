@@ -1,6 +1,9 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Transitions;Name;Recovery;Recovery state;Image;Video;Wavu id;Character id
 2+3;m;"[12;12]";i16;+1;+2c;;"* Heat Burst
-* Cancel to r45 with b,b on frame 42
+* 46f timestop at frame 14 of activation (t92)
+* Cancel to r87 with b,b on frame 42 (frame 28 of timestop)
+** t41 r27 effective recovery
+* 20f timestop on block or hit
 * 2 chip damage on block
 * 12 chip damage on hit
 * Only deals recoverable damage
@@ -132,7 +135,7 @@ d+3;L;12;i16~17;-14;+0;;"* Transition to -10, +4 SNK with DF
 d+4;L;10;i19;-12;+1;;;;;Vicious Stomp;;;;File:t8-p2-shaheen-d+4.mp4;Shaheen-d+4;shaheen
 d+3+4;l;6;i12;-15;-4;;"* -4c on crouching hit
 * High crush 4~";cs4~;FC;Crouch Shin Kick;34;FC;;t8-p2-shaheen-d+3+4.mp4;Shaheen-d+3+4;shaheen
-db+1;sl;5;i10;-5;+6;;"* Transition to standing r24 with f
+db+1;sl;5;i10;-5;+6;;"* Transition to standing r24 with f at frame 25
 * +6c on crouching hit
 * High crush 4~";cs4~;FC;Crouch Jab;24;FC;;t8-p2-shaheen-db+1.mp4;Shaheen-db+1;shaheen
 db+2;m;11;i14;-10;+1;;* Transition to SNK with input db+2,DF (-3/+8/+8);;SNK;;;;;t8-p2-shaheen-db+2.mp4;Shaheen-db+2;shaheen
@@ -148,7 +151,8 @@ db+2,1;m, h;11, 24;i14, i20;-11;+15c;;"* Balcony Break
 * Forces tech backroll on hit";bbr he intr:2;;Rapid Strikes;;;;File:t8-p2-shaheen-db+2,1.mp4;Shaheen-db+2,1;shaheen
 db+3;L;12;i20~21;-17;-6;;;;;Snake's Bite;;;;t8-p2-shaheen-db+3.mp4;Shaheen-db+3;shaheen
 db+3,4;L, h;12, 20;i20~21, i18;-13;+68a (+52);;"* Tornado
-* Counter hit combo from 1st hit
+* Combo from 1st CH
+* Jail from 1st hit
 * -36? from 1st block
 * High crush";trn cs;;Snake's Bite > Rising Scimitar;;;;File:t8-p2-shaheen-db+3,4.mp4;Shaheen-db+3,4;shaheen
 db+4;h;23;i20;-13;+28 (+18);;"* Tornado

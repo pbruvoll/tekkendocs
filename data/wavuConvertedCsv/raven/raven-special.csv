@@ -1,6 +1,9 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Transitions;Name;Recovery;Recovery state;Image;Video;Wavu id;Character id
 2+3;m;"[12;12]";i16;+1;+2c;;"* Heat Burst
-* Cancel to r45 with b,b on frame 42
+* 46f timestop at frame 14 of activation (t92)
+* Cancel to r87 with b,b on frame 42 (frame 28 of timestop)
+** t41 r27 effective recovery
+* 20f timestop on block or hit
 * 2 chip damage on block
 * 12 chip damage on hit
 * Only deals recoverable damage
@@ -449,7 +452,7 @@ BT.b+3;h;22;i18~19;+4~+5;+41a;;"* Homing
 * Balcony Break
 * Strong Aerial Tailspin
 * 6 chip damage on block";hom bbr chp:6;BT;Cannon Tail;25;BT;;File:t8-p2-raven-bt.b+3.mp4;Raven-BT.b+3;raven
-BT.b+3+4;;;;;;;Can block mid or high attacks after 6f;;;Labyrinth to Front;14;;;;Raven-BT.b+3+4;raven
+BT.b+3+4;;;;;;;Can block mid or high attacks after 5f;;;Labyrinth to Front;14;;;;Raven-BT.b+3+4;raven
 BT.d+1;sl;5;i10;-5;+6;;* High crush 1~;cs1~;FC;Crouch Spin Knuckle;24;FC;;;Raven-BT.d+1;raven
 BT.d+2;L;20;i20~21;-12;+4;+13g;"* Transition to Blind Fall (standing) on hit
 * Transition to +4 BT (Blind Labyrinth) with B on hit

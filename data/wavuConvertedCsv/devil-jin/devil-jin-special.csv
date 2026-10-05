@@ -1,6 +1,9 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Transitions;Name;Recovery;Recovery state;Image;Video;Wavu id;Character id
 2+3;m;"[12;12]";i16;+1;+2c;;"* Heat Burst
-* Cancel to r45 with b,b on frame 42
+* 46f timestop at frame 14 of activation (t92)
+* Cancel to r87 with b,b on frame 42 (frame 28 of timestop)
+** t41 r27 effective recovery
+* 20f timestop on block or hit
 * 2 chip damage on block
 * 12 chip damage on hit
 * Only deals recoverable damage
@@ -39,7 +42,7 @@ R.df+1+2;m,t;10-15,3-5,42-60;i20;-18;+0d;;"* Rage Art
 * Combo from 1st hit with 11F delay
 * +41? (+3?) on wall hit
 * +7a (-2) on BT hit";;;Flash Claw Combo;37;;;File:t8-p2-devil jin-1,1,2.mp4;Devil Jin-1,1,2;devil-jin
-1,2;h, h;5, 8;i10, i10;-3;+8;;"* Jail from 1st hit with 4F delay
+1,2;h, h;5, 8;i10, i10;-3;+8;;"* Jail from 1st attack with 4F delay
 * Combo from 1st hit with 4F delay";;;One Two Strike;22;;;File:t8-p2-devil jin-1,2.mp4;Devil Jin-1,2;devil-jin
 1,2,2;h, h, h;5, 8, 12;i10, ,i17;-12;+4;;"* Combo from 1st hit with 11F delay
 * Jail from 2nd hit with 2F delay

@@ -177,11 +177,11 @@
     "id": "Yoshimitsu-2+3",
     "input": "2+3",
     "name": "Heat Burst",
-    "notes": "* Heat Burst\n* Cancel to r45 with b,b on frame 42\n* 2 chip damage on block\n* 12 chip damage on hit\n* Only deals recoverable damage\n* Cannot cause a K.O.",
+    "notes": "* Heat Burst\n* 46f timestop at frame 14 of activation (t92)\n* Cancel to r87 with b,b on frame 42 (frame 28 of timestop)\n** t41 r27 effective recovery\n* 20f timestop on block or hit\n* 2 chip damage on block\n* 12 chip damage on hit\n* Only deals recoverable damage\n* Cannot cause a K.O.",
     "recv": "r30",
     "startup": "i16",
     "target": "m",
-    "tot": "92"
+    "tot": "46"
   },
   {
     "block": "-10",
@@ -972,7 +972,7 @@
     "id": "Yoshimitsu-d+1+2",
     "input": "d+1+2",
     "name": "Flea",
-    "notes": "* Unavailable in NSS",
+    "notes": "* Unavailable in NSS\n* Cancel to r38 standing with db (FLE.db)",
     "recv": "r20 FLE"
   },
   {
@@ -2299,13 +2299,14 @@
     "video": "File:t8-p2-yoshimitsu-fle.3+4.mp4"
   },
   {
-    "crush": "js1~4 fs5~15 js16~",
+    "crush": "js1~3 fs4~15 cs4~15 js16~30",
     "id": "Yoshimitsu-FLE.d",
     "input": "FLE.d",
     "name": "Flea Digger",
-    "notes": "* Evades jabs from frames 4-14\n* Evades mids from frames 7-12\n* Can be canceled into other FLE moves (except FLE.n)",
+    "notes": "* Evades mids from frames 7-12\n* Can be canceled into other FLE moves (except FLE.n)",
     "num": "139",
     "recv": "r30 FLE",
+    "tot": "30",
     "video": "File:t8-p2-yoshimitsu-fle.d.mp4"
   },
   {
@@ -2323,19 +2324,6 @@
     "input": "FLE.db",
     "name": "Flea Cancel",
     "recv": "r38"
-  },
-  {
-    "crush": "js1~",
-    "damage": "0",
-    "hit": "+31a (+24)",
-    "id": "Yoshimitsu-FLE.ds",
-    "input": "FLE.d",
-    "name": "Flea Digger Strike",
-    "notes": "* Evades jabs from frames 4-14\n* Evades mids from frames 7-12\n* Can be cancelled into other FLE moves (except FLE.n)\n* Only accessible after hitting with FLE.n",
-    "recv": "r20 FLE",
-    "startup": "i10",
-    "target": "M",
-    "tot": "30"
   },
   {
     "alt": "FLE.b",
@@ -2383,6 +2371,19 @@
     "startup": "i2~60",
     "target": "M",
     "tot": "61"
+  },
+  {
+    "crush": "js1~30",
+    "damage": ",0",
+    "hit": "+30a (+20)",
+    "id": "Yoshimitsu-FLE.n,d",
+    "input": ",FLE.d",
+    "name": "Flea Digger Strike",
+    "notes": "* Available only on hit\n* Evades mids from frames 7-12\n* Can be cancelled into other FLE moves (except FLE.n)",
+    "parent": "Yoshimitsu-FLE.n",
+    "recv": "r20 FLE",
+    "startup": "i10",
+    "target": ",M"
   },
   {
     "crush": "js1~",

@@ -1,6 +1,9 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Transitions;Name;Recovery;Recovery state;Image;Video;Wavu id;Character id
 2+3;m;"[12;12]";i16;+1;+2c;;"* Heat Burst
-* Cancel to r45 with b,b on frame 42
+* 46f timestop at frame 14 of activation (t92)
+* Cancel to r87 with b,b on frame 42 (frame 28 of timestop)
+** t41 r27 effective recovery
+* 20f timestop on block or hit
 * 2 chip damage on block
 * 12 chip damage on hit
 * Only deals recoverable damage
@@ -322,6 +325,7 @@ IAI.4,2;L, h;17, 20;i18~19, i26~27;-5;+26 (+0);+55a (+35a);"* Strong Aerial Tail
 * Balcony Break
 * Weapon
 * Combo from 1st CH
+* Jail from 1st hit
 * Interrupt with i7 from 1st block
 * 8 chip damage on block";bbr wpn intr:7 chp:8;;Murgleys;;;;File:t8-p2-victor-iai.4,2.mp4;Victor-IAI.4,2;victor
 IAI.1+2;h;30;i20~21;+3;+20 (-6);+21a;"* Homing
