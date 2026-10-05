@@ -1,6 +1,9 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Transitions;Name;Recovery;Recovery state;Image;Video;Wavu id;Character id
 2+3;m;"[12;12]";i16;+1;+2c;;"* Heat Burst
-* Cancel to r45 with b,b on frame 42
+* 46f timestop at frame 14 of activation (t92)
+* Cancel to r87 with b,b on frame 42 (frame 28 of timestop)
+** t41 r27 effective recovery
+* 20f timestop on block or hit
 * 2 chip damage on block
 * 12 chip damage on hit
 * Only deals recoverable damage
@@ -229,7 +232,8 @@ f,F+2;M;20;i21~22;-13;+35a;;"* Tornado
 * Transition to SEN on hit with input F (+37a)
 ** Switches sides";trn;SEN;Surge Blast;;;;File:t8-p2-lars-f,f+2.mp4;Lars-f,F+2;lars
 f,F+4;l;12;i21;-31;+5;;;;;;;;;File:t8-p2-lars-f,f+4,2.mp4;Lars-f,F+4;lars
-f,F+4,2;l, h;12, 15;i21, i24;-7;+11;;Cannot cancel DEN transition (cannot block i36 moves?);;DEN;Cross Transistor;;DEN;;File:t8-p2-lars-f,f+4,2.mp4;Lars-f,F+4,2;lars
+f,F+4,2;l, h;12, 15;i21, i24;-7;+11;;"* Cannot cancel DEN transition (cannot block i36 moves?)
+* Combo from 1st hit";;DEN;Cross Transistor;;DEN;;File:t8-p2-lars-f,f+4,2.mp4;Lars-f,F+4,2;lars
 f,F+4,3;l, m;12, 20;i21, i28;-16;-3;;;;;Double Pulse;;;;File:t8-p2-lars-f,f+4,3.mp4;Lars-f,F+4,3;lars
 f,F+1+2;m;20;i16~17;-9;+14 (+5);+59a (+39);"* Elbow
 * Balcony Break

@@ -115,11 +115,11 @@
     "id": "Shaheen-2+3",
     "input": "2+3",
     "name": "Heat Burst",
-    "notes": "* Heat Burst\n* Cancel to r45 with b,b on frame 42\n* 2 chip damage on block\n* 12 chip damage on hit\n* Only deals recoverable damage\n* Cannot cause a K.O.",
+    "notes": "* Heat Burst\n* 46f timestop at frame 14 of activation (t92)\n* Cancel to r87 with b,b on frame 42 (frame 28 of timestop)\n** t41 r27 effective recovery\n* 20f timestop on block or hit\n* 2 chip damage on block\n* 12 chip damage on hit\n* Only deals recoverable damage\n* Cannot cause a K.O.",
     "recv": "r30",
     "startup": "i16",
     "target": "m",
-    "tot": "92"
+    "tot": "46"
   },
   {
     "block": "-8",
@@ -419,7 +419,7 @@
     "id": "Shaheen-db+1",
     "input": "db+1",
     "name": "Crouch Jab",
-    "notes": "* Transition to standing r24 with f\n* +6c on crouching hit",
+    "notes": "* Transition to standing r24 with f at frame 25\n* +6c on crouching hit",
     "recv": "r24 FC",
     "startup": "i10",
     "target": "sl",
@@ -478,7 +478,7 @@
     "id": "Shaheen-db+3,4",
     "input": ",4",
     "name": "Snake's Bite > Rising Scimitar",
-    "notes": "* Tornado\n* Counter hit combo from 1st hit\n* -36? from 1st block",
+    "notes": "* Tornado\n* Combo from 1st CH\n* Jail from 1st hit\n* -36? from 1st block",
     "num": "40",
     "parent": "Shaheen-db+3",
     "startup": ",i18",

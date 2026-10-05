@@ -1,6 +1,9 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Transitions;Name;Recovery;Recovery state;Image;Video;Wavu id;Character id
 2+3;m;"[12;12]";i16;+1;+2c;;"* Heat Burst
-* Cancel to r45 with b,b on frame 42
+* 46f timestop at frame 14 of activation (t92)
+* Cancel to r87 with b,b on frame 42 (frame 28 of timestop)
+** t41 r27 effective recovery
+* 20f timestop on block or hit
 * 2 chip damage on block
 * 12 chip damage on hit
 * Only deals recoverable damage
@@ -225,7 +228,7 @@ b+1+2,1+2,2;m, m, m;15, 13, 25 (30);i17~18, ,i20~21;-13~-12;+17d (+12);;"* Combo
 * Interrupt with i2 from 1st block
 * 12 chip damage on block with motion input
 * Deals 25 damage without motion input";intr:2 chp:12;;Jin Gang Hua Shan Tuo Tian Zhang;;;;File:t8-p2-leo-b+1+2,1+2,d,df,f+2.mp4;Leo-b+1+2,1+2,2;leo
-b+1+4;h,l;6,12;i19~21;-12~-10;+3;+14;;;;Cuo Zhang;;;;File:t8-p2-leo-b+1+4.mp4;Leo-b+1+4;leo
+b+1+4;h,l;6,12;i19, i2;-12~-10;+3;+14;;;;Cuo Zhang;;;;File:t8-p2-leo-b+1+4.mp4;Leo-b+1+4;leo
 b+2+3;m;21;i30~31;-8~-7;+23g;+28a;"* Parries high and mid punches
 * Hit after parry is the same as on CH
 * Parry state 5~9";ps5~9;;Ye Kua;;;;File:t8-p2-leo-b+2+3.mp4;Leo-b+2+3;leo
@@ -419,7 +422,7 @@ KNK.3+4;L;24;i24~25;-26;+19a;;* High crush 8~55;cs8~55;;Tree Feller;38;;;File:t8
 KNK.DF;;;;;;;i15 sidestep cancel or block;;CD;Jin Bu;14;CD;;;Leo-KNK.DF;leo
 OTG.d+3+4;L;22;i21~22;-13~-12;+3;;"* Spike
 * -2d (-10) on grounded hit";spk;;Zhen Jiao;31;;;;Leo-OTG.d+3+4;leo
-hFC.1;sl;5;i10;-5;+6;;"* Transition to standing r24 with f
+hFC.1;sl;5;i10;-5;+6;;"* Transition to standing r24 with f at frame 25
 * +6c on crouching hit
 * High crush 1~";cs1~;FC;Crouch Jab;24;FC;;;Leo-hFC.1;leo
 hFC.2;sl;8;i11;-4;+7;;;;;Crouch Straight;;;;;Leo-hFC.2;leo
