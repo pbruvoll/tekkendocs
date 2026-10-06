@@ -14,6 +14,16 @@ export const parseGuideLanguage = (value: string | null): GuideLanguage => {
     : defaultGuideLanguage;
 };
 
+/** Each language's name in that language */
+export const guideLanguageNames: Record<GuideLanguage, string> = {
+  en: 'English',
+  ko: '한국어',
+  ja: '日本語',
+  es: 'Español',
+  ur: 'اردو',
+  ru: 'Русский',
+};
+
 const rtlGuideLanguages: readonly GuideLanguage[] = ['ur'];
 
 /** Text direction of a guide language. Undefined means the page default (ltr) */

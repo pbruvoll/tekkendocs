@@ -214,6 +214,9 @@ export const characterGuideAuthors: Record<
   TT2: {},
 };
 
+/** T8 guides translated to every guide language. Add a guide once its translations are on the cdn */
+export const translatedGuidesT8: string[] = ['paul'];
+
 export const siteUrl = 'https://tekkendocs.com';
 
 export const cdnUrl = 'https://tekkendocs.b-cdn.net';
