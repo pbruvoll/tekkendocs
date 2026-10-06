@@ -67,3 +67,10 @@ Informal tú, direct coaching voice ("Toma tu turno", "no lo machaques").
 - [Vandal — Impresiones Tekken 8](https://vandal.elespanol.com/avances/ps5/tekken-8/126298/2) (Heat names in English, "medidor de vida recuperable")
 - [LevelUp — Tekken 8: entre la accesibilidad y la profundidad](https://www.levelup.com/articulos/tekken-8-entre-la-accesibilidad-y-la-profundidad/) (Mexican outlet; Heat names in English)
 - [Cris Maxwell — Glosario: ¿qué es el Punish o Castigo?](https://crismaxwell.blogspot.com/2020/01/glosario-que-es-el-punish-o-castigo.html)
+
+## Kunimitsu
+
+Keep Setsunagake (SET), Katon (KAT), hopkick, option select, snake edge, EWGF in English.
+Translated: backturn → de espaldas ("queda de espaldas", "mixup de espaldas"), duckable → se puede
+agachar, full crouch mixup → mixup desde agachado.
+Avoid English verbs used bare: "hacerle parry", "hacerle low parry", "desgastar (chip)", "evitar caminando" (not "caminar una opción").

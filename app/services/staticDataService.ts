@@ -215,7 +215,7 @@ export const characterGuideAuthors: Record<
 };
 
 /** T8 guides translated to every guide language. Add a guide once its translations are on the cdn */
-export const translatedGuidesT8: string[] = ['paul'];
+export const translatedGuidesT8: string[] = ['paul', 'kunimitsu'];
 
 export const siteUrl = 'https://tekkendocs.com';
 

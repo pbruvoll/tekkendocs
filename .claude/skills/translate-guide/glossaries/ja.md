@@ -127,3 +127,22 @@ though Japanese text normally uses 「」, since the quotes are parsed. Use 、 
 - [鉄拳8 初心者向け攻略wiki — 確定反撃](https://seesaawiki.jp/tekken8kouryaku/d/%B3%CE%C4%EA%C8%BF%B7%E2)
 - [ゲームウィズ — 鉄拳8 バトルシステム解説](https://gamewith.jp/gamedb/8319/articles/31909) (heat terms, 回復可能ゲージ)
 - [AUTOMATON — 回復可能ゲージ](https://automaton-media.com/articles/newsjp/20230206-236149/)
+
+## Kunimitsu
+
+| English | Japanese | Note |
+| --- | --- | --- |
+| Kunimitsu | 州光 | not 国光 |
+| Setsunagake (SET) | 刹那駆け | |
+| Katon (KAT) | 華遁 | not 火遁 |
+| backturn (BT) | 背向け | |
+| hopkick | 跳び蹴り（ジャンステ技） | no fixed name found; describe it |
+| duckable | しゃがめる | |
+| Azucena / Alisa / Kazuya / Victor / Yoshimitsu / Miary Zo | アズセナ / アリサ / 一八 / ヴィクター / 吉光 / ミアリー・ゾ | |
+| EWGF | 最速風神拳 | |
+| Victor's IAI stance | 居合（IAI） | |
+
+Sources: [tettk.com — 州光攻略](https://tettk.com/tekken8-kunimitsu/) (州光, 刹那駆け, 華遁, 背向け),
+[jusful-doctor — クニミツ「背向け」「華遁」](https://jusful-doctor.com/tekken8-kunimitsu-practice2/)
+| check (a move that stops the opponent's action) / mid check | 潰す / 中段の牽制 | **not 確認**: 確認 means confirm (ヒット確認). "hard to check" → 潰しにくい |
+| Strong Aerial Tailspin (SAT) | Strong Aerial Tailspin（SAT） | no Japanese name confirmed, keep English |
