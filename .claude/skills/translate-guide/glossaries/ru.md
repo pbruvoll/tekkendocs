@@ -97,3 +97,19 @@ Formal "вы", like a written guide. Keep the source's casual tone otherwise ("�
 - **Main source:** [Steam — Tekken 8 для чайников: нотация и термины](https://steamcommunity.com/sharedfiles/filedetails/?id=3164151696), a Tekken 8 specific glossary (контрхит, паверкраш, хит ингейджер, хит смэш, хит дэш, хит бёрст, бекдеш, лоукраш, хайкраш, вифф, джеб, стринг, миксап, окиземе/оки, белое хп, рейдж, стойка). The page rate-limits automated fetches; the text was supplied by the user
 - [Fighting.ru — Tekken](https://fightingru.com/forum/viewtopic.php?t=11641) (мид, лоу, хай)
 - [Т—Ж — Tekken 8: что нужно знать](https://journal.tinkoff.ru/tekken-8/) and [DTF — Tekken 8](https://dtf.ru/games/1621657-metr-pushki-nina-i-regeneraciya-podrobnosti-o-tekken-8-s-tekken-world-tour-2022) (Хит, Ярость, восстанавливаемое здоровье)
+
+## Kunimitsu
+
+| English | Russian | Note |
+| --- | --- | --- |
+| Kunimitsu | Кунимицу | Поливанов spelling, like Кадзуя |
+| backturn (BT) | спиной (к сопернику) | "миксап спиной", "в положении спиной" |
+| hopkick | хопкик | |
+| duckable | можно присесть | |
+| Azucena / Alisa / Kazuya / Victor / Yoshimitsu / Miary / Kuma / Lili / Zafina | Асусена / Алиса / Кадзуя / Виктор / Ёсимицу / Миари / Кума / Лили / Зафина | |
+| option select | опшн селект | |
+
+Setsunagake, Katon, EWGF, Flash, snake edge stay in Latin, like other move names.
+
+"Steppable" is phrased with от: "от удара можно уйти сайдстепом", "от d+1 нельзя уйти сайдстепом".
+Never "удар уходится сайдстепом", which is not Russian.

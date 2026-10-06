@@ -118,3 +118,21 @@ original's second-person coaching voice where it has one ("연타하지 마십�
 - [나무위키 — 딜레이캐치](https://namu.wiki/w/%EB%94%9C%EB%A0%88%EC%9D%B4%EC%BA%90%EC%B9%98)
 - [나무위키 — 철권 시리즈/기본 조작법](https://namu.wiki/w/%EC%B2%A0%EA%B6%8C%20%EC%8B%9C%EB%A6%AC%EC%A6%88/%EA%B8%B0%EB%B3%B8%20%EC%A1%B0%EC%9E%91%EB%B2%95)
 - [철권8 마이너 갤러리 — 뉴비를 위한 용어 정리](https://gall.dcinside.com/mgallery/board/view/?id=tk8&no=32974)
+
+## Kunimitsu
+
+| English | Korean | Note |
+| --- | --- | --- |
+| Kunimitsu | 쿠니미츠 | |
+| Setsunagake (SET) / Katon (KAT) | 세츠나가케 / 카톤 | official Korean names; community (디시) also writes 찰나질주 / 화둔. Abbreviations stay in notation |
+| backturn (BT) | 뒤돌기 | official name is 등 보이기, 디시 writes 뒤자세 |
+| hopkick | 점프 킥 | no established Korean term found |
+| duckable | 앉아서 피할 수 있는 | 디시: "앉아서 피해짐" |
+| Azucena / Alisa / Kazuya / Victor / Yoshimitsu / Miary Zo | 아수세나 / 알리사 / 카즈야 / 빅터 / 요시미츠 / 미아리 조 | |
+| EWGF | 최속 풍신권 | community short form 최풍 |
+
+Sources: [게임뷰 — 쿠니미츠 체험기](https://www.gamevu.co.kr/news/articleView.html?idxno=58244) (세츠나가케, 카톤, 등 보이기),
+[철권8 마이너 갤러리 — 쿠니미츠 자세 가이드](https://gall.dcinside.com/mgallery/board/view/?id=tk8&no=1442301) (화둔, 찰나질주, 뒤자세, 앉아서 피해짐)
+| Strong Aerial Tailspin (SAT) | Strong Aerial Tailspin(SAT) | no Korean name confirmed, keep English |
+
+Particles after `SET` follow its reading 셋: SET을, SET으로, SET은.

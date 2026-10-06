@@ -107,3 +107,16 @@ comma ، (also between listed commands).
 - [VOA Urdu — ویڈیو گیم ’ٹیکن‘ کے چیمپئن پاکستانی گیمرز](https://www.urduvoa.com/a/pakistani-champions-of-video-game-tekken/7889729.html) (ٹیکن, ویڈیو گیم, گیمرز: loanwords in Urdu script)
 - [Geo Urdu — ٹیکن ویڈیو گیم پاکستان میں کیسے اتنا مقبول ہوا؟](https://urdu.geo.tv/latest/381839-)
 - [The Outline — The secret Pakistan masters of Tekken](https://theoutline.com/post/8447/tekken-pakistan-lahore-fighting-game-community) (players mix English terms with Urdu/Punjabi)
+
+## Kunimitsu
+
+| English | Urdu |
+| --- | --- |
+| Kunimitsu | کونیمتسو (short: کونی) |
+| Katon | کاٹون (KAT in notation) |
+| backturn | بیک ٹرن |
+| hopkick | ہاپ کک |
+| duckable | جھکا جا سکتا ہے |
+| Azucena / Alisa / Kazuya / Victor / Yoshimitsu / Miary | ازوسینا / ایلیسا / کازویا / وکٹر / یوشیمتسو / میاری |
+| EWGF / IAI | ای ڈبلیو جی ایف / آئی اے آئی (spelled out, keeps prose RTL) |
+| Wavu Wiki | ویوو وکی |

@@ -92,3 +92,8 @@ casual tone ("teilt ordentlich aus", "Party angesagt").
 - [space4games — Tekken 8 Tipps](https://space4games.com/de/games/tekken-8-tipps/) (Highs/Mids/Lows, Power Crush, Low Parry, Sidestep, Homing-Angriffe)
 - [PlayStation Blog DE — Tekken 8 für Einsteiger](https://blog.de.playstation.com/2024/01/30/was-ihr-als-einsteiger-in-tekken-8-unbedingt-wissen-solltet/) (Heat-Zustand, Heat Burst, Heat Smash, Heat Engager, Rage Art, wiederherstellbare Gesundheit, Frame-Daten, Kombos)
 - [Red Bull DE — Tekken 8 Guide für Beginner](https://www.redbull.com/de-de/tekken-8-beginner-guide) (register: du)
+
+## Kunimitsu
+
+Keep Setsunagake (SET), Katon (KAT), Backturn, Hopkick, Option Select, Snake Edge, EWGF, Flash in
+English. "duckable" → "lässt sich ducken", "challenge SET" → "SET challengen".

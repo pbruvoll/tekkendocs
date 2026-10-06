@@ -119,4 +119,7 @@ The site serves translations from the CDN: `getGuideSource` in
 user uploads the CSV to the CDN themselves; do not upload it. Until it is uploaded, `?lang=<lang>`
 shows English. To preview locally, temporarily read the local file in `getGuideSource` and revert.
 
+The character must also be in `translatedGuidesT8` in `app/services/staticDataService.ts`, or the
+route ignores `?lang=` and hides the language switcher. Add it when translating a new character.
+
 </supporting-info>
