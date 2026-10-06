@@ -1,4 +1,12 @@
-export const guideLanguages = ['en', 'ko', 'ja', 'es', 'ur', 'ru'] as const;
+export const guideLanguages = [
+  'en',
+  'ko',
+  'ja',
+  'es',
+  'ur',
+  'ru',
+  'de',
+] as const;
 
 export type GuideLanguage = (typeof guideLanguages)[number];
 
@@ -22,6 +30,7 @@ export const guideLanguageNames: Record<GuideLanguage, string> = {
   es: 'Español',
   ur: 'اردو',
   ru: 'Русский',
+  de: 'Deutsch',
 };
 
 const rtlGuideLanguages: readonly GuideLanguage[] = ['ur'];

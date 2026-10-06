@@ -1,0 +1,61 @@
+import { type GuideTexts } from './guideTexts';
+
+export const de: GuideTexts = {
+  metaTitle: ({ character, season, author }) =>
+    `${character} Tekken 8 Season ${season} Guide${author ? ` von ${author}` : ''} | TekkenDocs`,
+  metaDescription: ({ character }) =>
+    `Die wichtigsten Infos zu ${character} in Tekken 8. Lerne den Charakter schnell mit den wichtigsten Moves, Punishern und Combos.`,
+  pageHeading: ({ character, season }) =>
+    `${character} Tekken 8 Season ${season} Guide`,
+  translationNotice:
+    'Dieser Guide wurde automatisch übersetzt und kann Ungenauigkeiten enthalten.',
+  sections: {
+    aboutTheAuthor: 'Über den Autor',
+    introduction: 'Einführung',
+    strengths: 'Stärken',
+    weaknesses: 'Schwächen',
+    heatSystem: 'Heat-System',
+    gamePlan: 'Gameplan',
+    installments: 'Besondere Zustände',
+    topMoves: 'Top 10 Moves',
+    punishers: 'Punisher',
+    combos: 'Combos',
+    beginnerCombos: 'Einsteiger-Combos',
+    comboEnders: 'Combo-Ender',
+    wallCombos: 'Wandcombos',
+    smallCombos: 'Kurze Combos',
+    notableMoves: 'Wichtige Moves',
+    stances: 'Stances',
+    panicMoves: 'Panic Moves',
+    frameTraps: 'Frame Traps',
+    knowledgeChecks: 'Knowledge Checks',
+    defensiveTips: 'Tipps zur Verteidigung',
+    defensiveMoveHandling: 'Verteidigung gegen Moves',
+    matchups: 'Matchups',
+    externalResources: 'Externe Ressourcen',
+  },
+  inThisGuide: 'In diesem Guide',
+  writtenBy: 'Geschrieben von',
+  contributors: 'Mitwirkende',
+  lastUpdated: 'Zuletzt aktualisiert',
+  gameVersion: 'Spielversion',
+  showVideo: 'Video anzeigen',
+  hideVideo: 'Video ausblenden',
+  audio: {
+    play: 'Vorlesen',
+    stop: 'Vorlesen beenden',
+    notSupported: 'Vorlesen wird nicht unterstützt',
+  },
+  standingPunishers: 'Im Stehen',
+  crouchingPunishers: 'Aus der Hocke',
+  whiffPunishers: 'Whiff Punisher',
+  carryEnders: 'Carry',
+  floorBreakEnders: 'Floor Break',
+  wallBreakEnders: 'Wall Break',
+  normalWallCombos: 'Normal',
+  tornadoWallCombos: 'Mit Tornado',
+  goodMatchups: 'Gute Matchups',
+  badMatchups: 'Schwere Matchups',
+  replayDatabaseLink: ({ character }) =>
+    `High-Level-Replays von ${character} aus der Replay Database`,
+};

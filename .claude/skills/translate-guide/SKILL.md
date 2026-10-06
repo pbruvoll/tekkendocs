@@ -1,6 +1,6 @@
 ---
 name: translate-guide
-description: Translate a tekkendocs English character guide CSV into another language (Korean, Japanese, Spanish, Urdu, Russian, or a new one), producing data/guides/<char>/<char>-guide-<lang>.csv with every structural and notation cell preserved byte-for-byte. Use when the user wants a character guide translated, or wants an existing translated guide CSV checked or extended.
+description: Translate a tekkendocs English character guide CSV into another language (Korean, Japanese, Spanish, Urdu, Russian, German, or a new one), producing data/guides/<char>/<char>-guide-<lang>.csv with every structural and notation cell preserved byte-for-byte. Use when the user wants a character guide translated, or wants an existing translated guide CSV checked or extended.
 ---
 
 <what-to-do>
@@ -8,7 +8,7 @@ description: Translate a tekkendocs English character guide CSV into another lan
 Translate `data/guides/<char>/<char>-guide.csv` into `data/guides/<char>/<char>-guide-<lang>.csv`.
 
 1. Read the **entire** source CSV first. Later sections reuse terminology from earlier ones.
-2. Read the language's glossary in [glossaries/](./glossaries/) (`ko.md`, `ja.md`, `es.md`, `ur.md`, `ru.md`).
+2. Read the language's glossary in [glossaries/](./glossaries/) (`ko.md`, `ja.md`, `es.md`, `ur.md`, `ru.md`, `de.md`).
    Use its terms. It is the accumulated result of previous runs. For a new language, create
    `glossaries/<lang>.md` following the same shape.
 3. List the cells to translate: `python .claude/skills/translate-guide/scripts/guide_csv.py cells <char>`.
