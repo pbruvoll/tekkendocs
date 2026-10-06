@@ -11,8 +11,10 @@ import { About } from '~/components/About';
 import { Authors } from '~/components/Authors';
 import { ContentContainer } from '~/components/ContentContainer';
 import { PersonLinkList } from '~/components/PersonLinkList';
+import { GuideLanguageSwitcher } from '~/features/guideLanguage/GuideLanguageSwitcher';
 import { GuideTranslationNotice } from '~/features/guideLanguage/GuideTranslationNotice';
 import {
+  defaultGuideLanguage,
   getGuideLanguageDir,
   guideLanguageParam,
   parseGuideLanguage,
@@ -39,7 +41,10 @@ import { Stances } from '~/features/guides/Stances';
 import { StrengthsWeaknesses } from '~/features/guides/StrengthsWeaknesses';
 import { WallCombos } from '~/features/guides/WallCombos';
 import { useFrameData } from '~/hooks/useFrameData';
-import { characterGuideAuthors } from '~/services/staticDataService';
+import {
+  characterGuideAuthors,
+  translatedGuidesT8,
+} from '~/services/staticDataService';
 import { type CharacterFrameData } from '~/types/CharacterFrameData';
 import { type Game } from '~/types/Game';
 import { type Move } from '~/types/Move';
@@ -76,9 +81,9 @@ export const loader = async ({ params, url }: LoaderFunctionArgs) => {
 
   const game: Game = 'T8';
 
-  const requestedLanguage = parseGuideLanguage(
-    url.searchParams.get(guideLanguageParam),
-  );
+  const requestedLanguage = translatedGuidesT8.includes(character)
+    ? parseGuideLanguage(url.searchParams.get(guideLanguageParam))
+    : defaultGuideLanguage;
   const key = `${character}-guide|_|${game}|_|${requestedLanguage}`;
 
   const getFreshValue = async () => {
@@ -300,7 +305,12 @@ export default function Index() {
         lang={language}
         dir={getGuideLanguageDir(language)}
       >
-        <GuideTranslationNotice />
+        {translatedGuidesT8.includes(characterId) && (
+          <div className="mt-4 flex flex-wrap items-center gap-3">
+            <GuideLanguageSwitcher current={language} />
+            <GuideTranslationNotice />
+          </div>
+        )}
         {!!authors?.length && (
           <div className="mt-4">
             <Authors authors={authors} label={texts.writtenBy} />
