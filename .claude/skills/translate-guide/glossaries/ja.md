@@ -146,3 +146,52 @@ Sources: [tettk.com — 州光攻略](https://tettk.com/tekken8-kunimitsu/) (州
 [jusful-doctor — クニミツ「背向け」「華遁」](https://jusful-doctor.com/tekken8-kunimitsu-practice2/)
 | check (a move that stops the opponent's action) / mid check | 潰す / 中段の牽制 | **not 確認**: 確認 means confirm (ヒット確認). "hard to check" → 潰しにくい |
 | Strong Aerial Tailspin (SAT) | Strong Aerial Tailspin（SAT） | no Japanese name confirmed, keep English |
+
+## Fahkumram
+
+| English | Japanese | Note |
+| --- | --- | --- |
+| Fahkumram | ファーカムラム | official (電撃オンライン, AUTOMATON) |
+| Garuda Force (GRF) / install | ガルーダフォース / 強化状態 | |
+| Rama stance (RAM) | ラーマスタンス | tettk.com; jusful-doctor writes マーラ, a typo |
+| unblockable | ガード不能（技） | community: ガー不 |
+| guard break | ガードブレイク | |
+| can not be parried | 捌かれない | |
+| hits grounded | ダウン中の相手にもヒット | |
+| knowledge check | 初見殺し | describes a move that wins until the opponent learns the answer |
+
+Sources: [tettk.com — ファーカムラム攻略](https://tettk.com/tk8fahkumram/),
+[jusful-doctor — ファーカムラム知識編](https://jusful-doctor.com/tekken8-fahkumram-knowledge/)
+
+## Xiaoyu
+
+| English | Japanese | Note |
+| --- | --- | --- |
+| Art of Phoenix (AOP) | 鳳凰 / 鳳凰の構え | jusful-doctor; 生鳳凰 for the manual d+1+2 entry |
+| Hypnotist (HYP) | 擺歩（バイホ） | jusful-doctor, noko.gedow.net; steps → 歩 ("ヒート時は2歩からスタート") |
+| back turned / Rain Dance (BT) | 背向け | |
+| Cali Roll (BT.f+3+4,3+4) | 後転 | jusful-doctor: 後転～跳弓脚 |
+| BT parry / punch parry | 背向けの捌き / パンチ捌き | descriptive |
+| Hop and Throw | Hop and Throw | no Japanese name confirmed, keep English and describe |
+| Yoshimitsu's Flash | 吉光のフラッシュ | katakana of the English name, unverified |
+| Reina / Jack / Bear | レイナ / ジャック / クマ・パンダ | |
+| tip range | 先端当て | |
+
+Sources: [jusful-doctor — シャオ「鳳凰と擺歩」](https://jusful-doctor.com/tekken8-xiaoyu-practice3/),
+[jusful-doctor — シャオ「背向け」](https://jusful-doctor.com/tekken8-xiaoyu-practice2/),
+[noko.gedow.net — ヒートスマッシュ後の二択](https://noko.gedow.net/2024/03/03/tekken8-xiaoyu-countermeasure-after-heatsmash/)
+
+## Alisa
+
+| English | Japanese | Note |
+| --- | --- | --- |
+| Alisa Bosconovitch | アリサ・ボスコノビッチ | |
+| Destructive Form (DES) | デストロイフォーム | tettk.com アリサ攻略 (official JP name, not デストラクティブ) |
+| Boot / Dual Boot / Backup | ブート / デュアルブート / バックアップ | tettk.com; "Boot stances" → ブート系の構え |
+| chainsaw | チェーンソー | |
+| Hellsweep (DBT f+2,2) | ヘルスイープ | |
+| spike knockdown / floor break | 叩きつけダウン / 床破壊 | |
+| hail mary | 一か八かの | |
+| King / Jun / Leo / Asuka | キング / 準 / レオ / 飛鳥 | |
+
+Sources: [tettk.com — アリサ攻略](https://tettk.com/tk8alisa/)

@@ -74,3 +74,26 @@ Keep Setsunagake (SET), Katon (KAT), hopkick, option select, snake edge, EWGF in
 Translated: backturn → de espaldas ("queda de espaldas", "mixup de espaldas"), duckable → se puede
 agachar, full crouch mixup → mixup desde agachado.
 Avoid English verbs used bare: "hacerle parry", "hacerle low parry", "desgastar (chip)", "evitar caminando" (not "caminar una opción").
+
+## Fahkumram
+
+Garuda Force (GRF) and Rama (RAM) stay in English: "install Garuda Force", "postura Rama", "mixup
+de Rama". Translated: unblockable → imbloqueable, hits grounded → golpea al rival en el suelo,
+can not be parried → no se le puede hacer parry, combos naturally → combea. Kept: install, guard
+break, knowledge check.
+
+## Xiaoyu
+
+AOP (Art of Phoenix) and Hypnotist (HYP) stay in English; backturn → de espaldas, as for Kunimitsu
+("parry de espaldas", "50/50 de espaldas"). Cali Roll → rodada (Cali Roll); Hop and Throw, hell sweep,
+Flash (Yoshimitsu) stay English. high crush → crushear ("crushea altos", as in earlier guides);
+tip range → a punta de alcance; twitch confirm → confirmar según la reacción del rival; steps (HYP) →
+pasos; Bear → oso.
+
+## Alisa
+
+Destructive Form (DES), Boot (SBT), Dual Boot (DBT), Backup (BKP) stay in English ("posturas Boot").
+chainsaws → motosierras; Hellsweep, Hard Reset, Evasive Action, Demon Paw stay English; spike
+knockdown → knockdown de clavado; airborne → deja a Alisa en el aire; hail mary → launcher a la
+desesperada; goated → ser un crack; mental frames → «frames mentales» (never ASCII quotes in prose:
+they become command links).

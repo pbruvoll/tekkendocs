@@ -120,3 +120,46 @@ comma ، (also between listed commands).
 | Azucena / Alisa / Kazuya / Victor / Yoshimitsu / Miary | ازوسینا / ایلیسا / کازویا / وکٹر / یوشیمتسو / میاری |
 | EWGF / IAI | ای ڈبلیو جی ایف / آئی اے آئی (spelled out, keeps prose RTL) |
 | Wavu Wiki | ویوو وکی |
+
+## Fahkumram
+
+| English | Urdu |
+| --- | --- |
+| Fahkumram | فاکمرام |
+| Garuda Force / install | گروڈا فورس / انسٹال |
+| Rama stance | راما اسٹانس |
+| unblockable | ان بلاک ایبل |
+| guard break | گارڈ بریک |
+| jail (string) | جیل کرتا ہے (یعنی بیچ میں جھکا نہیں جا سکتا) |
+| hits grounded | زمین پر گرے حریف کو بھی لگتا ہے |
+| interrupt | انٹرپٹ |
+| knowledge check | نالج چیک (حریف کی معلومات کا امتحان) |
+| rage art | ریج آرٹ |
+
+## Xiaoyu
+
+| English | Urdu |
+| --- | --- |
+| Xiaoyu / Xiao | شیاؤیو / شیاؤ |
+| Art of Phoenix (AOP) | آرٹ آف فینکس |
+| Hypnotist (HYP) | ہپناٹسٹ |
+| back turned (BT) | بیک ٹرن |
+| Cali Roll | کیلی رول |
+| Hop and Throw | ہاپ اینڈ تھرو |
+| parry / punch parry | پیری / پنچ پیری |
+| Reina / Jack / Bear | رینا / جیک / ریچھ (کوما/پانڈا) |
+| 50/50 in prose | ففٹی ففٹی |
+
+First-person verbs are gendered in Urdu; the author's gender is unknown, so use neutral
+constructions (passive, "میرا شوق ہے", "پیش خدمت ہے").
+
+## Alisa
+
+| English | Urdu |
+| --- | --- |
+| Alisa Bosconovitch | ایلیسا باسکونووچ |
+| Destructive Form / Boot / Dual Boot / Backup | ڈسٹرکٹیو فارم / بوٹ / ڈوئل بوٹ / بیک اپ |
+| chainsaw | چین سا |
+| Hellsweep / Hard Reset / Evasive Action | ہیل سویپ / ہارڈ ری سیٹ / ایویسو ایکشن |
+| King / Jun / Leo / Asuka / Ling Xiaoyu | کنگ / جون / لیو / آسوکا / لنگ شیاؤیو |
+| i13 at a cell start | تیرہ فریم (i13) — a cell may not start with Latin |
