@@ -1,5 +1,5 @@
-import { Heading } from '@radix-ui/themes';
 import { href, type MetaFunction } from 'react-router';
+import { Heading } from '@/components/ui/heading';
 import { CharacterGrid } from '~/components/CharacterGrid';
 import { ContentContainer } from '~/components/ContentContainer';
 import { getTekken8Characters } from '~/services/staticDataService';
@@ -22,7 +22,7 @@ export default function T8FrameData() {
   const characterInfoList = getTekken8Characters();
   return (
     <ContentContainer enableTopPadding enableBottomPadding>
-      <Heading as="h1" mb="4" size="6">
+      <Heading as="h1" size="6" className="mb-4">
         Tekken 8 frame data
       </Heading>
 
@@ -47,7 +47,7 @@ export default function T8FrameData() {
         </p>
       </div>
 
-      <Heading as="h2" mb="4" size="5">
+      <Heading as="h2" size="5" className="mb-4">
         Characters
       </Heading>
       <CharacterGrid

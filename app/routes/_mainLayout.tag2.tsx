@@ -1,5 +1,5 @@
-import { Heading } from '@radix-ui/themes';
 import { data, type MetaFunction } from 'react-router';
+import { Heading } from '@/components/ui/heading';
 import { ContentContainer } from '~/components/ContentContainer';
 import { charsTag2 } from '~/services/staticDataService';
 import { getCacheControlHeaders } from '~/utils/headerUtils';
@@ -45,7 +45,7 @@ const Tag2CharacterCard = ({ name, url }: Tag2CharacterCardProps) => {
 export default function Tag2() {
   return (
     <ContentContainer>
-      <Heading as="h2" mt="5" mb="4" size="5">
+      <Heading as="h2" size="5" className="mt-6 mb-4">
         Tekken Tag Tournament 2
       </Heading>
       <ul className="grid grid-cols-2 gap-x-2 gap-y-2 xs:grid-cols-3 xs:gap-x-3 xs:gap-y-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6">

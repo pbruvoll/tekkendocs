@@ -1,5 +1,5 @@
 import { Pencil1Icon } from '@radix-ui/react-icons';
-import { Heading, Link as RadixLink, Table } from '@radix-ui/themes';
+import { Link as RadixLink, Table } from '@radix-ui/themes';
 import {
   data,
   Link,
@@ -8,6 +8,7 @@ import {
   NavLink,
   useLoaderData,
 } from 'react-router';
+import { Heading } from '@/components/ui/heading';
 import { ContentContainer } from '~/components/ContentContainer';
 import { hasHeaderMap } from '~/constants/hasHeaderMap';
 import { tableIdToDisplayName } from '~/constants/tableIdToDisplayName';
@@ -119,7 +120,7 @@ export default function Index() {
     <>
       <ContentContainer enableTopPadding>
         <div className="flex items-center justify-between">
-          <Heading as="h1" my="2" className="capitalize">
+          <Heading as="h1" className="my-2 capitalize">
             {characterName}
           </Heading>
           <a
@@ -145,7 +146,7 @@ export default function Index() {
           return (
             <section key={table.name} className="mt-8">
               <ContentContainer>
-                <Heading as="h2" mb="4" size="4">
+                <Heading as="h2" size="4" className="mb-4">
                   {tableIdToDisplayName[table.name]}
                 </Heading>
               </ContentContainer>

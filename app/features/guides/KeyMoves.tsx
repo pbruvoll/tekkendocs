@@ -1,8 +1,8 @@
-import { Heading } from '@radix-ui/themes';
 import cx from 'classix';
 import { AnimatePresence, motion } from 'motion/react';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
+import { Heading } from '@/components/ui/heading';
 import { Commands } from '~/components/Commands';
 import { MoveVideo } from '~/components/MoveVideo';
 import { PlayTextAudioButton } from '~/components/PlayTextAudioButton';

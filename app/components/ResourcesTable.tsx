@@ -1,4 +1,5 @@
-import { Heading, Link as RadixLink, Table } from '@radix-ui/themes';
+import { Link as RadixLink, Table } from '@radix-ui/themes';
+import { Heading } from '@/components/ui/heading';
 import { ContentContainer } from './ContentContainer';
 
 export const ResourcesTable = ({
@@ -11,7 +12,7 @@ export const ResourcesTable = ({
   return (
     <section className="mt-8">
       <ContentContainer>
-        <Heading as="h2" mb="4" size="4">
+        <Heading as="h2" size="4" className="mb-4">
           External Resources
         </Heading>
       </ContentContainer>

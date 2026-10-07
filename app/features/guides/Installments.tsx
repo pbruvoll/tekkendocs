@@ -1,4 +1,4 @@
-import { Heading } from '@radix-ui/themes';
+import { Heading } from '@/components/ui/heading';
 import { TextWithCommand } from '~/components/TextWithCommand';
 import { useGuideContext } from './GuideContext';
 import { type Installment } from './GuideData';
@@ -14,7 +14,7 @@ export const Installments = ({ installments }: InstallmentsProps) => {
       <GuideSectionHeading section="installments" />
       {installments.map(({ name, description }) => (
         <section key={name} className="my-4">
-          <Heading as="h3" mb="1" size="3">
+          <Heading as="h3" size="3" className="mb-1">
             {name}
           </Heading>
 
