@@ -1,5 +1,5 @@
-import { Card, Inset } from '@radix-ui/themes';
 import { type MetaFunction } from 'react-router';
+import { Card } from '@/components/ui/card';
 import { ContentContainer } from '~/components/ContentContainer';
 import { type T8Rank, t8Ranks } from '~/constants/t8Ranks';
 import { generateMetaTags } from '~/utils/seoUtils';
@@ -54,10 +54,10 @@ export default Ranks;
 
 const RankCard = ({ image, name, points }: Rank) => {
   return (
-    <Card>
-      <Inset clip="padding-box" side="top" pb="current">
+    <Card className="overflow-hidden p-3">
+      <div className="-mx-3 -mt-3 pb-3">
         <img src={image} className="aspect-[2] w-full" alt={name} />
-      </Inset>
+      </div>
       <div className="flex flex-col flex-wrap items-center gap-1 text-center text-sm">
         <div>{name}</div>
         <div>{points ?? '???'} pts</div>

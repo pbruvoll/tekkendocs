@@ -1,7 +1,7 @@
-import { Card, Inset } from '@radix-ui/themes';
 import { cx } from 'class-variance-authority';
 import { Link } from 'react-router';
 import { Badge } from '@/components/ui/badge';
+import { Card } from '@/components/ui/card';
 
 export type CharacterCard2Props = {
   size?: 'medium' | 'large';
@@ -22,13 +22,8 @@ export const CharacterCard2 = ({
 }: CharacterCard2Props) => {
   return (
     <Link to={url} className="block h-full cursor-pointer">
-      <Card className="group h-full transform transition duration-500 hover:scale-110 hover:border-b-gray-700 hover:shadow-sm">
-        <Inset
-          clip="padding-box"
-          className="relative"
-          side="top"
-          pb={size === 'large' ? 'current' : '0'}
-        >
+      <Card className="group relative h-full transform overflow-hidden p-3 transition duration-500 hover:scale-110 hover:border-b-gray-700 hover:shadow-sm">
+        <div className={cx('relative -mx-3 -mt-3', size === 'large' && 'pb-3')}>
           <img
             src={imgUrl}
             alt={name}
@@ -47,8 +42,8 @@ export const CharacterCard2 = ({
               {badge}
             </Badge>
           )}
-        </Inset>
-        <Inset clip="padding-box" side="x">
+        </div>
+        <div className="-mx-3">
           {author ? (
             <>
               <div className="overflow-hidden text-ellipsis whitespace-nowrap text-center max-xs:text-xs">
@@ -63,7 +58,7 @@ export const CharacterCard2 = ({
               {name === 'mokujin' ? 'All Characters' : name}
             </div>
           )}
-        </Inset>
+        </div>
       </Card>
     </Link>
   );

@@ -1,4 +1,4 @@
-import { Table, Text } from '@radix-ui/themes';
+import { Table } from '@radix-ui/themes';
 import { Link, type MetaFunction, useMatches } from 'react-router';
 import { Heading } from '@/components/ui/heading';
 import { ContentContainer } from '~/components/ContentContainer';
@@ -142,9 +142,7 @@ export default function MoveRoute({ params }: Route.ComponentProps) {
 
   return (
     <ContentContainer enableTopPadding enableBottomPadding>
-      <Text size="7" mr="6" as="span" className="sr-only">
-        Tekken 8
-      </Text>
+      <span className="sr-only">Tekken 8</span>
       <Heading as="h1" className="mt-2 mb-4 flex items-start gap-2">
         <span className="flex flex-wrap items-center gap-2">
           <Link to={`/t8/${characterName}`} className="capitalize text-primary">
