@@ -1,5 +1,6 @@
 import { Pencil1Icon } from '@radix-ui/react-icons';
-import { Text } from '@radix-ui/themes';
+import { headingVariants } from '@/components/ui/heading';
+import { cn } from '@/lib/utils';
 import { ContentContainer } from '~/components/ContentContainer';
 import { t8AvatarMap } from '~/utils/t8AvatarMap';
 import { getCharacterDisplayName } from './characterDisplayName';
@@ -26,9 +27,9 @@ export const CharacterPageHeader = ({
           />
           {/* the character name is shared chrome, not the title of the page
               below it, so each sub page renders its own h1 */}
-          <Text as="p" size="6" my="2" className="font-bold capitalize">
+          <p className={cn(headingVariants({ size: '6' }), 'my-2 capitalize')}>
             {getCharacterDisplayName(characterName)}
-          </Text>
+          </p>
         </div>
         {editUrl && (
           <a

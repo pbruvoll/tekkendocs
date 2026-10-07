@@ -1,5 +1,6 @@
-import { Button, Flex, Text } from '@radix-ui/themes';
+import { Button } from '@radix-ui/themes';
 import { Heart } from 'lucide-react';
+import { cn } from '@/lib/utils';
 import { filterKey, hitLevelValue } from '~/constants/filterConstants';
 import { stanceNameMap, stateNameMap } from '~/constants/stanceNameMap';
 import { type MoveFilter } from '~/types/MoveFilter';
@@ -112,11 +113,9 @@ export const FrameDataFilterSelection = ({
   };
 
   return (
-    <Flex direction="column" gap="5" className={className}>
+    <div className={cn('flex flex-col gap-6', className)}>
       <section className="flex flex-col gap-3">
-        <Text as="div" size="3" mb="1" weight="bold">
-          Hit level
-        </Text>
+        <div className="mb-1 font-bold">Hit level</div>
         <div className="flex flex-wrap gap-3">
           <Button
             variant={
@@ -177,9 +176,7 @@ export const FrameDataFilterSelection = ({
         </div>
       </section>
       <section className="flex flex-col gap-3">
-        <Text as="div" size="3" mb="1" weight="bold">
-          Block frames
-        </Text>
+        <div className="mb-1 font-bold">Block frames</div>
         <div className="flex flex-wrap gap-3">
           <Button
             variant={blockFrameMin === 1 ? 'solid' : 'outline'}
@@ -254,9 +251,7 @@ export const FrameDataFilterSelection = ({
         />
       </section>
       <section className="flex flex-col gap-3">
-        <Text as="div" size="3" mb="1" weight="bold">
-          Hit frames
-        </Text>
+        <div className="mb-1 font-bold">Hit frames</div>
         <div className="flex flex-wrap gap-3">
           <Button
             variant={hitFrameMin === 0 ? 'solid' : 'outline'}
@@ -316,9 +311,7 @@ export const FrameDataFilterSelection = ({
         />
       </section>
       <section className="flex flex-col gap-3">
-        <Text as="div" size="3" mb="1" weight="bold">
-          Startup frames
-        </Text>
+        <div className="mb-1 font-bold">Startup frames</div>
         <RangeSlider
           values={[startupFrameMin, startupFrameMax]}
           max={30}
@@ -346,9 +339,7 @@ export const FrameDataFilterSelection = ({
         />
       </section>
       <section className="flex flex-col gap-3">
-        <Text as="div" size="3" mb="1" weight="bold">
-          Crush
-        </Text>
+        <div className="mb-1 font-bold">Crush</div>
         <div className="flex flex-wrap gap-3">
           {(
             [
@@ -377,9 +368,7 @@ export const FrameDataFilterSelection = ({
         </div>
       </section>
       <section className="flex flex-col gap-3">
-        <Text as="div" size="3" mb="1" weight="bold">
-          Properties
-        </Text>
+        <div className="mb-1 font-bold">Properties</div>
         <div className="flex flex-wrap gap-3">
           <Button
             variant={favorite ? 'solid' : 'outline'}
@@ -462,9 +451,7 @@ export const FrameDataFilterSelection = ({
         </div>
       </section>
       <section className="flex flex-col gap-3">
-        <Text as="div" size="3" mb="1" weight="bold">
-          States
-        </Text>
+        <div className="mb-1 font-bold">States</div>
         <div className="flex flex-wrap gap-3">
           {states.map((state) => {
             const active = stanceFilter?.includes(state);
@@ -487,9 +474,7 @@ export const FrameDataFilterSelection = ({
         </div>
       </section>
       <section className="flex flex-col gap-3">
-        <Text as="div" size="3" mb="1" weight="bold">
-          Stances
-        </Text>
+        <div className="mb-1 font-bold">Stances</div>
         <div className="flex flex-wrap gap-3">
           {stances.map((stance) => {
             const active = stanceFilter?.includes(stance);
@@ -512,9 +497,7 @@ export const FrameDataFilterSelection = ({
         </div>
       </section>
       <section className="flex flex-col gap-3">
-        <Text as="div" size="3" mb="1" weight="bold">
-          Transitions / Recovery
-        </Text>
+        <div className="mb-1 font-bold">Transitions / Recovery</div>
         <div className="flex flex-wrap gap-3">
           {transitions.map((transition) => {
             const active = transitionFilter?.includes(transition);
@@ -537,9 +520,7 @@ export const FrameDataFilterSelection = ({
         </div>
       </section>
       <section className="flex flex-col gap-3">
-        <Text as="div" size="3" mb="1" weight="bold">
-          Media
-        </Text>
+        <div className="mb-1 font-bold">Media</div>
         <div className="flex flex-wrap gap-3">
           <Button
             variant={video ? 'solid' : 'outline'}
@@ -592,9 +573,7 @@ export const FrameDataFilterSelection = ({
         </div>
       </section>
       <section className="flex flex-col gap-3">
-        <Text as="div" size="3" mb="1" weight="bold">
-          Number of hits
-        </Text>
+        <div className="mb-1 font-bold">Number of hits</div>
         <div className="flex flex-wrap gap-3">
           <Button
             variant={numHitsMin === 1 && numHitsMax === 1 ? 'solid' : 'outline'}
@@ -647,6 +626,6 @@ export const FrameDataFilterSelection = ({
           </Button>
         </div>
       </section>
-    </Flex>
+    </div>
   );
 };

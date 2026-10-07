@@ -1,6 +1,6 @@
-import { Badge } from '@radix-ui/themes';
 import { href, Link, type MetaFunction } from 'react-router';
 import { TextEffect } from '@/components/core/TextEffect';
+import { Badge } from '@/components/ui/badge';
 import { Heading } from '@/components/ui/heading';
 import { CharacterGrid } from '~/components/CharacterGrid';
 import { ContentContainer } from '~/components/ContentContainer';
@@ -27,6 +27,9 @@ export const meta: MetaFunction = ({ matches }) => {
 };
 
 export const headers = () => getCacheControlHeaders({ seconds: 60 * 5 });
+
+const otherFeatureBadgeClassName =
+  'whitespace-nowrap border-primary/50 px-[9px] py-[3px] text-sm font-medium text-primary';
 
 export default function Index() {
   const characterInfoListT7 = getTekken7Characters();
@@ -81,42 +84,42 @@ export default function Index() {
       </Heading>
       <div className="flex flex-wrap gap-3">
         {/* <Link to="/matchvideo" className="cursor-pointer">
-          <Badge size="3" style={{ cursor: 'pointer' }} variant="outline">
+          <Badge variant="outline" className={otherFeatureBadgeClassName}>
             Match videos
           </Badge>
         </Link> */}
         <Link to={href('/t8/getting-started')} className="cursor-pointer">
-          <Badge size="3" style={{ cursor: 'pointer' }} variant="outline">
+          <Badge variant="outline" className={otherFeatureBadgeClassName}>
             <span className="p-0.5 px-1">Getting started with Tekken</span>
           </Badge>
         </Link>
         <Link to={href('/t8/movecompare')} className="cursor-pointer">
-          <Badge size="3" style={{ cursor: 'pointer' }} variant="outline">
+          <Badge variant="outline" className={otherFeatureBadgeClassName}>
             <span className="p-0.5 px-1">Move comparison</span>
           </Badge>
         </Link>
         <Link to={href('/t8/stats')} className="cursor-pointer">
-          <Badge size="3" style={{ cursor: 'pointer' }} variant="outline">
+          <Badge variant="outline" className={otherFeatureBadgeClassName}>
             <span className="p-0.5 px-1">Stats</span>
           </Badge>
         </Link>
         <Link to={href('/t8/ranks')} className="cursor-pointer">
-          <Badge size="3" style={{ cursor: 'pointer' }} variant="outline">
+          <Badge variant="outline" className={otherFeatureBadgeClassName}>
             <span className="p-0.5 px-1">Ranks</span>
           </Badge>
         </Link>
         <Link to={href('/t8/challenge')} className="cursor-pointer">
-          <Badge size="3" style={{ cursor: 'pointer' }} variant="outline">
+          <Badge variant="outline" className={otherFeatureBadgeClassName}>
             <span className="p-0.5 px-1">Challenges</span>
           </Badge>
         </Link>
         <Link to={href('/t8/flashcard')} className="cursor-pointer">
-          <Badge size="3" style={{ cursor: 'pointer' }} variant="outline">
+          <Badge variant="outline" className={otherFeatureBadgeClassName}>
             <span className="p-0.5 px-1">Flash cards</span>
           </Badge>
         </Link>
         <Link to={href('/t8/mods')} className="cursor-pointer">
-          <Badge size="3" style={{ cursor: 'pointer' }} variant="outline">
+          <Badge variant="outline" className={otherFeatureBadgeClassName}>
             <span className="p-0.5 px-1">Useful mods</span>
           </Badge>
         </Link>
