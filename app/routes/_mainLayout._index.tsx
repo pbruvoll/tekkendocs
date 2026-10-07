@@ -1,6 +1,7 @@
-import { Badge, Heading } from '@radix-ui/themes';
+import { Badge } from '@radix-ui/themes';
 import { href, Link, type MetaFunction } from 'react-router';
 import { TextEffect } from '@/components/core/TextEffect';
+import { Heading } from '@/components/ui/heading';
 import { CharacterGrid } from '~/components/CharacterGrid';
 import { ContentContainer } from '~/components/ContentContainer';
 import { ExternalResources } from '~/components/ExternalResources';
@@ -48,12 +49,12 @@ export default function Index() {
         Frame data and learning resources for Tekken
       </TextEffect>
 
-      <Heading as="h2" mt="5" mb="4" size="5">
+      <Heading as="h2" size="5" className="mt-6 mb-4">
         Main features
       </Heading>
       <MainFeatureCards />
 
-      <Heading as="h2" mt="7" mb="4" size="5">
+      <Heading as="h2" size="5" className="mt-10 mb-4">
         <Link to={href('/t8')}>
           <span className="sr-only">Tekken 8 </span>Characters
         </Link>
@@ -75,7 +76,7 @@ export default function Index() {
         })}
       />
 
-      <Heading as="h2" mt="5" mb="4" size="5">
+      <Heading as="h2" size="5" className="mt-6 mb-4">
         Other features
       </Heading>
       <div className="flex flex-wrap gap-3">
@@ -121,12 +122,12 @@ export default function Index() {
         </Link>
       </div>
 
-      <Heading as="h2" mt="7" mb="4" size="5" id="externalResources">
+      <Heading as="h2" size="5" id="externalResources" className="mt-10 mb-4">
         External Resources
       </Heading>
       <ExternalResources />
 
-      <Heading as="h2" mt="7" mb="4" size="5">
+      <Heading as="h2" size="5" className="mt-10 mb-4">
         <Link to={href('/t7')}>Tekken 7</Link>
       </Heading>
 
@@ -141,7 +142,7 @@ export default function Index() {
         })}
       />
 
-      <Heading as="h2" mt="7" mb="4" size="5">
+      <Heading as="h2" size="5" className="mt-10 mb-4">
         <Link to={href('/tag2')}>Tekken Tag 2</Link>
       </Heading>
 

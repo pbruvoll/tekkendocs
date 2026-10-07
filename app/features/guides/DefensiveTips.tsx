@@ -1,4 +1,4 @@
-import { Heading } from '@radix-ui/themes';
+import { Heading } from '@/components/ui/heading';
 import { TextWithCommand } from '~/components/TextWithCommand';
 import { useGuideContext } from './GuideContext';
 import { type DefensiveTip } from './GuideData';
@@ -14,7 +14,7 @@ export const DefensiveTips = ({ tips }: DefensiveTipsProps) => {
       <GuideSectionHeading section="defensiveTips" />
       {tips.map(({ title, description }) => (
         <section key={title} className="my-2 mb-4">
-          <Heading as="h3" mb="1" size="3">
+          <Heading as="h3" size="3" className="mb-1">
             {title}
           </Heading>
 

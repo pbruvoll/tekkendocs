@@ -1,4 +1,4 @@
-import { Heading } from '@radix-ui/themes';
+import { Heading } from '@/components/ui/heading';
 import { type GuideSectionKey } from '~/features/guideLanguage/texts/guideTexts';
 import { useGuideContext } from './GuideContext';
 

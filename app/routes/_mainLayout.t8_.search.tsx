@@ -179,14 +179,17 @@ export default function () {
       {filteredCharList.length === 0 && (
         <div>No characters matches the search query</div>
       )}
-      {filteredCharList.length > 1 &&
-        filteredCharList.map((char) => (
-          <li key={char.id}>
-            <Link className="text-primary no-underline" to={`/t8/${char.id}`}>
-              {char.id}
-            </Link>
-          </li>
-        ))}
+      {filteredCharList.length > 1 && (
+        <ul>
+          {filteredCharList.map((char) => (
+            <li key={char.id}>
+              <Link className="text-primary no-underline" to={`/t8/${char.id}`}>
+                {char.id}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      )}
 
       {selectedCharId && state === 'idle' && filteredMoves.length === 0 && (
         <div>

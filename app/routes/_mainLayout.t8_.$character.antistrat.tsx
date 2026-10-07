@@ -1,4 +1,4 @@
-import { Heading, Table } from '@radix-ui/themes';
+import { Table } from '@radix-ui/themes';
 import { useMemo } from 'react';
 import {
   data,
@@ -8,6 +8,7 @@ import {
   useLoaderData,
   useRouteError,
 } from 'react-router';
+import { Heading } from '@/components/ui/heading';
 import { Commands } from '~/components/Commands';
 import { ContentContainer } from '~/components/ContentContainer';
 import { AppErrorBoundary } from '~/components/ErrorBoundary';
@@ -116,7 +117,7 @@ export default function Index() {
         return (
           <section key={table.name} className="mt-8">
             <ContentContainer>
-              <Heading as="h2" mb="4" size="4">
+              <Heading as="h2" size="4" className="mb-4">
                 {tableIdToDisplayName[table.name] || table.name}
               </Heading>
             </ContentContainer>

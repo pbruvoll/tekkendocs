@@ -1,6 +1,12 @@
-import { Heading, Link as RadixLink, Table } from '@radix-ui/themes';
-import { type LoaderFunctionArgs, data } from 'react-router';
-import { Link, type MetaFunction, useLoaderData } from 'react-router';
+import { Link as RadixLink, Table } from '@radix-ui/themes';
+import {
+  data,
+  Link,
+  type LoaderFunctionArgs,
+  type MetaFunction,
+  useLoaderData,
+} from 'react-router';
+import { Heading } from '@/components/ui/heading';
 import { ContentContainer } from '~/components/ContentContainer';
 import { google } from '~/google.server';
 import { ServerStatusCode } from '~/types/ServerStatusCode';
@@ -131,8 +137,8 @@ export default function Move() {
 
   return (
     <ContentContainer enableTopPadding enableBottomPadding>
-      <Heading mt="2" mb="4" as="h1" className="capitalize">
-        <RadixLink asChild>
+      <Heading as="h1" className="mt-2 mb-4 capitalize">
+        <RadixLink asChild style={{ lineHeight: 'inherit' }}>
           <Link to={`/${characterName}`}>{characterName} </Link>
         </RadixLink>
         : {moveRow[0]}

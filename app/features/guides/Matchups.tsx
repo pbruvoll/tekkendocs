@@ -1,6 +1,6 @@
-import { Heading } from '@radix-ui/themes';
 import cx from 'classix';
 import { Link } from 'react-router';
+import { Heading } from '@/components/ui/heading';
 import { TextWithCommand } from '~/components/TextWithCommand';
 import { characterInfoT8List } from '~/constants/characterInfoListT8';
 import { t8AvatarMap } from '~/utils/t8AvatarMap';

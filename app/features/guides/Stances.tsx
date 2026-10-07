@@ -1,5 +1,5 @@
-import { Heading } from '@radix-ui/themes';
 import { cx } from 'class-variance-authority';
+import { Heading } from '@/components/ui/heading';
 import { Commands } from '~/components/Commands';
 import { TextWithCommand } from '~/components/TextWithCommand';
 import { useGuideContext } from './GuideContext';
@@ -23,7 +23,7 @@ export const Stances = ({ stances }: StancesProps) => {
             type === 'stance' && index > 0 ? 'mt-10' : 'mt-2',
           )}
         >
-          <Heading as="h3" mb="1" size="3">
+          <Heading as="h3" size="3" className="mb-1">
             <Commands
               charUrl={charUrl}
               compressedCommandMap={compressedCommandMap}

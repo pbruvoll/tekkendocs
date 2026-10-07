@@ -1,4 +1,4 @@
-import { Heading, Link as RadixLink, Table } from '@radix-ui/themes';
+import { Link as RadixLink, Table } from '@radix-ui/themes';
 import { useMemo } from 'react';
 import {
   data,
@@ -8,6 +8,7 @@ import {
   useParams,
 } from 'react-router';
 import invariant from 'tiny-invariant';
+import { Heading } from '@/components/ui/heading';
 import { Authors } from '~/components/Authors';
 import { Command } from '~/components/Command';
 import { ContentContainer } from '~/components/ContentContainer';
@@ -223,7 +224,7 @@ export default function Index() {
         }
         return (
           <section key={table.name} className="mt-8">
-            <Heading as="h2" mb="4" size="4">
+            <Heading as="h2" size="4" className="mb-4">
               {tableIdToDisplayName[table.name]}
             </Heading>
             <Table.Root variant="surface" style={{ width: '100%' }}>

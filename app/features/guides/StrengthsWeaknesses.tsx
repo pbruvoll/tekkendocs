@@ -1,5 +1,5 @@
-import { Heading } from '@radix-ui/themes';
 import cx from 'classix';
+import { Heading } from '@/components/ui/heading';
 import { TextWithCommand } from '~/components/TextWithCommand';
 import { useGuideContext } from './GuideContext';
 

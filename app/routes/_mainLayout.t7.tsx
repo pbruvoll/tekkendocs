@@ -1,6 +1,5 @@
-import { Heading } from '@radix-ui/themes';
-import { data } from 'react-router';
-import { Link, useLoaderData } from 'react-router';
+import { data, Link, useLoaderData } from 'react-router';
+import { Heading } from '@/components/ui/heading';
 import { CharacterGrid } from '~/components/CharacterGrid';
 import { ContentContainer } from '~/components/ContentContainer';
 import { getTekken7Characters } from '~/services/staticDataService';
@@ -21,7 +20,7 @@ export default function T7() {
   const { characterInfoList }: GamePageData = useLoaderData<typeof loader>();
   return (
     <ContentContainer>
-      <Heading as="h2" mt="5" mb="4" size="5">
+      <Heading as="h2" size="5" className="mt-6 mb-4">
         <Link to="t7">Tekken 7</Link>
       </Heading>
       <CharacterGrid
