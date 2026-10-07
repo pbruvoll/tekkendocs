@@ -136,3 +136,47 @@ Sources: [게임뷰 — 쿠니미츠 체험기](https://www.gamevu.co.kr/news/ar
 | Strong Aerial Tailspin (SAT) | Strong Aerial Tailspin(SAT) | no Korean name confirmed, keep English |
 
 Particles after `SET` follow its reading 셋: SET을, SET으로, SET은.
+
+## Fahkumram
+
+| English | Korean | Note |
+| --- | --- | --- |
+| Fahkumram | 파캄람 | official (Steam 한국어 store page, 나무위키); 디시 also writes 파쿰람 |
+| Garuda Force (GRF) / install | 가루다 포스 / 강화 상태 | official Korean trailer text |
+| Rama stance (RAM) | 라마 자세 | 철권8 마이너 갤러리 파캄람 운영법 |
+| unblockable | 가드 불능기 | |
+| can not be parried | 패링할 수 없음 | |
+| hits grounded | 다운된 상대에게도 맞음 | |
+| safe (on block) | 노딜 | as in the Kunimitsu translation |
+| knowledge check | 모르면 대처하기 어려운 | descriptive |
+
+Sources: [Steam — 철권 8 파캄람](https://store.steampowered.com/app/3564540/TEKKEN_8__Fahkumram/?l=koreana),
+[철권8 마이너 갤러리 — 파쿰람(파캄람) 운영법](https://gall.dcinside.com/mgallery/board/view/?id=tk8&no=1147540)
+
+## Xiaoyu
+
+| English | Korean | Note |
+| --- | --- | --- |
+| Art of Phoenix (AOP) | 봉황 자세 | 철권8 마이너 갤러리 샤오유 guides |
+| Hypnotist (HYP) | 파보 | same source (擺歩); steps → 걸음 |
+| back turned (BT) | 뒤자세 | Xiaoyu players write 뒤자세 (Kunimitsu's translation uses 뒤돌기) |
+| Cali Roll | 구르기 | descriptive |
+| BT parry / punch parry | 뒤자세 패링 / 펀치 패링 | |
+| Hop and Throw | Hop and Throw | no Korean name found, keep English |
+| Reina / Jack / Hwoarang / Bear | 레이나 / 잭 / 화랑 / 곰 캐릭터 | |
+
+Sources: [철권8 마이너 갤러리 — 샤오유 초보자용 패턴](https://gall.dcinside.com/mgallery/board/view/?id=tk8&no=82479),
+[철권8 마이너 갤러리 — 기초적인 샤오유 파훼](https://gall.dcinside.com/mgallery/board/view/?id=tk8&no=280856)
+
+## Alisa
+
+| English | Korean | Note |
+| --- | --- | --- |
+| Alisa Bosconovitch | 알리사 보스코노비치 | |
+| Destructive Form (DES) | 디스트럭티브 폼 | 철권 교실 알리사 기술 목록 |
+| Boot / Dual Boot / Backup | 부트 / 듀얼 부트 / 백업 | same source; "Boot stances" → 부트 자세 |
+| chainsaw | 체인소 | |
+| Hellsweep | 헬스위프 | |
+| King / Jun / Leo / Asuka | 킹 / 준 / 레오 / 아스카 | |
+
+Sources: [철권 교실 — 알리사 기술 목록](https://www.tekkenclass.com/characters/alisa/move/)

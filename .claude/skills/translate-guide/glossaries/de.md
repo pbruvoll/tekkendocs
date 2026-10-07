@@ -97,3 +97,35 @@ casual tone ("teilt ordentlich aus", "Party angesagt").
 
 Keep Setsunagake (SET), Katon (KAT), Backturn, Hopkick, Option Select, Snake Edge, EWGF, Flash in
 English. "duckable" → "lässt sich ducken", "challenge SET" → "SET challengen".
+
+## Dragunov
+
+Keep Rushdown, Turtle, Tackle (verb "tacklen"), Sabaki, Pushback, Hitbox, Crouch Cancel, Sweep,
+Mind Games, Clean Hit, Gameplan, Read in English, as German Tekken players do (no German Dragunov
+guide was found; the general rule above applies). "jailing string" → "jailender String";
+"natural on hit" → "auf Hit natural"; "crouch throw" → "Wurf gegen den hockenden Gegner";
+"unbreakable" → "unbreakbar"; "walk (a move)" → "sidewalken"; "Jab float" → "mit einem Jab floaten".
+Sneak (SNK), Pigeon Roll (PGN), Combat Sambo, backswing blow stay in English.
+
+## Fahkumram
+
+Garuda Force (GRF) and Rama (RAM) stay in English, like other stance names: "Garuda-Force-Install",
+"Rama-Stance", "Rama-Mixup". "install" → der Install; "unblockable" → unblockbar; "can not be
+parried" → kann nicht geparryt werden; "hits grounded" → trifft am Boden liegende Gegner; "jails" →
+jailt; "knowledge check" → Knowledge Check. (No German Fahkumram guide found; general rule above.)
+
+## Xiaoyu
+
+Stance names stay in English: AOP (Art of Phoenix), Hypnotist (HYP), BT im Fließtext als "der BT"
+("geht in den BT", "BT-Parry", "BT-50/50"). Cali Roll, Hop and Throw, Hell Sweep, Flash (Yoshimitsu)
+stay English. "high crush" → "crusht Highs"; "twitch confirm" → "auf ein Zucken hin confirmen";
+"tip range" → "maximale Reichweite"; "steps" (of HYP) → Schritte; "Bear" → Bär. (No German Xiaoyu
+guide found; general rule above.)
+
+## Alisa
+
+Stance names stay in English: Destructive Form (DES), Boot (SBT), Dual Boot (DBT), Backup (BKP),
+"Boot-Stances". chainsaws → Kettensägen; Hellsweep, Hard Reset, Evasive Action, Demon Paw stay
+English; "airborne" → "ist dabei in der Luft"; "mental frames" → „mentale Frames“; "hail mary" →
+Hail-Mary-Launcher; "goated" → krass genug; "Lab out" → im Training-Modus finden. (No German Alisa
+guide found; general rule above.)

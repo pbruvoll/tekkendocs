@@ -113,3 +113,61 @@ Setsunagake, Katon, EWGF, Flash, snake edge stay in Latin, like other move names
 
 "Steppable" is phrased with от: "от удара можно уйти сайдстепом", "от d+1 нельзя уйти сайдстепом".
 Never "удар уходится сайдстепом", which is not Russian.
+
+## Dragunov
+
+| English | Russian | Note |
+| --- | --- | --- |
+| rushdown | рашдаун | ru.wiktionary "Список файтинг-терминов" |
+| turtle (defensive player) | «черепаха» | ru.wiktionary: "черепашья тактика" as the opposite of rushdown |
+| tackle | тэкл | |
+| sabaki | сабаки | Steam "Ультимативное руководство для новичков" (id 2827892646) |
+| pushback | пушбэк | stopgame.ru Tekken 7 Dragunov guide |
+| hitbox | хитбокс | stopgame.ru Tekken 7 Dragunov guide |
+| jail / jailing string | джейлит / джейлящий стринг | stopgame.ru: "джейлит на блоке" |
+| natural (combo) on hit | натуральный на хите | stopgame.ru: "натуральна на контрхите" |
+| crouch cancel | крауч кенсел | fightingru.com Dragunov thread: "крауч кенсэл" |
+| roll | кувырок | fightingru.com Dragunov thread |
+| sweep | свип | |
+| mind games | майндгеймы | |
+| crouch throw | бросок по приседающему | |
+| Bryan / Bear / Lili / Hwoarang | Брайан / Медведь / Лили / Хваран | |
+
+Sambo → самбо, neuter and lowercase ("боевое самбо" for Combat Sambo). Sneak (SNK), Pigeon roll (PGN), backswing blow stay in Latin.
+
+## Fahkumram
+
+| English | Russian | Note |
+| --- | --- | --- |
+| Fahkumram | Фахкумрам (gen. Фахкумрама) | notebookcheck-ru, Russian YouTube |
+| Garuda Force (GRF) / install | Garuda Force / усиление | name in Latin like other stance/move names |
+| Rama stance (RAM) | стойка Rama | |
+| hits grounded | попадает по лежачему сопернику | |
+| can not be parried | нельзя парировать | |
+| knowledge check | проверка знаний соперника | |
+
+## Xiaoyu
+
+| English | Russian | Note |
+| --- | --- | --- |
+| Xiaoyu / Xiao | Сяоюй / Сяо | Palladius, as in Лин Сяоюй |
+| AOP / Hypnotist (HYP) | AOP / Hypnotist | stance names in Latin, like other stances; "стойка AOP" |
+| back turned (BT) | спиной ("в положении спиной", "50/50 спиной", "парирование спиной") | as for Kunimitsu |
+| Cali Roll | кувырок (Cali Roll) | |
+| Hop and Throw, hell sweep, Flash | in Latin / хелл свип | |
+| Reina / Jack / Bear | Рейна / Джек / медведь | |
+| tip range | кончик дистанции | |
+
+The author's gender is unknown: phrase first-person lines neutrally ("мне захотелось", not "я решил").
+
+## Alisa
+
+| English | Russian | Note |
+| --- | --- | --- |
+| Alisa Bosconovitch | Алиса Босконович | |
+| Destructive Form / Boot / Dual Boot / Backup | in Latin ("стойки Boot") | stance names in Latin, like other stances |
+| chainsaws | бензопилы | |
+| Hellsweep | хелл свип | |
+| standing (move) | стоя ("4" стоя) | not "из стойки", which reads as "from a stance" |
+| airborne | находится в воздухе | |
+| King / Jun / Leo / Asuka | Кинг / Дзюн / Лео / Асука | |
