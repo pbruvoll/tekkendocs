@@ -1,7 +1,7 @@
 import { Pencil1Icon } from '@radix-ui/react-icons';
-import { Button } from '@radix-ui/themes';
 import { useState } from 'react';
 import { data, type MetaFunction, useLoaderData } from 'react-router';
+import { Button } from '@/components/ui/button';
 import { ContentContainer } from '~/components/ContentContainer';
 import { getSheet } from '~/services/googleSheetService.server';
 import { type MatchVideo, type MatchVideoSet } from '~/types/MatchVideo';

@@ -1,5 +1,14 @@
 import { MixerHorizontalIcon } from '@radix-ui/react-icons';
-import { Button, Dialog } from '@radix-ui/themes';
+import { Button } from '@/components/ui/button';
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogTitle,
+  DialogTrigger,
+} from '@/components/ui/dialog';
+import { cn } from '@/lib/utils';
 import { filterKey } from '~/constants/filterConstants';
 import { isFilterValueActive } from '~/utils/filterUtils';
 import {
@@ -7,15 +16,13 @@ import {
   FrameDataFilterSelection,
 } from './FrameDataFilterSelection';
 
+export type FilterTriggerVariant = 'solid' | 'soft';
+
 type FrameDataFilterDialogProps = FrameDataFilterSectionProps & {
-  triggerVariant?:
-    | 'classic'
-    | 'solid'
-    | 'soft'
-    | 'surface'
-    | 'outline'
-    | 'ghost';
+  triggerVariant?: FilterTriggerVariant;
 };
+
+const footerButtonClassName = 'h-8 rounded-full px-3 font-semibold';
 
 export const FrameDataFilterDialog = ({
   className,
@@ -35,20 +42,32 @@ export const FrameDataFilterDialog = ({
     .filter(([, value]) => isFilterValueActive(value)).length;
 
   return (
-    <Dialog.Root>
-      <Dialog.Trigger>
-        <Button radius="large" className={className} variant={triggerVariant}>
+    <Dialog>
+      <DialogTrigger asChild>
+        <Button
+          className={cn(
+            'h-8 gap-2 rounded-[6px] px-3',
+            triggerVariant === 'soft' &&
+              'bg-[rgb(250_130_0/0.13)] text-primary hover:bg-[rgb(250_130_0/0.2)]',
+            className,
+          )}
+        >
           <MixerHorizontalIcon width="16" height="16" /> Filter
           {filterDialogCount ? ` (${filterDialogCount})` : ''}
         </Button>
-      </Dialog.Trigger>
+      </DialogTrigger>
 
-      <Dialog.Content style={{ maxWidth: 450 }} className="relative">
-        <Dialog.Title>Filter</Dialog.Title>
+      <DialogContent
+        overlayClassName="bg-black/60"
+        className="block w-[calc(100%-2rem)] max-w-[450px] rounded-[18px] border-0 bg-[#191919] shadow-[0_0_0_1px_rgb(255_255_255/0.2),0_12px_60px_rgb(0_0_0/0.2),0_16px_64px_rgb(0_0_0/0.4),0_16px_36px_-20px_rgb(0_0_0/0.9)] sm:rounded-[18px]"
+      >
+        <DialogTitle className="mb-2 font-bold text-xl leading-[26px]">
+          Filter
+        </DialogTitle>
         <div className="-mx-4 max-md:no-scrollbar max-h-[70vh] overflow-y-auto px-4">
-          <Dialog.Description size="3" mb="4">
+          <DialogDescription className="mb-4 text-base text-foreground">
             Filter the displayed moves
-          </Dialog.Description>
+          </DialogDescription>
 
           <FrameDataFilterSelection
             filter={filter}
@@ -65,8 +84,11 @@ export const FrameDataFilterDialog = ({
 
         <div className="mt-8 flex justify-end gap-3">
           <Button
-            variant="soft"
-            color="gray"
+            variant="ghost"
+            className={cn(
+              footerButtonClassName,
+              'bg-white/[0.07] text-white/70 hover:bg-white/10 hover:text-white/80',
+            )}
             onClick={() =>
               updateFilterValues({
                 set: [],
@@ -76,35 +98,11 @@ export const FrameDataFilterDialog = ({
           >
             Reset filters
           </Button>
-          <Dialog.Close>
-            <Button>Close</Button>
-          </Dialog.Close>
+          <DialogClose asChild>
+            <Button className={footerButtonClassName}>Close</Button>
+          </DialogClose>
         </div>
-        <Dialog.Close>
-          <button
-            type="button"
-            className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="lucide lucide-x h-4 w-4"
-            >
-              <title>Close</title>
-              <path d="M18 6 6 18"></path>
-              <path d="m6 6 12 12"></path>
-            </svg>
-            <span className="sr-only">Close</span>
-          </button>
-        </Dialog.Close>
-      </Dialog.Content>
-    </Dialog.Root>
+      </DialogContent>
+    </Dialog>
   );
 };
