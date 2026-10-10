@@ -1,4 +1,4 @@
-import { Link as RadixLink, Table } from '@radix-ui/themes';
+import { Table } from '@radix-ui/themes';
 import { useMemo } from 'react';
 import {
   data,
@@ -254,13 +254,11 @@ export default function Index() {
                           //this is a command, so make it link
                           return (
                             <Table.Cell key={j}>
-                              <RadixLink asChild>
-                                <Command
-                                  charUrl={`/t8/${characterName}`}
-                                  compressedCommandMap={compressedCommandMap}
-                                  command={cell}
-                                />
-                              </RadixLink>
+                              <Command
+                                charUrl={`/t8/${characterName}`}
+                                compressedCommandMap={compressedCommandMap}
+                                command={cell}
+                              />
                             </Table.Cell>
                           );
                         }

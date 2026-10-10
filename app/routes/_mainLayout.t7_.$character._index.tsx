@@ -1,5 +1,5 @@
 import { Pencil1Icon } from '@radix-ui/react-icons';
-import { Link as RadixLink, Table } from '@radix-ui/themes';
+import { Table } from '@radix-ui/themes';
 import { Filter } from 'lucide-react';
 import { useState } from 'react';
 import {
@@ -166,15 +166,12 @@ export default function Index() {
                             //this is a command, so make it link
                             return (
                               <Table.Cell key={j}>
-                                <RadixLink asChild>
-                                  <Link
-                                    className="text-[#ab6400]"
-                                    style={{ textDecoration: 'none' }}
-                                    to={commandToUrlSegment(cell)}
-                                  >
-                                    {cell}
-                                  </Link>
-                                </RadixLink>
+                                <Link
+                                  className="text-primary"
+                                  to={commandToUrlSegment(cell)}
+                                >
+                                  {cell}
+                                </Link>
                               </Table.Cell>
                             );
                           }
