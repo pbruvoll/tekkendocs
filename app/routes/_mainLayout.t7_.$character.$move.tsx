@@ -1,4 +1,4 @@
-import { Link as RadixLink, Table } from '@radix-ui/themes';
+import { Table } from '@radix-ui/themes';
 import {
   data,
   Link,
@@ -138,9 +138,12 @@ export default function Move() {
   return (
     <ContentContainer enableTopPadding enableBottomPadding>
       <Heading as="h1" className="mt-2 mb-4 capitalize">
-        <RadixLink asChild style={{ lineHeight: 'inherit' }}>
-          <Link to={`/${characterName}`}>{characterName} </Link>
-        </RadixLink>
+        <Link
+          className="text-primary decoration-primary/25 underline-offset-2 hover:underline"
+          to={`/${characterName}`}
+        >
+          {characterName}{' '}
+        </Link>
         : {moveRow[0]}
       </Heading>
       <Table.Root variant="surface" style={{ width: '100%' }}>

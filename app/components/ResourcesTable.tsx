@@ -1,4 +1,4 @@
-import { Link as RadixLink, Table } from '@radix-ui/themes';
+import { Table } from '@radix-ui/themes';
 import { Heading } from '@/components/ui/heading';
 import { ContentContainer } from './ContentContainer';
 
@@ -30,11 +30,14 @@ export const ResourcesTable = ({
             return (
               <Table.Row key={row[0]}>
                 <Table.Cell>
-                  <RadixLink asChild>
-                    <a href={row[0]} target="_blank" rel="noreferrer">
-                      {row[1]}
-                    </a>
-                  </RadixLink>
+                  <a
+                    className="text-primary decoration-primary/25 underline-offset-2 hover:underline"
+                    href={row[0]}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {row[1]}
+                  </a>
                 </Table.Cell>
                 <Table.Cell>{row[2]}</Table.Cell>
               </Table.Row>
