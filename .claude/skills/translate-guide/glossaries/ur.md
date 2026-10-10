@@ -163,3 +163,14 @@ constructions (passive, "میرا شوق ہے", "پیش خدمت ہے").
 | Hellsweep / Hard Reset / Evasive Action | ہیل سویپ / ہارڈ ری سیٹ / ایویسو ایکشن |
 | King / Jun / Leo / Asuka / Ling Xiaoyu | کنگ / جون / لیو / آسوکا / لنگ شیاؤیو |
 | i13 at a cell start | تیرہ فریم (i13) — a cell may not start with Latin |
+
+## Hwoarang
+
+| English | Urdu |
+| --- | --- |
+| Left Flamingo / Right Flamingo / Right Foot Forward | لیفٹ فلیمنگو / رائٹ فلیمنگو / رائٹ فٹ فارورڈ (LFS / RFS / RFF in notation) |
+| JFSR | جے ایف ایس آر |
+| hellsweep | ہیل سویپ |
+| wall carry | حریف کو دیوار تک لے جانا |
+| balcony | بالکونی |
+| Kicking Machine (resource title) | کِکنگ مشین — a cell may not start with Latin |

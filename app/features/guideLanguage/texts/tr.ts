@@ -1,0 +1,61 @@
+import { type GuideTexts } from './guideTexts';
+
+export const tr: GuideTexts = {
+  metaTitle: ({ character, season, author }) =>
+    `${character} Tekken 8 Sezon ${season} Rehberi${author ? `, yazan: ${author}` : ''} | TekkenDocs`,
+  metaDescription: ({ character }) =>
+    `Tekken 8'de ${character} hakkında en önemli bilgiler. En önemli hareketler, punisher'lar ve kombolarla karakteri hızlıca öğren.`,
+  pageHeading: ({ character, season }) =>
+    `${character} Tekken 8 Sezon ${season} Rehberi`,
+  translationNotice:
+    'Bu rehber otomatik olarak çevrilmiştir ve hatalar içerebilir.',
+  sections: {
+    aboutTheAuthor: 'Yazar hakkında',
+    introduction: 'Giriş',
+    strengths: 'Güçlü yönler',
+    weaknesses: 'Zayıf yönler',
+    heatSystem: 'Heat sistemi',
+    gamePlan: 'Oyun planı',
+    installments: 'Özel durumlar',
+    topMoves: 'En iyi 10 hareket',
+    punishers: "Punisher'lar",
+    combos: 'Kombolar',
+    beginnerCombos: 'Başlangıç komboları',
+    comboEnders: 'Kombo bitirişleri',
+    wallCombos: 'Duvar komboları',
+    smallCombos: 'Kısa kombolar',
+    notableMoves: 'Önemli hareketler',
+    stances: "Stance'ler",
+    panicMoves: 'Panik hareketleri',
+    frameTraps: 'Frame trap',
+    knowledgeChecks: 'Knowledge check',
+    defensiveTips: 'Savunma ipuçları',
+    defensiveMoveHandling: 'Hareketlere karşı savunma',
+    matchups: "Matchup'lar",
+    externalResources: 'Dış kaynaklar',
+  },
+  inThisGuide: 'Bu rehberde',
+  writtenBy: 'Yazan',
+  contributors: 'Katkıda bulunanlar',
+  lastUpdated: 'Son güncelleme',
+  gameVersion: 'Oyun sürümü',
+  showVideo: 'Videoyu göster',
+  hideVideo: 'Videoyu gizle',
+  audio: {
+    play: 'Sesli oku',
+    stop: 'Sesli okumayı durdur',
+    notSupported: 'Sesli okuma desteklenmiyor',
+  },
+  standingPunishers: 'Ayakta',
+  crouchingPunishers: 'Çömelirken',
+  whiffPunishers: "Whiff punisher'lar",
+  carryEnders: 'Carry',
+  floorBreakEnders: 'Floor Break',
+  wallBreakEnders: 'Wall Break',
+  normalWallCombos: 'Normal',
+  tornadoWallCombos: 'Tornado ile',
+  goodMatchups: "İyi matchup'lar",
+  badMatchups: "Zor matchup'lar",
+  replayDatabaseLink: ({ character }) =>
+    `Replay Database'den üst düzey ${character} replay'leri`,
+};

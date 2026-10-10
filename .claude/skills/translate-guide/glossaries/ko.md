@@ -180,3 +180,15 @@ Sources: [철권8 마이너 갤러리 — 샤오유 초보자용 패턴](https:/
 | King / Jun / Leo / Asuka | 킹 / 준 / 레오 / 아스카 | |
 
 Sources: [철권 교실 — 알리사 기술 목록](https://www.tekkenclass.com/characters/alisa/move/)
+
+## Hwoarang
+
+| English | Korean | Note |
+| --- | --- | --- |
+| Left Flamingo (LFS) / Right Flamingo (RFS) | 왼 플라밍고 / 오른 플라밍고 | 철권 교실 화랑 기술 목록 |
+| Right Foot Forward (RFF) | 오른 자세 | same source ("Right Stance") |
+| JFSR (f,n,df:4) | JFSR | no Korean name confirmed, keep the abbreviation |
+| hellsweep | 헬스위프 | |
+| wall carry | 벽까지 몰아가기 | |
+
+Sources: [철권 교실 — 화랑 기술 목록](https://www.tekkenclass.com/characters/hwoarang/move/)

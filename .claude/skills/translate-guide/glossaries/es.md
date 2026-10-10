@@ -97,3 +97,9 @@ chainsaws → motosierras; Hellsweep, Hard Reset, Evasive Action, Demon Paw stay
 knockdown → knockdown de clavado; airborne → deja a Alisa en el aire; hail mary → launcher a la
 desesperada; goated → ser un crack; mental frames → «frames mentales» (never ASCII quotes in prose:
 they become command links).
+
+## Hwoarang
+
+Stance names stay in English: Left Flamingo (LFS), Right Flamingo (RFS), Right Foot Forward (RFF),
+"postura Flamingo"; JFSR, hellsweep kept. wall carry → llevar a la pared; balcony → balcón;
+whiff punisher → castigo de whiff.
