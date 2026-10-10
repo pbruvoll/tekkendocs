@@ -4,17 +4,14 @@ import { type Move } from '~/types/Move';
 import { type MoveFilter } from '~/types/MoveFilter';
 import { getMoveFilterTypes } from '~/utils/frameDataUtils';
 import * as filterUtils from '~/utils/searchParamsFilterUtils';
-import { FrameDataFilterDialog } from './FrameDataFilterDialog';
+import {
+  type FilterTriggerVariant,
+  FrameDataFilterDialog,
+} from './FrameDataFilterDialog';
 
 type MoveFilterDialogProps = {
   moveFilter: MoveFilter;
-  triggerVariant?:
-    | 'classic'
-    | 'solid'
-    | 'soft'
-    | 'surface'
-    | 'outline'
-    | 'ghost';
+  triggerVariant?: FilterTriggerVariant;
   moves: Move[];
 };
 

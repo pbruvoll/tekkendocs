@@ -1,4 +1,3 @@
-import { Button } from '@radix-ui/themes';
 import { Heart } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { filterKey, hitLevelValue } from '~/constants/filterConstants';
@@ -6,6 +5,7 @@ import { stanceNameMap, stateNameMap } from '~/constants/stanceNameMap';
 import { type MoveFilter } from '~/types/MoveFilter';
 import { type SearchParamsChanges } from '~/types/SearchParamsChanges';
 import { SearchParamsState } from '~/utils/searchParameState';
+import { FilterToggleButton } from './FilterToggleButton';
 import { RangeSlider } from './RangeSlider';
 
 export type FrameDataFilterSectionProps = {
@@ -96,9 +96,9 @@ export const FrameDataFilterSelection = ({
     string,
   ]) => {
     return (
-      <Button
+      <FilterToggleButton
         key={key}
-        variant={value ? 'solid' : 'outline'}
+        active={value}
         onClick={() => {
           if (value) {
             removeFilterValue(key);
@@ -108,7 +108,7 @@ export const FrameDataFilterSelection = ({
         }}
       >
         {displayName}
-      </Button>
+      </FilterToggleButton>
     );
   };
 
@@ -117,10 +117,8 @@ export const FrameDataFilterSelection = ({
       <section className="flex flex-col gap-3">
         <div className="mb-1 font-bold">Hit level</div>
         <div className="flex flex-wrap gap-3">
-          <Button
-            variant={
-              hitLevels?.includes(hitLevelValue.Low) ? 'solid' : 'outline'
-            }
+          <FilterToggleButton
+            active={hitLevels?.includes(hitLevelValue.Low)}
             onClick={() => {
               if (hitLevels?.includes(hitLevelValue.Low)) {
                 removeFilterElement(filterKey.HitLevel, hitLevelValue.Low);
@@ -130,11 +128,9 @@ export const FrameDataFilterSelection = ({
             }}
           >
             Low
-          </Button>
-          <Button
-            variant={
-              hitLevels?.includes(hitLevelValue.Mid) ? 'solid' : 'outline'
-            }
+          </FilterToggleButton>
+          <FilterToggleButton
+            active={hitLevels?.includes(hitLevelValue.Mid)}
             onClick={() => {
               if (hitLevels?.includes(hitLevelValue.Mid)) {
                 removeFilterElement(filterKey.HitLevel, hitLevelValue.Mid);
@@ -144,11 +140,9 @@ export const FrameDataFilterSelection = ({
             }}
           >
             Mid
-          </Button>
-          <Button
-            variant={
-              hitLevels?.includes(hitLevelValue.High) ? 'solid' : 'outline'
-            }
+          </FilterToggleButton>
+          <FilterToggleButton
+            active={hitLevels?.includes(hitLevelValue.High)}
             onClick={() => {
               if (hitLevels?.includes(hitLevelValue.High)) {
                 removeFilterElement(filterKey.HitLevel, hitLevelValue.High);
@@ -158,11 +152,9 @@ export const FrameDataFilterSelection = ({
             }}
           >
             High
-          </Button>
-          <Button
-            variant={
-              hitLevels?.includes(hitLevelValue.Throw) ? 'solid' : 'outline'
-            }
+          </FilterToggleButton>
+          <FilterToggleButton
+            active={hitLevels?.includes(hitLevelValue.Throw)}
             onClick={() => {
               if (hitLevels?.includes(hitLevelValue.Throw)) {
                 removeFilterElement(filterKey.HitLevel, hitLevelValue.Throw);
@@ -172,14 +164,14 @@ export const FrameDataFilterSelection = ({
             }}
           >
             Throw
-          </Button>
+          </FilterToggleButton>
         </div>
       </section>
       <section className="flex flex-col gap-3">
         <div className="mb-1 font-bold">Block frames</div>
         <div className="flex flex-wrap gap-3">
-          <Button
-            variant={blockFrameMin === 1 ? 'solid' : 'outline'}
+          <FilterToggleButton
+            active={blockFrameMin === 1}
             onClick={() => {
               const searchParamsState = new SearchParamsState();
               searchParamsState.remove(filterKey.BlockFrameMax);
@@ -192,9 +184,9 @@ export const FrameDataFilterSelection = ({
             }}
           >
             Plus
-          </Button>
-          <Button
-            variant={blockFrameMax === -10 ? 'solid' : 'outline'}
+          </FilterToggleButton>
+          <FilterToggleButton
+            active={blockFrameMax === -10}
             onClick={() => {
               const searchParamsState = new SearchParamsState();
               searchParamsState.remove(filterKey.BlockFrameMin);
@@ -207,9 +199,9 @@ export const FrameDataFilterSelection = ({
             }}
           >
             Unsafe
-          </Button>
-          <Button
-            variant={blockFrameMin === -9 ? 'solid' : 'outline'}
+          </FilterToggleButton>
+          <FilterToggleButton
+            active={blockFrameMin === -9}
             onClick={() => {
               const searchParamsState = new SearchParamsState();
               searchParamsState.remove(filterKey.BlockFrameMax);
@@ -222,7 +214,7 @@ export const FrameDataFilterSelection = ({
             }}
           >
             Safe
-          </Button>
+          </FilterToggleButton>
         </div>
         <RangeSlider
           values={[blockFrameMin, blockFrameMax]}
@@ -253,8 +245,8 @@ export const FrameDataFilterSelection = ({
       <section className="flex flex-col gap-3">
         <div className="mb-1 font-bold">Hit frames</div>
         <div className="flex flex-wrap gap-3">
-          <Button
-            variant={hitFrameMin === 0 ? 'solid' : 'outline'}
+          <FilterToggleButton
+            active={hitFrameMin === 0}
             onClick={() => {
               const searchParamsState = new SearchParamsState();
               searchParamsState.remove(filterKey.HitFrameMax);
@@ -267,9 +259,9 @@ export const FrameDataFilterSelection = ({
             }}
           >
             Non negative
-          </Button>
-          <Button
-            variant={hitFrameMax === -1 ? 'solid' : 'outline'}
+          </FilterToggleButton>
+          <FilterToggleButton
+            active={hitFrameMax === -1}
             onClick={() => {
               const searchParamsState = new SearchParamsState();
               searchParamsState.remove(filterKey.HitFrameMin);
@@ -282,7 +274,7 @@ export const FrameDataFilterSelection = ({
             }}
           >
             Negative
-          </Button>
+          </FilterToggleButton>
         </div>
         <RangeSlider
           values={[hitFrameMin, hitFrameMax]}
@@ -350,9 +342,9 @@ export const FrameDataFilterSelection = ({
             ] as const
           ).map(([key, value, displayName]) => {
             return (
-              <Button
+              <FilterToggleButton
                 key={key}
-                variant={value ? 'solid' : 'outline'}
+                active={value}
                 onClick={() => {
                   if (value) {
                     removeFilterValue(key);
@@ -362,7 +354,7 @@ export const FrameDataFilterSelection = ({
                 }}
               >
                 {displayName}
-              </Button>
+              </FilterToggleButton>
             );
           })}
         </div>
@@ -370,8 +362,8 @@ export const FrameDataFilterSelection = ({
       <section className="flex flex-col gap-3">
         <div className="mb-1 font-bold">Properties</div>
         <div className="flex flex-wrap gap-3">
-          <Button
-            variant={favorite ? 'solid' : 'outline'}
+          <FilterToggleButton
+            active={favorite}
             onClick={() => {
               if (favorite) {
                 removeFilterValue(filterKey.Favorite);
@@ -385,7 +377,7 @@ export const FrameDataFilterSelection = ({
               className={favorite ? 'fill-current' : 'fill-none'}
             />
             Favorite
-          </Button>
+          </FilterToggleButton>
           {(
             [
               [filterKey.HeatSmash, heatSmash, 'Heat Smash'],
@@ -401,8 +393,8 @@ export const FrameDataFilterSelection = ({
               [filterKey.Steppable, steppable, 'Steppable string'],
             ] as const
           ).map(renderPropertyButton)}
-          <Button
-            variant={interruptibleActive ? 'solid' : 'outline'}
+          <FilterToggleButton
+            active={interruptibleActive}
             onClick={() => {
               const searchParamsState = new SearchParamsState();
               searchParamsState.remove(filterKey.InterruptibleMax);
@@ -415,7 +407,7 @@ export const FrameDataFilterSelection = ({
             }}
           >
             Interruptible string
-          </Button>
+          </FilterToggleButton>
           {(
             [
               [filterKey.HitsGrounded, hitsGrounded, 'Hits grounded'],
@@ -456,9 +448,9 @@ export const FrameDataFilterSelection = ({
           {states.map((state) => {
             const active = stanceFilter?.includes(state);
             return (
-              <Button
+              <FilterToggleButton
                 key={state}
-                variant={active ? 'solid' : 'outline'}
+                active={active}
                 onClick={() => {
                   if (active) {
                     removeFilterElement(filterKey.Stance, state);
@@ -468,7 +460,7 @@ export const FrameDataFilterSelection = ({
                 }}
               >
                 {stateNameMap[state] || state}
-              </Button>
+              </FilterToggleButton>
             );
           })}
         </div>
@@ -479,9 +471,9 @@ export const FrameDataFilterSelection = ({
           {stances.map((stance) => {
             const active = stanceFilter?.includes(stance);
             return (
-              <Button
+              <FilterToggleButton
                 key={stance}
-                variant={active ? 'solid' : 'outline'}
+                active={active}
                 onClick={() => {
                   if (active) {
                     removeFilterElement(filterKey.Stance, stance);
@@ -491,7 +483,7 @@ export const FrameDataFilterSelection = ({
                 }}
               >
                 {stanceNameMap[stance] || stance}
-              </Button>
+              </FilterToggleButton>
             );
           })}
         </div>
@@ -502,9 +494,9 @@ export const FrameDataFilterSelection = ({
           {transitions.map((transition) => {
             const active = transitionFilter?.includes(transition);
             return (
-              <Button
+              <FilterToggleButton
                 key={transition}
-                variant={active ? 'solid' : 'outline'}
+                active={active}
                 onClick={() => {
                   if (active) {
                     removeFilterElement(filterKey.Transition, transition);
@@ -514,7 +506,7 @@ export const FrameDataFilterSelection = ({
                 }}
               >
                 {transition}
-              </Button>
+              </FilterToggleButton>
             );
           })}
         </div>
@@ -522,8 +514,8 @@ export const FrameDataFilterSelection = ({
       <section className="flex flex-col gap-3">
         <div className="mb-1 font-bold">Media</div>
         <div className="flex flex-wrap gap-3">
-          <Button
-            variant={video ? 'solid' : 'outline'}
+          <FilterToggleButton
+            active={video}
             onClick={() => {
               if (video) {
                 removeFilterValue(filterKey.Video);
@@ -533,9 +525,9 @@ export const FrameDataFilterSelection = ({
             }}
           >
             Video
-          </Button>
-          <Button
-            variant={noVideo ? 'solid' : 'outline'}
+          </FilterToggleButton>
+          <FilterToggleButton
+            active={noVideo}
             onClick={() => {
               if (noVideo) {
                 removeFilterValue(filterKey.NoVideo);
@@ -545,9 +537,9 @@ export const FrameDataFilterSelection = ({
             }}
           >
             No Video
-          </Button>
-          <Button
-            variant={embeddedVideo ? 'solid' : 'outline'}
+          </FilterToggleButton>
+          <FilterToggleButton
+            active={embeddedVideo}
             onClick={() => {
               if (embeddedVideo) {
                 removeFilterValue(filterKey.EmbeddedVideo);
@@ -557,9 +549,9 @@ export const FrameDataFilterSelection = ({
             }}
           >
             Embedded Video
-          </Button>
-          <Button
-            variant={noEmbeddedVideo ? 'solid' : 'outline'}
+          </FilterToggleButton>
+          <FilterToggleButton
+            active={noEmbeddedVideo}
             onClick={() => {
               if (noEmbeddedVideo) {
                 removeFilterValue(filterKey.NoEmbeddedVideo);
@@ -569,14 +561,14 @@ export const FrameDataFilterSelection = ({
             }}
           >
             No Embedded Video
-          </Button>
+          </FilterToggleButton>
         </div>
       </section>
       <section className="flex flex-col gap-3">
         <div className="mb-1 font-bold">Number of hits</div>
         <div className="flex flex-wrap gap-3">
-          <Button
-            variant={numHitsMin === 1 && numHitsMax === 1 ? 'solid' : 'outline'}
+          <FilterToggleButton
+            active={numHitsMin === 1 && numHitsMax === 1}
             onClick={() => {
               const searchParamsState = new SearchParamsState();
               if (numHitsMin === 1 && numHitsMax === 1) {
@@ -590,9 +582,9 @@ export const FrameDataFilterSelection = ({
             }}
           >
             1
-          </Button>
-          <Button
-            variant={numHitsMin === 2 && numHitsMax === 2 ? 'solid' : 'outline'}
+          </FilterToggleButton>
+          <FilterToggleButton
+            active={numHitsMin === 2 && numHitsMax === 2}
             onClick={() => {
               const searchParamsState = new SearchParamsState();
               if (numHitsMin === 2 && numHitsMax === 2) {
@@ -606,11 +598,9 @@ export const FrameDataFilterSelection = ({
             }}
           >
             2
-          </Button>
-          <Button
-            variant={
-              numHitsMin === 3 && numHitsMax === undefined ? 'solid' : 'outline'
-            }
+          </FilterToggleButton>
+          <FilterToggleButton
+            active={numHitsMin === 3 && numHitsMax === undefined}
             onClick={() => {
               const searchParamsState = new SearchParamsState();
               searchParamsState.remove(filterKey.NumHitsMax);
@@ -623,7 +613,7 @@ export const FrameDataFilterSelection = ({
             }}
           >
             3+
-          </Button>
+          </FilterToggleButton>
         </div>
       </section>
     </div>
