@@ -4,7 +4,7 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
-    "prepare": "lefthook install",
+    "prepare": "lefthook install || exit 0",
     "build": "react-router build",
     "build:sitemap": "remix-sitemap",
     "check": "biome check",
