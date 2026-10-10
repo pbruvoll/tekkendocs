@@ -5,6 +5,7 @@ import { es } from './es';
 import { ja } from './ja';
 import { ko } from './ko';
 import { ru } from './ru';
+import { tr } from './tr';
 import { ur } from './ur';
 
 export type GuideSectionKey =
@@ -79,6 +80,7 @@ export const guideTexts: Record<GuideLanguage, GuideTexts> = {
   ur,
   ru,
   de,
+  tr,
 };
 
 /** Anchor id of a section. Built from the english title in every language, so links keep working */

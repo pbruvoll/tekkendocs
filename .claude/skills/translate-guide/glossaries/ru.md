@@ -171,3 +171,12 @@ The author's gender is unknown: phrase first-person lines neutrally ("мне з�
 | standing (move) | стоя ("4" стоя) | not "из стойки", which reads as "from a stance" |
 | airborne | находится в воздухе | |
 | King / Jun / Leo / Asuka | Кинг / Дзюн / Лео / Асука | |
+
+## Hwoarang
+
+| English | Russian | Note |
+| --- | --- | --- |
+| Hwoarang | Хваран (gen. Хварана) | as in the Dragunov section |
+| LFS / RFS / RFF | in Latin, "стойка LFS", "стойки фламинго" | stance names in Latin, like other stances |
+| wall carry | донести до стены | |
+| hellsweep | хелл свип | |

@@ -195,3 +195,16 @@ Sources: [jusful-doctor — シャオ「鳳凰と擺歩」](https://jusful-docto
 | King / Jun / Leo / Asuka | キング / 準 / レオ / 飛鳥 | |
 
 Sources: [tettk.com — アリサ攻略](https://tettk.com/tk8alisa/)
+
+## Hwoarang
+
+| English | Japanese | Note |
+| --- | --- | --- |
+| Left Flamingo (LFS) / Right Flamingo (RFS) | レフトフラミンゴ / ライトフラミンゴ | 鉄拳8 初心者向け攻略wiki writes LF / RF |
+| Right Foot Forward (RFF) | 右構え | same source |
+| JFSR (f,n,df:4) | 最速スカイロケット（JFSR） | スカイロケット is the move name; 最速 by analogy with 最速風神拳, unverified |
+| stance pressure | 構え攻め | same source |
+| hellsweep | ヘルスイープ | |
+| wall carry | 壁運び | |
+
+Sources: [鉄拳8 初心者向け攻略wiki — ファラン](https://seesaawiki.jp/tekken8kouryaku/d/%A5%D5%A5%A1%A5%E9%A5%F3)

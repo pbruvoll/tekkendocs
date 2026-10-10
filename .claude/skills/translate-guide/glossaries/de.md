@@ -129,3 +129,9 @@ Stance names stay in English: Destructive Form (DES), Boot (SBT), Dual Boot (DBT
 English; "airborne" → "ist dabei in der Luft"; "mental frames" → „mentale Frames“; "hail mary" →
 Hail-Mary-Launcher; "goated" → krass genug; "Lab out" → im Training-Modus finden. (No German Alisa
 guide found; general rule above.)
+
+## Hwoarang
+
+Stance names stay in English: Left Flamingo (LFS), Right Flamingo (RFS), Right Foot Forward (RFF),
+"Flamingo-Stance". JFSR, Hellsweep, Wall Carry stay English; "plus frames" → "im Plus";
+"launch punish" → "mit einem Launcher punishen".
