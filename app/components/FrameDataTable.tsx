@@ -3,9 +3,16 @@ import {
   CaretSortIcon,
   CaretUpIcon,
 } from '@radix-ui/react-icons';
-import { Table } from '@radix-ui/themes';
 import { useMemo } from 'react';
 import { Link, useLocation, useSearchParams } from 'react-router';
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '@/components/ui/table';
 import { orderByKey } from '~/constants/sortConstants';
 import { type MoveFilter } from '~/types/MoveFilter';
 import { type SortOrder } from '~/types/SortOrder';
@@ -75,15 +82,14 @@ export const FrameDataTable = ({
    * to create a new table */
 
   return (
-    <Table.Root
-      variant="surface"
+    <Table
       className={className}
       key={orderByColumnName + sortDirection + JSON.stringify(filter)}
     >
-      <Table.Header>
-        <Table.Row>
+      <TableHeader>
+        <TableRow>
           {tableHeaders.map((h) => (
-            <Table.ColumnHeaderCell key={h}>
+            <TableHead key={h}>
               <Link
                 to={createOrderLinkWithSearchParams(h.toLowerCase())}
                 className="flex flex-wrap items-end"
@@ -93,20 +99,20 @@ export const FrameDataTable = ({
                   ? sortOrderIconMap[sortDirection]
                   : sortOrderIconMap['']}
               </Link>
-            </Table.ColumnHeaderCell>
+            </TableHead>
           ))}
-        </Table.Row>
-      </Table.Header>
-      <Table.Body>
+        </TableRow>
+      </TableHeader>
+      <TableBody>
         {sortedRows.map((row) => {
           return (
-            <Table.Row key={row[0]}>
+            <TableRow key={row[0]}>
               {columnNums.map((j) => {
                 const cell = row[j] || '';
                 if (j === 0) {
                   //this is a command, so make it link
                   return (
-                    <Table.Cell key={j}>
+                    <TableCell key={j}>
                       <Link
                         className="text-primary"
                         style={{ textDecoration: 'none' }}
@@ -114,25 +120,25 @@ export const FrameDataTable = ({
                       >
                         {cell}
                       </Link>
-                    </Table.Cell>
+                    </TableCell>
                   );
                 }
                 if (j === 7) {
                   //notes column, perserve new lines
                   return (
-                    <Table.Cell key={j}>
+                    <TableCell key={j}>
                       {cell.split('\n').map((line, index) => (
                         <div key={index}>{line}</div>
                       ))}
-                    </Table.Cell>
+                    </TableCell>
                   );
                 }
-                return <Table.Cell key={j}>{cell}</Table.Cell>;
+                return <TableCell key={j}>{cell}</TableCell>;
               })}
-            </Table.Row>
+            </TableRow>
           );
         })}
-      </Table.Body>
-    </Table.Root>
+      </TableBody>
+    </Table>
   );
 };

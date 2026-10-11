@@ -1,5 +1,12 @@
-import { Table } from '@radix-ui/themes';
 import { Heading } from '@/components/ui/heading';
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '@/components/ui/table';
 import { ContentContainer } from './ContentContainer';
 
 export const ResourcesTable = ({
@@ -16,20 +23,20 @@ export const ResourcesTable = ({
           External Resources
         </Heading>
       </ContentContainer>
-      <Table.Root variant="surface" style={{ width: '100%' }}>
+      <Table style={{ width: '100%' }}>
         {headers && (
-          <Table.Header>
-            <Table.Row>
-              <Table.ColumnHeaderCell>Name</Table.ColumnHeaderCell>
-              <Table.ColumnHeaderCell>Description</Table.ColumnHeaderCell>
-            </Table.Row>
-          </Table.Header>
+          <TableHeader>
+            <TableRow>
+              <TableHead>Name</TableHead>
+              <TableHead>Description</TableHead>
+            </TableRow>
+          </TableHeader>
         )}
-        <Table.Body>
+        <TableBody>
           {rows.map((row, _i) => {
             return (
-              <Table.Row key={row[0]}>
-                <Table.Cell>
+              <TableRow key={row[0]}>
+                <TableCell>
                   <a
                     className="text-primary decoration-primary/25 underline-offset-2 hover:underline"
                     href={row[0]}
@@ -38,13 +45,13 @@ export const ResourcesTable = ({
                   >
                     {row[1]}
                   </a>
-                </Table.Cell>
-                <Table.Cell>{row[2]}</Table.Cell>
-              </Table.Row>
+                </TableCell>
+                <TableCell>{row[2]}</TableCell>
+              </TableRow>
             );
           })}
-        </Table.Body>
-      </Table.Root>
+        </TableBody>
+      </Table>
     </section>
   );
 };
