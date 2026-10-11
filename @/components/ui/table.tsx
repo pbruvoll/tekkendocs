@@ -14,7 +14,7 @@ const Table = React.forwardRef<
 >(({ className, style, ...props }, ref) => (
   <div
     className={cn(
-      'relative w-full overflow-x-auto rounded-[12px] border border-[oklab(0.425_0_0/0.567)] bg-[#191919] bg-clip-padding',
+      'relative w-full overflow-x-auto rounded-[12px] border border-[oklab(0.425_0_0/0.567)] bg-panel bg-clip-padding',
       className,
     )}
     style={style}

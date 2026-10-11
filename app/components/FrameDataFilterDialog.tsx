@@ -57,10 +57,7 @@ export const FrameDataFilterDialog = ({
         </Button>
       </DialogTrigger>
 
-      <DialogContent
-        overlayClassName="bg-black/60"
-        className="block w-[calc(100%-2rem)] max-w-[450px] rounded-[18px] border-0 bg-[#191919] shadow-[0_0_0_1px_rgb(255_255_255/0.2),0_12px_60px_rgb(0_0_0/0.2),0_16px_64px_rgb(0_0_0/0.4),0_16px_36px_-20px_rgb(0_0_0/0.9)] sm:rounded-[18px]"
-      >
+      <DialogContent className="block max-w-[450px]">
         <DialogTitle className="mb-2 font-bold text-xl leading-[26px]">
           Filter
         </DialogTitle>
