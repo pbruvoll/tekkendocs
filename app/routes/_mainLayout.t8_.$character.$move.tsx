@@ -1,6 +1,12 @@
-import { Table } from '@radix-ui/themes';
 import { Link, type MetaFunction, useMatches } from 'react-router';
 import { Heading } from '@/components/ui/heading';
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableRow,
+} from '@/components/ui/table';
 import { ContentContainer } from '~/components/ContentContainer';
 import { MoveVideo } from '~/components/MoveVideo';
 import { SimpleMovesTable } from '~/components/SimpleMovesTable';
@@ -162,51 +168,51 @@ export default function MoveRoute({ params }: Route.ComponentProps) {
         <MoveVideo move={move} />
       </div>
 
-      <Table.Root variant="surface" className="mt-4 w-full">
-        <Table.Body>
-          <Table.Row>
-            <Table.RowHeaderCell>Hit level</Table.RowHeaderCell>
-            <Table.Cell>{move.hitLevel}</Table.Cell>
-          </Table.Row>
+      <Table className="mt-4 w-full">
+        <TableBody>
+          <TableRow>
+            <TableHead scope="row">Hit level</TableHead>
+            <TableCell>{move.hitLevel}</TableCell>
+          </TableRow>
 
-          <Table.Row>
-            <Table.RowHeaderCell>Damage</Table.RowHeaderCell>
-            <Table.Cell>{move.damage}</Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.RowHeaderCell>Startup</Table.RowHeaderCell>
-            <Table.Cell>{move.startup}</Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.RowHeaderCell>Block</Table.RowHeaderCell>
-            <Table.Cell>{move.block}</Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.RowHeaderCell>Hit</Table.RowHeaderCell>
-            <Table.Cell>{move.hit}</Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.RowHeaderCell>Counter hit</Table.RowHeaderCell>
-            <Table.Cell>{move.counterHit}</Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.RowHeaderCell>Recovery frames</Table.RowHeaderCell>
-            <Table.Cell>{move.recovery || 'N/A'}</Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.RowHeaderCell>Recovery state</Table.RowHeaderCell>
-            <Table.Cell>{move.recoveryState || 'N/A'}</Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.RowHeaderCell>Notes</Table.RowHeaderCell>
-            <Table.Cell>
+          <TableRow>
+            <TableHead scope="row">Damage</TableHead>
+            <TableCell>{move.damage}</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableHead scope="row">Startup</TableHead>
+            <TableCell>{move.startup}</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableHead scope="row">Block</TableHead>
+            <TableCell>{move.block}</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableHead scope="row">Hit</TableHead>
+            <TableCell>{move.hit}</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableHead scope="row">Counter hit</TableHead>
+            <TableCell>{move.counterHit}</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableHead scope="row">Recovery frames</TableHead>
+            <TableCell>{move.recovery || 'N/A'}</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableHead scope="row">Recovery state</TableHead>
+            <TableCell>{move.recoveryState || 'N/A'}</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableHead scope="row">Notes</TableHead>
+            <TableCell>
               {move.notes?.split('\n').map((line, index) => (
                 <div key={index}>{line}</div>
               ))}
-            </Table.Cell>
-          </Table.Row>
-        </Table.Body>
-      </Table.Root>
+            </TableCell>
+          </TableRow>
+        </TableBody>
+      </Table>
       {relatedMoves.length > 0 && (
         <>
           <h2 className="text-base mt-5 mb-3">Related moves </h2>

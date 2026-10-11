@@ -1,4 +1,3 @@
-import { Table } from '@radix-ui/themes';
 import { useMemo } from 'react';
 import {
   data,
@@ -9,6 +8,14 @@ import {
 } from 'react-router';
 import invariant from 'tiny-invariant';
 import { Heading } from '@/components/ui/heading';
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '@/components/ui/table';
 import { Authors } from '~/components/Authors';
 import { Command } from '~/components/Command';
 import { ContentContainer } from '~/components/ContentContainer';
@@ -227,22 +234,20 @@ export default function Index() {
             <Heading as="h2" size="4" className="mb-4">
               {tableIdToDisplayName[table.name]}
             </Heading>
-            <Table.Root variant="surface" style={{ width: '100%' }}>
+            <Table style={{ width: '100%' }}>
               {table.headers && (
-                <Table.Header>
-                  <Table.Row>
+                <TableHeader>
+                  <TableRow>
                     {table.headers.map((h) => (
-                      <Table.ColumnHeaderCell key={h}>
-                        {h}
-                      </Table.ColumnHeaderCell>
+                      <TableHead key={h}>{h}</TableHead>
                     ))}
-                  </Table.Row>
-                </Table.Header>
+                  </TableRow>
+                </TableHeader>
               )}
-              <Table.Body>
+              <TableBody>
                 {table.rows.map((row, _i) => {
                   return (
-                    <Table.Row key={row[0]}>
+                    <TableRow key={row[0]}>
                       {columnNums.map((j) => {
                         const cell = row[j] || '';
                         if (
@@ -253,33 +258,33 @@ export default function Index() {
                         ) {
                           //this is a command, so make it link
                           return (
-                            <Table.Cell key={j}>
+                            <TableCell key={j}>
                               <Command
                                 charUrl={`/t8/${characterName}`}
                                 compressedCommandMap={compressedCommandMap}
                                 command={cell}
                               />
-                            </Table.Cell>
+                            </TableCell>
                           );
                         }
                         if (table.name === 'key_moves') {
                           return (
-                            <Table.Cell key={j}>
+                            <TableCell key={j}>
                               <TextWithCommand
                                 charUrl={`/t8/${characterName}`}
                                 compressedCommandMap={compressedCommandMap}
                                 text={cell}
                               />
-                            </Table.Cell>
+                            </TableCell>
                           );
                         }
-                        return <Table.Cell key={j}>{cell}</Table.Cell>;
+                        return <TableCell key={j}>{cell}</TableCell>;
                       })}
-                    </Table.Row>
+                    </TableRow>
                   );
                 })}
-              </Table.Body>
-            </Table.Root>
+              </TableBody>
+            </Table>
           </section>
         );
       })}

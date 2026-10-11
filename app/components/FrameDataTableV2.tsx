@@ -3,9 +3,16 @@ import {
   CaretSortIcon,
   CaretUpIcon,
 } from '@radix-ui/react-icons';
-import { Table } from '@radix-ui/themes';
 import { useMemo } from 'react';
 import { Link, useLocation, useSearchParams } from 'react-router';
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '@/components/ui/table';
 import { orderByKey } from '~/constants/sortConstants';
 import { type FrameDataListProps } from '~/types/FrameDataListProps';
 import { type Move } from '~/types/Move';
@@ -64,14 +71,12 @@ export const FrameDataTable = ({
   ];
 
   return (
-    <Table.Root variant="surface" className={className}>
-      <Table.Header>
-        <Table.Row>
-          {showCharacter && (
-            <Table.ColumnHeaderCell>Char</Table.ColumnHeaderCell>
-          )}
+    <Table className={className}>
+      <TableHeader>
+        <TableRow>
+          {showCharacter && <TableHead>Char</TableHead>}
           {tableHeaders.map((h) => (
-            <Table.ColumnHeaderCell key={h.id}>
+            <TableHead key={h.id}>
               <Link
                 to={createOrderLinkWithSearchParams(h.id)}
                 preventScrollReset
@@ -83,18 +88,18 @@ export const FrameDataTable = ({
                   ? sortOrderIconMap[sortSettings.sortDirection]
                   : sortOrderIconMap['']}
               </Link>
-            </Table.ColumnHeaderCell>
+            </TableHead>
           ))}
-        </Table.Row>
-      </Table.Header>
-      <Table.Body>
+        </TableRow>
+      </TableHeader>
+      <TableBody>
         {moves.map((move) => {
           const computedCharId = charId || charIdFromMove(move);
           const moveUrl = `/${gameRouteId}/${computedCharId}/${commandToUrlSegmentEncoded(move.command)}`;
           return (
-            <Table.Row key={move.moveNumber}>
-              {showCharacter && <Table.Cell>{computedCharId}</Table.Cell>}
-              <Table.Cell>
+            <TableRow key={move.moveNumber}>
+              {showCharacter && <TableCell>{computedCharId}</TableCell>}
+              <TableCell>
                 <span className="inline-flex items-center gap-2 text-primary">
                   <Link style={{ textDecoration: 'none' }} to={moveUrl}>
                     {move.command}
@@ -103,22 +108,22 @@ export const FrameDataTable = ({
                     <MovePreviewDialogButton move={move} url={moveUrl} />
                   )}
                 </span>
-              </Table.Cell>
-              <Table.Cell>{move.hitLevel}</Table.Cell>
-              <Table.Cell>{move.damage}</Table.Cell>
-              <Table.Cell>{move.startup}</Table.Cell>
-              <Table.Cell>{move.block}</Table.Cell>
-              <Table.Cell>{move.hit}</Table.Cell>
-              <Table.Cell>{move.counterHit}</Table.Cell>
-              <Table.Cell>
+              </TableCell>
+              <TableCell>{move.hitLevel}</TableCell>
+              <TableCell>{move.damage}</TableCell>
+              <TableCell>{move.startup}</TableCell>
+              <TableCell>{move.block}</TableCell>
+              <TableCell>{move.hit}</TableCell>
+              <TableCell>{move.counterHit}</TableCell>
+              <TableCell>
                 {move.notes?.split('\n').map((line, index) => (
                   <div key={index}>{line}</div>
                 ))}
-              </Table.Cell>
-            </Table.Row>
+              </TableCell>
+            </TableRow>
           );
         })}
-      </Table.Body>
-    </Table.Root>
+      </TableBody>
+    </Table>
   );
 };

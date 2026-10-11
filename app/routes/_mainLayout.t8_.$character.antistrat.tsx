@@ -1,4 +1,3 @@
-import { Table } from '@radix-ui/themes';
 import { useMemo } from 'react';
 import {
   data,
@@ -9,6 +8,7 @@ import {
   useRouteError,
 } from 'react-router';
 import { Heading } from '@/components/ui/heading';
+import { Table, TableBody, TableCell, TableRow } from '@/components/ui/table';
 import { Commands } from '~/components/Commands';
 import { ContentContainer } from '~/components/ContentContainer';
 import { AppErrorBoundary } from '~/components/ErrorBoundary';
@@ -121,15 +121,15 @@ export default function Index() {
                 {tableIdToDisplayName[table.name] || table.name}
               </Heading>
             </ContentContainer>
-            <Table.Root variant="surface" style={{ width: '100%' }}>
-              <Table.Body>
+            <Table style={{ width: '100%' }}>
+              <TableBody>
                 {table.rows.map((row, i) => {
                   return (
-                    <Table.Row key={i}>
+                    <TableRow key={i}>
                       {columnNums.map((j) => {
                         const cell = row[j] || '';
                         return (
-                          <Table.Cell key={j}>
+                          <TableCell key={j}>
                             {characterName === 'asuka' ? (
                               <TextWithCommand
                                 text={cell}
@@ -143,14 +143,14 @@ export default function Index() {
                                 compressedCommandMap={compressedCommandMap}
                               />
                             )}
-                          </Table.Cell>
+                          </TableCell>
                         );
                       })}
-                    </Table.Row>
+                    </TableRow>
                   );
                 })}
-              </Table.Body>
-            </Table.Root>
+              </TableBody>
+            </Table>
           </section>
         );
       })}

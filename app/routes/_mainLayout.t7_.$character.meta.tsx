@@ -1,5 +1,4 @@
 import { Pencil1Icon } from '@radix-ui/react-icons';
-import { Table } from '@radix-ui/themes';
 import {
   data,
   Link,
@@ -9,6 +8,14 @@ import {
   useLoaderData,
 } from 'react-router';
 import { Heading } from '@/components/ui/heading';
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '@/components/ui/table';
 import { ContentContainer } from '~/components/ContentContainer';
 import { hasHeaderMap } from '~/constants/hasHeaderMap';
 import { tableIdToDisplayName } from '~/constants/tableIdToDisplayName';
@@ -150,28 +157,26 @@ export default function Index() {
                   {tableIdToDisplayName[table.name]}
                 </Heading>
               </ContentContainer>
-              <Table.Root variant="surface" style={{ width: '100%' }}>
+              <Table style={{ width: '100%' }}>
                 {table.headers && (
-                  <Table.Header>
-                    <Table.Row>
+                  <TableHeader>
+                    <TableRow>
                       {table.headers.map((h) => (
-                        <Table.ColumnHeaderCell key={h}>
-                          {h}
-                        </Table.ColumnHeaderCell>
+                        <TableHead key={h}>{h}</TableHead>
                       ))}
-                    </Table.Row>
-                  </Table.Header>
+                    </TableRow>
+                  </TableHeader>
                 )}
-                <Table.Body>
+                <TableBody>
                   {table.rows.map((row, _i) => {
                     return (
-                      <Table.Row key={row[0]}>
+                      <TableRow key={row[0]}>
                         {columnNums.map((j) => {
                           const cell = row[j] || '';
                           if (table.headers && table.headers[j] === 'Command') {
                             //this is a command, so make it link
                             return (
-                              <Table.Cell key={j}>
+                              <TableCell key={j}>
                                 <Link
                                   className="text-primary"
                                   to={`/t7/${characterName}/${commandToUrlSegment(
@@ -180,16 +185,16 @@ export default function Index() {
                                 >
                                   {cell}
                                 </Link>
-                              </Table.Cell>
+                              </TableCell>
                             );
                           }
-                          return <Table.Cell key={j}>{cell}</Table.Cell>;
+                          return <TableCell key={j}>{cell}</TableCell>;
                         })}
-                      </Table.Row>
+                      </TableRow>
                     );
                   })}
-                </Table.Body>
-              </Table.Root>
+                </TableBody>
+              </Table>
             </section>
           );
         })}

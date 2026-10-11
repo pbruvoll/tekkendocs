@@ -1,4 +1,3 @@
-import { Table } from '@radix-ui/themes';
 import {
   data,
   Link,
@@ -7,6 +6,7 @@ import {
   useLoaderData,
 } from 'react-router';
 import { Heading } from '@/components/ui/heading';
+import { Table, TableBody, TableCell, TableRow } from '@/components/ui/table';
 import { ContentContainer } from '~/components/ContentContainer';
 import { google } from '~/google.server';
 import { ServerStatusCode } from '~/types/ServerStatusCode';
@@ -146,18 +146,18 @@ export default function Move() {
         </Link>
         : {moveRow[0]}
       </Heading>
-      <Table.Root variant="surface" style={{ width: '100%' }}>
-        <Table.Body>
+      <Table style={{ width: '100%' }}>
+        <TableBody>
           {headers.slice(1).map((header, i) => {
             return (
-              <Table.Row key={header}>
-                <Table.Cell>{header}</Table.Cell>
-                <Table.Cell>{moveRow[i + 1] || ''}</Table.Cell>
-              </Table.Row>
+              <TableRow key={header}>
+                <TableCell>{header}</TableCell>
+                <TableCell>{moveRow[i + 1] || ''}</TableCell>
+              </TableRow>
             );
           })}
-        </Table.Body>
-      </Table.Root>
+        </TableBody>
+      </Table>
     </ContentContainer>
   );
 }
