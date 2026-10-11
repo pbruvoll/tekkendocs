@@ -1,5 +1,3 @@
-import { Theme } from '@radix-ui/themes';
-import radixStyles from '@radix-ui/themes/styles.css?url';
 import {
   data,
   Links,
@@ -18,10 +16,7 @@ import tailwindStyleSheetUrl from './tailwind.css?url';
 import { getCacheControlHeaders } from './utils/headerUtils';
 
 export const links: LinksFunction = () => {
-  return [
-    { rel: 'stylesheet', href: tailwindStyleSheetUrl },
-    { rel: 'stylesheet', href: radixStyles },
-  ].filter(Boolean);
+  return [{ rel: 'stylesheet', href: tailwindStyleSheetUrl }].filter(Boolean);
 };
 
 export const headers = () => getCacheControlHeaders({ seconds: 60 * 5 });
@@ -102,16 +97,9 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <Theme
-          appearance="dark"
-          accentColor="amber"
-          grayColor="gray"
-          panelBackground="solid"
-          scaling="100%"
-          radius="full"
-        >
+        <div className="relative z-0 min-h-dvh">
           <Outlet />
-        </Theme>
+        </div>
         <ScrollRestoration />
         <Scripts />
       </body>

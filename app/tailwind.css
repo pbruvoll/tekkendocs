@@ -31,6 +31,10 @@
 
 :root {
   --header-height: 3rem;
+  --page-background: var(--background);
+  --page-foreground: var(--foreground);
+  --site-header: var(--muted);
+  --site-footer: var(--muted);
   --background: oklch(1 0 0);
   --foreground: oklch(0.13 0.028 261.692);
   --foreground-destructive: oklch(
@@ -73,6 +77,13 @@
 }
 
 .dark {
+  color-scheme: dark;
+  /* Page and site chrome colors, kept from the original Radix Themes look
+     (neutral gray page, amber header and footer) */
+  --page-background: #111111;
+  --page-foreground: #eeeeee;
+  --site-header: #3f2700;
+  --site-footer: #4d3000;
   --background: oklch(0.13 0.028 261.692);
   --foreground: oklch(0.985 0.002 247.839);
   --foreground-destructive: oklch(
@@ -153,6 +164,10 @@
   --color-foreground-destructive: var(--foreground-destructive);
   --color-foreground-success: var(--foreground-success);
   --color-background: var(--background);
+  --color-page: var(--page-background);
+  --color-page-foreground: var(--page-foreground);
+  --color-site-header: var(--site-header);
+  --color-site-footer: var(--site-footer);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -174,7 +189,13 @@
     scroll-margin-top: calc(var(--header-height) + 2rem);
   }
   body {
-    @apply font-sans bg-background text-foreground;
+    @apply font-sans bg-page text-page-foreground antialiased;
+    overflow-wrap: break-word;
+    text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+  }
+  ::selection {
+    background-color: #fd8b0041;
   }
   html {
     @apply font-sans;

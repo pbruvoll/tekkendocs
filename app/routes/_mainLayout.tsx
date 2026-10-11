@@ -29,7 +29,7 @@ const MainLayoutTemplate = ({ children }: MainLayoutTemplateProps) => {
   const contactByDiscord = new DiscordContactProvider();
   return (
     <>
-      <header className="sticky top-0 z-50 flex min-h-header-height items-center bg-(--accent-4) py-1">
+      <header className="sticky top-0 z-50 flex min-h-header-height items-center bg-site-header py-1">
         <ContentContainer className="w-full">
           <div className="grid grid-cols-[auto_1fr] items-center justify-between py-1">
             <Link to="/">
@@ -78,7 +78,7 @@ const MainLayoutTemplate = ({ children }: MainLayoutTemplateProps) => {
         {children}
       </main>
       <ScrollToTopButton />
-      <footer style={{ background: 'var(--accent-5' }}>
+      <footer className="bg-site-footer">
         <ContentContainer enableBottomPadding enableTopPadding>
           <ul className="flex flex-col gap-3">
             <li>
