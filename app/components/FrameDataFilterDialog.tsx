@@ -1,4 +1,4 @@
-import { MixerHorizontalIcon } from '@radix-ui/react-icons';
+import { SlidersHorizontalIcon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   Dialog,
@@ -55,7 +55,7 @@ export const FrameDataFilterDialog = ({
           />
         }
       >
-        <MixerHorizontalIcon width="16" height="16" /> Filter
+        <SlidersHorizontalIcon /> Filter
         {filterDialogCount ? ` (${filterDialogCount})` : ''}
       </DialogTrigger>
 

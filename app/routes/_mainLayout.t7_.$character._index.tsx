@@ -1,5 +1,4 @@
-import { Pencil1Icon } from '@radix-ui/react-icons';
-import { Filter } from 'lucide-react';
+import { Filter, PencilIcon } from 'lucide-react';
 import { useState } from 'react';
 import {
   type HeadersFunction,
@@ -103,7 +102,7 @@ export default function Index() {
             href={editUrl}
             rel="noopener"
           >
-            <Pencil1Icon />
+            <PencilIcon className="size-3.5" />
             Edit
           </a>
         </div>

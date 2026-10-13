@@ -1,4 +1,4 @@
-import { VideoIcon } from '@radix-ui/react-icons';
+import { SquarePlayIcon } from 'lucide-react';
 import { Link } from 'react-router';
 import { Button } from '@/components/ui/button';
 import {
@@ -22,7 +22,7 @@ export function MovePreviewDialogButton({ move, url }: MovePreviewDialogProps) {
   return (
     <Dialog>
       <DialogTrigger aria-label={`Show video of ${move.command}`}>
-        <VideoIcon aria-hidden className="w-4" />
+        <SquarePlayIcon aria-hidden className="size-4" />
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px] dark">
         <DialogHeader>

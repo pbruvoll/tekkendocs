@@ -1,10 +1,5 @@
-import {
-  DiscordLogoIcon,
-  GitHubLogoIcon,
-  MagnifyingGlassIcon,
-  TwitterLogoIcon,
-} from '@radix-ui/react-icons';
-import { FaFacebook } from 'react-icons/fa';
+import { SearchIcon } from 'lucide-react';
+import { FaDiscord, FaFacebook, FaGithub, FaTwitter } from 'react-icons/fa';
 import { Link, Outlet, type ShouldRevalidateFunction } from 'react-router';
 import { ContentContainer } from '~/components/ContentContainer';
 import { AppErrorBoundary } from '~/components/ErrorBoundary';
@@ -54,21 +49,21 @@ const MainLayoutTemplate = ({ children }: MainLayoutTemplateProps) => {
             </Link> */}
             <div className="flex place-self-end">
               <Link title="Search" to="/t8/search" className="px-2">
-                <MagnifyingGlassIcon width="2em" height="2em" />
+                <SearchIcon size="2em" />
               </Link>
               <a
                 title="Invite to Tekkendocs Discord server"
                 href={contactByDiscord.buildContactUrl('invite')}
                 className="px-2"
               >
-                <DiscordLogoIcon width="2em" height="2em" />
+                <FaDiscord size="2em" />
               </a>
               <a
                 title="TekkenDocs source code on GitHub"
                 href={githubLink}
                 className="px-2"
               >
-                <GitHubLogoIcon width="2em" height="2em" />
+                <FaGithub size="2em" />
               </a>
             </div>
           </div>
@@ -87,7 +82,7 @@ const MainLayoutTemplate = ({ children }: MainLayoutTemplateProps) => {
                 href={contactByDiscord.buildContactUrl('invite')}
                 className="flex items-center gap-2"
               >
-                Discord <DiscordLogoIcon width="2em" height="2em" />
+                Discord <FaDiscord size="2em" />
               </a>
             </li>
             <li>
@@ -96,7 +91,7 @@ const MainLayoutTemplate = ({ children }: MainLayoutTemplateProps) => {
                 href={twitterLink}
                 className="flex items-center gap-2"
               >
-                Twitter <TwitterLogoIcon width="2em" height="2em" />
+                Twitter <FaTwitter size="2em" />
               </a>
             </li>
             <li>
@@ -114,7 +109,7 @@ const MainLayoutTemplate = ({ children }: MainLayoutTemplateProps) => {
                 href={githubLink}
                 className="flex items-center gap-2"
               >
-                Github <GitHubLogoIcon width="2em" height="2em" />
+                Github <FaGithub size="2em" />
               </a>
             </li>
             <li>

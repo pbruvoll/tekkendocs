@@ -1,5 +1,5 @@
-import { PlayIcon } from '@radix-ui/react-icons';
 import cx from 'classix';
+import { PlayIcon } from 'lucide-react';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { MoveVideo } from '~/components/MoveVideo';

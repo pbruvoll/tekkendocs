@@ -1,8 +1,8 @@
-import { ExclamationTriangleIcon } from '@radix-ui/react-icons';
+import { TriangleAlertIcon } from 'lucide-react';
 
 export const ModsDisclaimer = () => (
   <div className="flex gap-3 rounded-lg border border-border bg-muted/40 px-4 py-3 text-sm text-muted-foreground">
-    <ExclamationTriangleIcon
+    <TriangleAlertIcon
       className="mt-0.5 size-5 shrink-0 text-primary"
       aria-hidden
     />

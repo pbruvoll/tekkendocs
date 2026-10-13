@@ -1,4 +1,4 @@
-import { Pencil1Icon } from '@radix-ui/react-icons';
+import { PencilIcon } from 'lucide-react';
 import { headingVariants } from '@/components/ui/heading';
 import { cn } from '@/lib/utils';
 import { ContentContainer } from '~/components/ContentContainer';
@@ -38,7 +38,7 @@ export const CharacterPageHeader = ({
             rel="noopener"
             href={editUrl}
           >
-            <Pencil1Icon />
+            <PencilIcon className="size-3.5" />
             Edit
           </a>
         )}

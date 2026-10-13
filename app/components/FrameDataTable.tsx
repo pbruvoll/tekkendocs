@@ -1,8 +1,8 @@
 import {
-  CaretDownIcon,
-  CaretSortIcon,
-  CaretUpIcon,
-} from '@radix-ui/react-icons';
+  ChevronDownIcon,
+  ChevronsUpDownIcon,
+  ChevronUpIcon,
+} from 'lucide-react';
 import { useMemo } from 'react';
 import { Link, useLocation, useSearchParams } from 'react-router';
 import {
@@ -26,10 +26,11 @@ export type FrameDataTableProps = {
   className?: string;
 };
 
+// The 1.5rem box keeps the column widths; the padding keeps the arrows small
 const sortOrderIconMap: Record<SortOrder, React.ReactNode> = {
-  '': <CaretSortIcon width="1.5rem" height="1.5rem" />,
-  asc: <CaretDownIcon width="1.5rem" height="1.5rem" />,
-  desc: <CaretUpIcon width="1.5rem" height="1.5rem" />,
+  '': <ChevronsUpDownIcon size="1.5rem" className="p-0.75" />,
+  asc: <ChevronDownIcon size="1.5rem" className="p-0.75" />,
+  desc: <ChevronUpIcon size="1.5rem" className="p-0.75" />,
 };
 
 export const FrameDataTable = ({

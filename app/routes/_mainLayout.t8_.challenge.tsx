@@ -1,4 +1,4 @@
-import { VideoIcon } from '@radix-ui/react-icons';
+import { SquarePlayIcon } from 'lucide-react';
 import { Fragment } from 'react/jsx-runtime';
 import { Link, type MetaFunction } from 'react-router';
 import { ContentContainer } from '~/components/ContentContainer';
@@ -392,11 +392,7 @@ export default function () {
                           className="text-xl text-primary no-underline"
                           to={completed.video}
                         >
-                          <VideoIcon
-                            className="inline"
-                            width="1em"
-                            height="1em"
-                          />
+                          <SquarePlayIcon className="inline" size="1em" />
                         </Link>
                       </div>
                     )}

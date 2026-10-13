@@ -1,13 +1,13 @@
 import {
   CodeIcon,
-  ColorWheelIcon,
-  GitHubLogoIcon,
+  FileTextIcon,
   ImageIcon,
-  Pencil1Icon,
-  ReaderIcon,
+  PaletteIcon,
+  PencilIcon,
+  SquarePlayIcon,
   TableIcon,
-  VideoIcon,
-} from '@radix-ui/react-icons';
+} from 'lucide-react';
+import { FaGithub } from 'react-icons/fa';
 import { data, href, Link, useLoaderData } from 'react-router';
 import { ContentContainer } from '~/components/ContentContainer';
 import { PaperCard } from '~/components/PaperCard';
@@ -58,7 +58,7 @@ type CreditEntry = {
 const t8Credits: CreditEntry[] = [
   {
     title: 'Main programmer and creator',
-    icon: <CodeIcon />,
+    icon: <CodeIcon className="size-4" />,
     content: (
       <PersonLinkList
         persons={[{ name: 'MadCow', url: 'https://x.com/tekkendocs' }]}
@@ -67,7 +67,7 @@ const t8Credits: CreditEntry[] = [
   },
   {
     title: 'Designer',
-    icon: <ColorWheelIcon />,
+    icon: <PaletteIcon className="size-4" />,
     content: (
       <span className="inline-flex flex-wrap items-center gap-x-1">
         <PersonLinkList
@@ -79,7 +79,7 @@ const t8Credits: CreditEntry[] = [
   },
   {
     title: 'Frame data source',
-    icon: <TableIcon />,
+    icon: <TableIcon className="size-4" />,
     content: (
       <>
         Frame data for Tekken 8 is imported from{' '}
@@ -95,7 +95,7 @@ const t8Credits: CreditEntry[] = [
 
 const iconsCredit: CreditEntry = {
   title: 'Icons',
-  icon: <ImageIcon />,
+  icon: <ImageIcon className="size-4" />,
   content: (
     <>
       Icons for move properties and images for ranks are from{' '}
@@ -110,7 +110,7 @@ const iconsCredit: CreditEntry = {
 const t7Credits: CreditEntry[] = [
   {
     title: 'Frame data source',
-    icon: <TableIcon />,
+    icon: <TableIcon className="size-4" />,
     content: (
       <>
         This app uses the RBN frame data which is also found at{' '}
@@ -135,12 +135,12 @@ const t7Credits: CreditEntry[] = [
   },
   {
     title: 'Main programmer and frame translator',
-    icon: <CodeIcon />,
+    icon: <CodeIcon className="size-4" />,
     content: 'MadCow',
   },
   {
     title: 'Guide data source',
-    icon: <ReaderIcon />,
+    icon: <FileTextIcon className="size-4" />,
     content: (
       <>
         A big thanks to Applay for letting us use the data from his{' '}
@@ -156,7 +156,7 @@ const t7Credits: CreditEntry[] = [
   },
   {
     title: 'Frame data update helpers',
-    icon: <Pencil1Icon />,
+    icon: <PencilIcon className="size-4" />,
     content: (
       <>
         <p className="mb-2">
@@ -268,7 +268,7 @@ export default function Credits() {
 
       {videoRecordersT8.length > 0 && (
         <>
-          <SectionHeading icon={<VideoIcon />}>
+          <SectionHeading icon={<SquarePlayIcon className="size-4" />}>
             Video recordings - Full sets
           </SectionHeading>
           <div className="grid gap-6">
@@ -299,9 +299,7 @@ export default function Credits() {
 
       {contributors.length > 0 && (
         <>
-          <SectionHeading icon={<GitHubLogoIcon />}>
-            Code contributors
-          </SectionHeading>
+          <SectionHeading icon={<FaGithub />}>Code contributors</SectionHeading>
           <p className="mb-4 max-w-2xl text-sm text-muted-foreground">
             Everyone who has contributed code to the{' '}
             <a

@@ -1,4 +1,4 @@
-import { DiscordLogoIcon, TwitterLogoIcon } from '@radix-ui/react-icons';
+import { FaDiscord, FaTwitter } from 'react-icons/fa';
 import { twitterLink } from '~/services/staticDataService';
 import { DiscordContactProvider } from '~/utils/getInTouch';
 
@@ -17,7 +17,7 @@ export const SuggestModNote = () => {
         rel="noopener noreferrer"
         title="TekkenDocs on Twitter (X)"
       >
-        X <TwitterLogoIcon aria-hidden />
+        X <FaTwitter aria-hidden />
       </a>{' '}
       or{' '}
       <a
@@ -27,7 +27,7 @@ export const SuggestModNote = () => {
         rel="noopener noreferrer"
         title="Invite to TekkenDocs Discord server"
       >
-        Discord <DiscordLogoIcon aria-hidden />
+        Discord <FaDiscord aria-hidden />
       </a>
       .
     </p>

@@ -1,6 +1,5 @@
-import { TwitterLogoIcon } from '@radix-ui/react-icons';
 import { Fragment } from 'react';
-import { FaTiktok, FaTwitch, FaYoutube } from 'react-icons/fa';
+import { FaTiktok, FaTwitch, FaTwitter, FaYoutube } from 'react-icons/fa';
 import { Link } from 'react-router';
 import metafyGradientIcon from '~/images/icons/metafy-gradient.svg';
 
@@ -39,7 +38,7 @@ const PersonLinkComponent = ({ name, url }: PersonLink) => {
           if (url.includes('twitter.com') || url.includes('x.com')) {
             return (
               <Link key="twitter" to={url}>
-                <TwitterLogoIcon width="1em" height="1em" />
+                <FaTwitter size="1em" />
               </Link>
             );
           }
