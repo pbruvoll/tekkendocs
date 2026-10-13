@@ -1,9 +1,9 @@
-import cx from 'classix';
 import { useId, useState } from 'react';
 import { useHydrated } from 'remix-utils/use-hydrated';
 import { Label } from '~/components/ui/label';
 import { Switch } from '~/components/ui/switch';
 import { characterInfoT8List } from '~/constants/characterInfoListT8';
+import { cn } from '~/lib/utils';
 import { t8AvatarBrandMap } from '~/utils/t8AvatarMap';
 
 type QuizCharacterFilterProps = {
@@ -82,7 +82,7 @@ export const QuizCharacterFilter = ({
                 onClick={() => handleCharacterClick(characterId)}
                 aria-pressed={isSelected}
                 aria-label={displayName}
-                className={cx(
+                className={cn(
                   'flex w-full flex-col items-center rounded p-0.5 transition-opacity hover:opacity-90',
                   isSelected &&
                     'ring-2 ring-primary ring-offset-1 ring-offset-background',
@@ -101,7 +101,7 @@ export const QuizCharacterFilter = ({
                 <img
                   src={characterRankImages?.[characterId]}
                   alt="Rank badge"
-                  className={cx(
+                  className={cn(
                     'mt-0.5 h-7 w-auto transition-opacity',
                     !isHydrated && 'opacity-0',
                   )}

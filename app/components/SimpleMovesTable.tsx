@@ -1,7 +1,7 @@
-import cx from 'classix';
 import { memo } from 'react';
 import { Link, useSearchParams } from 'react-router';
 import { MoveTags } from '~/constants/moveTags';
+import { cn } from '~/lib/utils';
 import { type FrameDataListProps } from '~/types/FrameDataListProps';
 import {
   getChipDamage,
@@ -51,11 +51,11 @@ export const SimpleMovesTable = memo(function SimpleMovesTable({
   const showCharacter = forceShowCharacter || !charId;
   const showVidoeFileName = useSearchParams()[0].get('videoName') !== null;
   return (
-    <table className={cx('relative w-full text-sm', className)}>
+    <table className={cn('relative w-full text-sm', className)}>
       <thead className="[&_tr]:border-b">
         <tr className="border-b transition-colors hover:bg-muted/50">
           <th
-            className={cx(
+            className={cn(
               'h-12 bg-background px-2 text-left align-middle font-medium text-muted-foreground sm:px-4',
               stickyHeader && 'sticky top-header-height z-10',
             )}
@@ -63,7 +63,7 @@ export const SimpleMovesTable = memo(function SimpleMovesTable({
             Cmd
           </th>
           <th
-            className={cx(
+            className={cn(
               'h-12 bg-background px-2 text-left align-middle font-medium text-muted-foreground sm:px-4',
               stickyHeader && 'sticky top-header-height z-10',
             )}
@@ -71,7 +71,7 @@ export const SimpleMovesTable = memo(function SimpleMovesTable({
             Hit Lvl
           </th>
           <th
-            className={cx(
+            className={cn(
               'h-12 bg-background px-2 text-left align-middle font-medium text-muted-foreground sm:px-4',
               stickyHeader && 'sticky top-header-height z-10',
             )}
@@ -81,7 +81,7 @@ export const SimpleMovesTable = memo(function SimpleMovesTable({
             up
           </th>
           <th
-            className={cx(
+            className={cn(
               'h-12 bg-background px-2 text-left align-middle font-medium text-muted-foreground sm:px-4',
               stickyHeader && 'sticky top-header-height z-10',
             )}
@@ -91,7 +91,7 @@ export const SimpleMovesTable = memo(function SimpleMovesTable({
             ck
           </th>
           <th
-            className={cx(
+            className={cn(
               'h-12 bg-background px-2 text-left align-middle font-medium text-muted-foreground sm:px-4',
               stickyHeader && 'sticky top-header-height z-10',
             )}
@@ -159,7 +159,7 @@ export const SimpleMovesTable = memo(function SimpleMovesTable({
                 {simplifyFrameValue(move.startup || '')}
               </td>
               <td
-                className={cx(
+                className={cn(
                   'wrap-break-word p-2 align-middle sm:p-4',
                   getBlockFrameColorClasses(simpleBlock),
                 )}

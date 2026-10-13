@@ -1,8 +1,8 @@
-import cx from 'classix';
 import { useState } from 'react';
 import FilePlayer from 'react-player/file';
 import ReactPlayer from 'react-player/youtube';
 import { useHydrated } from 'remix-utils/use-hydrated';
+import { cn } from '~/lib/utils';
 import { cdnUrl, charVideoInfoT8 } from '~/services/staticDataService';
 import { type Move } from '~/types/Move';
 import { charIdFromMove } from '~/utils/moveUtils';
@@ -42,7 +42,7 @@ export const MoveVideo = ({
       (charVideoInfoT8[charId]?.videoPostFix ?? '-426');
 
     return (
-      <div className={cx('relative aspect-video', className)}>
+      <div className={cn('relative aspect-video', className)}>
         {/* Loading indicator behind the video - no z-index so video stays on top */}
         {playing && (
           <div className="absolute inset-0 flex items-center justify-center bg-muted/30">
@@ -88,7 +88,7 @@ export const MoveVideo = ({
 
   if (move.ytVideo && isHydrated) {
     return (
-      <div className={cx('relative aspect-video', className)}>
+      <div className={cn('relative aspect-video', className)}>
         {/* Loading indicator behind the video - no z-index so video stays on top */}
         <div className="absolute inset-0 flex items-center justify-center bg-muted/30">
           <div className="flex flex-col items-center gap-2">

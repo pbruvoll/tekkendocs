@@ -1,6 +1,6 @@
 import { useWindowVirtualizer } from '@tanstack/react-virtual';
-import cx from 'classix';
 import { useCallback, useEffect, useRef, useState } from 'react';
+import { cn } from '~/lib/utils';
 import { type FrameDataListProps } from '~/types/FrameDataListProps';
 import { charIdFromMove, commandToUrlSegmentEncoded } from '~/utils/moveUtils';
 import { ContentContainer } from './ContentContainer';
@@ -74,7 +74,7 @@ export function MoveCardWithVideoList({
     <ContentContainer>
       <div
         ref={listRef}
-        className={cx('flex flex-col items-center', className)}
+        className={cn('flex flex-col items-center', className)}
         style={{
           height: `${virtualizer.getTotalSize()}px`,
           width: '100%',

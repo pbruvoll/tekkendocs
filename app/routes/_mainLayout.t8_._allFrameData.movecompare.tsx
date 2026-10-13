@@ -77,11 +77,7 @@ export default function MoveCompare() {
   };
 
   return (
-    <ContentContainer
-      enableBottomPadding
-      enableTopPadding
-      className="max-w-4xl"
-    >
+    <ContentContainer enableBottomPadding enableTopPadding>
       <h1 className="mb-2 mt-2 text-center text-2xl font-semibold tracking-tight">
         Move Comparison
       </h1>

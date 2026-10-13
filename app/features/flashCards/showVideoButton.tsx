@@ -1,8 +1,8 @@
-import cx from 'classix';
 import { PlayIcon } from 'lucide-react';
 import { useState } from 'react';
 import { MoveVideo } from '~/components/MoveVideo';
 import { Button } from '~/components/ui/button';
+import { cn } from '~/lib/utils';
 import { type Move } from '~/types/Move';
 
 export type ShowVideoButtonProps = {
@@ -32,7 +32,7 @@ export const ShowVideoButton = ({
     );
   }
   return (
-    <div className={cx('flex items-center justify-center', className)}>
+    <div className={cn('flex items-center justify-center', className)}>
       <Button
         size="lg"
         variant="outline"

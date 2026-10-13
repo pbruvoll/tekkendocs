@@ -460,11 +460,7 @@ export default function DailyChallenge() {
 
   if (!isAppStateHydrated) {
     return (
-      <ContentContainer
-        enableBottomPadding
-        enableTopPadding
-        className="max-w-4xl"
-      >
+      <ContentContainer enableBottomPadding enableTopPadding>
         <h1 className="mb-5 mt-2 text-center text-2xl font-semibold tracking-tight">
           Daily Challenge - {todayDisplayDate || todayKey}
         </h1>
@@ -516,11 +512,7 @@ export default function DailyChallenge() {
   };
 
   return (
-    <ContentContainer
-      enableBottomPadding
-      enableTopPadding
-      className="max-w-4xl"
-    >
+    <ContentContainer enableBottomPadding enableTopPadding>
       <h1 className="mb-5 mt-2 text-center text-2xl font-semibold tracking-tight">
         Daily Challenge - {todayDisplayDate || todayKey}
       </h1>

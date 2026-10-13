@@ -1,4 +1,3 @@
-import cx from 'classix';
 import { AnimatePresence, motion } from 'motion/react';
 import { useState } from 'react';
 import { Commands } from '~/components/Commands';
@@ -13,6 +12,7 @@ import {
   type GuideSectionKey,
   getGuideSectionId,
 } from '~/features/guideLanguage/texts/guideTexts';
+import { cn } from '~/lib/utils';
 import { type Move } from '~/types/Move';
 import { compressCommand } from '~/utils/commandUtils';
 import { useGuideContext } from './GuideContext';
@@ -150,7 +150,7 @@ const ToogleVideoButton = ({
     <Button
       type="button"
       variant="outline"
-      className={cx(
+      className={cn(
         'rounded-full h-6 px-3 border-2 border-border text-xs',
         showVideo
           ? 'bg-accent text-accent-foreground hover:bg-accent'

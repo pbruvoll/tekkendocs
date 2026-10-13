@@ -1,4 +1,4 @@
-import cx from 'classix';
+import { cn } from '~/lib/utils';
 
 export type ContentContainerProps = React.PropsWithChildren<{
   disableXPadding?: boolean;
@@ -26,7 +26,7 @@ export const ContentContainer = ({
     <div
       lang={lang}
       dir={dir}
-      className={cx(
+      className={cn(
         dir === 'rtl' && '[&_*]:[unicode-bidi:plaintext]',
         !disableXMargin && 'px-2 sm:px-4',
         enableTopPadding && 'pt-2 sm:pt-4',
