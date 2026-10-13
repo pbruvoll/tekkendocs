@@ -1,5 +1,6 @@
 import { expect, test } from 'vitest';
 import { getSortByQueryParamValue, getSortSettings } from './sortingUtils';
+
 test('getSearchSettings', () => {
   expect(getSortSettings(new URLSearchParams('foo=bar'))).toBeUndefined();
   expect(getSortSettings(new URLSearchParams('orderby=block'))).toMatchObject({

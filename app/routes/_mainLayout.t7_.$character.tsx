@@ -1,5 +1,4 @@
-import { data, type LoaderFunctionArgs } from 'react-router';
-import { Outlet } from 'react-router';
+import { data, type LoaderFunctionArgs, Outlet } from 'react-router';
 import { hasHeaderMap } from '~/constants/hasHeaderMap';
 import { getSheet } from '~/services/googleSheetService.server';
 import { type Game } from '~/types/Game';
