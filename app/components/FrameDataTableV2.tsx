@@ -71,59 +71,61 @@ export const FrameDataTable = ({
   ];
 
   return (
-    <Table className={className}>
-      <TableHeader>
-        <TableRow>
-          {showCharacter && <TableHead>Char</TableHead>}
-          {tableHeaders.map((h) => (
-            <TableHead key={h.id}>
-              <Link
-                to={createOrderLinkWithSearchParams(h.id)}
-                preventScrollReset
-                replace
-                className="flex flex-wrap items-end"
-              >
-                {h.displayName}
-                {h.id.toLowerCase() === sortSettings?.sortByKey
-                  ? sortOrderIconMap[sortSettings.sortDirection]
-                  : sortOrderIconMap['']}
-              </Link>
-            </TableHead>
-          ))}
-        </TableRow>
-      </TableHeader>
-      <TableBody>
-        {moves.map((move) => {
-          const computedCharId = charId || charIdFromMove(move);
-          const moveUrl = `/${gameRouteId}/${computedCharId}/${commandToUrlSegmentEncoded(move.command)}`;
-          return (
-            <TableRow key={move.moveNumber}>
-              {showCharacter && <TableCell>{computedCharId}</TableCell>}
-              <TableCell>
-                <span className="inline-flex items-center gap-2 text-primary">
-                  <Link style={{ textDecoration: 'none' }} to={moveUrl}>
-                    {move.command}
-                  </Link>
-                  {(move.ytVideo || move.video) && (
-                    <MovePreviewDialogButton move={move} url={moveUrl} />
-                  )}
-                </span>
-              </TableCell>
-              <TableCell>{move.hitLevel}</TableCell>
-              <TableCell>{move.damage}</TableCell>
-              <TableCell>{move.startup}</TableCell>
-              <TableCell>{move.block}</TableCell>
-              <TableCell>{move.hit}</TableCell>
-              <TableCell>{move.counterHit}</TableCell>
-              <TableCell>
-                {move.notes?.split('\n').map((line, index) => (
-                  <div key={index}>{line}</div>
-                ))}
-              </TableCell>
-            </TableRow>
-          );
-        })}
-      </TableBody>
-    </Table>
+    <div className={className}>
+      <Table>
+        <TableHeader>
+          <TableRow>
+            {showCharacter && <TableHead>Char</TableHead>}
+            {tableHeaders.map((h) => (
+              <TableHead key={h.id}>
+                <Link
+                  to={createOrderLinkWithSearchParams(h.id)}
+                  preventScrollReset
+                  replace
+                  className="flex flex-wrap items-end"
+                >
+                  {h.displayName}
+                  {h.id.toLowerCase() === sortSettings?.sortByKey
+                    ? sortOrderIconMap[sortSettings.sortDirection]
+                    : sortOrderIconMap['']}
+                </Link>
+              </TableHead>
+            ))}
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {moves.map((move) => {
+            const computedCharId = charId || charIdFromMove(move);
+            const moveUrl = `/${gameRouteId}/${computedCharId}/${commandToUrlSegmentEncoded(move.command)}`;
+            return (
+              <TableRow key={move.moveNumber}>
+                {showCharacter && <TableCell>{computedCharId}</TableCell>}
+                <TableCell>
+                  <span className="inline-flex items-center gap-2 text-primary">
+                    <Link style={{ textDecoration: 'none' }} to={moveUrl}>
+                      {move.command}
+                    </Link>
+                    {(move.ytVideo || move.video) && (
+                      <MovePreviewDialogButton move={move} url={moveUrl} />
+                    )}
+                  </span>
+                </TableCell>
+                <TableCell>{move.hitLevel}</TableCell>
+                <TableCell>{move.damage}</TableCell>
+                <TableCell>{move.startup}</TableCell>
+                <TableCell>{move.block}</TableCell>
+                <TableCell>{move.hit}</TableCell>
+                <TableCell>{move.counterHit}</TableCell>
+                <TableCell>
+                  {move.notes?.split('\n').map((line, index) => (
+                    <div key={index}>{line}</div>
+                  ))}
+                </TableCell>
+              </TableRow>
+            );
+          })}
+        </TableBody>
+      </Table>
+    </div>
   );
 };

@@ -23,7 +23,7 @@ export const ResourcesTable = ({
           External Resources
         </Heading>
       </ContentContainer>
-      <Table style={{ width: '100%' }}>
+      <Table>
         {headers && (
           <TableHeader>
             <TableRow>

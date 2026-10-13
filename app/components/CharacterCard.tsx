@@ -22,8 +22,8 @@ export const CharacterCard2 = ({
 }: CharacterCard2Props) => {
   return (
     <Link to={url} className="block h-full cursor-pointer">
-      <Card className="group relative h-full transform overflow-hidden p-3 transition duration-500 hover:scale-110 hover:border-b-gray-700 hover:shadow-sm">
-        <div className={cx('relative -mx-3 -mt-3', size === 'large' && 'pb-3')}>
+      <Card className="group relative h-full transform gap-0 pt-0 pb-3 transition duration-500 hover:scale-110 hover:shadow-sm">
+        <div className={cx('relative', size === 'large' && 'pb-3')}>
           <img
             src={imgUrl}
             alt={name}
@@ -43,22 +43,20 @@ export const CharacterCard2 = ({
             </Badge>
           )}
         </div>
-        <div className="-mx-3">
-          {author ? (
-            <>
-              <div className="overflow-hidden text-ellipsis whitespace-nowrap text-center max-xs:text-xs">
-                <span className="capitalize">{name}</span> by
-              </div>
-              <div className="overflow-hidden text-center capitalize text-primary max-xs:text-xs">
-                {author}
-              </div>
-            </>
-          ) : (
-            <div className="overflow-hidden text-ellipsis whitespace-nowrap text-center capitalize text-primary max-xs:text-xs">
-              {name === 'mokujin' ? 'All Characters' : name}
+        {author ? (
+          <>
+            <div className="overflow-hidden text-ellipsis whitespace-nowrap text-center max-xs:text-xs">
+              <span className="capitalize">{name}</span> by
             </div>
-          )}
-        </div>
+            <div className="overflow-hidden text-center capitalize text-primary max-xs:text-xs">
+              {author}
+            </div>
+          </>
+        ) : (
+          <div className="overflow-hidden text-ellipsis whitespace-nowrap text-center capitalize text-primary max-xs:text-xs">
+            {name === 'mokujin' ? 'All Characters' : name}
+          </div>
+        )}
       </Card>
     </Link>
   );

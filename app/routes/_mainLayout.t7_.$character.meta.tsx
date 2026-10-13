@@ -157,7 +157,7 @@ export default function Index() {
                   {tableIdToDisplayName[table.name]}
                 </Heading>
               </ContentContainer>
-              <Table style={{ width: '100%' }}>
+              <Table>
                 {table.headers && (
                   <TableHeader>
                     <TableRow>

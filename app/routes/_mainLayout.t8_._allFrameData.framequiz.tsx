@@ -595,21 +595,21 @@ export default function FrameQuiz() {
       )}
 
       {!hasStarted && (
-        <Card className="mx-auto w-full max-w-2xl border-border/70 shadow-sm">
-          <CardHeader className="p-3 sm:p-6">
+        <Card className="mx-auto w-full max-w-2xl shadow-sm [--card-spacing:--spacing(3)] sm:[--card-spacing:--spacing(6)]">
+          <CardHeader>
             <CardTitle>Endless frame quiz</CardTitle>
           </CardHeader>
-          <CardContent className="p-3 pt-0 sm:p-6 sm:pt-0">
-            <p className="mb-4">
+          <CardContent className="gap-4">
+            <p>
               Guess how many frames each move is on block. This mode is endless
               and keeps going until you stop. See how many you can get right in
               a row and try to climb the ranks!
             </p>
-            <p className="mb-4 text-sm text-muted-foreground">
+            <p className="text-sm text-muted-foreground">
               Want to focus on a specific character, a subset of moves, or apply
               a custom filter? Use the options below before starting.
             </p>
-            <Button className="mb-4" onClick={handleStart}>
+            <Button className="self-start" onClick={handleStart}>
               Start quiz
             </Button>
             <QuizModifierControls
@@ -642,7 +642,7 @@ export default function FrameQuiz() {
               options={pendingOptions}
               onToggle={handleToggleOption}
             />
-            <Button className="mt-6" onClick={handleStart}>
+            <Button className="mt-6 self-start" onClick={handleStart}>
               Start quiz
             </Button>
           </CardContent>
@@ -650,7 +650,7 @@ export default function FrameQuiz() {
       )}
 
       {hasStarted && !currentQuestion && (
-        <Card className="mx-auto w-full max-w-2xl border-border/70 shadow-sm">
+        <Card className="mx-auto w-full max-w-2xl shadow-sm">
           <CardHeader>
             <CardTitle>Loading quiz...</CardTitle>
           </CardHeader>
@@ -673,11 +673,11 @@ export default function FrameQuiz() {
             onAnswer={handleAnswer}
             onContinue={handleContinueAfterFeedback}
           />
-          <Card className="mx-auto w-full max-w-2xl border-border/70 shadow-sm">
-            <CardHeader className="pb-2">
-              <CardTitle className="text-base">Quiz performance</CardTitle>
+          <Card className="mx-auto w-full max-w-2xl shadow-sm">
+            <CardHeader>
+              <CardTitle>Quiz performance</CardTitle>
             </CardHeader>
-            <CardContent className="space-y-3 pt-2">
+            <CardContent>
               <div className="grid gap-3 sm:grid-cols-2">
                 <div className="rounded-lg border border-border/60 bg-muted/25 p-3">
                   <p className="text-xs uppercase tracking-wide text-muted-foreground">

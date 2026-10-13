@@ -1,7 +1,11 @@
-import { Button, type ButtonProps } from '@/components/ui/button';
+import type * as React from 'react';
+import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
-type FilterToggleButtonProps = Omit<ButtonProps, 'variant'> & {
+type FilterToggleButtonProps = Omit<
+  React.ComponentProps<typeof Button>,
+  'variant'
+> & {
   active?: boolean;
 };
 
@@ -17,7 +21,7 @@ export const FilterToggleButton = ({
     className={cn(
       'h-8 rounded-full px-3 font-semibold',
       !active &&
-        'bg-transparent text-primary shadow-[inset_0_0_0_1px_rgb(255_174_53/0.53)] hover:bg-primary/5',
+        'bg-transparent text-primary inset-ring inset-ring-primary/50 hover:bg-primary/5',
       className,
     )}
     {...props}

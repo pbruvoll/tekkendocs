@@ -168,51 +168,53 @@ export default function MoveRoute({ params }: Route.ComponentProps) {
         <MoveVideo move={move} />
       </div>
 
-      <Table className="mt-4 w-full">
-        <TableBody>
-          <TableRow>
-            <TableHead scope="row">Hit level</TableHead>
-            <TableCell>{move.hitLevel}</TableCell>
-          </TableRow>
+      <div className="mt-4">
+        <Table>
+          <TableBody>
+            <TableRow>
+              <RowHeader>Hit level</RowHeader>
+              <TableCell>{move.hitLevel}</TableCell>
+            </TableRow>
 
-          <TableRow>
-            <TableHead scope="row">Damage</TableHead>
-            <TableCell>{move.damage}</TableCell>
-          </TableRow>
-          <TableRow>
-            <TableHead scope="row">Startup</TableHead>
-            <TableCell>{move.startup}</TableCell>
-          </TableRow>
-          <TableRow>
-            <TableHead scope="row">Block</TableHead>
-            <TableCell>{move.block}</TableCell>
-          </TableRow>
-          <TableRow>
-            <TableHead scope="row">Hit</TableHead>
-            <TableCell>{move.hit}</TableCell>
-          </TableRow>
-          <TableRow>
-            <TableHead scope="row">Counter hit</TableHead>
-            <TableCell>{move.counterHit}</TableCell>
-          </TableRow>
-          <TableRow>
-            <TableHead scope="row">Recovery frames</TableHead>
-            <TableCell>{move.recovery || 'N/A'}</TableCell>
-          </TableRow>
-          <TableRow>
-            <TableHead scope="row">Recovery state</TableHead>
-            <TableCell>{move.recoveryState || 'N/A'}</TableCell>
-          </TableRow>
-          <TableRow>
-            <TableHead scope="row">Notes</TableHead>
-            <TableCell>
-              {move.notes?.split('\n').map((line, index) => (
-                <div key={index}>{line}</div>
-              ))}
-            </TableCell>
-          </TableRow>
-        </TableBody>
-      </Table>
+            <TableRow>
+              <RowHeader>Damage</RowHeader>
+              <TableCell>{move.damage}</TableCell>
+            </TableRow>
+            <TableRow>
+              <RowHeader>Startup</RowHeader>
+              <TableCell>{move.startup}</TableCell>
+            </TableRow>
+            <TableRow>
+              <RowHeader>Block</RowHeader>
+              <TableCell>{move.block}</TableCell>
+            </TableRow>
+            <TableRow>
+              <RowHeader>Hit</RowHeader>
+              <TableCell>{move.hit}</TableCell>
+            </TableRow>
+            <TableRow>
+              <RowHeader>Counter hit</RowHeader>
+              <TableCell>{move.counterHit}</TableCell>
+            </TableRow>
+            <TableRow>
+              <RowHeader>Recovery frames</RowHeader>
+              <TableCell>{move.recovery || 'N/A'}</TableCell>
+            </TableRow>
+            <TableRow>
+              <RowHeader>Recovery state</RowHeader>
+              <TableCell>{move.recoveryState || 'N/A'}</TableCell>
+            </TableRow>
+            <TableRow>
+              <RowHeader>Notes</RowHeader>
+              <TableCell>
+                {move.notes?.split('\n').map((line, index) => (
+                  <div key={index}>{line}</div>
+                ))}
+              </TableCell>
+            </TableRow>
+          </TableBody>
+        </Table>
+      </div>
       {relatedMoves.length > 0 && (
         <>
           <h2 className="text-base mt-5 mb-3">Related moves </h2>
@@ -226,3 +228,9 @@ export default function MoveRoute({ params }: Route.ComponentProps) {
     </ContentContainer>
   );
 }
+
+const RowHeader = ({ children }: React.PropsWithChildren) => (
+  <TableHead scope="row" className="font-normal">
+    {children}
+  </TableHead>
+);

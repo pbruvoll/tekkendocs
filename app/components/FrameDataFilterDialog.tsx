@@ -48,7 +48,7 @@ export const FrameDataFilterDialog = ({
           className={cn(
             'h-8 gap-2 rounded-[6px] px-3',
             triggerVariant === 'soft' &&
-              'bg-[rgb(250_130_0/0.13)] text-primary hover:bg-[rgb(250_130_0/0.2)]',
+              'bg-primary/15 text-primary hover:bg-primary/25',
             className,
           )}
         >
@@ -57,7 +57,7 @@ export const FrameDataFilterDialog = ({
         </Button>
       </DialogTrigger>
 
-      <DialogContent className="block max-w-[450px]">
+      <DialogContent className="block text-base sm:max-w-[450px]">
         <DialogTitle className="mb-2 font-bold text-xl leading-[26px]">
           Filter
         </DialogTitle>
@@ -81,11 +81,8 @@ export const FrameDataFilterDialog = ({
 
         <div className="mt-8 flex justify-end gap-3">
           <Button
-            variant="ghost"
-            className={cn(
-              footerButtonClassName,
-              'bg-white/[0.07] text-white/70 hover:bg-white/10 hover:text-white/80',
-            )}
+            variant="secondary"
+            className={footerButtonClassName}
             onClick={() =>
               updateFilterValues({
                 set: [],

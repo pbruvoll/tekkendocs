@@ -101,7 +101,7 @@ export const MoveCardWithVideo = ({
 
   return (
     <div ref={cardRef} className="block w-120 max-w-full lg:w-3xl">
-      <Card className="overflow-hidden bg-muted/30 border-accent border-2 transition-colors hover:border-text-primary/50">
+      <Card className="gap-0 overflow-hidden border-2 border-accent bg-muted/30 py-0 ring-0 transition-colors hover:border-primary/50">
         <div className="lg:flex">
           {/* Info section */}
           <div className="flex flex-col lg:w-1/2">

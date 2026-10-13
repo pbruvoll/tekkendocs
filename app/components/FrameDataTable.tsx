@@ -82,63 +82,62 @@ export const FrameDataTable = ({
    * to create a new table */
 
   return (
-    <Table
-      className={className}
-      key={orderByColumnName + sortDirection + JSON.stringify(filter)}
-    >
-      <TableHeader>
-        <TableRow>
-          {tableHeaders.map((h) => (
-            <TableHead key={h}>
-              <Link
-                to={createOrderLinkWithSearchParams(h.toLowerCase())}
-                className="flex flex-wrap items-end"
-              >
-                {h}
-                {h.toLowerCase() === orderByColumnName
-                  ? sortOrderIconMap[sortDirection]
-                  : sortOrderIconMap['']}
-              </Link>
-            </TableHead>
-          ))}
-        </TableRow>
-      </TableHeader>
-      <TableBody>
-        {sortedRows.map((row) => {
-          return (
-            <TableRow key={row[0]}>
-              {columnNums.map((j) => {
-                const cell = row[j] || '';
-                if (j === 0) {
-                  //this is a command, so make it link
-                  return (
-                    <TableCell key={j}>
-                      <Link
-                        className="text-primary"
-                        style={{ textDecoration: 'none' }}
-                        to={commandToUrlSegment(cell)}
-                      >
-                        {cell}
-                      </Link>
-                    </TableCell>
-                  );
-                }
-                if (j === 7) {
-                  //notes column, perserve new lines
-                  return (
-                    <TableCell key={j}>
-                      {cell.split('\n').map((line, index) => (
-                        <div key={index}>{line}</div>
-                      ))}
-                    </TableCell>
-                  );
-                }
-                return <TableCell key={j}>{cell}</TableCell>;
-              })}
-            </TableRow>
-          );
-        })}
-      </TableBody>
-    </Table>
+    <div className={className}>
+      <Table key={orderByColumnName + sortDirection + JSON.stringify(filter)}>
+        <TableHeader>
+          <TableRow>
+            {tableHeaders.map((h) => (
+              <TableHead key={h}>
+                <Link
+                  to={createOrderLinkWithSearchParams(h.toLowerCase())}
+                  className="flex flex-wrap items-end"
+                >
+                  {h}
+                  {h.toLowerCase() === orderByColumnName
+                    ? sortOrderIconMap[sortDirection]
+                    : sortOrderIconMap['']}
+                </Link>
+              </TableHead>
+            ))}
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {sortedRows.map((row) => {
+            return (
+              <TableRow key={row[0]}>
+                {columnNums.map((j) => {
+                  const cell = row[j] || '';
+                  if (j === 0) {
+                    //this is a command, so make it link
+                    return (
+                      <TableCell key={j}>
+                        <Link
+                          className="text-primary"
+                          style={{ textDecoration: 'none' }}
+                          to={commandToUrlSegment(cell)}
+                        >
+                          {cell}
+                        </Link>
+                      </TableCell>
+                    );
+                  }
+                  if (j === 7) {
+                    //notes column, perserve new lines
+                    return (
+                      <TableCell key={j}>
+                        {cell.split('\n').map((line, index) => (
+                          <div key={index}>{line}</div>
+                        ))}
+                      </TableCell>
+                    );
+                  }
+                  return <TableCell key={j}>{cell}</TableCell>;
+                })}
+              </TableRow>
+            );
+          })}
+        </TableBody>
+      </Table>
+    </div>
   );
 };

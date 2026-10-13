@@ -468,7 +468,7 @@ export default function DailyChallenge() {
         <h1 className="mb-5 mt-2 text-center text-2xl font-semibold tracking-tight">
           Daily Challenge - {todayDisplayDate || todayKey}
         </h1>
-        <Card className="mx-auto w-full max-w-2xl border-border/70 bg-linear-to-br from-background to-accent/20 shadow-sm">
+        <Card className="mx-auto w-full max-w-2xl bg-linear-to-br from-background to-accent/20 shadow-sm">
           <CardHeader>
             <CardTitle>Loading challenge...</CardTitle>
           </CardHeader>
@@ -526,7 +526,7 @@ export default function DailyChallenge() {
       </h1>
 
       {!hasStarted && !showCompletedView && (
-        <Card className="mx-auto mb-4 w-full max-w-2xl border-border/70 bg-linear-to-br from-background to-accent/20 shadow-sm">
+        <Card className="mx-auto mb-4 w-full max-w-2xl bg-linear-to-br from-background to-accent/20 shadow-sm">
           <CardHeader>
             <CardTitle>
               Current streak: {currentStreakToShow} day
@@ -537,23 +537,25 @@ export default function DailyChallenge() {
       )}
 
       {!hasCompletedToday && !hasStarted && !hasCompletedSession && (
-        <Card className="mx-auto w-full max-w-2xl border-border/70 shadow-sm">
+        <Card className="mx-auto w-full max-w-2xl shadow-sm">
           <CardHeader>
             <CardTitle>Today&apos;s challenge</CardTitle>
           </CardHeader>
-          <CardContent>
-            <p className="mb-4">
+          <CardContent className="gap-4">
+            <p>
               Guess how many frames each move is on block. You will get 10
               questions, and everyone gets the same set for today. Note that
               some videos may show additional hits of the string.
             </p>
-            <Button onClick={handleStart}>Start challenge</Button>
+            <Button className="self-start" onClick={handleStart}>
+              Start challenge
+            </Button>
           </CardContent>
         </Card>
       )}
 
       {hasStarted && dailyMoves.length < questionsPerDay && (
-        <Card className="mx-auto w-full max-w-2xl border-border/70 shadow-sm">
+        <Card className="mx-auto w-full max-w-2xl shadow-sm">
           <CardHeader>
             <CardTitle>Loading challenge...</CardTitle>
           </CardHeader>
@@ -565,7 +567,7 @@ export default function DailyChallenge() {
 
       {hasStarted && currentQuestion && (
         <div className="space-y-4">
-          <Card className="mx-auto w-full max-w-2xl border-border/70 shadow-sm">
+          <Card className="mx-auto w-full max-w-2xl shadow-sm">
             <CardHeader>
               <CardTitle className="flex gap-2 flex-wrap justify-between items-center">
                 {currentQuestionLabel}
@@ -618,7 +620,7 @@ export default function DailyChallenge() {
 
       {showCompletedView && (
         <div className="space-y-4">
-          <Card className="mx-auto w-full max-w-2xl border-border/70 bg-linear-to-br from-background to-accent/20 shadow-sm">
+          <Card className="mx-auto w-full max-w-2xl bg-linear-to-br from-background to-accent/20 shadow-sm">
             <CardHeader>
               <div className="flex items-center gap-3">
                 <img
@@ -675,7 +677,7 @@ export default function DailyChallenge() {
               )}
               {showRetryButton && (
                 <Button
-                  className="mt-4"
+                  className="mt-4 self-start"
                   variant="outline"
                   onClick={handleRetry}
                 >
@@ -685,7 +687,7 @@ export default function DailyChallenge() {
             </CardContent>
           </Card>
 
-          <Card className="mx-auto w-full max-w-2xl border-border/70 shadow-sm">
+          <Card className="mx-auto w-full max-w-2xl shadow-sm">
             <CardHeader>
               <CardTitle>Answer Details</CardTitle>
             </CardHeader>

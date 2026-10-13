@@ -36,7 +36,7 @@ export const QuizModifierControls = ({
           />
           <Label
             htmlFor={hideCommandId}
-            className="flex cursor-pointer flex-col"
+            className="cursor-pointer flex-col items-start"
           >
             <span>Hide command</span>
             <span className="text-xs font-normal text-muted-foreground">
@@ -50,7 +50,10 @@ export const QuizModifierControls = ({
             checked={modifiers.hideVideo}
             onCheckedChange={() => onToggle('hideVideo')}
           />
-          <Label htmlFor={hideVideoId} className="flex cursor-pointer flex-col">
+          <Label
+            htmlFor={hideVideoId}
+            className="cursor-pointer flex-col items-start"
+          >
             <span>Hide video</span>
             <span className="text-xs font-normal text-muted-foreground">
               Guess from command only
