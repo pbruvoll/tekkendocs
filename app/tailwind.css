@@ -8,128 +8,10 @@
 
 @theme {
   --breakpoint-xs: 32rem;
-  --animate-accordion-down: accordion-down 0.2s ease-out;
-  --animate-accordion-up: accordion-up 0.2s ease-out;
-
-  @keyframes accordion-down {
-    from {
-      height: 0;
-    }
-    to {
-      height: var(--radix-accordion-content-height);
-    }
-  }
-  @keyframes accordion-up {
-    from {
-      height: var(--radix-accordion-content-height);
-    }
-    to {
-      height: 0;
-    }
-  }
-}
-
-:root {
-  --header-height: 3rem;
-  --page-background: var(--background);
-  --page-foreground: var(--foreground);
-  --panel: var(--popover);
-  --site-header: var(--muted);
-  --site-footer: var(--muted);
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.13 0.028 261.692);
-  --foreground-destructive: oklch(
-    0.45 0.22 27
-  ); /* Extended the original theme */
-  --foreground-success: oklch(0.45 0.18 145); /* Extended the original theme */
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.13 0.028 261.692);
-  --paper: oklch(0.97 0.012 85);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.13 0.028 261.692);
-  --primary: oklch(0.67 0.16 58);
-  --primary-foreground: oklch(0.99 0.02 95);
-  --secondary: oklch(0.967 0.001 286.375);
-  --secondary-foreground: oklch(0.21 0.006 285.885);
-  --muted: oklch(0.967 0.003 264.542);
-  --muted-foreground: oklch(0.551 0.027 264.364);
-  --accent: oklch(0.967 0.003 264.542);
-  --accent-foreground: oklch(0.21 0.034 264.665);
-  --destructive: oklch(0.577 0.245 27.325);
-  --success: oklch(0.52 0.18 145);
-  --success-foreground: oklch(0.99 0.05 145);
-  --border: oklch(0.928 0.006 264.531);
-  --input: oklch(0.928 0.006 264.531);
-  --ring: oklch(0.707 0.022 261.325);
-  --chart-1: oklch(0.88 0.15 92);
-  --chart-2: oklch(0.77 0.16 70);
-  --chart-3: oklch(0.67 0.16 58);
-  --chart-4: oklch(0.56 0.15 49);
-  --chart-5: oklch(0.47 0.12 46);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.985 0.002 247.839);
-  --sidebar-foreground: oklch(0.13 0.028 261.692);
-  --sidebar-primary: oklch(0.67 0.16 58);
-  --sidebar-primary-foreground: oklch(0.99 0.02 95);
-  --sidebar-accent: oklch(0.967 0.003 264.542);
-  --sidebar-accent-foreground: oklch(0.21 0.034 264.665);
-  --sidebar-border: oklch(0.928 0.006 264.531);
-  --sidebar-ring: oklch(0.707 0.022 261.325);
-}
-
-.dark {
-  color-scheme: dark;
-  /* Page and site chrome colors, kept from the original Radix Themes look
-     (neutral gray page, amber header and footer) */
-  --page-background: #111111;
-  --page-foreground: #eeeeee;
-  /* raised surfaces such as dialogs and tables */
-  --panel: #191919;
-  --site-header: #3f2700;
-  --site-footer: #4d3000;
-  --background: oklch(0.13 0.028 261.692);
-  --foreground: oklch(0.985 0.002 247.839);
-  --foreground-destructive: oklch(
-    0.72 0.19 25
-  ); /* Extended the original theme */
-  --foreground-success: oklch(0.72 0.17 145); /* Extended the original theme */
-  --card: oklch(0.21 0.034 264.665);
-  --card-foreground: oklch(0.985 0.002 247.839);
-  --paper: oklch(0.2 0.03 264.665);
-  --popover: oklch(0.21 0.034 264.665);
-  --popover-foreground: oklch(0.985 0.002 247.839);
-  --primary: oklch(
-    0.84 0.165 80
-  ); /* Adjusted from the original shadcn abmer theme ( oklch(0.77 0.16 70);) */
-  --primary-foreground: oklch(0.28 0.07 46);
-  --secondary: oklch(0.274 0.006 286.033);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.278 0.033 256.848);
-  --muted-foreground: oklch(0.707 0.022 261.325);
-  --accent: oklch(0.278 0.033 256.848);
-  --accent-foreground: oklch(0.985 0.002 247.839);
-  --destructive: oklch(0.704 0.191 22.216);
-  --success: oklch(0.65 0.18 145);
-  --success-foreground: oklch(0.98 0.05 145);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.551 0.027 264.364);
-  --chart-1: oklch(0.88 0.15 92);
-  --chart-2: oklch(0.77 0.16 70);
-  --chart-3: oklch(0.67 0.16 58);
-  --chart-4: oklch(0.56 0.15 49);
-  --chart-5: oklch(0.47 0.12 46);
-  --sidebar: oklch(0.21 0.034 264.665);
-  --sidebar-foreground: oklch(0.985 0.002 247.839);
-  --sidebar-primary: oklch(0.77 0.16 70);
-  --sidebar-primary-foreground: oklch(0.28 0.07 46);
-  --sidebar-accent: oklch(0.278 0.033 256.848);
-  --sidebar-accent-foreground: oklch(0.985 0.002 247.839);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.551 0.027 264.364);
 }
 
 @theme inline {
+  --font-heading: var(--font-sans);
   --font-sans: "DM Sans Variable", sans-serif;
   --spacing-header-height: var(--header-height);
   --color-sidebar-ring: var(--sidebar-ring);
@@ -149,8 +31,6 @@
   --color-input: var(--input);
   --color-border: var(--border);
   --color-destructive: var(--destructive);
-  --color-success: var(--success);
-  --color-success-foreground: var(--success-foreground);
   --color-accent-foreground: var(--accent-foreground);
   --color-accent: var(--accent);
   --color-muted-foreground: var(--muted-foreground);
@@ -164,26 +44,129 @@
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
   --color-foreground: var(--foreground);
-  --color-foreground-destructive: var(--foreground-destructive);
-  --color-foreground-success: var(--foreground-success);
   --color-background: var(--background);
-  --color-page: var(--page-background);
-  --color-page-foreground: var(--page-foreground);
-  --color-panel: var(--panel);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+
+  /* TekkenDocs additions to the shadcn tokens */
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-foreground-success: var(--foreground-success);
+  --color-foreground-destructive: var(--foreground-destructive);
   --color-site-header: var(--site-header);
   --color-site-footer: var(--site-footer);
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-  --radius-2xl: calc(var(--radius) + 8px);
-  --radius-3xl: calc(var(--radius) + 12px);
-  --radius-4xl: calc(var(--radius) + 16px);
+}
+
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.67 0.16 58);
+  --primary-foreground: oklch(0.99 0.02 95);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.88 0.15 92);
+  --chart-2: oklch(0.77 0.16 70);
+  --chart-3: oklch(0.67 0.16 58);
+  --chart-4: oklch(0.56 0.15 49);
+  --chart-5: oklch(0.47 0.12 46);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.67 0.16 58);
+  --sidebar-primary-foreground: oklch(0.99 0.02 95);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+
+  /* TekkenDocs additions */
+  --header-height: 3rem;
+  --success: oklch(0.52 0.18 145);
+  --success-foreground: oklch(0.99 0.05 145);
+  --foreground-success: oklch(0.45 0.18 145);
+  --foreground-destructive: oklch(0.45 0.22 27);
+  --site-header: oklch(0.93 0.07 85);
+  --site-footer: oklch(0.9 0.09 85);
+  --paper: oklch(0.97 0.012 85);
+}
+
+.dark {
+  color-scheme: dark;
+  --background: oklch(0.178 0 0);
+  --foreground: oklch(0.949 0 0);
+  --card: oklch(0.213 0 0);
+  --card-foreground: oklch(0.949 0 0);
+  --popover: oklch(0.213 0 0);
+  --popover-foreground: oklch(0.949 0 0);
+  /* Amber, adjusted from the shadcn amber theme (oklch(0.77 0.16 70)) */
+  --primary: oklch(0.84 0.165 80);
+  --primary-foreground: oklch(0.28 0.07 46);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.88 0.15 92);
+  --chart-2: oklch(0.77 0.16 70);
+  --chart-3: oklch(0.67 0.16 58);
+  --chart-4: oklch(0.56 0.15 49);
+  --chart-5: oklch(0.47 0.12 46);
+  --sidebar: oklch(0.213 0 0);
+  --sidebar-foreground: oklch(0.949 0 0);
+  --sidebar-primary: oklch(0.77 0.16 70);
+  --sidebar-primary-foreground: oklch(0.28 0.07 46);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+
+  /* TekkenDocs additions */
+  --success: oklch(0.65 0.18 145);
+  --success-foreground: oklch(0.98 0.05 145);
+  --foreground-success: oklch(0.72 0.17 145);
+  --foreground-destructive: oklch(0.72 0.19 25);
+  --site-header: oklch(0.296 0.063 73.9);
+  --site-footer: oklch(0.336 0.072 72.9);
+  --paper: oklch(0.235 0.004 85);
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    overflow-wrap: break-word;
+    text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+  }
+  html {
+    @apply font-sans;
+  }
+  ::selection {
+    background-color: oklch(0.746 0.178 58.4 / 25%);
   }
   /*
    * The site header is sticky, so scrolled-to anchor targets need an offset to
@@ -191,18 +174,6 @@
    */
   [id] {
     scroll-margin-top: calc(var(--header-height) + 2rem);
-  }
-  body {
-    @apply font-sans bg-page text-page-foreground antialiased;
-    overflow-wrap: break-word;
-    text-size-adjust: none;
-    -webkit-text-size-adjust: none;
-  }
-  ::selection {
-    background-color: #fd8b0041;
-  }
-  html {
-    @apply font-sans;
   }
 }
 

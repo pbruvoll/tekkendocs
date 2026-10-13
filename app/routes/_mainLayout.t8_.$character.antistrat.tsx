@@ -115,13 +115,13 @@ export default function Index() {
           (_, index) => index,
         );
         return (
-          <section key={table.name} className="mt-8">
+          <section key={table.name} className="mt-8 min-w-0 max-w-full">
             <ContentContainer>
               <Heading as="h2" size="4" className="mb-4">
                 {tableIdToDisplayName[table.name] || table.name}
               </Heading>
             </ContentContainer>
-            <Table style={{ width: '100%' }}>
+            <Table>
               <TableBody>
                 {table.rows.map((row, i) => {
                   return (

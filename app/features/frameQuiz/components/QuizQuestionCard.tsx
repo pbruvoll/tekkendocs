@@ -67,7 +67,7 @@ export const QuizQuestionCard = ({
   const videoRevealed = !modifiers.hideVideo || answered;
 
   return (
-    <Card className="mx-auto w-full max-w-2xl border-border/70 shadow-sm">
+    <Card className="mx-auto w-full max-w-2xl shadow-sm">
       <CardHeader>
         <div className="flex flex-wrap items-center justify-between gap-3">
           <CardTitle className="min-w-0 flex-1">
@@ -117,7 +117,7 @@ export const QuizQuestionCard = ({
           </div>
         </div>
       </CardHeader>
-      <CardContent className="pb-2">
+      <CardContent>
         {videoRevealed ? (
           <MoveVideo
             move={question.move}

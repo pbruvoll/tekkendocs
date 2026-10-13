@@ -234,7 +234,7 @@ export default function Index() {
             <Heading as="h2" size="4" className="mb-4">
               {tableIdToDisplayName[table.name]}
             </Heading>
-            <Table style={{ width: '100%' }}>
+            <Table>
               {table.headers && (
                 <TableHeader>
                   <TableRow>

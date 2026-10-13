@@ -377,8 +377,8 @@ const StartPage = ({
     <div className="flex flex-col items-center">
       <Card className="w-full max-w-96">
         <CardHeader className="text-center">
-          <CardTitle as="h2" className="text-2xl">
-            Flash Cards
+          <CardTitle className="text-2xl">
+            <h2>Flash Cards</h2>
           </CardTitle>
           <CardDescription>
             Test your knowledge of{' '}

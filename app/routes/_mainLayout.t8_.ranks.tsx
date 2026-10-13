@@ -54,8 +54,8 @@ export default Ranks;
 
 const RankCard = ({ image, name, points }: Rank) => {
   return (
-    <Card className="overflow-hidden p-3">
-      <div className="-mx-3 -mt-3 pb-3">
+    <Card className="gap-0 pt-0 pb-3">
+      <div className="pb-3">
         <img src={image} className="aspect-[2] w-full" alt={name} />
       </div>
       <div className="flex flex-col flex-wrap items-center gap-1 text-center text-sm">

@@ -61,7 +61,10 @@ export const QuizCharacterFilter = ({
           checked={multiSelect}
           onCheckedChange={setMultiSelect}
         />
-        <Label htmlFor={multiSelectId} className="flex cursor-pointer flex-col">
+        <Label
+          htmlFor={multiSelectId}
+          className="cursor-pointer flex-col items-start"
+        >
           <span>Multi-select</span>
           <span className="text-xs font-normal text-muted-foreground">
             Select multiple characters at once

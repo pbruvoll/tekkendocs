@@ -31,7 +31,7 @@ export const QuizOptions = ({ options, onToggle }: QuizOptionsProps) => {
           />
           <Label
             htmlFor={autoShowDetailsId}
-            className="flex cursor-pointer flex-col"
+            className="cursor-pointer flex-col items-start"
           >
             <span>Auto show move details</span>
             <span className="text-xs font-normal text-muted-foreground">

@@ -146,7 +146,7 @@ export default function Move() {
         </Link>
         : {moveRow[0]}
       </Heading>
-      <Table style={{ width: '100%' }}>
+      <Table>
         <TableBody>
           {headers.slice(1).map((header, i) => {
             return (
