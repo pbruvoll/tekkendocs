@@ -43,18 +43,20 @@ export const FrameDataFilterDialog = ({
 
   return (
     <Dialog>
-      <DialogTrigger asChild>
-        <Button
-          className={cn(
-            'h-8 gap-2 rounded-[6px] px-3',
-            triggerVariant === 'soft' &&
-              'bg-primary/15 text-primary hover:bg-primary/25',
-            className,
-          )}
-        >
-          <MixerHorizontalIcon width="16" height="16" /> Filter
-          {filterDialogCount ? ` (${filterDialogCount})` : ''}
-        </Button>
+      <DialogTrigger
+        render={
+          <Button
+            className={cn(
+              'h-8 gap-2 rounded-[6px] px-3',
+              triggerVariant === 'soft' &&
+                'bg-primary/15 text-primary hover:bg-primary/25',
+              className,
+            )}
+          />
+        }
+      >
+        <MixerHorizontalIcon width="16" height="16" /> Filter
+        {filterDialogCount ? ` (${filterDialogCount})` : ''}
       </DialogTrigger>
 
       <DialogContent className="block text-base sm:max-w-[450px]">
@@ -92,8 +94,8 @@ export const FrameDataFilterDialog = ({
           >
             Reset filters
           </Button>
-          <DialogClose asChild>
-            <Button className={footerButtonClassName}>Close</Button>
+          <DialogClose render={<Button className={footerButtonClassName} />}>
+            Close
           </DialogClose>
         </div>
       </DialogContent>

@@ -8,6 +8,10 @@ export type RangeSliderProps = {
   onValuesCommit: (values: [number | undefined, number | undefined]) => void;
 };
 
+// the slider is always a range here, so it reports two values
+const toRange = (value: number | readonly number[]): [number, number] =>
+  typeof value === 'number' ? [value, value] : [value[0], value[1]];
+
 export const RangeSlider = ({
   values: valuesFromProps,
   min,
@@ -47,24 +51,15 @@ export const RangeSlider = ({
         max={max}
         min={min}
         step={1}
-        onValueChange={(value) => setValues([value[0], value[1]])}
-        onValueCommit={(value) =>
+        // let thumbs pass each other, so overlapping thumbs never get stuck
+        thumbCollisionBehavior="swap"
+        onValueChange={(value) => setValues(toRange(value))}
+        onValueCommitted={(value) => {
+          const [from, to] = toRange(value);
           onValuesCommit([
-            value[0] === min ? undefined : value[0],
-            value[1] === max ? undefined : value[1],
-          ])
-        }
-        onLostPointerCapture={() => {
-          if (
-            (valuesFromPropsFixed[0] !== values[0] ||
-              valuesFromProps[1] !== values[1]) &&
-            values[0] === values[1]
-          ) {
-            onValuesCommit([
-              values[0] === min ? undefined : values[0],
-              values[1] === max ? undefined : values[1],
-            ]);
-          }
+            from === min ? undefined : from,
+            to === max ? undefined : to,
+          ]);
         }}
       />
     </div>
