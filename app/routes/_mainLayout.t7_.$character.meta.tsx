@@ -1,4 +1,4 @@
-import { Pencil1Icon } from '@radix-ui/react-icons';
+import { PencilIcon } from 'lucide-react';
 import {
   data,
   Link,
@@ -136,7 +136,7 @@ export default function Index() {
             rel="noopener"
             href={editUrl}
           >
-            <Pencil1Icon />
+            <PencilIcon className="size-3.5" />
             Edit
           </a>
         </div>

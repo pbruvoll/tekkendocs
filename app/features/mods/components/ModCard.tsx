@@ -1,4 +1,4 @@
-import { ExternalLinkIcon } from '@radix-ui/react-icons';
+import { ExternalLinkIcon } from 'lucide-react';
 import { PaperCard } from '~/components/PaperCard';
 import { type Mod } from '~/features/mods/mods';
 
@@ -28,7 +28,7 @@ export const ModCard = ({ mod }: ModCardProps) => (
           className="inline-flex items-center gap-1 text-primary underline underline-offset-2"
         >
           {label}
-          <ExternalLinkIcon aria-hidden />
+          <ExternalLinkIcon aria-hidden className="size-3.5" />
         </a>
       ))}
     </div>

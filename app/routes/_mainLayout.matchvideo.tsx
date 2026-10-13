@@ -1,4 +1,4 @@
-import { Pencil1Icon } from '@radix-ui/react-icons';
+import { PencilIcon } from 'lucide-react';
 import { useState } from 'react';
 import { data, type MetaFunction, useLoaderData } from 'react-router';
 import { Button } from '@/components/ui/button';
@@ -110,7 +110,7 @@ export default function TournamentVideos() {
             href={editUrl}
             rel="noopener"
           >
-            <Pencil1Icon />
+            <PencilIcon className="size-3.5" />
             Edit
           </a>
           <a
