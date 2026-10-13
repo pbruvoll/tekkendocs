@@ -21,8 +21,8 @@ export type MovePreviewDialogProps = {
 export function MovePreviewDialogButton({ move, url }: MovePreviewDialogProps) {
   return (
     <Dialog>
-      <DialogTrigger>
-        <VideoIcon className="w-4" />
+      <DialogTrigger aria-label={`Show video of ${move.command}`}>
+        <VideoIcon aria-hidden className="w-4" />
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px] dark">
         <DialogHeader>
