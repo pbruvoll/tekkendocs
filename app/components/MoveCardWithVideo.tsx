@@ -105,7 +105,7 @@ export const MoveCardWithVideo = ({
         <div className="lg:flex">
           {/* Info section */}
           <div className="flex flex-col lg:w-1/2">
-            <CardHeader className="flex flex-row items-center justify-between p-4 pl-6">
+            <CardHeader className="flex flex-row items-center justify-between px-6 py-4">
               <CardTitle>
                 {showCharacter && charId && (
                   <span className="mr-2 capitalize">
@@ -143,7 +143,7 @@ export const MoveCardWithVideo = ({
               </div>
             )}
 
-            <CardContent className="space-y-3 p-4 pt-0">
+            <CardContent className="space-y-3 px-6 pb-4">
               <div className="grid grid-cols-4 flex-wrap items-center justify-around gap-x-3 gap-y-2">
                 <FrameHeading title="Startup" />
                 <FrameHeading title="Hit Level" />
