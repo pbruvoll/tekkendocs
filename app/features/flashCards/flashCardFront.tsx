@@ -1,5 +1,5 @@
-import cx from 'classix';
 import { buttonVariants } from '~/components/ui/button';
+import { cn } from '~/lib/utils';
 import { type Move } from '~/types/Move';
 import { charIdFromMove } from '~/utils/moveUtils';
 import { ShowVideoButton } from './showVideoButton';
@@ -40,7 +40,7 @@ export const FlashCardFront = ({
         onClick={onFlip}
       >
         <div
-          className={cx(buttonVariants({ variant: 'default' }), 'h-12 w-24')}
+          className={cn(buttonVariants({ variant: 'default' }), 'h-12 w-24')}
         >
           Flip
         </div>

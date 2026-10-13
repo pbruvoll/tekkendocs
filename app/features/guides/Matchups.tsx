@@ -1,8 +1,8 @@
-import cx from 'classix';
 import { Link } from 'react-router';
 import { TextWithCommand } from '~/components/TextWithCommand';
 import { Heading } from '~/components/ui/heading';
 import { characterInfoT8List } from '~/constants/characterInfoListT8';
+import { cn } from '~/lib/utils';
 import { t8AvatarMap } from '~/utils/t8AvatarMap';
 import { useGuideContext } from './GuideContext';
 import { type Matchup } from './GuideData';
@@ -65,7 +65,7 @@ const MatchupList = ({ matchups, type }: MatchupListProps) => {
       <Heading
         as="h3"
         size="4"
-        className={cx(
+        className={cn(
           type === 'good'
             ? 'border-s-4 border-success bg-success/20 text-foreground-success'
             : 'border-s-4 border-destructive bg-destructive/20 text-foreground-destructive',

@@ -1,8 +1,8 @@
-import cx from 'classix';
 import { Fragment, useMemo } from 'react';
 import { Link, type MetaFunction, useSearchParams } from 'react-router';
 import { ContentContainer } from '~/components/ContentContainer';
 import charMoveCount from '~/data/character-move-count.json';
+import { cn } from '~/lib/utils';
 import { generateMetaTags } from '~/utils/seoUtils';
 import { t8AvatarMap } from '~/utils/t8AvatarMap';
 
@@ -87,7 +87,7 @@ const CharacterStatistics = ({
   return (
     <div className={className}>
       <div
-        className={cx(
+        className={cn(
           'grid gap-2',
           landscape
             ? 'h-160 grid-flow-col grid-rows-[1fr_auto_auto]'

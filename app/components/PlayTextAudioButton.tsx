@@ -1,7 +1,7 @@
-import cx from 'classix';
 import { Square, Volume2 } from 'lucide-react';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { Button } from '~/components/ui/button';
+import { cn } from '~/lib/utils';
 import { normalizeSpeechText } from '~/utils/speechUtils';
 
 type PlayTextAudioButtonLabels = {
@@ -95,7 +95,7 @@ export const PlayTextAudioButton = ({
       variant="outline"
       onClick={handleClick}
       disabled={!isSupported || !hasText}
-      className={cx(
+      className={cn(
         'h-7 w-7 rounded-full border-2 border-border p-0 text-muted-foreground',
         isPlaying
           ? 'bg-accent text-accent-foreground hover:bg-accent'

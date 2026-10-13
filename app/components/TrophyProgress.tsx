@@ -1,4 +1,4 @@
-import cx from 'classix';
+import { cn } from '~/lib/utils';
 
 export type TrophyProgressProps = {
   progressPercentage: number;
@@ -12,5 +12,5 @@ export const TrophyProgress = ({ progressPercentage }: TrophyProgressProps) => {
     tropyIcon = '🥈';
   }
 
-  return <span className={cx('text-3xl', opacityClass)}>{tropyIcon}</span>;
+  return <span className={cn('text-3xl', opacityClass)}>{tropyIcon}</span>;
 };

@@ -1,4 +1,3 @@
-import cx from 'classix';
 import { X } from 'lucide-react';
 import { Fragment, type ReactNode } from 'react';
 import { Link } from 'react-router';
@@ -11,6 +10,7 @@ import {
   hasVisibleProperties,
   parseBlockValue,
 } from '~/features/frameQuiz/moveSelection';
+import { cn } from '~/lib/utils';
 import { type Move } from '~/types/Move';
 import { commandToUrlSegmentEncoded } from '~/utils/moveUtils';
 import { t8AvatarBrandMap } from '~/utils/t8AvatarMap';
@@ -119,7 +119,7 @@ const ValueCell = ({
 }) => (
   <div className="flex flex-col items-center gap-1 py-1 text-center">
     <span
-      className={cx(
+      className={cn(
         'wrap-break-word min-w-0 max-w-full tabular-nums',
         isBetter && 'font-semibold text-foreground-success',
       )}

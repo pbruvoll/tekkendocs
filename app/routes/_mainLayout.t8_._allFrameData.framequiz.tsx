@@ -568,11 +568,7 @@ export default function FrameQuiz() {
   }
 
   return (
-    <ContentContainer
-      enableBottomPadding
-      enableTopPadding
-      className="max-w-4xl"
-    >
+    <ContentContainer enableBottomPadding enableTopPadding>
       <div className="relative mb-2 mt-2 flex items-center justify-center">
         {hasStarted && (
           <Button

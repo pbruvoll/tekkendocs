@@ -1,10 +1,10 @@
-import cx from 'classix';
 import { motion } from 'motion/react';
 import {
   CharacterCard2,
   type CharacterCard2Props,
 } from '~/components/CharacterCard';
 import { InView } from '~/components/core/InView';
+import { cn } from '~/lib/utils';
 
 export type CharacterGridProps = {
   characterCards: (CharacterCard2Props & { imgSrc: string })[];
@@ -24,7 +24,7 @@ export const CharacterGrid = ({ characterCards, size }: CharacterGridProps) => {
       }}
     >
       <ul
-        className={cx(
+        className={cn(
           'grid',
           size === 'large'
             ? 'grid-cols-3 gap-x-2 gap-y-3 xs:grid-cols-4 xs:gap-x-3 xs:gap-y-4 sm:grid-cols-5 md:grid-cols-6'

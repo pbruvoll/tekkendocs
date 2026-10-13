@@ -1,11 +1,11 @@
-import cx from 'classix';
+import { cn } from '~/lib/utils';
 
 type VideoPlaceholderProps = {
   className?: string;
 };
 
 export const VideoPlaceholder = ({ className }: VideoPlaceholderProps) => (
-  <div className={cx('relative aspect-video bg-muted/30', className)}>
+  <div className={cn('relative aspect-video bg-muted/30', className)}>
     <div className="absolute inset-0 flex items-center justify-center">
       <div className="flex flex-col items-center gap-3">
         <div className="relative flex h-24 w-24 items-center justify-center">

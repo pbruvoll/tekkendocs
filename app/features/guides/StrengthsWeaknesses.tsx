@@ -1,6 +1,6 @@
-import cx from 'classix';
 import { TextWithCommand } from '~/components/TextWithCommand';
 import { Heading } from '~/components/ui/heading';
+import { cn } from '~/lib/utils';
 import { useGuideContext } from './GuideContext';
 
 type CoreProps = {
@@ -14,7 +14,7 @@ const Core = ({ section, type }: CoreProps) => {
       <Heading
         as="h2"
         size="4"
-        className={cx(
+        className={cn(
           type === 'strengths'
             ? 'border-s-4 border-success bg-success/20 text-foreground-success'
             : 'border-s-4 border-destructive bg-destructive/20 text-foreground-destructive',
