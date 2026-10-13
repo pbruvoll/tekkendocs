@@ -2,6 +2,10 @@ import { Filter, X } from 'lucide-react';
 import { useDeferredValue, useId, useMemo } from 'react';
 import { useSearchParams } from 'react-router';
 import { Input } from '~/components/ui/input';
+import {
+  NativeSelect,
+  NativeSelectOption,
+} from '~/components/ui/native-select';
 import { filterKey } from '~/constants/filterConstants';
 import { orderByKey } from '~/constants/sortConstants';
 import { sortOptions } from '~/constants/sortOptions';
@@ -100,7 +104,9 @@ export const FrameDataSection = ({
 
         <div className="flex flex-wrap items-center gap-2 sm:gap-4">
           <div className="flex-1 sm:flex-none">
-            <select
+            <NativeSelect
+              size="sm"
+              className="w-full max-w-48"
               aria-label="Sort by"
               value={sortByQueryParamValue}
               onChange={(e) => {
@@ -113,15 +119,14 @@ export const FrameDataSection = ({
                   return prev;
                 });
               }}
-              className="block w-full max-w-48 rounded-lg border border-gray-300 bg-gray-50 p-2.5 py-1.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
             >
-              <option value="">Sort by</option>
+              <NativeSelectOption value="">Sort by</NativeSelectOption>
               {sortOptions.map(({ displayName, value }) => (
-                <option key={value} value={value}>
+                <NativeSelectOption key={value} value={value}>
                   {displayName}
-                </option>
+                </NativeSelectOption>
               ))}
-            </select>
+            </NativeSelect>
           </div>
 
           <FrameDataFilterDialog
@@ -152,7 +157,8 @@ export const FrameDataSection = ({
         <label htmlFor={viewModeId} className="text-sm font-medium">
           View Mode
         </label>
-        <select
+        <NativeSelect
+          size="sm"
           id={viewModeId}
           aria-label="View mode"
           value={frameDataViewMode}
@@ -165,12 +171,13 @@ export const FrameDataSection = ({
             });
             setFrameDataViewMode(newViewMode);
           }}
-          className="rounded-lg border border-gray-300 bg-gray-50 p-2.5 py-1.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
         >
-          <option value="default">Default</option>
-          <option value="simple">Simple</option>
-          <option value="videoCards">Video Cards</option>
-        </select>
+          <NativeSelectOption value="default">Default</NativeSelectOption>
+          <NativeSelectOption value="simple">Simple</NativeSelectOption>
+          <NativeSelectOption value="videoCards">
+            Video Cards
+          </NativeSelectOption>
+        </NativeSelect>
       </ContentContainer>
 
       <DynamicFrameDataList
