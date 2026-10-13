@@ -1,5 +1,4 @@
-import { data, type MetaFunction } from 'react-router';
-import { useLoaderData } from 'react-router';
+import { data, type MetaFunction, useLoaderData } from 'react-router';
 import { CharacterGrid } from '~/components/CharacterGrid';
 import { ContentContainer } from '~/components/ContentContainer';
 import { getTekken8Characters } from '~/services/staticDataService';
