@@ -1,8 +1,8 @@
 import cx from 'classix';
 import { PlayIcon } from 'lucide-react';
 import { useState } from 'react';
-import { Button } from '@/components/ui/button';
 import { MoveVideo } from '~/components/MoveVideo';
+import { Button } from '~/components/ui/button';
 import { type Move } from '~/types/Move';
 
 export type ShowVideoButtonProps = {

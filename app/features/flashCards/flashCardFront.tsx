@@ -1,5 +1,5 @@
 import cx from 'classix';
-import { buttonVariants } from '@/components/ui/button';
+import { buttonVariants } from '~/components/ui/button';
 import { type Move } from '~/types/Move';
 import { charIdFromMove } from '~/utils/moveUtils';
 import { ShowVideoButton } from './showVideoButton';

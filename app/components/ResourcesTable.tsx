@@ -1,4 +1,4 @@
-import { Heading } from '@/components/ui/heading';
+import { Heading } from '~/components/ui/heading';
 import {
   Table,
   TableBody,
@@ -6,7 +6,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from '@/components/ui/table';
+} from '~/components/ui/table';
 import { ContentContainer } from './ContentContainer';
 
 export const ResourcesTable = ({

@@ -1,6 +1,6 @@
 import { type MetaFunction } from 'react-router';
-import { Card } from '@/components/ui/card';
 import { ContentContainer } from '~/components/ContentContainer';
+import { Card } from '~/components/ui/card';
 import { type T8Rank, t8Ranks } from '~/constants/t8Ranks';
 import { generateMetaTags } from '~/utils/seoUtils';
 

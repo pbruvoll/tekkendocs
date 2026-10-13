@@ -1,7 +1,7 @@
 import { data, Link, useLoaderData } from 'react-router';
-import { Heading } from '@/components/ui/heading';
 import { CharacterGrid } from '~/components/CharacterGrid';
 import { ContentContainer } from '~/components/ContentContainer';
+import { Heading } from '~/components/ui/heading';
 import { getTekken7Characters } from '~/services/staticDataService';
 import { type GamePageData } from '~/types/GamePageData';
 import { getCacheControlHeaders } from '~/utils/headerUtils';

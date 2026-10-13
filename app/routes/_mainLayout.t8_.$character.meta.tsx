@@ -7,15 +7,6 @@ import {
   useParams,
 } from 'react-router';
 import invariant from 'tiny-invariant';
-import { Heading } from '@/components/ui/heading';
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from '@/components/ui/table';
 import { Authors } from '~/components/Authors';
 import { Command } from '~/components/Command';
 import { ContentContainer } from '~/components/ContentContainer';
@@ -23,6 +14,15 @@ import { AppErrorBoundary } from '~/components/ErrorBoundary';
 import { PersonLinkList } from '~/components/PersonLinkList';
 import { ResourcesTable } from '~/components/ResourcesTable';
 import { TextWithCommand } from '~/components/TextWithCommand';
+import { Heading } from '~/components/ui/heading';
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '~/components/ui/table';
 import { hasHeaderMap } from '~/constants/hasHeaderMap';
 import { tableIdToDisplayName } from '~/constants/tableIdToDisplayName';
 import { getCharacterDisplayName } from '~/features/characterPage/characterDisplayName';

@@ -1,20 +1,20 @@
 import { type ChangeEvent, useId, useMemo, useState } from 'react';
 import { type MetaFunction, useSearchParams } from 'react-router';
 import invariant from 'tiny-invariant';
-import { Button } from '@/components/ui/button';
+import { ContentContainer } from '~/components/ContentContainer';
+import { FrameDataFilterDialog } from '~/components/FrameDataFilterDialog';
+import { TaskProgress } from '~/components/TaskProgress';
+import { Button } from '~/components/ui/button';
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Switch } from '@/components/ui/switch';
-import { ContentContainer } from '~/components/ContentContainer';
-import { FrameDataFilterDialog } from '~/components/FrameDataFilterDialog';
-import { TaskProgress } from '~/components/TaskProgress';
+} from '~/components/ui/card';
+import { Input } from '~/components/ui/input';
+import { Label } from '~/components/ui/label';
+import { Switch } from '~/components/ui/switch';
 import { getCharacterDisplayName } from '~/features/characterPage/characterDisplayName';
 import { useFavorites } from '~/features/favorites/useFavorites';
 import { AnimatedCollapsible } from '~/features/flashCards/AnimatedCollapsible';

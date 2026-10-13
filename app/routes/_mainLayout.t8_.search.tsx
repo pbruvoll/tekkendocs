@@ -1,8 +1,8 @@
 import { useDeferredValue, useEffect, useMemo } from 'react';
 import { Link, type MetaFunction, useFetcher, useNavigate } from 'react-router';
-import { Input } from '@/components/ui/input';
 import { ContentContainer } from '~/components/ContentContainer';
 import { SimpleMovesTable } from '~/components/SimpleMovesTable';
+import { Input } from '~/components/ui/input';
 import { filterKey } from '~/constants/filterConstants';
 import { useSearchParamState } from '~/hooks/useSearchParamState';
 import { getTekken8Characters } from '~/services/staticDataService';

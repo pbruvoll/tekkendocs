@@ -1,6 +1,6 @@
 import { cva, type VariantProps } from 'class-variance-authority';
 import type * as React from 'react';
-import { cn } from '@/lib/utils';
+import { cn } from '~/lib/utils';
 
 // Sizes mirror the Radix Themes Heading scale (font size / line height /
 // letter spacing) so headings look the same after migrating away from it.

@@ -1,15 +1,15 @@
 import { Link, type MetaFunction, useMatches } from 'react-router';
-import { Heading } from '@/components/ui/heading';
+import { ContentContainer } from '~/components/ContentContainer';
+import { MoveVideo } from '~/components/MoveVideo';
+import { SimpleMovesTable } from '~/components/SimpleMovesTable';
+import { Heading } from '~/components/ui/heading';
 import {
   Table,
   TableBody,
   TableCell,
   TableHead,
   TableRow,
-} from '@/components/ui/table';
-import { ContentContainer } from '~/components/ContentContainer';
-import { MoveVideo } from '~/components/MoveVideo';
-import { SimpleMovesTable } from '~/components/SimpleMovesTable';
+} from '~/components/ui/table';
 import { HeartButton } from '~/features/favorites/HeartButton';
 import { useIsFavorite } from '~/features/favorites/useFavorites';
 import { cdnUrl, charVideoInfoT8 } from '~/services/staticDataService';

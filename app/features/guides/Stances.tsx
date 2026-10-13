@@ -1,7 +1,7 @@
 import { cx } from 'class-variance-authority';
-import { Heading } from '@/components/ui/heading';
 import { Commands } from '~/components/Commands';
 import { TextWithCommand } from '~/components/TextWithCommand';
+import { Heading } from '~/components/ui/heading';
 import { useGuideContext } from './GuideContext';
 import { type Stance } from './GuideData';
 import { GuideSectionHeading } from './GuideSectionHeading';

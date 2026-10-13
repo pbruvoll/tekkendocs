@@ -1,9 +1,9 @@
 import { useInView } from 'motion/react';
 import { useEffect, useEffectEvent, useRef, useState } from 'react';
 import { Link } from 'react-router';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { cn } from '@/lib/utils';
+import { Card, CardContent, CardHeader, CardTitle } from '~/components/ui/card';
 import { HeartButton } from '~/features/favorites/HeartButton';
+import { cn } from '~/lib/utils';
 import { type Move } from '~/types/Move';
 import {
   getBlockFrameColorClasses,

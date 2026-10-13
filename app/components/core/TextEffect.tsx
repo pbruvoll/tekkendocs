@@ -6,7 +6,7 @@ import {
   type Variants,
 } from 'motion/react';
 import React from 'react';
-import { cn } from '@/lib/utils';
+import { cn } from '~/lib/utils';
 
 type PresetType = 'blur-sm' | 'shake' | 'scale' | 'fade' | 'slide';
 

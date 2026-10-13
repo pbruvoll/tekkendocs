@@ -1,5 +1,5 @@
 import type * as React from 'react';
-import { cn } from '@/lib/utils';
+import { cn } from '~/lib/utils';
 
 // TekkenDocs: cards hold reading content here, so the body text is 16px and
 // the title is one step larger and semibold (Vega uses text-sm and text-base).

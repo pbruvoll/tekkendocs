@@ -5,9 +5,9 @@ import {
   type MetaFunction,
   useLoaderData,
 } from 'react-router';
-import { Heading } from '@/components/ui/heading';
-import { Table, TableBody, TableCell, TableRow } from '@/components/ui/table';
 import { ContentContainer } from '~/components/ContentContainer';
+import { Heading } from '~/components/ui/heading';
+import { Table, TableBody, TableCell, TableRow } from '~/components/ui/table';
 import { google } from '~/google.server';
 import { ServerStatusCode } from '~/types/ServerStatusCode';
 import { getCacheControlHeaders } from '~/utils/headerUtils';

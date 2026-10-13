@@ -12,7 +12,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from '@/components/ui/table';
+} from '~/components/ui/table';
 import { orderByKey } from '~/constants/sortConstants';
 import { type MoveFilter } from '~/types/MoveFilter';
 import { type SortOrder } from '~/types/SortOrder';

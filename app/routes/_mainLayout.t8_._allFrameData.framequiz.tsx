@@ -13,10 +13,10 @@ import {
   useRouteLoaderData,
   useSearchParams,
 } from 'react-router';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ContentContainer } from '~/components/ContentContainer';
 import { MoveFilterDialog } from '~/components/MoveFilterDialog';
+import { Button } from '~/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '~/components/ui/card';
 import { characterInfoT8List } from '~/constants/characterInfoListT8';
 import { filterKey } from '~/constants/filterConstants';
 import { useFavorites } from '~/features/favorites/useFavorites';

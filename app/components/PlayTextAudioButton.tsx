@@ -1,7 +1,7 @@
 import cx from 'classix';
 import { Square, Volume2 } from 'lucide-react';
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { Button } from '@/components/ui/button';
+import { Button } from '~/components/ui/button';
 import { normalizeSpeechText } from '~/utils/speechUtils';
 
 type PlayTextAudioButtonLabels = {

@@ -7,7 +7,8 @@ import {
   NavLink,
   useLoaderData,
 } from 'react-router';
-import { Heading } from '@/components/ui/heading';
+import { ContentContainer } from '~/components/ContentContainer';
+import { Heading } from '~/components/ui/heading';
 import {
   Table,
   TableBody,
@@ -15,8 +16,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from '@/components/ui/table';
-import { ContentContainer } from '~/components/ContentContainer';
+} from '~/components/ui/table';
 import { hasHeaderMap } from '~/constants/hasHeaderMap';
 import { tableIdToDisplayName } from '~/constants/tableIdToDisplayName';
 import { getSheet } from '~/services/googleSheetService.server';

@@ -1,6 +1,6 @@
 import { SquarePlayIcon } from 'lucide-react';
 import { Link } from 'react-router';
-import { Button } from '@/components/ui/button';
+import { Button } from '~/components/ui/button';
 import {
   Dialog,
   DialogClose,
@@ -10,7 +10,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from '@/components/ui/dialog';
+} from '~/components/ui/dialog';
 import { type Move } from '~/types/Move';
 import { MoveVideo } from './MoveVideo';
 

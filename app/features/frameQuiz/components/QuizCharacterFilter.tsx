@@ -1,8 +1,8 @@
 import cx from 'classix';
 import { useId, useState } from 'react';
 import { useHydrated } from 'remix-utils/use-hydrated';
-import { Label } from '@/components/ui/label';
-import { Switch } from '@/components/ui/switch';
+import { Label } from '~/components/ui/label';
+import { Switch } from '~/components/ui/switch';
 import { characterInfoT8List } from '~/constants/characterInfoListT8';
 import { t8AvatarBrandMap } from '~/utils/t8AvatarMap';
 

@@ -7,12 +7,12 @@ import {
   useLoaderData,
   useRouteError,
 } from 'react-router';
-import { Heading } from '@/components/ui/heading';
-import { Table, TableBody, TableCell, TableRow } from '@/components/ui/table';
 import { Commands } from '~/components/Commands';
 import { ContentContainer } from '~/components/ContentContainer';
 import { AppErrorBoundary } from '~/components/ErrorBoundary';
 import { TextWithCommand } from '~/components/TextWithCommand';
+import { Heading } from '~/components/ui/heading';
+import { Table, TableBody, TableCell, TableRow } from '~/components/ui/table';
 import { tableIdToDisplayName } from '~/constants/tableIdToDisplayName';
 import { getCharacterDisplayName } from '~/features/characterPage/characterDisplayName';
 import { useFrameData } from '~/hooks/useFrameData';

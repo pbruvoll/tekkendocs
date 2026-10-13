@@ -1,12 +1,12 @@
 import { Check, ChevronDown, Globe } from 'lucide-react';
 import { Link } from 'react-router';
-import { Button } from '@/components/ui/button';
+import { Button } from '~/components/ui/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
+} from '~/components/ui/dropdown-menu';
 import {
   defaultGuideLanguage,
   type GuideLanguage,

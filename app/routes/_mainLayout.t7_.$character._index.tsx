@@ -7,8 +7,10 @@ import {
   NavLink,
   useMatches,
 } from 'react-router';
-import { Heading } from '@/components/ui/heading';
-import { Input } from '@/components/ui/input';
+import { ContentContainer } from '~/components/ContentContainer';
+import { FrameDataTable } from '~/components/FrameDataTable';
+import { Heading } from '~/components/ui/heading';
+import { Input } from '~/components/ui/input';
 import {
   Table,
   TableBody,
@@ -16,9 +18,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from '@/components/ui/table';
-import { ContentContainer } from '~/components/ContentContainer';
-import { FrameDataTable } from '~/components/FrameDataTable';
+} from '~/components/ui/table';
 import { tableIdToDisplayName } from '~/constants/tableIdToDisplayName';
 import { type CharacterFrameData } from '~/types/CharacterFrameData';
 import { type RouteHandle } from '~/types/RouteHandle';

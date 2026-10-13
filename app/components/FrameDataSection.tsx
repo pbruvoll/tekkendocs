@@ -1,7 +1,7 @@
 import { Filter, X } from 'lucide-react';
 import { useDeferredValue, useId, useMemo } from 'react';
 import { useSearchParams } from 'react-router';
-import { Input } from '@/components/ui/input';
+import { Input } from '~/components/ui/input';
 import { filterKey } from '~/constants/filterConstants';
 import { orderByKey } from '~/constants/sortConstants';
 import { sortOptions } from '~/constants/sortOptions';

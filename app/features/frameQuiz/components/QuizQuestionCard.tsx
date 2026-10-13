@@ -1,9 +1,9 @@
 import { motion, useReducedMotion } from 'motion/react';
 import { useEffect, useRef, useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { AnimatedNumber } from '~/components/AnimatedNumber';
 import { MoveVideo } from '~/components/MoveVideo';
+import { Button } from '~/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '~/components/ui/card';
 import { answerOptions } from '~/features/frameQuiz/constants';
 import { getMoveCharacterDisplayName } from '~/features/frameQuiz/moveSelection';
 import { getFrameQuizRankForStreak } from '~/features/frameQuiz/streakRank';

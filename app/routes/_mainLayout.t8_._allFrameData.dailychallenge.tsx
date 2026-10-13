@@ -4,10 +4,10 @@ import {
   useRouteLoaderData,
   useSearchParams,
 } from 'react-router';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ContentContainer } from '~/components/ContentContainer';
 import { MoveVideo } from '~/components/MoveVideo';
+import { Button } from '~/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '~/components/ui/card';
 import { AnswerSummaryTile } from '~/features/dailyChallengeResult/components/AnswerSummaryTile';
 import { ShareResultActions } from '~/features/dailyChallengeResult/components/ShareResultActions';
 import { getRankForScore } from '~/features/dailyChallengeResult/scoreRank';

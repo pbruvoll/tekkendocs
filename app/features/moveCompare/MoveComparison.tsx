@@ -2,10 +2,10 @@ import cx from 'classix';
 import { X } from 'lucide-react';
 import { Fragment, type ReactNode } from 'react';
 import { Link } from 'react-router';
-import { Button } from '@/components/ui/button';
 import { MovePropertyIconList } from '~/components/MovePropertyIconList';
 import { MovePropertyTagList } from '~/components/MovePropertyTagList';
 import { MoveVideo } from '~/components/MoveVideo';
+import { Button } from '~/components/ui/button';
 import {
   getCharacterDisplayName,
   hasVisibleProperties,

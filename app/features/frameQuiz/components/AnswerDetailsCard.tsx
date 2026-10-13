@@ -1,11 +1,11 @@
 import { AnimatePresence, motion } from 'motion/react';
 import { useState } from 'react';
 import { Link } from 'react-router';
-import { Button } from '@/components/ui/button';
 import { MovePropertyIconList } from '~/components/MovePropertyIconList';
 import { MovePropertyTagList } from '~/components/MovePropertyTagList';
 import { MoveVideo } from '~/components/MoveVideo';
 import { ShowNotes } from '~/components/ShowNotes';
+import { Button } from '~/components/ui/button';
 import { hasVisibleProperties } from '~/features/frameQuiz/moveSelection';
 import { type SessionAnswer } from '~/features/frameQuiz/types';
 import { type Move } from '~/types/Move';
