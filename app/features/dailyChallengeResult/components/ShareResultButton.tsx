@@ -1,5 +1,5 @@
 import { Check, Share2 } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Button } from '~/components/ui/button';
 import { getRankForScore } from '~/features/dailyChallengeResult/scoreRank';
 import { buildDailyShareText } from '~/features/dailyChallengeResult/shareText';
 import { type DailyResultSummary } from '~/features/dailyChallengeResult/types';

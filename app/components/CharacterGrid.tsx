@@ -1,10 +1,10 @@
 import cx from 'classix';
 import { motion } from 'motion/react';
-import { InView } from '@/components/core/InView';
 import {
   CharacterCard2,
   type CharacterCard2Props,
 } from '~/components/CharacterCard';
+import { InView } from '~/components/core/InView';
 
 export type CharacterGridProps = {
   characterCards: (CharacterCard2Props & { imgSrc: string })[];

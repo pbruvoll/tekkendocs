@@ -2,8 +2,8 @@ import { Dialog as DialogPrimitive } from '@base-ui/react/dialog';
 import { XIcon } from 'lucide-react';
 import type * as React from 'react';
 
-import { Button } from '@/components/ui/button';
-import { cn } from '@/lib/utils';
+import { Button } from '~/components/ui/button';
+import { cn } from '~/lib/utils';
 
 // TekkenDocs: a darker overlay, a stronger outline and a deep shadow keep the
 // dialog edge easy to see against busy pages; corners use the 2xl radius.

@@ -1,5 +1,5 @@
 import { Check, Download, Image as ImageIcon, Loader2 } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Button } from '~/components/ui/button';
 import {
   renderResultImage,
   resultImageFileName,

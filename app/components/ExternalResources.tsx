@@ -3,7 +3,7 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from '@/components/ui/card';
+} from '~/components/ui/card';
 import ewgf from '~/images/t8/externalResources/ewgf.webp';
 import replayDatabase from '~/images/t8/externalResources/replay-database.webp';
 import sidestepChart from '~/images/t8/externalResources/sidestep-chart.webp';

@@ -1,5 +1,5 @@
 import { SlidersHorizontalIcon } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Button } from '~/components/ui/button';
 import {
   Dialog,
   DialogClose,
@@ -7,9 +7,9 @@ import {
   DialogDescription,
   DialogTitle,
   DialogTrigger,
-} from '@/components/ui/dialog';
-import { cn } from '@/lib/utils';
+} from '~/components/ui/dialog';
 import { filterKey } from '~/constants/filterConstants';
+import { cn } from '~/lib/utils';
 import { isFilterValueActive } from '~/utils/filterUtils';
 import {
   type FrameDataFilterSectionProps,

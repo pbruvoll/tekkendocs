@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { Button } from '@/components/ui/button';
 import { MovePropertyIconList } from '~/components/MovePropertyIconList';
 import { MovePropertyTagList } from '~/components/MovePropertyTagList';
 import { ShowNotes } from '~/components/ShowNotes';
+import { Button } from '~/components/ui/button';
 import { type Move } from '~/types/Move';
 import { FlashCardAnswer, type FlashCardAnswerType } from './FlashCardAnswer';
 import { ShowVideoButton } from './showVideoButton';

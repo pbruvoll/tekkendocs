@@ -1,6 +1,6 @@
 import { data, type MetaFunction } from 'react-router';
-import { Heading } from '@/components/ui/heading';
 import { ContentContainer } from '~/components/ContentContainer';
+import { Heading } from '~/components/ui/heading';
 import { charsTag2 } from '~/services/staticDataService';
 import { getCacheControlHeaders } from '~/utils/headerUtils';
 import { generateMetaTags } from '~/utils/seoUtils';

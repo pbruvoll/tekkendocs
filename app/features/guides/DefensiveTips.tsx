@@ -1,5 +1,5 @@
-import { Heading } from '@/components/ui/heading';
 import { TextWithCommand } from '~/components/TextWithCommand';
+import { Heading } from '~/components/ui/heading';
 import { useGuideContext } from './GuideContext';
 import { type DefensiveTip } from './GuideData';
 import { GuideSectionHeading } from './GuideSectionHeading';

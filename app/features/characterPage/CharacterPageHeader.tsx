@@ -1,7 +1,7 @@
 import { PencilIcon } from 'lucide-react';
-import { headingVariants } from '@/components/ui/heading';
-import { cn } from '@/lib/utils';
 import { ContentContainer } from '~/components/ContentContainer';
+import { headingVariants } from '~/components/ui/heading';
+import { cn } from '~/lib/utils';
 import { t8AvatarMap } from '~/utils/t8AvatarMap';
 import { getCharacterDisplayName } from './characterDisplayName';
 import { getCharacterNavData } from './characterNavData';

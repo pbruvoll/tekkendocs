@@ -1,5 +1,5 @@
 import type * as React from 'react';
-import { cn } from '@/lib/utils';
+import { cn } from '~/lib/utils';
 
 // TekkenDocs: the container is a bordered card panel, and cells keep 12px
 // padding, top alignment and wrapping for the long frame data notes.

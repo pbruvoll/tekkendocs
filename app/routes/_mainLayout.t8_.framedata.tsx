@@ -1,7 +1,7 @@
 import { href, type MetaFunction } from 'react-router';
-import { Heading } from '@/components/ui/heading';
 import { CharacterGrid } from '~/components/CharacterGrid';
 import { ContentContainer } from '~/components/ContentContainer';
+import { Heading } from '~/components/ui/heading';
 import { getTekken8Characters } from '~/services/staticDataService';
 import { getCacheControlHeaders } from '~/utils/headerUtils';
 import { generateMetaTags } from '~/utils/seoUtils';

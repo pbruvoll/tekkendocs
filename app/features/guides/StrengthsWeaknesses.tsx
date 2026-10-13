@@ -1,6 +1,6 @@
 import cx from 'classix';
-import { Heading } from '@/components/ui/heading';
 import { TextWithCommand } from '~/components/TextWithCommand';
+import { Heading } from '~/components/ui/heading';
 import { useGuideContext } from './GuideContext';
 
 type CoreProps = {

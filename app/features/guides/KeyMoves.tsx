@@ -1,12 +1,12 @@
 import cx from 'classix';
 import { AnimatePresence, motion } from 'motion/react';
 import { useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { Heading } from '@/components/ui/heading';
 import { Commands } from '~/components/Commands';
 import { MoveVideo } from '~/components/MoveVideo';
 import { PlayTextAudioButton } from '~/components/PlayTextAudioButton';
 import { TextWithCommand } from '~/components/TextWithCommand';
+import { Button } from '~/components/ui/button';
+import { Heading } from '~/components/ui/heading';
 import { HeartButton } from '~/features/favorites/HeartButton';
 import { useAreFavorites } from '~/features/favorites/useFavorites';
 import {

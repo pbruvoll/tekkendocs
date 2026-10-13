@@ -1,7 +1,7 @@
 import { cx } from 'class-variance-authority';
 import { Link } from 'react-router';
-import { Badge } from '@/components/ui/badge';
-import { Card } from '@/components/ui/card';
+import { Badge } from '~/components/ui/badge';
+import { Card } from '~/components/ui/card';
 
 export type CharacterCard2Props = {
   size?: 'medium' | 'large';

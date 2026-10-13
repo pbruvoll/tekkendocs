@@ -1,11 +1,11 @@
 import { href, Link, type MetaFunction } from 'react-router';
-import { TextEffect } from '@/components/core/TextEffect';
-import { Badge } from '@/components/ui/badge';
-import { Heading } from '@/components/ui/heading';
 import { CharacterGrid } from '~/components/CharacterGrid';
 import { ContentContainer } from '~/components/ContentContainer';
+import { TextEffect } from '~/components/core/TextEffect';
 import { ExternalResources } from '~/components/ExternalResources';
 import { MainFeatureCards } from '~/components/MainFeatureCards';
+import { Badge } from '~/components/ui/badge';
+import { Heading } from '~/components/ui/heading';
 import {
   getTekken7Characters,
   getTekken8Characters,
