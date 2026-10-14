@@ -53,7 +53,7 @@ export const appStateSchema = z.object({
         .nullable()
         .default(null),
     })
-    .default({}),
+    .prefault({}),
 });
 
 export type AppState = z.infer<typeof appStateSchema>;
