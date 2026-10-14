@@ -37,6 +37,7 @@ export const meta: MetaFunction<typeof loader> = ({ loaderData, matches }) => {
     matches,
     title: `${name} Tekken 6 Frame Data | TekkenDocs`,
     description: `Frame data for ${name} in Tekken 6`,
+    image: { url: '/t6/pages/frame-data.png' },
   });
 };
 
