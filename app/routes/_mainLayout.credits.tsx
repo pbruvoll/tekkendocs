@@ -347,6 +347,24 @@ export default function Credits() {
           </CreditCard>
         ))}
       </div>
+
+      <GameHeading>Tekken 6</GameHeading>
+      <div className="grid gap-6">
+        <CreditCard
+          title="Frame data source"
+          icon={<TableIcon className="size-4" />}
+        >
+          The frame data and character images are from the Tekken 6 frame data
+          archive at{' '}
+          <a
+            className={linkClass}
+            href="https://web.archive.org/web/2011/http://www.avoidingthepuddle.com/"
+          >
+            avoidingthepuddle.com
+          </a>
+          , which was a translation of a japanese wiki.
+        </CreditCard>
+      </div>
     </ContentContainer>
   );
 }

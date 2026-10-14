@@ -24,6 +24,8 @@ export type FrameDataTableProps = {
   table: TableDataWithHeader;
   filter?: MoveFilter;
   className?: string;
+  /** Set to false when there are no move pages to link to */
+  linkCommands?: boolean;
 };
 
 // The 1.5rem box keeps the column widths; the padding keeps the arrows small
@@ -37,6 +39,7 @@ export const FrameDataTable = ({
   table,
   className,
   filter,
+  linkCommands = true,
 }: FrameDataTableProps) => {
   const maxRows = 8;
   const columnNums = (table.headers || table.rows[0])
@@ -108,7 +111,7 @@ export const FrameDataTable = ({
               <TableRow key={row[0]}>
                 {columnNums.map((j) => {
                   const cell = row[j] || '';
-                  if (j === 0) {
+                  if (j === 0 && linkCommands) {
                     //this is a command, so make it link
                     return (
                       <TableCell key={j}>

@@ -155,6 +155,17 @@ export default function Index() {
       >
         Go to character select
       </Link>
+
+      <Heading as="h2" size="5" className="mt-10 mb-4">
+        <Link to={href('/t6')}>Tekken 6</Link>
+      </Heading>
+
+      <Link
+        to={href('/t6')}
+        className="text-primary underline underline-offset-2"
+      >
+        Go to character select
+      </Link>
     </ContentContainer>
   );
 }
