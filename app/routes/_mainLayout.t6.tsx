@@ -19,6 +19,7 @@ export const meta: MetaFunction = ({ matches }) => {
     matches,
     title: 'Tekken 6 Frame Data | TekkenDocs',
     description: 'Frame data for all characters in Tekken 6',
+    image: { url: '/t6/pages/frame-data.png' },
   });
 };
 
