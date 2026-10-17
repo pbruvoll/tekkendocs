@@ -151,3 +151,16 @@ Wavedash, Vortex, Hellsweep, EWGF, Electric, Stature Kick, Devil Stomp, Twin Pis
 ("aus dem Wavedash", "Vortex-Starter"). DVK (Devil form in Heat) stays as notation. "rage bait" →
 Rage-Bait-Low; "pancake flip" → "dreht ihn wie einen Pfannkuchen um"; "meaty" → Meaty; "instant
 while standing" stays English. (No German Kazuya guide found; general rule above.)
+
+## Leo
+
+Stance names stay English: Jin Ji Du Li (KNK), Fo Bu (BOK), "Bok-Stance", "KNK-Mixup"; Lightning
+Glare (LTG) → der Install. Hopkick, Sweep Bang, Slash Kick, Steel Pedal (Kazuya) stay English.
+"mental frames" → mentale Frames; "crumple stun" → Crumple Stun. Leo's gender is not stated in the
+game: prefer "Leo" over er/sie.
+
+## Miary Zo
+
+Stance names stay English: Morengy Miroso (MOR), Baobab Mihira (BAO), Tromba (wall stance);
+Fighting-God-Moves; ogre horn flip, Demon Paw (Jin) stay English. "situation confirm" →
+Situation Confirm; "silver bullet" → Wunderwaffe.

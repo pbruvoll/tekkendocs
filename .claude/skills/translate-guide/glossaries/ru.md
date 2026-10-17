@@ -205,3 +205,24 @@ ZAN is a gauge, not a stance (frame data: "Increases ZAN gauge"): "gives ZAN" �
 | stagger low | лоу со стаггером | |
 | pancake flip | переворачивает, как блин | |
 | Heihachi / Jin / Reina | Хэйхати / Дзин / Рейна | Поливанов spelling |
+
+## Leo
+
+| English | Russian | Note |
+| --- | --- | --- |
+| Leo Kliesen | Лео Клизен | gender not stated in game: use "Лео", avoid он/она |
+| Jin Ji Du Li (KNK) / Fo Bu (BOK) | in Latin, "стойка Bok", "миксап KNK" | stance names in Latin |
+| Lightning Glare (LTG) / install | Lightning Glare / усиление | as for Fahkumram |
+| crumple stun | лаунчер-крампл | |
+| Ling Xiaoyu / Feng Wei | Лин Сяоюй / Фэн Вэй | Palladius |
+
+## Miary Zo
+
+| English | Russian | Note |
+| --- | --- | --- |
+| Miary Zo | Миари Зо | |
+| Morengy Miroso (MOR) / Baobab Mihira (BAO) / Tromba | in Latin | stance names in Latin |
+| Asuka / Jun / Azucena / Kunimitsu | Асука / Дзюн / Асусена / Кунимицу | |
+| silver bullet | серебряная пуля | |
+
+"ridiculous" (huge) range → огромная/невероятная, never "смешная" (reads as laughably small).

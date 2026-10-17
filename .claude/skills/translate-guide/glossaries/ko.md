@@ -219,3 +219,27 @@ ZAN is a gauge, not a stance (frame data: "Increases ZAN gauge"): "gives ZAN" �
 | Heihachi / Devil Jin / Jin / Reina / Lars | 헤이하치 / 데빌 진 / 진 / 레이나 / 라스 | |
 
 Sources: [나무위키 — 초풍](https://namu.moe/w/%EC%B4%88%ED%92%8D)
+
+## Leo
+
+| English | Korean | Note |
+| --- | --- | --- |
+| Leo Kliesen | 레오 클리젠 | |
+| Jin Ji Du Li (KNK) | 금계독립 | 철권8 마이너 갤러리 writes 금계 |
+| Fo Bu (BOK) | 불보 | Hangul reading of 佛步, no Korean source found, unverified |
+| Lightning Glare (LTG) | Lightning Glare(강화 상태) | keep English |
+| Feng Wei / Ling Xiaoyu | 펭 웨이 / 링 샤오유 | |
+| glossed words | ‘노딜’, never ASCII quotes | ASCII quotes become command links |
+
+Sources: [철권8 마이너 갤러리 — 레오 금계](https://gall.dcinside.com/m/tekken7/3110435)
+
+## Miary Zo
+
+| English | Korean | Note |
+| --- | --- | --- |
+| Miary Zo | 미아리 조 | glossary above |
+| Morengy Miroso (MOR) / Baobab Mihira (BAO) / Tromba | 모렝기 미로소 / 바오밥 미히라 / 트롬바 | transliterations, no Korean source found |
+| Fighting God moves | 투신 기술 | unverified |
+| Asuka / Jun / Azucena | 아스카 / 준 / 아수세나 | |
+
+"solid" (option, result) → 좋은 / 쓸 만한, not 튼튼한 (reads as physically sturdy).

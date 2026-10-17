@@ -124,3 +124,14 @@ spark kept. Torgal → "köpeğin (Torgal) saldırıları"; poser → şov için
 wavedash, vortex, hellsweep, EWGF, electric, Stature Kick, Devil stomp kept ("wavedash'ten",
 "vortex başlatıcısı"). pancake flip → pankek gibi çevirmek; meaty → meaty; stagger low → stagger
 low; down jab → çömelerek atılan jab.
+
+## Leo
+
+Jin Ji Du Li (KNK), Fo Bu (BOK, "Bok stance'i"), Lightning Glare (LTG, install) stay English;
+hopkick, sweep bang, slash kick, Steel Pedal kept. Never ASCII quotes around a glossed word
+(‘safe’, not "safe"): they become command links.
+
+## Miary Zo
+
+Morengy Miroso (MOR), Baobab Mihira (BAO), Tromba, Fighting God, ogre horn flip, demon paw kept.
+silver bullet → gümüş kurşun; situation confirm → durum confirm'ü.

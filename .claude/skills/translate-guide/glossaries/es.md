@@ -116,3 +116,15 @@ Torgal → "los ataques del perro (Torgal)"; poser → para lucirse; "damn it" �
 wavedash, vortex, hellsweep, EWGF, electric, Stature Kick, Devil Stomp kept in English ("desde el
 wavedash", "iniciador de vortex"). pancake flip → los voltea como un panqueque; rage bait → bajo
 que provoca rage; meaty → meaties; stagger low → bajo con stagger.
+
+## Leo
+
+Jin Ji Du Li (KNK), Fo Bu (BOK, "postura Bok"), Lightning Glare (LTG, el install) stay English;
+hopkick, sweep bang, slash kick, Steel Pedal kept. **launch → "levantar" / "castigar con launcher",
+never "lanzar"** (reads as "throw"); "lanzar" only for throwing out a move ("lanzar este string").
+Leo's gender is not stated: repeat "Leo" instead of él/ella.
+
+## Miary Zo
+
+Morengy Miroso (MOR), Baobab Mihira (BAO), Tromba, Fighting God, ogre horn flip, Demon Paw kept.
+silver bullet → bala de plata; situation confirm → confirmar la situación.
