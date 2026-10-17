@@ -192,3 +192,54 @@ Sources: [철권 교실 — 알리사 기술 목록](https://www.tekkenclass.com
 | wall carry | 벽까지 몰아가기 | |
 
 Sources: [철권 교실 — 화랑 기술 목록](https://www.tekkenclass.com/characters/hwoarang/move/)
+
+## Clive
+
+ZAN is a gauge, not a stance (frame data: "Increases ZAN gauge"): "gives ZAN" → ZAN 게이지를 얻음, never ZAN으로 이행.
+
+| English | Korean | Note |
+| --- | --- | --- |
+| Clive Rosfield | 클라이브 (로즈필드) | Korean press |
+| Phoenix Shift (PHX) | 피닉스 시프트 | transliteration, no Korean source found |
+| rekka | 레카 | FGC loanword, unverified |
+| Torgal (dog) | 개(토르갈) | |
+| blue spark, ZAN, GAR | 블루 스파크 / ZAN / GAR | |
+
+## Kazuya
+
+| English | Korean | Note |
+| --- | --- | --- |
+| Kazuya | 카즈야 | |
+| wavedash | 풍신스텝 | 나무위키 풍신 문서 |
+| hellsweep | 나락 | 나무위키 (나찰문 문서: "초풍, 나락") |
+| EWGF / electric | 최풍 (최속 풍신권) | glossary above |
+| vortex | 무한 이지선다 | descriptive |
+| meaty | 겹쳐 치기 | |
+| stagger low | 딜레이 하단 | |
+| Heihachi / Devil Jin / Jin / Reina / Lars | 헤이하치 / 데빌 진 / 진 / 레이나 / 라스 | |
+
+Sources: [나무위키 — 초풍](https://namu.moe/w/%EC%B4%88%ED%92%8D)
+
+## Leo
+
+| English | Korean | Note |
+| --- | --- | --- |
+| Leo Kliesen | 레오 클리젠 | |
+| Jin Ji Du Li (KNK) | 금계독립 | 철권8 마이너 갤러리 writes 금계 |
+| Fo Bu (BOK) | 불보 | Hangul reading of 佛步, no Korean source found, unverified |
+| Lightning Glare (LTG) | Lightning Glare(강화 상태) | keep English |
+| Feng Wei / Ling Xiaoyu | 펭 웨이 / 링 샤오유 | |
+| glossed words | ‘노딜’, never ASCII quotes | ASCII quotes become command links |
+
+Sources: [철권8 마이너 갤러리 — 레오 금계](https://gall.dcinside.com/m/tekken7/3110435)
+
+## Miary Zo
+
+| English | Korean | Note |
+| --- | --- | --- |
+| Miary Zo | 미아리 조 | glossary above |
+| Morengy Miroso (MOR) / Baobab Mihira (BAO) / Tromba | 모렝기 미로소 / 바오밥 미히라 / 트롬바 | transliterations, no Korean source found |
+| Fighting God moves | 투신 기술 | unverified |
+| Asuka / Jun / Azucena | 아스카 / 준 / 아수세나 | |
+
+"solid" (option, result) → 좋은 / 쓸 만한, not 튼튼한 (reads as physically sturdy).

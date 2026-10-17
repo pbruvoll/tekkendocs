@@ -174,3 +174,49 @@ constructions (passive, "میرا شوق ہے", "پیش خدمت ہے").
 | wall carry | حریف کو دیوار تک لے جانا |
 | balcony | بالکونی |
 | Kicking Machine (resource title) | کِکنگ مشین — a cell may not start with Latin |
+
+## Clive
+
+ZAN is a gauge, not a stance (frame data: "Increases ZAN gauge"): "gives ZAN" → ZAN دیتا ہے / ZAN گیج حاصل کریں, never ZAN میں جائیں.
+
+| English | Urdu |
+| --- | --- |
+| Phoenix Shift (PHX) | فینکس شفٹ (PHX) |
+| rekka | ریکا |
+| ZAN at a cell start | زان (ZAN) — a cell may not start with Latin |
+| Torgal (dog) | کتا (ٹورگل) |
+| blue spark | بلیو اسپارک |
+| X / Youtube link labels | ایکس (X) / یوٹیوب |
+
+## Kazuya
+
+| English | Urdu |
+| --- | --- |
+| Kazuya / Heihachi / Devil Jin / Jin / Reina / Lars | کازویا / ہیہاچی / ڈیول جن / جن / رینا / لارس |
+| wavedash | ویو ڈیش |
+| vortex | ورٹیکس |
+| electric | الیکٹرک |
+| hellsweep | ہیل سویپ |
+| meaty | میٹی |
+| stagger low | اسٹیگر لو |
+| notation at a line start (multi-line cells) | prefix with موو: `موو FF3: SSL` — each line is its own paragraph |
+
+## Leo
+
+| English | Urdu |
+| --- | --- |
+| Leo Kliesen | لیو کلیزن |
+| Jin Ji Du Li (KNK) / Fo Bu (BOK) | جن جی ڈو لی (KNK) / فو بو (BOK) |
+| Lightning Glare (LTG) | لائٹننگ گلیئر |
+| Feng Wei / Ling Xiaoyu | فینگ وے / لنگ شیاؤیو |
+| Ws3, B4,1, Df4 at a line start | prefix موو / اسٹرنگ |
+
+## Miary Zo
+
+| English | Urdu |
+| --- | --- |
+| Miary Zo | میاری زو (feminine verbs: کرتی ہے) |
+| Morengy Miroso (MOR) / Baobab Mihira (BAO) / Tromba | مورینگی میروسو / باؤباب میہیرا / ٹرومبا |
+| Fighting God | فائٹنگ گاڈ |
+| Asuka / Jun / Paul's Deathfist | آسوکا / جون / پال کا ڈیتھ فسٹ |
+| silver bullet | چاندی کی گولی |

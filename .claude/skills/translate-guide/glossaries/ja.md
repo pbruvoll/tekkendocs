@@ -138,7 +138,7 @@ though Japanese text normally uses 「」, since the quotes are parsed. Use 、 
 | backturn (BT) | 背向け | |
 | hopkick | 跳び蹴り（ジャンステ技） | no fixed name found; describe it |
 | duckable | しゃがめる | |
-| Azucena / Alisa / Kazuya / Victor / Yoshimitsu / Miary Zo | アズセナ / アリサ / 一八 / ヴィクター / 吉光 / ミアリー・ゾ | |
+| Azucena / Alisa / Kazuya / Victor / Yoshimitsu / Miary Zo | アズセナ / アリサ / 一八 / ヴィクター / 吉光 / ミアリズ | |
 | EWGF | 最速風神拳 | |
 | Victor's IAI stance | 居合（IAI） | |
 
@@ -208,3 +208,61 @@ Sources: [tettk.com — アリサ攻略](https://tettk.com/tk8alisa/)
 | wall carry | 壁運び | |
 
 Sources: [鉄拳8 初心者向け攻略wiki — ファラン](https://seesaawiki.jp/tekken8kouryaku/d/%A5%D5%A5%A1%A5%E9%A5%F3)
+
+## Clive
+
+ZAN is a gauge, not a stance (frame data: "Increases ZAN gauge"): "gives ZAN" → ZANゲージが溜まる, never ZANへ移行.
+
+| English | Japanese | Note |
+| --- | --- | --- |
+| Clive Rosfield | クライヴ（・ロズフィールド） | AUTOMATON, gamebiz |
+| Phoenix Shift (PHX) | フェニックスシフト | 電ファミニコゲーマー, AUTOMATON (アビリティ名) |
+| rekka | 烈火 | FGC term from the source, unverified for Clive |
+| Torgal (dog) | 犬（トルガル） | FF16 name |
+| blue spark, ZAN, GAR | keep as in the source | |
+
+Sources: [AUTOMATON — クライヴ参戦](https://automaton-media.com/articles/newsjp/tekken-8-20241213-321674/),
+[電ファミニコゲーマー](https://news.denfaminicogamer.jp/news/2412132k)
+
+## Kazuya
+
+| English | Japanese | Note |
+| --- | --- | --- |
+| Kazuya | 一八 | |
+| wavedash | 風神ステップ | Mishima-specific; 鉄拳8 初心者向け攻略wiki 一八 |
+| hellsweep | 奈落（奈落払い） | same source |
+| EWGF / electric | 最風 | short for 最速風神拳, same source |
+| vortex | 二択のループ | descriptive |
+| Devil form (DVK) | デビル（DVK in notation） | |
+| meaty | 重ね | 起き上がりへの重ね |
+| stagger low | ディレイのかかる下段 | descriptive |
+| Heihachi / Devil Jin / Jin / Reina / Lars | 平八 / デビル仁 / 仁 / レイナ / ラース | |
+
+Sources: [鉄拳8 初心者向け攻略wiki — 一八](https://seesaawiki.jp/tekken8kouryaku/d/%B0%EC%C8%AC),
+[同 — 奈落](https://seesaawiki.jp/tekken8kouryaku/d/%C6%E0%CD%EE)
+
+## Leo
+
+| English | Japanese | Note |
+| --- | --- | --- |
+| Leo Kliesen | レオ・クリーセン | |
+| Jin Ji Du Li (KNK) | 金鶏独立 | kanji of the Chinese stance name; Japanese source not found, unverified |
+| Fo Bu (BOK) | 仏歩 | same, unverified |
+| Lightning Glare (LTG) | Lightning Glare（強化状態） | no Japanese name confirmed, keep English |
+| Feng Wei / Ling Xiaoyu | フェン・ウェイ / シャオユウ | |
+| hopkick | 跳び蹴り | as in the Kunimitsu section |
+
+## Miary Zo
+
+| English | Japanese | Note |
+| --- | --- | --- |
+| Miary Zo | ミアリズ | official JP name (gamer.ne.jp, gamebiz, seesaawiki); not ミアリー・ゾ |
+| Morengy Miroso (MOR) | モラング・ミルス | same sources |
+| Baobab Mihira (BAO) | バオバブ・ミール | same sources |
+| Tromba (wall stance) | チュンバ | same sources |
+| Fighting God moves | 闘神技 | from 白銀の闘神様 in the official intro, unverified |
+| ogre horn flip, Demon Paw (Jin) | keep English | no Japanese name confirmed |
+| passive opponent | 消極的な相手 | not 受け身 (= tech roll) |
+
+Sources: [gamer.ne.jp — ミアリズ](https://www.gamer.ne.jp/news/202512050005/),
+[鉄拳8 初心者向け攻略wiki — ミアリズ](https://seesaawiki.jp/tekken8kouryaku/d/%A5%DF%A5%A2%A5%EA%A5%BA)

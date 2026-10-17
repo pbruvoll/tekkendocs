@@ -135,3 +135,32 @@ guide found; general rule above.)
 Stance names stay in English: Left Flamingo (LFS), Right Flamingo (RFS), Right Foot Forward (RFF),
 "Flamingo-Stance". JFSR, Hellsweep, Wall Carry stay English; "plus frames" → "im Plus";
 "launch punish" → "mit einem Launcher punishen".
+
+## Clive
+
+ZAN ist eine Leiste, keine Stance (Frame Data: "Increases ZAN gauge"): "gives ZAN" → "gibt ZAN", nie "geht in ZAN".
+
+Phoenix Shift (PHX) stays English, like other stance names ("PHX-Stance"). rekka → der Rekka
+(-String); ZAN, GAR, blue spark stay as in the source. Torgal (the dog) → "die Angriffe des Hundes
+(Torgal)"; "poser" (flashy move) → zum Angeben; "win condition" → Win Condition. (No German Clive
+guide found; general rule above.)
+
+## Kazuya
+
+Wavedash, Vortex, Hellsweep, EWGF, Electric, Stature Kick, Devil Stomp, Twin Pistons stay English
+("aus dem Wavedash", "Vortex-Starter"). DVK (Devil form in Heat) stays as notation. "rage bait" →
+Rage-Bait-Low; "pancake flip" → "dreht ihn wie einen Pfannkuchen um"; "meaty" → Meaty; "instant
+while standing" stays English. (No German Kazuya guide found; general rule above.)
+
+## Leo
+
+Stance names stay English: Jin Ji Du Li (KNK), Fo Bu (BOK), "Bok-Stance", "KNK-Mixup"; Lightning
+Glare (LTG) → der Install. Hopkick, Sweep Bang, Slash Kick, Steel Pedal (Kazuya) stay English.
+"mental frames" → mentale Frames; "crumple stun" → Crumple Stun. Leo's gender is not stated in the
+game: prefer "Leo" over er/sie.
+
+## Miary Zo
+
+Stance names stay English: Morengy Miroso (MOR), Baobab Mihira (BAO), Tromba (wall stance);
+Fighting-God-Moves; ogre horn flip, Demon Paw (Jin) stay English. "situation confirm" →
+Situation Confirm; "silver bullet" → Wunderwaffe.

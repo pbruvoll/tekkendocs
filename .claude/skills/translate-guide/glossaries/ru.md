@@ -180,3 +180,49 @@ The author's gender is unknown: phrase first-person lines neutrally ("мне з�
 | LFS / RFS / RFF | in Latin, "стойка LFS", "стойки фламинго" | stance names in Latin, like other stances |
 | wall carry | донести до стены | |
 | hellsweep | хелл свип | |
+
+## Clive
+
+ZAN is a gauge, not a stance (frame data: "Increases ZAN gauge"): "gives ZAN" → "даёт ZAN / заполняет шкалу ZAN", never "уйти в ZAN".
+
+| English | Russian | Note |
+| --- | --- | --- |
+| Clive | Клайв | glossary above |
+| Phoenix Shift (PHX) | Phoenix Stance / PHX, "стойка PHX" | stance names in Latin |
+| rekka | рекка (gen. рекки) | FGC loanword |
+| Torgal (dog) | пёс (Торгал) | |
+| crushes jabs | крашит джебы | from хайкраш/лоукраш; never "перекрашивает" (= repaints) |
+
+## Kazuya
+
+| English | Russian | Note |
+| --- | --- | --- |
+| wavedash | вейвдеш ("из вейвдеша") | like бекдеш/микродеш |
+| vortex | вортекс | |
+| electric (EWGF) | электрик / EWGF | |
+| hellsweep | хелл свип | as for Alisa/Hwoarang |
+| meaty | мити | |
+| stagger low | лоу со стаггером | |
+| pancake flip | переворачивает, как блин | |
+| Heihachi / Jin / Reina | Хэйхати / Дзин / Рейна | Поливанов spelling |
+
+## Leo
+
+| English | Russian | Note |
+| --- | --- | --- |
+| Leo Kliesen | Лео Клизен | gender not stated in game: use "Лео", avoid он/она |
+| Jin Ji Du Li (KNK) / Fo Bu (BOK) | in Latin, "стойка Bok", "миксап KNK" | stance names in Latin |
+| Lightning Glare (LTG) / install | Lightning Glare / усиление | as for Fahkumram |
+| crumple stun | лаунчер-крампл | |
+| Ling Xiaoyu / Feng Wei | Лин Сяоюй / Фэн Вэй | Palladius |
+
+## Miary Zo
+
+| English | Russian | Note |
+| --- | --- | --- |
+| Miary Zo | Миари Зо | |
+| Morengy Miroso (MOR) / Baobab Mihira (BAO) / Tromba | in Latin | stance names in Latin |
+| Asuka / Jun / Azucena / Kunimitsu | Асука / Дзюн / Асусена / Кунимицу | |
+| silver bullet | серебряная пуля | |
+
+"ridiculous" (huge) range → огромная/невероятная, never "смешная" (reads as laughably small).

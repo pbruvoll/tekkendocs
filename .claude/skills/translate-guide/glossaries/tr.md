@@ -111,3 +111,27 @@ keskin mixup)`, `"electric."`, `"main" (ana)`.
   testi; jail → jail'lemek; natural combo → natural kombo; hits grounded → yerdeki rakibe vurur;
   unblockable → bloklanamaz; knowledge check → knowledge check (bölüm adı); hail mary → çaresizlikten
   atılan; goated → yeterince iyiysen; lab out → training modunda bul; Bear → ayı.
+
+## Clive
+
+ZAN is a gauge, not a stance (frame data: "Increases ZAN gauge"): "gives ZAN" → "ZAN verir / ZAN göstergesini doldurur", never "ZAN'a geçmek".
+
+Phoenix Shift (PHX) stays English ("PHX stance'i"); rekka → rekka ("rekka'yı"); ZAN, GAR, blue
+spark kept. Torgal → "köpeğin (Torgal) saldırıları"; poser → şov için.
+
+## Kazuya
+
+wavedash, vortex, hellsweep, EWGF, electric, Stature Kick, Devil stomp kept ("wavedash'ten",
+"vortex başlatıcısı"). pancake flip → pankek gibi çevirmek; meaty → meaty; stagger low → stagger
+low; down jab → çömelerek atılan jab.
+
+## Leo
+
+Jin Ji Du Li (KNK), Fo Bu (BOK, "Bok stance'i"), Lightning Glare (LTG, install) stay English;
+hopkick, sweep bang, slash kick, Steel Pedal kept. Never ASCII quotes around a glossed word
+(‘safe’, not "safe"): they become command links.
+
+## Miary Zo
+
+Morengy Miroso (MOR), Baobab Mihira (BAO), Tromba, Fighting God, ogre horn flip, demon paw kept.
+silver bullet → gümüş kurşun; situation confirm → durum confirm'ü.
