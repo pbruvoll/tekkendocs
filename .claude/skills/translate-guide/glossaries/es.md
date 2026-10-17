@@ -103,3 +103,16 @@ they become command links).
 Stance names stay in English: Left Flamingo (LFS), Right Flamingo (RFS), Right Foot Forward (RFF),
 "postura Flamingo"; JFSR, hellsweep kept. wall carry → llevar a la pared; balcony → balcón;
 whiff punisher → castigo de whiff.
+
+## Clive
+
+ZAN is a gauge, not a stance (frame data: "Increases ZAN gauge"): "gives ZAN" → "da ZAN", never "ir a ZAN".
+
+Phoenix Shift (PHX) stays English ("postura PHX"); rekka → el rekka; ZAN, GAR, blue spark kept.
+Torgal → "los ataques del perro (Torgal)"; poser → para lucirse; "damn it" → carajo (LatAm).
+
+## Kazuya
+
+wavedash, vortex, hellsweep, EWGF, electric, Stature Kick, Devil Stomp kept in English ("desde el
+wavedash", "iniciador de vortex"). pancake flip → los voltea como un panqueque; rage bait → bajo
+que provoca rage; meaty → meaties; stagger low → bajo con stagger.

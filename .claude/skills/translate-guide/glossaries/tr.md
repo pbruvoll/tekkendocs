@@ -111,3 +111,16 @@ keskin mixup)`, `"electric."`, `"main" (ana)`.
   testi; jail → jail'lemek; natural combo → natural kombo; hits grounded → yerdeki rakibe vurur;
   unblockable → bloklanamaz; knowledge check → knowledge check (bölüm adı); hail mary → çaresizlikten
   atılan; goated → yeterince iyiysen; lab out → training modunda bul; Bear → ayı.
+
+## Clive
+
+ZAN is a gauge, not a stance (frame data: "Increases ZAN gauge"): "gives ZAN" → "ZAN verir / ZAN göstergesini doldurur", never "ZAN'a geçmek".
+
+Phoenix Shift (PHX) stays English ("PHX stance'i"); rekka → rekka ("rekka'yı"); ZAN, GAR, blue
+spark kept. Torgal → "köpeğin (Torgal) saldırıları"; poser → şov için.
+
+## Kazuya
+
+wavedash, vortex, hellsweep, EWGF, electric, Stature Kick, Devil stomp kept ("wavedash'ten",
+"vortex başlatıcısı"). pancake flip → pankek gibi çevirmek; meaty → meaty; stagger low → stagger
+low; down jab → çömelerek atılan jab.

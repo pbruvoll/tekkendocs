@@ -208,3 +208,35 @@ Sources: [tettk.com — アリサ攻略](https://tettk.com/tk8alisa/)
 | wall carry | 壁運び | |
 
 Sources: [鉄拳8 初心者向け攻略wiki — ファラン](https://seesaawiki.jp/tekken8kouryaku/d/%A5%D5%A5%A1%A5%E9%A5%F3)
+
+## Clive
+
+ZAN is a gauge, not a stance (frame data: "Increases ZAN gauge"): "gives ZAN" → ZANゲージが溜まる, never ZANへ移行.
+
+| English | Japanese | Note |
+| --- | --- | --- |
+| Clive Rosfield | クライヴ（・ロズフィールド） | AUTOMATON, gamebiz |
+| Phoenix Shift (PHX) | フェニックスシフト | 電ファミニコゲーマー, AUTOMATON (アビリティ名) |
+| rekka | 烈火 | FGC term from the source, unverified for Clive |
+| Torgal (dog) | 犬（トルガル） | FF16 name |
+| blue spark, ZAN, GAR | keep as in the source | |
+
+Sources: [AUTOMATON — クライヴ参戦](https://automaton-media.com/articles/newsjp/tekken-8-20241213-321674/),
+[電ファミニコゲーマー](https://news.denfaminicogamer.jp/news/2412132k)
+
+## Kazuya
+
+| English | Japanese | Note |
+| --- | --- | --- |
+| Kazuya | 一八 | |
+| wavedash | 風神ステップ | Mishima-specific; 鉄拳8 初心者向け攻略wiki 一八 |
+| hellsweep | 奈落（奈落払い） | same source |
+| EWGF / electric | 最風 | short for 最速風神拳, same source |
+| vortex | 二択のループ | descriptive |
+| Devil form (DVK) | デビル（DVK in notation） | |
+| meaty | 重ね | 起き上がりへの重ね |
+| stagger low | ディレイのかかる下段 | descriptive |
+| Heihachi / Devil Jin / Jin / Reina / Lars | 平八 / デビル仁 / 仁 / レイナ / ラース | |
+
+Sources: [鉄拳8 初心者向け攻略wiki — 一八](https://seesaawiki.jp/tekken8kouryaku/d/%B0%EC%C8%AC),
+[同 — 奈落](https://seesaawiki.jp/tekken8kouryaku/d/%C6%E0%CD%EE)

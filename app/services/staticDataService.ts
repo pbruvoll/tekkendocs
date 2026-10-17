@@ -223,6 +223,8 @@ export const translatedGuidesT8: string[] = [
   'xiaoyu',
   'alisa',
   'hwoarang',
+  'clive',
+  'kazuya',
 ];
 
 export const siteUrl = 'https://tekkendocs.com';

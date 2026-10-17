@@ -174,3 +174,29 @@ constructions (passive, "میرا شوق ہے", "پیش خدمت ہے").
 | wall carry | حریف کو دیوار تک لے جانا |
 | balcony | بالکونی |
 | Kicking Machine (resource title) | کِکنگ مشین — a cell may not start with Latin |
+
+## Clive
+
+ZAN is a gauge, not a stance (frame data: "Increases ZAN gauge"): "gives ZAN" → ZAN دیتا ہے / ZAN گیج حاصل کریں, never ZAN میں جائیں.
+
+| English | Urdu |
+| --- | --- |
+| Phoenix Shift (PHX) | فینکس شفٹ (PHX) |
+| rekka | ریکا |
+| ZAN at a cell start | زان (ZAN) — a cell may not start with Latin |
+| Torgal (dog) | کتا (ٹورگل) |
+| blue spark | بلیو اسپارک |
+| X / Youtube link labels | ایکس (X) / یوٹیوب |
+
+## Kazuya
+
+| English | Urdu |
+| --- | --- |
+| Kazuya / Heihachi / Devil Jin / Jin / Reina / Lars | کازویا / ہیہاچی / ڈیول جن / جن / رینا / لارس |
+| wavedash | ویو ڈیش |
+| vortex | ورٹیکس |
+| electric | الیکٹرک |
+| hellsweep | ہیل سویپ |
+| meaty | میٹی |
+| stagger low | اسٹیگر لو |
+| notation at a line start (multi-line cells) | prefix with موو: `موو FF3: SSL` — each line is its own paragraph |

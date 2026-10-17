@@ -180,3 +180,28 @@ The author's gender is unknown: phrase first-person lines neutrally ("мне з�
 | LFS / RFS / RFF | in Latin, "стойка LFS", "стойки фламинго" | stance names in Latin, like other stances |
 | wall carry | донести до стены | |
 | hellsweep | хелл свип | |
+
+## Clive
+
+ZAN is a gauge, not a stance (frame data: "Increases ZAN gauge"): "gives ZAN" → "даёт ZAN / заполняет шкалу ZAN", never "уйти в ZAN".
+
+| English | Russian | Note |
+| --- | --- | --- |
+| Clive | Клайв | glossary above |
+| Phoenix Shift (PHX) | Phoenix Stance / PHX, "стойка PHX" | stance names in Latin |
+| rekka | рекка (gen. рекки) | FGC loanword |
+| Torgal (dog) | пёс (Торгал) | |
+| crushes jabs | крашит джебы | from хайкраш/лоукраш; never "перекрашивает" (= repaints) |
+
+## Kazuya
+
+| English | Russian | Note |
+| --- | --- | --- |
+| wavedash | вейвдеш ("из вейвдеша") | like бекдеш/микродеш |
+| vortex | вортекс | |
+| electric (EWGF) | электрик / EWGF | |
+| hellsweep | хелл свип | as for Alisa/Hwoarang |
+| meaty | мити | |
+| stagger low | лоу со стаггером | |
+| pancake flip | переворачивает, как блин | |
+| Heihachi / Jin / Reina | Хэйхати / Дзин / Рейна | Поливанов spelling |

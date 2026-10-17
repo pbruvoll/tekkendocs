@@ -192,3 +192,30 @@ Sources: [철권 교실 — 알리사 기술 목록](https://www.tekkenclass.com
 | wall carry | 벽까지 몰아가기 | |
 
 Sources: [철권 교실 — 화랑 기술 목록](https://www.tekkenclass.com/characters/hwoarang/move/)
+
+## Clive
+
+ZAN is a gauge, not a stance (frame data: "Increases ZAN gauge"): "gives ZAN" → ZAN 게이지를 얻음, never ZAN으로 이행.
+
+| English | Korean | Note |
+| --- | --- | --- |
+| Clive Rosfield | 클라이브 (로즈필드) | Korean press |
+| Phoenix Shift (PHX) | 피닉스 시프트 | transliteration, no Korean source found |
+| rekka | 레카 | FGC loanword, unverified |
+| Torgal (dog) | 개(토르갈) | |
+| blue spark, ZAN, GAR | 블루 스파크 / ZAN / GAR | |
+
+## Kazuya
+
+| English | Korean | Note |
+| --- | --- | --- |
+| Kazuya | 카즈야 | |
+| wavedash | 풍신스텝 | 나무위키 풍신 문서 |
+| hellsweep | 나락 | 나무위키 (나찰문 문서: "초풍, 나락") |
+| EWGF / electric | 최풍 (최속 풍신권) | glossary above |
+| vortex | 무한 이지선다 | descriptive |
+| meaty | 겹쳐 치기 | |
+| stagger low | 딜레이 하단 | |
+| Heihachi / Devil Jin / Jin / Reina / Lars | 헤이하치 / 데빌 진 / 진 / 레이나 / 라스 | |
+
+Sources: [나무위키 — 초풍](https://namu.moe/w/%EC%B4%88%ED%92%8D)
