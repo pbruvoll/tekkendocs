@@ -18,7 +18,7 @@ const Core = ({ section, type }: CoreProps) => {
           type === 'strengths'
             ? 'border-s-4 border-success bg-success/20 text-foreground-success'
             : 'border-s-4 border-destructive bg-destructive/20 text-foreground-destructive',
-          'p-2',
+          'p-2 uppercase',
         )}
       >
         {texts.sections[type]}

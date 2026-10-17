@@ -2,6 +2,7 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 @import "@fontsource-variable/inter";
+@import "@fontsource/barlow-condensed/800-italic.css";
 @plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:is(.dark *));
@@ -13,6 +14,7 @@
 @theme inline {
   --font-heading: var(--font-sans);
   --font-sans: "Inter Variable", sans-serif;
+  --font-display: "Barlow Condensed", "Inter Variable", sans-serif;
   --spacing-header-height: var(--header-height);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
@@ -152,6 +154,21 @@
   --paper: oklch(0.235 0.004 85);
 }
 
+/*
+ * The Tekken-flavored title face. Only the 800 italic is loaded, so every
+ * weight a heading asks for lands on it. A condensed face looks small next to
+ * Inter at the same font size, so the cap height is scaled up instead of
+ * bumping every heading's size. Not uppercase by default: move notation is case
+ * sensitive (df+1 is not DF+1), so only headings with fixed text opt into it.
+ */
+@utility display-heading {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  font-size-adjust: cap-height 0.8;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -164,6 +181,10 @@
   }
   html {
     @apply font-sans;
+  }
+  h1,
+  h2 {
+    @apply display-heading;
   }
   ::selection {
     background-color: oklch(0.746 0.178 58.4 / 25%);

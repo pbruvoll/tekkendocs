@@ -58,7 +58,7 @@ export const MainFeatureCards = () => {
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-primary/15 text-primary transition duration-300 group-hover:bg-primary group-hover:text-primary-foreground">
                   <Icon size={20} aria-hidden />
                 </span>
-                <h3 className="text-base font-semibold leading-tight tracking-tight">
+                <h3 className="display-heading text-base leading-tight uppercase">
                   {name}
                 </h3>
               </div>

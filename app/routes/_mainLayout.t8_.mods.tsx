@@ -21,7 +21,7 @@ export const headers = () => getCacheControlHeaders({ seconds: 60 * 60 });
 export default function Mods() {
   return (
     <ContentContainer enableTopPadding enableBottomPadding>
-      <h1 className="my-6 text-3xl">Useful mods</h1>
+      <h1 className="my-6 text-2xl sm:text-3xl">Useful mods</h1>
       <p className="mb-4">
         Mods made by the community that are useful when learning and practicing
         Tekken 8.
