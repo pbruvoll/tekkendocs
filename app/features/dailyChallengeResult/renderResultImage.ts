@@ -59,8 +59,8 @@ const colors = {
   border: 'rgba(255, 255, 255, 0.1)',
 } as const;
 
-/** `@fontsource-variable/dm-sans` registers the face under this exact name. */
-const primaryFontFamily = '"DM Sans Variable"';
+/** `@fontsource-variable/inter` registers the face under this exact name. */
+const primaryFontFamily = '"Inter Variable"';
 const fontFamily = `${primaryFontFamily}, sans-serif`;
 
 /** The weights drawn below, so every face they need is fetched up front. */
@@ -71,7 +71,7 @@ const fontLoadTimeoutMs = 3000;
  * Fontsource splits the family into unicode ranges and only fetches a range
  * when the page renders text in it, so `document.fonts.ready` resolves happily
  * without ever pulling in a face nothing has asked for. Requesting the faces
- * explicitly is what makes the canvas draw in DM Sans instead of the platform
+ * explicitly is what makes the canvas draw in Inter instead of the platform
  * sans-serif. Bounded, because a font that never arrives must not leave the
  * share button stuck.
  */
