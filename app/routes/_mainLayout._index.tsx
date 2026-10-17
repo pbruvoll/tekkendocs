@@ -52,12 +52,12 @@ export default function Index() {
         Frame data and learning resources for Tekken
       </TextEffect>
 
-      <Heading as="h2" size="5" className="mt-6 mb-4">
+      <Heading as="h2" size="5" className="mt-6 mb-4 uppercase">
         Main features
       </Heading>
       <MainFeatureCards />
 
-      <Heading as="h2" size="5" className="mt-10 mb-4">
+      <Heading as="h2" size="5" className="mt-10 mb-4 uppercase">
         <Link to={href('/t8')}>
           <span className="sr-only">Tekken 8 </span>Characters
         </Link>
@@ -79,7 +79,7 @@ export default function Index() {
         })}
       />
 
-      <Heading as="h2" size="5" className="mt-6 mb-4">
+      <Heading as="h2" size="5" className="mt-6 mb-4 uppercase">
         Other features
       </Heading>
       <div className="flex flex-wrap gap-3">
@@ -125,12 +125,17 @@ export default function Index() {
         </Link>
       </div>
 
-      <Heading as="h2" size="5" id="externalResources" className="mt-10 mb-4">
+      <Heading
+        as="h2"
+        size="5"
+        id="externalResources"
+        className="mt-10 mb-4 uppercase"
+      >
         External Resources
       </Heading>
       <ExternalResources />
 
-      <Heading as="h2" size="5" className="mt-10 mb-4">
+      <Heading as="h2" size="5" className="mt-10 mb-4 uppercase">
         <Link to={href('/t7')}>Tekken 7</Link>
       </Heading>
 
@@ -145,7 +150,7 @@ export default function Index() {
         })}
       />
 
-      <Heading as="h2" size="5" className="mt-10 mb-4">
+      <Heading as="h2" size="5" className="mt-10 mb-4 uppercase">
         <Link to={href('/tag2')}>Tekken Tag 2</Link>
       </Heading>
 
@@ -156,7 +161,7 @@ export default function Index() {
         Go to character select
       </Link>
 
-      <Heading as="h2" size="5" className="mt-10 mb-4">
+      <Heading as="h2" size="5" className="mt-10 mb-4 uppercase">
         <Link to={href('/t6')}>Tekken 6</Link>
       </Heading>
 

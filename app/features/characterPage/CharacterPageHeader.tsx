@@ -27,7 +27,12 @@ export const CharacterPageHeader = ({
           />
           {/* the character name is shared chrome, not the title of the page
               below it, so each sub page renders its own h1 */}
-          <p className={cn(headingVariants({ size: '6' }), 'my-2 capitalize')}>
+          <p
+            className={cn(
+              headingVariants({ size: '6' }),
+              'display-heading my-2 uppercase',
+            )}
+          >
             {getCharacterDisplayName(characterName)}
           </p>
         </div>

@@ -102,7 +102,7 @@ export default function TournamentVideos() {
   return (
     <ContentContainer enableTopPadding>
       <div className="flex justify-between">
-        <h1 className="mb-6 mt-4 text-4xl">Tournament videos</h1>
+        <h1 className="mb-6 mt-4 text-3xl sm:text-4xl">Tournament videos</h1>
         <div className="flex gap-8">
           <a
             className="flex items-center gap-2 text-primary"

@@ -17,7 +17,9 @@ export default function () {
       enableBottomPadding
       className="min-h-svh"
     >
-      <h1 className="my-6 text-3xl">Getting started with Tekken 8</h1>
+      <h1 className="my-6 text-2xl sm:text-3xl">
+        Getting started with Tekken 8
+      </h1>
       <h2 className="mb-3 text-xl">Tekken 8 Complete Beginner Guide video</h2>
       <p className="mb-4">
         PhiDX has created a Tekken 8 complete beginner guide. It introduces all

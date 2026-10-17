@@ -246,7 +246,7 @@ export default function Credits() {
       enableBottomPadding
       enableTopPadding
     >
-      <h1 className="text-4xl font-bold tracking-tight">Credits</h1>
+      <h1 className="text-3xl sm:text-3xl font-bold sm:text-4xl">Credits</h1>
       <div className="mt-3 h-1 w-16 rounded-full bg-linear-to-r from-primary to-primary/10" />
       <p className="mt-4 mb-2 max-w-2xl text-muted-foreground">
         TekkenDocs is built on the work of many people and communities. Thanks

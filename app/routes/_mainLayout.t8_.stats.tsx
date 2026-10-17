@@ -25,7 +25,7 @@ export default function () {
   return (
     <>
       <ContentContainer enableTopPadding>
-        <h1 className="text-3xl">Tekken 8 statistics</h1>
+        <h1 className="text-2xl sm:text-3xl">Tekken 8 statistics</h1>
         <h2 className="mt-3 text-lg">Moves per character</h2>
       </ContentContainer>
       <ContentContainer disableMaxWidth={landscape}>

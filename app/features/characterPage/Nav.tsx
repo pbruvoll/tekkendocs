@@ -50,10 +50,12 @@ function Nav({ navData }: NavProps) {
               end
               className={({ isActive }) =>
                 [
-                  'block whitespace-nowrap py-1 font-medium transition-colors',
+                  // a border rather than a text underline: the display face
+                  // draws text decorations thinner than the 2px asked for
+                  'display-heading block whitespace-nowrap border-b-2 py-1 uppercase transition-colors',
                   isActive
-                    ? 'text-primary underline decoration-2 underline-offset-8'
-                    : 'text-foreground hover:text-primary',
+                    ? 'border-primary text-primary'
+                    : 'border-transparent text-foreground hover:text-primary',
                 ].join(' ')
               }
             >
