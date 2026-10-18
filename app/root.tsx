@@ -12,6 +12,7 @@ import {
   useRouteError,
 } from 'react-router';
 //import { captureRemixErrorBoundaryError } from '@sentry/remix'
+import { HeadingFontPreviewScript } from './features/headingFontPreview/HeadingFontPreviewScript';
 import tailwindStyleSheetUrl from './tailwind.css?url';
 import { getCacheControlHeaders } from './utils/headerUtils';
 
@@ -58,9 +59,11 @@ export const ErrorBoundary = () => {
 
 export default function App() {
   return (
-    <html lang="en" className="dark">
+    // the heading font preview script sets an attribute on <html> before hydration
+    <html lang="en" className="dark" suppressHydrationWarning>
       <head>
         <meta charSet="utf-8" />
+        <HeadingFontPreviewScript />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <meta name="theme-color" content="#000000" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
