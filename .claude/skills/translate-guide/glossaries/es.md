@@ -128,3 +128,19 @@ Leo's gender is not stated: repeat "Leo" instead of él/ella.
 
 Morengy Miroso (MOR), Baobab Mihira (BAO), Tromba, Fighting God, ogre horn flip, Demon Paw kept.
 silver bullet → bala de plata; situation confirm → confirmar la situación.
+
+## Jack-8
+
+Gamma Howl (GMH) and Gamma Charge (GMC) stay in English ("postura Gamma Howl"). red bubble → burbuja roja.
+
+## Shaheen
+
+Stealth Step (SNK), Al Ghul Master, AK WS3 loops stay English. slide → barrida; orbital → orbital (un launcher que voltea al rival en el aire). The knowledge checks section is "Pruebas de conocimiento" (texts/es.ts).
+
+## Armor King
+
+Bad Jaguar (BAD), Dark Upper, Giant Swing, Tombstone Piledriver, Shining Wizard (iSW), Hades Drop, Neck Hunter, Straight Arrow, Shadow Lariat, Demon Paw, Gas, Burning Knuckle stay English. wave dash → wavedash; grappler stays English.
+
+## Azucena
+
+Libertador (LIB), backswing blow, Heaven's Wrath, G-Clef, Flash stay English. Koenji's gender is not stated: phrase the author's lines without gendered forms ("Juego Tekken…", not "Soy un jugador").

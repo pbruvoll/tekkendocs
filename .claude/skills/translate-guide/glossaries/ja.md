@@ -266,3 +266,47 @@ Sources: [鉄拳8 初心者向け攻略wiki — 一八](https://seesaawiki.jp/te
 
 Sources: [gamer.ne.jp — ミアリズ](https://www.gamer.ne.jp/news/202512050005/),
 [鉄拳8 初心者向け攻略wiki — ミアリズ](https://seesaawiki.jp/tekken8kouryaku/d/%A5%DF%A5%A2%A5%EA%A5%BA)
+
+## Jack-8
+
+| English | Japanese | Note |
+| --- | --- | --- |
+| Jack-8 | ジャック8 | |
+| Gamma Howl (GMH) | ガンマハウリング | 鉄拳8 初心者向け攻略wiki ジャック8 |
+| Gamma Charge (GMC) | ガンマチャージ | katakana, unverified |
+| red bubble (GMC.3+4) | 赤いバリアをまとう | descriptive |
+
+Sources: [鉄拳8 初心者向け攻略wiki — ジャック8](https://seesaawiki.jp/tekken8kouryaku/d/%A5%B8%A5%E3%A5%C3%A5%AF8)
+
+## Shaheen
+
+| English | Japanese | Note |
+| --- | --- | --- |
+| Shaheen | シャヒーン | |
+| Stealth Step (SNK) | スネークイン | the wiki abbreviates the stance SI, and the official Korean name is 스네이크 인 (Snake In) |
+| orbital | オービタル（相手を回転させて浮かせる技） | glossed |
+| knowledge check (section) | 「知っておくべき技」の項目 | section heading in texts/ja.ts; 初見殺し in prose |
+| Al Ghul Master | keep English | no Japanese name confirmed |
+
+## Armor King
+
+| English | Japanese | Note |
+| --- | --- | --- |
+| Armor King | アーマーキング | |
+| Bad Jaguar (BAD) | バッドジャガー | 電撃オンライン (パンチをさばく新構え「バッドジャガー」) |
+| Dark Upper / Giant Swing / Tombstone Piledriver / Shining Wizard | ダークアッパー / ジャイアントスイング / ツームストンパイルドライバー / シャイニングウィザード | katakana, unverified |
+| wave dash | ウェーブダッシュ | not 風神ステップ, which is Mishima-only |
+| Demon Paw, Gas, Burning Knuckle | keep English | |
+
+Sources: [電撃オンライン — アーマーキング](https://dengekionline.com/article/202510/54189)
+
+## Azucena
+
+| English | Japanese | Note |
+| --- | --- | --- |
+| Azucena | アズセナ | |
+| Libertador (LIB) | リベルタドール | Game*Spark, AUTOMATON |
+| backswing blow | バックスイングブロー | katakana, unverified |
+| hellsweep | ヘルスイープ | as for Alisa; 奈落 is Mishima-only |
+
+Sources: [Game*Spark — アズセナ参戦](https://www.gamespark.jp/article/2023/08/07/132762.html)
