@@ -243,3 +243,42 @@ Sources: [철권8 마이너 갤러리 — 레오 금계](https://gall.dcinside.c
 | Asuka / Jun / Azucena | 아스카 / 준 / 아수세나 | |
 
 "solid" (option, result) → 좋은 / 쓸 만한, not 튼튼한 (reads as physically sturdy).
+
+## Jack-8
+
+| English | Korean | Note |
+| --- | --- | --- |
+| Jack-8 | 잭-8 | |
+| Gamma Howl (GMH) / Gamma Charge (GMC) | 감마 하울링 / 감마 차지 | 철권 교실 잭-8 기술 목록 (감마 하울링 중 LP) |
+| hold back (to block) | 뒤를 눌러 가드하다 | never 뒤를 잡다 (= get behind someone) |
+| red bubble (GMC.3+4) | 붉은 구체를 두르는 | descriptive |
+
+## Shaheen
+
+| English | Korean | Note |
+| --- | --- | --- |
+| Shaheen | 샤힌 | 철권 교실 샤힌 기술 목록 |
+| Stealth Step (SNK) | 스네이크 인 | official Korean name, same source (스네이크 인 중 LP); SNK stays in notation |
+| slide (FC.df,d,DF+3) | 슬라이딩 | |
+| orbital | 오비탈(상대를 회전시키며 띄우는 기술) | glossed |
+| knowledge check (section) | ‘알아야 막는 기술’ 항목 | the section heading in texts/ko.ts; in prose: 모르면 대처하기 어려운 |
+
+## Armor King
+
+| English | Korean | Note |
+| --- | --- | --- |
+| Armor King | 아머킹 | |
+| Bad Jaguar (BAD) | 배드 재규어 | transliteration, no Korean source found |
+| Dark Upper / Giant Swing / Tombstone Piledriver / Shining Wizard | 다크 어퍼 / 자이언트 스윙 / 툼스톤 파일드라이버 / 샤이닝 위저드 | transliterations, unverified |
+| Hades Drop / Neck Hunter / Straight Arrow / Shadow Lariat | 하데스 드롭 / 넥 헌터 / 스트레이트 애로우 / 섀도 래리어트 | unverified |
+| wave dash | 웨이브 대시 | not 풍신스텝, which is Mishima-only |
+| Demon Paw, Gas, Burning Knuckle, Strong Aerial Tailspin | keep English | |
+
+## Azucena
+
+| English | Korean | Note |
+| --- | --- | --- |
+| Azucena | 아수세나 | glossary above |
+| Libertador (LIB) | 리베르타도르 | transliteration, unverified |
+| backswing blow | 백스윙 블로 | |
+| Heaven's Wrath (Reina), G-Clef, Flash | keep English | |

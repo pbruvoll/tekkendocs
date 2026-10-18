@@ -164,3 +164,19 @@ game: prefer "Leo" over er/sie.
 Stance names stay English: Morengy Miroso (MOR), Baobab Mihira (BAO), Tromba (wall stance);
 Fighting-God-Moves; ogre horn flip, Demon Paw (Jin) stay English. "situation confirm" →
 Situation Confirm; "silver bullet" → Wunderwaffe.
+
+## Jack-8
+
+Gamma Howl (GMH) and Gamma Charge (GMC) stay English ("Gamma-Howl-Stance", "Gamma-Charge-Moves"). red bubble → die rote Blase.
+
+## Shaheen
+
+Stealth Step (SNK), Al Ghul Master, Slide, Orbital, AK-WS3-Loops stay English. The knowledge checks section is "Knowledge Checks" (texts/de.ts).
+
+## Armor King
+
+Bad Jaguar (BAD), Dark Upper, Giant Swing, Tombstone Piledriver, Shining Wizard (iSW), Hades Drop, Neck Hunter, Straight Arrow, Shadow Lariat, Demon Paw, Gas, Burning Knuckle stay English. wave dash → Wavedash; "Todessandwich" for the source's joke "Death Sandwich".
+
+## Azucena
+
+Libertador (LIB), Backswing Blow, Heaven's Wrath, G-Clef, Flash stay English. Koenji's gender is not stated: "Ich spiele Tekken…", not "Ich bin ein Tekken-Spieler".

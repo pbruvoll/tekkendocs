@@ -226,3 +226,42 @@ ZAN is a gauge, not a stance (frame data: "Increases ZAN gauge"): "gives ZAN" �
 | silver bullet | серебряная пуля | |
 
 "ridiculous" (huge) range → огромная/невероятная, never "смешная" (reads as laughably small).
+
+## Jack-8
+
+| English | Russian | Note |
+| --- | --- | --- |
+| Jack-8 | Джек-8 (gen. Джека-8) | |
+| Gamma Howl (GMH) / Gamma Charge (GMC) | in Latin, "стойка Gamma Howl" | stance names in Latin |
+| hurtbox | хёртбокс | like хитбокс |
+| red bubble | красный пузырь | |
+
+## Shaheen
+
+| English | Russian | Note |
+| --- | --- | --- |
+| Shaheen | Шахин (gen. Шахина) | |
+| Stealth Step (SNK), Al Ghul Master | in Latin | |
+| slide | подкат | |
+| orbital | «орбитал» (лаунчер, закручивающий соперника в воздухе) | |
+| knowledge check (section) | раздел «Проверка знаний» | section heading in texts/ru.ts |
+
+## Armor King
+
+| English | Russian | Note |
+| --- | --- | --- |
+| Armor King | Армор Кинг (gen. Армор Кинга) | |
+| Bad Jaguar, Dark Upper, Giant Swing, Tombstone Piledriver, Shining Wizard, Straight Arrow, Demon Paw, Gas | in Latin | move and stance names in Latin |
+| grappler | грэпплер | |
+| wave dash / crouch dash | вейвдеш / крауч-дэш | |
+| Eddy Gordo / Heihachi | Эдди Гордо / Хэйхати | |
+
+## Azucena
+
+| English | Russian | Note |
+| --- | --- | --- |
+| Azucena | Асусена | glossary above |
+| Libertador (LIB), backswing blow, Heaven's Wrath, Flash | in Latin | |
+| Yoshimitsu / Yoshi | Ёсимицу / Ёси | |
+
+The author's gender is not stated: avoid gendered past tense in first person ("на неё ушло слишком много моего времени", not "я провёл").

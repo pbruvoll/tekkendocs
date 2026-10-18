@@ -135,3 +135,19 @@ hopkick, sweep bang, slash kick, Steel Pedal kept. Never ASCII quotes around a g
 
 Morengy Miroso (MOR), Baobab Mihira (BAO), Tromba, Fighting God, ogre horn flip, demon paw kept.
 silver bullet → gümüş kurşun; situation confirm → durum confirm'ü.
+
+## Jack-8
+
+Gamma Howl (GMH) and Gamma Charge (GMC) stay English ("Gamma Howl stance'i"). red bubble → kırmızı baloncuklu. For "raw" (unprepared) use "hazırlıksız", not "çiğ çiğ" (an eating idiom).
+
+## Shaheen
+
+Stealth Step (SNK), Al Ghul Master, AK WS3 loop'ları stay English. slide → kayma; orbital → orbital (rakibi havada döndüren launcher).
+
+## Armor King
+
+Bad Jaguar (BAD), Dark Upper, Giant Swing, Tombstone Piledriver, Shining Wizard (iSW), Hades Drop, Neck Hunter, Straight Arrow, Shadow Lariat, Demon Paw, Gas, Burning Knuckle stay English. wave dash → wavedash; grappler → grappler.
+
+## Azucena
+
+Libertador (LIB), backswing blow, Heaven's Wrath, G-Clef, Flash stay English.

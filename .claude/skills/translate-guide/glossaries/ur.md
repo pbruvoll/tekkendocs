@@ -220,3 +220,45 @@ ZAN is a gauge, not a stance (frame data: "Increases ZAN gauge"): "gives ZAN" �
 | Fighting God | فائٹنگ گاڈ |
 | Asuka / Jun / Paul's Deathfist | آسوکا / جون / پال کا ڈیتھ فسٹ |
 | silver bullet | چاندی کی گولی |
+
+## Jack-8
+
+| English | Urdu |
+| --- | --- |
+| Jack-8 | جیک-8 |
+| Gamma Howl (GMH) / Gamma Charge (GMC) | گاما ہاؤل / گاما چارج |
+| red bubble | سرخ بلبلے والا |
+
+## Shaheen
+
+| English | Urdu |
+| --- | --- |
+| Shaheen | شاہین |
+| Stealth Step (SNK) | اسٹیلتھ اسٹیپ |
+| Al Ghul Master | الغول ماسٹر |
+| slide | سلائیڈ |
+| orbital | آربیٹل (ایسا لانچر جو حریف کو ہوا میں گھما دیتا ہے) |
+| AK WS3 loops | اے کے (AK) WS3 لوپس — keep the notation in Latin |
+
+## Armor King
+
+| English | Urdu |
+| --- | --- |
+| Armor King | آرمر کنگ |
+| Bad Jaguar (BAD) | بیڈ جیگوار |
+| Dark Upper / Giant Swing / Tombstone Piledriver / Shining Wizard (iSW) | ڈارک اپر / جائنٹ سوئنگ / ٹومب اسٹون پائل ڈرائیور / شائننگ وزرڈ (آئی ایس ڈبلیو) |
+| Hades Drop / Neck Hunter / Straight Arrow / Shadow Lariat | ہیڈیز ڈراپ / نیک ہنٹر / اسٹریٹ ایرو / شیڈو لیریئٹ |
+| wave dash | ویو ڈیش |
+| Demon Paw / Gas / Burning Knuckle | ڈیمن پا / گیس / برننگ نکل |
+| a cell starting with notation (DF1, b3, ws3,1) | prefix موو / اسٹرنگ, or start with اس کا |
+
+## Azucena
+
+| English | Urdu |
+| --- | --- |
+| Azucena | ازوسینا (feminine verbs: کرتی ہے) |
+| Libertador (LIB) | لبرٹاڈور |
+| backswing blow | بیک سوئنگ بلو |
+| Heaven's Wrath (Reina) | ہیونز ریتھ |
+
+The author's gender is not stated: avoid gendered first-person verbs ("میرا زیادہ تر ٹیکن … میں ہوتا ہے").
