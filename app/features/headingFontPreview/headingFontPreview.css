@@ -1,0 +1,13 @@
+/*
+ * Lets the display font be swapped on the live site for comparison, via
+ * ?headingFont=exo2 (see HeadingFontPreviewScript). The face is only declared
+ * here, so browsers download it only for visitors who opt in.
+ */
+@import "@fontsource/exo-2/800-italic.css";
+
+:root[data-heading-font="exo2"] {
+  --font-display: "Exo 2", "Inter Variable", sans-serif;
+  /* Exo 2 is wide, so it needs far less of the cap height boost the
+     condensed default gets */
+  --display-font-size-adjust: cap-height 0.74;
+}
