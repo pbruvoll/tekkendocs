@@ -7,8 +7,7 @@ export const ru: GuideTexts = {
     `Самое важное о персонаже ${character} в Tekken 8. Быстро освойте персонажа: ключевые удары, паниши и комбо.`,
   pageHeading: ({ character, season }) =>
     `${character}: гайд по Tekken 8, сезон ${season}`,
-  translationNotice:
-    'Этот гайд переведён автоматически и может содержать неточности.',
+  translationNotice: 'Автоматический перевод с английского.',
   sections: {
     aboutTheAuthor: 'Об авторе',
     introduction: 'Введение',

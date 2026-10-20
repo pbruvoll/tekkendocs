@@ -7,8 +7,7 @@ export const ur: GuideTexts = {
     `ٹیکن 8 میں ${character} کے بارے میں سب سے اہم معلومات کا خلاصہ۔ اہم موووز، پنشرز اور کومبوز سیکھ کر جلدی سے یہ کریکٹر کھیلنا سیکھیں۔`,
   pageHeading: ({ character, season }) =>
     `${character} ٹیکن 8 سیزن ${season} گائیڈ`,
-  translationNotice:
-    'یہ گائیڈ خودکار طور پر ترجمہ کی گئی ہے اور ہو سکتا ہے کہ درست نہ ہو۔',
+  translationNotice: 'انگریزی سے خودکار ترجمہ۔',
   sections: {
     aboutTheAuthor: 'مصنف کے بارے میں',
     introduction: 'تعارف',

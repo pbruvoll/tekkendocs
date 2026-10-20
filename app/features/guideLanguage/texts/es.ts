@@ -7,8 +7,7 @@ export const es: GuideTexts = {
     `Un resumen de la información más importante de ${character} en Tekken 8. Aprende rápido a jugar con el personaje conociendo sus movimientos clave, castigos y combos.`,
   pageHeading: ({ character, season }) =>
     `Guía de ${character} para Tekken 8, temporada ${season}`,
-  translationNotice:
-    'Esta guía fue traducida automáticamente y puede no ser precisa.',
+  translationNotice: 'Traducida automáticamente del inglés.',
   sections: {
     aboutTheAuthor: 'Sobre el autor',
     introduction: 'Introducción',

@@ -7,8 +7,7 @@ export const tr: GuideTexts = {
     `Tekken 8'de ${character} hakkında en önemli bilgiler. En önemli hareketler, punisher'lar ve kombolarla karakteri hızlıca öğren.`,
   pageHeading: ({ character, season }) =>
     `${character} Tekken 8 Sezon ${season} Rehberi`,
-  translationNotice:
-    'Bu rehber otomatik olarak çevrilmiştir ve hatalar içerebilir.',
+  translationNotice: 'İngilizceden otomatik olarak çevrilmiştir.',
   sections: {
     aboutTheAuthor: 'Yazar hakkında',
     introduction: 'Giriş',

@@ -7,7 +7,7 @@ export const ko: GuideTexts = {
     `철권 8 ${character}의 핵심 정보를 정리한 공략입니다. 주요 기술, 딜캐, 콤보를 익혀 캐릭터를 빠르게 배워 보세요.`,
   pageHeading: ({ character, season }) =>
     `${character} 철권 8 시즌 ${season} 공략`,
-  translationNotice: '이 공략은 자동 번역되었으며 정확하지 않을 수 있습니다.',
+  translationNotice: '영어 원문을 자동 번역했습니다.',
   sections: {
     aboutTheAuthor: '작성자 소개',
     introduction: '소개',
