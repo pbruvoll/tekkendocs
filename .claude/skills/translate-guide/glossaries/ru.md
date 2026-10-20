@@ -265,3 +265,46 @@ ZAN is a gauge, not a stance (frame data: "Increases ZAN gauge"): "gives ZAN" �
 | Yoshimitsu / Yoshi | Ёсимицу / Ёси | |
 
 The author's gender is not stated: avoid gendered past tense in first person ("на неё ушло слишком много моего времени", not "я провёл").
+
+## Law
+
+| English | Russian | Note |
+| --- | --- | --- |
+| Law / Marshall Law | Ло / Маршалл Ло | indeclinable |
+| Dragon Charge (DSS), Dragon Hammer, Tornado Claw, Forest Law | in Latin | |
+| slide / crouch walk | подкат / ходьба в приседе | |
+| flip kick | флип-кик | |
+| nunchuck | нунчаки | |
+
+Landon D's gender is not stated: avoid gendered past tense ("у меня ушло", "стал моим мейном").
+
+## Leroy
+
+| English | Russian | Note |
+| --- | --- | --- |
+| Leroy Smith | Лерой Смит | |
+| Hermit (HRM), G-Clef, perfect parry, Stature Kick | in Latin | |
+| Wing Chun | вин-чун | |
+| cane | трость | |
+| return to standing | вернуться в положение стоя | never "в стойку" (= stance) |
+
+## Heihachi
+
+| English | Russian | Note |
+| --- | --- | --- |
+| Heihachi Mishima | Хэйхати Мисима | |
+| RAIJIN/RAI, FUJIN/FUJ, Warrior Instinct, OMEN | in Latin | |
+| headbutt | удар головой | |
+| spike ender | спайк-эндер | |
+
+## Nina
+
+| English | Russian | Note |
+| --- | --- | --- |
+| Nina Williams | Нина Уильямс | |
+| backsway | бэксвей | |
+| Hayashida step, Betrayer, butterfly loops, wipe the floor | in Latin | |
+| chain throws | цепные броски | |
+| guns (gun moves) | выстрелы | |
+
+Lalo's gender is not stated: avoid gendered past tense.

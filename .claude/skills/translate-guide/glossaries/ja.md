@@ -310,3 +310,52 @@ Sources: [電撃オンライン — アーマーキング](https://dengekionline
 | hellsweep | ヘルスイープ | as for Alisa; 奈落 is Mishima-only |
 
 Sources: [Game*Spark — アズセナ参戦](https://www.gamespark.jp/article/2023/08/07/132762.html)
+
+## Law
+
+| English | Japanese | Note |
+| --- | --- | --- |
+| Law / Marshall Law / Forest Law | ロウ / マーシャル・ロウ / フォレスト・ロウ | |
+| Dragon Charge (DSS) | チャージドラゴン（DSS） | 鉄拳8 初心者向け攻略wiki ロウ (search snippet) |
+| Dragon Hammer / Tornado Claw | ドラゴンハンマー / トルネードクロー | katakana, unverified |
+| flip kick (uf+4) | サマーソルト | |
+| slide / crouch walk | スライディング / しゃがみ歩き | wiki link slug スライディング |
+| nunchuck | ヌンチャク | |
+
+## Leroy
+
+| English | Japanese | Note |
+| --- | --- | --- |
+| Leroy Smith | リロイ・スミス | |
+| Hermit (HRM) | ハーミット（の構え） | katakana, no Japanese source found |
+| Wing Chun | 詠春拳 | |
+| cane | 杖 | |
+| perfect parry | パーフェクトパリィ | unverified |
+| punish mix | 確反の読み合い | descriptive |
+
+## Heihachi
+
+| English | Japanese | Note |
+| --- | --- | --- |
+| Heihachi Mishima | 三島平八 / 平八 | |
+| Wind God's Kamae (FUJ) / Thunder God's Kamae (RAI) | 風神呼法 / 雷神呼法 | 電ファミニコゲーマー: 新たな構え"風神呼法"と"雷神呼法" |
+| Warrior Instinct | 武の境地 | 電撃オンライン: 新システム"武の境地" |
+| headbutt | 頭突き | |
+| spike ender | 叩きつけ締め | descriptive |
+| OMEN | OMEN | kept, no confirmed name |
+
+Sources: [電ファミニコゲーマー — 平八](https://news.denfaminicogamer.jp/kikakuthetower/240925a), [電撃オンライン — 平八](https://dengekionline.com/article/202409/17762)
+
+## Nina
+
+| English | Japanese | Note |
+| --- | --- | --- |
+| Nina Williams | ニーナ・ウィリアムズ | |
+| backsway (qcb) | 失脚（バックスウェー） | Game Watch 鉄拳6 ニーナ攻略 (失脚ステップ, 失脚キャンセル) |
+| Hayashida step | 林田ステップ | unverified transliteration of the player name |
+| Korean backdash | バックダッシュキャンセル（コリアンバックダッシュ） | |
+| chain throws | 連続投げ | |
+| butterfly loops / Betrayer / wipe the floor | バタフライループ / ビトレイヤー / ワイプ・ザ・フロア | katakana, unverified |
+| Williams sisters | ウィリアムズ姉妹 | |
+
+Sources: [Game Watch — 鉄拳6 ニーナ](https://game.watch.impress.co.jp/docs/20090311/tk6_br3c.htm)
