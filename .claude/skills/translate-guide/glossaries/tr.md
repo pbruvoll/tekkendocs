@@ -151,3 +151,19 @@ Bad Jaguar (BAD), Dark Upper, Giant Swing, Tombstone Piledriver, Shining Wizard 
 ## Azucena
 
 Libertador (LIB), backswing blow, Heaven's Wrath, G-Clef, Flash stay English.
+
+## Law
+
+Dragon Charge (DSS), Dragon Hammer, Tornado Claw, flip kick, rekka, kicharge, legend kick stay English. crouch walk → çömelerek yürümek; nunchuck → nunçaku; "Chinese boxing" → Çin boksu.
+
+## Leroy
+
+Hermit (HRM, "Hermit stance'i"), Wing Chun, G-Clef, perfect parry, Stature Kick stay English. cane → baston. Glossed phrases use ‘…’ (‘al ve oyna’), never ASCII quotes.
+
+## Heihachi
+
+RAIJIN/RAI, FUJIN/FUJ, Warrior Instinct, omen, hellsweep, wavedash, EWGF, spike ender stay English. headbutt → kafa atma.
+
+## Nina
+
+backsway, Hayashida step, butterfly loop, Betrayer, wipe the floor stay English. chain throws → zincir throw'lar; guns → silah atışları; Williams sisters → Williams kardeşler.

@@ -282,3 +282,47 @@ Sources: [철권8 마이너 갤러리 — 레오 금계](https://gall.dcinside.c
 | Libertador (LIB) | 리베르타도르 | transliteration, unverified |
 | backswing blow | 백스윙 블로 | |
 | Heaven's Wrath (Reina), G-Clef, Flash | keep English | |
+
+## Law
+
+| English | Korean | Note |
+| --- | --- | --- |
+| Law / Marshall Law / Forest Law | 로우 / 마샬 로우 / 포레스트 로우 | |
+| Dragon Charge (DSS) | 차지 드래곤(DSS) | 철권 교실 로우 기술 목록 (차지 드래곤 중 LP) |
+| Dragon Hammer / Tornado Claw | 드래곤 해머 / 토네이도 클로 | unverified |
+| flip kick (uf+4) | 서머솔트 | |
+| slide / crouch walk | 슬라이딩 / 앉아 걷기 | |
+| nunchuck | 쌍절곤 | |
+
+## Leroy
+
+| English | Korean | Note |
+| --- | --- | --- |
+| Leroy Smith | 리로이 스미스 | |
+| Hermit (HRM) | 허밋 (자세) | 철권 교실 uses only HRM; transliteration |
+| Wing Chun | 영춘권 | |
+| cane | 지팡이 | |
+| perfect parry | 퍼펙트 패링 | |
+
+## Heihachi
+
+| English | Korean | Note |
+| --- | --- | --- |
+| Heihachi Mishima | 미시마 헤이하치 | |
+| Wind God's Kamae (FUJ) / Thunder God's Kamae (RAI) | 풍신 자세 / 뇌신 자세 | no Korean source found, unverified |
+| Warrior Instinct | 무의 경지 | from the Japanese 武の境地, unverified |
+| headbutt | 박치기 | |
+| spike ender | 내려찍기 마무리기 | descriptive |
+
+## Nina
+
+| English | Korean | Note |
+| --- | --- | --- |
+| Nina Williams | 니나 윌리엄스 | |
+| backsway (qcb) | 실각 | 철권 교실 니나 기술 목록 |
+| Hayashida step | 하야시다 스텝 | transliteration |
+| chain throws | 연속 잡기 | |
+| Betrayer / wipe the floor / butterfly loops | 비트레이어 / 와이프 더 플로어 / 버터플라이 루프 | 비트레이어 from 철권 교실 |
+| Williams sisters | 윌리엄스 자매 | |
+
+Sources: [철권 교실 — 로우](https://www.tekkenclass.com/characters/law/move/), [철권 교실 — 니나](https://www.tekkenclass.com/characters/nina/move/)

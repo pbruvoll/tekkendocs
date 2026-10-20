@@ -262,3 +262,46 @@ ZAN is a gauge, not a stance (frame data: "Increases ZAN gauge"): "gives ZAN" �
 | Heaven's Wrath (Reina) | ہیونز ریتھ |
 
 The author's gender is not stated: avoid gendered first-person verbs ("میرا زیادہ تر ٹیکن … میں ہوتا ہے").
+
+## Law
+
+| English | Urdu |
+| --- | --- |
+| Law | مارشل لا (always the full name: a bare لا reads as "bring" or "no") |
+| Dragon Charge (DSS) | ڈریگن چارج / ڈی ایس ایس (DSS in notation) |
+| Dragon Hammer / Tornado Claw | ڈریگن ہیمر / ٹورنیڈو کلا |
+| slide / crouch walk / flip kick | سلائیڈ / کراؤچ واک / فلپ کک |
+| rekka | ریکا |
+| nunchuck | ننچاکو |
+
+## Leroy
+
+| English | Urdu |
+| --- | --- |
+| Leroy Smith | لیروئے اسمتھ |
+| Hermit (HRM) | ہرمٹ |
+| Wing Chun | ونگ چن |
+| cane | چھڑی |
+| perfect parry | پرفیکٹ پیری |
+
+## Heihachi
+
+| English | Urdu |
+| --- | --- |
+| Heihachi Mishima | ہیہاچی مشیما |
+| RAIJIN / FUJIN | رائجن / فوجن (RAI / FUJ in notation) |
+| Warrior Instinct | واریئر انسٹنکٹ |
+| headbutt | ہیڈ بٹ |
+| spike ender | اسپائک اینڈر |
+
+## Nina
+
+| English | Urdu |
+| --- | --- |
+| Nina Williams | نینا ولیمز (feminine verbs) |
+| backsway | بیک سوے |
+| Hayashida step | ہایاشیدا اسٹیپ |
+| chain throws | چین تھروز |
+| Betrayer / wipe the floor / butterfly loops | بیٹریئر / وائپ دی فلور / بٹر فلائی لوپس |
+
+The guide authors' genders (Landon D, Lalo) are not stated: avoid gendered first-person verbs.

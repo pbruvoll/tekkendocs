@@ -231,6 +231,10 @@ export const translatedGuidesT8: string[] = [
   'shaheen',
   'armor-king',
   'azucena',
+  'nina',
+  'law',
+  'leroy',
+  'heihachi',
 ];
 
 export const siteUrl = 'https://tekkendocs.com';

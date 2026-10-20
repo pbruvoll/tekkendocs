@@ -144,3 +144,19 @@ Bad Jaguar (BAD), Dark Upper, Giant Swing, Tombstone Piledriver, Shining Wizard 
 ## Azucena
 
 Libertador (LIB), backswing blow, Heaven's Wrath, G-Clef, Flash stay English. Koenji's gender is not stated: phrase the author's lines without gendered forms ("Juego Tekken…", not "Soy un jugador").
+
+## Law
+
+Dragon Charge (DSS), Dragon Hammer, Tornado Claw, flip kick, rekka, kicharge, legend kick stay English. crouch walk → caminar agachado; nunchuck → nunchaku; "Chinese boxing" → boxeo chino. Landon D's gender is not stated: "juego Tekken de forma competitiva", "formo parte de la comunidad".
+
+## Leroy
+
+Hermit (HRM, "postura Hermit"), Wing Chun, G-Clef, perfect parry, Stature Kick, punish mix stay English. cane → bastón (bastón bajo/medio).
+
+## Heihachi
+
+RAIJIN/RAI, FUJIN/FUJ, Warrior Instinct, omen, hellsweep, wavedash, EWGF, spike ender stay English. headbutt → cabezazo; blue/gold spark → spark azul/dorado.
+
+## Nina
+
+backsway, Hayashida step, butterfly loops, Betrayer, wipe the floor stay English. chain throws → agarres en cadena; guns → pistolas/disparos; Williams sisters → hermanas Williams. Lalo's gender is not stated ("juego juegos de pelea", not "soy un jugador").
