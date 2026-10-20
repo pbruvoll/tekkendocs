@@ -160,3 +160,35 @@ RAIJIN/RAI, FUJIN/FUJ, Warrior Instinct, omen, hellsweep, wavedash, EWGF, spike 
 ## Nina
 
 backsway, Hayashida step, butterfly loops, Betrayer, wipe the floor stay English. chain throws → agarres en cadena; guns → pistolas/disparos; Williams sisters → hermanas Williams. Lalo's gender is not stated ("juego juegos de pelea", not "soy un jugador").
+
+## Jin
+
+ZEN (ZENSHIN / ZANSHIN), OMEN, Samsara, electric, hellsweep, parry stay English ("postura ZEN", "movimientos OMEN").
+
+## Lars
+
+Silent / Dynamic / Limited Entry (SEN / DEN / LEN), Rebellion, Lightning screw, backswing blow, Deathfist, Strong Aerial Tailspin, pseudo wavedash stay English.
+
+## Raven
+
+Soulzone (SZN), Aqua Spider, G-Clef, backsway, sabaki stay English; escape parry → parry de escape, attack parry → parry de ataque. backturn (BT) → de espaldas, as for Kunimitsu. clones → clones (morados / dorados); "dickjab" (down jab slang) → jab agachado.
+
+## Reina
+
+Sentai (SEN), Heaven's Wrath (WRA / HW), Unsoku (UNS), Raiden, EWGF, EWGK, Electric, splits kick, flash punch combo stay English. pancake flip → voltea como un panqueque, as for Kazuya. The author (Heavenly) is "he" in the source.
+
+## Asuka
+
+Naniwa Gusto (NWG), destabilizer, sabaki, reversal, install stay English.
+
+## Claudio
+
+Starburst (STB) stays English. round ender → cierre de round.
+
+## Bryan
+
+Snake Eyes (SNE), Slither Step (SLS), Sway (SWA), backsway, taunt, snake edge, blue spark stay English.
+
+## Yoshimitsu
+
+NSS, KIN (Kincho), DGF (Dragonfly), IND (Indian), FLE (Flea), BDS / Bad Breath, Flash, Manji Spin, hopknee, flashing steel, okizeme stay English. gimmick → truco; frog jump → salto de rana.

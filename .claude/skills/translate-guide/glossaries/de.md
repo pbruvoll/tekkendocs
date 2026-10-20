@@ -196,3 +196,35 @@ RAIJIN/RAI and FUJIN/FUJ (Thunder/Wind God's Kamae), Warrior Instinct, Omen, Hel
 ## Nina
 
 Backsway, Hayashida-Step, Butterfly Loops, Betrayer, Wipe the Floor stay English. chain throws → Kettenwürfe; guns (gun moves) → Pistolen/Pistolenschüsse; Williams sisters → Williams-Schwestern.
+
+## Jin
+
+ZEN-Stance (ZENSHIN / ZANSHIN), OMEN-Moves, Samsara, Electric, Hellsweep, Parry stay English.
+
+## Lars
+
+Silent / Dynamic / Limited Entry (SEN / DEN / LEN), Rebellion, Lightning Screw, Backswing Blow, Deathfist, Strong Aerial Tailspin, Pseudo-Wavedash stay English. The heat lightning follow-up → Blitzschlag.
+
+## Raven
+
+Soulzone (SZN), Backturn (BT, "im BT"), Aqua Spider, G-Clef, Backsway, Sabaki, Escape Parry, Attack Parry stay English. clones → Klone (lilafarbene / goldene Klone); "dickjab" (down jab slang) → Jab aus der Hocke.
+
+## Reina
+
+Sentai (SEN), Heaven's Wrath (WRA / HW), Unsoku (UNS), Raiden, EWGF, EWGK, Electric, Splits Kick, Flash Punch Combo, Neutral Skip stay English. The author (Heavenly) is "er" in the source.
+
+## Asuka
+
+Naniwa Gusto (NWG), Destabilizer, Sabaki, Reversal, Install stay English.
+
+## Claudio
+
+Starburst (STB) stays English. round ender → Rundenender.
+
+## Bryan
+
+Snake Eyes (SNE), Slither Step (SLS), Sway (SWA), Backsway, Taunt, Snake Edge, Blue Spark stay English.
+
+## Yoshimitsu
+
+NSS, KIN (Kincho), DGF (Dragonfly), IND (Indian), FLE (Flea), BDS / Bad Breath, Flash, Manji Spin, Hopknee, Flashing Steel, Okizeme, Gimmick stay English. frog jump → Froschsprung; turtle → turteln.

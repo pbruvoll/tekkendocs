@@ -305,3 +305,86 @@ The author's gender is not stated: avoid gendered first-person verbs ("میرا 
 | Betrayer / wipe the floor / butterfly loops | بیٹریئر / وائپ دی فلور / بٹر فلائی لوپس |
 
 The guide authors' genders (Landon D, Lalo) are not stated: avoid gendered first-person verbs.
+
+## Jin
+
+| English | Urdu |
+| --- | --- |
+| Jin | جن (masculine verbs) |
+| ZEN / ZENSHIN / ZANSHIN | زین (ZEN) / زینشن (ZENSHIN) / زانشن (ZANSHIN) |
+| OMEN moves / Samsara | اومن (OMEN) موووز / سمسارا (Samsara) |
+| B2+4 in prose | بی 2+4 |
+
+## Lars
+
+| English | Urdu |
+| --- | --- |
+| Lars Alexandersson | لارس الیگزینڈرسن |
+| Silent / Dynamic / Limited Entry | سائلنٹ انٹری / ڈائنامک انٹری / لمیٹڈ انٹری; in prose سین / ڈین / لین |
+| Rebellion / Lightning Screw | ربیلین / لائٹننگ اسکرو |
+| 16+ frames | 16 یا اس سے زیادہ فریم (no trailing +) |
+| "2, 1" at a cell start | یہ دو، ایک والی موو |
+
+## Raven
+
+| English | Urdu |
+| --- | --- |
+| Raven | ریون (masculine verbs) |
+| Soulzone (SZN) | سول زون |
+| backturn (BT) | بیک ٹرن |
+| clones (purple / gold) | کلونز (جامنی / سنہری) |
+| escape parry / attack parry | ایسکیپ پیری / اٹیک پیری |
+| Aqua Spider / G-Clef | ایکوا اسپائیڈر / جی کلیف |
+| teleport | ٹیلی پورٹ |
+| +13g, -0 | پلس 13 (جی), صفر |
+
+Multi-line cells: the build only checks the first line, so check that every line starts with Urdu (each line is its own paragraph).
+
+## Reina
+
+| English | Urdu |
+| --- | --- |
+| Reina | رینا (feminine verbs) |
+| Sentai (SEN) / Heaven's Wrath (WRA) / Unsoku (UNS) | سینتائی / ہیونز ریتھ / انسوکو |
+| Raiden / Electric War God Kick | رائیڈن / الیکٹرک وار گاڈ کک |
+| EWGK / EWGF / PEWGF in prose | ای ڈبلیو جی کے / ای ڈبلیو جی ایف / پی ای ڈبلیو جی ایف |
+| i12, i13 in prose | آئی 12, آئی 13 |
+
+The Reina author (Heavenly) is "he" in the source: masculine plural of respect (رکھتے ہیں).
+
+## Asuka
+
+| English | Urdu |
+| --- | --- |
+| Asuka | آسوکا (feminine verbs) |
+| Naniwa Gusto (NWG) | نانیوا گسٹو |
+| destabilizer | ڈی اسٹیبلائزر |
+
+## Claudio
+
+| English | Urdu |
+| --- | --- |
+| Claudio | کلاڈیو (masculine verbs) |
+| Starburst (STB) | اسٹاربرسٹ |
+
+## Bryan
+
+| English | Urdu |
+| --- | --- |
+| Bryan | برائن (masculine verbs) |
+| Snake Eyes / Slither Step / Sway | اسنیک آئیز / سلیدر اسٹیپ / سوے |
+| taunt | ٹانٹ |
+| snake edge / blue spark | اسنیک ایج / بلیو اسپارک |
+| qcf / qcb at a cell start | کیو سی ایف (qcf) / کیو سی بی (qcb) |
+
+## Yoshimitsu
+
+| English | Urdu |
+| --- | --- |
+| Yoshimitsu / Yoshi | یوشیمتسو / یوشی |
+| NSS / DGF / IND / KIN / FLE in prose | این ایس ایس / ڈی جی ایف / فلی (Flea), Latin abbreviations in brackets on first use |
+| Flash / Manji Spin / Bad Breath | فلیش / مانجی اسپن / بیڈ بریتھ |
+| hopknee | ہاپ نی (گھٹنے والی چھلانگ) |
+| okizeme | اوکیزیمے |
+| flashing steel | فلیشنگ اسٹیل |
+| i10, i13 line starts | آئی 10, آئی 13 |

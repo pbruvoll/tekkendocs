@@ -167,3 +167,35 @@ RAIJIN/RAI, FUJIN/FUJ, Warrior Instinct, omen, hellsweep, wavedash, EWGF, spike 
 ## Nina
 
 backsway, Hayashida step, butterfly loop, Betrayer, wipe the floor stay English. chain throws → zincir throw'lar; guns → silah atışları; Williams sisters → Williams kardeşler.
+
+## Jin
+
+ZEN (ZENSHIN / ZANSHIN), OMEN hareketleri, Samsara, electric, Hellsweep stay English ("ZEN stance'i", "ZEN'e geçer").
+
+## Lars
+
+Silent / Dynamic / Limited Entry (SEN / DEN / LEN), Rebellion, Lightning screw, backswing blow, Deathfist, Strong Aerial Tailspin stay English. pseudo mixup → sahte mixup; the heat lightning follow-up → yıldırım.
+
+## Raven
+
+Soulzone (SZN), Aqua Spider, G-Clef, backsway, sabaki, escape parry, attack parry stay English; BT → sırtı dönük / BT ("BT'ye geçer"). clones → klonlar (mor / altın); teleport → ışınlanmak; "dickjab" → çömelerek atılan jab.
+
+## Reina
+
+Sentai (SEN), Heaven's Wrath (WRA / HW), Unsoku (UNS), Raiden, EWGF, EWGK, Electric, splits kick, flash punch combo stay English. pancake flip → pankek gibi çevirmek.
+
+## Asuka
+
+Naniwa Gusto (NWG), destabilizer, sabaki, reversal, install stay English.
+
+## Claudio
+
+Starburst (STB) stays English. round ender → round bitirici.
+
+## Bryan
+
+Snake Eyes (SNE), Slither Step (SLS), Sway (SWA), backsway, taunt, snake edge, blue spark stay English.
+
+## Yoshimitsu
+
+NSS, KIN (Kincho), DGF (Dragonfly), IND (Indian), FLE (Flea), BDS / Bad Breath, Flash, Manji Spin, hopknee, flashing steel, okizeme stay English. gimmick → numara; frog jump → kurbağa zıplaması; teleport → ışınlanmak.

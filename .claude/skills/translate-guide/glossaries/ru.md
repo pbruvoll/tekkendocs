@@ -308,3 +308,72 @@ Landon D's gender is not stated: avoid gendered past tense ("у меня ушл�
 | guns (gun moves) | выстрелы | |
 
 Lalo's gender is not stated: avoid gendered past tense.
+
+## Jin
+
+| English | Russian | Note |
+| --- | --- | --- |
+| Jin | Дзин (gen. Дзина) | Поливанов, as in the Kazuya section |
+| ZEN, ZENSHIN, ZANSHIN, OMEN, Samsara | in Latin, "стойка ZEN", "OMEN-удары" | |
+
+## Lars
+
+| English | Russian | Note |
+| --- | --- | --- |
+| Lars Alexandersson | Ларс Александерсон (gen. Ларса) | |
+| SEN / DEN / LEN, Rebellion, Lightning screw, Backswing blow | in Latin | |
+| pseudo wavedash | псевдо-вейвдеш | |
+
+## Raven
+
+| English | Russian | Note |
+| --- | --- | --- |
+| Raven | Рейвен (gen. Рейвена) | |
+| backturn (BT) | спиной ("стоит спиной", "из положения спиной") | as for Kunimitsu / Xiaoyu |
+| Soulzone (SZN), Aqua Spider, G-Clef, escape parry | in Latin | |
+| attack parry | атакующее парирование | |
+| clones | клоны (фиолетовые / золотые) | |
+| teleport | телепорт, телепортироваться | |
+
+## Reina
+
+| English | Russian | Note |
+| --- | --- | --- |
+| Reina | Рейна (gen. Рейны) | glossary above |
+| Sentai (SEN), Heaven's Wrath (WRA), Unsoku (UNS), Raiden, EWGK | in Latin | |
+| splits kick | сплит-кик | |
+| floor blast / floor break | пробивание пола | |
+
+The Reina author (Heavenly) is "he" in the source: masculine forms are fine there.
+
+## Asuka
+
+| English | Russian | Note |
+| --- | --- | --- |
+| Asuka | Асука (gen. Асуки) | glossary above |
+| Naniwa Gusto (NWG), destabilizer | in Latin | |
+
+## Claudio
+
+| English | Russian | Note |
+| --- | --- | --- |
+| Claudio | Клаудио (indeclinable) | |
+| Starburst (STB) | in Latin | |
+
+## Bryan
+
+| English | Russian | Note |
+| --- | --- | --- |
+| Bryan | Брайан (gen. Брайана) | glossary above |
+| Snake Eyes, Slither Step, Sway, snake edge | in Latin | |
+| taunt | таунт | |
+| blue spark | синяя искра (blue spark) | |
+
+## Yoshimitsu
+
+| English | Russian | Note |
+| --- | --- | --- |
+| Yoshimitsu / Yoshi | Ёсимицу / Ёси | glossary above |
+| NSS, KIN, DGF, IND, FLE, BDS / Bad Breath, Flash, Manji Spin, flashing steel | in Latin | |
+| hopknee | хопни (прыжок с коленом) | |
+| turtle (player) | «черепаха» | as for Dragunov |
