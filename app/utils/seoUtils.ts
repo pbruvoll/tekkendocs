@@ -12,6 +12,12 @@ type GenerateMetaTagsOptions = {
   description: string;
 };
 
+const defaultImage = {
+  url: '/images/tekkendocs-og-image-v3.jpg',
+  width: 1200,
+  height: 630,
+};
+
 export const generateMetaTags = ({
   title: titleOption,
   description: descriptionOption,
@@ -28,8 +34,8 @@ export const generateMetaTags = ({
   const description =
     descriptionOption ||
     'Frame data and resources for leveling up your skills in Tekken';
-  const imageUrl =
-    origin + (image ? image?.url : '/images/tekkendocs-og-image-v2.png');
+  const imagePath = image ? image.url : defaultImage.url;
+  const imageUrl = origin + imagePath;
   const tags = [
     { title },
     {
@@ -51,6 +57,19 @@ export const generateMetaTags = ({
     { property: 'twitter:description', content: description },
     { property: 'twitter:image', content: imageUrl },
   ];
+
+  if (imagePath === defaultImage.url) {
+    tags.push(
+      {
+        property: 'og:image:width',
+        content: defaultImage.width.toString(),
+      },
+      {
+        property: 'og:image:height',
+        content: defaultImage.height.toString(),
+      },
+    );
+  }
 
   const pageUrl = origin + (urlOption || url.pathname);
 

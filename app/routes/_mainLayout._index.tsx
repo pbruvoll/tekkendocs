@@ -20,7 +20,7 @@ export const meta: MetaFunction = ({ matches }) => {
     matches,
     description:
       'Frame data and resources for leveling up your skills in Tekken',
-    image: { url: '/images/tekkendocs-og-image-v2.png' },
+    image: { url: '/images/tekkendocs-og-image-v3.jpg' },
     title: 'TekkenDocs - Frame data and resources for Tekken',
     url: '',
   });

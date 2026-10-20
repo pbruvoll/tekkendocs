@@ -12,7 +12,7 @@ export const meta: MetaFunction = ({ matches }) => {
     matches,
     title: 'TekkenDocs | Flash cards',
     description: 'Flash cards for Tekken 8',
-    image: { url: `/images/tekkendocs-og-image-v2.png` },
+    image: { url: `/images/tekkendocs-og-image-v3.jpg` },
     url: `/t8/flashcard`,
   });
 };

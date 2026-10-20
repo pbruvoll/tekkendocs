@@ -21,7 +21,7 @@ export const meta: MetaFunction = ({ matches }) => {
     matches,
     title,
     description,
-    image: { url: '/images/tekkendocs-og-image-v2.png' },
+    image: { url: '/images/tekkendocs-og-image-v3.jpg' },
     url: `/t8/search`,
   });
 };
