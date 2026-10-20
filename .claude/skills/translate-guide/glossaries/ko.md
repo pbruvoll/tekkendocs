@@ -326,3 +326,82 @@ Sources: [철권8 마이너 갤러리 — 레오 금계](https://gall.dcinside.c
 | Williams sisters | 윌리엄스 자매 | |
 
 Sources: [철권 교실 — 로우](https://www.tekkenclass.com/characters/law/move/), [철권 교실 — 니나](https://www.tekkenclass.com/characters/nina/move/)
+
+## Jin
+
+| English | Korean | Note |
+| --- | --- | --- |
+| Jin Kazama | 진 | |
+| ZEN stance | 전심 자세(ZEN) | 철권 교실 진 기술 목록 (전심 중 LP); ZENSHIN / ZANSHIN (the two ways in) stay Latin |
+| electric (CD.df+2) | 최풍 | glossary above |
+| hellsweep (CD.df+4) | 나락 | Mishima-style, as for Kazuya |
+| OMEN moves, Samsara | keep English | |
+
+## Lars
+
+| English | Korean | Note |
+| --- | --- | --- |
+| Lars Alexandersson | 라스 알렉산데르손 | |
+| Dynamic / Silent / Limited Entry (DEN / SEN / LEN) | 다이내믹 엔트리 / 사일런트 엔트리 / 리미티드 엔트리 | 철권 교실 uses DE / SE / LE only; transliteration |
+| Lightning Screw | 라이트닝 스크류 | unverified |
+| pseudo wavedash | 유사 웨이브 대시 | not 풍신스텝, Lars is not a Mishima |
+| Rebellion | keep English | |
+
+## Raven
+
+| English | Korean | Note |
+| --- | --- | --- |
+| Raven | 레이븐 | |
+| backturn (BT) | 뒤돈 자세 | 철권 교실 move-list legend |
+| Soulzone (SZN) | 소울존 | transliteration, unverified (the 철권 교실 Raven page did not load) |
+| clones | 분신 | gold / purple clones → 금색 / 보라색 분신 |
+| escape parry / attack parry | 회피 패링 / 공격 패링 | descriptive |
+| Aqua Spider, G-Clef | keep English | |
+
+## Reina
+
+| English | Korean | Note |
+| --- | --- | --- |
+| Reina | 레이나 | |
+| Sentai (SEN) / Unsoku (UNS) / Heaven's Wrath (WRA) | 선체 / 운족 / 금강벽 | 철권 교실 레이나 기술 목록 (旋体, 運足, 金剛壁; 금강벽 is entered with 2AP = d+1+2) |
+| Wind God Step (WDS, f,n) | 풍족 | same source (風足) |
+| 1,1,2 (flash punch combo) | 섬광열권 | same source (섬광열권~선체) |
+| EWGK, Raiden | keep English | |
+
+Sources: [철권 교실 — 진](https://www.tekkenclass.com/characters/jin/move/), [철권 교실 — 라스](https://www.tekkenclass.com/characters/lars/move/), [철권 교실 — 레이나](https://www.tekkenclass.com/characters/reina/move/)
+
+## Asuka
+
+| English | Korean | Note |
+| --- | --- | --- |
+| Asuka Kazama | 아스카 | |
+| Naniwa Gusto (NWG) | 나니와의 기염 | 철권 교실 아스카 기술 목록 (filter label 나니와의기염) |
+| destabilizer | destabilizer(자세 무너뜨리기) | descriptive, no Korean source found |
+
+## Claudio
+
+| English | Korean | Note |
+| --- | --- | --- |
+| Claudio Serafino | 클라우디오 | |
+| Starburst (STB) | 스타버스트 | transliteration, unverified: 철권 교실 notes keep the English "Starburst" |
+
+## Bryan
+
+| English | Korean | Note |
+| --- | --- | --- |
+| Bryan Fury | 브라이언 | |
+| Snake Eyes (SNE) / Slither Step (SLS) / Sway (SWA) | 스네이크 아이 / 슬리더 스텝 / 스웨이 | 철권 교실 브라이언 기술 목록 (스네이크 아이 중, 슬리더 스텝 중, 스웨이 중) |
+| taunt | 도발 | |
+| snake edge | 스네이크 엣지 | unverified |
+
+## Yoshimitsu
+
+| English | Korean | Note |
+| --- | --- | --- |
+| Yoshimitsu | 요시미츠 | |
+| No Sword Stance (NSS) / Kincho (KIN) / Dragonfly (DGF) | 무도의 극 / 금타 / 만잠자리 | 철권 교실 요시미츠 기술 목록 stance filter (무도의극, 금타, 만잠자리) |
+| Indian (IND) / Flea (FLE) / Bad Breath (BDS) | 만자앉기 / 지뢰인 / 독무 | same source (지뢰인 중 LK lists "Alternate input: FLE.4"; 독무 중 LP lists "BDS.4") |
+| Flash (1+4) / Manji Spin | 플래시 / 만지 스핀 | transliterations, unverified |
+| flashing steel | keep English | |
+
+Sources: [철권 교실](https://www.tekkenclass.com/characters/asuka/move/), [철권 교실](https://www.tekkenclass.com/characters/bryan/move/), [철권 교실](https://www.tekkenclass.com/characters/yoshimitsu/move/)

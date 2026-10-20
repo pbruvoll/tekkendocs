@@ -235,6 +235,14 @@ export const translatedGuidesT8: string[] = [
   'law',
   'leroy',
   'heihachi',
+  'jin',
+  'lars',
+  'raven',
+  'reina',
+  'asuka',
+  'claudio',
+  'bryan',
+  'yoshimitsu',
 ];
 
 export const siteUrl = 'https://tekkendocs.com';

@@ -7,8 +7,7 @@ export const ja: GuideTexts = {
     `鉄拳8の${character}の重要な情報をまとめた攻略です。主力技、確定反撃、コンボを覚えて、キャラクターの使い方を素早く身につけましょう。`,
   pageHeading: ({ character, season }) =>
     `${character} 鉄拳8 シーズン${season} 攻略`,
-  translationNotice:
-    'このガイドは自動翻訳されたもので、内容が正確でない場合があります。',
+  translationNotice: '英語から自動翻訳されています。',
   sections: {
     aboutTheAuthor: '筆者について',
     introduction: 'はじめに',

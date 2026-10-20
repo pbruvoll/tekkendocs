@@ -8,8 +8,8 @@ export const GuideTranslationNotice = () => {
     return null;
   }
   return (
-    <p className="flex w-fit items-center gap-3 rounded-md border border-primary/40 bg-primary/15 px-4 py-3 text-sm">
-      <Languages aria-hidden className="size-5 shrink-0 text-primary" />
+    <p className="flex w-fit items-center gap-1.5 text-xs text-muted-foreground">
+      <Languages aria-hidden className="size-3.5 shrink-0" />
       {texts.translationNotice}
     </p>
   );

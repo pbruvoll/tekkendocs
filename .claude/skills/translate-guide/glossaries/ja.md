@@ -359,3 +359,81 @@ Sources: [電ファミニコゲーマー — 平八](https://news.denfaminicogam
 | Williams sisters | ウィリアムズ姉妹 | |
 
 Sources: [Game Watch — 鉄拳6 ニーナ](https://game.watch.impress.co.jp/docs/20090311/tk6_br3c.htm)
+
+## Jin
+
+| English | Japanese | Note |
+| --- | --- | --- |
+| Jin Kazama | 仁 | |
+| ZEN stance | 残心の構え（ZEN） | 鉄拳8 初心者向け攻略wiki 仁 (特殊構えの残心); ZENSHIN / ZANSHIN (the two ways in) stay Latin |
+| electric (CD.df+2) | 最風 | same source (仁版最風) |
+| hellsweep (CD.df+4) | 奈落 | same source (仁奈落) |
+| OMEN moves, Samsara | keep English | |
+
+## Lars
+
+| English | Japanese | Note |
+| --- | --- | --- |
+| Lars Alexandersson | ラース・アレクサンダーソン | |
+| Dynamic / Silent / Limited Entry (DEN / SEN / LEN) | ダイナミックエントリー / サイレントエントリー / リミテッドエントリー | 鉄拳8 初心者向け攻略wiki ラース (DE(ダイナミックエントリー), SE(サイレントエントリー)) |
+| Lightning Screw | ライトニングスクリュー | katakana, unverified |
+| hellsweep (non-Mishima) | ヘルスイープ | 奈落 is Mishima-only |
+
+## Raven
+
+| English | Japanese | Note |
+| --- | --- | --- |
+| Raven | レイヴン | |
+| Soulzone (SZN) | ソウルフィールド | official JP name (inside-games, 鉄拳8 初心者向け攻略wiki レイヴン) |
+| backturn (BT) | 背向け | same wiki |
+| clones | 分身 | same wiki (分身攻撃) |
+| escape parry / attack parry | 回避捌き / 攻撃捌き | descriptive |
+| Aqua Spider, G-Clef | keep English | |
+
+## Reina
+
+| English | Japanese | Note |
+| --- | --- | --- |
+| Reina | レイナ | |
+| Sentai (SEN) / Unsoku (UNS) / Heaven's Wrath (WRA) | 旋体 / 運足 / 金剛壁 | kanji from 철권 교실 (the Korean site lists the Japanese names) |
+| Wind God Step (WDS) | 風足 | same source |
+| 1,1,2 (flash punch combo) | 閃光烈拳 | same source |
+| EWGK, Raiden | keep English | |
+
+Sources: [鉄拳8 初心者向け攻略wiki — 仁](https://seesaawiki.jp/tekken8kouryaku/d/%BF%CE), [同 — ラース](https://seesaawiki.jp/tekken8kouryaku/d/%A5%E9%A1%BC%A5%B9), [同 — レイヴン](https://seesaawiki.jp/tekken8kouryaku/d/%A5%EC%A5%A4%A5%F4%A5%F3), [inside-games — レイヴン参戦](https://www.inside-games.jp/article/2023/08/07/147680.html), [철권 교실 — 레이나](https://www.tekkenclass.com/characters/reina/move/)
+
+## Asuka
+
+| English | Japanese | Note |
+| --- | --- | --- |
+| Asuka Kazama | 飛鳥 | |
+| Naniwa Gusto (NWG) | 浪花の気焔 | 鉄拳8 初心者向け攻略wiki 飛鳥 (the page also writes 浪速の気焔) |
+| destabilizer | destabilizer（崩れ） | descriptive |
+
+## Claudio
+
+| English | Japanese | Note |
+| --- | --- | --- |
+| Claudio Serafino | クラウディオ | |
+| Starburst (STB) | スターバースト | 鉄拳8 初心者向け攻略wiki クラウディオ |
+
+## Bryan
+
+| English | Japanese | Note |
+| --- | --- | --- |
+| Bryan Fury | ブライアン | |
+| Snake Eyes (SNE) / Sway (SWA) / taunt | スネークアイ / スウェー / 挑発 | 鉄拳8 初心者向け攻略wiki ブライアン |
+| Slither Step (SLS) / snake edge | スリザーステップ / スネークエッジ | katakana, unverified |
+
+## Yoshimitsu
+
+| English | Japanese | Note |
+| --- | --- | --- |
+| Yoshimitsu | 吉光 | |
+| No Sword Stance (NSS) / Kincho (KIN) / Dragonfly (DGF) | 納刀 / 金打 / 卍蜻蛉 | 鉄拳8 初心者向け攻略wiki 吉光 |
+| Bad Breath (BDS) | 毒霧（Bad Breath） | kanji from the Korean 독무, unverified |
+| Indian (IND) / Flea (FLE) | keep English + の構え | no Japanese source found |
+| Flash (1+4) / Manji Spin | フラッシュ / 卍スピン | unverified |
+| flashing steel | keep English | |
+
+Sources: [鉄拳8 初心者向け攻略wiki — 飛鳥](https://seesaawiki.jp/tekken8kouryaku/d/%C8%F4%C4%BB), [同 — クラウディオ](https://seesaawiki.jp/tekken8kouryaku/d/%A5%AF%A5%E9%A5%A6%A5%C7%A5%A3%A5%AA), [同 — ブライアン](https://seesaawiki.jp/tekken8kouryaku/d/%A5%D6%A5%E9%A5%A4%A5%A2%A5%F3), [同 — 吉光](https://seesaawiki.jp/tekken8kouryaku/d/%B5%C8%B8%F7)
