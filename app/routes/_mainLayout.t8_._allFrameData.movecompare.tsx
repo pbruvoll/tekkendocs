@@ -42,7 +42,7 @@ export const meta: MetaFunction = ({ matches, location }) => {
     title,
     description:
       'Compare two Tekken 8 moves side by side: video, startup, block and hit frames, damage, hit level and more.',
-    image: { url: '/images/tekkendocs-og-image-v2.png' },
+    image: { url: '/images/tekkendocs-og-image-v3.jpg' },
     url: '/t8/movecompare',
   });
 };
