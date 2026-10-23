@@ -1,41 +1,5 @@
 #frames_normal
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes
-3;h;30;i17;-14;KND;;
-4;h;24;i13;-5;+6;JG;
-f+1;h;8;i10;+1;+8;;
-f,F+3;m;21;i15;-9;+1;+9;
-db+1;sm;6;i10;-5;+6;;"* Alternate input: d+1
-* High crush
-* Recovers crouching"
-d+2;sm;9;i11;-4;+7;;"* High crush
-* Recovers crouching"
-d+3;l;14;i18;-16;-2;;"* High crush
-* Recovers crouching"
-d+4;l;8;i14;-11c;+0;;"* High crush
-* Recovers crouching"
-FC.db+1;sm;6;i10;-5;+6;;"* Alternate input: d+1
-* High crush
-* Recovers crouching"
-FC.db+2;sm;9;i11;-4;+7;;"* Alternate input: d+2
-* High crush
-* Recovers crouching"
-FC.3;l;14;i18;-16;-2;;"* High crush
-* Recovers crouching"
-FC.db+4;l;12;i14;-11;+0;;"* Alternate input: d+4
-* High crush
-* Recovers crouching"
-ws1;m;14;i10~11;-4~-3;+7~+8;;
-ws3;m;33;i16;-16;KND;;
-ws4;m;24;i11;-6;+5;;
-u+1;m;14;i18;-8;+3;;"* Alternate input: uf+1
-* Low crush"
-ub+3;m;30;i23;-19;KND;;"* Alternate input: u+3
-* Low crush"
-SS.1;h;8;i10;+1;+8;;
-SS.3;h;30;i17;-14;KND;;
-SS.4;h;24;i13;-5;+6;JG;
-BT.1;h;18;i8;-8;+3;;Alternate input: 2
-BT.4;h;30;i10;-8;KND;;
 1;h;8;i10;+1;+8;;
 1,2;h, h;8, 18;;-1;+6;;
 1,2,2+4;h, h, t;8, 18, 30;;;;;
@@ -50,6 +14,7 @@ BT.4;h;30;i10;-8;KND;;
 1+2,3;m, h;21, 30;;-3;KND;;
 1+4;!;30;i52~56;KND;KND;;Recovers grounded
 BT.1+4;!;36;i41~45;KND;KND;;Recovers grounded
+f+1;h;8;i10;+1;+8;;
 f+2;h;14;i15;-3;+3;;
 f+2,2;h, h;14, 16;;-3;+6;;
 f+2,2,1;h, h, h;14, 16, 27;;-7;KND;;
@@ -89,6 +54,8 @@ d+1;sm;6;i10;-5;+6;;"* Alternate input: FC.d+1
 * Recovers crouching"
 d+1,n+2;sm, m;6, 15;;-11~-10;+0~+1;;High crush
 d+1+2;m;30;i30~34;-8~-4;+0~+4c;;
+d+2;sm;9;i11;-4;+7;;"* High crush
+* Recovers crouching"
 d+3+4;l;16;i16;-29;-13 (-18);;"* Alternate input: FC.df+4
 * High crush
 * Recovers crouching"
@@ -100,8 +67,15 @@ d+3+4,4*d;l;16, 8, 8;;-29;+12;;"* High crush
 * Recovers crouching"
 d+3+4,4*df;l;16, 8, 8, 4, 3;;-35;+15;;"* High crush
 * Recovers crouching"
+d+3;l;14;i18;-16;-2;;"* High crush
+* Recovers crouching"
+d+4;l;8;i14;-11c;+0;;"* High crush
+* Recovers crouching"
 ALI.2;l, m;16, 12;;-15;KND;;"* From any hit
 * High crush"
+db+1;sm;6;i10;-5;+6;;"* Alternate input: d+1
+* High crush
+* Recovers crouching"
 db+2;m;25;i25;-5c;KND;;Bound
 db+3;l;20;i23;-16;+2c;KND;"* High crush
 * Recovers crouching"
@@ -122,7 +96,11 @@ ub;m;42;i48~52;-18~-14c;KND;;"* Alternate input: u or uf+2
 * Recovers grounded"
 uf+3;m, m;30 (21);i22~26;-10~-6;KND;;"* Low crush
 * Recovers grounded"
+ub+3;m;30;i23;-19;KND;;"* Alternate input: u+3
+* Low crush"
 ub+4;m;13;i15;-19;-8;KND;Low crush
+u+1;m;14;i18;-8;+3;;"* Alternate input: uf+1
+* Low crush"
 u+4;m;18;i15;-12;KND;JG;Low crush
 uf+4;m;15;i15;-12;JG;;Low crush
 uf+1+2;m;42;i35~60;+2c;KND;;Low crush
@@ -133,6 +111,7 @@ f,F+1;m;27;i22;-5;KND;;
 f,F+2;m;22;i31;+2c;+4c;;
 f,F+2,b;;;;;;;
 f,F+2,1;h;22, 30;;+2;KND;;
+f,F+3;m;21;i15;-9;+1;+9;
 f,F+4;m;28;i15;-15;KND;;Hit throw
 f,F+1+2;h;18;i20~39;-5~+14;KND;;Low crush
 f,F+1+2;l;18;i40~43;-25~-22;KND;;Low crush
@@ -147,16 +126,24 @@ f,f,n+1+2;m;0;i9;+2;+5;+16;
 f,f,F+3+4;m;48;i28~30;+17~+19g;KND;;"* Alternate input: f,f,F+3+4
 * Low crush
 * Recovers grounded"
+ws1;m;14;i10~11;-4~-3;+7~+8;;
 ws2;m;24;i15~16;-9~-8;+8~+9;KND;
 ws1+2;m;21;i18;-10;JG;;
+ws3;m;33;i16;-16;KND;;
+ws4;m;24;i11;-6;+5;;
 FC.df+1;l;24;i30;-9;KND;;"* High crush
 * Recovers crouching"
 FC.df+2;m;25;i15;-14;KND;;
+SS.1;h;8;i10;+1;+8;;
 SS.2;h;36;i18;-5;KND;;
 SS.3+4;h;64;i27~31;-9~-5;KND;;"* Low crush
 * Recovers grounded"
+SS.3;h;30;i17;-14;KND;;
+SS.4;h;24;i13;-5;+6;JG;
 BT.1+2;h!;60;i27~29;KND;KND;;
+BT.1;h;18;i8;-8;+3;;Alternate input: 2
 BT.3;m;18;i13;-17;+7;KND;
+BT.4;h;30;i10;-8;KND;;
 BT.d+4;l;24;i22~24;-17~-15;KND;;"* Low crush
 * Recovers crouching"
 3+4;;;;;;;Low crush
@@ -185,10 +172,23 @@ JSS.2+3;m;36;;-10~+6;-13~+3c;;"* Low crush
 f,n,d,df;;;;;;;Recovers crouching
 f,n,d,df~1;l;24;i30;-9;KND;;"* High crush
 * Recovers crouching"
+3;h;30;i17;-14;KND;;
 f,n,d,df~4;m;25;i15;-9;+22 (KND);;Low crush
 f,n,d,df~1+2;m;28;i20~22;-12~-10c;KND;JG;
 f,n,d,df~2+3;t;25;i12;;Throw;;
 f,n,d,df~1+4;t;20;i12;;Throw;;
+4;h;24;i13;-5;+6;JG;
+FC.3;l;14;i18;-16;-2;;"* High crush
+* Recovers crouching"
+FC.db+1;sm;6;i10;-5;+6;;"* Alternate input: d+1
+* High crush
+* Recovers crouching"
+FC.db+2;sm;9;i11;-4;+7;;"* Alternate input: d+2
+* High crush
+* Recovers crouching"
+FC.db+4;l;12;i14;-11;+0;;"* Alternate input: d+4
+* High crush
+* Recovers crouching"
 #stances
 Code;Stance
 ALI;Ali Kicks

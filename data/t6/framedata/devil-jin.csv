@@ -1,35 +1,5 @@
 #frames_normal
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes
-3;h;19;i14;-14;-3;;
-4;h;25;i16;-14;KND;;
-f+1;h;8;i10;+1;+8;;
-f,F+1;h;8;i10;+1;+8;;
-db+1;sm;6;i10;-5;+6;;"* High crush
-* Recovers crouching"
-d+2;sm;9;i11;-4;+7;;"* High crush
-* Recovers crouching"
-db+3;l;14;i16;-17;-3;;"* High crush
-* Recovers crouching"
-db+4;l;8;i12;-13;-2;;"* Alternate input: d+4
-* High crush
-* Recovers crouching"
-FC.1;sm;6;i10;-5;+6;;"* High crush
-* Recovers crouching"
-FC.2;sm;9;i11;-4;+7;;"* High crush
-* Recovers crouching"
-FC.3;l;14;i16;-17;-3;;"* High crush
-* Recovers crouching"
-FC.4;l;12;i12;-15;-4;;"* High crush
-* Recovers crouching"
-ws3;h;33;i16;-16;KND;;
-df+2;m;18;i15;-7;+4;JG;
-u+2;h;20;i15;-12;+9;;Alternate input: uf+2
-ub+3;m;30;i21;-17;KND;;"* Alternate input: uf+3+4 or u+3 or uf+3+4
-* Low crush"
-ub+4;m;13;i15;-12;-1;KND;Low crush
-SS.1;h;8;i10;+1;+8;;
-SS.3;h;19;i14;-14;-3;;
-SS.4;h;25;i16;-14;KND;;
 1;h;8;i10;+1;+8;;
 1,1;h, h;8, 7;;-1;+8;;
 1,1,2;h, h, m;8, 7, 14;;-17;KND;;
@@ -43,12 +13,14 @@ SS.4;h;25;i16;-14;KND;;
 1,2,4~1;h, h, sm, h;8, 9, 6, 6;;-6;+3;;
 2;h;12;i10;+0;+9;;
 2,2;h, h;12, 21;;-13;-2;;
+3;h;19;i14;-14;-3;;
 4~3;m;25;i32;-7c;KND;;Low crush
 1+2;h!;48;i39;KND;KND;;
 1+4;sm, h;6, 6;i12;-6;+3;;
 1+4,2;sm, h, h;6, 6, 12;;-7;+4;;
 1+4,2,4;sm, h, h, m;6, 6, 12, 25;;-11~-10;+4~+5c;;
 1+4,2,d+4;sm, h, h, l;6, 6, 12, 16;;-26;KND;;High crush
+f+1;h;8;i10;+1;+8;;
 f+2;m;21;i17~18;-10~-9;+8~+9c;;
 f+2,4;m, m;21, 12;;-10;-1;KND;
 f+3;h;36;i21;-5;KND;;
@@ -59,6 +31,7 @@ f+4,3,u;m, m;12, 18;;-15;KND;;"* Low crush
 * Transition to FLY"
 df+1;m;13;i13;-3;+8;;
 df+1,2;m, m;13, 18;;-8;+3;;Bound
+df+2;m;18;i15;-7;+4;JG;
 df+3;m;12;i16;-9;+2;;
 df+3,2;m, m;12, 9;;-13;-7;;
 df+3,2,4;m, m, m;12, 9, 19;;-31;JG;;Low crush
@@ -69,9 +42,18 @@ df+4,4;m, m;12, 19;;-15~-14;-4~-3c;;
 df+1+2;m;25;i20;-4;+7c;KND;"* Recovers crouching
 * Bound"
 d+1;m;24;i18;-10;KND;;High crush
+d+2;sm;9;i11;-4;+7;;"* High crush
+* Recovers crouching"
 d+3;l;16;i18;-12;-1;+7c;
 d+3+4;m, m;6, 24;i15;-15;JG;;Low crush
+db+1;sm;6;i10;-5;+6;;"* High crush
+* Recovers crouching"
 db+2;l;19;i22;-12;+5c;;"* High crush
+* Recovers crouching"
+db+3;l;14;i16;-17;-3;;"* High crush
+* Recovers crouching"
+db+4;l;8;i12;-13;-2;;"* Alternate input: d+4
+* High crush
 * Recovers crouching"
 b+1;h;12;i12;-6;+5;;
 b+1,2;h, m;12, 21;;-12;KND;;
@@ -91,6 +73,7 @@ B+1+2;m;50;i103;+17g;KND;;
 b+1+4;!;36;i43;JG;JG;;
 b~1+4;!;72;i63;JG;JG;;
 ub+2;h;26;i20;-4;KND;;
+u+2;h;20;i15;-12;+9;;Alternate input: uf+2
 u+4;m;24;i20;-38;JG;;Low crush
 u+4,u;m;24;i20;-25;JG;;"* Low crush
 * Transition to FLY"
@@ -99,8 +82,12 @@ uf+3;m;25;i28;+3c;+7c;KND;"* Low crush
 uf+4;m;25;i18;-8;KND;;Low crush
 ub;!;32;i18;KND;KND;;Alternate input: u or uf+1+2
 ub+2+4;m;30;i56;-3;KND;;Low crush
+ub+3;m;30;i21;-17;KND;;"* Alternate input: uf+3+4 or u+3 or uf+3+4
+* Low crush"
+ub+4;m;13;i15;-12;-1;KND;Low crush
 u+2+4;m;36;i56;-3;KND;;Low crush
 uf+2+4;m;42;i56;-3;KND;;Low crush
+f,F+1;h;8;i10;+1;+8;;
 f,F+2;m;28;i15;-11;KND;;
 f,F+3;m;20;i17;-12;-6;KND;
 f,F+3,1;m, h;20, 13;;+0;+6;;
@@ -120,11 +107,15 @@ f,f,F+3;m;36;i22;+17g;KND;;"* Alternate input: f,f,F+3 or f,n,d,df,uf~3
 ws1;m;14;i13;-6;+5;;
 ws1,2;m, m;14, 16;;-5;+6;;
 ws2;m;20;i15;-12;KND;;
+ws3;h;33;i16;-16;KND;;
 ws4;m;15;i11;-3;+8;;
 ws4,4;m, m;15, 19;;-15~-14;-4~-3c;;
+SS.1;h;8;i10;+1;+8;;
 SS.2;m;30;i17;-22;JG;;
 SS.2,u;m;30 (21, 20);;;KND;;"* On hit
 * Hit throw"
+SS.3;h;19;i14;-14;-3;;
+SS.4;h;25;i16;-14;KND;;
 OTG.d+1+2;L;20;i25;-15;KND;;
 3+4;;;;;;;Low crush
 FLY.1;h;22;;+0;KND;;Low crush
@@ -147,6 +138,15 @@ f,n,d,df;h;27;i13;-6;+10;;"* Fully held
 * Alternate input: 2"
 f,n,d,df+3;m;25;i26;-3c;KND;;Low crush
 f,n,d,df~3;l;25;i33;-18;KND;;High crush
+4;h;25;i16;-14;KND;;
+FC.1;sm;6;i10;-5;+6;;"* High crush
+* Recovers crouching"
+FC.2;sm;9;i11;-4;+7;;"* High crush
+* Recovers crouching"
+FC.3;l;14;i16;-17;-3;;"* High crush
+* Recovers crouching"
+FC.4;l;12;i12;-15;-4;;"* High crush
+* Recovers crouching"
 f,n,d,df+4;l;14;i16;-23;+1c;KND;
 f,n,d,df+4,4;l, m;14, 24;;-16;+2c;;Bound
 #stances

@@ -1,23 +1,5 @@
 #frames_normal
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes
-f+1;h;9;i10;+1;+8;;
-f,F+1;h;9;i10;+1;+8;;
-d+1;sm;6;i10;-5;+6;;"* High crush
-* Recovers crouching"
-FC.1;sm;6;i10;-5;+6;;"* High crush
-* Recovers crouching"
-FC.2;sm;9;i11;-4;+7;;"* High crush
-* Recovers crouching"
-FC.3;l;14;i16;-17;-3;;"* High crush
-* Recovers crouching"
-FC.4;l;12;i12;-15;-4;;"* High crush
-* Recovers crouching"
-ws4;m;18;i11;-5;+6;;
-df+4;m;15;i12;-7;+4;;
-ub+4;m;12;i17;-9;+7;;Low crush
-SS.1;h;9;i10;+1;+8;;
-SS.2;h;12;i12;-6;+5;;
-SS.3;m;18;i14;-12;-1;;
 1;h;9;i10;+1;+8;;
 1,1;h, h;9, 21;;-3;+9;;
 1,2;h, h;9, 12;;-2;+3;;
@@ -31,6 +13,7 @@ SS.3;m;18;i14;-12;-1;;
 4;h;28;i13;-5;KND;;
 1+2;m;25;i33;-9;JG;;"* Low crush
 * Bound"
+f+1;h;9;i10;+1;+8;;
 f+2;m;14;i17;-6;+5;;
 f+2,3;m, h;14, 9;;-8;+4;;Low crush
 f+2,3,f;m, h;14, 9;;-10;+;;Low crush
@@ -49,6 +32,9 @@ df+1,4;m, m;12, 19;;-9;+5c;;
 df+2;m;19;i16;-9;JG (+7);JG;
 df+3;m;18;i16;-12;-2;;
 df+3,3;m, l;18, 19;;-12;+1;;
+df+4;m;15;i12;-7;+4;;
+d+1;sm;6;i10;-5;+6;;"* High crush
+* Recovers crouching"
 d+2;m;20;i24;-14;+2c;;
 d+2,4;m, m;20, 28;;-13;KND;;
 d+3;l;15;i17;-12;-1;;
@@ -89,6 +75,7 @@ ub+3+4,1+2;m, m;30, 24;;-20;JG;;"* Alternate input: BT.3+4,1+2
 * Low crush"
 ub;m;18;i20;-55;-28 (+s);;"* Alternate input: u or uf+3
 * Low crush"
+ub+4;m;12;i17;-9;+7;;Low crush
 uf+3,2;m, m;18, 36;;-14~-12;KND;;Low crush
 uf+3,3+4;m;18;;-;- (+s);;"* Low crush
 * Transition to SBT"
@@ -100,6 +87,7 @@ uf+4,4;m, m;12, 25;;-12~-11c;KND;;"* Low crush
 * Bound"
 u+3+4;m;33;i33;-9;KND;;"* Alternate input: uf+3+4
 * Low crush"
+f,F+1;h;9;i10;+1;+8;;
 f,F+2;m;21;i16~17;-18~-17;KND;;Low crush
 f,F+2,3;m, m;21, 30;;-13;KND;;Low crush
 f,F+3;m;14;i18;-17;-6;;
@@ -137,8 +125,12 @@ CLK.d+3;l;19;;-11;KND;;"* High crush
 ws1+2;m;24;i20;-7;KND;;Recovers crouching
 ws1+2,h;m;28;;-4;KND;;Recovers crouching
 ws1+2,h;m;33;;+0;KND;;Recovers crouching
+ws4;m;18;i11;-5;+6;;
 FC.df+1+2;l, l;12, 19;i23;-11;+5c;;
 FC.df+1+2,1+2;l, l;12, 19;i23;-11;+5c;;Transition to DES
+SS.1;h;9;i10;+1;+8;;
+SS.2;h;12;i12;-6;+5;;
+SS.3;m;18;i14;-12;-1;;
 SS.4;l;18;i17;-12;-1;+7;
 SS.4,1+2;l, h, m;18, 6*4;;-10;+1;;Low crush
 BT.4;m;24;i16;-3;KND;;"* Low crush
@@ -159,6 +151,14 @@ SBT.3;l;20;;-15~-14;+3~+4c;KND;Recovers crouching
 SBT.4;m;26 (5);;-26;JG;;
 d+1+2;;;;;;;"* After specific moves
 * Alternate input: "
+FC.1;sm;6;i10;-5;+6;;"* High crush
+* Recovers crouching"
+FC.2;sm;9;i11;-4;+7;;"* High crush
+* Recovers crouching"
+FC.3;l;14;i16;-17;-3;;"* High crush
+* Recovers crouching"
+FC.4;l;12;i12;-15;-4;;"* High crush
+* Recovers crouching"
 DES.b;;;;;;;Alternate input: f
 DES.d+1+2;;;;;;;Alternate input: db
 DES.b+3+4;;;;;;;"* Alternate input: b,b or ub,b

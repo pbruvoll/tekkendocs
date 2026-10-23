@@ -1,28 +1,5 @@
 #frames_normal
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes
-f+4;h;25;i18;-7;KND;;
-f,F+1;h;12;i13;-8;+3;;
-d+1;sm;6;i10;-5;+6;;"* High crush
-* Recovers crouching"
-db+3;l;14;i16;-17;-3;;"* High crush
-* Recovers crouching"
-d+4;l;8;i12;-13;-2;;High crush
-FC.1;sm;6;i10;-5;+6;;"* High crush
-* Recovers crouching"
-FC.2;sm;9;i11;-4;+7;;"* High crush
-* Recovers crouching"
-FC.3;l;14;i16;-17;-3;;"* High crush
-* Recovers crouching"
-FC.4;l;12;i12;-15;-4;;"* High crush
-* Recovers crouching"
-ws4;m;19;i11;-6;+5;;
-df+4;m;19;i12;-;+;;
-ub+1;m;12;i18;-8;+3;;"* Alternate input: u+1
-* Low crush"
-uf+1;h;14;;-;+;;
-SS.1;h;8;i10;+1;+8;;
-SS.3;h;19;i15;-12;+5;;
-SS.4;h;25;i18;-7;KND;;
 1;h;8;i10;+1;+8;;
 1,1;h, m;8, 12;;-8;+0;;
 1,1,1;h, m, m;8, 12, 20;;-12~-11;+3~+4c;;Bound
@@ -55,6 +32,9 @@ df+3;m;18;i16;-7;+3;;
 df+3,d;m;18;;-9;+1;;Transition to DEN
 df+3,3;m, m;18, 24;;-20;KND;;
 df+1+2;m;21;i24~25;+2~+3c;+4~+5c;KND;Bound
+df+4;m;19;i12;-;+;;
+d+1;sm;6;i10;-5;+6;;"* High crush
+* Recovers crouching"
 d+2;m;19;i18;+0c;+4c;;
 d+3;l;9;i15;-14;-3;;
 d+3,1;l, h, h;9, 4, 12;;-10;+6;;
@@ -70,6 +50,8 @@ db+2,f;m;14;;-5;+6;;Transition to SEN
 db+2,1;m, m;14, 9;;-6;+6;;
 db+2,3;m, m;14, 18;;-13;+0;+23 (KND);
 db+2,3h;m, m;14, 30;;+8;KND;;
+db+3;l;14;i16;-17;-3;;"* High crush
+* Recovers crouching"
 db+4;l;21;i21;-21;+5c;KND;"* High crush
 * Recovers crouching"
 db+1+2;m;21;i26;-10;+5;KND;High crush
@@ -85,12 +67,16 @@ b+2+3;!, !;24, 24;i80;JG;JG;;
 ub;m, m;14 (12);i16~17;-21~-20 (+13~+12);JG;;"* Alternate input: u or uf+3
 * Low crush
 * Recovers crouching"
+ub+1;m;12;i18;-8;+3;;"* Alternate input: u+1
+* Low crush"
 ub+4;m;24;i25;-9;KND;;"* Low crush
 * Bound"
 u+4;m;24;i25;-9;JG;;"* Low crush
 * Bound"
+uf+1;h;14;;-;+;;
 uf+4;m;24;i25;-9;JG;;"* Low crush
 * Bound"
+f,F+1;h;12;i13;-8;+3;;
 f,F+2;m;24;i21;-13;JG;;
 f,F+2,f;m;24;i21;;JG;;"* On hit
 * Transition to SEN"
@@ -112,16 +98,22 @@ ws2,f;m;12;i13;-5;+6;;Transition to SEN
 ws2,d;m;12;i13;-12;-1;;Transition to DEN
 ws2,1;m, m;12, 20;;-12c;+1c;KND;Bound
 ws3;h;36;i20;+7;KND;;
+ws4;m;19;i11;-6;+5;;
 FC.df+1+2;l, l;12, 12;i18;-12;+1;;
+SS.1;h;8;i10;+1;+8;;
 SS.2;m;24;i15~16;-8~-7;KND;;
+SS.3;h;19;i15;-12;+5;;
+SS.4;h;25;i18;-7;KND;;
 OTG.d+3+4;L;20;i22;-14;-3;;
 OTG.d+3+4h,f;L;20;i22;-14;-3;;Transition to SEN
+d+4;l;8;i12;-13;-2;;High crush
 1+2+3+4;;;;;;;
 2;m;24;i16~17;-18~-17;JG;;During charge
 SEN.1;m;32;i12;-10;KND;;
 SEN.2;l;24;i22;-17;KND;;Recovers crouching
 SEN.3;m;24;i14;-14;JG;;Low crush
 f+3;;;;;;;
+f+4;h;25;i18;-7;KND;;
 DEN.1;h;16;i11;-4;+7;;
 DEN.1,f;h;16;i11;-5;+6;;Transition to SEN
 DEN.1,2;h, h;16, 24;;-6;KND;;
@@ -135,6 +127,14 @@ ub;;;;;;;"* Alternate input: u or uf+3+4
 ub;t;40 (50);i27;;Throw;;Alternate input: u or uf+3+4h
 uf+3+4,1;l;20;i23;-16;+0c;KND;
 uf+3+4,4;m;24 (20);i17~18;-8~-7;+8~+9;KND;Hit throw
+FC.1;sm;6;i10;-5;+6;;"* High crush
+* Recovers crouching"
+FC.2;sm;9;i11;-4;+7;;"* High crush
+* Recovers crouching"
+FC.3;l;14;i16;-17;-3;;"* High crush
+* Recovers crouching"
+FC.4;l;12;i12;-15;-4;;"* High crush
+* Recovers crouching"
 #stances
 Code;Stance
 SEN;Silent Entry

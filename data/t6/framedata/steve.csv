@@ -1,41 +1,5 @@
 #frames_normal
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes
-b+4;;;;;;;High crush
-f+1;h;8;i10;+1;+8;;
-f+4;;;;;;;"* High crush
-* Recovers crouching"
-f,F+1;h;8;i10;+1;+8;;
-f,F+3;;;;;;;"* High crush
-* Recovers crouching"
-f,F+4;;;;;;;"* High crush
-* Recovers crouching"
-db+1;sm;6;i10;-5;+6;;"* High crush
-* Recovers crouching"
-d+3;;;;;;;
-db+4;;;;;;;High crush
-d+4;;;;;;;
-FC.1;sm;6;i10;-5;+6;;"* High crush
-* Recovers crouching"
-FC.db+2;l;25;i26;-15;KND;;"* High crush
-* Recovers crouching"
-FC.d;sm;9;i11;-4;+7;;"* Alternate input: df+2
-* Recovers crouching"
-FC.db;;;;;;;Alternate input: d+3
-FC.db;;;;;;;Alternate input: d+4
-ws3;;;;;;;
-ws4;;;;;;;
-df+3;;;;;;;"* High crush
-* Recovers crouching"
-df+4;;;;;;;"* High crush
-* Recovers crouching"
-u+1;m;14;i18;-8;+3;;Low crush
-ub+2;h;20;i15;-;+;;
-ub+3;;;;;;;
-ub+4;;;;;;;
-SS.1;h;8;i10;+1;+8;;
-SS.2;h;12;i12;-1;+5;;
-SS.3;;;;;;;
-SS.4;;;;;;;
 1;h;8;i10;+1;+8;;
 1,1;h, h;8, 6;;-1;+5;;
 1,1,;h, h;8, 6;;-2;-2;;
@@ -67,6 +31,7 @@ SS.4;;;;;;;
 2,1,b;h, m;12, 14;;+3;+14g;+14;
 2,1,b,db;h, m;12, 14;;+2;+13g;+13;Recovers crouching
 2,1,2;h, m, m;12, 14, 26;;-10;KND;;
+f+1;h;8;i10;+1;+8;;
 f+2;m;13;i21;-3;+5;;High crush
 f+2,1;m, h;13, 14;;-3;+11g;;High crush
 f+2,1,b;m, h;13, 14;;+5;+19g;;"* High crush
@@ -89,6 +54,10 @@ df+1,2~f+1+2;m, h, h;12, 9, 14;;-3;+0;+3;
 df+1,2~f+1+2;m, h, h;12, 9, 14;;-7;-4;-1;
 df+2;m;20;i16;-9;+1;KND;
 df+1+2;m, m;14, 25;i14;-12;KND;;
+df+3;;;;;;;"* High crush
+* Recovers crouching"
+df+4;;;;;;;"* High crush
+* Recovers crouching"
 d+1;l;16;i16;-13;+0c;;High crush
 d+2;l;15;i17;-18;-5;;High crush
 d+2,1;l, m;15, 9;;-11;-5;+0;High crush
@@ -98,6 +67,8 @@ d,2~1;m;18;i28;-4;+2;+7;
 d,2~1,;m;18;i29;-1;+5;+10;
 d,2~1,f+2;m, h;18, 20;;-3;KND;;
 d,2~1,2;m, m;18, 24;;-13;+2c;KND;Bound
+db+1;sm;6;i10;-5;+6;;"* High crush
+* Recovers crouching"
 db+2;l;25;i26;-15;KND;;"* Alternate input: FC.db+2
 * High crush"
 db+2,db;l;25;i26;-15;KND;;"* Alternate input: d
@@ -106,6 +77,7 @@ db+2,db;l;25;i26;-15;KND;;"* Alternate input: d
 * Transition to FC"
 db+3;l;12;i16;-15;+1;;
 db+3,2;l, h;12, 18;;-8;KND;;
+db+4;;;;;;;High crush
 b+1;h;20;i13;-14;+2;KND;
 b+1,b;h;20;i13;-1;+12g;KND;Transition to FLK
 b+1,b,db;h;20;i13;-10;-2;KND;"* Recovers crouching
@@ -116,7 +88,11 @@ b+2;m;18;;-14;+4;KND;High crush
 b+1+2;;;i2;;;;Parry
 1;m;36;i14;-14;KND;JG;After a successful parry
 ub+1;m;12;;-5;+6;;
+ub+2;h;20;i15;-;+;;
+ub+3;;;;;;;
+ub+4;;;;;;;
 uf+1;m;19;i19;-6;+5;;Low crush
+u+1;m;14;i18;-8;+3;;Low crush
 u+2;m;21;i19;-13;JG;;"* Alternate input: uf+2
 * Low crush"
 u+3;l;24;i36;-12;+8;;"* Alternate input: uf+3
@@ -125,7 +101,12 @@ u+3,2;l, h;24, 18;;-9;KND;;"* Alternate input: uf+3,2
 * Low crush"
 u+4;m;24;i23;-14;JG;;"* Alternate input: uf+4
 * Low crush"
+f,F+1;h;8;i10;+1;+8;;
 f,F+2;m;28;i14~15;-13~-12c;KND;;Bound
+f,F+3;;;;;;;"* High crush
+* Recovers crouching"
+f,F+4;;;;;;;"* High crush
+* Recovers crouching"
 qcf+1;m;25;i16;-10;KND;;
 qcf+1,b;m;25;i16;-3;KND;;Transition to FLK
 qcf+1,b,db;m;25;i16;-4;KND;;"* Recovers crouching
@@ -140,8 +121,16 @@ ws1,2;m, m;12, 24;;-13~-12;+2c~+3c;KND;Bound
 ws2;m;19;i15;-7;+4;JG;
 ws2,;m;19;i15;-;+;JG;
 ws1+2;m;24;i19;-14;JG;;High crush
+ws3;;;;;;;
+ws4;;;;;;;
 SS.1+2;h;28;i17;+1;KND;;
+SS.1;h;8;i10;+1;+8;;
+SS.2;h;12;i12;-1;+5;;
+SS.3;;;;;;;
+SS.4;;;;;;;
 OTG.d+1+2;L;12;i17;-11;+0;;
+d+3;;;;;;;
+d+4;;;;;;;
 2+3+4;;;;;;;
 3;;;;;;;
 LWV.1;m;20;i14~15;-10;+1;KND (+5);
@@ -194,6 +183,8 @@ LDK.1;m;25;i19;+0;JG;;
 LDK.2;m;25;i19;-15;JG;;
 LDK.f+2;h;28;i14;+3;KND;;
 f+3+4;;;;;;;
+f+4;;;;;;;"* High crush
+* Recovers crouching"
 PAB.db;;;;;;;
 PAB.1;h;12;i12;-;+2;;Transition to PAB
 PAB.1,2;h, h;12, 14;;-9;+;;
@@ -236,6 +227,7 @@ SWY.2;m;36;i17;-9;KND;;High crush
 SWY.1+2;t;0;;;+1;;Then d, b, f or u
 b+3+4;;;;;;;
 b+3+4,;;;;;;;
+b+4;;;;;;;High crush
 FLK.1;h;14;i12;-1;+10;;
 FLK.1,1;h, h;14, 9;;-9;+0;;
 FLK.1,1,1;h, h, h;14, 9, 9;;-9;+0;;
@@ -258,6 +250,14 @@ FLK.b+3+4(db;h;;;-;+;;"* From hit 3
 * Transition to QT"
 FLK.f+3+4;;;;;;;Transition to PAB
 FLK.b+1+2;;;i2;;;;Parry
+FC.1;sm;6;i10;-5;+6;;"* High crush
+* Recovers crouching"
+FC.d;sm;9;i11;-4;+7;;"* Alternate input: df+2
+* Recovers crouching"
+FC.db;;;;;;;Alternate input: d+3
+FC.db;;;;;;;Alternate input: d+4
+FC.db+2;l;25;i26;-15;KND;;"* High crush
+* Recovers crouching"
 #stances
 Code;Stance
 LWV;Weaving Left
