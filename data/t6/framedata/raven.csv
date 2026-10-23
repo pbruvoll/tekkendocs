@@ -1,163 +1,224 @@
 #frames_normal
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes
-1;;8;10;+1;+8;+8;
-1, 2;;8,14;;-1;+6;+6;
-2;;14;10;-2;+7;+7;
-2, 3;;14,12;;-12;-1;-1;
-2, 4;;14,19;;-12;KD;KD;
-3;;14;14 ~ 15;-12;-1;-1;
-3, 3;;14,12;;-8;0;0;
-3, 3, 4;;14,12,26;;-9;KD;KD;
-3, 3, 4 ~ b h;;14,12,26;;-9?;KD;KD;
-"3, 4;";;15,18;25;-10;KD;KD;
-4, 3;;9,12;17;-16;KD;KD;
-4, 3+3;;9,12,27;;-3;KD;KD;
-"4, 3; 4";;9,12,20;;-14;KD;KD;
-"4, 3; 1";;9,12,14;CR;-16;-2;-2;
-1+2;;30;15;-9;KD;KD;
-f+2;;14;15;-10;0;0;
-f+2, 3;;14,18;;-11 ~ -10;+1 ~ +2 CR _ +14 CR;KD;
-f+3;;26;20 ~ 21;-10 ~ -9;KD;KD;
-f+4;;24;16;-11;KD;KD;
-f+1+2;;30;25?;-9;+2 B;+2 B;
-f+3+4;;24;23;-16;KD;KD;
-f+3+4, 4;;24,10;;-11 ~ -10;-1;KD;
-f+3+4, 4, 2;;24,10,25;;-16;KD;KD;
-f+3+4, f+4;;24,14;;-11 ~ -10;-1;KD;
-f+3+4, f+4, 2;;24,14,25;;-16;KD;KD;
-f+3+4, f+4, 3;;24,26;;-12 ~ -11;KD;KD;
-f+3+4, 3+4;;24,18;CR;-27 ~ -25;KD;KD;
-df+1;;18;14 ~ 15;-1 ~ 0;+5 ~ +6;+5 ~ +6;
-df+2;;19;16 BT;-11;KD +3;KD;
-df+2, 3;;19,30;;-3;KD;KD;
-df+2, 4;;19,24;;-16;KD;KD;
-df+3;;25;16 ~ 17;-10 ~ -9;+6 _ KD;KD;
-df+4;;15;15;-15;-2 KD;-2 KD;
-df+4, 4;;15,18;;-16 ~ -13;-5 CR ~-1 CR _ +9 ~ +11 CR;KD;
-df+4, 4, 3;;15,18,26;;-12 ~ -11;KD;KD;
-df+1+2;;28;;-12;KD;KD;
-df+3+4;;25;14 ~ 15;-28 ~ -27;-12 ~ -11 _ KD;-12 ~ -11 _ KD;
-d+3;;14;14 ~ 15;-12 ~ -11;-1 ~ 0;-1 ~ 0;
-d+4;;21;20 CR;-16;-5;-5;
+4;h;24;i11;-9;+0;KND;
+f+1;h;8;i10;+1;+7;;
+f,F+1;h;8;i10;+1;+7;;
+db+1;sm;6;i10;-5;+6;;"* Alternate input: d+1
+* High crush
+* Recovers crouching"
+d+2;sm;9;i11;-4;+7;;"* High crush
+* Recovers crouching"
+FC.1;sm;6;i10;-5;+6;;"* High crush
+* Recovers crouching"
+FC.2;sm;9;i11;-4;+7;;"* High crush
+* Recovers crouching"
+FC.3;l;14;i16;-17;-2~-3;;"* High crush
+* Recovers crouching"
+FC.4;l;12;i12;-15;-4;;"* High crush
+* Recovers crouching"
+u+1;m;14;i18;-8;+3;;"* Alternate input: uf+1
+* Low crush"
+SS.1;h;8;i10;+1;+7;;
+SS.2;h;14;i10;-2;+7;;
+SS.4;h;24;i11;-9;+0;KND;
+BT.4;h;30;i10;-8;KND;;
+1;h;8;i10;+1;+8;;
+1,2;h, h;8, 14;;-1;+6;;
+2;h;14;i10;-2;+7;;
+2,3;h, l;14, 12;;-12;-1;;High crush
+2,4;h, h;14, 19;;-12;KND;;
+3;m;14;i14~15;-12;-1;;
+3,3;m, h;14, 12;;-8;+0;;
+3,3,4;m, h, h;14, 12, 26;;-9;KND;;
+3,3,4,b~h;m, h, h;14, 12, 26;;-9;KND;;
+3~4;m, m;15, 18;i24;-10;KND;;"* Recovers back turned
+* Transition to BT"
+4~3;m, m;9, 12;i16;-16;JG;;
+4~3,3;m, m, h;9, 12, 27;;-3;KND;;
+4~3,4;m, m, m;9, 12, 20;;-14;KND;;
+4~3,1;m, m, l;9, 12, 14;;-16;-2;;"* High crush
+* Recovers crouching"
+1+2;m;30;i15;-9;KND;;
+f+2;m;14;i15;-10;+0;;
+f+2,3;m, m;14, 18;;-11~-10;+1~+2c (+14c);KND;
+f+3;h;26;i20~21;-10~-9;JG;;
+f+4;h;24;i16;-11;KND;;
+f+1+2;m;30;i25;-9;+2d;;
+f+3+4;m;24;i23;-16;KND;;Low crush
+f+3+4,4;m, l;24, 10;;-11~-10;-1;KND;"* Low crush
+* High crush"
+f+3+4,4,2;m, l, m;24, 10, 25;;-16;KND;;"* Low crush
+* High crush"
+f+3+4,f+4;m, l;24, 14;;-11~-10;-1;KND;"* Low crush
+* High crush"
+f+3+4,f+4,2;m, l, m;24, 14, 25;;-16;KND;;"* Low crush
+* High crush"
+f+3+4,f+4~3;m, m;24, 26;;-12~-11;KND;;"* Low crush
+* Bound"
+f+3+4,3+4;m, m;24, 18;;-27~-25;KND;;"* Low crush
+* Recovers crouching"
+df+1;m;18;i14~15;-1~+0;+5~+6;;
+df+2;m;19;i16;-11;JG (+3);JG;Recovers back turned
+df+2,3;m, h;19, 30;;-3;KND;;
+df+2,4;m, m;19, 24;;-16;KND;;
+df+3;h;25;i16~17;-10~-9;+6 (+s);JG;
+df+4;m;15;i15;-15;-2 (JG);;
+df+4,4;m, m;15, 18;;-16~-13;-5c~-1S +9~+11cg;KND;
+df+4,4,3;m, m, m;15, 18, 26;;-12~-11;KND;;"* Low crush
+* Bound"
+df+1+2;m;28;i35;-12;KND;;
+df+3+4;m;25;i14~15;-28~-27;-12~-11 (+s);;Low crush
+d+3;l;14;i14~15;-12~-11;-1~+0;;
+d+4;l;21;i20;-16;-5;;"* High crush
+* Recovers crouching"
 d+1+2;;;;;;;
-d+1+2, qcbubuuff+1+2;;72;104;KD;KD;KD;
-db+2;;15;13 BT;-4;+5;+5;
-db+2, 1;;15,10;;-1;+7;+7;
-db+3;;20;29 CR;-11;+6;KD;
-db+4;;20;22 ~ 24;-15 ~ -13;+1 ~ +3;KD;
-b+1;;25;15 ~ 16;+4 ~ +5 CR;+4 ~ +5 CR;+15 ~ +16 CR;
-b+2;;20;15;-14;-5;-5;
-b+2, 2;;20,14;BT;-4;+2;+2;
-b+2, 2, 3;;20,14,24;;-17;KD;KD;
-b+2, 2, 1+2;;20,14,18;;-27;KD;KD;
-b+2, 4;;20,24;;-7;+4;+4;
-b+2, 4, 3+4;;20,24,6,24;;-23;KD KD;KD KD;
-b+3;;24;26 ~ 29;+1 CR ~ +4 CR;+4 CR ~ +7 CR;+4 CR ~ +7 CR;
-b+4;;13;14 ~ 15;-12 ~ -11;0 ~ +1;0 ~ +1;
-b+4, 4;;13,18;BT;-3 ~ 2 CR;+2 ~ 3 CR _ KD;KD;
-b+4, b+4;;13,28;BT;-9;+2;KD;
-b+4, (b+4, 3);;13,13;;-13;-3;-3;
-b+4, (b+4, 3), 4;;13,13,12;;-11 ~ -10;-1;KD;
-b+4, (b+4, 3), 4, 2;;13,13,12,25;;-16;KD;KD;
-b+4, (b+4, 3), f+4;;13,13,14;;-11 ~ -10;-1;KD;
-b+4, (b+4, 3), f+4, 2;;13,14,14,25;;-16;KD;KD;
-b+4, (b+4, 3), f 4, 3;;13,14,26;;-12 ~ -11;KD;KD;
-b+4, (b+4, 3), 3+4;;13,13,20;;-27 ~ -25;KD;KD;
-b+1+2;;33;31;-14;+1;+1;
-b+1+2, 2;;33,14;BT;-11 ~ 10 CR;-7 CR;-5;
-b+1+2, 3;;33,20;;-34;KD;KD;
-ub+1;;13;16;-7;+5;+5;
-ub+1 (on hit), f;;13;16;;+2 B;+2 B;
-ub+1 (on hit), b;;13;16;;+2;+2;
-ub+1, 2;;13,15;;-13;-1 CR;-1 CR;
-ub+3;;36;26 BT;+2;+9 NG;+9 NG;
-u+3;;36;26 BT;+2;+9 NG;+9 NG;
-ub or u+3, 3;;36,24;;-15;KD;KD;
-ub or u+3, 4;;36,44;;+3 Y;KD;KD;
-ub or u+3, d+3;;36,21;;-15;KD;KD;
-ub or u+3, d ~ 3;;36,21;;-26;KD -26?;KD;
-ub or u+3, d+3, 3;;36,21,26;;-11 ~ -10;KD;KD;
-uf+3;;24;29 ~ 30;-13 ~ -12;KD;KD;
-ub or u+4;;15;20 ~ 22;-6 ~ -4;KD;KD;
-uf+4;;19;19 ~ 22;-7 ~ -4;KD;KD;
-ub or u or uf+4, 4;;19,24;;-16;KD;KD;
-ff+2;;31;17;-13;KD;KD;
-ff+3;;25;16;-14 ~ -13;KD;KD;
-ff+4;;25;16;-10;KD;KD;
-ff,n,4;;22;15;-5;KD;KD;
-bb+2;;18,25;18;-10;KD;KD;
-After a Technology;;43;;0;TKD;TKD;
-After a Technology;;33;;+4 ~ +6;KD;KD;
-ub,b+3+4;;18,25;;KD;KD;KD;
-Body WS 1;;16;14 ~ 15;-14 ~ -13;KD;KD;
-WS 2;;19;13;-9;+8 _ KD;KD;
-WS 3;;28;16;-11;KD;KD;
-WS 4;;21;11;-7;+4;+4;
-WS 3+4;;27;16;-15;KD;KD;
-FC df+3+4;;19;16;-41;KD;KD;
-FC df ~ 3+4, 4;;19,38;BT;-13;KD;KD;
-dfddf of squatting;;;CR;;;;
-SS 3;;22;25;-8 ~ -7;+6 ~ +7;+23 Tech Roll;
+d+1+2,d,db,b,ub,u,uf,f+1+2;!;72;i104;KND;KND;;
+db+2;m;15;i13;-4;+5;;Recovers back turned
+db+2,1;m, h;15, 10;;-1;+7;;
+db+3;l;20;i29;-11;+6;KND;"* Low crush
+* Recovers crouching"
+db+4;l;20;i22~24;-15~-13;+1~+3;KND;High crush
+b+1;h;25;i15~16;+4~+5c;+4~+5c;+15~+16c;
+b+2;h;20;i15;-14;-5;;
+b+2,2;h, m;20, 14;;-4;+2;;Recovers back turned
+b+2,2,3;h, m, m;20, 14, 24;;-17;KND;JG;
+b+2,2,1+2;h, m, l;20, 14, 18;;-27;KND;;High crush
+b+2,4;h, h;20, 24;;-7;+4;;
+b+2,4,3+4;h, h, l, h;20, 24, 6, 24;;-23;KND;;
+b+3;m;24;i26~29;+1c~+4c;+4c~+7c;;
+b+4;m;13;i14~15;-12~-11;+0~+1;;
+b+4,4;m, m;13, 18;;-3~-2c;+2~+3c (KND);KND;"* Recovers back turned
+* Bound"
+b+4,b+4;m, m;13, 28;;-9;+2;KND;Recovers back turned
+b+4,;m, l;13, 13;;-13;-3;;"* Alternate input: b+4,3
+* High crush"
+b+4,(b+4,3),4;m, l, l;13, 13, 12;;-11~-10;-1;KND;High crush
+b+4,(b+4,3),4,2;m, l, l, m;13, 13, 12, 25;;-16;KND;;High crush
+b+4,(b+4,3),f+4;m, l, l;13, 13, 14;;-11~-10;-1;KND;High crush
+b+4,(b+4,3),f+4,2;m, l, l, m;13, 14, 14, 25;;-16;KND;;High crush
+b+4,(b+4,3),f,4~3;m, l, m;13, 14, 26;;-12~-11;KND;;"* High crush
+* Low crush
+* Bound"
+b+4,(b+4,3),3+4;m, l, m;13, 13, 20;;-27~-25;KND;;High crush
+b+1+2;m;33;i31;-14;+1;;
+b+1+2,2;m, m;33, 14;;-11~-10c;-7c;-5;Recovers back turned
+b+1+2,3;m, l;33, 20;;-34;KND;;
+ub+1;m;13;i16;-7;+5;;High crush
+ub+1,f;m;13;i16;;+2d;;"* On hit
+* High crush"
+ub+1,b;m;13;i16;-9;+2;;"* On hit
+* High crush"
+ub+1,2;m, m;13, 15;;-13;-1c;;"* High crush
+* Bound"
+ub+3;h;36;i26;+2;+9g;;"* Low crush
+* Recovers back turned"
+u+3;h;36;i26;+2;+9g;;"* Low crush
+* Recovers back turned"
+ub+3,3;h, m;36, 24;;-15;KND;;"* Alternate input: u+3,3
+* Low crush"
+ub+3,4;h, h;36, 44;;+3s;KND;;"* Alternate input: u+3,4
+* Low crush"
+ub+3,d+3;h, l;36, 21;;-15;KND;;"* Alternate input: u+3,d+3
+* Low crush
+* High crush"
+ub+3,d~3;m, l;36, 21;;-26;KND (-26);KND;Alternate input: u+3,d~3
+ub+3,d+3,3;h, l, m;36, 21, 26;;-11~-10;KND;;"* Alternate input: u+3,d+3,3
+* Low crush
+* High crush
+* Bound"
+uf+3;m;24;i29~30;-13~-12;KND;;Low crush
+ub+4;m;15;i20~22;-6~-4;KND;;"* Alternate input: u+4
+* Low crush"
+uf+4;m;19;i19~22;-7~-4;KND;;Low crush
+ub;m, m;19, 24;;-16;KND;;"* Alternate input: u or uf+4,4
+* Low crush"
+f,F+2;m;31;i16;-13;KND;;
+f,F+3;m;25;i15~16;-14~-13;JG;;Low crush
+f,F+4;m;25;i15;-10;KND;;
+f,f,n+4;m;22;i14;-5;+s;KND;
+b,b+2;m, h;18, 25;i17;-10;KND;;Reversal
+ub,b+3+4;!;18, 25;i40;KND;KND;;Low crush
+ws1;m;16;i14~15;-14~-13;JG;;
+ws2;m;19;i13;-9;+8 (+s);JG;
+ws3;m;28;i16;-11;KND;;
+ws4;m;21;i11;-7;+4;;
+ws3+4;m;27;i16;-15;KND;;
+FC.df+3+4;l;19;i16;-41;KND;;High crush
+FC.df~3+4,4;l, h;19, 38;;-13;KND;;"* High crush
+* Recovers back turned
+* Transition to BT"
+FC.df,d,df;;;;;;;"* High crush
+* Recovers crouching"
+SS.3;m;22;i17;-8~-7;+6~+7;+23 (KND);
 3+4;;;;;;;
-HAZ 1;;22;19;-9;+4;KD;
-HAZ 1 (on hit), f;;22;19;A;-26 B;KD;
-HAZ 1 (on hit), b;;22;19;A;-26;KD;
-HAZ 1, 3+4;;22;19;-2;+13?;KD;
-HAZ 2;;42;60;KD;KD;KD;
-HAZ 3;;18;20? BT;-13;-2;-2;
-HAZ 4;;40;29 BT;-10;TKD;TKD;
-HAZ 4;;30;30 ~ 36 BT;-4 ~ -2;KD;KD;
-HAZ 1+2;;24;14;-15;KD;KD;
-HAZ 3+4;;12,24;;-23;KD KD;KD KD;
-BT b+3+4;;;BT;;;;
-BT 1;;12;8;-1;+3;+3;
-BT 1, 4;;12,24;;-11;KD;KD;
-BT 2;;15;10;-4;+7;+7;
-BT 2, 1;;15,6;;-1;+5;+5;
-BT 2, 1, b;;15,6;BT;-5;+1;+1;
-BT 2, 2;;15,18;;-9;+2;+2;
-BT 3;;12;10;-11;0;0;
-BT 3, 4;;12,12;BT;-5;-4;0 CR;
-"BT 3, 4; 3";;12,12,26;;-12;KD;KD;
-"BT 3, 4;, 4";;12,12,25;BT;-20;KD;KD;
-BT 1+2;;30;15;-14;KD;KD;
-BT 3+4;;6,15;15;-20;CR KD;CR KD;
-BT 3+4;;18;25?;-20;KD;KD;
-BT f+1;;21;16 BT;-13;+3 B;+3 B;
-BT f+2;;15;17;-5;+6;+6;
-BT f+2, 3;;15,18;;-7;KD;KD;
-BT f+2, 4;;15,24;;-7;+4;+4;
-BT f+2, 4, 3+4;;15,24,6,24;;-23;KD KD;KD KD;
-BT f+3;;25;13 BT;-9;+2;+ Tech Roll;
-BT f+3, f;;25;13;-11;0;+ Tech Roll;
-BT f+4;;10;16 BT;-11;0;0;
-BT f+4, 3;;10,25;;-13;+3 _ KD;+3 _ KD;
-BT f+1+2;;25;1;;;;
-BT f+1+2, b;;25;1 BT;;;;
-BT f+3+4;;28;25 BT;-10;KD;KD;
-BT d+3;;21;25 ~ 26;-24;KD;KD;
-BT d+3;;14;25 ~ 26;-24 ~ -23;-4 ~ -3;-4 ~ -3;
-BT b+2;;20;16 BT;0;+8;+8;
-BT b+2, 3;;20,6,15;;-20;CR KD;CR KD;
-BT b+2, 4;;20,15;;-9;0;KD;
-BT b+3+4;;;;;;;
-BT ff+3;;30;22;-9;KD;KD;
-BT ff+3+4;;20;;-22;KD;KD;
-BT fff;;;BT;;;;
+HAZ.1;m;22;i19;-9;+4;KND;
+HAZ.1,f;m;22;i19;;-26d;KND;On hit
+HAZ.1,b;m;22;i19;-9;-26;KND;On hit
+HAZ.1,3+4;m;22;i19;-2;+13;KND;
+HAZ.2;!;42;i60;KND;KND;;Low crush
+HAZ.3;l;18;i20;-13;-2;;Recovers back turned
+HAZ.4;m;40;i29;-10;KND;;"* Low crush
+* Recovers back turned
+* Bound"
+HAZ.4;m;30;i30~36;-4~-2;KND;;"* Low crush
+* Recovers back turned
+* At long range"
+HAZ.1+2;m;24;i14;-15;KND;;
+HAZ.3+4;l, h;12, 24;;-23;KND;;
+b+3+4;;;;;;;Recovers back turned
+BT.1;h;12;i8;-1;+3;;
+BT.1,4;h, h;12, 24;;-11;KND;;
+BT.2;h;15;i10;-4;+7;;
+BT.2,1;h, h;15, 6;;-1;+5;;
+BT.2,1,b;h, h;15, 6;;-5;+1;;Recovers back turned
+BT.2,2;h, m;15, 18;;-9;+2;;
+BT.3;h;12;i10;-11;+0;;
+BT.3~4;h, m;12, 12;;-5;-4;+0c;Recovers back turned
+BT.3~4,3;h, m, m;12, 12, 26;;-12;KND;;Bound
+BT.3~4,4;h, m, m;12, 12, 25;;-20;KND;;"* Low crush
+* Recovers back turned"
+BT.1+2;m;30;i15;-14;KND;;
+BT.3+4;m;6, 15;i15;-20;JG;;Hit throw
+BT.3+4;m;18;i25;-20;JG;;
+BT.f+1;m;21;i16;-13;+3d;;Recovers back turned
+BT.f+2;m;15;i17;-5;+6;;
+BT.f+2,3;m, m;15, 18;;-7;KND;;Bound
+BT.f+2,4;m, h;15, 24;;-7;+4;;
+BT.f+2,4,3+4;m, h, l, h;15, 24, 6, 24;;-23;KND;;
+BT.f+3;m;25;i13;-9;+2;+ (KND);"* Recovers back turned
+* Transition to BT"
+BT.f+3,f;m;25;i13;-11;+0;+ (KND);
+BT.f+4;l;10;i16;-11;+0;;Recovers back turned
+BT.f+4,3;l, h;10, 25;;-13;+3 (+s);;
+BT.f+1+2;;25;i1;;;;Reversal
+BT.f+1+2,b;;25;i1;;;;"* Reversal
+* Recovers back turned
+* Transition to BT"
+BT.f+3+4;m;28;i25;-10;KND;;"* Low crush
+* Recovers back turned"
+BT.d+3;l;21;i25~26;-24;KND;;"* High crush
+* At close range"
+BT.d+3;l;14;i25~26;-24~-23;-4~-3;;High crush
+BT.b+2;m;20;i16;+0;+8;;Recovers back turned
+BT.b+2,3;m, m;20, 6, 15;;-20;JG;;Hit throw
+BT.b+2,4;m, h;20, 15;;-9;+0;JG;
+BT.b+3+4;;;;;;;
+BT.f,F+3;m;30;i21;-9;KND;;High crush
+BT.f,F+3+4;l;20;;-22;KND;;Low crush
+BT.f,f,F;;;;;;;Recovers back turned
 qcf;;;;;;;
-qcf+1;;22;21;-9;+4;KD;
-qcf+1 (on hit), f;;22;21;;-26 B;KD;
-qcf+1 (on hit), b;;22;21;;-26;KD;
-qcf+1, 3+4;;22;21;-2;+13?;KD;
-qcf ~ 2;;12;24 ?;-17;KD;KD;
-qcf+2, b;;;BT;;;;
-qcf+2, 1;;28;;-12;KD;KD;
-qcf+3;;18;18;-12 ~ -11;KD;KD;
-qcf+4;;18;21;-14;KD;KD;
-qcf+1+2;;14,25;26;-9 or ~ ~ -15;KD;KD;
-qcf+1+2;;14;26;-23 ~;KD;KD;
-qcf+3+4;;27;18;-15;KD;KD;
+qcf+1;m;22;i19;-9;+4;KND;
+qcf+1,f;m;22;i19;;-26d;KND;On hit
+qcf+1,b;m;22;i19;-9;-26;KND;On hit
+qcf+1,3+4;m;22;i19;-2;+13;KND;
+qcf~2;l;12;i21;-17;KND;;High crush
+qcf+2,b;;;;;;;Recovers back turned
+qcf,2~1;m;28;;-12;KND;;
+qcf+3;h;18;i16~17;-12~-11;JG;;
+qcf+4;m;18;i19;-14;JG;;Recovers back turned
+qcf+1+2;m, m;14, 25;i24;-9 or -15;KND;;Recovers crouching
+qcf+1+2;m;14;i24;-23;KND;;Recovers crouching
+qcf+3+4;m;27;i16;-15;KND;;
 #stances
 Code;Stance
 HAZ;Haze
-BT;Back Turned
