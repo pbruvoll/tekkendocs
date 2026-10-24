@@ -1,5 +1,7 @@
 #frames_normal
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes
+d,4~3;l;12;i16;-17;-3;;"* High crush
+* Recovers crouching"
 1;h;8;i10;+1;+8;;
 1,2;h, h;8, 14;;-4;+4;;
 1,2,4;h, h;8, 14;;-26 (+20);-17;;"* Low crush
@@ -21,6 +23,7 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 4~3,3;m, m, m;19 (24), 20;;-5;+6;KND;"* High crush
 * Transition to RLX"
 4~3,4;m, m, m;19 (24), 33;;-2;KND;;Low crush
+4;m;12;i12;-10;-1;;
 1+2;h, h;14, 18;i12;-1;+10;;
 1+2~3;h, m;14, 20;;-23;JG;;
 1+2,n+3;h, h, m;14, 18, 15;;-8;+0;;
@@ -43,7 +46,7 @@ f+4,3+4;m, l, l;12, 12, 12;;-35;KND;;High crush
 f+4,3;m, m;12, 20;;-12;-1c;;
 f+4,3,3+4;m, m, m, m;12, 20, 8, 25;;-13;KND;;
 f+3+4;m, m;16, 19;i17;-7;KND;;
-f+3+4;m;19;i17;-7;KND;;
+f+3+4;m;19;i17;-7;KND;;Hit 2 only
 df+1;m;12;i13;-2;+6;;
 df+1,f;m;12;i13;-10;-2;;Transition to HSP
 df+1,1;m, h;12, 9;;-4;+8;;
@@ -93,7 +96,8 @@ db+4*b,,;m;21, 22, 22, 24;;-12;KND;;High crush
 db+4,b+4;m, m;21, 25;;-9;+1;;High crush
 db+1+2;m;14;i28;-4;JG;;Bound
 db+3+4;m, m;14, 14;i30;-10;+11cg;KND;High crush
-db+3+4;m;14;i30;-10;+11cg;KND;High crush
+db+3+4;m;14;i30;-10;+11cg;KND;"* High crush
+* Hit 2 only"
 db+3+4,b;m, m;14, 14;;-;+;KND;"* High crush
 * Transition to HSP"
 db+3+4,d;m, m;14, 14;;-;+;KND;"* High crush
@@ -101,7 +105,6 @@ db+3+4,d;m, m;14, 14;;-;+;KND;"* High crush
 db+3+4,4;m, m, h;14, 14, 12;;-6;+;;
 db+3+4,4,3;m, m, h, h;14, 14, 12, 30;;-7;KND;;
 b+1;h;7;i10;+0;+8;+9;
-b+1+2;h;7;i10;+1;+9;;
 b+2;m;28;i22;-6;KND;;
 b+3;m;12;i13;-8;+8;;
 b+3,3;m, m;12, 25;;-9;JG;;
@@ -111,11 +114,14 @@ b+4,3;h, l;20, 14;;-28;-13;;High crush
 b+4,4;h, m, m;20, 8, 20;;-9;KND;;
 b+4,4,d;h, m, m;15, 8, 21;;-16;KND;;
 b+4,4,3+4;h, m, m, m;20, 8, 20, 14;;-10;+1c;;Low crush
+b+1+2;h;7;i10;+1;+9;;
 b+3+4;m;36;i30;+4;+6;KND;
 u+3;m;42;i38;-24;KND;;Low crush
 ub;m;12;i18;-8;+3;;"* Alternate input: u or uf+1
 * Low crush"
 ub;h;15;;-;+;;Alternate input: u or uf+2
+ub+3;m;25;i21;-17;KND;;Low crush
+ub+4;m;11;i15;-19;-8;KND;Low crush
 ub+3+4;m;15;i22;-9;+2;;Low crush
 u+3+4;m;15;i20;-6;KND;;Low crush
 ub+3+4,d;m;15;i20;-34;KND;;"* Alternate input: u+3+4,d
@@ -134,8 +140,6 @@ u+4;m;30;i22~23;-6~-5;KND;;"* Alternate input: uf+4
 ub+1+2;h;24;i16~17;-3c;KND;;"* Alternate input: u+1+2
 * Low crush
 * Bound"
-ub+3;m;25;i21;-17;KND;;Low crush
-ub+4;m;11;i15;-19;-8;KND;Low crush
 uf+1+2;h;24;i16~17;-3c;KND;;Low crush
 uf+3+4;m, m;22, 30;i17;-13;KND;;Low crush
 f,F+1;h;7;i10;+0;+8;+9;
@@ -159,20 +163,20 @@ ws1,3;h, m;12, 24;;-9;JG;;
 ws2;m;14;i15;-12;+s;JG;
 ws3;m;18;i19;-12;JG;;Alternate input: d,f+3
 ws4;m;18;i11;-3;+8;;
+FC.df~4;l;20;i24;-30 (+16);+3;KND;"* High crush
+* Transition to RLX"
+FC.db~4;m;20;i18;-10;+1;KND;High crush
 FC.1;sm;5;i10;-5;+6;;"* High crush
 * Recovers crouching"
 FC.2;sm;8;i11;-4;+7;;"* High crush
 * Recovers crouching"
 FC.3;l;12;i16;-17;-3;;"* High crush
 * Recovers crouching"
-FC.df~4;l;20;i24;-30 (+16);+3;KND;"* High crush
-* Transition to RLX"
-FC.db~4;m;20;i18;-10;+1;KND;High crush
+FC.db+4;m;15;i18;-10;-1;KND;Recovers crouching
 FC.db+1+2;m;13;i19;-13;+3;+5;"* Alternate input: d+1+2
 * High crush"
 FC.db+1+2,1+2;m, m;13, 14;;-13;KND;;"* Alternate input: d+1+2,1+2
 * High crush"
-FC.db+4;m;15;i18;-10;-1;KND;Recovers crouching
 ws3+4;m;21;i22;-17;+2c (+5);KND;"* Alternate input: FC.3+4
 * Low crush"
 ws3+4,b;m;21;i22;-21;-2c (+1);KND;"* Alternate input: FC.3+4,b
@@ -182,9 +186,6 @@ ws3+4,d;m;21;i22;-8;+11c (+14);KND;"* Alternate input: FC.3+4,d
 BT.3+4;m;36;i47;+1;JG;;"* Low crush
 * Bound"
 1+2+3+4;;;;;;;Low crush
-4;m;12;i12;-10;-1;;
-d,4~3;l;12;i16;-17;-3;;"* High crush
-* Recovers crouching"
 SS.1;h;7;i10;+0;+8;+9;
 SS.2;m;18;;-9;+2;;
 SS.2,4;m, h;18, 25;;-8;KND;;Transition to HSP
@@ -196,7 +197,8 @@ SS.3,n,b;m;20;i25;-21;-10;KND;"* High crush
 * Transition to HSP"
 SS.3,n,b,3+4;m, m;20, 30;;-13;JG;;High crush
 SS.4;l, l;12, 8;i21;-3~+3;+8;;High crush
-SS.4;l;12;i21;-2;+4;;High crush
+SS.4;l;12;i21;-2;+4;;"* High crush
+* Hit 1 only"
 SS.4,b;l;12;i21;-2;+4;;"* High crush
 * Transition to HSP"
 SS.4,3;l, l;12, 30;;-53;KND;;High crush
@@ -208,9 +210,10 @@ SS.4~3,b;h;60;i34;-23;KND;;"* Low crush
 SS.3+4;h, m;7, 7;i13;-17;JG;;Low crush
 SS.3+4,d;h, m;7, 7;i13;-14;JG;;"* Recovers crouching
 * Transition to FC"
-SS.3+4;h;7;;-17;-6;;
+SS.3+4;h;7;;-17;-6;;Hit 2 only
 SS.3+4,d;h;7;;-14;-3;;"* Recovers crouching
-* Transition to FC"
+* Transition to FC
+* Hit 2 only"
 SS.3+4,3+4;h, m, m;7, 7, 30;;-34;JG;;Low crush
 SS.3+4,3+4,3+4;h, m, m, m;7, 7, 30, 24;;-11;KND;;"* Low crush
 * Bound"
@@ -221,9 +224,9 @@ SS.3+4,3+4,3+4,uf+3+4,d;h, m, m, m, m;7, 7, 30, 24, 24;;-34;KND;;"* Low crush
 * Transition to RLX"
 SS.1+4;l;24;i23;-28~-21;KND;;
 f+1+2;;;;;;;
-FC.df+1+2;;;;;;;Transition to HSP
 FC.df+4;l;17;i24;-30;+3;KND;"* High crush
 * Transition to RLX"
+FC.df+1+2;;;;;;;Transition to HSP
 HSP.;;;;;;;"* Do nothing
 * Transition to RLX"
 HSP.f+1+2;;;;;;;
@@ -232,7 +235,8 @@ HSP.1;m;12;i16;-2;+5;+9;Recovers crouching
 HSP.1,3;m, l;12, 18;;-24;-8;;High crush
 HSP.2;m;12;i16;-1;+6;+10;Recovers crouching
 HSP.2,4;m, l, l;12, 12, 8;;-3~+3;+8;;High crush
-HSP.2,4;m, l;12, 12;;-3;+3;;High crush
+HSP.2,4;m, l;12, 12;;-3;+3;;"* High crush
+* When hit 3 whiffs"
 HSP.3;m;20;i32;-5;+6;KND;"* High crush
 * Transition to RLX"
 HSP.3~4;l, l;12, 12;i42;-30;KND;;"* High crush
@@ -288,6 +292,39 @@ RLX.3+4,b;;;;;;;Low crush
 RLX.3+4,3;m;18;i32;-1;+10;;Bound
 RLX.f+3+4;m;24;i18~28;-13~-3;KND;;
 RLX.b+1+2;;;;;;;Transition to HSP
+1+3;t;35;;-6;;;"* Throw break 1
+* Side switch
+* Opponent recovers face up sideways"
+2+4;t;35;;-3;;;"* Throw break 2
+* Opponent recovers face down sideways"
+Left throw;t;40;;-4;;;"* Throw break 1
+* Opponent recovers FUFA"
+Right throw;t;42;;-4;;;"* Throw break 2
+* Opponent recovers FUFA"
+Back throw;t;60;;;;;"* Unbreakable
+* Side switch
+* Opponent recovers FUFA"
+1+3;t;35;;-6;;;"* Throw break 1
+* Opponent recovers FUFA"
+2+4;t;35;;-3;;;"* Throw break 2
+* Opponent recovers FDFA"
+Left throw;t;40;;-4;;;"* Throw break 1
+* Opponent recovers face up sideways"
+Right throw;t;42;;-4;;;"* Throw break 2
+* Opponent recovers face down sideways"
+Back throw;t;60;;;;;"* Unbreakable
+* Opponent recovers FUFA"
+df+1+2;t;40;;-6;;;"* Throw break 1+2
+* Side switch
+* Opponent recovers FUFA"
+hcf~1+2;t;55;;+0;;;"* Throw break 1+2
+* Side switch
+* Opponent recovers FUFA"
+d+1+3;t;45;;+0;;;"* Against a crouching opponent
+* Alternate input: d+2+4
+* Low throw
+* Throw break 1 or 2
+* Opponent recovers face down sideways"
 #stances
 Code;Stance
 HSP;Handstand

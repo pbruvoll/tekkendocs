@@ -40,6 +40,8 @@ f+2,1,b,db;m, h;13, 14;;+4;+10g;;"* High crush
 * Recovers crouching
 * Transition to FLK"
 f+2,1~2;m, m;13, 16;;-5;+6 (KND);+ (KND);High crush
+f+4;;;;;;;"* High crush
+* Recovers crouching"
 f+1+2;m;25;i36;-21;+68g;+68;
 df+1;m;12;i13;-3;+5;;
 df+1,;m;12;i13;-5;+1;;
@@ -53,11 +55,11 @@ df+1,2~2;m, m;12, 16;;-7;+4 (KND);+ (KND);
 df+1,2~f+1+2;m, h, h;12, 9, 14;;-3;+0;+3;
 df+1,2~f+1+2;m, h, h;12, 9, 14;;-7;-4;-1;
 df+2;m;20;i16;-9;+1;KND;
-df+1+2;m, m;14, 25;i14;-12;KND;;
 df+3;;;;;;;"* High crush
 * Recovers crouching"
 df+4;;;;;;;"* High crush
 * Recovers crouching"
+df+1+2;m, m;14, 25;i14;-12;KND;;
 d+1;l;16;i16;-13;+0c;;High crush
 d+2;l;15;i17;-18;-5;;High crush
 d+2,1;l, m;15, 9;;-11;-5;+0;High crush
@@ -85,6 +87,7 @@ b+1,b,db;h;20;i13;-10;-2;KND;"* Recovers crouching
 b+1,2;h, l;20, 12;;-11;+0;;High crush
 b+1,2,1;h, l, m;20, 12, 24;;-9;JG;;High crush
 b+2;m;18;;-14;+4;KND;High crush
+b+4;;;;;;;High crush
 b+1+2;;;i2;;;;Parry
 1;m;36;i14;-14;KND;JG;After a successful parry
 ub+1;m;12;;-5;+6;;
@@ -120,17 +123,17 @@ ws1;m;12;i11;-3;+3;+8;
 ws1,2;m, m;12, 24;;-13~-12;+2c~+3c;KND;Bound
 ws2;m;19;i15;-7;+4;JG;
 ws2,;m;19;i15;-;+;JG;
-ws1+2;m;24;i19;-14;JG;;High crush
 ws3;;;;;;;
 ws4;;;;;;;
-SS.1+2;h;28;i17;+1;KND;;
+ws1+2;m;24;i19;-14;JG;;High crush
 SS.1;h;8;i10;+1;+8;;
 SS.2;h;12;i12;-1;+5;;
 SS.3;;;;;;;
 SS.4;;;;;;;
-OTG.d+1+2;L;12;i17;-11;+0;;
+SS.1+2;h;28;i17;+1;KND;;
 d+3;;;;;;;
 d+4;;;;;;;
+OTG.d+1+2;L;12;i17;-11;+0;;
 2+3+4;;;;;;;
 3;;;;;;;
 LWV.1;m;20;i14~15;-10;+1;KND (+5);
@@ -157,10 +160,13 @@ QT.2;m;26;i22;-8~-7;KND;;
 QT.d+2;l;20;i34;-15;KND;;High crush
 QT.u;;;;;;;
 QT.d;;;;;;;
-3+4,d;;;;;;;Alternate input: u,f
-QT.d;m;30;i49;-10;KND;;Alternate input: u~1
+3+4,d;;;;;;;"* Alternate input: u,f
+* Input rotated 2 times"
+QT.d;m;30;i49;-10;KND;;"* Alternate input: u~1
+* Input rotated 2 times"
 QT.d;l;25;i59;-11;KND;;"* Alternate input: u~d+1
-* High crush"
+* High crush
+* Input rotated 2 times"
 f+3;;;;;;;"* Alternate input: f+4
 * High crush"
 DCK.1;m;20;i19;-7;KND;JG;
@@ -183,8 +189,6 @@ LDK.1;m;25;i19;+0;JG;;
 LDK.2;m;25;i19;-15;JG;;
 LDK.f+2;h;28;i14;+3;KND;;
 f+3+4;;;;;;;
-f+4;;;;;;;"* High crush
-* Recovers crouching"
 PAB.db;;;;;;;
 PAB.1;h;12;i12;-;+2;;Transition to PAB
 PAB.1,2;h, h;12, 14;;-9;+;;
@@ -227,7 +231,6 @@ SWY.2;m;36;i17;-9;KND;;High crush
 SWY.1+2;t;0;;;+1;;Then d, b, f or u
 b+3+4;;;;;;;
 b+3+4,;;;;;;;
-b+4;;;;;;;High crush
 FLK.1;h;14;i12;-1;+10;;
 FLK.1,1;h, h;14, 9;;-9;+0;;
 FLK.1,1,1;h, h, h;14, 9, 9;;-9;+0;;
@@ -258,6 +261,25 @@ FC.db;;;;;;;Alternate input: d+3
 FC.db;;;;;;;Alternate input: d+4
 FC.db+2;l;25;i26;-15;KND;;"* High crush
 * Recovers crouching"
+1+3;t;35 (25, 10);;-7;;;"* Throw break 1
+* Side switch
+* Opponent recovers FUFA"
+2+4;t;35;;-3;;;"* Throw break 2
+* Opponent recovers FDFT"
+Left throw;t;40;;-4;;;"* Throw break 1
+* Side switch
+* Opponent recovers face up sideways"
+Right throw;t;40;;-4;;;"* Throw break 2
+* Side switch
+* Opponent recovers face up sideways"
+Back throw;t;55 (10, 10, 10, 25);;;;;"* Unbreakable
+* Side switch
+* Opponent recovers FUFT"
+f,F+1+2;t;40 (12, 28);;+0;;;"* Throw break 1+2
+* Side switch when broken
+* Opponent recovers FUFA"
+qcb+2+4;t;40;;+0;;;"* Throw break 2
+* Opponent recovers FUFA"
 #stances
 Code;Stance
 LWV;Weaving Left

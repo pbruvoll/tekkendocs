@@ -26,9 +26,9 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 3,4;h, h;14, 24;;-15;KND;;
 4;h;16;i11;-4;+7;JG;
 4,3;h, h;16, 14;;-14;-5;;
-4,3,b,f;h, h;16, 14;;+7;+16g;;
+4,3,b,f;h, h;16, 14;;+7;+16g;;Transition to DCH
 4,3,4;h, h, h;16, 14, 16;;-6;-1;JG;
-4,3,4,b,f;h, h, h;16, 14, 16;;+7;+12;JG;
+4,3,4,b,f;h, h, h;16, 14, 16;;+7;+12;JG;Transition to DCH
 4,u+3;h, m;16, 27;;+1;KND;;Low crush
 4,u+3,b,f;h, m;16, 27;;-1;KND;;"* Low crush
 * Transition to DCH2"
@@ -44,12 +44,12 @@ f~2,2,2,b,f;h, m, h;12, 6, 12;;-;+1;;"* Alternate input: 2,f+2,2,b,f
 * Bound
 * Transition to DCH"
 f~2,2,1+2;h, m, m;12, 6, 25;;-13;KND;;Alternate input: 2,f+2,1+2
+f+3;h;19;i15;-9;+2;+s;
+f+4;h;19;i13;-4;+7;JG;
 f+1+2;m;24;i20;+1c;KND;JG;Bound
 f+1+2,d;m;24;i20;+1c;KND;JG;"* Recovers crouching
 * Bound
 * Transition to FC"
-f+3;h;19;i15;-9;+2;+s;
-f+4;h;19;i13;-4;+7;JG;
 df+1;m;12;i13;+0;+7;;
 df+2;m;14;i14~15;-8~-7;JG (+3);JG;
 df+3;m;21;i18;-14;-3;;
@@ -89,8 +89,9 @@ db+4,4;l, m;25, 28;;-13~-12;KND;;"* High crush
 db+1+2;!;96;i78;KND;KND;;
 db+1+2,u,u;;;;;;;
 db+3+4;m, m;30, 30;i19;-9~-8;KND;;Low crush
-db+3+4;m;30;i19;-40;KND;;Low crush
-db+3+4;m;30;;-9~-8;+3c;;
+db+3+4;m;30;i19;-40;KND;;"* Low crush
+* When hit 2 whiffs"
+db+3+4;m;30;;-9~-8;+3c;;When hit 1 whiffs
 db~3+4;m;30;i19;-;KND;;"* Low crush
 * Recovers grounded"
 b+1;m;16;i14;-7;+4;;
@@ -130,9 +131,11 @@ uf~4;m;25;i18~20;-15~-13;JG;;"* Alternate input: FC.uf+4
 * Recovers crouching"
 uf~4,b,f;m;25;i18~19;-8;JG;;"* Low crush
 * Recovers crouching
-* Transition to DCH2"
+* Transition to DCH2
+* Small version"
 uf~4,b,f,f;m;;;;+15;;"* Low crush
-* Transition to DCH2"
+* Transition to DCH2
+* Small version"
 ub;m, m;21, 22;;-18~-17;JG;;"* Alternate input: u or uf~4,3
 * Low crush
 * Recovers crouching"
@@ -147,8 +150,8 @@ ub;m, m;30, 30;;-18~-17;JG;;"* Alternate input: u or uf+3,4
 ub+1;m;14;i18;-8;+3;;"* Alternate input: u+1 or 1h,uf+2
 * Low crush"
 ub+4;m;12;i15;-19;-8;KND;Low crush
-uf+3+4;l;24;i30;-26;-5;;Low crush
 uf+4;m;16;i15;-12;JG;;Low crush
+uf+3+4;l;24;i30;-26;-5;;Low crush
 f,F+1;h;8;i10;+1;+8;;
 f,F+2;m;13;i16;-7;+7;;
 f,F+2,1;m, h;13, 13;;-2;+2;;
@@ -209,12 +212,12 @@ SS.2,1,b,f;m, h;6, 8;;-8;+3;;Transition to DCH
 SS.2,1,2;m, h, m;6, 8, 12;;-10;+1;;
 SS.2,1,2,b,f;m, h, m;6, 8, 12;;-8;+3;;Transition to DCH
 SS.2,1,2,1;m, h, m, m;6, 8, 12, 32;;-20;KND;;
-SS.3+4;m, h;10, 25;i15;-12;KND;;Low crush
-SS.3+4;m;10;i15;-23;-10;;
 SS.3;h;14;i12;-9;+2;;
 SS.4;h;16;i11;-4;+7;JG;
+SS.3+4;m, h;10, 25;i15;-12;KND;;Low crush
+SS.3+4;m;10;i15;-23;-10;;When hit 2 whiffs
 1+2+3+4;;;;;;;
-1+2+3+4,1+2h;;;;;;;
+1+2+3+4,1+2h;;;;;;;Held
 1+2+3+4,1+2h,2;h;28;i14;-4;KND;JG;
 d+1+2;;;i1;;;;
 DCH.1;h;16;i12;-7;KND;;
@@ -240,7 +243,7 @@ DCH.f+2,f+2,1+2;h, m, m;12, 6, 25;;-13;KND;;
 DCH.f,2~1;m;42;i19;-16;KND;;
 DCH.f+3;m;33 (50);i20;-15;KND;;
 DCH.f+3,b,f;m;33 (50);i20;-10;KND;;Transition to DCH2
-DCH2.b,f;;;;;;;
+DCH2.b,f;;;;;;;Transition to DCH
 b+1+2;h, m;;i3;;;;Parry
 u+4;m;14;i15;-12;KND;JG;Low crush
 uf,n+4;m;30;i19;-15;JG;;Low crush
@@ -276,19 +279,48 @@ BT.ub;m, m;30, 30;;-18~-17;JG;;"* Alternate input: u or uf+3,4
 BT.db;l;12;i10;-2;+9;;Alternate input: d or df+1( or 2)
 BT.d(db)3;l;14;i10;-11;+3;;
 BT.d+3+4;m, m;30, 30;i19;-9~-8;KND;;Low crush
-BT.d+3+4;m, m;30;i19;-40;KND;;Low crush
-BT.d+3+4;m, m;30;i19;-9~-8;+3c;;Low crush
+BT.d+3+4;m, m;30;i19;-40;KND;;"* Low crush
+* When hit 2 whiffs"
+BT.d+3+4;m, m;30;i19;-9~-8;+3c;;"* Low crush
+* When hit 1 whiffs"
 BT.d~3+4;m;30;i19;-;KND;;"* Low crush
 * Recovers grounded"
-BT.FC.u~4;m;21;i18;-16;JG;;Low crush
+BT.FC.u~4;m;21;i18;-16;JG;;"* Low crush
+* Small version"
 BT.FC.u~4,3;m, m;21, 26;;-18~-17;JG;;"* Low crush
 * Recovers crouching"
 BT.FC.u~4,b;m;21;i18;-16;JG;;"* Low crush
-* Transition to DCH2"
+* Transition to DCH2
+* Small version"
 BT.FC.u~4,b,f;m;21;i18;-;JG;;"* Low crush
-* Transition to DCH2"
+* Transition to DCH2
+* Small version"
 BT.FC.u~3+4;m, m;36 (24);i46;-;KND;;"* Low crush
 * Recovers grounded"
+1+3;t;35 (9, 26);;-3;;;"* Throw break 1
+* Opponent recovers FUFT"
+2+4;t;35;;-6;;;"* Throw break 2
+* Side switch
+* Opponent recovers FUFA"
+Left throw;t;40;;-4;;;"* Throw break 1
+* Opponent recovers face up sideways"
+Right throw;t;42;;-4;;;"* Throw break 2
+* Side switch
+* Opponent recovers FUFT"
+Back throw;t;50;;;;;"* Unbreakable
+* Opponent recovers FDFT"
+df+1+2;t;35;;-6;;;"* Throw break 1+2
+* Opponent recovers FUFT"
+df+1+2,1,2,1+2;t;40;;-6;;;"* Throw break 1+2
+* Opponent recovers FDFA"
+f,F+3+4;t;10;;-3;;;"* Throw break 1+2
+* Side switch when broken"
+f~2+3;t;37;;+0;;;"* Throw break 1
+* Opponent recovers face up sideways"
+b+1+3;h, m;0;;;+5;;"* Reversal
+* Alternate input: b+2+4
+* Parry
+* Unbreakable"
 #stances
 Code;Stance
 DCH;Dragon Charge

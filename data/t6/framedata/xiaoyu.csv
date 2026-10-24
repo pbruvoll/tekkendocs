@@ -16,10 +16,15 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * Recovers crouching"
 4~3,d+1+2;m;28;i23;-1c;+3c;KND;"* Low crush
 * Transition to AOP"
+4;h;18;i11;-3;+8;JG;
 1+2;m;24;i20;-7;KND;;
 3+4;;;;;+5d;;"* Alternate input: u+3+4
-* Parry"
-d+3+4;;;;;+5d;;Parry
+* Parry
+* To the far side"
+d+4;l;8;i12;-13;-2;;"* High crush
+* Recovers crouching"
+d+3+4;;;;;+5d;;"* Parry
+* To the near side"
 f+1;h;9;i10;+1;+8;;
 f+2;h;9;i10;-2;+6;;
 f+3;m;16;i16;-9;+2;;
@@ -45,13 +50,13 @@ d~1;m, m, m;8, 8, 8;i17;-9~-3c;+3~+9c;;Transition to AOP
 d+3;l;13;i22~23;-13~-12;+3~+4;;High crush
 d+3,4;l, h;13, 21;;-12;KND;;High crush
 db+1;m;27 (40);i18;-9;KND;;
-db+1+2;sm;6;i10;-5;+6;;"* High crush
-* Recovers crouching"
 db+2;sm;9;i11;-4;+7;;"* Alternate input: d+2
 * High crush
 * Recovers crouching"
 db+3;l;0;i15;+3;+3c;;Guard break
 db+4;l;12;i18;-12;+7c;KND;
+db+1+2;sm;6;i10;-5;+6;;"* High crush
+* Recovers crouching"
 b+1;m;12;i8~12;-;+1;;"* Recovers back turned
 * Transition to BT"
 b~1;m;12;i8~12;-12~-10;-1;;
@@ -62,6 +67,7 @@ b+4;m;16;i13~14;-10~-9;-5~-4;;
 b+4,4;m, h;16, 20;;-11;+4;;
 ub;h;20;i15;-12;+9;;Alternate input: u or uf+2
 ub+1;m;14;i18;-8;+3;;Low crush
+ub+4;m;18;i15;-19;-8;KND;Low crush
 ub+3+4;m;25;i21~22;-19~-18;JG;;Low crush
 ub+3+4,d+1+2;m;25;i21~22;-19~-18;JG;;"* Low crush
 * Transition to AOP"
@@ -75,7 +81,6 @@ u+1+2,2,1;m, m, m, m;6, 6, 14, 27;;-10;KND;;
 u+1+2,2,1,b;m, m, m;6, 6, 14;;-19;-8;;Recovers back turned
 u+1+2,3+4;m, m;6, 6;i16~17;-16~-15;-5~-4;;
 ub+3;m;13;i16;-12;-1;KND;
-ub+4;m;18;i15;-19;-8;KND;Low crush
 u+3;m;18;i16;-12;KND;JG;
 uf+3;m;15;i16;-12;JG;;
 u+4;m;24;i23;-5;+6c;KND;Low crush
@@ -150,17 +155,16 @@ SS.4;l;19;i18;-13;-2;KND;"* High crush
 * Recovers crouching"
 1+3+4;;;;;;;
 2+3+4;;;;;;;
-4;h;18;i11;-3;+8;JG;
 b+1+2;;;;;;;
 HYP.1+2;;;;;;;
-HYP.2;m;30;i42;+1;KND;;
-HYP.2;m;36;i72;+5;KND;;
-HYP.2;m;42;i102;+24;KND;;
+HYP.2;m;30;i42;+1;KND;;1 steps
+HYP.2;m;36;i72;+5;KND;;2 steps
+HYP.2;m;42;i102;+24;KND;;3 steps
 HYP.4;h;24;i34;-4;+1;KND;
 HYP.3+4;h;31;i45;-1;KND;;Low crush
-HYP.2+3;!;48;i81;KND;KND;;
-HYP.2+3;!, m;48, 10;i111;KND;KND;;
-HYP.2+3;!, m;48, 40;i141;KND;KND;;
+HYP.2+3;!;48;i81;KND;KND;;1 steps
+HYP.2+3;!, m;48, 10;i111;KND;KND;;2 steps
+HYP.2+3;!, m;48, 40;i141;KND;KND;;3 steps
 b+3+4;;;;;;;Recovers back turned
 BT.uf,f;;;;;;;
 BT.uf,f,df;;;;;;;Recovers crouching
@@ -178,8 +182,9 @@ BT.3;m;24;i18;-19;KND;;"* Low crush
 BT.4;m;20;i14;-17;JG;;
 BT.1+2;m, m;7, 7;i16~17;-5;+6;;
 BT.1+2,1+2;m, m, m, m;7, 7, 7, 7;;-11~-10;+0~+1c;;Recovers crouching
-BT.3+4;;;;;;;Alternate input: u+3+4
-BT.d+3+4;;;;;;;
+BT.3+4;;;;;;;"* Alternate input: u+3+4
+* To the far side"
+BT.d+3+4;;;;;;;To the near side
 BT.1+4;;;;;+5;;Parry
 BT.d+1+4;l;;;;;;"* Parry
 * Bound"
@@ -188,9 +193,9 @@ BT.f+3+4;;;;;;;"* Recovers back turned
 * Transition to BT"
 BT.f+3+4,3+4;m;26;i25;-11;JG;;"* Recovers back turned
 * Transition to BT"
+BT.b+3;h;30;i10;-8;KND;;
 BT.b+3+4;;;;;;;"* Recovers back turned
 * Transition to BT"
-BT.b+3;h;30;i10;-8;KND;;
 BT.d+3;l;16;i17;-12;+7;KND;"* Recovers back turned
 * Transition to BT"
 BT.d~3;l;16;i17;-13;+6;KND;
@@ -210,8 +215,6 @@ BT.1+3;t;35;i12;;KND;;Alternate input: 2+4
 BT.f,F+1+3;t;35;i12;;KND;;"* Alternate input: f,F+2+4
 * Low crush"
 d+1+2;;;;;;;Alternate input: FC.1+2
-d+4;l;8;i12;-13;-2;;"* High crush
-* Recovers crouching"
 FC.db;sm;9;i11;-4;+7;;"* Alternate input: d+2
 * High crush
 * Recovers crouching"
@@ -235,9 +238,11 @@ AOP.d+1+2;m;25;i26;-4;JG;;
 AOP.3+4;m, m, m;9, 9, 16;i24;-12~-13;+;;"* Low crush
 * Recovers crouching"
 AOP.3+4;m, m;9, 9;i24;-25;-;;"* Low crush
-* Recovers crouching"
+* Recovers crouching
+* Hit 2 only"
 AOP.3+4;m;9;i24;-;-;;"* Low crush
-* Recovers crouching"
+* Recovers crouching
+* Hit 1 only"
 AOP.1+3;t;35;i12;;KND;;Alternate input: 2+4
 AOP.f+4;l;12;i18~19;-7~-6;+4~+5;;High crush
 AOP.f+4,4;l, l;12, 12;;-6;+5;;High crush
@@ -258,7 +263,8 @@ AOP.u+4;m;14;i16~17;-10~-9;+1~+2;;"* Alternate input: uf+4
 * Recovers crouching"
 AOP.u+4;m;14;i23;-1;+9;;"* Alternate input: uf+4
 * Low crush
-* Recovers crouching"
+* Recovers crouching
+* At the tip of the range"
 AOP.u+4,b;m;14;i16~17;-14~-13;-3~-2;;"* Alternate input: uf+4,b
 * Low crush
 * Recovers back turned
@@ -289,6 +295,38 @@ AOP.ub;;;;;;;"* Alternate input: u or uf
 AOP.b+3+4;;;;;;;Recovers back turned
 AOP.f+3+4;;;;;;;Recovers crouching
 AOP.f+3+4,d;;;;;;;Transition to AOP
+1+3;t;35 (12, 23);;-6;;;"* Throw break 1
+* Opponent recovers face up sideways"
+2+4;t;35;;-3;;;"* Throw break 2
+* Opponent recovers face up sideways"
+Left throw;t;45;;-3;;;"* Throw break 1
+* Opponent recovers face up sideways"
+Right throw;t;38;;-3;;;"* Throw break 2
+* Opponent recovers FDFA"
+Back throw;t;50;;;;;"* Unbreakable
+* Opponent recovers FUFT"
+df+1+2;t;40;;+0;;;"* Throw break 1+2
+* Side switch when broken
+* Side switch
+* Opponent recovers FUFA"
+df~2+4;t;38;;-2;;;"* Throw break 2
+* Side switch
+* Opponent recovers FUFA"
+f+2+3;t;15;;-2;;;"* Throw break 2
+* Side switch
+* Recovers BT"
+BT.f,F+1+3,f,F+3+4;m, !;(25, )20;;;;;"* Unbreakable
+* Side switch
+* Opponent recovers FDFT"
+1+4;;;;;+7;;"* Reversal
+* Alternate input: HYP.1+4
+* Parry
+* Unbreakable"
+BT.f,F+1+3,1+4;;;;;+7;;"* Parry
+* Unbreakable"
+BT.f,F+1+3,d+1+4;l;;;;;;"* Parry
+* Unbreakable
+* Bound"
 #stances
 Code;Stance
 HYP;Hypnotist

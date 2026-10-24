@@ -21,6 +21,7 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * Recovers grounded"
 uf,4~3;m;25;i34;-11~-9;KND;;"* Low crush
 * Recovers grounded"
+4;h;30;i16;-5;KND;;
 1+2;m;20;i15;-12;KND;;
 f,2~1+2;m;20;i26;-5;KND;;
 f,2~1+2,u;;;;;;;Alternate input: d
@@ -32,10 +33,10 @@ f+1+2;h;15;i12;-12;KND;;Bound
 df+1;m;10;i13;-1;+9;;
 df+1,1;m, h;10, 8;;-2;+4;;
 df+1,2;m, m;10, 21;;-13c;KND;;Bound
-df+1+2;t;28;i24;-16;KND;;Parry
 df+2;m;14;i15;-7;+4;JG;
 df+3;m;17;i17;-5;+6;;
 df+4;m;15;i13;-4;+7;;
+df+1+2;t;28;i24;-16;KND;;Parry
 d+1;m;15;i17;-8;+3c;;Bound
 d+1,d;m;15;i17;-8;+3c;;"* Recovers crouching
 * Bound
@@ -92,25 +93,27 @@ OTG.d+4;L;24;i19;-16;-5;;
 2+3+4;;;;;;;
 d+3+4;;;;;;;
 KAM.1;m;35;i15;-12;KND;;
-KAM.1;m;50;i15;+12g;KND;;
+KAM.1;m;50;i15;+12g;KND;;Fully charged
 KAM.1~2;m, m;35, 35;;-17c;KND;;Bound
-KAM.1~2;m, m;35, 35;;-17c;KND;;
+KAM.1~2;m, m;35, 35;;-17c;KND;;Fully charged
 KAM.2;h!;70;i91;KND;KND;;
+KAM.2;h!;70;i91;KND;KND;;Fully charged
 KAM.2,b;;;;;;;
 f,n,d,df;;;;;;;
 f,n,d,df~2;h;23;i11;-10;JG;;
 f,n,d,df+2;h;23;i11;+5;JG;;
 f,n,d,df~1;m;30;i19;-15;JG;;
-f,n,d,df~1;m;30;i22;-15;JG;;
+f,n,d,df~1;m;30;i22;-15;JG;;Delayed
 f,n,df+1;m;35;i22~23;-7~-6;JG;;
 f,n,d,df+3;m;35;i27;+7;KND;;Low crush
 f,n,d,df~3;l;21;i33;-18;KND;;High crush
 f,n,d,df~4;l;15;i16;-28;+5;KND;
 f,n,d,df~4,4;l, l;15, 13;;-14;KND;;Can block during recovery
 f,n,d,df~4,4,4;l, l, l;15, 13, 13;;-14;KND;;Can block during recovery
-f,n,d,df~4,4;l, l;15, 13;;-14;+3;KND;Can block during recovery
-f,n,d,df~4,4,4;l, l, l;15, 13, 13;;-14;+3;KND;Can block during recovery
-4;h;30;i16;-5;KND;;
+f,n,d,df~4,4;l, l;15, 13;;-14;+3;KND;"* Can block during recovery
+* Single hit"
+f,n,d,df~4,4,4;l, l, l;15, 13, 13;;-14;+3;KND;"* Can block during recovery
+* Single hit"
 ub;m;12;i18;-8;+3;;"* Alternate input: u or uf+1
 * Low crush"
 ub;h;15;;-;+;;Alternate input: u or uf+2
@@ -129,10 +132,33 @@ FC.db;l;10;i12;-15;-4;;"* Alternate input: d+4
 * Recovers crouching"
 HSW.n,4;m;13;;-3;+8;;
 HSW.n,4,4;m, m;13, 20;;-16;-5c;;
-HSW.n,4,4*;m, m;13, 20;;+;+c;;
+HSW.n,4,4*;m, m;13, 20;;+;+c;;Held
 HSW.n,1;m;35;;-19;JG;;From hit 1
-HSW.n,1*;m;;;-;JG;;
+HSW.n,1*;m;;;-;JG;;Held
 HSW.n,1;m;20;;-12;JG;;
+1+3;t;35;;-3;;;"* Throw break 1
+* Opponent recovers FUFT"
+2+4;t;35;;+0;;;"* Throw break 2
+* Side switch when broken
+* Opponent recovers FUFT"
+Left throw;t;40;;-4;;;"* Throw break 1
+* Opponent recovers face down sideways"
+Right throw;t;46;;-4;;;"* Throw break 2
+* Opponent recovers face down sideways"
+Back throw;t;60;;;;;"* Unbreakable
+* Opponent recovers FUFA"
+df+2+3;t;25;;;;;"* Throw break 2
+* Both recover standing"
+f,F+1+2;t;35;;+0;;;"* Throw break 1+2
+* Side switch when broken
+* Opponent recovers FUFT"
+f,F+1+4;t;35;;-6;;;Throw break 1+2
+qcf~1;t;45;;+0;;;"* Throw break 1
+* Opponent recovers FUFT"
+b+1+4;;15;;;;;"* Reversal
+* Alternate input: b+2+3
+* Unbreakable
+* Opponent recovers FUFT"
 #stances
 Code;Stance
 KAM;Kamae

@@ -60,11 +60,11 @@ b+3;m;20;i16;-6;+5;KND;
 b+4;m;21;i17;-7;KND;;
 ub;m;14;i18;-8;+3;;"* Alternate input: u or uf+1
 * Low crush"
+ub+2;h;20;i15;-12;+9;;Alternate input: u+2
+ub+4;m;13;i15;-12;-1;KND;Low crush
 ub+1+2;!;84;i75;KND;KND;;
 uf+2;m;21;i15;-8;+2;;
-ub+2;h;20;i15;-12;+9;;Alternate input: u+2
 ub+3;m;15;i22;-11;+0;KND;Low crush
-ub+4;m;13;i15;-12;-1;KND;Low crush
 u+3;m;20;i22;-9;+5;KND;"* Alternate input: uf+3
 * Low crush"
 u+4;m;18;i15;-12;KND;JG;Low crush
@@ -123,6 +123,30 @@ SS.1;h;8;i10;+1;+8;;
 SS.2;h;10;i10;+0;+9;;
 SS.3;h;22;i14;-7;+4;;
 SS.4;h;21;i13;-8;+0;KND;Low crush
+1+3;t;35 (12, 23);;+0;;;"* Throw break 1
+* Opponent recovers FUFT"
+2+4;t;35 (6, 9, 20);;-1;;;"* Throw break 2
+* Side switch
+* Opponent recovers FDFA"
+Left throw;t;43 (12, 12, 19);;-4;;;"* Throw break 1
+* Opponent recovers FUFA"
+Right throw;t;40;;-4;;;"* Throw break 2
+* Opponent recovers FDFA"
+Back throw;t;50;;;;;"* Unbreakable
+* Side switch
+* Opponent recovers face up sideways"
+df+2+3;t;40 (, , , );;;;;"* Throw break 2
+* Opponent recovers FDFT"
+uf+1+2;t;40 (2, 2, 4, 4, 28);;+0;;;"* Throw break 1+2
+* Side switch when broken
+* Opponent recovers FDFA"
+qcb~1+3;t;35;;+0;;;"* Throw break 1
+* Opponent recovers FUFA"
+b+2+4;;0;;;;;"* Reversal
+* Alternate input: b+1+3
+* Unbreakable"
+SAN.f,f,b+2+4;;;;;;;"* Reversal
+* Throw break f+1+3 or f+2+4"
 #stances
 Code;Stance
 SAN;Sanchin

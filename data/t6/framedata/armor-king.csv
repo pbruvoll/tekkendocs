@@ -5,6 +5,8 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 1,2,1;h, h, m;8, 12, 20;;-5;+1;+6;
 2;h;12;i10;+1;+7;;
 2,1;h, m;12, 14;;+0;+6;;
+3;h;30;i17;-14;KND;;
+4;h;24;i13;-5;+6;JG;
 1+2;m;14;i17;-10;-2;;
 1+2,2;m, h;14, 25;;-4;KND;;
 1+2,4;m, m;14, 24;;-13;+5;KND;
@@ -34,13 +36,13 @@ f+1+4;m;33;i14;-17;KND;;
 df+1;m;14;i13;-1;+7;;
 df+2;m;25;i15~16;-12~-11;-1~+0;KND;
 df+3;m;21;i17;-5;+5;KND;
+df+4;m;18;i12;-4;+7;;
 df+1+2;m;26;i24~25;-8~-7;KND;;
 df+3+4;sm, t;18 (30);i28;Throw;;;"* Low crush
 * Hit throw
 * At close range"
 df+3+4;sm;18;i29~33;-17~-13;-6~-2c;;"* Low crush
 * Recovers grounded"
-df+4;m;18;i12;-4;+7;;
 d+1;sm;6;i10;-5;+6;;"* Alternate input: FC.1
 * High crush
 * Recovers crouching"
@@ -65,11 +67,11 @@ db+2;m;18;i14;-11;+2;;
 db+2,3;m, m;18, 28;;-16;KND;;
 db+3;l;24;i23~24;-26~-25;+5~+6;KND;"* High crush
 * Recovers crouching"
-db+3+4;l;14;i18;-16;-2;;"* High crush
-* Recovers crouching"
 db+4;l;19;i27~29;-14~-12;KND;;"* Low crush
 * Recovers grounded"
 db+1+2;m;36;i26~27;+3~+4;KND;;Bound
+db+3+4;l;14;i18;-16;-2;;"* High crush
+* Recovers crouching"
 b+1;h;14;i12;-7;+5;KND;
 b+1,2;h, m;14, 18;;-12;+6;KND (+2);
 b+2;m;12;i15;-9;+2c;;
@@ -77,7 +79,6 @@ b+2,1;m, m;12, 9;;-12;-1;;
 b+2,1,2;m, m, h;12, 9, 18;;-7;KND;;
 b+3;h;27;i16;-10;KND;;
 b+4;m;20;i18;-5;+0;+7;
-3;h;30;i17;-14;KND;;
 b~4;m;20;i18;-5;+0;+7;"* Recovers back turned
 * Transition to BT"
 b+4,3;m, h;20, 31;;+4;KND;;
@@ -90,14 +91,14 @@ ub+1;h;30;i21;-5;+6;KND;
 ub;m;42;i48~52;-18~-14;KND;;"* Alternate input: u or uf+2
 * Low crush
 * Recovers grounded"
+ub+4;m;13;i15;-19;-8;KND;Low crush
 ub+1+2;m;14;i18;-8;+3;;"* Alternate input: u or uf+1
 * Low crush"
-ub+4;m;13;i15;-19;-8;KND;Low crush
+uf+4;m;15;i15;-12;JG;;Low crush
 uf+1+2;m;36;i35;+2c;KND;;Low crush
 uf+1+2,d;!;54;i61~62;KND;KND;;Low crush
 uf+3+4;m;27;i32~36;-7~-3;KND;;"* Low crush
 * Recovers grounded"
-uf+4;m;15;i15;-12;JG;;Low crush
 uf,n+1+2;m;36;i70;+2c;KND;;Low crush
 uf,n+1+2,d;!;54;i96~97;KND;KND;;Low crush
 uf,n+3+4;l;18;i52;-16;-5;-3;"* Low crush
@@ -136,10 +137,10 @@ SS.3+4;h;33;i24;-6;KND;;"* Low crush
 * Recovers grounded"
 BT.1;h;18;i8;-8;+3;;Alternate input: 2
 BT.3;m;18;i13;-20;KND;;
-BT.3+4;h;30;i10;-8;KND;;
 BT.4;m;24;i18;-10;KND;;
 BT.1+4;!;36;i41~45;KND;KND;;"* Low crush
 * Recovers grounded"
+BT.3+4;h;30;i10;-8;KND;;
 OTG.d+4;L;20;i19;-16;-5;;
 OTG.d+4,4;L, L;20, 8;;-16;-5;;
 OTG.d+4,4,4;L, L, L;20, 8, 6;;-16;-5;;
@@ -150,7 +151,6 @@ f,n,d,df+3;h!;36;i31;KND;KND;;
 f,n,d,df+4;m;26;i16;-9;JG;;Low crush
 f,n,d,df+1+2;h!;0, 12;i28;+27g;+27g;;
 f,n,d,df~1+4;t;20;i12;;Throw;;Alternate input: 2+3
-4;h;24;i13;-5;+6;JG;
 u+4;m;18;i15;-12;KND;JG;Low crush
 FC.1;sm;6;i10;-5;+6;;"* High crush
 * Recovers crouching"
@@ -162,3 +162,100 @@ FC.db+2;sm;9;i11;-4;+7;;"* Alternate input: d+2
 FC.db+4;l;14;i14;-15;-4;;"* Alternate input: d+4
 * High crush
 * Recovers crouching"
+1+3;t;35;;-6;;;"* Throw break 1
+* Side switch
+* Opponent recovers FUFA"
+2+4;t;35;;-3;;;"* Throw break 2
+* Side switch
+* Opponent recovers FUFA"
+2+4,d,d,d+1+2;t;40;;;;;"* Unbreakable
+* Opponent recovers FUFA"
+Left throw;t;40;;-4;;;"* Throw break 1
+* Opponent recovers FDFA"
+Right throw;t;40;;-4;;;"* Throw break 2
+* Opponent recovers FDFA"
+Back throw;t;60;;;;;"* Unbreakable
+* Side switch
+* Opponent recovers face up sideways"
+qcb+1+2;t;45 (40, 5);;;;;"* Throw break 1+2
+* Opponent recovers FUFA"
+df+2+3;t;40 (8, 8, 14, 10);;;;;"* Throw break 2
+* Opponent recovers FUFT"
+db,db+1+2;t;45;;-6;;;"* Throw break 1+2
+* Side switch
+* Opponent recovers FUFA"
+db,f~2+4;t;52;;+0;;;"* Throw break 2
+* Opponent recovers FUFA"
+f,b,db,d,df,f~1;t;65 (45, 20);;-7;;;"* Throw break 1
+* Side switch
+* Opponent recovers FDFT"
+f,f,F+2+4;t;40;;-7;;;"* Alternate input: f,f,F+2+4
+* Throw break 1+2
+* Opponent recovers FUFT"
+FC.db,d,db+1+2;t;45;;;;;"* Throw break 1+2
+* Opponent recovers FUFT"
+d+1+3;t;45;;+0;;;"* Against a crouching opponent
+* Low throw
+* Throw break 1
+* Opponent recovers FUFA"
+d+2+4;t;45;;+0;;;"* Against a crouching opponent
+* Low throw
+* Throw break 2
+* Opponent recovers FUFT"
+FC.1+2;t;5;;;;;"* Unblockable
+* Throw break 1+2
+* Opponent recovers FUFT"
+f,b,db,d,df,f~1;t;20;;;;;"* Against an airborne opponent
+* Unbreakable
+* Opponent recovers FDFA"
+f,f,F+2+4;t;25;;;;;"* Against an airborne opponent
+* Alternate input: f,f,F+2+4
+* Unbreakable
+* Opponent recovers FUFT"
+b+2+4;;25+;;;;;"* Against left punches
+* Alternate input: b+1+3
+* Reversal
+* Unbreakable
+* Side switch
+* Opponent recovers FUFA"
+b+2+4;;25+;;;;;"* Against right punches
+* Alternate input: b+1+3
+* Reversal
+* Unbreakable
+* Side switch
+* Opponent recovers face down sideways"
+d+1+4,1+2;m;21, 15;;;;;"* On hit from the front
+* Hit throw
+* Unbreakable
+* Opponent recovers FUFT"
+OTG.db+1+3;t;30;;;;;"* Alternate input: db+2+4
+* Throw break 1 or 2
+* Side switch
+* Opponent recovers FDFT"
+OTG.db+1+3;t;30;;;;;"* Alternate input: db+2+4
+* Throw break 1 or 2
+* Opponent recovers FDFT"
+OTG.db+1+3;t;35;;;;;"* Alternate input: db+2+4
+* Throw break 1 or 2
+* Opponent recovers FUFT
+* Held"
+OTG.db+1+3;t;40;;;;;"* Alternate input: db+2+4
+* Throw break 1 or 2
+* Opponent recovers FUFT"
+OTG.db+1+3;t;0;;;;;"* Alternate input: db+2+4
+* Throw break 1 or 2
+* Opponent recovers face down sideways"
+f,n,d,df~1+4,2+4,1+2,1+2;t;25;;;;;"* Throw break 1
+* Opponent recovers FDFA"
+f,n,d,df~1+4,3+4,3+4,1+2;t;15;;;;;"* Throw break 2
+* Opponent recovers face down sideways"
+f,n,d,df~1+4,2,1,1+2;t;18;;;;;"* Throw break 1+2
+* Opponent recovers FDFA"
+f,n,d,df~1+4,3+4,3+4,1+2,1,1,1+2;t;20 (4, 4, 12);;;;;"* Throw break 1
+* Opponent recovers face down sideways"
+f,n,d,df~1+4,3+4,3+4,1+2,3,4,1+2,3+4;t;23;;;;;"* Throw break 2
+* Opponent recovers face down sideways"
+f,n,d,df~1+4,2,1,1+2,4,3,3+4,1+2;t;22 (10, 12);;;;;"* Throw break 1
+* Opponent recovers face down sideways"
+f,n,d,df~1+4,2,1,1+2,3+4,2,1,1,1+2;t;25 (6, 6, 13);;;;;"* Throw break 2
+* Opponent recovers face down sideways"
