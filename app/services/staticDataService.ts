@@ -243,6 +243,10 @@ export const translatedGuidesT8: string[] = [
   'claudio',
   'bryan',
   'yoshimitsu',
+  'steve',
+  'anna',
+  'lili',
+  'jun',
 ];
 
 export const siteUrl = 'https://tekkendocs.com';

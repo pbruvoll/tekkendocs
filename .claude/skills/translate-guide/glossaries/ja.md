@@ -437,3 +437,51 @@ Sources: [鉄拳8 初心者向け攻略wiki — 仁](https://seesaawiki.jp/tekke
 | flashing steel | keep English | |
 
 Sources: [鉄拳8 初心者向け攻略wiki — 飛鳥](https://seesaawiki.jp/tekken8kouryaku/d/%C8%F4%C4%BB), [同 — クラウディオ](https://seesaawiki.jp/tekken8kouryaku/d/%A5%AF%A5%E9%A5%A6%A5%C7%A5%A3%A5%AA), [同 — ブライアン](https://seesaawiki.jp/tekken8kouryaku/d/%A5%D6%A5%E9%A5%A4%A5%A2%A5%F3), [同 — 吉光](https://seesaawiki.jp/tekken8kouryaku/d/%B5%C8%B8%F7)
+
+## Steve
+
+| English | Japanese | Note |
+| --- | --- | --- |
+| Steve Fox | スティーブ（・フォックス） | |
+| Lionheart (LNH) / Flicker (FLK) / Peekaboo (PAB) | ライオンハート / フリッカー / ピーカブー | 鉄拳8 初心者向け攻略wiki スティーブ |
+| Duck (DCK) / Extended duck (EXD) / duck cancel | ダッキング / ロングダッキング / ダッキャン | same source (ダッキングキャンセル、通称ダッキャン) |
+| Sonic Fang (1+2) | ソニックファング | same source |
+| Weave (WV) / Sway (SWY) | ウィービング / スウェー | katakana; 철권 교실 lists 위빙 레프트/라이트 |
+| Two Face (heat grab) | トゥーフェイス | unverified |
+| Outfox, Swindler, Gatling punch, Snake Charmer, Five Fox Fury | keep English | no Japanese name found |
+| back kenpo (Feng Wei) | バック拳法（後ろに下がる技） | glossed |
+
+## Anna
+
+| English | Japanese | Note |
+| --- | --- | --- |
+| Anna Williams | アンナ・ウィリアムズ | |
+| Hammer Chance (HAM) | ハンマーチャンス | 鉄拳8 初心者向け攻略wiki アンナ |
+| Chaos Judgment (CJM) / Pleasure Time (TOM) | カオスジャッジメント / プレジャータイム | katakana, unverified (the Korean 카오스 / 플레저타임 match) |
+| bazooka | バズーカ | same source |
+| stomp (D3+4) | 踏みつけ | |
+
+## Lili
+
+| English | Japanese | Note |
+| --- | --- | --- |
+| Lili | リリ | |
+| Feisty Rabbit | ラビットエア | 鉄拳8 初心者向け攻略wiki リリ |
+| backturn (BT) | 背向け | same source |
+| Dew Glide (DEW) | デューグライド | katakana of the English, unverified; the Korean name is 파라드 스텝, so the Japanese one may differ |
+| named moves (Submissive Heel, Cloisonne, ...) | keep English | |
+
+## Jun
+
+| English | Japanese | Note |
+| --- | --- | --- |
+| Jun Kazama | 風間準 / 準 | |
+| Izumo (IZU) / Genjitsu (GEN) / Miare (MIA) | 出雲 / 幻日 / 御阿礼 | 出雲 on 鉄拳8 初心者向け攻略wiki 準; 幻日 and 御阿礼 from 철권 교실 (겐지츠(환일) 幻日, 미아레 御阿礼) |
+| Izumo smash (1,1 / F1) | 出雲開手 | 철권 교실 (이즈모개수 出雲開手) |
+| Demon Slayer (F2) | 鬼殺し | wiki and 철권 교실 |
+| heron dance | 白鷺遊舞 | same sources |
+| Divine Exile heaven / earth | 神逐・天／地 | 철권 교실 (神逐・天) |
+| Cancans (D3+4) | カンカン | community name in katakana |
+| Kazama Essence, Kazama power moves | keep English | no Japanese name found |
+
+Sources: [鉄拳8 初心者向け攻略wiki — スティーブ](https://seesaawiki.jp/tekken8kouryaku/d/%A5%B9%A5%C6%A5%A3%A1%BC%A5%D6), [同 — アンナ](https://seesaawiki.jp/tekken8kouryaku/d/%A5%A2%A5%F3%A5%CA), [同 — リリ](https://seesaawiki.jp/tekken8kouryaku/d/%A5%EA%A5%EA), [同 — 準](https://seesaawiki.jp/tekken8kouryaku/d/%BD%E0), [철권 교실 — 준](https://www.tekkenclass.com/characters/jun/move/)

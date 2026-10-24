@@ -405,3 +405,50 @@ Sources: [철권 교실 — 진](https://www.tekkenclass.com/characters/jin/move
 | flashing steel | keep English | |
 
 Sources: [철권 교실](https://www.tekkenclass.com/characters/asuka/move/), [철권 교실](https://www.tekkenclass.com/characters/bryan/move/), [철권 교실](https://www.tekkenclass.com/characters/yoshimitsu/move/)
+
+## Steve
+
+| English | Korean | Note |
+| --- | --- | --- |
+| Steve Fox | 스티브 (폭스) | |
+| Lionheart (LNH) / Flicker (FLK) / Weave left / right (WV) / Sway (SWY) | 라이온 하트 / 플리커 / 위빙 레프트 / 위빙 라이트 / 스웨이 | 철권 교실 스티브 기술 목록 (라이온 하트 중, 플리커 중, 위빙 레프트 중) |
+| Duck (DCK) / Extended duck (EXD) / duck cancel | 더킹 / 롱 더킹 / 더킹 캔슬 | same source (더킹 중, 롱 더킹 중) |
+| Peekaboo (PAB) | 피카부 | not listed on 철권 교실; transliteration of the Japanese ピーカブー |
+| Two Face (heat grab) | 투 페이스드 | same source (투 페이스드 중 LP 잡기) |
+| Albatross (ALB) | 앨버트로스 | unverified |
+| Sonic Fang (1+2) | 소닉 팽 | transliteration, unverified |
+| Outfox, Swindler, Gatling punch, Snake Charmer, Five Fox Fury | keep English | no Korean name found |
+| Feng Wei's back kenpo | 펭 웨이의 백 켄포(뒤로 물러나는 기술) | glossed |
+
+## Anna
+
+| English | Korean | Note |
+| --- | --- | --- |
+| Anna Williams | 안나 윌리엄스 | |
+| Hammer Chance (HAM) / Chaos Judgment (CJM) / Pleasure Time (TOM) | 해머 찬스 / 카오스 / 플레저 타임 | 철권 교실 안나 기술 목록 filter (해머찬스, 카오스, 플레저타임; "해머 자세로 이행") |
+| bazooka | 바주카 | |
+| stomp (D3+4) | 밟기 | |
+
+## Lili
+
+| English | Korean | Note |
+| --- | --- | --- |
+| Lili | 릴리 | |
+| Dew Glide (DEW) | 파라드 스텝 | 철권 교실 릴리 기술 목록 ("파라드 스텝으로 이행한다") |
+| Feisty Rabbit | 래빗 에어 | same source (래빗 에어 자세) |
+| backturn (BT) | 뒤자세 | as for Xiaoyu; the 철권 교실 filter says 뒤돌아 |
+| Submissive Heel, Peacock Waltz, Cloisonne, Root of Evil and other named moves | keep English | 철권 교실 transliterates (클와조네) but the guide text works from notation |
+
+## Jun
+
+| English | Korean | Note |
+| --- | --- | --- |
+| Jun Kazama | 카자마 준 / 준 | |
+| Izumo (IZU) / Genjitsu (GEN) / Miare (MIA) | 이즈모 / 겐지츠 / 미아레 | 철권 교실 준 기술 목록 filter (이즈모, 겐지츠, 미아레) |
+| Demon Slayer (F2) | 귀살 | same source (귀살 鬼殺し 6RP) |
+| heron dance (1+4 strings) | 백로유무 | same source (백로유무 白鷺遊舞) |
+| Divine Exile heaven / earth (UF1, FC DF1) | 신축(천·지) | same source (신축·천 神逐・天 9LP) |
+| Cancans (D3+4) | 캉캉 | transliteration of the community name |
+| Kazama Essence, Kazama power moves | keep English | no Korean name found |
+
+Sources: [철권 교실 — 스티브](https://www.tekkenclass.com/characters/steve/move/), [철권 교실 — 안나](https://www.tekkenclass.com/characters/anna/move/), [철권 교실 — 릴리](https://www.tekkenclass.com/characters/lili/move/), [철권 교실 — 준](https://www.tekkenclass.com/characters/jun/move/)

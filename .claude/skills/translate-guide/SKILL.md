@@ -83,6 +83,11 @@ Some rows genuinely have fewer columns than their section's header (e.g. Draguno
 command (Dragunov has `"" WS+3""`) is part of the cell; the multiset check catches it if lost.
 The script also keeps each cell's leading/trailing whitespace from the source.
 
+A source cell can have an unmatched `"`. In Steve's `d+2,1` description the pairing turns a whole
+English sentence into a "quoted command"; keep that chunk verbatim, put the translation in brackets
+right after it, and keep the leftover stray quote too. An odd quote with no pair (Anna's intro has
+`"Hammer Chance (HAM)”`) is plain text: translate inside it but keep the single `"`.
+
 ## Right-to-left languages
 
 The guide container gets `dir="rtl"`, and `ContentContainer` gives every descendant

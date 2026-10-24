@@ -388,3 +388,46 @@ The Reina author (Heavenly) is "he" in the source: masculine plural of respect (
 | okizeme | اوکیزیمے |
 | flashing steel | فلیشنگ اسٹیل |
 | i10, i13 line starts | آئی 10, آئی 13 |
+
+## Steve
+
+| English | Urdu |
+| --- | --- |
+| Steve Fox | اسٹیو فاکس (masculine verbs) |
+| Lionheart / Flicker / Peekaboo | لائن ہارٹ / فلکر / پیک اے بو |
+| Duck / extended duck / duck cancel | ڈک / ایکسٹینڈڈ ڈک / ڈک کینسل |
+| Weave / Sway | ویو / سوے |
+| Outfox / Swindler / Sonic Fang / Gatling punch / Snake Charmer / Five Fox Fury / Two Face | آؤٹ فاکس / سوئنڈلر / سونک فینگ / گیٹلنگ پنچ / اسنیک چارمر / فائیو فاکس فیوری / ٹو فیس |
+| back kenpo | بیک کینپو (پیچھے ہٹنے والی موو) |
+
+SEAGERR's gender is not stated: "یہ گیم میری دنیا بن گئی", not "میں ڈوب گیا".
+
+## Anna
+
+| English | Urdu |
+| --- | --- |
+| Anna Williams | اینا ولیمز (feminine verbs) |
+| Hammer Chance / Chaos Judgment / Pleasure Time | ہیمر چانس / کیاس ججمنٹ / پلیژر ٹائم |
+| bazooka | بازوکا |
+| stomp | اسٹامپ |
+| FC / CJM at a cell start | فل کراؤچ (FC) / کیاس ججمنٹ (CJM) |
+
+## Lili
+
+| English | Urdu |
+| --- | --- |
+| Lili | لِلی (feminine verbs) |
+| Dew Glide / Feisty Rabbit | ڈیو گلائیڈ / فیسٹی ریبٹ |
+| named moves | transliterate, English in brackets: سبمسو ہیل (Submissive Heel) |
+| cartwheel | کارٹ وہیل |
+
+## Jun
+
+| English | Urdu |
+| --- | --- |
+| Jun Kazama | جون کازاما (feminine verbs) |
+| Izumo / Genjitsu / Miare | ایزومو / گینجتسو / میارے |
+| Kazama Essence / Kazama power | کازاما ایسنس / کازاما پاور |
+| Cancans / Demon slayer / Divine Exile / heron dance / Grace | کین کینز / ڈیمن سلیئر / ڈیوائن ایگزائل / ہیرون ڈانس / گریس |
+
+Pagani's gender is not stated: "جن کی وضاحت یہ ہے", "میرا مشورہ ہے", never "میں سمجھاتا ہوں" / "دوں گا".
