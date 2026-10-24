@@ -199,3 +199,19 @@ Snake Eyes (SNE), Slither Step (SLS), Sway (SWA), backsway, taunt, snake edge, b
 ## Yoshimitsu
 
 NSS, KIN (Kincho), DGF (Dragonfly), IND (Indian), FLE (Flea), BDS / Bad Breath, Flash, Manji Spin, hopknee, flashing steel, okizeme stay English. gimmick → numara; frog jump → kurbağa zıplaması; teleport → ışınlanmak.
+
+## Steve
+
+Lionheart (LNH), Flicker (FLK), Peekaboo (PAB), Duck (DCK), extended duck (EXD), duck cancel, Weave (WV), Sway (SWY), Albatross (ALB), Outfox, Swindler, Sonic Fang, Gatling punch, Snake Charmer, Five Fox Fury, Two Face, flicker cancel, back kenpo stay English ("Lionheart stance'i").
+
+## Anna
+
+Hammer Chance (HAM), Chaos Judgment (CJM), Pleasure Time (TOM), stance cancel stay English. bazooka → bazuka; stomp → tekme.
+
+## Lili
+
+Dew Glide (DEW), Feisty Rabbit and the named moves stay English. backturn → sırtı dönük; cartwheel → takla.
+
+## Jun
+
+Izumo (IZU), Genjitsu (GEN), Miare (MIA), Kazama Essence, Kazama power hareketleri, Cancans, Demon slayer, Divine Exile, heron dance, Grace stay English. "EU" (the region) → Avrupa, not AB (the European Union).

@@ -377,3 +377,40 @@ The Reina author (Heavenly) is "he" in the source: masculine forms are fine ther
 | NSS, KIN, DGF, IND, FLE, BDS / Bad Breath, Flash, Manji Spin, flashing steel | in Latin | |
 | hopknee | хопни (прыжок с коленом) | |
 | turtle (player) | «черепаха» | as for Dragunov |
+
+## Steve
+
+| English | Russian | Note |
+| --- | --- | --- |
+| Steve Fox | Стив Фокс (gen. Стива) | glossary above |
+| Lionheart, Flicker, Peekaboo, Duck, extended duck, Weave, Sway, Albatross, Outfox, Swindler, Sonic Fang, Gatling punch, Snake Charmer, Five Fox Fury, Two Face | in Latin, "стойка Lionheart" | |
+| back kenpo | отскок назад | descriptive |
+
+SEAGERR's gender is not stated: "у меня ушло", "удалось войти", never "я провёл".
+
+## Anna
+
+| English | Russian | Note |
+| --- | --- | --- |
+| Anna Williams | Анна Уильямс | glossary above |
+| Hammer Chance, Chaos Judgment, Pleasure Time | in Latin | |
+| bazooka | базука | |
+| stomp | топ (удар ногой по лежачему) | |
+
+## Lili
+
+| English | Russian | Note |
+| --- | --- | --- |
+| Lili | Лили | glossary above |
+| Dew Glide, Feisty Rabbit, named moves | in Latin | |
+| backturn | спиной | as for Kunimitsu |
+| cartwheel | колесо | |
+
+## Jun
+
+| English | Russian | Note |
+| --- | --- | --- |
+| Jun Kazama | Дзюн Кадзама | glossary above |
+| Izumo, Genjitsu, Miare, Kazama Essence, Kazama power, Cancans, Demon slayer, Divine Exile, heron dance | in Latin | |
+
+Pagani's gender is not stated: "кто знает", "этот удар уже упоминался", never "сама не знаю" / "я упоминал".

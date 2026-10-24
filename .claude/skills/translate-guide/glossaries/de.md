@@ -228,3 +228,19 @@ Snake Eyes (SNE), Slither Step (SLS), Sway (SWA), Backsway, Taunt, Snake Edge, B
 ## Yoshimitsu
 
 NSS, KIN (Kincho), DGF (Dragonfly), IND (Indian), FLE (Flea), BDS / Bad Breath, Flash, Manji Spin, Hopknee, Flashing Steel, Okizeme, Gimmick stay English. frog jump → Froschsprung; turtle → turteln.
+
+## Steve
+
+Lionheart (LNH), Flicker (FLK), Peekaboo (PAB), Duck (DCK), Extended Duck (EXD), Duck Cancel, Weave (WV), Sway (SWY), Albatross (ALB), Outfox, Swindler, Sonic Fang, Gatling Punch, Snake Charmer, Five Fox Fury, Two Face, Flicker Cancel, Back Kenpo, Balcony Break stay English ("Lionheart-Stance"). SEAGERR's gender is not stated: "als einzige Person mit Steve".
+
+## Anna
+
+Hammer Chance (HAM), Chaos Judgment (CJM), Pleasure Time (TOM), Stance Cancel stay English ("Hammer-Chance-Stance"). bazooka → Bazooka; stomp → Stampfer.
+
+## Lili
+
+Dew Glide (DEW), Feisty Rabbit and the named moves (Submissive Heel, Peacock Waltz, Cloisonne, Root of Evil, Kitty Claws, ...) stay English. backturn → Backturn ("im Backturn"); cartwheel → Rad.
+
+## Jun
+
+Izumo (IZU), Genjitsu (GEN), Miare (MIA), Kazama Essence, Kazama-Power-Moves, Cancans, Demon Slayer, Divine Exile, Heron Dance, Grace stay English. A generic "Jun player" → "jemand mit Jun", not Spielerin/Spieler.

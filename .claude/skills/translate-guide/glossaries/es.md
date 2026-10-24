@@ -192,3 +192,19 @@ Snake Eyes (SNE), Slither Step (SLS), Sway (SWA), backsway, taunt, snake edge, b
 ## Yoshimitsu
 
 NSS, KIN (Kincho), DGF (Dragonfly), IND (Indian), FLE (Flea), BDS / Bad Breath, Flash, Manji Spin, hopknee, flashing steel, okizeme stay English. gimmick → truco; frog jump → salto de rana.
+
+## Steve
+
+Lionheart (LNH), Flicker (FLK), Peekaboo (PAB), Duck (DCK), extended duck (EXD), duck cancel, Weave (WV), Sway (SWY), Albatross (ALB), Outfox, Swindler, Sonic Fang, Gatling punch, Snake Charmer, Five Fox Fury, Two Face, flicker cancel, back kenpo, guard break, balcony break stay English. SEAGERR's gender is not stated: "juego Steve", "llegué a estar entre los mejores Steve".
+
+## Anna
+
+Hammer Chance (HAM), Chaos Judgment (CJM), Pleasure Time (TOM), stance cancel stay English. bazooka → bazuca, bazucazo; stomp → pisotón.
+
+## Lili
+
+Dew Glide (DEW), Feisty Rabbit and the named moves (Submissive Heel, Peacock Waltz, Cloisonne, Thorn Whip, Root of Evil, Kitty Claws, Zephyrantes, Horizon Slide, Black Swan, Twist of Fate, Bed Time, Piercing Thorn, Circle Knee, Matterhorn) stay English. backturn → de espaldas; cartwheel → rueda. DewGlider's gender is not stated: "hecha por mí", never "una servidora".
+
+## Jun
+
+Izumo (IZU), Genjitsu (GEN), Miare (MIA), Kazama Essence, Kazama power moves, Cancans, Demon Slayer, Divine Exile, heron dance, Grace stay English. Pagani's and Kirakira's genders are not stated ("Kira es lo mejor de Europa con Jun").
