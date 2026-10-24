@@ -1,7 +1,7 @@
 import { cdnUrl } from '~/services/staticDataService';
 import { type CharacterInfo } from '~/types/CharacterInfo';
 
-/** The frame data and avatars are made by scripts/convertT6FrameData.py and uploaded to the cdn */
+/** The frame data is made by scripts/buildT6FrameData.py and the avatars by scripts/convertT6AvoidingThePuddle.py, and both are uploaded to the cdn */
 export const t6CdnUrl = `${cdnUrl}/t6`;
 
 export const t6Characters: CharacterInfo[] = [

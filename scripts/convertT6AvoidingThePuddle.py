@@ -12,8 +12,12 @@ The csv files use the same layout as the T7 sheets, so the site can parse them t
 The character avatars are pictures on the first sheet, each placed right above the cell with
 the character name.
 
-Usage: python scripts/convertT6FrameData.py <path to Tekken6FrameData.xlsm>
-Output: data/t6/framedata/<character-id>.csv and data/t6/avatars/<character-id>.webp
+The workbook is the Tekken 6 BR data from Avoiding the Puddle, machine translated from a japanese wiki.
+The frame data on the site is made by scripts/buildT6FrameData.py from better sources, which uses
+these csv files to fill in frames missing from those sources.
+
+Usage: python scripts/convertT6AvoidingThePuddle.py <path to Tekken6FrameData.xlsm>
+Output: data/t6/atp/<character-id>.csv and data/t6/avatars/<character-id>.webp
 """
 
 import csv
@@ -42,7 +46,7 @@ HEADERS = [
 ]
 
 repoRoot = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-outputRoot = os.path.join(repoRoot, "data", "t6", "framedata")
+outputRoot = os.path.join(repoRoot, "data", "t6", "atp")
 avatarOutputRoot = os.path.join(repoRoot, "data", "t6", "avatars")
 # the avatars in the workbook vary a few pixels in size, so they are all cropped to the same size
 AVATAR_SIZE = (90, 117)
@@ -480,7 +484,7 @@ def writeAvatars(workbookPath, characterSelectSheet):
 
 def main():
     if len(sys.argv) != 2:
-        fail("Usage: python scripts/convertT6FrameData.py <path to Tekken6FrameData.xlsm>")
+        fail("Usage: python scripts/convertT6AvoidingThePuddle.py <path to Tekken6FrameData.xlsm>")
     workbookPath = sys.argv[1]
     if not os.path.isfile(workbookPath):
         fail("Could not find " + workbookPath)
