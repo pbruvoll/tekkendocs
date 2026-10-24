@@ -1,71 +1,71 @@
 #frames_normal
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes
-1;h;7;i10;+1;+9;;
-1,1;h, h;7, 8;;-2;+9;;
-1,1,3;h, h, l;7, 8, 10;;-10;+1;;
-1,1,3,3;h, h, l, h;7, 8, 10, 18;;-15;-4;;
-1,2;h, h;7, 10;;+0;+8;;
-1,2,3;h, h;7, 10;;+3;+11;;
-1,2,4;h, h;7, 10;;+3;+11;;
-1,2,f+3;h, h, m;7, 10, 17;;-8;+3;;
+1;h;8;i10;+1;+8;;
+1,1;h, h;8, 9;;-2;+9;;
+1,1,3;h, h, l;8, 9, 12;;-10;+1;;
+1,1,3,3;h, h, l, h;8, 9, 12, 21;;-15;-4;;
+1,2;h, h;8, 12;;+0;+8;+9;
+1,2,3;h, h;8, 12;;+3;+11g;+12;
+1,2,4;h, h;8, 12;;+3;+11g;+12;
+1,2,f+3;h, h, m;8, 12, 20;;-8;+3;;
 1,2,f+4;h, h, h;7, 10, 37;;+8;KND;;"* Low crush
 * At close range"
 1,2,f+4;h, h, h;7, 10, 25;;-10;KND;;Low crush
-2;h;10;i10;+0;+8;;
-2,3;h;10;;+4;+12g;+13;Transition to LFS
-2,4;h;10;;+4;+12g;+13;Transition to RFS
-2,f+3;h, m;17, 17;;-8;+3;;
+2;h;10;i10;+0;+8;+9;
+2,3;h;10;;+3;+11g;+12;Transition to LFS
+2,4;h;10;;+3;+11g;+12;Transition to RFS
+2,f+3;h, m;10, 20;;-8;+3;;
 2,f+4;h, h;10, 37;;+8;KND;;"* Low crush
 * At close range"
 2,f+4;h, h;10, 25;;-10;KND;;Low crush
-3;h;15;i14;-7;+4;;
-3,3;h, m;15, 12;;-14;-3;;
-3,3,f;h, m;15, 12;;+2;+13g;+13;Transition to LFS
-3,3,3;h, m, m;15, 12, 15;;-14;KND;;
-3,3,4;h, m, h;15, 12, 20;;+9;+20g;+20;
-3,3,f+4;h, m, h;15, 12, 25 (37);;+5~+6s;KND;;
-3,3,d+3;h, m, l;15, 12, 7;;-11;+0;;
-3,3,d+3,4;h, m, l, h;15, 12, 7, 10;;+7;+18g;+18;
+3;h;18;i14;-7;+4;;
+3,3;h, m;18, 14;;-13;-7;-2;
+3,3,f;h, m;18, 14;;+2;+8;+13;Transition to LFS
+3,3,3;h, m, m;18, 14, 18;;-14;KND;;
+3,3,4;h, m, h;18, 14, 24;;+9;+20g;+20;
+3,3,f+4;h, m, h;18, 14, 30;;-1;KND;;
+3,3,d+3;h, m, l;18, 14, 12;;-11;+0;;
+3,3,d+3,4;h, m, l, h;18, 14, 12, 12;;+9;+19g;+19;
 3~4;m, m;12, 23;i22;-5;KND;;Low crush
-4;h;14;i11;-4;+7;;
-4,3;h, m;14, 12;;-6;+5;;
-4,f~3;h, m;14, 14;;-6;+5;;Transition to RFF
-4,4;h, h;14, 10;;-9;+2;;
-4,f~4;h, h;14, 10;;-5;+6;;Transition to RFF
+4;h;16;i11;-4;+5;+7;
+4,3;h, m;16, 14;;-6;+5;;
+4,f~3;h, m;16, 14;;-7;+5;;Transition to RFF
+4,4;h, h;16, 12;;-9;+2;;
+4,f~4;h, h;16, 12;;-5;+6;;Transition to RFF
 4,4,3;h, h, m;14, 10;;-15~-9;KND;;"* Bound
 * Transition to RFF"
-4,4,4;h, h, h;14, 10, 10;;-1;+9g;+9;Transition to RFS
+4,4,4;h, h, h;16, 12, 12;;-1;+9;;Transition to RFS
 4,4,b~4;h, h, h;14, 10, 10;;-6;+5;;
-4,4,f~4;h, h, h;14, 10, 25;;-6;+5;;Transition to RFF
-4,4,4,4;h, h, h, m;14, 10, 10, 20;;-4;KND;;Transition to RFF
-4,4,4,3;h, h, h, l;14, 10, 10, 10;;-23;KND;;
+4,4,f~4;h, h, h;16, 12, 30;;-6;+5;;Transition to RFF
+4,4,4,4;h, h, h, m;16, 12, 12, 24;;-4;KND;;Transition to RFF
+4,4,4,3;h, h, h, l;16, 12, 12, 12;;-18;KND;;
 1+2;;;;;;;Transition to BT
 3+4;;;;;;;Transition to RFF
 f+1;h;7;i10;+1;+9;;
-f+2;m;15;i15~16;-6~-5;+5;;Transition to RFF
-f~2;m;15;i15~16;-11;-1;;
+f+2;m;18;i15~16;-6~-5;+5~+6;;Transition to RFF
+f~2;m;18;i15~16;-12~-11;-1~+0;;
 f+3;;;;;;;
 f,3,n~3;m;28;i22;-21;KND;;
 f,n+4;;;;;;;
-f+4;h;21;i17;+9;+19g;+9;Transition to RFS
-f+4,4;h, m;21, 15;;-7;KND;;
-f+1+2;m;21;i15~16;-9;+20 (KND);KND;
+f+4;h;25;i17;+9;+19g;+9;Transition to RFS
+f+4,4;h, m;25, 18;;-7;KND;;
+f+1+2;m;20;i15;-9;+20 (KND);KND;
 df+1;m;10;i13;+0;+8;;
 df+2;m;15;i14~15;-8~-7;JG (+3);JG;
 df+3;m;14;i14;-14;-3;;
-df+3,3;m, m;14, 15;;-14;KND;;
-df+3,4;m, h;14, 20;;+9;+20g;+20;
-df+3,f+4;m, h;14, 25 (37);;+5~+6s;KND;;
+df+3,3;m, m;16, 18;;-14;KND;;
+df+3,4;m, h;16, 24;;+9;+20g;+20;
+df+3,f+4;m, h;16, 30;;-1;KND;;
 df+4;m;15;i12;-4;+7;;
-df+1+2;m;12;i13;-1;+6;;
-df+3+4;m;8 (5, 10);i15~16;-11;+0;;
-d+3;l;12;i17;-13;-2;;
-d+3,3;l, h, h;12, 8, 10;;+3;+3;+7;Transition to LFS
-d+3,4;l, h;12, 10;;+8;+19g;+19;Transition to RFS
-d+4;l;7;i19;-17;-6;;"* High crush
+df+1+2;m;14;i13;-3;+8;;
+df+3+4;m;9 (5, 10);i15~16;-11;+0;;
+d+3;l;14;i17;-13;-2;;
+d+3,3;l, h, h;14, 9, 12;;+1;+3;+7;Transition to LFS
+d+3,4;l, h;14, 12;;+9;+19g;+19;Transition to RFS
+d+4;l;8;i19;-17;-6;;"* High crush
 * Recovers crouching"
-d+4,4;l, h;7, 22;;-8;JG;;High crush
-d+3+4;l;7;i12;-13;-3;;"* High crush
+d+4,4;l, h;8, 26;;-8;KND;;High crush
+d+3+4;l;8;i12;-13;-2;;"* High crush
 * Recovers crouching"
 db+1;sm;5;i10;-5;+6;;"* Alternate input: d+1
 * High crush
@@ -73,60 +73,60 @@ db+1;sm;5;i10;-5;+6;;"* Alternate input: d+1
 db+2;sm;8;i11;-4;+7;;"* Alternate input: d+2
 * High crush
 * Recovers crouching"
-db+3;l;12;i19;-13;+3;+6;"* High crush
+db+3;l;14;i19;-13;+0;+7;"* High crush
 * Recovers crouching"
-db+4;l;12;i16;-12;-8;-1;
-db+4,f;l;12;i16;-12;-8;-1;Transition to RFS
-db+4,4;l, h;12, 21;;-3;KND;;
-db+3+4;!;40 (30);i61;KND;KND;;
+db+4;l;14;i16;-12;-8;-1;
+db+4,f;l;14;i16;-1;+3;+10;Transition to RFS
+db+4,4;l, h;14, 25;;-3;KND;;
+db+3+4;!;48;i61;KND;KND;;
 db+3+4,b,b;;;;;;;
 b+1;h;7;i10;+1;+9;;
-b+2;h;18;i13;-4;+4;KND;
-b+3;m;18;i17;-15;JG;;
-b+4;m;;i16;-4;+7;KND;Transition to RFF
+b+2;h;21;i13~14;-5~-4;+4~+5;KND;
+b+3;m;18;i17;-15;KND;;
+b+4;m;;i16~17;-8~-7;+8~+9;KND;Transition to RFF
 ub;m;12;i18;-8;+3;;"* Alternate input: u or uf+1
 * Low crush"
 ub;h;15;;-;+;;Alternate input: u or uf+2
-ub+4;m;18;i17;-17;+1;;Low crush
+ub+4;m;21;i17;-14;+4;;Low crush
 ub+3;h;25;i20;+3;KND;;"* Alternate input: u+3
 * Low crush
 * Transition to LFS"
-u+4;m;18;i16;+0;+11g;;"* Low crush
+u+4;m;21;i16;+0;+11g;+11;"* Low crush
 * Transition to RFS"
-u+3+4;m;18;i25;-6c;KND;;Low crush
-uf+2;m;22;i26;+7c;+6c;+14cg;Low crush
-uf+3;m;15;i28;-5;KND;;Low crush
+u+3+4;m;21;i25;-9c;KND;;Low crush
+uf+2;m;26;i26;+5c;+4c;+9c;Low crush
+uf+3;m;15;i28;-6;KND;;Low crush
 uf+3,4;m, m;15, 14;;-8;JG;;Low crush
-uf+3,4,3;m, m, h;15, 14, 25;;;KND;;Low crush
+uf+3,4,3;m, m, h;18, 16, 30;;;KND;;Low crush
 uf+4;h;12;i22;-16;-5;;"* Low crush
 * Transition to RFF"
 uf+4,4;h, m;12, 12;;-13;-2;;"* Low crush
 * Transition to RFF"
 uf+4,4,4;h, m, l;12, 12, 15;;-1;+6;KND;"* Low crush
 * Transition to RFF"
-uf+4,f;h;12;i22;-2;+9g;+9;"* Low crush
+uf+4,f;h;14;i22;-2;+4;;"* Low crush
 * Transition to RFS"
-uf+4,4,f;h, m;12, 12;;+0;+11g;+11;"* Low crush
+uf+4,4,f;h, m;14, 14;;+0;+6;;"* Low crush
 * Transition to RFS"
-uf+4,4,4,f;h, m, l;12, 12, 15;;+0;+13g;KND;"* Low crush
+uf+4,4,4,f;h, m, l;14, 14, 18;;+1;+7;KND;"* Low crush
 * Transition to RFS"
 uf+3+4;m, h;;i14;-9;+2;;Low crush
 uf+3+4,4;m, h, m;;;-13;-2;;Low crush
 f,F+1;h;7;i10;+1;+9;;
 f,F+2;t;40;i12;;KND;;
-f,F+3;m;24;i22;+5;+4c;;Transition to RFF
-f,F+4;h;30;i18;-13;+8d;;Low crush
-b,b+4;h;21;i30;-7;+2;KND;Low crush
-b,b+4,3;h, m;21, 28;;-15;KND;;Low crush
-b,b+4,4;h, h;21, 14;;-7;KND;;Low crush
-b,b+4,4,4;h, h, h;21, 14, 14;;-7;KND;;Low crush
-b,b+4,4,3;h, h, m;21, 14, 28;;-15;KND;;Low crush
-f,n,d,df+3;m;27;i18;+1;KND;;Transition to LFS
+f,F+3;m;28;i23;+5~+7;+4~+6c;+6~+8c;Transition to RFF
+f,F+4;h;33;i19;-13~-12;+8d;;Low crush
+b,b+4;h;25;i31;-11;+5;KND;Low crush
+b,b+4,3;h, m;25, 33;;-13;KND;;Low crush
+b,b+4,4;h, h;25, 16;;-11;KND;;Low crush
+b,b+4,4,4;h, h, h;25, 16, 16;;+14g;KND;;Low crush
+b,b+4,4,3;h, h, m;25, 16, 33;;-13;KND;;Low crush
+f,n,d,df+3;m;32;i21;+0;KND;;Transition to LFS
 f,n,d,df~4;m;23;i16;-17;JG;;
-f,n,df+4;m;25;i16;-12;JG;;
-f,n,d,df+3+4;m;16;i20;-9;+2;;Recovers back turned
-f,n,d,df+3+4,3;m, m;16, 20;;-5;+6c;KND;
-f,f,F+3;m;30;i23;+9;KND;;"* Alternate input: f,f,F+3
+f,n,df+4;m;27;i18;-12;KND;;
+f,n,d,df+3+4;m;19;i23;-9;+2;;Recovers back turned
+f,n,d,df+3+4,3;m, m;19, 24;;-5;+6c;KND;
+f,f,F+3;m;26;i25;+6~+7;KND;;"* Alternate input: f,f,F+3
 * Low crush
 * Bound"
 ws1;m;12;i10~11;-4~-3;+7~+8;;
@@ -146,62 +146,62 @@ FC.4;l;10;i12;-15;-4;;"* High crush
 * Recovers crouching"
 SS.1;h;7;i10;+1;+9;;
 SS.2;h;10;i10;+0;+8;;
-SS.3;m;15;i18;-22;-11;KND (-8);
-SS.3,3;m, h;15, 18;;+3;+14g;+14;Transition to LFS
+SS.3;m;18;i28;-22;-11;KND (-8);
+SS.3,3;m, h;18, 21;;+3;+14g;+14;Transition to LFS
 SS.3,3,b;m, h;15, 18;;-17;-6;;
-SS.4;l;19;i19;-11;+6c;KND;Transition to RFF
+SS.4;l;22;i29;-11;+6c;KND;Transition to RFF
 BT.4;m;20;i14;-13;JG;;Transition to RFF
 RFF.1+2;;;;;;;Transition to BT
 RFF.3+4;;;;;;;
-RFF.1;h;10;i10;+1;+9;+7;
-RFF.1,1;h, m;10, 12;;-7;+4;KND;
-RFF.2;h;6;i10;+4;+15g;;
-RFF.2,1;h, h;6, 10;;+1;+12g;+9;
-RFF.2,1,1;h, h, m;6, 10, 12;;-7;+4;;
-RFF.2,3;h, h;6, 25;;-7;+4;+3;
-RFF.2,4;h, h;6, 15;;-8;+3;;Transition to RFF
-RFF.2,4,b;h, h;6, 15;;+6;+17g;+;"* Alternate input: f
+RFF.1;h;12;i10;+1;+9;+7;
+RFF.1,1;h, m;12, 14;;-7;+4;;
+RFF.2;h;7;i10;+4;+15g;;
+RFF.2,1;h, h;7, 12;;+1;+12g;+9;
+RFF.2,1,1;h, h, m;7, 12, 14;;-7;+4;;
+RFF.2,3;h, h;7, 27;;-7;+4;+3 (KND);
+RFF.2,4;h, h;7, 14;;-8;+3;;Transition to RFF
+RFF.2,4,b;h, h;7, 14;;+6;+17g;+;"* Alternate input: f
 * Transition to RFS"
-RFF.2,4,d;h, h;6, 15;;+3;+8g;+;"* Alternate input: u
+RFF.2,4,d;h, h;7, 14;;+3;+8g;+;"* Alternate input: u
 * Transition to RFS"
-RFF.2,4,3;h, h, m;6, 15, 25;;-14c;KND;;Bound
-RFF.2,4,4;h, h, h;6, 15, 27;;-9;KND;JG;
-RFF.2,b+4;h, h;6, 27;;-10;KND;;
+RFF.2,4,3;h, h, m;7, 14, 25;;-14c;KND;;Bound
+RFF.2,4,4;h, h, h;7, 14, 28;;-9;KND;;
+RFF.2,b+4;h, h;7, 32;;-11;KND;;
 RFF.3;m;14;i16;-4;+7;;
 RFF.3,4;m, h;14, 16;;+13g;+24g;+14;Transition to RFS
-RFF.3,f~4;m, h;14, 16;;-7;+4;+6;Transition to RFF
+RFF.3,f~4;m, h;16, 19;;-7;+4;+6;Transition to RFF
 RFF.3~4;h;45;i27~28;+5~+6s;KND;;
 RFF.3~4,b;h;30;i27~28;+15~+16sg;KND;;"* Alternate input: f
 * Transition to RFS"
-RFF.4;h;15;i12;-8;+3;;Transition to RFF
-RFF.4,b;h;15;i12;+6;+17g;+;"* Alternate input: f
+RFF.4;h;14;i12;-8;+3;;Transition to RFF
+RFF.4,b;h;14;i12;+6;+17g;+;"* Alternate input: f
 * Transition to RFS"
-RFF.4,d;h;15;i12;+3;+8g;+;"* Alternate input: u
+RFF.4,d;h;14;i12;+3;+8g;+;"* Alternate input: u
 * Transition to RFS"
-RFF.4,3;h, m;15, 25;;-14c;KND;;Bound
+RFF.4,3;h, m;14, 25;;-14c;KND;;Bound
 RFF.4,4;h, h;15, 27;;-9;KND;JG;
 RFF.f+4;;;;;;;
 RFF.f,4~4;m;18;i19;-12;JG;;
-RFF.f+3;h;21;i14;+12g;+23g;;Transition to LFS
-RFF.f+3,b;h;21;i14;-16;+5;;"* Recovers back turned
+RFF.f+3;h;24;i14;+12g;+23g;;Transition to LFS
+RFF.f+3,b;h;24;i14;-16~-15;-5~-4;;"* Recovers back turned
 * Transition to RFF"
-RFF.f+3,4;h, l;21, 20;;-10~-11;+3~+4;KND;
+RFF.f+3,4;h, l;24, 24;;-10~-11;+3~+4;KND;
 RFF.df+3;m;;i20;-11;KND;;
-RFF.df+4;m;12;i13;-7;+4;;
-RFF.df+4,b;m;12;i13;+7;+15g;+14~+15;"* Alternate input: f
+RFF.df+4;m;14;i13;-7;+4;;
+RFF.df+4,b;m;14;i13;+7;+15g;+15;"* Alternate input: f
 * Transition to RFS"
-RFF.df+4,d;m;12;i13;+2;+9g;+9;"* Alternate input: u
+RFF.df+4,d;m;14;i13;+2;+9;;"* Alternate input: u
 * Transition to RFS"
-RFF.d+4;l;;;-11~-12;+5;;
-RFF.db+3;l;15;i17;-13;-2;;
-RFF.db+3,3;l, h;15, 40;;-2;KND;;
-RFF.b+2;m;15;i16;+0;+6c;KND;Bound
-RFF.b+3;h;25;i12~13;-7;+4;+24 (+s);
-RFF.b+4;h;27;;-10;KND;;
-RFF.f,F+3;m;22;i22;-5c;KND;;"* Low crush
+RFF.d+4;l;;;-11;+5;;
+RFF.db+3;l;18;i17;-9;+1;+6;
+RFF.db+3,3;l, h;18, 48;;-2s;KND;;
+RFF.b+2;m;18;i16;+0;+6c;KND;Bound
+RFF.b+3;h;27;i12~13;-7;+4;+24 (+s);
+RFF.b+4;h;32;;-10;KND;;
+RFF.f,F+3;m;26;i23;-5c;KND;;"* Low crush
 * Bound"
-RFF.f,F+4;m;18;i22;-17;-6;;
-RFF.f,F+4,3;m, h;18, 20;;+13;KND;;Low crush
+RFF.f,F+4;m;21;i23;-17;-6;;
+RFF.f,F+4,3;m, h;21, 24;;+14;KND;;Low crush
 RFF.f,df~4;m;23;i16;-17;JG;;
 RFF.f,df+4;m;25;i16;-12;JG;;
 RFF.BT.3;m;20;i14;-13;JG;;
@@ -209,77 +209,77 @@ RFF.BT.4;m;16;i20;-7;+2;;Recovers back turned
 RFF.BT.4,3;m, m;16, 20;;-5;+6c;KND;
 RFF.BT.d+3;l;20;;-13;+;KND;High crush
 LFS.3+4;;;;;;;Transition to RFS
-LFS.1;h;7;i13;+5;+7;;
-LFS.2;m;15;i16;-4;+7;;Transition to RFF
-LFS.3;m;12;i14;-15;-4;;
-LFS.3,3;m, m;12, 15;;-14;KND;;
-LFS.3,f;m;12;i14;+2;+13g;+13;Transition to LFS
-LFS.3,4;m, h;12, 20;;+;+;;
-LFS.3,f+4;m, h;12, 25 (37);;+5~+6s;KND;;
-LFS.4;h;24;i14;-2;KND;;"* Low crush
+LFS.1;h;8;i13;+5;+7;;
+LFS.2;m;18;i16;-4;+7;;Transition to RFF
+LFS.3;m;14;i14;-15;-4;;
+LFS.3,3;m, m;14, 18;;-14;KND;;
+LFS.3,f;m;14;i14;+2;+13g;+13;Transition to LFS
+LFS.3,4;m, h;14, 24;;+;+;;
+LFS.3,f+4;m, h;14, 30;;+5~+6s;KND;;
+LFS.4;h;28;i14;-2;KND;;"* Low crush
 * Transition to RFS"
-LFS.1+4;!;80;i67;KND;KND;;Low crush
+LFS.1+4;!;96;i67~68;KND;KND;;Low crush
 LFS.1+4,b,b;;;;;;;
 LFS.f+3;h, h;8, 10;i8;+1;+12g;;Transition to LFS
 LFS.f+3;h;8, 10;;-9;+2g;;"* Transition to LFS
 * When hit 2 whiffs"
-LFS.f+3,3;h, h, h;8, 10, 12;;-6;JG;;
-LFS.f+4;m;19;i16;-10;+1;;
-LFS.f+4,3;m, h;19, 26;;+2;KND;;"* Low crush
+LFS.f+3,3;h, h, h;9, 12, 14;;-6;KND;;
+LFS.f+4;m;22;i16;-10;+1;;
+LFS.f+4,3;m, h;22, 31;;+2;KND;;"* Low crush
 * Transition to RFF"
-LFS.df+3;m;17;i17;-5;+6 +19G(+13);KND;Transition to RFF
-LFS.d+3;l;10;i14;-22;-11;;
-LFS.d+3,4;l, h;10, 10;;+7;+18g;+18;Transition to RFS
+LFS.df+3;m;20;i17;+0;+6 +19G(+13);KND;Transition to RFF
+LFS.d+3;l;12;i16;-22;-11;;
+LFS.d+3,4;l, h;12, 12;;+7;+18g;+18;Transition to RFS
 LFS.d;l;15;i25;-23;KND;;"* Alternate input: df+4
 * High crush
 * Recovers crouching"
-LFS.db+3;l;14;;-13;-2;KND;"* High crush
+LFS.db+3;l;16;;-11;+0;KND;"* High crush
 * Recovers crouching"
-LFS.db+4;l;;;-11;+1;KND;Transition to RFF
-LFS.b+3;m;22;i18;-10;KND;;"* Low crush
+LFS.db+4;l;;i20;-12;+1~+2;KND;Transition to RFF
+LFS.b+3;m;22;i20;-10;KND;;"* Low crush
 * Transition to RFF"
-LFS.b+4;m;21;i17;-9;+3;+ (KND);Transition to RFF
-LFS.uf+3;m;13;i28;-6;KND;;Low crush
-LFS.uf+3,4;m, m;13, 12;;-7;JG;;Low crush
-LFS.uf+3,4,3;m, m, h;13, 12, 23;;;KND;;Low crush
-LFS.uf+4;m;20;;-13;JG;;
+LFS.b+4;m;21;i16;-8;+3;+ (KND);Transition to RFF
+LFS.uf+3;m;15;i28;-6;KND;;Low crush
+LFS.uf+3,4;m, m;15, 14;;-8;KND;;Low crush
+LFS.uf+3,4,3;m, m, h;15, 14, 26;;;KND;;Low crush
+LFS.uf+4;m;21;i23;-13;KND;;
 LFS.f;;;;;;;
 LFS.b;;;;;;;
 LFS.u;;;;;;;
 LFS.d;;;;;;;
 RFS.3+4;;;;;;;Transition to LFS
-RFS.1;m;15;i16;-4;+7;;
-RFS.2;h;7;i13;+5;+16g;;
-RFS.2,1;h, h;7, 10;;+1;+12g;+9;
-RFS.2,1,1;h, h, m;7, 10, 12;;-7;+4;;
-RFS.2,3;h, h;7, 25;;-7;+4;+3;
-RFS.2,4;h, h;7, 15;;-8;+3;;Transition to RFF
-RFS.2,4,b;h, h;7, 15;;+6;+17g;+;"* Alternate input: f
+RFS.1;m;18;i16;-4;+7;;
+RFS.2;h;8;i13;+5;+7;;
+RFS.2,1;h, h;8, 12;;+1;+12g;+9;
+RFS.2,1,1;h, h, m;8, 12, 14;;-7;+4;;
+RFS.2,3;h, h;8, 27;;-7;+4;+3 (KND);
+RFS.2,4;h, h;8, 14;;-8;+3;;Transition to RFF
+RFS.2,4,b;h, h;8, 14;;+6;+17g;+;"* Alternate input: f
 * Transition to RFS"
-RFS.2,4,d;h, h;7, 15;;+3;+8g;+;"* Alternate input: u
+RFS.2,4,d;h, h;8, 14;;+3;+8;+;"* Alternate input: u
 * Transition to RFS"
-RFS.2,4,3;h, h, m;7, 15, 25;;-15;KND;;"* Bound
+RFS.2,4,3;h, h, m;8, 14, 25;;-15;KND;;"* Bound
 * Transition to RFF"
-RFS.2,4,4;h, h, h;7, 15, 27;;-9;KND;JG;
-RFS.2,b+4;h, h;7, 27;;-10;KND;;
-RFS.3;h;24;i14;-7;KND;;"* Low crush
+RFS.2,4,4;h, h, h;8, 14, 28;;-9;KND;;
+RFS.2,b+4;h, h;8, 32;;-11;KND;;
+RFS.3;h;28;i14;-7;KND;;"* Low crush
 * Transition to LFS"
-RFS.4;m;20;i14;-14;KND;KND (+1);
-RFS.f+3;m;19;i16;-10;+1;;
-RFS.f+3,4;m, h;19, 26;;+2;KND;;Low crush
+RFS.4;m;24;i14;-14;KND;KND (+1);
+RFS.f+3;m;22;i16;-10;+1;;
+RFS.f+3,4;m, h;22, 31;;+2;KND;;Low crush
 RFS.f+4;h, h;8, 10;i8;+1;+12g;;Transition to RFS
 RFS.f+4;h;8, 10;;-9;+2g;;"* Transition to RFS
 * When hit 2 whiffs"
-RFS.f+4,4;h, h, h;8, 10, 12;;-6;JG;;
-RFS.df+4;m;17;i17;+0;KND;;
-RFS.d+4;l;10;;-17;+;;
-RFS.d+4,3;l, h;10, 10;;+7;+18g;+18;Transition to LFS
-RFS.db+3;l;15;i25;-23;KND;;"* High crush
+RFS.f+4,4;h, h, h;9, 12, 14;;-6;KND;;
+RFS.df+4;m;16;i17;+0;KND;;
+RFS.d+4;l;12;;-17;+;;
+RFS.d+4,3;l, h;12, 12;;+7;+18g;+18;Transition to LFS
+RFS.db+3;l;18;i25;-23;KND;;"* High crush
 * Recovers crouching"
-RFS.db+4;l;14;;-11;-;KND;"* High crush
+RFS.db+4;l;16;;-11;+0;KND;"* High crush
 * Recovers crouching"
-RFS.b+3;m;21;i16;-15;JG;;
-RFS.b+4;m;22;i18;-10;KND;;Low crush
+RFS.b+3;m;25;i16;-16;KND;;
+RFS.b+4;m;26;i18;-10;KND;;Low crush
 RFS.f;;;;;;;
 RFS.b;;;;;;;
 RFS.u;;;;;;;

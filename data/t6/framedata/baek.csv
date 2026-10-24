@@ -5,7 +5,7 @@ f,F~4;m;21;i20;+1c;+4c;KND;
 1;h;8;i10;+1;+8;;
 1,1;h, h;8, 8;;+0;+9;;
 1,2;h, h;8, 10;;+0;+6;;
-1,2,3,d;h, h;8, 10;;-1;+4;;Alternate input: b or f or u
+1,2,3,d;h, h;8, 10;;-3;+4;;Alternate input: b or f or u
 1,2,3;h, h, h;8, 10, 14;;-14;-3;;
 1,2,3,3;h, h, h, h;8, 10, 14, 12;;-14;-3;;
 1,2,3,3,3;h, h, h, h, h;8, 10, 14, 12, 12;;-14;-8;;
@@ -18,9 +18,9 @@ f,F~4;m;21;i20;+1c;+4c;KND;
 1,2,3,3,4,4,3;h, h, h, h, h, m, m;8, 10, 14, 12, 18, 21, 20;;-14;-3;KND (+0);
 1,2,3,3,4,4,4;h, h, h, h, h, m, l;8, 10, 14, 12, 18, 21, 14;;-21;+1;KND;"* High crush
 * Recovers crouching"
-1,2,3,4;h, h, h, l;8, 10, 14, 12;;-11;-1c;;"* High crush
+1,2,3,4;h, h, h, l;8, 10, 14, 12;;-12;-1c;;"* High crush
 * Recovers crouching"
-1,2,3,4,3;h, h, h, l, m;8, 10, 14, 12, 25;;-20;JG;;High crush
+1,2,3,4,3;h, h, h, l, m;8, 10, 14, 12, 25;;-20;KND;;High crush
 2;h;8;i10;+0;+7;;
 2,2;h, h;8, 24;;-13;-2;KND;
 2,3;h;8;i10;+0;+7;;
@@ -36,10 +36,10 @@ f,F~4;m;21;i20;+1c;+4c;KND;
 3,3,4,4,3;h, h, h, m, m;14, 12, 18, 21, 20;;-14;-3;KND (+0);
 3,3,4,4,4;h, h, h, m, l;14, 12, 18, 21, 14;;-21;+1c;KND;"* High crush
 * Recovers crouching"
-3,4;h, l;14, 12;;-11;-1c;;"* High crush
+3,4;h, l;14, 12;;-12;-1c;;"* High crush
 * Recovers crouching"
-3,4,3;h, l, m;14, 12, 25;;-20;JG;;High crush
-4;h;18;i11;-6;+5;JG;
+3,4,3;h, l, m;14, 12, 25;;-20;KND;;High crush
+4;h;18;i12;-6;+5;KND;
 4,4;h, m;18, 21;;-4;+7c;KND;
 1+2;m;20;i14;-10;+6c;;Alternate input: f+1+2
 1+2,4;m, m;20, 14;;-17~-16;KND;;
@@ -54,7 +54,7 @@ f+2,1,2;m, h, h;14, 12, 24;;-7;KND;;
 f+2,1,4;m, h, l;14, 12, 24;;-13;+3;;
 f+3;h;12;i12;-6;+7;;
 f+3,3;h, l;12, 12;;-12;+1c;;
-f+3,3,2;h, l, m;12, 12, 21;;-12;-6;KND;
+f+3,3,2;h, l, m;12, 12, 21;;-12;+1;KND;
 f+3,3~b+2;h, m;12, 21;;-12;-6;KND;
 f+4;m;26;i19;-3;+9c;+8c;Bound
 f+4,3;m, m;26, 20;;-14;-3;KND (+0);
@@ -69,19 +69,19 @@ df+3;m;20;i22;-12;+1;KND;
 df+3,4;m, m;20, 28;;-13;KND;;
 df+3,f;;;;;;;
 df+4;m;16;i12;-4;+7;;
-df+4,4;m, m;16, 16;;-4;-4c;+7c;
-df+4,4,3,b;m, m;16, 16;;-8;+4c;+3c;Alternate input: f
+df+4,4;m, m;16, 16;;-4~-3;-4c;+7c;
+df+4,4,3,b;m, m;16, 16;;-8~-7;+5~+6c;+3c;Alternate input: f
 df+4,4,3;m, m, m;16, 16, 20;;-14;-3;KND (+0);
 df+4,4,4;m, m, l;16, 16, 14;;-18;+1c;KND;"* High crush
 * Recovers crouching"
 df+3+4;m;12 (17);i17;-9;+7;;Hit throw
 d+1;m;21;i14~15;-1~+0;+8~+9c;;
 d+1,4;m, m;21, 25;;-12;+6;KND;Low crush
-d+2;m;25;i21;-9;KND;;
+d+2;m;25;i21;-8;KND;;
 d+3;l;14;i16;-16;-3;;"* High crush
 * Recovers crouching"
 d+3,3;l, l;14, 12;;-16;-6c;;High crush
-d+3,3,3;l, l, m;14, 12, 25;;-15;JG;;High crush
+d+3,3,3;l, l, m;14, 12, 25;;-15;KND;;High crush
 d+3,3,d+3;l, l, l;14, 12, 12;;-16;-1;;"* High crush
 * Recovers crouching"
 d+4;l;8;i12;-13;-2;;
@@ -94,31 +94,31 @@ FC.3;l;14;i16;-17;-3;;"* High crush
 FC.4;l;12;i12;-15;-4;;"* High crush
 * Recovers crouching"
 d+4,3;l, m;8, 12;;-14;-3;;
-d+4,3,3;l, m, m;8, 12, 16;;-19;-8c;;
+d+4,3,3;l, m, m;8, 12, 16;;-19~+18;-8~-7c;;
 d+4,3,3,3;l, m, m, m;8, 12, 16, 27;;-17;-4;KND;
-d+4,3,3,3,b;l, m, m;8, 12, 16;;-8;+8c;;Alternate input: f
+d+4,3,3,3,b;l, m, m;8, 12, 16;;-8~-7;+5~+6c;;Alternate input: f
 d+4,3,3,d+3;l, m, m, l;8, 12, 16, 16;;-17;-6;;
-d+4,4;l, h;8, 16;;-4;+7;JG;
+d+4,4;l, h;8, 16;;-4;+7;KND;
 d+4,4,4;l, h, m;8, 16, 21;;-11;+7c;KND;
 db+1;sm;6;i10;-5;+6;;"* High crush
 * Recovers crouching"
-db+2;m;18;i18;-13;JG;;
+db+2;m;18;i18;-13;KND;;
 db+3;l;13;i18;-14;+0;+3;
-db+3,3;l, h;13, 12;;-12~-11;-3;;
+db+3,3;l, h;13, 12;;-11~-10;-2~-1;;
 db+3,b+3;l;13;i18;-6;+8;+11;Alternate input: f+3
 db+4;l;24;i25;-40;KND;;"* High crush
 * Recovers crouching"
 db+3+4;!;48;i61;KND;KND;;
-b+1;m;21;i15;-14;+4;KND;Bound
+b+1;m;21;i15;-11;+4;KND;Bound
 b+2;h;20;i13;-7;+4;KND;
-b+4;m;18;i16~17;-14~-13;JG;;
+b+4;m;18;i16~17;-14~-13;KND;;
 ub;m;14;i18;-8;+3;;"* Alternate input: u or uf+1
 * Low crush"
 ub+2;h;20;i15;-;+;;Alternate input: u+2
 ub+3;m;30;i21;-17;KND;;"* Alternate input: u+3
 * Low crush"
 ub+4;m;21;i17;-13;+3;;Low crush
-u+4;h;24;i28;-10~-9;KND;;Low crush
+u+4;h;24;i28~29;-10~-9;KND;;Low crush
 u+4,3;h, h;24, 24;;+5;KND;;Low crush
 uf+2;m;28;i26;+3c;+3c;KND;"* Low crush
 * Bound"
@@ -127,7 +127,7 @@ uf+3,4;m, m;14, 16;;-3;KND;;Low crush
 uf+3,4;m, m;14, 16;;-10;KND;;"* Low crush
 * When hit 3 is input"
 uf+3,4,3;m, m, h;14, 16, 22;;;KND;;Low crush
-uf+4;m;21;i20;-10;JG;;Low crush
+uf+4;m;21;i20;-10;KND;;Low crush
 uf,n+3;m;30;i28;-17~-16;KND;;
 uf,n+3,3;m, h;30, 12;;-14;-3;;
 uf,n+3,3,3;m, h, h;30, 12, 12;;-19;-8;;
@@ -146,13 +146,13 @@ uf,n+3,d+4;m, l;30, 12;;-10;+0c;;"* High crush
 uf,n+3,d+4,3;m, l, m;30, 12, 25;;-20;JG;;High crush
 f,F+1;h;8;i10;+1;+8;;
 f,F+2;t;40;i12;;KND;;
-f,F+3;m;31;i19;+2c;KND;;Bound
-f,F+4;m;21;i20;+1c;+4c;KND;
-b,b+2;h;25;i17;-5;KND;;
-b,b+3+4;h!;96;i66;KND;KND;;Low crush
+f,F+3;m;31;i20;+2c;KND;;Bound
+f,F+4;m;21;i21;+1c;+4c;KND;
+b,b+2;h;25;i18;-5;KND;;
+b,b+3+4;h!;96;i67;KND;KND;;Low crush
 f,f,n+3;h;25;i28;+10g;KND;;
-f,n,d,df+3;m;27;i16;-17;JG;;
-f,n,f+3;m;27;i16;-17;JG;;
+f,n,d,df+3;m;27;i19;-17;KND;;
+f,n,f+3;m;27;i18;-17;KND;;
 f,f,F+3;m;36;i22;+17g;KND;;"* Alternate input: f,f,F+3
 * Low crush"
 f,f,F+3;;;;;;;Alternate input: f,f,F+3,f
@@ -179,15 +179,15 @@ ws4,4,4;m, m, l;15, 16, 14;;-18;+1c;KND;"* High crush
 ws3+4;h;33;i16;-16;KND;;
 SS.1;h;8;i10;+1;+8;;
 SS.2;h;8;i10;+0;+7;;
-SS.3;l;19;;-11;+4;;
+SS.3;l;19;;-12;+4;;
 SS.4;h;18;i11;-6;+5;JG;
-SS.3+4;m, h, h;6, 7, 12;i15;-14;JG;;Low crush
+SS.3+4;m, h, h;6, 7, 12;i24;-14;KND;;Low crush
 BT.1;h;18;i8;-8;+3;;Alternate input: 2
 BT.3;h;30;i10;-8;KND;;
-BT.4;m;21;i14;-14;KND;;
+BT.4;m;21;i14;-14;-1;KND;
 b+3;;;;;;;
 FLA.d;;;;;;;Alternate input: b or f or u
-FLA.3;m;14;i14;-14;-3;;
+FLA.3;m;14;i15;-14;-3;;
 FLA.3,3;m, m;14, 18;;-9;-8;;
 FLA.3,3,4;m, m, l;14, 18, 12;;-14;KND;;Recovers crouching
 FLA.3,4;m, h;14, 18;;-6;+5;;
@@ -196,13 +196,13 @@ FLA.3,4,4,3,b;m, h, m;14, 18, 21;;-8;+4c;+3c;Alternate input: f
 FLA.3,4,4,3;m, h, m, m;14, 18, 21, 20;;-14;-3;KND (+0);
 FLA.3,4,4,4;m, h, m, l;14, 18, 21, 14;;-21;+1c;KND;"* High crush
 * Recovers crouching"
-FLA.f+3;m;30;i19;+0;KND;;
-FLA.f+4;h;36;i18;-1;KND;;
-FLA.f+3+4;m;27;i20;-10;KND;;
-FLA.d+1;m;21;i14~15;-1;+9~+10;;
+FLA.f+3;m;30;i20;+0;KND;;
+FLA.f+4;h;36;i19;-1;KND;;
+FLA.f+3+4;m;27;i21;-10;KND;;
+FLA.d+1;m;21;i15;-1~+0;+8~+9c;;
 FLA.d+1,4;m, m;21, 25;;-12;+6;KND;Low crush
-FLA.b+3;m;19;i16;-3c;+0c;KND;Bound
-FLA.uf+3;m;28;i17;-14;JG;;Low crush
+FLA.b+3;m;19;i17;-3c;+0c;KND;Bound
+FLA.uf+3;m;28;i18;-14;KND;;Low crush
 FLA.;;;;;;;Not up
 1+3;t;35;;-3;;;"* Throw break 1
 * Opponent recovers FUFA"

@@ -36,21 +36,21 @@ f+1+2;h, h;12, 25;i14;-9;KND;;
 df+1;m;14;i13;-3;+6;;
 df+1,4;m, m;14, 21;;-7;+2;;
 df+1,4~4;m, l;14, 18;;-31;KND;;
-df+2;m;18;i15;-7;+4;JG;
+df+2;m;18;i15;-7;+4;KND;
 df+3;m;14;i14;-16;-5;;
 df+3,3;m, h;14, 16;;-8;+8;;
-df+4;m;26;i20;-3;KND;;Bound
+df+4;m;26;i20;-7;KND;;Bound
 df+1+2;m;24;i35;-12;+6 (KND);;Parry
 d+1;m;28;i21;-7;KND;;
 d+3;l;8;i15;-11;+0;;
-d+3,3;l, m;8, 12;;-15~-14;-6;-2;
+d+3,3;l, m;8, 12;;-15;-4;;
 d+4;l;18;i16;-13;-2;;High crush
-d+3+4;m, m;6, 18;i15;-19;JG;;
+d+3+4;m, m;6, 18;i15;-19;KND;;
 db+1;sm;6;i10;-5;+6;;"* High crush
 * Recovers crouching"
 db+2;m;14;i16;-10;-4;KND (-1);
 db+2,2;m, h;14, 13;;-12;-7;;
-db+2,2,3;m, h, m;14, 13, 25;;-9;KND;;
+db+2,2,3;m, h, m;14, 13, 25;;-8~-9;KND;;
 db+2,3;m, m;14, 21;;-12;KND;;
 db+3;h;33;i20;-11;KND;;High crush
 db+4;l;20;i20;-13;+3;KND;
@@ -64,20 +64,20 @@ ub+2;h;20;i15;-12;+9;;Alternate input: u+2
 ub+4;m;13;i15;-12;-1;KND;Low crush
 ub+1+2;!;84;i75;KND;KND;;
 uf+2;m;21;i15;-8;+2;;
-ub+3;m;15;i22;-11;+0;KND;Low crush
+ub+3;m;15;i22;-11;+0;KND (+14);Low crush
 u+3;m;20;i22;-9;+5;KND;"* Alternate input: uf+3
 * Low crush"
-u+4;m;18;i15;-12;KND;JG;Low crush
-uf+4;m;15;i15;-12;KND;JG;Low crush
+u+4;m;18;i15;-12;KND;;Low crush
+uf+4;m;15;i15;-12;KND;;Low crush
 f,F+1;h;8;i10;+1;+8;;
 f,F+2;m;28;i15;-11;KND;;
-f,F+3;m;24;i22~24;+2~+4;KND;;Bound
+f,F+3;m;24;i23;+2~+4;KND;;Bound
 f,F+3,1;m, h;24, 6;;+1;+7;;
 f,F+3,1,3;m, h, h;26, 6, 12;;-6;+4;;
 f,F+3,1,3,2;m, h, h, m;24, 6, 12, 12;;-1;+3;;
 f,F+3,1,3,2,1;m, h, h, m, m;24, 6, 12, 12, 12;;-4;+3;;
 f,F+3,1,3,2,1,4;m, h, h, m, m, l;24, 6, 12, 12, 12, 12;;-8;+3;;
-f,F+4;m;22;i20~23;+3~+6c;+7~+10c;;
+f,F+4;m;22;i21;+3~+6c;+7~+10c;;
 b,f+2;m;18;i15;-7;+4;;
 b,f+2,1;m, h;18, 12;;-4;+7;;
 b,f+2,1,2;m, h, m;18, 12, 24;;-6;KND;;
@@ -87,7 +87,7 @@ ws1,2;m, m;12, 19;;-8;+3c;;
 ws2;m;16;i14;-12;JG;;
 ws3;m;24;i16;-9;KND;;
 ws4;m;19;i11;-6;+5;;
-d+2;sm;9;i11;-4;+7;;"* High crush
+d+2;sm;26;i19;-12;+3;;"* High crush
 * Recovers crouching"
 1+3+4;;;i16;;;;
 b+1+2;;0;i16~30;-22~-8;-22~-8;;
@@ -102,12 +102,12 @@ ZEN.3;h;30;i22;+4;KND;;Low crush
 ZEN.4;l;24;i23;-18;KND;;High crush
 f,n,d,df;;;;;;;
 f,n,d,df,uf;;;;;;;Low crush
-f,n,d,df~1;m;26;i16;-12;JG;;
-f,n,d,df+1;m;26;i16;-10;JG;;
-f,n,d,df~2;h;24;i12;-7;KND;JG;
-f,n,d,df+2;h;30;i11;+5;KND;JG;
-f,n,d,df+3;m;24;i16;-9;KND;;
-f,n,d,df+4;m;19;i11;-6;+5;;
+f,n,d,df~1;m;26;i20;-12;KND;;
+f,n,d,df+1;m;26;i19;-10;KND;;
+f,n,d,df~2;h;24;i16;-7;KND;;
+f,n,d,df+2;h;30;i14;+5;KND;;
+f,n,d,df+3;m;24;i19;-9;KND;;
+f,n,d,df+4;m;19;i23;-31;KND;;
 f,n,d,df~4;l;19;i20;-31;KND;;
 f,n,d,df~4,3+4;l, m;19, 25;;-10~-11;KND;;"* Low crush
 * Recovers grounded"

@@ -18,12 +18,12 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 * Transition to AOP"
 4;h;18;i11;-3;+8;JG;
 1+2;m;24;i20;-7;KND;;
-3+4;;;;;+5d;;"* Alternate input: u+3+4
+3+4;;;;;+5;;"* Alternate input: u+3+4
 * Parry
 * To the far side"
 d+4;l;8;i12;-13;-2;;"* High crush
 * Recovers crouching"
-d+3+4;;;;;+5d;;"* Parry
+d+3+4;;;;;+5;;"* Parry
 * To the near side"
 f+1;h;9;i10;+1;+8;;
 f+2;h;9;i10;-2;+6;;
@@ -59,17 +59,17 @@ db+1+2;sm;6;i10;-5;+6;;"* High crush
 * Recovers crouching"
 b+1;m;12;i8~12;-;+1;;"* Recovers back turned
 * Transition to BT"
-b~1;m;12;i8~12;-12~-10;-1;;
+b~1;m;12;i8;-12;-1;;
 b+2;m;19;i14;-6;+4;;Recovers back turned
 b+2,2;m, l;19, 12;;-8;+3;;Recovers back turned
 b+3;h;25;i18;-4;+7c;;Recovers back turned
 b+4;m;16;i13~14;-10~-9;-5~-4;;
-b+4,4;m, h;16, 20;;-11;+4;;
+b+4,4;m, h;16, 20;;-10;+4;;
 ub;h;20;i15;-12;+9;;Alternate input: u or uf+2
 ub+1;m;14;i18;-8;+3;;Low crush
 ub+4;m;18;i15;-19;-8;KND;Low crush
-ub+3+4;m;25;i21~22;-19~-18;JG;;Low crush
-ub+3+4,d+1+2;m;25;i21~22;-19~-18;JG;;"* Low crush
+ub+3+4;m;25;i21~23;-19~-17;KND;;Low crush
+ub+3+4,d+1+2;m;25;i21~23;-19~-17;KND;;"* Low crush
 * Transition to AOP"
 u+1;m;16;i16~18;-3~-1;-3~-1c;+8~+10c;"* Alternate input: uf+1
 * Recovers back turned
@@ -78,11 +78,11 @@ u;m;16;i16~18;-10~-8;-10~-8c;+1~+3c;Alternate input: uf~1
 u+1+2;m, m;6, 6;i16~17;-11;+0;+0~+1;Recovers crouching
 u+1+2,2;m, m, m;6, 6, 14;;-10;+1;;
 u+1+2,2,1;m, m, m, m;6, 6, 14, 27;;-10;KND;;
-u+1+2,2,1,b;m, m, m;6, 6, 14;;-19;-8;;Recovers back turned
+u+1+2,2,1,b;m, m, m;Special 6, 6, 14;;-19;-8;;Recovers back turned
 u+1+2,3+4;m, m;6, 6;i16~17;-16~-15;-5~-4;;
 ub+3;m;13;i16;-12;-1;KND;
-u+3;m;18;i16;-12;KND;JG;
-uf+3;m;15;i16;-12;JG;;
+u+3;m;18;i16;-12;KND;;
+uf+3;m;15;i16;-12;KND;;
 u+4;m;24;i23;-5;+6c;KND;Low crush
 uf+4;m;28;i23;-3;+8c;KND;"* Low crush
 * Bound"
@@ -99,20 +99,20 @@ uf+1+2,b;m;27;i32~33;+3~+4;+8~+9;KND;"* Low crush
 * Bound
 * Transition to BT"
 uf+3+4;m, m, m;9, 12, 14;i16~17;-3;KND;;Low crush
-f,F+1;m;22;i15;-11;+0c;;Bound
+f,F+1;m;22;i16;-11;+0c;;Bound
 f,F+1,3;m, h;22, 24;;-1;KND;;
-f,F+1,d;m;22;i15;-10;+1;;"* Recovers back turned
+f,F+1,d;m;22;i16;-8;+3c;;"* Recovers back turned
 * Transition to AOP"
 f,F+1,4;m, m;22, 24;;-12;KND;;
-f,F+2;m;14;i15;-5;+6;;
+f,F+2;m;14;i16;-5;+6;;
 f,F+2,1;m, m;14, 27;;-10;KND;;
-f,F+2,1,b;m;14;i15;-19;-8;;Recovers back turned
-f,F+3;m;15;i14;-5;+6;+7s;Recovers back turned
-f,F+4;m;30;i24;+1;KND;;Low crush
+f,F+2,1,b;m;14;i16;-19;-8;;Recovers back turned
+f,F+3;m;15;i15;-5;+6;+7s;Recovers back turned
+f,F+4;m;30;i25;+1;KND;;Low crush
 f,F+4,4;m;;;+5;;;"* On block
 * Low crush"
-f,F+1+2;m;14;i14;-2;+5;;
-f,F+1+2,1+2;m, m;14, 25;;-5;-2c;JG;
+f,F+1+2;m;14;i15;-2;+5;;
+f,F+1+2,1+2;m, m;14, 25;;-5;-2c;KND;
 f,F+3+4;m;30;i42~48;-2~+4;KND;;Low crush
 f,f,F+3;m;24;;+2~+7;KND;;"* Alternate input: f,f,F+3
 * Low crush"
@@ -126,12 +126,12 @@ ws4;m;21;i11;-10;KND;;
 wsb+4;h;24;i14;-1;+1;KND;
 FC.1;sm;6;i10;-5;+6;;"* High crush
 * Recovers crouching"
-FC.3;l;13;i16;-17;-3;;"* High crush
+FC.3;l;13;i15;-15;-4;;"* High crush
 * Recovers crouching"
 FC.3,2;l, h;13, 7;;+0;+7;;"* High crush
 * Recovers back turned"
 FC.3,2,1;l, h, h;13, 7, 7;;-1;+6;+10;High crush
-FC.3,2,1,4;l, h, h, m;13, 7, 7, 14;;-18;JG;;High crush
+FC.3,2,1,4;l, h, h, m;13, 7, 7, 14;;-18;KND;;High crush
 FC.df~2;l;12;i19;-17;-6;;High crush
 FC.df~2,df;l;12;i19;-8;+3;;"* High crush
 * Recovers back turned crouching
@@ -146,12 +146,12 @@ FC.df+4,4;l, l;12, 12;;-6;+5;;High crush
 FC.db~3+4;;;;;;;Recovers back turned
 SS.1;h;8;i10;+1;+8;;
 SS.2;h;9;i10;-2;+6;;
-SS.3;l;24;i27;-23;KND;;High crush
-SS.3,d+1+2;l;24;i27;-23;KND;;"* High crush
+SS.3;l;24;i36;-23;KND;;High crush
+SS.3,d+1+2;l;24;i36;-23;KND;;"* High crush
 * Transition to AOP"
 SS.3,b;;;;;;;"* Recovers back turned crouching
 * Transition to BT"
-SS.4;l;19;i18;-13;-2;KND;"* High crush
+SS.4;l;19;i27;-13;-2;KND;"* High crush
 * Recovers crouching"
 1+3+4;;;;;;;
 2+3+4;;;;;;;
@@ -168,20 +168,20 @@ HYP.2+3;!, m;48, 40;i141;KND;KND;;3 steps
 b+3+4;;;;;;;Recovers back turned
 BT.uf,f;;;;;;;
 BT.uf,f,df;;;;;;;Recovers crouching
-BT.1;m;20;i18;-5;+3;KND;
+BT.1;m;24;i18;-5;+3;KND;
 BT.1,4;m, h;24, 28;;-6~-5;KND;;Low crush
 BT.2;h;10;i12;+0;+6;;Recovers back turned
 BT.2,1;h, h;10, 9;;-1;+6;+10;
-BT.2,1,4;h, h, m;10, 9, 18;;-18;JG;;
+BT.2,1,4;h, h, m;10, 9, 18;;-18;KND;;
 BT.2,2;h, m;10, 14;;-9;+2;;"* Recovers back turned
 * Bound"
 BT.2,2,1;h, m, m, m, m;10, 14, 8, 8, 8;;-11;-1;;Recovers crouching
 BT.2,2,1,d;h, m, m, m, m;10, 14, 8, 8, 8;;-13;+3;;Transition to AOP
 BT.3;m;24;i18;-19;KND;;"* Low crush
 * Recovers back turned"
-BT.4;m;20;i14;-17;JG;;
+BT.4;m;20;i13;-18;KND;;
 BT.1+2;m, m;7, 7;i16~17;-5;+6;;
-BT.1+2,1+2;m, m, m, m;7, 7, 7, 7;;-11~-10;+0~+1c;;Recovers crouching
+BT.1+2,1+2;m, m, m, m;7, 7, 7, 7;;-11;+0~+1c;;Recovers crouching
 BT.3+4;;;;;;;"* Alternate input: u+3+4
 * To the far side"
 BT.d+3+4;;;;;;;To the near side
@@ -191,7 +191,7 @@ BT.d+1+4;l;;;;;;"* Parry
 BT.f+1+2;m;25;i35;-8;+3 (KND);+5 (KND);Parry
 BT.f+3+4;;;;;;;"* Recovers back turned
 * Transition to BT"
-BT.f+3+4,3+4;m;26;i25;-11;JG;;"* Recovers back turned
+BT.f+3+4,3+4;m;26;i25;-11;KND;;"* Recovers back turned
 * Transition to BT"
 BT.b+3;h;30;i10;-8;KND;;
 BT.b+3+4;;;;;;;"* Recovers back turned
@@ -207,10 +207,10 @@ BT.db;;;;;;;"* Alternate input: d or df+1+2
 BT.db;l;0;i15;+2;+2;;"* Alternate input: df+4
 * Guard break"
 BT.f,F+1;l;20;i33;-8;+9c;;Low crush
-BT.f,F+3;m;21;i16;-5;+6;KND;"* Low crush
+BT.f,F+3;m;21;i17;-5;+6;KND;"* Low crush
 * Recovers back turned
 * Transition to BT"
-BT.f,F+3+4;h, m, !;30 (30);i24;+4;Throw;;Low crush
+BT.f,F+3+4;h, m, !;30 (30);i25;+4;Throw;;Low crush
 BT.1+3;t;35;i12;;KND;;Alternate input: 2+4
 BT.f,F+1+3;t;35;i12;;KND;;"* Alternate input: f,F+2+4
 * Low crush"
@@ -233,8 +233,8 @@ AOP.4~3;l;22;i23;-;KND;;"* High crush
 AOP.4~3,d;l;22;i23;-;KND;;"* Alternate input: u
 * High crush
 * Recovers crouching"
-AOP.1+2;m;19;i23;-11;JG;;
-AOP.d+1+2;m;25;i26;-4;JG;;
+AOP.1+2;m;19;i23;-11;KND;;
+AOP.d+1+2;m;25;i27;-4;KND;;
 AOP.3+4;m, m, m;9, 9, 16;i24;-12~-13;+;;"* Low crush
 * Recovers crouching"
 AOP.3+4;m, m;9, 9;i24;-25;-;;"* Low crush
@@ -243,7 +243,7 @@ AOP.3+4;m, m;9, 9;i24;-25;-;;"* Low crush
 AOP.3+4;m;9;i24;-;-;;"* Low crush
 * Recovers crouching
 * Hit 1 only"
-AOP.1+3;t;35;i12;;KND;;Alternate input: 2+4
+AOP.1+3;t;35;i12;KND;KND;;Alternate input: 2+4
 AOP.f+4;l;12;i18~19;-7~-6;+4~+5;;High crush
 AOP.f+4,4;l, l;12, 12;;-6;+5;;High crush
 AOP.d+1;l;15 (20);i19;-12;-1;KND;"* High crush

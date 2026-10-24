@@ -30,7 +30,7 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 2,1,f;h, m;12, 14;;+3;+14g;+14;
 2,1,b;h, m;12, 14;;+3;+14g;+14;
 2,1,b,db;h, m;12, 14;;+2;+13g;+13;Recovers crouching
-2,1,2;h, m, m;12, 14, 26;;-10;KND;;
+2,1,2;h, m, m;12, 14, 26;;-11;KND;;
 f+1;h;8;i10;+1;+8;;
 f+2;m;13;i21;-3;+5;;High crush
 f+2,1;m, h;13, 14;;-3;+11g;;High crush
@@ -42,7 +42,7 @@ f+2,1,b,db;m, h;13, 14;;+4;+10g;;"* High crush
 f+2,1~2;m, m;13, 16;;-5;+6 (KND);+ (KND);High crush
 f+4;;;;;;;"* High crush
 * Recovers crouching"
-f+1+2;m;25;i36;-21;+68g;+68;
+f+1+2;m;25;i38;-21;+68g;+68;
 df+1;m;12;i13;-3;+5;;
 df+1,;m;12;i13;-5;+1;;
 df+1,2;m, h;12, 14;;-6;+3;+5;
@@ -85,12 +85,12 @@ b+1,b;h;20;i13;-1;+12g;KND;Transition to FLK
 b+1,b,db;h;20;i13;-10;-2;KND;"* Recovers crouching
 * Transition to FLK"
 b+1,2;h, l;20, 12;;-11;+0;;High crush
-b+1,2,1;h, l, m;20, 12, 24;;-9;JG;;High crush
-b+2;m;18;;-14;+4;KND;High crush
+b+1,2,1;h, l, m;20, 12, 24;;-9;KND;;High crush
+b+2;m;18;i17;-9;+4;KND;High crush
 b+4;;;;;;;High crush
 b+1+2;;;i2;;;;Parry
 1;m;36;i14;-14;KND;JG;After a successful parry
-ub+1;m;12;;-5;+6;;
+ub+1;m;12;i16;-5;+6;;
 ub+2;h;20;i15;-;+;;
 ub+3;;;;;;;
 ub+4;;;;;;;
@@ -105,19 +105,19 @@ u+3,2;l, h;24, 18;;-9;KND;;"* Alternate input: uf+3,2
 u+4;m;24;i23;-14;JG;;"* Alternate input: uf+4
 * Low crush"
 f,F+1;h;8;i10;+1;+8;;
-f,F+2;m;28;i14~15;-13~-12c;KND;;Bound
+f,F+2;m;28;i15;-13~-12c;KND;;Bound
 f,F+3;;;;;;;"* High crush
 * Recovers crouching"
 f,F+4;;;;;;;"* High crush
 * Recovers crouching"
-qcf+1;m;25;i16;-10;KND;;
-qcf+1,b;m;25;i16;-3;KND;;Transition to FLK
+qcf+1;m;25;i18;-10;KND;;
+qcf+1,b;m;25;i18;-3;KND;;Transition to FLK
 qcf+1,b,db;m;25;i16;-4;KND;;"* Recovers crouching
 * Transition to FLK"
 d,db,b,f+2;m, !;84;i66;KND;KND;;
 d,db,b,f+2;m, !;54;i66;KND;;;
 f,f,F+1;l;20;i16;-11;KND;;High crush
-f,f,F+2;m;30;i20;+9;KND;;"* Alternate input: f,f,F+2
+f,f,F+2;m;30;i23;+9;KND;;"* Alternate input: f,f,F+2
 * Low crush"
 ws1;m;12;i11;-3;+3;+8;
 ws1,2;m, m;12, 24;;-13~-12;+2c~+3c;KND;Bound
@@ -130,15 +130,15 @@ SS.1;h;8;i10;+1;+8;;
 SS.2;h;12;i12;-1;+5;;
 SS.3;;;;;;;
 SS.4;;;;;;;
-SS.1+2;h;28;i17;+1;KND;;
+SS.1+2;h;28;i26;+1~+2;KND;;
 d+3;;;;;;;
 d+4;;;;;;;
 OTG.d+1+2;L;12;i17;-11;+0;;
 2+3+4;;;;;;;
 3;;;;;;;
-LWV.1;m;20;i14~15;-10;+1;KND (+5);
+LWV.1;m;20;i22;-10;+1;KND (+5);
 LWV.1,1;m, m;20, 26;;-10~-11;KND;+ (KND);
-LWV.1,b;m;20;i14~15;-2;+8;KND;Transition to FLK
+LWV.1,b;m;20;i22;-2;+8;KND;Transition to FLK
 LWV.1,b,db;m;20;i14;-7;+3;KND;"* Recovers crouching
 * Transition to FLK"
 LWV.1,f+1;m, m;20, 14;;-4;+3;;
@@ -147,13 +147,13 @@ LWV.1,f+1,1,b;m, m, h;20, 14, 9;;-5~-3;+1~+3;;Transition to FLK
 LWV.1,f+1,1,b,db;m, m, h;20, 14, 9;;-11~-9;-5~-3;;"* Recovers crouching
 * Transition to FLK"
 LWV.2;m;15;i14~15;-5~-6;+3~+4;;
-LWV.2,f;m;15;i14~15;-;+;;
-LWV.2,1;m, m;15, 25;;-9;+;KND;Bound
+LWV.2,f;m;15;i22;-;+;;
+LWV.2,1;m, m;15, 25;;-8;+4c;KND;Bound
 4;;;;;;;
 RWV.1;m;15;i14;-5;+4;;
-RWV.1,f;m;15;i14;-;+;;
-RWV.1,2;m, m;15, 18;;-12;JG;;
-RWV.2;m;26;i15;-15;KND;;
+RWV.1,f;m;15;i22;-;+;;
+RWV.1,2;m, m;15, 18;;-12;KND;;
+RWV.2;m;26;i23;-15;KND;;
 3+4;;;;;;;
 3+4,f;;;;;;;
 QT.2;m;26;i22;-8~-7;KND;;
@@ -170,8 +170,8 @@ QT.d;l;25;i59;-11;KND;;"* Alternate input: u~d+1
 f+3;;;;;;;"* Alternate input: f+4
 * High crush"
 DCK.1;m;20;i19;-7;KND;JG;
-DCK.2;m;16;i19;-14;JG;;
-DCK.1+2;m;3;i16;-7;-1;;
+DCK.2;m;25;i49;-15;KND;;
+DCK.1+2;m;3;i24;-7;-1;;
 DCK.1+2,1;m, m;3, 3;;-9;+2;;
 DCK.1+2,1,2;m, m, m;3, 3, 3;;-9;-3;;
 DCK.1+2,1,2,1;m, m, m, m;3, 3, 3, 3;;-9;+2;;
@@ -180,7 +180,7 @@ DCK.1+2,1,2,1,2,1;m, m, m, m, m, m;3, 3, 3, 3, 3, 3;;-9;+2;;
 DCK.1+2,1,2,1,2,1,2;m, m, m, m, m, m, m;3, 3, 3, 3, 3, 3, 3;;-9;-3;;
 DCK.1+2,1,2,1,2,1,2,1;m, m, m, m, m, m, m, m;3, 3, 3, 3, 3, 3, 3, 3;;-9;+2;;
 DCK.1+2,1,2,1,2,1,2,1,2;m, m, m, m, m, m, m, m, m;3, 3, 3, 3, 3, 3, 3, 3, 3;;-10;-4;;
-DCK.1+2,1,2,1,2,1,2,1,2,1;m, m, m, m, m, m, m, m, m, m;3, 3, 3, 3, 3, 3, 3, 3, 3, 14;;-12;JG;;
+DCK.1+2,1,2,1,2,1,2,1,2,1;m, m, m, m, m, m, m, m, m, m;3, 3, 3, 3, 3, 3, 3, 3, 3, 14;;-12;KND;;
 DCK.f+2;h;25;i14;-4;KND;;
 DCK.f+2,;h;25;i14;+0;KND;;
 f+3,f~h;;;;;;;"* Alternate input: f+4,f~h
@@ -190,8 +190,8 @@ LDK.2;m;25;i19;-15;JG;;
 LDK.f+2;h;28;i14;+3;KND;;
 f+3+4;;;;;;;
 PAB.db;;;;;;;
-PAB.1;h;12;i12;-;+2;;Transition to PAB
-PAB.1,2;h, h;12, 14;;-9;+;;
+PAB.1;h;12;i13;-2;+9;;Transition to PAB
+PAB.1,2;h, h;12, 14;;-2;+6;;
 PAB.1,2,1;h, h, m;12, 14, 25;;-13;+c;;"* Bound
 * Transition to PAB"
 PAB.2;h;22 (25);i14;-9;+2 (KND);KND;"* Alternate input: ub+2
@@ -199,35 +199,35 @@ PAB.2;h;22 (25);i14;-9;+2 (KND);KND;"* Alternate input: ub+2
 * Transition to PAB"
 PAB.1+2;t;45;i15;;KND;;
 PAB.f+2;m;21;;-13;KND;;Transition to PAB
-PAB.f+1+2;h;6;;-;+;;Transition to PAB
-PAB.df+1;m;12;i15;-;+;;
-PAB.df+1,1;m, m;12, 16;;-9;+;;
-PAB.df+1,1,2;m, m, m;12, 16, 14;;-9;+;;
+PAB.f+1+2;h;6;;+6;+4;;Transition to PAB
+PAB.df+1;m;12;i16;-9;+2;;
+PAB.df+1,1;m, m;12, 16;;-7;+1;;
+PAB.df+1,1,2;m, m, m;12, 16, 14;;-9;-3;;
 PAB.df+1,1,2,1;m, m, m, m;12, 16, 14, 21;;-14;KND;;Bound
 PAB.df+1,2;m, h;12, 19;;-7;KND;;
-PAB.df+2;m;19;i15;-10;JG;;Transition to PAB
+PAB.df+2;m;19;i17;-10;KND;;Transition to PAB
 PAB.df+3+4;;;;;;;High crush
 DR.f;;;;;;;High crush
 DR.2;m;26;i15;-1;-3;KND (+3);"* Alternate input: 1
 * High crush"
 DR.2,1;m, m;26, 26;;-1;-3;KND (+3);"* Alternate input: 1,2,,,
 * High crush"
-PAB.d+1;l;14;i15;-12;+2;;"* High crush
+PAB.d+1;l;14;i16;-12;+2;;"* High crush
 * Transition to PAB"
 PAB.d+2;l;24;;-16;KND;;"* High crush
 * Recovers crouching"
-PAB.b+1;m;18;i17;-18;-;;
+PAB.b+1;m;18;i18;-19;-6;;
 PAB.b+1,1;m, h;18, 12;;-7;-1;;
 PAB.b+1,1,2;m, h, m;18, 12, 14;;-10;-4;;
 PAB.b+1,1,2,1;m, h, m, m;18, 12, 14, 25;;-10;KND;;
 PAB.b+1,1,2,1,b;m, h, m, m;18, 12, 14, 25;;-4~-6;KND;;Transition to FLK
-PAB.b+2;m;30;;-14;KND;;
-PAB.u;m;21;i17;-15;JG;;"* Alternate input: uf+2
+PAB.b+2;m;30;i29;-14;KND;;
+PAB.u;m;21;i18;-15;KND;;"* Alternate input: uf+2
 * Low crush"
 b+3;;;;;;;"* Alternate input: b+4
 * High crush"
-SWY.1;m;31;i16;-10~-9;+10cg (+2c);KND;Bound
-SWY.2;m;36;i17;-9;KND;;High crush
+SWY.1;m;31;i22;-10~-9;+10cg (+2c);KND;Bound
+SWY.2;m;36;i27;-18;KND;;High crush
 SWY.1+2;t;0;;;+1;;Then d, b, f or u
 b+3+4;;;;;;;
 b+3+4,;;;;;;;
