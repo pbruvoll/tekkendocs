@@ -184,6 +184,7 @@ export const characterGuideAuthors: Record<
     dragunov: { author: 'Fear of Silence', version: 'S2' },
     eddy: { author: 'Ace', version: 'S3' },
     fahkumram: { author: 'Leemishima', version: 'S3' },
+    feng: { author: 'Weak Akuma', version: 'S3' },
     hwoarang: { author: 'Kicking Macine', version: 'S3' },
     heihachi: { author: 'Trunkiez', version: 'S2' },
     'jack-8': { author: 'Fisherboat', version: 'S3' },
