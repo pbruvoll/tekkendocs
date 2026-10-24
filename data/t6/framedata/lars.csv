@@ -1,101 +1,148 @@
 #frames_normal
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes
-1;;8;10;+1;+8;+8;
-1, 1;;8,12;;-8;0;0;
-1, 1, 1;;8,12,20;;-12;+3 CR;+3 CR;
-1, 2;;8,10;;-1;+7;+7;
-1, 4;;8,12;;-12;+1;+1;
-2;;10;10;0;+8;+8;
-2, 1;;10,10;;-7;+4;+4;
-2, 1, 3;;10,10,21;;-12;KD;KD;
-2, 1, 4;;10,10,28;;-7;KD;KD;
-3;;19;15;-12;+5;+5;
-3, d;;19;15 CR;-12;+5;+5;
-4;;25;18;-7;KD;KD;
-1+2;;12,24;15;-10;+3;+3;
-1+2, b;;12;15;-9;-2;-2;
-f+1;;12;13;-8;+3;+3;
-f+1, 2;;12,13;;-8;+3;+3;
-f+1, 2, f;;12,13;;-5;+6;+6;
-f+1, 2, 3;;12,13,24;;-12;KD;KD;
-f+1, 2, 3, d;;12,13,24;;-9;KD;KD;
-f+2;;12;12;-6;+3;+3;
-f+2, 1;;12,9;;-6;+5;+5;
-f+2, 1, f;;12,9;;-5;+6;+6;
-f+2, 4;;12,26;12;-12;KD;KD;
-f+1+2;;24;15;-12;KD;KD;
-f+1+4;;33;13;-18;KD;KD;
-df+1;;16;13;-1;+5;+5;
-df+2;;20;15;-9;+4;KD;
-df+3;;18;16;-7;+3;+3;
-df+3, d;;18;;-9;+1;+1;
-df+3, 3;;18,24;;-20;KD;KD;
-df+1+2;;21;24;+2 CR;+4;KD;
-d+2;;19;18;0 CR;+4 CR;+4 CR;
-d+3;;9;15;-14;-3;-3;
-d+3, 1;;9,4,12;;-10;+6;+6;
-d+1+2;;30;24 CR;-20;KD;KD;
-db+1;;10;17 CR;-12;-1;-1;
-db+1, 3;;10,12;;-15;-4;-4;
-db+1, 3, d;;10,12;CR;-15;-4;-4;
-db+2;;14;15;-8;+3;+3;
-db+2, f;;14;;-5;+6;+6;
-db+2, 1;;14,9;;-6;+6;+6;
-db+2, 3;;14,18;;-13;0;+ Tech Roll;
-db+2, 3h;;14,30;;-9 ~ +8?;KD;KD;
-db+4;;21;21 CR;-21;+5 CR;KD;
-db+1+2;;21;26;-10;+5;KD;
-b+1;;19;15 ~ 16;-9 ~ -8;+3 ~ +4;+3 ~ +4;
-b+2;;12;16;-7;+4;+4;
-b+2, 1;;12,20;;-8;+3;KD;
-b+3;;16;20;-9;+2;+2;
-b+3, f;;16;20;-5;+6;+6;
-b+3, 4;;16,26;;-12;KD;KD;
-b+4;;24,(25);18;-8;+8;Investment par KD;
-b+1+2;;9,24;21;-11;KD;KD;
-b+2+3;;24,24;80?;KD;KD;KD;
-ub or u or uf+3;;14,(12);16 CR ~ 17 CR;-21 ~ -20 ~ ~ (13 ~ 12 A);KD;KD;
-ub+4;;24;25;-9;KD;KD;
-u+4;;24;25;-9;KD;KD;
-uf+4;;24;25;-9;KD;KD;
-ff+2;;24;22;-13;KD;KD;
-ff+3;;26;19;-8;KD;KD;
-ff+4;;16;21;-31 ~ -30;+5;+5;
-ff+4, 3;;16,24;;-16;-3;-3;
-ff+1+2;;24;17;-11;KD;KD;
-ff+3+4;;13,18;20;-16;0;0;
-fb+2;;12;14;-12;KD;KD;
-fb+2, 1;;12,24;;-16;KD;KD;
-fff+3 or WR 3;;36;23;+7 ~ +11?;KD;KD;
-WS 1;;19;15;-12;KD;KD;
-WS 2;;12;13;-9;+2;+2;
-WS 2, f;;12;13;-5;+6;+6;
-WS 2, d;;12;13;-31 ?;-?;-?;
-WS 2, 1;;12,20;;-12 CR;+1 CR;KD;
-WS 3;;36;20;+7;KD;KD;
-FC df+1+2;;12,12;18;-12;+1;+1;
-SS 2;;24;25;-8;KD;KD;
-d+3+4;;20;;-14;-3;-3;Hits grounded opponent
-d+3+4h, f;;20;;-20 ?;-?;-?;Hits grounded opponent
+1;h;8;i10;+1;+8;;
+1,1;h, m;8, 12;;-8;+0;;
+1,1,1;h, m, m;8, 12, 20;;-12~-11;+3~+4c;;Bound
+1,2;h, h;8, 10;;-1;+7;;
+1,4;h, l;8, 12;;-12;+1;;
+2;h;10;i10;+0;+8;;
+2,1;h, m;10, 10;;-7;+4;;
+2,1,3;h, m, m;10, 10, 21;;-12;KND;;
+2,1,4;h, m, h;10, 10, 28;;-7;KND;;
+3;h;19;i15;-12;+5;;
+3,d;h;19;i15;-12;+5;;"* Recovers crouching
+* Transition to FC"
+4;h;25;i18;-6;KND;;
+1+2;m, m;12, 24;i15;-10;+3;;
+1+2,b;m;12;i15;-9;-2;;
+f+1;h;12;i13;-8;+3;;
+f+1,2;h, m;12, 13;;-8;+3;;
+f+1,2,f;h, m;12, 13;;-5;+6;;Transition to SEN
+f+1,2,3;h, m, m;12, 13, 24;;-12;KND;;
+f+1,2,3,d;h, m, m;12, 13, 24;;-9;KND;;Transition to DEN
+f+2;h;12;i12;-6;+3;;
+f+2,1;h, h;12, 9;;-6;+5;;
+f+2,1,f;h, h;12, 9;;-5;+6;;Transition to SEN
+f+2,4;h, h;12, 26;i12;-12;KND;;
+f+4;h;25;i18;-7;KND;;
+f+1+2;m;24;i15;-12;KND;;
+f+1+4;m;33;i13;-18;KND;;
+df+1;m;16;i13;-1;+5;;
+df+2;m;20;i15;-9;+4;KND;
+df+3;m;18;i16;-7;+3;;
+df+3,d;m;18;;-9;+1;;Transition to DEN
+df+3,3;m, m;18, 24;;-20;KND;;
+df+4;m;19;i12;-;+;;
+df+1+2;m;21;i24~25;+2~+3c;+4~+5c;KND;Bound
+d+1;sm;6;i10;-5;+6;;"* High crush
+* Recovers crouching"
+d+2;m;19;i18;+0c;+4c;;
+d+3;l;9;i15;-14;-3;;
+d+3,1;l, h, h;9, 4, 12;;-10;+6;;
+d+4;l;8;i12;-13;-2;;High crush
+d+1+2;l;30;i24;-20;KND;;"* High crush
+* Recovers crouching"
+db+1;l;10;i17;-12;-1;;"* High crush
+* Recovers crouching"
+db+1,3;l, h;10, 12;;-15;-4;;
+db+1,3,d;l, h;10, 12;;-15;-4;;"* Recovers crouching
+* Transition to FC"
+db+2;m;14;i15;-8;+3;;
+db+2,f;m;14;;-5;+6;;Transition to SEN
+db+2,1;m, m;14, 9;;-6;+6;;
+db+2,3;m, m;14, 18;;-13;+0;+23 (KND);
+db+2,3h;m, m;14, 30;;+8;KND;;Fully charged
+db+3;l;14;i16;-17;-3;;"* High crush
+* Recovers crouching"
+db+4;l;21;i21;-21;+5c;KND;"* High crush
+* Recovers crouching"
+db+1+2;m;21;i26;-10;+5;KND;High crush
+b+1;m;19;i15~16;-9~-8;+3~+4;;
+b+2;m;12;i16;-7;+4;;
+b+2,1;m, m;12, 20;;-8;+3;KND;
+b+3;m;16;i20;-9;+2;;
+b+3,f;m;16;i20;-5;+6;;Transition to SEN
+b+3,4;m, h;16, 26;;-12;KND;;
+b+4;m;24 (25);i18;-8;+8;KND;Hit throw
+b+1+2;m, m;9, 24;i21;-11;KND;;
+b+2+3;!, !;24, 24;i80;JG;JG;;
+ub;m, m;14 (12);i16~17;-21~-20 (+13~+12);JG;;"* Alternate input: u or uf+3
+* Low crush
+* Recovers crouching"
+ub+1;m;12;i18;-8;+3;;"* Alternate input: u+1
+* Low crush"
+ub+4;m;24;i25;-9;KND;;"* Low crush
+* Bound"
+u+4;m;24;i25;-9;JG;;"* Low crush
+* Bound"
+uf+1;h;14;;-;+;;
+uf+4;m;24;i25;-9;JG;;"* Low crush
+* Bound"
+f,F+1;h;12;i13;-8;+3;;
+f,F+2;m;24;i21;-13;JG;;
+f,F+2,f;m;24;i21;;JG;;"* On hit
+* Transition to SEN"
+f,F+3;m;26;i18;-8;KND;;Low crush
+f,F+4;l;16;i21;-31;+5;;
+f,F+4,3;l, m;16, 24;;-16;-3;;
+f,F+1+2;m;24;i16~17;-11~-10;KND;;
+f,F+3+4;l, l;13, 18;i19;-16;+0c;;
+f,b+2;m;12;i14;-12;KND;;
+f,b+2,1;m, m;12, 24;;-16;KND;;
+f,f,F+3;m;36;i20~24;+7~+11g;KND;;"* Alternate input: f,f,F+3
+* Low crush"
+ws1;m;19;i15~16;-12~-11;JG;;
+ws1;m;19;i15~16;;JG;;"* On hit
+* Alternate input: f
+* Transition to SEN"
+ws2;m;12;i13;-9;+2;;
+ws2,f;m;12;i13;-5;+6;;Transition to SEN
+ws2,d;m;12;i13;-12;-1;;Transition to DEN
+ws2,1;m, m;12, 20;;-12c;+1c;KND;Bound
+ws3;h;36;i20;+7;KND;;
+ws4;m;19;i11;-6;+5;;
+FC.df+1+2;l, l;12, 12;i18;-12;+1;;
+SS.1;h;8;i10;+1;+8;;
+SS.2;m;24;i15~16;-8~-7;KND;;
+SS.3;h;19;i15;-12;+5;;
+SS.4;h;25;i18;-7;KND;;
+OTG.d+3+4;L;20;i22;-14;-3;;
+OTG.d+3+4h,f;L;20;i22;-14;-3;;Transition to SEN
 1+2+3+4;;;;;;;
-reservoir fired after 2;;24;33 ~ 66;-18;KD;KD;
-various technical cooperation;;;;;;;
-SEN 1;;32;12;-10;KD;KD;
-SEN 2;;24;22 CR;-17;KD;KD;
-SEN 3;;24;14;-14;KD;KD;
-f+3 or a variety of technical cooperation;;;;;;;
-DEN 1;;16;11;-4;+7;+7;
-DEN 1, f;;16;11;-5;+6;+6;
-DEN 1, 2;;16,24;;-6;KD;KD;
-DEN 1, 2j;;16,16,24;;-6;KD;KD;
-DEN 2;;20;18;-7;+7;KD;
-DEN 1+2;;24;17 ~ 18;-10 ~ -9;KD;KD;
-DEN 2+3;;20,20;10;KD;KD;KD;
-DEN 2+3 (against air);;10,10;10;KD;KD;KD;
-ub or u or uf+3+4;;;;;;;
-ub or u or uf+3+4h;;40;27;KD;KD;KD;
-uf+3+4, 1;;20;54? CR;-16;0;YKKD;
-uf+3+4, 4;;24,(20);37?;-8;0;AT KD;
+2;m;24;i16~17;-18~-17;JG;;During charge
+SEN.1;m;32;i12;-10;KND;;
+SEN.2;l;24;i22;-17;KND;;Recovers crouching
+SEN.3;m;24;i14;-14;JG;;Low crush
+f+3;;;;;;;
+DEN.1;h;16;i11;-4;+7;;
+DEN.1,f;h;16;i11;-5;+6;;Transition to SEN
+DEN.1,2;h, h;16, 24;;-6;KND;;
+DEN.1,2j;h, h, h;16, 16, 24;;-6;KND;;
+DEN.2;m;20;i18;-7;+7;KND;
+DEN.1+2;m;24;i17~18;-10~-9;JG;;Bound
+DEN.2+3;t;20, 20;i12;;Throw;;
+DEN.2+3;t;10, 10;i12;;Throw;;Against an airborne opponent
+ub;;;;;;;"* Alternate input: u or uf+3+4
+* Low crush"
+ub;t;40 (50);i27;;Throw;;Alternate input: u or uf+3+4h
+uf+3+4,1;l;20;i23;-16;+0c;KND;
+uf+3+4,4;m;24 (20);i17~18;-8~-7;+8~+9;KND;Hit throw
+FC.1;sm;6;i10;-5;+6;;"* High crush
+* Recovers crouching"
+FC.2;sm;9;i11;-4;+7;;"* High crush
+* Recovers crouching"
+FC.3;l;14;i16;-17;-3;;"* High crush
+* Recovers crouching"
+FC.4;l;12;i12;-15;-4;;"* High crush
+* Recovers crouching"
+1+3;t;35;;;;;Throw break 1
+2+4;t;35 ();;;;;"* Throw break 2
+* Opponent recovers FDFT"
+Left throw;t;40;;;;;Throw break 1
+Right throw;t;40;;;;;Throw break 2
+Back throw;t;50;;;;;Unbreakable
+uf+1+2;t;40;;;;;Throw break 1+2
+uf+3+4*;t;;;;;;Throw break db or d
 #stances
 Code;Stance
 SEN;Silent Entry

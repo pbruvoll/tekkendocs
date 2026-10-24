@@ -1,132 +1,504 @@
 #frames_normal
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes
-1;;8;10;+1;+8;+8;
-1, 2;;8,18;;-1;+6;+6;
-1, 2, 2+4;;8,18,30;;;;;
-1, 2, d+2+4;;8,18,45;;;;;
-1, 2, 1;;8,18,12;;-4;+5;+10;
-1, 2, 1, 2+4;;8,18,12,30;;;;;
-1, 2, 1, d+2+4;;8,18,12,45;;;;;
-2;;12;10;+1;+7;+7;
-2, 1;;12,14;;0;+6;+6;
-1+2;;21;19? BT;-11;-2;+2;
-1+2, 1;;21,25;;-13;KD;KD;
-1+2, 3;;21,30;;-3;KD;KD;
-1+4;;30;52 KD;KD;KD;KD;
-BT 1+4;;36;41 KD;KD;KD;KD;
-f+2;;14;15;-3;+3;+3;
-f+2, 2;;14,16;;-3;+6;+6;
-f+2, 2, 1;;14,16,27;;-7;KD;KD;
-f+2, 2, 2;;14,16,25;;-12 CR;+5 CR;KD;
-f+2, 2, 2, b;;14,16;;-13;-4;-4;
-f+3;;21;15;-9;+1;+9;
-f+4;;27;18;-9;KD;KD;
-f+1+2;;30;19 ~ 21;-1 ~ +1;KD;KD;
-f+1+2 hold;;60;29;KD;KD;KD;
-f+3+4;;30;38;+8;KD;KD;
-ff+3+4;;30;29;+8;KD;KD;
-f+1+4;;25;17 ~ 18;+2 ~ +3;+5 ~ +6;KD;
-f+2+3;;48;25 ~ 31;-10 ~ -6;KD;KD;
-df+1;;18;14;-1;+3;+3;
-df+1, 2;;18,14;;-11 ~ -9;+2 ~ +4;+2 ~ +4;
-df+2;;14;13;-6;+2;+2;
-df+2, 1;;14,18;;-4;KD;KD;
-df+3;;2;14;-9;+2;+2;
-df+3, 4;;20,25;KD;0;KD;KD;
-df+4;;12;14;-14;-3;-3;
-df+4, 3;;12,16;;-5;+6;+6;
-df+4, 3, 4;;12,16,27;;-14;KD;KD;
-df+4, 3, 4, b;;12,16,27;BT;-14;KD;KD;
-df+4, 3, db or d+4;;12,16,19;KD;-15;KD;KD;
-df+3+4;;18,(30);BT;-15 ~ ~ (throwing);-4 CR _ throwing;-4 CR _ cast;
-df+3+4;;18;29 ~ 33 KD;-14;-3 CR;-3 CR;
-d+1 or FC d+1;;6;10 CR;-5;+6;+6;
-d+1, n,2;;6,15;;-10 ~ -11;0;0;
-d+1+2;;30;30;-8;-5 CR;-5 CR;
-d+3+4 or FC df+4;;16;16 CR;-29;-13;-13;
-WR 4;;26;14 CR;-29;-13;-13;
-d+3+4, 4;;16,8;CR;-29;-13;-13;
-d+3+4, 4 * d;;16,8,8;CR;-29;+13;+13;
-d+3+4, 4 * df;;16,8,8,4;CR;-35?;+9?;+9?;
-from automatically after b;;16,8,8,4,3;CR;-35;+15;+15;
-kick in the ant 2 (from too many eyes);;16,12;;-15;KD;KD;
-db+2;;25;25;-5 CR;KD;KD;
-db+3;;20;23 CR;-16;+2 CR;KD;
-db+4;;24;27 CR;-15;KD;KD;
-b+1;;15;12;-6;+5;KD;
-b+1, 2;;15,21;;-11;+5;+5;
-b+1, 4;;15,30;KD;;KD;KD;
-b+2;;14;14;-5;+1;+1;
-b+2, 1+2;;14,26;;0 CR;KD;KD;
-b+2, 4;;14,21;;-9;+9;AT;
-b+3;;27;16;-10;KD;KD;
-b+4;;36;15 BT;-6;KD;KD;
-b+4;;24;16 BT;-13 (-16);KD;KD;
-ub+1;;36;20;-5;+5;+5;
-ub or u or uf+2;;42;46 KD;-18;KD;KD;
-uf+3;;30,(21);21 ~ 23 KD;+2?;KD;KD;
-ub+4;;13;15;-19;-8;KD;
-u+4;;18;15;-12;KD;KD;
-uf+4;;15;15;-12;KD;KD;
-uf+1+2;;42;35 ~ 60;+2 CR;KD;KD;
-uf+1+2 hold;;54;88 ~ 89;KD;KD;KD;
-uf+3+4;;33;23 KD;-16;KD;KD;
-ff+1;;27;22 ?;-5;KD;KD;
-ff+2;;22;32;+2 CR;+4 CR;+4 CR;
-ff+2, b;;;;;;;
-ff+2, 1;;22,30;;+2;KD;KD;
-ff+4;;28;16;-15;KD;KD AT;
-ff+1+2;;18;21;-5 ~ +12;KD;KD;
-ff+1+2;;18;44;-25;KD;KD;
-ff+2+3;;36,5;22;-13;KD;KD;
-ff+2+3;;36;22;0?;-? CR;-? CR;
-ff,n,2;;16;20;-14;-3;DOS -3 _ +17;
-ff,n,1+2;;0;11;+2;+5;+16;
-fff+3+4 or WR 3+4;;48;25;+18 NG;KD;KD;
-WS 2;;24;15;-9;+8;KD;
-WS 1+2;;21;18;-10;KD;KD;
-FC df+1;;24;30;-9;KD;KD;
-Body in Sitting df+2;;25;15;-14;KD;KD;
-SS 2;;36;;-5 ~ -4;KD;KD;
-SS 3+4;;64;;-;KD;KD;
-BT 1+2;;60;27;KD;KD;KD;
-BT 3;;18;13;-20;+7;KD;
-BT d+4;;24;27 CR;-15;KD;KD;
-3+4;;;;;;;
-3+4, 1;;24;32?;-5;KD;KD;
-3+4, 1;;30;;-5;KD;KD;
-3+4, 1;;37;;-5;KD;KD;
-3+4, 1;;37;;-5;KD;KD;
-3+4, 1;;37;;-5;KD;KD;
-3+4, 2;;18;35;-2;+7 CR _ +13 CR;+13 CR;
-3+4, 2;;21;67;-2;+7 CR _ +13 CR;+13 CR;
-3+4, 2;;26;99;-2;+7 CR _ +13 CR;+13 CR;
-3+4, 2;;26;131;-2;+7 CR _ +13 CR;+13 CR;
-3+4, 2;;26;163;-2;+7 CR _ +13 CR;+13 CR;
-3+4, 3;;27;;-5;KD;KD;
-3+4, 3;;32;;-5;KD;KD;
-3+4, 3;;40;;-5;KD;KD;
-3+4, 3;;40;;-5;KD;KD;
-3+4, 3;;40;;-5;KD;KD;
-3+4, 2+3;;36,5;KD;-13;KD;KD;
-3+4, 2+3;;36;KD;0?;-? CR;-? CR;
-3+4, 4;;42;40;-5;KD;KD;
-3+4, 4;;50;72;KD;KD;KD;
-3+4, 4;;62;104;KD;KD;KD;
-3+4, 4;;62;136;KD;KD;KD;
-3+4, 4;;62;168;KD;KD;KD;
-3+4, df+4;;36;40;-16;KD;KD;
-3+4, df+4;;43;72;+8;KD;KD;
-3+4, df+4;;54;104;+8;KD;KD;
-3+4, df+4;;54;136;+8;KD;KD;
-3+4, df+4;;54;168;+8;KD;KD;
-f,n,d,df;;;CR;;;;
-f,n,d,df+1;;14;13;-4 ~ -3;+7 ~ +8;+7 ~ +8;
-f,n,d,df ~ 1;;24;34;-9;KD;KD;
-f,n,d,df+2;;24;18;-9;+8;KD;
-f,n,d,df+4;;24;14;-6;+5;+5;
-f,n,d,df ~ 4;;25;20;-9;+ CR M;+ Tech Roll;
-f,n,d,df+1+2;;21;21;-10;KD;KD;
-f,n,d,df ~ 1+2;;28;19;-12 CR;KD;KD;
-f,n,d,df ~ 2+3;;25;;;;;
-f,n,d,df ~ 1+4;;20;;;;;
+1;h;8;i10;+1;+8;;
+1,2;h, h;8, 18;;-1;+6;;
+1,2,2+4;h, h, t;8, 18, 30;;;;;
+1,2,d+2+4;h, h, t;8, 18, 45;;;;;
+1,2,1;h, h, m;8, 18, 12;;-4;+5;+10;
+1,2,1,2+4;h, h, m, t;8, 18, 12, 30;;;;;
+1,2,1,d+2+4;h, h, m, t;8, 18, 12, 45;;;;;
+2;h;12;i10;+1;+7;;
+2,1;h, m;12, 14;;+0;+6;;
+3;h;30;i17;-14;KND;;
+4;h;24;i13;-5;+6;JG;
+1+2;m;21;i18;-11;-2;+0;Recovers back turned
+1+2,1;m, m;21, 25;;-13;KND;;
+1+2,3;m, h;21, 30;;-3;KND;;
+1+4;!;30;i52~56;KND;KND;;Recovers grounded
+BT.1;h;18;i8;-8;+3;;Alternate input: 2
+BT.4;h;30;i10;-8;KND;;
+BT.1+4;!;36;i41~45;KND;KND;;Recovers grounded
+f+1;h;8;i10;+1;+8;;
+f+2;h;14;i15;-3;+3;;
+f+2,2;h, h;14, 16;;-3;+6;;
+f+2,2,1;h, h, h;14, 16, 27;;-7;KND;;
+f+2,2,2;h, h, m;14, 16, 25;;-12c;+5c;KND;Bound
+f+2,2,2,b;h, h;14, 16;;-13;-4;;
+f+3;m;21;i15;-9;+1;+9;
+f+4;m;27;i18;-9;KND;;Low crush
+f+1+2;h;30;i20~21;-1~+0;KND;;
+f+1+2*;h!;60;i29;KND;KND;;
+f+3+4;h;30;i38~39;+7~+8;KND;;Low crush
+f,F+3;m;21;i15;-9;+1;+9;
+f,F+3+4;h;30;i28~29;+7~+8;KND;;Low crush
+f+1+4;m;25;i17~18;+2~+3;+5~+6;KND;
+f+2+3;m;48;i25~31;-10~-4;KND;;
+df+1;m;18;i14~15;-1~+0;+3~+4;;
+df+1,2;m, m;18, 14;;-11~-9;+2~+4;;
+df+2;m;14;i13;-6;+2;;
+df+2,1;m, h;14, 18;;-4;KND;;
+df+3;m;2;i14;-9;+2;;
+df+3,4;m, h;20, 25;;+0;KND;;"* Low crush
+* Recovers grounded"
+df+4;l;12;i14;-14;-3;;
+df+4,3;l, h;12, 16;;-5;+6;;
+df+4,3,4;l, h, m;12, 16, 27;;-14;KND;;Low crush
+df+4,3,4,b;l, h, m;12, 16, 27;;-14;KND;;"* Low crush
+* Recovers back turned
+* Transition to BT"
+df+4,3,db+4;l, h, l;12, 16, 19;;-15;KND;;"* Alternate input: d+4
+* Low crush
+* Recovers grounded"
+df+3+4;sm, t;18 (30);i28;Throw;Throw;;"* Low crush
+* Recovers grounded
+* At close range"
+df+3+4;sm;18;i29~33;-17~-13;-6~-2c;;"* Low crush
+* Recovers grounded"
+d+1;sm;6;i10;-5;+6;;"* Alternate input: FC.d+1
+* High crush
+* Recovers crouching"
+d+1,n+2;sm, m;6, 15;;-11~-10;+0~+1;;High crush
+d+2;sm;9;i11;-4;+7;;"* High crush
+* Recovers crouching"
+d+3;l;14;i18;-16;-2;;"* High crush
+* Recovers crouching"
+d+4;l;8;i14;-11c;+0;;"* High crush
+* Recovers crouching"
+d+1+2;m;30;i30~34;-8~-4;+0~+4c;;
+d+3+4;l;16;i16;-29;-13 (-18);;"* Alternate input: FC.df+4
+* High crush
+* Recovers crouching"
+f,f,F+4;l;26;i14;-29;-13 (-18);;"* High crush
+* Recovers crouching"
+d+3+4,4;l, l;16, 8;;-29;-13;;"* High crush
+* Recovers crouching"
+d+3+4,4*d;l;16, 8, 8;;-29;+12;;"* High crush
+* Recovers crouching"
+d+3+4,4*df;l;16, 8, 8, 4, 3;;-35;+15;;"* High crush
+* Recovers crouching"
+ALI.2;l, m;16, 12;;-15;KND;;"* From any hit
+* High crush"
+db+1;sm;6;i10;-5;+6;;"* Alternate input: d+1
+* High crush
+* Recovers crouching"
+db+2;m;25;i25;-5c;KND;;Bound
+db+3;l;20;i23;-16;+2c;KND;"* High crush
+* Recovers crouching"
+db+4;l;24;i27~29;-17~-15;KND;;"* Low crush
+* Recovers crouching"
+b+1;h;15;i12;-6;+5;KND;
+b+1,2;h, h;15, 21;;-11;+5;;
+b+1,4;h, m;15, 30;;-9~-8;KND;;Recovers grounded
+b+2;h;14;i14;-5;+1;;
+b+2,1+2;h, h;14, 26;;+0c;KND;;Bound
+b+2,4;h, m;14, 21;;-9;+9;;Hit throw
+b+3;h;27;i16;-10;KND;;
+b+4;h;36;i15;-6;KND;;"* Recovers back turned
+* Point blank"
+b+4;h;24;i16~21;-17~-12;KND;;Recovers back turned
+ub+1;h;36;i20;-5;+5;;
+ub;m;42;i48~52;-18~-14c;KND;;"* Alternate input: u or uf+2
+* Low crush
+* Recovers grounded"
+uf+3;m, m;30 (21);i22~26;-10~-6;KND;;"* Low crush
+* Recovers grounded"
+ub+3;m;30;i23;-19;KND;;"* Alternate input: u+3
+* Low crush"
+ub+4;m;13;i15;-19;-8;KND;Low crush
+u+1;m;14;i18;-8;+3;;"* Alternate input: uf+1
+* Low crush"
+u+4;m;18;i15;-12;KND;JG;Low crush
+uf+4;m;15;i15;-12;JG;;Low crush
+uf+1+2;m;42;i35~60;+2c;KND;;Low crush
+uf+1+2*;!;54;i88~89;KND;KND;;Low crush
+uf+3+4;h;33;i23;-16;KND;;"* Low crush
+* Recovers grounded"
+f,F+1;m;27;i22;-5;KND;;
+f,F+2;m;22;i31;+2c;+4c;;
+f,F+2,b;;;;;;;
+f,F+2,1;h;22, 30;;+2;KND;;
+f,F+4;m;28;i15;-15;KND;;Hit throw
+f,F+1+2;h;18;i20~39;-5~+14;KND;;Low crush
+f,F+1+2;l;18;i40~43;-25~-22;KND;;"* Low crush
+* At the tip of the range"
+f,F+2+3;m;36, 5;i21~25;-15~-11;KND;;"* Low crush
+* Hit throw
+* Recovers grounded
+* At close range"
+f,F+2+3;m;36;i26~42;-10~+5;-13~+3c;;"* Low crush
+* Recovers grounded"
+f,f,n+2;l;16;i18;-14;-3;KND (-3);High crush
+f,f,n+1+2;m;0;i9;+2;+5;+16;
+f,f,F+3+4;m;48;i28~30;+17~+19g;KND;;"* Alternate input: f,f,F+3+4
+* Low crush
+* Recovers grounded"
+ws1;m;14;i10~11;-4~-3;+7~+8;;
+ws2;m;24;i15~16;-9~-8;+8~+9;KND;
+ws3;m;33;i16;-16;KND;;
+ws4;m;24;i11;-6;+5;;
+ws1+2;m;21;i18;-10;JG;;
+FC.df+1;l;24;i30;-9;KND;;"* High crush
+* Recovers crouching"
+FC.df+2;m;25;i15;-14;KND;;
+SS.1;h;8;i10;+1;+8;;
+SS.2;h;36;i18;-5;KND;;
+SS.3;h;30;i17;-14;KND;;
+SS.4;h;24;i13;-5;+6;JG;
+SS.3+4;h;64;i27~31;-9~-5;KND;;"* Low crush
+* Recovers grounded"
+BT.1+2;h!;60;i27~29;KND;KND;;
+BT.3;m;18;i13;-17;+7;KND;
+BT.d+4;l;24;i22~24;-17~-15;KND;;"* Low crush
+* Recovers crouching"
+3+4;;;;;;;Low crush
+3+4,1;h;24;i19;-5;KND;;Input rotated 1 times
+3+4,1;h;30;i19;-1;KND;;Input rotated 2 times
+3+4,1;h;37;i19;-1;KND;;Input rotated 3 times
+3+4,1;h;37;i19;-1;KND;;Input rotated 4 times
+3+4,1;h;37;i19;-1;KND;;Input rotated 5 times
+3+4,2;m;18;i11;-2;+2c (+13c);;"* Bound
+* Input rotated 1 times"
+3+4,2;m;21;i11;+0;+2c (+13c);;"* Bound
+* Input rotated 2 times"
+3+4,2;m;26;i11;+0;+2c (+13c);;"* Bound
+* Input rotated 3 times"
+3+4,2;m;26;i11;+0;+2c (+13c);;"* Bound
+* Input rotated 4 times"
+3+4,2;m;26;i11;+0;+2c (+13c);;"* Bound
+* Input rotated 5 times"
+3+4,3;m;27;i22;-5;KND;;"* Low crush
+* Input rotated 1 times"
+3+4,3;m;32;i22;-1;KND;;"* Low crush
+* Input rotated 2 times"
+3+4,3;m;40;i22;-1;KND;;"* Low crush
+* Input rotated 3 times"
+3+4,3;m;40;i22;-1;KND;;"* Low crush
+* Input rotated 4 times"
+3+4,3;m;40;i22;-1;KND;;"* Low crush
+* Input rotated 5 times"
+JSS.2+3;m;36, 5;;-15~-11;KND;;"* Low crush
+* Hit throw
+* Recovers grounded
+* At close range"
+JSS.2+3;m;36;;-10~+6;-13~+3c;;"* Low crush
+* Recovers grounded"
+3+4,4;h;42;i17;+8;KND;;Input rotated 1 times
+3+4,4;h!;50;i17;KND;KND;;Input rotated 2 times
+3+4,4;h!;62;i17;KND;KND;;Input rotated 3 times
+3+4,4;h!;62;i17;KND;KND;;Input rotated 4 times
+3+4,4;h!;62;i17;KND;KND;;Input rotated 5 times
+3+4,df+4;m;36;i17;-17;KND;;Input rotated 1 times
+3+4,df+4;m;43;i17;+8;KND;;Input rotated 2 times
+3+4,df+4;m;54;i17;+8;KND;;Input rotated 3 times
+3+4,df+4;m;54;i17;+8;KND;;Input rotated 4 times
+3+4,df+4;m;54;i17;+8;KND;;Input rotated 5 times
+3+4,1+4;t;20;i12;;Throw;;Alternate input: 3+4,2+3
+f,n,d,df;;;;;;;Recovers crouching
+f,n,d,df~1;l;24;i30;-9;KND;;"* High crush
+* Recovers crouching"
+f,n,d,df~4;m;25;i15;-9;+22 (KND);;Low crush
+f,n,d,df~1+2;m;28;i20~22;-12~-10c;KND;JG;
+f,n,d,df~2+3;t;25;i12;;Throw;;Held
+f,n,d,df~1+4;t;20;i12;;Throw;;
+FC.3;l;14;i18;-16;-2;;"* High crush
+* Recovers crouching"
+FC.db+1;sm;6;i10;-5;+6;;"* Alternate input: d+1
+* High crush
+* Recovers crouching"
+FC.db+2;sm;9;i11;-4;+7;;"* Alternate input: d+2
+* High crush
+* Recovers crouching"
+FC.db+4;l;12;i14;-11;+0;;"* Alternate input: d+4
+* High crush
+* Recovers crouching"
+1+3;t;35;;-6;;;"* Throw break 1
+* Opponent recovers FUFA"
+2+4;t;35;;-3;;;"* Throw break 2
+* Side switch
+* Opponent recovers FUFA"
+Left throw;t;40 (20, 20);;-4;;;"* Throw break 1
+* Side switch
+* Opponent recovers face up sideways"
+Right throw;t;42;;-4;;;"* Throw break 2
+* Opponent recovers FUFT"
+Back throw;t;60;;;;;"* Unbreakable
+* Opponent recovers face down sideways"
+b,f~1+2;t;75;;;;;"* Back throw only
+* Unbreakable
+* Opponent recovers face up sideways"
+db+1+2;t;40;;-6;;;"* Throw break 1+2
+* Opponent recovers FUFT"
+df+2+3;t;40;;+0;;;"* Throw break 2
+* Opponent recovers FUFT"
+ub+1+2;t;40;;;;;"* Alternate input: u+1+2
+* Throw break 1+2"
+ub+1+2,b;t;40;;;;;"* Alternate input: u+1+2,b
+* Throw break 1+2
+* Side switch"
+qcb~1+2;t;50;;-6;;;"* Throw break 1+2
+* Side switch
+* Opponent recovers FUFA
+* Recovers BT"
+db,f~2+4;t;52;;+0;;;"* Throw break 2
+* Opponent recovers FUFA"
+f,b,db,d,df,f+1;t;55 (35, 20);;-8;;;"* Throw break 1
+* Side switch"
+f,b,db,d,df,f+2;t;50;;;;;"* Throw break 2
+* Opponent recovers face up sideways"
+f,f,F+2+4;t;40;;-5;;;"* Alternate input: f,f,F+2+4
+* Throw break 1+2
+* Side switch when broken
+* Opponent recovers FUFT"
+FC.db,d,db+1+2;t;45;;-6;;;"* Throw break 1+2
+* Opponent recovers face up sideways"
+qcf+1;t;30;;+0;;;"* Throw break 1
+* Opponent recovers FUFT"
+qcf+1,1+2,1+2;t;35;;+0;;;"* Throw break 2
+* Opponent recovers FDFA"
+qcf+1,1+2,3,4,1+2;t;45 (30, 15);;-6;;;"* Throw break 1+2
+* Opponent recovers face down sideways"
+d+1+3;t;45;;;;;"* Against a crouching opponent
+* Low throw
+* Throw break 1"
+d+2+4;t;45;;+0;;;"* Against a crouching opponent
+* Low throw
+* Throw break 2
+* Side switch
+* Opponent recovers FUFA"
+b~1+3;;25;;;;;"* Against 1 attacks
+* Reversal
+* Unbreakable
+* Side switch
+* Opponent recovers FUFA"
+b~2+4;;25;;;;;"* Against 3 attacks
+* Reversal
+* Unbreakable
+* Side switch
+* Opponent recovers face up sideways"
+b~2+4;;25;;;;;"* Against 4 attacks
+* Reversal
+* Unbreakable
+* Side switch
+* Opponent recovers FUFT"
+FC.1+2;!;5;;+0;;;"* Throw break 1+2
+* Opponent recovers FUFT"
+FC.1+2,1,2,1,2,1;t;5, 5, 5, 5, 5;;;;;"* Alternate input: 2,1,2,1,2
+* Throw break 1 or 2
+* Opponent recovers FUFT"
+OTG.db+1+3;t;28;;;;;"* Alternate input: db+2+4
+* Throw break 1 or 2
+* Opponent recovers face up sideways
+* Held"
+OTG.db+1+3;t;30 (20, 10);;;;;"* Alternate input: db+2+4
+* Throw break 1 or 2
+* Side switch
+* Opponent recovers FUFT"
+OTG.db~1+3;t;33;;;;;"* Throw break 1
+* Opponent recovers FUFT"
+OTG.db~2+4;t;33;;;;;"* Throw break 2
+* Opponent recovers FUFT"
+OTG.db+1+3;t;0;;;;;"* Alternate input: db+2+4
+* Throw break 1 or 2
+* Opponent recovers face down sideways"
+OTG.db+1+3;t;32;;;;;"* Alternate input: db+2+4
+* Throw break 1 or 2
+* Opponent recovers FDFA"
+OTG.db+1+3;t;30;;;;;"* Alternate input: db+2+4
+* Throw break 1 or 2
+* Opponent recovers face down sideways"
+OTG.db+1+3;t;35;;;;;"* Alternate input: db+2+4
+* Throw break 1 or 2
+* Side switch
+* Opponent recovers face down sideways"
+OTG.db+1+3;t;37;;;;;"* Alternate input: db+2+4
+* Throw break 1 or 2
+* Opponent recovers face down sideways"
+b+1+2;t;0;;;+15;;"* Unbreakable
+* Recovers BT"
+b+1+2,1+3;t;0;;;+13;;Throw break 1
+b+1+2,1+3,2+4;t;8;;;;;"* Throw break 2
+* Side switch
+* Opponent recovers FDFT"
+b+1+2,1+3,2+4,3+4;t;10;;;;;"* Throw break 3+4
+* Opponent recovers FUFA"
+b+1+2,1+3,2+4,3+4,1+2;t;0;;;;;"* Throw break 1+2
+* Recovers BT"
+1+3;t;15;;;;;"* Against an airborne opponent
+* Unbreakable
+* Opponent recovers FDFT"
+2+4;t;15 (3, 12);;;;;"* Against an airborne opponent
+* Unbreakable
+* Side switch
+* Opponent recovers FUFT"
+f,b,db,d,df,f+1;t;22;;;;;"* Against an airborne opponent
+* Alternate input: f,b,db,d,df,f+2
+* Unbreakable
+* Opponent recovers FUFT"
+f,f,F+2+4;t;30;;;;;"* Against an airborne opponent
+* Unbreakable
+* Opponent recovers FUFT"
+d+1+3;t;10;;;;;"* Against an airborne opponent
+* Alternate input: d+2+4
+* Unbreakable
+* Opponent recovers face down sideways"
+d+1+3,1+2,1+2;t;15;;;;;"* Throw break 1
+* Side switch
+* Opponent recovers FDFT"
+d+1+3,2,1,3,4;t;25 ();;;;;"* Throw break 2
+* Side switch
+* Opponent recovers FUFT"
+f,b,db,d,df,f+1;t;35 (, , , , );;;;;"* Against an opponent in wall stun
+* Alternate input: f,b,db,d,df,f+1 or f,f,F+2+4 or 3+4,1+4 or 2+3
+* Wall throw
+* Unbreakable
+* Opponent recovers face up sideways"
+f,n,d,df~2+3,1+2,1,3,1+2;t;25;;;;;"* Throw break 1+2
+* Opponent recovers face down sideways"
+f,n,d,df~2+3,1+2,1,3,1+2,1,3,4,1+2,3+4;t;45;;;;;"* Unbreakable
+* Opponent recovers FDFT"
+f,n,d,df~2+3,1,2,3,1+2;t;35;;;;;"* Throw break 1
+* Opponent recovers face down sideways"
+f,n,d,df~2+3,1+2,3,1,1+3;t;40;;;;;"* Throw break 2
+* Opponent recovers face down sideways"
+f,n,d,df~1+4,1+2,1+2;t;30 (12, 18);;;;;"* Throw break 1
+* Opponent recovers FUFT"
+f,n,d,df~1+4,1+2,1+2,1+2,4,2+4;t;20;;;;;"* Throw break 2
+* Opponent recovers face up sideways"
+f,n,d,df~1+4,1+2,1+2,1+2,4,2+4,4,3,4,3+4,1+2;t;25;;;;;"* Unbreakable
+* Side switch
+* Opponent recovers face up sideways
+* Held"
+f,n,d,df~1+4,1+2,1+2,2,1,1+2+3;t;20;;;;;"* Throw break 1+2
+* Side switch
+* Opponent recovers FDFT"
+f,n,d,df~1+4,1+2,1+2,2,1,1+2+3,2,1,3,1+2+4,1+2+4;t;30;;;;;"* Throw break 1
+* Opponent recovers FUFA"
+f,n,d,df~1+4,1+2,1+2,2,1,1+2+3,1+3,3+4,2+4,1+2,1+2+3;t;70;;;;;"* Throw break 2
+* Opponent recovers face up sideways"
+f,df~1+3;t;22;;;;;"* Alternate input: 2+4
+* Throw break 1 or 2
+* Side switch
+* Opponent recovers FUFA"
+f,df~1+3,2,1,1+2;t;15;;;;;Throw break 1 or 2
+f,df~1+3,2,1,1+2,3+4,1+2;t;15;;;;;"* Throw break 1
+* Opponent recovers face up sideways"
+f,df~1+3,2,1,1+2,3+4,1+2,1,2,3+4;t;22;;;;;"* Unbreakable
+* Opponent recovers FUFT"
+f,df~1+3,2,1,1+2,3+4,1+2,1,2,3+4,2,1,3,4;t;25;;;;;"* Throw break 1
+* Side switch
+* Opponent recovers FUFT"
+f,df~1+3,2,1,1+2,3+4,1+2,1,2,3+4,3,1,2,3+4,1+2+3+4;t;30;;;;;"* Throw break 2
+* Opponent recovers FUFA
+* Recovers BT"
+f,df~1+3,2,1,1+2,2,2,1+2;t;15;;;;;"* Throw break 2
+* Opponent recovers FUFT"
+f,df~1+3,2,1,1+2,2,2,1+2,3+4,1+2,1+2+4;t;15;;;;;"* Throw break 2
+* Opponent recovers FDFA"
+f,df~1+3,2,1,1+2,2,2,1+2,3+4,1+2,1+2+4,1,2,3+4,1+2;t;18;;;;;"* Unbreakable
+* Opponent recovers FUFT"
+f,df~1+3,2,1,1+2,2,2,1+2,3+4,1+2,1+2+4,1,2,3+4,1+2,2,1,3,4;t;25;;;;;"* Throw break 1
+* Side switch
+* Opponent recovers FUFT"
+f,df~1+3,2,1,1+2,2,2,1+2,3+4,1+2,1+2+4,1,2,3+4,1+2,3,1,2,3+4,1+2+3+4;t;30;;;;;"* Throw break 2
+* Opponent recovers FUFA
+* Recovers BT"
+f,df~1+3,2,1,1+2,2,2,1+2,1,2,3+4;t;22;;;;;"* Throw break 1
+* Opponent recovers FUFT"
+f,df~1+3,2,1,1+2,2,2,1+2,1,2,3+4,2,1,3,4;t;25;;;;;"* Throw break 1
+* Side switch
+* Opponent recovers FUFT"
+f,df~1+3,2,1,1+2,2,2,1+2,1,2,3+4,3,1,2,3+4,1+2+3+4;t;30;;;;;"* Throw break 2
+* Opponent recovers FUFA
+* Recovers BT"
+f,df~1+2;t;25;;;;;"* Alternate input: SS.2+4
+* Throw break 1+2
+* Side switch
+* Opponent recovers FUFT"
+df,df~1+3;t;25;;;;;"* Against a crouching opponent
+* Alternate input: df,df~2+4
+* Throw break 1 or 2
+* Side switch
+* Opponent recovers FUFT"
+df,df~1+3,2,2,1+2;t;15;;;;;"* Unbreakable
+* Opponent recovers FUFT"
+df,df~1+3,2,2,1+2,3+4,1+2,1+2+4;t;15;;;;;"* Throw break 2
+* Opponent recovers FUFA"
+df,df~1+3,2,2,1+2,3+4,1+2,1+2+4,1,2,3+4,1+2;t;18;;;;;"* Unbreakable
+* Side switch
+* Opponent recovers FUFT"
+df,df~1+3,2,2,1+2,3+4,1+2,1+2+4,1,2,3+4,1+2,2,1,3,4;t;25;;;;;"* Throw break 1
+* Side switch
+* Opponent recovers FUFT"
+df,df~1+3,2,2,1+2,3+4,1+2,1+2+4,1,2,3+4,1+2,3,1,2,3+4,1+2+3+4;t;30;;;;;"* Throw break 2
+* Opponent recovers FUFA
+* Recovers BT"
+df,df~1+3,2,2,1+2,1,2,3+4;t;22;;;;;"* Unbreakable
+* Opponent recovers FUFT"
+df,df~1+3,2,2,1+2,1,2,3+4,2,1,3,4;t;25;;;;;"* Throw break 1
+* Side switch
+* Opponent recovers FUFT"
+df,df~1+3,2,2,1+2,1,2,3+4,3,1,2,3+4,1+2+3+4;t;30;;;;;"* Throw break 2
+* Opponent recovers FUFA
+* Recovers BT"
+SS.2+4;t;15;;;;;"* From behind the opponent
+* Throw break 1 or 2
+* Opponent recovers FUFT"
+SS.2+4,3+4,1+2,1+2+4;t;15;;;;;"* Throw break 2
+* Opponent recovers FUFA"
+SS.2+4,3+4,1+2,1+2+4,1,2,3+4,1+2;t;18;;;;;"* Unbreakable
+* Side switch
+* Opponent recovers FUFT"
+SS.2+4,3+4,1+2,1+2+4,1,2,3+4,1+2,2,1,3,4;t;25;;;;;"* Throw break 1
+* Side switch
+* Opponent recovers FUFT"
+SS.2+4,3+4,1+2,1+2+4,1,2,3+4,1+2,3,1,2,3+4,1+2+3+4;t;30;;;;;"* Throw break 2
+* Opponent recovers FUFA
+* Recovers BT"
+SS.2+4,1,2,3+4;t;22;;;;;"* Throw break 1
+* Opponent recovers FUFT"
+SS.2+4,1,2,3+4,2,1,3,4;t;25;;;;;"* Throw break 1
+* Side switch
+* Opponent recovers FUFT"
+SS.2+4,1,2,3+4,3,1,2,3+4,1+2+3+4;t;30;;;;;"* Throw break 2
+* Opponent recovers FUFA
+* Recovers BT"
+3+4,1+4,2+4,1+2,1+2;t;25;;;;;"* Throw break 1
+* Opponent recovers FDFA"
+3+4,1+4,3+4,3+4,1+2;t;15;;;;;"* Throw break 2
+* Side switch
+* Opponent recovers face down sideways"
+3+4,1+4,3+4,3+4,1+2,1,1,1+2;t;20 (4, 4, 12);;;;;"* Throw break 1
+* Side switch
+* Opponent recovers face down sideways"
+3+4,1+4,3+4,3+4,1+2,3,4,1+2,3+4;t;23;;;;;"* Throw break 2
+* Opponent recovers face down sideways"
+3+4,1+4,1,4,2,3;t;12;;;;;"* Unbreakable
+* Side switch
+* Opponent recovers face up sideways"
+3+4,1+4,1,4,2,3,2,1,1+3;t;13;;;;;"* Alternate input: 2+4
+* Throw break 1 or 2
+* Opponent recovers FDFA"
+3+4,1+4,1,4,2,3,2,1,1+3,2,3,1,1+2;t;24;;;;;"* Throw break 1+2
+* Opponent recovers face down sideways"
+3+4,1+4,1,4,2,3,2,1,1+3,1+2,1,2,1+2+3;t;16;;;;;"* Alternate input: 1+2+4
+* Throw break 1 or 2
+* Opponent recovers FUFA"
+3+4,1+4,1,4,2,3,2,1,1+3,1+2,1,2,1+2+3,3+4,1+2;t;15;;;;;"* Unbreakable
+* Side switch
+* Opponent recovers FDFA"
+3+4,1+4,1,4,2,3,2,1,1+3,1+2,1,2,1+2+3,3+4,1+2,1+2,4,1+2,1+2+3;t;27 (12, 15);;;;;"* Throw break 1+2
+* Side switch
+* Opponent recovers face down sideways"
+3+4,1+4,1,4,2,3,2,1,1+3,1+2,1,2,1+2+3,3+4,1+2,1+2,3,4,1+3;t;18;;;;;"* Alternate input: 2+4
+* Throw break 1 or 2
+* Side switch
+* Opponent recovers FDFA"
+3+4,1+4,1,4,2,3,2,1,1+3,1+2,1,2,1+2+3,3+4,1+2,1+2,3,4,1+3,2+4,3+4,1+3,1+2,1+2+3;t;32;;;;;"* Alternate input: 1+2+4
+* Throw break 1 or 2
+* Opponent recovers FUFA"
+df,df~1+3,2,2,1+2,1,2,3+4;t;22;;;;;"* Throw break 1
+* Opponent recovers FUFT"
+#stances
+Code;Stance
+ALI;Ali Kicks
+JSS;Jaguar Step Sobat

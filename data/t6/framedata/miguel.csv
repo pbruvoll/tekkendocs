@@ -1,127 +1,175 @@
 #frames_normal
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes
-1;;8;10;+1;+8;+8;
-1, 2;;8,12;;-1;+7;+7;
-1, 2, 4;;8,12,19;;+1;+10 NG;+10 NG;
-1, 2, 4, f;;8,12,20;;+1;+10 NG;+10 NG;
-1, 2, 1+2;;8,12,36;;+4 CR;KD;KD;
-1, 3;;8,14;CR;-12;+1;+1;
-2;;14;11;-5;+6;+6;
-2, 1;;14,15;;-4;+7;+7;
-2, 1, f;;14,15;;-4;+7;+7;
-3;;20;15;-7;+2;+2;
-3, 4;;20,20;;-10;KD;KD;
-1+2;;24;19 ~ 20;-7 ~ -6;+4 ~ +5 CR;+4 ~ +5 CR;
-1+2, 1+2;;24,24;;-17 ~ -16;KD;KD;
-f+2;;31;15;-5;+9;+9;
-f+3;;15;20 ~ 22;-6 ~ -4;+6 ~ +8 CR;+6 ~ +8 CR;
-f+3, 4;;15,18;;-12;KD;KD;
-f+4;;18;18;-7;+8;+8;
-f+4, 2;;18,24;;-16 ~ -15;KD;KD;
-f+1+2;;21;14;-5;KD;KD;
+1;h;8;i10;+1;+8;;
+1,2;h, h;8, 12;;-1;+7;;
+1,2,4;h, h, h;8, 12, 19;;+1;+10g;;
+1,2,4,f;h, h, h;8, 12, 20;;+1;+10g;;Transition to SAV
+1,2,1+2;h, h, m;8, 12, 36;;+4c;JG;;
+1,3;h, l;8, 14;;-12;+1;;Recovers crouching
+2;h;14;i11;-5;+6;;
+2,1;h, h;14, 15;;-4;+7;;
+2,1,f;h, h;14, 15;;-4;+7;;Transition to SAV
+3;h;20;i15;-7;+2;;
+3,4;h, m;20, 20;;-10;KND;;
+4;h;20;i12;-9;+2;JG;
+1+2;m;24;i19;-7;+4c;;
+1+2,1+2;m, m;24, 24;;-17;KND;;
+f+1;h;8;i10;+1;+8;;
+f+2;h;31;i15;-5;+9;;
+f+3;m;15;i19~20;-6~-5;+6~+7c;;
+f+3,4;m, m;15, 18;;-12;KND;;
+f+4;m;18;i18;-7;+8;;
+f+4,2;m, m;18, 24;;-16;KND;;
+f+1+2;h;21;i14;-5;KND;;
 f+3+4;;;;;;;
-f+3+4, f;;189;;KD;KD;KD;
-df+1;;14;13;0;+6;+6;
-df+1, f;;14;13;0;+6;+6;
-df+1, 1;;14,15;;-3;+5;+8;
-df+1, 1, f;;14,15;;-3;+5;+8;
-df+1, 1, 2;;14,15,21;;-10;+4;DOS +1;
-df+1, 1, 3;;14,15,15;;-11;0;0;
-df+1, 1, 3, f;;14,15,15;;-11;0;0;
-df+1, 2;;14,21;;-10;+3;+3;
-df+2;;12;16;-7;+6;+6;
-df+2, 1;;12,12;;-15;KD;KD;
-df+2, 2;;12,26;;-7 CR;+4;KD;
-df+3;;13;16;-6;+5;+5;
-df+3, 2;;13,16;;-6;+5 _ +23? CR M;+5 _ +23? Tech Roll;
-df+4;;15;14;-7;+4;+4;
-df+4, 1;;15,9;;-3;+5;+5;
-df+4, 1, f;;15,9;;-3;+5;+5;
-df+4, 1, 1;;15,9,27;;-10;+7;KD;
-d+2;;28;18 ~ 20;-7 ~-5 CR;+4 ~ +6 CR;KD;
-d+3;;18;21 CR;-12;+1;+1;
-d+4;;12;16;-11;0;0;
-d+4, 1+2;;12,20;;-8 CR;+5;+5;
-d+4, 1+2, f;;12,20;;-8 CR;+5;+5;
-d+1+2;;36;21;-12;KD;KD;
-db+1;;18;23 CR;-18;KD;KD;
-db+1 hold;;18;CR;-18;YKD;YKD;
-db+3;;14;18;-13;+3;+3;
-db+3, f;;14;;-13;+3;+3;
-db+3, 4;;14,15;;-19;-8;-8;
-db+4;;21;18;-18;0 CR;KD;
-b+1;;18;21;-5 CR;-3 CR;-3 CR;
-b+1, f;;18;;-5 CR;-3 CR;-3 CR;
-b+1, 4;;18,20;;-15;+9;+9;
-b+2;;14;16;-9;+2;KD;
-b+2, 2;;14,26;CR;-7;+5 CR;KD;
-b+3;;33;32 ~ 34;+3 ~ +5;+5 ~ +7 CR;KD;
-b+3, f;;33;32 ~ 34;+3 ~ +5;+5 ~ +7 CR;KD;
-b+4;;27;19;-6;KD;KD;
-b+1+2;;15;11;-12;-4;KD;
-b+1+2, f;;15;11;-12;-4;KD;
-uf+1;;28;35;+7;KD;KD;
-uf+1, f;;28;35;+7;KD;KD;
-ub+3;;15;19;-8;+5;+5;
-u+3;;18;19;-8;+5;+5;
-uf+3;;20;19;-8;+5;+5;
-ub+4;;13;15 ~ 16;-18 ~ -17;-7 ~ -6;KD;
-u+4;;18;15 ~ 16;-14 ~ -13;KD;KD;
-uf+4;;15;15 ~ 16;-14 ~ -13;KD;KD;
-ff+2;;18;20 ?;-13;+7;+7;
-ff+2, 1;;18,26;;-14;KD;KD;
-bf+1;;27;21;-8;KD;KD;
-fff+3 or WR 3;;36;26;+17 NG;KD;KD;
-WS 1;;14;11 ~ 12;-3 ~ -2;+8 ~ +9;+8 ~ +9;
-WS 1, f;;14;11 ~ 12;-3 ~ -2;+8 ~ +9;+8 ~ +9;
-WS 2;;14;15;-7;+4;+4;
-WS 2, 2;;14,14;;-11;+6 KD;+6 KD;
-WS 2, 2, 2;;14,14,25;;-6 CR;KD;KD;
-WS 3;;27;18;-8;KD;KD;
-WS 3, d;;27;18 CR;-8;KD;KD;
-WS 1+2;;18;14;0;+2;+2;
-FC df+2;;28;;-16;+;KD;
-FC df+4;;24;21;-16;KD;KD;
-d+3;;21;;-13;-2;-2;Hits grounded opponent
+f+3+4,f;!;189;;KND;KND;;
+df+1;m;14;i13;+0;+6;;
+df+1,f;m;14;i13;+0;+6;;Transition to SAV
+df+1,1;m, h;14, 15;;-3;+5;+8;
+df+1,1,f;m, h;14, 15;;-3;+5;+8;Transition to SAV
+df+1,1,2;m, h, m;14, 15, 21;;-10;+4;KND (+1);
+df+1,1,3;m, h, l;14, 15, 15;;-11;+0;;
+df+1,1,3,f;m, h, l;14, 15, 15;;-11;+0;;Transition to SAV
+df+1,2;m, m;14, 21;;-10;+3;;
+df+2;m;12;i16;-7;+6;;
+df+2,1;m, m;12, 12;;-15;JG;;
+df+2,2;m, m;12, 26;;-7c;+4;KND;Bound
+df+3;m;13;i16;-6;+5;;
+df+3,2;m, m;13, 16;;-6;+5 +23(SM);;
+df+4;m;15;i14;-7;+4;;
+df+4,1;m, h;15, 9;;-3;+5;;
+df+4,1,f;m, h;15, 9;;-3;+5;;Transition to SAV
+df+4,1,1;m, h, m;15, 9, 27;;-10;+7;KND;
+d+1;sm;6;i10;-5;+6;;"* High crush
+* Recovers crouching"
+d+2;m;28;i18~20;-7~-5c;+4~+6c;KND;Bound
+d+3;l;18;i21;-12;+1;;"* High crush
+* Recovers crouching"
+d+4;l;12;i16;-11;+0;;
+d+4,1+2;l, h;12, 20;;-8;+5;;
+d+4,1+2,f;l, h;12, 20;;-8;+5;;Transition to SAV
+d+1+2;m;36;i21;-12;KND;;High crush
+db+1;l;18;i24;-18;KND;;"* High crush
+* Recovers crouching"
+db+1*;l;18;;-18;KND;;"* High crush
+* Held"
+db+2;sm;9;i11;-4;+7;;"* High crush
+* Recovers crouching"
+db+3;l;14;i18;-13;+3;;
+db+3,f;l;14;;-13;+3;;Transition to SAV
+db+3,4;l, l;14, 15;;-19;-8;;
+db+4;l;21;i18;-18;+0c;KND;
+db+3+4;l;8;i12;-13;-2;;"* Alternate input: d+3+4
+* High crush
+* Recovers crouching"
+b+1;m;18;i21;-5c;-3c;;
+b+1,f;m;18;;-5c;+c;;Transition to SAV
+b+1,4;m, l;18, 20;;-15;+9;;
+b+2;h;14;i16;-9;+2;KND;
+b+2,2;h, m;14, 26;;-7;+5c;KND;"* Recovers crouching
+* Bound"
+b+3;m;33;i32~34;+3~+5;+5~+7c;KND;Low crush
+b+3,f;m;33;;+3;+6c;KND;"* Low crush
+* Transition to SAV"
+b+4;m;27;i19;-6;KND;;
+b+1+2;h;15;i11;-12;-4;KND;
+b+1+2,f;h;15;i11;-12;-4;KND;Transition to SAV
+uf+1;h;28;i24;+7;KND;;Low crush
+uf+1,f;h;28;i35;+7;KND;;"* Low crush
+* Bound
+* Transition to SAV"
+ub;h;20;i15;-12;+9;;Alternate input: u or uf+2
+ub+1;m;14;i18;-8;+3;;"* Alternate input: uf+1+2 or u+1 or uf+1+2
+* Low crush"
+ub+3;m;15;i19;-8;+5;;Low crush
+u+3;m;18;i19;-8;+5;;Low crush
+uf+3;m;20;i19;-8;+5;;Low crush
+ub+4;m;13;i15~16;-18~-17;-7~-6;KND;Low crush
+u+4;m;18;i15~16;-14~-13;KND;JG;Low crush
+uf+4;m;15;i15~16;-14~-13;JG;;Low crush
+f,F+1;h;8;i10;+1;+8;;
+f,F+2;m;18;i18~19;-13~-12;+7~+8;;
+f,F+2,1;m, h;18, 26;;-14;KND;;
+f,F+3;m;15;i20~22;-6~-4;+6~+8c;;
+f,F+4;m;18;i18;-7;+8;;
+b,f+1;h;27;i21;-8;KND;;
+f,f,F+3;m;36;i23;+17g;KND;;"* Alternate input: f,f,F+3
+* Low crush"
+ws1;m;14;i11~12;-3~-2;+8~+9;;
+ws1,f;m;14;i11;-3;+8;;Transition to SAV
+ws2;m;14;i15;-7;+4;;
+ws2,2;m, h;14, 14;;-11;+6 (JG);;
+ws2,2,2;m, h, m;14, 14, 25;;-6c;KND;;
+ws3;m;27;i18;-8;KND;;High crush
+ws3,d;m;27;i18;-8;KND;;"* High crush
+* Recovers crouching
+* Transition to FC"
+ws4;m;21;i11~12;-6~-5;+5~+6;;
+ws1+2;h;18;i14;+0;+2;+;
+FC.df+2;m;28;;-16;+5;KND;Recovers grounded
+FC.df+4;l;24;i21;-16;KND;;High crush
+OTG.d+3;L;21;;-13;-2;;
 1+4;;;;;;;
-3+4;;;;;;;
-SAV 1;;14;12;-2;+6;+6;
-SAV 1, f;;14;12;-2;+6;+6;
-SAV 1, 1;;14,20;;-5;+2;KD;
-SAV 1, 1, f;;14,20;;-5;+2;KD;
-SAV 1, 2;;14,9;;-10;+3;+3;
-SAV 1, 2, f;;14,9;;-10;+3;+3;
-SAV 1, 2, 1;;14,9,24;;-17;KD;KD;
-SAV 1, 4;;14,30;;-10;KD;KD;
-SAV 2;;32;18;-12;TKD;TKD;
-SAV 2h;;36;;-10;TKD;TKD;
-SAV 3;;14;15;-5;+1;+1;
-SAV 3, f;;14;15;-5;+1;+1;
-SAV 3, 3;;14,20;;-9;-2;KD;
-SAV 3, 3, f;;14,20;;-9;-2;KD;
-SAV 4;;21;15;0;KD;KD;
-SAV 1+2;;30,(5);;-18 ~ -17;KD;KD;
-SAV 1+2h;;36,(5);;+2;KD;KD;
-SAV f+1+2;;26;16;0 CR;+6 CR;+6 CR;
-SAV f+1+2, f;;26;16;0 CR;+6 CR;+6 CR;
-SAV df+1;;19;14;-3;+8;+8;
-SAV df+1, f;;19;14;-3;+8;+8;
-SAV Block | SS during df+2;;27;19;-17;KD;KD;
-SAV d+4;;9;15;-14;-3;-3;
-SAV d+4, f;;9;15;-14;-3;-3;
-SAV d+4, 3;;9,14;;-15;-2;-2;
-SAV d+4, 3, f;;9,14;;-15;-2;-2;
-SAV db+3;;19;19;-13;+5 CR;+5 CR;
-SAV db+3, f;;19;19;-13;+5 CR;+5 CR;
-SAV db+4;;24;25;-27;KD;KD;
-SAV b+1;;16;14;-5;+3;+3;
-SAV b+1, f;;16;;-5;+3;+3;
-SAV b+1, 2;;16,18;;-18;KD;KD;
-SAV b+1, 4;;16,19;;-10;+3;DOS +;
-SAV b+2;;24;23;-12;+1 KD;+1 KD;
-SAV b+3;;28;17;-4;KD;KD;
-SAV b+3, f;;28;17;-4;KD;KD;
-SAV uf+3;;24;15;-11;KD;KD;
+3+4;;;;;;;Alternate input: ,f
+FC.1;sm;6;i10;-5;+6;;"* High crush
+* Recovers crouching"
+FC.3;l;14;i16;-17;-3;;"* High crush
+* Recovers crouching"
+SS.1;h;8;i10;+1;+8;;
+SS.2;h;14;i11;-5;+6;;
+SS.3;h;20;i15;-7;+2;;
+SS.4;h;20;i12;-9;+2;JG;
+FC.db;sm;9;i11;-4;+7;;"* Alternate input: d+2
+* High crush
+* Recovers crouching"
+FC.db;l;12;i12;-15;-4;;"* Alternate input: d+4
+* High crush
+* Recovers crouching"
+SAV.1;h;14;i12;-2;+6;;
+SAV.1,f;h;14;i12;-2;+7;;Transition to SAV
+SAV.1,1;h, h;14, 20;;-5;+2;KND;
+SAV.1,1,f;h, h;14, 20;;-5;+2;KND;Transition to SAV
+SAV.1,2;h, m;14, 9;;-10;+3;;
+SAV.1,2,f;h, m;14, 9;;-10;+3;;Transition to SAV
+SAV.1,2,1;h, m, m;14, 9, 24;;-17;JG;;
+SAV.1,4;h, m;14, 30;;-10;KND;;
+SAV.2;m;32;i18;-12;KND;;Bound
+SAV.2h;m;36;;-10;KND;;"* Bound
+* Held"
+SAV.3;m;14;i15;-5;+3;;
+SAV.3,f;m;14;i15;-5;+3;;Transition to SAV
+SAV.3,3;m, h;14, 20;;-9;-2;KND;
+SAV.3,3,f;m, h;14, 20;;-9;-2;KND;Transition to SAV
+SAV.4;h;21;i15;+0;KND;;
+SAV.1+2;m;30 (5);;-17~-18;JG;;
+SAV.1+2h;m;36 (5);;+2;JG;;Fully charged
+SAV.f+1+2;h;26;i16;+0;+6;;
+SAV.f+1+2,f;h;26;i16;+0;+6;;Transition to SAV
+SAV.df+1;m;19;i14;-3;+8;;
+SAV.df+1,f;m;19;i14;-3;+8;;Transition to SAV
+SAV.df+2;m;27;i19;-17;JG;;
+SAV.d+4;l;9;i15;-14;-3;;
+SAV.d+4,f;l;9;i15;-14;-3;;Transition to SAV
+SAV.d+4,3;l, m;9, 14;;-15;-2;;
+SAV.d+4,3,f;l, m;9, 14;;-15;-2;;Transition to SAV
+SAV.db+3;l;19;i19;-13;+4c;;
+SAV.db+3,f;l;19;i19;-13;+4c;;Transition to SAV
+SAV.db+4;l;24;i25;-27;KND;;High crush
+SAV.b+1;m;16;i14;-5;+3;;
+SAV.b+1,f;m;16;;-5;+3;;Transition to SAV
+SAV.b+1,2;m, l;16, 18;;-18;KND;;High crush
+SAV.b+1,4;m, m;16, 19;;-10;+3;KND;
+SAV.b+2;m;24;i23;-12;+ (KND);;Parry
+SAV.b+3;h;28;i17;-4;KND;;
+SAV.b+3,f;h;28;i17;-4;KND;;Transition to SAV
+SAV.uf+3;m;24;i15;-11;KND;;
+1+3;t;35;;;;;Throw break 1
+2+4;t;35;;;;;Throw break 2
+Left throw;t;40;;;;;Throw break 1
+Right throw;t;40;;;;;Throw break 2
+Back throw;t;50;;;;;Unbreakable
+df+1+2;t;40;;;+1;;"* Throw break 1+2
+* Both recover standing"
 #stances
 Code;Stance
 SAV;Savage

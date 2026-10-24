@@ -354,15 +354,16 @@ export default function Credits() {
           title="Frame data source"
           icon={<TableIcon className="size-4" />}
         >
-          The frame data and character images are from the Tekken 6 frame data
-          archive at{' '}
-          <a
-            className={linkClass}
-            href="https://web.archive.org/web/2011/http://www.avoidingthepuddle.com/"
-          >
-            avoidingthepuddle.com
+          The main source is inatekken (wiki.livedoor.jp/inatekken, no longer
+          online). Secondary sources are the{' '}
+          <a className={linkClass} href="https://seesaawiki.jp/w/tekken_6_br/">
+            Tekken 6 BR wiki
           </a>
-          , which was a translation of a japanese wiki.
+          ,{' '}
+          <a className={linkClass} href="https://wavu.wiki">
+            wavu.wiki
+          </a>{' '}
+          and avoidingthepuddle.com (no longer online).
         </CreditCard>
       </div>
     </ContentContainer>

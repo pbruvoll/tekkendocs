@@ -12,6 +12,7 @@ import { ContentContainer } from '~/components/ContentContainer';
 import { FrameDataTable } from '~/components/FrameDataTable';
 import { Heading } from '~/components/ui/heading';
 import { Input } from '~/components/ui/input';
+import { NotationKey } from '~/features/t6/NotationKey';
 import { StanceKey } from '~/features/t6/StanceKey';
 import { getT6Character } from '~/features/t6/t6Characters';
 import { getT6FrameData } from '~/features/t6/t6FrameData.server';
@@ -73,11 +74,14 @@ export default function T6Character() {
           />
         </div>
       </ContentContainer>
-      <ContentContainer disableXPadding enableBottomPadding>
+      <ContentContainer disableXPadding>
         <FrameDataTable
           table={{ ...table, rows: filteredRows }}
           linkCommands={false}
         />
+      </ContentContainer>
+      <ContentContainer enableBottomPadding>
+        <NotationKey />
       </ContentContainer>
     </>
   );

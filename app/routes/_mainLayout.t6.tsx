@@ -37,8 +37,8 @@ export default function T6() {
         }))}
       />
       <p className="mt-6 text-sm text-muted-foreground">
-        Tekken 6 frame data from Avoiding the Puddle. The data was machine
-        translated from a japanese wiki, so some commands might be unclear.
+        Tekken 6 BR frame data, converted from the japanese frame data sites
+        inatekken and the Tekken 6 BR wiki.
       </p>
     </ContentContainer>
   );
