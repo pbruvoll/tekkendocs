@@ -4,80 +4,80 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 f+1;h;8 (9);i10;+1;+8;;
 1,1;h, h;8, 14;;-5;+4;;
 1,1,2;h, h, m;8, 14, 25;;-12;KND;;
-1,4;h, h;8, 16;;-6;+5;JG;
+1,4;h, h;8, 16;;-6;+5;KND;
 2;h;9;i10;-2;+6;;
-2,3;h, m;9, 19;;-10~-9;+1~+2;;
-2,b;h;9;i10;-2;+1d;;"* On hit
+2,3;h, m;9, 19;;-10;+1;;
+2,b;h;9;i10;-2;-1;;"* On hit
 * Hit throw"
 YSR.1+2;t;50;i8;;KND;;
 4;h;22;i11;-3;-3;JG;
 4,4;h, l;22, 14;;-8;+3;;"* High crush
 * Recovers crouching"
-4,4,1;h, l, m;22, 14, 25;;-14;JG;;High crush
+4,4,1;h, l, m;22, 14, 25;;-14;KND;;High crush
 4,4,4;h, l, h;22, 14, 27;;-6;KND;;High crush
 4,4,d+4;h, l, l;22, 14, 12;;-18;-7;;"* High crush
 * Recovers crouching"
-1+2;m;28;i18~19;-2~-1c;+6~+7c;KND;Bound
-f+2;h;12;i15~16;-10~-9;-4~-3;;
+1+2;m;28;i18;-2c;+6c;KND;Bound
+f+2;h;12;i15;-10;-4;;
 f+2,2;h, m;12, 24;;-11;KND;;
-f+3;m;24;i20~21;-9~-8;KND;;
-f+4;m;15;i17~18;-7~-6;+9~+10g;;
+f+3;m;24;i20;-8;KND;;
+f+4;m;15;i17;-7;+9;;
 f+4,1+2;m, m;15, 18;;-7;+5;;
 f+4,1+2,2;m, m, m;15, 18, 24;;-13;KND;;
 f+1+2;m;26;i19;-13;+5;KND;
-f+1+4;!;60;i59;JG;JG;;
-f+1+2+3;!;48;i66~67;JG;JG;;
+f+1+4;!;60;i60;KND;KND;;
+f+1+2+3;!;48;i66~67;KND;KND;;
 df+1;m;14;i16;-8;+3;;
-df+1,1;m, m;14, 24;;-11~-10;KND;;Bound
+df+1,1;m, m;14, 24;;-11;KND;;Bound
 df+2;m;9;i16;-6;+5;;
-df+2,1;m, m;9, 21;;-18~-17;JG;;
+df+2,1;m, m;9, 21;;-18~-17;KND;;
 df+3;l;21;i22;-12;+4;+25g;
 df+4;m;15;i12;-4;+7;;
 df+4,1;m, m;15, 18;;-9;+4;;
 df+1+2;m;31;i28;-17;KND;;High crush
-df+3+4;sm;4 (35);i26~29;-9~-6 (-14c);;;Hit throw
+df+3+4;sm;4 (35);i26;-9 (-14c);;;Hit throw
 d+2;m;21;i17;-7;+4c;;Recovers crouching
-d+2,1+2;m, m;21, 24;;-12~-11;+1~+2;KND;
+d+2,1+2;m, m;21, 24;;-12;+1;KND;
 d+3;l;14;i14;-12;-3;+1;"* High crush
 * Recovers crouching"
 d+3,4;l, h;14, 25;;+3;KND;;High crush
-d+4;l;12;i19;-13;-2;;"* High crush
+d+4;l;10;i19;-13;-2;;"* High crush
 * Recovers crouching"
-d+4,1;l, m;12, 25;;-14;JG;;High crush
+d+4,1;l, m;12, 25;;-14;KND;;High crush
 d+4,4;l, h;12, 27;;-6;KND;;High crush
 d+4,d+4;l, l;12, 12;;-18;-7;;"* High crush
 * Recovers crouching"
-d+1+2;m;26;i20~21;-14~-13;JG;;
+d+1+2;m;26;i20;-14;KND;;
 d+3+4;l;28;i22;-15;+11g;;
 db+1;m;33;i40;+7;KND (+15g);KND;
-db+2;m;14;i15~16;-9~-8;+2~+3;;
+db+2;m;14;i15;-9;+2;;
 db+2,4;m, m;14, 15;;-13;+0;;
 db+2,4,1;m, m, m;14, 15, 24;;-18;-5;KND;
 db+2,4,2;m, m, h;14, 15, 25;;-5;KND;;
 db+2,4,2h;m, m, h;14, 15, 42;;+21g;JG;;Fully charged
-db+3;l;13;i19~20;-12~-11;-1~+0;KND;High crush
+db+3;l;13;i18~19;-12~-11;-1~+0;KND;High crush
 db+4;l;12;i17;-9;-1;+2;
-db+4,2;l, m;12, 25;;-14~-13;JG;;
-db+1+2;m;30;i29~30;-12~-11;+6~+7;KND;
+db+4,2;l, m;12, 25;;-14;KND;;
+db+1+2;m;30;i29;-12;+6;KND;
 b+2;m;13;i14;-9;+7;;
 b+2,1;m, h;13, 8;;-3;+5;;
 b+2,1,1+2;m, h, m;13, 8, 27;;-13;+5;KND;
-b+4;m;24;i21~22;-7~-6;+2~+3;KND (-2~-1);
+b+4;m;24;i21;-7;+2;KND (-2~-1);
 b+1+2;m;30;i31;-10;KND;;Parry
-ub+3;m;13;i15;-19;-8;KND;Low crush
-u+3;m;18;i15;-12;KND;JG;Low crush
-uf+3;m;15;i15;-12;JG;;Low crush
+ub+3;m;13;i15;-18;-7;KND;Low crush
+u+3;m;18;i15;-12;KND;;Low crush
+uf+3;m;15;i15;-12;KND;;Low crush
 ub+4;m;21;i16;-20;-9;KND;Low crush
-u+4;m;22;i16;-12;KND;JG;Low crush
-uf+4;m;27;i16;-12;JG;;Low crush
+u+4;m;22;i16;-12;KND;;Low crush
+uf+4;m;27;i16;-12;KND;;Low crush
 uf+1+2;m;15 (25);i30;+7;KND;;Hit throw
 uf+1+2;m;15;i30;+7;+8c;;At long range
 uf+3+4;l;30;i37;-17;+9;;
-f,F+2;h;24;i14~17;-1~+2;+15~+18g (+s);;Low crush
-f,F+4;h;30;i19;+2;KND;;
-f,F+1+2;m;24;i15;-12;KND;;
-b,b+1+2;!;84;i73;KND;KND;;
-f,f,F+3;m;36;i22~23;+17~+18g;KND;;"* Alternate input: f,f,F+3
+f,F+2;h;24;i14;-1~+1;+15~+18g (+s);;Low crush
+f,F+4;h;30;i20;+2;KND;;
+f,F+1+2;m;24;i16;-12;KND;;
+b,b+1+2;!;84;i74;KND;KND;;
+f,f,F+3;m;36;i25;+17g;KND;;"* Alternate input: f,f,F+3
 * Low crush"
 ws1;m;12;i13;-10;+9;;
 ws1,1;m, m;12, 25;;-12;KND;;
@@ -91,12 +91,12 @@ ws1+2;m;28;i27~28;-10~-9;+29~+30g;;Parry
 wsf+2;m;24;i18;-8;KND;;Alternate input: FC.df+2
 FC.df+4;l;9;i16;-14~-13;-1~+0;;"* High crush
 * Recovers crouching"
-FC.df+4,3;l, m;9, 25;;-17~-14;KND;;"* High crush
+FC.df+4,3;l, m;9, 25;;-16~-14;KND;;"* High crush
 * Recovers crouching"
-SS.3;l;24;i24;-12;+4;;
-SS.4;l;19;i18;-13;-2;KND;"* High crush
+SS.3;l;24;i24;-11;+4;;
+SS.4;l;19;i27;-13;-2;KND;"* High crush
 * Recovers crouching"
-SS.1+2;m;26;i19~20;+12~+13g;+9~+10;KND (+5);"* Recovers crouching
+SS.1+2;m;26;i28;+12~+13g;+9~+10;KND (+5);"* Recovers crouching
 * Bound"
 b+1;;;i2~12;;;;"* Parry
 * Single hit"

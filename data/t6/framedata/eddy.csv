@@ -24,7 +24,7 @@ d,4~3;l;12;i16;-17;-3;;"* High crush
 * Transition to RLX"
 4~3,4;m, m, m;19 (24), 33;;-2;KND;;Low crush
 4;m;12;i12;-10;-1;;
-1+2;h, h;14, 18;i12;-1;+10;;
+1+2;h, h;14, 18;i12;-1;+6;;
 1+2~3;h, m;14, 20;;-23;JG;;
 1+2,n+3;h, h, m;14, 18, 15;;-8;+0;;
 1+2,n+3,d;h, h, m;14, 18, 15;;-11;-2;-1;
@@ -36,7 +36,7 @@ d,4~3;l;12;i16;-17;-3;;"* High crush
 f+1;h;7;i10;+0;+8;+9;
 f+2;h;12;i12;-10;+1;;
 f+2,1;h, h;12, 12;;-10;+1;;
-f+2,1,4;h, h, m;12, 12, 25;;-13~-15;KND;;
+f+2,1,4;h, h, m;12, 12, 25;;-14~-13;KND;;
 f+3;m;18;i18;-2;+8;;"* Bound
 * Transition to HSP"
 f+4;m;12;i23;-18;-7;;Bound
@@ -44,34 +44,34 @@ f+4,b;m;12;i23;+2;+14;;"* Bound
 * Transition to HSP"
 f+4,3+4;m, l, l;12, 12, 12;;-35;KND;;High crush
 f+4,3;m, m;12, 20;;-12;-1c;;
-f+4,3,3+4;m, m, m, m;12, 20, 8, 25;;-13;KND;;
+f+4,3,3+4;m, m, m, m;12, 20, 8, 25;;-14;KND;;
 f+3+4;m, m;16, 19;i17;-7;KND;;
 f+3+4;m;19;i17;-7;KND;;Hit 2 only
 df+1;m;12;i13;-2;+6;;
 df+1,f;m;12;i13;-10;-2;;Transition to HSP
 df+1,1;m, h;12, 9;;-4;+8;;
-df+2;m;16;i14~15;-10~-9;+s;JG;
+df+2;m;16;i14~15;-10~-9;KND;;
 df+3;m;18;i15;-10;+1c;;Transition to HSP
-df+3,d;m;18;i15;-11;-1c;;Transition to RLX
-df+4;l;16;i16;-12;+0;+8c;
-df+3+4;m;20;i16;-23;JG;;
+df+3,d;m;18;i15~17;-12~-10;-1c~+1c;;Transition to RLX
+df+4;l;16;i18;-11;+0;+8c;
+df+3+4;m;20;i16;-23;KND;;
 df+3+4,d;m;20;i15;-24;KND;;"* Recovers crouching
 * Transition to FC"
-d+2;m;18;;-9;+2;;
-d+2,3;m, m;18, 21;;-2;+9c;KND;Transition to RLX
+d+2;m;18;i17;-9;+2;;
+d+2,3;m, m;18, 21;;-5~-2;+14c~+17c;KND;Transition to RLX
 d,3~3;m;25;i20;-9;JG;;"* Alternate input: f,F,3~3
 * Transition to RLX"
 d,3~4;l;14;i20;-13;+6;;High crush
 d+3;l;12;i16;-17;-3;;"* High crush
 * Recovers crouching"
-d+4;l;12;i14;-14;-5;;High crush
-d+4,3;l, m;12, 28;;-14c;+c;;High crush
+d+4;l;12;i15;-14;-5;;High crush
+d+4,3;l, m;12, 28;;-14c;-9c;;High crush
 db+1;sm;5;i10;-5;+6;;"* Alternate input: d+1
 * High crush
 * Recovers crouching"
 db+2;l;15;i18;-18;-7;;"* High crush
 * Recovers crouching"
-db+2,3;l, m;15, 26;;-23;JG;;High crush
+db+2,3;l, m;15, 26;;-23;KND;;High crush
 db+3;l;12;i23;-23;-8;;"* High crush
 * Recovers crouching"
 db+3,b;l;12;i23;-16;-1;;"* High crush
@@ -90,11 +90,11 @@ db+3,db+4,4;l, l, l;12, 18, 18;;-14;+10;;High crush
 db+3,db+4,4,b;l, l, l;12, 18, 18;;-20;+4;;"* High crush
 * Transition to HSP"
 db+3,db+4,1+2;l, l, m;12, 18, 13;;-13;+2;+3;High crush
-db+4;m;21;i15;-12;KND;;High crush
+db+4;m;21;i18;-12;KND;;High crush
 db+4,4,,;m, m;21, 22, 22;;-12;KND;;High crush
 db+4*b,,;m;21, 22, 22, 24;;-12;KND;;High crush
 db+4,b+4;m, m;21, 25;;-9;+1;;High crush
-db+1+2;m;14;i28;-4;JG;;Bound
+db+1+2;m;14;i30~31;-7~-6;KND;;Bound
 db+3+4;m, m;14, 14;i30;-10;+11cg;KND;High crush
 db+3+4;m;14;i30;-10;+11cg;KND;"* High crush
 * Hit 2 only"
@@ -107,7 +107,7 @@ db+3+4,4,3;m, m, h, h;14, 14, 12, 30;;-7;KND;;
 b+1;h;7;i10;+0;+8;+9;
 b+2;m;28;i22;-6;KND;;
 b+3;m;12;i13;-8;+8;;
-b+3,3;m, m;12, 25;;-9;JG;;
+b+3,3;m, m;12, 25;;-14;KND;;
 b+3,f;m, m;12, 18;;-18;-7;;
 b+4;h;20;i20;-5;+6;KND;
 b+4,3;h, l;20, 14;;-28;-13;;High crush
@@ -115,7 +115,7 @@ b+4,4;h, m, m;20, 8, 20;;-9;KND;;
 b+4,4,d;h, m, m;15, 8, 21;;-16;KND;;
 b+4,4,3+4;h, m, m, m;20, 8, 20, 14;;-10;+1c;;Low crush
 b+1+2;h;7;i10;+1;+9;;
-b+3+4;m;36;i30;+4;+6;KND;
+b+3+4;m;36;i30~31;+3~+4c;+5~+6c;KND;
 u+3;m;42;i38;-24;KND;;Low crush
 ub;m;12;i18;-8;+3;;"* Alternate input: u or uf+1
 * Low crush"
@@ -123,7 +123,7 @@ ub;h;15;;-;+;;Alternate input: u or uf+2
 ub+3;m;25;i21;-17;KND;;Low crush
 ub+4;m;11;i15;-19;-8;KND;Low crush
 ub+3+4;m;15;i22;-9;+2;;Low crush
-u+3+4;m;15;i20;-6;KND;;Low crush
+u+3+4;m;15;i20;-7;KND;;Low crush
 ub+3+4,d;m;15;i20;-34;KND;;"* Alternate input: u+3+4,d
 * Low crush
 * Transition to RLX"
@@ -132,7 +132,7 @@ uf+3;m;30;i24;-13c;-11c;;"* Low crush
 uf+3,d;m;30;i24;-16c;-14c;;"* Low crush
 * Bound
 * Transition to RLX"
-uf+3,3;m, m;30, 20;;-23;JG;;Low crush
+uf+3,3;m, m;30, 20;;-23;KND;;Low crush
 uf+3,3+4;m, l;30, 18;;-14;KND;;"* Low crush
 * High crush"
 u+4;m;30;i22~23;-6~-5;KND;;"* Alternate input: uf+4
@@ -144,19 +144,19 @@ uf+1+2;h;24;i16~17;-3c;KND;;Low crush
 uf+3+4;m, m;22, 30;i17;-13;KND;;Low crush
 f,F+1;h;7;i10;+0;+8;+9;
 f,F+2;m;22;;-4;+7;+;
-f,F+2,3;m, l;22, 16;;-28~-21;KND;;
-f,F+3;m;32;i26;-14;KND;;
-f,F+3,b;m;32;i26;-32;KND;;Transition to HSP
-f,F+3,d;m;32;i26;-3;KND;;Transition to RLX
+f,F+2,3;m, l;22, 16;;-19;KND;;
+f,F+3;m;32;i27;-14;KND;;
+f,F+3,b;m;32;i27;-32;KND;;Transition to HSP
+f,F+3,d;m;32;i27;-3;KND;;Transition to RLX
 f,F+3,b~3+4;m, m;32, 30;;-13;JG;;
 f,F+4;;;;;;;Low crush
-f,F+4,3;l;24;i45;+4;KND;;"* Low crush
+f,F+4,3;l;24;i46;+4;KND;;"* Low crush
 * High crush"
-f,F+4,4;h;32;i30;-8;KND;;Low crush
-f,F+3+4;m;36;i34;-2;JG;;"* Low crush
+f,F+4,4;h;32;i31;-8;KND;;Low crush
+f,F+3+4;m;36;i35;-2;KND;;"* Low crush
 * Bound"
 b,b+3+4;!;48, 48;i76;KND;KND;;Low crush
-f,f,F+3;l;21;;-;+;KND;"* Alternate input: f,f,F+3
+f,f,F+3;l;21;;-22;+6;KND;"* Alternate input: f,f,F+3
 * Transition to RLX"
 ws1;h;12;i13;-6;+5;;
 ws1,3;h, m;12, 24;;-9;JG;;
@@ -165,7 +165,7 @@ ws3;m;18;i19;-12;JG;;Alternate input: d,f+3
 ws4;m;18;i11;-3;+8;;
 FC.df~4;l;20;i24;-30 (+16);+3;KND;"* High crush
 * Transition to RLX"
-FC.db~4;m;20;i18;-10;+1;KND;High crush
+FC.db~4;m;20;i19;-10;+1;KND;High crush
 FC.1;sm;5;i10;-5;+6;;"* High crush
 * Recovers crouching"
 FC.2;sm;8;i11;-4;+7;;"* High crush
@@ -183,7 +183,7 @@ ws3+4,b;m;21;i22;-21;-2c (+1);KND;"* Alternate input: FC.3+4,b
 * Transition to HSP"
 ws3+4,d;m;21;i22;-8;+11c (+14);KND;"* Alternate input: FC.3+4,d
 * Transition to RLX"
-BT.3+4;m;36;i47;+1;JG;;"* Low crush
+BT.3+4;m;36;i47;+1;KND;;"* Low crush
 * Bound"
 1+2+3+4;;;;;;;Low crush
 SS.1;h;7;i10;+0;+8;+9;
@@ -214,7 +214,7 @@ SS.3+4;h;7;;-17;-6;;Hit 2 only
 SS.3+4,d;h;7;;-14;-3;;"* Recovers crouching
 * Transition to FC
 * Hit 2 only"
-SS.3+4,3+4;h, m, m;7, 7, 30;;-34;JG;;Low crush
+SS.3+4,3+4;h, m, m;7, 7, 30;;-34;KND;;Low crush
 SS.3+4,3+4,3+4;h, m, m, m;7, 7, 30, 24;;-11;KND;;"* Low crush
 * Bound"
 SS.3+4,3+4,3+4,b;h, m, m;7, 7, 30;;-;KND;;"* Low crush
@@ -272,7 +272,7 @@ RLX.1,3;l, m;12, 18;;-11~-10;+0~+1c;;High crush
 RLX.1,3,d;l, m;12, 18;;-12~-11;-1~+0c;;High crush
 RLX.1,4;l, h;12, 18;;-9;+5;KND;High crush
 RLX.2;m;18;i20;-7;+4;;High crush
-RLX.2,3;m, m;18, 18;;-12;JG;;High crush
+RLX.2,3;m, m;18, 18;;-12;KND;;High crush
 RLX.2,f+3;m, m;18, 32;;-14;KND;;High crush
 RLX.2,4;m, m;18, 12;;+1;+12;;"* High crush
 * Bound"
@@ -284,9 +284,9 @@ RLX.3~4;m;24;i17;-23;JG;;High crush
 RLX.4~3;l, l;9, 9;i15;+1;KND;;"* High crush
 * Transition to HSP"
 RLX.4~3,3+4;l, l, l, l;9, 9, 12, 12;;-30;KND;;High crush
-RLX.4;m;20;i14;-13;+0~+1;KND;
+RLX.4;m;20;i14~15;-13~-12;+0~+1;KND;
 RLX.4,3+4;m, m;20, 24;;-11;KND;;Low crush
-RLX.1+2;m;13;i19;-13;+3;+5;High crush
+RLX.1+2;m;13;i18;-13;+3;+5;High crush
 RLX.3+4;m;24;i35;-11;KND;;Low crush
 RLX.3+4,b;;;;;;;Low crush
 RLX.3+4,3;m;18;i32;-1;+10;;Bound
