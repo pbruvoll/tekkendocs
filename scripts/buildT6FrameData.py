@@ -11,7 +11,7 @@ The japanese wikis are for the arcade version of Tekken 6 BR, and the frames of 
 played today, are often different. So the damage and frames are taken from the sources for the console version,
 in this order, for the moves they have:
 - wavu.wiki, which is tested in the game
-- the Avoiding the Puddle data in data/t6/atp (from scripts/convertT6FrameData.py). Its commands are machine
+- the Avoiding the Puddle data in data/t6/atp (from scripts/convertT6AvoidingThePuddle.py). Its commands are machine
   translated from a japanese wiki, but its frames are for the console version
 - the japanese wikis, for the moves the other sources do not have
 
@@ -21,7 +21,7 @@ Values which are wrong in the sources are fixed in manualFixes, so the script ca
 The csv files use the same notation as the T8 frame data, except for knockdowns and launches
 without frames, which are written as KND and JG as in the T7 frame data.
 
-Usage: python scripts/convertT6BrFrameData.py [cache folder for the downloaded pages]
+Usage: python scripts/buildT6FrameData.py [cache folder for the downloaded pages]
 Output: data/t6/framedata/<character-id>.csv
 """
 
@@ -58,7 +58,7 @@ USER_AGENT = "tekkendocs-frame-data/1.0 (https://tekkendocs.com)"
 
 repoRoot = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 outputRoot = os.path.join(repoRoot, "data", "t6", "framedata")
-# the data from Avoiding the Puddle, made by scripts/convertT6FrameData.py
+# the data from Avoiding the Puddle, made by scripts/convertT6AvoidingThePuddle.py
 avoidingThePuddleRoot = os.path.join(repoRoot, "data", "t6", "atp")
 
 # character id -> japanese page name on seesaawiki. Christie and Eddy share one page

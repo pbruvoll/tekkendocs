@@ -13,10 +13,10 @@ The character avatars are pictures on the first sheet, each placed right above t
 the character name.
 
 The workbook is the Tekken 6 BR data from Avoiding the Puddle, machine translated from a japanese wiki.
-The frame data on the site is made by scripts/convertT6BrFrameData.py from better sources, which uses
+The frame data on the site is made by scripts/buildT6FrameData.py from better sources, which uses
 these csv files to fill in frames missing from those sources.
 
-Usage: python scripts/convertT6FrameData.py <path to Tekken6FrameData.xlsm>
+Usage: python scripts/convertT6AvoidingThePuddle.py <path to Tekken6FrameData.xlsm>
 Output: data/t6/atp/<character-id>.csv and data/t6/avatars/<character-id>.webp
 """
 
@@ -484,7 +484,7 @@ def writeAvatars(workbookPath, characterSelectSheet):
 
 def main():
     if len(sys.argv) != 2:
-        fail("Usage: python scripts/convertT6FrameData.py <path to Tekken6FrameData.xlsm>")
+        fail("Usage: python scripts/convertT6AvoidingThePuddle.py <path to Tekken6FrameData.xlsm>")
     workbookPath = sys.argv[1]
     if not os.path.isfile(workbookPath):
         fail("Could not find " + workbookPath)
