@@ -244,3 +244,7 @@ Dew Glide (DEW), Feisty Rabbit and the named moves (Submissive Heel, Peacock Wal
 ## Jun
 
 Izumo (IZU), Genjitsu (GEN), Miare (MIA), Kazama Essence, Kazama-Power-Moves, Cancans, Demon Slayer, Divine Exile, Heron Dance, Grace stay English. A generic "Jun player" → "jemand mit Jun", not Spielerin/Spieler.
+
+## Feng
+
+Shifting Cloud (STC), Back Kenpo (KNP), Lingering Shadow / Snakedash (LS), Demon Paw, Backswing Blow, Spike-Ender, Power-Low, Option Select stay English. shoulder (B1+2 follow-up) → Schulterstoß; mental stack → mentaler Druck; "Jack of all trades, master of none" → „Hansdampf in allen Gassen, Meister in keiner“.

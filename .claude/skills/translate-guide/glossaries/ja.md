@@ -485,3 +485,17 @@ Sources: [鉄拳8 初心者向け攻略wiki — 飛鳥](https://seesaawiki.jp/te
 | Kazama Essence, Kazama power moves | keep English | no Japanese name found |
 
 Sources: [鉄拳8 初心者向け攻略wiki — スティーブ](https://seesaawiki.jp/tekken8kouryaku/d/%A5%B9%A5%C6%A5%A3%A1%BC%A5%D6), [同 — アンナ](https://seesaawiki.jp/tekken8kouryaku/d/%A5%A2%A5%F3%A5%CA), [同 — リリ](https://seesaawiki.jp/tekken8kouryaku/d/%A5%EA%A5%EA), [同 — 準](https://seesaawiki.jp/tekken8kouryaku/d/%BD%E0), [철권 교실 — 준](https://www.tekkenclass.com/characters/jun/move/)
+
+## Feng
+
+| English | Japanese | Note |
+| --- | --- | --- |
+| Feng Wei | フェン（・ウェイ） | 鉄拳8 初心者向け攻略wiki フェン |
+| shoulder (B1+2) | 嶽寸靠（ガクスン） | same wiki (通称ガクスン) |
+| Shifting Clouds (STC) | 雲手（STC） | kanji behind 철권 교실's 운수; no Japanese source found, unverified. The wiki just says 2種の構え |
+| Back Kenpo (KNP) | バック拳法 | as in the Steve section |
+| Lingering Shadow / Snakedash (LS) | リンガリングシャドウ（スネークダッシュ） | katakana, unverified |
+| Mishima hellsweep (Reina) | 奈落 | Mishima-only term, as for Kazuya |
+| round ender | ラウンド締めの技 | descriptive |
+
+Sources: [鉄拳8 初心者向け攻略wiki — フェン](https://seesaawiki.jp/tekken8kouryaku/d/%A5%D5%A5%A7%A5%F3)

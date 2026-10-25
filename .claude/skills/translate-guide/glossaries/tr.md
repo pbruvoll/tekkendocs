@@ -215,3 +215,7 @@ Dew Glide (DEW), Feisty Rabbit and the named moves stay English. backturn → s�
 ## Jun
 
 Izumo (IZU), Genjitsu (GEN), Miare (MIA), Kazama Essence, Kazama power hareketleri, Cancans, Demon slayer, Divine Exile, heron dance, Grace stay English. "EU" (the region) → Avrupa, not AB (the European Union).
+
+## Feng
+
+Shifting Cloud (STC), Back Kenpo (KNP), Lingering Shadow / Snakedash (LS), Demon Paw, backswing blow, spike ender, option select stay English. shoulder (B1+2 follow-up) → omuz vuruşu; mental stack → zihinsel baskı; "Jack of all trades, master of none" → ‘her işi yapan ama hiçbirinde usta olmayan’.

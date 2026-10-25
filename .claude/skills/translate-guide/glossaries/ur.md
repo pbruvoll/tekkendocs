@@ -431,3 +431,18 @@ SEAGERR's gender is not stated: "یہ گیم میری دنیا بن گئی", not
 | Cancans / Demon slayer / Divine Exile / heron dance / Grace | کین کینز / ڈیمن سلیئر / ڈیوائن ایگزائل / ہیرون ڈانس / گریس |
 
 Pagani's gender is not stated: "جن کی وضاحت یہ ہے", "میرا مشورہ ہے", never "میں سمجھاتا ہوں" / "دوں گا".
+
+## Feng
+
+| English | Urdu |
+| --- | --- |
+| Feng Wei | فینگ وے / فینگ (masculine verbs) |
+| Shifting Cloud (STC) | شفٹنگ کلاؤڈ (STC) |
+| Back Kenpo (KNP) | بیک کینپو |
+| Lingering Shadow / Snakedash | لنگرنگ شیڈو / اسنیک ڈیش |
+| Demon Paw / backswing blow | ڈیمن پا / بیک سوئنگ بلو |
+| shoulder (B1+2 follow-up) | کندھے کا وار |
+| Jack of all trades, master of none | ’ہر فن مولا، مگر کسی فن میں کامل نہیں‘ |
+| India / Asia 1 region | بھارت / ایشیا 1 ریجن |
+
+The Feng author (Weak Akuma) is described in third person with no stated gender: plural of respect (آتے ہیں).

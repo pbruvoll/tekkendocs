@@ -452,3 +452,17 @@ Sources: [철권 교실](https://www.tekkenclass.com/characters/asuka/move/), [�
 | Kazama Essence, Kazama power moves | keep English | no Korean name found |
 
 Sources: [철권 교실 — 스티브](https://www.tekkenclass.com/characters/steve/move/), [철권 교실 — 안나](https://www.tekkenclass.com/characters/anna/move/), [철권 교실 — 릴리](https://www.tekkenclass.com/characters/lili/move/), [철권 교실 — 준](https://www.tekkenclass.com/characters/jun/move/)
+
+## Feng
+
+| English | Korean | Note |
+| --- | --- | --- |
+| Feng Wei | 펭 (웨이) | |
+| Shifting Clouds (STC) | 운수(STC) | 철권 교실 펭 기술 목록 stance filter 운수 (雲手, "cloud hands"); the mapping to STC is inferred from the name, unverified |
+| Back Kenpo (KNP) | 백 켄포(KNP) | as in the Steve section; 철권 교실 shows only KNP |
+| Lingering Shadow / Snakedash (LS, CD, qcf) | 링거링 섀도(LS) / 스네이크 대시 | transliteration; 철권 교실 also has a 허보 stance whose mapping is unconfirmed, so it is not used |
+| shoulder (B1+2 follow-up) | 어깨 공격 | descriptive |
+| mental stack | 심리적 압박 | descriptive |
+| Mishima hellsweep (Reina) | 나락 | as for Kazuya |
+
+Sources: [철권 교실 — 펭](https://www.tekkenclass.com/characters/feng/move/)
