@@ -1,10 +1,7 @@
-import { AnimatePresence, motion } from 'motion/react';
 import { useState } from 'react';
 import { Commands } from '~/components/Commands';
-import { MoveVideo } from '~/components/MoveVideo';
 import { PlayTextAudioButton } from '~/components/PlayTextAudioButton';
 import { TextWithCommand } from '~/components/TextWithCommand';
-import { Button } from '~/components/ui/button';
 import { Heading } from '~/components/ui/heading';
 import { HeartButton } from '~/features/favorites/HeartButton';
 import { useAreFavorites } from '~/features/favorites/useFavorites';
@@ -12,9 +9,10 @@ import {
   type GuideSectionKey,
   getGuideSectionId,
 } from '~/features/guideLanguage/texts/guideTexts';
-import { cn } from '~/lib/utils';
+import { findGuideMoves } from '~/features/guideMoves/findGuideMoves';
+import { MoveVideoPanel } from '~/features/guideMoves/MoveVideoPanel';
+import { ToggleVideoButton } from '~/features/guideMoves/ToggleVideoButton';
 import { type Move } from '~/types/Move';
-import { compressCommand, getCommands } from '~/utils/commandUtils';
 import { useGuideContext } from './GuideContext';
 import { type KeyMove } from './GuideData';
 import { GuideSectionHeading } from './GuideSectionHeading';
@@ -68,21 +66,10 @@ const KeyMoveHeading = ({
   const [showVideo, setShowVideo] = useState(false);
   const { texts } = useGuideContext();
 
-  const splitCommand = getCommands(command, compressedCommandMap);
-
-  // backwards, for the last move with a video; the heart favorites every move
-  // in the heading, so collect them all
-  let moveWithVideo: Move | undefined;
-  const moves: Move[] = [];
-  for (let i = splitCommand.length - 1; i >= 0; i--) {
-    const move = compressedCommandMap[compressCommand(splitCommand[i])];
-    if (!move) continue;
-    if (!moveWithVideo && (move.ytVideo || move.video)) {
-      moveWithVideo = move;
-    }
-    moves.push(move);
-  }
-
+  const { moves, moveWithVideo } = findGuideMoves(
+    command,
+    compressedCommandMap,
+  );
   const { isFavorite, toggleFavorite } = useAreFavorites(moves);
 
   return (
@@ -96,7 +83,7 @@ const KeyMoveHeading = ({
           />
         </Heading>
         {moveWithVideo && (
-          <ToogleVideoButton
+          <ToggleVideoButton
             showVideo={showVideo}
             setShowVideo={setShowVideo}
           />
@@ -114,52 +101,11 @@ const KeyMoveHeading = ({
           )}
         </div>
       </div>
-      <AnimatePresence>
-        {showVideo && moveWithVideo && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: 'easeInOut' }}
-            style={{ overflow: 'hidden' }}
-          >
-            <MoveVideo className="max-w-96 my-2" move={moveWithVideo} />
-            <ToogleVideoButton
-              showVideo={showVideo}
-              className="mb-2"
-              setShowVideo={setShowVideo}
-            />
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <MoveVideoPanel
+        move={moveWithVideo}
+        showVideo={showVideo}
+        setShowVideo={setShowVideo}
+      />
     </div>
-  );
-};
-
-const ToogleVideoButton = ({
-  showVideo,
-  setShowVideo,
-  className,
-}: {
-  showVideo: boolean;
-  setShowVideo: (show: boolean) => void;
-  className?: string;
-}) => {
-  const { texts } = useGuideContext();
-  return (
-    <Button
-      type="button"
-      variant="outline"
-      className={cn(
-        'rounded-full h-6 px-3 border-2 border-border text-xs',
-        showVideo
-          ? 'bg-accent text-accent-foreground hover:bg-accent'
-          : 'text-muted-foreground',
-        className,
-      )}
-      onClick={() => setShowVideo(!showVideo)}
-    >
-      {showVideo ? texts.hideVideo : texts.showVideo}
-    </Button>
   );
 };
