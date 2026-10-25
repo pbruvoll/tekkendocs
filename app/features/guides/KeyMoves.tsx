@@ -14,7 +14,7 @@ import {
 } from '~/features/guideLanguage/texts/guideTexts';
 import { cn } from '~/lib/utils';
 import { type Move } from '~/types/Move';
-import { compressCommand } from '~/utils/commandUtils';
+import { compressCommand, getCommands } from '~/utils/commandUtils';
 import { useGuideContext } from './GuideContext';
 import { type KeyMove } from './GuideData';
 import { GuideSectionHeading } from './GuideSectionHeading';
@@ -68,7 +68,7 @@ const KeyMoveHeading = ({
   const [showVideo, setShowVideo] = useState(false);
   const { texts } = useGuideContext();
 
-  const splitCommand = command.split(' | ');
+  const splitCommand = getCommands(command, compressedCommandMap);
 
   // backwards, for the last move with a video; the heart favorites every move
   // in the heading, so collect them all

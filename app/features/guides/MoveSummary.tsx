@@ -1,5 +1,5 @@
 import { type Move } from '~/types/Move';
-import { compressCommand } from '~/utils/commandUtils';
+import { compressCommand, getCommands } from '~/utils/commandUtils';
 
 export const MoveSummary = ({
   command,
@@ -8,7 +8,10 @@ export const MoveSummary = ({
   command: string;
   compressedCommandMap: Record<string, Move>;
 }) => {
-  const move = compressedCommandMap[compressCommand(command.split(' | ')[0])];
+  const move =
+    compressedCommandMap[
+      compressCommand(getCommands(command, compressedCommandMap)[0])
+    ];
   if (!move) return null;
   const items = [
     move.hitLevel && move.hitLevel,
