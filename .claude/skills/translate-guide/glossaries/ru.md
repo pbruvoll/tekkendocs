@@ -414,3 +414,13 @@ SEAGERR's gender is not stated: "у меня ушло", "удалось войт
 | Izumo, Genjitsu, Miare, Kazama Essence, Kazama power, Cancans, Demon slayer, Divine Exile, heron dance | in Latin | |
 
 Pagani's gender is not stated: "кто знает", "этот удар уже упоминался", never "сама не знаю" / "я упоминал".
+
+## Feng
+
+| English | Russian | Note |
+| --- | --- | --- |
+| Feng Wei | Фэн Вэй (gen. Фэна) | Palladius, as in the Leo section |
+| Shifting Cloud (STC), Back Kenpo (KNP), Lingering Shadow / Snakedash (LS), Demon Paw | in Latin | stance and move names in Latin |
+| shoulder (B1+2 follow-up) | удар плечом | |
+| Devil Jin | Девил Дзин | Дзин as in the Jin section |
+| make-or-break | «пан или пропал» | |

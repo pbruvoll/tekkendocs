@@ -208,3 +208,7 @@ Dew Glide (DEW), Feisty Rabbit and the named moves (Submissive Heel, Peacock Wal
 ## Jun
 
 Izumo (IZU), Genjitsu (GEN), Miare (MIA), Kazama Essence, Kazama power moves, Cancans, Demon Slayer, Divine Exile, heron dance, Grace stay English. Pagani's and Kirakira's genders are not stated ("Kira es lo mejor de Europa con Jun").
+
+## Feng
+
+Shifting Cloud (STC), Back Kenpo (KNP), Lingering Shadow / Snakedash (LS), Demon Paw, backswing blow, spike ender, power low, option select stay English. shoulder (the B1+2 follow-up) → hombrazo; mental stack → carga mental; "Jack of all trades, master of none" → «aprendiz de todo, maestro de nada» (guillemets: ASCII quotes become command links).
