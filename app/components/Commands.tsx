@@ -1,5 +1,5 @@
-import { Fragment } from 'react';
 import { type Move } from '~/types/Move';
+import { splitCommands } from '~/utils/commandUtils';
 import { Command } from './Command';
 
 export type CommandsProps = {
@@ -9,32 +9,23 @@ export type CommandsProps = {
 };
 
 /* Shows a command as a link. This component is similary to Command, but is supports multiple commands with the synttax
-command1 | command2 */
+command1 | command2, or joined with words like "command1 into command2" */
 export const Commands = ({
   command,
   charUrl,
   compressedCommandMap,
 }: CommandsProps) => {
-  const splitted = command.split(' | ');
-  if (!splitted.length) {
+  return splitCommands(command, compressedCommandMap).map((part, index) => {
+    if (part.type === 'separator') {
+      return <span key={index}>{part.text}</span>;
+    }
     return (
       <Command
-        command={command}
+        key={index}
+        command={part.text}
         charUrl={charUrl}
         compressedCommandMap={compressedCommandMap}
       />
-    );
-  }
-  return splitted.map((singleCommand, index) => {
-    return (
-      <Fragment key={index}>
-        {index > 0 && <span> | </span>}
-        <Command
-          command={singleCommand}
-          charUrl={charUrl}
-          compressedCommandMap={compressedCommandMap}
-        />
-      </Fragment>
     );
   });
 };
