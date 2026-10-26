@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!-- Promo compositor engine. Everything video-specific lives in timeline.js (window.VIDEO).
+     render.mjs injects window.SHOTS and calls window.renderAt(t) once per frame. -->
+<style>
+  @font-face { font-family: 'Barlow Condensed'; font-weight: 900; font-style: italic; src: url(fonts/barlow-condensed-latin-900-italic.woff2); }
+  @font-face { font-family: 'Barlow Condensed'; font-weight: 800; font-style: italic; src: url(fonts/barlow-condensed-latin-800-italic.woff2); }
+  @font-face { font-family: 'Inter'; font-weight: 100 900; src: url(fonts/inter-latin-wght-normal.woff2); }
+  :root { --y: oklch(0.84 0.165 80); --y-deep: oklch(0.67 0.16 58); --red: #ef4444; --green: #22c55e; --u: 1px; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { overflow: hidden; background: #000; }
+  #stage { position: absolute; inset: 0; overflow: hidden; background: #0a0a0b; font-family: 'Barlow Condensed', sans-serif; }
+  .layer { position: absolute; inset: 0; }
+  #bg { background:
+      radial-gradient(calc(900 * var(--u)) calc(700 * var(--u)) at 50% 0%, oklch(0.84 0.165 80 / 0.22), transparent 70%),
+      radial-gradient(calc(700 * var(--u)) calc(600 * var(--u)) at 50% 100%, oklch(0.67 0.16 58 / 0.18), transparent 70%), #0a0a0b; }
+  #stripes { background: repeating-linear-gradient(115deg, transparent 0 60px, rgba(255,255,255,0.025) 60px 64px); inset: -50%; }
+  #imgBg { background-size: cover; background-position: center 20%; }
+  #imgBg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,10,11,.55), rgba(10,10,11,.25) 40%, rgba(10,10,11,.85)); }
+
+  #clipBlur { width: 100%; height: 100%; object-fit: cover; filter: blur(28px) brightness(.45) saturate(1.3); transform: scale(1.2); }
+  #clipWin { position: absolute; overflow: hidden; border-top: calc(6 * var(--u)) solid var(--y); border-bottom: calc(6 * var(--u)) solid var(--y);
+    box-shadow: 0 0 80px oklch(0.84 0.165 80 / .35); }
+  #clipImg { width: 100%; height: 100%; object-fit: cover; }
+  #clipTag { position: absolute; font: 800 italic calc(44 * var(--u)) 'Barlow Condensed', sans-serif; color: #000; background: var(--y); padding: 2px 18px; transform: skewX(-8deg); }
+
+  #card { position: absolute; overflow: hidden; background: #111;
+    box-shadow: 0 0 0 calc(5 * var(--u)) oklch(0.84 0.165 80 / .9), 0 0 90px oklch(0.84 0.165 80 / .35), 0 40px 80px rgba(0,0,0,.7); }
+  #inner { position: absolute; left: 0; top: 0; transform-origin: 0 0; }
+  #ui { position: absolute; left: 0; top: 0; }
+  .tap { position: absolute; border-radius: 50%; }
+  .box { position: absolute; border: 9px solid var(--y); border-radius: 18px; box-shadow: 0 0 40px oklch(0.84 0.165 80 / .8), inset 0 0 30px oklch(0.84 0.165 80 / .35); }
+
+  #cap { position: absolute; display: flex; flex-direction: column; justify-content: center; }
+  .line { font-weight: 900; font-style: italic; text-transform: uppercase; line-height: .92; white-space: nowrap; color: #fff;
+    text-shadow: 0 7px 0 rgba(0,0,0,.55), 0 0 40px rgba(0,0,0,.6); }
+  .line.y { color: var(--y); text-shadow: 0 7px 0 rgba(0,0,0,.55), 0 0 50px oklch(0.84 0.165 80 / .45); }
+  .r { color: var(--red); } .g { color: var(--green); }
+
+  .badge { position: absolute; font: 900 italic calc(96 * var(--u)) 'Barlow Condensed', 'Yu Gothic UI', 'Malgun Gothic', 'Segoe UI', sans-serif;
+    color: #111; background: var(--y); padding: calc(4 * var(--u)) calc(36 * var(--u)) calc(8 * var(--u)); border-radius: calc(20 * var(--u)); white-space: nowrap;
+    box-shadow: 0 calc(12 * var(--u)) 0 var(--y-deep), 0 30px 60px rgba(0,0,0,.6); }
+
+  #wall { position: absolute; display: grid; }
+  #wall img { display: block; width: 100%; aspect-ratio: 1; }
+  #wallShade { background: radial-gradient(70% 60% at 50% 45%, rgba(10,10,11,.62), rgba(10,10,11,.8) 80%); }
+  #endStack { position: absolute; left: 0; right: 0; display: flex; flex-direction: column; align-items: center; }
+  #endStack > * { white-space: nowrap; text-align: center; }
+  .e-logo { display: block; }
+  .e-big { font-weight: 900; font-style: italic; text-transform: uppercase; line-height: .95; color: #fff; text-shadow: 0 7px 0 rgba(0,0,0,.55); }
+  .e-big.y { color: var(--y); }
+  .e-sub { font: 800 italic calc(64 * var(--u)) 'Barlow Condensed', sans-serif; color: #fff; letter-spacing: 2px; }
+  .e-sub b { color: var(--y); }
+  .e-url span { display: inline-block; font: 900 italic calc(104 * var(--u)) 'Barlow Condensed', sans-serif; color: #111; background: var(--y); padding: 2px calc(48 * var(--u)) calc(8 * var(--u));
+    border-radius: calc(24 * var(--u)); box-shadow: 0 calc(14 * var(--u)) 0 var(--y-deep), 0 0 80px oklch(0.84 0.165 80 / .5); }
+  .e-small { font: 600 calc(46 * var(--u)) 'Inter', sans-serif; color: #d4d4d4; letter-spacing: 1px; }
+
+  #flash { background: #fff; }
+  #vig { background: radial-gradient(farthest-corner at 50% 50%, transparent 60%, rgba(0,0,0,.55)); }
+</style>
+</head>
+<body>
+<div id="stage">
+  <div id="world" class="layer">
+    <div id="bg" class="layer"></div>
+    <div id="stripes" class="layer"></div>
+    <div id="imgBg" class="layer"></div>
+    <div id="clip" class="layer"><img id="clipBlur" class="layer" alt=""><div id="clipWin"><img id="clipImg" alt=""></div><div id="clipTag"></div></div>
+    <div id="cardWrap" class="layer"><div id="card"><div id="inner"><img id="ui" alt=""><div id="boxes"></div><div id="taps"></div></div></div></div>
+    <div id="end" class="layer"><div id="wall"></div><div id="wallShade" class="layer"></div><div id="endStack"></div></div>
+    <div id="badges" class="layer"></div>
+    <div id="cap"></div>
+  </div>
+  <div id="vig" class="layer"></div>
+  <div id="flash" class="layer"></div>
+</div>
+<script src="timeline.js"></script>
+<script>
+{ // block scope: timeline.js may declare its own helpers
+const $ = (id) => document.getElementById(id);
+const clamp = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
+const lerp = (a, b, k) => a + (b - a) * k;
+const easeOut = (k) => 1 - (1 - k) ** 3;
+const easeInOut = (k) => (k < 0.5 ? 4 * k ** 3 : 1 - (-2 * k + 2) ** 3 / 2);
+/** Slam-in: scale from `from` to 1 and fade in, starting at `at`. */
+const slam = (t, at, from = 2.3, dur = 0.17) => { const k = clamp((t - at) / dur); return { on: t >= at, op: clamp(k * 2.5), s: lerp(from, 1, easeOut(k)) }; };
+
+const V = window.VIDEO;
+const W = V.width, H = V.height, U = Math.min(W, H) / 1080; // U: unit scale, 1 at 1080 px short side
+const UIW = V.ui?.width ?? 1080, UIH = V.ui?.height ?? 1920;
+document.documentElement.style.setProperty('--u', `${U}px`);
+for (const el of [document.documentElement, document.body]) Object.assign(el.style, { width: `${W}px`, height: `${H}px` });
+
+// ── layout, derived from the video and recorded-UI aspect ratios ─────────
+// 'side': captions left, card right (landscape video of a portrait UI). 'stack': captions on top, card below.
+const LAYOUT = V.layout ?? (W > H && UIH > UIW ? 'side' : 'stack');
+const fit = (rw, rh) => { const s = Math.min(rw / UIW, rh / UIH); return { w: UIW * s, h: UIH * s }; };
+const L = (() => {
+  const m = 40 * U;
+  if (LAYOUT === 'side') {
+    const card = fit(W * 0.48, H - 2 * m);
+    return { cap: { x: m * 2, y: 0, w: W * 0.46, h: H, align: 'flex-start', size: 150 * U },
+      card: { x: W * 0.52 + (W * 0.48 - m - card.w) / 2, y: (H - card.h) / 2, ...card },
+      clip: { x: W * 0.52, y: (H - W * 0.44 * 9 / 16) / 2, w: W * 0.44, h: W * 0.44 * 9 / 16 },
+      clipCap: { x: m * 2, y: 0, w: W * 0.46, h: H, align: 'flex-start', size: 160 * U } };
+  }
+  const capTop = (W < H ? 118 : 40) * U, capH = (W < H ? 270 : 230) * U;
+  const top = capTop + capH + 13 * U;
+  const card = fit(W - 2 * m, H - top - 21 * U);
+  const clipW = Math.min(W, H * 0.9), clipH = clipW * 9 / 16;
+  return { cap: { x: 0, y: capTop, w: W, h: capH, align: 'center', size: (W < H ? 132 : 110) * U },
+    card: { x: (W - card.w) / 2, y: top, ...card },
+    clip: { x: (W - clipW) / 2, y: H * (W < H ? 0.555 : 0.6) - clipH / 2, w: clipW, h: clipH },
+    clipCap: { x: 0, y: (W < H ? 300 : 30) * U, w: W, h: (W < H ? 420 : 300) * U, align: 'center', size: (W < H ? 190 : 150) * U } };
+})();
+const px = (el, r) => Object.assign(el.style, { left: `${r.x}px`, top: `${r.y}px`, width: `${r.w}px`, height: `${r.h}px` });
+px($('card'), L.card); $('card').style.borderRadius = `${46 * U}px`;
+px($('clipWin'), L.clip); Object.assign($('clipTag').style, { left: `${L.clip.x + 36 * U}px`, top: `${L.clip.y + 24 * U}px` });
+for (const id of ['inner', 'ui']) Object.assign($(id).style, { width: `${UIW}px`, height: `${UIH}px` });
+const CS = L.card.w / UIW; // UI → card scale at zoom 1
+
+// ── timeline helpers ──────────────────────────────────────────────────
+const SEG = V.segments;
+const segAt = (t) => SEG.find((s) => t >= s.a && t < s.b) ?? SEG.at(-1);
+const shotTime = (s, t) => s.s0 + (t - s.a) * (s.rate ?? 1);
+const outTime = (s, st) => s.a + (st - s.s0) / (s.rate ?? 1);
+const frameAt = (shot, st) => {
+  const fs = SHOTS[shot].frames; let lo = 0, hi = fs.length - 1;
+  while (lo < hi) { const m = (lo + hi + 1) >> 1; if (fs[m].t <= st) lo = m; else hi = m - 1; }
+  return `shots/${shot}/${fs[lo].file}`;
+};
+const stillIndex = (s, t) => Math.min(s.stills.length - 1, Math.floor((t - s.a) / (s.each ?? (s.b - s.a) / s.stills.length)));
+const stillStart = (s, i) => s.a + i * (s.each ?? (s.b - s.a) / s.stills.length);
+const camAt = (seg, t) => {
+  const ks = seg.cam ?? [[seg.a, 1, UIW / 2, UIH / 2]];
+  let i = 0; while (i < ks.length - 1 && t >= ks[i + 1][0]) i++;
+  const A = ks[i], B = ks[Math.min(i + 1, ks.length - 1)];
+  const k = B === A ? 0 : easeInOut(clamp((t - A[0]) / (B[0] - A[0])));
+  return [1, 2, 3].map((j) => lerp(A[j], B[j], k));
+};
+const CUTS = SEG.slice(1).filter((s) => !s.noCut).map((s) => s.a);
+const shotEvents = (seg, type) => !seg.shot ? [] : SHOTS[seg.shot].events.filter((e) => e.type === type)
+  .map((e) => ({ ...e, ot: outTime(seg, e.t) })).filter((e) => e.ot >= seg.a - 0.1 && e.ot < seg.b);
+
+const loadImg = (img, src) => new Promise((res) => {
+  if (!src) { img.removeAttribute('src'); return res(); }
+  const full = new URL(src, location.href).href;
+  if (img.src === full && img.complete) return res();
+  img.onload = () => img.decode().then(res, res);
+  img.onerror = () => { console.error('missing', src); res(); };
+  img.src = full;
+});
+
+const renderCaption = (lines, t, box) => {
+  const el = $('cap');
+  Object.assign(el.style, { left: `${box.x}px`, top: `${box.y}px`, width: `${box.w}px`, height: `${box.h}px`, alignItems: box.align });
+  el.innerHTML = lines.map((l) => `<div class="line${l.y ? ' y' : ''}" style="font-size:${(l.size ?? 1) * box.size}px;transform-origin:${box.align === 'center' ? 'center' : 'left center'}"></div>`).join('');
+  [...el.children].forEach((d, i) => {
+    const l = lines[i];
+    d.innerHTML = typeof l.t === 'function' ? l.t(t) : l.t;
+    const sl = slam(t, l.at);
+    d.style.opacity = sl.on ? sl.op : 0;
+    d.style.transform = `scale(${sl.s}) skewX(-4deg)`;
+  });
+};
+
+// end card: built once
+const END = SEG.find((s) => s.type === 'end');
+if (END) {
+  if (END.wall !== false) {
+    const cols = Math.ceil(W / (180 * U)) + 1, size = W / (cols - 1);
+    Object.assign($('wall').style, { left: `${-size / 2}px`, top: 0, width: `${cols * size}px`, gridTemplateColumns: `repeat(${cols}, ${size}px)` });
+    const rows = Math.ceil(H / size) + 3, av = window.AVATARS ?? [];
+    for (let i = 0; i < cols * rows && av.length; i++) { const img = document.createElement('img'); img.src = `media/avatars/${av[(i * 5) % av.length]}`; $('wall').appendChild(img); }
+  }
+  $('endStack').innerHTML = END.items.map((it) => {
+    const st = `style="font-size:${(it.size ?? 1) * 150 * U}px;margin-top:${(it.gap ?? 20) * U}px"`;
+    if (it.kind === 'logo') return `<img class="e-logo" src="${it.src ?? 'media/logo.svg'}" style="width:${(it.width ?? 900) * U}px;margin-bottom:${30 * U}px">`;
+    if (it.kind === 'big') return `<div class="e-big${it.y ? ' y' : ''}" ${st}>${it.text}</div>`;
+    return `<div class="e-${it.kind}" style="margin-top:${(it.gap ?? 30) * U}px">${it.kind === 'url' ? `<span>${it.text}</span>` : it.text}</div>`;
+  }).join('');
+}
+
+window.renderAt = async (t) => {
+  const seg = segAt(t);
+  $('stripes').style.transform = `translateY(${-(t * 60) % 64}px)`;
+
+  // per-still background image (e.g. character art behind a character blitz)
+  const bgs = seg.type === 'stills' && seg.backgrounds;
+  $('imgBg').style.display = bgs ? 'block' : 'none';
+  if (bgs) $('imgBg').style.backgroundImage = `url(${bgs[stillIndex(seg, t)]})`;
+
+  // clip: a game video shown big, e.g. the hook
+  $('clip').style.display = seg.type === 'clip' ? 'block' : 'none';
+  if (seg.type === 'clip') {
+    const n = Math.min(seg.count - 1, Math.floor((t - seg.a) * seg.fps) + (seg.from ?? 0));
+    const src = seg.frames.replace('%03d', String(n + 1).padStart(3, '0'));
+    await Promise.all([loadImg($('clipImg'), src), loadImg($('clipBlur'), src)]);
+    const hit = seg.impact ?? Infinity;
+    $('clipImg').style.transform = `scale(${1 + 0.06 * (t - seg.a) + (t > hit ? 0.12 * (1 - easeOut(clamp((t - hit) / 0.4))) : 0)})`;
+    $('clipTag').textContent = seg.tag ?? '';
+    $('clipTag').style.display = seg.tag ? 'block' : 'none';
+  }
+
+  // card: the recorded site UI
+  const isCard = seg.type === 'ui' || seg.type === 'stills';
+  $('cardWrap').style.display = isCard ? 'block' : 'none';
+  if (isCard) {
+    await loadImg($('ui'), seg.type === 'ui' ? frameAt(seg.shot, shotTime(seg, t)) : seg.stills[stillIndex(seg, t)]);
+    const [z, fx, fy] = camAt(seg, t), S = CS * z;
+    $('inner').style.transform = `translate(${L.card.w / 2 - fx * S}px, ${L.card.h / 2 - fy * S}px) scale(${S})`;
+    const c = [...CUTS].reverse().find((x) => t >= x);
+    $('card').style.transform = `scale(${c === undefined ? 1 : 1 + 0.07 * (1 - easeOut(clamp((t - c) / 0.25)))})`;
+    $('taps').innerHTML = shotEvents(seg, 'tap').filter((e) => t >= e.ot - 0.06 && t < e.ot + 0.55).map((e) => {
+      const k = clamp((t - e.ot) / 0.5), r = lerp(40, 120, easeOut(k));
+      const dot = t < e.ot + 0.18 ? `<div class="tap" style="left:${e.x - 42}px;top:${e.y - 42}px;width:84px;height:84px;background:rgba(255,255,255,.55)"></div>` : '';
+      return `${dot}<div class="tap" style="left:${e.x - r}px;top:${e.y - r}px;width:${2 * r}px;height:${2 * r}px;border:8px solid oklch(0.84 0.165 80 / ${1 - k})"></div>`;
+    }).join('');
+  }
+
+  // overlays: 'box' (inside the card, UI pixels) and 'badge' (on screen, 0–1 coordinates)
+  const boxes = [], badges = [];
+  for (const o of V.overlays ?? []) {
+    if (t < o.a || t >= o.b) continue;
+    if (o.type === 'box' && isCard) {
+      const ev = o.event && SHOTS[o.shot ?? seg.shot].events.find((e) => e.type === o.event);
+      const b = o.box ?? ev, p = o.pad ?? 16;
+      const k = easeOut(clamp((t - o.a) / 0.22)), pulse = 1 + 0.03 * Math.sin((t - o.a) * 12);
+      boxes.push(`<div class="box" style="left:${b.x - p}px;top:${b.y - p * 0.4}px;width:${b.w + 2 * p}px;height:${b.h + p * 0.8}px;opacity:${k};transform:scale(${lerp(1.25, 1, k) * pulse})"></div>`);
+    }
+    if (o.type === 'badge') {
+      const sl = slam(t, o.a, 2, 0.16);
+      badges.push(`<div class="badge" style="left:${o.x * W}px;top:${o.y * H}px;opacity:${sl.op};transform:translate(-50%,-50%) rotate(${o.rot ?? -5}deg) scale(${sl.s})">${o.text}</div>`);
+    }
+  }
+  if (seg.type === 'stills' && seg.labels) {
+    const i = stillIndex(seg, t), sl = slam(t, stillStart(seg, i), 1.6, 0.12);
+    badges.push(`<div class="badge" style="left:${L.card.x + L.card.w / 2}px;top:${L.card.y + L.card.h * 0.36}px;font-size:${104 * U}px;opacity:${sl.op};transform:translate(-50%,-50%) rotate(-4deg) scale(${sl.s})">${seg.labels[i]}</div>`);
+  }
+  $('boxes').innerHTML = boxes.join('');
+  $('badges').innerHTML = badges.join('');
+
+  // captions
+  const cap = (V.captions ?? []).find((c) => t >= c.a && t < c.b);
+  if (cap) renderCaption(cap.lines.map((l, i) => ({ ...l, at: l.at === 'held' ? -99 : l.at ?? cap.a + i * 0.12 })), t, seg.type === 'clip' ? L.clipCap : L.cap);
+  else $('cap').innerHTML = '';
+
+  // end card
+  $('end').style.display = seg.type === 'end' ? 'block' : 'none';
+  if (seg.type === 'end') {
+    const lt = t - seg.a;
+    $('wall').style.transform = `translateY(${-60 * U - lt * 38 * U}px) scale(${1.15 - 0.02 * lt})`;
+    $('wall').style.opacity = clamp(lt / 0.4) * 0.9;
+    const stack = $('endStack');
+    stack.style.top = `${(H - stack.offsetHeight) / 2 - 40 * U}px`;
+    [...stack.children].forEach((el, i) => {
+      const it = END.items[i], at = seg.a + (it.at ?? 0.17 + i * 0.4);
+      const sl = slam(t, at, it.kind === 'logo' ? 2.6 : 1.7, it.kind === 'logo' ? 0.2 : 0.16);
+      const pulse = it.kind === 'url' && t > at + 0.4 ? 1 + 0.025 * Math.sin((t - at) * 5) : 1;
+      el.style.opacity = sl.on ? sl.op : 0;
+      el.style.transform = `scale(${sl.s * pulse})`;
+    });
+  }
+
+  // shake + flashes
+  let sx = 0, sy = 0;
+  for (const [ti, a] of V.shakes ?? []) if (t >= ti && t < ti + 0.45) {
+    const d = t - ti, e = a * U * Math.exp(-d * 9);
+    sx += e * Math.sin(d * 75); sy += e * Math.cos(d * 61);
+  }
+  $('world').style.transform = `translate(${sx}px, ${sy}px)`;
+  let f = 0;
+  for (const [ti, a] of [...CUTS.map((c) => [c, 0.55]), ...(V.flashes ?? [])]) if (t >= ti) f = Math.max(f, a * (1 - clamp((t - ti) / 0.16)));
+  $('flash').style.opacity = f;
+};
+
+// sound cues in output time, for sfx.mjs: [name, time, gain]
+window.cues = () => {
+  const c = [];
+  for (const s of SEG.slice(1)) if (!s.noCut && s.type !== 'end') c.push(['whoosh', s.a - 0.12, 0.8]);
+  for (const s of SEG) {
+    if (s.type === 'ui') for (const e of SHOTS[s.shot].events) {
+      const ot = outTime(s, e.t); if (ot < s.a || ot >= s.b) continue;
+      if (e.type === 'tap') c.push(['click', ot, 0.9]);
+      if (e.type === 'key') c.push(['key', ot, 0.5]);
+      if (e.type === 'correct') c.push(['ding', ot + 0.05, 0.9]);
+    }
+    if (s.type === 'stills') for (let i = 0; i < s.stills.length; i++) c.push(['punch', stillStart(s, i), 0.55]);
+    if (s.type === 'end') {
+      END.items.forEach((it, i) => { const at = s.a + (it.at ?? 0.17 + i * 0.4); c.push(it.kind === 'logo' ? ['boom', at, 1] : ['thump', at, 0.55]); if (it.kind === 'logo') c.push(['riser', at - 1.1, 0.7]); if (it.kind === 'url') c.push(['ding', at + 0.02, 0.45]); });
+    }
+  }
+  for (const cap of V.captions ?? []) cap.lines.forEach((l, i) => { if (l.at !== 'held') c.push(['thump', l.at ?? cap.a + i * 0.12, 0.35]); });
+  for (const o of V.overlays ?? []) if (o.type === 'badge') c.push(['sparkle', o.a, 0.6]);
+  return [...c, ...(V.cues ?? [])];
+};
+}
+</script>
+</body>
+</html>
