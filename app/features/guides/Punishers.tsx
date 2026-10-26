@@ -38,7 +38,7 @@ export const Punishers = ({ standing, crouching, whiff }: PunishersProps) => {
 // standing and crouching punishers have a startup, whiff punishers don't
 type PunisherItem = WhiffPunisher & { startup?: string };
 
-// lines the description and video up under the command: the startup chip's
+// lines the description and video up under the command: the startup's
 // min-w-10 plus the row's gap-x-3
 const underCommand = 'sm:ps-13';
 
@@ -77,8 +77,9 @@ const PunisherRow = ({ startup, command, description }: PunisherItem) => {
   return (
     <div className="border-b border-border py-2">
       <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
-        {/* kept when empty (but invisible), so the commands stay lined up */}
-        <span className="min-w-10 rounded bg-muted px-1.5 py-0.5 text-center text-xs tabular-nums text-muted-foreground empty:invisible">
+        {/* the startup is what users scan for; kept when empty, so the
+            commands stay lined up */}
+        <span className="min-w-10 text-lg font-bold tabular-nums">
           {startupText}
         </span>
         <span className="font-bold">
