@@ -117,9 +117,10 @@ export const FrameDataTable = ({
                 <TableCell>{move.block}</TableCell>
                 <TableCell>{move.hit}</TableCell>
                 <TableCell>{move.counterHit}</TableCell>
-                {/* Wide enough that most note lines fit on one line, so rows
-                    stay short on mobile; the rare long notes still wrap */}
-                <TableCell className="min-w-[40ch]">
+                {/* Wide enough on mobile that most note lines fit on one line,
+                    so rows stay short; the table already scrolls there. From
+                    md up the notes wrap to fit, so the table doesn't scroll */}
+                <TableCell className="max-md:min-w-[40ch]">
                   {move.notes?.split('\n').map((line, index) => (
                     <div key={index}>{line}</div>
                   ))}
