@@ -253,6 +253,8 @@ export const translatedGuidesT8: string[] = [
   'kuma',
   'lee',
   'lidia',
+  'devil-jin',
+  'victor',
 ];
 
 export const siteUrl = 'https://tekkendocs.com';

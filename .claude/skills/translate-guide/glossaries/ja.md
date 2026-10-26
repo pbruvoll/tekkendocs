@@ -539,3 +539,25 @@ Sources: [鉄拳8 初心者向け攻略wiki — フェン](https://seesaawiki.jp
 | Heaven and Earth (HAE) | 天上天下の構え | wiki |
 
 Sources: [鉄拳8 初心者向け攻略wiki — エディ](https://seesaawiki.jp/tekken8kouryaku/d/%A5%A8%A5%C7%A5%A3), [同 — リー](https://seesaawiki.jp/tekken8kouryaku/d/%A5%EA%A1%BC), [同 — リディア](https://seesaawiki.jp/tekken8kouryaku/d/%A5%EA%A5%C7%A5%A3%A5%A2) (the pages are EUC-JP: fetch them with curl and iconv, WebFetch garbles them)
+
+## Devil Jin
+
+| English | Japanese | Note |
+| --- | --- | --- |
+| Devil Jin | デビル仁 | glossary above |
+| Mourning Crow (MCR) | 飛翔 | 鉄拳8 初心者向け攻略wiki デビル仁 (中段〜飛翔) |
+| Fly (FLY, 3+4) | FLY（飛行の構え） | no Japanese source found, unverified |
+| EWGF / hellsweep | 最風 / 奈落 | same wiki (奈落葬波 is the 1+2 beam version, 奈落堕とし the heel) |
+| laser / ground laser | レーザー / ダウンレーザー | descriptive |
+
+## Victor
+
+| English | Japanese | Note |
+| --- | --- | --- |
+| Victor Chevalier | ヴィクター・シュヴァリエ | |
+| IAI / Perfumer (PRF) | イアイ（イアイ・ポズィション） / パヒューマー | 鉄拳8 初心者向け攻略wiki ヴィクター; replaces the 居合 used in the Kunimitsu section |
+| Takemikazuchi (katana) | タケミカヅチ | katakana, unverified |
+| karambit / sheath / helm breaker | カランビット / 鞘 / 兜割り | |
+| "get off me" (quoted in the source) | keep "get off me" +（離れろ） | quoted text is a command link |
+
+Sources: [鉄拳8 初心者向け攻略wiki — デビル仁](https://seesaawiki.jp/tekken8kouryaku/d/%A5%C7%A5%D3%A5%EB%BF%CE), [同 — ヴィクター](https://seesaawiki.jp/tekken8kouryaku/d/%A5%F4%A5%A3%A5%AF%A5%BF%A1%BC)

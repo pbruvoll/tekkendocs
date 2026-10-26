@@ -505,3 +505,25 @@ Sources: [철권 교실 — 펭](https://www.tekkenclass.com/characters/feng/mov
 | Horse (HRS) / Cat (CAT) / Stalking Wolf (WLF) / Heaven and Earth (HAE) | 기마서기 / 묘족 / 전호후랑 / 천상천하 | 철권 교실 리디아 기술 목록 filter (騎馬立ち, 猫足, 前虎後狼, 天上天下) |
 
 Sources: [철권 교실 — 에디](https://www.tekkenclass.com/characters/eddy/move/), [철권 교실 — 쿠마](https://www.tekkenclass.com/characters/kuma/move/), [철권 교실 — 리](https://www.tekkenclass.com/characters/lee/move/), [철권 교실 — 리디아](https://www.tekkenclass.com/characters/lidia/move/)
+
+## Devil Jin
+
+| English | Korean | Note |
+| --- | --- | --- |
+| Devil Jin | 데빌 진 | glossary above |
+| Mourning Crow (MCR) / Fly (FLY) | 모닝 크로우 / 플라이 | transliteration, unverified: 철권 교실 shows only MCR / FLY |
+| EWGF, wavedash, hellsweep | 최풍 / 풍신스텝 / 나락 | Mishima terms, as for Kazuya |
+| laser / ground laser | 레이저 / 다운 레이저 | descriptive |
+| neutral skip | 뉴트럴 스킵 | |
+
+## Victor
+
+| English | Korean | Note |
+| --- | --- | --- |
+| Victor Chevalier | 빅터 (슈발리에) | |
+| IAI / Perfumer (PRF) | 이아이 / 퍼퓨머 | 철권 교실 빅터 기술 목록 stance filter |
+| Takemikazuchi (katana) | 타케미카즈치 | transliteration |
+| karambit, sheath, helm breaker | 카람빗 / 칼집 / 내려찍기 | descriptive |
+| "get off me" (quoted in the source) | keep "get off me" + (떨어져!) | quoted text is a command link |
+
+Sources: [철권 교실 — 빅터](https://www.tekkenclass.com/characters/victor/move/)

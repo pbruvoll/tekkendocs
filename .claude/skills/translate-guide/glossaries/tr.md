@@ -235,3 +235,11 @@ Hitman Stance (HMS), Mist Step (MS), Acid Rain, just frame, hopkick, hopknee sta
 ## Lidia
 
 Horse (HRS), Cat (CAT), Stalking Wolf (WLF), Heaven and Earth (HAE), option select stay English. gray health → geri kazanılabilir can.
+
+## Devil Jin
+
+Mourning Crow (MCR), Fly (FLY), EWGF, wavedash, hellsweep, laser, neutral skip, FUFA, Twin Pistons stay English. war of attrition → yıpratma savaşı.
+
+## Victor
+
+IAI, Perfumer (PRF), Takemikazuchi, helm breaker, backswing blow, karambit stay English. sheath → kın; refined violence → ‘rafine şiddet’; "get off me" stays quoted English with a gloss (üstümden çekil).
