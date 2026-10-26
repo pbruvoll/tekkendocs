@@ -466,3 +466,42 @@ Sources: [철권 교실 — 스티브](https://www.tekkenclass.com/characters/st
 | Mishima hellsweep (Reina) | 나락 | as for Kazuya |
 
 Sources: [철권 교실 — 펭](https://www.tekkenclass.com/characters/feng/move/)
+
+## Eddy
+
+| English | Korean | Note |
+| --- | --- | --- |
+| Eddy Gordo | 에디 (고르도) | |
+| Relax / Negativa (RLX) | 네가치바(RLX) | 철권 교실 에디 기술 목록 lists the stance as Negativa; transliteration |
+| Handstand / Bananeira (HSP) | 물구 자세(HSP) | same source ("Bananeira(물구) 자세로 이행") |
+| Mandinga (install) | 만징가 | same source ("만징가 스택") |
+| G-Clef, Hellsweep | G-Clef / 헬스위프 | |
+| wall hazard | 벽 기믹 | descriptive |
+
+## Kuma
+
+| English | Korean | Note |
+| --- | --- | --- |
+| Hunting Bear (HBS) / Bear Roll (ROL) / Bear Sit (SIT) | 헌팅 자세 / 베어 롤 / 베어 시트 | 철권 교실 쿠마 기술 목록 filter (헌팅, 베어 롤, 베어 시트) |
+| electric (H.df+2+3) | 일렉트릭 | not 최풍: this is Kuma's heat move, not a Mishima EWGF |
+| Rangchu | 랑추 | |
+
+## Lee
+
+| English | Korean | Note |
+| --- | --- | --- |
+| Lee Chaolan | 리 | |
+| Hitman Stance (HMS) / Mist Step (MS) | 히트맨 자세 / 미스트 스텝 | 철권 교실 shows only HMS / MS; transliteration, unverified |
+| just frame | 저스트 프레임 | |
+| Acid Rain (1,3:3:3) | 애시드 레인 | transliteration, unverified |
+| magic 4 | 매직 4 | |
+| hopknee | 무릎 점프 킥 | descriptive |
+
+## Lidia
+
+| English | Korean | Note |
+| --- | --- | --- |
+| Lidia Sobieska | 리디아 | |
+| Horse (HRS) / Cat (CAT) / Stalking Wolf (WLF) / Heaven and Earth (HAE) | 기마서기 / 묘족 / 전호후랑 / 천상천하 | 철권 교실 리디아 기술 목록 filter (騎馬立ち, 猫足, 前虎後狼, 天上天下) |
+
+Sources: [철권 교실 — 에디](https://www.tekkenclass.com/characters/eddy/move/), [철권 교실 — 쿠마](https://www.tekkenclass.com/characters/kuma/move/), [철권 교실 — 리](https://www.tekkenclass.com/characters/lee/move/), [철권 교실 — 리디아](https://www.tekkenclass.com/characters/lidia/move/)

@@ -499,3 +499,43 @@ Sources: [鉄拳8 初心者向け攻略wiki — スティーブ](https://seesaaw
 | round ender | ラウンド締めの技 | descriptive |
 
 Sources: [鉄拳8 初心者向け攻略wiki — フェン](https://seesaawiki.jp/tekken8kouryaku/d/%A5%D5%A5%A7%A5%F3)
+
+## Eddy
+
+| English | Japanese | Note |
+| --- | --- | --- |
+| Eddy Gordo | エディ（・ゴルド） | |
+| Relax / Negativa (RLX) | 座り（RLX） | 鉄拳8 初心者向け攻略wiki エディ (ネガチーヴァ：低姿勢の特殊構え。以下『座り』) |
+| Handstand / Bananeira (HSP) | 逆立ち（HSP） | same source (バナネイラ：逆立ちの特殊構え) |
+| Mandinga (install) | マンジンガ | same source |
+| wall hazard | 壁ギミック | descriptive |
+
+## Kuma
+
+| English | Japanese | Note |
+| --- | --- | --- |
+| Hunting Bear (HBS) / Bear Roll (ROL) / Bear Sit (SIT) | ハンティングの構え / ローリング / 座りの構え | no Japanese source found (the wiki page has no stance names), unverified |
+| electric (H.df+2+3) | 雷エフェクトの中段（エレクトリック） | not 最風: Kuma's heat move |
+
+## Lee
+
+| English | Japanese | Note |
+| --- | --- | --- |
+| Lee Chaolan | リー | |
+| Hitman Stance (HMS) / Mist Step (MS) | ヒットマンスタイル / ミストステップ | 鉄拳8 初心者向け攻略wiki リー |
+| just frame | ジャスト入力 | same source |
+| Acid Rain (1,3:3:3) | アシッドレイン | katakana, unverified |
+| magic 4 | マジック4 | unverified |
+| conditioning | 刷り込み | |
+| frame tight | フレームを意識して隙間のない動き | descriptive; not 暴れ潰し (= frame trap) |
+
+## Lidia
+
+| English | Japanese | Note |
+| --- | --- | --- |
+| Lidia Sobieska | リディア | |
+| Horse (HRS) / Cat (CAT) | 騎馬立ち（騎馬） / 猫足 | 鉄拳8 初心者向け攻略wiki リディア |
+| Stalking Wolf (WLF) | 前虎後狼の構え | 철권 교실 kanji; the wiki writes both 前狼後虎 and 全虎後狼, so unverified |
+| Heaven and Earth (HAE) | 天上天下の構え | wiki |
+
+Sources: [鉄拳8 初心者向け攻略wiki — エディ](https://seesaawiki.jp/tekken8kouryaku/d/%A5%A8%A5%C7%A5%A3), [同 — リー](https://seesaawiki.jp/tekken8kouryaku/d/%A5%EA%A1%BC), [同 — リディア](https://seesaawiki.jp/tekken8kouryaku/d/%A5%EA%A5%C7%A5%A3%A5%A2) (the pages are EUC-JP: fetch them with curl and iconv, WebFetch garbles them)

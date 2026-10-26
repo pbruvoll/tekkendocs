@@ -219,3 +219,19 @@ Izumo (IZU), Genjitsu (GEN), Miare (MIA), Kazama Essence, Kazama power hareketle
 ## Feng
 
 Shifting Cloud (STC), Back Kenpo (KNP), Lingering Shadow / Snakedash (LS), Demon Paw, backswing blow, spike ender, option select stay English. shoulder (B1+2 follow-up) → omuz vuruşu; mental stack → zihinsel baskı; "Jack of all trades, master of none" → ‘her işi yapan ama hiçbirinde usta olmayan’.
+
+## Eddy
+
+Relax (RLX), Handstand (HSP), Mandinga (MND, install), G-Clef, Hellsweep stay English ("Handstand'e geçer"). wall hazard → duvar tehlikesi; shoulder → omuz vuruşu.
+
+## Kuma
+
+Hunting Bear (HBS), Bear Roll (ROL), Bear Sit (SIT), electric stay English. Charge moves → şarjlı hareketler.
+
+## Lee
+
+Hitman Stance (HMS), Mist Step (MS), Acid Rain, just frame, hopkick, hopknee stay English. magic 4 → sihirli 4.
+
+## Lidia
+
+Horse (HRS), Cat (CAT), Stalking Wolf (WLF), Heaven and Earth (HAE), option select stay English. gray health → geri kazanılabilir can.
