@@ -88,6 +88,10 @@ English sentence into a "quoted command"; keep that chunk verbatim, put the tran
 right after it, and keep the leftover stray quote too. An odd quote with no pair (Anna's intro has
 `"Hammer Chance (HAM)”`) is plain text: translate inside it but keep the single `"`.
 
+Curly quotes (Victor's `“uf+1,1”`, Devil Jin's `“F”`) are not parsed, so keep them curly: switching
+them to ASCII adds a command link the source does not have. When one command is quoted several
+times in a cell, keep every occurrence; the multiset check fails on a merged sentence that drops one.
+
 ## Right-to-left languages
 
 The guide container gets `dir="rtl"`, and `ContentContainer` gives every descendant

@@ -482,3 +482,23 @@ The Feng author (Weak Akuma) is described in third person with no stated gender:
 | --- | --- |
 | Lidia | لیڈیا (feminine verbs) |
 | Horse (HRS) / Cat (CAT) / Stalking Wolf (WLF) / Heaven and Earth (HAE) | ہارس اسٹانس / کیٹ اسٹانس / اسٹاکنگ وولف اسٹانس / ہیون اینڈ ارتھ |
+
+## Devil Jin
+
+| English | Urdu |
+| --- | --- |
+| Devil Jin | ڈیول جن (masculine verbs) |
+| Mourning Crow (MCR) / Fly (FLY) | مارننگ کرو / فلائی |
+| laser / ground laser | لیزر / گراؤنڈ لیزر |
+| neutral skip | نیوٹرل اسکپ |
+| a cell starting with notation | prefix موو: `موو "H.uf+3+4,1+2" …` |
+
+## Victor
+
+| English | Urdu |
+| --- | --- |
+| Victor Chevalier | وکٹر شیولیئر (masculine verbs) |
+| IAI / Perfumer (PRF) | آئی اے آئی / پرفیومر |
+| Takemikazuchi | تاکیمیکازوچی |
+| karambit / sheath / helm breaker | کارمبٹ / میان / ہیلم بریکر |
+| +/-0, +15g | صفر / پلس 15 (جی) |

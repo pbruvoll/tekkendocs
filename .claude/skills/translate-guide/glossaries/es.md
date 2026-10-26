@@ -228,3 +228,11 @@ Hitman Stance (HMS), Mist Step (MS), Acid Rain, just frame, magic 4, hopkick, ho
 ## Lidia
 
 Horse (HRS), Cat (CAT), Stalking Wolf (WLF), Heaven and Earth (HAE), okizeme, option select stay English. gray health → vida recuperable.
+
+## Devil Jin
+
+Mourning Crow (MCR), Fly (FLY), EWGF, wavedash, hellsweep, laser, neutral skip, oki flip, FUFA, Twin Pistons stay English. hail mary → a la desesperada; war of attrition → guerra de desgaste.
+
+## Victor
+
+IAI, Perfumer (PRF), Takemikazuchi, helm breaker, backswing blow, karambit stay English. sheath → vaina; refined violence → «violencia refinada»; "get off me" stays quoted English with a gloss (quítate de encima).

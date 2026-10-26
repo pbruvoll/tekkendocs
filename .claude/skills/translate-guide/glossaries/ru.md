@@ -457,3 +457,22 @@ Pagani's gender is not stated: "кто знает", "этот удар уже у
 | Lidia | Лидия (gen. Лидии) | glossary above |
 | Horse (HRS), Cat (CAT), Stalking Wolf (WLF), Heaven and Earth (HAE) | in Latin | |
 | option select | опшн селект | as for Kunimitsu |
+
+## Devil Jin
+
+| English | Russian | Note |
+| --- | --- | --- |
+| Devil Jin | Девил Дзин (gen. Девил Дзина) | glossary above |
+| Mourning Crow (MCR), Fly (FLY), Twin Pistons | in Latin | |
+| EWGF, wavedash, hellsweep | EWGF / вейвдеш / хелл свип | as for Kazuya |
+| ground laser | граунд-лазер | |
+| war of attrition | война на истощение | |
+
+## Victor
+
+| English | Russian | Note |
+| --- | --- | --- |
+| Victor Chevalier | Виктор Шевалье (gen. Виктора) | |
+| IAI, Perfumer (PRF), Takemikazuchi, helm breaker, backswing blow | in Latin | |
+| karambit / sheath | карамбит / ножны | |
+| refined violence | «изысканное насилие» | |
