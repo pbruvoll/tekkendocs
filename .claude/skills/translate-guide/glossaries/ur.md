@@ -446,3 +446,39 @@ Pagani's gender is not stated: "جن کی وضاحت یہ ہے", "میرا مش�
 | India / Asia 1 region | بھارت / ایشیا 1 ریجن |
 
 The Feng author (Weak Akuma) is described in third person with no stated gender: plural of respect (آتے ہیں).
+
+## Eddy
+
+| English | Urdu |
+| --- | --- |
+| Eddy Gordo | ایڈی گورڈو (masculine verbs) |
+| Relax (RLX) / Handstand (HSP) | ریلیکس / ہینڈ اسٹینڈ |
+| Mandinga | مینڈنگا |
+| G-Clef / Hellsweep | جی کلیف / ہیل سویپ |
+| SWL / SSL in a cell title | دائیں یا بائیں سائیڈ واک (SWL یا SSL) |
+
+## Kuma
+
+| English | Urdu |
+| --- | --- |
+| Kuma / Panda | کوما (masculine) / پانڈا (feminine) |
+| Hunting Bear (HBS) / Bear Roll / Bear Sit | ہنٹنگ بیئر / بیئر رول / بیئر سِٹ |
+| grab | گریب, plural گریبز |
+| player names in resource titles | Urdu transliteration with the Latin name in brackets: رانگچو (Rangchu) |
+
+## Lee
+
+| English | Urdu |
+| --- | --- |
+| Lee Chaolan | لی (masculine verbs) |
+| Hitman Stance (HMS) / Mist Step (MS) | ہٹ مین اسٹانس / مسٹ اسٹیپ |
+| just frame / Acid Rain | جسٹ فریم / ایسڈ رین |
+| magic 4 | میجک 4 |
+| hopkick / hopknee | ہاپ کک / ہاپ نی |
+
+## Lidia
+
+| English | Urdu |
+| --- | --- |
+| Lidia | لیڈیا (feminine verbs) |
+| Horse (HRS) / Cat (CAT) / Stalking Wolf (WLF) / Heaven and Earth (HAE) | ہارس اسٹانس / کیٹ اسٹانس / اسٹاکنگ وولف اسٹانس / ہیون اینڈ ارتھ |

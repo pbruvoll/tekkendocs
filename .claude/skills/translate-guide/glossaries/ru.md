@@ -424,3 +424,36 @@ Pagani's gender is not stated: "кто знает", "этот удар уже у
 | shoulder (B1+2 follow-up) | удар плечом | |
 | Devil Jin | Девил Дзин | Дзин as in the Jin section |
 | make-or-break | «пан или пропал» | |
+
+## Eddy
+
+| English | Russian | Note |
+| --- | --- | --- |
+| Eddy Gordo | Эдди Гордо | glossary above |
+| Relax (RLX), Handstand (HSP), Mandinga, G-Clef | in Latin | Mandinga is the install: «усиление Mandinga» |
+| wall hazard | опасность стены | |
+
+## Kuma
+
+| English | Russian | Note |
+| --- | --- | --- |
+| Kuma / Panda | Кума (gen. Кумы) / Панда | Panda is "she" in the source |
+| Hunting Bear (HBS), Bear Roll, Bear Sit | in Latin, "стойка Hunting Bear" | |
+| charge move | заряжаемый удар | |
+| electric (H.df+2+3) | электрик | |
+
+## Lee
+
+| English | Russian | Note |
+| --- | --- | --- |
+| Lee Chaolan | Ли (indeclinable) | |
+| Hitman Stance (HMS), Mist Step (MS), Acid Rain | in Latin | |
+| magic 4 | «волшебная четвёрка» | |
+
+## Lidia
+
+| English | Russian | Note |
+| --- | --- | --- |
+| Lidia | Лидия (gen. Лидии) | glossary above |
+| Horse (HRS), Cat (CAT), Stalking Wolf (WLF), Heaven and Earth (HAE) | in Latin | |
+| option select | опшн селект | as for Kunimitsu |

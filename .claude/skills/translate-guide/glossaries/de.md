@@ -248,3 +248,19 @@ Izumo (IZU), Genjitsu (GEN), Miare (MIA), Kazama Essence, Kazama-Power-Moves, Ca
 ## Feng
 
 Shifting Cloud (STC), Back Kenpo (KNP), Lingering Shadow / Snakedash (LS), Demon Paw, Backswing Blow, Spike-Ender, Power-Low, Option Select stay English. shoulder (B1+2 follow-up) → Schulterstoß; mental stack → mentaler Druck; "Jack of all trades, master of none" → „Hansdampf in allen Gassen, Meister in keiner“.
+
+## Eddy
+
+Relax (RLX), Handstand (HSP), Mandinga (MND, der Install), G-Clef, Hellsweep stay English. wall hazard → Wandgefahr; shoulder → Schulterstoß.
+
+## Kuma
+
+Hunting Bear (HBS, "Hunting-Bear-Stance"), Bear Roll (ROL), Bear Sit (SIT), Electric, Flowchart stay English. Panda is "sie" in the source.
+
+## Lee
+
+Hitman Stance (HMS), Mist Step (MS), Acid Rain, Just Frame, Magic 4, Hopkick, Hopknee, Conditioning stay English.
+
+## Lidia
+
+Horse (HRS), Cat (CAT), Stalking Wolf (WLF), Heaven and Earth (HAE), Okizeme, Option Select stay English. gray health → wiederherstellbare Gesundheit.
