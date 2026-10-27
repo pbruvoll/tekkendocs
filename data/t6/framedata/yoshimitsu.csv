@@ -39,7 +39,8 @@ f+3,3,d+3+4;h, l;28, 19;;-35;KND;;"* High crush
 f+3,4;h, m;28, 24;;-4;KND;;Recovers back turned
 f+4;m;30;i18;-9;KND;;
 f+1+2;m;26;i17~18;-8~-7;KND;;Bound
-f+3+4;m;24 (32);i21~25;-13~-9;KND;;Transition to JIR
+f+3+4;m;24 (32);i21~25;-13~-9;KND;;"* Wall splat
+* Transition to JIR"
 f+3+4,b;;;;;;;Recovers back turned
 df+1;m;15;i13;-6;+5;;
 df+2;m;12;i16;-9;-1;;
@@ -151,9 +152,12 @@ uf+4;m;25;i20;-9;KND;;"* Low crush
 * Homing
 * Bound
 * Forward"
-uf+1+2;!;48;i113~114;KND;KND;;Low crush
-uf+1+2,d;!;24;i55~56;+4~+5;+4~+5;;Low crush
-uf+1+2,d;!;36;i83~84;+4~+5;+4~+5;;Low crush
+uf+1+2;!;48;i113~114;KND;KND;;"* Low crush
+* Wall splat"
+uf+1+2,d;!;24;i55~56;+4~+5;+4~+5;;"* Low crush
+* Wall splat"
+uf+1+2,d;!;36;i83~84;+4~+5;+4~+5;;"* Low crush
+* Wall splat"
 uf+1+2,1+2;;;;;;;"* Low crush
 * Transition to DGF"
 uf+1+2,b;!;42;i62;KND;KND;;Low crush
@@ -179,8 +183,11 @@ f,F~4;m;24;i15~16;-4~-3;JG;;"* Low crush
 * Recovers back turned"
 f,F~1+2;m;26;i22~24;-8~-6;+3~+5c;;"* Recovers back turned
 * Bound"
-f,F~3+4;m;30;i22~24;-20~-18;-9~-7c;;Low crush
-f,F~3+4,1+2;m, m;30, 30;;-31~-25;KND;;Low crush
+f,F~3+4;m;30;i22~24;-20~-18;-9~-7c;;"* Low crush
+* Bound
+* Wall splat"
+f,F~3+4,1+2;m, m;30, 30;;-31~-25;KND;;"* Low crush
+* Wall splat"
 f,F~3+4,1+2,3+4;m, m, m;30, 30, 30;;-13;JG;;"* Low crush
 * High crush"
 f,F~1+4;!;72;i45;KND;KND;;Recovers grounded
@@ -302,7 +309,8 @@ d+3+4;;;;;;;High crush
 IND.n;;;;;;;High crush
 IND.1;!;18;i53~54;+0~+1c;+0~+1c;;Low crush
 IND.2;m;8;i39;-9;+2;;Recovers crouching
-IND.3;m;30;i38;-16~-27;KND;;Low crush
+IND.3;m;30;i38;-16~-27;KND;;"* Low crush
+* Wall splat"
 IND.3,3+4;m, m;30, 30;;-13;KND;;Low crush
 IND.4;m;30;i45;-12;KND;;High crush
 IND.b;;;;;;;"* Alternate input: f
@@ -393,10 +401,12 @@ Right throw;t;40;;-4;;;"* Throw break 2
 Back throw;t;50;;;;;"* Unbreakable
 * Side switch
 * Opponent recovers FUFT
-* Recovers BT"
+* Recovers BT
+* Floor Break"
 qcb+1+2;t;47;;+0;;;"* Throw break 1+2
 * Side switch
-* Opponent recovers FUFT"
+* Opponent recovers FUFT
+* Floor Break"
 qcf+2;t;22;;-6;+0;;Throw break 1+2
 d,db,b,f~2;t;-26;;;+0;;Unbreakable
 #stances

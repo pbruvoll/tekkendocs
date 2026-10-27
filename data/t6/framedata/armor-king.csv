@@ -31,10 +31,11 @@ f+3;m;18;i16;-3;+4;;
 f+3,4;m, m;18, 15;;-5;+3;;
 f+3,4,3;m, m, h;18, 15, 26;;-7;KND;;
 f+4;m;25;i23~25;+0;+7c;KND;
-f+1+2;m;30;i20~21;-11~-10;KND;;Parry
+f+1+2;m;30;i20~21;-11~-10;KND;;"* Parry
+* Bound"
 f+1+4;m;33;i14;-17;KND;;
 df+1;m;14;i13;-1;+7;;
-df+2;m;25;i15;-12;-1;KND;
+df+2;m;25;i15;-12;-1;KND;Bound
 df+3;m;21;i17;-5;+5;KND;
 df+4;m;18;i12;-4;+7;;
 df+1+2;m;26;i24;-7;KND;;Homing
@@ -57,7 +58,8 @@ d+3+4;l;18;i17;-16;-5;-3;"* Alternate input: FC.df+4
 d+3+4,3;l, m;18, 15;;-16;KND;;High crush
 d+1+4;l;;;;;;"* Alternate input: d+2+3
 * Parry
-* Recovers crouching"
+* Recovers crouching
+* Bound"
 d+1+4;m;21, 15;i34;-19;;;"* Alternate input: d+2+3,1+2
 * Hit throw"
 db+1;sm;6;i10;-5;+6;;"* Alternate input: d+1
@@ -130,7 +132,7 @@ ws4;m;24;i11;-6;+5;;
 FC.df+2;m;27;i24;+1;KND;;High crush
 SS.1;h;8;i10;+1;+8;;
 SS.2;m;20;i24;-12~-11;KND;;
-SS.2,1;m, m;20, 25;;-12c;+4c;;
+SS.2,1;m, m;20, 25;;-12c;+4c;;Bound
 SS.3;h;30;i16;-14;KND;;
 SS.4;m;26;i26;-12;+0;KND;
 SS.3+4;h;33;i32;-6;KND;;"* Low crush
@@ -169,9 +171,11 @@ FC.db+4;l;14;i14;-15;-4;;"* Alternate input: d+4
 * Side switch
 * Opponent recovers FUFA"
 2+4,d,d,d+1+2;t;40;;;;;"* Unbreakable
-* Opponent recovers FUFA"
+* Opponent recovers FUFA
+* Floor Break"
 Left throw;t;40;;-4;;;"* Throw break 1
-* Opponent recovers FDFA"
+* Opponent recovers FDFA
+* Floor Break"
 Right throw;t;40;;-4;;;"* Throw break 2
 * Opponent recovers FDFA"
 Back throw;t;60;;;;;"* Unbreakable
@@ -185,7 +189,8 @@ db,db+1+2;t;45;;-6;;;"* Throw break 1+2
 * Side switch
 * Opponent recovers FUFA"
 db,f~2+4;t;52;;+0;;;"* Throw break 2
-* Opponent recovers FUFA"
+* Opponent recovers FUFA
+* Floor Break"
 f,b,db,d,df,f~1;t;65 (45, 20);;-7;;;"* Throw break 1
 * Side switch
 * Opponent recovers FDFT"
@@ -193,7 +198,8 @@ f,f,F+2+4;t;40;;-7;;;"* Alternate input: f,f,F+2+4
 * Throw break 1+2
 * Opponent recovers FUFT"
 FC.db,d,db+1+2;t;45;;;;;"* Throw break 1+2
-* Opponent recovers FUFT"
+* Opponent recovers FUFT
+* Floor Break"
 d+1+3;t;45;;+0;;;"* Against a crouching opponent
 * Low throw
 * Throw break 1
@@ -207,7 +213,8 @@ FC.1+2;t;5;;;;;"* Unblockable
 * Opponent recovers FUFT"
 f,b,db,d,df,f~1;t;20;;;;;"* Against an airborne opponent
 * Unbreakable
-* Opponent recovers FDFA"
+* Opponent recovers FDFA
+* Floor Break"
 f,f,F+2+4;t;25;;;;;"* Against an airborne opponent
 * Alternate input: f,f,F+2+4
 * Unbreakable
@@ -231,10 +238,12 @@ d+1+4,1+2;m;21, 15;;;;;"* On hit from the front
 OTG.db+1+3;t;30;;;;;"* Alternate input: db+2+4
 * Throw break 1 or 2
 * Side switch
-* Opponent recovers FDFT"
+* Opponent recovers FDFT
+* Wall splat"
 OTG.db+1+3;t;30;;;;;"* Alternate input: db+2+4
 * Throw break 1 or 2
-* Opponent recovers FDFT"
+* Opponent recovers FDFT
+* Wall splat"
 OTG.db+1+3;t;35;;;;;"* Alternate input: db+2+4
 * Throw break 1 or 2
 * Opponent recovers FUFT
