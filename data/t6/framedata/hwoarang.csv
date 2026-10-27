@@ -23,7 +23,7 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 3,3,f;h, m;18, 14;;+2;+8;+13;Transition to LFS
 3,3,3;h, m, m;18, 14, 18;;-14;KND;;
 3,3,4;h, m, h;18, 14, 24;;+9;+20g;+20;
-3,3,f+4;h, m, h;18, 14, 30;;-1;KND;;
+3,3,f+4;h, m, h;18, 14, 30;;-1;KND;;Homing
 3,3,d+3;h, m, l;18, 14, 12;;-11;+0;;
 3,3,d+3,4;h, m, l, h;18, 14, 12, 12;;+9;+19g;+19;
 3~4;m, m;12, 23;i22;-5;KND;;Low crush
@@ -55,7 +55,7 @@ df+2;m;15;i14~15;-8~-7;JG (+3);JG;
 df+3;m;14;i14;-14;-3;;
 df+3,3;m, m;16, 18;;-14;KND;;
 df+3,4;m, h;16, 24;;+9;+20g;+20;
-df+3,f+4;m, h;16, 30;;-1;KND;;
+df+3,f+4;m, h;16, 30;;-1;KND;;Homing
 df+4;m;15;i12;-4;+7;;
 df+1+2;m;14;i13;-3;+8;;
 df+3+4;m;9 (5, 10);i15~16;-11;+0;;
@@ -83,7 +83,8 @@ db+3+4,b,b;;;;;;;
 b+1;h;7;i10;+1;+9;;
 b+2;h;21;i13~14;-5~-4;+4~+5;KND;
 b+3;m;18;i17;-15;KND;;
-b+4;m;;i16~17;-8~-7;+8~+9;KND;Transition to RFF
+b+4;m;;i16~17;-8~-7;+8~+9;KND;"* Homing
+* Transition to RFF"
 ub;m;12;i18;-8;+3;;"* Alternate input: u or uf+1
 * Low crush"
 ub;h;15;;-;+;;Alternate input: u or uf+2
@@ -170,8 +171,9 @@ RFF.2,b+4;h, h;7, 32;;-11;KND;;
 RFF.3;m;14;i16;-4;+7;;
 RFF.3,4;m, h;14, 16;;+13g;+24g;+14;Transition to RFS
 RFF.3,f~4;m, h;16, 19;;-7;+4;+6;Transition to RFF
-RFF.3~4;h;45;i27~28;+5~+6s;KND;;
+RFF.3~4;h;45;i27~28;+5~+6s;KND;;Homing
 RFF.3~4,b;h;30;i27~28;+15~+16sg;KND;;"* Alternate input: f
+* Homing
 * Transition to RFS"
 RFF.4;h;14;i12;-8;+3;;Transition to RFF
 RFF.4,b;h;14;i12;+6;+17g;+;"* Alternate input: f
@@ -186,7 +188,7 @@ RFF.f+3;h;24;i14;+12g;+23g;;Transition to LFS
 RFF.f+3,b;h;24;i14;-16~-15;-5~-4;;"* Recovers back turned
 * Transition to RFF"
 RFF.f+3,4;h, l;24, 24;;-10~-11;+3~+4;KND;
-RFF.df+3;m;;i20;-11;KND;;
+RFF.df+3;m;;i20;-11;KND;;Homing
 RFF.df+4;m;14;i13;-7;+4;;
 RFF.df+4,b;m;14;i13;+7;+15g;+15;"* Alternate input: f
 * Transition to RFS"
@@ -215,7 +217,7 @@ LFS.3;m;14;i14;-15;-4;;
 LFS.3,3;m, m;14, 18;;-14;KND;;
 LFS.3,f;m;14;i14;+2;+13g;+13;Transition to LFS
 LFS.3,4;m, h;14, 24;;+;+;;
-LFS.3,f+4;m, h;14, 30;;+5~+6s;KND;;
+LFS.3,f+4;m, h;14, 30;;+5~+6s;KND;;Homing
 LFS.4;h;28;i14;-2;KND;;"* Low crush
 * Transition to RFS"
 LFS.1+4;!;96;i67~68;KND;KND;;Low crush

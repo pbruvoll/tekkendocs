@@ -837,7 +837,11 @@ def convertSeesaaCharacter(characterId, rows):
         hit, hitNotes = convertFrame(hit)
         counterHit, counterHitNotes = convertFrame(counterHit)
         notes += hitLevelNotes + startupNotes + blockNotes + hitNotes + counterHitNotes
-        if extra.strip() == "B":
+        # the notes column marks a homing move with H and a bound with B, e.g. "H,B"
+        markers = re.split(r"[,、]", extra.strip())
+        if "H" in markers:
+            notes.append("Homing")
+        if "B" in markers:
             notes.append("Bound")
         transition = transitionCode(characterId, name)
         if transition:
@@ -1037,6 +1041,15 @@ def replaceFrames(moves, otherMoves, emptyCounterHitIsHit=False):
         if changed:
             replaced += 1
     return replaced
+
+
+def addHomingNotes(moves, wavuMoves):
+    """Adds the homing note to the moves which wavu marks as homing, as the japanese wikis miss some of them."""
+    homing = {move[0] for move in wavuMoves if "Homing" in move[7].split("\n")}
+    for move in moves:
+        notes = [note for note in move[7].split("\n") if note]
+        if move[0] in homing and "Homing" not in notes:
+            move[7] = "\n".join(notes + ["Homing"])
 
 
 def fillMissingFrames(moves, otherMoves):
@@ -1583,6 +1596,7 @@ def main():
             replaced = replaceFrames(moves, otherMoves, emptyCounterHitIsHit=name == "wavu") if otherMoves else 0
             if replaced:
                 replacedFrom.append(f"{replaced} from {name}")
+        addHomingNotes(moves, wavu or [])
 
         filledFrom = []
         fillSources = [("seesaawiki", withoutProblems(lambda: seesaaMoves(characterId, cacheFolder)))] if source == "inatekken" else []
