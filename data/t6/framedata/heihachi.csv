@@ -60,7 +60,7 @@ b+1,4;h, l;13, 12;;-13;-2;;
 b+2;m;20;i17;-9;+8;;High crush
 b+3;h;16;i14;-6;+5;;
 b+3,3;h, m;16, 25;;-12~+10c;KND;;
-b+4;m;24;i18;-9;KND;;
+b+4;m;24;i18;-9;KND;;Homing
 b+1+2;m;24;i19;-5;-6;;
 b+1+2,1+2;m, m;24, 26;;-11;KND;;
 uf+3;m;24;i28;-6;KND;;Low crush
@@ -70,7 +70,7 @@ f,F+1;h;7;i10;+1;+9;;
 f,F+2;m;30;i21;-16;KND;;
 f,F+3;m;30;i20;+0c;KND;;Bound
 f,F+4;m;20;i19;+5c;+8c (KND);KND;Bound
-b,b+1+2;m;24;i39;+9~+10;KND;;
+b,b+1+2;m;24;i39;+9~+10;KND;;Wall splat
 b,b,n+3+4;;;;;;;
 b,f+2;m;14;i15;-7;+4;;
 b,f+2,1;m, h;14, 24;;-1;KND;;
@@ -95,7 +95,8 @@ d+3+4;;;;;;;
 KAM.1;m;35;i15;-12;KND;;
 KAM.1;m;50;i15;+12g;KND;;Fully charged
 KAM.1~2;m, m;35, 35;;-17c;KND;;Bound
-KAM.1~2;m, m;35, 35;;-17c;KND;;Fully charged
+KAM.1~2;m, m;35, 35;;-17c;KND;;"* Bound
+* Fully charged"
 KAM.2;h!;70;i91;KND;KND;;
 KAM.2;h!;70;i91;KND;KND;;Fully charged
 KAM.2,b;;;;;;;
@@ -151,7 +152,8 @@ df+2+3;t;25;;;;;"* Throw break 2
 * Both recover standing"
 f,F+1+2;t;35;;+0;;;"* Throw break 1+2
 * Side switch when broken
-* Opponent recovers FUFT"
+* Opponent recovers FUFT
+* Wall splat"
 f,F+1+4;t;35;;-6;;;Throw break 1+2
 qcf~1;t;45;;+0;;;"* Throw break 1
 * Opponent recovers FUFT"

@@ -539,8 +539,31 @@ def inatekkenPages(characterId, cacheFolder):
         for table in parser.tables:
             rows += [row for row in table["rows"] if len(row) >= 9 and row[1] not in ("コマンド", "")]
             sectionTitles += [row[0] for row in table["rows"] if len(row) == 1]
+        addFootnotes(rows, inatekkenFootnotes(pageHtml))
         pages.append((section, timestamp, rows, sectionTitles))
     return pages
+
+
+def inatekkenFootnotes(pageHtml):
+    """The footnotes below the move tables, e.g. "*15 : 床破壊誘発" => {"*15": "床破壊誘発"}."""
+    text = re.sub(r"<[^>]+>", "", re.sub(r"<br\s*/?>", "\n", pageHtml))
+    return {mark: note.strip() for mark, note in re.findall(r"^\s*([*※]\d+)\s*[:：](.+)$", html.unescape(text), re.M)}
+
+
+def addFootnotes(rows, footnotes):
+    """Adds the text of the footnotes in the notes column to the column, after a tab, e.g. "B *15" =>
+    "B *15\t床破壊誘発", so the properties in them can be read. "↑" means the footnotes of the row above."""
+    previousNotes = []
+    for row in rows:
+        marks = []
+        for prefix, numbers in re.findall(r"([*※])([\d,]+)", row[8]):
+            marks += [prefix + number for number in numbers.split(",") if number]
+        notes = [footnotes[mark] for mark in marks if mark in footnotes]
+        if "↑" in row[8]:
+            notes = previousNotes + notes
+        if notes:
+            row[8] = row[8] + "\t" + " ".join(notes)
+        previousNotes = notes
 
 
 def addFullStanceNames(characterId, sectionTitles):
@@ -825,6 +848,29 @@ def transitionCode(characterId, moveName):
     return None
 
 
+def markerNotes(extra):
+    """The notes from the notes column, which marks a homing move with H and a bound with B, next to marks of
+    footnotes, e.g. "H,B", "B *15" or "(B)". The text of the footnotes is after a tab, see addFootnotes."""
+    marks, _, footnotes = extra.partition("\t")
+    markers = re.split(r"[\s,、()?]+", re.sub(r"[*※][\d,]+|↑", " ", marks))
+    notes = []
+    if "H" in markers:
+        notes.append("Homing")
+    if "B" in markers:
+        notes.append("Bound")
+    return notes + footnoteNotes(footnotes)
+
+
+def footnoteNotes(footnotes):
+    """The notes from the text of footnotes, for the properties which are always written the same way."""
+    notes = []
+    if "床破壊" in footnotes:
+        notes.append("Floor Break")
+    if "壁やられ強" in footnotes:
+        notes.append("Wall splat")
+    return notes
+
+
 def convertSeesaaCharacter(characterId, rows):
     moves = []
     previousCommand = ""
@@ -837,8 +883,7 @@ def convertSeesaaCharacter(characterId, rows):
         hit, hitNotes = convertFrame(hit)
         counterHit, counterHitNotes = convertFrame(counterHit)
         notes += hitLevelNotes + startupNotes + blockNotes + hitNotes + counterHitNotes
-        if extra.strip() == "B":
-            notes.append("Bound")
+        notes += markerNotes(extra)
         transition = transitionCode(characterId, name)
         if transition:
             notes.append(f"Transitions to {transition}")
@@ -1037,6 +1082,15 @@ def replaceFrames(moves, otherMoves, emptyCounterHitIsHit=False):
         if changed:
             replaced += 1
     return replaced
+
+
+def addHomingNotes(moves, wavuMoves):
+    """Adds the homing note to the moves which wavu marks as homing, as the japanese wikis miss some of them."""
+    homing = {move[0] for move in wavuMoves if "Homing" in move[7].split("\n")}
+    for move in moves:
+        notes = [note for note in move[7].split("\n") if note]
+        if move[0] in homing and "Homing" not in notes:
+            move[7] = "\n".join(notes + ["Homing"])
 
 
 def fillMissingFrames(moves, otherMoves):
@@ -1400,8 +1454,9 @@ def throwCommand(characterId, command, previousThrows, previousCommand):
     return converted, notes + restNotes
 
 
-def convertThrowRows(characterId, tables):
-    """Converts the tables of a throws page to moves in the same layout as the other moves."""
+def convertThrowRows(characterId, tables, footnotes=None):
+    """Converts the tables of a throws page to moves in the same layout as the other moves.
+    The footnotes are the footnotes of the page, e.g. {"*2": "床破壊誘発"}."""
     moves = []
     previousThrows = []
     previousCommand = ""
@@ -1424,6 +1479,8 @@ def convertThrowRows(characterId, tables):
             afterThrow = throwCell(row, header, "投げ後")
             notes += throwPosition(afterThrow)
             notes += moveNameNotes(row[0])
+            marks = re.findall(r"[*※]\d+", " ".join(row))
+            notes += footnoteNotes(" ".join((footnotes or {}).get(mark, "") for mark in marks))
             startup, startupNotes = convertStartup(throwCell(row, header, "発生"))
             # an alternative input which names another move, e.g. "Alt: スウェー中に1+4", is left out
             notes = [note for note in notes if not hasJapanese(note)]
@@ -1458,7 +1515,7 @@ def inatekkenThrows(characterId, cacheFolder):
         header = next((row for row in table["rows"] if row and row[0] == "技名"), None)
         if header and "抜け" in header:
             tables.append((header, [row for row in table["rows"] if len(row) >= 7 and row is not header and row[0] != "技名"]))
-    return convertThrowRows(characterId, tables)
+    return convertThrowRows(characterId, tables, inatekkenFootnotes(page[1]))
 
 
 # the order of the kinds of inputs, the same as in the T8 frame data, e.g. "f+" are the moves like "f+1"
@@ -1583,6 +1640,7 @@ def main():
             replaced = replaceFrames(moves, otherMoves, emptyCounterHitIsHit=name == "wavu") if otherMoves else 0
             if replaced:
                 replacedFrom.append(f"{replaced} from {name}")
+        addHomingNotes(moves, wavu or [])
 
         filledFrom = []
         fillSources = [("seesaawiki", withoutProblems(lambda: seesaaMoves(characterId, cacheFolder)))] if source == "inatekken" else []

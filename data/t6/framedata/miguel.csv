@@ -18,7 +18,7 @@ f+1;h;8;i10;+1;+8;;
 f+2;h;31;i15;-5;+9;;
 f+3;m;15;i19;-6;+6c;;
 f+3,4;m, m;15, 18;i20;-12;KND;JG;
-f+4;m;18;i18;-7;+8;;
+f+4;m;18;i18;-7;+8;;Homing
 f+4,2;m, m;18, 24;;-16;KND;;
 f+1+2;h;21;i14;-5;KND;;
 f+3+4;;;;;;;
@@ -74,7 +74,8 @@ b+3,f;m;33;i32~34;+3~+5;+5~+7c;KND;"* Low crush
 b+4;m;27;i19;-6;KND;;
 b+1+2;h;15;i1;-12;-4;KND;
 b+1+2,f;h;15;i11;-12;-4;KND;Transition to SAV
-uf+1;h;28;i35;+7;KND;;Low crush
+uf+1;h;28;i35;+7;KND;;"* Low crush
+* Bound"
 uf+1,f;h;28;i35;+7;KND;;"* Low crush
 * Bound
 * Transition to SAV"
@@ -91,7 +92,7 @@ f,F+1;h;8;i10;+1;+8;;
 f,F+2;m;18;i18;-13;+7;;
 f,F+2,1;m, h;18, 26;i17;-14;KND;;
 f,F+3;m;15;i20~22;-6~-4;+6~+8c;;
-f,F+4;m;18;i18;-7;+8;;
+f,F+4;m;18;i18;-7;+8;;Homing
 b,f+1;h;27;i21;-8;KND;;
 f,f,F+3;m;36;i26;+17g;KND;;"* Alternate input: f,f,F+3
 * Low crush"
@@ -140,7 +141,7 @@ SAV.3;m;14;i15;-5;+1;+3;
 SAV.3,f;m;14;i15;-5;+1;;Transition to SAV
 SAV.3,3;m, h;14, 20;i22;-9;-2;KND;
 SAV.3,3,f;m, h;14, 20;;-9;-2;KND;Transition to SAV
-SAV.4;h;21;i15;+0;KND;;
+SAV.4;h;21;i15;+0;KND;;Homing
 SAV.1+2;m;30 (5);i27;-18;KND;JG;
 SAV.1+2h;m;36 (5);;+2;KND;;Fully charged
 SAV.f+1+2;h;26;i16;+0c;+6c;+6;

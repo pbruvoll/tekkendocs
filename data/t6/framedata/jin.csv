@@ -21,7 +21,7 @@ Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;
 3;h;22;i14;-7;+4;;
 3,1;h, h;22, 8;;-1;+7;;
 3,1,4;h, h, l;22, 8, 21;;-12;+4;KND;
-4;h;21;i13;-8;+0;KND;
+4;h;21;i13;-8;+0;KND;Homing
 4~3;m;30;i24;-10~-11;KND;;"* Alternate input: ws4~3
 * Low crush
 * Recovers grounded"
@@ -85,7 +85,7 @@ b,f+2,3;m, m;18, 20;;-12;+;KND;
 ws1;m;12;i13;-6;+5;;
 ws1,2;m, m;12, 19;;-8;+3c;;
 ws2;m;16;i14;-12;JG;;
-ws3;m;24;i16;-9;KND;;
+ws3;m;24;i16;-9;KND;;Homing
 ws4;m;19;i11;-6;+5;;
 d+2;sm;26;i19;-12;+3;;"* High crush
 * Recovers crouching"
@@ -106,7 +106,7 @@ f,n,d,df~1;m;26;i20;-12;KND;;
 f,n,d,df+1;m;26;i19;-10;KND;;
 f,n,d,df~2;h;24;i16;-7;KND;;
 f,n,d,df+2;h;30;i14;+5;KND;;
-f,n,d,df+3;m;24;i19;-9;KND;;
+f,n,d,df+3;m;24;i19;-9;KND;;Homing
 f,n,d,df+4;m;19;i23;-31;KND;;
 f,n,d,df~4;l;19;i20;-31;KND;;
 f,n,d,df~4,3+4;l, m;19, 25;;-10~-11;KND;;"* Low crush
@@ -122,7 +122,8 @@ FC.4;l;12;i12;-15;-4;;"* High crush
 SS.1;h;8;i10;+1;+8;;
 SS.2;h;10;i10;+0;+9;;
 SS.3;h;22;i14;-7;+4;;
-SS.4;h;21;i13;-8;+0;KND;Low crush
+SS.4;h;21;i13;-8;+0;KND;"* Low crush
+* Homing"
 1+3;t;35 (12, 23);;+0;;;"* Throw break 1
 * Opponent recovers FUFT"
 2+4;t;35 (6, 9, 20);;-1;;;"* Throw break 2
@@ -139,7 +140,8 @@ df+2+3;t;40 (, , , );;;;;"* Throw break 2
 * Opponent recovers FDFT"
 uf+1+2;t;40 (2, 2, 4, 4, 28);;+0;;;"* Throw break 1+2
 * Side switch when broken
-* Opponent recovers FDFA"
+* Opponent recovers FDFA
+* Floor Break"
 qcb~1+3;t;35;;+0;;;"* Throw break 1
 * Opponent recovers FUFA"
 b+2+4;;0;;;;;"* Reversal

@@ -25,7 +25,8 @@ f+2,2,1;h, h, h;14, 16, 27;;-7;KND;;
 f+2,2,2;h, h, m;14, 16, 25;;-12c;+5c;KND;Bound
 f+2,2,2,b;h, h;14, 16;;-13;-4;;
 f+3;m;21;i15;-9;+1;+9;
-f+4;m;27;i18;-9;KND;;Low crush
+f+4;m;27;i18;-9;KND;;"* Low crush
+* Homing"
 f+1+2;h;30;i19~21;-1~+1;KND;;
 f+1+2*;h!;60;i29;KND;KND;;
 f+3+4;h;30;i38;+8;KND;;Low crush
@@ -96,7 +97,7 @@ b+3;h;27;i16;-10;KND;;
 b+4;h;36;i15;-6;KND;;"* Recovers back turned
 * Point blank"
 b+4;h;24;i16~21;-17~-12;KND;;Recovers back turned
-ub+1;h;36;i20;-5;+5;;
+ub+1;h;36;i20;-5;+5;;Homing
 ub;m;42;i48~52;-18;KND;;"* Alternate input: u or uf+2
 * Low crush
 * Recovers grounded"
@@ -113,7 +114,7 @@ uf+1+2;m;42;i35~60;+2c;KND;;Low crush
 uf+1+2*;!;54;i88~89;KND;KND;;Low crush
 uf+3+4;h;33;i23;-16;KND;;"* Low crush
 * Recovers grounded"
-f,F+1;m;27;i22;-5;KND;;
+f,F+1;m;27;i22;-5;KND;;Homing
 f,F+2;m;22;i32;+2c;+4c;;
 f,F+2,b;;;;;;;
 f,F+2,1;h;22, 30;;+2;KND;;
@@ -225,7 +226,8 @@ Back throw;t;60;;;;;"* Unbreakable
 * Opponent recovers face down sideways"
 b,f~1+2;t;75;;;;;"* Back throw only
 * Unbreakable
-* Opponent recovers face up sideways"
+* Opponent recovers face up sideways
+* Floor Break"
 db+1+2;t;40;;-6;;;"* Throw break 1+2
 * Opponent recovers FUFT"
 df+2+3;t;40;;+0;;;"* Throw break 2
@@ -238,9 +240,11 @@ ub+1+2,b;t;40;;;;;"* Alternate input: u+1+2,b
 qcb~1+2;t;50;;-6;;;"* Throw break 1+2
 * Side switch
 * Opponent recovers FUFA
-* Recovers BT"
+* Recovers BT
+* Floor Break"
 db,f~2+4;t;52;;+0;;;"* Throw break 2
-* Opponent recovers FUFA"
+* Opponent recovers FUFA
+* Floor Break"
 f,b,db,d,df,f+1;t;55 (35, 20);;-8;;;"* Throw break 1
 * Side switch"
 f,b,db,d,df,f+2;t;50;;;;;"* Throw break 2
@@ -250,7 +254,8 @@ f,f,F+2+4;t;40;;-5;;;"* Alternate input: f,f,F+2+4
 * Side switch when broken
 * Opponent recovers FUFT"
 FC.db,d,db+1+2;t;45;;-6;;;"* Throw break 1+2
-* Opponent recovers face up sideways"
+* Opponent recovers face up sideways
+* Floor Break"
 qcf+1;t;30;;+0;;;"* Throw break 1
 * Opponent recovers FUFT"
 qcf+1,1+2,1+2;t;35;;+0;;;"* Throw break 2
@@ -259,7 +264,8 @@ qcf+1,1+2,3,4,1+2;t;45 (30, 15);;-6;;;"* Throw break 1+2
 * Opponent recovers face down sideways"
 d+1+3;t;45;;;;;"* Against a crouching opponent
 * Low throw
-* Throw break 1"
+* Throw break 1
+* Floor Break"
 d+2+4;t;45;;+0;;;"* Against a crouching opponent
 * Low throw
 * Throw break 2
@@ -269,7 +275,8 @@ b~1+3;;25;;;;;"* Against 1 attacks
 * Reversal
 * Unbreakable
 * Side switch
-* Opponent recovers FUFA"
+* Opponent recovers FUFA
+* Floor Break"
 b~2+4;;25;;;;;"* Against 3 attacks
 * Reversal
 * Unbreakable

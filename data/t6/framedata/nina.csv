@@ -69,7 +69,7 @@ df+3,3,3;m, h, h;15, 7, 9;;-14;-3;;
 df+3,3,3,4;m, h, h, h;15, 7, 9, 18;;-12;KND;;
 df+3,4;m, h;15, 18;;-12;KND;;
 df+4;m;18;i12;-4;+7;;
-df+1+2;m, m;4, 7;i16;-4;+7;KND (+8);
+df+1+2;m, m;4, 7;i16;-4;+7;KND (+8);Homing
 d+1;sm;6;i10;-5;+6;;"* Alternate input: FC.1
 * Recovers crouching"
 d+1,2;sm, sm;6, 9;;-6;+5;;"* Alternate input: FC.1,2
@@ -97,7 +97,8 @@ d+4,1,d;l;8;i12;-13;-2;;"* Alternate input: u
 db+1;sm;6;i10;-5;+6;;"* Alternate input: d+1
 * High crush
 * Recovers crouching"
-db+2;m;24;i24;-11;KND;;High crush
+db+2;m;24;i24;-11;KND;;"* High crush
+* Homing"
 db+3;l;16;i20;-13;+6c;;
 db+4;l;6;i16;-10;+1;;"* High crush
 * Recovers grounded"
@@ -121,7 +122,7 @@ b+1+4;m, m;4, 16;i16;-17;KND;;
 uf+1;m;21;i26;-5;KND;;"* Low crush
 * Recovers crouching"
 uf+2;m;15;i18;-10;+1;;
-uf+2,1;m, m;15, 19;;-13;+1c;KND;
+uf+2,1;m, m;15, 19;;-13;+1c;KND;Bound
 ub+1;m;14;i18;-8;+3;;"* Alternate input: u+1
 * Low crush"
 ub+2;h;20;i15;-12;+9;;Alternate input: u+2
@@ -239,7 +240,8 @@ df+1+3;t;37 (14, 23);;-2;;;"* Throw break 1
 df+2+4;t;37 (14, 23);;-2;;;"* Throw break 2
 * Opponent recovers FDFT"
 df,df~1;t;43 (33, 10);;-6;;;"* Throw break 1+2
-* Opponent recovers face up sideways"
+* Opponent recovers face up sideways
+* Floor Break"
 uf~1+2;t;40 (20, 20);;+0;-22;;"* Throw break 1+2
 * Opponent recovers FUFT"
 b+1+3;;25+;;-1;;;"* Reversal

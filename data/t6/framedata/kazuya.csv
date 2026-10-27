@@ -26,7 +26,7 @@ f+4;m;24;i19;+3;+7c;KND;Bound
 f+1+2;m;24;i25;-16;KND;;
 f+1+2,2;m, m;24, 24;;-13;KND;;
 df+1;m;13;i16;-7;+9;;
-df+1,2;m, h;13, 20;;+1c;+2c;+5;
+df+1,2;m, h;13, 20;;+1c;+2c;+5;Bound
 df+1,4;m, h;13, 18;;-7;+2 (KND);;
 df+1,f+2;m, m;13, 26;;-12;KND;;
 df+2;m;24;i14~15;-12~-11;+5~+6;KND;
@@ -76,7 +76,7 @@ f,f,F+3;m;36;i25;+17g;KND;;"* Alternate input: f,f,F+3
 ws1;m;12;i13;-3;+5;;
 ws1,2;m, m;12, 14;;-13;JG;;
 ws2;m;30;i16;-18;KND;;
-ws3;m;24;i21;-9;KND;;
+ws3;m;24;i21;-9;KND;;Homing
 ws4;m;15;i11;-3;+8;;
 ws4,4;m, m;15, 19;;-15~-14;-4~-3c;;
 ws1+2;m;14;i12;-2;+9;;
@@ -132,14 +132,16 @@ f,n,d,df+4,1;l, m;18, 32;;-15;KND;;
 * Side switch
 * Opponent recovers FUFA"
 Left throw;t;40;;-4;;;"* Throw break 1
-* Opponent recovers FUFT"
+* Opponent recovers FUFT
+* Floor Break"
 Right throw;t;40;;-4;;;"* Throw break 2
 * Opponent recovers FDFT"
 Back throw;t;50;;;;;"* Unbreakable
 * Opponent recovers FUFA"
 f,F+1+2;t;35 (15, 20);i12;+0;;;"* Throw break 1+2
 * Side switch when broken
-* Opponent recovers FUFT"
+* Opponent recovers FUFT
+* Wall splat"
 FC.df,d,df~1+2;t;40 (20, 20);i12;-6;;;"* Throw break 1+2
 * Opponent recovers FDFT"
 db;t;5;i26;-6;;;"* Alternate input: d or df+1+2 or FC.1+2
