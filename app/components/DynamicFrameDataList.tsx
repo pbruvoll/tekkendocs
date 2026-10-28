@@ -1,5 +1,6 @@
 import { memo, useMemo } from 'react';
 import { Link, useSearchParams } from 'react-router';
+import { CompactMoveList } from '~/features/compactMoveList/CompactMoveList';
 import { type FavoriteMoves } from '~/types/FavoriteMoves';
 import { type GameRouteId } from '~/types/GameRouteId';
 import { type Move } from '~/types/Move';
@@ -86,6 +87,8 @@ export const DynamicFrameDataList = memo(function DynamicFrameDataList({
         return MoveCardWithVideoList;
       case 'simple':
         return SimpleMovesTable;
+      case 'compact':
+        return CompactMoveList;
       case 'default':
         return FrameDataTable;
     }
