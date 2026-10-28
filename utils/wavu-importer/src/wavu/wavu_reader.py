@@ -81,7 +81,10 @@ def _normalize_name(data: str) -> str:
 def _normalize_notes(data: str) -> str:
     notes = html.unescape(_normalize_data(data))
     notes = BeautifulSoup(notes, features="lxml").get_text()
-    return notes.replace("* \n", "* ").strip()
+    notes = notes.replace("* \n", "* ")
+    # wavu leaves a bare "*" behind when a note bullet is empty
+    lines = [line for line in notes.split("\n") if not re.fullmatch(r"\s*\*+\s*", line)]
+    return "\n".join(lines).strip()
 
 
 # wavu has no value for the field, so there is no reason to store one
