@@ -186,11 +186,11 @@
     "id": "Alisa-2+3",
     "input": "2+3",
     "name": "Heat Burst",
-    "notes": "* Heat Burst\n* Cancel to r45 with b,b on frame 42\n* 2 chip damage on block\n* 12 chip damage on hit\n* Only deals recoverable damage\n* Cannot cause a K.O.",
+    "notes": "* Heat Burst\n* 46f timestop at frame 14 of activation (t92)\n* Cancel to r87 with b,b on frame 42 (frame 28 of timestop)\n** t41 r27 effective recovery\n* 20f timestop on block or hit\n* 2 chip damage on block\n* 12 chip damage on hit\n* Only deals recoverable damage\n* Cannot cause a K.O.",
     "recv": "r30",
     "startup": "i16",
     "target": "m",
-    "tot": "92"
+    "tot": "46"
   },
   {
     "block": "-10",
@@ -1611,7 +1611,7 @@
   {
     "block": "-9",
     "damage": ",14",
-    "hit": "+15d (+7)",
+    "hit": "+15a (+7)",
     "id": "Alisa-f+4,1",
     "input": ",1",
     "notes": "* Balcony Break\n* Head\n* Combo from 1st hit\n* Interrupt with i2 from 1st block",
@@ -1622,17 +1622,17 @@
     "tot": "91"
   },
   {
-    "block": "-12~+26g",
+    "block": "-14~+26g",
     "damage": ",24 (19)",
-    "hit": "+1a",
+    "hit": "-1a~+39a",
     "id": "Alisa-f+4,1,4",
     "input": ",4",
     "name": "Logic Bomb",
-    "notes": "* Aerial combo from 2nd hit\n* Move cannot be interrupted\n* i25-26 bounce, i25-26 travel, \n(---)/i35(27-65) travel then explosion , \n-3(-11) and -1(-9) for explosion then hit, respectively",
+    "notes": "* Projectile\n* Airborne combo from 2nd hit (-9a~+29a (-17~+21))\n* Move cannot be interrupted\n* Typically -12 on block from 2nd block\n* Typically -1a (-9) on hit from 2nd hit\n* Kick is i25~26 and projectile is i27~65\n** Kick is -14~-13/-1a~+0a r40",
     "num": "32",
     "parent": "Alisa-f+4,1",
     "recv": "r1",
-    "startup": ",i27~65",
+    "startup": ",i25~26/i27~65",
     "target": ",m",
     "tot": "109",
     "video": "File:t8-p2-alisa-f+4,1,4.mp4"
@@ -1986,17 +1986,17 @@
   {
     "alt": "R.DES.df+1+2",
     "block": "-18",
-    "crush": "pc8~",
+    "crush": "fs21~48",
     "damage": "55+",
     "hit": "+0d",
     "id": "Alisa-R.df+1+2",
     "input": "R.df+1+2",
     "name": "Radiant Pegasus Bomb",
-    "notes": "* Rage Art\n* Removes Recoverable Health\n* Reversal Break\n* Damage increases with lower health, maximum 82\n* Freezes match timer on activation and on hit\n* Restores recoverable health on hit\n* Transition to attack throw on hit\n* Consumes Rage",
-    "recv": "r39",
+    "notes": "* Rage Art\n* Removes Recoverable Health\n* Reversal Break\n* Damage increases with lower health, maximum 82\n* Freezes match timer on activation equal to (total frame idle recovery - 5F) or 57F when canceled by any action\n* Freezes match timer on hit by 15F\n* 114F timestop on activation\n* 20F timestop on block\n* r24 opponent blockstun (r44 effective blockstun w/ timestop)\n* Restores 13 recoverable health on hit\n* Transition to attack throw on hit\n* Consumes Rage",
+    "recv": "r42",
     "startup": "i20",
     "target": "m,t",
-    "tot": "173"
+    "tot": "86/62"
   },
   {
     "block": "-3",

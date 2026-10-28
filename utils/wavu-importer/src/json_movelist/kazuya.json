@@ -176,13 +176,14 @@
     "video": "File:t8-p2-kazuya-1,2,4,3.mp4"
   },
   {
-    "block": "+0",
+    "alias": "Double Face Kick",
+    "block": "+0 BT",
     "damage": "35",
     "hit": "+2d",
     "id": "Kazuya-1+3",
     "input": "1+3",
     "name": "Double High Sweep",
-    "notes": "* Homing\n* Throw break: 1 or 2\n* Recovers BT on break",
+    "notes": "* Homing\n* Throw break: 1 or 2\n* Recovers BT on break\n* Opponent recovers FUFT",
     "num": "88",
     "recv": "r31",
     "startup": "i12~14",
@@ -228,20 +229,20 @@
     "id": "Kazuya-2+3",
     "input": "2+3",
     "name": "Heat Burst",
-    "notes": "* Heat Burst\n* Cancel to r45 with b,b on frame 42\n* 2 chip damage on block\n* 12 chip damage on hit\n* Only deals recoverable damage\n* Cannot cause a K.O.",
+    "notes": "* Heat Burst\n* 46f timestop at frame 14 of activation (t92)\n* Cancel to r87 with b,b on frame 42 (frame 28 of timestop)\n** t41 r27 effective recovery\n* 20f timestop on block or hit\n* 2 chip damage on block\n* 12 chip damage on hit\n* Only deals recoverable damage\n* Cannot cause a K.O.",
     "recv": "r30",
     "startup": "i16",
     "target": "m",
-    "tot": "92"
+    "tot": "46"
   },
   {
-    "block": "+0",
+    "block": "+0 BT",
     "damage": "35",
     "hit": "+0d",
     "id": "Kazuya-2+4",
     "input": "2+4",
     "name": "Lightning Crash",
-    "notes": "* Homing\n* Throw break: 1 or 2",
+    "notes": "* Homing\n* Throw break: 1 or 2\n* Side switch\n* Recovers BT on break\n* Opponent recovers FUFR",
     "num": "89",
     "recv": "r31",
     "startup": "i12~14",
@@ -511,9 +512,8 @@
     "id": "Kazuya-Back throw",
     "input": "Back throw",
     "name": "Reverse Neck Throw",
-    "notes": "* Throw Break: none",
+    "notes": "* Throw Break: none\n* Side switch\n* Opponent recovers FUFA",
     "num": "92",
-    "startup": "i12~14",
     "target": "th(h)"
   },
   {
@@ -1259,10 +1259,12 @@
     "id": "Kazuya-FC.db+1+2",
     "input": "FC.db+1+2",
     "name": "Gates of Hell",
-    "notes": "Throw break: 1+2",
+    "notes": "* Throw break: 1+2\n* Side switch\n* Opponent recovers in FDFT",
     "num": "94",
+    "recv": "r27",
     "startup": "i12~14",
     "target": "th(h)",
+    "tot": "39",
     "video": "File:t8-p2-kazuya-fc.db+1+2.mp4"
   },
   {
@@ -1327,6 +1329,7 @@
     "id": "Kazuya-f,F+4",
     "input": "f,F+4",
     "name": "Devil's Steel Pedal",
+    "notes": "4f timestop on CH",
     "num": "56",
     "recv": "r29",
     "startup": "i17~18",
@@ -1559,9 +1562,8 @@
     "id": "Kazuya-Left throw",
     "input": "Left throw",
     "name": "Steel Pedal Drop",
-    "notes": "* Throw break: 1\n* Floor Break",
+    "notes": "* Floor Break\n* Throw break: 1\n* Opponent recovers FUFT",
     "num": "90",
-    "startup": "i12~14",
     "target": "th(h)"
   },
   {
@@ -1576,16 +1578,17 @@
   },
   {
     "block": "-18",
-    "crush": "pc8~",
+    "crush": "pc8~20",
     "damage": "55+",
     "hit": "+0d",
     "id": "Kazuya-R.df+1+2",
     "input": "R.df+1+2",
     "name": "Demonic Catastrophe",
-    "notes": "* Rage Art\n* Removes Recoverable Health\n* Reversal Break\n* Damage increases with lower health, maximum 82\n* Freezes match timer on activation and on hit\n* Restores recoverable health on hit\n* Transition to attack throw on hit\n* Consumes Rage",
-    "recv": "r39",
+    "notes": "* Rage Art\n* Removes Recoverable Health\n* Reversal Break\n* Damage increases with lower health, maximum 82\n* Freezes match timer on activation equal to (total frame idle recovery - 5F) or 57F when canceled by any action\n* Freezes match timer on hit by 15F\n* 114F timestop on activation\n* 20F timestop on block\n* r24 opponent blockstun (r44 effective blockstun w/ timestop)\n* Restores 13 recoverable health on hit\n* Transition to attack throw on hit\n* Consumes Rage",
+    "recv": "r42",
     "startup": "i20",
-    "target": "m,t"
+    "target": "m,t",
+    "tot": "62"
   },
   {
     "block": "-3",
@@ -1594,9 +1597,8 @@
     "id": "Kazuya-Right throw",
     "input": "Right throw",
     "name": "Skull Smash",
-    "notes": "Throw break: 2",
+    "notes": "* Throw break: 2\n* Opponent recovers FDFT",
     "num": "91",
-    "startup": "i12~14",
     "target": "th(h)"
   },
   {
@@ -1699,10 +1701,12 @@
     "id": "Kazuya-uf+1+2",
     "input": "uf+1+2",
     "name": "Stonehead",
-    "notes": "* Throw break: 1+2\n* Balcony Break\n* Side switch on break\n* 15 additional damage on wall hit",
+    "notes": "* Balcony Break\n* Throw break: 1+2\n* Side switch on break\n* 15 damage on wall hit",
     "num": "93",
+    "recv": "r27",
     "startup": "i12~14",
     "target": "th(h)",
+    "tot": "39",
     "video": "File:t8-p2-kazuya-uf+1+2.mp4"
   },
   {

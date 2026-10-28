@@ -231,11 +231,11 @@
     "id": "Steve-2+3",
     "input": "2+3",
     "name": "Heat Burst",
-    "notes": "* Heat Burst\n* Cancel to r45 with b,b on frame 42\n* 2 chip damage on block\n* 12 chip damage on hit\n* Only deals recoverable damage\n* Cannot cause a K.O.",
+    "notes": "* Heat Burst\n* 46f timestop at frame 14 of activation (t92)\n* Cancel to r87 with b,b on frame 42 (frame 28 of timestop)\n** t41 r27 effective recovery\n* 20f timestop on block or hit\n* 2 chip damage on block\n* 12 chip damage on hit\n* Only deals recoverable damage\n* Cannot cause a K.O.",
     "recv": "r30",
     "startup": "i16",
     "target": "m",
-    "tot": "92"
+    "tot": "46"
   },
   {
     "block": "-3",
@@ -371,11 +371,12 @@
     "id": "Steve-b+1",
     "input": "b+1",
     "name": "Quick Hook",
-    "notes": "* Transition to r16? FLK with B (-1/+10/+69)\n** r16? FLK FC cancel?",
+    "notes": "* Transition to FLK r16 with B (-1/+10/+69)\n** Cannot block i12 on block (must cancel into FC to block)\n* Recovers 5F faster on hit (t38 r24)\n* 4f timestop on CH",
     "num": "51",
-    "recv": "r38?",
+    "recv": "r29",
     "startup": "i13~14",
     "target": "h",
+    "tot": "43",
     "video": "File:t8-p2-steve-b+1.mp4"
   },
   {
@@ -399,12 +400,13 @@
     "id": "Steve-b+1,2",
     "input": ",2",
     "name": "Quick Draw",
-    "notes": "* Homing\n* Strong Aerial Tailspin\n* Combo from 1st hit\n* Interrupt with i1 from 1st block\n* Transition to LNH\n* Transition to r34? standing with b (-1/+4)",
+    "notes": "* Homing\n* Strong Aerial Tailspin\n* Transition to LNH\n* Combo from 1st hit\n* Interrupt with i1 from 1st block\n* Transition to standing r34 with b (-1/+4)",
     "num": "52",
     "parent": "Steve-b+1",
-    "recv": "r30? LNH",
+    "recv": "r30 LNH",
     "startup": "i17~18",
     "target": ",h",
+    "tot": "62",
     "video": "File:t8-p2-steve-b+1,2.mp4"
   },
   {
@@ -415,10 +417,12 @@
     "id": "Steve-b+1,2~1",
     "input": ",2~1",
     "name": "Swindler",
-    "notes": "* Interrupt with i14 from 1st block\n* Interrupt with i3 from 1st hit",
+    "notes": "* Interrupt with i14 from 1st block\n* Interrupt with i3 from 1st hit\n* 4f timestop on CH",
     "parent": "Steve-b+1",
+    "recv": "r26",
     "startup": "i30~31",
-    "target": ",m"
+    "target": ",m",
+    "tot": "71"
   },
   {
     "block": "-4",
@@ -491,10 +495,10 @@
     "id": "Steve-b+3+4",
     "input": "b+3+4",
     "name": "Flicker Stance",
-    "notes": "* Transition to FLK\n* Actionable for 64F\n* Auto i5? high and mid neutral block high and mid?\n* Can cancel immediately into FC with db after b+3+4 input (3F iWS)\n* Can cancel immediately into r6 DCK with f+3_4\n* Can cancel immediately into r10 SWY with b+3_4\n* Transition to r8 LWV with 3 (steps left)\n* Transition to r8 RWV with 4 (steps right)",
+    "notes": "* Transition to FLK\n* i16 standing block from manual transition\n* Cancel to r1 FC with db\n* Cancel to r6 DCK with f+3_4\n* Cancel to r10 SWY with b+3_4\n* Transition to r8 LWV with 3\n* Transition to r8 RWV with 4\n* Stance moves can be delayed by 55F",
     "recv": "r5 FLK",
     "target": "sp",
-    "tot": "50"
+    "tot": "70"
   },
   {
     "crush": "cs1~25",
@@ -1102,10 +1106,11 @@
     "hit": "+7",
     "id": "Steve-FLK.1",
     "input": "FLK.1",
-    "notes": "* Transition to r18? FLK with b (-1/+10/+10)\n* Transition to r1? ALB with 3+4 with 2?F delay (+17g/+28g/+28) \n* r18? FLK FC cancel?",
+    "notes": "* Transition to r20 FLK with b (-1/+10g/+10)\n* Transition to r2 ALB with 3+4 (+17g/+28g/+28)\n** ALB Transition can be delayed by 62F when transitioning into FLK",
     "recv": "r23",
     "startup": "i12",
-    "target": "h"
+    "target": "h",
+    "tot": "35"
   },
   {
     "block": "-9",
@@ -1113,11 +1118,12 @@
     "hit": "+0",
     "id": "Steve-FLK.1,1",
     "input": ",1",
-    "notes": "* Combo from 1st CH with 3F delay\n* Move can be delayed by 3F\n* Jail from 1st block with ?F delay\n* Duckable on block\n* Transition to r18? FLK with b (-4/+5/+5)\n* Transition to r1? ALB with 3+4 (+14g/+23g/+23)\n* r18? FLK FC cancel?",
+    "notes": "* Combo from 1st CH with 3F delay\n* Jails attack inputs from 1st block with 3F delay\n* Duckable\n* Transition to r20 FLK with b (-4/+5)\n* Transition to r2 ALB with 3+4 (+14g/+23g/+23)\n** ALB Transition can be delayed by 62F when transitioning into FLK",
     "parent": "Steve-FLK.1",
     "recv": "r25",
     "startup": "i15",
-    "target": ",h"
+    "target": ",h",
+    "tot": "52"
   },
   {
     "block": "-9",
@@ -1125,11 +1131,12 @@
     "hit": "+0",
     "id": "Steve-FLK.1,1,1",
     "input": ",1",
-    "notes": "* Combo from 2nd CH with 1F delay\n* Jail from 2nd block with 1F delay\n* Duckable on block\n* Move can be delayed by 1F\n* Transition to r18? FLK with b (-4/+5/+5)\n* Transition to r1? ALB with 3+4 (+14g/+23g/+23)",
+    "notes": "* Combo from 2nd CH with 1F delay\n* Jails from 2nd hit with 1F delay\n* Jails attack inputs from 2nd block with 1F delay\n* Duckable\n* Transition to r20 FLK with b (-4/+5)\n* Transition to r2 ALB with 3+4 (+14g/+23)\n** ALB Transition can be delayed by 62F when transitioning into FLK",
     "parent": "Steve-FLK.1,1",
     "recv": "r25",
     "startup": "i15",
-    "target": ",h"
+    "target": ",h",
+    "tot": "67"
   },
   {
     "block": "-12",
@@ -1138,11 +1145,13 @@
     "id": "Steve-FLK.1,1,1,2",
     "input": ",2",
     "name": "Spiteful Combination",
-    "notes": "* Tornado\n* Combo from 3rd hit\n* Interrupt with i4 from 3rd block",
+    "notes": "* Tornado\n* Balcony Break\n* Combo from 3rd hit with 1F delay\n* Interrupt with i4 from 3rd block\n* Move cannot be delayed\n* Input can be delayed by 1F",
     "num": "125",
     "parent": "Steve-FLK.1,1,1",
+    "recv": "r31",
     "startup": "i20~22",
     "target": ",m",
+    "tot": "96",
     "video": "File:t8-p2-steve-flk.1,1,1,2.mp4"
   },
   {
@@ -1151,36 +1160,28 @@
     "hit": "+17a (+0)",
     "id": "Steve-FLK.1,1,2",
     "input": ",2",
-    "notes": "* Tornado\n* Combo from 2nd CH\n* Same hit as (FLK.1,1,1),2\n* Interrupt with i3 from 2nd block",
+    "notes": "* Tornado\n* Balcony Break\n* Combo from 2nd CH\n* Interrupt with i3 from 2nd block",
     "parent": "Steve-FLK.1,1",
+    "recv": "r31",
     "startup": "i20~22",
-    "target": ",m"
+    "target": ",m",
+    "tot": "80",
+    "video": "File:t8-p2-steve-flk.1,1,1,2.mp4"
   },
   {
     "alt": "FLK.1,1,u+1",
-    "block": "+0",
-    "ch": "+42a",
-    "damage": ",23",
-    "hit": "+18g",
     "id": "Steve-FLK.1,1,d+1",
     "input": ",d+1",
-    "notes": "* Balcony Break\n* Combo from 2nd CH with 9F delay\n* Jail from 2nd block with no delay\n* Duckable on block\n* Move can be delayed by 11F\n* Same hit as (FLK.1),d+1",
+    "notes": "* Balcony Break\n* Combo from 2nd CH with 10F delay\n* Jail from 2nd hit with 11F delay\n* Jails attack inputs from 2nd block with 1F delay  (crouch assist bufferable)\n* Duckable",
     "parent": "Steve-FLK.1,1",
-    "recv": "r23",
-    "startup": "i15~17",
-    "target": ",h"
+    "tot": "67"
   },
   {
-    "block": "-5",
-    "ch": "+10d",
-    "damage": ",17",
-    "hit": "+0c",
     "id": "Steve-FLK.1,1,f+1",
     "input": ",f+1",
-    "notes": "* Spike\n* Combo from 2nd CH with 9F delay\n* Jail from 2nd block with no delay\n* Move can be delayed by 11F\n* Same hit as (FLK.1),f+1",
+    "notes": "* Spike\n* Combo from 2nd CH with 10F delay\n* Jails attack inputs from 2nd block with 1F delay\n* Move can be delayed by 11F",
     "parent": "Steve-FLK.1,1",
-    "startup": "i15",
-    "target": ",m"
+    "tot": "72"
   },
   {
     "block": "-6",
@@ -1189,10 +1190,12 @@
     "id": "Steve-FLK.1+2",
     "input": "FLK.1+2",
     "name": "Griffin Throw",
-    "notes": "* 1+2 for throw break",
+    "notes": "* 1+2 for throw break\n* Side switch\n* Opponent recovers FUFA",
     "num": "129",
+    "recv": "r21",
     "startup": "i12~14",
     "target": "th",
+    "tot": "35",
     "video": "File:t8-p2-steve-flk.1+2.mp4"
   },
   {
@@ -1201,10 +1204,13 @@
     "hit": "+17a (+0)",
     "id": "Steve-FLK.1,2",
     "input": ",2",
-    "notes": "* Tornado\n* Combo from 1st CH\n* Same hit as (FLK.1,1,1),2",
+    "notes": "* Tornado\n* Combo from 1st CH\n* Move cannot be interrupted",
     "parent": "Steve-FLK.1",
+    "recv": "r31",
     "startup": "i20~22",
-    "target": ",m"
+    "target": ",m",
+    "tot": "65",
+    "video": "File:t8-p2-steve-flk.1,1,1,2.mp4"
   },
   {
     "alt": "FLK.1,u+1",
@@ -1215,12 +1221,13 @@
     "id": "Steve-FLK.1,d+1",
     "input": ",d+1",
     "name": "Power Hook Combo",
-    "notes": "* Balcony Break\n* Combo from 1st CH with 14F delay\n* Jail from 1st block with ?F delay (crouch assist bufferable)\n* Duckable on block\n* Move can be delayed by 14F",
+    "notes": "* Balcony Break\n* Combo from 1st CH with 14F delay\n* Jail from 1st hit with 14F delay\n* Jails attack inputs from 1st block with 4F delay (crouch assist bufferable)\n* Duckable",
     "num": "127",
     "parent": "Steve-FLK.1",
     "recv": "r23",
     "startup": "i15~17",
     "target": ",h",
+    "tot": "52",
     "video": "File:t8-p2-steve-flk.1,d+1.mp4"
   },
   {
@@ -1231,25 +1238,29 @@
     "id": "Steve-FLK.1,f+1",
     "input": ",f+1",
     "name": "Tempest Combo",
-    "notes": "* Spike\n* Combo from 1st CH with 14F delay\n* Jail from 1st block with 3F delay\n* Move can be delayed by 14F",
+    "notes": "* Spike\n* Combo from 1st CH with 14F delay\n* Jails attack inputs from 1st block with 4F delay",
     "num": "126",
     "parent": "Steve-FLK.1",
+    "recv": "r30",
     "startup": "i15",
     "target": ",m",
+    "tot": "57",
     "video": "File:t8-p2-steve-flk.1,f+1.mp4"
   },
   {
     "block": "-5c",
     "ch": "+42a",
     "damage": "21",
-    "hit": "+7d",
+    "hit": "+7a",
     "id": "Steve-FLK.2",
     "input": "FLK.2",
     "name": "Fly Swatter",
     "notes": "* Spike\n* 6 chip damage on block",
     "num": "128",
+    "recv": "r32",
     "startup": "i18~19",
     "target": "m",
+    "tot": "51",
     "video": "File:t8-p2-steve-flk.2.mp4"
   },
   {
@@ -1262,8 +1273,10 @@
     "name": "British Lancer",
     "notes": "* Tornado\n* Balcony Break\n* +0 frame advantage and 8 chip damage on block after absorbing an attack in power crush state",
     "num": "130",
+    "recv": "r29",
     "startup": "i14~15",
     "target": "h",
+    "tot": "44",
     "video": "File:t8-p2-steve-flk.b+2.mp4"
   },
   {
@@ -1275,7 +1288,7 @@
     "id": "Steve-FLK.u+2",
     "input": "FLK.u+2",
     "name": "Dreadnought Uppercut",
-    "notes": "* Tornado",
+    "notes": "* Tornado\n* Jab evasion (frames 11 to 14?)",
     "num": "62",
     "recv": "r34",
     "startup": "i17~19",
@@ -1522,12 +1535,12 @@
   },
   {
     "block": "-11c",
-    "damage": "16",
+    "damage": "16 (12)",
     "hit": "+2",
     "id": "Steve-OTG.d+1+2",
     "input": "OTG.d+1+2",
     "name": "Cheapshot",
-    "notes": "* Recovers in crouch\n* +0d (-8) on grounded hit",
+    "notes": "* +0d (-8) on grounded hit",
     "num": "142",
     "recv": "r30",
     "startup": "i17",
@@ -1894,16 +1907,17 @@
   },
   {
     "block": "-18",
-    "crush": "pc8~",
+    "crush": "pc8~20",
     "damage": "55+",
     "hit": "+0d",
     "id": "Steve-R.df+1+2",
     "input": "R.df+1+2",
     "name": "Dear Land of Hope",
-    "notes": "* Rage Art\n* Removes Recoverable Health\n* Reversal Break\n* Damage increases with lower health, maximum 82\n* Freezes match timer on activation and on hit\n* Restores recoverable health on hit\n* Transition to attack throw on hit\n* Consumes Rage",
-    "recv": "r39",
+    "notes": "* Rage Art\n* Removes Recoverable Health\n* Reversal Break\n* Damage increases with lower health, maximum 82\n* Freezes match timer on activation equal to (total frame idle recovery - 5F) or 57F when canceled by any action\n* Freezes match timer on hit by 15F\n* 114F timestop on activation\n* 20F timestop on block\n* r24 opponent blockstun (r44 effective blockstun w/ timestop)\n* Restores 13 recoverable health on hit\n* Transition to attack throw on hit\n* Consumes Rage",
+    "recv": "r42",
     "startup": "i20",
-    "target": "m,t"
+    "target": "m,t",
+    "tot": "62"
   },
   {
     "block": "-3",
@@ -2024,7 +2038,7 @@
     "id": "Steve-u+2",
     "input": "u+2",
     "name": "Dreadnought Uppercut",
-    "notes": "* Tornado",
+    "notes": "* Tornado\n* Jab evasion (frames 11 to 14?)",
     "num": "62",
     "recv": "r34",
     "startup": "i17~19",
@@ -2082,7 +2096,7 @@
     "video": "File:t8-p2-steve-ub+3.mp4"
   },
   {
-    "alt": "PAB.uf+1",
+    "alt": "* PAB.uf+1\n* FLK.uf+1",
     "block": "-6",
     "crush": "js9~",
     "damage": "18",
@@ -2115,6 +2129,7 @@
     "video": "File:t8-p2-steve-uf+1+2.mp4"
   },
   {
+    "alt": "FLK.uf+2",
     "block": "-14",
     "crush": "js9~",
     "damage": "20",

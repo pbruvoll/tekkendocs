@@ -1,6 +1,9 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Transitions;Name;Recovery;Recovery state;Image;Video;Wavu id;Character id
 2+3;m;"[12;12]";i16;+1;+2c;;"* Heat Burst
-* Cancel to r45 with b,b on frame 42
+* 46f timestop at frame 14 of activation (t92)
+* Cancel to r87 with b,b on frame 42 (frame 28 of timestop)
+** t41 r27 effective recovery
+* 20f timestop on block or hit
 * 2 chip damage on block
 * 12 chip damage on hit
 * Only deals recoverable damage
@@ -30,11 +33,15 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Removes Recoverable Health
 * Reversal Break
 * Damage increases with lower health, maximum 82
-* Freezes match timer on activation and on hit
-* Restores recoverable health on hit
+* Freezes match timer on activation equal to (total frame idle recovery - 5F) or 57F when canceled by any action
+* Freezes match timer on hit by 15F
+* 114F timestop on activation
+* 20F timestop on block
+* r24 opponent blockstun (r44 effective blockstun w/ timestop)
+* Restores 13 recoverable health on hit
 * Transition to attack throw on hit
 * Consumes Rage
-* Power crush 8~";ra rbr pc8~;;Dear Land of Hope;39;;;;Steve-R.df+1+2;steve
+* Power crush 8~20";ra rbr pc8~20;;Dear Land of Hope;42;;;;Steve-R.df+1+2;steve
 1;h;5;i10;+1;+8;;Recovers 2f faster on hit or block (t27 r17);;;Jab;19;;;File:t8-p2-steve-1,1.mp4;Steve-1;steve
 1,1;h, h;5, 7;i10, i15;-3;+3;;"* Combo from 1st hit with 4F delay
 * Jails from 1st block with 2F delay
@@ -235,16 +242,19 @@ db+3,2;l, h;10, 10;i16, i15~16;-6;+8;;"* Combo from 1st hit
 * Transition to r34 standing with b (-31/-10/+4)";;LNH;Foot Stomp Right Hook;30;LNH;;File:t8-p2-steve-db+3,2.mp4;Steve-db+3,2;steve
 db+1+2;m;21;i28~29;-13;+29a (+21);;"* -9 frame advantage and 8 chip damage on block after absorbing an attack in power crush state
 * Power crush 7~27";pc7~27;;Stun Gun;38?;;;File:t8-p2-steve-db+1+2.mp4;Steve-db+1+2;steve
-b+1;h;10;i13~14;-14;+2;+61a;"* Transition to r16? FLK with B (-1/+10/+69)
-** r16? FLK FC cancel?";;FLK;Quick Hook;38?;;;File:t8-p2-steve-b+1.mp4;Steve-b+1;steve
+b+1;h;10;i13~14;-14;+2;+61a;"* Transition to FLK r16 with B (-1/+10/+69)
+** Cannot block i12 on block (must cancel into FC to block)
+* Recovers 5F faster on hit (t38 r24)
+* 4f timestop on CH";;FLK;Quick Hook;29;;;File:t8-p2-steve-b+1.mp4;Steve-b+1;steve
 b+1,2;h, h;10, 17;i13~14, i17~18;+3;+8;;"* Homing
 * Strong Aerial Tailspin
+* Transition to LNH
 * Combo from 1st hit
 * Interrupt with i1 from 1st block
-* Transition to LNH
-* Transition to r34? standing with b (-1/+4)";hom intr:1;LNH;Quick Draw;30?;LNH;;File:t8-p2-steve-b+1,2.mp4;Steve-b+1,2;steve
+* Transition to standing r34 with b (-1/+4)";hom intr:1;LNH;Quick Draw;30;LNH;;File:t8-p2-steve-b+1,2.mp4;Steve-b+1,2;steve
 b+1,2~1;h, m;10, 17;i13~14, i30~31;-8;+4;+63a;"* Interrupt with i14 from 1st block
-* Interrupt with i3 from 1st hit";intr:14;;Swindler;;;;;Steve-b+1,2~1;steve
+* Interrupt with i3 from 1st hit
+* 4f timestop on CH";intr:14;;Swindler;26;;;;Steve-b+1,2~1;steve
 b+1,d+2;h, l;10, 10;i13~14, i27~28;-11;+0;;"* Combo from 1st hit
 * Interrupt with i10 from 1st block
 * Transition to r25? PAB with f (-9/+2)
@@ -277,13 +287,13 @@ H.b+1+2,1+2;m,h,m,h,m;8,4,3,3,20;i16,i12,i12,i12,i19;-4;+36a (+10);;"* Balcony B
 * Transition to FLK r22 with B (+3/+43a (+17))
 * Consumes 300F of remaining heat time";bbr;FLK;Five Fox Fury;29;;;;Steve-b+1+2,H.1+2;steve
 b+3+4;sp;;;;;;"* Transition to FLK
-* Actionable for 64F
-* Auto i5? high and mid neutral block high and mid?
-* Can cancel immediately into FC with db after b+3+4 input (3F iWS)
-* Can cancel immediately into r6 DCK with f+3_4
-* Can cancel immediately into r10 SWY with b+3_4
-* Transition to r8 LWV with 3 (steps left)
-* Transition to r8 RWV with 4 (steps right)";;FLK,LWV,RWV;Flicker Stance;5;FLK;;;Steve-b+3+4;steve
+* i16 standing block from manual transition
+* Cancel to r1 FC with db
+* Cancel to r6 DCK with f+3_4
+* Cancel to r10 SWY with b+3_4
+* Transition to r8 LWV with 3
+* Transition to r8 RWV with 4
+* Stance moves can be delayed by 55F";;FLK,FC,DCK,SWY,LWV,RWV;Flicker Stance;5;FLK;;;Steve-b+3+4;steve
 ub+2;h;17;i17~18;+5;+14c;;"* Strong Aerial Tailspin
 * Homing
 * 5 chip damage on block
@@ -298,6 +308,7 @@ ub+3;sp;;;;;;"* Transition to LNH
 * Transition to SWY b+3_4";;LNH,LWV,RWV,DCK,SWY;Lion Heart;24;LNH;;File:t8-p2-steve-ub+3.mp4;Steve-ub+3;steve
 ub+1+2;ub(m);70;i66~69;;+12a (+1);;* Balcony Break;bbr;;Hellfire;;;;File:t8-p2-steve-ub+1+2.mp4;Steve-ub+1+2;steve
 u+2;m;14;i17~19;-15;+34a (+24);;"* Tornado
+* Jab evasion (frames 11 to 14?)
 * Low crush 12~32";trn js12~32;;Dreadnought Uppercut;34;;;File:t8-p2-steve-pab.uf+2.mp4;Steve-u+2;steve
 uf+1;m;18;i19~21;-6;+5;;"* Spike
 * Low crush 9~";spk js9~;;Over the Top;23;;;File:t8-p2-steve-uf+1.mp4;Steve-uf+1;steve
@@ -398,59 +409,60 @@ EXD.f+2;h;28;i15~16;+5;+56a;;"* Strong Aerial Tailspin
 * Transition to standing (+1/+52a) with B
 * 11 chip damage on block";chp:11;LNH;Power Punisher;;LNH;;File:t8-p2-steve-exd.f+2.mp4;Steve-EXD.f+2;steve
 EXD.f+2~1;m;17;i28~29;-8;+4;+63a;;;;Swindler;;;;;Steve-EXD.f+2~1;steve
-FLK.1;h;14;i12;-4;+7;;"* Transition to r18? FLK with b (-1/+10/+10)
-* Transition to r1? ALB with 3+4 with 2?F delay (+17g/+28g/+28) 
-* r18? FLK FC cancel?";;FLK,ALB;;23;;;File:t8-p2-steve-flk.1,1,1,2.mp4;Steve-FLK.1;steve
+FLK.1;h;14;i12;-4;+7;;"* Transition to r20 FLK with b (-1/+10g/+10)
+* Transition to r2 ALB with 3+4 (+17g/+28g/+28)
+** ALB Transition can be delayed by 62F when transitioning into FLK";;FLK,ALB;;23;;;File:t8-p2-steve-flk.1,1,1,2.mp4;Steve-FLK.1;steve
 FLK.1,1;h, h;14, 8;i12, i15;-9;+0;;"* Combo from 1st CH with 3F delay
-* Move can be delayed by 3F
-* Jail from 1st block with ?F delay
-* Duckable on block
-* Transition to r18? FLK with b (-4/+5/+5)
-* Transition to r1? ALB with 3+4 (+14g/+23g/+23)
-* r18? FLK FC cancel?";dck;FLK,ALB;;25;;;File:t8-p2-steve-flk.1,1,1,2.mp4;Steve-FLK.1,1;steve
+* Jails attack inputs from 1st block with 3F delay
+* Duckable
+* Transition to r20 FLK with b (-4/+5)
+* Transition to r2 ALB with 3+4 (+14g/+23g/+23)
+** ALB Transition can be delayed by 62F when transitioning into FLK";dck;FLK,ALB;;25;;;File:t8-p2-steve-flk.1,1,1,2.mp4;Steve-FLK.1,1;steve
 FLK.1,1,1;h, h, h;14, 8, 8;i12, ,i15;-9;+0;;"* Combo from 2nd CH with 1F delay
-* Jail from 2nd block with 1F delay
-* Duckable on block
-* Move can be delayed by 1F
-* Transition to r18? FLK with b (-4/+5/+5)
-* Transition to r1? ALB with 3+4 (+14g/+23g/+23)";dck;FLK,ALB;;25;;;File:t8-p2-steve-flk.1,1,1,2.mp4;Steve-FLK.1,1,1;steve
+* Jails from 2nd hit with 1F delay
+* Jails attack inputs from 2nd block with 1F delay
+* Duckable
+* Transition to r20 FLK with b (-4/+5)
+* Transition to r2 ALB with 3+4 (+14g/+23)
+** ALB Transition can be delayed by 62F when transitioning into FLK";dck;FLK,ALB;;25;;;File:t8-p2-steve-flk.1,1,1,2.mp4;Steve-FLK.1,1,1;steve
 FLK.1,1,1,2;h, h, h, m;14, 8, 8, 22;i12, ,i20~22;-12;+17a (+0);;"* Tornado
-* Combo from 3rd hit
-* Interrupt with i4 from 3rd block";trn intr:4;;Spiteful Combination;;;;File:t8-p2-steve-flk.1,1,1,2.mp4;Steve-FLK.1,1,1,2;steve
+* Balcony Break
+* Combo from 3rd hit with 1F delay
+* Interrupt with i4 from 3rd block
+* Move cannot be delayed
+* Input can be delayed by 1F";trn bbr intr:4;;Spiteful Combination;31;;;File:t8-p2-steve-flk.1,1,1,2.mp4;Steve-FLK.1,1,1,2;steve
 FLK.1,1,2;h, h, m;14, 8, 22;i12, ,i20~22;-12;+17a (+0);;"* Tornado
+* Balcony Break
 * Combo from 2nd CH
-* Same hit as (FLK.1,1,1),2
-* Interrupt with i3 from 2nd block";trn intr:3;;;;;;;Steve-FLK.1,1,2;steve
-FLK.1,1,d+1;h, h, h;14, 8, 23;i12, ,i15~17;+0;+18g;+42a;"* Balcony Break
-* Combo from 2nd CH with 9F delay
-* Jail from 2nd block with no delay
-* Duckable on block
-* Move can be delayed by 11F
-* Same hit as (FLK.1),d+1";bbr dck;;;23;;;;Steve-FLK.1,1,d+1;steve
-FLK.1,1,f+1;h, h, m;14, 8, 17;i12, ,i15;-5;+0c;+10d;"* Spike
-* Combo from 2nd CH with 9F delay
-* Jail from 2nd block with no delay
-* Move can be delayed by 11F
-* Same hit as (FLK.1),f+1";spk;;;;;;;Steve-FLK.1,1,f+1;steve
+* Interrupt with i3 from 2nd block";trn bbr intr:3;;;31;;;File:t8-p2-steve-flk.1,1,1,2.mp4;Steve-FLK.1,1,2;steve
+FLK.1,1,d+1;h, h;14, 8;i12, ,;;;;"* Balcony Break
+* Combo from 2nd CH with 10F delay
+* Jail from 2nd hit with 11F delay
+* Jails attack inputs from 2nd block with 1F delay  (crouch assist bufferable)
+* Duckable";bbr dck;;;;;;;Steve-FLK.1,1,d+1;steve
+FLK.1,1,f+1;h, h;14, 8;i12, ,;;;;"* Spike
+* Combo from 2nd CH with 10F delay
+* Jails attack inputs from 2nd block with 1F delay
+* Move can be delayed by 11F";spk;;;;;;;Steve-FLK.1,1,f+1;steve
 FLK.1,2;h, m;14, 22;i12, i20~22;-12;+17a (+0);;"* Tornado
 * Combo from 1st CH
-* Same hit as (FLK.1,1,1),2";trn;;;;;;;Steve-FLK.1,2;steve
+* Move cannot be interrupted";trn;;;31;;;File:t8-p2-steve-flk.1,1,1,2.mp4;Steve-FLK.1,2;steve
 FLK.1,d+1;h, h;14, 23;i12, i15~17;+0;+18g;+42a;"* Balcony Break
 * Combo from 1st CH with 14F delay
-* Jail from 1st block with ?F delay (crouch assist bufferable)
-* Duckable on block
-* Move can be delayed by 14F";bbr dck;;Power Hook Combo;23;;;File:t8-p2-steve-flk.1,d+1.mp4;Steve-FLK.1,d+1;steve
+* Jail from 1st hit with 14F delay
+* Jails attack inputs from 1st block with 4F delay (crouch assist bufferable)
+* Duckable";bbr dck;;Power Hook Combo;23;;;File:t8-p2-steve-flk.1,d+1.mp4;Steve-FLK.1,d+1;steve
 FLK.1,f+1;h, m;14, 17;i12, i15;-5;+0c;+10d;"* Spike
 * Combo from 1st CH with 14F delay
-* Jail from 1st block with 3F delay
-* Move can be delayed by 14F";spk;;Tempest Combo;;;;File:t8-p2-steve-flk.1,f+1.mp4;Steve-FLK.1,f+1;steve
-FLK.2;m;21;i18~19;-5c;+7d;+42a;"* Spike
-* 6 chip damage on block";spk chp:6;;Fly Swatter;;;;File:t8-p2-steve-flk.2.mp4;Steve-FLK.2;steve
+* Jails attack inputs from 1st block with 4F delay";spk;;Tempest Combo;30;;;File:t8-p2-steve-flk.1,f+1.mp4;Steve-FLK.1,f+1;steve
+FLK.2;m;21;i18~19;-5c;+7a;+42a;"* Spike
+* 6 chip damage on block";spk chp:6;;Fly Swatter;32;;;File:t8-p2-steve-flk.2.mp4;Steve-FLK.2;steve
 FLK.b+2;h;21;i14~15;-9;+35d (+27);;"* Tornado
 * Balcony Break
 * +0 frame advantage and 8 chip damage on block after absorbing an attack in power crush state
-* Power crush 8~13";trn bbr pc8~13;;British Lancer;;;;File:t8-p2-steve-flk.b+2.mp4;Steve-FLK.b+2;steve
+* Power crush 8~13";trn bbr pc8~13;;British Lancer;29;;;File:t8-p2-steve-flk.b+2.mp4;Steve-FLK.b+2;steve
 FLK.u+2;m;14;i17~19;-15;+34a (+24);;"* Tornado
+* Jab evasion (frames 11 to 14?)
 * Low crush 12~32";trn js12~32;;Dreadnought Uppercut;34;;;File:t8-p2-steve-pab.uf+2.mp4;Steve-FLK.u+2;steve
 LNH.1;m;21;i14-15;-9;+15g;;"* Balcony Break
 * Heat Engager
@@ -496,8 +508,7 @@ LWV.2,1;m, m;13, 21;i14~16, i19;-8;+4c;+7d;"* Spike
 * Interrupt with i2 from 1st block
 * Move can be delayed by 11F";spk intr:2;;Right Shoulder Rush > Billy Club;;;;File:t8-p2-steve-lwv.2,1.mp4;Steve-LWV.2,1;steve
 LWV.1+2;h;20;i14;-9;+8;+35d (+27);* Balcony Break;bbr;;Nemesis Hook;;;;File:t8-p2-steve-lwv.1+2.mp4;Steve-LWV.1+2;steve
-OTG.d+1+2;L;16;i17;-11c;+2;;"* Recovers in crouch
-* +0d (-8) on grounded hit";;;Cheapshot;30;;;;Steve-OTG.d+1+2;steve
+OTG.d+1+2;L;16 (12);i17;-11c;+2;;* +0d (-8) on grounded hit;;;Cheapshot;30;;;;Steve-OTG.d+1+2;steve
 PAB.1;h;10;i12~13;-2;+9;;;;PAB;;;PAB;;File:t8-p2-steve-pab.1,2,1.mp4;Steve-PAB.1;steve
 PAB.1,2;h, h;10, 14;i12~13, i15~16;+0;+8;;"* Combo from 1st hit
 * Jail from 1st block";;PAB;;;PAB;;File:t8-p2-steve-pab.1,2,1.mp4;Steve-PAB.1,2;steve
@@ -587,7 +598,9 @@ Homing
 Back throw;t;55;;;+5d;;"* Unbreakable
 * Sideswitch
 * Opponent left FUFT";;;Schoolyard Bully;;;;;Steve-Back throw;steve
-FLK.1+2;th;40;i12~14;-6;+0d;;* 1+2 for throw break;;;Griffin Throw;;;;File:t8-p2-steve-flk.1+2.mp4;Steve-FLK.1+2;steve
+FLK.1+2;th;40;i12~14;-6;+0d;;"* 1+2 for throw break
+* Side switch
+* Opponent recovers FUFA";;;Griffin Throw;21;;;File:t8-p2-steve-flk.1+2.mp4;Steve-FLK.1+2;steve
 Left throw;t;40;;-3;+0d;;"* Throw break 1
 * Opponent left FUFR?";;;Choke Slam;;;;;Steve-Left throw;steve
 PAB.1+2;th;45;i11;0;+0d;;* 1+2 for throw break;;;Ten Count;;;;File:t8-p2-steve-pab.1+2.mp4;Steve-PAB.1+2;steve
