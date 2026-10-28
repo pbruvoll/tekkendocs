@@ -321,7 +321,7 @@ const Card = ({
               </div>
             )}
           </dl>
-          {move.notes ? (
+          {move.notes && (
             <div>
               <div className="text-xs text-muted-foreground">Notes</div>
               {move.notes.split('\n').map((line, i) => (
@@ -329,8 +329,6 @@ const Card = ({
                 <div key={i}>{line}</div>
               ))}
             </div>
-          ) : (
-            <div className="text-muted-foreground">No notes for this move</div>
           )}
         </div>
       )}
