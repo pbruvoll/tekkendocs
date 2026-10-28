@@ -1,6 +1,9 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Transitions;Name;Recovery;Recovery state;Image;Video;Wavu id;Character id
 2+3;m;"[12;12]";i16;+1;+2c;;"* Heat Burst
-* Cancel to r45 with b,b on frame 42
+* 46f timestop at frame 14 of activation (t92)
+* Cancel to r87 with b,b on frame 42 (frame 28 of timestop)
+** t41 r27 effective recovery
+* 20f timestop on block or hit
 * 2 chip damage on block
 * 12 chip damage on hit
 * Only deals recoverable damage
@@ -28,11 +31,15 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Removes Recoverable Health
 * Reversal Break
 * Damage increases with lower health, maximum 82
-* Freezes match timer on activation and on hit
-* Restores recoverable health on hit
+* Freezes match timer on activation equal to (total frame idle recovery - 5F) or 57F when canceled by any action
+* Freezes match timer on hit by 15F
+* 114F timestop on activation
+* 20F timestop on block
+* r24 opponent blockstun (r44 effective blockstun w/ timestop)
+* Restores 13 recoverable health on hit
 * Transition to attack throw on hit
 * Consumes Rage
-* Power crush 8~";ra rbr pc8~;;The Marvelous Rose;39;;;;Lee-R.df+1+2;lee
+* Power crush 8~20";ra rbr pc8~20;;The Marvelous Rose;42;;;;Lee-R.df+1+2;lee
 1;h;5;i10;+1;+8;;Recovers 2f faster on hit or block (t27 r17);;;Jab;19;;;File:t8-p2-lee-1,2.mp4;Lee-1;lee
 1,2;h, h;5, 9;i10, i12;-3;+7;;"* Transition to MS r21 with F (-2/+8)
 * Jail from 1st block with 4F delay
@@ -45,7 +52,7 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Combo from 2nd CH or 3rd hit with 8F delay
 * Transition to HMS r37 with 4 (-9/+11a (+2a))
 ** Cancel to r14 standing or FC with b_db_d_df (Cannot block i23)
-** Cancel to r1 standing or r7 FC with u_d~d_db_d_df (Cannot block i10)
+** Cancel to r2? standing or r7 FC with u_d~b_db_d_df (Cannot block i10)
 * Interrupt with i6 from 3rd block
 * Whiffs vs SSR from 3rd block
 * Move can be delayed 13F
@@ -54,7 +61,7 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Combo from 2nd hit
 * Transition to HMS r33 with 3 (-14/-3/+57a)
 ** Cancel to r11 standing or FC with b_db_d_df (Cannot block i25)
-** Cancel to r1 standing or r7 FC with u_d~d_db_d_df (Cannot block i15)
+** Cancel to r2? standing or r7 FC with u_d~b_db_d_df (Cannot block i15)
 * Consumes 60F of remaining Heat time without perfect input";;HMS;Left Right Mid Kick;31;;;File:t8-p2-lee-1,2,4.mp4;Lee-1,2,4;lee
 1,2:4;h, h, m;5, 9, 12;i10, ,i18;-12;+5;+58a;"* Jail from 1st block
 * Combo from 2nd hit with 1f delay
@@ -64,7 +71,7 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Move cannot be delayed
 * Transition to HMS r33 with 3 (-14/+3/+57a)
 ** Cancel to r11 standing or FC with b_db_d_df (Cannot block i25)
-** Cancel to r1 standing or r7 FC with u_d~d_db_d_df (Cannot block i15)";chp:4;HMS;Left Right Mid Kick;31;;;File:t8-p2-lee-1,2,4.mp4;Lee-1,2:4;lee
+** Cancel to r2? standing or r7 FC with u_d~b_db_d_df (Cannot block i15)";chp:4;HMS;Left Right Mid Kick;31;;;File:t8-p2-lee-1,2,4.mp4;Lee-1,2:4;lee
 1,3;h, h;5, 5;i10, i16;-11;+0;;"* Jail from 1st block with 2F delay
 * Combo from 1st hit with 4F delay
 * Move can be delayed by 4F";;;;30;;;;Lee-1,3;lee
@@ -86,7 +93,7 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Combo from 1st CH with 7F delay
 * Transition to HMS r22 with 3+4 (-5/+6)
 ** Cancel to r9 standing or FC with b_db_d_df (Cannot block i14)
-** Cancel to r1 standing or r7 FC with u_d~d_db_d_df
+** Cancel to r2? standing or r7 FC with u_d~b_db_d_df
 * Move can be delayed by 5F
 * Input can be delayed by 7F";;HMS;;22;;;File:t8-p2-lee-2,1,1.mp4;Lee-2,1;lee
 2,1,1;h, h, m;10, 8, 18;i10, ,i20~21;-12;+3;+26a;"* Combo from 2nd CH with 4F delay
@@ -112,14 +119,14 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Combo from 1st CH or 2nd hit with 8F delay
 * Transition to HMS r37 with 4 (-9/+11a (+2a))
 ** Cancel to r14 standing or FC with b_db_d_df (Cannot block i23)
-** Cancel to r1 standing or r7 FC with u_d~d_db_d_df (Cannot block i10)
+** Cancel to r2? standing or r7 FC with u_d~b_db_d_df (Cannot block i10)
 * Interrupt with i6 from 2nd block
 * Whiffs vs SSR from 2nd block
 * Move can be delayed 13F
 * Input can be delayed 17F";bbr stp:SSR intr:6;HMS;Right Cross > Revolution Zwei;31;;;File:t8-p2-lee-2,2,3.mp4;Lee-2,2,3;lee
 3;m;16;i14;-8;+7;;"* Transition to HMS r27 with 4 (-8/+7)
 ** Cancel to r10 standing or FC with b_db_d_df (Cannot block i18)
-** Cancel to r1 standing or r7 FC with u_d~d_db_d_df";;HMS;Mist Kick;27;;;File:t8-p2-lee-3,3.mp4;Lee-3;lee
+** Cancel to r2? standing or r7 FC with u_d~b_db_d_df";;HMS;Mist Kick;27;;;File:t8-p2-lee-3,3.mp4;Lee-3;lee
 3,3;m, h;16, 18;i14, i17;-10;+1;;"* Jail from 1st block with 2F delay
 * Combo from 1st hit with 13F delay";;;Mist Wolf Combination;28;;;File:t8-p2-lee-3,3.mp4;Lee-3,3;lee
 3~3;h;18;i17 (i30);-9;+2;;"* i30 effective startup (cancel takes 13F)
@@ -248,7 +255,7 @@ f+4,3;h, m;13, 18;i11, i21~23;-8;+6c;+63a;"* Combo from 1st CH with 9F delay
 * Interrupt with i6 from 1st block
 * Transition to HMS r21 with 4 (-4/+6c/+63a)
 ** Cancel to r10 standing or FC with b_db_d_df (Cannot block i14)
-** Cancel to r1 standing or r7 FC with u_d~d_db_d_df
+** Cancel to r2? standing or r7 FC with u_d~b_db_d_df
 * Recovers 4F faster on hit (t60 r21)
 * Move can be delayed 11F
 * Input can be delayed by 16F";intr:6;HMS;Deadly Arc;25;;;File:t8-p2-lee-f+4,3.mp4;Lee-f+4,3;lee
@@ -290,7 +297,7 @@ df+3,2,3;m, h, m;13, 13, 20;i14~15, ,i22~23;-14;+13cg;;"* Heat Engager
 * Move can be delayed by 10F";he bbr intr:3;;Mercury Drive;36;;;File:t8-p2-lee-df+3,2,3.mp4;Lee-df+3,2,3;lee
 df+4;m;13;i13~14;-9;+5;;"* Transition to HMS r27 with 3 (-9/+5)
 ** Cancel to r16 standing or FC with b_db_d_df (Cannot block i25)
-** Cancel to r1 standing or r7 FC with u_d~d_db_d_df (Cannot block i10)";;HMS;Front Kick;27;;;File:t8-p2-lee-df+4,4.mp4;Lee-df+4;lee
+** Cancel to r2? standing or r7 FC with u_d~b_db_d_df (Cannot block i10)";;HMS;Front Kick;27;;;File:t8-p2-lee-df+4,4.mp4;Lee-df+4;lee
 df+4,4;m, h;13, 20;i13~14, i22~23;-9;+10g;;"* Heat Engager
 
 * Heat Dash +43d (+35)
@@ -318,8 +325,12 @@ d+4,4,4;l, l, l;7, 8, 5;i12, ,i20;-15;-16;-4;"* Combo from 2nd CH with 10F delay
 * -4c on crouching CH
 * Low parryable on hit or block";intr:1;;;34;;;File:t8-p2-lee-d+4,4,4,4.mp4;Lee-d+4,4,4;lee
 d+4,4,4,4;l, l, l, m;7, 8, 5, 21;i12, ,i24~25;-20;+11a (+2);;"* Balcony Break
-* Transition to -11, +20a (+11) HMS with 3
-* Combos from 3rd hit CH";bbr;HMS;Laser Edge Kick Combo;38;;;File:t8-p2-lee-d+4,4,4,4.mp4;Lee-d+4,4,4,4;lee
+* Combo from 3rd CH with 6F delay
+* Interrupt with i4 from 3rd block
+* Interrupt with i5 from 3rd hit
+* Transition to HMS r29 with 3 (-11/+20a (+11))
+** Cancel to r11? standing or FC with b_db_d_df
+** Cancel to r2? standing or r7 FC with u_d~b_db_d_df";bbr intr:5;HMS;Laser Edge Kick Combo;38;;;File:t8-p2-lee-d+4,4,4,4.mp4;Lee-d+4,4,4,4;lee
 d+4,n,4;l, h;7, 16;i12, i23;-9;+2;+27a (+17);"* Combo from 1st CH with 7f delay
 * Interrupt with i3 from 1st block
 * Interrupt with i4 from 1st hit
@@ -373,10 +384,11 @@ b+2,4,3;h, h, h;9, 16, 21;i14, ,i27;-0;+22a (+13);+51a;"* Strong Aerial Tailspin
 b+3;l;9;i15;-14;-3;;;;;;;;;File:t8-p2-lee-b+3,3.mp4;Lee-b+3;lee
 b+3,3;l, h;9, 12;i15, i19;-12;-1;;"* Transition to -7, +4 MS with F
 * Combos from 1st hit";;MS;Stinging Rush;;;;File:t8-p2-lee-b+3,3.mp4;Lee-b+3,3;lee
-b+4;m;20;i20;-3;+7c;+64a;"* Floor Break
-* Spike
-* Transition to -2, +8c, +65a HMS with 3
-* +18d on crouching opponent";fbr spk;HMS;Silver Heel;;;;File:t8-p2-lee-b+4.mp4;Lee-b+4;lee
+b+4;m;20;i20~22;-3;+7c;+64a;"* Spike
+* Transition to HMS r19 with 3 (-2/+8c/+65a)
+** Cancel to r11 standing or FC with b_db_d_df (Cannot block i13)
+** Cancel to r2? standing or r7 FC with u_d~b_db_d_df
+* +18d on crouching opponent";spk;HMS;Silver Heel;20;;;File:t8-p2-lee-b+4.mp4;Lee-b+4;lee
 b+3+4;h;23;i20;-9;+15a (+6);;"* Balcony Break
 * Power crush 7";bbr pc7;;Silver Revolution;;;;File:t8-p2-lee-b+3+4.mp4;Lee-b+3+4;lee
 ub+3;M;20;i18~22;-13;+20a (+13);+74a (+58);"* Tornado
@@ -400,45 +412,56 @@ uf+3+4;h;30;i22;+5;+28d (+20);;"* Balcony Break
 * 9 chip damage
 * Low crush";bbr chp:9 js;HMS;Silver Bullet;;;;File:t8-p2-lee-uf+3+4.mp4;Lee-uf+3+4;lee
 1+2+3+4;;;;;;;;;;Ki Charge;;;;File:t8-p2-lee-1+2+3+4.mp4;Lee-1+2+3+4;lee
-b,B+4;h;23;i19;+2;+25a;;"* Strong Aerial Tailspin
+b,B+4;h;23;i19~21;+2;+25a;;"* Strong Aerial Tailspin
 * Homing
-* Transition to +5, +28a HMS with 3
-* 6 chip damage";hom chp:6;HMS;Lee Cutter;;;;File:t8-p2-lee-b,b+4.mp4;Lee-b,B+4;lee
-f,F+2;h;23;i15;+2;+18gc;+69a (+53);"* Tornado
+* Transition to HMS r23 with 3 (+5/+28a)
+** Cancel to r10 standing or FC with b_db_d_df
+** Cancel to r2? standing or r7 FC with u_d~b_db_d_df
+* 6 chip damage on block";hom chp:6;HMS;Lee Cutter;26;;;File:t8-p2-lee-b,b+4.mp4;Lee-b,B+4;lee
+f,F+2;h;23;i15~16;+2;+18cg;+69a (+53);"* Tornado
 * Balcony Break
-* Transition to +5, +21gc, +72a (+56) MS with F
-* 6 chip damage";trn bbr chp:6;MS;Jostle Wolf;;;;File:t8-p2-lee-f,f+2.mp4;Lee-f,F+2;lee
-f,F+3;m;23;i14~15;-9;+21d (+11);;"* Heat Engager
+* Transition to MS r28 with F on block or hit (+5/+21cg/+72a (+56))
+* Consumes 60F of remaining Heat time without perfect input
+* 6 chip damage on block";trn bbr chp:6;MS;Jostle Wolf;31;;;File:t8-p2-lee-f,f+2.mp4;Lee-f,F+2;lee
+f,F+3;m;23;i14~15;-9;+21a (+11);;"* Heat Engager
 
 * Heat Dash +36a (+26)
 
 * Balcony Break
-* Slight low profile";he bbr;;Pulse Blast;;;;File:t8-p2-lee-f,f+3.mp4;Lee-f,F+3;lee
-f,F+4;h;22;i16;-5;+29a;;"*
-* High crush 5~";cs5~;;Deadly Edge;;;;File:t8-p2-lee-f,f+4.mp4;Lee-f,F+4;lee
+* Slight jab evasion
+* 20f timestop on hit";he bbr;;Pulse Blast;33;;;File:t8-p2-lee-f,f+3.mp4;Lee-f,F+3;lee
+f,F+4;h;22;i16~17;-5;+29a;;"*
+* High crush 5~15";cs5~15;;Deadly Edge;23;;;File:t8-p2-lee-f,f+4.mp4;Lee-f,F+4;lee
 f,n;;;;;;;"* Transitions to MS
 * Alternate input HMS.f,n
 * Can perform standing actions except for 3 and 3+4?
 * High crush";cs;;Mist Step;;;;File:t8-p2-lee-f,n.mp4;Lee-f,n;lee
-f:F+2;h;26;i15;+2;+18gc;+69a (+53);"* Tornado
+f:F+2;h;26;i15~16;+2;+18cg;+69a (+53);"* Tornado
 * Balcony Break
-* Transition to +5, +21gc, +72a (+56) MS with F
-* 11 chip damage
-Perfect Input not required during Heat
-Partially consumes remaining Heat Time";trn bbr chp:11;MS;Jostle Wolf Cardinal;;;;File:t8-p2-lee-fcf+2.mp4;Lee-f:F+2;lee
-qcf+4;M;24;i22;-17;+50a (+40);;* Tornado;trn;;Blazing Kick;;;;File:t8-p2-lee-d,db+4.mp4;Lee-qcf+4;lee
-ub,b;;;;;;;"* Automatically transitions to HMS
-* Low crush";js;HMS;Back Handspring > Hitman;;HMS;;File:t8-p2-lee-ub,b.mp4;Lee-ub,b;lee
+* Transition to MS r28 with F on block or hit (+5/+21cg/+72a (+56))
+* Input f+2 up to 7F after f,n,f (e.g., f,n,f (7F),f+2)
+* 11 chip damage on block
+* Consumes 60F of remaining Heat time without perfect input";trn bbr chp:11;MS;Jostle Wolf Cardinal;31;;;File:t8-p2-lee-fcf+2.mp4;Lee-f:F+2;lee
+qcf+4;M;24;i22~24;-17;+50a (+40);;"* Tornado
+* Input bufferable (qcf+4 only)";trn;;Blazing Kick;38;;;File:t8-p2-lee-d,db+4.mp4;Lee-qcf+4;lee
+ub,b;;;;;;;"* Transition to HMS
+** Cancel to r1 standing or r1 FC with b_db_d_df
+* Low crush 16~42
+* Floating state 43~45";js16~42 fs43~45;HMS;Back Handspring > Hitman;60;HMS;;File:t8-p2-lee-ub,b.mp4;Lee-ub,b;lee
 uf,n,4;m;20;i23;-13;+32a (+22);;* Low crush;js;;Delayed Rising Toe Kick;;;;File:t8-p2-lee-uf,n,4.mp4;Lee-uf,n,4;lee
-f,f,F+3;m;14;i14;-9;+16a (+9);;"* Knee
-* Alternate input wr3
-* Low crush";kne js;;;;;;File:t8-p2-lee-f,f,f+3,4.mp4;Lee-f,f,F+3;lee
-f,f,F+3,4;m, m;14, 26;i14, i20;+3;+19d;;"* Floor Break
-* Transition to +6, +29d (-6) HMS with 3
-* Combos from 1st hit
-* 7 chip damage
-* Balcony break on 2nd hit only
-* Low crush";fbr chp:7 js;HMS;Waxing Crescent;;;;File:t8-p2-lee-f,f,f+3,4.mp4;Lee-f,f,F+3,4;lee
+f,f,F+3;m;14;i14~15;-9;+16a (+9);;"* Knee
+* Low crush 9~31
+* Floating state 32~34";kne js9~31 fs32~34;;;33;;;File:t8-p2-lee-f,f,f+3,4.mp4;Lee-f,f,F+3;lee
+f,f,F+3,4;m, m;14, 26 (18);i14~15, i20~22;+3;+19a / +24a (-11);;"* Balcony Break
+* Spike
+* Airborne combo from 1st hit (+24a (-11))
+* Jail from 1st block
+* Transition to HMS r26 with 3 (+6/+22a/+29a (-6))
+** Cancel to r5 standing or FC with b_db_d_df
+** Cancel to r2? standing or r7 FC with u_d~b_db_d_df
+* 7 chip damage on block
+* Low crush 1~22
+* Floating state 23~25";bbr spk chp:7 js1~22 fs23~25;HMS;Waxing Crescent;29;;;File:t8-p2-lee-f,f,f+3,4.mp4;Lee-f,f,F+3,4;lee
 ws1;m;12;i13~14;-2;+7;;* Transition to HMS;;HMS;;20;HMS;;File:t8-p2-lee-ws1,2.mp4;Lee-ws1;lee
 ws1,2;m, h;12, 17;i13~14, i20;-7;+2;+7;"* Combo from 1st hit with 7F delay
 * Transition to MS r22 cs10~23 with F (-3/+6/+11)

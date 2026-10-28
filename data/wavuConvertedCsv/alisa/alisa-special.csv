@@ -1,6 +1,9 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Transitions;Name;Recovery;Recovery state;Image;Video;Wavu id;Character id
 2+3;m;"[12;12]";i16;+1;+2c;;"* Heat Burst
-* Cancel to r45 with b,b on frame 42
+* 46f timestop at frame 14 of activation (t92)
+* Cancel to r87 with b,b on frame 42 (frame 28 of timestop)
+** t41 r27 effective recovery
+* 20f timestop on block or hit
 * 2 chip damage on block
 * 12 chip damage on hit
 * Only deals recoverable damage
@@ -31,11 +34,15 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Removes Recoverable Health
 * Reversal Break
 * Damage increases with lower health, maximum 82
-* Freezes match timer on activation and on hit
-* Restores recoverable health on hit
+* Freezes match timer on activation equal to (total frame idle recovery - 5F) or 57F when canceled by any action
+* Freezes match timer on hit by 15F
+* 114F timestop on activation
+* 20F timestop on block
+* r24 opponent blockstun (r44 effective blockstun w/ timestop)
+* Restores 13 recoverable health on hit
 * Transition to attack throw on hit
 * Consumes Rage
-* Power crush 8~";ra rbr pc8~;;Radiant Pegasus Bomb;39;;;;Alisa-R.df+1+2;alisa
+* Floating state 21~48";ra rbr fs21~48;;Radiant Pegasus Bomb;42;;;;Alisa-R.df+1+2;alisa
 1;h;5;i10;+1;+8;;Recovers 2f faster on hit or block (t27 r17);;;Jab;19;;;File:t8-p2-alisa-1,1.mp4;Alisa-1;alisa
 1,1;h, h;5, 18;i10, i21;-3;+5;+14d;"* Combo from 1st hit with 4f delay
 * Interrupt with i2 from 1st block
@@ -148,15 +155,17 @@ f+3,1+2;h, m;10, 25;i14~15, i24~25;-13;+8;;"* Balcony Break
 * Hit vs BT +15a (+6)";bbr wpn intr:5 chp:7;DES;Automatic Transmission;34;DES;;File:t8-p2-alisa-f+3,1+2.mp4;Alisa-f+3,1+2;alisa
 f+4;m;14;i16;-9;+1;;"* Homing
 * Enter DES with 1+2";hom;DES;;31;;;File:t8-p2-alisa-f+4,1,4.mp4;Alisa-f+4;alisa
-f+4,1;m, h;14, 14;i16, i25~26;-9;+15d (+7);;"* Balcony Break
+f+4,1;m, h;14, 14;i16, i25~26;-9;+15a (+7);;"* Balcony Break
 * Head
 * Combo from 1st hit
 * Interrupt with i2 from 1st block";bbr hed intr:2;;;49;;;File:t8-p2-alisa-f+4,1,4.mp4;Alisa-f+4,1;alisa
-f+4,1,4;m, h, m;14, 14, 24 (19);i16, ,i27~65;-12~+26g;+1a;;"* Aerial combo from 2nd hit
+f+4,1,4;m, h, m;14, 14, 24 (19);i16, ,i25~26/i27~65;-14~+26g;-1a~+39a;;"* Projectile
+* Airborne combo from 2nd hit (-9a~+29a (-17~+21))
 * Move cannot be interrupted
-* i25-26 bounce, i25-26 travel, 
-(---)/i35(27-65) travel then explosion , 
--3(-11) and -1(-9) for explosion then hit, respectively";;;Logic Bomb;1;;;File:t8-p2-alisa-f+4,1,4.mp4;Alisa-f+4,1,4;alisa
+* Typically -12 on block from 2nd block
+* Typically -1a (-9) on hit from 2nd hit
+* Kick is i25~26 and projectile is i27~65
+** Kick is -14~-13/-1a~+0a r40";;;Logic Bomb;1;;;File:t8-p2-alisa-f+4,1,4.mp4;Alisa-f+4,1,4;alisa
 f+1+2;m;25;i14~15;-12;+14g;;"* Balcony Break
 * Enter SBT -16 +10g r25 with 3_4
 * Enter DBT -16 +10g r25 with f+3_f+4

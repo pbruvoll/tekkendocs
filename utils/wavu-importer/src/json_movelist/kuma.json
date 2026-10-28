@@ -59,7 +59,7 @@
     "id": "Kuma-1,2",
     "input": ",2",
     "name": "Angry Lumberjack",
-    "notes": "* Balcony Break\n* Jails attack inputs from 1st block\n* Duckable\n* Combo from 1st CH with 3F delay\n* 10 chip damage on block",
+    "notes": "* Balcony Break\n* Jail from 1st hit\n* Duckable\n* Combo from 1st CH with 3F delay\n* 10 chip damage on block",
     "num": "18",
     "parent": "Kuma-1",
     "startup": ",i22~24",
@@ -429,14 +429,6 @@
     "name": "Bear Sit",
     "notes": "* Alternative input: db+3+4\n* Transition to ROL with input SIT.F\n* Transition to California Roll with input SIT.B",
     "recv": "r15 SIT",
-    "target": "sp"
-  },
-  {
-    "id": "Kuma-d+3+4",
-    "input": "d+3+4",
-    "name": "Bear Sit",
-    "notes": "* Transition to SIT\n* Transition to ROL with input f",
-    "recv": "SIT",
     "target": "sp"
   },
   {
@@ -1470,16 +1462,17 @@
   },
   {
     "block": "-18",
-    "crush": "pc8~",
+    "crush": "pc8~20",
     "damage": "55+",
     "hit": "+0d",
     "id": "Kuma-R.df+1+2",
     "input": "R.df+1+2",
     "name": "Type 38 Eradication Weapon: Aramaki",
-    "notes": "* Rage Art\n* Removes Recoverable Health\n* Reversal Break\n* Damage increases with lower health, maximum 82\n* Freezes match timer on activation and on hit\n* Restores recoverable health on hit\n* Transition to attack throw on hit\n* Consumes Rage",
-    "recv": "r39",
+    "notes": "* Rage Art\n* Removes Recoverable Health\n* Reversal Break\n* Damage increases with lower health, maximum 82\n* Freezes match timer on activation equal to (total frame idle recovery - 5F) or 57F when canceled by any action\n* Freezes match timer on hit by 15F\n* 114F timestop on activation\n* 20F timestop on block\n* r24 opponent blockstun (r44 effective blockstun w/ timestop)\n* Restores 13 recoverable health on hit\n* Transition to attack throw on hit\n* Consumes Rage",
+    "recv": "r42",
     "startup": "i20",
-    "target": "M,t"
+    "target": "M,t",
+    "tot": "62"
   },
   {
     "block": "-3",

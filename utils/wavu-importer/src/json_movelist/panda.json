@@ -59,7 +59,7 @@
     "id": "Panda-1,2",
     "input": ",2",
     "name": "Angry Lumberjack",
-    "notes": "* Balcony Break\n* Jail from 1st hit\n* Combo from 1st CH with 3F delay\n* 10 chip damage on block",
+    "notes": "* Balcony Break\n* Jail from 1st hit\n* Duckable\n* Combo from 1st CH with 3F delay\n* 10 chip damage on block",
     "num": "18",
     "parent": "Panda-1",
     "startup": ",i22~24",
@@ -151,11 +151,11 @@
     "id": "Panda-2+3",
     "input": "2+3",
     "name": "Heat Burst",
-    "notes": "* Heat Burst\n* Cancel to r45 with b,b on frame 42\n* 2 chip damage on block\n* 12 chip damage on hit\n* Only deals recoverable damage\n* Cannot cause a K.O.",
+    "notes": "* Heat Burst\n* 46f timestop at frame 14 of activation (t92)\n* Cancel to r87 with b,b on frame 42 (frame 28 of timestop)\n** t41 r27 effective recovery\n* 20f timestop on block or hit\n* 2 chip damage on block\n* 12 chip damage on hit\n* Only deals recoverable damage\n* Cannot cause a K.O.",
     "recv": "r30",
     "startup": "i16",
     "target": "m",
-    "tot": "92"
+    "tot": "46"
   },
   {
     "block": "-6",
@@ -417,13 +417,6 @@
     "notes": "* Alternative input: db+3+4\n* Transition to ROL with input SIT.F\n* Transition to California Roll with input SIT.B",
     "num": "31",
     "recv": "r15 SIT",
-    "target": "sp"
-  },
-  {
-    "id": "Panda-d+3+4",
-    "input": "d+3+4",
-    "name": "Bear Sit",
-    "notes": "* Transition to SIT\n* Transition to ROL with input f",
     "target": "sp"
   },
   {
@@ -1268,16 +1261,17 @@
   },
   {
     "block": "-18",
-    "crush": "pc8~",
+    "crush": "pc8~20",
     "damage": "55+",
     "hit": "+0d",
     "id": "Panda-R.df+1+2",
     "input": "R.df+1+2",
     "name": "Close Call! Panda Storming Flower",
-    "notes": "* Rage Art\n* Removes Recoverable Health\n* Reversal Break\n* Damage increases with lower health, maximum 82\n* Freezes match timer on activation and on hit\n* Restores recoverable health on hit\n* Transition to attack throw on hit\n* Consumes Rage",
-    "recv": "r39",
+    "notes": "* Rage Art\n* Removes Recoverable Health\n* Reversal Break\n* Damage increases with lower health, maximum 82\n* Freezes match timer on activation equal to (total frame idle recovery - 5F) or 57F when canceled by any action\n* Freezes match timer on hit by 15F\n* 114F timestop on activation\n* 20F timestop on block\n* r24 opponent blockstun (r44 effective blockstun w/ timestop)\n* Restores 13 recoverable health on hit\n* Transition to attack throw on hit\n* Consumes Rage",
+    "recv": "r42",
     "startup": "i20",
-    "target": "m,t"
+    "target": "m,t",
+    "tot": "62"
   },
   {
     "block": "-3",

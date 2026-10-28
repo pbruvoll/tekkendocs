@@ -1,6 +1,9 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Transitions;Name;Recovery;Recovery state;Image;Video;Wavu id;Character id
 2+3;m;"[12;12]";i16;+1;+2c;;"* Heat Burst
-* Cancel to r45 with b,b on frame 42
+* 46f timestop at frame 14 of activation (t92)
+* Cancel to r87 with b,b on frame 42 (frame 28 of timestop)
+** t41 r27 effective recovery
+* 20f timestop on block or hit
 * 2 chip damage on block
 * 12 chip damage on hit
 * Only deals recoverable damage
@@ -20,11 +23,15 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Removes Recoverable Health
 * Reversal Break
 * Damage increases with lower health, maximum 82
-* Freezes match timer on activation and on hit
-* Restores recoverable health on hit
+* Freezes match timer on activation equal to (total frame idle recovery - 5F) or 57F when canceled by any action
+* Freezes match timer on hit by 15F
+* 114F timestop on activation
+* 20F timestop on block
+* r24 opponent blockstun (r44 effective blockstun w/ timestop)
+* Restores 13 recoverable health on hit
 * Transition to attack throw on hit
 * Consumes Rage
-* Power crush 8~";ra rbr pc8~;;Naniwa Peacemaker Knuckle;39;;;;Asuka-R.df+1+2;asuka
+* Power crush 8~20";ra rbr pc8~20;;Naniwa Peacemaker Knuckle;42;;;;Asuka-R.df+1+2;asuka
 1;h;5;i10;-2;+9;;;;;Jab;21;;;File:t8-p2-asuka-1,1.mp4;Asuka-1;asuka
 1,1;h, m;5, 15;i10, i24;-7;+4;;"* Combo from 1st CH with 3f delay
 * Links to f+1 extensions

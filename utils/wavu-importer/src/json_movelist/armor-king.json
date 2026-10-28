@@ -31,7 +31,7 @@
     "id": "Armor King-1,2",
     "input": ",2",
     "name": "One Two Punch",
-    "notes": "* Combo from 1st hit with 2F delay\n* Jail from 1st block with 2F delay",
+    "notes": "* Combo from 1st hit with 2F delay\n* Jail from 1st block with 2F delay\n* Recovers 1F faster on hit (t41 r21)",
     "num": "20",
     "parent": "Armor King-1",
     "recv": "r22",
@@ -129,7 +129,7 @@
     "id": "Armor King-2,1",
     "input": ",1",
     "name": "Right Jab > Uppercut",
-    "notes": "* Combo from 1st hit\n* Interrupt with i3 from 1st block\n* t53 r19 on hit",
+    "notes": "* Combo from 1st hit\n* Interrupt with i3 from 1st block\n* Recovers 2F faster on hit (t53 r19)",
     "num": "22",
     "parent": "Armor King-2",
     "recv": "r21",
@@ -146,12 +146,12 @@
     "id": "Armor King-2+3",
     "input": "2+3",
     "name": "Heat Burst",
-    "notes": "* Heat Burst\n* Cancel to r45 with b,b on frame 42\n* 2 chip damage on block\n* 12 chip damage on hit\n* Only deals recoverable damage\n* Cannot cause a K.O.",
+    "notes": "* Heat Burst\n* 46f timestop at frame 14 of activation (t92)\n* Cancel to r87 with b,b on frame 42 (frame 28 of timestop)\n** t41 r27 effective recovery\n* 20f timestop on block or hit\n* 2 chip damage on block\n* 12 chip damage on hit\n* Only deals recoverable damage\n* Cannot cause a K.O.",
     "num": "7",
     "recv": "r30",
     "startup": "i16",
     "target": "m",
-    "tot": "92"
+    "tot": "46"
   },
   {
     "alt": "f+2+4",
@@ -334,7 +334,7 @@
     "target": "t(a)"
   },
   {
-    "alias": "Shining Wizard",
+    "alias": "Air Shining Wizard",
     "damage": "50(55)",
     "hit": "+0d",
     "id": "Armor King-AIR.f,f,F+2+4",
@@ -804,7 +804,7 @@
     "id": "Armor King-d+1",
     "input": "d+1",
     "name": "Crouch Jab",
-    "notes": "* Transition to standing r24 with f\n* +6c on crouching hit",
+    "notes": "* Transition to standing r24 with f at frame 25\n* +6c on crouching hit",
     "recv": "r24 FC",
     "startup": "i10",
     "target": "sl",
@@ -1802,7 +1802,7 @@
     "id": "Armor King-hFC.1",
     "input": "hFC.1",
     "name": "Crouch Jab",
-    "notes": "* Transition to standing r24 with f\n* +6c on crouching hit",
+    "notes": "* Transition to standing r24 with f at frame 25\n* +6c on crouching hit",
     "recv": "r24 FC",
     "startup": "i10",
     "target": "sl",
@@ -1998,16 +1998,17 @@
   },
   {
     "block": "-18",
-    "crush": "pc8~",
+    "crush": "pc8~20",
     "damage": "55+",
     "hit": "+0d",
     "id": "Armor King-R.df+1+2",
     "input": "R.df+1+2",
     "name": "Dark Supernova",
-    "notes": "* Rage Art\n* Removes Recoverable Health\n* Reversal Break\n* Damage increases with lower health, maximum 82\n* Freezes match timer on activation and on hit\n* Restores recoverable health on hit\n* Transition to attack throw on hit\n* Consumes Rage",
-    "recv": "r39",
+    "notes": "* Rage Art\n* Removes Recoverable Health\n* Reversal Break\n* Damage increases with lower health, maximum 82\n* Freezes match timer on activation equal to (total frame idle recovery - 5F) or 57F when canceled by any action\n* Freezes match timer on hit by 15F\n* 114F timestop on activation\n* 20F timestop on block\n* r24 opponent blockstun (r44 effective blockstun w/ timestop)\n* Restores 13 recoverable health on hit\n* Transition to attack throw on hit\n* Consumes Rage",
+    "recv": "r42",
     "startup": "i20",
-    "target": "m,t"
+    "target": "m,t",
+    "tot": "62"
   },
   {
     "block": "-3",

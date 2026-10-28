@@ -26,11 +26,15 @@ R.df+1+2;M,t;55+;i20;-18;+0d;;"* Rage Art
 * Removes Recoverable Health
 * Reversal Break
 * Damage increases with lower health, maximum 82
-* Freezes match timer on activation and on hit
-* Restores recoverable health on hit
+* Freezes match timer on activation equal to (total frame idle recovery - 5F) or 57F when canceled by any action
+* Freezes match timer on hit by 15F
+* 114F timestop on activation
+* 20F timestop on block
+* r24 opponent blockstun (r44 effective blockstun w/ timestop)
+* Restores 13 recoverable health on hit
 * Transition to attack throw on hit
 * Consumes Rage
-* Power crush 8~";ra rbr pc8~;;Type 38 Eradication Weapon: Aramaki;39;;;;Kuma-R.df+1+2;kuma
+* Power crush 8~20";ra rbr pc8~20;;Type 38 Eradication Weapon: Aramaki;42;;;;Kuma-R.df+1+2;kuma
 1;h;5;i10;+1;+8;;Recovers 2f faster on hit or block (t27 r17);;;Jab;19;;;File:t8-p2-kuma-1,1,1.mp4;Kuma-1;kuma
 1,1;h, m;5, 8;i10, i22~23;-15;-4c;;"* Combo from 1st hit CH with 2F delay
 * Move can be delayed by 3F";;;;;;;File:t8-p2-kuma-1,1,1.mp4;Kuma-1,1;kuma
@@ -38,7 +42,7 @@ R.df+1+2;M,t;55+;i20;-18;+0d;;"* Rage Art
 * Combo from 2nd hit
 * Combo from 1st CH";trn;;G-Clef Cannon;;;;File:t8-p2-kuma-1,1,1.mp4;Kuma-1,1,1;kuma
 1,2;h, h;5, 25;i10, i22~24;-5;+11 (+2);;"* Balcony Break
-* Jails attack inputs from 1st block
+* Jail from 1st hit
 * Duckable
 * Combo from 1st CH with 3F delay
 * 10 chip damage on block";bbr dck chp:10;;Angry Lumberjack;;;;File:t8-p2-kuma-1,2.mp4;Kuma-1,2;kuma
@@ -114,8 +118,6 @@ d+3+4;sp;;;;;;"* Alternative input: db+3+4
 * Low crush 6~12
 * Floating state 13~15
 * High crush 16~67";js6~12 fs13~15 cs16~67;ROL,California Roll,SIT;Bear Sit;15;SIT;;;Kuma-d+3+4;kuma
-d+3+4;sp;;;;;;"* Transition to SIT
-* Transition to ROL with input f";;SIT,ROL;Bear Sit;;SIT;;;Kuma-d+3+4;kuma
 db+1;h;11;i14~15;-10;+4;+9;;;;;;;;File:t8-p2-kuma-db+1,2ss.mp4;Kuma-db+1;kuma
 db+1,2;h, M;11, 20;i14~15, i22~23;-13;+4;+13c;"* Spike
 * Combo from 1st hit

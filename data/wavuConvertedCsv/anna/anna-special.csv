@@ -1,6 +1,9 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Transitions;Name;Recovery;Recovery state;Image;Video;Wavu id;Character id
 2+3;m;"[12;12]";i16;+1;+2c;;"* Heat Burst
-* Cancel to r45 with b,b on frame 42
+* 46f timestop at frame 14 of activation (t92)
+* Cancel to r87 with b,b on frame 42 (frame 28 of timestop)
+** t41 r27 effective recovery
+* 20f timestop on block or hit
 * 2 chip damage on block
 * 12 chip damage on hit
 * Only deals recoverable damage
@@ -19,11 +22,15 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Removes Recoverable Health
 * Reversal Break
 * Damage increases with lower health, maximum 82
-* Freezes match timer on activation and on hit
-* Restores recoverable health on hit
+* Freezes match timer on activation equal to (total frame idle recovery - 5F) or 57F when canceled by any action
+* Freezes match timer on hit by 15F
+* 114F timestop on activation
+* 20F timestop on block
+* r24 opponent blockstun (r44 effective blockstun w/ timestop)
+* Restores 13 recoverable health on hit
 * Transition to attack throw on hit
 * Consumes Rage
-* Power crush 8~";ra rbr pc8~;;Some Like It Rough!;39;;;t8-p2-anna-r.df+1+2.mp4;Anna-R.df+1+2;anna
+* Power crush 8~20";ra rbr pc8~20;;Some Like It Rough!;42;;;t8-p2-anna-r.df+1+2.mp4;Anna-R.df+1+2;anna
 1;h;5;i10;+1;+8;;Recovers 2f faster on hit or block (t27 r17);;;Jab;19;;;t8-p2-anna-1.mp4;Anna-1;anna
 1,2;h, h;5, 8;i10, i10;-3;+8;;"* Jail from 1st attack with 4f delay
 * Enter HAM +0 +11 r19 with F";;HAM;Left Right Slap;22;;;t8-p2-anna-1,2.mp4;Anna-1,2;anna
@@ -435,9 +442,7 @@ CJM.1+2;M;23;i17~18;+2c;+8c;+23d;"* Spike
 CJM.P;m;20;i15~16;-14;+29a (+19);;"* Tornado
 * Tornado launch on hit
 * is1~";trn is1~;;Stryx;34;;;t8-p2-anna-cjm.p.mp4;Anna-CJM.P;anna
-CJM.df;;;;;;;"{{Plainlist
-* Transition to r40 FC with no input
-}}
+CJM.df;;;;;;;"* Transition to r40 FC with no input
 * High crush 5~
 * Floating state 8~35";cs5~ fs8~35;FC,ROLL;Forward Roll (ROLL);20;ROLL;;t8-p2-anna-cjm.df.mp4;Anna-CJM.df;anna
 CJM.d+3;L;8;i15;-11;+0;;*;;FC;;30;FC;;t8-p2-anna-cjm.d+3.mp4;Anna-CJM.d+3;anna
