@@ -10,6 +10,7 @@ import {
   getHitFrameColorClasses,
   simplifyFrameValue,
 } from '~/utils/frameDataViewUtils';
+import { hasVideo } from '~/utils/moveUtils';
 import { MovePropertyIconList } from './MovePropertyIconList';
 import { MovePropertyTagList } from './MovePropertyTagList';
 import { MoveVideo } from './MoveVideo';
@@ -67,7 +68,7 @@ export const MoveCardWithVideo = ({
   isFavorite,
   onToggleFavorite,
 }: MoveCardWithVideoProps) => {
-  const hasVideo = Boolean(move.ytVideo) || move.video;
+  const moveHasVideo = hasVideo(move);
 
   const cardRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(cardRef, {
@@ -125,7 +126,7 @@ export const MoveCardWithVideo = ({
             </CardHeader>
 
             {/* Video on small screens - shown right after command */}
-            {hasVideo && (
+            {moveHasVideo && (
               <div className="mb-4 px-2 aspect-video w-full lg:hidden">
                 {shouldLoadVideo || isPlaying ? (
                   <MoveVideo
@@ -190,7 +191,7 @@ export const MoveCardWithVideo = ({
           </div>
 
           {/* Video section on large screens - right side */}
-          {hasVideo ? (
+          {moveHasVideo ? (
             <div className="hidden aspect-video w-1/2 shrink-0 lg:block">
               {shouldLoadVideo || isPlaying ? (
                 <MoveVideo

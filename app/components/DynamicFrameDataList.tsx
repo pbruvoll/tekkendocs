@@ -83,14 +83,14 @@ export const DynamicFrameDataList = memo(function DynamicFrameDataList({
 
   const FrameDataList = useMemo(() => {
     switch (viewMode) {
-      case 'videoCards':
-        return MoveCardWithVideoList;
+      case 'default':
+        return CompactMoveList;
+      case 'table':
+        return FrameDataTable;
       case 'simple':
         return SimpleMovesTable;
-      case 'compact':
-        return CompactMoveList;
-      case 'default':
-        return FrameDataTable;
+      case 'videoCards':
+        return MoveCardWithVideoList;
     }
   }, [viewMode]);
 
