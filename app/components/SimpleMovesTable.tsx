@@ -15,25 +15,12 @@ import {
 } from '~/utils/frameDataViewUtils';
 import {
   charIdFromMove,
-  commandToUrlSegmentEncoded,
+  hasVideo,
+  moveUrlFor,
   videoFileNameFromMove,
 } from '~/utils/moveUtils';
+import { CommandText } from './CommandText';
 import { MovePreviewDialogButton } from './MovePreviewDialogButton';
-
-// Helper function to format command for line breaks at commas
-const formatWordWithBreaks = (command: string) => {
-  return command.split(',').map((part, index, array) => (
-    // biome-ignore lint/suspicious/noArrayIndexKey: Static list
-    <span key={index} className="inline-block">
-      {part}
-      {index < array.length - 1 && (
-        <>
-          ,<wbr />
-        </>
-      )}
-    </span>
-  ));
-};
 
 type SimpleMovesTableProps = FrameDataListProps;
 
@@ -123,13 +110,11 @@ export const SimpleMovesTable = memo(function SimpleMovesTable({
           const simpleBlock = simplifyFrameValue(move.block || '');
           const simpleHit = simplifyFrameValue(move.hit || '');
           const simpleCh = simplifyFrameValue(move.counterHit || '');
-          const hasVideo = Boolean(move.ytVideo || move.video);
           const interruptibleFrames = getInterruptibleFrames(move);
           const chipDamage = getChipDamage(move);
           const hasChipTag = hasTag(MoveTags.Chip, move);
           const computedCharId = charId || charIdFromMove(move);
-          const moveUrl = `/${gameRouteId}/${computedCharId}/${commandToUrlSegmentEncoded(move.command)}`;
-          const commandContent = formatWordWithBreaks(move.command);
+          const moveUrl = moveUrlFor(gameRouteId, charId, move);
           return (
             <tr
               key={move.moveNumber}
@@ -145,15 +130,15 @@ export const SimpleMovesTable = memo(function SimpleMovesTable({
                     </span>
                   )}
                   <Link style={{ textDecoration: 'none' }} to={moveUrl}>
-                    {commandContent}
+                    <CommandText command={move.command} />
                   </Link>
-                  {hasVideo && (
+                  {hasVideo(move) && (
                     <MovePreviewDialogButton move={move} url={moveUrl} />
                   )}
                 </span>
               </td>
               <td className="p-2 align-middle sm:p-4">
-                {formatWordWithBreaks(move.hitLevel)}
+                <CommandText command={move.hitLevel} />
               </td>
               <td className="wrap-break-word p-2 align-middle sm:p-4">
                 {simplifyFrameValue(move.startup || '')}

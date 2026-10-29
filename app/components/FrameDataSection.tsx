@@ -32,9 +32,9 @@ const isFrameDataViewMode = (
   value: string | null,
 ): value is FrameDataViewMode =>
   value === 'default' ||
+  value === 'table' ||
   value === 'simple' ||
-  value === 'videoCards' ||
-  value === 'compact';
+  value === 'videoCards';
 
 export type FrameDataSectionProps = {
   gameRouteId: GameRouteId;
@@ -176,11 +176,11 @@ export const FrameDataSection = ({
           }}
         >
           <NativeSelectOption value="default">Default</NativeSelectOption>
+          <NativeSelectOption value="table">Table</NativeSelectOption>
           <NativeSelectOption value="simple">Simple</NativeSelectOption>
           <NativeSelectOption value="videoCards">
             Video Cards
           </NativeSelectOption>
-          <NativeSelectOption value="compact">Compact</NativeSelectOption>
         </NativeSelect>
       </ContentContainer>
 

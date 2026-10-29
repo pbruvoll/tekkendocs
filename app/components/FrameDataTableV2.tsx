@@ -13,12 +13,11 @@ import {
   TableHeader,
   TableRow,
 } from '~/components/ui/table';
-import { orderByKey } from '~/constants/sortConstants';
 import { type FrameDataListProps } from '~/types/FrameDataListProps';
 import { type Move } from '~/types/Move';
 import { type SortOrder } from '~/types/SortOrder';
-import { charIdFromMove, commandToUrlSegmentEncoded } from '~/utils/moveUtils';
-import { getSortSettings } from '~/utils/sortingUtils';
+import { charIdFromMove, hasVideo, moveUrlFor } from '~/utils/moveUtils';
+import { getNextSortSearchParams, getSortSettings } from '~/utils/sortingUtils';
 import { MovePreviewDialogButton } from './MovePreviewDialogButton';
 
 export type FrameDataTableProps = FrameDataListProps;
@@ -46,19 +45,8 @@ export const FrameDataTable = ({
 
   const showCharacter = forceShowCharacter || !charId;
 
-  const createOrderLinkWithSearchParams = (columnName: string) => {
-    const searchParamsCopy = new URLSearchParams(searchParams.toString());
-    if (columnName === sortSettings?.sortByKey) {
-      if (sortSettings.sortDirection === 'desc') {
-        searchParamsCopy.delete(orderByKey);
-      } else {
-        searchParamsCopy.set(orderByKey, `${columnName}_desc`);
-      }
-    } else {
-      searchParamsCopy.set(orderByKey, `${columnName}_asc`);
-    }
-    return `${location.pathname}?${searchParamsCopy.toString()}`;
-  };
+  const createOrderLinkWithSearchParams = (columnName: keyof Move) =>
+    `${location.pathname}?${getNextSortSearchParams(searchParams, columnName).toString()}`;
 
   const tableHeaders: { id: keyof Move; displayName: string }[] = [
     { id: 'command', displayName: 'Command' },
@@ -86,7 +74,7 @@ export const FrameDataTable = ({
                   className="flex flex-wrap items-end"
                 >
                   {h.displayName}
-                  {h.id.toLowerCase() === sortSettings?.sortByKey
+                  {h.id === sortSettings?.sortByKey
                     ? sortOrderIconMap[sortSettings.sortDirection]
                     : sortOrderIconMap['']}
                 </Link>
@@ -97,7 +85,7 @@ export const FrameDataTable = ({
         <TableBody>
           {moves.map((move) => {
             const computedCharId = charId || charIdFromMove(move);
-            const moveUrl = `/${gameRouteId}/${computedCharId}/${commandToUrlSegmentEncoded(move.command)}`;
+            const moveUrl = moveUrlFor(gameRouteId, charId, move);
             return (
               <TableRow key={move.moveNumber}>
                 {showCharacter && <TableCell>{computedCharId}</TableCell>}
@@ -106,7 +94,7 @@ export const FrameDataTable = ({
                     <Link style={{ textDecoration: 'none' }} to={moveUrl}>
                       {move.command}
                     </Link>
-                    {(move.ytVideo || move.video) && (
+                    {hasVideo(move) && (
                       <MovePreviewDialogButton move={move} url={moveUrl} />
                     )}
                   </span>

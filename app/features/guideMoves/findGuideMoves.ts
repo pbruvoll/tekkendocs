@@ -1,7 +1,6 @@
 import { type Move } from '~/types/Move';
 import { compressCommand, getCommands } from '~/utils/commandUtils';
-
-const hasVideo = (move: Move) => !!(move.ytVideo || move.video);
+import { hasVideo } from '~/utils/moveUtils';
 
 /**
  * Looks up the moves of a guide command like "B1 | DF4,3" or "b+1 into uf+4".

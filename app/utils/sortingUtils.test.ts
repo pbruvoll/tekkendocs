@@ -1,5 +1,9 @@
 import { expect, test } from 'vitest';
-import { getSortByQueryParamValue, getSortSettings } from './sortingUtils';
+import {
+  getNextSortSearchParams,
+  getSortByQueryParamValue,
+  getSortSettings,
+} from './sortingUtils';
 
 test('getSearchSettings', () => {
   expect(getSortSettings(new URLSearchParams('foo=bar'))).toBeUndefined();
@@ -22,4 +26,13 @@ test('getSortByQueryParamValue', () => {
   expect(
     getSortByQueryParamValue({ sortByKey: 'block', sortDirection: 'desc' }),
   ).toBe('block');
+});
+
+test('getNextSortSearchParams', () => {
+  const next = (search: string) =>
+    getNextSortSearchParams(new URLSearchParams(search), 'block').toString();
+  expect(next('viewMode=table')).toBe('viewMode=table&orderby=block_asc');
+  expect(next('orderby=hit_asc')).toBe('orderby=block_asc');
+  expect(next('orderby=block_asc')).toBe('orderby=block_desc');
+  expect(next('orderby=block_desc')).toBe('');
 });

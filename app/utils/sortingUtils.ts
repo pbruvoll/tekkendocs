@@ -88,6 +88,23 @@ export const getSortSettings = (
   };
 };
 
+/** The search params after clicking a sort header: asc, then desc, then off */
+export const getNextSortSearchParams = (
+  searchParams: URLSearchParams,
+  sortKey: SortByKey,
+): URLSearchParams => {
+  const sortSettings = getSortSettings(searchParams);
+  const params = new URLSearchParams(searchParams);
+  if (sortSettings?.sortByKey !== sortKey) {
+    params.set(orderByKey, `${sortKey}_asc`);
+  } else if (sortSettings.sortDirection === 'asc') {
+    params.set(orderByKey, `${sortKey}_desc`);
+  } else {
+    params.delete(orderByKey);
+  }
+  return params;
+};
+
 export const getSortByQueryParamValue = (
   sortSettings: SortSettings,
 ): string => {

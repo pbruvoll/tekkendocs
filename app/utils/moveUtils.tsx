@@ -24,6 +24,17 @@ export const charIdFromMove = (move: Pick<Move, 'id'>): string => {
   return move.id.slice(0, index).replace(' ', '-').toLowerCase();
 };
 
+/** The url of the move page. Without a charId, the character is taken from the move id */
+export const moveUrlFor = (
+  gameRouteId: string,
+  charId: string | undefined,
+  move: Move,
+) =>
+  `/${gameRouteId}/${charId || charIdFromMove(move)}/${commandToUrlSegmentEncoded(move.command)}`;
+
+export const hasVideo = (move: Pick<Move, 'ytVideo' | 'video'>) =>
+  Boolean(move.ytVideo || move.video);
+
 export const videoFileNameFromMove = (move: Move): string => {
   return `${move.id
     .split('-')

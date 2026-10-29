@@ -12,6 +12,7 @@ import {
 } from 'lucide-react';
 import { useState } from 'react';
 import { Link, useLocation, useSearchParams } from 'react-router';
+import { CommandText } from '~/components/CommandText';
 import { MovePropertyIconList } from '~/components/MovePropertyIconList';
 import { MoveVideo } from '~/components/MoveVideo';
 import {
@@ -22,21 +23,18 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '~/components/ui/dialog';
-import { orderByKey } from '~/constants/sortConstants';
 import { HeartButton } from '~/features/favorites/HeartButton';
 import { cn } from '~/lib/utils';
 import { type FrameDataListProps } from '~/types/FrameDataListProps';
 import { type Move } from '~/types/Move';
 import { type SortByKey } from '~/types/SortByKey';
-import { getSortSettings } from '~/utils/sortingUtils';
+import { hasVideo, moveUrlFor } from '~/utils/moveUtils';
+import { getNextSortSearchParams, getSortSettings } from '~/utils/sortingUtils';
 import {
   BlockValue,
-  CommandText,
   CounterHitValue,
   HitValue,
-  hasVideo,
   moveKey,
-  moveUrlFor,
   StartupValue,
   WrapAtCommas,
 } from './moveValues';
@@ -50,7 +48,6 @@ const valueCols =
 const cardCols =
   'grid grid-cols-[minmax(0,1fr)_auto] items-center md:grid-cols-[minmax(0,1fr)_28rem_auto] md:gap-x-4';
 
-// Same cycle as the Default table: asc, desc, then off
 const SortLink = ({
   sortKey,
   center,
@@ -65,12 +62,7 @@ const SortLink = ({
   const location = useLocation();
   const sortSettings = getSortSettings(searchParams);
   const active = sortSettings?.sortByKey === sortKey;
-
-  const params = new URLSearchParams(searchParams);
-  if (!active) params.set(orderByKey, `${sortKey}_asc`);
-  else if (sortSettings.sortDirection === 'asc')
-    params.set(orderByKey, `${sortKey}_desc`);
-  else params.delete(orderByKey);
+  const params = getNextSortSearchParams(searchParams, sortKey);
 
   const Icon = !active
     ? ChevronsUpDown
