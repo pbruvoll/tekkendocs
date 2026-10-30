@@ -22,7 +22,7 @@ export const CharacterCard2 = ({
 }: CharacterCard2Props) => {
   return (
     <Link to={url} className="block h-full cursor-pointer">
-      <Card className="group relative h-full transform gap-0 pt-0 pb-3 transition duration-500 hover:scale-110 hover:shadow-sm">
+      <Card className="group relative h-full gap-0 border border-card-raised-border bg-card-raised pt-0 pb-2.5 ring-0 transition duration-300 hover:-translate-y-1 hover:border-primary hover:shadow-lg">
         <div className={cx('relative', size === 'large' && 'pb-3')}>
           <img
             src={imgUrl}
@@ -31,7 +31,7 @@ export const CharacterCard2 = ({
               'h-full w-full rounded',
               size === 'large'
                 ? 'aspect-[1.55] object-cover object-[80%_50%]'
-                : 'mb-1 object-contain',
+                : 'mb-3 object-contain',
             )}
           />
           {badge && (

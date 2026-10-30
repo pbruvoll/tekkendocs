@@ -12,12 +12,15 @@ import tekkenLibrary from '~/images/t8/externalResources/tekken-library.webp';
 import tournamentFinder from '~/images/t8/externalResources/tournament-finder.webp';
 import wavuWank from '~/images/t8/externalResources/wavu-wank.webp';
 import wavuWiki from '~/images/t8/externalResources/wavu-wiki.webp';
+import { cn } from '~/lib/utils';
 
 type ExternalResourceLink = {
   name: string;
   url: string;
   imageUrl: string;
   description: string;
+  /** For logos that would otherwise touch the card edges */
+  padImage?: boolean;
 };
 
 const data: ExternalResourceLink[] = [
@@ -46,6 +49,7 @@ const data: ExternalResourceLink[] = [
     name: 'Tekken Guess',
     url: 'https://tekkenguess.com/',
     imageUrl: tekkenGuess,
+    padImage: true,
     description: 'Various quizzes like guess the rank, move or stage music',
   },
   {
@@ -80,14 +84,16 @@ const data: ExternalResourceLink[] = [
 export const ExternalResources = () => {
   return (
     <div className="grid grid-cols-2 gap-x-1 gap-y-3 xs:grid-cols-2 xs:gap-x-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4">
-      {data.map(({ url, description, imageUrl, name }, index) => (
+      {data.map(({ url, description, imageUrl, name, padImage }, index) => (
         <a href={url} key={index}>
-          <Card className="h-full transform transition duration-500 hover:scale-110">
-            <div className="flex aspect-video w-full p-2">
+          <Card className="h-full border border-card-raised-border bg-card-raised pt-0 ring-0 transition duration-300 hover:-translate-y-1 hover:border-primary hover:shadow-lg">
+            <div className={cn('flex aspect-video w-full', padImage && 'p-4')}>
               <img className="h-full w-full" src={imageUrl} alt="" />
             </div>
             <CardHeader>
-              <CardTitle>{name}</CardTitle>
+              <CardTitle className="display-heading font-display uppercase">
+                {name}
+              </CardTitle>
               <CardDescription>{description}</CardDescription>
             </CardHeader>
           </Card>

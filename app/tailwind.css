@@ -63,12 +63,17 @@
   --color-foreground-destructive: var(--foreground-destructive);
   --color-site-header: var(--site-header);
   --color-site-footer: var(--site-footer);
+  --color-card-raised: var(--card-raised);
+  --color-card-raised-border: var(--card-raised-border);
 }
 
 :root {
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
+  /* Link cards that sit straight on the page background */
+  --card-raised: oklch(1 0 0);
+  --card-raised-border: oklch(0.922 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
@@ -115,6 +120,8 @@
   --background: oklch(0.178 0 0);
   --foreground: oklch(0.949 0 0);
   --card: oklch(0.213 0 0);
+  --card-raised: oklch(0.24 0 0);
+  --card-raised-border: oklch(1 0 0 / 15%);
   --card-foreground: oklch(0.949 0 0);
   --popover: oklch(0.213 0 0);
   --popover-foreground: oklch(0.949 0 0);
