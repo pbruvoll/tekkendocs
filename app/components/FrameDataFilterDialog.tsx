@@ -4,7 +4,6 @@ import {
   Dialog,
   DialogClose,
   DialogContent,
-  DialogDescription,
   DialogTitle,
   DialogTrigger,
 } from '~/components/ui/dialog';
@@ -60,14 +59,10 @@ export const FrameDataFilterDialog = ({
       </DialogTrigger>
 
       <DialogContent className="block text-base sm:max-w-[450px]">
-        <DialogTitle className="mb-2 font-bold text-xl leading-[26px]">
-          Filter
+        <DialogTitle className="mb-4 font-bold text-xl leading-[26px]">
+          Filter moves
         </DialogTitle>
         <div className="-mx-4 max-md:no-scrollbar max-h-[70vh] overflow-y-auto px-4">
-          <DialogDescription className="mb-4 text-base text-foreground">
-            Filter the displayed moves
-          </DialogDescription>
-
           <FrameDataFilterSelection
             filter={filter}
             stances={stances}
