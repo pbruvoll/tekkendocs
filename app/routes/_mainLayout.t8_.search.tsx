@@ -1,17 +1,25 @@
 import { useDeferredValue, useEffect, useMemo } from 'react';
-import { Link, type MetaFunction, useFetcher, useNavigate } from 'react-router';
+import {
+  Link,
+  type MetaFunction,
+  useFetcher,
+  useNavigate,
+  useSearchParams,
+} from 'react-router';
 import { ContentContainer } from '~/components/ContentContainer';
-import { SimpleMovesTable } from '~/components/SimpleMovesTable';
 import { Input } from '~/components/ui/input';
 import { filterKey } from '~/constants/filterConstants';
+import { CompactMoveList } from '~/features/compactMoveList/CompactMoveList';
 import { useSearchParamState } from '~/hooks/useSearchParamState';
 import { getTekken8Characters } from '~/services/staticDataService';
 import { type CharacterFrameDataPage } from '~/types/CharacterFrameDataPage';
 import { type GameRouteId } from '~/types/GameRouteId';
 import { type Move } from '~/types/Move';
 import { cleanCommand } from '~/utils/filterUtils';
+import { sortMovesV2 } from '~/utils/frameDataUtils';
 import { commandToUrlSegmentEncoded } from '~/utils/moveUtils';
 import { generateMetaTags } from '~/utils/seoUtils';
+import { getSortSettings } from '~/utils/sortingUtils';
 
 export const meta: MetaFunction = ({ matches }) => {
   const title = 'Tekken 8 Frame data search page | TekkenDocs';
@@ -129,12 +137,23 @@ export default function () {
     return [];
   }, [data, filteredCharList.length, moveQuery, searchQuery, selectedCharId]);
 
+  // The compact list's column headers sort through the url
+  const [searchParams] = useSearchParams();
+  const sortSettings = useMemo(
+    () => getSortSettings(searchParams),
+    [searchParams],
+  );
+  const sortedMoves = useMemo(
+    () => sortMovesV2(filteredMoves, sortSettings),
+    [filteredMoves, sortSettings],
+  );
+
   const paginatedMoves = useMemo(() => {
-    if (filteredMoves.length > maxMovesToShow) {
-      return filteredMoves.slice(0, maxMovesToShow);
+    if (sortedMoves.length > maxMovesToShow) {
+      return sortedMoves.slice(0, maxMovesToShow);
     }
-    return filteredMoves;
-  }, [filteredMoves]);
+    return sortedMoves;
+  }, [sortedMoves]);
 
   useEffect(() => {
     if (
@@ -199,12 +218,15 @@ export default function () {
 
       {selectedCharId && state !== 'idle' && <div>Loading...</div>}
       {paginatedMoves.length > 0 && selectedCharId && (
-        <SimpleMovesTable
-          gameRouteId={gameRouteId}
-          charId={showsMultipleChars ? undefined : selectedCharId}
-          moves={paginatedMoves}
-          forceShowCharacter={includeCharNameInFrames}
-        />
+        // cancel the list's own side padding, so it lines up with the input
+        <div className="-mx-2 sm:-mx-4">
+          <CompactMoveList
+            gameRouteId={gameRouteId}
+            charId={showsMultipleChars ? undefined : selectedCharId}
+            moves={paginatedMoves}
+            forceShowCharacter={includeCharNameInFrames}
+          />
+        </div>
       )}
 
       {paginatedMoves.length < filteredMoves.length && (
