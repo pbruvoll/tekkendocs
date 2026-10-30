@@ -445,6 +445,7 @@ const StartPage = ({
                 value={numMovesToPractice}
                 placeholder={totalMoves.toString()}
                 onChange={handleNumMovesToPracticeChange}
+                autoComplete="off"
               />
             </div>
 
@@ -458,6 +459,7 @@ const StartPage = ({
                 placeholder="1"
                 value={startFromMoveNum}
                 onChange={handleStartFromMoveNumChange}
+                autoComplete="off"
               />
             </div>
           </AnimatedCollapsible>

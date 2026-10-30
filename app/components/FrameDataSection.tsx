@@ -14,6 +14,7 @@ import { useSearchParamState } from '~/hooks/useSearchParamState';
 import { type GameRouteId } from '~/types/GameRouteId';
 import { type Move } from '~/types/Move';
 import { type MoveFilter } from '~/types/MoveFilter';
+import { commandInputProps } from '~/utils/commandUtils';
 import { getFilterFromParams } from '~/utils/filterUtils';
 import { getMoveFilterTypes } from '~/utils/frameDataUtils';
 import * as filterUtils from '~/utils/searchParamsFilterUtils';
@@ -91,6 +92,7 @@ export const FrameDataSection = ({
               placeholder="Search moves, ff2,1+2, power crush, etc."
               value={searchQuery}
               className="pr-8"
+              {...commandInputProps}
             />
             {searchQuery && (
               <button

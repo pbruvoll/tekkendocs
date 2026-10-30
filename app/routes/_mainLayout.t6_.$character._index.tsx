@@ -16,6 +16,7 @@ import { NotationKey } from '~/features/t6/NotationKey';
 import { StanceKey } from '~/features/t6/StanceKey';
 import { getT6Character } from '~/features/t6/t6Characters';
 import { getT6FrameData } from '~/features/t6/t6FrameData.server';
+import { commandInputProps } from '~/utils/commandUtils';
 import { cleanCommand } from '~/utils/filterUtils';
 import { getCacheControlHeaders } from '~/utils/headerUtils';
 import { generateMetaTags } from '~/utils/seoUtils';
@@ -71,6 +72,7 @@ export default function T6Character() {
           <Input
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="ff2,1+2"
+            {...commandInputProps}
           />
         </div>
       </ContentContainer>

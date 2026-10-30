@@ -23,6 +23,7 @@ import { tableIdToDisplayName } from '~/constants/tableIdToDisplayName';
 import { type CharacterFrameData } from '~/types/CharacterFrameData';
 import { type RouteHandle } from '~/types/RouteHandle';
 import { type TableDataWithHeader } from '~/types/TableData';
+import { commandInputProps } from '~/utils/commandUtils';
 import { cleanCommand } from '~/utils/filterUtils';
 import { getCacheControlHeaders } from '~/utils/headerUtils';
 import { commandToUrlSegment } from '~/utils/moveUtils';
@@ -116,6 +117,7 @@ export default function Index() {
           <Input
             onChange={(e) => handleOnChange(e)}
             placeholder="ff2,1+2"
+            {...commandInputProps}
           ></Input>
         </div>
       </ContentContainer>

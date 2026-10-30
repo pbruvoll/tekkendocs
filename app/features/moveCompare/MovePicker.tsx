@@ -5,6 +5,7 @@ import { Input } from '~/components/ui/input';
 import { characterInfoT8List } from '~/constants/characterInfoListT8';
 import { getCharacterDisplayName } from '~/features/frameQuiz/moveSelection';
 import { type Move } from '~/types/Move';
+import { commandInputProps } from '~/utils/commandUtils';
 import { cleanCommand } from '~/utils/filterUtils';
 import { t8AvatarBrandMap } from '~/utils/t8AvatarMap';
 
@@ -128,6 +129,7 @@ export const MovePicker = ({
         onChange={(event) => setSearchInput(event.target.value)}
         placeholder="drag fff2"
         aria-label={`Search move for ${label}`}
+        {...commandInputProps}
       />
       <div className="mt-2 max-h-72 overflow-y-auto">
         {!characterQuery && (
