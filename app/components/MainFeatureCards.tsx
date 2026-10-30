@@ -53,7 +53,7 @@ export const MainFeatureCards = () => {
           style={{ transitionDelay: `${index * 75}ms` }}
         >
           <Link to={url} className="group block h-full">
-            <div className="relative flex h-full flex-col gap-2 overflow-hidden rounded-lg border border-border bg-card p-3 transition duration-300 xs:p-4 hover:-translate-y-1 hover:border-primary hover:shadow-lg">
+            <div className="relative flex h-full flex-col gap-2 overflow-hidden rounded-lg border border-card-raised-border bg-card-raised p-3 transition duration-300 xs:p-4 hover:-translate-y-1 hover:border-primary hover:shadow-lg">
               <div className="flex items-center gap-2.5">
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-primary/15 text-primary transition duration-300 group-hover:bg-primary group-hover:text-primary-foreground">
                   <Icon size={20} aria-hidden />

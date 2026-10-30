@@ -29,7 +29,7 @@ export const meta: MetaFunction = ({ matches }) => {
 export const headers = () => getCacheControlHeaders({ seconds: 60 * 5 });
 
 const otherFeatureBadgeClassName =
-  'whitespace-nowrap border-primary/50 px-[9px] py-[3px] text-sm font-medium text-primary';
+  'h-auto whitespace-nowrap border-primary/50 px-3 py-1 text-sm font-medium text-primary';
 
 export default function Index() {
   const characterInfoListT7 = getTekken7Characters();
