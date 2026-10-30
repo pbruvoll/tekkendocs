@@ -4,12 +4,7 @@
 // have fixed slots, at the far right on desktop. Tapping anywhere on the card
 // opens the details. The video opens in a modal that repeats the frame data,
 // so the list doesn't jump.
-import {
-  ChevronDown,
-  ChevronsUpDown,
-  ChevronUp,
-  SquarePlay,
-} from 'lucide-react';
+import { ChevronDown, ChevronsUpDown, ChevronUp, Play } from 'lucide-react';
 import { useState } from 'react';
 import { Link, useLocation, useSearchParams } from 'react-router';
 import { CommandText } from '~/components/CommandText';
@@ -167,9 +162,9 @@ const VideoDialogButton = ({ move, url }: { move: Move; url: string }) => (
     <DialogTrigger
       aria-label={`Show video of ${move.command}`}
       onClick={stopPropagation}
-      className="rounded p-1 hover:text-foreground"
+      className="grid size-6 place-items-center rounded-md bg-primary/15 text-primary hover:bg-primary/25"
     >
-      <SquarePlay className="size-4" />
+      <Play className="size-3.5 fill-current" />
     </DialogTrigger>
     {/* React events bubble through the portal, so keep clicks in the modal from toggling the card */}
     <DialogContent
