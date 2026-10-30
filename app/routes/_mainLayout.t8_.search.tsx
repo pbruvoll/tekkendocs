@@ -15,6 +15,7 @@ import { getTekken8Characters } from '~/services/staticDataService';
 import { type CharacterFrameDataPage } from '~/types/CharacterFrameDataPage';
 import { type GameRouteId } from '~/types/GameRouteId';
 import { type Move } from '~/types/Move';
+import { commandInputProps } from '~/utils/commandUtils';
 import { cleanCommand } from '~/utils/filterUtils';
 import { sortMovesV2 } from '~/utils/frameDataUtils';
 import { commandToUrlSegmentEncoded } from '~/utils/moveUtils';
@@ -194,6 +195,7 @@ export default function () {
         placeholder="drag fff2"
         className="mb-4"
         autoFocus
+        {...commandInputProps}
       ></Input>
       {filteredCharList.length === 0 && (
         <div>No characters matches the search query</div>
@@ -202,8 +204,11 @@ export default function () {
         <ul>
           {filteredCharList.map((char) => (
             <li key={char.id}>
-              <Link className="text-primary no-underline" to={`/t8/${char.id}`}>
-                {char.id}
+              <Link
+                className="text-primary capitalize no-underline"
+                to={`/t8/${char.id}`}
+              >
+                {char.displayName}
               </Link>
             </li>
           ))}

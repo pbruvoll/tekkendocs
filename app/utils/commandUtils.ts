@@ -50,3 +50,15 @@ export const getCommands = (
   splitCommands(command, compressedCommandMap)
     .filter((part) => part.type === 'command')
     .map((part) => part.text);
+
+/**
+ * For text inputs where you type move notation. The app shows its own
+ * matches, and the browser's suggestions and mobile keyboard corrections
+ * (like "Df+1" or autocorrected words) only get in the way.
+ */
+export const commandInputProps = {
+  autoComplete: 'off',
+  autoCorrect: 'off',
+  autoCapitalize: 'off',
+  spellCheck: false,
+} as const;
