@@ -34,9 +34,12 @@ def convert(path, gSheet):
             csvRows.append(row);
         moveType = filePath.split(".")[-2].split("-")[-1]
         moveTypeToContent[moveType] = csvRows
+        # mokujin gets the moves of all characters, but only the first header row,
+        # otherwise the header row of every other character shows up as a move
         if(moveType not in allCharsMoveTypeToContent) :
-            allCharsMoveTypeToContent[moveType] = []
-        allCharsMoveTypeToContent[moveType] += moveTypeToContent[moveType]        
+            allCharsMoveTypeToContent[moveType] = list(csvRows)
+        else :
+            allCharsMoveTypeToContent[moveType] += csvRows[1:]
     
     for frameType in frameTypes: #e.g frameType = ("special", "Special Moves")
         if(frameType[0] in moveTypeToContent) :
