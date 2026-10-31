@@ -24,7 +24,6 @@ export const useSearchParamState = (
   const debounceRef = useRef<ReturnType<typeof setTimeout> | undefined>(
     undefined,
   );
-
   const setValueAndSyncParams = (newValue: string) => {
     valueRef.current = newValue;
     setValue(newValue);
@@ -49,11 +48,19 @@ export const useSearchParamState = (
   // Adopt external URL changes, unless the user is mid-typing with a URL
   // update still pending (then the pending write wins)
   useEffect(() => {
+    // The router updates the browser URL right away, but applies the new
+    // search params as a transition that can land after newer URL changes.
+    // Ignore such a stale value, the newer one is on its way
+    const latestParamValue =
+      new URLSearchParams(window.location.search).get(key) ?? '';
+    if (paramValue !== latestParamValue) {
+      return;
+    }
     if (debounceRef.current === undefined && paramValue !== valueRef.current) {
       valueRef.current = paramValue;
       setValue(paramValue);
     }
-  }, [paramValue]);
+  }, [key, paramValue]);
 
   useEffect(() => () => clearTimeout(debounceRef.current), []);
 

@@ -5,6 +5,7 @@ import {
   canDuckHighAfterLowHit,
   isLowHit,
 } from '~/features/duckableString/lowHighString';
+import { searchMoves } from '~/features/moveSearch/moveSearch';
 import { newMovesT8s3 } from '~/services/staticDataService';
 import { type FavoriteMoves } from '~/types/FavoriteMoves';
 import { type HitLevel } from '~/types/FilterTypes';
@@ -13,7 +14,6 @@ import { type MoveFilter } from '~/types/MoveFilter';
 import { type SortOrder } from '~/types/SortOrder';
 import { type SortSettings } from '~/types/SortSettings';
 import { type TableData } from '~/types/TableData';
-import { cleanCommand } from './filterUtils';
 import { createMoveId } from './moveUtils';
 import {
   sortMovesByNumber,
@@ -562,22 +562,6 @@ export const filterMoves = (
 
   const filterFuncs: ((move: Move) => boolean)[] = [];
 
-  if (filter.searchQuery) {
-    const searchQuery = filter.searchQuery.toLowerCase().replace(/ /g, '');
-
-    filterFuncs.push((move: Move) => {
-      return (
-        cleanCommand(move.command).includes(cleanCommand(searchQuery)) ||
-        (searchQuery.length >= 3 &&
-          !/\d/.test(searchQuery) &&
-          (move.hitLevel.toLowerCase().includes(searchQuery) ||
-            move.notes?.replace(/ /g, '').toLowerCase().includes(searchQuery) ||
-            move.name?.replace(/ /g, '').toLowerCase().includes(searchQuery) ||
-            move.tags?.[searchQuery] !== undefined))
-      );
-    });
-  }
-
   if (filter.favorite) {
     filterFuncs.push((move: Move) => {
       if (!move.id) return false;
@@ -792,9 +776,15 @@ export const filterMoves = (
     });
   }
 
-  return moves.filter((move) => {
+  const filteredMoves = moves.filter((move) => {
     return filterFuncs.every((ff) => ff(move));
   });
+
+  // Search last, as it is the most expensive filter. It also ranks the moves,
+  // an explicit sort is applied afterwards
+  return filter.searchQuery
+    ? searchMoves(filteredMoves, filter.searchQuery)
+    : filteredMoves;
 };
 
 const isColumnNumericMap: Set<string> = new Set<string>([

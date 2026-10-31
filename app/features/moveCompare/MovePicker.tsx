@@ -4,9 +4,13 @@ import { Button } from '~/components/ui/button';
 import { Input } from '~/components/ui/input';
 import { characterInfoT8List } from '~/constants/characterInfoListT8';
 import { getCharacterDisplayName } from '~/features/frameQuiz/moveSelection';
+import {
+  matchCharacters,
+  parseCharacterMoveQuery,
+  searchMoves,
+} from '~/features/moveSearch/moveSearch';
 import { type Move } from '~/types/Move';
 import { commandInputProps } from '~/utils/commandUtils';
-import { cleanCommand } from '~/utils/filterUtils';
 import { t8AvatarBrandMap } from '~/utils/t8AvatarMap';
 
 const maxResults = 20;
@@ -29,31 +33,16 @@ export const MovePicker = ({
   // while filtering the move list lags behind
   const searchQuery = useDeferredValue(searchInput);
 
-  const [characterQuery, moveQuery] = useMemo(() => {
-    const trimmed = searchQuery.trimStart();
-    const spaceIndex = trimmed.indexOf(' ');
-    if (spaceIndex === -1) {
-      return [trimmed.toLowerCase(), ''];
-    }
-    return [
-      trimmed.slice(0, spaceIndex).toLowerCase(),
-      trimmed
-        .slice(spaceIndex + 1)
-        .replace(/ /g, '')
-        .toLowerCase(),
-    ];
-  }, [searchQuery]);
+  const { characterQuery, moveQuery } = useMemo(
+    () => parseCharacterMoveQuery(searchQuery),
+    [searchQuery],
+  );
 
   const matchingCharacters = useMemo(() => {
     if (!characterQuery) {
       return [];
     }
-    const normalizedQuery = characterQuery.replace(/-/g, '');
-    return characterInfoT8List.filter(
-      (char) =>
-        char.id.replace(/-/g, '').startsWith(normalizedQuery) ||
-        char.aliasList.includes(normalizedQuery),
-    );
+    return matchCharacters(characterInfoT8List, characterQuery);
   }, [characterQuery]);
 
   const selectedCharacter =
@@ -66,16 +55,7 @@ export const MovePicker = ({
     const characterMoves = moves.filter(
       (move) => move.characterId === selectedCharacter.id,
     );
-    const cleanMoveQuery = cleanCommand(moveQuery);
-    const filteredByCommand = characterMoves.filter((move) =>
-      cleanCommand(move.command).startsWith(cleanMoveQuery),
-    );
-    if (filteredByCommand.length > 0 || moveQuery.length <= 2) {
-      return filteredByCommand;
-    }
-    return characterMoves.filter((move) =>
-      move.name?.toLowerCase().replace(/ /g, '').includes(moveQuery),
-    );
+    return searchMoves(characterMoves, moveQuery);
   }, [moves, selectedCharacter, moveQuery]);
 
   if (selectedMove) {
