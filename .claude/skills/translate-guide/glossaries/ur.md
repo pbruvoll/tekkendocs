@@ -150,8 +150,9 @@ comma ، (also between listed commands).
 | Reina / Jack / Bear | رینا / جیک / ریچھ (کوما/پانڈا) |
 | 50/50 in prose | ففٹی ففٹی |
 
-First-person verbs are gendered in Urdu; the author's gender is unknown, so use neutral
-constructions (passive, "میرا شوق ہے", "پیش خدمت ہے").
+First-person verbs are gendered in Urdu. This author (kanda) is male (see SKILL.md), so masculine
+forms are fine; for authors of unknown gender use neutral constructions (passive, "میرا شوق ہے",
+"پیش خدمت ہے").
 
 ## Alisa
 
@@ -261,7 +262,7 @@ ZAN is a gauge, not a stance (frame data: "Increases ZAN gauge"): "gives ZAN" �
 | backswing blow | بیک سوئنگ بلو |
 | Heaven's Wrath (Reina) | ہیونز ریتھ |
 
-The author's gender is not stated: avoid gendered first-person verbs ("میرا زیادہ تر ٹیکن … میں ہوتا ہے").
+The author (Koenji) is male (see SKILL.md): masculine first-person verbs are fine.
 
 ## Law
 
@@ -304,7 +305,7 @@ The author's gender is not stated: avoid gendered first-person verbs ("میرا 
 | chain throws | چین تھروز |
 | Betrayer / wipe the floor / butterfly loops | بیٹریئر / وائپ دی فلور / بٹر فلائی لوپس |
 
-The guide authors' genders (Landon D, Lalo) are not stated: avoid gendered first-person verbs.
+The guide authors Landon D and Lalo are male (see SKILL.md): masculine first-person verbs are fine.
 
 ## Jin
 
@@ -400,7 +401,7 @@ The Reina author (Heavenly) is "he" in the source: masculine plural of respect (
 | Outfox / Swindler / Sonic Fang / Gatling punch / Snake Charmer / Five Fox Fury / Two Face | آؤٹ فاکس / سوئنڈلر / سونک فینگ / گیٹلنگ پنچ / اسنیک چارمر / فائیو فاکس فیوری / ٹو فیس |
 | back kenpo | بیک کینپو (پیچھے ہٹنے والی موو) |
 
-SEAGERR's gender is not stated: "یہ گیم میری دنیا بن گئی", not "میں ڈوب گیا".
+SEAGERR is male (see SKILL.md): masculine first-person verbs ("میں ڈوب گیا") are fine.
 
 ## Anna
 

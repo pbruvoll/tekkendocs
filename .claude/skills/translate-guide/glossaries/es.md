@@ -143,11 +143,11 @@ Bad Jaguar (BAD), Dark Upper, Giant Swing, Tombstone Piledriver, Shining Wizard 
 
 ## Azucena
 
-Libertador (LIB), backswing blow, Heaven's Wrath, G-Clef, Flash stay English. Koenji's gender is not stated: phrase the author's lines without gendered forms ("Juego Tekken…", not "Soy un jugador").
+Libertador (LIB), backswing blow, Heaven's Wrath, G-Clef, Flash stay English. Koenji is male (see SKILL.md): "Soy un jugador" is fine.
 
 ## Law
 
-Dragon Charge (DSS), Dragon Hammer, Tornado Claw, flip kick, rekka, kicharge, legend kick stay English. crouch walk → caminar agachado; nunchuck → nunchaku; "Chinese boxing" → boxeo chino. Landon D's gender is not stated: "juego Tekken de forma competitiva", "formo parte de la comunidad".
+Dragon Charge (DSS), Dragon Hammer, Tornado Claw, flip kick, rekka, kicharge, legend kick stay English. crouch walk → caminar agachado; nunchuck → nunchaku; "Chinese boxing" → boxeo chino. Landon D is male (see SKILL.md): masculine forms are fine.
 
 ## Leroy
 
@@ -159,7 +159,7 @@ RAIJIN/RAI, FUJIN/FUJ, Warrior Instinct, omen, hellsweep, wavedash, EWGF, spike 
 
 ## Nina
 
-backsway, Hayashida step, butterfly loops, Betrayer, wipe the floor stay English. chain throws → agarres en cadena; guns → pistolas/disparos; Williams sisters → hermanas Williams. Lalo's gender is not stated ("juego juegos de pelea", not "soy un jugador").
+backsway, Hayashida step, butterfly loops, Betrayer, wipe the floor stay English. chain throws → agarres en cadena; guns → pistolas/disparos; Williams sisters → hermanas Williams. Lalo is male (see SKILL.md): "soy un jugador" is fine.
 
 ## Jin
 
@@ -195,7 +195,7 @@ NSS, KIN (Kincho), DGF (Dragonfly), IND (Indian), FLE (Flea), BDS / Bad Breath, 
 
 ## Steve
 
-Lionheart (LNH), Flicker (FLK), Peekaboo (PAB), Duck (DCK), extended duck (EXD), duck cancel, Weave (WV), Sway (SWY), Albatross (ALB), Outfox, Swindler, Sonic Fang, Gatling punch, Snake Charmer, Five Fox Fury, Two Face, flicker cancel, back kenpo, guard break, balcony break stay English. SEAGERR's gender is not stated: "juego Steve", "llegué a estar entre los mejores Steve".
+Lionheart (LNH), Flicker (FLK), Peekaboo (PAB), Duck (DCK), extended duck (EXD), duck cancel, Weave (WV), Sway (SWY), Albatross (ALB), Outfox, Swindler, Sonic Fang, Gatling punch, Snake Charmer, Five Fox Fury, Two Face, flicker cancel, back kenpo, guard break, balcony break stay English. SEAGERR is male (see SKILL.md): masculine forms are fine.
 
 ## Anna
 

@@ -179,11 +179,11 @@ Bad Jaguar (BAD), Dark Upper, Giant Swing, Tombstone Piledriver, Shining Wizard 
 
 ## Azucena
 
-Libertador (LIB), Backswing Blow, Heaven's Wrath, G-Clef, Flash stay English. Koenji's gender is not stated: "Ich spiele Tekken…", not "Ich bin ein Tekken-Spieler".
+Libertador (LIB), Backswing Blow, Heaven's Wrath, G-Clef, Flash stay English. Koenji is male (see SKILL.md): "Ich bin ein Tekken-Spieler" is fine.
 
 ## Law
 
-Dragon Charge (DSS), Dragon Hammer, Tornado Claw, Flip Kick, Rekka, Slide, Crouch Walk, Kicharge, Legend Kick stay English. nunchuck → Nunchaku. The source's joke headings (Through the Fire and Flames, Wolverine) stay English; "Chinese boxing" → Chinesisches Boxen. Landon D's gender is not stated: "spiele kompetitiv Tekken", not "bin ein kompetitiver Spieler".
+Dragon Charge (DSS), Dragon Hammer, Tornado Claw, Flip Kick, Rekka, Slide, Crouch Walk, Kicharge, Legend Kick stay English. nunchuck → Nunchaku. The source's joke headings (Through the Fire and Flames, Wolverine) stay English; "Chinese boxing" → Chinesisches Boxen. Landon D is male (see SKILL.md): masculine forms are fine.
 
 ## Leroy
 
@@ -231,7 +231,7 @@ NSS, KIN (Kincho), DGF (Dragonfly), IND (Indian), FLE (Flea), BDS / Bad Breath, 
 
 ## Steve
 
-Lionheart (LNH), Flicker (FLK), Peekaboo (PAB), Duck (DCK), Extended Duck (EXD), Duck Cancel, Weave (WV), Sway (SWY), Albatross (ALB), Outfox, Swindler, Sonic Fang, Gatling Punch, Snake Charmer, Five Fox Fury, Two Face, Flicker Cancel, Back Kenpo, Balcony Break stay English ("Lionheart-Stance"). SEAGERR's gender is not stated: "als einzige Person mit Steve".
+Lionheart (LNH), Flicker (FLK), Peekaboo (PAB), Duck (DCK), Extended Duck (EXD), Duck Cancel, Weave (WV), Sway (SWY), Albatross (ALB), Outfox, Swindler, Sonic Fang, Gatling Punch, Snake Charmer, Five Fox Fury, Two Face, Flicker Cancel, Back Kenpo, Balcony Break stay English ("Lionheart-Stance"). SEAGERR is male (see SKILL.md): "als einziger Steve-Spieler" is fine.
 
 ## Anna
 
