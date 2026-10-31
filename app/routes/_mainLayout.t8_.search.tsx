@@ -10,13 +10,16 @@ import { ContentContainer } from '~/components/ContentContainer';
 import { Input } from '~/components/ui/input';
 import { filterKey } from '~/constants/filterConstants';
 import { CompactMoveList } from '~/features/compactMoveList/CompactMoveList';
+import {
+  matchCharacters,
+  parseCharacterMoveQuery,
+  searchMoves,
+} from '~/features/moveSearch/moveSearch';
 import { useSearchParamState } from '~/hooks/useSearchParamState';
 import { getTekken8Characters } from '~/services/staticDataService';
 import { type CharacterFrameDataPage } from '~/types/CharacterFrameDataPage';
 import { type GameRouteId } from '~/types/GameRouteId';
-import { type Move } from '~/types/Move';
 import { commandInputProps } from '~/utils/commandUtils';
-import { cleanCommand } from '~/utils/filterUtils';
 import { sortMovesV2 } from '~/utils/frameDataUtils';
 import { commandToUrlSegmentEncoded } from '~/utils/moveUtils';
 import { generateMetaTags } from '~/utils/seoUtils';
@@ -44,22 +47,10 @@ export default function () {
   // while filtering and rendering the move table lags behind
   const searchQuery = useDeferredValue(searchInput);
 
-  const [characterQuery, moveQuery] = useMemo(() => {
-    if (!searchQuery) {
-      return ['', ''];
-    }
-    const splitted = searchQuery.split(' ');
-    if (splitted.length === 1) {
-      return [searchQuery.toLowerCase(), ''];
-    }
-    if (splitted.length === 2) {
-      return [splitted[0].toLowerCase(), splitted[1].toLowerCase()];
-    }
-    return [
-      splitted[0].toLowerCase(),
-      splitted.slice(1).join('').toLowerCase(),
-    ];
-  }, [searchQuery]);
+  const { characterQuery, moveQuery } = useMemo(
+    () => parseCharacterMoveQuery(searchQuery),
+    [searchQuery],
+  );
 
   const navigate = useNavigate();
 
@@ -68,13 +59,7 @@ export default function () {
   const filteredCharList =
     characterQuery === '?'
       ? charList.filter((char) => char.id === 'mokujin')
-      : charList.filter((char) =>
-          char.id
-            .replace('-', '')
-            .replace(' ', '')
-            .toLowerCase()
-            .startsWith(characterQuery.replace('-', '')),
-        );
+      : matchCharacters(charList, characterQuery);
 
   const selectedCharacter =
     filteredCharList.length === 1 ? filteredCharList[0] : undefined;
@@ -99,44 +84,10 @@ export default function () {
       data &&
       data.characterName === selectedCharId
     ) {
-      const cleanMoveQuery = cleanCommand(moveQuery);
-
-      let filteredByCommand: Move[] = [];
-      if (cleanMoveQuery.includes('?')) {
-        // filter by wildcard, so "1?2", matches "1,2,3".
-        // we use ? as wildcard instead of *, since som move have * in them (it means hold button)
-        const w = cleanMoveQuery.replace(/[*.+^${}()|[\]\\]/g, '\\$&'); // regexp escape
-        const re = new RegExp(
-          `^${w.replace(/\?/g, '.*')}${searchQuery.endsWith(' ') ? '' : '.*'}$`,
-        );
-        filteredByCommand = data.moves.filter((move) => re.test(move.command));
-      } else if (cleanMoveQuery && searchQuery.endsWith(' ')) {
-        filteredByCommand = data.moves.filter(
-          (move) => cleanCommand(move.command) === cleanMoveQuery,
-        );
-      } else {
-        filteredByCommand = data.moves.filter((move) =>
-          cleanCommand(move.command).startsWith(cleanMoveQuery),
-        );
-      }
-      if (filteredByCommand.length > 0) {
-        return filteredByCommand;
-      }
-      if (moveQuery.length > 2) {
-        const filteredByName = data.moves.filter((move) =>
-          move.name
-            ?.toLowerCase()
-            .replace(' ', '')
-            .includes(moveQuery.toLowerCase()),
-        );
-        if (filteredByName.length > 0) {
-          return filteredByName;
-        }
-      }
-      return [];
+      return searchMoves(data.moves, moveQuery);
     }
     return [];
-  }, [data, filteredCharList.length, moveQuery, searchQuery, selectedCharId]);
+  }, [data, filteredCharList.length, moveQuery, selectedCharId]);
 
   // The compact list's column headers sort through the url
   const [searchParams] = useSearchParams();
@@ -172,11 +123,13 @@ export default function () {
 
   const handleOnKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === 'Enter') {
-      if (characterQuery && !moveQuery) {
-        navigate(`/${gameRouteId}/${filteredCharList[0].id}`);
+      if (characterQuery && !moveQuery.trim()) {
+        if (filteredCharList.length > 0) {
+          navigate(`/${gameRouteId}/${filteredCharList[0].id}`);
+        }
         return;
       }
-      if (moveQuery && paginatedMoves.length > 0) {
+      if (moveQuery.trim() && paginatedMoves.length > 0) {
         navigate(
           `/${gameRouteId}/${selectedCharId}/${commandToUrlSegmentEncoded(paginatedMoves[0].command)}`,
         );
