@@ -1,6 +1,6 @@
 ---
 name: translate-guide
-description: Translate a tekkendocs English character guide CSV into another language (Korean, Japanese, Spanish, Urdu, Russian, German, Turkish, or a new one), producing data/guides/<char>/<char>-guide-<lang>.csv with every structural and notation cell preserved byte-for-byte. Use when the user wants a character guide translated, or wants an existing translated guide CSV checked or extended.
+description: Translate a tekkendocs English character guide CSV into another language (Korean, Japanese, Spanish, Urdu, Russian, German, Turkish, Brazilian Portuguese, or a new one), producing data/guides/<char>/<char>-guide-<lang>.csv with every structural and notation cell preserved byte-for-byte. Use when the user wants a character guide translated, or wants an existing translated guide CSV checked or extended.
 ---
 
 <what-to-do>
@@ -8,9 +8,9 @@ description: Translate a tekkendocs English character guide CSV into another lan
 Translate `data/guides/<char>/<char>-guide.csv` into `data/guides/<char>/<char>-guide-<lang>.csv`.
 
 1. Read the **entire** source CSV first. Later sections reuse terminology from earlier ones.
-2. Read the language's glossary in [glossaries/](./glossaries/) (`ko.md`, `ja.md`, `es.md`, `ur.md`, `ru.md`, `de.md`, `tr.md`).
-   Use its terms. It is the accumulated result of previous runs. For a new language, create
-   `glossaries/<lang>.md` following the same shape.
+2. Read the language's glossary in [glossaries/](./glossaries/) (`ko.md`, `ja.md`, `es.md`, `ur.md`, `ru.md`, `de.md`, `tr.md`, `pt-br.md`).
+   Use its terms. It is the accumulated result of previous runs. For a new language, first do the
+   research pass below, then create `glossaries/<lang>.md` following the same shape.
 3. List the cells to translate: `python .claude/skills/translate-guide/scripts/guide_csv.py cells <char>`.
    Only those cells are prose. Everything else is structural and is copied verbatim by the script.
 4. Write the translations as a Python file in the scratchpad: `T = {(record, column): '''text''', ...}`.
@@ -29,6 +29,29 @@ description, section headings, labels, the machine-translation disclaimer) in a 
 `app/features/guideLanguage/texts/<lang>.ts`, registered in `guideTexts` in `texts/guideTexts.ts`
 (the `Record` type forces this). Use the same glossary terms as the csv. A right-to-left language
 also goes in `rtlGuideLanguages` in `guideLanguage.ts`.
+
+## Research pass for a new language
+
+Do this **before translating the first guide**, so every guide is built on sourced terms rather than
+on terms you invented and checked afterwards.
+
+1. Draft the list of terms every guide repeats: duck / crouch, throw and throw break, punish, whiff
+   punish, launcher and the verb for launching, block, high / mid / low, plus / minus / on block /
+   on hit, safe / unsafe, sidestep / sidewalk, backturn, high crush / low crush, down jab, counter
+   hit, frame trap, mixup, okizeme, keep-out, turtle, round ender, stance, and the Heat names.
+2. Search for how that language's community writes them. Written Tekken material is often thin, so
+   cast wide: fighting-game community forums, community glossaries of FGC terms (Street Fighter
+   glossaries count), Tekken blogs and command-list dictionaries, frame data or beginner articles,
+   and gaming press. Prefer sources written by players over press and over machine-translated
+   sites. Read the pages; don't decide from search snippets.
+3. For each term, decide: kept in English, or the local word that sources use. Choose the local
+   regional variant the user asked for (e.g. Brazilian, not European, Portuguese).
+4. Write the glossary with the source next to each term, a dated research note listing which terms
+   no source confirmed, and a Sources list with links and what each source showed.
+5. In the final report, tell the user which terms are unconfirmed, so a native player can check them.
+
+Also check the "Gender of authors and characters" table below before writing first-person author
+lines.
 
 </what-to-do>
 
@@ -75,6 +98,21 @@ Unquoted notation in prose (e.g. `F+3, 1+2`) is plain text; keep it verbatim too
 Guides refer to other characters' moves and stances by abbreviation (`AOP` is Ling Xiaoyu's Art of
 Phoenix, `Hwo df+4` is Hwoarang's). Never guess the owner when adding context in a translation:
 check, or keep just the abbreviation as the source does.
+
+## Gender of authors and characters
+
+Many languages need gender for first-person verbs, adjectives or articles. These are the facts for
+every language; the glossaries only say how to phrase them.
+
+| Who | Gender |
+| --- | --- |
+| Authors Koenji, Lalo, kanda, Landon D, SEAGERR, Heavenly | male |
+| Panda | female |
+| Leo Kliesen | not stated by the game: use the name, no gendered pronoun or article |
+
+For anyone not listed (Pagani, Kirakira, the Lili guide author, LuckyEevee, Weak Akuma and other
+creators named in resources), the gender is not known: phrase their lines without gendered forms.
+Never guess from a name. When you learn someone's gender, add them to this table.
 
 ## Row shape quirks
 

@@ -158,7 +158,7 @@ Sambo → самбо, neuter and lowercase ("боевое самбо" for Combat
 | Reina / Jack / Bear | Рейна / Джек / медведь | |
 | tip range | кончик дистанции | |
 
-The author's gender is unknown: phrase first-person lines neutrally ("мне захотелось", not "я решил").
+The author (kanda) is male (see SKILL.md): masculine past tense ("я решил") is fine.
 
 ## Alisa
 
@@ -264,7 +264,7 @@ ZAN is a gauge, not a stance (frame data: "Increases ZAN gauge"): "gives ZAN" �
 | Libertador (LIB), backswing blow, Heaven's Wrath, Flash | in Latin | |
 | Yoshimitsu / Yoshi | Ёсимицу / Ёси | |
 
-The author's gender is not stated: avoid gendered past tense in first person ("на неё ушло слишком много моего времени", not "я провёл").
+The author (Koenji) is male (see SKILL.md): masculine past tense ("я провёл") is fine.
 
 ## Law
 
@@ -276,7 +276,7 @@ The author's gender is not stated: avoid gendered past tense in first person ("�
 | flip kick | флип-кик | |
 | nunchuck | нунчаки | |
 
-Landon D's gender is not stated: avoid gendered past tense ("у меня ушло", "стал моим мейном").
+Landon D is male (see SKILL.md): masculine past tense is fine.
 
 ## Leroy
 
@@ -307,7 +307,7 @@ Landon D's gender is not stated: avoid gendered past tense ("у меня ушл�
 | chain throws | цепные броски | |
 | guns (gun moves) | выстрелы | |
 
-Lalo's gender is not stated: avoid gendered past tense.
+Lalo is male (see SKILL.md): masculine past tense is fine.
 
 ## Jin
 
@@ -386,7 +386,7 @@ The Reina author (Heavenly) is "he" in the source: masculine forms are fine ther
 | Lionheart, Flicker, Peekaboo, Duck, extended duck, Weave, Sway, Albatross, Outfox, Swindler, Sonic Fang, Gatling punch, Snake Charmer, Five Fox Fury, Two Face | in Latin, "стойка Lionheart" | |
 | back kenpo | отскок назад | descriptive |
 
-SEAGERR's gender is not stated: "у меня ушло", "удалось войти", never "я провёл".
+SEAGERR is male (see SKILL.md): masculine past tense ("я провёл") is fine.
 
 ## Anna
 
