@@ -113,6 +113,31 @@ test('text matching needs three characters and no digits', () => {
   expect(searchMoves(moves, 'power1')).toEqual([]);
 });
 
+test('property abbreviations match moves with that property', () => {
+  const propertyMoves = [
+    createMove('f+1+2', { tags: { pc: '' } }),
+    createMove('2+3', { tags: { hb: '', pc: '' } }),
+    createMove('H.2+3', { tags: { hs: '', pc: '' } }),
+    createMove('R.df+1+2', { tags: { ra: '', pc: '' } }),
+    createMove('f+4,2', { tags: { he: '' } }),
+    createMove('db+2', { tags: { hom: '' } }),
+    createMove('1+2', { tags: { hom: '' } }),
+  ];
+  expect(commands(searchMoves(propertyMoves, 'pc'))).toEqual(['f+1+2']);
+  expect(commands(searchMoves(propertyMoves, 'PC '))).toEqual(['f+1+2']);
+  expect(commands(searchMoves(propertyMoves, 'he'))).toEqual(['f+4,2']);
+  expect(commands(searchMoves(propertyMoves, 'hs'))).toEqual(['H.2+3']);
+  expect(commands(searchMoves(propertyMoves, 'hom'))).toEqual(['db+2', '1+2']);
+});
+
+test('property matches come before command prefix matches', () => {
+  const stanceMoves = [
+    createMove('BHS.1'),
+    createMove('H.2+3', { tags: { hs: '' } }),
+  ];
+  expect(commands(searchMoves(stanceMoves, 'hs'))).toEqual(['H.2+3', 'BHS.1']);
+});
+
 test('parseCharacterMoveQuery', () => {
   expect(parseCharacterMoveQuery('')).toEqual({
     characterQuery: '',
