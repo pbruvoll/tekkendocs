@@ -6,6 +6,8 @@ description: Translate a tekkendocs English character guide CSV into another lan
 <what-to-do>
 
 Translate `data/guides/<char>/<char>-guide.csv` into `data/guides/<char>/<char>-guide-<lang>.csv`.
+A character can have more guides by other authors, `<char>-<authorSlug>-guide.csv`. Their
+translations are `<char>-<authorSlug>-guide-<lang>.csv`.
 
 1. Read the **entire** source CSV first. Later sections reuse terminology from earlier ones.
 2. Read the language's glossary in [glossaries/](./glossaries/) (`ko.md`, `ja.md`, `es.md`, `ur.md`, `ru.md`, `de.md`, `tr.md`, `pt-br.md`).
@@ -162,11 +164,12 @@ Delete it afterwards.
 
 The site serves translations from the CDN: `getGuideSource` in
 `app/features/guideLanguage/guideSource.server.ts` fetches
-`<cdn>/t8/guides/<char>/<char>-guide-<lang>.csv` and falls back to the English Google Sheet. The
+`<cdn>/t8/guides/<char>/<guide>-<lang>.csv` (`<guide>` is the csv name without `.csv`) and falls back to the English Google Sheet. The
 user uploads the CSV to the CDN themselves; do not upload it. Until it is uploaded, `?lang=<lang>`
 shows English. To preview locally, temporarily read the local file in `getGuideSource` and revert.
 
-The character must also be in `translatedGuidesT8` in `app/services/staticDataService.ts`, or the
-route ignores `?lang=` and hides the language switcher. Add it when translating a new character.
+The guide's entry in `characterGuideAuthors` in `app/services/staticDataService.ts` must also have
+`translated: true`, or the route ignores `?lang=` and hides the language switcher. Set it when
+translating a new guide.
 
 </supporting-info>

@@ -166,96 +166,76 @@ const characterInfoListT7: CharacterInfo[] = charsT7.map((char) => ({
 export type GuideMetaData = {
   author: string;
   version?: string;
+  /** Not used for the main guide. Used in the url, /t8/<character>/guide/<authorSlug>,
+   * and in the sheet name, <character>-<authorSlug>-guide */
+  authorSlug?: string;
+  /** Translated to every guide language. Set it once the translations are on the cdn */
+  translated?: boolean;
 };
+/** The guides for each character. The first one is the main guide at /t8/<character>/guide */
 export const characterGuideAuthors: Record<
   Game,
-  Record<string, GuideMetaData>
+  Record<string, GuideMetaData[]>
 > = {
   T8: {
-    'armor-king': { author: 'ArmorKingTV21', version: 'S2' },
-    alisa: { author: 'Nick RM', version: 'S3' },
-    asuka: { author: 'Fergus', version: 'S3' },
-    anna: { author: 'Joi', version: 'S3' },
-    azucena: { author: 'Koenji', version: 'S3' },
-    bryan: { author: 'Ty', version: 'S2' },
-    claudio: { author: 'Tetsu', version: 'S2' },
-    clive: { author: 'Kwstakis', version: 'S3' },
-    'devil-jin': { author: 'Vermilion', version: 'S2' },
-    dragunov: { author: 'Fear of Silence', version: 'S2' },
-    eddy: { author: 'Ace', version: 'S3' },
-    fahkumram: { author: 'Leemishima', version: 'S3' },
-    feng: { author: 'Weak Akuma', version: 'S3' },
-    hwoarang: { author: 'Kicking Macine', version: 'S3' },
-    heihachi: { author: 'Trunkiez', version: 'S2' },
-    'jack-8': { author: 'Fisherboat', version: 'S3' },
-    jin: { author: 'Bok Dibi', version: 'S2' },
-    jun: { author: 'Pagani', version: 'S2' },
-    kazuya: { author: 'Ishan', version: 'S3' },
-    kuma: { author: 'Nino', version: 'S2' },
-    kunimitsu: { author: 'Koenji', version: 'S3' },
-    lars: { author: 'KayDash', version: 'S2' },
-    law: { author: 'Landon D', version: 'S2' },
-    lee: { author: 'Super Akouma', version: 'S2' },
-    leo: { author: 'AyoRichie & StrikeMist', version: 'S3' },
-    leroy: { author: 'SYRAXSLAYER', version: 'S2' },
-    lidia: { author: 'Leemishima', version: 'S3' },
-    lili: { author: 'DewGlider', version: 'S3' },
-    'miary-zo': { author: 'Koenji', version: 'S3' },
-    nina: { author: 'Lalo', version: 'S3' },
-    paul: { author: 'Romanjelly', version: 'S3' },
-    raven: { author: 'JacobKaas', version: 'S3' },
-    reina: { author: 'Heavenly', version: 'S3' },
-    shaheen: { author: 'Alihandal', version: 'S3' },
-    steve: { author: 'Seagerr', version: 'S2' },
-    victor: { author: 'Yung_P', version: 'S3' },
-    yoshimitsu: { author: 'Trizzy the Rapper', version: 'S3' },
-    xiaoyu: { author: 'Kanda', version: 'S3' },
+    'armor-king': [
+      { author: 'ArmorKingTV21', version: 'S2', translated: true },
+    ],
+    alisa: [{ author: 'Nick RM', version: 'S3', translated: true }],
+    asuka: [{ author: 'Fergus', version: 'S3', translated: true }],
+    anna: [{ author: 'Joi', version: 'S3', translated: true }],
+    azucena: [{ author: 'Koenji', version: 'S3', translated: true }],
+    bryan: [{ author: 'Ty', version: 'S2', translated: true }],
+    claudio: [{ author: 'Tetsu', version: 'S2', translated: true }],
+    clive: [{ author: 'Kwstakis', version: 'S3', translated: true }],
+    'devil-jin': [{ author: 'Vermilion', version: 'S2', translated: true }],
+    dragunov: [{ author: 'Fear of Silence', version: 'S2', translated: true }],
+    eddy: [{ author: 'Ace', version: 'S3', translated: true }],
+    fahkumram: [{ author: 'Leemishima', version: 'S3', translated: true }],
+    feng: [{ author: 'Weak Akuma', version: 'S3', translated: true }],
+    hwoarang: [{ author: 'Kicking Macine', version: 'S3', translated: true }],
+    heihachi: [{ author: 'Trunkiez', version: 'S2', translated: true }],
+    'jack-8': [{ author: 'Fisherboat', version: 'S3', translated: true }],
+    jin: [{ author: 'Bok Dibi', version: 'S2', translated: true }],
+    jun: [{ author: 'Pagani', version: 'S2', translated: true }],
+    kazuya: [{ author: 'Ishan', version: 'S3', translated: true }],
+    kuma: [{ author: 'Nino', version: 'S2', translated: true }],
+    kunimitsu: [{ author: 'Koenji', version: 'S3', translated: true }],
+    lars: [{ author: 'KayDash', version: 'S2', translated: true }],
+    law: [{ author: 'Landon D', version: 'S2', translated: true }],
+    lee: [{ author: 'Super Akouma', version: 'S2', translated: true }],
+    leo: [
+      { author: 'AyoRichie & StrikeMist', version: 'S3', translated: true },
+    ],
+    leroy: [{ author: 'SYRAXSLAYER', version: 'S2', translated: true }],
+    lidia: [{ author: 'Leemishima', version: 'S3', translated: true }],
+    lili: [{ author: 'DewGlider', version: 'S3', translated: true }],
+    'miary-zo': [{ author: 'Koenji', version: 'S3', translated: true }],
+    nina: [{ author: 'Lalo', version: 'S3', translated: true }],
+    paul: [{ author: 'Romanjelly', version: 'S3', translated: true }],
+    raven: [{ author: 'JacobKaas', version: 'S3', translated: true }],
+    reina: [{ author: 'Heavenly', version: 'S3', translated: true }],
+    shaheen: [{ author: 'Alihandal', version: 'S3', translated: true }],
+    steve: [{ author: 'Seagerr', version: 'S2', translated: true }],
+    victor: [{ author: 'Yung_P', version: 'S3', translated: true }],
+    yoshimitsu: [
+      { author: 'Trizzy the Rapper', version: 'S3', translated: true },
+    ],
+    xiaoyu: [{ author: 'Kanda', version: 'S3', translated: true }],
   },
   T7: {},
   TT2: {},
 };
 
-/** T8 guides translated to every guide language. Add a guide once its translations are on the cdn */
-export const translatedGuidesT8: string[] = [
-  'paul',
-  'kunimitsu',
-  'dragunov',
-  'fahkumram',
-  'xiaoyu',
-  'alisa',
-  'hwoarang',
-  'clive',
-  'kazuya',
-  'leo',
-  'miary-zo',
-  'jack-8',
-  'shaheen',
-  'armor-king',
-  'azucena',
-  'nina',
-  'law',
-  'leroy',
-  'heihachi',
-  'jin',
-  'lars',
-  'raven',
-  'reina',
-  'asuka',
-  'claudio',
-  'bryan',
-  'yoshimitsu',
-  'steve',
-  'anna',
-  'lili',
-  'jun',
-  'feng',
-  'eddy',
-  'kuma',
-  'lee',
-  'lidia',
-  'devil-jin',
-  'victor',
-];
+/** The start of a guide's file names, like lee or lee-stack. The sheet is <id>-guide,
+ * the images <id>-1200.webp and <id>-600.webp */
+export const getGuideFileId = (characterId: string, authorSlug?: string) =>
+  authorSlug ? `${characterId}-${authorSlug}` : characterId;
+
+export const getGuideUrl = (characterId: string, authorSlug?: string) =>
+  authorSlug
+    ? `/t8/${characterId}/guide/${authorSlug}`
+    : `/t8/${characterId}/guide`;
 
 export const siteUrl = 'https://tekkendocs.com';
 

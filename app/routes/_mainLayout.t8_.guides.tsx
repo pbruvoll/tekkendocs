@@ -3,6 +3,8 @@ import { CharacterGrid } from '~/components/CharacterGrid';
 import { ContentContainer } from '~/components/ContentContainer';
 import {
   characterGuideAuthors,
+  getGuideFileId,
+  getGuideUrl,
   getTekken8Characters,
 } from '~/services/staticDataService';
 import { getCacheControlHeaders } from '~/utils/headerUtils';
@@ -43,20 +45,18 @@ export default function () {
 
         <CharacterGrid
           size="large"
-          characterCards={characterInfoList
-            .filter(({ id }) => characterGuideAuthors.T8[id])
-            .map(({ id, displayName }) => {
-              const imgSrc = t8GuideImgSmallMap[id];
-              const version = characterGuideAuthors.T8[id].version;
-              return {
+          characterCards={characterInfoList.flatMap(({ id, displayName }) =>
+            (characterGuideAuthors.T8[id] ?? []).map(
+              ({ author, version, authorSlug }) => ({
                 name: displayName,
                 badge: version !== 'S2' ? version : undefined,
-                author: characterGuideAuthors.T8[id].author,
-                size: 'large',
-                imgSrc,
-                url: `/t8/${id}/guide`,
-              };
-            })}
+                author,
+                size: 'large' as const,
+                imgSrc: t8GuideImgSmallMap[getGuideFileId(id, authorSlug)],
+                url: getGuideUrl(id, authorSlug),
+              }),
+            ),
+          )}
         />
       </section>
     </ContentContainer>

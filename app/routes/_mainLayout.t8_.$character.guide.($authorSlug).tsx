@@ -19,7 +19,10 @@ import {
   guideLanguageParam,
   parseGuideLanguage,
 } from '~/features/guideLanguage/guideLanguage';
-import { getGuideSource } from '~/features/guideLanguage/guideSource.server';
+import {
+  getGuideSheetName,
+  getGuideSource,
+} from '~/features/guideLanguage/guideSource.server';
 import { guideTexts } from '~/features/guideLanguage/texts/guideTexts';
 import { AboutAuthor } from '~/features/guides/AboutAuthor';
 import { ComboEnders } from '~/features/guides/ComboEnders';
@@ -43,7 +46,8 @@ import { WallCombos } from '~/features/guides/WallCombos';
 import { useFrameData } from '~/hooks/useFrameData';
 import {
   characterGuideAuthors,
-  translatedGuidesT8,
+  getGuideFileId,
+  getGuideUrl,
 } from '~/services/staticDataService';
 import { type CharacterFrameData } from '~/types/CharacterFrameData';
 import { type Game } from '~/types/Game';
@@ -72,7 +76,12 @@ export const loader = async ({ params, url }: LoaderFunctionArgs) => {
     });
   }
 
-  if (!characterGuideAuthors.T8[character] && !isPreview) {
+  const authorSlug = params.authorSlug;
+  // the main guide is the one without an authorSlug
+  const guideMeta = characterGuideAuthors.T8[character]?.find(
+    (guide) => guide.authorSlug === authorSlug,
+  );
+  if (!guideMeta && !isPreview) {
     throw data('Guide not found', {
       status: 404,
       statusText: 'Not found',
@@ -81,16 +90,18 @@ export const loader = async ({ params, url }: LoaderFunctionArgs) => {
 
   const game: Game = 'T8';
 
-  const requestedLanguage = translatedGuidesT8.includes(character)
+  const translatable = !!guideMeta?.translated;
+  const requestedLanguage = translatable
     ? parseGuideLanguage(url.searchParams.get(guideLanguageParam))
     : defaultGuideLanguage;
-  const key = `${character}-guide|_|${game}|_|${requestedLanguage}`;
+  const key = `${getGuideSheetName(character, authorSlug)}|_|${game}|_|${requestedLanguage}`;
 
   const getFreshValue = async () => {
     const { editUrl, language, rows } = await getGuideSource(
       game,
       character,
       requestedLanguage,
+      authorSlug,
     );
     const sheetSections = sheetToSections(rows);
     const guideData = tablesToGuideData(sheetSections);
@@ -114,7 +125,17 @@ export const loader = async ({ params, url }: LoaderFunctionArgs) => {
   }
 
   return data(
-    { characterName: character, editUrl, guideData, game, language },
+    {
+      characterName: character,
+      editUrl,
+      guideData,
+      game,
+      language,
+      translatable,
+      guideUrl: getGuideUrl(character, authorSlug),
+      guideFileId: getGuideFileId(character, authorSlug),
+      version: guideMeta?.version,
+    },
     {
       headers: {
         ...getCacheControlHeaders({ seconds: isPreview ? 5 : 60 * 5 }),
@@ -146,7 +167,8 @@ export const meta: MetaFunction<typeof loader> = ({
   const author = loaderData?.guideData?.authors?.[0]?.name;
   const authorLink =
     loaderData?.guideData?.authors?.[0]?.url?.split(' | ')?.[0];
-  const version = characterGuideAuthors.T8[characterId]?.version;
+  const version = loaderData?.version;
+  const guideUrl = loaderData?.guideUrl ?? getGuideUrl(characterId);
   const characterTitle =
     characterName[0].toUpperCase() + characterName.substring(1);
   const language = loaderData?.language ?? 'en';
@@ -158,7 +180,8 @@ export const meta: MetaFunction<typeof loader> = ({
   });
   const description = texts.metaDescription({ character: characterTitle });
 
-  const imageUrl = `/t8/guides/${characterId}-1200.png`;
+  const guideFileId = loaderData?.guideFileId ?? characterId;
+  const imageUrl = `/t8/guides/${guideFileId}-1200.png`;
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -185,7 +208,7 @@ export const meta: MetaFunction<typeof loader> = ({
     },
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `https://tekkendocs.com/t8/${characterId}/guide`,
+      '@id': `https://tekkendocs.com${guideUrl}`,
     },
     about: {
       '@type': 'VideoGame',
@@ -204,7 +227,7 @@ export const meta: MetaFunction<typeof loader> = ({
       image: {
         url: imageUrl,
       },
-      url: `/t8/${characterId}/guide`,
+      url: guideUrl,
     }) || [];
 
   return [
@@ -216,7 +239,7 @@ export const meta: MetaFunction<typeof loader> = ({
       // translations (?lang=xx) are not indexed separately yet
       tagName: 'link',
       rel: 'canonical',
-      href: `https://tekkendocs.com/t8/${characterId}/guide`,
+      href: `https://tekkendocs.com${guideUrl}`,
     },
   ];
 };
@@ -227,6 +250,9 @@ export default function Index() {
     guideData,
     game,
     language,
+    translatable,
+    version,
+    guideFileId,
   } = useLoaderData<typeof loader>();
   const { moves: frameData } = useFrameData();
   const gameId = game.toLowerCase();
@@ -273,7 +299,6 @@ export default function Index() {
     notableMoves: keyMoves?.slice(10),
   };
 
-  const version = characterGuideAuthors.T8[characterId]?.version;
   const texts = guideTexts[language];
 
   return (
@@ -287,16 +312,16 @@ export default function Index() {
       <h1 className="sr-only">
         {texts.pageHeading({
           character: characterId,
-          season: version === 'S3' ? 3 : 2,
+          season: version === 'S2' ? 2 : 3,
         })}
       </h1>
       <img
-        src={t8GuideImgSmallMap[characterId]}
+        src={t8GuideImgSmallMap[guideFileId]}
         className="m-2 mx-auto aspect-[1.77] w-full max-w-4xl md:hidden"
         alt=""
       ></img>
       <img
-        src={t8GuideImgMap[characterId]}
+        src={t8GuideImgMap[guideFileId]}
         className="m-2 mx-auto aspect-[1.77] w-full max-w-4xl max-md:hidden"
         alt=""
       ></img>
@@ -305,7 +330,7 @@ export default function Index() {
         lang={language}
         dir={getGuideLanguageDir(language)}
       >
-        {translatedGuidesT8.includes(characterId) && (
+        {translatable && (
           <div className="mt-4 flex flex-wrap items-center gap-3">
             <GuideLanguageSwitcher current={language} />
             <GuideTranslationNotice />
