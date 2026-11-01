@@ -1,4 +1,5 @@
 import { characterInfoT8List } from '~/constants/characterInfoListT8';
+import { type MoveTag, MoveTags } from '~/constants/moveTags';
 import { type Move } from '~/types/Move';
 
 /**
@@ -15,16 +16,21 @@ import { type Move } from '~/types/Move';
  *   not match "df1,2". Not when the query has other spaces, such as "f f "
  * - Queries of 3+ characters without digits also match name, notes, hit
  *   level and tags
+ * - Property abbreviations, such as "pc" for power crush, match moves with
+ *   that property. See propertyAbbreviations
  *
- * Results are ranked: exact command, command prefix, command contains, and
- * finally text matches. Within a rank the original order is kept.
+ * Results are ranked: exact command, property, command prefix, command
+ * contains, and finally text matches. Within a rank the original order is
+ * kept. Property comes before prefix, so "hs" lists heat smashes before
+ * moves from a stance such as BHS
  */
 
 const rank = {
   exact: 0,
-  prefix: 1,
-  contains: 2,
-  text: 3,
+  property: 1,
+  prefix: 2,
+  contains: 3,
+  text: 4,
 } as const;
 
 type Rank = (typeof rank)[keyof typeof rank];
@@ -111,6 +117,41 @@ const createCommandMatcher = (
   };
 };
 
+type PropertyAbbreviation = {
+  tag: MoveTag;
+  /** Moves with any of these tags are left out, even with the tag above */
+  exclude?: MoveTag[];
+};
+
+// A Map, so queries such as "constructor" do not find inherited properties
+const propertyAbbreviations = new Map<string, PropertyAbbreviation>(
+  Object.entries({
+    // Heat bursts, heat smashes and rage arts also power crush, but are not
+    // what you look for
+    pc: {
+      tag: MoveTags.PowerCrush,
+      exclude: [MoveTags.HeatBurst, MoveTags.HeatSmash, MoveTags.RageArt],
+    },
+    he: { tag: MoveTags.HeatEngager },
+    hs: { tag: MoveTags.HeatSmash },
+    hom: { tag: MoveTags.Homing },
+  }),
+);
+
+const hasTag = (move: Move, tag: string) => move.tags?.[tag] !== undefined;
+
+const createPropertyMatcher = (
+  query: string,
+): ((move: Move) => boolean) | undefined => {
+  const property = propertyAbbreviations.get(query);
+  if (!property) {
+    return undefined;
+  }
+  return (move) =>
+    hasTag(move, property.tag) &&
+    !property.exclude?.some((tag) => hasTag(move, tag));
+};
+
 const createTextMatcher = (
   query: string,
 ): ((move: Move, normalized: NormalizedMove) => boolean) | undefined => {
@@ -118,7 +159,7 @@ const createTextMatcher = (
     return undefined;
   }
   return (move, normalized) =>
-    normalized.text.includes(query) || move.tags?.[query] !== undefined;
+    normalized.text.includes(query) || hasTag(move, query);
 };
 
 /** Returns the moves matching the query, best matches first */
@@ -131,13 +172,16 @@ export const searchMoves = (moves: Move[], moveQuery: string): Move[] => {
   // exact matching after "f "
   const exact = /^\s*\S+\s+$/.test(moveQuery);
   const matchCommand = createCommandMatcher(query, exact);
+  const matchProperty = createPropertyMatcher(query);
   const matchText = createTextMatcher(query);
 
-  const buckets: Move[][] = [[], [], [], []];
+  const buckets: Move[][] = Object.values(rank).map(() => []);
   for (const move of moves) {
     const normalized = getNormalizedMove(move);
     const commandRank = matchCommand(normalized);
-    if (commandRank !== undefined) {
+    if (commandRank !== rank.exact && matchProperty?.(move)) {
+      buckets[rank.property].push(move);
+    } else if (commandRank !== undefined) {
       buckets[commandRank].push(move);
     } else if (matchText?.(move, normalized)) {
       buckets[rank.text].push(move);
