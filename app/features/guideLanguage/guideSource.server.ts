@@ -1,5 +1,5 @@
 import { getSheet } from '~/services/googleSheetService.server';
-import { cdnUrl } from '~/services/staticDataService';
+import { cdnUrl, getGuideFileId } from '~/services/staticDataService';
 import { type Game } from '~/types/Game';
 import { parseCsv } from './csvUtils.server';
 import { defaultGuideLanguage, type GuideLanguage } from './guideLanguage';
@@ -15,20 +15,28 @@ export type GuideSource = {
 const translatedGuideUrl = (
   game: Game,
   characterId: string,
+  sheetName: string,
   language: GuideLanguage,
 ) =>
-  `${cdnUrl}/${game.toLowerCase()}/guides/${characterId}/${characterId}-guide-${language}.csv`;
+  `${cdnUrl}/${game.toLowerCase()}/guides/${characterId}/${sheetName}-${language}.csv`;
+
+/** @param authorSlug undefined for the main guide, see characterGuideAuthors */
+export const getGuideSheetName = (characterId: string, authorSlug?: string) =>
+  `${getGuideFileId(characterId, authorSlug)}-guide`;
 
 /**Fetches a translated guide from the cdn, falling back to the english sheet
  * when the character has not been translated yet.
+ * @param authorSlug undefined for the main guide, see characterGuideAuthors
  */
 export const getGuideSource = async (
   game: Game,
   characterId: string,
   language: GuideLanguage,
+  authorSlug?: string,
 ): Promise<GuideSource> => {
+  const sheetName = getGuideSheetName(characterId, authorSlug);
   if (language !== defaultGuideLanguage) {
-    const url = translatedGuideUrl(game, characterId, language);
+    const url = translatedGuideUrl(game, characterId, sheetName, language);
     try {
       const response = await fetch(url);
       if (response.ok) {
@@ -46,6 +54,6 @@ export const getGuideSource = async (
     }
   }
 
-  const { editUrl, rows } = await getSheet(`${characterId}-guide`, game);
+  const { editUrl, rows } = await getSheet(sheetName, game);
   return { rows, editUrl, language: defaultGuideLanguage };
 };

@@ -1,9 +1,11 @@
-"""Downloads every <character-id>-guide sheet from the T8 spreadsheet to csv.
+"""Downloads every <character-id>-guide sheet from the T8 spreadsheet to csv,
+and the additional guides by other authors, named <character-id>-<authorSlug>-guide.
 
 Only the three first columns are downloaded, as the rest of the sheet is static
 helper content which the site never reads.
 
 Output: data/guides/<character-id>/<character-id>-guide.csv
+        data/guides/<character-id>/<character-id>-<authorSlug>-guide.csv
 """
 
 import csv
@@ -22,6 +24,7 @@ BATCH_SIZE = 30
 repoRoot = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 outputRoot = os.path.join(repoRoot, "data", "guides")
 characterListPath = os.path.join(repoRoot, "app", "constants", "characterInfoListT8.ts")
+staticDataPath = os.path.join(repoRoot, "app", "services", "staticDataService.ts")
 
 
 def fail(message):
@@ -70,6 +73,21 @@ def loadCharacterIds():
     return set(characterIds)
 
 
+def loadAdditionalGuideIds():
+    """Returns a dict of guide id, <character-id>-<authorSlug>, to character id, for
+    the guides in characterGuideAuthors that are not the main guide"""
+    with open(staticDataPath, encoding="utf-8") as file:
+        content = file.read()
+    # only the T8 guides, so an authorSlug can not be attributed to an entry outside the list
+    content = content[content.index("characterGuideAuthors") : content.index("T7: {}")]
+    guideIds = {}
+    # a character entry looks like lee: [ { author: 'x' }, { author: 'y', authorSlug: 'y' } ],
+    for characterId, guides in re.findall(r"^\s+'?([\w-]+)'?: \[(.*?)\],$", content, re.MULTILINE | re.DOTALL):
+        for authorSlug in re.findall(r"authorSlug: '([^']+)'", guides):
+            guideIds[characterId + "-" + authorSlug] = characterId
+    return guideIds
+
+
 def fetchGuideRows(gSheet, titles):
     """Returns a dict of sheet title to rows, fetching the sheets in batches"""
     rowsByTitle = {}
@@ -91,10 +109,10 @@ def toCrlf(cell):
     return re.sub(r"\r?\n", "\r\n", cell)
 
 
-def writeGuide(characterId, rows):
+def writeGuide(characterId, guideId, rows):
     dirPath = os.path.join(outputRoot, characterId)
     os.makedirs(dirPath, exist_ok=True)
-    filePath = os.path.join(dirPath, characterId + GUIDE_SUFFIX + ".csv")
+    filePath = os.path.join(dirPath, guideId + GUIDE_SUFFIX + ".csv")
     with open(filePath, "w", newline="", encoding="utf-8") as file:
         csv.writer(file, delimiter=CSV_SEP).writerows(
             [[toCrlf(cell) for cell in row] for row in rows]
@@ -102,6 +120,9 @@ def writeGuide(characterId, rows):
 
 
 characterIds = loadCharacterIds()
+# guide id to character id, the main guide's id is the character id
+guideIdToCharacterId = {characterId: characterId for characterId in characterIds}
+guideIdToCharacterId.update(loadAdditionalGuideIds())
 gc = authorize()
 gSheet = gc.open_by_key(SPREADSHEET_ID)
 
@@ -109,7 +130,7 @@ guideTitles = []
 for worksheet in gSheet.worksheets():
     if not worksheet.title.endswith(GUIDE_SUFFIX):
         continue
-    if worksheet.title[: -len(GUIDE_SUFFIX)] not in characterIds:
+    if worksheet.title[: -len(GUIDE_SUFFIX)] not in guideIdToCharacterId:
         print("Skipping " + worksheet.title + ", it is not a character")
         continue
     guideTitles.append(worksheet.title)
@@ -122,8 +143,8 @@ rowsByTitle = fetchGuideRows(gSheet, guideTitles)
 
 for title in guideTitles:
     rows = rowsByTitle.get(title, [])
-    characterId = title[: -len(GUIDE_SUFFIX)]
-    writeGuide(characterId, rows)
-    print("  " + characterId + " (" + str(len(rows)) + " rows)")
+    guideId = title[: -len(GUIDE_SUFFIX)]
+    writeGuide(guideIdToCharacterId[guideId], guideId, rows)
+    print("  " + guideId + " (" + str(len(rows)) + " rows)")
 
 print("Wrote " + str(len(guideTitles)) + " guides to " + outputRoot)
