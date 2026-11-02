@@ -300,7 +300,7 @@
 |video=File:t8-p2-alisa-2,2.mp4
 |notes={{Plainlist|
 * {{BB}}
-* Jail from 1st block with 1F delay
+* Jails attack inputs from 1st block with 1F delay
 * Combo from 1st hit with 2f delay
 * Duckable
 * 2nd hit available on hit or block only
@@ -730,7 +730,7 @@
 |damage=,14
 |startup=,i25~26
 |block=-9
-|hit=+15d (+7)
+|hit=+15a (+7)
 |ch=
 |crush=
 |recv=r49
@@ -753,9 +753,9 @@
 |name=Logic Bomb
 |target=,m
 |damage=,24 (19)
-|startup=,i27~65
-|block=-12~+26g
-|hit=+1a
+|startup=,i25~26/i27~65
+|block=-14~+26g
+|hit=-1a~+39a
 |ch=
 |crush=
 |recv=r1
@@ -765,11 +765,13 @@
 |tracksRight=
 |video=File:t8-p2-alisa-f+4,1,4.mp4
 |notes={{Plainlist|
-* Aerial combo from 2nd hit
+* Projectile
+* Airborne combo from 2nd hit (-9a~+29a (-17~+21))
 * Move cannot be interrupted
-* i25-26 bounce, i25-26 travel, 
-(---)/i35(27-65) travel then explosion , 
--3(-11) and -1(-9) for explosion then hit, respectively
+* Typically -12 on block from 2nd block
+* Typically -1a (-9) on hit from 2nd hit
+* Kick is i25~26 and projectile is i27~65
+** Kick is -14~-13/-1a~+0a r40
 }}
 }}
 {{Move
@@ -1152,7 +1154,7 @@
 |tracksRight=
 |notes={{Plainlist|
 * Backsway
-* Transition to FC with D
+* Transition to r9? FC with D or after d+3 BKP transition
 * Can perform WS moves after 24 frames
 }}
 }}
@@ -2950,10 +2952,11 @@
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
-* Cancel to r33 with DBT.b
-* Transition to r50 SS with DBT.u_d
+* Cancel to r33? standing block with DBT.B
+* Transition to r50? Evasive Action with DBT.u_d
 }}
 }}
+
 {{Move
 |id=Alisa-DES.f+1+2
 |parent=
@@ -3566,31 +3569,7 @@
 == DBT (''Dual Boot'') ==
 
 {{MoveDataHeader}}
-{{Move
-|id=Alisa-DES.f+3
-|parent=
-|input=DES.f+3
-|alt=DES.f+4
-|name=Dual Boot
-|target=
-|damage=
-|startup=
-|block=
-|hit=
-|ch=
-|crush={{Plainlist|
-* js18~40
-* fs41~43}}
-|recv=r17 DBT
-|tot=64
-|range=
-|tracksLeft=
-|tracksRight=
-|notes={{Plainlist|
-* Cancel to r33 standing block with DBT.B
-* Transition to Evasive Action with input DBT.U_D
-}}
-}}
+{{MoveQuery|Alisa-DES.f+3}}
 {{Move
 |id=Alisa-DBT.1
 |num=120
@@ -3654,7 +3633,7 @@
 |target=h
 |damage=45
 |startup=i26~28
-|block=-11c
+|block=-12c~-10c
 |hit=+14a
 |ch=
 |crush={{Plainlist|
@@ -3666,9 +3645,11 @@
 |tracksLeft=
 |tracksRight=
 |video=File:t8-p2-alisa-dbt.2,1.mp4
-|notes={{Plainlist| -28 on whiff.
+|notes={{Plainlist|
 * {{BB}}
 * {{Spike}}
+* -28 on whiff
+* -11c on block on average
 * 13 chip damage on block
 * 18 chip damage on block in heat
 }}
@@ -3825,28 +3806,8 @@
 == BKP (''Backup'') ==
 
 {{MoveDataHeader}}
-{{Move
-|id=Alisa-db+1
-|parent=
-|input=db+1
-|name=Backup
-|target=
-|damage=
-|startup=
-|block=
-|hit=
-|ch=
-|crush=cs4~15
-|recv=r15 BKP
-|tot=
-|range=
-|tracksLeft=
-|tracksRight=
-|notes={{Plainlist|
-* Transition to r9? FC with D or after d+3 BKP transition
-* Can perform WS moves after 24 frames
-}}
-}}
+{{MoveQuery|Alisa-db+1}}
+
 {{Move
 |id=Alisa-BKP.1
 |num=128
@@ -3979,7 +3940,8 @@
 |parent=
 |alt=R.DES.df+1+2
 |name=Radiant Pegasus Bomb
-|tot=173
+|crush=fs21~48
+|tot=86/62
 |range=
 |tracksLeft=
 |tracksRight=
@@ -4438,7 +4400,9 @@
 |range=
 |tracksLeft=
 |tracksRight=
-|notes=
+|notes={{Plainlist|
+* 10-hit combo string
+}}
 }}
 {{Move
 |id=Alisa-ub+4,1
@@ -4457,7 +4421,10 @@
 |range=
 |tracksLeft=
 |tracksRight=
-|notes=Combo from 1st CH
+|notes={{Plainlist|
+* 10-hit combo string
+* Combo from 1st CH
+}}
 }}
 {{Move
 |id=Alisa-ub+4,1,1
@@ -4478,8 +4445,8 @@
 |tracksRight=
 |notes={{Plainlist|
 * {{Elbow}}
-* Combo from 2nd hit
-* Combo from 1st CH
+* 10-hit combo string
+* Combo from 1st CH or 2nd hit
 }}
 }}
 {{Move
@@ -4500,8 +4467,8 @@
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
-* Combo from 3rd hit
-* Combo from 1st CH
+* 10-hit combo string
+* Combo from 1st CH or 3rd hit
 }}
 }}
 {{Move
@@ -4523,6 +4490,8 @@
 |tracksRight=
 |notes={{Plainlist|
 * {{MoveDataIcon|color=green|1=Balcony Break (airborne)}}
+* 10-hit combo string
+
 }}
 }}
 {{Move
@@ -4545,6 +4514,7 @@
 |notes={{Plainlist|
 * {{Spike}}
 * {{Weapon}}
+* 10-hit combo string
 * Combo from 5th hit
 * 1 chip damage on block
 * 3 chip damage on block in heat
@@ -4568,7 +4538,7 @@
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
-* 
+* 10-hit combo string
 }}
 }}
 {{Move
@@ -4589,6 +4559,7 @@
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
+* 10-hit combo string
 * Combo from 7th hit
 }}
 }}
@@ -4610,6 +4581,7 @@
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
+* 10-hit combo string
 * Combo from 8th hit
 * Available only as combo from previous hit
 }}
@@ -4635,6 +4607,7 @@
 |video=File:t8-p2-alisa-ub+4,1,1,2,1,1,3+4,3,2,2.mp4
 |notes={{Plainlist|
 * {{Weapon}}
+* 10-hit combo string
 * Combo from 9th hit
 * Last chainsaw hit rarely connects because of its high hitbox, -17 if blocked
 * 1 chip damage on block

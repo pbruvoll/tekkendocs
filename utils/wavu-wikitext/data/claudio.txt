@@ -21,8 +21,8 @@
 |input=H.2+3
 |name=Stella Cadente
 |target=L,M
-|damage=40
-|startup=i18~19
+|damage=12,10 (40/45)
+|startup=i18~19, i32~33
 |block=-14
 |hit=+11d
 |ch=
@@ -36,8 +36,9 @@
 * {{HeatSmash}}
 * {{ReversalBreak}}
 * {{BB}}
-* Transition to attack throw on hit
-* Chip damage on block
+* Transition to attack throw on 1st or 2nd hit (40dmg or 36dmg)
+* 5 damage on wall splat (45dmg total)
+* 8 chip damage on block
 * Pseudo homing low?
 }}
 }}
@@ -186,7 +187,7 @@
 |name=
 |target=m
 |damage=14
-|startup=i14
+|startup=i14~15
 |block=-10
 |hit=+1
 |ch=
@@ -603,7 +604,7 @@
 |name=Quick Upper
 |target=m
 |damage=10
-|startup=i15
+|startup=i15~16
 |block=-4
 |hit=+7
 |ch=
@@ -1055,7 +1056,7 @@
 |name=Spinning Skies
 |target=h
 |damage=25
-|startup=i14
+|startup=i14~15
 |block=-9
 |hit=+9a
 |ch=
@@ -1355,8 +1356,8 @@
 |video=File:T8-p2-claudio-ub+2.mp4
 |notes={{Plainlist|
 * {{BB}}
-* Gain STB on hit
-* Frame advantage +4d on STB gain
+* Gain STB on hit (+4d r49) 
+* 20f timestop on hit
 }}
 }}
 {{Move
@@ -1373,7 +1374,7 @@
 |hit=+20a
 |ch=
 |crush=js9~22
-|recv=r29
+|recv=r30
 |tot=51
 |range=2.93
 |tracksLeft=5
@@ -1456,13 +1457,13 @@
 |name=Pollux
 |target=m,m
 |damage=10,12
-|startup=i17,i13~14
+|startup=i17,i10~11
 |block=-11
 |hit=+9
 |ch=
 |crush=js18~35
 |recv=r30
-|tot=78
+|tot=61
 |range=
 |tracksLeft=
 |tracksRight=
@@ -1484,16 +1485,17 @@
 |hit=+30a (+4)
 |ch=
 |crush=
-|recv=
-|tot=
+|recv=r35
+|tot=87
 |range=
 |tracksLeft=
 |tracksRight=
 |video=
 |notes={{Plainlist|
 * {{BB}}
-* Gain STB on hit
-* Combos from 1st hit
+* Gain STB on hit (+21a (-5) r50)
+* Combo from 1st hit
+* 20f timestop on hit
 * Interrupt with i1 from 1st block
 }}
 }}
@@ -2261,8 +2263,6 @@
 |startup=i12~14
 |block=-3
 |hit=+1d
-|ch=
-|crush=
 |recv=r31
 |tot=45
 |range=1.97
@@ -2271,7 +2271,8 @@
 |video=File:t8-p2-claudio-1+3.mp4
 |notes={{Plainlist|
 * {{Homing}}
-* Throw Break 1 or 2
+* Throw break 1 or 2
+* Opponent recovers in FUFT on hit
 }}
 }}
 {{Move
@@ -2285,8 +2286,6 @@
 |startup=i12~14
 |block=-6
 |hit=+0d
-|ch=
-|crush=
 |recv=r31
 |tot=45
 |range=1.96
@@ -2301,69 +2300,42 @@
 }}
 {{Move
 |id=Claudio-Left Throw
-|parent=
 |input=Left throw
-|name=Avalaunche Throw
+|name=Avalanche Throw
 |target=t
-|damage=40
-|startup=
+|damage=45
 |block=-3
 |hit=+1d
-|ch=
-|crush=
-|recv=
-|tot=
-|range=
-|tracksLeft=
-|tracksRight=
 |notes={{Plainlist|
-* Break: 1
-* Opponent recovers in off-axis FUFT}}
+* Throw break 1
+* Opponent recovers in FUFR}}
 }}
 {{Move
 |id=Claudio-Right Throw
 |num=74
-|parent=
 |input=Right throw
 |name=Prayer into the Void
 |target=t
 |damage=40
-|startup=
 |block=-3
 |hit=+1d
-|ch=
-|crush=
-|recv=FC
-|tot=
-|range=
-|tracksLeft=
-|tracksRight=
 |notes={{Plainlist|
 * Throw break 2
-* Can side switch on hit
+* Transition to FC on hit
+* Side switch on hit
 * Opponent recovers in FUFT}}
 }}
 {{Move
 |id=Claudio-Back throw
 |num=75
-|parent=
 |input=Back throw
 |name=Sudden Shadow
 |target=t
 |damage=50
-|startup=
-|block=
 |hit=+0d
-|ch=
-|crush=
-|recv=
-|tot=
-|range=
-|tracksLeft=
-|tracksRight=
 |notes={{Plainlist|
 * Unbreakable
-* Can side switch on hit
+* Side switch on hit
 * Opponent recovers in FDFT}}
 }}
 {{Move
@@ -2377,8 +2349,6 @@
 |startup=i12
 |block=-6
 |hit=+1d
-|ch=
-|crush=
 |recv=r27
 |tot=39
 |range=1.90
@@ -2388,7 +2358,6 @@
 |notes={{Plainlist|
 * Throw break 1+2
 * Side switch on hit
-* Can be buffered
 * Opponent recovers in FUFA}}
 }}
 

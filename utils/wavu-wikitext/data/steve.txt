@@ -34,7 +34,7 @@
 |name=Bretwalda
 |target=m,th
 |damage=10,4,2,3,3,3,25
-|startup=i16
+|startup=i16~17, i18~19, i23~24, i17~18, i7~8, i10~11, i34
 |block=+8 LNH
 |hit=+0
 |ch=
@@ -48,10 +48,8 @@
 * {{HeatSmash}}
 * {{FB}}
 * {{Spike}}
-* Can cancel transition to LNH on block with B at -9
+* Cancel to standing on block with B (-9)
 * 7 chip damage on block
-* Alternate input: H.FLK.2+3 or H.PAB.2+3
-
 }}}}
 {{Move
 |id=Steve-b+1+2,H.1+2
@@ -73,7 +71,7 @@
 |tracksRight=
 |notes={{Plainlist|
 * {{BB}}
-* Jails from 1st block
+* Jail from 1st block
 * Combo from 1st hit
 * Transition to FLK r22 with B (+3/+43a (+17))
 * Consumes 300F of remaining heat time
@@ -289,7 +287,7 @@
 |input=,2
 |target=,h
 |damage=,13
-|startup=i13-14
+|startup=i13~14
 |block=-7
 |hit=+4
 |ch=
@@ -370,7 +368,7 @@
 |input=,2
 |target=,m
 |damage=,15
-|startup=i18-19
+|startup=i18~19
 |block=-10
 |hit=+16a (+7)
 |ch=
@@ -400,7 +398,7 @@
 |input=,d+2
 |target=,l
 |damage=,19
-|startup=i26-27
+|startup=i26~27
 |block=-12
 |hit=+1c
 |ch=+14d
@@ -491,7 +489,7 @@
 |input=,2
 |target=,m
 |damage=,17
-|startup=i22-24
+|startup=i22~24
 |block=-14
 |hit=+6
 |ch=
@@ -518,7 +516,7 @@
 |alt=WS.1+2
 |target=m,m
 |damage=7,21
-|startup=i14, i9-10
+|startup=i14, i9~10
 |block=-12
 |hit=+18a (+11)
 |ch=
@@ -712,13 +710,13 @@
 |input=df+1
 |target=m
 |damage=12
-|startup=i13
+|startup=i13~14
 |block=-2
 |hit=+5
 |ch=
 |crush=
 |recv=r19
-|tot=
+|tot=33
 |range=
 |tracksLeft=
 |tracksRight=
@@ -782,6 +780,7 @@
 ** r14? FLK FC cancel?
 * Interrupt with i11 from 1st block
 * Interrupt with i4 from 1st hit
+* Whiffs vs SS, SW from 1st block
 }}
 }}
 {{Move
@@ -927,6 +926,7 @@
 |tracksRight=
 |notes={{Plainlist|
 * Combo from 1st CH with 13F delay
+* Move cannot be interrupted from 1st block or hit
 * Move can be delayed by 13F
 * Transition to r22 LWV with 3 (-6/+0/+5)
 * Transition to r22 RWV with 4 (-6/+0/+5)
@@ -987,7 +987,7 @@
 |alt=FC.db+2
 |target=l
 |damage=21
-|startup=i26
+|startup=i26~27
 |block=-12
 |hit=+1c
 |ch=+14d
@@ -1079,20 +1079,22 @@
 |input=b+1
 |target=h
 |damage=10
-|startup=i13
+|startup=i13~14
 |block=-14
 |hit=+2
 |ch=[[Steve_combos#Staples|+61a]]
 |crush=
-|recv=r38?
-|tot=
+|recv=r29
+|tot=43
 |range=
 |tracksLeft=
 |tracksRight=
 |video=File:t8-p2-steve-b+1.mp4
 |notes={{Plainlist|
-* Transition to r16? FLK with B (-1/+10/+69)
-** r16? FLK FC cancel?
+* Transition to FLK r16 with B (-1/+10/+69)
+** Cannot block i12 on block (must cancel into FC to block)
+* Recovers 5F faster on hit (t38 r24)
+* 4f timestop on CH
 }}}}
 {{Move
 |name=Quick Draw
@@ -1107,8 +1109,8 @@
 |hit=+8
 |ch=
 |crush=
-|recv=r30? LNH
-|tot=
+|recv=r30 LNH
+|tot=62
 |range=
 |tracksLeft=
 |tracksRight=
@@ -1116,10 +1118,10 @@
 |notes={{Plainlist|
 * {{Homing}}
 * {{SAT}}
+* Transition to LNH
 * Combo from 1st hit
 * Interrupt with i1 from 1st block
-* Transition to LNH
-* Transition to r34? standing with b (-1/+4)
+* Transition to standing r34 with b (-1/+4)
 }}}}
 {{Move
 |name=Swindler
@@ -1133,14 +1135,15 @@
 |hit=+4
 |ch=+63a
 |crush=
-|recv=
-|tot=
+|recv=r26
+|tot=71
 |range=
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
-* Interrupt with i13 from 1st block
+* Interrupt with i14 from 1st block
 * Interrupt with i3 from 1st hit
+* 4f timestop on CH
 }}}}
 {{Move
 |name=
@@ -1161,7 +1164,7 @@
 |tracksRight=
 |notes={{Plainlist|
 * Combo from 1st hit
-* Interrupt with i8 from 1st block
+* Interrupt with i10 from 1st block
 * Transition to r25? PAB with f (-9/+2)
 * r25? PAB FC cancel?
 }}}}
@@ -1196,7 +1199,7 @@
 |input=b+2
 |target=m
 |damage=20
-|startup=i17
+|startup=i17~18
 |block=-13
 |hit=[[Steve_combos#Mini-combos|+14]]
 |ch=
@@ -1218,7 +1221,7 @@
 |name=Fox Fury
 |target=m,h
 |damage=8,20
-|startup=i16,i12
+|startup=i16, i12
 |block=-8
 |hit=+19d
 |ch=
@@ -1244,7 +1247,7 @@
 |input=ub+2
 |target=h
 |damage=17
-|startup=i17
+|startup=i17~18
 |block=+5
 |hit=[[Steve_combos#Mini-combos|+14c]]
 |ch=
@@ -1325,6 +1328,7 @@
 |video=File:t8-p2-steve-pab.uf+2.mp4
 |notes={{Plainlist|
 * {{Tornado}}
+* Jab evasion (frames 11 to 14?)
 }}}}
 {{Move
 |name=Over the Top
@@ -1332,7 +1336,10 @@
 |id=Steve-uf+1
 |parent=
 |input=uf+1
-|alt=PAB.uf+1
+|alt={{Dotlist|
+* PAB.uf+1
+* FLK.uf+1
+}}
 |target=m
 |damage=18
 |startup=i19~21
@@ -1355,6 +1362,7 @@
 |id=Steve-uf+2
 |parent=
 |input=uf+2
+|alt=FLK.uf+2
 |target=m
 |damage=20
 |startup=i22~25
@@ -1422,7 +1430,7 @@
 |input=uf+4
 |target=m
 |damage=20
-|startup=i23
+|startup=i23~24
 |block=-9
 |hit=+22a (+5)
 |ch=+36a (+26)
@@ -1921,6 +1929,7 @@
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
+* {{Shoulder}}
 * Transition to r10? PAB with f (-1/+8)
 * r10? PAB FC cancel?
 }}}}
@@ -2025,6 +2034,7 @@
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
+* {{Shoulder}}
 * Transition to r10? PAB with f (-1~+1/+8~+10)
 * r10? PAB FC cancel?
 }}}}
@@ -2087,7 +2097,7 @@
 |input=RWV.2
 |target=m
 |damage=22
-|startup=i14
+|startup=i14~15
 |block=-13
 |hit=+10a (+1)
 |ch=+31a (+5)
@@ -2136,7 +2146,7 @@
 |input=ALB.2
 |target=m
 |damage=22
-|startup=i23
+|startup=i23~24
 |block=-3
 |hit=+16a (+7)
 |ch=
@@ -2149,7 +2159,7 @@
 |video=File:t8-p2-steve-alb.2.mp4
 |notes={{Plainlist|
 {{HeatEngager}}
-{{HeatDash|(+5, +36a (+26))}}
+{{HeatDash|(+36a (+26))}}
 * {{BB}}
 }}}}
 {{Move
@@ -2205,7 +2215,7 @@
 |alt=ALB.u,1
 |target=,m
 |damage=34
-|startup=i12
+|startup=i12~13
 |block=-3
 |hit=+16a (+7)
 |ch=
@@ -2218,7 +2228,7 @@
 |video=File:t8-p2-steve-alb.d_u,1.mp4
 |notes={{Plainlist|
 * {{BB}}
-* ALB.d_u takes 37 frames, effective startup time is i49
+* ALB.d_u takes 37 frames, effective startup is i49~50
 }}}}
 {{Move
 |name=Double Cyclone Knee Punch
@@ -2229,7 +2239,7 @@
 |alt=ALB.u,d+1
 |target=,l
 |damage=30
-|startup=i22
+|startup=i22~23
 |block=-12
 |hit=+14d
 |ch=
@@ -2241,7 +2251,7 @@
 |tracksRight=
 |video=File:t8-p2-steve-alb.d_u,d+1.mp4
 |notes={{Plainlist|
-* ALB.d_u takes 37 frames, effective startup time is i59
+* ALB.d_u takes 37 frames, effective startup time is i59~60
 }}}}
 
 == DCK (''Ducking'') ==
@@ -2285,7 +2295,7 @@
 |input=DCK.1
 |target=m
 |damage=17
-|startup=i19
+|startup=i19~20
 |block=-7
 |hit=+58a (+27)
 |ch=+34a (+24)
@@ -2306,7 +2316,7 @@
 |input=DCK.2
 |target=m
 |damage=15
-|startup=i19
+|startup=i19~21
 |block=-14
 |hit=[[Steve_combos#Staples|+35a (+25)]]
 |ch=
@@ -2478,7 +2488,7 @@
 |input=EXD.1
 |target=m
 |damage=21
-|startup=i19
+|startup=i19~20
 |block=-7
 |hit=[[Steve_combos#Mini-combos|+44d (+36)]]
 |ch=+41a (+31)
@@ -2500,7 +2510,7 @@
 |input=EXD.2
 |target=m
 |damage=21
-|startup=i19
+|startup=i19~21
 |block=-14
 |hit=+61a (+51)
 |ch=
@@ -3250,19 +3260,19 @@
 |ch=
 |crush=
 |recv=r5 FLK
-|tot=50
+|tot=70
 |range=
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
 * Transition to FLK
-* Actionable for 64F
-* Auto i5? high and mid neutral block high and mid?
-* Can cancel immediately into FC with db after b+3+4 input (3F iWS)
-* Can cancel immediately into r6 DCK with f+3_4
-* Can cancel immediately into r10 SWY with b+3_4
-* Transition to r8 LWV with 3 (steps left)
-* Transition to r8 RWV with 4 (steps right)
+* i16 standing block from manual transition
+* Cancel to r1 FC with db
+* Cancel to r6 DCK with f+3_4
+* Cancel to r10 SWY with b+3_4
+* Transition to r8 LWV with 3
+* Transition to r8 RWV with 4
+* Stance moves can be delayed by 55F
 }}}}
 {{Move
 |name=
@@ -3277,14 +3287,14 @@
 |ch=
 |crush=
 |recv=r23
-|tot=
+|tot=35
 |range=
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
-* Transition to r18? FLK with b (-1/+10/+10)
-* Transition to r1? ALB with 3+4 with 2?F delay (+17g/+28g/+28) 
-* r18? FLK FC cancel?
+* Transition to r20 FLK with b (-1/+10g/+10)
+* Transition to r2 ALB with 3+4 (+17g/+28g/+28)
+** ALB Transition can be delayed by 62F when transitioning into FLK
 }}}}
 {{Move
 |name=
@@ -3299,43 +3309,34 @@
 |ch=
 |crush=
 |recv=r25
-|tot=
+|tot=52
 |range=
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
 * Combo from 1st CH with 3F delay
-* Move can be delayed by 3F
-* Jail from 1st block with ?F delay
-* Duckable on block
-* Transition to r18? FLK with b (-4/+5/+5)
-* Transition to r1? ALB with 3+4 (+14g/+23g/+23)
-* r18? FLK FC cancel?
+* Jails attack inputs from 1st block with 3F delay
+* Duckable
+* Transition to r20 FLK with b (-4/+5)
+* Transition to r2 ALB with 3+4 (+14g/+23g/+23)
+** ALB Transition can be delayed by 62F when transitioning into FLK
 }}}}
-{{Move
+{{MoveInherit|Steve-FLK.1,1
 |name=
 |id=Steve-FLK.1,1,1
 |parent=Steve-FLK.1,1
-|input=,1
-|target=,h
-|damage=,8
-|startup=i15
-|block=-9
-|hit=+0
-|ch=
-|crush=
-|recv=r25
-|tot=
+|tot=67
 |range=
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
 * Combo from 2nd CH with 1F delay
-* Jail from 2nd block with 1F delay
-* Duckable on block
-* Move can be delayed by 1F
-* Transition to r18? FLK with b (-4/+5/+5)
-* Transition to r1? ALB with 3+4 (+14g/+23g/+23)
+* Jails from 2nd hit with 1F delay
+* Jails attack inputs from 2nd block with 1F delay
+* Duckable
+* Transition to r20 FLK with b (-4/+5)
+* Transition to r2 ALB with 3+4 (+14g/+23)
+** ALB Transition can be delayed by 62F when transitioning into FLK
 }}}}
 {{Move
 |name=Spiteful Combination
@@ -3350,111 +3351,82 @@
 |hit=+17a (+0)
 |ch=
 |crush=
-|recv=
-|tot=
+|recv=r31
+|tot=96
 |range=
 |tracksLeft=
 |tracksRight=
 |video=File:t8-p2-steve-flk.1,1,1,2.mp4
 |notes={{Plainlist|
 * {{Tornado}}
-* Combo from 3rd hit
+* {{BB}}
+* Combo from 3rd hit with 1F delay
 * Interrupt with i4 from 3rd block
+* Move cannot be delayed
+* Input can be delayed by 1F
 }}}}
-{{Move
+{{MoveInherit|Steve-FLK.1,1,1,2
 |name=
+|num=
 |id=Steve-FLK.1,1,2
 |parent=Steve-FLK.1,1
-|input=,2
-|target=,m
-|damage=,22
-|startup=i20~22
-|block=-12
-|hit=+17a (+0)
-|ch=
-|crush=
-|recv=
-|tot=
+|tot=80
 |range=
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
 * {{Tornado}}
+* {{BB}}
 * Combo from 2nd CH
-* Same hit as (FLK.1,1,1),2
 * Interrupt with i3 from 2nd block
 }}}}
-{{Move
+{{MoveInherit|Steve-FLK.1,f+1
 |name=
+|num=
 |id=Steve-FLK.1,1,f+1
 |parent=Steve-FLK.1,1
 |input=,f+1
-|target=,m
-|damage=,17
-|startup=i15
-|block=-5
-|hit=+0c
-|ch=+10d
-|crush=
-|recv=
-|tot=
+|tot=72
 |range=
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
 * {{Spike}}
-* Combo from 2nd CH with 9F delay
-* Jail from 2nd block with no delay
+* Combo from 2nd CH with 10F delay
+* Jails attack inputs from 2nd block with 1F delay
 * Move can be delayed by 11F
-* Same hit as (FLK.1),f+1
 }}}}
-{{Move
+{{MoveInherit|Steve-FLK.1,d+1
 |name=
+|num=
 |id=Steve-FLK.1,1,d+1
 |parent=Steve-FLK.1,1
 |input=,d+1
 |alt=FLK.1,1,u+1
-|target=,h
-|damage=,23
-|startup=i15~17
-|block=+0
-|hit=+18g
-|ch=+42a
-|crush=
-|recv=r23
-|tot=
+|tot=67
 |range=
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
 * {{BB}}
-* Combo from 2nd CH with 9F delay
-* Jail from 2nd block with no delay
-* Duckable on block
-* Move can be delayed by 11F
-* Same hit as (FLK.1),d+1
+* Combo from 2nd CH with 10F delay
+* Jail from 2nd hit with 11F delay
+* Jails attack inputs from 2nd block with 1F delay  (crouch assist bufferable)
+* Duckable
 }}}}
-{{Move
+{{MoveInherit|Steve-FLK.1,1,1,2
 |name=
+|num=
 |id=Steve-FLK.1,2
 |parent=Steve-FLK.1
-|input=,2
-|target=,m
-|damage=,22
-|startup=i20~22
-|block=-12
-|hit=+17a (+0)
-|ch=
-|crush=
-|recv=
-|tot=
+|tot=65
 |range=
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
 * {{Tornado}}
 * Combo from 1st CH
-* Same hit as (FLK.1,1,1),2
+* Move cannot be interrupted
 }}}}
 {{Move
 |name=Tempest Combo
@@ -3469,8 +3441,8 @@
 |hit=+0c
 |ch=+10d
 |crush=
-|recv=
-|tot=
+|recv=r30
+|tot=57
 |range=
 |tracksLeft=
 |tracksRight=
@@ -3478,8 +3450,7 @@
 |notes={{Plainlist|
 * {{Spike}}
 * Combo from 1st CH with 14F delay
-* Jail from 1st block with 3F delay
-* Move can be delayed by 14F
+* Jails attack inputs from 1st block with 4F delay
 }}}}
 {{Move
 |name=Power Hook Combo
@@ -3496,7 +3467,7 @@
 |ch=+42a
 |crush=
 |recv=r23
-|tot=
+|tot=52
 |range=
 |tracksLeft=
 |tracksRight=
@@ -3504,9 +3475,9 @@
 |notes={{Plainlist|
 * {{BB}}
 * Combo from 1st CH with 14F delay
-* Jail from 1st block with ?F delay (crouch assist bufferable)
-* Duckable on block
-* Move can be delayed by 14F
+* Jail from 1st hit with 14F delay
+* Jails attack inputs from 1st block with 4F delay (crouch assist bufferable)
+* Duckable
 }}}}
 {{Move
 |name=Fly Swatter
@@ -3518,11 +3489,11 @@
 |damage=21
 |startup=i18~19
 |block=-5c
-|hit=[[Steve_combos#Mini-combos|+7d]]
+|hit=[[Steve_combos#Mini-combos|+7a]]
 |ch=[[Steve_combos#Staples|+42a]]
 |crush=
-|recv=
-|tot=
+|recv=r32
+|tot=51
 |range=
 |tracksLeft=
 |tracksRight=
@@ -3544,8 +3515,8 @@
 |hit=[[Steve_combos#Mini-combos|+35d (+27)]]
 |ch=
 |crush=pc8~13
-|recv=
-|tot=
+|recv=r29
+|tot=44
 |range=
 |tracksLeft=
 |tracksRight=
@@ -3568,14 +3539,16 @@
 |hit=+0d
 |ch=
 |crush=
-|recv=
-|tot=
+|recv=r21
+|tot=35
 |range=
 |tracksLeft=
 |tracksRight=
 |video=File:t8-p2-steve-flk.1+2.mp4
 |notes={{Plainlist|
 * 1+2 for throw break
+* Side switch
+* Opponent recovers FUFA
 }}}}
 {{MoveInherit|Steve-u+2
 |id=Steve-FLK.u+2
@@ -3768,7 +3741,7 @@
 |input=OTG.d+1+2
 |name=Cheapshot
 |target=L
-|damage=16
+|damage=16 (12)
 |startup=i17
 |block=-11c
 |hit=+2
@@ -3780,7 +3753,6 @@
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
-* Recovers in crouch
 * +0d (-8) on grounded hit
 }}}}
 {{Move
@@ -4004,6 +3976,7 @@
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
+* 10-hit combo string
 * Combo from 2nd CH
 }}
 }}
@@ -4026,6 +3999,7 @@
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
+* 10-hit combo string
 * Combo from 3rd hit
 }}
 }}
@@ -4049,6 +4023,7 @@
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
+* 10-hit combo string
 * Combo from 4th hit
 }}
 }}
@@ -4070,6 +4045,7 @@
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
+* 10-hit combo string
 }}
 }}
 

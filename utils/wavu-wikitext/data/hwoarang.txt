@@ -4,7 +4,7 @@
 == Heat ==
 
 {| class="wikitable"
-| {{MoveDataIcon|color=blue|Can use powered up versions of certain attacks during Right Flamingo (H.RFS.d+4,3,4 & H.RFS.f+4,4)}}
+| {{MoveDataIcon|color=blue|Can use powered up versions of certain attacks during Right Flamingo (RFS.d+4,H.3,4 & H.RFS.f+4,4)}}
 |-
 | {{MoveDataIcon|color=blue|All kick attacks in Right Flamingo Stance cause increased chip damage, compared to other attacks}}
 |}
@@ -57,11 +57,57 @@
 {{MoveQuery|Hwoarang-RFS.b+3}}
 
 {{MoveQuery|Hwoarang-RFS.4,3}}
-{{MoveQuery|Hwoarang-H.RFS.f+4}}
-{{MoveQuery|Hwoarang-H.RFS.f+4,4}}
-{{MoveQuery|Hwoarang-H.RFS.d+4}}
-{{MoveQuery|Hwoarang-H.RFS.d+4,3}}
-{{MoveQuery|Hwoarang-H.RFS.d+4,3,4}}
+{{MoveInherit|Hwoarang-RFS.f+4
+|id=Hwoarang-H.RFS.f+4
+|input=H.RFS.f+4
+|damage=8,10
+|hit=+5
+|ch=
+|notes={{Plainlist|
+* Jail from 1st block
+* Remains in RFS
+* 2 chip damage on block
+}}
+}}
+{{MoveInherit|Hwoarang-RFS.f+4,4
+|id=Hwoarang-H.RFS.f+4,4
+|parent=Hwoarang-H.RFS.f+4
+|input=,4
+|hit=+39a
+|notes={{Plainlist|
+* {{Tornado}}
+* Combo from 1st or 2nd hit
+* Transition to RFF
+* Consumes 300F of remaining Heat time
+* Interrupt with i3 from 1st block
+* 2 chip damage on block
+}}
+}}
+{{MoveInherit|Hwoarang-RFS.d+4,3
+|id=Hwoarang-RFS.d+4,H.3
+|parent=Hwoarang-RFS.d+4
+|input=,H.3
+|alias=H.RFS.d+4,3
+|notes={{Plainlist|
+* Consumes 600F of remaining Heat time
+* Airborne combo from 1st hit in heat (+20a (+13))
+* 3 chip damage on block in heat
+}}
+}}
+{{MoveInherit|Hwoarang-RFS.d+4,3,4
+|id=Hwoarang-RFS.d+4,H.3,4
+|parent=Hwoarang-RFS.d+4,H.3
+|input=,4
+|damage=,25 (12)
+|alias=H.RFS.d+4,3,4
+|notes={{Plainlist|
+* {{BB}}
+* Combo from 2nd hit
+* Airborne combo from 1st hit (+10a (+9))
+* Interrupt with i4 from 2nd block
+* 9 chip damage on block in heat
+}}
+}}
 
 == n ==
 {{MoveDataHeader}}
@@ -519,19 +565,19 @@
 |target=,h
 |range=
 |startup=i31~32
-|recv=r37
 |block=+0
-|hit=+10c
+|hit=+10cg
 |crush=js20~
+|recv=r37
 |video=File:t8-p2-hwoarang-4,4,4,4.mp4
 |notes={{Plainlist|
 * {{BB}}
 * {{Tornado}}
-* Combo from 3rd hit with 4F delay
-* Input can be delayed by 4F
+* Combo from 3rd hit with 3F delay
+* Input can be delayed by 3F
 * Move cannot be delayed
 * 6 chip damage on block
-* Forces backroll on hit (opponent recovers crouching)
+* Forces tech back roll on hit
 * Alternate input:(RFS.u+4),4
 }}
 }}
@@ -1065,6 +1111,7 @@
 |hit=-1
 |crush=
 |notes={{Plainlist|
+* {{Spike}}
 * Sidesteps to the right
 }}
 }}
@@ -3300,11 +3347,13 @@
 |damage=
 |range=
 |startup=
-|recv=r15 LFS
 |block=
 |hit=
+|recv=r15 LFS
+|tot=48
 |notes={{Plainlist|
 * Transition to LFS
+* r24 LFS when canceling to movement in LFS
 }}
 }}
 
@@ -3318,10 +3367,11 @@
 |target=m
 |range=
 |startup=i16
-|recv=r21?
 |block=-2
 |hit=+9
 |crush=
+|recv=r21
+|tot=37
 |video=File:t8-p2-hwoarang-rfs.1.mp4
 |notes={{Plainlist|
 * Links to 10-hit string
@@ -3338,9 +3388,10 @@
 |target=h
 |range=
 |startup=i13
-|recv=r14? RFF 
 |block=+5
 |hit=+7
+|recv=r14 RFF
+|tot=27
 |video=File:t8-p2-hwoarang-rfs.2.mp4
 |notes={{Plainlist|
 * Transition to RFF
@@ -3358,17 +3409,17 @@
 |target=h
 |range=
 |startup=i14~16
-|recv=r21? LFS
 |block=+4
 |hit=+27a (+18)
-|crush=js8~
+|crush=js8~26, fs27~29
+|recv=r21 LFS
+|tot=37
 |video=File:t8-p2-hwoarang-rfs.3.mp4
 |notes={{Plainlist|
 * {{BB}}
 * Transition to LFS
 * Sidesteps to the left
-* Increased chip damage scaling on block during heat
-** 7 chip damage on block in heat
+* 7 chip damage on block in heat
 }}
 }}
 {{Move
@@ -3380,19 +3431,20 @@
 |target=m,m
 |range=
 |startup=i16,i7
-|recv=
 |block=-3
-|hit=+26 (+16)
-|crush=js16~
+|hit=+42a (+16)
+|crush=js10~26, fs27~29
+|recv=r24
+|tot=48
 |notes={{Plainlist|
 * {{BB}}
 * Jail from 1st block
-* Increased chip damage scaling on block during heat
-** 9 chip damage on block in heat
+* 9 chip damage on block in heat
 * Input 4 on frames 1 to 7
 * Input 4 on frame 1 to power up
 ** 37dmg on hit, +1 on block
 ** 14 chip damage on block in heat
+* +26a (+16) on 2nd hit
 }}
 }}
 {{Move
@@ -3405,15 +3457,15 @@
 |target=m
 |range=
 |startup=i14
-|recv=RFF
 |block=-9
 |hit=+3
 |crush=
+|recv=r32 RFF
+|tot=46
 |video=File:t8-p2-hwoarang-rfs.4.mp4
 |notes={{Plainlist|
 * Transition to RFF
-* Increased chip damage scaling on block during heat
-** 5 chip damage on block in heat
+* 5 chip damage on block in heat
 }}
 }}
 {{Move
@@ -3435,10 +3487,14 @@
 * {{Tornado}}
 * {{BB}}
 * Transition to LFS
-* Combo from 1st CH
+* Combo from 1st CH with 1F delay
 * Combo from 1st hit during heat
-* Increased chip damage scaling on block during heat
-** 4 chip damage on block in heat
+** Does not combo when 3 is input on frame 14 or 15 (bug)
+* Move cannot be interrupted
+* Move cannot be delayed
+* Input can be delayed by 1F
+* 4 chip damage on block in heat
+* Consumes 180F of remaining Heat time
 }}
 }}
 
@@ -3452,16 +3508,16 @@
 |target=m
 |range=
 |startup=i20~21
-|recv=
 |block=-10
 |hit=+5
 |crush=
 |ch=+15a (+6)
+|recv=r29
+|tot=50
 |video=File:t8-p2-hwoarang-rfs.f+3.mp4
 |notes={{Plainlist|
 * {{Homing}}
-* Increased chip damage scaling on block during heat
-** 5 chip damage on block in heat
+* 5 chip damage on block in heat
 }}
 }}
 
@@ -3474,16 +3530,18 @@
 |target=h,h
 |range=
 |startup=i8, i10
-|recv=r19? RFS
 |block=+0
 |hit=+2
 |ch=+5
 |crush=
+|recv=r19 RFS
+|tot=37
 |notes={{Plainlist|
 * Jail from 1st block
 * +6 on 2nd CH
 * Remains in RFS
-* Power up during Heat
+* Power up during Heat (Loses CH launch property)
+* t40 r22 when canceling to movement in RFS
 }}
 }}
 
@@ -3497,14 +3555,18 @@
 |target=,h
 |range=
 |startup=i23
-|recv=r29? RFF
 |block=-6
 |hit=+75a (+59)
+|recv=r29 RFF
+|tot=70
 |crush=
 |notes={{Plainlist|
 * {{Tornado}}
 * Combo from 1st or 2nd CH
+* +39a on hit during heat
+* Interrupt with i3 from 1st block
 * Transition to RFF
+* 2 chip damage on block during Heat
 }}
 }}
 
@@ -3518,15 +3580,15 @@
 |target=m
 |range=
 |startup=i17~19
-|recv=r22?
 |block=+1
 |hit=+8c
 |ch=+26a
 |crush=
+|recv=r22
+|tot=41
 |video=File:t8-p2-hwoarang-rfs.df+4.mp4
 |notes={{Plainlist|
-* Increased chip damage scaling on block during heat
-** 4 chip damage on block in heat
+* 4 chip damage on block in heat
 }}
 }}
 
@@ -3539,15 +3601,15 @@
 |target=L
 |range=
 |startup=i15
-|recv=r32? RFF
 |block=-13
 |hit=-5
 |ch=+2
 |crush=cs10~25
+|recv=r32 RFF
+|tot=47
 |notes={{Plainlist|
 * Transition to RFF
-* Increased chip damage scaling on block during heat
-** 3 chip damage on block in heat
+* 3 chip damage on block in heat
 * cs10~19 crush state when canceled into followup
 }}
 }}
@@ -3562,19 +3624,22 @@
 |target=,h
 |range=
 |startup=i25~27
-|recv=r30
 |block=-2
 |hit=+34a (+8)
 |crush=
+|recv=r30
+|tot=76
 |video=File:t8-p2-hwoarang-rfs.d+3,3.mp4
 |notes={{Plainlist|
 * {{BB}}
 * Combo from 1st CH with 4F delay
+* Opponent can buffer crouch assist on 1st normal hit (Input moves with df_d_db inputs)
+* Interrupt with i9 from 1st block
+* Whiffs vs SSR from 1st block
 * Move cannot be delayed
 * Input can be delayed by 4F
 * 11 chip damage on block
-* Increased chip damage scaling on block during heat
-** 14 chip damage on block in heat
+* 14 chip damage on block in heat
 }}
 }}
 
@@ -3587,12 +3652,15 @@
 |target=L
 |range=
 |startup=i20~21
-|recv=r32 RFF
 |block=-23
 |hit=+7c
 |crush=
+|recv=r32 RFF
+|tot=53
 |notes={{Plainlist|
 * Transition to RFF
+* Stagger low
+* 4 chip damage on block during Heat
 }}
 }}
 
@@ -3605,15 +3673,15 @@
 |target=,h
 |range=
 |startup=i25
-|recv=r31
 |block=-9
 |hit=-1 / +20a (+13)
 |crush=
+|recv=r31
+|tot=77
 |notes={{Plainlist|
 * Combo from 1st hit
-* Airborne combo from 1st CH
-** 8 dmg, +20a (+13) on hit 
-** 26 total dmg from 1st CH
+* Airborne combo from 1st CH or 1st normal hit during Heat (+20a (+13))
+* 3 chip damage on block during Heat
 }}
 }}
 {{Move
@@ -3626,18 +3694,18 @@
 |target=,h
 |range=
 |startup=i27~28
-|recv=r36
 |block=-9
 |hit=+28a (+2) / +10a (+9)
-|crush=js22~
+|crush=js22~34, fs35~37
+|recv=r36
+|tot=110
 |video=File:t8-p2-hwoarang-rfs.d+4,3,4.mp4
 |notes={{Plainlist|
 * {{BB}}
-* Power up in Heat: 30dmg and increased chip damage on block
 * Combo from 2nd CH
-* Airborne combo from 1st CH
-** +10a (+9) on hit
-** 10 dmg, 36 total dmg from 1st CH
+* Airborne combo from 1st CH (+10a (+9))
+* Interrupt with i4 from 2nd block
+* Power up in Heat: 25dmg and 7 chip damage on block
 }}
 }}
 
@@ -3651,16 +3719,17 @@
 |target=m
 |range=
 |startup=i16~17
-|recv=r31
 |block=-9
 |hit=+7
 |crush=
+|recv=r31
+|tot=48
 |video=File:t8-p2-hwoarang-rfs.b+3.mp4
 |notes={{Plainlist|
 * {{HeatEngager}}
-* {{HeatDash|+5, +42a (+27)}}
-* Increased chip damage scaling on block during heat
-** 6 chip damage on block in heat
+* {{HeatDash|+42a (+27)}}
+* 6 chip damage on block in heat
+* Recovers 6F faster on hit (t42 r25)
 }}
 }}
 
@@ -3674,20 +3743,17 @@
 |target=m
 |range=
 |startup=i20~22
-|recv=r27
 |block=-12
 |hit=+14g
 |crush=pc8~19
+|recv=r27
+|tot=49
 |video=File:t8-p2-hwoarang-rfs.b+4.mp4
 |notes={{Plainlist|
 * {{BB}}
-* Power up if an attack is absorbed
-** {{ReversalBreak}}
-** 9 chip damage on block
-** -8 on block
-* Increased chip damage scaling on block during heat
-** 6 chip damage on block in heat
-** 9 chip damage on block after absorbing an attack
+* -8 block advantage and 9 chip damage on block after attack absorption
+* 6 chip damage on block in heat
+* Recovers 5F slower on block (t54 r32)
 }}
 }}
 
@@ -3701,20 +3767,24 @@
 |target=h
 |range=
 |startup=i25~26
-|recv=r27 RFF
 |block=-2
 |hit=+8
-|crush=js19~
+|crush=js19~23, fs24~26
+|recv=r27 RFF
+|tot=53
 |video=File:t8-p2-hwoarang-rfs.u+4.mp4
 |notes={{Plainlist|
 * {{Homing}}
 * Transition to RFF
 * Link to LFF.(4,4,4),4 extension
-** Combo from 1st hit with 4F input delay
-** Extension cannot be delayed
-* Increased chip damage scaling on block during heat
-** 5 chip damage on block in heat
+* 5 chip damage on block in heat
 }}
+}}
+{{MoveInherit|Hwoarang-4,4,4,4
+|id=Hwoarang-RFS.u+4,4
+|parent=Hwoarang-RFS.u+4
+|input=,4
+|tot=98
 }}
 
 {{Move
@@ -3727,14 +3797,14 @@
 |target=M
 |range=
 |startup=i24~27
-|recv=r32
 |block=-7
 |hit=+19d
-|crush=js9~
+|crush=js9~25
+|recv=r32
+|tot=59
 |video=File:t8-p2-hwoarang-rfs.uf+3.mp4
 |notes={{Plainlist|
-* Increased chip damage scaling on block during heat
-** 6 chip damage on block in heat
+* 6 chip damage on block in heat
 }}
 }}
 
@@ -3748,80 +3818,15 @@
 |target=m
 |range=
 |startup=i17~18
-|recv=RFF r33?
 |block=-13
 |hit=+30a (+20)
-|crush=js11~33
+|crush=js11~33, fs34~36
+|recv=r33 RFF
 |video=File:t8-p2-hwoarang-rfs.uf+4.mp4
 |notes={{Plainlist|
 * {{Tornado}}
 * Transition to RFF
-* Increased chip damage scaling on block during heat
-** 6 chip damage on block in heat
-}}
-}}
-{{MoveInherit|Hwoarang-RFS.f+4
-|id=Hwoarang-H.RFS.f+4
-|input=H.RFS.f+4
-|damage=8,10
-|hit=+5
-|ch=
-|notes={{Plainlist|
-* Jail from 1st block
-* Remains in RFS
-* 2 chip damage on block
-}}
-}}
-{{MoveInherit|Hwoarang-RFS.f+4,4
-|id=Hwoarang-H.RFS.f+4,4
-|parent=Hwoarang-H.RFS.f+4
-|input=,4
-|notes={{Plainlist|
-* {{Tornado}}
-* Combo from 1st or 2nd hit
-* Transition to RFF
-* Partially uses remaining Heat time
-* Increased chip damage scaling on block during heat
-** 2 chip damage on block
-}}
-}}
-{{MoveInherit|Hwoarang-RFS.d+4
-|id=Hwoarang-H.RFS.d+4
-|input=H.RFS.d+4
-|notes={{Plainlist|
-* Transition to RFF
-* Partially uses remaining Heat time
-** RFS.d+4,3,4 airborne combo guaranteed on normal hit
-* Increased chip damage scaling on block during heat
-** 4 chip damage on block in heat
-}}
-}}
-{{MoveInherit|Hwoarang-RFS.d+4,3
-|id=Hwoarang-H.RFS.d+4,3
-|parent=Hwoarang-H.RFS.d+4
-|input=,3
-|notes={{Plainlist|
-* Combo from 1st hit
-* Airborne combo from 1st hit in heat
-** 8 dmg, +20a (+13) on hit 
-** 23 total dmg from 1st hit
-* Increased chip damage scaling on block during heat
-** 3 chip damage on block in heat
-}}
-}}
-{{MoveInherit|Hwoarang-RFS.d+4,3,4
-|id=Hwoarang-H.RFS.d+4,3,4
-|parent=Hwoarang-H.RFS.d+4,3
-|input=,4
-|damage=,30 (15)
-|notes={{Plainlist|
-* {{BB}}
-* Combo from 2nd hit
-* Airborne combo from 1st hit
-** +10a (+9) on hit
-** 15 dmg, 38 total dmg from 1st hit 
-* Increased chip damage scaling on block during heat
-** 9 chip damage on block in heat
+* 6 chip damage on block in heat
 }}
 }}
 
@@ -4219,6 +4224,7 @@
 }}
 
 == 10 Strings ==
+{{MoveDataHeader}}
 {{MoveInherit|Hwoarang-LFS.2
 |name=1st Hit
 |alt=RFS.1
@@ -4241,7 +4247,11 @@
 |range=
 |tracksLeft=
 |tracksRight=
-|notes=Combo from 1st hit
+|notes=
+{{Plainlist|
+* 10-hit combo string
+* Combo from 1st hit
+}}
 }}
 {{Move
 |id=Hwoarang-LFS.2,2,3
@@ -4262,6 +4272,7 @@
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
+* 10-hit combo string
 * Combo from 2nd hit (1st active frame only)
 * Combo from 2nd CH
 * Interrupt from 2nd block with i3
@@ -4286,6 +4297,7 @@
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
+* 10-hit combo string
 }}
 }}
 {{Move
@@ -4307,6 +4319,7 @@
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
+* 10-hit combo string
 * Interrupt from 4th block with i13
 }}
 }}
@@ -4329,6 +4342,7 @@
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
+* 10-hit combo string
 * Combo from 5th hit
 }}
 }}
@@ -4351,6 +4365,7 @@
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
+* 10-hit combo string
 * Interrupt from 6th block with i18
 * Can be sidestepped
 }}
@@ -4374,6 +4389,7 @@
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
+* 10-hit combo string
 * Interrupt from 7th block with i3
 }}
 }}
@@ -4396,6 +4412,7 @@
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
+* 10-hit combo string
 * Airborne combo from 8th hit
 * Interrupt from 8th block with i33
 * Can be sidestepped
@@ -4422,6 +4439,7 @@
 |tracksRight=
 |notes={{Plainlist|
 * {{BB}}
+* 10-hit combo string
 * Airborne combo from 8th hit
 * Combo from 9th hit
 * Jail from 9th block

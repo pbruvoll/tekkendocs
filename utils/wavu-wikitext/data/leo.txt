@@ -52,24 +52,8 @@
 == n ==
 
 {{MoveDataHeader}}
-{{Move
+{{MoveInherit|Generic-1
 |id=Leo-1
-|parent=
-|input=1
-|name=Jab
-|target=h
-|damage=5
-|startup=i10
-|block=+1
-|hit=+8
-|ch=
-|crush=
-|recv=
-|tot=
-|range=
-|tracksLeft=
-|tracksRight=
-|notes=
 }}
 {{Move
 |id=Leo-1,2
@@ -84,15 +68,16 @@
 |hit=+8
 |ch=
 |crush=
-|recv=
-|tot=
+|recv=r22
+|tot=44
 |range=
 |tracksLeft=
 |tracksRight=
 |video=File:t8-p2-leo-1,2.mp4
 |notes={{Plainlist|
-* Jail from 1st attack
-* Enter KNK -9 +2 with b}}
+* Jail from 1st block
+* Combo from 1st hit
+* Enter KNK r28 with b (-9/+2)}}
 }}
 {{Move
 |id=Leo-1,2,1
@@ -106,14 +91,16 @@
 |hit=+6
 |ch=+9
 |crush=
-|recv=
-|tot=
+|recv=r23
+|tot=67
 |range=
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
-* Combo from 2nd CH
+* Combo from 2nd CH with 9F delay
 * Interrupt with i1 from 1st block
+* Move can be delayed by 9F
+* Input can be delayed by 10F
 }}
 }}
 {{Move
@@ -129,8 +116,8 @@
 |hit=+12a (+3)
 |ch=
 |crush=
-|recv=
-|tot=
+|recv=r33
+|tot=96
 |range=
 |tracksLeft=
 |tracksRight=
@@ -138,8 +125,11 @@
 |notes={{Plainlist|
 * {{BB}}
 * {{Elbow}}
-* Combo from 3rd hit
-* Move cannot be interrupted}}
+* Combo from 2nd CH or 3rd hit
+* Move cannot be interrupted
+* Move is delayed 1F
+* Move cannot be delayed
+* Input cannot be delayed}}
 }}
 {{Move
 |id=Leo-1,2,1,4
@@ -154,15 +144,15 @@
 |hit=+32a (+6)
 |ch=
 |crush=
-|recv=
-|tot=
+|recv=r32
+|tot=99
 |range=
 |tracksLeft=
 |tracksRight=
 |video=File:t8-p2-leo-1,2,1,4.mp4
 |notes={{Plainlist|
-*{{BB}}
-* Combo from 3rd hit
+* {{BB}}
+* Combo from 2nd CH or 3rd hit
 * Interrupt with i2 from 3rd block}}
 }}
 {{Move
@@ -176,17 +166,18 @@
 |startup=i24
 |block=-13
 |hit=+3
-|ch=+8d
+|ch=+8a
 |crush=
-|recv=
-|tot=
+|recv=r32
+|tot=78
 |range=
 |tracksLeft=
 |tracksRight=
 |video=File:t8-p2-leo-1,2,4.mp4
 |notes={{Plainlist|
-* Combo from 2nd CH
+* Combo from 2nd CH with 6F delay
 * Interrupt with i4 from 1st block
+* Move can be delayed by 11F
 }}
 }}
 {{Move
@@ -202,15 +193,17 @@
 |hit=+11
 |ch=
 |crush=
-|recv=KNK
-|tot=
+|recv=r21 KNK
+|tot=47
 |range=
 |tracksLeft=
 |tracksRight=
 |video=File:t8-p2-leo-1,4.mp4
 |notes={{Plainlist|
 * {{Knee}}
-* Jail from 1st attack}}
+* Jail from 1st block
+* Combo from 1st hit
+* Can be punished with an i14 mid or i16 high crush mid (when Heat Burst is not activated)}}
 }}
 {{Move
 |id=Leo-2
@@ -514,22 +507,23 @@
 |parent=
 |input=f+4
 |name=Jin Ji Du Li
-|target=m
+|target=M
 |damage=14
 |startup=i17~18
 |block=+9~+10
 |hit=+15g
 |ch=[[Leo combos#Staples|+19]]
 |crush=
-|recv=KNK
-|tot=
+|recv=r10 KNK
+|tot=56
 |range=
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
 * {{Knee}}
 * Stance moves may be delayed by 11F
-* Enter CD -5 +1 +5 with df}}
+* 4f timestop on CH
+* Enter CD r23 with df (-5/+1/+5)}}
 }}
 {{Move
 |id=Leo-f+1+2
@@ -620,8 +614,8 @@
 |hit=+7
 |ch=
 |crush=
-|recv=
-|tot=
+|recv=r19
+|tot=33
 |range=
 |tracksLeft=7?
 |tracksRight=10?
@@ -640,15 +634,15 @@
 |hit=+9d
 |ch=[[Leo combos#Mini-combos|+34d (+26)]]
 |crush=
-|recv=
-|tot=
+|recv=r31
+|tot=67
 |range=
 |tracksLeft=
 |tracksRight=
 |video=File:t8-p2-leo-df+1,2.mp4
 |notes={{Plainlist|
-*{{Tornado}}
-*{{BB}}
+* {{Tornado}}
+* {{BB}}
 * Combo from 1st CH with 8F delay
 * Interrupt with i3 from 1st block
 * Move can be delayed 4F
@@ -668,8 +662,8 @@
 |hit=[[Leo combos#Staples|+28a (+18)]]
 |ch=
 |crush=
-|recv=
-|tot=
+|recv=r31
+|tot=47
 |range=
 |tracksLeft=
 |tracksRight=
@@ -689,8 +683,8 @@
 |hit=+6a (-3)
 |ch=+27a (-9)
 |crush=
-|recv=
-|tot=
+|recv=r37
+|tot=56
 |range=
 |tracksLeft=
 |tracksRight=
@@ -711,8 +705,8 @@
 |hit=+5
 |ch=
 |crush=
-|recv=
-|tot=
+|recv=r25
+|tot=38
 |range=
 |tracksLeft=
 |tracksRight=
@@ -728,14 +722,18 @@
 |startup=i21~22
 |block=-12~-11
 |hit=+5
-|ch=[[Leo combos#Mini-combos|+21d]]
-|crush=cs6~
-|recv=FC
-|tot=
+|ch=[[Leo combos#Staples|+21a]]
+|crush=cs6~52
+|recv=r30 FC
+|tot=52
 |range=
 |tracksLeft=
 |tracksRight=
-|notes=
+|notes={{Plainlist|
+* Recovers 4F faster on hit (t48 r26)
+* 2nd active frame is inactive when blocked on 1st active frame
+* Recovers 1F slower on block (t52 r31)
+}}
 }}
 
 == d ==
@@ -750,7 +748,7 @@
 |damage=18
 |startup=i18~19
 |block=-2~-1
-|hit=+5
+|hit=+5c
 |ch=[[Leo combos#Mini-combo|+13]]
 |crush=
 |recv=
@@ -1384,7 +1382,7 @@
 |name=Cuo Zhang
 |target=h,l
 |damage=6,12
-|startup=i19~21
+|startup=i19, i2
 |block=-12~-10
 |hit=+3
 |ch=[[Leo combos#Mini-combos|+14]]
@@ -1486,6 +1484,7 @@
 * Parries high and mid punches
 * Hit after parry is the same as on CH}}
 }}
+{{MoveQuery|Leo-b+3+4}}
 
 == u ==
 
@@ -2018,7 +2017,7 @@
 |hit=[[Leo combos#Mini-combos|+37a]]
 |ch=
 |crush=
-|recv=
+|recv=FC
 |tot=
 |range=
 |tracksLeft=
@@ -2412,8 +2411,10 @@
 |parent=
 |input=b+3+4
 |name=Tui Bu Jin Ji Du Li
-|recv=KNK
+|recv=r25 KNK
+|tot=58
 |video=File:t8-p2-leo-b+3+4.mp4
+|notes=Stance moves can be delayed by 14F
 }}
 {{Move
 |id=Leo-KNK.1
@@ -2422,18 +2423,18 @@
 |name=
 |target=h
 |damage=12
-|startup=i18
+|startup=i18~19
 |block=-9
 |hit=+2
 |ch=
 |crush=
-|recv=
-|tot=
+|recv=r27
+|tot=46
 |range=
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
-* Transition to r25 BOK with D (-7/+4)}}
+* Transition to BOK r25 with D (-7/+4)}}
 }}
 {{Move
 |id=Leo-KNK.1,2
@@ -2443,25 +2444,25 @@
 |name=Bai She Tui Chuang
 |target=,m
 |damage=,17
-|startup=i18
+|startup=i18~19
 |block=-10
-|hit=+17
+|hit=+12a (+3)
 |ch=
 |crush=
-|recv=
-|tot=
+|recv=r32
+|tot=71
 |range=
 |tracksLeft=
 |tracksRight=
 |video=File:t8-p2-leo-knk.1,2.mp4
 |notes={{Plainlist|
 * {{HeatEngager}}
-* {{HeatDash|+5, [[Leo combos#Staples|+36a (+26)]]}}
+* {{HeatDash|[[Leo combos#Staples|+36a (+26)]]}}
 * {{BB}}
 * Combo from 1st hit with 11F delay
 * Move cannot be interrupted
 * Move can be delayed by 10F
-* Input can be delayed by 12F}}
+* Input can be delayed by 11F}}
 }}
 {{Move
 |id=Leo-KNK.1,4
@@ -2476,8 +2477,8 @@
 |hit=+32a (+6)
 |ch=
 |crush=
-|recv=
-|tot=
+|recv=r36
+|tot=80
 |range=
 |tracksLeft=
 |tracksRight=
@@ -2487,10 +2488,10 @@
 * {{BB}}
 * Combo from 1st hit with 7F delay
 * Interrupt with i4 from 1st block
-* Transition to r18 BOK with D (+8/+32a (+6))
+* Transition to BOK r32 with D (+8/+32a (+6))
 * 4 chip damage on block
 * Move can be delayed by 10F
-* Input can be delayed by 12F}}
+* Input can be delayed by 11F}}
 }}
 {{Move
 |id=Leo-KNK.2
@@ -2505,8 +2506,8 @@
 |hit=+22a (+13)
 |ch=[[Leo combos#Staples|+58a]]
 |crush=
-|recv=
-|tot=
+|recv=r27
+|tot=41
 |range=
 |tracksLeft=
 |tracksRight=
@@ -2521,13 +2522,13 @@
 |name=Yi Qi Jiao
 |target=m
 |damage=13
-|startup=i20
+|startup=i20~21
 |block=-13
 |hit=[[Leo combos#Staples|+28a (+18)]]
 |ch=
-|crush=js13~
-|recv=
-|tot=
+|crush=js13~31, fs32~34
+|recv=r31
+|tot=52
 |range=
 |tracksLeft=
 |tracksRight=
@@ -2540,21 +2541,23 @@
 |input=,4
 |name=Er Qi Jiao
 |target=,m
-|damage=,18
-|startup=i15
+|damage=,18 (16)
+|startup=i15~17
 |block=-12
-|hit=+80a
+|hit=+28a (+18) / +80a (+64)
 |ch=
-|crush=js1~
-|recv=
-|tot=
+|crush=js1~js16, fs17~19
+|recv=r32
+|tot=69
 |range=
 |tracksLeft=
 |tracksRight=
 |video=File:t8-p2-leo-knk.3,4.mp4
 |notes={{Plainlist|
 * {{Tornado}}
-* Jail from 1st block with ?F delay
+* Jail from 1st block
+* Airborne combo from 1st hit (+80a (+64))
+* Recovers 2F faster on hit (t67 r30)
 }}
 }}
 {{Move
@@ -2565,20 +2568,22 @@
 |name=Cuo Ti Fu Ren
 |target=L
 |damage=18
-|startup=i20
+|startup=i20~21
 |block=-12
 |hit=+4c
-|ch=[[Leo combos#Mini-combos|+17d]]
+|ch=[[Leo combos#Mini-combos|+17a]]
 |crush=
-|recv=
-|tot=
+|recv=r30
+|tot=51
 |range=
 |tracksLeft=
 |tracksRight=
 |video=File:t8-p2-leo-knk.4.mp4
 |notes={{Plainlist|
 * {{Spike}}
-* Enter CD -10 +6c [[Leo combos#Mini-combos|+19d]] with df}}
+* Transition to CD r28 with df (-10/+6c/[[Leo combos#Mini-combos|+19d]])
+** CD SS cancel is -12
+}}
 }}
 {{Move
 |id=Leo-KNK.1+2
@@ -2593,8 +2598,8 @@
 |hit=+21cg
 |ch=[[Leo combos#Staples|+41a (+31)]]
 |crush=
-|recv=
-|tot=
+|recv=r27
+|tot=51
 |range=
 |tracksLeft=
 |tracksRight=
@@ -2614,13 +2619,13 @@
 |name=Tree Feller
 |target=L
 |damage=24
-|startup=i24
+|startup=i24~25
 |block=-26
-|hit=[[Leo combos#Mini-combos|+19d]]
+|hit=[[Leo combos#Mini-combos|+19a]]
 |ch=
-|crush=cs8~
-|recv=
-|tot=
+|crush=cs8~55
+|recv=r38
+|tot=63
 |range=
 |tracksLeft=
 |tracksRight=
@@ -2639,14 +2644,17 @@
 |hit=
 |ch=
 |crush=
-|recv=r12 CD
-|tot=
+|recv=r14 CD
+|tot=30
 |range=
 |tracksLeft=
 |tracksRight=
-|notes=
+|notes=i15 sidestep cancel or block
 }}
-{{MoveQuery|Leo-uf+1+2}}
+{{MoveInherit|Leo-uf+1+2
+|alt=uf+1+2
+|startup=i15~17
+|tot=42}}
 
 == BOK ''(Fo Bu)'' ==
 
@@ -2655,6 +2663,10 @@
 |id=Leo-d+1+2
 |parent=
 |input=d+1+2
+|alt={{Dotlist|
+* hFC.d+1+2
+* hFC.db+1+2
+}}
 |name=Fo Bu
 |target=
 |damage=
@@ -2662,33 +2674,18 @@
 |block=
 |hit=
 |ch=
-|crush=cs6~
+|crush=cs6~34
 |recv=r20? BOK
-|tot=
-|range=
-|tracksLeft=
-|tracksRight=
-}}
-{{Move
-|id=Leo-BOK.n
-|parent=
-|input=BOK.n
-|name=Fo Bu (Elapsed)
-|target=
-|damage=
-|startup=
-|block=
-|hit=
-|ch=
-|crush=cs
-|recv=FC? r14?
-|tot=
+|tot=34
 |range=
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
-* Stance moves may be delayed by 8F?
-* May perform FC moves from frame 9?
+* Stance moves may be delayed by 8F
+* Transtiion to FC r34 with no input
+* Can buffer FC moves from frame 29 
+* Cannot block in stance
+* i35 standing block (i37 from certain stance transitions)
 }}
 }}
 {{Move
@@ -2702,12 +2699,13 @@
 |block=-4
 |hit=+9
 |ch=
-|crush=cs0~12
-|recv=
-|tot=
+|crush=cs1~12
+|recv=r28
+|tot=41
 |range=
 |tracksLeft=
 |tracksRight=
+|notes=+9s on hit when performing BOK.1,2
 }}
 {{Move
 |id=Leo-BOK.1,2
@@ -2716,23 +2714,23 @@
 |input=,2
 |name=Ya Sui Ying Quan
 |target=,m
-|damage=,20
+|damage=,20 (14)
 |startup=i17~18
 |block=-14~-13
-|hit=[[Leo combos#Staples|+72 (+56)]]
+|hit=[[Leo combos#Staples|+71a (+55)]]/[[Leo combos#Staples|+72a (+56)]]
 |ch=
 |crush=
-|recv=
-|tot=
+|recv=r32
+|tot=64
 |range=
 |tracksLeft=
 |tracksRight=
 |video=File:t8-p2-leo-bok.1,2.mp4
 |notes={{Plainlist|
 * {{Tornado}}
-* Combo from 1st hit
-* Jail from 1st block with ?F delay
-* Gain LTG +57a (+41) on hit with 1+2}}
+* Jail from 1st block
+* Airborne combo from 1st hit (+72a (+56))
+* Transition to LTG r47 on hit with 1+2 (+56a (+40)/+57a (+41))}}
 }}
 {{Move
 |id=Leo-BOK.2
@@ -2746,9 +2744,9 @@
 |block=-9~-8
 |hit=[[Leo combos#Staples|+41a (+31)]]
 |ch=
-|crush=cs0~17
-|recv=
-|tot=
+|crush=cs1~17
+|recv=r28
+|tot=48
 |range=
 |tracksLeft=
 |tracksRight=
@@ -2764,11 +2762,11 @@
 |damage=30
 |startup=i21
 |block=+5
-|hit=[[Leo combos#Mini-combos|+15d]]
+|hit=[[Leo combos#Mini-combos|+15a]]
 |ch=
-|crush=js10~
-|recv=
-|tot=
+|crush=js10~30, fs31~33
+|recv=r40
+|tot=61
 |range=
 |tracksLeft=
 |tracksRight=
@@ -2778,27 +2776,23 @@
 * {{BB}}
 * 9 chip damage on block}}
 }}
-{{Move
+{{MoveInherit|Leo-f+4
 |id=Leo-BOK.4
 |num=99
 |parent=
 |input=BOK.4
-|name=Jin Ji Du Li
-|target=m
-|damage=14
+|target=M
 |startup=i20
 |block=+9
 |hit=+15g
 |ch=[[Leo combos#Staples|+19]]
-|crush=
-|recv=KNK
-|tot=
-|range=
-|tracksLeft=
-|tracksRight=
+|recv=r11 KNK
+|tot=56
 |notes={{Plainlist|
-* {{Knee}}
-* Same move as [[Leo movelist#Leo-f+4|f+4]]}}
+* Stance moves may be delayed by 11F
+* 4f timestop on CH
+* Enter CD r24 with df (-5/+1/+5)
+}}
 }}
 {{Move
 |id=Leo-BOK.1+2
@@ -2807,21 +2801,21 @@
 |input=BOK.1+2
 |name=Lao Pao Ba
 |target=M
-|damage=22
+|damage=21
 |startup=i20~21
 |block=-12~-11
-|hit=[[Leo combos#Wall|+15d]]
+|hit=[[Leo combos#Wall|+15a]]
 |ch=
-|crush=pc8~
-|recv=
-|tot=
+|crush=pc8~19
+|recv=r34
+|tot=55
 |range=
 |tracksLeft=
 |tracksRight=
 |video=File:t8-p2-leo-bok.1+2.mp4
 |notes={{Plainlist|
 * {{HeatEngager}}
-* {{HeatDash|+5, [[Leo combos#Mini-combos|+43d (+35)]]}}
+* {{HeatDash|[[Leo combos#Mini-combos|+43d (+35)]]}}
 * {{BB}}
 * {{Spike}}}}
 }}
@@ -2831,18 +2825,19 @@
 |parent=
 |input=BOK.3+4
 |name=Shuang Sao Tui
-|target=L,L
+|target=L,l
 |damage=7,13
 |startup=i16~17,i12~14
 |block=-13
 |hit=+2
 |ch=
-|crush=cs1~
-|recv=r30? FC
-|tot=
+|crush=cs1~61
+|recv=r30 FC
+|tot=61
 |range=
 |tracksLeft=
 |tracksRight=
+|notes=1st forces crouching against crouching opponents (opponents recover standing after 2nd hit)
 }}
 
 == CD ''(Jin Bu)'' ==
@@ -2861,16 +2856,19 @@
 |hit=
 |ch=
 |crush=
-|recv=
-|tot=
+|recv=r1 CD
+|tot=30
 |range=
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
-* Cancel to SS with U?
-* No crouching state
+* Cancel to SS with U
+* Stance moves can be delayed by 22F
+* Cannot be buffered
+* Stance moves can be buffered out of heat dash
+* Cannot block in stance
 * Transition to r6? hFC with alternate input d,DF
-** Crouching state
+** cs1~20
 ** Cannot access stance moves
 }}
 }}
@@ -2887,9 +2885,9 @@
 |block=-13~-12
 |hit=-1
 |ch=[[Leo combos#Mini-combos|+11]]
-|crush=cs6~
-|recv=FC
-|tot=
+|crush=cs6~50
+|recv=r31 FC
+|tot=50
 |range=
 |tracksLeft=
 |tracksRight=
@@ -2909,13 +2907,13 @@
 |hit=+9
 |ch=
 |crush=
-|recv=
-|tot=
+|recv=r28
+|tot=45
 |range=
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
-* Enter KNK -9 +9 with b}}
+* Transition to KNK r28 with b (-9/+9)}}
 }}
 {{Move
 |id=Leo-CD.2,1
@@ -2928,8 +2926,8 @@
 |damage=,17
 |startup=i18~19
 |block=-6~-5
-|hit=+10
-|ch=[[Leo combos#Mini-combos|+30d]]
+|hit=+10g
+|ch=[[Leo combos#Staples|+59a]]
 |crush=
 |recv=
 |tot=
@@ -2938,7 +2936,7 @@
 |tracksRight=
 |video=File:t8-p2-leo-cd.2,1.mp4
 |notes={{Plainlist|
-* {{WallCrush|on hit +22g}}
+* {{WallCrush|on hit +22cg~23cg; 3 chip damage}}
 * {{Elbow}}
 * Combo from 1st hit with 8F delay
 * Interrupt with i2 from 1st block
@@ -3018,8 +3016,8 @@
 |hit=+3
 |ch=
 |crush=
-|recv=
-|tot=
+|recv=r31
+|tot=53
 |range=
 |tracksLeft=
 |tracksRight=
@@ -3040,14 +3038,15 @@
 |hit=+14a (+5)
 |ch=+58a
 |crush=
-|recv=
-|tot=
+|recv=r31
+|tot=50
 |range=
 |tracksLeft=
 |tracksRight=
 |video=File:t8-p2-leo-ss.1+2.mp4
 |notes={{Plainlist|
-* {{BB}}}}
+* {{BB}}
+* Crumple stun on CH}}
 }}
 {{Move
 |id=Leo-BT.1+2
@@ -3062,15 +3061,16 @@
 |hit=+1a (-8)
 |ch=+22a (-14)
 |crush=
-|recv=
-|tot=
+|recv=r44
+|tot=55
 |range=
 |tracksLeft=
 |tracksRight=
 |video=File:t8-p2-leo-bt.1+2.mp4
 |notes={{Plainlist|
-* {{BB}}}}
+* {{BB}}
 * {{Elbow}}
+}}
 }}
 
 == Throws ==
@@ -3205,8 +3205,8 @@
 |hit=+8d
 |ch=
 |crush=
-|recv=
-|tot=
+|recv=r25
+|tot=39
 |range=
 |tracksLeft=
 |tracksRight=
@@ -3215,7 +3215,7 @@
 * {{BB}}
 * Throw break 1+2
 * Side switch
-* Usable from KNK}}
+* KNK.uf+1+2: i15~17 (t42)}}
 }}
 
 == 10 Strings ==

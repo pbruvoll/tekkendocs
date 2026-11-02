@@ -52,23 +52,31 @@
 |input=,H.4
 |name=Body Blow > Phantom Mace
 |target=,sm,sm
-|damage=,25,30
+|damage=,25,(30)
 |startup=i18~27, i44~45
 |block=-3~-2
-|hit=+6c
+|hit=+6cg
 |ch=
-|crush=
-|recv=r
-|tot=
+|crush=js51~54, fs55~57
+|recv=r30
+|tot=94
 |range=
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
 * {{BB}}
 * {{Spike}}
-* Combo from 1st hit
+* Combo from 1st hit with 5F delay
+* Interrupt with i1 from 1st block
 * Available only on hit or block
-* Forces tech backroll on hit}}
+* 2nd hit only available on block (jailing)
+* 20F timestop on hit
+* t78 r32 on hit
+* 11 chip damage on block
+* Consumes 240F of remaining Heat time on block
+* Forces tech backroll on hit
+* Move can be delayed by 1F
+* Input can be delayed by 5F}}
 }}
 {{Move
 |id=Raven-db+2,1,H.1
@@ -76,21 +84,29 @@
 |input=,H.1
 |name=Assassin's Sting > Phantom Javelin
 |target=,sm,sm
-|damage=,24,30
+|damage=,24,(30)
 |startup=i18~19, i39~47
 |block=-3~+5
 |hit=+2a (-7)
 |ch=
-|crush=
-|recv=r
-|tot=
+|crush=js48~61, fs62~64
+|recv=r25
+|tot=114
 |range=
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
 * {{BB}}
-* Combo from 2nd CH
+* Combo from 2nd CH with 9F delay
 * Available only on hit or block
+* 2nd hit only available on block (jailing)
+* Interrupt with i3 from 2nd block
+* 20F timestop on hit
+* t102 r41 on hit
+* Consumes 240F of remaining Heat time on block
+* 10 chip damage on block
+* Move can be delayed by 5F
+* Input can be delayed by 9F
 }}
 }}
 {{Move
@@ -99,21 +115,29 @@
 |input=,H.2
 |name=Missing Worm > Phantom Halberd
 |target=,sm,sm
-|damage=,21,30
-|startup=i19~20, i39~-41
+|damage=,21,(30)
+|startup=i19~20, i39~41
 |block=-3~-1
 |hit=+24a (+9)
 |ch=
-|crush=
-|recv=r
-|tot=
+|crush=js44~57, fs58~60
+|recv=r27
+|tot=115
 |range=
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
 * {{Tornado}}
-* Combo from 2nd CH
+* Combo from 2nd CH with 9F delay
+* Interrupt with i5 from 2nd block
 * Available only on hit or block
+* 2nd hit only available on block (jailing)
+* 20F timestop on hit
+* t106 r39 on hit
+* Consumes 240F of remaining Heat time on block
+* 10 chip damage on block
+* Move can be delayed by 4F
+* Input can be delayed by 9F
 }}
 }}
 {{Move
@@ -124,20 +148,22 @@
 |alias=WR3,H.4
 |target=,sm
 |damage=,20
-|startup=i43~44
+|startup=i19~20
 |block=+7~+8
 |hit=+72a (+56)
 |ch=
-|crush=
-|recv=r74 BT
-|tot=
+|crush=js1~10, fs11~13
+|recv=r30 BT
+|tot=74
 |range=
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
 * {{Tornado}}
-* Partially uses remaining Heat time
+* Instant Tornado on hit
+* Consumes 600F of remaining Heat time
 * Available only on hit or block
+* 20f timestop on hit
 * 6 chip damage on block}}
 }}
 {{Move
@@ -146,21 +172,28 @@
 |input=,H.2
 |name=Trident Kick > Phantom Halberd
 |target=,sm,sm
-|damage=,21 (14),30
+|damage=,21 (14),(30)
 |startup=i19~20, i39~41
 |block=-3~-1
 |hit=+65a (+49)
 |ch=
-|crush=
-|recv=r
-|tot=
+|crush=js44~57, fs58~60
+|recv=r27
+|tot=89
 |range=
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
 * {{Tornado}}
-* Combo from 1st hit
+* Airborne combo from 1st hit
 * Available only on hit or block
+* 2nd hit only available on block (jailing)
+* Interrupt with i1 from 1st block
+* t80 r39 on hit
+* Consumes 600F of remaining Heat time on block
+* 10 chip damage on block
+* Move is delayed by 4F
+* Input cannot be delayed
 }}
 }}
 {{Move
@@ -169,8 +202,8 @@
 |input=,H.2
 |name=Fatal Elbow > Phantom Halberd
 |target=,sm,sm
-|damage=,21,30
-|startup=,19~20, 39~41
+|damage=,21,(30)
+|startup=i19~20, i39~41
 |block=-3~-1
 |hit=+24a (+9)
 |ch=
@@ -184,6 +217,8 @@
 * {{Tornado}}
 * Combo from 1st hit
 * Available only on hit or block
+* Consumes 240F of remaining Heat time on block
+
 }}
 }}
 {{Move
@@ -217,7 +252,7 @@
 |name=Radius Flail > Phantom Halberd
 |target=,sm,sm
 |damage=,21,30
-|startup=i19~20 i39~-41
+|startup=i19~20 i39~41
 |block=-3~-1
 |hit=+24a (+9)
 |ch=
@@ -257,7 +292,7 @@
 }}
 }}
 {{Move
-|id=Raven-H.BT.f+2,4,2
+|id=Raven-BT.f+2,4,H.2
 |parent=Raven-BT.f+2,4
 |input=,H.2
 |name=Cold Worm > Phantom Halberd
@@ -559,7 +594,7 @@
 |block=-39~-36
 |hit=-8
 |ch=
-|crush=,js13~41 fs42~44
+|crush=is8~30 ,js13~41 fs42~44
 |recv=r55
 |tot=
 |range=
@@ -677,7 +712,7 @@
 |tracksRight=
 |notes={{Plainlist|
 * {{HeatEngager}}
-* {{HeatDash|+5, +43d (+35)}}
+* {{HeatDash|+43d (+35)}}
 }}
 }}
 
@@ -1303,13 +1338,14 @@
 |ch=+8
 |crush=
 |recv=r22 BT
-|tot=60
+|tot=61
 |range=
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
 * {{Elbow}}
-* Combo from 1st hit with 7F delay
+* Combo from 1st hit with 6F delay
+* -16 on whiff after 1st hit
 * Interrupt with i4
 * Input can be delayed 13f}}
 }}
@@ -1327,7 +1363,7 @@
 |ch=+26a (+16)
 |crush=
 |recv=r37
-|tot=59
+|tot=98
 |range=
 |tracksLeft=
 |tracksRight=
@@ -1335,7 +1371,7 @@
 |notes={{Plainlist|
 * {{BB}}
 * Combo from 2nd CH
-* Interrupt with i1
+* Interrupt with i1 from 2nd block
 * Grounded hit can be inconsistent}}
 }}
 {{Move
@@ -1352,14 +1388,17 @@
 |ch=
 |crush=,cs18~29
 |recv=r48
-|tot=69
+|tot=114
 |range=
 |tracksLeft=
 |tracksRight=
 |video=File:t8-p2-raven-b+2,2,1+2.mp4
 |notes={{Plainlist|
 * Combo from 2nd CH
-* Interrupt with i6}}
+* Interrupt with i6 from 1st block
+* Move is delayed 6F
+* Move cannot be delayed
+* Input cannot be delayed}}
 }}
 {{Move
 |id=Raven-b+2,4
@@ -1374,13 +1413,15 @@
 |ch=
 |crush=
 |recv=r25
-|tot=50
+|tot=67
 |range=
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
-* Combo from 1st hit with 5F delay
-* Interrupt with i6
+* Combo from 1st hit with 4F delay
+* -22 on whiff after 1st hit
+* Interrupt with i6 from 1st block
+* Whiffs vs SS, SWL from 1st block
 * Input can be delayed 13f}}
 }}
 {{Move
@@ -2149,7 +2190,7 @@
 * Transition to r20 SZN on hit only
 * Second hit available on hit only
 ** Airborne spike on 1st and 2nd hit
-* Recovers heat on hit}}
+}}
 }}
 {{Move
 |id=Raven-FC.df,d,DF
@@ -2473,7 +2514,7 @@
 |notes={{Plainlist|
 * {{Spike}}
 * Transitions to attack throw on front hit only, otherwise launch +33a (+23)
-* Recovers heat on hit}}
+}}
 }}
 {{Move
 |id=Raven-qcf+4
@@ -2615,10 +2656,10 @@
 |video=File:t8-p2-raven-szn.2.mp4
 |notes={{Plainlist|
 * {{HeatEngager}}
-* {{HeatDash|+36a (+26) on hit, +5 on block}}
+* {{HeatDash|+36a (+26) on hit}}
 * {{BB}}
 * Transition to second hit on hit
-* Recovers heat on normal hit}}
+}}
 }}
 {{Move
 |id=Raven-SZN.3
@@ -2854,7 +2895,7 @@
 |range=
 |tracksLeft=
 |tracksRight=
-|notes=Can block mid or high attacks after 6f
+|notes=Can block mid or high attacks after 5f
 }}
 {{Move
 |id=Raven-BT.1
@@ -3187,7 +3228,7 @@
 |name=Soul Steal
 |target=m
 |damage=18
-|startup=I16
+|startup=i16
 |block=-8
 |hit=+6
 |ch=

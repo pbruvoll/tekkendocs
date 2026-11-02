@@ -734,7 +734,7 @@
 * Combo from 1st CH with 7f delay
 * Input can be delayed 9f
 * Move can be delayed 8f
-* Trade with i1 from 1st block
+* Move cannot be interrupted
 }}
 }}
 
@@ -761,6 +761,7 @@
 * Combo from 2nd hit with 1f delay
 * Input can be delayed 1f
 * Move cannot be delayed
+* Interrupt with i2 from 2nd block
 * Combo from 1st CH
 * Chip damage on block
 }}
@@ -788,6 +789,7 @@
 * Combo from 1st Ch with 4f delay
 * Input can be delayed 9f
 * Move can be delayed 8f
+* Interrupt with i3 from 1st block
 }}
 }}
 
@@ -916,8 +918,8 @@
 |target=m
 |damage=23
 |startup=i19
-|block=+3
-|hit=+6
+|block=+3c
+|hit=+6c
 |ch=+13c
 |crush=
 |recv=r31 FC
@@ -972,9 +974,9 @@
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
-* Combo from 1st CH with 2f delay
-* Input can be delayed 2f
-* Move cannot be delayed
+* Jail from 1st block
+* Combo from 1st CH
+* Input cannot be delayed
 }}
 }}
 
@@ -997,6 +999,7 @@
 |tracksRight=
 |notes={{Plainlist|
 * {{Weapon}}
+* Jail from 1st block with 1f delay
 * Combo from 2nd hit with 1f delay
 * Input can be delayed 1f
 * Move cannot be delayed
@@ -1021,8 +1024,10 @@
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
-* Hitstop 20f on hit
+* {{BB}}
+* Jail from 1st block
 * Combo from 3rd CH
+* Hitstop 20f on hit
 }}
 }}
 
@@ -1043,7 +1048,7 @@
 |range=
 |tracksLeft=
 |tracksRight=
-|notes=
+|notes=-3c on crouching hit
 }}
 
 {{Move
@@ -1065,6 +1070,7 @@
 |tracksRight=
 |notes={{Plainlist|
 * Combo from 1st CH with 7f delay
+* Interrupt with i3 from 1st block
 * Input can be delayed 7f
 * Move can be delayed 6f
 }}
@@ -1082,7 +1088,7 @@
 |hit=-4d
 |ch=
 |crush=
-|recv=r38
+|recv=r49
 |tot=127
 |range=
 |tracksLeft=
@@ -1091,41 +1097,13 @@
 * {{Weapon}}
 * Combo from 2nd hit with 1f delay
 * Combo from 1st CH
+* Interrupt with i6 from 2nd block
 * Input can be delayed 1f
 * Move cannot be delayed
-* Recovers 12f faster on block
+* Recovers 11f faster on block (t115 r38)
 * Transitions to attack throw automatically on hit
 * 15 scaled damage on attack throw
-}}
-}}
-
-{{Move
-|id=Kunimitsu-d+3,4,1,F
-|parent=Kunimitsu-d+3,4,1
-|input=,F
-|name=Rinbu Kick > Piercing Kunai Throw
-|target=,sm,t
-|damage=,10,28
-|startup=,i26~37
-|block=-13
-|hit=-4d
-|ch=
-|crush=
-|recv=r38
-|tot=127
-|range=
-|tracksLeft=
-|tracksRight=
-|notes={{Plainlist|
-* {{Weapon}}
-* Combo from 2nd hit with 1f delay
-* Combo from 1st CH
-* Input can be delayed 1f
-* Move cannot be delayed
-* Recovers 12f faster on block
-* Transitions to attack throw automatically on hit
-* 15 scaled damage on attack throw
-* Side switch on hit
+* Shift to Piercing Kunai Throw with F (Side switch on hit) 
 }}
 }}
 
@@ -1140,13 +1118,16 @@
 |block=-14
 |hit=+0
 |ch=+15g
-|crush=cs6~
+|crush=cs6~50
 |recv=r33 FC
 |tot=53
 |range=
 |tracksLeft=
 |tracksRight=
-|notes={{Weapon}}
+|notes={{Plainlist|
+* {{Weapon}}
+* Recovers 3f faster on hit (t50 r30)
+}}
 }}
 
 {{Move
@@ -2502,6 +2483,7 @@
 * {{FB}}
 * Combo from 1st hit with 10f delay
 * Combo from 1st CH with 15f delay
+* Interrupt with i2 from 1st block
 * Input can be delayed 15f
 * Move can be delayed 8f
 }}
@@ -2553,6 +2535,7 @@
 * {{BB}}
 * {{Weapon}}
 * Combo from 1st hit with 9f delay
+* Interrupt with i1 from 1st block
 * Input can be delayed 9f
 * Move can be delayed 6f
 }}
@@ -2668,6 +2651,7 @@
 * Combo from 1st hit with 8f delay
 * Input can be delayed 8f
 * Move can be delayed 4f
+* Interrupt with i5 from 1st block
 * Transition to KAT -8 +3 r28 with 1+2
 }}
 }}
@@ -2695,6 +2679,8 @@
 * {{Weapon}}
 * Available on hit or block only
 * Combo from 2nd hit CH with 10f delay
+* Interrupt with i10 from 2nd block
+* Whiffs vs SSR from 2nd block (Inconsistent w/ all body types)
 * Input can be delayed 10f
 * Move cannot be delayed
 }}
@@ -2722,6 +2708,7 @@
 * {{Weapon}}
 * Available on hit or block only
 * Combo from 2nd hit CH with 10f delay
+* Interrupt with i8 from 2nd block
 * Input can be delayed 10f
 * Move cannot be delayed
 }}
@@ -2747,6 +2734,8 @@
 |notes={{Plainlist|
 * {{Spike}}
 * Available on hit or block only
+* Interrupt with i15 from 2nd block
+* Whiffs vs SS, SW from 2nd block
 * Input can be delayed 10f
 * Move cannot be delayed
 * 4 chip damage on block
@@ -2773,6 +2762,7 @@
 |notes={{Plainlist|
 * {{Knee}}
 * Combo from 1st hit with 8f delay
+* Interrupt with i6 from 1st block
 * Input can be delayed 8f
 * Move can be delayed 4f
 * Transition to SET -1 +6 +15 r19 with F
@@ -2801,6 +2791,7 @@
 * {{HeatDash|+5, +43d (+35)}}
 * {{BB}}
 * Combo from 1st hit with 8f delay
+* Interrupt with i5 from 2nd block
 * Input can be delayed 8f
 * Move can be delayed 4f
 * Forces tech backroll on hit
@@ -3172,6 +3163,8 @@
 * {{BB}}
 * {{Weapon}}
 * Combo from 1st CH with 2f delay
+* Interrupt with i11 from 1st block
+* Whiffs vs SSL from 1st block
 * Input can be delayed 2f
 * Move cannot be delayed
 }}
@@ -3321,7 +3314,7 @@
 * Input can be delayed 10f
 * Move cannot be delayed
 * Available on hit or block only
-* Interrupt with i10 from 2nd block
+* Interrupt with i10 from 1st block
 }}
 }}
 
@@ -3350,7 +3343,8 @@
 * Input can be delayed 10f
 * Move cannot be delayed
 * Available on hit or block only
-* Interrupt with i8 from 2nd block
+* Interrupt with i8 from 1st block
+* Whiffs vs SSR, SWR from 1st block
 }}
 }}
 
@@ -3375,7 +3369,8 @@
 |notes={{Plainlist|
 * {{FB}}
 * Combo from 2nd CH
-* Interrupt with i12 from 2nd block
+* Interrupt with i12 from 1st block
+* Whiffs vs SS, SW from 1st block
 * Available on hit or block only
 }}
 }}
@@ -3403,7 +3398,8 @@
 * Input can be delayed 10f
 * Move cannot be delayed
 * Available on hit or block only
-* Interrupt with i15 from 2nd block
+* Interrupt with i15 from 1st block
+* Whiffs vs SS, SW from 1st block
 * 4 chip damage on block
 }}
 }}
@@ -3708,6 +3704,7 @@
 * {{FB}}
 * {{Weapon}}
 * Combo from 1st hit CH
+* Interrupt with i4 from 1st block
 * Sidestep adds 9f, effective startup i31~32
 * Move is delayed 1f
 }}
