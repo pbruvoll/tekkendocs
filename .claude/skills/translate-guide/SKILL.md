@@ -10,7 +10,7 @@ A character can have more guides by other authors, `<char>-<authorSlug>-guide.cs
 translations are `<char>-<authorSlug>-guide-<lang>.csv`.
 
 1. Read the **entire** source CSV first. Later sections reuse terminology from earlier ones.
-2. Read the language's glossary in [glossaries/](./glossaries/) (`ko.md`, `ja.md`, `es.md`, `ur.md`, `ru.md`, `de.md`, `tr.md`, `pt-br.md`).
+2. Read the language's glossary in [glossaries/](./glossaries/) (`ko.md`, `ja.md`, `es.md`, `ur.md`, `ru.md`, `de.md`, `tr.md`, `pt-br.md`, `fr.md`).
    Use its terms. It is the accumulated result of previous runs. For a new language, first do the
    research pass below, then create `glossaries/<lang>.md` following the same shape.
 3. List the cells to translate: `python .claude/skills/translate-guide/scripts/guide_csv.py cells <char>`.

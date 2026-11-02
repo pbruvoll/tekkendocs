@@ -1,0 +1,61 @@
+import { type GuideTexts } from './guideTexts';
+
+export const fr: GuideTexts = {
+  metaTitle: ({ character, season, author }) =>
+    `Guide ${character} Tekken 8, saison ${season}${author ? `, par ${author}` : ''} | TekkenDocs`,
+  metaDescription: ({ character }) =>
+    `Un résumé des infos les plus importantes sur ${character} dans Tekken 8. Apprenez vite à jouer le personnage grâce aux coups clés, aux punitions et aux combos.`,
+  pageHeading: ({ character, season }) =>
+    `Guide ${character} Tekken 8, saison ${season}`,
+  translationNotice: "Traduit automatiquement de l'anglais.",
+  sections: {
+    aboutTheAuthor: "À propos de l'auteur",
+    introduction: 'Introduction',
+    strengths: 'Forces',
+    weaknesses: 'Faiblesses',
+    heatSystem: 'Heat System',
+    gamePlan: 'Plan de jeu',
+    installments: 'États spéciaux',
+    topMoves: 'Top 10 des coups',
+    punishers: 'Punitions',
+    combos: 'Combos',
+    beginnerCombos: 'Combos pour débutants',
+    comboEnders: 'Fins de combo',
+    wallCombos: 'Combos au mur',
+    smallCombos: 'Petits combos',
+    notableMoves: 'Coups notables',
+    stances: 'Stances',
+    panicMoves: 'Coups de panique',
+    frameTraps: 'Frame traps',
+    knowledgeChecks: 'Knowledge checks',
+    defensiveTips: 'Conseils en défense',
+    defensiveMoveHandling: 'Se défendre contre chaque coup',
+    matchups: 'Matchups',
+    externalResources: 'Liens externes',
+  },
+  inThisGuide: 'Dans ce guide',
+  writtenBy: 'Écrit par',
+  contributors: 'Contributeurs',
+  lastUpdated: 'Dernière mise à jour',
+  gameVersion: 'Version du jeu',
+  showVideo: 'Afficher la vidéo',
+  hideVideo: 'Masquer la vidéo',
+  audio: {
+    play: 'Lire à voix haute',
+    stop: 'Arrêter la lecture à voix haute',
+    notSupported:
+      'Ce navigateur ne prend pas en charge la lecture à voix haute',
+  },
+  standingPunishers: 'Debout',
+  crouchingPunishers: 'Accroupi',
+  whiffPunishers: 'Whiff punish',
+  carryEnders: 'Carry',
+  floorBreakEnders: 'Floor break',
+  wallBreakEnders: 'Wall break',
+  normalWallCombos: 'Normal',
+  tornadoWallCombos: 'Avec tornado',
+  goodMatchups: 'Matchups favorables',
+  badMatchups: 'Matchups difficiles',
+  replayDatabaseLink: ({ character }) =>
+    `Replays haut niveau de ${character} sur la Replay Database`,
+};
