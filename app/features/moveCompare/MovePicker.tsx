@@ -7,10 +7,10 @@ import { getCharacterDisplayName } from '~/features/frameQuiz/moveSelection';
 import {
   matchCharacters,
   parseCharacterMoveQuery,
-  searchMoves,
 } from '~/features/moveSearch/moveSearch';
 import { type Move } from '~/types/Move';
 import { commandInputProps } from '~/utils/commandUtils';
+import { filterMoves } from '~/utils/frameDataUtils';
 import { t8AvatarBrandMap } from '~/utils/t8AvatarMap';
 
 const maxResults = 20;
@@ -55,7 +55,7 @@ export const MovePicker = ({
     const characterMoves = moves.filter(
       (move) => move.characterId === selectedCharacter.id,
     );
-    return searchMoves(characterMoves, moveQuery);
+    return filterMoves(characterMoves, { searchQuery: moveQuery });
   }, [moves, selectedCharacter, moveQuery]);
 
   if (selectedMove) {

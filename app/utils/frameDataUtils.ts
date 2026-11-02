@@ -6,6 +6,7 @@ import {
   isLowHit,
 } from '~/features/duckableString/lowHighString';
 import { searchMoves } from '~/features/moveSearch/moveSearch';
+import { getShortcutFilter } from '~/features/moveSearch/searchShortcuts';
 import { newMovesT8s3 } from '~/services/staticDataService';
 import { type FavoriteMoves } from '~/types/FavoriteMoves';
 import { type HitLevel } from '~/types/FilterTypes';
@@ -402,6 +403,24 @@ export const hasTag = (tag: MoveTag, move: Move) => {
   return move.tags?.[tag] !== undefined;
 };
 
+/**
+ * Heat bursts, heat smashes and rage arts also power crush, but are left out,
+ * as they are not what you look for
+ */
+const matchesPowerCrushFilter = (move: Move) =>
+  hasTag(MoveTags.PowerCrush, move) &&
+  ![MoveTags.HeatBurst, MoveTags.HeatSmash, MoveTags.RageArt].some((tag) =>
+    hasTag(tag, move),
+  );
+
+/**
+ * One hit level per input, such as "m, h" => ["m", "h"]. An input that hits
+ * more than once has no space after the comma, such as "L,m,th", and counts
+ * as its first hit. Throws such as "th(h)" count as "t"
+ */
+const getHitLevels = (hitLevel: string | undefined): string[] =>
+  (hitLevel ?? '').split(', ').map((part) => part.charAt(0).toLowerCase());
+
 export const filterRows = (
   rows: string[][],
   filter: MoveFilter | undefined,
@@ -413,16 +432,14 @@ export const filterRows = (
   const filterFuncs: ((row: string[]) => boolean)[] = [];
   if (filter.hitLevels?.length) {
     filterFuncs.push((row: string[]) => {
-      const lastHitLevel = row[1]?.split(', ').pop()?.[0]?.toLowerCase();
+      const lastHitLevel = getHitLevels(row[1]).at(-1);
       return !!filter.hitLevels?.includes(lastHitLevel as HitLevel);
     });
   }
 
   if (filter.prevHitLevels?.length) {
     filterFuncs.push((row: string[]) => {
-      const hitLevelParts = row[1]?.split(', ');
-      const prevHitLevel =
-        hitLevelParts?.[hitLevelParts.length - 2]?.[0]?.toLowerCase();
+      const prevHitLevel = getHitLevels(row[1]).at(-2);
       return !!filter.prevHitLevels?.includes(prevHitLevel as HitLevel);
     });
   }
@@ -555,9 +572,21 @@ export const filterMoves = (
   moves: Move[],
   filter: MoveFilter | undefined,
   favorites?: FavoriteMoves,
-) => {
+): Move[] => {
   if (!filter) {
     return moves;
+  }
+
+  // A search shortcut, such as "pc" for power crush, is applied as a filter
+  // on top of the other filters instead of searching for the text
+  const shortcutFilter = getShortcutFilter(filter.searchQuery);
+  if (shortcutFilter) {
+    const filteredMoves = filterMoves(
+      moves,
+      { ...filter, searchQuery: undefined },
+      favorites,
+    );
+    return filterMoves(filteredMoves, shortcutFilter);
   }
 
   const filterFuncs: ((move: Move) => boolean)[] = [];
@@ -571,16 +600,14 @@ export const filterMoves = (
 
   if (filter.hitLevels?.length) {
     filterFuncs.push((move: Move) => {
-      const lastHitLevel = move.hitLevel?.split(', ').pop()?.[0]?.toLowerCase();
+      const lastHitLevel = getHitLevels(move.hitLevel).at(-1);
       return !!filter.hitLevels?.includes(lastHitLevel as HitLevel);
     });
   }
 
   if (filter.prevHitLevels?.length) {
     filterFuncs.push((move: Move) => {
-      const hitLevelParts = move.hitLevel?.split(', ');
-      const prevHitLevel =
-        hitLevelParts?.[hitLevelParts.length - 2]?.[0]?.toLowerCase();
+      const prevHitLevel = getHitLevels(move.hitLevel).at(-2);
       return !!filter.prevHitLevels?.includes(prevHitLevel as HitLevel);
     });
   }
@@ -728,7 +755,7 @@ export const filterMoves = (
     [filter.forcesCrouchOnBlock, forcesCrouchOnBlock],
     [filter.forcesCrouchOnHit, forcesCrouchOnHit],
     [filter.counterHit, isCounterHitMove],
-    [filter.powerCrush, (move: Move) => hasTag('pc', move)],
+    [filter.powerCrush, matchesPowerCrushFilter],
     [filter.highCrush, (move: Move) => hasTag('cs', move)],
     [filter.lowCrush, (move: Move) => hasTag('js', move)],
     [filter.parry, (move: Move) => hasTag('ps', move)],
@@ -760,8 +787,7 @@ export const filterMoves = (
         return (
           stanceSplitted.length === 1 &&
           !move.command.startsWith('ws') &&
-          (move.hitLevel?.split(', ').pop()?.[0]?.toLowerCase() as HitLevel) !==
-            't'
+          getHitLevels(move.hitLevel).at(-1) !== 't'
         );
       }
       if (stanceSplitted.length > 1) return stance.includes(stanceSplitted[0]);

@@ -13,14 +13,13 @@ import { CompactMoveList } from '~/features/compactMoveList/CompactMoveList';
 import {
   matchCharacters,
   parseCharacterMoveQuery,
-  searchMoves,
 } from '~/features/moveSearch/moveSearch';
 import { useSearchParamState } from '~/hooks/useSearchParamState';
 import { getTekken8Characters } from '~/services/staticDataService';
 import { type CharacterFrameDataPage } from '~/types/CharacterFrameDataPage';
 import { type GameRouteId } from '~/types/GameRouteId';
 import { commandInputProps } from '~/utils/commandUtils';
-import { sortMovesV2 } from '~/utils/frameDataUtils';
+import { filterMoves, sortMovesV2 } from '~/utils/frameDataUtils';
 import { commandToUrlSegmentEncoded } from '~/utils/moveUtils';
 import { generateMetaTags } from '~/utils/seoUtils';
 import { getSortSettings } from '~/utils/sortingUtils';
@@ -84,7 +83,7 @@ export default function () {
       data &&
       data.characterName === selectedCharId
     ) {
-      return searchMoves(data.moves, moveQuery);
+      return filterMoves(data.moves, { searchQuery: moveQuery });
     }
     return [];
   }, [data, filteredCharList.length, moveQuery, selectedCharId]);
