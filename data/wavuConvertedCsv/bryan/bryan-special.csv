@@ -10,11 +10,15 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Removes Recoverable Health
 * Reversal Break
 * Damage increases with lower health, maximum 82
-* Freezes match timer on activation and on hit
-* Restores recoverable health on hit
+* Freezes match timer on activation equal to (total frame idle recovery - 5F) or 57F when canceled by any action
+* Freezes match timer on hit by 15F
+* 114F timestop on activation
+* 20F timestop on block
+* r24 opponent blockstun (r44 effective blockstun w/ timestop)
+* Restores 13 recoverable health on hit
 * Transition to attack throw on hit
 * Consumes Rage
-* Power crush 8~";ra rbr pc8~;;Total Vandalization;39;;;;Bryan-R.df+1+2;bryan
+* Power crush 8~20";ra rbr pc8~20;;Total Vandalization;42;;;;Bryan-R.df+1+2;bryan
 1;h;5;i10;+1;+8;;Recovers 2f faster on hit or block (t27 r17);;;Jab;19;;;File:t8-p2-bryan-1,2.mp4;Bryan-1;bryan
 1,2;h, h;5, 8;i10, i12;-3;+8;+9;"* Jail from 1st block
 * Combo from 1st hit";;;Left Right Combo;21;;;File:t8-p2-bryan-1,2.mp4;Bryan-1,2;bryan
@@ -290,15 +294,15 @@ b+3,2,1,2;m, h, m, m;12, 12, 10, 14;i19, ,i19;-10;+19a (+10);;"* Balcony Break
 * Interrupt with i1 from 3rd block";bbr intr:1;;Front Kick > Rush;31;;;File:t8-p2-bryan-b+3,2,1,2.mp4;Bryan-b+3,2,1,2;bryan
 b+3,2,1,4;m, h, m, L;12, 12, 10, 12;i19, ,i22;-11;+0;;"* Combo from 2nd CH
 * Interrupt with i5 from 3rd block";intr:5;;Run for Cover;30;;;File:t8-p2-bryan-b+3,2,1,4.mp4;Bryan-b+3,2,1,4;bryan
-b+3,4;m, m;12, 18;i19, ;;;;;;;2nd Hit;;;;File:t8-p2-bryan-b+3,4,1,2,1,4,2,1,4,2.mp4;Bryan-b+3,4;bryan
-b+3,4,1;m, m, m;12, 18, 5;i19, ;;;;;;;3rd Hit;;;;File:t8-p2-bryan-b+3,4,1,2,1,4,2,1,4,2.mp4;Bryan-b+3,4,1;bryan
-b+3,4,1,2;m, m, m, m;12, 18, 5, 7;i19, ;;;;;;;4th Hit;;;;File:t8-p2-bryan-b+3,4,1,2,1,4,2,1,4,2.mp4;Bryan-b+3,4,1,2;bryan
-b+3,4,1,2,1;m, m, m, m, h;12, 18, 5, 7, 3;i19, ;;;;;;;5th Hit;;;;File:t8-p2-bryan-b+3,4,1,2,1,4,2,1,4,2.mp4;Bryan-b+3,4,1,2,1;bryan
-b+3,4,1,2,1,4;m, m, m, m, h, h;12, 18, 5, 7, 3, 8;i19, ;;;;;;;6th Hit;;;;File:t8-p2-bryan-b+3,4,1,2,1,4,2,1,4,2.mp4;Bryan-b+3,4,1,2,1,4;bryan
-b+3,4,1,2,1,4,2;m, m, m, m, h, h, h;12, 18, 5, 7, 3, 8, 5;i19, ;;;;;;;7th Hit;;;;File:t8-p2-bryan-b+3,4,1,2,1,4,2,1,4,2.mp4;Bryan-b+3,4,1,2,1,4,2;bryan
-b+3,4,1,2,1,4,2,1;m, m, m, m, h, h, h, h;12, 18, 5, 7, 3, 8, 5, 5;i19, ;;;;;;;8th Hit;;;;File:t8-p2-bryan-b+3,4,1,2,1,4,2,1,4,2.mp4;Bryan-b+3,4,1,2,1,4,2,1;bryan
-b+3,4,1,2,1,4,2,1,4;m, m, m, m, h, h, h, h, m;12, 18, 5, 7, 3, 8, 5, 5, 10;i19, ;;;;;;;9th Hit;;;;File:t8-p2-bryan-b+3,4,1,2,1,4,2,1,4,2.mp4;Bryan-b+3,4,1,2,1,4,2,1,4;bryan
-b+3,4,1,2,1,4,2,1,4,2;m, m, m, m, h, h, h, h, m, h;12, 18, 5, 7, 3, 8, 5, 5, 10, 20;i19, ;;;;;;;10 Hit Combo;;;;File:t8-p2-bryan-b+3,4,1,2,1,4,2,1,4,2.mp4;Bryan-b+3,4,1,2,1,4,2,1,4,2;bryan
+b+3,4;m, m;12, 18;i19, ;;;;* 10-hit combo string;;;2nd Hit;;;;File:t8-p2-bryan-b+3,4,1,2,1,4,2,1,4,2.mp4;Bryan-b+3,4;bryan
+b+3,4,1;m, m, m;12, 18, 5;i19, ;;;;* 10-hit combo string;;;3rd Hit;;;;File:t8-p2-bryan-b+3,4,1,2,1,4,2,1,4,2.mp4;Bryan-b+3,4,1;bryan
+b+3,4,1,2;m, m, m, m;12, 18, 5, 7;i19, ;;;;* 10-hit combo string;;;4th Hit;;;;File:t8-p2-bryan-b+3,4,1,2,1,4,2,1,4,2.mp4;Bryan-b+3,4,1,2;bryan
+b+3,4,1,2,1;m, m, m, m, h;12, 18, 5, 7, 3;i19, ;;;;* 10-hit combo string;;;5th Hit;;;;File:t8-p2-bryan-b+3,4,1,2,1,4,2,1,4,2.mp4;Bryan-b+3,4,1,2,1;bryan
+b+3,4,1,2,1,4;m, m, m, m, h, h;12, 18, 5, 7, 3, 8;i19, ;;;;* 10-hit combo string;;;6th Hit;;;;File:t8-p2-bryan-b+3,4,1,2,1,4,2,1,4,2.mp4;Bryan-b+3,4,1,2,1,4;bryan
+b+3,4,1,2,1,4,2;m, m, m, m, h, h, h;12, 18, 5, 7, 3, 8, 5;i19, ;;;;* 10-hit combo string;;;7th Hit;;;;File:t8-p2-bryan-b+3,4,1,2,1,4,2,1,4,2.mp4;Bryan-b+3,4,1,2,1,4,2;bryan
+b+3,4,1,2,1,4,2,1;m, m, m, m, h, h, h, h;12, 18, 5, 7, 3, 8, 5, 5;i19, ;;;;* 10-hit combo string;;;8th Hit;;;;File:t8-p2-bryan-b+3,4,1,2,1,4,2,1,4,2.mp4;Bryan-b+3,4,1,2,1,4,2,1;bryan
+b+3,4,1,2,1,4,2,1,4;m, m, m, m, h, h, h, h, m;12, 18, 5, 7, 3, 8, 5, 5, 10;i19, ;;;;* 10-hit combo string;;;9th Hit;;;;File:t8-p2-bryan-b+3,4,1,2,1,4,2,1,4,2.mp4;Bryan-b+3,4,1,2,1,4,2,1,4;bryan
+b+3,4,1,2,1,4,2,1,4,2;m, m, m, m, h, h, h, h, m, h;12, 18, 5, 7, 3, 8, 5, 5, 10, 20;i19, ;;;;* 10-hit combo string;;;10 Hit Combo;;;;File:t8-p2-bryan-b+3,4,1,2,1,4,2,1,4,2.mp4;Bryan-b+3,4,1,2,1,4,2,1,4,2;bryan
 b+3,1+2;m, m;12, 25;i19, i22;-6;+4c;+26d;"* Floor Break
 * Combo from 1st CH with 8f delay
 * Interrupt with i4 from 1st block
