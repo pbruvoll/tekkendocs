@@ -824,6 +824,7 @@
     "id": "Bryan-b+3,4",
     "input": ",4",
     "name": "2nd Hit",
+    "notes": "* 10-hit combo string",
     "parent": "Bryan-b+3",
     "recv": "r",
     "target": ",m"
@@ -833,6 +834,7 @@
     "id": "Bryan-b+3,4,1",
     "input": ",1",
     "name": "3rd Hit",
+    "notes": "* 10-hit combo string",
     "parent": "Bryan-b+3,4",
     "recv": "r",
     "target": ",m"
@@ -842,6 +844,7 @@
     "id": "Bryan-b+3,4,1,2",
     "input": ",2",
     "name": "4th Hit",
+    "notes": "* 10-hit combo string",
     "parent": "Bryan-b+3,4,1",
     "recv": "r",
     "target": ",m"
@@ -851,6 +854,7 @@
     "id": "Bryan-b+3,4,1,2,1",
     "input": ",1",
     "name": "5th Hit",
+    "notes": "* 10-hit combo string",
     "parent": "Bryan-b+3,4,1,2",
     "recv": "r",
     "target": ",h"
@@ -860,6 +864,7 @@
     "id": "Bryan-b+3,4,1,2,1,4",
     "input": ",4",
     "name": "6th Hit",
+    "notes": "* 10-hit combo string",
     "parent": "Bryan-b+3,4,1,2,1",
     "recv": "r",
     "target": ",h"
@@ -869,6 +874,7 @@
     "id": "Bryan-b+3,4,1,2,1,4,2",
     "input": ",2",
     "name": "7th Hit",
+    "notes": "* 10-hit combo string",
     "parent": "Bryan-b+3,4,1,2,1,4",
     "recv": "r",
     "target": ",h"
@@ -878,6 +884,7 @@
     "id": "Bryan-b+3,4,1,2,1,4,2,1",
     "input": ",1",
     "name": "8th Hit",
+    "notes": "* 10-hit combo string",
     "parent": "Bryan-b+3,4,1,2,1,4,2",
     "recv": "r",
     "target": ",h"
@@ -887,6 +894,7 @@
     "id": "Bryan-b+3,4,1,2,1,4,2,1,4",
     "input": ",4",
     "name": "9th Hit",
+    "notes": "* 10-hit combo string",
     "parent": "Bryan-b+3,4,1,2,1,4,2,1",
     "recv": "r",
     "target": ",m"
@@ -896,6 +904,7 @@
     "id": "Bryan-b+3,4,1,2,1,4,2,1,4,2",
     "input": ",2",
     "name": "10 Hit Combo",
+    "notes": "* 10-hit combo string",
     "num": "74",
     "parent": "Bryan-b+3,4,1,2,1,4,2,1,4",
     "recv": "r",
@@ -1654,16 +1663,17 @@
   },
   {
     "block": "-18",
-    "crush": "pc8~",
+    "crush": "pc8~20",
     "damage": "55+",
     "hit": "+0d",
     "id": "Bryan-R.df+1+2",
     "input": "R.df+1+2",
     "name": "Total Vandalization",
-    "notes": "* Rage Art\n* Removes Recoverable Health\n* Reversal Break\n* Damage increases with lower health, maximum 82\n* Freezes match timer on activation and on hit\n* Restores recoverable health on hit\n* Transition to attack throw on hit\n* Consumes Rage",
-    "recv": "r39",
+    "notes": "* Rage Art\n* Removes Recoverable Health\n* Reversal Break\n* Damage increases with lower health, maximum 82\n* Freezes match timer on activation equal to (total frame idle recovery - 5F) or 57F when canceled by any action\n* Freezes match timer on hit by 15F\n* 114F timestop on activation\n* 20F timestop on block\n* r24 opponent blockstun (r44 effective blockstun w/ timestop)\n* Restores 13 recoverable health on hit\n* Transition to attack throw on hit\n* Consumes Rage",
+    "recv": "r42",
     "startup": "i20",
-    "target": "m,t"
+    "target": "m,t",
+    "tot": "62"
   },
   {
     "block": "-3",
