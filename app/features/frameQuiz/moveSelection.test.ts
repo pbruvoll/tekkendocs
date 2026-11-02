@@ -3,6 +3,7 @@ import { type Move } from '~/types/Move';
 import {
   getEligibleQuizMoves,
   isGroundedRecoveryState,
+  isTenHitStringMove,
   isThrowHitLevel,
 } from './moveSelection';
 
@@ -65,6 +66,21 @@ test('isGroundedRecoveryState', () => {
   expect(isGroundedRecoveryState('')).toBe(false);
 });
 
+test('isTenHitStringMove', () => {
+  expect(isTenHitStringMove('* 10-hit combo string')).toBe(true); // Asuka-ws2,1,1
+  expect(
+    isTenHitStringMove(
+      '* 10-hit combo string\n* Low crush 9~31\n* Floating state 32~34',
+    ),
+  ).toBe(true); // Alisa-ub+4
+  expect(isTenHitStringMove('* Balcony Break\n* 10-hit combo string')).toBe(
+    true,
+  ); // Asuka-ws2,1,1,3
+
+  expect(isTenHitStringMove('* Balcony Break')).toBe(false); // Asuka-ws2,1,1,3
+  expect(isTenHitStringMove('')).toBe(false);
+});
+
 describe('getEligibleQuizMoves', () => {
   const kingPalmStrikeHeadJammer = createMove({
     // King-1,2,2+4
@@ -120,6 +136,21 @@ describe('getEligibleQuizMoves', () => {
       getEligibleQuizMoves([armorKingArmageddonDrop, kingOneTwo]).map(
         ({ id }) => id,
       ),
+    ).toEqual(['King-1,2']);
+  });
+
+  test('filters out moves that are part of a 10-hit string', () => {
+    const asukaTenHitPart = createMove({
+      // Asuka-ws2,1,1
+      command: 'ws2,1,1',
+      hitLevel: 'm, h, m',
+      block: '-23',
+      notes: '* 10-hit combo string',
+      id: 'Asuka-ws2,1,1',
+      video: 'File:t8-p2-asuka-ws2,1,1,1,2,1,4,3,3+4.mp4',
+    });
+    expect(
+      getEligibleQuizMoves([asukaTenHitPart, kingOneTwo]).map(({ id }) => id),
     ).toEqual(['King-1,2']);
   });
 });
