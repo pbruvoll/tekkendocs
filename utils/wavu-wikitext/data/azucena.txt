@@ -14,6 +14,7 @@
 {{MoveDataHeader}}
 {{MoveInherit|Generic-2+3
 |id=Azucena-2+3
+|alt=LIB.2+3
 }}
 {{Move
 |id=Azucena-H.2+3
@@ -50,6 +51,7 @@
 * 3rd hit damage 29 > 30 if 1st hit whiffs
 * Hit level becomes m,h,m on block/whiff
 * Spike on the last hit if the first two whiff
+* Jab evasion (frames 7 to 10?)
 }}
 }}
 {{Move
@@ -267,7 +269,7 @@
 |notes={{Plainlist|
 * Combo from 1st hit with 1f delay
 * Transition to LIB on standing hit only
-* Interrupt with i5
+* Interrupt with i5 from 1st block
 * Move can be delayed 8f}}
 }}
 {{Move
@@ -292,7 +294,7 @@
 |notes={{Plainlist|
 * {{BB}}
 * Combo from 1st hit with 4f delay
-* Interrupt with i1
+* Interrupt with i1 from 1st block
 * Transition to BT with B}}
 }}
 {{Move
@@ -359,7 +361,7 @@
 * {{Tornado}}
 * {{BB}}
 * Combo from 2nd CH with 5f delay
-* Interrupt with i4
+* Interrupt with i4 from 1st block
 * Move can be delayed 10f}}
 }}
 {{Move
@@ -400,36 +402,13 @@
 |tracksLeft=
 |tracksRight=
 |video=File:t8-p2-azucena-3,2.mp4
+<!--|video=File:Azucena-3,2~F.mp4-->
 |notes={{Plainlist|
 * Combo from 1st hit with 7f delay
-* Interrupt with i3
+* Interrupt with i3 from 1st block
 * Move can be delayed 10f
-* Opponent recovers crouching on hit
+* Cancel to LIB r37 ps35~ at frame 18 (-18/-7)
 }}
-}}
-{{Move
-|id=Azucena-3,2~F
-|parent=Azucena-3
-|input=,2~F
-|name=
-|target=
-|damage=
-|startup=
-|block=-18
-|hit=-7
-|ch=
-|crush={{Plainlist|
-* ,ps36~ on whiff
-* ps17~ on block
-* ps6~ on hit
-}}
-|recv=r23 LIB
-|tot=50
-|range=
-|tracksLeft=
-|tracksRight=
-|video=File:Azucena-3,2~F.mp4
-|notes=Listed parry state is at earliest cancel
 }}
 {{Move
 |id=Azucena-3,3
@@ -452,10 +431,10 @@
 |video=File:t8-p2-azucena-3,3.mp4
 |notes={{Plainlist|
 * {{HeatEngager}}
-* {{HeatDash|+5, +43d (+35)}}
+* {{HeatDash|+43d (+35)}}
 * {{BB}}
 * Combo from 1st hit with 6f delay
-* Interrupt with i4
+* Interrupt with i4 from 1st block
 * Forces tech back roll on hit}}
 }}
 {{Move
@@ -499,7 +478,7 @@
 |video=File:t8-p2-azucena-4,1.mp4
 |notes={{Plainlist|
 * Combo from 1st hit
-* Interrupt with i2
+* Interrupt with i2 from 1st block
 * Unparryable by traditional punch parries (bug?)
 }}
 }}
@@ -525,7 +504,8 @@
 |notes={{Plainlist|
 * {{BB}}
 * Combo from 1st CH with 8f delay
-* Interrupt with i7
+* Interrupt with i7 from 1st block
+* Whiffs vs SSR, SWR from 1st block
 * Move can be delayed 12f}}
 }}
 {{Move
@@ -590,7 +570,7 @@
 |tracksRight=
 |notes={{Plainlist|
 * Combo from 1st hit with 7f delay
-* Interrupt with i3
+* Interrupt with i3 from 1st block
 * Move can be delayed 8f}}
 }}
 {{Move
@@ -617,7 +597,7 @@
 |notes={{Plainlist|
 * {{BB}}
 * Combo from 2nd CH with 10f delay
-* Interrupt with i4}}
+* Interrupt with i4 from 2nd block}}
 }}
 {{Move
 |id=Azucena-f+3
@@ -684,7 +664,7 @@
 |video=File:t8-p2-azucena-f+3,4.mp4
 |notes={{Plainlist|
 * Combo from 1st hit with 6f delay
-* Interrupt with i3
+* Interrupt with i3 from 1st block
 * Input can be delayed for 8f
 * Move can be delayed for 7f}}
 }}
@@ -733,7 +713,7 @@
 * {{HeatDash|+5, +43d (+35)}}
 * {{BB}}
 * Combo from 1st hit
-* Interrupt with i3
+* Interrupt with i3 from 1st block
 * Cancel 2nd hit into BT -19 -10 r39 with B at frame 19
 }}
 }}
@@ -760,7 +740,12 @@
 * 6 chip damage on block
 * Input can be delayed by 18F
 * Move cannot be delayed
-* Interrupt with i21 from 1st block}}
+* i42~43 effective startup (Cancel takes 19f)
+* Interrupt with i21 from 1st block
+* Whiffs vs SS, SW from 1st block
+* Interrupt with i11 from 1st hit
+* Whiffs vs SSR, SWR from 1st hit
+* }}
 }}
 {{Move
 |id=Azucena-f+4,4~3
@@ -787,6 +772,10 @@
 * {{BB}}
 * {{Tornado}} on CH
 * Interrupt with i19 from 1st block
+* Interrupt with i10 from 1st hit
+* i40~41 effective startup (Cancel takes 19f)
+* Whiffs vs SSR, SW from 1st block
+* Whiffs vs SWL from 1st hit
 * Input can be delayed by 18F
 * Move cannot be delayed
 }}
@@ -881,8 +870,9 @@
 * {{BB}}
 * Combo from 2nd CH with 7f delay
 * Move can be delayed 8f delay
-* Interrupt with i3
-* Enter LIB -17 -6 r20 with F
+* Interrupt with i3 from 1st block
+* Whiffs vs SSR from 1st block
+* Cancel to LIB r35 with F at frame 15 (-17/-6)
 * Forces tech back roll on hit
 }}
 }}
@@ -907,7 +897,7 @@
 |video=File:t8-p2-azucena-df+1,4,1~2.mp4
 |notes={{Plainlist|
 * {{Spike}}
-* Interrupt with i14
+* Interrupt with i14 from 1st block
 }}
 }}
 {{Move
@@ -994,7 +984,8 @@
 * {{Tornado}}
 * {{BB}}
 * Combo from 1st hit with 6f delay
-* Move can be delayed 10f}}
+* Move can be delayed 10f
+* Interrupt with i2 from 1st block}}
 }}
 
 == d ==
@@ -1064,7 +1055,8 @@
 |notes={{Plainlist|
 * {{SAT}}
 * {{BB}}
-* Combo from 1st hit with 7f delay}}
+* Combo from 1st hit with 7f delay
+* Interrupt with i3 from 1st block}}
 }}
 {{Move
 |id=Azucena-d+3
@@ -1105,7 +1097,7 @@
 |notes={{Plainlist|
 * Combo from 1st CH with 7f delay
 * Move can be delayed 10f
-* Interrupt with i3}}
+* Interrupt with i3 from 1st block}}
 }}
 {{Move
 |id=Azucena-d+3,3,4
@@ -1130,6 +1122,7 @@
 * {{Tornado}}
 * {{BB}}
 * Combo from 2nd CH with 10f delay
+* Interrupt with i3 from 1st block
 }}
 }}
 {{Move
@@ -1173,7 +1166,8 @@
 |notes={{Plainlist|
 * Combo from 1st CH with 2f delay
 * Move can be delayed 10f
-* Interrupt with i8
+* Interrupt with i8 from 1st block
+* Whiffs vs SS, SW from 1st block
 * Cancel to LIB -20 -9 r38 with F at frame 20}}
 }}
 {{Move
@@ -1198,6 +1192,8 @@
 |notes={{Plainlist|
 * {{SAT}}
 * {{BB}}
+* Interrupt with i17 from 1st block
+* Interrupt with i7 from 1st hit
 }}
 }}
 
@@ -1284,7 +1280,8 @@
 * {{Tornado}}
 * {{BB}}
 * Jails from first hit
-* Combo from 1st CH}}
+* Combo from 1st CH
+* Interrupt with i5 from 1st block}}
 }}
 {{Move
 |id=Azucena-db+4
@@ -1394,7 +1391,7 @@
 |tracksRight=
 |notes={{Plainlist|
 * Combo from 1st CH hit with 6f delay
-* Only jails on block with 1f delay
+* Jail from 1st block with 1f delay
 * 4 chip damage on block
 }}
 }}
@@ -1423,6 +1420,7 @@
 * Combo from 2nd CH with 6f delay
 * Input can be delayed 9f
 * Move can be delayed 7f
+* Interrupt with i6 from 1st block
 * 6 chip damage on block
 * Cancel to BT -21 -10 r18 with B}}
 }}
@@ -1515,7 +1513,8 @@
 |tracksRight=
 |notes={{Plainlist|
 * {{Knee}}
-* Combo from 1st hit with 6f delay}}
+* Combo from 1st hit with 6f delay
+* Interrupt with i4 from 1st block}}
 }}
 {{Move
 |id=Azucena-b+4,3,4
@@ -1536,7 +1535,8 @@
 |tracksRight=
 |notes={{Plainlist|
 * {{Knee}}
-* Combo from 2nd CH with 10f delay}}
+* Combo from 2nd CH with 10f delay
+* Interrupt with i2 from 2nd block}}
 }}
 {{Move
 |id=Azucena-b+4,3,4,3
@@ -1548,7 +1548,7 @@
 |damage=,23
 |startup=,i27~28
 |block=-7
-|hit=+39d (-19)
+|hit=+13cg
 |ch=
 |crush=
 |recv=r34
@@ -1561,11 +1561,14 @@
 * {{BB}}
 * Combo from 2nd CH with 6f delay
 * Combo from 3rd hit with 2f delay
+* Interrupt with i5 from 3rd block
+* Whiffs vs SSR, SWR from 3rd block
+* Forces tech back roll on hit
 * Move can be delayed 6f}}
 }}
 
 == u == 
-
+{{MoveDataHeader}}
 {{Move
 |id=Azucena-uf+1
 |num=56
@@ -1696,6 +1699,7 @@
 * {{SAT}}
 * {{BB}}
 * Combo from 1st hit with 11f delay
+* Interrupt with i5 from 1st block
 }}
 }}
 {{Move
@@ -1853,7 +1857,7 @@
 * Jail from 1st attack
 * 8 chip damage on block
 * Available only as combo from 1st hit
-* Enter LIB +3 +28a (+2) r35 with F on frame 22}}
+* Transition to LIB r37 with F on frame 22 (+3/+28a (+2))}}
 }}
 
 == Crouch ==
@@ -2089,6 +2093,7 @@
 |tracksRight=
 |notes={{Plainlist|
 * Combo from 1st hit with 6f delay
+* Interrupt with i2 from 1st block
 * Enter LIB +0 +8 r21 with F
 }}
 }}
@@ -2115,6 +2120,7 @@
 * {{BB}}
 * Combo from 2nd CH with 7f delay
 * Move can be delayed 10f
+* Move cannot be interrupted
 * Cancel to BT -16 -8 r20 with B}}
 }}
 
@@ -2141,6 +2147,7 @@
 |video=File:t8-p2-azucena-f+3+4.mp4
 |notes={{Plainlist|
 * Completely evades all high/low attacks
+* Stays indefinitely in stance
 * Cancel to r20 with DB}}
 }}
 {{Move
@@ -2186,7 +2193,7 @@
 |video=File:t8-p2-azucena-lib.p-high.mp4
 |notes={{Plainlist|
 * Restores recoverable health
-* Frame advantage depends on the move that gets parried
+* Frame advantage depends on the move that gets evaded
 }}
 }}
 {{Move
@@ -2196,7 +2203,7 @@
 |name=Flush Valve Gracia
 |target=m,m
 |damage=15,20
-|startup=i7~8 i19~20
+|startup=i7~8 i11~12
 |block=
 |hit=+8
 |ch=
@@ -2261,6 +2268,7 @@
 * Combo from 1st hit with 6f delay
 * Input can be delayed 9f
 * Move can be delayed 7f
+* Move cannot be interrupted
 * 6 chip damage on block
 * Cancel to BT -15 -10 r40 with B at frame 20}}
 }}
@@ -2332,6 +2340,7 @@
 * {{Spike}}
 * Combo from 1st CH with 7f delay
 * Move can be delayed 8f
+* Interrupt with i3 from 1st block
 * On block only regular i10 punishers are guaranteed, even though she is backturned
 }}
 }}
@@ -2373,7 +2382,8 @@
 |tracksRight=
 |notes={{Plainlist|
 * Combo from 1st hit with 9f delay
-* Launches from first counter hit}}
+* Launches from first counter hit
+* Interrupt with i1 from 1st block}}
 }}
 {{Move
 |id=Azucena-LIB.4,1,2
@@ -2398,7 +2408,9 @@
 * {{Tornado}}
 * {{BB}}
 * Combo from 2nd CH with 1f delay
-* Move can be delayed 10f}}
+* Move can be delayed 10f
+* Interrupt with i9 from 2nd block
+* Whiffs vs SS, SW from 2nd block}}
 }}
 {{Move
 |id=Azucena-LIB.4,2
@@ -2423,6 +2435,7 @@
 * {{BB}}
 * {{Spike}}
 * Combo from 1st hit with 5f delay
+* Interrupt with i3 from 1st block
 * Will not wall splat when the first hit is a counter hit due to float state}}
 }}
 {{Move
@@ -2741,6 +2754,7 @@
 * {{BB}}
 * Combo from 1st hit with 2f delay
 * Combo from 1st CH with 4f delay
+* Interrupt with i1 from 1st block
 * Move can be delayed 10f
 * 6 chip damage on block 
 * Cancel to LIB -19 -13 r37 with F at frame 17}}
@@ -2767,6 +2781,7 @@
 |notes={{Plainlist|
 * Combo from 1st hit
 * Combo from 1st CH with 2f delay
+* Interrupt with i3 from 1st block
 * Move can be delayed 10f
 * Will not combo if the kick impacts on i25}}
 }}
@@ -2876,6 +2891,7 @@
 * {{Tornado}}
 * {{BB}}
 * Combo from 1st hit with 6f delay
+* Interrupt with i2 from 1st block
 * Move can be delayed 10f
 * Only hits grounded when up-close and off-axis}}
 }}

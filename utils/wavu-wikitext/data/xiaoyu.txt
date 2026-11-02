@@ -8,6 +8,7 @@
 | {{MoveDataIcon|color=blue|Allows the use of f+2,1,2 and f.F+1,2. Both partially consume remaining Heat.}}
 |-
 |}
+{{MoveDataHeader}}
 {{MoveInherit
 |Generic-2+3
 |id=Xiaoyu-2+3
@@ -23,23 +24,25 @@
 |alt=H.AOP.2+3
 |name=Divine Shooting Star
 |target=m,m,m,M
-|damage=50
-|startup=i15~16
+|damage=8,10,12,20 (50)
+|startup=i15~16, i9~10, i7~8, i15~17
 |block=+9
 |hit=+0d
 |ch=
-|crush=js9~
-|recv=BT
-|tot=
+|crush=js9~40, fs41~43, fs69~99
+|recv=r38 BT
+|tot=106
 |range=
 |tracksLeft=8
 |tracksRight=10
 |notes={{Plainlist|
 * {{HeatSmash}}
 * {{BB}}
-* Transition to standing with F (+5 oB)
-* Transition to attack throw on hit
-* Chip on block [7]}}
+* Shift to attack throw on 1st hit (50 damage)
+* +9a (-8) BT or +5a (-12) standing from 2nd hit
+* 20f timestop on 4th hit
+* Transition to standing r42 with F_B_U_D (+5 oB)
+* 7 chip damage on block}}
 }}
 
 {{Move
@@ -48,14 +51,14 @@
 |input=H.BT.2+3
 |name=Innumerable Moons
 |target=m,m,m,m
-|damage=51
-|startup=i15~16
+|damage=7,7,7,30
+|startup=i15~16, i7~8, i9~10, i23~27
 |block=+9
 |hit=+20g
 |ch=
-|crush=
-|recv=HYP
-|tot=
+|crush=js53~76, fs77~79
+|recv=r33 HYP
+|tot=100
 |range=
 |tracksLeft=
 |tracksRight=
@@ -63,8 +66,11 @@
 * {{HeatSmash}}
 * {{Spike}}
 * Transition to HYP 2nd step
-* Transition to standing with F (+3, +5)
-* Chip on block [7]}}
+* 20f timestop on hit
+* Can be +10 on block against smaller characters
+* Transition to standing r48 with F (+3/+5)
+** Opponent blockstun extended by 9F (r46 -> r55)
+* 7 chip damage on block}}
 }}
 
 {{Move
@@ -76,22 +82,26 @@
 |damage=,20
 |startup=i26~28
 |block=+6
-|hit=+23d
+|hit=+23a
 |ch=+50a
-|crush=js
-|recv=BT
-|tot=
+|crush=js9~27, fs28
+|recv=r25 BT
+|tot=90
 |range=
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
 * {{BB}}
 * {{Spike}}
-* Partially uses remaining Heat time
+* Consumes 240F of remaining Heat time
 * Combo from 1st hit with no delay
 * Combo from 2nd CH with 6F delay
-* Move can be delayed by 5-10F
-* Transition to standing with F (+4, +21d, +47a)}}
+* Interrupt with i6 from 1st block
+* Whiffs vs SSR, SWR from 1st block
+* Move can be delayed by 10F (Cannot be delayed by 1-4F)
+* Transition to standing r27 with F (+4/+21a/+47a)
+** js9~27, fs28~30
+* 6 chip damage on block}}
 }}
 
 {{Move
@@ -100,22 +110,29 @@
 |input=,H.2
 |name=Bai Lian Yan Di Po
 |target=,m
-|damage=20
+|damage=,20
 |startup=i26~28
 |block=+6
-|hit=+24d
-|ch=+50a
-|crush=js
-|recv=BT
-|tot=
+|hit=+23a~+25a
+|ch=+49a~+51a
+|crush=js9~27, fs28
+|recv=r25 BT
+|tot=71
 |range=
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
 * {{BB}}
-* Partially uses remaining Heat time
-* Combos from 1st hit
-* Transition to with F (+4, +22d, +48a)}}
+* Combo from 1st hit
+* Interrupt with i9 from 1st block
+* Whiffs vs SSR, SWR from 1st block
+* Typically +24a from 1st hit
+* i29~30 effective startup
+* Move is delayed 3F
+* Transition to standing r27 with F (+4/+21a/+47a)
+** js9~27, fs28~30
+* Consumes 240F of remaining Heat time
+* 6 chip damage on block}}
 }}
 {{MoveQuery|Xiaoyu-HYP.3}}
 {{MoveQuery|Xiaoyu-db+1}}
@@ -127,24 +144,11 @@
 == n ==
 
 {{MoveDataHeader}}
-{{Move
+{{MoveInherit|Generic-1
 |id=Xiaoyu-1
-|parent=
-|input=1
-|name=
-|target=h
-|damage=5
-|startup=i10
-|block=+1
-|hit=+8
-|ch=
-|crush=
-|recv=
-|tot=
 |range=1.9
 |tracksLeft=
 |tracksRight=
-|notes={{Plainlist| }}
 }}
 {{Move
 |id=Xiaoyu-1,2
@@ -207,17 +211,20 @@
 |hit=+8
 |ch=+10
 |crush=
-|recv=BT
-|tot=
+|recv=r21 BT
+|tot=52
 |range=
 |tracksLeft=
 |tracksRight=
 |video=File:t8-p2-xiaoyu-1,d+2.mp4
 |notes={{Plainlist|
 * Combo from 1st hit with 5F delay
+* Interrupt with i1 from 1st block
+* 3rd and 4th active frames are inactive when transitioning to BT or HYP (i20~21 actual startup)
 * Move can be delayed by 10F
-* Transition to standing with 1,D+2 or 1,d+2,F (-4, +7, +9)
-* Transition to HYP with 1,d+2~B (-2, +9, +11)}}
+* Transition to standing t53 r20 with 1,D+2 or F_DF_DB_U_UF (-4/+7/+9)
+* Transition to HYP r20 with B_UB (-2/+9/+11)
+}}
 }}
 {{Move
 |id=Xiaoyu-1,d+2,1+2
@@ -239,7 +246,9 @@
 |tracksRight=
 |video=File:t8-p2-xiaoyu-1,d+2,1+2.mp4
 |notes={{Plainlist|
-* Combo from 2nd hit CH}}
+* Combo from 2nd hit CH
+* Interrupt with i11 from 2nd block
+* Whiffs vs SSL, SWL from 2nd block}}
 }}
 {{Move
 |id=Xiaoyu-2
@@ -393,8 +402,8 @@
 |hit=+4
 |ch=
 |crush=
-|recv=
-|tot=
+|recv=r25
+|tot=42
 |range=2.2
 |tracksLeft=
 |tracksRight=
@@ -412,15 +421,18 @@
 |hit=+5
 |ch=+7
 |crush=
-|recv=
-|tot=
+|recv=r25
+|tot=62
 |range=
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
+* Jail from 1st block
 * Combo from 1st hit
-* Jails from 1st block
-* Transition to HYP with B (+0, +11)}}
+* Transition to HYP r21 with B (+0/+11/+13)
+** r19 +0/+11 when performing HYP.2
+** -2/+9/+11 effective frame advantage when performing other stance actions (framedata display bug?)
+}}
 }}
 {{Move
 |id=Xiaoyu-f+2,1,4
@@ -435,8 +447,8 @@
 |hit=+17a (+8)
 |ch=+62a (+42)
 |crush=
-|recv=
-|tot=
+|recv=r32
+|tot=96
 |range=
 |tracksLeft=
 |tracksRight=
@@ -444,6 +456,8 @@
 |notes={{Plainlist|
 * {{BB}}
 * Combo from 2nd CH with 6F delay
+* Interrupt with i6 from 1st block
+* Whiffs vs SWL from 1st block
 * Move can be delayed by 10F}}
 }}
 {{Move
@@ -485,7 +499,8 @@
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
-* Combo from 1st hit }}
+* Combo from 1st hit
+* Interrupt with i3 from 1st block}}
 }}
 {{Move
 |id=Xiaoyu-f+3,1,4
@@ -495,7 +510,7 @@
 |name=Talons of Fury
 |target=,M
 |damage=,20
-|startup=i26
+|startup=i26~28
 |block=-22
 |hit=+62a (+46)
 |ch=
@@ -509,7 +524,8 @@
 |notes={{Plainlist|
 * {{Tornado}}
 * Instant Tornado
-* Combo from 2nd hit CH }}
+* Combo from 2nd hit CH
+* Interrupt with i8 from 2nd block}}
 }}
 {{Move
 |id=Xiaoyu-f+3,1,1+2
@@ -532,7 +548,8 @@
 |video=File:t8-p2-xiaoyu-f+3,1,1+2.mp4
 |notes={{Plainlist|
 * {{Spike}}
-* Combo from 2nd CH}}
+* Combo from 2nd CH
+* Jail from 2nd block with ?F delay}}
 }}
 {{Move
 |id=Xiaoyu-f+4
@@ -542,7 +559,7 @@
 |name=Swivel Kick
 |target=h
 |damage=23
-|startup=i19
+|startup=i19~21
 |block=+1
 |hit=+13
 |ch=
@@ -565,7 +582,7 @@
 |name=Clouded Peak
 |target=m
 |damage=30
-|startup=i12
+|startup=i12~13
 |block=-16
 |hit=+15d (+10)
 |ch=
@@ -640,15 +657,15 @@
 |block=-2
 |hit=+9
 |ch=
-|crush=cs6~14
-|recv=BT
-|tot=
+|crush=cs6~13
+|recv=r21 BT
+|tot=35
 |range=2.3
-|tracksLeft=
-|tracksRight=
+|tracksLeft=15
+|tracksRight=9
 |video=File:t8-p2-xiaoyu-df+1.mp4
 |notes={{Plainlist|
-* Transition to standing by holding any direction (-4, +7)}}
+* Transition to standing r23 by holding any direction (-4/+7)}}
 }}
 {{Move
 |id=Xiaoyu-df+2
@@ -665,8 +682,8 @@
 |recv=
 |tot=
 |range=2.25
-|tracksLeft=
-|tracksRight=
+|tracksLeft=9
+|tracksRight=14
 |notes={{Plainlist|
 * }}
 }}
@@ -691,8 +708,9 @@
 |video=File:t8-p2-xiaoyu-df+2,3.mp4
 |notes={{Plainlist|
 * {{BB}}
-* Cancel to r15 FC with DB, D, or DF (-3, -16)
+* Cancel to r32 FC with DB, D, or DF at frame 15 (-3, -16)
 * Combo from 1st hit with 8F delay
+* Interrupt with i6 from 1st block
 * Move can be delayed by 6F
 * Input can be delayed by 9F
 }}
@@ -720,6 +738,7 @@
 * {{BB}}
 * {{Shoulder}}
 * Combo from 1st hit with 7F delay
+* Interrupt with i7 from 1st block
 * Move can be delayed by 6F
 * Input can be delayed by 9F
 }}
@@ -736,9 +755,9 @@
 |block=-23
 |hit=+71a (+55)
 |ch=
-|crush=cs6~29
-|recv=
-|tot=
+|crush=cs6~48
+|recv=r32
+|tot=62
 |range=2.9
 |tracksLeft=
 |tracksRight=
@@ -747,8 +766,8 @@
 * {{Tornado}}
 * Instant Tornado
 * {{Homing}}
-* Cancel to BT with B (r31)
-* On hit of whiff, transition to AOP with D
+* Cancel to BT r31 with B at frame 16
+* Transition to AOP r32 cs1~ with D at frame 32 on hit or whiff
 * [[Snake_Edge|Snake Edge]]}}
 }}
 {{Move
@@ -766,8 +785,8 @@
 |recv=
 |tot=
 |range=1.95
-|tracksLeft=
-|tracksRight=
+|tracksLeft=5
+|tracksRight=5
 |notes={{Plainlist|
 * }}
 }}
@@ -784,42 +803,28 @@
 |target=m,m,M
 |damage=7,7,7
 |startup=i17~19 i4~6 i3~9
-|block=-5
-|hit=+8c
-|ch=+9c
+|block=-9~-3
+|hit=+7c~13c
+|ch=
 |crush=
-|recv=FC
-|tot=
+|recv=r22 FC
+|tot=54
 |range=
-|tracksLeft=
-|tracksRight=
+|tracksLeft= 27
+|tracksRight= 27
 |video=File:t8-p2-xiaoyu-d+1.mp4
 |notes={{Plainlist|
-* Transition to AOP with D+1 (-10, +4c, +5c)
+* Transition to AOP r26 cs4~ with D+1 (-13~-7/+3c~+9c)
+* Typically -8~-6 on block and +8c on hit
 * This move can become more minus if the final hit whiffs
-** Standing (-13, -2c) 
-** AOP (-17, -5c)}}
+** Standing (-14~-12/-3c~-1c) 
+** AOP (-18~-16/-7c~-1c)}}
 }}
-{{Move
+{{MoveInherit|Generic-hFC.2
 |id=Xiaoyu-d+2
-|parent=
 |input=d+2
-|alt=FC.2
-|name=
-|target=sl
-|damage=8
-|startup=i11
-|block=-4
-|hit=+7
-|ch=
-|crush=cs4~
-|recv=FC
-|tot=
-|range=
-|tracksLeft=
-|tracksRight=
-|notes={{Plainlist|
-* Alternate input FC.2}}
+|alt=hFC.2
+|crush=cs4~34
 }}
 {{Move
 |id=Xiaoyu-d+3
@@ -832,12 +837,12 @@
 |block=-12
 |hit=-3
 |ch=+1
-|crush=cs6~
-|recv=FC
+|crush=cs6~45
+|recv=r31 FC
 |tot=
 |range=
-|tracksLeft=
-|tracksRight=
+|tracksLeft= 20
+|tracksRight= 21
 |notes={{Plainlist|
 * }}
 }}
@@ -854,36 +859,27 @@
 |hit=+26a (+17)
 |ch=
 |crush=
-|recv=
-|tot=
+|recv=r23
+|tot=67
 |range=
 |tracksLeft=
 |tracksRight=
 |video=File:t8-p2-xiaoyu-d+3,4.mp4
 |notes={{Plainlist|
 * {{BB}}
-* Combo from 1st CH }}
+* Combo from 1st CH with 1F delay
+* Interrupt with i9 from 1st block
+* Whiffs vs SSR, SWR from 1st block
+* i29~30 effective startup
+* Move is delayed 4F
+* Move cannot be delayed
+* Input can be delayed by 1F}}
 }}
-{{Move
+{{MoveInherit|Generic-hFC.4
 |id=Xiaoyu-d+4
-|parent=
 |input=d+4
-|alt=FC.4
-|name=
-|target=l
-|damage=6
-|startup=i12
-|block=-15
-|hit=-4
-|ch=
-|crush=
-|recv=FC
-|tot=
-|range=
-|tracksLeft=
-|tracksRight=
-|notes={{Plainlist|
-* Alternate input FC.4}}
+|alt=hFC.4
+|crush=cs4~46
 }}
 {{Move
 |id=Xiaoyu-d+1+2
@@ -898,15 +894,20 @@
 |hit=
 |ch=
 |crush=cs1~
-|recv=r20 AOP
+|recv=r15 AOP
 |tot=
 |range=
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
 * Transition to AOP
-* Transition to r10 FC with AOP.u 
-* Alternate input BT.d+1+2}}
+* Stays in stance indefinitely
+* Cannot block in stance
+* Transition to r10 FC with AOP.u
+** i11 block
+* Can move forwards or backwards with f or b
+* Transition to r5 BT when performing an action while facing away from the opponent
+* BT.d+1+2: r20 AOP}}
 }}
 {{Move
 |id=Xiaoyu-d+3+4
@@ -915,7 +916,7 @@
 |input=d+3+4
 |alt=u+3+4
 |name=Spinner
-|target=special
+|target=sp
 |damage=
 |startup=
 |block=
@@ -929,7 +930,8 @@
 |tracksRight=
 |video=File:t8-p2-xiaoyu-d+3+4.mp4
 |notes={{Plainlist|
-* Alternate input u+3+4}}
+* Sidesteps to the foreground
+* u+3+4: Sidesteps to the background}}
 }}
 
 == db ==
@@ -948,17 +950,18 @@
 |hit=+14a (+5)
 |ch=
 |crush=
-|recv=
-|tot=
+|recv=r30
+|tot=48
 |range=
-|tracksLeft=
-|tracksRight=
+|tracksLeft= 26
+|tracksRight= 9
 |video=File:t8-p2-xiaoyu-db+1.mp4
 |notes={{Plainlist|
 * {{HeatEngager}}
 * {{HeatDash|+5, +36a (+26)}}
 * {{BB}}
-* Clean hit damage: 30}}
+* Clean hit damage: 30
+* 20f timeestop on hit}}
 }}
 {{Move
 |id=Xiaoyu-db+2
@@ -976,8 +979,8 @@
 |recv=BT
 |tot=
 |range=
-|tracksLeft=
-|tracksRight=
+|tracksLeft=27
+|tracksRight= 27
 |video=File:t8-p2-xiaoyu-db+2.mp4
 |notes={{Plainlist|
 *}}
@@ -998,8 +1001,8 @@
 |recv=
 |tot=
 |range=
-|tracksLeft=
-|tracksRight=
+|tracksLeft= 12
+|tracksRight=8
 |video=File:t8-p2-xiaoyu-db+3.mp4
 |notes={{Plainlist|
 * }}
@@ -1020,8 +1023,8 @@
 |recv=
 |tot=
 |range=
-|tracksLeft=
-|tracksRight=
+|tracksLeft= 11
+|tracksRight= 25
 |video=File:t8-p2-xiaoyu-db+4.mp4
 |notes={{Plainlist|
 * This move is +20 on a traded hit}}
@@ -1044,15 +1047,15 @@
 |hit=+1~+6
 |ch=
 |crush=
-|recv=
-|tot=
+|recv=r26
+|tot=39
 |range=
 |tracksLeft=
 |tracksRight=
 |video=File:t8-p2-xiaoyu-b+1.mp4
 |notes={{Plainlist|
-* Transition to BT on hit
-* Transition to standing on hit with B+1 (-1~+4) }}
+* Transition to BT r29 on hit
+* Transition to standing r26 on hit with B+1 (-1~+4) }}
 }}
 {{Move
 |id=Xiaoyu-b+2
@@ -1066,14 +1069,15 @@
 |hit=+5
 |ch=
 |crush=
-|recv=BT
-|tot=
+|recv=r24 BT
+|tot=40
 |range=
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
 * {{Homing}} 
 * Transition to BT
+* +5c on crouching hit
 }}
 }}
 {{Move
@@ -1089,17 +1093,20 @@
 |hit=+4
 |ch=+22a
 |crush=
-|recv=BT
-|tot=
+|recv=r24 BT
+|tot=67
 |range=
 |tracksLeft=
 |tracksRight=
 |video=File:t8-p2-xiaoyu-b+2,2.mp4
 |notes={{Plainlist|
 * Transition to BT
-* Combo from 1st hit with 9F delay
+* Combo from 1st hit with 8F delay
+* Interrupt with i6 from 1st block
+* +4c on crouching hit
+* i25~26 effective startup
 * Move can be delayed by 6F
-* Input can be delayed by 11F
+* Input can be delayed by 10F
 }}
 }}
 {{Move
@@ -1115,16 +1122,16 @@
 |hit=+8c
 |ch=+32d
 |crush=
-|recv=BT
-|tot=
+|recv=r21 BT
+|tot=40
 |range=
 |tracksLeft=
 |tracksRight=
 |video=File:t8-p2-xiaoyu-b+3.mp4
 |notes={{Plainlist|
+* Transition to BT
 * Unparryable by standard kick parries (backturned heel?)
 * 6 chip damage on block
-* Transition to BT
 }}
 }}
 {{Move
@@ -1139,11 +1146,11 @@
 |hit=+0
 |ch=
 |crush=
-|recv=
-|tot=
+|recv=r34
+|tot=48
 |range=
-|tracksLeft=
-|tracksRight=
+|tracksLeft=6
+|tracksRight=21
 |notes={{Plainlist|
 * }}
 }}
@@ -1155,24 +1162,27 @@
 |name=Moonhare Palm
 |target=,m
 |damage=,20
-|startup=i27
+|startup=i27~28
 |block=-14
-|hit=+40d (-18)
+|hit=+14cg
 |ch=
 |crush=
-|recv=
-|tot=
+|recv=r33
+|tot=77
 |range=
 |tracksLeft=
 |tracksRight=
 |video=File:t8-p2-xiaoyu-b+4,1.mp4
 |notes={{Plainlist|
 * {{HeatEngager}}
-* {{HeatDash|+5, +43d (+35)}}
+* {{HeatDash|+43d (+35)}}
 * {{BB}}
-* Combo from 1st hit with 8F delay
+* Combo from 1st hit with 7F delay
+* Interrupt with i3 from 1st block
+* Forces tech back roll on hit
+* i29~30 effective startup
 * Move can be delayed by 5F
-* Input can be delayed by 8F}}
+* Input can be delayed by 7F}}
 }}
 {{Move
 |id=Xiaoyu-b+1+2
@@ -1182,19 +1192,20 @@
 |name=Cross Lifting Palms
 |target=M,M
 |damage=8,12
-|startup=i15~16 i5~6
+|startup=i15~16, i5~6
 |block=-13
 |hit=+29a (+19)
 |ch=
 |crush=
-|recv=
-|tot=
+|recv=r32
+|tot=55
 |range=
-|tracksLeft=
-|tracksRight=
+|tracksLeft=24
+|tracksRight=24
 |video=File:t8-p2-xiaoyu-b+1+2.mp4
 |notes={{Plainlist|
-* }}
+* Recovers 2F faster on hit (t53 r30)
+* Pseudo homing (strong realign properties)}}
 }}
 {{Move
 |id=Xiaoyu-b+1+3
@@ -1214,15 +1225,15 @@
 |hit=+6
 |ch=
 |crush={{Plainlist|
-* ps5~12?
-* ps1~7? (BT)}}
-|recv=
-|tot=
+* ps5~12
+* ps1~16 (BT)}}
+|recv=r23
+|tot=35
 |range=
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
-* Transition to BT on successful parry
+* Transition to BT r39 on successful parry
 * Alternate input b+2+4
 * Also possible during HYP and BT}}
 }}
@@ -1243,15 +1254,15 @@
 |ch=
 |crush=
 |recv=r21 BT
-|tot=
+|tot=30
 |range=
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
 * Transition to BT
-* r25 BT when performed from BT
-* r15 BT when performed from AOP
-* Alternate input BT.b+3+4 (r25), AOP.b+3+4 (r15)}}
+* BT.b+3+4: t40 r25 BT (spins backwards)
+* AOP.b+3+4: t25 r15 BT cs1~15
+}}
 }}
 
 == u ==
@@ -1274,8 +1285,8 @@
 |recv=AOP
 |tot=
 |range=
-|tracksLeft=
-|tracksRight=
+|tracksLeft= 12
+|tracksRight= 13
 |video=File:t8-p2-xiaoyu-ub+3.mp4
 |notes={{Plainlist|
 * {{Tornado}}
@@ -1291,7 +1302,7 @@
 |damage=20
 |startup=i22~24
 |block=-13
-|hit=+13d (-4)
+|hit=+13a (-4)
 |ch=
 |crush=pc7~21
 |recv=r35
@@ -1302,7 +1313,9 @@
 |video=File:t8-p2-xiaoyu-ub+4.mp4
 |notes={{Plainlist|
 * {{Tornado}}
-* {{BB}}}}
+* {{BB}}
+* -9 and 5 chip damage on block after attack absorption
+}}
 }}
 {{Move
 |id=Xiaoyu-u+1+2
@@ -1342,7 +1355,8 @@
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
-* Combo from 1st CH}}
+* Combo from 1st CH
+* Interrupt with i7 from 1st block}}
 }}
 {{Move
 |id=Xiaoyu-u+1+2,2,1
@@ -1367,7 +1381,8 @@
 * {{BB}}
 * Combo from 2nd hit
 * Combo from 1st CH
-* Cancel to BT with B (-19/-8)}}
+* Interrupt with i7 from 1st block
+* Cancel to BT r38 with B (-19/-8) at frame 25}}
 }}
 {{Move
 |id=Xiaoyu-uf+1
@@ -1380,18 +1395,19 @@
 |name=Silver Needle
 |target=L
 |damage=15
-|startup=i33
-|block=-7
-|hit=+10g c
+|startup=i33~35
+|block=-7~-5
+|hit=+10c~+12c
 |ch=
 |crush=js9~
 |recv=AOP
 |tot=
 |range=
-|tracksLeft=
-|tracksRight=
+|tracksLeft= 26
+|tracksRight= 26
 |notes={{Plainlist|
-* Cancel to r42? FC with D
+* Transition to AOP
+* Cancel to FC r42 with D at frame 27
 }}
 }}
 {{Move
@@ -1409,19 +1425,19 @@
 |target=m
 |damage=23
 |startup=i26~27
-|block=+6c
+|block=+6
 |hit=+7c
 |ch=+49a
 |crush=js9~
 |recv=BT
 |tot=
 |range=
-|tracksLeft=
-|tracksRight=
+|tracksLeft=1
+|tracksRight=1
 |video=File:t8-p2-xiaoyu-uf+2.mp4
 |notes={{Plainlist|
 * {{Spike}}
-* Transition to standing with F (+4c, +5c, +47a)
+* Transition to standing with F (+4, +5c, +47a)
 * Alternate input u+2
 * Chip on block [6]}}
 }}
@@ -1471,7 +1487,7 @@
 |notes={{Plainlist|
 * {{Spike}}
 * Transition to FC with D (-7, +4c, +24a)
-* Transition with AOP with d+1+2 (-9, +2, +22)}}
+* Transition with AOP with d+1+2 (-9, +2c, +22)}}
 }}
 {{Move
 |id=Xiaoyu-uf+3+4
@@ -1536,14 +1552,14 @@
 |hit=+7c
 |ch=
 |crush=
-|recv=
-|tot=
+|recv=r30
+|tot=45
 |range=
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
 * {{Spike}}
-* Transition to AOP with D (-5, +13)}}
+* Transition to AOP r24 cs1~ with D (-5/+13c)}}
 }}
 {{Move
 |id=Xiaoyu-f,F+1,3
@@ -1558,15 +1574,18 @@
 |hit=+20a (+11)
 |ch=
 |crush=
-|recv=
-|tot=
+|recv=r24
+|tot=61
 |range=
 |tracksLeft=
 |tracksRight=
 |video=File:t8-p2-xiaoyu-f,f+1,3.mp4
 |notes={{Plainlist|
 * {{BB}}
-* Combos from 1st hit}}
+* Combo from 1st hit
+* Interrupt with i1 from 1st block
+* i21~22 effective startup
+* Move is delayed 3F}}
 }}
 {{Move
 |id=Xiaoyu-f,F+1,4
@@ -1578,19 +1597,22 @@
 |damage=,20
 |startup=i21~22
 |block=-12
-|hit=+22d
+|hit=+22a
 |ch=
 |crush=
-|recv=
-|tot=
+|recv=r30
+|tot=70
 |range=
 |tracksLeft=
 |tracksRight=
 |video=File:t8-p2-xiaoyu-f,f+1,4.mp4
 |notes={{Plainlist|
-* Combos from 1st CH }}
+* Combo from 1st CH
+* Interrupt with i4 from 1st block
+* i24~25 effective startup
+* Move is delayed 3F}}
 }}
-{{Move
+{{MoveInherit|Xiaoyu-u+1+2,2
 |id=Xiaoyu-f,F+2
 |parent=
 |input=f,F+2
@@ -1602,15 +1624,15 @@
 |hit=+6
 |ch=
 |crush=
-|recv=
-|tot=
+|recv=r24
+|tot=39
 |range=
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
 * }}
 }}
-{{Move
+{{MoveInherit|Xiaoyu-u+1+2,2,1
 |id=Xiaoyu-f,F+2,1
 |num=60
 |parent=Xiaoyu-f,F+2
@@ -1623,17 +1645,19 @@
 |hit=+16a (+7)
 |ch=
 |crush=
-|recv=
-|tot=
+|recv=r27
+|tot=70
 |range=
 |tracksLeft=
 |tracksRight=
 |video=File:t8-p2-xiaoyu-f,f+2,1.mp4
 |notes={{Plainlist|
 * {{BB}}
-* Combo from 1st hit with 2F delay
+* Combo from 1st hit with 3F delay
+* Interrupt with i7 from 1st block
+* 20f timestop on hit
 * Move can be delayed by 12F
-* Cancel to BT with B (-19,-8)}}
+* Cancel to BT r38 with B (-19/-8) at frame 25}}
 }}
 {{Move
 |id=Xiaoyu-f,F+3
@@ -1644,18 +1668,18 @@
 |target=M
 |damage=12
 |startup=i14~15
-|block=-5
-|hit=+6
-|ch=+12
+|block=-5~-4
+|hit=+6~+7
+|ch=+12~+13
 |crush=
-|recv=BT
-|tot=
+|recv=r23 BT
+|tot=38
 |range=
 |tracksLeft=
 |tracksRight=
 |video=File:t8-p2-xiaoyu-f,f+3.mp4
 |notes={{Plainlist|
-* }}
+* +6c~+7c on crouching hit }}
 }}
 {{Move
 |id=Xiaoyu-f,F+4
@@ -1667,11 +1691,11 @@
 |damage=20
 |startup=i20~23
 |block=+9
-|hit=+13g c
+|hit=+13cg
 |ch=+58a (+38)
-|crush=
-|recv=
-|tot=
+|crush=js15~31, fs32~34
+|recv=r27
+|tot=50
 |range=
 |tracksLeft=
 |tracksRight=
@@ -1679,8 +1703,9 @@
 |notes={{Plainlist|
 * {{SAT}}
 * {{BB}}
-* Transition to HYP on hit or block
-* Chip on block [6]}}
+* Transition to HYP r34 on hit or block
+** r30 when performing HYP.2+3 (+13/+17cg)
+* 6 chip damage on block}}
 }}
 {{Move
 |id=Xiaoyu-f,F+1+2
@@ -1695,8 +1720,8 @@
 |hit=+5
 |ch=
 |crush=
-|recv=
-|tot=
+|recv=r28
+|tot=44
 |range=
 |tracksLeft=
 |tracksRight=
@@ -1717,18 +1742,17 @@
 |hit=+7c
 |ch=+43a
 |crush=
-|recv=
-|tot=
+|recv=r32
+|tot=68
 |range=
 |tracksLeft=
 |tracksRight=
 |video=File:t8-p2-xiaoyu-f,f+1+2,1+2.mp4
 |notes={{Plainlist|
 * {{Spike}}
-* Combo from 1st hit with 8F delay
+* Combo from 1st hit with 6F delay
 * Jail from 1st block with no delay
 * Move can be delayed by 14F
-* Input can be delayed by 16F
 }}
 }}
 {{Move
@@ -1740,19 +1764,20 @@
 |target=M
 |damage=23
 |startup=i37~45
-|block=-3
-|hit=+39a
+|block=-5~+3
+|hit=+36a~+44a
 |ch=
-|crush=js9~
-|recv=
-|tot=
+|crush=js9~41, fs42~44
+|recv=r16
+|tot=61
 |range=
 |tracksLeft=
 |tracksRight=
 |video=File:t8-p2-xiaoyu-f,f+3+4.mp4
 |notes={{Plainlist|
 * {{Spike}}
-* Chip on block [9]}}
+* Typically -5~-2 on block and +37a~+39a on hit
+* 9 chip damage on block}}
 }}
 {{Move
 |id=Xiaoyu-f,f,F+3
@@ -1771,7 +1796,7 @@
 * fs32~34
 }}
 |recv=r14 AOP
-|tot=
+|tot=44
 |range=
 |tracksLeft=
 |tracksRight=
@@ -1779,8 +1804,8 @@
 |notes={{Plainlist|
 * {{BB}}
 * Transition to AOP
-* Chip on block [9]
-* Alternate input wr3}}
+* 6 chip damage on block
+}}
 }}
 
 == Crouch ==
@@ -1863,7 +1888,9 @@
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
-* Combo from 1st hit CH}}
+* Combo from 1st hit CH
+* Interrupt with i3 from 1st block
+* Whiffs vs SSL, SWL from 1st block}}
 }}
 {{Move
 |id=Xiaoyu-hFC.3,2,1
@@ -1886,7 +1913,7 @@
 |notes={{Plainlist|
 * Transition to HYP with B (-2, +5)
 * Combo from 2nd hit
-* Jail from 2nd block}}
+* Jail from 2nd block with ?F delay}}
 }}
 {{Move
 |id=Xiaoyu-hFC.3,2,1,4
@@ -1976,7 +2003,7 @@
 |video=File:t8-p2-xiaoyu-fc.df+2,1.mp4
 |notes={{Plainlist|
 * Combo from 1st hit
-* Jail from 1st block
+* Jail from 1st block with ?F delay
 * Transition to FC BT with DF_D_DB}}
 }}
 {{Move
@@ -2021,6 +2048,7 @@
 |tracksRight=
 |notes={{Plainlist|
 * Combo from 1st hit CH
+* Interrupt with i8 from 1st block
 * Alternate input AOP.f+4,4}}
 }}
 {{Move
@@ -2043,7 +2071,8 @@
 |tracksRight=
 |video=File:t8-p2-xiaoyu-fc.db+3+4.mp4
 |notes={{Plainlist|
-* Transition to BT FC}}
+* Transition to BT FC
+}}
 }}
 
 == WS ==
@@ -2089,9 +2118,10 @@
 |video=File:t8-p2-xiaoyu-ws1,4.mp4
 |notes={{Plainlist|
 * {{BB}}
-* Combo from 1st hit with 8F delay
+* Combo from 1st hit with 7F delay
+* Interrupt with i3 from 1st block
 * Move can be delayed by 7F
-* Input can be delayed by 9F}}
+* Input can be delayed by 8F}}
 }}
 {{Move
 |id=Xiaoyu-ws2
@@ -2267,10 +2297,11 @@
 * {{Tornado}}
 * {{BB}} 
 * Combo from 1st hit
-* Interrupt with i6
+* Interrupt with i6 from 1st block
+* i26~27 effective startup
 * Move is delayed 2F
 * Move cannot be delayed
-* Cancel to r15 FC with D at frame 18 (-16/-7/+53a)
+* Cancel to FC r33 with D at frame 18 (-16/-7/+53a)
 }}
 }}
 {{Move
@@ -2358,9 +2389,10 @@
 |tracksRight=
 |notes={{Plainlist|
 * Combos from 1st CH
+* Interrupt with i1 from 1st block
 * Transition to BT}}
 }}
-{{Move
+{{MoveInherit|Xiaoyu-d+1
 |id=Xiaoyu-BT.2,2,1
 |num=84
 |parent=Xiaoyu-BT.2,2
@@ -2369,8 +2401,8 @@
 |target=,m,M,M
 |damage=,7,7,7
 |startup=,i12~14,i17~19,i21~27
-|block=-11
-|hit=+5c
+|block=-14~-8
+|hit=+3c~+9c
 |ch=
 |crush=
 |recv=FC
@@ -2381,8 +2413,14 @@
 |video=File:t8-p2-xiaoyu-bt.2,2,1.mp4
 |notes={{Plainlist|
 * Transition to FC
-* Transition to AOP with D (-10, +5)
-* Combos from 2nd hit}}
+* Transition to AOP with D (-10, +5c)
+* Combos from 2nd hit
+* Frame advantage on block is character-dependent (-13 on bigger characters down to -10 on smaller ones)
+* -11 on block and +4c on hit on average
+* Jail from 2nd block with ?F delay
+* This move can become more minus if the final hit whiffs
+** Standing (-20~-18/-7~-5))
+** AOP (-17~-15/-6~-4)}}
 }}
 {{Move
 |id=Xiaoyu-BT.3
@@ -2471,9 +2509,11 @@
 |video=File:t8-p2-xiaoyu-bt.1+2,4.mp4
 |notes={{Plainlist|
 * {{HeatEngager}}
-* {{HeatDash|+5, +62a (+42)}}
+* {{HeatDash|+62a (+42)}}
 * {{BB}}
 * Combo from 1st hit with 14F delay
+* Interrupt with i6 from 1st block
+* Whiffs vs SSR from 1st block
 * Move can be delayed by 8F
 * Input can be delayed by 15F
 * 6 chip damage on block
@@ -2500,6 +2540,7 @@
 |video=File:t8-p2-xiaoyu-bt.1+2,1+2.mp4
 |notes={{Plainlist|
 * Combo from 1st hit with 15F delay
+* Move cannot be interrupted
 * Move can be delayed by 8F
 * Input can be delayed by 15F }}
 }}
@@ -2572,7 +2613,6 @@
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
-* "Cali Roll"
 * Transition to FC BT}}
 }}
 {{Move
@@ -2613,8 +2653,8 @@
 |hit=+7c
 |ch=
 |crush=
-|recv=
-|tot=
+|recv=r31
+|tot=47
 |range=
 |tracksLeft=
 |tracksRight=
@@ -2629,13 +2669,13 @@
 |name=Spinning Crane
 |target=,h
 |damage=,20
-|startup=i19
+|startup=i19~20
 |block=-5
 |hit=+20a (+11)
 |ch=+37a
 |crush=
-|recv=
-|tot=
+|recv=r29
+|tot=67
 |range=
 |tracksLeft=
 |tracksRight=
@@ -2644,6 +2684,9 @@
 * {{SAT}}
 * {{BB}}
 * Combo from 1st CH with 12F delay
+* Interrupt with i1 from 1st block
+* i21~22 effective startup
+* Move is delayed 2F
 * Move can be delayed by 10F
 * Input can be delayed by 12F}}
 }}
@@ -2759,8 +2802,7 @@
 |notes={{Plainlist|
 * {{BB}}
 * {{Shoulder}}
-* -9 on block if an attack is absorbed
-* 10 chip damage on block after absorbing an attack in power crush state
+* -9 and 10 chip damage on block after attack absorption
 }}
 }}
 {{MoveInherit|Xiaoyu-b+1+3
@@ -2788,12 +2830,13 @@
 |id=Xiaoyu-BT.uf+1
 |parent=
 |input=BT.uf+1
+|alt=BT.u+1
 |name=Silver Needle
 |target=L
 |damage=15
-|startup=i33
-|block=-7
-|hit=+12
+|startup=i33~35
+|block=-7~-5
+|hit=+12c~+14c
 |ch=
 |crush=js9~
 |recv=AOP
@@ -2803,8 +2846,8 @@
 |tracksRight=
 |notes={{Plainlist|
 * Transition to AOP
-* Cancel to FC with D
-* Alternate input BT.u+1}}
+* Cancel to FC r42 with D at frame 27
+}}
 }}
 {{Move
 |id=Xiaoyu-BT.f,F+3+4
@@ -2813,21 +2856,28 @@
 |input=BT.f,F+3+4
 |name=Back Layout
 |target=M (t)
-|damage=15 (43)
-|startup=i39
-|block=+4
-|hit=+39a
+|damage=23 (20)
+|startup=i39~51
+|block=-3~+9
+|hit=+38a~+50a
 |ch=
-|crush=js10~
-|recv=BT
-|tot=
+|crush=js10~46, fs47~49
+|recv=r10 BT
+|tot=61
 |range=
 |tracksLeft=
 |tracksRight=
 |video=File:t8-p2-xiaoyu-bt.f,f+3+4.mp4
 |notes={{Plainlist|
-* Unbreakable throw when connecting at close range on front standing hit
-* Chip on block [9] }}
+* {{Spike}}
+* Shift to unbreakable attack throw (+0d) when connecting at close range on front standing block/hit (i44+?)
+** Sideswitch
+** Opponent recovers FDFT
+* Typically connects on i43~48 at +1~+6 on block and +42a~+47a
+* +2 to +4? on block on average
+* Transition to BT FC r1 with D at frame 55
+* 9 chip damage on block
+}}
 }}
 
 == HYP (''Hypnotist'') ==
@@ -2844,7 +2894,7 @@
 |block=
 |hit=
 |ch=
-|crush=ps2~10?
+|crush=ps2~10
 |recv=r20 HYP
 |tot=
 |range=
@@ -2856,10 +2906,13 @@
 * ub+1+2: perform Hypnotist left
 * Actionable for 70F
 * Stance move properties change with amount of time spent in stance:
-* 1 step: 20~24F
-* 2 steps: 45~50F
-* 3 steps: 70~90F
-* Can cancel stance after 20F with b, db, u, uf, f, df or 1 jab
+** 1 step: 20~25F
+** 2 steps: 45~50F
+** 3 steps: 70~90F
+* Cannot block during stance
+* Transition to r1 standing with b_db_u_uf_f_df or 1 at frame 40
+* Transition to HYP r20 (reverse direction) with 1+2
+** Can be performed at frame 25 of manual stance transition
 * Punch parry (+9 HYP, opponent BT)
 * Alternate input ub+1+2}}
 }}
@@ -2873,7 +2926,7 @@
 |damage=25
 |startup=i18
 |block=-4
-|hit=+22 (-13)
+|hit=+22a (+13)
 |ch=
 |crush=
 |recv=
@@ -2884,7 +2937,7 @@
 |video=File:t8-p2-xiaoyu-hyp.2.mp4
 |notes={{Plainlist|
 * {{HeatEngager}}
-* {{HeatDash|+5, +36a (+26)}}
+* {{HeatDash|+36a (+26)}}
 * {{BB}}
 * {{tt|Powered Up|Based on the number of steps taken in HYP:|HYP.2 damage increases and becomes plus on block. See the charts in th [[Xiaoyu_movelist#HYP_(Hypnotist)|HYP]] section for more details.}} up when in Heat or based on the number of steps taken.
 * Consumes 240?F of heat timer during heat
@@ -2896,7 +2949,7 @@
 |-
 ! Steps !! Damage!! Block !! Hit
 |-
-| 1 (20~24F) || 25 || -4 || +22a (-13)
+| 1 (20~25F) || 25 || -4 || +22a (-13)
 |-
 | 2 (45~50F)|| 30 || +0 || +43a (+17)
 |-
@@ -2933,7 +2986,7 @@
 |-
 ! Steps !! Damage!! Block !! Hit
 |-
-| 1 (20~24F) || 17 || -13 || +7
+| 1 (20~25F) || 17 || -13 || +7
 |-
 | 2 (45~50F) || 22 || -13 || +14d
 |-
@@ -2961,27 +3014,24 @@
 |notes={{Plainlist|
 * {{BB}} }}
 }}
-{{Move
+{{MoveInherit|Xiaoyu-db+1+2
 |id=Xiaoyu-HYP.1+2
-|parent=
+|num=104
 |input=HYP.1+2
-|name=Hypnotist
+|alt=
 |target=
 |damage=
 |startup=
 |block=
 |hit=
 |ch=
-|crush=ps2?~11?
-|recv=r20 HYP
 |tot=
 |range=
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
 * Starts taking steps in the opposite direction
-* Can be performed any time in HYP after 25F from manual stance transition, or 20?F after other stance transitions?
-}}
+** Can be performed at frame 25 of manual stance transition}}
 }}
 {{Move
 |id=Xiaoyu-HYP.3+4
@@ -2991,11 +3041,11 @@
 |name=Deadly Orchid
 |target=h
 |damage=20
-|startup=i25
+|startup=i25~26
 |block=+8
 |hit=+30a
 |ch=
-|crush=js12~
+|crush=js12~27, fs28~30
 |recv=
 |tot=
 |range=
@@ -3004,8 +3054,8 @@
 |video=File:t8-p2-xiaoyu-hyp.3+4.mp4
 |notes={{Plainlist|
 * {{SAT}}
-* Cancel to BT with B
-* Chip on block [8]}}
+* Cancel to BT r40 (js1~8 fs9~11) with B at frame 19
+* 8 chip damage on block}}
 }}
 {{Move
 |id=Xiaoyu-HYP.2+3
@@ -3017,7 +3067,7 @@
 |damage=40
 |startup=i61
 |block=
-|hit=+10d
+|hit=+10a
 |ch=
 |crush=
 |recv=
@@ -3028,20 +3078,23 @@
 |video=File:t8-p2-xiaoyu-hyp.2+3.mp4
 |notes={{Plainlist|
 * Unblockable
-* Cancel to BT with BB}}
+* High evasion
+* 20F timestop on hit
+* Cancel to BT FC r56 with b,b at frame 30
+** Cannot buffer stance moves}}
 }}
 {| class="wikitable mw-collapsible  mw-collapsed"
 ! colspan=4 | HYP.2+3 chart
 |-
 ! Steps !! Damage!! Block !! Hit
 |-
-| 1 (20~24F) || 40 || ! || +10d
+| 1 (20~25F) || 40 || ! || +10d
 |-
 | 2 (45~50F) || 50 || ! || +10d
 |-
 | 3 (70~90F) || 60 || ! || +10d
 |}
-
+{{MoveQuery|Xiaoyu-b+1+3}}
 == AOP (''Phoenix'') ==
 {{MoveDataHeader}}
 {{MoveQuery|Xiaoyu-d+1+2}}
@@ -3114,7 +3167,7 @@
 * {{Tornado}}
 * {{BB}}
 * Combo from 1st hit with 5F delay
-* Interrupt with i6
+* Interrupt with i6 from 1st block
 * Move can be delayed by 11F
 * Input can be delayed by 12F}}
 }}
@@ -3159,7 +3212,7 @@
 |video=File:t8-p2-xiaoyu-aop.2,1.mp4
 |notes={{Plainlist|
 * {{HeatEngager}}
-* {{HeatDash|+5, +43d (+35)}}
+* {{HeatDash|+43d (+35)}}
 * {{BB}}
 * Combo from 1st hit with 8F delay
 * Interrupt with i2 from 1st block
@@ -3326,7 +3379,7 @@
 |video=File:t8-p2-xiaoyu-aop.d.mp4
 |notes={{Plainlist|
 * Xiaoyu ducks lower
-* will evade most mids
+* will evade most mids especially at frames 6~21
 }}
 }}
 {{Move
@@ -3423,7 +3476,7 @@
 |num=119
 |parent=Xiaoyu-AOP.uf+3
 |input=,1
-|alt={{DotList|
+|alt={{Dotlist|
 * AOP.u+3,1
 * AOP.ub+3,1
 }}
@@ -3455,7 +3508,7 @@
 |name=Double Scissor Kick
 |target=,M
 |damage=,17
-|startup=i15
+|startup=i15~17
 |block=-14
 |hit=-3
 |ch=+22g
@@ -3468,7 +3521,7 @@
 |video=File:t8-p2-xiaoyu-aop.uf+3,4.mp4
 |notes={{Plainlist|
 * Alternate input AOP.ub+3,4 AOP.u+3,4
-* Interrupt with i4 from 1st block}}
+* Interrupt with i6 from 1st block}}
 }}
 {{Move
 |id=Xiaoyu-AOP.uf+4
@@ -3513,12 +3566,17 @@
 |video=File:t8-p2-xiaoyu-aop.uf+4,4.mp4
 |notes={{Plainlist|
 * Combo from 1st hit only AOP.uf+4 connects on frame 21 or later
+* Interrupt with i14 from 1st block
 * Alternate input AOP.u+4,4 }}
 }}
 {{Move
 |id=Xiaoyu-AOP.uf
 |parent=
 |input=AOP.uf
+|alt={{Dotlist|
+* AOP.u
+* AOP.ub
+}}
 |name=Jumping
 |target=
 |damage=
@@ -3526,8 +3584,8 @@
 |block=
 |hit=
 |ch=
-|crush=js
-|recv=FC
+|crush=cs1~5, js9~35, fs36~38
+|recv=r40 FC
 |tot=
 |range=
 |tracksLeft=
@@ -3543,11 +3601,11 @@
 |name=Jumping Pirouette
 |target=m
 |damage=30
-|startup=i14
-|block=-2
+|startup=i12~16 (i27~31)
+|block=-4~+0
 |hit=+29d
 |ch=
-|crush=js
+|crush=cs1~5, js9~15, fs16~
 |recv=
 |tot=
 |range=
@@ -3557,7 +3615,9 @@
 |notes={{Plainlist|
 * {{SAT}}
 * {{BB}}
-* Transition to AOP with D (-3, +28) }}
+* Transition to AOP with D (-3, +28)
+* Typically connects on frame 14 at -2/+29d
+* Jump for 6~15F}}
 }}
 {{Move
 |id=Xiaoyu-While in the air 4
@@ -3567,7 +3627,7 @@
 |name=Crane Kick
 |target=m
 |damage=25
-|startup=i8
+|startup=i8 (i39)
 |block=-8
 |hit=+23a (+13)
 |ch=
@@ -3579,7 +3639,8 @@
 |tracksRight=
 |video=File:t8-p2-xiaoyu-while in the air 4.mp4
 |notes={{Plainlist|
-* {{BB}} }}
+* {{BB}} 
+* Jump for 6~15F}}
 }}
 {{Move
 |id=Xiaoyu-While landing 3
@@ -3601,7 +3662,8 @@
 |tracksRight=
 |video=File:t8-p2-xiaoyu-while landing 3.mp4
 |notes={{Plainlist|
-* }}
+* i46 effective startup (Jump takes 31F)
+* Jump for 16~31F}}
 }}
 
 == Others ==
@@ -3931,10 +3993,12 @@
 * Actual startup: i32
 * AOP.1+3: Xiaoyu rolls to her left and throws (Throw break 1)
 * AOP.2+4: Xiaoyu rolls to her right and throws (Throw break 2)
-* Cancel to r40 FC with D }}
+* Cancel to r40 FC with D at frame 30}}
 }}
 
 == 10 Strings ==
+{{MoveDataHeader}}
+
 {{MoveInherit|Xiaoyu-uf+4
 |id=Xiaoyu-u+4
 |name=1st Hit
@@ -3958,7 +4022,7 @@
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
-* 
+* 10-hit combo string
 }}
 }}
 
@@ -3980,6 +4044,7 @@
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
+* 10-hit combo string
 * Combo from 2nd hit
 * Jail from 2nd block
 }}

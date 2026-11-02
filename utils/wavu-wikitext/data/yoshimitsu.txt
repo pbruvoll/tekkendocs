@@ -298,6 +298,7 @@ Attacks unique to NSS which do not transition to 1SS (e.g. NSS.FC.df+3) are not 
 * {{BB}}
 * Combo from 1st CH with 2f delay
 * Interrupt with i6 from 1st block
+* Whiffs vs SSR from 1st block
 * Move can be delayed 5f}}
 }}
 {{Move
@@ -366,7 +367,7 @@ Attacks unique to NSS which do not transition to 1SS (e.g. NSS.FC.df+3) are not 
 |video=File:t8-p2-yoshimitsu-3,1.mp4
 |notes={{Plainlist|
 * {{HeatEngager}}
-* {{HeatDash|+5, +62a (+42)}}
+* {{HeatDash|+62a (+42)}}
 * {{BB}}
 * {{Weapon}}
 * Combo from 1st hit
@@ -2338,10 +2339,11 @@ Attacks unique to NSS which do not transition to 1SS (e.g. NSS.FC.df+3) are not 
 |video=File:t8-p2-yoshimitsu-b+2,2.mp4
 |notes={{Plainlist|
 * {{HeatEngager}}
-* {{HeatDash|+5, +43d (+35)}}
+* {{HeatDash|+43d (+35)}}
 * {{Weapon}}
-* Combo from 1st with 1f delay
+* Combo from 1st hit with 1f delay
 * Combo from 1st CH with 7f delay
+* Interrupt with i3 from 1st block
 * Input can be delayed 14f
 }}
 }}
@@ -4668,7 +4670,8 @@ Attacks unique to NSS which do not transition to 1SS (e.g. NSS.FC.df+3) are not 
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
-* Unavailable in NSS}}
+* Unavailable in NSS
+* Cancel to r38 standing with db (FLE.db)}}
 }}
 {{Move
 |id=Yoshimitsu-FLE.n
@@ -4693,6 +4696,23 @@ Attacks unique to NSS which do not transition to 1SS (e.g. NSS.FC.df+3) are not 
 * Hitlines exist on the sword and directly behind Yoshimitsu
 * Can be canceled at any time into another FLE move
 * After hitting with this attack, FLE.n has no hitbox until another FLE action (other than FLE.d) is taken}}
+}}
+{{MoveInherit|Yoshimitsu-FLE.d
+|id=Yoshimitsu-FLE.n,d
+|parent=Yoshimitsu-FLE.n
+|input=,FLE.d
+|name=Flea Digger Strike
+|target=,M
+|damage=,0
+|startup=i10
+|hit=+30a (+20)
+|crush=js1~30
+|recv=r20 FLE
+|notes={{Plainlist|
+* Available only on hit
+* Evades mids from frames 7-12
+* Can be cancelled into other FLE moves (except FLE.n)
+}}
 }}
 {{Move
 |id=Yoshimitsu-FLE.db
@@ -4874,42 +4894,19 @@ Attacks unique to NSS which do not transition to 1SS (e.g. NSS.FC.df+3) are not 
 |hit=
 |ch=
 |crush={{Plainlist|
-* js1~4
-* fs5~15
-* js16~}}
+* js1~3
+* fs4~15
+* cs4~15
+* js16~30}}
 |recv=r30 FLE
-|tot=
+|tot=30
 |range=
 |tracksLeft=
 |tracksRight=
 |video=File:t8-p2-yoshimitsu-fle.d.mp4
 |notes={{Plainlist|
-* Evades jabs from frames 4-14
 * Evades mids from frames 7-12
 * Can be canceled into other FLE moves (except FLE.n)}}
-}}
-{{Move
-|id=Yoshimitsu-FLE.ds
-|parent=
-|input=FLE.d
-|name=Flea Digger Strike
-|target=M
-|damage=0
-|startup=i10
-|block=
-|hit=+31a (+24)
-|ch=
-|crush=js1~
-|recv=r20 FLE
-|tot=30
-|range=
-|tracksLeft=
-|tracksRight=
-|notes={{Plainlist|
-* Evades jabs from frames 4-14
-* Evades mids from frames 7-12
-* Can be cancelled into other FLE moves (except FLE.n)
-* Only accessible after hitting with FLE.n}}
 }}
 {{MoveInherit|Yoshimitsu-DGF.f+2
 |id=Yoshimitsu-FLE.f+2
@@ -5480,7 +5477,9 @@ Attacks unique to NSS which do not transition to 1SS (e.g. NSS.FC.df+3) are not 
 |notes={{Plainlist|
 * {{BB}}
 * Combo from 1st hit
+* Interrupt with i3 from 1st block
 * Jail from 2nd attack
+* Duckable
 }}
 }}
 {{MoveInherit|Yoshimitsu-3,1
@@ -6266,7 +6265,8 @@ Attacks unique to NSS which do not transition to 1SS (e.g. NSS.FC.df+3) are not 
 |tracksRight=
 |notes={{Plainlist|
 * {{Elbow}}
-* Combo from 1st hit}}
+* Combo from 1st hit
+* Move cannot be interrupted}}
 }}
 {{MoveInherit|Yoshimitsu-BT.1,2
 |id=Yoshimitsu-ws2,NSS.1,2
@@ -6281,6 +6281,7 @@ Attacks unique to NSS which do not transition to 1SS (e.g. NSS.FC.df+3) are not 
 * {{MoveDataIcon|color=green|1=Balcony Break (airborne)}}
 * {{Elbow}}
 * Combo from 2nd CH
+* Interrupt with i5 from 2nd block
 }}
 }}
 {{MoveInherit|Yoshimitsu-BT.1,3
@@ -6294,7 +6295,8 @@ Attacks unique to NSS which do not transition to 1SS (e.g. NSS.FC.df+3) are not 
 |video=File:t8-p2-yoshimitsu-ws2,nss.1,3.mp4
 |notes={{Plainlist|
 * {{BB}}
-* Combo from 2nd CH}}
+* Combo from 2nd CH
+* Interrupt with i5 from 2nd block}}
 }}
 {{MoveQuery|Yoshimitsu-KIN.1}}
 {{Move
@@ -6853,7 +6855,8 @@ Attacks unique to NSS which do not transition to 1SS (e.g. NSS.FC.df+3) are not 
 |notes={{Plainlist|
 * {{MoveDataIcon|color=green|1=Balcony Break (airborne)}}
 * {{Elbow}}
-* Combo from 1st CH}}
+* Combo from 1st CH
+* Interrupt with i5 from 1st block}}
 }}
 {{Move
 |id=Yoshimitsu-BT.1,3
@@ -6876,7 +6879,8 @@ Attacks unique to NSS which do not transition to 1SS (e.g. NSS.FC.df+3) are not 
 |video=File:t8-p2-yoshimitsu-bt.1,3.mp4
 |notes={{Plainlist|
 * {{BB}}
-* Combo from 1st CH}}
+* Combo from 1st CH
+* Interrupt with i5 from 1st block}}
 }}
 {{MoveInherit|Yoshimitsu-f+2
 |id=Yoshimitsu-BT.2

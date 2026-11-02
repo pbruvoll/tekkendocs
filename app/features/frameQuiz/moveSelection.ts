@@ -61,6 +61,14 @@ export const isGroundedRecoveryState = (recoveryState: string): boolean => {
   return groundedRecoveryStates.some((state) => upperCased.includes(state));
 };
 
+// Wavu marks every move that is a 10-hit string, or part of one, with this
+// line in the notes. They are left out of the quiz.
+export const isTenHitStringMove = (notes: string): boolean => {
+  return notes
+    .split('\n')
+    .some((line) => line.trim().toLowerCase() === '* 10-hit combo string');
+};
+
 export const hasVisibleProperties = (move: Move): boolean => {
   return Object.keys(move.tags || {}).length > 0;
 };
@@ -97,6 +105,10 @@ export const getEligibleQuizMoves = (moves: Move[]): QuizMove[] => {
     }
 
     if (isGroundedRecoveryState(move.recoveryState || '')) {
+      return current;
+    }
+
+    if (isTenHitStringMove(move.notes || '')) {
       return current;
     }
 

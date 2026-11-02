@@ -132,68 +132,56 @@
 
 == n ==
 {{MoveDataHeader}}
-{{MoveInherit
-|Generic-1
+{{MoveInherit|Generic-1
 |id=Panda-1
 }}
-{{MoveInherit
-|Kuma-1,1
+{{MoveInherit|Kuma-1,1
 |id=Panda-1,1
 |parent=Panda-1
 }}
-{{MoveInherit
-|Kuma-1,1,1
+{{MoveInherit|Kuma-1,1,1
 |id=Panda-1,1,1
 |parent=Panda-1,1
 |num=17
 |video=File:t8-p2-panda-1,1,1.mp4
 }}
-{{MoveInherit
-|Kuma-1,2
+{{MoveInherit|Kuma-1,2
 |id=Panda-1,2
 |parent=Panda-1
 |num=18
 |video=File:t8-p2-panda-1,2.mp4
 }}
-{{MoveInherit
-|Kuma-2
+{{MoveInherit|Kuma-2
 |id=Panda-2
 }}
-{{MoveInherit
-|Kuma-2,1
+{{MoveInherit|Kuma-2,1
 |id=Panda-2,1
 |parent=Panda-2
 }}
-{{MoveInherit
-|Kuma-2,1,2
+{{MoveInherit|Kuma-2,1,2
 |id=Panda-2,1,2
 |parent=Panda-2,1
 |num=19
 |video=File:t8-p2-panda-2,1,2.mp4
 }}
-{{MoveInherit
-|Kuma-2,1,3
+{{MoveInherit|Kuma-2,1,3
 |id=Panda-2,1,3
 |parent=Panda-2,1
 |num=20
 |video=File:t8-p2-panda-2,1,3.mp4
 }}
-{{MoveInherit
-|Kuma-3
+{{MoveInherit|Kuma-3
 |id=Panda-3
 }}
-{{MoveInherit
-|Kuma-4
+{{MoveInherit|Kuma-4
 |id=Panda-4
 }}
-{{MoveInherit
-|Kuma-1+2
+{{MoveInherit|Kuma-1+2
 |id=Panda-1+2
 |num=21
 |video=File:t8-p2-panda-1+2.mp4
 }}
-{{MoveInherit
-|Kuma-3+4
+{{MoveInherit|Kuma-3+4
 |id=Panda-3+4
 }}
 
@@ -344,8 +332,7 @@
 |video=File:t8-p2-panda-db+2.mp4
 |num=35
 }}
-{{MoveInherit
-|Kuma-db+3
+{{MoveInherit|Kuma-db+3
 |id=Panda-db+3
 |video=File:t8-p2-panda-db+3.mp4
 |num=36
@@ -1303,30 +1290,7 @@
 == HBS (''Hunting'') ==
 
 {{MoveDataHeader}}
-{{Move
-|id=Panda-3+4
-|parent=
-|input=3+4
-|name=Hunting
-|target=sp
-|damage=
-|startup=
-|block=
-|hit=
-|ch=
-|crush=
-|recv=
-|tot=
-|range=
-|tracksLeft=
-|tracksRight=
-|notes={{Plainlist|
-* Alternate input: FDFA.3+4
-* Can low parry in HBS with HBS.F
-* Transition to HBS
-* Transition to standing with input ub or u or uf
-}}
-}}
+{{MoveQuery|Panda-3+4}}
 {{Move
 |id=Panda-HBS.1
 |parent=
@@ -1682,15 +1646,20 @@
 |block=
 |hit=
 |ch=
-|crush=
-|recv=
+|crush={{Plainlist|
+* js6~12
+* fs13~15
+* cs16~67
+}}
+|recv=r15 SIT
 |tot=
 |range=
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
-* Transition to SIT
-* Transition to ROL with input f
+* Alternative input: db+3+4
+* Transition to ROL with input SIT.F
+* Transition to California Roll with input SIT.B
 }}
 }}
 {{Move

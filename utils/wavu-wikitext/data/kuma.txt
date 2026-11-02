@@ -191,6 +191,7 @@
 |notes={{Plainlist|
 * {{BB}}
 * Jail from 1st hit
+* Duckable
 * Combo from 1st CH with 3F delay
 * 10 chip damage on block
 }}
@@ -333,7 +334,7 @@
 |damage=25
 |startup=i13~14
 |block=-13
-|hit=+18g
+|hit=+18cg
 |ch=
 |crush=
 |recv=r31
@@ -345,32 +346,11 @@
 |notes={{Plainlist|
 * {{BB}}
 * {{HeatEngager}}
-* {{HeatDash|+5, +43d (+35)}}
+* {{HeatDash|+43d (+35)}}
 * Forces crouch on hit
 }}
 }}
-{{Move
-|id=Kuma-3+4
-|parent=
-|input=3+4
-|name=Hunting
-|target=sp
-|damage=
-|startup=
-|block=
-|hit=
-|ch=
-|crush=cs4~
-|recv=r15 HBS
-|tot=
-|range=
-|tracksLeft=
-|tracksRight=
-|notes={{Plainlist|
-* Alternate input: FDFA.3+4
-* Transition to HBS
-}}
-}}
+{{MoveQuery|Kuma-3+4}}
 
 == f ==
 {{MoveDataHeader}}
@@ -793,33 +773,7 @@
 * 27 damage on clean hit
 }}
 }}
-{{Move
-|id=Kuma-d+3+4
-|parent=
-|input=d+3+4
-|name=Bear Sit
-|target=sp
-|damage=
-|startup=
-|block=
-|hit=
-|ch=
-|crush={{Plainlist|
-* js6~12
-* fs13~15
-* cs16~67
-}}
-|recv=r15 SIT
-|tot=
-|range=
-|tracksLeft=
-|tracksRight=
-|notes={{Plainlist|
-* Alternative input: db+3+4
-* Transition to ROL with input SIT.F
-* Transition to California Roll with input SIT.B
-}}
-}}
+{{MoveQuery|Kuma-d+3+4}}
 
 == db ==
 {{MoveDataHeader}}
@@ -2520,15 +2474,20 @@
 |block=
 |hit=
 |ch=
-|crush=
-|recv=SIT
+|crush={{Plainlist|
+* js6~12
+* fs13~15
+* cs16~67
+}}
+|recv=r15 SIT
 |tot=
 |range=
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
-* Transition to SIT
-* Transition to ROL with input f
+* Alternative input: db+3+4
+* Transition to ROL with input SIT.F
+* Transition to California Roll with input SIT.B
 }}
 }}
 {{Move
@@ -3132,6 +3091,7 @@
 }}
 
 == 10 Strings ==
+{{MoveDataHeader}}
 {{Move
 |id=Kuma-FC.df+2
 |parent=
@@ -3150,7 +3110,7 @@
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
-* 
+* 10-hit combo string
 }}
 }}
 {{Move
@@ -3171,6 +3131,7 @@
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
+* 10-hit combo string
 * Combo from 1st hit
 * Jail from 1st block
 }}
@@ -3193,6 +3154,7 @@
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
+* 10-hit combo string
 * Interrupt with i6 from 2nd block
 }}
 }}
@@ -3214,6 +3176,7 @@
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
+* 10-hit combo string
 * Interrupt with i15 from 3rd block
 }}
 }}
@@ -3235,6 +3198,7 @@
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
+* 10-hit combo string
 * Interrupt with i10 from 4th block
 * Can SSR hit from 4th block
 }}
@@ -3261,6 +3225,7 @@
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
+* 10-hit combo string
 * Interrupt with i8 from 5th block
 * Can SSL/SSR and SWL/SWR from 5th block
 }}
@@ -3283,6 +3248,7 @@
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
+* 10-hit combo string
 * Interrupt float with i40? from 6th block
 * Can SSL/SSR and SWL/SWR from 6th block
 
@@ -3306,6 +3272,7 @@
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
+* 10-hit combo string
 * Interrupt with i21? from 7th block
 * Can SSL/SSR and SWL/SWR from 7th block
 }}
@@ -3328,6 +3295,7 @@
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
+* 10-hit combo string
 * Combo from 8th hit
 * Interrupt with i8 from 8th block
 * Can SSL/SSR and SWL/SWR from 8th block
@@ -3352,6 +3320,7 @@
 |tracksRight=
 |notes={{Plainlist|
 * {{BB}}
+* 10-hit combo string
 * Aerial combo (+14a (+7)) from 8th or 9th hit
 * Forces tech backroll on hit
 * Interrupt with i33? from 9th block

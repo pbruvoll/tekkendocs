@@ -13,54 +13,35 @@
 
 {{MoveDataHeader}}
 
-{{Move
+{{MoveInherit|Generic-2+3
 |id=Lidia-2+3
-|parent=
-|input=2+3
-|name=Heat Burst
-|target=m
-|damage=12
-|startup=i16
-|block=+1
-|hit=+2c
-|ch=
-|crush=pc7~62
-|recv=r30
-|tot=92
-|range=
-|tracksLeft=
-|tracksRight=
-|notes={{Plainlist|
-* {{HeatBurst}}
-* Cancel to r45 with b,b
-* 3 chip damage on block
-* Partially uses Heat}}
-}}
+|alt=HRS.2+3}}
 {{Move
 |id=Lidia-H.2+3
 |parent=
 |input=H.2+3
 |name=Efflorescent Blizzard
 |target=m,m,m,h
-|damage=55
+|damage=5,5,30 (55)
 |startup=i18
 |block=+10g
 |hit=+0d
 |ch=
-|crush=js77~105
+|crush=js77~102, fs103~105
 |recv=r36
-|tot=186?
+|tot=128?
 |range=
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
 * {{HeatSmash}}
 * {{BB}}
+* Shift to attack throw on hit
 * Transition to r31 HAE on block
 ** Cancel HAE transition with B on block
-* Transition to attack throw on hit
 * Increases HAE level by 1 on hit
-* 8 chip on block 
+* +10a (+1) from 2nd hit
+* 8 chip damage on block 
 }}
 }}
 {{Move
@@ -77,7 +58,7 @@
 |ch=
 |crush=
 |recv=r33
-|tot=
+|tot=64
 |range=
 |tracksLeft=
 |tracksRight=
@@ -85,10 +66,11 @@
 |notes={{Plainlist|
 * {{ReversalBreak}}
 * {{BB}}
-* Cancel with b,b or f,f
+* Cancel to r35 backdash with b,b at frame 10
+* Cancel to r18 forward dash with f,f at frame 3
 * Transition to HAE on hit or block only
 * Cancel HAE transition with B
-* Partially uses remaining Heat time
+* Consumes 90F of remaining Heat time
 * Hold for 20~30 frames
 }}
 }}
@@ -714,18 +696,24 @@
 |startup=i24~25
 |block=-4
 |hit=+24g
-|ch=+59cs
+|ch=+59a
 |crush=
-|recv=WLF
-|tot=
+|recv=r35 
+|tot=81
 |range=
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
 * {{Tornado}}
-* Transitions to WLF
+* Transition to WLF r30 on hit or block
+* Combo from 1st CH with 11F delay
 * Interrupt with i8 from 1st block
 * Whiffs vs SSR from 1st block
+* WLF transition is -12
+* Crumple stun on CH
+* 4F timestop on CH
+* Move can be delayed by 10F
+* Input can be delayed by 13F
 }}
 }}
 {{Move
@@ -1246,7 +1234,7 @@
 |damage=,20
 |startup=,i17
 |block=-6
-|hit=+17c
+|hit=+17cg
 |recv=r30
 |tot=84
 |video=File:t8-p2-lidia-d+3,1,2.mp4
@@ -1459,7 +1447,7 @@
 |damage=24
 |startup=i18
 |block=+2
-|hit=+22c
+|hit=+22cg
 |ch=
 |crush=
 |recv=r26
@@ -1725,7 +1713,7 @@
 |damage=28
 |startup=i25~27
 |block=-9
-|hit=+15c
+|hit=+15cg
 |ch=
 |crush=js11~24 fs25~27
 |recv=r31
@@ -1748,7 +1736,7 @@
 |alt=u+4
 |name=Cleaving Spirit
 |target=m,h
-|damage=10,16
+|damage=10,23 (16)
 |startup=i15~16,i13
 |block=-5
 |hit=[[Lidia_combos#Staples|+69a (+53)]]
@@ -1764,7 +1752,7 @@
 * {{BB}}
 * {{Tornado}}
 * Transition to CAT on hit or block only
-* 2nd hit available only as combo from 1st hit
+* 2nd hit available only as airborne combo from 1st hit
 * CAT transition is -13}}
 }}
 {{Move
@@ -1968,7 +1956,7 @@
 |damage=30
 |startup=i23~25
 |block=+6
-|hit=+11c
+|hit=+11cg
 |ch=
 |crush=js12~33 34~36
 |recv=r35
@@ -2082,7 +2070,7 @@
 |startup=i16~17
 |block=-12
 |hit=+2
-|ch=+2
+|ch=
 |crush=
 |recv=r30
 |tot=47
@@ -2117,7 +2105,8 @@
 * Combo from 1st CH with 12f delay
 * Transition to WLF on hit or block only
 * Balcony break on airborne hit
-* Can be charged to enhance}}
+* Can be charged to enhance
+* WLF transition is -12}}
 }}
 {{Move
 |id=Lidia-qcf+1+2,2*
@@ -2253,7 +2242,7 @@
 |video=File:t8-p2-lidia-fc.df+2.mp4
 |notes={{Plainlist|
 * {{HeatEngager}}
-* {{HeatDash|+5, +43a (+35)}}
+* {{HeatDash|+43d (+35)}}
 * {{BB}}
 * {{Elbow}}
 }}
@@ -2462,7 +2451,10 @@
 |range=
 |tracksLeft=
 |tracksRight=
-|notes=Actionable after 20f
+|notes={{Plainlist|
+* Actionable after 20f
+* Stance moves can be delayed by 12F?
+}}
 }}
 {{Move
 |id=Lidia-HRS.1
@@ -2472,12 +2464,12 @@
 |name=Hachi-wari
 |target=h
 |damage=22
-|startup=i17
+|startup=i17~18
 |block=+1
 |hit=+16g
 |ch=
 |crush=pc7~16
-|recv=r26
+|recv=r25
 |tot=43
 |range=
 |tracksLeft=
@@ -2623,7 +2615,7 @@
 |num=97
 |parent=
 |input=HRS.F
-|name=Horse Stance > Stalking Wolf Stance
+|name=Stalking Wolf Stance
 |target=
 |damage=
 |startup=
@@ -2637,7 +2629,10 @@
 |tracksLeft=
 |tracksRight=
 |video=File:t8-p2-lidia-hrs.f.mp4
-|notes=Actionable after 20f
+|notes={{Plainlist|
+* Actionable after 20f
+* Stance moves can be delayed by 16F
+}}
 }}
 {{Move
 |id=Lidia-HRS.b
@@ -2665,6 +2660,9 @@
 |num=98
 |parent=
 |input=H.HRS.U
+|alt={{Dotlist|
+* H.CAT.U
+* H.WLF.U}}
 |name=Horse Stance > Heaven and Earth
 |target=
 |damage=
@@ -2674,15 +2672,21 @@
 |ch=
 |crush=ps5~39
 |recv=r25 HAE
-|tot=
+|tot=51
 |range=
 |tracksLeft=
 |tracksRight=
 |video=File:t8-p2-lidia-h.hrs.u.mp4
 |notes={{Plainlist|
-* Increases Heaven and Earth level
+* Stance moves can be delayed by 14F
 * Parries all highs or mids
-* Transition to +12g? HAE on successful parry}}
+* Transition to +12g? HAE on successful parry
+* Entering HAE increases Heaven and Earth level (carries over into next round)
+* Partially uses remaining Heat time
+* Heat consumption is reduced the higher the level
+** Level 1: Consumes 900F of remaining Heat time
+** Level 2: Consumes 300F of remaining Heat time
+** Level 3: Consumes 210?F of remaining Heat time}}
 }}
 {{Move
 |id=Lidia-HRS.b,B
@@ -2955,11 +2959,15 @@
 |input=CAT.b
 |name=Cat Stance > Cancel
 |recv=r15
+|notes=After recovery, limited to blocking for 7 frames
 }}
 {{MoveInherit|Lidia-H.HRS.U
 |id=Lidia-H.CAT.U
 |num=108
 |input=H.CAT.U
+|alt={{Dotlist|
+* H.HRS.U
+* H.WLF.U}}
 |name=Cat Stance > Heaven and Earth
 |video=File:t8-p2-lidia-h.cat.u.mp4
 }}
@@ -2974,7 +2982,8 @@
 == WLF (''Stalking Wolf Stance'') ==
 
 {{MoveDataHeader}}
-
+{{MoveInherit|Lidia-HRS.F
+|name=Stalking Wolf Stance}}
 {{Move
 |id=Lidia-WLF.1
 |num=111
@@ -3007,7 +3016,7 @@
 |input=WLF.1*
 |name=
 |target=m
-|damage=36
+|damage=34
 |startup=i36
 |block=+7
 |hit=[[Lidia_combos#Staples|+57a]]
@@ -3020,7 +3029,7 @@
 |tracksRight=
 |notes={{Plainlist|
 * {{Tornado}}
-* 13 Chip damage on block}}
+* 13 chip damage on block}}
 }}
 {{Move
 |id=Lidia-WLF.2
@@ -3033,7 +3042,7 @@
 |startup=i15~16
 |block=-7
 |hit=+22a (+5)
-|ch=+22a (+5)
+|ch=
 |crush=
 |recv=r27
 |tot=43
@@ -3086,6 +3095,7 @@
 |notes={{Plainlist|
 * {{BB}}
 * Combo from 1st CH
+* Move cannot be interrupted
 }}
 }}
 {{Move
@@ -3123,11 +3133,15 @@
 |input=WLF.b
 |name=Stalking Wolf Stance > Cancel
 |recv=r15
+|notes=After recovery, limited to blocking for 7 frames
 }}
 {{MoveInherit|Lidia-H.HRS.U
 |id=Lidia-H.WLF.U
 |num=116
 |input=H.WLF.U
+|alt={{Dotlist|
+* H.HRS.U
+* H.CAT.U}}
 |name=Stalking Wolf Stance > Heaven and Earth
 |video=File:t8-p2-lidia-h.wlf.u.mp4
 }}
@@ -3143,20 +3157,12 @@
 
 {{MoveDataHeader}}
 
-{{MoveInherit|Lidia-H.HRS.U|
+{{MoveInherit|Lidia-H.HRS.U
 |input=H.HRS.U
 |alt={{Dotlist|
 * H.CAT.U
 * H.WLF.U}}
 |name=Heaven and Earth
-|notes={{Plainlist|
-* Parries all highs or mids
-* Partially uses remaining Heat time
-* Entering HAE increases Heaven and Earth level (carries over into next round)
-* Heat consumption is reduced the higher the level
-** Level 1: Consumes 900F of remaining Heat time
-** Level 2: Consumes 300F of remaining Heat time
-** Level 3: Consumes 210?F of remaining Heat time}}
 }}
 {{Move
 |id=Lidia-HAE.1
@@ -3246,7 +3252,13 @@
 * Transition to HAE
 * Strong parry effect}}
 }}
-
+{{MoveInherit|Lidia-HRS.b
+|id=Lidia-HAE.b
+|input=HAE.b
+|name=Heaven and Earth > Cancel
+|recv=r15
+|notes=After recovery, limited to blocking for 7 frames
+}}
 == Others ==
 
 {{MoveDataHeader}}
@@ -3575,7 +3587,9 @@
 |range=
 |tracksLeft=
 |tracksRight=
-|notes=
+|notes={{Plainlist|
+* 10-hit combo string
+}}
 }}
 {{Move
 |id=Lidia-2,1,4
@@ -3594,7 +3608,9 @@
 |range=
 |tracksLeft=
 |tracksRight=
-|notes=
+|notes={{Plainlist|
+* 10-hit combo string
+}}
 }}
 {{Move
 |id=Lidia-2,1,4,4
@@ -3613,7 +3629,9 @@
 |range=
 |tracksLeft=
 |tracksRight=
-|notes=
+|notes={{Plainlist|
+* 10-hit combo string
+}}
 }}
 {{Move
 |id=Lidia-2,1,4,4,1
@@ -3632,7 +3650,9 @@
 |range=
 |tracksLeft=
 |tracksRight=
-|notes=
+|notes={{Plainlist|
+* 10-hit combo string
+}}
 }}
 {{Move
 |id=Lidia-2,1,4,4,1,2
@@ -3651,7 +3671,9 @@
 |range=
 |tracksLeft=
 |tracksRight=
-|notes=
+|notes={{Plainlist|
+* 10-hit combo string
+}}
 }}
 {{Move
 |id=Lidia-2,1,4,4,1,2,1
@@ -3670,7 +3692,9 @@
 |range=
 |tracksLeft=
 |tracksRight=
-|notes=
+|notes={{Plainlist|
+* 10-hit combo string
+}}
 }}
 {{Move
 |id=Lidia-2,1,4,4,1,2,1,3
@@ -3689,7 +3713,9 @@
 |range=
 |tracksLeft=
 |tracksRight=
-|notes=
+|notes={{Plainlist|
+* 10-hit combo string
+}}
 }}
 {{Move
 |id=Lidia-2,1,4,4,1,2,1,3,2
@@ -3708,7 +3734,9 @@
 |range=
 |tracksLeft=
 |tracksRight=
-|notes=
+|notes={{Plainlist|
+* 10-hit combo string
+}}
 }}
 {{Move
 |id=Lidia-2,1,4,4,1,2,1,3,2,1
@@ -3729,7 +3757,9 @@
 |tracksLeft=
 |tracksRight=
 |video=File:t8-p2-lidia-2,1,4,4,1,2,1,3,2,1.mp4
-|notes=
+|notes={{Plainlist|
+* 10-hit combo string
+}}
 }}
 
 == External Links ==

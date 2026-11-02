@@ -156,7 +156,7 @@ Essence level persists between rounds.
 |notes={{Plainlist|
 * Move can be delayed by 1f
 * Input can be delayed by 2f
-* Interrupt with i7
+* Interrupt with i7 from 1st block
 * Transition to standing with B (t64 r28) 
 * Restores 2 health and 2 recoverable on hit
 * Gain 6 Kazama Essence on normal hit and 5 on airborne hit
@@ -211,8 +211,8 @@ Essence level persists between rounds.
 |notes={{Plainlist|
 * {{Homing}}
 * Combo from 2nd hit with 9F delay
-* Move cannot be interrupted (Jails attack inputs with 1F delay)
-* Opponent can buffer FC actions on 2nd block
+* Jails attack inputs with 1F delay (crouch assist bufferable)
+* Duckable
 * Restores 2 health on hit
 * Gain 6 Kazama Essence on normal hit and 5 on airborne hit}}
 }}
@@ -239,7 +239,7 @@ Essence level persists between rounds.
 * {{MoveDataIcon|color=green|1=Balcony Break (airborne)}}
 * {{WallCrush|+17g on hit and 3 chip damage}}
 * Not a true combo on 2nd hit or CH (bug? breaks neutral guard)
-* Interrupt with i5
+* Interrupt with i5 from 1st block
 * Input can be delayed 9f}}
 }}
 {{Move
@@ -304,7 +304,7 @@ Essence level persists between rounds.
 |notes={{Plainlist|
 * {{Elbow}}
 * Combo from 1st hit with 9f delay
-* Interrupt with i1
+* Interrupt with i1 from 1st block
 * Input can be delayed 10f}}
 }}
 {{Move
@@ -353,7 +353,7 @@ Essence level persists between rounds.
 * {{Weapon}} (Projectile)
 * Combo from 3rd CH
 * Move can be delayed 10f
-* Interrupt with i10
+* Interrupt with i10 from 1st block
 * Whiffs vs SWL from 1st block
 * 9 chip damage on block
 * Deals 6 damage to self (4 recoverable)
@@ -382,7 +382,7 @@ Essence level persists between rounds.
 |notes={{Plainlist|
 * {{BB}}
 * Combo from 3rd CH with 5F delay
-* Interrupt with i5
+* Interrupt with i5 from 1st block
 * Input can be delayed 10f}}
 }}
 {{Move
@@ -453,7 +453,7 @@ Essence level persists between rounds.
 * {{Tornado}}
 * {{BB}}
 * Combo from 1st hit with 9F delay
-* Interrupt with i4
+* Interrupt with i4 from 1st block
 * Forces tech back roll on hit
 * Move can be delayed by 6F
 * Input can be delayed by 9F
@@ -501,7 +501,7 @@ Essence level persists between rounds.
 |notes={{Plainlist|
 * {{BB}}
 * {{HeatEngager}}
-* {{HeatDash|+5, +43d (+35)}}
+* {{HeatDash|+43d (+35)}}
 * Gain 10 Kazama Essence on Heat activation
 }}
 }}
@@ -539,7 +539,7 @@ Essence level persists between rounds.
 |target=SL,h
 |damage=5,8
 |startup=i14 i17
-|block=-3
+|block=-3 / -19
 |hit=-3
 |ch=+4
 |crush=
@@ -549,7 +549,7 @@ Essence level persists between rounds.
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
-* Jail from 1st attack
+* -19 from 1st block
 * CH advantage listed is for the 2nd hit}}
 }}
 {{Move
@@ -569,7 +569,12 @@ Essence level persists between rounds.
 |range=
 |tracksLeft=
 |tracksRight=
-|notes=Combo from 2nd CH
+|notes={{Plainlist|
+* Combo from 2nd CH
+* Interrupt with i16 from 1st block
+* Move cannot be interrupted from 2nd block
+* Whiffs vs SS, SW from 1st block (SSR/SWR more consistent w/ big bodies)
+}}
 }}
 {{Move
 |id=Jun-1+4,2,4
@@ -590,7 +595,10 @@ Essence level persists between rounds.
 |tracksLeft=
 |tracksRight=
 |video=File:t8-p2-jun-1+4,2,4.mp4
-|notes=Combo from 3rd CH
+|notes={{Plainlist|
+* Combo from 3rd CH
+* Interrupt with i4 from 3rd block
+}}
 }}
 {{Move
 |id=Jun-1+4,2,d+4
@@ -611,7 +619,10 @@ Essence level persists between rounds.
 |tracksLeft=
 |tracksRight=
 |video=File:t8-p2-jun-1+4,2,d+4.mp4
-|notes=Combo from 3rd CH
+|notes={{Plainlist|
+* Combo from 3rd CH
+* Interrupt with i4 from 3rd block
+}}
 }}
 {{Move
 |id=Jun-1+4,3
@@ -630,7 +641,12 @@ Essence level persists between rounds.
 |range=
 |tracksLeft=
 |tracksRight=
-|notes=Combo from 2nd CH
+|notes={{Plainlist|
+* Combo from 2nd CH
+* Interrupt with i19 from 1st block
+* Interrupt with i3 from 2nd block
+* Whiffs vs SS, SW from 1st block (SSR/SWR more consistent w/ big bodies)
+}}
 }}
 {{Move
 |id=Jun-1+4,3,1
@@ -651,7 +667,10 @@ Essence level persists between rounds.
 |tracksLeft=
 |tracksRight=
 |video=File:t8-p2-jun-1+4,3,1.mp4
-|notes=
+|notes={{Plainlist|
+* Interrupt with i12 from 3rd block
+* Whiffs vs SWL from 3rd block
+}}
 }}
 {{Move
 |id=Jun-1+4,3,4
@@ -672,7 +691,10 @@ Essence level persists between rounds.
 |tracksLeft=
 |tracksRight=
 |video=File:t8-p2-jun-1+4,3,4.mp4
-|notes=Combo from 3rd CH
+|notes={{Plainlist|
+* Combo from 3rd CH
+* Interrupt with i4 from 3rd block
+}}
 }}
 
 == f ==
@@ -801,9 +823,9 @@ Essence level persists between rounds.
 |notes={{Plainlist|
 * {{Homing}}
 * Combo from 1st hit with 10F delay
+* Interrupt with i5 from 1st block
 * Move can be delayed by 5F
 * Input can be delayed by 10F
-* Interrupt with i5
 * Restores 2 health on hit
 * Gain 6 Kazama Essence on normal hit and 5 on airborne hit}}
 }}
@@ -829,7 +851,7 @@ Essence level persists between rounds.
 |notes={{Plainlist|
 * {{Tornado}}
 * Combo from 1st hit with 10F delay
-* Interrupt with i5
+* Interrupt with i5 from 1st block
 * Move can be delayed by 5F
 * Input can be delayed by 10F}}
 }}
@@ -976,8 +998,10 @@ Essence level persists between rounds.
 |tracksRight=
 |video=File:t8-p2-jun-df+1,2.mp4
 |notes={{Plainlist|
-* Combo from 1st hit
+* Combo from 1st hit with 1F delay
 * Interrupt with i4 from 1st block
+* Move cannot be delayed
+* Input can be delayed by 1F
 }}
 }}
 {{Move
@@ -1116,7 +1140,10 @@ Essence level persists between rounds.
 |tracksLeft=
 |tracksRight=
 |video=File:t8-p2-jun-df+3+4,1.mp4
-|notes=
+|notes={{Plainlist|
+* Interrupt with i12 from 1st block
+* Whiffs vs SWL from 1st block
+}}
 }}
 {{Move
 |id=Jun-df+3+4,4
@@ -1137,7 +1164,10 @@ Essence level persists between rounds.
 |tracksLeft=
 |tracksRight=
 |video=File:t8-p2-jun-df+3+4,4.mp4
-|notes=Combo from 1st CH
+|notes={{Plainlist|
+* Combo from 1st CH
+* Interrupt with i4 from 1st block
+}}
 }}
 
 == d ==
@@ -1180,7 +1210,7 @@ Essence level persists between rounds.
 |range=
 |tracksLeft=
 |tracksRight=
-|notes=
+|notes=-1c on crouching hit
 }}
 {{Move
 |id=Jun-d+4,4
@@ -1203,7 +1233,8 @@ Essence level persists between rounds.
 |video=File:t8-p2-jun-d+4,4.mp4
 |notes={{Plainlist|
 * {{BB}}
-* Combo from 1st CH}}
+* Combo from 1st CH
+* Interrupt with i6 from 1st block}}
 }}
 {{Move
 |id=Jun-d+1+2
@@ -1240,11 +1271,11 @@ Essence level persists between rounds.
 |parent=
 |input=d+3+4
 |name=Double Lift Kicks
-|alias=Can Cans
+|alias=Cancan
 |target=l,h
 |damage=5,15
 |startup=i14 i24~27
-|block=-25
+|block=-6
 |hit=+30a (+20)
 |ch=
 |crush=js5~27 fs28~30
@@ -1257,7 +1288,7 @@ Essence level persists between rounds.
 |notes={{Plainlist| 
 * Combo from 1st CH
 * Jail from 1st attack
-* -6 only if 2nd hit is blocked
+* -25 if 1st hit is blocked
 }}
 }}
 
@@ -1299,7 +1330,10 @@ Essence level persists between rounds.
 |range=
 |tracksLeft=
 |tracksRight=
-|notes=Combo from 1st hit
+|notes={{Plainlist|
+* Jail from 1st block
+* Combo from 1st hit
+}}
 }}
 {{Move
 |id=Jun-db+1,1,1+2
@@ -1322,10 +1356,13 @@ Essence level persists between rounds.
 |video=File:t8-p2-jun-db+1,1,1+2.mp4
 |notes={{Plainlist|
 * {{BB}}
-* Combo from any hit
+* Jail from 1st block with 2F delay
+* Combo from 1st hit with 2F delay
 * Restores 4 health and 4 recoverable
 * Unparryable
-* Gain 10 Kazama Essence on normal hit and 7 on airborne hit}}
+* Gain 10 Kazama Essence on normal hit and 7 on airborne hit
+* Move cannot be delayed
+* Input can be delayed by 2F}}
 }}
 {{Move
 |id=Jun-db+2
@@ -1407,6 +1444,9 @@ Essence level persists between rounds.
 |tracksRight=
 |notes={{Plainlist|
 * Combo from 1st CH
+* Interrupt with i12 from 1st block
+* Slight mid evasion
+* Can be low parried from block or normal hit only
 * Transition to r28 FC with D}}
 }}
 {{Move
@@ -1416,7 +1456,7 @@ Essence level persists between rounds.
 |input=,4
 |name=Kariashi
 |target=,L
-|damage=,16
+|damage=,16 (11)
 |startup=,i31~33
 |block=-7~-5
 |hit=+4~+6
@@ -1429,33 +1469,42 @@ Essence level persists between rounds.
 |tracksRight=
 |video=File:t8-p2-jun-db+4,4,4.mp4
 |notes={{Plainlist|
-* Transition to r28 FC with D}}
+* Airborne combo from 2nd CH (+24a (+17))
+* Transition to r28 FC with D
+* Interrupt with i12 from 2nd block
+* Can be low parried from block or normal hit only
+}}
 }}
 {{Move
 |id=Jun-db+4,1+4
 |num=55
 |parent=Jun-db+4
 |input=,1+4
+|alt=
 |name=Kariashi Hakuro
 |target=,sl,h
-|damage=,5,8
+|damage=,5 (3),8 (4)
 |startup=,i22 i17
 |block=-3
 |hit=-3
 |ch=+4
 |crush=
 |recv=r21
-|tot=92
+|tot=109
 |range=
 |tracksLeft=
 |tracksRight=
 |video=File:t8-p2-jun-db+4,1+4.mp4
 |notes={{Plainlist|
-* Combo from 1st hit
+* Combo from 1st CH with 8F delay
+* Airborne combo from 2nd or 3rd CH with 8F delay (+29a (+22))
+* Interrupt with i12 from any block
 * Links to 1+4 extensions
 * Alternate inputs:
-** db+4,4,1+2
-** db+4,4,4,1+2
+** db+4,4,n,1+4 (t124)
+** db+4,4,4,1+4 (t156)
+* Move cannot be delayed
+* Input can be delayed by 8F
 * CH advantage listed is for the last hit}}
 }}
 
@@ -1522,7 +1571,8 @@ Essence level persists between rounds.
 |tracksRight=
 |notes={{Plainlist|
 * {{Elbow}}
-* Combo from 1st hit with 15f delay
+* Combo from 1st hit with 15F delay
+* Interrupt with i4 from 1st block
 * Enter GEN +0 +11g r18 with F
 * Enter MIA +0 +11g r18 with B
 * Move can be delayed by 5F
@@ -1550,7 +1600,8 @@ Essence level persists between rounds.
 |notes={{Plainlist|
 * {{BB}}
 * Combo from 2nd CH with 4f delay
-* Input can be delayed 14f}}
+* Interrupt with i6 from 2nd block
+* Move can be delayed 14f}}
 }}
 {{Move
 |id=Jun-b+2,1,2
@@ -1573,12 +1624,15 @@ Essence level persists between rounds.
 |video=File:t8-p2-jun-b+2,1,2.mp4
 |notes={{Plainlist|
 * {{Tornado}}
-* Combo from 2nd CH with 6f delay
-* Input can be delayed 14f
-* Chip damage (9) on block
+* {{Weapon}}
+* Projectile
+* Combo from 2nd CH with 6F delay
+* Interrupt with i4 from 2nd block
+* 9 chip damage on block
 * Deals 12 damage to self (8 recoverable)
-* Unparryable
-* Gain 6 Kazama Essence on normal hit and 5 on block or airborne hit}}
+* Gain 6 Kazama Essence on normal hit and 5 on block or airborne hit
+* Move can be delayed by 14f
+}}
 }}
 {{Move
 |id=Jun-b+2,1,4
@@ -1590,7 +1644,7 @@ Essence level persists between rounds.
 |damage=,24
 |startup=,i23~25
 |block=-8~-7
-|hit=+16c
+|hit=+16cg
 |ch=
 |crush=
 |recv=r30
@@ -1602,8 +1656,9 @@ Essence level persists between rounds.
 |notes={{Plainlist|
 * {{BB}}
 * Combo from 2nd CH with 6f delay
-* Input can be delayed 14f
-* Forces tech backroll on hit}}
+* Interrupt with i4 from 2nd block
+* Move can be delayed 14f
+* Forces tech back roll on hit}}
 }}
 {{Move
 |id=Jun-b+2,2
@@ -1624,7 +1679,10 @@ Essence level persists between rounds.
 |tracksLeft=
 |tracksRight=
 |video=File:t8-p2-jun-b+2,2.mp4
-|notes=Combo from 1st hit with 5f? delay
+|notes={{Plainlist|
+* Combo from 1st hit with 15F delay
+* Interrupt with i5 from 1st block
+}}
 }}
 {{Move
 |id=Jun-b+3
@@ -1655,7 +1713,7 @@ Essence level persists between rounds.
 |input=,2
 |name=Ryuusha Renken
 |target=,M
-|damage=,22
+|damage=,22 (15)
 |startup=,i20
 |block=-9
 |hit=+30a (+15)
@@ -1669,11 +1727,15 @@ Essence level persists between rounds.
 |video=File:t8-p2-jun-b+3,2.mp4
 |notes={{Plainlist|
 * {{Tornado}}
-* Combo from 1st hit
+* {{Weapon}}
+* Projectile
+* Airborne combo from 1st hit with 25F delay (+67a (+51))
+* Interrupt with i26 from 1st block
+* Whiffs vs SW from 1st block
 * Chip damage (8) on block
 * Deals 12 damage to self (8 recoverable)
-* Unparryable
-* Gain 6 Kazama Essence on normal hit and 5 on block or airborne hit}}
+* Gain 6 Kazama Essence on normal hit and 5 on block or airborne hit
+* Move cannot be delayed}}
 }}
 {{Move
 |id=Jun-b+3,4
@@ -1695,9 +1757,11 @@ Essence level persists between rounds.
 |tracksRight=
 |video=File:t8-p2-jun-b+3,4.mp4
 |notes={{Plainlist|
-* Combo from 1st hit
+* Combo from 1st hit with 25F delay
+* Interrupt with i26 from 1st block
 * Links to db+4 extensions
-* Transition in r28 FC with D}}
+* Transition in r28 FC with D
+* Move cannot be delayed}}
 }}
 {{Move
 |id=Jun-b+4
@@ -1737,7 +1801,10 @@ Essence level persists between rounds.
 |tracksLeft=
 |tracksRight=
 |video=File:t8-p2-jun-b+4,2.mp4
-|notes=Combo from 1st hit with 8f delay
+|notes={{Plainlist|
+* Combo from 1st hit with 8f delay
+* Move cannot be interrupted
+}}
 }}
 {{Move
 |id=Jun-b+3+4
@@ -1753,14 +1820,14 @@ Essence level persists between rounds.
 |ch=
 |crush=pc7~27
 |recv=r35
-|tot=64
+|tot=58
 |range=
 |tracksLeft=
 |tracksRight=
 |video=File:t8-p2-jun-b+3+4.mp4
 |notes={{Plainlist|
 * {{BB}}
-* -8 on block after absorbing an attack}}
+* -8 and 10 chip damage on block after attack absorption}}
 }}
 
 == u ==
@@ -1875,7 +1942,7 @@ Essence level persists between rounds.
 |damage=10
 |startup=i16~18
 |block=-20
-|hit=-9
+|hit=-9s
 |ch=
 |crush=js10~40 fs41~43
 |recv=r42
@@ -1907,6 +1974,8 @@ Essence level persists between rounds.
 |notes={{Plainlist|
 * {{Tornado}}
 * Combo from 1st hit
+* Whiffs vs SSR, SWR from 1st block
+* Interrupt with i8 from 1st block
 * Transition to MIA on hit only
 * 3rd hit available only as combo from 2nd hit
 * 3rd hit deals 12 damage to self (8 recoverable)
@@ -2008,7 +2077,7 @@ Essence level persists between rounds.
 * {{BB}}
 * {{Elbow}}
 * Combo from 1st hit with 8f delay
-* Interrupt with i1
+* Interrupt with i1 from 1st block
 * +7F crumple stun on CH
 }}
 }}
@@ -2031,7 +2100,10 @@ Essence level persists between rounds.
 |tracksLeft=
 |tracksRight=
 |video=File:t8-p2-jun-f,f+2,3.mp4
-|notes=Combo from 1st hit with 8f delay
+|notes={{Plainlist|
+* Combo from 1st hit with 8f delay
+* Move cannot be interrupted
+}}
 }}
 {{Move
 |id=Jun-f,F+3
@@ -2186,7 +2258,7 @@ Essence level persists between rounds.
 |notes={{Plainlist|
 * Transition to r24 FC with D
 * Interrupt with i11 from 1st block
-* Whiffs vs SS from 1st block}}
+* Whiffs vs SS, SW from 1st block}}
 }}
 {{Move
 |id=Jun-FC.df+1
@@ -2299,6 +2371,7 @@ Essence level persists between rounds.
 |notes={{Plainlist|
 * {{Elbow}}
 * Combo from 1st hit with 4F delay
+* Move cannot be interrupted
 * Enter GEN +0 +11g r18 with F
 * Enter MIA +0 +11g r18 with B
 * Move cannot be delayed
@@ -2327,7 +2400,7 @@ Essence level persists between rounds.
 |notes={{Plainlist|
 * {{BB}}
 * Combo from 2nd CH with 4f delay
-* Interrupt with i6
+* Interrupt with i6 from 2nd block
 * Move can be delayed by 14f}}
 }}
 {{Move
@@ -2352,8 +2425,9 @@ Essence level persists between rounds.
 |notes={{Plainlist|
 * {{Tornado}}
 * Combo from 2nd CH with 6f delay
-* Input can be delayed 14f
-* Chip damage on block
+* Interrupt with i4 from 2nd block
+* Move can be delayed by 14f
+* 8 chip damage on block
 * Deals recoverable self-damage when not in Heat
 * Unparryable
 * Gain 6 Kazama Essence on normal hit and 5 on block or airborne hit}}
@@ -2380,7 +2454,8 @@ Essence level persists between rounds.
 |notes={{Plainlist|
 * {{BB}}
 * Combo from 2nd CH with 6f delay
-* Input can be delayed 14f
+* Interrupt with i4 from 2nd block
+* Move can be delayed by 14f
 * +13d on BT hit
 * Forces tech backroll on hit}}
 }}
@@ -2403,9 +2478,10 @@ Essence level persists between rounds.
 |tracksRight=
 |notes={{Plainlist|
 * {{Spike}}
-* Combo from 1st hit with 5f delay
-* Input can be delayed 10f
-* Move can be delayed 8f}}
+* Combo from 1st hit with 7F delay
+* Interrupt with i5 from 1st block
+* Move can be delayed 10f
+* Input can be delayed 12f}}
 }}
 {{Move
 |id=Jun-ws1,4,2
@@ -2428,7 +2504,8 @@ Essence level persists between rounds.
 |video=File:t8-p2-jun-ws1,4,2.mp4
 |notes={{Plainlist|
 * {{Spike}}
-* Combo from 2nd CH}}
+* Combo from 2nd CH
+* Interrupt with i5 from 2nd block}}
 }}
 {{Move
 |id=Jun-ws1,4,1+2
@@ -2452,7 +2529,9 @@ Essence level persists between rounds.
 |notes={{Plainlist|
 * {{BB}}
 * {{Elbow}}
-* Combo from 2nd CH}}
+* Combo from 2nd CH
+* Interrupt with i7 from 1st block
+* Whiffs vs SSL, SWL from 2nd block}}
 }}
 {{Move
 |id=Jun-ws2
@@ -2494,7 +2573,8 @@ Essence level persists between rounds.
 |video=File:t8-p2-jun-ws2,1.mp4
 |notes={{Plainlist|
 * {{BB}}
-* Combo from 1st hit}}
+* Combo from 1st hit
+* Interrupt with i3 from 1st block}}
 }}
 {{Move
 |id=Jun-ws3
@@ -2736,6 +2816,7 @@ Enter MIA -6, +5 r18 with B}}
 * {{BB}}
 * {{Tornado}}
 * Combo from 1st hit with 6f delay
+* Interrupt with i4 from 1st block
 * Restores 1 health on hit
 * Restores 1 additional recoverable on hit
 * Non-limb attack, unparryable by Asuka, Nina, etc
@@ -2762,8 +2843,9 @@ Enter MIA -6, +5 r18 with B}}
 |video=File:t8-p2-jun-izu.1,2.mp4
 |notes={{Plainlist|
 * {{Spike}}
-* Combo from 1st hit with 5f delay
-* Input can be delayed 6f}}
+* Combo from 1st hit with 5F delay
+* Interrupt with i5 from 1st block
+* Move can be delayed by 6F}}
 }}
 {{Move
 |id=Jun-IZU.2
@@ -2834,7 +2916,7 @@ Enter MIA -6, +5 r18 with B}}
 |range=
 |tracksLeft=
 |tracksRight=
-|notes=
+|notes=Stagger low
 }}
 {{Move
 |id=Jun-IZU.4,1
@@ -2938,7 +3020,7 @@ Enter MIA -6, +5 r18 with B}}
 |tracksRight=
 |video=File:Jun-108.mp4
 |notes={{Plainlist|
-* Cancel to r34 FC with D on frame 16
+* Transition to r18 FC with D
 * Stance moves can be delayed by 24F
 * Parries low punches or kicks
 * Parries throws}}
@@ -3034,9 +3116,10 @@ Enter MIA -6, +5 r18 with B}}
 |video=File:t8-p2-jun-gen.3,2.mp4
 |notes={{Plainlist|
 * Combo from 1st hit with 8f delay
-* Input can be delayed 10f
+* Move cannot be interrupted
 * Deals 12 damage to self (8 recoverable)
 * Unparryable
+* Move can be delayed by 10F
 * Gain 8 Kazama Essence on normal hit and 6 on block or airborne hit}}
 }}
 {{Move
@@ -3118,7 +3201,7 @@ Enter MIA -6, +5 r18 with B}}
 |input=H.GEN.1,1+2
 |name=Yomotsu Mihashira
 |target=L,M
-|damage=14,35
+|damage=14,26 (18)
 |startup=i20~21 i26~41
 |block=-14
 |hit=+25a (+7)
@@ -3133,11 +3216,12 @@ Enter MIA -6, +5 r18 with B}}
 |notes={{Plainlist|
 * {{ReversalBreak}}
 * {{BB}}
-* Jail from 1st attack
+* Jail from 1st block
+* Airborne combo from 1st hit
 * Has good left sidestep tracking
 * Restores 6 recoverable (3 on block)
-* 9 chip damage on block
-* Consumes 450f of heat timer
+* 5 chip damage on block
+* Consumes 600F of remaining Heat time
 * Gain 5 Kazama Essence on normal hit, airborne hit or block}}
 }}
 

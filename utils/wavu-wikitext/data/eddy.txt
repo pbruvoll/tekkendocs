@@ -21,7 +21,10 @@
 |id=Eddy-H.2+3
 |parent=
 |input=H.2+3
-|alt=H.RLX.2+3
+|alt={{Dotlist|
+* H.HSP.2+3
+* H.RLX.2+3
+}}
 |name=Caveirinha Zangada
 |target=m
 |damage=55
@@ -65,7 +68,7 @@
 |notes={{Plainlist|
 * {{Tornado}}
 * Transition to HSP
-* 6 chip damage on block
+* 4 chip damage on block
 }}
 }}
 {{Move
@@ -74,7 +77,7 @@
 |input=H.qcf+4
 |name=Rabo de Arraia Liberado
 |target=h
-|damage=45
+|damage=35
 |startup=i22~23
 |block=+7
 |hit=+34a(+8)
@@ -87,7 +90,7 @@
 |tracksRight=
 |notes={{Plainlist|
 * {{BB}}
-* 13 chip damage on block
+* 7 chip damage on block
 * Transition to RLX
 }}
 }}
@@ -1923,15 +1926,14 @@
 |hit=+6c
 |ch=[[Eddy combos#Mini-combos|+15c]]
 |crush=cs15~33
-|recv=FC
-|tot=
+|recv=r33 FC
+|tot=55
 |range=
 |tracksLeft=
 |tracksRight=
 |video=File:t8-p2-eddy-f,f+3.mp4
 |notes={{Plainlist|
-* Transition to RLX on hit
-* Transition to FC on block or whiff
+* Transition to RLX r33 on hit
 }}
 }}
 {{Move
@@ -1944,11 +1946,11 @@
 |damage=25
 |startup=i19~20
 |block=-12
-|hit=[[Eddy combos#Staples|+37a(+27)]]
+|hit=[[Eddy combos#Staples|+37a (+27)]]
 |ch=
-|crush=js12~26?
-|recv=HSP
-|tot=
+|crush=js12~26, fs27~
+|recv=r32 HSP
+|tot=52
 |range=
 |tracksLeft=
 |tracksRight=
@@ -1966,21 +1968,21 @@
 |name=Roda Gigante
 |target=m,M
 |damage=10,20
-|startup=i23~24
+|startup=i23~24, i5~7
 |block=+5
 |hit=+17a
 |ch=
-|crush=fs8~
-|recv=
-|tot=
+|crush=fs8~31
+|recv=r31
+|tot=63
 |range=
 |tracksLeft=
 |tracksRight=
 |video=File:t8-p2-eddy-f,f+3+4.mp4
 |notes={{Plainlist|
 * {{BB}}
-* Cancel to r18 HSP with n,f at frame 17
-* 6 Chip damage on block}}
+* Cancel to r35 HSP with n,f at frame 17
+* 6 chip damage on block}}
 }}
 {{Move
 |id=Eddy-b,B+2+3
@@ -1988,22 +1990,23 @@
 |parent=
 |input=b,B+2+3
 |name=Fruit Picker
-|target=m!
+|target=h!, h!
 |damage=25,30
-|startup=i77~79
+|startup=i77~79, i8~9
 |block=
 |hit=-37a(-46)
 |ch=
-|crush=
-|recv=
-|tot=
+|crush=js76~78, fs79, js82~94, fs95~97
+|recv=r85
+|tot=173
 |range=
 |tracksLeft=
 |tracksRight=
 |video=File:t8-p2-eddy-b,b+2+3.mp4
 |notes={{Plainlist|
 * {{BB}}
-* Can cancel with input b,B+2+3,b,b
+* Cancel to r78 standing with input b,B+2+3,b,b at frame 48
+* 20f timestop on hit
 }}
 }}
 {{Move
@@ -2029,7 +2032,8 @@
 * {{Homing}}
 * {{BB}}
 * Mandinga level increases on hit
-* Becomes +19a (-7) on hit when Mandinga level increases
+* Becomes +19a (-7) r45 on hit when Mandinga level increases
+* 10f timestop on hit
 * 7 chip damage on block
 }}
 }}
@@ -2044,19 +2048,20 @@
 |damage=30
 |startup=i25~27
 |block=+8
-|hit=+14a
+|hit=+14a (+4)
 |ch=
-|crush=js9~
-|recv=
-|tot=
+|crush=js9~35, fs36~38
+|recv=r39
+|tot=66
 |range=
 |tracksLeft=
 |tracksRight=
 |video=File:t8-p2-eddy-f,f,f+3.mp4
 |notes={{Plainlist|
-* Transition to HSP on block
+* {{BB}}
+* Transition to HSP r38 on block
 * ub,b+3: i69~71 effective startup
-* 9 Chip damage on block}}
+* 9 chip damage on block}}
 }}
 
 == Crouch ==
@@ -2796,13 +2801,14 @@
 |ch=
 |crush=cs6~55
 |recv=r20 RLX
-|tot=
+|tot=55
 |range=
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
 * Can block at frame 20? with B or DB
-* Transition to FC after 35F
+* Stance moves can be delayed by 19F
+* Transition to FC r55 with no input
 }}
 }}
 {{Move
@@ -2816,9 +2822,9 @@
 |block=-11c
 |hit=+0
 |ch=
-|crush=cs1~19
-|recv=
-|tot=
+|crush=cs1~16
+|recv=r30
+|tot=44
 |range=
 |tracksLeft=
 |tracksRight=
@@ -2838,9 +2844,9 @@
 |block=-14
 |hit=+5c
 |ch=+7a
-|crush=
-|recv=RLX
-|tot=
+|crush=cs54~58
+|recv=r32 RLX
+|tot=73
 |range=
 |tracksLeft=
 |tracksRight=
@@ -2848,6 +2854,7 @@
 |notes={{Plainlist|
 * Transition to RLX
 * Combo from 1st CH with 5F delay
+* Interrupt with i6 from 1st block
 * Move can be delayed by 9F
 * Input can be delayed by 10F
 }}
@@ -2864,8 +2871,8 @@
 |hit=+8
 |ch=
 |crush=
-|recv=
-|tot=
+|recv=r23
+|tot=42
 |range=
 |tracksLeft=
 |tracksRight=
@@ -2882,15 +2889,17 @@
 |block=-5
 |hit=+2
 |ch=
-|crush=
-|recv=
-|tot=
+|crush=fs21~30
+|recv=r32
+|tot=81
 |range=
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
 * Combo from 1st hit
-* Transition to RLX with D (+3/+10)
+* Interrupt with i8 from 1st block
+* Whiffs vs SWR from 1st block
+* Transition to RLX r24 with D (+3/+10)
 }}
 }}
 {{Move
@@ -2903,16 +2912,20 @@
 |damage=,25
 |startup=,i32~33
 |block=-14
-|hit=+15a(+6)
+|hit=+15a (+6)
 |ch=
-|crush=
-|recv=
-|tot=
+|crush=fs27~33
+|recv=r34
+|tot=116
 |range=
 |tracksLeft=
 |tracksRight=
 |video=File:t8-p2-eddy-rlx.2,4,4.mp4
-|notes={{BB}}
+|notes={{Plainlist|
+* {{BB}}
+* Combo from 2nd CH
+* Interrupt with i4 from 2nd block
+}}
 }}
 {{Move
 |id=Eddy-RLX.3
@@ -2933,6 +2946,7 @@
 |tracksRight=
 |notes={{Plainlist|
 * Transition to FC
+* Stagger low
 }}
 }}
 {{Move
@@ -2961,6 +2975,7 @@
 * +7a (+6) from 1st clean hit
 * Mandinga level increases by 1 on hit
 ** Becomes -3a (-6) on 2nd hit when gaining Mandinga
+* Clean hit less consistent vs SSR?
 }}
 }}
 {{Move

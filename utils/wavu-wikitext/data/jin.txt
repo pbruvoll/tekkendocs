@@ -69,8 +69,6 @@
 * Jail from 1st attack
 }}
 }}
-
-
 {{Move
 |id=Jin-df+2,H.1+2
 |num=
@@ -93,6 +91,7 @@
 |notes={{Plainlist|
 * {{BB}}
 * Combo from 1st hit
+* Jail from 1st block
 * Consumes 240F of remaining Heat time
 * 5 chip damage on block
 }}
@@ -298,6 +297,7 @@
 |tracksRight=
 |notes={{Plainlist|
 * {{Spike}}
+* Jail from 1st block
 * 5 chip damage on block
 }}
 }}
@@ -363,7 +363,7 @@
 * Interrupt with i6 from 1st block
 * Input can be delayed 9f
 * Move can be delayed 4f
-* Chip damage on block
+* 6 chip damage on block
 }}
 }}
 
@@ -389,7 +389,7 @@
 |notes={{Plainlist|
 * {{Spike}}
 * Interrupt with i10 from 1st block
-* Whiffs vs SSR and SWR from 1st block
+* Whiffs vs SSR, SWR from 1st block
 * Input can be delayed 9f
 * Move can be delayed 4f
 }}
@@ -468,6 +468,7 @@
 |notes={{Plainlist|
 * Combo from 2nd CH with 7f delay
 * Cannot low parry on 2nd hit
+* Interrupt with i3 from 2nd block
 * Input can be delayed 12f
 }}
 }}
@@ -510,7 +511,8 @@
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
-* Jail from 1st attack with 2f delay
+* Jail from 1st block with 2f delay
+* Combo from 1st hit with 2f delay
 * Same animation as df+1
 }}
 }}
@@ -537,6 +539,7 @@
 |notes={{Plainlist|
 * {{BB}} on CH
 * Combo from 2nd CH with 8f delay
+* Move cannot be interrupted
 * Input can be delayed 10f
 * Forces tech backroll on CH
 }}
@@ -552,8 +555,8 @@
 |damage=,20
 |startup=,i20~21
 |block=-12
-|hit=+16a
-|ch=
+|hit=+4c
+|ch=+14d
 |crush=
 |recv=r28
 |tot=90
@@ -561,7 +564,10 @@
 |tracksLeft=
 |tracksRight=
 |video=File:t8-p2-jin-2,1,4t4.mp4
-|notes=Interrupt with i16 from 2nd block
+|notes={{Plainlist|
+* Interrupt with i16 from 2nd block
+* Whiffs vs
+}}
 }}
 
 {{Move
@@ -577,8 +583,8 @@
 |hit=+7
 |ch=
 |crush=
-|recv=r29
-|tot=66
+|recv=r33
+|tot=70
 |range=
 |tracksLeft=
 |tracksRight=
@@ -587,6 +593,7 @@
 * {{BB}}
 * Combo from 1st hit with 2f delay
 * Interrupt with i4 from 1st block
+* Whiffs vs SSR from 1st block
 * Enter ZEN -6, +14g r26 with F}}
 }}
 
@@ -601,8 +608,8 @@
 |hit=+4
 |ch=
 |crush=
-|recv=
-|tot=
+|recv=r26
+|tot=40
 |range=
 |tracksLeft=
 |tracksRight=
@@ -628,6 +635,7 @@
 |tracksRight=
 |notes={{Plainlist|
 * Combo from 1st hit
+* Move cannot be interrupted
 * Enter ZEN +4 +12 r15 with F
 }}
 }}
@@ -653,6 +661,7 @@
 |video=File:t8-p2-jin-3,1,4.mp4
 |notes={{Plainlist|
 * Combo from 2nd CH with 9f delay
+* Move cannot be interrupted
 * Input can be delayed 14f
 * Move can be delayed 12f}}
 }}
@@ -770,7 +779,7 @@
 |video=File:t8-p2-jin-f+3,1.mp4
 |notes={{Plainlist|
 * {{HeatEngager}}
-* {{HeatDash|+5, +43d (+35)}}
+* {{HeatDash|+43d (+35)}}
 * Combo from 1st hit with 8F delay
 * Interrupt with i3 from 1st block
 * Move can be delayed by 7F
@@ -899,6 +908,7 @@
 |notes={{Plainlist|
 * {{BB}}
 * Combo from 1st hit with 6f delay
+* Interrupt with i1 from 1st block
 * Input can be delayed 10f
 * Move can be delayed 9f
 }}
@@ -923,9 +933,12 @@
 |tracksLeft=
 |tracksRight=
 |video=File:t8-p2-jin-df+1,4t4.mp4
-|notes=
-{{Plainlist|
+|notes={{Plainlist|
 * {{BB}}
+* Interrupt with i17 from 1st block
+* Interrupt with i10 from 1st hit
+* Whiffs vs SSR, SW from 1st block
+* Whiffs vs SS, SW from 1st hit
 }}
 }}
 
@@ -950,7 +963,7 @@
 |notes={{Plainlist|
 * {{BB}}
 * Enter Breaking Step -2 +13g r23 with df
-* Chip damage on block
+* 3 chip damage on block
 }}
 }}
 
@@ -979,6 +992,7 @@
 * {{BB}}
 * {{SAT}}
 * Combo from 1st hit with 1F delay
+* Interrupt with i5 from 1st block
 * Move cannot be delayed
 * Input can be delayed by 1F
 * 3 chip damage on block
@@ -1013,7 +1027,7 @@
 |name=Brazilian Kick
 |target=m
 |damage=20
-|startup=i23~i24
+|startup=i23~24 (i32~33)
 |block=+6c
 |hit=+13c
 |ch=
@@ -1027,6 +1041,7 @@
 |notes={{Plainlist|
 * {{Spike}}
 * Enter Breaking Step +2c +9c r27 with df
+* i32~33 effective startup (cancel takes 9f)
 }}
 }}
 
@@ -1037,7 +1052,7 @@
 |name=Right Spinning Axe Kick
 |target=m
 |damage=22
-|startup=i20~i21
+|startup=i20~21
 |block=+0
 |hit=+8c
 |ch=
@@ -1051,7 +1066,7 @@
 |notes={{Plainlist|
 * {{Spike}}
 * {{HeatEngager}}
-* {{HeatDash|+67a (+50), +5}}
+* {{HeatDash|+67a (+50)}}
 }}
 }}
 
@@ -1142,7 +1157,10 @@
 |range=
 |tracksLeft=
 |tracksRight=
-|notes=Combo from 1st CH
+|notes={{Plainlist|
+* Combo from 1st CH
+* Interrupt with i1 from 1st block
+}}
 }}
 
 {{Move
@@ -1168,6 +1186,7 @@
 * {{Tornado}}
 * {{BB}}
 * Combo from 2nd CH with 2f delay
+* Interrupt with i5 from 1st block
 * Input can be delayed 10f
 }}
 }}
@@ -1191,9 +1210,12 @@
 |tracksLeft=
 |tracksRight=
 |video=File:t8-p2-jin-d+3,4t4.mp4
-|notes=
-{{Plainlist|
+|notes={{Plainlist|
 * {{BB}}
+* Interrupt with i19 from 1st block
+* Interrupt with i8 from 1st hit
+* Whiffs vs SSR, SW from 1st block
+* Whiffs vs SS, SW from 1st hit
 }}
 }}
 
@@ -1223,6 +1245,7 @@
 |id=Jin-d+3+4
 |num=49
 |input=d+3+4
+|alt=BT.d+3+4
 |parent=
 |name=Double Lift Kick
 |target=m,m
@@ -1240,7 +1263,7 @@
 |tracksLeft=
 |tracksRight=
 |video=File:t8-p2-jin-d+3+4.mp4
-|notes=
+|notes=Can be performed in reverse during backturn (Fox Step)
 }}
 
 == db ==
@@ -1281,14 +1304,18 @@
 |startup=,i8
 |block=-12
 |hit=-7
-|ch=+43a
+|ch=
 |crush=
 |recv=r37
 |tot=61
 |range=
 |tracksLeft=
 |tracksRight=
-|notes=Jail from 1st attack
+|notes={{Plainlist|
+* Jail from 1st block
+* Combo from 1st hit
+* +43a from 1st CH
+}}
 }}
 {{Move
 |id=Jin-db+2,2,3
@@ -1298,7 +1325,7 @@
 |name=Savage Sword
 |target=,m
 |damage=,21
-|startup=,i35~i36
+|startup=,i35~36
 |block=-9
 |hit=+20a
 |ch=
@@ -1310,7 +1337,11 @@
 |tracksRight=
 |video=File:t8-p2-jin-db+2,2,3.mp4
 |notes={{Plainlist|
+* Airborne combo from 1st CH (+22a (+15))
 * Balcony break on airborne hit
+* Interrupt with i9 from 1st block
+* Interrupt with i4 from 1st hit
+* Whiffs vs SSL, SWL from 1st block
 }}
 }}
 {{Move
@@ -1321,7 +1352,7 @@
 |name=Punch > Cascade Kick
 |target=,M
 |damage=,23
-|startup=,i27~i29
+|startup=,i27~29
 |block=-8
 |hit=+7a
 |ch=
@@ -1334,6 +1365,8 @@
 |video=File:t8-p2-jin-db+2,3.mp4
 |notes={{Plainlist|
 * {{Spike}}
+* Interrupt with i7 from 1st block
+* Whiffs vs SSR from 1st block (inconsistent?)
 }}
 }}
 {{Move
@@ -1344,7 +1377,7 @@
 |name=Left Spinning Back Kick
 |target=h
 |damage=28
-|startup=i19~i21
+|startup=i19~21
 |block=-10~-8
 |hit=+17a
 |ch=
@@ -1449,6 +1482,7 @@
 |notes={{Plainlist|
 * {{Tornado}}
 * Combo from 1st hit with 8f delay
+* Interrupt with i2 from 1st block
 }}
 }}
 
@@ -1505,7 +1539,7 @@
 |name=Left Knee
 |target=m
 |damage=17
-|startup=i16
+|startup=i16 (i15~16)
 |block=-6
 |hit=+5
 |ch=
@@ -1517,6 +1551,7 @@
 |tracksRight=
 |notes={{Plainlist|
 * {{Knee}}
+* i15~16 when performing b+3,2 or transitioning into ZEN
 * Enter ZEN -2 +9 r20 with F
 }}
 }}
@@ -1543,6 +1578,7 @@
 |notes={{Plainlist|
 * {{WallCrush|+21g on hit}}
 * Combo from 1st CH with 9F delay
+* Move cannot be interrupted
 * Balcony break on airborne hit
 }}
 }}
@@ -1627,7 +1663,7 @@
 * Konshin Seikenzuki}}
 |target=m!
 |damage=50
-|startup=i75~i76
+|startup=i75~76
 |block=
 |hit=+9a (+0)
 |ch=
@@ -1652,7 +1688,7 @@
 |name=Evading Middle Strike
 |target=m
 |damage=18
-|startup=i15~i16
+|startup=i15~16
 |block=-10~-9
 |hit=+6~+7
 |ch=+19a (+10)
@@ -1727,7 +1763,7 @@
 |name=Delayed Rising Toe Kick
 |target=m
 |damage=20
-|startup=i23~i25
+|startup=i23~25
 |block=-13
 |hit=+32a (+22a)
 |ch=
@@ -1767,9 +1803,8 @@
 |video=File:t8-p2-jin-f,f+2.mp4
 |notes={{Plainlist|
 * {{HeatEngager}}
-* {{HeatDash|+36a (+26), +5}}
+* {{HeatDash|+36a (+26)}}
 * {{BB}}
-* Cannot be buffered
 * 6 chip damage on block
 }}
 }}
@@ -1782,7 +1817,7 @@
 |name=Left Axe Kick
 |target=m
 |damage=20
-|startup=i23~i25
+|startup=i23~25
 |block=-4
 |hit=+24a
 |ch=
@@ -1795,7 +1830,6 @@
 |video=File:t8-p2-jin-f,f+3.mp4
 |notes={{Plainlist|
 * {{Spike}}
-* Cannot be buffered
 }}
 }}
 {{Move
@@ -1818,6 +1852,7 @@
 |tracksRight=
 |video=File:t8-p2-jin-f,f+3,1.mp4
 |notes={{Plainlist|
+* Airborne combo from 1st hit (+33a (+26))
 * Links to 1 jab extensions (e.g. f,F+3,1,2,4)
 * Jails attack inputs (crouch assist bufferable)
 * Duckable
@@ -1832,7 +1867,7 @@
 |name=Battery Sidekick
 |target=m
 |damage=32
-|startup=i17~i18
+|startup=i17~18
 |block=-7
 |hit=+22a (+12)
 |ch=
@@ -1852,7 +1887,7 @@
 |name=
 |target=m
 |damage=15
-|startup=i15~i16
+|startup=i15~16
 |block=-7
 |hit=+4
 |ch=
@@ -1982,7 +2017,7 @@
 |name=Leaping Side Kick
 |target=m
 |damage=30
-|startup=i22~i23
+|startup=i22~23
 |block=+6
 |hit=+13a~+14a (+3~+4)
 |ch=
@@ -2012,7 +2047,7 @@
 |name=Right Sweep (2)
 |target=L
 |damage=20
-|startup=i21~i22
+|startup=i21~22
 |block=-26
 |hit=+2c
 |ch=+69a (+53)
@@ -2032,10 +2067,10 @@
 |id=Jin-ws1
 |parent=
 |input=ws1
-|name=
+|name=Solar Plexus Strike
 |target=m
 |damage=7
-|startup=i13~i14
+|startup=i13~14
 |block=-6
 |hit=+5
 |ch=
@@ -2070,6 +2105,7 @@
 * {{Spike}}
 * Combo from 1st hit with 1f delay
 * Combo from 1st CH with 10f delay
+* Move cannot be interrupted
 * Input can be delayed 13f
 * Enter ZEN -9 +2c r27 with F
 }}
@@ -2092,8 +2128,8 @@
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
-* Jail from 1st attack
-* Transition to r25 backdash with B
+* Jail from 1st block
+* Transition to r26 backdash with B
 }}
 }}
 {{Move
@@ -2157,7 +2193,10 @@
 |range=
 |tracksLeft=
 |tracksRight=
-|notes=Combo from 1st hit
+|notes={{Plainlist|
+* Combo from 1st hit
+* Interrupt with i3 from 1st block
+}}
 }}
 {{Move
 |id=Jin-ws1,3,2,1,4,2
@@ -2169,7 +2208,7 @@
 |damage=,10
 |startup=,i31~32
 |block=-16
-|hit=-8
+|hit=+15a
 |ch=
 |crush={{Plainlist|
 * ,js8~28
@@ -2181,8 +2220,10 @@
 |tracksRight=
 |video=File:t8-p2-jin-ws1,3,2,1,4,2.mp4
 |notes={{Plainlist|
-* Combo from 1st hit
+* {{BB}}
 * {{Spike}}
+* Airborne combo from 1st hit (-8d)
+* 4 chip damage on block
 }}
 }}
 {{Move
@@ -2193,7 +2234,7 @@
 |name=Solar Plexus Strike > Brazilian Kick
 |target=,m
 |damage=,20
-|startup=,i23~i24
+|startup=,i23~24
 |block=+6
 |hit=+13c
 |ch=
@@ -2206,6 +2247,9 @@
 |video=File:t8-p2-jin-ws1,3t3.mp4
 |notes={{Plainlist|
 * {{Spike}}
+* Interrupt with i15 from 1st block
+* Interrupt with i4 from 1st hit
+* Whiffs vs SSL, SW from 1st block
 * Enter Breaking Step +2 +9c with DF
 * +16a on BT hit
 }}
@@ -2298,6 +2342,8 @@
 |video=File:t8-p2-jin-ws4,4.mp4
 |notes={{Plainlist|
 * Combo from 1st hit with 1f delay
+* Interrupt with i1 from 1st block
+* Move cannot be delayed
 }}
 }}
 
@@ -2368,7 +2414,7 @@
 |name=Thrusting Uppercut
 |target=m
 |damage=20
-|startup=i16~i17
+|startup=i16~17
 |block=-13
 |hit=[[Jin_combos#Staples|+32a (+22)]]
 |ch=
@@ -2397,7 +2443,7 @@
 |name=Electric Thrusting Uppercut
 |target=M
 |damage=22
-|startup=i16~i17
+|startup=i16~17
 |block=-13
 |hit=[[Jin_combos#Staples|+36a (+26)]]
 |ch=
@@ -2412,6 +2458,7 @@
 * {{Tornado}}
 * 4 chip damage on block
 * Jab evasion
+* Recovers 4F faster on hit (t44 r27)
 }}
 }}
 {{Move
@@ -2427,7 +2474,7 @@
 |damage=20
 |startup=i11~12
 |block=-10
-|hit=[[Jin_combos#Staples|+74a (+58)]]
+|hit=[[Jin_combos#Staples|+76a (+60)]]
 |ch=
 |crush=
 |recv=r28
@@ -2439,6 +2486,7 @@
 |notes={{Plainlist|
 * {{BB}}
 * Turns into EWHF (CD.df#2) while in heat
+* Recovers 4F faster on hit (t36 r24)
 }}
 }}
 {{Move
@@ -2455,7 +2503,7 @@
 |name=Electric Wind Hook Fist
 |target=h
 |damage=25
-|startup=i11~i12
+|startup=i11~12
 |block=+5~+6
 |hit=[[Jin_combos#Staples|+76a (+60)]]
 |ch=
@@ -2479,7 +2527,7 @@
 |name=
 |target=l
 |damage=12
-|startup=i20~i21
+|startup=i20~21
 |block=-31
 |hit=+8c
 |ch=
@@ -2500,7 +2548,7 @@
 |name=Depraved Savagery
 |target=,M
 |damage=,28
-|startup=,i31~i32
+|startup=,i31~32
 |block=-16
 |hit=+21a
 |ch=
@@ -2516,8 +2564,8 @@
 |notes={{Plainlist|
 * {{BB}}
 * {{Spike}}
-* Combo from 1st hit
-* Chip damage on block
+* Airborne combo from 1st hit (-2d)
+* 8 chip damage on block
 }}
 }}
 
@@ -2587,7 +2635,7 @@
 |name=
 |target=m
 |damage=14
-|startup=i16~i17
+|startup=i16~17
 |block=-3
 |hit=+8
 |ch=
@@ -2621,13 +2669,13 @@
 |video=File:t8-p2-jin-zen.1,2.mp4
 |notes={{Plainlist|
 * {{HeatEngager}}
-* {{HeatDash|+?, +5}}
+* {{HeatDash|+36a (+26)}}
 * {{BB}}
 * Combo from 1st hit with 6f delay
-* Interrupt from 1st block with i5
+* Interrupt with i5 from 1st block
 * Input can be delayed 12f
 * Move can be delayed 11f
-* Cancel to Breaking Step -11 -12 r40 with DF on frame 20
+* Cancel to Breaking Step -22 -11 r40 with DF on frame 20
 }}
 }}
 {{Move
@@ -2668,7 +2716,7 @@
 |name=Fiendish Claw
 |target=h
 |damage=20
-|startup=i18~i19
+|startup=i18~19
 |block=-5
 |hit=+17a (+8)
 |ch=
@@ -2696,7 +2744,7 @@
 |name=Halberd Heel
 |target=m
 |damage=20
-|startup=i17~i18
+|startup=i17~18
 |block=-9
 |hit=+10g
 |ch=+22a
@@ -2722,7 +2770,7 @@
 |name=Corpse Crusher
 |target=M
 |damage=25
-|startup=i27~i33
+|startup=i27~33
 |block=+2~+8
 |hit=+17d~+23d
 |ch=
@@ -2803,7 +2851,7 @@
 |name=Black Wing Rondo
 |target=m
 |damage=20
-|startup=i14~i16
+|startup=i14~16
 |block=-16
 |hit=+31a (+21)
 |ch=
@@ -2913,7 +2961,7 @@
 |name=Double Face Kick
 |target=t
 |damage=35
-|startup=i12~i14
+|startup=i12~14
 |block=+0
 |hit=+2d
 |ch=
@@ -2938,7 +2986,7 @@
 |name=Over the Shoulder Reverse
 |target=t
 |damage=35
-|startup=i12~i14
+|startup=i12~14
 |block=-3
 |hit=+0d
 |ch=
