@@ -2,6 +2,7 @@ import { type GuideLanguage } from '../guideLanguage';
 import { de } from './de';
 import { en } from './en';
 import { es } from './es';
+import { fr } from './fr';
 import { ja } from './ja';
 import { ko } from './ko';
 import { ptBr } from './ptBr';
@@ -83,6 +84,7 @@ export const guideTexts: Record<GuideLanguage, GuideTexts> = {
   de,
   tr,
   'pt-br': ptBr,
+  fr,
 };
 
 /** Anchor id of a section. Built from the english title in every language, so links keep working */
