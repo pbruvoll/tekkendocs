@@ -9,6 +9,7 @@ export const guideLanguages = [
   'tr',
   'pt-br',
   'fr',
+  'ar',
 ] as const;
 
 export type GuideLanguage = (typeof guideLanguages)[number];
@@ -37,9 +38,10 @@ export const guideLanguageNames: Record<GuideLanguage, string> = {
   tr: 'Türkçe',
   'pt-br': 'Português (Brasil)',
   fr: 'Français',
+  ar: 'العربية',
 };
 
-const rtlGuideLanguages: readonly GuideLanguage[] = ['ur'];
+const rtlGuideLanguages: readonly GuideLanguage[] = ['ur', 'ar'];
 
 /** Text direction of a guide language. Undefined means the page default (ltr) */
 export const getGuideLanguageDir = (language: GuideLanguage) =>

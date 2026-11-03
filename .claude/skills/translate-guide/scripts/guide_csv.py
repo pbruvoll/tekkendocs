@@ -47,7 +47,7 @@ PROSE_COLUMNS = {
 }
 
 QUOTED = re.compile(r'".*?"')  # same split as app/components/TextWithCommand.tsx
-RTL_LANGUAGES = {'ur'}  # rtlGuideLanguages in app/features/guideLanguage/guideLanguage.ts
+RTL_LANGUAGES = {'ur', 'ar'}  # rtlGuideLanguages in app/features/guideLanguage/guideLanguage.ts
 LINK_URL = re.compile(r'\]\(([^)]+)\)')  # [label](url) in app/components/TextWithLinks.tsx, labels may be translated
 
 
@@ -126,9 +126,11 @@ def cmd_build(char, lang, translations_path):
         if a != b:
             errors.append(f'quoted commands differ in ({rec}, {col}): '
                           f'lost {dict(a - b)}, added {dict(b - a)}')
-        if lang in RTL_LANGUAGES and starts_with_latin(cell):
-            errors.append(f'({rec}, {col}) starts with a latin word, so the paragraph renders left-to-right: '
-                          f'reword it to start with a word in the script, e.g. {cell[:30]!r}')
+        # each line of a multi-line cell is its own paragraph
+        for line in cell.splitlines() if lang in RTL_LANGUAGES else []:
+            if starts_with_latin(line):
+                errors.append(f'({rec}, {col}) has a line starting with a latin word, so it renders left-to-right: '
+                              f'reword it to start with a word in the script, e.g. {line.strip()[:30]!r}')
         if collections.Counter(LINK_URL.findall(src)) != collections.Counter(LINK_URL.findall(cell)):
             errors.append(f'markdown link urls differ in ({rec}, {col})')
 
