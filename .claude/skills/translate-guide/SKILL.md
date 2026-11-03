@@ -10,7 +10,7 @@ A character can have more guides by other authors, `<char>-<authorSlug>-guide.cs
 translations are `<char>-<authorSlug>-guide-<lang>.csv`.
 
 1. Read the **entire** source CSV first. Later sections reuse terminology from earlier ones.
-2. Read the language's glossary in [glossaries/](./glossaries/) (`ko.md`, `ja.md`, `es.md`, `ur.md`, `ru.md`, `de.md`, `tr.md`, `pt-br.md`, `fr.md`).
+2. Read the language's glossary in [glossaries/](./glossaries/) (`ko.md`, `ja.md`, `es.md`, `ur.md`, `ru.md`, `de.md`, `tr.md`, `pt-br.md`, `fr.md`, `ar.md`).
    Use its terms. It is the accumulated result of previous runs. For a new language, first do the
    research pass below, then create `glossaries/<lang>.md` following the same shape.
 3. List the cells to translate: `python .claude/skills/translate-guide/scripts/guide_csv.py cells <char>`.
@@ -109,6 +109,8 @@ every language; the glossaries only say how to phrase them.
 | Who | Gender |
 | --- | --- |
 | Authors Koenji, Lalo, kanda, Landon D, SEAGERR, Heavenly | male |
+| Players described as "he" in the guides: Nino, Ishan, Trunkiez, Fisherboat, Romanjelly, Nick RM, Alihandal21, AyoRichie, StrikeMist, ArmorKingTV21, Chikurin | male |
+| LooneyLili (Lili resources) | female |
 | Panda | female |
 | Leo Kliesen | not stated by the game: use the name, no gendered pronoun or article |
 
@@ -145,7 +147,8 @@ Notation (`df+1,4`, `SNK 2 T!`) therefore stays left-to-right. Two things to do 
 - Start every cell with a word in the script, never with unquoted notation or a Latin name: a
   paragraph whose first letter is Latin is laid out left-to-right. Write `پال کا مرکزی مڈ پوک Df1`,
   not `Df1 پال کا…`, and `ویڈیو، از Mwkan7`, not `Mwkan7 کی ویڈیو`. Quoted commands and markdown
-  links don't count, they are isolated. The `build` command reports these.
+  links don't count, they are isolated. The `build` command reports these, for every line of a
+  multi-line cell (each line is its own paragraph).
 
 Check the result in a browser (`?lang=<lang>&preview=true`), especially the punishers and stances.
 

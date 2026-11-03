@@ -339,7 +339,7 @@ The guide authors Landon D and Lalo are male (see SKILL.md): masculine first-per
 | teleport | ٹیلی پورٹ |
 | +13g, -0 | پلس 13 (جی), صفر |
 
-Multi-line cells: the build only checks the first line, so check that every line starts with Urdu (each line is its own paragraph).
+Multi-line cells: each line is its own paragraph and must start with Urdu (the build checks every line).
 
 ## Reina
 
