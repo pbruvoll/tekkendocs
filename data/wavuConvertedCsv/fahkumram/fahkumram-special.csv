@@ -405,7 +405,7 @@ df+4,3;m, m;15, 23;i16, i25~26 (i26~27);-12;+9d;;"* Tornado
 * Low crush 15~31
 * Floating state 32~34";trn kne intr:4 js15~31 fs32~34;;Chao Suea Raid;30;;;t8-p2-fahkumram-df+4,3.mp4;Fahkumram-df+4,3;fahkumram
 df+3+4;m,m;8,16;i13, i16;-10;+8;;* Has good right sidestep tracking;;;Stomach Rupture;31;;;t8-p2-fahkumram-df+3+4.mp4;Fahkumram-df+3+4;fahkumram
-GRF.df+3+4,3;m,m, m;8,16, 23;i13, i16, i26;-9;+13g RAM;;"* Consumes GRF
+GRF.df+3+4,3;m,m, m;8,16, 23;i13, i16, i26;-9;+13 RAM;;"* Consumes GRF
 * Consumes 240F of remaining Heat Time
 * Transition to RAM r115 on hit (+13)
 * Combo from 1st hit with 25F delay (4F from 2nd hit)
@@ -602,6 +602,9 @@ uf+3+4;m,h;10,20;i18~19, i7~8;-11;+16a (-1);;"* Tornado
 * CH state on your next attack for 5 seconds ''(Tekken 7 and prior games)''
 * 10% damage increase on the next attack for 5 seconds ''(Tekken 8 season 2 patch onward)''
 * Attacks taken will be CH for 5 seconds";;;Ki Charge;55;;;t8-p2-fahkumram-1+2+3+4.mp4;Fahkumram-1+2+3+4;fahkumram
+RAM;;;;;;;"* Stance moves can be delayed by 75F
+* Transition to i23 block with b_db or after 197F in stance
+** Cannot block i10 moves";;i23,RAM;;115;RAM;;t8-p2-fahkumram-ram.mp4;Fahkumram-RAM;fahkumram
 b,f+4;h;25;i18~19;+6;+47a;;"* Reversal Break
 * Has good left sidestep tracking
 * Crumple stun
@@ -686,16 +689,6 @@ ws2,4~3,2;m, L, m;13, 15, 20;i14~15, ,i25~26;+0~+1;+13a (-4);;"* Balcony Break
 * Powered up in GRF (Fatal Ramasura)
 * Combo from 2nd hit during Heat
 * Consumes 240F of remaining Heat time";bbr elb chp:6;;Demon Horn > Ramasura;36;;;t8-p2-fahkumram-ws2,4~3,2.mp4;Fahkumram-ws2,4~3,2;fahkumram
-GRF.ws2,4~3,2;m, L, M, t;13, 15, 20, 10;i14~15, ,i25~26;+0~+1;+0d;;"* Balcony Break
-* Consumes GRF
-* Consumes 240F of remaining Heat Time
-* Combo from 2nd hit
-* Shift to attack throw on hit
-* 6 chip damage on block
-* 1 extra damage on wall splat
-* Move is delayed 2F
-* Input cannot be delayed
-* Inconsistent grounded hit";bbr chp:6;;Demon Horn > Fatal Ramasura;36;;;t8-p2-fahkumram-ws2,4~3,grf.2.mp4;Fahkumram-ws2,4~3,GRF.2;fahkumram
 ws3;m;20;i15~16;-14;+55a;;"* Knee
 * Crumple stun";kne;;Sumeru Knee;33;;;t8-p2-fahkumram-ws3.mp4;Fahkumram-ws3;fahkumram
 ws4;m;20;i11~12;-6;+5;;;;;Toe Smash;24;;;t8-p2-fahkumram-ws4.mp4;Fahkumram-ws4;fahkumram
@@ -707,22 +700,29 @@ SS.4;m;23;i15~16;-11;+38a;;"* Tornado
 FC.df+2;L;22;i19~20;-14;+4;+12a;"* Elbow
 * Opponent recovers in FDFT on CH
 * High crush 1~20";elb cs1~20;;Slant Elbow;32;;;t8-p2-fahkumram-fc.df+2.mp4;Fahkumram-FC.df+2;fahkumram
+...GRF.3;L,h;15,22 (15);i27~28,i23~24;-12;+31a (+5) / +11a (+10);;"* Balcony Break
+* Consumes GRF
+* Consumes 600F of remaining Heat time
+* Jail from 1st block
+* Airborne combo from 1st hit (+11a (+10))
+* 20f timestop on hit
+* +31a (+5) if only the 2nd hit hits
+* Input B during frames 17~25 of charge
+* Move can be delayed by 8F
+* Can always interrupt 1st hit with at least i23 even on previous counterhit
+* Effectively homing?";bbr;;Surenradjit;33;;;t8-p2-fahkumram-grf.3_4x~d.mp4;Fahkumram-GRF.3_4*~d;fahkumram
 ...GRF.3*;m;25;i36;+13 RAM;+58a;;"* Tornado
 * Guard Break
 * Reversal Break
+* Balcony Break (airborne)
 * Consumes GRF
 * Consumes 300F of remaining Heat time
 * Transition to RAM r115 on block (+13)
-* Cancel to FC with F
-* Cancel to Surendrajit with D at frames 16-24? of Tornado Kick
-* 10 chip damage on block";trn rbr chp:10;RAM,FC,Surendrajit;Fatal Tornado Kick;;;;t8-p2-fahkumram-grf.3x.mp4;Fahkumram-GRF.3*;fahkumram
-...GRF.3*~d;L,h;15,22 (15);i27~28,i23~24;-12;+31a (+5) / +11a (+10);;"* Balcony Break
-* Consumes GRF
-* Consumes 600F of remaining Heat time
-* Jails from 1st block
-* Airborne combo from 1st hit (+11a (+10))
+* Cancel to Surendrajit with D at frames 17~25 of charge
+* Crumple stun on hit
 * 20f timestop on hit
-* +31a (+5) if only the 2nd hit hits";bbr;;Surenradjit;33;;;t8-p2-fahkumram-grf.3x~d.mp4;Fahkumram-GRF.3*~d;fahkumram
+* 10 chip damage on block
+* Remaining individual string properties are identical to non-GRF equivalents (See ...4~3*)";trn rbr chp:10;RAM,Surendrajit;Fatal Tornado Kick;31;;;t8-p2-fahkumram-grf.3x.mp4;Fahkumram-GRF.3*;fahkumram
 ...GRF.4*;m;25;i36~37;+13 RAM;+42a (+32);;"* Tornado
 * Guard Break
 * Reversal Break
@@ -730,29 +730,38 @@ FC.df+2;L;22;i19~20;-14;+4;+12a;"* Elbow
 * Consumes GRF
 * Consumes 300F of remaining Heat time
 * Transition to RAM r115 on block (+13)
-* Cancel to FC with F
-* Cancel to Surendrajit with D at frames 16-24? of Tornado Kick
-* 10 chip damage on block";trn rbr kne chp:10;RAM,FC,Surendrajit;Fatal Erupting Knee;;;;t8-p2-fahkumram-grf.4x.mp4;Fahkumram-GRF.4*;fahkumram
-GRF.1+2;sp,m;20;i21;;+13g;;"* Consumes GRF
+* Cancel to Surendrajit with D at frames 17~25 of charge
+* 20f timestop on hit
+* 10 chip damage on block
+* Remaining individual string properties are identical to non-GRF equivalents (See ...3~4*)";trn rbr kne chp:10;RAM,Surendrajit;Fatal Erupting Knee;30;;;t8-p2-fahkumram-grf.4x.mp4;Fahkumram-GRF.4*;fahkumram
+GRF.1+2;sp,m;20;i21;;+13 RAM;;"* Consumes GRF
 * Consumes 450F of remaining Heat time
-* Transition to RAM r115 after absorbing an attack (+13g)
+* Transition to RAM r115 after absorbing an attack (+13)
 * Attack only occurs after attack absorption
 * Rarely blockable after absorbing an attack (-9 on block and 8 chip damage)
 * r21? freeze for the opponent after absorbing an attack 
 * i36? counterattack  effective startup
 * Power crush 5~19";pc5~19;RAM;Garuda Pressure;31;;;t8-p2-fahkumram-grf.1+2.mp4;Fahkumram-GRF.1+2;fahkumram
-RAM.1;m;20;i19;+1;+20a (+3);;"* Balcony Break
+RAM.1;m;20;i19~20;+1;+20a (+3);;"* Balcony Break
 * Elbow
-* 6 chip damage on block";bbr elb chp:6;;Nandaka;;;;t8-p2-fahkumram-ram.1.mp4;Fahkumram-RAM.1;fahkumram
-RAM.2;m!;43;i40;!;+18a (+8);;"* Balcony Break
-* Unblockable";bbr;;Sharnga;;;;t8-p2-fahkumram-ram.2.mp4;Fahkumram-RAM.2;fahkumram
-RAM.3;m;20;i21;-11;-6;;;;;;;;;t8-p2-fahkumram-ram.3.mp4;Fahkumram-RAM.3;fahkumram
-RAM.3,4;m, h;20, 25;i21, i24;-9;+13a;;"* Balcony Break
-* Combos from 1st hit
+* 6 chip damage on block";bbr elb chp:6;;Nandaka;29;;;t8-p2-fahkumram-ram.1.mp4;Fahkumram-RAM.1;fahkumram
+RAM.1+3;h!;40;i23;;-3d;;"* Homing
+* Floor Break
+* Unbreakable throw
+* Grants GRF on hit
+* Opponent recovers FUFL";hom fbr;;Sudarshana Chakra;27;;;t8-p2-fahkumram-ram.1+3.mp4;Fahkumram-RAM.1+3;fahkumram
+RAM.2;m!;43;i40;;+18a (+8);;"* Balcony Break
+* 20F timestop on hit";bbr;;Sharnga;59;;;t8-p2-fahkumram-ram.2.mp4;Fahkumram-RAM.2;fahkumram
+RAM.3;m;20;i21;-11;-6;;;;;;45;;;t8-p2-fahkumram-ram.3.mp4;Fahkumram-RAM.3;fahkumram
+RAM.3,4;m, h;20, 25;i21, i24~25;-9;+13a;;"* Balcony Break
+* Jail from 1st block with 9F delay
+* Combo from 1st hit with 9F delay
+* 20F timestop on hit
+* Move cannot be delayed
+* Input can be delayed by 9F
 * 10 chip damage on block
-* Jail from 1st attack";bbr chp:10;;Brahmastra;;;;t8-p2-fahkumram-ram.3,4.mp4;Fahkumram-RAM.3,4;fahkumram
-RAM.4;l;31;i21;-13;+11a;;* Balcony Break;bbr;;Varunapasha;;;;t8-p2-fahkumram-ram.4.mp4;Fahkumram-RAM.4;fahkumram
-RAM.db;;;;;;;* Cancels RAM;;;;;;;t8-p2-fahkumram-ram.db.mp4;Fahkumram-RAM.db;fahkumram
+* Recovers 5F faster on hit (t100 r45)";bbr chp:10;;Brahmastra;50;;;t8-p2-fahkumram-ram.3,4.mp4;Fahkumram-RAM.3,4;fahkumram
+RAM.4;l;31;i21~22;-13;+11a;;* Balcony Break;bbr;;Varunapasha;35;;;t8-p2-fahkumram-ram.4.mp4;Fahkumram-RAM.4;fahkumram
 GRF.f,F+4~3,2;L, M, t;15, 20, 10;i19~20 (i37~38), i25~26;+0~+1;+0d;;"* Balcony Break
 * Consumes GRF
 * Consumes 240F of remaining Heat Time
@@ -775,10 +784,6 @@ hFC.4;l;6;i12;-15;-4;;"* -4c on crouching hit
 Back Throw;t;50;i12;;+0d;;* Unbreakable throw;;;Checkmate;;;;t8-p2-fahkumram-back-throw.mp4;Fahkumram-Back Throw;fahkumram
 Left Throw;t;40;i12;-3;+0d;;"* Homing
 * Throw break 1";hom;;Killer Sweep;;;;t8-p2-fahkumram-left-throw.mp4;Fahkumram-Left Throw;fahkumram
-RAM.1+3;t!;40;i23;!;-3d;;"* Homing
-* Floor Break
-* Unbreakable throw
-* Grants GRF on hit";hom fbr;;Sudarshana Chakra;;;;t8-p2-fahkumram-ram.1+3.mp4;Fahkumram-RAM.1+3;fahkumram
 Right Throw;t;40;i12;-3;+0d;;"* Homing
 * Throw break 2
 * Sideswaps on hit";hom;;Raging Knee;;;;t8-p2-fahkumram-right-throw.mp4;Fahkumram-Right Throw;fahkumram
