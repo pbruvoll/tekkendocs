@@ -45,6 +45,11 @@ def _normalize_data(data):
         return ""
 
 
+# The id is kept as written on wavu, to link back to it. wavu gives its '#' as ${justFrame}
+def _normalize_id(data):
+    return _normalize_data(data).replace("${justFrame}", "#")
+
+
 def _none_to_empty(data):
     return '' if data is None else data
 
@@ -102,8 +107,8 @@ def _convert_json_movelist(move_list_json: list) -> List[dict]:
         if move["title"]["ns"] == "0":
             title = move["title"]
             move_list.append(_without_empty_values({
-                "id": _normalize_data(title["id"]),
-                "parent": _normalize_data(title["parent"]),
+                "id": _normalize_id(title["id"]),
+                "parent": _normalize_id(title["parent"]),
                 "name": _normalize_name(title["name"]),
                 "input": _normalize_data(title["input"]).replace("#", ":"),
                 # both are lists of alternate commands wrapped in html
