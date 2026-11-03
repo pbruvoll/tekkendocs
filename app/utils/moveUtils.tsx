@@ -19,10 +19,19 @@ export const createMoveId = (characterId: string, command: string): string => {
   return `${characterName}-${command}`;
 };
 
-export const charIdFromMove = (move: Pick<Move, 'id'>): string => {
-  const index = move.id.lastIndexOf('-');
-  return move.id.slice(0, index).replace(' ', '-').toLowerCase();
+/** Splits a move id like "Devil Jin-1,2" in the character name and the command.
+ * The command may hold '-' (Steve-after-2steps+1), of the names only Jack-8 does */
+const moveIdPattern = /^(Jack-8|[^-]*)-(.*)$/s;
+const splitMoveId = (id: string) => {
+  const match = moveIdPattern.exec(id);
+  return {
+    characterName: match ? match[1] : id,
+    command: match ? match[2] : '',
+  };
 };
+
+export const charIdFromMove = (move: Pick<Move, 'id'>): string =>
+  splitMoveId(move.id).characterName.replace(/ /g, '-').toLowerCase();
 
 /** The url of the move page. Without a charId, the character is taken from the move id */
 export const moveUrlFor = (
@@ -36,10 +45,8 @@ export const hasVideo = (move: Pick<Move, 'ytVideo' | 'video'>) =>
   Boolean(move.ytVideo || move.video);
 
 export const videoFileNameFromMove = (move: Move): string => {
-  return `${move.id
-    .split('-')
-    .pop()
-    ?.toLowerCase()
+  return `${splitMoveId(move.id)
+    .command.toLowerCase()
     .replace(/ /g, '-')
     .replace(/\(/g, '')
     .replace(/\)/g, '')
