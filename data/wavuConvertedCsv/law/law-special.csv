@@ -1,27 +1,26 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Transitions;Name;Recovery;Recovery state;Image;Video;Wavu id;Character id
 2+3;m;"[12;12]";i16;+1;+2c;;"* Heat Burst
-* 46f timestop at frame 14 of activation (t92)
-* Cancel to r87 with b,b on frame 42 (frame 28 of timestop)
-** t41 r27 effective recovery
-* 20f timestop on block or hit
+* Cancel to r45 with b,b on frame 42
 * 2 chip damage on block
 * 12 chip damage on hit
 * Only deals recoverable damage
 * Cannot cause a K.O.
 * Power crush 7~16";hb chp:2 pc7~16;;Heat Burst;30;;;;Law-2+3;law
-H.1+2;;;;-8~-7;+30a;+66a (+50);"* Tornado
+H.1+2;;23;;-8~-7;+30a;+66a (+50);"* Tornado
 * Weapon
-* Consumes 240F remaining Heat Time on block or whiff
-* Alternate input DSS.1+2";trn wpn;;;;;;;Law-H.1+2;law
+* Consumes 240F of remaining Heat Time";trn wpn;;;;;;;Law-H.1+2;law
 H.uf+2;h;21;i19~20;+4;+21d;;"* Weapon
 * Strong Aerial Tailspin
 * Balcony Break
 * Consumes 120F of remaining Heat Time
 * 4 chip damage on block";wpn bbr chp:4;;Gale Claw;33;;;;Law-H.uf+2;law
-H.2+3;m,t;24,4,5,5,5,7 (50);i14;+11g;+5;;"* Heat Smash
+H.2+3;m,M,t;24,23 (50);i14~15, i26~27;+11g;+5;;"* Heat Smash
 * Balcony Break
-* Transitions to DSS on block
-* 8 chip damage on block";hs bbr chp:8;;Heavenly Dragon;;;;;Law-H.2+3;law
+* Shift to attack throw on 1st hit (50dmg)
+* Transition to DSS r36 on 1st block
+* -8 on 2nd block
+* +12a (-5) on 2nd hit
+* 8 chip damage on block";hs bbr chp:8;DSS;Heavenly Dragon;37;;;;Law-H.2+3;law
 R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Removes Recoverable Health
 * Reversal Break
@@ -193,9 +192,9 @@ b+1,2;m, m;12, 12;i14, i19;-12;+2;;"* Combo from 1st hit with 11F delay
 * Move can be delayed by 14F
 * Transition to DSS with F
 ** (-10 oB, +4 oH)";;DSS;;;;;File:t8-p2-law-b+1,2,2.mp4;Law-b+1,2;law
-b+1,2,2;m, m, m;12, 12, 22;i14, ,i18;-14;+12a (+5);;"* Heat Engager
+b+1,2,2;m, m, m;12, 12, 22;i14, ,i18~19;-14;+12a (+5);;"* Heat Engager
 
-* Heat Dash +5, +43d (+35)
+* Heat Dash +43d (+35)
 
 * Balcony Break
 * Combo from 1st or 2nd hit CH with 12F delay

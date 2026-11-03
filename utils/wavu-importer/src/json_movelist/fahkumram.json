@@ -1242,7 +1242,7 @@
   {
     "block": "-9",
     "damage": ",23",
-    "hit": "+13g RAM",
+    "hit": "+13 RAM",
     "id": "Fahkumram-df+3+4,GRF.3",
     "input": ",GRF.3",
     "name": "Naga Devourer",
@@ -1596,6 +1596,7 @@
     "tot": "102"
   },
   {
+    "alt": "Fahkumram-ws2,4~3,GRF.2",
     "block": "+0~+1",
     "damage": ",20, 10",
     "hit": "+0d",
@@ -1626,50 +1627,57 @@
   {
     "crush": "pc5~19",
     "damage": "20",
-    "hit": "+13g",
+    "hit": "+13 RAM",
     "id": "Fahkumram-GRF.1+2",
     "input": "GRF.1+2",
     "name": "Garuda Pressure",
-    "notes": "* Consumes GRF\n* Consumes 450F of remaining Heat time\n* Transition to RAM r115 after absorbing an attack (+13g)\n* Attack only occurs after attack absorption\n* Rarely blockable after absorbing an attack (-9 on block and 8 chip damage)\n* r21? freeze for the opponent after absorbing an attack \n* i36? counterattack  effective startup",
+    "notes": "* Consumes GRF\n* Consumes 450F of remaining Heat time\n* Transition to RAM r115 after absorbing an attack (+13)\n* Attack only occurs after attack absorption\n* Rarely blockable after absorbing an attack (-9 on block and 8 chip damage)\n* r21? freeze for the opponent after absorbing an attack \n* i36? counterattack  effective startup",
     "recv": "r31",
     "startup": "i21",
     "target": "sp,m",
     "tot": "50"
   },
   {
+    "alt": "* 3,4~GRF.3*\n* f+3,2,4~GRF.3*\n* df+1,4~GRF.3*",
     "block": "+13 RAM",
     "damage": "25",
     "hit": "+58a",
     "id": "Fahkumram-GRF.3*",
     "input": "...GRF.3*",
     "name": "Fatal Tornado Kick",
-    "notes": "* Tornado\n* Guard Break\n* Reversal Break\n* Consumes GRF\n* Consumes 300F of remaining Heat time\n* Transition to RAM r115 on block (+13)\n* Cancel to FC with F\n* Cancel to Surendrajit with D at frames 16-24? of Tornado Kick\n* 10 chip damage on block",
+    "notes": "* Tornado\n* Guard Break\n* Reversal Break\n* Balcony Break (airborne)\n* Consumes GRF\n* Consumes 300F of remaining Heat time\n* Transition to RAM r115 on block (+13)\n* Cancel to Surendrajit with D at frames 17~25 of charge\n* Crumple stun on hit\n* 20f timestop on hit\n* 10 chip damage on block\n* Remaining individual string properties are identical to non-GRF equivalents (See ...4~3*)",
+    "recv": "r31",
     "startup": "i36",
-    "target": "m"
+    "target": "m",
+    "tot": "67"
   },
   {
-    "alt": "...GRF.4*~d",
+    "alt": "* 1,2,4,3~4*~GRF.d\n* 3,4~3*~GRF.d\n* 4,3~4*~GRF.d\n* f+3,2,4~3*~GRF.d\n* df+1,4~3*~GRF.d\n* d+3,4,3~4*~GRF.d",
     "block": "-12",
     "damage": "15,22 (15)",
     "hit": "+31a (+5) / +11a (+10)",
-    "id": "Fahkumram-GRF.3*~d",
-    "input": "...GRF.3*~d",
+    "id": "Fahkumram-GRF.3_4*~d",
+    "input": "...GRF.3_4*~d",
     "name": "Surenradjit",
-    "notes": "* Balcony Break\n* Consumes GRF\n* Consumes 600F of remaining Heat time\n* Jails from 1st block\n* Airborne combo from 1st hit (+11a (+10))\n* 20f timestop on hit\n* +31a (+5) if only the 2nd hit hits",
+    "notes": "* Balcony Break\n* Consumes GRF\n* Consumes 600F of remaining Heat time\n* Jail from 1st block\n* Airborne combo from 1st hit (+11a (+10))\n* 20f timestop on hit\n* +31a (+5) if only the 2nd hit hits\n* Input B during frames 17~25 of charge\n* Move can be delayed by 8F\n* Can always interrupt 1st hit with at least i23 even on previous counterhit\n* Effectively homing?",
     "recv": "r33",
     "startup": "i27~28,i23~24",
-    "target": "L,h"
+    "target": "L,h",
+    "tot": "85"
   },
   {
+    "alt": "* 1,2,4,3~GRF.4*\n* 4,3~GRF.4*\n* d+3,4,3~GRF.4*",
     "block": "+13 RAM",
     "damage": "25",
     "hit": "+42a (+32)",
     "id": "Fahkumram-GRF.4*",
     "input": "...GRF.4*",
     "name": "Fatal Erupting Knee",
-    "notes": "* Tornado\n* Guard Break\n* Reversal Break\n* Knee\n* Consumes GRF\n* Consumes 300F of remaining Heat time\n* Transition to RAM r115 on block (+13)\n* Cancel to FC with F\n* Cancel to Surendrajit with D at frames 16-24? of Tornado Kick\n* 10 chip damage on block",
+    "notes": "* Tornado\n* Guard Break\n* Reversal Break\n* Knee\n* Consumes GRF\n* Consumes 300F of remaining Heat time\n* Transition to RAM r115 on block (+13)\n* Cancel to Surendrajit with D at frames 17~25 of charge\n* 20f timestop on hit\n* 10 chip damage on block\n* Remaining individual string properties are identical to non-GRF equivalents (See ...3~4*)",
+    "recv": "r30",
     "startup": "i36~37",
-    "target": "m"
+    "target": "m",
+    "tot": "67"
   },
   {
     "block": "+7",
@@ -1726,6 +1734,13 @@
     "target": "t"
   },
   {
+    "id": "Fahkumram-RAM",
+    "input": "RAM",
+    "notes": "* Stance moves can be delayed by 75F\n* Transition to i23 block with b_db or after 197F in stance\n** Cannot block i10 moves",
+    "recv": "r115 RAM",
+    "tot": "220"
+  },
+  {
     "block": "+1",
     "damage": "20",
     "hit": "+20a (+3)",
@@ -1733,31 +1748,35 @@
     "input": "RAM.1",
     "name": "Nandaka",
     "notes": "* Balcony Break\n* Elbow\n* 6 chip damage on block",
-    "startup": "i19",
-    "target": "m"
+    "recv": "r29",
+    "startup": "i19~20",
+    "target": "m",
+    "tot": "49"
   },
   {
     "alt": "RAM.2+4",
-    "block": "!",
     "damage": "40",
     "hit": "-3d",
     "id": "Fahkumram-RAM.1+3",
     "input": "RAM.1+3",
     "name": "Sudarshana Chakra",
-    "notes": "* Homing\n* Floor Break\n* Unbreakable throw\n* Grants GRF on hit",
+    "notes": "* Homing\n* Floor Break\n* Unbreakable throw\n* Grants GRF on hit\n* Opponent recovers FUFL",
+    "recv": "r27",
     "startup": "i23",
-    "target": "t!"
+    "target": "h!",
+    "tot": "50"
   },
   {
-    "block": "!",
     "damage": "43",
     "hit": "+18a (+8)",
     "id": "Fahkumram-RAM.2",
     "input": "RAM.2",
     "name": "Sharnga",
-    "notes": "* Balcony Break\n* Unblockable",
+    "notes": "* Balcony Break\n* 20F timestop on hit",
+    "recv": "r59",
     "startup": "i40",
-    "target": "m!"
+    "target": "m!",
+    "tot": "99"
   },
   {
     "block": "-11",
@@ -1765,8 +1784,10 @@
     "hit": "-6",
     "id": "Fahkumram-RAM.3",
     "input": "RAM.3",
+    "recv": "r45",
     "startup": "i21",
-    "target": "m"
+    "target": "m",
+    "tot": "66"
   },
   {
     "block": "-9",
@@ -1775,10 +1796,12 @@
     "id": "Fahkumram-RAM.3,4",
     "input": ",4",
     "name": "Brahmastra",
-    "notes": "* Balcony Break\n* Combos from 1st hit\n* 10 chip damage on block\n* Jail from 1st attack",
+    "notes": "* Balcony Break\n* Jail from 1st block with 9F delay\n* Combo from 1st hit with 9F delay\n* 20F timestop on hit\n* Move cannot be delayed\n* Input can be delayed by 9F\n* 10 chip damage on block\n* Recovers 5F faster on hit (t100 r45)",
     "parent": "Fahkumram-RAM.3",
-    "startup": "i24",
-    "target": ",h"
+    "recv": "r50",
+    "startup": "i24~25",
+    "target": ",h",
+    "tot": "105"
   },
   {
     "block": "-13",
@@ -1788,14 +1811,10 @@
     "input": "RAM.4",
     "name": "Varunapasha",
     "notes": "* Balcony Break",
-    "startup": "i21",
-    "target": "l"
-  },
-  {
-    "alt": "RAM.b",
-    "id": "Fahkumram-RAM.db",
-    "input": "RAM.db",
-    "notes": "* Cancels RAM"
+    "recv": "r35",
+    "startup": "i21~22",
+    "target": "l",
+    "tot": "57"
   },
   {
     "block": "-18",
@@ -2033,20 +2052,6 @@
     "recv": "r36",
     "startup": ",i25~26",
     "target": ",m",
-    "tot": "122"
-  },
-  {
-    "block": "+0~+1",
-    "damage": ",20, 10",
-    "hit": "+0d",
-    "id": "Fahkumram-ws2,4~3,GRF.2",
-    "input": ",GRF.2",
-    "name": "Demon Horn > Fatal Ramasura",
-    "notes": "* Balcony Break\n* Consumes GRF\n* Consumes 240F of remaining Heat Time\n* Combo from 2nd hit\n* Shift to attack throw on hit\n* 6 chip damage on block\n* 1 extra damage on wall splat\n* Move is delayed 2F\n* Input cannot be delayed\n* Inconsistent grounded hit",
-    "parent": "Fahkumram-ws2,4~3",
-    "recv": "r36",
-    "startup": ",i25~26",
-    "target": ",M, t",
     "tot": "122"
   },
   {

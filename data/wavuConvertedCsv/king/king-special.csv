@@ -26,11 +26,15 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Removes Recoverable Health
 * Reversal Break
 * Damage increases with lower health, maximum 82
-* Freezes match timer on activation and on hit
-* Restores recoverable health on hit
+* Freezes match timer on activation equal to (total frame idle recovery - 5F) or 57F when canceled by any action
+* Freezes match timer on hit by 15F
+* 114F timestop on activation
+* 20F timestop on block
+* r24 opponent blockstun (r44 effective blockstun w/ timestop)
+* Restores 13 recoverable health on hit
 * Transition to attack throw on hit
 * Consumes Rage
-* Power crush 8~";ra rbr pc8~;;Anger Of The Beast;39;;;;King-R.df+1+2;king
+* Power crush 8~20";ra rbr pc8~20;;Anger Of The Beast;42;;;;King-R.df+1+2;king
 1;h;5;i10;+1;+8;;Recovers 2f faster on hit or block (t27 r17);;;Jab;19;;;File:t8-p2-king-1,2.mp4;King-1;king
 1,2;h, h;5, 15;i10, i10~12;-3;+8;;"* Jail from 1st attack with 6f delay
 * Move can be delayed 6f";;;Palm Strike;21;;;File:t8-p2-king-1,2.mp4;King-1,2;king
@@ -144,7 +148,7 @@ df+2;m;12;i13;-6;+4;;;;;;25;;;File:t8-p2-king-df+2,1.mp4;King-df+2;king
 df+2,1;m, h;12, 15;i13, i20~21;-4;+24a;;"* Balcony Break (airborne)
 * Combo from 1st CH with 13f delay
 * Move can be delayed 13f";;;Double Hook Disaster;28;;;File:t8-p2-king-df+2,1.mp4;King-df+2,1;king
-df+3;m;17;i14;-9;+6;;* Good SSR tracking;;;;28;;;File:t8-p2-king-df+3,4.mp4;King-df+3;king
+df+3;m;17;i14;-9;+6;;* Has good right sidestep tracking;;;;28;;;File:t8-p2-king-df+3,4.mp4;King-df+3;king
 df+3,4;m, h;17, 23;i14, i30;+0;+28d;;"* Balcony Break (airborne)
 * Combo from 1st CH
 * Duckable on normal hit

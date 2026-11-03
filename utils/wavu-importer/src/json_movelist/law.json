@@ -288,11 +288,11 @@
     "id": "Law-2+3",
     "input": "2+3",
     "name": "Heat Burst",
-    "notes": "* Heat Burst\n* 46f timestop at frame 14 of activation (t92)\n* Cancel to r87 with b,b on frame 42 (frame 28 of timestop)\n** t41 r27 effective recovery\n* 20f timestop on block or hit\n* 2 chip damage on block\n* 12 chip damage on hit\n* Only deals recoverable damage\n* Cannot cause a K.O.",
+    "notes": "* Heat Burst\n* Cancel to r45 with b,b on frame 42\n* 2 chip damage on block\n* 12 chip damage on hit\n* Only deals recoverable damage\n* Cannot cause a K.O.",
     "recv": "r30",
     "startup": "i16",
     "target": "m",
-    "tot": "46"
+    "tot": "92"
   },
   {
     "id": "Law-2+3+4",
@@ -514,10 +514,10 @@
     "id": "Law-b+1,2,2",
     "input": ",2",
     "name": "Dragon Storm",
-    "notes": "* Heat Engager\n\n* Heat Dash +5, +43d (+35)\n\n* Balcony Break\n* Combo from 1st or 2nd hit CH with 12F delay\n* Move can be delayed by 8F\n* Input can be delayed by 16F",
+    "notes": "* Heat Engager\n\n* Heat Dash +43d (+35)\n\n* Balcony Break\n* Combo from 1st or 2nd hit CH with 12F delay\n* Move can be delayed by 8F\n* Input can be delayed by 16F",
     "num": "48",
     "parent": "Law-b+1,2",
-    "startup": "i18",
+    "startup": "i18~19",
     "target": ",m",
     "video": "File:t8-p2-law-b+1,2,2.mp4"
   },
@@ -1589,22 +1589,25 @@
     "alt": "H.DSS.1+2",
     "block": "-8~-7",
     "ch": "+66a (+50)",
+    "damage": "23",
     "hit": "+30a",
     "id": "Law-H.1+2",
     "input": "H.1+2",
-    "notes": "* Tornado\n* Weapon\n* Consumes 240F remaining Heat Time on block or whiff\n* Alternate input DSS.1+2"
+    "notes": "* Tornado\n* Weapon\n* Consumes 240F of remaining Heat Time"
   },
   {
     "alt": "H.DSS.2+3",
     "block": "+11g",
-    "damage": "24,4,5,5,5,7 (50)",
+    "damage": "24,23 (50)",
     "hit": "+5",
     "id": "Law-H.2+3",
     "input": "H.2+3",
     "name": "Heavenly Dragon",
-    "notes": "* Heat Smash\n* Balcony Break\n* Transitions to DSS on block\n* 8 chip damage on block",
-    "startup": "i14",
-    "target": "m,t"
+    "notes": "* Heat Smash\n* Balcony Break\n* Shift to attack throw on 1st hit (50dmg)\n* Transition to DSS r36 on 1st block\n* -8 on 2nd block\n* +12a (-5) on 2nd hit\n* 8 chip damage on block",
+    "recv": "r37",
+    "startup": "i14~15, i26~27",
+    "target": "m,M,t",
+    "tot": "79"
   },
   {
     "alt": "H.b+2+4",
