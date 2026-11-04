@@ -186,7 +186,7 @@ export const characterGuideAuthors: Record<
     anna: [{ author: 'Joi', version: 'S3', translated: true }],
     azucena: [{ author: 'Koenji', version: 'S3', translated: true }],
     bryan: [{ author: 'Ty', version: 'S2', translated: true }],
-    claudio: [{ author: 'Tetsu', version: 'S2', translated: true }],
+    claudio: [{ author: 'Tetsu', version: 'S3', translated: true }],
     clive: [{ author: 'Kwstakis', version: 'S3', translated: true }],
     'devil-jin': [{ author: 'Vermilion', version: 'S2', translated: true }],
     dragunov: [{ author: 'Fear of Silence', version: 'S2', translated: true }],
