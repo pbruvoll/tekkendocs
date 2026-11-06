@@ -57,6 +57,9 @@ export const frameDataTableToJson = (
   const recoveryIndex = lowerCaseHeaders.indexOf('recovery');
   const recoveryStateIndex = lowerCaseHeaders.indexOf('recovery state');
   const characterIdIndex = lowerCaseHeaders.indexOf('character id');
+  const ytVideoIndex = lowerCaseHeaders.indexOf('yt video');
+  const ytStartIndex = lowerCaseHeaders.indexOf('yt start');
+  const ytEndIndex = lowerCaseHeaders.indexOf('yt end');
 
   // check optional columns
   if (tagsIndex >= 0) {
@@ -89,6 +92,14 @@ export const frameDataTableToJson = (
       recovery: row[recoveryIndex],
       recoveryState:
         recoveryStateIndex >= 0 ? row[recoveryStateIndex] : undefined,
+      ytVideo:
+        ytVideoIndex >= 0 && row[ytVideoIndex]
+          ? {
+              id: row[ytVideoIndex],
+              start: ytStartIndex >= 0 ? row[ytStartIndex] : undefined,
+              end: ytEndIndex >= 0 ? row[ytEndIndex] : undefined,
+            }
+          : undefined,
     };
   });
 };

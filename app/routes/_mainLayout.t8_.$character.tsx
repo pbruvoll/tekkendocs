@@ -6,17 +6,16 @@ import {
 } from 'react-router';
 import { environment } from '~/constants/environment.server';
 import { CharacterPageHeader } from '~/features/characterPage/CharacterPageHeader';
+import { applyOverrideSheet } from '~/features/overrideSheet/applyOverrideSheet.server';
 import { SheetServiceMock } from '~/mock/SheetServiceMock';
 import { SheetServiceImpl } from '~/services/sheetServiceImpl.server';
 import { charVideoInfoT8 } from '~/services/staticDataService';
 import { type CharacterFrameDataPage } from '~/types/CharacterFrameDataPage';
-import { type CharacterPageData } from '~/types/CharacterPageData';
 import { type Game } from '~/types/Game';
 import { type Move } from '~/types/Move';
 import { type RouteHandle } from '~/types/RouteHandle';
 import { type SheetService } from '~/types/SheetService';
-import { type TableData } from '~/types/TableData';
-import { applyOverride, frameDataTableToJson } from '~/utils/frameDataUtils';
+import { frameDataTableToJson } from '~/utils/frameDataUtils';
 import { getCacheControlHeaders } from '~/utils/headerUtils';
 import { videoFileNameFromMove } from '~/utils/moveUtils';
 import { type Route } from './+types/_mainLayout.t8_.$character';
@@ -52,36 +51,15 @@ export const loader = async ({ params }: Route.LoaderArgs) => {
     'frameData',
   );
 
-  let overrideNormalMoves: TableData | undefined;
-
-  let overrideSheetData: CharacterPageData | undefined;
-  if (characterId !== 'mokujin') {
-    try {
-      overrideSheetData = await service.getCharacterData(
-        game,
-        characterId,
-        'overrideFrameData',
-      );
-    } catch (e) {
-      console.warn('overrideSheetData error', e);
-    }
-  }
-
-  overrideNormalMoves = overrideSheetData?.tables.find(
-    (t) => t.name === 'frames_normal',
-  );
-
-  // const sheetData = await sheetDataPromise
-
   const { tables } = sheetData;
 
   const normalMoves = tables.find((t) => t.name === 'frames_normal');
   const moves: Move[] = normalMoves
     ? frameDataTableToJson(normalMoves, characterId)
     : [];
-  if (overrideNormalMoves) {
-    applyOverride(moves, overrideNormalMoves);
-  }
+  // The videos of the override sheets are part of the frame data csv. Comment this in
+  // to see a change in an override sheet right away, without uploading the frame data again
+  await applyOverrideSheet(service, game, characterId, moves);
   if (charVideoInfoT8[characterId]?.autoGenerateFileName) {
     moves.forEach((move) => {
       if (!move.video) {

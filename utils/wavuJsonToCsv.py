@@ -5,7 +5,17 @@ import json
 import csv
 import re
 import wavuParsing
+import wavuOverrides
 csvSep = ";"
+
+defaultOverrideDir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data", "t8", "overrides")
+
+# added after "Character id" from the override files, see wavuOverrides
+overrideColumns = [
+    {"wavuId": "yt_video", "displayName": "YT Video"},
+    {"wavuId": "yt_start", "displayName": "YT Start"},
+    {"wavuId": "yt_end", "displayName": "YT End"},
+]
 
 allTrans = {}
 
@@ -127,7 +137,7 @@ def correctMove(move, charName) :
     
 #input is a folder for a character which may contain multiple csv files (special moves, throws etc).
 #one json file will be generated for each chracter conntaining move type as key
-def convert(filePath, outDir):
+def convert(filePath, outDir, overrideDir=defaultOverrideDir):
     fileName = os.path.basename(filePath)
     charName = fileName.split(".")[0]
     print("Converting data for " + charName)
@@ -145,14 +155,17 @@ def convert(filePath, outDir):
     # the json only holds the raw values of each move, so join them with their
     # parents and derive tags and notes before converting
     moves = wavuParsing.parse_movelist(jsonData)
-    csvContent = [list(map(lambda x: x["displayName"], columns)) + ["Character id"]];
+    csvContent = [list(map(lambda x: x["displayName"], columns)) + ["Character id"] + list(map(lambda x: x["displayName"], overrideColumns))];
     for move in moves :
         if charName == "miary-zo" or charName == "fahkumram" or charName == "anna" or charName == "armor-king" or charName == "shaheen" or charName == "kunimitsu" or charName == "bob":
             generateVideoLink(move)
     for move in moves :
         fillMissingVideoFromExtendedInput(move, moves)
         correctMove(move, charName)
-        csvContent.append(list(map(lambda x: move.get(x["wavuId"], ""), columns)) + [charName]);
+    # matched on the corrected command, the same as the site did when it applied them
+    wavuOverrides.applyOverrides(moves, wavuOverrides.loadOverrides(overrideDir, charName), charName)
+    for move in moves :
+        csvContent.append(list(map(lambda x: move.get(x["wavuId"], ""), columns)) + [charName] + list(map(lambda x: move.get(x["wavuId"], ""), overrideColumns)));
     
     outputFilePath = os.path.join(charOutDir, charName + "-special.csv")
     outputFile = open(outputFilePath, "w", newline="", encoding='utf-8')

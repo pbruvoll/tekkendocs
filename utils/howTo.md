@@ -51,6 +51,9 @@ This is also where the data is interpreted. utils\wavuJsonToCsv.py uses utils\wa
 each move with its parent chain, to derive values which do not exist in wavu (such as tags) and to
 sort the moves.
 
+YouTube videos from the override sheets are added from data\t8\overrides. After changing an override
+sheet, run `scripts/download-overrides.bat`, then convert and upload again.
+
 ### How to upload the data to tekkendocs
 
 Now the data can be uploaded to the spread sheet in the normal way. Run the command
