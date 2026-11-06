@@ -276,7 +276,7 @@
     "parent": "Miary Zo-4",
     "recv": "r32",
     "startup": ",i29~30",
-    "target": ",h",
+    "target": ",m",
     "tot": "74"
   },
   {
@@ -1309,17 +1309,18 @@
   },
   {
     "block": "-18",
-    "crush": "pc8~",
+    "crush": "pc8~20",
     "damage": "55+",
     "hit": "+0d",
     "id": "Miary Zo-R.df+1+2",
     "input": "R.df+1+2",
     "name": "Hazon'n Andriamanitry ny Hay-ady",
-    "notes": "* Rage Art\n* Removes Recoverable Health\n* Reversal Break\n* Damage increases with lower health, maximum 82\n* Freezes match timer on activation and on hit\n* Restores recoverable health on hit\n* Transition to attack throw on hit\n* Consumes Rage",
+    "notes": "* Rage Art\n* Removes Recoverable Health\n* Reversal Break\n* Damage increases with lower health, maximum 82\n* Freezes match timer on activation equal to (total frame idle recovery - 5F) or 57F when canceled by any action\n* Freezes match timer on hit by 15F\n* 114F timestop on activation\n* 20F timestop on block\n* r24 opponent blockstun (r44 effective blockstun w/ timestop)\n* Restores 13 recoverable health on hit\n* Transition to attack throw on hit\n* Consumes Rage",
     "num": "20",
-    "recv": "r39",
+    "recv": "r42",
     "startup": "i20",
-    "target": "m,t"
+    "target": "m,t",
+    "tot": "62"
   },
   {
     "block": "-3",

@@ -19,11 +19,15 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Removes Recoverable Health
 * Reversal Break
 * Damage increases with lower health, maximum 82
-* Freezes match timer on activation and on hit
-* Restores recoverable health on hit
+* Freezes match timer on activation equal to (total frame idle recovery - 5F) or 57F when canceled by any action
+* Freezes match timer on hit by 15F
+* 114F timestop on activation
+* 20F timestop on block
+* r24 opponent blockstun (r44 effective blockstun w/ timestop)
+* Restores 13 recoverable health on hit
 * Transition to attack throw on hit
 * Consumes Rage
-* Power crush 8~";ra rbr pc8~;;Hazon'n Andriamanitry ny Hay-ady;39;;;t8-p2-miary-zo-r.df+1+2.mp4;Miary Zo-R.df+1+2;miary-zo;cfCA9iRR1Wg;47;63
+* Power crush 8~20";ra rbr pc8~20;;Hazon'n Andriamanitry ny Hay-ady;42;;;t8-p2-miary-zo-r.df+1+2.mp4;Miary Zo-R.df+1+2;miary-zo;cfCA9iRR1Wg;47;63
 1;h;5;i10;+1;+8;;Recovers 2f faster on hit or block (t27 r17);;;Jab;19;;;t8-p2-miary-zo-1.mp4;Miary Zo-1;miary-zo;pFj8Tq7nlvs;3;10
 1,1;h, h;5, 5;i10, i16;-4;+3;;"* Jail from 1st attack with 2f delay
 * Combo from 1st hit with 4f delay
@@ -87,7 +91,7 @@ R.df+1+2;m,t;55+;i20;-18;+0d;;"* Rage Art
 * Low crush 14~31
 * Floating state 32~34";he bbr intr:4 chp:4 js14~31 fs32~34;;Basy Lelafo;30;;;t8-p2-miary-zo-3,2.mp4;Miary Zo-3,2;miary-zo;pFj8Tq7nlvs;50;56
 4;h;12;i12;-12;-2;;;;;;38;;;t8-p2-miary-zo-4.mp4;Miary Zo-4;miary-zo;pFj8Tq7nlvs;56;63
-4,4;h, h;12, 20;i12, i29~30;-13;+6;;"* Interrupt with i2 from 1st block
+4,4;h, m;12, 20;i12, i29~30;-13;+6;;"* Interrupt with i2 from 1st block
 * Transition to BAO +6 r26 automatically on hit only
 * Cancel BAO transition -13 +0 r32 with B
 * Low crush 30~50
