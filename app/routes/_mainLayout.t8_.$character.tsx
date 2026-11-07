@@ -57,9 +57,11 @@ export const loader = async ({ params }: Route.LoaderArgs) => {
   const moves: Move[] = normalMoves
     ? frameDataTableToJson(normalMoves, characterId)
     : [];
-  // The videos of the override sheets are part of the frame data csv. Comment this in
-  // to see a change in an override sheet right away, without uploading the frame data again
-  await applyOverrideSheet(service, game, characterId, moves);
+  // The videos of the override sheets are part of the frame data csv. Enable this to see
+  // a change in an override sheet right away, without uploading the frame data again
+  await applyOverrideSheet(service, game, characterId, moves, {
+    enabled: false,
+  });
   if (charVideoInfoT8[characterId]?.autoGenerateFileName) {
     moves.forEach((move) => {
       if (!move.video) {
