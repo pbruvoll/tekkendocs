@@ -153,4 +153,42 @@ describe('getEligibleQuizMoves', () => {
       getEligibleQuizMoves([asukaTenHitPart, kingOneTwo]).map(({ id }) => id),
     ).toEqual(['King-1,2']);
   });
+
+  test('filters out moves that borrow the video of a longer move in the string', () => {
+    // Nina's df+3,2 and df+3,2,1 have no video of their own and get the
+    // df+3,2,1,4 video as a fallback on import. A branch without a video sits
+    // between df+3,2,1 and df+3,2,1,4.
+    const ninaVideo = 'File:t8-p2-nina-df+3,2,1,4.mp4';
+    const ninaMoves = [
+      createMove({
+        command: 'df+3,2',
+        hitLevel: 'm, h',
+        id: 'Nina-df+3,2',
+        video: ninaVideo,
+      }),
+      createMove({
+        command: 'df+3,2,1',
+        hitLevel: 'm, h, h',
+        block: '-3',
+        id: 'Nina-df+3,2,1',
+        video: ninaVideo,
+      }),
+      createMove({
+        command: 'df+3,2,1,2',
+        hitLevel: 'm, h, h, h',
+        id: 'Nina-df+3,2,1,2',
+        video: '',
+      }),
+      createMove({
+        command: 'df+3,2,1,4',
+        hitLevel: 'm, h, h, L',
+        block: '-13',
+        id: 'Nina-df+3,2,1,4',
+        video: ninaVideo,
+      }),
+    ];
+    expect(getEligibleQuizMoves(ninaMoves).map(({ id }) => id)).toEqual([
+      'Nina-df+3,2,1,4',
+    ]);
+  });
 });
