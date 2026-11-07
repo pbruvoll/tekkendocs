@@ -75,7 +75,7 @@ export const hasVisibleProperties = (move: Move): boolean => {
 
 // When we import moves from wavu, a move without its own video gets the video
 // of a longer move in the same string as a fallback
-// (fillMissingVideoFromExtendedInput in utils/wavuJsonToCsv.py), e.g. Nina's
+// (fillMissingVideosFromExtendedInput in utils/wavuJsonToCsv.py), e.g. Nina's
 // df+3,2,1 shows df+3,2,1,4. Such a move does not have a video that strictly
 // matches its command, so it is left out of the quiz.
 const createBorrowedVideoCheck = (moves: Move[]) => {
