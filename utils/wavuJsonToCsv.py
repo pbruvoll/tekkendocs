@@ -69,21 +69,24 @@ def getTransitions(move) :
     allTrans.update({element: "1" for element in destinations})
     return ",".join(destinations)
 
-def fillMissingVideoFromExtendedInput(move, moves):
-    if move.get("video"):
-        return
+# inputs are separated by ", " in the hit level, hits of one input by "," ("m, h, m,t")
+def countInputs(move):
+    return len(move.get("target", "").split(", "))
 
-    moveInput = move.get("input", "")
-    if not moveInput:
-        return
+# a move without its own video gets the video of the shortest longer move in the same
+# string, so Lidia 2 shows 2,2 and not the 10-hit string 2,1,4,4,1,2,1,3,2,1
+def fillMissingVideosFromExtendedInput(moves):
+    ownVideos = [(move["input"], move["video"], countInputs(move)) for move in moves if move.get("video") and move.get("input")]
+    for move in moves:
+        moveInput = move.get("input", "")
+        if move.get("video") or not moveInput:
+            continue
 
-    inputPrefix = moveInput + ","
-    for otherMove in moves:
-        otherVideo = otherMove.get("video")
-        otherInput = otherMove.get("input", "")
-        if otherVideo and otherInput.startswith(inputPrefix):
-            move["video"] = otherVideo
-            break
+        inputPrefix = moveInput + ","
+        candidates = [(video, inputCount) for (otherInput, video, inputCount) in ownVideos if otherInput.startswith(inputPrefix)]
+        if candidates:
+            # min keeps the first of the moves with the fewest inputs
+            move["video"] = min(candidates, key=lambda candidate: candidate[1])[0]
 
 def generateVideoLink(move) :
     if move.get("video") :
@@ -160,8 +163,8 @@ def convert(filePath, outDir, overrideDir=defaultOverrideDir):
         if charName == "miary-zo" or charName == "fahkumram" or charName == "anna" or charName == "armor-king" or charName == "shaheen" or charName == "kunimitsu" or charName == "bob":
             generateVideoLink(move)
     for move in moves :
-        fillMissingVideoFromExtendedInput(move, moves)
         correctMove(move, charName)
+    fillMissingVideosFromExtendedInput(moves)
     # matched on the corrected command, the same as the site did when it applied them
     wavuOverrides.applyOverrides(moves, wavuOverrides.loadOverrides(overrideDir, charName), charName)
     for move in moves :

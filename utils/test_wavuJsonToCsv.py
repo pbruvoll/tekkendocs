@@ -7,7 +7,7 @@ Run them from the root of the project with
 
 import unittest
 
-from wavuJsonToCsv import getTransitions
+from wavuJsonToCsv import fillMissingVideosFromExtendedInput, getTransitions
 
 
 # every move below is taken from data/wavuConvertedCsv, given by the id in the
@@ -88,3 +88,70 @@ class GetTransitionsTest(unittest.TestCase) :
         # throws have no recv field in wavu, so recovery_state is missing entirely
         move = {"notes": "* Transition to BT on hit"}
         self.assertEqual(getTransitions(move), "BT")
+
+
+def videosByInput(moves) :
+    fillMissingVideosFromExtendedInput(moves)
+    return {move["input"]: move.get("video", "") for move in moves}
+
+
+class FillMissingVideosFromExtendedInputTest(unittest.TestCase) :
+
+    def test_uses_the_extension_with_the_fewest_inputs(self) :
+        # Lidia's 10-hit string comes before 2,2 in the move list
+        moves = [
+            {"input": "2", "target": "h"},
+            {"input": "2,1", "target": "h, h"},
+            {"input": "2,1,4,4,1,2,1,3,2,1", "target": "h, h, h, l, m, h, h, m, m, m", "video": "lidia-2,1,4,4,1,2,1,3,2,1.mp4"},
+            {"input": "2,2", "target": "h, h", "video": "lidia-2,2.mp4"},
+        ]
+        self.assertEqual(videosByInput(moves), {
+            "2": "lidia-2,2.mp4",
+            "2,1": "lidia-2,1,4,4,1,2,1,3,2,1.mp4",
+            "2,1,4,4,1,2,1,3,2,1": "lidia-2,1,4,4,1,2,1,3,2,1.mp4",
+            "2,2": "lidia-2,2.mp4",
+        })
+
+    def test_counts_an_input_with_several_hits_once(self) :
+        # Victor's f+2,2,2 ends in one input with three hits, f+2,2,1,1 has four inputs
+        moves = [
+            {"input": "f+2", "target": "h"},
+            {"input": "f+2,2,1,1", "target": "h, h, m, m", "video": "f+2,2,1,1.mp4"},
+            {"input": "f+2,2,2", "target": "h, h, h,m,m", "video": "f+2,2,2.mp4"},
+        ]
+        self.assertEqual(videosByInput(moves)["f+2"], "f+2,2,2.mp4")
+
+    def test_counts_the_inputs_on_the_hit_level(self) :
+        # Jin's d+3,4~4 comes out as one hit after d+3, so it is shorter than d+3,4,3
+        moves = [
+            {"input": "d+3", "target": "l"},
+            {"input": "d+3,4", "target": "l, h"},
+            {"input": "d+3,4,3", "target": "l, h, m", "video": "d+3,4,3.mp4"},
+            {"input": "d+3,4~4", "target": "l, m", "video": "d+3,4t4.mp4"},
+        ]
+        self.assertEqual(videosByInput(moves)["d+3"], "d+3,4t4.mp4")
+
+    def test_only_uses_videos_the_moves_have_of_their_own(self) :
+        # 1,1 gets the video of 1,1,1, but 1 must not take it from 1,1 over 1,2
+        moves = [
+            {"input": "1", "target": "h"},
+            {"input": "1,1", "target": "h, h"},
+            {"input": "1,1,1", "target": "h, h, m", "video": "1,1,1.mp4"},
+            {"input": "1,2", "target": "h, h", "video": "1,2.mp4"},
+        ]
+        self.assertEqual(videosByInput(moves)["1"], "1,2.mp4")
+
+    def test_only_uses_moves_of_the_same_string(self) :
+        # 1+2 starts with 1 but is not part of a string that starts with 1
+        moves = [
+            {"input": "1"},
+            {"input": "1+2,1", "video": "1+2,1.mp4"},
+        ]
+        self.assertEqual(videosByInput(moves)["1"], "")
+
+    def test_keeps_the_video_a_move_has(self) :
+        moves = [
+            {"input": "1", "video": "1.mp4"},
+            {"input": "1,2", "video": "1,2.mp4"},
+        ]
+        self.assertEqual(videosByInput(moves)["1"], "1.mp4")
