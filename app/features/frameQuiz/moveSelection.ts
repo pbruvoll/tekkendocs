@@ -73,14 +73,30 @@ export const hasVisibleProperties = (move: Move): boolean => {
   return Object.keys(move.tags || {}).length > 0;
 };
 
-export const getEligibleQuizMoves = (moves: Move[]): QuizMove[] => {
-  return moves.reduce<QuizMove[]>((current, move, currentIndex) => {
-    if (!move.video) {
-      return current;
+// When we import moves from wavu, a move without its own video gets the video
+// of a longer move in the same string as a fallback
+// (fillMissingVideoFromExtendedInput in utils/wavuJsonToCsv.py), e.g. Nina's
+// df+3,2,1 shows df+3,2,1,4. Such a move does not have a video that strictly
+// matches its command, so it is left out of the quiz.
+const createBorrowedVideoCheck = (moves: Move[]) => {
+  const commandsByVideo = new Map<string, string[]>();
+  for (const move of moves) {
+    if (move.video) {
+      const commands = commandsByVideo.get(move.video) ?? [];
+      commands.push(move.command);
+      commandsByVideo.set(move.video, commands);
     }
+  }
+  return (move: Move): boolean =>
+    (commandsByVideo.get(move.video ?? '') ?? []).some((command) =>
+      command.startsWith(`${move.command},`),
+    );
+};
 
-    if (move.video === moves[currentIndex + 1]?.video) {
-      // Avoid fallback full-string videos duplicated across move rows.
+export const getEligibleQuizMoves = (moves: Move[]): QuizMove[] => {
+  const hasBorrowedVideo = createBorrowedVideoCheck(moves);
+  return moves.reduce<QuizMove[]>((current, move) => {
+    if (!move.video || hasBorrowedVideo(move)) {
       return current;
     }
 
