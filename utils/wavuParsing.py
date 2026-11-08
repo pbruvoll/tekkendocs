@@ -32,6 +32,7 @@ class MoveCategory(enum.Enum):
     SIDESTEP = "SIDESTEP"
     STANCE = "Stance"
     FULL_CROUCH = "Full_crouch"
+    TEN_HIT_STRING = "Ten_hit_string"
     OTHER = "Other"
 
 SORT_ORDER: Dict[MoveCategory, int] = {
@@ -56,6 +57,8 @@ SORT_ORDER: Dict[MoveCategory, int] = {
     MoveCategory.FULL_CROUCH: 120,
     MoveCategory.STANCE: 121,
     MoveCategory.THROW: 130,
+    # 10-hit strings are not that important, so they go last
+    MoveCategory.TEN_HIT_STRING: 140,
 }
 
 
@@ -322,7 +325,13 @@ def crush_to_note(crushList: list) :
     return "* " + "\n* ".join(crushList).replace("ps", "Parry state ").replace("pc", "Power crush ").replace("js", "Low crush ").replace("cs", "High crush ").replace("fs", "Floating state ")
 
 
+def is_ten_hit_string_move(move: dict) -> bool:
+    return any(line.strip().lower() == "* 10-hit combo string" for line in move.get("notes", "").split("\n"))
+
+
 def get_move_category(move: dict) -> MoveCategory:
+    if is_ten_hit_string_move(move) :
+        return MoveCategory.TEN_HIT_STRING
     if(move["target"].startswith("t")) :
         return MoveCategory.THROW
 

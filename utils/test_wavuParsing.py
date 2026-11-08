@@ -7,7 +7,7 @@ Run them from the root of the project with
 
 import unittest
 
-from wavuParsing import parse_notes, parse_recovery
+from wavuParsing import parse_notes, parse_recovery, sort_moves
 
 
 # every recv value below is taken from a move in
@@ -89,3 +89,25 @@ class ParseNotesDuckableTest(unittest.TestCase) :
         (short_notes, tags) = parse_notes(notes)
         self.assertEqual(short_notes, notes)
         self.assertEqual(tags, "dck")
+
+
+class SortMovesTest(unittest.TestCase) :
+
+    def test_puts_ten_hit_strings_last(self) :
+        # Lidia's 10-hit string starts with 2,1, so it would sort between 2 and 2,2
+        moves = [
+            {"input": "2,1,4", "target": "h, h, h", "notes": "* Balcony Break\n* 10-hit combo string"},
+            {"input": "2,2", "target": "h, h", "notes": "* Combo from 1st hit"},
+            {"input": "2,1", "target": "h, h", "notes": "* 10-hit combo string"},
+            {"input": "1+3", "target": "t", "notes": ""},
+            {"input": "2", "target": "h", "notes": ""},
+        ]
+        self.assertEqual([move["input"] for move in sort_moves(moves)], ["2", "2,2", "1+3", "2,1", "2,1,4"])
+
+    def test_keeps_moves_that_only_link_to_a_ten_hit_string(self) :
+        # Nina's df+3,2,1 only links to her 10-hit string
+        moves = [
+            {"input": "df+3,3", "target": "m, m", "notes": ""},
+            {"input": "df+3,2,1", "target": "m, h, h", "notes": "* Links to 10-hit combo"},
+        ]
+        self.assertEqual([move["input"] for move in sort_moves(moves)], ["df+3,2,1", "df+3,3"])
