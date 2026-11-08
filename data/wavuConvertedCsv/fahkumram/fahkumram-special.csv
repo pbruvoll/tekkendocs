@@ -476,54 +476,6 @@ db+2,2;m, m;16, 16;i16~17, i25~26;-13;+1;;"* Elbow
 * Combo from 1st hit
 * Interrupt with i6 from 1st block
 * Links to 10-hit string";elb intr:6;string;Lightning Rod;33;;;File:t8-p2-fahkumram-db+2,2;Fahkumram-db+2,2;fahkumram;Vl8brO39sto;342;350
-db+2,2,3;m, m, L;16, 16, 7;i16~17, ,i30;-20;-9;;"* 10-hit combo string
-* Interrupt with i9 from 2nd block
-* Similar move to d+3";intr:9;;3rd Hit;39;;;t8-p2-fahkumram-db+2,2,3.mp4;Fahkumram-db+2,2,3;fahkumram;;;
-db+2,2,3,4;m, m, L, h;16, 16, 7, 8;i16~17, ,i20;-20;-8;;"* Balcony Break on airborne hit
-* 10-hit combo string
-* Interrupt with i1 from 3rd block
-* Move cannot be delayed
-* Input can be delayed by 1F
-* i21 effective startup
-* Similar move to d+3,4";intr:1;;4th Hit;38;;;t8-p2-fahkumram-db+2,2,3,4.mp4;Fahkumram-db+2,2,3,4;fahkumram;;;
-db+2,2,3,4,3;m, m, L, h, h;16, 16, 7, 8, 8;i16~17, ,i19~20;-22;-9;;"* 10-hit combo string
-* Combo from 4th hit
-* Move cannot be interrupted
-* Similar move to d+3,4,3";;;5th Hit;40;;;t8-p2-fahkumram-db+2,2,3,4,3.mp4;Fahkumram-db+2,2,3,4,3;fahkumram;;;
-db+2,2,3,4,3,4;m, m, L, h, h, m;16, 16, 7, 8, 8, 10;i16~17, ,i25;-21;-10;;"* Knee
-* 10-hit combo string
-* Interrupt with i6 from 5th block
-* Whiffs vs SSR from 5th block
-* Similar move to b+4";kne stp:SSR intr:6;;6th Hit;40;;;t8-p2-fahkumram-db+2,2,3,4,3,4.mp4;Fahkumram-db+2,2,3,4,3,4;fahkumram;;;
-db+2,2,3,4,3,4,3;m, m, L, h, h, m, m;16, 16, 7, 8, 8, 10, 10;i16~17, ,i24;-18;-2;;"* Knee
-* 10-hit combo string
-* Combo from 6th hit with 1F delay
-* Interrupt with i5 from 6th block
-* Move cannot be delayed
-* Input can be delayed by 1F
-* Similar move to b+4,3";kne intr:5;;7th Hit;30;;;t8-p2-fahkumram-db+2,2,3,4,3,4,3.mp4;Fahkumram-db+2,2,3,4,3,4,3;fahkumram;;;
-db+2,2,3,4,3,4,3,2;m, m, L, h, h, m, m, m;16, 16, 7, 8, 8, 10, 10, 15;i16~17, ,i31~32;-20;+15a;;"* Elbow
-* Knee
-* 10-hit combo string
-* Combo from 7th CH with 1F delay
-* Interrupt with i12 from 7th block
-* Whiffs vs SSR from 7th block
-* Move cannot be delayed
-* Input can be delayed by 1F
-* Similar move to b+3,4,2";elb kne stp:SSR intr:12;;8th Hit;40;;;t8-p2-fahkumram-db+2,2,3,4,3,4,3,2.mp4;Fahkumram-db+2,2,3,4,3,4,3,2;fahkumram;;;
-db+2,2,3,4,3,4,3,2,3;m, m, L, h, h, m, m, m, L;16, 16, 7, 8, 8, 10, 10, 15, 10 (7);i16~17, ,i27;-26;+16a / (+6a (-1));;"* 10-hit combo string
-* Airborne combo from 7th CH or 8th hit (+6a (-1))
-* Interrupt with i6 from 8th block
-* Similar move to f,F+4~3";intr:6;;9th Hit;45;;;t8-p2-fahkumram-db+2,2,3,4,3,4,3,2,3.mp4;Fahkumram-db+2,2,3,4,3,4,3,2,3;fahkumram;;;
-db+2,2,3,4,3,4,3,2,3,2;m, m, L, h, h, m, m, m, L, m;16, 16, 7, 8, 8, 10, 10, 15, 10 (7), 20 (14/10);i16~17, ,i25~26;-30;+19a (+9) / +0a (-7) / +3a (-4);;"* Elbow
-* 10-hit combo string
-* Airborne combo from 9th hit with 2F delay (+0a (-7))
-* Airborne combo from 7th CH or 8th hit with 2F delay (+3a (-4))
-* Interrupt with i7 from 9th block
-* Whiffs vs SSR from 9th block
-* Move cannot be delayed
-* Input can be delayed by 2F
-* Similar move to f,F+4~3,2";elb stp:SSR intr:7;;10 Hit Combo;50;;;t8-p2-fahkumram-db+2,2,3,4,3,4,3,2,3,2.mp4;Fahkumram-db+2,2,3,4,3,4,3,2,3,2;fahkumram;;;
 db+4;h;23;i20~21;-6;+35a;;"* Strong Aerial Tailspin
 * Balcony Break
 * 2nd active frame is inactive when blocked on 1st active frame
@@ -789,3 +741,51 @@ Right Throw;t;40;i12;-3;+0d;;"* Homing
 * Sideswaps on hit";hom;;Raging Knee;;;;t8-p2-fahkumram-right-throw.mp4;Fahkumram-Right Throw;fahkumram;;;
 uf+1+2;t;40;i12;-3;+0d;;"* Balcony Break
 * Throw break 1+2";bbr;;Genocidal Rush;27;;;t8-p2-fahkumram-uf+1+2.mp4;Fahkumram-uf+1+2;fahkumram;;;
+db+2,2,3;m, m, L;16, 16, 7;i16~17, ,i30;-20;-9;;"* 10-hit combo string
+* Interrupt with i9 from 2nd block
+* Similar move to d+3";intr:9;;3rd Hit;39;;;t8-p2-fahkumram-db+2,2,3.mp4;Fahkumram-db+2,2,3;fahkumram;;;
+db+2,2,3,4;m, m, L, h;16, 16, 7, 8;i16~17, ,i20;-20;-8;;"* Balcony Break on airborne hit
+* 10-hit combo string
+* Interrupt with i1 from 3rd block
+* Move cannot be delayed
+* Input can be delayed by 1F
+* i21 effective startup
+* Similar move to d+3,4";intr:1;;4th Hit;38;;;t8-p2-fahkumram-db+2,2,3,4.mp4;Fahkumram-db+2,2,3,4;fahkumram;;;
+db+2,2,3,4,3;m, m, L, h, h;16, 16, 7, 8, 8;i16~17, ,i19~20;-22;-9;;"* 10-hit combo string
+* Combo from 4th hit
+* Move cannot be interrupted
+* Similar move to d+3,4,3";;;5th Hit;40;;;t8-p2-fahkumram-db+2,2,3,4,3.mp4;Fahkumram-db+2,2,3,4,3;fahkumram;;;
+db+2,2,3,4,3,4;m, m, L, h, h, m;16, 16, 7, 8, 8, 10;i16~17, ,i25;-21;-10;;"* Knee
+* 10-hit combo string
+* Interrupt with i6 from 5th block
+* Whiffs vs SSR from 5th block
+* Similar move to b+4";kne stp:SSR intr:6;;6th Hit;40;;;t8-p2-fahkumram-db+2,2,3,4,3,4.mp4;Fahkumram-db+2,2,3,4,3,4;fahkumram;;;
+db+2,2,3,4,3,4,3;m, m, L, h, h, m, m;16, 16, 7, 8, 8, 10, 10;i16~17, ,i24;-18;-2;;"* Knee
+* 10-hit combo string
+* Combo from 6th hit with 1F delay
+* Interrupt with i5 from 6th block
+* Move cannot be delayed
+* Input can be delayed by 1F
+* Similar move to b+4,3";kne intr:5;;7th Hit;30;;;t8-p2-fahkumram-db+2,2,3,4,3,4,3.mp4;Fahkumram-db+2,2,3,4,3,4,3;fahkumram;;;
+db+2,2,3,4,3,4,3,2;m, m, L, h, h, m, m, m;16, 16, 7, 8, 8, 10, 10, 15;i16~17, ,i31~32;-20;+15a;;"* Elbow
+* Knee
+* 10-hit combo string
+* Combo from 7th CH with 1F delay
+* Interrupt with i12 from 7th block
+* Whiffs vs SSR from 7th block
+* Move cannot be delayed
+* Input can be delayed by 1F
+* Similar move to b+3,4,2";elb kne stp:SSR intr:12;;8th Hit;40;;;t8-p2-fahkumram-db+2,2,3,4,3,4,3,2.mp4;Fahkumram-db+2,2,3,4,3,4,3,2;fahkumram;;;
+db+2,2,3,4,3,4,3,2,3;m, m, L, h, h, m, m, m, L;16, 16, 7, 8, 8, 10, 10, 15, 10 (7);i16~17, ,i27;-26;+16a / (+6a (-1));;"* 10-hit combo string
+* Airborne combo from 7th CH or 8th hit (+6a (-1))
+* Interrupt with i6 from 8th block
+* Similar move to f,F+4~3";intr:6;;9th Hit;45;;;t8-p2-fahkumram-db+2,2,3,4,3,4,3,2,3.mp4;Fahkumram-db+2,2,3,4,3,4,3,2,3;fahkumram;;;
+db+2,2,3,4,3,4,3,2,3,2;m, m, L, h, h, m, m, m, L, m;16, 16, 7, 8, 8, 10, 10, 15, 10 (7), 20 (14/10);i16~17, ,i25~26;-30;+19a (+9) / +0a (-7) / +3a (-4);;"* Elbow
+* 10-hit combo string
+* Airborne combo from 9th hit with 2F delay (+0a (-7))
+* Airborne combo from 7th CH or 8th hit with 2F delay (+3a (-4))
+* Interrupt with i7 from 9th block
+* Whiffs vs SSR from 9th block
+* Move cannot be delayed
+* Input can be delayed by 2F
+* Similar move to f,F+4~3,2";elb stp:SSR intr:7;;10 Hit Combo;50;;;t8-p2-fahkumram-db+2,2,3,4,3,4,3,2,3,2.mp4;Fahkumram-db+2,2,3,4,3,4,3,2,3,2;fahkumram;;;
