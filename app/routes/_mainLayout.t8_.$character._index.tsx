@@ -96,7 +96,7 @@ export const meta: MetaFunction = ({ params, matches, location }) => {
 };
 
 export default function Index() {
-  const { tables, characterName, moves } = useFrameData();
+  const { characterName, moves } = useFrameData();
   if (moves.length === 0) {
     return <div>Invalid or no data</div>;
   }
@@ -105,19 +105,11 @@ export default function Index() {
       <h1 className="sr-only capitalize">
         {getCharacterDisplayName(characterName)} Tekken 8 Frame Data
       </h1>
-      {tables.map((table) => {
-        if (table.headers && table.name === 'frames_normal') {
-          return (
-            <FrameDataSection
-              key={table.name}
-              gameRouteId="t8"
-              charId={characterName === 'mokujin' ? undefined : characterName}
-              moves={moves}
-            />
-          );
-        }
-        return <div key={table.name}>Unknown table name {table.name}</div>;
-      })}
+      <FrameDataSection
+        gameRouteId="t8"
+        charId={characterName === 'mokujin' ? undefined : characterName}
+        moves={moves}
+      />
     </ContentContainer>
   );
 }
