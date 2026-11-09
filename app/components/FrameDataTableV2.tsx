@@ -16,7 +16,7 @@ import {
 import { type FrameDataListProps } from '~/types/FrameDataListProps';
 import { type Move } from '~/types/Move';
 import { type SortOrder } from '~/types/SortOrder';
-import { charIdFromMove, hasVideo, moveUrlFor } from '~/utils/moveUtils';
+import { hasVideo, moveUrlFor } from '~/utils/moveUtils';
 import { getNextSortSearchParams, getSortSettings } from '~/utils/sortingUtils';
 import { MovePreviewDialogButton } from './MovePreviewDialogButton';
 
@@ -84,7 +84,7 @@ export const FrameDataTable = ({
         </TableHeader>
         <TableBody>
           {moves.map((move) => {
-            const computedCharId = charId || charIdFromMove(move);
+            const computedCharId = charId || move.characterId;
             const moveUrl = moveUrlFor(gameRouteId, charId, move);
             return (
               <TableRow key={move.moveNumber}>

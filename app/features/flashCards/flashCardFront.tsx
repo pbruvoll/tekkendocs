@@ -1,7 +1,7 @@
 import { buttonVariants } from '~/components/ui/button';
+import { getMoveCharacterDisplayName } from '~/features/frameQuiz/moveSelection';
 import { cn } from '~/lib/utils';
 import { type Move } from '~/types/Move';
-import { charIdFromMove } from '~/utils/moveUtils';
 import { ShowVideoButton } from './showVideoButton';
 
 export type FlashCardFrontProps = {
@@ -23,7 +23,7 @@ export const FlashCardFront = ({
         className="flex w-full flex-1 items-center justify-center p-4 text-2xl font-semibold"
         onClick={onFlip}
       >
-        {showCharName && `${charIdFromMove(move)} `}
+        {showCharName && `${getMoveCharacterDisplayName(move)} `}
         {move.command}
       </button>
       <div className="flex flex-1 items-center justify-center px-4">

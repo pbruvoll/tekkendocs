@@ -30,16 +30,17 @@ const splitMoveId = (id: string) => {
   };
 };
 
+/** For when only a move id is known, like in a url. A Move has its characterId */
 export const charIdFromMove = (move: Pick<Move, 'id'>): string =>
   splitMoveId(move.id).characterName.replace(/ /g, '-').toLowerCase();
 
-/** The url of the move page. Without a charId, the character is taken from the move id */
+/** The url of the move page. Without a charId, the character of the move is used */
 export const moveUrlFor = (
   gameRouteId: string,
   charId: string | undefined,
   move: Move,
 ) =>
-  `/${gameRouteId}/${charId || charIdFromMove(move)}/${commandToUrlSegmentEncoded(move.command)}`;
+  `/${gameRouteId}/${charId || move.characterId}/${commandToUrlSegmentEncoded(move.command)}`;
 
 export const hasVideo = (move: Pick<Move, 'ytVideo' | 'video'>) =>
   Boolean(move.ytVideo || move.video);
