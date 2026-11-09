@@ -51,7 +51,8 @@ export const loader = async ({ params }: Route.LoaderArgs) => {
     'frameData',
   );
 
-  const { tables } = sheetData;
+  // the raw sheet rows stay on the server, the page only needs the moves
+  const { tables, ...pageData } = sheetData;
 
   const normalMoves = tables.find((t) => t.name === 'frames_normal');
   const moves: Move[] = normalMoves
@@ -74,7 +75,7 @@ export const loader = async ({ params }: Route.LoaderArgs) => {
       move.video = `${charVideoInfoT8[characterId].localVideoFolder}/${videoFileNameFromMove(move)}`;
     });
   }
-  const frameData: CharacterFrameDataPage = { ...sheetData, moves };
+  const frameData: CharacterFrameDataPage = { ...pageData, moves };
 
   return data(frameData, {
     headers: getCacheControlHeaders({ seconds: 60 * 5 }),
