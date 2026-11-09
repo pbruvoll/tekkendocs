@@ -8,7 +8,6 @@ import { type RouteHandle } from '~/types/RouteHandle';
 import { filterToDescription, getFilterFromParams } from '~/utils/filterUtils';
 import { filterMoves, sortMovesV2 } from '~/utils/frameDataUtils';
 import { getCacheControlHeaders } from '~/utils/headerUtils';
-import { charIdFromMove } from '~/utils/moveUtils';
 import { generateMetaTags } from '~/utils/seoUtils';
 import { getSortSettings } from '~/utils/sortingUtils';
 
@@ -71,11 +70,9 @@ export const meta: MetaFunction = ({ params, matches, location }) => {
     .concat(
       sortedMoves
         .slice(0, 9)
-        .map(({ command, hitLevel, damage, block, hit, id }) =>
+        .map(({ command, hitLevel, damage, block, hit, characterId: charId }) =>
           [
-            ...(characterId === 'mokujin' && id
-              ? [charIdFromMove({ id })]
-              : []),
+            ...(characterId === 'mokujin' ? [charId] : []),
             command,
             hitLevel,
             damage,

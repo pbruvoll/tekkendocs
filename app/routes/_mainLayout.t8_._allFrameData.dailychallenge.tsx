@@ -31,7 +31,7 @@ import {
 } from '~/features/frameQuiz/types';
 import { useAppState } from '~/hooks/useAppState';
 import tekkenDocsLogoIcon from '~/images/logo/tekkendocs-logo-icon.svg';
-import { charIdFromMove, commandToUrlSegmentEncoded } from '~/utils/moveUtils';
+import { moveUrlFor } from '~/utils/moveUtils';
 import { generateMetaTags } from '~/utils/seoUtils';
 import { type LoaderData } from './_mainLayout.t8_._allFrameData';
 
@@ -508,7 +508,7 @@ export default function DailyChallenge() {
       return null;
     }
 
-    return `/t8/${charIdFromMove(move)}/${commandToUrlSegmentEncoded(move.command)}`;
+    return moveUrlFor('t8', undefined, move);
   };
 
   return (

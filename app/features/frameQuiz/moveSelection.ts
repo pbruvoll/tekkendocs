@@ -2,7 +2,6 @@ import { characterInfoT8List } from '~/constants/characterInfoListT8';
 import { hitLevelValue } from '~/constants/filterConstants';
 import { MoveTags } from '~/constants/moveTags';
 import { type Move } from '~/types/Move';
-import { charIdFromMove } from '~/utils/moveUtils';
 import { type AnswerBucket, type QuizMove } from './types';
 
 export const parseBlockValue = (block: string): number | null => {
@@ -20,7 +19,7 @@ export const getCharacterDisplayName = (charId: string): string =>
   characterInfoT8List.find((char) => char.id === charId)?.displayName ?? charId;
 
 export const getMoveCharacterDisplayName = (move: Move): string =>
-  getCharacterDisplayName(charIdFromMove(move));
+  getCharacterDisplayName(move.characterId);
 
 export const getAnswerBucket = (blockValue: number): AnswerBucket => {
   if (blockValue >= 1) {

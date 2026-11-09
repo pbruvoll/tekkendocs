@@ -5,7 +5,6 @@ import { useHydrated } from 'remix-utils/use-hydrated';
 import { cn } from '~/lib/utils';
 import { cdnUrl, charVideoInfoT8 } from '~/services/staticDataService';
 import { type Move } from '~/types/Move';
-import { charIdFromMove } from '~/utils/moveUtils';
 
 export type MoveVideoProps = {
   move: Move;
@@ -34,7 +33,7 @@ export const MoveVideo = ({
     setPlaying(playingProp);
   }
 
-  const charId = charIdFromMove(move);
+  const charId = move.characterId;
 
   if (move.video && charId && isHydrated) {
     const videoBase =

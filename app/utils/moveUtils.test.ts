@@ -1,6 +1,6 @@
 import { expect, test } from 'vitest';
 import { type Move } from '~/types/Move';
-import { charIdFromMove, videoFileNameFromMove } from './moveUtils';
+import { charIdFromMove, moveUrlFor, videoFileNameFromMove } from './moveUtils';
 
 const moveWithId = (id: string) => ({ id }) as Move;
 
@@ -12,6 +12,16 @@ test.each([
   ['Steve-after-2steps+1', 'steve'],
 ])('charIdFromMove(%s) is %s', (id, charId) => {
   expect(charIdFromMove(moveWithId(id))).toBe(charId);
+});
+
+test('moveUrlFor uses the character of the move', () => {
+  const move = {
+    id: 'Jack-8-1+4:df+1',
+    characterId: 'jack-8',
+    command: '1+4:df+1',
+  } as Move;
+  expect(moveUrlFor('t8', undefined, move)).toBe('/t8/jack-8/14%3Adf1');
+  expect(moveUrlFor('t8', 'mokujin', move)).toBe('/t8/mokujin/14%3Adf1');
 });
 
 test.each([

@@ -13,12 +13,7 @@ import {
   getHitFrameColorClasses,
   simplifyFrameValue,
 } from '~/utils/frameDataViewUtils';
-import {
-  charIdFromMove,
-  hasVideo,
-  moveUrlFor,
-  videoFileNameFromMove,
-} from '~/utils/moveUtils';
+import { hasVideo, moveUrlFor, videoFileNameFromMove } from '~/utils/moveUtils';
 import { CommandText } from './CommandText';
 import { MovePreviewDialogButton } from './MovePreviewDialogButton';
 
@@ -113,7 +108,7 @@ export const SimpleMovesTable = memo(function SimpleMovesTable({
           const interruptibleFrames = getInterruptibleFrames(move);
           const chipDamage = getChipDamage(move);
           const hasChipTag = hasTag(MoveTags.Chip, move);
-          const computedCharId = charId || charIdFromMove(move);
+          const computedCharId = charId || move.characterId;
           const moveUrl = moveUrlFor(gameRouteId, charId, move);
           return (
             <tr
