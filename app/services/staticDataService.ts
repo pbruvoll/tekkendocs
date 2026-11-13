@@ -246,7 +246,6 @@ export const charVideoInfoT8: Record<
   {
     videoPostFix?: string;
     gifs?: true;
-    autoGenerateFileName?: boolean;
     // use localVidoeFolder to load viodes based on a locally served folder (in /public).
     // Primarly for testing that recorded vidoes are correct and have correct name. Should not be used in production
     localVideoFolder?: string;
@@ -261,9 +260,6 @@ export const charVideoInfoT8: Record<
   reina: {
     videoPostFix: '',
     gifs: true,
-  },
-  'miary-zo': {
-    autoGenerateFileName: true,
   },
 };
 
