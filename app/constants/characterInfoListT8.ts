@@ -223,6 +223,12 @@ export const characterInfoT8List: CharacterInfoT8[] = [
     aliasList: ['rei'],
   },
   {
+    id: 'roger-jr',
+    displayName: 'Roger Jr.',
+    wavuName: 'Roger Jr.',
+    aliasList: ['roger', 'kangaroo'],
+  },
+  {
     id: 'shaheen',
     displayName: 'Shaheen',
     wavuName: 'Shaheen',

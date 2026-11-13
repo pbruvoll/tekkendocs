@@ -11,8 +11,9 @@ base_path = os.path.dirname(__file__)
 CHARACTER_LIST_PATH = os.path.abspath(os.path.join(base_path, "resources", "character_list.json"))
 
 
+# the dot is dropped since it ends the character name in the file name ("Roger Jr." -> roger_jr)
 def normalize_character_name(name: str) -> str:
-    return name.strip().lower().replace(" ", "_")
+    return name.strip().lower().replace(".", "").replace(" ", "_")
 
 
 def create_json_movelists(character_list_path: str, only_character: Optional[str] = None) -> List[character.Character]:

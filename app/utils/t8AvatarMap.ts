@@ -72,6 +72,8 @@ import raven from '~/images/t8/avatars/raven-128.webp';
 import ravenBrand from '~/images/t8/avatars/raven-brand-128.webp';
 import reina from '~/images/t8/avatars/reina-128.webp';
 import reinaBrand from '~/images/t8/avatars/reina-brand-128.webp';
+import rogerJr from '~/images/t8/avatars/roger-jr-128.webp';
+import rogerJrBrand from '~/images/t8/avatars/roger-jr-brand-128.webp';
 import shaheen from '~/images/t8/avatars/shaheen-128.webp';
 import shaheenBrand from '~/images/t8/avatars/shaheen-brand-128.webp';
 import steve from '~/images/t8/avatars/steve-128.webp';
@@ -121,6 +123,7 @@ export const t8AvatarMap: Record<string, string> = {
   'miary-zo': miaryZo,
   nina,
   reina,
+  'roger-jr': rogerJr,
   panda,
   paul,
   shaheen,
@@ -167,6 +170,7 @@ export const t8AvatarBrandMap: Record<string, string> = {
   'miary-zo': miaryZoBrand,
   nina: ninaBrand,
   reina: reinaBrand,
+  'roger-jr': rogerJrBrand,
   panda: pandaBrand,
   paul: paulBrand,
   shaheen: shaheenBrand,

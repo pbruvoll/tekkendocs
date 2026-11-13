@@ -91,6 +91,7 @@ const charsT8: string[] = [
   'paul',
   'raven',
   'reina',
+  'roger-jr',
   'shaheen',
   'steve',
   'victor',

@@ -35,6 +35,7 @@ import panda from '~/images/t8/avatars/panda-brand-256.webp';
 import paul from '~/images/t8/avatars/paul-brand-256.webp';
 import raven from '~/images/t8/avatars/raven-brand-256.webp';
 import reina from '~/images/t8/avatars/reina-brand-256.webp';
+import rogerJr from '~/images/t8/avatars/roger-jr-brand-256.webp';
 import shaheen from '~/images/t8/avatars/shaheen-brand-256.webp';
 import steve from '~/images/t8/avatars/steve-brand-256.webp';
 import victor from '~/images/t8/avatars/victor-brand-256.webp';
@@ -78,6 +79,7 @@ export const t8AvatarBrandMap256: Record<string, string> = {
   'miary-zo': miaryZo,
   nina,
   reina,
+  'roger-jr': rogerJr,
   panda,
   paul,
   shaheen,
