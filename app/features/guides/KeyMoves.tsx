@@ -27,8 +27,9 @@ export const KeyMoves = ({ moves, section }: KeyMovesProps) => {
   return (
     <section className="my-6 mb-10" id={getGuideSectionId(section)}>
       <GuideSectionHeading section={section} />
-      {moves.map(({ command, description }) => (
-        <section key={command} className="my-2 mb-4">
+      {moves.map(({ command, description }, index) => (
+        // biome-ignore lint/suspicious/noArrayIndexKey: Static list, and commands can repeat
+        <section key={index} className="my-2 mb-4">
           <KeyMoveHeading
             command={command}
             description={description}

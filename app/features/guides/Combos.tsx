@@ -17,8 +17,9 @@ export const Combos = ({ combos, section }: CombosProps) => {
   return (
     <section className="my-6 mb-10" id={getGuideSectionId(section)}>
       <GuideSectionHeading section={section} />
-      {combos.map(({ combo, starter }) => (
-        <section key={starter} className="my-2 mb-4">
+      {combos.map(({ combo, starter }, comboIndex) => (
+        // biome-ignore lint/suspicious/noArrayIndexKey: Static list, and starters can repeat
+        <section key={comboIndex} className="my-2 mb-4">
           <Commands
             charUrl={charUrl}
             compressedCommandMap={compressedCommandMap}
