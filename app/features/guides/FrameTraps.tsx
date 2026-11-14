@@ -11,8 +11,9 @@ export const FrameTraps = ({ frameTraps }: FrameTrapsProps) => {
   return (
     <section className="my-6 mb-10" id="frame-traps">
       <GuideSectionHeading section="frameTraps" />
-      {frameTraps.map(({ starter, trap }) => (
-        <section key={starter} className="my-2 mb-4">
+      {frameTraps.map(({ starter, trap }, index) => (
+        // biome-ignore lint/suspicious/noArrayIndexKey: Static list, and starters can repeat
+        <section key={index} className="my-2 mb-4">
           <Commands
             charUrl={charUrl}
             compressedCommandMap={compressedCommandMap}
