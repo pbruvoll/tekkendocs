@@ -711,12 +711,12 @@
 * Interrupt with i11 from 1st block
 * Cancel input can be delayed by 12F
 * 6 chip damage on block
-* Just frame input 3,4&#58;4: input 4 during frames 14~16 of 3,4
+* Just frame input 3,4:4: input 4 during frames 14~16 of 3,4
 }}
 }}
 {{MoveInherit|Fahkumram-3,4~4
-|id=Fahkumram-3,4&#58;4
-|input=,4&#58;4
+|id=Fahkumram-3,4:4
+|input=,4:4
 |name=Ayutthaya Night Thunder (bluespark)
 |damage=,24
 |startup=i16~17 (i32~33)
@@ -1112,14 +1112,14 @@
 * Interrupt with i10 from 1st block
 * Cancel input can be delayed by 13F
 * 6 chip damage on block
-* Just frame input f+3,2,4&#58;4: input 4 during frames 15~17 of f+3,2,4
+* Just frame input f+3,2,4:4: input 4 during frames 15~17 of f+3,2,4
 }}
 }}
 
 {{MoveInherit|Fahkumram-f+3,2,4~4
-|id=Fahkumram-f+3,2,4&#58;4
+|id=Fahkumram-f+3,2,4:4
 |parent=Fahkumram-f+3,2
-|input=,4&#58;4
+|input=,4:4
 |name=Berserker Night Thunder (bluespark)
 |damage=,24
 |startup=i16~17 (i33~34)
@@ -1380,12 +1380,12 @@
 * Interrupt with i4 from 1st hit
 * Cancel input can be delayed by 18F
 * 6 chip damage on block
-* Just frame input df+1,4&#58;4: input 4 during frames 20~22 of df+1,4
+* Just frame input df+1,4:4: input 4 during frames 20~22 of df+1,4
 }}
 }}
 {{MoveInherit|Fahkumram-df+1,4~4
-|id=Fahkumram-df+1,4&#58;4
-|input=,4&#58;4
+|id=Fahkumram-df+1,4:4
+|input=,4:4
 |name=Aiyara Night Thunder (bluespark)
 |damage=,24
 |startup=i16~17 (i38~39)
@@ -2812,18 +2812,16 @@
 |damage=20
 }}
 
-== GRF (Garuda Force) == 
-{| class="wikitable"
-| {{MoveDataIcon|With GRF, all moves that end in charged Tornado Kick (...3*) and charged Erupting Knee (...4*) are powered up and become their "Fatal" versions. They gain Guard Break and will consume GRF to transition to RAM (Rama Stance) on block}}
-|-
-| {{MoveDataIcon|Fatal Tornado Kick and Fatal Erupting Knee can be canceled into Surendrajit with D, which will consume GRF and remaining Heat Time}}
-|}
+== GRF (Garuda Force) ==
 {{MoveDataHeader}}
 {{Move
 |id=Fahkumram-GRF.3*
 |parent=
 |input=...GRF.3*
-|alt=
+|alt={{Dotlist|
+* 3,4~GRF.3*
+* f+3,2,4~GRF.3*
+* df+1,4~GRF.3*}}
 |name=Fatal Tornado Kick
 |target=m
 |damage=25
@@ -2832,8 +2830,8 @@
 |hit=+58a
 |ch=
 |crush=
-|recv=
-|tot=
+|recv=r31
+|tot=67
 |range=
 |tracksLeft=
 |tracksRight=
@@ -2841,19 +2839,26 @@
 * {{Tornado}}
 * {{GuardBreak}}
 * {{ReversalBreak}}
+* {{MoveDataIcon|color=green|1=Balcony Break (airborne)}}
 * Consumes GRF
 * Consumes 300F of remaining Heat time
 * Transition to RAM r115 on block (+13)
-* Cancel to FC with F
-* Cancel to Surendrajit with D at frames 16-24? of Tornado Kick
+* Cancel to Surendrajit with D at frames 17~25 of charge
+* Crumple stun on hit
+* 20f timestop on hit
 * 10 chip damage on block
+* Remaining individual string properties are identical to non-GRF equivalents (See ...4~3*)
 }}
 }}
 {{Move
 |id=Fahkumram-GRF.4*
 |parent=
 |input=...GRF.4*
-|alt=
+|alt={{Dotlist|
+* 1,2,4,3~GRF.4*
+* 4,3~GRF.4*
+* d+3,4,3~GRF.4*
+}}
 |name=Fatal Erupting Knee
 |target=m
 |damage=25
@@ -2862,8 +2867,8 @@
 |hit=+42a (+32)
 |ch=
 |crush=
-|recv=
-|tot=
+|recv=r30
+|tot=67
 |range=
 |tracksLeft=
 |tracksRight=
@@ -2875,16 +2880,24 @@
 * Consumes GRF
 * Consumes 300F of remaining Heat time
 * Transition to RAM r115 on block (+13)
-* Cancel to FC with F
-* Cancel to Surendrajit with D at frames 16-24? of Tornado Kick
+* Cancel to Surendrajit with D at frames 17~25 of charge
+* 20f timestop on hit
 * 10 chip damage on block
+* Remaining individual string properties are identical to non-GRF equivalents (See ...3~4*)
 }}
 }}
 {{Move
-|id=Fahkumram-GRF.3*~d
+|id=Fahkumram-GRF.3_4*~d
 |parent=
-|input=...GRF.3*~d
-|alt=...GRF.4*~d
+|input=...GRF.3_4*~d
+|alt={{Dotlist|
+* 1,2,4,3~4*~GRF.d
+* 3,4~3*~GRF.d
+* 4,3~4*~GRF.d
+* f+3,2,4~3*~GRF.d
+* df+1,4~3*~GRF.d
+* d+3,4,3~4*~GRF.d
+}}
 |name=Surenradjit
 |target=L,h
 |damage=15,22 (15)
@@ -2894,7 +2907,7 @@
 |ch=
 |crush=
 |recv=r33
-|tot=
+|tot=85
 |range=
 |tracksLeft=
 |tracksRight=
@@ -2902,11 +2915,14 @@
 * {{BB}}
 * Consumes GRF
 * Consumes 600F of remaining Heat time
-* Jails from 1st block
+* Jail from 1st block
 * Airborne combo from 1st hit (+11a (+10))
 * 20f timestop on hit
 * +31a (+5) if only the 2nd hit hits
-* 
+* Input B during frames 17~25 of charge
+* Move can be delayed by 8F
+* Can always interrupt 1st hit with at least i23 even on previous counterhit
+* Effectively homing?
 }}
 }}
 {{Move
@@ -2919,7 +2935,7 @@
 |damage=20
 |startup=i21
 |block=
-|hit=+13g
+|hit=+13 RAM
 |ch=
 |crush=pc5~19
 |recv=r31
@@ -2930,7 +2946,7 @@
 |notes={{Plainlist|
 * Consumes GRF
 * Consumes 450F of remaining Heat time
-* Transition to RAM r115 after absorbing an attack (+13g)
+* Transition to RAM r115 after absorbing an attack (+13)
 * Attack only occurs after attack absorption
 * Rarely blockable after absorbing an attack (-9 on block and 8 chip damage)
 * r21? freeze for the opponent after absorbing an attack 
@@ -2978,7 +2994,7 @@
 |damage=,23
 |startup=i26
 |block=-9
-|hit=+13g RAM
+|hit=+13 RAM
 |ch=
 |crush=
 |recv=r37
@@ -3000,6 +3016,7 @@
 {{MoveInherit|Fahkumram-f,F+4~3,2
 |id=Fahkumram-f,F+4~3,GRF.2
 |input=,GRF.2
+|alt=Fahkumram-ws2,4~3,GRF.2
 |name=Fatal Ramasura
 |target=,M, t
 |damage=,20, 10
@@ -3021,33 +3038,32 @@
 * Inconsistent grounded hit
 }}
 }}
-{{MoveInherit|Fahkumram-ws2,4~3,2
-|id=Fahkumram-ws2,4~3,GRF.2
-|input=,GRF.2
-|name=Demon Horn > Fatal Ramasura
-|target=,M, t
-|damage=,20, 10
-|hit=+0d
-|range=
-|tracksLeft=
-|tracksRight=
-|video=
-|notes={{Plainlist|
-* {{BB}}
-* Consumes GRF
-* Consumes 240F of remaining Heat Time
-* Combo from 2nd hit
-* Shift to attack throw on hit
-* 6 chip damage on block
-* 1 extra damage on wall splat
-* Move is delayed 2F
-* Input cannot be delayed
-* Inconsistent grounded hit
-}}
-}}
 
 == RAM (Rama Stance) ==
 {{MoveDataHeader}}
+{{Move
+|id=Fahkumram-RAM
+|parent=
+|name=
+|input=RAM
+|target=
+|damage=
+|startup=
+|block=
+|hit=
+|ch=
+|crush=
+|recv=r115 RAM
+|tot=220
+|range=
+|tracksLeft=
+|tracksRight=
+|notes={{Plainlist|
+* Stance moves can be delayed by 75F
+* Transition to i23 block with b_db or after 197F in stance
+** Cannot block i10 moves
+}}
+}}
 {{Move
 |id=Fahkumram-RAM.1
 |parent=
@@ -3056,13 +3072,13 @@
 |name=Nandaka
 |target=m
 |damage=20
-|startup=i19
+|startup=i19~20
 |block=+1
 |hit=+20a (+3)
 |ch=
 |crush=
-|recv=
-|tot=
+|recv=r29
+|tot=49
 |range=
 |tracksLeft=
 |tracksRight=
@@ -3081,18 +3097,18 @@
 |target=m!
 |damage=43
 |startup=i40
-|block=!
+|block=
 |hit=+18a (+8)
 |ch=
 |crush=
-|recv=
-|tot=
+|recv=r59
+|tot=99
 |range=
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
 * {{BB}}
-* Unblockable
+* 20F timestop on hit
 }}
 }}
 {{Move
@@ -3108,8 +3124,8 @@
 |hit=-6
 |ch=
 |crush=
-|recv=
-|tot=
+|recv=r45
+|tot=66
 |range=
 |tracksLeft=
 |tracksRight=
@@ -3124,21 +3140,25 @@
 |name=Brahmastra
 |target=,h
 |damage=,25
-|startup=i24
+|startup=i24~25
 |block=-9
 |hit=+13a
 |ch=
 |crush=
-|recv=
-|tot=
+|recv=r50
+|tot=105
 |range=
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
 * {{BB}}
-* Combos from 1st hit
+* Jail from 1st block with 9F delay
+* Combo from 1st hit with 9F delay
+* 20F timestop on hit
+* Move cannot be delayed
+* Input can be delayed by 9F
 * 10 chip damage on block
-* Jail from 1st attack
+* Recovers 5F faster on hit (t100 r45)
 }}
 }}
 {{Move
@@ -3149,13 +3169,13 @@
 |name=Varunapasha
 |target=l
 |damage=31
-|startup=i21
+|startup=i21~22
 |block=-13
 |hit=+11a
 |ch=
 |crush=
-|recv=
-|tot=
+|recv=r35
+|tot=57
 |range=
 |tracksLeft=
 |tracksRight=
@@ -3169,15 +3189,15 @@
 |input=RAM.1+3
 |alt=RAM.2+4
 |name=Sudarshana Chakra
-|target=t!
+|target=h!
 |damage=40
 |startup=i23
-|block=!
+|block=
 |hit=-3d
 |ch=
 |crush=
-|recv=
-|tot=
+|recv=r27
+|tot=50
 |range=
 |tracksLeft=
 |tracksRight=
@@ -3186,28 +3206,7 @@
 * {{FB}}
 * Unbreakable throw
 * Grants GRF on hit
-}}
-}}
-{{Move
-|id=Fahkumram-RAM.db
-|parent=
-|input=RAM.db
-|alt=RAM.b
-|name=
-|target=
-|damage=
-|startup=
-|block=
-|hit=
-|ch=
-|crush=
-|recv=
-|tot=
-|range=
-|tracksLeft=
-|tracksRight=
-|notes={{Plainlist|
-* Cancels RAM
+* Opponent recovers FUFL
 }}
 }}
 

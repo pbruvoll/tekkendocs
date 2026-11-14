@@ -32,9 +32,9 @@ def character_names() -> list:
         return [character["name"] for character in json.load(file)]
 
 
-# "armor king" and "armor-king" both match "Armor King"
+# "armor king" and "armor-king" both match "Armor King", and "roger-jr" matches "Roger Jr."
 def _match_key(name: str) -> str:
-    return name.strip().lower().replace("-", " ")
+    return name.strip().lower().replace("-", " ").replace(".", "")
 
 
 # the name as the character list spells it, so the wavu page title is correct

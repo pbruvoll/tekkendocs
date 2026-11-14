@@ -1065,12 +1065,12 @@
 |name=
 |target=h
 |damage=10
-|startup=i11
+|startup=i11~12
 |block=-10
 |hit=+1
 |ch=
 |crush=
-|recv=29
+|recv=r28
 |tot=40
 |range=
 |tracksLeft=
@@ -1087,20 +1087,21 @@
 |damage=,20
 |startup=i20
 |block=-14
-|hit=+9 (+0)
+|hit=+9a (+0)
 |ch=
 |crush=
-|recv=
-|tot=
+|recv=r36
+|tot=73
 |range=
 |tracksLeft=
 |tracksRight=
 |video=File:t8-p2-kazuya-b+1,2.mp4
 |notes={{Plainlist|
 * {{BB}}
-* Combo from 1st hit
-* Can be delayed 14F
-* Combo can be delayed 10F from hit
+* Combo from 1st hit with 9F delay
+* Interrupt with i6 from 1st block
+* Move can be delayed by 8F
+* Input can be delayed by 13F
 }}
 }}
 {{Move
@@ -1110,17 +1111,17 @@
 |name=
 |target=m
 |damage=12
-|startup=i14
+|startup=i14~15
 |block=-8
 |hit=+4
 |ch=
 |crush=
-|recv=
-|tot=
+|recv=r27
+|tot=42
 |range=
 |tracksLeft=
 |tracksRight=
-|notes=
+|notes=i14 when buffering b+2,4 or b+2,1 with no delay
 }}
 {{Move
 |id=Kazuya-b+2,2
@@ -1129,17 +1130,22 @@
 |name=
 |target=,m
 |damage=,14
-|startup=i25
+|startup=i25~26
 |block=-10
-|hit=+1
+|hit=+2
 |ch=
 |crush=
-|recv=
-|tot=
+|recv=r28
+|tot=68
 |range=
 |tracksLeft=
 |tracksRight=
-|notes=
+|notes={{Plainlist|
+* Combo from 1st CH with 6F delay
+* Interrupt with i4 from 1st block
+* Move can be delayed by 9F
+* Recovers 1F faster on hit (t67 r27)
+}}
 }}
 {{Move
 |id=Kazuya-b+2,2,1+2
@@ -1151,18 +1157,22 @@
 |damage=,20
 |startup=i28~32
 |block=-8
-|hit=+38d (-20)
+|hit=+20cg
 |ch=
 |crush=
-|recv=
-|tot=
+|recv=r24
+|tot=96
 |range=
 |tracksLeft=
 |tracksRight=
 |video=File:t8-p2-kazuya-b+2,2,1+2.mp4
 |notes={{Plainlist|
 * {{BB}}
-* Chip damage when guarded
+* Combo from 2nd CH
+* Interrupt with i9 from 2nd block
+* Whiffs vs SS, SW from 2nd block
+* Forces tech back roll on hit
+* 6 chip damage on block
 }}
 }}
 {{Move
@@ -1177,15 +1187,15 @@
 |hit=+8
 |ch=
 |crush=
-|recv=
-|tot=
+|recv=r22
+|tot=58
 |range=
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
-* Combo from 1st hit
-* Can be delayed 10F
-* Combo can be delayed 5F from hit
+* Combo from 1st hit with no delay
+* Combo from 1st CH with 9F delay
+* Interrupt with i1 from 1st block
 }}
 }}
 {{Move
@@ -1196,13 +1206,13 @@
 |name=Rampaging Demon
 |target=,m
 |damage=,22
-|startup=,i19
+|startup=,i19~21
 |block=-14
 |hit=+11a (+2)
 |ch=
 |crush=
-|recv=
-|tot=
+|recv=r32
+|tot=98
 |range=
 |tracksLeft=
 |tracksRight=
@@ -1210,6 +1220,10 @@
 |notes={{Plainlist|
 * {{BB}}
 * Combo from 2nd CH
+* Interrupt with i8 from 2nd block
+* Move is delayed 9F
+* Move cannot be delayed
+* Input cannot be delayed
 }}
 }}
 {{Move
@@ -1219,13 +1233,13 @@
 |name=
 |target=h
 |damage=15
-|startup=i18
+|startup=i18~19
 |block=-8
 |hit=+3
 |ch=
 |crush=
-|recv=
-|tot=
+|recv=r26
+|tot=45
 |range=
 |tracksLeft=
 |tracksRight=
@@ -1243,13 +1257,13 @@
 |hit=+6
 |ch=
 |crush=
-|recv=
-|tot=
+|recv=r19
+|tot=50
 |range=
 |tracksLeft=
 |tracksRight=
 |notes={{Plainlist|
-* Jails
+* Jail from 1st block
 * Combo from 1st hit
 }}
 }}
@@ -1260,17 +1274,21 @@
 |name=
 |target=,l
 |damage=,10
-|startup=,i16
+|startup=,i16~17
 |block=-10c
 |hit=+7
 |ch=
 |crush=
-|recv=
-|tot=
+|recv=r27
+|tot=75
 |range=
 |tracksLeft=
 |tracksRight=
-|notes=
+|notes={{Plainlist|
+* Combo from 2nd CH
+* Move cannot be interrupted
+* Cannot be low parried from 2nd normal hit
+}}
 }}
 {{Move
 |id=Kazuya-b+3,1,4,1
@@ -1285,13 +1303,17 @@
 |hit=+15a (+6)
 |ch=
 |crush=
-|recv=
-|tot=
+|recv=r35
+|tot=98
 |range=
 |tracksLeft=
 |tracksRight=
 |video=File:t8-p2-kazuya-b+3,1,4,1.mp4
-|notes={{BB}}
+|notes={{Plainlist|
+* {{BB}}
+* Combo from 3rd CH
+* Move cannot be interrupted
+}}
 }}
 {{Move
 |id=Kazuya-b+3,1,4,3
@@ -1306,13 +1328,16 @@
 |hit=+1
 |ch=
 |crush=
-|recv=
-|tot=
+|recv=r29
+|tot=97
 |range=
 |tracksLeft=
 |tracksRight=
 |video=File:t8-p2-kazuya-b+3,1,4,3.mp4
-|notes=
+|notes={{Plainlist|
+* Combo from 3rd CH
+* Interrupt with i2 from 3rd block
+* Cannot be low parried from 3rd hit}}
 }}
 {{Move
 |id=Kazuya-b+4
@@ -1322,20 +1347,20 @@
 |name=Flash Tornado
 |target=h
 |damage=20
-|startup=i17
+|startup=i17~18
 |block=-5
 |hit=+16g
 |ch=
 |crush=
-|recv=29
-|tot=46
+|recv=r26
+|tot=44
 |range=
 |tracksLeft=
 |tracksRight=
 |video=File:t8-p2-kazuya-b+4.mp4
 |notes={{Plainlist|
 * {{HeatEngager}}
-* {{HeatDash|+5, +43d (+35)}}
+* {{HeatDash|+43d (+35)}}
 * {{Homing}}
 * 6 chip damage on block
 }}
@@ -1353,15 +1378,15 @@
 |hit=+5
 |ch=
 |crush=
-|recv=
-|tot=
+|recv=r32
+|tot=54
 |range=
 |tracksLeft=
 |tracksRight=
 |video=File:t8-p2-kazuya-b+1+2.mp4
 |notes={{Plainlist|
 * {{HeatEngager}}
-* {{HeatDash|+5, +43d (+35)}}
+* {{HeatDash|+43d (+35)}}
 * 6 chip damage on block
 }}
 }}
@@ -1373,18 +1398,18 @@
 |name=Lightning Screw Uppercut
 |target=m!
 |damage=60
-|startup=i63
+|startup=i63~64
 |block=
-|hit=+20a(+10)
+|hit=+20a (+10)
 |ch=
-|crush=
-|recv=
-|tot=
+|crush=fs64~85
+|recv=r42
+|tot=106
 |range=
 |tracksLeft=
 |tracksRight=
 |video=File:t8-p2-kazuya-b+1+4.mp4
-|notes=
+|notes=20f timestop on hit
 }}
 
 == u ==
