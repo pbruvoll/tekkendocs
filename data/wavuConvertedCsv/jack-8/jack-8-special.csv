@@ -1,6 +1,9 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Transitions;Name;Recovery;Recovery state;Image;Video;Wavu id;Character id;YT Video;YT Start;YT End
 2+3;m;"[12;12]";i16;+1;+2c;;"* Heat Burst
-* Cancel to r45 with b,b on frame 42
+* 46f timestop at frame 14 of activation (t92)
+* Cancel to r87 with b,b on frame 42 (frame 28 of timestop)
+** t41 r27 effective recovery
+* 20f timestop on block or hit
 * 2 chip damage on block
 * 12 chip damage on hit
 * Only deals recoverable damage
@@ -27,11 +30,15 @@ R.df+1+2;M,t;55+;i20;-18;+0d;;"* Rage Art
 * Removes Recoverable Health
 * Reversal Break
 * Damage increases with lower health, maximum 82
-* Freezes match timer on activation and on hit
-* Restores recoverable health on hit
+* Freezes match timer on activation equal to (total frame idle recovery - 5F) or 57F when canceled by any action
+* Freezes match timer on hit by 15F
+* 114F timestop on activation
+* 20F timestop on block
+* r24 opponent blockstun (r44 effective blockstun w/ timestop)
+* Restores 13 recoverable health on hit
 * Transition to attack throw on hit
 * Consumes Rage
-* Power crush 8~";ra rbr pc8~;;Terraforming Cannon;39;;;;Jack-8-R.df+1+2;jack-8;;;
+* Power crush 8~20";ra rbr pc8~20;;Terraforming Cannon;42;;;;Jack-8-R.df+1+2;jack-8;;;
 1;h;10;i12;-2;+6;+9;;;;Jab;21;;File:Jack-8-1.jpg;File:Jack-8-1.mp4;Jack-8-1;jack-8;DxouslTR768;3;14
 1,1;h, m;10, 22;i12, i15~16;-14c;+4c;+19d;"* Elbow
 * Combo from 1st hit with 9F delay
@@ -460,7 +467,7 @@ FUFT.d+1+2;m;18;i28;+18g;+39d;;* Recovers in SIT, then stands up;;SIT;Get Up Pun
 GMC.1;m;22;i22;-6;+73a (+57);;"* Strong Aerial Tailspin
 * Homing
 * Partially uses remaining Heat time
-* Chip damage on block (4)";hom chp:4;;Jaguar Hook - Gamma;;;;File:t8-p2-jack-8-gmc.1.mp4;Jack-8-GMC.1;jack-8;;;
+* Chip damage on block (4)";hom chp:4;;Juggernaut Hook - Gamma;;;;File:t8-p2-jack-8-gmc.1.mp4;Jack-8-GMC.1;jack-8;;;
 GMC.2;h;42;i20 pc1;+11;+31a (+5);;"* Tornado
 * Guard Break
 * Reversal Break
