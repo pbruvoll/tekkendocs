@@ -170,10 +170,13 @@ def convert(filePath, outDir, overrideDir=defaultOverrideDir):
     for move in moves :
         csvContent.append(list(map(lambda x: move.get(x["wavuId"], ""), columns)) + [charName] + list(map(lambda x: move.get(x["wavuId"], ""), overrideColumns)));
     
+    # newlines in the notes get the row line ending too, as git shows a file with mixed ones as changed
+    csvContent = [[value.replace("\r\n", "\n").replace("\n", os.linesep) for value in row] for row in csvContent]
+
     outputFilePath = os.path.join(charOutDir, charName + "-special.csv")
-    outputFile = open(outputFilePath, "w", newline="", encoding='utf-8')
-    csvWriter = csv.writer(outputFile, delimiter=csvSep, lineterminator=os.linesep)
-    csvWriter.writerows(csvContent);
+    with open(outputFilePath, "w", newline="", encoding='utf-8') as outputFile:
+        csvWriter = csv.writer(outputFile, delimiter=csvSep, lineterminator=os.linesep)
+        csvWriter.writerows(csvContent)
     
 #inputDir is expected to contain one folder per character with multiple files (one for special moves, one for throws etc)
 # guarded so that the functions above can be imported by test_wavuJsonToCsv
