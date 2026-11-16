@@ -21,8 +21,7 @@ def countMoves(path):
     for filePath in filePaths:
         f = open(filePath, "r", newline="")
         csvContent = csv.reader(f, delimiter=csvSep)
-        csvContent
-        csvRows = []
+        next(csvContent, None)  # skip the header row
         for row in csvContent:
             moveCount += 1
 

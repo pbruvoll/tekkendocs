@@ -229,11 +229,11 @@
     "id": "Kazuya-2+3",
     "input": "2+3",
     "name": "Heat Burst",
-    "notes": "* Heat Burst\n* Cancel to r45 with b,b on frame 42\n* 2 chip damage on block\n* 12 chip damage on hit\n* Only deals recoverable damage\n* Cannot cause a K.O.",
+    "notes": "* Heat Burst\n* 46f timestop at frame 14 of activation (t92)\n* Cancel to r87 with b,b on frame 42 (frame 28 of timestop)\n** t41 r27 effective recovery\n* 20f timestop on block or hit\n* 2 chip damage on block\n* 12 chip damage on hit\n* Only deals recoverable damage\n* Cannot cause a K.O.",
     "recv": "r30",
     "startup": "i16",
     "target": "m",
-    "tot": "92"
+    "tot": "46"
   },
   {
     "block": "+0 BT",
@@ -1692,15 +1692,17 @@
   },
   {
     "block": "-12",
-    "ch": "-1",
-    "crush": "js~9",
+    "crush": "js9~31 fs32~34",
     "damage": "12",
     "hit": "-1",
     "id": "Kazuya-ub+1",
     "input": "ub+1",
+    "name": "Jumping Knuckle",
     "notes": "* Spike",
+    "recv": "r31",
     "startup": "i18",
-    "target": "m"
+    "target": "m",
+    "tot": "49"
   },
   {
     "damage": "32",
@@ -1742,16 +1744,18 @@
     "video": "File:t8-p2-kazuya-uf+1+2.mp4"
   },
   {
-    "alt": "* ub+2\n* u+2",
+    "alt": "* u+2\n* ub+2",
     "block": "-12",
     "damage": "17",
-    "hit": "+9",
+    "hit": "+9g~10g",
     "id": "Kazuya-uf+2",
     "input": "uf+2",
     "name": "Hook",
-    "notes": "* Balcony Break on air hit",
-    "startup": "i15",
-    "target": "h"
+    "notes": "* Balcony Break (airborne)\n* Normal hit offsets opponent slightly to the left of the axis and rotates them.\n* Counter hit pushes the opponent on axis like most moves and does not rotate the opponent.",
+    "recv": "r30",
+    "startup": "i15~16",
+    "target": "h",
+    "tot": "46"
   },
   {
     "alt": "* ub+3\n* u+3",

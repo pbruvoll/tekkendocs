@@ -1415,28 +1415,6 @@
 == u ==
 {{MoveDataHeader}}
 {{Move
-|id=Kazuya-ub+1
-|parent=
-|input=ub+1
-|alt=
-|name=
-|target=m
-|damage=12
-|startup=i18
-|block=-12
-|hit=-1
-|ch=-1
-|crush=js~9
-|recv=
-|tot=
-|range=
-|tracksLeft=
-|tracksRight=
-|notes={{Plainlist|
-* {{spike}}
-}}
-}}
-{{Move
 |id=Kazuya-uf+1
 |parent=
 |input=uf+1
@@ -1458,29 +1436,8 @@
 |notes={{Plainlist|
 }}
 }}
-{{Move
+{{MoveInherit|Generic-uf+2
 |id=Kazuya-uf+2
-|parent=
-|input=uf+2
-|alt={{Dotlist|
-* ub+2
-* u+2}}
-|name=Hook
-|target=h
-|damage=17
-|startup=i15
-|block=-12
-|hit=+9
-|ch=
-|crush=
-|recv=
-|tot=
-|range=
-|tracksLeft=
-|tracksRight=
-|notes={{Plainlist|
-* {{BB}} on air hit
-}}
 }}
 {{Move
 |id=Kazuya-uf+3
@@ -1506,30 +1463,6 @@
 |video=File:t8-p2-kazuya-uf+3.mp4
 |notes={{Plainlist|
 * {{BB}}
-}}
-}}
-{{Move
-|id=Kazuya-ub+1+2
-|parent=
-|input=ub+1+2
-|name=Inferno
-|target=h
-|damage=32
-|startup=i41~56
-|block=
-|hit=-7c~+8c
-|ch=
-|crush=
-|recv=
-|tot=
-|range=
-|tracksLeft=
-|tracksRight=
-|notes={{Plainlist|
-* {{BB}}
-* 9 chip damage on block
-* Forces tech backroll on hit
-** Opponent recovers crouching
 }}
 }}
 {{Move
@@ -1614,6 +1547,35 @@
 |tracksRight=
 |video=File:t8-p2-kazuya-uf+4,4,4,4.mp4
 |notes={{BB}}
+}}
+{{MoveInherit|Generic-uf+1
+|id=Kazuya-ub+1
+|input=ub+1
+|alt=
+}}
+{{Move
+|id=Kazuya-ub+1+2
+|parent=
+|input=ub+1+2
+|name=Inferno
+|target=h
+|damage=32
+|startup=i41~56
+|block=
+|hit=-7c~+8c
+|ch=
+|crush=
+|recv=
+|tot=
+|range=
+|tracksLeft=
+|tracksRight=
+|notes={{Plainlist|
+* {{BB}}
+* 9 chip damage on block
+* Forces tech backroll on hit
+** Opponent recovers crouching
+}}
 }}
 {{Move
 |id=Kazuya-uf,n,4
