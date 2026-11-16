@@ -1,6 +1,9 @@
 Command;Hit level;Damage;Start up frame;Block frame;Hit frame;Counter hit frame;Notes;Tags;Transitions;Name;Recovery;Recovery state;Image;Video;Wavu id;Character id;YT Video;YT Start;YT End
 2+3;m;"[12;12]";i16;+1;+2c;;"* Heat Burst
-* Cancel to r45 with b,b on frame 42
+* 46f timestop at frame 14 of activation (t92)
+* Cancel to r87 with b,b on frame 42 (frame 28 of timestop)
+** t41 r27 effective recovery
+* 20f timestop on block or hit
 * 2 chip damage on block
 * 12 chip damage on hit
 * Only deals recoverable damage
@@ -240,8 +243,9 @@ b+1+2;m;21;i22;-8;+5;;"* Heat Engager
 * 6 chip damage on block";he chp:6;;Kumo Kiri;32;;;File:t8-p2-kazuya-b+1+2.mp4;Kazuya-b+1+2;kazuya;2lckBwNAIB4;152;156
 b+1+4;m!;60;i63~64;;+20a (+10);;"20f timestop on hit
 * Floating state 64~85";fs64~85;;Lightning Screw Uppercut;42;;;File:t8-p2-kazuya-b+1+4.mp4;Kazuya-b+1+4;kazuya;2lckBwNAIB4;156;160
-ub+1;m;12;i18;-12;-1;-1;"* Spike
-* Low crush ~9";spk js~9;;;;;;;Kazuya-ub+1;kazuya;2lckBwNAIB4;160;163
+ub+1;m;12;i18;-12;-1;;"* Spike
+* Low crush 9~31
+* Floating state 32~34";spk js9~31 fs32~34;;Jumping Knuckle;31;;;;Kazuya-ub+1;kazuya;2lckBwNAIB4;160;163
 ub+1+2;h;32;i41~56;;-7c~+8c;;"* Balcony Break
 * 9 chip damage on block
 * Forces tech backroll on hit
@@ -254,7 +258,9 @@ DVK.uf+1,3;m, M;16, 20;i20, i30;-9;+17a (+0);;"* Balcony Break
 * Available only on 1st hit or block
 * Low crush 9~27
 * Floating state 28~30";bbr js9~27 fs28~30;;Devil Trample;33;;;;Kazuya-DVK.uf+1,3;kazuya;TIvx9OuEN3g;271;274
-uf+2;h;17;i15;-12;+9;;* Balcony Break on air hit;;;Hook;;;;;Kazuya-uf+2;kazuya;;;
+uf+2;h;17;i15~16;-12;+9g~10g;;"* Balcony Break (airborne)
+* Normal hit offsets opponent slightly to the left of the axis and rotates them.
+* Counter hit pushes the opponent on axis like most moves and does not rotate the opponent.";;;Hook;30;;;;Kazuya-uf+2;kazuya;;;
 uf+3;m;25;i19;-9;+17(+9);;"* Balcony Break
 * Low crush 9~";bbr js9~;;Searing Edge;;;;File:t8-p2-kazuya-uf+3.mp4;Kazuya-uf+3;kazuya;2lckBwNAIB4;163;167
 uf+4;m;16;i25;-12;-1;;"* Balcony Break on air hit
