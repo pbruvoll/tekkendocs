@@ -208,7 +208,7 @@ export const characterGuideAuthors: Record<
     leo: [
       { author: 'AyoRichie & StrikeMist', version: 'S3', translated: true },
     ],
-    leroy: [{ author: 'SYRAXSLAYER', version: 'S2', translated: true }],
+    leroy: [{ author: 'SYRAXSLAYER', version: 'S3', translated: true }],
     lidia: [{ author: 'Leemishima', version: 'S3', translated: true }],
     lili: [{ author: 'DewGlider', version: 'S3', translated: true }],
     'miary-zo': [{ author: 'Koenji', version: 'S3', translated: true }],
