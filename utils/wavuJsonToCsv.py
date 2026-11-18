@@ -88,8 +88,13 @@ def fillMissingVideosFromExtendedInput(moves):
             # min keeps the first of the moves with the fewest inputs
             move["video"] = min(candidates, key=lambda candidate: candidate[1])[0]
 
+# moves that are not recorded yet, so they get no video link instead of one to a missing file
+movesWithoutRecording = {"Roger Jr.-4", "Roger Jr.-d+4", "Roger Jr.-FUFT.b+3+4", "Roger Jr.-(back to wall).b,b,UB"}
+
 def generateVideoLink(move) :
     if move.get("video") :
+        return
+    if move["id"] in movesWithoutRecording :
         return
     if move["id"].startswith("Anna-df+3,2,1,2,4") and move["id"] != "Anna-df+3,2,1,2,4,1,2,2,3+4,2":
         return
@@ -160,7 +165,7 @@ def convert(filePath, outDir, overrideDir=defaultOverrideDir):
     moves = wavuParsing.parse_movelist(jsonData)
     csvContent = [list(map(lambda x: x["displayName"], columns)) + ["Character id"] + list(map(lambda x: x["displayName"], overrideColumns))];
     for move in moves :
-        if charName == "miary-zo" or charName == "fahkumram" or charName == "anna" or charName == "armor-king" or charName == "shaheen" or charName == "kunimitsu" or charName == "bob":
+        if charName == "miary-zo" or charName == "fahkumram" or charName == "anna" or charName == "armor-king" or charName == "shaheen" or charName == "kunimitsu" or charName == "bob" or charName == "roger-jr":
             generateVideoLink(move)
     for move in moves :
         correctMove(move, charName)

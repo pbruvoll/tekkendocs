@@ -262,6 +262,9 @@ export const charVideoInfoT8: Record<
     videoPostFix: '',
     gifs: true,
   },
+  'roger-jr': {
+    videoPostFix: '-640',
+  },
 };
 
 export const newMovesT8s3: Set<string> = new Set([
