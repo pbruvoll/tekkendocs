@@ -67,7 +67,8 @@
     "notes": "* Power up during Heat (partially uses remaining Heat time)",
     "reach": "2.13",
     "startup": "i14",
-    "target": "h,h,h"
+    "target": "h,h,h",
+    "video": "File:t8-p2-leroy-1+2.mp4"
   },
   {
     "block": "-3",
@@ -228,7 +229,8 @@
     "recv": "r10",
     "startup": ",i12~13",
     "target": ",m",
-    "tot": "51"
+    "tot": "51",
+    "video": "File:t8-p2-leroy-2,1.mp4"
   },
   {
     "block": "-7~-6",
@@ -283,11 +285,11 @@
     "id": "Leroy-2+3",
     "input": "2+3",
     "name": "Heat Burst",
-    "notes": "* Heat Burst\n* Cancel to r45 with b,b on frame 42\n* 2 chip damage on block\n* 12 chip damage on hit\n* Only deals recoverable damage\n* Cannot cause a K.O.",
+    "notes": "* Heat Burst\n* 46f timestop at frame 14 of activation (t92)\n* Cancel to r87 with b,b on frame 42 (frame 28 of timestop)\n** t41 r27 effective recovery\n* 20f timestop on block or hit\n* 2 chip damage on block\n* 12 chip damage on hit\n* Only deals recoverable damage\n* Cannot cause a K.O.",
     "recv": "r30",
     "startup": "i16",
     "target": "m",
-    "tot": "92"
+    "tot": "46"
   },
   {
     "block": "-3",
@@ -403,7 +405,8 @@
     "notes": "* Parry\n* Becomes Superior Twin Dragon Gate upon perfect parry (ps5~6 or ps3~4 from HRM)\n* Is ps3~15 from HRM.b+2\n* Shift to r7 t34 on successful parry\n** Can perform Twin Dragon Thunderclap and Chain Punch: Branch\n** Recover to r16 standing with any input\n** Can automatically parry successive hits (ps1~34) and return to r7 t34 on each hit\n** Successive hits recover 15F of remaining Heat time",
     "recv": "r30",
     "target": "sp",
-    "tot": "45"
+    "tot": "45",
+    "video": "File:t8-p2-leroy-b+2.mp4"
   },
   {
     "block": "+9~+10",
@@ -548,7 +551,8 @@
     "input": "d+2",
     "reach": "2.37",
     "startup": "i15~16",
-    "target": "L"
+    "target": "L",
+    "video": "File:t8-p2-leroy-d+2.mp4"
   },
   {
     "block": "-13~-12",
@@ -601,7 +605,8 @@
     "reach": "2.43",
     "recv": "r20",
     "startup": "i14~15",
-    "target": "L"
+    "target": "L",
+    "video": "File:t8-p2-leroy-d+4.mp4"
   },
   {
     "block": "-11~-10",
@@ -903,7 +908,8 @@
     "startup": "i13",
     "target": "m",
     "tot": "39",
-    "tracksRight": "tracks left"
+    "tracksRight": "tracks left",
+    "video": "File:t8-p2-leroy-df+4.mp4"
   },
   {
     "block": "-9",
@@ -980,7 +986,8 @@
     "recv": "r30",
     "startup": ",i18",
     "target": ",m",
-    "tot": "65"
+    "tot": "65",
+    "video": "File:t8-p2-leroy-f+2,3.mp4"
   },
   {
     "block": "-9",
@@ -1086,7 +1093,8 @@
     "id": "Leroy-FC.df+4",
     "input": "FC.df+4",
     "startup": "i15~16",
-    "target": "L"
+    "target": "L",
+    "video": "File:t8-p2-leroy-fc.df+4.mp4"
   },
   {
     "block": "-13~-12",
@@ -1236,7 +1244,8 @@
     "recv": "r33",
     "startup": "i14, i5, i5, i5",
     "target": "m,h,h,h",
-    "tot": "68"
+    "tot": "68",
+    "video": "File:t8-p2-leroy-hrm.1+2.mp4"
   },
   {
     "block": "-3",
@@ -1337,7 +1346,8 @@
     "recv": "r25 HRM",
     "startup": "i11~12",
     "target": "M",
-    "tot": "37"
+    "tot": "37",
+    "video": "File:t8-p2-leroy-hrm.4.mp4"
   },
   {
     "block": "-14~-13",
@@ -1552,16 +1562,17 @@
   },
   {
     "block": "-18",
-    "crush": "pc8~",
+    "crush": "pc8~20",
     "damage": "55+",
     "hit": "+0d",
     "id": "Leroy-R.df+1+2",
     "input": "R.df+1+2",
     "name": "Dark Dragon Commandment",
-    "notes": "* Rage Art\n* Removes Recoverable Health\n* Reversal Break\n* Damage increases with lower health, maximum 82\n* Freezes match timer on activation and on hit\n* Restores recoverable health on hit\n* Transition to attack throw on hit\n* Consumes Rage",
-    "recv": "r39",
+    "notes": "* Rage Art\n* Removes Recoverable Health\n* Reversal Break\n* Damage increases with lower health, maximum 82\n* Freezes match timer on activation equal to (total frame idle recovery - 5F) or 57F when canceled by any action\n* Freezes match timer on hit by 15F\n* 114F timestop on activation\n* 20F timestop on block\n* r24 opponent blockstun (r44 effective blockstun w/ timestop)\n* Restores 13 recoverable health on hit\n* Transition to attack throw on hit\n* Consumes Rage",
+    "recv": "r42",
     "startup": "i20",
-    "target": "m,t"
+    "target": "m,t",
+    "tot": "62"
   },
   {
     "block": "-3",
