@@ -1,6 +1,7 @@
 import { useId } from 'react';
 import { Label } from '~/components/ui/label';
 import { Switch } from '~/components/ui/switch';
+import { type QuizFrameType } from '~/features/frameQuiz/types';
 
 export type QuizModifier = 'hideCommand' | 'hideVideo';
 
@@ -12,15 +13,20 @@ export type QuizModifiers = {
 type QuizModifierControlsProps = {
   modifiers: QuizModifiers;
   onToggle: (modifier: QuizModifier) => void;
+  frameType: QuizFrameType;
+  onFrameTypeChange: (frameType: QuizFrameType) => void;
 };
 
 export const QuizModifierControls = ({
   modifiers,
   onToggle,
+  frameType,
+  onFrameTypeChange,
 }: QuizModifierControlsProps) => {
   const id = useId();
   const hideCommandId = `${id}-hide-command`;
   const hideVideoId = `${id}-hide-video`;
+  const onHitId = `${id}-on-hit`;
 
   return (
     <div className="mt-6 border-t border-border/60 pt-4">
@@ -57,6 +63,24 @@ export const QuizModifierControls = ({
             <span>Hide video</span>
             <span className="text-xs font-normal text-muted-foreground">
               Guess from command only
+            </span>
+          </Label>
+        </div>
+        <div className="flex items-center gap-3">
+          <Switch
+            id={onHitId}
+            checked={frameType === 'hit'}
+            onCheckedChange={(checked) =>
+              onFrameTypeChange(checked ? 'hit' : 'block')
+            }
+          />
+          <Label
+            htmlFor={onHitId}
+            className="cursor-pointer flex-col items-start"
+          >
+            <span>On hit</span>
+            <span className="text-xs font-normal text-muted-foreground">
+              Guess frames on hit instead of on block
             </span>
           </Label>
         </div>

@@ -3,12 +3,13 @@ import { useEffect, useRef, useState } from 'react';
 import { AnimatedNumber } from '~/components/AnimatedNumber';
 import { MoveVideo } from '~/components/MoveVideo';
 import { Card, CardContent, CardHeader, CardTitle } from '~/components/ui/card';
-import { answerOptions } from '~/features/frameQuiz/constants';
+import { getAnswerOptions } from '~/features/frameQuiz/frameType';
 import { getMoveCharacterDisplayName } from '~/features/frameQuiz/moveSelection';
 import { getFrameQuizRankForStreak } from '~/features/frameQuiz/streakRank';
 import {
   type FrameRange,
   type QuestionFeedback,
+  type QuizFrameType,
   type QuizMove,
 } from '~/features/frameQuiz/types';
 import { type Move } from '~/types/Move';
@@ -19,6 +20,7 @@ import { VideoPlaceholder } from './VideoPlaceholder';
 
 type QuizQuestionCardProps = {
   question: QuizMove;
+  frameType: QuizFrameType;
   modifiers: QuizModifiers;
   questionFeedback: QuestionFeedback | null;
   isFeedbackVisible: boolean;
@@ -31,6 +33,7 @@ type QuizQuestionCardProps = {
 
 export const QuizQuestionCard = ({
   question,
+  frameType,
   modifiers,
   questionFeedback,
   isFeedbackVisible,
@@ -134,13 +137,14 @@ export const QuizQuestionCard = ({
           ) : (
             'this move'
           )}{' '}
-          on block?
+          on {frameType}?
         </p>
 
         <div className="min-h-44">
           {questionFeedback ? (
             <QuestionFeedbackCard
               questionFeedback={questionFeedback}
+              frameType={frameType}
               isFeedbackVisible={isFeedbackVisible}
               onContinue={onContinue}
               move={question.move}
@@ -148,7 +152,10 @@ export const QuizQuestionCard = ({
               autoShowDetails={autoShowDetails}
             />
           ) : (
-            <AnswerOptionButtons options={answerOptions} onAnswer={onAnswer} />
+            <AnswerOptionButtons
+              options={getAnswerOptions(frameType)}
+              onAnswer={onAnswer}
+            />
           )}
         </div>
       </CardContent>

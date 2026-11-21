@@ -5,6 +5,7 @@ import {
   isGroundedRecoveryState,
   isTenHitStringMove,
   isThrowHitLevel,
+  parseHitFrameValue,
 } from './moveSelection';
 
 const createMove = (move: Partial<Move>): Move => ({
@@ -119,7 +120,7 @@ describe('getEligibleQuizMoves', () => {
 
   test('filters out strings ending in a throw', () => {
     expect(
-      getEligibleQuizMoves([kingPalmStrikeHeadJammer, kingOneTwo]).map(
+      getEligibleQuizMoves([kingPalmStrikeHeadJammer, kingOneTwo], 'block').map(
         ({ id }) => id,
       ),
     ).toEqual(['King-1,2']);
@@ -127,13 +128,13 @@ describe('getEligibleQuizMoves', () => {
 
   test('keeps attack throws, which are blockable', () => {
     expect(
-      getEligibleQuizMoves([bryanFishermansSlam]).map(({ id }) => id),
+      getEligibleQuizMoves([bryanFishermansSlam], 'block').map(({ id }) => id),
     ).toEqual(['Bryan-ws2']);
   });
 
   test('filters out moves that recover on the ground', () => {
     expect(
-      getEligibleQuizMoves([armorKingArmageddonDrop, kingOneTwo]).map(
+      getEligibleQuizMoves([armorKingArmageddonDrop, kingOneTwo], 'block').map(
         ({ id }) => id,
       ),
     ).toEqual(['King-1,2']);
@@ -150,7 +151,9 @@ describe('getEligibleQuizMoves', () => {
       video: 'File:t8-p2-asuka-ws2,1,1,1,2,1,4,3,3+4.mp4',
     });
     expect(
-      getEligibleQuizMoves([asukaTenHitPart, kingOneTwo]).map(({ id }) => id),
+      getEligibleQuizMoves([asukaTenHitPart, kingOneTwo], 'block').map(
+        ({ id }) => id,
+      ),
     ).toEqual(['King-1,2']);
   });
 
@@ -187,8 +190,73 @@ describe('getEligibleQuizMoves', () => {
         video: ninaVideo,
       }),
     ];
-    expect(getEligibleQuizMoves(ninaMoves).map(({ id }) => id)).toEqual([
-      'Nina-df+3,2,1,4',
+    expect(
+      getEligibleQuizMoves(ninaMoves, 'block').map(({ id }) => id),
+    ).toEqual(['Nina-df+3,2,1,4']);
+  });
+});
+
+test('parseHitFrameValue', () => {
+  expect(parseHitFrameValue('+8')).toBe(8); // King-1
+  expect(parseHitFrameValue('-2')).toBe(-2);
+  expect(parseHitFrameValue('+4c')).toBe(4); // forced crouch is not a knockdown
+  expect(parseHitFrameValue('+3~+4')).toBe(3);
+  expect(parseHitFrameValue('')).toBeNull();
+  expect(parseHitFrameValue('FC')).toBeNull();
+});
+
+test('parseHitFrameValue leaves out knockdowns and launches', () => {
+  expect(parseHitFrameValue('+32a (+22)')).toBeNull(); // Jin-d+3+4
+  expect(parseHitFrameValue('+15a')).toBeNull();
+  expect(parseHitFrameValue('+5d')).toBeNull();
+  expect(parseHitFrameValue('-6d')).toBeNull();
+  expect(parseHitFrameValue('+20d (-1) FDFA')).toBeNull();
+});
+
+test('parseHitFrameValue leaves out a knockdown or launch on a later value', () => {
+  expect(parseHitFrameValue('-1 / +20a (+13)')).toBeNull(); // Hwoarang-RFS.d+4,3
+  expect(parseHitFrameValue('-8 / -8a (-16)')).toBeNull(); // Reina-OTG.d+4
+  expect(parseHitFrameValue('-1~0d')).toBeNull(); // Leroy-d,df,f+3+4,F
+  expect(parseHitFrameValue('+20~26a (-6~+0)')).toBeNull(); // Lili-H.RAB.4
+  expect(parseHitFrameValue('+14 +64a')).toBeNull(); // Yoshimitsu-NSS.1+4
+  expect(parseHitFrameValue('+5s/(0d)')).toBeNull(); // King-f,f,n,2
+});
+
+test('parseHitFrameValue leaves out moves with a second value in brackets', () => {
+  expect(parseHitFrameValue('+30(+22)')).toBeNull(); // King-f,f,F+3
+  expect(parseHitFrameValue('+15 (+6)')).toBeNull(); // Lars-f+2,4
+  expect(parseHitFrameValue('+20 (-6)')).toBeNull(); // Victor-IAI.1+2
+});
+
+test('parseHitFrameValue keeps other letters after the frames', () => {
+  expect(parseHitFrameValue('+14g')).toBe(14); // Alisa-4
+  expect(parseHitFrameValue('+8c~+17c')).toBe(8); // Alisa-d+3
+  expect(parseHitFrameValue('+11g~+12g')).toBe(11); // Armor King-BAD.1,4
+  expect(parseHitFrameValue('+9g +21w')).toBe(9);
+  expect(parseHitFrameValue('+4c FC')).toBe(4);
+  expect(parseHitFrameValue('+3 BT')).toBe(3);
+});
+
+describe('getEligibleQuizMoves by frame type', () => {
+  const noBlockFrames = createMove({ id: 'no-block', block: '', hit: '+5' });
+  const knockdown = createMove({ id: 'knockdown', block: '-12', hit: '+5d' });
+  const both = createMove({ id: 'both', block: '-1', hit: '+8' });
+
+  test('block questions need block frames and use them', () => {
+    expect(
+      getEligibleQuizMoves([noBlockFrames, knockdown, both], 'block'),
+    ).toMatchObject([
+      { id: 'knockdown', frameValue: -12 },
+      { id: 'both', frameValue: -1 },
+    ]);
+  });
+
+  test('hit questions need standard hit frames and use them', () => {
+    expect(
+      getEligibleQuizMoves([noBlockFrames, knockdown, both], 'hit'),
+    ).toMatchObject([
+      { id: 'no-block', frameValue: 5 },
+      { id: 'both', frameValue: 8 },
     ]);
   });
 });
