@@ -14,7 +14,7 @@ import { getRankForScore } from '~/features/dailyChallengeResult/scoreRank';
 import { AnswerDetailsCard } from '~/features/frameQuiz/components/AnswerDetailsCard';
 import { AnswerOptionButtons } from '~/features/frameQuiz/components/AnswerOptionButtons';
 import { QuestionFeedbackCard } from '~/features/frameQuiz/components/QuestionFeedbackCard';
-import { answerOptions } from '~/features/frameQuiz/constants';
+import { blockAnswerOptions } from '~/features/frameQuiz/constants';
 import {
   formatFrameRange,
   isInFrameRange,
@@ -155,7 +155,10 @@ export default function DailyChallenge() {
     };
   }, [questionFeedback]);
 
-  const eligibleMoves = useMemo(() => getEligibleQuizMoves(moves), [moves]);
+  const eligibleMoves = useMemo(
+    () => getEligibleQuizMoves(moves, 'block'),
+    [moves],
+  );
 
   const dailyMoves = useMemo(() => {
     if (!todayKey) {
@@ -295,7 +298,7 @@ export default function DailyChallenge() {
       return;
     }
 
-    const isCorrect = isInFrameRange(currentQuestion.blockValue, selectedRange);
+    const isCorrect = isInFrameRange(currentQuestion.frameValue, selectedRange);
     const nextScore = score + (isCorrect ? 1 : 0);
 
     const nextAnswers = [
@@ -316,7 +319,7 @@ export default function DailyChallenge() {
     setQuestionFeedback({
       isCorrect,
       selectedLabel: formatFrameRange(selectedRange),
-      correctBlockValue: currentQuestion.move.block,
+      correctFrames: currentQuestion.move.block,
     });
   };
 
@@ -581,12 +584,13 @@ export default function DailyChallenge() {
                 {questionFeedback ? (
                   <QuestionFeedbackCard
                     questionFeedback={questionFeedback}
+                    frameType="block"
                     isFeedbackVisible={isFeedbackVisible}
                     onContinue={handleContinueAfterFeedback}
                   />
                 ) : (
                   <AnswerOptionButtons
-                    options={answerOptions}
+                    options={blockAnswerOptions}
                     onAnswer={handleAnswer}
                   />
                 )}

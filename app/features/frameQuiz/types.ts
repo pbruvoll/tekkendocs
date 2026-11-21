@@ -3,8 +3,12 @@ import { type Move } from '~/types/Move';
 export type QuizMove = {
   id: string;
   move: Move;
-  blockValue: number;
+  /** The block or hit frames, whichever the quiz asks for. */
+  frameValue: number;
 };
+
+/** Which frames the quiz asks for. */
+export type QuizFrameType = 'block' | 'hit';
 
 /** Inclusive frame range. A missing bound leaves that side open. */
 export type FrameRange = {
@@ -24,7 +28,7 @@ export type SessionAnswer = {
 export type QuestionFeedback = {
   isCorrect: boolean;
   selectedLabel: string;
-  correctBlockValue: string;
+  correctFrames: string;
 };
 
 export type PendingAdvance = {

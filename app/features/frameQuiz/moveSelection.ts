@@ -2,7 +2,7 @@ import { characterInfoT8List } from '~/constants/characterInfoListT8';
 import { hitLevelValue } from '~/constants/filterConstants';
 import { MoveTags } from '~/constants/moveTags';
 import { type Move } from '~/types/Move';
-import { type QuizMove } from './types';
+import { type QuizFrameType, type QuizMove } from './types';
 
 export const parseBlockValue = (block: string): number | null => {
   const direct = Number.parseInt(block, 10);
@@ -13,6 +13,33 @@ export const parseBlockValue = (block: string): number | null => {
   const simplified = (block.match(/i?[+-]?\d+/)?.[0] || '').replace(/^i/i, '');
   const parsed = Number.parseInt(simplified, 10);
   return Number.isNaN(parsed) ? null : parsed;
+};
+
+// Wavu marks a knockdown with `d` and an airborne opponent (a launch) with `a`
+// right after the frames, e.g. `+5d` or `+32a (+22)`. Other letters, like `c`
+// for a forced crouch, leave the opponent standing. The marker can be on a
+// later value, e.g. `-1 / +20a (+13)` when only some hits launch.
+const knockdownOrLaunchPattern = /\d[a-z]*[ad](?![a-z])/i;
+
+// A second value in brackets, e.g. `+30(+22)` or `+15 (+6)`, is the advantage
+// after a knockdown or a stance cancel. The move then has two hit values.
+const bracketedValuePattern = /\(\s*[+-]?\d/;
+
+/**
+ * Frame advantage on hit. Null when the frames can not be parsed, or when the
+ * move knocks down, launches or has a second value in brackets: then the
+ * frames do not give one clear answer, so those moves are left out of the hit
+ * quiz.
+ */
+export const parseHitFrameValue = (hit: string): number | null => {
+  const trimmed = hit.trim();
+  if (
+    knockdownOrLaunchPattern.test(trimmed) ||
+    bracketedValuePattern.test(trimmed)
+  ) {
+    return null;
+  }
+  return parseBlockValue(trimmed);
 };
 
 export const getCharacterDisplayName = (charId: string): string =>
@@ -76,7 +103,10 @@ const createBorrowedVideoCheck = (moves: Move[]) => {
     );
 };
 
-export const getEligibleQuizMoves = (moves: Move[]): QuizMove[] => {
+export const getEligibleQuizMoves = (
+  moves: Move[],
+  frameType: QuizFrameType,
+): QuizMove[] => {
   const hasBorrowedVideo = createBorrowedVideoCheck(moves);
   return moves.reduce<QuizMove[]>((current, move) => {
     if (!move.video || hasBorrowedVideo(move)) {
@@ -111,12 +141,15 @@ export const getEligibleQuizMoves = (moves: Move[]): QuizMove[] => {
       return current;
     }
 
-    const blockValue = parseBlockValue(move.block || '');
-    if (blockValue === null) {
+    const frameValue =
+      frameType === 'hit'
+        ? parseHitFrameValue(move.hit || '')
+        : parseBlockValue(move.block || '');
+    if (frameValue === null) {
       return current;
     }
 
-    current.push({ id: move.id, move, blockValue });
+    current.push({ id: move.id, move, frameValue });
     return current;
   }, []);
 };

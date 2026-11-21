@@ -41,6 +41,11 @@ import {
   isInFrameRange,
 } from '~/features/frameQuiz/frameRange';
 import {
+  frameTypeParam,
+  getCorrectFrames,
+  parseQuizFrameType,
+} from '~/features/frameQuiz/frameType';
+import {
   getCharacterDisplayName,
   getEligibleQuizMoves,
 } from '~/features/frameQuiz/moveSelection';
@@ -62,6 +67,7 @@ import { getFrameQuizRankForStreak } from '~/features/frameQuiz/streakRank';
 import {
   type FrameRange,
   type QuestionFeedback,
+  type QuizFrameType,
   type QuizMove,
 } from '~/features/frameQuiz/types';
 import { getFilterFromParams, isFilterValueActive } from '~/utils/filterUtils';
@@ -87,12 +93,12 @@ export const meta: MetaFunction = ({ matches, location }) => {
   const title = singleCharacterName
     ? `${singleCharacterName} Endless Frame Quiz | TekkenDocs`
     : 'Tekken 8 Endless Frame Quiz | TekkenDocs';
+  const frameType = parseQuizFrameType(searchParams.get(frameTypeParam));
 
   return generateMetaTags({
     matches,
     title,
-    description:
-      'Endless frame data quiz. Guess the block frame and see how many you can get right in a row!',
+    description: `Endless frame data quiz. Guess the ${frameType} frame and see how many you can get right in a row!`,
     image: { url: '/t8/pages/framequiz.png' },
     url: '/t8/framequiz',
   });
@@ -120,6 +126,8 @@ export default function FrameQuiz() {
   const [pendingAdvance, setPendingAdvance] = useState<PendingAdvance | null>(
     null,
   );
+  const [searchParams, setSearchParams] = useSearchParams();
+  const frameType = parseQuizFrameType(searchParams.get(frameTypeParam));
   const storedStats = useSyncExternalStore(
     quizStatsStore.subscribe,
     quizStatsStore.getSnapshot,
@@ -140,7 +148,6 @@ export default function FrameQuiz() {
   const [activeOptions, setActiveOptions] = useState<QuizOptionValues>({
     autoShowDetails: false,
   });
-  const [searchParams, setSearchParams] = useSearchParams();
   const navigate = useNavigate();
   // A `started` param present on mount is a stale reload of an in-progress
   // quiz (React state is gone). Treat it as "not started" so we render the
@@ -203,8 +210,9 @@ export default function FrameQuiz() {
     () =>
       getEligibleQuizMoves(
         hasActiveFilter ? filterMoves(moves, moveFilter, favorites) : moves,
+        frameType,
       ),
-    [moves, moveFilter, hasActiveFilter, favorites],
+    [moves, moveFilter, hasActiveFilter, favorites, frameType],
   );
 
   const [prevEligibleMovesLength, setPrevEligibleMovesLength] = useState(
@@ -234,10 +242,15 @@ export default function FrameQuiz() {
     return character?.length === 1 && !hasOtherFilters ? character[0] : null;
   }, [moveFilter, selectedMoveRange]);
 
+  // Saved stats are for block frames only. Hit mode, like a filter, keeps its
+  // stats for the session.
+  const savesStatsForFrameType = frameType === 'block';
+
   // Persist stats whenever there is no filter (global stats) or exactly one
   // character is selected (per-character stats). Any other filter combination
   // is session-only. The store/key is then chosen by `singleCharacterId`.
-  const persistToStorage = !hasActiveFilter || !!singleCharacterId;
+  const persistToStorage =
+    savesStatsForFrameType && (!hasActiveFilter || !!singleCharacterId);
 
   const singleCharacterName = singleCharacterId
     ? getCharacterDisplayName(singleCharacterId)
@@ -245,13 +258,13 @@ export default function FrameQuiz() {
 
   // When practicing a single character, surface that character's persisted
   // stats. Otherwise use the global persisted stats, or session-only stats
-  // when a non-character filter is active.
-  const persistedStats = singleCharacterId
-    ? (persistedCharStats.normal?.[singleCharacterId] ??
-      defaultPersistedFrameQuizStats)
-    : persistToStorage
-      ? storedStats
-      : sessionStats;
+  // when they are not saved.
+  const persistedStats = !persistToStorage
+    ? sessionStats
+    : singleCharacterId
+      ? (persistedCharStats.normal?.[singleCharacterId] ??
+        defaultPersistedFrameQuizStats)
+      : storedStats;
 
   const handleRangeChange = (range: MoveRange | null) => {
     setSearchParams(
@@ -395,6 +408,21 @@ export default function FrameQuiz() {
     );
   };
 
+  const handleFrameTypeChange = (nextFrameType: QuizFrameType) => {
+    setSearchParams(
+      (prev) => {
+        const next = new URLSearchParams(prev);
+        if (nextFrameType === 'block') {
+          next.delete(frameTypeParam);
+        } else {
+          next.set(frameTypeParam, nextFrameType);
+        }
+        return next;
+      },
+      { replace: true, preventScrollReset: true },
+    );
+  };
+
   const handleStart = () => {
     const {
       question: firstQuestion,
@@ -427,7 +455,7 @@ export default function FrameQuiz() {
       return;
     }
 
-    const isCorrect = isInFrameRange(currentQuestion.blockValue, selectedRange);
+    const isCorrect = isInFrameRange(currentQuestion.frameValue, selectedRange);
     const nextScore = score + (isCorrect ? 1 : 0);
     const nextTotalAnswered = totalAnswered + 1;
     const nextConsecutiveCorrectStreak = isCorrect
@@ -496,7 +524,7 @@ export default function FrameQuiz() {
     setQuestionFeedback({
       isCorrect,
       selectedLabel: formatFrameRange(selectedRange),
-      correctBlockValue: currentQuestion.move.block,
+      correctFrames: getCorrectFrames(currentQuestion.move, frameType),
     });
   };
 
@@ -561,8 +589,8 @@ export default function FrameQuiz() {
       <ContentContainer enableBottomPadding enableTopPadding>
         <h1 className="my-4 text-2xl">Frame quiz</h1>
         <p>
-          There are not enough valid Mokujin moves with video and parseable
-          block frames to start the endless quiz right now.
+          There are not enough valid Mokujin moves with video and usable{' '}
+          {frameType} frames to start the endless quiz right now.
         </p>
       </ContentContainer>
     );
@@ -598,9 +626,9 @@ export default function FrameQuiz() {
           </CardHeader>
           <CardContent className="gap-4">
             <p>
-              Guess how many frames each move is on block. This mode is endless
-              and keeps going until you stop. See how many you can get right in
-              a row and try to climb the ranks!
+              Guess how many frames each move is on {frameType}. This mode is
+              endless and keeps going until you stop. See how many you can get
+              right in a row and try to climb the ranks!
             </p>
             <p className="text-sm text-muted-foreground">
               Want to focus on a specific character, a subset of moves, or apply
@@ -612,6 +640,8 @@ export default function FrameQuiz() {
             <QuizModifierControls
               modifiers={pendingModifiers}
               onToggle={handleToggleModifier}
+              frameType={frameType}
+              onFrameTypeChange={handleFrameTypeChange}
             />
             <QuizCharacterFilter
               selectedCharacters={selectedCharacters}
@@ -661,6 +691,7 @@ export default function FrameQuiz() {
         <div className="space-y-4">
           <QuizQuestionCard
             question={currentQuestion}
+            frameType={frameType}
             modifiers={activeModifiers}
             questionFeedback={questionFeedback}
             isFeedbackVisible={isFeedbackVisible}

@@ -1,9 +1,13 @@
-import { type QuestionFeedback } from '~/features/frameQuiz/types';
+import {
+  type QuestionFeedback,
+  type QuizFrameType,
+} from '~/features/frameQuiz/types';
 import { type Move } from '~/types/Move';
 import { MoveDetailsToggle } from './MoveDetailsToggle';
 
 type QuestionFeedbackCardProps = {
   questionFeedback: QuestionFeedback;
+  frameType: QuizFrameType;
   isFeedbackVisible: boolean;
   onContinue: () => void;
   move?: Move;
@@ -13,6 +17,7 @@ type QuestionFeedbackCardProps = {
 
 export const QuestionFeedbackCard = ({
   questionFeedback,
+  frameType,
   isFeedbackVisible,
   onContinue,
   move,
@@ -61,7 +66,7 @@ export const QuestionFeedbackCard = ({
                 </p>
               )}
               <p className="mt-1 text-sm">
-                Correct block frames: {questionFeedback.correctBlockValue}
+                Correct {frameType} frames: {questionFeedback.correctFrames}
               </p>
             </div>
           </div>
