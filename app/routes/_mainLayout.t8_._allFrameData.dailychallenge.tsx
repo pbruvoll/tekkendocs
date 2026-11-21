@@ -12,6 +12,7 @@ import { AnswerSummaryTile } from '~/features/dailyChallengeResult/components/An
 import { ShareResultActions } from '~/features/dailyChallengeResult/components/ShareResultActions';
 import { getRankForScore } from '~/features/dailyChallengeResult/scoreRank';
 import { AnswerDetailsCard } from '~/features/frameQuiz/components/AnswerDetailsCard';
+import { AnswerOptionButtons } from '~/features/frameQuiz/components/AnswerOptionButtons';
 import { QuestionFeedbackCard } from '~/features/frameQuiz/components/QuestionFeedbackCard';
 import { answerOptions } from '~/features/frameQuiz/constants';
 import {
@@ -584,21 +585,10 @@ export default function DailyChallenge() {
                     onContinue={handleContinueAfterFeedback}
                   />
                 ) : (
-                  <div className="flex flex-wrap gap-2">
-                    {answerOptions.map((option) => {
-                      const label = formatFrameRange(option);
-                      return (
-                        <Button
-                          key={label}
-                          variant="outline"
-                          onClick={() => handleAnswer(option)}
-                          className="min-w-33 justify-center rounded-full px-5"
-                        >
-                          {label}
-                        </Button>
-                      );
-                    })}
-                  </div>
+                  <AnswerOptionButtons
+                    options={answerOptions}
+                    onAnswer={handleAnswer}
+                  />
                 )}
               </div>
             </CardContent>
