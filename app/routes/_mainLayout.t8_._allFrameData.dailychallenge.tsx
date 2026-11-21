@@ -13,18 +13,18 @@ import { ShareResultActions } from '~/features/dailyChallengeResult/components/S
 import { getRankForScore } from '~/features/dailyChallengeResult/scoreRank';
 import { AnswerDetailsCard } from '~/features/frameQuiz/components/AnswerDetailsCard';
 import { QuestionFeedbackCard } from '~/features/frameQuiz/components/QuestionFeedbackCard';
+import { answerOptions } from '~/features/frameQuiz/constants';
 import {
-  answerLabelByBucket,
-  answerOptions,
-} from '~/features/frameQuiz/constants';
+  formatFrameRange,
+  isInFrameRange,
+} from '~/features/frameQuiz/frameRange';
 import {
-  getAnswerBucket,
   getEligibleQuizMoves,
   getMoveCharacterDisplayName,
 } from '~/features/frameQuiz/moveSelection';
 import { deterministicSample } from '~/features/frameQuiz/random';
 import {
-  type AnswerBucket,
+  type FrameRange,
   type PendingAdvance,
   type QuestionFeedback,
   type SessionAnswer,
@@ -289,13 +289,12 @@ export default function DailyChallenge() {
     setCurrentQuestionIndex((current) => current + 1);
   };
 
-  const handleAnswer = (selectedBucket: AnswerBucket) => {
+  const handleAnswer = (selectedRange: FrameRange) => {
     if (!currentQuestion || questionFeedback) {
       return;
     }
 
-    const correctBucket = getAnswerBucket(currentQuestion.blockValue);
-    const isCorrect = selectedBucket === correctBucket;
+    const isCorrect = isInFrameRange(currentQuestion.blockValue, selectedRange);
     const nextScore = score + (isCorrect ? 1 : 0);
 
     const nextAnswers = [
@@ -305,10 +304,7 @@ export default function DailyChallenge() {
         characterName: getMoveCharacterDisplayName(currentQuestion.move),
         command: currentQuestion.move.command,
         rawBlock: currentQuestion.move.block,
-        selectedBucket,
-        correctBucket,
-        selectedLabel: answerLabelByBucket[selectedBucket],
-        correctLabel: answerLabelByBucket[correctBucket],
+        selectedRange,
         isCorrect,
       },
     ];
@@ -318,7 +314,7 @@ export default function DailyChallenge() {
     setPendingAdvance({ score: nextScore, answers: nextAnswers });
     setQuestionFeedback({
       isCorrect,
-      selectedLabel: answerLabelByBucket[selectedBucket],
+      selectedLabel: formatFrameRange(selectedRange),
       correctBlockValue: currentQuestion.move.block,
     });
   };
@@ -589,16 +585,19 @@ export default function DailyChallenge() {
                   />
                 ) : (
                   <div className="flex flex-wrap gap-2">
-                    {answerOptions.map((option) => (
-                      <Button
-                        key={option.bucket}
-                        variant="outline"
-                        onClick={() => handleAnswer(option.bucket)}
-                        className="min-w-33 justify-center rounded-full px-5"
-                      >
-                        {option.label}
-                      </Button>
-                    ))}
+                    {answerOptions.map((option) => {
+                      const label = formatFrameRange(option);
+                      return (
+                        <Button
+                          key={label}
+                          variant="outline"
+                          onClick={() => handleAnswer(option)}
+                          className="min-w-33 justify-center rounded-full px-5"
+                        >
+                          {label}
+                        </Button>
+                      );
+                    })}
                   </div>
                 )}
               </div>

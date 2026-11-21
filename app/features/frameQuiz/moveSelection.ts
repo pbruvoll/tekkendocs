@@ -2,7 +2,7 @@ import { characterInfoT8List } from '~/constants/characterInfoListT8';
 import { hitLevelValue } from '~/constants/filterConstants';
 import { MoveTags } from '~/constants/moveTags';
 import { type Move } from '~/types/Move';
-import { type AnswerBucket, type QuizMove } from './types';
+import { type QuizMove } from './types';
 
 export const parseBlockValue = (block: string): number | null => {
   const direct = Number.parseInt(block, 10);
@@ -20,22 +20,6 @@ export const getCharacterDisplayName = (charId: string): string =>
 
 export const getMoveCharacterDisplayName = (move: Move): string =>
   getCharacterDisplayName(move.characterId);
-
-export const getAnswerBucket = (blockValue: number): AnswerBucket => {
-  if (blockValue >= 1) {
-    return 'plus';
-  }
-  if (blockValue >= -9) {
-    return 'zeroToMinusNine';
-  }
-  if (blockValue >= -11) {
-    return 'minusTenToMinusEleven';
-  }
-  if (blockValue >= -14) {
-    return 'minusTwelveToMinusFourteen';
-  }
-  return 'minusFifteenOrLess';
-};
 
 export const isThrowHitLevel = (hitLevel: string): boolean => {
   // Hit levels separate the inputs of a string with `, ` and the hits of a
