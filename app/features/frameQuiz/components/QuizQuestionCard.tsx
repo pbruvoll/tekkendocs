@@ -2,10 +2,8 @@ import { motion, useReducedMotion } from 'motion/react';
 import { useEffect, useRef, useState } from 'react';
 import { AnimatedNumber } from '~/components/AnimatedNumber';
 import { MoveVideo } from '~/components/MoveVideo';
-import { Button } from '~/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '~/components/ui/card';
 import { answerOptions } from '~/features/frameQuiz/constants';
-import { formatFrameRange } from '~/features/frameQuiz/frameRange';
 import { getMoveCharacterDisplayName } from '~/features/frameQuiz/moveSelection';
 import { getFrameQuizRankForStreak } from '~/features/frameQuiz/streakRank';
 import {
@@ -14,6 +12,7 @@ import {
   type QuizMove,
 } from '~/features/frameQuiz/types';
 import { type Move } from '~/types/Move';
+import { AnswerOptionButtons } from './AnswerOptionButtons';
 import { QuestionFeedbackCard } from './QuestionFeedbackCard';
 import { type QuizModifiers } from './QuizModifierControls';
 import { VideoPlaceholder } from './VideoPlaceholder';
@@ -149,21 +148,7 @@ export const QuizQuestionCard = ({
               autoShowDetails={autoShowDetails}
             />
           ) : (
-            <div className="flex flex-wrap gap-2">
-              {answerOptions.map((option) => {
-                const label = formatFrameRange(option);
-                return (
-                  <Button
-                    key={label}
-                    variant="outline"
-                    onClick={() => onAnswer(option)}
-                    className="min-w-33 justify-center rounded-full px-5"
-                  >
-                    {label}
-                  </Button>
-                );
-              })}
-            </div>
+            <AnswerOptionButtons options={answerOptions} onAnswer={onAnswer} />
           )}
         </div>
       </CardContent>
