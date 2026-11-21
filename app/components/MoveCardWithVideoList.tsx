@@ -1,5 +1,5 @@
-import { useWindowVirtualizer } from '@tanstack/react-virtual';
 import { useCallback, useEffect, useRef, useState } from 'react';
+import { useRestoredWindowVirtualizer } from '~/features/virtualListScrollRestoration/useRestoredWindowVirtualizer';
 import { cn } from '~/lib/utils';
 import { type FrameDataListProps } from '~/types/FrameDataListProps';
 import { commandToUrlSegmentEncoded } from '~/utils/moveUtils';
@@ -55,8 +55,12 @@ export function MoveCardWithVideoList({
     });
   }, []);
 
-  const virtualizer = useWindowVirtualizer({
+  // keyed by move, so the heights measured before going to a move page are used for the same moves when coming back
+  const getItemKey = useCallback((index: number) => moves[index].id, [moves]);
+
+  const virtualizer = useRestoredWindowVirtualizer({
     count: moves.length,
+    getItemKey,
     estimateSize: () => ESTIMATED_ITEM_HEIGHT + GAP_SIZE,
     scrollMargin: listRef.current?.offsetTop ?? 0,
     measureElement: (element) =>
@@ -89,7 +93,7 @@ export function MoveCardWithVideoList({
 
           return (
             <div
-              key={move.id || `${computedCharId}-${move.command}`}
+              key={virtualItem.key}
               ref={virtualizer.measureElement}
               data-index={virtualItem.index}
               style={{
