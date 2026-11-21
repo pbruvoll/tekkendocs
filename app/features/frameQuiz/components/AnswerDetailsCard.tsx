@@ -6,6 +6,7 @@ import { MovePropertyTagList } from '~/components/MovePropertyTagList';
 import { MoveVideo } from '~/components/MoveVideo';
 import { ShowNotes } from '~/components/ShowNotes';
 import { Button } from '~/components/ui/button';
+import { formatFrameRange } from '~/features/frameQuiz/frameRange';
 import { hasVisibleProperties } from '~/features/frameQuiz/moveSelection';
 import { type SessionAnswer } from '~/features/frameQuiz/types';
 import { type Move } from '~/types/Move';
@@ -46,7 +47,9 @@ export const AnswerDetailsCard = ({
       <div className="mt-2 flex flex-wrap items-start gap-2 text-sm">
         <div className="rounded-md bg-muted/60 px-2 py-1">
           <p className="text-[11px] text-muted-foreground">You picked</p>
-          <p className="font-medium">{answer.selectedLabel}</p>
+          <p className="font-medium">
+            {formatFrameRange(answer.selectedRange)}
+          </p>
         </div>
         <div className="rounded-md bg-muted/60 px-2 py-1">
           <p className="text-[11px] text-muted-foreground">Correct</p>

@@ -6,16 +6,10 @@ export type QuizMove = {
   blockValue: number;
 };
 
-export type AnswerBucket =
-  | 'plus'
-  | 'zeroToMinusNine'
-  | 'minusTenToMinusEleven'
-  | 'minusTwelveToMinusFourteen'
-  | 'minusFifteenOrLess';
-
-export type AnswerOption = {
-  bucket: AnswerBucket;
-  label: string;
+/** Inclusive frame range. A missing bound leaves that side open. */
+export type FrameRange = {
+  min?: number;
+  max?: number;
 };
 
 export type SessionAnswer = {
@@ -23,10 +17,7 @@ export type SessionAnswer = {
   characterName: string;
   command: string;
   rawBlock: string;
-  selectedBucket: AnswerBucket;
-  correctBucket: AnswerBucket;
-  selectedLabel: string;
-  correctLabel: string;
+  selectedRange: FrameRange;
   isCorrect: boolean;
 };
 

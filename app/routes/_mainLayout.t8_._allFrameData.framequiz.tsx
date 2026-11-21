@@ -36,9 +36,11 @@ import {
   type MoveRange,
   QuizRangeSelection,
 } from '~/features/frameQuiz/components/QuizRangeSelection';
-import { answerLabelByBucket } from '~/features/frameQuiz/constants';
 import {
-  getAnswerBucket,
+  formatFrameRange,
+  isInFrameRange,
+} from '~/features/frameQuiz/frameRange';
+import {
   getCharacterDisplayName,
   getEligibleQuizMoves,
 } from '~/features/frameQuiz/moveSelection';
@@ -58,7 +60,7 @@ import {
 } from '~/features/frameQuiz/random';
 import { getFrameQuizRankForStreak } from '~/features/frameQuiz/streakRank';
 import {
-  type AnswerBucket,
+  type FrameRange,
   type QuestionFeedback,
   type QuizMove,
 } from '~/features/frameQuiz/types';
@@ -420,13 +422,12 @@ export default function FrameQuiz() {
     });
   };
 
-  const handleAnswer = (selectedBucket: AnswerBucket) => {
+  const handleAnswer = (selectedRange: FrameRange) => {
     if (!currentQuestion || questionFeedback) {
       return;
     }
 
-    const correctBucket = getAnswerBucket(currentQuestion.blockValue);
-    const isCorrect = selectedBucket === correctBucket;
+    const isCorrect = isInFrameRange(currentQuestion.blockValue, selectedRange);
     const nextScore = score + (isCorrect ? 1 : 0);
     const nextTotalAnswered = totalAnswered + 1;
     const nextConsecutiveCorrectStreak = isCorrect
@@ -494,7 +495,7 @@ export default function FrameQuiz() {
     });
     setQuestionFeedback({
       isCorrect,
-      selectedLabel: answerLabelByBucket[selectedBucket],
+      selectedLabel: formatFrameRange(selectedRange),
       correctBlockValue: currentQuestion.move.block,
     });
   };

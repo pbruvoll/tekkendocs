@@ -5,10 +5,11 @@ import { MoveVideo } from '~/components/MoveVideo';
 import { Button } from '~/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '~/components/ui/card';
 import { answerOptions } from '~/features/frameQuiz/constants';
+import { formatFrameRange } from '~/features/frameQuiz/frameRange';
 import { getMoveCharacterDisplayName } from '~/features/frameQuiz/moveSelection';
 import { getFrameQuizRankForStreak } from '~/features/frameQuiz/streakRank';
 import {
-  type AnswerBucket,
+  type FrameRange,
   type QuestionFeedback,
   type QuizMove,
 } from '~/features/frameQuiz/types';
@@ -25,7 +26,7 @@ type QuizQuestionCardProps = {
   displayedStreak: number;
   sourceMoves: Move[];
   autoShowDetails: boolean;
-  onAnswer: (bucket: AnswerBucket) => void;
+  onAnswer: (range: FrameRange) => void;
   onContinue: () => void;
 };
 
@@ -149,16 +150,19 @@ export const QuizQuestionCard = ({
             />
           ) : (
             <div className="flex flex-wrap gap-2">
-              {answerOptions.map((option) => (
-                <Button
-                  key={option.bucket}
-                  variant="outline"
-                  onClick={() => onAnswer(option.bucket)}
-                  className="min-w-33 justify-center rounded-full px-5"
-                >
-                  {option.label}
-                </Button>
-              ))}
+              {answerOptions.map((option) => {
+                const label = formatFrameRange(option);
+                return (
+                  <Button
+                    key={label}
+                    variant="outline"
+                    onClick={() => onAnswer(option)}
+                    className="min-w-33 justify-center rounded-full px-5"
+                  >
+                    {label}
+                  </Button>
+                );
+              })}
             </div>
           )}
         </div>
