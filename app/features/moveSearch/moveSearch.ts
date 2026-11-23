@@ -10,6 +10,7 @@ import { type Move } from '~/types/Move';
  * - The stance dot is optional, so "bad1" and "bad 1" match "BAD.1"
  * - Neutral is optional, so "ff2" matches both "f,f,n,2" and "f,F+2", while
  *   "ffn2" only matches "f,f,n,2"
+ * - "wr" (while running) at the start means "fff", so "wr2" matches "f,f,F+2"
  * - "?" is a wildcard, so "1?2" matches "1,1,2" ("*" means hold in commands)
  * - A trailing space means the command must match exactly, so "df1 " does
  *   not match "df1,2". Not when the query has other spaces, such as "f f "
@@ -41,7 +42,8 @@ const normalizeCommand = (command: string, keepNeutral: boolean) =>
     .replace(keepNeutral ? /[,/]/g : /n,|[,/]/g, '')
     .replace(/([A-Za-z])\+/g, '$1')
     .replace(/\./g, '')
-    .toLowerCase();
+    .toLowerCase()
+    .replace(/^wr/, 'fff'); // while running, so "wr2" matches "f,f,F+2"
 
 /** An "n" between inputs, so stance names such as KIN and SEN do not count */
 const neutralInQuery = /(?<=[udfb\d.])n(?=[udfb\d]|$)/;
