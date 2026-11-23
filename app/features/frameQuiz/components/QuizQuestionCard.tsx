@@ -153,7 +153,7 @@ export const QuizQuestionCard = ({
             />
           ) : (
             <AnswerOptionButtons
-              options={getAnswerOptions(frameType)}
+              options={getAnswerOptions(frameType, modifiers.hard)}
               onAnswer={onAnswer}
             />
           )}
