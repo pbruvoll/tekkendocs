@@ -45,6 +45,23 @@ test('ranks exact, prefix and contains command matches', () => {
   ]);
 });
 
+test('wr at the start matches f,f,f moves, and the other way around', () => {
+  const runMoves = [
+    createMove('f,f,F+2'),
+    createMove('f,f,f+1+2'),
+    createMove('WR.3'),
+    createMove('b,wr2'),
+  ];
+  expect(commands(searchMoves(runMoves, 'wr+2'))).toEqual(['f,f,F+2']);
+  expect(commands(searchMoves(runMoves, 'WR 1+2'))).toEqual(['f,f,f+1+2']);
+  expect(commands(searchMoves(runMoves, 'fff3'))).toEqual(['WR.3']);
+  expect(commands(searchMoves(runMoves, 'wr'))).toEqual([
+    'f,f,F+2',
+    'f,f,f+1+2',
+    'WR.3',
+  ]);
+});
+
 test('ignores spaces, commas and plus in commands', () => {
   expect(commands(searchMoves(moves, 'f f 2'))).toEqual(['f,F+2']);
   expect(commands(searchMoves(moves, 'd3'))).toEqual(['d+3']);
