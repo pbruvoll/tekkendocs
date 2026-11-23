@@ -1,4 +1,4 @@
-import { type FrameRange } from './types';
+import { type FrameRange, type QuizFrameType } from './types';
 
 export const isInFrameRange = (
   frameValue: number,
@@ -13,21 +13,23 @@ export const isInFrameRange = (
 const formatFrameValue = (frameValue: number): string =>
   frameValue > 0 ? `+${frameValue}` : `${frameValue}`;
 
-export const formatFrameRange = ({ min, max }: FrameRange): string => {
+/**
+ * Block answers are listed from high to low and hit answers from low to high,
+ * so each range is written in the same direction as its list. An open range
+ * says "or more" in both directions, meaning that value or further from zero
+ * ("-15 or more").
+ */
+export const formatFrameRange = (
+  { min, max }: FrameRange,
+  frameType: QuizFrameType,
+): string => {
   if (min !== undefined && max !== undefined) {
     if (min === max) {
       return formatFrameValue(min);
     }
-    // Start at the value closest to zero ("-12 to -14", "+1 to +3"). A range
-    // across zero goes from low to high ("-2 to +3").
-    const [first, last] = max <= 0 ? [max, min] : [min, max];
+    const [first, last] = frameType === 'block' ? [max, min] : [min, max];
     return `${formatFrameValue(first)} to ${formatFrameValue(last)}`;
   }
-  if (min !== undefined) {
-    return `${formatFrameValue(min)} or more`;
-  }
-  if (max !== undefined) {
-    return `${formatFrameValue(max)} or less`;
-  }
-  return 'Any';
+  const bound = min ?? max;
+  return bound === undefined ? 'Any' : `${formatFrameValue(bound)} or more`;
 };

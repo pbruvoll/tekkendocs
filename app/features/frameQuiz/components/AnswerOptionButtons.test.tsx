@@ -6,13 +6,14 @@ test('AnswerOptionButtons shows a button for each option in order', () => {
   render(
     <AnswerOptionButtons
       options={[{ min: 1 }, { min: -14, max: -12 }, { max: -15 }]}
+      frameType="block"
       onAnswer={() => {}}
     />,
   );
 
   expect(
     screen.getAllByRole('button').map((button) => button.textContent),
-  ).toEqual(['+1 or more', '-12 to -14', '-15 or less']);
+  ).toEqual(['+1 or more', '-12 to -14', '-15 or more']);
 });
 
 test('AnswerOptionButtons answers with the range of the clicked button', () => {
@@ -20,6 +21,7 @@ test('AnswerOptionButtons answers with the range of the clicked button', () => {
   render(
     <AnswerOptionButtons
       options={[{ min: 1 }, { min: -14, max: -12 }]}
+      frameType="block"
       onAnswer={onAnswer}
     />,
   );

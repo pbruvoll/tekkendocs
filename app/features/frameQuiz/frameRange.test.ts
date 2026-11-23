@@ -18,29 +18,28 @@ describe('isInFrameRange', () => {
 });
 
 describe('formatFrameRange', () => {
-  test('formats the current answer options', () => {
-    expect(formatFrameRange({ min: 1 })).toBe('+1 or more');
-    expect(formatFrameRange({ min: -9, max: 0 })).toBe('0 to -9');
-    expect(formatFrameRange({ min: -11, max: -10 })).toBe('-10 to -11');
-    expect(formatFrameRange({ min: -14, max: -12 })).toBe('-12 to -14');
-    expect(formatFrameRange({ max: -15 })).toBe('-15 or less');
+  test('shows the highest value first on block', () => {
+    expect(formatFrameRange({ min: 1, max: 4 }, 'block')).toBe('+4 to +1');
+    expect(formatFrameRange({ min: -4, max: 0 }, 'block')).toBe('0 to -4');
+    expect(formatFrameRange({ min: -14, max: -12 }, 'block')).toBe(
+      '-12 to -14',
+    );
+  });
+
+  test('shows the lowest value first on hit', () => {
+    expect(formatFrameRange({ min: 0, max: 3 }, 'hit')).toBe('0 to +3');
+    expect(formatFrameRange({ min: 4, max: 7 }, 'hit')).toBe('+4 to +7');
+    expect(formatFrameRange({ min: -3, max: -1 }, 'hit')).toBe('-3 to -1');
   });
 
   test('formats a single frame value', () => {
-    expect(formatFrameRange({ min: -10, max: -10 })).toBe('-10');
+    expect(formatFrameRange({ min: -14, max: -14 }, 'block')).toBe('-14');
   });
 
-  test('shows the value closest to zero first', () => {
-    expect(formatFrameRange({ min: 1, max: 3 })).toBe('+1 to +3');
-    expect(formatFrameRange({ min: -3, max: -1 })).toBe('-1 to -3');
-  });
-
-  test('formats a range across zero from low to high', () => {
-    expect(formatFrameRange({ min: -2, max: 3 })).toBe('-2 to +3');
-  });
-
-  test('formats open ranges in either direction', () => {
-    expect(formatFrameRange({ min: -5 })).toBe('-5 or more');
-    expect(formatFrameRange({ max: 5 })).toBe('+5 or less');
+  test('says "or more" for open ranges in both directions', () => {
+    expect(formatFrameRange({ min: 1 }, 'block')).toBe('+1 or more');
+    expect(formatFrameRange({ max: -15 }, 'block')).toBe('-15 or more');
+    expect(formatFrameRange({ max: -1 }, 'hit')).toBe('-1 or more');
+    expect(formatFrameRange({ min: 8 }, 'hit')).toBe('+8 or more');
   });
 });

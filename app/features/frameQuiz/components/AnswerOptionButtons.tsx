@@ -1,20 +1,25 @@
 import { Button } from '~/components/ui/button';
 import { formatFrameRange } from '~/features/frameQuiz/frameRange';
-import { type FrameRange } from '~/features/frameQuiz/types';
+import {
+  type FrameRange,
+  type QuizFrameType,
+} from '~/features/frameQuiz/types';
 
 type AnswerOptionButtonsProps = {
   options: FrameRange[];
+  frameType: QuizFrameType;
   onAnswer: (range: FrameRange) => void;
 };
 
 export const AnswerOptionButtons = ({
   options,
+  frameType,
   onAnswer,
 }: AnswerOptionButtonsProps) => {
   return (
     <div className="flex flex-wrap gap-2">
       {options.map((option) => {
-        const label = formatFrameRange(option);
+        const label = formatFrameRange(option, frameType);
         return (
           <Button
             key={label}

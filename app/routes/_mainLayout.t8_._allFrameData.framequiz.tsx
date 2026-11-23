@@ -525,7 +525,7 @@ export default function FrameQuiz() {
     });
     setQuestionFeedback({
       isCorrect,
-      selectedLabel: formatFrameRange(selectedRange),
+      selectedLabel: formatFrameRange(selectedRange, frameType),
       correctFrames: getCorrectFrames(currentQuestion.move, frameType),
     });
   };
