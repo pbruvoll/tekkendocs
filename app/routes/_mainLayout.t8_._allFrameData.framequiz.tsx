@@ -49,6 +49,7 @@ import {
   getCharacterDisplayName,
   getEligibleQuizMoves,
 } from '~/features/frameQuiz/moveSelection';
+import { parseQuizModifiers } from '~/features/frameQuiz/quizModifiers';
 import {
   charQuizStatsStore,
   clearCharData,
@@ -144,6 +145,7 @@ export default function FrameQuiz() {
   const [activeModifiers, setActiveModifiers] = useState<QuizModifiers>({
     hideCommand: false,
     hideVideo: false,
+    hard: false,
   });
   const [activeOptions, setActiveOptions] = useState<QuizOptionValues>({
     autoShowDetails: false,
@@ -168,10 +170,7 @@ export default function FrameQuiz() {
   );
 
   const pendingModifiers = useMemo(
-    (): QuizModifiers => ({
-      hideCommand: searchParams.has('hideCommand'),
-      hideVideo: searchParams.has('hideVideo'),
-    }),
+    () => parseQuizModifiers(searchParams),
     [searchParams],
   );
 
@@ -242,15 +241,15 @@ export default function FrameQuiz() {
     return character?.length === 1 && !hasOtherFilters ? character[0] : null;
   }, [moveFilter, selectedMoveRange]);
 
-  // Saved stats are for block frames only. Hit mode, like a filter, keeps its
-  // stats for the session.
-  const savesStatsForFrameType = frameType === 'block';
+  // Saved stats are for block frames with the normal ranges only. Hit mode and
+  // hard mode, like a filter, keep their stats for the session.
+  const savesStatsForMode = frameType === 'block' && !pendingModifiers.hard;
 
   // Persist stats whenever there is no filter (global stats) or exactly one
   // character is selected (per-character stats). Any other filter combination
   // is session-only. The store/key is then chosen by `singleCharacterId`.
   const persistToStorage =
-    savesStatsForFrameType && (!hasActiveFilter || !!singleCharacterId);
+    savesStatsForMode && (!hasActiveFilter || !!singleCharacterId);
 
   const singleCharacterName = singleCharacterId
     ? getCharacterDisplayName(singleCharacterId)
@@ -382,9 +381,12 @@ export default function FrameQuiz() {
         if (next.has(modifier)) {
           next.delete(modifier);
         } else {
-          const other: QuizModifier =
-            modifier === 'hideCommand' ? 'hideVideo' : 'hideCommand';
-          next.delete(other);
+          // Hiding the command and hiding the video can't both be on.
+          if (modifier === 'hideCommand') {
+            next.delete('hideVideo');
+          } else if (modifier === 'hideVideo') {
+            next.delete('hideCommand');
+          }
           next.set(modifier, '');
         }
         return next;
@@ -523,7 +525,7 @@ export default function FrameQuiz() {
     });
     setQuestionFeedback({
       isCorrect,
-      selectedLabel: formatFrameRange(selectedRange),
+      selectedLabel: formatFrameRange(selectedRange, frameType),
       correctFrames: getCorrectFrames(currentQuestion.move, frameType),
     });
   };

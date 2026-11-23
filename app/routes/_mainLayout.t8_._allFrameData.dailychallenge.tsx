@@ -318,7 +318,7 @@ export default function DailyChallenge() {
     setPendingAdvance({ score: nextScore, answers: nextAnswers });
     setQuestionFeedback({
       isCorrect,
-      selectedLabel: formatFrameRange(selectedRange),
+      selectedLabel: formatFrameRange(selectedRange, 'block'),
       correctFrames: currentQuestion.move.block,
     });
   };
@@ -591,6 +591,7 @@ export default function DailyChallenge() {
                 ) : (
                   <AnswerOptionButtons
                     options={blockAnswerOptions}
+                    frameType="block"
                     onAnswer={handleAnswer}
                   />
                 )}

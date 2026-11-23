@@ -48,7 +48,7 @@ export const AnswerDetailsCard = ({
         <div className="rounded-md bg-muted/60 px-2 py-1">
           <p className="text-[11px] text-muted-foreground">You picked</p>
           <p className="font-medium">
-            {formatFrameRange(answer.selectedRange)}
+            {formatFrameRange(answer.selectedRange, 'block')}
           </p>
         </div>
         <div className="rounded-md bg-muted/60 px-2 py-1">
