@@ -586,17 +586,9 @@ export default function FrameQuiz() {
     return result;
   }, [persistedCharStats]);
 
-  if (eligibleMoves.length === 0) {
-    return (
-      <ContentContainer enableBottomPadding enableTopPadding>
-        <h1 className="my-4 text-2xl">Frame quiz</h1>
-        <p>
-          There are not enough valid Mokujin moves with video and usable{' '}
-          {frameType} frames to start the endless quiz right now.
-        </p>
-      </ContentContainer>
-    );
-  }
+  // Keep the start screen when nothing matches, so the filters that caused it
+  // can be changed back.
+  const hasNoQuizMoves = rangedEligibleMoves.length === 0;
 
   return (
     <ContentContainer enableBottomPadding enableTopPadding>
@@ -636,7 +628,17 @@ export default function FrameQuiz() {
               Want to focus on a specific character, a subset of moves, or apply
               a custom filter? Use the options below before starting.
             </p>
-            <Button className="self-start" onClick={handleStart}>
+            {hasNoQuizMoves && (
+              <p className="rounded-md border border-destructive/40 bg-destructive/10 p-3 text-sm">
+                No moves match the current selection. Change the filters below
+                to start the quiz.
+              </p>
+            )}
+            <Button
+              className="self-start"
+              onClick={handleStart}
+              disabled={hasNoQuizMoves}
+            >
               Start quiz
             </Button>
             <QuizModifierControls
@@ -671,7 +673,11 @@ export default function FrameQuiz() {
               options={pendingOptions}
               onToggle={handleToggleOption}
             />
-            <Button className="mt-6 self-start" onClick={handleStart}>
+            <Button
+              className="mt-6 self-start"
+              onClick={handleStart}
+              disabled={hasNoQuizMoves}
+            >
               Start quiz
             </Button>
           </CardContent>
