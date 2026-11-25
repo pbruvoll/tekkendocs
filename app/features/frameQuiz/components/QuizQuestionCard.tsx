@@ -12,6 +12,7 @@ import {
   type QuizFrameType,
   type QuizMove,
 } from '~/features/frameQuiz/types';
+import { QuizSoundToggle } from '~/features/quizSounds/QuizSoundToggle';
 import { type Move } from '~/types/Move';
 import { AnswerOptionButtons } from './AnswerOptionButtons';
 import { QuestionFeedbackCard } from './QuestionFeedbackCard';
@@ -85,6 +86,7 @@ export const QuizQuestionCard = ({
             </span>
           </CardTitle>
           <div className="flex shrink-0 flex-wrap items-center justify-end gap-2">
+            <QuizSoundToggle />
             <p className="whitespace-nowrap text-lg font-medium">
               Streak{' '}
               <AnimatedNumber

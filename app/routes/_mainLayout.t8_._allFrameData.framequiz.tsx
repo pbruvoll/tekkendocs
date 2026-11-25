@@ -71,6 +71,7 @@ import {
   type QuizFrameType,
   type QuizMove,
 } from '~/features/frameQuiz/types';
+import { playAnswerSound } from '~/features/quizSounds/answerSoundPlayer';
 import { getFilterFromParams, isFilterValueActive } from '~/utils/filterUtils';
 import { filterMoves } from '~/utils/frameDataUtils';
 import { generateMetaTags } from '~/utils/seoUtils';
@@ -458,6 +459,7 @@ export default function FrameQuiz() {
     }
 
     const isCorrect = isInFrameRange(currentQuestion.frameValue, selectedRange);
+    playAnswerSound(isCorrect);
     const nextScore = score + (isCorrect ? 1 : 0);
     const nextTotalAnswered = totalAnswered + 1;
     const nextConsecutiveCorrectStreak = isCorrect
