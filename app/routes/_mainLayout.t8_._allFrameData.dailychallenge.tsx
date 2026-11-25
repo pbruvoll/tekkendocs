@@ -30,6 +30,7 @@ import {
   type QuestionFeedback,
   type SessionAnswer,
 } from '~/features/frameQuiz/types';
+import { playAnswerSound } from '~/features/quizSounds/answerSoundPlayer';
 import { useAppState } from '~/hooks/useAppState';
 import tekkenDocsLogoIcon from '~/images/logo/tekkendocs-logo-icon.svg';
 import { moveUrlFor } from '~/utils/moveUtils';
@@ -299,6 +300,7 @@ export default function DailyChallenge() {
     }
 
     const isCorrect = isInFrameRange(currentQuestion.frameValue, selectedRange);
+    playAnswerSound(isCorrect);
     const nextScore = score + (isCorrect ? 1 : 0);
 
     const nextAnswers = [
