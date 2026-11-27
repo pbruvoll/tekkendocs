@@ -1,5 +1,9 @@
 import { type ChangeEvent, useId, useMemo, useState } from 'react';
-import { type MetaFunction, useSearchParams } from 'react-router';
+import {
+  type MetaFunction,
+  type NavigateOptions,
+  useSearchParams,
+} from 'react-router';
 import invariant from 'tiny-invariant';
 import { ContentContainer } from '~/components/ContentContainer';
 import { FrameDataFilterDialog } from '~/components/FrameDataFilterDialog';
@@ -26,6 +30,11 @@ import { FlashCardDeck } from '~/features/flashCards/FlashCardDeck';
 import { FlipCard } from '~/features/flashCards/FlipCard';
 import { FlashCardBack } from '~/features/flashCards/flashCardBack';
 import { FlashCardFront } from '~/features/flashCards/flashCardFront';
+import {
+  BackToFlashCardModes,
+  FlashCardTraining,
+  resolveFlashCardMode,
+} from '~/features/flashCards/training/FlashCardTraining';
 import { useFlashCardAppState } from '~/features/flashCards/useFlashCardAppState';
 import { useFrameData } from '~/hooks/useFrameData';
 import { type CharacterFrameData } from '~/types/CharacterFrameData';
@@ -72,6 +81,23 @@ export const meta: MetaFunction = ({ params, matches }) => {
 };
 
 export default function FlashCard() {
+  const { characterName, moves } = useFrameData();
+  const [searchParams] = useSearchParams();
+  const mode = resolveFlashCardMode(searchParams);
+
+  return mode === 'classic' ? (
+    <ClassicFlashCard key={characterName} />
+  ) : (
+    <FlashCardTraining
+      character={characterName.toLowerCase()}
+      mode={mode}
+      moves={moves}
+      params={searchParams}
+    />
+  );
+}
+
+function ClassicFlashCard() {
   const [moveToShow, setMoveToShow] = useState<Move | undefined>();
   const { characterName, moves } = useFrameData();
   const { favorites } = useFavorites();
@@ -82,7 +108,18 @@ export default function FlashCard() {
     [moves],
   );
 
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams, setUrlSearchParams] = useSearchParams();
+
+  const setSearchParams = (
+    update: (params: URLSearchParams) => URLSearchParams,
+    options?: NavigateOptions,
+  ) => {
+    setUrlSearchParams((current) => {
+      const updated = update(new URLSearchParams(current));
+      updated.set('mode', 'classic');
+      return updated;
+    }, options);
+  };
 
   const moveFilter = useMemo(
     () => getFilterFromParams(searchParams),
@@ -266,6 +303,7 @@ export default function FlashCard() {
         <h1 className="sr-only capitalize">
           {getCharacterDisplayName(characterName)} Tekken 8 Flash Cards
         </h1>
+        <BackToFlashCardModes />
         {numViableMoves === 0 ? (
           <div>No moves available for {characterName}</div>
         ) : !moveToShow ? (
