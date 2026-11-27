@@ -1,10 +1,8 @@
 import {
   type AnswerOption,
-  punishQuestions,
   type Question,
   type Stage,
   type TrainingMode,
-  type TrainingMove,
   yesNo,
 } from './domain';
 
@@ -483,13 +481,10 @@ const okiDefense: readonly Question[] = [
   ),
 ];
 
-export function getQuestionDeck(
-  mode: TrainingMode,
-  moves: readonly TrainingMove[],
+export function getDragunovDeck(
+  mode: Exclude<TrainingMode, 'punish-basic' | 'punish-frames'>,
   stage?: Stage,
 ): Question[] {
-  if (mode === 'punish-basic' || mode === 'punish-frames')
-    return punishQuestions(moves, mode);
   if (mode === 'string-defense') return [...stringDefense];
   if (mode === 'oki-offense') return [...okiOffense];
   if (mode === 'oki-defense') return [...okiDefense];

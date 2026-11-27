@@ -32,9 +32,9 @@ import { FlashCardBack } from '~/features/flashCards/flashCardBack';
 import { FlashCardFront } from '~/features/flashCards/flashCardFront';
 import {
   BackToFlashCardModes,
-  DragunovTraining,
+  FlashCardTraining,
   resolveFlashCardMode,
-} from '~/features/flashCards/training/DragunovTraining';
+} from '~/features/flashCards/training/FlashCardTraining';
 import { useFlashCardAppState } from '~/features/flashCards/useFlashCardAppState';
 import { useFrameData } from '~/hooks/useFrameData';
 import { type CharacterFrameData } from '~/types/CharacterFrameData';
@@ -83,19 +83,21 @@ export const meta: MetaFunction = ({ params, matches }) => {
 export default function FlashCard() {
   const { characterName, moves } = useFrameData();
   const [searchParams] = useSearchParams();
-  const mode = resolveFlashCardMode(characterName, searchParams);
+  const mode = resolveFlashCardMode(searchParams);
 
   return mode === 'classic' ? (
-    <ClassicFlashCard
-      key={characterName}
-      showBackLink={characterName.toLowerCase() === 'dragunov'}
-    />
+    <ClassicFlashCard key={characterName} />
   ) : (
-    <DragunovTraining mode={mode} moves={moves} params={searchParams} />
+    <FlashCardTraining
+      character={characterName.toLowerCase()}
+      mode={mode}
+      moves={moves}
+      params={searchParams}
+    />
   );
 }
 
-function ClassicFlashCard({ showBackLink }: { showBackLink: boolean }) {
+function ClassicFlashCard() {
   const [moveToShow, setMoveToShow] = useState<Move | undefined>();
   const { characterName, moves } = useFrameData();
   const { favorites } = useFavorites();
@@ -114,7 +116,7 @@ function ClassicFlashCard({ showBackLink }: { showBackLink: boolean }) {
   ) => {
     setUrlSearchParams((current) => {
       const updated = update(new URLSearchParams(current));
-      if (showBackLink) updated.set('mode', 'classic');
+      updated.set('mode', 'classic');
       return updated;
     }, options);
   };
@@ -301,7 +303,7 @@ function ClassicFlashCard({ showBackLink }: { showBackLink: boolean }) {
         <h1 className="sr-only capitalize">
           {getCharacterDisplayName(characterName)} Tekken 8 Flash Cards
         </h1>
-        {showBackLink && <BackToFlashCardModes />}
+        <BackToFlashCardModes />
         {numViableMoves === 0 ? (
           <div>No moves available for {characterName}</div>
         ) : !moveToShow ? (

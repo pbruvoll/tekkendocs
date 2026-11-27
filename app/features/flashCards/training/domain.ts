@@ -17,10 +17,13 @@ export type TrainingMode =
 
 export type TrainingMove = {
   id: string;
+  characterId?: string;
   command: string;
   block?: string;
+  startup?: string;
   hitLevel?: string;
   notes?: string;
+  tags?: Record<string, string>;
 };
 
 export type AnswerOption = {
@@ -44,8 +47,11 @@ export type Question = {
   review?: { targetPatch: string; testedOn?: string };
 };
 
-const frameSource = 'https://tekkendocs.com/dragunov';
-const spacingExceptions = new Set(['d+4,1,3', 'd+4,4', 'qcb+2']);
+const dragunovSpacingExceptions = new Set(['d+4,1,3', 'd+4,4', 'qcb+2']);
+
+export function frameDataSource(characterId: string) {
+  return `https://tekkendocs.com/t8/${encodeURIComponent(characterId)}`;
+}
 
 type BlockPunishment = {
   frames: number | null;
@@ -57,10 +63,15 @@ type BlockPunishment = {
 
 export function getBlockPunishment(
   move: TrainingMove,
+  characterId = move.characterId?.toLowerCase(),
 ): BlockPunishment | undefined {
   const block = move.block?.trim().replace(/[−–]/g, '-') ?? '';
 
-  if (move.command === 'df+3' && block === '-6~-3') {
+  if (
+    characterId === 'dragunov' &&
+    move.command === 'df+3' &&
+    block === '-6~-3'
+  ) {
     return {
       frames: null,
       context: 'You block this move at a range where it reaches normally.',
@@ -78,7 +89,8 @@ export function getBlockPunishment(
   if (
     !exactBlock ||
     !/^[hml](?:\s|\(|$)/i.test(lastHit ?? '') ||
-    spacingExceptions.has(move.command) ||
+    (characterId === 'dragunov' &&
+      dragunovSpacingExceptions.has(move.command)) ||
     /pushback|pushes? (?:the )?opponent back|frame advantage.*on block/i.test(
       move.notes ?? '',
     )
@@ -145,9 +157,11 @@ export function yesNo(
 export function punishQuestions(
   moves: readonly TrainingMove[],
   mode: 'punish-basic' | 'punish-frames',
+  characterId: string,
 ): Question[] {
   return moves.flatMap((move) => {
-    const punishment = getBlockPunishment(move);
+    const moveCharacter = move.characterId?.toLowerCase() || characterId;
+    const punishment = getBlockPunishment(move, moveCharacter);
     if (!punishment) return [];
 
     const { frames, context, explanation, fastestStandard, expectedBlock } =
@@ -167,7 +181,7 @@ export function punishQuestions(
           : frameAnswers(frames, fastestStandard),
         selection: 'single',
         explanation,
-        source: frameSource,
+        source: frameDataSource(moveCharacter),
       } satisfies Question,
     ];
   });

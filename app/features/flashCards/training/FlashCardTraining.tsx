@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link } from 'react-router';
 import { ContentContainer } from '~/components/ContentContainer';
 import { MoveVideo } from '~/components/MoveVideo';
@@ -10,7 +10,9 @@ import {
   CardHeader,
   CardTitle,
 } from '~/components/ui/card';
+import { characterInfoT8List } from '~/constants/characterInfoListT8';
 import { filterKey } from '~/constants/filterConstants';
+import { getCharacterDisplayName } from '~/features/characterPage/characterDisplayName';
 import { type Move } from '~/types/Move';
 import {
   isCorrectAnswer,
@@ -20,13 +22,13 @@ import {
   stages,
   type TrainingMode,
 } from './domain';
-import { getQuestionDeck } from './dragunovDecks';
 import {
   type DeckProgress,
   deckProgressId,
   readDeckProgress,
   saveAnswer,
 } from './progress';
+import { getQuestionDeck } from './rosterDecks';
 
 const modes = {
   'punish-basic': 'Beginner: Punishable or safe',
@@ -45,11 +47,8 @@ function searchFor(mode?: TrainingMode | 'classic', stage?: Stage) {
 }
 
 export function resolveFlashCardMode(
-  characterName: string,
   params: URLSearchParams,
 ): TrainingMode | 'classic' | 'menu' {
-  if (characterName.toLowerCase() !== 'dragunov') return 'classic';
-
   const mode = params.get('mode');
   if (mode === 'classic') return mode;
   if (mode && Object.hasOwn(modes, mode)) return mode as TrainingMode;
@@ -83,10 +82,19 @@ function ModeLink({ mode }: { mode: TrainingMode | 'classic' }) {
   );
 }
 
-function TrainingMenu() {
+function fighterName(character: string) {
+  return (
+    characterInfoT8List.find(({ id }) => id === character)?.displayName ??
+    getCharacterDisplayName(character)
+  );
+}
+
+function TrainingMenu({ character }: { character: string }) {
   return (
     <>
-      <h1 className="text-2xl font-semibold">Dragunov Flash Cards</h1>
+      <h1 className="text-2xl font-semibold">
+        {fighterName(character)} Flash Cards
+      </h1>
       <div className="grid gap-4 sm:grid-cols-2">
         <Card>
           <CardHeader>
@@ -164,6 +172,7 @@ function QuestionCard({
   position,
   total,
   result,
+  fighter,
   onAnswer,
   onNext,
 }: {
@@ -172,6 +181,7 @@ function QuestionCard({
   position: number;
   total: number;
   result: boolean | undefined;
+  fighter?: string;
   onAnswer: (answer: readonly string[]) => void;
   onNext: () => void;
 }) {
@@ -196,6 +206,7 @@ function QuestionCard({
         <CardDescription>
           Card {position} of {total}
         </CardDescription>
+        {fighter && <p className="text-sm">{fighter}</p>}
         <CardTitle>
           <h2 ref={title} tabIndex={-1} className="text-xl">
             {question.title}
@@ -303,16 +314,21 @@ function QuestionCard({
 }
 
 function TrainingDeck({
+  character,
   mode,
   stage,
   moves,
 }: {
+  character: string;
   mode: TrainingMode;
   stage?: Stage;
   moves: readonly Move[];
 }) {
-  const deckId = deckProgressId('dragunov', mode, stage);
-  const questions = getQuestionDeck(mode, moves, stage);
+  const deckId = deckProgressId(character, mode, stage);
+  const questions = useMemo(
+    () => getQuestionDeck(character, mode, moves, stage),
+    [character, mode, moves, stage],
+  );
   const [progress, setProgress] = useState<DeckProgress>({});
   const [session, setSession] = useState<Session>();
   const [round, setRound] = useState(0);
@@ -395,14 +411,21 @@ function TrainingDeck({
     );
   }
 
+  const move = moves.find(
+    (move) =>
+      move.id === current.moveId || move.command === current.moveCommand,
+  );
+
   return (
     <QuestionCard
       key={`${round}:${current.id}`}
       question={current}
-      move={moves.find(
-        (move) =>
-          move.id === current.moveId || move.command === current.moveCommand,
-      )}
+      move={move}
+      fighter={
+        character === 'mokujin' && move
+          ? fighterName(move.characterId)
+          : undefined
+      }
       position={session.index + 1}
       total={session.questions.length}
       result={session.results[session.index]}
@@ -419,11 +442,13 @@ function TrainingDeck({
   );
 }
 
-export function DragunovTraining({
+export function FlashCardTraining({
+  character,
   mode,
   moves,
   params,
 }: {
+  character: string;
   mode: TrainingMode | 'menu';
   moves: readonly Move[];
   params: URLSearchParams;
@@ -441,7 +466,7 @@ export function DragunovTraining({
     >
       <div className="w-full max-w-2xl space-y-4 px-2">
         {mode === 'menu' ? (
-          <TrainingMenu />
+          <TrainingMenu character={character} />
         ) : (
           <>
             <BackToFlashCardModes />
@@ -464,7 +489,8 @@ export function DragunovTraining({
             )}
             {(mode !== 'game-plan' || stage) && (
               <TrainingDeck
-                key={deckProgressId('dragunov', mode, stage?.id)}
+                key={deckProgressId(character, mode, stage?.id)}
+                character={character}
                 mode={mode}
                 stage={stage?.id}
                 moves={moves}
